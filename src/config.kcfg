@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
+<kcfg>
+	<kcfgfile name="partitionmanagerrc"/>
+
+	<group name="KDE Partition Manager">
+		<entry name="treePartitionColumnWidths" type="IntList">
+			<default>-1</default>
+		</entry>
+		<entry name="firstRun" type="Bool">
+			<default>true</default>
+		</entry>
+	</group>
+</kcfg>

@@ -1,0 +1,47 @@
+
+1.0.0-ALPHA2
+============
+
+* Add and install a .desktop file.
+
+* Don't allow the user to close the main window while operations are being
+  applied.
+
+* Handle activating and deactivating swap. Also, swap does have labels.
+
+* Don't try to print a mount point in the partition properties dialog if there
+  is none.
+
+* Show partition table type name and used/max primary partitions in the info
+  pane.
+
+* All disk label types but msdos are read only for now, until the support
+  situation for them improves.
+
+* Set default value for maximum number of primaries from 255 to 4.
+
+* Actually set the correct disk label type before applying the operation to
+  create a new disk label.
+
+* Don't update the partition table widget while operations are being applied.
+  This fixes a race condition that would potentially crash the application when
+  applying operations.
+
+* Update devices in the GUI after creating a new disk label or undoing
+  operations.
+
+* Set the operation state of all operations to StateNone when temporarily
+  undoing them right before starting the thread to apply them. This fixes a
+  crash when an operation fails and the remaining ones are undone twice.
+
+* Update bug report address and homepage in the aboutdata.
+
+* Unblock SIGCHLD in main so Kubuntu's kdesudo can run the application as root.
+
+* If udevadm settle fails, try to call udevsettle to better support older
+  systems.
+
+* Fix the minimum size calculations for partition widgets.
+
+* Add some doxygen documentation.
+

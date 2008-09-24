@@ -1,0 +1,143 @@
+/***************************************************************************
+ *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
+ ***************************************************************************/
+
+#include "fs/filesystemfactory.h"
+#include "fs/filesystem.h"
+
+#include "fs/ext2.h"
+#include "fs/ext3.h"
+#include "fs/extended.h"
+#include "fs/fat16.h"
+#include "fs/fat32.h"
+#include "fs/hfs.h"
+#include "fs/hfsplus.h"
+#include "fs/jfs.h"
+#include "fs/linuxswap.h"
+#include "fs/ntfs.h"
+#include "fs/reiser4.h"
+#include "fs/reiserfs.h"
+#include "fs/ufs.h"
+#include "fs/unformatted.h"
+#include "fs/unknown.h"
+#include "fs/xfs.h"
+
+FileSystemFactory::FileSystems FileSystemFactory::m_FileSystems;
+
+/** Initializes the instance. */
+void FileSystemFactory::init()
+{
+	foreach(FileSystem* fs, m_FileSystems.values())
+		delete fs;
+
+	m_FileSystems.clear();
+	
+	m_FileSystems.insert(FileSystem::Ext2, new FS::ext2(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Ext3, new FS::ext3(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Extended, new FS::extended(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Fat16, new FS::fat16(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Fat32, new FS::fat32(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Hfs, new FS::hfs(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::HfsPlus, new FS::hfsplus(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Jfs, new FS::jfs(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::LinuxSwap, new FS::linuxswap(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Ntfs, new FS::ntfs(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::ReiserFS, new FS::reiserfs(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Reiser4, new FS::reiser4(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Ufs, new FS::ufs(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Unformatted, new FS::unformatted(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Unknown, new FS::unknown(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Xfs, new FS::xfs(-1, -1, -1, QString()));
+		
+	FS::ext2::init();
+	FS::ext3::init();
+	FS::extended::init();
+	FS::fat16::init();
+	FS::fat32::init();
+	FS::hfs::init();
+	FS::hfsplus::init();
+	FS::jfs::init();
+	FS::linuxswap::init();
+	FS::ntfs::init();
+	FS::reiserfs::init();
+	FS::reiser4::init();
+	FS::ufs::init();
+	FS::unformatted::init();
+	FS::unknown::init();
+	FS::xfs::init();
+}
+
+/** Creates a new FileSystem
+	@param t the FileSystem's type
+	@param firstsector the FileSystem's first sector relative to the Device
+	@param lastsector the FileSystem's last sector relative to the Device
+	@param sectorsused the number of used sectors in the FileSystem
+	@param label the FileSystem's label
+	@return pointer to the newly created FileSystem object or NULL if FileSystem could not be created
+*/
+FileSystem* FileSystemFactory::create(FileSystem::Type t, qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label)
+{
+	switch(t)
+	{
+		case FileSystem::Ext2:         return new FS::ext2(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Ext3:         return new FS::ext3(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Extended:     return new FS::extended(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Fat16:        return new FS::fat16(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Fat32:        return new FS::fat32(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Hfs:          return new FS::hfs(firstsector, lastsector, sectorsused, label);
+		case FileSystem::HfsPlus:      return new FS::hfsplus(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Jfs:          return new FS::jfs(firstsector, lastsector, sectorsused, label);
+		case FileSystem::LinuxSwap:    return new FS::linuxswap(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Ntfs:         return new FS::ntfs(firstsector, lastsector, sectorsused, label);
+		case FileSystem::ReiserFS:     return new FS::reiserfs(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Reiser4:      return new FS::reiser4(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Ufs:          return new FS::ufs(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Unformatted:  return new FS::unformatted(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Unknown:      return new FS::unknown(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Xfs:          return new FS::xfs(firstsector, lastsector, sectorsused, label);
+
+		default:
+			break;
+	}
+
+	return NULL;
+}
+
+/**
+	@overload
+*/
+FileSystem* FileSystemFactory::create(const FileSystem& other)
+{
+	return create(other.type(), other.firstSector(), other.lastSector(), other.sectorsUsed(), other.label());
+}
+
+/** @return the map of FileSystems */
+const FileSystemFactory::FileSystems& FileSystemFactory::map()
+{
+	return m_FileSystems;
+}
+
+/** Clones a FileSystem from another one, but with a new type.
+	@param newType the new FileSystem's type
+	@param other the old FileSystem to clone
+	@return pointer to the newly created FileSystem or NULL in case of errors
+*/
+FileSystem* FileSystemFactory::cloneWithNewType(FileSystem::Type newType, const FileSystem& other)
+{
+	return create(newType, other.firstSector(), other.lastSector(), other.sectorsUsed(), other.label());
+}

@@ -1,0 +1,58 @@
+Building and installing KDE Partition Manager from source
+=========================================================
+
+
+1. Dependencies
+
+libparted: Either get it from http://www.gnu.org/software/parted/download.shtml
+and build it yourself or, preferably, install your distribution's packages
+(don't forget the dev-package).
+
+libuuid: This is part of e2fsprogs, something you will most probably need
+anyway. Get the source and build it from
+http://sourceforge.net/project/showfiles.php?group_id=2406 or, preferably,
+install your distribution's packages (again, don't forget the dev-package). 
+
+KDE4: KDE4.0 will probably not work and has not been tested. Building with KDE4
+from SVN or with the KDE4.1 packages for Kubuntu Hardy from launchpad works.
+
+
+2. Configure
+
+KDE Partition Manager is built with cmake, like most of KDE4 today. It is
+recommended to build out of tree: After unpacking the source, create a separate
+build directory and run cmake there:
+
+$ tar xfj partitionmanager-1.0.0-ALPHA2.tar.bz2
+$ cd partitionmanager-1.0.0-ALPHA2
+$ mkdir build
+$ cd build
+$ cmake ..
+
+If all dependencies are met, cmake configures the build directory.
+
+If you get an error message like "ERROR: Could not find KDE4 kde4-config" but
+have KDE4 and its development packages installed, you might need to add the
+KDE4 bin directory to the path.
+
+
+3. Build and install
+
+Just run make and make install in the build directory. The default install path
+is /usr/local, so installing will need write privileges there. You can
+configure a different install path by passing
+-DCMAKE_INSTALL_PREFIX=<your_path> to cmake when configuring. To change the
+install path after configuring and building, run 
+
+$ ccmake .
+
+in the build directory and modify CMAKE_INSTALL_PREFIX there.
+
+
+4. Running
+
+KDE Partition Manager should be run as root. Running it as an unprivileged user
+does no harm, but you will not be allowed to apply any operations (i.e., you
+can click through the UI, but cannot modify your disks).
+
+

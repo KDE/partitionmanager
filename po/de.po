@@ -1,0 +1,2966 @@
+# Copyright (C) 2008 Volker Lanz
+# This file is distributed under the same license as the KDE Partition Manager package.
+#
+# , 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: partitionmanager\n"
+"Report-Msgid-Bugs-To: http://sourceforge.net/tracker/?group_id=50231&atid=459007\n"
+"POT-Creation-Date: 2008-09-19 12:03+0200\n"
+"PO-Revision-Date: 2008-09-19 12:03+0200\n"
+"Last-Translator: \n"
+"Language-Team: American English <kde-i18n-de@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.2\n"
+
+#: core/libparted.cpp:48
+msgctxt "@info/plain"
+msgid "LibParted Exception: %1"
+msgstr "LibParted Fehler: %1"
+
+#: core/libparted.cpp:221
+msgctxt "@info/plain"
+msgid "Device found: %1"
+msgstr "Gerät gefunden: %1"
+
+#: core/operationstack.cpp:75
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just created: Undoing the operation to create the "
+"partition."
+msgstr ""
+"Löschen einer gerade erzeugten Partition: Mache Operation zum Erzeugen der "
+"Partition rückgängig."
+
+#: core/operationstack.cpp:91
+msgctxt "@info/plain"
+msgid ""
+"Resizing a partition just created: Updating start and end in existing "
+"operation."
+msgstr ""
+"Ändern der Größe einer gerade erzeugten Partition: Aktualisiere Start und "
+"Ende in der bestehenden Operation."
+
+#: core/operationstack.cpp:113
+msgctxt "@info/plain"
+msgid "Copying a new partition: Creating a new partition instead."
+msgstr "Kopieren einer neuen Partition: Erzeuge stattdessen eine neue Partition."
+
+#: core/operationstack.cpp:131
+msgctxt "@info/plain"
+msgid "Changing label for a new partition: No new operation required."
+msgstr "Ändern der Bezeichnung einer neuen Partition: Keine neue Operation notwendig."
+
+#: core/operationstack.cpp:145
+msgctxt "@info/plain"
+msgid "Changing file system for a new partition: No new operation required."
+msgstr ""
+"Ändern des Dateisystems einer neuen Partition: Keine neue Operation "
+"notwendig."
+
+#: core/operationstack.cpp:178
+msgctxt "@info/plain"
+msgid "Deleting a partition just copied: Removing the copy."
+msgstr "Löschen einer gerade kopierten Partition: Lösche die Kopie."
+
+#: core/operationstack.cpp:185
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just copied over an existing partition: Removing the "
+"copy and deleting the existing partition."
+msgstr ""
+"Löschen einer Partition, die gerade über eine bestehende Partition kopiert "
+"wurde: Löschen die Kopie und die bestehende Partition."
+
+#: core/operationstack.cpp:202
+msgctxt "@info/plain"
+msgid ""
+"Copying a partition that is itself a copy: Copying the original source "
+"partition instead."
+msgstr ""
+"Kopieren einer Partition, die selbst eine Kopie ist: Kopiere stattdessen die "
+"ursprüngliche Quellpartition."
+
+#: core/operationstack.cpp:226
+msgctxt "@info/plain"
+msgid "Deleting a partition just restored: Removing the restore operation."
+msgstr ""
+"Löschen einer gerade wiederhergestellten Partition: Entferne die Operation "
+"zum Wiederherstellen."
+
+#: core/operationstack.cpp:233
+msgctxt "@info/plain"
+msgid ""
+"Deleting a partition just restored to an existing partition: Removing the "
+"restore operation and deleting the existing partition."
+msgstr ""
+"Löschen einer gerade wiederhergestellten Partition in eine bestehende "
+"Partition: Entferne die Operation zur Wiederherstellung und lösche die "
+"bestehende Partition."
+
+#: core/operationstack.cpp:260
+msgctxt "@info/plain"
+msgid "Changing flags again for the same partition: Removing old operation."
+msgstr ""
+"Nochmaliges Ändern der Flags für die selbe Partition: Entferne alte "
+"Operation."
+
+#: core/operationstack.cpp:285
+msgctxt "@info/plain"
+msgid "Changing label again for the same partition: Removing old operation."
+msgstr ""
+"Nochmaliges Ändern der Bezeichnung für die selbe Partition: Entferne alte "
+"Operation."
+
+#: core/operationstack.cpp:321
+msgctxt "@info/plain"
+msgid "Add operation: %1"
+msgstr "Operation hinzufügen: %1"
+
+#: core/partition.cpp:120
+msgctxt "@item partition name"
+msgid "unallocated"
+msgstr "nicht belegt"
+
+#: core/partition.cpp:123
+msgctxt "@item partition name"
+msgid "New Partition"
+msgstr "Neue Partition"
+
+#: core/partition.cpp:126
+msgctxt "@item partition name"
+msgid "Restored Partition"
+msgstr "Wiederhergestellte Partition"
+
+#: core/partition.cpp:131
+msgctxt "@item partition name"
+msgid "Copy of %1"
+msgstr "Kopie von %1"
+
+#: core/partitionrole.cpp:28
+msgctxt "@item partition role"
+msgid "unallocated"
+msgstr "nicht belegt"
+
+#: core/partitionrole.cpp:31
+msgctxt "@item partition role"
+msgid "logical"
+msgstr "logisch"
+
+#: core/partitionrole.cpp:34
+msgctxt "@item partition role"
+msgid "extended"
+msgstr "erweitert"
+
+#: core/partitionrole.cpp:37
+msgctxt "@item partition role"
+msgid "primary"
+msgstr "primär"
+
+#: core/partitionrole.cpp:39
+msgctxt "@item partition role"
+msgid "none"
+msgstr "keine"
+
+#: core/partitiontable.cpp:122
+msgctxt "@item partition flag"
+msgid "boot"
+msgstr "boot"
+
+#: core/partitiontable.cpp:123
+msgctxt "@item partition flag"
+msgid "root"
+msgstr "root"
+
+#: core/partitiontable.cpp:124
+msgctxt "@item partition flag"
+msgid "swap"
+msgstr "Auslagerung"
+
+#: core/partitiontable.cpp:125
+msgctxt "@item partition flag"
+msgid "hidden"
+msgstr "versteckt"
+
+#: core/partitiontable.cpp:126
+msgctxt "@item partition flag"
+msgid "raid"
+msgstr "raid"
+
+#: core/partitiontable.cpp:127
+msgctxt "@item partition flag"
+msgid "lvm"
+msgstr "lvm"
+
+#: core/partitiontable.cpp:128
+msgctxt "@item partition flag"
+msgid "lba"
+msgstr "lba"
+
+#: core/partitiontable.cpp:129
+msgctxt "@item partition flag"
+msgid "hpservice"
+msgstr "hpservice"
+
+#: core/partitiontable.cpp:130
+msgctxt "@item partition flag"
+msgid "palo"
+msgstr "palo"
+
+#: core/partitiontable.cpp:131
+msgctxt "@item partition flag"
+msgid "prep"
+msgstr "prep"
+
+#: core/partitiontable.cpp:132
+msgctxt "@item partition flag"
+msgid "msft-reserved"
+msgstr "msft-reserved"
+
+#: core/partitiontable.cpp:204
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> does not start at a cylinder boundary "
+"(first sector: %2, modulo: %3)."
+msgstr ""
+"Partition <filename>%1</filename> beginnt nicht an einer Zylindergrenze "
+"(erster Sektor: %2, Modulo: %3)."
+
+#: core/partitiontable.cpp:212
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> does not end at a cylinder boundary (last "
+"sector: %2, modulo: %3)."
+msgstr ""
+"Partition <filename>%1</filename> endet nicht an einer Zylindergrenze "
+"(letzter Sektor: %2, Modulo: %3)."
+
+#: core/partitiontable.cpp:312
+msgctxt "@info/plain"
+msgid ""
+"The partition cannot be created with the requested length of %1 sectors and "
+"will instead only be %2 sectors long."
+msgstr ""
+"Die Partition kann nicht mit der gewünschten Länge von %1 Sektoren erzeugt "
+"werden und wird stattdessen nur %2 Sektoren lang sein."
+
+#: fs/filesystem.cpp:68
+msgctxt "@item/plain filesystem name"
+msgid "unknown"
+msgstr "unbekannt"
+
+#: fs/filesystem.cpp:69
+msgctxt "@item/plain filesystem name"
+msgid "extended"
+msgstr "erweitert"
+
+#: fs/filesystem.cpp:71
+msgctxt "@item/plain filesystem name"
+msgid "ext2"
+msgstr "ext2"
+
+#: fs/filesystem.cpp:72
+msgctxt "@item/plain filesystem name"
+msgid "ext3"
+msgstr "ext3"
+
+#: fs/filesystem.cpp:73
+msgctxt "@item/plain filesystem name"
+msgid "linuxswap"
+msgstr "linuxswap"
+
+#: fs/filesystem.cpp:74
+msgctxt "@item/plain filesystem name"
+msgid "fat16"
+msgstr "fat16"
+
+#: fs/filesystem.cpp:75
+msgctxt "@item/plain filesystem name"
+msgid "fat32"
+msgstr "fat32"
+
+#: fs/filesystem.cpp:76
+msgctxt "@item/plain filesystem name"
+msgid "ntfs"
+msgstr "ntfs"
+
+#: fs/filesystem.cpp:77
+msgctxt "@item/plain filesystem name"
+msgid "reiser"
+msgstr "reiser"
+
+#: fs/filesystem.cpp:78
+msgctxt "@item/plain filesystem name"
+msgid "reiser4"
+msgstr "reiser4"
+
+#: fs/filesystem.cpp:79
+msgctxt "@item/plain filesystem name"
+msgid "xfs"
+msgstr "xfs"
+
+#: fs/filesystem.cpp:80
+msgctxt "@item/plain filesystem name"
+msgid "jfs"
+msgstr "jfs"
+
+#: fs/filesystem.cpp:81
+msgctxt "@item/plain filesystem name"
+msgid "hfs"
+msgstr "hfs"
+
+#: fs/filesystem.cpp:82
+msgctxt "@item/plain filesystem name"
+msgid "hfsplus"
+msgstr "hfsplus"
+
+#: fs/filesystem.cpp:83
+msgctxt "@item/plain filesystem name"
+msgid "ufs"
+msgstr "ufs"
+
+#: fs/filesystem.cpp:84
+msgctxt "@item/plain filesystem name"
+msgid "unformatted"
+msgstr "unformatiert"
+
+#: fs/filesystem.cpp:120
+msgctxt "@title:menu"
+msgid "Mount"
+msgstr "Einbinden"
+
+#: fs/filesystem.cpp:125
+msgctxt "@title:menu"
+msgid "Unmount"
+msgstr "Auswerfen"
+
+#: fs/jfs.cpp:142
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: Could "
+"not create temp dir."
+msgstr ""
+"Ändern der Größe des JFS Dateisystems auf Partition <filename>%1</filename> "
+"fehlgeschlagen: Konnte Temporärverzeichnis nicht anlegen."
+
+#: fs/jfs.cpp:157
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: "
+"Remount failed."
+msgstr ""
+"Ändern der Größe des JFS Dateisystems auf Partition <filename>%1</filename> "
+"fehlgeschlagen: Remount fehlgeschlagen."
+
+#: fs/jfs.cpp:162
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing JFS file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Warnung: Ändern der Größe des JFS Dateisystems auf Partition <filename>%1</"
+"filename>: Unmount fehlgeschlagen."
+
+#: fs/jfs.cpp:165
+msgctxt "@info/plain"
+msgid ""
+"Resizing JFS file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Ändern der Größe des JFS Dateisystems auf Partition <filename>%1</filename> "
+"fehlgeschlagen: Erster Mount fehlgeschlagen."
+
+#: fs/linuxswap.cpp:81
+msgctxt "@title:menu"
+msgid "Activate swap"
+msgstr "Auslagerungspartition aktivieren"
+
+#: fs/linuxswap.cpp:86
+msgctxt "@title:menu"
+msgid "Deactivate swap"
+msgstr "Auslagerungspartition deaktivieren"
+
+#: fs/xfs.cpp:149
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: Could "
+"not create temp dir."
+msgstr ""
+"Ändern der Größe des XFS Dateisystems auf Partition <filename>%1</filename> "
+"fehlgeschlagen: Konnte Temporärverzeichnis nicht anlegen."
+
+#: fs/xfs.cpp:164
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: "
+"xfs_growfs failed."
+msgstr ""
+"Ändern der Größe des XFS Dateisystems auf Partition <filename>%1</filename> "
+"fehlgeschlagen: xfs_growfs fehlgeschlagen."
+
+#: fs/xfs.cpp:169
+msgctxt "@info/plain"
+msgid ""
+"Warning: Resizing XFS file system on partition <filename>%1</filename>: "
+"Unmount failed."
+msgstr ""
+"Warnung: Ändern der Größe des XFS Dateisystems auf Partition <filename>%1</"
+"filename>: Unmount fehlgeschlagen."
+
+#: fs/xfs.cpp:172
+msgctxt "@info/plain"
+msgid ""
+"Resizing XFS file system on partition <filename>%1</filename> failed: "
+"Initial mount failed."
+msgstr ""
+"Ändern der Größe des XFS Dateisystems auf Partition <filename>%1</filename> "
+"fehlgeschlagen: Erster Mount fehlgeschlagen."
+
+#: gui/filesystemsupportdialog.cpp:37
+msgctxt "@title:window"
+msgid "File System Support"
+msgstr "Unterstützung von Dateisystemen"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 170
+#: gui/infopane.cpp:45 rc.cpp:76
+msgctxt "@title:window"
+msgid "Information"
+msgstr "Information"
+
+#: gui/infopane.cpp:91
+msgctxt "@title:window"
+msgid "Partition Information"
+msgstr "Partitionsinformation"
+
+#: gui/infopane.cpp:94
+msgctxt "@label partition"
+msgid "File system:"
+msgstr "Dateisystem:"
+
+#: gui/infopane.cpp:95
+msgctxt "@label partition"
+msgid "Capacity:"
+msgstr "Größe:"
+
+#: gui/infopane.cpp:96
+msgctxt "@label partition"
+msgid "Available:"
+msgstr "Verfügbar:"
+
+#: gui/infopane.cpp:97
+msgctxt "@label partition"
+msgid "Used:"
+msgstr "Belegt:"
+
+#: gui/infopane.cpp:98
+msgctxt "@label partition"
+msgid "First sector:"
+msgstr "Erster Sektor:"
+
+#: gui/infopane.cpp:99
+msgctxt "@label partition"
+msgid "Last sector:"
+msgstr "Letzter Sektor:"
+
+#: gui/infopane.cpp:100
+msgctxt "@label partition"
+msgid "Number of sectors:"
+msgstr "Anzahl Sektoren:"
+
+#: gui/infopane.cpp:106
+msgctxt "@title:window"
+msgid "Device Information"
+msgstr "Geräteinformation"
+
+#: gui/infopane.cpp:109
+msgctxt "@label device"
+msgid "Path:"
+msgstr "Pfad:"
+
+#: gui/infopane.cpp:112
+msgctxt "@label device"
+msgid "%1 (read only)"
+msgstr "%1 (nur lesen)"
+
+#: gui/infopane.cpp:115
+msgctxt "@label device"
+msgid "Type:"
+msgstr "Typ:"
+
+#: gui/infopane.cpp:116
+msgctxt "@label device"
+msgid "Capacity:"
+msgstr "Größe:"
+
+#: gui/infopane.cpp:117
+msgctxt "@label device"
+msgid "Total sectors:"
+msgstr "Sektoren insgesamt:"
+
+#: gui/infopane.cpp:118
+msgctxt "@label device"
+msgid "Heads:"
+msgstr "Köpfe:"
+
+#: gui/infopane.cpp:119
+msgctxt "@label device"
+msgid "Cylinders:"
+msgstr "Zylinder:"
+
+#: gui/infopane.cpp:120
+msgctxt "@label device"
+msgid "Sectors:"
+msgstr "Sektoren:"
+
+#: gui/infopane.cpp:121
+msgctxt "@label device"
+msgid "Sector size:"
+msgstr "Sektorgröße:"
+
+#: gui/infopane.cpp:122
+msgctxt "@label device"
+msgid "Cylinder size:"
+msgstr "Zylindergröße:"
+
+#: gui/infopane.cpp:122
+msgctxt "@label"
+msgid "%1 Sectors"
+msgstr "%1 Sektoren"
+
+#: gui/infopane.cpp:123
+msgctxt "@label device"
+msgid "Primaries/Max:"
+msgstr "Primär/Max:"
+
+#: gui/insertdialog.cpp:37
+msgctxt "@title:window"
+msgid "Insert a partition"
+msgstr "Partition einfügen"
+
+#: gui/mainwindow.cpp:131
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to quit the application?</para><para>There is still "
+"an operation pending.</para>"
+msgid_plural ""
+"<para>Do you really want to quit the application?</para><para>There are "
+"still %1 operations pending.</para>"
+msgstr[0] ""
+"<para>Möchten Sie die Anwendung wirklich beenden?</para><para>Es steht noch "
+"eine Operation aus.</para>"
+msgstr[1] ""
+"<para>Möchten Sie die Anwendung wirklich beenden?</para><para>Es stehen noch "
+"%1 Operationen aus.</para>"
+
+#: gui/mainwindow.cpp:133
+msgctxt "@title:window"
+msgid "Discard pending operations and quit?"
+msgstr "Ausstehende Operationen verwerfen und beenden?"
+
+#: gui/mainwindow.cpp:134
+msgctxt "@action:button"
+msgid "&Quit <application>%1</application>"
+msgstr "&Beende <application>%1</application>"
+
+#: gui/mainwindow.cpp:166
+msgctxt "@action:inmenu"
+msgid "Undo"
+msgstr "Rückgängig"
+
+#: gui/mainwindow.cpp:167
+msgctxt "@info:tooltip"
+msgid "Undo the last operation"
+msgstr "Macht die letzte Operation rückgängig"
+
+#: gui/mainwindow.cpp:168
+msgctxt "@info:status"
+msgid "Remove the last operation from the list."
+msgstr "Entfernt die letzte Operation aus der Liste."
+
+#: gui/mainwindow.cpp:174
+msgctxt "@action:inmenu clear the list of operations"
+msgid "Clear"
+msgstr "Leeren"
+
+#: gui/mainwindow.cpp:175
+msgctxt "@info:tooltip"
+msgid "Clear all operations"
+msgstr "Alle Operationen entfernen"
+
+#: gui/mainwindow.cpp:176
+msgctxt "@info:status"
+msgid "Empty the list of pending operations."
+msgstr "Leert die Liste der ausstehenden Operationen."
+
+#: gui/mainwindow.cpp:181
+msgctxt "@action:inmenu apply all operations"
+msgid "Apply"
+msgstr "Anwenden"
+
+#: gui/mainwindow.cpp:182
+msgctxt "@info:tooltip"
+msgid "Apply all operations"
+msgstr "Alle Operationen anwenden"
+
+#: gui/mainwindow.cpp:183
+msgctxt "@info:status"
+msgid "Apply the pending operations in the list."
+msgstr "Wendet die ausstehenden Operationen in der Liste an."
+
+#: gui/mainwindow.cpp:193
+msgctxt "@action:inmenu"
+msgid "File System Support"
+msgstr "Unterstützte Dateisysteme"
+
+#: gui/mainwindow.cpp:194
+msgctxt "@info:tooltip"
+msgid "View file system support information"
+msgstr "Zeigt Informationen über die unterstützten Dateisysteme an"
+
+#: gui/mainwindow.cpp:195
+msgctxt "@info:status"
+msgid "Show information about supported file systems."
+msgstr "Anzeigen von Informationen über die unterstützten Dateisysteme"
+
+#: gui/mainwindow.cpp:199
+msgctxt "@action:inmenu refresh list of devices"
+msgid "Refresh Devices"
+msgstr "Geräte aktualisieren"
+
+#: gui/mainwindow.cpp:200
+msgctxt "@info:tooltip"
+msgid "Refresh all devices"
+msgstr "Alle Geräte aktualisieren"
+
+#: gui/mainwindow.cpp:201
+msgctxt "@info:status"
+msgid "Renew the devices list."
+msgstr "Liest die Liste der Geräte neu ein."
+
+#: gui/mainwindow.cpp:207
+msgctxt "@action:inmenu"
+msgid "Create New Partition Table"
+msgstr "Erzeuge neue Partitionstabelle"
+
+#: gui/mainwindow.cpp:208
+msgctxt "@info:tooltip"
+msgid "Create New Partition Table"
+msgstr "Erzeuge eine neue Partitionstabelle"
+
+#: gui/mainwindow.cpp:209
+msgctxt "@info:status"
+msgid "Create a new and empty partition table on a device."
+msgstr "Erzeugt eine neue und leere Partitionstabelle auf einem Gerät."
+
+#: gui/mainwindow.cpp:216
+msgctxt "@action:inmenu create a new partition"
+msgid "New"
+msgstr "Neu"
+
+#: gui/mainwindow.cpp:217
+msgctxt "@info:tooltip"
+msgid "New partition"
+msgstr "Neue Partition"
+
+#: gui/mainwindow.cpp:218
+msgctxt "@info:status"
+msgid "Create a new partition."
+msgstr "Erzeugt eine neue Partition"
+
+#: gui/mainwindow.cpp:224
+msgctxt "@action:inmenu"
+msgid "Resize/Move"
+msgstr "Größe ändern/verschieben"
+
+#: gui/mainwindow.cpp:225
+msgctxt "@info:tooltip"
+msgid "Resize or move partition"
+msgstr "Ändere die Größe oder verschiebe eine Partition"
+
+#: gui/mainwindow.cpp:226
+msgctxt "@info:status"
+msgid "Shrink, grow or move an existing partition."
+msgstr "Verkleinert, vergrößert oder verschiebt eine bestehende Partition."
+
+#: gui/mainwindow.cpp:232
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Löschen"
+
+#: gui/mainwindow.cpp:233
+msgctxt "@info:tooltip"
+msgid "Delete partition"
+msgstr "Lösche Partition"
+
+#: gui/mainwindow.cpp:234
+msgctxt "@info:status"
+msgid "Delete a partition."
+msgstr "Löscht eine Partition."
+
+#: gui/mainwindow.cpp:240
+msgctxt "@action:inmenu"
+msgid "Copy"
+msgstr "Kopieren"
+
+#: gui/mainwindow.cpp:241
+msgctxt "@info:tooltip"
+msgid "Copy partition"
+msgstr "Kopiere Partition"
+
+#: gui/mainwindow.cpp:242
+msgctxt "@info:status"
+msgid "Copy an existing partition."
+msgstr "Kopiert eine bestehende Partition."
+
+#: gui/mainwindow.cpp:248
+msgctxt "@action:inmenu"
+msgid "Paste"
+msgstr "Einfügen"
+
+#: gui/mainwindow.cpp:249
+msgctxt "@info:tooltip"
+msgid "Paste partition"
+msgstr "Partition einfügen"
+
+#: gui/mainwindow.cpp:250
+msgctxt "@info:status"
+msgid "Paste a copied partition."
+msgstr "Fügt eine kopierte Partition ein."
+
+#: gui/mainwindow.cpp:256
+msgctxt "@action:inmenu"
+msgid "Mount"
+msgstr "Einbinden"
+
+#: gui/mainwindow.cpp:257
+msgctxt "@info:tooltip"
+msgid "Mount or unmount partition"
+msgstr "Einbinden oder auswerfen einer Partition."
+
+#: gui/mainwindow.cpp:258
+msgctxt "@info:status"
+msgid "Mount or unmount a partition."
+msgstr "Bindet eine Partition ein oder wirft sie aus."
+
+#: gui/mainwindow.cpp:262
+msgctxt "@action:inmenu"
+msgid "Check"
+msgstr "Prüfen"
+
+#: gui/mainwindow.cpp:263
+msgctxt "@info:tooltip"
+msgid "Check partition"
+msgstr "Prüfen einer Partition"
+
+#: gui/mainwindow.cpp:264
+msgctxt "@info:status"
+msgid "Check a filesystem on a partition for errors."
+msgstr "Überprüft das Dateisystem auf einer Partition auf Fehler."
+
+#: gui/mainwindow.cpp:269
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#: gui/mainwindow.cpp:270
+msgctxt "@info:tooltip"
+msgid "Show properties dialog"
+msgstr "Anzeigen des Eigenschaften-Dialogs"
+
+#: gui/mainwindow.cpp:271
+msgctxt "@info:status"
+msgid "View and modify partition properties (label, partition flags etc.)"
+msgstr ""
+"Anzeigen und ändern von Eigenschaften einer Partition (Bezeichnung, "
+"Partitionsflags usw.)"
+
+#: gui/mainwindow.cpp:276
+msgctxt "@action:inmenu"
+msgid "Backup"
+msgstr "Sichern"
+
+#: gui/mainwindow.cpp:277
+msgctxt "@info:tooltip"
+msgid "Backup partition"
+msgstr "Sichern einer Partition"
+
+#: gui/mainwindow.cpp:278
+msgctxt "@info:status"
+msgid "Backup a partition to an image file."
+msgstr "Sichert eine Partition in eine Abbilddatei."
+
+#: gui/mainwindow.cpp:283
+msgctxt "@action:inmenu"
+msgid "Restore"
+msgstr "Wiederherstellen"
+
+#: gui/mainwindow.cpp:284
+msgctxt "@info:tooltip"
+msgid "Restore partition"
+msgstr "Wiederherstellen einer Partition"
+
+#: gui/mainwindow.cpp:285
+msgctxt "@info:status"
+msgid "Restore a partition from an image file."
+msgstr "Stellt eine Partition aus einer Abbilddatei wieder her."
+
+#: gui/mainwindow.cpp:334
+msgctxt "@info:status"
+msgid "One pending operation"
+msgid_plural "%1 pending operations"
+msgstr[0] "Eine ausstehende Operation"
+msgstr[1] "%1 ausstehende Operationen"
+
+#: gui/mainwindow.cpp:339
+msgctxt "@info/plain"
+msgid "Rescan devices..."
+msgstr "Suche nach Geräten..."
+
+#: gui/mainwindow.cpp:359
+msgctxt "@info/plain"
+msgid "Rescan finished."
+msgstr "Suche beendet."
+
+#: gui/mainwindow.cpp:671
+msgctxt "@info"
+msgid "The file system on partition <filename>%1</filename> could not be mounted."
+msgstr ""
+"Das Dateisystem auf Partition <filename>%1</filename> konnte nicht "
+"eingebunden werden."
+
+#: gui/mainwindow.cpp:671
+msgctxt "@title:window"
+msgid "Could not mount file system."
+msgstr "Konnte Dateisystem nicht einbinden."
+
+#: gui/mainwindow.cpp:676
+msgctxt "@info"
+msgid "The file system on partition <filename>%1</filename> could not be unmounted."
+msgstr ""
+"Die Einbindung des Dateisystems auf Partition <filename>%1</filename> konnte "
+"nicht gelöst werden."
+
+#: gui/mainwindow.cpp:676
+msgctxt "@title:window"
+msgid "Could not unmount file system."
+msgstr "Konnte Dateisystem nicht auswerfen."
+
+#: gui/mainwindow.cpp:712
+msgctxt "@info"
+msgid ""
+"<para>There are already %1 primary partitions on this device. This is the "
+"maximum number its partition table can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgstr ""
+"<para>Es sind bereits %1 primäre Partitionen auf diesem Gerät vorhanden. "
+"Dies ist die höchste Anzahl, die die Partitionstabelle auf diesem Gerät "
+"verwalten kann.</para> <para>Sie können keine primäre Partition darauf "
+"anlegen, wiederherstellen oder einfügen bevor Sie eine bestehende Partition "
+"löschen.</para>"
+
+#: gui/mainwindow.cpp:714
+msgctxt "@title:window"
+msgid "Too many primary partitions."
+msgstr "Zu viele primäre Partitionen."
+
+#: gui/mainwindow.cpp:775
+msgctxt "@info"
+msgid ""
+"<para>The partition <filename>%1</filename> cannot currently be deleted "
+"because one or more partitions with higher logical numbers are still mounted."
+"</para><para>Please unmount all partitions with higher logical numbers than %"
+"2 first.</para>"
+msgstr ""
+"<para>Die Partition <filename>%1</filename> kann gegenwärtig nicht gelöscht "
+"werden, weil eine oder mehrere Partitionen mit höheren logischen Nummern "
+"noch eingebunden sind.</para> <para>Bitte werfen Sie alle Partitionen mit "
+"höheren logischen Nummern als %2 zuvor aus.</para>"
+
+#: gui/mainwindow.cpp:778
+msgctxt "@title:window"
+msgid "Cannot delete partition."
+msgstr "Kann Partition nicht löschen."
+
+#: gui/mainwindow.cpp:788
+msgctxt "@info"
+msgid ""
+"Do you really want to delete the partition that is currently in the "
+"clipboard? It will no longer be available for pasting after it has been "
+"deleted."
+msgstr ""
+"<para>Möchten Sie die Partition in der Zwischenablage wirklich löschen?</"
+"para><para>Sie wird nicht mehr zum Einfügen zur Verfügung stehen, nachdem "
+"sie gelöscht wurde.</para>"
+
+#: gui/mainwindow.cpp:790
+msgctxt "@title:window"
+msgid "Really delete partition in the clipboard?"
+msgstr "Die Partition in der Zwischenablage wirklich löschen?"
+
+#: gui/mainwindow.cpp:791
+msgctxt "@action:button"
+msgid "&Delete it"
+msgstr "&Löschen"
+
+#: gui/mainwindow.cpp:826
+msgctxt "@info/plain"
+msgid ""
+"Partition <filename>%1</filename> has the same position and size after "
+"resize/move. Ignoring operation."
+msgstr ""
+"Partition <filename>%1</filename> hat die gleiche Position und Größe nach "
+"Größenänderung/Verschieben. Die Operation wird ignoriert."
+
+#: gui/mainwindow.cpp:849
+msgctxt "@info/plain"
+msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+msgstr "Die Partition <filename>%1</filename> wurde in die Zwischenablage kopiert."
+
+#: gui/mainwindow.cpp:926
+msgctxt "@info"
+msgid ""
+"<para>The selected partition is not large enough to hold the source "
+"partition or the backup file.</para><para>Pick another target or resize this "
+"partition so it is as large as the source.</para>"
+msgstr ""
+"<para>Die ausgewählte Partition ist nicht groß genug, um die Quellpartition "
+"oder die Abbilddatei aufzunehmen.</para><para>Wählen Sie eine andere "
+"Zielpartition oder ändern Sie die Größe dieser Partition so, dass sie groß "
+"genug für die Quelle ist.</para>"
+
+#: gui/mainwindow.cpp:927
+msgctxt "@title:window"
+msgid "Target not large enough"
+msgstr "Ziel nicht groß genug"
+
+#: gui/mainwindow.cpp:930
+msgctxt "@info"
+msgid ""
+"<para>It is not possible to create the target partition large enough to hold "
+"the source.</para><para>This may happen if not all partitions on a device "
+"start and end on cylinder boundaries or when copying a primary partition "
+"into an extended partition.</para>"
+msgstr ""
+"<para>Es ist nicht möglich, die Zielpartition groß genug zu erstellen, dass "
+"sie die Quelle aufnehmen kann.</para><para>Das kann geschehen wenn nicht "
+"alle Partitionen auf einem Gerät an Zylindergrenzen beginnen und enden oder "
+"wenn eine primäre Partition in eine erweiterte kopiert werden soll.</para>"
+
+#: gui/mainwindow.cpp:933
+msgctxt "@title:window"
+msgid "Cannot create target partition."
+msgstr "Kann Zielpartition nicht erstellen."
+
+#: gui/mainwindow.cpp:952
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to create a new partition table on the following "
+"device?</para><para><list><item><filename>%1</filename> (%2)</item></list></"
+"para><para><warning>This will destroy all data on the device.</warning></"
+"para>"
+msgstr ""
+"<para>Möchten Sie auf dem folgenden Gerät wirklich eine neue "
+"Partitionstabelle erstellen?</para> <para><list><item><filename>%1</"
+"filename> (%2)</item></list></para><para><warning>Dadurch werden alle Daten "
+"auf dem Gerät gelöscht.</warning></para>"
+
+#: gui/mainwindow.cpp:955
+msgctxt "@title:window"
+msgid "Destroy all data on device?"
+msgstr "Alle Daten auf dem Gerät löschen?"
+
+#: gui/mainwindow.cpp:956
+msgctxt "@action:button"
+msgid "&Create new partition table"
+msgstr "&Neue Partitionstabelle erstellen"
+
+#: gui/mainwindow.cpp:971
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to rescan the devices?</para><para><warning>This "
+"will also clear the list of pending operations.</warning></para>"
+msgstr ""
+"<para>Möchten Sie wirklich die Geräte aktualisieren?</"
+"para><para><warning>Dadurch wird auch die Liste der ausstehenden Operationen "
+"geleert.</warning></para>"
+
+#: gui/mainwindow.cpp:973
+msgctxt "@title:window"
+msgid "Really rescan the devices?"
+msgstr "Wirklich Geräte neu einlesen?"
+
+#: gui/mainwindow.cpp:974
+msgctxt "@action:button"
+msgid "&Rescan devices"
+msgstr "&Geräte neu einlesen"
+
+#: gui/mainwindow.cpp:983
+msgctxt "@info/plain"
+msgid "Undoing operation: %1"
+msgstr "Mache Operation rückgängig: %1"
+
+#: gui/mainwindow.cpp:995
+msgctxt "@info"
+msgid "Do you really want to clear the list of pending operations?"
+msgstr "Möchten Sie die Liste der ausstehenden Operationen wirklich leeren?"
+
+#: gui/mainwindow.cpp:996
+msgctxt "@title:window"
+msgid "Clear pending operations?"
+msgstr "Ausstehende Operationen löschen?"
+
+#: gui/mainwindow.cpp:997
+msgctxt "@action:button"
+msgid "&Clear pending operations"
+msgstr "&Ausstehende Operationen löschen"
+
+#: gui/mainwindow.cpp:1000
+msgctxt "@info/plain"
+msgid "Clearing the list of pending operations."
+msgstr "Liste der ausstehenden Operationen wird geleert."
+
+#: gui/mainwindow.cpp:1018
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to apply the pending operations listed below?</"
+"para><para><warning>This will permanently modify your disks.</warning></para>"
+msgstr ""
+"<para>Möchten Sie die unten aufgeführten ausstehenden Operationen wirklich "
+"anwenden?</para><para><warning>Dadurch werden Ihre Festplatten "
+"unwiderruflich verändert.</warning></para>"
+
+#: gui/mainwindow.cpp:1020
+msgctxt "@title:window"
+msgid "Apply pending operations?"
+msgstr "Ausstehende Operationen anwenden?"
+
+#: gui/mainwindow.cpp:1021
+msgctxt "@action:button"
+msgid "&Apply pending operations"
+msgstr "Ausstehende Operationen &anwenden"
+
+#: gui/mainwindow.cpp:1024
+msgctxt "@info/plain"
+msgid "Applying operations..."
+msgstr "Operationen werden angewandt..."
+
+#: gui/mainwindow.cpp:1074 gui/progressdialog.cpp:381
+msgctxt "@info"
+msgid "Do you want to overwrite the existing file <filename>%1</filename>?"
+msgstr "Möchten Sie die bestehende Datei <filename>%1</filename> überschreiben?"
+
+#: gui/mainwindow.cpp:1074 gui/progressdialog.cpp:381
+msgctxt "@title:window"
+msgid "Overwrite existing file?"
+msgstr "Bestehende Datei überschreiben?"
+
+#: gui/mainwindow.cpp:1074 gui/progressdialog.cpp:381
+msgctxt "@action:button"
+msgid "&Overwrite file"
+msgstr "&Datei überschreiben"
+
+#: gui/mainwindow.cpp:1106
+msgctxt "@info"
+msgid ""
+"The file system in the image file <filename>%1</filename> is too large to be "
+"restored to the selected partition."
+msgstr ""
+"Das Dateisystem in der Abbilddatei <filename>%1</filename> ist zu groß um in "
+"die ausgewählte Partition wiederhergestellt zu werden."
+
+#: gui/mainwindow.cpp:1106
+msgctxt "@title:window"
+msgid "Not enough space to restore file system."
+msgstr "Nicht genügend Platz um Dateisystem wiederherzustellen."
+
+#: gui/newdialog.cpp:40
+msgctxt "@title:window"
+msgid "Create a new partition"
+msgstr "Neue Partition anlegen"
+
+#: gui/newdialog.cpp:66 gui/newdialog.cpp:104
+msgctxt "@item:inlistbox partition role"
+msgid "Primary"
+msgstr "Primär"
+
+#: gui/newdialog.cpp:68 gui/newdialog.cpp:106
+msgctxt "@item:inlistbox partition role"
+msgid "Extended"
+msgstr "Erweitert"
+
+#: gui/newdialog.cpp:70 gui/newdialog.cpp:108
+msgctxt "@item:inlistbox partition role"
+msgid "Logical"
+msgstr "Logisch"
+
+#: gui/partpropsdialog.cpp:47
+msgctxt "@title:window"
+msgid "Partition properties: <filename>%1</filename>"
+msgstr "Partitionseigenschaften: <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:75
+msgctxt "@item mountpoint"
+msgid "(none found)"
+msgstr "(keiner gefunden)"
+
+#: gui/partpropsdialog.cpp:80
+msgctxt "@label partition state"
+msgid "idle"
+msgstr "nicht verwendet"
+
+#: gui/partpropsdialog.cpp:84
+msgctxt "@label partition state"
+msgid "At least one logical partition is mounted."
+msgstr "Mindestens eine logische Partition ist eingebunden."
+
+#: gui/partpropsdialog.cpp:86
+msgctxt "@label partition state"
+msgid "mounted on <filename>%1</filename>"
+msgstr "eingebunden auf <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:88
+msgctxt "@label partition state"
+msgid "mounted"
+msgstr "Eingebunden"
+
+#: gui/partpropsdialog.cpp:272
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Changing the file system on a partition "
+"already on disk will erase all its contents. If you continue now and apply "
+"the resulting operation in the main window, all data on <filename>%1</"
+"filename> will unrecoverably be lost.</para>"
+msgstr ""
+"<para><warning>Sie sind dabei, alle Daten auf Partition <filename>%1</"
+"filename> zu verlieren.</warning></para> <para>Durch das Ändern eines "
+"Dateisystems, das bereits auf der Festplatte erzeugt wurde, werden alle "
+"Daten darin gelöscht. Wenn Sie jetzt fortfahren und die entstandene "
+"Operation im Hauptfenster anwenden, werden alle Daten auf <filename>%1</"
+"filename> unwiderruflich verloren gehen.</para>"
+
+#: gui/partpropsdialog.cpp:274
+msgctxt "@title:window"
+msgid "Really recreate <filename>%1</filename> with file system %2?"
+msgstr "Wirklich <filename>%1</filename> mit dem Dateisystem %2 neu erstellen?"
+
+#: gui/partpropsdialog.cpp:275
+msgctxt "@action:button"
+msgid "&Change the file system"
+msgstr "&Dateisystem ändern"
+
+#: gui/partpropsdialog.cpp:276
+msgctxt "@action:button"
+msgid "&Do not change the file system"
+msgstr "Dateisystem &nicht ändern"
+
+#: gui/partpropsdialog.cpp:314
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Recreating a file system will erase all its "
+"contents. If you continue now and apply the resulting operation in the main "
+"window, all data on <filename>%1</filename> will unrecoverably be lost.</"
+"para>"
+msgstr ""
+"<para><warning>Sie sind dabei, alle Daten auf Partition <filename>%1</"
+"filename> zu verlieren.</warning></para> <para>Durch das Neuerstellen eines "
+"Dateisystems werden alle Daten darin gelöscht. Wenn Sie jetzt fortfahren und "
+"die entstandene Operation im Hauptfenster anwenden, werden alle Daten auf "
+"<filename>%1</filename> unwiderruflich verloren gehen.</para>"
+
+#: gui/partpropsdialog.cpp:316
+msgctxt "@title:window"
+msgid "Really recreate file system on <filename>%1</filename>?"
+msgstr "Dateisystem auf <filename>%1</filename> wirklich neu erstellen?"
+
+#: gui/partpropsdialog.cpp:317
+msgctxt "@action:button"
+msgid "&Recreate the file system"
+msgstr "&Dateisystem neu erstellen"
+
+#: gui/partpropsdialog.cpp:318
+msgctxt "@action:button"
+msgid "&Do not recreate the file system"
+msgstr "Dateisystem &nicht neu erstellen"
+
+#: gui/progressdialog.cpp:104
+msgctxt "@info:progress"
+msgid "Setting up..."
+msgstr "Einrichten..."
+
+#: gui/progressdialog.cpp:162
+msgctxt "@info:progress"
+msgid "Waiting for operation to finish..."
+msgstr "Warte bis Operation beendet ist..."
+
+#: gui/progressdialog.cpp:173
+msgctxt "@info"
+msgid "Do you really want to cancel?"
+msgstr "Möchten Sie wirklich abbrechen?"
+
+#: gui/progressdialog.cpp:173
+msgctxt "@title:window"
+msgid "Cancel Running Operations"
+msgstr "Laufende Operationen abbrechen"
+
+#: gui/progressdialog.cpp:173
+msgctxt "@action:button"
+msgid "Yes, cancel operations"
+msgstr "Ja, Operationen abbrechen"
+
+#: gui/progressdialog.cpp:193
+msgctxt "@info:progress"
+msgid "All operations successfully finished."
+msgstr "Alle Operationen wurden erfolgreich ausgeführt."
+
+#: gui/progressdialog.cpp:198
+msgctxt "@info:progress"
+msgid "Operations cancelled."
+msgstr "Operationen abgebrochen"
+
+#: gui/progressdialog.cpp:203
+msgctxt "@info:progress"
+msgid "There were errors while applying operations. Aborted."
+msgstr "Während des Anwendens der Operationen sind Fehler aufgetreten. Abgebrochen."
+
+#: gui/progressdialog.cpp:314
+msgctxt "@info:progress"
+msgid "[%1/%2] - %3: %4"
+msgstr "[%1/%2] - %3: %4"
+
+#: gui/progressdialog.cpp:350
+msgctxt "@info:progress"
+msgid "Total Time: %1"
+msgstr "Gesamtzeit: %1"
+
+#: gui/progressdialog.cpp:394
+msgctxt "@info"
+msgid "Could not open file <filename>%1</filename> for writing."
+msgstr "Konnte Datei <filename>%1</filename> nicht zum Schreiben öffnen."
+
+#: gui/progressdialog.cpp:394
+msgctxt "@title:window"
+msgid "Could not save report."
+msgstr "Konnte Bericht nicht speichern."
+
+#: gui/progressdialog.cpp:417
+msgctxt "@info"
+msgid "The configured external browser could not be run. Please check your settings."
+msgstr ""
+"Der eingestellte Webbrowser konnte nicht gestartet werden. Bitte überprüfen "
+"Sie Ihre Einstellungen."
+
+#: gui/progressdialog.cpp:417 gui/progressdialog.cpp:420
+msgctxt "@title:window"
+msgid "Could not launch browser."
+msgstr "Konnte Webbrowser nicht starten"
+
+#: gui/progressdialog.cpp:420
+msgctxt "@info"
+msgid "Could not create temporary file <filename>%1</filename> for writing."
+msgstr "Konnte temporäre Datei <filename>%1</filename> nicht zum Schreiben anlegen."
+
+#: gui/resizedialog.cpp:36
+msgctxt "@title:window"
+msgid "Resize/move partition: <filename>%1</filename>"
+msgstr "Größe ändern/verschieben von einer Partition: <filename>%1</filename>"
+
+#: jobs/backupfilesystemjob.cpp:60
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on source partition <filename>%1</filename> for "
+"backup."
+msgstr ""
+"Konnte Dateisystem auf Quellpartition <filename>%1</filename> nicht zum "
+"Sichern öffnen."
+
+#: jobs/backupfilesystemjob.cpp:62
+msgctxt "@info/plain"
+msgid "Could not create backup file <filename>%1</filename>."
+msgstr "Konnte Sicherungsdatei <filename>%1</filename> nicht anlegen."
+
+#: jobs/backupfilesystemjob.cpp:74
+msgctxt "@info/plain"
+msgid ""
+"Back up file system on partition <filename>%1</filename> to <filename>%2</"
+"filename>"
+msgstr ""
+"Sichern des Dateisystems auf Partition <filename>%1</filename> nach "
+"<filename>%2</filename>"
+
+#: jobs/checkfilesystemjob.cpp:53
+msgctxt "@info/plain"
+msgid "Check file system on partition <filename>%1</filename>"
+msgstr "Überprüfe Dateisystem auf Partition <filename>%1</filename>"
+
+#: jobs/copyfilesystemjob.cpp:55
+msgctxt "@info/plain"
+msgid ""
+"Cannot copy file system: File system on target partition <filename>%1</"
+"filename> is smaller than the file system on source partition <filename>%2</"
+"filename>."
+msgstr ""
+"Kann Dateisystem nicht kopieren: Dateisystem auf Zielpartition <filename>%1</"
+"filename> ist kleiner als das Dateisystem auf Quellpartition <filename>%2</"
+"filename>."
+
+#: jobs/copyfilesystemjob.cpp:64
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on source partition <filename>%1</filename> for "
+"copying."
+msgstr ""
+"Konnte Dateisystem auf Quellpartition <filename>%1</filename> nicht zum "
+"Kopieren öffnen."
+
+#: jobs/copyfilesystemjob.cpp:66
+msgctxt "@info/plain"
+msgid ""
+"Could not open file system on target partition <filename>%1</filename> for "
+"copying."
+msgstr ""
+"Konnte Dateisystem auf Zielpartition <filename>%1</filename> nicht zum "
+"Kopieren öffnen."
+
+#: jobs/copyfilesystemjob.cpp:70 jobs/movefilesystemjob.cpp:75
+#: jobs/restorefilesystemjob.cpp:83
+msgctxt "@info/plain"
+msgid "Closing device. This may take a few seconds."
+msgstr "Schließe Gerät. Dies kann einige Sekunden dauern."
+
+#: jobs/copyfilesystemjob.cpp:93
+msgctxt "@info/plain"
+msgid ""
+"Copy file system on partition <filename>%1</filename> to partition <filename>"
+"%2</filename>"
+msgstr ""
+"Kopiere Dateisystem auf Partition <filename>%1</filename> nach Partition "
+"<filename>%2</filename>"
+
+#: jobs/createfilesystemjob.cpp:52
+msgctxt "@info/plain"
+msgid "Create file system %1 on partition <filename>%2</filename>"
+msgstr "Erzeuge Dateisystem %1 auf Partition <filename>%2</filename>"
+
+#: jobs/createpartitionjob.cpp:60
+msgctxt "@info/plain"
+msgid "Unknown partition role for new partition <filename>%1</filename> (roles: %2)"
+msgstr ""
+"Unbekannte Partitionsrolle für neue Partition <filename>%1</filename> "
+"(Rollen: %2)"
+
+#: jobs/createpartitionjob.cpp:89
+msgctxt "@info/plain"
+msgid ""
+"Failed to add partition <filename>%1</filename> to device <filename>%2</"
+"filename>."
+msgstr ""
+"Das Hinzufügen der Partition <filename>%1</filename> zu Gerät <filename>%2</"
+"filename> ist fehlgeschlagen."
+
+#: jobs/createpartitionjob.cpp:94
+msgctxt "@info/plain"
+msgid "Failed to create a new partition: could not get geometry for constraint."
+msgstr ""
+"Erstellen einer neuen Partition fehlgeschlagen: Konnte Geometrie für "
+"Constraint nicht erstellen."
+
+#: jobs/createpartitionjob.cpp:97
+msgctxt "@info/plain"
+msgid "Failed to create new partition <filename>%1</filename>."
+msgstr "Das Erstellen der neuen Partition <filename>%1</filename> ist fehlgeschlagen."
+
+#: jobs/createpartitionjob.cpp:102
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> to create new partition "
+"<filename>%2</filename>."
+msgstr ""
+"Konnte Gerät <filename>%1</filename> nicht öffnen, um Partition <filename>%"
+"2</filename> zu erstellen."
+
+#: jobs/createpartitionjob.cpp:112
+msgctxt "@info/plain"
+msgid "Create new partition <filename>%1</filename>"
+msgstr "Erstelle neue Partition <filename>%1</filename>"
+
+#: jobs/createpartitionjob.cpp:114
+msgctxt "@info/plain"
+msgid "Create new partition on device <filename>%1</filename>"
+msgstr "Erstelle neue Partition auf Gerät <filename>%1</filename>"
+
+#: jobs/createpartitiontablejob.cpp:54
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not retrieve partition table type \"%1"
+"\" for <filename>%2</filename>."
+msgstr ""
+"Erstellen der Partitionstabelle fehlgeschlagen: Konnte Typ \"%1\" der "
+"Partitionstabelle für <filename>%2</filename> nicht auslesen."
+
+#: jobs/createpartitiontablejob.cpp:59
+msgctxt "@info/plain"
+msgid ""
+"Creating partition table failed: Could not open device <filename>%1</"
+"filename>."
+msgstr ""
+"Erstellen der Partitionstabelle fehlgeschlagen: Konnte Gerät <filename>%1</"
+"filename> nicht öffnen."
+
+#: jobs/createpartitiontablejob.cpp:68
+msgctxt "@info/plain"
+msgid "Create new partition table on device <filename>%1</filename>"
+msgstr "Erstelle neue Partitionstabelle auf Gerät <filename>%1</filename>"
+
+#: jobs/deletefilesystemjob.cpp:69
+msgctxt "@info/plain"
+msgid "Failed to erase reiser4 signature on partition <filename>%1</filename>."
+msgstr ""
+"Löschen der reiser4 Signatur auf Partition <filename>%1</filename> "
+"fehlgeschlagen."
+
+#: jobs/deletefilesystemjob.cpp:78
+msgctxt "@info/plain"
+msgid "Failed to clobber file system on partition <filename>%1</filename>."
+msgstr ""
+"Ausradieren des Dateisystems auf Partition <filename>%1</filename> "
+"fehlgeschlagen."
+
+#: jobs/deletefilesystemjob.cpp:81
+msgctxt "@info/plain"
+msgid ""
+"Could not delete file system on partition <filename>%1</filename>: Failed to "
+"get partition."
+msgstr ""
+"Konnte Dateisystem auf <filename>%1</filename> nicht löschen: Partition "
+"nicht gefunden."
+
+#: jobs/deletefilesystemjob.cpp:86
+msgctxt "@info/plain"
+msgid ""
+"Could not delete file system signature for partition <filename>%1</"
+"filename>: Failed to open device <filename>%2</filename>."
+msgstr ""
+"Konnte Dateisystemsignatur auf Partition <filename>%1</filename> nicht "
+"löschen: Öffnen von Gerät <filename>%2</filename> fehlgeschlagen."
+
+#: jobs/deletefilesystemjob.cpp:95
+msgctxt "@info/plain"
+msgid "Delete file system on <filename>%1</filename>"
+msgstr "Lösche Dateisystem auf <filename>%1</filename>"
+
+#: jobs/deletepartitionjob.cpp:64
+msgctxt "@info/plain"
+msgid "Could not delete partition <filename>%1</filename>."
+msgstr "Konnte Partition <filename>%1</filename> nicht löschen."
+
+#: jobs/deletepartitionjob.cpp:67
+msgctxt "@info/plain"
+msgid ""
+"Deleting partition failed: Partition to delete (<filename>%1</filename>) not "
+"found on disk."
+msgstr ""
+"Löschen der Partition fehlgeschlagen: Zu löschende Partition (<filename>%1</"
+"filename>) nicht auf Festplatte gefunden."
+
+#: jobs/deletepartitionjob.cpp:72
+msgctxt "@info/plain"
+msgid "Deleting partition failed: Could not open device <filename>%1</filename>."
+msgstr ""
+"Löschen der Partition fehlgeschlagen: Konnte Gerät <filename>%1</filename> "
+"nicht öffnen."
+
+#: jobs/deletepartitionjob.cpp:81
+msgctxt "@info/plain"
+msgid "Delete the partition <filename>%1</filename>"
+msgstr "Löschen der Partition <filename>%1</filename>"
+
+#: jobs/job.cpp:125
+msgctxt "@info/plain"
+msgid ""
+"The sector size in the source and target for copying are not the same. This "
+"is currently unsupported."
+msgstr ""
+"Die Sektorgrößen von Quelle und Ziel für das Kopieren sind nicht gleich. "
+"Dies wird gegenwärtig nicht unterstützt."
+
+#: jobs/job.cpp:144
+msgctxt "@info/plain"
+msgid "Copying %1 blocks (%2 sectors) from %3 to %4, direction: %5."
+msgstr "Kopiere %1 Blöcke (%2 Sektoren) von %3 nach %4, Richtung: %5."
+
+#: jobs/job.cpp:179
+msgctxt "@info/plain"
+msgid "Copying remainder of block size %1 from  %2 to %3."
+msgstr "Kopiere Rest von Blockgröße %1 von %2 nach %3."
+
+#: jobs/job.cpp:192
+msgctxt "@info/plain"
+msgid "Copying %1 blocks (%2 sectors) finished."
+msgstr "Kopieren von %1 Blöcken (%2 Sektoren) abgeschlossen."
+
+#: jobs/job.cpp:201
+msgctxt "@info/plain"
+msgid "Source and target for copying do not overlap: Rollback is not required."
+msgstr ""
+"Quelle und Ziel des Kopiervorgangs überschneiden sich nicht, kein rückgängig "
+"machen erforderlich."
+
+#: jobs/job.cpp:227
+msgctxt "@info/plain"
+msgid "Rollback from: First sector: %1, last sector: %2."
+msgstr "Rollback von: Erster Sektor: %1, letzter Sektor: %2."
+
+#: jobs/job.cpp:228
+msgctxt "@info/plain"
+msgid "Rollback to: First sector: %1, last sector: %2."
+msgstr "Rollback nach: Erster Sektor: %1, letzter Sektor: %2."
+
+#: jobs/job.cpp:233 jobs/job.cpp:240
+msgctxt "@info/plain"
+msgid "Could not open device <filename>%1</filename> to rollback copying."
+msgstr ""
+"Konnte Gerät <filename>%1</filename> zum Rückgängigmachen des Kopierens "
+"nicht öffnen."
+
+#: jobs/job.cpp:248
+msgctxt "@info/plain"
+msgid "Rollback failed: Source or target are not devices."
+msgstr "Rollback fehlgeschlagen. Quelle oder Ziel ist kein Gerät."
+
+#: jobs/job.cpp:266
+msgctxt "@info/plain"
+msgid ""
+"Could not determine file system of partition at sector %1 on device "
+"<filename>%2</filename>."
+msgstr ""
+"Konnte Dateisystem der Partition bei Sektor %1 auf Gerät <filename>%2</"
+"filename> nicht feststellen."
+
+#: jobs/job.cpp:333
+msgctxt "@info/plain"
+msgid "Job: %1"
+msgstr "Aufgabe: %1"
+
+#: jobs/job.cpp:342
+msgctxt "@info/plain job status (error, warning, ...)"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: jobs/job.cpp:366
+msgctxt "@info:progress job"
+msgid "Pending"
+msgstr "Ausstehend"
+
+#: jobs/job.cpp:367
+msgctxt "@info:progress job"
+msgid "Success"
+msgstr "Erfolg"
+
+#: jobs/job.cpp:368
+msgctxt "@info:progress job"
+msgid "Error"
+msgstr "Fehler"
+
+#: jobs/movefilesystemjob.cpp:59
+msgctxt "@info/plain"
+msgid "Could not open file system on partition <filename>%1</filename> for moving."
+msgstr ""
+"Konnte Dateisystem auf Partition <filename>%1</filename> nicht zum "
+"Verschieben öffnen."
+
+#: jobs/movefilesystemjob.cpp:61
+msgctxt "@info/plain"
+msgid ""
+"Could not create target for moving file system on partition <filename>%1</"
+"filename>."
+msgstr ""
+"Konnte Ziel zum Verschieben des Dateisystems auf Partition <filename>%1</"
+"filename> nicht erstellen."
+
+#: jobs/movefilesystemjob.cpp:73
+msgctxt "@info/plain"
+msgid "Rollback for file system on partition <filename>%1</filename> failed."
+msgstr ""
+"Rollback für das Dateisystem auf Partition <filename>%1</filename> "
+"fehlgeschlagen."
+
+#: jobs/movefilesystemjob.cpp:86
+msgctxt "@info/plain"
+msgid "Move the file system on partition <filename>%1</filename> to sector %2"
+msgstr "Verschiebe das Dateisystem auf Partition <filename>%1</filename> zu Sektor %2"
+
+#: jobs/resizefilesystemjob.cpp:67
+msgctxt "@info/plain"
+msgid ""
+"The file system on partition <filename>%1</filename> already has the "
+"requested length of %2 sectors."
+msgstr ""
+"Das Dateisystem auf Partition <filename>%1</filename> hat bereits die "
+"gewünschte Länge von %2 Sektoren."
+
+#: jobs/resizefilesystemjob.cpp:72
+msgctxt "@info/plain"
+msgid "Resizing file system from %1 to %2 sectors."
+msgstr "Ändere die Größe des Dateisystems von %1 auf %2 Sektoren."
+
+#: jobs/resizefilesystemjob.cpp:81
+msgctxt "@info/plain"
+msgid "Resizing a %1 file system using LibParted internal functions."
+msgstr "Ändere ein %1 Dateisystem mit Hilfe von LibParted-internen Funktionen."
+
+#: jobs/resizefilesystemjob.cpp:94
+msgctxt "@info/plain"
+msgid ""
+"The file system on partition <filename>%1</filename> cannot be resized "
+"because there is no support for it."
+msgstr ""
+"Die Größe des Dateisystems auf Partition <filename>%1</filename> kann nicht "
+"geändert werden weil die Unterstützung dafür fehlt."
+
+#: jobs/resizefilesystemjob.cpp:113
+msgctxt "@info/plain"
+msgid ""
+"Resizing file system on partition <filename>%1</filename>: Could not open "
+"device <filename>%2</filename>."
+msgstr ""
+"Ändern der Dateisystemgröße auf Partition <filename>%1</filename>: Konnte "
+"Gerät <filename>%2</filename> nicht öffnen."
+
+#: jobs/resizefilesystemjob.cpp:128
+msgctxt "@info/plain"
+msgid "Successfully resized file system using LibParted."
+msgstr ""
+"Größe des Dateisystems mit Hilfe von LibParted-internen Funktionen "
+"erfolgreich geändert."
+
+#: jobs/resizefilesystemjob.cpp:130
+msgctxt "@info/plain"
+msgid "Could not resize file system on partition <filename>%1</filename>."
+msgstr ""
+"Konnte Dateisystem auf Partition <filename>%1</filename> nicht in der Größe "
+"verändern."
+
+#: jobs/resizefilesystemjob.cpp:133
+msgctxt "@info/plain"
+msgid ""
+"Could not get geometry for resized partition <filename>%1</filename> while "
+"trying to resize the file system."
+msgstr ""
+"Konnte Geometrie der in der Größe veränderten Partition <filename>%1</"
+"filename> nicht ermitteln als die Größe des Dateisystems verändert werden "
+"sollte."
+
+#: jobs/resizefilesystemjob.cpp:138
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition <filename>%1</filename> while trying to resize the "
+"file system."
+msgstr ""
+"Konnte Partition <filename>%1</filename> nicht öffnen als das Dateisystem in "
+"der Größe verändert/verschoben werden sollte."
+
+#: jobs/resizefilesystemjob.cpp:141
+msgctxt "@info/plain"
+msgid ""
+"Could not read geometry for partition <filename>%1</filename> while trying "
+"to resize the file system."
+msgstr ""
+"Konnte Geometrie der Partition <filename>%1</filename> nicht lesen als die "
+"Größe des Dateisystems verändert werden sollte."
+
+#: jobs/resizefilesystemjob.cpp:151
+msgctxt "@info/plain"
+msgid "Maximize file system on <filename>%1</filename> to fill the partition"
+msgstr ""
+"Maximiere Dateisystem auf <filename>%1</filename>, so dass es die Partition "
+"ausfüllt"
+
+#: jobs/resizefilesystemjob.cpp:153
+msgctxt "@info/plain"
+msgid "Resize file system on partition <filename>%1</filename> to %2 sectors"
+msgstr ""
+"Ändere Größe des Dateisystems auf Partition <filename>%1</filename> auf %2 "
+"Sektoren."
+
+#: jobs/restorefilesystemjob.cpp:65
+msgctxt "@info/plain"
+msgid "Could not open backup file <filename>%1</filename> to restore from."
+msgstr ""
+"Konnte Abbilddatei <filename>%1</filename> für das Wiederherstellen nicht "
+"öffnen."
+
+#: jobs/restorefilesystemjob.cpp:67
+msgctxt "@info/plain"
+msgid "Could not open target partition <filename>%1</filename> to restore to."
+msgstr ""
+"Konnte Zielpartition <filename>%1</filename> für das Wiederherstellen nicht "
+"öffnen."
+
+#: jobs/restorefilesystemjob.cpp:94
+msgctxt "@info/plain"
+msgid ""
+"Restore the file system from file <filename>%1</filename> to partition "
+"<filename>%2</filename>"
+msgstr ""
+"Stelle Dateisystem aus Datei <filename>%1</filename> auf Partition <filename>"
+"%2</filename> wieder her."
+
+#: jobs/setfilesystemlabeljob.cpp:47
+msgctxt "@info/plain"
+msgid ""
+"File system on partition <filename>%1</filename> does not support setting "
+"labels. Job ignored."
+msgstr ""
+"Dateisystem <filename>%1</filename> unterstützt das Setzen von Bezeichnungen "
+"nicht. Aufgabe ignoriert."
+
+#: jobs/setfilesystemlabeljob.cpp:63
+msgctxt "@info/plain"
+msgid "Set the file system label on partition <filename>%1</filename> to \"%2\""
+msgstr ""
+"Setze die Dateisystembezeichnung von Partition <filename>%1</filename> auf "
+"\"%2\""
+
+#: jobs/setpartflagsjob.cpp:81
+msgctxt "@info/plain"
+msgid "The flag \"%1\" is not available on the partition's partition table."
+msgstr ""
+"Das Flag \"%1\" steht in der Partitionstabelle der Partition nicht zur "
+"Verfügung."
+
+#: jobs/setpartflagsjob.cpp:95
+msgctxt "@info flag turned on, active"
+msgid "on"
+msgstr "an"
+
+#: jobs/setpartflagsjob.cpp:95
+msgctxt "@info flag turned off, inactive"
+msgid "off"
+msgstr "aus"
+
+#: jobs/setpartflagsjob.cpp:95
+msgctxt "@info/plain"
+msgid ""
+"There was an error setting flag %1 for partition <filename>%2</filename> to "
+"state %3."
+msgstr ""
+"Beim Setzen von Flag %1 für die Partition <filename>%2</filename> auf %3 ist "
+"ein Fehler aufgetreten."
+
+#: jobs/setpartflagsjob.cpp:105
+msgctxt "@info/plain"
+msgid ""
+"Could not find partition <filename>%1</filename> on device <filename>%2</"
+"filename> to set partition flags."
+msgstr ""
+"Konnte Partition <filename>%1</filename> auf Gerät <filename>%2</filename> "
+"nicht finden, um Partitionsflags zu setzen."
+
+#: jobs/setpartflagsjob.cpp:110
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> to set partition flags for "
+"partition <filename>%2</filename>."
+msgstr ""
+"Konnte Gerät <filename>%1</filename> zum Setzen der Partitionsflags von "
+"Partition <filename>%2</filename> nicht öffnen."
+
+#: jobs/setpartflagsjob.cpp:159 ops/setpartflagsoperation.cpp:59
+msgctxt "@info/plain"
+msgid "Clear flags for partition <filename>%1</filename>"
+msgstr "Flags von Partition <filename>%1</filename> löschen"
+
+#: jobs/setpartflagsjob.cpp:161
+msgctxt "@info/plain"
+msgid "Set the flags for partition <filename>%1</filename> to \"%2\""
+msgstr "Setze die Flags von Partition <filename>%1</filename> auf \"%2\""
+
+#: jobs/setpartgeometryjob.cpp:64
+msgctxt "@info/plain"
+msgid ""
+"Could not set geometry for partition <filename>%1</filename> while trying to "
+"resize/move it."
+msgstr ""
+"Konnte Geometrie für Partition <filename>%1</filename> nicht setzen als sie "
+"in der Größe verändert/verschoben werden sollte."
+
+#: jobs/setpartgeometryjob.cpp:67
+msgctxt "@info/plain"
+msgid ""
+"Could not get constraint for partition <filename>%1</filename> while trying "
+"to resize/move it."
+msgstr ""
+"Konnte Constraint für Partition <filename>%1</filename> nicht erhalten als "
+"sie in der Größe verändert/verschoben werden sollte."
+
+#: jobs/setpartgeometryjob.cpp:70
+msgctxt "@info/plain"
+msgid ""
+"Could not get geometry for partition <filename>%1</filename> while trying to "
+"resize/move it."
+msgstr ""
+"Konnte Geometrie für Partition <filename>%1</filename> nicht auslesen als "
+"sie in der Größe verändert/verschoben werden sollte."
+
+#: jobs/setpartgeometryjob.cpp:73
+msgctxt "@info/plain"
+msgid ""
+"Could not open partition <filename>%1</filename> while trying to resize/move "
+"it."
+msgstr ""
+"Konnte Partition <filename>%1</filename> nicht öffnen als sie in der Größe "
+"verändert/verschoben werden sollte."
+
+#: jobs/setpartgeometryjob.cpp:78
+msgctxt "@info/plain"
+msgid ""
+"Could not open device <filename>%1</filename> while trying to resize/move "
+"partition <filename>%2</filename>."
+msgstr ""
+"Konnte Gerät <filename>%1</filename> nicht öffnen als die Größe von "
+"Partition <filename>%2</filename> geändert oder diese verschoben werden "
+"sollte."
+
+#: jobs/setpartgeometryjob.cpp:87
+msgctxt "@info/plain"
+msgid ""
+"Set geometry of partition <filename>%1</filename>: Start sector: %2, length: "
+"%3"
+msgstr ""
+"Setze Geometrie von Partition <filename>%1</filename>: Startsektor: %2, "
+"Länge: %3."
+
+#: main.cpp:43
+msgctxt "@info"
+msgid ""
+"<para><warning>You do not have administrative privileges.</warning></"
+"para><para>It is possible to run <application>%1</application> without these "
+"privileges. You will, however, <emphasis>not</emphasis> be allowed to apply "
+"operations.</para><para>Do you want to continue running <application>%1</"
+"application>?</para>"
+msgstr ""
+"<para><warning>Sie haben keine Administratorrechte.</warning></para> "
+"<para>Es ist möglich, <application>%1</application> ohne diese Rechte "
+"auszuführen. Sie werden jedoch <emphasis>nicht</emphasis> die Möglichkeit "
+"haben, Operationen anzuwenden.</para> <para>Möchten Sie <application>%1</"
+"application> weiterhin ausführen?</para>"
+
+#: main.cpp:48
+msgctxt "@title:window"
+msgid "No administrative privileges"
+msgstr "Keine Administratorrechte"
+
+#: main.cpp:49
+msgctxt "@action:button"
+msgid "Run without administrative privileges"
+msgstr "Ohne Administratorrechte ausführen"
+
+#: main.cpp:61
+msgctxt "@title"
+msgid "<application>KDE Partition Manager</application>"
+msgstr "<application>KDE Partitionsmanager</application>"
+
+#: main.cpp:63
+msgctxt "@title"
+msgid "Manage your disks, partitions and file systems"
+msgstr "Verwalten Sie Ihre Festplatten, Partitionen und Dateisysteme"
+
+#: main.cpp:65
+msgid "(c) 2008 Volker Lanz"
+msgstr "(c) 2008 Volker Lanz"
+
+#: main.cpp:67
+msgid "Volker Lanz"
+msgstr "Volker Lanz"
+
+#: ops/backupoperation.cpp:45
+msgctxt "@info/plain"
+msgid "Backup partition <filename>%1</filename> (%2, %3) to <filename>%4</filename>"
+msgstr ""
+"Partition <filename>%1</filename> (%2, %3) nach <filename>%4</filename> "
+"sichern"
+
+#: ops/checkoperation.cpp:47
+msgctxt "@info/plain"
+msgid "Check and repair partition <filename>%1</filename> (%2, %3)"
+msgstr "Prüfen und reparieren von Partition <filename>%1</filename> (%2, %3)"
+
+#: ops/copyoperation.cpp:146 ops/restoreoperation.cpp:127
+msgctxt "@info/plain"
+msgid ""
+"Warning: Maximizing file system on target partition <filename>%1</filename> "
+"to the size of the partition failed."
+msgstr ""
+"Warnung: Ändern der Größe des Dateisystems auf der Zielpartition <filename>%"
+"1</filename> zur Größe der Partition fehlgeschlagen."
+
+#: ops/copyoperation.cpp:151
+msgctxt "@info/plain"
+msgid "Checking target partition <filename>%1</filename> after copy failed."
+msgstr ""
+"Überprüfen von Zeilpartition <filename>%1</filename> nach dem Kopieren "
+"fehlgeschlagen."
+
+#: ops/copyoperation.cpp:161
+msgctxt "@info/plain"
+msgid "Copying source to target partition failed."
+msgstr "Kopieren der Quelle in die Zielpartition fehlgeschlagen."
+
+#: ops/copyoperation.cpp:165
+msgctxt "@info/plain"
+msgid "Creating target partition for copying failed."
+msgstr "Erstellen der Zielpartition für das Kopieren fehlgeschlagen."
+
+#: ops/copyoperation.cpp:168
+msgctxt "@info/plain"
+msgid "Checking source partition <filename>%1</filename> failed."
+msgstr "Überprüfen der Quellpartition <filename>%1</filename> fehlgeschlagen."
+
+#: ops/copyoperation.cpp:175 ops/operation.cpp:166 ops/resizeoperation.cpp:168
+#: ops/restoreoperation.cpp:148
+msgctxt "@info/plain status (success, error, warning...) of operation"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: ops/copyoperation.cpp:185
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> (%"
+"5, %6)"
+msgstr ""
+"Kopiere Partition <filename>%1</filename> (%2, %3) nach <filename>%4</"
+"filename> (%5, %6)"
+
+#: ops/copyoperation.cpp:194
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> (%"
+"5, %6) and grow it to %7"
+msgstr ""
+"Kopiere Partition <filename>%1</filename> (%2, %3) nach <filename>%4</"
+"filename> (%5, %6) und vergrößere sie auf %7"
+
+#: ops/copyoperation.cpp:206
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+"(starting at %4) on <filename>%5</filename>"
+msgstr ""
+"Kopiere Partition <filename>%1</filename> (%2, %3) in freien Speicherplatz "
+"(beginnend bei %4) auf <filename>%5</filename>"
+
+#: ops/copyoperation.cpp:214
+msgctxt "@info/plain"
+msgid ""
+"Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+"(starting at %4) on <filename>%5</filename> and grow it to %6"
+msgstr ""
+"Kopiere Partition <filename>%1</filename> (%2, %3) in freien Speicherplatz "
+"(beginnend bei %4) auf <filename>%5</filename> und vergrößere sie auf %6"
+
+#: ops/createfilesystemoperation.cpp:78
+msgctxt "@info/plain"
+msgid "Create filesystem %1 on partition <filename>%2</filename>"
+msgstr "Erzeuge Dateisystem %1 auf Partition <filename>%2</filename>"
+
+#: ops/createpartitiontableoperation.cpp:63
+msgctxt "@info/plain"
+msgid "Create a new partition table on <filename>%1</filename>"
+msgstr "Erzeuge eine neue Partitionstabelle auf <filename>%1</filename>"
+
+#: ops/deleteoperation.cpp:67
+msgctxt "@info/plain"
+msgid "Delete partition <filename>%1</filename> (%2, %3)"
+msgstr "Lösche Partition <filename>%1</filename> (%2, %3)"
+
+#: ops/newoperation.cpp:91
+msgctxt "@info/plain"
+msgid "Create a new partition (%1, %2) on <filename>%3</filename>"
+msgstr "Erzeuge eine neue Partition (%1, %2) auf <filename>%3</filename>"
+
+#: ops/operation.cpp:69
+msgctxt "@info:progress operation"
+msgid "None"
+msgstr "Keiner"
+
+#: ops/operation.cpp:70
+msgctxt "@info:progress operation"
+msgid "Pending"
+msgstr "Ausstehend"
+
+#: ops/operation.cpp:71
+msgctxt "@info:progress operation"
+msgid "Running"
+msgstr "Wird ausgeführt"
+
+#: ops/operation.cpp:72
+msgctxt "@info:progress operation"
+msgid "Success"
+msgstr "Erfolg"
+
+#: ops/operation.cpp:73
+msgctxt "@info:progress operation"
+msgid "Warning"
+msgstr "Warnung"
+
+#: ops/operation.cpp:74
+msgctxt "@info:progress operation"
+msgid "Error"
+msgstr "Fehler"
+
+#: ops/resizeoperation.cpp:147
+msgctxt "@info/plain"
+msgid "Moving extended partition <filename>%1</filename> failed."
+msgstr "Verschieben der erweiterten Partition <filename>%1</filename> fehlgeschlagen."
+
+#: ops/resizeoperation.cpp:157
+msgctxt "@info/plain"
+msgid "Checking partition <filename>%1</filename> after resize/move failed."
+msgstr ""
+"Überprüfen von Partition <filename>%1</filename> nach Größenänderung/"
+"verschieben fehlgeschlagen."
+
+#: ops/resizeoperation.cpp:160
+msgctxt "@info/plain"
+msgid "Resizing/moving partition <filename>%1</filename> failed."
+msgstr ""
+"Größe ändern/verschieben von Partition <filename>%1</filename> "
+"fehlgeschlagen."
+
+#: ops/resizeoperation.cpp:164
+msgctxt "@info/plain"
+msgid "Checking partition <filename>%1</filename> before resize/move failed."
+msgstr ""
+"Überprüfen von Partition <filename>%1</filename> vor Größe verändern/"
+"verschieben fehlgeschlagen."
+
+#: ops/resizeoperation.cpp:195
+msgctxt "@info/plain describe resize/move action"
+msgid "Move partition <filename>%1</filename> to the left by %2"
+msgstr "Verschiebe Partition <filename>%1</filename> um %2 nach links."
+
+#: ops/resizeoperation.cpp:198
+msgctxt "@info/plain describe resize/move action"
+msgid "Move partition <filename>%1</filename> to the right by %2"
+msgstr "Verschiebe Partition <filename>%1</filename> um %2 nach rechts."
+
+#: ops/resizeoperation.cpp:201
+msgctxt "@info/plain describe resize/move action"
+msgid "Grow partition <filename>%1</filename> from %2 to %3"
+msgstr "Vergrößere Partition <filename>%1</filename> von %2 auf %3"
+
+#: ops/resizeoperation.cpp:204
+msgctxt "@info/plain describe resize/move action"
+msgid "Shrink partition <filename>%1</filename> from %2 to %3"
+msgstr "Verkleinere Partition <filename>%1</filename> von %2 auf %3"
+
+#: ops/resizeoperation.cpp:207
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the left by %2 and grow it from %3 "
+"to %4"
+msgstr ""
+"Verschiebe Partition <filename>%1</filename> um %2 nach links und vergrößere "
+"sie von %3 auf %4"
+
+#: ops/resizeoperation.cpp:210
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the right by %2 and grow it from %"
+"3 to %4"
+msgstr ""
+"Verschiebe Partition <filename>%1</filename> um %2 nach rechts und "
+"vergrößere sie von %3 auf %4"
+
+#: ops/resizeoperation.cpp:213
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the left by %2 and shrink it from %"
+"3 to %4"
+msgstr ""
+"Verschiebe Partition <filename>%1</filename> um %2 nach links und "
+"verkleinere sie von %3 auf %4"
+
+#: ops/resizeoperation.cpp:216
+msgctxt "@info/plain describe resize/move action"
+msgid ""
+"Move partition <filename>%1</filename> to the right by %2 and shrink it from "
+"%3 to %4"
+msgstr ""
+"Verschiebe Partition <filename>%1</filename> um %2 nach rechts und "
+"verkleinere sie von %3 auf %4"
+
+#: ops/resizeoperation.cpp:223
+msgctxt "@info/plain describe resize/move action"
+msgid "Unknown resize/move action."
+msgstr "Unbekannte Aktion zum Größe Verändern/Verschieben"
+
+#: ops/resizeoperation.cpp:253
+msgctxt "@info/plain"
+msgid ""
+"Resize/move failed: Could not resize file system to shrink partition "
+"<filename>%1</filename>."
+msgstr ""
+"Größe verändern/verschieben fehlgeschlagen: Konnte Dateisystemgröße nicht "
+"ändern um Partition <filename>%1</filename> zu verkleinern."
+
+#: ops/resizeoperation.cpp:259
+msgctxt "@info/plain"
+msgid "Resize/move failed: Could not shrink partition <filename>%1</filename>."
+msgstr ""
+"Größe verändern/verschieben fehlgeschlagen: Konnte Partition <filename>%1</"
+"filename> nicht verkleinern."
+
+#: ops/resizeoperation.cpp:279
+msgctxt "@info/plain"
+msgid "Moving partition <filename>%1</filename> failed."
+msgstr "Verschieben von Partition <filename>%1</filename> fehlgeschlagen."
+
+#: ops/resizeoperation.cpp:285
+msgctxt "@info/plain"
+msgid ""
+"Moving the filesystem for partition <filename>%1</filename> failed. Rolling "
+"back."
+msgstr ""
+"Verschieben des Dateisystems für Partition <filename>%1</filename> "
+"fehlgeschlagen. Beginne Rollback."
+
+#: ops/resizeoperation.cpp:289
+msgctxt "@info/plain"
+msgid ""
+"Moving back partition <filename>%1</filename> to its original position "
+"failed."
+msgstr ""
+"Zurückverschieben von Partition <filename>%1</filename> auf ihre "
+"ursprüngliche Position fehlgeschlagen."
+
+#: ops/resizeoperation.cpp:303
+msgctxt "@info/plain"
+msgid "Resize/move failed: Could not grow partition <filename>%1</filename>."
+msgstr ""
+"Größe verändern/verschieben fehlgeschlagen: Konnte Partition <filename>%1</"
+"filename> nicht vergrößern."
+
+#: ops/resizeoperation.cpp:309
+msgctxt "@info/plain"
+msgid ""
+"Resize/move failed: Could not resize the file system on partition <filename>%"
+"1</filename>"
+msgstr ""
+"Größe verändern/verschieben fehlgeschlagen: Konnte das Dateisystem auf "
+"Partition <filename>%1</filename> nicht in der Größe verändern."
+
+#: ops/resizeoperation.cpp:312
+msgctxt "@info/plain"
+msgid "Could not restore old partition size for partition <filename>%1</filename>."
+msgstr ""
+"Konnte alte Partitionsgröße von Partition <filename>%1</filename> nicht "
+"wiederherstellen."
+
+#: ops/restoreoperation.cpp:130
+msgctxt "@info/plain"
+msgid ""
+"Checking target file system on partition <filename>%1</filename> after the "
+"restore failed."
+msgstr ""
+"Überprüfen des Zieldateisystems auf Partition <filename>%1</filename> nach "
+"dem Wiederherstellen fehlgeschlagen."
+
+#: ops/restoreoperation.cpp:137
+msgctxt "@info/plain"
+msgid "Restoring file system failed."
+msgstr "Wiederherstellen des Dateisystems fehlgeschlagen."
+
+#: ops/restoreoperation.cpp:141
+msgctxt "@info/plain"
+msgid "Creating the destination partition to restore to failed."
+msgstr ""
+"Erzeugen der Zielpartition, in die wiederhergestellt werden sollte, "
+"fehlgeschlagen."
+
+#: ops/restoreoperation.cpp:156
+msgctxt "@info/plain"
+msgid "Restore partition from <filename>%1</filename> to <filename>%2</filename>"
+msgstr ""
+"Stelle Partition aus <filename>%1</filename> wieder her nach <filename>%2</"
+"filename>"
+
+#: ops/restoreoperation.cpp:158
+msgctxt "@info/plain"
+msgid ""
+"Restore partition on <filename>%1</filename> at %2 from <filename>%3</"
+"filename>"
+msgstr ""
+"Stelle Partition auf <filename>%1</filename> bei %2 aus <filename>%3</"
+"filename> wieder her"
+
+#: ops/setfilesystemlabeloperation.cpp:56
+msgctxt "@info/plain"
+msgid "Set label for partition <filename>%1</filename> to \"%2\""
+msgstr "Setze Bezeichnung für Partition <filename>%1</filename> auf \"%2\""
+
+#: ops/setfilesystemlabeloperation.cpp:58
+msgctxt "@info/plain"
+msgid "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\""
+msgstr "Setze Bezeichnung für Partition <filename>%1</filename> von \"%2\" auf \"%3\""
+
+#: ops/setpartflagsoperation.cpp:61
+msgctxt "@info/plain"
+msgid "Set flags for partition <filename>%1</filename> to \"%2\""
+msgstr "Setze Flags für Partition <filename>%1</filename> auf \"%2\""
+
+#: util/capacity.cpp:127
+msgctxt "@info/plain unit"
+msgid "Byte"
+msgstr "Byte"
+
+#: util/capacity.cpp:128
+msgctxt "@info/plain unit"
+msgid "KiB"
+msgstr "KiB"
+
+#: util/capacity.cpp:129
+msgctxt "@info/plain unit"
+msgid "MiB"
+msgstr "MiB"
+
+#: util/capacity.cpp:130
+msgctxt "@info/plain unit"
+msgid "GiB"
+msgstr "GiB"
+
+#: util/capacity.cpp:131
+msgctxt "@info/plain unit"
+msgid "TiB"
+msgstr "TiB"
+
+#: util/capacity.cpp:132
+msgctxt "@info/plain unit"
+msgid "PiB"
+msgstr "PiB"
+
+#: util/capacity.cpp:133
+msgctxt "@info/plain unit"
+msgid "EiB"
+msgstr "EiB"
+
+#: util/capacity.cpp:134
+msgctxt "@info/plain unit"
+msgid "ZiB"
+msgstr "ZiB"
+
+#: util/capacity.cpp:135
+msgctxt "@info/plain unit"
+msgid "YiB"
+msgstr "YiB"
+
+#: util/capacity.cpp:139
+msgctxt "@info/plain unit"
+msgid "(unknown unit)"
+msgstr "(unbekannte Einheit)"
+
+#: util/externalcommand.cpp:68
+msgctxt "@info/plain"
+msgid "Command: %1 %2"
+msgstr "Befehl: %1 %2"
+
+#: util/externalcommand.cpp:73
+msgid "(Command timeout while starting)"
+msgstr "(Zeitüberschreitung des Befehls beim Start)"
+
+#: util/externalcommand.cpp:87
+msgid "(Command timeout while running)"
+msgstr "(Zeitüberschreitung des Befehls bei der Ausführung)"
+
+#: util/report.cpp:78 util/report.cpp:80
+msgid "%1: Operation Report"
+msgstr "%1: Operationsbericht"
+
+#: util/report.cpp:87
+msgid "Date:"
+msgstr "Datum:"
+
+#: util/report.cpp:88
+msgid "Program version:"
+msgstr "Programmversion:"
+
+#: util/report.cpp:89
+msgid "LibParted version:"
+msgstr "LibParted-Version:"
+
+#: util/report.cpp:90
+msgid "KDE version:"
+msgstr "KDE Version: "
+
+#: util/report.cpp:91
+msgid "Machine:"
+msgstr "System:"
+
+#: util/report.cpp:92
+msgid "User ID:"
+msgstr "User ID:"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 17
+#: rc.cpp:3
+msgid ""
+"This table shows which file systems are supported and which specific "
+"operations can be performed on them.\n"
+"Some file systems need external tools to be installed for them to be "
+"supported. But not all operations can be performed on all file systems, even "
+"if all required tools are installed. Please see the documentation for "
+"details. "
+msgstr ""
+"Diese Tabelle zeigt, welche Dateisysteme unterstützt werden und welche "
+"Operationen auf sie angewandt werden können.\n"
+"Einige Dateisysteme setzen die Installation externer Programme voraus um "
+"unterstützt werden zu können. Jedoch können nicht alle Operationen auf alle "
+"Dateisysteme angewandt werden, auch wenn die benötigten Programme "
+"installiert sind. Bitte lesen Sie die Dokumentation für genauere "
+"Informationen."
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 61
+#: rc.cpp:7
+msgid "File System"
+msgstr "Dateisystem:"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 66
+#: rc.cpp:10
+msgid "Create"
+msgstr "Erstellen"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 71
+#: rc.cpp:13
+msgid "Grow"
+msgstr "Vergrößern"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 76
+#: rc.cpp:16
+msgid "Shrink"
+msgstr "Verkleinern"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 81
+#: rc.cpp:19
+msgid "Move"
+msgstr "Verschieben"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 86
+#: rc.cpp:22
+msgid "Copy"
+msgstr "Kopieren"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 91
+#: rc.cpp:25
+msgid "Check"
+msgstr "Prüfen"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 96
+#: rc.cpp:28
+msgid "Read Label"
+msgstr "Bezeichnung lesen"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 101
+#: rc.cpp:31
+msgid "Write Label"
+msgstr "Bezeichnung schreiben"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 106
+#: rc.cpp:34
+msgid "Read Usage"
+msgstr "Belegung auslesen"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 111
+#: rc.cpp:37
+msgid "Backup"
+msgstr "Sichern"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 116
+#: rc.cpp:40
+msgid "Restore"
+msgstr "Wiederherstellen"
+
+#. i18n: tag string
+#. i18n: file ./gui/filesystemsupportdialogwidgetbase.ui line 126
+#: rc.cpp:43
+msgctxt "@action:button"
+msgid "&Rescan Support"
+msgstr "&Neu prüfen"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 13
+#: rc.cpp:46
+msgctxt "@title:window"
+msgid "KDE Partition Manager"
+msgstr "KDE Partitionsmanager"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 60
+#: rc.cpp:49
+msgid "Partition"
+msgstr "Partition"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 65
+#: rc.cpp:52
+msgid "Type"
+msgstr "Typ"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 70
+#: rc.cpp:55
+msgid "Mount point"
+msgstr "Einhängepunkt"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 75
+#: rc.cpp:58
+msgid "Label"
+msgstr "Bezeichnung"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 80
+#: rc.cpp:61
+msgid "Size"
+msgstr "Größe"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 85
+#: rc.cpp:64
+msgid "Used"
+msgstr "Belegt"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 90
+#: rc.cpp:67
+msgid "Flags"
+msgstr "Flags"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 104
+#: rc.cpp:70
+msgctxt "@title:window"
+msgid "Devices"
+msgstr "Geräte"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 132
+#: rc.cpp:73
+msgctxt "@title:window"
+msgid "Pending Operations"
+msgstr "Ausstehende Operationen"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 184
+#: rc.cpp:79
+msgctxt "@title:window"
+msgid "Log Output"
+msgstr "Protokollausgabe"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 222
+#: rc.cpp:82
+msgid "Time"
+msgstr "Zeit"
+
+#. i18n: tag string
+#. i18n: file ./gui/mainwindowbase.ui line 227
+#: rc.cpp:85
+msgid "Message"
+msgstr "Nachricht"
+
+#. i18n: tag text
+#. i18n: file ./gui/partitionmanagerui.rc line 5
+#: rc.cpp:88
+msgctxt "@title:menu turn on and off edit toolbar"
+msgid "Edit toolbar"
+msgstr "Bearbeiten-Werkzeugleiste"
+
+#. i18n: tag text
+#. i18n: file ./gui/partitionmanagerui.rc line 12
+#: rc.cpp:91
+msgctxt "@title:menu"
+msgid "Partition toolbar"
+msgstr "Partitionen-Werkzeugleiste"
+
+#. i18n: tag text
+#. i18n: file ./gui/partitionmanagerui.rc line 23
+#: rc.cpp:94
+msgctxt "@title:menu"
+msgid "Device toolbar"
+msgstr "Geräte-Werkzeugleiste"
+
+#. i18n: tag text
+#. i18n: file ./gui/partitionmanagerui.rc line 35
+#: rc.cpp:97
+msgctxt "@title:menu"
+msgid "View"
+msgstr "Ansicht"
+
+#. i18n: tag text
+#. i18n: file ./gui/partitionmanagerui.rc line 45
+#: rc.cpp:100
+msgctxt "@title:menu"
+msgid "Device"
+msgstr "Gerät"
+
+#. i18n: tag text
+#. i18n: file ./gui/partitionmanagerui.rc line 49
+#: rc.cpp:103
+msgctxt "@title:menu"
+msgid "Partition"
+msgstr "Partition"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 48
+#: rc.cpp:106
+msgctxt "@label"
+msgid "&Label:"
+msgstr "&Bezeichnung:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 68
+#: rc.cpp:109
+msgctxt "@label"
+msgid "This file system does not support setting a label."
+msgstr "Das Dateisystem unterstützt das Setzen von Bezeichnungen nicht."
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 78
+#: rc.cpp:112
+msgctxt "@label:listbox"
+msgid "File &system:"
+msgstr "Datei&system:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 108
+#: rc.cpp:115
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Einhängepunkt:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 121
+#: rc.cpp:118
+msgctxt "@label"
+msgid "Partition type:"
+msgstr "Partitionstyp:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 134
+#: rc.cpp:121
+msgctxt "@label"
+msgid "Status:"
+msgstr "Status:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 154
+#: rc.cpp:124
+msgctxt "@label"
+msgid "Size:"
+msgstr "Größe:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 167
+#: rc.cpp:127
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Verfügbar:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 180
+#: rc.cpp:130
+msgctxt "@label partition capacity used"
+msgid "Used:"
+msgstr "Belegt:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 200
+#: rc.cpp:133
+msgctxt "@label"
+msgid "First sector:"
+msgstr "Erster Sektor:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 213
+#: rc.cpp:136
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Letzter Sektor:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 226
+#: rc.cpp:139
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr "Anzahl Sektoren:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 246
+#: rc.cpp:142
+msgctxt "@label"
+msgid "&Flags:"
+msgstr "&Flags:"
+
+#. i18n: tag string
+#. i18n: file ./gui/partpropswidgetbase.ui line 291
+#: rc.cpp:145
+msgid "Recreate existing file system"
+msgstr "Dateisystem neu erstellen"
+
+#. i18n: tag string
+#. i18n: file ./gui/progressdetailswidgetbase.ui line 36
+#: rc.cpp:148
+msgid "&Save"
+msgstr "&Speichern"
+
+#. i18n: tag string
+#. i18n: file ./gui/progressdetailswidgetbase.ui line 43
+#: rc.cpp:151
+msgid "&Open in External Browser"
+msgstr "In externem Webbrowser &öffnen"
+
+#. i18n: tag string
+#. i18n: file ./gui/progressdialogwidgetbase.ui line 32
+#: rc.cpp:154
+msgid "Operations and Jobs"
+msgstr "Operationen und Aufgaben"
+
+#. i18n: tag string
+#. i18n: file ./gui/progressdialogwidgetbase.ui line 37
+#: rc.cpp:157
+msgid "Time Elapsed"
+msgstr "Vergangene Zeit"
+
+#. i18n: tag string
+#. i18n: file ./gui/progressdialogwidgetbase.ui line 63
+#: rc.cpp:160
+msgid "Total Time: 00:00:00"
+msgstr "Gesamtzeit: 00:00:00"
+
+#. i18n: tag string
+#. i18n: file ./gui/progressdialogwidgetbase.ui line 77
+#: rc.cpp:164
+#, no-c-format
+msgid "Operation: %p%"
+msgstr "Operation: %p%"
+
+#. i18n: tag string
+#. i18n: file ./gui/progressdialogwidgetbase.ui line 87
+#: rc.cpp:167
+msgid "Status"
+msgstr "Status"
+
+#. i18n: tag string
+#. i18n: file ./gui/progressdialogwidgetbase.ui line 100
+#: rc.cpp:171
+#, no-c-format
+msgid "Total: %p%"
+msgstr "Gesamt: %p%"
+
+#. i18n: tag string
+#. i18n: file ./gui/sizedialogwidgetbase.ui line 56
+#: rc.cpp:174
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "Partitionstyp:"
+
+#. i18n: tag string
+#. i18n: file ./gui/sizedialogwidgetbase.ui line 75
+#: rc.cpp:177
+msgctxt "@label:listbox"
+msgid "File system:"
+msgstr "Dateisystem:"
+
+#. i18n: tag string
+#. i18n: file ./gui/sizedialogwidgetbase.ui line 94
+#: rc.cpp:180
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Minimale Größe:"
+
+#. i18n: tag string
+#. i18n: file ./gui/sizedialogwidgetbase.ui line 114
+#: rc.cpp:183
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Maximale Größe:"
+
+#. i18n: tag string
+#. i18n: file ./gui/sizedialogwidgetbase.ui line 134
+#: rc.cpp:186
+msgctxt "@label:listbox"
+msgid "Free space before:"
+msgstr "Freier Platz davor:"
+
+#. i18n: tag string
+#. i18n: file ./gui/sizedialogwidgetbase.ui line 144
+#. i18n: tag string
+#. i18n: file ./gui/sizedialogwidgetbase.ui line 173
+#. i18n: tag string
+#. i18n: file ./gui/sizedialogwidgetbase.ui line 202
+#: rc.cpp:189 rc.cpp:195 rc.cpp:201
+msgctxt "@label:spinbox"
+msgid " MiB"
+msgstr "MiB"
+
+#. i18n: tag string
+#. i18n: file ./gui/sizedialogwidgetbase.ui line 163
+#: rc.cpp:192
+msgctxt "@label:listbox"
+msgid "Size:"
+msgstr "Größe:"
+
+#. i18n: tag string
+#. i18n: file ./gui/sizedialogwidgetbase.ui line 192
+#: rc.cpp:198
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Freier Platz danach:"
+
+#: rc.cpp:202
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Volker Lanz"
+
+#: rc.cpp:203
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "vl@fidra.de"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing flags for a new partition: No new operation required."
+#~ msgstr ""
+#~ "Ändern der Flags einer neuen Partition: Keine neue Operation notwendig."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Cannot resize JFS file system on partition <filename>%1</filename> to "
+#~ "something else than the partition size."
+#~ msgstr ""
+#~ "Kann die Größe des JFS Dateisystems auf Partition <filename>%1</filename> "
+#~ "nicht zu etwas anderem ändern als der Größe der Partition."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Cannot resize XFS file system on partition <filename>%1</filename> to "
+#~ "something else than the partition size."
+#~ msgstr ""
+#~ "Kann die Größe des XFS Dateisystems auf Partition <filename>%1</filename> "
+#~ "nicht zu etwas anderem ändern als der Größe der Partition."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Check the file system on <filename>%1</filename>"
+#~ msgstr "Überprüfe Dateisystem auf <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open destination partition <filename>%1</filename> for copying."
+#~ msgstr ""
+#~ "Konnte Zielpartition <filename>%1</filename> nicht zum Kopieren öffnen."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Delete and clobber the file system on <filename>%1</filename>"
+#~ msgstr ""
+#~ "Löschen und ausradieren des Dateisystems auf <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not get file system on original partition <filename>%1</filename> "
+#~ "while trying to resize the file system."
+#~ msgstr ""
+#~ "Konnte Dateisystem auf Originalpartition <filename>%1</filename> nicht "
+#~ "ermitteln als die Dateisystemgröße geändert werden sollte."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not get geometry for original partition <filename>%1</filename> "
+#~ "while trying to resize the file system."
+#~ msgstr ""
+#~ "Konnte Geometrie der Originalpartition <filename>%1</filename> nicht "
+#~ "ermitteln als die Dateisystemgröße verändert werden sollte."
+
+#~ msgctxt "@action:inmenu refresh list of devices"
+#~ msgid "Refresh"
+#~ msgstr "Aktualisieren"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not maximize file system on partition <filename>%1</filename> to "
+#~ "the size of the partition."
+#~ msgstr ""
+#~ "Konnte Größe des Dateisystems auf Partition <filename>%1</filename> nicht "
+#~ "auf die Größe der Partition ändern."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Closing copy target device. This may take a few seconds."
+#~ msgstr "Zielgerät wird geschlossen. Das kann einige Sekunden dauern."
+
+#~ msgctxt "@title:window"
+#~ msgid "Could not launch external browser."
+#~ msgstr "Konnte externen Webbrowser nicht starten."
+
+#~ msgctxt "@title:window"
+#~ msgid "Clear list of pending operations?"
+#~ msgstr "Liste der ausstehenden Operationen leeren?"
+
+#~ msgctxt "@action:button"
+#~ msgid "&Apply these operations"
+#~ msgstr "&Diese Operationen anwenden"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "extended"
+#~ msgstr "erweitert"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Maximizing file system on target partition %1 to the size of the "
+#~ "partition failed."
+#~ msgstr ""
+#~ "Warnung: Ändern der Größe des Dateisystems auf Zielpartition %1 zur Größe "
+#~ "der Partition fehlgeschlagen."
+
+#, fuzzy
+#~ msgctxt "@info/plain"
+#~ msgid "Resizing JFS filesystem on %1 failed: Remount failed."
+#~ msgstr ""
+#~ "Ändern der Größe eines JFS Dateisystems auf %1 fehlgeschlagen: Remount "
+#~ "fehlgeschlagen."
+
+#, fuzzy
+#~ msgctxt "@info/plain"
+#~ msgid "Could not create backup file %1."
+#~ msgstr "Konnte Sicherungsdatei %1 nicht anlegen."
+
+#, fuzzy
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting partition failed: Could not open device <filename>%1</filename> "
+#~ "with path %2."
+#~ msgstr ""
+#~ "Löschen der Partition fehlgeschlagen: Konnte Gerät %1 mit Pfad %2 nicht "
+#~ "öffnen."
+
+#, fuzzy
+#~ msgctxt "@info/plain"
+#~ msgid "Could not open backup file %1 to restore from."
+#~ msgstr "Konnte Sicherungsdatei %1 zur Wiederherstellung nicht öffnen."
+
+#, fuzzy
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> to set partition flags for %"
+#~ "2."
+#~ msgstr "Konnte Gerät %1 nicht öffnen um Partitionsflags für %2 zu setzen."
+
+#, fuzzy
+#~ msgctxt "@info/plain"
+#~ msgid "Checking target %1 after copy failed."
+#~ msgstr "Überprüfen des Ziels %1 nach dem Kopieren fehlgeschlagen."
+
+#~ msgctxt "@info"
+#~ msgid "Failed to add partition %1 to device %2."
+#~ msgstr "Hinzufügen von Partition %1 zu Gerät %2 fehlgeschlagen."
+
+#~ msgctxt "@info"
+#~ msgid "Failed to create new partition %1."
+#~ msgstr "Erstellen der neuen Partition %1 fehlgeschlagen."
+
+#~ msgctxt "@info"
+#~ msgid "Could not open device %1 to create new partition %2."
+#~ msgstr "Konnte Gerät %1 zum Erstellen der neuen Partition %2 nicht öffnen."
+
+#~ msgctxt "@info"
+#~ msgid "Could not delete partition %1."
+#~ msgstr "Konnte Partition %1 nicht löschen"
+
+#~ msgctxt "@info"
+#~ msgid "Could not open partition %1 for moving."
+#~ msgstr "Konnte Partition %1 zum Verschieben nicht öffnen."
+
+#~ msgctxt "@info"
+#~ msgid "Resizing file system on partition %1: Could not open device %2."
+#~ msgstr ""
+#~ "Ändern der Dateisystemgröße auf Partition %1: Konnte Gerät %2 nicht "
+#~ "öffnen."
+
+#~ msgctxt "@info"
+#~ msgid "Could not resize filesystem on partition %1."
+#~ msgstr "Konnte Dateisystemgröße auf Partition %1 nicht ändern."
+
+#~ msgctxt "@info status (success, error, warning...) of operation"
+#~ msgid "%1: %2"
+#~ msgstr "%1: %2"
+
+#~ msgctxt "@info"
+#~ msgid "Resizing/moving partition %1 failed."
+#~ msgstr "Größe verändern/verschieben von Partition %1 fehlgeschlagen."
+
+#~ msgctxt "@info"
+#~ msgid "Moving partition %1 failed."
+#~ msgstr "Verschieben von Partition %1 fehlgeschlagen."
+
+#~ msgid "Form"
+#~ msgstr "Form"
+
+#~ msgctxt "@label"
+#~ msgid "Device name:"
+#~ msgstr "Gerätename:"
+
+#~ msgid "-"
+#~ msgstr "-"
+
+#~ msgctxt "@label"
+#~ msgid "Capacity:"
+#~ msgstr "Größe:"
+
+#~ msgid "."
+#~ msgstr "."
+
+#~ msgctxt "@label"
+#~ msgid "Available:"
+#~ msgstr "Verfügbar:"
+
+#~ msgctxt "@label"
+#~ msgid "Used:"
+#~ msgstr "Belegt:"
+
+#~ msgid "mounted on %1"
+#~ msgstr "Eingebunden auf %1"
+
+#~ msgid "Copy file system on %1 to %2"
+#~ msgstr "Kopiere Dateisystem auf %1 nach %2"
+
+#~ msgctxt "@item:inlistbox"
+#~ msgid "Restore partition from %1 to %2"
+#~ msgstr "Stelle Partition aus %1 nach %2 wieder her"
+
+#~ msgctxt "@window:title"
+#~ msgid "KDE Partition Manager"
+#~ msgstr "KDE Partitionsmanager"
+
+#~ msgctxt "@window:title"
+#~ msgid "Information"
+#~ msgstr "Information"
+
+#~ msgid "Clearing list of operations."
+#~ msgstr "Liste der Operationen wird gelöscht"
+
