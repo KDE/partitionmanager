@@ -73,7 +73,7 @@ class QIcon;
 class Operation : public QObject
 {
 	Q_OBJECT
-	Q_DISABLE_COPY(Operation);
+	Q_DISABLE_COPY(Operation)
 
 	friend class OperationStack;
 	friend class OperationRunner;

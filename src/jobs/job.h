@@ -47,7 +47,7 @@ class Report;
 class Job : public QObject
 {
 	Q_OBJECT
-	Q_DISABLE_COPY(Job);
+	Q_DISABLE_COPY(Job)
 
 	public:
 		/** Status of this Job */

@@ -38,7 +38,7 @@ class Operation;
 */
 class OperationStack
 {
-	Q_DISABLE_COPY(OperationStack);
+	Q_DISABLE_COPY(OperationStack)
 
  	friend class LibParted;
 

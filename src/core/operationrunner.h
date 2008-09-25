@@ -38,7 +38,7 @@ class Report;
 class OperationRunner : public QThread
 {
 	Q_OBJECT
-	Q_DISABLE_COPY(OperationRunner);
+	Q_DISABLE_COPY(OperationRunner)
 
 	public:
 		OperationRunner(OperationStack& ostack);

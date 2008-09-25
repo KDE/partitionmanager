@@ -42,7 +42,7 @@ class LibParted;
 */
 class PartitionTable : public PartitionNode
 {
-	Q_DISABLE_COPY(PartitionTable);
+	Q_DISABLE_COPY(PartitionTable)
 	
 	friend class LibParted;
 	
@@ -64,7 +64,7 @@ class PartitionTable : public PartitionNode
 			FlagMsftReserved = 1024
 		};
 
-		Q_DECLARE_FLAGS(Flags, Flag);
+		Q_DECLARE_FLAGS(Flags, Flag)
 
 	public:
 		PartitionTable();
@@ -121,7 +121,7 @@ class PartitionTable : public PartitionNode
 		bool m_ReadOnly;
 };
 
-Q_DECLARE_OPERATORS_FOR_FLAGS(PartitionTable::Flags);
+Q_DECLARE_OPERATORS_FOR_FLAGS(PartitionTable::Flags)
 
 
 #endif

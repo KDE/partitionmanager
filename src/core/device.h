@@ -40,7 +40,7 @@ class CreatePartitionTableOperation;
 class Device : public QObject
 {
 	Q_OBJECT
-	Q_DISABLE_COPY(Device);
+	Q_DISABLE_COPY(Device)
 
 	friend class CreatePartitionTableOperation;
 

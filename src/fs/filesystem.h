@@ -38,7 +38,7 @@ class Report;
  */
 class FileSystem
 {
-	Q_DISABLE_COPY(FileSystem);
+	Q_DISABLE_COPY(FileSystem)
 	
 	public:
 		/** Supported FileSystem types */
@@ -73,7 +73,7 @@ class FileSystem
 			SupportExternal = 4		/**< supported by some external command */
 		};
 
-		Q_DECLARE_FLAGS(SupportTypes, SupportType);
+		Q_DECLARE_FLAGS(SupportTypes, SupportType)
 
 	protected:
 		FileSystem(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t);
@@ -150,6 +150,6 @@ class FileSystem
 		QString m_Label;
 };
 
-Q_DECLARE_OPERATORS_FOR_FLAGS(FileSystem::SupportTypes);
+Q_DECLARE_OPERATORS_FOR_FLAGS(FileSystem::SupportTypes)
 
 #endif

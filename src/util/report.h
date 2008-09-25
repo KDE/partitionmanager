@@ -37,7 +37,7 @@ class ReportLine;
 class Report : public QObject
 {
 	Q_OBJECT
-	Q_DISABLE_COPY(Report);
+	Q_DISABLE_COPY(Report)
 
 	friend Report& operator<<(Report& report, const QString& s);
 	friend Report& operator<<(Report& report, qint64 i);

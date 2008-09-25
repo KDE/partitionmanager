@@ -35,7 +35,7 @@ class OperationStack;
 */
 class LibParted
 {
-	Q_DISABLE_COPY(LibParted);
+	Q_DISABLE_COPY(LibParted)
 
 	public:
 		LibParted();

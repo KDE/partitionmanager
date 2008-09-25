@@ -36,7 +36,7 @@ class CopyTarget;
 */
 class CopySource
 {
-	Q_DISABLE_COPY(CopySource);
+	Q_DISABLE_COPY(CopySource)
 
 	protected:
 		CopySource() {}

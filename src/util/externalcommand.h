@@ -37,7 +37,7 @@ class Report;
 class ExternalCommand : public QProcess
 {
 	Q_OBJECT
-	Q_DISABLE_COPY(ExternalCommand);
+	Q_DISABLE_COPY(ExternalCommand)
 
 	public:
 		explicit ExternalCommand(const QString& cmd = QString(), const QStringList& args = QStringList());

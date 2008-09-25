@@ -46,7 +46,7 @@ class PartitionRole
 			Any = 255			/**< In case we're looking for a Partition with a PartitionRole, any will do */
 		};
 
- 	Q_DECLARE_FLAGS(Roles, Role);
+ 	Q_DECLARE_FLAGS(Roles, Role)
 
 	public:
 		explicit PartitionRole(Roles r) : m_Roles(r) {} /**< Creates a new PartitionRole object */
@@ -62,6 +62,6 @@ class PartitionRole
 		Roles m_Roles;
 };
 
-Q_DECLARE_OPERATORS_FOR_FLAGS(PartitionRole::Roles);
+Q_DECLARE_OPERATORS_FOR_FLAGS(PartitionRole::Roles)
 
 #endif

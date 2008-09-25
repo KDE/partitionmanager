@@ -35,7 +35,7 @@ class QString;
 */
 class CopyTarget
 {
-	Q_DISABLE_COPY(CopyTarget);
+	Q_DISABLE_COPY(CopyTarget)
 
 	protected:
 		CopyTarget() : m_SectorsWritten(0) {}

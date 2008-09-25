@@ -52,7 +52,7 @@ class log
 class GlobalLog : public QObject
 {
 	Q_OBJECT
-	Q_DISABLE_COPY(GlobalLog);
+	Q_DISABLE_COPY(GlobalLog)
 
  	friend class log;
  	friend log operator<<(log l, const QString& s);
