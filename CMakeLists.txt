@@ -46,14 +46,12 @@ INCLUDE(MacroLibrary)
 INCLUDE_DIRECTORIES(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} src/)
 
 ADD_SUBDIRECTORY(src)
-ADD_SUBDIRECTORY(po)
 
 MESSAGE(STATUS "KDE Partition Manager ${VERSION} will be built for install into ${CMAKE_INSTALL_PREFIX}")
 
 ADD_CUSTOM_TARGET(src_tarball
     COMMAND mkdir -p partitionmanager-${VERSION}
     COMMAND cp -r cmake partitionmanager-${VERSION}
-    COMMAND cp -r po partitionmanager-${VERSION}
     COMMAND cp -r src partitionmanager-${VERSION}
     COMMAND cp CMakeLists.txt COPYING INSTALL README BUGS CHANGES partitionmanager-${VERSION}
     COMMAND tar -hcj --exclude .svn -f partitionmanager-${VERSION}.tar.bz2 partitionmanager-${VERSION}
