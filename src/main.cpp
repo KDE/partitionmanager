@@ -75,7 +75,6 @@ int main(int argc, char* argv[])
 		);
 	about.addAuthor(ki18n("Volker Lanz"), KLocalizedString(), "vl@fidra.de");
 	about.setHomepage("http://www.partitionmanager.org");
-	about.setBugAddress("https://sourceforge.net/tracker/?group_id=238970&atid=1108273");
 	
 	KCmdLineArgs::init(argc, argv, &about);
 
