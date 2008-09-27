@@ -271,7 +271,7 @@ void MainWindow::setupActions()
 	propertiesPartition->setEnabled(false);
 	propertiesPartition->setText(i18nc("@action:inmenu", "Properties"));
 	propertiesPartition->setToolTip(i18nc("@info:tooltip", "Show properties dialog"));
-	propertiesPartition->setStatusTip(i18nc("@info:status", "View and modify partition properties (label, partition flags etc.)"));
+	propertiesPartition->setStatusTip(i18nc("@info:status", "View and modify partition properties (label, partition flags, etc.)"));
 	propertiesPartition->setIcon(BarIcon("document-properties"));
 
 	KAction* backup = actionCollection()->addAction("backupPartition", this, SLOT(onBackupPartition()));
