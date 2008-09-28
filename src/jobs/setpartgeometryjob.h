@@ -35,7 +35,7 @@ class QString;
 
 	Sets the geometry for a given Partition on a given Device to a new start sector and/or a new
 	length. This does not move the FileSystem, it only updates the disk label entry for the
-	Partition and is usally run together with MoveFileSystemJob or ResizeFileSystemJob for that reason.
+	Partition and is usually run together with MoveFileSystemJob or ResizeFileSystemJob for that reason.
 	
 	@author vl@fidra.de
 */
