@@ -167,8 +167,12 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 	{
 		log() << i18nc("@info/plain", "Changing file system for a new partition: No new operation required.");
 
-		newOp->newPartition().deleteFileSystem();
-		newOp->newPartition().setFileSystem(FileSystemFactory::cloneWithNewType(pushedCreateFileSystemOp->newFileSystem()->type(), newOp->newPartition().fileSystem()));
+		FileSystem* oldFs = &newOp->newPartition().fileSystem();
+		
+		newOp->newPartition().setFileSystem(FileSystemFactory::cloneWithNewType(pushedCreateFileSystemOp->newFileSystem()->type(), *oldFs));
+		
+		delete oldFs;
+		oldFs = NULL;
 
 		delete pushedOp;
 		pushedOp = NULL;
