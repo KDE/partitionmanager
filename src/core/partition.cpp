@@ -270,7 +270,7 @@ bool Partition::canMount() const
 /** @return true if this Partition can be unmounted */
 bool Partition::canUnmount() const
 {
-	return isMounted();
+	return !roles().has(PartitionRole::Extended) && isMounted();
 }
 
 /** Tries to mount a Partition.
@@ -305,7 +305,7 @@ bool Partition::mount()
 */
 bool Partition::unmount()
 {
-	if (!isMounted())
+	if (!isMounted() || mountPoints().size() == 0)
 		return false;
 
 	bool success = true;
