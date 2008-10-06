@@ -25,11 +25,11 @@
 
 #include <QWidget>
 #include <QList>
+#include <QLabel>
 
 class PartWidget;
 class PartitionTable;
 
-class QPaintEvent;
 class QResizeEvent;
 class QMouseEvent;
 
@@ -59,7 +59,6 @@ class PartTableWidget : public QWidget, public PartWidgetBase
 
 	protected:
 		void resizeEvent(QResizeEvent* event);
-		void paintEvent(QPaintEvent* event);
 		void mousePressEvent(QMouseEvent* event);
 		void mouseDoubleClickEvent(QMouseEvent* event);
 		
@@ -70,10 +69,14 @@ class PartTableWidget : public QWidget, public PartWidgetBase
 
 		const PartitionTable* partitionTable() const { return m_PartitionTable; }
 		
+		QLabel& labelEmpty() { return m_LabelEmpty; }
+		const QLabel& labelEmpty() const { return m_LabelEmpty; }
+		
 	private:
 		const PartitionTable* m_PartitionTable;
 		QList<PartWidget*> m_Widgets;
 		PartWidget* m_ActiveWidget;
+		QLabel m_LabelEmpty;
 };
 
 #endif

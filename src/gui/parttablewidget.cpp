@@ -25,13 +25,7 @@
 #include <QMouseEvent>
 
 #include <kdebug.h>
-
-/** @class PartTableWidget
-
-	@todo If there's no disk label on a device, we currently don't show anything at all.
-	That's not particularly helpful, we should print something like "you need to create
-	a partition table on this device to use it".
-*/
+#include <klocale.h>
 
 /** Creates a new PartTableWidget.
 	@param parent pointer to the parent widget
@@ -40,8 +34,10 @@ PartTableWidget::PartTableWidget(QWidget* parent) :
 	QWidget(parent),
 	m_PartitionTable(NULL),
 	m_Widgets(),
-	m_ActiveWidget(NULL)
+	m_ActiveWidget(NULL),
+	m_LabelEmpty(i18nc("@info", "Please select a device."), this)
 {
+	labelEmpty().setAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
 }
 
 /** Sets the PartitionTable this widget shows.
@@ -67,7 +63,18 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 		widgets().last()->show();
 	}
 
-	positionChildren(this, partitionTable()->children(), widgets());
+	if (widgets().isEmpty())
+	{
+		labelEmpty().setVisible(true);
+		labelEmpty().setText(i18nc("@info", "No valid partition table was found on this device."));
+		labelEmpty().resize(size());
+	}
+	else
+	{
+		labelEmpty().setVisible(false);
+		positionChildren(this, partitionTable()->children(), widgets());
+	}
+
 	update();
 }
 
@@ -125,13 +132,9 @@ void PartTableWidget::clear()
 
 void PartTableWidget::resizeEvent(QResizeEvent*)
 {
-	if (partitionTable())
-		positionChildren(this, partitionTable()->children(), widgets());
-}
-
-void PartTableWidget::paintEvent(QPaintEvent*)
-{
-	if (partitionTable())
+	if (partitionTable() == NULL || widgets().isEmpty())
+		labelEmpty().resize(size());
+	else
 		positionChildren(this, partitionTable()->children(), widgets());
 }
 
