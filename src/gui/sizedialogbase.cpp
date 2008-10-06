@@ -179,5 +179,5 @@ void SizeDialogBase::onFreeSpaceAfterChanged(int newAfter)
 
 const PartitionTable& SizeDialogBase::partitionTable() const
 {
-	 return device().partitionTable();
+	return device().partitionTable();
 }
