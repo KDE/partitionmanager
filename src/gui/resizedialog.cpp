@@ -58,6 +58,17 @@ ResizeDialog::~ResizeDialog()
 	saveDialogSize(kcg);
 }
 
+void ResizeDialog::setupDialog()
+{
+	SizeDialogBase::setupDialog();
+	enableButtonOk(false);
+}
+
+void ResizeDialog::setDirty()
+{
+	enableButtonOk(isModified());
+}
+
 /** @return true if the user modified anything */
 bool ResizeDialog::isModified() const
 {

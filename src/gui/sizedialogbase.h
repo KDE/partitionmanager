@@ -65,6 +65,7 @@ class SizeDialogBase : public KDialog
 		virtual qint64 maxSectors() const;
 		virtual qint64 freeSectorsBefore() const { return m_FreeSectorsBefore; }
 		virtual qint64 freeSectorsAfter() const { return m_FreeSectorsAfter; }
+		virtual void setDirty() {}
 
 		static int sectorsToDialogUnit(const Partition& p, Capacity::Unit u, qint64 v);
 		static qint64 dialogUnitToSectors(const Partition& p, Capacity::Unit u, int v);

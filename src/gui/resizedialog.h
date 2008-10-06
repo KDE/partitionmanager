@@ -51,6 +51,8 @@ class ResizeDialog : public SizeDialogBase
 		virtual bool canGrow() const;
 		virtual bool canShrink() const;
 		virtual bool canMove() const;
+		virtual void setupDialog();
+		virtual void setDirty();
 
 	protected:
 		qint64 originalFirstSector() const { return m_OriginalFirstSector; }

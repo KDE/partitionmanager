@@ -125,6 +125,7 @@ void SizeDialogBase::onSectorsBeforeChanged(qint64 newBefore)
 	dialogWidget().spinFreeBefore().disconnect(this);
 	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), preferredUnit(), newBefore));
 	connect(&dialogWidget().spinFreeBefore(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceBeforeChanged(int)));
+	setDirty();
 }
 
 void SizeDialogBase::onSectorsAfterChanged(qint64 newAfter)
@@ -132,6 +133,7 @@ void SizeDialogBase::onSectorsAfterChanged(qint64 newAfter)
 	dialogWidget().spinFreeAfter().disconnect(this);
 	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), preferredUnit(), newAfter));
 	connect(&dialogWidget().spinFreeAfter(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceAfterChanged(int)));
+	setDirty();
 }
 
 void SizeDialogBase::onLengthChanged(qint64 newLength)
@@ -160,6 +162,7 @@ void SizeDialogBase::onFreeSpaceBeforeChanged(int newBefore)
 	}
 
 	dialogWidget().partResizerWidget().updateSectors(newSectorsBefore, newSectorsAfter);
+	setDirty();
 }
 
 void SizeDialogBase::onFreeSpaceAfterChanged(int newAfter)
@@ -175,6 +178,7 @@ void SizeDialogBase::onFreeSpaceAfterChanged(int newAfter)
 	}
 
 	dialogWidget().partResizerWidget().updateSectors(newSectorsBefore, newSectorsAfter);
+	setDirty();
 }
 
 const PartitionTable& SizeDialogBase::partitionTable() const
