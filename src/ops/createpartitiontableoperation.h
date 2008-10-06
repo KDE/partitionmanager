@@ -47,6 +47,8 @@ class CreatePartitionTableOperation : public Operation
 		void undo();
 		bool execute(Report& parent);
 
+		static bool canCreate(const Device* device);
+
 	protected:
 		Device& targetDevice() { return m_TargetDevice; }
 		const Device& targetDevice() const { return m_TargetDevice; }

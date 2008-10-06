@@ -205,3 +205,13 @@ qint32 PartitionNode::highestMountedChild() const
 	
 	return result;
 }
+
+/** @return true if any of the partition's children are mounted */
+bool PartitionNode::isChildMounted() const
+{
+	foreach (const Partition* child, children())
+		if (child->isMounted() || child->hasChildren() && child->isChildMounted())
+			return true;
+
+	return false;
+}

@@ -239,16 +239,7 @@ bool Partition::hasChildren() const
 /** Sets an extended Partition to mounted if any of its children are mounted */
 void Partition::checkChildrenMounted()
 {
-	bool isBusy = false;
-	
-	foreach (const Partition* child, children())
-		if (child->isMounted())
-		{
-			isBusy = true;
-			break;
-		}
-
-	setMounted(isBusy);
+	setMounted(isChildMounted());
 }
 
 /** @return true if this Partition can be mounted */

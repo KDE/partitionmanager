@@ -68,6 +68,7 @@ class PartitionNode : public QObject
 		virtual const Partitions& children() const = 0;
 		virtual void append(Partition* p) = 0;
 		virtual qint32 highestMountedChild() const;
+		virtual bool isChildMounted() const;
 
 	protected:
 		virtual void clearChildren();

@@ -381,7 +381,7 @@ void MainWindow::setupDevicesList()
 
 void MainWindow::enableActions()
 {
-	actionCollection()->action("createNewPartitionTable")->setEnabled(selectedDevice() != NULL);
+	actionCollection()->action("createNewPartitionTable")->setEnabled(CreatePartitionTableOperation::canCreate(selectedDevice()));
 
 	const Partition* part = selectedPartition();
 
