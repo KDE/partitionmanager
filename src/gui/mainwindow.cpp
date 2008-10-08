@@ -73,7 +73,7 @@
 #include <QDateTime>
 #include <QCursor>
 
-#include "config.h"
+#include <config.h>
 
 #include <unistd.h>
 
