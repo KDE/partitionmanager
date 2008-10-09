@@ -57,37 +57,37 @@
         </property>
         <column>
          <property name="text" >
-          <string>Partition</string>
+          <string comment="@label">Partition</string>
          </property>
         </column>
         <column>
          <property name="text" >
-          <string>Type</string>
+          <string comment="@label partition type">Type</string>
          </property>
         </column>
         <column>
          <property name="text" >
-          <string>Mount point</string>
+          <string comment="@label">Mount point</string>
          </property>
         </column>
         <column>
          <property name="text" >
-          <string>Label</string>
+          <string comment="@label file system label">Label</string>
          </property>
         </column>
         <column>
          <property name="text" >
-          <string>Size</string>
+          <string comment="@label total file system size">Size</string>
          </property>
         </column>
         <column>
          <property name="text" >
-          <string>Used</string>
+          <string comment="@label space used">Used</string>
          </property>
         </column>
         <column>
          <property name="text" >
-          <string>Flags</string>
+          <string comment="@label partition flags">Flags</string>
          </property>
         </column>
        </widget>
@@ -219,12 +219,12 @@
        </property>
        <column>
         <property name="text" >
-         <string>Time</string>
+         <string comment="@label">Time</string>
         </property>
        </column>
        <column>
         <property name="text" >
-         <string>Message</string>
+         <string comment="@label">Message</string>
         </property>
        </column>
       </widget>

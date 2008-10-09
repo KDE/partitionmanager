@@ -71,9 +71,9 @@ int main(int argc, char* argv[])
 			VERSION,
 			ki18nc("@title", "Manage your disks, partitions and file systems"),
 			KAboutData::License_GPL,
-			ki18n("(c) 2008 Volker Lanz")
+			ki18nc("@info:credit", "(c) 2008 Volker Lanz")
 		);
-	about.addAuthor(ki18n("Volker Lanz"), KLocalizedString(), "vl@fidra.de");
+	about.addAuthor(ki18nc("@info:credit", "Volker Lanz"), KLocalizedString(), "vl@fidra.de");
 	about.setHomepage("http://www.partitionmanager.org");
 	
 	KCmdLineArgs::init(argc, argv, &about);

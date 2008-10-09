@@ -83,7 +83,7 @@ bool ExternalCommand::start(int timeout)
 	if (!waitForStarted(timeout))
 	{
 		if (report())
-			report()->line() << i18n("(Command timeout while starting)");
+			report()->line() << i18nc("@info/plain", "(Command timeout while starting)");
 		return false;
 	}
 
@@ -101,7 +101,7 @@ bool ExternalCommand::waitFor(int timeout)
 	if (!waitForFinished(timeout))
 	{
 		if (report())
-			report()->line() << i18n("(Command timeout while running)");
+			report()->line() << i18nc("@info/plain", "(Command timeout while running)");
 		return false;
 	}
 
