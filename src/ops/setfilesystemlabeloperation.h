@@ -17,9 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(SETPARTLABELOPERATION__H)
+#if !defined(SETFILESYSTEMLABELOPERATION__H)
 
-#define SETPARTLABELOPERATION__H
+#define SETFILESYSTEMLABELOPERATION__H
 
 #include "ops/operation.h"
 

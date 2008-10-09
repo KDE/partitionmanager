@@ -17,9 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(PARTINFODIALOG__H)
+#if !defined(PARTPROPSDIALOG__H)
 
-#define PARTINFODIALOG__H
+#define PARTPROPSDIALOG__H
 
 #include "fs/filesystem.h"
 

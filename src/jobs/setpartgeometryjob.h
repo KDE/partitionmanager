@@ -17,9 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(MOVEPARTITIONJOB__H)
+#if !defined(SETPARTGEOMETRYJOB__H)
 
-#define MOVEPARTITIONJOB__H
+#define SETPARTGEOMETRYJOB__H
 
 #include "jobs/job.h"
 
