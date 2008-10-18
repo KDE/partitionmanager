@@ -49,23 +49,25 @@
 			<para>
 				Another name for a <link linkend="glossary-partitiontable">partition table</link> stemming from the SUN/BSD world.
 			</para>
-			<note>
-				<para>
-					They are easy to mix up, but a disk label has nothing to do with a <link linkend="glossary-filesystemlabel">file system label</link>.
-				</para>
-				<para>
-					See <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel">this Wikipedia entry</ulink> for details on the name.
-				</para>
-			</note>
+			<para>
+				<note>
+					<para>
+						They are easy to mix up, but a disk label has nothing to do with a <link linkend="glossary-filesystemlabel">file system label</link>.
+					</para>
+					<para>
+						See <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel">this Wikipedia entry</ulink> for details on the name.
+					</para>
+				</note>
+			</para>
+			<glossseealso otherterm="glossary-partitiontable"/>
 		</glossdef>
-		<glosssee otherterm="glossary-partitiontable"/>
 	</glossentry>
 
 	<glossentry id="glossary-extendedpartition">
 		<glossterm>Extended Partition</glossterm>
 		<glossdef>
 			<para>
-				A <link linkend="glossary-partition">partition</link> that contains other partitions. Extended partitions can only be <link linkend="glossary-primarypartition">primary partitions</link> themselves. Whether extended partitions are available or not depends on the <link linked="glossary-partitiontable">partition table</link> type used. MS-DOS partition tables allow one extended partition per <link linkend="glossary-device">device</link>.
+				A <link linkend="glossary-partition">partition</link> that contains other partitions. Extended partitions can only be <link linkend="glossary-primarypartition">primary partitions</link> themselves. Whether extended partitions are available or not depends on the <link linkend="glossary-partitiontable">partition table</link> type used. MS-DOS partition tables allow one extended partition per <link linkend="glossary-device">device</link>.
 			</para>
 			<glossseealso otherterm="glossary-primarypartition"/>
 			<glossseealso otherterm="glossary-logicalpartition"/>
@@ -87,9 +89,11 @@
 			<para>
 				A title of a file system. Some file systems (among them ext2/3, FAT16/32 and NTFS) support setting a label for the file system so it can be identified in tools like &partman; or other applications.
 			</para>
-			<note>
-				<para>They are easy to mix up, but a file system label has nothing to do with a <link linkend="glossary-disklabel">disk label</link>.</para>
-			</note>
+			<para>
+				<note>
+					<para>They are easy to mix up, but a file system label has nothing to do with a <link linkend="glossary-disklabel">disk label</link>.</para>
+				</note>
+			</para>
 		</glossdef>
 	</glossentry>
 	
@@ -122,8 +126,13 @@
 
 	<glossentry>
 		<glossterm>Label</glossterm>
-		<glosssee otherterm="glossary-disklabel"/>
-		<glosssee otherterm="glossary-filesystemlabel"/>
+		<glossdef>
+			<para>
+				Either a <link linkend="glossary-disklabel">disk label</link> or a <link linkend="glossary-filesystemlabel">file system label</link>.
+			</para>
+			<glossseealso otherterm="glossary-disklabel"/>
+			<glossseealso otherterm="glossary-filesystemlabel"/>
+		</glossdef>
 	</glossentry>
 	
 	<glossentry id="glossary-logicalpartition">
@@ -218,7 +227,7 @@
 		<glossterm>Sector Size</glossterm>
 		<glossdef>
 			<para>
-				The number of bytes per <link linkend="glossary-sector">sector</link> on a <link linked="glossary-device">device</link>. The sector size of most devices in use today is 512 bytes.
+				The number of bytes per <link linkend="glossary-sector">sector</link> on a <link linkend="glossary-device">device</link>. The sector size of most devices in use today is 512 bytes.
 			</para>
 		</glossdef>
 	</glossentry>
