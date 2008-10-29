@@ -15,7 +15,7 @@
 # Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
-FIND_PATH(LIBPARTED_INCLUDE_DIR parted.h /usr/include/parted/ /usr/local/include/parted/)
+FIND_PATH(LIBPARTED_INCLUDE_DIR parted.h PATH_SUFFIXES parted )
 
 FIND_LIBRARY(LIBPARTED_LIBRARY NAMES parted)
 
