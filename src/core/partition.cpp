@@ -28,7 +28,6 @@
 
 #include <QString>
 #include <QStringList>
-#include <QFileInfo>
 
 #include <kdebug.h>
 #include <klocale.h>

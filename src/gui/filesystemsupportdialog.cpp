@@ -22,7 +22,6 @@
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
 
-#include <QMap>
 
 #include <kdebug.h>
 #include <klocale.h>

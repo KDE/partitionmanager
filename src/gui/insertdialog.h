@@ -23,7 +23,6 @@
 
 #include "gui/sizedialogbase.h"
 
-#include <QObject>
 
 class Partition;
 class Device;

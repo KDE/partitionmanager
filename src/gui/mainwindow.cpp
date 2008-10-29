@@ -66,12 +66,11 @@
 #include <kglobal.h>
 #include <kaboutdata.h>
 
-#include <QHeaderView>
 #include <QLabel>
 #include <QCloseEvent>
-#include <QPlainTextEdit>
 #include <QDateTime>
 #include <QCursor>
+#include <QHeaderView>
 
 #include <config.h>
 

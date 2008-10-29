@@ -31,8 +31,6 @@
 #include "util/report.h"
 
 #include <QCloseEvent>
-#include <QMutexLocker>
-#include <QMainWindow>
 #include <QTime>
 #include <QFont>
 #include <QKeyEvent>

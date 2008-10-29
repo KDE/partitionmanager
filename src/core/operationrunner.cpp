@@ -26,7 +26,6 @@
 #include "util/report.h"
 
 #include <QMutex>
-#include <QMutexLocker>
 
 #include <kdebug.h>
 #include <klocale.h>

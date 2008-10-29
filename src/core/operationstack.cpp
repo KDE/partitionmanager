@@ -38,7 +38,6 @@
 
 #include "util/globallog.h"
 
-#include <QList>
 
 #include <kdebug.h>
 #include <klocale.h>

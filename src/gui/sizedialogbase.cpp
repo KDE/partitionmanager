@@ -25,8 +25,6 @@
 #include "core/device.h"
 #include "core/partition.h"
 
-#include <QLabel>
-#include <QSpinBox>
 
 #include <kdebug.h>
 

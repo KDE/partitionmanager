@@ -25,7 +25,6 @@
 #include "core/partitionrole.h"
 #include "core/partitiontable.h"
 
-#include <QList>
 #include <QStringList>
 #include <qglobal.h>
 

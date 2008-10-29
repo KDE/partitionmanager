@@ -24,7 +24,6 @@
 
 #include "fs/filesystem.h"
 
-#include <QList>
 
 #include <kdebug.h>
 
