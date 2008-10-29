@@ -33,10 +33,7 @@ class PartPropsWidget;
 
 class QWidget;
 class QString;
-class QLabel;
 
-class KLineEdit;
-class KComboBox;
 
 /** @brief Show Partition properties.
 

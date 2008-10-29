@@ -26,7 +26,6 @@
 class Partition;
 class Device;
 
-class QLabel;
 class QGridLayout;
 class QString;
 

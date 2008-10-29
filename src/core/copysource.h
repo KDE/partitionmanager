@@ -23,7 +23,6 @@
 
 #include <qglobal.h>
 
-class QString;
 class CopyTarget;
 
 /** @brief Base class for something to copy from.

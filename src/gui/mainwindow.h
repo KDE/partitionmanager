@@ -32,18 +32,13 @@
 #include <kxmlguiwindow.h>
 
 class QWidget;
-class QAction;
-class KMenu;
 class QLabel;
 class PartWidget;
 class InfoPane;
 class QCloseEvent;
-class QShowEvent;
 class QEvent;
 class Device;
-class QPlainTextEdit;
 class ProgressDialog;
-class KAction;
 
 /** @brief The application's main window.
 

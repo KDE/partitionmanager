@@ -34,7 +34,6 @@ class ProgressDialogWidget;
 class ProgressDetailsWidget;
 class Report;
 
-class KTextEdit;
 
 class QTreeWidgetItem;
 class QCloseEvent;

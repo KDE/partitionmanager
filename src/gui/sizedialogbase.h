@@ -31,9 +31,6 @@
 class Device;
 class Partition;
 class PartitionTable;
-class QSpinBox;
-class QLabel;
-class PartResizerWidget;
 class SizeDialogWidget;
 
 /** @brief Base class for all dialogs moving or resizing Partitions.

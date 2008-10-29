@@ -26,7 +26,6 @@
 #include <qglobal.h>
 
 class Report;
-class Partition;
 
 class QString;
 
