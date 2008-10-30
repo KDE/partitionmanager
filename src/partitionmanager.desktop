@@ -1,8 +1,20 @@
 [Desktop Entry]
 Type=Application
 Name=KDE Partition Manager
+Name[pt]=Gestor de Partições do KDE
+Name[pt_BR]=Gestor de Partições do KDE
+Name[uk]=Керування розділами диска KDE
+Name[zh_TW]=KDE 分割區管理員
 GenericName=Partition Editor
+GenericName[pt]=Editor de Partições
+GenericName[pt_BR]=Editor de Partições
+GenericName[uk]=Редактор розділів диска
+GenericName[zh_TW]=分割區編輯器
 Comment=Manage disks, partitions and file systems
+Comment[pt]=Faz a gestão de discos, partições e sistemas de ficheiros
+Comment[pt_BR]=Faz a gestão de discos, partições e sistemas de ficheiros
+Comment[uk]=Керуйте дисками, розділами та файловими системами
+Comment[zh_TW]=管理磁碟、分割區與檔案系統
 Exec=partitionmanager
 Icon=
 Categories=System;Filesystem;KDE;Qt;
