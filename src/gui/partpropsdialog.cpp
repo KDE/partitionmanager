@@ -90,14 +90,9 @@ FileSystem::Type PartPropsDialog::newFileSystemType() const
 
 void PartPropsDialog::setupDialog()
 {
-	if (partition().roles().has(PartitionRole::Unallocated) || isReadOnly())
-		setButtons(KDialog::Close);
-	else
-		setButtons(KDialog::Apply | KDialog::Close);
-	
-	setDefaultButton(KDialog::Close);
-	enableButtonApply(false);
-	button(KDialog::Close)->setFocus();
+	setDefaultButton(KDialog::Cancel);
+	enableButtonOk(false);
+	button(KDialog::Cancel)->setFocus();
 	
 	dialogWidget().partResizerWidget().setReadOnly(true);
 	dialogWidget().partResizerWidget().init(device(), partition(), 0, 0);
@@ -232,10 +227,10 @@ void PartPropsDialog::setupConnections()
 	connect(&dialogWidget().fileSystem(), SIGNAL(currentIndexChanged(int)), SLOT(onFilesystemChanged(int)));
 	connect(&dialogWidget().checkRecreate(), SIGNAL(stateChanged(int)), SLOT(onRecreate(int)));
 
-	// We want to enable the Apply-button whenever the user checks or unchecks a flag in the flag list.
+	// We want to enable the OK-button whenever the user checks or unchecks a flag in the flag list.
 	// But it seems Qt doesn't offer a foolproof way to detect if this has happened: The currentRow/ItemChanged
 	// signal only means the _current_ item has changed, but not necessarily that it was checked/unchecked. And
-	// itemClicked alone isn't enough either. We choose to rather enable the Apply-button too often than too
+	// itemClicked alone isn't enough either. We choose to rather enable the OK-button too often than too
 	// seldom.
 	connect(&dialogWidget().listFlags(), SIGNAL(itemClicked(QListWidgetItem*)), SLOT(setDirty()));
 	connect(&dialogWidget().listFlags(), SIGNAL(currentRowChanged(int)), SLOT(setDirty()));
@@ -244,16 +239,8 @@ void PartPropsDialog::setupConnections()
 
 void PartPropsDialog::setDirty()
 {
-	setDefaultButton(KDialog::Apply);
-	enableButtonApply(true);
-}
-
-void PartPropsDialog::slotButtonClicked(int button)
-{
-	if (button == KDialog::Apply)
-		accept();
-	else
-		KDialog::slotButtonClicked(button);
+	setDefaultButton(KDialog::Ok);
+	enableButtonOk(true);
 }
 
 void PartPropsDialog::setupFileSystemComboBox()

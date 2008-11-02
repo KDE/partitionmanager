@@ -79,7 +79,6 @@ class PartPropsDialog : public KDialog
 		void setForceRecreate(bool b) { m_ForceRecreate = b; }
 
 	protected slots:
-		void slotButtonClicked(int);
 		void setDirty();
 		void onFilesystemChanged(int idx);
 		void onRecreate(int);
