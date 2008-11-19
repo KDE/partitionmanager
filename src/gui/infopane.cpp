@@ -129,6 +129,6 @@ void InfoPane::showDevice(const Device& d)
 	createLabels(i18nc("@label device", "Cylinders:"), KGlobal::locale()->formatNumber(d.cylinders(), 0), y++);
 	createLabels(i18nc("@label device", "Sectors:"), KGlobal::locale()->formatNumber(d.sectorsPerTrack(), 0), y++);
 	createLabels(i18nc("@label device", "Sector size:"), Capacity(d.sectorSize()).toString(Capacity::Byte, Capacity::AppendUnit), y++);
-	createLabels(i18nc("@label device", "Cylinder size:"), i18nc("@label", "%1 Sectors", d.cylinderSize()), y++);
+	createLabels(i18nc("@label device", "Cylinder size:"), i18ncp("@label", "1 Sector", "%1 Sectors", d.cylinderSize()), y++);
 	createLabels(i18nc("@label device", "Primaries/Max:"), QString("%1/%2").arg(d.partitionTable().numPrimaries()).arg(d.partitionTable().maxPrimaries()), y++);
 }
