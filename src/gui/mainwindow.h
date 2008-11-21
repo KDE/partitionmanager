@@ -127,7 +127,7 @@ class MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
 		void on_m_TreePartitions_currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem* previous);
 		void on_m_PartTableWidget_customContextMenuRequested(const QPoint& pos);
 		void on_m_TreePartitions_customContextMenuRequested(const QPoint& pos);
-		void on_m_TreePartitions_itemActivated(QTreeWidgetItem* item);
+		void on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, int);
 		void on_m_PartTableWidget_itemSelectionChanged(PartWidget* item);
 		void on_m_ListDevices_itemClicked();
 

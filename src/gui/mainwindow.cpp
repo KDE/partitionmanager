@@ -525,7 +525,7 @@ void MainWindow::on_m_TreePartitions_currentItemChanged(QTreeWidgetItem* current
 	updateWindowTitle();
 }
 
-void MainWindow::on_m_TreePartitions_itemActivated(QTreeWidgetItem* item)
+void MainWindow::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, int)
 {
 	// if the activated item is the device item, don't do anything
 	if (item == treePartitions().topLevelItem(0))
