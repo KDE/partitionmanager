@@ -120,15 +120,15 @@ bool RestoreOperation::execute(Report& parent)
 	{
 		restorePartition().setState(Partition::StateNone);
 
-		if (rval = restoreJob()->run(*report))
+		if ((rval = restoreJob()->run(*report)))
 		{
-			if (rval = checkTargetJob()->run(*report))
+			if ((rval = checkTargetJob()->run(*report)))
 			{
 				// If the partition was written over an existing one, the partition itself may now
 				// be larger than the filesystem, so maximize the filesystem to the partition's size
 				// or the image length, whichever is larger. If this fails, don't return an error, just
 				// warn the user.
-				if (warning = !maximizeJob()->run(*report))
+				if ((warning = !maximizeJob()->run(*report)))
 					report->line() << i18nc("@info/plain", "Warning: Maximizing file system on target partition <filename>%1</filename> to the size of the partition failed.", restorePartition().deviceNode());
 			}
 			else

@@ -114,7 +114,7 @@ bool CopyOperation::execute(Report& parent)
 	Report* report = parent.newChild(description());
 
 	// check the source first
-	if (rval = checkSourceJob()->run(*report))
+	if ((rval = checkSourceJob()->run(*report)))
 	{
 		// At this point, if the target partition is to be created and not overwritten, it
 		// will still have the wrong device path (the one of the source device). We need
@@ -138,10 +138,10 @@ bool CopyOperation::execute(Report& parent)
 			}
 			
 			// now run the copy job itself
-			if (rval = copyFSJob()->run(*report))
+			if ((rval = copyFSJob()->run(*report)))
 			{
 				// and if the copy job succeeded, check the target
-				if (rval = checkTargetJob()->run(*report))
+				if ((rval = checkTargetJob()->run(*report)))
 				{
 					// ok, everything went well
 					rval = true;

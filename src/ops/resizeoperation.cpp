@@ -141,7 +141,7 @@ bool ResizeOperation::execute(Report& parent)
 
 	Report* report = parent.newChild(description());
 
-	if (rval = checkOriginalJob()->run(*report))
+	if ((rval = checkOriginalJob()->run(*report)))
 	{
 		// Extended partitions are a special case: They don't have any file systems and so there's no
 		// need to move, shrink or grow their contents before setting the new geometry. In fact, trying

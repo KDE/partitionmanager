@@ -209,7 +209,7 @@ qint32 PartitionNode::highestMountedChild() const
 bool PartitionNode::isChildMounted() const
 {
 	foreach (const Partition* child, children())
-		if (child->isMounted() || child->hasChildren() && child->isChildMounted())
+		if (child->isMounted() || (child->hasChildren() && child->isChildMounted()))
 			return true;
 
 	return false;

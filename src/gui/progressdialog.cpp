@@ -227,7 +227,7 @@ void ProgressDialog::updateReport(bool force)
 	// (1) If the widget isn't visible, don't update.
 	// (2) Also don't update if the last update was n msecs ago, BUT
 	// (3) DO update if we're being forced to.
-	if (force || detailsWidget().isVisible() && time().elapsed() - lastReportUpdate() > 2000)
+	if (force || (detailsWidget().isVisible() && time().elapsed() - lastReportUpdate() > 2000))
 	{
 		detailsWidget().editReport().setHtml("<html><body>" + report().toHtml() + "</body></html>");
 		detailsWidget().editReport().moveCursor(QTextCursor::End);

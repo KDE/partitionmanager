@@ -119,7 +119,8 @@ void PartWidgetBase::positionChildren(const QWidget* destWidget, const Partition
 		childrenWidth.append(partitions[i]->length() * destWidgetWidth / totalLength);
 
 	// now go level the widths as long as required
- 	while (levelChildrenWidths(childrenWidth, destWidgetWidth));
+ 	while (levelChildrenWidths(childrenWidth, destWidgetWidth))
+		;
 
 	// move the children to their positions and resize them
 	for (int i = 0, x = borderWidth(); i < widgets.size(); i++)
