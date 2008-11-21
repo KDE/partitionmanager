@@ -171,6 +171,14 @@ QString Capacity::unitName(Unit u)
 	return unitNames[u];
 }
 
+/** Determine if the capacity is valid.
+	@return true if it is valid
+*/
+bool Capacity::isValid() const
+{
+	return m_Size >= 0;
+}
+
 QString Capacity::toStringInternal(qint64 unitSize) const
 {
 	if (m_Size < 0)

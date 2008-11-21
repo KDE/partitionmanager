@@ -65,6 +65,8 @@ class Capacity
 		QString unitName() const;
 		Unit bestUnit() const;
 
+		bool isValid() const;
+
 		static const QString& invalidString() { return m_InvalidString; } /**< @return string representing an invalid capacity */
 		static QString unitName(Unit u);
 		static qint64 unitFactor(Unit from, Unit to);
