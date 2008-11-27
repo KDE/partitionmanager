@@ -48,25 +48,6 @@ ADD_SUBDIRECTORY(src)
 
 MESSAGE(STATUS "KDE Partition Manager ${VERSION} will be built for install into ${CMAKE_INSTALL_PREFIX}")
 
-ADD_CUSTOM_TARGET(src_tarball
-    COMMAND mkdir -p partitionmanager-${VERSION}
-    COMMAND cp -r cmake partitionmanager-${VERSION}
-    COMMAND cp -r src partitionmanager-${VERSION}
-    COMMAND cp CMakeLists.txt COPYING INSTALL README BUGS CHANGES partitionmanager-${VERSION}
-    COMMAND tar -hcj --exclude .svn -f partitionmanager-${VERSION}.tar.bz2 partitionmanager-${VERSION}
-    COMMAND rm -rf partitionmanager-${VERSION}
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-)
-
-ADD_CUSTOM_TARGET(bin_tarball
-    COMMAND mkdir -p partitionmanager-bin-${VERSION}
-    COMMAND cp -r install/* partitionmanager-bin-${VERSION}
-    COMMAND cp COPYING README BUGS CHANGES partitionmanager-bin-${VERSION}
-    COMMAND tar -hcj --exclude .svn -f partitionmanager-bin-${VERSION}.tar.bz2 partitionmanager-bin-${VERSION}
-    COMMAND rm -rf partitionmanager-bin-${VERSION}
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-)
-
 ADD_CUSTOM_TARGET(docs
 	COMMAND doxygen Doxyfile
 	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
