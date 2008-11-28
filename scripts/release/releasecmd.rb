@@ -26,23 +26,30 @@ def usage
 	puts <<END_OF_TEXT
 #{$0} [options]
 where options are:
-    --application-name (-a)*
-    --version (-v)*
-    --checkout-from (-c): trunk, stable, tag
+    --product-name (-p)
+    --application-name (-a)
+    --version (-v)
+    --checkout-from (-c): trunk (default), stable, tag
     --tag (-t): name of tag
-    --svn-access (-s): (https, svn+ssh, anonsvn)
-    --get-docs (-d): also get documentation
-    --get-translations (-r): also get translations
+    --svn-access (-s): https, svn+ssh, anonsvn (default)
+    --get-docs (-d): also get documentation (default)
+    --no-get-docs (-D): do not get documentation
+    --get-translations (-r): also get translations (default)
+    --no-get-translations (-R): do not get translations
     --create-tag (-e): create a new tag
-    --create-tarball (-b): create a tarball
+    --no-create-tag (-E): do not create a new tag (default)
+    --create-tarball (-b): create a tarball (default)
+    --no-create-tarball (-B): do not create a tarball
     --help (-h): show this usage
-Options with an asterisk are required.
-Possible values for application-name:
+Possible values for product-name:
 END_OF_TEXT
-	ReleaseBuilder.apps.sort.each { |a| puts '"' + a[0] + '"' }
+	ReleaseBuilder.sortedProducts.each { |p| puts '    "' + p + '"' }
+	puts 'Possible values for application-name:'
+	ReleaseBuilder.sortedAppNames.each { |a| puts '    "' + a + '"' }
 end
 
 opts = GetoptLong.new(
+	[ '--product-name', '-p', GetoptLong::REQUIRED_ARGUMENT ],
 	[ '--application-name', '-a', GetoptLong::REQUIRED_ARGUMENT ],
 	[ '--version', '-v', GetoptLong::REQUIRED_ARGUMENT ],
 	[ '--checkout-from', '-c', GetoptLong::REQUIRED_ARGUMENT ],
@@ -50,25 +57,31 @@ opts = GetoptLong.new(
 	[ '--svn-access', '-s', GetoptLong::REQUIRED_ARGUMENT ],
 	[ '--svn-user', '-u', GetoptLong::REQUIRED_ARGUMENT ],
 	[ '--get-docs', '-d', GetoptLong::NO_ARGUMENT ],
+	[ '--no-get-docs', '-D', GetoptLong::NO_ARGUMENT ],
 	[ '--get-translations', '-r', GetoptLong::NO_ARGUMENT ],
+	[ '--no-get-translations', '-R', GetoptLong::NO_ARGUMENT ],
 	[ '--create-tag', '-e', GetoptLong::NO_ARGUMENT ],
+	[ '--no-create-tag', '-E', GetoptLong::NO_ARGUMENT ],
 	[ '--create-tarball', '-b', GetoptLong::NO_ARGUMENT ],
+	[ '--np-create-tarball', '-B', GetoptLong::NO_ARGUMENT ],
 	[ '--help', '-h', GetoptLong::NO_ARGUMENT ]
 )
 
-appName = ''
-version = ''
+productName = nil
+appName = nil
+version = nil
 checkoutFrom = 'trunk'
 tag = ''
 protocol = 'anonsvn'
 user = ''
-getDocs = false
-getTranslations = false
+getDocs = true
+getTranslations = true
 createTag = false
-createTarball = false
+createTarball = true
 
 opts.each do |opt, arg|
 	case opt
+		when '--product-name' then productName = arg
 		when '--application-name' then appName = arg
 		when '--version' then version = arg
 		when '--checkout-from' then checkoutFrom = arg
@@ -76,25 +89,35 @@ opts.each do |opt, arg|
 		when '--svn-access' then protocol = arg
 		when '--svn-user' then user = arg
 		when '--get-docs' then getDocs = true
+		when '--no-get-docs' then getDocs = false
 		when '--get-translations' then getTranslations = true
+		when '--no-get-translations' then getTranslations = false
 		when '--create-tag' then createTag = true
+		when '--no-create-tag' then createTag = false
 		when '--create-tarball' then createTarball = true
+		when '--no-create-tarball' then createTarball = false
 		when '--help' then usage; exit
 	end
 end
 
-if appName.empty? or version.empty?
-	puts "Application and version can not be empty."
+if not productName and not appName
+	puts "You must either specify a product name or an application name."
 	exit
 end
 
-if not ReleaseBuilder.apps.key?(appName)
-	puts "Unknown application '#{appName}'"
+if not version
+	puts "Version can not be empty."
+	exit
+end
+
+app = productName ? ReleaseBuilder.findAppByProduct(productName) : ReleaseBuilder.findAppByName(appName)
+if not app
+	puts "Could not find product."
 	exit
 end
 
 if protocol != 'anonsvn' and user.empty?
-	puts "The selected SVN access protocol requires a user name."
+	puts "The SVN protocol '#{protocol}' requires a user name."
 	exit
 end
 
@@ -103,11 +126,8 @@ if checkoutFrom == 'tag' and tag.empty?
 	exit
 end
 
-component = ReleaseBuilder.apps[appName][1]
-section = ReleaseBuilder.apps[appName][2]
+repository = ReleaseBuilder.repository(app.product, protocol, user, checkoutFrom != 'tag' ? checkoutFrom : tag)
 
-repository = ReleaseBuilder.repository(ReleaseBuilder.apps[appName][0], protocol, user, checkoutFrom != 'tag' ? checkoutFrom : tag)
-
-releaseBuilder = ReleaseBuilder.new(Dir.getwd, repository, component, section, ReleaseBuilder.apps[appName][0], version)
+releaseBuilder = ReleaseBuilder.new(Dir.getwd, repository, app.product, version)
 releaseBuilder.run(protocol, user, createTarball, getTranslations, getDocs, createTag)
 

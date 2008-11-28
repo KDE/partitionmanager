@@ -20,27 +20,32 @@
 ***************************************************************************
 =end
 
-Apps = {
-	'Amarok' => [ 'amarok2', 'extragear', 'multimedia' ],
-	'Digikam' => [ 'digikam',  'extragear', 'graphics' ],
-	'Partition Manager' => [ 'partitionmanager', 'extragear', 'sysadmin' ]
-}
-
+require 'application.rb'
 require 'tagger.rb'
 require 'translationstatsbuilder.rb'
 require 'fileutils'
 require 'getoptlong'
 
 class ReleaseBuilder
-	def initialize(workingDir, repository, component, section, appName, version)
+
+private
+	Apps = [
+		Application.new('Amarok', 'extragear', 'multimedia', 'amarok'),
+		Application.new('Digikam', 'extragear', 'graphics', 'digikam'),
+		Application.new('Partition Manager', 'extragear', 'sysadmin', 'partitionmanager')
+	]
+
+public
+	def initialize(workingDir, repository, product, version)
 		@workingDir = workingDir
 		@repository = repository
-		@component = component
-		@section = section
-		@appName = appName
 		@version = version
-		@outputDir = "#{@appName}-#{@version}"
-	
+		
+		@app = ReleaseBuilder.findAppByProduct(product)
+		if not @app then raise "Product #{product} not found" end
+		
+		@outputDir = "#{@app.name}-#{@version}"
+		
 		FileUtils.rm_rf @outputDir
 		FileUtils.rm_rf "#{@outputDir}.tar.bz2"
 	end
@@ -51,8 +56,8 @@ class ReleaseBuilder
 		docs = checkoutDocumentation if getDocs
 		
 		if createTag
-			repositoryTags = ReleaseBuilder.repository(@appName, protocol, user, @version)
-			tagger = Tagger.new(@repository, repositoryTags, @component, @section, @appName, @version)
+			repositoryTags = ReleaseBuilder.repository(@app.product, protocol, user, @version)
+			tagger = Tagger.new(@repository, repositoryTags, @app, @version)
 			tagger.tagSource
 			tagger.tagTranslations(translations)
 			tagger.tagDocumentation(docs)
@@ -63,7 +68,7 @@ class ReleaseBuilder
 
 	def checkoutSource
 		Dir.chdir @workingDir
-		svnDir = "#{@component}/#{@section}/#{@appName}"
+		svnDir = "#{@app.component}/#{@app.section}/#{@app.name}"
 
 		puts "Checking out source from #{@repository}/#{svnDir}..."
 
@@ -87,15 +92,15 @@ class ReleaseBuilder
 			next if lang == 'x-test'
 
 			FileUtils.rm_rf 'l10n'
-			system "svn co #{@repository}/l10n-kde4/#{lang}/messages/#{@component}-#{@section} l10n >/dev/null 2>&1"
-			next unless FileTest.exists? "l10n/#{@appName}.po"
+			system "svn co #{@repository}/l10n-kde4/#{lang}/messages/#{@app.component}-#{@app.section} l10n >/dev/null 2>&1"
+			next unless FileTest.exists? "l10n/#{@app.name}.po"
 
 			puts "Adding translations for #{lang}..."
 			
 			dest = "po/#{lang}"
 			Dir.mkdir dest
 			
-			FileUtils.mv("l10n/#{@appName}.po", dest)
+			FileUtils.mv("l10n/#{@app.name}.po", dest)
 			FileUtils.mv('l10n/.svn', dest)
 
 			File.open("#{dest}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
@@ -106,7 +111,7 @@ END_OF_TEXT
 			end
 
 			system "svn add #{dest}/CMakeLists.txt >/dev/null 2>&1"
-			translations += [lang]
+			translations << lang
 		end
 
 		if translations.length > 0
@@ -135,7 +140,7 @@ macro_optional_add_subdirectory(po)
 END_OF_TEXT
 			end
 
-			TranslationStatsBuilder.new(@appName, @version, @workingDir, @outputDir).run
+			TranslationStatsBuilder.new(@app.name, @version, @workingDir, @outputDir).run
 		else
 			FileUtils.rm_rf 'po'
 		end
@@ -148,7 +153,7 @@ END_OF_TEXT
 	def checkoutDocumentation
 		Dir.chdir "#{@workingDir}/#{@outputDir}"
 	
-		system "svn co #{@repository}/#{@component}/#{@section}/doc/#{@appName} doc/en_US >/dev/null 2>&1"
+		system "svn co #{@repository}/#{@app.component}/#{@app.section}/doc/#{@app.name} doc/en_US >/dev/null 2>&1"
 
 		if not File.exists? 'doc/en_US/index.docbook'
 			FileUtils.rm_rf 'doc'
@@ -156,7 +161,7 @@ END_OF_TEXT
 		end
 		
 		File.open("doc/en_US/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
-			f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/en_US/ SUBDIR #{@appName})\n"
+			f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/en_US/ SUBDIR #{@app.name})\n"
 		end
 
 		docs = [ "en_US" ]
@@ -167,7 +172,7 @@ END_OF_TEXT
 			lang.chomp!
 
 			FileUtils.rm_rf 'l10n'
-			system "svn co #{@repository}/l10n-kde4/#{lang}/docs/#{@component}-#{@section}/#{@appName} l10n >/dev/null 2>&1"
+			system "svn co #{@repository}/l10n-kde4/#{lang}/docs/#{@app.component}-#{@app.section}/#{@app.name} l10n >/dev/null 2>&1"
 			next unless FileTest.exists? 'l10n/index.docbook'
 
 			puts "Adding documentation for #{lang}..."
@@ -176,11 +181,11 @@ END_OF_TEXT
 			FileUtils.mv('l10n', dest)
 
 			File.open("doc/#{lang}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
-				f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/#{lang}/ SUBDIR #{@appName})\n"
+				f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/#{lang}/ SUBDIR #{@app.name})\n"
 			end
 
 			system "svn add doc/#{lang}/CMakeLists.txt >/dev/null 2>&1"
-			docs += [lang]
+			docs << lang
 		end
 
 		File.open('doc/CMakeLists.txt', File::CREAT | File::RDWR | File::TRUNC) do |f|
@@ -211,7 +216,9 @@ END_OF_TEXT
 		puts "SHA1: " + `sha1sum #{tarFileName}`.split[0]
 	end
 
-	def self.repository(appName, protocol, user, tag)
+	def self.repository(product, protocol, user, tag)
+		appName = findAppByProduct(product).name
+
 		if protocol == 'anonsvn'
 			protocol = 'svn'
 			user = 'anon'
@@ -227,12 +234,42 @@ END_OF_TEXT
 			branch = "tags/#{appName}/#{tag}"
 		end
 
-#		return "file://localhost/home/vl/tmp/svn/#{branch}"
-		return "#{protocol}://#{user}svn.kde.org/home/kde/#{branch}"
+		return "file://localhost/home/vl/tmp/svn/#{branch}"
+#		return "#{protocol}://#{user}svn.kde.org/home/kde/#{branch}"
 	end
 
 	def self.apps
 		return Apps
+	end
+
+	def self.sortedProducts
+		rval = []
+		Apps.each { |a| rval << a.product }
+		return rval.sort
+	end
+
+	def self.sortedAppNames
+		rval = []
+		Apps.each { |a| rval << a.name }
+		return rval.sort
+	end
+	
+	def self.findAppByProduct(product)
+		Apps.each do |a|
+			if a.product == product
+				return a
+			end
+		end
+		return nil
+	end
+
+	def self.findAppByName(name)
+		Apps.each do |a|
+			if a.name == name
+				return a
+			end
+		end
+		return nil
 	end
 end
 

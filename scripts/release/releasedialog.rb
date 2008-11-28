@@ -41,7 +41,7 @@ class ReleaseDialog < Qt::Dialog
 		@ui = Ui_ReleaseDialog.new()
 		@ui.setupUi(self)
 
-		ReleaseBuilder.apps.sort.each { |key, value| @ui.comboName.addItem(key) }
+		ReleaseBuilder.sortedProducts.each { |key, value| @ui.comboName.addItem(key) }
 	end
 
 	def validate
@@ -61,14 +61,9 @@ class ReleaseDialog < Qt::Dialog
 	def accept
 		return if not validate
 
-		component = ReleaseBuilder.apps[@ui.comboName.currentText][1]
-		section = ReleaseBuilder.apps[@ui.comboName.currentText][2]
-		appName = ReleaseBuilder.apps[@ui.comboName.currentText][0]
-		version = @ui.editVersion.text
+		repository = ReleaseBuilder.repository(@ui.comboName.currentText, @ui.comboAccess.currentText, @ui.editUser.text, @ui.comboCheckout.currentText != 'tag' ? @ui.comboCheckout.currentText : @ui.comboTag.currentText)
 		
-		repository = ReleaseBuilder.repository(ReleaseBuilder.apps[@ui.comboName.currentText][0], @ui.comboAccess.currentText, @ui.editUser.text, @ui.comboCheckout.currentText != 'tag' ? @ui.comboCheckout.currentText : @ui.comboTag.currentText)
-		
-		releaseBuilder = ReleaseBuilder.new(Dir.getwd, repository, component, section, appName, version)
+		releaseBuilder = ReleaseBuilder.new(Dir.getwd, repository, @ui.comboName.currentText, @ui.editVersion.text)
 		releaseBuilder.run(@ui.comboAccess.currentText, @ui.editUser.text, @ui.checkTarball.isChecked, @ui.checkTranslations.isChecked, @ui.checkDocs.isChecked, @ui.checkTag.isChecked)
 		
 		super
@@ -91,10 +86,10 @@ private
 	def updateTags
 		@ui.comboTag.clear
 	
-		appName = ReleaseBuilder.apps[@ui.comboName.currentText][0]
+		appName = ReleaseBuilder.findAppByProduct(@ui.comboName.currentText).name
 		
-#		tags = `svn ls file://localhost/home/vl/tmp/svn/tags/#{appName}`.chomp!
-		tags = `svn ls svn://anonsvn.kde.org/home/kde/tags/#{appName}`.chomp!
+		tags = `svn ls file://localhost/home/vl/tmp/svn/tags/#{appName}`.chomp!
+#		tags = `svn ls svn://anonsvn.kde.org/home/kde/tags/#{appName}`.chomp!
 		
 		return false if not tags or tags.length == 0
 		

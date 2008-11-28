@@ -21,12 +21,13 @@
 =end
 
 require 'fileutils'
+require 'application.rb'
 
 class Tagger
-	def initialize(repositorySource, repositoryTag, component, section, appName, version)
-		@appName = appName
+	def initialize(repositorySource, repositoryTag, app, version)
+		@app = app
 		@version = version
-		@repositorySource = "#{repositorySource}/#{component}/#{section}/#{@appName}"
+		@repositorySource = "#{repositorySource}/#{@app.component}/#{@app.section}/#{@app.name}"
 		@repositoryTag = repositoryTag
 		@tmpDirName = 'tagging_dir'
 	end
@@ -49,7 +50,7 @@ class Tagger
 
 		translations.each do |trans|
 			system "svn mkdir #{@tmpDirName}/po/#{trans} >/dev/null 2>&1 >/dev/null 2>&1"
-			system "svn cp po/#{trans}/#{@appName}.po #{@tmpDirName}/po/#{trans}/ >/dev/null 2>&1"
+			system "svn cp po/#{trans}/#{@app.name}.po #{@tmpDirName}/po/#{trans}/ >/dev/null 2>&1"
 		end
 		
 		system "svn ci -m 'Tag translations for #{@version}' #{@tmpDirName}/po >/dev/null 2>&1"
