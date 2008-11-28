@@ -88,8 +88,8 @@ private
 	
 		appName = ReleaseBuilder.findAppByProduct(@ui.comboName.currentText).name
 		
-		tags = `svn ls file://localhost/home/vl/tmp/svn/tags/#{appName}`.chomp!
-#		tags = `svn ls svn://anonsvn.kde.org/home/kde/tags/#{appName}`.chomp!
+#		tags = `svn ls file://localhost/home/vl/tmp/svn/tags/#{appName}`.chomp!
+		tags = `svn ls svn://anonsvn.kde.org/home/kde/tags/#{appName}`.chomp!
 		
 		return false if not tags or tags.length == 0
 		

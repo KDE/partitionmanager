@@ -234,8 +234,8 @@ END_OF_TEXT
 			branch = "tags/#{appName}/#{tag}"
 		end
 
-		return "file://localhost/home/vl/tmp/svn/#{branch}"
-#		return "#{protocol}://#{user}svn.kde.org/home/kde/#{branch}"
+#		return "file://localhost/home/vl/tmp/svn/#{branch}"
+		return "#{protocol}://#{user}svn.kde.org/home/kde/#{branch}"
 	end
 
 	def self.apps
