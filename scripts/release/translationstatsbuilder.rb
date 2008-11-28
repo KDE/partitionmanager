@@ -89,12 +89,18 @@ END_OF_TEXT
 END_OF_TEXT
 	end
 
-	def statsLine(file, langName, numLanguages, translatedPercent)
-		values = `msgfmt --statistics po/#{langName}/#{@appName}.po -o /dev/null 2>&1`.scan /[\d]+/
-		missing = values[1].to_i + values[2].to_i
+	def self.fileStats(filename)
+		values = `msgfmt --statistics #{filename} -o /dev/null 2>&1`.scan /[\d]+/
+		fuzzy = values[1].to_i
+		untranslated = values[2].to_i
 		total = values[0].to_i + values[1].to_i + values[2].to_i
-		percentage = (total - missing) * 100 / total
-
+		percentage = (total - fuzzy - untranslated) * 100 / total
+		return fuzzy, untranslated, percentage
+	end
+	
+	def statsLine(file, langName, numLanguages, translatedPercent)
+		fuzzy, untranslated, percentage = TranslationStatsBuilder.fileStats("po/#{langName}/#{@appName}.po")
+		
 		textColor = case percentage
 			when 0...70 then 'red'
 			when 70...100 then 'orange'
@@ -104,9 +110,9 @@ END_OF_TEXT
 		file.print <<END_OF_TEXT
 	<tr>
 		<td style="text-align: left; color: #{textColor}">#{langName}</td>
-		<td style="text-align: center; color: #{textColor}">#{values[1].to_i}</td>
-		<td style="text-align: center; color: #{textColor}">#{values[2].to_i}</td>
-		<td style="text-align: center; color: #{textColor}">#{missing.to_i}</td>
+		<td style="text-align: center; color: #{textColor}">#{fuzzy}</td>
+		<td style="text-align: center; color: #{textColor}">#{untranslated}</td>
+		<td style="text-align: center; color: #{textColor}">#{fuzzy + untranslated}</td>
 		<td style="text-align: center; color: #{textColor}">#{percentage.to_s + " %"}</td>
 	</tr>
 END_OF_TEXT

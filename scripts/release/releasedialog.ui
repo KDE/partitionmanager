@@ -5,9 +5,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>464</width>
-    <height>374</height>
+    <width>500</width>
+    <height>452</height>
    </rect>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>500</width>
+    <height>0</height>
+   </size>
   </property>
   <property name="windowTitle" >
    <string>KDE Release Builder</string>
@@ -211,7 +217,7 @@
       <string>Options</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2" >
-      <item row="1" column="0" >
+      <item row="0" column="0" >
        <widget class="QCheckBox" name="checkDocs" >
         <property name="text" >
          <string>Get &amp;Documentation</string>
@@ -221,17 +227,7 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="1" >
-       <widget class="QCheckBox" name="checkTarball" >
-        <property name="text" >
-         <string>Create Tar&amp;ball</string>
-        </property>
-        <property name="checked" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1" >
+      <item row="0" column="1" >
        <widget class="QCheckBox" name="checkTranslations" >
         <property name="text" >
          <string>Get &amp;Translations</string>
@@ -241,12 +237,77 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="0" >
+      <item row="1" column="1" >
+       <widget class="QCheckBox" name="checkTarball" >
+        <property name="text" >
+         <string>Create Tar&amp;ball</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
        <widget class="QCheckBox" name="checkTag" >
         <property name="text" >
          <string>C&amp;reate Tag</string>
         </property>
        </widget>
+      </item>
+      <item row="2" column="0" colspan="2" >
+       <layout class="QHBoxLayout" name="horizontalLayout" >
+        <item>
+         <widget class="QCheckBox" name="checkSkipTrans" >
+          <property name="text" >
+           <string>S&amp;kip translations below completion:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="sliderSkipTrans" >
+          <property name="enabled" >
+           <bool>false</bool>
+          </property>
+          <property name="maximum" >
+           <number>100</number>
+          </property>
+          <property name="singleStep" >
+           <number>5</number>
+          </property>
+          <property name="value" >
+           <number>50</number>
+          </property>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="tickPosition" >
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+          <property name="tickInterval" >
+           <number>10</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spinSkipTrans" >
+          <property name="enabled" >
+           <bool>false</bool>
+          </property>
+          <property name="suffix" >
+           <string> %</string>
+          </property>
+          <property name="maximum" >
+           <number>100</number>
+          </property>
+          <property name="singleStep" >
+           <number>5</number>
+          </property>
+          <property name="value" >
+           <number>50</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
@@ -274,6 +335,9 @@
   <tabstop>checkTranslations</tabstop>
   <tabstop>checkTag</tabstop>
   <tabstop>checkTarball</tabstop>
+  <tabstop>checkSkipTrans</tabstop>
+  <tabstop>sliderSkipTrans</tabstop>
+  <tabstop>spinSkipTrans</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources/>
@@ -285,8 +349,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>222</x>
-     <y>311</y>
+     <x>226</x>
+     <y>447</y>
     </hint>
     <hint type="destinationlabel" >
      <x>157</x>
@@ -301,12 +365,76 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>290</x>
-     <y>317</y>
+     <x>294</x>
+     <y>447</y>
     </hint>
     <hint type="destinationlabel" >
      <x>286</x>
      <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderSkipTrans</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinSkipTrans</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>354</x>
+     <y>378</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>489</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinSkipTrans</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>sliderSkipTrans</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>492</x>
+     <y>397</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>342</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkSkipTrans</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>sliderSkipTrans</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>123</x>
+     <y>387</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>288</x>
+     <y>396</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkSkipTrans</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>spinSkipTrans</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>87</x>
+     <y>388</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>486</x>
+     <y>391</y>
     </hint>
    </hints>
   </connection>

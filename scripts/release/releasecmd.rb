@@ -36,6 +36,7 @@ where options are:
     --no-get-docs (-D): do not get documentation
     --get-translations (-r): also get translations (default)
     --no-get-translations (-R): do not get translations
+    --skip-incomplete (-k): skip translations below a given percentage of completeness
     --create-tag (-e): create a new tag
     --no-create-tag (-E): do not create a new tag (default)
     --create-tarball (-b): create a tarball (default)
@@ -60,6 +61,7 @@ opts = GetoptLong.new(
 	[ '--no-get-docs', '-D', GetoptLong::NO_ARGUMENT ],
 	[ '--get-translations', '-r', GetoptLong::NO_ARGUMENT ],
 	[ '--no-get-translations', '-R', GetoptLong::NO_ARGUMENT ],
+	[ '--skip-incomplete', '-k', GetoptLong::REQUIRED_ARGUMENT ],
 	[ '--create-tag', '-e', GetoptLong::NO_ARGUMENT ],
 	[ '--no-create-tag', '-E', GetoptLong::NO_ARGUMENT ],
 	[ '--create-tarball', '-b', GetoptLong::NO_ARGUMENT ],
@@ -76,6 +78,7 @@ protocol = 'anonsvn'
 user = ''
 getDocs = true
 getTranslations = true
+skipBelow = 0
 createTag = false
 createTarball = true
 
@@ -92,6 +95,7 @@ opts.each do |opt, arg|
 		when '--no-get-docs' then getDocs = false
 		when '--get-translations' then getTranslations = true
 		when '--no-get-translations' then getTranslations = false
+		when '--skip-incomplete' then skipBelow = arg.to_i
 		when '--create-tag' then createTag = true
 		when '--no-create-tag' then createTag = false
 		when '--create-tarball' then createTarball = true
@@ -129,5 +133,5 @@ end
 repository = ReleaseBuilder.repository(app.product, protocol, user, checkoutFrom != 'tag' ? checkoutFrom : tag)
 
 releaseBuilder = ReleaseBuilder.new(Dir.getwd, repository, app.product, version)
-releaseBuilder.run(protocol, user, createTarball, getTranslations, getDocs, createTag)
+releaseBuilder.run(protocol, user, createTarball, getTranslations, skipBelow, getDocs, createTag)
 

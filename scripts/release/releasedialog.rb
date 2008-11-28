@@ -33,7 +33,8 @@ require 'releasebuilder.rb'
 class ReleaseDialog < Qt::Dialog
 	slots 'on_comboAccess_currentIndexChanged(int)',
 		'on_comboCheckout_currentIndexChanged(int)',
-		'on_comboName_currentIndexChanged(int)'
+		'on_comboName_currentIndexChanged(int)',
+		'on_checkTranslations_toggled(bool)'
 
 	def initialize
 		super
@@ -62,9 +63,10 @@ class ReleaseDialog < Qt::Dialog
 		return if not validate
 
 		repository = ReleaseBuilder.repository(@ui.comboName.currentText, @ui.comboAccess.currentText, @ui.editUser.text, @ui.comboCheckout.currentText != 'tag' ? @ui.comboCheckout.currentText : @ui.comboTag.currentText)
-		
+
+		skipBelow = @ui.checkSkipTrans.isChecked ? @ui.spinSkipTrans.value : 0
 		releaseBuilder = ReleaseBuilder.new(Dir.getwd, repository, @ui.comboName.currentText, @ui.editVersion.text)
-		releaseBuilder.run(@ui.comboAccess.currentText, @ui.editUser.text, @ui.checkTarball.isChecked, @ui.checkTranslations.isChecked, @ui.checkDocs.isChecked, @ui.checkTag.isChecked)
+		releaseBuilder.run(@ui.comboAccess.currentText, @ui.editUser.text, @ui.checkTarball.isChecked, @ui.checkTranslations.isChecked, skipBelow, @ui.checkDocs.isChecked, @ui.checkTag.isChecked)
 		
 		super
 	end
@@ -81,6 +83,12 @@ private
 	def on_comboCheckout_currentIndexChanged(index)
 		@ui.comboTag.setEnabled(index == 2)
 		updateTags or @ui.comboTag.setEnabled(false) if index == 2
+	end
+	
+	def on_checkTranslations_toggled(state)
+		@ui.checkSkipTrans.setEnabled(state)
+		@ui.sliderSkipTrans.setEnabled(state && @ui.checkSkipTrans.isChecked)
+		@ui.spinSkipTrans.setEnabled(state && @ui.checkSkipTrans.isChecked)
 	end
 	
 	def updateTags

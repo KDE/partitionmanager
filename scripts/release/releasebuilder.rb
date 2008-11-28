@@ -50,9 +50,9 @@ public
 		FileUtils.rm_rf "#{@outputDir}.tar.bz2"
 	end
 
-	def run(protocol, user, createTarball, getTranslations, getDocs, createTag)
+	def run(protocol, user, createTarball, getTranslations, skipBelow, getDocs, createTag)
 		checkoutSource
-		translations = checkoutTranslations if getTranslations
+		translations = checkoutTranslations(skipBelow) if getTranslations
 		docs = checkoutDocumentation if getDocs
 		
 		if createTag
@@ -75,7 +75,7 @@ public
 		system "svn co #{@repository}/#{svnDir} #{@outputDir} >/dev/null 2>&1"
 	end
 
-	def checkoutTranslations
+	def checkoutTranslations(skipBelow)
 		Dir.chdir "#{@workingDir}/#{@outputDir}"
 	
 		FileUtils.rm_rf 'l10n'
@@ -95,6 +95,12 @@ public
 			system "svn co #{@repository}/l10n-kde4/#{lang}/messages/#{@app.component}-#{@app.section} l10n >/dev/null 2>&1"
 			next unless FileTest.exists? "l10n/#{@app.name}.po"
 
+			if skipBelow > 0
+				fuzzy, untranslated, per = TranslationStatsBuilder.fileStats("l10n/#{@app.name}.po")
+				puts "Language #{lang} is #{per} % complete."
+				next if per < skipBelow
+			end
+			
 			puts "Adding translations for #{lang}..."
 			
 			dest = "po/#{lang}"
