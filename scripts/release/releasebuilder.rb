@@ -29,20 +29,20 @@ require 'getoptlong'
 class ReleaseBuilder
 
 private
+#REMOVE
 	Apps = [
 		Application.new('Amarok', 'extragear', 'multimedia', 'amarok'),
 		Application.new('Digikam', 'extragear', 'graphics', 'digikam'),
 		Application.new('Partition Manager', 'extragear', 'sysadmin', 'partitionmanager')
 	]
+# END REMOVE
 
 public
-	def initialize(workingDir, repository, product, version)
+	def initialize(app, workingDir, repository, version)
+		@app = app
 		@workingDir = workingDir
 		@repository = repository
 		@version = version
-		
-		@app = ReleaseBuilder.findAppByProduct(product)
-		if not @app then raise "Product #{product} not found" end
 		
 		@outputDir = "#{@app.name}-#{@version}"
 		
@@ -50,7 +50,7 @@ public
 		FileUtils.rm_rf "#{@outputDir}.tar.bz2"
 	end
 
-	def run(protocol, user, createTarball, getTranslations, skipBelow, getDocs, createTag)
+	def run(protocol, user, createTarball, getTranslations, skipBelow, getDocs, createTag, applyFixes)
 		checkoutSource
 		translations = checkoutTranslations(skipBelow) if getTranslations
 		docs = checkoutDocumentation if getDocs
@@ -62,6 +62,8 @@ public
 			tagger.tagTranslations(translations)
 			tagger.tagDocumentation(docs)
 		end
+
+		@app.applyFixes(@workingDir, @outputDir) if applyFixes
 		
 		self.createTarball if createTarball
 	end
@@ -212,7 +214,7 @@ END_OF_TEXT
 		Dir.chdir @workingDir
 	
 		tarFileName = "#{@outputDir}.tar.bz2"
-		
+	
 		system "find #{@outputDir} -name .svn | xargs rm -rf"
 		system "tar cfj #{tarFileName} #{@outputDir}"
 		
@@ -222,9 +224,7 @@ END_OF_TEXT
 		puts "SHA1: " + `sha1sum #{tarFileName}`.split[0]
 	end
 
-	def self.repository(product, protocol, user, tag)
-		appName = findAppByProduct(product).name
-
+	def self.repository(app, protocol, user, tag)
 		if protocol == 'anonsvn'
 			protocol = 'svn'
 			user = 'anon'
@@ -237,45 +237,30 @@ END_OF_TEXT
 		elsif tag == 'trunk'
 			branch = 'trunk'
 		else
-			branch = "tags/#{appName}/#{tag}"
+			branch = "tags/#{app.name}/#{tag}"
 		end
 
-#		return "file://localhost/home/vl/tmp/svn/#{branch}"
-		return "#{protocol}://#{user}svn.kde.org/home/kde/#{branch}"
+		return "file://localhost/home/vl/tmp/svn/#{branch}"
+#		return "#{protocol}://#{user}svn.kde.org/home/kde/#{branch}"
 	end
 
+#REMOVE
 	def self.apps
 		return Apps
 	end
 
 	def self.sortedProducts
 		rval = []
-		Apps.each { |a| rval << a.product }
+		self.apps.each { |a| rval << a.product }
 		return rval.sort
 	end
 
 	def self.sortedAppNames
 		rval = []
-		Apps.each { |a| rval << a.name }
+		self.apps.each { |a| rval << a.name }
 		return rval.sort
 	end
+#END REMOVE
 	
-	def self.findAppByProduct(product)
-		Apps.each do |a|
-			if a.product == product
-				return a
-			end
-		end
-		return nil
-	end
-
-	def self.findAppByName(name)
-		Apps.each do |a|
-			if a.name == name
-				return a
-			end
-		end
-		return nil
-	end
 end
 

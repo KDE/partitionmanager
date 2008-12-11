@@ -19,16 +19,39 @@
 ***************************************************************************
 =end
 
-class Application
-	attr_reader :product, :component, :section, :name
+require 'release/application.rb'
+require 'fileutils'
+
+class PartitionManagerApp < Application
 	def initialize(product, component, section, name)
-		@product = product
-		@component = component
-		@section = section
-		@name = name
+		super
 	end
 
 	def applyFixes(workingDir, outputDir)
-		puts "applying fixes for base application class"
+		puts "applying fixes for partition manager"
+ 
+		Dir.chdir "#{workingDir}/#{outputDir}"
+
+		return if !File.exists? 'doc'
+
+		FileUtils.mv('CMakeLists.txt', 'CMakeLists.txt.orig')
+
+		newFile = File.new('CMakeLists.txt', File::CREAT | File::TRUNC | File::RDWR)
+
+		IO.foreach('CMakeLists.txt.orig')  do |line|
+			if line =~ /\s*macro_optional_add_subdirectory\s*\(\s*doc\s*\)\s*/i
+				newFile.print <<END_OF_TEXT
+if (KDEVERSION VERSION_GREATER "4.1.3")
+    macro_optional_add_subdirectory(doc)
+else (KDEVERSION VERSION_GREATER "4.1.3")
+    message (STATUS "No documentation built for KDE libs < 4.1.4")
+endif (KDEVERSION VERSION_GREATER "4.1.3")
+END_OF_TEXT
+			else
+				newFile << line
+			end
+		end
+
+		newFile.close
 	end
 end

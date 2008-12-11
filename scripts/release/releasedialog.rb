@@ -22,27 +22,26 @@
 
 require 'Qt4'
 
-if not FileTest.exists?('ui_releasedialog.rb') or File::stat('ui_releasedialog.rb').mtime.to_i < File::stat('releasedialog.ui').mtime.to_i
-	puts "rebuilding ui_releasedialog.rb..."
-	system "rbuic4 releasedialog.ui > ui_releasedialog.rb"
-end
-
+# generate with:
+# $ rbuic4 releasedialog.ui > ui_releasedialog.rb
 require 'ui_releasedialog.rb'
+
 require 'releasebuilder.rb'
 
 class ReleaseDialog < Qt::Dialog
 	slots 'on_comboAccess_currentIndexChanged(int)',
 		'on_comboCheckout_currentIndexChanged(int)',
-		'on_comboName_currentIndexChanged(int)',
 		'on_checkTranslations_toggled(bool)'
 
-	def initialize
-		super
+	def initialize(app)
+		super()
+
+		@app = app
 
 		@ui = Ui_ReleaseDialog.new()
 		@ui.setupUi(self)
 
-		ReleaseBuilder.sortedProducts.each { |key, value| @ui.comboName.addItem(key) }
+		@ui.labelName.setText(@app.product)
 	end
 
 	def validate
@@ -62,20 +61,19 @@ class ReleaseDialog < Qt::Dialog
 	def accept
 		return if not validate
 
-		repository = ReleaseBuilder.repository(@ui.comboName.currentText, @ui.comboAccess.currentText, @ui.editUser.text, @ui.comboCheckout.currentText != 'tag' ? @ui.comboCheckout.currentText : @ui.comboTag.currentText)
+		repository = ReleaseBuilder.repository(@app, @ui.comboAccess.currentText, @ui.editUser.text, @ui.comboCheckout.currentText != 'tag' ? @ui.comboCheckout.currentText : @ui.comboTag.currentText)
 
 		skipBelow = @ui.checkSkipTrans.isChecked ? @ui.spinSkipTrans.value : 0
-		releaseBuilder = ReleaseBuilder.new(Dir.getwd, repository, @ui.comboName.currentText, @ui.editVersion.text)
-		releaseBuilder.run(@ui.comboAccess.currentText, @ui.editUser.text, @ui.checkTarball.isChecked, @ui.checkTranslations.isChecked, skipBelow, @ui.checkDocs.isChecked, @ui.checkTag.isChecked)
+
+		hide
 		
+		releaseBuilder = ReleaseBuilder.new(@app, Dir.getwd, repository, @ui.editVersion.text)
+		releaseBuilder.run(@ui.comboAccess.currentText, @ui.editUser.text, @ui.checkTarball.isChecked, @ui.checkTranslations.isChecked, skipBelow, @ui.checkDocs.isChecked, @ui.checkTag.isChecked, @ui.checkFixes.isChecked)
+
 		super
 	end
 
 private
-	def on_comboName_currentIndexChanged(index)
-		on_comboCheckout_currentIndexChanged(@ui.comboCheckout.currentIndex)
-	end
-	
 	def on_comboAccess_currentIndexChanged(index)
 		@ui.editUser.setEnabled(index > 0)
 	end
@@ -94,10 +92,8 @@ private
 	def updateTags
 		@ui.comboTag.clear
 	
-		appName = ReleaseBuilder.findAppByProduct(@ui.comboName.currentText).name
-		
-#		tags = `svn ls file://localhost/home/vl/tmp/svn/tags/#{appName}`.chomp!
-		tags = `svn ls svn://anonsvn.kde.org/home/kde/tags/#{appName}`.chomp!
+#		tags = `svn ls file://localhost/home/vl/tmp/svn/tags/#{@app.name}`.chomp!
+		tags = `svn ls svn://anonsvn.kde.org/home/kde/tags/#{@app.name}`.chomp!
 		
 		return false if not tags or tags.length == 0
 		
@@ -105,11 +101,4 @@ private
 		return true
 	end
 
-end
-
-if __FILE__ == $0
-	app = Qt::Application.new(ARGV)
-	window = ReleaseDialog.new
-	window.show
-	app.exec
 end

@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>452</height>
+    <height>405</height>
    </rect>
   </property>
   <property name="minimumSize" >
@@ -21,6 +21,12 @@
   <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
     <widget class="QGroupBox" name="goupApplication" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title" >
       <string>Application</string>
      </property>
@@ -28,23 +34,10 @@
       <item row="0" column="0" >
        <widget class="QLabel" name="label" >
         <property name="text" >
-         <string>&amp;Name:</string>
+         <string>Name:</string>
         </property>
         <property name="alignment" >
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-        <property name="buddy" >
-         <cstring>comboName</cstring>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1" >
-       <widget class="QComboBox" name="comboName" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
-          <horstretch>1</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
         </property>
        </widget>
       </item>
@@ -71,11 +64,30 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="1" >
+       <widget class="QLabel" name="labelName" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
    <item>
     <widget class="QGroupBox" name="groupBox" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+       <horstretch>0</horstretch>
+       <verstretch>2</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title" >
       <string>Repository and Revision</string>
      </property>
@@ -213,6 +225,12 @@
    </item>
    <item>
     <widget class="QGroupBox" name="groupOptions" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+       <horstretch>0</horstretch>
+       <verstretch>2</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title" >
       <string>Options</string>
      </property>
@@ -237,16 +255,6 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1" >
-       <widget class="QCheckBox" name="checkTarball" >
-        <property name="text" >
-         <string>Create Tar&amp;ball</string>
-        </property>
-        <property name="checked" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0" >
        <widget class="QCheckBox" name="checkTag" >
         <property name="text" >
@@ -254,7 +262,7 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="0" colspan="2" >
+      <item row="3" column="0" colspan="2" >
        <layout class="QHBoxLayout" name="horizontalLayout" >
         <item>
          <widget class="QCheckBox" name="checkSkipTrans" >
@@ -309,6 +317,26 @@
         </item>
        </layout>
       </item>
+      <item row="2" column="0" >
+       <widget class="QCheckBox" name="checkTarball" >
+        <property name="text" >
+         <string>Create Tar&amp;ball</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QCheckBox" name="checkFixes" >
+        <property name="text" >
+         <string>Apply &amp;fixes</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
@@ -325,7 +353,6 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>comboName</tabstop>
   <tabstop>editVersion</tabstop>
   <tabstop>comboCheckout</tabstop>
   <tabstop>comboTag</tabstop>
@@ -334,7 +361,6 @@
   <tabstop>checkDocs</tabstop>
   <tabstop>checkTranslations</tabstop>
   <tabstop>checkTag</tabstop>
-  <tabstop>checkTarball</tabstop>
   <tabstop>checkSkipTrans</tabstop>
   <tabstop>sliderSkipTrans</tabstop>
   <tabstop>spinSkipTrans</tabstop>

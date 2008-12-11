@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 =begin
 ***************************************************************************
 *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
@@ -19,16 +20,13 @@
 ***************************************************************************
 =end
 
-class Application
-	attr_reader :product, :component, :section, :name
-	def initialize(product, component, section, name)
-		@product = product
-		@component = component
-		@section = section
-		@name = name
-	end
+require 'partitionmanagerapp.rb'
+require 'release/releasedialog.rb'
+require 'Qt4'
 
-	def applyFixes(workingDir, outputDir)
-		puts "applying fixes for base application class"
-	end
-end
+app = PartitionManagerApp.new('Partition Manager', 'extragear', 'sysadmin', 'partitionmanager')
+
+qtApp = Qt::Application.new(ARGV)
+window = ReleaseDialog.new(app)
+window.show
+qtApp.exec
