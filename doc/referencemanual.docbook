@@ -199,6 +199,7 @@
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo></shortcut>
 							<guimenu>Device</guimenu>
 							<guimenuitem>Create New Partition Table</guimenuitem>
 						</menuchoice>
