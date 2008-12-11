@@ -240,8 +240,8 @@ END_OF_TEXT
 			branch = "tags/#{app.name}/#{tag}"
 		end
 
-		return "file://localhost/home/vl/tmp/svn/#{branch}"
-#		return "#{protocol}://#{user}svn.kde.org/home/kde/#{branch}"
+#		return "file://localhost/home/vl/tmp/svn/#{branch}"
+		return "#{protocol}://#{user}svn.kde.org/home/kde/#{branch}"
 	end
 
 #REMOVE
