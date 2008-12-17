@@ -41,6 +41,7 @@ CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d) :
 	m_CreatePartitionTableJob(new CreatePartitionTableJob(targetDevice()))
 {
 	addJob(createPartitionTableJob());
+	partitionTable().insertUnallocated(targetDevice(), &partitionTable(), targetDevice().sectorsPerTrack());
 }
 
 CreatePartitionTableOperation::~CreatePartitionTableOperation()

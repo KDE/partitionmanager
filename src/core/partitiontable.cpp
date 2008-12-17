@@ -273,7 +273,7 @@ static bool canSnapToSector(const Device& d, const Partition& p, qint64 s, const
 {
 	if (s < d.sectorsPerTrack() || s >= d.totalSectors())
 		return false;
-	
+
 	const Partition* other = d.partitionTable().findPartitionBySector(s, PartitionRole(PartitionRole::Logical | PartitionRole::Primary | PartitionRole::Extended | PartitionRole::Unallocated));
 
 	if (other && other->roles().has(PartitionRole::Unallocated))
@@ -407,7 +407,7 @@ bool PartitionTable::snap(const Device& d, Partition& p, const Partition* origin
 			}
 		}
 	}
-	
+
 	return isSnapped(d, p);
 }
 
@@ -433,7 +433,7 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 		}
 
 		Q_ASSERT(extended);
-		
+
 		// Leave a track free at the start for a new partition's metadata
 		start += device.sectorsPerTrack();
 
@@ -441,7 +441,7 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 		// at the end of the extended partition
 		if (end < extended->lastSector())
 			end -= device.sectorsPerTrack();
-		
+
 		r |= PartitionRole::Logical;
 	}
 
@@ -457,7 +457,7 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 void PartitionTable::removeUnallocated(PartitionNode* p)
 {
 	Q_ASSERT(p != NULL);
-	
+
 	qint32 i = 0;
 
 	while (i < p->children().size())
@@ -472,7 +472,7 @@ void PartitionTable::removeUnallocated(PartitionNode* p)
 
 		if (child->roles().has(PartitionRole::Extended))
 			removeUnallocated(child);
-		
+
 		i++;
 	}
 }
@@ -500,7 +500,7 @@ void PartitionTable::removeUnallocated()
 void PartitionTable::insertUnallocated(const Device& d, PartitionNode* p, qint64 start) const
 {
 	Q_ASSERT(p != NULL);
-	
+
 	qint64 lastEnd = start;
 	qint32 i = 0;
 
@@ -513,7 +513,7 @@ void PartitionTable::insertUnallocated(const Device& d, PartitionNode* p, qint64
 
 		if (child->roles().has(PartitionRole::Extended))
 			insertUnallocated(d, child, child->firstSector());
-		
+
 		lastEnd = child->lastSector() + 1;
 		i++;
 	}
@@ -521,14 +521,14 @@ void PartitionTable::insertUnallocated(const Device& d, PartitionNode* p, qint64
 	// Take care of the free space between the end of the last child and the end
 	// of the device or the extended partition.
 	qint64 parentEnd = d.totalSectors() - 1;
-	
+
 	if (!p->isRoot())
 	{
 		Partition* extended = dynamic_cast<Partition*>(p);
 		Q_ASSERT(extended != NULL);
 		parentEnd = (extended != NULL) ? extended->lastSector() : -1;
 	}
-	
+
 	if (parentEnd >= Partition::minimumPartitionSectors())
 		p->insert(createUnallocated(d, *p, lastEnd, parentEnd));
 }
@@ -538,6 +538,11 @@ void PartitionTable::insertUnallocated(const Device& d, PartitionNode* p, qint64
 */
 void PartitionTable::updateUnallocated(const Device& d)
 {
+	// if the partition table has no children it is invalid so don't do
+	// anything here.
+	if (children().size() == 0)
+		return;
+
 	removeUnallocated();
 	insertUnallocated(d, this, d.sectorsPerTrack());
 }
