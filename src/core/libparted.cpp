@@ -117,7 +117,7 @@ static qint64 readSectorsUsedLibParted(PedDisk* pedDisk, const Partition& p)
 	Q_ASSERT(pedDisk);
 
 	qint64 rval = -1;
-	
+
 	PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk, p.firstSector());
 
 	if (pedPartition)
@@ -175,7 +175,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 	Q_ASSERT(pedDisk);
 
 	PedPartition* pedPartition = NULL;
-	
+
 	while ((pedPartition = ped_disk_next_partition(pedDisk, pedPartition)))
 	{
 		if (pedPartition->geom.end - pedPartition->geom.start < Partition::minimumPartitionSectors() || pedPartition->num < 1)
@@ -189,16 +189,16 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 			case PED_PARTITION_NORMAL:
 				r = PartitionRole::Primary;
 				break;
-				
+
 			case PED_PARTITION_EXTENDED:
 				r = PartitionRole::Extended;
 				type = FileSystem::Extended;
 				break;
-				
+
 			case PED_PARTITION_LOGICAL:
 				r = PartitionRole::Logical;
 				break;
-			
+
 			default:
 				continue;
 		}
@@ -228,7 +228,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 	}
 
 	d.partitionTable().updateUnallocated(d);
-	
+
 	ped_disk_destroy(pedDisk);
 }
 
@@ -249,7 +249,7 @@ LibParted::LibParted()
 void LibParted::scanDevices(OperationStack& ostack)
 {
 	QMap<QString, QStringList> mountInfo;
-	
+
 	readMountpoints("/proc/mounts", mountInfo);
 	readMountpoints("/etc/mtab", mountInfo);
 	readMountpoints("/etc/fstab", mountInfo);
@@ -277,7 +277,10 @@ void LibParted::scanDevices(OperationStack& ostack)
 			scanDevicePartitions(pedDevice, *d, pedDisk, mountInfo);
 		}
 
-		ostack.addDevice(d);
+		// add this device if either there is a valid partition table or it's not
+		// read only (read only devices without partition table are CD/DVD readers, writers etc)
+		if (pedDisk || !pedDevice->read_only)
+			ostack.addDevice(d);
 
 		pedDevice = ped_device_get_next(pedDevice);
 	}
