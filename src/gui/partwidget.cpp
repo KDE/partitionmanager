@@ -25,6 +25,8 @@
 #include "core/partition.h"
 #include "core/operationstack.h"
 
+#include "fs/filesystem.h"
+
 #include <QPainter>
 
 #include <kdebug.h>
@@ -45,6 +47,10 @@ PartWidget::PartWidget(QWidget* parent, const PartTableWidget* ptWidget, const P
 	m_ShowChildren(show_children)
 {
 	setFont(KGlobalSettings::smallestReadableFont());
+
+	if (partition())
+		setToolTip(partition()->deviceNode() + '\n' + partition()->fileSystem().name() + ' ' + Capacity(*partition()).toString());
+
 	updateChildren();
 }
 
