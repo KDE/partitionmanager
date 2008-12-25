@@ -39,7 +39,7 @@ class Report;
 class FileSystem
 {
 	Q_DISABLE_COPY(FileSystem)
-	
+
 	public:
 		/** Supported FileSystem types */
 		enum Type
@@ -49,6 +49,7 @@ class FileSystem
 
 			Ext2,
 			Ext3,
+			Ext4,
 			LinuxSwap,
 			Fat16,
 			Fat32,
@@ -117,28 +118,28 @@ class FileSystem
 
 		virtual bool canMount(const QString&) const { return false; } /**< @return true if this FileSystem can be mounted */
 		virtual bool canUnmount(const QString&) const { return false; } /**< @return true if this FileSystem can be unmounted */
-		
+
 		virtual QString mountTitle() const;
 		virtual QString unmountTitle() const;
-		
+
 		virtual bool mount(const QString& mountPoint);
 		virtual bool unmount(const QString& mountPoint);
 
 		qint64 firstSector() const { return m_FirstSector; } /**< @return the FileSystem's first sector */
 		qint64 lastSector() const { return m_LastSector; } /**< @return the FileSystem's last sector */
 		qint64 length() const { return lastSector() - firstSector() + 1; } /**< @return the FileSystem's length */
-		
+
 		void setFirstSector(qint64 s) { m_FirstSector = s; } /**< @param s the new first sector */
 		void setLastSector(qint64 s) { m_LastSector = s; } /**< @param s the new last sector */
 
 		void move(qint64 newStartSector);
-		
+
 		const QString& label() const { return m_Label; } /**< @return the FileSystem's label */
 		qint64 sectorsUsed() const { return m_SectorsUsed; } /**< @return the sectors in use on the FileSystem */
-		
+
 		void setSectorsUsed(qint64 s) { m_SectorsUsed = s; } /**< @param s the new value for sectors in use */
 		void setLabel(const QString& s) { m_Label = s; } /**< @param s the new label */
-		
+
 	protected:
 		static bool findExternal(const QString& cmdName, const QStringList& args = QStringList(), int exptectedCode = 1);
 

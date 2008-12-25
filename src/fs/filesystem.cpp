@@ -48,7 +48,7 @@ FileSystem::FileSystem(qint64 firstsector, qint64 lastsector, qint64 sectorsused
 qint64 FileSystem::readUsedCapacity(const QString& deviceNode) const
 {
 	Q_UNUSED(deviceNode);
-	
+
 	return -1;
 }
 
@@ -72,7 +72,7 @@ bool FileSystem::create(Report& report, const QString& deviceNode) const
 {
 	Q_UNUSED(report);
 	Q_UNUSED(deviceNode);
-	
+
 	return true;
 }
 
@@ -87,7 +87,7 @@ bool FileSystem::resize(Report& report, const QString& deviceNode, qint64 newLen
 	Q_UNUSED(report);
 	Q_UNUSED(deviceNode);
 	Q_UNUSED(newLength);
-	
+
 	return true;
 }
 
@@ -102,7 +102,7 @@ bool FileSystem::writeLabel(Report& report, const QString& deviceNode, const QSt
 	Q_UNUSED(report);
 	Q_UNUSED(deviceNode);
 	Q_UNUSED(newLabel);
-	
+
 	return true;
 }
 
@@ -117,7 +117,7 @@ bool FileSystem::copy(Report& report, const QString& targetDeviceNode, const QSt
 	Q_UNUSED(report);
 	Q_UNUSED(targetDeviceNode);
 	Q_UNUSED(sourceDeviceNode);
-	
+
 	return true;
 }
 
@@ -142,7 +142,7 @@ bool FileSystem::backup(Report& report, const Device& sourceDevice, const QStrin
 	@param report Report to write status information to
 	@param deviceNode the device node for the Partition the FileSystem is on
 	@return true if FileSystem is error-free
-*/	
+*/
 bool FileSystem::check(Report& report, const QString& deviceNode) const
 {
 	Q_UNUSED(report);
@@ -195,6 +195,7 @@ static const QString* typeNames()
 
 		i18nc("@item/plain filesystem name", "ext2"),
 		i18nc("@item/plain filesystem name", "ext3"),
+		i18nc("@item/plain filesystem name", "ext4"),
 		i18nc("@item/plain filesystem name", "linuxswap"),
 		i18nc("@item/plain filesystem name", "fat16"),
 		i18nc("@item/plain filesystem name", "fat32"),
@@ -219,7 +220,7 @@ QString FileSystem::nameForType(FileSystem::Type t)
 {
 	Q_ASSERT(t >= 0);
 	Q_ASSERT(t < __lastType);
-	
+
 	return typeNames()[t];
 }
 

@@ -35,6 +35,7 @@
 #include <kiconloader.h>
 
 #include <unistd.h>
+#include <blkid/blkid.h>
 
 static const struct
 {
@@ -44,6 +45,7 @@ static const struct
 {
 	{ FileSystem::Ext2, "ext2" },
 	{ FileSystem::Ext3, "ext3" },
+	{ FileSystem::Ext3, "ext4" },
 	{ FileSystem::LinuxSwap, "linux-swap" },
 	{ FileSystem::Fat16, "fat16" },
 	{ FileSystem::Fat32, "fat32" },
@@ -73,7 +75,7 @@ bool Job::openPed(const QString& path, bool diskFailOk)
 {
 	m_PedDevice = ped_device_get(path.toAscii());
 	m_PedDisk = m_PedDevice ? ped_disk_new(m_PedDevice) : NULL;
-	
+
 	return m_PedDevice != NULL && (diskFailOk || m_PedDisk != NULL);
 }
 
@@ -81,7 +83,7 @@ void Job::closePed()
 {
 	if (m_PedDisk)
 		ped_disk_destroy(m_PedDisk);
-	
+
 	m_PedDisk = NULL;
 	m_PedDevice = NULL;
 }
@@ -99,7 +101,7 @@ bool Job::commit(PedDisk* disk, quint32 timeout)
 	bool rval = ped_disk_commit_to_dev(disk);
 
 	rval = ped_disk_commit_to_os(disk) && rval;
-	
+
 	if (!ExternalCommand("udevadm", QStringList() << "settle" << "--timeout=" + QString::number(timeout)).run() &&
 			!ExternalCommand("udevsettle", QStringList() << "--timeout=" + QString::number(timeout)).run())
 		sleep(timeout);
@@ -120,7 +122,7 @@ PedFileSystemType* Job::getPedFileSystemType(FileSystem::Type t)
 bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 {
 	/** @todo copyBlocks() assumes that source.sectorSize() == target.sectorSize(). */
-	
+
 	if (source.sectorSize() != target.sectorSize())
 	{
 		report.line() << i18nc("@info/plain", "The sector size in the source and target for copying are not the same. This is currently unsupported.");
@@ -143,9 +145,9 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 	}
 
 	report.line() << i18nc("@info/plain", "Copying %1 blocks (%2 sectors) from %3 to %4, direction: %5.", blocksToCopy, source.length(), readOffset, writeOffset, copyDir);
-	
+
 	qint64 blocksCopied = 0;
-	
+
 	void* buffer = malloc(blockSize * source.sectorSize());
 	int percent = 0;
 
@@ -165,7 +167,7 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 	}
 
 	const qint64 lastBlock = source.length() % blockSize;
-		
+
 	// copy the remainder
 	if (rval && lastBlock > 0)
 	{
@@ -176,9 +178,9 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 
 		const qint64 lastBlockReadOffset = copyDir > 0 ? readOffset + blockSize * blocksCopied : source.firstSector();
 		const qint64 lastBlockWriteOffset = copyDir > 0 ? writeOffset + blockSize * blocksCopied : target.firstSector();
-		
+
 		report.line() << i18nc("@info/plain", "Copying remainder of block size %1 from  %2 to %3.", lastBlock, lastBlockReadOffset, lastBlockWriteOffset);
-		
+
 		rval = source.readSectors(buffer, lastBlockReadOffset, lastBlock);
 
 		if (rval)
@@ -202,7 +204,7 @@ bool Job::rollbackCopyBlocks(Report& report, CopyTarget& origTarget, CopySource&
 		report.line() << i18nc("@info/plain", "Source and target for copying do not overlap: Rollback is not required.");
 		return true;
 	}
-		
+
 	try
 	{
 		CopySourceDevice& csd = dynamic_cast<CopySourceDevice&>(origSource);
@@ -211,7 +213,7 @@ bool Job::rollbackCopyBlocks(Report& report, CopyTarget& origTarget, CopySource&
 		// default: use values as if we were copying from front to back.
 		qint64 undoSourceFirstSector = origTarget.firstSector();
 		qint64 undoSourceLastSector = origTarget.firstSector() + origTarget.sectorsWritten() - 1;
-		
+
 		qint64 undoTargetFirstSector = origSource.firstSector();
 		qint64 undoTargetLastSector = origSource.firstSector() + origTarget.sectorsWritten() - 1;
 
@@ -234,14 +236,14 @@ bool Job::rollbackCopyBlocks(Report& report, CopyTarget& origTarget, CopySource&
 			report.line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> to rollback copying.", ctd.device().deviceNode());
 			return false;
 		}
-		
+
 		CopyTargetDevice undoTarget(csd.device(), undoTargetFirstSector, undoTargetLastSector);
 		if (!undoTarget.open())
 		{
 			report.line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> to rollback copying.", csd.device().deviceNode());
 			return false;
 		}
-		
+
 		return copyBlocks(report, undoTarget, undoSource);
 	}
 	catch ( ... )
@@ -260,12 +262,12 @@ FileSystem::Type Job::detectFileSystemBySector(Report& report, Device& device, q
 	PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), sector);
 
 	FileSystem::Type rval = FileSystem::Unknown;
-	
+
 	if (pedPartition)
 		rval = detectFileSystem(pedDevice(), pedPartition);
 	else
 		report.line() << i18nc("@info/plain", "Could not determine file system of partition at sector %1 on device <filename>%2</filename>.", sector, device.deviceNode());
-		
+
 	closePed();
 
 	return rval;
@@ -312,7 +314,29 @@ FileSystem::Type Job::detectFileSystem(PedDevice* pedDevice, PedPartition* pedPa
 			free(buf);
 		}
 	}
-		
+
+	if (rval == FileSystem::Ext3)
+	{
+		blkid_cache cache;
+		char* pedPath = NULL;
+
+		if (blkid_get_cache(&cache, NULL) == 0 && (pedPath = ped_partition_get_path(pedPartition)))
+		{
+			blkid_dev dev;
+
+			if ((dev = blkid_get_dev(cache, pedPath, BLKID_DEV_NORMAL)) != NULL &&
+					(blkid_dev_has_tag(dev, "TYPE", "ext4")
+						|| blkid_dev_has_tag(dev, "TYPE", "ext4dev")
+					)
+			)
+				rval = FileSystem::Ext4;
+
+			blkid_put_cache(cache);
+
+			free(pedPath);
+		}
+	}
+
 	return rval;
 }
 
@@ -335,7 +359,7 @@ void Job::pedTimerHandler(PedTimer* pedTimer, void* ctx)
 Report* Job::jobStarted(Report& parent)
 {
 	emit started();
-	
+
  	return parent.newChild(i18nc("@info/plain", "Job: %1", description()));
 }
 
@@ -362,7 +386,7 @@ QIcon Job::statusIcon() const
 
 	if (status() < 0 || static_cast<quint32>(status()) >= sizeof(icons) / sizeof(icons[0]))
 		return QIcon();
-	
+
 	return SmallIcon(icons[status()]);
 }
 
@@ -377,9 +401,9 @@ QString Job::statusText() const
 	};
 
 	Q_ASSERT(status() >= 0 && static_cast<quint32>(status()) < sizeof(s) / sizeof(s[0]));
-	
+
 	if (status() < 0 || static_cast<quint32>(status()) >= sizeof(s) / sizeof(s[0]))
 		return QString();
-	
+
 	return s[status()];
 }

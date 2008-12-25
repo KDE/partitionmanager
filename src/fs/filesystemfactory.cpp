@@ -22,6 +22,7 @@
 
 #include "fs/ext2.h"
 #include "fs/ext3.h"
+#include "fs/ext4.h"
 #include "fs/extended.h"
 #include "fs/fat16.h"
 #include "fs/fat32.h"
@@ -46,9 +47,10 @@ void FileSystemFactory::init()
 		delete fs;
 
 	m_FileSystems.clear();
-	
+
 	m_FileSystems.insert(FileSystem::Ext2, new FS::ext2(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Ext3, new FS::ext3(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Ext4, new FS::ext4(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Extended, new FS::extended(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Fat16, new FS::fat16(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Fat32, new FS::fat32(-1, -1, -1, QString()));
@@ -63,9 +65,10 @@ void FileSystemFactory::init()
 	m_FileSystems.insert(FileSystem::Unformatted, new FS::unformatted(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Unknown, new FS::unknown(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Xfs, new FS::xfs(-1, -1, -1, QString()));
-		
+
 	FS::ext2::init();
 	FS::ext3::init();
+	FS::ext4::init();
 	FS::extended::init();
 	FS::fat16::init();
 	FS::fat32::init();
@@ -96,6 +99,7 @@ FileSystem* FileSystemFactory::create(FileSystem::Type t, qint64 firstsector, qi
 	{
 		case FileSystem::Ext2:         return new FS::ext2(firstsector, lastsector, sectorsused, label);
 		case FileSystem::Ext3:         return new FS::ext3(firstsector, lastsector, sectorsused, label);
+		case FileSystem::Ext4:         return new FS::ext4(firstsector, lastsector, sectorsused, label);
 		case FileSystem::Extended:     return new FS::extended(firstsector, lastsector, sectorsused, label);
 		case FileSystem::Fat16:        return new FS::fat16(firstsector, lastsector, sectorsused, label);
 		case FileSystem::Fat32:        return new FS::fat32(firstsector, lastsector, sectorsused, label);
