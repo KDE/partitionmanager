@@ -49,6 +49,7 @@
 
 #include "util/globallog.h"
 #include "util/capacity.h"
+#include "util/report.h"
 
 #include <kapplication.h>
 #include <kglobalsettings.h>
@@ -101,7 +102,7 @@ MainWindow::MainWindow(QWidget* parent) :
 	m_ProgressDialog(new ProgressDialog(this, operationRunner()))
 {
 	setupUi(this);
-	
+
 	FileSystemFactory::init();
 	connect(GlobalLog::instance(), SIGNAL(newMessage(log::Level, const QString&)), SLOT(onNewLogMessage(log::Level, const QString&)));
 
@@ -385,7 +386,7 @@ void MainWindow::enableActions()
 	const Partition* part = selectedPartition();
 
 	const bool readOnly = selectedDevice() == NULL || selectedDevice()->partitionTable().isReadOnly();
-	
+
 	actionCollection()->action("newPartition")->setEnabled(!readOnly && NewOperation::canCreateNew(part));
 	const bool canResize = ResizeOperation::canGrow(part) || ResizeOperation::canShrink(part) || ResizeOperation::canMove(part);
 	actionCollection()->action("resizePartition")->setEnabled(!readOnly && canResize);
@@ -400,7 +401,7 @@ void MainWindow::enableActions()
 		actionCollection()->action("mountPartition")->setText(part->isMounted() ? part->fileSystem().unmountTitle() : part->fileSystem().mountTitle() );
 
 	actionCollection()->action("checkPartition")->setEnabled(!readOnly && CheckOperation::canCheck(part));
-	
+
 	actionCollection()->action("undoOperation")->setEnabled(operationStack().size() > 0);
 	actionCollection()->action("clearAllOperations")->setEnabled(operationStack().size() > 0);
 	actionCollection()->action("applyAllOperations")->setEnabled(operationStack().size() > 0 && geteuid() == 0);
@@ -480,7 +481,7 @@ void MainWindow::updatePartitions()
 	treePartitions().clear();
 	partTableWidget().clear();
 	updateWindowTitle();
-	
+
 	if (selectedDevice() == NULL)
 		return;
 
@@ -557,7 +558,7 @@ Device* MainWindow::selectedDevice()
 
 	if (idx < 0 || idx >= operationStack().previewDevices().size())
 		return NULL;
-	
+
 	return operationStack().previewDevices()[idx];
 }
 
@@ -610,7 +611,7 @@ void MainWindow::showPartitionContextMenu(const QPoint& pos)
 {
 	if (selectedPartition() == NULL)
 		return;
-	
+
 	KMenu partitionMenu;
 
 	partitionMenu.addAction(actionCollection()->action("newPartition"));
@@ -654,7 +655,7 @@ void MainWindow::onPropertiesPartition()
 		{
 			if (dlg.newFileSystemType() != selectedPartition()->fileSystem().type() || dlg.forceRecreate())
 				operationStack().push(new CreateFileSystemOperation(*selectedDevice(), *selectedPartition(), dlg.newFileSystemType()));
-			
+
 			if (dlg.newLabel() != selectedPartition()->fileSystem().label())
 				operationStack().push(new SetFileSystemLabelOperation(*selectedPartition(), dlg.newLabel()));
 
@@ -671,22 +672,23 @@ void MainWindow::onPropertiesPartition()
 void MainWindow::onMountPartition()
 {
 	Partition* p = selectedPartition();
+	Report report(NULL);
 
 	if (p && p->canMount())
 	{
-		if (!p->mount())
-			KMessageBox::sorry(this, i18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), i18nc("@title:window", "Could not mount file system."));
+		if (!p->mount(report))
+			KMessageBox::detailedSorry(this, i18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QString("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could not mount file system."));
 	}
 	else if (p && p->canUnmount())
 	{
-		if (!p->unmount())
-			KMessageBox::sorry(this, i18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), i18nc("@title:window", "Could not unmount file system."));
+		if (!p->unmount(report))
+			KMessageBox::detailedSorry(this, i18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QString("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could not unmount file system."));
 	}
 
 	if (p->roles().has(PartitionRole::Logical))
 	{
 		Partition* parent = dynamic_cast<Partition*>(p->parent());
-		
+
 		Q_ASSERT(parent);
 
 		if (parent != NULL)
@@ -716,7 +718,7 @@ void MainWindow::onFinished()
 static bool checkTooManyPartitions(QWidget* parent, const Device& d, const Partition& p)
 {
 	if (p.roles().has(PartitionRole::Unallocated) && d.partitionTable().numPrimaries() >= d.partitionTable().maxPrimaries() && !p.roles().has(PartitionRole::Logical))
-	{	
+	{
 		KMessageBox::sorry(parent, i18nc("@info",
 			"<para>There are already %1 primary partitions on this device. This is the maximum number its partition table can handle.</para>"
 			"<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
@@ -766,7 +768,7 @@ void MainWindow::onDeletePartition()
 		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
-	
+
 	if (selectedPartition()->roles().has(PartitionRole::Logical))
 	{
 		Q_ASSERT(selectedPartition()->parent());
@@ -776,7 +778,7 @@ void MainWindow::onDeletePartition()
 			kWarning() << "parent of selected partition is null.";
 			return;
 		}
-		
+
 		if (selectedPartition()->parent()->highestMountedChild() > selectedPartition()->number())
 		{
 			KMessageBox::sorry(this,
@@ -789,7 +791,7 @@ void MainWindow::onDeletePartition()
 			return;
 		}
 	}
-	
+
 	if (clipboardPartition() == selectedPartition())
 	{
 		if (KMessageBox::warningContinueCancel(this,
@@ -800,7 +802,7 @@ void MainWindow::onDeletePartition()
 				KGuiItem(i18nc("@action:button", "&Delete it")),
 				KStandardGuiItem::cancel(), "reallyDeleteClipboardPartition") == KMessageBox::Cancel)
 			return;
-		
+
 		setClipboardPartition(NULL);
 	}
 
@@ -834,9 +836,9 @@ void MainWindow::onResizePartition()
 		if (resizedPartition.firstSector() == selectedPartition()->firstSector() && resizedPartition.lastSector() == selectedPartition()->lastSector())
 			log(log::information) << i18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", selectedPartition()->deviceNode());
 		else
-		{		
+		{
 			operationStack().push(new ResizeOperation(*selectedDevice(), *selectedPartition(), resizedPartition.firstSector(), resizedPartition.lastSector()));
-			
+
 			updatePartitions();
 			updateStatusBar();
 			updateOperations();
@@ -870,7 +872,7 @@ void MainWindow::onPastePartition()
 		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
-	
+
 	if (clipboardPartition() == NULL)
 	{
 		kWarning() << "no partition in the clipboard.";
@@ -1042,7 +1044,7 @@ void MainWindow::onApplyAllOperations()
 		operationRunner().setReport(&progressDialog().report());
 
 		partTableWidget().setUpdatesEnabled(false);
-		
+
 		// Undo all operations so the runner has a defined starting point
 		for (int i = operationStack().operations().size() - 1; i >= 0; i--)
 		{
@@ -1051,7 +1053,7 @@ void MainWindow::onApplyAllOperations()
 		}
 
 		updatePartitions();
-		
+
  		operationRunner().start();
 	}
 }
@@ -1113,7 +1115,7 @@ void MainWindow::onRestorePartition()
 
 	if (checkTooManyPartitions(this, *selectedDevice(), *selectedPartition()))
 		return;
-	
+
 	QString fileName = KFileDialog::getOpenFileName(KUrl("kfiledialog://backupPartition"));
 // 	QString fileName = "/tmp/backuptest.img";
 
@@ -1127,7 +1129,7 @@ void MainWindow::onRestorePartition()
 			delete restorePartition;
 			return;
 		}
-		
+
 		if (showInsertDialog(*restorePartition, restorePartition->length()))
 		{
 			operationStack().push(new RestoreOperation(*selectedDevice(), restorePartition, fileName));

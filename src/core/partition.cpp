@@ -25,6 +25,7 @@
 #include "fs/filesystemfactory.h"
 
 #include "util/externalcommand.h"
+#include "util/report.h"
 
 #include <QString>
 #include <QStringList>
@@ -266,7 +267,7 @@ bool Partition::canUnmount() const
 /** Tries to mount a Partition.
 	@return true on success
 */
-bool Partition::mount()
+bool Partition::mount(Report& report)
 {
 	if (isMounted())
 		return false;
@@ -279,7 +280,7 @@ bool Partition::mount()
 	{
 		foreach(const QString& mp, mountPoints())
 		{
-			ExternalCommand mountCmd("mount", QStringList() << deviceNode() << mp);
+			ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << deviceNode() << mp);
 			if (mountCmd.run() && mountCmd.exitCode() == 0)
 				success = true;
 		}
@@ -293,7 +294,7 @@ bool Partition::mount()
 /** Tries to unmount a Partition.
 	@return true on success
 */
-bool Partition::unmount()
+bool Partition::unmount(Report& report)
 {
 	if (!isMounted() || mountPoints().size() == 0)
 		return false;
@@ -306,7 +307,7 @@ bool Partition::unmount()
 	{
 		foreach(const QString& mp, mountPoints())
 		{
-			ExternalCommand umountCmd("umount", QStringList() << mp);
+			ExternalCommand umountCmd(report, "umount", QStringList() << "-v" << mp);
 			if (!umountCmd.run() || umountCmd.exitCode() != 0)
 				success = false;
 		}

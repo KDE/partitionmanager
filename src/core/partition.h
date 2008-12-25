@@ -49,6 +49,8 @@ class RestoreFileSystemJob;
 
 class FileSystem;
 
+class Report;
+
 class QString;
 
 /** @brief A partition or some unallocated space on a Device.
@@ -67,7 +69,7 @@ class Partition : public PartitionNode
 	friend class OperationStack;
 	friend class Device;
 	friend class PartitionNode;
-	
+
 	friend class PartResizerWidget;
 	friend class InsertDialog;
 	friend class NewDialog;
@@ -83,7 +85,7 @@ class Partition : public PartitionNode
 	friend class CreatePartitionJob;
 	friend class SetPartFlagsJob;
 	friend class RestoreFileSystemJob;
-	
+
 	public:
 		/** A Partition state -- where did it come from? */
 		enum State
@@ -112,9 +114,9 @@ class Partition : public PartitionNode
 
 		Partitions& children() { return m_Children; } /**< @return the Partition's children. empty for non-extended. */
 		const Partitions& children() const { return m_Children; } /**< @return the Partition's children. empty for non-extended. */
-		
+
 		const QString& devicePath() const { return m_DevicePath; } /**< @return the Partition's device path, e.g. /dev/sdd7 */
-		
+
 		qint64 firstSector() const { return m_FirstSector; } /**< @return the Partition's first sector on the Device */
 		qint64 lastSector() const { return m_LastSector; } /**< @return the Partition's last sector on the Device */
 		qint64 sectorsUsed() const;
@@ -133,20 +135,20 @@ class Partition : public PartitionNode
 		const PartitionRole& roles() const { return m_Roles; } /**< @return the Partition's role(s) */
 
 		const QStringList& mountPoints() const { return m_MountPoints; } /**< @return the Partition's mount points */
-		
+
 		PartitionTable::Flags activeFlags() const { return m_ActiveFlags; } /**< @return the flags currently set for this Partition */
 		PartitionTable::Flags availableFlags() const { return m_AvailableFlags; } /**< @return the flags available for this Partition */
 
 		bool isMounted() const { return m_IsMounted; } /**< @return true if Partition is mounted */
-		
+
 		FileSystem& fileSystem() { return *m_FileSystem; } /**< @return the Partition's FileSystem */
 		const FileSystem& fileSystem() const { return *m_FileSystem; } /**< @return the Partition's FileSystem */
-		
+
 		State state() const { return m_State; } /**< @return the Partition's state */
 		bool hasChildren() const;
 
-		bool mount();
-		bool unmount();
+		bool mount(Report& report);
+		bool unmount(Report& report);
 
 		bool canMount() const;
 		bool canUnmount() const;
@@ -155,7 +157,7 @@ class Partition : public PartitionNode
 		void checkChildrenMounted();
 
 		static qint64 minimumPartitionSectors() { return m_MinimumPartitionSectors; } /**< @return the minimum number of sectors any Partition must be long */
-		
+
 	protected:
 		void append(Partition* p) { m_Children.append(p); }
 		void setDevicePath(const QString& s) { m_DevicePath = s; }
