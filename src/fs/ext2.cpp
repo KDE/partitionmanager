@@ -62,7 +62,7 @@ namespace FS
 	{
 		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
-	
+
 	qint64 ext2::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("dumpe2fs", QStringList() << "-h" << deviceNode);
@@ -74,18 +74,12 @@ namespace FS
 
 			if (rxBlockCount.indexIn(cmd.output()) != -1)
 				blockCount = rxBlockCount.cap(1).toLongLong();
-			
-			qint64 reservedBlocks = -1;
-			QRegExp rxReservedBlocks("Reserved block count:\\s*(\\d+)");
 
-			if (rxReservedBlocks.indexIn(cmd.output()) != -1)
-				reservedBlocks = rxReservedBlocks.cap(1).toLongLong();
-			
-			qint64 numFreeBlocks = -1;
+			qint64 freeBlocks = -1;
 			QRegExp rxFreeBlocks("Free blocks:\\s*(\\d+)");
 
 			if (rxFreeBlocks.indexIn(cmd.output()) != -1)
-				numFreeBlocks = rxFreeBlocks.cap(1).toLongLong();
+				freeBlocks = rxFreeBlocks.cap(1).toLongLong();
 
 			qint64 blockSize = -1;
 			QRegExp rxBlockSize("Block size:\\s*(\\d+)");
@@ -93,8 +87,8 @@ namespace FS
 			if (rxBlockSize.indexIn(cmd.output()) != -1)
 				blockSize = rxBlockSize.cap(1).toLongLong();
 
-			if (blockCount > -1 && reservedBlocks > -1 && numFreeBlocks > -1 && blockSize > -1)
-				return (blockCount - reservedBlocks - numFreeBlocks) * blockSize;
+			if (blockCount > -1 && freeBlocks > -1 && blockSize > -1)
+				return (blockCount - freeBlocks) * blockSize;
 		}
 
 		return -1;
