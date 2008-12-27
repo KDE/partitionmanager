@@ -2,14 +2,14 @@
 
 <gui name="KDE Partition Manager" version="4">
 	<ToolBar name="editToolBar">
-		<text context="@title:menu turn on and off edit toolbar">Edit toolbar</text>
+		<text context="@title:menu turn on and off edit toolbar">Edit Toolbar</text>
 		<Action name="applyAllOperations"/>
 		<Action name="undoOperation"/>
 		<Action name="clearAllOperations"/>
 	</ToolBar>
 
 	<ToolBar name="partitionToolBar">
-		<text context="@title:menu">Partition toolbar</text>
+		<text context="@title:menu">Partition Toolbar</text>
 		<Action name="newPartition"/>
 		<Action name="resizePartition"/>
 		<Action name="copyPartition"/>
@@ -20,7 +20,7 @@
 	</ToolBar>
 
 	<ToolBar name="deviceToolBar">
-		<text context="@title:menu">Device toolbar</text>
+		<text context="@title:menu">Device Toolbar</text>
 		<Action name="createNewPartitionTable"/>
 	</ToolBar>
 

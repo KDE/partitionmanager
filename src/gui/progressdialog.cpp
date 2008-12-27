@@ -70,7 +70,7 @@ ProgressDialog::ProgressDialog(QWidget* parent, OperationRunner& orunner) :
 	setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Details);
 
 	dialogWidget().treeTasks().setColumnWidth(0, width() * 0.8);
-	
+
 	setupConnections();
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "progressDialog"));
@@ -118,11 +118,11 @@ void ProgressDialog::show()
 
 	timer().start(1000);
 	time().start();
-	
+
 	setLastReportUpdate(0);
-	
+
 	onSecondElapsed(); // resets the total time output label
-	
+
 	KDialog::show();
 }
 
@@ -130,7 +130,7 @@ void ProgressDialog::resetReport()
 {
 	delete m_Report;
 	m_Report = new Report(NULL);
-	
+
 	detailsWidget().editReport().clear();
 	detailsWidget().editReport().setCursorWidth(0);
 	detailsWidget().buttonSave().setEnabled(false);
@@ -153,7 +153,7 @@ void ProgressDialog::slotButtonClicked(int button)
 		updateReport(true);
 		return;
 	}
-	
+
 	if (button == KDialog::Cancel && operationRunner().isRunning())
 	{
 		// only cancel once
@@ -174,7 +174,7 @@ void ProgressDialog::slotButtonClicked(int button)
 
 		KApplication::restoreOverrideCursor();
 
-		if (KMessageBox::questionYesNo(this, i18nc("@info", "Do you really want to cancel?"), i18nc("@title:window", "Cancel Running Operations"), KGuiItem(i18nc("@action:button", "Yes, cancel operations")), KStandardGuiItem::no()) == KMessageBox::Yes)
+		if (KMessageBox::questionYesNo(this, i18nc("@info", "Do you really want to cancel?"), i18nc("@title:window", "Cancel Running Operations"), KGuiItem(i18nc("@action:button", "Yes, Cancel Operations")), KStandardGuiItem::no()) == KMessageBox::Yes)
 			// in the meantime while we were showing the messagebox, the runner might have finished.
 			if (operationRunner().isRunning())
 				operationRunner().cancel();
@@ -278,7 +278,7 @@ void ProgressDialog::onJobFinished(Job* job, Operation* op)
 
 	const int current = dialogWidget().progressTotal().value();
 	dialogWidget().progressTotal().setValue(current + 1);
-	
+
 	setParentTitle(op->description());
 	updateReport(true);
 }
@@ -292,7 +292,7 @@ void ProgressDialog::onOpFinished(int num, Operation* op)
 	}
 
 	setCurrentOpItem(NULL);
-	
+
 	setStatus(op->description());
 
 	dialogWidget().progressSub().setValue(op->totalProgress());
@@ -324,7 +324,7 @@ void ProgressDialog::addTaskOutput(int num, const Operation& op)
 	item->setIcon(0, op.statusIcon());
 	item->setText(0, opDesc(num, op));
 	item->setText(1, QTime(0, 0).toString(timeFormat()));
-	
+
 	QFont f;
 	f.setWeight(QFont::Bold);
 	item->setFont(0, f);
@@ -349,7 +349,7 @@ void ProgressDialog::onSecondElapsed()
 		QTime t = QTime::fromString(currentOpItem()->text(1), timeFormat()).addSecs(1);
 		currentOpItem()->setText(1, t.toString(timeFormat()));;
 	}
-	
+
 	const QTime outputTime = QTime(0, 0).addMSecs(time().elapsed());
 	dialogWidget().totalTime().setText(i18nc("@info:progress", "Total Time: %1", outputTime.toString(timeFormat())));
 }
@@ -381,11 +381,11 @@ void ProgressDialog::saveReport()
 
 	if (fileName.isEmpty())
 		return;
-	
-	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite existing file?"), KGuiItem(i18nc("@action:button", "&Overwrite file")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
+
+	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "&Overwrite File")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
 		QFile file(fileName);
-		
+
 		if (file.open(QIODevice::WriteOnly | QIODevice::Truncate))
 		{
 			file.write(Report::htmlHeader().toUtf8());
@@ -395,7 +395,7 @@ void ProgressDialog::saveReport()
 			file.close();
 		}
 		else
-			KMessageBox::sorry(this, i18nc("@info", "Could not open file <filename>%1</filename> for writing.", fileName), i18nc("@title:window", "Could not save report."));
+			KMessageBox::sorry(this, i18nc("@info", "Could not open file <filename>%1</filename> for writing.", fileName), i18nc("@title:window", "Could Not Save Report."));
 	}
 }
 
@@ -407,7 +407,7 @@ void ProgressDialog::browserReport()
 	// the file as the logged in user, not as the user running our application.
 	file.setFileTemplate("/tmp/" + KGlobal::mainComponent().aboutData()->appName() + "-XXXXXX.html");
 	file.setAutoRemove(false);
-		
+
 	if (file.open())
 	{
 		file.write(Report::htmlHeader().toUtf8());
@@ -418,8 +418,8 @@ void ProgressDialog::browserReport()
 		file.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ReadGroup | QFile::ReadOther);
 
 		if (!KRun::runUrl(file.fileName(), "text/html", this, true))
-			KMessageBox::sorry(this, i18nc("@info", "The configured external browser could not be run. Please check your settings."), i18nc("@title:window", "Could not launch browser."));
+			KMessageBox::sorry(this, i18nc("@info", "The configured external browser could not be run. Please check your settings."), i18nc("@title:window", "Could Not Launch Browser."));
 	}
 	else
-		KMessageBox::sorry(this, i18nc("@info", "Could not create temporary file <filename>%1</filename> for writing.", file.fileName()), i18nc("@title:window", "Could not launch browser."));
+		KMessageBox::sorry(this, i18nc("@info", "Could not create temporary file <filename>%1</filename> for writing.", file.fileName()), i18nc("@title:window", "Could Not Launch Browser."));
 }

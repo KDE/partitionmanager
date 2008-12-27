@@ -133,7 +133,7 @@ void MainWindow::closeEvent(QCloseEvent* event)
 		if (KMessageBox::warningContinueCancel(this,
 			i18ncp("@info", "<para>Do you really want to quit the application?</para><para>There is still an operation pending.</para>",
     		"<para>Do you really want to quit the application?</para><para>There are still %1 operations pending.</para>", operationStack().size()),
-			i18nc("@title:window", "Discard pending operations and quit?"),
+			i18nc("@title:window", "Discard Pending Operations and Quit?"),
 			KGuiItem(i18nc("@action:button", "&Quit <application>%1</application>", KGlobal::mainComponent().aboutData()->programName())),
 			KStandardGuiItem::cancel(), "reallyQuit") == KMessageBox::Cancel)
 		{
@@ -208,7 +208,7 @@ void MainWindow::setupActions()
 	KAction* createNewPartitionTable = actionCollection()->addAction("createNewPartitionTable", this, SLOT(onCreateNewPartitionTable()));
 	createNewPartitionTable->setEnabled(false);
 	createNewPartitionTable->setText(i18nc("@action:inmenu", "Create New Partition Table"));
-	createNewPartitionTable->setToolTip(i18nc("@info:tooltip", "Create New Partition Table"));
+	createNewPartitionTable->setToolTip(i18nc("@info:tooltip", "Create new partition table"));
 	createNewPartitionTable->setStatusTip(i18nc("@info:status", "Create a new and empty partition table on a device."));
 	createNewPartitionTable->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_N);
 	createNewPartitionTable->setIcon(BarIcon("edit-clear"));
@@ -677,12 +677,12 @@ void MainWindow::onMountPartition()
 	if (p && p->canMount())
 	{
 		if (!p->mount(report))
-			KMessageBox::detailedSorry(this, i18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QString("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could not mount file system."));
+			KMessageBox::detailedSorry(this, i18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QString("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Mount File System."));
 	}
 	else if (p && p->canUnmount())
 	{
 		if (!p->unmount(report))
-			KMessageBox::detailedSorry(this, i18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QString("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could not unmount file system."));
+			KMessageBox::detailedSorry(this, i18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QString("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Unmount File System."));
 	}
 
 	if (p->roles().has(PartitionRole::Logical))
@@ -722,7 +722,7 @@ static bool checkTooManyPartitions(QWidget* parent, const Device& d, const Parti
 		KMessageBox::sorry(parent, i18nc("@info",
 			"<para>There are already %1 primary partitions on this device. This is the maximum number its partition table can handle.</para>"
 			"<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
-			d.partitionTable().numPrimaries()), i18nc("@title:window", "Too many primary partitions."));
+			d.partitionTable().numPrimaries()), i18nc("@title:window", "Too Many Primary Partitions."));
 		return true;
 	}
 
@@ -786,7 +786,7 @@ void MainWindow::onDeletePartition()
 						"<para>The partition <filename>%1</filename> cannot currently be deleted because one or more partitions with higher logical numbers are still mounted.</para>"
 						"<para>Please unmount all partitions with higher logical numbers than %2 first.</para>",
 						selectedPartition()->deviceNode(), selectedPartition()->number()),
-					i18nc("@title:window", "Cannot delete partition."));
+					i18nc("@title:window", "Cannot Delete Partition."));
 
 			return;
 		}
@@ -798,8 +798,8 @@ void MainWindow::onDeletePartition()
 				i18nc("@info",
 					"Do you really want to delete the partition that is currently in the clipboard? "
 					"It will no longer be available for pasting after it has been deleted."),
-				i18nc("@title:window", "Really delete partition in the clipboard?"),
-				KGuiItem(i18nc("@action:button", "&Delete it")),
+				i18nc("@title:window", "Really Delete Partition in the Clipboard?"),
+				KGuiItem(i18nc("@action:button", "&Delete It")),
 				KStandardGuiItem::cancel(), "reallyDeleteClipboardPartition") == KMessageBox::Cancel)
 			return;
 
@@ -935,13 +935,13 @@ bool MainWindow::showInsertDialog(Partition& insertPartition, qint64 sourceLengt
 		if (overwrite)
 			KMessageBox::error(this, i18nc("@info",
 				"<para>The selected partition is not large enough to hold the source partition or the backup file.</para>"
-				"<para>Pick another target or resize this partition so it is as large as the source.</para>"), i18nc("@title:window", "Target not large enough"));
+				"<para>Pick another target or resize this partition so it is as large as the source.</para>"), i18nc("@title:window", "Target Not Large Enough"));
 		else
 			KMessageBox::sorry(this, i18nc("@info",
 				"<para>It is not possible to create the target partition large enough to hold the source.</para>"
 				"<para>This may happen if not all partitions on a device start and end on cylinder boundaries "
 				"or when copying a primary partition into an extended partition.</para>"),
-				i18nc("@title:window", "Cannot create target partition."));
+				i18nc("@title:window", "Cannot Create Target Partition."));
 		return false;
 	}
 
@@ -963,8 +963,8 @@ void MainWindow::onCreateNewPartitionTable()
 			"<para>Do you really want to create a new partition table on the following device?</para>"
 			"<para><list><item><filename>%1</filename> (%2)</item></list></para>"
 			"<para><warning>This will destroy all data on the device.</warning></para>", selectedDevice()->deviceNode(), selectedDevice()->name()),
-		i18nc("@title:window", "Destroy all data on device?"),
-		KGuiItem(i18nc("@action:button", "&Create new partition table")),
+		i18nc("@title:window", "Destroy All Data on Device?"),
+		KGuiItem(i18nc("@action:button", "&Create New Partition Table")),
 		KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
 		operationStack().push(new CreatePartitionTableOperation(*selectedDevice()));
@@ -983,8 +983,8 @@ void MainWindow::onRefreshDevices()
 		i18nc("@info",
 			"<para>Do you really want to rescan the devices?</para>"
 			"<para><warning>This will also clear the list of pending operations.</warning></para>"),
-		i18nc("@title:window", "Really rescan the devices?"),
-		KGuiItem(i18nc("@action:button", "&Rescan devices")),
+		i18nc("@title:window", "Really Rescan the Devices?"),
+		KGuiItem(i18nc("@action:button", "&Rescan Devices")),
 		KStandardGuiItem::cancel(), "reallyRescanDevices") == KMessageBox::Continue)
 	{
 		scanDevices();
@@ -1007,8 +1007,8 @@ void MainWindow::onClearAllOperations()
 {
 	if (KMessageBox::warningContinueCancel(this,
 		i18nc("@info", "Do you really want to clear the list of pending operations?"),
-		i18nc("@title:window", "Clear pending operations?"),
-		KGuiItem(i18nc("@action:button", "&Clear pending operations")),
+		i18nc("@title:window", "Clear Pending Operations?"),
+		KGuiItem(i18nc("@action:button", "&Clear Pending Operations")),
 		KStandardGuiItem::cancel(), "reallyClearPendingOperations") == KMessageBox::Continue)
 	{
 		log() << i18nc("@info/plain", "Clearing the list of pending operations.");
@@ -1033,8 +1033,8 @@ void MainWindow::onApplyAllOperations()
 		i18nc("@info",
 			"<para>Do you really want to apply the pending operations listed below?</para>"
 			"<para><warning>This will permanently modify your disks.</warning></para>"),
-		opList, i18nc("@title:window", "Apply pending operations?"),
-		KGuiItem(i18nc("@action:button", "&Apply pending operations")),
+		opList, i18nc("@title:window", "Apply Pending Operations?"),
+		KGuiItem(i18nc("@action:button", "&Apply Pending Operations")),
 		KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
 		log() << i18nc("@info/plain", "Applying operations...");
@@ -1093,7 +1093,7 @@ void MainWindow::onBackupPartition()
 	if (fileName.isEmpty())
 		return;
 
-	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite existing file?"), KGuiItem(i18nc("@action:button", "&Overwrite file")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
+	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "&Overwrite File")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
 		operationStack().push(new BackupOperation(*selectedDevice(), *selectedPartition(), fileName));
 		updatePartitions();
@@ -1125,7 +1125,7 @@ void MainWindow::onRestorePartition()
 
 		if (restorePartition->length() > selectedPartition()->length())
 		{
-			KMessageBox::error(this, i18nc("@info", "The file system in the image file <filename>%1</filename> is too large to be restored to the selected partition.", fileName), i18nc("@title:window", "Not enough space to restore file system."));
+			KMessageBox::error(this, i18nc("@info", "The file system in the image file <filename>%1</filename> is too large to be restored to the selected partition.", fileName), i18nc("@title:window", "Not Enough Space to Restore File System."));
 			delete restorePartition;
 			return;
 		}

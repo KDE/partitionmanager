@@ -46,8 +46,8 @@ static bool checkPermissions()
 				"You will, however, <emphasis>not</emphasis> be allowed to apply operations.</para>"
 				"<para>Do you want to continue running <application>%1</application>?</para>",
 				KGlobal::mainComponent().aboutData()->programName()),
-	 		i18nc("@title:window", "No administrative privileges"),
-			KGuiItem(i18nc("@action:button", "Run without administrative privileges")),
+	 		i18nc("@title:window", "No Administrative Privileges"),
+			KGuiItem(i18nc("@action:button", "Run Without Administrative Privileges")),
 			KStandardGuiItem::cancel(),
 			"runWithoutRootPrivileges") == KMessageBox::Continue;
 
@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
 		);
 	about.addAuthor(ki18nc("@info:credit", "Volker Lanz"), KLocalizedString(), "vl@fidra.de");
 	about.setHomepage("http://www.partitionmanager.org");
-	
+
 	KCmdLineArgs::init(argc, argv, &about);
 
 	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427

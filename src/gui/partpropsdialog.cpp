@@ -93,7 +93,7 @@ void PartPropsDialog::setupDialog()
 	setDefaultButton(KDialog::Cancel);
 	enableButtonOk(false);
 	button(KDialog::Cancel)->setFocus();
-	
+
 	dialogWidget().partResizerWidget().setReadOnly(true);
 	dialogWidget().partResizerWidget().init(device(), partition(), 0, 0);
 
@@ -101,7 +101,7 @@ void PartPropsDialog::setupDialog()
 	dialogWidget().mountPoint().setText(mp);
 
 	dialogWidget().role().setText(partition().roles().toString());
-	
+
 	QString statusText = i18nc("@label partition state", "idle");
 	if (partition().isMounted())
 	{
@@ -112,7 +112,7 @@ void PartPropsDialog::setupDialog()
 		else
 			statusText = i18nc("@label partition state", "mounted");
 	}
-	
+
 	dialogWidget().status().setText(statusText);
 	setupFileSystemComboBox();
 
@@ -132,7 +132,7 @@ void PartPropsDialog::setupDialog()
 	dialogWidget().firstSector().setText(KGlobal::locale()->formatNumber(partition().firstSector(), 0));
 	dialogWidget().lastSector().setText(KGlobal::locale()->formatNumber(partition().lastSector(), 0));
 	dialogWidget().numSectors().setText(KGlobal::locale()->formatNumber(partition().length(), 0));
-	
+
 	setupFlagsList();
 
 	updateHideAndShow();
@@ -164,7 +164,7 @@ void PartPropsDialog::updateHideAndShow()
 {
 	// create a temporary fs just to check if the currently selected type supports setting a label
 	const FileSystem* fs = FileSystemFactory::create(newFileSystemType(), -1, -1, -1, "");
-	
+
 	if (fs == NULL || fs->supportSetLabel() == FileSystem::SupportNone)
 	{
 		dialogWidget().label().setReadOnly(true);
@@ -182,7 +182,7 @@ void PartPropsDialog::updateHideAndShow()
 		dialogWidget().label().setReadOnly(isReadOnly());
 		dialogWidget().noSetLabel().setVisible(false);
 	}
-		
+
 	delete fs;
 
 	// when do we show available and used capacity?
@@ -191,15 +191,15 @@ void PartPropsDialog::updateHideAndShow()
 			!partition().roles().has(PartitionRole::Extended) &&                    // neither for extended
 			!partition().roles().has(PartitionRole::Unallocated) &&                 // or for unallocated
 			newFileSystemType() != FileSystem::Unformatted;                         // and not for unformatted file systems
-	
+
 	dialogWidget().showAvailable(showAvailableAndUsed);
 	dialogWidget().showUsed(showAvailableAndUsed);
-	
+
 	// when do we show the file system combo box?
 	const bool showFileSystem =
 			!partition().roles().has(PartitionRole::Extended) &&                    // not for extended, they have no file system
 			!partition().roles().has(PartitionRole::Unallocated);                   // and not for unallocated: no choice there
-	
+
 	dialogWidget().showFileSystem(showFileSystem);
 
 	// when do we show the recreate file system check box?
@@ -210,12 +210,12 @@ void PartPropsDialog::updateHideAndShow()
 			partition().state() != Partition::StateNew;                             // or new partitions
 
 	dialogWidget().showCheckRecreate(showCheckRecreate);
-	
+
 	// when do we show the list of partition flags?
 	const bool showListFlags =
 			partition().state() != Partition::StateNew &&                           // not for new partitions
 			!partition().roles().has(PartitionRole::Unallocated);                   // and not for unallocated space
-	
+
 	dialogWidget().showListFlags(showListFlags);
 
 	dialogWidget().checkRecreate().setEnabled(!isReadOnly());
@@ -250,19 +250,19 @@ void PartPropsDialog::setupFileSystemComboBox()
 	dialogWidget().fileSystem().clear();
 	QString selected;
 	QStringList fsNames;
-		
+
 	foreach(const FileSystem* fs, FileSystemFactory::map().values())
 		if (fs->supportCreate() != FileSystem::SupportNone && partition().capacity() >= fs->minCapacity() && partition().capacity() <= fs->maxCapacity())
 		{
 			QString name = fs->name();
-			
+
 			if (partition().fileSystem().type() == fs->type())
 				selected = name;
-						
+
 			// If the partition isn't extended, skip the extended FS
 			if (fs->type() == FileSystem::Extended && !partition().roles().has(PartitionRole::Extended))
 				continue;
-			
+
 			// The user cannot change the filesystem back to "unformatted" once a filesystem has been created.
 			if (fs->type() == FileSystem::Unformatted)
 			{
@@ -290,10 +290,10 @@ void PartPropsDialog::onFilesystemChanged(int)
 	if (partition().state() == Partition::StateNew || warnFileSystemChange() || KMessageBox::warningContinueCancel(this,
 			i18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.</warning></para>"
 				"<para>Changing the file system on a partition already on disk will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filename>%1</filename> will unrecoverably be lost.</para>", partition().deviceNode()),
-			i18nc("@title:window", "Really recreate <filename>%1</filename> with file system %2?", partition().deviceNode(), dialogWidget().fileSystem().currentText()),
-			KGuiItem(i18nc("@action:button", "&Change the file system")),
-			KGuiItem(i18nc("@action:button", "&Do not change the file system")), "reallyChangeFileSystem") == KMessageBox::Continue)
-	{	
+			i18nc("@title:window", "Really Recreate <filename>%1</filename> with File System %2?", partition().deviceNode(), dialogWidget().fileSystem().currentText()),
+			KGuiItem(i18nc("@action:button", "&Change the File System")),
+			KGuiItem(i18nc("@action:button", "&Do Not Change the File System")), "reallyChangeFileSystem") == KMessageBox::Continue)
+	{
 		setDirty();
 		updateHideAndShow();
 		setWarnFileSystemChange();
@@ -311,9 +311,9 @@ void PartPropsDialog::onRecreate(int state)
 	if (state == Qt::Checked && (warnFileSystemChange() || KMessageBox::warningContinueCancel(this,
 			i18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.</warning></para>"
 				"<para>Recreating a file system will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filename>%1</filename> will unrecoverably be lost.</para>", partition().deviceNode()),
-			i18nc("@title:window", "Really recreate file system on <filename>%1</filename>?", partition().deviceNode()),
-			KGuiItem(i18nc("@action:button", "&Recreate the file system")),
-			KGuiItem(i18nc("@action:button", "&Do not recreate the file system")), "reallyRecreateFileSystem") == KMessageBox::Continue))
+			i18nc("@title:window", "Really Recreate File System on <filename>%1</filename>?", partition().deviceNode()),
+			KGuiItem(i18nc("@action:button", "&Recreate the File System")),
+			KGuiItem(i18nc("@action:button", "&Do Not Recreate the File System")), "reallyRecreateFileSystem") == KMessageBox::Continue))
 	{
 		setDirty();
 		setWarnFileSystemChange();
