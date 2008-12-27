@@ -34,7 +34,7 @@ KDE4_ADD_KCFG_FILES(partitionmanagerprivate_SRCS config.kcfgc)
 
 KDE4_ADD_LIBRARY(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
 
-TARGET_LINK_LIBRARIES(partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${LIBPARTED_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES})
+TARGET_LINK_LIBRARIES(partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${LIBPARTED_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES})
 
 INSTALL(TARGETS partitionmanagerprivate DESTINATION ${LIB_INSTALL_DIR})
 
