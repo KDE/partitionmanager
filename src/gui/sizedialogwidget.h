@@ -46,10 +46,13 @@ class SizeDialogWidget : public QWidget, public Ui::SizeDialogWidgetBase
 		QLabel& labelMinSize() { Q_ASSERT(m_LabelMinSize); return *m_LabelMinSize; }
 		QLabel& labelMaxSize() { Q_ASSERT(m_LabelMaxSize); return *m_LabelMaxSize; }
 
-		QComboBox& comboRole() { Q_ASSERT(m_ComboRole); return *m_ComboRole; }
+		QRadioButton& radioPrimary() { Q_ASSERT(m_RadioPrimary); return *m_RadioPrimary; }
+		QRadioButton& radioExtended() { Q_ASSERT(m_RadioExtended); return *m_RadioExtended; }
+		QRadioButton& radioLogical() { Q_ASSERT(m_RadioLogical); return *m_RadioLogical; }
+
 		QComboBox& comboFileSystem() { Q_ASSERT(m_ComboFileSystem); return *m_ComboFileSystem; }
 
-		void hideRole() { delete m_LabelRole; m_LabelRole = NULL; delete m_ComboRole; m_ComboRole = NULL; }
+		void hideRole() { delete m_LabelRole; m_LabelRole = NULL; delete m_RadioPrimary; m_RadioPrimary = NULL; delete m_RadioExtended; m_RadioExtended = NULL; delete m_RadioLogical; m_RadioLogical = NULL; }
 		void hideFileSystem() { delete m_LabelFileSystem; m_LabelFileSystem = NULL; delete m_ComboFileSystem; m_ComboFileSystem = NULL; }
 };
 

@@ -68,24 +68,28 @@ void NewDialog::setupDialog()
 	qSort(fsNames);
 	dialogWidget().comboFileSystem().addItems(fsNames);
 
+	dialogWidget().radioPrimary().setVisible(partitionRoles() & PartitionRole::Primary);
+	dialogWidget().radioExtended().setVisible(partitionRoles() & PartitionRole::Extended);
+	dialogWidget().radioLogical().setVisible(partitionRoles() & PartitionRole::Logical);
+
 	if (partitionRoles() & PartitionRole::Primary)
-		dialogWidget().comboRole().addItem(i18nc("@item:inlistbox partition role", "Primary"));
-	if (partitionRoles() & PartitionRole::Extended)
-		dialogWidget().comboRole().addItem(i18nc("@item:inlistbox partition role", "Extended"));
-	if (partitionRoles() & PartitionRole::Logical)
-		dialogWidget().comboRole().addItem(i18nc("@item:inlistbox partition role", "Logical"));
+		dialogWidget().radioPrimary().setChecked(true);
+	else
+		dialogWidget().radioLogical().setChecked(true);
 
 	SizeDialogBase::setupDialog();
 
 	// don't move these above the call to parent's setupDialog, because only after that has
 	// run there is a valid partition set in the part resizer widget and they will need that.
-	onRoleChanged(0);
+	onRoleChanged(false);
 	onFilesystemChanged(0);
 }
 
 void NewDialog::setupConnections()
 {
-	connect(&dialogWidget().comboRole(), SIGNAL(currentIndexChanged(int)), SLOT(onRoleChanged(int)));
+	connect(&dialogWidget().radioPrimary(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
+	connect(&dialogWidget().radioExtended(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
+	connect(&dialogWidget().radioLogical(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
 	connect(&dialogWidget().comboFileSystem(), SIGNAL(currentIndexChanged(int)), SLOT(onFilesystemChanged(int)));
 
 	SizeDialogBase::setupConnections();
@@ -102,16 +106,15 @@ void NewDialog::accept()
 	KDialog::accept();
 }
 
-void NewDialog::onRoleChanged(int idx)
+void NewDialog::onRoleChanged(bool)
 {
 	PartitionRole::Roles r = PartitionRole::None;
 
-	const QString itemText = dialogWidget().comboRole().itemText(idx);
-	if (itemText == i18nc("@item:inlistbox partition role", "Primary"))
+	if (dialogWidget().radioPrimary().isChecked())
 		r = PartitionRole::Primary;
-	if (itemText == i18nc("@item:inlistbox partition role", "Extended"))
+	else if (dialogWidget().radioExtended().isChecked())
 		r = PartitionRole::Extended;
-	if (itemText == i18nc("@item:inlistbox partition role", "Logical"))
+	else if (dialogWidget().radioLogical().isChecked())
 		r = PartitionRole::Logical;
 
 	dialogWidget().comboFileSystem().setEnabled(r != PartitionRole::Extended);

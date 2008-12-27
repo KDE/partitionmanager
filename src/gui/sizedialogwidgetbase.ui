@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>421</width>
-    <height>372</height>
+    <width>425</width>
+    <height>339</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" >
@@ -53,15 +53,15 @@
         </sizepolicy>
        </property>
        <property name="text" >
-        <string comment="@label:listbox" >Partition type:</string>
+        <string comment="@label:listbox" >Partition &amp;type:</string>
        </property>
        <property name="alignment" >
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
+       <property name="buddy" >
+        <cstring>m_RadioPrimary</cstring>
+       </property>
       </widget>
-     </item>
-     <item row="0" column="1" >
-      <widget class="KComboBox" name="m_ComboRole" />
      </item>
      <item row="1" column="0" >
       <widget class="QLabel" name="m_LabelFileSystem" >
@@ -72,10 +72,13 @@
         </sizepolicy>
        </property>
        <property name="text" >
-        <string comment="@label:listbox" >File system:</string>
+        <string comment="@label:listbox" >File &amp;system:</string>
        </property>
        <property name="alignment" >
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy" >
+        <cstring>m_ComboFileSystem</cstring>
        </property>
       </widget>
      </item>
@@ -99,8 +102,7 @@
       </widget>
      </item>
      <item row="2" column="1" >
-      <widget class="QLabel" name="m_LabelMinSize" >
-      </widget>
+      <widget class="QLabel" name="m_LabelMinSize" />
      </item>
      <item row="3" column="0" >
       <widget class="QLabel" name="label_5" >
@@ -119,8 +121,7 @@
       </widget>
      </item>
      <item row="3" column="1" >
-      <widget class="QLabel" name="m_LabelMaxSize" >
-      </widget>
+      <widget class="QLabel" name="m_LabelMaxSize" />
      </item>
      <item row="4" column="0" >
       <widget class="QLabel" name="label" >
@@ -131,17 +132,20 @@
         </sizepolicy>
        </property>
        <property name="text" >
-        <string comment="@label:listbox" >Free space before:</string>
+        <string comment="@label:listbox" >Free space &amp;before:</string>
        </property>
        <property name="alignment" >
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy" >
+        <cstring>m_SpinFreeBefore</cstring>
        </property>
       </widget>
      </item>
      <item row="4" column="1" >
       <widget class="QSpinBox" name="m_SpinFreeBefore" >
        <property name="suffix" >
-        <string comment="@label:spinbox"> MiB</string>
+        <string comment="@label:spinbox" > MiB</string>
        </property>
        <property name="minimum" >
         <number>0</number>
@@ -160,17 +164,20 @@
         </sizepolicy>
        </property>
        <property name="text" >
-        <string comment="@label:listbox" >Size:</string>
+        <string comment="@label:listbox" >S&amp;ize:</string>
        </property>
        <property name="alignment" >
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy" >
+        <cstring>m_SpinCapacity</cstring>
        </property>
       </widget>
      </item>
      <item row="5" column="1" >
       <widget class="QSpinBox" name="m_SpinCapacity" >
        <property name="suffix" >
-        <string comment="@label:spinbox"> MiB</string>
+        <string comment="@label:spinbox" > MiB</string>
        </property>
        <property name="minimum" >
         <number>0</number>
@@ -189,17 +196,20 @@
         </sizepolicy>
        </property>
        <property name="text" >
-        <string comment="@label:listbox" >Free space after:</string>
+        <string comment="@label:listbox" >Free space &amp;after:</string>
        </property>
        <property name="alignment" >
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy" >
+        <cstring>m_SpinFreeAfter</cstring>
        </property>
       </widget>
      </item>
      <item row="6" column="1" >
       <widget class="QSpinBox" name="m_SpinFreeAfter" >
        <property name="suffix" >
-        <string comment="@label:spinbox"> MiB</string>
+        <string comment="@label:spinbox" > MiB</string>
        </property>
        <property name="minimum" >
         <number>0</number>
@@ -208,6 +218,31 @@
         <number>999999999</number>
        </property>
       </widget>
+     </item>
+     <item row="0" column="1" >
+      <layout class="QHBoxLayout" name="horizontalLayout" >
+       <item>
+        <widget class="QRadioButton" name="m_RadioPrimary" >
+         <property name="text" >
+          <string>&amp;Primary</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="m_RadioExtended" >
+         <property name="text" >
+          <string>&amp;Extended</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="m_RadioLogical" >
+         <property name="text" >
+          <string>&amp;Logical</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
@@ -242,6 +277,15 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>m_RadioPrimary</tabstop>
+  <tabstop>m_RadioExtended</tabstop>
+  <tabstop>m_RadioLogical</tabstop>
+  <tabstop>m_ComboFileSystem</tabstop>
+  <tabstop>m_SpinFreeBefore</tabstop>
+  <tabstop>m_SpinCapacity</tabstop>
+  <tabstop>m_SpinFreeAfter</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

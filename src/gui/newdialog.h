@@ -43,7 +43,7 @@ class NewDialog : public SizeDialogBase
 
 	protected slots:
 		void accept();
-		void onRoleChanged(int);
+		void onRoleChanged(bool);
 		void onFilesystemChanged(int);
 
 	protected:
