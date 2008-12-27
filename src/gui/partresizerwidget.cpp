@@ -85,7 +85,7 @@ void PartResizerWidget::init(Device& d, Partition& p, qint64 freeBefore, qint64 
 	/** @todo get real pixmaps for the handles */
 	QPixmap pixmap(handleWidth(), handleHeight());
 	pixmap.fill(QColor(0x44, 0x44, 0x44));
-	
+
 	leftHandle().setPixmap(pixmap);
 	rightHandle().setPixmap(pixmap);
 	leftHandle().setFixedSize(handleWidth(), handleHeight());
@@ -101,6 +101,8 @@ void PartResizerWidget::init(Device& d, Partition& p, qint64 freeBefore, qint64 
 
 		if (moveAllowed())
 			partWidget().setCursor(Qt::SizeAllCursor);
+
+		partWidget().setToolTip(QString());
 	}
 
 	updatePositions();
@@ -149,7 +151,7 @@ void PartResizerWidget::mousePressEvent(QMouseEvent* event)
 {
 	if (readOnly())
 		return;
-	
+
 	if (event->button() == Qt::LeftButton)
 	{
 		m_DraggedWidget = static_cast<QWidget*>(childAt(event->pos()));
@@ -221,7 +223,7 @@ bool PartResizerWidget::updateSectors(qint64 newSectorsBefore, qint64 newSectors
 		kWarning() << "partition length: " << partition().length();
 		return false;
 	}
-	
+
 	if (!moveAllowed())
 		return false;
 
@@ -245,7 +247,7 @@ bool PartResizerWidget::updateSectors(qint64 newSectorsBefore, qint64 newSectors
 		updateSectorsAfter(newSectorsAfter, false);
 
 	bool rval = false;
-	
+
 	if (oldBefore != sectorsBefore())
 	{
 		rval = true;
@@ -284,7 +286,7 @@ bool PartResizerWidget::updateSectorsBefore(qint64 newSectorsBefore, bool enable
 		kWarning() << "new sectors before partition: " << newSectorsBefore;
 		return false;
 	}
-	
+
 	const qint64 oldSectorsBefore = sectorsBefore();
 	const qint64 newLength = partition().length() + oldSectorsBefore - newSectorsBefore;
 
@@ -298,7 +300,7 @@ bool PartResizerWidget::updateSectorsBefore(qint64 newSectorsBefore, bool enable
 	}
 	else if (newLength < 0)
 		return false;
-	
+
 	qint64 newFirstSector = partition().firstSector() + newSectorsBefore - oldSectorsBefore;
 
 	if (maxFirstSector() > -1 && newFirstSector > maxFirstSector())
@@ -313,12 +315,12 @@ bool PartResizerWidget::updateSectorsBefore(qint64 newSectorsBefore, bool enable
 
 		partition().setFirstSector(newFirstSector);
 		partition().fileSystem().setFirstSector(newFirstSector);
-		
+
 		resizeLogicals();
 
 		emit sectorsBeforeChanged(sectorsBefore());
   		emit lengthChanged(partition().length());
-	
+
 		updatePositions();
 
 		return true;
@@ -345,7 +347,7 @@ void PartResizerWidget::resizeLogicals()
 
 	device().partitionTable().removeUnallocated(&partition());
 	device().partitionTable().insertUnallocated(device(), &partition(), partition().firstSector());
-	
+
 	partWidget().updateChildren();
 }
 
@@ -392,12 +394,12 @@ bool PartResizerWidget::updateSectorsAfter(qint64 newSectorsAfter, bool enableLe
 
 		partition().setLastSector(newLastSector);
 		partition().fileSystem().setLastSector(newLastSector);
-		
+
 		resizeLogicals();
 
  		emit sectorsAfterChanged(sectorsAfter());
 		emit lengthChanged(partition().length());
-	
+
 		updatePositions();
 
 		return true;
