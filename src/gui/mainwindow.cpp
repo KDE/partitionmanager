@@ -89,8 +89,9 @@ class PartitionTreeWidgetItem : public QTreeWidgetItem
 
 /** Creates a new MainWindow instance.
 	@param parent the parent widget
+	@param coll an action collection if used as a KPart
 */
-MainWindow::MainWindow(QWidget* parent) :
+MainWindow::MainWindow(QWidget* parent, KActionCollection* coll) :
 	KXmlGuiWindow(parent),
 	Ui::MainWindowBase(),
 	m_LibParted(),
@@ -99,7 +100,8 @@ MainWindow::MainWindow(QWidget* parent) :
 	m_StatusText(new QLabel(this)),
 	m_InfoPane(new InfoPane(this)),
 	m_ClipboardPartition(NULL),
-	m_ProgressDialog(new ProgressDialog(this, operationRunner()))
+	m_ProgressDialog(new ProgressDialog(this, operationRunner())),
+	m_ActionCollection(coll)
 {
 	setupUi(this);
 
@@ -110,7 +112,12 @@ MainWindow::MainWindow(QWidget* parent) :
  	setupStatusBar();
 	setupConnections();
 
-	setupGUI();
+	// If we were called with an action collection we're supposed to be a KPart, so don't
+	// create the GUI in that case.
+	if (coll != NULL)
+		setupGUI(ToolBar | Keys | StatusBar | Save);
+	else
+		setupGUI(ToolBar | Keys | StatusBar | Save | Create);
 
 	loadConfig();
 
@@ -156,6 +163,11 @@ void MainWindow::changeEvent(QEvent* event)
 	}
 
 	KXmlGuiWindow::changeEvent(event);
+}
+
+KActionCollection* MainWindow::actionCollection() const
+{
+	return m_ActionCollection != NULL ? m_ActionCollection : KXmlGuiWindow::actionCollection();
 }
 
 void MainWindow::setupActions()

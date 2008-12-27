@@ -14,31 +14,21 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#include "gui/mainwindow.h"
+#if !defined(HELPERS__H)
 
-#include "util/helpers.h"
+#define HELPERS__H
 
-#include <kapplication.h>
-#include <kcmdlineargs.h>
+#include "util/libpartitionmanagerexport.h"
 
-int main(int argc, char* argv[])
-{
-	KCmdLineArgs::init(argc, argv, createPartitionManagerAboutData());
+class KAboutData;
 
-	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427
-	unblockSigChild();
+LIBPARTITIONMANAGERPRIVATE_EXPORT void registerMetaTypes();
+LIBPARTITIONMANAGERPRIVATE_EXPORT void unblockSigChild();
+LIBPARTITIONMANAGERPRIVATE_EXPORT bool checkPermissions();
 
-	KApplication app;
+LIBPARTITIONMANAGERPRIVATE_EXPORT KAboutData* createPartitionManagerAboutData();
 
-	registerMetaTypes();
-	if (!checkPermissions())
-		return 0;
-
-	MainWindow* mainWindow = new MainWindow();
-	mainWindow->show();
-
-	return app.exec();
-}
+#endif

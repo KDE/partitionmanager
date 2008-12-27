@@ -14,31 +14,39 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
+
+#include "kpart/partitionmanagerpart.h"
 
 #include "gui/mainwindow.h"
 
 #include "util/helpers.h"
 
-#include <kapplication.h>
-#include <kcmdlineargs.h>
+#include <kpluginfactory.h>
 
-int main(int argc, char* argv[])
+K_PLUGIN_FACTORY(PartitionManagerPartFactory, registerPlugin<PartitionManagerPart>("PartitionManagerPart");)
+K_EXPORT_PLUGIN(PartitionManagerPartFactory("partitionmanagerpart", "partitionmanager"))
+
+PartitionManagerPart::PartitionManagerPart(QWidget*, QObject* parent, const QVariantList&) :
+	KParts::ReadOnlyPart(parent),
+	m_MainWindow(NULL)
 {
-	KCmdLineArgs::init(argc, argv, createPartitionManagerAboutData());
-
+	setComponentData(PartitionManagerPartFactory::componentData(), false);
+	
 	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427
 	unblockSigChild();
-
-	KApplication app;
-
+	
 	registerMetaTypes();
-	if (!checkPermissions())
-		return 0;
 
-	MainWindow* mainWindow = new MainWindow();
-	mainWindow->show();
-
-	return app.exec();
+	setMainWindow(new MainWindow(NULL, actionCollection()));
+	setWidget(&mainWindow());
+	
+	setXMLFile("partitionmanagerpart.rc");
 }
+
+KAboutData* PartitionManagerPart::createAboutData()
+{
+	return createPartitionManagerAboutData();
+}
+

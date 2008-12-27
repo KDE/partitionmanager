@@ -1,0 +1,15 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+
+<kpartgui name="kparttest" version="3">
+	<MenuBar>
+		<Menu name="file">
+			<Merge/>
+			<Separator/>
+		</Menu>
+
+		<Merge/>
+
+		<Menu name="settings"/>
+		<Menu name="help"/>
+	</MenuBar>
+</kpartgui>

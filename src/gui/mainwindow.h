@@ -21,6 +21,8 @@
 
 #define MAINWINDOW__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "ui_mainwindowbase.h"
 
 #include "core/libparted.h"
@@ -39,17 +41,18 @@ class QCloseEvent;
 class QEvent;
 class Device;
 class ProgressDialog;
+class KActionCollection;
 
 /** @brief The application's main window.
 
 	@author vl@fidra.de
 */
-class MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
+class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
 {
 	Q_OBJECT
 
 	public:
-		MainWindow(QWidget* parent = NULL);
+		MainWindow(QWidget* parent = NULL, KActionCollection* coll = NULL);
 
 	signals:
 		void devicesChanged();
@@ -74,6 +77,8 @@ class MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
 		Device* selectedDevice();
 		Partition* selectedPartition();
 		
+		KActionCollection* actionCollection() const;
+
 		InfoPane& infoPane() { Q_ASSERT(m_InfoPane); return *m_InfoPane; }
 		
 		PartTableWidget& partTableWidget() { Q_ASSERT(m_PartTableWidget); return *m_PartTableWidget; }
@@ -163,6 +168,7 @@ class MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
 		InfoPane* m_InfoPane;
 		Partition* m_ClipboardPartition;
 		ProgressDialog* m_ProgressDialog;
+		KActionCollection* m_ActionCollection;
 };
 
 #endif

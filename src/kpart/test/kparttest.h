@@ -17,28 +17,24 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "gui/mainwindow.h"
+#if !defined(KPARTTEST__H)
 
-#include "util/helpers.h"
+#define KPARTTEST__H
 
-#include <kapplication.h>
-#include <kcmdlineargs.h>
-
-int main(int argc, char* argv[])
+#include <kparts/mainwindow.h>
+	
+class KPartTest : public KParts::MainWindow
 {
-	KCmdLineArgs::init(argc, argv, createPartitionManagerAboutData());
+	Q_OBJECT
 
-	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427
-	unblockSigChild();
+	public:
+		KPartTest();
 
-	KApplication app;
+	private:
+		void setupActions();
 
-	registerMetaTypes();
-	if (!checkPermissions())
-		return 0;
+	private:
+		KParts::ReadOnlyPart* m_Part;
+};
 
-	MainWindow* mainWindow = new MainWindow();
-	mainWindow->show();
-
-	return app.exec();
-}
+#endif

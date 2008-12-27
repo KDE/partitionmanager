@@ -17,28 +17,41 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "gui/mainwindow.h"
+#include "kparttest.h"
 
-#include "util/helpers.h"
+#include <kaction.h>
+#include <kactioncollection.h>
+#include <kpluginfactory.h>
+#include <kpluginloader.h>
+#include <kmessagebox.h>
+#include <kstandardaction.h>
+#include <kdebug.h>
 
-#include <kapplication.h>
-#include <kcmdlineargs.h>
+#include <QApplication>
 
-int main(int argc, char* argv[])
+KPartTest::KPartTest() :
+	KParts::MainWindow(),
+	m_Part(NULL)
 {
-	KCmdLineArgs::init(argc, argv, createPartitionManagerAboutData());
+	setupActions();
 
-	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427
-	unblockSigChild();
+	KPluginFactory* factory = KPluginLoader("partitionmanagerpart").factory();
+	m_Part = factory ? factory->create<KParts::ReadOnlyPart>("PartitionManagerPart", this) : NULL;
 
-	KApplication app;
+	if (m_Part == NULL)
+	{
+		KMessageBox::error(this, "Could not load Partition Manager's KPart");
+		qApp->quit();
+		return;
+	}
 
-	registerMetaTypes();
-	if (!checkPermissions())
-		return 0;
+	setCentralWidget(m_Part->widget());
 
-	MainWindow* mainWindow = new MainWindow();
-	mainWindow->show();
+	setupGUI(ToolBar | Keys | StatusBar | Save);
+	createGUI(m_Part);
+}
 
-	return app.exec();
+void KPartTest::setupActions()
+{
+	KStandardAction::quit(qApp, SLOT(closeAllWindows()), actionCollection());
 }

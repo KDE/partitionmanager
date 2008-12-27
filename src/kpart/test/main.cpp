@@ -17,28 +17,29 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "gui/mainwindow.h"
+#include "kparttest.h"
 
-#include "util/helpers.h"
-
-#include <kapplication.h>
-#include <kcmdlineargs.h>
+#include <KApplication>
+#include <KAboutData>
+#include <KCmdLineArgs>
 
 int main(int argc, char* argv[])
 {
-	KCmdLineArgs::init(argc, argv, createPartitionManagerAboutData());
+	KAboutData aboutData(
+		"kparttest",
+		NULL,
+		ki18n("KDE Partition Manager KPart"), "0.1",
+		ki18n("A test application for KDE Partition Manager's KPart."),
+		KAboutData::License_GPL,
+		ki18n("Copyright (c) 2008 Volker Lanz")
+	);
 
-	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427
-	unblockSigChild();
-
+	KCmdLineArgs::init(argc, argv, &aboutData);
+	
 	KApplication app;
 
-	registerMetaTypes();
-	if (!checkPermissions())
-		return 0;
-
-	MainWindow* mainWindow = new MainWindow();
-	mainWindow->show();
+	KPartTest* widget = new KPartTest();
+	widget->show();
 
 	return app.exec();
 }

@@ -14,31 +14,36 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#include "gui/mainwindow.h"
+#if !defined(PARTITIONMANAGERPART__H)
 
-#include "util/helpers.h"
+#define PARTITIONMANAGERPART__H
 
-#include <kapplication.h>
-#include <kcmdlineargs.h>
+#include <kparts/part.h>
+#include <kdebug.h>
 
-int main(int argc, char* argv[])
+class KAboutData;
+class MainWindow;
+
+class PartitionManagerPart : public KParts::ReadOnlyPart
 {
-	KCmdLineArgs::init(argc, argv, createPartitionManagerAboutData());
+	Q_OBJECT
 
-	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427
-	unblockSigChild();
+	public:
+		PartitionManagerPart(QWidget* parentWidget, QObject* parent, const QVariantList& args);
+	
+	public:
+		static KAboutData* createAboutData();
+		MainWindow& mainWindow() { Q_ASSERT(m_MainWindow != NULL); return *m_MainWindow; }
+		
+	protected:
+	    virtual bool openFile() { return false; }
+		void setMainWindow(MainWindow* m) { m_MainWindow = m; }
 
-	KApplication app;
+	private:
+		MainWindow* m_MainWindow;
+};
 
-	registerMetaTypes();
-	if (!checkPermissions())
-		return 0;
-
-	MainWindow* mainWindow = new MainWindow();
-	mainWindow->show();
-
-	return app.exec();
-}
+#endif
