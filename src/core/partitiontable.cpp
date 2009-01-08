@@ -538,11 +538,6 @@ void PartitionTable::insertUnallocated(const Device& d, PartitionNode* p, qint64
 */
 void PartitionTable::updateUnallocated(const Device& d)
 {
-	// if the partition table has no children it is invalid so don't do
-	// anything here.
-	if (children().size() == 0)
-		return;
-
 	removeUnallocated();
 	insertUnallocated(d, this, d.sectorsPerTrack());
 }
