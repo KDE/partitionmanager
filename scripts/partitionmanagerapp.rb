@@ -41,17 +41,20 @@ class PartitionManagerApp < Application
 		IO.foreach('CMakeLists.txt.orig')  do |line|
 			if line =~ /\s*macro_optional_add_subdirectory\s*\(\s*doc\s*\)\s*/i
 				newFile.print <<END_OF_TEXT
-if (KDEVERSION VERSION_GREATER "4.1.3")
+if (KDE_VERSION VERSION_GREATER "4.1.3")
     macro_optional_add_subdirectory(doc)
-else (KDEVERSION VERSION_GREATER "4.1.3")
+else (KDE_VERSION VERSION_GREATER "4.1.3")
     message (STATUS "No documentation built for KDE libs < 4.1.4")
-endif (KDEVERSION VERSION_GREATER "4.1.3")
+endif (KDE_VERSION VERSION_GREATER "4.1.3")
 END_OF_TEXT
 			else
 				newFile << line
 			end
 		end
 
+		FileUtils.rm_rf 'CMakeLists.txt.orig' 
+
 		newFile.close
 	end
 end
+
