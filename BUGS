@@ -1,5 +1,5 @@
-KDE Partition Manger: Known Bugs in version 1.0.0-ALPHA2
-========================================================
+KDE Partition Manger: Known Bugs in version 1.0.0-BETA1
+=======================================================
 
 
 Known severe bugs that can cause data loss:
@@ -11,13 +11,8 @@ Known severe bugs that can cause data loss:
 Known minor bugs and glitches:
 ------------------------------
 
-* Device notifications aren't disabled and get in the way (#219)
+* Device notifications aren't disabled and get in the way
 
-* Deleting several logical partitions in quick succession might fail (#301)
+* Deleting several logical partitions in quick succession might fail
 
-* Exceptions from libparted do not show up in the progress detail report (#332)
-
-* Moving partitions so their end is aligned with the start of another partition
-  or the end of the device sometimes does not work, there's a gap of cylinder
-  size sectors. (#381)
-
+* Exceptions from libparted do not show up in the progress detail report
