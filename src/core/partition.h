@@ -156,8 +156,6 @@ class Partition : public PartitionNode
 		void adjustLogicalNumbers(qint32 deletedNumber, qint32 insertedNumber);
 		void checkChildrenMounted();
 
-		static qint64 minimumPartitionSectors() { return m_MinimumPartitionSectors; } /**< @return the minimum number of sectors any Partition must be long */
-
 	protected:
 		void append(Partition* p) { m_Children.append(p); }
 		void setDevicePath(const QString& s) { m_DevicePath = s; }
@@ -192,8 +190,6 @@ class Partition : public PartitionNode
 		bool m_IsMounted;
 		qint32 m_SectorSize;
 		State m_State;
-
-		static const qint64 m_MinimumPartitionSectors = 8192;
 };
 
 #endif

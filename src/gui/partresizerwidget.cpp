@@ -337,7 +337,7 @@ bool PartResizerWidget::checkSnap(const Partition& child, qint64 delta) const
 	if (child.roles().has(PartitionRole::Unallocated))
 		return true;
 
-	return qAbs(delta) >= Partition::minimumPartitionSectors();
+	return qAbs(delta) >= device().cylinderSize();
 }
 
 void PartResizerWidget::resizeLogicals()

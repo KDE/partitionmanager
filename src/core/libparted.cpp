@@ -179,7 +179,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 
 	while ((pedPartition = ped_disk_next_partition(pedDisk, pedPartition)))
 	{
-		if (pedPartition->geom.end - pedPartition->geom.start < Partition::minimumPartitionSectors() || pedPartition->num < 1)
+		if (pedPartition->num < 1)
 			continue;
 
 		PartitionRole::Roles r = PartitionRole::None;

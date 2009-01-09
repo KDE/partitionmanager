@@ -447,7 +447,7 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 		r |= PartitionRole::Logical;
 	}
 
-	if (end - start < Partition::minimumPartitionSectors())
+	if (end - start < device.cylinderSize())
 		return NULL;
 
 	return new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, -1);
@@ -510,7 +510,7 @@ void PartitionTable::insertUnallocated(const Device& d, PartitionNode* p, qint64
 	{
 		Partition* child = p->children()[i];
 
-		if (child->firstSector() - lastEnd >= Partition::minimumPartitionSectors())
+		if (child->firstSector() - lastEnd >= d.cylinderSize())
 			p->insert(createUnallocated(d, *p, lastEnd, child->firstSector() - 1));
 
 		if (child->roles().has(PartitionRole::Extended))
@@ -531,7 +531,7 @@ void PartitionTable::insertUnallocated(const Device& d, PartitionNode* p, qint64
 		parentEnd = (extended != NULL) ? extended->lastSector() : -1;
 	}
 
-	if (parentEnd >= Partition::minimumPartitionSectors())
+	if (parentEnd >= d.cylinderSize())
 		p->insert(createUnallocated(d, *p, lastEnd, parentEnd));
 }
 
