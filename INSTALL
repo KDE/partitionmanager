@@ -58,3 +58,15 @@ does no harm, but you will not be allowed to apply any operations (i.e., you
 can click through the UI, but cannot modify your disks).
 
 
+5. Troubleshooting
+
+If you are getting an error like this during the build:
+
+index.docbook:71: parser error : Entity 'partman' not defined
+
+there is a problem with a documentation file. This is easily fixed by
+commenting out the offending language in doc/CMakeLists.txt -- the error
+message should indicate which language causes the error. As an alternative, you
+can disable building all documentation by commenting out the
+macro_optional_add_subdirectory(doc) line in the toplevel CMakeLists.txt file.
+
