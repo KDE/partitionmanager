@@ -15,18 +15,18 @@
 # Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
-FIND_PACKAGE(KDE4 REQUIRED)
+find_package(KDE4 REQUIRED)
 
-INCLUDE_DIRECTORIES(${KDE4_INCLUDES} .)
+include_directories(${KDE4_INCLUDES} .)
 
-SET(kparttest_SRCS
+set(kparttest_SRCS
 	main.cpp
 	kparttest.cpp
 )
 
-KDE4_ADD_EXECUTABLE(kparttest ${kparttest_SRCS})
+kde4_add_executable(kparttest ${kparttest_SRCS})
 
-TARGET_LINK_LIBRARIES(kparttest ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS})
+target_link_libraries(kparttest ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS})
 
-INSTALL(TARGETS kparttest DESTINATION ${BIN_INSTALL_DIR})
-INSTALL(FILES kparttestui.rc DESTINATION  ${DATA_INSTALL_DIR}/kparttest)
+install(TARGETS kparttest DESTINATION ${BIN_INSTALL_DIR})
+install(FILES kparttestui.rc DESTINATION  ${DATA_INSTALL_DIR}/kparttest)

@@ -17,7 +17,7 @@
 
 ############################################
 
-FILE(GLOB partitionmanagerprivate_SRCS
+file(GLOB partitionmanagerprivate_SRCS
 	core/*.cpp
 	util/*.cpp
 	ops/*.cpp
@@ -26,54 +26,54 @@ FILE(GLOB partitionmanagerprivate_SRCS
 	gui/*.cpp
 )
 
-FILE(GLOB partitionmanagerprivate_UIFILES gui/*.ui)
+file(GLOB partitionmanagerprivate_UIFILES gui/*.ui)
 
-KDE4_ADD_UI_FILES(partitionmanagerprivate_SRCS ${partitionmanagerprivate_UIFILES})
+kde4_add_ui_files(partitionmanagerprivate_SRCS ${partitionmanagerprivate_UIFILES})
 
-KDE4_ADD_KCFG_FILES(partitionmanagerprivate_SRCS config.kcfgc)
+kde4_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
 
-KDE4_ADD_LIBRARY(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
+kde4_add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
 
-TARGET_LINK_LIBRARIES(partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${LIBPARTED_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES})
+target_link_libraries(partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${LIBPARTED_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES})
 
-INSTALL(TARGETS partitionmanagerprivate DESTINATION ${LIB_INSTALL_DIR})
-
-############################################
-
-FILE(GLOB partitionmanager_SRCS	main.cpp)
-
-KDE4_ADD_EXECUTABLE(partitionmanager ${partitionmanager_SRCS})
-
-TARGET_LINK_LIBRARIES(partitionmanager partitionmanagerprivate)
-
-INSTALL(TARGETS partitionmanager DESTINATION ${BIN_INSTALL_DIR})
-INSTALL(FILES gui/partitionmanagerui.rc DESTINATION ${DATA_INSTALL_DIR}/partitionmanager)
-INSTALL(FILES partitionmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(TARGETS partitionmanagerprivate DESTINATION ${LIB_INSTALL_DIR})
 
 ############################################
 
-OPTION(PARTMAN_KPART "Build a kpart for KDE Partition Manager" OFF)
+file(GLOB partitionmanager_SRCS	main.cpp)
 
-IF(PARTMAN_KPART)
-	FILE(GLOB partitionmanagerpart_SRCS kpart/partitionmanagerpart.cpp)
+kde4_add_executable(partitionmanager ${partitionmanager_SRCS})
 
-	KDE4_ADD_PLUGIN(partitionmanagerpart ${partitionmanagerpart_SRCS})
+target_link_libraries(partitionmanager partitionmanagerprivate)
 
-	TARGET_LINK_LIBRARIES(partitionmanagerpart
+install(TARGETS partitionmanager DESTINATION ${BIN_INSTALL_DIR})
+install(FILES gui/partitionmanagerui.rc DESTINATION ${DATA_INSTALL_DIR}/partitionmanager)
+install(FILES partitionmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+
+############################################
+
+option(PARTMAN_KPART "Build a kpart for KDE Partition Manager" OFF)
+
+if(PARTMAN_KPART)
+	file(GLOB partitionmanagerpart_SRCS kpart/partitionmanagerpart.cpp)
+
+	kde4_add_plugin(partitionmanagerpart ${partitionmanagerpart_SRCS})
+
+	target_link_libraries(partitionmanagerpart
 		${KDE4_KPARTS_LIBS}
 		${KDE4_KDECORE_LIBS}
 		partitionmanagerprivate
 	)
 
-	INSTALL(TARGETS partitionmanagerpart DESTINATION ${PLUGIN_INSTALL_DIR})
-	INSTALL(FILES kpart/partitionmanagerpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-	INSTALL(FILES kpart/partitionmanagerpart.rc DESTINATION ${DATA_INSTALL_DIR}/partitionmanagerpart)
+	install(TARGETS partitionmanagerpart DESTINATION ${PLUGIN_INSTALL_DIR})
+	install(FILES kpart/partitionmanagerpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+	install(FILES kpart/partitionmanagerpart.rc DESTINATION ${DATA_INSTALL_DIR}/partitionmanagerpart)
 
-	OPTION(PARTMAN_KPART_TEST "Build a kpart test application for KDE Partition Manager" OFF)
+	option(PARTMAN_KPART_TEST "Build a kpart test application for KDE Partition Manager" OFF)
 
-	IF(PARTMAN_KPART_TEST)
-		ADD_SUBDIRECTORY(kpart/test)
-	ENDIF(PARTMAN_KPART_TEST)
+	if(PARTMAN_KPART_TEST)
+		add_subdirectory(kpart/test)
+	endif(PARTMAN_KPART_TEST)
 
-ENDIF(PARTMAN_KPART)
+endif(PARTMAN_KPART)
 
