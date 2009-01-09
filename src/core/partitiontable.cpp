@@ -447,7 +447,7 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 		r |= PartitionRole::Logical;
 	}
 
-	if (end - start < device.cylinderSize())
+	if (end - start + 1 < device.cylinderSize())
 		return NULL;
 
 	return new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, -1);
