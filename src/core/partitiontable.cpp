@@ -504,20 +504,15 @@ void PartitionTable::insertUnallocated(const Device& d, PartitionNode* p, qint64
 	Q_ASSERT(p != NULL);
 
 	qint64 lastEnd = start;
-	qint32 i = 0;
 
-	while (i < p->children().size())
+	foreach (Partition* child, p->children())
 	{
-		Partition* child = p->children()[i];
-
-		if (child->firstSector() - lastEnd >= d.cylinderSize())
-			p->insert(createUnallocated(d, *p, lastEnd, child->firstSector() - 1));
+		p->insert(createUnallocated(d, *p, lastEnd, child->firstSector() - 1));
 
 		if (child->roles().has(PartitionRole::Extended))
 			insertUnallocated(d, child, child->firstSector());
 
 		lastEnd = child->lastSector() + 1;
-		i++;
 	}
 
 	// Take care of the free space between the end of the last child and the end
