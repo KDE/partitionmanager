@@ -345,8 +345,10 @@ void PartResizerWidget::resizeLogicals()
 	if (!partition().roles().has(PartitionRole::Extended) || partition().children().size() == 0)
 		return;
 
-	device().partitionTable().removeUnallocated(&partition());
-	device().partitionTable().insertUnallocated(device(), &partition(), partition().firstSector());
+	Q_ASSERT(device().partitionTable());
+
+	device().partitionTable()->removeUnallocated(&partition());
+	device().partitionTable()->insertUnallocated(device(), &partition(), partition().firstSector());
 
 	partWidget().updateChildren();
 }

@@ -45,22 +45,17 @@ PartTableWidget::PartTableWidget(QWidget* parent) :
 */
 void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 {
-	Q_ASSERT(ptable);
-
 	clear();
 
-	if (ptable == NULL)
-	{
-		kWarning() << "ptable is null.";
-		return;
-	}
-	
 	m_PartitionTable = ptable;
 
-	foreach(const Partition* p, partitionTable()->children())
+	if (partitionTable() != NULL)
 	{
-		widgets().append(new PartWidget(this, this, p));
-		widgets().last()->show();
+		foreach(const Partition* p, partitionTable()->children())
+		{
+			widgets().append(new PartWidget(this, this, p));
+			widgets().last()->show();
+		}
 	}
 
 	if (widgets().isEmpty())
@@ -149,7 +144,7 @@ void PartTableWidget::mouseDoubleClickEvent(QMouseEvent* event)
 {
 	if (event->button() != Qt::LeftButton)
 		return;
-	
+
 	event->accept();
 
 	const PartWidget* child = static_cast<PartWidget*>(childAt(event->pos()));

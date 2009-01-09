@@ -62,13 +62,15 @@ RestoreOperation::RestoreOperation(Device& d, Partition* p, const QString& filen
 {
 	restorePartition().setState(Partition::StateRestore);
 
-	Partition* dest = targetDevice().partitionTable().findPartitionBySector(restorePartition().firstSector(), PartitionRole(PartitionRole::Primary | PartitionRole::Logical | PartitionRole::Unallocated));
+	Q_ASSERT(targetDevice().partitionTable());
+
+	Partition* dest = targetDevice().partitionTable()->findPartitionBySector(restorePartition().firstSector(), PartitionRole(PartitionRole::Primary | PartitionRole::Logical | PartitionRole::Unallocated));
 
 	Q_ASSERT(dest);
 
 	if (dest == NULL)
 		kWarning() << "destination partition not found at sector " << restorePartition().firstSector();
-		
+
 	if (dest && !dest->roles().has(PartitionRole::Unallocated))
 	{
 		restorePartition().setLastSector(dest->lastSector());
@@ -78,7 +80,7 @@ RestoreOperation::RestoreOperation(Device& d, Partition* p, const QString& filen
 
 	if (!overwrittenPartition())
 		addJob(m_CreatePartitionJob = new CreatePartitionJob(targetDevice(), restorePartition()));
-	
+
 	addJob(m_RestoreJob = new RestoreFileSystemJob(targetDevice(), restorePartition(), fileName()));
 	addJob(m_CheckTargetJob = new CheckFileSystemJob(restorePartition()));
 	addJob(m_MaximizeJob = new ResizeFileSystemJob(targetDevice(), restorePartition()));
@@ -110,12 +112,12 @@ bool RestoreOperation::execute(Report& parent)
 {
 	bool rval = false;
 	bool warning = false;
-	
+
 	Report* report = parent.newChild(description());
 
 	if (overwrittenPartition())
 		restorePartition().setNumber(overwrittenPartition()->number());
-	
+
 	if (overwrittenPartition() || (rval = createPartitionJob()->run(*report)))
 	{
 		restorePartition().setState(Partition::StateNone);
@@ -144,7 +146,7 @@ bool RestoreOperation::execute(Report& parent)
 	}
 	else
 		report->line() << i18nc("@info/plain", "Creating the destination partition to restore to failed.");
-	
+
 	if (rval)
 		setStatus(warning ? StatusFinishedWarning : StatusFinishedSuccess);
 	else
@@ -159,14 +161,14 @@ QString RestoreOperation::description() const
 {
 	if (overwrittenPartition())
 		return QString(i18nc("@info/plain", "Restore partition from <filename>%1</filename> to <filename>%2</filename>", fileName(), overwrittenPartition()->deviceNode()));
-		
+
 	return QString(i18nc("@info/plain", "Restore partition on <filename>%1</filename> at %2 from <filename>%3</filename>", targetDevice().deviceNode(), Capacity(restorePartition().firstSector() * restorePartition().sectorSize()).toString(), fileName()));
 }
 
 void RestoreOperation::setOverwrittenPartition(Partition* p)
 {
 	// This is copied from CopyOperation. One day we might create a common base class ;-)
-	
+
 	cleanupOverwrittenPartition();
 	m_OverwrittenPartition = p;
 	m_MustDeleteOverwritten = (p && p->state() == Partition::StateNone);
@@ -192,10 +194,10 @@ bool RestoreOperation::canRestore(const Partition* p)
 
 	if (p->isMounted())
 		return false;
-	
+
 	if (p->roles().has(PartitionRole::Extended))
 		return false;
-	
+
 	return true;
 }
 /** Creates a new Partition to restore to.

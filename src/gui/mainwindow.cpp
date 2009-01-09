@@ -397,7 +397,7 @@ void MainWindow::enableActions()
 
 	const Partition* part = selectedPartition();
 
-	const bool readOnly = selectedDevice() == NULL || selectedDevice()->partitionTable().isReadOnly();
+	const bool readOnly = selectedDevice() == NULL || selectedDevice()->partitionTable() == NULL || selectedDevice()->partitionTable()->isReadOnly();
 
 	actionCollection()->action("newPartition")->setEnabled(!readOnly && NewOperation::canCreateNew(part));
 	const bool canResize = ResizeOperation::canGrow(part) || ResizeOperation::canShrink(part) || ResizeOperation::canMove(part);
@@ -497,25 +497,28 @@ void MainWindow::updatePartitions()
 	if (selectedDevice() == NULL)
 		return;
 
-	partTableWidget().setPartitionTable(&selectedDevice()->partitionTable());
+	partTableWidget().setPartitionTable(selectedDevice()->partitionTable());
 
 	QTreeWidgetItem* deviceItem = new QTreeWidgetItem();
 	deviceItem->setText(0, selectedDevice()->name());
 	deviceItem->setIcon(0, SmallIcon("drive-harddisk"));
 	treePartitions().addTopLevelItem(deviceItem);
 
-	foreach(const Partition* p, selectedDevice()->partitionTable().children())
+	if (selectedDevice()->partitionTable() != NULL)
 	{
-		QTreeWidgetItem* item = createTreeWidgetItem(*p);
-
-		foreach(const Partition* child, p->children())
+		foreach(const Partition* p, selectedDevice()->partitionTable()->children())
 		{
-			QTreeWidgetItem* childItem = createTreeWidgetItem(*child);
-			item->addChild(childItem);
-		}
+			QTreeWidgetItem* item = createTreeWidgetItem(*p);
 
-		deviceItem->addChild(item);
-		item->setExpanded(true);
+			foreach(const Partition* child, p->children())
+			{
+				QTreeWidgetItem* childItem = createTreeWidgetItem(*child);
+				item->addChild(childItem);
+			}
+
+			deviceItem->addChild(item);
+			item->setExpanded(true);
+		}
 	}
 
 	treePartitions().setFirstItemColumnSpanned(deviceItem, true);
@@ -549,16 +552,14 @@ void MainWindow::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, in
 
 Partition* MainWindow::selectedPartition()
 {
-	if (selectedDevice() == NULL || partTableWidget().activeWidget() == NULL || partTableWidget().activeWidget()->partition() == NULL)
+	if (selectedDevice() == NULL || selectedDevice()->partitionTable() == NULL || partTableWidget().activeWidget() == NULL || partTableWidget().activeWidget()->partition() == NULL)
 		return NULL;
 
 	// The active partition we get from PartTableWidget is const; we need non-const.
 	// So take the first sector and find the partition in the selected device's
 	// partition table.
 	const Partition* activePartition = partTableWidget().activeWidget()->partition();
-	PartitionTable& ptable = selectedDevice()->partitionTable();
-
-	return ptable.findPartitionBySector(activePartition->firstSector(), PartitionRole(PartitionRole::Any));
+	return selectedDevice()->partitionTable()->findPartitionBySector(activePartition->firstSector(), PartitionRole(PartitionRole::Any));
 }
 
 Device* MainWindow::selectedDevice()
@@ -729,12 +730,14 @@ void MainWindow::onFinished()
 
 static bool checkTooManyPartitions(QWidget* parent, const Device& d, const Partition& p)
 {
-	if (p.roles().has(PartitionRole::Unallocated) && d.partitionTable().numPrimaries() >= d.partitionTable().maxPrimaries() && !p.roles().has(PartitionRole::Logical))
+	Q_ASSERT(d.partitionTable());
+
+	if (p.roles().has(PartitionRole::Unallocated) && d.partitionTable()->numPrimaries() >= d.partitionTable()->maxPrimaries() && !p.roles().has(PartitionRole::Logical))
 	{
 		KMessageBox::sorry(parent, i18nc("@info",
 			"<para>There are already %1 primary partitions on this device. This is the maximum number its partition table can handle.</para>"
 			"<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
-			d.partitionTable().numPrimaries()), i18nc("@title:window", "Too Many Primary Partitions."));
+			d.partitionTable()->numPrimaries()), i18nc("@title:window", "Too Many Primary Partitions."));
 		return true;
 	}
 
@@ -752,12 +755,20 @@ void MainWindow::onNewPartition()
 		return;
 	}
 
+	Q_ASSERT(selectedDevice()->partitionTable());
+
+	if (selectedDevice()->partitionTable() == NULL)
+	{
+		kWarning() << "partition table on selected device is null";
+		return;
+	}
+
 	if (checkTooManyPartitions(this, *selectedDevice(), *selectedPartition()))
 		return;
 
 	Partition* newPartition = NewOperation::createNew(*selectedPartition());
 
-	NewDialog dlg(this, *selectedDevice(), *newPartition, selectedDevice()->partitionTable().childRoles(*selectedPartition()));
+	NewDialog dlg(this, *selectedDevice(), *newPartition, selectedDevice()->partitionTable()->childRoles(*selectedPartition()));
 	if (dlg.exec() == KDialog::Accepted)
 	{
  		PartitionTable::snap(*selectedDevice(), *newPartition);
@@ -835,8 +846,16 @@ void MainWindow::onResizePartition()
 		return;
 	}
 
-	const qint64 freeBefore = selectedDevice()->partitionTable().freeSectorsBefore(*selectedPartition());
-	const qint64 freeAfter = selectedDevice()->partitionTable().freeSectorsAfter(*selectedPartition());
+	Q_ASSERT(selectedDevice()->partitionTable());
+
+	if (selectedDevice()->partitionTable() == NULL)
+	{
+		kWarning() << "partition table on selected device is null";
+		return;
+	}
+
+	const qint64 freeBefore = selectedDevice()->partitionTable()->freeSectorsBefore(*selectedPartition());
+	const qint64 freeAfter = selectedDevice()->partitionTable()->freeSectorsAfter(*selectedPartition());
 
 	Partition resizedPartition(*selectedPartition());
 	ResizeDialog dlg(this, *selectedDevice(), resizedPartition, freeBefore, freeAfter);

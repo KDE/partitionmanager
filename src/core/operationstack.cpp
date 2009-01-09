@@ -76,7 +76,7 @@ OperationStack::~OperationStack()
 	<!-- 5 -->
 	<li>File system is changed for a new Partition: Modify in NewOperation and forget it.</li>
 	</ol>
-	
+
 	@param currentOp the Operation already on the stack to try to merge with
 	@param pushedOp the newly pushed Operation
 	@return true if the OperationStack has been modified in a way that requires merging to stop
@@ -104,7 +104,7 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 
 		newOp->undo();
 		delete operations().takeAt(operations().indexOf(newOp));
-		
+
 		return true;
 	}
 
@@ -167,9 +167,9 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 		log() << i18nc("@info/plain", "Changing file system for a new partition: No new operation required.");
 
 		FileSystem* oldFs = &newOp->newPartition().fileSystem();
-		
+
 		newOp->newPartition().setFileSystem(FileSystemFactory::cloneWithNewType(pushedCreateFileSystemOp->newFileSystem()->type(), *oldFs));
-		
+
 		delete oldFs;
 		oldFs = NULL;
 
@@ -212,7 +212,7 @@ bool OperationStack::mergeCopyOperation(Operation*& currentOp, Operation*& pushe
 
 	DeleteOperation* pushedDeleteOp = dynamic_cast<DeleteOperation*>(pushedOp);
 	CopyOperation* pushedCopyOp = dynamic_cast<CopyOperation*>(pushedOp);
-	
+
 	// -- 1 --
 	if (pushedDeleteOp && &copyOp->copiedPartition() == &pushedDeleteOp->deletedPartition())
 	{
@@ -234,7 +234,7 @@ bool OperationStack::mergeCopyOperation(Operation*& currentOp, Operation*& pushe
 
 		copyOp->undo();
 		delete operations().takeAt(operations().indexOf(copyOp));
-		
+
 		return true;
 	}
 
@@ -262,7 +262,7 @@ bool OperationStack::mergeCopyOperation(Operation*& currentOp, Operation*& pushe
 bool OperationStack::mergeRestoreOperation(Operation*& currentOp, Operation*& pushedOp)
 {
 	RestoreOperation* restoreOp = dynamic_cast<RestoreOperation*>(currentOp);
-		
+
 	if (restoreOp == NULL)
 		return false;
 
@@ -286,7 +286,7 @@ bool OperationStack::mergeRestoreOperation(Operation*& currentOp, Operation*& pu
 
 		restoreOp->undo();
 		delete operations().takeAt(operations().indexOf(restoreOp));
-		
+
 		return true;
 	}
 
@@ -305,7 +305,7 @@ bool OperationStack::mergeRestoreOperation(Operation*& currentOp, Operation*& pu
 bool OperationStack::mergePartFlagsOperation(Operation*& currentOp, Operation*& pushedOp)
 {
 	SetPartFlagsOperation* partFlagsOp = dynamic_cast<SetPartFlagsOperation*>(currentOp);
-		
+
 	if (partFlagsOp == NULL)
 		return false;
 
@@ -314,7 +314,7 @@ bool OperationStack::mergePartFlagsOperation(Operation*& currentOp, Operation*& 
 	if (pushedFlagsOp && &partFlagsOp->flagPartition() == &pushedFlagsOp->flagPartition())
 	{
 		log() << i18nc("@info/plain", "Changing flags again for the same partition: Removing old operation.");
-		
+
 		pushedFlagsOp->setOldFlags(partFlagsOp->oldFlags());
 		partFlagsOp->undo();
 		delete operations().takeAt(operations().indexOf(partFlagsOp));
@@ -346,14 +346,14 @@ bool OperationStack::mergePartLabelOperation(Operation*& currentOp, Operation*& 
 	if (pushedLabelOp && &partLabelOp->labeledPartition() == &pushedLabelOp->labeledPartition())
 	{
 		log() << i18nc("@info/plain", "Changing label again for the same partition: Removing old operation.");
-			
+
 		pushedLabelOp->setOldLabel(partLabelOp->oldLabel());
 		partLabelOp->undo();
 		delete operations().takeAt(operations().indexOf(partLabelOp));
 
 		return true;
 	}
-	
+
 	return false;
 }
 
@@ -383,7 +383,7 @@ void OperationStack::push(Operation* o)
 
 		if (mergePartFlagsOperation(currentOp, o))
 			break;
-		
+
 		if (mergePartLabelOperation(currentOp, o))
 			break;
 	}
@@ -431,7 +431,11 @@ void OperationStack::clearDevices()
 Device* OperationStack::findDeviceForPartition(const Partition* p)
 {
 	foreach (Device* d, previewDevices())
-		foreach(const Partition* part, d->partitionTable().children())
+	{
+		if (d->partitionTable() == NULL)
+			continue;
+
+		foreach(const Partition* part, d->partitionTable()->children())
 		{
 			if (part == p)
 				return d;
@@ -440,6 +444,7 @@ Device* OperationStack::findDeviceForPartition(const Partition* p)
 				if (child == p)
 					return d;
 		}
+	}
 
 	return NULL;
 }
@@ -450,6 +455,6 @@ Device* OperationStack::findDeviceForPartition(const Partition* p)
 void OperationStack::addDevice(Device* d)
 {
 	Q_ASSERT(d);
-	
+
 	m_PreviewDevices.append(d);
 }

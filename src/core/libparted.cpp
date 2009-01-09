@@ -173,6 +173,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 {
 	Q_ASSERT(pedDevice);
 	Q_ASSERT(pedDisk);
+	Q_ASSERT(d.partitionTable());
 
 	PedPartition* pedPartition = NULL;
 
@@ -204,11 +205,11 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 		}
 
 		// Find an extended partition this partition is in.
-		PartitionNode* parent = d.partitionTable().findPartitionBySector(pedPartition->geom.start, PartitionRole(PartitionRole::Extended));
+		PartitionNode* parent = d.partitionTable()->findPartitionBySector(pedPartition->geom.start, PartitionRole(PartitionRole::Extended));
 
 		// None found, so it's a primary in the device's partition table.
 		if (parent == NULL)
-			parent = &d.partitionTable();
+			parent = d.partitionTable();
 
 		const QString node = pedDisk->dev->path + QString::number(pedPartition->num);
 		FileSystem* fs = FileSystemFactory::create(type, pedPartition->geom.start, pedPartition->geom.end);
@@ -227,7 +228,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 		PartitionTable::isSnapped(d, *part);
 	}
 
-	d.partitionTable().updateUnallocated(d);
+	d.partitionTable()->updateUnallocated(d);
 
 	ped_disk_destroy(pedDisk);
 }
@@ -271,8 +272,9 @@ void LibParted::scanDevices(OperationStack& ostack)
 
 		if (pedDisk)
 		{
-			d->partitionTable().setMaxPrimaries(ped_disk_get_max_primary_partition_count(pedDisk));
-			d->partitionTable().setTypeName(pedDisk->type->name);
+			d->setPartitionTable(new PartitionTable());
+			d->partitionTable()->setMaxPrimaries(ped_disk_get_max_primary_partition_count(pedDisk));
+			d->partitionTable()->setTypeName(pedDisk->type->name);
 
 			scanDevicePartitions(pedDevice, *d, pedDisk, mountInfo);
 		}

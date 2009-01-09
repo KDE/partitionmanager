@@ -271,10 +271,12 @@ bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 */
 static bool canSnapToSector(const Device& d, const Partition& p, qint64 s, const Partition* originalPartition)
 {
+	Q_ASSERT(d.partitionTable());
+
 	if (s < d.sectorsPerTrack() || s >= d.totalSectors())
 		return false;
 
-	const Partition* other = d.partitionTable().findPartitionBySector(s, PartitionRole(PartitionRole::Logical | PartitionRole::Primary | PartitionRole::Extended | PartitionRole::Unallocated));
+	const Partition* other = d.partitionTable()->findPartitionBySector(s, PartitionRole(PartitionRole::Logical | PartitionRole::Primary | PartitionRole::Extended | PartitionRole::Unallocated));
 
 	if (other && other->roles().has(PartitionRole::Unallocated))
 		other = NULL;

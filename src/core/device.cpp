@@ -36,7 +36,7 @@ Device::Device(const QString& name, const QString& devicenode, qint32 heads, qin
 	QObject(),
 	m_Name(name),
 	m_DeviceNode(devicenode),
-	m_PartitionTable(new PartitionTable()),
+	m_PartitionTable(NULL),
 	m_Heads(heads),
 	m_SectorsPerTrack(numSectors),
 	m_Cylinders(cylinders),

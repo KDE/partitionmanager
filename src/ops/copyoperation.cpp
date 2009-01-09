@@ -58,13 +58,15 @@ CopyOperation::CopyOperation(Device& targetdevice, Partition* copiedpartition, D
 	m_CheckTargetJob(NULL),
 	m_MaximizeJob(NULL)
 {
-	Partition* dest = targetDevice().partitionTable().findPartitionBySector(copiedPartition().firstSector(), PartitionRole(PartitionRole::Primary | PartitionRole::Logical | PartitionRole::Unallocated));
+	Q_ASSERT(targetDevice().partitionTable());
+
+	Partition* dest = targetDevice().partitionTable()->findPartitionBySector(copiedPartition().firstSector(), PartitionRole(PartitionRole::Primary | PartitionRole::Logical | PartitionRole::Unallocated));
 
 	Q_ASSERT(dest);
 
 	if (dest == NULL)
 		kWarning() << "destination partition not found at sector " << copiedPartition().firstSector();
-	
+
 	if (dest && !dest->roles().has(PartitionRole::Unallocated))
 	{
 		copiedPartition().setLastSector(dest->lastSector());
@@ -72,10 +74,10 @@ CopyOperation::CopyOperation(Device& targetdevice, Partition* copiedpartition, D
 	}
 
 	addJob(m_CheckSourceJob = new CheckFileSystemJob(sourcePartition()));
-	
+
 	if (overwrittenPartition() == NULL)
 		addJob(m_CreatePartitionJob = new CreatePartitionJob(targetDevice(), copiedPartition()));
-	
+
 	addJob(m_CopyFSJob = new CopyFileSystemJob(targetDevice(), copiedPartition(), sourceDevice(), sourcePartition()));
 	addJob(m_CheckTargetJob = new CheckFileSystemJob(copiedPartition()));
 	addJob(m_MaximizeJob = new ResizeFileSystemJob(targetDevice(), copiedPartition()));
@@ -94,7 +96,7 @@ void CopyOperation::preview()
 {
 	if (overwrittenPartition())
 		removePreviewPartition(targetDevice(), *overwrittenPartition());
-	
+
 	insertPreviewPartition(targetDevice(), copiedPartition());
 }
 
@@ -110,7 +112,7 @@ bool CopyOperation::execute(Report& parent)
 {
 	bool rval = false;
 	bool warning = false;
-		
+
 	Report* report = parent.newChild(description());
 
 	// check the source first
@@ -136,7 +138,7 @@ bool CopyOperation::execute(Report& parent)
 				copiedPartition().setDevicePath(overwrittenPartition()->devicePath());
 				copiedPartition().setNumber(overwrittenPartition()->number());
 			}
-			
+
 			// now run the copy job itself
 			if ((rval = copyFSJob()->run(*report)))
 			{
@@ -179,7 +181,7 @@ bool CopyOperation::execute(Report& parent)
 		setStatus(StatusError);
 
 	report->setStatus(i18nc("@info/plain status (success, error, warning...) of operation", "%1: %2", description(), statusText()));
-	
+
 	return rval;
 }
 
@@ -269,7 +271,7 @@ Partition* CopyOperation::createCopy(const Partition& target, const Partition& s
 
 	p->fileSystem().setFirstSector(p->firstSector());
 	p->fileSystem().setLastSector(p->lastSector());
-	
+
 	return p;
 }
 
@@ -281,7 +283,7 @@ bool CopyOperation::canCopy(const Partition* p)
 {
 	if (p == NULL)
 		return false;
-	
+
 	if (p->isMounted())
 		return false;
 
@@ -301,10 +303,10 @@ bool CopyOperation::canPaste(const Partition* p, const Partition* source)
 {
 	if (p == NULL || source == NULL)
 		return false;
-	
+
 	if (p->isMounted())
 		return false;
-	
+
 	if (p->roles().has(PartitionRole::Extended))
 		return false;
 

@@ -36,12 +36,12 @@
 CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d) :
 	Operation(),
 	m_TargetDevice(d),
-	m_OldPartitionTable(&targetDevice().partitionTable()),
+	m_OldPartitionTable(targetDevice().partitionTable()),
 	m_PartitionTable(new PartitionTable()),
 	m_CreatePartitionTableJob(new CreatePartitionTableJob(targetDevice()))
 {
 	addJob(createPartitionTableJob());
-	partitionTable().insertUnallocated(targetDevice(), &partitionTable(), targetDevice().sectorsPerTrack());
+	partitionTable()->insertUnallocated(targetDevice(), partitionTable(), targetDevice().sectorsPerTrack());
 }
 
 CreatePartitionTableOperation::~CreatePartitionTableOperation()
@@ -52,19 +52,21 @@ CreatePartitionTableOperation::~CreatePartitionTableOperation()
 
 void CreatePartitionTableOperation::preview()
 {
-	targetDevice().setPartitionTable(&partitionTable());
-	targetDevice().partitionTable().updateUnallocated(targetDevice());
+	targetDevice().setPartitionTable(partitionTable());
+	targetDevice().partitionTable()->updateUnallocated(targetDevice());
 }
 
 void CreatePartitionTableOperation::undo()
 {
-	targetDevice().setPartitionTable(&oldPartitionTable());
-	targetDevice().partitionTable().updateUnallocated(targetDevice());
+	targetDevice().setPartitionTable(oldPartitionTable());
+
+	if (targetDevice().partitionTable())
+		targetDevice().partitionTable()->updateUnallocated(targetDevice());
 }
 
 bool CreatePartitionTableOperation::execute(Report& parent)
 {
-	targetDevice().setPartitionTable(&partitionTable());
+	targetDevice().setPartitionTable(partitionTable());
 	return Operation::execute(parent);
 }
 
@@ -74,7 +76,7 @@ bool CreatePartitionTableOperation::execute(Report& parent)
 */
 bool CreatePartitionTableOperation::canCreate(const Device* device)
 {
-	return device != NULL && !device->partitionTable().isChildMounted();
+	return device != NULL && (device->partitionTable() == NULL || !device->partitionTable()->isChildMounted());
 }
 
 QString CreatePartitionTableOperation::description() const

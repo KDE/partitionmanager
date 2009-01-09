@@ -45,7 +45,9 @@ bool CreatePartitionTableJob::run(Report& parent)
 
 	if (openPed(device().deviceNode(), true))
 	{
-		PedDiskType* pedDiskType = ped_disk_type_get(device().partitionTable().typeName().toAscii());
+		Q_ASSERT(device().partitionTable());
+
+		PedDiskType* pedDiskType = ped_disk_type_get(device().partitionTable()->typeName().toAscii());
 
 		if (pedDiskType)
 		{
@@ -54,7 +56,7 @@ bool CreatePartitionTableJob::run(Report& parent)
 			ped_disk_destroy(pedDisk);
 		}
 		else
-			report->line() << i18nc("@info/plain", "Creating partition table failed: Could not retrieve partition table type \"%1\" for <filename>%2</filename>.", device().partitionTable().typeName(), device().deviceNode());
+			report->line() << i18nc("@info/plain", "Creating partition table failed: Could not retrieve partition table type \"%1\" for <filename>%2</filename>.", device().partitionTable()->typeName(), device().deviceNode());
 
 		closePed();
 	}

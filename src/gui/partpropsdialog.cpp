@@ -45,7 +45,7 @@ PartPropsDialog::PartPropsDialog(QWidget* parent, Device& d, Partition& p) :
 	m_Partition(p),
 	m_WarnFileSystemChange(false),
 	m_DialogWidget(new PartPropsWidget(this)),
-	m_ReadOnly(partition().isMounted() || partition().state() == Partition::StateCopy || partition().state() == Partition::StateRestore || d.partitionTable().isReadOnly()),
+	m_ReadOnly(partition().isMounted() || partition().state() == Partition::StateCopy || partition().state() == Partition::StateRestore || d.partitionTable()->isReadOnly()),
 	m_ForceRecreate(false)
 {
 	setMainWidget(&dialogWidget());

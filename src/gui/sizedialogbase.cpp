@@ -181,5 +181,7 @@ void SizeDialogBase::onFreeSpaceAfterChanged(int newAfter)
 
 const PartitionTable& SizeDialogBase::partitionTable() const
 {
-	return device().partitionTable();
+	Q_ASSERT(device().partitionTable());
+
+	return *device().partitionTable();
 }

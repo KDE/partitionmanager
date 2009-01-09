@@ -27,6 +27,7 @@
 
 class PartitionTable;
 class CreatePartitionTableOperation;
+class LibParted;
 
 /** @brief A device.
 
@@ -43,6 +44,7 @@ class Device : public QObject
 	Q_DISABLE_COPY(Device)
 
 	friend class CreatePartitionTableOperation;
+	friend class LibParted;
 
 	public:
 		Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize);
@@ -51,8 +53,8 @@ class Device : public QObject
 	public:
 		const QString& name() const { return m_Name; } /**< @return the Device's name, usually some manufacturer string */
 		const QString& deviceNode() const { return m_DeviceNode; } /**< @return the Device's node, for example "/dev/sda" */
-		PartitionTable& partitionTable() { return *m_PartitionTable; } /**< @return the Device's PartitionTable */
-		const PartitionTable& partitionTable() const { return *m_PartitionTable; } /**< @return the Device's PartitionTable */ 
+		PartitionTable* partitionTable() { return m_PartitionTable; } /**< @return the Device's PartitionTable */
+		const PartitionTable* partitionTable() const { return m_PartitionTable; } /**< @return the Device's PartitionTable */
 		qint32 heads() const { return m_Heads; } /**< @return the number of heads on the Device in CHS notation */
 		qint32 cylinders() const { return m_Cylinders; } /**< @return the number of cylinders on the Device in CHS notation */
 		qint32 sectorsPerTrack() const { return m_SectorsPerTrack; } /**< @return the number of sectors on the Device in CHS notation */
@@ -63,7 +65,7 @@ class Device : public QObject
 
 	protected:
 		void setPartitionTable(PartitionTable* ptable) { m_PartitionTable = ptable; }
-		
+
 	private:
 		QString m_Name;
 		QString m_DeviceNode;

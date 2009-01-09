@@ -53,11 +53,11 @@ class CreatePartitionTableOperation : public Operation
 		Device& targetDevice() { return m_TargetDevice; }
 		const Device& targetDevice() const { return m_TargetDevice; }
 
-		PartitionTable& partitionTable() { return *m_PartitionTable; }
-		PartitionTable& oldPartitionTable() { return *m_OldPartitionTable; }
+		PartitionTable* partitionTable() { return m_PartitionTable; }
+		PartitionTable* oldPartitionTable() { return m_OldPartitionTable; }
 
 		CreatePartitionTableJob* createPartitionTableJob() { return m_CreatePartitionTableJob; }
-		
+
 	private:
 		Device& m_TargetDevice;
 		PartitionTable* m_OldPartitionTable;

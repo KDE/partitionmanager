@@ -53,7 +53,7 @@ void InfoPane::clear()
 int InfoPane::createHeader(const QString& title)
 {
 	int y = 0;
-	
+
 	QLabel* label = new QLabel(title, this);
 	QFont font;
 	font.setBold(true);
@@ -118,9 +118,16 @@ void InfoPane::showDevice(const Device& d)
 	int y = createHeader(d.name());
 	createLabels(i18nc("@label device", "Path:"), d.deviceNode(), y++);
 
-	const QString type = (d.partitionTable().isReadOnly())
-		? i18nc("@label device", "%1 (read only)", d.partitionTable().typeName())
-		: d.partitionTable().typeName();
+	QString type = "---";
+	QString maxPrimaries = "---";
+
+	if (d.partitionTable() != NULL)
+	{
+		type = (d.partitionTable()->isReadOnly())
+			? i18nc("@label device", "%1 (read only)", d.partitionTable()->typeName())
+			: d.partitionTable()->typeName();
+		maxPrimaries = QString("%1/%2").arg(d.partitionTable()->numPrimaries()).arg(d.partitionTable()->maxPrimaries());
+	}
 
 	createLabels(i18nc("@label device", "Type:"), type, y++);
 	createLabels(i18nc("@label device", "Capacity:"), Capacity(d).toString(), y++);
@@ -130,5 +137,5 @@ void InfoPane::showDevice(const Device& d)
 	createLabels(i18nc("@label device", "Sectors:"), KGlobal::locale()->formatNumber(d.sectorsPerTrack(), 0), y++);
 	createLabels(i18nc("@label device", "Sector size:"), Capacity(d.sectorSize()).toString(Capacity::Byte, Capacity::AppendUnit), y++);
 	createLabels(i18nc("@label device", "Cylinder size:"), i18ncp("@label", "1 Sector", "%1 Sectors", d.cylinderSize()), y++);
-	createLabels(i18nc("@label device", "Primaries/Max:"), QString("%1/%2").arg(d.partitionTable().numPrimaries()).arg(d.partitionTable().maxPrimaries()), y++);
+	createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, y++);
 }

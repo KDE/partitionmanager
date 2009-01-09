@@ -47,17 +47,21 @@ Operation::~Operation()
 
 void Operation::insertPreviewPartition(Device& device, Partition& p)
 {
-	device.partitionTable().removeUnallocated();
-	
+	Q_ASSERT(device.partitionTable());
+
+	device.partitionTable()->removeUnallocated();
+
 	p.parent()->insert(&p);
-	
-	device.partitionTable().updateUnallocated(device);
+
+	device.partitionTable()->updateUnallocated(device);
 }
 
 void Operation::removePreviewPartition(Device& device, Partition& p)
 {
+	Q_ASSERT(device.partitionTable());
+
 	if (p.parent()->remove(&p))
-		device.partitionTable().updateUnallocated(device);
+		device.partitionTable()->updateUnallocated(device);
 	else
 		kWarning() << "failed to remove partition " << p.deviceNode() << " at " << &p << " from preview.";
 }
@@ -76,7 +80,7 @@ QString Operation::statusText() const
 	};
 
 	Q_ASSERT(status() >= 0 && static_cast<quint32>(status()) < sizeof(s) / sizeof(s[0]));
-	
+
 	if (status() < 0 || static_cast<quint32>(status()) >= sizeof(s) / sizeof(s[0]))
 	{
 		kWarning() << "invalid status " << status();
@@ -98,15 +102,15 @@ QIcon Operation::statusIcon() const
 		"dialog-warning",
 		"dialog-error"
 	};
-	
+
 	Q_ASSERT(status() >= 0 && static_cast<quint32>(status()) < sizeof(icons) / sizeof(icons[0]));
-	
+
 	if (status() < 0 || static_cast<quint32>(status()) >= sizeof(icons) / sizeof(icons[0]))
 	{
 		kWarning() << "invalid status " << status();
 		return QIcon();
 	}
-		
+
 	if (status() == StatusNone)
 		return QIcon();
 
@@ -163,7 +167,7 @@ bool Operation::execute(Report& parent)
 	bool rval = false;
 
 	Report* report = parent.newChild(description());
-	
+
 	foreach (Job* job, jobs())
 		if (!(rval = job->run(*report)))
 			break;
@@ -171,6 +175,6 @@ bool Operation::execute(Report& parent)
 	setStatus(rval ? StatusFinishedSuccess : StatusError);
 
 	report->setStatus(i18nc("@info/plain status (success, error, warning...) of operation", "%1: %2", description(), statusText()));
-	
+
 	return rval;
 }
