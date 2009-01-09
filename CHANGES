@@ -1,4 +1,40 @@
 
+1.0.0-BETA1
+===========
+
+* Fix a potential crash when merging a New Operation and a Create File System
+  Operation.
+
+* Set extended partitions as busy as long as logical partitions inside them
+  are mounted.
+
+* Don't silently succeed  when unmounting a partition that cannot in fact be
+  unmounted because it has no mount points.
+
+* Prevent creating a new partition table on a device with mounted partitions.
+
+* Add tooltips to partition widgets.
+
+* Don't show cd/dvd readers or writers as devices even if libparted reports
+  them.
+
+* Add support for ext4.
+
+* Fix calculation of reserved/free blocks for ext2/3/4.
+
+* Output reason why a mount or unmount might have failed.
+
+* Fix minimum width for extended partitions in the partition table widget.
+
+* Fix a bug where a partition table just created would not disappear when the
+  operation to create it was undone.
+
+* Don't allow creating partitions smaller than the device's cylinder size.
+
+* Fix an error that could lead to some space (a few megabytes) between two
+  partitions being wasted.
+
+
 1.0.0-ALPHA2
 ============
 

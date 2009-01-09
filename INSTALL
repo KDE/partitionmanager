@@ -11,10 +11,12 @@ and build it yourself or, preferably, install your distribution's packages
 libuuid: This is part of e2fsprogs, something you will most probably need
 anyway. Get the source and build it from
 http://sourceforge.net/project/showfiles.php?group_id=2406 or, preferably,
-install your distribution's packages (again, don't forget the dev-package). 
+install your distribution's packages (again, don't forget the dev-package).
 
-KDE4: KDE4.0 will probably not work and has not been tested. Building with KDE4
-from SVN or with the KDE4.1 packages for Kubuntu Hardy from launchpad works.
+libblkid: Also part of e2fsprogs. See libuuid.
+
+KDE4: KDE 4.0 will not work. The minimum required version is 4.1.0. To build the
+documentation, you need 4.1.4 or 4.2.0.
 
 
 2. Configure
@@ -23,8 +25,8 @@ KDE Partition Manager is built with cmake, like most of KDE4 today. It is
 recommended to build out of tree: After unpacking the source, create a separate
 build directory and run cmake there:
 
-$ tar xfj partitionmanager-1.0.0-ALPHA2.tar.bz2
-$ cd partitionmanager-1.0.0-ALPHA2
+$ tar xfj partitionmanager-1.0.0-BETA1.tar.bz2
+$ cd partitionmanager-1.0.0-BETA1
 $ mkdir build
 $ cd build
 $ cmake ..
@@ -42,7 +44,7 @@ Just run make and make install in the build directory. The default install path
 is /usr/local, so installing will need write privileges there. You can
 configure a different install path by passing
 -DCMAKE_INSTALL_PREFIX=<your_path> to cmake when configuring. To change the
-install path after configuring and building, run 
+install path after configuring and building, run
 
 $ ccmake .
 
