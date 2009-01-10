@@ -47,7 +47,7 @@ public
 		docs = checkoutDocumentation if getDocs
 		
 		if createTag
-			repositoryTags = ReleaseBuilder.repository(@app.product, protocol, user, @version)
+			repositoryTags = ReleaseBuilder.repository(@app, protocol, user, @version)
 			tagger = Tagger.new(@repository, repositoryTags, @app, @version)
 			tagger.tagSource
 			tagger.tagTranslations(translations)
