@@ -1,6 +1,6 @@
 =begin
 ***************************************************************************
-*   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+*   Copyright (C) 2008-2009 by Volker Lanz <vl@fidra.de>                  *
 *   Copyright (C) 2007-2008 by Harald Sitter <harald@getamarok.com>       *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -27,15 +27,6 @@ require 'fileutils'
 require 'getoptlong'
 
 class ReleaseBuilder
-
-private
-#REMOVE
-	Apps = [
-		Application.new('Amarok', 'extragear', 'multimedia', 'amarok'),
-		Application.new('Digikam', 'extragear', 'graphics', 'digikam'),
-		Application.new('Partition Manager', 'extragear', 'sysadmin', 'partitionmanager')
-	]
-# END REMOVE
 
 public
 	def initialize(app, workingDir, repository, version)
@@ -243,24 +234,5 @@ END_OF_TEXT
 #		return "file://localhost/home/vl/tmp/svn/#{branch}"
 		return "#{protocol}://#{user}svn.kde.org/home/kde/#{branch}"
 	end
-
-#REMOVE
-	def self.apps
-		return Apps
-	end
-
-	def self.sortedProducts
-		rval = []
-		self.apps.each { |a| rval << a.product }
-		return rval.sort
-	end
-
-	def self.sortedAppNames
-		rval = []
-		self.apps.each { |a| rval << a.name }
-		return rval.sort
-	end
-#END REMOVE
-	
 end
 

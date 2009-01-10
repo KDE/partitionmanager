@@ -1,6 +1,6 @@
 =begin
 ***************************************************************************
-*   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+*   Copyright (C) 2008-2009 by Volker Lanz <vl@fidra.de>                  *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
 *   it under the terms of the GNU General Public License as published by  *
@@ -29,6 +29,6 @@ class Application
 	end
 
 	def applyFixes(workingDir, outputDir)
-		puts "applying fixes for base application class"
+		puts 'applying fixes for base application class'
 	end
 end

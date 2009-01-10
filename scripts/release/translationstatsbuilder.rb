@@ -1,6 +1,6 @@
 =begin
 ***************************************************************************
-*   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+*   Copyright (C) 2008-2009 by Volker Lanz <vl@fidra.de>                  *
 *   Copyright (C) 2007-2008 by Harald Sitter <harald@getamarok.com>       *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -55,13 +55,13 @@ private
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<title>#{@appName} #{@version} translation statistics</title>
+	<title>#{@appName} #{@version} Translation Statistics</title>
 	<style>
 		.th { color: #196aff; font-weight: bold; height: 12px; }
 	</style>
 </head>
 <body>
-<h1>#{@appName} #{@version} translation statistics</h1>
+<h1>#{@appName} #{@version} Translation Statistics</h1>
 <br>
 <table border="1" cellspacing="0">
 	<tr>
