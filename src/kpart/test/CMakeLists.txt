@@ -28,5 +28,5 @@ kde4_add_executable(kparttest ${kparttest_SRCS})
 
 target_link_libraries(kparttest ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS})
 
-install(TARGETS kparttest DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS kparttest ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES kparttestui.rc DESTINATION  ${DATA_INSTALL_DIR}/kparttest)

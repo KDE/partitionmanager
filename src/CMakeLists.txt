@@ -36,7 +36,7 @@ kde4_add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
 
 target_link_libraries(partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${LIBPARTED_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES})
 
-install(TARGETS partitionmanagerprivate DESTINATION ${LIB_INSTALL_DIR})
+install(TARGETS partitionmanagerprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ############################################
 
@@ -46,7 +46,7 @@ kde4_add_executable(partitionmanager ${partitionmanager_SRCS})
 
 target_link_libraries(partitionmanager partitionmanagerprivate)
 
-install(TARGETS partitionmanager DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES gui/partitionmanagerui.rc DESTINATION ${DATA_INSTALL_DIR}/partitionmanager)
 install(FILES partitionmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
