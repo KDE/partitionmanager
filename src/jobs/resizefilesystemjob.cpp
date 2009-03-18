@@ -69,7 +69,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 	
 	if (partition().fileSystem().length() == newLength())
 	{
-		report->line() << i18nc("@info/plain", "The file system on partition <filename>%1</filename> already has the requested length of %2 sectors.", partition().deviceNode(), newLength());
+		report->line() << i18ncp("@info/plain", "The file system on partition <filename>%2</filename> already has the requested length of 1 sector.", "The file system on partition <filename>%2</filename> already has the requested length of %1 sectors.", newLength(), partition().deviceNode());
 		rval = true;
 	}
 	else
@@ -155,5 +155,5 @@ QString ResizeFileSystemJob::description() const
 	if (isMaximizing())
 		return i18nc("@info/plain", "Maximize file system on <filename>%1</filename> to fill the partition", partition().deviceNode());
 		
-	return i18nc("@info/plain", "Resize file system on partition <filename>%1</filename> to %2 sectors", partition().deviceNode(), newLength());
+	return i18ncp("@info/plain", "Resize file system on partition <filename>%2</filename> to 1 sector", "Resize file system on partition <filename>%2</filename> to %1 sectors", newLength(), partition().deviceNode());
 }

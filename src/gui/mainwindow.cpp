@@ -734,7 +734,9 @@ static bool checkTooManyPartitions(QWidget* parent, const Device& d, const Parti
 
 	if (p.roles().has(PartitionRole::Unallocated) && d.partitionTable()->numPrimaries() >= d.partitionTable()->maxPrimaries() && !p.roles().has(PartitionRole::Logical))
 	{
-		KMessageBox::sorry(parent, i18nc("@info",
+		KMessageBox::sorry(parent, i18ncp("@info",
+			"<para>There is already 1 primary partition on this device. This is the maximum number its partition table can handle.</para>"
+			"<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
 			"<para>There are already %1 primary partitions on this device. This is the maximum number its partition table can handle.</para>"
 			"<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
 			d.partitionTable()->numPrimaries()), i18nc("@title:window", "Too Many Primary Partitions."));
