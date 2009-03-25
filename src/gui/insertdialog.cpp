@@ -47,6 +47,7 @@ InsertDialog::InsertDialog(QWidget* parent, Device& device, Partition& insertedP
 
 	dialogWidget().hideRole();
 	dialogWidget().hideFileSystem();
+	dialogWidget().hideLabel();
 
 	setupDialog();
 	setupConstraints();

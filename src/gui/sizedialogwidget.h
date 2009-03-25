@@ -52,8 +52,14 @@ class SizeDialogWidget : public QWidget, public Ui::SizeDialogWidgetBase
 
 		QComboBox& comboFileSystem() { Q_ASSERT(m_ComboFileSystem); return *m_ComboFileSystem; }
 
+		QLabel& textLabel() { Q_ASSERT(m_LabelTextLabel); return *m_LabelTextLabel; }
+		KLineEdit& label() { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
+		const KLineEdit& label() const { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
+		QLabel& noSetLabel() { Q_ASSERT(m_LabelTextNoSetLabel); return *m_LabelTextNoSetLabel; }
+
 		void hideRole() { delete m_LabelRole; m_LabelRole = NULL; delete m_RadioPrimary; m_RadioPrimary = NULL; delete m_RadioExtended; m_RadioExtended = NULL; delete m_RadioLogical; m_RadioLogical = NULL; }
 		void hideFileSystem() { delete m_LabelFileSystem; m_LabelFileSystem = NULL; delete m_ComboFileSystem; m_ComboFileSystem = NULL; }
+		void hideLabel() { delete m_LabelTextLabel; m_LabelTextLabel = NULL; delete m_EditLabel; m_EditLabel = NULL; delete m_LabelTextNoSetLabel; m_LabelTextNoSetLabel = NULL; }
 };
 
 #endif

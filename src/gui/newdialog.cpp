@@ -91,6 +91,7 @@ void NewDialog::setupConnections()
 	connect(&dialogWidget().radioExtended(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
 	connect(&dialogWidget().radioLogical(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
 	connect(&dialogWidget().comboFileSystem(), SIGNAL(currentIndexChanged(int)), SLOT(onFilesystemChanged(int)));
+	connect(&dialogWidget().label(), SIGNAL(textChanged(const QString&)), SLOT(onLabelChanged(const QString&)));
 
 	SizeDialogBase::setupConnections();
 }
@@ -120,6 +121,7 @@ void NewDialog::onRoleChanged(bool)
 	dialogWidget().comboFileSystem().setEnabled(r != PartitionRole::Extended);
 	partition().setRoles(PartitionRole(r));
 	dialogWidget().partResizerWidget().update();
+	updateHideAndShow();
 }
 
 void NewDialog::onFilesystemChanged(int idx)
@@ -132,4 +134,33 @@ void NewDialog::onFilesystemChanged(int idx)
 	setupConstraints();
 
 	dialogWidget().partResizerWidget().updateLength(partition().length());
+
+	updateHideAndShow();
+}
+
+void NewDialog::onLabelChanged(const QString& newLabel)
+{
+	partition().fileSystem().setLabel(newLabel);
+}
+
+void NewDialog::updateHideAndShow()
+{
+	// this is mostly copy'n'pasted from PartPropsDialog::updateHideAndShow()
+	if (partition().roles().has(PartitionRole::Extended) || partition().fileSystem().supportSetLabel() == FileSystem::SupportNone)
+	{
+		dialogWidget().label().setReadOnly(true);
+		dialogWidget().noSetLabel().setVisible(true);
+		dialogWidget().noSetLabel().setFont(KGlobalSettings::smallestReadableFont());
+
+		QPalette palette = dialogWidget().noSetLabel().palette();
+		QColor f = palette.color(QPalette::Foreground);
+		f.setAlpha(128);
+		palette.setColor(QPalette::Foreground, f);
+		dialogWidget().noSetLabel().setPalette(palette);
+	}
+	else
+	{
+		dialogWidget().label().setReadOnly(false);
+		dialogWidget().noSetLabel().setVisible(false);
+	}
 }

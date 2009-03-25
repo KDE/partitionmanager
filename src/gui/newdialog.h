@@ -45,10 +45,12 @@ class NewDialog : public SizeDialogBase
 		void accept();
 		void onRoleChanged(bool);
 		void onFilesystemChanged(int);
+		void onLabelChanged(const QString& newLabel);
 
 	protected:
 		void setupConnections();
 		void setupDialog();
+		void updateHideAndShow();
 		PartitionRole::Roles partitionRoles() const { return m_PartitionRoles; }
 		virtual bool canGrow() const { return true; }
 		virtual bool canShrink() const { return true; }
