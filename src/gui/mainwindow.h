@@ -76,11 +76,11 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 
 		Device* selectedDevice();
 		Partition* selectedPartition();
-		
+
 		KActionCollection* actionCollection() const;
 
 		InfoPane& infoPane() { Q_ASSERT(m_InfoPane); return *m_InfoPane; }
-		
+
 		PartTableWidget& partTableWidget() { Q_ASSERT(m_PartTableWidget); return *m_PartTableWidget; }
 		const PartTableWidget& partTableWidget() const { Q_ASSERT(m_PartTableWidget); return *m_PartTableWidget; }
 
@@ -89,10 +89,10 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 
 		QListWidget& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 		const QListWidget& listOperations() const { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
-		
+
 		QTreeWidget& treePartitions() { Q_ASSERT(m_TreePartitions); return *m_TreePartitions; }
 		const QTreeWidget& treePartitions() const { Q_ASSERT(m_TreePartitions); return *m_TreePartitions; }
-		
+
 		QDockWidget& dockInformation() { Q_ASSERT(m_DockInformation); return *m_DockInformation; }
 		const QDockWidget& dockInformation() const { Q_ASSERT(m_DockInformation); return *m_DockInformation; }
 
@@ -107,16 +107,16 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 
 		QTreeWidget& treeLog() { Q_ASSERT(m_TreeLog); return *m_TreeLog; }
 		const QTreeWidget& treeLog() const { Q_ASSERT(m_TreeLog); return *m_TreeLog; }
-		
+
 		Partition* clipboardPartition() { return m_ClipboardPartition; }
 		const Partition* clipboardPartition() const { return m_ClipboardPartition; }
 		void setClipboardPartition(Partition* p) { m_ClipboardPartition = p; }
 
 		LibParted& libParted() { return m_LibParted; }
 		const LibParted& libParted() const { return m_LibParted; }
-		
+
 		ProgressDialog& progressDialog() { Q_ASSERT(m_ProgressDialog); return *m_ProgressDialog; }
-		
+
 		OperationRunner& operationRunner() { return m_OperationRunner; }
 		const OperationRunner& operationRunner() const { return m_OperationRunner; }
 
@@ -129,6 +129,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 	protected slots:
 		void on_m_ListDevices_itemSelectionChanged();
 		void on_m_ListDevices_customContextMenuRequested(const QPoint& pos);
+		void on_m_ListOperations_customContextMenuRequested(const QPoint& pos);
 		void on_m_TreePartitions_currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem* previous);
 		void on_m_PartTableWidget_customContextMenuRequested(const QPoint& pos);
 		void on_m_TreePartitions_customContextMenuRequested(const QPoint& pos);
@@ -159,7 +160,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void onNewLogMessage(log::Level logLevel, const QString& s);
 		void onFinished();
 		void scanDevices();
-		
+
 	private:
 		LibParted m_LibParted;
 		OperationStack m_OperationStack;

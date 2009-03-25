@@ -656,6 +656,18 @@ void MainWindow::on_m_ListDevices_customContextMenuRequested(const QPoint& pos)
 	statusBar()->clearMessage();
 }
 
+void MainWindow::on_m_ListOperations_customContextMenuRequested(const QPoint& pos)
+{
+	KMenu opsMenu;
+
+	opsMenu.addAction(actionCollection()->action("undoOperation"));
+	opsMenu.addAction(actionCollection()->action("clearAllOperations"));
+	opsMenu.addAction(actionCollection()->action("applyAllOperations"));
+
+	opsMenu.exec(listOperations().viewport()->mapToGlobal(pos));
+	statusBar()->clearMessage();
+}
+
 void MainWindow::onPropertiesPartition()
 {
 	if (selectedPartition())
