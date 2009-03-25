@@ -47,6 +47,7 @@ include(MacroLibrary)
 include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} src/)
 
 add_subdirectory(src)
+add_subdirectory(icons)
 
 message(STATUS "KDE Partition Manager ${VERSION} will be built for install into ${CMAKE_INSTALL_PREFIX}")
 

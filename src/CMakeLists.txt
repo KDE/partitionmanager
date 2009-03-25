@@ -42,6 +42,8 @@ install(TARGETS partitionmanagerprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 file(GLOB partitionmanager_SRCS	main.cpp)
 
+kde4_add_app_icon(partitionmanager_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-apps-partitionmanager.png")
+
 kde4_add_executable(partitionmanager ${partitionmanager_SRCS})
 
 target_link_libraries(partitionmanager partitionmanagerprivate)
