@@ -351,7 +351,7 @@ void MainWindow::updateStatusBar()
 
 void MainWindow::scanDevices()
 {
-	log() << i18nc("@info/plain", "Rescan devices...");
+	log() << i18nc("@info/plain", "Rescanning devices...");
 
 	KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
