@@ -77,11 +77,10 @@ void OperationRunner::run()
 
 		suspendMutex().unlock();
 
-		/** @todo Sleep a little to give others a chance to suspend us.
-			ProgressDialog::slotButtonClicked() blocks if we don't sleep here... Why?
-			It should block until we unlock above, but it blocks until run() ends...
-		*/
- 		msleep(100);
+		// Sleep a little to give others a chance to suspend us. This should normally not be
+		// required -- is it possible that the compiler just optimizes our unlock/lock away
+		// if we don't sleep?
+		msleep(5);
 	}
 
 	if (!status)
@@ -102,7 +101,7 @@ qint32 OperationRunner::numOperations() const
 qint32 OperationRunner::numJobs() const
 {
 	qint32 result = 0;
-	
+
 	foreach (const Operation* op,  operationStack().operations())
 		result += op->jobs().size();
 
