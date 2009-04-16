@@ -38,12 +38,12 @@ FileSystemSupportDialog::FileSystemSupportDialog(QWidget* parent) :
 	setMainWidget(&dialogWidget());
 	setCaption(i18nc("@title:window", "File System Support"));
 	setButtons(KDialog::Ok);
-	
+
 	resize(dialogWidget().width(), dialogWidget().height());
 
  	setupDialog();
 	setupConnections();
-	
+
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "fileSystemSupportDialog"));
 }
 
@@ -61,7 +61,7 @@ void FileSystemSupportDialog::setupDialog()
 
 	dialogWidget().tree().clear();
 
-	foreach(const FileSystem* fs, FileSystemFactory::map().values())
+	foreach(const FileSystem* fs, FileSystemFactory::map())
 	{
 		if (fs->type() == FileSystem::Unknown || fs->type() == FileSystem::Extended)
 			continue;

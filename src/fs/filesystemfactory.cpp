@@ -43,9 +43,7 @@ FileSystemFactory::FileSystems FileSystemFactory::m_FileSystems;
 /** Initializes the instance. */
 void FileSystemFactory::init()
 {
-	foreach(FileSystem* fs, m_FileSystems.values())
-		delete fs;
-
+	qDeleteAll(m_FileSystems);
 	m_FileSystems.clear();
 
 	m_FileSystems.insert(FileSystem::Ext2, new FS::ext2(-1, -1, -1, QString()));

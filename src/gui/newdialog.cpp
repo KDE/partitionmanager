@@ -61,7 +61,7 @@ NewDialog::~NewDialog()
 void NewDialog::setupDialog()
 {
 	QStringList fsNames;
-	foreach (const FileSystem* fs, FileSystemFactory::map().values())
+	foreach (const FileSystem* fs, FileSystemFactory::map())
 		if (fs->supportCreate() != FileSystem::SupportNone && fs->type() != FileSystem::Extended)
 			fsNames.append(fs->name());
 
