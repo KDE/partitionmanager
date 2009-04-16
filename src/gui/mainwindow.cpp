@@ -104,20 +104,25 @@ MainWindow::MainWindow(QWidget* parent, KActionCollection* coll) :
 	m_ActionCollection(coll)
 {
 	setupUi(this);
+	QTimer::singleShot(0, this, SLOT(init()));
+}
 
-	FileSystemFactory::init();
+void MainWindow::init()
+{
 	connect(GlobalLog::instance(), SIGNAL(newMessage(log::Level, const QString&)), SLOT(onNewLogMessage(log::Level, const QString&)));
 
 	setupActions();
- 	setupStatusBar();
+	setupStatusBar();
 	setupConnections();
 
 	// If we were called with an action collection we're supposed to be a KPart, so don't
 	// create the GUI in that case.
-	if (coll != NULL)
+	if (m_ActionCollection != NULL)
 		setupGUI(ToolBar | Keys | StatusBar | Save);
 	else
 		setupGUI(ToolBar | Keys | StatusBar | Save | Create);
+
+	FileSystemFactory::init();
 
 	loadConfig();
 

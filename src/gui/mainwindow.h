@@ -160,6 +160,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void onNewLogMessage(log::Level logLevel, const QString& s);
 		void onFinished();
 		void scanDevices();
+		void init();
 
 	private:
 		LibParted m_LibParted;
