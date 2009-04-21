@@ -1,0 +1,14 @@
+[Desktop Entry]                                                                                
+Exec=kcmshell4 kcm_partitionmanager
+Icon=partitionmanager
+Type=Service
+
+X-KDE-Library=kcm_partitionmanager
+#X-KDE-RootOnly=true
+X-KDE-ServiceTypes=KCModule
+X-KDE-ParentApp=kcontrol
+X-KDE-System-Settings-Parent-Category=system
+#X-KDE-SubstituteUID=true
+
+Name=Partition Manager
+Comment=Manage disks, partitions and file systems

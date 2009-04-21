@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -25,10 +25,6 @@
 
 #include "ui_mainwindowbase.h"
 
-#include "core/libparted.h"
-#include "core/operationrunner.h"
-#include "core/operationstack.h"
-
 #include "util/globallog.h"
 
 #include <kxmlguiwindow.h>
@@ -40,7 +36,6 @@ class InfoPane;
 class QCloseEvent;
 class QEvent;
 class Device;
-class ProgressDialog;
 class KActionCollection;
 
 /** @brief The application's main window.
@@ -54,44 +49,26 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 	public:
 		MainWindow(QWidget* parent = NULL, KActionCollection* coll = NULL);
 
-	signals:
-		void devicesChanged();
-
 	protected:
 		void setupActions();
 		void setupConnections();
 		void setupStatusBar();
-		void setupDevicesList();
 		void loadConfig();
 		void saveConfig() const;
 		void updateWindowTitle();
-		void updateStatusBar();
-		void updateOperations();
-		void enableActions();
-		void showPartitionContextMenu(const QPoint& pos);
-		void updateDevices();
-		void updatePartitions();
 
-		bool showInsertDialog(Partition& insertPartition, qint64 sourceLength);
-
-		Device* selectedDevice();
-		Partition* selectedPartition();
-
-		KActionCollection* actionCollection() const;
+		KActionCollection* actionCollection() const { return m_ActionCollection != NULL ? m_ActionCollection : KXmlGuiWindow::actionCollection(); }
 
 		InfoPane& infoPane() { Q_ASSERT(m_InfoPane); return *m_InfoPane; }
 
-		PartTableWidget& partTableWidget() { Q_ASSERT(m_PartTableWidget); return *m_PartTableWidget; }
-		const PartTableWidget& partTableWidget() const { Q_ASSERT(m_PartTableWidget); return *m_PartTableWidget; }
+		PartitionManagerWidget& pmWidget() { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
+		const PartitionManagerWidget& pmWidget() const { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
 
-		QListWidget& listDevices() { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
-		const QListWidget& listDevices() const { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
+		ListDevices& listDevices() { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
+		const ListDevices& listDevices() const { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
 
-		QListWidget& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
-		const QListWidget& listOperations() const { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
-
-		QTreeWidget& treePartitions() { Q_ASSERT(m_TreePartitions); return *m_TreePartitions; }
-		const QTreeWidget& treePartitions() const { Q_ASSERT(m_TreePartitions); return *m_TreePartitions; }
+		ListOperations& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
+		const ListOperations& listOperations() const { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 
 		QDockWidget& dockInformation() { Q_ASSERT(m_DockInformation); return *m_DockInformation; }
 		const QDockWidget& dockInformation() const { Q_ASSERT(m_DockInformation); return *m_DockInformation; }
@@ -108,68 +85,25 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		QTreeWidget& treeLog() { Q_ASSERT(m_TreeLog); return *m_TreeLog; }
 		const QTreeWidget& treeLog() const { Q_ASSERT(m_TreeLog); return *m_TreeLog; }
 
-		Partition* clipboardPartition() { return m_ClipboardPartition; }
-		const Partition* clipboardPartition() const { return m_ClipboardPartition; }
-		void setClipboardPartition(Partition* p) { m_ClipboardPartition = p; }
-
-		LibParted& libParted() { return m_LibParted; }
-		const LibParted& libParted() const { return m_LibParted; }
-
-		ProgressDialog& progressDialog() { Q_ASSERT(m_ProgressDialog); return *m_ProgressDialog; }
-
-		OperationRunner& operationRunner() { return m_OperationRunner; }
-		const OperationRunner& operationRunner() const { return m_OperationRunner; }
-
-		OperationStack& operationStack() { return m_OperationStack; }
-		const OperationStack& operationStack() const { return m_OperationStack; }
-
 		QLabel& statusText() { Q_ASSERT(m_StatusText); return *m_StatusText; }
 		const QLabel& statusText() const { Q_ASSERT(m_StatusText); return *m_StatusText; }
 
 	protected slots:
-		void on_m_ListDevices_itemSelectionChanged();
-		void on_m_ListDevices_customContextMenuRequested(const QPoint& pos);
-		void on_m_ListOperations_customContextMenuRequested(const QPoint& pos);
-		void on_m_TreePartitions_currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem* previous);
-		void on_m_PartTableWidget_customContextMenuRequested(const QPoint& pos);
-		void on_m_TreePartitions_customContextMenuRequested(const QPoint& pos);
-		void on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, int);
-		void on_m_PartTableWidget_itemSelectionChanged(PartWidget* item);
-		void on_m_ListDevices_itemClicked();
-
-		void onPropertiesPartition();
-		void onMountPartition();
-		void onNewPartition();
-		void onDeletePartition();
-		void onResizePartition();
-		void onCopyPartition();
-		void onPastePartition();
-		void onCheckPartition();
-		void onCreateNewPartitionTable();
-		void onRefreshDevices();
-		void onUndoOperation();
-		void onClearAllOperations();
-		void onApplyAllOperations();
-		void onFileSystemSupport();
-		void onBackupPartition();
-		void onRestorePartition();
+		void on_m_ListDevices_selectionChanged(Device* d);
 
 		void closeEvent(QCloseEvent*);
 		void changeEvent(QEvent* event);
 
 		void onNewLogMessage(log::Level logLevel, const QString& s);
-		void onFinished();
-		void scanDevices();
 		void init();
+		void updateDevices();
+		void updateStatusBar();
+// 		void updateOperations();
+		void updateSelection(const Partition* p);
 
 	private:
-		LibParted m_LibParted;
-		OperationStack m_OperationStack;
-		OperationRunner m_OperationRunner;
 		QLabel* m_StatusText;
 		InfoPane* m_InfoPane;
-		Partition* m_ClipboardPartition;
-		ProgressDialog* m_ProgressDialog;
 		KActionCollection* m_ActionCollection;
 };
 

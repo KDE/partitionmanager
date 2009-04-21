@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>1007</width>
-    <height>696</height>
+    <height>684</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -15,84 +15,7 @@
   <widget class="QWidget" name="centralwidget" >
    <layout class="QVBoxLayout" name="verticalLayout" >
     <item>
-     <layout class="QVBoxLayout" >
-      <item>
-       <widget class="PartTableWidget" native="1" name="m_PartTableWidget" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize" >
-         <size>
-          <width>0</width>
-          <height>80</height>
-         </size>
-        </property>
-        <property name="maximumSize" >
-         <size>
-          <width>16777215</width>
-          <height>80</height>
-         </size>
-        </property>
-        <property name="contextMenuPolicy" >
-         <enum>Qt::CustomContextMenu</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QTreeWidget" name="m_TreePartitions" >
-        <property name="contextMenuPolicy" >
-         <enum>Qt::CustomContextMenu</enum>
-        </property>
-        <property name="alternatingRowColors" >
-         <bool>true</bool>
-        </property>
-        <property name="rootIsDecorated" >
-         <bool>false</bool>
-        </property>
-        <property name="itemsExpandable" >
-         <bool>false</bool>
-        </property>
-        <column>
-         <property name="text" >
-          <string comment="@label">Partition</string>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string comment="@label partition type">Type</string>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string comment="@label">Mount Point</string>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string comment="@label file system label">Label</string>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string comment="@label total file system size">Size</string>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string comment="@label space used">Used</string>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string comment="@label partition flags">Flags</string>
-         </property>
-        </column>
-       </widget>
-      </item>
-     </layout>
+     <widget class="PartitionManagerWidget" native="1" name="m_PartitionManagerWidget" />
     </item>
    </layout>
   </widget>
@@ -109,17 +32,7 @@
    <widget class="QWidget" name="m_DockDevicesContents" >
     <layout class="QVBoxLayout" >
      <item>
-      <widget class="QListWidget" name="m_ListDevices" >
-       <property name="sizePolicy" >
-        <sizepolicy vsizetype="Expanding" hsizetype="Preferred" >
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="contextMenuPolicy" >
-        <enum>Qt::CustomContextMenu</enum>
-       </property>
-      </widget>
+      <widget class="ListDevices" native="1" name="m_ListDevices" />
      </item>
     </layout>
    </widget>
@@ -137,32 +50,9 @@
    <widget class="QWidget" name="m_DockOperationsContents" >
     <layout class="QVBoxLayout" name="verticalLayout_2" >
      <item>
-      <widget class="QListWidget" name="m_ListOperations" >
-       <property name="contextMenuPolicy" >
-        <enum>Qt::CustomContextMenu</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy" >
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="autoScroll" >
-        <bool>false</bool>
-       </property>
-       <property name="alternatingRowColors" >
-        <bool>true</bool>
-       </property>
-       <property name="selectionMode" >
-        <enum>QAbstractItemView::NoSelection</enum>
-       </property>
-       <property name="resizeMode" >
-        <enum>QListView::Adjust</enum>
-       </property>
-       <property name="wordWrap" >
-        <bool>true</bool>
-       </property>
-      </widget>
+      <widget class="ListOperations" native="1" name="m_ListOperations" />
      </item>
     </layout>
-    <zorder>m_ListOperations</zorder>
    </widget>
   </widget>
   <widget class="QDockWidget" name="m_DockInformation" >
@@ -222,12 +112,12 @@
        </property>
        <column>
         <property name="text" >
-         <string comment="@label">Time</string>
+         <string>Time</string>
         </property>
        </column>
        <column>
         <property name="text" >
-         <string comment="@label">Message</string>
+         <string>Message</string>
         </property>
        </column>
       </widget>
@@ -238,9 +128,21 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>PartTableWidget</class>
+   <class>PartitionManagerWidget</class>
    <extends>QWidget</extends>
-   <header>gui/parttablewidget.h</header>
+   <header>gui/partitionmanagerwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ListDevices</class>
+   <extends>QWidget</extends>
+   <header>gui/listdevices.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ListOperations</class>
+   <extends>QWidget</extends>
+   <header>gui/listoperations.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

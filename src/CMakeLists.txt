@@ -26,7 +26,7 @@ file(GLOB partitionmanagerprivate_SRCS
 	gui/*.cpp
 )
 
-file(GLOB partitionmanagerprivate_UIFILES gui/*.ui)
+file(GLOB partitionmanagerprivate_UIFILES gui/*.ui kcm/*.ui)
 
 kde4_add_ui_files(partitionmanagerprivate_SRCS ${partitionmanagerprivate_UIFILES})
 
@@ -84,4 +84,23 @@ if(PARTMAN_KPART)
 	endif(PARTMAN_KPART_TEST)
 
 endif(PARTMAN_KPART)
+
+############################################
+
+option(PARTMAN_KCM "Build a kcm for KDE Partition Manager" ON)
+
+if(PARTMAN_KCM)
+	file(GLOB partitionmanagerkcm_SRCS kcm/partitionmanagerkcm.cpp)
+
+	kde4_add_plugin(kcm_partitionmanager ${partitionmanagerkcm_SRCS})
+
+	target_link_libraries(kcm_partitionmanager
+		${KDE4_KDEUI_LIBS}
+		partitionmanagerprivate
+	)
+
+	install(TARGETS kcm_partitionmanager DESTINATION ${PLUGIN_INSTALL_DIR})
+	install(FILES kcm/kcm_partitionmanager.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+
+endif(PARTMAN_KCM)
 
