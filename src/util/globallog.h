@@ -21,6 +21,8 @@
 
 #define GLOBALLOG__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include <QString>
 #include <QObject>
 #include <qglobal.h>
@@ -49,7 +51,7 @@ class log
 /** @brief Global logging.
 	@author vl@fidra.de
 */
-class GlobalLog : public QObject
+class LIBPARTITIONMANAGERPRIVATE_EXPORT GlobalLog : public QObject
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(GlobalLog)
