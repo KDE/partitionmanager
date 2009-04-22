@@ -178,8 +178,8 @@ void PartitionManagerWidget::setupActions()
 
 	KAction* createNewPartitionTable = actionCollection()->addAction("createNewPartitionTable", this, SLOT(onCreateNewPartitionTable()));
 	createNewPartitionTable->setEnabled(false);
-	createNewPartitionTable->setText(i18nc("@action:inmenu", "Create New Partition Table"));
-	createNewPartitionTable->setToolTip(i18nc("@info:tooltip", "Create new partition table"));
+	createNewPartitionTable->setText(i18nc("@action:inmenu", "New Partition Table"));
+	createNewPartitionTable->setToolTip(i18nc("@info:tooltip", "Create a new partition table"));
 	createNewPartitionTable->setStatusTip(i18nc("@info:status", "Create a new and empty partition table on a device."));
 	createNewPartitionTable->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_N);
 	createNewPartitionTable->setIcon(BarIcon("edit-clear"));
@@ -644,12 +644,12 @@ void PartitionManagerWidget::onDeletePartition()
 			return;
 		}
 
-		if (selectedPartition()->parent()->highestMountedChild() > selectedPartition()->number())
+		if (selectedPartition()->number() > 0 && selectedPartition()->parent()->highestMountedChild() > selectedPartition()->number())
 		{
 			KMessageBox::sorry(this,
 							   i18nc("@info",
 									 "<para>The partition <filename>%1</filename> cannot currently be deleted because one or more partitions with higher logical numbers are still mounted.</para>"
-											 "<para>Please unmount all partitions with higher logical numbers than %2 first.</para>",
+									 "<para>Please unmount all partitions with higher logical numbers than %2 first.</para>",
 			selectedPartition()->deviceNode(), selectedPartition()->number()),
 							  i18nc("@title:window", "Cannot Delete Partition."));
 
@@ -661,11 +661,11 @@ void PartitionManagerWidget::onDeletePartition()
 	{
 		if (KMessageBox::warningContinueCancel(this,
 			i18nc("@info",
-				  "Do you really want to delete the partition that is currently in the clipboard? "
-						  "It will no longer be available for pasting after it has been deleted."),
-		i18nc("@title:window", "Really Delete Partition in the Clipboard?"),
-			  KGuiItem(i18nc("@action:button", "&Delete It")),
-					   KStandardGuiItem::cancel(), "reallyDeleteClipboardPartition") == KMessageBox::Cancel)
+				"Do you really want to delete the partition that is currently in the clipboard? "
+				"It will no longer be available for pasting after it has been deleted."),
+			i18nc("@title:window", "Really Delete Partition in the Clipboard?"),
+				KGuiItem(i18nc("@action:button", "&Delete It")),
+				KStandardGuiItem::cancel(), "reallyDeleteClipboardPartition") == KMessageBox::Cancel)
 			return;
 
 		setClipboardPartition(NULL);
