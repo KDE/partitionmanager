@@ -94,7 +94,9 @@ MainWindow::MainWindow(QWidget* parent, KActionCollection* coll) :
 
 void MainWindow::init()
 {
-	connect(GlobalLog::instance(), SIGNAL(newMessage(log::Level, const QString&)), SLOT(onNewLogMessage(log::Level, const QString&)));
+	treeLog().init(actionCollection(), &pmWidget());
+
+	connect(GlobalLog::instance(), SIGNAL(newMessage(log::Level, const QString&)), &treeLog(), SLOT(onNewLogMessage(log::Level, const QString&)));
 
 	setupActions();
 	setupStatusBar();
@@ -245,28 +247,3 @@ void MainWindow::updateSelection(const Partition* p)
 	updateWindowTitle();
 }
 
-void MainWindow::onNewLogMessage(log::Level logLevel, const QString& s)
-{
-	static const char* icons[] =
-	{
-		"tools-report-bug",
-		"dialog-information",
-		"dialog-warning",
-		"dialog-error"
-	};
-
-	kDebug() << s;
-
-	QTreeWidgetItem* item = new QTreeWidgetItem();
-
-	item->setIcon(0, SmallIcon(icons[logLevel]));
-	item->setText(0, QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
-	item->setText(1, s);
-
-	treeLog().addTopLevelItem(item);
-
-	for (int i = 0; i < treeLog().model()->columnCount(); i++)
-		treeLog().resizeColumnToContents(i);
-
-	treeLog().scrollToBottom();
-}

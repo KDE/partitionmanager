@@ -70,6 +70,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		ListOperations& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 		const ListOperations& listOperations() const { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 
+		TreeLog& treeLog() { Q_ASSERT(m_TreeLog); return *m_TreeLog; }
+		const TreeLog& treeLog() const { Q_ASSERT(m_TreeLog); return *m_TreeLog; }
+
 		QDockWidget& dockInformation() { Q_ASSERT(m_DockInformation); return *m_DockInformation; }
 		const QDockWidget& dockInformation() const { Q_ASSERT(m_DockInformation); return *m_DockInformation; }
 
@@ -82,9 +85,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		QDockWidget& dockLog() { Q_ASSERT(m_DockLog); return *m_DockLog; }
 		const QDockWidget& dockLog() const { Q_ASSERT(m_DockLog); return *m_DockLog; }
 
-		QTreeWidget& treeLog() { Q_ASSERT(m_TreeLog); return *m_TreeLog; }
-		const QTreeWidget& treeLog() const { Q_ASSERT(m_TreeLog); return *m_TreeLog; }
-
 		QLabel& statusText() { Q_ASSERT(m_StatusText); return *m_StatusText; }
 		const QLabel& statusText() const { Q_ASSERT(m_StatusText); return *m_StatusText; }
 
@@ -94,11 +94,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void closeEvent(QCloseEvent*);
 		void changeEvent(QEvent* event);
 
-		void onNewLogMessage(log::Level logLevel, const QString& s);
 		void init();
 		void updateDevices();
 		void updateStatusBar();
-// 		void updateOperations();
 		void updateSelection(const Partition* p);
 
 	private:
