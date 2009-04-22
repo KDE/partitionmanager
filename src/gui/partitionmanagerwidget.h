@@ -56,6 +56,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		void statusChanged();
 		void selectionChanged(const Partition*);
 
+	public slots:
+		void setSelectedDevice(Device* d);
+
 	public:
 		void init(KActionCollection* coll);
 		KActionCollection* actionCollection() const { return m_ActionCollection; }
@@ -68,7 +71,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 
 		Device* selectedDevice() { return m_SelectedDevice; }
 		const Device* selectedDevice() const { return m_SelectedDevice; }
-		void setSelectedDevice(Device* d);
 
 		Partition* selectedPartition();
 
