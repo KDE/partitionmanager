@@ -141,6 +141,8 @@ void PartitionManagerWidget::saveConfig() const
 	for(int i = 0; i < treePartitions().columnCount(); i++)
 		colWidths.append(treePartitions().columnWidth(i));
 	Config::setTreePartitionColumnWidths(colWidths);
+
+	Config::self()->writeConfig();
 }
 
 void PartitionManagerWidget::setupActions()
