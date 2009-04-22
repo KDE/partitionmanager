@@ -17,6 +17,8 @@
 
 project(partitionmanager)
 
+cmake_minimum_required(VERSION 2.6.2)
+
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/")
 
 set(CMAKE_USE_RELATIVE_PATHS OFF)
@@ -29,7 +31,7 @@ set(VERSION_SUFFIX "-BETA1")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE}${VERSION_SUFFIX})
 add_definitions(-D'VERSION="${VERSION}"')
 
-set(KDE_MIN_VERSION 4.1)
+set(KDE_MIN_VERSION 4.2)
 find_package(KDE4 REQUIRED)
 
 find_package(MSGFMT REQUIRED)
