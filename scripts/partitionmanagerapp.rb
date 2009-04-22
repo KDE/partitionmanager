@@ -34,32 +34,6 @@ class PartitionManagerApp < Application
 
 		puts 'removing scripts subdir...'
 		FileUtils.rm_rf 'scripts'
-
-		if File.exists? 'doc' then
-			puts 'patching CMakeLists.txt to build docs only with new kdelibs...'
-			
-			FileUtils.mv('CMakeLists.txt', 'CMakeLists.txt.orig')
-
-			newFile = File.new('CMakeLists.txt', File::CREAT | File::TRUNC | File::RDWR)
-
-			IO.foreach('CMakeLists.txt.orig')  do |line|
-				if line =~ /\s*macro_optional_add_subdirectory\s*\(\s*doc\s*\)\s*/i
-					newFile.print <<END_OF_TEXT
-if (KDE_VERSION VERSION_GREATER "4.1.3")
-	macro_optional_add_subdirectory(doc)
-else (KDE_VERSION VERSION_GREATER "4.1.3")
-	message (STATUS "No documentation built for KDE libs < 4.1.4")
-endif (KDE_VERSION VERSION_GREATER "4.1.3")
-END_OF_TEXT
-				else
-					newFile << line
-				end
-			end
-
-			FileUtils.rm_rf 'CMakeLists.txt.orig' 
-
-			newFile.close
-		end
 	end
 end
 
