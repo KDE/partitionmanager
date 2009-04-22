@@ -44,6 +44,7 @@ where options are:
 	--checkout-from (-c): trunk (default), stable, tag
 	--tag (-t): name of tag
 	--svn-access (-s): https, svn+ssh, anonsvn (default)
+	--svn-user (-u): svn username (for svn+ssh)
 	--get-docs (-d): also get documentation (default)
 	--no-get-docs (-D): do not get documentation
 	--get-translations (-r): also get translations (default)
