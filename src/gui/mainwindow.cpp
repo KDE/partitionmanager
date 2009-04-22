@@ -221,20 +221,6 @@ void MainWindow::on_m_ListDevices_selectionChanged(Device* d)
 	updateSelection(NULL);
 }
 
-// void MainWindow::updateOperations()
-// {
-// 	listOperations().clear();
-//
-// 	foreach (const Operation* op, pmWidget().operations())
-// 	{
-// 		QListWidgetItem* item = new QListWidgetItem(SmallIcon(op->iconName()), op->description());
-// 		item->setToolTip(op->description());
-// 		listOperations().addItem(item);
-// 	}
-//
-// 	listOperations().scrollToBottom();
-// }
-
 void MainWindow::updateWindowTitle()
 {
 	QString title;
