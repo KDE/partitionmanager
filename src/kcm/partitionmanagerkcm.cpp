@@ -38,7 +38,7 @@ K_PLUGIN_FACTORY(
 		registerPlugin<PartitionManagerKCM>();
 )
 K_EXPORT_PLUGIN(
-		PartitionManagerKCMFactory("kcm_partitionmanager")
+		PartitionManagerKCMFactory("kcm_partitionmanager", "partitionmanager")
 )
 
 PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
