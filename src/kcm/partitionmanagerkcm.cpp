@@ -24,17 +24,21 @@
 
 #include "util/helpers.h"
 
+#include <config.h>
+
 #include <kgenericfactory.h>
 #include <klocale.h>
 #include <kactioncollection.h>
 #include <ktoolbar.h>
+
+#include <QTimer>
 
 K_PLUGIN_FACTORY(
 		PartitionManagerKCMFactory,
 		registerPlugin<PartitionManagerKCM>();
 )
 K_EXPORT_PLUGIN(
-		PartitionManagerKCMFactory("partitionmanagerkcm")
+		PartitionManagerKCMFactory("kcm_partitionmanager")
 )
 
 PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
@@ -56,29 +60,22 @@ PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
 
 	listDevices().init(actionCollection(), &pmWidget());
 	listOperations().init(actionCollection(), &pmWidget());
-	pmWidget().init(actionCollection());
+	pmWidget().init(actionCollection(), "kcm_partitionmanagerrc");
 
 	const char* actionNames[] =
 	{
-		"applyAllOperations",
-		"undoOperation",
-		"clearAllOperations",
-		"",
-// 		"refreshDevices",
-		"createNewPartitionTable",
-		"",
 		"newPartition",
 		"resizePartition",
 		"deletePartition",
 		"copyPartition",
 		"pastePartition",
-// 		"mountPartition",
 		"checkPartition",
 		"propertiesPartition",
 		"backupPartition",
 		"restorePartition",
-// 		"",
-// 		"fileSystemSupport"
+		"",
+		"createNewPartitionTable",
+		"refreshDevices"
 	};
 
 	for(size_t i = 0; i < sizeof(actionNames) / sizeof(actionNames[0]); i++)
@@ -88,7 +85,12 @@ PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
 			toolBar()->addSeparator();
 
 	toolBar()->setIconSize(QSize(22, 22));
-	toolBar()->setToolButtonStyle(Qt::ToolButtonIconOnly);
+	toolBar()->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+
+	splitterHorizontal().setStretchFactor(0, 1);
+	splitterHorizontal().setStretchFactor(1, 4);
+	splitterVertical().setStretchFactor(0, 1);
+	splitterVertical().setStretchFactor(1, 3);
 }
 
 void PartitionManagerKCM::onNewLogMessage(log::Level, const QString& s)
@@ -98,19 +100,29 @@ void PartitionManagerKCM::onNewLogMessage(log::Level, const QString& s)
 
 void PartitionManagerKCM::load()
 {
+	if (pmWidget().numPendingOperations() > 0)
+		actionCollection()->action("clearAllOperations")->trigger();
+
+	QTimer::singleShot(0, this, SLOT(onStatusChanged()));
 }
 
 void PartitionManagerKCM::save()
 {
+	if (pmWidget().numPendingOperations() > 0)
+		actionCollection()->action("applyAllOperations")->trigger();
+
+	QTimer::singleShot(0, this, SLOT(onStatusChanged()));
 }
 
 void PartitionManagerKCM::setupConnections()
 {
 	connect(&pmWidget(), SIGNAL(devicesChanged()), &listDevices(), SLOT(updateDevices()));
 	connect(&pmWidget(), SIGNAL(operationsChanged()), &listOperations(), SLOT(updateOperations()));
+	connect(&listDevices(), SIGNAL(selectionChanged(Device*)), &pmWidget(), SLOT(setSelectedDevice(Device*)));
+	connect(&pmWidget(), SIGNAL(statusChanged()), SLOT(onStatusChanged()));
 }
 
-void PartitionManagerKCM::on_m_ListDevices_selectionChanged(Device* d)
+void PartitionManagerKCM::onStatusChanged()
 {
-	pmWidget().setSelectedDevice(d);
+	emit changed(pmWidget().numPendingOperations() > 0);
 }

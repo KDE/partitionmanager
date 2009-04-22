@@ -112,8 +112,10 @@ PartitionManagerWidget::~PartitionManagerWidget()
 	saveConfig();
 }
 
-void PartitionManagerWidget::init(KActionCollection* coll)
+void PartitionManagerWidget::init(KActionCollection* coll, const QString& config_name)
 {
+	Config::instance(config_name);
+
 	Q_ASSERT(coll);
 	m_ActionCollection = coll;
 

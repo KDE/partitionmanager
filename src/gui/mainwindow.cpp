@@ -102,7 +102,7 @@ void MainWindow::init()
 
 	listDevices().init(actionCollection(), &pmWidget());
 	listOperations().init(actionCollection(), &pmWidget());
-	pmWidget().init(actionCollection());
+	pmWidget().init(actionCollection(), "partitionmanagerrc");
 
 	// If we were called with an action collection we're supposed to be a KPart, so don't
 	// create the GUI in that case.

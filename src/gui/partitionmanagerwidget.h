@@ -60,7 +60,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		void setSelectedDevice(Device* d);
 
 	public:
-		void init(KActionCollection* coll);
+		void init(KActionCollection* coll, const QString& config_name);
 		KActionCollection* actionCollection() const { return m_ActionCollection; }
 
 		void clear();

@@ -58,13 +58,16 @@ class PartitionManagerKCM : public KCModule, public Ui::PartitionManagerKCMBase
 		ListOperations& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 		const ListOperations& listOperations() const { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 
+		QSplitter& splitterHorizontal() { Q_ASSERT(m_SplitterHorizontal); return *m_SplitterHorizontal; }
+		QSplitter& splitterVertical() { Q_ASSERT(m_SplitterVertical); return *m_SplitterVertical; }
+
 		KActionCollection* actionCollection() { return m_ActionCollection; }
 
 		KToolBar* toolBar() { return m_ToolBar; }
 
 	protected slots:
-		void on_m_ListDevices_selectionChanged(Device* d);
 		void onNewLogMessage(log::Level logLevel, const QString& s);
+		void onStatusChanged();
 
 	private:
 		KActionCollection* m_ActionCollection;
