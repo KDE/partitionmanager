@@ -18,64 +18,24 @@
  ***************************************************************************/
 
 #include "gui/mainwindow.h"
-#include "gui/partwidget.h"
-#include "gui/partpropsdialog.h"
-#include "gui/resizedialog.h"
 #include "gui/infopane.h"
-#include "gui/newdialog.h"
-#include "gui/filesystemsupportdialog.h"
 #include "gui/progressdialog.h"
-#include "gui/insertdialog.h"
 
-#include "core/partition.h"
 #include "core/device.h"
-#include "core/operationstack.h"
-#include "core/partitiontable.h"
-#include "core/operationrunner.h"
 
-#include "fs/filesystemfactory.h"
-
-#include "ops/deleteoperation.h"
-#include "ops/resizeoperation.h"
-#include "ops/newoperation.h"
-#include "ops/copyoperation.h"
-#include "ops/createpartitiontableoperation.h"
-#include "ops/checkoperation.h"
-#include "ops/backupoperation.h"
-#include "ops/restoreoperation.h"
-#include "ops/setfilesystemlabeloperation.h"
-#include "ops/setpartflagsoperation.h"
-#include "ops/createfilesystemoperation.h"
-
-#include "util/globallog.h"
-#include "util/capacity.h"
-#include "util/report.h"
-
-#include <kapplication.h>
-#include <kglobalsettings.h>
-#include <kaction.h>
 #include <kstandardaction.h>
 #include <kactioncollection.h>
-#include <klocale.h>
-#include <kmenu.h>
-#include <kmenubar.h>
 #include <ktoolbar.h>
 #include <kstatusbar.h>
-#include <kiconloader.h>
 #include <kmessagebox.h>
-#include <kfiledialog.h>
-#include <kglobal.h>
 #include <kaboutdata.h>
+#include <kcomponentdata.h>
+#include <kstandardguiitem.h>
 
-#include <QLabel>
 #include <QCloseEvent>
-#include <QDateTime>
-#include <QCursor>
-#include <QHeaderView>
+#include <QTimer>
 
 #include <config.h>
-
-#include <unistd.h>
 
 /** Creates a new MainWindow instance.
 	@param parent the parent widget
@@ -184,9 +144,7 @@ void MainWindow::setupStatusBar()
 
 void MainWindow::loadConfig()
 {
-	bool firstRun = Config::firstRun();
-
-	if (firstRun)
+	if (Config::firstRun())
 	{
 		dockLog().setVisible(false);
 		dockInformation().setVisible(false);

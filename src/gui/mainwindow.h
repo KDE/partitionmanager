@@ -25,13 +25,10 @@
 
 #include "ui_mainwindowbase.h"
 
-#include "util/globallog.h"
-
 #include <kxmlguiwindow.h>
 
 class QWidget;
 class QLabel;
-class PartWidget;
 class InfoPane;
 class QCloseEvent;
 class QEvent;
