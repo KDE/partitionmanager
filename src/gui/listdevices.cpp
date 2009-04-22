@@ -43,6 +43,8 @@ ListDevices::ListDevices(QWidget* parent) :
 
 void ListDevices::updateDevices()
 {
+	int idx = listDevices().currentRow();
+
 	listDevices().clear();
 
 	foreach(const Device* d, pmWidget().previewDevices())
@@ -53,6 +55,9 @@ void ListDevices::updateDevices()
 		item->setToolTip(longText);
 		listDevices().addItem(item);
 	}
+
+	if (idx > -1 && idx < listDevices().count())
+		listDevices().setCurrentRow(idx);
 }
 
 void ListDevices::on_m_ListDevices_itemSelectionChanged()
