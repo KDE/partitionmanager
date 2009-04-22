@@ -575,11 +575,11 @@ static bool checkTooManyPartitions(QWidget* parent, const Device& d, const Parti
 	if (p.roles().has(PartitionRole::Unallocated) && d.partitionTable()->numPrimaries() >= d.partitionTable()->maxPrimaries() && !p.roles().has(PartitionRole::Logical))
 	{
 		KMessageBox::sorry(parent, i18ncp("@info",
-						   "<para>There is already 1 primary partition on this device. This is the maximum number its partition table can handle.</para>"
-								   "<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
+			"<para>There is already 1 primary partition on this device. This is the maximum number its partition table can handle.</para>"
+			"<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
 		   "<para>There are already %1 primary partitions on this device. This is the maximum number its partition table can handle.</para>"
-				   "<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
-	   d.partitionTable()->numPrimaries()), i18nc("@title:window", "Too Many Primary Partitions."));
+			"<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
+			d.partitionTable()->numPrimaries()), i18nc("@title:window", "Too Many Primary Partitions."));
 		return true;
 	}
 
@@ -647,11 +647,11 @@ void PartitionManagerWidget::onDeletePartition()
 		if (selectedPartition()->number() > 0 && selectedPartition()->parent()->highestMountedChild() > selectedPartition()->number())
 		{
 			KMessageBox::sorry(this,
-							   i18nc("@info",
-									 "<para>The partition <filename>%1</filename> cannot currently be deleted because one or more partitions with higher logical numbers are still mounted.</para>"
-									 "<para>Please unmount all partitions with higher logical numbers than %2 first.</para>",
-			selectedPartition()->deviceNode(), selectedPartition()->number()),
-							  i18nc("@title:window", "Cannot Delete Partition."));
+				i18nc("@info",
+					"<para>The partition <filename>%1</filename> cannot currently be deleted because one or more partitions with higher logical numbers are still mounted.</para>"
+					"<para>Please unmount all partitions with higher logical numbers than %2 first.</para>",
+				selectedPartition()->deviceNode(), selectedPartition()->number()),
+				i18nc("@title:window", "Cannot Delete Partition."));
 
 			return;
 		}
@@ -807,14 +807,14 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertPartition, qint64
 	{
 		if (overwrite)
 			KMessageBox::error(this, i18nc("@info",
-							   "<para>The selected partition is not large enough to hold the source partition or the backup file.</para>"
-									   "<para>Pick another target or resize this partition so it is as large as the source.</para>"), i18nc("@title:window", "Target Not Large Enough"));
+				"<para>The selected partition is not large enough to hold the source partition or the backup file.</para>"
+				"<para>Pick another target or resize this partition so it is as large as the source.</para>"), i18nc("@title:window", "Target Not Large Enough"));
 		else
 			KMessageBox::sorry(this, i18nc("@info",
-							   "<para>It is not possible to create the target partition large enough to hold the source.</para>"
-									   "<para>This may happen if not all partitions on a device start and end on cylinder boundaries "
-									   "or when copying a primary partition into an extended partition.</para>"),
-			i18nc("@title:window", "Cannot Create Target Partition."));
+				"<para>It is not possible to create the target partition large enough to hold the source.</para>"
+				"<para>This may happen if not all partitions on a device start and end on cylinder boundaries "
+				"or when copying a primary partition into an extended partition.</para>"),
+				i18nc("@title:window", "Cannot Create Target Partition."));
 		return false;
 	}
 
@@ -833,12 +833,12 @@ void PartitionManagerWidget::onCreateNewPartitionTable()
 
 	if (KMessageBox::warningContinueCancel(this,
 		i18nc("@info",
-			  "<para>Do you really want to create a new partition table on the following device?</para>"
-					  "<para><list><item><filename>%1</filename> (%2)</item></list></para>"
-					  "<para><warning>This will destroy all data on the device.</warning></para>", selectedDevice()->deviceNode(), selectedDevice()->name()),
-				i18nc("@title:window", "Destroy All Data on Device?"),
-					  KGuiItem(i18nc("@action:button", "&Create New Partition Table")),
-							   KStandardGuiItem::cancel()) == KMessageBox::Continue)
+			"<para>Do you really want to create a new partition table on the following device?</para>"
+			"<para><list><item><filename>%1</filename> (%2)</item></list></para>"
+			"<para><warning>This will destroy all data on the device.</warning></para>", selectedDevice()->deviceNode(), selectedDevice()->name()),
+			i18nc("@title:window", "Destroy All Data on Device?"),
+			KGuiItem(i18nc("@action:button", "&Create New Partition Table")),
+			KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
 		operationStack().push(new CreatePartitionTableOperation(*selectedDevice()));
 
@@ -853,11 +853,11 @@ void PartitionManagerWidget::onRefreshDevices()
 {
 	if (numPendingOperations() == 0 || KMessageBox::warningContinueCancel(this,
 		i18nc("@info",
-			  "<para>Do you really want to rescan the devices?</para>"
-					  "<para><warning>This will also clear the list of pending operations.</warning></para>"),
-	   i18nc("@title:window", "Really Rescan the Devices?"),
-			 KGuiItem(i18nc("@action:button", "&Rescan Devices")),
-					  KStandardGuiItem::cancel(), "reallyRescanDevices") == KMessageBox::Continue)
+			"<para>Do you really want to rescan the devices?</para>"
+			"<para><warning>This will also clear the list of pending operations.</warning></para>"),
+		i18nc("@title:window", "Really Rescan the Devices?"),
+		KGuiItem(i18nc("@action:button", "&Rescan Devices")),
+		KStandardGuiItem::cancel(), "reallyRescanDevices") == KMessageBox::Continue)
 	{
 		scanDevices();
 	}
@@ -878,9 +878,9 @@ void PartitionManagerWidget::onClearAllOperations()
 {
 	if (KMessageBox::warningContinueCancel(this,
 		i18nc("@info", "Do you really want to clear the list of pending operations?"),
-			  i18nc("@title:window", "Clear Pending Operations?"),
-					KGuiItem(i18nc("@action:button", "&Clear Pending Operations")),
-							 KStandardGuiItem::cancel(), "reallyClearPendingOperations") == KMessageBox::Continue)
+		i18nc("@title:window", "Clear Pending Operations?"),
+		KGuiItem(i18nc("@action:button", "&Clear Pending Operations")),
+		KStandardGuiItem::cancel(), "reallyClearPendingOperations") == KMessageBox::Continue)
 	{
 		log() << i18nc("@info/plain", "Clearing the list of pending operations.");
 		operationStack().clearOperations();
@@ -901,11 +901,11 @@ void PartitionManagerWidget::onApplyAllOperations()
 
 	if (KMessageBox::warningContinueCancelList(this,
 		i18nc("@info",
-			  "<para>Do you really want to apply the pending operations listed below?</para>"
-					  "<para><warning>This will permanently modify your disks.</warning></para>"),
-	   opList, i18nc("@title:window", "Apply Pending Operations?"),
-					 KGuiItem(i18nc("@action:button", "&Apply Pending Operations")),
-							  KStandardGuiItem::cancel()) == KMessageBox::Continue)
+			"<para>Do you really want to apply the pending operations listed below?</para>"
+			"<para><warning>This will permanently modify your disks.</warning></para>"),
+		opList, i18nc("@title:window", "Apply Pending Operations?"),
+		KGuiItem(i18nc("@action:button", "&Apply Pending Operations")),
+		KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
 		log() << i18nc("@info/plain", "Applying operations...");
 
