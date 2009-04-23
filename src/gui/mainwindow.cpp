@@ -33,7 +33,6 @@
 #include <kstandardguiitem.h>
 
 #include <QCloseEvent>
-#include <QTimer>
 
 #include <config.h>
 
@@ -49,7 +48,7 @@ MainWindow::MainWindow(QWidget* parent, KActionCollection* coll) :
 	m_ActionCollection(coll)
 {
 	setupUi(this);
-	QTimer::singleShot(0, this, SLOT(init()));
+	init();
 }
 
 void MainWindow::init()
