@@ -30,6 +30,7 @@
 #include <klocale.h>
 #include <kactioncollection.h>
 #include <ktoolbar.h>
+#include <kapplication.h>
 
 #include <QTimer>
 
@@ -55,7 +56,6 @@ PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
 	registerMetaTypes();
 
 	setButtons(Apply);
-
 	setupConnections();
 
 	listDevices().init(actionCollection(), &pmWidget());
@@ -78,40 +78,26 @@ PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
 		"refreshDevices"
 	};
 
-	for(size_t i = 0; i < sizeof(actionNames) / sizeof(actionNames[0]); i++)
+	for (size_t i = 0; i < sizeof(actionNames) / sizeof(actionNames[0]); i++)
 		if (strlen(actionNames[i]) > 0)
-			toolBar()->addAction(actionCollection()->action(actionNames[i]));
+			toolBar().addAction(actionCollection()->action(actionNames[i]));
 		else
-			toolBar()->addSeparator();
+			toolBar().addSeparator();
 
-	toolBar()->setIconSize(QSize(22, 22));
-	toolBar()->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+	toolBar().setIconSize(QSize(22, 22));
+	toolBar().setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
 	splitterHorizontal().setStretchFactor(0, 1);
 	splitterHorizontal().setStretchFactor(1, 4);
 	splitterVertical().setStretchFactor(0, 1);
 	splitterVertical().setStretchFactor(1, 3);
+
+	setupKCMWorkaround();
 }
 
 void PartitionManagerKCM::onNewLogMessage(log::Level, const QString& s)
 {
 	kDebug() << s;
-}
-
-void PartitionManagerKCM::load()
-{
-	if (pmWidget().numPendingOperations() > 0)
-		actionCollection()->action("clearAllOperations")->trigger();
-
-	QTimer::singleShot(0, this, SLOT(onStatusChanged()));
-}
-
-void PartitionManagerKCM::save()
-{
-	if (pmWidget().numPendingOperations() > 0)
-		actionCollection()->action("applyAllOperations")->trigger();
-
-	QTimer::singleShot(0, this, SLOT(onStatusChanged()));
 }
 
 void PartitionManagerKCM::setupConnections()
@@ -126,3 +112,37 @@ void PartitionManagerKCM::onStatusChanged()
 {
 	emit changed(pmWidget().numPendingOperations() > 0);
 }
+
+void PartitionManagerKCM::setupKCMWorkaround()
+{
+	// The Partition Manager kcm must be run as root, for obvious reasons. system-settings will
+	// open kcms that require root privileges in a separate kcmshell4 process with a window of
+	// its own. This window (a KDialog, actually) has a couple of buttons at the bottom, one of
+	// them an Ok-button. The user will expect to have his changes applied if he clicks that button.
+	// Unfortunately, we cannot do that: The kcmshell will kill us and our OperationRunner thread
+	// without asking us as soon as we return from PartitionManagerKCM::save(). Even worse, we
+	// have no way to find out if PartitionMangerKCM::save() was called because the user clicked
+	// on "Ok" or "Apply" -- if we had that way we could at least do nothing in the case of the
+	// Ok button...
+	// Anyway, there seems to be no other solution than find the KDialog and turn off all buttons we
+	// cannot handle... Nasty, but effective for now.
+	foreach(QWidget* w, KApplication::topLevelWidgets())
+	{
+		KDialog* dlg = qobject_cast<KDialog*>(w);
+		if (dlg != NULL)
+		{
+			dlg->setButtons(KDialog::Cancel|KDialog::Apply);
+			dlg->enableButtonApply(false);
+			connect(dlg, SIGNAL(applyClicked()), SLOT(onApplyClicked()));
+		}
+	}
+}
+
+void PartitionManagerKCM::onApplyClicked()
+{
+	if (pmWidget().numPendingOperations() > 0)
+		actionCollection()->action("applyAllOperations")->trigger();
+
+	QTimer::singleShot(0, this, SLOT(onStatusChanged()));
+}
+

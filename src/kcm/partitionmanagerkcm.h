@@ -43,31 +43,26 @@ class PartitionManagerKCM : public KCModule, public Ui::PartitionManagerKCMBase
 		virtual ~PartitionManagerKCM() {}
 
 	public:
-		void load();
-		void save();
+		void load() {}
+		void save() {}
 
 	protected:
 		void setupConnections();
+		void setupKCMWorkaround();
 
 		PartitionManagerWidget& pmWidget() { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
-		const PartitionManagerWidget& pmWidget() const { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
-
 		ListDevices& listDevices() { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
-		const ListDevices& listDevices() const { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
-
 		ListOperations& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
-		const ListOperations& listOperations() const { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
-
 		QSplitter& splitterHorizontal() { Q_ASSERT(m_SplitterHorizontal); return *m_SplitterHorizontal; }
 		QSplitter& splitterVertical() { Q_ASSERT(m_SplitterVertical); return *m_SplitterVertical; }
+		KToolBar& toolBar() { Q_ASSERT(m_ToolBar); return *m_ToolBar; }
 
 		KActionCollection* actionCollection() { return m_ActionCollection; }
-
-		KToolBar* toolBar() { return m_ToolBar; }
 
 	protected slots:
 		void onNewLogMessage(log::Level logLevel, const QString& s);
 		void onStatusChanged();
+		void onApplyClicked();
 
 	private:
 		KActionCollection* m_ActionCollection;
@@ -75,4 +70,3 @@ class PartitionManagerKCM : public KCModule, public Ui::PartitionManagerKCMBase
 
 
 #endif
-
