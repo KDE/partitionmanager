@@ -22,10 +22,8 @@
 #define PARTITIONMANAGERPART__H
 
 #include <kparts/part.h>
-#include <kdebug.h>
 
 class KAboutData;
-class MainWindow;
 
 class PartitionManagerPart : public KParts::ReadOnlyPart
 {
@@ -33,17 +31,12 @@ class PartitionManagerPart : public KParts::ReadOnlyPart
 
 	public:
 		PartitionManagerPart(QWidget* parentWidget, QObject* parent, const QVariantList& args);
-	
+
 	public:
 		static KAboutData* createAboutData();
-		MainWindow& mainWindow() { Q_ASSERT(m_MainWindow != NULL); return *m_MainWindow; }
-		
+
 	protected:
 	    virtual bool openFile() { return false; }
-		void setMainWindow(MainWindow* m) { m_MainWindow = m; }
-
-	private:
-		MainWindow* m_MainWindow;
 };
 
 #endif

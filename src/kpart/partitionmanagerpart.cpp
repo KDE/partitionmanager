@@ -29,19 +29,16 @@ K_PLUGIN_FACTORY(PartitionManagerPartFactory, registerPlugin<PartitionManagerPar
 K_EXPORT_PLUGIN(PartitionManagerPartFactory("partitionmanagerpart", "partitionmanager"))
 
 PartitionManagerPart::PartitionManagerPart(QWidget*, QObject* parent, const QVariantList&) :
-	KParts::ReadOnlyPart(parent),
-	m_MainWindow(NULL)
+	KParts::ReadOnlyPart(parent)
 {
 	setComponentData(PartitionManagerPartFactory::componentData(), false);
-	
+
 	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427
 	unblockSigChild();
-	
+
 	registerMetaTypes();
 
-	setMainWindow(new MainWindow(NULL, actionCollection()));
-	setWidget(&mainWindow());
-	
+	setWidget(new MainWindow(NULL, actionCollection()));
 	setXMLFile("partitionmanagerpart.rc");
 }
 
