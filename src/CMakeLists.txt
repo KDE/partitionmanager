@@ -95,6 +95,7 @@ if(PARTMAN_KCM)
 	kde4_add_plugin(kcm_partitionmanager ${partitionmanagerkcm_SRCS})
 
 	target_link_libraries(kcm_partitionmanager
+		${KDE4_KUTILS_LIBS}
 		${KDE4_KDEUI_LIBS}
 		partitionmanagerprivate
 	)

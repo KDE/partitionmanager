@@ -31,6 +31,7 @@
 #include <kactioncollection.h>
 #include <ktoolbar.h>
 #include <kapplication.h>
+#include <kcmultidialog.h>
 
 #include <QTimer>
 
@@ -128,7 +129,7 @@ void PartitionManagerKCM::setupKCMWorkaround()
 	// cannot handle... Nasty, but effective for now.
 	foreach(QWidget* w, KApplication::topLevelWidgets())
 	{
-		KDialog* dlg = qobject_cast<KDialog*>(w);
+		KCMultiDialog* dlg = qobject_cast<KCMultiDialog*>(w);
 		if (dlg != NULL)
 		{
 			dlg->setButtons(KDialog::Cancel|KDialog::Apply);
