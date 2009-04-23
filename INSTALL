@@ -15,8 +15,7 @@ install your distribution's packages (again, don't forget the dev-package).
 
 libblkid: Also part of e2fsprogs. See libuuid.
 
-KDE4: KDE 4.0 will not work. The minimum required version is 4.1.0. To build the
-documentation, you need 4.1.4 or 4.2.0.
+KDE4: KDE 4.0 or 4.1 will not work. The minimum required version is 4.2.0.
 
 
 2. Configure
@@ -25,8 +24,8 @@ KDE Partition Manager is built with cmake, like most of KDE4 today. It is
 recommended to build out of tree: After unpacking the source, create a separate
 build directory and run cmake there:
 
-$ tar xfj partitionmanager-1.0.0-BETA1.tar.bz2
-$ cd partitionmanager-1.0.0-BETA1
+$ tar xfj partitionmanager-1.0.0-BETA2.tar.bz2
+$ cd partitionmanager-1.0.0-BETA2
 $ mkdir build
 $ cd build
 $ cmake ..

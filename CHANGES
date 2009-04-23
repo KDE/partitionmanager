@@ -1,3 +1,27 @@
+1.0.0-BETA2
+===========
+
+* Add an application icon contributed by David Miller.
+
+* Allow setting the file system label in the dialog when creating a new partition.
+
+* Add a context menu to operation list.
+
+* Use a shell script to run partition manager as a child of hal-lock. This
+  should in theory (and according to the hal-lock manpage) avoid notifications
+  for new devices, but doesn't seem to work that well.
+
+* Fix a bug that would keep the user from deleting a newly created logical
+  partition because the application thought there were higher-numbered
+  partitions still mounted.
+
+* Add a kcm for KDE Partition Manager. If this is built and installed or not
+  can be (like it already is the case with the KPart) configured via cmake.
+
+* Require KDE 4.2. (It will still work with KDE 4.1 but you'll have to hack the
+  build yourself to make it work).
+
+
 1.0.0-BETA1
 ===========
 
