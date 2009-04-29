@@ -49,9 +49,7 @@ kde4_add_executable(partitionmanager-bin ${partitionmanager-bin_SRCS})
 target_link_libraries(partitionmanager-bin partitionmanagerprivate)
 
 if(UNIX)
-	add_custom_target(partitionmanager ALL
-		COMMAND sed -e 's,@INSTALL_PATH@,${BIN_INSTALL_DIR},g' < ${CMAKE_CURRENT_SOURCE_DIR}/partitionmanager.in > ${CMAKE_CURRENT_BINARY_DIR}/partitionmanager
-	)
+	configure_file(partitionmanager.in ${CMAKE_CURRENT_BINARY_DIR}/partitionmanager.in  @ONLY)
 	install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/partitionmanager DESTINATION ${BIN_INSTALL_DIR})
 endif(UNIX)
 install(TARGETS partitionmanager-bin ${INSTALL_TARGETS_DEFAULT_ARGS})
