@@ -18,9 +18,6 @@
 * Add a kcm for KDE Partition Manager. If this is built and installed or not
   can be (like it already is the case with the KPart) configured via cmake.
 
-* Require KDE 4.2. (It will still work with KDE 4.1 but you'll have to hack the
-  build yourself to make it work).
-
 
 1.0.0-BETA1
 ===========
