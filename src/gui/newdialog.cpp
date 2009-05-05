@@ -67,6 +67,8 @@ void NewDialog::setupDialog()
 
 	qSort(fsNames);
 	dialogWidget().comboFileSystem().addItems(fsNames);
+	QString selected = FileSystem::nameForType(FileSystem::defaultFileSystem());
+	dialogWidget().comboFileSystem().setCurrentIndex(dialogWidget().comboFileSystem().findText(selected));
 
 	dialogWidget().radioPrimary().setVisible(partitionRoles() & PartitionRole::Primary);
 	dialogWidget().radioExtended().setVisible(partitionRoles() & PartitionRole::Extended);
