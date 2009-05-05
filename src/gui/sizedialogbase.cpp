@@ -123,6 +123,7 @@ void SizeDialogBase::onSectorsBeforeChanged(qint64 newBefore)
 	dialogWidget().spinFreeBefore().disconnect(this);
 	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), preferredUnit(), newBefore));
 	connect(&dialogWidget().spinFreeBefore(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceBeforeChanged(int)));
+	setFreeSectorsBefore(newBefore);
 	setDirty();
 }
 
@@ -131,6 +132,7 @@ void SizeDialogBase::onSectorsAfterChanged(qint64 newAfter)
 	dialogWidget().spinFreeAfter().disconnect(this);
 	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), preferredUnit(), newAfter));
 	connect(&dialogWidget().spinFreeAfter(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceAfterChanged(int)));
+	setFreeSectorsAfter(newAfter);
 	setDirty();
 }
 

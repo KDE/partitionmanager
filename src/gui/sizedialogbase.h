@@ -78,6 +78,10 @@ class SizeDialogBase : public KDialog
 	public:
 		Capacity::Unit preferredUnit() const { return m_PreferredUnit; } /**< @return the preferred unit for a dialog */
 
+	private:
+		void setFreeSectorsBefore(qint64 newBefore) { m_FreeSectorsBefore = newBefore; }
+		void setFreeSectorsAfter(qint64 newAfter) { m_FreeSectorsAfter = newAfter; }
+
 	protected:
 		SizeDialogWidget* m_SizeDialogWidget;
 		Capacity::Unit m_PreferredUnit;
