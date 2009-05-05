@@ -169,13 +169,13 @@ qint64 Partition::sectorsUsed() const
 /** @return the minimum number of sectors this Partition must be long */
 qint64 Partition::minimumSectors() const
 {
-	 return fileSystem().minCapacity() / sectorSize();
+	return fileSystem().minCapacity() / sectorSize();
 }
 
 /** @return the maximum number of sectors this Partition may be long */
 qint64 Partition::maximumSectors() const
 {
-	 return fileSystem().maxCapacity() / sectorSize();
+	return fileSystem().maxCapacity() / sectorSize();
 }
 
 /** Adjusts the numbers of logical Partitions for an extended Partition.
