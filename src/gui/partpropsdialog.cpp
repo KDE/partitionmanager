@@ -24,7 +24,9 @@
 #include "core/device.h"
 
 #include "fs/filesystemfactory.h"
+
 #include "util/capacity.h"
+#include "util/helpers.h"
 
 #include <kmessagebox.h>
 #include <kdebug.h>
@@ -279,7 +281,7 @@ void PartPropsDialog::setupFileSystemComboBox()
 			fsNames.append(name);
 		}
 
-	qSort(fsNames);
+	qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
 	dialogWidget().fileSystem().addItems(fsNames);
 	dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));

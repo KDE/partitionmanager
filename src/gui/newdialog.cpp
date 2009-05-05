@@ -27,6 +27,7 @@
 #include "fs/filesystemfactory.h"
 
 #include "util/capacity.h"
+#include "util/helpers.h"
 
 #include <kdebug.h>
 
@@ -65,7 +66,7 @@ void NewDialog::setupDialog()
 		if (fs->supportCreate() != FileSystem::SupportNone && fs->type() != FileSystem::Extended)
 			fsNames.append(fs->name());
 
-	qSort(fsNames);
+	qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 	dialogWidget().comboFileSystem().addItems(fsNames);
 	QString selected = FileSystem::nameForType(FileSystem::defaultFileSystem());
 	dialogWidget().comboFileSystem().setCurrentIndex(dialogWidget().comboFileSystem().findText(selected));

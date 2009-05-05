@@ -73,10 +73,14 @@ KAboutData* createPartitionManagerAboutData()
 		KAboutData::License_GPL,
 		ki18nc("@info:credit", "(c) 2008, 2009 Volker Lanz")
 	);
-	
+
 	about->addAuthor(ki18nc("@info:credit", "Volker Lanz"), KLocalizedString(), "vl@fidra.de");
 	about->setHomepage("http://www.partitionmanager.org");
 
 	return about;
 }
 
+bool caseInsensitiveLessThan(const QString& s1, const QString& s2)
+{
+	return s1.toLower() < s2.toLower();
+}
