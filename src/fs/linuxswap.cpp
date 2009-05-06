@@ -32,7 +32,7 @@ namespace FS
 	FileSystem::SupportType linuxswap::m_Copy = FileSystem::SupportNone;
 	FileSystem::SupportType linuxswap::m_GetLabel = FileSystem::SupportNone;
 	FileSystem::SupportType linuxswap::m_SetLabel = FileSystem::SupportNone;
-	
+
 	linuxswap::linuxswap(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::LinuxSwap)
 	{
@@ -53,9 +53,16 @@ namespace FS
 
 	bool linuxswap::resize(Report& report, const QString& deviceNode, qint64) const
 	{
-		return create(report, deviceNode);
+		const QString label = readLabel(deviceNode);
+
+		QStringList args;
+		if (!label.isEmpty())
+			args << "-L" << label;
+		args << deviceNode;
+
+		return ExternalCommand(report, "mkswap", args).run(-1);
 	}
-	
+
 	QString linuxswap::readLabel(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("vol_id", QStringList() << deviceNode);
@@ -67,10 +74,10 @@ namespace FS
 			if (rxLabel.indexIn(cmd.output()) != -1)
 				return rxLabel.cap(1).simplified();
 		}
-		
+
 		return QString();
 	}
-	
+
 	bool linuxswap::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
 		return ExternalCommand(report, "mkswap", QStringList() << "-L" << newLabel << deviceNode).run(-1);
