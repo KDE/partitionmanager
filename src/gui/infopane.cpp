@@ -85,6 +85,7 @@ void InfoPane::createLabels(const QString& title, const QString& value, int y)
 	gridLayout().addWidget(labelTitle, y, 0, 1, 1);
 
 	QLabel* labelValue = new QLabel(value, this);
+	labelValue->setTextInteractionFlags(Qt::TextBrowserInteraction);
 	labelValue->setFont(KGlobalSettings::smallestReadableFont());
 	gridLayout().addWidget(labelValue, y, 1, 1, 1);
 }
