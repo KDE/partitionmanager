@@ -63,7 +63,7 @@ static PedExceptionOption pedExceptionHandler(PedException* e)
 */
 static QString findUuidDevice(const QString& s)
 {
-	const QString filename = "/dev/disk/by-uuid/" + QString(s).remove("UUID=", Qt::CaseInsensitive);
+	const QString filename = "/dev/disk/by-uuid/" + QString(s).remove("UUID=");
 	return QFile::exists(filename) ? QFile::symLinkTarget(filename) : "";
 }
 
@@ -73,7 +73,7 @@ static QString findUuidDevice(const QString& s)
  */
 static QString findLabelDevice(const QString& s)
 {
-	const QString filename = "/dev/disk/by-label/" + QString(s).remove("LABEL=", Qt::CaseInsensitive);
+	const QString filename = "/dev/disk/by-label/" + QString(s).remove("LABEL=");
 	return QFile::exists(filename) ? QFile::symLinkTarget(filename) : "";
 }
 
@@ -94,10 +94,10 @@ static void readMountpoints(const QString& filename, QMap<QString, QStringList>&
 	{
 		QString device = p->mnt_fsname;
 
-		if (device.startsWith("UUID=", Qt::CaseInsensitive))
+		if (device.startsWith("UUID="))
 			device = findUuidDevice(device);
 
-		if (device.startsWith("LABEL=", Qt::CaseInsensitive))
+		if (device.startsWith("LABEL="))
 			device = findLabelDevice(device);
 
 		if (!device.isEmpty())
