@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -29,6 +29,7 @@
 #include "util/report.h"
 
 #include <QIcon>
+#include <QTime>
 
 #include <kdebug.h>
 #include <klocale.h>
@@ -130,7 +131,7 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 	}
 
 	bool rval = true;
-	const qint64 blockSize = 16065; // number of sectors per block to copy
+	const qint64 blockSize = 16065 * 8; // number of sectors per block to copy
 	const qint64 blocksToCopy = source.length() / blockSize;
 
 	qint64 readOffset = source.firstSector();
@@ -150,6 +151,8 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 
 	void* buffer = malloc(blockSize * source.sectorSize());
 	int percent = 0;
+	QTime t;
+	t.start();
 
 	while (blocksCopied < blocksToCopy)
 	{
@@ -162,6 +165,13 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 		if (++blocksCopied * 100 / blocksToCopy != percent)
 		{
 			percent = blocksCopied * 100 / blocksToCopy;
+
+			if (percent % 5 == 0 && t.elapsed() > 1000)
+			{
+				const qint64 mibsPerSec = (blocksCopied * blockSize * source.sectorSize() / 1024 / 1024) / (t.elapsed() / 1000);
+				const qint64 estSecsLeft = (100 - percent) * t.elapsed() / percent / 1000;
+				report.line() << i18nc("@info/plain", "Copying %1 MiB/second, estimated time left: %2", mibsPerSec, QTime(0, 0).addSecs(estSecsLeft).toString());
+			}
  			emit progress(percent);
 		}
 	}
@@ -192,7 +202,7 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 
 	free(buffer);
 
- 	report.line() << i18ncp("@info/plain, argument 2 is a string such as 7 sectors (localalized accordingly)", "Copying 1 block (%2) finished.", "Copying %1 blocks (%2) finished.", blocksCopied, i18np("1 sector", "%1 sectors", target.sectorsWritten()));
+ 	report.line() << i18ncp("@info/plain, argument 2 is a string such as 7 sectors (localized accordingly)", "Copying 1 block (%2) finished.", "Copying %1 blocks (%2) finished.", blocksCopied, i18np("1 sector", "%1 sectors", target.sectorsWritten()));
 
 	return rval;
 }
