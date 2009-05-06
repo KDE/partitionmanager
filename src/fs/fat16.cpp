@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -42,7 +42,7 @@ namespace FS
 	FileSystem::SupportType fat16::m_Copy = FileSystem::SupportNone;
 	FileSystem::SupportType fat16::m_Backup = FileSystem::SupportNone;
 	FileSystem::SupportType fat16::m_UpdateUUID = FileSystem::SupportNone;
-
+	FileSystem::SupportType fat16::m_GetUUID = FileSystem::SupportNone;
 
 	fat16::fat16(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t) :
 		FileSystem(firstsector, lastsector, sectorsused, label, t)
@@ -65,6 +65,7 @@ namespace FS
 		m_Copy = SupportInternal;
 		m_Backup = SupportInternal;
 		m_UpdateUUID = findExternal("dd") ? SupportExternal : SupportNone;
+		m_GetUUID = findExternal("vol_id") ? SupportExternal : SupportNone;
 	}
 
 	qint64 fat16::minCapacity() const

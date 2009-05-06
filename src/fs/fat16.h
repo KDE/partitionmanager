@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -58,6 +58,7 @@ namespace FS
 			virtual SupportType supportCopy() const { return m_Copy; }
 			virtual SupportType supportBackup() const { return m_Backup; }
 			virtual SupportType supportUpdateUUID() const { return m_UpdateUUID; }
+			virtual SupportType supportGetUUID() const { return m_GetUUID; }
 
 			virtual qint64 minCapacity() const;
 			virtual qint64 maxCapacity() const;
@@ -73,6 +74,7 @@ namespace FS
 			static SupportType m_Copy;
 			static SupportType m_Backup;
 			static SupportType m_UpdateUUID;
+			static SupportType m_GetUUID;
 	};
 }
 

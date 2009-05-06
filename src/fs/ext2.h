@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -49,7 +49,7 @@ namespace FS
 			virtual bool resize(Report& report, const QString& deviceNode, qint64 length) const;
 			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
 			virtual bool updateUUID(Report& report, const QString& deviceNode) const;
-			
+
 			virtual SupportType supportGetUsed() const { return m_GetUsed; }
 			virtual SupportType supportGetLabel() const { return m_GetLabel; }
 			virtual SupportType supportCreate() const { return m_Create; }
@@ -61,9 +61,10 @@ namespace FS
 			virtual SupportType supportBackup() const { return m_Backup; }
 			virtual SupportType supportSetLabel() const { return m_SetLabel; }
 			virtual SupportType supportUpdateUUID() const { return m_UpdateUUID; }
+			virtual SupportType supportGetUUID() const { return m_GetUUID; }
 
 			virtual qint64 maxCapacity() const;
-			
+
 		protected:
 			static SupportType m_GetUsed;
 			static SupportType m_GetLabel;
@@ -76,6 +77,7 @@ namespace FS
 			static SupportType m_Backup;
 			static SupportType m_SetLabel;
 			static SupportType m_UpdateUUID;
+			static SupportType m_GetUUID;
 	};
 }
 

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -92,6 +92,7 @@ class FileSystem
 		virtual bool backup(Report& report, const Device& sourceDevice, const QString& deviceNode, const QString& filename) const;
 		virtual bool check(Report& report, const QString& deviceNode) const;
 		virtual bool updateUUID(Report& report, const QString& deviceNode) const;
+		virtual QString readUUID(const QString& deviceNode) const;
 
 		virtual SupportType supportGetUsed() const { return SupportNone; } /**< @return SupportType for getting used capacity */
 		virtual SupportType supportGetLabel() const { return SupportNone; } /**< @return SupportType for reading label*/
@@ -104,6 +105,7 @@ class FileSystem
 		virtual SupportType supportBackup() const { return SupportNone; } /**< @return SupportType for backing up */
 		virtual SupportType supportSetLabel() const { return SupportNone; } /**< @return SupportType for setting label*/
 		virtual SupportType supportUpdateUUID() const { return SupportNone; } /**< @return SupportType for updating the UUID */
+		virtual SupportType supportGetUUID() const { return SupportNone; } /**< @return SupportType for reading the UUID */
 
 		virtual qint64 minCapacity() const;
 		virtual qint64 maxCapacity() const;
@@ -136,9 +138,11 @@ class FileSystem
 
 		const QString& label() const { return m_Label; } /**< @return the FileSystem's label */
 		qint64 sectorsUsed() const { return m_SectorsUsed; } /**< @return the sectors in use on the FileSystem */
+		const QString& uuid() const { return m_UUID; } /**< @return the FileSystem's UUID */
 
 		void setSectorsUsed(qint64 s) { m_SectorsUsed = s; } /**< @param s the new value for sectors in use */
 		void setLabel(const QString& s) { m_Label = s; } /**< @param s the new label */
+		void setUUID(const QString& s) { m_UUID = s; } /**< @param s the new UUID */
 
 	protected:
 		static bool findExternal(const QString& cmdName, const QStringList& args = QStringList(), int exptectedCode = 1);
@@ -149,6 +153,7 @@ class FileSystem
 		qint64 m_LastSector;
 		qint64 m_SectorsUsed;
 		QString m_Label;
+		QString m_UUID;
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(FileSystem::SupportTypes)

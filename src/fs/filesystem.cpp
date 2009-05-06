@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -37,7 +37,8 @@ FileSystem::FileSystem(qint64 firstsector, qint64 lastsector, qint64 sectorsused
 	m_FirstSector(firstsector),
 	m_LastSector(lastsector),
 	m_SectorsUsed(sectorsused),
-	m_Label(l)
+	m_Label(l),
+	m_UUID()
 {
 }
 
@@ -162,6 +163,26 @@ bool FileSystem::updateUUID(Report& report, const QString& deviceNode) const
 	Q_UNUSED(deviceNode);
 
 	return true;
+}
+
+/** Returns the FileSystem UUID (or an empty string, if not supported).
+	@param deviceNode the device node for the Partition the FileSystem is on
+	@return the UUID or an empty string if the FileSystem does not support UUIDs
+ */
+QString FileSystem::readUUID(const QString& deviceNode) const
+{
+	ExternalCommand cmd("vol_id", QStringList() << deviceNode);
+
+	if (cmd.run())
+	{
+		QRegExp rxUuid("ID_FS_UUID=([^\\s]+)");
+
+		if (rxUuid.indexIn(cmd.output()) != -1)
+			return rxUuid.cap(1).simplified();
+	}
+
+	return QString();
+
 }
 
 /** @return the minimum capacity valid for this FileSystem in bytes */

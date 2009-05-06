@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -41,6 +41,7 @@ namespace FS
 	FileSystem::SupportType ntfs::m_Backup = FileSystem::SupportNone;
 	FileSystem::SupportType ntfs::m_SetLabel = FileSystem::SupportNone;
 	FileSystem::SupportType ntfs::m_UpdateUUID = FileSystem::SupportNone;
+	FileSystem::SupportType ntfs::m_GetUUID = FileSystem::SupportNone;
 
 	ntfs::ntfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Ntfs)
@@ -56,13 +57,14 @@ namespace FS
 		m_Backup = SupportInternal;
 		m_UpdateUUID = findExternal("dd") ? SupportExternal : SupportNone;
 		m_Move = (m_Check != SupportNone) ? SupportInternal : SupportNone;
+		m_GetUUID = findExternal("vol_id") ? SupportExternal : SupportNone;
 	}
 
 	qint64 ntfs::maxCapacity() const
 	{
 		return 256 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
 	}
-	
+
 	qint64 ntfs::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("ntfsresize", QStringList() << "--info" << "--force" << "--no-progress-bar" << deviceNode);
@@ -103,10 +105,10 @@ namespace FS
 
 		ExternalCommand testCmd("ntfslabel", QStringList() << "--force" << deviceNode);
 		testCmd.setProcessChannelMode(QProcess::SeparateChannels);
-		
+
 		if (!testCmd.run(-1))
 			return false;
-		
+
 		return testCmd.output().simplified() == newLabel.simplified();
 	}
 
@@ -132,7 +134,7 @@ namespace FS
 	{
 		QStringList args;
 		args << "-P" << "-f" << deviceNode << "-s" << QString::number(length);
-		
+
 		QStringList dryRunArgs = args;
 		dryRunArgs << "-n";
 		ExternalCommand cmdDryRun("ntfsresize", dryRunArgs);
@@ -142,7 +144,7 @@ namespace FS
 			ExternalCommand cmd(report, "ntfsresize", args);
 			return cmd.run(-1) && cmd.exitCode() == 0;
 		}
-		
+
 		return false;
 	}
 
@@ -150,7 +152,7 @@ namespace FS
 	{
 		char uuid[16];
 		uuid_generate(reinterpret_cast<unsigned char*>(uuid));
-		
+
 		ExternalCommand cmd(report, "dd", QStringList() << "of=" + deviceNode << "bs=1" << "count=8" << "seek=72");
 
 		if (!cmd.start())
@@ -158,7 +160,7 @@ namespace FS
 
 		if (cmd.write(uuid, 8) != 8)
 			return false;
-		
+
 		return cmd.waitFor(-1);
 	}
 }

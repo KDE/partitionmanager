@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -38,6 +38,7 @@ namespace FS
 	FileSystem::SupportType ext2::m_Backup = FileSystem::SupportNone;
 	FileSystem::SupportType ext2::m_SetLabel = FileSystem::SupportNone;
 	FileSystem::SupportType ext2::m_UpdateUUID = FileSystem::SupportNone;
+	FileSystem::SupportType ext2::m_GetUUID = FileSystem::SupportNone;
 
 	ext2::ext2(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t) :
 		FileSystem(firstsector, lastsector, sectorsused, label, t)
@@ -56,6 +57,7 @@ namespace FS
 		m_Copy = (m_Check != SupportNone) ? SupportInternal : SupportNone;
 		m_Move = (m_Check != SupportNone) ? SupportInternal : SupportNone;
 		m_Backup = SupportInternal;
+		m_GetUUID = findExternal("vol_id") ? SupportExternal : SupportNone;
 	}
 
 	qint64 ext2::maxCapacity() const

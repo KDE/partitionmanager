@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -41,6 +41,7 @@ namespace FS
 	FileSystem::SupportType reiserfs::m_Backup = FileSystem::SupportNone;
 	FileSystem::SupportType reiserfs::m_SetLabel = FileSystem::SupportNone;
 	FileSystem::SupportType reiserfs::m_UpdateUUID = FileSystem::SupportNone;
+	FileSystem::SupportType reiserfs::m_GetUUID = FileSystem::SupportNone;
 
 	reiserfs::reiserfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::ReiserFS)
@@ -58,6 +59,7 @@ namespace FS
 		m_Shrink = (m_GetUsed != SupportNone && m_Grow != SupportNone) ? SupportExternal : SupportNone;
 		m_Backup = SupportInternal;
 		m_UpdateUUID = findExternal("reiserfstune") ? SupportExternal : SupportNone;
+		m_GetUUID = findExternal("vol_id") ? SupportExternal : SupportNone;
 	}
 
 	qint64 reiserfs::minCapacity() const
@@ -69,7 +71,7 @@ namespace FS
 	{
 		return 16 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
 	}
-	
+
 	qint64 reiserfs::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("debugreiserfs", QStringList() << deviceNode);
@@ -81,7 +83,7 @@ namespace FS
 
 			if (rxBlockCount.indexIn(cmd.output()) != -1)
 				blockCount = rxBlockCount.cap(1).toLongLong();
-			
+
 			qint64 blockSize = -1;
 			QRegExp rxBlockSize("Blocksize: (\\d+)");
 
@@ -131,19 +133,19 @@ namespace FS
 	{
 		return ExternalCommand(report, "mkfs.reiserfs", QStringList() << "-f" << deviceNode).run(-1);
 	}
-	
+
 	bool reiserfs::resize(Report& report, const QString& deviceNode, qint64 length) const
 	{
 		ExternalCommand cmd(report, "resize_reiserfs", QStringList() << deviceNode << "-q" << "-s" << QString::number(length));
-		
+
 		bool rval = cmd.start(-1);
-		
+
 		if (!rval)
 			return false;
 
 		if (cmd.write("y\n", 2) != 2)
 			return false;
-		
+
 		return cmd.waitFor(-1) && (cmd.exitCode() == 0 || cmd.exitCode() == 256);
 	}
 
@@ -153,7 +155,7 @@ namespace FS
 		uuid_generate(uuid);
 		char uuid_ascii[37];
 		uuid_unparse(uuid, uuid_ascii);
-		
+
 		return ExternalCommand(report, "reiserfstune", QStringList() << "-u" << uuid_ascii << deviceNode).run(-1);
 	}
 }

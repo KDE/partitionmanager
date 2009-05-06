@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -37,7 +37,7 @@ class PartPropsWidget : public QWidget, public Ui::PartPropsWidgetBase
 		QLabel& mountPoint() { Q_ASSERT(m_LabelMountPoint); return *m_LabelMountPoint; }
 		QLabel& role() { Q_ASSERT(m_LabelRole); return *m_LabelRole; }
 		QLabel& capacity() { Q_ASSERT(m_LabelCapacity); return *m_LabelCapacity; }
-		
+
 		QLabel& textAvailable() { Q_ASSERT(m_LabelTextAvailable); return *m_LabelTextAvailable; }
 		QLabel& available() { Q_ASSERT(m_LabelAvailable); return *m_LabelAvailable; }
 
@@ -55,6 +55,9 @@ class PartPropsWidget : public QWidget, public Ui::PartPropsWidgetBase
 		QLabel& numSectors() { Q_ASSERT(m_LabelNumSectors); return *m_LabelNumSectors; }
 		QLabel& status() { Q_ASSERT(m_LabelStatus); return *m_LabelStatus; }
 
+		QLabel& textUuid() { Q_ASSERT(m_LabelTextUuid); return *m_LabelTextUuid; }
+		QLabel& uuid() { Q_ASSERT(m_LabelUuid); return *m_LabelUuid; }
+
 		QLabel& textLabel() { Q_ASSERT(m_LabelTextLabel); return *m_LabelTextLabel; }
 		KLineEdit& label() { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
 		const KLineEdit& label() const { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
@@ -71,6 +74,7 @@ class PartPropsWidget : public QWidget, public Ui::PartPropsWidgetBase
 		void showCheckRecreate(bool b) { checkRecreate().setVisible(b); }
 		void showListFlags(bool b) { listFlags().setVisible(b); textFlags().setVisible(b); lineFlags().setVisible(b); }
 		void showLabel(bool b) { textLabel().setVisible(b); label().setVisible(b); }
+		void showUuid(bool b) { textUuid().setVisible(b); uuid().setVisible(b); }
 };
 
 #endif

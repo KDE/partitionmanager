@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -32,6 +32,7 @@ namespace FS
 	FileSystem::SupportType linuxswap::m_Copy = FileSystem::SupportNone;
 	FileSystem::SupportType linuxswap::m_GetLabel = FileSystem::SupportNone;
 	FileSystem::SupportType linuxswap::m_SetLabel = FileSystem::SupportNone;
+	FileSystem::SupportType linuxswap::m_GetUUID = FileSystem::SupportNone;
 
 	linuxswap::linuxswap(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::LinuxSwap)
@@ -44,6 +45,7 @@ namespace FS
 		m_GetLabel = findExternal("vol_id") ? SupportExternal : SupportNone;
 		m_Copy = SupportInternal;
 		m_Move = SupportInternal;
+		m_GetUUID = findExternal("vol_id") ? SupportExternal : SupportNone;
 	}
 
 	bool linuxswap::create(Report& report, const QString& deviceNode) const

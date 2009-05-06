@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -54,9 +54,9 @@ qint32 CopyFileSystemJob::numSteps() const
 bool CopyFileSystemJob::run(Report& parent)
 {
 	bool rval = false;
-	
+
 	Report* report = jobStarted(parent);
-	
+
 	if (targetPartition().fileSystem().length() < sourcePartition().fileSystem().length())
 		report->line() << i18nc("@info/plain", "Cannot copy file system: File system on target partition <filename>%1</filename> is smaller than the file system on source partition <filename>%2</filename>.", targetPartition().deviceNode(), sourcePartition().deviceNode());
 	else if (sourcePartition().fileSystem().supportCopy() == FileSystem::SupportExternal)
@@ -65,7 +65,7 @@ bool CopyFileSystemJob::run(Report& parent)
 	{
 		CopySourceDevice copySource(sourceDevice(), sourcePartition().fileSystem().firstSector(), sourcePartition().fileSystem().lastSector());
 		CopyTargetDevice copyTarget(targetDevice(), targetPartition().fileSystem().firstSector(), targetPartition().fileSystem().lastSector());
-		
+
 		if (!copySource.open())
 			report->line() << i18nc("@info/plain", "Could not open file system on source partition <filename>%1</filename> for copying.", sourcePartition().deviceNode());
 		else if (!copyTarget.open())
@@ -81,14 +81,17 @@ bool CopyFileSystemJob::run(Report& parent)
 	{
 		// set the target file system to the length of the source
 		const qint64 newLastSector = targetPartition().fileSystem().firstSector() + sourcePartition().fileSystem().length() - 1;
-		
+
 		targetPartition().fileSystem().setLastSector(newLastSector);
-		
+
 		// and set a new UUID, if the target filesystem supports UUIDs
 		if (targetPartition().fileSystem().supportUpdateUUID() == FileSystem::SupportExternal)
+		{
 			targetPartition().fileSystem().updateUUID(*report, targetPartition().deviceNode());
+			targetPartition().fileSystem().setUUID(targetPartition().fileSystem().readUUID(targetPartition().deviceNode()));
+		}
 	}
-	
+
 	jobFinished(*report, rval);
 
 	return rval;

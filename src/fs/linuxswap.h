@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -49,10 +49,10 @@ namespace FS
 
 			virtual bool canMount(const QString&) const { return true; }
 			virtual bool canUnmount(const QString&) const { return true; }
-			
+
 			virtual bool mount(const QString& deviceNode);
 			virtual bool unmount(const QString& deviceNode);
-			
+
 			virtual QString mountTitle() const;
 			virtual QString unmountTitle() const;
 
@@ -63,7 +63,8 @@ namespace FS
 			virtual SupportType supportCopy() const { return m_Copy; }
 			virtual SupportType supportGetLabel() const { return m_GetLabel; }
 			virtual SupportType supportSetLabel() const { return m_SetLabel; }
-			
+			virtual SupportType supportGetUUID() const { return m_GetUUID; }
+
 		protected:
 			static SupportType m_Create;
 			static SupportType m_Grow;
@@ -72,6 +73,7 @@ namespace FS
 			static SupportType m_Copy;
 			static SupportType m_SetLabel;
 			static SupportType m_GetLabel;
+			static SupportType m_GetUUID;
 	};
 }
 

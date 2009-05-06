@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -116,6 +116,8 @@ void PartPropsDialog::setupDialog()
 	}
 
 	dialogWidget().status().setText(statusText);
+	dialogWidget().uuid().setText(partition().fileSystem().uuid().isEmpty() ? i18nc("@item uuid", "(none)") : partition().fileSystem().uuid());
+
 	setupFileSystemComboBox();
 
 	 // don't do this before the file system combo box has been set up!
@@ -164,7 +166,7 @@ void PartPropsDialog::setupFlagsList()
 
 void PartPropsDialog::updateHideAndShow()
 {
-	// create a temporary fs just to check if the currently selected type supports setting a label
+	// create a temporary fs for some checks
 	const FileSystem* fs = FileSystemFactory::create(newFileSystemType(), -1, -1, -1, "");
 
 	if (fs == NULL || fs->supportSetLabel() == FileSystem::SupportNone)
@@ -184,6 +186,13 @@ void PartPropsDialog::updateHideAndShow()
 		dialogWidget().label().setReadOnly(isReadOnly());
 		dialogWidget().noSetLabel().setVisible(false);
 	}
+
+	// when do we show the uuid?
+	const bool showUuid =
+			partition().state() != Partition::StateNew &&                           // not for new partitions
+			!(fs == NULL || fs->supportGetUUID() == FileSystem::SupportNone);       // not if the FS doesn't support it
+
+	dialogWidget().showUuid(showUuid);
 
 	delete fs;
 
