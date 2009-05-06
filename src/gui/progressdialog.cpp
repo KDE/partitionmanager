@@ -47,6 +47,13 @@
 
 const QString ProgressDialog::m_TimeFormat = "hh:mm:ss";
 
+static QWidget* mainWindow(QWidget* w)
+{
+	while (w && w->parentWidget())
+		w = w->parentWidget();
+	return w;
+}
+
 /** Creates a new ProgressDialog
 	@param parent pointer to the parent widget
 	@param orunner the OperationRunner whose progress this dialog is showing
@@ -57,7 +64,7 @@ ProgressDialog::ProgressDialog(QWidget* parent, OperationRunner& orunner) :
 	m_ProgressDetailsWidget(new ProgressDetailsWidget(this)),
 	m_OperationRunner(orunner),
 	m_Report(NULL),
-	m_SavedParentTitle(parent->windowTitle()),
+	m_SavedParentTitle(mainWindow(this)->windowTitle()),
 	m_Timer(this),
 	m_Time(),
 	m_CurrentOpItem(NULL),
@@ -187,7 +194,7 @@ void ProgressDialog::slotButtonClicked(int button)
 	foreach (QWidget* w, kapp->topLevelWidgets())
 		w->setEnabled(true);
 
-	parentWidget()->setWindowTitle(savedParentTitle());
+	mainWindow(this)->setWindowTitle(savedParentTitle());
 
 	KDialog::accept();
 }
@@ -302,7 +309,7 @@ void ProgressDialog::onOpFinished(int num, Operation* op)
 void ProgressDialog::setParentTitle(const QString& s)
 {
 	const int percent = dialogWidget().progressTotal().value() * 100 / dialogWidget().progressTotal().maximum();
-	parentWidget()->setWindowTitle(QString::number(percent) + "% - " + s + " - " + savedParentTitle());
+	mainWindow(this)->setWindowTitle(QString::number(percent) + "% - " + s + " - " + savedParentTitle());
 }
 
 void ProgressDialog::setStatus(const QString& s)
