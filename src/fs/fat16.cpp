@@ -22,6 +22,8 @@
 #include "util/externalcommand.h"
 #include "util/capacity.h"
 
+#include <kdebug.h>
+
 #include <QString>
 #include <QStringList>
 #include <QRegExp>
@@ -31,6 +33,7 @@
 namespace FS
 {
 	FileSystem::SupportType fat16::m_GetUsed = FileSystem::SupportNone;
+	FileSystem::SupportType fat16::m_GetLabel = FileSystem::SupportNone;
 	FileSystem::SupportType fat16::m_Create = FileSystem::SupportNone;
 	FileSystem::SupportType fat16::m_Grow = FileSystem::SupportNone;
 	FileSystem::SupportType fat16::m_Shrink = FileSystem::SupportNone;
@@ -39,7 +42,7 @@ namespace FS
 	FileSystem::SupportType fat16::m_Copy = FileSystem::SupportNone;
 	FileSystem::SupportType fat16::m_Backup = FileSystem::SupportNone;
 	FileSystem::SupportType fat16::m_UpdateUUID = FileSystem::SupportNone;
-	
+
 
 	fat16::fat16(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t) :
 		FileSystem(firstsector, lastsector, sectorsused, label, t)
@@ -48,13 +51,14 @@ namespace FS
 
 	void fat16::init()
 	{
-		// There is no support for getting or setting labels for FAT16 and FAT32 right now.
+		// There is no support for setting labels for FAT16 and FAT32 right now.
 		// The mtools package is able to do that, but requires mappings from Unix device nodes
 		// to Windows-like drive letters -- something we cannot support. It would, however,
 		// probably be possible to implement the file system label stuff ourselves here.
 
 		m_Create = findExternal("mkfs.msdos") ? SupportExternal : SupportNone;
 		m_GetUsed = m_Check = findExternal("fsck.msdos", QStringList(), 2) ? SupportExternal : SupportNone;
+		m_GetLabel = findExternal("vol_id") ? SupportExternal : SupportNone;
 		m_Grow = SupportLibParted;
 		m_Shrink = SupportLibParted;
 		m_Move = SupportInternal;
@@ -72,7 +76,7 @@ namespace FS
 	{
 		 return 4 * Capacity::unitFactor(Capacity::Byte, Capacity::GiB);
 	}
-	
+
 	qint64 fat16::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("fsck.msdos", QStringList() << "-v" << deviceNode);
@@ -118,7 +122,7 @@ namespace FS
 		char uuid[4];
 		for (quint32 i = 0; i < sizeof(uuid); i++, t >>= 8)
 			uuid[i] = t & 0xff;
-		
+
 		ExternalCommand cmd(report, "dd", QStringList() << "of=" + deviceNode << "bs=1" << "count=4" << "seek=39");
 
 		if (!cmd.start())
@@ -126,7 +130,22 @@ namespace FS
 
 		if (cmd.write(uuid, sizeof(uuid)) != sizeof(uuid))
 			return false;
-		
+
 		return cmd.waitFor(-1);
+	}
+
+	QString fat16::readLabel(const QString& deviceNode) const
+	{
+		ExternalCommand cmd("vol_id", QStringList() << deviceNode);
+
+		if (cmd.run())
+		{
+			QRegExp rxLabel("ID_FS_LABEL=(\\w+)");
+
+			if (rxLabel.indexIn(cmd.output()) != -1)
+				return rxLabel.cap(1).simplified();
+		}
+
+		return QString();
 	}
 }
