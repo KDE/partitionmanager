@@ -45,6 +45,7 @@
 #include <parted/parted.h>
 #include <sys/statvfs.h>
 #include <unistd.h>
+#include <mntent.h>
 
 /** Callback to handle exceptions from libparted
 	@param e the libparted exception to handle
@@ -66,45 +67,49 @@ static QString findUuidDevice(const QString& s)
 	return QFile::exists(filename) ? QFile::symLinkTarget(filename) : "";
 }
 
+/** Finds a device by LABEL.
+	@param s the label
+	@return the device node the label links to
+ */
+static QString findLabelDevice(const QString& s)
+{
+	const QString filename = "/dev/disk/by-label/" + QString(s).remove("LABEL=", Qt::CaseInsensitive);
+	return QFile::exists(filename) ? QFile::symLinkTarget(filename) : "";
+}
+
 /** Reads mountpoints from a file.
 	@param filename the name of the file to read mount points from
 	@param result reference to QMap where the result will be stored
 */
 static void readMountpoints(const QString& filename, QMap<QString, QStringList>& result)
 {
-	QFile file(filename);
-	if (!file.open(QIODevice::ReadOnly))
+	FILE* fp = setmntent(filename.toLocal8Bit(), "r");
+
+	if (fp == NULL)
 		return;
 
-	QByteArray line = file.readLine();
+	struct mntent* p = NULL;
 
-	while(!line.isEmpty())
+	while ((p = getmntent(fp)) != NULL)
 	{
-		line = line.simplified();
+		QString device = p->mnt_fsname;
 
-		if (!line.isEmpty() && (line[0] == '/' || line.startsWith("UUID=")))
+		if (device.startsWith("UUID=", Qt::CaseInsensitive))
+			device = findUuidDevice(device);
+
+		if (device.startsWith("LABEL=", Qt::CaseInsensitive))
+			device = findLabelDevice(device);
+
+		if (!device.isEmpty())
 		{
-			QList<QByteArray> split = line.split(' ');
+			QString mountPoint = p->mnt_dir;
 
-			if (split.size() >= 2)
-			{
-				QString device = split[0];
-
-				if (device.startsWith("UUID=", Qt::CaseInsensitive))
-					device = findUuidDevice(device);
-
-				if (!device.isEmpty())
-				{
-					QString mountPoint = split[1].replace("\\040", " ");
-
-					if (QFile::exists(mountPoint) && result[device].indexOf(mountPoint) == -1)
-						result[device].append(mountPoint);
-				}
-			}
+			if (QFile::exists(mountPoint) && result[device].indexOf(mountPoint) == -1)
+				result[device].append(mountPoint);
 		}
-
-		line = file.readLine();
 	}
+
+	endmntent(fp);
 }
 
 /** Reads sectors used on a FileSystem using libparted functions.
