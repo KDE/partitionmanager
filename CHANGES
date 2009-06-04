@@ -1,3 +1,37 @@
+1.0.0-BETA3
+===========
+
+* Set the default file system in the New-Partition-dialog, don't just rely on
+  it being the first one in the list.
+
+* Sort items in file system combo boxes case-insensitively.
+
+* Fix a bug where the total free space available could get smaller and smaller
+  when moving an existing partition in a dialog.
+
+* Fix a bug that the progress information wasn't set as window title for the
+  top level application window.
+
+* Speed up copying file systems (and thus moving, resizing and copying).
+
+* Add some basic timing output to the detailed report for copying file systems.
+
+* Find a file system's mount point even if it is identified by label in fstab.
+
+* Add support for reading file system labels from FAT16 and FAT32.
+
+* Fix a bug where the volume label for a linuxswap file system was lost when
+  resizing it.
+
+* Make sure all interesting information shown in labels anywhere in the
+  application is user-selectable with the mouse.
+
+* Display the UUID for most file systems that support it.
+
+* Always show the current file system in the partition properties dialog's file
+  system combo box, even if it cannot be created, is too big or too small.
+
+
 1.0.0-BETA2
 ===========
 
