@@ -263,7 +263,7 @@ void PartPropsDialog::setupFileSystemComboBox()
 	QStringList fsNames;
 
 	foreach(const FileSystem* fs, FileSystemFactory::map())
-		if (fs->supportCreate() != FileSystem::SupportNone && partition().capacity() >= fs->minCapacity() && partition().capacity() <= fs->maxCapacity())
+		if (partition().fileSystem().type() == fs->type() || (fs->supportCreate() != FileSystem::SupportNone && partition().capacity() >= fs->minCapacity() && partition().capacity() <= fs->maxCapacity()))
 		{
 			QString name = fs->name();
 
