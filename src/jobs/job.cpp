@@ -46,7 +46,7 @@ static const struct
 {
 	{ FileSystem::Ext2, "ext2" },
 	{ FileSystem::Ext3, "ext3" },
-	{ FileSystem::Ext3, "ext4" },
+	{ FileSystem::Ext4, "ext4" },
 	{ FileSystem::LinuxSwap, "linux-swap" },
 	{ FileSystem::Fat16, "fat16" },
 	{ FileSystem::Fat32, "fat32" },
@@ -296,6 +296,7 @@ FileSystem::Type Job::detectFileSystem(PedDevice* pedDevice, PedPartition* pedPa
 	if (s == "extended") rval = FileSystem::Extended;
 	else if (s == "ext2") rval = FileSystem::Ext2;
 	else if (s == "ext3") rval = FileSystem::Ext3;
+	else if (s == "ext4") rval = FileSystem::Ext4;
 	else if (s == "linux-swap") rval = FileSystem::LinuxSwap;
 	else if (s == "fat16") rval = FileSystem::Fat16;
 	else if (s == "fat32") rval = FileSystem::Fat32;
@@ -339,7 +340,7 @@ FileSystem::Type Job::detectFileSystem(PedDevice* pedDevice, PedPartition* pedPa
 						|| blkid_dev_has_tag(dev, "TYPE", "ext4dev")
 					)
 			)
-				rval = FileSystem::Ext4;
+			rval = FileSystem::Ext4;
 
 			blkid_put_cache(cache);
 
