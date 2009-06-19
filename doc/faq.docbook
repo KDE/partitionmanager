@@ -125,6 +125,16 @@
 				</para>
 			</answer>
 		</qandaentry>
+		<qandaentry>
+			<question>
+				<para>On startup, &partman; hangs for a couple of minutes while it apparently tries to scan the floppy drive on my computer.</para>
+			</question>
+			<answer>
+				<para>
+					This seems to happen if you have a floppy drive configured in your computer's BIOS settings but have not actually connected one. Please check your BIOS settings and disable any floppy drives configured there to see if this makes the problem go away.
+				</para>
+			</answer>
+		</qandaentry>
 <!--
 		<qandaentry>
 			<question>
