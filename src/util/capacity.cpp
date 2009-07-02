@@ -97,7 +97,7 @@ qint64 Capacity::toInt(Unit u) const
 	return static_cast<qint64>(m_Size / unitFactor(Byte, u));
 }
 
-/** Returns a factor to convert between to Units.
+/** Returns a factor to convert between two Units.
 	@param from the Unit to convert from
 	@param to the Unit to convert to
 	@return the factor to use for conversion
