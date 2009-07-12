@@ -48,6 +48,9 @@ CreateFileSystemOperation::CreateFileSystemOperation(Device& d, Partition& p, Fi
 	m_CreateJob(new CreateFileSystemJob(partition())),
 	m_CheckJob(new CheckFileSystemJob(partition()))
 {
+	// We never know anything about the number of used sectors on a new file system.
+	newFileSystem()->setSectorsUsed(-1);
+
 	addJob(deleteJob());
 	addJob(createJob());
 	addJob(checkJob());
