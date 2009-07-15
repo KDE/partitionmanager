@@ -94,6 +94,7 @@ PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
 	splitterVertical().setStretchFactor(1, 3);
 
 	setupKCMWorkaround();
+	setAboutData(createPartitionManagerAboutData());
 }
 
 void PartitionManagerKCM::onNewLogMessage(log::Level, const QString& s)
