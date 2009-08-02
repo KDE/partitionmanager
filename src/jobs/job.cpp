@@ -202,7 +202,7 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 
 	free(buffer);
 
- 	report.line() << i18ncp("@info/plain, argument 2 is a string such as 7 sectors (localized accordingly)", "Copying 1 block (%2) finished.", "Copying %1 blocks (%2) finished.", blocksCopied, i18np("1 sector", "%1 sectors", target.sectorsWritten()));
+ 	report.line() << i18ncp("@info/plain argument 2 is a string such as 7 sectors (localized accordingly)", "Copying 1 block (%2) finished.", "Copying %1 blocks (%2) finished.", blocksCopied, i18np("1 sector", "%1 sectors", target.sectorsWritten()));
 
 	return rval;
 }
