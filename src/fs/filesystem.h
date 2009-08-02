@@ -93,6 +93,7 @@ class FileSystem
 		virtual bool check(Report& report, const QString& deviceNode) const;
 		virtual bool updateUUID(Report& report, const QString& deviceNode) const;
 		virtual QString readUUID(const QString& deviceNode) const;
+		virtual bool updateBootSector(Report& report, const QString& deviceNode) const;
 
 		virtual SupportType supportGetUsed() const { return SupportNone; } /**< @return SupportType for getting used capacity */
 		virtual SupportType supportGetLabel() const { return SupportNone; } /**< @return SupportType for reading label*/

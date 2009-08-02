@@ -50,7 +50,7 @@ qint32 MoveFileSystemJob::numSteps() const
 bool MoveFileSystemJob::run(Report& parent)
 {
 	bool rval = false;
-	
+
 	Report* report = jobStarted(parent);
 
 	// A scope for moveSource and moveTarget, so CopyTargetDevice's dtor runs before we
@@ -73,14 +73,17 @@ bool MoveFileSystemJob::run(Report& parent)
 				const qint64 savedLength = partition().fileSystem().length() - 1;
 				partition().fileSystem().setFirstSector(newStart());
 				partition().fileSystem().setLastSector(newStart() + savedLength);
-			}				
+			}
 			else if (!rollbackCopyBlocks(*report, moveTarget, moveSource))
 				report->line() << i18nc("@info/plain", "Rollback for file system on partition <filename>%1</filename> failed.", partition().deviceNode());
-		
+
 			report->line() << i18nc("@info/plain", "Closing device. This may take a few seconds.");
 		}
 	}
-	
+
+	if (rval)
+		rval = partition().fileSystem().updateBootSector(*report, partition().deviceNode());
+
 	jobFinished(*report, rval);
 
 	return rval;

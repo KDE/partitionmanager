@@ -185,6 +185,20 @@ QString FileSystem::readUUID(const QString& deviceNode) const
 
 }
 
+/** Give implementations of FileSystem a chance to update the boot sector after the
+	file system has been moved or copied.
+	@param report Report to write status information to
+	@param deviceNode the device node for the Partition the FileSystem is on
+	@return true on success
+*/
+bool FileSystem::updateBootSector(Report& report, const QString& deviceNode) const
+{
+	Q_UNUSED(report);
+	Q_UNUSED(deviceNode);
+
+	return true;
+}
+
 /** @return the minimum capacity valid for this FileSystem in bytes */
 qint64 FileSystem::minCapacity() const
 {

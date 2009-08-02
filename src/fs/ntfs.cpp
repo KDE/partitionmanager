@@ -21,12 +21,19 @@
 
 #include "util/externalcommand.h"
 #include "util/capacity.h"
+#include "util/report.h"
+#include "util/globallog.h"
+
+#include <klocale.h>
+#include <kdebug.h>
 
 #include <QString>
 #include <QStringList>
+#include <QFile>
 
 #include <ctime>
 #include <uuid/uuid.h>
+#include <algorithm>
 
 namespace FS
 {
@@ -162,5 +169,41 @@ namespace FS
 			return false;
 
 		return cmd.waitFor(-1);
+	}
+
+	bool ntfs::updateBootSector(Report& report, const QString& deviceNode) const
+	{
+		report.line() << i18nc("@info/plain", "Updating boot sector for NTFS file system on partition <filename>%1</filename>.", deviceNode);
+
+		quint32 n = firstSector();
+		char* s = reinterpret_cast<char*>(&n);
+
+#if Q_BYTE_ORDER == Q_BIG_ENDIAN
+		std::swap(s[0], s[3]);
+		std::swap(s[1], s[2]);
+#endif
+
+		QFile device(deviceNode);
+		if (!device.open(QFile::ReadWrite | QFile::Unbuffered))
+		{
+			log() << i18nc("@info/plain", "Could not open partition <filename>%1</filename> for writing when trying to update the NTFS boot sector.", deviceNode);
+			return false;
+		}
+
+		if (!device.seek(0x1c))
+		{
+			log() << i18nc("@info/plain", "Could not seek to position 0x1c on partition <filename>%1</filename> when trying to update the NTFS boot sector.", deviceNode);
+			return false;
+		}
+
+		if (device.write(s, 4) != 4)
+		{
+			log() << i18nc("@info/plain", "Could not write new start sector to partition <filename>%1</filename> when trying to update the NTFS boot sector.", deviceNode);
+			return false;
+		}
+
+		log() << i18nc("@info/plain", "Updated NTFS boot sector for partition <filename>%1</filename> successfully.", deviceNode);
+
+		return true;
 	}
 }

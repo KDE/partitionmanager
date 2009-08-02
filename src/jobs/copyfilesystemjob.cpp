@@ -92,6 +92,9 @@ bool CopyFileSystemJob::run(Report& parent)
 		}
 	}
 
+	if (rval)
+		rval = targetPartition().fileSystem().updateBootSector(*report, targetPartition().deviceNode());
+
 	jobFinished(*report, rval);
 
 	return rval;

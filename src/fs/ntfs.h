@@ -50,6 +50,7 @@ namespace FS
 			virtual bool resize(Report& report, const QString& deviceNode, qint64 length) const;
 			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
 			virtual bool updateUUID(Report& report, const QString& deviceNode) const;
+			virtual bool updateBootSector(Report& report, const QString& deviceNode) const;
 
 			virtual SupportType supportGetUsed() const { return m_GetUsed; }
 			virtual SupportType supportGetLabel() const { return m_GetLabel; }
