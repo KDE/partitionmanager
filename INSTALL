@@ -24,8 +24,8 @@ KDE Partition Manager is built with cmake, like most of KDE4 today. It is
 recommended to build out of tree: After unpacking the source, create a separate
 build directory and run cmake there:
 
-$ tar xfj partitionmanager-1.0.0-BETA3.tar.bz2
-$ cd partitionmanager-1.0.0-BETA3
+$ tar xfj partitionmanager-1.0.0-RC1.tar.bz2
+$ cd partitionmanager-1.0.0-RC1
 $ mkdir build
 $ cd build
 $ cmake ..

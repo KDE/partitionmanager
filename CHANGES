@@ -1,5 +1,19 @@
-1.0.0-BETA3
-===========
+1.0.0-RC1 (2009-08-03)
+======================
+
+* Correctly handle ext4 file systems even with patched parted 1.8.8 (and
+  hopefully 1.8.9 too). Patch by Fatih Asici <fatih@pardus.org.tr>. (bug
+  #195243)
+
+* Clear the partition flags for a copied partition in the preview. (bug
+  #202346)
+
+* Write the new start sector to the partition's boot sector if an NTFS file
+  system was moved or copied. (bug #202329)
+
+
+1.0.0-BETA3 (2009-06-04)
+========================
 
 * Set the default file system in the New-Partition-dialog, don't just rely on
   it being the first one in the list.
@@ -32,8 +46,8 @@
   system combo box, even if it cannot be created, is too big or too small.
 
 
-1.0.0-BETA2
-===========
+1.0.0-BETA2 (2009-04-30)
+========================
 
 * Add an application icon contributed by David Miller.
 
@@ -53,8 +67,8 @@
   can be (like it already is the case with the KPart) configured via cmake.
 
 
-1.0.0-BETA1
-===========
+1.0.0-BETA1 (2009-01-13)
+========================
 
 * Fix a potential crash when merging a New Operation and a Create File System
   Operation.
@@ -89,8 +103,8 @@
   partitions being wasted.
 
 
-1.0.0-ALPHA2
-============
+1.0.0-ALPHA2 (2008-09-24)
+=========================
 
 * Add and install a .desktop file.
 
@@ -134,4 +148,10 @@
 * Fix the minimum size calculations for partition widgets.
 
 * Add some doxygen documentation.
+
+
+1.0.0-ALPHA1 (2008-09-18)
+=========================
+
+* First public release
 
