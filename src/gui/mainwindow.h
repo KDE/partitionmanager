@@ -44,7 +44,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 	Q_OBJECT
 
 	public:
-		MainWindow(QWidget* parent = NULL, KActionCollection* coll = NULL);
+		explicit MainWindow(QWidget* parent = NULL, KActionCollection* coll = NULL);
 
 	protected:
 		void setupActions();
