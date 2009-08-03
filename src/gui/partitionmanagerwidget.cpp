@@ -72,6 +72,7 @@
 #include <QDateTime>
 #include <QCursor>
 #include <QHeaderView>
+#include <QPointer>
 
 #include <config.h>
 
@@ -520,23 +521,25 @@ void PartitionManagerWidget::onPropertiesPartition()
 	{
 		Q_ASSERT(selectedDevice());
 
-		PartPropsDialog dlg(this, *selectedDevice(), *selectedPartition());
+		QPointer<PartPropsDialog> dlg = new PartPropsDialog(this, *selectedDevice(), *selectedPartition());
 
-		if (dlg.exec() == KDialog::Accepted)
+		if (dlg->exec() == KDialog::Accepted)
 		{
-			if (dlg.newFileSystemType() != selectedPartition()->fileSystem().type() || dlg.forceRecreate())
-				operationStack().push(new CreateFileSystemOperation(*selectedDevice(), *selectedPartition(), dlg.newFileSystemType()));
+			if (dlg->newFileSystemType() != selectedPartition()->fileSystem().type() || dlg->forceRecreate())
+				operationStack().push(new CreateFileSystemOperation(*selectedDevice(), *selectedPartition(), dlg->newFileSystemType()));
 
-			if (dlg.newLabel() != selectedPartition()->fileSystem().label())
-				operationStack().push(new SetFileSystemLabelOperation(*selectedPartition(), dlg.newLabel()));
+			if (dlg->newLabel() != selectedPartition()->fileSystem().label())
+				operationStack().push(new SetFileSystemLabelOperation(*selectedPartition(), dlg->newLabel()));
 
-			if (dlg.newFlags() != selectedPartition()->activeFlags())
-				operationStack().push(new SetPartFlagsOperation(*selectedDevice(), *selectedPartition(), dlg.newFlags()));
+			if (dlg->newFlags() != selectedPartition()->activeFlags())
+				operationStack().push(new SetPartFlagsOperation(*selectedDevice(), *selectedPartition(), dlg->newFlags()));
 
 			updatePartitions();
 			emit operationsChanged();
 			emit statusChanged();
 		}
+
+		delete dlg;
 	}
 }
 
@@ -614,8 +617,8 @@ void PartitionManagerWidget::onNewPartition()
 
 	Partition* newPartition = NewOperation::createNew(*selectedPartition());
 
-	NewDialog dlg(this, *selectedDevice(), *newPartition, selectedDevice()->partitionTable()->childRoles(*selectedPartition()));
-	if (dlg.exec() == KDialog::Accepted)
+	QPointer<NewDialog> dlg = new NewDialog(this, *selectedDevice(), *newPartition, selectedDevice()->partitionTable()->childRoles(*selectedPartition()));
+	if (dlg->exec() == KDialog::Accepted)
 	{
 		PartitionTable::snap(*selectedDevice(), *newPartition);
 		operationStack().push(new NewOperation(*selectedDevice(), newPartition));
@@ -625,6 +628,8 @@ void PartitionManagerWidget::onNewPartition()
 	}
 	else
 		delete newPartition;
+
+	delete dlg;
 }
 
 void PartitionManagerWidget::onDeletePartition()
@@ -704,9 +709,9 @@ void PartitionManagerWidget::onResizePartition()
 	const qint64 freeAfter = selectedDevice()->partitionTable()->freeSectorsAfter(*selectedPartition());
 
 	Partition resizedPartition(*selectedPartition());
-	ResizeDialog dlg(this, *selectedDevice(), resizedPartition, freeBefore, freeAfter);
+	QPointer<ResizeDialog> dlg = new ResizeDialog(this, *selectedDevice(), resizedPartition, freeBefore, freeAfter);
 
-	if (dlg.exec() == KDialog::Accepted && dlg.isModified())
+	if (dlg->exec() == KDialog::Accepted && dlg->isModified())
 	{
 		PartitionTable::snap(*selectedDevice(), resizedPartition, selectedPartition());
 
@@ -721,6 +726,8 @@ void PartitionManagerWidget::onResizePartition()
 			emit operationsChanged();
 		}
 	}
+
+	delete dlg;
 }
 
 void PartitionManagerWidget::onCopyPartition()
@@ -801,9 +808,14 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertPartition, qint64
 
 	if (!overwrite)
 	{
-		InsertDialog dlg(this, *selectedDevice(), insertPartition, *selectedPartition());
-		if (dlg.exec() != KDialog::Accepted)
+		QPointer<InsertDialog> dlg = new InsertDialog(this, *selectedDevice(), insertPartition, *selectedPartition());
+
+		int result = dlg->exec();
+		delete dlg;
+
+		if (result != KDialog::Accepted)
 			return false;
+
 		PartitionTable::snap(*selectedDevice(), insertPartition, selectedPartition());
 	}
 
