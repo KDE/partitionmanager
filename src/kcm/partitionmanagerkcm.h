@@ -17,9 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#if !defined(PARTITIONMANAGERKCM__H)
+#if !defined(PARTMANKCM__H)
 
-#define PARTITIONMANAGERKCM__H
+#define PARTMANKCM__H
 
 #include "ui_partitionmanagerkcmbase.h"
 

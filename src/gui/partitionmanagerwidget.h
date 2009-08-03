@@ -17,9 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(PARTITIONMANAGERWIDGET__H)
+#if !defined(CENTRALWIDGET__H)
 
-#define PARTITIONMANAGERWIDGET__H
+#define CENTRALWIDGET__H
 
 #include "util/libpartitionmanagerexport.h"
 
