@@ -389,7 +389,7 @@ bool PartitionTable::snap(const Device& d, Partition& p, const Partition* origin
 
 	if (p.length() < originalLength)
 		log(log::warning) <<  i18ncp("@info/plain", "The partition cannot be created with the requested length of 1 sector, ", "The partition cannot be created with the requested length of %1 sectors, ", originalLength)
-                                    + i18ncp("@info/plain", "and will instead only be 1 sector long.", "and will instead only be %2 sectors long.", p.length());
+                                    + i18ncp("@info/plain", "and will instead only be 1 sector long.", "and will instead only be %1 sectors long.", p.length());
 
 	// In an extended partition we also need to snap unallocated children at the beginning and at the end
 	// (there should never be a need to snap non-unallocated children)
