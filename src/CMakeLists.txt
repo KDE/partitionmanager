@@ -87,7 +87,7 @@ endif(PARTMAN_KPART)
 
 ############################################
 
-option(PARTMAN_KCM "Build a kcm for KDE Partition Manager" ON)
+option(PARTMAN_KCM "Build a kcm for KDE Partition Manager" OFF)
 
 if(PARTMAN_KCM)
 	file(GLOB partitionmanagerkcm_SRCS kcm/partitionmanagerkcm.cpp)
