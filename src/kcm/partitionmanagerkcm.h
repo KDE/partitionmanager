@@ -37,6 +37,7 @@ class KToolBar;
 class PartitionManagerKCM : public KCModule, public Ui::PartitionManagerKCMBase
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(PartitionManagerKCM)
 
 	public:
 		PartitionManagerKCM(QWidget* parent, const QVariantList& args);
