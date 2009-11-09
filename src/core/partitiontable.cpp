@@ -35,6 +35,7 @@
 /** Creates a new PartitionTable object with type MSDOS */
 PartitionTable::PartitionTable() :
 	PartitionNode(),
+	m_Children(),
 	m_MaxPrimaries(4),
 	m_TypeName("msdos"),
 	m_ReadOnly(false)
