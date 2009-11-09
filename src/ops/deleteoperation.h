@@ -40,6 +40,7 @@ class DeleteOperation : public Operation
 	friend class OperationStack;
 
 	Q_OBJECT
+	Q_DISABLE_COPY(DeleteOperation)
 
 	public:
 		DeleteOperation(Device& d, Partition* p);
@@ -66,7 +67,7 @@ class DeleteOperation : public Operation
 
 		DeleteFileSystemJob* deleteFileSystemJob() { return m_DeleteFileSystemJob; }
 		DeletePartitionJob* deletePartitionJob() { return m_DeletePartitionJob; }
-		
+
 	private:
 		Device& m_TargetDevice;
 		Partition* m_DeletedPartition;

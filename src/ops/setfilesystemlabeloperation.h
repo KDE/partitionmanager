@@ -41,6 +41,7 @@ class SetFileSystemLabelOperation : public Operation
 	friend class OperationStack;
 
 	Q_OBJECT
+	Q_DISABLE_COPY(SetFileSystemLabelOperation)
 
 	public:
 		SetFileSystemLabelOperation(Partition& p, const QString& newlabel);
@@ -61,7 +62,7 @@ class SetFileSystemLabelOperation : public Operation
 		void setOldLabel(const QString& l) { m_OldLabel = l; }
 
 		SetFileSystemLabelJob* labelJob() { return m_LabelJob; }
-		
+
 	private:
 		Partition& m_LabeledPartition;
 		QString m_OldLabel;

@@ -35,6 +35,7 @@ class PartitionTable;
 class CreatePartitionTableOperation : public Operation
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(CreatePartitionTableOperation)
 
 	public:
 		CreatePartitionTableOperation(Device& d);

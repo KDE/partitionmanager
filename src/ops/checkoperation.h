@@ -36,6 +36,7 @@ class ResizeFileSystemJob;
 class CheckOperation : public Operation
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(CheckOperation)
 
 	public:
 		CheckOperation(Device& targetDevice, Partition& checkedPartition);

@@ -35,6 +35,7 @@ class BackupFileSystemJob;
 class BackupOperation : public Operation
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(BackupOperation)
 
 	public:
 		BackupOperation(Device& targetDevice, Partition& backupPartition, const QString& filename);

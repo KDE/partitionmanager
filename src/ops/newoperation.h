@@ -44,6 +44,7 @@ class NewOperation : public Operation
 	friend class OperationStack;
 
 	Q_OBJECT
+	Q_DISABLE_COPY(NewOperation)
 
 	public:
 		NewOperation(Device& d, Partition* p);
@@ -57,7 +58,7 @@ class NewOperation : public Operation
 
 		static bool canCreateNew(const Partition* p);
 		static Partition* createNew(const Partition& cloneFrom);
-		
+
 	protected:
 		Partition& newPartition() { return *m_NewPartition; }
 		const Partition& newPartition() const { return *m_NewPartition; }
@@ -69,7 +70,7 @@ class NewOperation : public Operation
 		CreateFileSystemJob* createFileSystemJob() { return m_CreateFileSystemJob; }
 		SetFileSystemLabelJob* setLabelJob() { return m_SetFileSystemLabelJob; }
 		CheckFileSystemJob* checkJob() { return m_CheckFileSystemJob; }
-		
+
 	private:
 		Device& m_TargetDevice;
 		Partition* m_NewPartition;

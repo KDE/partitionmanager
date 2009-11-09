@@ -48,6 +48,7 @@ class RestoreOperation : public Operation
 	friend class OperationStack;
 
 	Q_OBJECT
+	Q_DISABLE_COPY(RestoreOperation)
 
 	public:
 		RestoreOperation(Device& d, Partition* p, const QString& filename);
@@ -58,7 +59,7 @@ class RestoreOperation : public Operation
 		QString description() const;
 		bool execute(Report& parent);
 		void undo();
-		
+
 		void preview();
 
 		static bool canRestore(const Partition* p);
@@ -86,7 +87,7 @@ class RestoreOperation : public Operation
 		RestoreFileSystemJob* restoreJob() { return m_RestoreJob; }
 		CheckFileSystemJob* checkTargetJob() { return m_CheckTargetJob; }
 		ResizeFileSystemJob* maximizeJob() { return m_MaximizeJob; }
-		
+
 	private:
 		Device& m_TargetDevice;
 		Partition* m_RestorePartition;

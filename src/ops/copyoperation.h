@@ -47,6 +47,7 @@ class CopyOperation : public Operation
 	friend class OperationStack;
 
 	Q_OBJECT
+	Q_DISABLE_COPY(CopyOperation)
 
 	public:
 		CopyOperation(Device& targetdevice, Partition* copiedpartition, Device& sourcedevice, Partition* sourcepartition);
@@ -64,7 +65,7 @@ class CopyOperation : public Operation
 		static bool canPaste(const Partition* p, const Partition* source);
 
 		static Partition* createCopy(const Partition& target, const Partition& source);
-		
+
 	protected:
 		Partition& copiedPartition() { return *m_CopiedPartition; }
 		const Partition& copiedPartition() const { return *m_CopiedPartition; }
@@ -92,7 +93,7 @@ class CopyOperation : public Operation
 		CopyFileSystemJob* copyFSJob() { return m_CopyFSJob; }
 		CheckFileSystemJob* checkTargetJob() { return m_CheckTargetJob; }
 		ResizeFileSystemJob* maximizeJob() { return m_MaximizeJob; }
-		
+
 	private:
 		Device& m_TargetDevice;
 		Partition* m_CopiedPartition;

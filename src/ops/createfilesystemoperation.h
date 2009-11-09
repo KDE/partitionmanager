@@ -45,6 +45,7 @@ class CreateFileSystemOperation : public Operation
 	friend class OperationStack;
 
 	Q_OBJECT
+	Q_DISABLE_COPY(CreateFileSystemOperation)
 
 	public:
 		CreateFileSystemOperation(Device& d, Partition& p, FileSystem::Type newType);

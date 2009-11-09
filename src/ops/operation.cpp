@@ -35,6 +35,7 @@
 
 Operation::Operation() :
 	m_Status(StatusNone),
+	m_Jobs(),
 	m_ProgressBase(0)
 {
 }

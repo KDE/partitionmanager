@@ -52,6 +52,7 @@ class ResizeOperation : public Operation
 	friend class OperationStack;
 
 	Q_OBJECT
+	Q_DISABLE_COPY(ResizeOperation)
 
 	protected:
 		/** A ResizeOperation can do a combination of things; this enum is used to determine what
@@ -69,7 +70,7 @@ class ResizeOperation : public Operation
 			MoveLeftShrink = 9,		/**< Shrink then move to the left */
 			MoveRightShrink = 10	/**< Shrink then move to the right */
 		};
-		
+
 	public:
 		ResizeOperation(Device& d, Partition& p, qint64 newfirst, qint64 newlast);
 
@@ -94,7 +95,7 @@ class ResizeOperation : public Operation
 		bool shrink(Report& report);
 		bool move(Report& report);
 		bool grow(Report& report);
-		
+
 		ResizeAction resizeAction() const;
 
 		qint64 origFirstSector() const { return m_OrigFirstSector; }
@@ -104,7 +105,7 @@ class ResizeOperation : public Operation
 		qint64 newFirstSector() const { return m_NewFirstSector; }
 		qint64 newLastSector() const { return m_NewLastSector; }
 		qint64 newLength() const { return newLastSector() - newFirstSector() + 1; }
-		
+
 		CheckFileSystemJob* checkOriginalJob() { return m_CheckOriginalJob; }
 		SetPartGeometryJob* moveExtendedJob() { return m_MoveExtendedJob; }
 		ResizeFileSystemJob* shrinkResizeJob() { return m_ShrinkResizeJob; }
@@ -114,7 +115,7 @@ class ResizeOperation : public Operation
 		ResizeFileSystemJob* growResizeJob() { return m_GrowResizeJob; }
 		SetPartGeometryJob* growSetGeomJob() { return m_GrowSetGeomJob; }
 		CheckFileSystemJob* checkResizedJob() { return m_CheckResizedJob; }
-		
+
 	private:
 		Device& m_TargetDevice;
 		Partition& m_Partition;
