@@ -41,7 +41,7 @@ class Report : public QObject
 
 	friend Report& operator<<(Report& report, const QString& s);
 	friend Report& operator<<(Report& report, qint64 i);
-	
+
 	public:
 		explicit Report(Report* p, const QString& cmd = QString());
 		~Report();
@@ -51,15 +51,15 @@ class Report : public QObject
 
 	public:
 		Report* newChild(const QString& cmd = QString());
-		
+
 		const QList<Report*>& children() const { return m_Children; } /**< @return the list of this Report's children */
-		
+
 		Report* parent() { return m_Parent; } /**< @return pointer to this Reports parent. May be NULL if this is the root Report */
 		const Report* parent() const { return m_Parent; } /**< @return pointer to this Reports parent. May be NULL if this is the root Report */
 
 		Report* root();
 		const Report* root() const;
-		
+
 		const QString& command() const { return m_Command; } /**< @return the command */
 		const QString& output() const { return m_Output; } /**< @return the output */
 		const QString& status() const { return m_Status; } /**< @return the status line */
@@ -67,10 +67,10 @@ class Report : public QObject
 		void setCommand(const QString& s) { m_Command = s; } /**< @param s the new command */
 		void setStatus(const QString& s) { m_Status = s; } /**< @param s the new status */
 		void addOutput(const QString& s);
-		
+
 		QString toHtml() const;
 		QString toText() const;
-		
+
 		ReportLine line();
 
 		static QString htmlHeader();
@@ -78,7 +78,7 @@ class Report : public QObject
 
 	protected:
 		void emitOutputChanged();
-		
+
 	private:
 		Report* m_Parent;
 		QList<Report*> m_Children;
@@ -104,13 +104,16 @@ class ReportLine
 	friend ReportLine operator<<(ReportLine reportLine, const QString& s);
 	friend ReportLine operator<<(ReportLine reportLine, qint64 i);
 	friend class Report;
-		
+
 	protected:
 		ReportLine(Report& r) : ref(1), report(r.newChild()) {}
 
 	public:
 		~ReportLine() { if (--ref == 0) *report << "\n"; }
 		ReportLine(const ReportLine& other) : ref(other.ref + 1), report(other.report) {}
+
+	private:
+		ReportLine& operator=(const ReportLine&);
 
 	private:
 		qint32 ref;

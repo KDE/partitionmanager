@@ -41,7 +41,7 @@ class log
 	public:
 		log(Level lev = information) : ref(1), level(lev) {}
 		~log();
-		log(const log& other) : ref(other.ref + 1) {}
+		log(const log& other) : ref(other.ref + 1), level(other.level) {}
 
 	private:
 		quint32 ref;
@@ -61,7 +61,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT GlobalLog : public QObject
  	friend log operator<<(log l, qint64 i);
 
 	private:
-		GlobalLog() {}
+		GlobalLog() : msg() {}
 
 	signals:
 		void newMessage(log::Level, const QString&);

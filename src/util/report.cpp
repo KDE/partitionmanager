@@ -40,7 +40,10 @@
 Report::Report(Report* p, const QString& cmd) :
 	QObject(),
 	m_Parent(p),
-	m_Command(cmd)
+	m_Children(),
+	m_Command(cmd),
+	m_Output(),
+	m_Status()
 {
 }
 
@@ -69,7 +72,7 @@ static QString tableLine(const QString& label, const QString contents)
 	s += QString("<td style='font-weight:bold;padding-right:20px;'>%1</td>\n").arg(Qt::escape(label));
 	s += QString("<td>%1</td>\n").arg(Qt::escape(contents));
 	s += "</tr>\n";
-	
+
 	return s;
 }
 
@@ -91,7 +94,7 @@ QString Report::htmlHeader()
 	struct utsname info;
 	uname(&info);
 	const QString unameString = QString(info.sysname) + ' ' + info.nodename + ' ' + info.release + ' ' + info.version + ' ' + info.machine;
-	
+
 	s += "<table>\n";
 	s += tableLine(i18n("Date:"), KGlobal::locale()->formatDateTime(KDateTime::currentLocalDateTime()));
 	s += tableLine(i18n("Program version:"), KGlobal::mainComponent().aboutData()->version());
@@ -100,14 +103,14 @@ QString Report::htmlHeader()
 	s += tableLine(i18n("Machine:"), unameString);
 	s += tableLine(i18n("User ID:"), QString::number(geteuid()));
 	s += "</table>\n<br/>\n";
-	
+
 	return s;
 }
 
 QString Report::htmlFooter()
 {
 	QString s;
-	
+
 	s += "\n\n</body>\n</html>\n";
 
 	return s;
@@ -137,13 +140,13 @@ QString Report::toHtml() const
 	else
 		foreach(Report* child, children())
 			s += child->toHtml();
-	
+
 	if (!status().isEmpty())
 		s += "<b>" + Qt::escape(status()) + "</b><br/>\n\n";
-		
+
 	if (parent() != NULL)
 	s += "</div>\n\n";
-	
+
 	return s;
 }
 
