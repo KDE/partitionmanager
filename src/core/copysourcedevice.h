@@ -37,6 +37,8 @@ class CopyTarget;
  */
 class CopySourceDevice : public CopySource
 {
+	Q_DISABLE_COPY(CopySourceDevice)
+
 	public:
 		CopySourceDevice(Device& d, qint64 firstsector, qint64 lastsector);
 		~CopySourceDevice();
@@ -50,7 +52,7 @@ class CopySourceDevice : public CopySource
 
 		virtual qint64 firstSector() const { return m_FirstSector; } /**< @return first sector to copying */
 		virtual qint64 lastSector() const { return m_LastSector; } /**< @return last sector to copy */
-		
+
 		Device& device() { return m_Device; } /**< @return Device to copy from */
 		const Device& device() const { return m_Device; } /**< @return Device to copy from */
 

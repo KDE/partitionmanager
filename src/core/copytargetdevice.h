@@ -39,6 +39,8 @@ class Device;
 */
 class CopyTargetDevice : public CopyTarget
 {
+	Q_DISABLE_COPY(CopyTargetDevice)
+
 	public:
 		CopyTargetDevice(Device& d, qint64 firstsector, qint64 lastsector);
 		~CopyTargetDevice();
@@ -49,7 +51,7 @@ class CopyTargetDevice : public CopyTarget
 		virtual bool writeSectors(void* buffer, qint64 writeOffset, qint64 numSectors);
 		virtual qint64 firstSector() const { return m_FirstSector; } /**< @return the first sector to write to */
 		virtual qint64 lastSector() const { return m_LastSector; } /**< @return the last sector to write to */
-		
+
 		Device& device() { return m_Device; } /**< @return the Device to write to */
 		const Device& device() const { return m_Device; } /**< @return the Device to write to */
 
