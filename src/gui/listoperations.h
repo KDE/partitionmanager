@@ -41,6 +41,7 @@ class KActionCollection;
 class LIBPARTITIONMANAGERPRIVATE_EXPORT ListOperations : public QWidget, public Ui::ListOperationsBase
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(ListOperations)
 
 	public:
 		ListOperations(QWidget* parent);

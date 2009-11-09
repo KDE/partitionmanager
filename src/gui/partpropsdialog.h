@@ -45,6 +45,7 @@ class QString;
 class PartPropsDialog : public KDialog
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(PartPropsDialog)
 
 	public:
 		PartPropsDialog(QWidget* parent, Device& d, Partition& p);
@@ -68,7 +69,7 @@ class PartPropsDialog : public KDialog
 
 		Device& device() { return m_Device; }
 		const Device& device() const { return m_Device; }
-		
+
 		Partition& partition() { return m_Partition; }
 		const Partition& partition() const { return m_Partition; }
 

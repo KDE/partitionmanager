@@ -34,8 +34,11 @@ class QWidget;
 */
 class PartWidgetBase
 {
+	Q_DISABLE_COPY(PartWidgetBase)
+
 	protected:
 		PartWidgetBase() {}
+		virtual ~PartWidgetBase() {}
 
 	public:
 		static qint32 borderWidth() { return m_BorderWidth; } /**< @return border width */

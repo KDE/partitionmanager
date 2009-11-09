@@ -42,6 +42,7 @@ class KActionCollection;
 class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(MainWindow)
 
 	public:
 		explicit MainWindow(QWidget* parent = NULL, KActionCollection* coll = NULL);

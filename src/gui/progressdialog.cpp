@@ -68,7 +68,8 @@ ProgressDialog::ProgressDialog(QWidget* parent, OperationRunner& orunner) :
 	m_Timer(this),
 	m_Time(),
 	m_CurrentOpItem(NULL),
-	m_CurrentJobItem(NULL)
+	m_CurrentJobItem(NULL),
+	m_LastReportUpdate(0)
 {
 	setMainWidget(&dialogWidget());
 	setDetailsWidget(&detailsWidget());

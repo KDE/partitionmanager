@@ -44,6 +44,7 @@ PartWidget::PartWidget(QWidget* parent, const PartTableWidget* ptWidget, const P
 	PartWidgetBase(),
 	m_PartTableWidget(const_cast<PartTableWidget*>(ptWidget)),
 	m_Partition(const_cast<Partition*>(p)),
+	m_Widgets(),
 	m_ShowChildren(show_children)
 {
 	setFont(KGlobalSettings::smallestReadableFont());

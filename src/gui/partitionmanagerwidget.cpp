@@ -80,6 +80,8 @@
 
 class PartitionTreeWidgetItem : public QTreeWidgetItem
 {
+	Q_DISABLE_COPY(PartitionTreeWidgetItem)
+
 	public:
 		PartitionTreeWidgetItem(const Partition* p) : QTreeWidgetItem(), m_Partition(p) {}
 		const Partition* partition() const { return m_Partition; }

@@ -41,6 +41,7 @@ class QTreeWidget;
 class LIBPARTITIONMANAGERPRIVATE_EXPORT TreeLog: public QWidget, public Ui::TreeLogBase
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(TreeLog)
 
 	public:
 		TreeLog(QWidget* parent);

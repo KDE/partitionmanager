@@ -39,16 +39,17 @@ class QMouseEvent;
 class PartTableWidget : public QWidget, public PartWidgetBase
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(PartTableWidget)
 
 	public:
 		PartTableWidget(QWidget* parent);
 
 	public:
 		void setPartitionTable(const PartitionTable* ptable);
-		
+
 		PartWidget* activeWidget() { return m_ActiveWidget; } /**< @return the active widget or NULL if none */
-		const PartWidget* activeWidget() const { return m_ActiveWidget; } /**< @return the active widget or NULL if none */ 
-		
+		const PartWidget* activeWidget() const { return m_ActiveWidget; } /**< @return the active widget or NULL if none */
+
 		void setActiveWidget(PartWidget* partWidget);
 		void setActivePartition(const Partition* p);
 		void clear();
@@ -61,17 +62,17 @@ class PartTableWidget : public QWidget, public PartWidgetBase
 		void resizeEvent(QResizeEvent* event);
 		void mousePressEvent(QMouseEvent* event);
 		void mouseDoubleClickEvent(QMouseEvent* event);
-		
+
 		void drawPartitions() const;
-		
+
 		QList<PartWidget*>& widgets() { return m_Widgets; }
 		const QList<PartWidget*>& widgets() const { return m_Widgets; }
 
 		const PartitionTable* partitionTable() const { return m_PartitionTable; }
-		
+
 		QLabel& labelEmpty() { return m_LabelEmpty; }
 		const QLabel& labelEmpty() const { return m_LabelEmpty; }
-		
+
 	private:
 		const PartitionTable* m_PartitionTable;
 		QList<PartWidget*> m_Widgets;

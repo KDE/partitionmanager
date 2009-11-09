@@ -38,6 +38,8 @@ class QString;
 */
 class InfoPane : public QWidget
 {
+	Q_DISABLE_COPY(InfoPane)
+
 	public:
 		InfoPane(QWidget* parent);
 

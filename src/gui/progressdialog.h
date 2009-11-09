@@ -48,6 +48,7 @@ class QKeyEvent;
 class ProgressDialog : public KDialog
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(ProgressDialog)
 
 	public:
 		ProgressDialog(QWidget* parent, OperationRunner& orunner);
@@ -78,23 +79,23 @@ class ProgressDialog : public KDialog
 		void keyPressEvent(QKeyEvent* e);
 
 		void setupConnections();
-		
+
 		const OperationRunner& operationRunner() const { return m_OperationRunner; }
 
 		ProgressDialogWidget& dialogWidget() { Q_ASSERT(m_ProgressDialogWidget); return *m_ProgressDialogWidget; }
 		const ProgressDialogWidget& dialogWidget() const { Q_ASSERT(m_ProgressDialogWidget); return *m_ProgressDialogWidget; }
-		
+
 		ProgressDetailsWidget& detailsWidget() { Q_ASSERT(m_ProgressDetailsWidget); return *m_ProgressDetailsWidget; }
 		const ProgressDetailsWidget& detailsWidget() const { Q_ASSERT(m_ProgressDetailsWidget); return *m_ProgressDetailsWidget; }
 
 		void setStatus(const QString& s);
-		
+
 		void setParentTitle(const QString& s);
 
 		void addTaskOutput(int num, const Operation& op);
-		
+
 		QString opDesc(int num, const Operation& op) const;
-		
+
 		void resetReport();
 
 		void allOpsDone(const QString& msg);
@@ -103,12 +104,12 @@ class ProgressDialog : public KDialog
 
 		QTimer& timer() { return m_Timer; }
 		const QTimer& timer() const { return m_Timer; }
-		
+
 		const QString& savedParentTitle() const { return m_SavedParentTitle; }
-		
+
 		void setCurrentOpItem(QTreeWidgetItem* item) { m_CurrentOpItem = item; }
 		QTreeWidgetItem* currentOpItem() { return m_CurrentOpItem; }
-		
+
 		void setCurrentJobItem(QTreeWidgetItem* item) { m_CurrentJobItem = item; }
 		QTreeWidgetItem* currentJobItem() { return m_CurrentJobItem; }
 

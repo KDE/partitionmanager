@@ -39,6 +39,7 @@ class SizeDialogWidget;
 class SizeDialogBase : public KDialog
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(SizeDialogBase)
 
 	protected:
 		SizeDialogBase(QWidget* parent, Capacity::Unit preferred, Device& device, Partition& part, qint64 freebefore, qint64 freeafter);

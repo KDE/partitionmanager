@@ -38,6 +38,7 @@ class KPushButton;
 class FileSystemSupportDialog : public KDialog
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(FileSystemSupportDialog)
 
 	private:
 		class FileSystemSupportDialogWidget : public QWidget, public Ui::FileSystemSupportDialogWidgetBase

@@ -45,6 +45,7 @@ class ProgressDialog;
 class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget, Ui::PartitionManagerWidgetBase
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(PartitionManagerWidget)
 
 	public:
 		explicit PartitionManagerWidget(QWidget* parent, KActionCollection* coll = NULL);

@@ -40,6 +40,7 @@ class KActionCollection;
 class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui::ListDevicesBase
 {
 	Q_OBJECT
+	Q_DISABLE_COPY(ListDevices)
 
 	public:
 		ListDevices(QWidget* parent);
