@@ -34,7 +34,7 @@ kde4_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
 
 kde4_add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
 
-target_link_libraries(partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${LIBPARTED_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES})
+target_link_libraries(partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${LIBPARTED_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES} ${KDE4_KDEUI_LIBS})
 
 install(TARGETS partitionmanagerprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -46,7 +46,7 @@ kde4_add_app_icon(partitionmanager-bin_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icon
 
 kde4_add_executable(partitionmanager-bin ${partitionmanager-bin_SRCS})
 
-target_link_libraries(partitionmanager-bin partitionmanagerprivate)
+target_link_libraries(partitionmanager-bin partitionmanagerprivate ${KDE4_KDEUI_LIBS})
 
 if(UNIX)
 	add_custom_target(partitionmanager ALL
