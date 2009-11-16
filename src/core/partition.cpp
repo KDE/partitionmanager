@@ -296,7 +296,7 @@ bool Partition::mount(Report& report)
 */
 bool Partition::unmount(Report& report)
 {
-	if (!isMounted() || mountPoints().size() == 0)
+	if (!isMounted())
 		return false;
 
 	bool success = true;
