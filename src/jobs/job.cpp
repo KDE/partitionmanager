@@ -297,7 +297,7 @@ FileSystem::Type Job::detectFileSystem(PedDevice* pedDevice, PedPartition* pedPa
 	else if (s == "ext2") rval = FileSystem::Ext2;
 	else if (s == "ext3") rval = FileSystem::Ext3;
 	else if (s == "ext4") rval = FileSystem::Ext4;
-	else if (s == "linux-swap") rval = FileSystem::LinuxSwap;
+	else if (s.startsWith("linux-swap")) rval = FileSystem::LinuxSwap;
 	else if (s == "fat16") rval = FileSystem::Fat16;
 	else if (s == "fat32") rval = FileSystem::Fat32;
 	else if (s == "ntfs") rval = FileSystem::Ntfs;
