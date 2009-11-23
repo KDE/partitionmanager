@@ -27,6 +27,13 @@
 #include <kmessagebox.h>
 #include <kglobal.h>
 #include <kcomponentdata.h>
+#include <kstandarddirs.h>
+#include <kcmdlineargs.h>
+#include <kdebug.h>
+
+#include <QProcess>
+#include <QFileInfo>
+#include <QApplication>
 
 #include <unistd.h>
 #include <signal.h>
@@ -45,9 +52,45 @@ void unblockSigChild()
 	sigprocmask(SIG_UNBLOCK, &sset, NULL);
 }
 
+static QString suCommand()
+{
+	QString rval = KStandardDirs().locate("exe", "kdesu");
+
+	if (rval.isEmpty() || !QFileInfo(rval).isExecutable())
+		rval = KStandardDirs().locate("exe", "kdesudo");
+	
+	// is it even possible to install kdelibs without kdesu? well, won't hurt and you never
+	// know what distros and packagers do...
+	if (rval.isEmpty() || !QFileInfo(rval).isExecutable())
+		rval = KStandardDirs().locate("exe", "gksudo");
+	
+	if (rval.isEmpty() || !QFileInfo(rval).isExecutable())
+		rval = KStandardDirs().locate("exe", "gksu");
+
+	return QFileInfo(rval).isExecutable() ? rval : QString();
+}
+
 bool checkPermissions()
 {
 	if (geteuid() != 0)
+	{
+		// only try to gain root privileges if we have a valid (kde|gk)su(do) command and 
+		// we did not try so before: the dontsu-option is there to make sure there are no 
+		// endless loops of calling the same non-working (kde|gk)su(do) binary again and again.
+		if (!suCommand().isEmpty() && !KCmdLineArgs::parsedArgs()->isSet("dontsu"))
+		{
+			QStringList args = qApp->arguments();
+
+			// first argument is our own command again (i.e., argv[0])
+			if (!args.isEmpty())
+				args.removeFirst();
+		
+			// arguments to partition manager must be _one_ argument to kdesu(do)
+			const QString suArgs = qApp->applicationFilePath() + args.join(" ") + " --dontsu";
+			if (QProcess::execute(suCommand(), QStringList() << suArgs) == 0)
+				return false;
+		}
+		
 		return KMessageBox::warningContinueCancel(NULL, i18nc("@info",
 				"<para><warning>You do not have administrative privileges.</warning></para>"
 				"<para>It is possible to run <application>%1</application> without these privileges. "
@@ -58,6 +101,7 @@ bool checkPermissions()
 			KGuiItem(i18nc("@action:button", "Run without administrative privileges")),
 			KStandardGuiItem::cancel(),
 			"runWithoutRootPrivileges") == KMessageBox::Continue;
+	}
 
 	return true;
 }

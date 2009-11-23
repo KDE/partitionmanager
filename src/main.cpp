@@ -27,6 +27,9 @@
 int main(int argc, char* argv[])
 {
 	KCmdLineArgs::init(argc, argv, createPartitionManagerAboutData());
+	KCmdLineOptions options;
+	options.add("dontsu", ki18nc("@info:shell", "Do not try to gain super user privileges"));
+	KCmdLineArgs::addCmdLineOptions(options);
 
 	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427
 	unblockSigChild();
