@@ -54,20 +54,18 @@ void unblockSigChild()
 
 static QString suCommand()
 {
-	QString rval = KStandardDirs().locate("exe", "kdesu");
+	KStandardDirs d;
+	const char* candidates[] = { "kdesu", "kdesudo", "gksudo", "gksu" };
+	QString rval;
 
-	if (rval.isEmpty() || !QFileInfo(rval).isExecutable())
-		rval = KStandardDirs().locate("exe", "kdesudo");
-	
-	// is it even possible to install kdelibs without kdesu? well, won't hurt and you never
-	// know what distros and packagers do...
-	if (rval.isEmpty() || !QFileInfo(rval).isExecutable())
-		rval = KStandardDirs().locate("exe", "gksudo");
-	
-	if (rval.isEmpty() || !QFileInfo(rval).isExecutable())
-		rval = KStandardDirs().locate("exe", "gksu");
+	for (quint32 i = 0; i < sizeof(candidates) / sizeof(candidates[0]); i++)
+	{
+		rval = d.locate("exe", candidates[i]);
+		if (QFileInfo(rval).isExecutable())
+			return rval;
+	}
 
-	return QFileInfo(rval).isExecutable() ? rval : QString();
+	return QString();
 }
 
 bool checkPermissions()
@@ -85,7 +83,7 @@ bool checkPermissions()
 			if (!args.isEmpty())
 				args.removeFirst();
 		
-			// arguments to partition manager must be _one_ argument to kdesu(do)
+			// arguments to partition manager must be _one_ argument to (kde|gk)su(do)
 			const QString suArgs = qApp->applicationFilePath() + args.join(" ") + " --dontsu";
 			if (QProcess::execute(suCommand(), QStringList() << suArgs) == 0)
 				return false;
