@@ -1,3 +1,17 @@
+1.0.1 (2009-11-29)
+==================
+
+* Fix a bug that made it impossible to activate or deactivate a swap file
+  system.
+
+* Correctly handle linux swap even with newer parted versions.
+
+* Ask for an administrator's password on startup so that non-KDE users can run
+  the application from their launcher.
+
+* Use the "blkid" command as an alternative to "vol_id" if the latter is
+  unavailable.
+
 1.0.0 (2009-08-17)
 ==================
 
