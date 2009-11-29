@@ -53,15 +53,33 @@ qint64 FileSystem::readUsedCapacity(const QString& deviceNode) const
 	return -1;
 }
 
+static QString invokeIdUtil(const QString& util, const QString& deviceNode, const QString& rx)
+{
+	ExternalCommand cmd(util, QStringList() << deviceNode);
+
+	if (cmd.run())
+	{
+		QRegExp rxLabel(rx);
+
+		if (rxLabel.indexIn(cmd.output()) != -1)
+			return rxLabel.cap(1).simplified();
+	}
+
+	return QString();
+}
+
 /** Reads the label for this FileSystem
 	@param deviceNode the device node for the Partition the FileSystem is on
 	@return the FileSystem label or an empty string in case of error
 */
 QString FileSystem::readLabel(const QString& deviceNode) const
 {
-	Q_UNUSED(deviceNode);
+	QString rval = invokeIdUtil("vol_id", deviceNode, "ID_FS_LABEL=(\\w+)");
 
-	return QString();
+	if (rval.isEmpty())
+		rval = invokeIdUtil("blkid", deviceNode, "LABEL=\"(\\w+)\"");
+
+	return rval;
 }
 
 /** Creates a new FileSystem
@@ -171,18 +189,12 @@ bool FileSystem::updateUUID(Report& report, const QString& deviceNode) const
  */
 QString FileSystem::readUUID(const QString& deviceNode) const
 {
-	ExternalCommand cmd("vol_id", QStringList() << deviceNode);
+	QString rval = invokeIdUtil("vol_id", deviceNode, "ID_FS_UUID=([^\\s]+)");
 
-	if (cmd.run())
-	{
-		QRegExp rxUuid("ID_FS_UUID=([^\\s]+)");
+	if (rval.isEmpty())
+		rval = invokeIdUtil("blkid", deviceNode, "UUID=\"([^\"]+)\"");
 
-		if (rxUuid.indexIn(cmd.output()) != -1)
-			return rxUuid.cap(1).simplified();
-	}
-
-	return QString();
-
+	return rval;
 }
 
 /** Give implementations of FileSystem a chance to update the boot sector after the
@@ -335,3 +347,9 @@ bool FileSystem::findExternal(const QString& cmdName, const QStringList& args, i
 
 	return cmd.exitCode() == 0 || cmd.exitCode() == expectedCode;
 }
+
+bool FileSystem::findIdUtil()
+{
+	return findExternal("vol_id") || findExternal("blkid");
+}
+

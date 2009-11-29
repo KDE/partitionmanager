@@ -58,14 +58,14 @@ namespace FS
 
 		m_Create = findExternal("mkfs.msdos") ? SupportExternal : SupportNone;
 		m_GetUsed = m_Check = findExternal("fsck.msdos", QStringList(), 2) ? SupportExternal : SupportNone;
-		m_GetLabel = findExternal("vol_id") ? SupportExternal : SupportNone;
+		m_GetLabel = findIdUtil() ? SupportExternal : SupportNone;
 		m_Grow = SupportLibParted;
 		m_Shrink = SupportLibParted;
 		m_Move = SupportInternal;
 		m_Copy = SupportInternal;
 		m_Backup = SupportInternal;
 		m_UpdateUUID = findExternal("dd") ? SupportExternal : SupportNone;
-		m_GetUUID = findExternal("vol_id") ? SupportExternal : SupportNone;
+		m_GetUUID = findIdUtil() ? SupportExternal : SupportNone;
 	}
 
 	qint64 fat16::minCapacity() const
@@ -133,20 +133,5 @@ namespace FS
 			return false;
 
 		return cmd.waitFor(-1);
-	}
-
-	QString fat16::readLabel(const QString& deviceNode) const
-	{
-		ExternalCommand cmd("vol_id", QStringList() << deviceNode);
-
-		if (cmd.run())
-		{
-			QRegExp rxLabel("ID_FS_LABEL=(\\w+)");
-
-			if (rxLabel.indexIn(cmd.output()) != -1)
-				return rxLabel.cap(1).simplified();
-		}
-
-		return QString();
 	}
 }

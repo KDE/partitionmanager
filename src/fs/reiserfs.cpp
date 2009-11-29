@@ -59,7 +59,7 @@ namespace FS
 		m_Shrink = (m_GetUsed != SupportNone && m_Grow != SupportNone) ? SupportExternal : SupportNone;
 		m_Backup = SupportInternal;
 		m_UpdateUUID = findExternal("reiserfstune") ? SupportExternal : SupportNone;
-		m_GetUUID = findExternal("vol_id") ? SupportExternal : SupportNone;
+		m_GetUUID = findIdUtil() ? SupportExternal : SupportNone;
 	}
 
 	qint64 reiserfs::minCapacity() const

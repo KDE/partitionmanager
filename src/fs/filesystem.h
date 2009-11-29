@@ -147,6 +147,7 @@ class FileSystem
 
 	protected:
 		static bool findExternal(const QString& cmdName, const QStringList& args = QStringList(), int exptectedCode = 1);
+		static bool findIdUtil();
 
 	protected:
 		FileSystem::Type m_Type;

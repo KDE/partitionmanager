@@ -42,10 +42,10 @@ namespace FS
 	void linuxswap::init()
 	{
 		m_SetLabel = m_Shrink = m_Grow = m_Create = (findExternal("mkswap")) ? SupportExternal : SupportNone;
-		m_GetLabel = findExternal("vol_id") ? SupportExternal : SupportNone;
+		m_GetLabel = findIdUtil() ? SupportExternal : SupportNone;
 		m_Copy = SupportInternal;
 		m_Move = SupportInternal;
-		m_GetUUID = findExternal("vol_id") ? SupportExternal : SupportNone;
+		m_GetUUID = findIdUtil() ? SupportExternal : SupportNone;
 	}
 
 	bool linuxswap::create(Report& report, const QString& deviceNode) const
@@ -63,21 +63,6 @@ namespace FS
 		args << deviceNode;
 
 		return ExternalCommand(report, "mkswap", args).run(-1);
-	}
-
-	QString linuxswap::readLabel(const QString& deviceNode) const
-	{
-		ExternalCommand cmd("vol_id", QStringList() << deviceNode);
-
-		if (cmd.run())
-		{
-			QRegExp rxLabel("ID_FS_LABEL=(\\w+)");
-
-			if (rxLabel.indexIn(cmd.output()) != -1)
-				return rxLabel.cap(1).simplified();
-		}
-
-		return QString();
 	}
 
 	bool linuxswap::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
