@@ -64,7 +64,7 @@ namespace FS
 		m_Backup = SupportInternal;
 		m_UpdateUUID = findExternal("dd") ? SupportExternal : SupportNone;
 		m_Move = (m_Check != SupportNone) ? SupportInternal : SupportNone;
-		m_GetUUID = findExternal("vol_id") ? SupportExternal : SupportNone;
+		m_GetUUID = findIdUtil() ? SupportExternal : SupportNone;
 	}
 
 	qint64 ntfs::maxCapacity() const

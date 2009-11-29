@@ -44,7 +44,6 @@ namespace FS
 
 			virtual bool create(Report& report, const QString& deviceNode) const;
 			virtual bool resize(Report& report, const QString& deviceNode, qint64 length) const;
-			virtual QString readLabel(const QString& deviceNode) const;
 			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
 
 			virtual bool canMount(const QString&) const { return true; }
