@@ -136,7 +136,7 @@ void PartTableWidget::resizeEvent(QResizeEvent*)
 void PartTableWidget::mousePressEvent(QMouseEvent* event)
 {
 	event->accept();
-	PartWidget* child = static_cast<PartWidget*>(childAt(event->pos()));
+	PartWidget* child = qobject_cast<PartWidget*>(childAt(event->pos()));
 	setActiveWidget(child);
 }
 
