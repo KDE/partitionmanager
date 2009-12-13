@@ -33,6 +33,7 @@
 #include <kglobal.h>
 #include <kglobalsettings.h>
 #include <klocale.h>
+#include <kdebug.h>
 
 /** Creates a new InfoPane instance
 	@param parent the parent widget
@@ -47,7 +48,8 @@ InfoPane::InfoPane(QWidget* parent) :
 void InfoPane::clear()
 {
 	parentWidget()->setWindowTitle(i18nc("@title:window", "Information"));
-	qDeleteAll(findChildren<QWidget*>());
+	qDeleteAll(findChildren<QLabel*>());
+	qDeleteAll(findChildren<QFrame*>());
 }
 
 int InfoPane::createHeader(const QString& title)
