@@ -294,4 +294,6 @@ void LibParted::scanDevices(OperationStack& ostack)
 
 		pedDevice = ped_device_get_next(pedDevice);
 	}
+
+	ostack.sortDevices();
 }
