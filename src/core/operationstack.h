@@ -45,7 +45,7 @@ class OperationStack
 	public:
 		typedef QList<Device*> Devices;
 		typedef QList<Operation*> Operations;
-		
+
 	public:
 		OperationStack();
 		~OperationStack();
@@ -55,10 +55,10 @@ class OperationStack
 		void pop();
 		void clearOperations();
 		int size() const { return operations().size(); } /**< @return number of operations */
-		
+
 		Devices& previewDevices() { return m_PreviewDevices; } /**< @return the list of Devices */
 		const Devices& previewDevices() const { return m_PreviewDevices; } /**< @return the list of Devices */
-		
+
 		Operations& operations() { return m_Operations; } /**< @return the list of operations */
 		const Operations& operations() const { return m_Operations; } /**< @return the list of operations */
 
@@ -67,7 +67,8 @@ class OperationStack
 	protected:
 		void clearDevices();
 		void addDevice(Device* d);
-		
+		void sortDevices();
+
 		bool mergeNewOperation(Operation*& currentOp, Operation*& pushedOp);
 		bool mergeCopyOperation(Operation*& currentOp, Operation*& pushedOp);
 		bool mergeRestoreOperation(Operation*& currentOp, Operation*& pushedOp);

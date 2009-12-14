@@ -458,3 +458,13 @@ void OperationStack::addDevice(Device* d)
 
 	m_PreviewDevices.append(d);
 }
+
+static bool deviceLessThan(const Device* d1, const Device* d2)
+{
+	return d1->deviceNode() <= d2->deviceNode();
+}
+
+void OperationStack::sortDevices()
+{
+	qSort(m_PreviewDevices.begin(), m_PreviewDevices.end(), deviceLessThan);
+}
