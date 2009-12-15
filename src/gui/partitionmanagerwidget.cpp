@@ -931,8 +931,6 @@ void PartitionManagerWidget::onApplyAllOperations()
 
 		operationRunner().setReport(&progressDialog().report());
 
-		setUpdatesEnabled(false);
-
 		// Undo all operations so the runner has a defined starting point
 		for (int i = operationStack().operations().size() - 1; i >= 0; i--)
 		{
@@ -1039,7 +1037,6 @@ void PartitionManagerWidget::onFileSystemSupport()
 
 void PartitionManagerWidget::onFinished()
 {
-	setUpdatesEnabled(true);
 	scanDevices();
 }
 
