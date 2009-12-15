@@ -471,6 +471,7 @@ void PartitionTable::removeUnallocated(PartitionNode* p)
 		if (child->roles().has(PartitionRole::Unallocated))
 		{
 			p->remove(child);
+			delete child;
 			continue;
 		}
 
