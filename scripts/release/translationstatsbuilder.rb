@@ -99,6 +99,8 @@ END_OF_TEXT
 	end
 	
 	def statsLine(file, langName, numLanguages, translatedPercent)
+		return 0, 0 if not File.exists?("po/#{langName}/#{@appName}.po")
+
 		fuzzy, untranslated, percentage = TranslationStatsBuilder.fileStats("po/#{langName}/#{@appName}.po")
 		
 		textColor = case percentage

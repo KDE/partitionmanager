@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>ReleaseDialog</class>
- <widget class="QDialog" name="ReleaseDialog" >
-  <property name="geometry" >
+ <widget class="QDialog" name="ReleaseDialog">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,70 +10,70 @@
     <height>405</height>
    </rect>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>500</width>
     <height>0</height>
    </size>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>KDE Release Builder</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" >
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QGroupBox" name="goupApplication" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+    <widget class="QGroupBox" name="goupApplication">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>1</verstretch>
       </sizepolicy>
      </property>
-     <property name="title" >
+     <property name="title">
       <string>Application</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout" >
-      <item row="0" column="0" >
-       <widget class="QLabel" name="label" >
-        <property name="text" >
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
          <string>Name:</string>
         </property>
-        <property name="alignment" >
+        <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
-      <item row="0" column="2" >
-       <widget class="QLabel" name="label_4" >
-        <property name="text" >
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
          <string>&amp;Version:</string>
         </property>
-        <property name="alignment" >
+        <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
-        <property name="buddy" >
+        <property name="buddy">
          <cstring>editVersion</cstring>
         </property>
        </widget>
       </item>
-      <item row="0" column="3" >
-       <widget class="QLineEdit" name="editVersion" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+      <item row="0" column="3">
+       <widget class="QLineEdit" name="editVersion">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>1</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
        </widget>
       </item>
-      <item row="0" column="1" >
-       <widget class="QLabel" name="labelName" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+      <item row="0" column="1">
+       <widget class="QLabel" name="labelName">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>1</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="text" >
+        <property name="text">
          <string/>
         </property>
        </widget>
@@ -81,139 +82,139 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+    <widget class="QGroupBox" name="groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>2</verstretch>
       </sizepolicy>
      </property>
-     <property name="title" >
+     <property name="title">
       <string>Repository and Revision</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_3" >
-      <item row="0" column="0" >
-       <widget class="QLabel" name="label_2" >
-        <property name="text" >
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
          <string>&amp;Checkout From:</string>
         </property>
-        <property name="alignment" >
+        <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
-        <property name="buddy" >
+        <property name="buddy">
          <cstring>comboCheckout</cstring>
         </property>
        </widget>
       </item>
-      <item row="0" column="1" >
-       <widget class="QComboBox" name="comboCheckout" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboCheckout">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>1</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
         <item>
-         <property name="text" >
+         <property name="text">
           <string>trunk</string>
          </property>
         </item>
         <item>
-         <property name="text" >
-          <string>stable</string>
+         <property name="text">
+          <string>branches</string>
          </property>
         </item>
         <item>
-         <property name="text" >
-          <string>tag</string>
+         <property name="text">
+          <string>tags</string>
          </property>
         </item>
        </widget>
       </item>
-      <item row="0" column="2" >
-       <widget class="QLabel" name="label_6" >
-        <property name="text" >
-         <string>Ta&amp;g:</string>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Ta&amp;g/Branch:</string>
         </property>
-        <property name="alignment" >
+        <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
-        <property name="buddy" >
+        <property name="buddy">
          <cstring>comboCheckout</cstring>
         </property>
        </widget>
       </item>
-      <item row="0" column="3" >
-       <widget class="QComboBox" name="comboTag" >
-        <property name="enabled" >
+      <item row="0" column="3">
+       <widget class="QComboBox" name="comboTag">
+        <property name="enabled">
          <bool>false</bool>
         </property>
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>1</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
        </widget>
       </item>
-      <item row="1" column="0" >
-       <widget class="QLabel" name="label_3" >
-        <property name="text" >
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
          <string>&amp;SVN Access:</string>
         </property>
-        <property name="alignment" >
+        <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
-        <property name="buddy" >
+        <property name="buddy">
          <cstring>comboAccess</cstring>
         </property>
        </widget>
       </item>
-      <item row="1" column="1" >
-       <widget class="QComboBox" name="comboAccess" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+      <item row="1" column="1">
+       <widget class="QComboBox" name="comboAccess">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>1</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
         <item>
-         <property name="text" >
+         <property name="text">
           <string>anonsvn</string>
          </property>
         </item>
         <item>
-         <property name="text" >
+         <property name="text">
           <string>https</string>
          </property>
         </item>
         <item>
-         <property name="text" >
+         <property name="text">
           <string>svn+ssh</string>
          </property>
         </item>
        </widget>
       </item>
-      <item row="1" column="2" >
-       <widget class="QLabel" name="label_5" >
-        <property name="text" >
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
          <string>&amp;User:</string>
         </property>
-        <property name="alignment" >
+        <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
-        <property name="buddy" >
+        <property name="buddy">
          <cstring>editUser</cstring>
         </property>
        </widget>
       </item>
-      <item row="1" column="3" >
-       <widget class="QLineEdit" name="editUser" >
-        <property name="enabled" >
+      <item row="1" column="3">
+       <widget class="QLineEdit" name="editUser">
+        <property name="enabled">
          <bool>false</bool>
         </property>
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>1</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -224,115 +225,115 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupOptions" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+    <widget class="QGroupBox" name="groupOptions">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>2</verstretch>
       </sizepolicy>
      </property>
-     <property name="title" >
+     <property name="title">
       <string>Options</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2" >
-      <item row="0" column="0" >
-       <widget class="QCheckBox" name="checkDocs" >
-        <property name="text" >
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="checkDocs">
+        <property name="text">
          <string>Get &amp;Documentation</string>
         </property>
-        <property name="checked" >
+        <property name="checked">
          <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="0" column="1" >
-       <widget class="QCheckBox" name="checkTranslations" >
-        <property name="text" >
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="checkTranslations">
+        <property name="text">
          <string>Get &amp;Translations</string>
         </property>
-        <property name="checked" >
+        <property name="checked">
          <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="1" column="0" >
-       <widget class="QCheckBox" name="checkTag" >
-        <property name="text" >
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="checkTag">
+        <property name="text">
          <string>C&amp;reate Tag</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0" colspan="2" >
-       <layout class="QHBoxLayout" name="horizontalLayout" >
+      <item row="3" column="0" colspan="2">
+       <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QCheckBox" name="checkSkipTrans" >
-          <property name="text" >
+         <widget class="QCheckBox" name="checkSkipTrans">
+          <property name="text">
            <string>S&amp;kip translations below completion:</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSlider" name="sliderSkipTrans" >
-          <property name="enabled" >
+         <widget class="QSlider" name="sliderSkipTrans">
+          <property name="enabled">
            <bool>false</bool>
           </property>
-          <property name="maximum" >
+          <property name="maximum">
            <number>100</number>
           </property>
-          <property name="singleStep" >
+          <property name="singleStep">
            <number>5</number>
           </property>
-          <property name="value" >
+          <property name="value">
            <number>50</number>
           </property>
-          <property name="orientation" >
+          <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
-          <property name="tickPosition" >
+          <property name="tickPosition">
            <enum>QSlider::TicksBelow</enum>
           </property>
-          <property name="tickInterval" >
+          <property name="tickInterval">
            <number>10</number>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinSkipTrans" >
-          <property name="enabled" >
+         <widget class="QSpinBox" name="spinSkipTrans">
+          <property name="enabled">
            <bool>false</bool>
           </property>
-          <property name="suffix" >
+          <property name="suffix">
            <string> %</string>
           </property>
-          <property name="maximum" >
+          <property name="maximum">
            <number>100</number>
           </property>
-          <property name="singleStep" >
+          <property name="singleStep">
            <number>5</number>
           </property>
-          <property name="value" >
+          <property name="value">
            <number>50</number>
           </property>
          </widget>
         </item>
        </layout>
       </item>
-      <item row="2" column="0" >
-       <widget class="QCheckBox" name="checkTarball" >
-        <property name="text" >
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="checkTarball">
+        <property name="text">
          <string>Create Tar&amp;ball</string>
         </property>
-        <property name="checked" >
+        <property name="checked">
          <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="1" column="1" >
-       <widget class="QCheckBox" name="checkFixes" >
-        <property name="text" >
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="checkFixes">
+        <property name="text">
          <string>Apply &amp;fixes</string>
         </property>
-        <property name="checked" >
+        <property name="checked">
          <bool>true</bool>
         </property>
        </widget>
@@ -341,11 +342,11 @@
     </widget>
    </item>
    <item>
-    <widget class="QDialogButtonBox" name="buttonBox" >
-     <property name="orientation" >
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="standardButtons" >
+     <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
@@ -374,11 +375,11 @@
    <receiver>ReleaseDialog</receiver>
    <slot>accept()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>226</x>
      <y>447</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>157</x>
      <y>274</y>
     </hint>
@@ -390,11 +391,11 @@
    <receiver>ReleaseDialog</receiver>
    <slot>reject()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>294</x>
      <y>447</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
     </hint>
@@ -406,11 +407,11 @@
    <receiver>spinSkipTrans</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>354</x>
      <y>378</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>489</x>
      <y>383</y>
     </hint>
@@ -422,11 +423,11 @@
    <receiver>sliderSkipTrans</receiver>
    <slot>setValue(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>492</x>
      <y>397</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>342</x>
      <y>384</y>
     </hint>
@@ -438,11 +439,11 @@
    <receiver>sliderSkipTrans</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>123</x>
      <y>387</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>288</x>
      <y>396</y>
     </hint>
@@ -454,11 +455,11 @@
    <receiver>spinSkipTrans</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>87</x>
      <y>388</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>486</x>
      <y>391</y>
     </hint>

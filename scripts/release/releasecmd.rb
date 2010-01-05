@@ -1,6 +1,6 @@
 =begin
 ***************************************************************************
-*   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+*   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
 *   it under the terms of the GNU General Public License as published by  *
@@ -41,7 +41,7 @@ class ReleaseCommand
 #{$0} [options]
 where options are:
 	--version (-v): mandatory
-	--checkout-from (-c): trunk (default), stable, tag
+	--checkout-from (-c): trunk (default), branches, tags
 	--tag (-t): name of tag
 	--svn-access (-s): https, svn+ssh, anonsvn (default)
 	--svn-user (-u): svn username (for svn+ssh)
@@ -115,7 +115,7 @@ END_OF_TEXT
 			return false
 		end
 
-		if @checkoutFrom == 'tag' and @tag.empty?
+		if @checkoutFrom == 'tags' and @tag.empty?
 			puts 'Cannot check out from tag dir if tag is empty.'
 			return false
 		end
@@ -124,9 +124,7 @@ END_OF_TEXT
 	end
 
 	def run(app)
-		repository = ReleaseBuilder.repository(app, @protocol, @user, @checkoutFrom != 'tag' ? @checkoutFrom : @tag)
-
-		releaseBuilder = ReleaseBuilder.new(app, Dir.getwd, repository, @version)
-		releaseBuilder.run(@protocol, @user, @createTarball, @getTranslations, @skipBelow, @getDocs, @createTag, @applyFixes)
+		releaseBuilder = ReleaseBuilder.new(@checkoutFrom, @tag, app, Dir.getwd, @protocol, @user, @version)
+		releaseBuilder.run(@createTarball, @getTranslations, @skipBelow, @getDocs, @createTag, @applyFixes)
 	end
 end

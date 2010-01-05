@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 =begin
 ***************************************************************************
-*   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+*   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
 *   it under the terms of the GNU General Public License as published by  *
@@ -61,14 +61,12 @@ class ReleaseDialog < Qt::Dialog
 	def accept
 		return if not validate
 
-		repository = ReleaseBuilder.repository(@app, @ui.comboAccess.currentText, @ui.editUser.text, @ui.comboCheckout.currentText != 'tag' ? @ui.comboCheckout.currentText : @ui.comboTag.currentText)
-
 		skipBelow = @ui.checkSkipTrans.isChecked ? @ui.spinSkipTrans.value : 0
 
 		hide
 		
-		releaseBuilder = ReleaseBuilder.new(@app, Dir.getwd, repository, @ui.editVersion.text)
-		releaseBuilder.run(@ui.comboAccess.currentText, @ui.editUser.text, @ui.checkTarball.isChecked, @ui.checkTranslations.isChecked, skipBelow, @ui.checkDocs.isChecked, @ui.checkTag.isChecked, @ui.checkFixes.isChecked)
+		releaseBuilder = ReleaseBuilder.new(@ui.comboCheckout.currentText, @ui.comboTag.currentText, @app, Dir.getwd, @ui.comboAccess.currentText, @ui.editUser.text, @ui.editVersion.text)
+		releaseBuilder.run(@ui.checkTarball.isChecked, @ui.checkTranslations.isChecked, skipBelow, @ui.checkDocs.isChecked, @ui.checkTag.isChecked, @ui.checkFixes.isChecked)
 
 		super
 	end
@@ -79,8 +77,8 @@ private
 	end
 	
 	def on_comboCheckout_currentIndexChanged(index)
-		@ui.comboTag.setEnabled(index == 2)
-		updateTags or @ui.comboTag.setEnabled(false) if index == 2
+		@ui.comboTag.clear
+		@ui.comboTag.setEnabled(index == 1 && updateBranches || index == 2 && updateTags)
 	end
 	
 	def on_checkTranslations_toggled(state)
@@ -90,9 +88,6 @@ private
 	end
 	
 	def updateTags
-		@ui.comboTag.clear
-	
-#		tags = `svn ls file://localhost/home/vl/tmp/svn/tags/#{@app.name}`.chomp!
 		tags = `svn ls svn://anonsvn.kde.org/home/kde/tags/#{@app.name}`.chomp!
 		
 		return false if not tags or tags.length == 0
@@ -101,4 +96,12 @@ private
 		return true
 	end
 
+	def updateBranches
+		branches = `svn ls svn://anonsvn.kde.org/home/kde/branches/#{@app.name}`.chomp!
+		
+		return false if not branches or branches.length == 0
+		
+		branches.sort.each { |t| @ui.comboTag.addItem(t.delete("/\n\r")) }
+		return true
+	end
 end

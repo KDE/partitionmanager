@@ -1,6 +1,6 @@
 =begin
 ***************************************************************************
-*   Copyright (C) 2008-2009 by Volker Lanz <vl@fidra.de>                  *
+*   Copyright (C) 2008,2009,2010 by Volker Lanz <vl@fidra.de>             *
 *   Copyright (C) 2007-2008 by Harald Sitter <harald@getamarok.com>       *
 *                                                                         *
 *   This program is free software; you can redistribute it and/or modify  *
@@ -29,10 +29,13 @@ require 'getoptlong'
 class ReleaseBuilder
 
 public
-	def initialize(app, workingDir, repository, version)
+	def initialize(checkoutFrom, checkoutTag, app, workingDir, protocol, user, version)
+		@checkoutFrom = checkoutFrom
+		@checkoutTag = checkoutTag
 		@app = app
 		@workingDir = workingDir
-		@repository = repository
+		@protocol = protocol
+		@user = user
 		@version = version
 		
 		@outputDir = "#{@app.name}-#{@version}"
@@ -41,17 +44,18 @@ public
 		FileUtils.rm_rf "#{@outputDir}.tar.bz2"
 	end
 
-	def run(protocol, user, createTarball, getTranslations, skipBelow, getDocs, createTag, applyFixes)
+	def run(createTarball, getTranslations, skipBelow, getDocs, createTag, applyFixes)
 		checkoutSource
 		translations = checkoutTranslations(skipBelow) if getTranslations
 		docs = checkoutDocumentation if getDocs
 		
 		if createTag
-			repositoryTags = ReleaseBuilder.repository(@app, protocol, user, @version)
-			tagger = Tagger.new(@repository, repositoryTags, @app, @version)
-			tagger.tagSource
-			tagger.tagTranslations(translations)
-			tagger.tagDocumentation(docs)
+			# TODO: fix the tagger so it no longer assumes the source is always trunk
+#			repositoryDest = ReleaseBuilder.repositoryRoot(@protocol, @user) + ReleaseBuilder.repositoryPath('src', @app, 'tags', @version)
+#			tagger = Tagger.new(repositoryDest, @app, @version)
+#			tagger.tagSource
+#			tagger.tagTranslations(translations)
+#			tagger.tagDocumentation(docs)
 		end
 
 		@app.applyFixes(@workingDir, @outputDir) if applyFixes
@@ -61,56 +65,73 @@ public
 
 	def checkoutSource
 		Dir.chdir @workingDir
-		svnDir = "#{@app.component}/#{@app.section}/#{@app.name}"
+		
+		repository = ReleaseBuilder.repositoryRoot(@protocol, @user) + ReleaseBuilder.repositoryPath('src', @app, @checkoutFrom, @checkoutTag)
+		puts "Checking out source from #{repository} to output directory #{@outputDir}..."
 
-		puts "Checking out source from #{@repository}/#{svnDir}..."
-
-		system "svn co #{@repository}/#{svnDir} #{@outputDir} >/dev/null 2>&1"
+		`svn co #{repository} #{@outputDir}`
 	end
 
 	def checkoutTranslations(skipBelow)
+		puts "checking out translations, checkoutfrom: #{@checkoutFrom}"
 		Dir.chdir "#{@workingDir}/#{@outputDir}"
 	
 		FileUtils.rm_rf 'l10n'
 		FileUtils.rm_rf 'po'
 		
-		Dir.mkdir 'l10n'
-		Dir.mkdir 'po'
+		repository = ReleaseBuilder.repositoryRoot(@protocol, @user) + ReleaseBuilder.repositoryPath('i18n', @app, @checkoutFrom, @checkoutTag)
 
-		subdirs = `svn cat #{@repository}/l10n-kde4/subdirs 2>/dev/null`.chomp!
+		puts "checking translations out from: #{repository}"
+
 		translations = []
 
-		subdirs.each do |lang|
-			lang.chomp!
-			next if lang == 'x-test'
+		if @checkoutFrom == 'trunk'
+			puts "checkout from is apparently trunk"
 
-			FileUtils.rm_rf 'l10n'
-			system "svn co #{@repository}/l10n-kde4/#{lang}/messages/#{@app.component}-#{@app.section} l10n >/dev/null 2>&1"
-			next unless FileTest.exists? "l10n/#{@app.name}.po"
+			Dir.mkdir 'l10n'
+			Dir.mkdir 'po'
 
-			if skipBelow > 0
-				fuzzy, untranslated, per = TranslationStatsBuilder.fileStats("l10n/#{@app.name}.po")
-				puts "Language #{lang} is #{per} % complete."
-				next if per < skipBelow
-			end
-			
-			puts "Adding translations for #{lang}..."
-			
-			dest = "po/#{lang}"
-			Dir.mkdir dest
-			
-			FileUtils.mv("l10n/#{@app.name}.po", dest)
-			FileUtils.mv('l10n/.svn', dest)
+			subdirs = `svn cat #{repository}/subdirs 2>/dev/null`.chomp!
 
-			File.open("#{dest}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
-				f.print <<END_OF_TEXT
+			subdirs.each do |lang|
+				lang.chomp!
+				next if lang == 'x-test'
+
+				FileUtils.rm_rf 'l10n'
+				`svn co #{repository}/#{lang}/messages/#{@app.component}-#{@app.section} l10n >/dev/null 2>&1`
+				next unless FileTest.exists? "l10n/#{@app.name}.po"
+
+				if skipBelow > 0
+					fuzzy, untranslated, per = TranslationStatsBuilder.fileStats("l10n/#{@app.name}.po")
+					puts "Language #{lang} is #{per} % complete."
+					next if per < skipBelow
+				end
+				
+				puts "Adding translations for #{lang}..."
+				
+				dest = "po/#{lang}"
+				Dir.mkdir dest
+				
+				FileUtils.mv("l10n/#{@app.name}.po", dest)
+				FileUtils.mv('l10n/.svn', dest)
+
+				File.open("#{dest}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
+					f.print <<END_OF_TEXT
 file(GLOB _po_files *.po)
 GETTEXT_PROCESS_PO_FILES(#{lang} ALL INSTALL_DESTINATION ${LOCALE_INSTALL_DIR} ${_po_files})
 END_OF_TEXT
-			end
+				end
 
-			system "svn add #{dest}/CMakeLists.txt >/dev/null 2>&1"
-			translations << lang
+				`svn add #{dest}/CMakeLists.txt >/dev/null 2>&1`
+				translations << lang
+			end
+		else
+			puts "checkout from is not trunk, checking out from #{repository}"
+			`svn co #{repository}`
+			Dir.entries('po').sort.each do |lang|
+				next if lang == 'CMakeLists.txt' or lang == '.' or lang == '..'
+				translations << lang
+			end
 		end
 
 		if translations.length > 0
@@ -131,7 +152,7 @@ END_OF_TEXT
 
 				translations.each { |lang| f.print "add_subdirectory(#{lang})\n" }
 			end
-
+	
 			File.open('CMakeLists.txt', File::APPEND | File::RDWR) do |f|
 				f.print <<END_OF_TEXT
 include(MacroOptionalAddSubdirectory)
@@ -139,6 +160,7 @@ macro_optional_add_subdirectory(po)
 END_OF_TEXT
 			end
 
+			# TODO: turn on again and check
 			TranslationStatsBuilder.new(@app.name, @version, @workingDir, @outputDir).run
 		else
 			FileUtils.rm_rf 'po'
@@ -152,41 +174,55 @@ END_OF_TEXT
 	def checkoutDocumentation
 		Dir.chdir "#{@workingDir}/#{@outputDir}"
 	
-		system "svn co #{@repository}/#{@app.component}/#{@app.section}/doc/#{@app.name} doc/en_US >/dev/null 2>&1"
-
-		if not File.exists? 'doc/en_US/index.docbook'
-			FileUtils.rm_rf 'doc'
-			return nil
-		end
-		
-		File.open("doc/en_US/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
-			f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/en_US/ SUBDIR #{@app.name})\n"
-		end
-
 		docs = [ "en_US" ]
+		repository = ReleaseBuilder.repositoryRoot(@protocol, @user) + ReleaseBuilder.repositoryPath('doc', @app, @checkoutFrom, @checkoutTag)
 
-		subdirs = `svn cat #{@repository}/l10n-kde4/subdirs 2>/dev/null`.chomp!
-		
-		subdirs.each do |lang|
-			lang.chomp!
+		if @checkoutFrom == 'trunk'
+			# the english docs are the super-extra-exception: they reside near, but not with, the code
+			usDocsRepo = ReleaseBuilder.repositoryRoot(@protocol, @user) + "trunk"
 
-			FileUtils.rm_rf 'l10n'
-			system "svn co #{@repository}/l10n-kde4/#{lang}/docs/#{@app.component}-#{@app.section}/#{@app.name} l10n >/dev/null 2>&1"
-			next unless FileTest.exists? 'l10n/index.docbook'
+			`svn co #{usDocsRepo}/#{@app.component}/#{@app.section}/doc/#{@app.name} doc/en_US >/dev/null 2>&1`
 
-			puts "Adding documentation for #{lang}..."
-
-			dest = "doc/#{lang}"
-			FileUtils.mv('l10n', dest)
-
-			File.open("doc/#{lang}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
-				f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/#{lang}/ SUBDIR #{@app.name})\n"
+			if not File.exists? 'doc/en_US/index.docbook'
+				FileUtils.rm_rf 'doc'
+				return nil
+			end
+			
+			File.open("doc/en_US/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
+				f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/en_US/ SUBDIR #{@app.name})\n"
 			end
 
-			system "svn add doc/#{lang}/CMakeLists.txt >/dev/null 2>&1"
-			docs << lang
-		end
+			# now, the rest of the docs are localized, so reside somewhere else
+			subdirs = `svn cat #{repository}/subdirs 2>/dev/null`.chomp!
+			
+			subdirs.each do |lang|
+				lang.chomp!
 
+				FileUtils.rm_rf 'l10n'
+				`svn co #{repository}/#{lang}/docs/#{@app.component}-#{@app.section}/#{@app.name} l10n >/dev/null 2>&1`
+				next unless FileTest.exists? 'l10n/index.docbook'
+
+				puts "Adding documentation for #{lang}..."
+
+				dest = "doc/#{lang}"
+				FileUtils.mv('l10n', dest)
+
+				File.open("doc/#{lang}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
+					f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/#{lang}/ SUBDIR #{@app.name})\n"
+				end
+
+				`svn add doc/#{lang}/CMakeLists.txt >/dev/null 2>&1`
+				docs << lang
+			end
+		else
+			`svn co #{repository}`
+			return nil if not FileTest.exists? 'doc'
+			Dir.entries('doc').sort.each do |lang|
+				next if lang == 'CMakeLists.txt' or lang == '.' or lang == '..'
+				docs << lang
+			end
+		end
+		
 		File.open('doc/CMakeLists.txt', File::CREAT | File::RDWR | File::TRUNC) do |f|
 			docs.each { |lang| f << "add_subdirectory(#{lang})\n" }
 		end
@@ -206,16 +242,15 @@ END_OF_TEXT
 	
 		tarFileName = "#{@outputDir}.tar.bz2"
 	
-		system "find #{@outputDir} -name .svn | xargs rm -rf"
-		system "tar cfj #{tarFileName} #{@outputDir}"
-		
-		FileUtils.rm_rf @outputDir
+		`find #{@outputDir} -name .svn | xargs rm -rf`
+		`tar cfj #{tarFileName} #{@outputDir}`
+		`rm -rf #{@outputDir}`
 		
 		puts "MD5:  " + `md5sum #{tarFileName}`.split[0]
 		puts "SHA1: " + `sha1sum #{tarFileName}`.split[0]
 	end
 
-	def self.repository(app, protocol, user, tag)
+	def self.repositoryRoot(protocol, user)
 		if protocol == 'anonsvn'
 			protocol = 'svn'
 			user = 'anon'
@@ -223,16 +258,41 @@ END_OF_TEXT
 			user += "@"
 		end
 	
-		if tag == 'stable'
-			branch = 'branches/stable'
-		elsif tag == 'trunk'
-			branch = 'trunk'
-		else
-			branch = "tags/#{app.name}/#{tag}"
+		return "#{protocol}://#{user}svn.kde.org/home/kde/"
+	end
+	
+	def self.repositoryPath(type, app, checkoutFrom, tag)
+		
+		if type == 'src'
+
+			rval = case checkoutFrom
+				when 'trunk' then "trunk/#{app.component}/#{app.section}/#{app.name}"
+				when 'branches' then "branches/#{app.name}/#{tag}/#{app.name}"
+				when 'tags' then "tags/#{app.name}/#{tag}/#{app.name}"
+				else "### invalid checkout source: #{checkoutFrom} ###"
+			end
+
+		elsif type == 'i18n'
+
+			rval = case checkoutFrom
+				when 'trunk' then "trunk/l10n-kde4/" # followed by $lang/messages/#{app.component}-#{app.section}/#{app.name}.po, but the code has to deal with that
+				when 'branches' then "branches/#{app.name}/#{tag}/po"
+				when 'tags' then "tags/#{app.name}/#{tag}/po"
+				else "### invalid checkout source: #{checkoutFrom} ###"
+			end
+			
+		elsif type == 'doc'
+
+			rval = case checkoutFrom
+				when 'trunk' then "trunk/l10n-kde4/" # see above
+				when 'branches' then "branches/#{app.name}/#{tag}/doc"
+				when 'tags' then "tags/#{app.name}/#{tag}/doc"
+				else "### invalid checkout source: #{checkoutFrom} ###"
+			end
+			
 		end
 
-#		return "file://localhost/home/vl/tmp/svn/#{branch}"
-		return "#{protocol}://#{user}svn.kde.org/home/kde/#{branch}"
+		return rval
 	end
 end
 
