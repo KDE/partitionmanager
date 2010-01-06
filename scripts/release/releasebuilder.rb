@@ -129,7 +129,16 @@ END_OF_TEXT
 			puts "checkout from is not trunk, checking out from #{repository}"
 			`svn co #{repository}`
 			Dir.entries('po').sort.each do |lang|
-				next if lang == 'CMakeLists.txt' or lang == '.' or lang == '..'
+				next if lang == 'CMakeLists.txt' or lang == '.' or lang == '..' or lang == '.svn'
+				
+				# TODO: this is just copied from above; also, the skipBelow test is missing here
+				File.open("po/#{lang}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
+					f.print <<END_OF_TEXT
+file(GLOB _po_files *.po)
+GETTEXT_PROCESS_PO_FILES(#{lang} ALL INSTALL_DESTINATION ${LOCALE_INSTALL_DIR} ${_po_files})
+END_OF_TEXT
+				end
+				
 				translations << lang
 			end
 		end
@@ -218,7 +227,7 @@ END_OF_TEXT
 			`svn co #{repository}`
 			return nil if not FileTest.exists? 'doc'
 			Dir.entries('doc').sort.each do |lang|
-				next if lang == 'CMakeLists.txt' or lang == '.' or lang == '..'
+				next if lang == 'CMakeLists.txt' or lang == '.' or lang == '..' or lang == '.svn'
 				docs << lang
 			end
 		end
@@ -240,14 +249,19 @@ END_OF_TEXT
 	def createTarball
 		Dir.chdir @workingDir
 	
-		tarFileName = "#{@outputDir}.tar.bz2"
+		tarBzFileName = "#{@outputDir}.tar.bz2"
+		tarGzFileName = "#{@outputDir}.tar.gz"
 	
 		`find #{@outputDir} -name .svn | xargs rm -rf`
-		`tar cfj #{tarFileName} #{@outputDir}`
+		`tar cfj #{tarBzFileName} #{@outputDir}`
+		`tar cfz #{tarGzFileName} #{@outputDir}`
 		`rm -rf #{@outputDir}`
 		
-		puts "MD5:  " + `md5sum #{tarFileName}`.split[0]
-		puts "SHA1: " + `sha1sum #{tarFileName}`.split[0]
+		puts "bz2 MD5:  " + `md5sum #{tarBzFileName}`.split[0]
+		puts "bz2 SHA1: " + `sha1sum #{tarBzFileName}`.split[0]
+
+		puts "gz MD5:  " + `md5sum #{tarGzFileName}`.split[0]
+		puts "gz SHA1: " + `sha1sum #{tarGzFileName}`.split[0]
 	end
 
 	def self.repositoryRoot(protocol, user)
