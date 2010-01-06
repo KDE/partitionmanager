@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008, 2009, 2010 by Volker Lanz <vl@fidra.de>           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -113,7 +113,7 @@ KAboutData* createPartitionManagerAboutData()
 		VERSION,
 		ki18nc("@title", "Manage your disks, partitions and file systems"),
 		KAboutData::License_GPL,
-		ki18nc("@info:credit", "(c) 2008, 2009 Volker Lanz")
+		ki18nc("@info:credit", "(c) 2008, 2009, 2010 Volker Lanz")
 	);
 
 	about->addAuthor(ki18nc("@info:credit", "Volker Lanz"), KLocalizedString(), "vl@fidra.de");
