@@ -37,11 +37,13 @@ public
 		@protocol = protocol
 		@user = user
 		@version = version
-		
+
 		@outputDir = "#{@app.name}-#{@version}"
-		
+
 		FileUtils.rm_rf @outputDir
 		FileUtils.rm_rf "#{@outputDir}.tar.bz2"
+		FileUtils.rm_rf "#{@outputDir}.tar.gz"
+		FileUtils.rm_rf "#{@outputDir}-l10n-stats.html"
 	end
 
 	def run(createTarball, getTranslations, skipBelow, getDocs, createTag, applyFixes)
@@ -50,12 +52,11 @@ public
 		docs = checkoutDocumentation if getDocs
 		
 		if createTag
-			# TODO: fix the tagger so it no longer assumes the source is always trunk
-#			repositoryDest = ReleaseBuilder.repositoryRoot(@protocol, @user) + ReleaseBuilder.repositoryPath('src', @app, 'tags', @version)
-#			tagger = Tagger.new(repositoryDest, @app, @version)
-#			tagger.tagSource
-#			tagger.tagTranslations(translations)
-#			tagger.tagDocumentation(docs)
+			Dir.chdir "#{@workingDir}/#{@outputDir}"
+			tagger = Tagger.new(@checkoutFrom, @checkoutTag, @app, @protocol, @user, @version)
+			tagger.tagSource
+			tagger.tagTranslations(translations) if getTranslations
+			tagger.tagDocumentation(docs) if getDocs
 		end
 
 		@app.applyFixes(@workingDir, @outputDir) if applyFixes
@@ -67,13 +68,32 @@ public
 		Dir.chdir @workingDir
 		
 		repository = ReleaseBuilder.repositoryRoot(@protocol, @user) + ReleaseBuilder.repositoryPath('src', @app, @checkoutFrom, @checkoutTag)
-		puts "Checking out source from #{repository} to output directory #{@outputDir}..."
-
 		`svn co #{repository} #{@outputDir}`
 	end
 
+	def createCmakeListsTranslations(lang)
+		File.open("po/#{lang}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
+			f.print <<END_OF_TEXT
+file(GLOB _po_files *.po)
+GETTEXT_PROCESS_PO_FILES(#{lang} ALL INSTALL_DESTINATION ${LOCALE_INSTALL_DIR} ${_po_files})
+END_OF_TEXT
+		end
+	end
+
+	def checkTranslation(lang, translationDir, skipBelow)
+		if skipBelow > 0
+			fuzzy, untranslated, per = TranslationStatsBuilder.fileStats("#{translationDir}/#{@app.name}.po")
+			puts "Language #{lang} is #{per}% complete."
+			if per < skipBelow
+				FileUtils.rm_rf translationDir
+				return false
+			end
+		end
+		
+		return true
+	end
+
 	def checkoutTranslations(skipBelow)
-		puts "checking out translations, checkoutfrom: #{@checkoutFrom}"
 		Dir.chdir "#{@workingDir}/#{@outputDir}"
 	
 		FileUtils.rm_rf 'l10n'
@@ -81,14 +101,9 @@ public
 		
 		repository = ReleaseBuilder.repositoryRoot(@protocol, @user) + ReleaseBuilder.repositoryPath('i18n', @app, @checkoutFrom, @checkoutTag)
 
-		puts "checking translations out from: #{repository}"
-
 		translations = []
 
 		if @checkoutFrom == 'trunk'
-			puts "checkout from is apparently trunk"
-
-			Dir.mkdir 'l10n'
 			Dir.mkdir 'po'
 
 			subdirs = `svn cat #{repository}/subdirs 2>/dev/null`.chomp!
@@ -100,12 +115,7 @@ public
 				FileUtils.rm_rf 'l10n'
 				`svn co #{repository}/#{lang}/messages/#{@app.component}-#{@app.section} l10n >/dev/null 2>&1`
 				next unless FileTest.exists? "l10n/#{@app.name}.po"
-
-				if skipBelow > 0
-					fuzzy, untranslated, per = TranslationStatsBuilder.fileStats("l10n/#{@app.name}.po")
-					puts "Language #{lang} is #{per} % complete."
-					next if per < skipBelow
-				end
+				next unless checkTranslation(lang, "l10n", skipBelow)
 				
 				puts "Adding translations for #{lang}..."
 				
@@ -115,29 +125,18 @@ public
 				FileUtils.mv("l10n/#{@app.name}.po", dest)
 				FileUtils.mv('l10n/.svn', dest)
 
-				File.open("#{dest}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
-					f.print <<END_OF_TEXT
-file(GLOB _po_files *.po)
-GETTEXT_PROCESS_PO_FILES(#{lang} ALL INSTALL_DESTINATION ${LOCALE_INSTALL_DIR} ${_po_files})
-END_OF_TEXT
-				end
+				createCmakeListsTranslations(lang)
 
 				`svn add #{dest}/CMakeLists.txt >/dev/null 2>&1`
 				translations << lang
 			end
 		else
-			puts "checkout from is not trunk, checking out from #{repository}"
-			`svn co #{repository}`
+			`svn co #{repository} >/dev/null 2>&1`
 			Dir.entries('po').sort.each do |lang|
 				next if lang == 'CMakeLists.txt' or lang == '.' or lang == '..' or lang == '.svn'
+				next unless checkTranslation(lang, "po/#{lang}", skipBelow)
 				
-				# TODO: this is just copied from above; also, the skipBelow test is missing here
-				File.open("po/#{lang}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
-					f.print <<END_OF_TEXT
-file(GLOB _po_files *.po)
-GETTEXT_PROCESS_PO_FILES(#{lang} ALL INSTALL_DESTINATION ${LOCALE_INSTALL_DIR} ${_po_files})
-END_OF_TEXT
-				end
+				createCmakeListsTranslations(lang)
 				
 				translations << lang
 			end
@@ -169,7 +168,6 @@ macro_optional_add_subdirectory(po)
 END_OF_TEXT
 			end
 
-			# TODO: turn on again and check
 			TranslationStatsBuilder.new(@app.name, @version, @workingDir, @outputDir).run
 		else
 			FileUtils.rm_rf 'po'
@@ -180,10 +178,16 @@ END_OF_TEXT
 		return translations
 	end
 
+	def createCmakeListsDoc(lang)
+		File.open("doc/#{lang}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
+			f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/#{lang}/ SUBDIR #{@app.name})\n"
+		end
+	end
+	
 	def checkoutDocumentation
 		Dir.chdir "#{@workingDir}/#{@outputDir}"
 	
-		docs = [ "en_US" ]
+		docs = [ 'en_US' ]
 		repository = ReleaseBuilder.repositoryRoot(@protocol, @user) + ReleaseBuilder.repositoryPath('doc', @app, @checkoutFrom, @checkoutTag)
 
 		if @checkoutFrom == 'trunk'
@@ -196,10 +200,8 @@ END_OF_TEXT
 				FileUtils.rm_rf 'doc'
 				return nil
 			end
-			
-			File.open("doc/en_US/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
-				f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/en_US/ SUBDIR #{@app.name})\n"
-			end
+
+			createCmakeListsDoc("en_US")
 
 			# now, the rest of the docs are localized, so reside somewhere else
 			subdirs = `svn cat #{repository}/subdirs 2>/dev/null`.chomp!
@@ -216,18 +218,17 @@ END_OF_TEXT
 				dest = "doc/#{lang}"
 				FileUtils.mv('l10n', dest)
 
-				File.open("doc/#{lang}/CMakeLists.txt", File::CREAT | File::RDWR | File::TRUNC) do |f|
-					f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/#{lang}/ SUBDIR #{@app.name})\n"
-				end
+				createCmakeListsDoc(lang)
 
 				`svn add doc/#{lang}/CMakeLists.txt >/dev/null 2>&1`
 				docs << lang
 			end
 		else
-			`svn co #{repository}`
+			`svn co #{repository} >/dev/null 2>&1`
 			return nil if not FileTest.exists? 'doc'
 			Dir.entries('doc').sort.each do |lang|
 				next if lang == 'CMakeLists.txt' or lang == '.' or lang == '..' or lang == '.svn'
+				createCmakeListsDoc(lang)
 				docs << lang
 			end
 		end
@@ -303,7 +304,17 @@ END_OF_TEXT
 				when 'tags' then "tags/#{app.name}/#{tag}/doc"
 				else "### invalid checkout source: #{checkoutFrom} ###"
 			end
-			
+
+		else
+			# this is to get the root directory for tags and branches. it doesn't make any
+			# sense for trunk.
+			rval = case checkoutFrom
+				when 'trunk' then "### invalid checkout type / source combo: #{type} - #{checkoutFrom} ###"
+				when 'branches' then "branches/#{app.name}/#{tag}"
+				when 'tags' then "tags/#{app.name}/#{tag}"
+				else "### invalid checkout source: #{checkoutFrom} ###"
+			end
+
 		end
 
 		return rval
