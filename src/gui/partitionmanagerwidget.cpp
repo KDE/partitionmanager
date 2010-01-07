@@ -362,6 +362,8 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 	item->setText(5, Capacity(p, Capacity::Used).toString());
 	item->setText(6, PartitionTable::flagNames(p.activeFlags()).join(", "));
 
+	item->setSizeHint(0, QSize(0, 32));
+
 	return item;
 }
 
@@ -377,7 +379,9 @@ void PartitionManagerWidget::updatePartitions()
 
 	QTreeWidgetItem* deviceItem = new QTreeWidgetItem();
 	deviceItem->setText(0, selectedDevice()->name());
-	deviceItem->setIcon(0, SmallIcon("drive-harddisk"));
+	deviceItem->setIcon(0, DesktopIcon("drive-harddisk"));
+	deviceItem->setSizeHint(0, QSize(0, 32));
+
 	treePartitions().addTopLevelItem(deviceItem);
 
 	if (selectedDevice()->partitionTable() != NULL)
