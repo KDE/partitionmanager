@@ -13,9 +13,10 @@ anyway. Get the source and build it from
 http://sourceforge.net/project/showfiles.php?group_id=2406 or, preferably,
 install your distribution's packages (again, don't forget the dev-package).
 
-libblkid: Also part of e2fsprogs. See libuuid.
+libblkid: Part of the util-linux-ng project available at
+http://userweb.kernel.org/~kzak/util-linux-ng/.
 
-KDE4: KDE 4.0 will not work. The minimum required version is 4.1.0.
+KDE4: KDE 4.1 or earlier will not work. The minimum required version is 4.2.0.
 
 
 2. Configure
@@ -24,8 +25,8 @@ KDE Partition Manager is built with cmake, like most of KDE4 today. It is
 recommended to build out of tree: After unpacking the source, create a separate
 build directory and run cmake there:
 
-$ tar xfj partitionmanager-1.0.0.tar.bz2
-$ cd partitionmanager-1.0.0
+$ tar xfj partitionmanager-1.0.1.tar.bz2
+$ cd partitionmanager-1.0.1
 $ mkdir build
 $ cd build
 $ cmake ..
