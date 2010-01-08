@@ -135,6 +135,16 @@
 				</para>
 			</answer>
 		</qandaentry>
+		<qandaentry>
+			<question>
+				<para>During startup, &partman; prints some message about probing devices and that it might even crash or at least take a long time.</para>
+			</question>
+			<answer>
+				<para>
+					LibParted, a backend library &partman; uses, has problems with systems where the Linux Device Mapper is used in a way it doesn't understand. Unfortunately it reacts to some of these situations with segmentation faults, i.e. crashes. &partman; therefore tries to avoid these situations by using alternative backends. If it cannot do that, however, and has to rely on LibParted, it will print a message like the one mentioned and nevertheless try its best.
+				</para>
+			</answer>
+		</qandaentry>
 <!--
 		<qandaentry>
 			<question>

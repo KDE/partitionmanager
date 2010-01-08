@@ -35,7 +35,7 @@
 
 				<listitem>
 					<para>
-						Graphical Device View: In this view &partman; shows a graphical representation of the currently selected device. Each of the device's <glossterm linkend="glossary-partition">partitions</glossterm> has its own box with device node name (<quote>sda1</quote> for the first partition in the screenshot above) and usage information (the dark violet area and <quote>7.61 GiB</quote> in the screenshot).
+						Graphical Device View: In this view &partman; shows a graphical representation of the currently selected device. Each of the device's <glossterm linkend="glossary-partition">partitions</glossterm> has its own box with device node name (<quote>sda1</quote> for the first partition in the screenshot above) and usage information (the dark violet area in the screenshot).
 					</para>
 					<para>
 						<glossterm linkend="glossary-extendedpartition">Extended partitions</glossterm> are visually distinct by their extra border (light green in the screenshot above) around them.
@@ -60,7 +60,7 @@
 						Pending Operations Panel: This panel lists all operations that will be executed once you choose <xref linkend="menu-edit-apply"/>.
 					</para>
 					<para>
-						In the screenshot above, one operation is pending: If the user applies the operations now, the ext2 <glossterm linkend="glossary-filesystem">file system</glossterm> on /dev/sdb7 (which is 1.99 GiB in size) will be checked for errors and, if required, repaired.
+						In the screenshot above, one operation is pending: If the user applies the operations now, the ext2 <glossterm linkend="glossary-filesystem">file system</glossterm> on /dev/sdb3 will be checked for errors and, if required, repaired.
 					</para>
 				</listitem>
 				

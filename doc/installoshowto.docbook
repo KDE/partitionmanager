@@ -83,11 +83,11 @@
 	</para>
 
 	<para>
-		This already looks mostly okay but you already know that you will not need that much free space after the home partition because you will later create a swap partition there. And a swap partition of more than 3 GiB is a little large.
+		This already looks mostly okay but you already know that you will not need that much free space after the home partition because you will later create a swap partition there.
 	</para>
 
 	<para>
-		So grab the right resize handle in the dialog's resizer widget and move it to the right until the free space after the pasted partition is only about 1.5 GiB in size:
+		So grab the right resize handle in the dialog's resizer widget and move it to the right until the free space after the pasted partition has a size more suitable for a swap partition: 
 	</para>
 
 	<para>
