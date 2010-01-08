@@ -1,4 +1,4 @@
-1.0.1 (XXXX-XX-XX)
+1.0.1 (2010-01-09)
 ==================
 
 * Fix a bug that made it impossible to activate or deactivate a swap file
@@ -11,6 +11,25 @@
 
 * Use the "blkid" command as an alternative to "vol_id" if the latter is
   unavailable.
+
+* Do not crash when using the Oxygen style under KDE SC 4.4.
+
+* Do not crash when the user clicks in the partition widget with newer
+  g++ versions.
+
+* Sort devices by name after scanning.
+
+* Don't disable updates for the partition widget while applying operations.
+  This leads to corrupted graphics unter Qt4.6.
+
+* Work around a LibParted segmentation fault when the Linux Device Mapper is
+  used and /dev/mapper has non-existing entries.
+
+* The above also works around a LibParted problem when the BIOS has a floppy
+  drive configured but none is actually present.
+
+* Set item height in the partition and devices lists to 32 pixel to make them
+  look less condensed.
 
 1.0.0 (2009-08-17)
 ==================
