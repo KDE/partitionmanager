@@ -164,7 +164,7 @@
 							</screenshot>
 						</para>
 						<para>
-							The blue check marks mean <quote>supported</quote>, the red crosses mean <quote>not supported</quote>. Some combinations are never supported, for example checking a linuxswap file system, because they are inherently impossible. Others cannot be supported because the external tools lack the functionality. This is for instance the case with reading or writing labels for FAT file systems.
+							The blue check marks mean <quote>supported</quote>, the red crosses mean <quote>not supported</quote>. Some combinations are never supported, for example checking a linuxswap file system, because they are inherently impossible. Others cannot be supported because the external tools lack the functionality. This is for instance the case with writing labels for FAT file systems.
 						</para>
 						<para>
 							If you have installed new tools while &partman; is running click on <guibutton>Rescan Support</guibutton> to force a recheck of installed  file system support tools.
@@ -273,7 +273,7 @@
 							<action>Deletes a partition</action>: This command deletes the currently selected partition.
 						</para>
 						<para>
-							This command is only enabled if a partition is selected that is not currently mounted. For an extended partition, it is only enabled if none of the logicals in the extended partition are mounted.
+							This command is only enabled if a partition is selected that is not currently mounted. For an extended partition, it is only enabled if it does not contain any logical partitions.
 						</para>
 						<warning>
 							<title>Warning: Possible loss of data</title>
@@ -408,7 +408,7 @@
 							What is displayed and what can be modified in this dialog depends on the type of partition, the type of the file system on the partition and on the partition being currently mounted or not.
 						</para>
 						<para>
-							Not all file systems, for example, support setting a label (and while the FAT file systems do, &partman; currently has no support for setting the label on FAT file systems). It is also generally not possible to modify any properties if the partition is mounted.
+							Not all file systems, for example, support setting a label. It is also generally not possible to modify any properties if the partition is mounted.
 						</para>
 						<para>
 							This is a list of all partition and file system properties that can in general be modified in this dialog:

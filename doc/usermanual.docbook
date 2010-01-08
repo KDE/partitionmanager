@@ -60,7 +60,7 @@
 						Pending Operations Panel: This panel lists all operations that will be executed once you choose <xref linkend="menu-edit-apply"/>.
 					</para>
 					<para>
-						In the screenshot above, one operation is pending: If the user applies the operations now, the ext2 <glossterm linkend="glossary-filesystem">file system</glossterm> on /dev/sdb3 will be checked for errors and, if required, repaired.
+						In the screenshot above, one operation is pending: If the user applies the operations now, the <glossterm linkend="glossary-filesystem">file system</glossterm> on /dev/sdb3 will be checked for errors and, if required, repaired.
 					</para>
 				</listitem>
 				

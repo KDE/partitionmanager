@@ -87,7 +87,7 @@
 		<glossterm>File System Label</glossterm>
 		<glossdef>
 			<para>
-				A title of a file system. Some file systems (among them ext2/3, FAT16/32 and NTFS) support setting a label for the file system so it can be identified in tools like &partman; or other applications.
+				A title of a file system. Some file systems (among them ext2/3/4, FAT16/32 and NTFS) support setting a label for the file system so it can be identified in tools like &partman; or other applications.
 			</para>
 			<para>
 				<note>
@@ -167,7 +167,7 @@
 		<glossterm>Partition</glossterm>
 		<glossdef>
 			<para>
-				A section of a <link linkend="glossary-device">hard disk device</link> that can hold a <link linkend="glossary-filesystem">file system</link> or other partitions. Without at least one valid partition, a device can not be used.
+				A section of a <link linkend="glossary-device">hard disk device</link> that can hold a <link linkend="glossary-filesystem">file system</link> or other partitions. Without at least one valid partition, a disk can not be used.
 			</para>
 			<glossseealso otherterm="glossary-device"/>
 			<glossseealso otherterm="glossary-partitiontable"/>

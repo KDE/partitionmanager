@@ -18,7 +18,7 @@
 		</para>
 
 		<para>
-			For a large part of its basic functionality &partman; relies on <ulink url="http://www.gnu.org/software/parted/index.shtml">libparted</ulink>. To generate UUIDs for copied file systems, it uses libuuid, which is part of <ulink url="http://sourceforge.net/projects/e2fsprogs">e2fsprogs</ulink>. Both of these are required to build or run &partman;.
+			For a large part of its basic functionality &partman; relies on <ulink url="http://www.gnu.org/software/parted/index.shtml">libparted</ulink>. To generate UUIDs for copied file systems, it uses libuuid, which is part of <ulink url="http://e2fsprogs.sourceforge.net">e2fsprogs</ulink>. It also uses the <ulink url="http://userweb.kernel.org/~kzak/util-linux-ng/">libblkid library from the util-linux-ng project</ulink> to obtain information about partitions and file systems. All of these are required to build or run &partman;.
 		</para>
 
 		<para>
@@ -98,13 +98,13 @@
 
 			<listitem>
 				<para>
-					&swapoff;: Deactivates swap file systems. Part of the util-linux utility suite that can be downloaded from <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"/>.
+					&swapoff;: Deactivates swap file systems. Part of the util-linux-ng utility suite that can be downloaded from <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"/>.
 				</para>
 			</listitem>
 
 			<listitem>
 				<para>
-					&swapon;: Activates swap file systems. Part of the util-linux utility suite that can be downloaded from <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"/>.
+					&swapon;: Activates swap file systems. Part of the util-linux-ng utility suite that can be downloaded from <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"/>.
 				</para>
 			</listitem>
 

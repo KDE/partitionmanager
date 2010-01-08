@@ -95,7 +95,7 @@
 			</question>
 			<answer>
 				<para>
-					This is a problem of the <command>e2resize</command> command and the underlying ext2/3 file system. If a file system is nearly full, <command>e2resize</command> cannot make it any smaller even though that should be possible from the number of free sectors left. &partman; can unfortunately not know beforehand if <command>e2resize</command> will abort with this error for a given file system or not. If it happens nothing will be done at all and your data will not be negatively affected.
+					This is a problem of the <command>e2resize</command> command and the underlying ext2/3/4 file system. If a file system is nearly full, <command>e2resize</command> cannot make it any smaller even though that should be possible from the number of free sectors left. &partman; can unfortunately not know beforehand if <command>e2resize</command> will abort with this error for a given file system or not. If it happens nothing will be done at all and your data will not be negatively affected.
 				</para>
 				<para>
 					There is no real workaround for this problem right now.
@@ -131,7 +131,7 @@
 			</question>
 			<answer>
 				<para>
-					This seems to happen if you have a floppy drive configured in your computer's BIOS settings but have not actually connected one. Please check your BIOS settings and disable any floppy drives configured there to see if this makes the problem go away.
+					This happens if you have a floppy drive configured in your computer's BIOS settings but have not actually connected one. If you do not have a floppy drive check your BIOS settings and disable any floppy drives configured there to see if this makes the problem go away.
 				</para>
 			</answer>
 		</qandaentry>
@@ -141,7 +141,7 @@
 			</question>
 			<answer>
 				<para>
-					LibParted, a backend library &partman; uses, has problems with systems where the Linux Device Mapper is used in a way it doesn't understand. Unfortunately it reacts to some of these situations with segmentation faults, i.e. crashes. &partman; therefore tries to avoid these situations by using alternative backends. If it cannot do that, however, and has to rely on LibParted, it will print a message like the one mentioned and nevertheless try its best.
+					LibParted, a backend library &partman; uses, has problems with systems where the Linux Device Mapper is used in a way it doesn't understand. Unfortunately it reacts to some of these situations with segmentation faults, i.e. crashes. &partman; therefore tries to avoid these situations by using an alternative way to scan your computer for disks. If it cannot do that, however, and therefore has to rely on LibParted, it will print a message like the one mentioned. If the scanning for disks works, you can safely disregard the message.
 				</para>
 			</answer>
 		</qandaentry>
