@@ -50,7 +50,7 @@ public
 		checkoutSource
 		translations = checkoutTranslations(skipBelow) if getTranslations
 		docs = checkoutDocumentation if getDocs
-		
+
 		if createTag
 			Dir.chdir "#{@workingDir}/#{@outputDir}"
 			tagger = Tagger.new(@checkoutFrom, @checkoutTag, @app, @protocol, @user, @version)
@@ -60,13 +60,13 @@ public
 		end
 
 		@app.applyFixes(@workingDir, @outputDir) if applyFixes
-		
+
 		self.createTarball if createTarball
 	end
 
 	def checkoutSource
 		Dir.chdir @workingDir
-		
+
 		repository = ReleaseBuilder.repositoryRoot(@protocol, @user) + ReleaseBuilder.repositoryPath('src', @app, @checkoutFrom, @checkoutTag)
 		`svn co #{repository} #{@outputDir}`
 	end
@@ -89,16 +89,16 @@ END_OF_TEXT
 				return false
 			end
 		end
-		
+
 		return true
 	end
 
 	def checkoutTranslations(skipBelow)
 		Dir.chdir "#{@workingDir}/#{@outputDir}"
-	
+
 		FileUtils.rm_rf 'l10n'
 		FileUtils.rm_rf 'po'
-		
+
 		repository = ReleaseBuilder.repositoryRoot(@protocol, @user) + ReleaseBuilder.repositoryPath('i18n', @app, @checkoutFrom, @checkoutTag)
 
 		translations = []
@@ -116,12 +116,12 @@ END_OF_TEXT
 				`svn co #{repository}/#{lang}/messages/#{@app.component}-#{@app.section} l10n >/dev/null 2>&1`
 				next unless FileTest.exists? "l10n/#{@app.name}.po"
 				next unless checkTranslation(lang, "l10n", skipBelow)
-				
+
 				puts "Adding translations for #{lang}..."
-				
+
 				dest = "po/#{lang}"
 				Dir.mkdir dest
-				
+
 				FileUtils.mv("l10n/#{@app.name}.po", dest)
 				FileUtils.mv('l10n/.svn', dest)
 
@@ -135,9 +135,9 @@ END_OF_TEXT
 			Dir.entries('po').sort.each do |lang|
 				next if lang == 'CMakeLists.txt' or lang == '.' or lang == '..' or lang == '.svn'
 				next unless checkTranslation(lang, "po/#{lang}", skipBelow)
-				
+
 				createCmakeListsTranslations(lang)
-				
+
 				translations << lang
 			end
 		end
@@ -160,7 +160,7 @@ END_OF_TEXT
 
 				translations.each { |lang| f.print "add_subdirectory(#{lang})\n" }
 			end
-	
+
 			File.open('CMakeLists.txt', File::APPEND | File::RDWR) do |f|
 				f.print <<END_OF_TEXT
 include(MacroOptionalAddSubdirectory)
@@ -183,11 +183,11 @@ END_OF_TEXT
 			f << "kde4_create_handbook(index.docbook INSTALL_DESTINATION \${HTML_INSTALL_DIR}/#{lang}/ SUBDIR #{@app.name})\n"
 		end
 	end
-	
+
 	def checkoutDocumentation
 		Dir.chdir "#{@workingDir}/#{@outputDir}"
-	
-		docs = [ 'en_US' ]
+
+		docs = [ ]
 		repository = ReleaseBuilder.repositoryRoot(@protocol, @user) + ReleaseBuilder.repositoryPath('doc', @app, @checkoutFrom, @checkoutTag)
 
 		if @checkoutFrom == 'trunk'
@@ -202,10 +202,11 @@ END_OF_TEXT
 			end
 
 			createCmakeListsDoc("en_US")
+			docs << 'en_US'
 
 			# now, the rest of the docs are localized, so reside somewhere else
 			subdirs = `svn cat #{repository}/subdirs 2>/dev/null`.chomp!
-			
+
 			subdirs.each do |lang|
 				lang.chomp!
 
@@ -232,7 +233,7 @@ END_OF_TEXT
 				docs << lang
 			end
 		end
-		
+
 		File.open('doc/CMakeLists.txt', File::CREAT | File::RDWR | File::TRUNC) do |f|
 			docs.each { |lang| f << "add_subdirectory(#{lang})\n" }
 		end
@@ -249,15 +250,15 @@ END_OF_TEXT
 
 	def createTarball
 		Dir.chdir @workingDir
-	
+
 		tarBzFileName = "#{@outputDir}.tar.bz2"
 		tarGzFileName = "#{@outputDir}.tar.gz"
-	
+
 		`find #{@outputDir} -name .svn | xargs rm -rf`
 		`tar cfj #{tarBzFileName} #{@outputDir}`
 		`tar cfz #{tarGzFileName} #{@outputDir}`
 		`rm -rf #{@outputDir}`
-		
+
 		puts "bz2 MD5:  " + `md5sum #{tarBzFileName}`.split[0]
 		puts "bz2 SHA1: " + `sha1sum #{tarBzFileName}`.split[0]
 
@@ -272,12 +273,12 @@ END_OF_TEXT
 		else
 			user += "@"
 		end
-	
+
 		return "#{protocol}://#{user}svn.kde.org/home/kde/"
 	end
-	
+
 	def self.repositoryPath(type, app, checkoutFrom, tag)
-		
+
 		if type == 'src'
 
 			rval = case checkoutFrom
@@ -295,7 +296,7 @@ END_OF_TEXT
 				when 'tags' then "tags/#{app.name}/#{tag}/po"
 				else "### invalid checkout source: #{checkoutFrom} ###"
 			end
-			
+
 		elsif type == 'doc'
 
 			rval = case checkoutFrom
