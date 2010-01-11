@@ -47,7 +47,7 @@ class ResizeFileSystemJob : public Job
 		virtual QString description() const;
 
 	protected:
-		bool resizeFileSystemLibParted(Report& report);
+		bool resizeFileSystemInternal(Report& report);
 
 		Partition& partition() { return m_Partition; }
 		const Partition& partition() const { return m_Partition; }
