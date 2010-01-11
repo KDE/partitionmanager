@@ -36,7 +36,6 @@ find_package(KDE4 REQUIRED)
 
 find_package(MSGFMT REQUIRED)
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(UUID REQUIRED uuid)
 pkg_check_modules(BLKID REQUIRED blkid)
 find_package(LIBPARTED REQUIRED)
 

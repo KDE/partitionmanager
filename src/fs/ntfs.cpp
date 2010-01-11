@@ -30,9 +30,9 @@
 #include <QString>
 #include <QStringList>
 #include <QFile>
+#include <QUuid>
 
 #include <ctime>
-#include <uuid/uuid.h>
 #include <algorithm>
 
 namespace FS
@@ -157,15 +157,14 @@ namespace FS
 
 	bool ntfs::updateUUID(Report& report, const QString& deviceNode) const
 	{
-		char uuid[16];
-		uuid_generate(reinterpret_cast<unsigned char*>(uuid));
+		QUuid uuid = QUuid::createUuid();
 
 		ExternalCommand cmd(report, "dd", QStringList() << "of=" + deviceNode << "bs=1" << "count=8" << "seek=72");
 
 		if (!cmd.start())
 			return false;
 
-		if (cmd.write(uuid, 8) != 8)
+		if (cmd.write(reinterpret_cast<char*>(&uuid.data4[0]), 8) != 8)
 			return false;
 
 		return cmd.waitFor(-1);

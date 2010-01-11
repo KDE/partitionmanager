@@ -25,8 +25,7 @@
 #include <QString>
 #include <QStringList>
 #include <QRegExp>
-
-#include <uuid/uuid.h>
+#include <QUuid>
 
 namespace FS
 {
@@ -151,11 +150,7 @@ namespace FS
 
 	bool reiserfs::updateUUID(Report& report, const QString& deviceNode) const
 	{
-		unsigned char uuid[16];
-		uuid_generate(uuid);
-		char uuid_ascii[37];
-		uuid_unparse(uuid, uuid_ascii);
-
-		return ExternalCommand(report, "reiserfstune", QStringList() << "-u" << uuid_ascii << deviceNode).run(-1);
+		const QString uuid = QUuid::createUuid().toString().remove(QRegExp("\\{|\\}"));
+		return ExternalCommand(report, "reiserfstune", QStringList() << "-u" << uuid << deviceNode).run(-1);
 	}
 }

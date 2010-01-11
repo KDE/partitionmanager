@@ -8,11 +8,6 @@ libparted: Either get it from http://www.gnu.org/software/parted/download.shtml
 and build it yourself or, preferably, install your distribution's packages
 (don't forget the dev-package).
 
-libuuid: This is part of e2fsprogs, something you will most probably need
-anyway. Get the source and build it from
-http://sourceforge.net/project/showfiles.php?group_id=2406 or, preferably,
-install your distribution's packages (again, don't forget the dev-package).
-
 libblkid: Part of the util-linux-ng project available at
 http://userweb.kernel.org/~kzak/util-linux-ng/.
 
