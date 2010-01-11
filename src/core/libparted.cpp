@@ -226,7 +226,9 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 
 		readSectorsUsed(pedDisk, *part, mountInfo);
 
-		if (fs->supportGetLabel() == FileSystem::SupportExternal)
+		if (fs->supportGetLabel() == FileSystem::SupportInternal)
+			fs->setLabel(FileSystem::readLabelInternal(part->deviceNode()));
+		else if (fs->supportGetLabel() == FileSystem::SupportExternal)
 			fs->setLabel(fs->readLabel(part->deviceNode()));
 
 		if (fs->supportGetUUID() == FileSystem::SupportExternal)
@@ -278,7 +280,7 @@ void LibParted::scanDevices(OperationStack& ostack)
 	{
 		QRegExp rxLine("\\s*(\\d+)\\s+(\\d+)\\s+(\\d+)\\s([^0-9]+)\\s+");
 		QByteArray line;
-		
+
 		while (!(line = partitions.readLine()).isEmpty())
 		{
 			if (rxLine.indexIn(line) != -1)

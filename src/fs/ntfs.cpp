@@ -58,7 +58,8 @@ namespace FS
 	void ntfs::init()
 	{
 		m_Shrink = m_Grow = m_Check = m_GetUsed = findExternal("ntfsresize") ? SupportExternal : SupportNone;
-		m_SetLabel = m_GetLabel = findExternal("ntfslabel") ? SupportExternal : SupportNone;
+		m_GetLabel = SupportInternal;
+		m_SetLabel = findExternal("ntfslabel") ? SupportExternal : SupportNone;
 		m_Create = findExternal("mkfs.ntfs") ? SupportExternal : SupportNone;
 		m_Copy = findExternal("ntfsclone") ? SupportExternal : SupportNone;
 		m_Backup = SupportInternal;
@@ -89,17 +90,6 @@ namespace FS
 		}
 
 		return -1;
-	}
-
-	QString ntfs::readLabel(const QString& deviceNode) const
-	{
-		ExternalCommand cmd("ntfslabel", QStringList() << "--force" << deviceNode);
-
-		// ntfslabel writes some warning message to stderr when the filesystem is marked as
-		// dirty. we don't want that message, so ignore stderr.
-		cmd.setProcessChannelMode(QProcess::SeparateChannels);
-
-		return cmd.run() ? cmd.output().simplified() : QString();
 	}
 
 	bool ntfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)

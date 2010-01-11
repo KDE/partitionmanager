@@ -22,6 +22,7 @@
 #include "util/externalcommand.h"
 #include "util/capacity.h"
 
+#include <blkid/blkid.h>
 #include <klocale.h>
 #include <kdebug.h>
 
@@ -74,12 +75,9 @@ static QString invokeIdUtil(const QString& util, const QString& deviceNode, cons
 */
 QString FileSystem::readLabel(const QString& deviceNode) const
 {
-	QString rval = invokeIdUtil("vol_id", deviceNode, "ID_FS_LABEL=(\\w+)");
+	Q_UNUSED(deviceNode);
 
-	if (rval.isEmpty())
-		rval = invokeIdUtil("blkid", deviceNode, "LABEL=\"(\\w+)\"");
-
-	return rval;
+	return QString();
 }
 
 /** Creates a new FileSystem
@@ -337,6 +335,33 @@ bool FileSystem::unmount(const QString& mountPoint)
 	Q_UNUSED(mountPoint);
 
 	return false;
+}
+
+/** Reads the label for a device's FileSystem
+	@param deviceNode the device node for the Partition the FileSystem is on
+	@return the FileSystem label or an empty string in case of error
+*/
+QString FileSystem::readLabelInternal(const QString& deviceNode)
+{
+	blkid_cache cache;
+	QString rval;
+
+	if (blkid_get_cache(&cache, NULL) == 0)
+	{
+		blkid_dev dev;
+
+		char* label = NULL;
+		if ((dev = blkid_get_dev(cache, deviceNode.toLocal8Bit(), BLKID_DEV_NORMAL)) != NULL &&
+				(label = blkid_get_tag_value(cache, "LABEL", deviceNode.toLocal8Bit())))
+		{
+			rval = label;
+			free(label);
+		}
+
+		blkid_put_cache(cache);
+	}
+
+	return rval;
 }
 
 bool FileSystem::findExternal(const QString& cmdName, const QStringList& args, int expectedCode)

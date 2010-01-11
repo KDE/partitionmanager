@@ -49,7 +49,8 @@ namespace FS
 
 	void reiserfs::init()
 	{
-		m_GetLabel = m_GetUsed = findExternal("debugreiserfs", QStringList(), 16) ? SupportExternal : SupportNone;
+		m_GetLabel = SupportInternal;
+		m_GetUsed = findExternal("debugreiserfs", QStringList(), 16) ? SupportExternal : SupportNone;
 		m_SetLabel = findExternal("reiserfstune") ? SupportExternal : SupportNone;
 		m_Create = findExternal("mkfs.reiserfs") ? SupportExternal : SupportNone;
 		m_Check = findExternal("fsck.reiserfs") ? SupportExternal : SupportNone;
@@ -100,21 +101,6 @@ namespace FS
 		}
 
 		return -1;
-	}
-
-	QString reiserfs::readLabel(const QString& deviceNode) const
-	{
-		ExternalCommand cmd("debugreiserfs", QStringList() << deviceNode);
-
-		if (cmd.run())
-		{
-			QRegExp rxLabel("LABEL: (\\w+)");
-
-			if (rxLabel.indexIn(cmd.output()) != -1)
-				return rxLabel.cap(1).simplified();
-		}
-
-		return QString();
 	}
 
 	bool reiserfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)

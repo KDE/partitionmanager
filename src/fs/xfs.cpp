@@ -51,7 +51,8 @@ namespace FS
 
 	void xfs::init()
 	{
-		m_SetLabel = m_GetLabel = m_GetUsed = findExternal("xfs_db") ? SupportExternal : SupportNone;
+		m_GetLabel = SupportInternal;
+		m_SetLabel = m_GetUsed = findExternal("xfs_db") ? SupportExternal : SupportNone;
 		m_Create = findExternal("mkfs.xfs") ? SupportExternal : SupportNone;
 
 		m_Check = findExternal("xfs_repair") ? SupportExternal : SupportNone;
@@ -65,7 +66,7 @@ namespace FS
 	{
 		return 32 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
 	}
-	
+
 	qint64 xfs::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("xfs_db", QStringList() << "-c" << "sb 0" << "-c" << "print" << deviceNode);
@@ -95,21 +96,6 @@ namespace FS
 		}
 
 		return -1;
-	}
-
-	QString xfs::readLabel(const QString& deviceNode) const
-	{
-		ExternalCommand cmd("xfs_db", QStringList() << "-c" << "sb 0" << "-c" << "label" << deviceNode);
-
-		if (cmd.run())
-		{
-			QRegExp rxLabel("label = \"(\\w+)\"");
-
-			if (rxLabel.indexIn(cmd.output()) != -1)
-				return rxLabel.cap(1);
-		}
-
-		return QString();
 	}
 
 	bool xfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
@@ -153,16 +139,16 @@ namespace FS
 		bool rval = false;
 
 		ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << "-t" << "xfs" << deviceNode << tempDir.name());
-		
+
 		if (mountCmd.run(-1))
 		{
 			ExternalCommand resizeCmd(report, "xfs_growfs", QStringList() << tempDir.name());
-		
+
 			if (resizeCmd.run(-1))
 				rval = true;
 			else
 				report.line() << i18nc("@info/plain", "Resizing XFS file system on partition <filename>%1</filename> failed: xfs_growfs failed.", deviceNode);
-			
+
 			ExternalCommand unmountCmd(report, "umount", QStringList() << tempDir.name());
 
 			if (!unmountCmd.run(-1))
@@ -170,7 +156,7 @@ namespace FS
 		}
 		else
 			report.line() << i18nc("@info/plain", "Resizing XFS file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
-		
+
 		return rval;
 	}
 }

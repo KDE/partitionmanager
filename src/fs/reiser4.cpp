@@ -41,7 +41,8 @@ namespace FS
 
 	void reiser4::init()
 	{
-		m_GetUsed = m_GetLabel = findExternal("debugfs.reiser4", QStringList(), 16) ? SupportExternal : SupportNone;
+		m_GetLabel = SupportInternal;
+		m_GetUsed = findExternal("debugfs.reiser4", QStringList(), 16) ? SupportExternal : SupportNone;
 		m_Create = findExternal("mkfs.reiser4", QStringList(), 16) ? SupportExternal : SupportNone;
 		m_Check = findExternal("fsck.reiser4", QStringList(), 16) ? SupportExternal : SupportNone;
 		m_Move = m_Copy = (m_Check != SupportNone) ? SupportInternal : SupportNone;
@@ -59,7 +60,7 @@ namespace FS
 
 			if (rxBlocks.indexIn(cmd.output()) != -1)
 				blocks = rxBlocks.cap(1).toLongLong();
-			
+
 			qint64 blockSize = -1;
 			QRegExp rxBlockSize("blksize:\\s+(\\d+)");
 
@@ -77,21 +78,6 @@ namespace FS
 		}
 
 		return -1;
-	}
-
-	QString reiser4::readLabel(const QString& deviceNode) const
-	{
-		ExternalCommand cmd("debugfs.reiser4", QStringList() << deviceNode);
-
-		if (cmd.run())
-		{
-			QRegExp rxLabel("label:\\s+(<?\\w+>?)");
-
-			if (rxLabel.indexIn(cmd.output()) != -1 && rxLabel.cap(1) != "<none>")
-				return rxLabel.cap(1);
-		}
-		
-		return QString();
 	}
 
 	bool reiser4::check(Report& report, const QString& deviceNode) const

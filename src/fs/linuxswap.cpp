@@ -42,7 +42,7 @@ namespace FS
 	void linuxswap::init()
 	{
 		m_SetLabel = m_Shrink = m_Grow = m_Create = (findExternal("mkswap")) ? SupportExternal : SupportNone;
-		m_GetLabel = findIdUtil() ? SupportExternal : SupportNone;
+		m_GetLabel = SupportInternal;
 		m_Copy = SupportInternal;
 		m_Move = SupportInternal;
 		m_GetUUID = findIdUtil() ? SupportExternal : SupportNone;
@@ -55,7 +55,7 @@ namespace FS
 
 	bool linuxswap::resize(Report& report, const QString& deviceNode, qint64) const
 	{
-		const QString label = readLabel(deviceNode);
+		const QString label = readLabelInternal(deviceNode);
 
 		QStringList args;
 		if (!label.isEmpty())

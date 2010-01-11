@@ -51,7 +51,8 @@ namespace FS
 	void jfs::init()
 	{
 		m_GetUsed = findExternal("jfs_debugfs") ? SupportExternal : SupportNone;
-		m_SetLabel = m_GetLabel = findExternal("jfs_tune", QStringList() << "-V") ? SupportExternal : SupportNone;
+		m_GetLabel = SupportInternal;
+		m_SetLabel = findExternal("jfs_tune", QStringList() << "-V") ? SupportExternal : SupportNone;
 		m_Create = findExternal("mkfs.jfs", QStringList() << "-V") ? SupportExternal : SupportNone;
 		m_Grow = m_Check = findExternal("fsck.jfs", QStringList() << "-V") ? SupportExternal : SupportNone;
 		m_Copy = m_Move = (m_Check != SupportNone) ? SupportInternal : SupportNone;
@@ -62,7 +63,7 @@ namespace FS
 	{
 		return 16 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
 	}
-	
+
 	qint64 jfs::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("jfs_debugfs", QStringList() << deviceNode);
@@ -85,7 +86,7 @@ namespace FS
 				if (!ok)
 					nBlocks = -1;
 			}
-			
+
 			qint64 nFree = -1;
 			QRegExp rxnFree("dn_nfree:\\s+0x([0-9a-f]+)");
 
@@ -103,21 +104,6 @@ namespace FS
 		return -1;
 	}
 
-	QString jfs::readLabel(const QString& deviceNode) const
-	{
-		ExternalCommand cmd("jfs_tune", QStringList() << "-l" << deviceNode);
-
-		if (cmd.run())
-		{
-			QRegExp rxLabel("Volume label:\\s+'(\\w+)'");
-
-			if (rxLabel.indexIn(cmd.output()) != -1)
-				return rxLabel.cap(1).simplified();
-		}
-
-		return QString();
-	}
-
 	bool jfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
 		return ExternalCommand(report, "jfs_tune", QStringList() << "-L" << newLabel << deviceNode).run(-1);
@@ -133,7 +119,7 @@ namespace FS
 	{
 		return ExternalCommand(report, "mkfs.jfs", QStringList() << "-q" << deviceNode).run(-1);
 	}
-	
+
 	bool jfs::resize(Report& report, const QString& deviceNode, qint64) const
 	{
 		KTempDir tempDir;
@@ -146,16 +132,16 @@ namespace FS
 		bool rval = false;
 
 		ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << "-t" << "jfs" << deviceNode << tempDir.name());
-		
+
 		if (mountCmd.run(-1))
 		{
 			ExternalCommand resizeMountCmd(report, "mount", QStringList() << "-v" << "-t" << "jfs" << "-o" << "remount,resize" << deviceNode << tempDir.name());
-		
+
 			if (resizeMountCmd.run(-1))
 				rval = true;
 			else
 				report.line() << i18nc("@info/plain", "Resizing JFS file system on partition <filename>%1</filename> failed: Remount failed.", deviceNode);
-				
+
 			ExternalCommand unmountCmd(report, "umount", QStringList() << tempDir.name());
 
 			if (!unmountCmd.run(-1))
@@ -163,7 +149,7 @@ namespace FS
 		}
 		else
 			report.line() << i18nc("@info/plain", "Resizing JFS file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
-		
+
 		return rval;
 	}
 }

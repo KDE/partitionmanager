@@ -43,8 +43,9 @@ namespace FS
 
 	void hfs::init()
 	{
+		m_GetLabel = SupportInternal;
 		m_Create = findExternal("hformat") ? SupportExternal : SupportNone;
-		m_Check = m_GetLabel = findExternal("hfsck") ? SupportExternal : SupportNone;
+		m_Check = findExternal("hfsck") ? SupportExternal : SupportNone;
 
 		m_GetUsed = SupportLibParted;
 		m_Shrink = SupportLibParted;
@@ -56,21 +57,6 @@ namespace FS
 	qint64 hfs::maxCapacity() const
 	{
 		 return 2 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
-	}
-	
-	QString hfs::readLabel(const QString& deviceNode) const
-	{
-		ExternalCommand cmd("hfsck", QStringList() << "-v" << deviceNode);
-
-		if (cmd.run())
-		{
-			QRegExp rxVolumeName("drVN\\s*= \"(\\w+)\"");
-
-			if (rxVolumeName.indexIn(cmd.output()) != -1)
-				return rxVolumeName.cap(1);
-		}
-
-		return QString();
 	}
 
 	bool hfs::check(Report& report, const QString& deviceNode) const

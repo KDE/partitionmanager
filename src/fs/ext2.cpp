@@ -48,7 +48,8 @@ namespace FS
 	void ext2::init()
 	{
 		m_GetUsed = findExternal("dumpe2fs") ? SupportExternal : SupportNone;
-		m_SetLabel = m_GetLabel = findExternal("e2label") ? SupportExternal : SupportNone;
+		m_GetLabel = SupportInternal;
+		m_SetLabel = findExternal("e2label") ? SupportExternal : SupportNone;
 		m_Create = findExternal("mkfs.ext2") ? SupportExternal : SupportNone;
 		m_Check = findExternal("e2fsck", QStringList() << "-V") ? SupportExternal : SupportNone;
 		m_UpdateUUID = findExternal("tune2fs") ? SupportExternal : SupportNone;
@@ -94,12 +95,6 @@ namespace FS
 		}
 
 		return -1;
-	}
-
-	QString ext2::readLabel(const QString& deviceNode) const
-	{
-		ExternalCommand cmd("e2label", QStringList() << deviceNode);
-		return cmd.run() ? cmd.output().simplified() : QString();
 	}
 
 	bool ext2::check(Report& report, const QString& deviceNode) const

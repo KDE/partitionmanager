@@ -43,7 +43,6 @@ namespace FS
 			static void init();
 
 			virtual qint64 readUsedCapacity(const QString& deviceNode) const;
-			virtual QString readLabel(const QString& deviceNode) const;
 			virtual bool check(Report& report, const QString& deviceNode) const;
 			virtual bool create(Report& report, const QString& deviceNode) const;
 			virtual bool resize(Report& report, const QString& deviceNode, qint64 length) const;
@@ -58,9 +57,9 @@ namespace FS
 			virtual SupportType supportCopy() const { return m_Copy; }
 			virtual SupportType supportBackup() const { return m_Backup; }
 			virtual SupportType supportSetLabel() const { return m_SetLabel; }
-			
+
 			virtual qint64 minCapacity() const;
-			
+
 		protected:
 			static SupportType m_GetUsed;
 			static SupportType m_GetLabel;
