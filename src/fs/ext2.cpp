@@ -58,7 +58,7 @@ namespace FS
 		m_Copy = (m_Check != SupportNone) ? SupportInternal : SupportNone;
 		m_Move = (m_Check != SupportNone) ? SupportInternal : SupportNone;
 		m_Backup = SupportInternal;
-		m_GetUUID = findIdUtil() ? SupportExternal : SupportNone;
+		m_GetUUID = SupportInternal;
 	}
 
 	qint64 ext2::maxCapacity() const

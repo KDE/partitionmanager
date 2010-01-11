@@ -54,19 +54,27 @@ qint64 FileSystem::readUsedCapacity(const QString& deviceNode) const
 	return -1;
 }
 
-static QString invokeIdUtil(const QString& util, const QString& deviceNode, const QString& rx)
+static QString readBlkIdValue(const QString& deviceNode, const QString& tag)
 {
-	ExternalCommand cmd(util, QStringList() << deviceNode);
+	blkid_cache cache;
+	QString rval;
 
-	if (cmd.run())
+	if (blkid_get_cache(&cache, NULL) == 0)
 	{
-		QRegExp rxLabel(rx);
+		blkid_dev dev;
 
-		if (rxLabel.indexIn(cmd.output()) != -1)
-			return rxLabel.cap(1).simplified();
+		char* label = NULL;
+		if ((dev = blkid_get_dev(cache, deviceNode.toLocal8Bit(), BLKID_DEV_NORMAL)) != NULL &&
+				(label = blkid_get_tag_value(cache, tag.toLocal8Bit(), deviceNode.toLocal8Bit())))
+		{
+			rval = label;
+			free(label);
+		}
+
+		blkid_put_cache(cache);
 	}
 
-	return QString();
+	return rval;
 }
 
 /** Reads the label for this FileSystem
@@ -75,9 +83,7 @@ static QString invokeIdUtil(const QString& util, const QString& deviceNode, cons
 */
 QString FileSystem::readLabel(const QString& deviceNode) const
 {
-	Q_UNUSED(deviceNode);
-
-	return QString();
+	return readBlkIdValue(deviceNode, "LABEL");
 }
 
 /** Creates a new FileSystem
@@ -181,18 +187,13 @@ bool FileSystem::updateUUID(Report& report, const QString& deviceNode) const
 	return true;
 }
 
-/** Returns the FileSystem UUID (or an empty string, if not supported).
+/** Returns the FileSystem UUID by calling a FileSystem-specific helper program
 	@param deviceNode the device node for the Partition the FileSystem is on
 	@return the UUID or an empty string if the FileSystem does not support UUIDs
  */
 QString FileSystem::readUUID(const QString& deviceNode) const
 {
-	QString rval = invokeIdUtil("vol_id", deviceNode, "ID_FS_UUID=([^\\s]+)");
-
-	if (rval.isEmpty())
-		rval = invokeIdUtil("blkid", deviceNode, "UUID=\"([^\"]+)\"");
-
-	return rval;
+	return readBlkIdValue(deviceNode, "UUID");
 }
 
 /** Give implementations of FileSystem a chance to update the boot sector after the
@@ -337,33 +338,6 @@ bool FileSystem::unmount(const QString& mountPoint)
 	return false;
 }
 
-/** Reads the label for a device's FileSystem
-	@param deviceNode the device node for the Partition the FileSystem is on
-	@return the FileSystem label or an empty string in case of error
-*/
-QString FileSystem::readLabelInternal(const QString& deviceNode)
-{
-	blkid_cache cache;
-	QString rval;
-
-	if (blkid_get_cache(&cache, NULL) == 0)
-	{
-		blkid_dev dev;
-
-		char* label = NULL;
-		if ((dev = blkid_get_dev(cache, deviceNode.toLocal8Bit(), BLKID_DEV_NORMAL)) != NULL &&
-				(label = blkid_get_tag_value(cache, "LABEL", deviceNode.toLocal8Bit())))
-		{
-			rval = label;
-			free(label);
-		}
-
-		blkid_put_cache(cache);
-	}
-
-	return rval;
-}
-
 bool FileSystem::findExternal(const QString& cmdName, const QStringList& args, int expectedCode)
 {
 	ExternalCommand cmd(cmdName, args);
@@ -372,9 +346,3 @@ bool FileSystem::findExternal(const QString& cmdName, const QStringList& args, i
 
 	return cmd.exitCode() == 0 || cmd.exitCode() == expectedCode;
 }
-
-bool FileSystem::findIdUtil()
-{
-	return findExternal("vol_id") || findExternal("blkid");
-}
-

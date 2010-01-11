@@ -65,7 +65,7 @@ namespace FS
 		m_Copy = SupportInternal;
 		m_Backup = SupportInternal;
 		m_UpdateUUID = findExternal("dd") ? SupportExternal : SupportNone;
-		m_GetUUID = findIdUtil() ? SupportExternal : SupportNone;
+		m_GetUUID = SupportInternal;
 	}
 
 	qint64 fat16::minCapacity() const

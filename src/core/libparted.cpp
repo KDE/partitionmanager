@@ -226,12 +226,10 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 
 		readSectorsUsed(pedDisk, *part, mountInfo);
 
-		if (fs->supportGetLabel() == FileSystem::SupportInternal)
-			fs->setLabel(FileSystem::readLabelInternal(part->deviceNode()));
-		else if (fs->supportGetLabel() == FileSystem::SupportExternal)
+		if (fs->supportGetLabel() != FileSystem::SupportNone)
 			fs->setLabel(fs->readLabel(part->deviceNode()));
 
-		if (fs->supportGetUUID() == FileSystem::SupportExternal)
+		if (fs->supportGetUUID() != FileSystem::SupportNone)
 			fs->setUUID(fs->readUUID(part->deviceNode()));
 
 		parent->append(part);
