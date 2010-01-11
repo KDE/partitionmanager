@@ -47,8 +47,8 @@ namespace FS
 		m_Create = findExternal("hformat") ? SupportExternal : SupportNone;
 		m_Check = findExternal("hfsck") ? SupportExternal : SupportNone;
 
-		m_GetUsed = SupportLibParted;
-		m_Shrink = SupportLibParted;
+		m_GetUsed = SupportInternal;
+		m_Shrink = SupportInternal;
 
 		m_Move = m_Copy = (m_Check != SupportNone) ? SupportInternal : SupportNone;
 		m_Backup = SupportInternal;

@@ -80,7 +80,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 
 		switch(support)
 		{
-			case FileSystem::SupportLibParted:
+			case FileSystem::SupportInternal:
 			{
 				Report* childReport = report->newChild();
 				childReport->line() << i18nc("@info/plain", "Resizing a %1 file system using LibParted internal functions.", partition().fileSystem().name());

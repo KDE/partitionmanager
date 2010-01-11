@@ -42,8 +42,8 @@ namespace FS
 	{
 		m_Check = findExternal("hpfsck") ? SupportExternal : SupportNone;
 
-		m_GetUsed = SupportLibParted;
-		m_Shrink = SupportLibParted;
+		m_GetUsed = SupportInternal;
+		m_Shrink = SupportInternal;
 		m_Copy = (m_Check != SupportNone) ? SupportInternal : SupportNone;
 		m_Move = (m_Check != SupportNone) ? SupportInternal : SupportNone;
 		m_Backup = SupportInternal;

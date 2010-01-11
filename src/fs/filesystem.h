@@ -70,8 +70,7 @@ class FileSystem
 		{
 			SupportNone = 0,		/**< no support */
 			SupportInternal = 1,	/**< internal support */
-			SupportLibParted = 2,	/**< supported by libparted */
-			SupportExternal = 4		/**< supported by some external command */
+			SupportExternal = 2		/**< supported by some external command */
 		};
 
 		Q_DECLARE_FLAGS(SupportTypes, SupportType)

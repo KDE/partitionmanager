@@ -59,8 +59,8 @@ namespace FS
 		m_Create = findExternal("mkfs.msdos") ? SupportExternal : SupportNone;
 		m_GetUsed = m_Check = findExternal("fsck.msdos", QStringList(), 2) ? SupportExternal : SupportNone;
 		m_GetLabel = SupportInternal;
-		m_Grow = SupportLibParted;
-		m_Shrink = SupportLibParted;
+		m_Grow = SupportInternal;
+		m_Shrink = SupportInternal;
 		m_Move = SupportInternal;
 		m_Copy = SupportInternal;
 		m_Backup = SupportInternal;

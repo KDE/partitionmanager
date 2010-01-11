@@ -160,7 +160,7 @@ static void readSectorsUsed(PedDisk* pedDisk, Partition& p, QMap<QString, QStrin
 		p.fileSystem().setSectorsUsed((sfs.f_blocks - sfs.f_bfree) * sfs.f_bsize / p.sectorSize());
 	else if (p.fileSystem().supportGetUsed() == FileSystem::SupportExternal)
 		p.fileSystem().setSectorsUsed(p.fileSystem().readUsedCapacity(p.deviceNode()) / p.sectorSize());
-	else if (p.fileSystem().supportGetUsed() == FileSystem::SupportLibParted)
+	else if (p.fileSystem().supportGetUsed() == FileSystem::SupportInternal)
 		p.fileSystem().setSectorsUsed(readSectorsUsedLibParted(pedDisk, p));
 }
 
