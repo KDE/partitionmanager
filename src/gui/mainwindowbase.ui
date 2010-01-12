@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>MainWindowBase</class>
- <widget class="QMainWindow" name="MainWindowBase" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="MainWindowBase">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,80 +10,77 @@
     <height>684</height>
    </rect>
   </property>
-  <property name="windowTitle" >
-   <string comment="@title:window" >KDE Partition Manager</string>
+  <property name="windowTitle">
+   <string comment="@title:window">KDE Partition Manager</string>
   </property>
-  <widget class="QWidget" name="centralwidget" >
-   <layout class="QVBoxLayout" name="verticalLayout" >
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="PartitionManagerWidget" native="1" name="m_PartitionManagerWidget" />
+     <widget class="PartitionManagerWidget" name="m_PartitionManagerWidget" native="true"/>
     </item>
    </layout>
   </widget>
-  <widget class="QDockWidget" name="m_DockDevices" >
-   <property name="allowedAreas" >
+  <widget class="QDockWidget" name="m_DockDevices">
+   <property name="allowedAreas">
     <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
    </property>
-   <property name="windowTitle" >
-    <string comment="@title:window" >Devices</string>
+   <property name="windowTitle">
+    <string comment="@title:window">Devices</string>
    </property>
-   <attribute name="dockWidgetArea" >
+   <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
-   <widget class="QWidget" name="m_DockDevicesContents" >
-    <layout class="QVBoxLayout" >
+   <widget class="QWidget" name="m_DockDevicesContents">
+    <layout class="QVBoxLayout">
      <item>
-      <widget class="ListDevices" native="1" name="m_ListDevices" />
+      <widget class="ListDevices" name="m_ListDevices" native="true"/>
      </item>
     </layout>
    </widget>
   </widget>
-  <widget class="QDockWidget" name="m_DockOperations" >
-   <property name="allowedAreas" >
+  <widget class="QDockWidget" name="m_DockOperations">
+   <property name="allowedAreas">
     <set>Qt::BottomDockWidgetArea|Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
    </property>
-   <property name="windowTitle" >
-    <string comment="@title:window" >Pending Operations</string>
+   <property name="windowTitle">
+    <string comment="@title:window">Pending Operations</string>
    </property>
-   <attribute name="dockWidgetArea" >
+   <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
-   <widget class="QWidget" name="m_DockOperationsContents" >
-    <layout class="QVBoxLayout" name="verticalLayout_2" >
+   <widget class="QWidget" name="m_DockOperationsContents">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="ListOperations" native="1" name="m_ListOperations" />
+      <widget class="ListOperations" name="m_ListOperations" native="true"/>
      </item>
     </layout>
    </widget>
   </widget>
-  <widget class="QDockWidget" name="m_DockInformation" >
-   <property name="allowedAreas" >
-    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+  <widget class="QDockWidget" name="m_DockInformation">
+   <property name="windowTitle">
+    <string comment="@title:window">Information</string>
    </property>
-   <property name="windowTitle" >
-    <string comment="@title:window" >Information</string>
-   </property>
-   <attribute name="dockWidgetArea" >
+   <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
-   <widget class="QWidget" name="m_DockInformationContents" >
-    <layout class="QGridLayout" name="_2" />
+   <widget class="QWidget" name="m_DockInformationContents">
+    <layout class="QGridLayout" name="_2"/>
    </widget>
   </widget>
-  <widget class="QDockWidget" name="m_DockLog" >
-   <property name="allowedAreas" >
+  <widget class="QDockWidget" name="m_DockLog">
+   <property name="allowedAreas">
     <set>Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea</set>
    </property>
-   <property name="windowTitle" >
-    <string comment="@title:window" >Log Output</string>
+   <property name="windowTitle">
+    <string comment="@title:window">Log Output</string>
    </property>
-   <attribute name="dockWidgetArea" >
+   <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents" >
-    <layout class="QGridLayout" name="gridLayout" >
-     <item row="0" column="0" >
-      <widget class="TreeLog" native="1" name="m_TreeLog" />
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="TreeLog" name="m_TreeLog" native="true"/>
      </item>
     </layout>
    </widget>

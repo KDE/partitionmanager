@@ -167,7 +167,7 @@ void MainWindow::updateDevices()
 	listDevices().updateDevices();
 
 	if (pmWidget().selectedDevice())
-		infoPane().showDevice(*pmWidget().selectedDevice());
+		infoPane().showDevice(dockWidgetArea(&dockInformation()), *pmWidget().selectedDevice());
 	else
 		infoPane().clear();
 
@@ -195,9 +195,9 @@ void MainWindow::updateWindowTitle()
 void MainWindow::updateSelection(const Partition* p)
 {
 	if (p)
-		infoPane().showPartition(*p);
+		infoPane().showPartition(dockWidgetArea(&dockInformation()), *p);
 	else if (pmWidget().selectedDevice())
-		infoPane().showDevice(*pmWidget().selectedDevice());
+		infoPane().showDevice(dockWidgetArea(&dockInformation()), *pmWidget().selectedDevice());
 	else
 		infoPane().clear();
 

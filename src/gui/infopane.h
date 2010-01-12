@@ -44,14 +44,15 @@ class InfoPane : public QWidget
 		InfoPane(QWidget* parent);
 
 	public:
-		void showPartition(const Partition& p);
-		void showDevice(const Device& d);
+		void showPartition(Qt::DockWidgetArea area, const Partition& p);
+		void showDevice(Qt::DockWidgetArea area, const Device& d);
 		void clear();
 
 	protected:
-		void createLabels(const QString& title, const QString& value, int y);
-		int createHeader(const QString& title);
+		void createLabels(const QString& title, const QString& value, const int cols, int& x, int& y);
+		int createHeader(const QString& title, const int cols);
 		QGridLayout& gridLayout() { Q_ASSERT(m_GridLayout); return *m_GridLayout; }
+		quint32 cols(Qt::DockWidgetArea area) const;
 
 	private:
 		QGridLayout* m_GridLayout;

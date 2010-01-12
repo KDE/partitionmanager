@@ -29,6 +29,7 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QFrame>
+#include <QDockWidget>
 
 #include <kglobal.h>
 #include <kglobalsettings.h>
@@ -52,7 +53,7 @@ void InfoPane::clear()
 	qDeleteAll(findChildren<QFrame*>());
 }
 
-int InfoPane::createHeader(const QString& title)
+int InfoPane::createHeader(const QString& title, const int num_cols)
 {
 	int y = 0;
 
@@ -62,17 +63,17 @@ int InfoPane::createHeader(const QString& title)
 	font.setWeight(75);
 	label->setFont(font);
 	label->setAlignment(Qt::AlignCenter);
-	gridLayout().addWidget(label, y++, 0, 1, 2);
+	gridLayout().addWidget(label, y++, 0, 1, num_cols);
 
 	QFrame* line = new QFrame(this);
 	line->setFrameShape(QFrame::HLine);
 	line->setFrameShadow(QFrame::Sunken);
-	gridLayout().addWidget(line, y++, 0, 1, 2);
+	gridLayout().addWidget(line, y++, 0, 1, num_cols);
 
 	return y;
 }
 
-void InfoPane::createLabels(const QString& title, const QString& value, int y)
+void InfoPane::createLabels(const QString& title, const QString& value, const int num_cols, int& x, int& y)
 {
 	QLabel* labelTitle = new QLabel(title, this);
 	labelTitle->setFont(KGlobalSettings::smallestReadableFont());
@@ -84,42 +85,54 @@ void InfoPane::createLabels(const QString& title, const QString& value, int y)
 	palette.setColor(QPalette::Foreground, f);
 	labelTitle->setPalette(palette);
 
-	gridLayout().addWidget(labelTitle, y, 0, 1, 1);
+	gridLayout().addWidget(labelTitle, y, x, 1, 1);
 
 	QLabel* labelValue = new QLabel(value, this);
 	labelValue->setTextInteractionFlags(Qt::TextBrowserInteraction);
 	labelValue->setFont(KGlobalSettings::smallestReadableFont());
-	gridLayout().addWidget(labelValue, y, 1, 1, 1);
+	gridLayout().addWidget(labelValue, y, x + 1, 1, 1);
+
+	x += 2;
+
+	if (x % num_cols == 0)
+	{
+		x = 0;
+		y++;
+	}
 }
 
 /** Shows information about a Partition in the InfoPane
+	@param area the current area the widget's dock is in
 	@param p the Partition to show information about
 */
-void InfoPane::showPartition(const Partition& p)
+void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 {
 	clear();
 	parentWidget()->setWindowTitle(i18nc("@title:window", "Partition Information"));
 
-	int y = createHeader(p.deviceNode());
-	createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), y++);
-	createLabels(i18nc("@label partition", "Capacity:"), Capacity(p).toString(), y++);
-	createLabels(i18nc("@label partition", "Available:"), Capacity(p, Capacity::Available).toString(), y++);
-	createLabels(i18nc("@label partition", "Used:"), Capacity(p, Capacity::Used).toString(), y++);
-	createLabels(i18nc("@label partition", "First sector:"), KGlobal::locale()->formatNumber(p.firstSector(), 0), y++);
-	createLabels(i18nc("@label partition", "Last sector:"), KGlobal::locale()->formatNumber(p.lastSector(), 0), y++);
-	createLabels(i18nc("@label partition", "Number of sectors:"), KGlobal::locale()->formatNumber(p.length(), 0), y++);
+	int x = 0;
+	int y = createHeader(p.deviceNode(), cols(area));
+	createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
+	createLabels(i18nc("@label partition", "Capacity:"), Capacity(p).toString(), cols(area), x, y);
+	createLabels(i18nc("@label partition", "Available:"), Capacity(p, Capacity::Available).toString(), cols(area), x, y);
+	createLabels(i18nc("@label partition", "Used:"), Capacity(p, Capacity::Used).toString(), cols(area), x, y);
+	createLabels(i18nc("@label partition", "First sector:"), KGlobal::locale()->formatNumber(p.firstSector(), 0), cols(area), x, y);
+	createLabels(i18nc("@label partition", "Last sector:"), KGlobal::locale()->formatNumber(p.lastSector(), 0), cols(area), x, y);
+	createLabels(i18nc("@label partition", "Number of sectors:"), KGlobal::locale()->formatNumber(p.length(), 0), cols(area), x, y);
 }
 
 /** Shows information about a Device in the InfoPane
+	@param area the current area the widget's dock is in
 	@param d the Device to show information about
 */
-void InfoPane::showDevice(const Device& d)
+void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
 {
 	clear();
 	parentWidget()->setWindowTitle(i18nc("@title:window", "Device Information"));
 
-	int y = createHeader(d.name());
-	createLabels(i18nc("@label device", "Path:"), d.deviceNode(), y++);
+	int x = 0;
+	int y = createHeader(d.name(), cols(area));
+	createLabels(i18nc("@label device", "Path:"), d.deviceNode(), cols(area), x, y);
 
 	QString type = "---";
 	QString maxPrimaries = "---";
@@ -132,13 +145,25 @@ void InfoPane::showDevice(const Device& d)
 		maxPrimaries = QString("%1/%2").arg(d.partitionTable()->numPrimaries()).arg(d.partitionTable()->maxPrimaries());
 	}
 
-	createLabels(i18nc("@label device", "Type:"), type, y++);
-	createLabels(i18nc("@label device", "Capacity:"), Capacity(d).toString(), y++);
-	createLabels(i18nc("@label device", "Total sectors:"), KGlobal::locale()->formatNumber(d.totalSectors(), 0), y++);
-	createLabels(i18nc("@label device", "Heads:"), QString::number(d.heads()), y++);
-	createLabels(i18nc("@label device", "Cylinders:"), KGlobal::locale()->formatNumber(d.cylinders(), 0), y++);
-	createLabels(i18nc("@label device", "Sectors:"), KGlobal::locale()->formatNumber(d.sectorsPerTrack(), 0), y++);
-	createLabels(i18nc("@label device", "Sector size:"), Capacity(d.sectorSize()).toString(Capacity::Byte, Capacity::AppendUnit), y++);
-	createLabels(i18nc("@label device", "Cylinder size:"), i18ncp("@label", "1 Sector", "%1 Sectors", d.cylinderSize()), y++);
-	createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, y++);
+	createLabels(i18nc("@label device", "Type:"), type, cols(area), x, y);
+	createLabels(i18nc("@label device", "Capacity:"), Capacity(d).toString(), cols(area), x, y);
+	createLabels(i18nc("@label device", "Total sectors:"), KGlobal::locale()->formatNumber(d.totalSectors(), 0), cols(area), x, y);
+	createLabels(i18nc("@label device", "Heads:"), QString::number(d.heads()), cols(area), x, y);
+	createLabels(i18nc("@label device", "Cylinders:"), KGlobal::locale()->formatNumber(d.cylinders(), 0), cols(area), x, y);
+	createLabels(i18nc("@label device", "Sectors:"), KGlobal::locale()->formatNumber(d.sectorsPerTrack(), 0), cols(area), x, y);
+	createLabels(i18nc("@label device", "Sector size:"), Capacity(d.sectorSize()).toString(Capacity::Byte, Capacity::AppendUnit), cols(area), x, y);
+	createLabels(i18nc("@label device", "Cylinder size:"), i18ncp("@label", "1 Sector", "%1 Sectors", d.cylinderSize()), cols(area), x, y);
+	createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
+}
+
+quint32 InfoPane::cols(Qt::DockWidgetArea area) const
+{
+	QDockWidget* dockWidget = qobject_cast<QDockWidget*>(parentWidget());
+
+	Q_ASSERT(dockWidget);
+
+	if (dockWidget->isFloating() || area == Qt::TopDockWidgetArea || area == Qt::BottomDockWidgetArea)
+		return 6;
+
+	return 2;
 }
