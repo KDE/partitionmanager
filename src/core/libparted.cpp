@@ -43,6 +43,11 @@
 #include <kdebug.h>
 #include <klocale.h>
 
+#include <solid/device.h>
+#include <solid/deviceinterface.h>
+#include <solid/block.h>
+#include <solid/storagedrive.h>
+
 #include <parted/parted.h>
 #include <sys/statvfs.h>
 #include <unistd.h>
@@ -271,30 +276,18 @@ void LibParted::scanDevices(OperationStack& ostack)
 	// 1) segfaults when it finds "illegal" entries in /dev/mapper
 	// 2) takes several minutes to time out if the BIOS says there's a floppy drive present
 	//    when in fact there is none.
-	// For that reason we scan devices on our own if possible, using what the kernel knows and
-	// tells us about in /proc/partitions.
-	QFile partitions("/proc/partitions");
-	if (partitions.open(QIODevice::ReadOnly))
-	{
-		QRegExp rxLine("\\s*(\\d+)\\s+(\\d+)\\s+(\\d+)\\s([^0-9]+)\\s+");
-		QByteArray line;
+	// For that reason we scan devices on our own using Solid now.
+	QList<Solid::Device> driveList = Solid::Device::listFromType(Solid::DeviceInterface::StorageDrive, QString());
 
-		while (!(line = partitions.readLine()).isEmpty())
+	foreach(const Solid::Device& d, driveList)
+	{
+		const Solid::StorageDrive* drv = d.as<Solid::StorageDrive>();
+
+		if (drv->driveType() == Solid::StorageDrive::HardDisk)
 		{
-			if (rxLine.indexIn(line) != -1)
-			{
-				const QString device = "/dev/" + rxLine.cap(4);
-				// kDebug() << "device:" << device;
-				ped_device_get(device.toLocal8Bit());
-			}
+			const Solid::Block* b = d.as<Solid::Block>();
+			ped_device_get(b->device().toLocal8Bit());
 		}
-
-		partitions.close();
-	}
-	else
-	{
-		log(log::information) << i18nc("@info/plain", "Probing for devices using LibParted. This may crash or take a very long time. Read the manual's FAQ section for details.");
-		ped_device_probe_all();
 	}
 
 	PedDevice* pedDevice = ped_device_get_next(NULL);
