@@ -247,7 +247,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 	ped_disk_destroy(pedDisk);
 }
 
-/** Destructs a LibParted object. */
+/** Constructs a LibParted object. */
 LibParted::LibParted()
 {
 	ped_exception_set_handler(pedExceptionHandler);
