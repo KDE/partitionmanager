@@ -1,6 +1,6 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
 
-<gui name="KDE Partition Manager" version="4">
+<gui name="KDE Partition Manager" version="5">
 	<ToolBar name="editToolBar">
 		<text context="@title:menu turn on and off edit toolbar">Edit Toolbar</text>
 		<Action name="applyAllOperations"/>
@@ -54,6 +54,7 @@
 			<Action name="copyPartition"/>
 			<Action name="pastePartition"/>
 			<separator name="separator_3"/>
+			<Action name="editMountPoint"/>
 			<Action name="mountPartition"/>
 			<separator name="separator_4"/>
 			<Action name="checkPartition"/>

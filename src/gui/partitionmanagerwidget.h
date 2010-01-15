@@ -124,6 +124,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 
 		void onPropertiesPartition();
 		void onMountPartition();
+		void onEditMountPoint();
 		void onNewPartition();
 		void onDeletePartition();
 		void onResizePartition();

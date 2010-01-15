@@ -26,6 +26,7 @@
 #include "gui/filesystemsupportdialog.h"
 #include "gui/progressdialog.h"
 #include "gui/insertdialog.h"
+#include "gui/editmountpointdialog.h"
 
 #include "core/partition.h"
 #include "core/device.h"
@@ -232,6 +233,12 @@ void PartitionManagerWidget::setupActions()
 	pastePartition->setShortcut(Qt::CTRL | Qt::Key_V);
 	pastePartition->setIcon(BarIcon("edit-paste"));
 
+	KAction* editMountPoint = actionCollection()->addAction("editMountPoint", this, SLOT(onEditMountPoint()));
+	editMountPoint->setEnabled(false);
+	editMountPoint->setText(i18nc("@action:inmenu", "Edit Mount Point"));
+	editMountPoint->setToolTip(i18nc("@info:tooltip", "Edit mount point"));
+	editMountPoint->setStatusTip(i18nc("@info:status", "Edit a partition's mount point and options."));
+
 	KAction* mountPartition = actionCollection()->addAction("mountPartition", this, SLOT(onMountPartition()));
 	mountPartition->setEnabled(false);
 	mountPartition->setText(i18nc("@action:inmenu", "Mount"));
@@ -324,6 +331,7 @@ void PartitionManagerWidget::enableActions()
 	actionCollection()->action("pastePartition")->setEnabled(!readOnly && CopyOperation::canPaste(part, clipboardPartition()));
 	actionCollection()->action("propertiesPartition")->setEnabled(part != NULL);
 
+	actionCollection()->action("editMountPoint")->setEnabled(part && part->canMount());
 	actionCollection()->action("mountPartition")->setEnabled(part && (part->canMount() || part->canUnmount()));
 
 	if (part != NULL)
@@ -485,6 +493,7 @@ void PartitionManagerWidget::showPartitionContextMenu(const QPoint& pos)
 	partitionMenu.addAction(actionCollection()->action("copyPartition"));
 	partitionMenu.addAction(actionCollection()->action("pastePartition"));
 	partitionMenu.addSeparator();
+	partitionMenu.addAction(actionCollection()->action("editMountPoint"));
 	partitionMenu.addAction(actionCollection()->action("mountPartition"));
 	partitionMenu.addSeparator();
 	partitionMenu.addAction(actionCollection()->action("checkPartition"));
@@ -579,6 +588,22 @@ void PartitionManagerWidget::onMountPartition()
 
 	enableActions();
 	updatePartitions();
+}
+
+void PartitionManagerWidget::onEditMountPoint()
+{
+	Partition* p = selectedPartition();
+
+	Q_ASSERT(p);
+
+	if (p == NULL)
+		return;
+
+	QPointer<EditMountPointDialog> dlg = new EditMountPointDialog(this, *p);
+
+	dlg->exec();
+
+	delete dlg;
 }
 
 static bool checkTooManyPartitions(QWidget* parent, const Device& d, const Partition& p)
