@@ -279,24 +279,19 @@ void LibParted::scanDevices(OperationStack& ostack)
 	// For that reason we scan devices on our own using Solid now.
 	QList<Solid::Device> driveList = Solid::Device::listFromType(Solid::DeviceInterface::StorageDrive, QString());
 
-	foreach(const Solid::Device& d, driveList)
+	foreach(const Solid::Device& solidDevice, driveList)
 	{
-		const Solid::StorageDrive* drv = d.as<Solid::StorageDrive>();
+		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
 
-		if (drv->driveType() == Solid::StorageDrive::HardDisk)
-		{
-			const Solid::Block* b = d.as<Solid::Block>();
-			ped_device_get(b->device().toLocal8Bit());
-		}
-	}
+		if (solidDrive->driveType() != Solid::StorageDrive::HardDisk)
+			continue;
 
-	PedDevice* pedDevice = ped_device_get_next(NULL);
+		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
+		PedDevice* pedDevice = ped_device_get(solidBlock->device().toLocal8Bit());
 
-	while (pedDevice)
-	{
 		log(log::information) << i18nc("@info/plain", "Device found: %1", pedDevice->model);
 
-		Device* d = new Device(pedDevice->model, pedDevice->path, pedDevice->bios_geom.heads, pedDevice->bios_geom.sectors, pedDevice->bios_geom.cylinders, pedDevice->sector_size);
+		Device* d = new Device(pedDevice->model, pedDevice->path, pedDevice->bios_geom.heads, pedDevice->bios_geom.sectors, pedDevice->bios_geom.cylinders, pedDevice->sector_size, solidDevice.icon());
 
 		PedDisk* pedDisk = ped_disk_new(pedDevice);
 
@@ -309,12 +304,7 @@ void LibParted::scanDevices(OperationStack& ostack)
 			scanDevicePartitions(pedDevice, *d, pedDisk, mountInfo);
 		}
 
-		// add this device if either there is a valid partition table or it's not
-		// read only (read only devices without partition table are CD/DVD readers, writers etc)
-		if (pedDisk || !pedDevice->read_only)
-			ostack.addDevice(d);
-
-		pedDevice = ped_device_get_next(pedDevice);
+		ostack.addDevice(d);
 	}
 
 	ostack.sortDevices();

@@ -32,7 +32,7 @@
 	@param cylinders the number of cylinders in CHS notation
 	@param sectorSize the size of a sector in bytes
 */
-Device::Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize) :
+Device::Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize, const QString& iconname) :
 	QObject(),
 	m_Name(name),
 	m_DeviceNode(devicenode),
@@ -40,7 +40,8 @@ Device::Device(const QString& name, const QString& devicenode, qint32 heads, qin
 	m_Heads(heads),
 	m_SectorsPerTrack(numSectors),
 	m_Cylinders(cylinders),
-	m_SectorSize(sectorSize)
+	m_SectorSize(sectorSize),
+	m_IconName(iconname.isEmpty() ? "drive-hardisk" : iconname)
 {
 }
 

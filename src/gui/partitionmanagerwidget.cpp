@@ -379,7 +379,7 @@ void PartitionManagerWidget::updatePartitions()
 
 	QTreeWidgetItem* deviceItem = new QTreeWidgetItem();
 	deviceItem->setText(0, selectedDevice()->name());
-	deviceItem->setIcon(0, DesktopIcon("drive-harddisk"));
+	deviceItem->setIcon(0, DesktopIcon(selectedDevice()->iconName()));
 	deviceItem->setSizeHint(0, QSize(0, 32));
 
 	treePartitions().addTopLevelItem(deviceItem);

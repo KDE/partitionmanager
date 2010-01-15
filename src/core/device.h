@@ -47,7 +47,7 @@ class Device : public QObject
 	friend class LibParted;
 
 	public:
-		Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize);
+		Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize, const QString& iconname = QString());
 		~Device();
 
 	public:
@@ -62,6 +62,7 @@ class Device : public QObject
 		qint64 totalSectors() const { return static_cast<qint64>(heads()) * cylinders() * sectorsPerTrack(); } /**< @return the total number of sectors on the device */
 		qint64 capacity() const { return totalSectors() * sectorSize(); } /**< @return the Device's capacity in bytes */
 		qint64 cylinderSize() const { return static_cast<qint64>(heads()) * sectorsPerTrack(); } /**< @return the size of a cylinder on this Device in sectors */
+		const QString& iconName() const { return m_IconName; } /**< @return suggested icon name for this Device */
 
 	protected:
 		void setPartitionTable(PartitionTable* ptable) { m_PartitionTable = ptable; }
@@ -74,6 +75,7 @@ class Device : public QObject
 		qint32 m_SectorsPerTrack;
 		qint32 m_Cylinders;
 		qint32 m_SectorSize;
+		QString m_IconName;
 };
 
 #endif

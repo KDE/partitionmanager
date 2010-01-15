@@ -51,7 +51,7 @@ void ListDevices::updateDevices()
 	{
 		const QString shortText = d->deviceNode() + " (" + Capacity(*d).toString() + ')';
 		const QString longText = d->deviceNode() + " (" + Capacity(*d).toString() + ", " + d->name() + ')';
-		QListWidgetItem* item = new QListWidgetItem(DesktopIcon("drive-harddisk"), shortText);
+		QListWidgetItem* item = new QListWidgetItem(DesktopIcon(d->iconName()), shortText);
 		item->setToolTip(longText);
 		item->setSizeHint(QSize(0, 32));
 		listDevices().addItem(item);
