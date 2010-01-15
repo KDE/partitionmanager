@@ -42,6 +42,8 @@
 
 #include <kdebug.h>
 #include <klocale.h>
+#include <kmountpoint.h>
+#include <kdiskfreespaceinfo.h>
 
 #include <solid/device.h>
 #include <solid/deviceinterface.h>
@@ -49,9 +51,7 @@
 #include <solid/storagedrive.h>
 
 #include <parted/parted.h>
-#include <sys/statvfs.h>
 #include <unistd.h>
-#include <mntent.h>
 
 /** Callback to handle exceptions from libparted
 	@param e the libparted exception to handle
@@ -61,61 +61,6 @@ static PedExceptionOption pedExceptionHandler(PedException* e)
 	/** @todo These messages should end up in the Report, not in the GlobalLog. */
 	log(log::error) << i18nc("@info/plain", "LibParted Exception: %1", QString::fromLocal8Bit(e->message));
 	return PED_EXCEPTION_UNHANDLED;
-}
-
-/** Finds a device by UUID.
-	@param s the UUID
-	@return the device node the UUID links to
-*/
-static QString findUuidDevice(const QString& s)
-{
-	const QString filename = "/dev/disk/by-uuid/" + QString(s).remove("UUID=");
-	return QFile::exists(filename) ? QFile::symLinkTarget(filename) : "";
-}
-
-/** Finds a device by LABEL.
-	@param s the label
-	@return the device node the label links to
- */
-static QString findLabelDevice(const QString& s)
-{
-	const QString filename = "/dev/disk/by-label/" + QString(s).remove("LABEL=");
-	return QFile::exists(filename) ? QFile::symLinkTarget(filename) : "";
-}
-
-/** Reads mountpoints from a file.
-	@param filename the name of the file to read mount points from
-	@param result reference to QMap where the result will be stored
-*/
-static void readMountpoints(const QString& filename, QMap<QString, QStringList>& result)
-{
-	FILE* fp = setmntent(filename.toLocal8Bit(), "r");
-
-	if (fp == NULL)
-		return;
-
-	struct mntent* p = NULL;
-
-	while ((p = getmntent(fp)) != NULL)
-	{
-		QString device = p->mnt_fsname;
-
-		if (device.startsWith("UUID="))
-			device = findUuidDevice(device);
-
-		if (device.startsWith("LABEL="))
-			device = findLabelDevice(device);
-
-		if (!device.isEmpty())
-		{
-			QString mountPoint = p->mnt_dir;
-
-			if (QFile::exists(mountPoint) && result[device].indexOf(mountPoint) == -1)
-				result[device].append(mountPoint);
-		}
-	}
-
-	endmntent(fp);
 }
 
 /** Reads sectors used on a FileSystem using libparted functions.
@@ -153,16 +98,16 @@ static qint64 readSectorsUsedLibParted(PedDisk* pedDisk, const Partition& p)
 /** Reads the sectors used in a FileSystem and stores the result in the Partition's FileSystem object.
 	@param pedDisk pointer to pedDisk  where the Partition and its FileSystem are
 	@param p the Partition the FileSystem is on
-	@param mountInfo map of mount points for the partition in question
+	@param mountPoint mount point of the partition in question
 */
-static void readSectorsUsed(PedDisk* pedDisk, Partition& p, QMap<QString, QStringList>& mountInfo)
+static void readSectorsUsed(PedDisk* pedDisk, Partition& p, const QString& mountPoint)
 {
 	Q_ASSERT(pedDisk);
 
-	struct statvfs sfs;
+	const KDiskFreeSpaceInfo freeSpaceInfo = KDiskFreeSpaceInfo::freeSpaceInfo(mountPoint);
 
-	if (p.isMounted() && mountInfo[p.deviceNode()].size() > 0 && statvfs(mountInfo[p.deviceNode()][0].toLatin1(), &sfs) == 0)
-		p.fileSystem().setSectorsUsed((sfs.f_blocks - sfs.f_bfree) * sfs.f_bsize / p.sectorSize());
+	if (freeSpaceInfo.isValid())
+		p.fileSystem().setSectorsUsed(freeSpaceInfo.used() / p.sectorSize());
 	else if (p.fileSystem().supportGetUsed() == FileSystem::SupportExternal)
 		p.fileSystem().setSectorsUsed(p.fileSystem().readUsedCapacity(p.deviceNode()) / p.sectorSize());
 	else if (p.fileSystem().supportGetUsed() == FileSystem::SupportInternal)
@@ -180,13 +125,16 @@ static void readSectorsUsed(PedDisk* pedDisk, Partition& p, QMap<QString, QStrin
 	@param pedDisk libparted pointer to the disk label
 	@param mountInfo map of mount points
 */
-static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDisk, QMap<QString, QStringList>& mountInfo)
+static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDisk)
 {
 	Q_ASSERT(pedDevice);
 	Q_ASSERT(pedDisk);
 	Q_ASSERT(d.partitionTable());
 
 	PedPartition* pedPartition = NULL;
+
+	KMountPoint::List mountPoints = KMountPoint::currentMountPoints(KMountPoint::NeedRealDeviceName);
+	mountPoints.append(KMountPoint::possibleMountPoints(KMountPoint::NeedRealDeviceName));
 
 	while ((pedPartition = ped_disk_next_partition(pedDisk, pedPartition)))
 	{
@@ -225,11 +173,13 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 		const QString node = pedDisk->dev->path + QString::number(pedPartition->num);
 		FileSystem* fs = FileSystemFactory::create(type, pedPartition->geom.start, pedPartition->geom.end);
 
+		const QString mountPoint = mountPoints.findByDevice(node) ? mountPoints.findByDevice(node)->mountPoint() : QString();
+
 		Partition* part = new Partition(parent, d, PartitionRole(r), fs, pedPartition->geom.start, pedPartition->geom.end,
 				pedPartition->num, SetPartFlagsJob::availableFlags(pedPartition),
-				mountInfo[node], ped_partition_is_busy(pedPartition), SetPartFlagsJob::activeFlags(pedPartition));
+				QStringList() << mountPoint, ped_partition_is_busy(pedPartition), SetPartFlagsJob::activeFlags(pedPartition));
 
-		readSectorsUsed(pedDisk, *part, mountInfo);
+		readSectorsUsed(pedDisk, *part, mountPoint);
 
 		if (fs->supportGetLabel() != FileSystem::SupportNone)
 			fs->setLabel(fs->readLabel(part->deviceNode()));
@@ -263,12 +213,6 @@ LibParted::LibParted()
 */
 void LibParted::scanDevices(OperationStack& ostack)
 {
-	QMap<QString, QStringList> mountInfo;
-
-	readMountpoints("/proc/mounts", mountInfo);
-	readMountpoints("/etc/mtab", mountInfo);
-	readMountpoints("/etc/fstab", mountInfo);
-
 	ostack.clearOperations();
 	ostack.clearDevices();
 
@@ -277,7 +221,7 @@ void LibParted::scanDevices(OperationStack& ostack)
 	// 2) takes several minutes to time out if the BIOS says there's a floppy drive present
 	//    when in fact there is none.
 	// For that reason we scan devices on our own using Solid now.
-	QList<Solid::Device> driveList = Solid::Device::listFromType(Solid::DeviceInterface::StorageDrive, QString());
+	const QList<Solid::Device> driveList = Solid::Device::listFromType(Solid::DeviceInterface::StorageDrive, QString());
 
 	foreach(const Solid::Device& solidDevice, driveList)
 	{
@@ -301,7 +245,7 @@ void LibParted::scanDevices(OperationStack& ostack)
 			d->partitionTable()->setMaxPrimaries(ped_disk_get_max_primary_partition_count(pedDisk));
 			d->partitionTable()->setTypeName(pedDisk->type->name);
 
-			scanDevicePartitions(pedDevice, *d, pedDisk, mountInfo);
+			scanDevicePartitions(pedDevice, *d, pedDisk);
 		}
 
 		ostack.addDevice(d);
