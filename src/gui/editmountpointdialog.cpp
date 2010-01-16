@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2009,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -22,8 +22,10 @@
 
 #include "core/partition.h"
 
-#include <KMessageBox>
-#include <KDebug>
+#include <kmessagebox.h>
+#include <kdebug.h>
+#include <kguiitem.h>
+#include <kstandardguiitem.h>
 
 EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
 	KDialog(parent),
@@ -31,6 +33,7 @@ EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
 	m_DialogWidget(new EditMountPointDialogWidget(this, partition()))
 {
 	setMainWidget(&widget());
+	setCaption(i18nc("@title:window", "Edit mount point for %1", p.deviceNode()));
 }
 
 void EditMountPointDialog::accept()
@@ -42,14 +45,17 @@ void EditMountPointDialog::accept()
 		return;
 	}
 
-#if 0
-	partition().setName(widget().editName().text());
-	partition().setPath(widget().editPath().text());
-	partition().setType(widget().type());
-	partition().setOptions(widget().options());
-	partition().setDumpFreq(widget().spinDumpFreq().value());
-	partition().setPassNumber(widget().spinPassNumber().value());
-#endif
+	if (KMessageBox::warningContinueCancel(this,
+			i18nc("@info", "<para>Are you sure you want to save the changes you made to the system table file <filename>/etc/fstab</filename>?</para>"
+			"<para><warning>This will overwrite the existing file on your hard drive now. This <strong>can not be undone</strong>.</warning></para>"),
+			i18nc("@title:window", "Really save changes?"),
+			KGuiItem(i18nc("@action:button", "Save changes")),
+			KStandardGuiItem::cancel(),
+			"reallyWriteMountPoints") == KMessageBox::Cancel)
+		return;
+
+	if (widget().acceptChanges() && widget().writeMountpoints("/etc/fstab"))
+		partition().setMountPoints(QStringList() << widget().editPath().text());
 
 	KDialog::accept();
 }

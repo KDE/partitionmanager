@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 200,2010 by Volker Lanz <vl@fidra.de>                   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,11 +17,13 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#if !defined(EDITOPTIONSDIALOGWIDGET__H)
+#if !defined(EDITMOUNTOPTIONSDIALOGWIDGET__H)
 
-#define EDITOPTIONSDIALOGWIDGET__H
+#define EDITMOUNTOPTIONSDIALOGWIDGET__H
 
 #include "ui_editmountoptionsdialogwidgetbase.h"
+
+#include <QWidget>
 
 class QStringList;
 class QPlainTextEdit;
@@ -35,6 +37,4 @@ class EditMountOptionsDialogWidget : public QWidget, public Ui::EditMountOptions
 		QPlainTextEdit& editOptions() { return *m_EditOptions; }
 };
 
-
 #endif
-

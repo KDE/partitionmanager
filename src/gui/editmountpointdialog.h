@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2009,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,11 +17,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#if !defined(MOUNTMANEDITDIALOG__H)
+#if !defined(EDITMOUNTPOINTDIALOG__H)
 
-#define MOUNTMANEDITDIALOG__H
+#define EDITMOUNTPOINTDIALOG__H
 
-#include <KDialog>
+#include <kdialog.h>
 
 class EditMountPointDialogWidget;
 class Partition;

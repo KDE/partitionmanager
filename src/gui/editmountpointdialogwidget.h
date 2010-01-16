@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2009,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,9 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#if !defined(MOUNTMANEDITDIALOGWIDGET__H)
+#if !defined(EDITMOUNTPOINTDIALOGWIDGET__H)
 
-#define MOUNTMANEDITDIALOGWIDGET__H
+#define EDITMOUNTPOINTDIALOGWIDGET__H
 
 #include "ui_editmountpointdialogwidgetbase.h"
 
@@ -37,27 +37,29 @@ class QSpinBox;
 class QCheckBox;
 class QStringList;
 
+struct MountEntry;
+
 class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDialogWidgetBase
 {
 	Q_OBJECT
 
 	public:
 		EditMountPointDialogWidget(QWidget* parent, const Partition& p);
+		~EditMountPointDialogWidget();
 
 	public:
 		KPushButton& buttonMore() { return *m_ButtonMore; }
-		KLineEdit& editName() { return *m_EditName; }
+		QLabel& labelName() { return *m_LabelNameValue; }
 		KLineEdit& editPath() { return *m_EditPath; }
 		QSpinBox& spinDumpFreq() { return *m_SpinDumpFreq; }
 		QSpinBox& spinPassNumber() { return *m_SpinPassNumber; }
-		KLineEdit& editType() { return *m_EditType; }
-		KComboBox& comboType() { return *m_ComboType; }
-
+		QLabel& labelType() { return *m_LabelTypeValue; }
 		QStringList options();
-		QString type();
+
+		bool acceptChanges();
+		bool writeMountpoints(const QString& filename);
 
 	protected slots:
-		void on_m_ComboType_currentIndexChanged(const QString& type);
 		void on_m_ButtonSelect_clicked(bool);
 		void on_m_ButtonMore_clicked(bool);
 
@@ -65,8 +67,11 @@ class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDial
 		void setupOptions(const QStringList& options);
 		QMap<QString, QCheckBox*>& boxOptions() { return m_BoxOptions; }
 		const QMap<QString, QCheckBox*>& boxOptions() const { return m_BoxOptions; }
+		bool readMountpoints(const QString& filename);
+		QMap<QString, MountEntry*>& mountPoints() { return m_MountPoints; }
 
 	private:
+		QMap<QString, MountEntry*> m_MountPoints;
 		QString m_Options;
 		QMap<QString, QCheckBox*> m_BoxOptions;
 };
