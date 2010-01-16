@@ -273,22 +273,20 @@ bool EditMountPointDialogWidget::acceptChanges()
 		kWarning() << "could not find device " << labelName().text() << " in mount points.";
 		return false;
 	}
+
+	entry = mountPoints()[labelName().text()];
+
+	entry->dumpFreq = spinDumpFreq().value();
+	entry->passNumber = spinPassNumber().value();
+	entry->path = editPath().text();
+	entry->options = options();
+
+	if (radioUUID().isChecked() && !partition().fileSystem().uuid().isEmpty())
+		entry->name = "UUID=" + partition().fileSystem().uuid();
+	else if (radioLabel().isChecked() && !partition().fileSystem().label().isEmpty())
+		entry->name = "LABEL=" + partition().fileSystem().label();
 	else
-	{
-		entry = mountPoints()[labelName().text()];
-
-		entry->dumpFreq = spinDumpFreq().value();
-		entry->passNumber = spinPassNumber().value();
-		entry->path = editPath().text();
-		entry->options = options();
-
-		if (radioUUID().isChecked() && !partition().fileSystem().uuid().isEmpty())
-			entry->name = "UUID=" + partition().fileSystem().uuid();
-		else if (radioLabel().isChecked() && !partition().fileSystem().label().isEmpty())
-			entry->name = "LABEL=" + partition().fileSystem().label();
-		else
-			entry->name = partition().deviceNode();
-	}
+		entry->name = partition().deviceNode();
 
 	return true;
 }
