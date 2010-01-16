@@ -34,6 +34,7 @@ class OperationStack;
 class PartResizerWidget;
 class InsertDialog;
 class NewDialog;
+class EditMountPointDialog;
 
 class CreateFileSystemOperation;
 class RestoreOperation;
@@ -73,6 +74,7 @@ class Partition : public PartitionNode
 	friend class PartResizerWidget;
 	friend class InsertDialog;
 	friend class NewDialog;
+	friend class EditMountPointDialog;
 
 	friend class CreateFileSystemOperation;
 	friend class RestoreOperation;
