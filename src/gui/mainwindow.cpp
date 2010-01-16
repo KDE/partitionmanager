@@ -133,6 +133,7 @@ void MainWindow::setupConnections()
 	connect(&pmWidget(), SIGNAL(operationsChanged()), &listOperations(), SLOT(updateOperations()));
 	connect(&pmWidget(), SIGNAL(statusChanged()), SLOT(updateStatusBar()));
 	connect(&pmWidget(), SIGNAL(selectionChanged(const Partition*)), SLOT(updateSelection(const Partition*)));
+	connect(&dockInformation(), SIGNAL(dockLocationChanged(Qt::DockWidgetArea)), SLOT(onDockLocationChanged(Qt::DockWidgetArea)));
 }
 
 void MainWindow::setupStatusBar()
@@ -178,6 +179,11 @@ void MainWindow::on_m_ListDevices_selectionChanged(Device* d)
 {
 	pmWidget().setSelectedDevice(d);
 	updateSelection(NULL);
+}
+
+void MainWindow::onDockLocationChanged(Qt::DockWidgetArea)
+{
+	updateSelection(pmWidget().selectedPartition());
 }
 
 void MainWindow::updateWindowTitle()

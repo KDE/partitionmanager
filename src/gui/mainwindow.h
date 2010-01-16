@@ -89,6 +89,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 	protected slots:
 		void on_m_ListDevices_selectionChanged(Device* d);
 
+		void onDockLocationChanged(Qt::DockWidgetArea area);
+
 		void closeEvent(QCloseEvent*);
 		void changeEvent(QEvent* event);
 
