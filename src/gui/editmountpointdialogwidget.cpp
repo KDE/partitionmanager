@@ -254,6 +254,9 @@ static void writeEntry(QFile& output, const MountEntry* entry)
 	if (entry == NULL)
 		return;
 
+	if (entry->path.isEmpty())
+		return;
+
 	QTextStream s(&output);
 
 	s << entry->name << "\t"

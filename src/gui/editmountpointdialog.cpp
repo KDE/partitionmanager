@@ -38,13 +38,6 @@ EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
 
 void EditMountPointDialog::accept()
 {
-	if (widget().editPath().text().isEmpty())
-	{
-		KMessageBox::sorry(this, i18n("The path can not be empty\n\nPlease fill in a valid path or \"none\" if the file system does not require a path to be set (e.g. swap)."), i18n("Error"));
-		widget().editPath().setFocus(Qt::OtherFocusReason);
-		return;
-	}
-
 	if (KMessageBox::warningContinueCancel(this,
 			i18nc("@info", "<para>Are you sure you want to save the changes you made to the system table file <filename>/etc/fstab</filename>?</para>"
 			"<para><warning>This will overwrite the existing file on your hard drive now. This <strong>can not be undone</strong>.</warning></para>"),
