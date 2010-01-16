@@ -601,7 +601,8 @@ void PartitionManagerWidget::onEditMountPoint()
 
 	QPointer<EditMountPointDialog> dlg = new EditMountPointDialog(this, *p);
 
-	dlg->exec();
+	if (dlg->exec() == KDialog::Accepted)
+		updatePartitions();
 
 	delete dlg;
 }
