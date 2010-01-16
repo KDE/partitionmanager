@@ -41,23 +41,27 @@
 
 struct MountEntry
 {
-	MountEntry(const QString& n, const QString& p, const QString& t, const QStringList& o, qint32 d, qint32 pn) :
+	enum IdentifyType { deviceNode, uuid, label };
+
+	MountEntry(const QString& n, const QString& p, const QString& t, const QStringList& o, qint32 d, qint32 pn, IdentifyType type) :
 		name(n),
 		path(p),
 		type(t),
 		options(o),
 		dumpFreq(d),
-		passNumber(pn)
+		passNumber(pn),
+		identifyType(type)
 	{
 	}
 
-	MountEntry(struct mntent* p) :
+	MountEntry(struct mntent* p, IdentifyType type) :
 		name(p->mnt_fsname),
 		path(p->mnt_dir),
 		type(p->mnt_type),
 		options(QString(p->mnt_opts).split(',')),
 		dumpFreq(p->mnt_freq),
-		passNumber(p->mnt_passno)
+		passNumber(p->mnt_passno),
+		identifyType(type)
 	{
 	}
 
@@ -67,6 +71,7 @@ struct MountEntry
 	QStringList options;
 	qint32 dumpFreq;
 	qint32 passNumber;
+	IdentifyType identifyType;
 };
 
 static QString findBlkIdDevice(const QString& token, const QString& value)
@@ -89,19 +94,20 @@ static QString findBlkIdDevice(const QString& token, const QString& value)
 }
 
 EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Partition& p) :
-	QWidget(parent)
+	QWidget(parent),
+	m_Partition(p)
 {
 	readMountpoints("/etc/fstab");
 
 	setupUi(this);
 
-	labelName().setText(p.deviceNode());
-	labelType().setText(p.fileSystem().name());
+	labelName().setText(partition().deviceNode());
+	labelType().setText(partition().fileSystem().name());
 
-	if (mountPoints().find(p.deviceNode()) == mountPoints().end())
-		mountPoints()[p.deviceNode()] = new MountEntry(p.deviceNode(), QString(), p.fileSystem().name(), QStringList(), 0, 0);
+	if (mountPoints().find(partition().deviceNode()) == mountPoints().end())
+		mountPoints()[partition().deviceNode()] = new MountEntry(partition().deviceNode(), QString(), partition().fileSystem().name(), QStringList(), 0, 0, MountEntry::deviceNode);
 
-	MountEntry* entry = mountPoints()[p.deviceNode()];
+	MountEntry* entry = mountPoints()[partition().deviceNode()];
 
 	Q_ASSERT(entry);
 
@@ -111,6 +117,20 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
 
 		spinDumpFreq().setValue(entry->dumpFreq);
 		spinPassNumber().setValue(entry->passNumber);
+
+		switch(entry->identifyType)
+		{
+			case MountEntry::uuid:
+				radioUUID().setChecked(true);
+				break;
+
+			case MountEntry::label:
+				radioLabel().setChecked(true);
+				break;
+
+			default:
+				radioDeviceNode().setChecked(true);
+		}
 
 		boxOptions()["ro"] = m_CheckReadOnly;
 		boxOptions()["users"] = m_CheckUsers;
@@ -122,6 +142,20 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
 		boxOptions()["relatime"] = m_CheckRelAtime;
 
 		setupOptions(entry->options);
+	}
+
+	if (partition().fileSystem().uuid().isEmpty())
+	{
+		radioUUID().setEnabled(false);
+		if (radioUUID().isChecked())
+			radioDeviceNode().setChecked(true);
+	}
+
+	if (partition().fileSystem().label().isEmpty())
+	{
+		radioLabel().setEnabled(false);
+		if (radioLabel().isChecked())
+			radioDeviceNode().setChecked(true);
 	}
 }
 
@@ -183,21 +217,28 @@ bool EditMountPointDialogWidget::readMountpoints(const QString& filename)
 		return false;
 	}
 
-	struct mntent* p = NULL;
+	struct mntent* mnt = NULL;
 
-	while ((p = getmntent(fp)) != NULL)
+	while ((mnt = getmntent(fp)) != NULL)
 	{
-		QString device = p->mnt_fsname;
+		QString device = mnt->mnt_fsname;
+		MountEntry::IdentifyType type = MountEntry::deviceNode;
 
 		if (device.startsWith("UUID="))
+		{
+			type = MountEntry::uuid;
 			device = findBlkIdDevice("UUID", QString(device).remove("UUID="));
+		}
 		else if (device.startsWith("LABEL="))
+		{
+			type = MountEntry::label;
 			device = findBlkIdDevice("LABEL", QString(device).remove("LABEL="));
+		}
 
 		if (!device.isEmpty())
 		{
-			QString mountPoint = p->mnt_dir;
-			mountPoints()[device] = new MountEntry(p);
+			QString mountPoint = mnt->mnt_dir;
+			mountPoints()[device] = new MountEntry(mnt, type);
 		}
 	}
 
@@ -214,6 +255,7 @@ static void writeEntry(QFile& output, const MountEntry* entry)
 		return;
 
 	QTextStream s(&output);
+
 	s << entry->name << "\t"
 		<< entry->path << "\t"
 		<< entry->type << "\t"
@@ -224,7 +266,7 @@ static void writeEntry(QFile& output, const MountEntry* entry)
 
 bool EditMountPointDialogWidget::acceptChanges()
 {
-	MountEntry* mp = NULL;
+	MountEntry* entry = NULL;
 
 	if (mountPoints().find(labelName().text()) == mountPoints().end())
 	{
@@ -233,12 +275,19 @@ bool EditMountPointDialogWidget::acceptChanges()
 	}
 	else
 	{
-		mp = mountPoints()[labelName().text()];
+		entry = mountPoints()[labelName().text()];
 
-		mp->dumpFreq = spinDumpFreq().value();
-		mp->passNumber = spinPassNumber().value();
-		mp->path = editPath().text();
-		mp->options = options();
+		entry->dumpFreq = spinDumpFreq().value();
+		entry->passNumber = spinPassNumber().value();
+		entry->path = editPath().text();
+		entry->options = options();
+
+		if (radioUUID().isChecked() && !partition().fileSystem().uuid().isEmpty())
+			entry->name = "UUID=" + partition().fileSystem().uuid();
+		else if (radioLabel().isChecked() && !partition().fileSystem().label().isEmpty())
+			entry->name = "LABEL=" + partition().fileSystem().label();
+		else
+			entry->name = partition().deviceNode();
 	}
 
 	return true;

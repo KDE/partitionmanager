@@ -36,6 +36,7 @@ class QWidget;
 class QSpinBox;
 class QCheckBox;
 class QStringList;
+class QFile;
 
 struct MountEntry;
 
@@ -55,6 +56,9 @@ class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDial
 		QSpinBox& spinPassNumber() { return *m_SpinPassNumber; }
 		QLabel& labelType() { return *m_LabelTypeValue; }
 		QStringList options();
+		QRadioButton& radioUUID() { return *m_RadioUUID; }
+		QRadioButton& radioLabel() { return *m_RadioLabel; }
+		QRadioButton& radioDeviceNode() { return *m_RadioDeviceNode; }
 
 		bool acceptChanges();
 		bool writeMountpoints(const QString& filename);
@@ -69,8 +73,10 @@ class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDial
 		const QMap<QString, QCheckBox*>& boxOptions() const { return m_BoxOptions; }
 		bool readMountpoints(const QString& filename);
 		QMap<QString, MountEntry*>& mountPoints() { return m_MountPoints; }
+		const Partition& partition() const { return m_Partition; }
 
 	private:
+		const Partition& m_Partition;
 		QMap<QString, MountEntry*> m_MountPoints;
 		QString m_Options;
 		QMap<QString, QCheckBox*> m_BoxOptions;
