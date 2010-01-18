@@ -48,18 +48,24 @@ class FileSystemSupportDialog : public KDialog
 
 			public:
 				QTreeWidget& tree() { Q_ASSERT(m_Tree); return *m_Tree; }
+				const QTreeWidget& tree() const { Q_ASSERT(m_Tree); return *m_Tree; }
 				KPushButton& buttonRescan() { Q_ASSERT(m_ButtonRescan); return *m_ButtonRescan; }
+				const KPushButton& buttonRescan() const { Q_ASSERT(m_ButtonRescan); return *m_ButtonRescan; }
 		};
 
 	public:
 		FileSystemSupportDialog(QWidget* parent);
 		~FileSystemSupportDialog();
 
+	public:
+		QSize sizeHint() const;
+
 	protected slots:
 		void onButtonRescanClicked();
 
 	protected:
 		FileSystemSupportDialogWidget& dialogWidget() { Q_ASSERT(m_FileSystemSupportDialogWidget); return *m_FileSystemSupportDialogWidget; }
+		const FileSystemSupportDialogWidget& dialogWidget() const { Q_ASSERT(m_FileSystemSupportDialogWidget); return *m_FileSystemSupportDialogWidget; }
 		void setupDialog();
 		void setupConnections();
 

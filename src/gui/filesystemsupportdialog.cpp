@@ -39,8 +39,6 @@ FileSystemSupportDialog::FileSystemSupportDialog(QWidget* parent) :
 	setCaption(i18nc("@title:window", "File System Support"));
 	setButtons(KDialog::Ok);
 
-	resize(dialogWidget().width(), dialogWidget().height());
-
  	setupDialog();
 	setupConnections();
 
@@ -52,6 +50,11 @@ FileSystemSupportDialog::~FileSystemSupportDialog()
 {
 	KConfigGroup kcg(KGlobal::config(), "fileSystemSupportDialog");
 	saveDialogSize(kcg);
+}
+
+QSize FileSystemSupportDialog::sizeHint() const
+{
+	return QSize(690, 490);
 }
 
 void FileSystemSupportDialog::setupDialog()
