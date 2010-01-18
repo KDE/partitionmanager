@@ -1,6 +1,6 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
 
-<kpartgui name="partitionmanagerpart" version="6">
+<kpartgui name="partitionmanagerpart" version="7">
 	<ToolBar name="editToolBar">
 		<text context="@title:menu turn on and off edit toolbar">Edit Toolbar</text>
 		<Action name="applyAllOperations"/>
@@ -50,10 +50,12 @@
 			<Action name="newPartition"/>
 			<Action name="resizePartition"/>
 			<Action name="deletePartition"/>
+			<Action name="shredPartition"/>
 			<separator name="separator_6"/>
 			<Action name="copyPartition"/>
 			<Action name="pastePartition"/>
 			<separator name="separator_3"/>
+			<Action name="editMountPoint"/>
 			<Action name="mountPartition"/>
 			<separator name="separator_4"/>
 			<Action name="checkPartition"/>
