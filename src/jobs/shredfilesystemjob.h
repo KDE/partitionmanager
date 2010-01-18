@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2010 by Volker Lanz <vl@fidra.de>                 *
+ *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                       *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,64 +17,44 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(DELETEOPERATION__H)
+#if !defined(SHREDFILESYSTEMJOB__H)
 
-#define DELETEOPERATION__H
+#define SHREDFILESYSTEMJOB__H
 
-#include "ops/operation.h"
+#include "jobs/job.h"
 
 #include <QString>
 
-class Device;
-class OperationStack;
 class Partition;
+class Device;
+class Report;
 
-class Job;
-class DeletePartitionJob;
+/** @brief Securely delete and shred a FileSystem.
 
-/** @brief Delete a Partition.
+	Shreds (overwrites with random data) a FileSystem on given Partition and Device.
+
 	@author vl@fidra.de
 */
-class DeleteOperation : public Operation
+class ShredFileSystemJob : public Job
 {
-	friend class OperationStack;
-
-	Q_OBJECT
-	Q_DISABLE_COPY(DeleteOperation)
+	public:
+		ShredFileSystemJob(Device& d, Partition& p);
 
 	public:
-		DeleteOperation(Device& d, Partition* p, bool secure = false);
-		~DeleteOperation();
-
-	public:
-		QString iconName() const { return isSecure() ? "edit-delete-shred" : "edit-delete"; }
-		QString description() const;
-		void preview();
-		void undo();
-		bool isSecure() const { return m_Secure; }
-
-		static bool canDelete(const Partition* p);
+		virtual bool run(Report& parent);
+		virtual qint32 numSteps() const;
+		virtual QString description() const;
 
 	protected:
-		Device& targetDevice() { return m_TargetDevice; }
-		const Device& targetDevice() const { return m_TargetDevice; }
+		Partition& partition() { return m_Partition; }
+		const Partition& partition() const { return m_Partition; }
 
-		Partition& deletedPartition() { return *m_DeletedPartition; }
-		const Partition& deletedPartition() const { return *m_DeletedPartition; }
-
-		void checkAdjustLogicalNumbers(Partition& p, bool undo);
-
-		void setDeletedPartition(Partition* p) { m_DeletedPartition = p; }
-
-		Job* deleteFileSystemJob() { return m_DeleteFileSystemJob; }
-		DeletePartitionJob* deletePartitionJob() { return m_DeletePartitionJob; }
+		Device& device() { return m_Device; }
+		const Device& device() const { return m_Device; }
 
 	private:
-		Device& m_TargetDevice;
-		Partition* m_DeletedPartition;
-		bool m_Secure;
-		Job* m_DeleteFileSystemJob;
-		DeletePartitionJob* m_DeletePartitionJob;
+		Device& m_Device;
+		Partition& m_Partition;
 };
 
 #endif

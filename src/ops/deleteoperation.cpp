@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008, 2010 by Volker Lanz <vl@fidra.de>                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -25,6 +25,7 @@
 
 #include "jobs/deletepartitionjob.h"
 #include "jobs/deletefilesystemjob.h"
+#include "jobs/shredfilesystemjob.h"
 
 #include "util/capacity.h"
 
@@ -37,11 +38,14 @@
 	@param d the Device to delete a Partition on
 	@param p pointer to the Partition to delete. May not be NULL
 */
-DeleteOperation::DeleteOperation(Device& d, Partition* p) :
+DeleteOperation::DeleteOperation(Device& d, Partition* p, bool secure) :
 	Operation(),
 	m_TargetDevice(d),
 	m_DeletedPartition(p),
-	m_DeleteFileSystemJob(new DeleteFileSystemJob(targetDevice(), deletedPartition())),
+	m_Secure(secure),
+	m_DeleteFileSystemJob(isSecure()
+		? static_cast<Job*>(new ShredFileSystemJob(targetDevice(), deletedPartition()))
+		: static_cast<Job*>(new DeleteFileSystemJob(targetDevice(), deletedPartition()))),
 	m_DeletePartitionJob(new DeletePartitionJob(targetDevice(), deletedPartition()))
 {
 	addJob(deleteFileSystemJob());
@@ -68,7 +72,10 @@ void DeleteOperation::undo()
 
 QString DeleteOperation::description() const
 {
-	return QString(i18nc("@info/plain", "Delete partition <filename>%1</filename> (%2, %3)", deletedPartition().deviceNode(), Capacity(deletedPartition()).toString(), deletedPartition().fileSystem().name()));
+	if (isSecure())
+		return QString(i18nc("@info/plain", "Shred partition <filename>%1</filename> (%2, %3)", deletedPartition().deviceNode(), Capacity(deletedPartition()).toString(), deletedPartition().fileSystem().name()));
+	else
+		return QString(i18nc("@info/plain", "Delete partition <filename>%1</filename> (%2, %3)", deletedPartition().deviceNode(), Capacity(deletedPartition()).toString(), deletedPartition().fileSystem().name()));
 }
 
 void DeleteOperation::checkAdjustLogicalNumbers(Partition& p, bool undo)
@@ -90,7 +97,7 @@ bool DeleteOperation::canDelete(const Partition* p)
 {
 	if (p == NULL)
 		return false;
-	
+
 	if (p->isMounted())
 		return false;
 

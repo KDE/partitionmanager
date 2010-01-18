@@ -215,7 +215,15 @@ void PartitionManagerWidget::setupActions()
 	deletePartition->setToolTip(i18nc("@info:tooltip", "Delete partition"));
 	deletePartition->setStatusTip(i18nc("@info:status", "Delete a partition."));
 	deletePartition->setShortcut(Qt::Key_Delete);
-	deletePartition->setIcon(BarIcon("edit-delete-shred"));
+	deletePartition->setIcon(BarIcon("edit-delete"));
+
+	KAction* shredPartition = actionCollection()->addAction("shredPartition", this, SLOT(onShredPartition()));
+	shredPartition->setEnabled(false);
+	shredPartition->setText(i18nc("@action:inmenu", "Shred"));
+	shredPartition->setToolTip(i18nc("@info:tooltip", "Shred partition"));
+	shredPartition->setStatusTip(i18nc("@info:status", "Shred a partition so that its contents cannot be restored."));
+	shredPartition->setShortcut(Qt::SHIFT | Qt::Key_Delete);
+	shredPartition->setIcon(BarIcon("edit-delete-shred"));
 
 	KAction* copyPartition = actionCollection()->addAction("copyPartition", this, SLOT(onCopyPartition()));
 	copyPartition->setEnabled(false);
@@ -328,6 +336,7 @@ void PartitionManagerWidget::enableActions()
 	actionCollection()->action("resizePartition")->setEnabled(!readOnly && canResize);
 	actionCollection()->action("copyPartition")->setEnabled(CopyOperation::canCopy(part));
 	actionCollection()->action("deletePartition")->setEnabled(!readOnly && DeleteOperation::canDelete(part));
+	actionCollection()->action("shredPartition")->setEnabled(!readOnly && DeleteOperation::canDelete(part));
 	actionCollection()->action("pastePartition")->setEnabled(!readOnly && CopyOperation::canPaste(part, clipboardPartition()));
 	actionCollection()->action("propertiesPartition")->setEnabled(part != NULL);
 
@@ -489,6 +498,7 @@ void PartitionManagerWidget::showPartitionContextMenu(const QPoint& pos)
 	partitionMenu.addAction(actionCollection()->action("newPartition"));
 	partitionMenu.addAction(actionCollection()->action("resizePartition"));
 	partitionMenu.addAction(actionCollection()->action("deletePartition"));
+	partitionMenu.addAction(actionCollection()->action("shredPartition"));
 	partitionMenu.addSeparator();
 	partitionMenu.addAction(actionCollection()->action("copyPartition"));
 	partitionMenu.addAction(actionCollection()->action("pastePartition"));
@@ -664,7 +674,7 @@ void PartitionManagerWidget::onNewPartition()
 	delete dlg;
 }
 
-void PartitionManagerWidget::onDeletePartition()
+void PartitionManagerWidget::onDeletePartition(bool shred)
 {
 	Q_ASSERT(selectedDevice());
 	Q_ASSERT(selectedPartition());
@@ -712,10 +722,15 @@ void PartitionManagerWidget::onDeletePartition()
 		setClipboardPartition(NULL);
 	}
 
-	operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition()));
+	operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), shred));
 	updatePartitions();
 	emit statusChanged();
 	emit operationsChanged();
+}
+
+void PartitionManagerWidget::onShredPartition()
+{
+	onDeletePartition(true);
 }
 
 void PartitionManagerWidget::onResizePartition()

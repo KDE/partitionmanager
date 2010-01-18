@@ -4,7 +4,7 @@ Random plans and ideas for 1.1 and beyond:
   that deals with labels and try to get it out of the package. If
   that's entirely impossible, maybe a kludge like GParted uses should be
   considered *shudder*
- 
+
 * To say it bluntly: libparted is a complete dead end. What we have to do is
   separate the backend logic from the core and write backend interfaces so
   partitionmanager can make use of other backends apart from libparted. KDE's
@@ -12,11 +12,6 @@ Random plans and ideas for 1.1 and beyond:
   implement much of what HAL does regarding disks, partitions and file systems.
   Also, DeviceKit-disks is around the corner and implementations using it for
   solid begin to materialize.
-
-* People want mount management (i.e. fstab management) in partition manager.
-  I've written a small kcm, Mount Manager, as a proof of concept how this could
-  look like, but I'm not yet happy with it. Eventually, this will / should /
-  can me merged into partition manager.
 
 * The whole lvm/dm debacle. Nothing much useful can be done about it without
   the backend stuff mentioned above, though.
@@ -28,4 +23,11 @@ Random plans and ideas for 1.1 and beyond:
   hopefully be able to get meaningful progress status reporting while resizing,
   checking and so on.
 
- 
+* Default size of File System Support dialog window.
+
+* Re-design partition list. Maybe include all disks into the list and drop the
+  devices panel?
+
+* Information about file system on a separate tab in the properties, unique
+  to the file system in use.
+
