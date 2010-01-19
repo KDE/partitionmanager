@@ -20,7 +20,6 @@
 #include "kcm/partitionmanagerkcm.h"
 
 #include "gui/partitionmanagerwidget.h"
-#include "gui/listdevices.h"
 
 #include "util/helpers.h"
 
@@ -59,7 +58,6 @@ PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
 	setButtons(Apply);
 	setupConnections();
 
-	listDevices().init(actionCollection(), &pmWidget());
 	listOperations().init(actionCollection(), &pmWidget());
 	pmWidget().init(actionCollection(), "kcm_partitionmanagerrc");
 
@@ -104,9 +102,7 @@ void PartitionManagerKCM::onNewLogMessage(log::Level, const QString& s)
 
 void PartitionManagerKCM::setupConnections()
 {
-	connect(&pmWidget(), SIGNAL(devicesChanged()), &listDevices(), SLOT(updateDevices()));
 	connect(&pmWidget(), SIGNAL(operationsChanged()), &listOperations(), SLOT(updateOperations()));
-	connect(&listDevices(), SIGNAL(selectionChanged(Device*)), &pmWidget(), SLOT(setSelectedDevice(Device*)));
 	connect(&pmWidget(), SIGNAL(statusChanged()), SLOT(onStatusChanged()));
 }
 

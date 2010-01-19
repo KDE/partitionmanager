@@ -62,9 +62,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		PartitionManagerWidget& pmWidget() { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
 		const PartitionManagerWidget& pmWidget() const { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
 
-		ListDevices& listDevices() { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
-		const ListDevices& listDevices() const { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
-
 		ListOperations& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 		const ListOperations& listOperations() const { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 
@@ -73,9 +70,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 
 		QDockWidget& dockInformation() { Q_ASSERT(m_DockInformation); return *m_DockInformation; }
 		const QDockWidget& dockInformation() const { Q_ASSERT(m_DockInformation); return *m_DockInformation; }
-
-		QDockWidget& dockDevices() { Q_ASSERT(m_DockDevices); return *m_DockDevices; }
-		const QDockWidget& dockDevices() const { Q_ASSERT(m_DockDevices); return *m_DockDevices; }
 
 		QDockWidget& dockOperations() { Q_ASSERT(m_DockOperations); return *m_DockOperations; }
 		const QDockWidget& dockOperations() const { Q_ASSERT(m_DockOperations); return *m_DockOperations; }
@@ -87,8 +81,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		const QLabel& statusText() const { Q_ASSERT(m_StatusText); return *m_StatusText; }
 
 	protected slots:
-		void on_m_ListDevices_selectionChanged(Device* d);
-
 		void onDockLocationChanged(Qt::DockWidgetArea area);
 
 		void closeEvent(QCloseEvent*);

@@ -29,7 +29,6 @@
 #include <kdebug.h>
 
 class PartitionManagerWidget;
-class ListDevices;
 class KActionCollection;
 class Device;
 class KToolBar;
@@ -52,7 +51,6 @@ class PartitionManagerKCM : public KCModule, public Ui::PartitionManagerKCMBase
 		void setupKCMWorkaround();
 
 		PartitionManagerWidget& pmWidget() { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
-		ListDevices& listDevices() { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
 		ListOperations& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 		QSplitter& splitterHorizontal() { Q_ASSERT(m_SplitterHorizontal); return *m_SplitterHorizontal; }
 		QSplitter& splitterVertical() { Q_ASSERT(m_SplitterVertical); return *m_SplitterVertical; }

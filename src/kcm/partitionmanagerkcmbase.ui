@@ -1,43 +1,35 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>PartitionManagerKCMBase</class>
- <widget class="QWidget" name="PartitionManagerKCMBase" >
-  <property name="geometry" >
+ <widget class="QWidget" name="PartitionManagerKCMBase">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>684</width>
-    <height>684</height>
+    <width>763</width>
+    <height>712</height>
    </rect>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2" >
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QSplitter" name="m_SplitterHorizontal" >
-     <property name="orientation" >
-      <enum>Qt::Horizontal</enum>
+    <widget class="QSplitter" name="m_SplitterVertical">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <widget class="QSplitter" name="m_SplitterVertical" >
-      <property name="orientation" >
-       <enum>Qt::Vertical</enum>
+     <widget class="KToolBar" name="m_ToolBar" native="true"/>
+     <widget class="QSplitter" name="m_SplitterHorizontal">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="ListDevices" native="1" name="m_ListDevices" >
-       <property name="minimumSize" >
+      <widget class="ListOperations" name="m_ListOperations" native="true">
+       <property name="minimumSize">
         <size>
-         <width>170</width>
+         <width>200</width>
          <height>0</height>
         </size>
        </property>
       </widget>
-      <widget class="ListOperations" native="1" name="m_ListOperations" />
-     </widget>
-     <widget class="QWidget" name="layoutWidget" >
-      <layout class="QVBoxLayout" name="verticalLayout" >
-       <item>
-        <widget class="KToolBar" native="1" name="m_ToolBar" />
-       </item>
-       <item>
-        <widget class="PartitionManagerWidget" native="1" name="m_PartitionManagerWidget" />
-       </item>
-      </layout>
+      <widget class="PartitionManagerWidget" name="m_PartitionManagerWidget" native="true"/>
      </widget>
     </widget>
    </item>
@@ -51,12 +43,6 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>ListDevices</class>
-   <extends>QWidget</extends>
-   <header>gui/listdevices.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>ListOperations</class>
    <extends>QWidget</extends>
    <header>gui/listoperations.h</header>
@@ -65,7 +51,7 @@
   <customwidget>
    <class>KToolBar</class>
    <extends>QWidget</extends>
-   <header location="global" >ktoolbar.h</header>
+   <header location="global">ktoolbar.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
