@@ -371,6 +371,12 @@ void PartitionManagerWidget::clearSelection()
 	updatePartitions();
 }
 
+void PartitionManagerWidget::setSelectedDevice(Device* d)
+{
+	m_SelectedDevice = d;
+	clearSelection();
+}
+
 static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 {
 	QTreeWidgetItem* item = new PartitionTreeWidgetItem(&p);
@@ -1096,10 +1102,4 @@ void PartitionManagerWidget::onFileSystemSupport()
 void PartitionManagerWidget::onFinished()
 {
 	scanDevices();
-}
-
-void PartitionManagerWidget::setSelectedDevice(Device* d)
-{
-	m_SelectedDevice = d;
-	clearSelection();
 }
