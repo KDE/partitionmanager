@@ -84,11 +84,14 @@ class PartitionTreeWidgetItem : public QTreeWidgetItem
 	Q_DISABLE_COPY(PartitionTreeWidgetItem)
 
 	public:
-		PartitionTreeWidgetItem(const Partition* p) : QTreeWidgetItem(), m_Partition(p) {}
+		PartitionTreeWidgetItem(const Partition* p) : QTreeWidgetItem(), m_Partition(p), m_Device(NULL) {}
+		PartitionTreeWidgetItem(Device* d) : QTreeWidgetItem(), m_Partition(NULL), m_Device(d) {}
 		const Partition* partition() const { return m_Partition; }
+		Device* device() { return m_Device; }
 
 	private:
 		const Partition* m_Partition;
+		Device* m_Device;
 };
 
 /** Creates a new PartitionManagerWidget instance.
@@ -308,6 +311,9 @@ void PartitionManagerWidget::scanDevices()
 
 	libParted().scanDevices(operationStack());
 
+	if (!operationStack().previewDevices().isEmpty())
+		setSelectedDevice(operationStack().previewDevices()[0]);
+
 	updatePartitions();
 
 	log() << i18nc("@info/plain", "Rescan finished.");
@@ -386,43 +392,49 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 
 void PartitionManagerWidget::updatePartitions()
 {
-	if (selectedDevice() == NULL)
-		return;
-
 	treePartitions().clear();
 	partTableWidget().clear();
 
-	partTableWidget().setPartitionTable(selectedDevice()->partitionTable());
-
-	QTreeWidgetItem* deviceItem = new QTreeWidgetItem();
-	deviceItem->setText(0, selectedDevice()->name());
-	deviceItem->setIcon(0, DesktopIcon(selectedDevice()->iconName()));
-	deviceItem->setSizeHint(0, QSize(0, 32));
-
-	treePartitions().addTopLevelItem(deviceItem);
-
-	if (selectedDevice()->partitionTable() != NULL)
+	foreach(Device* d, operationStack().previewDevices())
 	{
-		foreach(const Partition* p, selectedDevice()->partitionTable()->children())
+		QTreeWidgetItem* deviceItem = new PartitionTreeWidgetItem(d);
+		deviceItem->setText(0, d->name());
+		deviceItem->setIcon(0, DesktopIcon(d->iconName()));
+		deviceItem->setSizeHint(0, QSize(0, 32));
+		deviceItem->setFlags(Qt::ItemIsEnabled);
+
+		treePartitions().addTopLevelItem(deviceItem);
+
+		if (selectedDevice() == d)
 		{
-			QTreeWidgetItem* item = createTreeWidgetItem(*p);
-
-			foreach(const Partition* child, p->children())
-			{
-				QTreeWidgetItem* childItem = createTreeWidgetItem(*child);
-				item->addChild(childItem);
-			}
-
-			deviceItem->addChild(item);
-			item->setExpanded(true);
+			deviceItem->setExpanded(true);
+			QFont font;
+			font.setBold(true);
+			deviceItem->setFont(0, font);
 		}
+
+		if (d->partitionTable() != NULL)
+		{
+			foreach(const Partition* p, d->partitionTable()->children())
+			{
+				QTreeWidgetItem* item = createTreeWidgetItem(*p);
+
+				foreach(const Partition* child, p->children())
+				{
+					QTreeWidgetItem* childItem = createTreeWidgetItem(*child);
+					item->addChild(childItem);
+				}
+
+				deviceItem->addChild(item);
+				item->setExpanded(true);
+			}
+		}
+
+		treePartitions().setFirstItemColumnSpanned(deviceItem, true);
 	}
 
-	treePartitions().setFirstItemColumnSpanned(deviceItem, true);
-	deviceItem->setExpanded(true);
-	deviceItem->setFlags(Qt::ItemIsEnabled);
-
-	partTableWidget().update();
+	if (selectedDevice())
+		partTableWidget().setPartitionTable(selectedDevice()->partitionTable());
 }
 
 void PartitionManagerWidget::on_m_TreePartitions_currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem*)
@@ -436,13 +448,14 @@ void PartitionManagerWidget::on_m_TreePartitions_currentItemChanged(QTreeWidgetI
 		partTableWidget().setActiveWidget(NULL);
 }
 
-void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, int)
+void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* qtwi, int)
 {
-	// if the activated item is the device item, don't do anything
-	if (item == treePartitions().topLevelItem(0))
-		return;
+	PartitionTreeWidgetItem* item = dynamic_cast<PartitionTreeWidgetItem*>(qtwi);
 
-	actionCollection()->action("propertiesPartition")->trigger();
+	if (item && item->device())
+		setSelectedDevice(item->device());
+	else
+		actionCollection()->action("propertiesPartition")->trigger();
 }
 
 void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidget* item)
