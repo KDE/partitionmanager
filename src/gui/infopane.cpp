@@ -158,12 +158,8 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
 
 quint32 InfoPane::cols(Qt::DockWidgetArea area) const
 {
-	QDockWidget* dockWidget = qobject_cast<QDockWidget*>(parentWidget());
+	if (area == Qt::LeftDockWidgetArea || area == Qt::RightDockWidgetArea)
+		return 2;
 
-	Q_ASSERT(dockWidget);
-
-	if (dockWidget->isFloating() || area == Qt::TopDockWidgetArea || area == Qt::BottomDockWidgetArea)
-		return 6;
-
-	return 2;
+	return 6;
 }

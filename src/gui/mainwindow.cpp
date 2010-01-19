@@ -75,6 +75,9 @@ void MainWindow::init()
 	loadConfig();
 
 	dockInformation().setWidget(&infoPane());
+
+	// trigger an update for the info pane so it can re-layout itself
+	updateSelection(NULL);
 }
 
 void MainWindow::closeEvent(QCloseEvent* event)
