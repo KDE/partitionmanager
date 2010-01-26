@@ -27,7 +27,7 @@
 #include <QObject>
 #include <qglobal.h>
 
-class log
+class Log
 {
 	public:
 		enum Level
@@ -39,9 +39,9 @@ class log
 		};
 
 	public:
-		log(Level lev = information) : ref(1), level(lev) {}
-		~log();
-		log(const log& other) : ref(other.ref + 1), level(other.level) {}
+		Log(Level lev = information) : ref(1), level(lev) {}
+		~Log();
+		Log(const Log& other) : ref(other.ref + 1), level(other.level) {}
 
 	private:
 		quint32 ref;
@@ -56,34 +56,34 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT GlobalLog : public QObject
 	Q_OBJECT
 	Q_DISABLE_COPY(GlobalLog)
 
- 	friend class log;
- 	friend log operator<<(log l, const QString& s);
- 	friend log operator<<(log l, qint64 i);
+ 	friend class Log;
+ 	friend Log operator<<(Log l, const QString& s);
+ 	friend Log operator<<(Log l, qint64 i);
 
 	private:
 		GlobalLog() : msg() {}
 
 	signals:
-		void newMessage(log::Level, const QString&);
+		void newMessage(Log::Level, const QString&);
 
 	public:
 		static GlobalLog* instance();
 
 	private:
 		void append(const QString& s) { msg += s; }
-		void flush(log::Level level);
+		void flush(Log::Level level);
 
 	private:
 		QString msg;
 };
 
-inline log operator<<(log l, const QString& s)
+inline Log operator<<(Log l, const QString& s)
 {
 	GlobalLog::instance()->append(s);
 	return l;
 }
 
-inline log operator<<(log l, qint64 i)
+inline Log operator<<(Log l, qint64 i)
 {
 	GlobalLog::instance()->append(QString::number(i));
 	return l;

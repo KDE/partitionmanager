@@ -59,7 +59,7 @@ class PartitionManagerKCM : public KCModule, public Ui::PartitionManagerKCMBase
 		KActionCollection* actionCollection() { return m_ActionCollection; }
 
 	protected slots:
-		void onNewLogMessage(log::Level logLevel, const QString& s);
+		void onNewLogMessage(Log::Level logLevel, const QString& s);
 		void onStatusChanged();
 		void onApplyClicked();
 

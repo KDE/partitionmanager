@@ -41,7 +41,7 @@
 void registerMetaTypes()
 {
 	qRegisterMetaType<Operation*>("Operation*");
-	qRegisterMetaType<log::Level>("log::Level");
+	qRegisterMetaType<Log::Level>("log::Level");
 }
 
 void unblockSigChild()

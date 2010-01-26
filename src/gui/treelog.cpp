@@ -42,7 +42,7 @@ TreeLog::TreeLog(QWidget* parent) :
 	setupUi(this);
 }
 
-void TreeLog::onNewLogMessage(log::Level logLevel, const QString& s)
+void TreeLog::onNewLogMessage(Log::Level logLevel, const QString& s)
 {
 	static const char* icons[] =
 	{

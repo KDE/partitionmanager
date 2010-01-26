@@ -50,7 +50,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT TreeLog: public QWidget, public Ui::Tree
 		void init(KActionCollection* coll, PartitionManagerWidget* pm_widget) { m_ActionCollection = coll; m_PartitionManagerWidget = pm_widget; }
 
 	public slots:
-		void onNewLogMessage(log::Level logLevel, const QString& s);
+		void onNewLogMessage(Log::Level logLevel, const QString& s);
 
 	protected:
 		QTreeWidget& treeLog() { Q_ASSERT(m_TreeLog); return *m_TreeLog; }

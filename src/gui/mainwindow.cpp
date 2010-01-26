@@ -55,7 +55,7 @@ void MainWindow::init()
 {
 	treeLog().init(actionCollection(), &pmWidget());
 
-	connect(GlobalLog::instance(), SIGNAL(newMessage(log::Level, const QString&)), &treeLog(), SLOT(onNewLogMessage(log::Level, const QString&)));
+	connect(GlobalLog::instance(), SIGNAL(newMessage(Log::Level, const QString&)), &treeLog(), SLOT(onNewLogMessage(Log::Level, const QString&)));
 
 	setupActions();
 	setupStatusBar();

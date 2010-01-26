@@ -301,7 +301,7 @@ void PartitionManagerWidget::setupConnections()
 
 void PartitionManagerWidget::scanDevices()
 {
-	log() << i18nc("@info/plain", "Rescanning devices...");
+	Log() << i18nc("@info/plain", "Rescanning devices...");
 
 	KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
@@ -316,7 +316,7 @@ void PartitionManagerWidget::scanDevices()
 
 	updatePartitions();
 
-	log() << i18nc("@info/plain", "Rescan finished.");
+	Log() << i18nc("@info/plain", "Rescan finished.");
 	KApplication::restoreOverrideCursor();
 
 	emit selectionChanged(NULL);
@@ -782,7 +782,7 @@ void PartitionManagerWidget::onResizePartition()
 		PartitionTable::snap(*selectedDevice(), resizedPartition, selectedPartition());
 
 		if (resizedPartition.firstSector() == selectedPartition()->firstSector() && resizedPartition.lastSector() == selectedPartition()->lastSector())
-			log(log::information) << i18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", selectedPartition()->deviceNode());
+			Log(Log::information) << i18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", selectedPartition()->deviceNode());
 		else
 		{
 			operationStack().push(new ResizeOperation(*selectedDevice(), *selectedPartition(), resizedPartition.firstSector(), resizedPartition.lastSector()));
@@ -807,7 +807,7 @@ void PartitionManagerWidget::onCopyPartition()
 	}
 
 	setClipboardPartition(selectedPartition());
-	log() << i18nc("@info/plain", "Partition <filename>%1</filename> has been copied to the clipboard.", selectedPartition()->deviceNode());
+	Log() << i18nc("@info/plain", "Partition <filename>%1</filename> has been copied to the clipboard.", selectedPartition()->deviceNode());
 
 	enableActions();
 }
@@ -947,7 +947,7 @@ void PartitionManagerWidget::onRefreshDevices()
 
 void PartitionManagerWidget::onUndoOperation()
 {
-	log() << i18nc("@info/plain", "Undoing operation: %1", operationStack().operations().last()->description());
+	Log() << i18nc("@info/plain", "Undoing operation: %1", operationStack().operations().last()->description());
 	operationStack().pop();
 
 	updatePartitions();
@@ -964,7 +964,7 @@ void PartitionManagerWidget::onClearAllOperations()
 		KGuiItem(i18nc("@action:button", "&Clear Pending Operations")),
 		KStandardGuiItem::cancel(), "reallyClearPendingOperations") == KMessageBox::Continue)
 	{
-		log() << i18nc("@info/plain", "Clearing the list of pending operations.");
+		Log() << i18nc("@info/plain", "Clearing the list of pending operations.");
 		operationStack().clearOperations();
 
 		updatePartitions();
@@ -989,7 +989,7 @@ void PartitionManagerWidget::onApplyAllOperations()
 		KGuiItem(i18nc("@action:button", "&Apply Pending Operations")),
 		KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
-		log() << i18nc("@info/plain", "Applying operations...");
+		Log() << i18nc("@info/plain", "Applying operations...");
 
 		progressDialog().show();
 

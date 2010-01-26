@@ -59,7 +59,7 @@
 static PedExceptionOption pedExceptionHandler(PedException* e)
 {
 	/** @todo These messages should end up in the Report, not in the GlobalLog. */
-	log(log::error) << i18nc("@info/plain", "LibParted Exception: %1", QString::fromLocal8Bit(e->message));
+	Log(Log::error) << i18nc("@info/plain", "LibParted Exception: %1", QString::fromLocal8Bit(e->message));
 	return PED_EXCEPTION_UNHANDLED;
 }
 
@@ -233,7 +233,7 @@ void LibParted::scanDevices(OperationStack& ostack)
 		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
 		PedDevice* pedDevice = ped_device_get(solidBlock->device().toLocal8Bit());
 
-		log(log::information) << i18nc("@info/plain", "Device found: %1", pedDevice->model);
+		Log(Log::information) << i18nc("@info/plain", "Device found: %1", pedDevice->model);
 
 		Device* d = new Device(pedDevice->model, pedDevice->path, pedDevice->bios_geom.heads, pedDevice->bios_geom.sectors, pedDevice->bios_geom.cylinders, pedDevice->sector_size, solidDevice.icon());
 

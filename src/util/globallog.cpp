@@ -29,7 +29,7 @@ GlobalLog* GlobalLog::instance()
 	return p;
 }
 
-void GlobalLog::flush(log::Level lev)
+void GlobalLog::flush(Log::Level lev)
 {
 	emit newMessage(lev, msg);
 	msg.clear();
@@ -37,7 +37,7 @@ void GlobalLog::flush(log::Level lev)
 
 // --------------------------------------------------------------------------
 
-log::~log()
+Log::~Log()
 {
 	if (--ref == 0)
 		GlobalLog::instance()->flush(level);

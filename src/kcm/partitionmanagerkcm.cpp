@@ -49,7 +49,7 @@ PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
 {
 	setupUi(this);
 
-	connect(GlobalLog::instance(), SIGNAL(newMessage(log::Level, const QString&)), SLOT(onNewLogMessage(log::Level, const QString&)));
+	connect(GlobalLog::instance(), SIGNAL(newMessage(Log::Level, const QString&)), SLOT(onNewLogMessage(Log::Level, const QString&)));
 
 	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427
 	unblockSigChild();
@@ -95,7 +95,7 @@ PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
 	setAboutData(createPartitionManagerAboutData());
 }
 
-void PartitionManagerKCM::onNewLogMessage(log::Level, const QString& s)
+void PartitionManagerKCM::onNewLogMessage(Log::Level, const QString& s)
 {
 	kDebug() << s;
 }

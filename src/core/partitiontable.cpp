@@ -245,7 +245,7 @@ bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 
 	if (delta)
 	{
-		log(log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> does not start at a cylinder boundary (first sector: %2, modulo: %3).", p.deviceNode(), p.firstSector(), delta);
+		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> does not start at a cylinder boundary (first sector: %2, modulo: %3).", p.deviceNode(), p.firstSector(), delta);
 		rval = false;
 	}
 
@@ -253,7 +253,7 @@ bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 
 	if (delta)
 	{
-		log(log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> does not end at a cylinder boundary (last sector: %2, modulo: %3).", p.deviceNode(), p.lastSector(), delta);
+		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> does not end at a cylinder boundary (last sector: %2, modulo: %3).", p.deviceNode(), p.lastSector(), delta);
 		rval = false;
 	}
 
@@ -389,7 +389,7 @@ bool PartitionTable::snap(const Device& d, Partition& p, const Partition* origin
 	}
 
 	if (p.length() < originalLength)
-		log(log::warning) <<  i18ncp("@info/plain", "The partition cannot be created with the requested length of 1 sector, ", "The partition cannot be created with the requested length of %1 sectors, ", originalLength)
+		Log(Log::warning) <<  i18ncp("@info/plain", "The partition cannot be created with the requested length of 1 sector, ", "The partition cannot be created with the requested length of %1 sectors, ", originalLength)
                                     + i18ncp("@info/plain", "and will instead only be 1 sector long.", "and will instead only be %1 sectors long.", p.length());
 
 	// In an extended partition we also need to snap unallocated children at the beginning and at the end

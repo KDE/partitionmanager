@@ -97,7 +97,7 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 	// -- 1 --
 	if (pushedDeleteOp && &newOp->newPartition() == &pushedDeleteOp->deletedPartition())
 	{
-		log() << i18nc("@info/plain", "Deleting a partition just created: Undoing the operation to create the partition.");
+		Log() << i18nc("@info/plain", "Deleting a partition just created: Undoing the operation to create the partition.");
 
 		delete pushedOp;
 		pushedOp = NULL;
@@ -111,7 +111,7 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 	// -- 2 --
 	if (pushedResizeOp && &newOp->newPartition() == &pushedResizeOp->partition())
 	{
-		log() << i18nc("@info/plain", "Resizing a partition just created: Updating start and end in existing operation.");
+		Log() << i18nc("@info/plain", "Resizing a partition just created: Updating start and end in existing operation.");
 
 		Partition* newPartition = new Partition(newOp->newPartition());
 		newPartition->setFirstSector(pushedResizeOp->newFirstSector());
@@ -132,7 +132,7 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 	// -- 3 --
 	if (pushedCopyOp && &newOp->newPartition() == &pushedCopyOp->sourcePartition())
 	{
-		log() << i18nc("@info/plain", "Copying a new partition: Creating a new partition instead.");
+		Log() << i18nc("@info/plain", "Copying a new partition: Creating a new partition instead.");
 
 		Partition* newPartition = new Partition(newOp->newPartition());
 		newPartition->setFirstSector(pushedCopyOp->copiedPartition().firstSector());
@@ -150,7 +150,7 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 	// -- 4 --
 	if (pushedLabelOp && &newOp->newPartition() == &pushedLabelOp->labeledPartition())
 	{
-		log() << i18nc("@info/plain", "Changing label for a new partition: No new operation required.");
+		Log() << i18nc("@info/plain", "Changing label for a new partition: No new operation required.");
 
 		newOp->setLabelJob()->setLabel(pushedLabelOp->newLabel());
 		newOp->newPartition().fileSystem().setLabel(pushedLabelOp->newLabel());
@@ -164,7 +164,7 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 	// -- 5 --
 	if (pushedCreateFileSystemOp && &newOp->newPartition() == &pushedCreateFileSystemOp->partition())
 	{
-		log() << i18nc("@info/plain", "Changing file system for a new partition: No new operation required.");
+		Log() << i18nc("@info/plain", "Changing file system for a new partition: No new operation required.");
 
 		FileSystem* oldFs = &newOp->newPartition().fileSystem();
 
@@ -220,14 +220,14 @@ bool OperationStack::mergeCopyOperation(Operation*& currentOp, Operation*& pushe
 		// copy operation, forget the delete and be done.
 		if (copyOp->overwrittenPartition() == NULL)
 		{
-			log() << i18nc("@info/plain", "Deleting a partition just copied: Removing the copy.");
+			Log() << i18nc("@info/plain", "Deleting a partition just copied: Removing the copy.");
 
 			delete pushedOp;
 			pushedOp = NULL;
 		}
 		else
 		{
-			log() << i18nc("@info/plain", "Deleting a partition just copied over an existing partition: Removing the copy and deleting the existing partition.");
+			Log() << i18nc("@info/plain", "Deleting a partition just copied over an existing partition: Removing the copy and deleting the existing partition.");
 
 			pushedDeleteOp->setDeletedPartition(copyOp->overwrittenPartition());
 		}
@@ -241,7 +241,7 @@ bool OperationStack::mergeCopyOperation(Operation*& currentOp, Operation*& pushe
 	// -- 2 --
 	if (pushedCopyOp && &copyOp->copiedPartition() == &pushedCopyOp->sourcePartition())
 	{
-		log() << i18nc("@info/plain", "Copying a partition that is itself a copy: Copying the original source partition instead.");
+		Log() << i18nc("@info/plain", "Copying a partition that is itself a copy: Copying the original source partition instead.");
 
 		pushedCopyOp->setSourcePartition(&copyOp->sourcePartition());
 	}
@@ -272,14 +272,14 @@ bool OperationStack::mergeRestoreOperation(Operation*& currentOp, Operation*& pu
 	{
 		if (restoreOp->overwrittenPartition() == NULL)
 		{
-			log() << i18nc("@info/plain", "Deleting a partition just restored: Removing the restore operation.");
+			Log() << i18nc("@info/plain", "Deleting a partition just restored: Removing the restore operation.");
 
 			delete pushedOp;
 			pushedOp = NULL;
 		}
 		else
 		{
-			log() << i18nc("@info/plain", "Deleting a partition just restored to an existing partition: Removing the restore operation and deleting the existing partition.");
+			Log() << i18nc("@info/plain", "Deleting a partition just restored to an existing partition: Removing the restore operation and deleting the existing partition.");
 
 			pushedDeleteOp->setDeletedPartition(restoreOp->overwrittenPartition());
 		}
@@ -313,7 +313,7 @@ bool OperationStack::mergePartFlagsOperation(Operation*& currentOp, Operation*& 
 
 	if (pushedFlagsOp && &partFlagsOp->flagPartition() == &pushedFlagsOp->flagPartition())
 	{
-		log() << i18nc("@info/plain", "Changing flags again for the same partition: Removing old operation.");
+		Log() << i18nc("@info/plain", "Changing flags again for the same partition: Removing old operation.");
 
 		pushedFlagsOp->setOldFlags(partFlagsOp->oldFlags());
 		partFlagsOp->undo();
@@ -345,7 +345,7 @@ bool OperationStack::mergePartLabelOperation(Operation*& currentOp, Operation*& 
 
 	if (pushedLabelOp && &partLabelOp->labeledPartition() == &pushedLabelOp->labeledPartition())
 	{
-		log() << i18nc("@info/plain", "Changing label again for the same partition: Removing old operation.");
+		Log() << i18nc("@info/plain", "Changing label again for the same partition: Removing old operation.");
 
 		pushedLabelOp->setOldLabel(partLabelOp->oldLabel());
 		partLabelOp->undo();
@@ -390,7 +390,7 @@ void OperationStack::push(Operation* o)
 
 	if (o != NULL)
 	{
-		log() << i18nc("@info/plain", "Add operation: %1", o->description());
+		Log() << i18nc("@info/plain", "Add operation: %1", o->description());
 		operations().append(o);
 		o->preview();
 		o->setStatus(Operation::StatusPending);
