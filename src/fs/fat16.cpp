@@ -21,8 +21,12 @@
 
 #include "util/externalcommand.h"
 #include "util/capacity.h"
+#include "util/report.h"
+
+#include "fatlabel/fatlabel.h"
 
 #include <kdebug.h>
+#include <klocale.h>
 
 #include <QString>
 #include <QStringList>
@@ -34,6 +38,7 @@ namespace FS
 {
 	FileSystem::SupportType fat16::m_GetUsed = FileSystem::SupportNone;
 	FileSystem::SupportType fat16::m_GetLabel = FileSystem::SupportNone;
+	FileSystem::SupportType fat16::m_SetLabel = FileSystem::SupportNone;
 	FileSystem::SupportType fat16::m_Create = FileSystem::SupportNone;
 	FileSystem::SupportType fat16::m_Grow = FileSystem::SupportNone;
 	FileSystem::SupportType fat16::m_Shrink = FileSystem::SupportNone;
@@ -51,14 +56,10 @@ namespace FS
 
 	void fat16::init()
 	{
-		// There is no support for setting labels for FAT16 and FAT32 right now.
-		// The mtools package is able to do that, but requires mappings from Unix device nodes
-		// to Windows-like drive letters -- something we cannot support. It would, however,
-		// probably be possible to implement the file system label stuff ourselves here.
-
 		m_Create = findExternal("mkfs.msdos") ? SupportExternal : SupportNone;
 		m_GetUsed = m_Check = findExternal("fsck.msdos", QStringList(), 2) ? SupportExternal : SupportNone;
 		m_GetLabel = SupportInternal;
+		m_SetLabel = SupportExternal;
 		m_Grow = SupportInternal;
 		m_Shrink = SupportInternal;
 		m_Move = SupportInternal;
@@ -102,6 +103,13 @@ namespace FS
 		}
 
 		return -1;
+	}
+
+	bool fat16::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
+	{
+		report.line() << i18nc("@info/plain", "Setting label for partition <filename>%1</filename> to %2", deviceNode, newLabel);
+
+		return fatlabel_set_label(deviceNode.toLocal8Bit(), newLabel.toLocal8Bit()) == 0;
 	}
 
 	bool fat16::check(Report& report, const QString& deviceNode) const

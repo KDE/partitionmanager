@@ -45,8 +45,9 @@ add_definitions(${KDE4_ENABLE_EXCEPTIONS})
 include(KDE4Defaults)
 include(MacroLibrary)
 
-include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} src/)
+include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} lib/ src/)
 
+add_subdirectory(lib)
 add_subdirectory(src)
 add_subdirectory(icons)
 

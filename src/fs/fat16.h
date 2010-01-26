@@ -46,9 +46,11 @@ namespace FS
 			virtual bool check(Report& report, const QString& deviceNode) const;
 			virtual bool create(Report& report, const QString& deviceNode) const;
 			virtual bool updateUUID(Report& report, const QString& deviceNode) const;
+			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
 
 			virtual SupportType supportGetUsed() const { return m_GetUsed; }
 			virtual SupportType supportGetLabel() const { return m_GetLabel; }
+			virtual SupportType supportSetLabel() const { return m_SetLabel; }
 			virtual SupportType supportCreate() const { return m_Create; }
 			virtual SupportType supportGrow() const { return m_Grow; }
 			virtual SupportType supportShrink() const { return m_Shrink; }
@@ -65,6 +67,7 @@ namespace FS
 		protected:
 			static SupportType m_GetUsed;
 			static SupportType m_GetLabel;
+			static SupportType m_SetLabel;
 			static SupportType m_Create;
 			static SupportType m_Grow;
 			static SupportType m_Shrink;
