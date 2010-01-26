@@ -1,10 +1,5 @@
 Random plans and ideas for 1.1 and beyond:
 
-* We need set label support for fat16/32. Ideally, we take the code from mtools
-  that deals with labels and try to get it out of the package. If
-  that's entirely impossible, maybe a kludge like GParted uses should be
-  considered *shudder*
-
 * To say it bluntly: libparted is a complete dead end. What we have to do is
   separate the backend logic from the core and write backend interfaces so
   partitionmanager can make use of other backends apart from libparted. KDE's
