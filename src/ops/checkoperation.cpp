@@ -63,6 +63,6 @@ bool CheckOperation::canCheck(const Partition* p)
 	if (p->isMounted())
 		return false;
 
-	return p->fileSystem().supportCheck() != FileSystem::SupportNone;
+	return p->fileSystem().supportCheck() != FileSystem::cmdSupportNone;
 }
 

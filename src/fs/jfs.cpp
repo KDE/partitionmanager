@@ -33,15 +33,15 @@
 
 namespace FS
 {
-	FileSystem::CommandSupportType jfs::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::CommandSupportType jfs::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType jfs::m_Create = FileSystem::SupportNone;
-	FileSystem::CommandSupportType jfs::m_Grow = FileSystem::SupportNone;
-	FileSystem::CommandSupportType jfs::m_Move = FileSystem::SupportNone;
-	FileSystem::CommandSupportType jfs::m_Check = FileSystem::SupportNone;
-	FileSystem::CommandSupportType jfs::m_Copy = FileSystem::SupportNone;
-	FileSystem::CommandSupportType jfs::m_Backup = FileSystem::SupportNone;
-	FileSystem::CommandSupportType jfs::m_SetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType jfs::m_GetUsed = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType jfs::m_GetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType jfs::m_Create = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType jfs::m_Grow = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType jfs::m_Move = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType jfs::m_Check = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType jfs::m_Copy = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType jfs::m_Backup = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType jfs::m_SetLabel = FileSystem::cmdSupportNone;
 
 	jfs::jfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Jfs)
@@ -50,13 +50,13 @@ namespace FS
 
 	void jfs::init()
 	{
-		m_GetUsed = findExternal("jfs_debugfs") ? SupportExternal : SupportNone;
-		m_GetLabel = SupportInternal;
-		m_SetLabel = findExternal("jfs_tune", QStringList() << "-V") ? SupportExternal : SupportNone;
-		m_Create = findExternal("mkfs.jfs", QStringList() << "-V") ? SupportExternal : SupportNone;
-		m_Grow = m_Check = findExternal("fsck.jfs", QStringList() << "-V") ? SupportExternal : SupportNone;
-		m_Copy = m_Move = (m_Check != SupportNone) ? SupportInternal : SupportNone;
-		m_Backup = SupportInternal;
+		m_GetUsed = findExternal("jfs_debugfs") ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetLabel = cmdSupportCore;
+		m_SetLabel = findExternal("jfs_tune", QStringList() << "-V") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal("mkfs.jfs", QStringList() << "-V") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Grow = m_Check = findExternal("fsck.jfs", QStringList() << "-V") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Copy = m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_Backup = cmdSupportCore;
 	}
 
 	qint64 jfs::minCapacity() const

@@ -108,9 +108,9 @@ static void readSectorsUsed(PedDisk* pedDisk, Partition& p, const QString& mount
 
 	if (freeSpaceInfo.isValid())
 		p.fileSystem().setSectorsUsed(freeSpaceInfo.used() / p.sectorSize());
-	else if (p.fileSystem().supportGetUsed() == FileSystem::SupportExternal)
+	else if (p.fileSystem().supportGetUsed() == FileSystem::cmdSupportFileSystem)
 		p.fileSystem().setSectorsUsed(p.fileSystem().readUsedCapacity(p.deviceNode()) / p.sectorSize());
-	else if (p.fileSystem().supportGetUsed() == FileSystem::SupportInternal)
+	else if (p.fileSystem().supportGetUsed() == FileSystem::cmdSupportCore)
 		p.fileSystem().setSectorsUsed(readSectorsUsedLibParted(pedDisk, p));
 }
 
@@ -181,10 +181,10 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 
 		readSectorsUsed(pedDisk, *part, mountPoint);
 
-		if (fs->supportGetLabel() != FileSystem::SupportNone)
+		if (fs->supportGetLabel() != FileSystem::cmdSupportNone)
 			fs->setLabel(fs->readLabel(part->deviceNode()));
 
-		if (fs->supportGetUUID() != FileSystem::SupportNone)
+		if (fs->supportGetUUID() != FileSystem::cmdSupportNone)
 			fs->setUUID(fs->readUUID(part->deviceNode()));
 
 		parent->append(part);

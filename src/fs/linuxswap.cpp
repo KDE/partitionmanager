@@ -25,14 +25,14 @@
 
 namespace FS
 {
-	FileSystem::CommandSupportType linuxswap::m_Create = FileSystem::SupportNone;
-	FileSystem::CommandSupportType linuxswap::m_Grow = FileSystem::SupportNone;
-	FileSystem::CommandSupportType linuxswap::m_Shrink = FileSystem::SupportNone;
-	FileSystem::CommandSupportType linuxswap::m_Move = FileSystem::SupportNone;
-	FileSystem::CommandSupportType linuxswap::m_Copy = FileSystem::SupportNone;
-	FileSystem::CommandSupportType linuxswap::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType linuxswap::m_SetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType linuxswap::m_GetUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType linuxswap::m_Create = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType linuxswap::m_Grow = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType linuxswap::m_Shrink = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType linuxswap::m_Move = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType linuxswap::m_Copy = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType linuxswap::m_GetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType linuxswap::m_SetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType linuxswap::m_GetUUID = FileSystem::cmdSupportNone;
 
 	linuxswap::linuxswap(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::LinuxSwap)
@@ -41,11 +41,11 @@ namespace FS
 
 	void linuxswap::init()
 	{
-		m_SetLabel = m_Shrink = m_Grow = m_Create = (findExternal("mkswap")) ? SupportExternal : SupportNone;
-		m_GetLabel = SupportInternal;
-		m_Copy = SupportInternal;
-		m_Move = SupportInternal;
-		m_GetUUID = SupportInternal;
+		m_SetLabel = m_Shrink = m_Grow = m_Create = (findExternal("mkswap")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetLabel = cmdSupportCore;
+		m_Copy = cmdSupportCore;
+		m_Move = cmdSupportCore;
+		m_GetUUID = cmdSupportCore;
 	}
 
 	bool linuxswap::create(Report& report, const QString& deviceNode) const

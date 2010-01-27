@@ -47,9 +47,9 @@ bool SetFileSystemLabelJob::run(Report& parent)
 	// If there's no support for file system label setting for this file system,
 	// just ignore the request and say all is well. This helps in operations because
 	// we don't have to check for support to avoid having a failed job.
-	if (partition().fileSystem().supportSetLabel() == FileSystem::SupportNone)
+	if (partition().fileSystem().supportSetLabel() == FileSystem::cmdSupportNone)
 		report->line() << i18nc("@info/plain", "File system on partition <filename>%1</filename> does not support setting labels. Job ignored.", partition().deviceNode());
-	else if (partition().fileSystem().supportSetLabel() == FileSystem::SupportExternal)
+	else if (partition().fileSystem().supportSetLabel() == FileSystem::cmdSupportFileSystem)
 	{
 		rval = partition().fileSystem().writeLabel(*report, partition().deviceNode(), label());
 

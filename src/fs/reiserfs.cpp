@@ -29,18 +29,18 @@
 
 namespace FS
 {
-	FileSystem::CommandSupportType reiserfs::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiserfs::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiserfs::m_Create = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiserfs::m_Grow = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiserfs::m_Shrink = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiserfs::m_Move = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiserfs::m_Check = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiserfs::m_Copy = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiserfs::m_Backup = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiserfs::m_SetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiserfs::m_UpdateUUID = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiserfs::m_GetUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_GetUsed = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiserfs::m_GetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Create = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Grow = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Shrink = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Move = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Check = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Copy = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Backup = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiserfs::m_SetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiserfs::m_UpdateUUID = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiserfs::m_GetUUID = FileSystem::cmdSupportNone;
 
 	reiserfs::reiserfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::ReiserFS)
@@ -49,17 +49,17 @@ namespace FS
 
 	void reiserfs::init()
 	{
-		m_GetLabel = SupportInternal;
-		m_GetUsed = findExternal("debugreiserfs", QStringList(), 16) ? SupportExternal : SupportNone;
-		m_SetLabel = findExternal("reiserfstune") ? SupportExternal : SupportNone;
-		m_Create = findExternal("mkfs.reiserfs") ? SupportExternal : SupportNone;
-		m_Check = findExternal("fsck.reiserfs") ? SupportExternal : SupportNone;
-		m_Move = m_Copy = (m_Check != SupportNone) ? SupportInternal : SupportNone;
-		m_Grow = findExternal("resize_reiserfs", QStringList(), 16) ? SupportExternal : SupportNone;
-		m_Shrink = (m_GetUsed != SupportNone && m_Grow != SupportNone) ? SupportExternal : SupportNone;
-		m_Backup = SupportInternal;
-		m_UpdateUUID = findExternal("reiserfstune") ? SupportExternal : SupportNone;
-		m_GetUUID = SupportInternal;
+		m_GetLabel = cmdSupportCore;
+		m_GetUsed = findExternal("debugreiserfs", QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
+		m_SetLabel = findExternal("reiserfstune") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal("mkfs.reiserfs") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = findExternal("fsck.reiserfs") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Move = m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_Grow = findExternal("resize_reiserfs", QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Shrink = (m_GetUsed != cmdSupportNone && m_Grow != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Backup = cmdSupportCore;
+		m_UpdateUUID = findExternal("reiserfstune") ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetUUID = cmdSupportCore;
 	}
 
 	qint64 reiserfs::minCapacity() const

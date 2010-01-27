@@ -26,13 +26,13 @@
 
 namespace FS
 {
-	FileSystem::CommandSupportType reiser4::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiser4::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiser4::m_Create = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiser4::m_Move = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiser4::m_Check = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiser4::m_Copy = FileSystem::SupportNone;
-	FileSystem::CommandSupportType reiser4::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiser4::m_GetUsed = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiser4::m_GetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiser4::m_Create = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiser4::m_Move = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiser4::m_Check = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiser4::m_Copy = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType reiser4::m_Backup = FileSystem::cmdSupportNone;
 
 	reiser4::reiser4(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Reiser4)
@@ -41,12 +41,12 @@ namespace FS
 
 	void reiser4::init()
 	{
-		m_GetLabel = SupportInternal;
-		m_GetUsed = findExternal("debugfs.reiser4", QStringList(), 16) ? SupportExternal : SupportNone;
-		m_Create = findExternal("mkfs.reiser4", QStringList(), 16) ? SupportExternal : SupportNone;
-		m_Check = findExternal("fsck.reiser4", QStringList(), 16) ? SupportExternal : SupportNone;
-		m_Move = m_Copy = (m_Check != SupportNone) ? SupportInternal : SupportNone;
-		m_Backup = SupportInternal;
+		m_GetLabel = cmdSupportCore;
+		m_GetUsed = findExternal("debugfs.reiser4", QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal("mkfs.reiser4", QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = findExternal("fsck.reiser4", QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Move = m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_Backup = cmdSupportCore;
 	}
 
 	qint64 reiser4::readUsedCapacity(const QString& deviceNode) const

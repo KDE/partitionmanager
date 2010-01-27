@@ -27,14 +27,14 @@
 
 namespace FS
 {
-	FileSystem::CommandSupportType hfs::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfs::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfs::m_Create = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfs::m_Shrink = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfs::m_Move = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfs::m_Check = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfs::m_Copy = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfs::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfs::m_GetUsed = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfs::m_GetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfs::m_Create = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfs::m_Shrink = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfs::m_Move = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfs::m_Check = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfs::m_Copy = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfs::m_Backup = FileSystem::cmdSupportNone;
 
 	hfs::hfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Hfs)
@@ -43,15 +43,15 @@ namespace FS
 
 	void hfs::init()
 	{
-		m_GetLabel = SupportInternal;
-		m_Create = findExternal("hformat") ? SupportExternal : SupportNone;
-		m_Check = findExternal("hfsck") ? SupportExternal : SupportNone;
+		m_GetLabel = cmdSupportCore;
+		m_Create = findExternal("hformat") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = findExternal("hfsck") ? cmdSupportFileSystem : cmdSupportNone;
 
-		m_GetUsed = SupportInternal;
-		m_Shrink = SupportInternal;
+		m_GetUsed = cmdSupportCore;
+		m_Shrink = cmdSupportCore;
 
-		m_Move = m_Copy = (m_Check != SupportNone) ? SupportInternal : SupportNone;
-		m_Backup = SupportInternal;
+		m_Move = m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_Backup = cmdSupportCore;
 	}
 
 	qint64 hfs::maxCapacity() const

@@ -54,9 +54,9 @@ bool BackupFileSystemJob::run(Report& parent)
 	
 	Report* report = jobStarted(parent);
 	
-	if (sourcePartition().fileSystem().supportBackup() == FileSystem::SupportExternal)
+	if (sourcePartition().fileSystem().supportBackup() == FileSystem::cmdSupportFileSystem)
 		rval = sourcePartition().fileSystem().backup(*report, sourceDevice(), sourcePartition().deviceNode(), fileName());
-	else if (sourcePartition().fileSystem().supportBackup() == FileSystem::SupportInternal)
+	else if (sourcePartition().fileSystem().supportBackup() == FileSystem::cmdSupportCore)
 	{
 		CopySourceDevice copySource(sourceDevice(), sourcePartition().fileSystem().firstSector(), sourcePartition().fileSystem().lastSector());
 		CopyTargetFile copyTarget(fileName(), sourceDevice().sectorSize());

@@ -26,12 +26,12 @@
 
 namespace FS
 {
-	FileSystem::CommandSupportType hfsplus::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfsplus::m_Shrink = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfsplus::m_Move = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfsplus::m_Check = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfsplus::m_Copy = FileSystem::SupportNone;
-	FileSystem::CommandSupportType hfsplus::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfsplus::m_GetUsed = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfsplus::m_Shrink = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfsplus::m_Move = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfsplus::m_Check = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfsplus::m_Copy = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType hfsplus::m_Backup = FileSystem::cmdSupportNone;
 
 	hfsplus::hfsplus(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::HfsPlus)
@@ -40,13 +40,13 @@ namespace FS
 
 	void hfsplus::init()
 	{
-		m_Check = findExternal("hpfsck") ? SupportExternal : SupportNone;
+		m_Check = findExternal("hpfsck") ? cmdSupportFileSystem : cmdSupportNone;
 
-		m_GetUsed = SupportInternal;
-		m_Shrink = SupportInternal;
-		m_Copy = (m_Check != SupportNone) ? SupportInternal : SupportNone;
-		m_Move = (m_Check != SupportNone) ? SupportInternal : SupportNone;
-		m_Backup = SupportInternal;
+		m_GetUsed = cmdSupportCore;
+		m_Shrink = cmdSupportCore;
+		m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_Backup = cmdSupportCore;
 	}
 
 	qint64 hfsplus::maxCapacity() const

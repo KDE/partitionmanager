@@ -36,18 +36,18 @@
 
 namespace FS
 {
-	FileSystem::CommandSupportType fat16::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::CommandSupportType fat16::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType fat16::m_SetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType fat16::m_Create = FileSystem::SupportNone;
-	FileSystem::CommandSupportType fat16::m_Grow = FileSystem::SupportNone;
-	FileSystem::CommandSupportType fat16::m_Shrink = FileSystem::SupportNone;
-	FileSystem::CommandSupportType fat16::m_Move = FileSystem::SupportNone;
-	FileSystem::CommandSupportType fat16::m_Check = FileSystem::SupportNone;
-	FileSystem::CommandSupportType fat16::m_Copy = FileSystem::SupportNone;
-	FileSystem::CommandSupportType fat16::m_Backup = FileSystem::SupportNone;
-	FileSystem::CommandSupportType fat16::m_UpdateUUID = FileSystem::SupportNone;
-	FileSystem::CommandSupportType fat16::m_GetUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_GetUsed = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType fat16::m_GetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType fat16::m_SetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType fat16::m_Create = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType fat16::m_Grow = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType fat16::m_Shrink = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType fat16::m_Move = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType fat16::m_Check = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType fat16::m_Copy = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType fat16::m_Backup = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType fat16::m_UpdateUUID = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType fat16::m_GetUUID = FileSystem::cmdSupportNone;
 
 	fat16::fat16(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t) :
 		FileSystem(firstsector, lastsector, sectorsused, label, t)
@@ -56,17 +56,17 @@ namespace FS
 
 	void fat16::init()
 	{
-		m_Create = findExternal("mkfs.msdos") ? SupportExternal : SupportNone;
-		m_GetUsed = m_Check = findExternal("fsck.msdos", QStringList(), 2) ? SupportExternal : SupportNone;
-		m_GetLabel = SupportInternal;
-		m_SetLabel = SupportExternal;
-		m_Grow = SupportInternal;
-		m_Shrink = SupportInternal;
-		m_Move = SupportInternal;
-		m_Copy = SupportInternal;
-		m_Backup = SupportInternal;
-		m_UpdateUUID = findExternal("dd") ? SupportExternal : SupportNone;
-		m_GetUUID = SupportInternal;
+		m_Create = findExternal("mkfs.msdos") ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetUsed = m_Check = findExternal("fsck.msdos", QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetLabel = cmdSupportCore;
+		m_SetLabel = cmdSupportFileSystem;
+		m_Grow = cmdSupportCore;
+		m_Shrink = cmdSupportCore;
+		m_Move = cmdSupportCore;
+		m_Copy = cmdSupportCore;
+		m_Backup = cmdSupportCore;
+		m_UpdateUUID = findExternal("dd") ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetUUID = cmdSupportCore;
 	}
 
 	qint64 fat16::minCapacity() const

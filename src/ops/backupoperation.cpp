@@ -65,6 +65,6 @@ bool BackupOperation::canBackup(const Partition* p)
 	if (p->state() == Partition::StateNew || p->state() == Partition::StateCopy || p->state() == Partition::StateRestore)
 		return false;
 
-	return p->fileSystem().supportBackup() != FileSystem::SupportNone;
+	return p->fileSystem().supportBackup() != FileSystem::cmdSupportNone;
 }
 

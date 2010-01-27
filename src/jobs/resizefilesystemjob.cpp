@@ -80,7 +80,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 
 		switch(support)
 		{
-			case FileSystem::SupportInternal:
+			case FileSystem::cmdSupportCore:
 			{
 				Report* childReport = report->newChild();
 				childReport->line() << i18nc("@info/plain", "Resizing a %1 file system using LibParted internal functions.", partition().fileSystem().name());
@@ -88,7 +88,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 				break;
 			}
 
-			case FileSystem::SupportExternal:
+			case FileSystem::cmdSupportFileSystem:
 			{
 				const qint64 newLengthInByte = Capacity(newLength() * partition().sectorSize()).toInt(Capacity::Byte);
 				rval = partition().fileSystem().resize(*report, partition().deviceNode(), newLengthInByte);

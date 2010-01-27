@@ -21,9 +21,9 @@
 
 namespace FS
 {
-	FileSystem::CommandSupportType ufs::m_Move = FileSystem::SupportInternal;
-	FileSystem::CommandSupportType ufs::m_Copy = FileSystem::SupportInternal;
-	FileSystem::CommandSupportType ufs::m_Backup = FileSystem::SupportInternal;
+	FileSystem::CommandSupportType ufs::m_Move = FileSystem::cmdSupportCore;
+	FileSystem::CommandSupportType ufs::m_Copy = FileSystem::cmdSupportCore;
+	FileSystem::CommandSupportType ufs::m_Backup = FileSystem::cmdSupportCore;
 
 	ufs::ufs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Ufs)

@@ -37,18 +37,18 @@
 
 namespace FS
 {
-	FileSystem::CommandSupportType ntfs::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ntfs::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ntfs::m_Create = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ntfs::m_Grow = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ntfs::m_Shrink = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ntfs::m_Move = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ntfs::m_Check = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ntfs::m_Copy = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ntfs::m_Backup = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ntfs::m_SetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ntfs::m_UpdateUUID = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ntfs::m_GetUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_GetUsed = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ntfs::m_GetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ntfs::m_Create = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ntfs::m_Grow = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ntfs::m_Shrink = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ntfs::m_Move = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ntfs::m_Check = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ntfs::m_Copy = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ntfs::m_Backup = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ntfs::m_SetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ntfs::m_UpdateUUID = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ntfs::m_GetUUID = FileSystem::cmdSupportNone;
 
 	ntfs::ntfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Ntfs)
@@ -57,15 +57,15 @@ namespace FS
 
 	void ntfs::init()
 	{
-		m_Shrink = m_Grow = m_Check = m_GetUsed = findExternal("ntfsresize") ? SupportExternal : SupportNone;
-		m_GetLabel = SupportInternal;
-		m_SetLabel = findExternal("ntfslabel") ? SupportExternal : SupportNone;
-		m_Create = findExternal("mkfs.ntfs") ? SupportExternal : SupportNone;
-		m_Copy = findExternal("ntfsclone") ? SupportExternal : SupportNone;
-		m_Backup = SupportInternal;
-		m_UpdateUUID = findExternal("dd") ? SupportExternal : SupportNone;
-		m_Move = (m_Check != SupportNone) ? SupportInternal : SupportNone;
-		m_GetUUID = SupportInternal;
+		m_Shrink = m_Grow = m_Check = m_GetUsed = findExternal("ntfsresize") ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetLabel = cmdSupportCore;
+		m_SetLabel = findExternal("ntfslabel") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal("mkfs.ntfs") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Copy = findExternal("ntfsclone") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Backup = cmdSupportCore;
+		m_UpdateUUID = findExternal("dd") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_GetUUID = cmdSupportCore;
 	}
 
 	qint64 ntfs::maxCapacity() const

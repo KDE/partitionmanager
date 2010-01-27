@@ -42,7 +42,7 @@ bool CreateFileSystemJob::run(Report& parent)
 
 	Report* report = jobStarted(parent);
 	
-	if (partition().fileSystem().supportCreate() == FileSystem::SupportExternal)
+	if (partition().fileSystem().supportCreate() == FileSystem::cmdSupportFileSystem)
 		rval = partition().fileSystem().create(*report, partition().deviceNode());
 
 	jobFinished(*report, rval);

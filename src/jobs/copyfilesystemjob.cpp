@@ -59,9 +59,9 @@ bool CopyFileSystemJob::run(Report& parent)
 
 	if (targetPartition().fileSystem().length() < sourcePartition().fileSystem().length())
 		report->line() << i18nc("@info/plain", "Cannot copy file system: File system on target partition <filename>%1</filename> is smaller than the file system on source partition <filename>%2</filename>.", targetPartition().deviceNode(), sourcePartition().deviceNode());
-	else if (sourcePartition().fileSystem().supportCopy() == FileSystem::SupportExternal)
+	else if (sourcePartition().fileSystem().supportCopy() == FileSystem::cmdSupportFileSystem)
 		rval = sourcePartition().fileSystem().copy(*report, targetPartition().deviceNode(), sourcePartition().deviceNode());
-	else if (sourcePartition().fileSystem().supportCopy() == FileSystem::SupportInternal)
+	else if (sourcePartition().fileSystem().supportCopy() == FileSystem::cmdSupportCore)
 	{
 		CopySourceDevice copySource(sourceDevice(), sourcePartition().fileSystem().firstSector(), sourcePartition().fileSystem().lastSector());
 		CopyTargetDevice copyTarget(targetDevice(), targetPartition().fileSystem().firstSector(), targetPartition().fileSystem().lastSector());
@@ -85,7 +85,7 @@ bool CopyFileSystemJob::run(Report& parent)
 		targetPartition().fileSystem().setLastSector(newLastSector);
 
 		// and set a new UUID, if the target filesystem supports UUIDs
-		if (targetPartition().fileSystem().supportUpdateUUID() == FileSystem::SupportExternal)
+		if (targetPartition().fileSystem().supportUpdateUUID() == FileSystem::cmdSupportFileSystem)
 		{
 			targetPartition().fileSystem().updateUUID(*report, targetPartition().deviceNode());
 			targetPartition().fileSystem().setUUID(targetPartition().fileSystem().readUUID(targetPartition().deviceNode()));

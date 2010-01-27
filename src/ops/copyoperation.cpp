@@ -293,7 +293,7 @@ bool CopyOperation::canCopy(const Partition* p)
 	// be forbidden here. The operation stack, however, will take care of these
 	// problematic cases when pushing the CopyOperation onto the stack.
 
-	return p->fileSystem().supportCopy() != FileSystem::SupportNone;
+	return p->fileSystem().supportCopy() != FileSystem::cmdSupportNone;
 }
 
 /** Can a Partition be pasted on another one?

@@ -63,7 +63,7 @@ void NewDialog::setupDialog()
 {
 	QStringList fsNames;
 	foreach (const FileSystem* fs, FileSystemFactory::map())
-		if (fs->supportCreate() != FileSystem::SupportNone && fs->type() != FileSystem::Extended)
+		if (fs->supportCreate() != FileSystem::cmdSupportNone && fs->type() != FileSystem::Extended)
 			fsNames.append(fs->name());
 
 	qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
@@ -149,7 +149,7 @@ void NewDialog::onLabelChanged(const QString& newLabel)
 void NewDialog::updateHideAndShow()
 {
 	// this is mostly copy'n'pasted from PartPropsDialog::updateHideAndShow()
-	if (partition().roles().has(PartitionRole::Extended) || partition().fileSystem().supportSetLabel() == FileSystem::SupportNone)
+	if (partition().roles().has(PartitionRole::Extended) || partition().fileSystem().supportSetLabel() == FileSystem::cmdSupportNone)
 	{
 		dialogWidget().label().setReadOnly(true);
 		dialogWidget().noSetLabel().setVisible(true);

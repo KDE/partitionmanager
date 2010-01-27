@@ -339,7 +339,7 @@ bool ResizeOperation::canGrow(const Partition* p)
 	if (p->isMounted())
 		return false;
 
-	return p->fileSystem().supportGrow() != FileSystem::SupportNone;
+	return p->fileSystem().supportGrow() != FileSystem::cmdSupportNone;
 }
 
 /** Can a Partition be shrunk, i.e. decreased in size?
@@ -361,7 +361,7 @@ bool ResizeOperation::canShrink(const Partition* p)
 	if (p->isMounted())
 		return false;
 
-	return p->fileSystem().supportShrink() != FileSystem::SupportNone;
+	return p->fileSystem().supportShrink() != FileSystem::cmdSupportNone;
 }
 
 /** Can a Partition be moved?
@@ -384,5 +384,5 @@ bool ResizeOperation::canMove(const Partition* p)
 	if (p->roles().has(PartitionRole::Extended) && p->hasChildren())
 		return false;
 
-	return p->fileSystem().supportMove() != FileSystem::SupportNone;
+	return p->fileSystem().supportMove() != FileSystem::cmdSupportNone;
 }

@@ -34,15 +34,15 @@
 
 namespace FS
 {
-	FileSystem::CommandSupportType xfs::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::CommandSupportType xfs::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType xfs::m_Create = FileSystem::SupportNone;
-	FileSystem::CommandSupportType xfs::m_Grow = FileSystem::SupportNone;
-	FileSystem::CommandSupportType xfs::m_Move = FileSystem::SupportNone;
-	FileSystem::CommandSupportType xfs::m_Check = FileSystem::SupportNone;
-	FileSystem::CommandSupportType xfs::m_Copy = FileSystem::SupportNone;
-	FileSystem::CommandSupportType xfs::m_Backup = FileSystem::SupportNone;
-	FileSystem::CommandSupportType xfs::m_SetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType xfs::m_GetUsed = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType xfs::m_GetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType xfs::m_Create = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType xfs::m_Grow = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType xfs::m_Move = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType xfs::m_Check = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType xfs::m_Copy = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType xfs::m_Backup = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType xfs::m_SetLabel = FileSystem::cmdSupportNone;
 
 	xfs::xfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Xfs)
@@ -51,15 +51,15 @@ namespace FS
 
 	void xfs::init()
 	{
-		m_GetLabel = SupportInternal;
-		m_SetLabel = m_GetUsed = findExternal("xfs_db") ? SupportExternal : SupportNone;
-		m_Create = findExternal("mkfs.xfs") ? SupportExternal : SupportNone;
+		m_GetLabel = cmdSupportCore;
+		m_SetLabel = m_GetUsed = findExternal("xfs_db") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal("mkfs.xfs") ? cmdSupportFileSystem : cmdSupportNone;
 
-		m_Check = findExternal("xfs_repair") ? SupportExternal : SupportNone;
-		m_Grow = (findExternal("xfs_growfs", QStringList() << "-V") && m_Check != SupportNone) ? SupportExternal : SupportNone;
-		m_Copy = findExternal("xfs_copy") ? SupportExternal : SupportNone;
-		m_Move = (m_Check != SupportNone) ? SupportInternal : SupportNone;
-		m_Backup = SupportInternal;
+		m_Check = findExternal("xfs_repair") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Grow = (findExternal("xfs_growfs", QStringList() << "-V") && m_Check != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Copy = findExternal("xfs_copy") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_Backup = cmdSupportCore;
 	}
 
 	qint64 xfs::minCapacity() const

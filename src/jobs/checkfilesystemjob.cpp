@@ -43,7 +43,7 @@ bool CheckFileSystemJob::run(Report& parent)
 	// if we cannot check, assume everything is fine
 	bool rval = true;
 
-	if (partition().fileSystem().supportCheck() == FileSystem::SupportExternal)
+	if (partition().fileSystem().supportCheck() == FileSystem::cmdSupportFileSystem)
 		rval = partition().fileSystem().check(*report, partition().deviceNode());
 
 	jobFinished(*report, rval);

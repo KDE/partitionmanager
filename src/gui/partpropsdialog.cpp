@@ -169,7 +169,7 @@ void PartPropsDialog::updateHideAndShow()
 	// create a temporary fs for some checks
 	const FileSystem* fs = FileSystemFactory::create(newFileSystemType(), -1, -1, -1, "");
 
-	if (fs == NULL || fs->supportSetLabel() == FileSystem::SupportNone)
+	if (fs == NULL || fs->supportSetLabel() == FileSystem::cmdSupportNone)
 	{
 		dialogWidget().label().setReadOnly(true);
 		dialogWidget().noSetLabel().setVisible(true);
@@ -190,7 +190,7 @@ void PartPropsDialog::updateHideAndShow()
 	// when do we show the uuid?
 	const bool showUuid =
 			partition().state() != Partition::StateNew &&                           // not for new partitions
-			!(fs == NULL || fs->supportGetUUID() == FileSystem::SupportNone);       // not if the FS doesn't support it
+			!(fs == NULL || fs->supportGetUUID() == FileSystem::cmdSupportNone);       // not if the FS doesn't support it
 
 	dialogWidget().showUuid(showUuid);
 
@@ -216,7 +216,7 @@ void PartPropsDialog::updateHideAndShow()
 	// when do we show the recreate file system check box?
 	const bool showCheckRecreate =
 			showFileSystem &&                                                       // only if we also show the file system
-			partition().fileSystem().supportCreate() != FileSystem::SupportNone &&  // and support creating this file system
+			partition().fileSystem().supportCreate() != FileSystem::cmdSupportNone &&  // and support creating this file system
 			partition().fileSystem().type() != FileSystem::Unknown &&               // and not for unknown file systems
 			partition().state() != Partition::StateNew;                             // or new partitions
 
@@ -263,7 +263,7 @@ void PartPropsDialog::setupFileSystemComboBox()
 	QStringList fsNames;
 
 	foreach(const FileSystem* fs, FileSystemFactory::map())
-		if (partition().fileSystem().type() == fs->type() || (fs->supportCreate() != FileSystem::SupportNone && partition().capacity() >= fs->minCapacity() && partition().capacity() <= fs->maxCapacity()))
+		if (partition().fileSystem().type() == fs->type() || (fs->supportCreate() != FileSystem::cmdSupportNone && partition().capacity() >= fs->minCapacity() && partition().capacity() <= fs->maxCapacity()))
 		{
 			QString name = fs->name();
 

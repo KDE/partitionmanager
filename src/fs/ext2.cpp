@@ -27,18 +27,18 @@
 
 namespace FS
 {
-	FileSystem::CommandSupportType ext2::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ext2::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ext2::m_Create = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ext2::m_Grow = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ext2::m_Shrink = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ext2::m_Move = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ext2::m_Check = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ext2::m_Copy = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ext2::m_Backup = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ext2::m_SetLabel = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ext2::m_UpdateUUID = FileSystem::SupportNone;
-	FileSystem::CommandSupportType ext2::m_GetUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_GetUsed = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ext2::m_GetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ext2::m_Create = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ext2::m_Grow = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ext2::m_Shrink = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ext2::m_Move = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ext2::m_Check = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ext2::m_Copy = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ext2::m_Backup = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ext2::m_SetLabel = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ext2::m_UpdateUUID = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType ext2::m_GetUUID = FileSystem::cmdSupportNone;
 
 	ext2::ext2(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t) :
 		FileSystem(firstsector, lastsector, sectorsused, label, t)
@@ -47,18 +47,18 @@ namespace FS
 
 	void ext2::init()
 	{
-		m_GetUsed = findExternal("dumpe2fs") ? SupportExternal : SupportNone;
-		m_GetLabel = SupportInternal;
-		m_SetLabel = findExternal("e2label") ? SupportExternal : SupportNone;
-		m_Create = findExternal("mkfs.ext2") ? SupportExternal : SupportNone;
-		m_Check = findExternal("e2fsck", QStringList() << "-V") ? SupportExternal : SupportNone;
-		m_UpdateUUID = findExternal("tune2fs") ? SupportExternal : SupportNone;
-		m_Grow = (m_Check != SupportNone && findExternal("resize2fs")) ? SupportExternal : SupportNone;
-		m_Shrink = m_GetUsed != SupportNone ? SupportExternal : SupportNone;
-		m_Copy = (m_Check != SupportNone) ? SupportInternal : SupportNone;
-		m_Move = (m_Check != SupportNone) ? SupportInternal : SupportNone;
-		m_Backup = SupportInternal;
-		m_GetUUID = SupportInternal;
+		m_GetUsed = findExternal("dumpe2fs") ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetLabel = cmdSupportCore;
+		m_SetLabel = findExternal("e2label") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal("mkfs.ext2") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = findExternal("e2fsck", QStringList() << "-V") ? cmdSupportFileSystem : cmdSupportNone;
+		m_UpdateUUID = findExternal("tune2fs") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Grow = (m_Check != cmdSupportNone && findExternal("resize2fs")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Shrink = m_GetUsed != cmdSupportNone ? cmdSupportFileSystem : cmdSupportNone;
+		m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
+		m_Backup = cmdSupportCore;
+		m_GetUUID = cmdSupportCore;
 	}
 
 	qint64 ext2::maxCapacity() const
