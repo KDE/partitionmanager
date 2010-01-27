@@ -79,6 +79,8 @@
 
 #include <unistd.h>
 
+#include "partitionmanageradaptor.h"
+
 class PartitionTreeWidgetItem : public QTreeWidgetItem
 {
 	Q_DISABLE_COPY(PartitionTreeWidgetItem)
@@ -110,6 +112,10 @@ PartitionManagerWidget::PartitionManagerWidget(QWidget* parent, KActionCollectio
 	m_ClipboardPartition(NULL)
 {
 	setupUi(this);
+
+	(void) new PartitionManagerAdaptor(this);
+	QDBusConnection dbus = QDBusConnection::sessionBus();
+	dbus.registerObject("/PartitionManager", this);
 
 	treePartitions().header()->setStretchLastSection(false);
 }
