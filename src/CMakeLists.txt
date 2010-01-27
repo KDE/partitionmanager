@@ -39,7 +39,7 @@ kde4_add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
 target_link_libraries(partitionmanagerprivate libfatlabel ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${LIBPARTED_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS})
 
 install(TARGETS partitionmanagerprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES org.kde.PartitionManager.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
+# install(FILES org.kde.PartitionManager.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
 
 ############################################
 
