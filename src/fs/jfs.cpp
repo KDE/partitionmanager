@@ -33,15 +33,15 @@
 
 namespace FS
 {
-	FileSystem::SupportType jfs::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::SupportType jfs::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType jfs::m_Create = FileSystem::SupportNone;
-	FileSystem::SupportType jfs::m_Grow = FileSystem::SupportNone;
-	FileSystem::SupportType jfs::m_Move = FileSystem::SupportNone;
-	FileSystem::SupportType jfs::m_Check = FileSystem::SupportNone;
-	FileSystem::SupportType jfs::m_Copy = FileSystem::SupportNone;
-	FileSystem::SupportType jfs::m_Backup = FileSystem::SupportNone;
-	FileSystem::SupportType jfs::m_SetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType jfs::m_GetUsed = FileSystem::SupportNone;
+	FileSystem::CommandSupportType jfs::m_GetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType jfs::m_Create = FileSystem::SupportNone;
+	FileSystem::CommandSupportType jfs::m_Grow = FileSystem::SupportNone;
+	FileSystem::CommandSupportType jfs::m_Move = FileSystem::SupportNone;
+	FileSystem::CommandSupportType jfs::m_Check = FileSystem::SupportNone;
+	FileSystem::CommandSupportType jfs::m_Copy = FileSystem::SupportNone;
+	FileSystem::CommandSupportType jfs::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType jfs::m_SetLabel = FileSystem::SupportNone;
 
 	jfs::jfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Jfs)

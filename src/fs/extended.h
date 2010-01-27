@@ -47,16 +47,16 @@ namespace FS
 
 			virtual bool create(Report&, const QString&) const;
 
-			virtual SupportType supportCreate() const { return m_Create; }
-			virtual SupportType supportGrow() const { return m_Grow; }
-			virtual SupportType supportShrink() const { return m_Shrink; }
-			virtual SupportType supportMove() const { return m_Move; }
+			virtual CommandSupportType supportCreate() const { return m_Create; }
+			virtual CommandSupportType supportGrow() const { return m_Grow; }
+			virtual CommandSupportType supportShrink() const { return m_Shrink; }
+			virtual CommandSupportType supportMove() const { return m_Move; }
 			
 		protected:
-			static SupportType m_Create;
-			static SupportType m_Grow;
-			static SupportType m_Shrink;
-			static SupportType m_Move;
+			static CommandSupportType m_Create;
+			static CommandSupportType m_Grow;
+			static CommandSupportType m_Shrink;
+			static CommandSupportType m_Move;
 	};
 }
 

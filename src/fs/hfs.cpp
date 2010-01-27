@@ -27,14 +27,14 @@
 
 namespace FS
 {
-	FileSystem::SupportType hfs::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::SupportType hfs::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType hfs::m_Create = FileSystem::SupportNone;
-	FileSystem::SupportType hfs::m_Shrink = FileSystem::SupportNone;
-	FileSystem::SupportType hfs::m_Move = FileSystem::SupportNone;
-	FileSystem::SupportType hfs::m_Check = FileSystem::SupportNone;
-	FileSystem::SupportType hfs::m_Copy = FileSystem::SupportNone;
-	FileSystem::SupportType hfs::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfs::m_GetUsed = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfs::m_GetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfs::m_Create = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfs::m_Shrink = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfs::m_Move = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfs::m_Check = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfs::m_Copy = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfs::m_Backup = FileSystem::SupportNone;
 
 	hfs::hfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Hfs)

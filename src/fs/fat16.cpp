@@ -36,18 +36,18 @@
 
 namespace FS
 {
-	FileSystem::SupportType fat16::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::SupportType fat16::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType fat16::m_SetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType fat16::m_Create = FileSystem::SupportNone;
-	FileSystem::SupportType fat16::m_Grow = FileSystem::SupportNone;
-	FileSystem::SupportType fat16::m_Shrink = FileSystem::SupportNone;
-	FileSystem::SupportType fat16::m_Move = FileSystem::SupportNone;
-	FileSystem::SupportType fat16::m_Check = FileSystem::SupportNone;
-	FileSystem::SupportType fat16::m_Copy = FileSystem::SupportNone;
-	FileSystem::SupportType fat16::m_Backup = FileSystem::SupportNone;
-	FileSystem::SupportType fat16::m_UpdateUUID = FileSystem::SupportNone;
-	FileSystem::SupportType fat16::m_GetUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_GetUsed = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_GetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_SetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_Create = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_Grow = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_Shrink = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_Move = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_Check = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_Copy = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_UpdateUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType fat16::m_GetUUID = FileSystem::SupportNone;
 
 	fat16::fat16(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t) :
 		FileSystem(firstsector, lastsector, sectorsused, label, t)

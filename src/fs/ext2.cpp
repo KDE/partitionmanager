@@ -27,18 +27,18 @@
 
 namespace FS
 {
-	FileSystem::SupportType ext2::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::SupportType ext2::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType ext2::m_Create = FileSystem::SupportNone;
-	FileSystem::SupportType ext2::m_Grow = FileSystem::SupportNone;
-	FileSystem::SupportType ext2::m_Shrink = FileSystem::SupportNone;
-	FileSystem::SupportType ext2::m_Move = FileSystem::SupportNone;
-	FileSystem::SupportType ext2::m_Check = FileSystem::SupportNone;
-	FileSystem::SupportType ext2::m_Copy = FileSystem::SupportNone;
-	FileSystem::SupportType ext2::m_Backup = FileSystem::SupportNone;
-	FileSystem::SupportType ext2::m_SetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType ext2::m_UpdateUUID = FileSystem::SupportNone;
-	FileSystem::SupportType ext2::m_GetUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_GetUsed = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_GetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_Create = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_Grow = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_Shrink = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_Move = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_Check = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_Copy = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_SetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_UpdateUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ext2::m_GetUUID = FileSystem::SupportNone;
 
 	ext2::ext2(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t) :
 		FileSystem(firstsector, lastsector, sectorsused, label, t)

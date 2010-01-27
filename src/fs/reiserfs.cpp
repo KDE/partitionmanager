@@ -29,18 +29,18 @@
 
 namespace FS
 {
-	FileSystem::SupportType reiserfs::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::SupportType reiserfs::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType reiserfs::m_Create = FileSystem::SupportNone;
-	FileSystem::SupportType reiserfs::m_Grow = FileSystem::SupportNone;
-	FileSystem::SupportType reiserfs::m_Shrink = FileSystem::SupportNone;
-	FileSystem::SupportType reiserfs::m_Move = FileSystem::SupportNone;
-	FileSystem::SupportType reiserfs::m_Check = FileSystem::SupportNone;
-	FileSystem::SupportType reiserfs::m_Copy = FileSystem::SupportNone;
-	FileSystem::SupportType reiserfs::m_Backup = FileSystem::SupportNone;
-	FileSystem::SupportType reiserfs::m_SetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType reiserfs::m_UpdateUUID = FileSystem::SupportNone;
-	FileSystem::SupportType reiserfs::m_GetUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_GetUsed = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_GetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Create = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Grow = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Shrink = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Move = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Check = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Copy = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_SetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_UpdateUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiserfs::m_GetUUID = FileSystem::SupportNone;
 
 	reiserfs::reiserfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::ReiserFS)

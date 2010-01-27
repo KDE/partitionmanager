@@ -34,15 +34,15 @@
 
 namespace FS
 {
-	FileSystem::SupportType xfs::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::SupportType xfs::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType xfs::m_Create = FileSystem::SupportNone;
-	FileSystem::SupportType xfs::m_Grow = FileSystem::SupportNone;
-	FileSystem::SupportType xfs::m_Move = FileSystem::SupportNone;
-	FileSystem::SupportType xfs::m_Check = FileSystem::SupportNone;
-	FileSystem::SupportType xfs::m_Copy = FileSystem::SupportNone;
-	FileSystem::SupportType xfs::m_Backup = FileSystem::SupportNone;
-	FileSystem::SupportType xfs::m_SetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType xfs::m_GetUsed = FileSystem::SupportNone;
+	FileSystem::CommandSupportType xfs::m_GetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType xfs::m_Create = FileSystem::SupportNone;
+	FileSystem::CommandSupportType xfs::m_Grow = FileSystem::SupportNone;
+	FileSystem::CommandSupportType xfs::m_Move = FileSystem::SupportNone;
+	FileSystem::CommandSupportType xfs::m_Check = FileSystem::SupportNone;
+	FileSystem::CommandSupportType xfs::m_Copy = FileSystem::SupportNone;
+	FileSystem::CommandSupportType xfs::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType xfs::m_SetLabel = FileSystem::SupportNone;
 
 	xfs::xfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Xfs)

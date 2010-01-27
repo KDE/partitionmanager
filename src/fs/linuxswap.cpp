@@ -25,14 +25,14 @@
 
 namespace FS
 {
-	FileSystem::SupportType linuxswap::m_Create = FileSystem::SupportNone;
-	FileSystem::SupportType linuxswap::m_Grow = FileSystem::SupportNone;
-	FileSystem::SupportType linuxswap::m_Shrink = FileSystem::SupportNone;
-	FileSystem::SupportType linuxswap::m_Move = FileSystem::SupportNone;
-	FileSystem::SupportType linuxswap::m_Copy = FileSystem::SupportNone;
-	FileSystem::SupportType linuxswap::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType linuxswap::m_SetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType linuxswap::m_GetUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType linuxswap::m_Create = FileSystem::SupportNone;
+	FileSystem::CommandSupportType linuxswap::m_Grow = FileSystem::SupportNone;
+	FileSystem::CommandSupportType linuxswap::m_Shrink = FileSystem::SupportNone;
+	FileSystem::CommandSupportType linuxswap::m_Move = FileSystem::SupportNone;
+	FileSystem::CommandSupportType linuxswap::m_Copy = FileSystem::SupportNone;
+	FileSystem::CommandSupportType linuxswap::m_GetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType linuxswap::m_SetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType linuxswap::m_GetUUID = FileSystem::SupportNone;
 
 	linuxswap::linuxswap(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::LinuxSwap)

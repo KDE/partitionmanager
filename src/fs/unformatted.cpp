@@ -21,7 +21,7 @@
 
 namespace FS
 {
-	FileSystem::SupportType unformatted::m_Create = FileSystem::SupportExternal;
+	FileSystem::CommandSupportType unformatted::m_Create = FileSystem::SupportExternal;
 
 	unformatted::unformatted(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Unformatted)

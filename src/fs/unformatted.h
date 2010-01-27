@@ -44,10 +44,10 @@ namespace FS
 			
 			virtual bool create(Report&, const QString&) const;
 
-			virtual SupportType supportCreate() const { return m_Create; }
+			virtual CommandSupportType supportCreate() const { return m_Create; }
 			
 		protected:
-			static SupportType m_Create;
+			static CommandSupportType m_Create;
 	};
 }
 

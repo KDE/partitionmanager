@@ -66,14 +66,14 @@ class FileSystem
 		};
 
 		/** The type of support for a given FileSystem action */
-		enum SupportType
+		enum CommandSupportType
 		{
 			SupportNone = 0,		/**< no support */
 			SupportInternal = 1,	/**< internal support */
 			SupportExternal = 2		/**< supported by some external command */
 		};
 
-		Q_DECLARE_FLAGS(SupportTypes, SupportType)
+		Q_DECLARE_FLAGS(CommandSupportTypes, CommandSupportType)
 
 	protected:
 		FileSystem(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t);
@@ -94,18 +94,18 @@ class FileSystem
 		virtual QString readUUID(const QString& deviceNode) const;
 		virtual bool updateBootSector(Report& report, const QString& deviceNode) const;
 
-		virtual SupportType supportGetUsed() const { return SupportNone; } /**< @return SupportType for getting used capacity */
-		virtual SupportType supportGetLabel() const { return SupportNone; } /**< @return SupportType for reading label*/
-		virtual SupportType supportCreate() const { return SupportNone; } /**< @return SupportType for creating */
-		virtual SupportType supportGrow() const { return SupportNone; } /**< @return SupportType for growing */
-		virtual SupportType supportShrink() const { return SupportNone; } /**< @return SupportType for shrinking */
-		virtual SupportType supportMove() const { return SupportNone; } /**< @return SupportType for moving */
-		virtual SupportType supportCheck() const { return SupportNone; } /**< @return SupportType for checking */
-		virtual SupportType supportCopy() const { return SupportNone; } /**< @return SupportType for copying */
-		virtual SupportType supportBackup() const { return SupportNone; } /**< @return SupportType for backing up */
-		virtual SupportType supportSetLabel() const { return SupportNone; } /**< @return SupportType for setting label*/
-		virtual SupportType supportUpdateUUID() const { return SupportNone; } /**< @return SupportType for updating the UUID */
-		virtual SupportType supportGetUUID() const { return SupportNone; } /**< @return SupportType for reading the UUID */
+		virtual CommandSupportType supportGetUsed() const { return SupportNone; } /**< @return CommandSupportType for getting used capacity */
+		virtual CommandSupportType supportGetLabel() const { return SupportNone; } /**< @return CommandSupportType for reading label*/
+		virtual CommandSupportType supportCreate() const { return SupportNone; } /**< @return CommandSupportType for creating */
+		virtual CommandSupportType supportGrow() const { return SupportNone; } /**< @return CommandSupportType for growing */
+		virtual CommandSupportType supportShrink() const { return SupportNone; } /**< @return CommandSupportType for shrinking */
+		virtual CommandSupportType supportMove() const { return SupportNone; } /**< @return CommandSupportType for moving */
+		virtual CommandSupportType supportCheck() const { return SupportNone; } /**< @return CommandSupportType for checking */
+		virtual CommandSupportType supportCopy() const { return SupportNone; } /**< @return CommandSupportType for copying */
+		virtual CommandSupportType supportBackup() const { return SupportNone; } /**< @return CommandSupportType for backing up */
+		virtual CommandSupportType supportSetLabel() const { return SupportNone; } /**< @return CommandSupportType for setting label*/
+		virtual CommandSupportType supportUpdateUUID() const { return SupportNone; } /**< @return CommandSupportType for updating the UUID */
+		virtual CommandSupportType supportGetUUID() const { return SupportNone; } /**< @return CommandSupportType for reading the UUID */
 
 		virtual qint64 minCapacity() const;
 		virtual qint64 maxCapacity() const;
@@ -156,6 +156,6 @@ class FileSystem
 		QString m_UUID;
 };
 
-Q_DECLARE_OPERATORS_FOR_FLAGS(FileSystem::SupportTypes)
+Q_DECLARE_OPERATORS_FOR_FLAGS(FileSystem::CommandSupportTypes)
 
 #endif

@@ -26,12 +26,12 @@
 
 namespace FS
 {
-	FileSystem::SupportType hfsplus::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::SupportType hfsplus::m_Shrink = FileSystem::SupportNone;
-	FileSystem::SupportType hfsplus::m_Move = FileSystem::SupportNone;
-	FileSystem::SupportType hfsplus::m_Check = FileSystem::SupportNone;
-	FileSystem::SupportType hfsplus::m_Copy = FileSystem::SupportNone;
-	FileSystem::SupportType hfsplus::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfsplus::m_GetUsed = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfsplus::m_Shrink = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfsplus::m_Move = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfsplus::m_Check = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfsplus::m_Copy = FileSystem::SupportNone;
+	FileSystem::CommandSupportType hfsplus::m_Backup = FileSystem::SupportNone;
 
 	hfsplus::hfsplus(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::HfsPlus)

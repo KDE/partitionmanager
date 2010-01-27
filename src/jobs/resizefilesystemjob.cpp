@@ -76,7 +76,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 	{
 		report->line() << i18nc("@info/plain", "Resizing file system from %1 to %2 sectors.", partition().fileSystem().length(), newLength());
 
-		FileSystem::SupportType support = (newLength() < partition().fileSystem().length()) ? partition().fileSystem().supportShrink() : partition().fileSystem().supportGrow();
+		FileSystem::CommandSupportType support = (newLength() < partition().fileSystem().length()) ? partition().fileSystem().supportShrink() : partition().fileSystem().supportGrow();
 
 		switch(support)
 		{

@@ -40,14 +40,14 @@ namespace FS
 		public:
 			static void init() {}
 
-			virtual SupportType supportMove() const { return m_Move; }
-			virtual SupportType supportCopy() const { return m_Copy; }
-			virtual SupportType supportBackup() const { return m_Backup; }
+			virtual CommandSupportType supportMove() const { return m_Move; }
+			virtual CommandSupportType supportCopy() const { return m_Copy; }
+			virtual CommandSupportType supportBackup() const { return m_Backup; }
 			
 		protected:
-			static SupportType m_Move;
-			static SupportType m_Copy;
-			static SupportType m_Backup;
+			static CommandSupportType m_Move;
+			static CommandSupportType m_Copy;
+			static CommandSupportType m_Backup;
 	};
 }
 

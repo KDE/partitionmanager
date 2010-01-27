@@ -37,18 +37,18 @@
 
 namespace FS
 {
-	FileSystem::SupportType ntfs::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::SupportType ntfs::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType ntfs::m_Create = FileSystem::SupportNone;
-	FileSystem::SupportType ntfs::m_Grow = FileSystem::SupportNone;
-	FileSystem::SupportType ntfs::m_Shrink = FileSystem::SupportNone;
-	FileSystem::SupportType ntfs::m_Move = FileSystem::SupportNone;
-	FileSystem::SupportType ntfs::m_Check = FileSystem::SupportNone;
-	FileSystem::SupportType ntfs::m_Copy = FileSystem::SupportNone;
-	FileSystem::SupportType ntfs::m_Backup = FileSystem::SupportNone;
-	FileSystem::SupportType ntfs::m_SetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType ntfs::m_UpdateUUID = FileSystem::SupportNone;
-	FileSystem::SupportType ntfs::m_GetUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_GetUsed = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_GetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_Create = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_Grow = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_Shrink = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_Move = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_Check = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_Copy = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_SetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_UpdateUUID = FileSystem::SupportNone;
+	FileSystem::CommandSupportType ntfs::m_GetUUID = FileSystem::SupportNone;
 
 	ntfs::ntfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Ntfs)

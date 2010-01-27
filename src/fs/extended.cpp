@@ -21,10 +21,10 @@
 
 namespace FS
 {
-	FileSystem::SupportType extended::m_Create = FileSystem::SupportExternal;
-	FileSystem::SupportType extended::m_Grow = FileSystem::SupportInternal;
-	FileSystem::SupportType extended::m_Shrink = FileSystem::SupportInternal;
-	FileSystem::SupportType extended::m_Move = FileSystem::SupportInternal;
+	FileSystem::CommandSupportType extended::m_Create = FileSystem::SupportExternal;
+	FileSystem::CommandSupportType extended::m_Grow = FileSystem::SupportInternal;
+	FileSystem::CommandSupportType extended::m_Shrink = FileSystem::SupportInternal;
+	FileSystem::CommandSupportType extended::m_Move = FileSystem::SupportInternal;
 
 	extended::extended(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Extended)

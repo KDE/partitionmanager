@@ -51,35 +51,35 @@ namespace FS
 			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
 			virtual bool updateUUID(Report& report, const QString& deviceNode) const;
 
-			virtual SupportType supportGetUsed() const { return m_GetUsed; }
-			virtual SupportType supportGetLabel() const { return m_GetLabel; }
-			virtual SupportType supportCreate() const { return m_Create; }
-			virtual SupportType supportGrow() const { return m_Grow; }
-			virtual SupportType supportShrink() const { return m_Shrink; }
-			virtual SupportType supportMove() const { return m_Move; }
-			virtual SupportType supportCheck() const { return m_Check; }
-			virtual SupportType supportCopy() const { return m_Copy; }
-			virtual SupportType supportBackup() const { return m_Backup; }
-			virtual SupportType supportSetLabel() const { return m_SetLabel; }
-			virtual SupportType supportUpdateUUID() const { return m_UpdateUUID; }
-			virtual SupportType supportGetUUID() const { return m_GetUUID; }
+			virtual CommandSupportType supportGetUsed() const { return m_GetUsed; }
+			virtual CommandSupportType supportGetLabel() const { return m_GetLabel; }
+			virtual CommandSupportType supportCreate() const { return m_Create; }
+			virtual CommandSupportType supportGrow() const { return m_Grow; }
+			virtual CommandSupportType supportShrink() const { return m_Shrink; }
+			virtual CommandSupportType supportMove() const { return m_Move; }
+			virtual CommandSupportType supportCheck() const { return m_Check; }
+			virtual CommandSupportType supportCopy() const { return m_Copy; }
+			virtual CommandSupportType supportBackup() const { return m_Backup; }
+			virtual CommandSupportType supportSetLabel() const { return m_SetLabel; }
+			virtual CommandSupportType supportUpdateUUID() const { return m_UpdateUUID; }
+			virtual CommandSupportType supportGetUUID() const { return m_GetUUID; }
 
 			virtual qint64 minCapacity() const;
 			virtual qint64 maxCapacity() const;
 
 		protected:
-			static SupportType m_GetUsed;
-			static SupportType m_GetLabel;
-			static SupportType m_Create;
-			static SupportType m_Grow;
-			static SupportType m_Shrink;
-			static SupportType m_Move;
-			static SupportType m_Check;
-			static SupportType m_Copy;
-			static SupportType m_Backup;
-			static SupportType m_SetLabel;
-			static SupportType m_UpdateUUID;
-			static SupportType m_GetUUID;
+			static CommandSupportType m_GetUsed;
+			static CommandSupportType m_GetLabel;
+			static CommandSupportType m_Create;
+			static CommandSupportType m_Grow;
+			static CommandSupportType m_Shrink;
+			static CommandSupportType m_Move;
+			static CommandSupportType m_Check;
+			static CommandSupportType m_Copy;
+			static CommandSupportType m_Backup;
+			static CommandSupportType m_SetLabel;
+			static CommandSupportType m_UpdateUUID;
+			static CommandSupportType m_GetUUID;
 	};
 }
 

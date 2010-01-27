@@ -55,24 +55,24 @@ namespace FS
 			virtual QString mountTitle() const;
 			virtual QString unmountTitle() const;
 
-			virtual SupportType supportCreate() const { return m_Create; }
-			virtual SupportType supportGrow() const { return m_Grow; }
-			virtual SupportType supportShrink() const { return m_Shrink; }
-			virtual SupportType supportMove() const { return m_Move; }
-			virtual SupportType supportCopy() const { return m_Copy; }
-			virtual SupportType supportGetLabel() const { return m_GetLabel; }
-			virtual SupportType supportSetLabel() const { return m_SetLabel; }
-			virtual SupportType supportGetUUID() const { return m_GetUUID; }
+			virtual CommandSupportType supportCreate() const { return m_Create; }
+			virtual CommandSupportType supportGrow() const { return m_Grow; }
+			virtual CommandSupportType supportShrink() const { return m_Shrink; }
+			virtual CommandSupportType supportMove() const { return m_Move; }
+			virtual CommandSupportType supportCopy() const { return m_Copy; }
+			virtual CommandSupportType supportGetLabel() const { return m_GetLabel; }
+			virtual CommandSupportType supportSetLabel() const { return m_SetLabel; }
+			virtual CommandSupportType supportGetUUID() const { return m_GetUUID; }
 
 		protected:
-			static SupportType m_Create;
-			static SupportType m_Grow;
-			static SupportType m_Shrink;
-			static SupportType m_Move;
-			static SupportType m_Copy;
-			static SupportType m_SetLabel;
-			static SupportType m_GetLabel;
-			static SupportType m_GetUUID;
+			static CommandSupportType m_Create;
+			static CommandSupportType m_Grow;
+			static CommandSupportType m_Shrink;
+			static CommandSupportType m_Move;
+			static CommandSupportType m_Copy;
+			static CommandSupportType m_SetLabel;
+			static CommandSupportType m_GetLabel;
+			static CommandSupportType m_GetUUID;
 	};
 }
 

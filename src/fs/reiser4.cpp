@@ -26,13 +26,13 @@
 
 namespace FS
 {
-	FileSystem::SupportType reiser4::m_GetUsed = FileSystem::SupportNone;
-	FileSystem::SupportType reiser4::m_GetLabel = FileSystem::SupportNone;
-	FileSystem::SupportType reiser4::m_Create = FileSystem::SupportNone;
-	FileSystem::SupportType reiser4::m_Move = FileSystem::SupportNone;
-	FileSystem::SupportType reiser4::m_Check = FileSystem::SupportNone;
-	FileSystem::SupportType reiser4::m_Copy = FileSystem::SupportNone;
-	FileSystem::SupportType reiser4::m_Backup = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiser4::m_GetUsed = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiser4::m_GetLabel = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiser4::m_Create = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiser4::m_Move = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiser4::m_Check = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiser4::m_Copy = FileSystem::SupportNone;
+	FileSystem::CommandSupportType reiser4::m_Backup = FileSystem::SupportNone;
 
 	reiser4::reiser4(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::Reiser4)
