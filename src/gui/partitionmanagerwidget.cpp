@@ -86,14 +86,11 @@ class PartitionTreeWidgetItem : public QTreeWidgetItem
 	Q_DISABLE_COPY(PartitionTreeWidgetItem)
 
 	public:
-		PartitionTreeWidgetItem(const Partition* p) : QTreeWidgetItem(), m_Partition(p), m_Device(NULL) {}
-		PartitionTreeWidgetItem(Device* d) : QTreeWidgetItem(), m_Partition(NULL), m_Device(d) {}
+		PartitionTreeWidgetItem(const Partition* p) : QTreeWidgetItem(), m_Partition(p) {}
 		const Partition* partition() const { return m_Partition; }
-		Device* device() { return m_Device; }
 
 	private:
 		const Partition* m_Partition;
-		Device* m_Device;
 };
 
 /** Creates a new PartitionManagerWidget instance.
@@ -318,7 +315,10 @@ void PartitionManagerWidget::scanDevices()
 	libParted().scanDevices(operationStack());
 
 	if (!operationStack().previewDevices().isEmpty())
+	{
 		setSelectedDevice(operationStack().previewDevices()[0]);
+
+	}
 
 	updatePartitions();
 
@@ -404,49 +404,43 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 
 void PartitionManagerWidget::updatePartitions()
 {
+	if (selectedDevice() == NULL)
+		return;
+
 	treePartitions().clear();
 	partTableWidget().clear();
 
-	foreach(Device* d, operationStack().previewDevices())
+	partTableWidget().setPartitionTable(selectedDevice()->partitionTable());
+
+	QTreeWidgetItem* deviceItem = new QTreeWidgetItem();
+	deviceItem->setText(0, selectedDevice()->name());
+	deviceItem->setIcon(0, DesktopIcon(selectedDevice()->iconName()));
+	deviceItem->setSizeHint(0, QSize(0, 32));
+
+	treePartitions().addTopLevelItem(deviceItem);
+
+	if (selectedDevice()->partitionTable() != NULL)
 	{
-		QTreeWidgetItem* deviceItem = new PartitionTreeWidgetItem(d);
-		deviceItem->setText(0, d->name());
-		deviceItem->setIcon(0, DesktopIcon(d->iconName()));
-		deviceItem->setSizeHint(0, QSize(0, 32));
-		deviceItem->setFlags(Qt::ItemIsEnabled);
-
-		treePartitions().addTopLevelItem(deviceItem);
-
-		if (selectedDevice() == d)
+		foreach(const Partition* p, selectedDevice()->partitionTable()->children())
 		{
-			deviceItem->setExpanded(true);
-			QFont font;
-			font.setBold(true);
-			deviceItem->setFont(0, font);
-		}
+			QTreeWidgetItem* item = createTreeWidgetItem(*p);
 
-		if (d->partitionTable() != NULL)
-		{
-			foreach(const Partition* p, d->partitionTable()->children())
+			foreach(const Partition* child, p->children())
 			{
-				QTreeWidgetItem* item = createTreeWidgetItem(*p);
-
-				foreach(const Partition* child, p->children())
-				{
-					QTreeWidgetItem* childItem = createTreeWidgetItem(*child);
-					item->addChild(childItem);
-				}
-
-				deviceItem->addChild(item);
-				item->setExpanded(true);
+				QTreeWidgetItem* childItem = createTreeWidgetItem(*child);
+				item->addChild(childItem);
 			}
-		}
 
-		treePartitions().setFirstItemColumnSpanned(deviceItem, true);
+			deviceItem->addChild(item);
+			item->setExpanded(true);
+		}
 	}
 
-	if (selectedDevice())
-		partTableWidget().setPartitionTable(selectedDevice()->partitionTable());
+	treePartitions().setFirstItemColumnSpanned(deviceItem, true);
+	deviceItem->setExpanded(true);
+	deviceItem->setFlags(Qt::ItemIsEnabled);
+
+	partTableWidget().update();
 }
 
 void PartitionManagerWidget::on_m_TreePartitions_currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem*)
@@ -460,14 +454,13 @@ void PartitionManagerWidget::on_m_TreePartitions_currentItemChanged(QTreeWidgetI
 		partTableWidget().setActiveWidget(NULL);
 }
 
-void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* qtwi, int)
+void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, int)
 {
-	PartitionTreeWidgetItem* item = dynamic_cast<PartitionTreeWidgetItem*>(qtwi);
+	// if the activated item is the device item, don't do anything
+	if (item == treePartitions().topLevelItem(0))
+		return;
 
-	if (item && item->device())
-		setSelectedDevice(item->device());
-	else
-		actionCollection()->action("propertiesPartition")->trigger();
+	actionCollection()->action("propertiesPartition")->trigger();
 }
 
 void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidget* item)

@@ -59,6 +59,16 @@ void ListDevices::updateDevices()
 
 	if (idx > -1 && idx < listDevices().count())
 		listDevices().setCurrentRow(idx);
+
+	if (pmWidget().selectedDevice())
+	{
+		for (idx = 0; idx < pmWidget().previewDevices().size(); idx++)
+			if (pmWidget().previewDevices()[idx] == pmWidget().selectedDevice())
+			{
+				listDevices().setCurrentRow(idx);
+				break;
+			}
+	}
 }
 
 void ListDevices::on_m_ListDevices_itemSelectionChanged()
