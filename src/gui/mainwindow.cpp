@@ -61,6 +61,7 @@ void MainWindow::init()
 	setupStatusBar();
 	setupConnections();
 
+	listDevices().init(actionCollection(), &pmWidget());
 	listOperations().init(actionCollection(), &pmWidget());
 	pmWidget().init(actionCollection(), "partitionmanagerrc");
 
@@ -123,6 +124,7 @@ void MainWindow::setupActions()
 	KStandardAction::quit(this, SLOT(close()), actionCollection());
 
 	// View actions
+	actionCollection()->addAction("toggleDockDevices", dockDevices().toggleViewAction());
 	actionCollection()->addAction("toggleDockOperations", dockOperations().toggleViewAction());
 	actionCollection()->addAction("toggleDockInformation", dockInformation().toggleViewAction());
 	actionCollection()->addAction("toggleDockLog", dockLog().toggleViewAction());
@@ -166,12 +168,20 @@ void MainWindow::updateStatusBar()
 
 void MainWindow::updateDevices()
 {
+	listDevices().updateDevices();
+
 	if (pmWidget().selectedDevice())
 		infoPane().showDevice(dockWidgetArea(&dockInformation()), *pmWidget().selectedDevice());
 	else
 		infoPane().clear();
 
 	updateWindowTitle();
+}
+
+void MainWindow::on_m_ListDevices_selectionChanged(Device* d)
+{
+	pmWidget().setSelectedDevice(d);
+	updateSelection(NULL);
 }
 
 void MainWindow::onDockLocationChanged(Qt::DockWidgetArea)

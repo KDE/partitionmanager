@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -14,60 +14,63 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(PARTITIONMANAGERKCM__H)
+#if !defined(LISTDEVICES__H)
 
-#define PARTITIONMANAGERKCM__H
+#define LISTDEVICES__H
 
-#include "ui_partitionmanagerkcmbase.h"
+#include "util/libpartitionmanagerexport.h"
 
-#include "util/globallog.h"
+#include "ui_listdevicesbase.h"
 
-#include <kcmodule.h>
+#include <QWidget>
+
 #include <kdebug.h>
 
-class PartitionManagerWidget;
-class ListDevices;
-class KActionCollection;
 class Device;
-class KToolBar;
+class QPoint;
+class PartitionManagerWidget;
+class KActionCollection;
 
-class PartitionManagerKCM : public KCModule, public Ui::PartitionManagerKCMBase
+/** @brief A list of devices.
+	@author vl@fidra.de
+*/
+class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui::ListDevicesBase
 {
 	Q_OBJECT
-	Q_DISABLE_COPY(PartitionManagerKCM)
+	Q_DISABLE_COPY(ListDevices)
 
 	public:
-		PartitionManagerKCM(QWidget* parent, const QVariantList& args);
-		virtual ~PartitionManagerKCM() {}
+		ListDevices(QWidget* parent);
+
+	signals:
+		void selectionChanged(Device*);
 
 	public:
-		void load() {}
-		void save() {}
+		void init(KActionCollection* coll, PartitionManagerWidget* pm_widget) { m_ActionCollection = coll; m_PartitionManagerWidget = pm_widget; }
+
+	public slots:
+		void updateDevices();
 
 	protected:
-		void setupConnections();
-		void setupKCMWorkaround();
+		QListWidget& listDevices() { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
+		const QListWidget& listDevices() const { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
 
 		PartitionManagerWidget& pmWidget() { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
-		ListDevices& listDevices() { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
-		ListOperations& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
-		QSplitter& splitterHorizontal() { Q_ASSERT(m_SplitterHorizontal); return *m_SplitterHorizontal; }
-		QSplitter& splitterVertical() { Q_ASSERT(m_SplitterVertical); return *m_SplitterVertical; }
-		KToolBar& toolBar() { Q_ASSERT(m_ToolBar); return *m_ToolBar; }
+		const PartitionManagerWidget& pmWidget() const { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
 
 		KActionCollection* actionCollection() { return m_ActionCollection; }
 
 	protected slots:
-		void onNewLogMessage(Log::Level logLevel, const QString& s);
-		void onStatusChanged();
-		void onApplyClicked();
+		void on_m_ListDevices_itemSelectionChanged();
+		void on_m_ListDevices_customContextMenuRequested(const QPoint& pos);
 
 	private:
 		KActionCollection* m_ActionCollection;
+		PartitionManagerWidget* m_PartitionManagerWidget;
 };
 
-
 #endif
+
