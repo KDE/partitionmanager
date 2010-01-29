@@ -922,6 +922,7 @@ void PartitionManagerWidget::onCreateNewPartitionTable()
 		updatePartitions();
 		emit statusChanged();
 		emit operationsChanged();
+		emit devicesChanged();
 		enableActions();
 	}
 
