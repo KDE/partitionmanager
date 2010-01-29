@@ -241,9 +241,8 @@ void LibParted::scanDevices(OperationStack& ostack)
 
 		if (pedDisk)
 		{
-			d->setPartitionTable(new PartitionTable());
+			d->setPartitionTable(new PartitionTable(pedDisk->type->name));
 			d->partitionTable()->setMaxPrimaries(ped_disk_get_max_primary_partition_count(pedDisk));
-			d->partitionTable()->setTypeName(pedDisk->type->name);
 
 			scanDevicePartitions(pedDevice, *d, pedDisk);
 		}

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                       *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -14,56 +14,38 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#if !defined(CREATEPARTITIONTABLEOPERATION__H)
+#if !defined(CREATEPARTITIONTABLEDIALOG__H)
 
-#define CREATEPARTITIONTABLEOPERATION__H
+#define CREATEPARTITIONTABLEDIALOG__H
 
-#include "ops/operation.h"
+#include "gui/createpartitiontablewidget.h"
 
-#include <QString>
+#include <kdialog.h>
 
 class Device;
-class CreatePartitionTableJob;
-class PartitionTable;
 
-/** @brief Create a PartitionTable.
-	@author vl@fidra.de
-*/
-class CreatePartitionTableOperation : public Operation
+class CreatePartitionTableDialog : public KDialog
 {
 	Q_OBJECT
-	Q_DISABLE_COPY(CreatePartitionTableOperation)
 
 	public:
-		CreatePartitionTableOperation(Device& d, const QString& t);
-		~CreatePartitionTableOperation();
+		CreatePartitionTableDialog(QWidget* parent, const Device& d);
 
 	public:
-		QString iconName() const { return "edit-clear"; }
-		QString description() const;
-		void preview();
-		void undo();
-		bool execute(Report& parent);
-
-		static bool canCreate(const Device* device);
+		QString typeName() const;
 
 	protected:
-		Device& targetDevice() { return m_TargetDevice; }
-		const Device& targetDevice() const { return m_TargetDevice; }
-
-		PartitionTable* partitionTable() { return m_PartitionTable; }
-		PartitionTable* oldPartitionTable() { return m_OldPartitionTable; }
-
-		CreatePartitionTableJob* createPartitionTableJob() { return m_CreatePartitionTableJob; }
+		CreatePartitionTableWidget& widget() { return *m_DialogWidget; }
+		const CreatePartitionTableWidget& widget() const { return *m_DialogWidget; }
+		const Device& device() const { return m_Device; }
 
 	private:
-		Device& m_TargetDevice;
-		PartitionTable* m_OldPartitionTable;
-		PartitionTable* m_PartitionTable;
-		CreatePartitionTableJob* m_CreatePartitionTableJob;
+		CreatePartitionTableWidget* m_DialogWidget;
+		const Device& m_Device;
 };
+
 
 #endif

@@ -27,6 +27,7 @@
 #include "gui/progressdialog.h"
 #include "gui/insertdialog.h"
 #include "gui/editmountpointdialog.h"
+#include "gui/createpartitiontabledialog.h"
 
 #include "core/partition.h"
 #include "core/device.h"
@@ -912,22 +913,19 @@ void PartitionManagerWidget::onCreateNewPartitionTable()
 		return;
 	}
 
-	if (KMessageBox::warningContinueCancel(this,
-		i18nc("@info",
-			"<para>Do you really want to create a new partition table on the following device?</para>"
-			"<para><list><item><filename>%1</filename> (%2)</item></list></para>"
-			"<para><warning>This will destroy all data on the device.</warning></para>", selectedDevice()->deviceNode(), selectedDevice()->name()),
-			i18nc("@title:window", "Destroy All Data on Device?"),
-			KGuiItem(i18nc("@action:button", "&Create New Partition Table")),
-			KStandardGuiItem::cancel()) == KMessageBox::Continue)
+	QPointer<CreatePartitionTableDialog> dlg = new CreatePartitionTableDialog(this, *selectedDevice());
+
+	if (dlg->exec() == KDialog::Accepted)
 	{
-		operationStack().push(new CreatePartitionTableOperation(*selectedDevice()));
+		operationStack().push(new CreatePartitionTableOperation(*selectedDevice(), dlg->typeName()));
 
 		updatePartitions();
 		emit statusChanged();
 		emit operationsChanged();
 		enableActions();
 	}
+
+	delete dlg;
 }
 
 void PartitionManagerWidget::onRefreshDevices()

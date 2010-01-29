@@ -32,12 +32,13 @@
 
 /** Creates a new CreatePartitionTableOperation.
 	@param d the Device to create the new PartitionTable on
+	@param t the type name for the new PartitionTable (e.g. "msdos" or "gpt")
 */
-CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d) :
+CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d, const QString& t) :
 	Operation(),
 	m_TargetDevice(d),
 	m_OldPartitionTable(targetDevice().partitionTable()),
-	m_PartitionTable(new PartitionTable()),
+	m_PartitionTable(new PartitionTable(t)),
 	m_CreatePartitionTableJob(new CreatePartitionTableJob(targetDevice()))
 {
 	addJob(createPartitionTableJob());
@@ -81,5 +82,5 @@ bool CreatePartitionTableOperation::canCreate(const Device* device)
 
 QString CreatePartitionTableOperation::description() const
 {
-	return QString(i18nc("@info/plain", "Create a new partition table on <filename>%1</filename>", targetDevice().deviceNode()));
+	return QString(i18nc("@info/plain", "Create a new partition table (type: %1) on <filename>%2</filename>", targetDevice().partitionTable()->typeName(), targetDevice().deviceNode()));
 }

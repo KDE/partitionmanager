@@ -32,12 +32,14 @@
 #include <kdebug.h>
 #include <klocale.h>
 
-/** Creates a new PartitionTable object with type MSDOS */
-PartitionTable::PartitionTable() :
+/** Creates a new PartitionTable object with type MSDOS
+	@param type name of the PartitionTable type (e.g. "msdos" or "gpt")
+*/
+PartitionTable::PartitionTable(const QString& type) :
 	PartitionNode(),
 	m_Children(),
 	m_MaxPrimaries(4),
-	m_TypeName("msdos"),
+	m_TypeName(type),
 	m_ReadOnly(false)
 {
 }
@@ -105,6 +107,12 @@ Partition* PartitionTable::extended()
 	return NULL;
 }
 
+/** @return true if this type of PartitionTable supports extended partitions */
+bool PartitionTable::canHaveExtended() const
+{
+	return typeName() == "msdos";
+}
+
 /** Gets valid PartitionRoles for a Partition
 	@param p the Partition
 	@return valid roles for the given Partition
@@ -115,7 +123,7 @@ PartitionRole::Roles PartitionTable::childRoles(const Partition& p) const
 
 	PartitionRole::Roles r = p.parent()->isRoot() ? PartitionRole::Primary : PartitionRole::Logical;
 
-	if (r == PartitionRole::Primary && hasExtended() == false)
+	if (r == PartitionRole::Primary && hasExtended() == false && canHaveExtended())
 		r |= PartitionRole::Extended;
 
 	return r;
@@ -547,9 +555,9 @@ void PartitionTable::setTypeName(const QString& s)
 	m_TypeName = s;
 
 	/** @todo
-		The application currently is not prepared to correctly handle any other disk label
-		type than msdos. Until that situation changes, all disk labels but msdos are
+		The application currently is not prepared to correctly handle other disk label
+		types than msdos or gpt. Until that situation changes, all disk labels but those are
 		"read only".
 	*/
-	setReadOnly(typeName() != "msdos");
+	setReadOnly(typeName() != "msdos" && typeName() != "gpt");
 }

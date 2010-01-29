@@ -43,9 +43,9 @@ class LibParted;
 class PartitionTable : public PartitionNode
 {
 	Q_DISABLE_COPY(PartitionTable)
-	
+
 	friend class LibParted;
-	
+
 	public:
 		/** Partition flags as defined by libparted */
 		enum Flag
@@ -67,26 +67,27 @@ class PartitionTable : public PartitionNode
 		Q_DECLARE_FLAGS(Flags, Flag)
 
 	public:
-		PartitionTable();
+		PartitionTable(const QString& type);
 		~PartitionTable();
 
 	public:
 		PartitionNode* parent() { return NULL; } /**< @return always NULL for PartitionTable */
 		const PartitionNode* parent() const { return NULL; } /**< @return always NULL for PartitionTable */
-		
+
 		bool isRoot() const { return true; } /**< @return always true for PartitionTable */
 		bool isReadOnly() const { return m_ReadOnly; } /**< @return true if the PartitionTable is read only */
 
 		Partitions& children() { return m_Children; } /**< @return the children in this PartitionTable */
 		const Partitions& children() const { return m_Children; } /**< @return the children in this PartitionTable */
-		
+
 		void append(Partition* partition);
-		
+
 		qint64 freeSectorsBefore(const Partition& p) const;
 		qint64 freeSectorsAfter(const Partition& p) const;
 
 		bool hasExtended() const;
 		Partition* extended();
+		bool canHaveExtended() const;
 
 		PartitionRole::Roles childRoles(const Partition& p) const;
 
@@ -94,7 +95,7 @@ class PartitionTable : public PartitionNode
 		int maxPrimaries() const { return m_MaxPrimaries; } /**< @return max number of primary partitions this PartitionTable can handle */
 
 		const QString& typeName() const { return m_TypeName; } /**< @return the name of this PartitionTable type according to libparted */
-		
+
 		void updateUnallocated(const Device& d);
 		void insertUnallocated(const Device& d, PartitionNode* p, qint64 start) const;
 
