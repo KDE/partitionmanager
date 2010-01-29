@@ -98,18 +98,22 @@ typedef struct _GPTDiskData GPTDiskData;
     @param t the PartitonTable's type name (e.g. "msdos" or "gpt")
     @return the first sector usable by a Partition
 */
-quint64 LibParted::firstUsableSector(const Device& d, const QString& t)
+quint64 LibParted::firstUsableSector(const Device& d)
 {
 	PedDevice* pedDevice = ped_device_get(d.deviceNode().toAscii());
 	PedDisk* pedDisk = pedDevice ? ped_disk_new(pedDevice) : NULL;
 
 	quint64 rval = pedDisk->dev->bios_geom.sectors + 1;
 
-	if (pedDisk && t == "gpt")
+	if (pedDisk && strcmp(pedDisk->type->name, "gpt") == 0)
 	{
 		GPTDiskData* gpt_disk_data = reinterpret_cast<GPTDiskData*>(pedDisk->disk_specific);
 		PedGeometry* geom = reinterpret_cast<PedGeometry*>(&gpt_disk_data->data_area);
-		rval = geom->start;
+
+		if (geom)
+			rval = geom->start;
+		else
+			rval += 32;
 	}
 
 	return rval;
@@ -121,18 +125,22 @@ quint64 LibParted::firstUsableSector(const Device& d, const QString& t)
     @param t the PartitonTable's type name (e.g. "msdos" or "gpt")
     @return the last sector usable by a Partition
 */
-quint64 LibParted::lastUsableSector(const Device& d, const QString& t)
+quint64 LibParted::lastUsableSector(const Device& d)
 {
 	PedDevice* pedDevice = ped_device_get(d.deviceNode().toAscii());
 	PedDisk* pedDisk = pedDevice ? ped_disk_new(pedDevice) : NULL;
 
 	quint64 rval = pedDisk->dev->bios_geom.sectors * pedDisk->dev->bios_geom.heads * pedDisk->dev->bios_geom.cylinders - 1;
 
-	if (pedDisk && t == "gpt")
+	if (pedDisk && strcmp(pedDisk->type->name, "gpt") == 0)
 	{
 		GPTDiskData* gpt_disk_data = reinterpret_cast<GPTDiskData*>(pedDisk->disk_specific);
 		PedGeometry* geom = reinterpret_cast<PedGeometry*>(&gpt_disk_data->data_area);
-		rval = geom->end;
+
+		if (geom)
+			rval = geom->end;
+		else
+			rval -= 32;
 	}
 
 	return rval;
@@ -316,7 +324,7 @@ void LibParted::scanDevices(OperationStack& ostack)
 
 		if (pedDisk)
 		{
-			d->setPartitionTable(new PartitionTable(pedDisk->type->name, firstUsableSector(*d, pedDisk->type->name), lastUsableSector(*d, pedDisk->type->name)));
+			d->setPartitionTable(new PartitionTable(pedDisk->type->name, firstUsableSector(*d), lastUsableSector(*d)));
 			d->partitionTable()->setMaxPrimaries(ped_disk_get_max_primary_partition_count(pedDisk));
 
 			scanDevicePartitions(pedDevice, *d, pedDisk);

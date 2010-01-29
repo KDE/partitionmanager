@@ -112,6 +112,9 @@ class PartitionTable : public PartitionNode
 		static bool isSnapped(const Device& d, const Partition& p);
 		static bool snap(const Device& d, Partition& p, const Partition* originalPartition = NULL);
 
+		static qint64 defaultFirstUsable(const Device& d, const QString& t);
+		static qint64 defaultLasttUsable(const Device& d, const QString& t);
+
 	protected:
 		void clear();
 		void setMaxPrimaries(qint32 n) { m_MaxPrimaries = n; }

@@ -561,3 +561,16 @@ void PartitionTable::setTypeName(const QString& s)
 	*/
 	setReadOnly(typeName() != "msdos" && typeName() != "gpt");
 }
+
+qint64 PartitionTable::defaultFirstUsable(const Device& d, const QString&)
+{
+	return d.sectorsPerTrack();
+}
+
+qint64 PartitionTable::defaultLasttUsable(const Device& d, const QString& t)
+{
+	if (t == "gpt")
+		return d.totalSectors() - 1 - 32 - 1;
+
+	return d.totalSectors() - 1;
+}

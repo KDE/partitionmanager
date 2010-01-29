@@ -39,7 +39,7 @@ CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d, const QS
 	Operation(),
 	m_TargetDevice(d),
 	m_OldPartitionTable(targetDevice().partitionTable()),
-	m_PartitionTable(new PartitionTable(t, LibParted::firstUsableSector(d, t), LibParted::lastUsableSector(d, t))),
+	m_PartitionTable(new PartitionTable(t, PartitionTable::defaultFirstUsable(d, t), PartitionTable::defaultLasttUsable(d, t))),
 	m_CreatePartitionTableJob(new CreatePartitionTableJob(targetDevice()))
 {
 	addJob(createPartitionTableJob());
