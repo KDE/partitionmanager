@@ -63,6 +63,81 @@ static PedExceptionOption pedExceptionHandler(PedException* e)
 	return PED_EXCEPTION_UNHANDLED;
 }
 
+// --------------------------------------------------------------------------
+
+// The following structs and the typedef come from libparted's internal gpt sources.
+// It's very unfortunate there is no public API to get at the first and last usable
+// sector for GPT a partition table, so this is the only (libparted) way to get that
+// information (another way would be to read the GPT header and parse the
+// information ourselves; if the libparted devs begin chaning these internal
+// structs for each point release and break our code, we'll have to do just that).
+
+typedef struct {
+        uint32_t time_low;
+        uint16_t time_mid;
+        uint16_t time_hi_and_version;
+        uint8_t  clock_seq_hi_and_reserved;
+        uint8_t  clock_seq_low;
+        uint8_t  node[6];
+} /* __attribute__ ((packed)) */ efi_guid_t;
+
+
+struct __attribute__ ((packed)) _GPTDiskData {
+    PedGeometry data_area;
+    int     entry_count;
+    efi_guid_t  uuid;
+};
+
+typedef struct _GPTDiskData GPTDiskData;
+
+// --------------------------------------------------------------------------
+
+/** Get the first sector a Partition may cover on a given Device with a PartitionTable of
+    type t.
+    @param d the Device in question
+    @param t the PartitonTable's type name (e.g. "msdos" or "gpt")
+    @return the first sector usable by a Partition
+*/
+quint64 LibParted::firstUsableSector(const Device& d, const QString& t)
+{
+	PedDevice* pedDevice = ped_device_get(d.deviceNode().toAscii());
+	PedDisk* pedDisk = pedDevice ? ped_disk_new(pedDevice) : NULL;
+
+	quint64 rval = pedDisk->dev->bios_geom.sectors + 1;
+
+	if (pedDisk && t == "gpt")
+	{
+		GPTDiskData* gpt_disk_data = reinterpret_cast<GPTDiskData*>(pedDisk->disk_specific);
+		PedGeometry* geom = reinterpret_cast<PedGeometry*>(&gpt_disk_data->data_area);
+		rval = geom->start;
+	}
+
+	return rval;
+}
+
+/** Get the last sector a Partition may cover on a given Device with a PartitionTable of
+    type t.
+    @param d the Device in question
+    @param t the PartitonTable's type name (e.g. "msdos" or "gpt")
+    @return the last sector usable by a Partition
+*/
+quint64 LibParted::lastUsableSector(const Device& d, const QString& t)
+{
+	PedDevice* pedDevice = ped_device_get(d.deviceNode().toAscii());
+	PedDisk* pedDisk = pedDevice ? ped_disk_new(pedDevice) : NULL;
+
+	quint64 rval = pedDisk->dev->bios_geom.sectors * pedDisk->dev->bios_geom.heads * pedDisk->dev->bios_geom.cylinders - 1;
+
+	if (pedDisk && t == "gpt")
+	{
+		GPTDiskData* gpt_disk_data = reinterpret_cast<GPTDiskData*>(pedDisk->disk_specific);
+		PedGeometry* geom = reinterpret_cast<PedGeometry*>(&gpt_disk_data->data_area);
+		rval = geom->end;
+	}
+
+	return rval;
+}
+
 /** Reads sectors used on a FileSystem using libparted functions.
 	@param pedDisk pointer to pedDisk  where the Partition and its FileSystem are
 	@param p the Partition the FileSystem is on
@@ -241,7 +316,7 @@ void LibParted::scanDevices(OperationStack& ostack)
 
 		if (pedDisk)
 		{
-			d->setPartitionTable(new PartitionTable(pedDisk->type->name));
+			d->setPartitionTable(new PartitionTable(pedDisk->type->name, firstUsableSector(*d, pedDisk->type->name), lastUsableSector(*d, pedDisk->type->name)));
 			d->partitionTable()->setMaxPrimaries(ped_disk_get_max_primary_partition_count(pedDisk));
 
 			scanDevicePartitions(pedDevice, *d, pedDisk);
@@ -252,3 +327,4 @@ void LibParted::scanDevices(OperationStack& ostack)
 
 	ostack.sortDevices();
 }
+

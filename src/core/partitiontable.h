@@ -67,7 +67,7 @@ class PartitionTable : public PartitionNode
 		Q_DECLARE_FLAGS(Flags, Flag)
 
 	public:
-		PartitionTable(const QString& type);
+		PartitionTable(const QString& type, qint64 first_usable, qint64 last_usable);
 		~PartitionTable();
 
 	public:
@@ -96,6 +96,9 @@ class PartitionTable : public PartitionNode
 
 		const QString& typeName() const { return m_TypeName; } /**< @return the name of this PartitionTable type according to libparted */
 
+		qint64 firstUsable() const { return m_FirstUsable; }
+		qint64 lastUsable() const { return m_LastUsable; }
+
 		void updateUnallocated(const Device& d);
 		void insertUnallocated(const Device& d, PartitionNode* p, qint64 start) const;
 
@@ -120,6 +123,8 @@ class PartitionTable : public PartitionNode
 		qint32 m_MaxPrimaries;
 		QString m_TypeName;
 		bool m_ReadOnly;
+		qint64 m_FirstUsable;
+		qint64 m_LastUsable;
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(PartitionTable::Flags)

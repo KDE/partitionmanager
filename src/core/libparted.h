@@ -24,6 +24,9 @@
 #include <qglobal.h>
 
 class OperationStack;
+class Device;
+
+class QString;
 
 /** @brief Scanning for Devices.
 
@@ -42,6 +45,8 @@ class LibParted
 
 	public:
 		void scanDevices(OperationStack& ostack);
+		static quint64 firstUsableSector(const Device& d, const QString& t);
+		static quint64 lastUsableSector(const Device& d, const QString& t);
 };
 
 #endif

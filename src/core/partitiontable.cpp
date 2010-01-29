@@ -35,12 +35,14 @@
 /** Creates a new PartitionTable object with type MSDOS
 	@param type name of the PartitionTable type (e.g. "msdos" or "gpt")
 */
-PartitionTable::PartitionTable(const QString& type) :
+PartitionTable::PartitionTable(const QString& type, qint64 first_usable, qint64 last_usable) :
 	PartitionNode(),
 	m_Children(),
-	m_MaxPrimaries(4),
+	m_MaxPrimaries(type == "gpt" ? 128 : 4),
 	m_TypeName(type),
-	m_ReadOnly(false)
+	m_ReadOnly(false),
+	m_FirstUsable(first_usable),
+	m_LastUsable(last_usable)
 {
 }
 
@@ -282,7 +284,7 @@ static bool canSnapToSector(const Device& d, const Partition& p, qint64 s, const
 {
 	Q_ASSERT(d.partitionTable());
 
-	if (s < d.sectorsPerTrack() || s >= d.totalSectors())
+	if (s < d.partitionTable()->firstUsable() || s >= d.partitionTable()->lastUsable())
 		return false;
 
 	const Partition* other = d.partitionTable()->findPartitionBySector(s, PartitionRole(PartitionRole::Logical | PartitionRole::Primary | PartitionRole::Extended | PartitionRole::Unallocated));
@@ -444,8 +446,6 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 			return NULL;
 		}
 
-		Q_ASSERT(extended);
-
 		// Leave a track free at the start for a new partition's metadata
 		start += device.sectorsPerTrack();
 
@@ -528,7 +528,7 @@ void PartitionTable::insertUnallocated(const Device& d, PartitionNode* p, qint64
 
 	// Take care of the free space between the end of the last child and the end
 	// of the device or the extended partition.
-	qint64 parentEnd = d.totalSectors() - 1;
+	qint64 parentEnd = lastUsable();
 
 	if (!p->isRoot())
 	{

@@ -22,6 +22,7 @@
 #include "core/device.h"
 #include "core/partitiontable.h"
 #include "core/partition.h"
+#include "core/libparted.h"
 
 #include "jobs/createpartitiontablejob.h"
 
@@ -38,7 +39,7 @@ CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d, const QS
 	Operation(),
 	m_TargetDevice(d),
 	m_OldPartitionTable(targetDevice().partitionTable()),
-	m_PartitionTable(new PartitionTable(t)),
+	m_PartitionTable(new PartitionTable(t, LibParted::firstUsableSector(d, t), LibParted::lastUsableSector(d, t))),
 	m_CreatePartitionTableJob(new CreatePartitionTableJob(targetDevice()))
 {
 	addJob(createPartitionTableJob());
