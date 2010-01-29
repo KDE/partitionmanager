@@ -184,7 +184,7 @@ int isNotFound(struct direntry_t *entry)
 
 static int isSpecial(const char *name)
 {
-	return name[0] == '\0' || !strcmp(name, ".") || !strcmp(name, "..") ? 1 : 0;
+	return name && (name[0] == '\0' || !strcmp(name, ".") || !strcmp(name, "..")) ? 1 : 0;
 }
 
 static int convert_to_shortname(struct doscp_t *cp, struct ClashHandling_t *ch, const char *un, struct dos_name_t *dn)
@@ -270,18 +270,13 @@ static clash_action get_slots(struct Stream_t *Dir,
 	return NAMEMATCH_ERROR;
 }
 
-static int write_slots(struct Stream_t *Dir,
-		struct dos_name_t *dosname,
-		char *longname,
-		struct scan_state *ssp,
-		write_data_callback *cb,
-		int Case)
+static int write_slots(struct Stream_t *Dir, struct dos_name_t *dosname, char *longname, struct scan_state *ssp, write_data_callback *cb, int Case)
 {
-	struct direntry_t entry;
-
 	/* write the file */
 	if (fat_error(Dir))
-		return 0;
+		return -1;
+
+	struct direntry_t entry;
 
 	entry.Dir = Dir;
 	entry.entry = ssp->slot;
@@ -291,52 +286,54 @@ static int write_slots(struct Stream_t *Dir,
 	entry.name[MAX_VNAMELEN] = '\0';
 	entry.dir.Case = Case & (EXTCASE | BASECASE);
 
-	if (cb(dosname, &entry) >= 0)
-	{
-		if ((ssp->size_needed > 1) && (ssp->free_end - ssp->free_start >= ssp->size_needed))
-			ssp->slot = write_vfat(Dir, dosname, longname, ssp->free_start, &entry);
-		else
-		{
-			ssp->size_needed = 1;
-			write_vfat(Dir, dosname, 0, ssp->free_start, &entry);
-		}
-	}
-	else
-		return 0;
+	if (cb(dosname, &entry) < 0)
+		return -2;
 
-	return 1;	/* Successfully wrote the file */
+	if ((ssp->size_needed > 1) && (ssp->free_end - ssp->free_start >= ssp->size_needed))
+		ssp->slot = write_vfat(Dir, dosname, longname, ssp->free_start, &entry);
+	else
+	{
+		ssp->size_needed = 1;
+		write_vfat(Dir, dosname, 0, ssp->free_start, &entry);
+	}
+
+	return 0;	/* Successfully wrote the file */
 }
 
-static int _mwrite_one(struct Stream_t *Dir, char *argname, write_data_callback *cb, struct ClashHandling_t *ch)
+int mwrite_one(struct Stream_t *Dir, const char *argname, write_data_callback *cb, struct ClashHandling_t *ch)
 {
-	char longname[VBUFSIZE];
-	struct dos_name_t dosname;
-	int expanded = 0;
-	struct scan_state scan;
-	clash_action ret;
-	struct doscp_t *cp = GET_DOSCONVERT(Dir);
+	if (argname == NULL)
+		return -1;
 
-	if(isSpecial(argname))
+	if (isSpecial(argname))
 	{
 		fprintf(stderr, "Cannot create entry named . or ..\n");
 		return -1;
 	}
 
 	/* Copy original argument dstname to working value longname */
+	char longname[VBUFSIZE];
 	strncpy(longname, argname, VBUFSIZE - 1);
 
+	struct doscp_t *cp = GET_DOSCONVERT(Dir);
+	struct dos_name_t dosname;
 	ch->use_longname = convert_to_shortname(cp, ch, longname, &dosname);
 
 	ch->action[0] = ch->namematch_default[0];
 	ch->action[1] = ch->namematch_default[1];
 
-	while (1)
+	int expanded = 0;
+	clash_action ret;
+
+	for (;;)
 	{
+		struct scan_state scan;
+
 		switch((ret = get_slots(Dir, &dosname, longname, &scan, ch)))
 		{
 			case NAMEMATCH_ERROR:
 			case NAMEMATCH_SKIP:
-				return -1;	/* Skip file (user request or error) */
+				return -1;
 
 			case NAMEMATCH_GREW:
 				/* No collision, and not enough slots. Try to grow the directory */
@@ -350,6 +347,7 @@ static int _mwrite_one(struct Stream_t *Dir, char *argname, write_data_callback 
 
 				if (dir_grow(Dir, scan.max_entry))
 					return -1;
+
 				continue;
 
 			case NAMEMATCH_SUCCESS:
@@ -360,16 +358,6 @@ static int _mwrite_one(struct Stream_t *Dir, char *argname, write_data_callback 
 				return -1;
 		}
 	}
-}
-
-int mwrite_one(struct Stream_t *Dir,
-		const char *_argname,
-		write_data_callback *cb,
-		struct ClashHandling_t *ch)
-{
-	char* argname = _argname ? strdup(_argname) : NULL;
-	int ret = _mwrite_one(Dir, argname, cb, ch);
-	free(argname);
 
 	return ret;
 }

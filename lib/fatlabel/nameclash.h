@@ -24,10 +24,10 @@ struct doscp_t;
 
 typedef enum clash_action
 {
+	NAMEMATCH_SUCCESS = 0,
 	NAMEMATCH_NONE,
 	NAMEMATCH_SKIP,
 	NAMEMATCH_ERROR,
-	NAMEMATCH_SUCCESS,
 	NAMEMATCH_GREW
 } clash_action;
 

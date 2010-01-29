@@ -171,7 +171,9 @@ int fatlabel_set_label(const char* device_name, const char* new_label)
 	 * 6. Write new entry
 	 */
 	ch.ignore_entry = 1;
-	int result = mwrite_one(RootDir, new_label, labelit, &ch) ?  0 : 1;
+
+	/* don't try to write the label if it's empty */
+	int result = strlen(new_label) ? mwrite_one(RootDir, new_label, labelit, &ch) : 0;
 
 	/*
 	 * 7. Load FAT boot record
