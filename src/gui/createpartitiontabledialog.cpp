@@ -30,7 +30,7 @@ CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const De
 	m_Device(d)
 {
 	setMainWidget(&widget());
-	setCaption(i18nc("@title:window", "Create a New Partitin Table on <filename>%1</filename>", device().deviceNode()));
+	setCaption(i18nc("@title:window", "Create a New Partition Table on <filename>%1</filename>", device().deviceNode()));
 	setButtonText(KDialog::Ok, i18nc("@action:button", "&Create New Partition Table"));
 }
 
