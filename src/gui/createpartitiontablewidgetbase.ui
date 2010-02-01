@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>325</width>
-    <height>168</height>
+    <height>193</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,14 +25,21 @@
     </widget>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0">
      <item>
       <widget class="QRadioButton" name="m_RadioMSDOS">
        <property name="text">
-        <string>MSDOS</string>
+        <string>MS-Dos</string>
        </property>
        <property name="checked">
         <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="m_RadioMSDOSVista">
+       <property name="text">
+        <string>MS-Dos (Windows Vista compatible)</string>
        </property>
       </widget>
      </item>

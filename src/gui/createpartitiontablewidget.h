@@ -38,6 +38,9 @@ class CreatePartitionTableWidget : public QWidget, public Ui::CreatePartitionTab
 		QRadioButton& radioMSDOS() { return *m_RadioMSDOS; }
 		const QRadioButton& radioMSDOS() const { return *m_RadioMSDOS; }
 
+		QRadioButton& radioMSDOSVista() { return *m_RadioMSDOSVista; }
+		const QRadioButton& radioMSDOSVista() const { return *m_RadioMSDOSVista; }
+
 		QRadioButton& radioGPT() { return *m_RadioGPT; }
 		const QRadioButton& radioGPT() const { return *m_RadioGPT; }
 

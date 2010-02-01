@@ -35,12 +35,11 @@
 /** Creates a new PartitionTable object with type MSDOS
 	@param type name of the PartitionTable type (e.g. "msdos" or "gpt")
 */
-PartitionTable::PartitionTable(const QString& type, qint64 first_usable, qint64 last_usable) :
+PartitionTable::PartitionTable(LabelType type, qint64 first_usable, qint64 last_usable) :
 	PartitionNode(),
 	m_Children(),
-	m_MaxPrimaries(type == "gpt" ? 128 : 4),
-	m_TypeName(type),
-	m_ReadOnly(false),
+	m_MaxPrimaries(maxPrimariesForLabelType(type)),
+	m_Type(type),
 	m_FirstUsable(first_usable),
 	m_LastUsable(last_usable)
 {
@@ -49,13 +48,6 @@ PartitionTable::PartitionTable(const QString& type, qint64 first_usable, qint64 
 /** Destroys a PartitionTable object, destroying all children */
 PartitionTable::~PartitionTable()
 {
-	clear();
-}
-
-void PartitionTable::clear()
-{
-	setMaxPrimaries(4);
-	setTypeName("msdos");
 	clearChildren();
 }
 
@@ -109,12 +101,6 @@ Partition* PartitionTable::extended()
 	return NULL;
 }
 
-/** @return true if this type of PartitionTable supports extended partitions */
-bool PartitionTable::canHaveExtended() const
-{
-	return typeName() == "msdos";
-}
-
 /** Gets valid PartitionRoles for a Partition
 	@param p the Partition
 	@return valid roles for the given Partition
@@ -125,7 +111,7 @@ PartitionRole::Roles PartitionTable::childRoles(const Partition& p) const
 
 	PartitionRole::Roles r = p.parent()->isRoot() ? PartitionRole::Primary : PartitionRole::Logical;
 
-	if (r == PartitionRole::Primary && hasExtended() == false && canHaveExtended())
+	if (r == PartitionRole::Primary && hasExtended() == false && diskLabelSupportsExtended(type()))
 		r |= PartitionRole::Extended;
 
 	return r;
@@ -231,6 +217,10 @@ QStringList PartitionTable::flagNames(Flags flags)
 */
 bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 {
+	// only msdos gets snapped -- TODO: add msdos_vista
+	if (d.partitionTable()->type() != msdos)
+		return true;
+
 	// don't bother with unallocated space here.
 	if (p.roles().has(PartitionRole::Unallocated))
 		return true;
@@ -314,6 +304,10 @@ static bool canSnapToSector(const Device& d, const Partition& p, qint64 s, const
 */
 bool PartitionTable::snap(const Device& d, Partition& p, const Partition* originalPartition)
 {
+	// TODO: implement snapping to 2048-sector-boundaries for msdos_vista
+	if (d.partitionTable()->type() != msdos)
+		return true;
+
 	const qint64 originalLength = p.length();
 	qint64 delta = 0;
 	bool lengthIsSnapped = false;
@@ -462,6 +456,7 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 		r |= PartitionRole::Logical;
 	}
 
+	// TODO: what happens with this for non-msdos disk labels?
 	if (end - start + 1 < device.cylinderSize())
 		return NULL;
 
@@ -542,7 +537,7 @@ void PartitionTable::insertUnallocated(const Device& d, PartitionNode* p, qint64
 		parentEnd = (extended != NULL) ? extended->lastSector() : -1;
 	}
 
-	if (parentEnd >= d.cylinderSize())
+	if (parentEnd >= firstUsable())
 		p->insert(createUnallocated(d, *p, lastEnd, parentEnd));
 }
 
@@ -552,30 +547,112 @@ void PartitionTable::insertUnallocated(const Device& d, PartitionNode* p, qint64
 void PartitionTable::updateUnallocated(const Device& d)
 {
 	removeUnallocated();
-	insertUnallocated(d, this, d.sectorsPerTrack());
+	insertUnallocated(d, this, firstUsable());
 }
 
-void PartitionTable::setTypeName(const QString& s)
+qint64 PartitionTable::defaultFirstUsable(const Device& d, LabelType t)
 {
-	m_TypeName = s;
+	if (t == msdos_vista)
+		return 2048;
 
-	/** @todo
-		The application currently is not prepared to correctly handle other disk label
-		types than msdos or gpt. Until that situation changes, all disk labels but those are
-		"read only".
-	*/
-	setReadOnly(typeName() != "msdos" && typeName() != "gpt");
-}
-
-qint64 PartitionTable::defaultFirstUsable(const Device& d, const QString&)
-{
 	return d.sectorsPerTrack() - 1;
 }
 
-qint64 PartitionTable::defaultLasttUsable(const Device& d, const QString& t)
+qint64 PartitionTable::defaultLastUsable(const Device& d, LabelType t)
 {
-	if (t == "gpt")
+	if (t == gpt)
 		return d.totalSectors() - 1 - 32 - 1;
 
 	return d.totalSectors() - 1;
 }
+
+static struct
+{
+	const char* name; /**< name of disk label in libparted */
+	quint32 maxPrimaries; /**< max numbers of primary partitions supported */
+	bool canHaveExtended; /**< does disk label support extended partitions */
+	bool isReadOnly; /**< does KDE Partition Manager support this only in read only mode */
+	PartitionTable::LabelType type; /**< enum type */
+} diskLabels[] =
+{
+	{ "aix", 4, false, true, PartitionTable::aix },
+	{ "bsd", 8, false, true, PartitionTable::bsd },
+	{ "dasd", 1, false, true, PartitionTable::dasd },
+	{ "msdos", 4, true, false, PartitionTable::msdos },
+	{ "msdos (vista)", 4, true, false, PartitionTable::msdos_vista },
+	{ "dvh", 16, true, true, PartitionTable::dvh },
+	{ "gpt", 128, false, false, PartitionTable::gpt },
+	{ "loop", 1, false, true, PartitionTable::loop },
+	{ "mac", 0xffff, false, true, PartitionTable::mac },
+	{ "pc98", 16, false, true, PartitionTable::pc98 },
+	{ "amiga", 128, false, true, PartitionTable::amiga },
+	{ "sun", 8, false, true, PartitionTable::sun }
+};
+
+PartitionTable::LabelType PartitionTable::nameToLabelType(const QString& n)
+{
+	for (size_t i = 0; i < sizeof(diskLabels) / sizeof(diskLabels[0]); i++)
+		if (n == diskLabels[i].name)
+			return diskLabels[i].type;
+
+	return PartitionTable::unknownLabel;
+}
+
+QString PartitionTable::labelTypeToName(LabelType l)
+{
+	for (size_t i = 0; i < sizeof(diskLabels) / sizeof(diskLabels[0]); i++)
+		if (l == diskLabels[i].type)
+			return diskLabels[i].name;
+
+	return i18nc("@item/plain disk label name", "unknown");
+}
+
+qint64 PartitionTable::maxPrimariesForLabelType(LabelType l)
+{
+	for (size_t i = 0; i < sizeof(diskLabels) / sizeof(diskLabels[0]); i++)
+		if (l == diskLabels[i].type)
+			return diskLabels[i].maxPrimaries;
+
+	return 1;
+}
+
+bool PartitionTable::diskLabelSupportsExtended(LabelType l)
+{
+	for (size_t i = 0; i < sizeof(diskLabels) / sizeof(diskLabels[0]); i++)
+		if (l == diskLabels[i].type)
+			return diskLabels[i].canHaveExtended;
+
+	return false;
+}
+
+bool PartitionTable::diskLabelIsReadOnly(LabelType l)
+{
+	for (size_t i = 0; i < sizeof(diskLabels) / sizeof(diskLabels[0]); i++)
+		if (l == diskLabels[i].type)
+			return diskLabels[i].isReadOnly;
+
+	return false;
+}
+
+bool PartitionTable::isVistaDiskLabel() const
+{
+	if (type() == PartitionTable::msdos)
+	{
+		const Partition* part = findPartitionBySector(2048, PartitionRole(PartitionRole::Primary));
+		if (part && part->firstSector() == 2048)
+			return true;
+	}
+
+	return false;
+}
+
+void PartitionTable::setType(LabelType t)
+{
+	// hack: if the type has been msdos and is now set to vista, make sure to also
+	// set the first usable sector to 2048 now.
+	if (type() == msdos && t == msdos_vista)
+		setFirstUsableSector(2048);
+
+	m_Type = t;
+}
+

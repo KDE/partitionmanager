@@ -23,6 +23,8 @@
 
 #include "gui/createpartitiontablewidget.h"
 
+#include "core/partitiontable.h"
+
 #include <kdialog.h>
 
 class Device;
@@ -35,7 +37,7 @@ class CreatePartitionTableDialog : public KDialog
 		CreatePartitionTableDialog(QWidget* parent, const Device& d);
 
 	public:
-		QString typeName() const;
+		PartitionTable::LabelType type() const;
 
 	protected:
 		CreatePartitionTableWidget& widget() { return *m_DialogWidget; }

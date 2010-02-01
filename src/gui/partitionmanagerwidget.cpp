@@ -917,7 +917,7 @@ void PartitionManagerWidget::onCreateNewPartitionTable()
 
 	if (dlg->exec() == KDialog::Accepted)
 	{
-		operationStack().push(new CreatePartitionTableOperation(*selectedDevice(), dlg->typeName()));
+		operationStack().push(new CreatePartitionTableOperation(*selectedDevice(), dlg->type()));
 
 		updatePartitions();
 		emit statusChanged();

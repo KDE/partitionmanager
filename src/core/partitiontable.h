@@ -47,6 +47,24 @@ class PartitionTable : public PartitionNode
 	friend class LibParted;
 
 	public:
+		enum LabelType
+		{
+			unknownLabel = -1,
+
+			aix,
+			bsd,
+			dasd,
+			msdos,
+			msdos_vista,
+			dvh,
+			gpt,
+			loop,
+			mac,
+			pc98,
+			amiga,
+			sun
+		};
+
 		/** Partition flags as defined by libparted */
 		enum Flag
 		{
@@ -67,7 +85,7 @@ class PartitionTable : public PartitionNode
 		Q_DECLARE_FLAGS(Flags, Flag)
 
 	public:
-		PartitionTable(const QString& type, qint64 first_usable, qint64 last_usable);
+		PartitionTable(LabelType type, qint64 first_usable, qint64 last_usable);
 		~PartitionTable();
 
 	public:
@@ -75,10 +93,12 @@ class PartitionTable : public PartitionNode
 		const PartitionNode* parent() const { return NULL; } /**< @return always NULL for PartitionTable */
 
 		bool isRoot() const { return true; } /**< @return always true for PartitionTable */
-		bool isReadOnly() const { return m_ReadOnly; } /**< @return true if the PartitionTable is read only */
+		bool isReadOnly() const { return diskLabelIsReadOnly(type()); } /**< @return true if the PartitionTable is read only */
 
 		Partitions& children() { return m_Children; } /**< @return the children in this PartitionTable */
 		const Partitions& children() const { return m_Children; } /**< @return the children in this PartitionTable */
+
+		void setType(LabelType t);
 
 		void append(Partition* partition);
 
@@ -87,20 +107,22 @@ class PartitionTable : public PartitionNode
 
 		bool hasExtended() const;
 		Partition* extended();
-		bool canHaveExtended() const;
 
 		PartitionRole::Roles childRoles(const Partition& p) const;
 
 		int numPrimaries() const;
 		int maxPrimaries() const { return m_MaxPrimaries; } /**< @return max number of primary partitions this PartitionTable can handle */
 
-		const QString& typeName() const { return m_TypeName; } /**< @return the name of this PartitionTable type according to libparted */
+		PartitionTable::LabelType type() const { return m_Type; } /**< @return the disk label type */
+		const QString typeName() const { return labelTypeToName(type()); } /**< @return the name of this PartitionTable type according to libparted */
 
 		qint64 firstUsable() const { return m_FirstUsable; }
 		qint64 lastUsable() const { return m_LastUsable; }
 
 		void updateUnallocated(const Device& d);
 		void insertUnallocated(const Device& d, PartitionNode* p, qint64 start) const;
+
+		bool isVistaDiskLabel() const;
 
 		static QList<Flag> flagList();
 		static QString flagName(Flag f);
@@ -112,20 +134,23 @@ class PartitionTable : public PartitionNode
 		static bool isSnapped(const Device& d, const Partition& p);
 		static bool snap(const Device& d, Partition& p, const Partition* originalPartition = NULL);
 
-		static qint64 defaultFirstUsable(const Device& d, const QString& t);
-		static qint64 defaultLasttUsable(const Device& d, const QString& t);
+		static qint64 defaultFirstUsable(const Device& d, LabelType t);
+		static qint64 defaultLastUsable(const Device& d, LabelType t);
+
+		static PartitionTable::LabelType nameToLabelType(const QString& n);
+		static QString labelTypeToName(LabelType l);
+		static qint64 maxPrimariesForLabelType(LabelType l);
+		static bool diskLabelSupportsExtended(LabelType l);
+		static bool diskLabelIsReadOnly(LabelType l);
 
 	protected:
-		void clear();
 		void setMaxPrimaries(qint32 n) { m_MaxPrimaries = n; }
-		void setTypeName(const QString& s);
-		void setReadOnly(bool b) { m_ReadOnly = b; }
+		void setFirstUsableSector(qint64 s) { m_FirstUsable = s; }
 
 	private:
 		Partitions m_Children;
 		qint32 m_MaxPrimaries;
-		QString m_TypeName;
-		bool m_ReadOnly;
+		LabelType m_Type;
 		qint64 m_FirstUsable;
 		qint64 m_LastUsable;
 };

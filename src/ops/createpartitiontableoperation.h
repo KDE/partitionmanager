@@ -23,6 +23,8 @@
 
 #include "ops/operation.h"
 
+#include "core/partitiontable.h"
+
 #include <QString>
 
 class Device;
@@ -38,7 +40,7 @@ class CreatePartitionTableOperation : public Operation
 	Q_DISABLE_COPY(CreatePartitionTableOperation)
 
 	public:
-		CreatePartitionTableOperation(Device& d, const QString& t);
+		CreatePartitionTableOperation(Device& d, PartitionTable::LabelType t);
 		~CreatePartitionTableOperation();
 
 	public:

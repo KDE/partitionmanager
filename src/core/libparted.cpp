@@ -272,6 +272,9 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 
 		parent->append(part);
 
+		if (d.partitionTable()->isVistaDiskLabel())
+			d.partitionTable()->setType(PartitionTable::msdos_vista);
+
 		PartitionTable::isSnapped(d, *part);
 	}
 
@@ -324,7 +327,8 @@ void LibParted::scanDevices(OperationStack& ostack)
 
 		if (pedDisk)
 		{
-			d->setPartitionTable(new PartitionTable(pedDisk->type->name, firstUsableSector(*d), lastUsableSector(*d)));
+			const PartitionTable::LabelType type = PartitionTable::nameToLabelType(pedDisk->type->name);
+			d->setPartitionTable(new PartitionTable(type, firstUsableSector(*d), lastUsableSector(*d)));
 			d->partitionTable()->setMaxPrimaries(ped_disk_get_max_primary_partition_count(pedDisk));
 
 			scanDevicePartitions(pedDevice, *d, pedDisk);

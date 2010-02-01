@@ -33,17 +33,16 @@
 
 /** Creates a new CreatePartitionTableOperation.
 	@param d the Device to create the new PartitionTable on
-	@param t the type name for the new PartitionTable (e.g. "msdos" or "gpt")
+	@param t the type for the new PartitionTable
 */
-CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d, const QString& t) :
+CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d, PartitionTable::LabelType t) :
 	Operation(),
 	m_TargetDevice(d),
 	m_OldPartitionTable(targetDevice().partitionTable()),
-	m_PartitionTable(new PartitionTable(t, PartitionTable::defaultFirstUsable(d, t), PartitionTable::defaultLasttUsable(d, t))),
+	m_PartitionTable(new PartitionTable(t, PartitionTable::defaultFirstUsable(d, t), PartitionTable::defaultLastUsable(d, t))),
 	m_CreatePartitionTableJob(new CreatePartitionTableJob(targetDevice()))
 {
 	addJob(createPartitionTableJob());
-	partitionTable()->insertUnallocated(targetDevice(), partitionTable(), targetDevice().sectorsPerTrack());
 }
 
 CreatePartitionTableOperation::~CreatePartitionTableOperation()

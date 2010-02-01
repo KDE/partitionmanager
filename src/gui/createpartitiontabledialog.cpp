@@ -21,6 +21,7 @@
 #include "gui/createpartitiontablewidget.h"
 
 #include "core/device.h"
+#include "core/partitiontable.h"
 
 #include <klocale.h>
 
@@ -34,7 +35,13 @@ CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const De
 	setButtonText(KDialog::Ok, i18nc("@action:button", "&Create New Partition Table"));
 }
 
-QString CreatePartitionTableDialog::typeName() const
+PartitionTable::LabelType CreatePartitionTableDialog::type() const
 {
-	return widget().radioGPT().isChecked() ? "gpt" : "msdos";
+	if (widget().radioGPT().isChecked())
+		return PartitionTable::gpt;
+
+	if (widget().radioMSDOSVista().isChecked())
+		return PartitionTable::msdos_vista;
+
+	return PartitionTable::msdos;
 }
