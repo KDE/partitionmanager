@@ -564,7 +564,7 @@ void PartitionTable::setTypeName(const QString& s)
 
 qint64 PartitionTable::defaultFirstUsable(const Device& d, const QString&)
 {
-	return d.sectorsPerTrack();
+	return d.sectorsPerTrack() - 1;
 }
 
 qint64 PartitionTable::defaultLasttUsable(const Device& d, const QString& t)

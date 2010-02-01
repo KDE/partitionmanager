@@ -103,7 +103,7 @@ quint64 LibParted::firstUsableSector(const Device& d)
 	PedDevice* pedDevice = ped_device_get(d.deviceNode().toAscii());
 	PedDisk* pedDisk = pedDevice ? ped_disk_new(pedDevice) : NULL;
 
-	quint64 rval = pedDisk->dev->bios_geom.sectors + 1;
+	quint64 rval = pedDisk->dev->bios_geom.sectors;
 
 	if (pedDisk && strcmp(pedDisk->type->name, "gpt") == 0)
 	{
