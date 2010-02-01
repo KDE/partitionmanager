@@ -351,11 +351,16 @@ bool PartitionTable::snap(const Device& d, Partition& p, const Partition* origin
 		// ends up too small. So try to move the start to the front first.
 		qint64 snappedFirst = p.firstSector() - delta;
 
+		// If we're now before the first usable sector, just take the first usable sector. This
+		// will happen if we're already below cylinder one and snap to the front
+		if (snappedFirst < d.partitionTable()->firstUsable())
+			snappedFirst = d.partitionTable()->firstUsable();
+
 		// Now if the cylinder boundary at the front is occupied...
 		if (!canSnapToSector(d, p, snappedFirst, originalPartition))
 		{
 			// ... move to the cylinder towards the end of the device ...
-			snappedFirst += d.cylinderSize();
+			snappedFirst = p.firstSector() - delta + d.cylinderSize();
 
 			// ... and move the end of the partition towards the end, too, if that is possible.
 			// By doing this, we still try to keep the length >= the original length. If the
