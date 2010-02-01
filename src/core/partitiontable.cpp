@@ -352,7 +352,7 @@ bool PartitionTable::snap(const Device& d, Partition& p, const Partition* origin
 		qint64 snappedFirst = p.firstSector() - delta;
 
 		// Now if the cylinder boundary at the front is occupied...
-		if (!canSnapToSector(d, p, p.firstSector() - delta, originalPartition))
+		if (!canSnapToSector(d, p, snappedFirst, originalPartition))
 		{
 			// ... move to the cylinder towards the end of the device ...
 			snappedFirst += d.cylinderSize();
