@@ -951,6 +951,7 @@ void PartitionManagerWidget::onUndoOperation()
 	updatePartitions();
 	emit operationsChanged();
 	emit statusChanged();
+	emit devicesChanged();
 	enableActions();
 }
 
