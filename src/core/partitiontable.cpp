@@ -206,7 +206,7 @@ QStringList PartitionTable::flagNames(Flags flags)
 
 /** @return the sector size to snap the partition start and end to
 */
-static quint64 sectorAlignment(const Device& d)
+static qint64 sectorAlignment(const Device& d)
 {
 	return d.partitionTable()->type() == PartitionTable::msdos ? d.cylinderSize() : 2048;
 }
@@ -453,19 +453,18 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 			return NULL;
 		}
 
-		// Leave a track free at the start for a new partition's metadata
-		start += device.sectorsPerTrack();
+		// Leave a track (msdos) or sector alignment sectors (vista) free at the start for a new partition's metadata
+		start += device.partitionTable()->type() == PartitionTable::msdos ? device.sectorsPerTrack() : sectorAlignment(device);
 
 		// .. and also at the end for the metadata for a partition to follow us, if we're not
 		// at the end of the extended partition
 		if (end < extended->lastSector())
-			end -= device.sectorsPerTrack();
+			end -= device.partitionTable()->type() == PartitionTable::msdos ? device.sectorsPerTrack() : sectorAlignment(device);
 
 		r |= PartitionRole::Logical;
 	}
 
-	// TODO: what happens with this for non-msdos disk labels?
-	if (end - start + 1 < device.cylinderSize())
+	if (end - start + 1 < sectorAlignment(device))
 		return NULL;
 
 	return new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, -1);
