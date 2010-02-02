@@ -319,6 +319,12 @@ void LibParted::scanDevices(OperationStack& ostack)
 		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
 		PedDevice* pedDevice = ped_device_get(solidBlock->device().toLocal8Bit());
 
+		if (pedDevice == NULL)
+		{
+			Log(Log::warning) << i18nc("@info/plain", "Could not access device <filename>%1</filename>", solidBlock->device());
+			continue;
+		}
+
 		Log(Log::information) << i18nc("@info/plain", "Device found: %1", pedDevice->model);
 
 		Device* d = new Device(pedDevice->model, pedDevice->path, pedDevice->bios_geom.heads, pedDevice->bios_geom.sectors, pedDevice->bios_geom.cylinders, pedDevice->sector_size, solidDevice.icon());
