@@ -204,6 +204,29 @@ QStringList PartitionTable::flagNames(Flags flags)
 	return rval;
 }
 
+/** @return the sector size to snap the partition start and end to
+*/
+static quint64 snapSize(const Device& d)
+{
+	return d.partitionTable()->type() == PartitionTable::msdos ? d.cylinderSize() : 2048;
+}
+
+static QString snappedFirstString(const Device& d)
+{
+	// Vista wants partitions not only to be snapped to the snapSize but also the last
+	// digits of the actual sector number are required to be the same, for whatever
+	// reason. In practice: Partitions always start at a number divisable by
+	// 2048 AND ending in xxxxxxx2048. There do not seem to be any official docs about
+	// that, only this: http://support.microsoft.com/kb/923332
+	// See also: http://www.multibooters.co.uk/partitions.html
+	return QString::number(snapSize(d));
+}
+
+static QString snappedLastString(const Device& d)
+{
+	return QString::number(snapSize(d) - 1);
+}
+
 /** Checks if a given Partition on a given Device is snapped to cylinder boundaries.
 
 	Will print warning messages to GlobalLog if the Partition's first sector is not snapped and
@@ -217,8 +240,8 @@ QStringList PartitionTable::flagNames(Flags flags)
 */
 bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 {
-	// only msdos gets snapped -- TODO: add msdos_vista
-	if (d.partitionTable()->type() != msdos)
+	// only msdos and msdos_vista get snapped
+	if (d.partitionTable()->type() != msdos && d.partitionTable()->type() != msdos_vista)
 		return true;
 
 	// don't bother with unallocated space here.
@@ -227,7 +250,8 @@ bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 
 	qint64 delta = 0;
 
-	// There are some special cases for snapping partitions to cylinder boundaries, apparently.
+	// TODO: verify the following comment and code both for msdos and msdos_vista
+	// There are some special cases for snapping partitions:
 	// 1) If an extended partition starts at the beginning of the device (that would be sector 63
 	// on modern drives, equivalent to sectorsPerTrack() in any case), the first logical partition
 	// at the beginning of this extended partition starts at 2 * sectorsPerTrack().
@@ -235,25 +259,37 @@ bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 	// 3) Any logical partition is always preceded by the extended partition table entry in the
 	// sectorsPerTrack() before it, so it's always sectorsPerTrack() "late"
 	if (p.roles().has(PartitionRole::Logical) && p.firstSector() == 2 * d.sectorsPerTrack())
-		delta = (p.firstSector() - (2 * d.sectorsPerTrack())) % d.cylinderSize();
+		delta = (p.firstSector() - (2 * d.sectorsPerTrack())) % snapSize(d);
 	else if (p.roles().has(PartitionRole::Logical) || p.firstSector() == d.sectorsPerTrack())
-		delta = (p.firstSector() - d.sectorsPerTrack()) % d.cylinderSize();
+		delta = (p.firstSector() - d.sectorsPerTrack()) % snapSize(d);
 	else
-		delta = p.firstSector() % d.cylinderSize();
+		delta = p.firstSector() % snapSize(d);
 
 	bool rval = true;
 
 	if (delta)
 	{
-		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> does not start at a cylinder boundary (first sector: %2, modulo: %3).", p.deviceNode(), p.firstSector(), delta);
+		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> does not start at the recommended boundary (first sector: %2, modulo: %3).", p.deviceNode(), p.firstSector(), delta);
 		rval = false;
 	}
 
-	delta = (p.lastSector() + 1) % d.cylinderSize();
+	if (d.partitionTable()->type() == msdos_vista && QString::number(p.firstSector()).right(snappedFirstString(d).length()) != snappedFirstString(d))
+	{
+		Log(Log::warning) << i18nc("@info/plain", "First sector %1 of partition <filename>%2</filename> does not end in the digits '%3'.", p.firstSector(), p.deviceNode(), snappedFirstString(d));
+		rval = false;
+	}
+
+	delta = (p.lastSector() + 1) % snapSize(d);
 
 	if (delta)
 	{
-		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> does not end at a cylinder boundary (last sector: %2, modulo: %3).", p.deviceNode(), p.lastSector(), delta);
+		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> does not end at the recommended boundary (last sector: %2, modulo: %3).", p.deviceNode(), p.lastSector(), delta);
+		rval = false;
+	}
+
+	if (d.partitionTable()->type() == msdos_vista && QString::number(p.lastSector()).right(snappedLastString(d).length()) != snappedLastString(d))
+	{
+		Log(Log::warning) << i18nc("@info/plain", "Last sector %1 of partition <filename>%2</filename> does not end in the digits '%3'.", p.lastSector(), p.deviceNode(), snappedLastString(d));
 		rval = false;
 	}
 
@@ -304,31 +340,31 @@ static bool canSnapToSector(const Device& d, const Partition& p, qint64 s, const
 */
 bool PartitionTable::snap(const Device& d, Partition& p, const Partition* originalPartition)
 {
-	// TODO: implement snapping to 2048-sector-boundaries for msdos_vista
-	if (d.partitionTable()->type() != msdos)
+	if (d.partitionTable()->type() != msdos && d.partitionTable()->type() != msdos_vista)
 		return true;
 
 	const qint64 originalLength = p.length();
 	qint64 delta = 0;
 	bool lengthIsSnapped = false;
 
+	// TODO: verify for msdos and msdos_vista
 	// This is the same as in isSnapped(), only we additionally have to remember if the
 	// partition's _length_ is "snapped", so to speak (i.e., evenly divisable by
 	// the cylinder size)
 	if (p.roles().has(PartitionRole::Logical) && p.firstSector() == 2 * d.sectorsPerTrack())
 	{
-		delta = (p.firstSector() - (2 * d.sectorsPerTrack())) % d.cylinderSize();
-		lengthIsSnapped = (p.length() + (2 * d.sectorsPerTrack())) % d.cylinderSize() == 0;
+		delta = (p.firstSector() - (2 * d.sectorsPerTrack())) % snapSize(d);
+		lengthIsSnapped = (p.length() + (2 * d.sectorsPerTrack())) % snapSize(d) == 0;
 	}
 	else if (p.roles().has(PartitionRole::Logical) || p.firstSector() == d.sectorsPerTrack())
 	{
-		delta = (p.firstSector() - d.sectorsPerTrack()) % d.cylinderSize();
-		lengthIsSnapped = (p.length() + d.sectorsPerTrack()) % d.cylinderSize() == 0;
+		delta = (p.firstSector() - d.sectorsPerTrack()) % snapSize(d);
+		lengthIsSnapped = (p.length() + d.sectorsPerTrack()) % snapSize(d) == 0;
 	}
 	else
 	{
-		delta = p.firstSector() % d.cylinderSize();
-		lengthIsSnapped = p.length() % d.cylinderSize() == 0;
+		delta = p.firstSector() % snapSize(d);
+		lengthIsSnapped = p.length() % snapSize(d) == 0;
 	}
 
 	if (delta)
@@ -345,6 +381,15 @@ bool PartitionTable::snap(const Device& d, Partition& p, const Partition* origin
 		// ends up too small. So try to move the start to the front first.
 		qint64 snappedFirst = p.firstSector() - delta;
 
+		if (d.partitionTable()->type() == msdos_vista)
+		{
+			while (snappedFirst > 0 && QString::number(snappedFirst).right(snappedFirstString(d).length()) != snappedFirstString(d))
+			{
+// 				kDebug() << "snappedFirst: " << snappedFirst;
+				snappedFirst -= snapSize(d);
+			}
+		}
+
 		// If we're now before the first usable sector, just take the first usable sector. This
 		// will happen if we're already below cylinder one and snap to the front
 		if (snappedFirst < d.partitionTable()->firstUsable())
@@ -354,13 +399,13 @@ bool PartitionTable::snap(const Device& d, Partition& p, const Partition* origin
 		if (!canSnapToSector(d, p, snappedFirst, originalPartition))
 		{
 			// ... move to the cylinder towards the end of the device ...
-			snappedFirst = p.firstSector() - delta + d.cylinderSize();
+			snappedFirst = p.firstSector() - delta + snapSize(d);
 
 			// ... and move the end of the partition towards the end, too, if that is possible.
 			// By doing this, we still try to keep the length >= the original length. If the
 			// last sector ends up not being on a cylinder boundary by doing so, the code
 			// below will deal with that.
-			qint64 numTooShort = d.cylinderSize() - delta;
+			qint64 numTooShort = snapSize(d) - delta;
 			if (canSnapToSector(d, p, p.lastSector() + numTooShort, originalPartition))
 			{
 				p.setLastSector(p.lastSector() + numTooShort);
@@ -372,34 +417,43 @@ bool PartitionTable::snap(const Device& d, Partition& p, const Partition* origin
 		p.fileSystem().setFirstSector(snappedFirst);
 	}
 
-	delta = (p.lastSector() + 1) % d.cylinderSize();
+	delta = (p.lastSector() + 1) % snapSize(d);
 
 	if (delta)
 	{
 		// Try to snap to the back first...
-		qint64 snappedLast = p.lastSector() + d.cylinderSize() - delta;
+		qint64 snappedLast = p.lastSector() + snapSize(d) - delta;
+
+		if (d.partitionTable()->type() == msdos_vista)
+		{
+			while (snappedLast < d.totalSectors() && QString::number(snappedLast).right(snappedLastString(d).length()) != snappedLastString(d))
+			{
+// 				kDebug() << "snappedLast: " << snappedLast;
+				snappedLast += snapSize(d);
+			}
+		}
 
 		// .. but if we can retain the partition length exactly by snapping to the front ...
 		if (lengthIsSnapped && p.length() - originalLength == delta)
-			snappedLast -= d.cylinderSize();
+			snappedLast -= snapSize(d);
 		// ... or if there's something there already, snap to the front.
 		else if (!canSnapToSector(d, p, snappedLast, originalPartition))
-			snappedLast -= d.cylinderSize();
+			snappedLast -= snapSize(d);
 
 		p.setLastSector(snappedLast);
 		p.fileSystem().setLastSector(snappedLast);
 	}
 
 	// Now, did we make the partition too big for its file system?
-	while (p.length() > originalLength && p.capacity() > p.fileSystem().maxCapacity() && canSnapToSector(d, p, p.lastSector() - d.cylinderSize(), originalPartition))
+	while (p.length() > originalLength && p.capacity() > p.fileSystem().maxCapacity() && canSnapToSector(d, p, p.lastSector() - snapSize(d), originalPartition))
 	{
-		p.setLastSector(p.lastSector() - d.cylinderSize());
-		p.fileSystem().setLastSector(p.fileSystem().lastSector() - d.cylinderSize());
+		p.setLastSector(p.lastSector() - snapSize(d));
+		p.fileSystem().setLastSector(p.fileSystem().lastSector() - snapSize(d));
 	}
 
 	if (p.length() < originalLength)
 		Log(Log::warning) <<  i18ncp("@info/plain", "The partition cannot be created with the requested length of 1 sector, ", "The partition cannot be created with the requested length of %1 sectors, ", originalLength)
-                                    + i18ncp("@info/plain", "and will instead only be 1 sector long.", "and will instead only be %1 sectors long.", p.length());
+		+ i18ncp("@info/plain", "and will instead only be 1 sector long.", "and will instead only be %1 sectors long.", p.length());
 
 	// In an extended partition we also need to snap unallocated children at the beginning and at the end
 	// (there should never be a need to snap non-unallocated children)
