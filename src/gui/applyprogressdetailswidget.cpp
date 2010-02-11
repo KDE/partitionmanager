@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,36 +17,4 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(LIBPARTED__H)
-
-#define LIBPARTED__H
-
-#include <qglobal.h>
-
-class OperationStack;
-class Device;
-
-class QString;
-
-/** @brief Scanning for Devices.
-
-	Encapsulates Device scanning done by libparted.
-
-	More libparted-related stuff is in the @link Job Job-derived @endlink classes.
-
-	@author vl@fidra.de
-*/
-class LibParted
-{
-	Q_DISABLE_COPY(LibParted)
-
-	public:
-		LibParted();
-
-	public:
-		static quint64 firstUsableSector(const Device& d);
-		static quint64 lastUsableSector(const Device& d);
-		static Device* scanDevice(const QString& device_node);
-};
-
-#endif
+#include "gui/applyprogressdetailswidget.h"

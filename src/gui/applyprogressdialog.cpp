@@ -17,10 +17,10 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "gui/progressdialog.h"
+#include "gui/applyprogressdialog.h"
 
-#include "gui/progressdialogwidget.h"
-#include "gui/progressdetailswidget.h"
+#include "gui/applyprogressdialogwidget.h"
+#include "gui/applyprogressdetailswidget.h"
 
 #include "core/operationrunner.h"
 
@@ -45,7 +45,7 @@
 #include <kaboutdata.h>
 #include <ktextedit.h>
 
-const QString ProgressDialog::m_TimeFormat = "hh:mm:ss";
+const QString ApplyProgressDialog::m_TimeFormat = "hh:mm:ss";
 
 static QWidget* mainWindow(QWidget* w)
 {
@@ -58,10 +58,10 @@ static QWidget* mainWindow(QWidget* w)
 	@param parent pointer to the parent widget
 	@param orunner the OperationRunner whose progress this dialog is showing
 */
-ProgressDialog::ProgressDialog(QWidget* parent, OperationRunner& orunner) :
+ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunner) :
 	KDialog(parent),
-	m_ProgressDialogWidget(new ProgressDialogWidget(this)),
-	m_ProgressDetailsWidget(new ProgressDetailsWidget(this)),
+	m_ProgressDialogWidget(new ApplyProgressDialogWidget(this)),
+	m_ProgressDetailsWidget(new ApplyProgressDetailsWidget(this)),
 	m_OperationRunner(orunner),
 	m_Report(NULL),
 	m_SavedParentTitle(mainWindow(this)->windowTitle()),
@@ -85,14 +85,14 @@ ProgressDialog::ProgressDialog(QWidget* parent, OperationRunner& orunner) :
 }
 
 /** Destroys a ProgressDialog */
-ProgressDialog::~ProgressDialog()
+ApplyProgressDialog::~ApplyProgressDialog()
 {
 	KConfigGroup kcg(KGlobal::config(), "progressDialog");
 	saveDialogSize(kcg);
 	delete m_Report;
 }
 
-void ProgressDialog::setupConnections()
+void ApplyProgressDialog::setupConnections()
 {
 	connect(&operationRunner(), SIGNAL(progressSub(int)), &dialogWidget().progressSub(), SLOT(setValue(int)));
 	connect(&operationRunner(), SIGNAL(finished()), SLOT(onAllOpsFinished()));
@@ -106,7 +106,7 @@ void ProgressDialog::setupConnections()
 }
 
 /** Shows the dialog */
-void ProgressDialog::show()
+void ApplyProgressDialog::show()
 {
 	foreach (QWidget* w, kapp->topLevelWidgets())
 		w->setEnabled(false);
@@ -134,7 +134,7 @@ void ProgressDialog::show()
 	KDialog::show();
 }
 
-void ProgressDialog::resetReport()
+void ApplyProgressDialog::resetReport()
 {
 	delete m_Report;
 	m_Report = new Report(NULL);
@@ -147,13 +147,13 @@ void ProgressDialog::resetReport()
 	connect(&report(), SIGNAL(outputChanged()), SLOT(updateReport()));
 }
 
-void ProgressDialog::closeEvent(QCloseEvent* e)
+void ApplyProgressDialog::closeEvent(QCloseEvent* e)
 {
 	e->ignore();
 	slotButtonClicked(operationRunner().isRunning() ? KDialog::Cancel : KDialog::Ok);
 }
 
-void ProgressDialog::slotButtonClicked(int button)
+void ApplyProgressDialog::slotButtonClicked(int button)
 {
 	if (button == KDialog::Details)
 	{
@@ -200,22 +200,22 @@ void ProgressDialog::slotButtonClicked(int button)
 	KDialog::accept();
 }
 
-void ProgressDialog::onAllOpsFinished()
+void ApplyProgressDialog::onAllOpsFinished()
 {
 	allOpsDone(i18nc("@info:progress", "All operations successfully finished."));
 }
 
-void ProgressDialog::onAllOpsCancelled()
+void ApplyProgressDialog::onAllOpsCancelled()
 {
 	allOpsDone(i18nc("@info:progress", "Operations cancelled."));
 }
 
-void ProgressDialog::onAllOpsError()
+void ApplyProgressDialog::onAllOpsError()
 {
 	allOpsDone(i18nc("@info:progress", "There were errors while applying operations. Aborted."));
 }
 
-void ProgressDialog::allOpsDone(const QString& msg)
+void ApplyProgressDialog::allOpsDone(const QString& msg)
 {
 	dialogWidget().progressTotal().setValue(operationRunner().numJobs());
 	showButton(KDialog::Cancel, false);
@@ -228,7 +228,7 @@ void ProgressDialog::allOpsDone(const QString& msg)
 	setStatus(msg);
 }
 
-void ProgressDialog::updateReport(bool force)
+void ApplyProgressDialog::updateReport(bool force)
 {
 	// Rendering the HTML in the KTextEdit is extremely expensive. So make sure not to do that
 	// unnecessarily and not too often:
@@ -245,7 +245,7 @@ void ProgressDialog::updateReport(bool force)
 	}
 }
 
-void ProgressDialog::onOpStarted(int num, Operation* op)
+void ApplyProgressDialog::onOpStarted(int num, Operation* op)
 {
 	addTaskOutput(num, *op);
 	setStatus(op->description());
@@ -257,7 +257,7 @@ void ProgressDialog::onOpStarted(int num, Operation* op)
  	connect(op, SIGNAL(jobFinished(Job*, Operation*)), SLOT(onJobFinished(Job*, Operation*)));
 }
 
-void ProgressDialog::onJobStarted(Job* job, Operation* op)
+void ApplyProgressDialog::onJobStarted(Job* job, Operation* op)
 {
 	for (qint32 i = 0; i < dialogWidget().treeTasks().topLevelItemCount(); i++)
 	{
@@ -277,7 +277,7 @@ void ProgressDialog::onJobStarted(Job* job, Operation* op)
 	}
 }
 
-void ProgressDialog::onJobFinished(Job* job, Operation* op)
+void ApplyProgressDialog::onJobFinished(Job* job, Operation* op)
 {
 	if (currentJobItem())
 		currentJobItem()->setIcon(0, job->statusIcon());
@@ -291,7 +291,7 @@ void ProgressDialog::onJobFinished(Job* job, Operation* op)
 	updateReport(true);
 }
 
-void ProgressDialog::onOpFinished(int num, Operation* op)
+void ApplyProgressDialog::onOpFinished(int num, Operation* op)
 {
 	if (currentOpItem())
 	{
@@ -307,13 +307,13 @@ void ProgressDialog::onOpFinished(int num, Operation* op)
 	updateReport(true);
 }
 
-void ProgressDialog::setParentTitle(const QString& s)
+void ApplyProgressDialog::setParentTitle(const QString& s)
 {
 	const int percent = dialogWidget().progressTotal().value() * 100 / dialogWidget().progressTotal().maximum();
 	mainWindow(this)->setWindowTitle(QString::number(percent) + "% - " + s + " - " + savedParentTitle());
 }
 
-void ProgressDialog::setStatus(const QString& s)
+void ApplyProgressDialog::setStatus(const QString& s)
 {
 	setCaption(s);
 	dialogWidget().status().setText(s);
@@ -321,12 +321,12 @@ void ProgressDialog::setStatus(const QString& s)
 	setParentTitle(s);
 }
 
-QString ProgressDialog::opDesc(int num, const Operation& op) const
+QString ApplyProgressDialog::opDesc(int num, const Operation& op) const
 {
 	return i18nc("@info:progress", "[%1/%2] - %3: %4", num, operationRunner().numOperations(), op.statusText(), op.description());
 }
 
-void ProgressDialog::addTaskOutput(int num, const Operation& op)
+void ApplyProgressDialog::addTaskOutput(int num, const Operation& op)
 {
 	QTreeWidgetItem* item = new QTreeWidgetItem();
 	item->setIcon(0, op.statusIcon());
@@ -344,7 +344,7 @@ void ProgressDialog::addTaskOutput(int num, const Operation& op)
 	setCurrentOpItem(item);
 }
 
-void ProgressDialog::onSecondElapsed()
+void ApplyProgressDialog::onSecondElapsed()
 {
 	if (currentJobItem())
 	{
@@ -362,7 +362,7 @@ void ProgressDialog::onSecondElapsed()
 	dialogWidget().totalTime().setText(i18nc("@info:progress", "Total Time: %1", outputTime.toString(timeFormat())));
 }
 
-void ProgressDialog::keyPressEvent(QKeyEvent* e)
+void ApplyProgressDialog::keyPressEvent(QKeyEvent* e)
 {
 	e->accept();
 
@@ -383,7 +383,7 @@ void ProgressDialog::keyPressEvent(QKeyEvent* e)
 	}
 }
 
-void ProgressDialog::saveReport()
+void ApplyProgressDialog::saveReport()
 {
 	QString fileName = KFileDialog::getSaveFileName(KUrl("kfiledialog://saveReport"));
 
@@ -407,7 +407,7 @@ void ProgressDialog::saveReport()
 	}
 }
 
-void ProgressDialog::browserReport()
+void ApplyProgressDialog::browserReport()
 {
 	KTemporaryFile file;
 

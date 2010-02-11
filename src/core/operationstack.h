@@ -26,8 +26,8 @@
 
 class Device;
 class Partition;
-class LibParted;
 class Operation;
+class DeviceScanner;
 
 /** @brief The list of Operations the user wants to have performed.
 
@@ -40,7 +40,7 @@ class OperationStack
 {
 	Q_DISABLE_COPY(OperationStack)
 
- 	friend class LibParted;
+	friend class DeviceScanner;
 
 	public:
 		typedef QList<Device*> Devices;

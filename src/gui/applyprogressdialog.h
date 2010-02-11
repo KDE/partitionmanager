@@ -17,9 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(PROGRESSDIALOG__H)
+#if !defined(APPLYPROGRESSDIALOG__H)
 
-#define PROGRESSDIALOG__H
+#define APPLYPROGRESSDIALOG__H
 
 #include <kdialog.h>
 
@@ -30,8 +30,8 @@
 class OperationRunner;
 class Operation;
 class Job;
-class ProgressDialogWidget;
-class ProgressDetailsWidget;
+class ApplyProgressDialogWidget;
+class ApplyProgressDetailsWidget;
 class Report;
 
 
@@ -45,14 +45,14 @@ class QKeyEvent;
 
 	@author vl@fidra.de
 */
-class ProgressDialog : public KDialog
+class ApplyProgressDialog : public KDialog
 {
 	Q_OBJECT
-	Q_DISABLE_COPY(ProgressDialog)
+	Q_DISABLE_COPY(ApplyProgressDialog)
 
 	public:
-		ProgressDialog(QWidget* parent, OperationRunner& orunner);
-		~ProgressDialog();
+		ApplyProgressDialog(QWidget* parent, OperationRunner& orunner);
+		~ApplyProgressDialog();
 
 	public:
 		void show();
@@ -82,11 +82,15 @@ class ProgressDialog : public KDialog
 
 		const OperationRunner& operationRunner() const { return m_OperationRunner; }
 
-		ProgressDialogWidget& dialogWidget() { Q_ASSERT(m_ProgressDialogWidget); return *m_ProgressDialogWidget; }
-		const ProgressDialogWidget& dialogWidget() const { Q_ASSERT(m_ProgressDialogWidget); return *m_ProgressDialogWidget; }
+		ApplyProgressDialogWidget
+& dialogWidget() { Q_ASSERT(m_ProgressDialogWidget); return *m_ProgressDialogWidget; }
+		const ApplyProgressDialogWidget
+& dialogWidget() const { Q_ASSERT(m_ProgressDialogWidget); return *m_ProgressDialogWidget; }
 
-		ProgressDetailsWidget& detailsWidget() { Q_ASSERT(m_ProgressDetailsWidget); return *m_ProgressDetailsWidget; }
-		const ProgressDetailsWidget& detailsWidget() const { Q_ASSERT(m_ProgressDetailsWidget); return *m_ProgressDetailsWidget; }
+		ApplyProgressDetailsWidget
+& detailsWidget() { Q_ASSERT(m_ProgressDetailsWidget); return *m_ProgressDetailsWidget; }
+		const ApplyProgressDetailsWidget
+& detailsWidget() const { Q_ASSERT(m_ProgressDetailsWidget); return *m_ProgressDetailsWidget; }
 
 		void setStatus(const QString& s);
 
@@ -119,8 +123,10 @@ class ProgressDialog : public KDialog
 		static const QString& timeFormat() { return m_TimeFormat; }
 
 	private:
-		ProgressDialogWidget* m_ProgressDialogWidget;
-		ProgressDetailsWidget* m_ProgressDetailsWidget;
+		ApplyProgressDialogWidget
+* m_ProgressDialogWidget;
+		ApplyProgressDetailsWidget
+* m_ProgressDetailsWidget;
 		const OperationRunner& m_OperationRunner;
 		Report* m_Report;
 		QString m_SavedParentTitle;

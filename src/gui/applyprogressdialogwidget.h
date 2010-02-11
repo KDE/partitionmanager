@@ -17,4 +17,26 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "gui/progressdetailswidget.h"
+#if !defined(APPLYPROGRESSDIALOGWIDGET__H)
+
+#define APPLYPROGRESSDIALOGWIDGET__H
+
+#include "ui_applyprogressdialogwidgetbase.h"
+
+/** @brief Central widget for the ProgressDialog.
+	@author vl@fidra.de
+*/
+class ApplyProgressDialogWidget : public QWidget, public Ui::ApplyProgressDialogWidgetBase
+{
+	public:
+		ApplyProgressDialogWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
+
+	public:
+		QTreeWidget& treeTasks() { Q_ASSERT(m_TreeTasks); return *m_TreeTasks; }
+		QProgressBar& progressTotal() { Q_ASSERT(m_ProgressTotal); return *m_ProgressTotal; }
+		QProgressBar& progressSub() { Q_ASSERT(m_ProgressSub); return *m_ProgressSub; }
+		QLabel& status() { Q_ASSERT(m_LabelStatus); return *m_LabelStatus; }
+		QLabel& totalTime() { Q_ASSERT(m_LabelTime); return *m_LabelTime; }
+};
+
+#endif

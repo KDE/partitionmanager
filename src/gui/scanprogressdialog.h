@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                       *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -14,29 +14,31 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#if !defined(PROGRESSDETAILSWIDGET__H)
+#if !defined(SCANPROGRESSDIALOG__H)
 
-#define PROGRESSDETAILSWIDGET__H
+#define SCANPROGRESSDIALOG__H
 
-#include "ui_progressdetailswidgetbase.h"
+#include <kprogressdialog.h>
 
-/** @brief Details widget for the ProgressDialog.
-	@author vl@fidra.de
-*/
-class ProgressDetailsWidget : public QWidget, public Ui::ProgressDetailsWidgetBase
+class QShowEvent;
+
+class ScanProgressDialog : public KProgressDialog
 {
 	Q_OBJECT
 
 	public:
-		ProgressDetailsWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
+		ScanProgressDialog(QWidget* parent);
+
+	protected:
+		virtual void showEvent(QShowEvent* e);
 
 	public:
-		KTextEdit& editReport() { Q_ASSERT(m_EditReport); return *m_EditReport; }
-		QPushButton& buttonSave() { Q_ASSERT(m_ButtonSave); return *m_ButtonSave; }
-		QPushButton& buttonBrowser() { Q_ASSERT(m_ButtonBrowser); return *m_ButtonBrowser; }
+		void setProgress(quint32 p) { progressBar()->setValue(p); }
+		void setDeviceName(const QString& d);
 };
 
 #endif
+

@@ -23,9 +23,9 @@
 
 #include "util/libpartitionmanagerexport.h"
 
-#include "core/libparted.h"
 #include "core/operationrunner.h"
 #include "core/operationstack.h"
+#include "core/devicescanner.h"
 
 #include "ui_partitionmanagerwidgetbase.h"
 
@@ -36,7 +36,8 @@ class QLabel;
 class PartWidget;
 class KActionCollection;
 class Device;
-class ProgressDialog;
+class ApplyProgressDialog;
+class ScanProgressDialog;
 
 /** @brief The central widget for the application.
 
@@ -54,8 +55,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 	signals:
 		void devicesChanged();
 		void operationsChanged();
-		void statusChanged();
-		void selectionChanged(const Partition*);
+		void selectedPartitionChanged(const Partition*);
 
 	public slots:
 		void setSelectedDevice(Device* d);
@@ -65,7 +65,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		KActionCollection* actionCollection() const { return m_ActionCollection; }
 
 		void clear();
-		void clearSelection();
+		void clearSelectedPartition();
 		void setPartitionTable(const PartitionTable* ptable);
 		void setSelection(const Partition* p);
 		void enableActions();
@@ -85,8 +85,11 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		const Partition* clipboardPartition() const { return m_ClipboardPartition; }
 		void setClipboardPartition(Partition* p) { m_ClipboardPartition = p; }
 
-		ProgressDialog& progressDialog() { Q_ASSERT(m_ProgressDialog); return *m_ProgressDialog; }
-		const ProgressDialog& progressDialog() const { Q_ASSERT(m_ProgressDialog); return *m_ProgressDialog; }
+		ApplyProgressDialog& applyProgressDialog() { Q_ASSERT(m_ApplyProgressDialog); return *m_ApplyProgressDialog; }
+		const ApplyProgressDialog& applyProgressDialog() const { Q_ASSERT(m_ApplyProgressDialog); return *m_ApplyProgressDialog; }
+
+		ScanProgressDialog& scanProgressDialog() { Q_ASSERT(m_ScanProgressDialog); return *m_ScanProgressDialog; }
+		const ScanProgressDialog& scanProgressDialog() const { Q_ASSERT(m_ScanProgressDialog); return *m_ScanProgressDialog; }
 
 		quint32 numPendingOperations();
 
@@ -104,14 +107,14 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		QTreeWidget& treePartitions() { Q_ASSERT(m_TreePartitions); return *m_TreePartitions; }
 		const QTreeWidget& treePartitions() const { Q_ASSERT(m_TreePartitions); return *m_TreePartitions; }
 
-		LibParted& libParted() { return m_LibParted; }
-		const LibParted& libParted() const { return m_LibParted; }
-
 		OperationRunner& operationRunner() { return m_OperationRunner; }
 		const OperationRunner& operationRunner() const { return m_OperationRunner; }
 
 		OperationStack& operationStack() { return m_OperationStack; }
 		const OperationStack& operationStack() const { return m_OperationStack; }
+
+		DeviceScanner& deviceScanner() { return m_DeviceScanner; }
+		const DeviceScanner& deviceScanner() const { return m_DeviceScanner; }
 
 	protected slots:
 		void on_m_TreePartitions_currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem* previous);
@@ -121,6 +124,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		void on_m_PartTableWidget_itemSelectionChanged(PartWidget* item);
 
 		void scanDevices();
+		void onScanDevicesFinished();
+		void onScanDevicesProgressChanged(const QString& device_node, int percent);
 
 		void onPropertiesPartition();
 		void onMountPartition();
@@ -140,13 +145,13 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		void onFileSystemSupport();
 		void onBackupPartition();
 		void onRestorePartition();
-		void onFinished();
 
 	private:
-		LibParted m_LibParted;
 		OperationStack m_OperationStack;
 		OperationRunner m_OperationRunner;
-		ProgressDialog* m_ProgressDialog;
+		DeviceScanner m_DeviceScanner;
+		ApplyProgressDialog* m_ApplyProgressDialog;
+		ScanProgressDialog* m_ScanProgressDialog;
 		KActionCollection* m_ActionCollection;
 		Device* m_SelectedDevice;
 		Partition* m_ClipboardPartition;

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                       *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -14,7 +14,29 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
-#include "gui/progressdialogwidget.h"
+#include "gui/scanprogressdialog.h"
+
+#include <klocale.h>
+
+ScanProgressDialog::ScanProgressDialog(QWidget* parent) :
+	KProgressDialog(parent)
+{
+	setCaption(i18nc("@title:window", "Scanning devices..."));
+	setMinimumWidth(280);
+	setMinimumDuration(150);
+}
+
+void ScanProgressDialog::setDeviceName(const QString& d)
+{
+	setLabelText(i18nc("@label", "Scanning device: <filename>%1</filename>", d));
+}
+
+void ScanProgressDialog::showEvent(QShowEvent* e)
+{
+	setAllowCancel(false);
+
+	KProgressDialog::showEvent(e);
+}

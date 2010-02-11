@@ -45,11 +45,6 @@
 #include <kmountpoint.h>
 #include <kdiskfreespaceinfo.h>
 
-#include <solid/device.h>
-#include <solid/deviceinterface.h>
-#include <solid/block.h>
-#include <solid/storagedrive.h>
-
 #include <parted/parted.h>
 #include <unistd.h>
 
@@ -289,60 +284,30 @@ LibParted::LibParted()
 	ped_exception_set_handler(pedExceptionHandler);
 }
 
-/** Scans for all available Devices on this computer.
-
-	This method tries to find all Devices on the computer and creates new Device instances for each of them. It then calls scanDevicePartitions() to find all Partitions and FileSystems on each Device and set those up.
-
-	The method will clear the list of operations and devices currently in the OperationStack given.
-
-	@param ostack the OperationStack where the devices will be created
-*/
-void LibParted::scanDevices(OperationStack& ostack)
+Device* LibParted::scanDevice(const QString& device_node)
 {
-	ostack.clearOperations();
-	ostack.clearDevices();
+	PedDevice* pedDevice = ped_device_get(device_node.toLocal8Bit());
 
-	// LibParted's ped_device_probe_all()
-	// 1) segfaults when it finds "illegal" entries in /dev/mapper
-	// 2) takes several minutes to time out if the BIOS says there's a floppy drive present
-	//    when in fact there is none.
-	// For that reason we scan devices on our own using Solid now.
-	const QList<Solid::Device> driveList = Solid::Device::listFromType(Solid::DeviceInterface::StorageDrive, QString());
-
-	foreach(const Solid::Device& solidDevice, driveList)
+	if (pedDevice == NULL)
 	{
-		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
-
-		if (solidDrive->driveType() != Solid::StorageDrive::HardDisk)
-			continue;
-
-		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
-		PedDevice* pedDevice = ped_device_get(solidBlock->device().toLocal8Bit());
-
-		if (pedDevice == NULL)
-		{
-			Log(Log::warning) << i18nc("@info/plain", "Could not access device <filename>%1</filename>", solidBlock->device());
-			continue;
-		}
-
-		Log(Log::information) << i18nc("@info/plain", "Device found: %1", pedDevice->model);
-
-		Device* d = new Device(pedDevice->model, pedDevice->path, pedDevice->bios_geom.heads, pedDevice->bios_geom.sectors, pedDevice->bios_geom.cylinders, pedDevice->sector_size, solidDevice.icon());
-
-		PedDisk* pedDisk = ped_disk_new(pedDevice);
-
-		if (pedDisk)
-		{
-			const PartitionTable::LabelType type = PartitionTable::nameToLabelType(pedDisk->type->name);
-			d->setPartitionTable(new PartitionTable(type, firstUsableSector(*d), lastUsableSector(*d)));
-			d->partitionTable()->setMaxPrimaries(ped_disk_get_max_primary_partition_count(pedDisk));
-
-			scanDevicePartitions(pedDevice, *d, pedDisk);
-		}
-
-		ostack.addDevice(d);
+		Log(Log::warning) << i18nc("@info/plain", "Could not access device <filename>%1</filename>", device_node);
+		return NULL;
 	}
 
-	ostack.sortDevices();
-}
+	Log(Log::information) << i18nc("@info/plain", "Device found: %1", pedDevice->model);
 
+	Device* d = new Device(pedDevice->model, pedDevice->path, pedDevice->bios_geom.heads, pedDevice->bios_geom.sectors, pedDevice->bios_geom.cylinders, pedDevice->sector_size);
+
+	PedDisk* pedDisk = ped_disk_new(pedDevice);
+
+	if (pedDisk)
+	{
+		const PartitionTable::LabelType type = PartitionTable::nameToLabelType(pedDisk->type->name);
+		d->setPartitionTable(new PartitionTable(type, firstUsableSector(*d), lastUsableSector(*d)));
+		d->partitionTable()->setMaxPrimaries(ped_disk_get_max_primary_partition_count(pedDisk));
+
+		scanDevicePartitions(pedDevice, *d, pedDisk);
+	}
+
+	return d;
+}

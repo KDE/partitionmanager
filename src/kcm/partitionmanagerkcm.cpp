@@ -107,7 +107,7 @@ void PartitionManagerKCM::setupConnections()
 	connect(&pmWidget(), SIGNAL(devicesChanged()), &listDevices(), SLOT(updateDevices()));
 	connect(&pmWidget(), SIGNAL(operationsChanged()), &listOperations(), SLOT(updateOperations()));
 	connect(&listDevices(), SIGNAL(selectionChanged(Device*)), &pmWidget(), SLOT(setSelectedDevice(Device*)));
-	connect(&pmWidget(), SIGNAL(statusChanged()), SLOT(onStatusChanged()));
+	connect(&pmWidget(), SIGNAL(operationsChanged()), SLOT(onStatusChanged()));
 }
 
 void PartitionManagerKCM::onStatusChanged()

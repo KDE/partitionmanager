@@ -24,16 +24,18 @@
 #include "gui/infopane.h"
 #include "gui/newdialog.h"
 #include "gui/filesystemsupportdialog.h"
-#include "gui/progressdialog.h"
+#include "gui/applyprogressdialog.h"
 #include "gui/insertdialog.h"
 #include "gui/editmountpointdialog.h"
 #include "gui/createpartitiontabledialog.h"
+#include "gui/scanprogressdialog.h"
 
 #include "core/partition.h"
 #include "core/device.h"
 #include "core/operationstack.h"
 #include "core/partitiontable.h"
 #include "core/operationrunner.h"
+#include "core/devicescanner.h"
 
 #include "fs/filesystemfactory.h"
 
@@ -101,10 +103,11 @@ class PartitionTreeWidgetItem : public QTreeWidgetItem
 PartitionManagerWidget::PartitionManagerWidget(QWidget* parent, KActionCollection* coll) :
 	QWidget(parent),
 	Ui::PartitionManagerWidgetBase(),
-	m_LibParted(),
 	m_OperationStack(),
 	m_OperationRunner(operationStack()),
-	m_ProgressDialog(new ProgressDialog(this, operationRunner())),
+	m_DeviceScanner(operationStack()),
+	m_ApplyProgressDialog(new ApplyProgressDialog(this, operationRunner())),
+	m_ScanProgressDialog(new ScanProgressDialog(this)),
 	m_ActionCollection(coll),
 	m_SelectedDevice(NULL),
 	m_ClipboardPartition(NULL)
@@ -300,36 +303,58 @@ void PartitionManagerWidget::setupConnections()
 	Q_ASSERT(actionCollection());
 
 	connect(&partTableWidget(), SIGNAL(itemActivated(const PartWidget*)), actionCollection()->action("propertiesPartition"), SLOT(trigger()));
-	connect(&progressDialog(), SIGNAL(finished(int)), SLOT(onFinished()));
+	connect(&applyProgressDialog(), SIGNAL(finished(int)), SLOT(scanDevices()));
+
+	connect(&deviceScanner(), SIGNAL(finished()), SLOT(onScanDevicesFinished()));
+	connect(&deviceScanner(), SIGNAL(progressChanged(const QString&, int)), SLOT(onScanDevicesProgressChanged(const QString&, int)));
+	connect(&deviceScanner(), SIGNAL(operationsChanged()), SIGNAL(operationsChanged()));
+	connect(&deviceScanner(), SIGNAL(devicesChanged()), SIGNAL(devicesChanged()));
 }
 
 void PartitionManagerWidget::scanDevices()
 {
-	Log() << i18nc("@info/plain", "Rescanning devices...");
+	Log() << i18nc("@info/plain", "Scanning devices...");
+
+	clear();
 
 	KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
-	setSelectedDevice(NULL);
-	setClipboardPartition(NULL);
-	clear();
+	foreach (QWidget* w, kapp->topLevelWidgets())
+		w->setEnabled(false);
 
-	libParted().scanDevices(operationStack());
+	scanProgressDialog().setEnabled(true);
+	scanProgressDialog().show();
 
+	deviceScanner().start();
+}
+
+void PartitionManagerWidget::onScanDevicesProgressChanged(const QString& device_node, int percent)
+{
+	scanProgressDialog().setProgress(percent);
+	scanProgressDialog().setDeviceName(device_node);
+}
+
+void PartitionManagerWidget::onScanDevicesFinished()
+{
 	if (!operationStack().previewDevices().isEmpty())
 	{
 		setSelectedDevice(operationStack().previewDevices()[0]);
-
+		// FIXME: Normally this should be emitted in setSelectedDevice(), but if we do that
+		// now we get all kinds of terrible races and crashes during rescan (because DeviceScanner
+		// clears the devices in the operationstack while ListDevices is just iterating them).
+		// Once that is fixed, remove the emit here.
+		emit devicesChanged();
 	}
 
 	updatePartitions();
 
-	Log() << i18nc("@info/plain", "Rescan finished.");
+	Log() << i18nc("@info/plain", "Scan finished.");
 	KApplication::restoreOverrideCursor();
 
-	emit selectionChanged(NULL);
-	emit devicesChanged();
-	emit operationsChanged();
-	emit statusChanged();
+	scanProgressDialog().hide();
+
+	foreach (QWidget* w, kapp->topLevelWidgets())
+		w->setEnabled(true);
 }
 
 void PartitionManagerWidget::enableActions()
@@ -367,13 +392,17 @@ void PartitionManagerWidget::enableActions()
 
 void PartitionManagerWidget::clear()
 {
+	setSelectedDevice(NULL);
+	setClipboardPartition(NULL);
 	treePartitions().clear();
 	partTableWidget().clear();
+	deviceScanner().clear();
 }
 
-void PartitionManagerWidget::clearSelection()
+void PartitionManagerWidget::clearSelectedPartition()
 {
 	treePartitions().setCurrentItem(NULL);
+	emit selectedPartitionChanged(NULL);
 	enableActions();
 	updatePartitions();
 }
@@ -381,7 +410,9 @@ void PartitionManagerWidget::clearSelection()
 void PartitionManagerWidget::setSelectedDevice(Device* d)
 {
 	m_SelectedDevice = d;
-	clearSelection();
+	// FIXME: We should emit devicesChanged() here, but if we do that we get terrible
+	// races. See onScanDevicesFinished()
+	clearSelectedPartition();
 }
 
 static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
@@ -471,7 +502,7 @@ void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidge
 	if (item == NULL)
 	{
 		treePartitions().setCurrentItem(NULL);
-		emit selectionChanged(NULL);
+		emit selectedPartitionChanged(NULL);
 		return;
 	}
 
@@ -492,7 +523,7 @@ void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidge
 		}
 	}
 
-	emit selectionChanged(p);
+	emit selectedPartitionChanged(p);
 }
 
 void PartitionManagerWidget::on_m_PartTableWidget_customContextMenuRequested(const QPoint& pos)
@@ -580,7 +611,6 @@ void PartitionManagerWidget::onPropertiesPartition()
 
 			updatePartitions();
 			emit operationsChanged();
-			emit statusChanged();
 		}
 
 		delete dlg;
@@ -684,7 +714,6 @@ void PartitionManagerWidget::onNewPartition()
 		PartitionTable::snap(*selectedDevice(), *newPartition);
 		operationStack().push(new NewOperation(*selectedDevice(), newPartition));
 		updatePartitions();
-		emit statusChanged();
 		emit operationsChanged();
 	}
 	else
@@ -743,7 +772,6 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 
 	operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), shred));
 	updatePartitions();
-	emit statusChanged();
 	emit operationsChanged();
 }
 
@@ -788,7 +816,6 @@ void PartitionManagerWidget::onResizePartition()
 			operationStack().push(new ResizeOperation(*selectedDevice(), *selectedPartition(), resizedPartition.firstSector(), resizedPartition.lastSector()));
 
 			updatePartitions();
-			emit statusChanged();
 			emit operationsChanged();
 		}
 	}
@@ -848,7 +875,6 @@ void PartitionManagerWidget::onPastePartition()
 	{
 		operationStack().push(new CopyOperation(*selectedDevice(), copiedPartition, *dSource, clipboardPartition()));
 		updatePartitions();
-		emit statusChanged();
 		emit operationsChanged();
 	}
 	else
@@ -920,7 +946,6 @@ void PartitionManagerWidget::onCreateNewPartitionTable()
 		operationStack().push(new CreatePartitionTableOperation(*selectedDevice(), dlg->type()));
 
 		updatePartitions();
-		emit statusChanged();
 		emit operationsChanged();
 		emit devicesChanged();
 		enableActions();
@@ -950,7 +975,6 @@ void PartitionManagerWidget::onUndoOperation()
 
 	updatePartitions();
 	emit operationsChanged();
-	emit statusChanged();
 	emit devicesChanged();
 	enableActions();
 }
@@ -968,7 +992,6 @@ void PartitionManagerWidget::onClearAllOperations()
 
 		updatePartitions();
 		emit operationsChanged();
-		emit statusChanged();
 		enableActions();
 	}
 }
@@ -990,9 +1013,9 @@ void PartitionManagerWidget::onApplyAllOperations()
 	{
 		Log() << i18nc("@info/plain", "Applying operations...");
 
-		progressDialog().show();
+		applyProgressDialog().show();
 
-		operationRunner().setReport(&progressDialog().report());
+		operationRunner().setReport(&applyProgressDialog().report());
 
 		// Undo all operations so the runner has a defined starting point
 		for (int i = operationStack().operations().size() - 1; i >= 0; i--)
@@ -1021,7 +1044,6 @@ void PartitionManagerWidget::onCheckPartition()
 	operationStack().push(new CheckOperation(*selectedDevice(), *selectedPartition()));
 
 	updatePartitions();
-	emit statusChanged();
 	emit operationsChanged();
 }
 
@@ -1046,7 +1068,6 @@ void PartitionManagerWidget::onBackupPartition()
 	{
 		operationStack().push(new BackupOperation(*selectedDevice(), *selectedPartition(), fileName));
 		updatePartitions();
-		emit statusChanged();
 		emit operationsChanged();
 	}
 }
@@ -1084,7 +1105,6 @@ void PartitionManagerWidget::onRestorePartition()
 			operationStack().push(new RestoreOperation(*selectedDevice(), restorePartition, fileName));
 
 			updatePartitions();
-			emit statusChanged();
 			emit operationsChanged();
 		}
 		else
@@ -1096,9 +1116,4 @@ void PartitionManagerWidget::onFileSystemSupport()
 {
 	FileSystemSupportDialog dlg(this);
 	dlg.exec();
-}
-
-void PartitionManagerWidget::onFinished()
-{
-	scanDevices();
 }

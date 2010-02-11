@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,26 +17,26 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(PROGRESSDIALOGWIDGET__H)
+#if !defined(APPLYPROGRESSDETAILSWIDGET__H)
 
-#define PROGRESSDIALOGWIDGET__H
+#define APPLYPROGRESSDETAILSWIDGET__H
 
-#include "ui_progressdialogwidgetbase.h"
+#include "ui_applyprogressdetailswidgetbase.h"
 
-/** @brief Central widget for the ProgressDialog.
+/** @brief Details widget for the ProgressDialog.
 	@author vl@fidra.de
 */
-class ProgressDialogWidget : public QWidget, public Ui::ProgressDialogWidgetBase
+class ApplyProgressDetailsWidget : public QWidget, public Ui::ApplyProgressDetailsWidgetBase
 {
-	public:
-		ProgressDialogWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
+	Q_OBJECT
 
 	public:
-		QTreeWidget& treeTasks() { Q_ASSERT(m_TreeTasks); return *m_TreeTasks; }
-		QProgressBar& progressTotal() { Q_ASSERT(m_ProgressTotal); return *m_ProgressTotal; }
-		QProgressBar& progressSub() { Q_ASSERT(m_ProgressSub); return *m_ProgressSub; }
-		QLabel& status() { Q_ASSERT(m_LabelStatus); return *m_LabelStatus; }
-		QLabel& totalTime() { Q_ASSERT(m_LabelTime); return *m_LabelTime; }
+		ApplyProgressDetailsWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
+
+	public:
+		KTextEdit& editReport() { Q_ASSERT(m_EditReport); return *m_EditReport; }
+		QPushButton& buttonSave() { Q_ASSERT(m_ButtonSave); return *m_ButtonSave; }
+		QPushButton& buttonBrowser() { Q_ASSERT(m_ButtonBrowser); return *m_ButtonBrowser; }
 };
 
 #endif

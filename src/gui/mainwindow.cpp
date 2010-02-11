@@ -19,7 +19,7 @@
 
 #include "gui/mainwindow.h"
 #include "gui/infopane.h"
-#include "gui/progressdialog.h"
+#include "gui/applyprogressdialog.h"
 
 #include "core/device.h"
 
@@ -82,7 +82,7 @@ void MainWindow::init()
 
 void MainWindow::closeEvent(QCloseEvent* event)
 {
-	if (pmWidget().progressDialog().isVisible())
+	if (pmWidget().applyProgressDialog().isVisible())
 	{
 		event->ignore();
 		return;
@@ -109,10 +109,10 @@ void MainWindow::closeEvent(QCloseEvent* event)
 
 void MainWindow::changeEvent(QEvent* event)
 {
-	if ((event->type() == QEvent::ActivationChange || event->type() == QEvent::WindowStateChange) && event->spontaneous() && isActiveWindow() && pmWidget().progressDialog().isVisible())
+	if ((event->type() == QEvent::ActivationChange || event->type() == QEvent::WindowStateChange) && event->spontaneous() && isActiveWindow() && pmWidget().applyProgressDialog().isVisible())
 	{
-		pmWidget().progressDialog().activateWindow();
-		pmWidget().progressDialog().raise();
+		pmWidget().applyProgressDialog().activateWindow();
+		pmWidget().applyProgressDialog().raise();
 	}
 
 	KXmlGuiWindow::changeEvent(event);
@@ -134,8 +134,8 @@ void MainWindow::setupConnections()
 {
 	connect(&pmWidget(), SIGNAL(devicesChanged()), SLOT(updateDevices()));
 	connect(&pmWidget(), SIGNAL(operationsChanged()), &listOperations(), SLOT(updateOperations()));
-	connect(&pmWidget(), SIGNAL(statusChanged()), SLOT(updateStatusBar()));
-	connect(&pmWidget(), SIGNAL(selectionChanged(const Partition*)), SLOT(updateSelection(const Partition*)));
+	connect(&pmWidget(), SIGNAL(operationsChanged()), SLOT(updateStatusBar()));
+	connect(&pmWidget(), SIGNAL(selectedPartitionChanged(const Partition*)), SLOT(updateSelection(const Partition*)));
 	connect(&dockInformation(), SIGNAL(dockLocationChanged(Qt::DockWidgetArea)), SLOT(onDockLocationChanged(Qt::DockWidgetArea)));
 }
 
