@@ -25,6 +25,8 @@
 
 #include <klocale.h>
 
+#include <config.h>
+
 CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const Device& d) :
 	KDialog(parent),
 	m_DialogWidget(new CreatePartitionTableWidget(this)),
@@ -33,6 +35,9 @@ CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const De
 	setMainWidget(&widget());
 	setCaption(i18nc("@title:window", "Create a New Partition Table on <filename>%1</filename>", device().deviceNode()));
 	setButtonText(KDialog::Ok, i18nc("@action:button", "&Create New Partition Table"));
+
+	if (!Config::allowCreateVistaPartitionTable())
+		widget().radioMSDOSVista().hide();
 }
 
 PartitionTable::LabelType CreatePartitionTableDialog::type() const

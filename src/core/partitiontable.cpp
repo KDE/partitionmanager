@@ -32,6 +32,8 @@
 #include <kdebug.h>
 #include <klocale.h>
 
+#include <config.h>
+
 /** Creates a new PartitionTable object with type MSDOS
 	@param type name of the PartitionTable type (e.g. "msdos" or "gpt")
 */
@@ -208,7 +210,7 @@ QStringList PartitionTable::flagNames(Flags flags)
 */
 static qint64 sectorAlignment(const Device& d)
 {
-	return d.partitionTable()->type() == PartitionTable::msdos ? d.cylinderSize() : 2048;
+	return d.partitionTable()->type() == PartitionTable::msdos ? d.cylinderSize() : Config::vistaSectorAlignment();
 }
 
 /** Checks if a given Partition on a given Device is snapped to cylinder boundaries.
@@ -560,7 +562,7 @@ void PartitionTable::updateUnallocated(const Device& d)
 qint64 PartitionTable::defaultFirstUsable(const Device& d, LabelType t)
 {
 	if (t == msdos_vista)
-		return 2048;
+		return Config::vistaSectorAlignment();
 
 	return d.sectorsPerTrack() - 1;
 }
@@ -645,8 +647,8 @@ bool PartitionTable::isVistaDiskLabel() const
 {
 	if (type() == PartitionTable::msdos)
 	{
-		const Partition* part = findPartitionBySector(2048, PartitionRole(PartitionRole::Primary));
-		if (part && part->firstSector() == 2048)
+		const Partition* part = findPartitionBySector(Config::vistaSectorAlignment(), PartitionRole(PartitionRole::Primary));
+		if (part && part->firstSector() == Config::vistaSectorAlignment())
 			return true;
 	}
 
@@ -656,9 +658,10 @@ bool PartitionTable::isVistaDiskLabel() const
 void PartitionTable::setType(LabelType t)
 {
 	// hack: if the type has been msdos and is now set to vista, make sure to also
-	// set the first usable sector to 2048 now.
+	// set the first usable sector to Config::vistaSectorAlignment (which defaults to
+	// Vista's default, 2048) now.
 	if (type() == msdos && t == msdos_vista)
-		setFirstUsableSector(2048);
+		setFirstUsableSector(Config::vistaSectorAlignment());
 
 	m_Type = t;
 }

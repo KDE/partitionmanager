@@ -352,7 +352,7 @@ void PartitionManagerWidget::enableActions()
 
 	actionCollection()->action("undoOperation")->setEnabled(numPendingOperations() > 0);
 	actionCollection()->action("clearAllOperations")->setEnabled(numPendingOperations() > 0);
-	actionCollection()->action("applyAllOperations")->setEnabled(numPendingOperations() > 0 && geteuid() == 0);
+	actionCollection()->action("applyAllOperations")->setEnabled(numPendingOperations() > 0 && (geteuid() == 0 || Config::allowApplyOperationsAsNonRoot()));
 
 	const bool readOnly = selectedDevice() == NULL || selectedDevice()->partitionTable() == NULL || selectedDevice()->partitionTable()->isReadOnly();
 

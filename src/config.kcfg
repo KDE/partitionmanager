@@ -10,5 +10,14 @@
 		<entry name="firstRun" type="Bool">
 			<default>true</default>
 		</entry>
+		<entry name="vistaSectorAlignment" type="Int">
+			<default>2048</default>
+		</entry>
+		<entry name="allowCreateVistaPartitionTable" type="Bool">
+			<default>false</default>
+		</entry>
+		<entry name="allowApplyOperationsAsNonRoot" type="Bool">
+			<default>false</default>
+		</entry>
 	</group>
 </kcfg>
