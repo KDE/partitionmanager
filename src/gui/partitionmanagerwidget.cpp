@@ -21,7 +21,6 @@
 #include "gui/partwidget.h"
 #include "gui/partpropsdialog.h"
 #include "gui/resizedialog.h"
-#include "gui/infopane.h"
 #include "gui/newdialog.h"
 #include "gui/filesystemsupportdialog.h"
 #include "gui/applyprogressdialog.h"
@@ -56,26 +55,16 @@
 #include "util/report.h"
 
 #include <kapplication.h>
-#include <kglobalsettings.h>
 #include <kaction.h>
 #include <kstandardaction.h>
 #include <kactioncollection.h>
 #include <klocale.h>
 #include <kmenu.h>
-#include <kmenubar.h>
-#include <ktoolbar.h>
-#include <kstatusbar.h>
-#include <kiconloader.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 #include <kglobal.h>
-#include <kaboutdata.h>
 
-#include <QLabel>
-#include <QCloseEvent>
-#include <QDateTime>
 #include <QCursor>
-#include <QHeaderView>
 #include <QPointer>
 
 #include <config.h>
