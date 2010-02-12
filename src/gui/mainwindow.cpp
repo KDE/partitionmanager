@@ -20,6 +20,7 @@
 #include "gui/mainwindow.h"
 #include "gui/infopane.h"
 #include "gui/applyprogressdialog.h"
+#include "gui/scanprogressdialog.h"
 
 #include "core/device.h"
 
@@ -61,7 +62,7 @@ void MainWindow::init()
 	setupStatusBar();
 	setupConnections();
 
-	listDevices().init(actionCollection(), &pmWidget());
+	listDevices().setActionCollection(actionCollection());
 	listOperations().init(actionCollection(), &pmWidget());
 	pmWidget().init(actionCollection(), "partitionmanagerrc");
 
@@ -76,8 +77,7 @@ void MainWindow::init()
 
 	dockInformation().setWidget(&infoPane());
 
-	// trigger an update for the info pane so it can re-layout itself
-	updateSelection(NULL);
+	infoPane().clear();
 }
 
 void MainWindow::closeEvent(QCloseEvent* event)
@@ -109,10 +109,21 @@ void MainWindow::closeEvent(QCloseEvent* event)
 
 void MainWindow::changeEvent(QEvent* event)
 {
-	if ((event->type() == QEvent::ActivationChange || event->type() == QEvent::WindowStateChange) && event->spontaneous() && isActiveWindow() && pmWidget().applyProgressDialog().isVisible())
+	if ((event->type() == QEvent::ActivationChange || event->type() == QEvent::WindowStateChange) && event->spontaneous() && isActiveWindow())
 	{
-		pmWidget().applyProgressDialog().activateWindow();
-		pmWidget().applyProgressDialog().raise();
+		QWidget* w = NULL;
+
+		if (pmWidget().applyProgressDialog().isVisible())
+			w = &pmWidget().applyProgressDialog();
+		else if (pmWidget().scanProgressDialog().isVisible())
+			w = &pmWidget().scanProgressDialog();
+
+		if (w != NULL)
+		{
+			w->activateWindow();
+			w->raise();
+			w->setFocus();
+		}
 	}
 
 	KXmlGuiWindow::changeEvent(event);
@@ -132,17 +143,12 @@ void MainWindow::setupActions()
 
 void MainWindow::setupConnections()
 {
-	connect(&pmWidget(), SIGNAL(devicesChanged()), SLOT(updateDevices()));
-	connect(&pmWidget(), SIGNAL(operationsChanged()), &listOperations(), SLOT(updateOperations()));
-	connect(&pmWidget(), SIGNAL(operationsChanged()), SLOT(updateStatusBar()));
-	connect(&pmWidget(), SIGNAL(selectedPartitionChanged(const Partition*)), SLOT(updateSelection(const Partition*)));
-	connect(&dockInformation(), SIGNAL(dockLocationChanged(Qt::DockWidgetArea)), SLOT(onDockLocationChanged(Qt::DockWidgetArea)));
+	connect(&listDevices(), SIGNAL(selectionChanged(const QString&)), &pmWidget(), SLOT(setSelectedDevice(const QString&)));
 }
 
 void MainWindow::setupStatusBar()
 {
 	statusBar()->addWidget(&statusText());
-	updateStatusBar();
 }
 
 void MainWindow::loadConfig()
@@ -161,14 +167,16 @@ void MainWindow::saveConfig() const
 	Config::self()->writeConfig();
 }
 
-void MainWindow::updateStatusBar()
+void MainWindow::on_m_PartitionManagerWidget_operationsChanged()
 {
+	listOperations().updateOperations();
+
 	statusText().setText(i18ncp("@info:status", "One pending operation", "%1 pending operations", pmWidget().numPendingOperations()));
 }
 
-void MainWindow::updateDevices()
+void MainWindow::on_m_PartitionManagerWidget_devicesChanged()
 {
-	listDevices().updateDevices();
+	listDevices().updateDevices(pmWidget().previewDevices(), pmWidget().selectedDevice());
 
 	if (pmWidget().selectedDevice())
 		infoPane().showDevice(dockWidgetArea(&dockInformation()), *pmWidget().selectedDevice());
@@ -178,15 +186,9 @@ void MainWindow::updateDevices()
 	updateWindowTitle();
 }
 
-void MainWindow::on_m_ListDevices_selectionChanged(Device* d)
+void MainWindow::on_m_DockInformation_dockLocationChanged(Qt::DockWidgetArea)
 {
-	pmWidget().setSelectedDevice(d);
-	updateSelection(NULL);
-}
-
-void MainWindow::onDockLocationChanged(Qt::DockWidgetArea)
-{
-	updateSelection(pmWidget().selectedPartition());
+	on_m_PartitionManagerWidget_selectedPartitionChanged(pmWidget().selectedPartition());
 }
 
 void MainWindow::updateWindowTitle()
@@ -201,7 +203,7 @@ void MainWindow::updateWindowTitle()
 	setWindowTitle(title);
 }
 
-void MainWindow::updateSelection(const Partition* p)
+void MainWindow::on_m_PartitionManagerWidget_selectedPartitionChanged(const Partition* p)
 {
 	if (p)
 		infoPane().showPartition(dockWidgetArea(&dockInformation()), *p);

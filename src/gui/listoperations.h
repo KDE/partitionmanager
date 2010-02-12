@@ -49,6 +49,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListOperations : public QWidget, public 
 	public:
 		void init(KActionCollection* coll, PartitionManagerWidget* pm_widget) { m_ActionCollection = coll; m_PartitionManagerWidget = pm_widget; }
 
+	public slots:
+		void updateOperations();
+
 	protected:
 		KActionCollection* actionCollection() { return m_ActionCollection; }
 
@@ -60,7 +63,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListOperations : public QWidget, public 
 
 	protected slots:
 		void on_m_ListOperations_customContextMenuRequested(const QPoint& pos);
-		void updateOperations();
 
 	private:
 		KActionCollection* m_ActionCollection;

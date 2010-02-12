@@ -396,6 +396,18 @@ void PartitionManagerWidget::clearSelectedPartition()
 	updatePartitions();
 }
 
+void PartitionManagerWidget::setSelectedDevice(const QString& device_node)
+{
+	foreach(Device* d, previewDevices())
+		if (d->deviceNode() == device_node)
+		{
+			setSelectedDevice(d);
+			return;
+		}
+
+	setSelectedDevice(NULL);
+}
+
 void PartitionManagerWidget::setSelectedDevice(Device* d)
 {
 	m_SelectedDevice = d;

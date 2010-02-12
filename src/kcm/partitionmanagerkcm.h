@@ -62,8 +62,10 @@ class PartitionManagerKCM : public KCModule, public Ui::PartitionManagerKCMBase
 
 	protected slots:
 		void onNewLogMessage(Log::Level logLevel, const QString& s);
-		void onStatusChanged();
 		void onApplyClicked();
+
+		void on_m_PartitionManagerWidget_devicesChanged();
+		void on_m_PartitionManagerWidget_operationsChanged();
 
 	private:
 		KActionCollection* m_ActionCollection;

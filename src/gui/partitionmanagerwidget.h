@@ -59,6 +59,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 
 	public slots:
 		void setSelectedDevice(Device* d);
+		void setSelectedDevice(const QString& device_node);
 
 	public:
 		void init(KActionCollection* coll, const QString& config_name);

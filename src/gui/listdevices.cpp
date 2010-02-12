@@ -19,8 +19,6 @@
 
 #include "gui/listdevices.h"
 
-#include "gui/partitionmanagerwidget.h"
-
 #include "core/device.h"
 
 #include "util/globallog.h"
@@ -29,41 +27,47 @@
 #include <kmenu.h>
 #include <kactioncollection.h>
 
+class ListDeviceWidgetItem : public QListWidgetItem
+{
+	public:
+		ListDeviceWidgetItem(const Device& d) :
+			QListWidgetItem(DesktopIcon(d.iconName()), d.deviceNode() + " (" + Capacity(d).toString() + ')'),
+			deviceNode(d.deviceNode())
+		{
+			setToolTip(d.deviceNode() + " (" + Capacity(d).toString() + ", " + d.name() + ')');
+			setSizeHint(QSize(0, 32));
+		}
+
+		const QString deviceNode;
+};
+
 /** Creates a new ListDevices instance.
 	@param parent the parent widget
 */
 ListDevices::ListDevices(QWidget* parent) :
 	QWidget(parent),
 	Ui::ListDevicesBase(),
-	m_ActionCollection(NULL),
-	m_PartitionManagerWidget(NULL)
+	m_ActionCollection(NULL)
 {
 	setupUi(this);
 }
 
-void ListDevices::updateDevices()
+void ListDevices::updateDevices(OperationStack::Devices& devices, Device* selected_device)
 {
 	int idx = listDevices().currentRow();
 
 	listDevices().clear();
 
-	foreach(const Device* d, pmWidget().previewDevices())
-	{
-		const QString shortText = d->deviceNode() + " (" + Capacity(*d).toString() + ')';
-		const QString longText = d->deviceNode() + " (" + Capacity(*d).toString() + ", " + d->name() + ')';
-		QListWidgetItem* item = new QListWidgetItem(DesktopIcon(d->iconName()), shortText);
-		item->setToolTip(longText);
-		item->setSizeHint(QSize(0, 32));
-		listDevices().addItem(item);
-	}
+	foreach(const Device* d, devices)
+		listDevices().addItem(new ListDeviceWidgetItem(*d));
 
 	if (idx > -1 && idx < listDevices().count())
 		listDevices().setCurrentRow(idx);
 
-	if (pmWidget().selectedDevice())
+	if (selected_device)
 	{
-		for (idx = 0; idx < pmWidget().previewDevices().size(); idx++)
-			if (pmWidget().previewDevices()[idx] == pmWidget().selectedDevice())
+		for (idx = 0; idx < devices.size(); idx++)
+			if (devices[idx] == selected_device)
 			{
 				listDevices().setCurrentRow(idx);
 				break;
@@ -73,23 +77,21 @@ void ListDevices::updateDevices()
 
 void ListDevices::on_m_ListDevices_itemSelectionChanged()
 {
-	int idx = -1;
-
 	if (listDevices().selectedItems().size() == 1)
-		idx = listDevices().row(listDevices().selectedItems()[0]);
+	{
+		ListDeviceWidgetItem* item = dynamic_cast<ListDeviceWidgetItem*>(listDevices().selectedItems()[0]);
 
-	Device* d = NULL;
-	if (idx >= 0 && idx < pmWidget().previewDevices().size())
-		d = pmWidget().previewDevices()[idx];
-
-	emit selectionChanged(d);
+		if (item != NULL)
+			emit selectionChanged(item->deviceNode);
+	}
 }
 
 void ListDevices::on_m_ListDevices_customContextMenuRequested(const QPoint& pos)
 {
-	Q_ASSERT(actionCollection());
-
-	KMenu deviceMenu;
-	deviceMenu.addAction(actionCollection()->action("createNewPartitionTable"));
-	deviceMenu.exec(listDevices().viewport()->mapToGlobal(pos));
+	if (actionCollection() && actionCollection()->action("createNewPartitionTable"))
+	{
+		KMenu deviceMenu;
+		deviceMenu.addAction(actionCollection()->action("createNewPartitionTable"));
+		deviceMenu.exec(listDevices().viewport()->mapToGlobal(pos));
+	}
 }

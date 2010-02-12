@@ -59,7 +59,7 @@ PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
 	setButtons(Apply);
 	setupConnections();
 
-	listDevices().init(actionCollection(), &pmWidget());
+	listDevices().setActionCollection(actionCollection());
 	listOperations().init(actionCollection(), &pmWidget());
 	pmWidget().init(actionCollection(), "kcm_partitionmanagerrc");
 
@@ -104,15 +104,19 @@ void PartitionManagerKCM::onNewLogMessage(Log::Level, const QString& s)
 
 void PartitionManagerKCM::setupConnections()
 {
-	connect(&pmWidget(), SIGNAL(devicesChanged()), &listDevices(), SLOT(updateDevices()));
-	connect(&pmWidget(), SIGNAL(operationsChanged()), &listOperations(), SLOT(updateOperations()));
-	connect(&listDevices(), SIGNAL(selectionChanged(Device*)), &pmWidget(), SLOT(setSelectedDevice(Device*)));
-	connect(&pmWidget(), SIGNAL(operationsChanged()), SLOT(onStatusChanged()));
+	connect(&listDevices(), SIGNAL(selectionChanged(const QString&)), &pmWidget(), SLOT(setSelectedDevice(const QString&)));
 }
 
-void PartitionManagerKCM::onStatusChanged()
+void PartitionManagerKCM::on_m_PartitionManagerWidget_operationsChanged()
 {
+	listOperations().updateOperations();
+
 	emit changed(pmWidget().numPendingOperations() > 0);
+}
+
+void PartitionManagerKCM::on_m_PartitionManagerWidget_devicesChanged()
+{
+	listDevices().updateDevices(pmWidget().previewDevices(), pmWidget().selectedDevice());
 }
 
 void PartitionManagerKCM::setupKCMWorkaround()
@@ -145,6 +149,6 @@ void PartitionManagerKCM::onApplyClicked()
 	if (pmWidget().numPendingOperations() > 0)
 		actionCollection()->action("applyAllOperations")->trigger();
 
-	QTimer::singleShot(0, this, SLOT(onStatusChanged()));
+	QTimer::singleShot(0, this, SLOT(on_m_PartitionManagerWidget_operationsChanged()));
 }
 

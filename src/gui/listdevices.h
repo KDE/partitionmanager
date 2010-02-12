@@ -23,15 +23,14 @@
 
 #include "util/libpartitionmanagerexport.h"
 
+#include "core/operationstack.h"
+
 #include "ui_listdevicesbase.h"
 
 #include <QWidget>
 
-#include <kdebug.h>
-
 class Device;
 class QPoint;
-class PartitionManagerWidget;
 class KActionCollection;
 
 /** @brief A list of devices.
@@ -46,21 +45,17 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui:
 		ListDevices(QWidget* parent);
 
 	signals:
-		void selectionChanged(Device*);
+		void selectionChanged(const QString& device_node);
 
 	public:
-		void init(KActionCollection* coll, PartitionManagerWidget* pm_widget) { m_ActionCollection = coll; m_PartitionManagerWidget = pm_widget; }
+		void setActionCollection(KActionCollection* coll) { m_ActionCollection = coll; }
 
 	public slots:
-		void updateDevices();
+		void updateDevices(OperationStack::Devices& devices, Device* selected_device);
 
 	protected:
 		QListWidget& listDevices() { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
 		const QListWidget& listDevices() const { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
-
-		PartitionManagerWidget& pmWidget() { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
-		const PartitionManagerWidget& pmWidget() const { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
-
 		KActionCollection* actionCollection() { return m_ActionCollection; }
 
 	protected slots:
@@ -69,7 +64,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui:
 
 	private:
 		KActionCollection* m_ActionCollection;
-		PartitionManagerWidget* m_PartitionManagerWidget;
 };
 
 #endif

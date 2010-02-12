@@ -87,17 +87,15 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		const QLabel& statusText() const { Q_ASSERT(m_StatusText); return *m_StatusText; }
 
 	protected slots:
-		void on_m_ListDevices_selectionChanged(Device* d);
-
-		void onDockLocationChanged(Qt::DockWidgetArea area);
-
 		void closeEvent(QCloseEvent*);
 		void changeEvent(QEvent* event);
 
 		void init();
-		void updateDevices();
-		void updateStatusBar();
-		void updateSelection(const Partition* p);
+
+		void on_m_DockInformation_dockLocationChanged(Qt::DockWidgetArea);
+		void on_m_PartitionManagerWidget_devicesChanged();
+		void on_m_PartitionManagerWidget_operationsChanged();
+		void on_m_PartitionManagerWidget_selectedPartitionChanged(const Partition* p);
 
 	private:
 		QLabel* m_StatusText;
