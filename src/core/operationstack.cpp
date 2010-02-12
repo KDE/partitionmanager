@@ -420,8 +420,8 @@ void OperationStack::clearOperations()
 /** Clears the list of Devices. */
 void OperationStack::clearDevices()
 {
-	qDeleteAll(m_PreviewDevices);
-	m_PreviewDevices.clear();
+	qDeleteAll(previewDevices());
+	previewDevices().clear();
 }
 
 /** Finds a Device a Partition is on.
@@ -456,7 +456,7 @@ void OperationStack::addDevice(Device* d)
 {
 	Q_ASSERT(d);
 
-	m_PreviewDevices.append(d);
+	previewDevices().append(d);
 }
 
 static bool deviceLessThan(const Device* d1, const Device* d2)
@@ -466,5 +466,5 @@ static bool deviceLessThan(const Device* d1, const Device* d2)
 
 void OperationStack::sortDevices()
 {
-	qSort(m_PreviewDevices.begin(), m_PreviewDevices.end(), deviceLessThan);
+	qSort(previewDevices().begin(), previewDevices().end(), deviceLessThan);
 }

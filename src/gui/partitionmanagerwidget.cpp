@@ -398,7 +398,7 @@ void PartitionManagerWidget::clearSelectedPartition()
 
 void PartitionManagerWidget::setSelectedDevice(const QString& device_node)
 {
-	foreach(Device* d, previewDevices())
+	foreach(Device* d, operationStack().previewDevices())
 		if (d->deviceNode() == device_node)
 		{
 			setSelectedDevice(d);
