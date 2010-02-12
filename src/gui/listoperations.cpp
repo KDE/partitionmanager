@@ -19,8 +19,6 @@
 
 #include "gui/listoperations.h"
 
-#include "gui/partitionmanagerwidget.h"
-
 #include "ops/operation.h"
 
 #include "util/globallog.h"
@@ -35,17 +33,16 @@
 ListOperations::ListOperations(QWidget* parent) :
 	QWidget(parent),
 	Ui::ListOperationsBase(),
-	m_ActionCollection(NULL),
-	m_PartitionManagerWidget(NULL)
+	m_ActionCollection(NULL)
 {
 	setupUi(this);
 }
 
-void ListOperations::updateOperations()
+void ListOperations::updateOperations(const OperationStack::Operations& ops)
 {
 	listOperations().clear();
 
-	foreach (const Operation* op, pmWidget().operations())
+	foreach (const Operation* op, ops)
 	{
 		QListWidgetItem* item = new QListWidgetItem(SmallIcon(op->iconName()), op->description());
 		item->setToolTip(op->description());
@@ -57,14 +54,20 @@ void ListOperations::updateOperations()
 
 void ListOperations::on_m_ListOperations_customContextMenuRequested(const QPoint& pos)
 {
-	Q_ASSERT(actionCollection());
+	if (actionCollection() != NULL)
+	{
+		KMenu opsMenu;
 
-	KMenu opsMenu;
+		if (actionCollection()->action("undoOperation") != NULL)
+			opsMenu.addAction(actionCollection()->action("undoOperation"));
 
-	opsMenu.addAction(actionCollection()->action("undoOperation"));
-	opsMenu.addAction(actionCollection()->action("clearAllOperations"));
-	opsMenu.addAction(actionCollection()->action("applyAllOperations"));
+		if (actionCollection()->action("clearAllOperations") != NULL)
+			opsMenu.addAction(actionCollection()->action("clearAllOperations"));
 
-	opsMenu.exec(listOperations().viewport()->mapToGlobal(pos));
+		if (actionCollection()->action("applyAllOperations") != NULL)
+			opsMenu.addAction(actionCollection()->action("applyAllOperations"));
+
+		opsMenu.exec(listOperations().viewport()->mapToGlobal(pos));
+	}
 }
 

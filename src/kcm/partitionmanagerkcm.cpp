@@ -60,7 +60,7 @@ PartitionManagerKCM::PartitionManagerKCM(QWidget* parent, const QVariantList&) :
 	setupConnections();
 
 	listDevices().setActionCollection(actionCollection());
-	listOperations().init(actionCollection(), &pmWidget());
+	listOperations().setActionCollection(actionCollection());
 	pmWidget().init(actionCollection(), "kcm_partitionmanagerrc");
 
 	const char* actionNames[] =
@@ -109,7 +109,7 @@ void PartitionManagerKCM::setupConnections()
 
 void PartitionManagerKCM::on_m_PartitionManagerWidget_operationsChanged()
 {
-	listOperations().updateOperations();
+	listOperations().updateOperations(pmWidget().operations());
 
 	emit changed(pmWidget().numPendingOperations() > 0);
 }

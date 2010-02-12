@@ -21,17 +21,16 @@
 
 #define LISTOPERATIONS__H
 
+#include "core/operationstack.h"
+
 #include "util/libpartitionmanagerexport.h"
 
 #include "ui_listoperationsbase.h"
 
 #include <QWidget>
 
-#include <kdebug.h>
-
 class Operation;
 class QPoint;
-class PartitionManagerWidget;
 class KActionCollection;
 
 /** @brief A list of pending operations.
@@ -47,16 +46,13 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListOperations : public QWidget, public 
 		ListOperations(QWidget* parent);
 
 	public:
-		void init(KActionCollection* coll, PartitionManagerWidget* pm_widget) { m_ActionCollection = coll; m_PartitionManagerWidget = pm_widget; }
+		void setActionCollection(KActionCollection* coll) { m_ActionCollection = coll; }
 
 	public slots:
-		void updateOperations();
+		void updateOperations(const OperationStack::Operations& ops);
 
 	protected:
 		KActionCollection* actionCollection() { return m_ActionCollection; }
-
-		PartitionManagerWidget& pmWidget() { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
-		const PartitionManagerWidget& pmWidget() const { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
 
 		QListWidget& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 		const QListWidget& listOperations() const { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
@@ -66,7 +62,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListOperations : public QWidget, public 
 
 	private:
 		KActionCollection* m_ActionCollection;
-		PartitionManagerWidget* m_PartitionManagerWidget;
 };
 
 #endif

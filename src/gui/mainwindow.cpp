@@ -63,7 +63,7 @@ void MainWindow::init()
 	setupConnections();
 
 	listDevices().setActionCollection(actionCollection());
-	listOperations().init(actionCollection(), &pmWidget());
+	listOperations().setActionCollection(actionCollection());
 	pmWidget().init(actionCollection(), "partitionmanagerrc");
 
 	// If we were called with an action collection we're supposed to be a KPart, so don't
@@ -169,7 +169,7 @@ void MainWindow::saveConfig() const
 
 void MainWindow::on_m_PartitionManagerWidget_operationsChanged()
 {
-	listOperations().updateOperations();
+	listOperations().updateOperations(pmWidget().operations());
 
 	statusText().setText(i18ncp("@info:status", "One pending operation", "%1 pending operations", pmWidget().numPendingOperations()));
 }
