@@ -86,6 +86,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		QLabel& statusText() { Q_ASSERT(m_StatusText); return *m_StatusText; }
 		const QLabel& statusText() const { Q_ASSERT(m_StatusText); return *m_StatusText; }
 
+		bool isKPart() const;
+
 	protected slots:
 		void closeEvent(QCloseEvent*);
 		void changeEvent(QEvent* event);

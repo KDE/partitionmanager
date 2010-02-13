@@ -67,9 +67,7 @@ void MainWindow::init()
 	listOperations().setActionCollection(actionCollection());
 	pmWidget().init(actionCollection(), "partitionmanagerrc");
 
-	// If we were called with an action collection we're supposed to be a KPart, so don't
-	// create the GUI in that case.
-	if (m_ActionCollection != NULL)
+	if (isKPart())
 		setupGUI(ToolBar | Keys | StatusBar | Save);
 	else
 		setupGUI(ToolBar | Keys | StatusBar | Save | Create);
@@ -218,3 +216,8 @@ void MainWindow::on_m_PartitionManagerWidget_selectedPartitionChanged(const Part
 	updateWindowTitle();
 }
 
+bool MainWindow::isKPart() const
+{
+	// If we were instantiated with an action collection we're supposed to be a KPart
+	return m_ActionCollection != NULL;
+}
