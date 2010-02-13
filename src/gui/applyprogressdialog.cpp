@@ -75,6 +75,8 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
 	setDetailsWidget(&detailsWidget());
 
 	showButtonSeparator(true);
+	setAttribute(Qt::WA_ShowModal, true);
+
 	setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Details);
 
 	dialogWidget().treeTasks().setColumnWidth(0, width() * 0.8);
@@ -108,11 +110,6 @@ void ApplyProgressDialog::setupConnections()
 /** Shows the dialog */
 void ApplyProgressDialog::show()
 {
-	foreach (QWidget* w, kapp->topLevelWidgets())
-		w->setEnabled(false);
-
-	setEnabled(true);
-
 	setStatus(i18nc("@info:progress", "Setting up..."));
 
 	resetReport();
@@ -191,9 +188,6 @@ void ApplyProgressDialog::slotButtonClicked(int button)
 
 		return;
 	}
-
-	foreach (QWidget* w, kapp->topLevelWidgets())
-		w->setEnabled(true);
 
 	mainWindow(this)->setWindowTitle(savedParentTitle());
 

@@ -309,9 +309,6 @@ void PartitionManagerWidget::scanDevices()
 
 	KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
-	foreach (QWidget* w, kapp->topLevelWidgets())
-		w->setEnabled(false);
-
 	scanProgressDialog().setEnabled(true);
 	scanProgressDialog().show();
 
@@ -337,9 +334,6 @@ void PartitionManagerWidget::onScanDevicesFinished()
 	KApplication::restoreOverrideCursor();
 
 	scanProgressDialog().hide();
-
-	foreach (QWidget* w, kapp->topLevelWidgets())
-		w->setEnabled(true);
 }
 
 void PartitionManagerWidget::enableActions()

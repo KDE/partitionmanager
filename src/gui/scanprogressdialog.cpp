@@ -27,6 +27,7 @@ ScanProgressDialog::ScanProgressDialog(QWidget* parent) :
 	setCaption(i18nc("@title:window", "Scanning devices..."));
 	setMinimumWidth(280);
 	setMinimumDuration(150);
+	setAttribute(Qt::WA_ShowModal, true);
 }
 
 void ScanProgressDialog::setDeviceName(const QString& d)
