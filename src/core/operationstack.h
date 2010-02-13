@@ -22,6 +22,8 @@
 #define OPERATIONSTACK__H
 
 #include <QList>
+#include <QReadWriteLock>
+
 #include <qglobal.h>
 
 class Device;
@@ -64,6 +66,8 @@ class OperationStack
 
 		Device* findDeviceForPartition(const Partition* p);
 
+		QReadWriteLock& lock() { return m_Lock; }
+
 	protected:
 		void clearDevices();
 		void addDevice(Device* d);
@@ -78,6 +82,7 @@ class OperationStack
 	private:
 		Operations m_Operations;
 		mutable Devices m_PreviewDevices;
+		QReadWriteLock m_Lock;
 };
 
 #endif

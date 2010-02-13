@@ -66,6 +66,7 @@
 
 #include <QCursor>
 #include <QPointer>
+#include <QReadLocker>
 
 #include <config.h>
 
@@ -325,15 +326,10 @@ void PartitionManagerWidget::onScanDevicesProgressChanged(const QString& device_
 
 void PartitionManagerWidget::onScanDevicesFinished()
 {
+	QReadLocker lockDevices(&operationStack().lock());
+
 	if (!operationStack().previewDevices().isEmpty())
-	{
 		setSelectedDevice(operationStack().previewDevices()[0]);
-		// FIXME: Normally this should be emitted in setSelectedDevice(), but if we do that
-		// now we get all kinds of terrible races and crashes during rescan (because DeviceScanner
-		// clears the devices in the operationstack while ListDevices is just iterating them).
-		// Once that is fixed, remove the emit here.
-		emit devicesChanged();
-	}
 
 	updatePartitions();
 
@@ -398,6 +394,8 @@ void PartitionManagerWidget::clearSelectedPartition()
 
 void PartitionManagerWidget::setSelectedDevice(const QString& device_node)
 {
+	QReadLocker lockDevices(&operationStack().lock());
+
 	foreach(Device* d, operationStack().previewDevices())
 		if (d->deviceNode() == device_node)
 		{
@@ -410,9 +408,10 @@ void PartitionManagerWidget::setSelectedDevice(const QString& device_node)
 
 void PartitionManagerWidget::setSelectedDevice(Device* d)
 {
+	// NOTE: we cannot emit devicesChanged() here because it will end up calling
+	// ListDevices::updateDevices() which in turn will modify the QListWidget, which
+	// will then emit itemSelectionChanged() which will in the end lead us back here.
 	m_SelectedDevice = d;
-	// FIXME: We should emit devicesChanged() here, but if we do that we get terrible
-	// races. See onScanDevicesFinished()
 	clearSelectedPartition();
 }
 

@@ -80,6 +80,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		const OperationStack::Devices& previewDevices() const { return operationStack().previewDevices(); }
 		const OperationStack::Operations& operations() const { return operationStack().operations(); }
 
+		OperationStack& operationStack() { return m_OperationStack; }
+		const OperationStack& operationStack() const { return m_OperationStack; }
+
 		void updatePartitions();
 
 		Partition* clipboardPartition() { return m_ClipboardPartition; }
@@ -110,9 +113,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 
 		OperationRunner& operationRunner() { return m_OperationRunner; }
 		const OperationRunner& operationRunner() const { return m_OperationRunner; }
-
-		OperationStack& operationStack() { return m_OperationStack; }
-		const OperationStack& operationStack() const { return m_OperationStack; }
 
 		DeviceScanner& deviceScanner() { return m_DeviceScanner; }
 		const DeviceScanner& deviceScanner() const { return m_DeviceScanner; }

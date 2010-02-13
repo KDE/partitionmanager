@@ -34,6 +34,7 @@
 #include <kcmultidialog.h>
 
 #include <QTimer>
+#include <QReadLocker>
 
 K_PLUGIN_FACTORY(
 		PartitionManagerKCMFactory,
@@ -116,6 +117,8 @@ void PartitionManagerKCM::on_m_PartitionManagerWidget_operationsChanged()
 
 void PartitionManagerKCM::on_m_PartitionManagerWidget_devicesChanged()
 {
+	QReadLocker lockDevices(&pmWidget().operationStack().lock());
+
 	listDevices().updateDevices(pmWidget().previewDevices(), pmWidget().selectedDevice());
 }
 

@@ -38,14 +38,17 @@
 
 #include "util/globallog.h"
 
-
 #include <kdebug.h>
 #include <klocale.h>
+
+#include <QReadLocker>
+#include <QWriteLocker>
 
 /** Constructs a new OperationStack */
 OperationStack::OperationStack() :
 	m_Operations(),
-	m_PreviewDevices()
+	m_PreviewDevices(),
+	m_Lock(QReadWriteLock::Recursive)
 {
 }
 
@@ -420,6 +423,8 @@ void OperationStack::clearOperations()
 /** Clears the list of Devices. */
 void OperationStack::clearDevices()
 {
+	QWriteLocker lockDevices(&lock());
+
 	qDeleteAll(previewDevices());
 	previewDevices().clear();
 }
@@ -430,6 +435,8 @@ void OperationStack::clearDevices()
 */
 Device* OperationStack::findDeviceForPartition(const Partition* p)
 {
+	QReadLocker lockDevices(&lock());
+
 	foreach (Device* d, previewDevices())
 	{
 		if (d->partitionTable() == NULL)
@@ -456,6 +463,8 @@ void OperationStack::addDevice(Device* d)
 {
 	Q_ASSERT(d);
 
+	QWriteLocker lockDevices(&lock());
+
 	previewDevices().append(d);
 }
 
@@ -466,5 +475,7 @@ static bool deviceLessThan(const Device* d1, const Device* d2)
 
 void OperationStack::sortDevices()
 {
+	QWriteLocker lockDevices(&lock());
+
 	qSort(previewDevices().begin(), previewDevices().end(), deviceLessThan);
 }

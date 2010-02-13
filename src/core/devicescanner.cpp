@@ -90,4 +90,5 @@ void DeviceScanner::run()
 	}
 
 	operationStack().sortDevices();
+	emit devicesChanged();
 }

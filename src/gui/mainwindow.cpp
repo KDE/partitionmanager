@@ -34,6 +34,7 @@
 #include <kstandardguiitem.h>
 
 #include <QCloseEvent>
+#include <QReadLocker>
 
 #include <config.h>
 
@@ -176,6 +177,8 @@ void MainWindow::on_m_PartitionManagerWidget_operationsChanged()
 
 void MainWindow::on_m_PartitionManagerWidget_devicesChanged()
 {
+	QReadLocker lockDevices(&pmWidget().operationStack().lock());
+
 	listDevices().updateDevices(pmWidget().previewDevices(), pmWidget().selectedDevice());
 
 	if (pmWidget().selectedDevice())
