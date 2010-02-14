@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2008,2009,2010 by Volker Lanz <vl@fidra.de>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -24,7 +24,6 @@
 #include "core/device.h"
 #include "core/partition.h"
 #include "core/partitiontable.h"
-#include "core/operationstack.h"
 
 #include "jobs/setpartflagsjob.h"
 
@@ -35,10 +34,6 @@
 
 #include <QString>
 #include <QStringList>
-#include <QList>
-#include <QFile>
-#include <QMap>
-#include <QRegExp>
 
 #include <kdebug.h>
 #include <klocale.h>
@@ -87,10 +82,8 @@ typedef struct _GPTDiskData GPTDiskData;
 
 // --------------------------------------------------------------------------
 
-/** Get the first sector a Partition may cover on a given Device with a PartitionTable of
-    type t.
+/** Get the first sector a Partition may cover on a given Device
     @param d the Device in question
-    @param t the PartitonTable's type name (e.g. "msdos" or "gpt")
     @return the first sector usable by a Partition
 */
 quint64 LibParted::firstUsableSector(const Device& d)
@@ -114,10 +107,8 @@ quint64 LibParted::firstUsableSector(const Device& d)
 	return rval;
 }
 
-/** Get the last sector a Partition may cover on a given Device with a PartitionTable of
-    type t.
+/** Get the last sector a Partition may cover on a given Device
     @param d the Device in question
-    @param t the PartitonTable's type name (e.g. "msdos" or "gpt")
     @return the last sector usable by a Partition
 */
 quint64 LibParted::lastUsableSector(const Device& d)
@@ -201,7 +192,6 @@ static void readSectorsUsed(PedDisk* pedDisk, Partition& p, const QString& mount
 	@param pedDevice libparted pointer to the device
 	@param d Device
 	@param pedDisk libparted pointer to the disk label
-	@param mountInfo map of mount points
 */
 static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDisk)
 {
@@ -284,6 +274,10 @@ LibParted::LibParted()
 	ped_exception_set_handler(pedExceptionHandler);
 }
 
+/** Create a Device for the given device_node and scan it for partitions.
+	@param device_node the device node (e.g. "/dev/sda")
+	@return the created Device object. callers need to free this.
+*/
 Device* LibParted::scanDevice(const QString& device_node)
 {
 	PedDevice* pedDevice = ped_device_get(device_node.toLocal8Bit());
