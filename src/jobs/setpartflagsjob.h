@@ -25,8 +25,6 @@
 
 #include "core/partitiontable.h"
 
-#include <parted/parted.h>
-
 class Device;
 class Partition;
 class Report;
