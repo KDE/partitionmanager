@@ -43,6 +43,21 @@
 #include <parted/parted.h>
 #include <unistd.h>
 
+static const LibParted::FlagMap flagmap[] =
+{
+	{ PED_PARTITION_BOOT, PartitionTable::FlagBoot },
+	{ PED_PARTITION_ROOT, PartitionTable::FlagRoot },
+	{ PED_PARTITION_SWAP, PartitionTable::FlagSwap },
+	{ PED_PARTITION_HIDDEN, PartitionTable::FlagHidden },
+	{ PED_PARTITION_RAID, PartitionTable::FlagRaid },
+	{ PED_PARTITION_LVM, PartitionTable::FlagLvm },
+	{ PED_PARTITION_LBA, PartitionTable::FlagLba },
+	{ PED_PARTITION_HPSERVICE, PartitionTable::FlagHpService },
+	{ PED_PARTITION_PALO, PartitionTable::FlagPalo },
+	{ PED_PARTITION_PREP, PartitionTable::FlagPrep },
+	{ PED_PARTITION_MSFT_RESERVED, PartitionTable::FlagMsftReserved }
+};
+
 /** Callback to handle exceptions from libparted
 	@param e the libparted exception to handle
 */
@@ -86,7 +101,7 @@ typedef struct _GPTDiskData GPTDiskData;
     @param d the Device in question
     @return the first sector usable by a Partition
 */
-quint64 LibParted::firstUsableSector(const Device& d)
+static quint64 firstUsableSector(const Device& d)
 {
 	PedDevice* pedDevice = ped_device_get(d.deviceNode().toAscii());
 	PedDisk* pedDisk = pedDevice ? ped_disk_new(pedDevice) : NULL;
@@ -111,7 +126,7 @@ quint64 LibParted::firstUsableSector(const Device& d)
     @param d the Device in question
     @return the last sector usable by a Partition
 */
-quint64 LibParted::lastUsableSector(const Device& d)
+static quint64 lastUsableSector(const Device& d)
 {
 	PedDevice* pedDevice = ped_device_get(d.deviceNode().toAscii());
 	PedDisk* pedDisk = pedDevice ? ped_disk_new(pedDevice) : NULL;
@@ -183,6 +198,44 @@ static void readSectorsUsed(PedDisk* pedDisk, Partition& p, const QString& mount
 		p.fileSystem().setSectorsUsed(readSectorsUsedLibParted(pedDisk, p));
 }
 
+static PartitionTable::Flags activeFlags(PedPartition* p)
+{
+	PartitionTable::Flags flags = PartitionTable::FlagNone;
+
+	// We might get here with a pedPartition just picked up from libparted that is
+	// unallocated. Libparted doesn't like it if we ask for flags for unallocated
+	// space.
+	if (p->num <= 0)
+		return flags;
+
+	for (quint32 i = 0; i < sizeof(flagmap) / sizeof(flagmap[0]); i++)
+		if (ped_partition_is_flag_available(p, flagmap[i].pedFlag) && ped_partition_get_flag(p, flagmap[i].pedFlag))
+			flags |= flagmap[i].flag;
+
+	return flags;
+}
+
+static PartitionTable::Flags availableFlags(PedPartition* p)
+{
+	PartitionTable::Flags flags;
+
+	// see above.
+	if (p->num <= 0)
+		return flags;
+
+	for (quint32 i = 0; i < sizeof(flagmap) / sizeof(flagmap[0]); i++)
+		if (ped_partition_is_flag_available(p, flagmap[i].pedFlag))
+		{
+			// workaround:: see above
+			if (p->type != PED_PARTITION_EXTENDED || flagmap[i].flag != PartitionTable::FlagHidden)
+				flags |= flagmap[i].flag;
+		}
+
+	return flags;
+}
+
+
+
 /** Scans a Device for Partitions.
 
 	This function will scan a Device for all Partitions on it, detect the FileSystem for each Partition,
@@ -243,9 +296,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 
 		const QString mountPoint = mountPoints.findByDevice(node) ? mountPoints.findByDevice(node)->mountPoint() : QString();
 
-		Partition* part = new Partition(parent, d, PartitionRole(r), fs, pedPartition->geom.start, pedPartition->geom.end,
-				pedPartition->num, SetPartFlagsJob::availableFlags(pedPartition),
-				QStringList() << mountPoint, ped_partition_is_busy(pedPartition), SetPartFlagsJob::activeFlags(pedPartition));
+		Partition* part = new Partition(parent, d, PartitionRole(r), fs, pedPartition->geom.start, pedPartition->geom.end, pedPartition->num, availableFlags(pedPartition), QStringList() << mountPoint, ped_partition_is_busy(pedPartition), activeFlags(pedPartition));
 
 		readSectorsUsed(pedDisk, *part, mountPoint);
 
@@ -272,6 +323,14 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 LibParted::LibParted()
 {
 	ped_exception_set_handler(pedExceptionHandler);
+}
+
+/** Return a map of partition flags from libparted flags to PartitionTable::Flags
+	@return the map
+*/
+const LibParted::FlagMap* LibParted::flagMap()
+{
+	return flagmap;
 }
 
 /** Create a Device for the given device_node and scan it for partitions.

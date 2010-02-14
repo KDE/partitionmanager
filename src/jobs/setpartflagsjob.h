@@ -49,13 +49,10 @@ class SetPartFlagsJob : public Job
 		virtual qint32 numSteps() const;
 		virtual QString description() const;
 
-		static PartitionTable::Flags activeFlags(PedPartition* p);
-		static PartitionTable::Flags availableFlags(PedPartition* p);
-		
 	protected:
 		Device& device() { return m_Device; }
 		const Device& device() const { return m_Device; }
-		
+
 		Partition& partition() { return m_Partition; }
 		const Partition& partition() const { return m_Partition; }
 

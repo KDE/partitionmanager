@@ -21,16 +21,17 @@
 
 #define LIBPARTED__H
 
+#include "core/partitiontable.h"
+
+#include <parted/parted.h>
+
 #include <qglobal.h>
 
-class OperationStack;
 class Device;
 
 class QString;
 
-/** @brief Scanning for Devices.
-
-	Encapsulates Device scanning done by libparted.
+/** @brief Device scanning done by libparted.
 
 	More libparted-related stuff is in the @link Job Job-derived @endlink classes.
 
@@ -41,12 +42,18 @@ class LibParted
 	Q_DISABLE_COPY(LibParted)
 
 	public:
+		typedef struct
+		{
+			PedPartitionFlag pedFlag;
+			PartitionTable::Flag flag;
+		} FlagMap;
+
+	public:
 		LibParted();
 
 	public:
-		static quint64 firstUsableSector(const Device& d);
-		static quint64 lastUsableSector(const Device& d);
 		static Device* scanDevice(const QString& device_node);
+		static const FlagMap* flagMap();
 };
 
 #endif

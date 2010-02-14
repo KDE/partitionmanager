@@ -23,29 +23,11 @@
 #include "core/partition.h"
 #include "core/partitionrole.h"
 #include "core/partitiontable.h"
+#include "core/libparted.h"
 
 #include "util/report.h"
 
 #include <klocale.h>
-
-static const struct
-{
-	PedPartitionFlag pedFlag;
-	PartitionTable::Flag flag;
-} flagmap[] =
-{
-	{ PED_PARTITION_BOOT, PartitionTable::FlagBoot },
-	{ PED_PARTITION_ROOT, PartitionTable::FlagRoot },
-	{ PED_PARTITION_SWAP, PartitionTable::FlagSwap },
-	{ PED_PARTITION_HIDDEN, PartitionTable::FlagHidden },
-	{ PED_PARTITION_RAID, PartitionTable::FlagRaid },
-	{ PED_PARTITION_LVM, PartitionTable::FlagLvm },
-	{ PED_PARTITION_LBA, PartitionTable::FlagLba },
-	{ PED_PARTITION_HPSERVICE, PartitionTable::FlagHpService },
-	{ PED_PARTITION_PALO, PartitionTable::FlagPalo },
-	{ PED_PARTITION_PREP, PartitionTable::FlagPrep },
-	{ PED_PARTITION_MSFT_RESERVED, PartitionTable::FlagMsftReserved }
-};
 
 /** Creates a new SetPartFlagsJob
 	@param d the Device the Partition whose flags are to be set is on
@@ -62,7 +44,7 @@ SetPartFlagsJob::SetPartFlagsJob(Device& d, Partition& p, PartitionTable::Flags 
 
 qint32 SetPartFlagsJob::numSteps() const
 {
-	return sizeof(flagmap) / sizeof(flagmap[0]);
+	return sizeof(LibParted::flagMap()) / sizeof(LibParted::flagMap()[0]);
 }
 
 bool SetPartFlagsJob::run(Report& parent)
@@ -70,92 +52,56 @@ bool SetPartFlagsJob::run(Report& parent)
 	bool rval = true;
 
 	Report* report = jobStarted(parent);
-	
+
 	if (openPed(device().deviceNode()))
 	{
 		PedPartition* pedPartition = (partition().roles().has(PartitionRole::Extended)) ? ped_disk_extended_partition(pedDisk()) : ped_disk_get_partition_by_sector(pedDisk(), partition().firstSector());
 
 		if (pedPartition)
 		{
-			for (quint32 i = 0; i < sizeof(flagmap) / sizeof(flagmap[0]); i++)
+			for (quint32 i = 0; i < sizeof(LibParted::flagMap()) / sizeof(LibParted::flagMap()[0]); i++)
 			{
 				emit progress(i + 1);
 
-				if (!ped_partition_is_flag_available(pedPartition, flagmap[i].pedFlag))
+				if (!ped_partition_is_flag_available(pedPartition, LibParted::flagMap()[i].pedFlag))
 				{
-					report->line() << i18nc("@info/plain", "The flag \"%1\" is not available on the partition's partition table.", PartitionTable::flagName(flagmap[i].flag));
+					report->line() << i18nc("@info/plain", "The flag \"%1\" is not available on the partition's partition table.", PartitionTable::flagName(LibParted::flagMap()[i].flag));
 					continue;
 				}
 
 				// Workaround: libparted claims the hidden flag is available for extended partitions, but
 				// throws an error when we try to set or clear it. So skip this combination (also see below in
 				// availableFlags()).
-				if (pedPartition->type == PED_PARTITION_EXTENDED && flagmap[i].flag == PartitionTable::FlagHidden)
+				if (pedPartition->type == PED_PARTITION_EXTENDED && LibParted::flagMap()[i].flag == PartitionTable::FlagHidden)
 					continue;
 
-				int state = (flags() & flagmap[i].flag) ? 1 : 0;
+				int state = (flags() & LibParted::flagMap()[i].flag) ? 1 : 0;
 
-				if (!ped_partition_set_flag(pedPartition, flagmap[i].pedFlag, state))
+				if (!ped_partition_set_flag(pedPartition, LibParted::flagMap()[i].pedFlag, state))
 				{
-					report->line() << i18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(flagmap[i].flag), partition().deviceNode(), state ? i18nc("@info flag turned on, active", "on") : i18nc("@info flag turned off, inactive", "off"));
+					report->line() << i18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(LibParted::flagMap()[i].flag), partition().deviceNode(), state ? i18nc("@info flag turned on, active", "on") : i18nc("@info flag turned off, inactive", "off"));
 
 					rval = false;
 				}
 			}
-	
+
 			if (!commit())
 				rval = false;
 		}
 		else
 			report->line() << i18nc("@info/plain", "Could not find partition <filename>%1</filename> on device <filename>%2</filename> to set partition flags.", partition().deviceNode(), device().deviceNode());
-	
+
 		closePed();
 	}
 	else
 		report->line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> to set partition flags for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
-	
+
 	if (rval)
 		partition().setFlags(flags());
 
 	jobFinished(*report, rval);
 
 	return rval;
-}
-
-PartitionTable::Flags SetPartFlagsJob::activeFlags(PedPartition* p)
-{
-	PartitionTable::Flags flags = PartitionTable::FlagNone;
-
-	// We might get here with a pedPartition just picked up from libparted that is
-	// unallocated. Libparted doesn't like it if we ask for flags for unallocated
-	// space.
-	if (p->num <= 0)
-		return flags;
-	
-	for (quint32 i = 0; i < sizeof(flagmap) / sizeof(flagmap[0]); i++)
-		if (ped_partition_is_flag_available(p, flagmap[i].pedFlag) && ped_partition_get_flag(p, flagmap[i].pedFlag))
-			flags |= flagmap[i].flag;
-
-	return flags;
-}
-
-PartitionTable::Flags SetPartFlagsJob::availableFlags(PedPartition* p)
-{
-	PartitionTable::Flags flags;
-	
-	// see above.
-	if (p->num <= 0)
-		return flags;
-	
-	for (quint32 i = 0; i < sizeof(flagmap) / sizeof(flagmap[0]); i++)
-		if (ped_partition_is_flag_available(p, flagmap[i].pedFlag))
-		{
-			// workaround:: see above
-			if (p->type != PED_PARTITION_EXTENDED || flagmap[i].flag != PartitionTable::FlagHidden)
-				flags |= flagmap[i].flag;
-		}
-	
-	return flags;
 }
 
 QString SetPartFlagsJob::description() const
