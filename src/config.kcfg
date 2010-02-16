@@ -7,6 +7,12 @@
 		<entry name="treePartitionColumnWidths" type="IntList">
 			<default>-1</default>
 		</entry>
+		<entry name="treePartitionColumnPositions" type="IntList">
+			<default>-1</default>
+		</entry>
+		<entry name="treePartitionColumnVisible" type="IntList">
+			<default>-1</default>
+		</entry>
 		<entry name="firstRun" type="Bool">
 			<default>true</default>
 		</entry>

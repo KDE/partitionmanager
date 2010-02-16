@@ -146,6 +146,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		void onFileSystemSupport();
 		void onBackupPartition();
 		void onRestorePartition();
+		void onHeaderContextMenu(const QPoint& p);
 
 	private:
 		OperationStack m_OperationStack;

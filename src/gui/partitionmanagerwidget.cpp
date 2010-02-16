@@ -109,6 +109,7 @@ PartitionManagerWidget::PartitionManagerWidget(QWidget* parent, KActionCollectio
 	dbus.registerObject("/PartitionManager", this);
 
 	treePartitions().header()->setStretchLastSection(false);
+	treePartitions().header()->setContextMenuPolicy(Qt::CustomContextMenu);
 }
 
 PartitionManagerWidget::~PartitionManagerWidget()
@@ -135,17 +136,38 @@ void PartitionManagerWidget::init(KActionCollection* coll, const QString& config
 void PartitionManagerWidget::loadConfig()
 {
 	QList<int> colWidths = Config::treePartitionColumnWidths();
+	QList<int> colPositions = Config::treePartitionColumnPositions();
+	QList<int> colVisible = Config::treePartitionColumnVisible();
+	QHeaderView* header = treePartitions().header();
 
-	if (!colWidths.isEmpty() && colWidths[0] != -1)
-		for (int i = 0; i < colWidths.size(); i++)
+	for (int i = 0; i < treePartitions().columnCount(); i++)
+	{
+		if (colPositions[0] != -1 && colPositions.size() >= i)
+			header->moveSection(header->visualIndex(i), colPositions[i]);
+
+		if (colVisible[0] != -1 && colVisible.size() >= i)
+			treePartitions().setColumnHidden(i, colVisible[i] == 0);
+
+		if (colWidths[0] != -1 && colWidths.size() >= i)
 			treePartitions().setColumnWidth(i, colWidths[i]);
+	}
 }
 
 void PartitionManagerWidget::saveConfig() const
 {
 	QList<int> colWidths;
-	for(int i = 0; i < treePartitions().columnCount(); i++)
+	QList<int> colPositions;
+	QList<int> colVisible;
+
+	for (int i = 0; i < treePartitions().columnCount(); i++)
+	{
+		colPositions.append(treePartitions().header()->visualIndex(i));
+		colVisible.append(treePartitions().isColumnHidden(i) ? 0 : 1);
 		colWidths.append(treePartitions().columnWidth(i));
+	}
+
+	Config::setTreePartitionColumnPositions(colPositions);
+	Config::setTreePartitionColumnVisible(colVisible);
 	Config::setTreePartitionColumnWidths(colWidths);
 
 	Config::self()->writeConfig();
@@ -299,6 +321,8 @@ void PartitionManagerWidget::setupConnections()
 	connect(&deviceScanner(), SIGNAL(progressChanged(const QString&, int)), SLOT(onScanDevicesProgressChanged(const QString&, int)));
 	connect(&deviceScanner(), SIGNAL(operationsChanged()), SIGNAL(operationsChanged()));
 	connect(&deviceScanner(), SIGNAL(devicesChanged()), SIGNAL(devicesChanged()));
+
+	connect(treePartitions().header(), SIGNAL(customContextMenuRequested(const QPoint&)), SLOT(onHeaderContextMenu(const QPoint&)));
 }
 
 void PartitionManagerWidget::scanDevices()
@@ -487,6 +511,37 @@ void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetIt
 		return;
 
 	actionCollection()->action("propertiesPartition")->trigger();
+}
+
+void PartitionManagerWidget::onHeaderContextMenu(const QPoint& p)
+{
+	KMenu headerMenu;
+
+	headerMenu.addTitle(i18nc("@title:menu", "Columns"));
+
+	QHeaderView* header = treePartitions().header();
+
+	for (qint32 i = 0; i < treePartitions().model()->columnCount(); i++)
+	{
+		const int idx = header->logicalIndex(i);
+		const QString text = treePartitions().model()->headerData(idx, Qt::Horizontal).toString();
+
+		QAction* action = headerMenu.addAction(text);
+		action->setCheckable(true);
+		action->setChecked(!header->isSectionHidden(idx));
+		action->setData(idx);
+		action->setEnabled(idx > 0);
+	}
+
+	QAction* action = headerMenu.exec(treePartitions().header()->mapToGlobal(p));
+
+	if (action != NULL)
+	{
+		const bool hidden = !action->isChecked();
+		treePartitions().setColumnHidden(action->data().toInt(), hidden);
+		if (!hidden)
+			treePartitions().resizeColumnToContents(action->data().toInt());
+	}
 }
 
 void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidget* item)
