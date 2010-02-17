@@ -74,7 +74,7 @@ QString Capacity::toString(Flags f) const
 	@return the Capacity as string */
 QString Capacity::toString(Unit u, Flags f) const
 {
-	QString s = toStringInternal(unitFactor(Byte, u));
+	QString s = toStringInternal(u);
 	if ((f & AppendUnit) && s != invalidString())
 		s += ' ' + unitName(u);
 	if ((f & AppendBytes) && s != invalidString())
@@ -179,11 +179,12 @@ bool Capacity::isValid() const
 	return m_Size >= 0;
 }
 
-QString Capacity::toStringInternal(qint64 unitSize) const
+QString Capacity::toStringInternal(Unit u) const
 {
 	if (m_Size < 0)
 		return invalidString();
 
+	qint64 unitSize = unitFactor(Byte, u);
 	const double num = static_cast<double>(m_Size) / static_cast<double>(unitSize);
-	return KGlobal::locale()->formatNumber(num);
+	return KGlobal::locale()->formatNumber(num, u == Byte ? 0 : -1);
 }

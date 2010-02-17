@@ -72,7 +72,7 @@ class Capacity
 		static qint64 unitFactor(Unit from, Unit to);
 
 	protected:
-		QString toStringInternal(qint64 unitSize) const;
+		QString toStringInternal(Unit u) const;
 
 	private:
 		qint64 m_Size;
