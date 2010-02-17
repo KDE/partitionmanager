@@ -48,21 +48,23 @@ class PartWidget : public QWidget, public PartWidgetBase
 	public:
 		bool active() const;
 		void updateChildren();
-		
+
 		const Partition* partition() const { return m_Partition.isNull() ? NULL : m_Partition; } /**< @return the widget's Partition or NULL if none set */
 
 	protected:
 		void paintEvent(QPaintEvent* event);
 		void resizeEvent(QResizeEvent* event);
-		
+
 		PartTableWidget* partTableWidget() { return m_PartTableWidget.isNull() ? NULL : m_PartTableWidget; }
 		const PartTableWidget* partTableWidget() const { return m_PartTableWidget.isNull() ? NULL : m_PartTableWidget; }
-		
+
 		QList<PartWidget*>& widgets() { return m_Widgets; }
 		const QList<PartWidget*>& widgets() const { return m_Widgets; }
-		
+
 		void drawPartition(QWidget* destWidget);
 		bool showChildren() const { return m_ShowChildren; }
+
+		QColor activeColor(const QColor& col) const;
 
 	private:
 		QPointer<PartTableWidget> m_PartTableWidget;

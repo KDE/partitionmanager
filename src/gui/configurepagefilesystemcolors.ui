@@ -483,7 +483,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="KColorButton" name="kcfg_FileSystemColorCode17"/>
+       <widget class="KColorButton" name="kcfg_AvailableSpaceColorCode"/>
       </item>
       <item row="0" column="2">
        <spacer name="horizontalSpacer_14">
@@ -512,7 +512,7 @@
        </widget>
       </item>
       <item row="0" column="4">
-       <widget class="KColorButton" name="kcfg_FileSystemColorCode18"/>
+       <widget class="KColorButton" name="kcfg_UsedSpaceColorCode"/>
       </item>
       <item row="0" column="5">
        <spacer name="horizontalSpacer_13">

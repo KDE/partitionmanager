@@ -26,7 +26,7 @@
 			<default>false</default>
 		</entry>
 		<entry key="FileSystemColorCode$(colorNumber)" type="Color">
-			<parameter name="colorNumber" type="UInt" max="18"/>
+			<parameter name="colorNumber" type="UInt" max="16"/>
 			<default param="0">252,242,220</default>
 			<default param="1">187,249,207</default>
 			<default param="2">122,145,180</default>
@@ -44,8 +44,12 @@
 			<default param="14">240,165,171</default>
 			<default param="15">151,220,134</default>
 			<default param="16">252,242,222</default>
-			<default param="17">255,255,255</default>
-			<default param="18">247,231,231</default>
+		</entry>
+		<entry key="AvailableSpaceColorCode" type="Color">
+			<default>255,255,255</default>
+		</entry>
+		<entry key="UsedSpaceColorCode" type="Color">
+			<default>255,255,200</default>
 		</entry>
 	</group>
 </kcfg>

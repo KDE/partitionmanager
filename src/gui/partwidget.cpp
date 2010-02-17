@@ -30,7 +30,6 @@
 #include <QPainter>
 
 #include <kdebug.h>
-#include <kcolorscheme.h>
 #include <kglobalsettings.h>
 
 #include <config.h>
@@ -100,6 +99,14 @@ void PartWidget::paintEvent(QPaintEvent*)
 	drawPartition(this);
 }
 
+QColor PartWidget::activeColor(const QColor& col) const
+{
+	if (active())
+		return col.darker(130);
+
+	return col;
+}
+
 void PartWidget::drawPartition(QWidget* destWidget)
 {
 	if (partition() == NULL)
@@ -109,11 +116,10 @@ void PartWidget::drawPartition(QWidget* destWidget)
 	const int w = (destWidget->width() - 1 - (PartWidget::borderWidth() * 2)) * usedPercentage / 100;
 
 	QPainter painter(destWidget);
-	KColorScheme colorScheme(QPalette::Active, active() ? KColorScheme::Selection : KColorScheme::View);
 
 	// draw border
-	painter.setPen(colorScheme.foreground().color());
-	painter.setBrush(Config::fileSystemColorCode(partition()->fileSystem().type()));
+	painter.setPen(active() ? QColor(250, 250, 250) : QColor(20, 20, 20));
+	painter.setBrush(activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())));
 	painter.drawRect(QRect(0, 0, destWidget->width() - 1, destWidget->height() - 1));
 
 	if (partition()->roles().has(PartitionRole::Extended))
@@ -122,11 +128,11 @@ void PartWidget::drawPartition(QWidget* destWidget)
 	if (!partition()->roles().has(PartitionRole::Unallocated))
 	{
 		// draw free space background
-		painter.setBrush(colorScheme.background(KColorScheme::NormalBackground));
+		painter.setBrush(activeColor(Config::availableSpaceColorCode()));
 		painter.drawRect(QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), destWidget->width() - 1 - (PartWidget::borderWidth() * 2), destWidget->height() - (PartWidget::borderHeight() * 2)));
 
 		// draw used space in front of that
-		painter.setBrush(colorScheme.background(KColorScheme::NegativeBackground));
+		painter.setBrush(activeColor(Config::usedSpaceColorCode()));
 		painter.drawRect(QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), w, destWidget->height() - (PartWidget::borderHeight() * 2)));
 	}
 
