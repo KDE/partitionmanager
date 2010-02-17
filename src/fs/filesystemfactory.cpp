@@ -91,33 +91,36 @@ void FileSystemFactory::init()
 	@param label the FileSystem's label
 	@return pointer to the newly created FileSystem object or NULL if FileSystem could not be created
 */
-FileSystem* FileSystemFactory::create(FileSystem::Type t, qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label)
+FileSystem* FileSystemFactory::create(FileSystem::Type t, qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, const QString& uuid)
 {
+	FileSystem* fs = NULL;
+
 	switch(t)
 	{
-		case FileSystem::Ext2:         return new FS::ext2(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Ext3:         return new FS::ext3(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Ext4:         return new FS::ext4(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Extended:     return new FS::extended(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Fat16:        return new FS::fat16(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Fat32:        return new FS::fat32(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Hfs:          return new FS::hfs(firstsector, lastsector, sectorsused, label);
-		case FileSystem::HfsPlus:      return new FS::hfsplus(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Jfs:          return new FS::jfs(firstsector, lastsector, sectorsused, label);
-		case FileSystem::LinuxSwap:    return new FS::linuxswap(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Ntfs:         return new FS::ntfs(firstsector, lastsector, sectorsused, label);
-		case FileSystem::ReiserFS:     return new FS::reiserfs(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Reiser4:      return new FS::reiser4(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Ufs:          return new FS::ufs(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Unformatted:  return new FS::unformatted(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Unknown:      return new FS::unknown(firstsector, lastsector, sectorsused, label);
-		case FileSystem::Xfs:          return new FS::xfs(firstsector, lastsector, sectorsused, label);
-
-		default:
-			break;
+		case FileSystem::Ext2:         fs = new FS::ext2(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Ext3:         fs = new FS::ext3(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Ext4:         fs = new FS::ext4(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Extended:     fs = new FS::extended(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Fat16:        fs = new FS::fat16(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Fat32:        fs = new FS::fat32(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Hfs:          fs = new FS::hfs(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::HfsPlus:      fs = new FS::hfsplus(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Jfs:          fs = new FS::jfs(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::LinuxSwap:    fs = new FS::linuxswap(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Ntfs:         fs = new FS::ntfs(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::ReiserFS:     fs = new FS::reiserfs(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Reiser4:      fs = new FS::reiser4(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Ufs:          fs = new FS::ufs(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Unformatted:  fs = new FS::unformatted(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Unknown:      fs = new FS::unknown(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Xfs:          fs = new FS::xfs(firstsector, lastsector, sectorsused, label); break;
+		default:                       break;
 	}
 
-	return NULL;
+	if (fs != NULL)
+		fs->setUUID(uuid);
+
+	return fs;
 }
 
 /**
@@ -125,7 +128,7 @@ FileSystem* FileSystemFactory::create(FileSystem::Type t, qint64 firstsector, qi
 */
 FileSystem* FileSystemFactory::create(const FileSystem& other)
 {
-	return create(other.type(), other.firstSector(), other.lastSector(), other.sectorsUsed(), other.label());
+	return create(other.type(), other.firstSector(), other.lastSector(), other.sectorsUsed(), other.label(), other.uuid());
 }
 
 /** @return the map of FileSystems */
