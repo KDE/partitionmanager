@@ -20,12 +20,19 @@
 #include "gui/configureoptionsdialog.h"
 
 #include "ui_configurepagegeneral.h"
+#include "ui_configurepagefilesystemcolors.h"
 #include "ui_configurepageadvanced.h"
 
 class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
 {
 	public:
 		GeneralPageWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
+};
+
+class FileSystemColorsPageWidget : public QWidget, public Ui::ConfigurePageFileSystemColors
+{
+	public:
+		FileSystemColorsPageWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
 };
 
 class AdvancedPageWidget : public QWidget, public Ui::ConfigurePageAdvanced
@@ -39,5 +46,6 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const QString& n
 {
 	setFaceType(KPageDialog::Tabbed);
 	addPage(new GeneralPageWidget(this), i18n("General"), QString(), i18n("General Settings"));
+	addPage(new FileSystemColorsPageWidget(this), i18n("File System Colors"), QString(), i18n("File System Color Settings"));
 	addPage(new AdvancedPageWidget(this), i18n("Advanced"), QString(), i18n("Advanced Settings"));
 }

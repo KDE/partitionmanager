@@ -25,5 +25,27 @@
 		<entry name="allowApplyOperationsAsNonRoot" type="Bool">
 			<default>false</default>
 		</entry>
+		<entry key="FileSystemColorCode$(colorNumber)" type="Color">
+			<parameter name="colorNumber" type="UInt" max="18"/>
+			<default param="0">252,242,220</default>
+			<default param="1">187,249,207</default>
+			<default param="2">122,145,180</default>
+			<default param="3">143,169,210</default>
+			<default param="4">173,205,255</default>
+			<default param="5">155,155,130</default>
+			<default param="6">204,179,215</default>
+			<default param="7">229,201,240</default>
+			<default param="8">244,214,255</default>
+			<default param="9">216,220,135</default>
+			<default param="10">251,255,157</default>
+			<default param="11">200,255,254</default>
+			<default param="12">137,200,198</default>
+			<default param="13">210,136,142</default>
+			<default param="14">240,165,171</default>
+			<default param="15">151,220,134</default>
+			<default param="16">252,242,222</default>
+			<default param="17">255,255,255</default>
+			<default param="18">247,231,231</default>
+		</entry>
 	</group>
 </kcfg>

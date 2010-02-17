@@ -67,7 +67,10 @@ void NewDialog::setupDialog()
 			fsNames.append(fs->name());
 
 	qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
-	dialogWidget().comboFileSystem().addItems(fsNames);
+
+	foreach (const QString& fsName, fsNames)
+		dialogWidget().comboFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
+
 	QString selected = FileSystem::nameForType(FileSystem::defaultFileSystem());
 	dialogWidget().comboFileSystem().setCurrentIndex(dialogWidget().comboFileSystem().findText(selected));
 
@@ -137,6 +140,7 @@ void NewDialog::onFilesystemChanged(int idx)
 	setupConstraints();
 
 	dialogWidget().partResizerWidget().updateLength(partition().length());
+	dialogWidget().partResizerWidget().update();
 
 	updateHideAndShow();
 }

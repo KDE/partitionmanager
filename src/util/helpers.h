@@ -23,8 +23,11 @@
 
 #include "util/libpartitionmanagerexport.h"
 
+#include "fs/filesystem.h"
+
 class KAboutData;
 class QString;
+class QIcon;
 
 LIBPARTITIONMANAGERPRIVATE_EXPORT void registerMetaTypes();
 LIBPARTITIONMANAGERPRIVATE_EXPORT void unblockSigChild();
@@ -33,5 +36,7 @@ LIBPARTITIONMANAGERPRIVATE_EXPORT bool checkPermissions();
 LIBPARTITIONMANAGERPRIVATE_EXPORT KAboutData* createPartitionManagerAboutData();
 
 LIBPARTITIONMANAGERPRIVATE_EXPORT bool caseInsensitiveLessThan(const QString& s1, const QString& s2);
+
+LIBPARTITIONMANAGERPRIVATE_EXPORT QIcon createFileSystemColor(FileSystem::Type type, quint32 size);
 
 #endif

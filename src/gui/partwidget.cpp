@@ -33,6 +33,8 @@
 #include <kcolorscheme.h>
 #include <kglobalsettings.h>
 
+#include <config.h>
+
 /** Creates a new PartWidget
 	@param parent pointer to the parent widget
 	@param ptWidget pointer to the PartTableWidget this widget will be in
@@ -111,7 +113,7 @@ void PartWidget::drawPartition(QWidget* destWidget)
 
 	// draw border
 	painter.setPen(colorScheme.foreground().color());
-	painter.setBrush(colorScheme.background(partition()->roles().has(PartitionRole::Extended) ? KColorScheme::PositiveBackground : KColorScheme::NeutralBackground));
+	painter.setBrush(Config::fileSystemColorCode(partition()->fileSystem().type()));
 	painter.drawRect(QRect(0, 0, destWidget->width() - 1, destWidget->height() - 1));
 
 	if (partition()->roles().has(PartitionRole::Extended))

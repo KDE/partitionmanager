@@ -34,6 +34,12 @@
 #include <QProcess>
 #include <QFileInfo>
 #include <QApplication>
+#include <QPainter>
+#include <QIcon>
+#include <QPixmap>
+#include <QRect>
+
+#include <config.h>
 
 #include <unistd.h>
 #include <signal.h>
@@ -72,8 +78,8 @@ bool checkPermissions()
 {
 	if (geteuid() != 0)
 	{
-		// only try to gain root privileges if we have a valid (kde|gk)su(do) command and 
-		// we did not try so before: the dontsu-option is there to make sure there are no 
+		// only try to gain root privileges if we have a valid (kde|gk)su(do) command and
+		// we did not try so before: the dontsu-option is there to make sure there are no
 		// endless loops of calling the same non-working (kde|gk)su(do) binary again and again.
 		if (!suCommand().isEmpty() && !KCmdLineArgs::parsedArgs()->isSet("dontsu"))
 		{
@@ -82,13 +88,13 @@ bool checkPermissions()
 			// first argument is our own command again (i.e., argv[0])
 			if (!args.isEmpty())
 				args.removeFirst();
-		
+
 			// arguments to partition manager must be _one_ argument to (kde|gk)su(do)
 			const QString suArgs = qApp->applicationFilePath() + args.join(" ") + " --dontsu";
 			if (QProcess::execute(suCommand(), QStringList() << suArgs) == 0)
 				return false;
 		}
-		
+
 		return KMessageBox::warningContinueCancel(NULL, i18nc("@info",
 				"<para><warning>You do not have administrative privileges.</warning></para>"
 				"<para>It is possible to run <application>%1</application> without these privileges. "
@@ -125,4 +131,16 @@ KAboutData* createPartitionManagerAboutData()
 bool caseInsensitiveLessThan(const QString& s1, const QString& s2)
 {
 	return s1.toLower() < s2.toLower();
+}
+
+QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
+{
+	QPixmap pixmap(size, size);
+	QPainter painter(&pixmap);
+	painter.setPen(QColor(0, 0, 0));
+	painter.setBrush(Config::fileSystemColorCode(type));
+	painter.drawRect(QRect(0, 0, pixmap.width() - 1, pixmap.height() - 1));
+	painter.end();
+
+	return QIcon(pixmap);
 }

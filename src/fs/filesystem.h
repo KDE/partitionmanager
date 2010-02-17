@@ -45,24 +45,25 @@ class FileSystem
 		enum Type
 		{
 			Unknown = 0,
-			Extended,
+			Extended = 1,
 
-			Ext2,
-			Ext3,
-			Ext4,
-			LinuxSwap,
-			Fat16,
-			Fat32,
-			Ntfs,
-			ReiserFS,
-			Reiser4,
-			Xfs,
-			Jfs,
-			Hfs,
-			HfsPlus,
-			Ufs,
-			Unformatted,
-			__lastType
+			Ext2 = 2,
+			Ext3 = 3,
+			Ext4 = 4,
+			LinuxSwap = 5,
+			Fat16 = 6,
+			Fat32 = 7,
+			Ntfs = 8,
+			ReiserFS = 9,
+			Reiser4 = 10,
+			Xfs = 11,
+			Jfs = 12,
+			Hfs = 13,
+			HfsPlus = 14,
+			Ufs = 15,
+			Unformatted = 16,
+
+			__lastType = 17
 		};
 
 		/** The type of support for a given FileSystem action */

@@ -55,6 +55,7 @@
 #include "util/globallog.h"
 #include "util/capacity.h"
 #include "util/report.h"
+#include "util/helpers.h"
 
 #include <kapplication.h>
 #include <kaction.h>
@@ -444,7 +445,10 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 
 	quint32 i = 0;
 	item->setText(i++, p.deviceNode());
-	item->setText(i++, p.fileSystem().name());
+
+	item->setText(i, p.fileSystem().name());
+	item->setIcon(i, createFileSystemColor(p.fileSystem().type(), 14));
+	i++;
 
 	item->setText(i, p.mountPoints().join(", "));
 	if (p.isMounted())
@@ -1186,6 +1190,7 @@ void PartitionManagerWidget::onFileSystemSupport()
 void PartitionManagerWidget::onSettingsChanged(const QString&)
 {
 	enableActions();
+	updatePartitions();
 }
 
 void PartitionManagerWidget::onConfigureOptions()

@@ -292,8 +292,18 @@ void PartPropsDialog::setupFileSystemComboBox()
 
 	qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-	dialogWidget().fileSystem().addItems(fsNames);
+	foreach (const QString& fsName, fsNames)
+		dialogWidget().fileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
+
 	dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));
+}
+
+void PartPropsDialog::updatePartitionFileSystem()
+{
+	FileSystem* fs = FileSystemFactory::create(newFileSystemType(), partition().firstSector(), partition().lastSector());
+	partition().deleteFileSystem();
+	partition().setFileSystem(fs);
+	dialogWidget().partResizerWidget().update();
 }
 
 void PartPropsDialog::onFilesystemChanged(int)
@@ -308,6 +318,7 @@ void PartPropsDialog::onFilesystemChanged(int)
 		setDirty();
 		updateHideAndShow();
 		setWarnFileSystemChange();
+		updatePartitionFileSystem();
 	}
 	else
 	{
@@ -332,6 +343,7 @@ void PartPropsDialog::onRecreate(int state)
 		dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(partition().fileSystem().name()));
 		dialogWidget().fileSystem().setEnabled(false);
 		updateHideAndShow();
+		updatePartitionFileSystem();
 	}
 	else
 	{

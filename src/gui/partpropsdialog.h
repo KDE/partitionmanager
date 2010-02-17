@@ -23,12 +23,12 @@
 
 #include "fs/filesystem.h"
 
+#include "core/partition.h"
 #include "core/partitiontable.h"
 
 #include <kdialog.h>
 
 class Device;
-class Partition;
 class PartPropsWidget;
 
 class QWidget;
@@ -79,14 +79,22 @@ class PartPropsDialog : public KDialog
 		bool isReadOnly() const { return m_ReadOnly; }
 		void setForceRecreate(bool b) { m_ForceRecreate = b; }
 
+		void updatePartitionFileSystem();
+
 	protected slots:
 		void setDirty();
 		void onFilesystemChanged(int idx);
 		void onRecreate(int);
 
 	private:
+		// m_Device and m_Partition cannot be const because the PartResizerWidget takes
+		// both as nonconst even in read only mode (which is a bad design flaw and should be
+		// fixed by splitting it in a PartDisplayWidget that is read-only and a PartResizerWidget
+		// subclassed from that, maybe)
 		Device& m_Device;
-		Partition& m_Partition;
+		// m_Partition is also not a reference because we want to be able to change it and
+		// forget the changes if the user cancels the dialog
+		Partition m_Partition;
 		bool m_WarnFileSystemChange;
 		PartPropsWidget* m_DialogWidget;
 		bool m_ReadOnly;
