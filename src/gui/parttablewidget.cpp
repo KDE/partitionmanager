@@ -35,7 +35,8 @@ PartTableWidget::PartTableWidget(QWidget* parent) :
 	m_PartitionTable(NULL),
 	m_Widgets(),
 	m_ActiveWidget(NULL),
-	m_LabelEmpty(i18nc("@info", "Please select a device."), this)
+	m_LabelEmpty(i18nc("@info", "Please select a device."), this),
+	m_ReadOnly(false)
 {
 	labelEmpty().setAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
 }
@@ -78,6 +79,9 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 */
 void PartTableWidget::setActiveWidget(PartWidget* p)
 {
+	if (isReadOnly())
+		return;
+
 	const PartWidget* old = m_ActiveWidget;
 
 	m_ActiveWidget = p;
@@ -93,12 +97,15 @@ void PartTableWidget::setActiveWidget(PartWidget* p)
 */
 void PartTableWidget::setActivePartition(const Partition* p)
 {
+	if (isReadOnly())
+		return;
+
 	foreach (PartWidget* pw, findChildren<PartWidget*>())
 		if (pw->partition() == p)
-	{
-		setActiveWidget(pw);
-		return;
-	}
+		{
+			setActiveWidget(pw);
+			return;
+		}
 
 	setActiveWidget(NULL);
 }
@@ -135,6 +142,9 @@ void PartTableWidget::resizeEvent(QResizeEvent*)
 
 void PartTableWidget::mousePressEvent(QMouseEvent* event)
 {
+	if (isReadOnly())
+		return;
+
 	event->accept();
 	PartWidget* child = qobject_cast<PartWidget*>(childAt(event->pos()));
 	setActiveWidget(child);
@@ -142,7 +152,7 @@ void PartTableWidget::mousePressEvent(QMouseEvent* event)
 
 void PartTableWidget::mouseDoubleClickEvent(QMouseEvent* event)
 {
-	if (event->button() != Qt::LeftButton)
+	if (isReadOnly() || event->button() != Qt::LeftButton)
 		return;
 
 	event->accept();

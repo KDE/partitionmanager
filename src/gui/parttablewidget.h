@@ -53,6 +53,8 @@ class PartTableWidget : public QWidget, public PartWidgetBase
 		void setActiveWidget(PartWidget* partWidget);
 		void setActivePartition(const Partition* p);
 		void clear();
+		void setReadOnly(bool b) { m_ReadOnly = b; } /**< @param b the new value for read only */
+		bool isReadOnly() const { return m_ReadOnly; } /** @return true if the widget is read only */
 
 	signals:
 		void itemSelectionChanged(PartWidget*);
@@ -78,6 +80,7 @@ class PartTableWidget : public QWidget, public PartWidgetBase
 		QList<PartWidget*> m_Widgets;
 		PartWidget* m_ActiveWidget;
 		QLabel m_LabelEmpty;
+		bool m_ReadOnly;
 };
 
 #endif
