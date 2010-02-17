@@ -14,36 +14,48 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "gui/createpartitiontabledialog.h"
-#include "gui/createpartitiontablewidget.h"
+#if !defined(DEVICEPROPSDIALOG__H)
 
-#include "core/device.h"
-#include "core/partitiontable.h"
+#define DEVICEPROPSDIALOG__H
 
-#include <klocale.h>
+#include <kdialog.h>
 
-#include <config.h>
+class Device;
+class DevicePropsWidget;
 
-CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const Device& d) :
-	KDialog(parent),
-	m_DialogWidget(new CreatePartitionTableWidget(this)),
-	m_Device(d)
+class QWidget;
+class QString;
+
+/** @brief Show Device properties.
+
+	Dialog that shows a Device's properties.
+
+	@author vl@fidra.de
+*/
+class DevicePropsDialog : public KDialog
 {
-	setMainWidget(&widget());
-	setCaption(i18nc("@title:window", "Create a New Partition Table on <filename>%1</filename>", device().deviceNode()));
-	setButtonText(KDialog::Ok, i18nc("@action:button", "&Create New Partition Table"));
-}
+	Q_OBJECT
+	Q_DISABLE_COPY(DevicePropsDialog)
 
-PartitionTable::LabelType CreatePartitionTableDialog::type() const
-{
-	if (widget().radioGPT().isChecked())
-		return PartitionTable::gpt;
+	public:
+		DevicePropsDialog(QWidget* parent, Device& d);
+		~DevicePropsDialog();
 
-	if (widget().radioMSDOS().isChecked() && Config::useLegacyMsDosAlignment() == true)
-		return PartitionTable::msdos;
+	protected:
+		void setupDialog();
 
-	return PartitionTable::msdos_vista;
-}
+		Device& device() { return m_Device; }
+		const Device& device() const { return m_Device; }
+
+		DevicePropsWidget& dialogWidget() { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
+		const DevicePropsWidget& dialogWidget() const { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
+
+	private:
+		Device& m_Device;
+		DevicePropsWidget* m_DialogWidget;
+};
+
+#endif

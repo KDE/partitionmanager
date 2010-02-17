@@ -14,36 +14,19 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "gui/createpartitiontabledialog.h"
-#include "gui/createpartitiontablewidget.h"
+#if !defined(CONFIGUREOPTIONSDIALOG__H)
 
-#include "core/device.h"
-#include "core/partitiontable.h"
+#define CONFIGUREOPTIONSDIALOG__H
 
-#include <klocale.h>
+#include <kconfigdialog.h>
 
-#include <config.h>
-
-CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const Device& d) :
-	KDialog(parent),
-	m_DialogWidget(new CreatePartitionTableWidget(this)),
-	m_Device(d)
+class ConfigureOptionsDialog : public KConfigDialog
 {
-	setMainWidget(&widget());
-	setCaption(i18nc("@title:window", "Create a New Partition Table on <filename>%1</filename>", device().deviceNode()));
-	setButtonText(KDialog::Ok, i18nc("@action:button", "&Create New Partition Table"));
-}
+	public:
+		ConfigureOptionsDialog(QWidget* parent, const QString& name, KConfigSkeleton* cfg);
+};
 
-PartitionTable::LabelType CreatePartitionTableDialog::type() const
-{
-	if (widget().radioGPT().isChecked())
-		return PartitionTable::gpt;
-
-	if (widget().radioMSDOS().isChecked() && Config::useLegacyMsDosAlignment() == true)
-		return PartitionTable::msdos;
-
-	return PartitionTable::msdos_vista;
-}
+#endif

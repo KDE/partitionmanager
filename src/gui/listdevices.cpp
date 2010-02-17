@@ -96,3 +96,11 @@ void ListDevices::on_m_ListDevices_customContextMenuRequested(const QPoint& pos)
 		deviceMenu.exec(listDevices().viewport()->mapToGlobal(pos));
 	}
 }
+
+void ListDevices::on_m_ListDevices_itemActivated(QListWidgetItem* list_item)
+{
+	ListDeviceWidgetItem* item = dynamic_cast<ListDeviceWidgetItem*>(list_item);
+
+	if (item != NULL)
+		emit deviceActivated(item->deviceNode);
+}

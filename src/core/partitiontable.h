@@ -98,7 +98,7 @@ class PartitionTable : public PartitionNode
 		Partitions& children() { return m_Children; } /**< @return the children in this PartitionTable */
 		const Partitions& children() const { return m_Children; } /**< @return the children in this PartitionTable */
 
-		void setType(LabelType t);
+		void setType(const Device& d, LabelType t);
 
 		void append(Partition* partition);
 
@@ -146,6 +146,7 @@ class PartitionTable : public PartitionNode
 	protected:
 		void setMaxPrimaries(qint32 n) { m_MaxPrimaries = n; }
 		void setFirstUsableSector(qint64 s) { m_FirstUsable = s; }
+		void setLastUsableSector(qint64 s) { m_LastUsable = s; }
 
 	private:
 		Partitions m_Children;

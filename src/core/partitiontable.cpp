@@ -210,7 +210,7 @@ QStringList PartitionTable::flagNames(Flags flags)
 */
 static qint64 sectorAlignment(const Device& d)
 {
-	return d.partitionTable()->type() == PartitionTable::msdos ? d.cylinderSize() : Config::vistaSectorAlignment();
+	return d.partitionTable()->type() == PartitionTable::msdos ? d.cylinderSize() : Config::sectorAlignment();
 }
 
 /** Checks if a given Partition on a given Device is snapped to cylinder boundaries.
@@ -226,28 +226,29 @@ static qint64 sectorAlignment(const Device& d)
 */
 bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 {
-	// only msdos and msdos_vista get snapped
-	if (d.partitionTable()->type() != msdos && d.partitionTable()->type() != msdos_vista)
-		return true;
-
 	// don't bother with unallocated space here.
 	if (p.roles().has(PartitionRole::Unallocated))
 		return true;
 
 	qint64 delta = 0;
 
-	// TODO: verify the following comment and code both for msdos and msdos_vista
-	// There are some special cases for snapping partitions:
-	// 1) If an extended partition starts at the beginning of the device (that would be sector 63
-	// on modern drives, equivalent to sectorsPerTrack() in any case), the first logical partition
-	// at the beginning of this extended partition starts at 2 * sectorsPerTrack().
-	// 2) If a primary or extended starts at the beginning of a device, it starts at sectorsPerTrack().
-	// 3) Any logical partition is always preceded by the extended partition table entry in the
-	// sectorsPerTrack() before it, so it's always sectorsPerTrack() "late"
-	if (p.roles().has(PartitionRole::Logical) && p.firstSector() == 2 * d.sectorsPerTrack())
-		delta = (p.firstSector() - (2 * d.sectorsPerTrack())) % sectorAlignment(d);
-	else if (p.roles().has(PartitionRole::Logical) || p.firstSector() == d.sectorsPerTrack())
-		delta = (p.firstSector() - d.sectorsPerTrack()) % sectorAlignment(d);
+	if (d.partitionTable()->type() == msdos)
+	{
+		// TODO: verify the following comment and code
+		// There are some special cases for snapping partitions:
+		// 1) If an extended partition starts at the beginning of the device (that would be sector 63
+		// on modern drives, equivalent to sectorsPerTrack() in any case), the first logical partition
+		// at the beginning of this extended partition starts at 2 * sectorsPerTrack().
+		// 2) If a primary or extended starts at the beginning of a device, it starts at sectorsPerTrack().
+		// 3) Any logical partition is always preceded by the extended partition table entry in the
+		// sectorsPerTrack() before it, so it's always sectorsPerTrack() "late"
+		if (p.roles().has(PartitionRole::Logical) && p.firstSector() == 2 * d.sectorsPerTrack())
+			delta = (p.firstSector() - (2 * d.sectorsPerTrack())) % sectorAlignment(d);
+		else if (p.roles().has(PartitionRole::Logical) || p.firstSector() == d.sectorsPerTrack())
+			delta = (p.firstSector() - d.sectorsPerTrack()) % sectorAlignment(d);
+		else
+			delta = p.firstSector() % sectorAlignment(d);
+	}
 	else
 		delta = p.firstSector() % sectorAlignment(d);
 
@@ -255,7 +256,7 @@ bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 
 	if (delta)
 	{
-		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> does not start at the recommended boundary (first sector: %2, modulo: %3).", p.deviceNode(), p.firstSector(), delta);
+		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> is not properly aligned (first sector: %2, modulo: %3).", p.deviceNode(), p.firstSector(), delta);
 		rval = false;
 	}
 
@@ -263,7 +264,7 @@ bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 
 	if (delta)
 	{
-		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> does not end at the recommended boundary (last sector: %2, modulo: %3).", p.deviceNode(), p.lastSector(), delta);
+		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> is not properly aligned (last sector: %2, modulo: %3).", p.deviceNode(), p.lastSector(), delta);
 		rval = false;
 	}
 
@@ -314,31 +315,35 @@ static bool canSnapToSector(const Device& d, const Partition& p, qint64 s, const
 */
 bool PartitionTable::snap(const Device& d, Partition& p, const Partition* originalPartition)
 {
-	if (d.partitionTable()->type() != msdos && d.partitionTable()->type() != msdos_vista)
-		return true;
-
 	const qint64 originalLength = p.length();
 	qint64 delta = 0;
 	bool lengthIsSnapped = false;
 
-	// TODO: verify for msdos and msdos_vista
-	// This is the same as in isSnapped(), only we additionally have to remember if the
-	// partition's _length_ is "snapped", so to speak (i.e., evenly divisable by
-	// the cylinder size)
-	if (p.roles().has(PartitionRole::Logical) && p.firstSector() == 2 * d.sectorsPerTrack())
+	if (d.partitionTable()->type() == msdos)
 	{
-		delta = (p.firstSector() - (2 * d.sectorsPerTrack())) % sectorAlignment(d);
-		lengthIsSnapped = (p.length() + (2 * d.sectorsPerTrack())) % sectorAlignment(d) == 0;
-	}
-	else if (p.roles().has(PartitionRole::Logical) || p.firstSector() == d.sectorsPerTrack())
-	{
-		delta = (p.firstSector() - d.sectorsPerTrack()) % sectorAlignment(d);
-		lengthIsSnapped = (p.length() + d.sectorsPerTrack()) % sectorAlignment(d) == 0;
+		// This is the same as in isSnapped(), only we additionally have to remember if the
+		// partition's _length_ is "snapped", so to speak (i.e., evenly divisable by
+		// the cylinder size)
+		if (p.roles().has(PartitionRole::Logical) && p.firstSector() == 2 * d.sectorsPerTrack())
+		{
+			delta = (p.firstSector() - (2 * d.sectorsPerTrack())) % sectorAlignment(d);
+			lengthIsSnapped = (p.length() + (2 * d.sectorsPerTrack())) % sectorAlignment(d) == 0;
+		}
+		else if (p.roles().has(PartitionRole::Logical) || p.firstSector() == d.sectorsPerTrack())
+		{
+			delta = (p.firstSector() - d.sectorsPerTrack()) % sectorAlignment(d);
+			lengthIsSnapped = (p.length() + d.sectorsPerTrack()) % sectorAlignment(d) == 0;
+		}
+		else
+		{
+			delta = p.firstSector() % sectorAlignment(d);
+			lengthIsSnapped = p.length() % sectorAlignment(d) == 0;
+		}
 	}
 	else
 	{
-		delta = p.firstSector() % sectorAlignment(d);
-		lengthIsSnapped = p.length() % sectorAlignment(d) == 0;
+			delta = p.firstSector() % sectorAlignment(d);
+			lengthIsSnapped = p.length() % sectorAlignment(d) == 0;
 	}
 
 	if (delta)
@@ -561,10 +566,10 @@ void PartitionTable::updateUnallocated(const Device& d)
 
 qint64 PartitionTable::defaultFirstUsable(const Device& d, LabelType t)
 {
-	if (t == msdos_vista)
-		return Config::vistaSectorAlignment();
+	if (t == msdos && Config::useLegacyMsDosAlignment())
+		return d.sectorsPerTrack();
 
-	return d.sectorsPerTrack() - 1;
+	return Config::sectorAlignment();
 }
 
 qint64 PartitionTable::defaultLastUsable(const Device& d, LabelType t)
@@ -643,26 +648,35 @@ bool PartitionTable::diskLabelIsReadOnly(LabelType l)
 	return false;
 }
 
+/** Simple heuristic to determine if the PartitionTable is MS Vista compatible (i.e.
+	if its Partitions begin at sectors evenly divisable by Config::sectorAlignment().
+	@return true if is msdos_vista, otherwise false
+*/
 bool PartitionTable::isVistaDiskLabel() const
 {
 	if (type() == PartitionTable::msdos)
 	{
-		const Partition* part = findPartitionBySector(Config::vistaSectorAlignment(), PartitionRole(PartitionRole::Primary));
-		if (part && part->firstSector() == Config::vistaSectorAlignment())
+		// user has turned ms dos legacy off and partition table is empty
+		if (Config::useLegacyMsDosAlignment() == false && children().size() == 0)
 			return true;
+
+		// if not all partitions start at a point evenlty divisable by sectorAlignment it's
+		// a legay disk label
+		foreach(const Partition* p, children())
+			if (p->firstSector() % Config::sectorAlignment() != 0)
+				return false;
+
+		// must be vista
+		return true;
 	}
 
 	return false;
 }
 
-void PartitionTable::setType(LabelType t)
+void PartitionTable::setType(const Device& d, LabelType t)
 {
-	// hack: if the type has been msdos and is now set to vista, make sure to also
-	// set the first usable sector to Config::vistaSectorAlignment (which defaults to
-	// Vista's default, 2048) now.
-	if (type() == msdos && t == msdos_vista)
-		setFirstUsableSector(Config::vistaSectorAlignment());
+	setFirstUsableSector(defaultFirstUsable(d, t));
+	setLastUsableSector(defaultLastUsable(d, t));
 
 	m_Type = t;
 }
-

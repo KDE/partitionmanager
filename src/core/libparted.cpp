@@ -308,13 +308,13 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 
 		parent->append(part);
 
-		if (d.partitionTable()->isVistaDiskLabel())
-			d.partitionTable()->setType(PartitionTable::msdos_vista);
-
 		PartitionTable::isSnapped(d, *part);
 	}
 
 	d.partitionTable()->updateUnallocated(d);
+
+	if (d.partitionTable()->isVistaDiskLabel())
+		d.partitionTable()->setType(d, PartitionTable::msdos_vista);
 
 	ped_disk_destroy(pedDisk);
 }

@@ -20,3 +20,8 @@ Random plans and ideas for 1.1 and beyond:
 
 * Information about file system on a separate tab in the properties, unique
   to the file system in use.
+
+* Check if no of sectors fits in an unsigned 32 bit int for msdos partition tables.
+
+* Add more columns to the partition tree now that columns can be hidden. Find a
+  suitable default set of columns to show.

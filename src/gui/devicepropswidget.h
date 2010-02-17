@@ -14,36 +14,35 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program; if not, write to the                         *
  *   Free Software Foundation, Inc.,                                       *
- *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
+ *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "gui/createpartitiontabledialog.h"
-#include "gui/createpartitiontablewidget.h"
+#if !defined(DEVICEPROPSWIDGET__H)
 
-#include "core/device.h"
-#include "core/partitiontable.h"
+#define DEVICEPROPSWIDGET__H
 
-#include <klocale.h>
+#include "ui_devicepropswidgetbase.h"
 
-#include <config.h>
+class PartTableWidget;
 
-CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const Device& d) :
-	KDialog(parent),
-	m_DialogWidget(new CreatePartitionTableWidget(this)),
-	m_Device(d)
+/** @brief Central widget in the DevicePropsDialog.
+	@author vl@fidra.de
+*/
+class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 {
-	setMainWidget(&widget());
-	setCaption(i18nc("@title:window", "Create a New Partition Table on <filename>%1</filename>", device().deviceNode()));
-	setButtonText(KDialog::Ok, i18nc("@action:button", "&Create New Partition Table"));
-}
+	public:
+		DevicePropsWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
 
-PartitionTable::LabelType CreatePartitionTableDialog::type() const
-{
-	if (widget().radioGPT().isChecked())
-		return PartitionTable::gpt;
+	public:
+		PartTableWidget& partTableWidget() { Q_ASSERT(m_PartTableWidget); return *m_PartTableWidget; }
 
-	if (widget().radioMSDOS().isChecked() && Config::useLegacyMsDosAlignment() == true)
-		return PartitionTable::msdos;
+		QLabel& chs() { Q_ASSERT(m_LabelCHS); return *m_LabelCHS; }
+		QLabel& capacity() { Q_ASSERT(m_LabelCapacity); return *m_LabelCapacity; }
+		QLabel& cylinderSize() { Q_ASSERT(m_LabelCylinderSize); return *m_LabelCylinderSize; }
+		QLabel& primariesMax() { Q_ASSERT(m_LabelPrimariesMax); return *m_LabelPrimariesMax; }
+		QLabel& sectorSize() { Q_ASSERT(m_LabelSectorSize); return *m_LabelSectorSize; }
+		QLabel& totalSectors() { Q_ASSERT(m_LabelTotalSectors); return *m_LabelTotalSectors; }
+		QLabel& type() { Q_ASSERT(m_LabelType); return *m_LabelType; }
+};
 
-	return PartitionTable::msdos_vista;
-}
+#endif

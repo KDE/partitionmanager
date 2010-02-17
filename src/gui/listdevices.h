@@ -46,6 +46,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui:
 
 	signals:
 		void selectionChanged(const QString& device_node);
+		void deviceActivated(const QString& device_node);
 
 	public:
 		void setActionCollection(KActionCollection* coll) { m_ActionCollection = coll; }
@@ -61,6 +62,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui:
 	protected slots:
 		void on_m_ListDevices_itemSelectionChanged();
 		void on_m_ListDevices_customContextMenuRequested(const QPoint& pos);
+		void on_m_ListDevices_itemActivated(QListWidgetItem* list_item);
 
 	private:
 		KActionCollection* m_ActionCollection;

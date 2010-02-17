@@ -28,6 +28,8 @@
 #include "gui/editmountpointdialog.h"
 #include "gui/createpartitiontabledialog.h"
 #include "gui/scanprogressdialog.h"
+#include "gui/configureoptionsdialog.h"
+#include "gui/devicepropsdialog.h"
 
 #include "core/partition.h"
 #include "core/device.h"
@@ -308,6 +310,9 @@ void PartitionManagerWidget::setupActions()
 	fileSystemSupport->setText(i18nc("@action:inmenu", "File System Support"));
 	fileSystemSupport->setToolTip(i18nc("@info:tooltip", "View file system support information"));
 	fileSystemSupport->setStatusTip(i18nc("@info:status", "Show information about supported file systems."));
+
+	// Settings actions
+	KStandardAction::preferences(this, SLOT(onConfigureOptions()), actionCollection());
 }
 
 void PartitionManagerWidget::setupConnections()
@@ -1166,3 +1171,33 @@ void PartitionManagerWidget::onFileSystemSupport()
 	FileSystemSupportDialog dlg(this);
 	dlg.exec();
 }
+
+void PartitionManagerWidget::onSettingsChanged(const QString&)
+{
+	enableActions();
+}
+
+void PartitionManagerWidget::onConfigureOptions()
+{
+	if (ConfigureOptionsDialog::showDialog("Settings"))
+		return;
+
+	QPointer<ConfigureOptionsDialog> dlg = new ConfigureOptionsDialog(this, "Settings", Config::self());
+
+	connect(dlg, SIGNAL(settingsChanged(const QString&)), SLOT(onSettingsChanged(const QString&)));
+
+	dlg->show();
+}
+
+void PartitionManagerWidget::onPropertiesDevice(const QString&)
+{
+	Q_ASSERT(selectedDevice());
+
+	if (selectedDevice())
+	{
+		QPointer<DevicePropsDialog> dlg = new DevicePropsDialog(this, *selectedDevice());
+		dlg->exec();
+		delete dlg;
+	}
+}
+

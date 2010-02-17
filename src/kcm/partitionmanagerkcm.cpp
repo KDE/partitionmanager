@@ -106,6 +106,7 @@ void PartitionManagerKCM::onNewLogMessage(Log::Level, const QString& s)
 void PartitionManagerKCM::setupConnections()
 {
 	connect(&listDevices(), SIGNAL(selectionChanged(const QString&)), &pmWidget(), SLOT(setSelectedDevice(const QString&)));
+	connect(&listDevices(), SIGNAL(deviceActivated(const QString&)), &pmWidget(), SLOT(onPropertiesDevice(const QString&)));
 }
 
 void PartitionManagerKCM::on_m_PartitionManagerWidget_operationsChanged()

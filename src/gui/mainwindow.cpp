@@ -143,6 +143,7 @@ void MainWindow::setupActions()
 void MainWindow::setupConnections()
 {
 	connect(&listDevices(), SIGNAL(selectionChanged(const QString&)), &pmWidget(), SLOT(setSelectedDevice(const QString&)));
+	connect(&listDevices(), SIGNAL(deviceActivated(const QString&)), &pmWidget(), SLOT(onPropertiesDevice(const QString&)));
 }
 
 void MainWindow::setupStatusBar()
