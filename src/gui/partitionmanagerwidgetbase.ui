@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>634</width>
+    <width>819</width>
     <height>531</height>
    </rect>
   </property>
@@ -84,12 +84,37 @@
      </column>
      <column>
       <property name="text">
+       <string>UUID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>Size</string>
       </property>
      </column>
      <column>
       <property name="text">
        <string>Used</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Available</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>First Sector</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Last Sector</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Number of Sectors</string>
       </property>
      </column>
      <column>

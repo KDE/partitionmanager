@@ -442,15 +442,26 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 {
 	QTreeWidgetItem* item = new PartitionTreeWidgetItem(&p);
 
-	item->setText(0, p.deviceNode());
-	item->setText(1, p.fileSystem().name());
-	item->setText(2, p.mountPoints().join(", "));
+	quint32 i = 0;
+	item->setText(i++, p.deviceNode());
+	item->setText(i++, p.fileSystem().name());
+
+	item->setText(i, p.mountPoints().join(", "));
 	if (p.isMounted())
-		item->setIcon(2, SmallIcon("object-locked"));
-	item->setText(3, p.fileSystem().label());
-	item->setText(4, Capacity(p).toString());
-	item->setText(5, Capacity(p, Capacity::Used).toString());
-	item->setText(6, PartitionTable::flagNames(p.activeFlags()).join(", "));
+		item->setIcon(i, SmallIcon("object-locked"));
+	i++;
+
+	item->setText(i++, p.fileSystem().label());
+	item->setText(i++, p.fileSystem().uuid());
+	item->setText(i++, Capacity(p).toString());
+	item->setText(i++, Capacity(p, Capacity::Used).toString());
+	item->setText(i++, Capacity(p, Capacity::Available).toString());
+
+	item->setText(i++, KGlobal::locale()->formatNumber(p.firstSector(), 0));
+	item->setText(i++, KGlobal::locale()->formatNumber(p.lastSector(), 0));
+	item->setText(i++, KGlobal::locale()->formatNumber(p.length(), 0));
+
+	item->setText(i++, PartitionTable::flagNames(p.activeFlags()).join(", "));
 
 	item->setSizeHint(0, QSize(0, 32));
 
