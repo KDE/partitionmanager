@@ -1,6 +1,6 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
 
-<gui name="KDE Partition Manager" version="7">
+<gui name="KDE Partition Manager" version="8">
 	<ToolBar name="editToolBar">
 		<text context="@title:menu turn on and off edit toolbar">Edit Toolbar</text>
 		<Action name="applyAllOperations"/>
@@ -44,6 +44,7 @@
 		<Menu name="device">
 			<text context="@title:menu">Device</text>
 			<Action name="createNewPartitionTable"/>
+			<Action name="propertiesDevice"/>
 		</Menu>
 		<Menu name="partition">
 			<text context="@title:menu">Partition</text>

@@ -129,7 +129,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		void onScanDevicesProgressChanged(const QString& device_node, int percent);
 
 		void onPropertiesPartition();
-		void onPropertiesDevice(const QString& device_node);
+		void onPropertiesDevice(const QString& device_node = QString());
 		void onMountPartition();
 		void onEditMountPoint();
 		void onNewPartition();

@@ -89,12 +89,10 @@ void ListDevices::on_m_ListDevices_itemSelectionChanged()
 
 void ListDevices::on_m_ListDevices_customContextMenuRequested(const QPoint& pos)
 {
-	if (actionCollection() && actionCollection()->action("createNewPartitionTable"))
-	{
-		KMenu deviceMenu;
-		deviceMenu.addAction(actionCollection()->action("createNewPartitionTable"));
-		deviceMenu.exec(listDevices().viewport()->mapToGlobal(pos));
-	}
+	KMenu deviceMenu;
+	deviceMenu.addAction(actionCollection()->action("createNewPartitionTable"));
+	deviceMenu.addAction(actionCollection()->action("propertiesDevice"));
+	deviceMenu.exec(listDevices().viewport()->mapToGlobal(pos));
 }
 
 void ListDevices::on_m_ListDevices_itemActivated(QListWidgetItem* list_item)

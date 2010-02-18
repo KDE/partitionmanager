@@ -217,6 +217,12 @@ void PartitionManagerWidget::setupActions()
 	createNewPartitionTable->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_N);
 	createNewPartitionTable->setIcon(BarIcon("edit-clear"));
 
+	KAction* propertiesDevice = actionCollection()->addAction("propertiesDevice", this, SLOT(onPropertiesDevice()));
+	propertiesDevice->setText(i18nc("@action:inmenu", "Properties"));
+	propertiesDevice->setToolTip(i18nc("@info:tooltip", "Show device properties dialog"));
+	propertiesDevice->setStatusTip(i18nc("@info:status", "View and modify device properties"));
+	propertiesDevice->setIcon(BarIcon("document-properties"));
+
 	// Partition actions
 	KAction* newPartition = actionCollection()->addAction("newPartition", this, SLOT(onNewPartition()));
 	newPartition->setEnabled(false);
@@ -288,7 +294,7 @@ void PartitionManagerWidget::setupActions()
 	KAction* propertiesPartition = actionCollection()->addAction("propertiesPartition", this, SLOT(onPropertiesPartition()));
 	propertiesPartition->setEnabled(false);
 	propertiesPartition->setText(i18nc("@action:inmenu", "Properties"));
-	propertiesPartition->setToolTip(i18nc("@info:tooltip", "Show properties dialog"));
+	propertiesPartition->setToolTip(i18nc("@info:tooltip", "Show partition properties dialog"));
 	propertiesPartition->setStatusTip(i18nc("@info:status", "View and modify partition properties (label, partition flags, etc.)"));
 	propertiesPartition->setIcon(BarIcon("document-properties"));
 
@@ -526,11 +532,10 @@ void PartitionManagerWidget::on_m_TreePartitions_currentItemChanged(QTreeWidgetI
 
 void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, int)
 {
-	// if the activated item is the device item, don't do anything
 	if (item == treePartitions().topLevelItem(0))
-		return;
-
-	actionCollection()->action("propertiesPartition")->trigger();
+		actionCollection()->action("propertiesDevice")->trigger();
+	else
+		actionCollection()->action("propertiesPartition")->trigger();
 }
 
 void PartitionManagerWidget::onHeaderContextMenu(const QPoint& p)
