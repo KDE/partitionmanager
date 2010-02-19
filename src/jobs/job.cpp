@@ -101,7 +101,21 @@ bool Job::commit(PedDisk* disk, quint32 timeout)
 
 	bool rval = ped_disk_commit_to_dev(disk);
 
-	rval = ped_disk_commit_to_os(disk) && rval;
+	// The GParted authors have found a bug in libparted that causes it to intermittently
+	// not commit changes to the Linux kernel, probably a race. Until this is fixed in
+	// libparted, the following patch should help alleviate the consequences by just re-trying
+	// committing to the OS if it fails the first time after a short pause.
+	// See: http://git.gnome.org/browse/gparted/commit/?id=bf86fd3f9ceb0096dfe87a8c9a38403c13b13f00
+	if (rval)
+	{
+		rval = ped_disk_commit_to_os(disk);
+
+		if (!rval)
+		{
+			sleep(1);
+			rval = ped_disk_commit_to_os(disk);
+		}
+	}
 
 	if (!ExternalCommand("udevadm", QStringList() << "settle" << "--timeout=" + QString::number(timeout)).run() &&
 			!ExternalCommand("udevsettle", QStringList() << "--timeout=" + QString::number(timeout)).run())
