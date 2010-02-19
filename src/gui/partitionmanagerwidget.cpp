@@ -614,8 +614,19 @@ void PartitionManagerWidget::showPartitionContextMenu(const QPoint& pos)
 {
 	Q_ASSERT(actionCollection());
 
-	if (selectedPartition() == NULL || actionCollection() == NULL)
+	if  (actionCollection() == NULL)
 		return;
+
+	if (selectedPartition() == NULL)
+	{
+		if (selectedDevice() != NULL)
+		{
+			// show context menu for device
+			return;
+		}
+
+		return;
+	}
 
 	KMenu partitionMenu;
 
