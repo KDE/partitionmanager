@@ -52,7 +52,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui:
 		void setActionCollection(KActionCollection* coll) { m_ActionCollection = coll; }
 
 	public slots:
-		void updateDevices(OperationStack::Devices& devices, Device* selected_device);
+		void updateDevices(OperationStack::Devices& devices);
 
 	protected:
 		QListWidget& listDevices() { Q_ASSERT(m_ListDevices); return *m_ListDevices; }

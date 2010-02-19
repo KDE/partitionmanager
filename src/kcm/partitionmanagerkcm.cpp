@@ -120,7 +120,7 @@ void PartitionManagerKCM::on_m_PartitionManagerWidget_devicesChanged()
 {
 	QReadLocker lockDevices(&pmWidget().operationStack().lock());
 
-	listDevices().updateDevices(pmWidget().previewDevices(), pmWidget().selectedDevice());
+	listDevices().updateDevices(pmWidget().previewDevices());
 }
 
 void PartitionManagerKCM::setupKCMWorkaround()

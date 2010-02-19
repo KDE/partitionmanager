@@ -53,7 +53,7 @@ ListDevices::ListDevices(QWidget* parent) :
 	setupUi(this);
 }
 
-void ListDevices::updateDevices(OperationStack::Devices& devices, Device* selected_device)
+void ListDevices::updateDevices(OperationStack::Devices& devices)
 {
 	int idx = listDevices().currentRow();
 
@@ -64,16 +64,6 @@ void ListDevices::updateDevices(OperationStack::Devices& devices, Device* select
 
 	if (idx > -1 && idx < listDevices().count())
 		listDevices().setCurrentRow(idx);
-
-	if (selected_device)
-	{
-		for (idx = 0; idx < devices.size(); idx++)
-			if (devices[idx] == selected_device)
-			{
-				listDevices().setCurrentRow(idx);
-				break;
-			}
-	}
 }
 
 void ListDevices::on_m_ListDevices_itemSelectionChanged()
