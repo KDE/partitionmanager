@@ -31,6 +31,15 @@ EditMountOptionsDialog::EditMountOptionsDialog(QWidget* parent, const QStringLis
 {
 	setMainWidget(&widget());
 	setCaption(i18nc("@title:window", "Edit additional mount options"));
+
+	restoreDialogSize(KConfigGroup(KGlobal::config(), "editMountOptionsDialog"));
+}
+
+/** Destroys an EditMOuntOptionsDialog instance */
+EditMountOptionsDialog::~EditMountOptionsDialog()
+{
+	KConfigGroup kcg(KGlobal::config(), "editMountOptionsDialog");
+	saveDialogSize(kcg);
 }
 
 QStringList EditMountOptionsDialog::options()

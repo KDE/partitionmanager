@@ -34,6 +34,7 @@ class EditMountOptionsDialog : public KDialog
 
 	public:
 		EditMountOptionsDialog(QWidget* parent, const QStringList& options);
+		~EditMountOptionsDialog();
 
 	public:
 		QStringList options();

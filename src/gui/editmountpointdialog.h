@@ -35,6 +35,7 @@ class EditMountPointDialog : public KDialog
 
 	public:
 		EditMountPointDialog(QWidget* parent, Partition& p);
+		~EditMountPointDialog();
 
 	protected:
 		EditMountPointDialogWidget& widget() { return *m_DialogWidget; }
