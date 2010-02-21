@@ -48,4 +48,13 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const QString& n
 	addPage(new GeneralPageWidget(this), i18n("General"), QString(), i18n("General Settings"));
 	addPage(new FileSystemColorsPageWidget(this), i18n("File System Colors"), QString(), i18n("File System Color Settings"));
 	addPage(new AdvancedPageWidget(this), i18n("Advanced"), QString(), i18n("Advanced Settings"));
+
+	restoreDialogSize(KConfigGroup(KGlobal::config(), "configureOptionsDialog"));
+}
+
+/** Destroys a ConfigureOptionsDialog instance */
+ConfigureOptionsDialog::~ConfigureOptionsDialog()
+{
+	KConfigGroup kcg(KGlobal::config(), "configureOptionsDialog");
+	saveDialogSize(kcg);
 }

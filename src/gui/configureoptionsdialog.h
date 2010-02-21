@@ -27,6 +27,7 @@ class ConfigureOptionsDialog : public KConfigDialog
 {
 	public:
 		ConfigureOptionsDialog(QWidget* parent, const QString& name, KConfigSkeleton* cfg);
+		~ConfigureOptionsDialog();
 };
 
 #endif
