@@ -28,6 +28,7 @@
 #include <kactioncollection.h>
 #include <ktoolbar.h>
 #include <kstatusbar.h>
+#include <kmenubar.h>
 #include <kmessagebox.h>
 #include <kaboutdata.h>
 #include <kcomponentdata.h>
@@ -138,6 +139,9 @@ void MainWindow::setupActions()
 	actionCollection()->addAction("toggleDockOperations", dockOperations().toggleViewAction());
 	actionCollection()->addAction("toggleDockInformation", dockInformation().toggleViewAction());
 	actionCollection()->addAction("toggleDockLog", dockLog().toggleViewAction());
+
+	// Settings Actions
+	KStandardAction::showMenubar(this, SLOT(onShowMenuBar()), actionCollection());
 }
 
 void MainWindow::setupConnections()
@@ -221,4 +225,20 @@ bool MainWindow::isKPart() const
 {
 	// If we were instantiated with an action collection we're supposed to be a KPart
 	return m_ActionCollection != NULL;
+}
+
+void MainWindow::onShowMenuBar()
+{
+	QAction* menuBarAction = actionCollection()->action(KStandardAction::name(KStandardAction::ShowMenubar));
+	if (menuBarAction->isChecked())
+		menuBar()->show();
+	else
+	{
+		const QString accel = menuBarAction->shortcut().toString();
+		KMessageBox::information(this, i18nc("@info", "This will hide the menu bar completely. You can show it again by typing %1.", accel), i18nc("@window:title", "Hide Menu Bar"), "hideMenuBarWarning");
+
+		menuBar()->hide();
+	}
+
+	Config::self()->setShowMenuBar(menuBarAction->isChecked());
 }

@@ -98,6 +98,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void on_m_PartitionManagerWidget_devicesChanged();
 		void on_m_PartitionManagerWidget_operationsChanged();
 		void on_m_PartitionManagerWidget_selectedPartitionChanged(const Partition* p);
+		void onShowMenuBar();
 
 	private:
 		QLabel* m_StatusText;
