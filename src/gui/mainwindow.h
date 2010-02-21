@@ -101,9 +101,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void onShowMenuBar();
 
 	private:
+		KActionCollection* m_ActionCollection;
 		QLabel* m_StatusText;
 		InfoPane* m_InfoPane;
-		KActionCollection* m_ActionCollection;
 };
 
 #endif

@@ -46,9 +46,9 @@
 MainWindow::MainWindow(QWidget* parent, KActionCollection* coll) :
 	KXmlGuiWindow(parent),
 	Ui::MainWindowBase(),
+	m_ActionCollection(coll),
 	m_StatusText(new QLabel(this)),
-	m_InfoPane(new InfoPane(this)),
-	m_ActionCollection(coll)
+	m_InfoPane(new InfoPane(this))
 {
 	setupUi(this);
 	init();
@@ -69,7 +69,10 @@ void MainWindow::init()
 	pmWidget().init(actionCollection(), "partitionmanagerrc");
 
 	if (isKPart())
-		setupGUI(ToolBar | Keys | StatusBar | Save);
+	{
+		setupGUI(ToolBar | Keys | Save);
+		statusBar()->hide();
+	}
 	else
 		setupGUI(ToolBar | Keys | StatusBar | Save | Create);
 
@@ -152,7 +155,8 @@ void MainWindow::setupConnections()
 
 void MainWindow::setupStatusBar()
 {
-	statusBar()->addWidget(&statusText());
+	if (!isKPart())
+		statusBar()->addWidget(&statusText());
 }
 
 void MainWindow::loadConfig()
@@ -175,7 +179,8 @@ void MainWindow::on_m_PartitionManagerWidget_operationsChanged()
 {
 	listOperations().updateOperations(pmWidget().operations());
 
-	statusText().setText(i18ncp("@info:status", "One pending operation", "%1 pending operations", pmWidget().numPendingOperations()));
+	if (!isKPart())
+		statusText().setText(i18ncp("@info:status", "One pending operation", "%1 pending operations", pmWidget().numPendingOperations()));
 }
 
 void MainWindow::on_m_PartitionManagerWidget_devicesChanged()
