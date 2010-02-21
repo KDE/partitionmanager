@@ -1,6 +1,6 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
 
-<kpartgui name="partitionmanagerpart" version="7">
+<kpartgui name="partitionmanagerpart" version="8">
 	<ToolBar name="editToolBar">
 		<text context="@title:menu turn on and off edit toolbar">Edit Toolbar</text>
 		<Action name="applyAllOperations"/>
@@ -37,13 +37,14 @@
 			<Action name="toggleDockOperations"/>
 			<Action name="toggleDockInformation"/>
 			<Action name="toggleDockLog"/>
-			<separator name="separator_7"/>
+			<separator name="separator"/>
 			<Action name="fileSystemSupport"/>
 			<Action name="refreshDevices"/>
 		</Menu>
 		<Menu name="device">
 			<text context="@title:menu">Device</text>
 			<Action name="createNewPartitionTable"/>
+			<Action name="propertiesDevice"/>
 		</Menu>
 		<Menu name="partition">
 			<text context="@title:menu">Partition</text>
@@ -51,18 +52,18 @@
 			<Action name="resizePartition"/>
 			<Action name="deletePartition"/>
 			<Action name="shredPartition"/>
-			<separator name="separator_6"/>
+			<separator name="separator"/>
 			<Action name="copyPartition"/>
 			<Action name="pastePartition"/>
-			<separator name="separator_3"/>
+			<separator name="separator"/>
 			<Action name="editMountPoint"/>
 			<Action name="mountPartition"/>
-			<separator name="separator_4"/>
+			<separator name="separator"/>
 			<Action name="checkPartition"/>
-			<separator name="separator_5"/>
+			<separator name="separator"/>
 			<Action name="backupPartition"/>
 			<Action name="restorePartition"/>
-			<separator name="separator_8"/>
+			<separator name="separator"/>
 			<Action name="propertiesPartition"/>
 		</Menu>
 	</MenuBar>

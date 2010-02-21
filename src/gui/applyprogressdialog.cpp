@@ -83,13 +83,13 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
 
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "progressDialog"));
+	restoreDialogSize(KConfigGroup(KGlobal::config(), "applyProgressDialog"));
 }
 
 /** Destroys a ProgressDialog */
 ApplyProgressDialog::~ApplyProgressDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "progressDialog");
+	KConfigGroup kcg(KGlobal::config(), "applyProgressDialog");
 	saveDialogSize(kcg);
 	delete m_Report;
 }
