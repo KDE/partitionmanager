@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2008,2009,2010 by Volker Lanz <vl@fidra.de>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -22,21 +22,14 @@
 #include "gui/partpropsdialog.h"
 #include "gui/resizedialog.h"
 #include "gui/newdialog.h"
-#include "gui/filesystemsupportdialog.h"
 #include "gui/applyprogressdialog.h"
 #include "gui/insertdialog.h"
 #include "gui/editmountpointdialog.h"
-#include "gui/createpartitiontabledialog.h"
-#include "gui/scanprogressdialog.h"
-#include "gui/configureoptionsdialog.h"
-#include "gui/devicepropsdialog.h"
 
 #include "core/partition.h"
 #include "core/device.h"
 #include "core/operationstack.h"
 #include "core/partitiontable.h"
-#include "core/operationrunner.h"
-#include "core/devicescanner.h"
 
 #include "fs/filesystemfactory.h"
 
@@ -44,7 +37,6 @@
 #include "ops/resizeoperation.h"
 #include "ops/newoperation.h"
 #include "ops/copyoperation.h"
-#include "ops/createpartitiontableoperation.h"
 #include "ops/checkoperation.h"
 #include "ops/backupoperation.h"
 #include "ops/restoreoperation.h"
@@ -57,10 +49,6 @@
 #include "util/report.h"
 #include "util/helpers.h"
 
-#include <kapplication.h>
-#include <kaction.h>
-#include <kstandardaction.h>
-#include <kactioncollection.h>
 #include <klocale.h>
 #include <kmenu.h>
 #include <kmessagebox.h>
@@ -72,10 +60,6 @@
 #include <QReadLocker>
 
 #include <config.h>
-
-#include <unistd.h>
-
-#include "partitionmanageradaptor.h"
 
 class PartitionTreeWidgetItem : public QTreeWidgetItem
 {
@@ -93,23 +77,14 @@ class PartitionTreeWidgetItem : public QTreeWidgetItem
 	@param parent the parent widget
 	@param coll an action collection (may be NULL and set later)
 */
-PartitionManagerWidget::PartitionManagerWidget(QWidget* parent, KActionCollection* coll) :
+PartitionManagerWidget::PartitionManagerWidget(QWidget* parent) :
 	QWidget(parent),
 	Ui::PartitionManagerWidgetBase(),
-	m_OperationStack(),
-	m_OperationRunner(operationStack()),
-	m_DeviceScanner(operationStack()),
-	m_ApplyProgressDialog(new ApplyProgressDialog(this, operationRunner())),
-	m_ScanProgressDialog(new ScanProgressDialog(this)),
-	m_ActionCollection(coll),
+	m_OperationStack(NULL),
 	m_SelectedDevice(NULL),
 	m_ClipboardPartition(NULL)
 {
 	setupUi(this);
-
-	(void) new PartitionManagerAdaptor(this);
-	QDBusConnection dbus = QDBusConnection::sessionBus();
-	dbus.registerObject("/PartitionManager", this);
 
 	treePartitions().header()->setStretchLastSection(false);
 	treePartitions().header()->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -120,20 +95,16 @@ PartitionManagerWidget::~PartitionManagerWidget()
 	saveConfig();
 }
 
-void PartitionManagerWidget::init(KActionCollection* coll, const QString& config_name)
+void PartitionManagerWidget::init(OperationStack* ostack, const QString& config_name)
 {
 	Config::instance(config_name);
 
-	Q_ASSERT(coll);
-	m_ActionCollection = coll;
+	m_OperationStack = ostack;
 
 	FileSystemFactory::init();
 
 	loadConfig();
-	setupActions();
 	setupConnections();
-
-	scanDevices();
 }
 
 void PartitionManagerWidget::loadConfig()
@@ -176,233 +147,9 @@ void PartitionManagerWidget::saveConfig() const
 	Config::self()->writeConfig();
 }
 
-void PartitionManagerWidget::setupActions()
-{
-	// Edit actions
-	KAction* undoOperation = actionCollection()->addAction("undoOperation", this, SLOT(onUndoOperation()));
-	undoOperation->setEnabled(false);
-	undoOperation->setText(i18nc("@action:inmenu", "Undo"));
-	undoOperation->setToolTip(i18nc("@info:tooltip", "Undo the last operation"));
-	undoOperation->setStatusTip(i18nc("@info:status", "Remove the last operation from the list."));
-	undoOperation->setShortcut(Qt::CTRL | Qt::Key_Z);
-	undoOperation->setIcon(BarIcon("edit-undo"));
-
-	KAction* clearAllOperations = actionCollection()->addAction("clearAllOperations", this, SLOT(onClearAllOperations()));
-	clearAllOperations->setEnabled(false);
-	clearAllOperations->setText(i18nc("@action:inmenu clear the list of operations", "Clear"));
-	clearAllOperations->setToolTip(i18nc("@info:tooltip", "Clear all operations"));
-	clearAllOperations->setStatusTip(i18nc("@info:status", "Empty the list of pending operations."));
-	clearAllOperations->setIcon(BarIcon("dialog-cancel"));
-
-	KAction* applyAllOperations = actionCollection()->addAction("applyAllOperations", this, SLOT(onApplyAllOperations()));
-	applyAllOperations->setEnabled(false);
-	applyAllOperations->setText(i18nc("@action:inmenu apply all operations", "Apply"));
-	applyAllOperations->setToolTip(i18nc("@info:tooltip", "Apply all operations"));
-	applyAllOperations->setStatusTip(i18nc("@info:status", "Apply the pending operations in the list."));
-	applyAllOperations->setIcon(BarIcon("dialog-ok-apply"));
-
-	// Device actions
-	KAction* refreshDevices = actionCollection()->addAction("refreshDevices", this, SLOT(onRefreshDevices()));
-	refreshDevices->setText(i18nc("@action:inmenu refresh list of devices", "Refresh Devices"));
-	refreshDevices->setToolTip(i18nc("@info:tooltip", "Refresh all devices"));
-	refreshDevices->setStatusTip(i18nc("@info:status", "Renew the devices list."));
-	refreshDevices->setShortcut(Qt::Key_F5);
-	refreshDevices->setIcon(BarIcon("view-refresh"));
-
-	KAction* createNewPartitionTable = actionCollection()->addAction("createNewPartitionTable", this, SLOT(onCreateNewPartitionTable()));
-	createNewPartitionTable->setEnabled(false);
-	createNewPartitionTable->setText(i18nc("@action:inmenu", "New Partition Table"));
-	createNewPartitionTable->setToolTip(i18nc("@info:tooltip", "Create a new partition table"));
-	createNewPartitionTable->setStatusTip(i18nc("@info:status", "Create a new and empty partition table on a device."));
-	createNewPartitionTable->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_N);
-	createNewPartitionTable->setIcon(BarIcon("edit-clear"));
-
-	KAction* propertiesDevice = actionCollection()->addAction("propertiesDevice", this, SLOT(onPropertiesDevice()));
-	propertiesDevice->setText(i18nc("@action:inmenu", "Properties"));
-	propertiesDevice->setToolTip(i18nc("@info:tooltip", "Show device properties dialog"));
-	propertiesDevice->setStatusTip(i18nc("@info:status", "View and modify device properties"));
-	propertiesDevice->setIcon(BarIcon("document-properties"));
-
-	// Partition actions
-	KAction* newPartition = actionCollection()->addAction("newPartition", this, SLOT(onNewPartition()));
-	newPartition->setEnabled(false);
-	newPartition->setText(i18nc("@action:inmenu create a new partition", "New"));
-	newPartition->setToolTip(i18nc("@info:tooltip", "New partition"));
-	newPartition->setStatusTip(i18nc("@info:status", "Create a new partition."));
-	newPartition->setShortcut(Qt::CTRL | Qt::Key_N);
-	newPartition->setIcon(BarIcon("document-new"));
-
-	KAction* resizePartition = actionCollection()->addAction("resizePartition", this, SLOT(onResizePartition()));
-	resizePartition->setEnabled(false);
-	resizePartition->setText(i18nc("@action:inmenu", "Resize/Move"));
-	resizePartition->setToolTip(i18nc("@info:tooltip", "Resize or move partition"));
-	resizePartition->setStatusTip(i18nc("@info:status", "Shrink, grow or move an existing partition."));
-	resizePartition->setShortcut(Qt::CTRL | Qt::Key_R);
-	resizePartition->setIcon(BarIcon("arrow-right-double"));
-
-	KAction* deletePartition = actionCollection()->addAction("deletePartition", this, SLOT(onDeletePartition()));
-	deletePartition->setEnabled(false);
-	deletePartition->setText(i18nc("@action:inmenu", "Delete"));
-	deletePartition->setToolTip(i18nc("@info:tooltip", "Delete partition"));
-	deletePartition->setStatusTip(i18nc("@info:status", "Delete a partition."));
-	deletePartition->setShortcut(Qt::Key_Delete);
-	deletePartition->setIcon(BarIcon("edit-delete"));
-
-	KAction* shredPartition = actionCollection()->addAction("shredPartition", this, SLOT(onShredPartition()));
-	shredPartition->setEnabled(false);
-	shredPartition->setText(i18nc("@action:inmenu", "Shred"));
-	shredPartition->setToolTip(i18nc("@info:tooltip", "Shred partition"));
-	shredPartition->setStatusTip(i18nc("@info:status", "Shred a partition so that its contents cannot be restored."));
-	shredPartition->setShortcut(Qt::SHIFT | Qt::Key_Delete);
-	shredPartition->setIcon(BarIcon("edit-delete-shred"));
-
-	KAction* copyPartition = actionCollection()->addAction("copyPartition", this, SLOT(onCopyPartition()));
-	copyPartition->setEnabled(false);
-	copyPartition->setText(i18nc("@action:inmenu", "Copy"));
-	copyPartition->setToolTip(i18nc("@info:tooltip", "Copy partition"));
-	copyPartition->setStatusTip(i18nc("@info:status", "Copy an existing partition."));
-	copyPartition->setShortcut(Qt::CTRL | Qt::Key_C);
-	copyPartition->setIcon(BarIcon("edit-copy"));
-
-	KAction* pastePartition = actionCollection()->addAction("pastePartition", this, SLOT(onPastePartition()));
-	pastePartition->setEnabled(false);
-	pastePartition->setText(i18nc("@action:inmenu", "Paste"));
-	pastePartition->setToolTip(i18nc("@info:tooltip", "Paste partition"));
-	pastePartition->setStatusTip(i18nc("@info:status", "Paste a copied partition."));
-	pastePartition->setShortcut(Qt::CTRL | Qt::Key_V);
-	pastePartition->setIcon(BarIcon("edit-paste"));
-
-	KAction* editMountPoint = actionCollection()->addAction("editMountPoint", this, SLOT(onEditMountPoint()));
-	editMountPoint->setEnabled(false);
-	editMountPoint->setText(i18nc("@action:inmenu", "Edit Mount Point"));
-	editMountPoint->setToolTip(i18nc("@info:tooltip", "Edit mount point"));
-	editMountPoint->setStatusTip(i18nc("@info:status", "Edit a partition's mount point and options."));
-
-	KAction* mountPartition = actionCollection()->addAction("mountPartition", this, SLOT(onMountPartition()));
-	mountPartition->setEnabled(false);
-	mountPartition->setText(i18nc("@action:inmenu", "Mount"));
-	mountPartition->setToolTip(i18nc("@info:tooltip", "Mount or unmount partition"));
-	mountPartition->setStatusTip(i18nc("@info:status", "Mount or unmount a partition."));
-
-	KAction* checkPartition = actionCollection()->addAction("checkPartition", this, SLOT(onCheckPartition()));
-	checkPartition->setEnabled(false);
-	checkPartition->setText(i18nc("@action:inmenu", "Check"));
-	checkPartition->setToolTip(i18nc("@info:tooltip", "Check partition"));
-	checkPartition->setStatusTip(i18nc("@info:status", "Check a filesystem on a partition for errors."));
-	checkPartition->setIcon(BarIcon("flag"));
-
-	KAction* propertiesPartition = actionCollection()->addAction("propertiesPartition", this, SLOT(onPropertiesPartition()));
-	propertiesPartition->setEnabled(false);
-	propertiesPartition->setText(i18nc("@action:inmenu", "Properties"));
-	propertiesPartition->setToolTip(i18nc("@info:tooltip", "Show partition properties dialog"));
-	propertiesPartition->setStatusTip(i18nc("@info:status", "View and modify partition properties (label, partition flags, etc.)"));
-	propertiesPartition->setIcon(BarIcon("document-properties"));
-
-	KAction* backup = actionCollection()->addAction("backupPartition", this, SLOT(onBackupPartition()));
-	backup->setEnabled(false);
-	backup->setText(i18nc("@action:inmenu", "Backup"));
-	backup->setToolTip(i18nc("@info:tooltip", "Backup partition"));
-	backup->setStatusTip(i18nc("@info:status", "Backup a partition to an image file."));
-	backup->setIcon(BarIcon("document-export"));
-
-	KAction* restore = actionCollection()->addAction("restorePartition", this, SLOT(onRestorePartition()));
-	restore->setEnabled(false);
-	restore->setText(i18nc("@action:inmenu", "Restore"));
-	restore->setToolTip(i18nc("@info:tooltip", "Restore partition"));
-	restore->setStatusTip(i18nc("@info:status", "Restore a partition from an image file."));
-	restore->setIcon(BarIcon("document-import"));
-
-	// View actions
-	KAction* fileSystemSupport = actionCollection()->addAction("fileSystemSupport", this, SLOT(onFileSystemSupport()));
-	fileSystemSupport->setText(i18nc("@action:inmenu", "File System Support"));
-	fileSystemSupport->setToolTip(i18nc("@info:tooltip", "View file system support information"));
-	fileSystemSupport->setStatusTip(i18nc("@info:status", "Show information about supported file systems."));
-
-	// Settings actions
-	KStandardAction::preferences(this, SLOT(onConfigureOptions()), actionCollection());
-}
-
 void PartitionManagerWidget::setupConnections()
 {
-	Q_ASSERT(actionCollection());
-
-	connect(&partTableWidget(), SIGNAL(itemActivated(const PartWidget*)), actionCollection()->action("propertiesPartition"), SLOT(trigger()));
-	connect(&applyProgressDialog(), SIGNAL(finished(int)), SLOT(scanDevices()));
-
-	connect(&deviceScanner(), SIGNAL(finished()), SLOT(onScanDevicesFinished()));
-	connect(&deviceScanner(), SIGNAL(progressChanged(const QString&, int)), SLOT(onScanDevicesProgressChanged(const QString&, int)));
-	connect(&deviceScanner(), SIGNAL(operationsChanged()), SIGNAL(operationsChanged()));
-	connect(&deviceScanner(), SIGNAL(devicesChanged()), SIGNAL(devicesChanged()));
-
 	connect(treePartitions().header(), SIGNAL(customContextMenuRequested(const QPoint&)), SLOT(onHeaderContextMenu(const QPoint&)));
-}
-
-void PartitionManagerWidget::scanDevices()
-{
-	Log() << i18nc("@info/plain", "Scanning devices...");
-
-	clear();
-
-	KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
-
-	scanProgressDialog().setEnabled(true);
-	scanProgressDialog().show();
-
-	deviceScanner().start();
-}
-
-void PartitionManagerWidget::onScanDevicesProgressChanged(const QString& device_node, int percent)
-{
-	scanProgressDialog().setProgress(percent);
-	scanProgressDialog().setDeviceName(device_node);
-}
-
-void PartitionManagerWidget::onScanDevicesFinished()
-{
-	QReadLocker lockDevices(&operationStack().lock());
-
-	if (!operationStack().previewDevices().isEmpty())
-		setSelectedDevice(operationStack().previewDevices()[0]);
-
-	updatePartitions();
-
-	Log() << i18nc("@info/plain", "Scan finished.");
-	KApplication::restoreOverrideCursor();
-
-	scanProgressDialog().hide();
-}
-
-void PartitionManagerWidget::enableActions()
-{
-	actionCollection()->action("createNewPartitionTable")->setEnabled(CreatePartitionTableOperation::canCreate(selectedDevice()));
-
-	actionCollection()->action("undoOperation")->setEnabled(numPendingOperations() > 0);
-	actionCollection()->action("clearAllOperations")->setEnabled(numPendingOperations() > 0);
-	actionCollection()->action("applyAllOperations")->setEnabled(numPendingOperations() > 0 && (geteuid() == 0 || Config::allowApplyOperationsAsNonRoot()));
-
-	const bool readOnly = selectedDevice() == NULL || selectedDevice()->partitionTable() == NULL || selectedDevice()->partitionTable()->isReadOnly();
-
-	const Partition* part = selectedPartition();
-
-	actionCollection()->action("newPartition")->setEnabled(!readOnly && NewOperation::canCreateNew(part));
-	const bool canResize = ResizeOperation::canGrow(part) || ResizeOperation::canShrink(part) || ResizeOperation::canMove(part);
-	actionCollection()->action("resizePartition")->setEnabled(!readOnly && canResize);
-	actionCollection()->action("copyPartition")->setEnabled(CopyOperation::canCopy(part));
-	actionCollection()->action("deletePartition")->setEnabled(!readOnly && DeleteOperation::canDelete(part));
-	actionCollection()->action("shredPartition")->setEnabled(!readOnly && DeleteOperation::canDelete(part));
-	actionCollection()->action("pastePartition")->setEnabled(!readOnly && CopyOperation::canPaste(part, clipboardPartition()));
-	actionCollection()->action("propertiesPartition")->setEnabled(part != NULL);
-
-	actionCollection()->action("editMountPoint")->setEnabled(part && part->canMount());
-	actionCollection()->action("mountPartition")->setEnabled(part && (part->canMount() || part->canUnmount()));
-
-	if (part != NULL)
-		actionCollection()->action("mountPartition")->setText(part->isMounted() ? part->fileSystem().unmountTitle() : part->fileSystem().mountTitle() );
-
-	actionCollection()->action("checkPartition")->setEnabled(!readOnly && CheckOperation::canCheck(part));
-
-	actionCollection()->action("backupPartition")->setEnabled(BackupOperation::canBackup(part));
-	actionCollection()->action("restorePartition")->setEnabled(RestoreOperation::canRestore(part));
 }
 
 void PartitionManagerWidget::clear()
@@ -411,15 +158,30 @@ void PartitionManagerWidget::clear()
 	setClipboardPartition(NULL);
 	treePartitions().clear();
 	partTableWidget().clear();
-	deviceScanner().clear();
 }
 
-void PartitionManagerWidget::clearSelectedPartition()
+void PartitionManagerWidget::setSelectedPartition(const Partition* p)
 {
-	treePartitions().setCurrentItem(NULL);
-	emit selectedPartitionChanged(NULL);
-	enableActions();
-	updatePartitions();
+	if (p == NULL)
+	{
+		treePartitions().setCurrentItem(NULL);
+		emit selectedPartitionChanged(NULL);
+		updatePartitions();
+	}
+	else
+		partTableWidget().setActivePartition(p);
+}
+
+Partition* PartitionManagerWidget::selectedPartition()
+{
+	if (selectedDevice() == NULL || selectedDevice()->partitionTable() == NULL || partTableWidget().activeWidget() == NULL)
+		return NULL;
+
+	// The active partition we get from the part table widget is const; we need non-const.
+	// So take the first sector and find the partition in the selected device's
+	// partition table.
+	const Partition* activePartition = partTableWidget().activeWidget()->partition();
+	return selectedDevice()->partitionTable()->findPartitionBySector(activePartition->firstSector(), PartitionRole(PartitionRole::Any));
 }
 
 void PartitionManagerWidget::setSelectedDevice(const QString& device_node)
@@ -438,11 +200,8 @@ void PartitionManagerWidget::setSelectedDevice(const QString& device_node)
 
 void PartitionManagerWidget::setSelectedDevice(Device* d)
 {
-	// NOTE: we cannot emit devicesChanged() here because it will end up calling
-	// ListDevices::updateDevices() which in turn will modify the QListWidget, which
-	// will then emit itemSelectionChanged() which will in the end lead us back here.
 	m_SelectedDevice = d;
-	clearSelectedPartition();
+	setSelectedPartition(NULL);
 }
 
 static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
@@ -533,9 +292,15 @@ void PartitionManagerWidget::on_m_TreePartitions_currentItemChanged(QTreeWidgetI
 void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, int)
 {
 	if (item == treePartitions().topLevelItem(0))
-		actionCollection()->action("propertiesDevice")->trigger();
+	{
+		if (selectedDevice() != NULL)
+			emit deviceDoubleClicked(selectedDevice());
+	}
 	else
-		actionCollection()->action("propertiesPartition")->trigger();
+	{
+		if (selectedPartition() != NULL)
+			emit partitionDoubleClicked(selectedPartition());
+	}
 }
 
 void PartitionManagerWidget::onHeaderContextMenu(const QPoint& p)
@@ -571,8 +336,6 @@ void PartitionManagerWidget::onHeaderContextMenu(const QPoint& p)
 
 void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidget* item)
 {
- 	enableActions();
-
 	if (item == NULL)
 	{
 		treePartitions().setCurrentItem(NULL);
@@ -602,77 +365,18 @@ void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidge
 
 void PartitionManagerWidget::on_m_PartTableWidget_customContextMenuRequested(const QPoint& pos)
 {
-	showPartitionContextMenu(partTableWidget().mapToGlobal(pos));
+	emit contextMenuRequested(partTableWidget().mapToGlobal(pos));
+}
+
+void PartitionManagerWidget::on_m_PartTableWidget_itemDoubleClicked()
+{
+	if (selectedPartition())
+		emit partitionDoubleClicked(selectedPartition());
 }
 
 void PartitionManagerWidget::on_m_TreePartitions_customContextMenuRequested(const QPoint& pos)
 {
-	showPartitionContextMenu(treePartitions().viewport()->mapToGlobal(pos));
-}
-
-void PartitionManagerWidget::showPartitionContextMenu(const QPoint& pos)
-{
-	Q_ASSERT(actionCollection());
-
-	if  (actionCollection() == NULL)
-		return;
-
-	if (selectedPartition() == NULL)
-	{
-		if (selectedDevice() != NULL)
-		{
-			// show context menu for device
-			return;
-		}
-
-		return;
-	}
-
-	KMenu partitionMenu;
-
-	partitionMenu.addAction(actionCollection()->action("newPartition"));
-	partitionMenu.addAction(actionCollection()->action("resizePartition"));
-	partitionMenu.addAction(actionCollection()->action("deletePartition"));
-	partitionMenu.addAction(actionCollection()->action("shredPartition"));
-	partitionMenu.addSeparator();
-	partitionMenu.addAction(actionCollection()->action("copyPartition"));
-	partitionMenu.addAction(actionCollection()->action("pastePartition"));
-	partitionMenu.addSeparator();
-	partitionMenu.addAction(actionCollection()->action("editMountPoint"));
-	partitionMenu.addAction(actionCollection()->action("mountPartition"));
-	partitionMenu.addSeparator();
-	partitionMenu.addAction(actionCollection()->action("checkPartition"));
-	partitionMenu.addSeparator();
-	partitionMenu.addAction(actionCollection()->action("propertiesPartition"));
-
-	partitionMenu.exec(pos);
-}
-
-void PartitionManagerWidget::setPartitionTable(const PartitionTable* ptable)
-{
-	partTableWidget().setPartitionTable(ptable);
-}
-
-void PartitionManagerWidget::setSelection(const Partition* p)
-{
-	partTableWidget().setActivePartition(p);
-}
-
-quint32 PartitionManagerWidget::numPendingOperations()
-{
-	return operationStack().size();
-}
-
-Partition* PartitionManagerWidget::selectedPartition()
-{
-	if (selectedDevice() == NULL || selectedDevice()->partitionTable() == NULL || partTableWidget().activeWidget() == NULL)
-		return NULL;
-
-	// The active partition we get from the part table widget is const; we need non-const.
-	// So take the first sector and find the partition in the selected device's
-	// partition table.
-	const Partition* activePartition = partTableWidget().activeWidget()->partition();
-	return selectedDevice()->partitionTable()->findPartitionBySector(activePartition->firstSector(), PartitionRole(PartitionRole::Any));
+	emit contextMenuRequested(treePartitions().viewport()->mapToGlobal(pos));
 }
 
 void PartitionManagerWidget::onPropertiesPartition()
@@ -695,7 +399,6 @@ void PartitionManagerWidget::onPropertiesPartition()
 				operationStack().push(new SetPartFlagsOperation(*selectedDevice(), *selectedPartition(), dlg->newFlags()));
 
 			updatePartitions();
-			emit operationsChanged();
 		}
 
 		delete dlg;
@@ -730,7 +433,6 @@ void PartitionManagerWidget::onMountPartition()
 			kWarning() << "parent is null";
 	}
 
-	enableActions();
 	updatePartitions();
 }
 
@@ -799,7 +501,6 @@ void PartitionManagerWidget::onNewPartition()
 		PartitionTable::snap(*selectedDevice(), *newPartition);
 		operationStack().push(new NewOperation(*selectedDevice(), newPartition));
 		updatePartitions();
-		emit operationsChanged();
 	}
 	else
 		delete newPartition;
@@ -857,7 +558,6 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 
 	operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), shred));
 	updatePartitions();
-	emit operationsChanged();
 }
 
 void PartitionManagerWidget::onShredPartition()
@@ -901,7 +601,6 @@ void PartitionManagerWidget::onResizePartition()
 			operationStack().push(new ResizeOperation(*selectedDevice(), *selectedPartition(), resizedPartition.firstSector(), resizedPartition.lastSector()));
 
 			updatePartitions();
-			emit operationsChanged();
 		}
 	}
 
@@ -920,8 +619,6 @@ void PartitionManagerWidget::onCopyPartition()
 
 	setClipboardPartition(selectedPartition());
 	Log() << i18nc("@info/plain", "Partition <filename>%1</filename> has been copied to the clipboard.", selectedPartition()->deviceNode());
-
-	enableActions();
 }
 
 void PartitionManagerWidget::onPastePartition()
@@ -960,7 +657,6 @@ void PartitionManagerWidget::onPastePartition()
 	{
 		operationStack().push(new CopyOperation(*selectedDevice(), copiedPartition, *dSource, clipboardPartition()));
 		updatePartitions();
-		emit operationsChanged();
 	}
 	else
 		delete copiedPartition;
@@ -1014,107 +710,6 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertPartition, qint64
 	return true;
 }
 
-void PartitionManagerWidget::onCreateNewPartitionTable()
-{
-	Q_ASSERT(selectedDevice());
-
-	if (selectedDevice() == NULL)
-	{
-		kWarning() << "selected device is null.";
-		return;
-	}
-
-	QPointer<CreatePartitionTableDialog> dlg = new CreatePartitionTableDialog(this, *selectedDevice());
-
-	if (dlg->exec() == KDialog::Accepted)
-	{
-		operationStack().push(new CreatePartitionTableOperation(*selectedDevice(), dlg->type()));
-
-		updatePartitions();
-		emit operationsChanged();
-		emit devicesChanged();
-		enableActions();
-	}
-
-	delete dlg;
-}
-
-void PartitionManagerWidget::onRefreshDevices()
-{
-	if (numPendingOperations() == 0 || KMessageBox::warningContinueCancel(this,
-		i18nc("@info",
-			"<para>Do you really want to rescan the devices?</para>"
-			"<para><warning>This will also clear the list of pending operations.</warning></para>"),
-		i18nc("@title:window", "Really Rescan the Devices?"),
-		KGuiItem(i18nc("@action:button", "&Rescan Devices")),
-		KStandardGuiItem::cancel(), "reallyRescanDevices") == KMessageBox::Continue)
-	{
-		scanDevices();
-	}
-}
-
-void PartitionManagerWidget::onUndoOperation()
-{
-	Log() << i18nc("@info/plain", "Undoing operation: %1", operationStack().operations().last()->description());
-	operationStack().pop();
-
-	updatePartitions();
-	emit operationsChanged();
-	emit devicesChanged();
-	enableActions();
-}
-
-void PartitionManagerWidget::onClearAllOperations()
-{
-	if (KMessageBox::warningContinueCancel(this,
-		i18nc("@info", "Do you really want to clear the list of pending operations?"),
-		i18nc("@title:window", "Clear Pending Operations?"),
-		KGuiItem(i18nc("@action:button", "&Clear Pending Operations")),
-		KStandardGuiItem::cancel(), "reallyClearPendingOperations") == KMessageBox::Continue)
-	{
-		Log() << i18nc("@info/plain", "Clearing the list of pending operations.");
-		operationStack().clearOperations();
-
-		updatePartitions();
-		emit operationsChanged();
-		enableActions();
-	}
-}
-
-void PartitionManagerWidget::onApplyAllOperations()
-{
-	QStringList opList;
-
-	foreach (const Operation* op, operationStack().operations())
-		opList.append(op->description());
-
-	if (KMessageBox::warningContinueCancelList(this,
-		i18nc("@info",
-			"<para>Do you really want to apply the pending operations listed below?</para>"
-			"<para><warning>This will permanently modify your disks.</warning></para>"),
-		opList, i18nc("@title:window", "Apply Pending Operations?"),
-		KGuiItem(i18nc("@action:button", "&Apply Pending Operations")),
-		KStandardGuiItem::cancel()) == KMessageBox::Continue)
-	{
-		Log() << i18nc("@info/plain", "Applying operations...");
-
-		applyProgressDialog().show();
-
-		operationRunner().setReport(&applyProgressDialog().report());
-
-		// Undo all operations so the runner has a defined starting point
-		for (int i = operationStack().operations().size() - 1; i >= 0; i--)
-		{
-			operationStack().operations()[i]->undo();
-			operationStack().operations()[i]->setStatus(Operation::StatusNone);
-		}
-
-		updatePartitions();
-
-		operationRunner().start();
-	}
-}
-
 void PartitionManagerWidget::onCheckPartition()
 {
 	Q_ASSERT(selectedDevice());
@@ -1129,7 +724,6 @@ void PartitionManagerWidget::onCheckPartition()
 	operationStack().push(new CheckOperation(*selectedDevice(), *selectedPartition()));
 
 	updatePartitions();
-	emit operationsChanged();
 }
 
 void PartitionManagerWidget::onBackupPartition()
@@ -1153,7 +747,6 @@ void PartitionManagerWidget::onBackupPartition()
 	{
 		operationStack().push(new BackupOperation(*selectedDevice(), *selectedPartition(), fileName));
 		updatePartitions();
-		emit operationsChanged();
 	}
 }
 
@@ -1188,48 +781,10 @@ void PartitionManagerWidget::onRestorePartition()
 		if (showInsertDialog(*restorePartition, restorePartition->length()))
 		{
 			operationStack().push(new RestoreOperation(*selectedDevice(), restorePartition, fileName));
-
 			updatePartitions();
-			emit operationsChanged();
 		}
 		else
 			delete restorePartition;
-	}
-}
-
-void PartitionManagerWidget::onFileSystemSupport()
-{
-	FileSystemSupportDialog dlg(this);
-	dlg.exec();
-}
-
-void PartitionManagerWidget::onSettingsChanged(const QString&)
-{
-	enableActions();
-	updatePartitions();
-}
-
-void PartitionManagerWidget::onConfigureOptions()
-{
-	if (ConfigureOptionsDialog::showDialog("Settings"))
-		return;
-
-	QPointer<ConfigureOptionsDialog> dlg = new ConfigureOptionsDialog(this, "Settings", Config::self());
-
-	connect(dlg, SIGNAL(settingsChanged(const QString&)), SLOT(onSettingsChanged(const QString&)));
-
-	dlg->show();
-}
-
-void PartitionManagerWidget::onPropertiesDevice(const QString&)
-{
-	Q_ASSERT(selectedDevice());
-
-	if (selectedDevice())
-	{
-		QPointer<DevicePropsDialog> dlg = new DevicePropsDialog(this, *selectedDevice());
-		dlg->exec();
-		delete dlg;
 	}
 }
 

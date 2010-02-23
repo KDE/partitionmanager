@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2008,2009,2010 by Volker Lanz <vl@fidra.de>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -47,9 +47,11 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui:
 	signals:
 		void selectionChanged(const QString& device_node);
 		void deviceDoubleClicked(const QString& device_node);
+		void contextMenuRequested(const QPoint&);
 
 	public:
 		void setActionCollection(KActionCollection* coll) { m_ActionCollection = coll; }
+		bool setSelectedDevice(const QString& device_node);
 
 	public slots:
 		void updateDevices(OperationStack::Devices& devices);

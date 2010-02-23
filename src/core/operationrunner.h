@@ -41,7 +41,7 @@ class OperationRunner : public QThread
 	Q_DISABLE_COPY(OperationRunner)
 
 	public:
-		OperationRunner(OperationStack& ostack);
+		OperationRunner(QObject* parent, OperationStack& ostack);
 
 	public:
 		void run();

@@ -37,15 +37,13 @@ class DeviceScanner : public QThread
 	Q_OBJECT
 
 	public:
-		DeviceScanner(OperationStack& ostack);
+		DeviceScanner(QObject* parent, OperationStack& ostack);
 
 	public:
 		void clear(); /**< clear Devices and the OperationStack */
 
 	signals:
 		void progressChanged(const QString& device_node, int progress);
-		void devicesChanged();
-		void operationsChanged();
 
 	protected:
 		virtual void run();

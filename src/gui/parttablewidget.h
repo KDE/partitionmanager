@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -58,7 +58,7 @@ class PartTableWidget : public QWidget, public PartWidgetBase
 
 	signals:
 		void itemSelectionChanged(PartWidget*);
-		void itemActivated(const PartWidget*);
+		void itemDoubleClicked(const PartWidget*);
 
 	protected:
 		void resizeEvent(QResizeEvent* event);

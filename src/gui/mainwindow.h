@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2008,2009,2010 by Volker Lanz <vl@fidra.de>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -21,19 +21,28 @@
 
 #define MAINWINDOW__H
 
+#include "core/operationrunner.h"
+#include "core/operationstack.h"
+#include "core/devicescanner.h"
+
 #include "util/libpartitionmanagerexport.h"
 
 #include "ui_mainwindowbase.h"
 
 #include <kxmlguiwindow.h>
 
+class ApplyProgressDialog;
+class ScanProgressDialog;
+class Device;
+class Partition;
+class InfoPane;
+
+class KActionCollection;
+
 class QWidget;
 class QLabel;
-class InfoPane;
 class QCloseEvent;
 class QEvent;
-class Device;
-class KActionCollection;
 
 /** @brief The application's main window.
 
@@ -47,13 +56,30 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 	public:
 		explicit MainWindow(QWidget* parent = NULL, KActionCollection* coll = NULL);
 
+	signals:
+		void operationsChanged();
+
 	protected:
+		void init();
+		void setupObjectNames();
 		void setupActions();
 		void setupConnections();
 		void setupStatusBar();
 		void loadConfig();
 		void saveConfig() const;
 		void updateWindowTitle();
+
+		quint32 numPendingOperations() const;
+
+		void enableActions();
+
+		void closeEvent(QCloseEvent*);
+		void changeEvent(QEvent* event);
+
+		bool isKPart() const;
+
+		void setSavedSelectedDeviceNode(const QString& s) { m_SavedSelectedDeviceNode = s; }
+		const QString& savedSelectedDeviceNode() const { return m_SavedSelectedDeviceNode; }
 
 		KActionCollection* actionCollection() const { return m_ActionCollection != NULL ? m_ActionCollection : KXmlGuiWindow::actionCollection(); }
 
@@ -86,25 +112,67 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		QLabel& statusText() { Q_ASSERT(m_StatusText); return *m_StatusText; }
 		const QLabel& statusText() const { Q_ASSERT(m_StatusText); return *m_StatusText; }
 
-		bool isKPart() const;
+		OperationStack& operationStack() { Q_ASSERT(m_OperationStack); return *m_OperationStack; }
+		const OperationStack& operationStack() const { Q_ASSERT(m_OperationStack); return *m_OperationStack; }
+
+		OperationRunner& operationRunner() { Q_ASSERT(m_OperationRunner); return *m_OperationRunner; }
+		const OperationRunner& operationRunner() const { Q_ASSERT(m_OperationRunner); return *m_OperationRunner; }
+
+		DeviceScanner& deviceScanner() { Q_ASSERT(m_DeviceScanner); return *m_DeviceScanner; }
+		const DeviceScanner& deviceScanner() const { Q_ASSERT(m_DeviceScanner); return *m_DeviceScanner; }
+
+		ApplyProgressDialog& applyProgressDialog() { Q_ASSERT(m_ApplyProgressDialog); return *m_ApplyProgressDialog; }
+		const ApplyProgressDialog& applyProgressDialog() const { Q_ASSERT(m_ApplyProgressDialog); return *m_ApplyProgressDialog; }
+
+		ScanProgressDialog& scanProgressDialog() { Q_ASSERT(m_ScanProgressDialog); return *m_ScanProgressDialog; }
+		const ScanProgressDialog& scanProgressDialog() const { Q_ASSERT(m_ScanProgressDialog); return *m_ScanProgressDialog; }
 
 	protected slots:
-		void closeEvent(QCloseEvent*);
-		void changeEvent(QEvent* event);
-
-		void init();
+		void on_m_PartitionManagerWidget_selectedPartitionChanged(const Partition* p);
+		void on_m_PartitionManagerWidget_contextMenuRequested(const QPoint& pos);
+		void on_m_PartitionManagerWidget_deviceDoubleClicked(const Device*);
+		void on_m_PartitionManagerWidget_partitionDoubleClicked(const Partition*);
 
 		void on_m_DockInformation_dockLocationChanged(Qt::DockWidgetArea);
-		void on_m_PartitionManagerWidget_devicesChanged();
-		void on_m_PartitionManagerWidget_operationsChanged();
-		void on_m_PartitionManagerWidget_selectedPartitionChanged(const Partition* p);
+
+		void on_m_OperationStack_operationsChanged();
+		void on_m_OperationStack_devicesChanged();
+
+		void on_m_DeviceScanner_finished();
+		void on_m_DeviceScanner_progressChanged(const QString& device_node, int percent);
+
+		void on_m_ApplyProgressDialog_finished();
+
+		void on_m_ListDevices_contextMenuRequested(const QPoint& pos);
+
 		void onShowMenuBar();
+
+		void scanDevices();
+
+		void onRefreshDevices();
+		void onCreateNewPartitionTable();
+
+		void onApplyAllOperations();
+		void onUndoOperation();
+		void onClearAllOperations();
+
+		void onConfigureOptions();
+		void onSettingsChanged(const QString&);
+
+		void onFileSystemSupport();
+
+		void onPropertiesDevice(const QString& device_node = QString());
 
 	private:
 		KActionCollection* m_ActionCollection;
+		OperationStack* m_OperationStack;
+		OperationRunner* m_OperationRunner;
+		DeviceScanner* m_DeviceScanner;
+		ApplyProgressDialog* m_ApplyProgressDialog;
+		ScanProgressDialog* m_ScanProgressDialog;
 		QLabel* m_StatusText;
 		InfoPane* m_InfoPane;
+		QString m_SavedSelectedDeviceNode;
 };
 
 #endif
-

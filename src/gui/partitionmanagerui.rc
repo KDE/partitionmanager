@@ -22,6 +22,7 @@
 	<ToolBar name="deviceToolBar">
 		<text context="@title:menu">Device Toolbar</text>
 		<Action name="createNewPartitionTable"/>
+		<Action name="propertiesDevice"/>
 	</ToolBar>
 
 	<MenuBar>

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2008,2009,2010 by Volker Lanz <vl@fidra.de>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -55,15 +55,10 @@ ListDevices::ListDevices(QWidget* parent) :
 
 void ListDevices::updateDevices(OperationStack::Devices& devices)
 {
-	int idx = listDevices().currentRow();
-
 	listDevices().clear();
 
 	foreach(const Device* d, devices)
 		listDevices().addItem(new ListDeviceWidgetItem(*d));
-
-	if (idx > -1 && idx < listDevices().count())
-		listDevices().setCurrentRow(idx);
 }
 
 void ListDevices::on_m_ListDevices_itemSelectionChanged()
@@ -79,10 +74,7 @@ void ListDevices::on_m_ListDevices_itemSelectionChanged()
 
 void ListDevices::on_m_ListDevices_customContextMenuRequested(const QPoint& pos)
 {
-	KMenu deviceMenu;
-	deviceMenu.addAction(actionCollection()->action("createNewPartitionTable"));
-	deviceMenu.addAction(actionCollection()->action("propertiesDevice"));
-	deviceMenu.exec(listDevices().viewport()->mapToGlobal(pos));
+	emit contextMenuRequested(listDevices().viewport()->mapToGlobal(pos));
 }
 
 void ListDevices::on_m_ListDevices_itemDoubleClicked(QListWidgetItem* list_item)
@@ -91,4 +83,17 @@ void ListDevices::on_m_ListDevices_itemDoubleClicked(QListWidgetItem* list_item)
 
 	if (item != NULL)
 		emit deviceDoubleClicked(item->deviceNode);
+}
+
+bool ListDevices::setSelectedDevice(const QString& device_node)
+{
+	QList<QListWidgetItem*> items = listDevices().findItems(device_node, Qt::MatchContains);
+
+	if (items.size() > 0)
+	{
+		listDevices().setCurrentItem(items[0]);
+		return true;
+	}
+
+	return false;
 }

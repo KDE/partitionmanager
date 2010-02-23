@@ -21,6 +21,7 @@
 
 #define OPERATIONSTACK__H
 
+#include <QObject>
 #include <QList>
 #include <QReadWriteLock>
 
@@ -38,8 +39,9 @@ class DeviceScanner;
 
 	@author vl@fidra.de
 */
-class OperationStack
+class OperationStack : public QObject
 {
+	Q_OBJECT
 	Q_DISABLE_COPY(OperationStack)
 
 	friend class DeviceScanner;
@@ -49,8 +51,12 @@ class OperationStack
 		typedef QList<Operation*> Operations;
 
 	public:
-		OperationStack();
+		OperationStack(QObject* parent = NULL);
 		~OperationStack();
+
+	signals:
+		void operationsChanged();
+		void devicesChanged();
 
 	public:
 		void push(Operation* o);

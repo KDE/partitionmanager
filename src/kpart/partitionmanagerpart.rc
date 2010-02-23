@@ -1,6 +1,6 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
 
-<kpartgui name="partitionmanagerpart" version="8">
+<kpartgui name="partitionmanagerpart" version="9">
 	<ToolBar name="editToolBar">
 		<text context="@title:menu turn on and off edit toolbar">Edit Toolbar</text>
 		<Action name="applyAllOperations"/>
@@ -22,6 +22,7 @@
 	<ToolBar name="deviceToolBar">
 		<text context="@title:menu">Device Toolbar</text>
 		<Action name="createNewPartitionTable"/>
+		<Action name="propertiesDevice"/>
 	</ToolBar>
 
 	<MenuBar>

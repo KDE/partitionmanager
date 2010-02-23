@@ -33,8 +33,8 @@
 /** Constructs an OperationRunner.
 	@param ostack the OperationStack to act on
 */
-OperationRunner::OperationRunner(OperationStack& ostack) :
-	QThread(),
+OperationRunner::OperationRunner(QObject* parent, OperationStack& ostack) :
+	QThread(parent),
 	m_OperationStack(ostack),
 	m_Report(NULL),
 	m_SuspendMutex(),

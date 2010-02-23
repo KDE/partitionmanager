@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2008,2009,2010 by Volker Lanz <vl@fidra.de>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -21,23 +21,22 @@
 
 #define PARTITIONMANAGERWIDGET__H
 
-#include "util/libpartitionmanagerexport.h"
-
-#include "core/operationrunner.h"
 #include "core/operationstack.h"
-#include "core/devicescanner.h"
+#include "core/operationrunner.h"
+
+#include "util/libpartitionmanagerexport.h"
 
 #include "ui_partitionmanagerwidgetbase.h"
 
 #include <QWidget>
 
+class Partition;
+class PartWidget;
+class Device;
+
 class QWidget;
 class QLabel;
-class PartWidget;
-class KActionCollection;
-class Device;
-class ApplyProgressDialog;
-class ScanProgressDialog;
+class QPoint;
 
 /** @brief The central widget for the application.
 
@@ -49,56 +48,58 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 	Q_DISABLE_COPY(PartitionManagerWidget)
 
 	public:
-		explicit PartitionManagerWidget(QWidget* parent, KActionCollection* coll = NULL);
+		PartitionManagerWidget(QWidget* parent);
 		virtual ~PartitionManagerWidget();
 
 	signals:
-		void devicesChanged();
-		void operationsChanged();
 		void selectedPartitionChanged(const Partition*);
+		void contextMenuRequested(const QPoint&);
+		void deviceDoubleClicked(const Device*);
+		void partitionDoubleClicked(const Partition* p);
 
 	public slots:
 		void setSelectedDevice(Device* d);
 		void setSelectedDevice(const QString& device_node);
 
+		void onNewPartition();
+		void onResizePartition();
+		void onDeletePartition(bool shred = false);
+		void onShredPartition();
+
+		void onCopyPartition();
+		void onPastePartition();
+
+		void onEditMountPoint();
+		void onMountPartition();
+
+		void onCheckPartition();
+
+		void onBackupPartition();
+		void onRestorePartition();
+
+		void onPropertiesPartition();
+
 	public:
-		void init(KActionCollection* coll, const QString& config_name);
-		KActionCollection* actionCollection() const { return m_ActionCollection; }
+		void init(OperationStack* ostack, const QString& config_name);
 
 		void clear();
-		void clearSelectedPartition();
-		void setPartitionTable(const PartitionTable* ptable);
-		void setSelection(const Partition* p);
-		void enableActions();
 
 		Device* selectedDevice() { return m_SelectedDevice; }
 		const Device* selectedDevice() const { return m_SelectedDevice; }
 
 		Partition* selectedPartition();
-
-		OperationStack::Devices& previewDevices() { return operationStack().previewDevices(); }
-		const OperationStack::Devices& previewDevices() const { return operationStack().previewDevices(); }
-		const OperationStack::Operations& operations() const { return operationStack().operations(); }
-
-		OperationStack& operationStack() { return m_OperationStack; }
-		const OperationStack& operationStack() const { return m_OperationStack; }
-
-		void updatePartitions();
+		void setSelectedPartition(const Partition* p);
 
 		Partition* clipboardPartition() { return m_ClipboardPartition; }
 		const Partition* clipboardPartition() const { return m_ClipboardPartition; }
 		void setClipboardPartition(Partition* p) { m_ClipboardPartition = p; }
 
-		ApplyProgressDialog& applyProgressDialog() { Q_ASSERT(m_ApplyProgressDialog); return *m_ApplyProgressDialog; }
-		const ApplyProgressDialog& applyProgressDialog() const { Q_ASSERT(m_ApplyProgressDialog); return *m_ApplyProgressDialog; }
-
-		ScanProgressDialog& scanProgressDialog() { Q_ASSERT(m_ScanProgressDialog); return *m_ScanProgressDialog; }
-		const ScanProgressDialog& scanProgressDialog() const { Q_ASSERT(m_ScanProgressDialog); return *m_ScanProgressDialog; }
-
-		quint32 numPendingOperations();
+		void updatePartitions();
 
 	protected:
-		void setupActions();
+		OperationStack& operationStack() { return *m_OperationStack; }
+		const OperationStack& operationStack() const { return *m_OperationStack; }
+
 		void setupConnections();
 		void showPartitionContextMenu(const QPoint& pos);
 		void loadConfig();
@@ -111,53 +112,19 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		QTreeWidget& treePartitions() { Q_ASSERT(m_TreePartitions); return *m_TreePartitions; }
 		const QTreeWidget& treePartitions() const { Q_ASSERT(m_TreePartitions); return *m_TreePartitions; }
 
-		OperationRunner& operationRunner() { return m_OperationRunner; }
-		const OperationRunner& operationRunner() const { return m_OperationRunner; }
-
-		DeviceScanner& deviceScanner() { return m_DeviceScanner; }
-		const DeviceScanner& deviceScanner() const { return m_DeviceScanner; }
-
 	protected slots:
 		void on_m_TreePartitions_currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem* previous);
-		void on_m_PartTableWidget_customContextMenuRequested(const QPoint& pos);
 		void on_m_TreePartitions_customContextMenuRequested(const QPoint& pos);
 		void on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, int);
+
 		void on_m_PartTableWidget_itemSelectionChanged(PartWidget* item);
+		void on_m_PartTableWidget_customContextMenuRequested(const QPoint& pos);
+		void on_m_PartTableWidget_itemDoubleClicked();
 
-		void scanDevices();
-		void onScanDevicesFinished();
-		void onScanDevicesProgressChanged(const QString& device_node, int percent);
-
-		void onPropertiesPartition();
-		void onPropertiesDevice(const QString& device_node = QString());
-		void onMountPartition();
-		void onEditMountPoint();
-		void onNewPartition();
-		void onDeletePartition(bool shred = false);
-		void onShredPartition();
-		void onResizePartition();
-		void onCopyPartition();
-		void onPastePartition();
-		void onCheckPartition();
-		void onCreateNewPartitionTable();
-		void onRefreshDevices();
-		void onUndoOperation();
-		void onClearAllOperations();
-		void onApplyAllOperations();
-		void onFileSystemSupport();
-		void onBackupPartition();
-		void onRestorePartition();
-		void onConfigureOptions();
-		void onSettingsChanged(const QString&);
 		void onHeaderContextMenu(const QPoint& p);
 
 	private:
-		OperationStack m_OperationStack;
-		OperationRunner m_OperationRunner;
-		DeviceScanner m_DeviceScanner;
-		ApplyProgressDialog* m_ApplyProgressDialog;
-		ScanProgressDialog* m_ScanProgressDialog;
-		KActionCollection* m_ActionCollection;
+		OperationStack* m_OperationStack;
 		Device* m_SelectedDevice;
 		Partition* m_ClipboardPartition;
 };

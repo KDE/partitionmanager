@@ -30,8 +30,8 @@
 /** Constructs a DeviceScanner
 	@param ostack the OperationStack where the devices will be created
 */
-DeviceScanner::DeviceScanner(OperationStack& ostack) :
-	QThread(),
+DeviceScanner::DeviceScanner(QObject* parent, OperationStack& ostack) :
+	QThread(parent),
 	m_LibParted(),
 	m_OperationStack(ostack)
 {
@@ -40,10 +40,7 @@ DeviceScanner::DeviceScanner(OperationStack& ostack) :
 void DeviceScanner::clear()
 {
 	operationStack().clearOperations();
-	emit operationsChanged();
-
 	operationStack().clearDevices();
-	emit devicesChanged();
 }
 
 static quint32 countDevices(const QList<Solid::Device>& driveList)
@@ -83,12 +80,10 @@ void DeviceScanner::run()
 		{
 			d->setIconName(solidDevice.icon());
 			operationStack().addDevice(d);
-			emit devicesChanged();
 		}
 
 		emit progressChanged(solidBlock->device(), (++count) * 100 / totalDevices);
 	}
 
 	operationStack().sortDevices();
-	emit devicesChanged();
 }

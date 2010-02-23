@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -160,5 +160,5 @@ void PartTableWidget::mouseDoubleClickEvent(QMouseEvent* event)
 	const PartWidget* child = static_cast<PartWidget*>(childAt(event->pos()));
 
 	if (child != NULL)
-		emit itemActivated(child);
+		emit itemDoubleClicked(child);
 }

@@ -45,7 +45,8 @@
 #include <QWriteLocker>
 
 /** Constructs a new OperationStack */
-OperationStack::OperationStack() :
+OperationStack::OperationStack(QObject* parent) :
+	QObject(parent),
 	m_Operations(),
 	m_PreviewDevices(),
 	m_Lock(QReadWriteLock::Recursive)
@@ -397,6 +398,7 @@ void OperationStack::push(Operation* o)
 		operations().append(o);
 		o->preview();
 		o->setStatus(Operation::StatusPending);
+		emit operationsChanged();
 	}
 }
 
@@ -406,6 +408,7 @@ void OperationStack::pop()
 	Operation* o = operations().takeLast();
 	o->undo();
 	delete o;
+	emit operationsChanged();
 }
 
 /** Removes all Operations from the OperationStack, calling Operation::undo() on them and deleting them. */
@@ -418,6 +421,8 @@ void OperationStack::clearOperations()
 			o->undo();
 		delete o;
 	}
+
+	emit operationsChanged();
 }
 
 /** Clears the list of Devices. */
@@ -427,6 +432,7 @@ void OperationStack::clearDevices()
 
 	qDeleteAll(previewDevices());
 	previewDevices().clear();
+	emit devicesChanged();
 }
 
 /** Finds a Device a Partition is on.
@@ -464,8 +470,8 @@ void OperationStack::addDevice(Device* d)
 	Q_ASSERT(d);
 
 	QWriteLocker lockDevices(&lock());
-
 	previewDevices().append(d);
+	emit devicesChanged();
 }
 
 static bool deviceLessThan(const Device* d1, const Device* d2)
@@ -478,4 +484,6 @@ void OperationStack::sortDevices()
 	QWriteLocker lockDevices(&lock());
 
 	qSort(previewDevices().begin(), previewDevices().end(), deviceLessThan);
+
+	emit devicesChanged();
 }
