@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -22,6 +22,7 @@
 #define LIBPARTED__H
 
 #include "core/partitiontable.h"
+#include "core/corebackend.h"
 
 #include <parted/parted.h>
 
@@ -37,9 +38,11 @@ class QString;
 
 	@author vl@fidra.de
 */
-class LibParted
+class LibPartedBackend : public CoreBackend
 {
-	Q_DISABLE_COPY(LibParted)
+	friend class CoreBackend;
+
+	Q_DISABLE_COPY(LibPartedBackend)
 
 	public:
 		typedef struct
@@ -48,12 +51,13 @@ class LibParted
 			PartitionTable::Flag flag;
 		} FlagMap;
 
-	public:
-		LibParted();
+	private:
+		LibPartedBackend();
 
 	public:
-		static Device* scanDevice(const QString& device_node);
 		static const FlagMap* flagMap();
+
+		Device* scanDevice(const QString& device_node);
 };
 
 #endif

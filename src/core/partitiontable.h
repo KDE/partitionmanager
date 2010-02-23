@@ -29,7 +29,7 @@
 
 class Device;
 class Partition;
-class LibParted;
+class LibPartedBackend;
 
 /** @brief The partition table (a.k.a Disk Label)
 
@@ -44,7 +44,7 @@ class PartitionTable : public PartitionNode
 {
 	Q_DISABLE_COPY(PartitionTable)
 
-	friend class LibParted;
+	friend class LibPartedBackend;
 
 	public:
 		enum LabelType

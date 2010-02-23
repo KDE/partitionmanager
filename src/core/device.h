@@ -27,7 +27,7 @@
 
 class PartitionTable;
 class CreatePartitionTableOperation;
-class LibParted;
+class LibPartedBackendBackend;
 
 /** @brief A device.
 
@@ -44,7 +44,7 @@ class Device : public QObject
 	Q_DISABLE_COPY(Device)
 
 	friend class CreatePartitionTableOperation;
-	friend class LibParted;
+	friend class LibPartedBackend;
 
 	public:
 		Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize, const QString& iconname = QString());

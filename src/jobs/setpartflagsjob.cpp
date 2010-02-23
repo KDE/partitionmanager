@@ -23,7 +23,7 @@
 #include "core/partition.h"
 #include "core/partitionrole.h"
 #include "core/partitiontable.h"
-#include "core/libparted.h"
+#include "core/libpartedbackend.h"
 
 #include "util/report.h"
 
@@ -44,7 +44,7 @@ SetPartFlagsJob::SetPartFlagsJob(Device& d, Partition& p, PartitionTable::Flags 
 
 qint32 SetPartFlagsJob::numSteps() const
 {
-	return sizeof(LibParted::flagMap()) / sizeof(LibParted::flagMap()[0]);
+	return sizeof(LibPartedBackend::flagMap()) / sizeof(LibPartedBackend::flagMap()[0]);
 }
 
 bool SetPartFlagsJob::run(Report& parent)
@@ -59,27 +59,27 @@ bool SetPartFlagsJob::run(Report& parent)
 
 		if (pedPartition)
 		{
-			for (quint32 i = 0; i < sizeof(LibParted::flagMap()) / sizeof(LibParted::flagMap()[0]); i++)
+			for (quint32 i = 0; i < sizeof(LibPartedBackend::flagMap()) / sizeof(LibPartedBackend::flagMap()[0]); i++)
 			{
 				emit progress(i + 1);
 
-				if (!ped_partition_is_flag_available(pedPartition, LibParted::flagMap()[i].pedFlag))
+				if (!ped_partition_is_flag_available(pedPartition, LibPartedBackend::flagMap()[i].pedFlag))
 				{
-					report->line() << i18nc("@info/plain", "The flag \"%1\" is not available on the partition's partition table.", PartitionTable::flagName(LibParted::flagMap()[i].flag));
+					report->line() << i18nc("@info/plain", "The flag \"%1\" is not available on the partition's partition table.", PartitionTable::flagName(LibPartedBackend::flagMap()[i].flag));
 					continue;
 				}
 
 				// Workaround: libparted claims the hidden flag is available for extended partitions, but
 				// throws an error when we try to set or clear it. So skip this combination (also see below in
 				// availableFlags()).
-				if (pedPartition->type == PED_PARTITION_EXTENDED && LibParted::flagMap()[i].flag == PartitionTable::FlagHidden)
+				if (pedPartition->type == PED_PARTITION_EXTENDED && LibPartedBackend::flagMap()[i].flag == PartitionTable::FlagHidden)
 					continue;
 
-				int state = (flags() & LibParted::flagMap()[i].flag) ? 1 : 0;
+				int state = (flags() & LibPartedBackend::flagMap()[i].flag) ? 1 : 0;
 
-				if (!ped_partition_set_flag(pedPartition, LibParted::flagMap()[i].pedFlag, state))
+				if (!ped_partition_set_flag(pedPartition, LibPartedBackend::flagMap()[i].pedFlag, state))
 				{
-					report->line() << i18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(LibParted::flagMap()[i].flag), partition().deviceNode(), state ? i18nc("@info flag turned on, active", "on") : i18nc("@info flag turned off, inactive", "off"));
+					report->line() << i18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(LibPartedBackend::flagMap()[i].flag), partition().deviceNode(), state ? i18nc("@info flag turned on, active", "on") : i18nc("@info flag turned off, inactive", "off"));
 
 					rval = false;
 				}

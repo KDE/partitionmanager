@@ -18,7 +18,7 @@
  ***************************************************************************/
 
 #include "core/devicescanner.h"
-#include "core/libparted.h"
+#include "core/corebackend.h"
 #include "core/operationstack.h"
 #include "core/device.h"
 
@@ -32,7 +32,6 @@
 */
 DeviceScanner::DeviceScanner(QObject* parent, OperationStack& ostack) :
 	QThread(parent),
-	m_LibParted(),
 	m_OperationStack(ostack)
 {
 }
@@ -74,7 +73,7 @@ void DeviceScanner::run()
 
 		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
 
-		Device* d = libParted().scanDevice(solidBlock->device());
+		Device* d = CoreBackend::self()->scanDevice(solidBlock->device());
 
 		if (d != NULL)
 		{

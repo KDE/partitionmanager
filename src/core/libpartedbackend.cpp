@@ -20,7 +20,7 @@
 /** @file
 */
 
-#include "core/libparted.h"
+#include "core/libpartedbackend.h"
 #include "core/device.h"
 #include "core/partition.h"
 #include "core/partitiontable.h"
@@ -43,7 +43,7 @@
 #include <parted/parted.h>
 #include <unistd.h>
 
-static const LibParted::FlagMap flagmap[] =
+static const LibPartedBackend::FlagMap flagmap[] =
 {
 	{ PED_PARTITION_BOOT, PartitionTable::FlagBoot },
 	{ PED_PARTITION_ROOT, PartitionTable::FlagRoot },
@@ -320,7 +320,8 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 }
 
 /** Constructs a LibParted object. */
-LibParted::LibParted()
+LibPartedBackend::LibPartedBackend() :
+	CoreBackend()
 {
 	ped_exception_set_handler(pedExceptionHandler);
 }
@@ -328,7 +329,7 @@ LibParted::LibParted()
 /** Return a map of partition flags from libparted flags to PartitionTable::Flags
 	@return the map
 */
-const LibParted::FlagMap* LibParted::flagMap()
+const LibPartedBackend::FlagMap* LibPartedBackend::flagMap()
 {
 	return flagmap;
 }
@@ -337,7 +338,7 @@ const LibParted::FlagMap* LibParted::flagMap()
 	@param device_node the device node (e.g. "/dev/sda")
 	@return the created Device object. callers need to free this.
 */
-Device* LibParted::scanDevice(const QString& device_node)
+Device* LibPartedBackend::scanDevice(const QString& device_node)
 {
 	PedDevice* pedDevice = ped_device_get(device_node.toLocal8Bit());
 
