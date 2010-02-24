@@ -43,6 +43,20 @@ class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 		QLabel& sectorSize() { Q_ASSERT(m_LabelSectorSize); return *m_LabelSectorSize; }
 		QLabel& totalSectors() { Q_ASSERT(m_LabelTotalSectors); return *m_LabelTotalSectors; }
 		QLabel& type() { Q_ASSERT(m_LabelType); return *m_LabelType; }
+
+		QRadioButton& radioLegacy() { Q_ASSERT(m_RadioLegacy); return *m_RadioLegacy; }
+		const QRadioButton& radioLegacy() const { Q_ASSERT(m_RadioLegacy); return *m_RadioLegacy; }
+
+		QRadioButton& radioVista() { Q_ASSERT(m_RadioVista); return *m_RadioVista; }
+		const QRadioButton& radioVista() const { Q_ASSERT(m_RadioVista); return *m_RadioVista; }
+
+		QSpacerItem& spacerType() { Q_ASSERT(m_SpacerType); return *m_SpacerType; }
+
+		void hideTypeRadioButtons()
+		{
+			radioVista().setVisible(false);
+			radioLegacy().setVisible(false);
+		}
 };
 
 #endif

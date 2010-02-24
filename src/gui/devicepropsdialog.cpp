@@ -43,6 +43,7 @@ DevicePropsDialog::DevicePropsDialog(QWidget* parent, Device& d) :
 	setCaption(i18nc("@title:window", "Device properties: <filename>%1</filename>", device().deviceNode()));
 
 	setupDialog();
+	setupConnections();
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "devicePropsDialog"));
 }
@@ -81,6 +82,35 @@ void DevicePropsDialog::setupDialog()
 
 	dialogWidget().type().setText(type);
 
+	if (device().partitionTable()->type() == PartitionTable::msdos)
+		dialogWidget().radioLegacy().setChecked(true);
+	else if (device().partitionTable()->type() == PartitionTable::msdos_vista)
+		dialogWidget().radioVista().setChecked(true);
+	else
+		dialogWidget().hideTypeRadioButtons();
+
 	setMinimumSize(dialogWidget().size());
 	resize(dialogWidget().size());
+}
+
+void DevicePropsDialog::setupConnections()
+{
+	connect(&dialogWidget().radioVista(), SIGNAL(toggled(bool)), SLOT(setDirty(bool)));
+	connect(&dialogWidget().radioLegacy(), SIGNAL(toggled(bool)), SLOT(setDirty(bool)));
+}
+
+void DevicePropsDialog::setDirty(bool)
+{
+	setDefaultButton(KDialog::Ok);
+	enableButtonOk(true);
+}
+
+bool DevicePropsDialog::legacyAlignment() const
+{
+	return dialogWidget().radioLegacy().isChecked();
+}
+
+bool DevicePropsDialog::vistaAlignment() const
+{
+	return dialogWidget().radioVista().isChecked();
 }

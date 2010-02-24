@@ -683,8 +683,19 @@ void MainWindow::onPropertiesDevice(const QString&)
 
 	if (pmWidget().selectedDevice())
 	{
-		QPointer<DevicePropsDialog> dlg = new DevicePropsDialog(this, *pmWidget().selectedDevice());
-		dlg->exec();
+		Device& d = *pmWidget().selectedDevice();
+
+		QPointer<DevicePropsDialog> dlg = new DevicePropsDialog(this, d);
+		if (dlg->exec() == KDialog::Accepted)
+		{
+			if (d.partitionTable()->type() == PartitionTable::msdos && dlg->vistaAlignment())
+				d.partitionTable()->setType(d, PartitionTable::msdos_vista);
+			else if (d.partitionTable()->type() == PartitionTable::msdos_vista && dlg->legacyAlignment())
+				d.partitionTable()->setType(d, PartitionTable::msdos);
+
+			on_m_OperationStack_devicesChanged();
+		}
+
 		delete dlg;
 	}
 }

@@ -44,14 +44,22 @@ class DevicePropsDialog : public KDialog
 		DevicePropsDialog(QWidget* parent, Device& d);
 		~DevicePropsDialog();
 
+	public:
+		bool legacyAlignment() const;
+		bool vistaAlignment() const;
+
 	protected:
 		void setupDialog();
+		void setupConnections();
 
 		Device& device() { return m_Device; }
 		const Device& device() const { return m_Device; }
 
 		DevicePropsWidget& dialogWidget() { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
 		const DevicePropsWidget& dialogWidget() const { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
+
+	protected slots:
+		void setDirty(bool);
 
 	private:
 		Device& m_Device;
