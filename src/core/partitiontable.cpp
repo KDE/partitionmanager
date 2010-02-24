@@ -206,25 +206,26 @@ QStringList PartitionTable::flagNames(Flags flags)
 	return rval;
 }
 
-/** @return the sector size to snap the partition start and end to
+/** @return the sector size to align the partition start and end to
 */
 static qint64 sectorAlignment(const Device& d)
 {
 	return d.partitionTable()->type() == PartitionTable::msdos ? d.cylinderSize() : Config::sectorAlignment();
 }
 
-/** Checks if a given Partition on a given Device is snapped to cylinder boundaries.
+/** Checks if a given Partition on a given Device is properly aligned to the PartitionTable's
+	alignment requirements.
 
-	Will print warning messages to GlobalLog if the Partition's first sector is not snapped and
-	another one if the last sector is not snapped.
+	Will print warning messages to GlobalLog if the Partition's first sector is not aligned and
+	another one if the last sector is not aligned.
 
-	@see snap(), canSnapToSector()
+	@see alignPartition(), canAlignToSector()
 
 	@param d the Device the Partition is on
 	@param p the Partition to check
-	@return true if snapped
+	@return true if propertly aligned
 */
-bool PartitionTable::isSnapped(const Device& d, const Partition& p)
+bool PartitionTable::isAligned(const Device& d, const Partition& p)
 {
 	// don't bother with unallocated space here.
 	if (p.roles().has(PartitionRole::Unallocated))
@@ -235,7 +236,7 @@ bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 	if (d.partitionTable()->type() == msdos)
 	{
 		// TODO: verify the following comment and code
-		// There are some special cases for snapping partitions:
+		// There are some special cases for aligning partitions:
 		// 1) If an extended partition starts at the beginning of the device (that would be sector 63
 		// on modern drives, equivalent to sectorsPerTrack() in any case), the first logical partition
 		// at the beginning of this extended partition starts at 2 * sectorsPerTrack().
@@ -271,17 +272,17 @@ bool PartitionTable::isSnapped(const Device& d, const Partition& p)
 	return rval;
 }
 
-/** Checks if a Partition can be snapped to a given sector on a given Device.
+/** Checks if a Partition can be aligned to a given sector on a given Device.
 
-	@see PartitionTable::snap(), PartitionTable::isSnapped()
+	@see PartitionTable::alignPartition(), PartitionTable::isAligned()
 
 	@param d the Device the Partition is on
-	@param p the Partition to snap
-	@param s the sector to snap to
+	@param p the Partition to align
+	@param s the sector to align to
 	@param originalPartition pointer to another Partition @p p has just been copied from or NULL
-	@return true if snapping to @p s is possible
+	@return true if aligning to @p s is possible
 */
-static bool canSnapToSector(const Device& d, const Partition& p, qint64 s, const Partition* originalPartition)
+static bool canAlignToSector(const Device& d, const Partition& p, qint64 s, const Partition* originalPartition)
 {
 	Q_ASSERT(d.partitionTable());
 
@@ -296,7 +297,7 @@ static bool canSnapToSector(const Device& d, const Partition& p, qint64 s, const
 	return other == NULL || other == &p || other == originalPartition;
 }
 
-/** Snaps the given Partition on the given Device to cylinder boundaries.
+/** Aligns the given Partition on the given Device to the PartitionTable's required alignment.
 
 	Tries under all accounts to keep the Partition's length equal to the original length or
 	to increase it, if that is not possible. Will print a warning message to GlobalLog if
@@ -304,120 +305,120 @@ static bool canSnapToSector(const Device& d, const Partition& p, qint64 s, const
 
 	The parameter @p originalPartition is required for cases where a Partition has just been
 	duplicated to resize or move it. This method needs to know the original because of course
-	the original does not prevent snapping to any sector allocated by it.
+	the original does not prevent aligning to any sector allocated by it.
 
-	@see canSnapToSector(), isSnapped()
+	@see canAlignToSector(), isAligned()
 
 	@param d the Device the Partition is on
-	@param p the Partition to snap
+	@param p the Partition to align
 	@param originalPartition pointer to a Partition object @p p has just been copied from or NULL
-	@return true if Partition is now snapped to cylinder boundaries
+	@return true if Partition is now aligned to cylinder boundaries
 */
-bool PartitionTable::snap(const Device& d, Partition& p, const Partition* originalPartition)
+bool PartitionTable::alignPartition(const Device& d, Partition& p, const Partition* originalPartition)
 {
 	const qint64 originalLength = p.length();
 	qint64 delta = 0;
-	bool lengthIsSnapped = false;
+	bool lengthIsAligned = false;
 
+	// This is the same as in isAligned(), only we additionally have to remember if the
+	// partition's _length_ is "aligned", so to speak (i.e., evenly divisable by
+	// the sectorAlignment()
 	if (d.partitionTable()->type() == msdos)
 	{
-		// This is the same as in isSnapped(), only we additionally have to remember if the
-		// partition's _length_ is "snapped", so to speak (i.e., evenly divisable by
-		// the cylinder size)
 		if (p.roles().has(PartitionRole::Logical) && p.firstSector() == 2 * d.sectorsPerTrack())
 		{
 			delta = (p.firstSector() - (2 * d.sectorsPerTrack())) % sectorAlignment(d);
-			lengthIsSnapped = (p.length() + (2 * d.sectorsPerTrack())) % sectorAlignment(d) == 0;
+			lengthIsAligned = (p.length() + (2 * d.sectorsPerTrack())) % sectorAlignment(d) == 0;
 		}
 		else if (p.roles().has(PartitionRole::Logical) || p.firstSector() == d.sectorsPerTrack())
 		{
 			delta = (p.firstSector() - d.sectorsPerTrack()) % sectorAlignment(d);
-			lengthIsSnapped = (p.length() + d.sectorsPerTrack()) % sectorAlignment(d) == 0;
+			lengthIsAligned = (p.length() + d.sectorsPerTrack()) % sectorAlignment(d) == 0;
 		}
 		else
 		{
 			delta = p.firstSector() % sectorAlignment(d);
-			lengthIsSnapped = p.length() % sectorAlignment(d) == 0;
+			lengthIsAligned = p.length() % sectorAlignment(d) == 0;
 		}
 	}
 	else
 	{
 			delta = p.firstSector() % sectorAlignment(d);
-			lengthIsSnapped = p.length() % sectorAlignment(d) == 0;
+			lengthIsAligned = p.length() % sectorAlignment(d) == 0;
 	}
 
 	if (delta)
 	{
-		/** @todo Don't assume we always want to snap to the front.
-			Always trying to snap to the front solves the problem that a partition does
+		/** @todo Don't assume we always want to align to the front.
+			Always trying to align to the front solves the problem that a partition does
 			get too small to take another one that's copied to it, but it introduces
 			a new bug: The user might create a partition aligned at the end of a device,
-			extended partition or at the start of the next one, but we snap to the back
+			extended partition or at the start of the next one, but we align to the back
 			and leave some space in between.
 		*/
 		// We always want to make the partition larger, not smaller. Making it smaller
 		// might, in case it's a partition that another is being copied to, mean the partition
 		// ends up too small. So try to move the start to the front first.
-		qint64 snappedFirst = p.firstSector() - delta;
+		qint64 alignedFirst = p.firstSector() - delta;
 
 		// If we're now before the first usable sector, just take the first usable sector. This
-		// will happen if we're already below cylinder one and snap to the front
-		if (snappedFirst < d.partitionTable()->firstUsable())
-			snappedFirst = d.partitionTable()->firstUsable();
+		// will happen if we're already below cylinder one and align to the front
+		if (alignedFirst < d.partitionTable()->firstUsable())
+			alignedFirst = d.partitionTable()->firstUsable();
 
 		// Now if the cylinder boundary at the front is occupied...
-		if (!canSnapToSector(d, p, snappedFirst, originalPartition))
+		if (!canAlignToSector(d, p, alignedFirst, originalPartition))
 		{
 			// ... move to the cylinder towards the end of the device ...
-			snappedFirst = p.firstSector() - delta + sectorAlignment(d);
+			alignedFirst = p.firstSector() - delta + sectorAlignment(d);
 
 			// ... and move the end of the partition towards the end, too, if that is possible.
 			// By doing this, we still try to keep the length >= the original length. If the
 			// last sector ends up not being on a cylinder boundary by doing so, the code
 			// below will deal with that.
 			qint64 numTooShort = sectorAlignment(d) - delta;
-			if (canSnapToSector(d, p, p.lastSector() + numTooShort, originalPartition))
+			if (canAlignToSector(d, p, p.lastSector() + numTooShort, originalPartition))
 			{
 				p.setLastSector(p.lastSector() + numTooShort);
 				p.fileSystem().setLastSector(p.fileSystem().lastSector() + numTooShort);
 			}
 		}
 
-		p.setFirstSector(snappedFirst);
-		p.fileSystem().setFirstSector(snappedFirst);
+		p.setFirstSector(alignedFirst);
+		p.fileSystem().setFirstSector(alignedFirst);
 	}
 
 	delta = (p.lastSector() + 1) % sectorAlignment(d);
 
 	if (delta)
 	{
-		// Try to snap to the back first...
-		qint64 snappedLast = p.lastSector() + sectorAlignment(d) - delta;
+		// Try to align to the back first...
+		qint64 alignedLast = p.lastSector() + sectorAlignment(d) - delta;
 
-		// .. but if we can retain the partition length exactly by snapping to the front ...
-		if (lengthIsSnapped && p.length() - originalLength == delta)
-			snappedLast -= sectorAlignment(d);
-		// ... or if there's something there already, snap to the front.
-		else if (!canSnapToSector(d, p, snappedLast, originalPartition))
-			snappedLast -= sectorAlignment(d);
+		// .. but if we can retain the partition length exactly by aligning to the front ...
+		if (lengthIsAligned && p.length() - originalLength == delta)
+			alignedLast -= sectorAlignment(d);
+		// ... or if there's something there already, align to the front.
+		else if (!canAlignToSector(d, p, alignedLast, originalPartition))
+			alignedLast -= sectorAlignment(d);
 
-		p.setLastSector(snappedLast);
-		p.fileSystem().setLastSector(snappedLast);
+		p.setLastSector(alignedLast);
+		p.fileSystem().setLastSector(alignedLast);
 	}
 
 	// Now, did we make the partition too big for its file system?
-	while (p.length() > originalLength && p.capacity() > p.fileSystem().maxCapacity() && canSnapToSector(d, p, p.lastSector() - sectorAlignment(d), originalPartition))
+	while (p.length() > originalLength && p.capacity() > p.fileSystem().maxCapacity() && canAlignToSector(d, p, p.lastSector() - sectorAlignment(d), originalPartition))
 	{
 		p.setLastSector(p.lastSector() - sectorAlignment(d));
 		p.fileSystem().setLastSector(p.fileSystem().lastSector() - sectorAlignment(d));
 	}
 
 	if (p.length() < originalLength)
-		Log(Log::warning) <<  i18ncp("@info/plain", "The partition cannot be created with the requested length of 1 sector, ", "The partition cannot be created with the requested length of %1 sectors, ", originalLength)
-		+ i18ncp("@info/plain", "and will instead only be 1 sector long.", "and will instead only be %1 sectors long.", p.length());
+		Log(Log::warning) <<  i18ncp("@info/plain", "The partition cannot be created with the requested length of one sector, ", "The partition cannot be created with the requested length of %1 sectors, ", originalLength)
+		+ i18ncp("@info/plain", "and will instead only be one sector long.", "and will instead only be %1 sectors long.", p.length());
 
-	// In an extended partition we also need to snap unallocated children at the beginning and at the end
-	// (there should never be a need to snap non-unallocated children)
+	// In an extended partition we also need to align unallocated children at the beginning and at the end
+	// (there should never be a need to align non-unallocated children)
 	if (p.roles().has(PartitionRole::Extended))
 	{
 		if (p.children().size() > 0)
@@ -436,7 +437,7 @@ bool PartitionTable::snap(const Device& d, Partition& p, const Partition* origin
 		}
 	}
 
-	return isSnapped(d, p);
+	return isAligned(d, p);
 }
 
 /** Creates a new unallocated Partition on the given Device.

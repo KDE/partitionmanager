@@ -318,7 +318,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 		d.partitionTable()->setType(d, PartitionTable::msdos_vista);
 
 	foreach(const Partition* part, partitions)
-		PartitionTable::isSnapped(d, *part);
+		PartitionTable::isAligned(d, *part);
 
 	ped_disk_destroy(pedDisk);
 }

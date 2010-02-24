@@ -498,7 +498,7 @@ void PartitionManagerWidget::onNewPartition()
 	QPointer<NewDialog> dlg = new NewDialog(this, *selectedDevice(), *newPartition, selectedDevice()->partitionTable()->childRoles(*selectedPartition()));
 	if (dlg->exec() == KDialog::Accepted)
 	{
-		PartitionTable::snap(*selectedDevice(), *newPartition);
+		PartitionTable::alignPartition(*selectedDevice(), *newPartition);
 		operationStack().push(new NewOperation(*selectedDevice(), newPartition));
 		updatePartitions();
 	}
@@ -592,7 +592,7 @@ void PartitionManagerWidget::onResizePartition()
 
 	if (dlg->exec() == KDialog::Accepted && dlg->isModified())
 	{
-		PartitionTable::snap(*selectedDevice(), resizedPartition, selectedPartition());
+		PartitionTable::alignPartition(*selectedDevice(), resizedPartition, selectedPartition());
 
 		if (resizedPartition.firstSector() == selectedPartition()->firstSector() && resizedPartition.lastSector() == selectedPartition()->lastSector())
 			Log(Log::information) << i18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", selectedPartition()->deviceNode());
@@ -676,7 +676,7 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertPartition, qint64
 	const bool overwrite = !selectedPartition()->roles().has(PartitionRole::Unallocated);
 
 	// Make sure the inserted partition has the right parent and logical or primary set. Only then
-	// can Device::snap() work correctly.
+	// can PartitionTable::alignPartition() work correctly.
 	selectedPartition()->parent()->reparent(insertPartition);
 
 	if (!overwrite)
@@ -689,7 +689,7 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertPartition, qint64
 		if (result != KDialog::Accepted)
 			return false;
 
-		PartitionTable::snap(*selectedDevice(), insertPartition, selectedPartition());
+		PartitionTable::alignPartition(*selectedDevice(), insertPartition, selectedPartition());
 	}
 
 	if (insertPartition.length() < sourceLength)

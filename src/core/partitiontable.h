@@ -131,8 +131,8 @@ class PartitionTable : public PartitionNode
 		static void removeUnallocated(PartitionNode* p);
 		void removeUnallocated();
 
-		static bool isSnapped(const Device& d, const Partition& p);
-		static bool snap(const Device& d, Partition& p, const Partition* originalPartition = NULL);
+		static bool isAligned(const Device& d, const Partition& p);
+		static bool alignPartition(const Device& d, Partition& p, const Partition* originalPartition = NULL);
 
 		static qint64 defaultFirstUsable(const Device& d, LabelType t);
 		static qint64 defaultLastUsable(const Device& d, LabelType t);
