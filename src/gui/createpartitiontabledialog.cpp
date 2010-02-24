@@ -37,7 +37,7 @@ CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const De
 	setButtonText(KDialog::Ok, i18nc("@action:button", "&Create New Partition Table"));
 }
 
-PartitionTable::LabelType CreatePartitionTableDialog::type() const
+PartitionTable::TableType CreatePartitionTableDialog::type() const
 {
 	if (widget().radioGPT().isChecked())
 		return PartitionTable::gpt;

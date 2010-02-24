@@ -37,7 +37,7 @@ class CreatePartitionTableDialog : public KDialog
 		CreatePartitionTableDialog(QWidget* parent, const Device& d);
 
 	public:
-		PartitionTable::LabelType type() const;
+		PartitionTable::TableType type() const;
 
 	protected:
 		CreatePartitionTableWidget& widget() { return *m_DialogWidget; }

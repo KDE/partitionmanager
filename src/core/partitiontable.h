@@ -33,8 +33,7 @@ class LibPartedBackend;
 
 /** @brief The partition table (a.k.a Disk Label)
 
-	PartitionTable represents a partition table (or disk label). The current implementation makes quite
-	a number of assumptions that are only true for MSDOS disk labels.
+	PartitionTable represents a partition table (or disk label).
 
 	PartitionTable has child nodes that represent Partitions.
 
@@ -47,9 +46,9 @@ class PartitionTable : public PartitionNode
 	friend class LibPartedBackend;
 
 	public:
-		enum LabelType
+		enum TableType
 		{
-			unknownLabel = -1,
+			unknownTableType = -1,
 
 			aix,
 			bsd,
@@ -85,7 +84,7 @@ class PartitionTable : public PartitionNode
 		Q_DECLARE_FLAGS(Flags, Flag)
 
 	public:
-		PartitionTable(LabelType type, qint64 first_usable, qint64 last_usable);
+		PartitionTable(TableType type, qint64 first_usable, qint64 last_usable);
 		~PartitionTable();
 
 	public:
@@ -93,12 +92,12 @@ class PartitionTable : public PartitionNode
 		const PartitionNode* parent() const { return NULL; } /**< @return always NULL for PartitionTable */
 
 		bool isRoot() const { return true; } /**< @return always true for PartitionTable */
-		bool isReadOnly() const { return diskLabelIsReadOnly(type()); } /**< @return true if the PartitionTable is read only */
+		bool isReadOnly() const { return tableTypeIsReadOnly(type()); } /**< @return true if the PartitionTable is read only */
 
 		Partitions& children() { return m_Children; } /**< @return the children in this PartitionTable */
 		const Partitions& children() const { return m_Children; } /**< @return the children in this PartitionTable */
 
-		void setType(const Device& d, LabelType t);
+		void setType(const Device& d, TableType t);
 
 		void append(Partition* partition);
 
@@ -113,8 +112,8 @@ class PartitionTable : public PartitionNode
 		int numPrimaries() const;
 		int maxPrimaries() const { return m_MaxPrimaries; } /**< @return max number of primary partitions this PartitionTable can handle */
 
-		PartitionTable::LabelType type() const { return m_Type; } /**< @return the disk label type */
-		const QString typeName() const { return labelTypeToName(type()); } /**< @return the name of this PartitionTable type according to libparted */
+		PartitionTable::TableType type() const { return m_Type; } /**< @return the PartitionTable's type */
+		const QString typeName() const { return tableTypeToName(type()); } /**< @return the name of this PartitionTable type according to libparted */
 
 		qint64 firstUsable() const { return m_FirstUsable; }
 		qint64 lastUsable() const { return m_LastUsable; }
@@ -122,7 +121,7 @@ class PartitionTable : public PartitionNode
 		void updateUnallocated(const Device& d);
 		void insertUnallocated(const Device& d, PartitionNode* p, qint64 start) const;
 
-		bool isVistaDiskLabel() const;
+		bool isVistaTableType() const;
 
 		static QList<Flag> flagList();
 		static QString flagName(Flag f);
@@ -134,14 +133,14 @@ class PartitionTable : public PartitionNode
 		static bool isAligned(const Device& d, const Partition& p);
 		static bool alignPartition(const Device& d, Partition& p, const Partition* originalPartition = NULL);
 
-		static qint64 defaultFirstUsable(const Device& d, LabelType t);
-		static qint64 defaultLastUsable(const Device& d, LabelType t);
+		static qint64 defaultFirstUsable(const Device& d, TableType t);
+		static qint64 defaultLastUsable(const Device& d, TableType t);
 
-		static PartitionTable::LabelType nameToLabelType(const QString& n);
-		static QString labelTypeToName(LabelType l);
-		static qint64 maxPrimariesForLabelType(LabelType l);
-		static bool diskLabelSupportsExtended(LabelType l);
-		static bool diskLabelIsReadOnly(LabelType l);
+		static PartitionTable::TableType nameToTableType(const QString& n);
+		static QString tableTypeToName(TableType l);
+		static qint64 maxPrimariesForTableType(TableType l);
+		static bool tableTypeSupportsExtended(TableType l);
+		static bool tableTypeIsReadOnly(TableType l);
 
 	protected:
 		void setMaxPrimaries(qint32 n) { m_MaxPrimaries = n; }
@@ -151,7 +150,7 @@ class PartitionTable : public PartitionNode
 	private:
 		Partitions m_Children;
 		qint32 m_MaxPrimaries;
-		LabelType m_Type;
+		TableType m_Type;
 		qint64 m_FirstUsable;
 		qint64 m_LastUsable;
 };

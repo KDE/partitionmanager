@@ -34,9 +34,9 @@ class QString;
 /** @brief Set a Partition's geometry.
 
 	Sets the geometry for a given Partition on a given Device to a new start sector and/or a new
-	length. This does not move the FileSystem, it only updates the disk label entry for the
+	length. This does not move the FileSystem, it only updates the partition table entry for the
 	Partition and is usually run together with MoveFileSystemJob or ResizeFileSystemJob for that reason.
-	
+
 	@author vl@fidra.de
 */
 class SetPartGeometryJob : public Job

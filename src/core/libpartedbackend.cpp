@@ -244,7 +244,7 @@ static PartitionTable::Flags availableFlags(PedPartition* p)
 
 	@param pedDevice libparted pointer to the device
 	@param d Device
-	@param pedDisk libparted pointer to the disk label
+	@param pedDisk libparted pointer to the partition table
 */
 static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDisk)
 {
@@ -314,7 +314,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 
 	d.partitionTable()->updateUnallocated(d);
 
-	if (d.partitionTable()->isVistaDiskLabel())
+	if (d.partitionTable()->isVistaTableType())
 		d.partitionTable()->setType(d, PartitionTable::msdos_vista);
 
 	foreach(const Partition* part, partitions)
@@ -360,7 +360,7 @@ Device* LibPartedBackend::scanDevice(const QString& device_node)
 
 	if (pedDisk)
 	{
-		const PartitionTable::LabelType type = PartitionTable::nameToLabelType(pedDisk->type->name);
+		const PartitionTable::TableType type = PartitionTable::nameToTableType(pedDisk->type->name);
 		d->setPartitionTable(new PartitionTable(type, firstUsableSector(*d), lastUsableSector(*d)));
 		d->partitionTable()->setMaxPrimaries(ped_disk_get_max_primary_partition_count(pedDisk));
 

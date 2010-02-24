@@ -37,10 +37,10 @@
 /** Creates a new PartitionTable object with type MSDOS
 	@param type name of the PartitionTable type (e.g. "msdos" or "gpt")
 */
-PartitionTable::PartitionTable(LabelType type, qint64 first_usable, qint64 last_usable) :
+PartitionTable::PartitionTable(TableType type, qint64 first_usable, qint64 last_usable) :
 	PartitionNode(),
 	m_Children(),
-	m_MaxPrimaries(maxPrimariesForLabelType(type)),
+	m_MaxPrimaries(maxPrimariesForTableType(type)),
 	m_Type(type),
 	m_FirstUsable(first_usable),
 	m_LastUsable(last_usable)
@@ -113,7 +113,7 @@ PartitionRole::Roles PartitionTable::childRoles(const Partition& p) const
 
 	PartitionRole::Roles r = p.parent()->isRoot() ? PartitionRole::Primary : PartitionRole::Logical;
 
-	if (r == PartitionRole::Primary && hasExtended() == false && diskLabelSupportsExtended(type()))
+	if (r == PartitionRole::Primary && hasExtended() == false && tableTypeSupportsExtended(type()))
 		r |= PartitionRole::Extended;
 
 	return r;
@@ -565,7 +565,7 @@ void PartitionTable::updateUnallocated(const Device& d)
 	insertUnallocated(d, this, firstUsable());
 }
 
-qint64 PartitionTable::defaultFirstUsable(const Device& d, LabelType t)
+qint64 PartitionTable::defaultFirstUsable(const Device& d, TableType t)
 {
 	if (t == msdos && Config::useLegacyMsDosAlignment())
 		return d.sectorsPerTrack();
@@ -573,7 +573,7 @@ qint64 PartitionTable::defaultFirstUsable(const Device& d, LabelType t)
 	return Config::sectorAlignment();
 }
 
-qint64 PartitionTable::defaultLastUsable(const Device& d, LabelType t)
+qint64 PartitionTable::defaultLastUsable(const Device& d, TableType t)
 {
 	if (t == gpt)
 		return d.totalSectors() - 1 - 32 - 1;
@@ -583,12 +583,12 @@ qint64 PartitionTable::defaultLastUsable(const Device& d, LabelType t)
 
 static struct
 {
-	const char* name; /**< name of disk label in libparted */
+	const char* name; /**< name of partition table type in libparted */
 	quint32 maxPrimaries; /**< max numbers of primary partitions supported */
-	bool canHaveExtended; /**< does disk label support extended partitions */
+	bool canHaveExtended; /**< does partition table type support extended partitions */
 	bool isReadOnly; /**< does KDE Partition Manager support this only in read only mode */
-	PartitionTable::LabelType type; /**< enum type */
-} diskLabels[] =
+	PartitionTable::TableType type; /**< enum type */
+} tableTypes[] =
 {
 	{ "aix", 4, false, true, PartitionTable::aix },
 	{ "bsd", 8, false, true, PartitionTable::bsd },
@@ -604,47 +604,47 @@ static struct
 	{ "sun", 8, false, true, PartitionTable::sun }
 };
 
-PartitionTable::LabelType PartitionTable::nameToLabelType(const QString& n)
+PartitionTable::TableType PartitionTable::nameToTableType(const QString& n)
 {
-	for (size_t i = 0; i < sizeof(diskLabels) / sizeof(diskLabels[0]); i++)
-		if (n == diskLabels[i].name)
-			return diskLabels[i].type;
+	for (size_t i = 0; i < sizeof(tableTypes) / sizeof(tableTypes[0]); i++)
+		if (n == tableTypes[i].name)
+			return tableTypes[i].type;
 
-	return PartitionTable::unknownLabel;
+	return PartitionTable::unknownTableType;
 }
 
-QString PartitionTable::labelTypeToName(LabelType l)
+QString PartitionTable::tableTypeToName(TableType l)
 {
-	for (size_t i = 0; i < sizeof(diskLabels) / sizeof(diskLabels[0]); i++)
-		if (l == diskLabels[i].type)
-			return diskLabels[i].name;
+	for (size_t i = 0; i < sizeof(tableTypes) / sizeof(tableTypes[0]); i++)
+		if (l == tableTypes[i].type)
+			return tableTypes[i].name;
 
-	return i18nc("@item/plain disk label name", "unknown");
+	return i18nc("@item/plain partition table name", "unknown");
 }
 
-qint64 PartitionTable::maxPrimariesForLabelType(LabelType l)
+qint64 PartitionTable::maxPrimariesForTableType(TableType l)
 {
-	for (size_t i = 0; i < sizeof(diskLabels) / sizeof(diskLabels[0]); i++)
-		if (l == diskLabels[i].type)
-			return diskLabels[i].maxPrimaries;
+	for (size_t i = 0; i < sizeof(tableTypes) / sizeof(tableTypes[0]); i++)
+		if (l == tableTypes[i].type)
+			return tableTypes[i].maxPrimaries;
 
 	return 1;
 }
 
-bool PartitionTable::diskLabelSupportsExtended(LabelType l)
+bool PartitionTable::tableTypeSupportsExtended(TableType l)
 {
-	for (size_t i = 0; i < sizeof(diskLabels) / sizeof(diskLabels[0]); i++)
-		if (l == diskLabels[i].type)
-			return diskLabels[i].canHaveExtended;
+	for (size_t i = 0; i < sizeof(tableTypes) / sizeof(tableTypes[0]); i++)
+		if (l == tableTypes[i].type)
+			return tableTypes[i].canHaveExtended;
 
 	return false;
 }
 
-bool PartitionTable::diskLabelIsReadOnly(LabelType l)
+bool PartitionTable::tableTypeIsReadOnly(TableType l)
 {
-	for (size_t i = 0; i < sizeof(diskLabels) / sizeof(diskLabels[0]); i++)
-		if (l == diskLabels[i].type)
-			return diskLabels[i].isReadOnly;
+	for (size_t i = 0; i < sizeof(tableTypes) / sizeof(tableTypes[0]); i++)
+		if (l == tableTypes[i].type)
+			return tableTypes[i].isReadOnly;
 
 	return false;
 }
@@ -653,7 +653,7 @@ bool PartitionTable::diskLabelIsReadOnly(LabelType l)
 	if its Partitions begin at sectors evenly divisable by Config::sectorAlignment().
 	@return true if is msdos_vista, otherwise false
 */
-bool PartitionTable::isVistaDiskLabel() const
+bool PartitionTable::isVistaTableType() const
 {
 	if (type() == PartitionTable::msdos)
 	{
@@ -662,7 +662,7 @@ bool PartitionTable::isVistaDiskLabel() const
 			return true;
 
 		// if not all partitions start at a point evenly divisable by sectorAlignment it's
-		// a legacy disk label
+		// a legacy msdos partition table
 		foreach(const Partition* p, children())
 			if (p->firstSector() % Config::sectorAlignment() != 0)
 				return false;
@@ -674,7 +674,7 @@ bool PartitionTable::isVistaDiskLabel() const
 	return false;
 }
 
-void PartitionTable::setType(const Device& d, LabelType t)
+void PartitionTable::setType(const Device& d, TableType t)
 {
 	setFirstUsableSector(defaultFirstUsable(d, t));
 	setLastUsableSector(defaultLastUsable(d, t));

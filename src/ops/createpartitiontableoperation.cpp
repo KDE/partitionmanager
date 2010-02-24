@@ -34,7 +34,7 @@
 	@param d the Device to create the new PartitionTable on
 	@param t the type for the new PartitionTable
 */
-CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d, PartitionTable::LabelType t) :
+CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d, PartitionTable::TableType t) :
 	Operation(),
 	m_TargetDevice(d),
 	m_OldPartitionTable(targetDevice().partitionTable()),

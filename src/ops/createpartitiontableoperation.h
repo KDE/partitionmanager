@@ -40,7 +40,7 @@ class CreatePartitionTableOperation : public Operation
 	Q_DISABLE_COPY(CreatePartitionTableOperation)
 
 	public:
-		CreatePartitionTableOperation(Device& d, PartitionTable::LabelType t);
+		CreatePartitionTableOperation(Device& d, PartitionTable::TableType t);
 		~CreatePartitionTableOperation();
 
 	public:
