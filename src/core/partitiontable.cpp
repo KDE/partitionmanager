@@ -660,8 +660,8 @@ bool PartitionTable::isVistaDiskLabel() const
 		if (Config::useLegacyMsDosAlignment() == false && children().size() == 0)
 			return true;
 
-		// if not all partitions start at a point evenlty divisable by sectorAlignment it's
-		// a legay disk label
+		// if not all partitions start at a point evenly divisable by sectorAlignment it's
+		// a legacy disk label
 		foreach(const Partition* p, children())
 			if (p->firstSector() % Config::sectorAlignment() != 0)
 				return false;
