@@ -257,6 +257,8 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 	KMountPoint::List mountPoints = KMountPoint::currentMountPoints(KMountPoint::NeedRealDeviceName);
 	mountPoints.append(KMountPoint::possibleMountPoints(KMountPoint::NeedRealDeviceName));
 
+	QList<Partition*> partitions;
+
 	while ((pedPartition = ped_disk_next_partition(pedDisk, pedPartition)))
 	{
 		if (pedPartition->num < 1)
@@ -307,14 +309,16 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 			fs->setUUID(fs->readUUID(part->deviceNode()));
 
 		parent->append(part);
-
-		PartitionTable::isSnapped(d, *part);
+		partitions.append(part);
 	}
 
 	d.partitionTable()->updateUnallocated(d);
 
 	if (d.partitionTable()->isVistaDiskLabel())
 		d.partitionTable()->setType(d, PartitionTable::msdos_vista);
+
+	foreach(const Partition* part, partitions)
+		PartitionTable::isSnapped(d, *part);
 
 	ped_disk_destroy(pedDisk);
 }
