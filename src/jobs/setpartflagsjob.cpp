@@ -97,7 +97,7 @@ bool SetPartFlagsJob::run(Report& parent)
 
 				if (!ped_partition_set_flag(pedPartition, flagmap[i].pedFlag, state))
 				{
-					report->line() << i18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(flagmap[i].flag), partition().deviceNode(), state ? i18nc("@info flag turned on, active", "on") : i18nc("@info flag turned off, inactive", "off"));
+					report->line() << i18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(flagmap[i].flag), partition().deviceNode(), state ? i18nc("@info/plain flag turned on, active", "on") : i18nc("@info/plain flag turned off, inactive", "off"));
 
 					rval = false;
 				}
