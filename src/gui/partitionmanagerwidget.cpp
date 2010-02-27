@@ -116,13 +116,13 @@ void PartitionManagerWidget::loadConfig()
 
 	for (int i = 0; i < treePartitions().columnCount(); i++)
 	{
-		if (colPositions[0] != -1 && colPositions.size() >= i)
+		if (colPositions[0] != -1 && colPositions.size() > i)
 			header->moveSection(header->visualIndex(i), colPositions[i]);
 
-		if (colVisible[0] != -1 && colVisible.size() >= i)
+		if (colVisible[0] != -1 && colVisible.size() > i)
 			treePartitions().setColumnHidden(i, colVisible[i] == 0);
 
-		if (colWidths[0] != -1 && colWidths.size() >= i)
+		if (colWidths[0] != -1 && colWidths.size() > i)
 			treePartitions().setColumnWidth(i, colWidths[i]);
 	}
 }
