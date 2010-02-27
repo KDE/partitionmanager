@@ -20,7 +20,9 @@
 /** @file
 */
 
-#include "core/libpartedbackend.h"
+#include "backend/libpartedbackend.h"
+#include "backend/libparteddevice.h"
+
 #include "core/device.h"
 #include "core/partition.h"
 #include "core/partitiontable.h"
@@ -226,7 +228,8 @@ static PartitionTable::Flags availableFlags(PedPartition* p)
 	for (quint32 i = 0; i < sizeof(flagmap) / sizeof(flagmap[0]); i++)
 		if (ped_partition_is_flag_available(p, flagmap[i].pedFlag))
 		{
-			// workaround:: see above
+			// Workaround: libparted claims the hidden flag is available for extended partitions, but
+			// throws an error when we try to set or clear it. So skip this combination. Also see setFlag.
 			if (p->type != PED_PARTITION_EXTENDED || flagmap[i].flag != PartitionTable::FlagHidden)
 				flags |= flagmap[i].flag;
 		}
@@ -338,6 +341,11 @@ const LibPartedBackend::FlagMap* LibPartedBackend::flagMap()
 	return flagmap;
 }
 
+quint32 LibPartedBackend::flagMapSize()
+{
+	return sizeof(flagmap) / sizeof(flagmap[0]);
+}
+
 /** Create a Device for the given device_node and scan it for partitions.
 	@param device_node the device node (e.g. "/dev/sda")
 	@return the created Device object. callers need to free this.
@@ -368,4 +376,23 @@ Device* LibPartedBackend::scanDevice(const QString& device_node)
 	}
 
 	return d;
+}
+
+CoreBackendDevice* LibPartedBackend::openDevice(const QString& device_node)
+{
+	LibPartedDevice* device = new LibPartedDevice(device_node);
+
+	if (!device->open())
+	{
+		delete device;
+		device = NULL;
+	}
+
+	return device;
+}
+
+bool LibPartedBackend::closeDevice(CoreBackendDevice* core_device)
+{
+	delete core_device;
+	return true;
 }

@@ -68,7 +68,7 @@ class Job : public QObject
 		void started();
 		void progress(int);
 		void finished();
-		
+
 	public:
 		virtual qint32 numSteps() const { return 1; } /**< @return the number of steps the job takes to complete */
 		virtual QString description() const = 0; /**< @return the Job's description */
@@ -78,13 +78,13 @@ class Job : public QObject
 		virtual QString statusText() const;
 
 		JobStatus status() const { return m_Status; } /**< @return the Job's current status */
-		
+
 		static FileSystem::Type detectFileSystem(PedDevice* pedDevice, PedPartition* pedPartition);
-		
+
 	protected:
 		bool openPed(const QString& path, bool diskFailOk = false);
 		void closePed();
-		
+
 		bool commit(quint32 timeout = 10);
 		static bool commit(PedDisk* disk, quint32 timeout = 10);
 
@@ -103,7 +103,6 @@ class Job : public QObject
 		PedDevice* pedDevice() { return m_PedDevice; }
 		PedDisk* pedDisk() { return m_PedDisk; }
 
-		static PedFileSystemType* getPedFileSystemType(FileSystem::Type t);
 		static void pedTimerHandler(PedTimer* pedTimer, void* ctx);
 
 	private:

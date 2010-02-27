@@ -38,28 +38,6 @@
 #include <unistd.h>
 #include <blkid/blkid.h>
 
-static const struct
-{
-	FileSystem::Type type;
-	QString name;
-} mapFileSystemTypeToLibPartedName[] =
-{
-	{ FileSystem::Ext2, "ext2" },
-	{ FileSystem::Ext3, "ext3" },
-	{ FileSystem::Ext4, "ext4" },
-	{ FileSystem::LinuxSwap, "linux-swap" },
-	{ FileSystem::Fat16, "fat16" },
-	{ FileSystem::Fat32, "fat32" },
-	{ FileSystem::Ntfs, "ntfs" },
-	{ FileSystem::ReiserFS, "reiserfs" },
-	{ FileSystem::Reiser4, "reiser4" },
-	{ FileSystem::Xfs, "xfs" },
-	{ FileSystem::Jfs, "jfs" },
-	{ FileSystem::Hfs, "hfs" },
-	{ FileSystem::HfsPlus, "hfs+" },
-	{ FileSystem::Ufs, "ufs" }
-};
-
 Job::Job() :
 	m_PedDevice(NULL),
 	m_PedDisk(NULL),
@@ -122,16 +100,6 @@ bool Job::commit(PedDisk* disk, quint32 timeout)
 		sleep(timeout);
 
 	return rval;
-}
-
-PedFileSystemType* Job::getPedFileSystemType(FileSystem::Type t)
-{
-	for (quint32 i = 0; i < sizeof(mapFileSystemTypeToLibPartedName) / sizeof(mapFileSystemTypeToLibPartedName[0]); i++)
-		if (mapFileSystemTypeToLibPartedName[i].type == t)
-			return ped_file_system_type_get(mapFileSystemTypeToLibPartedName[i].name.toAscii());
-
-	// if we didn't find anything, go with ext2 as a safe fallback
-	return ped_file_system_type_get("ext2");
 }
 
 bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)

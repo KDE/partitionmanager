@@ -18,6 +18,7 @@
 ############################################
 
 file(GLOB partitionmanagerprivate_SRCS
+	backend/*.cpp
 	core/*.cpp
 	util/*.cpp
 	ops/*.cpp

@@ -17,8 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
+#include "backend/corebackend.h"
+
 #include "core/devicescanner.h"
-#include "core/corebackend.h"
 #include "core/operationstack.h"
 #include "core/device.h"
 

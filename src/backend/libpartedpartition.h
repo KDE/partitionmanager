@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de                        *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,47 +17,34 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(LIBPARTED__H)
+#if !defined(LIBPARTEDPARTITION__H)
 
-#define LIBPARTED__H
+#define LIBPARTEDPARTITION__H
+
+#include "backend/corebackendpartition.h"
 
 #include "core/partitiontable.h"
-#include "core/corebackend.h"
 
 #include <parted/parted.h>
 
-#include <qglobal.h>
+class Report;
 
-class Device;
-
-class QString;
-
-/** @brief Device scanning done by libparted.
-
-	More libparted-related stuff is in the @link Job Job-derived @endlink classes.
-
-	@author vl@fidra.de
-*/
-class LibPartedBackend : public CoreBackend
+class LibPartedPartition : public CoreBackendPartition
 {
-	friend class CoreBackend;
-
-	Q_DISABLE_COPY(LibPartedBackend)
+	Q_DISABLE_COPY(LibPartedPartition);
 
 	public:
-		typedef struct
-		{
-			PedPartitionFlag pedFlag;
-			PartitionTable::Flag flag;
-		} FlagMap;
+		LibPartedPartition(PedPartition* ped_partition);
+
+	public:
+		virtual bool setFlag(Report& report, PartitionTable::Flag flag, bool state);
 
 	private:
-		LibPartedBackend();
+		PedPartition* pedPartition() { return m_PedPartition; }
 
-	public:
-		static const FlagMap* flagMap();
-
-		Device* scanDevice(const QString& device_node);
+	private:
+		PedPartition* m_PedPartition;
 };
+
 
 #endif

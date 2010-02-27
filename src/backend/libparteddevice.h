@@ -17,16 +17,45 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "core/corebackend.h"
-#include "core/libpartedbackend.h"
+#if !defined(LIBPARTEDDEVICE__H)
 
-CoreBackend* CoreBackend::self()
+#define LIBPARTEDDEVICE__H
+
+#include "backend/corebackenddevice.h"
+
+#include <qglobal.h>
+
+#include <parted/parted.h>
+
+class Partition;
+class Report;
+
+class LibPartedDevice : public CoreBackendDevice
 {
-	static CoreBackend* instance = NULL;
+	Q_DISABLE_COPY(LibPartedDevice);
 
-	if (instance == NULL)
-		instance = new LibPartedBackend();
+	public:
+		LibPartedDevice(const QString& device_node);
+		~LibPartedDevice();
 
-	return instance;
-}
+	public:
+		virtual bool open();
+		virtual bool close();
 
+		virtual bool commit(quint32 timeout = 10);
+
+		virtual CoreBackendPartition* getExtendedPartition();
+		virtual CoreBackendPartition* getPartitionBySector(qint64 sector);
+
+		virtual bool createPartition(Report& report, Partition& partition);
+
+	protected:
+		PedDevice* pedDevice() { return m_PedDevice; }
+		PedDisk* pedDisk() { return m_PedDisk; }
+
+	private:
+		PedDevice* m_PedDevice;
+		PedDisk* m_PedDisk;
+};
+
+#endif

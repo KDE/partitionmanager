@@ -19,6 +19,9 @@
 
 #include "jobs/createpartitionjob.h"
 
+#include "backend/corebackend.h"
+#include "backend/corebackenddevice.h"
+
 #include "core/partition.h"
 #include "core/device.h"
 
@@ -47,66 +50,25 @@ bool CreatePartitionJob::run(Report& parent)
 
 	Report* report = jobStarted(parent);
 
-	// According to libParted docs, PedPartitionType can be "NULL if unknown". That's obviously wrong,
-	// it's a typedef for an enum. So let's use something the libparted devs will hopefully never
-	// use...
-	PedPartitionType pedType = static_cast<PedPartitionType>(0xffffffff);
+	CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
 
-	if (partition().roles().has(PartitionRole::Extended))
-		pedType = PED_PARTITION_EXTENDED;
-	else if (partition().roles().has(PartitionRole::Logical))
-		pedType = PED_PARTITION_LOGICAL;
-	else if (partition().roles().has(PartitionRole::Primary))
-		pedType = PED_PARTITION_NORMAL;
-			
-	if (pedType == static_cast<int>(0xffffffff))
+	if (backendDevice)
 	{
-		report->line() << i18nc("@info/plain", "Unknown partition role for new partition <filename>%1</filename> (roles: %2)", partition().deviceNode(), partition().roles().toString());
-	}
-	else if (openPed(device().deviceNode()))
-	{
-		PedFileSystemType* pedFsType = (partition().roles().has(PartitionRole::Extended) || partition().fileSystem().type() == FileSystem::Unformatted) ? NULL : getPedFileSystemType(partition().fileSystem().type());
-
-		PedPartition* pedPartition = ped_partition_new(pedDisk(), pedType, pedFsType, partition().firstSector(), partition().lastSector());
-
-		if (pedPartition)
-		{
-			PedConstraint* pedConstraint = NULL;
-			PedGeometry* pedGeometry = ped_geometry_new(pedDevice(), partition().firstSector(), partition().length());
-
-			if (pedGeometry)
-				pedConstraint = ped_constraint_exact(pedGeometry);
-
-			if (pedConstraint)
-			{
-				if (ped_disk_add_partition(pedDisk(), pedPartition, pedConstraint) && commit())
-				{
-					partition().setNumber(pedPartition->num);
-					partition().setState(Partition::StateNone);
-
-					partition().setFirstSector(pedPartition->geom.start);
-					partition().setLastSector(pedPartition->geom.end);
-
-					rval = true;
-				}
-				else
-					report->line() << i18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
-
-				ped_constraint_destroy(pedConstraint);
-			}
-			else
-				report->line() << i18nc("@info/plain", "Failed to create a new partition: could not get geometry for constraint.");
-		}
+		if (!backendDevice->createPartition(*report, partition()))
+			report->line() << i18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
 		else
-			report->line() << i18nc("@info/plain", "Failed to create new partition <filename>%1</filename>.", partition().deviceNode());
-	
-		closePed();
+		{
+			backendDevice->commit();
+			rval = true;
+		}
+
+		delete backendDevice;
 	}
 	else
 		report->line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> to create new partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
-	
+
 	jobFinished(*report, rval);
-	
+
 	return rval;
 }
 

@@ -19,11 +19,14 @@
 
 #include "jobs/setpartflagsjob.h"
 
+#include "backend/corebackend.h"
+#include "backend/corebackenddevice.h"
+#include "backend/corebackendpartition.h"
+
 #include "core/device.h"
 #include "core/partition.h"
 #include "core/partitionrole.h"
 #include "core/partitiontable.h"
-#include "core/libpartedbackend.h"
 
 #include "util/report.h"
 
@@ -44,7 +47,7 @@ SetPartFlagsJob::SetPartFlagsJob(Device& d, Partition& p, PartitionTable::Flags 
 
 qint32 SetPartFlagsJob::numSteps() const
 {
-	return sizeof(LibPartedBackend::flagMap()) / sizeof(LibPartedBackend::flagMap()[0]);
+	return PartitionTable::flagList().size();
 }
 
 bool SetPartFlagsJob::run(Report& parent)
@@ -53,45 +56,39 @@ bool SetPartFlagsJob::run(Report& parent)
 
 	Report* report = jobStarted(parent);
 
-	if (openPed(device().deviceNode()))
+	CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
+
+	if (backendDevice != NULL && backendDevice->open())
 	{
-		PedPartition* pedPartition = (partition().roles().has(PartitionRole::Extended)) ? ped_disk_extended_partition(pedDisk()) : ped_disk_get_partition_by_sector(pedDisk(), partition().firstSector());
+		CoreBackendPartition* backendPartition = (partition().roles().has(PartitionRole::Extended)) ? backendDevice->getExtendedPartition() : backendDevice->getPartitionBySector(partition().firstSector());
 
-		if (pedPartition)
+		if (backendPartition)
 		{
-			for (quint32 i = 0; i < sizeof(LibPartedBackend::flagMap()) / sizeof(LibPartedBackend::flagMap()[0]); i++)
+			quint32 count = 0;
+
+			foreach(PartitionTable::Flag f, PartitionTable::flagList())
 			{
-				emit progress(i + 1);
+				emit progress(++count);
 
-				if (!ped_partition_is_flag_available(pedPartition, LibPartedBackend::flagMap()[i].pedFlag))
+				const bool state = (flags() & f) ? true : false;
+
+				if (!backendPartition->setFlag(*report, f, state))
 				{
-					report->line() << i18nc("@info/plain", "The flag \"%1\" is not available on the partition's partition table.", PartitionTable::flagName(LibPartedBackend::flagMap()[i].flag));
-					continue;
-				}
-
-				// Workaround: libparted claims the hidden flag is available for extended partitions, but
-				// throws an error when we try to set or clear it. So skip this combination (also see below in
-				// availableFlags()).
-				if (pedPartition->type == PED_PARTITION_EXTENDED && LibPartedBackend::flagMap()[i].flag == PartitionTable::FlagHidden)
-					continue;
-
-				int state = (flags() & LibPartedBackend::flagMap()[i].flag) ? 1 : 0;
-
-				if (!ped_partition_set_flag(pedPartition, LibPartedBackend::flagMap()[i].pedFlag, state))
-				{
-					report->line() << i18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(LibPartedBackend::flagMap()[i].flag), partition().deviceNode(), state ? i18nc("@info flag turned on, active", "on") : i18nc("@info flag turned off, inactive", "off"));
+					report->line() << i18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(f), partition().deviceNode(), state ? i18nc("@info/plain flag turned on, active", "on") : i18nc("@info/plain flag turned off, inactive", "off"));
 
 					rval = false;
 				}
 			}
 
-			if (!commit())
+			if (!backendDevice->commit())
 				rval = false;
+
+			delete backendPartition;
 		}
 		else
 			report->line() << i18nc("@info/plain", "Could not find partition <filename>%1</filename> on device <filename>%2</filename> to set partition flags.", partition().deviceNode(), device().deviceNode());
 
-		closePed();
+		delete backendDevice;
 	}
 	else
 		report->line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> to set partition flags for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());

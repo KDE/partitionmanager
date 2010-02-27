@@ -17,29 +17,16 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(BACKEND__H)
+#include "backend/corebackend.h"
+#include "backend/libpartedbackend.h"
 
-#define BACKEND__H
-
-#include "util/libpartitionmanagerexport.h"
-
-class Device;
-class QString;
-
-class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend
+CoreBackend* CoreBackend::self()
 {
-	Q_DISABLE_COPY(CoreBackend)
+	static CoreBackend* instance = NULL;
 
-	protected:
-		CoreBackend() {}
-		virtual ~CoreBackend() {}
+	if (instance == NULL)
+		instance = new LibPartedBackend();
 
-	public:
-		static CoreBackend* self();
+	return instance;
+}
 
-	public:
-		virtual Device* scanDevice(const QString& device_node) = 0;
-};
-
-
-#endif
