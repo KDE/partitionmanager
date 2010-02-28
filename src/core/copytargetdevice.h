@@ -24,9 +24,9 @@
 #include "core/copytarget.h"
 
 #include <qglobal.h>
-#include <parted/parted.h>
 
 class Device;
+class CoreBackendDevice;
 
 /** @brief A Device to copy to.
 
@@ -57,7 +57,7 @@ class CopyTargetDevice : public CopyTarget
 
 	protected:
 		Device& m_Device;
-		PedDevice* m_PedDevice;
+		CoreBackendDevice* m_BackendDevice;
 		const qint64 m_FirstSector;
 		const qint64 m_LastSector;
 };

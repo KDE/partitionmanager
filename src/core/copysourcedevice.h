@@ -24,10 +24,10 @@
 #include "core/copysource.h"
 
 #include <qglobal.h>
-#include <parted/parted.h>
 
 class Device;
 class CopyTarget;
+class CoreBackendDevice;
 
 /** @brief A Device to copy from.
 
@@ -60,7 +60,8 @@ class CopySourceDevice : public CopySource
 		Device& m_Device;
 		const qint64 m_FirstSector;
 		const qint64 m_LastSector;
-		PedDevice* m_PedDevice;
+		CoreBackendDevice* m_BackendDevice
+;
 };
 
 #endif

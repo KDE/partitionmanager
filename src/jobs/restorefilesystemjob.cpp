@@ -19,6 +19,10 @@
 
 #include "jobs/restorefilesystemjob.h"
 
+#include "backend/corebackend.h"
+#include "backend/corebackenddevice.h"
+#include "backend/corebackendpartitiontable.h"
+
 #include "core/partition.h"
 #include "core/device.h"
 #include "core/copysourcefile.h"
@@ -57,7 +61,7 @@ bool RestoreFileSystemJob::run(Report& parent)
 	// file the user gave us is a valid image file or just some junk.
 
 	bool rval = false;
-	
+
 	Report* report = jobStarted(parent);
 
 	// Again, a scope for copyTarget and copySource. See MoveFileSystemJob::run()
@@ -78,7 +82,19 @@ bool RestoreFileSystemJob::run(Report& parent)
 			{
 				// create a new file system for what was restored with the length of the image file
 				const qint64 newLastSector = targetPartition().firstSector() + copySource.length() - 1;
-				FileSystem::Type t = detectFileSystemBySector(*report, targetDevice(), targetPartition().firstSector());
+
+				CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(targetDevice().deviceNode());
+
+				FileSystem::Type t = FileSystem::Unknown;
+
+				if (backendDevice)
+				{
+					CoreBackendPartitionTable* backendPartitionTable = backendDevice->openPartitionTable();
+
+					if (backendPartitionTable)
+						t = backendPartitionTable->detectFileSystemBySector(*report, targetDevice(), targetPartition().firstSector());
+				}
+
 				FileSystem* fs = FileSystemFactory::create(t, targetPartition().firstSector(), newLastSector);
 
 				targetPartition().deleteFileSystem();
@@ -88,7 +104,7 @@ bool RestoreFileSystemJob::run(Report& parent)
 			report->line() << i18nc("@info/plain", "Closing device. This may take a few seconds.");
 		}
 	}
-	
+
 	jobFinished(*report, rval);
 
 	return rval;

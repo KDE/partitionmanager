@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -22,6 +22,7 @@
 #include "backend/corebackend.h"
 #include "backend/corebackenddevice.h"
 #include "backend/corebackendpartition.h"
+#include "backend/corebackendpartitiontable.h"
 
 #include "core/device.h"
 #include "core/partition.h"
@@ -58,35 +59,43 @@ bool SetPartFlagsJob::run(Report& parent)
 
 	CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
 
-	if (backendDevice != NULL && backendDevice->open())
+	if (backendDevice)
 	{
-		CoreBackendPartition* backendPartition = (partition().roles().has(PartitionRole::Extended)) ? backendDevice->getExtendedPartition() : backendDevice->getPartitionBySector(partition().firstSector());
+		CoreBackendPartitionTable* backendPartitionTable = backendDevice->openPartitionTable();
 
-		if (backendPartition)
+		if (backendPartitionTable)
 		{
-			quint32 count = 0;
+			CoreBackendPartition* backendPartition = (partition().roles().has(PartitionRole::Extended))
+				? backendPartitionTable->getExtendedPartition()
+				: backendPartitionTable->getPartitionBySector(partition().firstSector());
 
-			foreach(PartitionTable::Flag f, PartitionTable::flagList())
+			if (backendPartition)
 			{
-				emit progress(++count);
+				quint32 count = 0;
 
-				const bool state = (flags() & f) ? true : false;
-
-				if (!backendPartition->setFlag(*report, f, state))
+				foreach(PartitionTable::Flag f, PartitionTable::flagList())
 				{
-					report->line() << i18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(f), partition().deviceNode(), state ? i18nc("@info/plain flag turned on, active", "on") : i18nc("@info/plain flag turned off, inactive", "off"));
+					emit progress(++count);
 
-					rval = false;
+					const bool state = (flags() & f) ? true : false;
+
+					if (!backendPartition->setFlag(*report, f, state))
+					{
+						report->line() << i18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(f), partition().deviceNode(), state ? i18nc("@info/plain flag turned on, active", "on") : i18nc("@info/plain flag turned off, inactive", "off"));
+
+						rval = false;
+					}
 				}
+
+				delete backendPartition;
 			}
+			else
+				report->line() << i18nc("@info/plain", "Could not find partition <filename>%1</filename> on device <filename>%2</filename> to set partition flags.", partition().deviceNode(), device().deviceNode());
 
-			if (!backendDevice->commit())
-				rval = false;
-
-			delete backendPartition;
+			delete backendPartitionTable;
 		}
 		else
-			report->line() << i18nc("@info/plain", "Could not find partition <filename>%1</filename> on device <filename>%2</filename> to set partition flags.", partition().deviceNode(), device().deviceNode());
+			report->line() << i18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to set partition flags for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
 
 		delete backendDevice;
 	}

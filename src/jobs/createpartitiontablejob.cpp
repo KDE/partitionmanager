@@ -17,6 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
+#include "backend/corebackenddevice.h"
+#include "backend/corebackend.h"
+
 #include "jobs/createpartitiontablejob.h"
 
 #include "core/device.h"
@@ -25,8 +28,6 @@
 #include "util/report.h"
 
 #include <klocale.h>
-
-#include <parted/parted.h>
 
 /** Creates a new CreatePartitionTableJob
 	@param d the Device a new PartitionTable is to be created on
@@ -43,22 +44,15 @@ bool CreatePartitionTableJob::run(Report& parent)
 
 	Report* report = jobStarted(parent);
 
-	if (openPed(device().deviceNode(), true))
+	CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
+
+	if (backendDevice != NULL)
 	{
 		Q_ASSERT(device().partitionTable());
 
-		PedDiskType* pedDiskType = ped_disk_type_get(device().partitionTable()->typeName().toAscii());
+		rval = backendDevice->createPartitionTable(*report, *device().partitionTable());
 
-		if (pedDiskType)
-		{
-			PedDisk* pedDisk = ped_disk_new_fresh(pedDevice(), pedDiskType);
-			rval = commit(pedDisk);
-			ped_disk_destroy(pedDisk);
-		}
-		else
-			report->line() << i18nc("@info/plain", "Creating partition table failed: Could not retrieve partition table type \"%1\" for <filename>%2</filename>.", device().partitionTable()->typeName(), device().deviceNode());
-
-		closePed();
+		delete backendDevice;
 	}
 	else
 		report->line() << i18nc("@info/plain", "Creating partition table failed: Could not open device <filename>%1</filename>.", device().deviceNode());

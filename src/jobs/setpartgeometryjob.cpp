@@ -19,6 +19,10 @@
 
 #include "jobs/setpartgeometryjob.h"
 
+#include "backend/corebackend.h"
+#include "backend/corebackenddevice.h"
+#include "backend/corebackendpartitiontable.h"
+
 #include "core/partition.h"
 #include "core/device.h"
 
@@ -26,8 +30,6 @@
 
 #include <kdebug.h>
 #include <klocale.h>
-
-#include <parted/parted.h>
 
 /** Creates a new SetPartGeometryJob
 	@param d the Device the Partition whose geometry is to be set is on
@@ -53,35 +55,19 @@ bool SetPartGeometryJob::run(Report& parent)
 
 	Report* report = jobStarted(parent);
 
-	if (openPed(device().deviceNode()))
-	{
-		PedPartition* pedPartition = (partition().roles().has(PartitionRole::Extended)) ? ped_disk_extended_partition(pedDisk()) : ped_disk_get_partition_by_sector(pedDisk(), partition().firstSector());
+	CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
 
-		if (pedPartition)
+	if (backendDevice)
+	{
+		CoreBackendPartitionTable* backendPartitionTable = backendDevice->openPartitionTable();
+
+		if (backendPartitionTable)
 		{
-			if (PedGeometry* pedGeometry = ped_geometry_new(pedDevice(), newStart(), newLength()))
-			{
-				if (PedConstraint* pedConstraint = ped_constraint_exact(pedGeometry))
-				{
-					if (ped_disk_set_partition_geom(pedDisk(), pedPartition, pedConstraint, newStart(), newStart() + newLength() - 1) && commit())
-					{
-						rval = true;
-						partition().setFirstSector(pedPartition->geom.start);
-						partition().setLastSector(pedPartition->geom.end);
-					}
-					else
-						report->line() << i18nc("@info/plain", "Could not set geometry for partition <filename>%1</filename> while trying to resize/move it.", partition().deviceNode());
-				}
-				else
-					report->line() << i18nc("@info/plain", "Could not get constraint for partition <filename>%1</filename> while trying to resize/move it.", partition().deviceNode());
-			}
-			else
-				report->line() << i18nc("@info/plain", "Could not get geometry for partition <filename>%1</filename> while trying to resize/move it.", partition().deviceNode());
+			rval = backendPartitionTable->updateGeometry(*report, partition(), newStart(), newStart() + newLength() - 1);
+			delete backendPartitionTable;
 		}
-		else
-			report->line() << i18nc("@info/plain", "Could not open partition <filename>%1</filename> while trying to resize/move it.", partition().deviceNode());
-	
-		closePed();
+
+		delete backendDevice;
 	}
 	else
 		report->line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> while trying to resize/move partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());

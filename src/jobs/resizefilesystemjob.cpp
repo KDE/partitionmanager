@@ -22,6 +22,10 @@
 #include "core/partition.h"
 #include "core/device.h"
 
+#include "backend/corebackend.h"
+#include "backend/corebackenddevice.h"
+#include "backend/corebackendpartitiontable.h"
+
 #include "fs/filesystem.h"
 
 #include "util/report.h"
@@ -29,8 +33,6 @@
 
 #include <klocale.h>
 #include <kdebug.h>
-
-#include <parted/parted.h>
 
 /** Creates a new ResizeFileSystemJob
 	@param d the Device the FileSystem to be resized is on
@@ -113,39 +115,28 @@ bool ResizeFileSystemJob::resizeFileSystemInternal(Report& report)
 {
 	bool rval = false;
 
-	if (!openPed(device().deviceNode()))
-	{
-		report.line() << i18nc("@info/plain", "Resizing file system on partition <filename>%1</filename>: Could not open device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
-		return false;
-	}
+	CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
 
-	if (PedGeometry* originalGeometry = ped_geometry_new(pedDevice(), partition().fileSystem().firstSector(), partition().fileSystem().length()))
+	if (backendDevice)
 	{
-		if (PedFileSystem* pedFileSystem = ped_file_system_open(originalGeometry))
+		CoreBackendPartitionTable* backendPartitionTable = backendDevice->openPartitionTable();
+
+		if (backendPartitionTable)
 		{
-			if (PedGeometry* resizedGeometry = ped_geometry_new(pedDevice(), partition().fileSystem().firstSector(), newLength()))
-			{
- 				PedTimer* pedTimer = ped_timer_new(pedTimerHandler, this);
-				rval = ped_file_system_resize(pedFileSystem, resizedGeometry, pedTimer) && commit();
- 				ped_timer_destroy(pedTimer);
+			rval = backendPartitionTable->resizeFileSystem(report, partition(), newLength());
 
-				if (rval)
-					report.line() << i18nc("@info/plain", "Successfully resized file system using LibParted.");
-				else
-					report.line() << i18nc("@info/plain", "Could not resize file system on partition <filename>%1</filename>.", partition().deviceNode());
-			}
-			else
-				report.line() << i18nc("@info/plain", "Could not get geometry for resized partition <filename>%1</filename> while trying to resize the file system.", partition().deviceNode());
+			if (rval)
+				report.line() << i18nc("@info/plain", "Successfully resized file system using LibParted.");
 
-			ped_file_system_close(pedFileSystem);
+			delete backendPartitionTable;
 		}
 		else
 			report.line() << i18nc("@info/plain", "Could not open partition <filename>%1</filename> while trying to resize the file system.", partition().deviceNode());
+
+		delete backendDevice;
 	}
 	else
 		report.line() << i18nc("@info/plain", "Could not read geometry for partition <filename>%1</filename> while trying to resize the file system.", partition().deviceNode());
-
-	closePed();
 
 	return rval;
 }

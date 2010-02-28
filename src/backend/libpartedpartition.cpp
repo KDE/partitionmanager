@@ -62,3 +62,4 @@ bool LibPartedPartition::setFlag(Report& report, PartitionTable::Flag partitionM
 
 	return true;
 }
+

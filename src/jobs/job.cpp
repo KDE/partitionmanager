@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2008,2009,2010 by Volker Lanz <vl@fidra.de>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -25,7 +25,6 @@
 #include "core/copysourcedevice.h"
 #include "core/copytargetdevice.h"
 
-#include "util/externalcommand.h"
 #include "util/report.h"
 
 #include <QIcon>
@@ -35,71 +34,9 @@
 #include <klocale.h>
 #include <kiconloader.h>
 
-#include <unistd.h>
-#include <blkid/blkid.h>
-
 Job::Job() :
-	m_PedDevice(NULL),
-	m_PedDisk(NULL),
 	m_Status(Pending)
 {
-}
-
-Job::~Job()
-{
-	closePed();
-}
-
-bool Job::openPed(const QString& path, bool diskFailOk)
-{
-	m_PedDevice = ped_device_get(path.toAscii());
-	m_PedDisk = m_PedDevice ? ped_disk_new(m_PedDevice) : NULL;
-
-	return m_PedDevice != NULL && (diskFailOk || m_PedDisk != NULL);
-}
-
-void Job::closePed()
-{
-	if (m_PedDisk)
-		ped_disk_destroy(m_PedDisk);
-
-	m_PedDisk = NULL;
-	m_PedDevice = NULL;
-}
-
-bool Job::commit(quint32 timeout)
-{
-	return commit(m_PedDisk, timeout);
-}
-
-bool Job::commit(PedDisk* disk, quint32 timeout)
-{
-	if (disk == NULL)
-		return false;
-
-	bool rval = ped_disk_commit_to_dev(disk);
-
-	// The GParted authors have found a bug in libparted that causes it to intermittently
-	// not commit changes to the Linux kernel, probably a race. Until this is fixed in
-	// libparted, the following patch should help alleviate the consequences by just re-trying
-	// committing to the OS if it fails the first time after a short pause.
-	// See: http://git.gnome.org/browse/gparted/commit/?id=bf86fd3f9ceb0096dfe87a8c9a38403c13b13f00
-	if (rval)
-	{
-		rval = ped_disk_commit_to_os(disk);
-
-		if (!rval)
-		{
-			sleep(1);
-			rval = ped_disk_commit_to_os(disk);
-		}
-	}
-
-	if (!ExternalCommand("udevadm", QStringList() << "settle" << "--timeout=" + QString::number(timeout)).run() &&
-			!ExternalCommand("udevsettle", QStringList() << "--timeout=" + QString::number(timeout)).run())
-		sleep(timeout);
-
-	return rval;
 }
 
 bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
@@ -246,107 +183,9 @@ bool Job::rollbackCopyBlocks(Report& report, CopyTarget& origTarget, CopySource&
 	return false;
 }
 
-FileSystem::Type Job::detectFileSystemBySector(Report& report, Device& device, qint64 sector)
-{
-	if (!openPed(device.deviceNode()))
-		return FileSystem::Unknown;
-
-	PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), sector);
-
-	FileSystem::Type rval = FileSystem::Unknown;
-
-	if (pedPartition)
-		rval = detectFileSystem(pedDevice(), pedPartition);
-	else
-		report.line() << i18nc("@info/plain", "Could not determine file system of partition at sector %1 on device <filename>%2</filename>.", sector, device.deviceNode());
-
-	closePed();
-
-	return rval;
-}
-
-/** Detects the type of a FileSystem given a PedDevice and a PedPartition
-	@param pedDevice pointer to the pedDevice. Must not be NULL.
-	@param pedPartition pointer to the pedPartition. Must not be NULL
-	@return the detected FileSystem type (FileSystem::Unknown if not detected)
-*/
-FileSystem::Type Job::detectFileSystem(PedDevice* pedDevice, PedPartition* pedPartition)
-{
-	FileSystem::Type rval = FileSystem::Unknown;
-	const QString s = pedPartition->fs_type ? pedPartition->fs_type->name : QString();
-
-	if (s == "extended") rval = FileSystem::Extended;
-	else if (s == "ext2") rval = FileSystem::Ext2;
-	else if (s == "ext3") rval = FileSystem::Ext3;
-	else if (s == "ext4") rval = FileSystem::Ext4;
-	else if (s.startsWith("linux-swap")) rval = FileSystem::LinuxSwap;
-	else if (s == "fat16") rval = FileSystem::Fat16;
-	else if (s == "fat32") rval = FileSystem::Fat32;
-	else if (s == "ntfs") rval = FileSystem::Ntfs;
-	else if (s == "reiserfs") rval = FileSystem::ReiserFS;
-	else if (s == "xfs") rval = FileSystem::Xfs;
-	else if (s == "jfs") rval = FileSystem::Jfs;
-	else if (s == "hfs") rval = FileSystem::Hfs;
-	else if (s == "hfs+") rval = FileSystem::HfsPlus;
-	else if (s == "ufs") rval = FileSystem::Ufs;
-
-	if (rval == FileSystem::Unknown)
-	{
-		// detect Reiser4, libparted doesn't deal with it
-		char* buf = static_cast<char*>(malloc(pedDevice->sector_size));
-
-		if (buf != NULL)
-		{
-			ped_device_open(pedDevice);
-			ped_geometry_read(&pedPartition->geom, buf, 128, 1);
-			ped_device_close(pedDevice);
-
-			if (QString(buf) == "ReIsEr4")
-				rval = FileSystem::Reiser4;
-
-			free(buf);
-		}
-	}
-
-	if (rval == FileSystem::Ext3)
-	{
-		blkid_cache cache;
-		char* pedPath = NULL;
-
-		if (blkid_get_cache(&cache, NULL) == 0 && (pedPath = ped_partition_get_path(pedPartition)))
-		{
-			blkid_dev dev;
-
-			if ((dev = blkid_get_dev(cache, pedPath, BLKID_DEV_NORMAL)) != NULL &&
-					(blkid_dev_has_tag(dev, "TYPE", "ext4")
-						|| blkid_dev_has_tag(dev, "TYPE", "ext4dev")
-					)
-			)
-			rval = FileSystem::Ext4;
-
-			blkid_put_cache(cache);
-
-			free(pedPath);
-		}
-	}
-
-	return rval;
-}
-
 void Job::emitProgress(int i)
 {
 	 emit progress(i);
-}
-
-void Job::pedTimerHandler(PedTimer* pedTimer, void* ctx)
-{
-	if (ctx)
-	{
-		Job* job = reinterpret_cast<Job*>(ctx);
-
-		if (job)
-			job->emitProgress(pedTimer->frac * 100);
-	}
 }
 
 Report* Job::jobStarted(Report& parent)

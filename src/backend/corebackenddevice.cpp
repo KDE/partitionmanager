@@ -20,6 +20,7 @@
 #include "backend/corebackenddevice.h"
 
 CoreBackendDevice::CoreBackendDevice(const QString& device_node) :
-	m_DeviceNode(device_node)
+	m_DeviceNode(device_node),
+	m_Exclusive(false)
 {
 }

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -25,8 +25,6 @@
 
 #include <QObject>
 #include <qglobal.h>
-
-#include <parted/parted.h>
 
 class QString;
 class QIcon;
@@ -62,7 +60,7 @@ class Job : public QObject
 		Job();
 
 	public:
-		virtual ~Job();
+		virtual ~Job() {}
 
 	signals:
 		void started();
@@ -79,35 +77,18 @@ class Job : public QObject
 
 		JobStatus status() const { return m_Status; } /**< @return the Job's current status */
 
-		static FileSystem::Type detectFileSystem(PedDevice* pedDevice, PedPartition* pedPartition);
+		void emitProgress(int i);
 
 	protected:
-		bool openPed(const QString& path, bool diskFailOk = false);
-		void closePed();
-
-		bool commit(quint32 timeout = 10);
-		static bool commit(PedDisk* disk, quint32 timeout = 10);
-
 		bool copyBlocks(Report& report, CopyTarget& target, CopySource& source);
 		bool rollbackCopyBlocks(Report& report, CopyTarget& origTarget, CopySource& origSource);
-
-		FileSystem::Type detectFileSystemBySector(Report& report, Device& device, qint64 sector);
-
-		void emitProgress(int i);
 
 		Report* jobStarted(Report& parent);
 		void jobFinished(Report& report, bool b);
 
 		void setStatus(JobStatus s) { m_Status = s; }
 
-		PedDevice* pedDevice() { return m_PedDevice; }
-		PedDisk* pedDisk() { return m_PedDisk; }
-
-		static void pedTimerHandler(PedTimer* pedTimer, void* ctx);
-
 	private:
-		PedDevice* m_PedDevice;
-		PedDisk* m_PedDisk;
 		JobStatus m_Status;
 };
 

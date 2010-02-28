@@ -17,46 +17,36 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(LIBPARTEDDEVICE__H)
+#if !defined(COREBACKENDPARTITIONTABLE__H)
 
-#define LIBPARTEDDEVICE__H
+#define COREBACKENDPARTITIONTABLE__H
 
-#include "backend/corebackenddevice.h"
+#include "fs/filesystem.h"
 
 #include <qglobal.h>
 
-#include <parted/parted.h>
-
-class Partition;
-class PartitionTable;
+class CoreBackendPartition;
 class Report;
-class CoreBackendPartitionTable;
+class Partition;
 
-class LibPartedDevice : public CoreBackendDevice
+class CoreBackendPartitionTable
 {
-	Q_DISABLE_COPY(LibPartedDevice);
+	public:
+		virtual ~CoreBackendPartitionTable() {}
 
 	public:
-		LibPartedDevice(const QString& device_node);
-		~LibPartedDevice();
+		virtual bool open() = 0;
+		virtual bool commit(quint32 timeout = 10) = 0;
 
-	public:
-		virtual bool open();
-		virtual bool openExclusive();
-		virtual bool close();
+		virtual CoreBackendPartition* getExtendedPartition() = 0;
+		virtual CoreBackendPartition* getPartitionBySector(qint64 sector) = 0;
 
-		virtual CoreBackendPartitionTable* openPartitionTable();
-
-		virtual bool createPartitionTable(Report& report, PartitionTable& ptable);
-
-		virtual bool readSectors(void* buffer, qint64 offset, qint64 numSectors);
-		virtual bool writeSectors(void* buffer, qint64 offset, qint64 numSectors);
-
-	protected:
-		PedDevice* pedDevice() { return m_PedDevice; }
-
-	private:
-		PedDevice* m_PedDevice;
+		virtual bool createPartition(Report& report, Partition& partition) = 0;
+		virtual bool deletePartition(Report& report, Partition& partition) = 0;
+		virtual bool updateGeometry(Report& report, Partition& partition, qint64 sector_start, qint64 sector_end) = 0;
+		virtual bool clobberFileSystem(Report& report, Partition& partition) = 0;
+		virtual bool resizeFileSystem(Report& report, Partition& partition, qint64 newLength) = 0;
+		virtual FileSystem::Type detectFileSystemBySector(Report& report, Device& device, qint64 sector) = 0;
 };
 
 #endif

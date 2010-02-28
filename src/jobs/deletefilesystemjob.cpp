@@ -19,6 +19,10 @@
 
 #include "jobs/deletefilesystemjob.h"
 
+#include "backend/corebackend.h"
+#include "backend/corebackenddevice.h"
+#include "backend/corebackendpartitiontable.h"
+
 #include "core/partition.h"
 #include "core/device.h"
 
@@ -26,8 +30,6 @@
 
 #include <klocale.h>
 #include <kdebug.h>
-
-#include <parted/parted.h>
 
 /** Creates a new DeleteFileSystemJob
 	@param d the Device the FileSystem to delete is on
@@ -43,51 +45,45 @@ DeleteFileSystemJob::DeleteFileSystemJob(Device& d, Partition& p) :
 bool DeleteFileSystemJob::run(Report& parent)
 {
 	Q_ASSERT(device().deviceNode() == partition().devicePath());
-	
+
 	if (device().deviceNode() != partition().devicePath())
 	{
 		kWarning() << "deviceNode: " << device().deviceNode() << ", partition path: " << partition().devicePath();
 		return false;
 	}
-	
+
 	bool rval = false;
 
 	Report* report = jobStarted(parent);
-	
+
 	if (partition().roles().has(PartitionRole::Extended))
 		rval = true;
-	else if (openPed(device().deviceNode()))
+	else
 	{
-		if (PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), partition().firstSector()))
+		CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
+
+		if (backendDevice)
 		{
-			if (ped_file_system_clobber(&pedPartition->geom))
+			CoreBackendPartitionTable* backendPartitionTable = backendDevice->openPartitionTable();
+
+			if (backendPartitionTable)
 			{
-				if (pedPartition->type == PED_PARTITION_NORMAL || pedPartition->type == PED_PARTITION_LOGICAL)
-				{
-					if (ped_device_open(pedDevice()))
-					{
-						// libparted doesn't deal with reiser4, so we overwrite it ourselves here
-						rval = ped_geometry_write(&pedPartition->geom, "0000000", 128, 1);
+				rval = backendPartitionTable->clobberFileSystem(*report, partition());
 
-						if (!rval)
-							report->line() << i18nc("@info/plain", "Failed to erase reiser4 signature on partition <filename>%1</filename>.", partition().deviceNode());
+				if (!rval)
+					report->line() << i18nc("@info/plain", "Could not delete file system on <filename>%1</filename>.", partition().deviceNode());
 
-						ped_device_close(pedDevice());
-					}
-				}
-				else
-					rval = true;
+				delete backendPartitionTable;
+
 			}
 			else
-				report->line() << i18nc("@info/plain", "Failed to clobber file system on partition <filename>%1</filename>.", partition().deviceNode());
+				report->line() << i18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to delete file system on <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
+
+			delete backendDevice;
 		}
 		else
-			report->line() << i18nc("@info/plain", "Could not delete file system on partition <filename>%1</filename>: Failed to get partition.", partition().deviceNode());
-
-		closePed();
+			report->line() << i18nc("@info/plain", "Could not delete file system signature for partition <filename>%1</filename>: Failed to open device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
 	}
-	else
-		report->line() << i18nc("@info/plain", "Could not delete file system signature for partition <filename>%1</filename>: Failed to open device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
 
 	jobFinished(*report, rval);
 

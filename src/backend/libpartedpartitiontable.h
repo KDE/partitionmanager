@@ -17,46 +17,51 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(LIBPARTEDDEVICE__H)
+#if !defined(LIBPARTEDPARTITIONTABLE__H)
 
-#define LIBPARTEDDEVICE__H
+#define LIBPARTEDPARTITIONTABLE__H
 
-#include "backend/corebackenddevice.h"
+#include "backend/corebackendpartitiontable.h"
+
+#include "fs/filesystem.h"
 
 #include <qglobal.h>
 
 #include <parted/parted.h>
 
-class Partition;
-class PartitionTable;
+class CoreBackendPartition;
 class Report;
-class CoreBackendPartitionTable;
+class Partition;
 
-class LibPartedDevice : public CoreBackendDevice
+class LibPartedPartitionTable : public CoreBackendPartitionTable
 {
-	Q_DISABLE_COPY(LibPartedDevice);
-
 	public:
-		LibPartedDevice(const QString& device_node);
-		~LibPartedDevice();
+		LibPartedPartitionTable(PedDevice* device);
+		~LibPartedPartitionTable();
 
 	public:
 		virtual bool open();
-		virtual bool openExclusive();
-		virtual bool close();
 
-		virtual CoreBackendPartitionTable* openPartitionTable();
+		virtual bool commit(quint32 timeout = 10);
+		static bool commit(PedDisk* pd, quint32 timeout = 10);
 
-		virtual bool createPartitionTable(Report& report, PartitionTable& ptable);
+		virtual CoreBackendPartition* getExtendedPartition();
+		virtual CoreBackendPartition* getPartitionBySector(qint64 sector);
 
-		virtual bool readSectors(void* buffer, qint64 offset, qint64 numSectors);
-		virtual bool writeSectors(void* buffer, qint64 offset, qint64 numSectors);
+		virtual bool createPartition(Report& report, Partition& partition);
+		virtual bool deletePartition(Report& report, Partition& partition);
+		virtual bool updateGeometry(Report& report, Partition& partition, qint64 sector_start, qint64 sector_end);
+		virtual bool clobberFileSystem(Report& report, Partition& partition);
+		virtual bool resizeFileSystem(Report& report, Partition& partition, qint64 newLength);
+		virtual FileSystem::Type detectFileSystemBySector(Report& report, Device& device, qint64 sector);
 
-	protected:
+	private:
 		PedDevice* pedDevice() { return m_PedDevice; }
+		PedDisk* pedDisk() { return m_PedDisk; }
 
 	private:
 		PedDevice* m_PedDevice;
+		PedDisk* m_PedDisk;
 };
 
 #endif

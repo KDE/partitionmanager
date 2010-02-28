@@ -19,6 +19,10 @@
 
 #include "jobs/deletepartitionjob.h"
 
+#include "backend/corebackend.h"
+#include "backend/corebackenddevice.h"
+#include "backend/corebackendpartitiontable.h"
+
 #include "core/partition.h"
 #include "core/device.h"
 
@@ -26,8 +30,6 @@
 
 #include <klocale.h>
 #include <kdebug.h>
-
-#include <parted/parted.h>
 
 /** Creates a new DeletePartitionJob
 	@param d the Device the Partition to delete is on
@@ -43,7 +45,7 @@ DeletePartitionJob::DeletePartitionJob(Device& d, Partition& p) :
 bool DeletePartitionJob::run(Report& parent)
 {
 	Q_ASSERT(device().deviceNode() == partition().devicePath());
-	
+
 	if (device().deviceNode() != partition().devicePath())
 	{
 		kWarning() << "deviceNode: " << device().deviceNode() << ", partition path: " << partition().devicePath();
@@ -53,24 +55,27 @@ bool DeletePartitionJob::run(Report& parent)
 	bool rval = false;
 
 	Report* report = jobStarted(parent);
-	
-	if (openPed(device().deviceNode()))
-	{
-		PedPartition* pedPartition = partition().roles().has(PartitionRole::Extended)
-				? ped_disk_extended_partition(pedDisk())
-				: ped_disk_get_partition_by_sector(pedDisk(), partition().firstSector());
 
-		if (pedPartition)
+	CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
+
+	if (backendDevice)
+	{
+		CoreBackendPartitionTable* backendPartitionTable = backendDevice->openPartitionTable();
+
+		if (backendPartitionTable)
 		{
-			rval = ped_disk_delete_partition(pedDisk(), pedPartition) && commit();
+			rval = backendPartitionTable->deletePartition(*report, partition());
 
 			if (!rval)
 				report->line() << i18nc("@info/plain", "Could not delete partition <filename>%1</filename>.", partition().deviceNode());
+
+			delete backendPartitionTable;
+
 		}
 		else
-			report->line() << i18nc("@info/plain", "Deleting partition failed: Partition to delete (<filename>%1</filename>) not found on disk.", partition().deviceNode());
+			report->line() << i18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to delete partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
 
-		closePed();
+		delete backendDevice;
 	}
 	else
 		report->line() << i18nc("@info/plain", "Deleting partition failed: Could not open device <filename>%1</filename>.", device().deviceNode());

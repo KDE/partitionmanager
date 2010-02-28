@@ -44,6 +44,7 @@
 
 #include <parted/parted.h>
 #include <unistd.h>
+#include <blkid/blkid.h>
 
 static const LibPartedBackend::FlagMap flagmap[] =
 {
@@ -268,7 +269,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 			continue;
 
 		PartitionRole::Roles r = PartitionRole::None;
-		FileSystem::Type type = Job::detectFileSystem(pedDevice, pedPartition);
+		FileSystem::Type type = LibPartedBackend::detectFileSystem(pedDevice, pedPartition);
 
 		switch(pedPartition->type)
 		{
@@ -333,6 +334,11 @@ LibPartedBackend::LibPartedBackend() :
 	ped_exception_set_handler(pedExceptionHandler);
 }
 
+QString LibPartedBackend::about() const
+{
+	return QString("LibPartedBackend (%1)").arg(ped_get_version());
+}
+
 /** Return a map of partition flags from libparted flags to PartitionTable::Flags
 	@return the map
 */
@@ -382,7 +388,20 @@ CoreBackendDevice* LibPartedBackend::openDevice(const QString& device_node)
 {
 	LibPartedDevice* device = new LibPartedDevice(device_node);
 
-	if (!device->open())
+	if (device == NULL || !device->open())
+	{
+		delete device;
+		device = NULL;
+	}
+
+	return device;
+}
+
+CoreBackendDevice* LibPartedBackend::openDeviceExclusive(const QString& device_node)
+{
+	LibPartedDevice* device = new LibPartedDevice(device_node);
+
+	if (device == NULL || !device->openExclusive())
 	{
 		delete device;
 		device = NULL;
@@ -393,6 +412,73 @@ CoreBackendDevice* LibPartedBackend::openDevice(const QString& device_node)
 
 bool LibPartedBackend::closeDevice(CoreBackendDevice* core_device)
 {
-	delete core_device;
-	return true;
+	return core_device->close();
+}
+
+/** Detects the type of a FileSystem given a PedDevice and a PedPartition
+	@param pedDevice pointer to the pedDevice. Must not be NULL.
+	@param pedPartition pointer to the pedPartition. Must not be NULL
+	@return the detected FileSystem type (FileSystem::Unknown if not detected)
+*/
+FileSystem::Type LibPartedBackend::detectFileSystem(PedDevice* pedDevice, PedPartition* pedPartition)
+{
+	FileSystem::Type rval = FileSystem::Unknown;
+	const QString s = pedPartition->fs_type ? pedPartition->fs_type->name : QString();
+
+	if (s == "extended") rval = FileSystem::Extended;
+	else if (s == "ext2") rval = FileSystem::Ext2;
+	else if (s == "ext3") rval = FileSystem::Ext3;
+	else if (s == "ext4") rval = FileSystem::Ext4;
+	else if (s.startsWith("linux-swap")) rval = FileSystem::LinuxSwap;
+	else if (s == "fat16") rval = FileSystem::Fat16;
+	else if (s == "fat32") rval = FileSystem::Fat32;
+	else if (s == "ntfs") rval = FileSystem::Ntfs;
+	else if (s == "reiserfs") rval = FileSystem::ReiserFS;
+	else if (s == "xfs") rval = FileSystem::Xfs;
+	else if (s == "jfs") rval = FileSystem::Jfs;
+	else if (s == "hfs") rval = FileSystem::Hfs;
+	else if (s == "hfs+") rval = FileSystem::HfsPlus;
+	else if (s == "ufs") rval = FileSystem::Ufs;
+
+	if (rval == FileSystem::Unknown)
+	{
+		// detect Reiser4, libparted doesn't deal with it
+		char* buf = static_cast<char*>(malloc(pedDevice->sector_size));
+
+		if (buf != NULL)
+		{
+			ped_device_open(pedDevice);
+			ped_geometry_read(&pedPartition->geom, buf, 128, 1);
+			ped_device_close(pedDevice);
+
+			if (QString(buf) == "ReIsEr4")
+				rval = FileSystem::Reiser4;
+
+			free(buf);
+		}
+	}
+
+	if (rval == FileSystem::Ext3)
+	{
+		blkid_cache cache;
+		char* pedPath = NULL;
+
+		if (blkid_get_cache(&cache, NULL) == 0 && (pedPath = ped_partition_get_path(pedPartition)))
+		{
+			blkid_dev dev;
+
+			if ((dev = blkid_get_dev(cache, pedPath, BLKID_DEV_NORMAL)) != NULL &&
+					(blkid_dev_has_tag(dev, "TYPE", "ext4")
+						|| blkid_dev_has_tag(dev, "TYPE", "ext4dev")
+					)
+			)
+			rval = FileSystem::Ext4;
+
+			blkid_put_cache(cache);
+
+			free(pedPath);
+		}
+	}
+
+	return rval;
 }

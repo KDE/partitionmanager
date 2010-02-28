@@ -25,6 +25,8 @@
 
 #include "core/partitiontable.h"
 
+#include "fs/filesystem.h"
+
 #include <parted/parted.h>
 
 #include <qglobal.h>
@@ -60,9 +62,14 @@ class LibPartedBackend : public CoreBackend
 		static quint32 flagMapSize();
 
 		virtual CoreBackendDevice* openDevice(const QString& device_node);
+		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node);
 		virtual bool closeDevice(CoreBackendDevice* core_device);
 
+		virtual QString about() const;
+
 		Device* scanDevice(const QString& device_node);
+
+		static FileSystem::Type detectFileSystem(PedDevice* pedDevice, PedPartition* pedPartition);
 };
 
 #endif

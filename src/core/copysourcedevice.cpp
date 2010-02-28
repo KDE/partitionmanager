@@ -17,12 +17,13 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
+#include "backend/corebackend.h"
+#include "backend/corebackenddevice.h"
+
 #include "core/copysourcedevice.h"
 #include "core/copytarget.h"
 #include "core/copytargetdevice.h"
 #include "core/device.h"
-
-#include <parted/parted.h>
 
 #include <kdebug.h>
 
@@ -36,14 +37,14 @@ CopySourceDevice::CopySourceDevice(Device& d, qint64 firstsector, qint64 lastsec
 	m_Device(d),
 	m_FirstSector(firstsector),
 	m_LastSector(lastsector),
-	m_PedDevice(NULL)
+	m_BackendDevice(NULL)
 {
 }
 
 /** Destructs a CopySourceDevice */
 CopySourceDevice::~CopySourceDevice()
 {
-	ped_device_close(m_PedDevice);
+	delete m_BackendDevice;
 }
 
 /** Opens the Device
@@ -51,8 +52,8 @@ CopySourceDevice::~CopySourceDevice()
 */
 bool CopySourceDevice::open()
 {
-	m_PedDevice = ped_device_get(device().deviceNode().toAscii());
-	return m_PedDevice != NULL && ped_device_open(m_PedDevice);
+	m_BackendDevice = CoreBackend::self()->openDeviceExclusive(device().deviceNode());
+	return m_BackendDevice != NULL;
 }
 
 /** Returns the Device's sector size
@@ -84,7 +85,7 @@ qint64 CopySourceDevice::length() const
 bool CopySourceDevice::readSectors(void* buffer, qint64 readOffset, qint64 numSectors)
 {
 	Q_ASSERT(readOffset >= 0);
-	return ped_device_read(m_PedDevice, buffer, readOffset, numSectors);
+	return m_BackendDevice->readSectors(buffer, readOffset, numSectors);
 }
 
 /** Checks if this CopySourceDevice overlaps with the given CopyTarget
@@ -96,7 +97,7 @@ bool CopySourceDevice::overlaps(const CopyTarget& target) const
 	try
 	{
 		const CopyTargetDevice& t = dynamic_cast<const CopyTargetDevice&>(target);
-		
+
 		if (device().deviceNode() != t.device().deviceNode())
 			return false;
 

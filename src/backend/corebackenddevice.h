@@ -25,7 +25,9 @@
 #include <qglobal.h>
 
 class CoreBackendPartition;
+class CoreBackendPartitionTable;
 class Partition;
+class PartitionTable;
 class Report;
 
 class CoreBackendDevice
@@ -36,18 +38,25 @@ class CoreBackendDevice
 
 	public:
 		virtual const QString& deviceNode() const { return m_DeviceNode; }
+		virtual bool isExclusive() const { return m_Exclusive; }
 
 		virtual bool open() = 0;
+		virtual bool openExclusive() = 0;
 		virtual bool close() = 0;
-		virtual bool commit(quint32 timeout = 10) = 0;
-		virtual CoreBackendPartition* getExtendedPartition() = 0;
-		virtual CoreBackendPartition* getPartitionBySector(qint64 sector) = 0;
 
-		virtual bool createPartition(Report& report, Partition& partition) = 0;
+		virtual CoreBackendPartitionTable* openPartitionTable() = 0;
+
+		virtual bool createPartitionTable(Report& report, PartitionTable& ptable) = 0;
+
+		virtual bool readSectors(void* buffer, qint64 offset, qint64 numSectors) = 0;
+		virtual bool writeSectors(void* buffer, qint64 offset, qint64 numSectors) = 0;
+
+	protected:
+		void setExclusive(bool b) { m_Exclusive = b; }
 
 	private:
 		const QString m_DeviceNode;
+		bool m_Exclusive;
 };
-
 
 #endif

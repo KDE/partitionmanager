@@ -21,6 +21,7 @@
 
 #include "backend/corebackend.h"
 #include "backend/corebackenddevice.h"
+#include "backend/corebackendpartitiontable.h"
 
 #include "core/partition.h"
 #include "core/device.h"
@@ -28,8 +29,6 @@
 #include "util/report.h"
 
 #include <klocale.h>
-
-#include <parted/parted.h>
 
 /** Creates a new CreatePartitionJob
 	@param d the Device the Partition to be created will be on
@@ -54,13 +53,19 @@ bool CreatePartitionJob::run(Report& parent)
 
 	if (backendDevice)
 	{
-		if (!backendDevice->createPartition(*report, partition()))
-			report->line() << i18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
-		else
+		CoreBackendPartitionTable* backendPartitionTable = backendDevice->openPartitionTable();
+
+		if (backendPartitionTable)
 		{
-			backendDevice->commit();
-			rval = true;
+			rval = backendPartitionTable->createPartition(*report, partition());
+
+			if (!rval)
+				report->line() << i18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
+
+			delete backendPartitionTable;
 		}
+		else
+			report->line() << i18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to create new partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
 
 		delete backendDevice;
 	}

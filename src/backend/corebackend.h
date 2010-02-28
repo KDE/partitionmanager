@@ -39,11 +39,14 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend
 		static CoreBackend* self();
 
 		virtual CoreBackendDevice* openDevice(const QString& device_node) = 0;
+		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node) = 0;
+
 		virtual bool closeDevice(CoreBackendDevice* core_device) = 0;
+
+		virtual QString about() const = 0;
 
 	public:
 		virtual Device* scanDevice(const QString& device_node) = 0;
 };
-
 
 #endif

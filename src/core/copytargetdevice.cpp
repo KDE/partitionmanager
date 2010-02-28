@@ -17,10 +17,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
+#include "backend/corebackend.h"
+#include "backend/corebackenddevice.h"
+
 #include "core/copytargetdevice.h"
 #include "core/device.h"
 
-#include <parted/parted.h>
 
 /** Constructs a device to copy to.
 	@param d the Device to copy to
@@ -30,7 +32,7 @@
 CopyTargetDevice::CopyTargetDevice(Device& d, qint64 firstsector, qint64 lastsector) :
 	CopyTarget(),
 	m_Device(d),
-	m_PedDevice(NULL),
+	m_BackendDevice(NULL),
 	m_FirstSector(firstsector),
 	m_LastSector(lastsector)
 {
@@ -39,7 +41,7 @@ CopyTargetDevice::CopyTargetDevice(Device& d, qint64 firstsector, qint64 lastsec
 /** Destructs a CopyTargetDevice */
 CopyTargetDevice::~CopyTargetDevice()
 {
-	ped_device_close(m_PedDevice);
+	delete m_BackendDevice;
 }
 
 /** Opens a CopyTargetDevice for writing to.
@@ -47,8 +49,8 @@ CopyTargetDevice::~CopyTargetDevice()
 */
 bool CopyTargetDevice::open()
 {
-	m_PedDevice = ped_device_get(device().deviceNode().toAscii());
-	return m_PedDevice != NULL && ped_device_open(m_PedDevice);
+	m_BackendDevice = CoreBackend::self()->openDeviceExclusive(device().deviceNode());
+	return m_BackendDevice != NULL;
 }
 
 /** @return the Device's sector size */
@@ -69,7 +71,7 @@ qint32 CopyTargetDevice::sectorSize() const
 bool CopyTargetDevice::writeSectors(void* buffer, qint64 writeOffset, qint64 numSectors)
 {
 	Q_ASSERT(writeOffset >= 0);
-	bool rval = ped_device_write(m_PedDevice, buffer, writeOffset, numSectors);
+	bool rval = m_BackendDevice->writeSectors(buffer, writeOffset, numSectors);
 
 	if (rval)
 		setSectorsWritten(sectorsWritten() + numSectors);

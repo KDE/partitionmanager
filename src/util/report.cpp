@@ -19,6 +19,8 @@
 
 #include "util/report.h"
 
+#include "backend/corebackend.h"
+
 #include <QTextDocument>
 
 #include <kdeversion.h>
@@ -27,8 +29,6 @@
 #include <kaboutdata.h>
 #include <klocale.h>
 #include <kcomponentdata.h>
-
-#include <parted/parted.h>
 
 #include <sys/utsname.h>
 #include <unistd.h>
@@ -98,7 +98,7 @@ QString Report::htmlHeader()
 	s += "<table>\n";
 	s += tableLine(i18n("Date:"), KGlobal::locale()->formatDateTime(KDateTime::currentLocalDateTime()));
 	s += tableLine(i18n("Program version:"), KGlobal::mainComponent().aboutData()->version());
-	s += tableLine(i18n("LibParted version:"), ped_get_version());
+	s += tableLine(i18n("Backend:"), CoreBackend::self()->about());
 	s += tableLine(i18n("KDE version:"), KDE_VERSION_STRING);
 	s += tableLine(i18n("Machine:"), unameString);
 	s += tableLine(i18n("User ID:"), QString::number(geteuid()));

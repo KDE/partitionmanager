@@ -30,7 +30,7 @@
 
 class Device;
 class OperationStack;
-class LibPartedDevice;
+class LibPartedPartitionTable;
 
 class PartResizerWidget;
 class InsertDialog;
@@ -72,7 +72,7 @@ class Partition : public PartitionNode
 	friend class OperationStack;
 	friend class Device;
 	friend class PartitionNode;
-	friend class LibPartedDevice;
+	friend class LibPartedPartitionTable;
 
 	friend class PartResizerWidget;
 	friend class InsertDialog;
