@@ -1,13 +1,5 @@
 Random plans and ideas for 1.1 and beyond:
 
-* To say it bluntly: libparted is a complete dead end. What we have to do is
-  separate the backend logic from the core and write backend interfaces so
-  partitionmanager can make use of other backends apart from libparted. KDE's
-  own Solid would of course be candidate #1 here; unfortunately, it doesn't
-  implement much of what HAL does regarding disks, partitions and file systems.
-  Also, DeviceKit-disks is around the corner and implementations using it for
-  solid begin to materialize.
-
 * The whole lvm/dm debacle. Nothing much useful can be done about it without
   the backend stuff mentioned above, though.
 
@@ -23,5 +15,5 @@ Random plans and ideas for 1.1 and beyond:
 
 * Check if no of sectors fits in an unsigned 32 bit int for msdos partition tables.
 
-* The KPart works but had problems: The context menus don't show up, the status
+* The KPart works but has problems: The context menus don't show up, the status
   bar is missing, maybe more.
