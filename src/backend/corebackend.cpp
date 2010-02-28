@@ -18,7 +18,7 @@
  ***************************************************************************/
 
 #include "backend/corebackend.h"
-#include "backend/libpartedbackend.h"
+#include "backend/libparted/libpartedbackend.h"
 
 CoreBackend* CoreBackend::self()
 {

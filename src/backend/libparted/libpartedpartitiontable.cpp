@@ -17,9 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "backend/libpartedpartitiontable.h"
-#include "backend/libpartedpartition.h"
-#include "backend/libpartedbackend.h"
+#include "backend/libparted/libpartedpartitiontable.h"
+#include "backend/libparted/libpartedpartition.h"
+#include "backend/libparted/libpartedbackend.h"
 
 #include "core/partition.h"
 #include "core/device.h"

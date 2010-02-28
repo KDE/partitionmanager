@@ -19,6 +19,7 @@
 
 file(GLOB partitionmanagerprivate_SRCS
 	backend/*.cpp
+	backend/libparted/*.cpp
 	core/*.cpp
 	util/*.cpp
 	ops/*.cpp
