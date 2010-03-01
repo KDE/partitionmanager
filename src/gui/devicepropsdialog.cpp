@@ -61,8 +61,31 @@ void DevicePropsDialog::setupDialog()
 	enableButtonOk(false);
 	button(KDialog::Cancel)->setFocus();
 
-	dialogWidget().partTableWidget().setReadOnly(true);
-	dialogWidget().partTableWidget().setPartitionTable(device().partitionTable());
+	QString type = "---";
+	QString maxPrimaries = "---";
+
+	if (device().partitionTable() != NULL)
+	{
+		type = (device().partitionTable()->isReadOnly())
+			? i18nc("@label device", "%1 (read only)", device().partitionTable()->typeName())
+			: device().partitionTable()->typeName();
+		maxPrimaries = QString("%1/%2").arg(device().partitionTable()->numPrimaries()).arg(device().partitionTable()->maxPrimaries());
+
+		dialogWidget().partTableWidget().setReadOnly(true);
+		dialogWidget().partTableWidget().setPartitionTable(device().partitionTable());
+
+		if (device().partitionTable()->type() == PartitionTable::msdos)
+			dialogWidget().radioCylinderBased().setChecked(true);
+		else if (device().partitionTable()->type() == PartitionTable::msdos_sectorbased)
+			dialogWidget().radioSectorBased().setChecked(true);
+		else
+			dialogWidget().hideTypeRadioButtons();
+	}
+	else
+	{
+		dialogWidget().partTableWidget().setVisible(false);
+		dialogWidget().hideTypeRadioButtons();
+	}
 
 	dialogWidget().capacity().setText(Capacity(device()).toString(Capacity::AppendUnit | Capacity::AppendBytes));
 
@@ -72,22 +95,10 @@ void DevicePropsDialog::setupDialog()
 	dialogWidget().chs().setText(QString("%1/%2/%3").arg(cyls).arg(heads).arg(sectors));
 
 	dialogWidget().cylinderSize().setText(i18ncp("@label", "1 Sector", "%1 Sectors", device().cylinderSize()));
-	dialogWidget().primariesMax().setText(QString("%1/%2").arg(device().partitionTable()->numPrimaries()).arg(device().partitionTable()->maxPrimaries()));
+	dialogWidget().primariesMax().setText(maxPrimaries);
 	dialogWidget().sectorSize().setText(Capacity(device().sectorSize()).toString(Capacity::Byte, Capacity::AppendUnit));
 	dialogWidget().totalSectors().setText(KGlobal::locale()->formatNumber(device().totalSectors(), 0));
-
-	const QString type = device().partitionTable()->isReadOnly()
-			? i18nc("@label device", "%1 (read only)", device().partitionTable()->typeName())
-			: device().partitionTable()->typeName();
-
 	dialogWidget().type().setText(type);
-
-	if (device().partitionTable()->type() == PartitionTable::msdos)
-		dialogWidget().radioCylinderBased().setChecked(true);
-	else if (device().partitionTable()->type() == PartitionTable::msdos_sectorbased)
-		dialogWidget().radioSectorBased().setChecked(true);
-	else
-		dialogWidget().hideTypeRadioButtons();
 
 	setMinimumSize(dialogWidget().size());
 	resize(dialogWidget().size());
