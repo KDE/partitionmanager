@@ -21,6 +21,8 @@
 
 #define COREBACKENDPARTITIONTABLE__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -29,7 +31,7 @@ class CoreBackendPartition;
 class Report;
 class Partition;
 
-class CoreBackendPartitionTable
+class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendPartitionTable
 {
 	public:
 		virtual ~CoreBackendPartitionTable() {}

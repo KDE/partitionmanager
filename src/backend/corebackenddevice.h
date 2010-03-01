@@ -21,6 +21,8 @@
 
 #define COREBACKENDDEVICE__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include <QString>
 #include <qglobal.h>
 
@@ -30,7 +32,7 @@ class Partition;
 class PartitionTable;
 class Report;
 
-class CoreBackendDevice
+class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendDevice
 {
 	public:
 		CoreBackendDevice(const QString& device_node);

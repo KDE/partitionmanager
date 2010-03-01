@@ -21,11 +21,13 @@
 
 #define COREBACKENDPARTITION__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "core/partitiontable.h"
 
 class Report;
 
-class CoreBackendPartition
+class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendPartition
 {
 	public:
 		CoreBackendPartition();
