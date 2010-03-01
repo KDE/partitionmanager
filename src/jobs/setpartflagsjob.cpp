@@ -73,7 +73,7 @@ bool SetPartFlagsJob::run(Report& parent)
 			{
 				quint32 count = 0;
 
-				foreach(PartitionTable::Flag f, PartitionTable::flagList())
+				foreach(const PartitionTable::Flag& f, PartitionTable::flagList())
 				{
 					emit progress(++count);
 
