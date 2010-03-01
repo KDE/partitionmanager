@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "backend/dummy/dummydevice.h"
-#include "backend/dummy/dummypartitiontable.h"
+#include "plugins/dummy/dummydevice.h"
+#include "plugins/dummy/dummypartitiontable.h"
 
 #include "core/partitiontable.h"
 
@@ -67,11 +67,18 @@ CoreBackendPartitionTable* DummyDevice::openPartitionTable()
 
 bool DummyDevice::createPartitionTable(Report& report, const PartitionTable& ptable)
 {
+	Q_UNUSED(report);
+	Q_UNUSED(ptable);
+
 	return true;
 }
 
 bool DummyDevice::readSectors(void* buffer, qint64 offset, qint64 numSectors)
 {
+	Q_UNUSED(buffer);
+	Q_UNUSED(offset);
+	Q_UNUSED(numSectors);
+
 	if (!isExclusive())
 		return false;
 
@@ -80,6 +87,10 @@ bool DummyDevice::readSectors(void* buffer, qint64 offset, qint64 numSectors)
 
 bool DummyDevice::writeSectors(void* buffer, qint64 offset, qint64 numSectors)
 {
+	Q_UNUSED(buffer);
+	Q_UNUSED(offset);
+	Q_UNUSED(numSectors);
+
 	if (!isExclusive())
 		return false;
 

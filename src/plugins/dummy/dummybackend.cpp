@@ -20,8 +20,8 @@
 /** @file
 */
 
-#include "backend/dummy/dummybackend.h"
-#include "backend/dummy/dummydevice.h"
+#include "plugins/dummy/dummybackend.h"
+#include "plugins/dummy/dummydevice.h"
 
 #include "core/device.h"
 #include "core/partition.h"

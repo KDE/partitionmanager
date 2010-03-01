@@ -20,8 +20,8 @@
 /** @file
 */
 
-#include "backend/libparted/libpartedbackend.h"
-#include "backend/libparted/libparteddevice.h"
+#include "plugins/libparted/libpartedbackend.h"
+#include "plugins/libparted/libparteddevice.h"
 
 #include "core/device.h"
 #include "core/partition.h"

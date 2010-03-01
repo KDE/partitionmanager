@@ -17,9 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "backend/dummy/dummypartitiontable.h"
-#include "backend/dummy/dummypartition.h"
-#include "backend/dummy/dummybackend.h"
+#include "plugins/dummy/dummypartitiontable.h"
+#include "plugins/dummy/dummypartition.h"
+#include "plugins/dummy/dummybackend.h"
 
 #include "core/partition.h"
 #include "core/device.h"
@@ -50,6 +50,8 @@ bool DummyPartitionTable::open()
 
 bool DummyPartitionTable::commit(quint32 timeout)
 {
+	Q_UNUSED(timeout);
+
 	return true;
 }
 
@@ -60,36 +62,61 @@ CoreBackendPartition* DummyPartitionTable::getExtendedPartition()
 
 CoreBackendPartition* DummyPartitionTable::getPartitionBySector(qint64 sector)
 {
+	Q_UNUSED(sector);
+
 	return new DummyPartition();
 }
 
 bool DummyPartitionTable::createPartition(Report& report, const Partition& partition, quint32& new_number)
 {
+	Q_UNUSED(report);
+	Q_UNUSED(partition);
+	Q_UNUSED(new_number);
+
 	return true;
 }
 
 bool DummyPartitionTable::deletePartition(Report& report, const Partition& partition)
 {
+	Q_UNUSED(report);
+	Q_UNUSED(partition);
+
 	return true;
 }
 
 bool DummyPartitionTable::updateGeometry(Report& report, const Partition& partition, qint64 sector_start, qint64 sector_end)
 {
+	Q_UNUSED(report);
+	Q_UNUSED(partition);
+	Q_UNUSED(sector_start);
+	Q_UNUSED(sector_end);
+
 	return true;
 }
 
 bool DummyPartitionTable::clobberFileSystem(Report& report, const Partition& partition)
 {
+	Q_UNUSED(report);
+	Q_UNUSED(partition);
+
 	return true;
 }
 
 bool DummyPartitionTable::resizeFileSystem(Report& report, const Partition& partition, qint64 newLength)
 {
+	Q_UNUSED(report);
+	Q_UNUSED(partition);
+	Q_UNUSED(newLength);
+
 	return true;
 }
 
 FileSystem::Type DummyPartitionTable::detectFileSystemBySector(Report& report, const Device& device, qint64 sector)
 {
+	Q_UNUSED(report);
+	Q_UNUSED(device);
+	Q_UNUSED(sector);
+
 	FileSystem::Type rval = FileSystem::Unknown;
 	return rval;
 }

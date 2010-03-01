@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "backend/dummy/dummypartition.h"
-#include "backend/dummy/dummybackend.h"
+#include "plugins/dummy/dummypartition.h"
+#include "plugins/dummy/dummybackend.h"
 
 #include "util/report.h"
 
@@ -32,6 +32,10 @@ DummyPartition::DummyPartition() :
 
 bool DummyPartition::setFlag(Report& report, PartitionTable::Flag partitionManagerFlag, bool state)
 {
+	Q_UNUSED(report);
+	Q_UNUSED(partitionManagerFlag);
+	Q_UNUSED(state);
+
 	return true;
 }
 

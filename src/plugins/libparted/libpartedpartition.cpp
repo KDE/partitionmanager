@@ -17,8 +17,8 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "backend/libparted/libpartedpartition.h"
-#include "backend/libparted/libpartedbackend.h"
+#include "plugins/libparted/libpartedpartition.h"
+#include "plugins/libparted/libpartedbackend.h"
 
 #include "util/report.h"
 

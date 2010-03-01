@@ -17,11 +17,6 @@
 
 ############################################
 
-add_subdirectory(backend/libparted)
-add_subdirectory(backend/dummy)
-
-############################################
-
 file(GLOB partitionmanagerprivate_SRCS
 	backend/*.cpp
 	core/*.cpp
@@ -90,4 +85,8 @@ if(PARTMAN_KPART)
 	endif(PARTMAN_KPART_TEST)
 
 endif(PARTMAN_KPART)
+
+############################################
+
+add_subdirectory(plugins)
 
