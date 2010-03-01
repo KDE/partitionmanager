@@ -461,7 +461,8 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 			return NULL;
 		}
 
-		// Leave a track (msdos) or sector alignment sectors (vista) free at the start for a new partition's metadata
+		// Leave a track (cylinder aligned) or sector alignment sectors (sector based) free at the
+		// start for a new partition's metadata
 		start += device.partitionTable()->type() == PartitionTable::msdos ? device.sectorsPerTrack() : sectorAlignment(device);
 
 		// .. and also at the end for the metadata for a partition to follow us, if we're not
@@ -567,7 +568,7 @@ void PartitionTable::updateUnallocated(const Device& d)
 
 qint64 PartitionTable::defaultFirstUsable(const Device& d, TableType t)
 {
-	if (t == msdos && Config::useLegacyMsDosAlignment())
+	if (t == msdos && Config::useCylinderAlignment())
 		return d.sectorsPerTrack();
 
 	return Config::sectorAlignment();
@@ -594,7 +595,7 @@ static struct
 	{ "bsd", 8, false, true, PartitionTable::bsd },
 	{ "dasd", 1, false, true, PartitionTable::dasd },
 	{ "msdos", 4, true, false, PartitionTable::msdos },
-	{ "msdos (vista)", 4, true, false, PartitionTable::msdos_vista },
+	{ "msdos", 4, true, false, PartitionTable::msdos_sectorbased },
 	{ "dvh", 16, true, true, PartitionTable::dvh },
 	{ "gpt", 128, false, false, PartitionTable::gpt },
 	{ "loop", 1, false, true, PartitionTable::loop },
@@ -649,25 +650,25 @@ bool PartitionTable::tableTypeIsReadOnly(TableType l)
 	return false;
 }
 
-/** Simple heuristic to determine if the PartitionTable is MS Vista compatible (i.e.
+/** Simple heuristic to determine if the PartitionTable is sector aligned (i.e.
 	if its Partitions begin at sectors evenly divisable by Config::sectorAlignment().
-	@return true if is msdos_vista, otherwise false
+	@return true if is sector aligned, otherwise false
 */
-bool PartitionTable::isVistaTableType() const
+bool PartitionTable::isSectorBased() const
 {
 	if (type() == PartitionTable::msdos)
 	{
-		// user has turned ms dos legacy off and partition table is empty
-		if (Config::useLegacyMsDosAlignment() == false && children().size() == 0)
+		// user has turned cylinder based alignment off and partition table is empty
+		if (Config::useCylinderAlignment() == false && children().size() == 0)
 			return true;
 
 		// if not all partitions start at a point evenly divisable by sectorAlignment it's
-		// a legacy msdos partition table
+		// a cylinder-aligned msdos partition table
 		foreach(const Partition* p, children())
 			if (p->firstSector() % Config::sectorAlignment() != 0)
 				return false;
 
-		// must be vista
+		// must be sector aligned
 		return true;
 	}
 

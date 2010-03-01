@@ -81,16 +81,16 @@
    <item row="3" column="1">
     <layout class="QHBoxLayout" name="m_TypeLayout">
      <item>
-      <widget class="QRadioButton" name="m_RadioLegacy">
+      <widget class="QRadioButton" name="m_RadioCylinderBased">
        <property name="text">
-        <string>Legacy Alignment</string>
+        <string>Cylinder  Alignment</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="m_RadioVista">
+      <widget class="QRadioButton" name="m_RadioSectorBased">
        <property name="text">
-        <string>Vista Compatible Alignment</string>
+        <string>Sector Based Alignment</string>
        </property>
       </widget>
      </item>

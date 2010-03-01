@@ -42,8 +42,8 @@ PartitionTable::TableType CreatePartitionTableDialog::type() const
 	if (widget().radioGPT().isChecked())
 		return PartitionTable::gpt;
 
-	if (widget().radioMSDOS().isChecked() && Config::useLegacyMsDosAlignment() == true)
+	if (widget().radioMSDOS().isChecked() && Config::useCylinderAlignment() == true)
 		return PartitionTable::msdos;
 
-	return PartitionTable::msdos_vista;
+	return PartitionTable::msdos_sectorbased;
 }

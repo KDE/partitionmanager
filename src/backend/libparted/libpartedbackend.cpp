@@ -322,8 +322,8 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 
 	d.partitionTable()->updateUnallocated(d);
 
-	if (d.partitionTable()->isVistaTableType())
-		d.partitionTable()->setType(d, PartitionTable::msdos_vista);
+	if (d.partitionTable()->isSectorBased())
+		d.partitionTable()->setType(d, PartitionTable::msdos_sectorbased);
 
 	foreach(const Partition* part, partitions)
 		PartitionTable::isAligned(d, *part);

@@ -56,7 +56,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 			bsd,
 			dasd,
 			msdos,
-			msdos_vista,
+			msdos_sectorbased,
 			dvh,
 			gpt,
 			loop,
@@ -123,7 +123,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 		void updateUnallocated(const Device& d);
 		void insertUnallocated(const Device& d, PartitionNode* p, qint64 start) const;
 
-		bool isVistaTableType() const;
+		bool isSectorBased() const;
 
 		static QList<Flag> flagList();
 		static QString flagName(Flag f);

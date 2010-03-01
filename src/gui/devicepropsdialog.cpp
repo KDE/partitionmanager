@@ -83,9 +83,9 @@ void DevicePropsDialog::setupDialog()
 	dialogWidget().type().setText(type);
 
 	if (device().partitionTable()->type() == PartitionTable::msdos)
-		dialogWidget().radioLegacy().setChecked(true);
-	else if (device().partitionTable()->type() == PartitionTable::msdos_vista)
-		dialogWidget().radioVista().setChecked(true);
+		dialogWidget().radioCylinderBased().setChecked(true);
+	else if (device().partitionTable()->type() == PartitionTable::msdos_sectorbased)
+		dialogWidget().radioSectorBased().setChecked(true);
 	else
 		dialogWidget().hideTypeRadioButtons();
 
@@ -95,8 +95,8 @@ void DevicePropsDialog::setupDialog()
 
 void DevicePropsDialog::setupConnections()
 {
-	connect(&dialogWidget().radioVista(), SIGNAL(toggled(bool)), SLOT(setDirty(bool)));
-	connect(&dialogWidget().radioLegacy(), SIGNAL(toggled(bool)), SLOT(setDirty(bool)));
+	connect(&dialogWidget().radioSectorBased(), SIGNAL(toggled(bool)), SLOT(setDirty(bool)));
+	connect(&dialogWidget().radioCylinderBased(), SIGNAL(toggled(bool)), SLOT(setDirty(bool)));
 }
 
 void DevicePropsDialog::setDirty(bool)
@@ -105,12 +105,12 @@ void DevicePropsDialog::setDirty(bool)
 	enableButtonOk(true);
 }
 
-bool DevicePropsDialog::legacyAlignment() const
+bool DevicePropsDialog::cylinderBasedAlignment() const
 {
-	return dialogWidget().radioLegacy().isChecked();
+	return dialogWidget().radioCylinderBased().isChecked();
 }
 
-bool DevicePropsDialog::vistaAlignment() const
+bool DevicePropsDialog::sectorBasedAlignment() const
 {
-	return dialogWidget().radioVista().isChecked();
+	return dialogWidget().radioSectorBased().isChecked();
 }

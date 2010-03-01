@@ -45,8 +45,8 @@ class DevicePropsDialog : public KDialog
 		~DevicePropsDialog();
 
 	public:
-		bool legacyAlignment() const;
-		bool vistaAlignment() const;
+		bool cylinderBasedAlignment() const;
+		bool sectorBasedAlignment() const;
 
 	protected:
 		void setupDialog();

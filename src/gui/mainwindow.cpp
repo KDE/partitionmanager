@@ -688,9 +688,9 @@ void MainWindow::onPropertiesDevice(const QString&)
 		QPointer<DevicePropsDialog> dlg = new DevicePropsDialog(this, d);
 		if (dlg->exec() == KDialog::Accepted)
 		{
-			if (d.partitionTable()->type() == PartitionTable::msdos && dlg->vistaAlignment())
-				d.partitionTable()->setType(d, PartitionTable::msdos_vista);
-			else if (d.partitionTable()->type() == PartitionTable::msdos_vista && dlg->legacyAlignment())
+			if (d.partitionTable()->type() == PartitionTable::msdos && dlg->sectorBasedAlignment())
+				d.partitionTable()->setType(d, PartitionTable::msdos_sectorbased);
+			else if (d.partitionTable()->type() == PartitionTable::msdos_sectorbased && dlg->cylinderBasedAlignment())
 				d.partitionTable()->setType(d, PartitionTable::msdos);
 
 			on_m_OperationStack_devicesChanged();
