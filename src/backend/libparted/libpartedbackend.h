@@ -29,10 +29,12 @@
 
 #include <parted/parted.h>
 
+#include <QList>
+#include <QVariant>
 #include <qglobal.h>
 
 class Device;
-
+class KPluginFactory;
 class QString;
 
 /** @brief Device scanning done by libparted.
@@ -43,7 +45,7 @@ class QString;
 */
 class LibPartedBackend : public CoreBackend
 {
-	friend class CoreBackend;
+	friend class KPluginFactory;
 
 	Q_DISABLE_COPY(LibPartedBackend)
 
@@ -55,7 +57,7 @@ class LibPartedBackend : public CoreBackend
 		} FlagMap;
 
 	private:
-		LibPartedBackend();
+		LibPartedBackend(QObject* parent, const QList<QVariant>& args);
 
 	public:
 		static const FlagMap* flagMap();

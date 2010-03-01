@@ -41,10 +41,14 @@
 #include <klocale.h>
 #include <kmountpoint.h>
 #include <kdiskfreespaceinfo.h>
+#include <kpluginfactory.h>
 
 #include <parted/parted.h>
 #include <unistd.h>
 #include <blkid/blkid.h>
+
+K_PLUGIN_FACTORY(LibPartedBackendFactory, registerPlugin<LibPartedBackend>(); )
+K_EXPORT_PLUGIN(LibPartedBackendFactory("pluginpmlibparted"))
 
 static const LibPartedBackend::FlagMap flagmap[] =
 {
@@ -328,7 +332,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 }
 
 /** Constructs a LibParted object. */
-LibPartedBackend::LibPartedBackend() :
+LibPartedBackend::LibPartedBackend(QObject*, const QList<QVariant>&) :
 	CoreBackend()
 {
 	ped_exception_set_handler(pedExceptionHandler);

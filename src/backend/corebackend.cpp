@@ -18,14 +18,31 @@
  ***************************************************************************/
 
 #include "backend/corebackend.h"
-#include "backend/libparted/libpartedbackend.h"
+
+#include <kpluginfactory.h>
+#include <kpluginloader.h>
+#include <kdebug.h>
+
+static const char pluginName[] = "pluginpmlibparted";
 
 CoreBackend* CoreBackend::self()
 {
+	// This could be used to load any kind of backend if there were more than one
+	// to choose from. So right now it's just loading the parted plugin and returning
+	// it.
 	static CoreBackend* instance = NULL;
 
 	if (instance == NULL)
-		instance = new LibPartedBackend();
+	{
+		KPluginLoader loader(pluginName);
+
+		KPluginFactory* factory = loader.factory();
+
+		if (factory != NULL)
+			instance = factory->create<CoreBackend>(NULL);
+		else
+			kWarning() << "Could not load instance plugin for core backend: " << loader.errorString();
+	}
 
 	return instance;
 }

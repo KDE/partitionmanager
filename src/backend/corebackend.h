@@ -23,12 +23,15 @@
 
 #include "util/libpartitionmanagerexport.h"
 
+#include <QObject>
+
 class CoreBackendDevice;
 class Device;
 class QString;
 
-class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend
+class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 {
+	Q_OBJECT
 	Q_DISABLE_COPY(CoreBackend)
 
 	protected:
