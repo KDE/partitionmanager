@@ -81,5 +81,5 @@ bool CreatePartitionTableOperation::canCreate(const Device* device)
 
 QString CreatePartitionTableOperation::description() const
 {
-	return QString(i18nc("@info/plain", "Create a new partition table (type: %1) on <filename>%2</filename>", targetDevice().partitionTable()->typeName(), targetDevice().deviceNode()));
+	return QString(i18nc("@info/plain", "Create a new partition table (type: %1) on <filename>%2</filename>", partitionTable()->typeName(), targetDevice().deviceNode()));
 }
