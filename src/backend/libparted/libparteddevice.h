@@ -47,7 +47,7 @@ class LibPartedDevice : public CoreBackendDevice
 
 		virtual CoreBackendPartitionTable* openPartitionTable();
 
-		virtual bool createPartitionTable(Report& report, PartitionTable& ptable);
+		virtual bool createPartitionTable(Report& report, const PartitionTable& ptable);
 
 		virtual bool readSectors(void* buffer, qint64 offset, qint64 numSectors);
 		virtual bool writeSectors(void* buffer, qint64 offset, qint64 numSectors);

@@ -50,7 +50,11 @@
 K_PLUGIN_FACTORY(LibPartedBackendFactory, registerPlugin<LibPartedBackend>(); )
 K_EXPORT_PLUGIN(LibPartedBackendFactory("pluginpmlibparted"))
 
-static const LibPartedBackend::FlagMap flagmap[] =
+static struct
+{
+	PedPartitionFlag pedFlag;
+	PartitionTable::Flag flag;
+} flagmap[] =
 {
 	{ PED_PARTITION_BOOT, PartitionTable::FlagBoot },
 	{ PED_PARTITION_ROOT, PartitionTable::FlagRoot },
@@ -242,11 +246,21 @@ static PartitionTable::Flags availableFlags(PedPartition* p)
 	return flags;
 }
 
+/** Constructs a LibParted object. */
+LibPartedBackend::LibPartedBackend(QObject*, const QList<QVariant>&) :
+	CoreBackend()
+{
+	ped_exception_set_handler(pedExceptionHandler);
+}
 
+QString LibPartedBackend::about() const
+{
+	return QString("LibPartedBackend (%1)").arg(ped_get_version());
+}
 
 /** Scans a Device for Partitions.
 
-	This function will scan a Device for all Partitions on it, detect the FileSystem for each Partition,
+	This method  will scan a Device for all Partitions on it, detect the FileSystem for each Partition,
 	try to determine the FileSystem usage, read the FileSystem label and store it all in newly created
 	objects that are in the end added to the Device's PartitionTable.
 
@@ -254,7 +268,7 @@ static PartitionTable::Flags availableFlags(PedPartition* p)
 	@param d Device
 	@param pedDisk libparted pointer to the partition table
 */
-static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDisk)
+void LibPartedBackend::scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDisk)
 {
 	Q_ASSERT(pedDevice);
 	Q_ASSERT(pedDisk);
@@ -273,7 +287,7 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 			continue;
 
 		PartitionRole::Roles r = PartitionRole::None;
-		FileSystem::Type type = LibPartedBackend::detectFileSystem(pedDevice, pedPartition);
+		FileSystem::Type type = detectFileSystem(pedDevice, pedPartition);
 
 		switch(pedPartition->type)
 		{
@@ -329,31 +343,6 @@ static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDi
 		PartitionTable::isAligned(d, *part);
 
 	ped_disk_destroy(pedDisk);
-}
-
-/** Constructs a LibParted object. */
-LibPartedBackend::LibPartedBackend(QObject*, const QList<QVariant>&) :
-	CoreBackend()
-{
-	ped_exception_set_handler(pedExceptionHandler);
-}
-
-QString LibPartedBackend::about() const
-{
-	return QString("LibPartedBackend (%1)").arg(ped_get_version());
-}
-
-/** Return a map of partition flags from libparted flags to PartitionTable::Flags
-	@return the map
-*/
-const LibPartedBackend::FlagMap* LibPartedBackend::flagMap()
-{
-	return flagmap;
-}
-
-quint32 LibPartedBackend::flagMapSize()
-{
-	return sizeof(flagmap) / sizeof(flagmap[0]);
 }
 
 /** Create a Device for the given device_node and scan it for partitions.
@@ -486,3 +475,13 @@ FileSystem::Type LibPartedBackend::detectFileSystem(PedDevice* pedDevice, PedPar
 
 	return rval;
 }
+
+PedPartitionFlag LibPartedBackend::getPedFlag(PartitionTable::Flag flag)
+{
+	for (quint32 i = 0; i < sizeof(flagmap) / sizeof(flagmap[0]); i++)
+		if (flagmap[i].flag == flag)
+			return flagmap[i].pedFlag;
+
+	return static_cast<PedPartitionFlag>(-1);
+}
+

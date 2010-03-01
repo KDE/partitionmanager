@@ -64,6 +64,13 @@ bool SetPartGeometryJob::run(Report& parent)
 		if (backendPartitionTable)
 		{
 			rval = backendPartitionTable->updateGeometry(*report, partition(), newStart(), newStart() + newLength() - 1);
+
+			if (rval)
+			{
+				partition().setFirstSector(newStart());
+				partition().setLastSector(newStart() + newLength() - 1);
+			}
+
 			delete backendPartitionTable;
 		}
 

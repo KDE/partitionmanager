@@ -30,20 +30,11 @@ LibPartedPartition::LibPartedPartition(PedPartition* ped_partition) :
 {
 }
 
-static PedPartitionFlag getPedFlag(PartitionTable::Flag flag)
-{
-	for (quint32 i = 0; i < LibPartedBackend::flagMapSize(); i++)
-		if (LibPartedBackend::flagMap()[i].flag == flag)
-			return LibPartedBackend::flagMap()[i].pedFlag;
-
-	return static_cast<PedPartitionFlag>(-1);
-}
-
 bool LibPartedPartition::setFlag(Report& report, PartitionTable::Flag partitionManagerFlag, bool state)
 {
 	Q_ASSERT(pedPartition() != NULL);
 
-	const PedPartitionFlag f = getPedFlag(partitionManagerFlag);
+	const PedPartitionFlag f = LibPartedBackend::getPedFlag(partitionManagerFlag);
 
 	// ignore flags that don't exist for this partition
 	if (!ped_partition_is_flag_available(pedPartition(), f))

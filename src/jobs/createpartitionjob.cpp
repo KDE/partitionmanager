@@ -57,9 +57,15 @@ bool CreatePartitionJob::run(Report& parent)
 
 		if (backendPartitionTable)
 		{
-			rval = backendPartitionTable->createPartition(*report, partition());
+			quint32 num = -1;
+			rval = backendPartitionTable->createPartition(*report, partition(), num);
 
-			if (!rval)
+			if (rval)
+			{
+				partition().setNumber(num);
+				partition().setState(Partition::StateNone);
+			}
+			else
 				report->line() << i18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
 
 			delete backendPartitionTable;

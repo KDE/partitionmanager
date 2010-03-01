@@ -91,7 +91,7 @@ CoreBackendPartitionTable* LibPartedDevice::openPartitionTable()
 	return ptable;
 }
 
-bool LibPartedDevice::createPartitionTable(Report& report, PartitionTable& ptable)
+bool LibPartedDevice::createPartitionTable(Report& report, const PartitionTable& ptable)
 {
 	PedDiskType* pedDiskType = ped_disk_type_get(ptable.typeName().toAscii());
 

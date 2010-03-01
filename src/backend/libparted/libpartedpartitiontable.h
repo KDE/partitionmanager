@@ -48,12 +48,12 @@ class LibPartedPartitionTable : public CoreBackendPartitionTable
 		virtual CoreBackendPartition* getExtendedPartition();
 		virtual CoreBackendPartition* getPartitionBySector(qint64 sector);
 
-		virtual bool createPartition(Report& report, Partition& partition);
-		virtual bool deletePartition(Report& report, Partition& partition);
-		virtual bool updateGeometry(Report& report, Partition& partition, qint64 sector_start, qint64 sector_end);
-		virtual bool clobberFileSystem(Report& report, Partition& partition);
-		virtual bool resizeFileSystem(Report& report, Partition& partition, qint64 newLength);
-		virtual FileSystem::Type detectFileSystemBySector(Report& report, Device& device, qint64 sector);
+		virtual bool createPartition(Report& report, const Partition& partition, quint32& new_number);
+		virtual bool deletePartition(Report& report, const Partition& partition);
+		virtual bool updateGeometry(Report& report, const Partition& partition, qint64 sector_start, qint64 sector_end);
+		virtual bool clobberFileSystem(Report& report, const Partition& partition);
+		virtual bool resizeFileSystem(Report& report, const Partition& partition, qint64 newLength);
+		virtual FileSystem::Type detectFileSystemBySector(Report& report, const Device& device, qint64 sector);
 
 	private:
 		PedDevice* pedDevice() { return m_PedDevice; }

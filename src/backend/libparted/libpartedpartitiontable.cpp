@@ -143,7 +143,7 @@ static PedFileSystemType* getPedFileSystemType(FileSystem::Type t)
 	return ped_file_system_type_get("ext2");
 }
 
-bool LibPartedPartitionTable::createPartition(Report& report, Partition& partition)
+bool LibPartedPartitionTable::createPartition(Report& report, const Partition& partition, quint32& new_number)
 {
 	Q_ASSERT(partition.devicePath() == pedDevice()->path);
 
@@ -191,12 +191,7 @@ bool LibPartedPartitionTable::createPartition(Report& report, Partition& partiti
 
 	if (ped_disk_add_partition(pedDisk(), pedPartition, pedConstraint) && commit())
 	{
-		partition.setNumber(pedPartition->num);
-		partition.setState(Partition::StateNone);
-
-		partition.setFirstSector(pedPartition->geom.start);
-		partition.setLastSector(pedPartition->geom.end);
-
+		new_number = pedPartition->num;
 		rval = true;
 	}
 	else
@@ -207,7 +202,7 @@ bool LibPartedPartitionTable::createPartition(Report& report, Partition& partiti
 	return rval;
 }
 
-bool LibPartedPartitionTable::deletePartition(Report& report, Partition& partition)
+bool LibPartedPartitionTable::deletePartition(Report& report, const Partition& partition)
 {
 	Q_ASSERT(partition.devicePath() == pedDevice()->path);
 
@@ -230,7 +225,7 @@ bool LibPartedPartitionTable::deletePartition(Report& report, Partition& partiti
 	return rval;
 }
 
-bool LibPartedPartitionTable::updateGeometry(Report& report, Partition& partition, qint64 sector_start, qint64 sector_end)
+bool LibPartedPartitionTable::updateGeometry(Report& report, const Partition& partition, qint64 sector_start, qint64 sector_end)
 {
 	Q_ASSERT(partition.devicePath() == pedDevice()->path);
 
@@ -247,11 +242,7 @@ bool LibPartedPartitionTable::updateGeometry(Report& report, Partition& partitio
 			if (PedConstraint* pedConstraint = ped_constraint_exact(pedGeometry))
 			{
 				if (ped_disk_set_partition_geom(pedDisk(), pedPartition, pedConstraint, sector_start, sector_end) && commit())
-				{
 					rval = true;
-					partition.setFirstSector(pedPartition->geom.start);
-					partition.setLastSector(pedPartition->geom.end);
-				}
 				else
 					report.line() << i18nc("@info/plain", "Could not set geometry for partition <filename>%1</filename> while trying to resize/move it.", partition.deviceNode());
 			}
@@ -267,7 +258,7 @@ bool LibPartedPartitionTable::updateGeometry(Report& report, Partition& partitio
 	return rval;
 }
 
-bool LibPartedPartitionTable::clobberFileSystem(Report& report, Partition& partition)
+bool LibPartedPartitionTable::clobberFileSystem(Report& report, const Partition& partition)
 {
 	bool rval = false;
 
@@ -311,7 +302,7 @@ static void pedTimerHandler(PedTimer* pedTimer, void* ctx)
 	}
 }
 
-bool LibPartedPartitionTable::resizeFileSystem(Report& report, Partition& partition, qint64 newLength)
+bool LibPartedPartitionTable::resizeFileSystem(Report& report, const Partition& partition, qint64 newLength)
 {
 	bool rval = false;
 
@@ -342,7 +333,7 @@ bool LibPartedPartitionTable::resizeFileSystem(Report& report, Partition& partit
 	return rval;
 }
 
-FileSystem::Type LibPartedPartitionTable::detectFileSystemBySector(Report& report, Device& device, qint64 sector)
+FileSystem::Type LibPartedPartitionTable::detectFileSystemBySector(Report& report, const Device& device, qint64 sector)
 {
 	PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), sector);
 

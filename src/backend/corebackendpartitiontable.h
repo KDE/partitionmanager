@@ -43,12 +43,13 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendPartitionTable
 		virtual CoreBackendPartition* getExtendedPartition() = 0;
 		virtual CoreBackendPartition* getPartitionBySector(qint64 sector) = 0;
 
-		virtual bool createPartition(Report& report, Partition& partition) = 0;
-		virtual bool deletePartition(Report& report, Partition& partition) = 0;
-		virtual bool updateGeometry(Report& report, Partition& partition, qint64 sector_start, qint64 sector_end) = 0;
-		virtual bool clobberFileSystem(Report& report, Partition& partition) = 0;
-		virtual bool resizeFileSystem(Report& report, Partition& partition, qint64 newLength) = 0;
-		virtual FileSystem::Type detectFileSystemBySector(Report& report, Device& device, qint64 sector) = 0;
+		virtual bool deletePartition(Report& report, const Partition& partition) = 0;
+		virtual bool clobberFileSystem(Report& report, const Partition& partition) = 0;
+		virtual bool resizeFileSystem(Report& report, const Partition& partition, qint64 newLength) = 0;
+		virtual FileSystem::Type detectFileSystemBySector(Report& report, const Device& device, qint64 sector) = 0;
+		virtual bool createPartition(Report& report, const Partition& partition, quint32& new_number) = 0;
+
+		virtual bool updateGeometry(Report& report, const Partition& partition, qint64 sector_start, qint64 sector_end) = 0;
 };
 
 #endif

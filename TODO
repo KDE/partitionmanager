@@ -1,7 +1,6 @@
 Random plans and ideas for 1.1 and beyond:
 
-* The whole lvm/dm debacle. Nothing much useful can be done about it without
-  the backend stuff mentioned above, though.
+* The whole lvm/dm debacle.
 
 * The interface between core and the file systems needs some more thought.
   Ideally we'd be free to use either external helper apps (like we do now) or
@@ -17,3 +16,17 @@ Random plans and ideas for 1.1 and beyond:
 
 * The KPart works but has problems: The context menus don't show up, the status
   bar is missing, maybe more.
+
+
+Bugs:
+
+* When creating a new partition table the info pane isn't updated with the new
+  type.
+
+* Setting flags for partitions appears to work but no flags are set.
+
+* Creating a msdos partition table with cylinder alignment off still creates it
+  will cylinder alignment
+
+* Resizing fat32 file systems (a libparted handled one) crashes related to the
+  ped timer stuff and Job::emitProgress somewhere.

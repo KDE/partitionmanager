@@ -48,7 +48,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendDevice
 
 		virtual CoreBackendPartitionTable* openPartitionTable() = 0;
 
-		virtual bool createPartitionTable(Report& report, PartitionTable& ptable) = 0;
+		virtual bool createPartitionTable(Report& report, const PartitionTable& ptable) = 0;
 
 		virtual bool readSectors(void* buffer, qint64 offset, qint64 numSectors) = 0;
 		virtual bool writeSectors(void* buffer, qint64 offset, qint64 numSectors) = 0;

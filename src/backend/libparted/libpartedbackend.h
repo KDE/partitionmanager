@@ -33,45 +33,42 @@
 #include <QVariant>
 #include <qglobal.h>
 
+class LibPartedDevice;
+class LibPartedPartitionTable;
+class LibPartedPartition;
+
 class Device;
 class KPluginFactory;
 class QString;
 
-/** @brief Device scanning done by libparted.
-
-	More libparted-related stuff is in the @link Job Job-derived @endlink classes.
+/** @brief Backend plugin for libparted.
 
 	@author vl@fidra.de
 */
 class LibPartedBackend : public CoreBackend
 {
 	friend class KPluginFactory;
+	friend class LibPartedPartition;
+	friend class LibPartedDevice;
+	friend class LibPartedPartitionTable;
 
 	Q_DISABLE_COPY(LibPartedBackend)
-
-	public:
-		typedef struct
-		{
-			PedPartitionFlag pedFlag;
-			PartitionTable::Flag flag;
-		} FlagMap;
 
 	private:
 		LibPartedBackend(QObject* parent, const QList<QVariant>& args);
 
 	public:
-		static const FlagMap* flagMap();
-		static quint32 flagMapSize();
+		virtual QString about() const;
 
 		virtual CoreBackendDevice* openDevice(const QString& device_node);
 		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node);
 		virtual bool closeDevice(CoreBackendDevice* core_device);
+		virtual Device* scanDevice(const QString& device_node);
 
-		virtual QString about() const;
-
-		Device* scanDevice(const QString& device_node);
-
+	private:
 		static FileSystem::Type detectFileSystem(PedDevice* pedDevice, PedPartition* pedPartition);
+		static PedPartitionFlag getPedFlag(PartitionTable::Flag flag);
+		static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDisk);
 };
 
 #endif
