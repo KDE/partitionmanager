@@ -68,6 +68,8 @@ bool DeletePartitionJob::run(Report& parent)
 
 			if (!rval)
 				report->line() << i18nc("@info/plain", "Could not delete partition <filename>%1</filename>.", partition().deviceNode());
+			else
+				backendPartitionTable->commit();
 
 			delete backendPartitionTable;
 

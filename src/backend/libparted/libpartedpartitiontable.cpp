@@ -187,7 +187,7 @@ bool LibPartedPartitionTable::createPartition(Report& report, const Partition& p
 		return false;
 	}
 
-	if (ped_disk_add_partition(pedDisk(), pedPartition, pedConstraint) && commit())
+	if (ped_disk_add_partition(pedDisk(), pedPartition, pedConstraint))
 	{
 		new_number = pedPartition->num;
 		rval = true;
@@ -212,7 +212,7 @@ bool LibPartedPartitionTable::deletePartition(Report& report, const Partition& p
 
 	if (pedPartition)
 	{
-		rval = ped_disk_delete_partition(pedDisk(), pedPartition) && commit();
+		rval = ped_disk_delete_partition(pedDisk(), pedPartition);
 
 		if (!rval)
 			report.line() << i18nc("@info/plain", "Could not delete partition <filename>%1</filename>.", partition.deviceNode());
@@ -239,7 +239,7 @@ bool LibPartedPartitionTable::updateGeometry(Report& report, const Partition& pa
 		{
 			if (PedConstraint* pedConstraint = ped_constraint_exact(pedGeometry))
 			{
-				if (ped_disk_set_partition_geom(pedDisk(), pedPartition, pedConstraint, sector_start, sector_end) && commit())
+				if (ped_disk_set_partition_geom(pedDisk(), pedPartition, pedConstraint, sector_start, sector_end))
 					rval = true;
 				else
 					report.line() << i18nc("@info/plain", "Could not set geometry for partition <filename>%1</filename> while trying to resize/move it.", partition.deviceNode());
@@ -305,7 +305,7 @@ bool LibPartedPartitionTable::resizeFileSystem(Report& report, const Partition& 
 			if (PedGeometry* resizedGeometry = ped_geometry_new(pedDevice(), partition.fileSystem().firstSector(), newLength))
 			{
  				PedTimer* pedTimer = ped_timer_new(pedTimerHandler, NULL);
-				rval = ped_file_system_resize(pedFileSystem, resizedGeometry, pedTimer) && commit();
+				rval = ped_file_system_resize(pedFileSystem, resizedGeometry, pedTimer);
  				ped_timer_destroy(pedTimer);
 
 				if (!rval)

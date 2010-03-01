@@ -92,6 +92,9 @@ bool SetPartFlagsJob::run(Report& parent)
 			else
 				report->line() << i18nc("@info/plain", "Could not find partition <filename>%1</filename> on device <filename>%2</filename> to set partition flags.", partition().deviceNode(), device().deviceNode());
 
+			if (rval)
+				backendPartitionTable->commit();
+
 			delete backendPartitionTable;
 		}
 		else

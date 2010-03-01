@@ -72,6 +72,8 @@ bool DeleteFileSystemJob::run(Report& parent)
 
 				if (!rval)
 					report->line() << i18nc("@info/plain", "Could not delete file system on <filename>%1</filename>.", partition().deviceNode());
+				else
+					backendPartitionTable->commit();
 
 				delete backendPartitionTable;
 

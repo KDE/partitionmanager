@@ -128,7 +128,10 @@ bool ResizeFileSystemJob::resizeFileSystemInternal(Report& report)
 			disconnect(CoreBackend::self(), SIGNAL(progress(int)), this, SIGNAL(progress(int)));
 
 			if (rval)
+			{
 				report.line() << i18nc("@info/plain", "Successfully resized file system using LibParted.");
+				backendPartitionTable->commit();
+			}
 
 			delete backendPartitionTable;
 		}

@@ -69,6 +69,7 @@ bool SetPartGeometryJob::run(Report& parent)
 			{
 				partition().setFirstSector(newStart());
 				partition().setLastSector(newStart() + newLength() - 1);
+				backendPartitionTable->commit();
 			}
 
 			delete backendPartitionTable;

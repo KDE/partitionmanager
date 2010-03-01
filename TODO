@@ -23,7 +23,5 @@ Bugs:
 * When creating a new partition table the info pane isn't updated with the new
   type.
 
-* Setting flags for partitions appears to work but no flags are set.
-
 * Creating a msdos partition table with cylinder alignment off still creates it
   will cylinder alignment

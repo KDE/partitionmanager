@@ -64,6 +64,7 @@ bool CreatePartitionJob::run(Report& parent)
 			{
 				partition().setNumber(num);
 				partition().setState(Partition::StateNone);
+				backendPartitionTable->commit();
 			}
 			else
 				report->line() << i18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
