@@ -27,8 +27,6 @@
 #include "core/partition.h"
 #include "core/partitiontable.h"
 
-#include "jobs/setpartflagsjob.h"
-
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
 
