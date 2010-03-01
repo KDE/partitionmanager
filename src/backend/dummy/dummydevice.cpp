@@ -17,38 +17,71 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "backend/corebackend.h"
+#include "backend/dummy/dummydevice.h"
+#include "backend/dummy/dummypartitiontable.h"
 
-#include <kpluginfactory.h>
-#include <kpluginloader.h>
+#include "core/partitiontable.h"
+
+#include "util/globallog.h"
+#include "util/report.h"
+
+#include <klocale.h>
 #include <kdebug.h>
 
-static const char pluginName[] = "pluginpmlibparted";
-// static const char pluginName[] = "pluginpmdummy";
-
-CoreBackend* CoreBackend::self()
+DummyDevice::DummyDevice(const QString& device_node) :
+	CoreBackendDevice(device_node)
 {
-	// This could be used to load any kind of backend if there were more than one
-	// to choose from. So right now it's just loading the parted plugin and returning
-	// it.
-	static CoreBackend* instance = NULL;
-
-	if (instance == NULL)
-	{
-		KPluginLoader loader(pluginName);
-
-		KPluginFactory* factory = loader.factory();
-
-		if (factory != NULL)
-			instance = factory->create<CoreBackend>(NULL);
-		else
-			kWarning() << "Could not load instance plugin for core backend: " << loader.errorString();
-	}
-
-	return instance;
 }
 
-void CoreBackend::emitProgress(int i)
+DummyDevice::~DummyDevice()
 {
-	emit progress(i);
+}
+
+bool DummyDevice::open()
+{
+	return true;
+}
+
+bool DummyDevice::openExclusive()
+{
+	return true;
+}
+
+bool DummyDevice::close()
+{
+	return true;
+}
+
+CoreBackendPartitionTable* DummyDevice::openPartitionTable()
+{
+	CoreBackendPartitionTable* ptable = new DummyPartitionTable();
+
+	if (ptable == NULL || !ptable->open())
+	{
+		delete ptable;
+		ptable = NULL;
+	}
+
+	return ptable;
+}
+
+bool DummyDevice::createPartitionTable(Report& report, const PartitionTable& ptable)
+{
+	return true;
+}
+
+bool DummyDevice::readSectors(void* buffer, qint64 offset, qint64 numSectors)
+{
+	if (!isExclusive())
+		return false;
+
+	return true;
+}
+
+bool DummyDevice::writeSectors(void* buffer, qint64 offset, qint64 numSectors)
+{
+	if (!isExclusive())
+		return false;
+
+	return true;
 }

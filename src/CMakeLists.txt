@@ -18,6 +18,7 @@
 ############################################
 
 add_subdirectory(backend/libparted)
+add_subdirectory(backend/dummy)
 
 ############################################
 

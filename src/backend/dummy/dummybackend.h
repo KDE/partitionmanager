@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de                        *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,38 +17,39 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
+#if !defined(DUMMYBACKEND__H)
+
+#define DUMMYBACKEND__H
+
 #include "backend/corebackend.h"
 
-#include <kpluginfactory.h>
-#include <kpluginloader.h>
-#include <kdebug.h>
+#include <QList>
+#include <QVariant>
 
-static const char pluginName[] = "pluginpmlibparted";
-// static const char pluginName[] = "pluginpmdummy";
+class Device;
+class KPluginFactory;
+class QString;
 
-CoreBackend* CoreBackend::self()
+/** @brief Dummy backend plugin that doesn't really do anything.
+
+	@author vl@fidra.de
+*/
+class DummyBackend : public CoreBackend
 {
-	// This could be used to load any kind of backend if there were more than one
-	// to choose from. So right now it's just loading the parted plugin and returning
-	// it.
-	static CoreBackend* instance = NULL;
+	friend class KPluginFactory;
 
-	if (instance == NULL)
-	{
-		KPluginLoader loader(pluginName);
+	Q_DISABLE_COPY(DummyBackend)
 
-		KPluginFactory* factory = loader.factory();
+	private:
+		DummyBackend(QObject* parent, const QList<QVariant>& args);
 
-		if (factory != NULL)
-			instance = factory->create<CoreBackend>(NULL);
-		else
-			kWarning() << "Could not load instance plugin for core backend: " << loader.errorString();
-	}
+	public:
+		virtual QString about() const;
 
-	return instance;
-}
+		virtual CoreBackendDevice* openDevice(const QString& device_node);
+		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node);
+		virtual bool closeDevice(CoreBackendDevice* core_device);
+		virtual Device* scanDevice(const QString& device_node);
+};
 
-void CoreBackend::emitProgress(int i)
-{
-	emit progress(i);
-}
+#endif

@@ -17,38 +17,40 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "backend/corebackend.h"
+#if !defined(DUMMYPARTITIONTABLE__H)
 
-#include <kpluginfactory.h>
-#include <kpluginloader.h>
-#include <kdebug.h>
+#define DUMMYPARTITIONTABLE__H
 
-static const char pluginName[] = "pluginpmlibparted";
-// static const char pluginName[] = "pluginpmdummy";
+#include "backend/corebackendpartitiontable.h"
 
-CoreBackend* CoreBackend::self()
+#include "fs/filesystem.h"
+
+#include <qglobal.h>
+
+class CoreBackendPartition;
+class Report;
+class Partition;
+
+class DummyPartitionTable : public CoreBackendPartitionTable
 {
-	// This could be used to load any kind of backend if there were more than one
-	// to choose from. So right now it's just loading the parted plugin and returning
-	// it.
-	static CoreBackend* instance = NULL;
+	public:
+		DummyPartitionTable();
+		~DummyPartitionTable();
 
-	if (instance == NULL)
-	{
-		KPluginLoader loader(pluginName);
+	public:
+		virtual bool open();
 
-		KPluginFactory* factory = loader.factory();
+		virtual bool commit(quint32 timeout = 10);
 
-		if (factory != NULL)
-			instance = factory->create<CoreBackend>(NULL);
-		else
-			kWarning() << "Could not load instance plugin for core backend: " << loader.errorString();
-	}
+		virtual CoreBackendPartition* getExtendedPartition();
+		virtual CoreBackendPartition* getPartitionBySector(qint64 sector);
 
-	return instance;
-}
+		virtual bool createPartition(Report& report, const Partition& partition, quint32& new_number);
+		virtual bool deletePartition(Report& report, const Partition& partition);
+		virtual bool updateGeometry(Report& report, const Partition& partition, qint64 sector_start, qint64 sector_end);
+		virtual bool clobberFileSystem(Report& report, const Partition& partition);
+		virtual bool resizeFileSystem(Report& report, const Partition& partition, qint64 newLength);
+		virtual FileSystem::Type detectFileSystemBySector(Report& report, const Device& device, qint64 sector);
+};
 
-void CoreBackend::emitProgress(int i)
-{
-	emit progress(i);
-}
+#endif

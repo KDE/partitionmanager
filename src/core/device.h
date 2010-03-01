@@ -29,7 +29,8 @@
 
 class PartitionTable;
 class CreatePartitionTableOperation;
-class LibPartedBackendBackend;
+class LibPartedBackend;
+class DummyBackend;
 
 /** @brief A device.
 
@@ -47,6 +48,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 
 	friend class CreatePartitionTableOperation;
 	friend class LibPartedBackend;
+	friend class DummyBackend;
 
 	public:
 		Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize, const QString& iconname = QString());

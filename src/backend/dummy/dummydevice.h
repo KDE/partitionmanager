@@ -17,38 +17,38 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "backend/corebackend.h"
+#if !defined(DUMMYDEVICE__H)
 
-#include <kpluginfactory.h>
-#include <kpluginloader.h>
-#include <kdebug.h>
+#define DUMMYDEVICE__H
 
-static const char pluginName[] = "pluginpmlibparted";
-// static const char pluginName[] = "pluginpmdummy";
+#include "backend/corebackenddevice.h"
 
-CoreBackend* CoreBackend::self()
+#include <qglobal.h>
+
+class Partition;
+class PartitionTable;
+class Report;
+class CoreBackendPartitionTable;
+
+class DummyDevice : public CoreBackendDevice
 {
-	// This could be used to load any kind of backend if there were more than one
-	// to choose from. So right now it's just loading the parted plugin and returning
-	// it.
-	static CoreBackend* instance = NULL;
+	Q_DISABLE_COPY(DummyDevice);
 
-	if (instance == NULL)
-	{
-		KPluginLoader loader(pluginName);
+	public:
+		DummyDevice(const QString& device_node);
+		~DummyDevice();
 
-		KPluginFactory* factory = loader.factory();
+	public:
+		virtual bool open();
+		virtual bool openExclusive();
+		virtual bool close();
 
-		if (factory != NULL)
-			instance = factory->create<CoreBackend>(NULL);
-		else
-			kWarning() << "Could not load instance plugin for core backend: " << loader.errorString();
-	}
+		virtual CoreBackendPartitionTable* openPartitionTable();
 
-	return instance;
-}
+		virtual bool createPartitionTable(Report& report, const PartitionTable& ptable);
 
-void CoreBackend::emitProgress(int i)
-{
-	emit progress(i);
-}
+		virtual bool readSectors(void* buffer, qint64 offset, qint64 numSectors);
+		virtual bool writeSectors(void* buffer, qint64 offset, qint64 numSectors);
+};
+
+#endif

@@ -32,6 +32,7 @@
 class Device;
 class Partition;
 class LibPartedBackend;
+class DummyBackend; // TODO: this is nonsense. also see Device
 
 /** @brief The partition table (a.k.a Disk Label)
 
@@ -46,6 +47,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 	Q_DISABLE_COPY(PartitionTable)
 
 	friend class LibPartedBackend;
+	friend class DummyBackend;
 
 	public:
 		enum TableType

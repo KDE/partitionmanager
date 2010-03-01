@@ -17,38 +17,21 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "backend/corebackend.h"
+#include "backend/dummy/dummypartition.h"
+#include "backend/dummy/dummybackend.h"
 
-#include <kpluginfactory.h>
-#include <kpluginloader.h>
+#include "util/report.h"
+
+#include <klocale.h>
 #include <kdebug.h>
 
-static const char pluginName[] = "pluginpmlibparted";
-// static const char pluginName[] = "pluginpmdummy";
-
-CoreBackend* CoreBackend::self()
+DummyPartition::DummyPartition() :
+	CoreBackendPartition()
 {
-	// This could be used to load any kind of backend if there were more than one
-	// to choose from. So right now it's just loading the parted plugin and returning
-	// it.
-	static CoreBackend* instance = NULL;
-
-	if (instance == NULL)
-	{
-		KPluginLoader loader(pluginName);
-
-		KPluginFactory* factory = loader.factory();
-
-		if (factory != NULL)
-			instance = factory->create<CoreBackend>(NULL);
-		else
-			kWarning() << "Could not load instance plugin for core backend: " << loader.errorString();
-	}
-
-	return instance;
 }
 
-void CoreBackend::emitProgress(int i)
+bool DummyPartition::setFlag(Report& report, PartitionTable::Flag partitionManagerFlag, bool state)
 {
-	emit progress(i);
+	return true;
 }
+
