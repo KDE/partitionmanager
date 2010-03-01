@@ -366,8 +366,8 @@ Device* LibPartedBackend::scanDevice(const QString& device_node)
 	if (pedDisk)
 	{
 		const PartitionTable::TableType type = PartitionTable::nameToTableType(pedDisk->type->name);
-		d->setPartitionTable(new PartitionTable(type, firstUsableSector(*d), lastUsableSector(*d)));
-		d->partitionTable()->setMaxPrimaries(ped_disk_get_max_primary_partition_count(pedDisk));
+		CoreBackend::setPartitionTableForDevice(*d, new PartitionTable(type, firstUsableSector(*d), lastUsableSector(*d)));
+		CoreBackend::setPartitionTableMaxPrimaries(*d->partitionTable(), ped_disk_get_max_primary_partition_count(pedDisk));
 
 		scanDevicePartitions(pedDevice, *d, pedDisk);
 	}

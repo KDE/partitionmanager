@@ -32,7 +32,7 @@
 
 class Device;
 class OperationStack;
-class LibPartedPartitionTable;
+class CoreBackendPartitionTable;
 
 class PartResizerWidget;
 class InsertDialog;
@@ -74,7 +74,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 	friend class OperationStack;
 	friend class Device;
 	friend class PartitionNode;
-	friend class LibPartedPartitionTable;
+	friend class CoreBackendPartitionTable;
 
 	friend class PartResizerWidget;
 	friend class InsertDialog;

@@ -54,7 +54,7 @@ bool MoveFileSystemJob::run(Report& parent)
 	Report* report = jobStarted(parent);
 
 	// A scope for moveSource and moveTarget, so CopyTargetDevice's dtor runs before we
-	// say we're finished: The CopyTargetDevice dtor asks libparted to close the device
+	// say we're finished: The CopyTargetDevice dtor asks the backend to close the device
 	// and that may take a while.
 	{
 		CopySourceDevice moveSource(device(), partition().fileSystem().firstSector(), partition().fileSystem().lastSector());

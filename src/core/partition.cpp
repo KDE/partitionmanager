@@ -41,10 +41,10 @@
 	@param sectorStart the first sector of the Partition on its Device
 	@param sectorEnd the last sector of the Partition on its Device
 	@param number the Partition's device number, e.g. 7 for /dev/sdd7
-	@param availableFlags the flags available for this Partition according to libparted
+	@param availableFlags the flags available for this Partition
 	@param mountPoints string list of mount points found for this Partition
 	@param mounted true if the Partition is mounted
-	@param activeFlags active flags for this Partition according to libparted
+	@param activeFlags active flags for this Partition
 	@param state the Partition's state
 */
 Partition::Partition(PartitionNode* parent, const Device& device, const PartitionRole& role, FileSystem* fs, qint64 sectorStart, qint64 sectorEnd, qint32 number, PartitionTable::Flags availableFlags, const QStringList& mountPoints, bool mounted, PartitionTable::Flags activeFlags, State state) :

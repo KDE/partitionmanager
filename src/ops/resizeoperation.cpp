@@ -63,7 +63,7 @@ ResizeOperation::ResizeOperation(Device& d, Partition& p, qint64 newfirst, qint6
 	m_CheckResizedJob(NULL)
 {
 	addJob(checkOriginalJob());
-	
+
 	if (partition().roles().has(PartitionRole::Extended))
 	{
 		m_MoveExtendedJob = new SetPartGeometryJob(targetDevice(), partition(), newFirstSector(), newLength());
@@ -85,7 +85,7 @@ ResizeOperation::ResizeOperation(Device& d, Partition& p, qint64 newfirst, qint6
 			// At this point, we need to set the partition's length to either the resized length, if it has already been
 			// shrunk, or to the original length (it may or may not then later be grown, we don't care here)
 			const qint64 currentLength = (resizeAction() & Shrink) ? newLength() : partition().length();
-			
+
 			m_MoveSetGeomJob = new SetPartGeometryJob(targetDevice(), partition(), newFirstSector(), currentLength);
 			m_MoveFileSystemJob = new MoveFileSystemJob(targetDevice(), partition(), newFirstSector());
 
@@ -101,7 +101,7 @@ ResizeOperation::ResizeOperation(Device& d, Partition& p, qint64 newfirst, qint6
 			addJob(growSetGeomJob());
 			addJob(growResizeJob());
 		}
-		
+
 		m_CheckResizedJob = new CheckFileSystemJob(partition());
 
 		addJob(checkResizedJob());
@@ -118,12 +118,12 @@ void ResizeOperation::preview()
 		partition().setFirstSector(origFirstSector());
 		partition().setLastSector(origLastSector());
 	}
-	
+
 	removePreviewPartition(targetDevice(), partition());
-	
+
 	partition().setFirstSector(newFirstSector());
 	partition().setLastSector(newLastSector());
-	
+
 	insertPreviewPartition(targetDevice(), partition());
 }
 
@@ -146,7 +146,7 @@ bool ResizeOperation::execute(Report& parent)
 		// Extended partitions are a special case: They don't have any file systems and so there's no
 		// need to move, shrink or grow their contents before setting the new geometry. In fact, trying
 		// to first shrink THEN move would not work for an extended partition that has children, because
-		// they might temporarily be outside the extended partition and libparted would not let us do that.
+		// they might temporarily be outside the extended partition and the backend would not let us do that.
 		if (moveExtendedJob())
 		{
 			if (!(rval = moveExtendedJob()->run(*report)))
@@ -156,7 +156,7 @@ bool ResizeOperation::execute(Report& parent)
 		{
 			// We run all three methods. Any of them returns true if it has nothing to do.
 			rval = shrink(*report) && move(*report) && grow(*report);
-	
+
 			if (rval)
 			{
 				if (!(rval = checkResizedJob()->run(*report)))
@@ -170,9 +170,9 @@ bool ResizeOperation::execute(Report& parent)
 		report->line() << i18nc("@info/plain", "Checking partition <filename>%1</filename> before resize/move failed.", partition().deviceNode());
 
 	setStatus(rval ? StatusFinishedSuccess : StatusError);
-	
+
 	report->setStatus(i18nc("@info/plain status (success, error, warning...) of operation", "%1: %2", description(), statusText()));
-	
+
 	return rval;
 }
 
@@ -264,7 +264,7 @@ bool ResizeOperation::shrink(Report& report)
 	{
 		report.line() << i18nc("@info/plain", "Resize/move failed: Could not shrink partition <filename>%1</filename>.", partition().deviceNode());
 		return false;
-		
+
 		/** @todo if this fails, no one undoes the shrinking of the file system above, because we
 		rely upon there being a maximize job at the end, but that's no longer the case. */
 	}
@@ -276,9 +276,9 @@ bool ResizeOperation::move(Report& report)
 {
 	// We must make sure not to overwrite the partition's metadata if it's a logical partition
 	// and we're moving to the left. The easiest way to achieve this is to move the
-	// partition itself first (libparted will then move the metadata) and only afterwards
-	// copy the filesystem. Disadvantage: We need to move the partition back to its
-	// original position if copyBlocks fails.
+	// partition itself first (it's the backend's responsibility to then move the metadata) and
+	// only afterwards copy the filesystem. Disadvantage: We need to move the partition
+	// back to its original position if copyBlocks fails.
 	const qint64 oldStart = partition().firstSector();
 	if (moveSetGeomJob() && !moveSetGeomJob()->run(report))
 	{
@@ -303,7 +303,7 @@ bool ResizeOperation::move(Report& report)
 bool ResizeOperation::grow(Report& report)
 {
 	const qint64 oldLength = partition().length();
-	
+
 	if (growSetGeomJob() && !growSetGeomJob()->run(report))
 	{
 		report.line() << i18nc("@info/plain", "Resize/move failed: Could not grow partition <filename>%1</filename>.", partition().deviceNode());
@@ -313,10 +313,10 @@ bool ResizeOperation::grow(Report& report)
 	if (growResizeJob() && !growResizeJob()->run(report))
 	{
 		report.line() << i18nc("@info/plain", "Resize/move failed: Could not resize the file system on partition <filename>%1</filename>", partition().deviceNode());
-			
+
 		if (!SetPartGeometryJob(targetDevice(), partition(), partition().firstSector(), oldLength).run(report))
 			report.line() << i18nc("@info/plain", "Could not restore old partition size for partition <filename>%1</filename>.", partition().deviceNode());
-		
+
 		return false;
 	}
 
@@ -331,7 +331,7 @@ bool ResizeOperation::canGrow(const Partition* p)
 {
 	if (p == NULL)
 		return false;
-	
+
 	// we can always grow, shrink or move a partition not yet written to disk
 	if (p->state() == Partition::StateNew)
 		return true;
@@ -350,7 +350,7 @@ bool ResizeOperation::canShrink(const Partition* p)
 {
 	if (p == NULL)
 		return false;
-	
+
 	// we can always grow, shrink or move a partition not yet written to disk
 	if (p->state() == Partition::StateNew)
 		return true;
@@ -372,7 +372,7 @@ bool ResizeOperation::canMove(const Partition* p)
 {
 	if (p == NULL)
 		return false;
-	
+
 	// we can always grow, shrink or move a partition not yet written to disk
 	if (p->state() == Partition::StateNew)
 		return true;

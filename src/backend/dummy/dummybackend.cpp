@@ -37,7 +37,7 @@
 #include <kpluginfactory.h>
 
 K_PLUGIN_FACTORY(DummyBackendFactory, registerPlugin<DummyBackend>(); )
-K_EXPORT_PLUGIN(DummyBackendFactory("pluginpmlibparted"))
+K_EXPORT_PLUGIN(DummyBackendFactory("pluginpmdummy"))
 
 
 DummyBackend::DummyBackend(QObject*, const QList<QVariant>&) :
@@ -53,8 +53,8 @@ QString DummyBackend::about() const
 Device* DummyBackend::scanDevice(const QString& device_node)
 {
 	Device* d = new Device("Dummy Device", QString("/tmp" + device_node), 255, 0xffff, 63, 512);
-	d->setPartitionTable(new PartitionTable(PartitionTable::msdos_sectorbased, 2048, d->totalSectors() - 2048));
-	d->partitionTable()->setMaxPrimaries(128);
+	CoreBackend::setPartitionTableForDevice(*d, new PartitionTable(PartitionTable::msdos_sectorbased, 2048, d->totalSectors() - 2048));
+	CoreBackend::setPartitionTableMaxPrimaries(*d->partitionTable(), 128);
 	d->partitionTable()->updateUnallocated(*d);
 	return d;
 }

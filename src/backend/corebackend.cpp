@@ -19,6 +19,9 @@
 
 #include "backend/corebackend.h"
 
+#include "core/device.h"
+#include "core/partitiontable.h"
+
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
 #include <kdebug.h>
@@ -52,3 +55,14 @@ void CoreBackend::emitProgress(int i)
 {
 	emit progress(i);
 }
+
+void CoreBackend::setPartitionTableForDevice(Device& d, PartitionTable* p)
+{
+	d.setPartitionTable(p);
+}
+
+void CoreBackend::setPartitionTableMaxPrimaries(PartitionTable& p, qint32 max_primaries)
+{
+	p.setMaxPrimaries(max_primaries);
+}
+

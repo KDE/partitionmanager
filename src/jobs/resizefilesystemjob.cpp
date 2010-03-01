@@ -85,7 +85,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 			case FileSystem::cmdSupportCore:
 			{
 				Report* childReport = report->newChild();
-				childReport->line() << i18nc("@info/plain", "Resizing a %1 file system using LibParted internal functions.", partition().fileSystem().name());
+				childReport->line() << i18nc("@info/plain", "Resizing a %1 file system using internal backend functions.", partition().fileSystem().name());
 				rval = resizeFileSystemInternal(*childReport);
 				break;
 			}
@@ -129,7 +129,7 @@ bool ResizeFileSystemJob::resizeFileSystemInternal(Report& report)
 
 			if (rval)
 			{
-				report.line() << i18nc("@info/plain", "Successfully resized file system using LibParted.");
+				report.line() << i18nc("@info/plain", "Successfully resized file system using internal backend functions.");
 				backendPartitionTable->commit();
 			}
 

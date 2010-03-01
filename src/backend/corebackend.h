@@ -27,6 +27,8 @@
 
 class CoreBackendDevice;
 class Device;
+class PartitionTable;
+
 class QString;
 
 class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
@@ -43,18 +45,17 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 
 	public:
 		static CoreBackend* self();
-
-		virtual CoreBackendDevice* openDevice(const QString& device_node) = 0;
-		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node) = 0;
-
-		virtual bool closeDevice(CoreBackendDevice* core_device) = 0;
-
 		virtual QString about() const = 0;
 
-		void emitProgress(int i);
-
-	public:
 		virtual Device* scanDevice(const QString& device_node) = 0;
+		virtual CoreBackendDevice* openDevice(const QString& device_node) = 0;
+		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node) = 0;
+		virtual bool closeDevice(CoreBackendDevice* core_device) = 0;
+		virtual void emitProgress(int i);
+
+	protected:
+		static void setPartitionTableForDevice(Device& d, PartitionTable* p);
+		static void setPartitionTableMaxPrimaries(PartitionTable& p, qint32 max_primaries);
 };
 
 #endif

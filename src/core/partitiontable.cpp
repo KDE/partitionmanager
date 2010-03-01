@@ -584,7 +584,7 @@ qint64 PartitionTable::defaultLastUsable(const Device& d, TableType t)
 
 static struct
 {
-	const char* name; /**< name of partition table type in libparted */
+	const char* name; /**< name of partition table type */
 	quint32 maxPrimaries; /**< max numbers of primary partitions supported */
 	bool canHaveExtended; /**< does partition table type support extended partitions */
 	bool isReadOnly; /**< does KDE Partition Manager support this only in read only mode */

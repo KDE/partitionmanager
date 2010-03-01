@@ -31,8 +31,7 @@
 
 class Device;
 class Partition;
-class LibPartedBackend;
-class DummyBackend; // TODO: this is nonsense. also see Device
+class CoreBackend;
 
 /** @brief The partition table (a.k.a Disk Label)
 
@@ -46,8 +45,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 {
 	Q_DISABLE_COPY(PartitionTable)
 
-	friend class LibPartedBackend;
-	friend class DummyBackend;
+	friend class CoreBackend;
 
 	public:
 		enum TableType
@@ -68,7 +66,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 			sun
 		};
 
-		/** Partition flags as defined by libparted */
+		/** Partition flags */
 		enum Flag
 		{
 			FlagNone = 0,
@@ -117,7 +115,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 		int maxPrimaries() const { return m_MaxPrimaries; } /**< @return max number of primary partitions this PartitionTable can handle */
 
 		PartitionTable::TableType type() const { return m_Type; } /**< @return the PartitionTable's type */
-		const QString typeName() const { return tableTypeToName(type()); } /**< @return the name of this PartitionTable type according to libparted */
+		const QString typeName() const { return tableTypeToName(type()); } /**< @return the name of this PartitionTable type */
 
 		qint64 firstUsable() const { return m_FirstUsable; }
 		qint64 lastUsable() const { return m_LastUsable; }

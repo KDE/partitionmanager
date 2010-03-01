@@ -29,8 +29,7 @@
 
 class PartitionTable;
 class CreatePartitionTableOperation;
-class LibPartedBackend;
-class DummyBackend;
+class CoreBackend;
 
 /** @brief A device.
 
@@ -38,7 +37,7 @@ class DummyBackend;
 
 	Devices are the outermost entity; they contain a PartitionTable that itself contains Partitions.
 
-	@see PartitionTable, Partition, LibParted::scanDevices()
+	@see PartitionTable, Partition
 	@author vl@fidra.de
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
@@ -47,8 +46,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 	Q_DISABLE_COPY(Device)
 
 	friend class CreatePartitionTableOperation;
-	friend class LibPartedBackend;
-	friend class DummyBackend;
+	friend class CoreBackend;
 
 	public:
 		Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize, const QString& iconname = QString());
