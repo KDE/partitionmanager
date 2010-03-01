@@ -27,6 +27,3 @@ Bugs:
 
 * Creating a msdos partition table with cylinder alignment off still creates it
   will cylinder alignment
-
-* Resizing fat32 file systems (a libparted handled one) crashes related to the
-  ped timer stuff and Job::emitProgress somewhere.

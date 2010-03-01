@@ -38,6 +38,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 		CoreBackend() {}
 		virtual ~CoreBackend() {}
 
+	signals:
+		void progress(int);
+
 	public:
 		static CoreBackend* self();
 
@@ -47,6 +50,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 		virtual bool closeDevice(CoreBackendDevice* core_device) = 0;
 
 		virtual QString about() const = 0;
+
+		void emitProgress(int i);
 
 	public:
 		virtual Device* scanDevice(const QString& device_node) = 0;

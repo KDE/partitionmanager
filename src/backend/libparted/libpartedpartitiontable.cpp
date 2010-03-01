@@ -24,8 +24,6 @@
 #include "core/partition.h"
 #include "core/device.h"
 
-#include "jobs/job.h"
-
 #include "fs/filesystem.h"
 
 #include "util/report.h"
@@ -291,15 +289,9 @@ bool LibPartedPartitionTable::clobberFileSystem(Report& report, const Partition&
 	return rval;
 }
 
-static void pedTimerHandler(PedTimer* pedTimer, void* ctx)
+static void pedTimerHandler(PedTimer* pedTimer, void*)
 {
-	if (ctx)
-	{
-		Job* job = reinterpret_cast<Job*>(ctx);
-
-		if (job)
-			job->emitProgress(pedTimer->frac * 100);
-	}
+	CoreBackend::self()->emitProgress(pedTimer->frac * 100);
 }
 
 bool LibPartedPartitionTable::resizeFileSystem(Report& report, const Partition& partition, qint64 newLength)
@@ -312,7 +304,7 @@ bool LibPartedPartitionTable::resizeFileSystem(Report& report, const Partition& 
 		{
 			if (PedGeometry* resizedGeometry = ped_geometry_new(pedDevice(), partition.fileSystem().firstSector(), newLength))
 			{
- 				PedTimer* pedTimer = ped_timer_new(pedTimerHandler, this);
+ 				PedTimer* pedTimer = ped_timer_new(pedTimerHandler, NULL);
 				rval = ped_file_system_resize(pedFileSystem, resizedGeometry, pedTimer) && commit();
  				ped_timer_destroy(pedTimer);
 

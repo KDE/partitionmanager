@@ -47,3 +47,7 @@ CoreBackend* CoreBackend::self()
 	return instance;
 }
 
+void CoreBackend::emitProgress(int i)
+{
+	emit progress(i);
+}
