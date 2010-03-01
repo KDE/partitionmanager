@@ -21,6 +21,8 @@
 
 #define PARTITIONTABLE__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "core/partitionnode.h"
 #include "core/partitionrole.h"
 
@@ -39,7 +41,7 @@ class LibPartedBackend;
 
 	@author vl@fidra.de
 */
-class PartitionTable : public PartitionNode
+class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 {
 	Q_DISABLE_COPY(PartitionTable)
 

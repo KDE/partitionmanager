@@ -23,6 +23,8 @@
 
 #include "fs/filesystem.h"
 
+#include "util/libpartitionmanagerexport.h"
+
 #include <QMap>
 #include <qglobal.h>
 
@@ -31,7 +33,7 @@ class QString;
 /** @brief Factory to create instances of FileSystem.
 	@author vl@fidra.de
  */
-class FileSystemFactory
+class LIBPARTITIONMANAGERPRIVATE_EXPORT FileSystemFactory
 {
 	public:
 		/** map of FileSystem::Types to pointers of FileSystem */

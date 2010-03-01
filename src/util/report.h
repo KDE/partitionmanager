@@ -21,6 +21,8 @@
 
 #define REPORT__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include <QObject>
 #include <QList>
 #include <QString>
@@ -34,7 +36,7 @@ class ReportLine;
 
 	@author vl@fidra.de
 */
-class Report : public QObject
+class LIBPARTITIONMANAGERPRIVATE_EXPORT Report : public QObject
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(Report)

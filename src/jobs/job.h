@@ -23,6 +23,8 @@
 
 #include "fs/filesystem.h"
 
+#include "util/libpartitionmanagerexport.h"
+
 #include <QObject>
 #include <qglobal.h>
 
@@ -42,7 +44,7 @@ class Report;
 
 	@author vl@fidra.de
 */
-class Job : public QObject
+class LIBPARTITIONMANAGERPRIVATE_EXPORT Job : public QObject
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(Job)

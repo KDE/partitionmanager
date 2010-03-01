@@ -21,6 +21,8 @@
 
 #define DEVICE__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include <QString>
 #include <QObject>
 #include <qglobal.h>
@@ -38,7 +40,7 @@ class LibPartedBackendBackend;
 	@see PartitionTable, Partition, LibParted::scanDevices()
 	@author vl@fidra.de
 */
-class Device : public QObject
+class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(Device)

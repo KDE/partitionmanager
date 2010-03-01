@@ -21,6 +21,8 @@
 
 #define EXTERNALCOMMAND__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include <QProcess>
 #include <QStringList>
 #include <QString>
@@ -34,7 +36,7 @@ class Report;
 
 	@author vl@fidra.de
 */
-class ExternalCommand : public QProcess
+class LIBPARTITIONMANAGERPRIVATE_EXPORT ExternalCommand : public QProcess
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(ExternalCommand)
@@ -46,7 +48,7 @@ class ExternalCommand : public QProcess
 	public:
 		void setCommand(const QString& cmd) { m_Command = cmd; } /**< @param cmd the command to run */
 		const QString& command() const { return m_Command; } /**< @return the command to run */
-		
+
 		void addArg(const QString& s) { m_Args << s; } /**< @param s the argument to add */
 		const QStringList& args() const { return m_Args; } /**< @return the arguments */
 		void setArgs(const QStringList& args) { m_Args = args; } /**< @param args the new arguments */
@@ -64,7 +66,7 @@ class ExternalCommand : public QProcess
 	protected:
 		void setExitCode(int i) { m_ExitCode = i; }
 		void setup();
-		
+
 	protected slots:
 		void onFinished(int exitCode);
 		void onReadOutput();

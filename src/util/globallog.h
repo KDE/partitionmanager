@@ -27,7 +27,7 @@
 #include <QObject>
 #include <qglobal.h>
 
-class Log
+class LIBPARTITIONMANAGERPRIVATE_EXPORT Log
 {
 	public:
 		enum Level

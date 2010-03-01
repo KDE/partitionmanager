@@ -21,6 +21,8 @@
 
 #define PARTITIONROLE__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include <qglobal.h>
 
 class QString;
@@ -31,7 +33,7 @@ class QString;
 
 	@author vl@fidra.de
 */
-class PartitionRole
+class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionRole
 {
 	public:
 		/** A Partition's role: What kind of Partition is it? */

@@ -25,6 +25,8 @@
 #include "core/partitionrole.h"
 #include "core/partitiontable.h"
 
+#include "util/libpartitionmanagerexport.h"
+
 #include <QStringList>
 #include <qglobal.h>
 
@@ -66,7 +68,7 @@ class QString;
 	@see PartitionTable, Device, FileSystem
 	@author vl@fidra.de
 */
-class Partition : public PartitionNode
+class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 {
 	friend class PartitionTable;
 	friend class OperationStack;
