@@ -23,6 +23,7 @@
 #include "util/report.h"
 
 #include <klocale.h>
+#include <kdebug.h>
 
 LibPartedPartition::LibPartedPartition(PedPartition* ped_partition) :
 	CoreBackendPartition(),
