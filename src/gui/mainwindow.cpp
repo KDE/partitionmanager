@@ -648,6 +648,7 @@ void MainWindow::onCreateNewPartitionTable()
 
 		pmWidget().updatePartitions();
 		enableActions();
+		infoPane().showDevice(dockWidgetArea(&dockInformation()), *pmWidget().selectedDevice());
 	}
 
 	delete dlg;
