@@ -392,7 +392,7 @@ struct Stream_t *SimpleFileOpen(struct device *dev, struct device *orig_dev,
 		if(!partTable[dev->partition].sys_ind)
 		{
 			if(errmsg)
-				sprintf(errmsg, "init: non-existant partition");
+				sprintf(errmsg, "init: non-existent partition");
 
 			close(This->fd);
 			free(This);

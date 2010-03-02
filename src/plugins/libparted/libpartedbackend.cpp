@@ -83,7 +83,7 @@ static PedExceptionOption pedExceptionHandler(PedException* e)
 // It's very unfortunate there is no public API to get at the first and last usable
 // sector for GPT a partition table, so this is the only (libparted) way to get that
 // information (another way would be to read the GPT header and parse the
-// information ourselves; if the libparted devs begin chaning these internal
+// information ourselves; if the libparted devs begin changing these internal
 // structs for each point release and break our code, we'll have to do just that).
 
 typedef struct {
