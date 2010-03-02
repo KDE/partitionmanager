@@ -17,10 +17,10 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
+#include "jobs/createpartitiontablejob.h"
+
 #include "backend/corebackenddevice.h"
 #include "backend/corebackend.h"
-
-#include "jobs/createpartitiontablejob.h"
 
 #include "core/device.h"
 #include "core/partitiontable.h"

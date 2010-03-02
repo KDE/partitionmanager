@@ -17,10 +17,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
+#include "core/copysourcedevice.h"
+
 #include "backend/corebackend.h"
 #include "backend/corebackenddevice.h"
 
-#include "core/copysourcedevice.h"
 #include "core/copytarget.h"
 #include "core/copytargetdevice.h"
 #include "core/device.h"
