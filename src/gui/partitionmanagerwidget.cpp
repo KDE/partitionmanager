@@ -383,20 +383,22 @@ void PartitionManagerWidget::onPropertiesPartition()
 {
 	if (selectedPartition())
 	{
+		Partition& p = *selectedPartition();
+
 		Q_ASSERT(selectedDevice());
 
-		QPointer<PartPropsDialog> dlg = new PartPropsDialog(this, *selectedDevice(), *selectedPartition());
+		QPointer<PartPropsDialog> dlg = new PartPropsDialog(this, *selectedDevice(), p);
 
 		if (dlg->exec() == KDialog::Accepted)
 		{
-			if (dlg->newFileSystemType() != selectedPartition()->fileSystem().type() || dlg->forceRecreate())
-				operationStack().push(new CreateFileSystemOperation(*selectedDevice(), *selectedPartition(), dlg->newFileSystemType()));
+			if (dlg->newFileSystemType() != p.fileSystem().type() || dlg->forceRecreate())
+				operationStack().push(new CreateFileSystemOperation(*selectedDevice(), p, dlg->newFileSystemType()));
 
-			if (dlg->newLabel() != selectedPartition()->fileSystem().label())
-				operationStack().push(new SetFileSystemLabelOperation(*selectedPartition(), dlg->newLabel()));
+			if (dlg->newLabel() != p.fileSystem().label())
+				operationStack().push(new SetFileSystemLabelOperation(p, dlg->newLabel()));
 
-			if (dlg->newFlags() != selectedPartition()->activeFlags())
-				operationStack().push(new SetPartFlagsOperation(*selectedDevice(), *selectedPartition(), dlg->newFlags()));
+			if (dlg->newFlags() != p.activeFlags())
+				operationStack().push(new SetPartFlagsOperation(*selectedDevice(), p, dlg->newFlags()));
 
 			updatePartitions();
 		}
