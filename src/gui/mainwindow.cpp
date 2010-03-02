@@ -54,10 +54,14 @@
 #include <kapplication.h>
 #include <kmenu.h>
 #include <kxmlguifactory.h>
+#include <kfiledialog.h>
 
 #include <QCloseEvent>
 #include <QReadLocker>
 #include <QPointer>
+#include <QFile>
+#include <QDateTime>
+#include <QTextStream>
 
 #include <config.h>
 
@@ -217,6 +221,13 @@ void MainWindow::setupActions()
 	createNewPartitionTable->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_N);
 	createNewPartitionTable->setIcon(BarIcon("edit-clear"));
 
+	KAction* exportPartitionTable = actionCollection()->addAction("exportPartitionTable", this, SLOT(onExportPartitionTable()));
+	exportPartitionTable->setEnabled(false);
+	exportPartitionTable->setText(i18nc("@action:inmenu", "Export Partition Table"));
+	exportPartitionTable->setToolTip(i18nc("@info:tooltip", "Export a partition table"));
+	exportPartitionTable->setStatusTip(i18nc("@info:status", "Exports the device's partition table in sfdisk-compatible format to a text file."));
+	exportPartitionTable->setIcon(BarIcon("document-export"));
+
 	KAction* propertiesDevice = actionCollection()->addAction("propertiesDevice", this, SLOT(onPropertiesDevice()));
 	propertiesDevice->setText(i18nc("@action:inmenu", "Properties"));
 	propertiesDevice->setToolTip(i18nc("@info:tooltip", "Show device properties dialog"));
@@ -359,6 +370,7 @@ void MainWindow::saveConfig() const
 void MainWindow::enableActions()
 {
 	actionCollection()->action("createNewPartitionTable")->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
+	actionCollection()->action("exportPartitionTable")->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->partitionTable() && numPendingOperations() == 0);
 
 	actionCollection()->action("undoOperation")->setEnabled(numPendingOperations() > 0);
 	actionCollection()->action("clearAllOperations")->setEnabled(numPendingOperations() > 0);
@@ -652,6 +664,34 @@ void MainWindow::onCreateNewPartitionTable()
 	}
 
 	delete dlg;
+}
+
+void MainWindow::onExportPartitionTable()
+{
+	Q_ASSERT(pmWidget().selectedDevice());
+	Q_ASSERT(pmWidget().selectedDevice()->partitionTable());
+
+	QString fileName = KFileDialog::getSaveFileName(KUrl("kfiledialog://exportPartitionTable"));
+
+	if (fileName.isEmpty())
+		return;
+
+	if (QFile::exists(fileName) && KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "&Overwrite File")), KStandardGuiItem::cancel()) != KMessageBox::Continue)
+		return;
+
+	QFile file(fileName);
+
+	if (!file.open(QFile::WriteOnly | QFile::Truncate))
+	{
+		KMessageBox::error(this, i18nc("@info", "Could not create output file <filename>%1</filename>.", fileName), i18nc("@window:title", "Error Exporting Partition Table"));
+		return;
+	}
+
+	QTextStream stream(&file);
+
+	stream << "# partition table of " << pmWidget().selectedDevice()->deviceNode() << "\n";
+	stream << "# on " << QDateTime::currentDateTime().toString() << "\n";
+	stream << *pmWidget().selectedDevice()->partitionTable();
 }
 
 void MainWindow::onFileSystemSupport()

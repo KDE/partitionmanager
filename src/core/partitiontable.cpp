@@ -32,6 +32,9 @@
 #include <kdebug.h>
 #include <klocale.h>
 
+#include <QFile>
+#include <QTextStream>
+
 #include <config.h>
 
 /** Creates a new PartitionTable object with type MSDOS
@@ -681,4 +684,35 @@ void PartitionTable::setType(const Device& d, TableType t)
 	setLastUsableSector(defaultLastUsable(d, t));
 
 	m_Type = t;
+}
+
+static bool isPartitionLessThan(const Partition* p1, const Partition* p2)
+{
+	return p1->number() < p2->number();
+}
+
+QTextStream& operator<<(QTextStream& stream, const PartitionTable& ptable)
+{
+	stream << "type: \"" << ptable.typeName() << "\"\n\n"
+		<< "# number start end type roles label flags\n";
+
+	QList<const Partition*> partitions;
+
+	foreach(const Partition* p, ptable.children())
+		if (!p->roles().has(PartitionRole::Unallocated))
+		{
+			partitions.append(p);
+
+			if (p->roles().has(PartitionRole::Extended))
+				foreach(const Partition* child, p->children())
+					if (!child->roles().has(PartitionRole::Unallocated))
+						partitions.append(child);
+		}
+
+	qSort(partitions.begin(), partitions.end(), isPartitionLessThan);
+
+	foreach(const Partition* p, partitions)
+		stream << *p;
+
+	return stream;
 }

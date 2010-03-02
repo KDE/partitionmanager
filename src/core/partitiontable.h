@@ -33,6 +33,8 @@ class Device;
 class Partition;
 class CoreBackend;
 
+class QTextStream;
+
 /** @brief The partition table (a.k.a Disk Label)
 
 	PartitionTable represents a partition table (or disk label).
@@ -46,6 +48,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 	Q_DISABLE_COPY(PartitionTable)
 
 	friend class CoreBackend;
+	friend QTextStream& operator<<(QTextStream& stream, const PartitionTable& ptable);
 
 	public:
 		enum TableType
@@ -144,6 +147,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 		static bool tableTypeSupportsExtended(TableType l);
 		static bool tableTypeIsReadOnly(TableType l);
 
+
 	protected:
 		void setMaxPrimaries(qint32 n) { m_MaxPrimaries = n; }
 		void setFirstUsableSector(qint64 s) { m_FirstUsable = s; }
@@ -159,6 +163,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(PartitionTable::Flags)
 
+QTextStream& operator<<(QTextStream& stream, const PartitionTable& ptable);
 
 #endif
 

@@ -57,6 +57,7 @@ class FileSystem;
 class Report;
 
 class QString;
+class QTextStream;
 
 /** @brief A partition or some unallocated space on a Device.
 
@@ -93,6 +94,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 	friend class CreatePartitionJob;
 	friend class SetPartFlagsJob;
 	friend class RestoreFileSystemJob;
+
+	friend QTextStream& operator<<(QTextStream& stream, const Partition& p);
 
 	public:
 		/** A Partition state -- where did it come from? */
@@ -199,6 +202,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 		qint32 m_SectorSize;
 		State m_State;
 };
+
+QTextStream& operator<<(QTextStream& stream, const Partition& p);
 
 #endif
 

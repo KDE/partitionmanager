@@ -335,3 +335,29 @@ void Partition::move(qint64 newStartSector)
 	setFirstSector(newStartSector);
 	setLastSector(newStartSector + savedLength - 1);
 }
+
+QTextStream& operator<<(QTextStream& stream, const Partition& p)
+{
+	QStringList flagList;
+
+	foreach(const PartitionTable::Flag& f, PartitionTable::flagList())
+	{
+		if (p.activeFlags() & f)
+			flagList.append(PartitionTable::flagName(f));
+	}
+
+	const QString sep = ";";
+
+	// number - start - end - type - roles - label - flags
+	stream << p.number() << sep
+		<< p.firstSector() << sep
+		<< p.lastSector() << sep
+		<< p.fileSystem().name() << sep
+		<< p.roles().toString() << sep
+		<< "\"" << p.fileSystem().label() << "\"" << sep
+		<< "\"" << flagList.join(",") << "\""
+		<< "\n";
+
+	return stream;
+}
+
