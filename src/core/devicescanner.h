@@ -39,13 +39,13 @@ class DeviceScanner : public QThread
 
 	public:
 		void clear(); /**< clear Devices and the OperationStack */
+		void scan(); /**< do the actual scanning; blocks if called directly */
 
 	signals:
 		void progress(const QString& device_node, int progress);
 
 	protected:
 		virtual void run();
-
 		OperationStack& operationStack() { return m_OperationStack; }
 		const OperationStack& operationStack() const { return m_OperationStack; }
 

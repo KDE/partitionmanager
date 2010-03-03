@@ -45,6 +45,11 @@ void DeviceScanner::clear()
 
 void DeviceScanner::run()
 {
+	scan();
+}
+
+void DeviceScanner::scan()
+{
 	emit progress(QString(), 0);
 
 	clear();

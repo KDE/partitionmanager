@@ -434,7 +434,9 @@ void MainWindow::on_m_OperationStack_operationsChanged()
 
 void MainWindow::on_m_OperationStack_devicesChanged()
 {
+#if defined(THREADED_DEVICE_SCANNER)
 	QReadLocker lockDevices(&operationStack().lock());
+#endif
 
 	listDevices().updateDevices(operationStack().previewDevices());
 
@@ -543,10 +545,15 @@ void MainWindow::scanDevices()
 
 	KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
+#if defined(THREADED_DEVICE_SCANNER)
 	scanProgressDialog().setEnabled(true);
 	scanProgressDialog().show();
 
 	deviceScanner().start();
+#else
+	deviceScanner().scan();
+	on_m_DeviceScanner_finished();
+#endif
 }
 
 void MainWindow::on_m_DeviceScanner_progress(const QString& device_node, int percent)
@@ -557,7 +564,9 @@ void MainWindow::on_m_DeviceScanner_progress(const QString& device_node, int per
 
 void MainWindow::on_m_DeviceScanner_finished()
 {
+#if defined(THREADED_DEVICE_SCANNER)
 	QReadLocker lockDevices(&operationStack().lock());
+#endif
 
 	if (!operationStack().previewDevices().isEmpty())
 		pmWidget().setSelectedDevice(operationStack().previewDevices()[0]);

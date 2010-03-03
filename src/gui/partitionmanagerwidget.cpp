@@ -186,7 +186,9 @@ Partition* PartitionManagerWidget::selectedPartition()
 
 void PartitionManagerWidget::setSelectedDevice(const QString& device_node)
 {
+#if defined(THREADED_DEVICE_SCANNER)
 	QReadLocker lockDevices(&operationStack().lock());
+#endif
 
 	foreach(Device* d, operationStack().previewDevices())
 		if (d->deviceNode() == device_node)
