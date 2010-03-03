@@ -23,6 +23,8 @@
 #include "ui_configurepagefilesystemcolors.h"
 #include "ui_configurepageadvanced.h"
 
+#include <kiconloader.h>
+
 class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
 {
 	public:
@@ -44,10 +46,18 @@ class AdvancedPageWidget : public QWidget, public Ui::ConfigurePageAdvanced
 ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const QString& name, KConfigSkeleton* cfg) :
 	KConfigDialog(parent, name, cfg)
 {
-	setFaceType(KPageDialog::Tabbed);
-	addPage(new GeneralPageWidget(this), i18n("General"), QString(), i18n("General Settings"));
-	addPage(new FileSystemColorsPageWidget(this), i18n("File System Colors"), QString(), i18n("File System Color Settings"));
-	addPage(new AdvancedPageWidget(this), i18n("Advanced"), QString(), i18n("Advanced Settings"));
+	setFaceType(List);
+
+	KPageWidgetItem* item = NULL;
+
+	item = addPage(new GeneralPageWidget(this), i18n("General"), QString(), i18n("General Settings"));
+	item->setIcon(KIcon(DesktopIcon("partitionmanager")));
+
+	item = addPage(new FileSystemColorsPageWidget(this), i18n("File System Colors"), QString(), i18n("File System Color Settings"));
+	item->setIcon(KIcon(DesktopIcon("format-fill-color")));
+
+	item = addPage(new AdvancedPageWidget(this), i18n("Advanced"), QString(), i18n("Advanced Settings"));
+	item->setIcon(KIcon(DesktopIcon("configure")));
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "configureOptionsDialog"));
 }
