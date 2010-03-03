@@ -21,7 +21,6 @@
 
 #include "ui_configurepagegeneral.h"
 #include "ui_configurepagefilesystemcolors.h"
-#include "ui_configurepageadvanced.h"
 
 #include <kiconloader.h>
 
@@ -37,12 +36,6 @@ class FileSystemColorsPageWidget : public QWidget, public Ui::ConfigurePageFileS
 		FileSystemColorsPageWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
 };
 
-class AdvancedPageWidget : public QWidget, public Ui::ConfigurePageAdvanced
-{
-	public:
-		AdvancedPageWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
-};
-
 ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const QString& name, KConfigSkeleton* cfg) :
 	KConfigDialog(parent, name, cfg)
 {
@@ -55,9 +48,6 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const QString& n
 
 	item = addPage(new FileSystemColorsPageWidget(this), i18n("File System Colors"), QString(), i18n("File System Color Settings"));
 	item->setIcon(KIcon(DesktopIcon("format-fill-color")));
-
-	item = addPage(new AdvancedPageWidget(this), i18n("Advanced"), QString(), i18n("Advanced Settings"));
-	item->setIcon(KIcon(DesktopIcon("configure")));
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "configureOptionsDialog"));
 }
