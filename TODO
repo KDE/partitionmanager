@@ -19,5 +19,20 @@ Random plans and ideas for 1.1 and beyond:
 
 * save msdos mbr?
 
+* don't call updatePartitions() or anything after pushing an operation to the
+  stack: MainWindow::on_m_OperationStack_operationsChanged() will be called and
+  will deal with all that. warning: this might cause problems, it calls
+  PartitionManagerWidget::updatePartitions() which currently clears the
+  selection -- maybe it shouldn't...
+
+* let the user specify extern command locations and options in the settings
+
+* move device scanning to backend plugin (call it from the device scanner
+  thread though)
+
 
 Bugs:
+
+* don't show available and used values for extended partitions
+
+* solid and its object-created-with-parent-in-wrong-thread problem

@@ -41,6 +41,7 @@ class CreatePartitionTableOperation : public Operation
 
 	public:
 		CreatePartitionTableOperation(Device& d, PartitionTable::TableType t);
+		CreatePartitionTableOperation(Device& d, PartitionTable* ptable);
 		~CreatePartitionTableOperation();
 
 	public:

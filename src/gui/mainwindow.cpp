@@ -40,6 +40,7 @@
 #include "ops/checkoperation.h"
 
 #include "fs/filesystem.h"
+#include "fs/filesystemfactory.h"
 
 #include <kstandardaction.h>
 #include <kactioncollection.h>
@@ -225,10 +226,18 @@ void MainWindow::setupActions()
 	exportPartitionTable->setEnabled(false);
 	exportPartitionTable->setText(i18nc("@action:inmenu", "Export Partition Table"));
 	exportPartitionTable->setToolTip(i18nc("@info:tooltip", "Export a partition table"));
-	exportPartitionTable->setStatusTip(i18nc("@info:status", "Exports the device's partition table in sfdisk-compatible format to a text file."));
+	exportPartitionTable->setStatusTip(i18nc("@info:status", "Export the device's partition table to a text file."));
 	exportPartitionTable->setIcon(BarIcon("document-export"));
 
+	KAction* importPartitionTable = actionCollection()->addAction("importPartitionTable", this, SLOT(onImportPartitionTable()));
+	importPartitionTable->setEnabled(false);
+	importPartitionTable->setText(i18nc("@action:inmenu", "Import Partition Table"));
+	importPartitionTable->setToolTip(i18nc("@info:tooltip", "Import a partition table"));
+	importPartitionTable->setStatusTip(i18nc("@info:status", "Import a partition table from a text file."));
+	importPartitionTable->setIcon(BarIcon("document-import"));
+
 	KAction* propertiesDevice = actionCollection()->addAction("propertiesDevice", this, SLOT(onPropertiesDevice()));
+	propertiesDevice->setEnabled(false);
 	propertiesDevice->setText(i18nc("@action:inmenu", "Properties"));
 	propertiesDevice->setToolTip(i18nc("@info:tooltip", "Show device properties dialog"));
 	propertiesDevice->setStatusTip(i18nc("@info:status", "View and modify device properties"));
@@ -371,6 +380,8 @@ void MainWindow::enableActions()
 {
 	actionCollection()->action("createNewPartitionTable")->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
 	actionCollection()->action("exportPartitionTable")->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->partitionTable() && numPendingOperations() == 0);
+	actionCollection()->action("importPartitionTable")->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
+	actionCollection()->action("propertiesDevice")->setEnabled(pmWidget().selectedDevice() != NULL);
 
 	actionCollection()->action("undoOperation")->setEnabled(numPendingOperations() > 0);
 	actionCollection()->action("clearAllOperations")->setEnabled(numPendingOperations() > 0);
@@ -411,6 +422,11 @@ void MainWindow::on_m_ApplyProgressDialog_finished()
 void MainWindow::on_m_OperationStack_operationsChanged()
 {
 	listOperations().updateOperations(operationStack().operations());
+	pmWidget().updatePartitions();
+	enableActions();
+
+	// this will make sure that the info pane gets updated
+	on_m_PartitionManagerWidget_selectedPartitionChanged(pmWidget().selectedPartition());
 
 	if (!isKPart())
 		statusText().setText(i18ncp("@info:status", "One pending operation", "%1 pending operations", numPendingOperations()));
@@ -508,7 +524,7 @@ void MainWindow::onShowMenuBar()
 	else
 	{
 		const QString accel = menuBarAction->shortcut().toString();
-		KMessageBox::information(this, i18nc("@info", "This will hide the menu bar completely. You can show it again by typing %1.", accel), i18nc("@window:title", "Hide Menu Bar"), "hideMenuBarWarning");
+		KMessageBox::information(this, i18nc("@info", "This will hide the menu bar completely. You can show it again by typing %1.", accel), i18nc("@title:window", "Hide Menu Bar"), "hideMenuBarWarning");
 
 		menuBar()->hide();
 	}
@@ -655,15 +671,166 @@ void MainWindow::onCreateNewPartitionTable()
 	QPointer<CreatePartitionTableDialog> dlg = new CreatePartitionTableDialog(this, *pmWidget().selectedDevice());
 
 	if (dlg->exec() == KDialog::Accepted)
-	{
 		operationStack().push(new CreatePartitionTableOperation(*pmWidget().selectedDevice(), dlg->type()));
 
-		pmWidget().updatePartitions();
-		enableActions();
-		infoPane().showDevice(dockWidgetArea(&dockInformation()), *pmWidget().selectedDevice());
+	delete dlg;
+}
+
+void MainWindow::onImportPartitionTable()
+{
+	Q_ASSERT(pmWidget().selectedDevice());
+
+	Device& device = *pmWidget().selectedDevice();
+
+	QString fileName = KFileDialog::getOpenFileName(KUrl("kfiledialog://importPartitionTable"));
+
+	if (fileName.isEmpty())
+		return;
+
+	QFile file(fileName);
+
+	if (!file.open(QFile::ReadOnly))
+	{
+		KMessageBox::error(this, i18nc("@info", "Could not open input file <filename>%1</filename>.", fileName), i18nc("@title:window", "Error Importing Partition Table"));
+		return;
 	}
 
-	delete dlg;
+	QByteArray line;
+	QRegExp rxPartition("(\\d+);(\\d+);(\\d+);(\\w+);(\\w+);(\"\\w*\");(\"[^\"]*\")");
+	QRegExp rxType("type:\\s\"(.+)\"");
+	QRegExp rxMagic("^##|v(\\d+)|##");
+	quint32 lineNo = 0;
+	bool haveMagic = false;
+	PartitionTable* ptable = NULL;
+	PartitionTable::TableType tableType = PartitionTable::unknownTableType;
+
+	while (!(line = file.readLine()).isEmpty())
+	{
+		lineNo++;
+		line = line.simplified();
+
+		if (line.isEmpty())
+			continue;
+
+		if (!haveMagic && rxMagic.indexIn(line) == -1)
+		{
+			KMessageBox::error(this, i18nc("@info", "The file <filename>%1</filename> is not a valid partition table text file.", fileName), i18nc("@title:window", "Error While Importing Partition Table"));
+			return;
+		}
+		else
+			haveMagic = true;
+
+		if (line.startsWith('#'))
+			continue;
+
+		if (rxType.indexIn(line) != -1)
+		{
+			if (ptable != NULL)
+			{
+				KMessageBox::error(this, i18nc("@info", "Found more than one partition table type in import file (line %1).", lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				return;
+			}
+
+			tableType = PartitionTable::nameToTableType(rxType.cap(1));
+
+			if (tableType == PartitionTable::unknownTableType)
+			{
+				KMessageBox::error(this, i18nc("@info", "Partition table type \"%1\" is unknown (line %2).", rxType.cap(1), lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				return;
+			}
+
+			if (tableType != PartitionTable::msdos && tableType != PartitionTable::gpt)
+			{
+				KMessageBox::error(this, i18nc("@info", "Partition table type \"%1\" is not supported for import (line %2).", rxType.cap(1), lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				return;
+			}
+
+			ptable = new PartitionTable(tableType, PartitionTable::defaultFirstUsable(device, tableType), PartitionTable::defaultLastUsable(device, tableType));
+			operationStack().push(new CreatePartitionTableOperation(device, ptable));
+		}
+		else if (rxPartition.indexIn(line) != -1)
+		{
+			if (ptable == NULL)
+			{
+				KMessageBox::error(this, i18nc("@info", "Found partition but no partition table type (line %1).",  lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				return;
+			}
+
+			qint32 num = rxPartition.cap(1).toInt();
+			qint64 firstSector = rxPartition.cap(2).toLongLong();
+			qint64 lastSector = rxPartition.cap(3).toLongLong();
+			QString fsName = rxPartition.cap(4);
+			QString roleNames = rxPartition.cap(5);
+			QString volumeLabel = rxPartition.cap(6).replace('"', "");
+			QStringList flags = rxPartition.cap(7).replace('"', "").split(',');
+
+			if (firstSector < ptable->firstUsable() || lastSector > ptable->lastUsable())
+			{
+				KMessageBox::error(this, i18nc("@info", "Partition %1 would be outside the device's boundaries (line %2).", num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				return;
+			}
+
+			if (firstSector >= lastSector)
+			{
+				KMessageBox::error(this, i18nc("@info", "Partition %1 has end before start sector (line %2).", num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				return;
+			}
+
+			PartitionNode* parent = ptable;
+
+			Q_ASSERT(parent);
+
+			PartitionRole role(PartitionRole::None);
+
+			if (roleNames == "extended")
+				role = PartitionRole(PartitionRole::Extended);
+			else if (roleNames == "logical")
+			{
+				role = PartitionRole(PartitionRole::Logical);
+				parent = ptable->findPartitionBySector(firstSector, PartitionRole(PartitionRole::Extended));
+			}
+			else if (roleNames == "primary")
+				role = PartitionRole(PartitionRole::Primary);
+
+			if (role == PartitionRole(PartitionRole::None))
+			{
+				KMessageBox::error(this, i18nc("@info", "Unrecognized partition role \"%1\" for partition %2 (line %3).", roleNames, num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				return;
+			}
+
+			if (parent == NULL)
+			{
+				KMessageBox::error(this, i18nc("@info", "No parent partition or partition table found for partition %1 (line %2).", num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				return;
+			}
+
+			if (role.has(PartitionRole::Extended) && !PartitionTable::tableTypeSupportsExtended(tableType))
+			{
+				KMessageBox::error(this, i18nc("@info", "The partition table type \"%1\" does not support extended partitions, but one was found (line %2).", PartitionTable::tableTypeToName(tableType), lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				return;
+			}
+
+			FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(fsName), firstSector, lastSector);
+
+			if (fs == NULL)
+			{
+				KMessageBox::error(this, i18nc("@info", "Could not create file system \"%1\" for partition %2 (line %3).", fsName, num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				return;
+			}
+
+			if (fs->supportSetLabel() != FileSystem::cmdSupportNone && !volumeLabel.isEmpty())
+				fs->setLabel(volumeLabel);
+
+			Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, -1, PartitionTable::FlagNone, QStringList(), false, PartitionTable::FlagNone, Partition::StateNew);
+
+			operationStack().push(new NewOperation(device, p));
+		}
+		else
+			Log(Log::warning) << i18nc("@info/plain", "Could not parse line %1 from import file. Ignoring it.", lineNo);
+	}
+
+	if (ptable->type() == PartitionTable::msdos && ptable->isSectorBased())
+		ptable->setType(device, PartitionTable::msdos_sectorbased);
 }
 
 void MainWindow::onExportPartitionTable()
@@ -683,13 +850,13 @@ void MainWindow::onExportPartitionTable()
 
 	if (!file.open(QFile::WriteOnly | QFile::Truncate))
 	{
-		KMessageBox::error(this, i18nc("@info", "Could not create output file <filename>%1</filename>.", fileName), i18nc("@window:title", "Error Exporting Partition Table"));
+		KMessageBox::error(this, i18nc("@info", "Could not create output file <filename>%1</filename>.", fileName), i18nc("@title:window", "Error Exporting Partition Table"));
 		return;
 	}
 
 	QTextStream stream(&file);
 
-	stream << "# partition table of " << pmWidget().selectedDevice()->deviceNode() << "\n";
+	stream << "##|v1|## partition table of " << pmWidget().selectedDevice()->deviceNode() << "\n";
 	stream << "# on " << QDateTime::currentDateTime().toString() << "\n";
 	stream << *pmWidget().selectedDevice()->partitionTable();
 }

@@ -45,7 +45,10 @@
 		<Menu name="device">
 			<text context="@title:menu">Device</text>
 			<Action name="createNewPartitionTable"/>
+			<separator/>
 			<Action name="exportPartitionTable"/>
+			<Action name="importPartitionTable"/>
+			<separator/>
 			<Action name="propertiesDevice"/>
 		</Menu>
 		<Menu name="partition">

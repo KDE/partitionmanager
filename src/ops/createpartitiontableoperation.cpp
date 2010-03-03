@@ -44,6 +44,20 @@ CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d, Partitio
 	addJob(createPartitionTableJob());
 }
 
+/** Creates a new CreatePartitionTableOperation.
+	@param d the Device to create the new PartitionTable on
+	@param ptable pointer to the new partition table object. the operation takes ownership.
+*/
+CreatePartitionTableOperation::CreatePartitionTableOperation(Device& d, PartitionTable* ptable) :
+	Operation(),
+	m_TargetDevice(d),
+	m_OldPartitionTable(targetDevice().partitionTable()),
+	m_PartitionTable(ptable),
+	m_CreatePartitionTableJob(new CreatePartitionTableJob(targetDevice()))
+{
+	addJob(createPartitionTableJob());
+}
+
 CreatePartitionTableOperation::~CreatePartitionTableOperation()
 {
 	if (status() == StatusPending)

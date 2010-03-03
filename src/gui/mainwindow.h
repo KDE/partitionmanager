@@ -149,6 +149,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void onRefreshDevices();
 		void onCreateNewPartitionTable();
 		void onExportPartitionTable();
+		void onImportPartitionTable();
 
 		void onApplyAllOperations();
 		void onUndoOperation();
