@@ -567,8 +567,6 @@ void MainWindow::on_m_DeviceScanner_finished()
 	Log() << i18nc("@info/plain", "Scan finished.");
 	KApplication::restoreOverrideCursor();
 
-	scanProgressDialog().hide();
-
 	// try to set the seleted device, either from the saved one or just select the
 	// first device
 	if (!listDevices().setSelectedDevice(savedSelectedDeviceNode()) && !operationStack().previewDevices().isEmpty())
