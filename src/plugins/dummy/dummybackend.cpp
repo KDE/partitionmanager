@@ -50,6 +50,13 @@ QString DummyBackend::about() const
 	return QString("DummyBackend");
 }
 
+QList<Device*> DummyBackend::scanDevices()
+{
+	QList<Device*> result;
+	result.append(scanDevice("/dev/sda"));
+	return result;
+}
+
 Device* DummyBackend::scanDevice(const QString& device_node)
 {
 	Device* d = new Device("Dummy Device", QString("/tmp" + device_node), 255, 0xffff, 63, 512);

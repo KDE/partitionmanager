@@ -27,10 +27,6 @@ Random plans and ideas for 1.1 and beyond:
 
 * let the user specify extern command locations and options in the settings
 
-* move device scanning to backend plugin (call it from the device scanner
-  thread though)
-
-
 Bugs:
 
 * solid and its object-created-with-parent-in-wrong-thread problem

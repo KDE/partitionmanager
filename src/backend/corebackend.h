@@ -24,6 +24,7 @@
 #include "util/libpartitionmanagerexport.h"
 
 #include <QObject>
+#include <QList>
 
 class CoreBackendDevice;
 class Device;
@@ -42,16 +43,19 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 
 	signals:
 		void progress(int);
+		void scanProgress(const QString&,int);
 
 	public:
 		static CoreBackend* self();
 		virtual QString about() const = 0;
 
+		virtual QList<Device*> scanDevices() = 0;
 		virtual Device* scanDevice(const QString& device_node) = 0;
 		virtual CoreBackendDevice* openDevice(const QString& device_node) = 0;
 		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node) = 0;
 		virtual bool closeDevice(CoreBackendDevice* core_device) = 0;
 		virtual void emitProgress(int i);
+		virtual void emitScanProgress(const QString& device_node, int i);
 
 	protected:
 		static void setPartitionTableForDevice(Device& d, PartitionTable* p);

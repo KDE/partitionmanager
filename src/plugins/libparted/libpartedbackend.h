@@ -36,6 +36,7 @@
 class LibPartedDevice;
 class LibPartedPartitionTable;
 class LibPartedPartition;
+class OperationStack;
 
 class Device;
 class KPluginFactory;
@@ -64,6 +65,7 @@ class LibPartedBackend : public CoreBackend
 		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node);
 		virtual bool closeDevice(CoreBackendDevice* core_device);
 		virtual Device* scanDevice(const QString& device_node);
+		virtual QList<Device*> scanDevices();
 
 	private:
 		static FileSystem::Type detectFileSystem(PedDevice* pedDevice, PedPartition* pedPartition);

@@ -24,10 +24,8 @@
 #include "core/operationstack.h"
 #include "core/device.h"
 
-#include <solid/device.h>
-#include <solid/deviceinterface.h>
-#include <solid/block.h>
-#include <solid/storagedrive.h>
+#include <klocale.h>
+#include <kdebug.h>
 
 /** Constructs a DeviceScanner
 	@param ostack the OperationStack where the devices will be created
@@ -36,6 +34,7 @@ DeviceScanner::DeviceScanner(QObject* parent, OperationStack& ostack) :
 	QThread(parent),
 	m_OperationStack(ostack)
 {
+	connect(CoreBackend::self(), SIGNAL(scanProgress(QString,int)), SIGNAL(progress(QString,int)));
 }
 
 void DeviceScanner::clear()
@@ -44,47 +43,16 @@ void DeviceScanner::clear()
 	operationStack().clearDevices();
 }
 
-static quint32 countDevices(const QList<Solid::Device>& driveList)
-{
-	quint32 rval = 0;
-
-	foreach(const Solid::Device& solidDevice, driveList)
-	{
-		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
-		if (solidDrive->driveType() == Solid::StorageDrive::HardDisk)
-			rval++;
-	}
-
-	return rval;
-}
-
 void DeviceScanner::run()
 {
+	emit progress(QString(), 0);
+
 	clear();
 
-	const QList<Solid::Device> driveList = Solid::Device::listFromType(Solid::DeviceInterface::StorageDrive, QString());
-	const quint32 totalDevices = countDevices(driveList);
-	quint32 count = 0;
+	QList<Device*> deviceList = CoreBackend::self()->scanDevices();
 
-	foreach(const Solid::Device& solidDevice, driveList)
-	{
-		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
-
-		if (solidDrive->driveType() != Solid::StorageDrive::HardDisk)
-			continue;
-
-		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
-
-		Device* d = CoreBackend::self()->scanDevice(solidBlock->device());
-
-		if (d != NULL)
-		{
-			d->setIconName(solidDevice.icon());
-			operationStack().addDevice(d);
-		}
-
-		emit progress(solidBlock->device(), (++count) * 100 / totalDevices);
-	}
+	foreach(Device* d, deviceList)
+		operationStack().addDevice(d);
 
 	operationStack().sortDevices();
 }

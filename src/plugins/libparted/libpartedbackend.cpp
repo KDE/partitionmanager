@@ -41,6 +41,11 @@
 #include <kdiskfreespaceinfo.h>
 #include <kpluginfactory.h>
 
+#include <solid/device.h>
+#include <solid/deviceinterface.h>
+#include <solid/block.h>
+#include <solid/storagedrive.h>
+
 #include <parted/parted.h>
 #include <unistd.h>
 #include <blkid/blkid.h>
@@ -373,6 +378,51 @@ Device* LibPartedBackend::scanDevice(const QString& device_node)
 	}
 
 	return d;
+}
+
+static quint32 countDevices(const QList<Solid::Device>& driveList)
+{
+	quint32 rval = 0;
+
+	foreach(const Solid::Device& solidDevice, driveList)
+	{
+		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
+		if (solidDrive->driveType() == Solid::StorageDrive::HardDisk)
+			rval++;
+	}
+
+	return rval;
+}
+
+QList<Device*> LibPartedBackend::scanDevices()
+{
+	QList<Device*> result;
+
+	const QList<Solid::Device> driveList = Solid::Device::listFromType(Solid::DeviceInterface::StorageDrive, QString());
+	const quint32 totalDevices = countDevices(driveList);
+	quint32 count = 0;
+
+	foreach(const Solid::Device& solidDevice, driveList)
+	{
+		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
+
+		if (solidDrive->driveType() != Solid::StorageDrive::HardDisk)
+			continue;
+
+		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
+
+		Device* d = CoreBackend::self()->scanDevice(solidBlock->device());
+
+		if (d != NULL)
+		{
+			d->setIconName(solidDevice.icon());
+			result.append(d);
+		}
+
+		emitScanProgress(solidBlock->device(), (++count) * 100 / totalDevices);
+	}
+
+	return result;
 }
 
 CoreBackendDevice* LibPartedBackend::openDevice(const QString& device_node)
