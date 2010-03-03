@@ -49,7 +49,7 @@ class QIcon;
 	Operations own the objects they deal with in most cases, usually Partitions. But as soon as
 	an Operation has been successfully executed, it no longer owns anything, because the
 	OperationStack then takes over ownership.
-	
+
 	Some rules for creating new operations that inherit the Operation class:
 
 	<ol>
@@ -77,7 +77,7 @@ class Operation : public QObject
 
 	friend class OperationStack;
 	friend class OperationRunner;
-	
+
 	public:
 		/** Status of this Operation */
 		enum OperationStatus
@@ -95,10 +95,10 @@ class Operation : public QObject
 		virtual ~Operation();
 
 	signals:
-		int progressChanged(int);
+		int progress(int);
 		void jobStarted(Job*, Operation*);
 		void jobFinished(Job*, Operation*);
-		
+
 	public:
 		virtual QString iconName() const = 0; /**< @return name of the icon for the Operation */
 		virtual QString description() const = 0; /**< @return the Operation's description */
@@ -109,27 +109,27 @@ class Operation : public QObject
 		virtual OperationStatus status() const { return m_Status; } /**< @return the current status */
 		virtual QString statusText() const;
 		virtual QIcon statusIcon() const;
-		
+
 		virtual void setStatus(OperationStatus s) { m_Status = s; } /**< @param s the new status */
-		
+
 		qint32 totalProgress() const;
 
 	protected slots:
 		void onJobStarted();
 		void onJobFinished();
-		
+
 	protected:
 		void insertPreviewPartition(Device& targetDevice, Partition& newPartition);
 		void removePreviewPartition(Device& device, Partition& p);
-		
+
 		void addJob(Job* job);
-		
+
 		QList<Job*>& jobs() { return m_Jobs; }
 		const QList<Job*>& jobs() const { return m_Jobs; }
-		
+
 		void setProgressBase(qint32 i) { m_ProgressBase = i; }
 		qint32 progressBase() const { return m_ProgressBase; }
-		
+
 	private:
 		OperationStatus m_Status;
 		QList<Job*> m_Jobs;

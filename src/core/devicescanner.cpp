@@ -83,7 +83,7 @@ void DeviceScanner::run()
 			operationStack().addDevice(d);
 		}
 
-		emit progressChanged(solidBlock->device(), (++count) * 100 / totalDevices);
+		emit progress(solidBlock->device(), (++count) * 100 / totalDevices);
 	}
 
 	operationStack().sortDevices();

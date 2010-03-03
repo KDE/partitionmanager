@@ -66,12 +66,12 @@ void OperationRunner::run()
 
 		emit opStarted(i + 1, op);
 
-		connect(op, SIGNAL(progressChanged(int)), this, SIGNAL(progressSub(int)));
+		connect(op, SIGNAL(progress(int)), this, SIGNAL(progressSub(int)));
 
 		status = op->execute(report());
 		op->preview();
 
-		disconnect(op, SIGNAL(progressChanged(int)), this, SIGNAL(progressSub(int)));
+		disconnect(op, SIGNAL(progress(int)), this, SIGNAL(progressSub(int)));
 
 		emit opFinished(i + 1, op);
 

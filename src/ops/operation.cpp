@@ -124,7 +124,7 @@ void Operation::addJob(Job* job)
 	{
 		jobs().append(job);
 		connect(job, SIGNAL(started()), SLOT(onJobStarted()));
-		connect(job, SIGNAL(progress(int)), SIGNAL(progressChanged(int)));
+		connect(job, SIGNAL(progress(int)), SIGNAL(progress(int)));
 		connect(job, SIGNAL(finished()), SLOT(onJobFinished()));
 	}
 }

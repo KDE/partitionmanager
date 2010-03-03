@@ -136,7 +136,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void on_m_OperationStack_devicesChanged();
 
 		void on_m_DeviceScanner_finished();
-		void on_m_DeviceScanner_progressChanged(const QString& device_node, int percent);
+		void on_m_DeviceScanner_progress(const QString& device_node, int percent);
 
 		void on_m_ApplyProgressDialog_finished();
 

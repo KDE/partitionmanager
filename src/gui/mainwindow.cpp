@@ -549,7 +549,7 @@ void MainWindow::scanDevices()
 	deviceScanner().start();
 }
 
-void MainWindow::on_m_DeviceScanner_progressChanged(const QString& device_node, int percent)
+void MainWindow::on_m_DeviceScanner_progress(const QString& device_node, int percent)
 {
 	scanProgressDialog().setProgress(percent);
 	scanProgressDialog().setDeviceName(device_node);
