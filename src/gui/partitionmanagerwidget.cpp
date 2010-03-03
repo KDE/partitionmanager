@@ -399,8 +399,6 @@ void PartitionManagerWidget::onPropertiesPartition()
 
 			if (dlg->newFlags() != p.activeFlags())
 				operationStack().push(new SetPartFlagsOperation(*selectedDevice(), p, dlg->newFlags()));
-
-			updatePartitions();
 		}
 
 		delete dlg;
@@ -502,7 +500,6 @@ void PartitionManagerWidget::onNewPartition()
 	{
 		PartitionTable::alignPartition(*selectedDevice(), *newPartition);
 		operationStack().push(new NewOperation(*selectedDevice(), newPartition));
-		updatePartitions();
 	}
 	else
 		delete newPartition;
@@ -559,7 +556,6 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 	}
 
 	operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), shred));
-	updatePartitions();
 }
 
 void PartitionManagerWidget::onShredPartition()
@@ -599,11 +595,7 @@ void PartitionManagerWidget::onResizePartition()
 		if (resizedPartition.firstSector() == selectedPartition()->firstSector() && resizedPartition.lastSector() == selectedPartition()->lastSector())
 			Log(Log::information) << i18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", selectedPartition()->deviceNode());
 		else
-		{
 			operationStack().push(new ResizeOperation(*selectedDevice(), *selectedPartition(), resizedPartition.firstSector(), resizedPartition.lastSector()));
-
-			updatePartitions();
-		}
 	}
 
 	delete dlg;
@@ -656,10 +648,7 @@ void PartitionManagerWidget::onPastePartition()
 	Partition* copiedPartition = CopyOperation::createCopy(*selectedPartition(), *clipboardPartition());
 
 	if (showInsertDialog(*copiedPartition, clipboardPartition()->length()))
-	{
 		operationStack().push(new CopyOperation(*selectedDevice(), copiedPartition, *dSource, clipboardPartition()));
-		updatePartitions();
-	}
 	else
 		delete copiedPartition;
 }
@@ -724,8 +713,6 @@ void PartitionManagerWidget::onCheckPartition()
 	}
 
 	operationStack().push(new CheckOperation(*selectedDevice(), *selectedPartition()));
-
-	updatePartitions();
 }
 
 void PartitionManagerWidget::onBackupPartition()
@@ -746,10 +733,7 @@ void PartitionManagerWidget::onBackupPartition()
 		return;
 
 	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "&Overwrite File")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
-	{
 		operationStack().push(new BackupOperation(*selectedDevice(), *selectedPartition(), fileName));
-		updatePartitions();
-	}
 }
 
 void PartitionManagerWidget::onRestorePartition()
@@ -781,12 +765,8 @@ void PartitionManagerWidget::onRestorePartition()
 		}
 
 		if (showInsertDialog(*restorePartition, restorePartition->length()))
-		{
 			operationStack().push(new RestoreOperation(*selectedDevice(), restorePartition, fileName));
-			updatePartitions();
-		}
 		else
 			delete restorePartition;
 	}
 }
-
