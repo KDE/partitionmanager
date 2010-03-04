@@ -428,7 +428,7 @@ void OperationStack::clearOperations()
 /** Clears the list of Devices. */
 void OperationStack::clearDevices()
 {
-#if defined(THREADED_DEVICE_SCANNER)
+#if !defined(NO_THREADED_DEVICE_SCANNER)
 	QWriteLocker lockDevices(&lock());
 #endif
 
@@ -443,7 +443,7 @@ void OperationStack::clearDevices()
 */
 Device* OperationStack::findDeviceForPartition(const Partition* p)
 {
-#if defined(THREADED_DEVICE_SCANNER)
+#if !defined(NO_THREADED_DEVICE_SCANNER)
 	QReadLocker lockDevices(&lock());
 #endif
 
@@ -473,7 +473,7 @@ void OperationStack::addDevice(Device* d)
 {
 	Q_ASSERT(d);
 
-#if defined(THREADED_DEVICE_SCANNER)
+#if !defined(NO_THREADED_DEVICE_SCANNER)
 	QWriteLocker lockDevices(&lock());
 #endif
 
@@ -488,7 +488,7 @@ static bool deviceLessThan(const Device* d1, const Device* d2)
 
 void OperationStack::sortDevices()
 {
-#if defined(THREADED_DEVICE_SCANNER)
+#if !defined(NO_THREADED_DEVICE_SCANNER)
 	QWriteLocker lockDevices(&lock());
 #endif
 

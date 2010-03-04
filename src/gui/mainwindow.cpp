@@ -434,7 +434,7 @@ void MainWindow::on_m_OperationStack_operationsChanged()
 
 void MainWindow::on_m_OperationStack_devicesChanged()
 {
-#if defined(THREADED_DEVICE_SCANNER)
+#if !defined(NO_THREADED_DEVICE_SCANNER)
 	QReadLocker lockDevices(&operationStack().lock());
 #endif
 
@@ -545,7 +545,7 @@ void MainWindow::scanDevices()
 
 	KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
-#if defined(THREADED_DEVICE_SCANNER)
+#if !defined(NO_THREADED_DEVICE_SCANNER)
 	scanProgressDialog().setEnabled(true);
 	scanProgressDialog().show();
 
@@ -564,7 +564,7 @@ void MainWindow::on_m_DeviceScanner_progress(const QString& device_node, int per
 
 void MainWindow::on_m_DeviceScanner_finished()
 {
-#if defined(THREADED_DEVICE_SCANNER)
+#if !defined(NO_THREADED_DEVICE_SCANNER)
 	QReadLocker lockDevices(&operationStack().lock());
 #endif
 
