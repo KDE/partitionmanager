@@ -49,7 +49,6 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 
-
 	MainWindow* mainWindow = new MainWindow();
 	mainWindow->show();
 

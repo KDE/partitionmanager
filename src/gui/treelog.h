@@ -31,8 +31,6 @@
 
 #include <kdebug.h>
 
-class PartitionManagerWidget;
-class KActionCollection;
 class QTreeWidget;
 
 /** @brief A tree for formatted log output.
@@ -45,26 +43,29 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT TreeLog: public QWidget, public Ui::Tree
 
 	public:
 		TreeLog(QWidget* parent);
+		~TreeLog();
+
+	signals:
+		void contextMenuRequested(const QPoint&);
 
 	public:
-		void init(KActionCollection* coll, PartitionManagerWidget* pm_widget) { m_ActionCollection = coll; m_PartitionManagerWidget = pm_widget; }
+		void init();
 
-	public slots:
+	protected slots:
 		void onNewLogMessage(Log::Level logLevel, const QString& s);
+		void onHeaderContextMenu(const QPoint& pos);
+		void onClearLog();
+		void onSaveLog();
+		void on_m_TreeLog_customContextMenuRequested(const QPoint& pos);
 
 	protected:
 		QTreeWidget& treeLog() { Q_ASSERT(m_TreeLog); return *m_TreeLog; }
 		const QTreeWidget& treeLog() const { Q_ASSERT(m_TreeLog); return *m_TreeLog; }
 
-		PartitionManagerWidget& pmWidget() { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
-		const PartitionManagerWidget& pmWidget() const { Q_ASSERT(m_PartitionManagerWidget); return *m_PartitionManagerWidget; }
-		KActionCollection* actionCollection() { return m_ActionCollection; }
-
-	protected slots:
+		void loadConfig();
+		void saveConfig() const;
 
 	private:
-		KActionCollection* m_ActionCollection;
-		PartitionManagerWidget* m_PartitionManagerWidget;
 };
 
 #endif

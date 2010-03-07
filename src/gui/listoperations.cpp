@@ -54,20 +54,6 @@ void ListOperations::updateOperations(const OperationStack::Operations& ops)
 
 void ListOperations::on_m_ListOperations_customContextMenuRequested(const QPoint& pos)
 {
-	if (actionCollection() != NULL)
-	{
-		KMenu opsMenu;
-
-		if (actionCollection()->action("undoOperation") != NULL)
-			opsMenu.addAction(actionCollection()->action("undoOperation"));
-
-		if (actionCollection()->action("clearAllOperations") != NULL)
-			opsMenu.addAction(actionCollection()->action("clearAllOperations"));
-
-		if (actionCollection()->action("applyAllOperations") != NULL)
-			opsMenu.addAction(actionCollection()->action("applyAllOperations"));
-
-		opsMenu.exec(listOperations().viewport()->mapToGlobal(pos));
-	}
+	emit contextMenuRequested(listOperations().viewport()->mapToGlobal(pos));
 }
 

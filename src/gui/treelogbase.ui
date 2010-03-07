@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>TreeLogBase</class>
- <widget class="QWidget" name="TreeLogBase" >
-  <property name="geometry" >
+ <widget class="QWidget" name="TreeLogBase">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,43 +10,57 @@
     <height>209</height>
    </rect>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" >
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTreeWidget" name="m_TreeLog" >
-     <property name="autoScroll" >
+    <widget class="QTreeWidget" name="m_TreeLog">
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="autoScroll">
       <bool>false</bool>
      </property>
-     <property name="selectionMode" >
+     <property name="selectionMode">
       <enum>QAbstractItemView::NoSelection</enum>
      </property>
-     <property name="textElideMode" >
+     <property name="textElideMode">
       <enum>Qt::ElideNone</enum>
      </property>
-     <property name="indentation" >
+     <property name="indentation">
       <number>0</number>
      </property>
-     <property name="rootIsDecorated" >
+     <property name="rootIsDecorated">
       <bool>false</bool>
      </property>
-     <property name="itemsExpandable" >
+     <property name="itemsExpandable">
       <bool>false</bool>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>true</bool>
      </property>
-     <property name="headerHidden" >
-      <bool>true</bool>
-     </property>
-     <property name="expandsOnDoubleClick" >
+     <property name="headerHidden">
       <bool>false</bool>
      </property>
+     <property name="expandsOnDoubleClick">
+      <bool>false</bool>
+     </property>
+     <attribute name="headerVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="headerVisible">
+      <bool>true</bool>
+     </attribute>
      <column>
-      <property name="text" >
+      <property name="text">
+       <string>Sev.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>Time</string>
       </property>
      </column>
      <column>
-      <property name="text" >
+      <property name="text">
        <string>Message</string>
       </property>
      </column>

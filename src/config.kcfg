@@ -13,6 +13,15 @@
 		<entry name="treePartitionColumnVisible" type="IntList">
 			<default>1,1,1,1,0,1,1,0,0,0,0,0</default>
 		</entry>
+		<entry name="treeLogColumnWidths" type="IntList">
+			<default>32,192,800</default>
+		</entry>
+		<entry name="treeLogColumnPositions" type="IntList">
+			<default>0,1,2</default>
+		</entry>
+		<entry name="treeLogColumnVisible" type="IntList">
+			<default>1,1,1</default>
+		</entry>
 		<entry name="firstRun" type="Bool">
 			<default>true</default>
 		</entry>

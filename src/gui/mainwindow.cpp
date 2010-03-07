@@ -84,6 +84,8 @@ MainWindow::MainWindow(QWidget* parent, KActionCollection* coll) :
 	m_StatusText(new QLabel(this)),
 	m_InfoPane(new InfoPane(this))
 {
+	Config::instance("partitionmanagerrc");
+
 	setupObjectNames();
 	setupUi(this);
 	init();
@@ -100,7 +102,7 @@ void MainWindow::setupObjectNames()
 
 void MainWindow::init()
 {
-	treeLog().init(actionCollection(), &pmWidget());
+	treeLog().init();
 
 	connect(GlobalLog::instance(), SIGNAL(newMessage(Log::Level, const QString&)), &treeLog(), SLOT(onNewLogMessage(Log::Level, const QString&)));
 
@@ -110,7 +112,7 @@ void MainWindow::init()
 
 	listDevices().setActionCollection(actionCollection());
 	listOperations().setActionCollection(actionCollection());
-	pmWidget().init(&operationStack(), "partitionmanagerrc");
+	pmWidget().init(&operationStack());
 
 	if (isKPart())
 	{
@@ -346,6 +348,19 @@ void MainWindow::setupActions()
 	// Settings Actions
 	KStandardAction::showMenubar(this, SLOT(onShowMenuBar()), actionCollection());
 	KStandardAction::preferences(this, SLOT(onConfigureOptions()), actionCollection());
+
+	// Log Actions
+	KAction* clearLog = actionCollection()->addAction("clearLog", &treeLog(), SLOT(onClearLog()));
+	clearLog->setText(i18nc("@action:inmenu", "Clear Log"));
+	clearLog->setToolTip(i18nc("@info:tooltip", "Clear the log output"));
+	clearLog->setStatusTip(i18nc("@info:status", "Clear the log output panel."));
+	clearLog->setIcon(BarIcon("edit-clear-list"));
+
+	KAction* saveLog = actionCollection()->addAction("saveLog", &treeLog(), SLOT(onSaveLog()));
+	saveLog->setText(i18nc("@action:inmenu", "Save Log"));
+	saveLog->setToolTip(i18nc("@info:tooltip", "Save the log output"));
+	saveLog->setStatusTip(i18nc("@info:status", "Save the log output to a file."));
+	saveLog->setIcon(BarIcon("document-save"));
 }
 
 void MainWindow::setupConnections()
@@ -463,6 +478,22 @@ void MainWindow::updateWindowTitle()
 	title += KGlobal::mainComponent().aboutData()->programName() + ' ' + KGlobal::mainComponent().aboutData()->version();
 
 	setWindowTitle(title);
+}
+
+void MainWindow::on_m_ListOperations_contextMenuRequested(const QPoint& pos)
+{
+	KMenu* menu = static_cast<KMenu*>(guiFactory()->container("edit", this));
+
+	if (menu)
+		menu->exec(pos);
+}
+
+void MainWindow::on_m_TreeLog_contextMenuRequested(const QPoint& pos)
+{
+	KMenu* menu = static_cast<KMenu*>(guiFactory()->container("log", this));
+
+	if (menu)
+		menu->exec(pos);
 }
 
 void MainWindow::on_m_ListDevices_contextMenuRequested(const QPoint& pos)

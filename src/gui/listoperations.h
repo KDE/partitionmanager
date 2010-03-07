@@ -45,6 +45,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListOperations : public QWidget, public 
 	public:
 		ListOperations(QWidget* parent);
 
+	signals:
+		void contextMenuRequested(const QPoint&);
+
 	public:
 		void setActionCollection(KActionCollection* coll) { m_ActionCollection = coll; }
 

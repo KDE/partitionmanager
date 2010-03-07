@@ -80,7 +80,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		void onPropertiesPartition();
 
 	public:
-		void init(OperationStack* ostack, const QString& config_name);
+		void init(OperationStack* ostack);
 
 		void clear();
 

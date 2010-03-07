@@ -95,12 +95,11 @@ PartitionManagerWidget::~PartitionManagerWidget()
 	saveConfig();
 }
 
-void PartitionManagerWidget::init(OperationStack* ostack, const QString& config_name)
+void PartitionManagerWidget::init(OperationStack* ostack)
 {
-	Config::instance(config_name);
-
 	m_OperationStack = ostack;
 
+	// TODO: shouldn't this also go to the main window class?
 	FileSystemFactory::init();
 
 	loadConfig();
@@ -307,33 +306,7 @@ void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetIt
 
 void PartitionManagerWidget::onHeaderContextMenu(const QPoint& p)
 {
-	KMenu headerMenu;
-
-	headerMenu.addTitle(i18nc("@title:menu", "Columns"));
-
-	QHeaderView* header = treePartitions().header();
-
-	for (qint32 i = 0; i < treePartitions().model()->columnCount(); i++)
-	{
-		const int idx = header->logicalIndex(i);
-		const QString text = treePartitions().model()->headerData(idx, Qt::Horizontal).toString();
-
-		QAction* action = headerMenu.addAction(text);
-		action->setCheckable(true);
-		action->setChecked(!header->isSectionHidden(idx));
-		action->setData(idx);
-		action->setEnabled(idx > 0);
-	}
-
-	QAction* action = headerMenu.exec(treePartitions().header()->mapToGlobal(p));
-
-	if (action != NULL)
-	{
-		const bool hidden = !action->isChecked();
-		treePartitions().setColumnHidden(action->data().toInt(), hidden);
-		if (!hidden)
-			treePartitions().resizeColumnToContents(action->data().toInt());
-	}
+	showColumnsContextMenu(p, treePartitions());
 }
 
 void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidget* item)

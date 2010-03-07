@@ -30,6 +30,7 @@
 #include <kstandarddirs.h>
 #include <kcmdlineargs.h>
 #include <kdebug.h>
+#include <kmenu.h>
 
 #include <QProcess>
 #include <QFileInfo>
@@ -38,6 +39,8 @@
 #include <QIcon>
 #include <QPixmap>
 #include <QRect>
+#include <QTreeWidget>
+#include <QHeaderView>
 
 #include <config.h>
 
@@ -144,3 +147,35 @@ QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
 
 	return QIcon(pixmap);
 }
+
+void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree)
+{
+	KMenu headerMenu;
+
+	headerMenu.addTitle(i18nc("@title:menu", "Columns"));
+
+	QHeaderView* header = tree.header();
+
+	for (qint32 i = 0; i < tree.model()->columnCount(); i++)
+	{
+		const int idx = header->logicalIndex(i);
+		const QString text = tree.model()->headerData(idx, Qt::Horizontal).toString();
+
+		QAction* action = headerMenu.addAction(text);
+		action->setCheckable(true);
+		action->setChecked(!header->isSectionHidden(idx));
+		action->setData(idx);
+		action->setEnabled(true);
+	}
+
+	QAction* action = headerMenu.exec(tree.header()->mapToGlobal(p));
+
+	if (action != NULL)
+	{
+		const bool hidden = !action->isChecked();
+		tree.setColumnHidden(action->data().toInt(), hidden);
+		if (!hidden)
+			tree.resizeColumnToContents(action->data().toInt());
+	}
+}
+
