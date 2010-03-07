@@ -101,7 +101,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		const OperationStack& operationStack() const { return *m_OperationStack; }
 
 		void setupConnections();
-		void showPartitionContextMenu(const QPoint& pos);
 		void loadConfig();
 		void saveConfig() const;
 		bool showInsertDialog(Partition& insertPartition, qint64 sourceLength);
