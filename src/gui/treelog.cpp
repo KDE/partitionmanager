@@ -161,12 +161,15 @@ void TreeLog::onNewLogMessage(Log::Level logLevel, const QString& s)
 
 	kDebug() << s;
 
-	QTreeWidgetItem* item = new QTreeWidgetItem();
+	if (logLevel >= Config::minLogLevel())
+	{
+		QTreeWidgetItem* item = new QTreeWidgetItem();
 
-	item->setIcon(0, SmallIcon(icons[logLevel]));
-	item->setText(1, QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
-	item->setText(2, s);
+		item->setIcon(0, SmallIcon(icons[logLevel]));
+		item->setText(1, QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
+		item->setText(2, s);
 
-	treeLog().addTopLevelItem(item);
-	treeLog().scrollToBottom();
+		treeLog().addTopLevelItem(item);
+		treeLog().scrollToBottom();
+	}
 }

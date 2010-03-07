@@ -25,6 +25,9 @@
 		<entry name="firstRun" type="Bool">
 			<default>true</default>
 		</entry>
+		<entry name="minLogLevel" type="Int">
+			<default>0</default>
+		</entry>
 		<entry name="sectorAlignment" type="Int">
 			<default>2048</default>
 		</entry>
