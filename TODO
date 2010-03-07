@@ -21,5 +21,19 @@ Random plans and ideas for 1.1 and beyond:
 
 * let the user specify extern command locations and options in the settings
 
+* make the global log a tree view and add a timestamp column that is hidden by default
+
+* let the user specify in the options which log levels to show in the global log
+
+* add a save option to the global log
+
+* write a setup-kcm in the style of k3b's so that the user can set the r/w
+  permissions of the disks there; also use kauth to update the partition table
+  in the kernel. that should cover all cases where we actually need root
+  privileges now. (not for 1.1)
+
+* make sure we actually need CoreBackend::about() and can't use something from
+  the KPlugin* stuff for that
+
 Bugs:
 
