@@ -51,17 +51,20 @@
      </attribute>
      <column>
       <property name="text">
-       <string>Sev.</string>
+       <string extracomment="@title:column Severity of a log entry / log level. Text must be very short.">Sev.</string>
+      </property>
+      <property name="toolTip">
+       <string>Severity</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Time</string>
+       <string extracomment="@title:column a time stamp of a log entry">Time</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Message</string>
+       <string extracomment="@title:column the text message of a log entry">Message</string>
       </property>
      </column>
     </widget>
