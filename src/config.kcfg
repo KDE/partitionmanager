@@ -1,42 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
-<kcfg>
+
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
 	<kcfgfile arg="true"/>
 	<group name="KDE Partition Manager">
-		<entry name="treePartitionColumnWidths" type="IntList">
+		<entry name="treePartitionColumnWidths" type="IntList" hidden="true">
 			<default>140,90,90,90,0,90,90,0,0,0,0,0</default>
 		</entry>
-		<entry name="treePartitionColumnPositions" type="IntList">
+		<entry name="treePartitionColumnPositions" type="IntList" hidden="true">
 			<default>0,1,2,3,4,5,6,7,8,9,10,11</default>
 		</entry>
-		<entry name="treePartitionColumnVisible" type="IntList">
+		<entry name="treePartitionColumnVisible" type="IntList" hidden="true">
 			<default>1,1,1,1,0,1,1,0,0,0,0,0</default>
 		</entry>
-		<entry name="treeLogColumnWidths" type="IntList">
+		<entry name="treeLogColumnWidths" type="IntList" hidden="true">
 			<default>32,192,800</default>
 		</entry>
-		<entry name="treeLogColumnPositions" type="IntList">
+		<entry name="treeLogColumnPositions" type="IntList" hidden="true">
 			<default>0,1,2</default>
 		</entry>
-		<entry name="treeLogColumnVisible" type="IntList">
+		<entry name="treeLogColumnVisible" type="IntList" hidden="true">
 			<default>1,1,1</default>
 		</entry>
 		<entry name="firstRun" type="Bool">
+			<label context="@label">Is this the first time KDE Partition Manager is being run?</label>
 			<default>true</default>
 		</entry>
 		<entry name="minLogLevel" type="Int">
+			<label context="@label">Hide Log Messages Below</label>
 			<default>0</default>
 		</entry>
 		<entry name="sectorAlignment" type="Int">
+			<label context="@label">Partition Sector Alignment</label>
 			<default>2048</default>
 		</entry>
 		<entry name="useCylinderAlignment" type="Bool">
+			<label context="@label">Use Cylinder Based MS-Dos Partition Alignment (Windows XP compatible)</label>
 			<default>false</default>
 		</entry>
 		<entry name="allowApplyOperationsAsNonRoot" type="Bool">
+			<label context="@label">Allow Applying Operations Without Administrator Privileges</label>
 			<default>false</default>
 		</entry>
 		<entry key="FileSystemColorCode$(colorNumber)" type="Color">
+			<label context="@label">File System Colors</label>
 			<parameter name="colorNumber" type="UInt" max="16"/>
 			<default param="0">252,242,220</default>
 			<default param="1">187,249,207</default>
@@ -57,15 +65,19 @@
 			<default param="16">252,242,222</default>
 		</entry>
 		<entry key="AvailableSpaceColorCode" type="Color">
+			<label context="@label">Color For Available Space</label>
 			<default>255,255,255</default>
 		</entry>
 		<entry key="UsedSpaceColorCode" type="Color">
+			<label context="@label">Color For Used Space</label>
 			<default>255,255,200</default>
 		</entry>
 		<entry key="showMenuBar" type="Bool">
+			<label context="@label">Show The Application's Menu Bar</label>
 			<default>true</default>
 		</entry>
 		<entry key="backend" type="String">
+			<label context="@label">Backend Plugin</label>
 			<default>pluginpmlibparted</default>
 		</entry>
 	</group>
