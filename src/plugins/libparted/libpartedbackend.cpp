@@ -55,7 +55,7 @@ K_PLUGIN_FACTORY(LibPartedBackendFactory, registerPlugin<LibPartedBackend>(); )
 
 static KAboutData createPluginAboutData()
 {
-	QString version = i18nc("@title", "%1, libparted version: %2", VERSION, ped_get_version());
+	QString version = ki18nc("@title", "%1, libparted version: %2").subs(VERSION).subs( ped_get_version()).toString();
 
 	KAboutData about(
 		"libpartedpmplugin",
