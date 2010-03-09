@@ -27,6 +27,8 @@
 #include <kcmdlineargs.h>
 #include <kmessagebox.h>
 
+#include <config.h>
+
 int main(int argc, char* argv[])
 {
 	KCmdLineArgs::init(argc, argv, createPartitionManagerAboutData());
@@ -42,6 +44,8 @@ int main(int argc, char* argv[])
 	registerMetaTypes();
 	if (!checkPermissions())
 		return 0;
+
+	Config::instance("partitionmanagerrc");
 
 	if (CoreBackend::self() == NULL)
 	{

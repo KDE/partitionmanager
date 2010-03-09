@@ -84,8 +84,6 @@ MainWindow::MainWindow(QWidget* parent, KActionCollection* coll) :
 	m_StatusText(new QLabel(this)),
 	m_InfoPane(new InfoPane(this))
 {
-	Config::instance("partitionmanagerrc");
-
 	setupObjectNames();
 	setupUi(this);
 	init();

@@ -26,8 +26,7 @@
 #include <kpluginloader.h>
 #include <kdebug.h>
 
-static const char pluginName[] = "pluginpmlibparted";
-// static const char pluginName[] = "pluginpmdummy";
+#include <config.h>
 
 CoreBackend* CoreBackend::self()
 {
@@ -38,7 +37,7 @@ CoreBackend* CoreBackend::self()
 
 	if (instance == NULL)
 	{
-		KPluginLoader loader(pluginName);
+		KPluginLoader loader(Config::backend());
 
 		KPluginFactory* factory = loader.factory();
 
