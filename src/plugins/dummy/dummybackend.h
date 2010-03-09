@@ -44,8 +44,6 @@ class DummyBackend : public CoreBackend
 		DummyBackend(QObject* parent, const QList<QVariant>& args);
 
 	public:
-		virtual QString about() const;
-
 		virtual QList<Device*> scanDevices();
 		virtual CoreBackendDevice* openDevice(const QString& device_node);
 		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node);

@@ -30,6 +30,8 @@ class CoreBackendDevice;
 class Device;
 class PartitionTable;
 
+class KAboutData;
+
 class QString;
 
 class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
@@ -38,7 +40,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 	Q_DISABLE_COPY(CoreBackend)
 
 	protected:
-		CoreBackend() {}
+		CoreBackend() : m_AboutData(NULL) {}
 		virtual ~CoreBackend() {}
 
 	signals:
@@ -47,7 +49,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 
 	public:
 		static CoreBackend* self();
-		virtual QString about() const = 0;
+		virtual const KAboutData& about() const { return *m_AboutData; }
 
 		virtual QList<Device*> scanDevices() = 0;
 		virtual Device* scanDevice(const QString& device_node) = 0;
@@ -60,6 +62,12 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 	protected:
 		static void setPartitionTableForDevice(Device& d, PartitionTable* p);
 		static void setPartitionTableMaxPrimaries(PartitionTable& p, qint32 max_primaries);
+
+	private:
+		void setAboutData(const KAboutData* a) { m_AboutData = a; }
+
+	private:
+		const KAboutData* m_AboutData;
 };
 
 #endif

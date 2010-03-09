@@ -35,19 +35,33 @@
 #include <kdebug.h>
 #include <klocale.h>
 #include <kpluginfactory.h>
+#include <kaboutdata.h>
 
 K_PLUGIN_FACTORY(DummyBackendFactory, registerPlugin<DummyBackend>(); )
-K_EXPORT_PLUGIN(DummyBackendFactory("pluginpmdummy"))
+
+static KAboutData createPluginAboutData()
+{
+	KAboutData about(
+		"dummypmplugin",
+		NULL,
+		ki18nc("@title", "Dummy Backend Plugin"),
+		QString(VERSION).toUtf8(),
+		ki18n("KDE Partition Manager dummy backend."),
+		KAboutData::License_GPL,
+		ki18n("Copyright 2010 Volker Lanz"));
+
+	about.addAuthor(ki18nc("@info:credit", "Volker Lanz"), KLocalizedString(), "vl@fidra.de");
+	about.setHomepage("http://www.partitionmanager.org");
+
+	return about;
+}
+
+K_EXPORT_PLUGIN(DummyBackendFactory(createPluginAboutData()))
 
 
 DummyBackend::DummyBackend(QObject*, const QList<QVariant>&) :
 	CoreBackend()
 {
-}
-
-QString DummyBackend::about() const
-{
-	return QString("DummyBackend");
 }
 
 QList<Device*> DummyBackend::scanDevices()

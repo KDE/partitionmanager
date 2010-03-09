@@ -59,8 +59,6 @@ class LibPartedBackend : public CoreBackend
 		LibPartedBackend(QObject* parent, const QList<QVariant>& args);
 
 	public:
-		virtual QString about() const;
-
 		virtual CoreBackendDevice* openDevice(const QString& device_node);
 		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node);
 		virtual bool closeDevice(CoreBackendDevice* core_device);

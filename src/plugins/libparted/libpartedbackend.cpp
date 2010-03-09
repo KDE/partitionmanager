@@ -40,6 +40,7 @@
 #include <kmountpoint.h>
 #include <kdiskfreespaceinfo.h>
 #include <kpluginfactory.h>
+#include <kaboutdata.h>
 
 #include <solid/device.h>
 #include <solid/deviceinterface.h>
@@ -51,7 +52,27 @@
 #include <blkid/blkid.h>
 
 K_PLUGIN_FACTORY(LibPartedBackendFactory, registerPlugin<LibPartedBackend>(); )
-K_EXPORT_PLUGIN(LibPartedBackendFactory("pluginpmlibparted"))
+
+static KAboutData createPluginAboutData()
+{
+	QString version = i18nc("@title", "%1, libparted version: %2", VERSION, ped_get_version());
+
+	KAboutData about(
+		"libpartedpmplugin",
+		NULL,
+		ki18nc("@title", "LibParted Backend Plugin"),
+		version.toUtf8(),
+		ki18n("KDE Partition Manager backend for libparted."),
+		KAboutData::License_GPL,
+		ki18n("Copyright 2008,2009,2010 Volker Lanz"));
+
+	about.addAuthor(ki18nc("@info:credit", "Volker Lanz"), KLocalizedString(), "vl@fidra.de");
+	about.setHomepage("http://www.partitionmanager.org");
+
+	return about;
+}
+
+K_EXPORT_PLUGIN(LibPartedBackendFactory(createPluginAboutData()))
 
 static struct
 {
@@ -254,11 +275,6 @@ LibPartedBackend::LibPartedBackend(QObject*, const QList<QVariant>&) :
 	CoreBackend()
 {
 	ped_exception_set_handler(pedExceptionHandler);
-}
-
-QString LibPartedBackend::about() const
-{
-	return QString("LibPartedBackend (%1)").arg(ped_get_version());
 }
 
 /** Scans a Device for Partitions.
