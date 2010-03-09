@@ -44,7 +44,7 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const QString& n
 	KPageWidgetItem* item = NULL;
 
 	item = addPage(new GeneralPageWidget(this), i18n("General"), QString(), i18n("General Settings"));
-	item->setIcon(KIcon(DesktopIcon("partitionmanager")));
+	item->setIcon(KIcon(DesktopIcon("configure")));
 
 	item = addPage(new FileSystemColorsPageWidget(this), i18n("File System Colors"), QString(), i18n("File System Color Settings"));
 	item->setIcon(KIcon(DesktopIcon("format-fill-color")));
