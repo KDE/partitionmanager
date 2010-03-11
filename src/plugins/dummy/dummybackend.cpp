@@ -82,6 +82,8 @@ Device* DummyBackend::scanDevice(const QString& device_node)
 	d->partitionTable()->updateUnallocated(*d);
 	d->setIconName("drive-harddisk");
 
+	CoreBackend::setPartitionTableMaxPrimaries(*d->partitionTable(), 4);
+
 	return d;
 }
 
