@@ -727,7 +727,7 @@ void MainWindow::onImportPartitionTable()
 
 	if (!file.open(QFile::ReadOnly))
 	{
-		KMessageBox::error(this, i18nc("@info", "Could not open input file <filename>%1</filename>.", fileName), i18nc("@title:window", "Error Importing Partition Table"));
+		KMessageBox::error(this, i18nc("@info", "Could not open input file <filename>%1</filename> for import.", fileName), i18nc("@title:window", "Error Importing Partition Table"));
 		return;
 	}
 
@@ -750,7 +750,7 @@ void MainWindow::onImportPartitionTable()
 
 		if (!haveMagic && rxMagic.indexIn(line) == -1)
 		{
-			KMessageBox::error(this, i18nc("@info", "The file <filename>%1</filename> is not a valid partition table text file.", fileName), i18nc("@title:window", "Error While Importing Partition Table"));
+			KMessageBox::error(this, i18nc("@info", "The import file <filename>%1</filename> does not contain a valid partition table.", fileName), i18nc("@title:window", "Error While Importing Partition Table"));
 			return;
 		}
 		else
@@ -802,7 +802,7 @@ void MainWindow::onImportPartitionTable()
 
 			if (firstSector < ptable->firstUsable() || lastSector > ptable->lastUsable())
 			{
-				KMessageBox::error(this, i18nc("@info", "Partition %1 would be outside the device's boundaries (line %2).", num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				KMessageBox::error(this, i18nc("@info the partition is NOT a device path, just a number", "Partition %1 would be outside the device's boundaries (line %2).", num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
 				return;
 			}
 
@@ -830,13 +830,13 @@ void MainWindow::onImportPartitionTable()
 
 			if (role == PartitionRole(PartitionRole::None))
 			{
-				KMessageBox::error(this, i18nc("@info", "Unrecognized partition role \"%1\" for partition %2 (line %3).", roleNames, num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				KMessageBox::error(this, i18nc("@info the partition is NOT a device path, just a number", "Unrecognized partition role \"%1\" for partition %2 (line %3).", roleNames, num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
 				return;
 			}
 
 			if (parent == NULL)
 			{
-				KMessageBox::error(this, i18nc("@info", "No parent partition or partition table found for partition %1 (line %2).", num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				KMessageBox::error(this, i18nc("@info the partition is NOT a device path, just a number", "No parent partition or partition table found for partition %1 (line %2).", num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
 				return;
 			}
 
@@ -850,7 +850,7 @@ void MainWindow::onImportPartitionTable()
 
 			if (fs == NULL)
 			{
-				KMessageBox::error(this, i18nc("@info", "Could not create file system \"%1\" for partition %2 (line %3).", fsName, num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+				KMessageBox::error(this, i18nc("@info the partition is NOT a device path, just a number", "Could not create file system \"%1\" for partition %2 (line %3).", fsName, num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
 				return;
 			}
 
@@ -886,7 +886,7 @@ void MainWindow::onExportPartitionTable()
 
 	if (!file.open(QFile::WriteOnly | QFile::Truncate))
 	{
-		KMessageBox::error(this, i18nc("@info", "Could not create output file <filename>%1</filename>.", fileName), i18nc("@title:window", "Error Exporting Partition Table"));
+		KMessageBox::error(this, i18nc("@info", "Could not create output file <filename>%1</filename> for export.", fileName), i18nc("@title:window", "Error Exporting Partition Table"));
 		return;
 	}
 

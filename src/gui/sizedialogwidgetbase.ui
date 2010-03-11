@@ -54,7 +54,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string comment="@label:listbox">Partition &amp;type:</string>
+        <string comment="@label:listbox">Partition type:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -73,7 +73,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string comment="@label:listbox">File &amp;system:</string>
+        <string comment="@label:listbox">File system:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -148,7 +148,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string comment="@label:listbox">Free space &amp;before:</string>
+        <string comment="@label:listbox">Free space before:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -186,7 +186,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string comment="@label:listbox">S&amp;ize:</string>
+        <string comment="@label:listbox">Size:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -224,7 +224,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string comment="@label:listbox">Free space &amp;after:</string>
+        <string comment="@label:listbox">Free space after:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -258,21 +258,21 @@
        <item>
         <widget class="QRadioButton" name="m_RadioPrimary">
          <property name="text">
-          <string>&amp;Primary</string>
+          <string>Primary</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QRadioButton" name="m_RadioExtended">
          <property name="text">
-          <string>&amp;Extended</string>
+          <string>Extended</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QRadioButton" name="m_RadioLogical">
          <property name="text">
-          <string>&amp;Logical</string>
+          <string>Logical</string>
          </property>
         </widget>
        </item>
@@ -298,7 +298,7 @@
      <item row="3" column="0">
       <widget class="QLabel" name="m_LabelTextLabel">
        <property name="text">
-        <string comment="@label">&amp;Label:</string>
+        <string comment="@label">Label:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

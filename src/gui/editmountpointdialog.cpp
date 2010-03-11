@@ -33,7 +33,7 @@ EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
 	m_DialogWidget(new EditMountPointDialogWidget(this, partition()))
 {
 	setMainWidget(&widget());
-	setCaption(i18nc("@title:window", "Edit mount point for %1", p.deviceNode()));
+	setCaption(i18nc("@title:window", "Edit mount point for <filename>%1</filename>", p.deviceNode()));
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "editMountPointDialog"));
 }

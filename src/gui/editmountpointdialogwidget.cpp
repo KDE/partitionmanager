@@ -331,7 +331,7 @@ bool EditMountPointDialogWidget::writeMountpoints(const QString& filename)
 	if (!rval)
 		KMessageBox::sorry(this,
 				i18nc("@info", "Could not save mount points to file <filename>%1</filename>.", filename),
-				i18nc("@title:window", "Error while saving mount points"));
+				i18nc("@title:window", "Error While Saving Mount Points"));
 
 	return rval;
 }

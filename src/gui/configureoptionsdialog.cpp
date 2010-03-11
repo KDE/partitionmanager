@@ -72,10 +72,10 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const QString& n
 
 	KPageWidgetItem* item = NULL;
 
-	item = addPage(&generalPageWidget(), i18n("General"), QString(), i18n("General Settings"));
+	item = addPage(&generalPageWidget(), i18nc("@title:tab general application settings", "General"), QString(), i18n("General Settings"));
 	item->setIcon(KIcon(DesktopIcon("configure")));
 
-	item = addPage(&fileSystemColorsPageWidget(), i18n("File System Colors"), QString(), i18n("File System Color Settings"));
+	item = addPage(&fileSystemColorsPageWidget(), i18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
 	item->setIcon(KIcon(DesktopIcon("format-fill-color")));
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "configureOptionsDialog"));
