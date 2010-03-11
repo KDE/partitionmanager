@@ -128,7 +128,7 @@ class FileSystem
 		static QString nameForType(FileSystem::Type t);
 		static QList<FileSystem::Type> types();
 		static FileSystem::Type typeForName(const QString& s);
-		static FileSystem::Type defaultFileSystem() { return Ext2; } /**< @return the default FileSystem type */
+		static FileSystem::Type defaultFileSystem(); /**< @return the default FileSystem type */
 
 		virtual bool canMount(const QString&) const { return false; } /**< @return true if this FileSystem can be mounted */
 		virtual bool canUnmount(const QString&) const { return false; } /**< @return true if this FileSystem can be unmounted */

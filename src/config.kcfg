@@ -4,6 +4,7 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
 	<kcfgfile arg="true"/>
+	<include>fs/filesystem.h</include>
 	<group name="KDE Partition Manager">
 		<entry name="treePartitionColumnWidths" type="IntList" hidden="true">
 			<default>140,90,90,90,0,90,90,0,0,0,0,0</default>
@@ -79,6 +80,9 @@
 		<entry key="backend" type="String">
 			<label context="@label">Backend Plugin</label>
 			<default>pluginpmlibparted</default>
+		</entry>
+		<entry key="defaultFileSystem" type="Int">
+			<default>FileSystem::Ext3</default>
 		</entry>
 	</group>
 </kcfg>

@@ -19,15 +19,42 @@
 
 #include "gui/configureoptionsdialog.h"
 
+#include "fs/filesystem.h"
+#include "fs/filesystemfactory.h"
+
+#include "util/helpers.h"
+
 #include "ui_configurepagegeneral.h"
 #include "ui_configurepagefilesystemcolors.h"
 
 #include <kiconloader.h>
+#include <config.h>
 
 class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
 {
 	public:
-		GeneralPageWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
+		GeneralPageWidget(QWidget* parent) : QWidget(parent) { setupUi(this); setupDialog(); }
+
+	public:
+		QComboBox& comboDefaultFileSystem() { return *m_ComboDefaultFileSystem; }
+
+	private:
+		void setupDialog()
+		{
+			QStringList fsNames;
+			foreach (const FileSystem* fs, FileSystemFactory::map())
+				if (fs->supportCreate() != FileSystem::cmdSupportNone && fs->type() != FileSystem::Extended)
+					fsNames.append(fs->name());
+
+			qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
+
+			foreach (const QString& fsName, fsNames)
+				comboDefaultFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
+
+			const QString selected = FileSystem::nameForType(FileSystem::defaultFileSystem());
+			comboDefaultFileSystem().setCurrentIndex(comboDefaultFileSystem().findText(selected));
+		}
+
 };
 
 class FileSystemColorsPageWidget : public QWidget, public Ui::ConfigurePageFileSystemColors
@@ -37,19 +64,26 @@ class FileSystemColorsPageWidget : public QWidget, public Ui::ConfigurePageFileS
 };
 
 ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const QString& name, KConfigSkeleton* cfg) :
-	KConfigDialog(parent, name, cfg)
+	KConfigDialog(parent, name, cfg),
+	m_GeneralPageWidget(new GeneralPageWidget(this)),
+	m_FileSystemColorsPageWidget(new FileSystemColorsPageWidget(this))
 {
 	setFaceType(List);
 
 	KPageWidgetItem* item = NULL;
 
-	item = addPage(new GeneralPageWidget(this), i18n("General"), QString(), i18n("General Settings"));
+	item = addPage(&generalPageWidget(), i18n("General"), QString(), i18n("General Settings"));
 	item->setIcon(KIcon(DesktopIcon("configure")));
 
-	item = addPage(new FileSystemColorsPageWidget(this), i18n("File System Colors"), QString(), i18n("File System Color Settings"));
+	item = addPage(&fileSystemColorsPageWidget(), i18n("File System Colors"), QString(), i18n("File System Color Settings"));
 	item->setIcon(KIcon(DesktopIcon("format-fill-color")));
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "configureOptionsDialog"));
+}
+
+void ConfigureOptionsDialog::updateSettings()
+{
+	Config::setDefaultFileSystem(FileSystem::typeForName(generalPageWidget().comboDefaultFileSystem().currentText()));
 }
 
 /** Destroys a ConfigureOptionsDialog instance */

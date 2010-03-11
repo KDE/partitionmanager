@@ -26,8 +26,10 @@ Random plans and ideas for 1.1 and beyond:
   in the kernel. that should cover all cases where we actually need root
   privileges now. (not for 1.1)
 
-* make sure we actually need CoreBackend::about() and can't use something from
-  the KPlugin* stuff for that
+* offer a) no alignment of partition boundaries at all or b) legacy cylinder
+  alignment or c) sector based alignment (the name is misleading, though)
+
 
 Bugs:
-
+* copy&paste seems broken wrt alignment when copying from cylinder aligned to
+  sector aligned drives (maybe even more than that)

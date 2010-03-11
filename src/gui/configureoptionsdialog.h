@@ -22,12 +22,29 @@
 #define CONFIGUREOPTIONSDIALOG__H
 
 #include <kconfigdialog.h>
+#include <kdebug.h>
+
+class GeneralPageWidget;
+class FileSystemColorsPageWidget;
 
 class ConfigureOptionsDialog : public KConfigDialog
 {
+	Q_OBJECT
+
 	public:
 		ConfigureOptionsDialog(QWidget* parent, const QString& name, KConfigSkeleton* cfg);
 		~ConfigureOptionsDialog();
+
+	protected slots:
+		void updateSettings();
+
+	protected:
+		GeneralPageWidget& generalPageWidget() { Q_ASSERT(m_GeneralPageWidget); return *m_GeneralPageWidget; }
+		FileSystemColorsPageWidget& fileSystemColorsPageWidget() { Q_ASSERT(m_FileSystemColorsPageWidget); return *m_FileSystemColorsPageWidget; }
+
+	private:
+		GeneralPageWidget* m_GeneralPageWidget;
+		FileSystemColorsPageWidget* m_FileSystemColorsPageWidget;
 };
 
 #endif
