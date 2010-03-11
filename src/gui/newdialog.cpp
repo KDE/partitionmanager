@@ -124,18 +124,29 @@ void NewDialog::onRoleChanged(bool)
 	else if (dialogWidget().radioLogical().isChecked())
 		r = PartitionRole::Logical;
 
+	// Make sure an extended partition gets correctly displayed: Set its file system to extended.
+	// Also make sure to set a primary's or logical's file system once the user goes back from
+	// extended to any of those.
+	if (r == PartitionRole::Extended)
+		updateFileSystem(FileSystem::Extended);
+	else
+		updateFileSystem(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()));
+
 	dialogWidget().comboFileSystem().setEnabled(r != PartitionRole::Extended);
 	partition().setRoles(PartitionRole(r));
 	dialogWidget().partResizerWidget().update();
 	updateHideAndShow();
 }
 
-void NewDialog::onFilesystemChanged(int idx)
+void NewDialog::updateFileSystem(FileSystem::Type t)
 {
-	const FileSystem::Type t = FileSystem::typeForName(dialogWidget().comboFileSystem().itemText(idx));
-
 	partition().deleteFileSystem();
 	partition().setFileSystem(FileSystemFactory::create(t, partition().firstSector(), partition().lastSector()));
+}
+
+void NewDialog::onFilesystemChanged(int idx)
+{
+	updateFileSystem(FileSystem::typeForName(dialogWidget().comboFileSystem().itemText(idx)));
 
 	setupConstraints();
 

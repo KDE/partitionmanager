@@ -25,6 +25,8 @@
 
 #include "core/partition.h"
 
+#include "fs/filesystem.h"
+
 class Device;
 
 /** @brief Dialog to create new Partitions.
@@ -51,6 +53,7 @@ class NewDialog : public SizeDialogBase
 		void setupConnections();
 		void setupDialog();
 		void updateHideAndShow();
+		void updateFileSystem(FileSystem::Type t);
 		PartitionRole::Roles partitionRoles() const { return m_PartitionRoles; }
 		virtual bool canGrow() const { return true; }
 		virtual bool canShrink() const { return true; }
