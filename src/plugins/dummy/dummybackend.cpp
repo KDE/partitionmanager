@@ -68,6 +68,9 @@ QList<Device*> DummyBackend::scanDevices()
 {
 	QList<Device*> result;
 	result.append(scanDevice("/dev/sda"));
+
+	emitScanProgress("/dev/sda", 100);
+
 	return result;
 }
 
