@@ -1,4 +1,40 @@
-Random plans and ideas for 1.1 and beyond:
+Plans and ideas for 1.1:
+
+* Information about file system on a separate tab in the properties, unique
+  to the file system in use.
+
+* Check if no of sectors fits in an unsigned 32 bit int for msdos partition
+  tables.
+
+* The KPart works but has problems: The context menus don't show up, the status
+  bar is missing, maybe more.
+
+* save msdos mbr?
+
+* let the user specify extern command locations and options in the settings;
+  use some program and binary management setup internally like k3b has it
+
+* parse progress information at least from e2fsck and ntfsclone (do we use the
+  latter at all? if not we should); maybe others.
+
+* offer a) no alignment of partition boundaries at all or b) legacy cylinder
+  alignment or c) sector based alignment (the name is misleading, though)
+
+===============================================================================
+
+Bugs to fix for 1.1:
+
+* copy&paste seems broken wrt alignment when copying from cylinder aligned to
+  sector aligned drives (maybe even more than that)
+
+===============================================================================
+
+For releases after 1.1:
+
+* write a setup-kcm in the style of k3b's so that the user can set the r/w
+  permissions of the disks there; also use kauth to update the partition table
+  in the kernel. that should cover all cases where we actually need root
+  privileges now.
 
 * The whole lvm/dm debacle.
 
@@ -9,27 +45,3 @@ Random plans and ideas for 1.1 and beyond:
   hopefully be able to get meaningful progress status reporting while resizing,
   checking and so on.
 
-* Information about file system on a separate tab in the properties, unique
-  to the file system in use.
-
-* Check if no of sectors fits in an unsigned 32 bit int for msdos partition tables.
-
-* The KPart works but has problems: The context menus don't show up, the status
-  bar is missing, maybe more.
-
-* save msdos mbr?
-
-* let the user specify extern command locations and options in the settings
-
-* write a setup-kcm in the style of k3b's so that the user can set the r/w
-  permissions of the disks there; also use kauth to update the partition table
-  in the kernel. that should cover all cases where we actually need root
-  privileges now. (not for 1.1)
-
-* offer a) no alignment of partition boundaries at all or b) legacy cylinder
-  alignment or c) sector based alignment (the name is misleading, though)
-
-
-Bugs:
-* copy&paste seems broken wrt alignment when copying from cylinder aligned to
-  sector aligned drives (maybe even more than that)
