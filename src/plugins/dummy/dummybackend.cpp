@@ -80,6 +80,8 @@ Device* DummyBackend::scanDevice(const QString& device_node)
 	CoreBackend::setPartitionTableForDevice(*d, new PartitionTable(PartitionTable::msdos_sectorbased, 2048, d->totalSectors() - 2048));
 	CoreBackend::setPartitionTableMaxPrimaries(*d->partitionTable(), 128);
 	d->partitionTable()->updateUnallocated(*d);
+	d->setIconName("drive-harddisk");
+
 	return d;
 }
 
