@@ -32,11 +32,14 @@ class ConfigureOptionsDialog : public KConfigDialog
 	Q_OBJECT
 
 	public:
-		ConfigureOptionsDialog(QWidget* parent, const QString& name, KConfigSkeleton* cfg);
+		ConfigureOptionsDialog(QWidget* parent, const QString& name);
 		~ConfigureOptionsDialog();
 
 	protected slots:
-		void updateSettings();
+		virtual void updateSettings();
+		virtual void updateWidgetsDefault();
+		virtual bool isDefault();
+		void onComboDefaultFileSystemActivated(int) { settingsChangedSlot(); }
 
 	protected:
 		GeneralPageWidget& generalPageWidget() { Q_ASSERT(m_GeneralPageWidget); return *m_GeneralPageWidget; }

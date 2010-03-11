@@ -914,7 +914,7 @@ void MainWindow::onConfigureOptions()
 	if (ConfigureOptionsDialog::showDialog("Settings"))
 		return;
 
-	QPointer<ConfigureOptionsDialog> dlg = new ConfigureOptionsDialog(this, "Settings", Config::self());
+	QPointer<ConfigureOptionsDialog> dlg = new ConfigureOptionsDialog(this, "Settings");
 
 	connect(dlg, SIGNAL(settingsChanged(const QString&)), SLOT(onSettingsChanged(const QString&)));
 
