@@ -667,7 +667,7 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertPartition, qint64
 		else
 			KMessageBox::sorry(this, i18nc("@info",
 				"<para>It is not possible to create the target partition large enough to hold the source.</para>"
-				"<para>This may happen if not all partitions on a device start and end on cylinder boundaries "
+				"<para>This may happen if not all partitions on a device are correctly aligned "
 				"or when copying a primary partition into an extended partition.</para>"),
 				i18nc("@title:window", "Cannot Create Target Partition."));
 		return false;
