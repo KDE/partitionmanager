@@ -143,7 +143,7 @@ void MainWindow::closeEvent(QCloseEvent* event)
 			i18ncp("@info", "<para>Do you really want to quit the application?</para><para>There is still an operation pending.</para>",
     		"<para>Do you really want to quit the application?</para><para>There are still %1 operations pending.</para>", numPendingOperations()),
 			i18nc("@title:window", "Discard Pending Operations and Quit?"),
-			KGuiItem(i18nc("@action:button", "&Quit <application>%1</application>", KGlobal::mainComponent().aboutData()->programName())),
+			KGuiItem(i18nc("@action:button", "Quit <application>%1</application>", KGlobal::mainComponent().aboutData()->programName())),
 			KStandardGuiItem::cancel(), "reallyQuit") == KMessageBox::Cancel)
 		{
 			event->ignore();
@@ -618,7 +618,7 @@ void MainWindow::onRefreshDevices()
 			"<para>Do you really want to rescan the devices?</para>"
 			"<para><warning>This will also clear the list of pending operations.</warning></para>"),
 		i18nc("@title:window", "Really Rescan the Devices?"),
-		KGuiItem(i18nc("@action:button", "&Rescan Devices")),
+		KGuiItem(i18nc("@action:button", "Rescan Devices")),
 		KStandardGuiItem::cancel(), "reallyRescanDevices") == KMessageBox::Continue)
 	{
 		scanDevices();
@@ -637,7 +637,7 @@ void MainWindow::onApplyAllOperations()
 			"<para>Do you really want to apply the pending operations listed below?</para>"
 			"<para><warning>This will permanently modify your disks.</warning></para>"),
 		opList, i18nc("@title:window", "Apply Pending Operations?"),
-		KGuiItem(i18nc("@action:button", "&Apply Pending Operations")),
+		KGuiItem(i18nc("@action:button", "Apply Pending Operations")),
 		KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
 		Log() << i18nc("@info/plain", "Applying operations...");
@@ -678,7 +678,7 @@ void MainWindow::onClearAllOperations()
 	if (KMessageBox::warningContinueCancel(this,
 		i18nc("@info", "Do you really want to clear the list of pending operations?"),
 		i18nc("@title:window", "Clear Pending Operations?"),
-		KGuiItem(i18nc("@action:button", "&Clear Pending Operations")),
+		KGuiItem(i18nc("@action:button", "Clear Pending Operations")),
 		KStandardGuiItem::cancel(), "reallyClearPendingOperations") == KMessageBox::Continue)
 	{
 		Log() << i18nc("@info/plain", "Clearing the list of pending operations.");
@@ -879,7 +879,7 @@ void MainWindow::onExportPartitionTable()
 	if (fileName.isEmpty())
 		return;
 
-	if (QFile::exists(fileName) && KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "&Overwrite File")), KStandardGuiItem::cancel()) != KMessageBox::Continue)
+	if (QFile::exists(fileName) && KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "Overwrite File")), KStandardGuiItem::cancel()) != KMessageBox::Continue)
 		return;
 
 	QFile file(fileName);

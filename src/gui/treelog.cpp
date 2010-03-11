@@ -124,7 +124,7 @@ void TreeLog::onSaveLog()
 	{
 		QFile file(fileName);
 
-		if (QFile::exists(fileName) && KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "&Overwrite File")), KStandardGuiItem::cancel()) != KMessageBox::Continue)
+		if (QFile::exists(fileName) && KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "Overwrite File")), KStandardGuiItem::cancel()) != KMessageBox::Continue)
 			return;
 
 		if (!file.open(QFile::WriteOnly | QFile::Truncate))

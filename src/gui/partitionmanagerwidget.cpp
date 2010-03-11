@@ -523,7 +523,7 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 				"Do you really want to delete the partition that is currently in the clipboard? "
 				"It will no longer be available for pasting after it has been deleted."),
 			i18nc("@title:window", "Really Delete Partition in the Clipboard?"),
-				KGuiItem(i18nc("@action:button", "&Delete It")),
+				KGuiItem(i18nc("@action:button", "Delete It")),
 				KStandardGuiItem::cancel(), "reallyDeleteClipboardPartition") == KMessageBox::Cancel)
 			return;
 
@@ -707,7 +707,7 @@ void PartitionManagerWidget::onBackupPartition()
 	if (fileName.isEmpty())
 		return;
 
-	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "&Overwrite File")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
+	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "Overwrite File")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
 		operationStack().push(new BackupOperation(*selectedDevice(), *selectedPartition(), fileName));
 }
 
