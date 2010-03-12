@@ -20,6 +20,14 @@ Plans and ideas for 1.1:
 * offer a) no alignment of partition boundaries at all or b) legacy cylinder
   alignment or c) sector based alignment (the name is misleading, though)
 
+* the size dialog base is a mess with its confusing free before/after stuff.
+  redesign to use first and last sector and nothing else and calc the rest from
+  there.
+
+* once the above redesign is done, allow the user to adjust first and last
+  sector directly. maybe offer a details dialog widget. maybe also offer to
+  skip alignign the parition when creating it in that details widget?
+
 ===============================================================================
 
 Bugs to fix for 1.1:
