@@ -211,7 +211,7 @@ bool PartResizerWidget::updateSectors(qint64 newSectorsBefore, qint64 newSectors
 	if (newSectorsBefore < 0 || newSectorsAfter < 0)
 	{
 		kWarning() << "new sectors before partition: " << newSectorsBefore;
-		kWarning() << "new sectors after partition: " << newSectorsBefore;
+		kWarning() << "new sectors after partition: " << newSectorsAfter;
 		return false;
 	}
 
@@ -219,7 +219,7 @@ bool PartResizerWidget::updateSectors(qint64 newSectorsBefore, qint64 newSectors
 	{
 		kWarning() << "total sectors: " << totalSectors();
 		kWarning() << "new sectors before partition: " << newSectorsBefore;
-		kWarning() << "new sectors after partition: " << newSectorsBefore;
+		kWarning() << "new sectors after partition: " << newSectorsAfter;
 		kWarning() << "partition length: " << partition().length();
 		return false;
 	}
