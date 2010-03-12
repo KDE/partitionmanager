@@ -26,6 +26,8 @@
 #include <klocale.h>
 #include <kdebug.h>
 
+#include <config.h>
+
 const QString Capacity::m_InvalidString = "---";
 
 /** Creates a new Capacity instance.
@@ -188,3 +190,9 @@ QString Capacity::toStringInternal(Unit u) const
 	const double num = static_cast<double>(m_Size) / static_cast<double>(unitSize);
 	return KGlobal::locale()->formatNumber(num, u == Byte ? 0 : -1);
 }
+
+Capacity::Unit Capacity::preferredUnit()
+{
+	return static_cast<Unit>(Config::preferredUnit());
+}
+
