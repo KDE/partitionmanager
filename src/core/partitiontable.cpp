@@ -211,7 +211,7 @@ QStringList PartitionTable::flagNames(Flags flags)
 
 /** @return the sector size to align the partition start and end to
 */
-static qint64 sectorAlignment(const Device& d)
+qint64 PartitionTable::sectorAlignment(const Device& d)
 {
 	return d.partitionTable()->type() == PartitionTable::msdos ? d.cylinderSize() : Config::sectorAlignment();
 }
@@ -466,17 +466,17 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 
 		// Leave a track (cylinder aligned) or sector alignment sectors (sector based) free at the
 		// start for a new partition's metadata
-		start += device.partitionTable()->type() == PartitionTable::msdos ? device.sectorsPerTrack() : sectorAlignment(device);
+		start += device.partitionTable()->type() == PartitionTable::msdos ? device.sectorsPerTrack() : PartitionTable::sectorAlignment(device);
 
 		// .. and also at the end for the metadata for a partition to follow us, if we're not
 		// at the end of the extended partition
 		if (end < extended->lastSector())
-			end -= device.partitionTable()->type() == PartitionTable::msdos ? device.sectorsPerTrack() : sectorAlignment(device);
+			end -= device.partitionTable()->type() == PartitionTable::msdos ? device.sectorsPerTrack() : PartitionTable::sectorAlignment(device);
 
 		r |= PartitionRole::Logical;
 	}
 
-	if (end - start + 1 < sectorAlignment(device))
+	if (end - start + 1 < PartitionTable::sectorAlignment(device))
 		return NULL;
 
 	return new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, -1);

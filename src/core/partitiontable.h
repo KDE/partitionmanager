@@ -146,7 +146,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 		static qint64 maxPrimariesForTableType(TableType l);
 		static bool tableTypeSupportsExtended(TableType l);
 		static bool tableTypeIsReadOnly(TableType l);
-
+		static qint64 sectorAlignment(const Device& d);
 
 	protected:
 		void setMaxPrimaries(qint32 n) { m_MaxPrimaries = n; }
