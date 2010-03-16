@@ -121,8 +121,21 @@ void NewDialog::onRoleChanged(bool)
 	else if (dialogWidget().radioLogical().isChecked())
 		r = PartitionRole::Logical;
 
+	partition().deleteFileSystem();
+	if (r == PartitionRole::Extended)
+		partition().setFileSystem(FileSystemFactory::create(FileSystem::Extended, partition().firstSector(), partition().lastSector()));
+	else
+	{
+		FileSystem::Type t = FileSystem::typeForName(dialogWidget().comboFileSystem().currentText());
+		FileSystem* fs = FileSystemFactory::create(t, partition().firstSector(), partition().lastSector());
+		partition().setFileSystem(fs);
+	}
+
 	dialogWidget().comboFileSystem().setEnabled(r != PartitionRole::Extended);
 	partition().setRoles(PartitionRole(r));
+	
+	setupConstraints();
+
 	dialogWidget().partResizerWidget().update();
 	updateHideAndShow();
 }
