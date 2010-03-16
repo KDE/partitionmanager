@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -33,8 +33,8 @@
 	@param freebefore number of sectors free before the Partition to resize
 	@param freeafter number of sectors free after the Partition to resize
 */
-ResizeDialog::ResizeDialog(QWidget* parent, Device& device, Partition& p, qint64 freebefore, qint64 freeafter) :
-	SizeDialogBase(parent, Capacity::MiB, device, p, freebefore, freeafter),
+ResizeDialog::ResizeDialog(QWidget* parent, Device& device, Partition& p, qint64 minFirst, qint64 maxLast) :
+	SizeDialogBase(parent, device, p, minFirst, maxLast),
 	m_OriginalFirstSector(p.firstSector()),
 	m_OriginalLastSector(p.lastSector())
 {
@@ -45,8 +45,8 @@ ResizeDialog::ResizeDialog(QWidget* parent, Device& device, Partition& p, qint64
 	dialogWidget().hideFileSystem();
 	dialogWidget().hideLabel();
 
-	setupDialog();
 	setupConstraints();
+	setupDialog();
 	setupConnections();
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "resizeDialog"));

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -46,8 +46,6 @@ class InsertDialog : public SizeDialogBase
 		const Partition& destPartition() const { return m_DestPartition; }
 		virtual bool canGrow() const;
 		virtual bool canShrink() const { return false; }
-		virtual qint64 freeSectorsBefore() const;
-		virtual qint64 freeSectorsAfter() const;
 
 	private:
 		const Partition& m_DestPartition;

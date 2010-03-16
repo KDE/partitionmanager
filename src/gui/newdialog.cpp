@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -40,14 +40,14 @@
 	@param r the permitted Roles for the new Partition
 */
 NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPartition, PartitionRole::Roles r) :
-	SizeDialogBase(parent, Capacity::MiB, device, unallocatedPartition, 0, 0),
+	SizeDialogBase(parent, device, unallocatedPartition, unallocatedPartition.firstSector(), unallocatedPartition.lastSector()),
 	m_PartitionRoles(r)
 {
 	setMainWidget(&dialogWidget());
 	setCaption(i18nc("@title:window", "Create a new partition"));
 
-	setupDialog();
 	setupConstraints();
+	setupDialog();
 	setupConnections();
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "newDialog"));
@@ -134,6 +134,9 @@ void NewDialog::onRoleChanged(bool)
 
 	dialogWidget().comboFileSystem().setEnabled(r != PartitionRole::Extended);
 	partition().setRoles(PartitionRole(r));
+
+	setupConstraints();
+
 	dialogWidget().partResizerWidget().update();
 	updateHideAndShow();
 }

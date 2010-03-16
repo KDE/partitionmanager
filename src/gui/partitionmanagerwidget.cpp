@@ -561,7 +561,7 @@ void PartitionManagerWidget::onResizePartition()
 	const qint64 freeAfter = selectedDevice()->partitionTable()->freeSectorsAfter(*selectedPartition());
 
 	Partition resizedPartition(*selectedPartition());
-	QPointer<ResizeDialog> dlg = new ResizeDialog(this, *selectedDevice(), resizedPartition, freeBefore, freeAfter);
+	QPointer<ResizeDialog> dlg = new ResizeDialog(this, *selectedDevice(), resizedPartition, selectedPartition()->firstSector() - freeBefore, freeAfter + selectedPartition()->lastSector());
 
 	if (dlg->exec() == KDialog::Accepted && dlg->isModified())
 	{

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -36,7 +36,7 @@
 	@param destpartition the Partition the new one is to be inserted to
 */
 InsertDialog::InsertDialog(QWidget* parent, Device& device, Partition& insertedPartition, const Partition& destpartition) :
-	SizeDialogBase(parent, Capacity::MiB, device, insertedPartition, -1, -1),
+	SizeDialogBase(parent, device, insertedPartition, destpartition.firstSector(), destpartition.lastSector()),
 	m_DestPartition(destpartition)
 {
 	setMainWidget(&dialogWidget());
@@ -49,8 +49,8 @@ InsertDialog::InsertDialog(QWidget* parent, Device& device, Partition& insertedP
 	dialogWidget().hideFileSystem();
 	dialogWidget().hideLabel();
 
-	setupDialog();
 	setupConstraints();
+	setupDialog();
 	setupConnections();
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "insertDialog"));
@@ -61,16 +61,6 @@ InsertDialog::~InsertDialog()
 {
 	KConfigGroup kcg(KGlobal::config(), "insertDialog");
 	saveDialogSize(kcg);
-}
-
-qint64 InsertDialog::freeSectorsBefore() const
-{
-	return 0;
-}
-
-qint64 InsertDialog::freeSectorsAfter() const
-{
-	return destPartition().length() - partition().length();
 }
 
 bool InsertDialog::canGrow() const

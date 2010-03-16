@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -42,6 +42,9 @@ class SizeDialogWidget : public QWidget, public Ui::SizeDialogWidgetBase
 		QSpinBox& spinFreeBefore() { Q_ASSERT(m_SpinFreeBefore); return *m_SpinFreeBefore; }
 		QSpinBox& spinFreeAfter() { Q_ASSERT(m_SpinFreeAfter); return *m_SpinFreeAfter; }
 		QSpinBox& spinCapacity() { Q_ASSERT(m_SpinCapacity); return *m_SpinCapacity; }
+
+		QSpinBox& spinFirstSector() { Q_ASSERT(m_SpinFirstSector); return *m_SpinFirstSector; }
+		QSpinBox& spinLastSector() { Q_ASSERT(m_SpinLastSector); return *m_SpinLastSector; }
 
 		QLabel& labelMinSize() { Q_ASSERT(m_LabelMinSize); return *m_LabelMinSize; }
 		QLabel& labelMaxSize() { Q_ASSERT(m_LabelMaxSize); return *m_LabelMaxSize; }

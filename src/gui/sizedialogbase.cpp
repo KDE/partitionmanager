@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -25,21 +25,21 @@
 #include "core/device.h"
 #include "core/partition.h"
 
+#include "util/capacity.h"
 
 #include <kdebug.h>
 
-SizeDialogBase::SizeDialogBase(QWidget* parent, Capacity::Unit preferred, Device& device, Partition& part, qint64 freebefore, qint64 freeafter) :
+SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint64 minFirst, qint64 maxLast) :
 	KDialog(parent),
 	m_SizeDialogWidget(new SizeDialogWidget(this)),
-	m_PreferredUnit(preferred),
-	m_Device(device),
+	m_Device(d),
 	m_Partition(part),
-	m_FreeSectorsBefore(freebefore),
-	m_FreeSectorsAfter(freeafter)
+	m_MinimumFirstSector(minFirst),
+	m_MaximumLastSector(maxLast)
 {
 }
 
-qint64 SizeDialogBase::minSectors() const
+qint64 SizeDialogBase::minimumLength() const
 {
 	if (!canShrink())
 		return partition().length();
@@ -47,44 +47,56 @@ qint64 SizeDialogBase::minSectors() const
 	return qMax(partition().sectorsUsed(), partition().minimumSectors());
 }
 
-qint64 SizeDialogBase::maxSectors() const
+qint64 SizeDialogBase::maximumLength() const
 {
 	if (!canGrow())
 		return partition().length();
 
-	return qMin(partition().length() + freeSectorsBefore() + freeSectorsAfter(), partition().maximumSectors());
+	return qMin(maximumLastSector() - minimumFirstSector() + 1, partition().maximumSectors());
 }
 
-int SizeDialogBase::sectorsToDialogUnit(const Partition& p, Capacity::Unit u, qint64 v)
+static int sectorsToDialogUnit(const Partition& p, qint64 v)
 {
-	return Capacity(v * p.sectorSize()).toInt(u);
+	return Capacity(v * p.sectorSize()).toInt(Capacity::preferredUnit());
 }
 
-qint64 SizeDialogBase::dialogUnitToSectors(const Partition& p, Capacity::Unit u, int v)
+static qint64 dialogUnitToSectors(const Partition& p, int v)
 {
-	return Capacity::unitFactor(Capacity::Byte, u) * v / p.sectorSize();
+	return Capacity::unitFactor(Capacity::Byte, Capacity::preferredUnit()) * v / p.sectorSize();
 }
 
 void SizeDialogBase::setupDialog()
 {
-	dialogWidget().spinFreeBefore().setValue(Capacity(freeSectorsBefore() * partition().sectorSize()).toInt(preferredUnit()));
-	dialogWidget().spinFreeAfter().setValue(Capacity(freeSectorsAfter() * partition().sectorSize()).toInt(preferredUnit()));
-	dialogWidget().spinCapacity().setValue(Capacity(partition().capacity()).toInt(preferredUnit()));
+	dialogWidget().partResizerWidget().init(device(), partition(), minimumFirstSector(), maximumLastSector());
 
-	dialogWidget().spinFreeBefore().setSuffix(QString(" ") + Capacity::unitName(preferredUnit()));
-	dialogWidget().spinFreeAfter().setSuffix(QString(" ") + Capacity::unitName(preferredUnit()));
-	dialogWidget().spinCapacity().setSuffix(QString(" ") + Capacity::unitName(preferredUnit()));
+	// TODO: these don't belong here; the distinction between setupDialog and setupConstraints
+	// doesn't work that well, there's too much interdependency.
+	if (!canShrink())
+		dialogWidget().partResizerWidget().setMinimumLength(partition().length());
 
-	dialogWidget().partResizerWidget().init(device(), partition(), freeSectorsBefore(), freeSectorsAfter());
+	if (!canGrow())
+		dialogWidget().partResizerWidget().setMaximumLength(partition().length());
+
+	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), partition().firstSector() - minimumFirstSector()));
+	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), maximumLastSector() - partition().lastSector()));
+
+	dialogWidget().spinCapacity().setValue(Capacity(partition().capacity()).toInt(Capacity::preferredUnit()));
+
+	dialogWidget().spinFreeBefore().setSuffix(QString(" ") + Capacity::unitName(Capacity::preferredUnit()));
+	dialogWidget().spinFreeAfter().setSuffix(QString(" ") + Capacity::unitName(Capacity::preferredUnit()));
+	dialogWidget().spinCapacity().setSuffix(QString(" ") + Capacity::unitName(Capacity::preferredUnit()));
+
+	dialogWidget().spinFirstSector().setValue(partition().firstSector());
+	dialogWidget().spinLastSector().setValue(partition().lastSector());
 }
 
 void SizeDialogBase::setupConstraints()
 {
-	dialogWidget().partResizerWidget().setMinimumSectors(minSectors());
-	dialogWidget().partResizerWidget().setMaximumSectors(maxSectors());
+	dialogWidget().partResizerWidget().setMinimumLength(minimumLength());
+	dialogWidget().partResizerWidget().setMaximumLength(maximumLength());
 
-	dialogWidget().labelMinSize().setText(Capacity(minSectors() * partition().sectorSize()).toString());
-	dialogWidget().labelMaxSize().setText(Capacity(maxSectors() * partition().sectorSize()).toString());
+	dialogWidget().labelMinSize().setText(Capacity(minimumLength() * partition().sectorSize()).toString());
+	dialogWidget().labelMaxSize().setText(Capacity(maximumLength() * partition().sectorSize()).toString());
 
 	if (!canShrink() && !canGrow())
 		dialogWidget().spinCapacity().setEnabled(false);
@@ -92,92 +104,111 @@ void SizeDialogBase::setupConstraints()
 	if (!canMove())
 		dialogWidget().partResizerWidget().setMoveAllowed(false);
 
-	dialogWidget().partResizerWidget().setMaxFirstSector(partition().maxFirstSector());
-	dialogWidget().partResizerWidget().setMinLastSector(partition().minLastSector());
+	dialogWidget().partResizerWidget().setMaximumFirstSector(partition().maxFirstSector());
+	dialogWidget().partResizerWidget().setMinimumLastSector(partition().minLastSector());
 
-	const qint64 totalCapacity = sectorsToDialogUnit(partition(), preferredUnit(), dialogWidget().partResizerWidget().totalSectors());
+	const qint64 totalCapacity = sectorsToDialogUnit(partition(), maximumLastSector() - minimumFirstSector() + 1);
 
-	const qint64 minCapacity = sectorsToDialogUnit(partition(), preferredUnit(), minSectors());
-	const qint64 maxCapacity = sectorsToDialogUnit(partition(), preferredUnit(), maxSectors());
+	const qint64 minCapacity = sectorsToDialogUnit(partition(), minimumLength());
+	const qint64 maxCapacity = sectorsToDialogUnit(partition(), maximumLength());
 	dialogWidget().spinCapacity().setRange(minCapacity, maxCapacity);
 
 	const qint64 maxFree = totalCapacity - minCapacity;
 
 	dialogWidget().spinFreeBefore().setRange(0, maxFree);
 	dialogWidget().spinFreeAfter().setRange(0, maxFree);
+
+	dialogWidget().spinFirstSector().setRange(minimumFirstSector(), maximumLastSector());
+	dialogWidget().spinLastSector().setRange(minimumFirstSector(), maximumLastSector());
 }
 
 void SizeDialogBase::setupConnections()
 {
-	connect(&dialogWidget().partResizerWidget(), SIGNAL(sectorsBeforeChanged(qint64)), SLOT(onSectorsBeforeChanged(qint64)));
-	connect(&dialogWidget().partResizerWidget(), SIGNAL(sectorsAfterChanged(qint64)), SLOT(onSectorsAfterChanged(qint64)));
-	connect(&dialogWidget().partResizerWidget(), SIGNAL(lengthChanged(qint64)), SLOT(onLengthChanged(qint64)));
+	connect(&dialogWidget().partResizerWidget(), SIGNAL(firstSectorChanged(qint64)), SLOT(onFirstSectorChanged(qint64)));
+	connect(&dialogWidget().partResizerWidget(), SIGNAL(lastSectorChanged(qint64)), SLOT(onLastSectorChanged(qint64)));
 
 	connect(&dialogWidget().spinFreeBefore(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceBeforeChanged(int)));
 	connect(&dialogWidget().spinFreeAfter(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceAfterChanged(int)));
 	connect(&dialogWidget().spinCapacity(), SIGNAL(valueChanged(int)), SLOT(onCapacityChanged(int)));
+
+	connect(&dialogWidget().spinFirstSector(), SIGNAL(valueChanged(int)), SLOT(onSpinFirstSectorChanged(int)));
+	connect(&dialogWidget().spinLastSector(), SIGNAL(valueChanged(int)), SLOT(onSpinLastSectorChanged(int)));
+
 }
 
-void SizeDialogBase::onSectorsBeforeChanged(qint64 newBefore)
+void SizeDialogBase::onSpinFirstSectorChanged(int newFirst)
 {
-	dialogWidget().spinFreeBefore().disconnect(this);
-	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), preferredUnit(), newBefore));
-	connect(&dialogWidget().spinFreeBefore(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceBeforeChanged(int)));
-	setFreeSectorsBefore(newBefore);
+	if (newFirst >= minimumFirstSector())
+	{
+		dialogWidget().partResizerWidget().updateFirstSector(newFirst);
+		setDirty();
+	}
+}
+
+void SizeDialogBase::onSpinLastSectorChanged(int newLast)
+{
+	if (newLast <= maximumLastSector())
+	{
+		dialogWidget().partResizerWidget().updateLastSector(newLast);
+		setDirty();
+	}
+}
+
+void SizeDialogBase::onFirstSectorChanged(qint64 newFirst)
+{
+	bool state = dialogWidget().spinFreeBefore().blockSignals(true);
+	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), newFirst - minimumFirstSector()));
+	dialogWidget().spinFreeBefore().blockSignals(state);
+
+	state = dialogWidget().spinFirstSector().blockSignals(true);
+	dialogWidget().spinFirstSector().setValue(newFirst);
+	dialogWidget().spinFirstSector().blockSignals(state);
+
+	updateLength(partition().length());
 	setDirty();
 }
 
-void SizeDialogBase::onSectorsAfterChanged(qint64 newAfter)
+void SizeDialogBase::onLastSectorChanged(qint64 newLast)
 {
-	dialogWidget().spinFreeAfter().disconnect(this);
-	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), preferredUnit(), newAfter));
-	connect(&dialogWidget().spinFreeAfter(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceAfterChanged(int)));
-	setFreeSectorsAfter(newAfter);
+	bool state = dialogWidget().spinFreeAfter().blockSignals(true);
+	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), maximumLastSector() - newLast));
+	dialogWidget().spinFreeAfter().blockSignals(state);
+
+	state = dialogWidget().spinLastSector().blockSignals(true);
+	dialogWidget().spinLastSector().setValue(newLast);
+	dialogWidget().spinLastSector().blockSignals(state);
+
+	updateLength(partition().length());
 	setDirty();
 }
 
-void SizeDialogBase::onLengthChanged(qint64 newLength)
+void SizeDialogBase::updateLength(qint64 newLength)
 {
-	dialogWidget().spinCapacity().disconnect(this);
-	dialogWidget().spinCapacity().setValue(sectorsToDialogUnit(partition(), preferredUnit(), newLength));
-	connect(&dialogWidget().spinCapacity(), SIGNAL(valueChanged(int)), SLOT(onCapacityChanged(int)));
+	bool state = dialogWidget().spinCapacity().blockSignals(true);
+	dialogWidget().spinCapacity().setValue(sectorsToDialogUnit(partition(), newLength));
+	dialogWidget().spinCapacity().blockSignals(state);
 }
 
 void SizeDialogBase::onCapacityChanged(int newCapacity)
 {
-	qint64 newLength = dialogUnitToSectors(partition(), preferredUnit(), newCapacity);
+	const qint64 newLength = dialogUnitToSectors(partition(), newCapacity);
 	dialogWidget().partResizerWidget().updateLength(newLength);
 }
 
 void SizeDialogBase::onFreeSpaceBeforeChanged(int newBefore)
 {
-	qint64 newSectorsBefore = dialogUnitToSectors(partition(), preferredUnit(), newBefore);
-	qint64 delta = dialogWidget().partResizerWidget().sectorsBefore() - newSectorsBefore;
-	qint64 newSectorsAfter = dialogWidget().partResizerWidget().sectorsAfter() + delta;
-
-	if (newSectorsAfter < 0)
-	{
-		dialogWidget().partResizerWidget().updateLength(partition().length() + newSectorsAfter);
-		newSectorsAfter = 0;
-	}
-
-	dialogWidget().partResizerWidget().updateSectors(newSectorsBefore, newSectorsAfter);
+	const qint64 newFirstSector = minimumFirstSector() + dialogUnitToSectors(partition(), newBefore);
+	if (!dialogWidget().partResizerWidget().movePartition(newFirstSector))
+		dialogWidget().partResizerWidget().updateFirstSector(newFirstSector);
 	setDirty();
 }
 
 void SizeDialogBase::onFreeSpaceAfterChanged(int newAfter)
 {
-	qint64 newSectorsAfter = dialogUnitToSectors(partition(), preferredUnit(), newAfter);
-	qint64 delta = newSectorsAfter - dialogWidget().partResizerWidget().sectorsAfter();
-	qint64 newSectorsBefore = dialogWidget().partResizerWidget().sectorsBefore() - delta;
-
-	if (newSectorsBefore < 0)
-	{
-		dialogWidget().partResizerWidget().updateLength(partition().length() + newSectorsBefore);
-		newSectorsBefore = 0;
-	}
-
-	dialogWidget().partResizerWidget().updateSectors(newSectorsBefore, newSectorsAfter);
+	const qint64 newLastSector = maximumLastSector() - dialogUnitToSectors(partition(), newAfter);
+	const qint64 newFirstSector = newLastSector - partition().length() + 1;
+	if (!dialogWidget().partResizerWidget().movePartition(newFirstSector))
+		dialogWidget().partResizerWidget().updateLastSector(newLastSector);
 	setDirty();
 }
 

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -22,6 +22,7 @@
 
 #include "core/partition.h"
 #include "core/device.h"
+#include "core/partitiontable.h"
 
 #include "fs/filesystem.h"
 
@@ -47,13 +48,12 @@ PartResizerWidget::PartResizerWidget(QWidget* parent) :
 	m_Device(NULL),
 	m_Partition(NULL),
 	m_PartWidget(NULL),
-	m_SectorsBefore(0),
-	m_SectorsAfter(0),
-	m_TotalSectors(-1),
-	m_MinimumSectors(-1),
-	m_MaximumSectors(-1),
-	m_MaxFirstSector(-1),
-	m_MinLastSector(-1),
+	m_MinimumFirstSector(0),
+	m_MaximumFirstSector(-1),
+	m_MinimumLastSector(-1),
+	m_MaximumLastSector(0),
+	m_MinimumLength(-1),
+	m_MaximumLength(-1),
 	m_LeftHandle(this),
 	m_RightHandle(this),
 	m_DraggedWidget(NULL),
@@ -66,21 +66,19 @@ PartResizerWidget::PartResizerWidget(QWidget* parent) :
 /** Intializes the PartResizerWidget
 	@param d the Device the Partition is on
 	@param p the Partition to show and/or resize
-	@param freeBefore number of sectors free before the Partition
-	@param freeAfter number of sectors free after the Partition
+	@param minFirst the minimum value for the first sector
+	@param maxLast the maximum value for the last sector
 */
-void PartResizerWidget::init(Device& d, Partition& p, qint64 freeBefore, qint64 freeAfter)
+void PartResizerWidget::init(Device& d, Partition& p, qint64 minFirst, qint64 maxLast)
 {
 	setDevice(d);
 	setPartition(p);
 
-	setSectorsBefore(freeBefore);
-	setSectorsAfter(freeAfter);
+	setMinimumFirstSector(minFirst);
+	setMaximumLastSector(maxLast);
 
-	setTotalSectors(sectorsBefore() + partition().length() + sectorsAfter());
-
-	setMinimumSectors(qMax(partition().sectorsUsed(), partition().minimumSectors()));
-	setMaximumSectors(qMin(totalSectors(), partition().maximumSectors()));
+	setMinimumLength(qMax(partition().sectorsUsed(), partition().minimumSectors()));
+	setMaximumLength(qMin(totalSectors(), partition().maximumSectors()));
 
 	/** @todo get real pixmaps for the handles */
 	QPixmap pixmap(handleWidth(), handleHeight());
@@ -115,7 +113,7 @@ qint64 PartResizerWidget::sectorsPerPixel() const
 
 int PartResizerWidget::partWidgetStart() const
 {
-	return handleWidth() + sectorsBefore() / sectorsPerPixel();
+	return handleWidth() + (partition().firstSector() - minimumFirstSector()) / sectorsPerPixel();
 }
 
 int PartResizerWidget::partWidgetWidth() const
@@ -166,104 +164,82 @@ void PartResizerWidget::mousePressEvent(QMouseEvent* event)
 	}
 }
 
+bool PartResizerWidget::movePartition(qint64 newFirstSector)
+{
+	if (maximumFirstSector() > -1 && newFirstSector > maximumFirstSector())
+		newFirstSector = maximumFirstSector();
+
+	if (minimumFirstSector() > -1 && newFirstSector < minimumFirstSector())
+		newFirstSector = minimumFirstSector();
+
+	qint64 delta = newFirstSector - partition().firstSector();
+	qint64 newLastSector = partition().lastSector() + delta;
+
+	if (minimumLastSector() > -1 && newLastSector < minimumLastSector())
+	{
+		const qint64 deltaLast = minimumLastSector() - newLastSector;
+		newFirstSector += deltaLast;
+		newLastSector += deltaLast;
+	}
+
+	if (maximumLastSector() > -1 && newLastSector > maximumLastSector())
+	{
+		const qint64 deltaLast = newLastSector - maximumLastSector();
+		newFirstSector -= deltaLast;
+		newLastSector -= deltaLast;
+	}
+
+	if (newLastSector - newFirstSector + 1 != partition().length() ||
+			(maximumFirstSector() > -1 && newFirstSector > maximumFirstSector()) ||
+			(minimumFirstSector() > -1 && newFirstSector < minimumFirstSector()) ||
+			(minimumLastSector() > -1 && newLastSector < minimumLastSector()) ||
+			(maximumLastSector() > -1 && newLastSector > maximumLastSector()))
+	{
+		kWarning() << "constraints not satisfied while trying to move partition " << partition().deviceNode();
+		return false;
+	}
+
+	if (partition().children().size() > 0 &&
+		(!checkAlignment(*partition().children().first(), partition().firstSector() - newFirstSector) ||
+		!checkAlignment(*partition().children().last(), partition().lastSector() - newLastSector)))
+	{
+		kDebug() << "cannot align children while trying to move partition " << partition().deviceNode();
+		return false;
+	}
+
+	partition().setFirstSector(newFirstSector);
+	partition().fileSystem().setFirstSector(newFirstSector);
+	emit firstSectorChanged(newFirstSector);
+
+	partition().setLastSector(newLastSector);
+	partition().fileSystem().setLastSector(newLastSector);
+	emit lastSectorChanged(newLastSector);
+
+	resizeLogicals();
+	updatePositions();
+
+	return true;
+}
+
 void PartResizerWidget::mouseMoveEvent(QMouseEvent* event)
 {
 	int x = event->pos().x() - m_Hotspot;
 
 	if (draggedWidget() == &leftHandle())
 	{
-		const qint64 newSectorsBefore = qMax(x * sectorsPerPixel(), 0LL);
-		updateSectorsBefore(newSectorsBefore);
+		const qint64 newFirstSector = qMax(minimumFirstSector() + x * sectorsPerPixel(), 0LL);
+		updateFirstSector(newFirstSector);
 	}
 	else if (draggedWidget() == &rightHandle())
 	{
-		const qint64 newSectorsAfter = qMax((width() - rightHandle().width() - x) * sectorsPerPixel(), 0LL);
-		updateSectorsAfter(newSectorsAfter);
+		const qint64 newLastSector = qMin(minimumFirstSector() + (x - rightHandle().width()) * sectorsPerPixel(), maximumLastSector());
+		updateLastSector(newLastSector);
 	}
-	else if (draggedWidget() == &partWidget())
+	else if (draggedWidget() == &partWidget() && moveAllowed())
 	{
-		x -= handleWidth();
-		qint64 newSectorsBefore = qMax(x * sectorsPerPixel(), 0LL);
-		qint64 newSectorsAfter = sectorsAfter() + sectorsBefore() - newSectorsBefore;
-
-		if (newSectorsAfter < 0)
-		{
-			newSectorsAfter = 0;
-  			newSectorsBefore = sectorsBefore() + sectorsAfter();
-		}
-
-		if (newSectorsBefore != sectorsBefore() && newSectorsAfter != sectorsAfter())
-			updateSectors(newSectorsBefore, newSectorsAfter);
+		const qint64 newFirstSector = qMax(minimumFirstSector() + (x - handleWidth()) * sectorsPerPixel(), 0LL);
+		movePartition(newFirstSector);
 	}
-}
-
-/** Updates the start and end sector of the Partition.
-	@param newSectorsBefore new value for free sectors before the Partition
-	@param newSectorsAfter new value for free sectors after the Partition
-	@return true on success
-*/
-bool PartResizerWidget::updateSectors(qint64 newSectorsBefore, qint64 newSectorsAfter)
-{
-	Q_ASSERT(newSectorsBefore >= 0);
-	Q_ASSERT(newSectorsAfter >= 0);
-	Q_ASSERT(newSectorsBefore + newSectorsAfter + partition().length() == totalSectors());
-
-	if (newSectorsBefore < 0 || newSectorsAfter < 0)
-	{
-		kWarning() << "new sectors before partition: " << newSectorsBefore;
-		kWarning() << "new sectors after partition: " << newSectorsBefore;
-		return false;
-	}
-
-	if (newSectorsBefore + newSectorsAfter + partition().length() != totalSectors())
-	{
-		kWarning() << "total sectors: " << totalSectors();
-		kWarning() << "new sectors before partition: " << newSectorsBefore;
-		kWarning() << "new sectors after partition: " << newSectorsBefore;
-		kWarning() << "partition length: " << partition().length();
-		return false;
-	}
-
-	if (!moveAllowed())
-		return false;
-
-	const qint64 oldBefore = sectorsBefore();
-	const qint64 oldAfter = sectorsAfter();
-
-	// Two hacky things about updating free sectors before and after a partition in one go:
-	// 1) We have to call updateSectorsBefore and updateSectorsAfter with length-checking disabled,
-	//    because the partition might in between those calls get smaller or bigger than
-	//    allowed. The second call will, of course, restore the original length.
-	// 2) If the user moves the mouse fast enough, it's possible to move the beginning past the
-	//    end or the end in front of the beginning of the partition in between the calls. Both
-	//    methods won't allow that and return false in that case. We try moving the beginning first and
-	//    just move the end first if that fails.
-	if (!updateSectorsBefore(newSectorsBefore, false))
-	{
-		updateSectorsAfter(newSectorsAfter, false);
-		updateSectorsBefore(newSectorsBefore, false);
-	}
-	else
-		updateSectorsAfter(newSectorsAfter, false);
-
-	bool rval = false;
-
-	if (oldBefore != sectorsBefore())
-	{
-		rval = true;
-		emit sectorsBeforeChanged(sectorsBefore());
-	}
-
-	if (oldAfter != sectorsAfter())
-	{
-		rval = true;
-		emit sectorsAfterChanged(sectorsAfter());
-	}
-
-	if (rval)
-		updatePositions();
-
-	return rval;
 }
 
 void PartResizerWidget::mouseReleaseEvent(QMouseEvent* event)
@@ -272,54 +248,30 @@ void PartResizerWidget::mouseReleaseEvent(QMouseEvent* event)
 		m_DraggedWidget = NULL;
 }
 
-/** Updates the free sectors before the Partition
-	@param newSectorsBefore new value for number of sectors free before Partition
-	@param enableLengthCheck true if the method is supposed to do some sanity checking on the Partition length
-	@return true on success
-*/
-bool PartResizerWidget::updateSectorsBefore(qint64 newSectorsBefore, bool enableLengthCheck)
+bool PartResizerWidget::updateFirstSector(qint64 newFirstSector)
 {
-	Q_ASSERT(newSectorsBefore >= 0);
+	if (maximumFirstSector() > -1 && newFirstSector > maximumFirstSector())
+		newFirstSector = maximumFirstSector();
 
-	if (newSectorsBefore < 0)
+	if (minimumFirstSector() > -1 && newFirstSector < minimumFirstSector())
+		newFirstSector = minimumFirstSector();
+
+	const qint64 newLength = partition().lastSector() - newFirstSector + 1;
+
+	if (newLength < minimumLength())
+		newFirstSector += minimumLength() - newLength;
+
+	if (newLength > maximumLength())
+		newFirstSector -= newLength - maximumLength();
+
+	if (newFirstSector != partition().firstSector() && (partition().children().size() == 0 || checkAlignment(*partition().children().first(), partition().firstSector() - newFirstSector)))
 	{
-		kWarning() << "new sectors before partition: " << newSectorsBefore;
-		return false;
-	}
-
-	const qint64 oldSectorsBefore = sectorsBefore();
-	const qint64 newLength = partition().length() + oldSectorsBefore - newSectorsBefore;
-
-	if (enableLengthCheck)
-	{
-		if (newLength < minimumSectors())
-			newSectorsBefore -= minimumSectors() - newLength;
-
-		if (newLength > maximumSectors())
-			newSectorsBefore += newLength - maximumSectors();
-	}
-	else if (newLength < 0)
-		return false;
-
-	qint64 newFirstSector = partition().firstSector() + newSectorsBefore - oldSectorsBefore;
-
-	if (maxFirstSector() > -1 && newFirstSector > maxFirstSector())
-	{
-		newSectorsBefore -= newFirstSector - maxFirstSector();
-		newFirstSector = maxFirstSector();
-	}
-
-	if (newSectorsBefore >= 0 && newSectorsBefore != oldSectorsBefore && (partition().children().size() == 0 || checkSnap(*partition().children().first(), oldSectorsBefore - newSectorsBefore)))
-	{
-		setSectorsBefore(newSectorsBefore);
-
 		partition().setFirstSector(newFirstSector);
 		partition().fileSystem().setFirstSector(newFirstSector);
 
 		resizeLogicals();
 
-		emit sectorsBeforeChanged(sectorsBefore());
-  		emit lengthChanged(partition().length());
+		emit firstSectorChanged(newFirstSector);
 
 		updatePositions();
 
@@ -329,7 +281,7 @@ bool PartResizerWidget::updateSectorsBefore(qint64 newSectorsBefore, bool enable
 	return false;
 }
 
-bool PartResizerWidget::checkSnap(const Partition& child, qint64 delta) const
+bool PartResizerWidget::checkAlignment(const Partition& child, qint64 delta) const
 {
 	if (!partition().roles().has(PartitionRole::Extended))
 		return true;
@@ -337,7 +289,7 @@ bool PartResizerWidget::checkSnap(const Partition& child, qint64 delta) const
 	if (child.roles().has(PartitionRole::Unallocated))
 		return true;
 
-	return qAbs(delta) >= device().cylinderSize();
+	return qAbs(delta) >= PartitionTable::sectorAlignment(device());
 }
 
 void PartResizerWidget::resizeLogicals()
@@ -353,54 +305,30 @@ void PartResizerWidget::resizeLogicals()
 	partWidget().updateChildren();
 }
 
-/** Updates the number of free sectors after the Partition.
-	@param newSectorsAfter new value for number of sectors free after Partition
-	@param enableLengthCheck true if the method is supposed to do some sanity checking on the Partition length
-	@return true on success
-*/
-bool PartResizerWidget::updateSectorsAfter(qint64 newSectorsAfter, bool enableLengthCheck)
+bool PartResizerWidget::updateLastSector(qint64 newLastSector)
 {
-	Q_ASSERT(newSectorsAfter >= 0);
+	if (minimumLastSector() > -1 && newLastSector < minimumLastSector())
+		newLastSector = minimumLastSector();
 
-	if (newSectorsAfter < 0)
+	if (maximumLastSector() > -1 && newLastSector > maximumLastSector())
+		newLastSector = maximumLastSector();
+
+	const qint64 newLength = newLastSector - partition().firstSector() + 1;
+
+	if (newLength < minimumLength())
+		newLastSector += minimumLength() - newLength;
+
+	if (newLength > maximumLength())
+		newLastSector -= newLength - maximumLength();
+
+	if (newLastSector != partition().lastSector() && (partition().children().size() == 0 || checkAlignment(*partition().children().last(), partition().lastSector() - newLastSector)))
 	{
-		kWarning() << "new sectors after partition: " << newSectorsAfter;
-		return false;
-	}
-
-	const qint64 oldSectorsAfter = sectorsAfter();
-	const qint64 newLength = partition().length() + oldSectorsAfter - newSectorsAfter;
-
-	if (enableLengthCheck)
-	{
-		if (newLength < minimumSectors())
-			newSectorsAfter -= minimumSectors() - newLength;
-
-		if (newLength > maximumSectors())
-			newSectorsAfter += newLength - maximumSectors();
-	}
-	else if (newLength < 0)
-		return false;
-
-	qint64 newLastSector = partition().lastSector() + oldSectorsAfter - newSectorsAfter;
-
-	if (minLastSector() > -1 && newLastSector < minLastSector())
-	{
-		newSectorsAfter += newLastSector - minLastSector();
-		newLastSector = minLastSector();
-	}
-
-	if (newSectorsAfter >= 0 && newSectorsAfter != oldSectorsAfter && (partition().children().size() == 0 || checkSnap(*partition().children().last(), oldSectorsAfter - newSectorsAfter)))
-	{
-		setSectorsAfter(newSectorsAfter);
-
 		partition().setLastSector(newLastSector);
 		partition().fileSystem().setLastSector(newLastSector);
 
 		resizeLogicals();
 
- 		emit sectorsAfterChanged(sectorsAfter());
-		emit lengthChanged(partition().length());
+		emit lastSectorChanged(newLastSector);
 
 		updatePositions();
 
@@ -416,7 +344,7 @@ bool PartResizerWidget::updateSectorsAfter(qint64 newSectorsAfter, bool enableLe
 */
 bool PartResizerWidget::updateLength(qint64 newLength)
 {
-	newLength = qBound(minimumSectors(), newLength, qMin(totalSectors(), maximumSectors()));
+	newLength = qBound(minimumLength(), newLength, qMin(totalSectors(), maximumLength()));
 
 	if (newLength == partition().length())
 		return false;
@@ -424,26 +352,26 @@ bool PartResizerWidget::updateLength(qint64 newLength)
 	const qint64 oldLength = partition().length();
 	qint64 delta = newLength - oldLength;
 
-	qint64 tmp = qMin(delta, sectorsAfter());
+	qint64 tmp = qMin(delta, maximumLastSector() - partition().lastSector());
 	delta -= tmp;
 
 	if (tmp != 0)
 	{
-		setSectorsAfter(sectorsAfter() - tmp);
 		partition().setLastSector(partition().lastSector() + tmp);
 		partition().fileSystem().setLastSector(partition().lastSector() + tmp);
-		emit sectorsAfterChanged(sectorsAfter());
+
+		emit lastSectorChanged(partition().lastSector());
 	}
 
-	tmp = qMin(delta, sectorsBefore());;
+	tmp = qMin(delta, partition().firstSector() - minimumFirstSector());
 	delta -= tmp;
 
 	if (tmp != 0)
 	{
-		setSectorsBefore(sectorsBefore() - tmp);
 		partition().setFirstSector(partition().firstSector() - tmp);
 		partition().fileSystem().setFirstSector(partition().firstSector() - tmp);
-		emit sectorsBeforeChanged(sectorsBefore());
+
+		emit firstSectorChanged(partition().firstSector());
 	}
 
 	if (partition().length() != oldLength)
@@ -461,18 +389,18 @@ bool PartResizerWidget::updateLength(qint64 newLength)
 	@note This value can never be less than 0 and never be higher than totalSectors()
 	@param s the new minimum length
 */
-void PartResizerWidget::setMinimumSectors(qint64 s)
+void PartResizerWidget::setMinimumLength(qint64 s)
 {
-	m_MinimumSectors = qBound(0LL, s, totalSectors());
+	m_MinimumLength = qBound(0LL, s, totalSectors());
 }
 
 /** Sets the maximum sectors the Partition can be long.
 	@note This value can never be less than 0 and never by higher than totalSectors()
 	@param s the new maximum length
 */
-void PartResizerWidget::setMaximumSectors(qint64 s)
+void PartResizerWidget::setMaximumLength(qint64 s)
 {
-	m_MaximumSectors = qBound(0LL, s, totalSectors());
+	m_MaximumLength = qBound(0LL, s, totalSectors());
 }
 
 /** Sets if moving the Partition is allowed.

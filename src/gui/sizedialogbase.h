@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -42,7 +42,7 @@ class SizeDialogBase : public KDialog
 	Q_DISABLE_COPY(SizeDialogBase)
 
 	protected:
-		SizeDialogBase(QWidget* parent, Capacity::Unit preferred, Device& device, Partition& part, qint64 freebefore, qint64 freeafter);
+		SizeDialogBase(QWidget* parent, Device& device, Partition& part, qint64 minFirst, qint64 maxLast);
 		virtual ~SizeDialogBase() {}
 
 		SizeDialogWidget& dialogWidget() { Q_ASSERT(m_SizeDialogWidget); return *m_SizeDialogWidget; }
@@ -59,37 +59,30 @@ class SizeDialogBase : public KDialog
 		virtual const Partition& partition() const { return m_Partition; }
 		virtual Device& device() { return m_Device; }
 		virtual const Device& device() const { return m_Device; }
-		virtual qint64 minSectors() const;
-		virtual qint64 maxSectors() const;
-		virtual qint64 freeSectorsBefore() const { return m_FreeSectorsBefore; }
-		virtual qint64 freeSectorsAfter() const { return m_FreeSectorsAfter; }
+		virtual qint64 minimumLength() const;
+		virtual qint64 maximumLength() const;
+		virtual qint64 minimumFirstSector() const { return m_MinimumFirstSector; }
+		virtual qint64 maximumLastSector() const { return m_MaximumLastSector; }
 		virtual void setDirty() {}
-
-		static int sectorsToDialogUnit(const Partition& p, Capacity::Unit u, qint64 v);
-		static qint64 dialogUnitToSectors(const Partition& p, Capacity::Unit u, int v);
+		virtual void updateLength(qint64 newLength);
 
 	protected slots:
-		void onSectorsBeforeChanged(qint64 newBefore);
-		void onSectorsAfterChanged(qint64 newAfter);
-		void onLengthChanged(qint64 newLength);
+		void onFirstSectorChanged(qint64 newFirst);
+		void onLastSectorChanged(qint64 newLast);
+
 		void onCapacityChanged(int newCapacity);
 		void onFreeSpaceBeforeChanged(int newBefore);
 		void onFreeSpaceAfterChanged(int newAfter);
 
-	public:
-		Capacity::Unit preferredUnit() const { return m_PreferredUnit; } /**< @return the preferred unit for a dialog */
-
-	private:
-		void setFreeSectorsBefore(qint64 newBefore) { m_FreeSectorsBefore = newBefore; }
-		void setFreeSectorsAfter(qint64 newAfter) { m_FreeSectorsAfter = newAfter; }
+		void onSpinFirstSectorChanged(int newFirst);
+		void onSpinLastSectorChanged(int newLast);
 
 	protected:
 		SizeDialogWidget* m_SizeDialogWidget;
-		Capacity::Unit m_PreferredUnit;
 		Device& m_Device;
 		Partition& m_Partition;
-		qint64 m_FreeSectorsBefore;
-		qint64 m_FreeSectorsAfter;
+		qint64 m_MinimumFirstSector;
+		qint64 m_MaximumLastSector;
 };
 
 #endif

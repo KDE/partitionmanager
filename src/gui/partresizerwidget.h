@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -44,26 +44,30 @@ class PartResizerWidget : public QWidget
 		PartResizerWidget(QWidget* parent);
 
 	public:
-		void init(Device& d, Partition& p, qint64 sbefore, qint64 safter);
+		void init(Device& d, Partition& p, qint64 minFirst, qint64 maxLast);
 
-		qint64 sectorsBefore() const { return m_SectorsBefore; } /**< @return sectors free before Partition */
-		qint64 sectorsAfter() const { return m_SectorsAfter; } /**< @return sectors free after Partition */
-		qint64 totalSectors() const { return m_TotalSectors; } /**< @return total sectors (free + Partition's length) */
+		qint64 totalSectors() const { return maximumLastSector() - minimumFirstSector() + 1; } /**< @return total sectors (free + Partition's length) */
 
-		void setMinimumSectors(qint64 s);
-		qint64 minimumSectors() const { return m_MinimumSectors; } /**< @return minimum length for Partition */
+		qint64 minimumFirstSector() const { return m_MinimumFirstSector; } /**< @return the lowest allowed first sector */
+		void setMinimumFirstSector(qint64 s) { m_MinimumFirstSector = s; } /**< @param s the new lowest allowed first sector */
 
-		void setMaximumSectors(qint64 s);
-		qint64 maximumSectors() const { return m_MaximumSectors; } /**< @return maximum length for the Partition */
+		qint64 maximumFirstSector() const { return m_MaximumFirstSector; } /**< @return the highest allowed first sector */
+		void setMaximumFirstSector(qint64 s) { m_MaximumFirstSector = s; } /**< @param s the new highest allowed first sector */
+
+		qint64 minimumLastSector() const { return m_MinimumLastSector; } /**< @return the lowest allowed last sector */
+		void setMinimumLastSector(qint64 s) { m_MinimumLastSector = s; } /**< @param s the new lowest allowed last sector */
+
+		qint64 maximumLastSector() const { return m_MaximumLastSector; } /**< @return the highest allowed last sector */
+		void setMaximumLastSector(qint64 s) { m_MaximumLastSector = s; } /**< @param s the new highest allowed last sector */
+
+		void setMinimumLength(qint64 s);
+		qint64 minimumLength() const { return m_MinimumLength; } /**< @return minimum length for Partition */
+
+		void setMaximumLength(qint64 s);
+		qint64 maximumLength() const { return m_MaximumLength; } /**< @return maximum length for the Partition */
 
 		void setMoveAllowed(bool b);
 		bool moveAllowed() const { return m_MoveAllowed; } /**< @return true if moving the Partition is allowed */
-
-		qint64 maxFirstSector() const { return m_MaxFirstSector; } /**< @return the highest allowed first sector */
-		void setMaxFirstSector(qint64 s) { m_MaxFirstSector = s; } /**< @param s the new highest allowed first sector */
-
-		qint64 minLastSector() const { return m_MinLastSector; } /**< @return the lowest allowed last sector */
-		void setMinLastSector(qint64 s) { m_MinLastSector = s; } /**< @param s the new lowest allowed last sector */
 
 		bool readOnly() const { return m_ReadOnly; } /**< @return true if the widget is read only */
 		void setReadOnly(bool b) { m_ReadOnly = b; } /**< @param b the new value for read only */
@@ -72,15 +76,15 @@ class PartResizerWidget : public QWidget
 		static qint32 handleHeight() { return m_HandleHeight; } /**< @return the handle height in pixels */
 
 	signals:
-		void sectorsBeforeChanged(qint64);
-		void sectorsAfterChanged(qint64);
+		void firstSectorChanged(qint64);
+		void lastSectorChanged(qint64);
 		void lengthChanged(qint64);
 
 	public slots:
-		bool updateSectors(qint64 newSectorsBefore, qint64 newSectorsAfter);
-		bool updateSectorsBefore(qint64 newSectorsBefore, bool enableLengthCheck = true);
-		bool updateSectorsAfter(qint64 newSectorsAfter, bool enableLengthCheck = true);
 		bool updateLength(qint64 newLength);
+		bool updateFirstSector(qint64 newFirstSector);
+		bool updateLastSector(qint64 newLastSector);
+		bool movePartition(qint64 newFirstSector);
 
 	protected:
 		Partition& partition() { Q_ASSERT(m_Partition); return *m_Partition; }
@@ -90,9 +94,6 @@ class PartResizerWidget : public QWidget
 		Device& device() { Q_ASSERT(m_Device); return *m_Device; }
 		const Device& device() const { Q_ASSERT(m_Device); return *m_Device; }
 		void setDevice(Device& d) { m_Device = &d; }
-
-		void setSectorsBefore(qint64 s) { m_SectorsBefore = s; }
-		void setSectorsAfter(qint64 s) { m_SectorsAfter = s; }
 
 		void paintEvent(QPaintEvent* event);
 		void resizeEvent(QResizeEvent* event);
@@ -115,11 +116,9 @@ class PartResizerWidget : public QWidget
 
 		void set(qint64 newCap, qint64 newFreeBefore, qint64 newFreeAfter);
 
-		void setTotalSectors(qint64 s) { m_TotalSectors = s; }
-
 		void resizeLogicals();
 
-		bool checkSnap(const Partition& child, qint64 delta) const;
+		bool checkAlignment(const Partition& child, qint64 delta) const;
 
 		QWidget* draggedWidget() { return m_DraggedWidget; }
 		const QWidget* draggedWidget() const { return m_DraggedWidget; }
@@ -129,13 +128,12 @@ class PartResizerWidget : public QWidget
 		Partition* m_Partition;
 		PartWidget* m_PartWidget;
 
-		qint64 m_SectorsBefore;
-		qint64 m_SectorsAfter;
-		qint64 m_TotalSectors;
-		qint64 m_MinimumSectors;
-		qint64 m_MaximumSectors;
-		qint64 m_MaxFirstSector;
-		qint64 m_MinLastSector;
+		qint64 m_MinimumFirstSector;
+		qint64 m_MaximumFirstSector;
+		qint64 m_MinimumLastSector;
+		qint64 m_MaximumLastSector;
+		qint64 m_MinimumLength;
+		qint64 m_MaximumLength;
 
 		QLabel m_LeftHandle;
 		QLabel m_RightHandle;
