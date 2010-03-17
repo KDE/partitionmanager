@@ -74,8 +74,8 @@ class SizeDialogBase : public KDialog
 		void onFreeSpaceBeforeChanged(int newBefore);
 		void onFreeSpaceAfterChanged(int newAfter);
 
-		void onSpinFirstSectorChanged(int newFirst);
-		void onSpinLastSectorChanged(int newLast);
+		void onSpinFirstSectorChanged(double newFirst);
+		void onSpinLastSectorChanged(double newLast);
 
 	protected:
 		SizeDialogWidget* m_SizeDialogWidget;

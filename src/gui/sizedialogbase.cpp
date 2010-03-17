@@ -131,12 +131,12 @@ void SizeDialogBase::setupConnections()
 	connect(&dialogWidget().spinFreeAfter(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceAfterChanged(int)));
 	connect(&dialogWidget().spinCapacity(), SIGNAL(valueChanged(int)), SLOT(onCapacityChanged(int)));
 
-	connect(&dialogWidget().spinFirstSector(), SIGNAL(valueChanged(int)), SLOT(onSpinFirstSectorChanged(int)));
-	connect(&dialogWidget().spinLastSector(), SIGNAL(valueChanged(int)), SLOT(onSpinLastSectorChanged(int)));
+	connect(&dialogWidget().spinFirstSector(), SIGNAL(valueChanged(double)), SLOT(onSpinFirstSectorChanged(double)));
+	connect(&dialogWidget().spinLastSector(), SIGNAL(valueChanged(double)), SLOT(onSpinLastSectorChanged(double)));
 
 }
 
-void SizeDialogBase::onSpinFirstSectorChanged(int newFirst)
+void SizeDialogBase::onSpinFirstSectorChanged(double newFirst)
 {
 	if (newFirst >= minimumFirstSector())
 	{
@@ -145,7 +145,7 @@ void SizeDialogBase::onSpinFirstSectorChanged(int newFirst)
 	}
 }
 
-void SizeDialogBase::onSpinLastSectorChanged(int newLast)
+void SizeDialogBase::onSpinLastSectorChanged(double newLast)
 {
 	if (newLast <= maximumLastSector())
 	{

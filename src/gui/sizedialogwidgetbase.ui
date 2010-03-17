@@ -328,7 +328,7 @@
     </widget>
    </item>
    <item row="11" column="1" colspan="2">
-    <widget class="QSpinBox" name="m_SpinFirstSector">
+    <widget class="QDoubleSpinBox" name="m_SpinFirstSector">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>3</horstretch>
@@ -337,6 +337,9 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="decimals">
+      <number>0</number>
      </property>
     </widget>
    </item>
@@ -360,7 +363,7 @@
     </widget>
    </item>
    <item row="12" column="1" colspan="2">
-    <widget class="QSpinBox" name="m_SpinLastSector">
+    <widget class="QDoubleSpinBox" name="m_SpinLastSector">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>3</horstretch>
@@ -369,6 +372,9 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="decimals">
+      <number>0</number>
      </property>
     </widget>
    </item>
