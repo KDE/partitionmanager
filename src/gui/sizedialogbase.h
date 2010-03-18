@@ -32,6 +32,7 @@ class Device;
 class Partition;
 class PartitionTable;
 class SizeDialogWidget;
+class SizeDetailsWidget;
 
 /** @brief Base class for all dialogs moving or resizing Partitions.
 	@author vl@fidra.de
@@ -47,6 +48,9 @@ class SizeDialogBase : public KDialog
 
 		SizeDialogWidget& dialogWidget() { Q_ASSERT(m_SizeDialogWidget); return *m_SizeDialogWidget; }
 		const SizeDialogWidget& dialogWidget() const { Q_ASSERT(m_SizeDialogWidget); return *m_SizeDialogWidget; }
+
+		SizeDetailsWidget& detailsWidget() { Q_ASSERT(m_SizeDetailsWidget); return *m_SizeDetailsWidget; }
+		const SizeDetailsWidget& detailsWidget() const { Q_ASSERT(m_SizeDetailsWidget); return *m_SizeDetailsWidget; }
 
 		virtual const PartitionTable& partitionTable() const;
 		virtual bool canGrow() const { return true; }
@@ -79,6 +83,7 @@ class SizeDialogBase : public KDialog
 
 	protected:
 		SizeDialogWidget* m_SizeDialogWidget;
+		SizeDetailsWidget* m_SizeDetailsWidget;
 		Device& m_Device;
 		Partition& m_Partition;
 		qint64 m_MinimumFirstSector;

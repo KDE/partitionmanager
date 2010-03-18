@@ -43,7 +43,6 @@ NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPart
 	SizeDialogBase(parent, device, unallocatedPartition, unallocatedPartition.firstSector(), unallocatedPartition.lastSector()),
 	m_PartitionRoles(r)
 {
-	setMainWidget(&dialogWidget());
 	setCaption(i18nc("@title:window", "Create a new partition"));
 
 	setupConstraints();

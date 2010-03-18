@@ -43,9 +43,6 @@ class SizeDialogWidget : public QWidget, public Ui::SizeDialogWidgetBase
 		QSpinBox& spinFreeAfter() { Q_ASSERT(m_SpinFreeAfter); return *m_SpinFreeAfter; }
 		QSpinBox& spinCapacity() { Q_ASSERT(m_SpinCapacity); return *m_SpinCapacity; }
 
-		QDoubleSpinBox& spinFirstSector() { Q_ASSERT(m_SpinFirstSector); return *m_SpinFirstSector; }
-		QDoubleSpinBox& spinLastSector() { Q_ASSERT(m_SpinLastSector); return *m_SpinLastSector; }
-
 		QLabel& labelMinSize() { Q_ASSERT(m_LabelMinSize); return *m_LabelMinSize; }
 		QLabel& labelMaxSize() { Q_ASSERT(m_LabelMaxSize); return *m_LabelMaxSize; }
 

@@ -18,6 +18,7 @@
  ***************************************************************************/
 
 #include "gui/sizedialogbase.h"
+#include "gui/sizedetailswidget.h"
 #include "gui/partresizerwidget.h"
 #include "gui/sizedialogwidget.h"
 
@@ -32,11 +33,17 @@
 SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint64 minFirst, qint64 maxLast) :
 	KDialog(parent),
 	m_SizeDialogWidget(new SizeDialogWidget(this)),
+	m_SizeDetailsWidget(new SizeDetailsWidget(this)),
 	m_Device(d),
 	m_Partition(part),
 	m_MinimumFirstSector(minFirst),
 	m_MaximumLastSector(maxLast)
 {
+	setMainWidget(&dialogWidget());
+	setDetailsWidget(&detailsWidget());
+
+	showButtonSeparator(true);
+	setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Details);
 }
 
 qint64 SizeDialogBase::minimumLength() const
@@ -86,8 +93,8 @@ void SizeDialogBase::setupDialog()
 	dialogWidget().spinFreeAfter().setSuffix(QString(" ") + Capacity::unitName(Capacity::preferredUnit()));
 	dialogWidget().spinCapacity().setSuffix(QString(" ") + Capacity::unitName(Capacity::preferredUnit()));
 
-	dialogWidget().spinFirstSector().setValue(partition().firstSector());
-	dialogWidget().spinLastSector().setValue(partition().lastSector());
+	detailsWidget().spinFirstSector().setValue(partition().firstSector());
+	detailsWidget().spinLastSector().setValue(partition().lastSector());
 }
 
 void SizeDialogBase::setupConstraints()
@@ -118,8 +125,8 @@ void SizeDialogBase::setupConstraints()
 	dialogWidget().spinFreeBefore().setRange(0, maxFree);
 	dialogWidget().spinFreeAfter().setRange(0, maxFree);
 
-	dialogWidget().spinFirstSector().setRange(minimumFirstSector(), maximumLastSector());
-	dialogWidget().spinLastSector().setRange(minimumFirstSector(), maximumLastSector());
+	detailsWidget().spinFirstSector().setRange(minimumFirstSector(), maximumLastSector());
+	detailsWidget().spinLastSector().setRange(minimumFirstSector(), maximumLastSector());
 }
 
 void SizeDialogBase::setupConnections()
@@ -131,8 +138,8 @@ void SizeDialogBase::setupConnections()
 	connect(&dialogWidget().spinFreeAfter(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceAfterChanged(int)));
 	connect(&dialogWidget().spinCapacity(), SIGNAL(valueChanged(int)), SLOT(onCapacityChanged(int)));
 
-	connect(&dialogWidget().spinFirstSector(), SIGNAL(valueChanged(double)), SLOT(onSpinFirstSectorChanged(double)));
-	connect(&dialogWidget().spinLastSector(), SIGNAL(valueChanged(double)), SLOT(onSpinLastSectorChanged(double)));
+	connect(&detailsWidget().spinFirstSector(), SIGNAL(valueChanged(double)), SLOT(onSpinFirstSectorChanged(double)));
+	connect(&detailsWidget().spinLastSector(), SIGNAL(valueChanged(double)), SLOT(onSpinLastSectorChanged(double)));
 
 }
 
@@ -160,9 +167,9 @@ void SizeDialogBase::onFirstSectorChanged(qint64 newFirst)
 	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), newFirst - minimumFirstSector()));
 	dialogWidget().spinFreeBefore().blockSignals(state);
 
-	state = dialogWidget().spinFirstSector().blockSignals(true);
-	dialogWidget().spinFirstSector().setValue(newFirst);
-	dialogWidget().spinFirstSector().blockSignals(state);
+	state = detailsWidget().spinFirstSector().blockSignals(true);
+	detailsWidget().spinFirstSector().setValue(newFirst);
+	detailsWidget().spinFirstSector().blockSignals(state);
 
 	updateLength(partition().length());
 	setDirty();
@@ -174,9 +181,9 @@ void SizeDialogBase::onLastSectorChanged(qint64 newLast)
 	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), maximumLastSector() - newLast));
 	dialogWidget().spinFreeAfter().blockSignals(state);
 
-	state = dialogWidget().spinLastSector().blockSignals(true);
-	dialogWidget().spinLastSector().setValue(newLast);
-	dialogWidget().spinLastSector().blockSignals(state);
+	state = detailsWidget().spinLastSector().blockSignals(true);
+	detailsWidget().spinLastSector().setValue(newLast);
+	detailsWidget().spinLastSector().blockSignals(state);
 
 	updateLength(partition().length());
 	setDirty();
