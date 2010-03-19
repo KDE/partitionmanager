@@ -59,7 +59,8 @@ PartResizerWidget::PartResizerWidget(QWidget* parent) :
 	m_DraggedWidget(NULL),
 	m_Hotspot(0),
 	m_MoveAllowed(true),
-	m_ReadOnly(false)
+	m_ReadOnly(false),
+	m_Align(true)
 {
 }
 
@@ -207,18 +208,31 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 		return false;
 	}
 
+	const qint64 originalFirst = partition().firstSector();
+	const qint64 originalLast = partition().lastSector();
+
 	partition().setFirstSector(newFirstSector);
 	partition().fileSystem().setFirstSector(newFirstSector);
-	emit firstSectorChanged(newFirstSector);
 
 	partition().setLastSector(newLastSector);
 	partition().fileSystem().setLastSector(newLastSector);
-	emit lastSectorChanged(newLastSector);
 
-	resizeLogicals();
-	updatePositions();
+	if (align())
+		device().partitionTable()->alignPartition(device(), partition());
 
-	return true;
+	if (originalFirst != partition().firstSector() || originalLast != partition().lastSector())
+	{
+		resizeLogicals();
+		updatePositions();
+	}
+
+	if (originalFirst != partition().firstSector())
+		emit firstSectorChanged(partition().firstSector());
+
+	if (originalLast != partition().lastSector())
+		emit lastSectorChanged(partition().lastSector());
+
+	return originalFirst != partition().firstSector() || originalLast != partition().lastSector();
 }
 
 void PartResizerWidget::mouseMoveEvent(QMouseEvent* event)
@@ -266,16 +280,21 @@ bool PartResizerWidget::updateFirstSector(qint64 newFirstSector)
 
 	if (newFirstSector != partition().firstSector() && (partition().children().size() == 0 || checkAlignment(*partition().children().first(), partition().firstSector() - newFirstSector)))
 	{
+		const qint64 originalFirst = partition().lastSector();
+
 		partition().setFirstSector(newFirstSector);
 		partition().fileSystem().setFirstSector(newFirstSector);
 
-		resizeLogicals();
+		if (align())
+			device().partitionTable()->alignPartition(device(), partition());
 
-		emit firstSectorChanged(newFirstSector);
-
-		updatePositions();
-
-		return true;
+		if (originalFirst != partition().firstSector())
+		{
+			resizeLogicals();
+			updatePositions();
+			emit firstSectorChanged(partition().firstSector());
+			return true;
+		}
 	}
 
 	return false;
@@ -323,16 +342,21 @@ bool PartResizerWidget::updateLastSector(qint64 newLastSector)
 
 	if (newLastSector != partition().lastSector() && (partition().children().size() == 0 || checkAlignment(*partition().children().last(), partition().lastSector() - newLastSector)))
 	{
+		const qint64 originalLast = partition().lastSector();
+
 		partition().setLastSector(newLastSector);
 		partition().fileSystem().setLastSector(newLastSector);
 
-		resizeLogicals();
+		if (align())
+			device().partitionTable()->alignPartition(device(), partition());
 
-		emit lastSectorChanged(newLastSector);
-
-		updatePositions();
-
-		return true;
+		if (partition().lastSector() != originalLast)
+		{
+			resizeLogicals();
+			updatePositions();
+			emit lastSectorChanged(partition().lastSector());
+			return true;
+		}
 	}
 
 	return false;

@@ -472,10 +472,7 @@ void PartitionManagerWidget::onNewPartition()
 
 	QPointer<NewDialog> dlg = new NewDialog(this, *selectedDevice(), *newPartition, selectedDevice()->partitionTable()->childRoles(*selectedPartition()));
 	if (dlg->exec() == KDialog::Accepted)
-	{
-		PartitionTable::alignPartition(*selectedDevice(), *newPartition);
 		operationStack().push(new NewOperation(*selectedDevice(), newPartition));
-	}
 	else
 		delete newPartition;
 
@@ -565,8 +562,6 @@ void PartitionManagerWidget::onResizePartition()
 
 	if (dlg->exec() == KDialog::Accepted && dlg->isModified())
 	{
-		PartitionTable::alignPartition(*selectedDevice(), resizedPartition, selectedPartition());
-
 		if (resizedPartition.firstSector() == selectedPartition()->firstSector() && resizedPartition.lastSector() == selectedPartition()->lastSector())
 			Log(Log::information) << i18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", selectedPartition()->deviceNode());
 		else
@@ -628,7 +623,7 @@ void PartitionManagerWidget::onPastePartition()
 		delete copiedPartition;
 }
 
-bool PartitionManagerWidget::showInsertDialog(Partition& insertPartition, qint64 sourceLength)
+bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint64 sourceLength)
 {
 	Q_ASSERT(selectedDevice());
 	Q_ASSERT(selectedPartition());
@@ -643,22 +638,20 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertPartition, qint64
 
 	// Make sure the inserted partition has the right parent and logical or primary set. Only then
 	// can PartitionTable::alignPartition() work correctly.
-	selectedPartition()->parent()->reparent(insertPartition);
+	selectedPartition()->parent()->reparent(insertedPartition);
 
 	if (!overwrite)
 	{
-		QPointer<InsertDialog> dlg = new InsertDialog(this, *selectedDevice(), insertPartition, *selectedPartition());
+		QPointer<InsertDialog> dlg = new InsertDialog(this, *selectedDevice(), insertedPartition, *selectedPartition());
 
 		int result = dlg->exec();
 		delete dlg;
 
 		if (result != KDialog::Accepted)
 			return false;
-
-		PartitionTable::alignPartition(*selectedDevice(), insertPartition, selectedPartition());
 	}
 
-	if (insertPartition.length() < sourceLength)
+	if (insertedPartition.length() < sourceLength)
 	{
 		if (overwrite)
 			KMessageBox::error(this, i18nc("@info",

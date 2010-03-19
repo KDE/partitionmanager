@@ -72,6 +72,9 @@ class PartResizerWidget : public QWidget
 		bool readOnly() const { return m_ReadOnly; } /**< @return true if the widget is read only */
 		void setReadOnly(bool b) { m_ReadOnly = b; } /**< @param b the new value for read only */
 
+		bool align() const { return m_Align; } /**< @return  true if the Partition is to be aligned */
+		void setAlign(bool b) { m_Align = b; } /**< @param b the new value for aligning the Partition */
+
 		static qint32 handleWidth() { return m_HandleWidth; } /**< @return the handle width in pixels */
 		static qint32 handleHeight() { return m_HandleHeight; } /**< @return the handle height in pixels */
 
@@ -143,6 +146,7 @@ class PartResizerWidget : public QWidget
 
 		bool m_MoveAllowed;
 		bool m_ReadOnly;
+		bool m_Align;
 
 		static const qint32 m_HandleWidth;
 		static const qint32 m_HandleHeight;

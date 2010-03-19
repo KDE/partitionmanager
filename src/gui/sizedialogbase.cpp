@@ -29,6 +29,7 @@
 #include "util/capacity.h"
 
 #include <kdebug.h>
+#include <config.h>
 
 SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint64 minFirst, qint64 maxLast) :
 	KDialog(parent),
@@ -127,6 +128,9 @@ void SizeDialogBase::setupConstraints()
 
 	detailsWidget().spinFirstSector().setRange(minimumFirstSector(), maximumLastSector());
 	detailsWidget().spinLastSector().setRange(minimumFirstSector(), maximumLastSector());
+
+	detailsWidget().spinFirstSector().setSingleStep(Config::sectorAlignment());
+	detailsWidget().spinLastSector().setSingleStep(Config::sectorAlignment());
 }
 
 void SizeDialogBase::setupConnections()
@@ -140,6 +144,7 @@ void SizeDialogBase::setupConnections()
 
 	connect(&detailsWidget().spinFirstSector(), SIGNAL(valueChanged(double)), SLOT(onSpinFirstSectorChanged(double)));
 	connect(&detailsWidget().spinLastSector(), SIGNAL(valueChanged(double)), SLOT(onSpinLastSectorChanged(double)));
+	connect(&detailsWidget().checkAlign(), SIGNAL(stateChanged(int)), SLOT(onAlignStateChanged(int)));
 
 }
 
@@ -159,6 +164,14 @@ void SizeDialogBase::onSpinLastSectorChanged(double newLast)
 		dialogWidget().partResizerWidget().updateLastSector(newLast);
 		setDirty();
 	}
+}
+
+void SizeDialogBase::onAlignStateChanged(int)
+{
+	const bool align = detailsWidget().checkAlign().isChecked();
+	dialogWidget().partResizerWidget().setAlign(align);
+	detailsWidget().spinFirstSector().setSingleStep(align ? Config::sectorAlignment() : 1);
+	detailsWidget().spinLastSector().setSingleStep(align ? Config::sectorAlignment() : 1);
 }
 
 void SizeDialogBase::onFirstSectorChanged(qint64 newFirst)

@@ -39,6 +39,7 @@ class SizeDetailsWidget : public QWidget, public Ui::SizeDetailsWidgetBase
 	public:
 		QDoubleSpinBox& spinFirstSector() { Q_ASSERT(m_SpinFirstSector); return *m_SpinFirstSector; }
 		QDoubleSpinBox& spinLastSector() { Q_ASSERT(m_SpinLastSector); return *m_SpinLastSector; }
+		QCheckBox& checkAlign() { Q_ASSERT(m_CheckAlign); return *m_CheckAlign; }
 };
 
 #endif
