@@ -416,10 +416,6 @@ bool PartitionTable::alignPartition(const Device& d, Partition& p, const Partiti
 		p.fileSystem().setLastSector(p.fileSystem().lastSector() - sectorAlignment(d));
 	}
 
-	if (p.length() < originalLength)
-		Log(Log::warning) <<  i18ncp("@info/plain", "The partition cannot be created with the requested length of one sector, ", "The partition cannot be created with the requested length of %1 sectors, ", originalLength)
-		+ i18ncp("@info/plain", "and will instead only be one sector long.", "and will instead only be %1 sectors long.", p.length());
-
 	// In an extended partition we also need to align unallocated children at the beginning and at the end
 	// (there should never be a need to align non-unallocated children)
 	if (p.roles().has(PartitionRole::Extended))
