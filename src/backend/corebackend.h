@@ -40,8 +40,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 	Q_DISABLE_COPY(CoreBackend)
 
 	protected:
-		CoreBackend() : m_AboutData(NULL) {}
-		virtual ~CoreBackend() {}
+		CoreBackend();
+		virtual ~CoreBackend();
 
 	signals:
 		void progress(int);
@@ -68,6 +68,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 
 	private:
 		const KAboutData* m_AboutData;
+
+		class CoreBackendPrivate;
+		CoreBackendPrivate* d;
 };
 
 #endif

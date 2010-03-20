@@ -32,6 +32,25 @@
 
 #include <config.h>
 
+class CoreBackend::CoreBackendPrivate
+{
+	public:
+		CoreBackendPrivate(CoreBackend& cb) : coreBackend(cb) {}
+
+	private:
+		CoreBackend& coreBackend;
+};
+
+CoreBackend::CoreBackend() :
+	m_AboutData(NULL),
+	d(new CoreBackendPrivate(*this))
+{
+}
+
+CoreBackend::~CoreBackend()
+{
+}
+
 CoreBackend* CoreBackend::self()
 {
 	// This could be used to load any kind of backend if there were more than one
