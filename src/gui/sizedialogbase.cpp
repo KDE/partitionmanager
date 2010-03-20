@@ -45,6 +45,10 @@ SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint
 
 	showButtonSeparator(true);
 	setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Details);
+	// Cannot use KGuiItem() for the details button due to a KDialog bug -- it has special handling
+	// for the details button text but not if using setButtonGuiItem
+	setButtonText(Details, i18nc("@item:button advanced settings button", "Advanced"));
+	setButtonIcon(Details, KIcon());
 }
 
 qint64 SizeDialogBase::minimumLength() const
