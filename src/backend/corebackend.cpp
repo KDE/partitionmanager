@@ -49,6 +49,7 @@ CoreBackend::CoreBackend() :
 
 CoreBackend::~CoreBackend()
 {
+	delete d;
 }
 
 CoreBackend* CoreBackend::self()
