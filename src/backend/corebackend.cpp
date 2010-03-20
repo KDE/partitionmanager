@@ -53,9 +53,6 @@ CoreBackend::~CoreBackend()
 
 CoreBackend* CoreBackend::self()
 {
-	// This could be used to load any kind of backend if there were more than one
-	// to choose from. So right now it's just loading the parted plugin and returning
-	// it.
 	static CoreBackend* instance = NULL;
 
 	if (instance == NULL)
