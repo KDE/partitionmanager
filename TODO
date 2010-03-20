@@ -32,6 +32,8 @@ Bugs to fix for 1.1:
 * resizing a newly created extended that has children (leading to a merge of
   operations) crashes in NewOperation::description()
 
+* make sure the default file system can indeed be created
+
 ===============================================================================
 
 For releases after 1.1:
