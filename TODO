@@ -6,9 +6,6 @@ Plans and ideas for 1.1:
 * Check if no of sectors fits in an unsigned 32 bit int for msdos partition
   tables.
 
-* The KPart works but has problems: The context menus don't show up, the status
-  bar is missing, maybe more.
-
 * save msdos mbr?
 
 * let the user specify extern command locations and options in the settings;

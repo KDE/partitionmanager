@@ -62,32 +62,5 @@ install(FILES partitionmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
 ############################################
 
-option(PARTMAN_KPART "Build a kpart for KDE Partition Manager" OFF)
-
-if(PARTMAN_KPART)
-	file(GLOB partitionmanagerpart_SRCS kpart/partitionmanagerpart.cpp)
-
-	kde4_add_plugin(partitionmanagerpart ${partitionmanagerpart_SRCS})
-
-	target_link_libraries(partitionmanagerpart
-		${KDE4_KPARTS_LIBS}
-		${KDE4_KDECORE_LIBS}
-		partitionmanagerprivate
-	)
-
-	install(TARGETS partitionmanagerpart DESTINATION ${PLUGIN_INSTALL_DIR})
-	install(FILES kpart/partitionmanagerpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-	install(FILES kpart/partitionmanagerpart.rc DESTINATION ${DATA_INSTALL_DIR}/partitionmanagerpart)
-
-	option(PARTMAN_KPART_TEST "Build a kpart test application for KDE Partition Manager" OFF)
-
-	if(PARTMAN_KPART_TEST)
-		add_subdirectory(kpart/test)
-	endif(PARTMAN_KPART_TEST)
-
-endif(PARTMAN_KPART)
-
-############################################
-
 add_subdirectory(plugins)
 
