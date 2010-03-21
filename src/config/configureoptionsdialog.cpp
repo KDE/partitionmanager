@@ -18,6 +18,8 @@
  ***************************************************************************/
 
 #include "config/configureoptionsdialog.h"
+#include "config/generalpagewidget.h"
+#include "config/filesystemcolorspagewidget.h"
 
 #include "backend/corebackendmanager.h"
 
@@ -26,84 +28,12 @@
 
 #include "util/helpers.h"
 
-#include "ui_configurepagegeneral.h"
 #include "ui_configurepagefilesystemcolors.h"
 
 #include <kiconloader.h>
 #include <kservice.h>
 
 #include <config.h>
-
-class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
-{
-	public:
-		GeneralPageWidget(QWidget* parent) : QWidget(parent) { setupUi(this); setupDialog(); }
-
-	public:
-		KComboBox& comboDefaultFileSystem() { return *m_ComboDefaultFileSystem; }
-		const KComboBox& comboDefaultFileSystem() const { return *m_ComboDefaultFileSystem; }
-
-		KComboBox& comboBackend() { return *m_ComboBackend; }
-		const KComboBox& comboBackend() const { return *m_ComboBackend; }
-
-		FileSystem::Type defaultFileSystem() const
-		{
-			return FileSystem::typeForName(comboDefaultFileSystem().currentText());
-		}
-
-		void setDefaultFileSystem(FileSystem::Type t)
-		{
-			comboDefaultFileSystem().setCurrentIndex(comboDefaultFileSystem().findText(FileSystem::nameForType(t)));
-		}
-
-		QString backend() const
-		{
-			KService::List services = CoreBackendManager::self()->list();
-
-			foreach(KService::Ptr p, services)
-				if (p->name() == comboBackend().currentText())
-					return p->library();
-
-			return QString();
-		}
-
-		void setBackend(const QString& name)
-		{
-			KService::List services = CoreBackendManager::self()->list();
-
-			foreach(KService::Ptr p, services)
-				if (p->library() == name)
-					comboBackend().setCurrentIndex(comboBackend().findText(p->name()));
-		}
-
-	private:
-		void setupDialog()
-		{
-			QStringList fsNames;
-			foreach (const FileSystem* fs, FileSystemFactory::map())
-				if (fs->supportCreate() != FileSystem::cmdSupportNone && fs->type() != FileSystem::Extended)
-					fsNames.append(fs->name());
-
-			qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
-
-			foreach (const QString& fsName, fsNames)
-				comboDefaultFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
-
-			setDefaultFileSystem(FileSystem::defaultFileSystem());
-
-			KService::List services = CoreBackendManager::self()->list();
-			foreach(KService::Ptr p, services)
-				comboBackend().addItem(p->name());
-
-			setBackend(Config::backend());
-		}
-};
-
-class FileSystemColorsPageWidget : public QWidget, public Ui::ConfigurePageFileSystemColors
-{
-	public:
-		FileSystemColorsPageWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
-};
 
 ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const QString& name) :
 	KConfigDialog(parent, name, Config::self()),
