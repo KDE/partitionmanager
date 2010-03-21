@@ -23,8 +23,9 @@
 #include "gui/scanprogressdialog.h"
 #include "gui/createpartitiontabledialog.h"
 #include "gui/filesystemsupportdialog.h"
-#include "gui/configureoptionsdialog.h"
 #include "gui/devicepropsdialog.h"
+
+#include "config/configureoptionsdialog.h"
 
 #include "backend/corebackendmanager.h"
 #include "backend/corebackend.h"

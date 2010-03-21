@@ -25,9 +25,10 @@ file(GLOB partitionmanagerprivate_SRCS
 	jobs/*.cpp
 	fs/*.cpp
 	gui/*.cpp
+	config/*.cpp
 )
 
-file(GLOB partitionmanagerprivate_UIFILES gui/*.ui kcm/*.ui)
+file(GLOB partitionmanagerprivate_UIFILES config/*.ui gui/*.ui)
 
 kde4_add_ui_files(partitionmanagerprivate_SRCS ${partitionmanagerprivate_UIFILES})
 
