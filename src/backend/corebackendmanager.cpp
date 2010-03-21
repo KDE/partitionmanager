@@ -17,62 +17,65 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(COREBACKEND__H)
+#include "backend/corebackendmanager.h"
+#include "backend/corebackend.h"
 
-#define COREBACKEND__H
+#include <QStringList>
+#include <QString>
 
-#include "util/libpartitionmanagerexport.h"
+#include <kpluginfactory.h>
+#include <kpluginloader.h>
+#include <kdebug.h>
+#include <klocale.h>
+#include <kaboutdata.h>
+#include <kservice.h>
+#include <kservicetypetrader.h>
 
-#include <QObject>
-#include <QList>
+#include <config.h>
 
-class CoreBackendManager;
-class CoreBackendDevice;
-class Device;
-class PartitionTable;
-
-class KAboutData;
-
-class QString;
-
-class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
+CoreBackendManager::CoreBackendManager() :
+	m_Backend(NULL)
 {
-	Q_OBJECT
-	Q_DISABLE_COPY(CoreBackend)
+}
 
-	friend class CoreBackendManager;
+CoreBackendManager* CoreBackendManager::self()
+{
+	static CoreBackendManager* instance = NULL;
 
-	protected:
-		CoreBackend();
-		virtual ~CoreBackend();
+	if (instance == NULL)
+		instance = new CoreBackendManager;
 
-	signals:
-		void progress(int);
-		void scanProgress(const QString&,int);
+	return instance;
+}
 
-	public:
-		virtual const KAboutData& about() const { return *m_AboutData; }
+KService::List CoreBackendManager::list() const
+{
+	return KServiceTypeTrader::self()->query("PartitionManager/Plugin", "[X-KDE-PluginInfo-Category] == 'BackendPlugin'");
+}
 
-		virtual QList<Device*> scanDevices() = 0;
-		virtual Device* scanDevice(const QString& device_node) = 0;
-		virtual CoreBackendDevice* openDevice(const QString& device_node) = 0;
-		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node) = 0;
-		virtual bool closeDevice(CoreBackendDevice* core_device) = 0;
-		virtual void emitProgress(int i);
-		virtual void emitScanProgress(const QString& device_node, int i);
+bool CoreBackendManager::load(const QString& name)
+{
+	if (backend())
+		unload();
 
-	protected:
-		static void setPartitionTableForDevice(Device& d, PartitionTable* p);
-		static void setPartitionTableMaxPrimaries(PartitionTable& p, qint32 max_primaries);
+	KPluginLoader loader(name);
 
-	private:
-		void setAboutData(const KAboutData* a) { m_AboutData = a; }
+	KPluginFactory* factory = loader.factory();
 
-	private:
-		const KAboutData* m_AboutData;
+	if (factory != NULL)
+	{
+		m_Backend = factory->create<CoreBackend>(NULL);
+		backend()->setAboutData(factory->componentData().aboutData());
+		kDebug() << "Loaded backend plugin: " << backend()->about().programName() << ", " << backend()->about().version();
+		return true;
+	}
 
-		class CoreBackendPrivate;
-		CoreBackendPrivate* d;
-};
+	kWarning() << "Could not load plugin for core backend " << name << ": " << loader.errorString();
+	return false;
+}
 
-#endif
+void CoreBackendManager::unload()
+{
+	delete m_Backend;
+	m_Backend = NULL;
+}

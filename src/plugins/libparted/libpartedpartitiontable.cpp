@@ -21,6 +21,9 @@
 #include "plugins/libparted/libpartedpartition.h"
 #include "plugins/libparted/libpartedbackend.h"
 
+#include "backend/corebackend.h"
+#include "backend/corebackendmanager.h"
+
 #include "core/partition.h"
 #include "core/device.h"
 
@@ -291,7 +294,7 @@ bool LibPartedPartitionTable::clobberFileSystem(Report& report, const Partition&
 
 static void pedTimerHandler(PedTimer* pedTimer, void*)
 {
-	CoreBackend::self()->emitProgress(pedTimer->frac * 100);
+	CoreBackendManager::self()->backend()->emitProgress(pedTimer->frac * 100);
 }
 
 bool LibPartedPartitionTable::resizeFileSystem(Report& report, const Partition& partition, qint64 newLength)

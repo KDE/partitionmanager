@@ -20,6 +20,8 @@
 #include "util/helpers.h"
 #include "util/globallog.h"
 
+#include "backend/corebackendmanager.h"
+
 #include "ops/operation.h"
 
 #include <klocale.h>
@@ -179,3 +181,29 @@ void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree)
 	}
 }
 
+bool loadBackend()
+{
+	if (CoreBackendManager::self()->load(Config::backend()) == false)
+	{
+		if (CoreBackendManager::self()->load(CoreBackendManager::defaultBackendName()))
+		{
+			KMessageBox::sorry(NULL,
+				i18nc("@info", "<para>The configured backend plugin \"%1\" could not be loaded.</para>"
+					"<para>Loading the default backend plugin \"%2\" instead.</para>",
+				Config::backend(), CoreBackendManager::defaultBackendName()),
+				i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
+			Config::setBackend(CoreBackendManager::defaultBackendName());
+		}
+		else
+		{
+			KMessageBox::error(NULL,
+				i18nc("@info", "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+					"plugin could be loaded.</para><para>Please check your installation.</para>",
+				Config::backend(), CoreBackendManager::defaultBackendName()),
+				i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
+			return false;
+		}
+	}
+
+	return true;
+}

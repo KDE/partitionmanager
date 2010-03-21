@@ -56,7 +56,7 @@ K_PLUGIN_FACTORY(LibPartedBackendFactory, registerPlugin<LibPartedBackend>(); )
 static KAboutData createPluginAboutData()
 {
 	KAboutData about(
-		"libpartedpmplugin",
+		"pmlibpartedbackendplugin",
 		NULL,
 		ki18nc("@title", "LibParted Backend Plugin"),
 		QString("%1, libparted version: %2").arg(VERSION).arg(ped_get_version()).toUtf8(),
@@ -425,7 +425,7 @@ QList<Device*> LibPartedBackend::scanDevices()
 
 		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
 
-		Device* d = CoreBackend::self()->scanDevice(solidBlock->device());
+		Device* d = scanDevice(solidBlock->device());
 
 		if (d != NULL)
 		{

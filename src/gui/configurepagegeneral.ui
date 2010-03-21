@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>459</width>
-    <height>633</height>
+    <height>389</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -32,7 +32,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Allow Applying Operations Without Administrator Privileges</string>
+         <string>Allow applying operations without administrator privileges</string>
         </property>
        </widget>
       </item>
@@ -54,7 +54,7 @@
       <item row="0" column="0" colspan="2">
        <widget class="QCheckBox" name="kcfg_useCylinderAlignment">
         <property name="text">
-         <string>Use Cylinder Based MS-Dos Partition Alignment (Windows XP compatible)</string>
+         <string>Use cylinder based MS-Dos partition alignment (Windows XP compatible)</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -67,7 +67,7 @@
          <bool>true</bool>
         </property>
         <property name="text">
-         <string>Partition Sector Alignment:</string>
+         <string>Partition sector alignment:</string>
         </property>
         <property name="buddy">
          <cstring>kcfg_sectorAlignment</cstring>
@@ -108,7 +108,7 @@
       <item>
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Hide Messages Below:</string>
+         <string>Hide messages below:</string>
         </property>
         <property name="buddy">
          <cstring>kcfg_minLogLevel</cstring>
@@ -116,7 +116,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="kcfg_minLogLevel">
+       <widget class="KComboBox" name="kcfg_minLogLevel">
         <item>
          <property name="text">
           <string>Debug</string>
@@ -157,21 +157,56 @@
       <item>
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>Default File System:</string>
+         <string>Default file system:</string>
         </property>
         <property name="buddy">
-         <cstring>kcfg_minLogLevel</cstring>
+         <cstring>m_ComboDefaultFileSystem</cstring>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="m_ComboDefaultFileSystem"/>
+       <widget class="KComboBox" name="m_ComboDefaultFileSystem"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Backend</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Active backend:</string>
+        </property>
+        <property name="buddy">
+         <cstring>m_ComboBackend</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="KComboBox" name="m_ComboBackend"/>
       </item>
      </layout>
     </widget>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

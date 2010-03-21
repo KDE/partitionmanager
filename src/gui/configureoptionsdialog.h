@@ -38,8 +38,10 @@ class ConfigureOptionsDialog : public KConfigDialog
 	protected slots:
 		virtual void updateSettings();
 		virtual void updateWidgetsDefault();
+		virtual bool hasChanged();
 		virtual bool isDefault();
 		void onComboDefaultFileSystemActivated(int) { settingsChangedSlot(); }
+		void onComboBackendActivated(int) { settingsChangedSlot(); }
 
 	protected:
 		GeneralPageWidget& generalPageWidget() { Q_ASSERT(m_GeneralPageWidget); return *m_GeneralPageWidget; }

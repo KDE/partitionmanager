@@ -19,6 +19,8 @@
 
 #include "gui/configureoptionsdialog.h"
 
+#include "backend/corebackendmanager.h"
+
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
 
@@ -28,6 +30,7 @@
 #include "ui_configurepagefilesystemcolors.h"
 
 #include <kiconloader.h>
+#include <kservice.h>
 
 #include <config.h>
 
@@ -37,8 +40,11 @@ class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
 		GeneralPageWidget(QWidget* parent) : QWidget(parent) { setupUi(this); setupDialog(); }
 
 	public:
-		QComboBox& comboDefaultFileSystem() { return *m_ComboDefaultFileSystem; }
-		const QComboBox& comboDefaultFileSystem() const { return *m_ComboDefaultFileSystem; }
+		KComboBox& comboDefaultFileSystem() { return *m_ComboDefaultFileSystem; }
+		const KComboBox& comboDefaultFileSystem() const { return *m_ComboDefaultFileSystem; }
+
+		KComboBox& comboBackend() { return *m_ComboBackend; }
+		const KComboBox& comboBackend() const { return *m_ComboBackend; }
 
 		FileSystem::Type defaultFileSystem() const
 		{
@@ -48,6 +54,26 @@ class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
 		void setDefaultFileSystem(FileSystem::Type t)
 		{
 			comboDefaultFileSystem().setCurrentIndex(comboDefaultFileSystem().findText(FileSystem::nameForType(t)));
+		}
+
+		QString backend() const
+		{
+			KService::List services = CoreBackendManager::self()->list();
+
+			foreach(KService::Ptr p, services)
+				if (p->name() == comboBackend().currentText())
+					return p->library();
+
+			return QString();
+		}
+
+		void setBackend(const QString& name)
+		{
+			KService::List services = CoreBackendManager::self()->list();
+
+			foreach(KService::Ptr p, services)
+				if (p->library() == name)
+					comboBackend().setCurrentIndex(comboBackend().findText(p->name()));
 		}
 
 	private:
@@ -64,6 +90,12 @@ class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
 				comboDefaultFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
 			setDefaultFileSystem(FileSystem::defaultFileSystem());
+
+			KService::List services = CoreBackendManager::self()->list();
+			foreach(KService::Ptr p, services)
+				comboBackend().addItem(p->name());
+
+			setBackend(Config::backend());
 		}
 };
 
@@ -86,6 +118,8 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const QString& n
 	item->setIcon(KIcon(DesktopIcon("configure")));
 
 	connect(&generalPageWidget().comboDefaultFileSystem(), SIGNAL(activated(int)), SLOT(onComboDefaultFileSystemActivated(int)));
+	connect(&generalPageWidget().comboBackend(), SIGNAL(activated(int)), SLOT(onComboBackendActivated(int)));
+
 	item = addPage(&fileSystemColorsPageWidget(), i18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
 	item->setIcon(KIcon(DesktopIcon("format-fill-color")));
 
@@ -101,22 +135,47 @@ ConfigureOptionsDialog::~ConfigureOptionsDialog()
 
 void ConfigureOptionsDialog::updateSettings()
 {
-	Config::setDefaultFileSystem(generalPageWidget().defaultFileSystem());
+	KConfigDialog::updateSettings();
+
+	bool changed = false;
+
+	if (generalPageWidget().defaultFileSystem() != Config::defaultFileSystem())
+	{
+		Config::setDefaultFileSystem(generalPageWidget().defaultFileSystem());
+		changed = true;
+	}
+
+	if (generalPageWidget().backend() != Config::backend())
+	{
+		Config::setBackend(generalPageWidget().backend());
+		changed = true;
+	}
+
+	if (changed)
+		emit KConfigDialog::settingsChanged(i18n("General Settings"));
+}
+
+bool ConfigureOptionsDialog::hasChanged()
+{
+	bool result = KConfigDialog::hasChanged();
+
+	KConfigSkeletonItem* kcItem = Config::self()->findItem("defaultFileSystem");
+	result = result || !kcItem->isEqual(generalPageWidget().defaultFileSystem());
+
+	kcItem = Config::self()->findItem("backend");
+	result = result || !kcItem->isEqual(generalPageWidget().backend());
+
+	return result;
 }
 
 bool ConfigureOptionsDialog::isDefault()
 {
-	bool result = !hasChanged();
+	bool result = KConfigDialog::isDefault();
 
 	if (result)
 	{
 		const bool useDefaults = Config::self()->useDefaults(true);
-		KConfigSkeletonItem* kcItem = Config::self()->findItem("defaultFileSystem");
-		if (kcItem != NULL)
-			result = kcItem->isEqual(generalPageWidget().defaultFileSystem());
-		else
-			kWarning() << "the kcitem for defaultFileSytstem is gone.";
-
+		result = !hasChanged();
 		Config::self()->useDefaults(useDefaults);
 	}
 
@@ -127,6 +186,6 @@ void ConfigureOptionsDialog::updateWidgetsDefault()
 {
 	bool useDefaults = Config::self()->useDefaults(true);
 	generalPageWidget().setDefaultFileSystem(FileSystem::defaultFileSystem());
+	generalPageWidget().setBackend(CoreBackendManager::defaultBackendName());
 	Config::self()->useDefaults(useDefaults);
 }
-

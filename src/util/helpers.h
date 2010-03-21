@@ -43,4 +43,6 @@ LIBPARTITIONMANAGERPRIVATE_EXPORT QIcon createFileSystemColor(FileSystem::Type t
 
 LIBPARTITIONMANAGERPRIVATE_EXPORT void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree);
 
+LIBPARTITIONMANAGERPRIVATE_EXPORT bool loadBackend();
+
 #endif

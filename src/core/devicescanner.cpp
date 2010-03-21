@@ -20,6 +20,7 @@
 #include "core/devicescanner.h"
 
 #include "backend/corebackend.h"
+#include "backend/corebackendmanager.h"
 
 #include "core/operationstack.h"
 #include "core/device.h"
@@ -34,7 +35,12 @@ DeviceScanner::DeviceScanner(QObject* parent, OperationStack& ostack) :
 	QThread(parent),
 	m_OperationStack(ostack)
 {
-	connect(CoreBackend::self(), SIGNAL(scanProgress(QString,int)), SIGNAL(progress(QString,int)));
+	setupConnections();
+}
+
+void DeviceScanner::setupConnections()
+{
+	connect(CoreBackendManager::self()->backend(), SIGNAL(scanProgress(QString,int)), SIGNAL(progress(QString,int)));
 }
 
 void DeviceScanner::clear()
@@ -54,7 +60,7 @@ void DeviceScanner::scan()
 
 	clear();
 
-	QList<Device*> deviceList = CoreBackend::self()->scanDevices();
+	QList<Device*> deviceList = CoreBackendManager::self()->backend()->scanDevices();
 
 	foreach(Device* d, deviceList)
 		operationStack().addDevice(d);

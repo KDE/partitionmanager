@@ -17,5 +17,8 @@
 
 ############################################
 
+install(FILES pmcorebackendplugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
+
 add_subdirectory(libparted)
 add_subdirectory(dummy)
+

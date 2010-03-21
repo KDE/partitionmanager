@@ -26,6 +26,9 @@
 #include "gui/configureoptionsdialog.h"
 #include "gui/devicepropsdialog.h"
 
+#include "backend/corebackendmanager.h"
+#include "backend/corebackend.h"
+
 #include "core/device.h"
 #include "core/partition.h"
 
@@ -41,6 +44,8 @@
 
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
+
+#include "util/helpers.h"
 
 #include <kstandardaction.h>
 #include <kactioncollection.h>
@@ -903,8 +908,23 @@ void MainWindow::onFileSystemSupport()
 	dlg.exec();
 }
 
-void MainWindow::onSettingsChanged(const QString&)
+void MainWindow::onSettingsChanged()
 {
+	if (CoreBackendManager::self()->backend()->about().appName() != Config::backend())
+	{
+		CoreBackendManager::self()->unload();
+		// FIXME: if loadBackend() fails to load the configured backend and loads the default
+		// one instead it also sets the default backend in the config; the config dialog will
+		// overwrite that again, however, after we're done here.
+		if (loadBackend())
+		{
+			deviceScanner().setupConnections();
+			scanDevices();
+		}
+		else
+			close();
+	}
+
 	enableActions();
 	pmWidget().updatePartitions();
 }
@@ -916,7 +936,11 @@ void MainWindow::onConfigureOptions()
 
 	QPointer<ConfigureOptionsDialog> dlg = new ConfigureOptionsDialog(this, "Settings");
 
-	connect(dlg, SIGNAL(settingsChanged(const QString&)), SLOT(onSettingsChanged(const QString&)));
+	// FIXME: we'd normally use settingsChanged(), according to the kde api docs. however, this
+	// is emitted each time the user changes any of our own settings (backend, default file system), without
+	// applying or clicking ok. so the below is the workaround for that.
+	connect(dlg, SIGNAL(applyClicked()), SLOT(onSettingsChanged()));
+	connect(dlg, SIGNAL(okClicked()), SLOT(onSettingsChanged()));
 
 	dlg->show();
 }
@@ -943,4 +967,3 @@ void MainWindow::onPropertiesDevice(const QString&)
 		delete dlg;
 	}
 }
-

@@ -23,6 +23,7 @@
 #include "core/device.h"
 
 #include "backend/corebackend.h"
+#include "backend/corebackendmanager.h"
 #include "backend/corebackenddevice.h"
 #include "backend/corebackendpartitiontable.h"
 
@@ -115,7 +116,7 @@ bool ResizeFileSystemJob::resizeFileSystemInternal(Report& report)
 {
 	bool rval = false;
 
-	CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
+	CoreBackendDevice* backendDevice = CoreBackendManager::self()->backend()->openDevice(device().deviceNode());
 
 	if (backendDevice)
 	{
@@ -123,9 +124,9 @@ bool ResizeFileSystemJob::resizeFileSystemInternal(Report& report)
 
 		if (backendPartitionTable)
 		{
-			connect(CoreBackend::self(), SIGNAL(progress(int)), this, SIGNAL(progress(int)));
+			connect(CoreBackendManager::self()->backend(), SIGNAL(progress(int)), this, SIGNAL(progress(int)));
 			rval = backendPartitionTable->resizeFileSystem(report, partition(), newLength());
-			disconnect(CoreBackend::self(), SIGNAL(progress(int)), this, SIGNAL(progress(int)));
+			disconnect(CoreBackendManager::self()->backend(), SIGNAL(progress(int)), this, SIGNAL(progress(int)));
 
 			if (rval)
 			{

@@ -19,6 +19,7 @@
 
 #include "jobs/createpartitiontablejob.h"
 
+#include "backend/corebackendmanager.h"
 #include "backend/corebackenddevice.h"
 #include "backend/corebackend.h"
 
@@ -44,7 +45,7 @@ bool CreatePartitionTableJob::run(Report& parent)
 
 	Report* report = jobStarted(parent);
 
-	CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
+	CoreBackendDevice* backendDevice = CoreBackendManager::self()->backend()->openDevice(device().deviceNode());
 
 	if (backendDevice != NULL)
 	{

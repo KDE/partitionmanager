@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de                        *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,41 +17,34 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#ifndef DEVICESCANNER_H
-#define DEVICESCANNER_H
+#if !defined(COREBACKENDMANAGER__H)
 
-#include <QThread>
+#define COREBACKENDMANAGER__H
 
-class OperationStack;
+#include "util/libpartitionmanagerexport.h"
 
-/** @brief Thread to scan for all available Devices on this computer.
+#include <kservice.h>
 
-	This class is used to find all Devices on the computer and to create new Device instances for each of them. It's subclassing QThread to run asynchronously.
+class QString;
+class QStringList;
+class CoreBackend;
 
-	@author vl@fidra.de
-*/
-class DeviceScanner : public QThread
+class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendManager
 {
-	Q_OBJECT
+	private:
+		CoreBackendManager();
 
 	public:
-		DeviceScanner(QObject* parent, OperationStack& ostack);
+		static CoreBackendManager* self();
+		static QString defaultBackendName() { return "pmlibpartedbackendplugin"; }
 
-	public:
-		void clear(); /**< clear Devices and the OperationStack */
-		void scan(); /**< do the actual scanning; blocks if called directly */
-		void setupConnections();
-
-	signals:
-		void progress(const QString& device_node, int progress);
-
-	protected:
-		virtual void run();
-		OperationStack& operationStack() { return m_OperationStack; }
-		const OperationStack& operationStack() const { return m_OperationStack; }
+		KService::List list() const;
+		bool load(const QString& name);
+		void unload();
+		CoreBackend* backend() { return m_Backend; }
 
 	private:
-		OperationStack& m_OperationStack;
+		CoreBackend* m_Backend;
 };
 
 #endif

@@ -20,6 +20,7 @@
 #include "jobs/deletefilesystemjob.h"
 
 #include "backend/corebackend.h"
+#include "backend/corebackendmanager.h"
 #include "backend/corebackenddevice.h"
 #include "backend/corebackendpartitiontable.h"
 
@@ -60,7 +61,7 @@ bool DeleteFileSystemJob::run(Report& parent)
 		rval = true;
 	else
 	{
-		CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
+		CoreBackendDevice* backendDevice = CoreBackendManager::self()->backend()->openDevice(device().deviceNode());
 
 		if (backendDevice)
 		{

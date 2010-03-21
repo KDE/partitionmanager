@@ -15,12 +15,12 @@
 # Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
-file (GLOB pluginpmdummy_SRCS *.cpp)
+file (GLOB pmdummybackendplugin_SRCS *.cpp)
 
-kde4_add_library(pluginpmdummy SHARED ${pluginpmdummy_SRCS})
+kde4_add_plugin(pmdummybackendplugin ${pmdummybackendplugin_SRCS})
 
-target_link_libraries(pluginpmdummy partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} ${LIBPARTED_LIBS} ${BLKID_LIBRARIES} ${KDE4_SOLID_LIBS})
+target_link_libraries(pmdummybackendplugin partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} ${LIBPARTED_LIBS} ${BLKID_LIBRARIES} ${KDE4_SOLID_LIBS})
 
-set_target_properties(pluginpmdummy PROPERTIES PREFIX "")
+install(TARGETS pmdummybackendplugin DESTINATION ${PLUGIN_INSTALL_DIR})
+install(FILES pmdummybackendplugin.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 
-install(TARGETS pluginpmdummy DESTINATION ${PLUGIN_INSTALL_DIR})

@@ -24,11 +24,8 @@
 
 #include "util/globallog.h"
 
-#include <kpluginfactory.h>
-#include <kpluginloader.h>
 #include <kdebug.h>
 #include <klocale.h>
-#include <kaboutdata.h>
 
 #include <config.h>
 
@@ -50,29 +47,6 @@ CoreBackend::CoreBackend() :
 CoreBackend::~CoreBackend()
 {
 	delete d;
-}
-
-CoreBackend* CoreBackend::self()
-{
-	static CoreBackend* instance = NULL;
-
-	if (instance == NULL)
-	{
-		KPluginLoader loader(Config::backend());
-
-		KPluginFactory* factory = loader.factory();
-
-		if (factory != NULL)
-		{
-			instance = factory->create<CoreBackend>(NULL);
-			instance->setAboutData(factory->componentData().aboutData());
-			kDebug() << "Loaded backend plugin: " << instance->about().programName() << ", " << instance->about().version();
-		}
-		else
-			kWarning() << "Could not load instance plugin for core backend: " << loader.errorString();
-	}
-
-	return instance;
 }
 
 void CoreBackend::emitProgress(int i)

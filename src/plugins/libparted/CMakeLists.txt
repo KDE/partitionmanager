@@ -15,12 +15,11 @@
 # Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
-file (GLOB pluginpmlibparted_SRCS *.cpp)
+file (GLOB pmlibpartedbackendplugin_SRCS *.cpp)
 
-kde4_add_library(pluginpmlibparted SHARED ${pluginpmlibparted_SRCS})
+kde4_add_plugin(pmlibpartedbackendplugin ${pmlibpartedbackendplugin_SRCS})
 
-target_link_libraries(pluginpmlibparted partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} ${LIBPARTED_LIBS} ${BLKID_LIBRARIES} ${KDE4_SOLID_LIBS})
+target_link_libraries(pmlibpartedbackendplugin partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} ${LIBPARTED_LIBS} ${BLKID_LIBRARIES} ${KDE4_SOLID_LIBS})
 
-set_target_properties(pluginpmlibparted PROPERTIES PREFIX "")
-
-install(TARGETS pluginpmlibparted DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS pmlibpartedbackendplugin DESTINATION ${PLUGIN_INSTALL_DIR})
+install(FILES pmlibpartedbackendplugin.desktop DESTINATION ${SERVICES_INSTALL_DIR})

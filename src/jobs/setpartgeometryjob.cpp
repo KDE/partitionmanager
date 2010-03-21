@@ -20,6 +20,7 @@
 #include "jobs/setpartgeometryjob.h"
 
 #include "backend/corebackend.h"
+#include "backend/corebackendmanager.h"
 #include "backend/corebackenddevice.h"
 #include "backend/corebackendpartitiontable.h"
 
@@ -55,7 +56,7 @@ bool SetPartGeometryJob::run(Report& parent)
 
 	Report* report = jobStarted(parent);
 
-	CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(device().deviceNode());
+	CoreBackendDevice* backendDevice = CoreBackendManager::self()->backend()->openDevice(device().deviceNode());
 
 	if (backendDevice)
 	{

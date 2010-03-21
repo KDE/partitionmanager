@@ -20,6 +20,7 @@
 #include "jobs/restorefilesystemjob.h"
 
 #include "backend/corebackend.h"
+#include "backend/corebackendmanager.h"
 #include "backend/corebackenddevice.h"
 #include "backend/corebackendpartitiontable.h"
 
@@ -83,7 +84,7 @@ bool RestoreFileSystemJob::run(Report& parent)
 				// create a new file system for what was restored with the length of the image file
 				const qint64 newLastSector = targetPartition().firstSector() + copySource.length() - 1;
 
-				CoreBackendDevice* backendDevice = CoreBackend::self()->openDevice(targetDevice().deviceNode());
+				CoreBackendDevice* backendDevice = CoreBackendManager::self()->backend()->openDevice(targetDevice().deviceNode());
 
 				FileSystem::Type t = FileSystem::Unknown;
 

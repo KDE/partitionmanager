@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=KDE Partition Manager LibParted Backend
+Comment=The LibParted backend for KDE Partition Manager
+Type=Service
+ServiceTypes=PartitionManager/Plugin
+Icon=preferences-plugin
+
+X-KDE-PluginInfo-Name=pmlibpartedbackendplugin
+X-KDE-PluginInfo-Author=Volker Lanz
+X-KDE-PluginInfo-Email=vl@fidra.de
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-Category=BackendPlugin
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-Version=1
+X-KDE-PluginInfo-Website=http://www.partitionmanager.org

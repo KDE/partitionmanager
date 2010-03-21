@@ -159,7 +159,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void onClearAllOperations();
 
 		void onConfigureOptions();
-		void onSettingsChanged(const QString&);
+		void onSettingsChanged();
 
 		void onFileSystemSupport();
 

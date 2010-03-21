@@ -42,7 +42,7 @@ K_PLUGIN_FACTORY(DummyBackendFactory, registerPlugin<DummyBackend>(); )
 static KAboutData createPluginAboutData()
 {
 	KAboutData about(
-		"dummypmplugin",
+		"pmdummybackendplugin",
 		NULL,
 		ki18nc("@title", "Dummy Backend Plugin"),
 		QString(VERSION).toUtf8(),

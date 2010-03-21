@@ -20,6 +20,7 @@
 #include "core/copysourcedevice.h"
 
 #include "backend/corebackend.h"
+#include "backend/corebackendmanager.h"
 #include "backend/corebackenddevice.h"
 
 #include "core/copytarget.h"
@@ -53,7 +54,7 @@ CopySourceDevice::~CopySourceDevice()
 */
 bool CopySourceDevice::open()
 {
-	m_BackendDevice = CoreBackend::self()->openDeviceExclusive(device().deviceNode());
+	m_BackendDevice = CoreBackendManager::self()->backend()->openDeviceExclusive(device().deviceNode());
 	return m_BackendDevice != NULL;
 }
 

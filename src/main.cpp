@@ -20,12 +20,14 @@
 #include "gui/mainwindow.h"
 
 #include "backend/corebackend.h"
+#include "backend/corebackendmanager.h"
 
 #include "util/helpers.h"
 
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kmessagebox.h>
+#include <kaboutdata.h>
 
 #include <config.h>
 
@@ -47,11 +49,8 @@ int main(int argc, char* argv[])
 
 	Config::instance("partitionmanagerrc");
 
-	if (CoreBackend::self() == NULL)
-	{
-		KMessageBox::error(NULL, i18nc("@info", "The core backend plugin could not be loaded. Please check your installation."), i18nc("@title:window", "Fatal Error: Could Not Load Backend Plugin"));
+	if (!loadBackend())
 		return 0;
-	}
 
 	MainWindow* mainWindow = new MainWindow();
 	mainWindow->show();

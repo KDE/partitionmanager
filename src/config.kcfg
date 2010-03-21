@@ -80,7 +80,7 @@
 		</entry>
 		<entry key="backend" type="String">
 			<label context="@label">Backend Plugin</label>
-			<default>pluginpmlibparted</default>
+			<default>pmlibpartedbackendplugin</default>
 		</entry>
 		<entry key="defaultFileSystem" type="Int">
 			<default>FileSystem::Ext3</default>
