@@ -1,7 +1,15 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=KDE Partition Manager LibParted Backend
+Name[it]=Motore LibParted del gestore delle partizioni di KDE
+Name[pt]=Infra-Estrutura da LibParted para o Gestor de Partições do KDE
+Name[sv]=KDE:s partitionshanterare LibParted bakgrundsprogram
+Name[uk]=Сервер LibParted Керування розділами KDE
 Comment=The LibParted backend for KDE Partition Manager
+Comment[it]=Il motore LibParted del gestore delle partizioni di KDE
+Comment[pt]=A infra-estrutura da LibParted para o Gestor de Partições do KDE
+Comment[sv]=LibParted bakgrundsprogram för KDE:s partitionshanterare
+Comment[uk]=Сервер LibParted для Керування розділами KDE
 Type=Service
 ServiceTypes=PartitionManager/Plugin
 Icon=preferences-plugin
