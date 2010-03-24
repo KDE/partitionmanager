@@ -26,13 +26,14 @@
 
 class GeneralPageWidget;
 class FileSystemColorsPageWidget;
+class OperationStack;
 
 class ConfigureOptionsDialog : public KConfigDialog
 {
 	Q_OBJECT
 
 	public:
-		ConfigureOptionsDialog(QWidget* parent, const QString& name);
+		ConfigureOptionsDialog(QWidget* parent, const OperationStack& ostack, const QString& name);
 		~ConfigureOptionsDialog();
 
 	protected slots:
@@ -41,15 +42,17 @@ class ConfigureOptionsDialog : public KConfigDialog
 		virtual bool hasChanged();
 		virtual bool isDefault();
 		void onComboDefaultFileSystemActivated(int) { settingsChangedSlot(); }
-		void onComboBackendActivated(int) { settingsChangedSlot(); }
+		void onComboBackendActivated(int);
 
 	protected:
 		GeneralPageWidget& generalPageWidget() { Q_ASSERT(m_GeneralPageWidget); return *m_GeneralPageWidget; }
 		FileSystemColorsPageWidget& fileSystemColorsPageWidget() { Q_ASSERT(m_FileSystemColorsPageWidget); return *m_FileSystemColorsPageWidget; }
+		const OperationStack& operationStack() const { return m_OperationStack; }
 
 	private:
 		GeneralPageWidget* m_GeneralPageWidget;
 		FileSystemColorsPageWidget* m_FileSystemColorsPageWidget;
+		const OperationStack& m_OperationStack;
 };
 
 #endif

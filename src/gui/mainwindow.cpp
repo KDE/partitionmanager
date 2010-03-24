@@ -935,7 +935,7 @@ void MainWindow::onConfigureOptions()
 	if (ConfigureOptionsDialog::showDialog("Settings"))
 		return;
 
-	QPointer<ConfigureOptionsDialog> dlg = new ConfigureOptionsDialog(this, "Settings");
+	QPointer<ConfigureOptionsDialog> dlg = new ConfigureOptionsDialog(this, operationStack(), "Settings");
 
 	// FIXME: we'd normally use settingsChanged(), according to the kde api docs. however, this
 	// is emitted each time the user changes any of our own settings (backend, default file system), without

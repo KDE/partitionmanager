@@ -23,6 +23,8 @@
 
 #include "backend/corebackendmanager.h"
 
+#include "core/operationstack.h"
+
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
 
@@ -32,13 +34,15 @@
 
 #include <kiconloader.h>
 #include <kservice.h>
+#include <kmessagebox.h>
 
 #include <config.h>
 
-ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const QString& name) :
+ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationStack& ostack, const QString& name) :
 	KConfigDialog(parent, name, Config::self()),
 	m_GeneralPageWidget(new GeneralPageWidget(this)),
-	m_FileSystemColorsPageWidget(new FileSystemColorsPageWidget(this))
+	m_FileSystemColorsPageWidget(new FileSystemColorsPageWidget(this)),
+	m_OperationStack(ostack)
 {
 	setFaceType(List);
 
@@ -118,4 +122,20 @@ void ConfigureOptionsDialog::updateWidgetsDefault()
 	generalPageWidget().setDefaultFileSystem(FileSystem::defaultFileSystem());
 	generalPageWidget().setBackend(CoreBackendManager::defaultBackendName());
 	Config::self()->useDefaults(useDefaults);
+}
+
+void ConfigureOptionsDialog::onComboBackendActivated(int)
+{
+	if (operationStack().size() == 0 || KMessageBox::warningContinueCancel(this,
+			i18nc("@info",
+				"<para>Do you really want to change the backend?</para>"
+				"<para><warning>This will also rescan devices and thus clear the list of pending operations.</warning></para>"),
+			i18nc("@title:window", "Really Change Backend?"),
+			KGuiItem(i18nc("@action:button", "Change the Backend")),
+			KGuiItem(i18nc("@action:button", "Do Not Change the Backend")), "reallyChangeBackend") == KMessageBox::Continue)
+	{
+		settingsChangedSlot();
+	}
+	else
+		generalPageWidget().setBackend(CoreBackendManager::defaultBackendName());
 }
