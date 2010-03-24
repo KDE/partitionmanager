@@ -66,8 +66,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void saveConfig() const;
 		void updateWindowTitle();
 
-		quint32 numPendingOperations() const;
-
 		void enableActions();
 
 		void closeEvent(QCloseEvent*);

@@ -143,11 +143,11 @@ void MainWindow::closeEvent(QCloseEvent* event)
 		return;
 	}
 
-	if (numPendingOperations() > 0)
+	if (operationStack().size() > 0)
 	{
 		if (KMessageBox::warningContinueCancel(this,
 			i18ncp("@info", "<para>Do you really want to quit the application?</para><para>There is still an operation pending.</para>",
-    		"<para>Do you really want to quit the application?</para><para>There are still %1 operations pending.</para>", numPendingOperations()),
+    		"<para>Do you really want to quit the application?</para><para>There are still %1 operations pending.</para>", operationStack().size()),
 			i18nc("@title:window", "Discard Pending Operations and Quit?"),
 			KGuiItem(i18nc("@action:button", "Quit <application>%1</application>", KGlobal::mainComponent().aboutData()->programName())),
 			KStandardGuiItem::cancel(), "reallyQuit") == KMessageBox::Cancel)
@@ -398,13 +398,13 @@ void MainWindow::saveConfig() const
 void MainWindow::enableActions()
 {
 	actionCollection()->action("createNewPartitionTable")->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
-	actionCollection()->action("exportPartitionTable")->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->partitionTable() && numPendingOperations() == 0);
+	actionCollection()->action("exportPartitionTable")->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->partitionTable() && operationStack().size() == 0);
 	actionCollection()->action("importPartitionTable")->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
 	actionCollection()->action("propertiesDevice")->setEnabled(pmWidget().selectedDevice() != NULL);
 
-	actionCollection()->action("undoOperation")->setEnabled(numPendingOperations() > 0);
-	actionCollection()->action("clearAllOperations")->setEnabled(numPendingOperations() > 0);
-	actionCollection()->action("applyAllOperations")->setEnabled(numPendingOperations() > 0 && (geteuid() == 0 || Config::allowApplyOperationsAsNonRoot()));
+	actionCollection()->action("undoOperation")->setEnabled(operationStack().size() > 0);
+	actionCollection()->action("clearAllOperations")->setEnabled(operationStack().size() > 0);
+	actionCollection()->action("applyAllOperations")->setEnabled(operationStack().size() > 0 && (geteuid() == 0 || Config::allowApplyOperationsAsNonRoot()));
 
 	const bool readOnly = pmWidget().selectedDevice() == NULL ||
 			pmWidget().selectedDevice()->partitionTable() == NULL ||
@@ -448,7 +448,7 @@ void MainWindow::on_m_OperationStack_operationsChanged()
 	on_m_PartitionManagerWidget_selectedPartitionChanged(pmWidget().selectedPartition());
 
 	if (!isKPart())
-		statusText().setText(i18ncp("@info:status", "One pending operation", "%1 pending operations", numPendingOperations()));
+		statusText().setText(i18ncp("@info:status", "One pending operation", "%1 pending operations", operationStack().size()));
 }
 
 void MainWindow::on_m_OperationStack_devicesChanged()
@@ -619,7 +619,7 @@ void MainWindow::on_m_DeviceScanner_finished()
 
 void MainWindow::onRefreshDevices()
 {
-	if (numPendingOperations() == 0 || KMessageBox::warningContinueCancel(this,
+	if (operationStack().size() == 0 || KMessageBox::warningContinueCancel(this,
 		i18nc("@info",
 			"<para>Do you really want to rescan the devices?</para>"
 			"<para><warning>This will also clear the list of pending operations.</warning></para>"),
@@ -667,9 +667,9 @@ void MainWindow::onApplyAllOperations()
 
 void MainWindow::onUndoOperation()
 {
-	Q_ASSERT(numPendingOperations() > 0);
+	Q_ASSERT(operationStack().size() > 0);
 
-	if (numPendingOperations() == 0)
+	if (operationStack().size() == 0)
 		return;
 
 	Log() << i18nc("@info/plain", "Undoing operation: %1", operationStack().operations().last()->description());
@@ -693,11 +693,6 @@ void MainWindow::onClearAllOperations()
 		pmWidget().updatePartitions();
 		enableActions();
 	}
-}
-
-quint32 MainWindow::numPendingOperations() const
-{
-	return operationStack().size();
 }
 
 void MainWindow::onCreateNewPartitionTable()
