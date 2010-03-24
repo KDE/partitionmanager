@@ -16,6 +16,7 @@ Type=Service
 ServiceTypes=PartitionManager/Plugin
 Icon=preferences-plugin
 
+X-KDE-Library=pmdummybackendplugin
 X-KDE-PluginInfo-Name=pmdummybackendplugin
 X-KDE-PluginInfo-Author=Volker Lanz
 X-KDE-PluginInfo-Email=vl@fidra.de
