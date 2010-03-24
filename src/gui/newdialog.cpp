@@ -87,7 +87,7 @@ void NewDialog::setupDialog()
 	// don't move these above the call to parent's setupDialog, because only after that has
 	// run there is a valid partition set in the part resizer widget and they will need that.
 	onRoleChanged(false);
-	onFilesystemChanged(0);
+	onFilesystemChanged(dialogWidget().comboFileSystem().currentIndex());
 }
 
 void NewDialog::setupConnections()
