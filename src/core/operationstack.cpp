@@ -398,8 +398,11 @@ void OperationStack::push(Operation* o)
 		operations().append(o);
 		o->preview();
 		o->setStatus(Operation::StatusPending);
-		emit operationsChanged();
 	}
+
+	// emit operationsChanged even if o is NULL because it has been merged: merging might
+	// have led to an existing operation changing.
+	emit operationsChanged();
 }
 
 /** Removes the topmost Operation from the OperationStack, calls Operation::undo() on it and deletes it. */
