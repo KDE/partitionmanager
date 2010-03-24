@@ -17,46 +17,49 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(COPYSOURCERANDOM__H)
+#include "core/copysourceshred.h"
 
-#define COPYSOURCERANDOM__H
+#include <kdebug.h>
 
-#include "core/copysource.h"
+#include <config.h>
 
-#include <QFile>
-
-class CopyTarget;
-
-/** @brief A source of random data to copy from.
-
-	Represents a random date source to copy from. Used to securely overwrite data on disk.
-
-	@author vl@fidra.de
+/** Constructs a CopySourceShred with the given @p size
+	@param s the size the copy source will (pretend to) have
+	@param sectorsize the sectorsize the copy source will (pretend to) have
 */
-class CopySourceRandom : public CopySource
+CopySourceShred::CopySourceShred (qint64 s, qint32 sectorsize) :
+	CopySource(),
+	m_Size(s),
+	m_SectorSize(sectorsize),
+	m_SourceFile(Config::shredSource == static_cast<int>(Config::EnumShredSource::random) ? "/dev/urandom" : "/dev/zero")
 {
-	public:
-		CopySourceRandom(qint64 size, qint32 sectorsize);
+}
 
-	public:
-		virtual bool open();
-		virtual bool readSectors(void* buffer, qint64 readOffset, qint64 numSectors);
-		virtual qint64 length() const;
+/** Opens the shred source.
+	@return true on success
+*/
+bool CopySourceShred::open()
+{
+	return sourceFile().open(QIODevice::ReadOnly);
+}
 
-		virtual qint32 sectorSize() const { return m_SectorSize; } /**< @return the file's sector size */
-		virtual bool overlaps(const CopyTarget&) const { return false; } /**< @return false for random source */
-		virtual qint64 firstSector() const { return 0; } /**< @return 0 for random source */
-		virtual qint64 lastSector() const { return length(); } /**< @return equal to length for random source. @see length() */
+/** Returns the length of the source in sectors.
+	@return length of the source in sectors.
+*/
+qint64 CopySourceShred::length() const
+{
+	return size() / sectorSize();
+}
 
-	protected:
-		QFile& random() { return m_Random; }
-		const QFile& random() const { return m_Random; }
-		qint32 size() const { return m_Size; }
+/** Reads the given number of sectors from the source into the given buffer.
+	@param buffer buffer to store the sectors read in
+	@param readOffset offset where to begin reading (unused)
+	@param numSectors number of sectors to read
+	@return true on success
+*/
+bool CopySourceShred::readSectors(void* buffer, qint64 readOffset, qint64 numSectors)
+{
+	Q_UNUSED(readOffset);
 
-	private:
-		qint64 m_Size;
-		qint32 m_SectorSize;
-		QFile m_Random;
-};
-
-#endif
+	return sourceFile().read(static_cast<char*>(buffer), numSectors * sectorSize()) == numSectors * sectorSize();
+}

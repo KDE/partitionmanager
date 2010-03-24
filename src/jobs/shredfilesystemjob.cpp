@@ -21,7 +21,7 @@
 
 #include "core/partition.h"
 #include "core/device.h"
-#include "core/copysourcerandom.h"
+#include "core/copysourceshred.h"
 #include "core/copytargetdevice.h"
 
 #include "fs/filesystem.h"
@@ -65,7 +65,7 @@ bool ShredFileSystemJob::run(Report& parent)
 	// Again, a scope for copyTarget and copySource. See MoveFileSystemJob::run()
 	{
 		CopyTargetDevice copyTarget(device(), partition().fileSystem().firstSector(), partition().fileSystem().lastSector());
-		CopySourceRandom copySource(partition().capacity(), copyTarget.sectorSize());
+		CopySourceShred copySource(partition().capacity(), copyTarget.sectorSize());
 
 		if (!copySource.open())
 			report->line() << i18nc("@info/plain", "Could not open random data source to overwrite file system.");

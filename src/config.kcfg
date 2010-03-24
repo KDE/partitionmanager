@@ -88,5 +88,12 @@
 		<entry key="preferredUnit" type="Int">
 			<default>Capacity::MiB</default>
 		</entry>
+		<entry key="shredSource" type="Enum">
+			<choices>
+				<choice name="random"/>
+				<choice name="zeros"/>
+			</choices>
+			<default>random</default>
+		</entry>
 	</group>
 </kcfg>
