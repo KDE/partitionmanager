@@ -273,7 +273,7 @@ bool PartResizerWidget::updateFirstSector(qint64 newFirstSector)
 	const qint64 newLength = partition().lastSector() - newFirstSector + 1;
 
 	if (newLength < minimumLength())
-		newFirstSector += minimumLength() - newLength;
+		newFirstSector -= minimumLength() - newLength;
 
 	if (newLength > maximumLength())
 		newFirstSector -= newLength - maximumLength();
