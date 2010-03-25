@@ -70,6 +70,16 @@ Partition::Partition(PartitionNode* parent, const Device& device, const Partitio
 /** Destroys a Partition, destroying its children and its FileSystem */
 Partition::~Partition()
 {
+	// FIXME: Design flaw: Currently, there are two ways a partition node can get children: Either
+	// they're created and inserted as unallocated in PartitionTable (these unallocated then get
+	// "converted" to real, new partitions in the GUI) or they're created and appended in the
+	// backend plugin. There is however no defined way to remove partitions from parents. This might
+	// either cause leaks (a partition is removed from the parent's list of children but never
+	// deleted) or, worse, crashes (a partition is deleted but not removed from the parent's
+	// list of children). As a workaround, always remove a partition from its parent here in the dtor.
+	// This presumably fixes 232092, but backporting is too risky until we're sure this doesn't cause
+	// side-effects.
+	parent()->remove(this);
 	clearChildren();
 	deleteFileSystem();
 }
