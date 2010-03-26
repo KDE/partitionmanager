@@ -37,6 +37,7 @@ find_package(KDE4 REQUIRED)
 find_package(MSGFMT REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
+pkg_check_modules(LIBATASMART REQUIRED libatasmart)
 find_package(LIBPARTED REQUIRED)
 
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})

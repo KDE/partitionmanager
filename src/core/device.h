@@ -23,6 +23,8 @@
 
 #include "util/libpartitionmanagerexport.h"
 
+#include "core/smartstatus.h"
+
 #include <QString>
 #include <QObject>
 #include <qglobal.h>
@@ -68,6 +70,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 		void setIconName(const QString& name) { m_IconName = name; }
 		const QString& iconName() const { return m_IconName; } /**< @return suggested icon name for this Device */
 
+		const SmartStatus& smartStatus() const { return m_SmartStatus; }
+
 	protected:
 		void setPartitionTable(PartitionTable* ptable) { m_PartitionTable = ptable; }
 
@@ -80,6 +84,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 		qint32 m_Cylinders;
 		qint32 m_SectorSize;
 		QString m_IconName;
+		SmartStatus m_SmartStatus;
 };
 
 #endif

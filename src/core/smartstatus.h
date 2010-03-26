@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                       *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,37 +17,45 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "core/device.h"
+#if !defined(SMARTSTATUS__H)
 
-#include "core/partitiontable.h"
+#define SMARTSTATUS__H
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <qglobal.h>
+#include <QString>
 
-/** Constructs a Device with an empty PartitionTable.
-	@param name the Device's name, usually some string defined by the manufacturer
-	@param devicenode the Device's node, for example "/dev/sda"
-	@param heads the number of heads in CHS notation
-	@param numSectors the number of sectors in CHS notation
-	@param cylinders the number of cylinders in CHS notation
-	@param sectorSize the size of a sector in bytes
-*/
-Device::Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize, const QString& iconname) :
-	QObject(),
-	m_Name(name),
-	m_DeviceNode(devicenode),
-	m_PartitionTable(NULL),
-	m_Heads(heads),
-	m_SectorsPerTrack(numSectors),
-	m_Cylinders(cylinders),
-	m_SectorSize(sectorSize),
-	m_IconName(iconname.isEmpty() ? "drive-hardisk" : iconname),
-	m_SmartStatus(devicenode)
+class SmartStatus
 {
-}
+	public:
+		SmartStatus(const QString& device_path);
 
-/** Destructs a Device. */
-Device::~Device()
-{
-	delete m_PartitionTable;
-}
+	public:
+		const QString& devicePath() const { return m_DevicePath; }
+		bool isValid() const { return m_InitSuccess; }
+		bool status() const { return m_Status; }
+		qint32 temp() const { return m_Temp; }
+		qint64 badSectors() const { return m_BadSectors; }
+		qint64 powerCycles() const { return m_PowerCycles; }
+		qint64 poweredOn() const { return m_PoweredOn; }
+
+	protected:
+		void setStatus(bool s) { m_Status = s; }
+		void setTemp(qint32 t) { m_Temp = t; }
+		void setInitSuccess(bool b) { m_InitSuccess = b; }
+		void setBadSectors(qint64 s) { m_BadSectors = s; }
+		void setPowerCycles(qint64 p) { m_PowerCycles = p; }
+		void setPoweredOn(qint64 t) { m_PoweredOn = t; }
+
+	private:
+		const QString m_DevicePath;
+		bool m_InitSuccess;
+		bool m_Status;
+		qint32 m_Temp;
+		qint64 m_BadSectors;
+		qint64 m_PowerCycles;
+		qint64 m_PoweredOn;
+};
+
+#endif
+
+

@@ -22,6 +22,7 @@
 
 #include "core/device.h"
 #include "core/partitiontable.h"
+#include "core/smartstatus.h"
 
 #include "util/capacity.h"
 #include "util/helpers.h"
@@ -40,7 +41,7 @@ DevicePropsDialog::DevicePropsDialog(QWidget* parent, Device& d) :
 	m_DialogWidget(new DevicePropsWidget(this))
 {
 	setMainWidget(&dialogWidget());
-	setCaption(i18nc("@title:window", "Device properties: <filename>%1</filename>", device().deviceNode()));
+	setCaption(i18nc("@title:window", "Device Properties: <filename>%1</filename>", device().deviceNode()));
 
 	setupDialog();
 	setupConnections();
@@ -99,6 +100,23 @@ void DevicePropsDialog::setupDialog()
 	dialogWidget().sectorSize().setText(Capacity(device().sectorSize()).toString(Capacity::Byte, Capacity::AppendUnit));
 	dialogWidget().totalSectors().setText(KGlobal::locale()->formatNumber(device().totalSectors(), 0));
 	dialogWidget().type().setText(type);
+
+	if (device().smartStatus().isValid())
+	{
+		dialogWidget().smartStatus().setText(device().smartStatus().status()
+			? i18nc("@label SMART disk status", "good")
+			: i18nc("@label SMART disk status", "BAD"));
+		const QString temp = KGlobal::locale()->formatNumber(device().smartStatus().temp() / 10.0, 1);
+		dialogWidget().temperature().setText(i18nc("@label temperature in celsius", "%1° C", temp));
+		dialogWidget().badSectors().setText(KGlobal::locale()->formatNumber(device().smartStatus().badSectors(), 0));
+		dialogWidget().poweredOn().setText(KGlobal::locale()->formatDuration(device().smartStatus().poweredOn()));
+		dialogWidget().powerCycles().setText(KGlobal::locale()->formatNumber(device().smartStatus().powerCycles(), 0));
+	}
+	else
+	{
+		dialogWidget().smartStatus().setText(i18nc("@label", "(unknown)"));
+		dialogWidget().hideSmartLabels();
+	}
 
 	setMinimumSize(dialogWidget().size());
 	resize(dialogWidget().size());

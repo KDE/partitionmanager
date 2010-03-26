@@ -57,6 +57,30 @@ class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 			radioSectorBased().setVisible(false);
 			radioCylinderBased().setVisible(false);
 		}
+
+		QLabel& smartStatus() { Q_ASSERT(m_LabelSmartStatus); return *m_LabelSmartStatus; }
+		QLabel& temperature() { Q_ASSERT(m_LabelSmartTemperature); return *m_LabelSmartTemperature; }
+		QLabel& badSectors() { Q_ASSERT(m_LabelSmartBadSectors); return *m_LabelSmartBadSectors; }
+		QLabel& poweredOn() { Q_ASSERT(m_LabelSmartPoweredOn); return *m_LabelSmartPoweredOn; }
+		QLabel& powerCycles() { Q_ASSERT(m_LabelSmartPowerCycles); return *m_LabelSmartPowerCycles; }
+
+		QLabel& labelTemperature() { Q_ASSERT(m_LabelTextSmartTemperature); return *m_LabelTextSmartTemperature; }
+		QLabel& labelBadSectors() { Q_ASSERT(m_LabelTextSmartBadSectors); return *m_LabelTextSmartBadSectors; }
+		QLabel& labelPoweredOn() { Q_ASSERT(m_LabelTextSmartPoweredOn); return *m_LabelTextSmartPoweredOn; }
+		QLabel& labelPowerCycles() { Q_ASSERT(m_LabelTextSmartPowerCycles); return *m_LabelTextSmartPowerCycles; }
+
+		void hideSmartLabels()
+		{
+			temperature().setVisible(false);
+			badSectors().setVisible(false);
+			poweredOn().setVisible(false);
+			powerCycles().setVisible(false);
+
+			labelTemperature().setVisible(false);
+			labelBadSectors().setVisible(false);
+			labelPoweredOn().setVisible(false);
+			labelPowerCycles().setVisible(false);
+		}
 };
 
 #endif
