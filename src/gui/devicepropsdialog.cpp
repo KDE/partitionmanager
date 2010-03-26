@@ -29,6 +29,7 @@
 
 #include <kdebug.h>
 #include <kpushbutton.h>
+#include <kiconloader.h>
 
 /** Creates a new DevicePropsDialog
 	@param parent pointer to the parent widget
@@ -103,9 +104,17 @@ void DevicePropsDialog::setupDialog()
 
 	if (device().smartStatus().isValid())
 	{
-		dialogWidget().smartStatus().setText(device().smartStatus().status()
-			? i18nc("@label SMART disk status", "good")
-			: i18nc("@label SMART disk status", "BAD"));
+		if (device().smartStatus().status())
+		{
+			dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "good"));
+			dialogWidget().smartStatusIcon().setVisible(false);
+		}
+		else
+		{
+			dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "BAD"));
+			dialogWidget().smartStatusIcon().setPixmap(SmallIcon("dialog-warning"));
+		}
+
 		const QString temp = KGlobal::locale()->formatNumber(device().smartStatus().temp() / 10.0, 1);
 		dialogWidget().temperature().setText(i18nc("@label temperature in celsius", "%1° C", temp));
 		dialogWidget().badSectors().setText(KGlobal::locale()->formatNumber(device().smartStatus().badSectors(), 0));
@@ -114,7 +123,7 @@ void DevicePropsDialog::setupDialog()
 	}
 	else
 	{
-		dialogWidget().smartStatus().setText(i18nc("@label", "(unknown)"));
+		dialogWidget().smartStatusText().setText(i18nc("@label", "(unknown)"));
 		dialogWidget().hideSmartLabels();
 	}
 

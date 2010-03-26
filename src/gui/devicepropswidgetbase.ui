@@ -11,7 +11,7 @@
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" colspan="3">
+   <item row="0" column="0" colspan="5">
     <widget class="PartTableWidget" name="m_PartTableWidget" native="true">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -36,7 +36,7 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
+   <item row="1" column="0" colspan="4">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -52,17 +52,17 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="0">
+   <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextType">
      <property name="text">
-      <string>Type:</string>
+      <string>Partition table:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>
-   <item row="2" column="2">
+   <item row="2" column="2" colspan="2">
     <widget class="QLabel" name="m_LabelType">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -75,7 +75,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="2">
+   <item row="3" column="2" colspan="3">
     <layout class="QHBoxLayout" name="m_TypeLayout">
      <item>
       <widget class="QRadioButton" name="m_RadioCylinderBased">
@@ -106,14 +106,14 @@
      </item>
     </layout>
    </item>
-   <item row="4" column="0" colspan="3">
+   <item row="4" column="0" colspan="5">
     <widget class="Line" name="line">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
+   <item row="5" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextCapacity">
      <property name="text">
       <string>Capacity:</string>
@@ -123,7 +123,7 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="2">
+   <item row="5" column="2" colspan="2">
     <widget class="QLabel" name="m_LabelCapacity">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -136,7 +136,7 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
+   <item row="6" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextTotalSectors">
      <property name="text">
       <string>Total sectors:</string>
@@ -146,7 +146,7 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="2">
+   <item row="6" column="2" colspan="2">
     <widget class="QLabel" name="m_LabelTotalSectors">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -159,14 +159,14 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="0" colspan="3">
+   <item row="7" column="0" colspan="5">
     <widget class="Line" name="line_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="8" column="0">
+   <item row="8" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextCHS">
      <property name="text">
       <string>Cylinders/Heads/Sectors:</string>
@@ -176,7 +176,7 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="2">
+   <item row="8" column="2" colspan="2">
     <widget class="QLabel" name="m_LabelCHS">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -189,7 +189,7 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="0">
+   <item row="9" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextSectorSize">
      <property name="text">
       <string>Logical sector size:</string>
@@ -199,7 +199,7 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="2">
+   <item row="9" column="2" colspan="2">
     <widget class="QLabel" name="m_LabelSectorSize">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -212,7 +212,7 @@
      </property>
     </widget>
    </item>
-   <item row="10" column="0">
+   <item row="10" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextCylinderSize">
      <property name="text">
       <string>Cylinder size:</string>
@@ -222,7 +222,7 @@
      </property>
     </widget>
    </item>
-   <item row="10" column="2">
+   <item row="10" column="2" colspan="2">
     <widget class="QLabel" name="m_LabelCylinderSize">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -235,14 +235,14 @@
      </property>
     </widget>
    </item>
-   <item row="11" column="0" colspan="3">
+   <item row="11" column="0" colspan="5">
     <widget class="Line" name="line_3">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="12" column="0">
+   <item row="12" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextPrimariesMax">
      <property name="text">
       <string>Primaries/Max:</string>
@@ -252,7 +252,7 @@
      </property>
     </widget>
    </item>
-   <item row="12" column="2">
+   <item row="12" column="2" colspan="2">
     <widget class="QLabel" name="m_LabelPrimariesMax">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -265,14 +265,14 @@
      </property>
     </widget>
    </item>
-   <item row="13" column="0" colspan="3">
+   <item row="13" column="0" colspan="5">
     <widget class="Line" name="line_4">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="14" column="0">
+   <item row="14" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextSmartStatus">
      <property name="text">
       <string>SMART status:</string>
@@ -282,14 +282,31 @@
      </property>
     </widget>
    </item>
-   <item row="14" column="2">
-    <widget class="QLabel" name="m_LabelSmartStatus">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
+   <item row="14" column="2" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="m_LabelSmartStatusIcon">
+       <property name="maximumSize">
+        <size>
+         <width>16</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="m_LabelSmartStatusText">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
-   <item row="15" column="0">
+   <item row="16" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextSmartTemperature">
      <property name="text">
       <string>Temperature:</string>
@@ -299,14 +316,14 @@
      </property>
     </widget>
    </item>
-   <item row="15" column="2">
+   <item row="16" column="2" colspan="2">
     <widget class="QLabel" name="m_LabelSmartTemperature">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="16" column="0">
+   <item row="17" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextSmartBadSectors">
      <property name="text">
       <string>Bad sectors:</string>
@@ -316,14 +333,14 @@
      </property>
     </widget>
    </item>
-   <item row="16" column="2">
+   <item row="17" column="2" colspan="2">
     <widget class="QLabel" name="m_LabelSmartBadSectors">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="17" column="0">
+   <item row="18" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextSmartPoweredOn">
      <property name="text">
       <string>Powered on for:</string>
@@ -333,14 +350,14 @@
      </property>
     </widget>
    </item>
-   <item row="17" column="2">
+   <item row="18" column="2" colspan="2">
     <widget class="QLabel" name="m_LabelSmartPoweredOn">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="18" column="0">
+   <item row="19" column="0" colspan="2">
     <widget class="QLabel" name="m_LabelTextSmartPowerCycles">
      <property name="text">
       <string>Power cycles:</string>
@@ -350,14 +367,14 @@
      </property>
     </widget>
    </item>
-   <item row="18" column="2">
+   <item row="19" column="2" colspan="2">
     <widget class="QLabel" name="m_LabelSmartPowerCycles">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="19" column="0" colspan="3">
+   <item row="20" column="0" colspan="5">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>

@@ -58,7 +58,8 @@ class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 			radioCylinderBased().setVisible(false);
 		}
 
-		QLabel& smartStatus() { Q_ASSERT(m_LabelSmartStatus); return *m_LabelSmartStatus; }
+		QLabel& smartStatusText() { Q_ASSERT(m_LabelSmartStatusText); return *m_LabelSmartStatusText; }
+		QLabel& smartStatusIcon() { Q_ASSERT(m_LabelSmartStatusIcon); return *m_LabelSmartStatusIcon; }
 		QLabel& temperature() { Q_ASSERT(m_LabelSmartTemperature); return *m_LabelSmartTemperature; }
 		QLabel& badSectors() { Q_ASSERT(m_LabelSmartBadSectors); return *m_LabelSmartBadSectors; }
 		QLabel& poweredOn() { Q_ASSERT(m_LabelSmartPoweredOn); return *m_LabelSmartPoweredOn; }
@@ -71,6 +72,8 @@ class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 
 		void hideSmartLabels()
 		{
+			smartStatusIcon().setVisible(false);
+
 			temperature().setVisible(false);
 			badSectors().setVisible(false);
 			poweredOn().setVisible(false);
