@@ -28,7 +28,8 @@ Bugs to fix for 1.1:
   sector aligned drives (maybe even more than that)
 
 * resizing a newly created extended that has children (leading to a merge of
-  operations) crashes in NewOperation::description()
+  operations) crashes in NewOperation::description(). this is intermittent
+  and probably fixed in r1107315.
 
 * make sure the default file system can indeed be created
 
