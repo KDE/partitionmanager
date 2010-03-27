@@ -167,7 +167,7 @@ void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree)
 		action->setCheckable(true);
 		action->setChecked(!header->isSectionHidden(idx));
 		action->setData(idx);
-		action->setEnabled(true);
+		action->setEnabled(idx > 0);
 	}
 
 	QAction* action = headerMenu.exec(tree.header()->mapToGlobal(p));
