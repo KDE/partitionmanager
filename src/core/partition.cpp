@@ -356,7 +356,7 @@ QTextStream& operator<<(QTextStream& stream, const Partition& p)
 			flagList.append(PartitionTable::flagName(f));
 	}
 
-	const QString sep = ";";
+	const QString sep(';');
 
 	// number - start - end - type - roles - label - flags
 	stream << p.number() << sep
