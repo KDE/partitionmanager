@@ -20,6 +20,8 @@ Plans and ideas for 1.1:
 * don't hardcode any support for libparted-related stuff like shrinking fat16
   in the file system classes.
 
+* support KLocale::BinaryUnitDialect and use KLocale's formatting methods
+
 ===============================================================================
 
 Bugs to fix for 1.1:
