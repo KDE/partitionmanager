@@ -31,7 +31,7 @@ class PartTableWidget;
 class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 {
 	public:
-		DevicePropsWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
+		DevicePropsWidget(QWidget* parent);
 
 	public:
 		PartTableWidget& partTableWidget() { Q_ASSERT(m_PartTableWidget); return *m_PartTableWidget; }
@@ -52,38 +52,11 @@ class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 
 		QSpacerItem& spacerType() { Q_ASSERT(m_SpacerType); return *m_SpacerType; }
 
-		void hideTypeRadioButtons()
-		{
-			radioSectorBased().setVisible(false);
-			radioCylinderBased().setVisible(false);
-		}
-
 		QLabel& smartStatusText() { Q_ASSERT(m_LabelSmartStatusText); return *m_LabelSmartStatusText; }
 		QLabel& smartStatusIcon() { Q_ASSERT(m_LabelSmartStatusIcon); return *m_LabelSmartStatusIcon; }
-		QLabel& temperature() { Q_ASSERT(m_LabelSmartTemperature); return *m_LabelSmartTemperature; }
-		QLabel& badSectors() { Q_ASSERT(m_LabelSmartBadSectors); return *m_LabelSmartBadSectors; }
-		QLabel& poweredOn() { Q_ASSERT(m_LabelSmartPoweredOn); return *m_LabelSmartPoweredOn; }
-		QLabel& powerCycles() { Q_ASSERT(m_LabelSmartPowerCycles); return *m_LabelSmartPowerCycles; }
+		KPushButton& buttonSmartMore() { Q_ASSERT(m_ButtonSmartMore); return *m_ButtonSmartMore; }
 
-		QLabel& labelTemperature() { Q_ASSERT(m_LabelTextSmartTemperature); return *m_LabelTextSmartTemperature; }
-		QLabel& labelBadSectors() { Q_ASSERT(m_LabelTextSmartBadSectors); return *m_LabelTextSmartBadSectors; }
-		QLabel& labelPoweredOn() { Q_ASSERT(m_LabelTextSmartPoweredOn); return *m_LabelTextSmartPoweredOn; }
-		QLabel& labelPowerCycles() { Q_ASSERT(m_LabelTextSmartPowerCycles); return *m_LabelTextSmartPowerCycles; }
-
-		void hideSmartLabels()
-		{
-			smartStatusIcon().setVisible(false);
-
-			temperature().setVisible(false);
-			badSectors().setVisible(false);
-			poweredOn().setVisible(false);
-			powerCycles().setVisible(false);
-
-			labelTemperature().setVisible(false);
-			labelBadSectors().setVisible(false);
-			labelPoweredOn().setVisible(false);
-			labelPowerCycles().setVisible(false);
-		}
+		void hideTypeRadioButtons();
 };
 
 #endif

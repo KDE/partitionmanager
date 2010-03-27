@@ -161,6 +161,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 
 		void onFileSystemSupport();
 
+		void onSmartStatusDevice();
 		void onPropertiesDevice(const QString& device_node = QString());
 
 	private:

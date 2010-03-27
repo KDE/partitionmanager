@@ -24,6 +24,7 @@
 #include "gui/createpartitiontabledialog.h"
 #include "gui/filesystemsupportdialog.h"
 #include "gui/devicepropsdialog.h"
+#include "gui/smartdialog.h"
 
 #include "config/configureoptionsdialog.h"
 
@@ -32,6 +33,7 @@
 
 #include "core/device.h"
 #include "core/partition.h"
+#include "core/smartstatus.h"
 
 #include "ops/operation.h"
 #include "ops/createpartitiontableoperation.h"
@@ -242,6 +244,12 @@ void MainWindow::setupActions()
 	importPartitionTable->setStatusTip(i18nc("@info:status", "Import a partition table from a text file."));
 	importPartitionTable->setIcon(BarIcon("document-import"));
 
+	KAction* smartStatusDevice = actionCollection()->addAction("smartStatusDevice", this, SLOT(onSmartStatusDevice()));
+	smartStatusDevice->setEnabled(false);
+	smartStatusDevice->setText(i18nc("@action:inmenu", "SMART Status"));
+	smartStatusDevice->setToolTip(i18nc("@info:tooltip", "Show SMART status"));
+	smartStatusDevice->setStatusTip(i18nc("@info:status", "Show the device's SMART status if supported"));
+
 	KAction* propertiesDevice = actionCollection()->addAction("propertiesDevice", this, SLOT(onPropertiesDevice()));
 	propertiesDevice->setEnabled(false);
 	propertiesDevice->setText(i18nc("@action:inmenu", "Properties"));
@@ -400,6 +408,7 @@ void MainWindow::enableActions()
 	actionCollection()->action("createNewPartitionTable")->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
 	actionCollection()->action("exportPartitionTable")->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->partitionTable() && operationStack().size() == 0);
 	actionCollection()->action("importPartitionTable")->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
+	actionCollection()->action("smartStatusDevice")->setEnabled(pmWidget().selectedDevice() != NULL && pmWidget().selectedDevice()->smartStatus().isValid());
 	actionCollection()->action("propertiesDevice")->setEnabled(pmWidget().selectedDevice() != NULL);
 
 	actionCollection()->action("undoOperation")->setEnabled(operationStack().size() > 0);
@@ -939,6 +948,18 @@ void MainWindow::onConfigureOptions()
 	connect(dlg, SIGNAL(okClicked()), SLOT(onSettingsChanged()));
 
 	dlg->show();
+}
+
+void MainWindow::onSmartStatusDevice()
+{
+	Q_ASSERT(pmWidget().selectedDevice());
+
+	if (pmWidget().selectedDevice())
+	{
+		QPointer<SmartDialog> dlg = new SmartDialog(this, *pmWidget().selectedDevice());
+		dlg->exec();
+		delete dlg;
+	}
 }
 
 void MainWindow::onPropertiesDevice(const QString&)

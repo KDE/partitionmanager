@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                       *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,38 +17,47 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#include "core/device.h"
+#if !defined(SMARTDIALOG__H)
 
-#include "core/partitiontable.h"
-#include "core/smartstatus.h"
+#define SMARTDIALOG__H
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <kdialog.h>
 
-/** Constructs a Device with an empty PartitionTable.
-	@param name the Device's name, usually some string defined by the manufacturer
-	@param devicenode the Device's node, for example "/dev/sda"
-	@param heads the number of heads in CHS notation
-	@param numSectors the number of sectors in CHS notation
-	@param cylinders the number of cylinders in CHS notation
-	@param sectorSize the size of a sector in bytes
+class Device;
+class SmartDialogWidget;
+
+class QWidget;
+class QString;
+class QPoint;
+
+/** @brief Show SMART properties.
+
+	Dialog that shows SMART status and properties for a device
+
+	@author vl@fidra.de
 */
-Device::Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize, const QString& iconname) :
-	QObject(),
-	m_Name(name),
-	m_DeviceNode(devicenode),
-	m_PartitionTable(NULL),
-	m_Heads(heads),
-	m_SectorsPerTrack(numSectors),
-	m_Cylinders(cylinders),
-	m_SectorSize(sectorSize),
-	m_IconName(iconname.isEmpty() ? "drive-hardisk" : iconname),
-	m_SmartStatus(new SmartStatus(devicenode))
+class SmartDialog : public KDialog
 {
-}
+	Q_OBJECT
+	Q_DISABLE_COPY(SmartDialog)
 
-/** Destructs a Device. */
-Device::~Device()
-{
-	delete m_PartitionTable;
-}
+	public:
+		SmartDialog(QWidget* parent, Device& d);
+		~SmartDialog();
+
+	protected:
+		void setupDialog();
+		void setupConnections();
+
+		Device& device() { return m_Device; }
+		const Device& device() const { return m_Device; }
+
+		SmartDialogWidget& dialogWidget() { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
+		const SmartDialogWidget& dialogWidget() const { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
+
+	private:
+		Device& m_Device;
+		SmartDialogWidget* m_DialogWidget;
+};
+
+#endif

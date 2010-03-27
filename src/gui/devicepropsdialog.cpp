@@ -20,6 +20,8 @@
 #include "gui/devicepropsdialog.h"
 #include "gui/devicepropswidget.h"
 
+#include "gui/smartdialog.h"
+
 #include "core/device.h"
 #include "core/partitiontable.h"
 #include "core/smartstatus.h"
@@ -30,11 +32,16 @@
 #include <kdebug.h>
 #include <kpushbutton.h>
 #include <kiconloader.h>
+#include <klocale.h>
+#include <kglobal.h>
+#include <kglobalsettings.h>
+
+#include <QTreeWidgetItem>
+#include <QPointer>
 
 /** Creates a new DevicePropsDialog
 	@param parent pointer to the parent widget
-	@param d the Device the Partition is on
-	@param p the Partition to show properties for
+	@param d the Device to show properties for
 */
 DevicePropsDialog::DevicePropsDialog(QWidget* parent, Device& d) :
 	KDialog(parent),
@@ -114,17 +121,11 @@ void DevicePropsDialog::setupDialog()
 			dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "BAD"));
 			dialogWidget().smartStatusIcon().setPixmap(SmallIcon("dialog-warning"));
 		}
-
-		const QString temp = KGlobal::locale()->formatNumber(device().smartStatus().temp() / 10.0, 1);
-		dialogWidget().temperature().setText(i18nc("@label temperature in celsius", "%1° C", temp));
-		dialogWidget().badSectors().setText(KGlobal::locale()->formatNumber(device().smartStatus().badSectors(), 0));
-		dialogWidget().poweredOn().setText(KGlobal::locale()->formatDuration(device().smartStatus().poweredOn()));
-		dialogWidget().powerCycles().setText(KGlobal::locale()->formatNumber(device().smartStatus().powerCycles(), 0));
 	}
 	else
 	{
 		dialogWidget().smartStatusText().setText(i18nc("@label", "(unknown)"));
-		dialogWidget().hideSmartLabels();
+		dialogWidget().buttonSmartMore().setVisible(false);
 	}
 
 	setMinimumSize(dialogWidget().size());
@@ -135,6 +136,7 @@ void DevicePropsDialog::setupConnections()
 {
 	connect(&dialogWidget().radioSectorBased(), SIGNAL(toggled(bool)), SLOT(setDirty(bool)));
 	connect(&dialogWidget().radioCylinderBased(), SIGNAL(toggled(bool)), SLOT(setDirty(bool)));
+	connect(&dialogWidget().buttonSmartMore(), SIGNAL(clicked(bool)), SLOT(onButtonSmartMore(bool)));
 }
 
 void DevicePropsDialog::setDirty(bool)
@@ -151,4 +153,11 @@ bool DevicePropsDialog::cylinderBasedAlignment() const
 bool DevicePropsDialog::sectorBasedAlignment() const
 {
 	return dialogWidget().radioSectorBased().isChecked();
+}
+
+void DevicePropsDialog::onButtonSmartMore(bool)
+{
+	QPointer<SmartDialog> dlg = new SmartDialog(this, device());
+	dlg->exec();
+	delete dlg;
 }
