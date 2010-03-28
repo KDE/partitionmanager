@@ -146,7 +146,7 @@ static const AttrDetails* attrDetails()
 		{ 202,  i18nc("SMART attr name", "Data Address Mark Errors"), i18nc("SMART attr description", "Number of Data Address Mark errors (or vendor-specific).")  },
 		{ 203,  i18nc("SMART attr name", "Run Out Cancel"), i18nc("SMART attr description", "Number of ECC errors")  },
 		{ 204,  i18nc("SMART attr name", "Soft ECC Correction"), i18nc("SMART attr description", "Number of errors corrected by software ECC")  },
-		{ 205,  i18nc("SMART attr name", "Thermal Asperity Rate"), i18nc("SMART attr description", "Number of errors due to high temperaure.")  },
+		{ 205,  i18nc("SMART attr name", "Thermal Asperity Rate"), i18nc("SMART attr description", "Number of errors due to high temperature.")  },
 		{ 206,  i18nc("SMART attr name", "Flying Height"), i18nc("SMART attr description", "Height of heads above the disk surface. A flying height that is too low increases the chances of a head crash while a flying height that is too high increases the chances of a read/write error.")  },
 		{ 207,  i18nc("SMART attr name", "Spin High Current"), i18nc("SMART attr description", "Amount of surge current used to spin up the drive.")  },
 		{ 208,  i18nc("SMART attr name", "Spin Buzz"), i18nc("SMART attr description", "Number of buzz routines needed to spin up the drive due to insufficient power.")  },

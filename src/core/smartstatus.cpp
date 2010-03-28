@@ -226,7 +226,7 @@ QString SmartStatus::selfTestStatusToString(SmartStatus::SelfTestStatus s)
 			return i18nc("@item", "Unknown error");
 
 		case ErrorEletrical:
-			return i18nc("@item", "Eletrical error");
+			return i18nc("@item", "Electrical error");
 
 		case ErrorServo:
 			return i18nc("@item", "Servo error");
@@ -255,13 +255,13 @@ QString SmartStatus::overallAssessmentToString(Overall o)
 			return i18nc("@item", "Healthy");
 
 		case BadPast:
-			return i18nc("@item", "Has been used outside of its design paramters in the past.");
+			return i18nc("@item", "Has been used outside of its design parameters in the past.");
 
 		case BadSectors:
 			return i18nc("@item", "Has some bad sectors.");
 
 		case BadNow:
-			return i18nc("@item", "Is being used outside of its design paramters right now.");
+			return i18nc("@item", "Is being used outside of its design parameters right now.");
 
 		case BadSectorsMany:
 			return i18nc("@item", "Has many bad sectors.");
