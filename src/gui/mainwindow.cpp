@@ -755,6 +755,7 @@ void MainWindow::onImportPartitionTable()
 	QByteArray line;
 	QRegExp rxPartition("(\\d+);(\\d+);(\\d+);(\\w+);(\\w+);(\"\\w*\");(\"[^\"]*\")");
 	QRegExp rxType("type:\\s\"(.+)\"");
+	QRegExp rxAlign("align:\\s\"(cylinder|sector)\"");
 	QRegExp rxMagic("^##|v(\\d+)|##");
 	quint32 lineNo = 0;
 	bool haveMagic = false;
@@ -804,6 +805,10 @@ void MainWindow::onImportPartitionTable()
 
 			ptable = new PartitionTable(tableType, PartitionTable::defaultFirstUsable(device, tableType), PartitionTable::defaultLastUsable(device, tableType));
 			operationStack().push(new CreatePartitionTableOperation(device, ptable));
+		}
+		else if (rxAlign.indexIn(line) != -1)
+		{
+			// currently ignored
 		}
 		else if (rxPartition.indexIn(line) != -1)
 		{

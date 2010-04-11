@@ -689,8 +689,9 @@ static bool isPartitionLessThan(const Partition* p1, const Partition* p2)
 
 QTextStream& operator<<(QTextStream& stream, const PartitionTable& ptable)
 {
-	stream << "type: \"" << ptable.typeName() << "\"\n\n"
-		<< "# number start end type roles label flags\n";
+	stream << "type: \"" << ptable.typeName() << "\"\n"
+		<< "align: \"" << (ptable.type() == PartitionTable::msdos ? "cylinder" : "sector") << "\"\n"
+		<< "\n# number start end type roles label flags\n";
 
 	QList<const Partition*> partitions;
 
