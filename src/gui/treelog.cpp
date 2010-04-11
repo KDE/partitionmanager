@@ -33,13 +33,13 @@
 #include <kio/netaccess.h>
 #include <kio/jobuidelegate.h>
 #include <kio/copyjob.h>
+#include <ktemporaryfile.h>
 
 #include <QFile>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QDateTime>
 #include <QTextStream>
-#include <QTemporaryFile>
 
 #include <config.h>
 
@@ -124,7 +124,7 @@ void TreeLog::onSaveLog()
 
 	if (!url.isEmpty())
 	{
-		QTemporaryFile tempFile;
+		KTemporaryFile tempFile;
 
 		if (!tempFile.open())
 		{
