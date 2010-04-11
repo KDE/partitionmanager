@@ -677,7 +677,7 @@ void PartitionManagerWidget::onDeletePartition()
 				"Do you really want to delete the partition that is currently in the clipboard? "
 				"It will no longer be available for pasting after it has been deleted."),
 			i18nc("@title:window", "Really Delete Partition in the Clipboard?"),
-				KGuiItem(i18nc("@action:button", "&Delete It")),
+				KGuiItem(i18nc("@action:button", "&Delete It"), "arrow-right"),
 				KStandardGuiItem::cancel(), "reallyDeleteClipboardPartition") == KMessageBox::Cancel)
 			return;
 
@@ -857,7 +857,7 @@ void PartitionManagerWidget::onCreateNewPartitionTable()
 			"<para><list><item><filename>%1</filename> (%2)</item></list></para>"
 			"<para><warning>This will destroy all data on the device.</warning></para>", selectedDevice()->deviceNode(), selectedDevice()->name()),
 			i18nc("@title:window", "Destroy All Data on Device?"),
-			KGuiItem(i18nc("@action:button", "&Create New Partition Table")),
+			KGuiItem(i18nc("@action:button", "&Create New Partition Table"), "arrow-right"),
 			KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
 		operationStack().push(new CreatePartitionTableOperation(*selectedDevice()));
@@ -876,7 +876,7 @@ void PartitionManagerWidget::onRefreshDevices()
 			"<para>Do you really want to rescan the devices?</para>"
 			"<para><warning>This will also clear the list of pending operations.</warning></para>"),
 		i18nc("@title:window", "Really Rescan the Devices?"),
-		KGuiItem(i18nc("@action:button", "&Rescan Devices")),
+		KGuiItem(i18nc("@action:button", "&Rescan Devices"), "arrow-right"),
 		KStandardGuiItem::cancel(), "reallyRescanDevices") == KMessageBox::Continue)
 	{
 		scanDevices();
@@ -899,7 +899,7 @@ void PartitionManagerWidget::onClearAllOperations()
 	if (KMessageBox::warningContinueCancel(this,
 		i18nc("@info", "Do you really want to clear the list of pending operations?"),
 		i18nc("@title:window", "Clear Pending Operations?"),
-		KGuiItem(i18nc("@action:button", "&Clear Pending Operations")),
+		KGuiItem(i18nc("@action:button", "&Clear Pending Operations"), "arrow-right"),
 		KStandardGuiItem::cancel(), "reallyClearPendingOperations") == KMessageBox::Continue)
 	{
 		log() << i18nc("@info/plain", "Clearing the list of pending operations.");
@@ -924,7 +924,7 @@ void PartitionManagerWidget::onApplyAllOperations()
 			"<para>Do you really want to apply the pending operations listed below?</para>"
 			"<para><warning>This will permanently modify your disks.</warning></para>"),
 		opList, i18nc("@title:window", "Apply Pending Operations?"),
-		KGuiItem(i18nc("@action:button", "&Apply Pending Operations")),
+		KGuiItem(i18nc("@action:button", "&Apply Pending Operations"), "arrow-right"),
 		KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
 		log() << i18nc("@info/plain", "Applying operations...");
@@ -981,7 +981,7 @@ void PartitionManagerWidget::onBackupPartition()
 	if (fileName.isEmpty())
 		return;
 
-	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "&Overwrite File")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
+	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "&Overwrite File"), "arrow-right"), KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
 		operationStack().push(new BackupOperation(*selectedDevice(), *selectedPartition(), fileName));
 		updatePartitions();

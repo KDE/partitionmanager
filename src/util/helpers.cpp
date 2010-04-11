@@ -96,7 +96,7 @@ bool checkPermissions()
 				"<para>Do you want to continue running <application>%1</application>?</para>",
 				KGlobal::mainComponent().aboutData()->programName()),
 	 		i18nc("@title:window", "No administrative privileges"),
-			KGuiItem(i18nc("@action:button", "Run without administrative privileges")),
+			KGuiItem(i18nc("@action:button", "Run without administrative privileges"), "arrow-right"),
 			KStandardGuiItem::cancel(),
 			"runWithoutRootPrivileges") == KMessageBox::Continue;
 	}

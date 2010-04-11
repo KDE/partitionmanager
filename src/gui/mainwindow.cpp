@@ -91,7 +91,7 @@ void MainWindow::closeEvent(QCloseEvent* event)
 			i18ncp("@info", "<para>Do you really want to quit the application?</para><para>There is still an operation pending.</para>",
     		"<para>Do you really want to quit the application?</para><para>There are still %1 operations pending.</para>", pmWidget().numPendingOperations()),
 			i18nc("@title:window", "Discard Pending Operations and Quit?"),
-			KGuiItem(i18nc("@action:button", "&Quit <application>%1</application>", KGlobal::mainComponent().aboutData()->programName())),
+			KGuiItem(i18nc("@action:button", "&Quit <application>%1</application>", KGlobal::mainComponent().aboutData()->programName()), "arrow-right"),
 			KStandardGuiItem::cancel(), "reallyQuit") == KMessageBox::Cancel)
 		{
 			event->ignore();

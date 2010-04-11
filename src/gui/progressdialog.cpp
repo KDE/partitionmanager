@@ -181,7 +181,7 @@ void ProgressDialog::slotButtonClicked(int button)
 
 		KApplication::restoreOverrideCursor();
 
-		if (KMessageBox::questionYesNo(this, i18nc("@info", "Do you really want to cancel?"), i18nc("@title:window", "Cancel Running Operations"), KGuiItem(i18nc("@action:button", "Yes, Cancel Operations")), KStandardGuiItem::no()) == KMessageBox::Yes)
+		if (KMessageBox::questionYesNo(this, i18nc("@info", "Do you really want to cancel?"), i18nc("@title:window", "Cancel Running Operations"), KGuiItem(i18nc("@action:button", "Yes, Cancel Operations"), "dialog-ok"), KStandardGuiItem::no()) == KMessageBox::Yes)
 			// in the meantime while we were showing the messagebox, the runner might have finished.
 			if (operationRunner().isRunning())
 				operationRunner().cancel();
@@ -389,7 +389,7 @@ void ProgressDialog::saveReport()
 	if (fileName.isEmpty())
 		return;
 
-	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "&Overwrite File")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
+	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "&Overwrite File"), "arrow-right"), KStandardGuiItem::cancel()) == KMessageBox::Continue)
 	{
 		QFile file(fileName);
 
