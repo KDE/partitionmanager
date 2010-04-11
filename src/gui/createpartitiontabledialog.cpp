@@ -24,6 +24,7 @@
 #include "core/partitiontable.h"
 
 #include <klocale.h>
+#include <kmessagebox.h>
 
 #include <config.h>
 
@@ -35,6 +36,8 @@ CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const De
 	setMainWidget(&widget());
 	setCaption(i18nc("@title:window", "Create a New Partition Table on <filename>%1</filename>", device().deviceNode()));
 	setButtonText(KDialog::Ok, i18nc("@action:button", "&Create New Partition Table"));
+
+	connect(&widget().radioMSDOS(), SIGNAL(toggled(bool)), SLOT(onMSDOSToggled(bool)));
 }
 
 PartitionTable::TableType CreatePartitionTableDialog::type() const
@@ -46,4 +49,21 @@ PartitionTable::TableType CreatePartitionTableDialog::type() const
 		return PartitionTable::msdos;
 
 	return PartitionTable::msdos_sectorbased;
+}
+
+void CreatePartitionTableDialog::onMSDOSToggled(bool on)
+{
+	if (on && device().totalSectors() > 0xffffffff)
+	{
+		if (KMessageBox::warningContinueCancel(this,
+				i18nc("@info",
+					"<para>Do you really want to create an MS-Dos partition table on <filename>%1</filename>?</para>"
+					"<para>This device has more than 2^32 sectors. That is the most the MS-Dos partition table type supports, so you will not be able to use the whole device.</para>", device().deviceNode()),
+				i18nc("@title:window", "Really Create MS-Dos Partition Table Type?"),
+				KGuiItem(i18nc("@action:button", "Create MS-Dos Type"), "arrow-right"),
+				KStandardGuiItem::cancel(), "reallyCreateMSDOSOnLargeDevice") == KMessageBox::Cancel)
+		{
+			widget().radioGPT().setChecked(true);
+		}
+	}
 }

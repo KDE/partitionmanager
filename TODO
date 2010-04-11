@@ -1,8 +1,5 @@
 Plans and ideas for 1.1:
 
-* Check if no of sectors fits in an unsigned 32 bit int for msdos partition
-  tables.
-
 * offer a) no alignment of partition boundaries at all or b) legacy cylinder
   alignment or c) sector based alignment (the name is misleading, though)
 

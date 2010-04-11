@@ -24,9 +24,9 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
      <item>
-      <widget class="QRadioButton" name="m_RadioMSDOS">
+      <widget class="QRadioButton" name="m_RadioGPT">
        <property name="text">
-        <string>MS-Dos</string>
+        <string>GPT</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -34,9 +34,12 @@
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="m_RadioGPT">
+      <widget class="QRadioButton" name="m_RadioMSDOS">
        <property name="text">
-        <string>GPT</string>
+        <string>MS-Dos</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
        </property>
       </widget>
      </item>

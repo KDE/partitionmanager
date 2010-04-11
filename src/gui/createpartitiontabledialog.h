@@ -44,6 +44,9 @@ class CreatePartitionTableDialog : public KDialog
 		const CreatePartitionTableWidget& widget() const { return *m_DialogWidget; }
 		const Device& device() const { return m_Device; }
 
+	protected slots:
+		void onMSDOSToggled(bool on);
+
 	private:
 		CreatePartitionTableWidget* m_DialogWidget;
 		const Device& m_Device;
