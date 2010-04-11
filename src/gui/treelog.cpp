@@ -30,12 +30,16 @@
 #include <kfiledialog.h>
 #include <kmessagebox.h>
 #include <kstandardguiitem.h>
+#include <kio/netaccess.h>
+#include <kio/jobuidelegate.h>
+#include <kio/copyjob.h>
 
 #include <QFile>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QDateTime>
 #include <QTextStream>
+#include <QTemporaryFile>
 
 #include <config.h>
 
@@ -85,8 +89,6 @@ void TreeLog::loadConfig()
 
 void TreeLog::saveConfig() const
 {
-	kDebug() << "saving config";
-
 	QList<int> colWidths;
 	QList<int> colPositions;
 	QList<int> colVisible;
@@ -118,29 +120,31 @@ void TreeLog::onClearLog()
 
 void TreeLog::onSaveLog()
 {
-	const QString fileName = KFileDialog::getSaveFileName(KUrl("kfiledialog://saveLog"));
+	const KUrl url = KFileDialog::getSaveUrl(KUrl("kfiledialog://saveLog"));
 
-	if (!fileName.isEmpty())
+	if (!url.isEmpty())
 	{
-		QFile file(fileName);
+		QTemporaryFile tempFile;
 
-		if (QFile::exists(fileName) && KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "Overwrite File")), KStandardGuiItem::cancel()) != KMessageBox::Continue)
-			return;
-
-		if (!file.open(QFile::WriteOnly | QFile::Truncate))
+		if (!tempFile.open())
 		{
-			KMessageBox::error(this, i18nc("@info", "Could not create output file <filename>%1</filename>.", fileName), i18nc("@title:window", "Error Saving Log File"));
+			KMessageBox::error(this, i18nc("@info", "Could not create temporary output file to save <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Error Saving Log File"));
 			return;
 		}
 
-		QTextStream stream(&file);
+		QTextStream stream(&tempFile);
 
 		for (qint32 idx = 0; idx < treeLog().topLevelItemCount(); idx++)
 		{
 			QTreeWidgetItem* item = treeLog().topLevelItem(idx);
-
 			stream << item->text(1) << ": " << item->text(2) << "\n";
 		}
+
+		tempFile.close();
+
+		KIO::CopyJob* job = KIO::move(tempFile.fileName(), url, KIO::HideProgressInfo);
+		if (!KIO::NetAccess::synchronousRun(job, NULL))
+			job->ui()->showErrorMessage();
 	}
 }
 
