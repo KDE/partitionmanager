@@ -44,6 +44,10 @@
 #include <ktemporaryfile.h>
 #include <kaboutdata.h>
 #include <ktextedit.h>
+#include <kio/netaccess.h>
+#include <kio/jobuidelegate.h>
+#include <kio/copyjob.h>
+#include <ktemporaryfile.h>
 
 const QString ApplyProgressDialog::m_TimeFormat = "hh:mm:ss";
 
@@ -379,26 +383,27 @@ void ApplyProgressDialog::keyPressEvent(QKeyEvent* e)
 
 void ApplyProgressDialog::saveReport()
 {
-	QString fileName = KFileDialog::getSaveFileName(KUrl("kfiledialog://saveReport"));
+	const KUrl url = KFileDialog::getSaveUrl(KUrl("kfiledialog://saveReport"));
 
-	if (fileName.isEmpty())
+	if (url.isEmpty())
 		return;
 
-	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "Overwrite File")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
+	KTemporaryFile tempFile;
+
+	if (tempFile.open())
 	{
-		QFile file(fileName);
+		tempFile.write(Report::htmlHeader().toUtf8());
+		tempFile.write(report().toHtml().toUtf8());
+		tempFile.write(Report::htmlFooter().toUtf8());
 
-		if (file.open(QIODevice::WriteOnly | QIODevice::Truncate))
-		{
-			file.write(Report::htmlHeader().toUtf8());
-			file.write(report().toHtml().toUtf8());
-			file.write(Report::htmlFooter().toUtf8());
+		tempFile.close();
 
-			file.close();
-		}
-		else
-			KMessageBox::sorry(this, i18nc("@info", "Could not open file <filename>%1</filename> for writing.", fileName), i18nc("@title:window", "Could Not Save Report."));
+		KIO::CopyJob* job = KIO::move(tempFile.fileName(), url, KIO::HideProgressInfo);
+		if (!KIO::NetAccess::synchronousRun(job, NULL))
+			job->ui()->showErrorMessage();
 	}
+	else
+		KMessageBox::sorry(this, i18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Could Not Save Report."));
 }
 
 void ApplyProgressDialog::browserReport()

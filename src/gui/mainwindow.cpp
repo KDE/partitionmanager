@@ -64,6 +64,10 @@
 #include <kmenu.h>
 #include <kxmlguifactory.h>
 #include <kfiledialog.h>
+#include <kio/netaccess.h>
+#include <kio/jobuidelegate.h>
+#include <kio/copyjob.h>
+#include <ktemporaryfile.h>
 
 #include <QCloseEvent>
 #include <QReadLocker>
@@ -726,20 +730,27 @@ void MainWindow::onImportPartitionTable()
 {
 	Q_ASSERT(pmWidget().selectedDevice());
 
-	Device& device = *pmWidget().selectedDevice();
+	const KUrl url = KFileDialog::getOpenUrl(KUrl("kfiledialog://importPartitionTable"));
 
-	QString fileName = KFileDialog::getOpenFileName(KUrl("kfiledialog://importPartitionTable"));
-
-	if (fileName.isEmpty())
+	if (url.isEmpty())
 		return;
+
+	QString fileName;
+	if (!KIO::NetAccess::download(url, fileName, this))
+	{
+		KMessageBox::error(this, i18nc("@info", "Could not open input file <filename>%1</filename> for import: %s", url.fileName(), KIO::NetAccess::lastErrorString()), i18nc("@title:window", "Error Importing Partition Table"));
+		return;
+	}
 
 	QFile file(fileName);
 
 	if (!file.open(QFile::ReadOnly))
 	{
-		KMessageBox::error(this, i18nc("@info", "Could not open input file <filename>%1</filename> for import.", fileName), i18nc("@title:window", "Error Importing Partition Table"));
+		KMessageBox::error(this, i18nc("@info", "Could not open temporary file <filename>%1</filename> while trying to import from <filename>%2</filename>.", fileName, url.fileName()), i18nc("@title:window", "Error Importing Partition Table"));
 		return;
 	}
+
+	Device& device = *pmWidget().selectedDevice();
 
 	QByteArray line;
 	QRegExp rxPartition("(\\d+);(\\d+);(\\d+);(\\w+);(\\w+);(\"\\w*\");(\"[^\"]*\")");
@@ -884,27 +895,30 @@ void MainWindow::onExportPartitionTable()
 	Q_ASSERT(pmWidget().selectedDevice());
 	Q_ASSERT(pmWidget().selectedDevice()->partitionTable());
 
-	QString fileName = KFileDialog::getSaveFileName(KUrl("kfiledialog://exportPartitionTable"));
+	const KUrl url = KFileDialog::getSaveUrl(KUrl("kfiledialog://exportPartitionTable"));
 
-	if (fileName.isEmpty())
+	if (url.isEmpty())
 		return;
 
-	if (QFile::exists(fileName) && KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "Overwrite File")), KStandardGuiItem::cancel()) != KMessageBox::Continue)
-		return;
+	KTemporaryFile tempFile;
 
-	QFile file(fileName);
-
-	if (!file.open(QFile::WriteOnly | QFile::Truncate))
+	if (!tempFile.open())
 	{
-		KMessageBox::error(this, i18nc("@info", "Could not create output file <filename>%1</filename> for export.", fileName), i18nc("@title:window", "Error Exporting Partition Table"));
+		KMessageBox::error(this, i18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Error Exporting Partition Table"));
 		return;
 	}
 
-	QTextStream stream(&file);
+	QTextStream stream(&tempFile);
 
 	stream << "##|v1|## partition table of " << pmWidget().selectedDevice()->deviceNode() << "\n";
 	stream << "# on " << QDateTime::currentDateTime().toString() << "\n";
 	stream << *pmWidget().selectedDevice()->partitionTable();
+
+	tempFile.close();
+
+	KIO::CopyJob* job = KIO::move(tempFile.fileName(), url, KIO::HideProgressInfo);
+	if (!KIO::NetAccess::synchronousRun(job, NULL))
+		job->ui()->showErrorMessage();
 }
 
 void MainWindow::onFileSystemSupport()
