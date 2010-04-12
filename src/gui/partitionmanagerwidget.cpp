@@ -173,13 +173,13 @@ void PartitionManagerWidget::setSelectedPartition(const Partition* p)
 
 Partition* PartitionManagerWidget::selectedPartition()
 {
-	if (selectedDevice() == NULL || selectedDevice()->partitionTable() == NULL || partTableWidget().activeWidget() == NULL || partTableWidget().activeWidget()->partition() == NULL)
+	if (selectedDevice() == NULL || selectedDevice()->partitionTable() == NULL || partTableWidget().activeWidget() == NULL)
 		return NULL;
 
 	// The active partition we get from the part table widget is const; we need non-const.
 	// So take the first sector and find the partition in the selected device's
 	// partition table.
-	const Partition* activePartition = partTableWidget().activeWidget()->partition();
+	const Partition* activePartition = &partTableWidget().activeWidget()->partition();
 	return selectedDevice()->partitionTable()->findPartitionBySector(activePartition->firstSector(), PartitionRole(PartitionRole::Any));
 }
 
@@ -318,24 +318,22 @@ void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidge
 		return;
 	}
 
-	const Partition* p = item->partition();
+	const Partition& p = item->partition();
 
-	Q_ASSERT(p);
-
-	QList<QTreeWidgetItem*> findResult = treePartitions().findItems(p->deviceNode(), Qt::MatchFixedString | Qt::MatchRecursive, 0);
+	QList<QTreeWidgetItem*> findResult = treePartitions().findItems(p.deviceNode(), Qt::MatchFixedString | Qt::MatchRecursive, 0);
 
 	for (int idx = 0; idx < findResult.size(); idx++)
 	{
 		const PartitionTreeWidgetItem* ptwItem = dynamic_cast<PartitionTreeWidgetItem*>(findResult[idx]);
 
-		if (ptwItem && ptwItem->partition() == p)
+		if (ptwItem && ptwItem->partition() == &p)
 		{
 			treePartitions().setCurrentItem(findResult[idx]);
 			break;
 		}
 	}
 
-	emit selectedPartitionChanged(p);
+	emit selectedPartitionChanged(&p);
 }
 
 void PartitionManagerWidget::on_m_PartTableWidget_customContextMenuRequested(const QPoint& pos)

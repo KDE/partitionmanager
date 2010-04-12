@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -36,22 +36,23 @@
 
 /** Creates a new PartWidget
 	@param parent pointer to the parent widget
-	@param ptWidget pointer to the PartTableWidget this widget will be in
-	@param p pointer to the Partition this widget will show
+	@param ptWidget pointer to the PartTableWidget this widget will be in or NULL if none
+	@param p pointer to the Partition this widget will show. must not be NULL.
 	@param show_children true if this widget is supposed to show child widgets
 */
 PartWidget::PartWidget(QWidget* parent, const PartTableWidget* ptWidget, const Partition* p, bool show_children) :
 	QWidget(parent),
 	PartWidgetBase(),
-	m_PartTableWidget(const_cast<PartTableWidget*>(ptWidget)),
-	m_Partition(const_cast<Partition*>(p)),
-	m_Widgets(),
+	m_PartTableWidget(ptWidget),
+	m_Partition(p),
+	m_ChildWidgets(),
 	m_ShowChildren(show_children)
 {
 	setFont(KGlobalSettings::smallestReadableFont());
 
-	if (partition())
-		setToolTip(partition()->deviceNode() + '\n' + partition()->fileSystem().name() + ' ' + Capacity(*partition()).toString());
+	Q_ASSERT(p);
+
+	setToolTip(partition().deviceNode() + '\n' + partition().fileSystem().name() + ' ' + Capacity(partition()).toString());
 
 	updateChildren();
 }
@@ -59,39 +60,36 @@ PartWidget::PartWidget(QWidget* parent, const PartTableWidget* ptWidget, const P
 /** Updates the widget's children */
 void PartWidget::updateChildren()
 {
-	foreach (QWidget* w, widgets())
+	foreach (QWidget* w, childWidgets())
 	{
 		w->setVisible(false);
 		w->deleteLater();
 	}
 
-	widgets().clear();
+	childWidgets().clear();
 
-	if (partition() && showChildren())
+	if (showChildren())
 	{
-		foreach(Partition* child, partition()->children())
+		foreach(const Partition* child, partition().children())
 		{
-			widgets().append(new PartWidget(this, partTableWidget(), child));
-			widgets().last()->show();
+			childWidgets().append(new PartWidget(this, partTableWidget(), child));
+			childWidgets().last()->show();
 		}
 
-		positionChildren(this, partition()->children(), widgets());
+		positionChildren(this, partition().children(), childWidgets());
 	}
 }
 
 /** @return true if this is the currently active widget */
 bool PartWidget::active() const
 {
-	if (partTableWidget() == NULL)
-		return false;
-
-	return partTableWidget()->activeWidget() == this;
+	return partTableWidget() != NULL && partTableWidget()->activeWidget() == this;
 }
 
 void PartWidget::resizeEvent(QResizeEvent*)
 {
- 	if (partition() && showChildren())
- 		positionChildren(this, partition()->children(), widgets());
+ 	if (showChildren())
+ 		positionChildren(this, partition().children(), childWidgets());
 }
 
 void PartWidget::paintEvent(QPaintEvent*)
@@ -101,31 +99,25 @@ void PartWidget::paintEvent(QPaintEvent*)
 
 QColor PartWidget::activeColor(const QColor& col) const
 {
-	if (active())
-		return col.darker(130);
-
-	return col;
+	return active() ? col.darker(130) : col;
 }
 
 void PartWidget::drawPartition(QWidget* destWidget)
 {
-	if (partition() == NULL)
-		return;
-
-	const int usedPercentage = partition()->used() * 100 / partition()->capacity();
+	const int usedPercentage = partition().used() * 100 / partition().capacity();
 	const int w = (destWidget->width() - 1 - (PartWidget::borderWidth() * 2)) * usedPercentage / 100;
 
 	QPainter painter(destWidget);
 
 	// draw border
 	painter.setPen(active() ? QColor(250, 250, 250) : QColor(20, 20, 20));
-	painter.setBrush(activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())));
+	painter.setBrush(activeColor(Config::fileSystemColorCode(partition().fileSystem().type())));
 	painter.drawRect(QRect(0, 0, destWidget->width() - 1, destWidget->height() - 1));
 
-	if (partition()->roles().has(PartitionRole::Extended))
+	if (partition().roles().has(PartitionRole::Extended))
 		return;
 
-	if (!partition()->roles().has(PartitionRole::Unallocated))
+	if (!partition().roles().has(PartitionRole::Unallocated))
 	{
 		// draw free space background
 		painter.setBrush(activeColor(Config::availableSpaceColorCode()));
@@ -137,7 +129,7 @@ void PartWidget::drawPartition(QWidget* destWidget)
 	}
 
 	// draw name and size
-	QString text = partition()->deviceNode().remove("/dev/") + '\n' + Capacity(*partition()).toString();
+	QString text = partition().deviceNode().remove("/dev/") + '\n' + Capacity(partition()).toString();
 
 	const QRect textRect(0, 0, destWidget->width() - 1, destWidget->height() - 1);
 	const QRect boundingRect = painter.boundingRect(textRect, Qt::AlignVCenter | Qt::AlignHCenter, text);

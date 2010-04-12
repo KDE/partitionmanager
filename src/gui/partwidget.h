@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -22,12 +22,13 @@
 #define PARTWIDGET__H
 
 #include "gui/partwidgetbase.h"
-#include "gui/parttablewidget.h"
 
-#include "core/partition.h"
+#include <kdebug.h>
 
 #include <QWidget>
-#include <QPointer>
+
+class PartTableWidget;
+class Partition;
 
 class QPaintEvent;
 class QResizeEvent;
@@ -49,17 +50,16 @@ class PartWidget : public QWidget, public PartWidgetBase
 		bool active() const;
 		void updateChildren();
 
-		const Partition* partition() const { return m_Partition.isNull() ? NULL : m_Partition; } /**< @return the widget's Partition or NULL if none set */
+		const Partition& partition() const { Q_ASSERT(m_Partition); return *m_Partition; } /**< @return the widget's Partition */
 
 	protected:
 		void paintEvent(QPaintEvent* event);
 		void resizeEvent(QResizeEvent* event);
 
-		PartTableWidget* partTableWidget() { return m_PartTableWidget.isNull() ? NULL : m_PartTableWidget; }
-		const PartTableWidget* partTableWidget() const { return m_PartTableWidget.isNull() ? NULL : m_PartTableWidget; }
+		const PartTableWidget* partTableWidget() const { return m_PartTableWidget; }
 
-		QList<PartWidget*>& widgets() { return m_Widgets; }
-		const QList<PartWidget*>& widgets() const { return m_Widgets; }
+		QList<PartWidget*>& childWidgets() { return m_ChildWidgets; }
+		const QList<PartWidget*>& childWidgets() const { return m_ChildWidgets; }
 
 		void drawPartition(QWidget* destWidget);
 		bool showChildren() const { return m_ShowChildren; }
@@ -67,9 +67,9 @@ class PartWidget : public QWidget, public PartWidgetBase
 		QColor activeColor(const QColor& col) const;
 
 	private:
-		QPointer<PartTableWidget> m_PartTableWidget;
-		QPointer<Partition> m_Partition;
-		QList<PartWidget*> m_Widgets;
+		const PartTableWidget* m_PartTableWidget;
+		const Partition* m_Partition;
+		QList<PartWidget*> m_ChildWidgets;
 		const bool m_ShowChildren;
 };
 
