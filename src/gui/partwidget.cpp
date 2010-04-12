@@ -59,7 +59,10 @@ void PartWidget::updateChildren()
 	}
 
 	foreach(const Partition* child, partition().children())
-		new PartWidget(this, child);
+	{
+		QWidget* w = new PartWidget(this, child);
+		w->setVisible(true);
+	}
 
 	positionChildren(this, partition().children(), childWidgets());
 }
