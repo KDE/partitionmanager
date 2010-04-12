@@ -72,17 +72,6 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 	update();
 }
 
-QList<PartWidget*> PartTableWidget::childWidgets()
-{
-	QList<PartWidget*> rval;
-
-	foreach(QObject* o, children())
-		if (PartWidget* w = qobject_cast<PartWidget*>(o))
-			rval.append(w);
-
-	return rval;
-}
-
 PartWidget* PartTableWidget::activeWidget()
 {
 	foreach (PartWidget* pw, findChildren<PartWidget*>())

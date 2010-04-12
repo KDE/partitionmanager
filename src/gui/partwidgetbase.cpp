@@ -145,3 +145,14 @@ void PartWidgetBase::positionChildren(const QWidget* destWidget, const Partition
 		x += childrenWidth[i] + spacing();
 	}
 }
+
+QList<PartWidget*> PartWidgetBase::childWidgets()
+{
+	QList<PartWidget*> rval;
+
+	foreach(QObject* o, children())
+		if (PartWidget* w = qobject_cast<PartWidget*>(o))
+			rval.append(w);
+
+	return rval;
+}

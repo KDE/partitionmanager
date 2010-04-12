@@ -48,17 +48,6 @@ PartWidget::PartWidget(QWidget* parent, const Partition* p) :
 	updateChildren();
 }
 
-QList<PartWidget*> PartWidget::childWidgets()
-{
-	QList<PartWidget*> rval;
-
-	foreach(QObject* o, children())
-		if (PartWidget* w = qobject_cast<PartWidget*>(o))
-			rval.append(w);
-
-	return rval;
-}
-
 /** Updates the widget's children */
 void PartWidget::updateChildren()
 {

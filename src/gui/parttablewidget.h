@@ -64,8 +64,6 @@ class PartTableWidget : public PartWidgetBase
 		void mousePressEvent(QMouseEvent* event);
 		void mouseDoubleClickEvent(QMouseEvent* event);
 
-		QList<PartWidget*> childWidgets();
-
 		const PartitionTable* partitionTable() const { return m_PartitionTable; }
 
 		QLabel& labelEmpty() { return m_LabelEmpty; }

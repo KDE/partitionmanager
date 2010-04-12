@@ -48,6 +48,8 @@ class PartWidgetBase : public QWidget
 		static qint32 spacing() { return m_Spacing; } /**< @return spacing between Partitions */
 		static qint32 minWidth() { return m_MinWidth; } /**< @return minimum width for a Partition widget */
 
+		virtual QList<PartWidget*> childWidgets();
+
 	protected:
 		static void positionChildren(const QWidget* destWidget, const PartitionNode::Partitions& partitions, QList<PartWidget*> widgets);
 

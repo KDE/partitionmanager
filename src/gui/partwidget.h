@@ -54,8 +54,6 @@ class PartWidget : public PartWidgetBase
 		void paintEvent(QPaintEvent* event);
 		void resizeEvent(QResizeEvent* event);
 
-		QList<PartWidget*> childWidgets();
-
 		QColor activeColor(const QColor& col) const;
 
 	private:
