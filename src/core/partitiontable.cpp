@@ -346,8 +346,8 @@ bool PartitionTable::alignPartition(const Device& d, Partition& p, const Partiti
 	}
 	else
 	{
-			delta = p.firstSector() % sectorAlignment(d);
-			lengthIsAligned = p.length() % sectorAlignment(d) == 0;
+		delta = p.firstSector() % sectorAlignment(d);
+		lengthIsAligned = p.length() % sectorAlignment(d) == 0;
 	}
 
 	if (delta)
