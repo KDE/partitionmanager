@@ -31,8 +31,7 @@
 	@param parent pointer to the parent widget
 */
 PartTableWidget::PartTableWidget(QWidget* parent) :
-	QWidget(parent),
-	PartWidgetBase(),
+	PartWidgetBase(parent),
 	m_PartitionTable(NULL),
 	m_LabelEmpty(i18nc("@info", "Please select a device."), this),
 	m_ReadOnly(false)

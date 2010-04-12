@@ -37,8 +37,7 @@
 	@param p pointer to the Partition this widget will show. must not be NULL.
 */
 PartWidget::PartWidget(QWidget* parent, const Partition* p) :
-	QWidget(parent),
-	PartWidgetBase(),
+	PartWidgetBase(parent),
 	m_Partition(p),
 	m_Active(false)
 {

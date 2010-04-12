@@ -24,6 +24,7 @@
 #include "core/partitionnode.h"
 
 #include <QList>
+#include <QWidget>
 
 class Partition;
 class PartWidget;
@@ -32,12 +33,13 @@ class QWidget;
 /** @brief Base class for all widgets that need to position Partitions.
 	@author vl@fidra.de
 */
-class PartWidgetBase
+class PartWidgetBase : public QWidget
 {
+	Q_OBJECT
 	Q_DISABLE_COPY(PartWidgetBase)
 
 	protected:
-		PartWidgetBase() {}
+		PartWidgetBase(QWidget* parent) : QWidget(parent) {}
 		virtual ~PartWidgetBase() {}
 
 	public:

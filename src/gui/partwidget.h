@@ -25,8 +25,6 @@
 
 #include <kdebug.h>
 
-#include <QWidget>
-
 class Partition;
 
 class QPaintEvent;
@@ -38,7 +36,7 @@ class QResizeEvent;
 
 	@author vl@fidra.de
 */
-class PartWidget : public QWidget, public PartWidgetBase
+class PartWidget : public PartWidgetBase
 {
 	Q_OBJECT
 

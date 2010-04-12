@@ -23,7 +23,6 @@
 
 #include "gui/partwidgetbase.h"
 
-#include <QWidget>
 #include <QList>
 #include <QLabel>
 
@@ -36,7 +35,7 @@ class QMouseEvent;
 /** @brief Widget that represents a PartitionTable.
 	@author vl@fidra.de
 */
-class PartTableWidget : public QWidget, public PartWidgetBase
+class PartTableWidget : public PartWidgetBase
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(PartTableWidget)
