@@ -114,7 +114,7 @@ void DevicePropsDialog::setupDialog()
 		if (device().smartStatus().status())
 		{
 			dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "good"));
-			dialogWidget().smartStatusIcon().setVisible(false);
+			dialogWidget().smartStatusIcon().setPixmap(SmallIcon("dialog-ok"));
 		}
 		else
 		{
@@ -125,6 +125,7 @@ void DevicePropsDialog::setupDialog()
 	else
 	{
 		dialogWidget().smartStatusText().setText(i18nc("@label", "(unknown)"));
+		dialogWidget().smartStatusIcon().setVisible(false);
 		dialogWidget().buttonSmartMore().setVisible(false);
 	}
 
