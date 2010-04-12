@@ -3,6 +3,8 @@ Plans and ideas for 1.1:
 * don't hardcode any support for libparted-related stuff like shrinking fat16
   in the file system classes.
 
+* save SMART details to html file?
+
 ===============================================================================
 
 Bugs to fix for 1.1:
@@ -15,6 +17,11 @@ Bugs to fix for 1.1:
   and probably fixed in r1107315.
 
 * make sure the default file system can indeed be created
+
+* why is not possible to move an extended partition if it's empty?
+
+* moving an empty extended partition is currently not allowed, but attempting
+  to still moves it by a few pixels
 
 ===============================================================================
 
