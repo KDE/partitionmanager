@@ -70,7 +70,7 @@ class PartWidget : public QWidget, public PartWidgetBase
 		QPointer<PartTableWidget> m_PartTableWidget;
 		QPointer<Partition> m_Partition;
 		QList<PartWidget*> m_Widgets;
-		bool m_ShowChildren;
+		const bool m_ShowChildren;
 };
 
 #endif
