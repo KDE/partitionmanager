@@ -65,10 +65,7 @@ class PartTableWidget : public QWidget, public PartWidgetBase
 		void mousePressEvent(QMouseEvent* event);
 		void mouseDoubleClickEvent(QMouseEvent* event);
 
-		void drawPartitions() const;
-
-		QList<PartWidget*>& widgets() { return m_Widgets; }
-		const QList<PartWidget*>& widgets() const { return m_Widgets; }
+		QList<PartWidget*> childWidgets();
 
 		const PartitionTable* partitionTable() const { return m_PartitionTable; }
 
@@ -77,7 +74,6 @@ class PartTableWidget : public QWidget, public PartWidgetBase
 
 	private:
 		const PartitionTable* m_PartitionTable;
-		QList<PartWidget*> m_Widgets;
 		QLabel m_LabelEmpty;
 		bool m_ReadOnly;
 };

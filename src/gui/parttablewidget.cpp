@@ -32,8 +32,8 @@
 */
 PartTableWidget::PartTableWidget(QWidget* parent) :
 	QWidget(parent),
+	PartWidgetBase(),
 	m_PartitionTable(NULL),
-	m_Widgets(),
 	m_LabelEmpty(i18nc("@info", "Please select a device."), this),
 	m_ReadOnly(false)
 {
@@ -53,12 +53,12 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 	{
 		foreach(const Partition* p, partitionTable()->children())
 		{
-			widgets().append(new PartWidget(this, p));
-			widgets().last()->show();
+			QWidget* w = new PartWidget(this, p);
+			w->setVisible(true);
 		}
 	}
 
-	if (widgets().isEmpty())
+	if (childWidgets().isEmpty())
 	{
 		labelEmpty().setVisible(true);
 		labelEmpty().setText(i18nc("@info", "No valid partition table was found on this device."));
@@ -67,10 +67,21 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 	else
 	{
 		labelEmpty().setVisible(false);
-		positionChildren(this, partitionTable()->children(), widgets());
+		positionChildren(this, partitionTable()->children(), childWidgets());
 	}
 
 	update();
+}
+
+QList<PartWidget*> PartTableWidget::childWidgets()
+{
+	QList<PartWidget*> rval;
+
+	foreach(QObject* o, children())
+		if (PartWidget* w = qobject_cast<PartWidget*>(o))
+			rval.append(w);
+
+	return rval;
 }
 
 PartWidget* PartTableWidget::activeWidget()
@@ -139,23 +150,22 @@ void PartTableWidget::clear()
 	// that its event handler is currently running. therefore, do not delete
 	// the part widgets here but schedule them for deletion once the app
 	// returns to the main loop (and the event handler has finished).
-	foreach(PartWidget* p, widgets())
+	foreach(PartWidget* p, childWidgets())
 	{
 		p->setVisible(false);
 		p->deleteLater();
+		p->setParent(NULL);
 	}
-
-	widgets().clear();
 
 	update();
 }
 
 void PartTableWidget::resizeEvent(QResizeEvent*)
 {
-	if (partitionTable() == NULL || widgets().isEmpty())
+	if (partitionTable() == NULL || childWidgets().isEmpty())
 		labelEmpty().resize(size());
 	else
-		positionChildren(this, partitionTable()->children(), widgets());
+		positionChildren(this, partitionTable()->children(), childWidgets());
 }
 
 void PartTableWidget::mousePressEvent(QMouseEvent* event)

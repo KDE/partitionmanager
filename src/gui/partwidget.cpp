@@ -67,6 +67,7 @@ void PartWidget::updateChildren()
 	{
 		w->setVisible(false);
 		w->deleteLater();
+		w->setParent(NULL);
 	}
 
 	foreach(const Partition* child, partition().children())
