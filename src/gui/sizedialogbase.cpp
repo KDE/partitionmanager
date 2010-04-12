@@ -89,6 +89,9 @@ void SizeDialogBase::setupDialog()
 	if (!canGrow())
 		dialogWidget().partResizerWidget().setMaximumLength(partition().length());
 
+	if (!canMove())
+		dialogWidget().partResizerWidget().setMoveAllowed(false);
+
 	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), partition().firstSector() - minimumFirstSector()));
 	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), maximumLastSector() - partition().lastSector()));
 
@@ -112,9 +115,6 @@ void SizeDialogBase::setupConstraints()
 
 	if (!canShrink() && !canGrow())
 		dialogWidget().spinCapacity().setEnabled(false);
-
-	if (!canMove())
-		dialogWidget().partResizerWidget().setMoveAllowed(false);
 
 	dialogWidget().partResizerWidget().setMaximumFirstSector(partition().maxFirstSector());
 	dialogWidget().partResizerWidget().setMinimumLastSector(partition().minLastSector());
