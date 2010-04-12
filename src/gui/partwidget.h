@@ -61,7 +61,6 @@ class PartWidget : public QWidget, public PartWidgetBase
 		QList<PartWidget*>& childWidgets() { return m_ChildWidgets; }
 		const QList<PartWidget*>& childWidgets() const { return m_ChildWidgets; }
 
-		void drawPartition(QWidget* destWidget);
 		bool showChildren() const { return m_ShowChildren; }
 
 		QColor activeColor(const QColor& col) const;

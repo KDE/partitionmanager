@@ -50,8 +50,6 @@ PartWidget::PartWidget(QWidget* parent, const PartTableWidget* ptWidget, const P
 {
 	setFont(KGlobalSettings::smallestReadableFont());
 
-	Q_ASSERT(p);
-
 	setToolTip(partition().deviceNode() + '\n' + partition().fileSystem().name() + ' ' + Capacity(partition()).toString());
 
 	updateChildren();
@@ -92,27 +90,22 @@ void PartWidget::resizeEvent(QResizeEvent*)
  		positionChildren(this, partition().children(), childWidgets());
 }
 
-void PartWidget::paintEvent(QPaintEvent*)
-{
-	drawPartition(this);
-}
-
 QColor PartWidget::activeColor(const QColor& col) const
 {
 	return active() ? col.darker(130) : col;
 }
 
-void PartWidget::drawPartition(QWidget* destWidget)
+void PartWidget::paintEvent(QPaintEvent*)
 {
 	const int usedPercentage = partition().used() * 100 / partition().capacity();
-	const int w = (destWidget->width() - 1 - (PartWidget::borderWidth() * 2)) * usedPercentage / 100;
+	const int w = (width() - 1 - (PartWidget::borderWidth() * 2)) * usedPercentage / 100;
 
-	QPainter painter(destWidget);
+	QPainter painter(this);
 
 	// draw border
 	painter.setPen(active() ? QColor(250, 250, 250) : QColor(20, 20, 20));
 	painter.setBrush(activeColor(Config::fileSystemColorCode(partition().fileSystem().type())));
-	painter.drawRect(QRect(0, 0, destWidget->width() - 1, destWidget->height() - 1));
+	painter.drawRect(QRect(0, 0, width() - 1, height() - 1));
 
 	if (partition().roles().has(PartitionRole::Extended))
 		return;
@@ -121,17 +114,17 @@ void PartWidget::drawPartition(QWidget* destWidget)
 	{
 		// draw free space background
 		painter.setBrush(activeColor(Config::availableSpaceColorCode()));
-		painter.drawRect(QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), destWidget->width() - 1 - (PartWidget::borderWidth() * 2), destWidget->height() - (PartWidget::borderHeight() * 2)));
+		painter.drawRect(QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), width() - 1 - (PartWidget::borderWidth() * 2), height() - (PartWidget::borderHeight() * 2)));
 
 		// draw used space in front of that
 		painter.setBrush(activeColor(Config::usedSpaceColorCode()));
-		painter.drawRect(QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), w, destWidget->height() - (PartWidget::borderHeight() * 2)));
+		painter.drawRect(QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), w, height() - (PartWidget::borderHeight() * 2)));
 	}
 
 	// draw name and size
 	QString text = partition().deviceNode().remove("/dev/") + '\n' + Capacity(partition()).toString();
 
-	const QRect textRect(0, 0, destWidget->width() - 1, destWidget->height() - 1);
+	const QRect textRect(0, 0, width() - 1, height() - 1);
 	const QRect boundingRect = painter.boundingRect(textRect, Qt::AlignVCenter | Qt::AlignHCenter, text);
 	if (boundingRect.x() > PartWidgetBase::borderWidth() && boundingRect.y() > PartWidgetBase::borderHeight())
 		painter.drawText(textRect, Qt::AlignVCenter | Qt::AlignHCenter, text);
