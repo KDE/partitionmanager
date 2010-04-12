@@ -47,7 +47,7 @@ class PartWidgetBase
 		static qint32 minWidth() { return m_MinWidth; } /**< @return minimum width for a Partition widget */
 
 	protected:
-		static void positionChildren(const QWidget* destWidget, const PartitionNode::Partitions& partitions, QList<PartWidget*>& widgets);
+		static void positionChildren(const QWidget* destWidget, const PartitionNode::Partitions& partitions, QList<PartWidget*> widgets);
 
 	private:
 		static const qint32 m_Spacing;

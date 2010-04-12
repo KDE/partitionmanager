@@ -18,12 +18,10 @@
  ***************************************************************************/
 
 #include "gui/partwidget.h"
-#include "gui/parttablewidget.h"
 
 #include "util/capacity.h"
 
 #include "core/partition.h"
-#include "core/operationstack.h"
 
 #include "fs/filesystem.h"
 
@@ -36,23 +34,30 @@
 
 /** Creates a new PartWidget
 	@param parent pointer to the parent widget
-	@param ptWidget pointer to the PartTableWidget this widget will be in or NULL if none
 	@param p pointer to the Partition this widget will show. must not be NULL.
-	@param show_children true if this widget is supposed to show child widgets
 */
-PartWidget::PartWidget(QWidget* parent, const PartTableWidget* ptWidget, const Partition* p, bool show_children) :
+PartWidget::PartWidget(QWidget* parent, const Partition* p) :
 	QWidget(parent),
 	PartWidgetBase(),
-	m_PartTableWidget(ptWidget),
 	m_Partition(p),
-	m_ChildWidgets(),
-	m_ShowChildren(show_children)
+	m_Active(false)
 {
 	setFont(KGlobalSettings::smallestReadableFont());
 
 	setToolTip(partition().deviceNode() + '\n' + partition().fileSystem().name() + ' ' + Capacity(partition()).toString());
 
 	updateChildren();
+}
+
+QList<PartWidget*> PartWidget::childWidgets()
+{
+	QList<PartWidget*> rval;
+
+	foreach(QObject* o, children())
+		if (PartWidget* w = qobject_cast<PartWidget*>(o))
+			rval.append(w);
+
+	return rval;
 }
 
 /** Updates the widget's children */
@@ -64,35 +69,20 @@ void PartWidget::updateChildren()
 		w->deleteLater();
 	}
 
-	childWidgets().clear();
+	foreach(const Partition* child, partition().children())
+		new PartWidget(this, child);
 
-	if (showChildren())
-	{
-		foreach(const Partition* child, partition().children())
-		{
-			childWidgets().append(new PartWidget(this, partTableWidget(), child));
-			childWidgets().last()->show();
-		}
-
-		positionChildren(this, partition().children(), childWidgets());
-	}
-}
-
-/** @return true if this is the currently active widget */
-bool PartWidget::active() const
-{
-	return partTableWidget() != NULL && partTableWidget()->activeWidget() == this;
+	positionChildren(this, partition().children(), childWidgets());
 }
 
 void PartWidget::resizeEvent(QResizeEvent*)
 {
- 	if (showChildren())
- 		positionChildren(this, partition().children(), childWidgets());
+	positionChildren(this, partition().children(), childWidgets());
 }
 
 QColor PartWidget::activeColor(const QColor& col) const
 {
-	return active() ? col.darker(130) : col;
+	return isActive() ? col.darker(130) : col;
 }
 
 void PartWidget::paintEvent(QPaintEvent*)
@@ -103,7 +93,7 @@ void PartWidget::paintEvent(QPaintEvent*)
 	QPainter painter(this);
 
 	// draw border
-	painter.setPen(active() ? QColor(250, 250, 250) : QColor(20, 20, 20));
+	painter.setPen(isActive() ? QColor(250, 250, 250) : QColor(20, 20, 20));
 	painter.setBrush(activeColor(Config::fileSystemColorCode(partition().fileSystem().type())));
 	painter.drawRect(QRect(0, 0, width() - 1, height() - 1));
 
@@ -129,4 +119,3 @@ void PartWidget::paintEvent(QPaintEvent*)
 	if (boundingRect.x() > PartWidgetBase::borderWidth() && boundingRect.y() > PartWidgetBase::borderHeight())
 		painter.drawText(textRect, Qt::AlignVCenter | Qt::AlignHCenter, text);
 }
-

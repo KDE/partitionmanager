@@ -91,7 +91,7 @@ void PartResizerWidget::init(Device& d, Partition& p, qint64 minFirst, qint64 ma
 	rightHandle().setFixedSize(handleWidth(), handleHeight());
 
 	delete m_PartWidget;
-	m_PartWidget = new PartWidget(this, NULL, &partition());
+	m_PartWidget = new PartWidget(this, &partition());
 
 	if (!readOnly())
 	{

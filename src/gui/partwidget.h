@@ -27,7 +27,6 @@
 
 #include <QWidget>
 
-class PartTableWidget;
 class Partition;
 
 class QPaintEvent;
@@ -44,10 +43,11 @@ class PartWidget : public QWidget, public PartWidgetBase
 	Q_OBJECT
 
 	public:
-		PartWidget(QWidget* parent, const PartTableWidget* ptWidget, const Partition* p, bool showChildren = true);
+		PartWidget(QWidget* parent, const Partition* p);
 
 	public:
-		bool active() const;
+		void setActive(bool b) { m_Active = b; }
+		bool isActive() const { return m_Active; } /**< @return true if this is the currently active widget */
 		void updateChildren();
 
 		const Partition& partition() const { Q_ASSERT(m_Partition); return *m_Partition; } /**< @return the widget's Partition */
@@ -56,20 +56,13 @@ class PartWidget : public QWidget, public PartWidgetBase
 		void paintEvent(QPaintEvent* event);
 		void resizeEvent(QResizeEvent* event);
 
-		const PartTableWidget* partTableWidget() const { return m_PartTableWidget; }
-
-		QList<PartWidget*>& childWidgets() { return m_ChildWidgets; }
-		const QList<PartWidget*>& childWidgets() const { return m_ChildWidgets; }
-
-		bool showChildren() const { return m_ShowChildren; }
+		QList<PartWidget*> childWidgets();
 
 		QColor activeColor(const QColor& col) const;
 
 	private:
-		const PartTableWidget* m_PartTableWidget;
 		const Partition* m_Partition;
-		QList<PartWidget*> m_ChildWidgets;
-		const bool m_ShowChildren;
+		bool m_Active;
 };
 
 #endif

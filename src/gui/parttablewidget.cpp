@@ -34,7 +34,6 @@ PartTableWidget::PartTableWidget(QWidget* parent) :
 	QWidget(parent),
 	m_PartitionTable(NULL),
 	m_Widgets(),
-	m_ActiveWidget(NULL),
 	m_LabelEmpty(i18nc("@info", "Please select a device."), this),
 	m_ReadOnly(false)
 {
@@ -54,7 +53,7 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 	{
 		foreach(const Partition* p, partitionTable()->children())
 		{
-			widgets().append(new PartWidget(this, this, p));
+			widgets().append(new PartWidget(this, p));
 			widgets().last()->show();
 		}
 	}
@@ -74,20 +73,39 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 	update();
 }
 
+PartWidget* PartTableWidget::activeWidget()
+{
+	foreach (PartWidget* pw, findChildren<PartWidget*>())
+		if (pw->isActive())
+			return pw;
+
+	return NULL;
+}
+
+const PartWidget* PartTableWidget::activeWidget() const
+{
+	foreach (const PartWidget* pw, findChildren<PartWidget*>())
+		if (pw->isActive())
+			return pw;
+
+	return NULL;
+}
+
 /** Sets a widget active.
 	@param p pointer to the PartWidget to set active. May be NULL.
 */
 void PartTableWidget::setActiveWidget(PartWidget* p)
 {
-	if (isReadOnly())
+	if (isReadOnly() || p == activeWidget())
 		return;
 
-	const PartWidget* old = m_ActiveWidget;
+	if (activeWidget())
+		activeWidget()->setActive(false);
 
-	m_ActiveWidget = p;
+	if (p != NULL)
+		p->setActive(true);
 
-	if (old != activeWidget())
-		emit itemSelectionChanged(p);
+	emit itemSelectionChanged(p);
 
 	update();
 }

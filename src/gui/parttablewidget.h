@@ -47,8 +47,8 @@ class PartTableWidget : public QWidget, public PartWidgetBase
 	public:
 		void setPartitionTable(const PartitionTable* ptable);
 
-		PartWidget* activeWidget() { return m_ActiveWidget; } /**< @return the active widget or NULL if none */
-		const PartWidget* activeWidget() const { return m_ActiveWidget; } /**< @return the active widget or NULL if none */
+		PartWidget* activeWidget(); /**< @return the active widget or NULL if none */
+		const PartWidget* activeWidget() const; /**< @return the active widget or NULL if none */
 
 		void setActiveWidget(PartWidget* partWidget);
 		void setActivePartition(const Partition* p);
@@ -78,7 +78,6 @@ class PartTableWidget : public QWidget, public PartWidgetBase
 	private:
 		const PartitionTable* m_PartitionTable;
 		QList<PartWidget*> m_Widgets;
-		PartWidget* m_ActiveWidget;
 		QLabel m_LabelEmpty;
 		bool m_ReadOnly;
 };
