@@ -31,6 +31,7 @@
 
 #include <kdebug.h>
 #include <klocale.h>
+#include <kglobal.h>
 
 #include <QFile>
 #include <QTextStream>
@@ -292,9 +293,11 @@ static bool canAlignToSector(const Device& d, const Partition& p, qint64 s, cons
 	if (s < d.partitionTable()->firstUsable() || s >= d.partitionTable()->lastUsable())
 		return false;
 
-	const Partition* other = d.partitionTable()->findPartitionBySector(s, PartitionRole(PartitionRole::Logical | PartitionRole::Primary | PartitionRole::Extended | PartitionRole::Unallocated));
+	const Partition* other = d.partitionTable()->findPartitionBySector(s, PartitionRole(PartitionRole::Any));
 
-	if (other && other->roles().has(PartitionRole::Unallocated))
+	if (other && other->roles().has(PartitionRole::Unallocated) &&
+			((p.roles().has(PartitionRole::Logical) && other->roles().has(PartitionRole::Logical)) ||
+			(p.roles().has(PartitionRole::Primary) && other->roles().has(PartitionRole::Primary))))
 		other = NULL;
 
 	return other == NULL || other == &p || other == originalPartition;
