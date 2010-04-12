@@ -27,11 +27,9 @@ Bugs to fix for 1.1:
   moving the start beyond the first possible sector breaks. moving a partition
   to the left changes its size and probably more...
 
-* aligning a partition from the part resizer widget that absolutely cannot go
-  to the left or right still causes its start and end to be realigned to the
-  left and right respectively, it seems. this is now prevented in the part
-  resizer (a measure that doesn't hurt), but PartitionTable::alignPartition()
-  shouldn't make such mistakes in the first place, of course.
+* moving a partition to the left that cannot be moved because it fills up all
+  the space it can have makes it smaller and smaller because
+  PartitionTable::alignPartition() always re-aligns the right end
 
 ===============================================================================
 
