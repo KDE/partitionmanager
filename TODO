@@ -23,7 +23,15 @@ Bugs to fix for 1.1:
 * moving an empty extended partition is currently not allowed, but attempting
   to still moves it by a few pixels
 
-* resizing a partition with no free space before or after it is buggy
+* move/resize and aligning is badly broken, still: as long as align is on,
+  moving the start beyond the first possible sector breaks. moving a partition
+  to the left changes its size and probably more...
+
+* aligning a partition from the part resizer widget that absolutely cannot go
+  to the left or right still causes its start and end to be realigned to the
+  left and right respectively, it seems. this is now prevented in the part
+  resizer (a measure that doesn't hurt), but PartitionTable::alignPartition()
+  shouldn't make such mistakes in the first place, of course.
 
 ===============================================================================
 

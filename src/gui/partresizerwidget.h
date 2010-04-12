@@ -126,6 +126,8 @@ class PartResizerWidget : public QWidget
 		QWidget* draggedWidget() { return m_DraggedWidget; }
 		const QWidget* draggedWidget() const { return m_DraggedWidget; }
 
+		bool checkConstraints(qint64 first, qint64 last) const;
+
 	private:
 		Device* m_Device;
 		Partition* m_Partition;

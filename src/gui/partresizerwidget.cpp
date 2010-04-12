@@ -165,6 +165,14 @@ void PartResizerWidget::mousePressEvent(QMouseEvent* event)
 	}
 }
 
+bool PartResizerWidget::checkConstraints(qint64 first, qint64 last) const
+{
+	return (maximumFirstSector() < 0 || first <= maximumFirstSector()) &&
+		(minimumFirstSector() < 0 || first >= minimumFirstSector()) &&
+		(minimumLastSector() < 0 || last >= minimumLastSector()) &&
+		(maximumLastSector() < 0 || last <= maximumLastSector());
+}
+
 bool PartResizerWidget::movePartition(qint64 newFirstSector)
 {
 	if (maximumFirstSector() > -1 && newFirstSector > maximumFirstSector())
@@ -197,11 +205,7 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 	if (newLastSector == partition().lastSector())
 		return false;
 
-	if (newLastSector - newFirstSector + 1 != partition().length() ||
-			(maximumFirstSector() > -1 && newFirstSector > maximumFirstSector()) ||
-			(minimumFirstSector() > -1 && newFirstSector < minimumFirstSector()) ||
-			(minimumLastSector() > -1 && newLastSector < minimumLastSector()) ||
-			(maximumLastSector() > -1 && newLastSector > maximumLastSector()))
+	if (newLastSector - newFirstSector + 1 != partition().length() || !checkConstraints(newFirstSector, newLastSector))
 	{
 		kWarning() << "constraints not satisfied while trying to move partition " << partition().deviceNode();
 		return false;
@@ -225,7 +229,22 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 	partition().fileSystem().setLastSector(newLastSector);
 
 	if (align())
+	{
 		device().partitionTable()->alignPartition(device(), partition());
+
+		if (!checkConstraints(partition().firstSector(), partition().lastSector()))
+		{
+			kWarning() << "constraints not satisfied after aligning moved partition " << partition().deviceNode();
+
+			partition().setFirstSector(originalFirst);
+			partition().fileSystem().setFirstSector(originalFirst);
+
+			partition().setLastSector(originalLast);
+			partition().fileSystem().setLastSector(originalLast);
+
+			return false;
+		}
+	}
 
 	if (originalFirst != partition().firstSector() || originalLast != partition().lastSector())
 	{
