@@ -173,7 +173,7 @@ void PartitionManagerWidget::setSelectedPartition(const Partition* p)
 
 Partition* PartitionManagerWidget::selectedPartition()
 {
-	if (selectedDevice() == NULL || selectedDevice()->partitionTable() == NULL || partTableWidget().activeWidget() == NULL)
+	if (selectedDevice() == NULL || selectedDevice()->partitionTable() == NULL || partTableWidget().activeWidget() == NULL || partTableWidget().activeWidget()->partition() == NULL)
 		return NULL;
 
 	// The active partition we get from the part table widget is const; we need non-const.
