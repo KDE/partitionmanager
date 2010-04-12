@@ -23,6 +23,8 @@ Bugs to fix for 1.1:
 * moving an empty extended partition is currently not allowed, but attempting
   to still moves it by a few pixels
 
+* resizing a partition with no free space before or after it is buggy
+
 ===============================================================================
 
 For releases after 1.1:
