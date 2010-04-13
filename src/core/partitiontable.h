@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -135,9 +135,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 		static void removeUnallocated(PartitionNode* p);
 		void removeUnallocated();
 
-		static bool isAligned(const Device& d, const Partition& p);
-		static bool alignPartition(const Device& d, Partition& p, const Partition* originalPartition = NULL);
-
 		static qint64 defaultFirstUsable(const Device& d, TableType t);
 		static qint64 defaultLastUsable(const Device& d, TableType t);
 
@@ -146,7 +143,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 		static qint64 maxPrimariesForTableType(TableType l);
 		static bool tableTypeSupportsExtended(TableType l);
 		static bool tableTypeIsReadOnly(TableType l);
-		static qint64 sectorAlignment(const Device& d);
 
 	protected:
 		void setMaxPrimaries(qint32 n) { m_MaxPrimaries = n; }

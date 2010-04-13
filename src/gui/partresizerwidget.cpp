@@ -23,6 +23,7 @@
 #include "core/partition.h"
 #include "core/device.h"
 #include "core/partitiontable.h"
+#include "core/partitionalignment.h"
 
 #include "fs/filesystem.h"
 
@@ -230,7 +231,7 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 
 	if (align())
 	{
-		device().partitionTable()->alignPartition(device(), partition());
+		PartitionAlignment::alignPartition(device(), partition());
 
 		if (!checkConstraints(partition().firstSector(), partition().lastSector()))
 		{
@@ -312,7 +313,7 @@ bool PartResizerWidget::updateFirstSector(qint64 newFirstSector)
 		partition().fileSystem().setFirstSector(newFirstSector);
 
 		if (align())
-			device().partitionTable()->alignPartition(device(), partition());
+			PartitionAlignment::alignPartition(device(), partition());
 
 		if (originalFirst != partition().firstSector())
 		{
@@ -334,7 +335,7 @@ bool PartResizerWidget::checkAlignment(const Partition& child, qint64 delta) con
 	if (child.roles().has(PartitionRole::Unallocated))
 		return true;
 
-	return qAbs(delta) >= PartitionTable::sectorAlignment(device());
+	return qAbs(delta) >= PartitionAlignment::sectorAlignment(device());
 }
 
 void PartResizerWidget::resizeLogicals()
@@ -374,7 +375,7 @@ bool PartResizerWidget::updateLastSector(qint64 newLastSector)
 		partition().fileSystem().setLastSector(newLastSector);
 
 		if (align())
-			device().partitionTable()->alignPartition(device(), partition());
+			PartitionAlignment::alignPartition(device(), partition());
 
 		if (partition().lastSector() != originalLast)
 		{

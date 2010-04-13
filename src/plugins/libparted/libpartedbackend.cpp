@@ -26,6 +26,7 @@
 #include "core/device.h"
 #include "core/partition.h"
 #include "core/partitiontable.h"
+#include "core/partitionalignment.h"
 
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
@@ -357,7 +358,7 @@ void LibPartedBackend::scanDevicePartitions(PedDevice* pedDevice, Device& d, Ped
 		d.partitionTable()->setType(d, PartitionTable::msdos_sectorbased);
 
 	foreach(const Partition* part, partitions)
-		PartitionTable::isAligned(d, *part);
+		PartitionAlignment::isAligned(d, *part);
 
 	ped_disk_destroy(pedDisk);
 }
