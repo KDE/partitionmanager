@@ -39,23 +39,27 @@
 			<default>true</default>
 		</entry>
 		<entry name="minLogLevel" type="Int">
-			<label context="@label">Hide Log Messages Below</label>
+			<label context="@label">Hide log messages below</label>
 			<default>0</default>
 		</entry>
 		<entry name="sectorAlignment" type="Int">
-			<label context="@label">Partition Sector Alignment</label>
+			<label context="@label">Partition sector alignment</label>
 			<default>2048</default>
 		</entry>
 		<entry name="useCylinderAlignment" type="Bool">
-			<label context="@label">Use Cylinder Based MS-Dos Partition Alignment (Windows XP compatible)</label>
+			<label context="@label">Use cylinder based alignment (Windows XP compatible)</label>
 			<default>false</default>
 		</entry>
+		<entry name="alignDefault" type="Bool">
+			<label context="@label">Align partitions per default</label>
+			<default>true</default>
+		</entry>
 		<entry name="allowApplyOperationsAsNonRoot" type="Bool">
-			<label context="@label">Allow Applying Operations Without Administrator Privileges</label>
+			<label context="@label">Allow applying operations without administrator privileges</label>
 			<default>false</default>
 		</entry>
 		<entry key="FileSystemColorCode$(colorNumber)" type="Color">
-			<label context="@label">File System Colors</label>
+			<label context="@label">File system colors</label>
 			<parameter name="colorNumber" type="UInt" max="16"/>
 			<default param="0">252,242,220</default>
 			<default param="1">187,249,207</default>
@@ -76,19 +80,19 @@
 			<default param="16">252,242,222</default>
 		</entry>
 		<entry key="AvailableSpaceColorCode" type="Color">
-			<label context="@label">Color For Available Space</label>
+			<label context="@label">Color for available space</label>
 			<default>255,255,255</default>
 		</entry>
 		<entry key="UsedSpaceColorCode" type="Color">
-			<label context="@label">Color For Used Space</label>
+			<label context="@label">Color for used space</label>
 			<default>255,255,200</default>
 		</entry>
 		<entry key="showMenuBar" type="Bool">
-			<label context="@label">Show The Application's Menu Bar</label>
+			<label context="@label">Show the application's menu bar</label>
 			<default>true</default>
 		</entry>
 		<entry key="backend" type="String">
-			<label context="@label">Backend Plugin</label>
+			<label context="@label">Backend plugin</label>
 			<default>pmlibpartedbackendplugin</default>
 		</entry>
 		<entry key="defaultFileSystem" type="Int">
