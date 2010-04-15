@@ -5,6 +5,9 @@ Plans and ideas for 1.1:
 
 * save SMART details to html file?
 
+* allow turning off alignment globally in the config, i.e. if it's unchecked
+  there it's always per default unchecked in the size dialogs
+
 ===============================================================================
 
 Bugs to fix for 1.1:
@@ -18,18 +21,7 @@ Bugs to fix for 1.1:
 
 * make sure the default file system can indeed be created
 
-* why is not possible to move an extended partition if it's empty?
-
-* moving an empty extended partition is currently not allowed, but attempting
-  to still moves it by a few pixels
-
-* move/resize and aligning is badly broken, still: as long as align is on,
-  moving the start beyond the first possible sector breaks. moving a partition
-  to the left changes its size and probably more...
-
-* moving a partition to the left that cannot be moved because it fills up all
-  the space it can have makes it smaller and smaller because
-  PartitionTable::alignPartition() always re-aligns the right end
+* moving an empty extended partition is currently broken
 
 ===============================================================================
 
