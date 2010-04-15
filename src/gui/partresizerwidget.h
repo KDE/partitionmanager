@@ -28,6 +28,8 @@ class Partition;
 class PartWidget;
 class Device;
 
+class NewDialog;
+
 class QPaintEvent;
 class QResizeEvent;
 class QMouseEvent;
@@ -37,6 +39,8 @@ class QMouseEvent;
 */
 class PartResizerWidget : public QWidget
 {
+	friend class NewDialog;
+
 	Q_OBJECT
 	Q_DISABLE_COPY(PartResizerWidget)
 

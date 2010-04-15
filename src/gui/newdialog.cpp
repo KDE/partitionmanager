@@ -141,7 +141,9 @@ void NewDialog::onRoleChanged(bool)
 
 	setupConstraints();
 
+	dialogWidget().partResizerWidget().resizeLogicals();
 	dialogWidget().partResizerWidget().update();
+
 	updateHideAndShow();
 }
 

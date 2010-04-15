@@ -335,13 +335,12 @@ bool PartResizerWidget::checkAlignment(const Partition& child, qint64 delta) con
 
 void PartResizerWidget::resizeLogicals()
 {
-	if (!partition().roles().has(PartitionRole::Extended))
-		return;
-
 	Q_ASSERT(device().partitionTable());
 
 	device().partitionTable()->removeUnallocated(&partition());
-	device().partitionTable()->insertUnallocated(device(), &partition(), partition().firstSector());
+
+	if (partition().roles().has(PartitionRole::Extended))
+		device().partitionTable()->insertUnallocated(device(), &partition(), partition().firstSector());
 
 	partWidget().updateChildren();
 }
