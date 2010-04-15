@@ -552,18 +552,40 @@ void PartitionManagerWidget::onResizePartition()
 		return;
 	}
 
-	const qint64 freeBefore = selectedDevice()->partitionTable()->freeSectorsBefore(*selectedPartition());
-	const qint64 freeAfter = selectedDevice()->partitionTable()->freeSectorsAfter(*selectedPartition());
+	// we cannot work with selectedPartition() here because opening and closing the dialog will
+	// clear the selection, so we'll lose the partition after the dialog's been exec'd
+	Partition& p = *selectedPartition();
 
-	Partition resizedPartition(*selectedPartition());
-	QPointer<ResizeDialog> dlg = new ResizeDialog(this, *selectedDevice(), resizedPartition, selectedPartition()->firstSector() - freeBefore, freeAfter + selectedPartition()->lastSector());
+	const qint64 freeBefore = selectedDevice()->partitionTable()->freeSectorsBefore(p);
+	const qint64 freeAfter = selectedDevice()->partitionTable()->freeSectorsAfter(p);
 
-	if (dlg->exec() == KDialog::Accepted && dlg->isModified())
+	// in 1.0.x we used to copy the selected partition to a temporary Partition object and
+	// pass that to the ResizeDialog. This leads to problems with PartitionAlignment
+	// having to find out if a sector is occupied by another partition or by the original
+	// partition we did copy from here. Thus we don't do that anymore but modify the original
+	// partition and revert the modifications again before setting upt the ResizeOperation.
+	const qint64 originalFirst = p.firstSector();
+	const qint64 originalLast = p.lastSector();
+
+	QPointer<ResizeDialog> dlg = new ResizeDialog(this, *selectedDevice(), p, p.firstSector() - freeBefore, freeAfter + p.lastSector());
+
+	int status = dlg->exec();
+
+	const qint64 resizedFirst = p.firstSector();
+	const qint64 resizedLast = p.lastSector();
+
+	p.setFirstSector(originalFirst);
+	p.fileSystem().setFirstSector(originalFirst);
+
+	p.setLastSector(originalLast);
+	p.fileSystem().setLastSector(originalLast);
+
+	if (status == KDialog::Accepted)
 	{
-		if (resizedPartition.firstSector() == selectedPartition()->firstSector() && resizedPartition.lastSector() == selectedPartition()->lastSector())
-			Log(Log::information) << i18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", selectedPartition()->deviceNode());
+		if (resizedFirst == originalFirst && resizedLast == originalLast)
+			Log(Log::information) << i18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", p.deviceNode());
 		else
-			operationStack().push(new ResizeOperation(*selectedDevice(), *selectedPartition(), resizedPartition.firstSector(), resizedPartition.lastSector()));
+			operationStack().push(new ResizeOperation(*selectedDevice(), p, resizedFirst, resizedLast));
 	}
 
 	delete dlg;
