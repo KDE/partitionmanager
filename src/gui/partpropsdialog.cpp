@@ -96,8 +96,7 @@ void PartPropsDialog::setupDialog()
 	enableButtonOk(false);
 	button(KDialog::Cancel)->setFocus();
 
-	dialogWidget().partResizerWidget().setReadOnly(true);
-	dialogWidget().partResizerWidget().init(device(), partition(), partition().firstSector(), partition().lastSector());
+	dialogWidget().partResizerWidget().init(device(), partition(), partition().firstSector(), partition().lastSector(), true, false);
 
 	const QString mp = partition().mountPoints().size() == 0 ? i18nc("@item mountpoint", "(none found)") : partition().mountPoints().join(", ");
 	dialogWidget().mountPoint().setText(mp);

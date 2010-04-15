@@ -44,7 +44,7 @@ class PartResizerWidget : public QWidget
 		PartResizerWidget(QWidget* parent);
 
 	public:
-		void init(Device& d, Partition& p, qint64 minFirst, qint64 maxLast);
+		void init(Device& d, Partition& p, qint64 minFirst, qint64 maxLast, bool read_only = false, bool move_allowed = true);
 
 		qint64 totalSectors() const { return maximumLastSector() - minimumFirstSector() + 1; } /**< @return total sectors (free + Partition's length) */
 

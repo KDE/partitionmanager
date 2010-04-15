@@ -71,8 +71,11 @@ PartResizerWidget::PartResizerWidget(QWidget* parent) :
 	@param minFirst the minimum value for the first sector
 	@param maxLast the maximum value for the last sector
 */
-void PartResizerWidget::init(Device& d, Partition& p, qint64 minFirst, qint64 maxLast)
+void PartResizerWidget::init(Device& d, Partition& p, qint64 minFirst, qint64 maxLast, bool read_only, bool move_allowed)
 {
+	m_ReadOnly = read_only;
+	m_MoveAllowed = move_allowed && !read_only;
+
 	setDevice(d);
 	setPartition(p);
 
@@ -333,7 +336,7 @@ bool PartResizerWidget::checkAlignment(const Partition& child, qint64 delta) con
 
 void PartResizerWidget::resizeLogicals()
 {
-	if (!partition().roles().has(PartitionRole::Extended) || partition().children().size() == 0)
+	if (!partition().roles().has(PartitionRole::Extended))
 		return;
 
 	Q_ASSERT(device().partitionTable());
@@ -450,7 +453,9 @@ void PartResizerWidget::setMaximumLength(qint64 s)
 void PartResizerWidget::setMoveAllowed(bool b)
 {
 	m_MoveAllowed = b;
-	partWidget().setCursor(b ? Qt::SizeAllCursor : Qt::ArrowCursor);
+
+	if (m_PartWidget != NULL)
+		partWidget().setCursor(b ? Qt::SizeAllCursor : Qt::ArrowCursor);
 }
 
 qint64 PartResizerWidget::minimumFirstSector(bool aligned) const
