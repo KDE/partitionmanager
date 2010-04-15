@@ -250,7 +250,6 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 	partition().setLastSector(newLastSector);
 	partition().fileSystem().setLastSector(newLastSector);
 
-	resizeLogicals();
 	updatePositions();
 
 	emit firstSectorChanged(partition().firstSector());
