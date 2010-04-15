@@ -30,32 +30,32 @@ class Partition;
 
 class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionAlignment
 {
-	public:
-		PartitionAlignment(const Device& d, const Partition& p, const Partition* op = NULL);
+	private:
+		PartitionAlignment();
 
 	public:
-		bool alignFirstSector(const Device& d, Partition& p);
-		bool alignLastSector(const Device& d, Partition& p);
-		bool checkAlignConstraints(const Device& d, Partition& p);
-		bool alignChildren(const Device& d, Partition& p);
-		bool canAlignToSector(const Device& d, const Partition& p, qint64 s) const;
+		static bool alignPartition(const Device& d, Partition& p);
+
+		static bool checkAlignConstraints(const Device& d, Partition& p, qint64 original_length = -1);
+
+		static bool alignChildren(const Device& d, Partition& p);
+
+		static bool isAligned(const Device& d, const Partition& p, bool quiet = false);
+		static bool isAligned(const Device& d, const Partition& p, qint64 newFirst, qint64 newLast, bool quiet);
+
+		static qint64 alignedFirstSector(const Device& d, const Partition& p, qint64 s);
+
+		static qint64 alignedLastSector(const Device& d, const Partition& p, qint64 s, qint64 original_length = -1, bool original_aligned = false);
+
+		static bool canAlignToSector(const Device& d, const Partition& p, qint64 s);
 
 		static qint64 sectorAlignment(const Device& d);
-		static bool isAligned(const Device& d, const Partition& p);
-		static bool alignPartition(const Device& d, Partition& p, const Partition* originalPartition = NULL);
 
-		qint64 firstDelta() const { return m_FirstDelta; }
-		qint64 lastDelta() const { return m_LastDelta; }
-		bool isLengthAligned() const { return m_LengthAligned; }
-		const Partition* originalPartition() const { return m_OriginalPartition; }
-		qint64 originalLength() const { return m_OriginalLength; }
+		static qint64 firstDelta(const Device& d, const Partition& p, qint64 s);
 
-	private:
-		qint64 m_FirstDelta;
-		qint64 m_LastDelta;
-		bool m_LengthAligned;
-		const Partition* m_OriginalPartition;
-		qint64 m_OriginalLength;
+		static qint64 lastDelta(const Device& d, const Partition& p, qint64 s);
+
+		static bool isLengthAligned(const Device& d, const Partition& p);
 };
 
 #endif

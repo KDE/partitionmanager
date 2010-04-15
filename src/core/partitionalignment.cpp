@@ -32,129 +32,105 @@
 
 #include <config.h>
 
-PartitionAlignment::PartitionAlignment(const Device& d, const Partition& p, const Partition* op) :
-	m_FirstDelta(0),
-	m_LastDelta(0),
-	m_LengthAligned(false),
-	m_OriginalPartition(op),
-	m_OriginalLength(0)
+qint64 PartitionAlignment::firstDelta(const Device& d, const Partition& p, qint64 s)
+{
+	if (d.partitionTable()->type() == PartitionTable::msdos)
+	{
+		if (p.roles().has(PartitionRole::Logical) && s == 2 * d.sectorsPerTrack())
+			return (s - (2 * d.sectorsPerTrack())) % sectorAlignment(d);
+
+		if (p.roles().has(PartitionRole::Logical) || s == d.sectorsPerTrack())
+			return (s - d.sectorsPerTrack()) % sectorAlignment(d);
+	}
+
+	return s % sectorAlignment(d);
+}
+
+qint64 PartitionAlignment::lastDelta(const Device& d, const Partition&, qint64 s)
+{
+	return (s + 1) % sectorAlignment(d);
+}
+
+bool PartitionAlignment::isLengthAligned(const Device& d, const Partition& p)
 {
 	if (d.partitionTable()->type() == PartitionTable::msdos)
 	{
 		if (p.roles().has(PartitionRole::Logical) && p.firstSector() == 2 * d.sectorsPerTrack())
-		{
-			m_FirstDelta = (p.firstSector() - (2 * d.sectorsPerTrack())) % sectorAlignment(d);
-			m_LengthAligned = (p.length() + (2 * d.sectorsPerTrack())) % sectorAlignment(d) == 0;
-		}
-		else if (p.roles().has(PartitionRole::Logical) || p.firstSector() == d.sectorsPerTrack())
-		{
-			m_FirstDelta = (p.firstSector() - d.sectorsPerTrack()) % sectorAlignment(d);
-			m_LengthAligned = (p.length() + d.sectorsPerTrack()) % sectorAlignment(d) == 0;
-		}
-		else
-		{
-			m_FirstDelta = p.firstSector() % sectorAlignment(d);
-			m_LengthAligned = p.length() % sectorAlignment(d) == 0;
-		}
-	}
-	else
-	{
-		m_FirstDelta = p.firstSector() % sectorAlignment(d);
-		m_LengthAligned = p.length() % sectorAlignment(d) == 0;
+			return (p.length() + (2 * d.sectorsPerTrack())) % sectorAlignment(d) == 0;
+
+		if (p.roles().has(PartitionRole::Logical) || p.firstSector() == d.sectorsPerTrack())
+			return (p.length() + d.sectorsPerTrack()) % sectorAlignment(d) == 0;
 	}
 
-	m_LastDelta = (p.lastSector() + 1) % sectorAlignment(d);
+	return p.length() % sectorAlignment(d) == 0;
 }
 
-/** Aligns the given Partition on the given Device to the PartitionTable's required alignment.
+/** Aligns a Partition on a Device to the PartitionTable's required alignment.
 
 	Tries under all accounts to keep the Partition's length equal to the original length or
 	to increase it, if that is not possible. Will print a warning message to GlobalLog if
 	this is not possible.
 
-	The parameter @p originalPartition is required for cases where a Partition has just been
-	duplicated to resize or move it. This method needs to know the original because of course
-	the original does not prevent aligning to any sector allocated by it.
-
-	@see canAlignToSector(), isAligned()
-
-	@param d the Device the Partition is on
-	@param p the Partition to align
-	@param originalPartition pointer to a Partition object @p p has just been copied from or NULL
 	@return true if Partition is now properly aligned
 */
-bool PartitionAlignment::alignPartition(const Device& d, Partition& p, const Partition* originalPartition)
+bool PartitionAlignment::alignPartition(const Device& d, Partition& p)
 {
-	PartitionAlignment pa(d, p, originalPartition);
+	const qint64 originalLength = p.length();
+	const bool originalLengthAligned = isLengthAligned(d, p);
 
-	pa.alignFirstSector(d, p);
-	pa.alignLastSector(d, p);
-	pa.checkAlignConstraints(d, p);
-	pa.alignChildren(d, p);
+	if (alignedFirstSector(d, p, p.firstSector()) > p.firstSector())
+	{
+		// If the aligned sector moves the start towards the end of the drive, move the
+		// end of the partition towards the end, too, if that is possible, trying to keep the
+		// partition's length greater than or equal to its original length.
+		const qint64 numTooShort = alignedFirstSector(d, p, p.firstSector()) - p.firstSector();
+		if (canAlignToSector(d, p, p.lastSector() + numTooShort))
+		{
+			p.setLastSector(p.lastSector() + numTooShort);
+			p.fileSystem().setLastSector(p.fileSystem().lastSector() + numTooShort);
+		}
+	}
 
-	return pa.isAligned(d, p);
+	p.setFirstSector(alignedFirstSector(d, p, p.firstSector()));
+	p.fileSystem().setFirstSector(alignedFirstSector(d, p, p.firstSector()));
+
+	p.setLastSector(alignedLastSector(d, p, p.lastSector(), originalLength, originalLengthAligned));
+	p.fileSystem().setLastSector(alignedLastSector(d, p, p.lastSector(), originalLength, originalLengthAligned));
+
+	checkAlignConstraints(d, p, originalLength);
+	alignChildren(d, p);
+
+	return isAligned(d, p);
 }
 
-
-/** Checks if a given Partition on a given Device is properly aligned to the PartitionTable's
-	alignment requirements.
+/** Checks if the Partition is properly aligned to the PartitionTable's alignment requirements.
 
 	Will print warning messages to GlobalLog if the Partition's first sector is not aligned and
-	another one if the last sector is not aligned.
+	another one if the last sector is not aligned. This can be suppressed with setting the @p quiet to
+	true.
 
 	@see alignPartition(), canAlignToSector()
 
-	@param d the Device the Partition is on
-	@param p the Partition to check
+	@param d device the partition is on
+	@param p the partition to check
+	@param quiet if true, will not print warning
 	@return true if propertly aligned
 */
-bool PartitionAlignment::isAligned(const Device& d, const Partition& p)
+bool PartitionAlignment::isAligned(const Device& d, const Partition& p, bool quiet)
 {
-	// don't bother with unallocated space here.
-	if (p.roles().has(PartitionRole::Unallocated))
-		return true;
-
-	qint64 delta = 0;
-
-	if (d.partitionTable()->type() == PartitionTable::msdos)
-	{
-		// TODO: verify the following comment and code
-		// There are some special cases for aligning partitions:
-		// 1) If an extended partition starts at the beginning of the device (that would be sector 63
-		// on modern drives, equivalent to sectorsPerTrack() in any case), the first logical partition
-		// at the beginning of this extended partition starts at 2 * sectorsPerTrack().
-		// 2) If a primary or extended starts at the beginning of a device, it starts at sectorsPerTrack().
-		// 3) Any logical partition is always preceded by the extended partition table entry in the
-		// sectorsPerTrack() before it, so it's always sectorsPerTrack() "late"
-		if (p.roles().has(PartitionRole::Logical) && p.firstSector() == 2 * d.sectorsPerTrack())
-			delta = (p.firstSector() - (2 * d.sectorsPerTrack())) % sectorAlignment(d);
-		else if (p.roles().has(PartitionRole::Logical) || p.firstSector() == d.sectorsPerTrack())
-			delta = (p.firstSector() - d.sectorsPerTrack()) % sectorAlignment(d);
-		else
-			delta = p.firstSector() % sectorAlignment(d);
-	}
-	else
-		delta = p.firstSector() % sectorAlignment(d);
-
-	bool rval = true;
-
-	if (delta)
-	{
-		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> is not properly aligned (first sector: %2, modulo: %3).", p.deviceNode(), p.firstSector(), delta);
-		rval = false;
-	}
-
-	delta = (p.lastSector() + 1) % sectorAlignment(d);
-
-	if (delta)
-	{
-		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> is not properly aligned (last sector: %2, modulo: %3).", p.deviceNode(), p.lastSector(), delta);
-		rval = false;
-	}
-
-	return rval;
+	return isAligned(d, p, p.firstSector(), p.lastSector(), quiet);
 }
 
+bool PartitionAlignment::isAligned(const Device& d, const Partition& p, qint64 newFirst, qint64 newLast, bool quiet)
+{
+	if (firstDelta(d, p, newFirst) && !quiet)
+		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> is not properly aligned (first sector: %2, modulo: %3).", p.deviceNode(), newFirst, firstDelta(d, p, newFirst));
+
+	if (lastDelta(d, p, newLast) && !quiet)
+		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> is not properly aligned (last sector: %2, modulo: %3).", p.deviceNode(), newLast, lastDelta(d, p, newLast));
+
+	return firstDelta(d, p, newFirst) == 0 && lastDelta(d, p, newLast) == 0;
+}
 
 /** @return the sector size to align the partition start and end to
 */
@@ -163,11 +139,11 @@ qint64 PartitionAlignment::sectorAlignment(const Device& d)
 	return d.partitionTable()->type() == PartitionTable::msdos ? d.cylinderSize() : Config::sectorAlignment();
 }
 
-bool PartitionAlignment::alignFirstSector(const Device& d, Partition& p)
+qint64 PartitionAlignment::alignedFirstSector(const Device& d, const Partition& p, qint64 s)
 {
-	bool rval = false;
+	qint64 rval = s;
 
-	if (firstDelta())
+	if (firstDelta(d, p, s))
 	{
 		/** @todo Don't assume we always want to align to the front.
 			Always trying to align to the front solves the problem that a partition does
@@ -179,70 +155,46 @@ bool PartitionAlignment::alignFirstSector(const Device& d, Partition& p)
 		// We always want to make the partition larger, not smaller. Making it smaller
 		// might, in case it's a partition that another is being copied to, mean the partition
 		// ends up too small. So try to move the start to the front first.
-		qint64 alignedFirst = p.firstSector() - firstDelta();
+		rval = s - firstDelta(d, p, s);
 
-		// If we're now before the first usable sector, just take the first usable sector. This
-		// will happen if we're already below cylinder one and align to the front
-		if (alignedFirst < d.partitionTable()->firstUsable())
-			alignedFirst = d.partitionTable()->firstUsable();
+		// If we're now before the first usable sector, just take the first usable sector.
+		if (rval < d.partitionTable()->firstUsable())
+			rval = d.partitionTable()->firstUsable();
 
-		// Now if the cylinder boundary at the front is occupied...
-		if (!canAlignToSector(d, p, alignedFirst))
-		{
-			// ... move to the cylinder towards the end of the device ...
-			alignedFirst = p.firstSector() - firstDelta() + sectorAlignment(d);
-
-			// ... and move the end of the partition towards the end, too, if that is possible.
-			// By doing this, we still try to keep the length >= the original length. If the
-			// last sector ends up not being on a cylinder boundary by doing so, the code
-			// below will deal with that.
-			qint64 numTooShort = sectorAlignment(d) - firstDelta();
-			if (canAlignToSector(d, p, p.lastSector() + numTooShort))
-			{
-				p.setLastSector(p.lastSector() + numTooShort);
-				p.fileSystem().setLastSector(p.fileSystem().lastSector() + numTooShort);
-			}
-		}
-
-		rval = alignedFirst != p.firstSector();
-
-		p.setFirstSector(alignedFirst);
-		p.fileSystem().setFirstSector(alignedFirst);
+		// Now if the alignment sector at the front is occupied  move towards the end of the device
+		if (!canAlignToSector(d, p, rval))
+			rval = s - firstDelta(d, p, s) + sectorAlignment(d);
 	}
 
 	return rval;
 }
 
-bool PartitionAlignment::alignLastSector(const Device& d, Partition& p)
+qint64 PartitionAlignment::alignedLastSector(const Device& d, const Partition& p, qint64 s, qint64 original_length, bool original_aligned)
 {
-	bool rval = false;
+	qint64 rval = s;
 
-	if (lastDelta())
+	if (lastDelta(d, p, s))
 	{
 		// Try to align to the back first...
-		qint64 alignedLast = p.lastSector() + sectorAlignment(d) - lastDelta();
+		rval = s + sectorAlignment(d) - lastDelta(d, p, s);
 
 		// .. but if we can retain the partition length exactly by aligning to the front ...
-		if (isLengthAligned() && p.length() - originalLength() == lastDelta())
-			alignedLast -= sectorAlignment(d);
+		if (original_aligned && p.length() - original_length == lastDelta(d, p, s))
+			rval -= sectorAlignment(d);
 		// ... or if there's something there already, align to the front.
-		else if (!canAlignToSector(d, p, alignedLast))
-			alignedLast -= sectorAlignment(d);
-
-		rval = alignedLast != p.lastSector();
-		p.setLastSector(alignedLast);
-		p.fileSystem().setLastSector(alignedLast);
+		else if (!canAlignToSector(d, p, rval))
+			rval -= sectorAlignment(d);
 	}
 
 	return rval;
 }
 
-bool PartitionAlignment::checkAlignConstraints(const Device& d, Partition& p)
+bool PartitionAlignment::checkAlignConstraints(const Device& d, Partition& p, qint64 original_length)
 {
 	bool rval = false;
 
 	// Now, did we make the partition too big for its file system?
-	while (p.length() > originalLength() && p.capacity() > p.fileSystem().maxCapacity() && canAlignToSector(d, p, p.lastSector() - sectorAlignment(d)))
+	while ((original_length == -1 || p.length() > original_length) && p.capacity() > p.fileSystem().maxCapacity() && canAlignToSector(d, p, p.lastSector() - sectorAlignment(d)))
 	{
 		rval = true;
 		p.setLastSector(p.lastSector() - sectorAlignment(d));
@@ -256,41 +208,32 @@ bool PartitionAlignment::alignChildren(const Device& d, Partition& p)
 {
 	bool rval = false;
 
+	// TODO: this assumes alignment == cylinder boundaries. is that correct inside extended partitions when
+	// alignment isn't msdos legacy?
+
 	// In an extended partition we also need to align unallocated children at the beginning and at the end
 	// (there should never be a need to align non-unallocated children)
-	if (p.roles().has(PartitionRole::Extended))
+	if (p.roles().has(PartitionRole::Extended) && p.children().size() > 0)
 	{
-		if (p.children().size() > 0)
+		if (p.children().first()->roles().has(PartitionRole::Unallocated))
 		{
-			if (p.children().first()->roles().has(PartitionRole::Unallocated))
-			{
-				rval = true;
-				p.children().first()->setFirstSector(p.firstSector() + d.sectorsPerTrack());
-				p.children().first()->fileSystem().setFirstSector(p.fileSystem().firstSector() + d.sectorsPerTrack());
-			}
+			rval = true;
+			p.children().first()->setFirstSector(p.firstSector() + d.sectorsPerTrack());
+			p.children().first()->fileSystem().setFirstSector(p.fileSystem().firstSector() + d.sectorsPerTrack());
+		}
 
-			if (p.children().last()->roles().has(PartitionRole::Unallocated))
-			{
-				rval = true;
-				p.children().last()->setLastSector(p.lastSector());
-				p.children().last()->fileSystem().setLastSector(p.fileSystem().lastSector());
-			}
+		if (p.children().last()->roles().has(PartitionRole::Unallocated))
+		{
+			rval = true;
+			p.children().last()->setLastSector(p.lastSector());
+			p.children().last()->fileSystem().setLastSector(p.fileSystem().lastSector());
 		}
 	}
 
 	return rval;
 }
 
-/** Checks if a Partition can be aligned to a given sector on a given Device.
-
-	@see PartitionTable::alignPartition(), PartitionTable::isAligned()
-
-	@param d the Device the Partition is on
-	@param p the Partition to align
-	@param s the sector to align to
-	@return true if aligning to @p s is possible
-*/
-bool PartitionAlignment::canAlignToSector(const Device& d, const Partition& p, qint64 s) const
+bool PartitionAlignment::canAlignToSector(const Device& d, const Partition& p, qint64 s)
 {
 	Q_ASSERT(d.partitionTable());
 
@@ -299,10 +242,15 @@ bool PartitionAlignment::canAlignToSector(const Device& d, const Partition& p, q
 
 	const Partition* other = d.partitionTable()->findPartitionBySector(s, PartitionRole(PartitionRole::Any));
 
+	// nothing found should not happen unless there is an extended boot record there inside an
+	// extended partition
+	if (other == NULL)
+		return false;
+
 	if (other && other->roles().has(PartitionRole::Unallocated) &&
 			((p.roles().has(PartitionRole::Logical) && other->roles().has(PartitionRole::Logical)) ||
 			(p.roles().has(PartitionRole::Primary) && other->roles().has(PartitionRole::Primary))))
-		other = NULL;
+		return true;
 
-	return other == NULL || other == &p || other == originalPartition();
+	return other == &p;
 }

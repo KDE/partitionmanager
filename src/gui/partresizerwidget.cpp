@@ -168,19 +168,25 @@ void PartResizerWidget::mousePressEvent(QMouseEvent* event)
 
 bool PartResizerWidget::checkConstraints(qint64 first, qint64 last) const
 {
-	return (maximumFirstSector() < 0 || first <= maximumFirstSector()) &&
-		(minimumFirstSector() < 0 || first >= minimumFirstSector()) &&
-		(minimumLastSector() < 0 || last >= minimumLastSector()) &&
-		(maximumLastSector() < 0 || last <= maximumLastSector());
+	return (maximumFirstSector() == -1 || first <= maximumFirstSector()) &&
+		(minimumFirstSector() == 0 || first >= minimumFirstSector()) &&
+		(minimumLastSector() == -1 || last >= minimumLastSector()) &&
+		(maximumLastSector() == 0 || last <= maximumLastSector());
 }
 
 bool PartResizerWidget::movePartition(qint64 newFirstSector)
 {
-	if (maximumFirstSector() > -1 && newFirstSector > maximumFirstSector())
-		newFirstSector = maximumFirstSector();
+	const qint64 originalLength = partition().length();
+	const bool isLengthAligned = PartitionAlignment::isLengthAligned(device(), partition());
 
-	if (minimumFirstSector() > -1 && newFirstSector < minimumFirstSector())
-		newFirstSector = minimumFirstSector();
+	if (maximumFirstSector(align()) > -1 && newFirstSector > maximumFirstSector(align()))
+		newFirstSector = maximumFirstSector(align());
+
+	if (minimumFirstSector(align()) > 0 && newFirstSector < minimumFirstSector(align()))
+		newFirstSector = minimumFirstSector(align());
+
+	if (align())
+		newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector);
 
 	qint64 delta = newFirstSector - partition().firstSector();
 
@@ -189,26 +195,41 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 
 	qint64 newLastSector = partition().lastSector() + delta;
 
-	if (minimumLastSector() > -1 && newLastSector < minimumLastSector())
+	if (minimumLastSector(align()) > -1 && newLastSector < minimumLastSector(align()))
 	{
-		const qint64 deltaLast = minimumLastSector() - newLastSector;
+		const qint64 deltaLast = minimumLastSector(align()) - newLastSector;
 		newFirstSector += deltaLast;
 		newLastSector += deltaLast;
 	}
 
-	if (maximumLastSector() > -1 && newLastSector > maximumLastSector())
+	if (maximumLastSector(align()) > 0 && newLastSector > maximumLastSector(align()))
 	{
-		const qint64 deltaLast = newLastSector - maximumLastSector();
+		const qint64 deltaLast = newLastSector - maximumLastSector(align());
 		newFirstSector -= deltaLast;
 		newLastSector -= deltaLast;
 	}
 
+	if (align())
+		newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector, originalLength, isLengthAligned);
+
 	if (newLastSector == partition().lastSector())
 		return false;
 
-	if (newLastSector - newFirstSector + 1 != partition().length() || !checkConstraints(newFirstSector, newLastSector))
+	if (isLengthAligned && newLastSector - newFirstSector + 1 != partition().length())
 	{
-		kWarning() << "constraints not satisfied while trying to move partition " << partition().deviceNode();
+		kDebug() << "length changes while trying to move partition " << partition().deviceNode() << ". new first: " << newFirstSector << ", new last: " << newLastSector << ", old length: " << partition().length() << ", new length: " << newLastSector - newFirstSector + 1;
+		return false;
+	}
+
+	if (!checkConstraints(newFirstSector, newLastSector))
+	{
+		kDebug() << "constraints not satisfied while trying to move partition " << partition().deviceNode() << ". new first: " << newFirstSector << ", new last: " << newLastSector;
+		return false;
+	}
+
+	if (align() && !PartitionAlignment::isAligned(device(), partition(), newFirstSector, newLastSector, true))
+	{
+		kDebug() << "partition " << partition().deviceNode() << " not aligned but supposed to be. new first: " << newFirstSector << " delta: " << PartitionAlignment::firstDelta(device(), partition(), newFirstSector) << ", new last: " << newLastSector << ", delta: " << PartitionAlignment::lastDelta(device(), partition(), newLastSector);
 		return false;
 	}
 
@@ -220,46 +241,19 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 		return false;
 	}
 
-	const qint64 originalFirst = partition().firstSector();
-	const qint64 originalLast = partition().lastSector();
-
 	partition().setFirstSector(newFirstSector);
 	partition().fileSystem().setFirstSector(newFirstSector);
 
 	partition().setLastSector(newLastSector);
 	partition().fileSystem().setLastSector(newLastSector);
 
-	if (align())
-	{
-		PartitionAlignment::alignPartition(device(), partition());
+	resizeLogicals();
+	updatePositions();
 
-		if (!checkConstraints(partition().firstSector(), partition().lastSector()))
-		{
-			kWarning() << "constraints not satisfied after aligning moved partition " << partition().deviceNode();
+	emit firstSectorChanged(partition().firstSector());
+	emit lastSectorChanged(partition().lastSector());
 
-			partition().setFirstSector(originalFirst);
-			partition().fileSystem().setFirstSector(originalFirst);
-
-			partition().setLastSector(originalLast);
-			partition().fileSystem().setLastSector(originalLast);
-
-			return false;
-		}
-	}
-
-	if (originalFirst != partition().firstSector() || originalLast != partition().lastSector())
-	{
-		resizeLogicals();
-		updatePositions();
-	}
-
-	if (originalFirst != partition().firstSector())
-		emit firstSectorChanged(partition().firstSector());
-
-	if (originalLast != partition().lastSector())
-		emit lastSectorChanged(partition().lastSector());
-
-	return originalFirst != partition().firstSector() || originalLast != partition().lastSector();
+	return true;
 }
 
 void PartResizerWidget::mouseMoveEvent(QMouseEvent* event)
@@ -291,11 +285,11 @@ void PartResizerWidget::mouseReleaseEvent(QMouseEvent* event)
 
 bool PartResizerWidget::updateFirstSector(qint64 newFirstSector)
 {
-	if (maximumFirstSector() > -1 && newFirstSector > maximumFirstSector())
-		newFirstSector = maximumFirstSector();
+	if (maximumFirstSector(align()) > -1 && newFirstSector > maximumFirstSector(align()))
+		newFirstSector = maximumFirstSector(align());
 
-	if (minimumFirstSector() > -1 && newFirstSector < minimumFirstSector())
-		newFirstSector = minimumFirstSector();
+	if (minimumFirstSector(align()) > 0 && newFirstSector < minimumFirstSector(align()))
+		newFirstSector = minimumFirstSector(align());
 
 	const qint64 newLength = partition().lastSector() - newFirstSector + 1;
 
@@ -305,23 +299,20 @@ bool PartResizerWidget::updateFirstSector(qint64 newFirstSector)
 	if (newLength > maximumLength())
 		newFirstSector -= newLength - maximumLength();
 
+	if (align())
+		newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector);
+
 	if (newFirstSector != partition().firstSector() && (partition().children().size() == 0 || checkAlignment(*partition().children().first(), partition().firstSector() - newFirstSector)))
 	{
-		const qint64 originalFirst = partition().lastSector();
-
 		partition().setFirstSector(newFirstSector);
 		partition().fileSystem().setFirstSector(newFirstSector);
 
-		if (align())
-			PartitionAlignment::alignPartition(device(), partition());
+		resizeLogicals();
+		updatePositions();
 
-		if (originalFirst != partition().firstSector())
-		{
-			resizeLogicals();
-			updatePositions();
-			emit firstSectorChanged(partition().firstSector());
-			return true;
-		}
+		emit firstSectorChanged(partition().firstSector());
+
+		return true;
 	}
 
 	return false;
@@ -329,6 +320,8 @@ bool PartResizerWidget::updateFirstSector(qint64 newFirstSector)
 
 bool PartResizerWidget::checkAlignment(const Partition& child, qint64 delta) const
 {
+	// TODO: what is this exactly good for? and is it correct in non-cylinder-aligned
+	// situations?
 	if (!partition().roles().has(PartitionRole::Extended))
 		return true;
 
@@ -353,11 +346,11 @@ void PartResizerWidget::resizeLogicals()
 
 bool PartResizerWidget::updateLastSector(qint64 newLastSector)
 {
-	if (minimumLastSector() > -1 && newLastSector < minimumLastSector())
-		newLastSector = minimumLastSector();
+	if (minimumLastSector(align()) > -1 && newLastSector < minimumLastSector(align()))
+		newLastSector = minimumLastSector(align());
 
-	if (maximumLastSector() > -1 && newLastSector > maximumLastSector())
-		newLastSector = maximumLastSector();
+	if (maximumLastSector(align()) > 0 && newLastSector > maximumLastSector(align()))
+		newLastSector = maximumLastSector(align());
 
 	const qint64 newLength = newLastSector - partition().firstSector() + 1;
 
@@ -367,23 +360,20 @@ bool PartResizerWidget::updateLastSector(qint64 newLastSector)
 	if (newLength > maximumLength())
 		newLastSector -= newLength - maximumLength();
 
+	if (align())
+		newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector);
+
 	if (newLastSector != partition().lastSector() && (partition().children().size() == 0 || checkAlignment(*partition().children().last(), partition().lastSector() - newLastSector)))
 	{
-		const qint64 originalLast = partition().lastSector();
-
 		partition().setLastSector(newLastSector);
 		partition().fileSystem().setLastSector(newLastSector);
 
-		if (align())
-			PartitionAlignment::alignPartition(device(), partition());
+		resizeLogicals();
+		updatePositions();
 
-		if (partition().lastSector() != originalLast)
-		{
-			resizeLogicals();
-			updatePositions();
-			emit lastSectorChanged(partition().lastSector());
-			return true;
-		}
+		emit lastSectorChanged(partition().lastSector());
+
+		return true;
 	}
 
 	return false;
@@ -403,7 +393,7 @@ bool PartResizerWidget::updateLength(qint64 newLength)
 	const qint64 oldLength = partition().length();
 	qint64 delta = newLength - oldLength;
 
-	qint64 tmp = qMin(delta, maximumLastSector() - partition().lastSector());
+	qint64 tmp = qMin(delta, maximumLastSector(align()) - partition().lastSector());
 	delta -= tmp;
 
 	if (tmp != 0)
@@ -414,7 +404,7 @@ bool PartResizerWidget::updateLength(qint64 newLength)
 		emit lastSectorChanged(partition().lastSector());
 	}
 
-	tmp = qMin(delta, partition().firstSector() - minimumFirstSector());
+	tmp = qMin(delta, partition().firstSector() - minimumFirstSector(align()));
 	delta -= tmp;
 
 	if (tmp != 0)
@@ -460,7 +450,33 @@ void PartResizerWidget::setMaximumLength(qint64 s)
 void PartResizerWidget::setMoveAllowed(bool b)
 {
 	m_MoveAllowed = b;
+	partWidget().setCursor(b ? Qt::SizeAllCursor : Qt::ArrowCursor);
+}
 
-	if (!b)
-		partWidget().setCursor(Qt::ArrowCursor);
+qint64 PartResizerWidget::minimumFirstSector(bool aligned) const
+{
+	return (m_MinimumFirstSector != 0 && aligned)
+		? m_MinimumFirstSector - PartitionAlignment::firstDelta(device(), partition(), m_MinimumFirstSector) +  PartitionAlignment::sectorAlignment(device())
+		: m_MinimumFirstSector;
+}
+
+qint64 PartResizerWidget::maximumFirstSector(bool aligned) const
+{
+	return (m_MaximumFirstSector != -1 && aligned)
+		? m_MaximumFirstSector - PartitionAlignment::firstDelta(device(), partition(), m_MaximumFirstSector)
+		: m_MaximumFirstSector;
+}
+
+qint64 PartResizerWidget::minimumLastSector(bool aligned) const
+{
+	return (m_MinimumLastSector != -1 && aligned)
+		? m_MinimumLastSector - PartitionAlignment::lastDelta(device(), partition(), m_MinimumLastSector)
+		: m_MinimumLastSector;
+}
+
+qint64 PartResizerWidget::maximumLastSector(bool aligned) const
+{
+	return (m_MaximumLastSector != 0 && aligned)
+		? m_MaximumLastSector - PartitionAlignment::lastDelta(device(), partition(), m_MaximumLastSector)
+		: m_MaximumLastSector;
 }

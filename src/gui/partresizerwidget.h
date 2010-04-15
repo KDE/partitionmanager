@@ -48,16 +48,16 @@ class PartResizerWidget : public QWidget
 
 		qint64 totalSectors() const { return maximumLastSector() - minimumFirstSector() + 1; } /**< @return total sectors (free + Partition's length) */
 
-		qint64 minimumFirstSector() const { return m_MinimumFirstSector; } /**< @return the lowest allowed first sector */
+		qint64 minimumFirstSector(bool aligned = false) const; /**< @return the lowest allowed first sector */
 		void setMinimumFirstSector(qint64 s) { m_MinimumFirstSector = s; } /**< @param s the new lowest allowed first sector */
 
-		qint64 maximumFirstSector() const { return m_MaximumFirstSector; } /**< @return the highest allowed first sector */
+		qint64 maximumFirstSector(bool aligned = false) const; /**< @return the highest allowed first sector */
 		void setMaximumFirstSector(qint64 s) { m_MaximumFirstSector = s; } /**< @param s the new highest allowed first sector */
 
-		qint64 minimumLastSector() const { return m_MinimumLastSector; } /**< @return the lowest allowed last sector */
+		qint64 minimumLastSector(bool aligned = false) const; /**< @return the lowest allowed last sector */
 		void setMinimumLastSector(qint64 s) { m_MinimumLastSector = s; } /**< @param s the new lowest allowed last sector */
 
-		qint64 maximumLastSector() const { return m_MaximumLastSector; } /**< @return the highest allowed last sector */
+		qint64 maximumLastSector(bool aligned = false) const; /**< @return the highest allowed last sector */
 		void setMaximumLastSector(qint64 s) { m_MaximumLastSector = s; } /**< @param s the new highest allowed last sector */
 
 		void setMinimumLength(qint64 s);
