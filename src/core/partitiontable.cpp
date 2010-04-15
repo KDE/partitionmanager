@@ -67,8 +67,10 @@ qint64 PartitionTable::freeSectorsBefore(const Partition& p) const
 {
 	const Partition* pred = predecessor(p);
 
+	// due to the space required for extended boot records the
+	// below is NOT the same as pred->length()
 	if (pred && pred->roles().has(PartitionRole::Unallocated))
-		return pred->length();
+		return p.firstSector() - pred->firstSector();
 
 	return 0;
 }
@@ -82,8 +84,10 @@ qint64 PartitionTable::freeSectorsAfter(const Partition& p) const
 {
 	const Partition* succ = successor(p);
 
+	// due to the space required for extended boot records the
+	// below is NOT the same as succ->length()
 	if (succ && succ->roles().has(PartitionRole::Unallocated))
-		return succ->length();
+		return succ->lastSector() - p.lastSector();
 
 	return 0;
 }
