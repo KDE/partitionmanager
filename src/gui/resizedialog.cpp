@@ -33,8 +33,8 @@
 	@param freebefore number of sectors free before the Partition to resize
 	@param freeafter number of sectors free after the Partition to resize
 */
-ResizeDialog::ResizeDialog(QWidget* parent, Device& device, Partition& p, qint64 minFirst, qint64 maxLast) :
-	SizeDialogBase(parent, device, p, minFirst, maxLast),
+ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minFirst, qint64 maxLast) :
+	SizeDialogBase(parent, d, p, minFirst, maxLast),
 	m_OriginalFirstSector(p.firstSector()),
 	m_OriginalLastSector(p.lastSector())
 {
