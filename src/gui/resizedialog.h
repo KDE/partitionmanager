@@ -46,6 +46,12 @@ class ResizeDialog : public SizeDialogBase
 
 	public:
 		bool isModified() const;
+		qint64 resizedFirstSector() const { return m_ResizedFirstSector; }
+		qint64 resizedLastSector() const { return m_ResizedLastSector; }
+
+	public slots:
+		virtual void accept();
+		virtual void reject();
 
 	protected:
 		virtual bool canGrow() const;
@@ -53,6 +59,9 @@ class ResizeDialog : public SizeDialogBase
 		virtual bool canMove() const;
 		virtual void setupDialog();
 		virtual void setDirty();
+		void rollback();
+		void setResizedFirstSector(qint64 s) { m_ResizedFirstSector = s; }
+		void setResizedLastSector(qint64 s) { m_ResizedLastSector = s; }
 
 	protected:
 		qint64 originalFirstSector() const { return m_OriginalFirstSector; }
@@ -61,6 +70,8 @@ class ResizeDialog : public SizeDialogBase
 	private:
 		qint64 m_OriginalFirstSector;
 		qint64 m_OriginalLastSector;
+		qint64 m_ResizedFirstSector;
+		qint64 m_ResizedLastSector;
 };
 
 #endif

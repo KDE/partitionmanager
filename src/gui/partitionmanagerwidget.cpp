@@ -559,33 +559,25 @@ void PartitionManagerWidget::onResizePartition()
 	const qint64 freeBefore = selectedDevice()->partitionTable()->freeSectorsBefore(p);
 	const qint64 freeAfter = selectedDevice()->partitionTable()->freeSectorsAfter(p);
 
-	// in 1.0.x we used to copy the selected partition to a temporary Partition object and
-	// pass that to the ResizeDialog. This leads to problems with PartitionAlignment
-	// having to find out if a sector is occupied by another partition or by the original
-	// partition we did copy from here. Thus we don't do that anymore but modify the original
-	// partition and revert the modifications again before setting upt the ResizeOperation.
-	const qint64 originalFirst = p.firstSector();
-	const qint64 originalLast = p.lastSector();
-
 	QPointer<ResizeDialog> dlg = new ResizeDialog(this, *selectedDevice(), p, p.firstSector() - freeBefore, freeAfter + p.lastSector());
 
-	int status = dlg->exec();
-
-	const qint64 resizedFirst = p.firstSector();
-	const qint64 resizedLast = p.lastSector();
-
-	p.setFirstSector(originalFirst);
-	p.fileSystem().setFirstSector(originalFirst);
-
-	p.setLastSector(originalLast);
-	p.fileSystem().setLastSector(originalLast);
-
-	if (status == KDialog::Accepted)
+	if (dlg->exec() == KDialog::Accepted)
 	{
-		if (resizedFirst == originalFirst && resizedLast == originalLast)
+		if (dlg->resizedFirstSector() == p.firstSector() && dlg->resizedLastSector() == p.lastSector())
 			Log(Log::information) << i18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", p.deviceNode());
 		else
-			operationStack().push(new ResizeOperation(*selectedDevice(), p, resizedFirst, resizedLast));
+			operationStack().push(new ResizeOperation(*selectedDevice(), p, dlg->resizedFirstSector(), dlg->resizedLastSector()));
+	}
+
+	if (p.roles().has(PartitionRole::Extended))
+	{
+		// Even if the user dismissed the resize dialog we must update the partitions
+		// if it's an extended partition:
+		// The dialog has to remove and create unallocated children if the user resizes
+		// an extended partition. We can't know if that has happened, so to avoid
+		// any problems (like, the user resized an extended and then canceled, which would
+		// lead to the unallocated children having the wrong size) do this now.
+		updatePartitions();
 	}
 
 	delete dlg;

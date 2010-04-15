@@ -21,10 +21,15 @@
 #include "gui/sizedialogwidget.h"
 
 #include "core/partition.h"
+#include "core/device.h"
+
+#include "fs/filesystem.h"
 
 #include "ops/resizeoperation.h"
 
 #include "util/capacity.h"
+
+#include <kdebug.h>
 
 /** Creates a new ResizeDialog
 	@param parent pointer to the parent widget
@@ -36,7 +41,9 @@
 ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minFirst, qint64 maxLast) :
 	SizeDialogBase(parent, d, p, minFirst, maxLast),
 	m_OriginalFirstSector(p.firstSector()),
-	m_OriginalLastSector(p.lastSector())
+	m_OriginalLastSector(p.lastSector()),
+	m_ResizedFirstSector(p.firstSector()),
+	m_ResizedLastSector(p.lastSector())
 {
 	setCaption(i18nc("@title:window", "Resize/move partition: <filename>%1</filename>", partition().deviceNode()));
 
@@ -56,6 +63,36 @@ ResizeDialog::~ResizeDialog()
 {
 	KConfigGroup kcg(KGlobal::config(), "resizeDialog");
 	saveDialogSize(kcg);
+}
+
+void ResizeDialog::rollback()
+{
+	partition().setFirstSector(originalFirstSector());
+	partition().fileSystem().setFirstSector(originalFirstSector());
+
+	partition().setLastSector(originalLastSector());
+	partition().fileSystem().setLastSector(originalLastSector());
+
+	if (partition().roles().has(PartitionRole::Extended))
+	{
+		device().partitionTable()->removeUnallocated(&partition());
+		device().partitionTable()->insertUnallocated(device(), &partition(), partition().firstSector());
+	}
+}
+
+void ResizeDialog::accept()
+{
+	setResizedFirstSector(partition().firstSector());
+	setResizedLastSector(partition().lastSector());
+
+	rollback();
+	KDialog::accept();
+}
+
+void ResizeDialog::reject()
+{
+	rollback();
+	KDialog::reject();
 }
 
 void ResizeDialog::setupDialog()

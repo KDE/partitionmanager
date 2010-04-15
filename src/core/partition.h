@@ -36,6 +36,7 @@ class CoreBackendPartitionTable;
 class PartitionAlignment;
 
 class PartResizerWidget;
+class ResizeDialog;
 class InsertDialog;
 class NewDialog;
 class EditMountPointDialog;
@@ -81,6 +82,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 	friend class PartitionAlignment;
 
 	friend class PartResizerWidget;
+	friend class ResizeDialog;
 	friend class InsertDialog;
 	friend class NewDialog;
 	friend class EditMountPointDialog;
