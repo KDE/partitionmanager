@@ -21,14 +21,17 @@
 #include "gui/sizedetailswidget.h"
 #include "gui/partresizerwidget.h"
 #include "gui/sizedialogwidget.h"
+#include "gui/sizedetailswidget.h"
 
 #include "core/partitiontable.h"
 #include "core/device.h"
 #include "core/partition.h"
+#include "core/partitionalignment.h"
 
 #include "util/capacity.h"
 
 #include <kdebug.h>
+
 #include <config.h>
 
 SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint64 minFirst, qint64 maxLast) :
@@ -79,8 +82,6 @@ static qint64 dialogUnitToSectors(const Partition& p, int v)
 
 void SizeDialogBase::setupDialog()
 {
-	dialogWidget().partResizerWidget().init(device(), partition(), minimumFirstSector(), maximumLastSector());
-
 	// TODO: these don't belong here; the distinction between setupDialog and setupConstraints
 	// doesn't work that well, there's too much interdependency.
 	if (!canShrink())
@@ -89,8 +90,9 @@ void SizeDialogBase::setupDialog()
 	if (!canGrow())
 		dialogWidget().partResizerWidget().setMaximumLength(partition().length());
 
-	if (!canMove())
-		dialogWidget().partResizerWidget().setMoveAllowed(false);
+	dialogWidget().partResizerWidget().setMoveAllowed(canMove());
+
+	dialogWidget().partResizerWidget().init(device(), partition(), minimumFirstSector(), maximumLastSector());
 
 	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), partition().firstSector() - minimumFirstSector()));
 	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), maximumLastSector() - partition().lastSector()));
@@ -103,6 +105,9 @@ void SizeDialogBase::setupDialog()
 
 	detailsWidget().spinFirstSector().setValue(partition().firstSector());
 	detailsWidget().spinLastSector().setValue(partition().lastSector());
+
+	detailsWidget().checkAlign().setChecked(Config::alignDefault());
+	dialogWidget().partResizerWidget().setAlign(Config::alignDefault());
 }
 
 void SizeDialogBase::setupConstraints()
@@ -133,8 +138,8 @@ void SizeDialogBase::setupConstraints()
 	detailsWidget().spinFirstSector().setRange(minimumFirstSector(), maximumLastSector());
 	detailsWidget().spinLastSector().setRange(minimumFirstSector(), maximumLastSector());
 
-	detailsWidget().spinFirstSector().setSingleStep(Config::sectorAlignment());
-	detailsWidget().spinLastSector().setSingleStep(Config::sectorAlignment());
+	detailsWidget().spinFirstSector().setSingleStep(PartitionAlignment::sectorAlignment(device()));
+	detailsWidget().spinLastSector().setSingleStep(PartitionAlignment::sectorAlignment(device()));
 }
 
 void SizeDialogBase::setupConnections()
@@ -148,8 +153,7 @@ void SizeDialogBase::setupConnections()
 
 	connect(&detailsWidget().spinFirstSector(), SIGNAL(valueChanged(double)), SLOT(onSpinFirstSectorChanged(double)));
 	connect(&detailsWidget().spinLastSector(), SIGNAL(valueChanged(double)), SLOT(onSpinLastSectorChanged(double)));
-	connect(&detailsWidget().checkAlign(), SIGNAL(stateChanged(int)), SLOT(onAlignStateChanged(int)));
-
+	connect(&detailsWidget().checkAlign(), SIGNAL(toggled(bool)), SLOT(onAlignToggled(bool)));
 }
 
 void SizeDialogBase::onSpinFirstSectorChanged(double newFirst)
@@ -170,12 +174,11 @@ void SizeDialogBase::onSpinLastSectorChanged(double newLast)
 	}
 }
 
-void SizeDialogBase::onAlignStateChanged(int)
+void SizeDialogBase::onAlignToggled(bool align)
 {
-	const bool align = detailsWidget().checkAlign().isChecked();
 	dialogWidget().partResizerWidget().setAlign(align);
-	detailsWidget().spinFirstSector().setSingleStep(align ? Config::sectorAlignment() : 1);
-	detailsWidget().spinLastSector().setSingleStep(align ? Config::sectorAlignment() : 1);
+	detailsWidget().spinFirstSector().setSingleStep(align ? PartitionAlignment::sectorAlignment(device()) : 1);
+	detailsWidget().spinLastSector().setSingleStep(align ? PartitionAlignment::sectorAlignment(device()) : 1);
 }
 
 void SizeDialogBase::onFirstSectorChanged(qint64 newFirst)

@@ -80,7 +80,7 @@ class SizeDialogBase : public KDialog
 
 		void onSpinFirstSectorChanged(double newFirst);
 		void onSpinLastSectorChanged(double newLast);
-		void onAlignStateChanged(int);
+		void onAlignToggled(bool);
 
 	protected:
 		SizeDialogWidget* m_SizeDialogWidget;
