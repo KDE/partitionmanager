@@ -482,6 +482,6 @@ qint64 PartResizerWidget::minimumLastSector(bool aligned) const
 qint64 PartResizerWidget::maximumLastSector(bool aligned) const
 {
 	return (m_MaximumLastSector != 0 && aligned)
-		? m_MaximumLastSector - PartitionAlignment::lastDelta(device(), partition(), m_MaximumLastSector) + 1
+		? m_MaximumLastSector - PartitionAlignment::lastDelta(device(), partition(), m_MaximumLastSector)
 		: m_MaximumLastSector;
 }
