@@ -50,8 +50,8 @@ InsertDialog::InsertDialog(QWidget* parent, Device& device, Partition& insertedP
 	dialogWidget().hideFileSystem();
 	dialogWidget().hideLabel();
 
-	setupConstraints();
 	setupDialog();
+	setupConstraints();
 	setupConnections();
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "insertDialog"));

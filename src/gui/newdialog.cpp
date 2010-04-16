@@ -47,8 +47,8 @@ NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPart
 {
 	setCaption(i18nc("@title:window", "Create a new partition"));
 
-	setupConstraints();
 	setupDialog();
+	setupConstraints();
 	setupConnections();
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "newDialog"));

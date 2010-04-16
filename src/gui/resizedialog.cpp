@@ -51,8 +51,8 @@ ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minF
 	dialogWidget().hideFileSystem();
 	dialogWidget().hideLabel();
 
-	setupConstraints();
 	setupDialog();
+	setupConstraints();
 	setupConnections();
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "resizeDialog"));

@@ -82,16 +82,6 @@ static qint64 dialogUnitToSectors(const Partition& p, int v)
 
 void SizeDialogBase::setupDialog()
 {
-	// TODO: these don't belong here; the distinction between setupDialog and setupConstraints
-	// doesn't work that well, there's too much interdependency.
-	if (!canShrink())
-		dialogWidget().partResizerWidget().setMinimumLength(partition().length());
-
-	if (!canGrow())
-		dialogWidget().partResizerWidget().setMaximumLength(partition().length());
-
-	dialogWidget().partResizerWidget().init(device(), partition(), minimumFirstSector(), maximumLastSector(), false, canMove());
-
 	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), partition().firstSector() - minimumFirstSector()));
 	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), maximumLastSector() - partition().lastSector()));
 
@@ -105,6 +95,8 @@ void SizeDialogBase::setupDialog()
 	detailsWidget().spinLastSector().setValue(partition().lastSector());
 
 	detailsWidget().checkAlign().setChecked(Config::alignDefault());
+
+	dialogWidget().partResizerWidget().init(device(), partition(), minimumFirstSector(), maximumLastSector(), false, canMove());
 	dialogWidget().partResizerWidget().setAlign(Config::alignDefault());
 }
 

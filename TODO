@@ -17,6 +17,10 @@ Bugs to fix for 1.1:
 
 * make sure the default file system can indeed be created
 
+* fs limits in sizedialog: create ext with >4GiB, set fs to fat16 --> it's 
+  correctly resized to 4096MiB. but if align is on, the right handle can
+  still be moved to the next aligned sector
+
 ===============================================================================
 
 For releases after 1.1:
