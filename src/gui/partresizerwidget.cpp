@@ -458,9 +458,10 @@ void PartResizerWidget::setMoveAllowed(bool b)
 
 qint64 PartResizerWidget::minimumFirstSector(bool aligned) const
 {
-	return (m_MinimumFirstSector != 0 && aligned)
-		? m_MinimumFirstSector - PartitionAlignment::firstDelta(device(), partition(), m_MinimumFirstSector) +  PartitionAlignment::sectorAlignment(device())
-		: m_MinimumFirstSector;
+	if (!aligned || PartitionAlignment::firstDelta(device(), partition(), m_MinimumFirstSector) == 0)
+		return m_MinimumFirstSector;
+
+	return m_MinimumFirstSector - PartitionAlignment::firstDelta(device(), partition(), m_MinimumFirstSector) +  PartitionAlignment::sectorAlignment(device());
 }
 
 qint64 PartResizerWidget::maximumFirstSector(bool aligned) const
@@ -472,14 +473,15 @@ qint64 PartResizerWidget::maximumFirstSector(bool aligned) const
 
 qint64 PartResizerWidget::minimumLastSector(bool aligned) const
 {
-	return (m_MinimumLastSector != -1 && aligned)
-		? m_MinimumLastSector - PartitionAlignment::lastDelta(device(), partition(), m_MinimumLastSector)
-		: m_MinimumLastSector;
+	if (!aligned || PartitionAlignment::lastDelta(device(), partition(), m_MinimumLastSector) == 1)
+		return m_MinimumLastSector;
+
+	return m_MinimumLastSector - PartitionAlignment::lastDelta(device(), partition(), m_MinimumLastSector) + 1 + PartitionAlignment::sectorAlignment(device());
 }
 
 qint64 PartResizerWidget::maximumLastSector(bool aligned) const
 {
 	return (m_MaximumLastSector != 0 && aligned)
-		? m_MaximumLastSector - PartitionAlignment::lastDelta(device(), partition(), m_MaximumLastSector)
+		? m_MaximumLastSector - PartitionAlignment::lastDelta(device(), partition(), m_MaximumLastSector) + 1
 		: m_MaximumLastSector;
 }
