@@ -73,14 +73,14 @@ PartResizerWidget::PartResizerWidget(QWidget* parent) :
 */
 void PartResizerWidget::init(Device& d, Partition& p, qint64 minFirst, qint64 maxLast, bool read_only, bool move_allowed)
 {
-	m_ReadOnly = read_only;
-	m_MoveAllowed = move_allowed && !read_only;
-
 	setDevice(d);
 	setPartition(p);
 
 	setMinimumFirstSector(minFirst);
 	setMaximumLastSector(maxLast);
+
+	setReadOnly(read_only);
+	setMoveAllowed(move_allowed && !read_only);
 
 	setMinimumLength(qMax(partition().sectorsUsed(), partition().minimumSectors()));
 	setMaximumLength(qMin(totalSectors(), partition().maximumSectors()));
