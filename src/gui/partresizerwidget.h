@@ -123,7 +123,7 @@ class PartResizerWidget : public QWidget
 
 		void set(qint64 newCap, qint64 newFreeBefore, qint64 newFreeAfter);
 
-		void resizeLogicals();
+		void resizeLogicals(qint64 deltaFirst, qint64 deltaLast, bool force = false);
 
 		bool checkAlignment(const Partition& child, qint64 delta) const;
 

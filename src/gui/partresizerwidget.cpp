@@ -306,10 +306,13 @@ bool PartResizerWidget::updateFirstSector(qint64 newFirstSector)
 
 	if (newFirstSector != partition().firstSector() && (partition().children().size() == 0 || checkAlignment(*partition().children().first(), partition().firstSector() - newFirstSector)))
 	{
+		const qint64 deltaFirst = partition().firstSector() - newFirstSector;
+
 		partition().setFirstSector(newFirstSector);
 		partition().fileSystem().setFirstSector(newFirstSector);
 
-		resizeLogicals();
+		resizeLogicals(deltaFirst, 0);
+
 		updatePositions();
 
 		emit firstSectorChanged(partition().firstSector());
@@ -333,14 +336,39 @@ bool PartResizerWidget::checkAlignment(const Partition& child, qint64 delta) con
 	return qAbs(delta) >= PartitionAlignment::sectorAlignment(device());
 }
 
-void PartResizerWidget::resizeLogicals()
+void PartResizerWidget::resizeLogicals(qint64 deltaFirst, qint64 deltaLast, bool force)
 {
-	Q_ASSERT(device().partitionTable());
+	if (deltaFirst != 0 && partition().children().size() > 0 && partition().children().first()->roles().has(PartitionRole::Unallocated))
+	{
+		qint64 start = partition().children().first()->firstSector() - deltaFirst;
+		qint64 end = partition().children().first()->lastSector() + deltaLast;
+		if (PartitionTable::getUnallocatedRange(device(), partition(), start, end))
+		{
+			partition().children().first()->setFirstSector(start);
+			deltaFirst = 0;
+		}
+	}
 
-	device().partitionTable()->removeUnallocated(&partition());
+	if (deltaLast != 0 && partition().children().size() > 0 && partition().children().last()->roles().has(PartitionRole::Unallocated))
+	{
+		qint64 start = partition().children().last()->firstSector() - deltaFirst;
+		qint64 end = partition().children().last()->lastSector() + deltaLast;
+		if (PartitionTable::getUnallocatedRange(device(), partition(), start, end))
+		{
+			partition().children().last()->setLastSector(end);
+			deltaLast = 0;
+		}
+	}
 
-	if (partition().roles().has(PartitionRole::Extended))
-		device().partitionTable()->insertUnallocated(device(), &partition(), partition().firstSector());
+	if (force || deltaFirst != 0 || deltaLast != 0)
+	{
+		Q_ASSERT(device().partitionTable());
+
+		device().partitionTable()->removeUnallocated(&partition());
+
+		if (partition().roles().has(PartitionRole::Extended))
+			device().partitionTable()->insertUnallocated(device(), &partition(), partition().firstSector());
+	}
 
 	partWidget().updateChildren();
 }
@@ -366,10 +394,12 @@ bool PartResizerWidget::updateLastSector(qint64 newLastSector)
 
 	if (newLastSector != partition().lastSector() && (partition().children().size() == 0 || checkAlignment(*partition().children().last(), partition().lastSector() - newLastSector)))
 	{
+		const qint64 deltaLast = newLastSector - partition().lastSector();
+
 		partition().setLastSector(newLastSector);
 		partition().fileSystem().setLastSector(newLastSector);
 
-		resizeLogicals();
+		resizeLogicals(0, deltaLast);
 		updatePositions();
 
 		emit lastSectorChanged(partition().lastSector());
