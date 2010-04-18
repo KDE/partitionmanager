@@ -215,17 +215,8 @@ QStringList PartitionTable::flagNames(Flags flags)
 	return rval;
 }
 
-/** Creates a new unallocated Partition on the given Device.
-	@param device the Device to create the new Partition on
-	@param parent the parent PartitionNode for the new Partition
-	@param start the new Partition's start sector
-	@param end the new Partition's end sector
-	@return pointer to the newly created Partition object or NULL if the Partition could not be created
-*/
-Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64 start, qint64 end)
+bool PartitionTable::getUnallocatedRange(const Device& device, PartitionNode& parent, qint64& start, qint64& end)
 {
-	PartitionRole::Roles r = PartitionRole::Unallocated;
-
 	if (!parent.isRoot())
 	{
 		Partition* extended = dynamic_cast<Partition*>(&parent);
@@ -244,11 +235,26 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 		// at the end of the extended partition
 		if (end < extended->lastSector())
 			end -= device.partitionTable()->type() == PartitionTable::msdos ? device.sectorsPerTrack() : PartitionAlignment::sectorAlignment(device);
-
-		r |= PartitionRole::Logical;
 	}
 
-	if (end - start + 1 < PartitionAlignment::sectorAlignment(device))
+	return end - start + 1 >= PartitionAlignment::sectorAlignment(device);
+}
+
+/** Creates a new unallocated Partition on the given Device.
+	@param device the Device to create the new Partition on
+	@param parent the parent PartitionNode for the new Partition
+	@param start the new Partition's start sector
+	@param end the new Partition's end sector
+	@return pointer to the newly created Partition object or NULL if the Partition could not be created
+*/
+Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64 start, qint64 end)
+{
+	PartitionRole::Roles r = PartitionRole::Unallocated;
+
+	if (!parent.isRoot())
+		r |= PartitionRole::Logical;
+
+	if (!PartitionTable::getUnallocatedRange(device, parent, start, end))
 		return NULL;
 
 	return new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, -1);

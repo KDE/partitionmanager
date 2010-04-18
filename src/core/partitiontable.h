@@ -132,6 +132,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 		static QString flagName(Flag f);
 		static QStringList flagNames(Flags f);
 
+		static bool getUnallocatedRange(const Device& device, PartitionNode& parent, qint64& start, qint64& end);
+
 		static void removeUnallocated(PartitionNode* p);
 		void removeUnallocated();
 
