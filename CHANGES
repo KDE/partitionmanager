@@ -1,3 +1,24 @@
+1.0.2 (2010-04-23)
+==================
+
+* Copy a file system's UUID to the copied file system when creating a file
+  system from another one.
+
+* Implement a workaround for a libparted bug that makes it sometimes fail to
+  commit changes to the OS in versions earlier than 2.2.
+
+* Update the partition's file system and re-check for constraints if the
+  partition's role is changed in the "Create New Partition" dialog. This fixes
+  a bug where the user was not able to grow an extended partition if he'd
+  previously selected a file system that cannot grow beyond a certain size.
+
+* Always use the correct icons in modified ok/cancel buttons in dialogs and
+  message boxes
+
+* Fix a crash when operations to create, resize and delete an extended
+  partitions where incorrectly merged into one (bug 232092)
+
+
 1.0.1 (2010-01-09)
 ==================
 
