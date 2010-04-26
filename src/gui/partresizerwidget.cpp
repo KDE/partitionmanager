@@ -189,7 +189,7 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 		newFirstSector = minimumFirstSector(align());
 
 	if (align())
-		newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector, minimumFirstSector(align()), maximumFirstSector(align()), minimumLength(), maximumLength());
+		newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector, minimumFirstSector(align()), maximumFirstSector(align()), -1, -1);
 
 	qint64 delta = newFirstSector - partition().firstSector();
 
@@ -213,7 +213,7 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 	}
 
 	if (align())
-		newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector, minimumLastSector(align()), maximumLastSector(align()), minimumLength(), maximumLength(), originalLength, isLengthAligned);
+		newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector, minimumLastSector(align()), maximumLastSector(align()), -1, -1, originalLength, isLengthAligned);
 
 	if (newLastSector == partition().lastSector())
 		return false;

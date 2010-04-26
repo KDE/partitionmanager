@@ -17,15 +17,12 @@ Bugs to fix for 1.1:
 
 * make sure the default file system can indeed be created
 
-* fs limits in sizedialog: create ext with >4GiB, set fs to fat16 --> it's
-  correctly resized to 4096MiB. but if align is on, the right handle can
-  still be moved to the next aligned sector
-
-* changing free space before or after a partition in the size dialog base is
-  broken when align is on
-
 * Make sure progress dialog when scanning is hidden even if there are no devices
   to scan.
+
+* when changing the file system in the new dialog so that the length is
+  changed, make sure last sector is aligned if align is on and last sector was
+  aligned before
 
 ===============================================================================
 
