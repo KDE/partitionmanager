@@ -170,7 +170,7 @@ void SizeDialogBase::onAlignToggled(bool align)
 	detailsWidget().spinFirstSector().setSingleStep(align ? PartitionAlignment::sectorAlignment(device()) : 1);
 	detailsWidget().spinLastSector().setSingleStep(align ? PartitionAlignment::sectorAlignment(device()) : 1);
 
-	const int freeStep = align ? sectorsToDialogUnit(partition(), PartitionAlignment::sectorAlignment(device())) : 1;
+	const double freeStep = align ? sectorsToDialogUnit(partition(), PartitionAlignment::sectorAlignment(device())) : 1;
 
 	dialogWidget().spinFreeBefore().setSingleStep(freeStep);
 	dialogWidget().spinFreeBefore().setSingleStep(freeStep);
@@ -219,21 +219,32 @@ void SizeDialogBase::onCapacityChanged(double newCapacity)
 
 void SizeDialogBase::onFreeSpaceBeforeChanged(double newBefore)
 {
-	const qint64 newFirstSector = minimumFirstSector() + dialogUnitToSectors(partition(), newBefore);
+	const double oldBefore = sectorsToDialogUnit(partition(), partition().firstSector() - minimumFirstSector());
 
-	if (!dialogWidget().partResizerWidget().movePartition(newFirstSector))
+	qint64 newFirstSector = minimumFirstSector() + dialogUnitToSectors(partition(), newBefore);
+
+	if (detailsWidget().checkAlign().isChecked())
 	{
-		bool b = dialogWidget().partResizerWidget().updateFirstSector(newFirstSector);
+		const qint64 deltaCorrection = newBefore > oldBefore ? PartitionAlignment::firstDelta(device(), partition(), newFirstSector) : 0;
+		newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector + deltaCorrection);
+	}
 
-		if (!b)
+	bool success = dialogWidget().partResizerWidget().movePartition(newFirstSector);
+
+	if (!success)
+	{
+		success = dialogWidget().partResizerWidget().updateFirstSector(newFirstSector);
+
+		if (!success)
 		{
 			const bool state = dialogWidget().spinFreeBefore().blockSignals(true);
-			dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), partition().firstSector() - minimumFirstSector()));
+			dialogWidget().spinFreeBefore().setValue(oldBefore);
 			dialogWidget().spinFreeBefore().blockSignals(state);
 		}
 	}
 
-	setDirty();
+	if (success)
+		setDirty();
 }
 
 void SizeDialogBase::onFreeSpaceAfterChanged(double newAfter)
