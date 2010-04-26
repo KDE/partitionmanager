@@ -216,7 +216,7 @@
     </widget>
    </item>
    <item row="7" column="1" colspan="2">
-    <widget class="QSpinBox" name="m_SpinFreeBefore">
+    <widget class="QDoubleSpinBox" name="m_SpinFreeBefore">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>3</horstretch>
@@ -224,10 +224,10 @@
       </sizepolicy>
      </property>
      <property name="minimum">
-      <number>0</number>
+      <double>0.000000000000000</double>
      </property>
      <property name="maximum">
-      <number>999999999</number>
+      <double>999999999.000000000000000</double>
      </property>
     </widget>
    </item>
@@ -251,7 +251,7 @@
     </widget>
    </item>
    <item row="8" column="1" colspan="2">
-    <widget class="QSpinBox" name="m_SpinCapacity">
+    <widget class="QDoubleSpinBox" name="m_SpinCapacity">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>3</horstretch>
@@ -259,10 +259,10 @@
       </sizepolicy>
      </property>
      <property name="minimum">
-      <number>0</number>
+      <double>0.000000000000000</double>
      </property>
      <property name="maximum">
-      <number>999999999</number>
+      <double>999999999.000000000000000</double>
      </property>
     </widget>
    </item>
@@ -286,7 +286,7 @@
     </widget>
    </item>
    <item row="9" column="1" colspan="2">
-    <widget class="QSpinBox" name="m_SpinFreeAfter">
+    <widget class="QDoubleSpinBox" name="m_SpinFreeAfter">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>3</horstretch>
@@ -294,10 +294,10 @@
       </sizepolicy>
      </property>
      <property name="minimum">
-      <number>0</number>
+      <double>0.000000000000000</double>
      </property>
      <property name="maximum">
-      <number>999999999</number>
+      <double>999999999.000000000000000</double>
      </property>
     </widget>
    </item>

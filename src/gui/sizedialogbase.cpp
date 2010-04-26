@@ -70,14 +70,14 @@ qint64 SizeDialogBase::maximumLength() const
 	return qMin(maximumLastSector() - minimumFirstSector() + 1, partition().maximumSectors());
 }
 
-static int sectorsToDialogUnit(const Partition& p, qint64 v)
+static double sectorsToDialogUnit(const Partition& p, qint64 v)
 {
-	return Capacity(v * p.sectorSize()).toInt(Capacity::preferredUnit());
+	return Capacity(v * p.sectorSize()).toDouble(Capacity::preferredUnit());
 }
 
-static qint64 dialogUnitToSectors(const Partition& p, int v)
+static qint64 dialogUnitToSectors(const Partition& p, double v)
 {
-	return Capacity::unitFactor(Capacity::Byte, Capacity::preferredUnit()) * v / p.sectorSize();
+	return v * Capacity::unitFactor(Capacity::Byte, Capacity::preferredUnit()) / p.sectorSize();
 }
 
 void SizeDialogBase::setupDialog()
@@ -128,8 +128,7 @@ void SizeDialogBase::setupConstraints()
 	detailsWidget().spinFirstSector().setRange(minimumFirstSector(), maximumLastSector());
 	detailsWidget().spinLastSector().setRange(minimumFirstSector(), maximumLastSector());
 
-	detailsWidget().spinFirstSector().setSingleStep(PartitionAlignment::sectorAlignment(device()));
-	detailsWidget().spinLastSector().setSingleStep(PartitionAlignment::sectorAlignment(device()));
+	onAlignToggled(detailsWidget().checkAlign().isChecked());
 }
 
 void SizeDialogBase::setupConnections()
@@ -137,9 +136,9 @@ void SizeDialogBase::setupConnections()
 	connect(&dialogWidget().partResizerWidget(), SIGNAL(firstSectorChanged(qint64)), SLOT(onFirstSectorChanged(qint64)));
 	connect(&dialogWidget().partResizerWidget(), SIGNAL(lastSectorChanged(qint64)), SLOT(onLastSectorChanged(qint64)));
 
-	connect(&dialogWidget().spinFreeBefore(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceBeforeChanged(int)));
-	connect(&dialogWidget().spinFreeAfter(), SIGNAL(valueChanged(int)), SLOT(onFreeSpaceAfterChanged(int)));
-	connect(&dialogWidget().spinCapacity(), SIGNAL(valueChanged(int)), SLOT(onCapacityChanged(int)));
+	connect(&dialogWidget().spinFreeBefore(), SIGNAL(valueChanged(double)), SLOT(onFreeSpaceBeforeChanged(double)));
+	connect(&dialogWidget().spinFreeAfter(), SIGNAL(valueChanged(double)), SLOT(onFreeSpaceAfterChanged(double)));
+	connect(&dialogWidget().spinCapacity(), SIGNAL(valueChanged(double)), SLOT(onCapacityChanged(double)));
 
 	connect(&detailsWidget().spinFirstSector(), SIGNAL(valueChanged(double)), SLOT(onSpinFirstSectorChanged(double)));
 	connect(&detailsWidget().spinLastSector(), SIGNAL(valueChanged(double)), SLOT(onSpinLastSectorChanged(double)));
@@ -167,8 +166,14 @@ void SizeDialogBase::onSpinLastSectorChanged(double newLast)
 void SizeDialogBase::onAlignToggled(bool align)
 {
 	dialogWidget().partResizerWidget().setAlign(align);
+
 	detailsWidget().spinFirstSector().setSingleStep(align ? PartitionAlignment::sectorAlignment(device()) : 1);
 	detailsWidget().spinLastSector().setSingleStep(align ? PartitionAlignment::sectorAlignment(device()) : 1);
+
+	const int freeStep = align ? sectorsToDialogUnit(partition(), PartitionAlignment::sectorAlignment(device())) : 1;
+
+	dialogWidget().spinFreeBefore().setSingleStep(freeStep);
+	dialogWidget().spinFreeBefore().setSingleStep(freeStep);
 }
 
 void SizeDialogBase::onFirstSectorChanged(qint64 newFirst)
@@ -206,26 +211,48 @@ void SizeDialogBase::updateLength(qint64 newLength)
 	dialogWidget().spinCapacity().blockSignals(state);
 }
 
-void SizeDialogBase::onCapacityChanged(int newCapacity)
+void SizeDialogBase::onCapacityChanged(double newCapacity)
 {
 	const qint64 newLength = dialogUnitToSectors(partition(), newCapacity);
 	dialogWidget().partResizerWidget().updateLength(newLength);
 }
 
-void SizeDialogBase::onFreeSpaceBeforeChanged(int newBefore)
+void SizeDialogBase::onFreeSpaceBeforeChanged(double newBefore)
 {
 	const qint64 newFirstSector = minimumFirstSector() + dialogUnitToSectors(partition(), newBefore);
+
 	if (!dialogWidget().partResizerWidget().movePartition(newFirstSector))
-		dialogWidget().partResizerWidget().updateFirstSector(newFirstSector);
+	{
+		bool b = dialogWidget().partResizerWidget().updateFirstSector(newFirstSector);
+
+		if (!b)
+		{
+			const bool state = dialogWidget().spinFreeBefore().blockSignals(true);
+			dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), partition().firstSector() - minimumFirstSector()));
+			dialogWidget().spinFreeBefore().blockSignals(state);
+		}
+	}
+
 	setDirty();
 }
 
-void SizeDialogBase::onFreeSpaceAfterChanged(int newAfter)
+void SizeDialogBase::onFreeSpaceAfterChanged(double newAfter)
 {
 	const qint64 newLastSector = maximumLastSector() - dialogUnitToSectors(partition(), newAfter);
 	const qint64 newFirstSector = newLastSector - partition().length() + 1;
+
 	if (!dialogWidget().partResizerWidget().movePartition(newFirstSector))
-		dialogWidget().partResizerWidget().updateLastSector(newLastSector);
+	{
+		bool b = dialogWidget().partResizerWidget().updateLastSector(newLastSector);
+
+		if (!b)
+		{
+			const bool state = dialogWidget().spinFreeAfter().blockSignals(true);
+			dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), maximumLastSector() - partition().lastSector()));
+			dialogWidget().spinFreeAfter().blockSignals(state);
+		}
+	}
+
 	setDirty();
 }
 

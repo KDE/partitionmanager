@@ -74,9 +74,9 @@ class SizeDialogBase : public KDialog
 		void onFirstSectorChanged(qint64 newFirst);
 		void onLastSectorChanged(qint64 newLast);
 
-		void onCapacityChanged(int newCapacity);
-		void onFreeSpaceBeforeChanged(int newBefore);
-		void onFreeSpaceAfterChanged(int newAfter);
+		void onCapacityChanged(double newCapacity);
+		void onFreeSpaceBeforeChanged(double newBefore);
+		void onFreeSpaceAfterChanged(double newAfter);
 
 		void onSpinFirstSectorChanged(double newFirst);
 		void onSpinLastSectorChanged(double newLast);

@@ -39,9 +39,9 @@ class SizeDialogWidget : public QWidget, public Ui::SizeDialogWidgetBase
 	public:
 		PartResizerWidget& partResizerWidget() { Q_ASSERT(m_PartResizerWidget); return *m_PartResizerWidget; }
 
-		QSpinBox& spinFreeBefore() { Q_ASSERT(m_SpinFreeBefore); return *m_SpinFreeBefore; }
-		QSpinBox& spinFreeAfter() { Q_ASSERT(m_SpinFreeAfter); return *m_SpinFreeAfter; }
-		QSpinBox& spinCapacity() { Q_ASSERT(m_SpinCapacity); return *m_SpinCapacity; }
+		QDoubleSpinBox& spinFreeBefore() { Q_ASSERT(m_SpinFreeBefore); return *m_SpinFreeBefore; }
+		QDoubleSpinBox& spinFreeAfter() { Q_ASSERT(m_SpinFreeAfter); return *m_SpinFreeAfter; }
+		QDoubleSpinBox& spinCapacity() { Q_ASSERT(m_SpinCapacity); return *m_SpinCapacity; }
 
 		QLabel& labelMinSize() { Q_ASSERT(m_LabelMinSize); return *m_LabelMinSize; }
 		QLabel& labelMaxSize() { Q_ASSERT(m_LabelMaxSize); return *m_LabelMaxSize; }
