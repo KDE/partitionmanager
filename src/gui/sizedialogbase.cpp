@@ -226,7 +226,7 @@ void SizeDialogBase::onFreeSpaceBeforeChanged(double newBefore)
 	if (detailsWidget().checkAlign().isChecked())
 	{
 		const qint64 deltaCorrection = newBefore > oldBefore ? PartitionAlignment::firstDelta(device(), partition(), newFirstSector) : 0;
-		newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector + deltaCorrection);
+		newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector + deltaCorrection, minimumFirstSector(), -1, minimumLength(), maximumLength());
 	}
 
 	bool success = dialogWidget().partResizerWidget().movePartition(newFirstSector);
@@ -255,7 +255,7 @@ void SizeDialogBase::onFreeSpaceAfterChanged(double newAfter)
 	if (detailsWidget().checkAlign().isChecked())
 	{
 		const qint64 deltaCorrection = newAfter > oldAfter ? PartitionAlignment::lastDelta(device(), partition(), newLastSector) : 0;
-		newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector - deltaCorrection);
+		newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector - deltaCorrection, -1, maximumLastSector(), minimumLength(), maximumLength());
 	}
 
 	const qint64 newFirstSector = newLastSector - partition().length() + 1;

@@ -189,7 +189,7 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 		newFirstSector = minimumFirstSector(align());
 
 	if (align())
-		newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector);
+		newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector, minimumFirstSector(align()), maximumFirstSector(align()), minimumLength(), maximumLength());
 
 	qint64 delta = newFirstSector - partition().firstSector();
 
@@ -213,7 +213,7 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 	}
 
 	if (align())
-		newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector, originalLength, isLengthAligned);
+		newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector, minimumLastSector(align()), maximumLastSector(align()), minimumLength(), maximumLength(), originalLength, isLengthAligned);
 
 	if (newLastSector == partition().lastSector())
 		return false;
@@ -302,7 +302,7 @@ bool PartResizerWidget::updateFirstSector(qint64 newFirstSector)
 		newFirstSector -= newLength - maximumLength();
 
 	if (align())
-		newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector);
+		newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector, minimumFirstSector(align()), maximumFirstSector(align()), minimumLength(), maximumLength());
 
 	if (newFirstSector != partition().firstSector() && (partition().children().size() == 0 || checkAlignment(*partition().children().first(), partition().firstSector() - newFirstSector)))
 	{
@@ -390,7 +390,7 @@ bool PartResizerWidget::updateLastSector(qint64 newLastSector)
 		newLastSector -= newLength - maximumLength();
 
 	if (align())
-		newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector);
+		newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector, minimumLastSector(align()), maximumLastSector(align()), minimumLength(), maximumLength());
 
 	if (newLastSector != partition().lastSector() && (partition().children().size() == 0 || checkAlignment(*partition().children().last(), partition().lastSector() - newLastSector)))
 	{
