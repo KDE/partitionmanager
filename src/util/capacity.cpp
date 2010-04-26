@@ -91,12 +91,22 @@ qint64 Capacity::toInt() const
 	return static_cast<qint64>(m_Size / unitFactor(Byte, bestUnit()));
 }
 
-/** Returns the Capacity converted to the given Unit.
+/** Returns the Capacity as qint64 converted to the given Unit.
 	@param u the Unit to use
-	@return the Capacity in the given Unit */
+	@return the Capacity in the given Unit as qint64
+*/
 qint64 Capacity::toInt(Unit u) const
 {
 	return static_cast<qint64>(m_Size / unitFactor(Byte, u));
+}
+
+/** Returns the Capacity as double converted to the given Unit.
+	@param u the Unit to use
+	@return the Capacity in the given Unit as double
+*/
+double Capacity::toDouble(Unit u) const
+{
+	return static_cast<double>(m_Size) / unitFactor(Byte, u);
 }
 
 /** Returns a factor to convert between two Units.

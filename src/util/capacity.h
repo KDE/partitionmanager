@@ -61,6 +61,7 @@ class Capacity
 		QString toString(Unit u, Flags f) const;
 		qint64 toInt() const;
 		qint64 toInt(Unit u) const;
+		double toDouble(Unit u) const;
 
 		QString unitName() const;
 		Unit bestUnit() const;
