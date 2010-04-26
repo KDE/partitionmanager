@@ -43,7 +43,6 @@ class InsertDialog : public SizeDialogBase
 
 	protected:
 		const Partition& destPartition() const { return m_DestPartition; }
-		virtual void setupDialog();
 		virtual bool canGrow() const;
 		virtual bool canShrink() const { return false; }
 

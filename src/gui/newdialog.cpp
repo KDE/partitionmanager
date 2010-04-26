@@ -23,7 +23,6 @@
 
 #include "core/partition.h"
 #include "core/device.h"
-#include "core/partitionalignment.h"
 
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
@@ -62,9 +61,6 @@ NewDialog::~NewDialog()
 
 void NewDialog::setupDialog()
 {
-	if (detailsWidget().checkAlign().isChecked())
-		PartitionAlignment::alignPartition(device(), partition());
-
 	QStringList fsNames;
 	foreach (const FileSystem* fs, FileSystemFactory::map())
 		if (fs->supportCreate() != FileSystem::cmdSupportNone && fs->type() != FileSystem::Extended)

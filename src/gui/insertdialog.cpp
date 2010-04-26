@@ -22,7 +22,6 @@
 #include "gui/sizedetailswidget.h"
 
 #include "core/partition.h"
-#include "core/partitionalignment.h"
 
 #include "fs/filesystem.h"
 
@@ -62,14 +61,6 @@ InsertDialog::~InsertDialog()
 {
 	KConfigGroup kcg(KGlobal::config(), "insertDialog");
 	saveDialogSize(kcg);
-}
-
-void InsertDialog::setupDialog()
-{
-	if (detailsWidget().checkAlign().isChecked())
-		PartitionAlignment::alignPartition(device(), partition());
-
-	SizeDialogBase::setupDialog();
 }
 
 bool InsertDialog::canGrow() const
