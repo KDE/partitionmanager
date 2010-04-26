@@ -249,14 +249,24 @@ void SizeDialogBase::onFreeSpaceBeforeChanged(double newBefore)
 
 void SizeDialogBase::onFreeSpaceAfterChanged(double newAfter)
 {
-	const qint64 newLastSector = maximumLastSector() - dialogUnitToSectors(partition(), newAfter);
+	const double oldAfter = sectorsToDialogUnit(partition(), maximumLastSector() - partition().lastSector());
+	qint64 newLastSector = maximumLastSector() - dialogUnitToSectors(partition(), newAfter);
+
+	if (detailsWidget().checkAlign().isChecked())
+	{
+		const qint64 deltaCorrection = newAfter > oldAfter ? PartitionAlignment::lastDelta(device(), partition(), newLastSector) : 0;
+		newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector - deltaCorrection);
+	}
+
 	const qint64 newFirstSector = newLastSector - partition().length() + 1;
 
-	if (!dialogWidget().partResizerWidget().movePartition(newFirstSector))
-	{
-		bool b = dialogWidget().partResizerWidget().updateLastSector(newLastSector);
+	bool success = dialogWidget().partResizerWidget().movePartition(newFirstSector);
 
-		if (!b)
+	if (!success)
+	{
+		success = dialogWidget().partResizerWidget().updateLastSector(newLastSector);
+
+		if (!success)
 		{
 			const bool state = dialogWidget().spinFreeAfter().blockSignals(true);
 			dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), maximumLastSector() - partition().lastSector()));
@@ -264,7 +274,8 @@ void SizeDialogBase::onFreeSpaceAfterChanged(double newAfter)
 		}
 	}
 
-	setDirty();
+	if (success)
+		setDirty();
 }
 
 const PartitionTable& SizeDialogBase::partitionTable() const
