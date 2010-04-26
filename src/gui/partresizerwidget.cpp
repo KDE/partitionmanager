@@ -429,10 +429,18 @@ bool PartResizerWidget::updateLength(qint64 newLength)
 
 	if (tmp != 0)
 	{
-		partition().setLastSector(partition().lastSector() + tmp);
-		partition().fileSystem().setLastSector(partition().lastSector() + tmp);
+		qint64 newLastSector = partition().lastSector() + tmp;
 
-		emit lastSectorChanged(partition().lastSector());
+		if (align())
+			newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector, minimumLastSector(align()), maximumLastSector(align()), minimumLength(), maximumLength());
+
+		if (newLastSector != partition().lastSector())
+		{
+			partition().setLastSector(newLastSector);
+			partition().fileSystem().setLastSector(newLastSector);
+
+			emit lastSectorChanged(partition().lastSector());
+		}
 	}
 
 	tmp = qMin(delta, partition().firstSector() - minimumFirstSector(align()));
@@ -440,10 +448,18 @@ bool PartResizerWidget::updateLength(qint64 newLength)
 
 	if (tmp != 0)
 	{
-		partition().setFirstSector(partition().firstSector() - tmp);
-		partition().fileSystem().setFirstSector(partition().firstSector() - tmp);
+		qint64 newFirstSector = partition().firstSector() - tmp;
 
-		emit firstSectorChanged(partition().firstSector());
+		if (align())
+			newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector, minimumFirstSector(align()), maximumFirstSector(align()), minimumLength(), maximumLength());
+
+		if (newFirstSector != partition().firstSector())
+		{
+			partition().setFirstSector(newFirstSector);
+			partition().fileSystem().setFirstSector(newFirstSector);
+
+			emit firstSectorChanged(partition().firstSector());
+		}
 	}
 
 	if (partition().length() != oldLength)
