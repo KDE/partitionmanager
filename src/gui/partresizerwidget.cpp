@@ -410,69 +410,6 @@ bool PartResizerWidget::updateLastSector(qint64 newLastSector)
 	return false;
 }
 
-/** Updates the Partition's length
-	@param newLength the new length
-	@return true on success
-*/
-bool PartResizerWidget::updateLength(qint64 newLength)
-{
-	newLength = qBound(minimumLength(), newLength, qMin(totalSectors(), maximumLength()));
-
-	if (newLength == partition().length())
-		return false;
-
-	const qint64 oldLength = partition().length();
-	qint64 delta = newLength - oldLength;
-
-	qint64 tmp = qMin(delta, maximumLastSector(align()) - partition().lastSector());
-	delta -= tmp;
-
-	if (tmp != 0)
-	{
-		qint64 newLastSector = partition().lastSector() + tmp;
-
-		if (align())
-			newLastSector = PartitionAlignment::alignedLastSector(device(), partition(), newLastSector, minimumLastSector(align()), maximumLastSector(align()), minimumLength(), maximumLength());
-
-		if (newLastSector != partition().lastSector())
-		{
-			partition().setLastSector(newLastSector);
-			partition().fileSystem().setLastSector(newLastSector);
-
-			emit lastSectorChanged(partition().lastSector());
-		}
-	}
-
-	tmp = qMin(delta, partition().firstSector() - minimumFirstSector(align()));
-	delta -= tmp;
-
-	if (tmp != 0)
-	{
-		qint64 newFirstSector = partition().firstSector() - tmp;
-
-		if (align())
-			newFirstSector = PartitionAlignment::alignedFirstSector(device(), partition(), newFirstSector, minimumFirstSector(align()), maximumFirstSector(align()), minimumLength(), maximumLength());
-
-		if (newFirstSector != partition().firstSector())
-		{
-			partition().setFirstSector(newFirstSector);
-			partition().fileSystem().setFirstSector(newFirstSector);
-
-			emit firstSectorChanged(partition().firstSector());
-		}
-	}
-
-	if (partition().length() != oldLength)
-	{
-		emit lengthChanged(partition().length());
-		updatePositions();
-
-		return true;
-	}
-
-	return false;
-}
-
 /** Sets the minimum sectors the Partition can be long.
 	@note This value can never be less than 0 and never be higher than totalSectors()
 	@param s the new minimum length

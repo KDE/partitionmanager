@@ -41,6 +41,7 @@ class InsertDialog;
 class NewDialog;
 class EditMountPointDialog;
 class PartPropsDialog;
+class SizeDialogBase;
 
 class CreateFileSystemOperation;
 class RestoreOperation;
@@ -86,6 +87,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 	friend class NewDialog;
 	friend class EditMountPointDialog;
 	friend class PartPropsDialog;
+	friend class SizeDialogBase;
 
 	friend class CreateFileSystemOperation;
 	friend class RestoreOperation;

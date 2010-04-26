@@ -155,7 +155,7 @@ void NewDialog::onFilesystemChanged(int idx)
 
 	setupConstraints();
 
-	dialogWidget().partResizerWidget().updateLength(partition().length());
+	updateLength(partition().length());
 	dialogWidget().partResizerWidget().update();
 
 	updateHideAndShow();

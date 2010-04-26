@@ -70,6 +70,10 @@ class SizeDialogBase : public KDialog
 		virtual void setDirty() {}
 		virtual void updateLength(qint64 newLength);
 
+		virtual bool align() const;
+		virtual qint64 minimumLastSector() const;
+		virtual qint64 maximumFirstSector() const;
+
 	protected slots:
 		void onFirstSectorChanged(qint64 newFirst);
 		void onLastSectorChanged(qint64 newLast);

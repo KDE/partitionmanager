@@ -85,10 +85,8 @@ class PartResizerWidget : public QWidget
 	signals:
 		void firstSectorChanged(qint64);
 		void lastSectorChanged(qint64);
-		void lengthChanged(qint64);
 
 	public slots:
-		bool updateLength(qint64 newLength);
 		bool updateFirstSector(qint64 newFirstSector);
 		bool updateLastSector(qint64 newLastSector);
 		bool movePartition(qint64 newFirstSector);
