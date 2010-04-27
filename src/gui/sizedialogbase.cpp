@@ -159,8 +159,8 @@ void SizeDialogBase::onSpinFreeBeforeChanged(double newBefore)
 	if (success)
 		setDirty();
 	else
-		// TODO: this is wrong, we cannot just revert the entry of invalid data here. instead,
-		// use the spin box's validator
+		// TODO: this is not the best solution: we should prevent the user from entering
+		// illegal values with a validator
 		updateSpinFreeBefore(dialogUnitToSectors(partition(), oldBefore));
 }
 
@@ -252,7 +252,8 @@ void SizeDialogBase::onSpinFreeAfterChanged(double newAfter)
 	if (success)
 		setDirty();
 	else
-		// TODO: see above, this isn't the correct solution
+		// TODO: this is not the best solution: we should prevent the user from entering
+		// illegal values with a validator
 		updateSpinFreeAfter(dialogUnitToSectors(partition(), oldAfter));
 }
 
@@ -261,8 +262,8 @@ void SizeDialogBase::onSpinFirstSectorChanged(double newFirst)
 	if (newFirst >= minimumFirstSector() && dialogWidget().partResizerWidget().updateFirstSector(newFirst))
 		setDirty();
 	else
-		// TODO: this is not the correct solution - we cannot overwrite here if newFirst is
-		// invalid, we need to handle this in the spin box with the validator
+		// TODO: this is not the best solution: we should prevent the user from entering
+		// illegal values with a validator
 		updateSpinFirstSector(partition().firstSector());
 }
 
@@ -271,7 +272,8 @@ void SizeDialogBase::onSpinLastSectorChanged(double newLast)
 	if (newLast <= maximumLastSector() && dialogWidget().partResizerWidget().updateLastSector(newLast))
 		setDirty();
 	else
-		// TODO: see above
+		// TODO: this is not the best solution: we should prevent the user from entering
+		// illegal values with a validator
 		updateSpinLastSector(partition().lastSector());
 }
 
@@ -303,6 +305,11 @@ void SizeDialogBase::onAlignToggled(bool align)
 	dialogWidget().spinFreeBefore().setSingleStep(capacityStep);
 	dialogWidget().spinFreeBefore().setSingleStep(capacityStep);
 	dialogWidget().spinCapacity().setSingleStep(capacityStep);
+
+	// if align is on, turn off keyboard tracking for all spin boxes to avoid the two clashing
+	foreach(QAbstractSpinBox* box, dialogWidget().findChildren<QAbstractSpinBox*>() +
+			detailsWidget().findChildren<QAbstractSpinBox*>())
+		box->setKeyboardTracking(!align);
 }
 
 void SizeDialogBase::updateSpinFreeBefore(qint64 sectorsFreeBefore)
