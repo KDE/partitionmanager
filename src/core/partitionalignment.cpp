@@ -121,7 +121,7 @@ qint64 PartitionAlignment::alignedFirstSector(const Device& d, const Partition& 
 	while (s < d.partitionTable()->firstUsable() || s < min_first || (max_length > -1 && p.lastSector() - s + 1 > max_length))
 		s += sectorAlignment(d);
 
-	while (s > d.partitionTable()->lastUsable() || (max_first > -1 && s > max_first) ||  p.lastSector() - s + 1 < min_length)
+	while (s > d.partitionTable()->lastUsable() || (max_first > -1 && s > max_first) || p.lastSector() - s + 1 < min_length)
 		s -= sectorAlignment(d);
 
 	return s;
