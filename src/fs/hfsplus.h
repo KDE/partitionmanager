@@ -21,6 +21,8 @@
 
 #define HFSPLUS__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -34,7 +36,7 @@ namespace FS
 	/** @brief An hfsplus file system.
 		@author vl@fidra.de
 	 */
-	class hfsplus : public FileSystem
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT hfsplus : public FileSystem
 	{
 		public:
 			hfsplus(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
@@ -50,10 +52,10 @@ namespace FS
 			virtual CommandSupportType supportCheck() const { return m_Check; }
 			virtual CommandSupportType supportCopy() const { return m_Copy; }
 			virtual CommandSupportType supportBackup() const { return m_Backup; }
-			
+
 			virtual qint64 maxCapacity() const;
-			
-		protected:
+
+		public:
 			static CommandSupportType m_GetUsed;
 			static CommandSupportType m_Shrink;
 			static CommandSupportType m_Move;

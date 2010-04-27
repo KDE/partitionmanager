@@ -21,6 +21,8 @@
 
 #define JFS__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -34,7 +36,7 @@ namespace FS
 	/** @brief A JFS file system.
 		@author vl@fidra.de
 	 */
-	class jfs : public FileSystem
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT jfs : public FileSystem
 	{
 		public:
 			jfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
@@ -60,7 +62,7 @@ namespace FS
 
 			virtual qint64 minCapacity() const;
 
-		protected:
+		public:
 			static CommandSupportType m_GetUsed;
 			static CommandSupportType m_GetLabel;
 			static CommandSupportType m_Create;

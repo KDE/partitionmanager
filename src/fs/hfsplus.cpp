@@ -43,7 +43,7 @@ namespace FS
 		m_Check = findExternal("hpfsck") ? cmdSupportFileSystem : cmdSupportNone;
 
 		m_GetUsed = cmdSupportCore;
-		m_Shrink = cmdSupportCore;
+		m_Shrink = cmdSupportNone;
 		m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Backup = cmdSupportCore;
@@ -53,7 +53,7 @@ namespace FS
 	{
 		return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
-	
+
 	bool hfsplus::check(Report& report, const QString& deviceNode) const
 	{
 		ExternalCommand cmd(report, "hpfsck", QStringList() << "-v" << deviceNode);

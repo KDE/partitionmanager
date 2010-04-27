@@ -1,8 +1,5 @@
 Plans and ideas for 1.1:
 
-* don't hardcode any support for libparted-related stuff like shrinking fat16
-  in the file system classes.
-
 * save SMART details to html file?
 
 ===============================================================================
@@ -30,7 +27,9 @@ For releases after 1.1:
   libraries to achieve the same things. Libraries in this case being libntfs-3g
   and libext2fs. There's one for reiserfs too, iirc.
 
-* Convert the fs implementations into plugins.
+* Convert the fs implementations into plugins. Redesign the support-stuff, make
+  that more flexible (no statics in the FS classes, some helper class or at
+  least an array in FileSystem).
 
 * Write a udisks backend plugin.
 

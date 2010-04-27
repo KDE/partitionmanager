@@ -31,6 +31,10 @@
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
 
+#include "fs/fat16.h"
+#include "fs/hfs.h"
+#include "fs/hfsplus.h"
+
 #include "util/globallog.h"
 
 #include <QString>
@@ -274,6 +278,14 @@ LibPartedBackend::LibPartedBackend(QObject*, const QList<QVariant>&) :
 	CoreBackend()
 {
 	ped_exception_set_handler(pedExceptionHandler);
+}
+
+void LibPartedBackend::initFSSupport()
+{
+	FS::fat16::m_Shrink = FileSystem::cmdSupportBackend;
+	FS::fat16::m_Grow = FileSystem::cmdSupportBackend;
+	FS::hfs::m_Shrink = FileSystem::cmdSupportBackend;
+	FS::hfsplus::m_Shrink = FileSystem::cmdSupportBackend;
 }
 
 /** Scans a Device for Partitions.

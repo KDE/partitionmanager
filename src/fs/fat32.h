@@ -21,6 +21,8 @@
 
 #define FAT32__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/fat16.h"
 
 #include <qglobal.h>
@@ -37,7 +39,7 @@ namespace FS
 
 		@author vl@fidra.de
 	 */
-	class fat32 : public fat16
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT fat32 : public fat16
 	{
 		public:
 			fat32(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
@@ -47,7 +49,7 @@ namespace FS
 
 			virtual bool create(Report& report, const QString& deviceNode) const;
 			virtual bool updateUUID(Report& report, const QString& deviceNode) const;
-			
+
 			virtual qint64 minCapacity() const;
 			virtual qint64 maxCapacity() const;
 	};

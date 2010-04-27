@@ -38,6 +38,9 @@
 #include "fs/unknown.h"
 #include "fs/xfs.h"
 
+#include "backend/corebackendmanager.h"
+#include "backend/corebackend.h"
+
 FileSystemFactory::FileSystems FileSystemFactory::m_FileSystems;
 
 /** Initializes the instance. */
@@ -81,6 +84,8 @@ void FileSystemFactory::init()
 	FS::unformatted::init();
 	FS::unknown::init();
 	FS::xfs::init();
+
+	CoreBackendManager::self()->backend()->initFSSupport();
 }
 
 /** Creates a new FileSystem

@@ -21,6 +21,8 @@
 
 #define EXT4__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/ext2.h"
 
 #include <qglobal.h>
@@ -37,7 +39,7 @@ namespace FS
 
 		@author vl@fidra.de
 	 */
-	class ext4 : public ext2
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT ext4 : public ext2
 	{
 		public:
 			ext4(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

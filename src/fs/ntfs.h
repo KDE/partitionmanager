@@ -21,6 +21,8 @@
 
 #define NTFS__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -34,7 +36,7 @@ namespace FS
 	/** @brief An NTFS file system.
 		@author vl@fidra.de
 	 */
-	class ntfs : public FileSystem
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT ntfs : public FileSystem
 	{
 		public:
 			ntfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
@@ -66,7 +68,7 @@ namespace FS
 
 			virtual qint64 maxCapacity() const;
 
-		protected:
+		public:
 			static CommandSupportType m_GetUsed;
 			static CommandSupportType m_GetLabel;
 			static CommandSupportType m_Create;

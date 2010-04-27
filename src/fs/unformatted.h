@@ -21,6 +21,8 @@
 
 #define UNFORMATTED__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -34,19 +36,19 @@ namespace FS
 	/** @brief A pseudo file system for unformatted partitions.
 		@author vl@fidra.de
 	 */
-	class unformatted : public FileSystem
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT unformatted : public FileSystem
 	{
 		public:
 			unformatted(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
 
 		public:
 			static void init() {}
-			
+
 			virtual bool create(Report&, const QString&) const;
 
 			virtual CommandSupportType supportCreate() const { return m_Create; }
-			
-		protected:
+
+		public:
 			static CommandSupportType m_Create;
 	};
 }

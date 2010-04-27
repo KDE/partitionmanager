@@ -53,6 +53,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 	public:
 		virtual const KAboutData& about() const { return *m_AboutData; }
 
+		virtual void initFSSupport() = 0;
+
 		virtual QList<Device*> scanDevices() = 0;
 		virtual Device* scanDevice(const QString& device_node) = 0;
 		virtual CoreBackendDevice* openDevice(const QString& device_node) = 0;

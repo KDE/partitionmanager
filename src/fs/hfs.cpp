@@ -48,7 +48,7 @@ namespace FS
 		m_Check = findExternal("hfsck") ? cmdSupportFileSystem : cmdSupportNone;
 
 		m_GetUsed = cmdSupportCore;
-		m_Shrink = cmdSupportCore;
+		m_Shrink = cmdSupportNone;
 
 		m_Move = m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Backup = cmdSupportCore;

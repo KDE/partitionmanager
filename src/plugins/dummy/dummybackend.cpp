@@ -64,6 +64,10 @@ DummyBackend::DummyBackend(QObject*, const QList<QVariant>&) :
 {
 }
 
+void DummyBackend::initFSSupport()
+{
+}
+
 QList<Device*> DummyBackend::scanDevices()
 {
 	QList<Device*> result;

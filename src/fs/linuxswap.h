@@ -21,6 +21,8 @@
 
 #define LINUXSWAP__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -34,7 +36,7 @@ namespace FS
 	/** @brief A linux swap pseudo file system.
 		@author vl@fidra.de
 	 */
-	class linuxswap : public FileSystem
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT linuxswap : public FileSystem
 	{
 		public:
 			linuxswap(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
@@ -64,7 +66,7 @@ namespace FS
 			virtual CommandSupportType supportSetLabel() const { return m_SetLabel; }
 			virtual CommandSupportType supportGetUUID() const { return m_GetUUID; }
 
-		protected:
+		public:
 			static CommandSupportType m_Create;
 			static CommandSupportType m_Grow;
 			static CommandSupportType m_Shrink;

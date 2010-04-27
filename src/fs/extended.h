@@ -21,6 +21,8 @@
 
 #define EXTENDED__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -30,14 +32,14 @@ class QString;
 namespace FS
 {
 	/** @brief An extended file system.
-	
+
 		A FileSystem for an extended Partition. Of course, extended partitions do not actually have
 		a file system, but we need this to be able to create, grow, shrink or move them.
-	
+
 		@author vl@fidra.de
 	 */
-	
-	class extended : public FileSystem
+
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT extended : public FileSystem
 	{
 		public:
 			extended(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
@@ -51,8 +53,8 @@ namespace FS
 			virtual CommandSupportType supportGrow() const { return m_Grow; }
 			virtual CommandSupportType supportShrink() const { return m_Shrink; }
 			virtual CommandSupportType supportMove() const { return m_Move; }
-			
-		protected:
+
+		public:
 			static CommandSupportType m_Create;
 			static CommandSupportType m_Grow;
 			static CommandSupportType m_Shrink;

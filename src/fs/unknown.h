@@ -21,6 +21,8 @@
 
 #define UNKNOWN__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -30,7 +32,7 @@ namespace FS
 	/** @brief A pseudo file system for partitions whose file system we cannot determine.
 		@author vl@fidra.de
 	*/
-	class unknown : public FileSystem
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT unknown : public FileSystem
 	{
 		public:
 			unknown(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

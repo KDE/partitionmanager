@@ -21,6 +21,8 @@
 
 #define UFS__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -32,7 +34,7 @@ namespace FS
 	/** @brief A UFS file system.
 		@author vl@fidra.de
 	 */
-	class ufs : public FileSystem
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT ufs : public FileSystem
 	{
 		public:
 			ufs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
@@ -43,8 +45,8 @@ namespace FS
 			virtual CommandSupportType supportMove() const { return m_Move; }
 			virtual CommandSupportType supportCopy() const { return m_Copy; }
 			virtual CommandSupportType supportBackup() const { return m_Backup; }
-			
-		protected:
+
+		public:
 			static CommandSupportType m_Move;
 			static CommandSupportType m_Copy;
 			static CommandSupportType m_Backup;

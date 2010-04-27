@@ -83,11 +83,11 @@ bool ResizeFileSystemJob::run(Report& parent)
 
 		switch(support)
 		{
-			case FileSystem::cmdSupportCore:
+			case FileSystem::cmdSupportBackend:
 			{
 				Report* childReport = report->newChild();
 				childReport->line() << i18nc("@info/plain", "Resizing a %1 file system using internal backend functions.", partition().fileSystem().name());
-				rval = resizeFileSystemInternal(*childReport);
+				rval = resizeFileSystemBackend(*childReport);
 				break;
 			}
 
@@ -112,7 +112,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 	return rval;
 }
 
-bool ResizeFileSystemJob::resizeFileSystemInternal(Report& report)
+bool ResizeFileSystemJob::resizeFileSystemBackend(Report& report)
 {
 	bool rval = false;
 

@@ -60,8 +60,8 @@ namespace FS
 		m_GetUsed = m_Check = findExternal("fsck.msdos", QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetLabel = cmdSupportCore;
 		m_SetLabel = cmdSupportFileSystem;
-		m_Grow = cmdSupportCore;
-		m_Shrink = cmdSupportCore;
+		m_Grow = cmdSupportNone;
+		m_Shrink = cmdSupportNone;
 		m_Move = cmdSupportCore;
 		m_Copy = cmdSupportCore;
 		m_Backup = cmdSupportCore;

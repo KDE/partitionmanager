@@ -21,6 +21,8 @@
 
 #define FAT16__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -34,7 +36,7 @@ namespace FS
 	/** @brief A fat16 file system.
 		@author vl@fidra.de
 	 */
-	class fat16 : public FileSystem
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT fat16 : public FileSystem
 	{
 		public:
 			fat16(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t = FileSystem::Fat16);
@@ -64,7 +66,7 @@ namespace FS
 			virtual qint64 minCapacity() const;
 			virtual qint64 maxCapacity() const;
 
-		protected:
+		public:
 			static CommandSupportType m_GetUsed;
 			static CommandSupportType m_GetLabel;
 			static CommandSupportType m_SetLabel;

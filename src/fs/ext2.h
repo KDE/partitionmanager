@@ -21,6 +21,8 @@
 
 #define EXT2__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -34,7 +36,7 @@ namespace FS
 	/** @brief An ext2 file system.
 		@author vl@fidra.de
 	*/
-	class ext2 : public FileSystem
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT ext2 : public FileSystem
 	{
 		public:
 			ext2(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t = FileSystem::Ext2);
@@ -64,7 +66,7 @@ namespace FS
 
 			virtual qint64 maxCapacity() const;
 
-		protected:
+		public:
 			static CommandSupportType m_GetUsed;
 			static CommandSupportType m_GetLabel;
 			static CommandSupportType m_Create;

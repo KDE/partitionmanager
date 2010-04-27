@@ -69,9 +69,10 @@ class FileSystem
 		/** The type of support for a given FileSystem action */
 		enum CommandSupportType
 		{
-			cmdSupportNone = 0,		/**< no support */
-			cmdSupportCore = 1,	/**< internal support */
-			cmdSupportFileSystem = 2		/**< supported by some external command */
+			cmdSupportNone = 0,             /**< no support */
+			cmdSupportCore = 1,             /**< internal support */
+			cmdSupportFileSystem = 2,       /**< supported by some external command */
+			cmdSupportBackend = 4           /**< supported by the backend */
 		};
 
 		Q_DECLARE_FLAGS(CommandSupportTypes, CommandSupportType)

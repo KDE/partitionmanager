@@ -21,6 +21,8 @@
 
 #define REISER4__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
@@ -34,7 +36,7 @@ namespace FS
 	/** @brief A Reiser4 file system.
 		@author vl@fidra.de
 	 */
-	class reiser4 : public FileSystem
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT reiser4 : public FileSystem
 	{
 		public:
 			reiser4(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
@@ -54,7 +56,7 @@ namespace FS
 			virtual CommandSupportType supportCopy() const { return m_Copy; }
 			virtual CommandSupportType supportBackup() const { return m_Backup; }
 
-		protected:
+		public:
 			static CommandSupportType m_GetUsed;
 			static CommandSupportType m_GetLabel;
 			static CommandSupportType m_Create;
