@@ -12,9 +12,6 @@ Plans and ideas for 1.1:
 
 Bugs to fix for 1.1:
 
-* copy&paste seems broken wrt alignment when copying from cylinder aligned to
-  sector aligned drives (maybe even more than that)
-
 * make sure the default file system can indeed be created
 
 * handling of illegal values in the size dialog spin boxes is not correct: we
