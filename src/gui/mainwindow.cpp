@@ -937,6 +937,7 @@ void MainWindow::onSettingsChanged()
 		{
 			deviceScanner().setupConnections();
 			scanDevices();
+			FileSystemFactory::init();
 		}
 		else
 			close();
