@@ -45,6 +45,9 @@ class SmartDialog : public KDialog
 		SmartDialog(QWidget* parent, Device& d);
 		~SmartDialog();
 
+	protected slots:
+		void saveSmartReport();
+
 	protected:
 		void setupDialog();
 		void setupConnections();
@@ -54,6 +57,10 @@ class SmartDialog : public KDialog
 
 		SmartDialogWidget& dialogWidget() { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
 		const SmartDialogWidget& dialogWidget() const { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
+
+		QString toHtml() const;
+		QString htmlHeader() const;
+		QString htmlFooter() const;
 
 	private:
 		Device& m_Device;
