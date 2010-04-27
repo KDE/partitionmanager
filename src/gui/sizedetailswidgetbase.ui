@@ -70,7 +70,7 @@
     </widget>
    </item>
    <item row="3" column="1">
-    <widget class="QDoubleSpinBox" name="m_SpinFirstSector">
+    <widget class="FormattedSpinBox" name="m_SpinFirstSector">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>3</horstretch>
@@ -108,7 +108,7 @@
     </widget>
    </item>
    <item row="4" column="1">
-    <widget class="QDoubleSpinBox" name="m_SpinLastSector">
+    <widget class="FormattedSpinBox" name="m_SpinLastSector">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>3</horstretch>
@@ -177,6 +177,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FormattedSpinBox</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>gui/formattedspinbox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

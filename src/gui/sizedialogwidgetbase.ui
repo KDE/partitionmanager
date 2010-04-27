@@ -216,7 +216,7 @@
     </widget>
    </item>
    <item row="7" column="1" colspan="2">
-    <widget class="QDoubleSpinBox" name="m_SpinFreeBefore">
+    <widget class="FormattedSpinBox" name="m_SpinFreeBefore">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>3</horstretch>
@@ -251,7 +251,7 @@
     </widget>
    </item>
    <item row="8" column="1" colspan="2">
-    <widget class="QDoubleSpinBox" name="m_SpinCapacity">
+    <widget class="FormattedSpinBox" name="m_SpinCapacity">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>3</horstretch>
@@ -286,7 +286,7 @@
     </widget>
    </item>
    <item row="9" column="1" colspan="2">
-    <widget class="QDoubleSpinBox" name="m_SpinFreeAfter">
+    <widget class="FormattedSpinBox" name="m_SpinFreeAfter">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>3</horstretch>
@@ -335,6 +335,11 @@
    <extends>QWidget</extends>
    <header>gui/partresizerwidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FormattedSpinBox</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>gui/formattedspinbox.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
