@@ -614,6 +614,8 @@ void MainWindow::on_m_DeviceScanner_finished()
 {
 #if !defined(NO_THREADED_DEVICE_SCANNER)
 	QReadLocker lockDevices(&operationStack().lock());
+
+	scanProgressDialog().setProgress(100);
 #endif
 
 	if (!operationStack().previewDevices().isEmpty())

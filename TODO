@@ -17,9 +17,6 @@ Bugs to fix for 1.1:
 
 * make sure the default file system can indeed be created
 
-* Make sure progress dialog when scanning is hidden even if there are no devices
-  to scan.
-
 * handling of illegal values in the size dialog spin boxes is not correct: we
   need to make use of the validator, not just overwrite with the previous value
   if the new one is not legal. i.e., we must constantly update the valid ranges
