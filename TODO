@@ -9,8 +9,6 @@ Plans and ideas for 1.1:
 
 Bugs to fix for 1.1:
 
-* make sure the default file system can indeed be created
-
 * handling of illegal values in the size dialog spin boxes is not correct: we
   need to make use of the validator, not just overwrite with the previous value
   if the new one is not legal. i.e., we must constantly update the valid ranges

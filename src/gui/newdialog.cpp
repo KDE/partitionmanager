@@ -72,7 +72,8 @@ void NewDialog::setupDialog()
 		dialogWidget().comboFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
 	QString selected = FileSystem::nameForType(FileSystem::defaultFileSystem());
-	dialogWidget().comboFileSystem().setCurrentIndex(dialogWidget().comboFileSystem().findText(selected));
+	const int idx = dialogWidget().comboFileSystem().findText(selected);
+	dialogWidget().comboFileSystem().setCurrentIndex(idx != -1 ? idx : 0);
 
 	dialogWidget().radioPrimary().setVisible(partitionRoles() & PartitionRole::Primary);
 	dialogWidget().radioExtended().setVisible(partitionRoles() & PartitionRole::Extended);

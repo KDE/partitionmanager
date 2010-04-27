@@ -42,7 +42,8 @@ FileSystem::Type GeneralPageWidget::defaultFileSystem() const
 
 void GeneralPageWidget::setDefaultFileSystem(FileSystem::Type t)
 {
-	comboDefaultFileSystem().setCurrentIndex(comboDefaultFileSystem().findText(FileSystem::nameForType(t)));
+	const int idx = comboDefaultFileSystem().findText(FileSystem::nameForType(t));
+	comboDefaultFileSystem().setCurrentIndex(idx != -1 ? idx : 0);
 }
 
 QString GeneralPageWidget::backend() const
