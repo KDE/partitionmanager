@@ -68,19 +68,28 @@ class SizeDialogBase : public KDialog
 		virtual qint64 minimumFirstSector() const { return m_MinimumFirstSector; }
 		virtual qint64 maximumLastSector() const { return m_MaximumLastSector; }
 		virtual void setDirty() {}
-		virtual void updateLength(qint64 newLength);
+		virtual void updateSpinCapacity(qint64 newLengthInSectors);
 
 		virtual bool align() const;
 		virtual qint64 minimumLastSector() const;
 		virtual qint64 maximumFirstSector() const;
 
-	protected slots:
-		void onFirstSectorChanged(qint64 newFirst);
-		void onLastSectorChanged(qint64 newLast);
+		virtual void updateSpinFirstSector(qint64 newFirst);
+		virtual void updateSpinFreeBefore(qint64 sectorsFreeBefore);
 
-		void onCapacityChanged(double newCapacity);
-		void onFreeSpaceBeforeChanged(double newBefore);
-		void onFreeSpaceAfterChanged(double newAfter);
+		virtual void updateSpinLastSector(qint64 newLast);
+		virtual void updateSpinFreeAfter(qint64 sectorsFreeAfter);
+
+		virtual void setMinimumLength(qint64 s) { m_MinimumLength = s; }
+		virtual void setMaximumLength(qint64 s) { m_MaximumLength = s; }
+
+	protected slots:
+		void onResizerWidgetFirstSectorChanged(qint64 newFirst);
+		void onResizerWidgetLastSectorChanged(qint64 newLast);
+
+		void onSpinCapacityChanged(double newCapacity);
+		void onSpinFreeBeforeChanged(double newBefore);
+		void onSpinFreeAfterChanged(double newAfter);
 
 		void onSpinFirstSectorChanged(double newFirst);
 		void onSpinLastSectorChanged(double newLast);
@@ -93,6 +102,8 @@ class SizeDialogBase : public KDialog
 		Partition& m_Partition;
 		qint64 m_MinimumFirstSector;
 		qint64 m_MaximumLastSector;
+		qint64 m_MinimumLength;
+		qint64 m_MaximumLength;
 };
 
 #endif
