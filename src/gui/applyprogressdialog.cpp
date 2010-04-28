@@ -29,6 +29,7 @@
 #include "jobs/job.h"
 
 #include "util/report.h"
+#include "util/htmlreport.h"
 
 #include <QCloseEvent>
 #include <QTime>
@@ -392,9 +393,9 @@ void ApplyProgressDialog::saveReport()
 
 	if (tempFile.open())
 	{
-		tempFile.write(Report::htmlHeader().toUtf8());
+		tempFile.write(HtmlReport::header().toUtf8());
 		tempFile.write(report().toHtml().toUtf8());
-		tempFile.write(Report::htmlFooter().toUtf8());
+		tempFile.write(HtmlReport::footer().toUtf8());
 
 		tempFile.close();
 
@@ -417,9 +418,9 @@ void ApplyProgressDialog::browserReport()
 
 	if (file.open())
 	{
-		file.write(Report::htmlHeader().toUtf8());
+		file.write(HtmlReport::header().toUtf8());
 		file.write(report().toHtml().toUtf8());
-		file.write(Report::htmlFooter().toUtf8());
+		file.write(HtmlReport::footer().toUtf8());
 
 		// set the temp file's permission for everyone to read it.
 		file.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ReadGroup | QFile::ReadOther);

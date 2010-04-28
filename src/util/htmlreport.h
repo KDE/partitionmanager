@@ -17,52 +17,21 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(SMARTDIALOG__H)
+#if !defined(HTMLREPORT__H)
 
-#define SMARTDIALOG__H
+#define HTMLREPORT__H
 
-#include <kdialog.h>
-
-class Device;
-class SmartDialogWidget;
-
-class QWidget;
 class QString;
-class QPoint;
 
-/** @brief Show SMART properties.
-
-	Dialog that shows SMART status and properties for a device
-
-	@author vl@fidra.de
-*/
-class SmartDialog : public KDialog
+class HtmlReport
 {
-	Q_OBJECT
-	Q_DISABLE_COPY(SmartDialog)
+	public:
+		HtmlReport();
 
 	public:
-		SmartDialog(QWidget* parent, Device& d);
-		~SmartDialog();
-
-	protected slots:
-		void saveSmartReport();
-
-	protected:
-		void setupDialog();
-		void setupConnections();
-
-		Device& device() { return m_Device; }
-		const Device& device() const { return m_Device; }
-
-		SmartDialogWidget& dialogWidget() { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
-		const SmartDialogWidget& dialogWidget() const { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
-
-		QString toHtml() const;
-
-	private:
-		Device& m_Device;
-		SmartDialogWidget* m_DialogWidget;
+		static QString tableLine(const QString& label, const QString contents);
+		static QString header();
+		static QString footer();
 };
 
 #endif

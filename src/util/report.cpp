@@ -18,6 +18,7 @@
  ***************************************************************************/
 
 #include "util/report.h"
+#include "util/htmlreport.h"
 
 #include "backend/corebackend.h"
 #include "backend/corebackendmanager.h"
@@ -63,58 +64,6 @@ Report* Report::newChild(const QString& cmd)
 	 Report* r = new Report(this, cmd);
 	 m_Children.append(r);
 	 return r;
-}
-
-static QString tableLine(const QString& label, const QString contents)
-{
-	QString s;
-
-	s += "<tr>\n";
-	s += QString("<td style='font-weight:bold;padding-right:20px;'>%1</td>\n").arg(Qt::escape(label));
-	s += QString("<td>%1</td>\n").arg(Qt::escape(contents));
-	s += "</tr>\n";
-
-	return s;
-}
-
-QString Report::htmlHeader()
-{
-	QString s = QString(
-		"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n"
-		"\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
-		"<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n"
-		"<head>\n"
-		"	<title>%1</title>\n"
-		"	<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n"
-		"</head>\n\n"
-		"<body>\n"
-	).arg(i18n("%1: Operation Report", Qt::escape(KGlobal::mainComponent().aboutData()->programName())));
-
-	s += QString("<h1>%1</h1>\n\n").arg(i18n("%1: Operation Report", Qt::escape(KGlobal::mainComponent().aboutData()->programName())));
-
-	struct utsname info;
-	uname(&info);
-	const QString unameString = QString(info.sysname) + ' ' + info.nodename + ' ' + info.release + ' ' + info.version + ' ' + info.machine;
-
-	s += "<table>\n";
-	s += tableLine(i18n("Date:"), KGlobal::locale()->formatDateTime(KDateTime::currentLocalDateTime()));
-	s += tableLine(i18n("Program version:"), KGlobal::mainComponent().aboutData()->version());
-	s += tableLine(i18n("Backend:"), QString("%1 (%2)").arg(CoreBackendManager::self()->backend()->about().programName()).arg(CoreBackendManager::self()->backend()->about().version()));
-	s += tableLine(i18n("KDE version:"), KDE_VERSION_STRING);
-	s += tableLine(i18n("Machine:"), unameString);
-	s += tableLine(i18n("User ID:"), QString::number(geteuid()));
-	s += "</table>\n<br/>\n";
-
-	return s;
-}
-
-QString Report::htmlFooter()
-{
-	QString s;
-
-	s += "\n\n</body>\n</html>\n";
-
-	return s;
 }
 
 /**

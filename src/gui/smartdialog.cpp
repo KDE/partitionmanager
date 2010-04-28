@@ -24,27 +24,23 @@
 #include "core/smartstatus.h"
 #include "core/smartattribute.h"
 
-#include "backend/corebackend.h"
-#include "backend/corebackendmanager.h"
-
 #include "util/helpers.h"
+#include "util/htmlreport.h"
 
 #include <kdebug.h>
 #include <kpushbutton.h>
 #include <kiconloader.h>
 #include <klocale.h>
-#include <kglobal.h>
-#include <kglobalsettings.h>
-#include <kdatetime.h>
-#include <kcomponentdata.h>
 #include <kfiledialog.h>
 #include <kio/copyjob.h>
 #include <kio/netaccess.h>
 #include <kio/jobuidelegate.h>
 #include <kmessagebox.h>
 #include <ktemporaryfile.h>
-#include <kaboutdata.h>
 #include <kicon.h>
+#include <kglobalsettings.h>
+#include <kglobal.h>
+#include <klocale.h>
 
 #include <QTreeWidgetItem>
 #include <QTextStream>
@@ -151,22 +147,31 @@ void SmartDialog::setupConnections()
 	connect(this, SIGNAL(user1Clicked()), SLOT(saveSmartReport()));
 }
 
-static QString tableLine(const QString& label, const QString contents)
-{
-	QString s;
-
-	s += "<tr>\n";
-	s += QString("<td style='font-weight:bold;padding-right:20px;'>%1</td>\n").arg(Qt::escape(label));
-	s += QString("<td>%1</td>\n").arg(Qt::escape(contents));
-	s += "</tr>\n";
-
-	return s;
-}
-
 QString SmartDialog::toHtml() const
 {
 	QString rval;
 	QTextStream s(&rval);
+
+	if (device().smartStatus().status())
+		s << HtmlReport::tableLine(i18n("SMART status:"), i18nc("@label SMART disk status", "good"));
+	else
+		s << HtmlReport::tableLine(i18n("SMART status:"), i18nc("@label SMART disk status", "BAD"));
+
+	const QString badSectors = device().smartStatus().badSectors() > 0
+			? KGlobal::locale()->formatNumber(device().smartStatus().badSectors(), 0)
+			: i18nc("@label SMART number of bad sectors", "none");
+
+	s << HtmlReport::tableLine(i18n("Model:"), device().smartStatus().modelName())
+		<< HtmlReport::tableLine(i18n("Serial number:"), device().smartStatus().serial())
+		<< HtmlReport::tableLine(i18n("Firmware revision:"), device().smartStatus().firmware())
+		<< HtmlReport::tableLine(i18n("Temperature:"), SmartStatus::tempToString(device().smartStatus().temp()))
+		<< HtmlReport::tableLine(i18n("Bad sectors:"), badSectors)
+		<< HtmlReport::tableLine(i18n("Powered on for:"), KGlobal::locale()->formatDuration(device().smartStatus().poweredOn()))
+		<< HtmlReport::tableLine(i18n("Power cycles:"), KGlobal::locale()->formatNumber(device().smartStatus().powerCycles(), 0))
+		<< HtmlReport::tableLine(i18n("Self tests:"), SmartStatus::selfTestStatusToString(device().smartStatus().selfTestStatus()))
+		<< HtmlReport::tableLine(i18n("Overall assessment:"), SmartStatus::overallAssessmentToString(device().smartStatus().overall()));
+
+	s << "</table><br/>";
 
 	if (device().smartStatus().isValid())
 	{
@@ -206,71 +211,6 @@ QString SmartDialog::toHtml() const
 	return rval;
 }
 
-QString SmartDialog::htmlHeader() const
-{
-	QString rval;
-	QTextStream s(&rval);
-
-	s <<
-		"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n"
-		"\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
-		"<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n"
-		"<head>\n"
-		"	<title>"
-		<< i18n("%1: SMART Status Report", Qt::escape(KGlobal::mainComponent().aboutData()->programName()))
-		<< "</title>\n"
-		"	<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>\n"
-		"</head>\n\n"
-		"<body>\n";
-
-	s << "<h1>"
-		<< i18n("%1: SMART Status Report", Qt::escape(KGlobal::mainComponent().aboutData()->programName()))
-		<< "</h1>\n\n";
-
-	struct utsname info;
-	uname(&info);
-	const QString unameString = QString(info.sysname) + ' ' + info.nodename + ' ' + info.release + ' ' + info.version + ' ' + info.machine;
-
-	s << "<table>\n"
-		<< tableLine(i18n("Date:"), KGlobal::locale()->formatDateTime(KDateTime::currentLocalDateTime()))
-		<< tableLine(i18n("Program version:"), KGlobal::mainComponent().aboutData()->version())
-		<< tableLine(i18n("Backend:"), QString("%1 (%2)").arg(CoreBackendManager::self()->backend()->about().programName()).arg(CoreBackendManager::self()->backend()->about().version()))
-		<< tableLine(i18n("KDE version:"), KDE_VERSION_STRING)
-		<< tableLine(i18n("Machine:"), unameString)
-		<< "</table>\n<br/>\n";
-
-	s << "<table>\n";
-	if (device().smartStatus().status())
-		s << tableLine(i18n("SMART status:"), i18nc("@label SMART disk status", "good"));
-	else
-		s << tableLine(i18n("SMART status:"), i18nc("@label SMART disk status", "BAD"));
-
-	const QString badSectors = device().smartStatus().badSectors() > 0
-			? KGlobal::locale()->formatNumber(device().smartStatus().badSectors(), 0)
-			: i18nc("@label SMART number of bad sectors", "none");
-
-	s << tableLine(i18n("Model:"), device().smartStatus().modelName())
-		<< tableLine(i18n("Serial number:"), device().smartStatus().serial())
-		<< tableLine(i18n("Firmware revision:"), device().smartStatus().firmware())
-		<< tableLine(i18n("Temperature:"), SmartStatus::tempToString(device().smartStatus().temp()))
-		<< tableLine(i18n("Bad sectors:"), badSectors)
-		<< tableLine(i18n("Powered on for:"), KGlobal::locale()->formatDuration(device().smartStatus().poweredOn()))
-		<< tableLine(i18n("Power cycles:"), KGlobal::locale()->formatNumber(device().smartStatus().powerCycles(), 0))
-		<< tableLine(i18n("Self tests:"), SmartStatus::selfTestStatusToString(device().smartStatus().selfTestStatus()))
-		<< tableLine(i18n("Overall assessment:"), SmartStatus::overallAssessmentToString(device().smartStatus().overall()));
-
-	s << "</table><br/>";
-
-	s.flush();
-
-	return rval;
-}
-
-QString SmartDialog::htmlFooter() const
-{
-	return "\n\n</body>\n</html>\n";
-}
-
 void SmartDialog::saveSmartReport()
 {
 	const KUrl url = KFileDialog::getSaveUrl(KUrl("kfiledialog://saveSMARTReport"));
@@ -282,9 +222,11 @@ void SmartDialog::saveSmartReport()
 
 	if (tempFile.open())
 	{
-		tempFile.write(htmlHeader().toUtf8());
-		tempFile.write(toHtml().toUtf8());
-		tempFile.write(htmlFooter().toUtf8());
+		QTextStream s(&tempFile);
+
+		s << HtmlReport::header().toUtf8()
+			<< toHtml().toUtf8()
+			<< HtmlReport::footer().toUtf8();
 
 		tempFile.close();
 
