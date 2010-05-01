@@ -393,9 +393,13 @@ void ApplyProgressDialog::saveReport()
 
 	if (tempFile.open())
 	{
-		tempFile.write(HtmlReport::header().toUtf8());
-		tempFile.write(report().toHtml().toUtf8());
-		tempFile.write(HtmlReport::footer().toUtf8());
+		QTextStream s(&tempFile);
+		
+		HtmlReport html;
+		
+		s << html.header()
+			<< report().toHtml()
+			<< html.footer();
 
 		tempFile.close();
 
@@ -418,9 +422,13 @@ void ApplyProgressDialog::browserReport()
 
 	if (file.open())
 	{
-		file.write(HtmlReport::header().toUtf8());
-		file.write(report().toHtml().toUtf8());
-		file.write(HtmlReport::footer().toUtf8());
+		QTextStream s(&file);
+
+		HtmlReport html;
+		
+		s << html.header()
+			<< report().toHtml()
+			<< html.footer();
 
 		// set the temp file's permission for everyone to read it.
 		file.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ReadGroup | QFile::ReadOther);

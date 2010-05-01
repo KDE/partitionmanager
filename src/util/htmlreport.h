@@ -26,12 +26,12 @@ class QString;
 class HtmlReport
 {
 	public:
-		HtmlReport();
+		HtmlReport() {}
 
 	public:
 		static QString tableLine(const QString& label, const QString contents);
-		static QString header();
-		static QString footer();
+		QString header();
+		QString footer();
 };
 
 #endif

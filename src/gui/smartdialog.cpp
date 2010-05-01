@@ -224,9 +224,11 @@ void SmartDialog::saveSmartReport()
 	{
 		QTextStream s(&tempFile);
 
-		s << HtmlReport::header().toUtf8()
-			<< toHtml().toUtf8()
-			<< HtmlReport::footer().toUtf8();
+		HtmlReport html;
+
+		s << html.header()
+			<< toHtml()
+			<< html.footer();
 
 		tempFile.close();
 
