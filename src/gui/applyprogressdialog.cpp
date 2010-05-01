@@ -85,6 +85,8 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
 	setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Details);
 
 	dialogWidget().treeTasks().setColumnWidth(0, width() * 0.8);
+	detailsWidget().buttonBrowser().setIcon(KIcon("document-open"));
+	detailsWidget().buttonSave().setIcon(KIcon("document-save"));
 
 	setupConnections();
 
