@@ -1,3 +1,139 @@
+1.0.60 (1.1alpha1, 2010-xx-xx)
+==============================
+
+Features added since the last feature release include:
+------------------------------------------------------
+
+* Mount point management
+
+* Support for new "sector based" alignment (vs. the traditional cylinder based
+  alignment) required for compatibility with newer disks (where the phyisical
+  sector size is 4096 bytes)
+
+* SMART status reports
+
+* Support GPT partition tables.
+
+* Support for setting volume labels on FAT16 and FAT32 file systems
+
+* Export and import a partition table in a human readable and editable format
+  similar, but for technical reasons not identical, to sfdisk's.
+
+* Support for backend plugins that do the heavy lifting. The first (and for now
+  only) implementation is libparted-based.
+
+* New operation: Shredding (i.e., securely deleting) a partition
+
+* A configuration dialog including settings for:
+
+	* File system colors
+
+	* The default file system for new partitions
+
+	* Applying operations as non-root
+
+	* Setting the log level for the log output dock.
+
+	* The backend plugin to use
+
+	* How to shred: Overwrite with zeros (faster) or random data (slower, but
+	  more secure)
+
+* Allow editing start and end sectors in size dialogs in a new "advanced"
+  dialog section.
+
+* Instantly align partition start and end in size dialogs if partition
+  alignment is on.
+
+* Show a progress dialog when scanning for devices.
+
+* A device properties dialog.
+
+
+Additional changes:
+-------------------
+
+* Allow the Information dock widget to be docked at the top of bottom
+
+* The partition list view now has more information available in additional
+  columns. The user can sort the columns and turn individual columns on and off.
+
+* Use the icon suggested by KDE's Solid backend in the Devices list.
+
+* Always select the first device on program start.
+
+* Use KDE's KIO for file transfer where possible.
+
+* Performance improvements in the dialog to change a partition's size.
+
+* The KPart and KCM have been removed.
+
+* Allow hiding/showing the menu bar.
+
+* Add a context menu to the log output with entries to save or clear the log.
+
+* GUI support for devices with more than 2^31 sectors.
+
+* Format sector and size values according to KDE settings for number formatting
+  in New Partition, Resize and Insert dialogs.
+
+* Allow fractional sizes in New Partition, Resize and Insert dialogs.
+
+
+1.0.2 (2010-04-23)
+==================
+
+* Copy a file system's UUID to the copied file system when creating a file
+  system from another one.
+
+* Implement a workaround for a libparted bug that makes it sometimes fail to
+  commit changes to the OS in versions earlier than 2.2.
+
+* Update the partition's file system and re-check for constraints if the
+  partition's role is changed in the "Create New Partition" dialog. This fixes
+  a bug where the user was not able to grow an extended partition if he'd
+  previously selected a file system that cannot grow beyond a certain size.
+
+* Always use the correct icons in modified ok/cancel buttons in dialogs and
+  message boxes
+
+* Fix a crash when operations to create, resize and delete an extended
+  partitions where incorrectly merged into one (bug 232092)
+
+
+1.0.1 (2010-01-09)
+==================
+
+* Fix a bug that made it impossible to activate or deactivate a swap file
+  system.
+
+* Correctly handle linux swap even with newer parted versions.
+
+* Ask for an administrator's password on startup so that non-KDE users can run
+  the application from their launcher.
+
+* Use the "blkid" command as an alternative to "vol_id" if the latter is
+  unavailable.
+
+* Do not crash when using the Oxygen style under KDE SC 4.4.
+
+* Do not crash when the user clicks in the partition widget with newer
+  g++ versions.
+
+* Sort devices by name after scanning.
+
+* Don't disable updates for the partition widget while applying operations.
+  This leads to corrupted graphics unter Qt4.6.
+
+* Work around a LibParted segmentation fault when the Linux Device Mapper is
+  used and /dev/mapper has non-existing entries.
+
+* The above also works around a LibParted problem when the BIOS has a floppy
+  drive configured but none is actually present.
+
+* Set item height in the partition and devices lists to 32 pixel to make them
+  look less condensed.
+
 1.0.0 (2009-08-17)
 ==================
 

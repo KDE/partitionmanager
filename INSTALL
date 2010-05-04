@@ -11,6 +11,8 @@ and build it yourself or, preferably, install your distribution's packages
 libblkid: Part of the util-linux-ng project available at
 http://userweb.kernel.org/~kzak/util-linux-ng/.
 
+libatasmart: Available from http://0pointer.de/blog/projects/being-smart.html
+
 KDE4: KDE 4.1 or earlier will not work. The minimum required version is 4.2.0.
 
 
@@ -20,17 +22,13 @@ KDE Partition Manager is built with cmake, like most of KDE4 today. It is
 recommended to build out of tree: After unpacking the source, create a separate
 build directory and run cmake there:
 
-$ tar xfj partitionmanager-1.0.1.tar.bz2
-$ cd partitionmanager-1.0.1
+$ tar xfj partitionmanager-1.0.60.tar.bz2
+$ cd partitionmanager-1.0.60
 $ mkdir build
 $ cd build
 $ cmake ..
 
 If all dependencies are met, cmake configures the build directory.
-
-If you get an error message like "ERROR: Could not find KDE4 kde4-config" but
-have KDE4 and its development packages installed, you might need to add the
-KDE4 bin directory to the path.
 
 
 3. Build and install
@@ -49,8 +47,8 @@ in the build directory and modify CMAKE_INSTALL_PREFIX there.
 4. Running
 
 KDE Partition Manager should be run as root. Running it as an unprivileged user
-does no harm, but you will not be allowed to apply any operations (i.e., you
-can click through the UI, but cannot modify your disks).
+does no harm, but the default settings will not allow you to apply any
+operations (i.e., you can click through the UI, but cannot modify your disks).
 
 
 5. Troubleshooting
