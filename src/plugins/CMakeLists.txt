@@ -19,9 +19,13 @@
 
 install(FILES pmcorebackendplugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
 
-add_subdirectory(libparted)
+option(PARTMAN_LIBPARTEDBACKEND "Build the libparted backend plugin." ON)
 
-option(PARTMAN_DUMMYBACKEND "Build the dummy backend plugin." ON)
+if (PARTMAN_LIBPARTEDBACKEND)
+	add_subdirectory(libparted)
+endif (PARTMAN_LIBPARTEDBACKEND)
+
+option(PARTMAN_DUMMYBACKEND "Build the dummy backend plugin." OFF)
 
 if (PARTMAN_DUMMYBACKEND)
 	add_subdirectory(dummy)
