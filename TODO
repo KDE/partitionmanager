@@ -9,6 +9,12 @@ Bugs to fix for 1.1:
   if the new one is not legal. i.e., we must constantly update the valid ranges
   of the spin boxes if any value changes.
 
+* if mkfs fails (at least for ext3/4) because the device node does not exist,
+  it still returns success
+
+* if e2label fails it becaue the device node does not exist it still returns
+  success
+
 ===============================================================================
 
 For releases after 1.1:
