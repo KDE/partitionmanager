@@ -27,7 +27,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="4" column="0">
     <widget class="QLabel" name="m_LabelTextLabel">
      <property name="text">
       <string comment="@label">Label:</string>
@@ -40,14 +40,14 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1" colspan="2">
+   <item row="4" column="1" colspan="2">
     <widget class="KLineEdit" name="m_EditLabel">
      <property name="maxLength">
       <number>16</number>
      </property>
     </widget>
    </item>
-   <item row="4" column="1" colspan="2">
+   <item row="5" column="1" colspan="2">
     <widget class="QLabel" name="m_LabelTextNoSetLabel">
      <property name="text">
       <string comment="@label">This file system does not support setting a label.</string>
@@ -57,7 +57,7 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
+   <item row="3" column="0">
     <widget class="QLabel" name="m_LabelFileSystem">
      <property name="text">
       <string comment="@label:listbox">File system:</string>
@@ -70,7 +70,7 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="1">
+   <item row="3" column="1">
     <widget class="KComboBox" name="m_ComboFileSystem">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -350,14 +350,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
    <class>PartResizerWidget</class>
