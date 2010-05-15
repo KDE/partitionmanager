@@ -105,7 +105,8 @@ namespace FS
 
 	bool reiserfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
-		return ExternalCommand(report, "reiserfstune", QStringList() << "-l" << newLabel << deviceNode).run(-1);
+		ExternalCommand cmd(report, "reiserfstune", QStringList() << "-l" << newLabel << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool reiserfs::check(Report& report, const QString& deviceNode) const
@@ -116,7 +117,8 @@ namespace FS
 
 	bool reiserfs::create(Report& report, const QString& deviceNode) const
 	{
-		return ExternalCommand(report, "mkfs.reiserfs", QStringList() << "-f" << deviceNode).run(-1);
+		ExternalCommand cmd(report, "mkfs.reiserfs", QStringList() << "-f" << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool reiserfs::resize(Report& report, const QString& deviceNode, qint64 length) const
@@ -137,6 +139,7 @@ namespace FS
 	bool reiserfs::updateUUID(Report& report, const QString& deviceNode) const
 	{
 		const QString uuid = QUuid::createUuid().toString().remove(QRegExp("\\{|\\}"));
-		return ExternalCommand(report, "reiserfstune", QStringList() << "-u" << uuid << deviceNode).run(-1);
+		ExternalCommand cmd(report, "reiserfstune", QStringList() << "-u" << uuid << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

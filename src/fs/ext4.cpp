@@ -32,6 +32,7 @@ namespace FS
 
 	bool ext4::create(Report& report, const QString& deviceNode) const
 	{
-		return ExternalCommand(report, "mkfs.ext4", QStringList() << deviceNode).run(-1);
+		ExternalCommand cmd(report, "mkfs.ext4", QStringList() << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

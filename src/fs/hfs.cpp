@@ -67,6 +67,7 @@ namespace FS
 
 	bool hfs::create(Report& report, const QString& deviceNode) const
 	{
-		return ExternalCommand(report, "hformat", QStringList() << deviceNode).run(-1);
+		ExternalCommand cmd(report, "hformat", QStringList() << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

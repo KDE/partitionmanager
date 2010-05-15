@@ -88,6 +88,7 @@ namespace FS
 
 	bool reiser4::create(Report& report, const QString& deviceNode) const
 	{
-		return ExternalCommand(report, "mkfs.reiser4", QStringList() << "--yes" << deviceNode).run(-1);
+		ExternalCommand cmd(report, "mkfs.reiser4", QStringList() << "--yes" << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

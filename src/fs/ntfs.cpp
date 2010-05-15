@@ -117,7 +117,8 @@ namespace FS
 
 	bool ntfs::create(Report& report, const QString& deviceNode) const
 	{
-		return ExternalCommand(report, "mkfs.ntfs", QStringList() << "-f" << "-vv" << deviceNode).run(-1);
+		ExternalCommand cmd(report, "mkfs.ntfs", QStringList() << "-f" << "-vv" << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool ntfs::copy(Report& report, const QString& targetDeviceNode, const QString& sourceDeviceNode) const

@@ -50,7 +50,8 @@ namespace FS
 
 	bool linuxswap::create(Report& report, const QString& deviceNode) const
 	{
-		return ExternalCommand(report, "mkswap", QStringList() << deviceNode).run(-1);
+		ExternalCommand cmd(report, "mkswap", QStringList() << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool linuxswap::resize(Report& report, const QString& deviceNode, qint64) const
@@ -62,12 +63,14 @@ namespace FS
 			args << "-L" << label;
 		args << deviceNode;
 
-		return ExternalCommand(report, "mkswap", args).run(-1);
+		ExternalCommand cmd(report, "mkswap", args);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool linuxswap::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
-		return ExternalCommand(report, "mkswap", QStringList() << "-L" << newLabel << deviceNode).run(-1);
+		ExternalCommand cmd(report, "mkswap", QStringList() << "-L" << newLabel << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	QString linuxswap::mountTitle() const
@@ -82,11 +85,13 @@ namespace FS
 
 	bool linuxswap::mount(const QString& deviceNode)
 	{
-		return ExternalCommand("swapon", QStringList() << deviceNode).run(-1);
+		ExternalCommand cmd("swapon", QStringList() << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool linuxswap::unmount(const QString& deviceNode)
 	{
-		return ExternalCommand("swapoff", QStringList() << deviceNode).run(-1);
+		ExternalCommand cmd("swapoff", QStringList() << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

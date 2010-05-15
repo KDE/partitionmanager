@@ -106,7 +106,8 @@ namespace FS
 
 	bool jfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
-		return ExternalCommand(report, "jfs_tune", QStringList() << "-L" << newLabel << deviceNode).run(-1);
+		ExternalCommand cmd(report, "jfs_tune", QStringList() << "-L" << newLabel << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool jfs::check(Report& report, const QString& deviceNode) const
@@ -117,7 +118,8 @@ namespace FS
 
 	bool jfs::create(Report& report, const QString& deviceNode) const
 	{
-		return ExternalCommand(report, "mkfs.jfs", QStringList() << "-q" << deviceNode).run(-1);
+		ExternalCommand cmd(report, "mkfs.jfs", QStringList() << "-q" << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool jfs::resize(Report& report, const QString& deviceNode, qint64) const

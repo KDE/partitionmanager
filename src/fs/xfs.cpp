@@ -100,7 +100,8 @@ namespace FS
 
 	bool xfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
-		return ExternalCommand(report, "xfs_db", QStringList() << "-x" << "-c" << "sb 0" << "-c" << QString("label " + newLabel) << deviceNode).run(-1);
+		ExternalCommand cmd(report, "xfs_db", QStringList() << "-x" << "-c" << "sb 0" << "-c" << QString("label " + newLabel) << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool xfs::check(Report& report, const QString& deviceNode) const
@@ -111,7 +112,8 @@ namespace FS
 
 	bool xfs::create(Report& report, const QString& deviceNode) const
 	{
-		return ExternalCommand(report, "mkfs.xfs", QStringList() << "-f" << deviceNode).run(-1);
+		ExternalCommand cmd(report, "mkfs.xfs", QStringList() << "-f" << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool xfs::copy(Report& report, const QString& targetDeviceNode, const QString& sourceDeviceNode) const

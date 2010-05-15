@@ -105,7 +105,8 @@ namespace FS
 
 	bool ext2::create(Report& report, const QString& deviceNode) const
 	{
-		return ExternalCommand(report, "mkfs.ext2", QStringList() << deviceNode).run(-1);
+		ExternalCommand cmd(report, "mkfs.ext2", QStringList() << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool ext2::resize(Report& report, const QString& deviceNode, qint64 length) const
@@ -117,11 +118,13 @@ namespace FS
 
 	bool ext2::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
-		return ExternalCommand(report, "e2label", QStringList() << deviceNode << newLabel).run(-1);
+		ExternalCommand cmd(report, "e2label", QStringList() << deviceNode << newLabel);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool ext2::updateUUID(Report& report, const QString& deviceNode) const
 	{
-		return ExternalCommand(report, "tune2fs", QStringList() << "-U" << "random" << deviceNode).run(-1);
+		ExternalCommand cmd(report, "tune2fs", QStringList() << "-U" << "random" << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }
