@@ -317,7 +317,7 @@ void LibPartedBackend::scanDevicePartitions(PedDevice* pedDevice, Device& d, Ped
 			continue;
 
 		PartitionRole::Roles r = PartitionRole::None;
-		FileSystem::Type type = detectFileSystem(pedDevice, pedPartition);
+		FileSystem::Type type = detectFileSystem(pedPartition);
 
 		switch(pedPartition->type)
 		{
@@ -488,64 +488,51 @@ bool LibPartedBackend::closeDevice(CoreBackendDevice* core_device)
 	@param pedPartition pointer to the pedPartition. Must not be NULL
 	@return the detected FileSystem type (FileSystem::Unknown if not detected)
 */
-FileSystem::Type LibPartedBackend::detectFileSystem(PedDevice* pedDevice, PedPartition* pedPartition)
+FileSystem::Type LibPartedBackend::detectFileSystem(PedPartition* pedPartition)
 {
 	FileSystem::Type rval = FileSystem::Unknown;
-	const QString s = pedPartition->fs_type ? pedPartition->fs_type->name : QString();
 
-	if (s == "extended") rval = FileSystem::Extended;
-	else if (s == "ext2") rval = FileSystem::Ext2;
-	else if (s == "ext3") rval = FileSystem::Ext3;
-	else if (s == "ext4") rval = FileSystem::Ext4;
-	else if (s.startsWith("linux-swap")) rval = FileSystem::LinuxSwap;
-	else if (s == "fat16") rval = FileSystem::Fat16;
-	else if (s == "fat32") rval = FileSystem::Fat32;
-	else if (s == "ntfs") rval = FileSystem::Ntfs;
-	else if (s == "reiserfs") rval = FileSystem::ReiserFS;
-	else if (s == "xfs") rval = FileSystem::Xfs;
-	else if (s == "jfs") rval = FileSystem::Jfs;
-	else if (s == "hfs") rval = FileSystem::Hfs;
-	else if (s == "hfs+") rval = FileSystem::HfsPlus;
-	else if (s == "ufs") rval = FileSystem::Ufs;
+	blkid_cache cache;
+	char* pedPath = NULL;
 
-	if (rval == FileSystem::Unknown)
+	if (blkid_get_cache(&cache, NULL) == 0 && (pedPath = ped_partition_get_path(pedPartition)))
 	{
-		// detect Reiser4, libparted doesn't deal with it
-		char* buf = static_cast<char*>(malloc(pedDevice->sector_size));
+		blkid_dev dev;
 
-		if (buf != NULL)
+		if ((dev = blkid_get_dev(cache, pedPath, BLKID_DEV_NORMAL)) != NULL)
 		{
-			ped_device_open(pedDevice);
-			ped_geometry_read(&pedPartition->geom, buf, 128, 1);
-			ped_device_close(pedDevice);
+			char* tmp = blkid_get_tag_value(cache, "TYPE", pedPath);
+			const QString s(tmp);
+			free(tmp);
 
-			if (QString(buf) == "ReIsEr4")
-				rval = FileSystem::Reiser4;
-
-			free(buf);
+			if (s == "ext2") rval = FileSystem::Ext2;
+			else if (s == "ext3") rval = FileSystem::Ext3;
+			else if (s.startsWith("ext4")) rval = FileSystem::Ext4;
+			else if (s == "swap") rval = FileSystem::LinuxSwap;
+			else if (s == "ntfs") rval = FileSystem::Ntfs;
+			else if (s == "reiserfs") rval = FileSystem::ReiserFS;
+			else if (s == "reiser4") rval = FileSystem::Reiser4;
+			else if (s == "xfs") rval = FileSystem::Xfs;
+			else if (s == "jfs") rval = FileSystem::Jfs;
+			else if (s == "hfs") rval = FileSystem::Hfs;
+			else if (s == "hfsplus") rval = FileSystem::HfsPlus;
+			else if (s == "ufs") rval = FileSystem::Ufs;
+			else if (s == "vfat" && pedPartition->fs_type != NULL)
+			{
+				// libblkid does not distinguish betweeen fat16 and fat32, so we're still using libparted
+				// for those
+				if (strcmp(pedPartition->fs_type->name, "fat16") == 0)
+					rval = FileSystem::Fat16;
+				else if (strcmp(pedPartition->fs_type->name, "fat32") == 0)
+					rval = FileSystem::Fat32;
+			}
+			else
+				kWarning() << "blkid: unknown file system type " << s << " on " << pedPath;
 		}
-	}
 
-	if (rval == FileSystem::Ext3)
-	{
-		blkid_cache cache;
-		char* pedPath = NULL;
+		blkid_put_cache(cache);
 
-		if (blkid_get_cache(&cache, NULL) == 0 && (pedPath = ped_partition_get_path(pedPartition)))
-		{
-			blkid_dev dev;
-
-			if ((dev = blkid_get_dev(cache, pedPath, BLKID_DEV_NORMAL)) != NULL &&
-					(blkid_dev_has_tag(dev, "TYPE", "ext4")
-						|| blkid_dev_has_tag(dev, "TYPE", "ext4dev")
-					)
-			)
-			rval = FileSystem::Ext4;
-
-			blkid_put_cache(cache);
-
-			free(pedPath);
-		}
+		free(pedPath);
 	}
 
 	return rval;

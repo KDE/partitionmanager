@@ -335,7 +335,7 @@ FileSystem::Type LibPartedPartitionTable::detectFileSystemBySector(Report& repor
 	FileSystem::Type rval = FileSystem::Unknown;
 
 	if (pedPartition)
-		rval = LibPartedBackend::detectFileSystem(pedDevice(), pedPartition);
+		rval = LibPartedBackend::detectFileSystem(pedPartition);
 	else
 		report.line() << i18nc("@info/plain", "Could not determine file system of partition at sector %1 on device <filename>%2</filename>.", sector, device.deviceNode());
 

@@ -68,7 +68,7 @@ class LibPartedBackend : public CoreBackend
 		virtual QList<Device*> scanDevices();
 
 	private:
-		static FileSystem::Type detectFileSystem(PedDevice* pedDevice, PedPartition* pedPartition);
+		static FileSystem::Type detectFileSystem(PedPartition* pedPartition);
 		static PedPartitionFlag getPedFlag(PartitionTable::Flag flag);
 		static void scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDisk);
 };
