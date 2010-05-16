@@ -98,7 +98,9 @@ void PartPropsDialog::setupDialog()
 
 	dialogWidget().partResizerWidget().init(device(), partition(), partition().firstSector(), partition().lastSector(), true, false);
 
-	const QString mp = partition().mountPoints().size() == 0 ? i18nc("@item mountpoint", "(none found)") : partition().mountPoints().join(", ");
+	const QString mp = (partition().mountPoints().size() == 0 || partition().mountPoints()[0].length() == 0)
+			? i18nc("@item mountpoint", "(none found)")
+			: partition().mountPoints().join(", ");
 	dialogWidget().mountPoint().setText(mp);
 
 	dialogWidget().role().setText(partition().roles().toString());
