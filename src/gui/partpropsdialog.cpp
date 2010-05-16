@@ -123,14 +123,25 @@ void PartPropsDialog::setupDialog()
 	dialogWidget().label().setText(newLabel().isEmpty() ? partition().fileSystem().label() : newLabel());
 	dialogWidget().capacity().setText(Capacity(partition()).toString(Capacity::AppendUnit | Capacity::AppendBytes));
 
-	const Capacity availableCapacity = Capacity(partition(), Capacity::Available);
-	const QString availString = availableCapacity.isValid() ? QString(" - %1").arg(availableCapacity.toString(Capacity::AppendUnit | Capacity::AppendBytes)) : QString();
-	const qint64 availPercent = (partition().fileSystem().length() - partition().fileSystem().sectorsUsed()) * 100 / partition().fileSystem().length();
-	dialogWidget().available().setText(QString("%1%%2").arg(QString::number(availPercent)).arg(availString));
+	if (Capacity(partition(), Capacity::Available).isValid())
+	{
+		const qint64 availPercent = (partition().fileSystem().length() - partition().fileSystem().sectorsUsed()) * 100 / partition().fileSystem().length();
 
-	const Capacity usedCapacity = Capacity(partition(), Capacity::Used);
-	const QString usedString = usedCapacity.isValid() ? QString(" - %1").arg(usedCapacity.toString(Capacity::AppendUnit | Capacity::AppendBytes)) : QString();
-	dialogWidget().used().setText(QString("%1%%2").arg(QString::number(100 - availPercent)).arg(usedString));
+		const QString availString = QString("%1% - %2")
+			.arg(availPercent)
+			.arg(Capacity(partition(), Capacity::Available).toString(Capacity::AppendUnit | Capacity::AppendBytes));
+		const QString usedString = QString("%1% - %2")
+			.arg(100 - availPercent)
+			.arg(Capacity(partition(), Capacity::Used).toString(Capacity::AppendUnit | Capacity::AppendBytes));
+
+		dialogWidget().available().setText(availString);
+		dialogWidget().used().setText(usedString);
+	}
+	else
+	{
+		dialogWidget().available().setText(Capacity::invalidString());
+		dialogWidget().used().setText(Capacity::invalidString());
+	}
 
 	dialogWidget().firstSector().setText(KGlobal::locale()->formatNumber(partition().firstSector(), 0));
 	dialogWidget().lastSector().setText(KGlobal::locale()->formatNumber(partition().lastSector(), 0));
