@@ -62,8 +62,13 @@ class FileSystem
 			HfsPlus = 14,
 			Ufs = 15,
 			Unformatted = 16,
+			Btrfs = 17,
+			Hpfs = 18,
+			Luks = 19,
+			Ocfs2 = 20,
+			Zfs = 21,
 
-			__lastType = 17
+			__lastType = 22
 		};
 
 		/** The type of support for a given FileSystem action */

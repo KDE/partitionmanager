@@ -526,6 +526,11 @@ FileSystem::Type LibPartedBackend::detectFileSystem(PedPartition* pedPartition)
 				else if (strcmp(pedPartition->fs_type->name, "fat32") == 0)
 					rval = FileSystem::Fat32;
 			}
+			else if (s == "btrfs") rval = FileSystem::Btrfs;
+			else if (s == "ocfs2") rval = FileSystem::Ocfs2;
+			else if (s == "zfs") rval = FileSystem::Zfs;
+			else if (s == "hpfs") rval = FileSystem::Hpfs;
+			else if (s == "crypto_LUKS") rval = FileSystem::Luks;
 			else
 				kWarning() << "blkid: unknown file system type " << s << " on " << pedPath;
 		}

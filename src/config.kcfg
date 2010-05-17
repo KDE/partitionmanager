@@ -60,24 +60,30 @@
 		</entry>
 		<entry key="fileSystemColorCode$(colorNumber)" type="Color">
 			<label context="@label">File system colors</label>
-			<parameter name="colorNumber" type="UInt" max="16"/>
-			<default param="0">252,242,220</default>
-			<default param="1">187,249,207</default>
-			<default param="2">122,145,180</default>
-			<default param="3">143,169,210</default>
-			<default param="4">173,205,255</default>
-			<default param="5">155,155,130</default>
-			<default param="6">204,179,215</default>
-			<default param="7">229,201,240</default>
-			<default param="8">244,214,255</default>
-			<default param="9">216,220,135</default>
-			<default param="10">251,255,157</default>
-			<default param="11">200,255,254</default>
-			<default param="12">137,200,198</default>
-			<default param="13">210,136,142</default>
-			<default param="14">240,165,171</default>
-			<default param="15">151,220,134</default>
-			<default param="16">252,242,222</default>
+			<parameter name="colorNumber" type="UInt" max="21"/>
+			<!-- numbers correspond to the enum in fs/filesystem.h -->
+			<default param="0">252,242,220</default> <!-- unknown -->
+			<default param="1">187,249,207</default> <!-- extended -->
+			<default param="2">102,121,150</default> <!-- ext2 -->
+			<default param="3">122,145,180</default> <!-- ext3 -->
+			<default param="4">143,170,210</default> <!-- ext4 -->
+			<default param="5">155,155,130</default> <!-- swap -->
+			<default param="6">204,179,215</default> <!-- fat16 -->
+			<default param="7">229,201,240</default> <!-- fat32 -->
+			<default param="8">244,214,255</default> <!-- ntfs -->
+			<default param="9">216,220,135</default> <!-- reiser-->
+			<default param="10">251,255,157</default> <!-- reiser4 -->
+			<default param="11">200,255,254</default> <!-- xfs -->
+			<default param="12">137,200,198</default> <!-- jfs -->
+			<default param="13">210,136,142</default> <!-- hfs -->
+			<default param="14">240,165,171</default> <!-- hfs+ -->
+			<default param="15">151,220,134</default> <!-- ufs -->
+			<default param="16">252,242,222</default> <!-- unformatted -->
+			<default param="17">173,205,255</default> <!-- btrfs -->
+			<default param="18">176,155,185</default> <!-- hpfs -->
+			<default param="19">170,30,77</default> <!-- luks -->
+			<default param="20">96,140,85</default> <!-- ocfs2 -->
+			<default param="21">33,137,108</default> <!-- zfs -->
 		</entry>
 		<entry key="availableSpaceColorCode" type="Color">
 			<label context="@label">Color for available space</label>

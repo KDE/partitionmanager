@@ -233,9 +233,6 @@ QString FileSystem::name() const
 /** @return a pointer to a QString C array with all FileSystem names */
 static const QString* typeNames()
 {
-	// The KDE localization framework doesn't like this array if it's
-	// just declared static outside any function. If we do it here,
-	// it seems to work fine. That's why this is done so strangely here.
 	static const QString s[] =
 	{
 		i18nc("@item/plain filesystem name", "unknown"),
@@ -255,7 +252,12 @@ static const QString* typeNames()
 		i18nc("@item/plain filesystem name", "hfs"),
 		i18nc("@item/plain filesystem name", "hfsplus"),
 		i18nc("@item/plain filesystem name", "ufs"),
-		i18nc("@item/plain filesystem name", "unformatted")
+		i18nc("@item/plain filesystem name", "unformatted"),
+		i18nc("@item/plain filesystem name", "btrfs"),
+		i18nc("@item/plain filesystem name", "hpfs"),
+		i18nc("@item/plain filesystem name", "luks"),
+		i18nc("@item/plain filesystem name", "ocfs2"),
+		i18nc("@item/plain filesystem name", "zfs"),
 	};
 
 	return s;
