@@ -57,7 +57,7 @@ void EditMountPointDialog::accept()
 		return;
 
 	if (widget().acceptChanges() && widget().writeMountpoints("/etc/fstab"))
-		partition().setMountPoints(QStringList() << widget().editPath().text());
+		partition().setMountPoint(widget().editPath().text());
 
 	KDialog::accept();
 }

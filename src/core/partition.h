@@ -114,7 +114,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 		};
 
 	public:
-		Partition(PartitionNode* parent, const Device& device, const PartitionRole& role, FileSystem* fs, qint64 sectorStart, qint64 sectorEnd, qint32 number, PartitionTable::Flags availableFlags = PartitionTable::FlagNone, const QStringList& mountPoints = QStringList(), bool mounted = false, PartitionTable::Flags activeFlags = PartitionTable::FlagNone, State state = StateNone);
+		Partition(PartitionNode* parent, const Device& device, const PartitionRole& role, FileSystem* fs, qint64 sectorStart, qint64 sectorEnd, qint32 number, PartitionTable::Flags availableFlags = PartitionTable::FlagNone, const QString& mountPoint = QString(), bool mounted = false, PartitionTable::Flags activeFlags = PartitionTable::FlagNone, State state = StateNone);
 		~Partition();
 
 	public:
@@ -151,7 +151,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 
 		const PartitionRole& roles() const { return m_Roles; } /**< @return the Partition's role(s) */
 
-		const QStringList& mountPoints() const { return m_MountPoints; } /**< @return the Partition's mount points */
+		const QString& mountPoint() const { return m_MountPoint; } /**< @return the Partition's mount point */
 
 		PartitionTable::Flags activeFlags() const { return m_ActiveFlags; } /**< @return the flags currently set for this Partition */
 		PartitionTable::Flags availableFlags() const { return m_AvailableFlags; } /**< @return the flags available for this Partition */
@@ -177,7 +177,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 		void append(Partition* p) { m_Children.append(p); }
 		void setDevicePath(const QString& s) { m_DevicePath = s; }
 		void setRoles(const PartitionRole& r) { m_Roles = r; }
-		void setMountPoints(const QStringList& sl) { m_MountPoints = sl; }
+		void setMountPoint(const QString& s) { m_MountPoint = s; }
 		void setFlags(PartitionTable::Flags f) { m_ActiveFlags = f; }
 		void setSectorSize(qint32 s) { m_SectorSize = s; }
 		void setFirstSector(qint64 s) { m_FirstSector = s; }
@@ -201,7 +201,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 		qint64 m_FirstSector;
 		qint64 m_LastSector;
 		QString m_DevicePath;
-		QStringList m_MountPoints;
+		QString m_MountPoint;
 		PartitionTable::Flags m_AvailableFlags;
 		PartitionTable::Flags m_ActiveFlags;
 		bool m_IsMounted;

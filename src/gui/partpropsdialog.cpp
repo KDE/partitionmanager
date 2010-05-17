@@ -98,9 +98,9 @@ void PartPropsDialog::setupDialog()
 
 	dialogWidget().partResizerWidget().init(device(), partition(), partition().firstSector(), partition().lastSector(), true, false);
 
-	const QString mp = (partition().mountPoints().size() == 0 || partition().mountPoints()[0].length() == 0)
+	const QString mp = partition().mountPoint().isEmpty()
 			? i18nc("@item mountpoint", "(none found)")
-			: partition().mountPoints().join(", ");
+			: partition().mountPoint();
 	dialogWidget().mountPoint().setText(mp);
 
 	dialogWidget().role().setText(partition().roles().toString());
@@ -110,7 +110,7 @@ void PartPropsDialog::setupDialog()
 	{
 		if (partition().roles().has(PartitionRole::Extended))
 			statusText = i18nc("@label partition state", "At least one logical partition is mounted.");
-		else if (partition().mountPoints().size() > 0)
+		else if (!partition().mountPoint().isEmpty())
 			statusText = i18nc("@label partition state", "mounted on <filename>%1</filename>", mp);
 		else
 			statusText = i18nc("@label partition state", "mounted");

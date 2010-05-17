@@ -350,7 +350,7 @@ void LibPartedBackend::scanDevicePartitions(PedDevice* pedDevice, Device& d, Ped
 
 		const QString mountPoint = mountPoints.findByDevice(node) ? mountPoints.findByDevice(node)->mountPoint() : QString();
 
-		Partition* part = new Partition(parent, d, PartitionRole(r), fs, pedPartition->geom.start, pedPartition->geom.end, pedPartition->num, availableFlags(pedPartition), QStringList() << mountPoint, ped_partition_is_busy(pedPartition), activeFlags(pedPartition));
+		Partition* part = new Partition(parent, d, PartitionRole(r), fs, pedPartition->geom.start, pedPartition->geom.end, pedPartition->num, availableFlags(pedPartition), mountPoint, ped_partition_is_busy(pedPartition), activeFlags(pedPartition));
 
 		readSectorsUsed(pedDisk, *part, mountPoint);
 

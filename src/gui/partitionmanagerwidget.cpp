@@ -214,7 +214,7 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 	item->setIcon(i, createFileSystemColor(p.fileSystem().type(), 14));
 	i++;
 
-	item->setText(i, p.mountPoints().join(", "));
+	item->setText(i, p.mountPoint());
 	if (p.isMounted())
 		item->setIcon(i, SmallIcon("object-locked"));
 	i++;

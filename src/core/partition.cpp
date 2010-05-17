@@ -42,12 +42,12 @@
 	@param sectorEnd the last sector of the Partition on its Device
 	@param number the Partition's device number, e.g. 7 for /dev/sdd7
 	@param availableFlags the flags available for this Partition
-	@param mountPoints string list of mount points found for this Partition
+	@param mountPoint mount point for this Partition
 	@param mounted true if the Partition is mounted
 	@param activeFlags active flags for this Partition
 	@param state the Partition's state
 */
-Partition::Partition(PartitionNode* parent, const Device& device, const PartitionRole& role, FileSystem* fs, qint64 sectorStart, qint64 sectorEnd, qint32 number, PartitionTable::Flags availableFlags, const QStringList& mountPoints, bool mounted, PartitionTable::Flags activeFlags, State state) :
+Partition::Partition(PartitionNode* parent, const Device& device, const PartitionRole& role, FileSystem* fs, qint64 sectorStart, qint64 sectorEnd, qint32 number, PartitionTable::Flags availableFlags, const QString& mountPoint, bool mounted, PartitionTable::Flags activeFlags, State state) :
 	PartitionNode(),
 	m_Number(number),
 	m_Children(),
@@ -57,7 +57,7 @@ Partition::Partition(PartitionNode* parent, const Device& device, const Partitio
 	m_FirstSector(sectorStart),
 	m_LastSector(sectorEnd),
 	m_DevicePath(device.deviceNode()),
-	m_MountPoints(mountPoints),
+	m_MountPoint(mountPoint),
 	m_AvailableFlags(availableFlags),
 	m_ActiveFlags(activeFlags),
 	m_IsMounted(mounted),
@@ -96,7 +96,7 @@ Partition::Partition(const Partition& other) :
 	m_FirstSector(other.m_FirstSector),
 	m_LastSector(other.m_LastSector),
 	m_DevicePath(other.m_DevicePath),
-	m_MountPoints(other.m_MountPoints),
+	m_MountPoint(other.m_MountPoint),
 	m_AvailableFlags(other.m_AvailableFlags),
 	m_ActiveFlags(other.m_ActiveFlags),
 	m_IsMounted(other.m_IsMounted),
@@ -132,7 +132,7 @@ Partition& Partition::operator=(const Partition& other)
 	m_FirstSector = other.m_FirstSector;
 	m_LastSector = other.m_LastSector;
 	m_DevicePath = other.m_DevicePath;
-	m_MountPoints = other.m_MountPoints;
+	m_MountPoint = other.m_MountPoint;
 	m_AvailableFlags = other.m_AvailableFlags;
 	m_ActiveFlags = other.m_ActiveFlags;
 	m_IsMounted = other.m_IsMounted;
@@ -265,7 +265,7 @@ bool Partition::canMount() const
 		return true;
 
 	// cannot mount if we have no mount points
-	return !mountPoints().isEmpty();
+	return !mountPoint().isEmpty();
 }
 
 /** @return true if this Partition can be unmounted */
@@ -288,12 +288,9 @@ bool Partition::mount(Report& report)
 		success = fileSystem().mount(deviceNode());
 	else
 	{
-		foreach(const QString& mp, mountPoints())
-		{
-			ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << deviceNode() << mp);
-			if (mountCmd.run() && mountCmd.exitCode() == 0)
-				success = true;
-		}
+		ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << deviceNode() << mountPoint());
+		if (mountCmd.run() && mountCmd.exitCode() == 0)
+			success = true;
 	}
 
 	setMounted(success);
@@ -315,12 +312,9 @@ bool Partition::unmount(Report& report)
 		success = fileSystem().unmount(deviceNode());
 	else
 	{
-		foreach(const QString& mp, mountPoints())
-		{
-			ExternalCommand umountCmd(report, "umount", QStringList() << "-v" << mp);
-			if (!umountCmd.run() || umountCmd.exitCode() != 0)
-				success = false;
-		}
+		ExternalCommand umountCmd(report, "umount", QStringList() << "-v" << mountPoint());
+		if (!umountCmd.run() || umountCmd.exitCode() != 0)
+			success = false;
 	}
 
 	setMounted(!success);

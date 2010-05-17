@@ -434,7 +434,7 @@ void MainWindow::enableActions()
 	actionCollection()->action("pastePartition")->setEnabled(!readOnly && CopyOperation::canPaste(part, pmWidget().clipboardPartition()));
 	actionCollection()->action("propertiesPartition")->setEnabled(part != NULL);
 
-	actionCollection()->action("editMountPoint")->setEnabled(part && part->canMount());
+	actionCollection()->action("editMountPoint")->setEnabled(part);
 	actionCollection()->action("mountPartition")->setEnabled(part && (part->canMount() || part->canUnmount()));
 
 	if (part != NULL)
@@ -876,7 +876,7 @@ void MainWindow::onImportPartitionTable()
 			if (fs->supportSetLabel() != FileSystem::cmdSupportNone && !volumeLabel.isEmpty())
 				fs->setLabel(volumeLabel);
 
-			Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, -1, PartitionTable::FlagNone, QStringList(), false, PartitionTable::FlagNone, Partition::StateNew);
+			Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, -1, PartitionTable::FlagNone, QString(), false, PartitionTable::FlagNone, Partition::StateNew);
 
 			operationStack().push(new NewOperation(device, p));
 		}
