@@ -438,7 +438,7 @@ void MainWindow::enableActions()
 	actionCollection()->action("mountPartition")->setEnabled(part && (part->canMount() || part->canUnmount()));
 
 	if (part != NULL)
-		actionCollection()->action("mountPartition")->setText(part->isMounted() ? part->fileSystem().unmountTitle() : part->fileSystem().mountTitle() );
+		actionCollection()->action("mountPartition")->setText(part->isMounted() ? part->fileSystem().unmountTitle() : part->fileSystem().mountTitle());
 
 	actionCollection()->action("checkPartition")->setEnabled(!readOnly && CheckOperation::canCheck(part));
 
