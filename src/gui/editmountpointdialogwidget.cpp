@@ -315,7 +315,7 @@ bool EditMountPointDialogWidget::writeMountpoints(const QString& filename)
 		const QString bakFilename = QString("%1.bak").arg(filename);
 		QFile::remove(bakFilename);
 
-		if (!QFile::rename(filename, bakFilename))
+		if (QFile::exists(filename) && !QFile::rename(filename, bakFilename))
 		{
 			kWarning() << "could not rename " << filename << " to " << bakFilename;
 			rval = false;
