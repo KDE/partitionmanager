@@ -9,9 +9,6 @@ Bugs to fix for 1.1:
   if the new one is not legal. i.e., we must constantly update the valid ranges
   of the spin boxes if any value changes.
 
-* sector alignment in extended partitions seems to be broken or at least uses
-  some cylinder alignment logic (offset of 63)
-
 ===============================================================================
 
 For releases after 1.1:

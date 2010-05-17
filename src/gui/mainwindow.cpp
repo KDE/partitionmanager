@@ -992,6 +992,7 @@ void MainWindow::onPropertiesDevice(const QString&)
 				d.partitionTable()->setType(d, PartitionTable::msdos);
 
 			on_m_OperationStack_devicesChanged();
+			pmWidget().updatePartitions();
 		}
 
 		delete dlg;

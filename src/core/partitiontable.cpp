@@ -462,6 +462,8 @@ void PartitionTable::setType(const Device& d, TableType t)
 	setLastUsableSector(defaultLastUsable(d, t));
 
 	m_Type = t;
+
+	updateUnallocated(d);
 }
 
 static bool isPartitionLessThan(const Partition* p1, const Partition* p2)
