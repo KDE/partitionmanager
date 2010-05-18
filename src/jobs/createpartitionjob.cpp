@@ -58,11 +58,11 @@ bool CreatePartitionJob::run(Report& parent)
 
 		if (backendPartitionTable)
 		{
-			quint32 num = -1;
-			rval = backendPartitionTable->createPartition(*report, partition(), num);
+			qint32 num = backendPartitionTable->createPartition(*report, partition());
 
-			if (rval)
+			if (num > 0)
 			{
+				rval = true;
 				partition().setNumber(num);
 				partition().setState(Partition::StateNone);
 				backendPartitionTable->commit();

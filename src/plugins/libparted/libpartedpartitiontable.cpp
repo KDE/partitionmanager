@@ -144,11 +144,11 @@ static PedFileSystemType* getPedFileSystemType(FileSystem::Type t)
 	return ped_file_system_type_get("ext2");
 }
 
-bool LibPartedPartitionTable::createPartition(Report& report, const Partition& partition, quint32& new_number)
+qint32 LibPartedPartitionTable::createPartition(Report& report, const Partition& partition)
 {
 	Q_ASSERT(partition.devicePath() == pedDevice()->path);
 
-	bool rval = false;
+	qint32 rval = -1;
 
 	// According to libParted docs, PedPartitionType can be "NULL if unknown". That's obviously wrong,
 	// it's a typedef for an enum. So let's use something the libparted devs will hopefully never
@@ -187,14 +187,11 @@ bool LibPartedPartitionTable::createPartition(Report& report, const Partition& p
 	if (pedConstraint == NULL)
 	{
 		report.line() << i18nc("@info/plain", "Failed to create a new partition: could not get geometry for constraint.");
-		return false;
+		return -1;
 	}
 
 	if (ped_disk_add_partition(pedDisk(), pedPartition, pedConstraint))
-	{
-		new_number = pedPartition->num;
-		rval = true;
-	}
+		rval = pedPartition->num;
 	else
 		report.line() << i18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition.deviceNode(), pedDisk()->dev->path);
 
