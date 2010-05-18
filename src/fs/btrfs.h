@@ -33,8 +33,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief A btrfs file system.
-		@author vl@fidra.de
+	/** A btrfs file system.
+		@author Volker Lanz <vl@fidra.de>
 	*/
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT btrfs : public FileSystem
 	{

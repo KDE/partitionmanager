@@ -29,12 +29,12 @@
 class Device;
 class Report;
 
-/** @brief Base class for all FileSystems.
+/** Base class for all FileSystems.
 
 	Represents a file system and handles support for various types of operations that can
 	be performed on those.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
  */
 class FileSystem
 {

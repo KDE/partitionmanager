@@ -33,11 +33,11 @@ class Partition;
 
 class SetPartFlagsJob;
 
-/** @brief Set Partition flags.
+/** Set Partition flags.
 
 	Sets the Partition flags for the given Partition on the given Device.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class SetPartFlagsOperation : public Operation
 {

@@ -33,9 +33,9 @@ class Operation;
 class QPoint;
 class KActionCollection;
 
-/** @brief A list of pending operations.
+/** A list of pending operations.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT ListOperations : public QWidget, public Ui::ListOperationsBase
 {

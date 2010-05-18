@@ -28,14 +28,14 @@
 class Device;
 class CoreBackendDevice;
 
-/** @brief A Device to copy to.
+/** A Device to copy to.
 
 	Represents a target Device to copy to. Used to copy a Partition to somewhere on the same
 	or another Device or to restore a FileSystem from a file to a Partition.
 
 	@see CopyTargetFile, CopySourceDevice
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class CopyTargetDevice : public CopyTarget
 {

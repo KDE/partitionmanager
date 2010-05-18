@@ -32,12 +32,12 @@ class Partition;
 class Operation;
 class DeviceScanner;
 
-/** @brief The list of Operations the user wants to have performed.
+/** The list of Operations the user wants to have performed.
 
 	OperationStack also handles the Devices that were found on this computer and the merging of
 	Operations, e.g., when the user first creates a Partition, then deletes it.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class OperationStack : public QObject
 {

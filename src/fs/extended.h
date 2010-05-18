@@ -31,12 +31,12 @@ class QString;
 
 namespace FS
 {
-	/** @brief An extended file system.
+	/** An extended file system.
 
 		A FileSystem for an extended Partition. Of course, extended partitions do not actually have
 		a file system, but we need this to be able to create, grow, shrink or move them.
 
-		@author vl@fidra.de
+		@author Volker Lanz <vl@fidra.de>
 	 */
 
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT extended : public FileSystem

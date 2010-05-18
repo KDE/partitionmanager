@@ -35,12 +35,12 @@ class CheckFileSystemJob;
 class CopyFileSystemJob;
 class ResizeFileSystemJob;
 
-/** @brief Copy a Partition.
+/** Copy a Partition.
 
 	Copies a Partition from a given source Device to a Partition on a given target Device and handles overwriting
 	the target Partition in case that is required.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class CopyOperation : public Operation
 {

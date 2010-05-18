@@ -23,8 +23,8 @@
 
 #include "ui_partpropswidgetbase.h"
 
-/** @brief Central widget in the PartPropsDialog.
-	@author vl@fidra.de
+/** Central widget in the PartPropsDialog.
+	@author Volker Lanz <vl@fidra.de>
 */
 class PartPropsWidget : public QWidget, public Ui::PartPropsWidgetBase
 {

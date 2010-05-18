@@ -29,11 +29,11 @@
 class QString;
 class CopyTarget;
 
-/** @brief A file to copy from.
+/** A file to copy from.
 
 	Represents a file to copy from. Used to restore a FileSystem from a backup file.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class CopySourceFile : public CopySource
 {

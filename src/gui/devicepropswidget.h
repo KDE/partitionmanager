@@ -25,8 +25,8 @@
 
 class PartTableWidget;
 
-/** @brief Central widget in the DevicePropsDialog.
-	@author vl@fidra.de
+/** Central widget in the DevicePropsDialog.
+	@author Volker Lanz <vl@fidra.de>
 */
 class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 {

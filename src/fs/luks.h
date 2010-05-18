@@ -33,8 +33,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief A LUKS crypto file system.
-		@author vl@fidra.de
+	/** A LUKS crypto file system.
+		@author Volker Lanz <vl@fidra.de>
 	*/
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT luks : public FileSystem
 	{

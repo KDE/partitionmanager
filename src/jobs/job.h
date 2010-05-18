@@ -35,14 +35,14 @@ class CopySource;
 class CopyTarget;
 class Report;
 
-/** @brief Base class for all Jobs.
+/** Base class for all Jobs.
 
 	Each Operation is made up of one or more Jobs. Usually, an Operation will run each Job it is
 	made up of and only complete successfully if each Job could be run without error. Jobs are
 	all-or-nothing and try to be as atomic as possible: A Job is either successfully run or not, there
 	is no case where a Job finishes with a warning.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT Job : public QObject
 {

@@ -30,8 +30,8 @@
 
 class QString;
 
-/** @brief Factory to create instances of FileSystem.
-	@author vl@fidra.de
+/** Factory to create instances of FileSystem.
+	@author Volker Lanz <vl@fidra.de>
  */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT FileSystemFactory
 {

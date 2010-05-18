@@ -33,8 +33,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief A ocfs2 file system.
-		@author vl@fidra.de
+	/** A ocfs2 file system.
+		@author Volker Lanz <vl@fidra.de>
 	*/
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT ocfs2 : public FileSystem
 	{

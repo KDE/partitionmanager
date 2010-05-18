@@ -29,8 +29,8 @@ class Report;
 
 class QString;
 
-/** @brief Delete a Partition.
-	@author vl@fidra.de
+/** Delete a Partition.
+	@author Volker Lanz <vl@fidra.de>
 */
 class DeletePartitionJob : public Job
 {

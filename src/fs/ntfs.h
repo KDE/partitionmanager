@@ -33,8 +33,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief An NTFS file system.
-		@author vl@fidra.de
+	/** An NTFS file system.
+		@author Volker Lanz <vl@fidra.de>
 	 */
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT ntfs : public FileSystem
 	{

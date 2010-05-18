@@ -24,13 +24,13 @@
 #include <qglobal.h>
 
 
-/** @brief Base class for something to copy to.
+/** Base class for something to copy to.
 
 	Abstract base class for all copy targets. Used together with CopySource to
 	implement moving, copying, restoring and backing up FileSystems.
 
 	@see CopySource
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class CopyTarget
 {

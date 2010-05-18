@@ -38,9 +38,9 @@ class QWidget;
 class QLabel;
 class QPoint;
 
-/** @brief The central widget for the application.
+/** The central widget for the application.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget, Ui::PartitionManagerWidgetBase
 {

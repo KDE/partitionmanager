@@ -28,8 +28,8 @@ class Report;
 
 class QString;
 
-/** @brief Create a PartitionTable.
-	@author vl@fidra.de
+/** Create a PartitionTable.
+	@author Volker Lanz <vl@fidra.de>
 */
 class CreatePartitionTableJob : public Job
 {

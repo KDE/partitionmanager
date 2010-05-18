@@ -33,8 +33,8 @@
 
 class QTreeWidget;
 
-/** @brief A tree for formatted log output.
-	@author vl@fidra.de
+/** A tree for formatted log output.
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT TreeLog: public QWidget, public Ui::TreeLogBase
 {

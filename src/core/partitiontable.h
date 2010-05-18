@@ -35,13 +35,13 @@ class CoreBackend;
 
 class QTextStream;
 
-/** @brief The partition table (a.k.a Disk Label)
+/** The partition table (a.k.a Disk Label)
 
 	PartitionTable represents a partition table (or disk label).
 
 	PartitionTable has child nodes that represent Partitions.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 {

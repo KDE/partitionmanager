@@ -28,8 +28,8 @@ class Report;
 
 class QString;
 
-/** @brief Check a FileSystem.
-	@author vl@fidra.de
+/** Check a FileSystem.
+	@author Volker Lanz <vl@fidra.de>
 */
 class CheckFileSystemJob : public Job
 {

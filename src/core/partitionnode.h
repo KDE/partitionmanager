@@ -28,13 +28,13 @@
 class Partition;
 class PartitionRole;
 
-/** @brief A node in the tree of partitions.
+/** A node in the tree of partitions.
 
 	The root in this tree is the PartitionTable. The primaries are the child nodes; extended partitions again
 	have child nodes.
 
 	@see Device, PartitionTable, Partition
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class PartitionNode : public QObject
 {

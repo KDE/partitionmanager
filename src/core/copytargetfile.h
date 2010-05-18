@@ -28,12 +28,12 @@
 
 class QString;
 
-/** @brief A file to copy to.
+/** A file to copy to.
 
 	Repesents a target file to copy to. Used to back up a FileSystem to a file.
 
 	@see CopySourceFile, CopyTargetDevice
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class CopyTargetFile : public CopyTarget
 {

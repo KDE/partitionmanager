@@ -30,11 +30,11 @@ class Partition;
 
 class SetFileSystemLabelJob;
 
-/** @brief Set a FileSystem label.
+/** Set a FileSystem label.
 
 	Sets the FileSystem label for the given Partition.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class SetFileSystemLabelOperation : public Operation
 {

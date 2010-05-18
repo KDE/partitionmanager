@@ -33,8 +33,8 @@ class Device;
 class QPoint;
 class KActionCollection;
 
-/** @brief A list of devices.
-	@author vl@fidra.de
+/** A list of devices.
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui::ListDevicesBase
 {

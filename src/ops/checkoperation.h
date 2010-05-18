@@ -30,8 +30,8 @@ class Device;
 class CheckFileSystemJob;
 class ResizeFileSystemJob;
 
-/** @brief Check a Partition.
-	@author vl@fidra.de
+/** Check a Partition.
+	@author Volker Lanz <vl@fidra.de>
 */
 class CheckOperation : public Operation
 {

@@ -40,12 +40,12 @@ class MoveFileSystemJob;
 class ResizeFileSystemJob;
 class CheckFileSystemJob;
 
-/** @brief Resizes a Partition and FileSystem.
+/** Resizes a Partition and FileSystem.
 
 	Resize the given Partition and its FileSystem on the given Device so they start with the
 	given new start sector and end with the given new last sector.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class ResizeOperation : public Operation
 {

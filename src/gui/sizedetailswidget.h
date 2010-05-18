@@ -26,8 +26,8 @@
 #include <QWidget>
 #include <qdebug.h>
 
-/** @brief Details widget for the SizeDetailsBase
-	@author vl@fidra.de
+/** Details widget for the SizeDetailsBase
+	@author Volker Lanz <vl@fidra.de>
 */
 class SizeDetailsWidget : public QWidget, public Ui::SizeDetailsWidgetBase
 {

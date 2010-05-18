@@ -29,8 +29,8 @@ class Partition;
 class Report;
 class OperationStack;
 
-/** @brief Set a FileSystem label.
-	@author vl@fidra.de
+/** Set a FileSystem label.
+	@author Volker Lanz <vl@fidra.de>
 */
 class SetFileSystemLabelJob : public Job
 {

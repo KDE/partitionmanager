@@ -31,11 +31,11 @@ class Report;
 
 class QString;
 
-/** @brief Copy a FileSystem.
+/** Copy a FileSystem.
 
 	Copy a FileSystem on a given Partition and Device to another Partition on a (possibly other) Device.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class CopyFileSystemJob : public Job
 {

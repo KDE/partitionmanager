@@ -29,11 +29,11 @@ class Partition;
 class Device;
 class Report;
 
-/** @brief Restore a FileSystem.
+/** Restore a FileSystem.
 
 	Restores a FileSystem from a file to a given Partition on a given Device.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class RestoreFileSystemJob : public Job
 {

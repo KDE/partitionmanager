@@ -33,11 +33,11 @@ class CreateFileSystemJob;
 class SetFileSystemLabelJob;
 class CheckFileSystemJob;
 
-/** @brief Create a Partition.
+/** Create a Partition.
 
 	Creates the given Partition on the given Device.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class NewOperation : public Operation
 {

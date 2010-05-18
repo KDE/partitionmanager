@@ -26,8 +26,8 @@
 #include <QWidget>
 #include <qdebug.h>
 
-/** @brief Central widget for the SizeDialogBase
-	@author vl@fidra.de
+/** Central widget for the SizeDialogBase
+	@author Volker Lanz <vl@fidra.de>
 */
 class SizeDialogWidget : public QWidget, public Ui::SizeDialogWidgetBase
 {

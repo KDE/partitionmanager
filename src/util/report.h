@@ -30,11 +30,11 @@
 
 class ReportLine;
 
-/** @brief Report details about running Operations and Jobs.
+/** Report details about running Operations and Jobs.
 
 	Gather information for the report shown in the ProgressDialog's detail view.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT Report : public QObject
 {

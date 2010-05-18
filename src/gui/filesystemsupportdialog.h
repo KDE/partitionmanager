@@ -29,11 +29,11 @@
 
 class KPushButton;
 
-/** @brief Show supported Operations
+/** Show supported Operations
 
 	Dialog to show which Operations are supported for which type of FileSystem.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class FileSystemSupportDialog : public KDialog
 {

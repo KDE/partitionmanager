@@ -29,11 +29,11 @@ class DevicePropsWidget;
 class QWidget;
 class QString;
 
-/** @brief Show Device properties.
+/** Show Device properties.
 
 	Dialog that shows a Device's properties.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class DevicePropsDialog : public KDialog
 {

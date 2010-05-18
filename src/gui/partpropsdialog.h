@@ -35,12 +35,12 @@ class QWidget;
 class QString;
 
 
-/** @brief Show Partition properties.
+/** Show Partition properties.
 
 	Dialog that shows a Partition's properties and allows the user to change (or recreate)
 	the Partition's FileSystem, its label and its flags.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class PartPropsDialog : public KDialog
 {

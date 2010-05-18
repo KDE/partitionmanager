@@ -42,9 +42,9 @@ class Device;
 class KPluginFactory;
 class QString;
 
-/** @brief Backend plugin for libparted.
+/** Backend plugin for libparted.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class LibPartedBackend : public CoreBackend
 {

@@ -29,8 +29,8 @@ class Partition;
 class Device;
 class BackupFileSystemJob;
 
-/** @brief Back up a FileSystem.
-	@author vl@fidra.de
+/** Back up a FileSystem.
+	@author Volker Lanz <vl@fidra.de>
 */
 class BackupOperation : public Operation
 {

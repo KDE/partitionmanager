@@ -29,11 +29,11 @@ class Report;
 
 class QString;
 
-/** @brief Move a FileSystem.
+/** Move a FileSystem.
 
 	Moves a FileSystem on a given Device and Partition to a new start sector.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class MoveFileSystemJob : public Job
 {

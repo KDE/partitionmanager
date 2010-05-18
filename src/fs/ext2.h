@@ -33,8 +33,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief An ext2 file system.
-		@author vl@fidra.de
+	/** An ext2 file system.
+		@author Volker Lanz <vl@fidra.de>
 	*/
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT ext2 : public FileSystem
 	{

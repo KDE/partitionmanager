@@ -35,6 +35,11 @@ class KAboutData;
 
 class QString;
 
+/**
+  * Interface class for backend plugins.
+  * @author Volker Lanz <vl@fidra.de>
+  */
+
 class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 {
 	Q_OBJECT
@@ -47,20 +52,88 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 		virtual ~CoreBackend();
 
 	signals:
-		void progress(int);
-		void scanProgress(const QString&,int);
+		/**
+		 * Emitted to inform about progress of any kind.
+		  * @param i the progress in percent (from 0 to 100)
+		 */
+		void progress(int i);
+
+		/**
+		  * Emitted to inform about scan progress.
+		  * @param device_node the device being scanned just now (e.g. "/dev/sda")
+		  * @param i the progress in percent (from 0 to 100)
+		  */
+		void scanProgress(const QString& device_node, int i);
 
 	public:
+		/**
+		  * Return the plugin's KAboutData
+		  * @return the plugin's KAboutData
+		  */
 		virtual const KAboutData& about() const { return *m_AboutData; }
 
+		/**
+		  * Initialize the plugin's FileSystem support
+		  */
 		virtual void initFSSupport() = 0;
 
+		/**
+		  * Scan for devices in the system.
+		  * @return a QList of pointers to Device instances. The caller is responsible
+		  *         for deleting these objects.
+		  */
 		virtual QList<Device*> scanDevices() = 0;
+
+		/**
+		  * Scan a single device in the system.
+		  * @param device_node The path to the device that is to be scanned (e.g. /dev/sda)
+		  * @return a pointer to a Device instance. The caller is responsible for deleting
+		  *         this object.
+		  */
 		virtual Device* scanDevice(const QString& device_node) = 0;
+
+		/**
+		  * Open a device for reading.
+		  * @param device_node The path of the device that is to be opened (e.g. /dev/sda)
+		  * @return a pointer to a CoreBackendDevice or NULL if the open failed. If a pointer to
+		  *         an instance is returned, it's the caller's responsibility to delete the
+		  *         object.
+		  */
 		virtual CoreBackendDevice* openDevice(const QString& device_node) = 0;
+
+		/**
+		  * Open a device in exclusive mode for writing.
+		  * @param device_node The path of the device that is to be opened (e.g. /dev/sda)
+		  * @return a pointer to a CoreBackendDevice or NULL if the open failed. If a pointer to
+		  *         an instance is returned, it's the caller's responsibility to delete the
+		  *         object.
+		  */
 		virtual CoreBackendDevice* openDeviceExclusive(const QString& device_node) = 0;
+
+		/**
+		  * Close a CoreBackendDevice that has previously been opened.
+		  * @param core_device Pointer to the CoreBackendDevice to be closed. Must not be NULL.
+		  * @return true if closing the CoreBackendDevice succeeded, otherwise false.
+		  *
+		  * This method does not delete the object.
+		  */
 		virtual bool closeDevice(CoreBackendDevice* core_device) = 0;
+
+		/**
+		  * Emit progress.
+		  * @param i the progress in percent (from 0 to 100)
+		  * This is used to emit a progress() signal from somewhere deep inside the plugin
+		  * backend code if that is ever necessary.
+		  */
 		virtual void emitProgress(int i);
+
+		/**
+		  * Emit scan progress.
+		  * @param device_node the path to the device just being scanned (e.g. /dev/sda)
+		  * @param i the progress in percent (from 0 to 100)
+		  * This is used to emit a scanProgress() signal from the backend device scanning
+		  * code.
+		  */
 		virtual void emitScanProgress(const QString& device_node, int i);
 
 	protected:

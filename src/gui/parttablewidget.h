@@ -32,8 +32,8 @@ class PartitionTable;
 class QResizeEvent;
 class QMouseEvent;
 
-/** @brief Widget that represents a PartitionTable.
-	@author vl@fidra.de
+/** Widget that represents a PartitionTable.
+	@author Volker Lanz <vl@fidra.de>
 */
 class PartTableWidget : public PartWidgetBase
 {

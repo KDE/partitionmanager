@@ -33,8 +33,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief A pseudo file system for unformatted partitions.
-		@author vl@fidra.de
+	/** A pseudo file system for unformatted partitions.
+		@author Volker Lanz <vl@fidra.de>
 	 */
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT unformatted : public FileSystem
 	{

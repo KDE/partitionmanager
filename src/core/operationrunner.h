@@ -29,11 +29,11 @@ class Operation;
 class OperationStack;
 class Report;
 
-/** @brief Thread to run the Operations in the OperationStack.
+/** Thread to run the Operations in the OperationStack.
 
 	Runs the OperationStack when the user applies operations.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class OperationRunner : public QThread
 {

@@ -23,8 +23,8 @@
 
 #include "ui_applyprogressdialogwidgetbase.h"
 
-/** @brief Central widget for the ProgressDialog.
-	@author vl@fidra.de
+/** Central widget for the ProgressDialog.
+	@author Volker Lanz <vl@fidra.de>
 */
 class ApplyProgressDialogWidget : public QWidget, public Ui::ApplyProgressDialogWidgetBase
 {

@@ -32,14 +32,14 @@ class CreatePartitionTableOperation;
 class CoreBackend;
 class SmartStatus;
 
-/** @brief A device.
+/** A device.
 
 	Represents a device like /dev/sda.
 
 	Devices are the outermost entity; they contain a PartitionTable that itself contains Partitions.
 
 	@see PartitionTable, Partition
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 {

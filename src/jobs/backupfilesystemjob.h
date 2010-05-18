@@ -29,11 +29,11 @@ class Partition;
 class Device;
 class Report;
 
-/** @brief Back up a FileSystem.
+/** Back up a FileSystem.
 
 	Backs up a FileSystem from a given Device and Partition to a file with the given filename.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class BackupFileSystemJob : public Job
 {

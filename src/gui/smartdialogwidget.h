@@ -26,8 +26,8 @@
 class QStyledItemDelegate;
 class QPoint;
 
-/** @brief Central widget in the SmartDialogWidget
-	@author vl@fidra.de
+/** Central widget in the SmartDialogWidget
+	@author Volker Lanz <vl@fidra.de>
 */
 class SmartDialogWidget : public QWidget, public Ui::SmartDialogWidgetBase
 {

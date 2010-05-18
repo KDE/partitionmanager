@@ -29,12 +29,12 @@ class Device;
 class QGridLayout;
 class QString;
 
-/** @brief Show information about Partitions and Devices
+/** Show information about Partitions and Devices
 
 	Child widget of the QDockWidget to show some details about the currently selected Partition
 	or Device
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class InfoPane : public QWidget
 {

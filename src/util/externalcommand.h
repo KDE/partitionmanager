@@ -30,11 +30,11 @@
 
 class Report;
 
-/** @brief An external command.
+/** An external command.
 
 	Runs an external command as a child process.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT ExternalCommand : public QProcess
 {

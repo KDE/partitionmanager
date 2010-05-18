@@ -29,12 +29,12 @@ class Report;
 
 class QString;
 
-/** @brief Resize a FileSystem.
+/** Resize a FileSystem.
 
 	Resizes a FileSystem on a given Device and Partition to a new length. If the new length is -1, the
 	FileSystem is maximized to fill the entire Partition.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class ResizeFileSystemJob : public Job
 {

@@ -34,8 +34,8 @@ class QPaintEvent;
 class QResizeEvent;
 class QMouseEvent;
 
-/** @brief Widget that allows the user to resize a Partition.
-	@author vl@fidra.de
+/** Widget that allows the user to resize a Partition.
+	@author Volker Lanz <vl@fidra.de>
 */
 class PartResizerWidget : public QWidget
 {

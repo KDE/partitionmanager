@@ -48,8 +48,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Log
 		Level level;
 };
 
-/** @brief Global logging.
-	@author vl@fidra.de
+/** Global logging.
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT GlobalLog : public QObject
 {

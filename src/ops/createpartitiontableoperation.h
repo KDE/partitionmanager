@@ -31,8 +31,8 @@ class Device;
 class CreatePartitionTableJob;
 class PartitionTable;
 
-/** @brief Create a PartitionTable.
-	@author vl@fidra.de
+/** Create a PartitionTable.
+	@author Volker Lanz <vl@fidra.de>
 */
 class CreatePartitionTableOperation : public Operation
 {

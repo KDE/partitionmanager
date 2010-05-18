@@ -33,8 +33,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief A linux swap pseudo file system.
-		@author vl@fidra.de
+	/** A linux swap pseudo file system.
+		@author Volker Lanz <vl@fidra.de>
 	 */
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT linuxswap : public FileSystem
 	{

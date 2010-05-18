@@ -33,11 +33,11 @@ class QString;
 
 namespace FS
 {
-	/** @brief An ext4 file system.
+	/** An ext4 file system.
 
 		Basically the same as ext2.
 
-		@author vl@fidra.de
+		@author Volker Lanz <vl@fidra.de>
 	 */
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT ext4 : public ext2
 	{

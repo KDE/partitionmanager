@@ -36,12 +36,12 @@ class RestoreFileSystemJob;
 class CheckFileSystemJob;
 class ResizeFileSystemJob;
 
-/** @brief Restore a Partition.
+/** Restore a Partition.
 
 	Restores the FileSystem from a file to the given Partition on the given Device, handling overwriting
 	a previous Partition in case that is necessary.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class RestoreOperation : public Operation
 {

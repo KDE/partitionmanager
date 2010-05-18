@@ -35,8 +35,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief A ReiserFS file system.
-		@author vl@fidra.de
+	/** A ReiserFS file system.
+		@author Volker Lanz <vl@fidra.de>
 	 */
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT reiserfs : public FileSystem
 	{

@@ -30,9 +30,9 @@ class Device;
 class KPluginFactory;
 class QString;
 
-/** @brief Dummy backend plugin that doesn't really do anything.
+/** Dummy backend plugin that doesn't really do anything.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class DummyBackend : public CoreBackend
 {

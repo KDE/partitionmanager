@@ -30,11 +30,11 @@ class QWidget;
 class QString;
 class QPoint;
 
-/** @brief Show SMART properties.
+/** Show SMART properties.
 
 	Dialog that shows SMART status and properties for a device
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class SmartDialog : public KDialog
 {

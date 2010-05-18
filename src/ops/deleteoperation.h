@@ -32,8 +32,8 @@ class Partition;
 class Job;
 class DeletePartitionJob;
 
-/** @brief Delete a Partition.
-	@author vl@fidra.de
+/** Delete a Partition.
+	@author Volker Lanz <vl@fidra.de>
 */
 class DeleteOperation : public Operation
 {

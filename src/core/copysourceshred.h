@@ -27,11 +27,11 @@
 
 class CopyTarget;
 
-/** @brief A source for securely overwriting a partition (shredding).
+/** A source for securely overwriting a partition (shredding).
 
 	Represents a source of data (random or zeros) to copy from. Used to securely overwrite data on disk.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class CopySourceShred : public CopySource
 {

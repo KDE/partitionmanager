@@ -29,11 +29,11 @@
 
 class Device;
 
-/** @brief Dialog to create new Partitions.
+/** Dialog to create new Partitions.
 
 	Dialog to create a new Partition in some unallocated space on a Device.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class NewDialog : public SizeDialogBase
 {

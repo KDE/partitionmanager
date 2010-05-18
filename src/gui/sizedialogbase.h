@@ -34,8 +34,8 @@ class PartitionTable;
 class SizeDialogWidget;
 class SizeDetailsWidget;
 
-/** @brief Base class for all dialogs moving or resizing Partitions.
-	@author vl@fidra.de
+/** Base class for all dialogs moving or resizing Partitions.
+	@author Volker Lanz <vl@fidra.de>
 */
 class SizeDialogBase : public KDialog
 {

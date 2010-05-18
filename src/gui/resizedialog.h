@@ -28,13 +28,13 @@
 class Partition;
 class Device;
 
-/** @brief Let the user resize or move a Partition.
+/** Let the user resize or move a Partition.
 
 	@todo The ResizeDialog does not yet have a "dirty bit".
 	It should get one and disable its OK button as long as nothing has been
 	modified, much like the PartPropsDialog already does.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class ResizeDialog : public SizeDialogBase
 {

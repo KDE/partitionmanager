@@ -26,12 +26,12 @@
 class Partition;
 class Device;
 
-/** @brief Base class for dialogs to insert Partitions.
+/** Base class for dialogs to insert Partitions.
 
 	Base class for dialogs that need to insert a Partition into some unallocated space on
 	a Device.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class InsertDialog : public SizeDialogBase
 {

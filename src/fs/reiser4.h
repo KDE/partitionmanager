@@ -33,8 +33,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief A Reiser4 file system.
-		@author vl@fidra.de
+	/** A Reiser4 file system.
+		@author Volker Lanz <vl@fidra.de>
 	 */
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT reiser4 : public FileSystem
 	{

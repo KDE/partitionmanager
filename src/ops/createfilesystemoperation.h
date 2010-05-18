@@ -34,11 +34,11 @@ class DeleteFileSystemJob;
 class CreateFileSystemJob;
 class CheckFileSystemJob;
 
-/** @brief Create a FileSystem.
+/** Create a FileSystem.
 
 	Creates a FileSystem on a given Partition and Device.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class CreateFileSystemOperation : public Operation
 {

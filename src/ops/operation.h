@@ -35,7 +35,7 @@ class Report;
 class QString;
 class QIcon;
 
-/** @brief Base class of all Operations.
+/** Base class of all Operations.
 
 	An Operation serves two purposes: It is responsible for modifying the device preview to show the
 	user a state as if the Operation had already been applied and it is made up of Jobs to actually
@@ -68,7 +68,7 @@ class QIcon;
 		</li>
 	</ol>
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class Operation : public QObject
 {
@@ -102,8 +102,8 @@ class Operation : public QObject
 	public:
 		virtual QString iconName() const = 0; /**< @return name of the icon for the Operation */
 		virtual QString description() const = 0; /**< @return the Operation's description */
- 		virtual void preview() = 0; /**< @brief Apply the Operation to the current preview */
-		virtual void undo() = 0; /**< @brief Undo applying the Operation to the current preview */
+ 		virtual void preview() = 0; /**< Apply the Operation to the current preview */
+		virtual void undo() = 0; /**< Undo applying the Operation to the current preview */
 		virtual bool execute(Report& parent);
 
 		virtual OperationStatus status() const { return m_Status; } /**< @return the current status */

@@ -33,8 +33,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief A fat16 file system.
-		@author vl@fidra.de
+	/** A fat16 file system.
+		@author Volker Lanz <vl@fidra.de>
 	 */
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT fat16 : public FileSystem
 	{

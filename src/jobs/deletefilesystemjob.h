@@ -29,11 +29,11 @@ class Report;
 
 class QString;
 
-/** @brief Delete a FileSystem.
+/** Delete a FileSystem.
 
 	Delete and clobber the FileSystem on the given Partition on the given Device.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class DeleteFileSystemJob : public Job
 {

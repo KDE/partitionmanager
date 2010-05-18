@@ -39,11 +39,11 @@ class QTreeWidgetItem;
 class QCloseEvent;
 class QKeyEvent;
 
-/** @brief Show progress.
+/** Show progress.
 
 	The progress dialog telling the user about the progress of the Operations that are being applied.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class ApplyProgressDialog : public KDialog
 {

@@ -33,8 +33,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief An hfsplus file system.
-		@author vl@fidra.de
+	/** An hfsplus file system.
+		@author Volker Lanz <vl@fidra.de>
 	 */
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT hfsplus : public FileSystem
 	{

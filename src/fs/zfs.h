@@ -33,8 +33,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief A zfs file system.
-		@author vl@fidra.de
+	/** A zfs file system.
+		@author Volker Lanz <vl@fidra.de>
 	*/
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT zfs : public FileSystem
 	{

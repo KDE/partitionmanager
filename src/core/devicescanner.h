@@ -24,11 +24,11 @@
 
 class OperationStack;
 
-/** @brief Thread to scan for all available Devices on this computer.
+/** Thread to scan for all available Devices on this computer.
 
 	This class is used to find all Devices on the computer and to create new Device instances for each of them. It's subclassing QThread to run asynchronously.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class DeviceScanner : public QThread
 {

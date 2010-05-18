@@ -31,11 +31,11 @@ class Report;
 
 class QString;
 
-/** @brief Set a Partition's flags.
+/** Set a Partition's flags.
 
 	Set the Partition flags for a given Partition on a given Device.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class SetPartFlagsJob : public Job
 {

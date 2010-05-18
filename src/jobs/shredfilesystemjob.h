@@ -29,11 +29,11 @@ class Partition;
 class Device;
 class Report;
 
-/** @brief Securely delete and shred a FileSystem.
+/** Securely delete and shred a FileSystem.
 
 	Shreds (overwrites with random data) a FileSystem on given Partition and Device.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class ShredFileSystemJob : public Job
 {

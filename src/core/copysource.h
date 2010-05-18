@@ -25,13 +25,13 @@
 
 class CopyTarget;
 
-/** @brief Base class for something to copy from.
+/** Base class for something to copy from.
 
 	Abstract base class for all copy sources. Used in combination with CopyTarget
 	to implement moving, copying, backing up and restoring FileSystems.
 
 	@see CopyTarget
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class CopySource
 {

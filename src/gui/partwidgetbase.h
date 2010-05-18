@@ -30,8 +30,8 @@ class Partition;
 class PartWidget;
 class QWidget;
 
-/** @brief Base class for all widgets that need to position Partitions.
-	@author vl@fidra.de
+/** Base class for all widgets that need to position Partitions.
+	@author Volker Lanz <vl@fidra.de>
 */
 class PartWidgetBase : public QWidget
 {

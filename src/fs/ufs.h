@@ -31,8 +31,8 @@ class QString;
 
 namespace FS
 {
-	/** @brief A UFS file system.
-		@author vl@fidra.de
+	/** A UFS file system.
+		@author Volker Lanz <vl@fidra.de>
 	 */
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT ufs : public FileSystem
 	{

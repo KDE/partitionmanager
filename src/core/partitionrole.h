@@ -27,11 +27,11 @@
 
 class QString;
 
-/** @brief A Partition's role.
+/** A Partition's role.
 
 	Each Partition has a PartitionRole: It can be primary, extended, logical or represent unallocated space on the Device.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionRole
 {

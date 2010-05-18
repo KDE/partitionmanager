@@ -33,11 +33,11 @@ class QString;
 
 namespace FS
 {
-	/** @brief An ext3 file system.
+	/** An ext3 file system.
 
 		Basically the same as ext2.
 
-		@author vl@fidra.de
+		@author Volker Lanz <vl@fidra.de>
 	 */
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT ext3 : public ext2
 	{

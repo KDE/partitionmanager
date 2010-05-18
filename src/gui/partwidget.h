@@ -30,11 +30,11 @@ class Partition;
 class QPaintEvent;
 class QResizeEvent;
 
-/** @brief Widget that represents a Partition.
+/** Widget that represents a Partition.
 
 	Represents a single Partition (possibly with its children, in case of an extended Partition) in the GUI.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class PartWidget : public PartWidgetBase
 {

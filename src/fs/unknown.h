@@ -29,8 +29,8 @@
 
 namespace FS
 {
-	/** @brief A pseudo file system for partitions whose file system we cannot determine.
-		@author vl@fidra.de
+	/** A pseudo file system for partitions whose file system we cannot determine.
+		@author Volker Lanz <vl@fidra.de>
 	*/
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT unknown : public FileSystem
 	{

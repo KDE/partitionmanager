@@ -62,7 +62,7 @@ class Report;
 class QString;
 class QTextStream;
 
-/** @brief A partition or some unallocated space on a Device.
+/** A partition or some unallocated space on a Device.
 
 	Repesent partitions in a PartitionTable on a Device. Partitions can be unallocated, thus not all
 	instances really are partitions in the way the user would see them.
@@ -70,7 +70,7 @@ class QTextStream;
 	Extended partitions have child objects that represent the logicals inside them.
 
 	@see PartitionTable, Device, FileSystem
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 {

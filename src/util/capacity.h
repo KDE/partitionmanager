@@ -26,12 +26,12 @@ class Device;
 
 #include <qglobal.h>
 
-/** @brief Represent any kind of capacity.
+/** Represent any kind of capacity.
 
 	Any kind of capacity that can be expressed in units of Byte, KiB, MiB and so on. Also prints
 	capacities in nicely formatted ways.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class Capacity
 {

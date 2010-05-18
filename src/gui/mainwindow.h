@@ -44,9 +44,9 @@ class QLabel;
 class QCloseEvent;
 class QEvent;
 
-/** @brief The application's main window.
+/** The application's main window.
 
-	@author vl@fidra.de
+	@author Volker Lanz <vl@fidra.de>
 */
 class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
 {

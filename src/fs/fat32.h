@@ -33,11 +33,11 @@ class QString;
 
 namespace FS
 {
-	/** @brief A fat32 file system.
+	/** A fat32 file system.
 
 		Basically the same as a fat16 file system.
 
-		@author vl@fidra.de
+		@author Volker Lanz <vl@fidra.de>
 	 */
 	class LIBPARTITIONMANAGERPRIVATE_EXPORT fat32 : public fat16
 	{
