@@ -65,6 +65,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void loadConfig();
 		void saveConfig() const;
 		void updateWindowTitle();
+		void updateSeletedDeviceMenu();
 
 		void enableActions();
 
@@ -139,6 +140,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void on_m_ApplyProgressDialog_finished();
 
 		void on_m_ListDevices_contextMenuRequested(const QPoint& pos);
+		void on_m_ListDevices_selectionChanged(const QString& device_node);
 
 		void on_m_TreeLog_contextMenuRequested(const QPoint& pos);
 		void on_m_ListOperations_contextMenuRequested(const QPoint& pos);
@@ -163,6 +165,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 
 		void onSmartStatusDevice();
 		void onPropertiesDevice(const QString& device_node = QString());
+		void onSelectedDeviceMenuTriggered(bool);
 
 	private:
 		KActionCollection* m_ActionCollection;

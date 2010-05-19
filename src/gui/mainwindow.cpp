@@ -621,6 +621,48 @@ void MainWindow::on_m_DeviceScanner_finished()
 	// first device
 	if (!listDevices().setSelectedDevice(savedSelectedDeviceNode()) && !operationStack().previewDevices().isEmpty())
 		listDevices().setSelectedDevice(operationStack().previewDevices()[0]->deviceNode());
+
+	updateSeletedDeviceMenu();
+}
+
+void MainWindow::updateSeletedDeviceMenu()
+{
+	KMenu* devicesMenu = static_cast<KMenu*>(guiFactory()->container("selectedDevice", this));
+	devicesMenu->clear();
+
+	devicesMenu->setEnabled(!operationStack().previewDevices().isEmpty());
+
+	foreach(const Device* d, operationStack().previewDevices())
+	{
+		QAction* action = new QAction(d->prettyName(), devicesMenu);
+		action->setCheckable(true);
+		action->setChecked(d->deviceNode() == pmWidget().selectedDevice()->deviceNode());
+		action->setData(d->deviceNode());
+		connect(action, SIGNAL(triggered(bool)), SLOT(onSelectedDeviceMenuTriggered(bool)));
+		devicesMenu->addAction(action);
+	}
+}
+
+void MainWindow::onSelectedDeviceMenuTriggered(bool)
+{
+	QAction* action = qobject_cast<QAction*>(sender());
+	KMenu* devicesMenu = static_cast<KMenu*>(guiFactory()->container("selectedDevice", this));
+
+	if (action == NULL || action->parent() != devicesMenu)
+		return;
+
+	foreach (QAction* entry, qFindChildren<QAction*>(devicesMenu))
+		entry->setChecked(entry == action);
+
+	listDevices().setSelectedDevice(action->data().toString());
+}
+
+void MainWindow::on_m_ListDevices_selectionChanged(const QString& device_node)
+{
+	KMenu* devicesMenu = static_cast<KMenu*>(guiFactory()->container("selectedDevice", this));
+
+	foreach (QAction* entry, qFindChildren<QAction*>(devicesMenu))
+		entry->setChecked(entry->data().toString() == device_node);
 }
 
 void MainWindow::onRefreshDevices()

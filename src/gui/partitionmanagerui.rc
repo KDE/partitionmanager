@@ -44,6 +44,10 @@
 		</Menu>
 		<Menu name="device">
 			<text context="@title:menu">Device</text>
+			<Menu name="selectedDevice">
+				<text context="@title:menu">Select Current Device</text>
+			</Menu>
+			<separator/>
 			<Action name="createNewPartitionTable"/>
 			<separator/>
 			<Action name="exportPartitionTable"/>
