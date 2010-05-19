@@ -22,6 +22,8 @@
 #include "core/partitiontable.h"
 #include "core/smartstatus.h"
 
+#include "util/capacity.h"
+
 #include <kdebug.h>
 #include <klocale.h>
 
@@ -51,4 +53,9 @@ Device::Device(const QString& name, const QString& devicenode, qint32 heads, qin
 Device::~Device()
 {
 	delete m_PartitionTable;
+}
+
+QString Device::prettyName() const
+{
+	return QString("%2 (%1, %3)").arg(name()).arg(deviceNode()).arg(Capacity(*this).toString());
 }

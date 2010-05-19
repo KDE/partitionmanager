@@ -72,6 +72,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 		SmartStatus& smartStatus() { return *m_SmartStatus; }
 		const SmartStatus& smartStatus() const { return *m_SmartStatus; }
 
+		QString prettyName() const;
+
 	protected:
 		void setPartitionTable(PartitionTable* ptable) { m_PartitionTable = ptable; }
 
