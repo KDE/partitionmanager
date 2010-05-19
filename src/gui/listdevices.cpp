@@ -32,10 +32,10 @@ class ListDeviceWidgetItem : public QListWidgetItem
 {
 	public:
 		ListDeviceWidgetItem(const Device& d) :
-			QListWidgetItem(DesktopIcon(d.iconName()), d.deviceNode() + " (" + Capacity(d).toString() + ')'),
+			QListWidgetItem(DesktopIcon(d.iconName()), d.prettyName()),
 			deviceNode(d.deviceNode())
 		{
-			setToolTip(d.deviceNode() + " (" + Capacity(d).toString() + ", " + d.name() + ')');
+			setToolTip(d.prettyName());
 			setSizeHint(QSize(0, 32));
 		}
 
