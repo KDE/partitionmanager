@@ -71,12 +71,12 @@ namespace FS
 
 	qint64 fat16::minCapacity() const
 	{
-		 return 16 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
+		return 16 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
 	}
 
 	qint64 fat16::maxCapacity() const
 	{
-		 return 4 * Capacity::unitFactor(Capacity::Byte, Capacity::GiB);
+		return 4 * Capacity::unitFactor(Capacity::Byte, Capacity::GiB);
 	}
 
 	qint64 fat16::readUsedCapacity(const QString& deviceNode) const
