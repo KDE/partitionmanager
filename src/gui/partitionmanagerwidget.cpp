@@ -669,6 +669,20 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
 		if (result != KDialog::Accepted)
 			return false;
 	}
+	else if (KMessageBox::warningContinueCancel(this,
+			i18nc("@info", "<para><warning>You are about to lose all data on partition "
+				"<filename>%1</filename>.</warning></para>"
+				"<para>Overwriting one partition with another (or with an image file) will "
+				"destroy all data on this target partition.</para>"
+				"<para>If you continue now and apply the resulting operation in the main "
+				"window, all data currently stored on <filename>%1</filename> will "
+				"unrecoverably be overwritten.</para>",
+				selectedPartition()->deviceNode()),
+			i18nc("@title:window", "Really Overwrite Existing Partition?"),
+			KGuiItem(i18nc("@action:button", "Overwrite Partition"), "arrow-right"),
+			KStandardGuiItem::cancel(),
+			"reallyOverwriteExistingPartition") == KMessageBox::Cancel)
+		return false;
 
 	if (insertedPartition.length() < sourceLength)
 	{
