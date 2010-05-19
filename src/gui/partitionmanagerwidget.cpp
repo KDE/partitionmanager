@@ -247,7 +247,13 @@ void PartitionManagerWidget::updatePartitions()
 	partTableWidget().setPartitionTable(selectedDevice()->partitionTable());
 
 	QTreeWidgetItem* deviceItem = new QTreeWidgetItem();
-	deviceItem->setText(0, selectedDevice()->name());
+
+	QFont font;
+	font.setBold(true);
+	font.setWeight(75);
+	deviceItem->setFont(0, font);
+
+	deviceItem->setText(0, selectedDevice()->prettyName());
 	deviceItem->setIcon(0, DesktopIcon(selectedDevice()->iconName()));
 	deviceItem->setSizeHint(0, QSize(0, 32));
 
