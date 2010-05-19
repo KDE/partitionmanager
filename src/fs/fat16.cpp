@@ -80,7 +80,7 @@ namespace FS
 
 	qint64 fat16::readUsedCapacity(const QString& deviceNode) const
 	{
-		ExternalCommand cmd("fsck.msdos", QStringList() << "-v" << deviceNode);
+		ExternalCommand cmd("fsck.msdos", QStringList() << "-n" << "-v" << deviceNode);
 
 		if (cmd.run())
 		{
