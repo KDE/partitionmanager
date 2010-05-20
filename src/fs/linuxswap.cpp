@@ -53,7 +53,7 @@ namespace FS
 		return ExternalCommand(report, "mkswap", QStringList() << deviceNode).run(-1);
 	}
 
-	bool linuxswap::resize(Report& report, const QString& deviceNode, qint64) const
+	bool linuxswap::resize(Report& report, const QString& deviceNode, qint64 length) const
 	{
 		const QString label = readLabel(deviceNode);
 		const QString uuid = readUUID(deviceNode);
@@ -64,7 +64,7 @@ namespace FS
 		if (!uuid.isEmpty())
 			args << "-U" << uuid;
 
-		args << deviceNode;
+		args << deviceNode << QString::number(length / 1024);
 
 		return ExternalCommand(report, "mkswap", args).run(-1);
 	}
