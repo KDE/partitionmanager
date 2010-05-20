@@ -58,6 +58,7 @@ namespace FS
 			virtual CommandSupportType supportGetUUID() const { return m_GetUUID; }
 
 			virtual qint64 maxCapacity() const;
+			virtual bool supportToolFound() const { return true; }
 
 		public:
 			static CommandSupportType m_GetUsed;

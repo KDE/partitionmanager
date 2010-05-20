@@ -355,3 +355,13 @@ FileSystem::Type FileSystem::defaultFileSystem()
 {
 	return static_cast<FileSystem::Type>(Config::defaultFileSystem());
 }
+
+bool FileSystem::supportToolFound() const
+{
+	return false;
+}
+
+FileSystem::SupportTool FileSystem::supportToolName() const
+{
+	return SupportTool();
+}

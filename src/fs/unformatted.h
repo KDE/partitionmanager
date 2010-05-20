@@ -48,6 +48,8 @@ namespace FS
 
 			virtual CommandSupportType supportCreate() const { return m_Create; }
 
+			virtual bool supportToolFound() const { return true; }
+
 		public:
 			static CommandSupportType m_Create;
 	};

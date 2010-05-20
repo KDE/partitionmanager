@@ -46,6 +46,8 @@ namespace FS
 			virtual CommandSupportType supportCopy() const { return m_Copy; }
 			virtual CommandSupportType supportBackup() const { return m_Backup; }
 
+			virtual bool supportToolFound() const { return true; }
+
 		public:
 			static CommandSupportType m_Move;
 			static CommandSupportType m_Copy;

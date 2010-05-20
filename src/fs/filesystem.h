@@ -21,6 +21,8 @@
 
 #define FILESYSTEM__H
 
+#include <kurl.h>
+
 #include <qglobal.h>
 #include <QStringList>
 #include <QString>
@@ -41,6 +43,15 @@ class FileSystem
 	Q_DISABLE_COPY(FileSystem)
 
 	public:
+		class SupportTool
+		{
+			public:
+				SupportTool(const QString& n = QString(), const KUrl& u = KUrl()) : name(n), url(u) {}
+
+				const QString name;
+				const KUrl url;
+		};
+
 		/** Supported FileSystem types */
 		enum Type
 		{
@@ -127,6 +138,9 @@ class FileSystem
 
 		virtual qint64 minCapacity() const;
 		virtual qint64 maxCapacity() const;
+
+		virtual SupportTool supportToolName() const;
+		virtual bool supportToolFound() const;
 
 		virtual QString name() const;
 		virtual FileSystem::Type type() const { return m_Type; } /**< @return the FileSystem's type */

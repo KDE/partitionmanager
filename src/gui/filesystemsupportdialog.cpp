@@ -88,6 +88,8 @@ void FileSystemSupportDialog::setupDialog()
 		// if a file is an image of a supported or unsupported (or even invalid) filesystem
 		item->setIcon(i++, yes);
 
+		item->setText(i++, fs->supportToolName().name.isEmpty() ? "---" : fs->supportToolName().name);
+
 		dialogWidget().tree().addTopLevelItem(item);
 	}
 

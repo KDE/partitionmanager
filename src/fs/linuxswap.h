@@ -66,6 +66,9 @@ namespace FS
 			virtual CommandSupportType supportSetLabel() const { return m_SetLabel; }
 			virtual CommandSupportType supportGetUUID() const { return m_GetUUID; }
 
+			virtual SupportTool supportToolName() const;
+			virtual bool supportToolFound() const;
+
 		public:
 			static CommandSupportType m_Create;
 			static CommandSupportType m_Grow;

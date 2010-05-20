@@ -48,6 +48,28 @@ namespace FS
 		m_GetUUID = cmdSupportCore;
 	}
 
+	bool linuxswap::supportToolFound() const
+	{
+		return
+// 			m_GetUsed != cmdSupportNone &&
+			m_GetLabel != cmdSupportNone &&
+			m_SetLabel != cmdSupportNone &&
+			m_Create != cmdSupportNone &&
+// 			m_Check != cmdSupportNone &&
+// 			m_UpdateUUID != cmdSupportNone &&
+			m_Grow != cmdSupportNone &&
+			m_Shrink != cmdSupportNone &&
+			m_Copy != cmdSupportNone &&
+			m_Move != cmdSupportNone &&
+// 			m_Backup != cmdSupportNone &&
+			m_GetUUID != cmdSupportNone;
+	}
+
+	FileSystem::SupportTool linuxswap::supportToolName() const
+	{
+		return SupportTool("util-linux", KUrl("http://www.kernel.org/pub/linux/utils/util-linux-ng/"));
+	}
+
 	bool linuxswap::create(Report& report, const QString& deviceNode) const
 	{
 		ExternalCommand cmd(report, "mkswap", QStringList() << deviceNode);

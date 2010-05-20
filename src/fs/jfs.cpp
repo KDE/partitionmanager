@@ -59,9 +59,36 @@ namespace FS
 		m_Backup = cmdSupportCore;
 	}
 
+	bool jfs::supportToolFound() const
+	{
+		return
+			m_GetUsed != cmdSupportNone &&
+			m_GetLabel != cmdSupportNone &&
+			m_SetLabel != cmdSupportNone &&
+			m_Create != cmdSupportNone &&
+			m_Check != cmdSupportNone &&
+// 			m_UpdateUUID != cmdSupportNone &&
+			m_Grow != cmdSupportNone &&
+// 			m_Shrink != cmdSupportNone &&
+			m_Copy != cmdSupportNone &&
+			m_Move != cmdSupportNone &&
+			m_Backup != cmdSupportNone;
+// 			m_GetUUID != cmdSupportNone;
+	}
+
+	FileSystem::SupportTool jfs::supportToolName() const
+	{
+		return SupportTool("jfsutils", KUrl("http://jfs.sourceforge.net/"));
+	}
+
 	qint64 jfs::minCapacity() const
 	{
 		return 16 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
+	}
+
+	qint64 jfs::maxCapacity() const
+	{
+		return 32 * Capacity::unitFactor(Capacity::Byte, Capacity::PiB);
 	}
 
 	qint64 jfs::readUsedCapacity(const QString& deviceNode) const

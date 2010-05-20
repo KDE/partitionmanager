@@ -49,6 +49,28 @@ namespace FS
 		m_Backup = cmdSupportCore;
 	}
 
+	bool hfsplus::supportToolFound() const
+	{
+		return
+			m_GetUsed != cmdSupportNone &&
+// 			m_GetLabel != cmdSupportNone &&
+// 			m_SetLabel != cmdSupportNone &&
+// 			m_Create != cmdSupportNone &&
+			m_Check != cmdSupportNone &&
+// 			m_UpdateUUID != cmdSupportNone &&
+// 			m_Grow != cmdSupportNone &&
+// 			m_Shrink != cmdSupportNone &&
+			m_Copy != cmdSupportNone &&
+			m_Move != cmdSupportNone &&
+			m_Backup != cmdSupportNone;
+// 			m_GetUUID != cmdSupportNone;
+	}
+
+	FileSystem::SupportTool hfsplus::supportToolName() const
+	{
+		return SupportTool("hfsplus", KUrl());
+	}
+
 	qint64 hfsplus::maxCapacity() const
 	{
 		return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);

@@ -54,6 +54,29 @@ namespace FS
 		m_Backup = cmdSupportCore;
 	}
 
+	bool hfs::supportToolFound() const
+	{
+		return
+// 			m_GetUsed != cmdSupportNone &&
+			m_GetLabel != cmdSupportNone &&
+// 			m_SetLabel != cmdSupportNone &&
+			m_Create != cmdSupportNone &&
+			m_Check != cmdSupportNone &&
+// 			m_UpdateUUID != cmdSupportNone &&
+// 			m_Grow != cmdSupportNone &&
+// 			m_Shrink != cmdSupportNone &&
+			m_Copy != cmdSupportNone &&
+			m_Move != cmdSupportNone &&
+			m_Backup != cmdSupportNone;
+// 			m_GetUUID != cmdSupportNone;
+	}
+
+	FileSystem::SupportTool hfs::supportToolName() const
+	{
+		return SupportTool("hfsutils", KUrl("http://www.mars.org/home/rob/proj/hfs/"));
+	}
+
+
 	qint64 hfs::maxCapacity() const
 	{
 		 return 2 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);

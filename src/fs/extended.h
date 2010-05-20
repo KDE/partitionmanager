@@ -54,6 +54,8 @@ namespace FS
 			virtual CommandSupportType supportShrink() const { return m_Shrink; }
 			virtual CommandSupportType supportMove() const { return m_Move; }
 
+			virtual bool supportToolFound() const { return true; }
+
 		public:
 			static CommandSupportType m_Create;
 			static CommandSupportType m_Grow;

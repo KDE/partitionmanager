@@ -62,6 +62,28 @@ namespace FS
 		m_GetUUID = cmdSupportCore;
 	}
 
+	bool reiserfs::supportToolFound() const
+	{
+		return
+			m_GetUsed != cmdSupportNone &&
+			m_GetLabel != cmdSupportNone &&
+			m_SetLabel != cmdSupportNone &&
+			m_Create != cmdSupportNone &&
+			m_Check != cmdSupportNone &&
+			m_UpdateUUID != cmdSupportNone &&
+			m_Grow != cmdSupportNone &&
+			m_Shrink != cmdSupportNone &&
+			m_Copy != cmdSupportNone &&
+			m_Move != cmdSupportNone &&
+			m_Backup != cmdSupportNone &&
+			m_GetUUID != cmdSupportNone;
+	}
+
+	FileSystem::SupportTool reiserfs::supportToolName() const
+	{
+		return SupportTool("reiserfsprogs", KUrl("http://www.kernel.org/pub/linux/utils/fs/reiserfs/"));
+	}
+
 	qint64 reiserfs::minCapacity() const
 	{
 		return 32 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);

@@ -68,6 +68,28 @@ namespace FS
 		m_GetUUID = cmdSupportCore;
 	}
 
+	bool ocfs2::supportToolFound() const
+	{
+		return
+// 			m_GetUsed != cmdSupportNone &&
+			m_GetLabel != cmdSupportNone &&
+			m_SetLabel != cmdSupportNone &&
+			m_Create != cmdSupportNone &&
+			m_Check != cmdSupportNone &&
+			m_UpdateUUID != cmdSupportNone &&
+			m_Grow != cmdSupportNone &&
+// 			m_Shrink != cmdSupportNone &&
+			m_Copy != cmdSupportNone &&
+			m_Move != cmdSupportNone &&
+			m_Backup != cmdSupportNone &&
+			m_GetUUID != cmdSupportNone;
+	}
+
+	FileSystem::SupportTool ocfs2::supportToolName() const
+	{
+		return SupportTool("ocfs2-tools", KUrl("http://oss.oracle.com/projects/ocfs2-tools/"));
+	}
+
 	qint64 ocfs2::maxCapacity() const
 	{
 		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);

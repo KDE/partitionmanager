@@ -54,6 +54,8 @@ namespace FS
 			virtual CommandSupportType supportBackup() const { return m_Backup; }
 
 			virtual qint64 maxCapacity() const;
+			virtual SupportTool supportToolName() const;
+			virtual bool supportToolFound() const;
 
 		public:
 			static CommandSupportType m_GetUsed;

@@ -65,6 +65,8 @@ namespace FS
 
 			virtual qint64 minCapacity() const;
 			virtual qint64 maxCapacity() const;
+			virtual SupportTool supportToolName() const;
+			virtual bool supportToolFound() const;
 
 		public:
 			static CommandSupportType m_GetUsed;

@@ -66,6 +66,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void saveConfig() const;
 		void updateWindowTitle();
 		void updateSeletedDeviceMenu();
+		void checkFileSystemSupport();
 
 		void enableActions();
 

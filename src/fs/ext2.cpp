@@ -61,9 +61,31 @@ namespace FS
 		m_GetUUID = cmdSupportCore;
 	}
 
+	bool ext2::supportToolFound() const
+	{
+		return
+			m_GetUsed != cmdSupportNone &&
+			m_GetLabel != cmdSupportNone &&
+			m_SetLabel != cmdSupportNone &&
+			m_Create != cmdSupportNone &&
+			m_Check != cmdSupportNone &&
+			m_UpdateUUID != cmdSupportNone &&
+			m_Grow != cmdSupportNone &&
+			m_Shrink != cmdSupportNone &&
+			m_Copy != cmdSupportNone &&
+			m_Move != cmdSupportNone &&
+			m_Backup != cmdSupportNone &&
+			m_GetUUID != cmdSupportNone;
+	}
+
+	FileSystem::SupportTool ext2::supportToolName() const
+	{
+		return SupportTool("e2fsprogs", KUrl("http://e2fsprogs.sf.net"));
+	}
+
 	qint64 ext2::maxCapacity() const
 	{
-		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+		return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
 	qint64 ext2::readUsedCapacity(const QString& deviceNode) const

@@ -39,6 +39,7 @@ namespace FS
 
 		public:
 			static void init() {}
+			virtual bool supportToolFound() const { return true; }
 	};
 }
 

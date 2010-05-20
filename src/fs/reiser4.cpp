@@ -50,6 +50,28 @@ namespace FS
 		m_Backup = cmdSupportCore;
 	}
 
+	bool reiser4::supportToolFound() const
+	{
+		return
+			m_GetUsed != cmdSupportNone &&
+			m_GetLabel != cmdSupportNone &&
+// 			m_SetLabel != cmdSupportNone &&
+			m_Create != cmdSupportNone &&
+			m_Check != cmdSupportNone &&
+// 			m_UpdateUUID != cmdSupportNone &&
+// 			m_Grow != cmdSupportNone &&
+// 			m_Shrink != cmdSupportNone &&
+			m_Copy != cmdSupportNone &&
+			m_Move != cmdSupportNone &&
+			m_Backup != cmdSupportNone;
+// 			m_GetUUID != cmdSupportNone;
+	}
+
+	FileSystem::SupportTool reiser4::supportToolName() const
+	{
+		return SupportTool("reiser4progs", KUrl("http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"));
+	}
+
 	qint64 reiser4::maxCapacity() const
 	{
 		// looks like it's actually unknown. see

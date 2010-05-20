@@ -623,6 +623,7 @@ void MainWindow::on_m_DeviceScanner_finished()
 		listDevices().setSelectedDevice(operationStack().previewDevices()[0]->deviceNode());
 
 	updateSeletedDeviceMenu();
+	checkFileSystemSupport();
 }
 
 void MainWindow::updateSeletedDeviceMenu()
@@ -1039,4 +1040,64 @@ void MainWindow::onPropertiesDevice(const QString&)
 
 		delete dlg;
 	}
+}
+
+static QStringList checkSupportInNode(const PartitionNode* parent)
+{
+	QStringList rval;
+
+	foreach(const PartitionNode* node, parent->children())
+	{
+		const Partition* p = dynamic_cast<const Partition*>(node);
+
+		if (p == NULL)
+			continue;
+
+		if (node->children().size() > 0)
+			rval << checkSupportInNode(node);
+
+		if (!p->fileSystem().supportToolFound() && !p->fileSystem().supportToolName().name.isEmpty())
+			rval << QString("<tr>"
+					"<td>%1</td>"
+					"<td>%2</td>"
+					"<td>%3</td>"
+					"<td><a href=\"%4\">%4</a></td>"
+					"</tr>")
+					.arg(p->deviceNode())
+					.arg(p->fileSystem().name())
+					.arg(p->fileSystem().supportToolName().name)
+					.arg(p->fileSystem().supportToolName().url.prettyUrl());
+	}
+
+	return rval;
+}
+
+void MainWindow::checkFileSystemSupport()
+{
+	QStringList supportList;
+
+	foreach(const Device* d, operationStack().previewDevices())
+		supportList << checkSupportInNode(d->partitionTable());
+
+	supportList.sort();
+	supportList.removeDuplicates();
+
+	if (!supportList.isEmpty())
+		KMessageBox::information(this,
+				i18nc("@info",
+					"<para>No support tools were found for file systems currently present on hard disks in this computer:</para>"
+					"<table style='margin-top:12px'>"
+					"<tr>"
+					"<td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Partition</td>"
+					"<td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>File System</td>"
+					"<td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Support Tools</td>"
+					"<td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>URL</td>"
+					"</tr>"
+					"%1"
+					"</table>"
+					"<para>As long as the support tools for these file systems are not installed you will not be able to modify them.</para>"
+					"<para>You should find packages with these support tools in your distribution's package manager.</para>",
+				supportList.join("\n")),
+				i18nc("@title:window", "Missing File System Support Packages"),
+				"showInformationOnMissingFileSystemSupport", KMessageBox::Notify | KMessageBox::AllowLink);
 }
