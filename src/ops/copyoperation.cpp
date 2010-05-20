@@ -318,5 +318,8 @@ bool CopyOperation::canPaste(const Partition* p, const Partition* source)
 	if (source->length() > p->length())
 		return false;
 
+	if (!p->roles().has(PartitionRole::Unallocated) && p->capacity() > source->fileSystem().maxCapacity())
+		return false;
+
 	return true;
 }
