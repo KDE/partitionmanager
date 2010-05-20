@@ -82,6 +82,7 @@ SmartDialogWidget::SmartDialogWidget(QWidget* parent) :
 SmartDialogWidget::~SmartDialogWidget()
 {
 	saveConfig();
+	delete m_SmartAttrDelegate;
 }
 
 void SmartDialogWidget::loadConfig()
