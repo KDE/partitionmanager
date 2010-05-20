@@ -19,6 +19,7 @@
 
 #include "fs/reiser4.h"
 
+#include "util/capacity.h"
 #include "util/externalcommand.h"
 
 #include <QStringList>
@@ -47,6 +48,13 @@ namespace FS
 		m_Check = findExternal("fsck.reiser4", QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Move = m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Backup = cmdSupportCore;
+	}
+
+	qint64 reiser4::maxCapacity() const
+	{
+		// looks like it's actually unknown. see
+		// http://en.wikipedia.org/wiki/Comparison_of_file_systems
+		return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
 	qint64 reiser4::readUsedCapacity(const QString& deviceNode) const

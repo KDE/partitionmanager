@@ -56,6 +56,8 @@ namespace FS
 			virtual CommandSupportType supportCopy() const { return m_Copy; }
 			virtual CommandSupportType supportBackup() const { return m_Backup; }
 
+			virtual qint64 maxCapacity() const;
+
 		public:
 			static CommandSupportType m_GetUsed;
 			static CommandSupportType m_GetLabel;
