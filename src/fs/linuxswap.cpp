@@ -56,10 +56,14 @@ namespace FS
 	bool linuxswap::resize(Report& report, const QString& deviceNode, qint64) const
 	{
 		const QString label = readLabel(deviceNode);
+		const QString uuid = readUUID(deviceNode);
 
 		QStringList args;
 		if (!label.isEmpty())
 			args << "-L" << label;
+		if (!uuid.isEmpty())
+			args << "-U" << uuid;
+
 		args << deviceNode;
 
 		return ExternalCommand(report, "mkswap", args).run(-1);
