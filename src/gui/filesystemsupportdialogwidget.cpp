@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2010 by Volker Lanz <vl@fidra.de>                 *
+ *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,47 +17,10 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(FILESYSTEMSUPPORTDIALOG__H)
+#include "gui/filesystemsupportdialogwidget.h"
 
-#define FILESYSTEMSUPPORTDIALOG__H
-
-#include <QWidget>
-
-#include <kdialog.h>
-
-class KPushButton;
-
-class FileSystemSupportDialogWidget;
-
-/** Show supported Operations
-
-	Dialog to show which Operations are supported for which type of FileSystem.
-
-	@author Volker Lanz <vl@fidra.de>
-*/
-class FileSystemSupportDialog : public KDialog
+FileSystemSupportDialogWidget::FileSystemSupportDialogWidget(QWidget* parent) :
+	QWidget(parent)
 {
-	Q_OBJECT
-	Q_DISABLE_COPY(FileSystemSupportDialog)
-
-	public:
-		FileSystemSupportDialog(QWidget* parent);
-		~FileSystemSupportDialog();
-
-	public:
-		QSize sizeHint() const;
-
-	protected slots:
-		void onButtonRescanClicked();
-
-	protected:
-		FileSystemSupportDialogWidget& dialogWidget() { Q_ASSERT(m_FileSystemSupportDialogWidget); return *m_FileSystemSupportDialogWidget; }
-		const FileSystemSupportDialogWidget& dialogWidget() const { Q_ASSERT(m_FileSystemSupportDialogWidget); return *m_FileSystemSupportDialogWidget; }
-		void setupDialog();
-		void setupConnections();
-
-	private:
-		FileSystemSupportDialogWidget* m_FileSystemSupportDialogWidget;
-};
-
-#endif
+	setupUi(this);
+}

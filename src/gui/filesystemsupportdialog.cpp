@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008, 2010 by Volker Lanz <vl@fidra.de>                 *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -18,10 +18,10 @@
  ***************************************************************************/
 
 #include "gui/filesystemsupportdialog.h"
+#include "gui/filesystemsupportdialogwidget.h"
 
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
-
 
 #include <kdebug.h>
 #include <klocale.h>
