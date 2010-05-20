@@ -104,6 +104,7 @@ class FileSystem
 		virtual QString readLabel(const QString& deviceNode) const;
 		virtual bool create(Report& report, const QString& deviceNode) const;
 		virtual bool resize(Report& report, const QString& deviceNode, qint64 newLength) const;
+		virtual bool move(Report& report, const QString& deviceNode, qint64 newStartSector) const;
 		virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
 		virtual bool copy(Report& report, const QString& targetDeviceNode, const QString& sourceDeviceNode) const;
 		virtual bool backup(Report& report, const Device& sourceDevice, const QString& deviceNode, const QString& filename) const;

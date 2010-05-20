@@ -116,6 +116,21 @@ bool FileSystem::resize(Report& report, const QString& deviceNode, qint64 newLen
 	return true;
 }
 
+/** Move a FileSystem to a new start sector
+	@param report Report to write status information to
+	@param deviceNode the device node for the Partition the FileSystem is on
+	@param newLength the new start sector for the FileSystem
+	@return true on success
+*/
+bool FileSystem::move(Report& report, const QString& deviceNode, qint64 newStartSector) const
+{
+	Q_UNUSED(report);
+	Q_UNUSED(deviceNode);
+	Q_UNUSED(newStartSector);
+
+	return true;
+}
+
 /** Writes a label for the FileSystem to disk
 	@param report Report to write status information to
 	@param deviceNode the device node for the Partition the FileSystem is on
