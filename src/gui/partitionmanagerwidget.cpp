@@ -822,36 +822,20 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertPartition, qint64
 
 		PartitionTable::snap(*selectedDevice(), insertPartition, selectedPartition());
 	}
-	else
-	{
-		if (selectedPartition()->capacity() > insertPartition.fileSystem().maxCapacity())
-		{
-			KMessageBox::sorry(this, i18nc("@info",
-				"<para>The target partition is bigger than the source allows.</para>"
-				"<para>You are trying to paste a %2 partition onto an existing partition "
-				"that is bigger than %1, the maximum capacity of a %2 file system.</para>",
-				Capacity(insertPartition.fileSystem().maxCapacity()).toString(Capacity::AppendUnit),
-				insertPartition.fileSystem().name()
-				),
-				i18nc("@title:window", "Target Partition Too Big"));
-			return false;
-		}
-
-		if (KMessageBox::warningContinueCancel(this,
-				i18nc("@info", "<para><warning>You are about to lose all data on partition "
-					"<filename>%1</filename>.</warning></para>"
-					"<para>Overwriting one partition with another (or with an image file) will "
-					"destroy all data on this target partition.</para>"
-					"<para>If you continue now and apply the resulting operation in the main "
-					"window, all data currently stored on <filename>%1</filename> will "
-					"unrecoverably be overwritten.</para>",
-					selectedPartition()->deviceNode()),
-				i18nc("@title:window", "Really Overwrite Existing Partition?"),
-				KGuiItem(i18nc("@action:button", "Overwrite Partition"), "arrow-right"),
-				KStandardGuiItem::cancel(),
-				"reallyOverwriteExistingPartition") == KMessageBox::Cancel)
-			return false;
-	}
+	else if (KMessageBox::warningContinueCancel(this,
+			i18nc("@info", "<para><warning>You are about to lose all data on partition "
+				"<filename>%1</filename>.</warning></para>"
+				"<para>Overwriting one partition with another (or with an image file) will "
+				"destroy all data on this target partition.</para>"
+				"<para>If you continue now and apply the resulting operation in the main "
+				"window, all data currently stored on <filename>%1</filename> will "
+				"unrecoverably be overwritten.</para>",
+				selectedPartition()->deviceNode()),
+			i18nc("@title:window", "Really Overwrite Existing Partition?"),
+			KGuiItem(i18nc("@action:button", "Overwrite Partition"), "arrow-right"),
+			KStandardGuiItem::cancel(),
+			"reallyOverwriteExistingPartition") == KMessageBox::Cancel)
+		return false;
 
 	if (insertPartition.length() < sourceLength)
 	{
