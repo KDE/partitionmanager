@@ -29,6 +29,11 @@
 
 #include <kdebug.h>
 #include <klocale.h>
+#include <kglobal.h>
+#include <kcomponentdata.h>
+#include <kaboutdata.h>
+
+#include <solid/powermanagement.h>
 
 /** Constructs an OperationRunner.
 	@param ostack the OperationStack to act on
@@ -50,6 +55,9 @@ void OperationRunner::run()
 	setCancelling(false);
 
 	bool status = true;
+
+	int suppressCookie = Solid::PowerManagement::beginSuppressingSleep(i18nc("@info Reason why sleep mode is suppressed", "<application>%1</application> is performing operations.", KGlobal::mainComponent().aboutData()->programName()));
+	kDebug() << suppressCookie;
 
 	for (int i = 0; i < numOperations(); i++)
 	{
@@ -82,6 +90,9 @@ void OperationRunner::run()
 		// if we don't sleep?
 		msleep(5);
 	}
+
+	if (suppressCookie != -1)
+		Solid::PowerManagement::stopSuppressingSleep(suppressCookie);
 
 	if (!status)
 		emit error();
