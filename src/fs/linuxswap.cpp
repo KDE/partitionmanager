@@ -33,6 +33,7 @@ namespace FS
 	FileSystem::CommandSupportType linuxswap::m_GetLabel = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType linuxswap::m_SetLabel = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType linuxswap::m_GetUUID = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType linuxswap::m_UpdateUUID = FileSystem::cmdSupportNone;
 
 	linuxswap::linuxswap(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		FileSystem(firstsector, lastsector, sectorsused, label, FileSystem::LinuxSwap)
@@ -41,9 +42,9 @@ namespace FS
 
 	void linuxswap::init()
 	{
-		m_SetLabel = m_Shrink = m_Grow = m_Create = (findExternal("mkswap")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_SetLabel = m_Shrink = m_Grow = m_Create = m_UpdateUUID = (findExternal("mkswap")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetLabel = cmdSupportCore;
-		m_Copy = cmdSupportCore;
+		m_Copy = cmdSupportFileSystem;
 		m_Move = cmdSupportCore;
 		m_GetUUID = cmdSupportCore;
 	}
@@ -56,7 +57,7 @@ namespace FS
 			m_SetLabel != cmdSupportNone &&
 			m_Create != cmdSupportNone &&
 // 			m_Check != cmdSupportNone &&
-// 			m_UpdateUUID != cmdSupportNone &&
+			m_UpdateUUID != cmdSupportNone &&
 			m_Grow != cmdSupportNone &&
 			m_Shrink != cmdSupportNone &&
 			m_Copy != cmdSupportNone &&
@@ -76,7 +77,7 @@ namespace FS
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
-	bool linuxswap::resize(Report& report, const QString& deviceNode, qint64) const
+	bool linuxswap::resize(Report& report, const QString& deviceNode, qint64 length) const
 	{
 		const QString label = readLabel(deviceNode);
 		const QString uuid = readUUID(deviceNode);
@@ -87,7 +88,24 @@ namespace FS
 		if (!uuid.isEmpty())
 			args << "-U" << uuid;
 
-		args << deviceNode;
+		args << deviceNode << QString::number(length / 1024);
+
+		ExternalCommand cmd(report, "mkswap", args);
+		return cmd.run(-1) && cmd.exitCode() == 0;
+	}
+
+	bool linuxswap::copy(Report& report, const QString& targetDeviceNode, const QString& sourceDeviceNode) const
+	{
+		const QString label = readLabel(sourceDeviceNode);
+		const QString uuid = readUUID(sourceDeviceNode);
+
+		QStringList args;
+		if (!label.isEmpty())
+			args << "-L" << label;
+		if (!uuid.isEmpty())
+			args << "-U" << uuid;
+
+		args << targetDeviceNode;
 
 		ExternalCommand cmd(report, "mkswap", args);
 		return cmd.run(-1) && cmd.exitCode() == 0;
@@ -118,6 +136,20 @@ namespace FS
 	bool linuxswap::unmount(const QString& deviceNode)
 	{
 		ExternalCommand cmd("swapoff", QStringList() << deviceNode);
+		return cmd.run(-1) && cmd.exitCode() == 0;
+	}
+
+	bool linuxswap::updateUUID(Report& report, const QString& deviceNode) const
+	{
+		const QString label = readLabel(deviceNode);
+
+		QStringList args;
+		if (!label.isEmpty())
+			args << "-L" << label;
+
+		args << deviceNode;
+
+		ExternalCommand cmd(report, "mkswap", args);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

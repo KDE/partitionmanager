@@ -47,6 +47,8 @@ namespace FS
 			virtual bool create(Report& report, const QString& deviceNode) const;
 			virtual bool resize(Report& report, const QString& deviceNode, qint64 length) const;
 			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
+			virtual bool copy(Report& report, const QString& targetDeviceNode, const QString& sourceDeviceNode) const;
+			virtual bool updateUUID(Report& report, const QString& deviceNode) const;
 
 			virtual bool canMount(const QString&) const { return true; }
 			virtual bool canUnmount(const QString&) const { return true; }
@@ -64,6 +66,7 @@ namespace FS
 			virtual CommandSupportType supportCopy() const { return m_Copy; }
 			virtual CommandSupportType supportGetLabel() const { return m_GetLabel; }
 			virtual CommandSupportType supportSetLabel() const { return m_SetLabel; }
+			virtual CommandSupportType supportUpdateUUID() const { return m_UpdateUUID; }
 			virtual CommandSupportType supportGetUUID() const { return m_GetUUID; }
 
 			virtual SupportTool supportToolName() const;
@@ -77,6 +80,7 @@ namespace FS
 			static CommandSupportType m_Copy;
 			static CommandSupportType m_SetLabel;
 			static CommandSupportType m_GetLabel;
+			static CommandSupportType m_UpdateUUID;
 			static CommandSupportType m_GetUUID;
 	};
 }
