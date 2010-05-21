@@ -36,6 +36,7 @@ int main(int argc, char* argv[])
 	KCmdLineArgs::init(argc, argv, createPartitionManagerAboutData());
 	KCmdLineOptions options;
 	options.add("dontsu", ki18nc("@info:shell", "Do not try to gain super user privileges"));
+	options.add("+[device]", ki18nc("@info:shell", "Device(s) to manage"));
 	KCmdLineArgs::addCmdLineOptions(options);
 
 	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427

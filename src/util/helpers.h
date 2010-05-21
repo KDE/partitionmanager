@@ -31,6 +31,11 @@ class QIcon;
 class QPoint;
 class QTreeWidget;
 
+namespace Solid
+{
+	class Device;
+}
+
 LIBPARTITIONMANAGERPRIVATE_EXPORT void registerMetaTypes();
 LIBPARTITIONMANAGERPRIVATE_EXPORT void unblockSigChild();
 LIBPARTITIONMANAGERPRIVATE_EXPORT bool checkPermissions();
@@ -44,5 +49,7 @@ LIBPARTITIONMANAGERPRIVATE_EXPORT QIcon createFileSystemColor(FileSystem::Type t
 LIBPARTITIONMANAGERPRIVATE_EXPORT void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree);
 
 LIBPARTITIONMANAGERPRIVATE_EXPORT bool loadBackend();
+
+LIBPARTITIONMANAGERPRIVATE_EXPORT QList<Solid::Device> getSolidDeviceList();
 
 #endif

@@ -36,6 +36,7 @@
 #include "fs/hfsplus.h"
 
 #include "util/globallog.h"
+#include "util/helpers.h"
 
 #include <QString>
 #include <QStringList>
@@ -425,7 +426,7 @@ QList<Device*> LibPartedBackend::scanDevices()
 {
 	QList<Device*> result;
 
-	const QList<Solid::Device> driveList = Solid::Device::listFromType(Solid::DeviceInterface::StorageDrive, QString());
+	const QList<Solid::Device> driveList = getSolidDeviceList();
 	const quint32 totalDevices = countDevices(driveList);
 	quint32 count = 0;
 

@@ -34,6 +34,8 @@
 #include <kdebug.h>
 #include <kmenu.h>
 
+#include <solid/device.h>
+
 #include <QProcess>
 #include <QFileInfo>
 #include <QApplication>
@@ -204,4 +206,35 @@ bool loadBackend()
 	}
 
 	return true;
+}
+
+QList<Solid::Device> getSolidDeviceList()
+{
+	QString predicate = "StorageDrive.driveType == 'HardDisk'";
+
+	KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
+	if (args->count() > 0)
+	{
+		predicate = " [ " + predicate + " AND ";
+
+		if (args->count() > 1)
+			predicate += "[ ";
+
+		for (qint32 i = 0; i < args->count(); i++)
+		{
+			predicate += QString("Block.device == '%1' ").arg(args->arg(i));
+
+			if (i < args->count() - 1)
+				predicate += "OR ";
+		}
+
+		if (args->count() > 1)
+			predicate += "] ";
+
+		predicate += "]";
+	}
+
+	kDebug() << predicate;
+
+	return Solid::Device::listFromQuery(predicate);
 }
