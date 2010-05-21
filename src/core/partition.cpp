@@ -32,6 +32,7 @@
 
 #include <kdebug.h>
 #include <klocale.h>
+#include <kmountpoint.h>
 
 /** Creates a new Partition object.
 	@param parent the Partition's parent. May be another Partition (for logicals) or a PartitionTable. Must not be NULL.
@@ -308,13 +309,22 @@ bool Partition::unmount(Report& report)
 
 	bool success = true;
 
-	if (fileSystem().canUnmount(deviceNode()))
-		success = fileSystem().unmount(deviceNode());
-	else
+	while (success)
 	{
-		ExternalCommand umountCmd(report, "umount", QStringList() << "-v" << mountPoint());
-		if (!umountCmd.run() || umountCmd.exitCode() != 0)
-			success = false;
+		KMountPoint::List mountPoints = KMountPoint::currentMountPoints(KMountPoint::NeedRealDeviceName);
+
+		if (!mountPoints.findByDevice(deviceNode()))
+			break;
+
+		if (fileSystem().canUnmount(deviceNode()))
+			success = fileSystem().unmount(deviceNode());
+		else
+		{
+
+			ExternalCommand umountCmd(report, "umount", QStringList() << "-v" << deviceNode());
+			if (!umountCmd.run() || umountCmd.exitCode() != 0)
+				success = false;
+		}
 	}
 
 	setMounted(!success);
