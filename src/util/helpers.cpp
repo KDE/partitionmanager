@@ -83,19 +83,17 @@ bool checkPermissions()
 {
 	if (geteuid() != 0)
 	{
+		KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
 		// only try to gain root privileges if we have a valid (kde|gk)su(do) command and
 		// we did not try so before: the dontsu-option is there to make sure there are no
 		// endless loops of calling the same non-working (kde|gk)su(do) binary again and again.
-		if (!suCommand().isEmpty() && !KCmdLineArgs::parsedArgs()->isSet("dontsu"))
+		if (!suCommand().isEmpty() && !args->isSet("dontsu"))
 		{
-			QStringList args = qApp->arguments();
-
-			// first argument is our own command again (i.e., argv[0])
-			if (!args.isEmpty())
-				args.removeFirst();
-
 			// arguments to partition manager must be _one_ argument to (kde|gk)su(do)
-			const QString suArgs = qApp->applicationFilePath() + args.join(" ") + " --dontsu";
+			QString suArgs = qApp->applicationFilePath() + " --dontsu";
+			for (qint32 i = 0; i < args->count(); i++)
+				suArgs += QString(" %1").arg(args->arg(i));
+
 			if (QProcess::execute(suCommand(), QStringList() << suArgs) == 0)
 				return false;
 		}
