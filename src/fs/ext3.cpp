@@ -32,7 +32,7 @@ namespace FS
 
 	bool ext3::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "mkfs.ext3", QStringList() << deviceNode);
+		ExternalCommand cmd(report, "mkfs.ext3", QStringList() << "-q" << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }
