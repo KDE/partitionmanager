@@ -49,7 +49,9 @@ namespace FS
 	{
 		m_Create = findExternal("mkfs.btrfs") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Check = findExternal("fsck.btrfs", QStringList(), 1) ? cmdSupportFileSystem : cmdSupportNone;
-		m_Grow = (m_Check != cmdSupportNone && findExternal("btrfsctl")) ? cmdSupportFileSystem : cmdSupportNone;
+		// TODO: i could not get btrfsctl to actually resize anything, either online or offline. probably
+		// needs some time.
+		m_Grow = false && (m_Check != cmdSupportNone && findExternal("btrfsctl")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetUsed = findExternal("btrfs-debug-tree") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
 
@@ -74,8 +76,8 @@ namespace FS
 			m_Create != cmdSupportNone &&
 			m_Check != cmdSupportNone &&
 // 			m_UpdateUUID != cmdSupportNone &&
-			m_Grow != cmdSupportNone &&
-			m_Shrink != cmdSupportNone &&
+// 			m_Grow != cmdSupportNone &&
+// 			m_Shrink != cmdSupportNone &&
 			m_Copy != cmdSupportNone &&
 			m_Move != cmdSupportNone &&
 			m_Backup != cmdSupportNone &&
