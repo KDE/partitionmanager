@@ -50,8 +50,8 @@ namespace FS
 		m_Create = findExternal("mkfs.btrfs") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Check = findExternal("fsck.btrfs", QStringList(), 1) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Grow = (m_Check != cmdSupportNone && findExternal("btrfsctl")) ? cmdSupportFileSystem : cmdSupportNone;
-		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetUsed = findExternal("btrfs-debug-tree") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
 
 		// TODO: are those not possible with btrfs (yet)?
 		m_SetLabel = cmdSupportNone;
@@ -84,7 +84,7 @@ namespace FS
 
 	FileSystem::SupportTool btrfs::supportToolName() const
 	{
-		return SupportTool("e2fsprogs", KUrl("http://e2fsprogs.sf.net"));
+		return SupportTool("btrfs-tools", KUrl("http://btrfs.wiki.kernel.org/"));
 	}
 
 	qint64 btrfs::maxCapacity() const
