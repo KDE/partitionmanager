@@ -1044,6 +1044,9 @@ void MainWindow::onPropertiesDevice(const QString&)
 
 static QStringList checkSupportInNode(const PartitionNode* parent)
 {
+	if (parent == NULL)
+		return QStringList();
+
 	QStringList rval;
 
 	foreach(const PartitionNode* node, parent->children())
