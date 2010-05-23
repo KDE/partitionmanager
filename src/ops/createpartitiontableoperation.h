@@ -30,6 +30,7 @@
 class Device;
 class CreatePartitionTableJob;
 class PartitionTable;
+class OperationStack;
 
 /** Create a PartitionTable.
 	@author Volker Lanz <vl@fidra.de>
@@ -38,6 +39,8 @@ class CreatePartitionTableOperation : public Operation
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(CreatePartitionTableOperation)
+
+	friend class OperationStack;
 
 	public:
 		CreatePartitionTableOperation(Device& d, PartitionTable::TableType t);
@@ -50,6 +53,9 @@ class CreatePartitionTableOperation : public Operation
 		void preview();
 		void undo();
 		bool execute(Report& parent);
+
+		virtual bool targets(const Device& d) const;
+		virtual bool targets(const Partition&) const { return false; }
 
 		static bool canCreate(const Device* device);
 

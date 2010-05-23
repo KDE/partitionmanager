@@ -56,6 +56,9 @@ class NewOperation : public Operation
 		void preview();
 		void undo();
 
+		virtual bool targets(const Device& d) const;
+		virtual bool targets(const Partition& p) const;
+
 		static bool canCreateNew(const Partition* p);
 		static Partition* createNew(const Partition& cloneFrom);
 

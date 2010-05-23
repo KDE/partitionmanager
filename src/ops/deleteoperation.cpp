@@ -58,6 +58,16 @@ DeleteOperation::~DeleteOperation()
 		delete m_DeletedPartition;
 }
 
+bool DeleteOperation::targets(const Device& d) const
+{
+	return d == targetDevice();
+}
+
+bool DeleteOperation::targets(const Partition& p) const
+{
+	return p == deletedPartition();
+}
+
 void DeleteOperation::preview()
 {
 	removePreviewPartition(targetDevice(), deletedPartition());

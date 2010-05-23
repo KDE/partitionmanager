@@ -80,6 +80,16 @@ NewOperation::~NewOperation()
 		delete m_NewPartition;
 }
 
+bool NewOperation::targets(const Device& d) const
+{
+	return d == targetDevice();
+}
+
+bool NewOperation::targets(const Partition& p) const
+{
+	return p == newPartition();
+}
+
 void NewOperation::preview()
 {
 	insertPreviewPartition(targetDevice(), newPartition());

@@ -20,6 +20,7 @@
 #include "ops/backupoperation.h"
 
 #include "core/partition.h"
+#include "core/device.h"
 
 #include "jobs/backupfilesystemjob.h"
 
@@ -43,6 +44,16 @@ BackupOperation::BackupOperation(Device& d, Partition& p, const QString& filenam
 	m_BackupJob(new BackupFileSystemJob(targetDevice(), backupPartition(), fileName()))
 {
 	addJob(backupJob());
+}
+
+bool BackupOperation::targets(const Device& d) const
+{
+	return d == targetDevice();
+}
+
+bool BackupOperation::targets(const Partition& p) const
+{
+	return p == backupPartition();
 }
 
 QString BackupOperation::description() const

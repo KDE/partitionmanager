@@ -20,6 +20,7 @@
 #include "ops/setfilesystemlabeloperation.h"
 
 #include "core/partition.h"
+#include "core/device.h"
 
 #include "jobs/setfilesystemlabeljob.h"
 
@@ -42,6 +43,16 @@ SetFileSystemLabelOperation::SetFileSystemLabelOperation(Partition& p, const QSt
 	m_LabelJob(new SetFileSystemLabelJob(labeledPartition(), newLabel()))
 {
 	addJob(labelJob());
+}
+
+bool SetFileSystemLabelOperation::targets(const Device& d) const
+{
+	return labeledPartition().parent() == d.partitionTable();
+}
+
+bool SetFileSystemLabelOperation::targets(const Partition& p) const
+{
+	return p == labeledPartition();
 }
 
 void SetFileSystemLabelOperation::preview()

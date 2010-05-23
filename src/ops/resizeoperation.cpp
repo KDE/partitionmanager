@@ -108,6 +108,16 @@ ResizeOperation::ResizeOperation(Device& d, Partition& p, qint64 newfirst, qint6
 	}
 }
 
+bool ResizeOperation::targets(const Device& d) const
+{
+	return d == targetDevice();
+}
+
+bool ResizeOperation::targets(const Partition& p) const
+{
+	return p == partition();
+}
+
 void ResizeOperation::preview()
 {
 	// If the operation has already been executed, the partition will of course have newFirstSector and

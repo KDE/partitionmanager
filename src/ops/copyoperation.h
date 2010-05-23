@@ -61,6 +61,9 @@ class CopyOperation : public Operation
 		void preview();
 		void undo();
 
+		virtual bool targets(const Device& d) const;
+		virtual bool targets(const Partition& p) const;
+
 		static bool canCopy(const Partition* p);
 		static bool canPaste(const Partition* p, const Partition* source);
 

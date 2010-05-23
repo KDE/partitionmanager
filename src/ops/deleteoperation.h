@@ -53,6 +53,9 @@ class DeleteOperation : public Operation
 		void undo();
 		bool isSecure() const { return m_Secure; }
 
+		virtual bool targets(const Device& d) const;
+		virtual bool targets(const Partition& p) const;
+
 		static bool canDelete(const Partition* p);
 
 	protected:

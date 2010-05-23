@@ -64,6 +64,11 @@ CreatePartitionTableOperation::~CreatePartitionTableOperation()
 		delete m_PartitionTable;
 }
 
+bool CreatePartitionTableOperation::targets(const Device& d) const
+{
+	return d == targetDevice();
+}
+
 void CreatePartitionTableOperation::preview()
 {
 	targetDevice().setPartitionTable(partitionTable());

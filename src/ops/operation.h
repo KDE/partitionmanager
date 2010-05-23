@@ -106,6 +106,9 @@ class Operation : public QObject
 		virtual void undo() = 0; /**< Undo applying the Operation to the current preview */
 		virtual bool execute(Report& parent);
 
+		virtual bool targets(const Device&) const = 0;
+		virtual bool targets(const Partition&) const = 0; 
+		
 		virtual OperationStatus status() const { return m_Status; } /**< @return the current status */
 		virtual QString statusText() const;
 		virtual QIcon statusIcon() const;

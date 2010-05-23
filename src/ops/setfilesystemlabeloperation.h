@@ -52,6 +52,9 @@ class SetFileSystemLabelOperation : public Operation
 		void preview();
 		void undo();
 
+		virtual bool targets(const Device& d) const;
+		virtual bool targets(const Partition& p) const;
+
 	protected:
 		Partition& labeledPartition() { return m_LabeledPartition; }
 		const Partition& labeledPartition() const { return m_LabeledPartition; }

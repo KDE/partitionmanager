@@ -92,6 +92,16 @@ CopyOperation::~CopyOperation()
 		cleanupOverwrittenPartition();
 }
 
+bool CopyOperation::targets(const Device& d) const
+{
+	return d == targetDevice();
+}
+
+bool CopyOperation::targets(const Partition& p) const
+{
+	return p == copiedPartition();
+}
+
 void CopyOperation::preview()
 {
 	if (overwrittenPartition())

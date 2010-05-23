@@ -95,6 +95,16 @@ RestoreOperation::~RestoreOperation()
 		cleanupOverwrittenPartition();
 }
 
+bool RestoreOperation::targets(const Device& d) const
+{
+	return d == targetDevice();
+}
+
+bool RestoreOperation::targets(const Partition& p) const
+{
+	return p == restorePartition();
+}
+
 void RestoreOperation::preview()
 {
 	insertPreviewPartition(targetDevice(), restorePartition());

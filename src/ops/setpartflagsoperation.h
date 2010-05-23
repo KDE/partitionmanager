@@ -55,6 +55,9 @@ class SetPartFlagsOperation : public Operation
 		void preview();
 		void undo();
 
+		virtual bool targets(const Device& d) const;
+		virtual bool targets(const Partition& p) const;
+
 	protected:
 		Partition& flagPartition() { return m_FlagPartition; }
 		const Partition& flagPartition() const { return m_FlagPartition; }

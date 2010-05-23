@@ -81,6 +81,9 @@ class ResizeOperation : public Operation
 		void preview();
 		void undo();
 
+		virtual bool targets(const Device& d) const;
+		virtual bool targets(const Partition& p) const;
+
 		static bool canGrow(const Partition* p);
 		static bool canShrink(const Partition* p);
 		static bool canMove(const Partition* p);

@@ -58,6 +58,9 @@ class CreateFileSystemOperation : public Operation
 		void undo();
 		bool execute(Report& parent);
 
+		virtual bool targets(const Device& d) const;
+		virtual bool targets(const Partition& p) const;
+
 	protected:
 		Device& targetDevice() { return m_TargetDevice; }
 		const Device& targetDevice() const { return m_TargetDevice; }

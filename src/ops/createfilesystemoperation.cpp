@@ -20,6 +20,7 @@
 #include "ops/createfilesystemoperation.h"
 
 #include "core/partition.h"
+#include "core/device.h"
 
 #include "jobs/deletefilesystemjob.h"
 #include "jobs/createfilesystemjob.h"
@@ -62,6 +63,16 @@ CreateFileSystemOperation::~CreateFileSystemOperation()
 		delete oldFileSystem();
 	else
 		delete newFileSystem();
+}
+
+bool CreateFileSystemOperation::targets(const Device& d) const
+{
+	return d == targetDevice();
+}
+
+bool CreateFileSystemOperation::targets(const Partition& p) const
+{
+	return p == partition();
 }
 
 void CreateFileSystemOperation::preview()

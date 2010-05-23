@@ -22,6 +22,7 @@
 #include "core/partition.h"
 #include "core/partitionnode.h"
 #include "core/partitiontable.h"
+#include "core/device.h"
 
 #include "jobs/setpartflagsjob.h"
 
@@ -46,6 +47,16 @@ SetPartFlagsOperation::SetPartFlagsOperation(Device& d, Partition& p, const Part
 	m_FlagsJob(new SetPartFlagsJob(targetDevice(), flagPartition(), newFlags()))
 {
 	addJob(flagsJob());
+}
+
+bool SetPartFlagsOperation::targets(const Device& d) const
+{
+	return d == targetDevice();
+}
+
+bool SetPartFlagsOperation::targets(const Partition& p) const
+{
+	return p == flagPartition();
 }
 
 void SetPartFlagsOperation::preview()

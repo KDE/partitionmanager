@@ -46,6 +46,9 @@ class BackupOperation : public Operation
 		void preview() {}
 		void undo() {}
 
+		virtual bool targets(const Device& d) const;
+		virtual bool targets(const Partition& p) const;
+
 		static bool canBackup(const Partition* p);
 
 	protected:

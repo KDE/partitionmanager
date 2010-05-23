@@ -20,6 +20,7 @@
 #include "ops/checkoperation.h"
 
 #include "core/partition.h"
+#include "core/device.h"
 
 #include "jobs/checkfilesystemjob.h"
 #include "jobs/resizefilesystemjob.h"
@@ -44,6 +45,16 @@ CheckOperation::CheckOperation(Device& d, Partition& p) :
 {
 	addJob(checkJob());
 	addJob(maximizeJob());
+}
+
+bool CheckOperation::targets(const Device& d) const
+{
+	return d == targetDevice();
+}
+
+bool CheckOperation::targets(const Partition& p) const
+{
+	return p == checkedPartition();
 }
 
 QString CheckOperation::description() const

@@ -62,6 +62,9 @@ class RestoreOperation : public Operation
 
 		void preview();
 
+		virtual bool targets(const Device& d) const;
+		virtual bool targets(const Partition& p) const;
+
 		static bool canRestore(const Partition* p);
 		static Partition* createRestorePartition(const Device& device, PartitionNode& parent, qint64 start, const QString& fileName);
 
