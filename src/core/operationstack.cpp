@@ -31,6 +31,7 @@
 #include "ops/createfilesystemoperation.h"
 #include "ops/setpartflagsoperation.h"
 #include "ops/setfilesystemlabeloperation.h"
+#include "ops/createpartitiontableoperation.h"
 
 #include "jobs/setfilesystemlabeljob.h"
 
@@ -99,7 +100,7 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 	CopyOperation* pushedCopyOp = dynamic_cast<CopyOperation*>(pushedOp);
 	SetFileSystemLabelOperation* pushedLabelOp = dynamic_cast<SetFileSystemLabelOperation*>(pushedOp);
 	CreateFileSystemOperation* pushedCreateFileSystemOp = dynamic_cast<CreateFileSystemOperation*>(pushedOp);
-
+	
 	// -- 1 --
 	if (pushedDeleteOp && &newOp->newPartition() == &pushedDeleteOp->deletedPartition() && !pushedDeleteOp->deletedPartition().roles().has(PartitionRole::Extended))
 	{
@@ -368,6 +369,24 @@ bool OperationStack::mergePartLabelOperation(Operation*& currentOp, Operation*& 
 	return false;
 }
 
+bool OperationStack::mergeCreatePartitionTableOperation(Operation*& currentOp, Operation*& pushedOp)
+{
+	CreatePartitionTableOperation* pushedCreatePartitionTableOp = dynamic_cast<CreatePartitionTableOperation*>(pushedOp);
+
+	if (pushedCreatePartitionTableOp)
+	{
+		if (currentOp->targets(pushedCreatePartitionTableOp->targetDevice()))
+		{
+			Log() << i18nc("@info/plain", "Creating new partition table, discarding previous operation on device.");
+			currentOp->undo();
+			delete operations().takeAt(operations().indexOf(currentOp));
+			return true;
+		}
+	}
+
+	return false;
+}
+
 /** Pushes a new Operation on the OperationStack.
 
 	This method will call all methods that try to merge the new Operation with the
@@ -396,6 +415,9 @@ void OperationStack::push(Operation* o)
 			break;
 
 		if (mergePartLabelOperation(currentOp, o))
+			break;
+
+		if (mergeCreatePartitionTableOperation(currentOp, o))
 			break;
 	}
 
