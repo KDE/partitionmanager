@@ -13,6 +13,11 @@ Bugs to fix for 1.1:
 
 For releases after 1.1:
 
+* the file system support dialog is a usability nightmare
+
+* introduce new commands for online-actions, like change label online or, for
+  filesystems that support it, even resize online
+
 * write a setup-kcm in the style of k3b's so that the user can set the r/w
   permissions of the disks there; also use kauth to update the partition table
   in the kernel. that should cover all cases where we actually need root
@@ -29,10 +34,7 @@ For releases after 1.1:
   that more flexible (no statics in the FS classes, some helper class or at
   least an array in FileSystem).
 
-* Write a udisks backend plugin.
-
-* Add a SMART self test operation, only available if the backend plugin
-  supports that (udisks does, libparted does not).
+* Add a SMART self test operation.
 
 * support KLocale::BinaryUnitDialect and use KLocale's formatting methods (how
   feasable is that? does it make sense?)
@@ -43,6 +45,5 @@ For releases after 1.1:
 * let the user specify external command locations and options in the settings;
   use some program and binary management setup internally like k3b has it
 
-* parse progress information at least from e2fsck and ntfsclone (do we use the
-  latter at all? if not we should); maybe others.
+* parse progress information at least from e2fsck and ntfsclone... maybe others.
 

@@ -299,9 +299,8 @@ void LibPartedBackend::initFSSupport()
 	@param d Device
 	@param pedDisk libparted pointer to the partition table
 */
-void LibPartedBackend::scanDevicePartitions(PedDevice* pedDevice, Device& d, PedDisk* pedDisk)
+void LibPartedBackend::scanDevicePartitions(PedDevice*, Device& d, PedDisk* pedDisk)
 {
-	Q_ASSERT(pedDevice);
 	Q_ASSERT(pedDisk);
 	Q_ASSERT(d.partitionTable());
 
