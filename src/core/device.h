@@ -54,6 +54,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 		~Device();
 
 	public:
+		bool operator==(const Device& other) const;
+		bool operator!=(const Device& other) const;
+		
 		const QString& name() const { return m_Name; } /**< @return the Device's name, usually some manufacturer string */
 		const QString& deviceNode() const { return m_DeviceNode; } /**< @return the Device's node, for example "/dev/sda" */
 		PartitionTable* partitionTable() { return m_PartitionTable; } /**< @return the Device's PartitionTable */

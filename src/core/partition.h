@@ -122,6 +122,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 		Partition& operator=(const Partition&);
 
 	public:
+		bool operator==(const Partition& other) const;
+		bool operator!=(const Partition& other) const;
+		
 		qint32 number() const { return m_Number; } /**< @return the Partition's device number, e.g. 7 for /dev/sdd7 */
 
 		bool isRoot() const { return false; } /**< @return always false for Partition */

@@ -143,6 +143,16 @@ Partition& Partition::operator=(const Partition& other)
 	return *this;
 }
 
+bool Partition::operator==(const Partition& other) const
+{
+	return other.deviceNode() == deviceNode();
+}
+
+bool Partition::operator!=(const Partition& other) const
+{
+	return !(other == *this);
+}
+
 /** @return a short descriptive text or, in case the Partition has StateNone, its device node. */
 QString Partition::deviceNode() const
 {

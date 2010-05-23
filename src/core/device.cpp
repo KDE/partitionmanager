@@ -55,6 +55,16 @@ Device::~Device()
 	delete m_PartitionTable;
 }
 
+bool Device::operator==(const Device& other) const
+{
+	return m_DeviceNode == other.m_DeviceNode;
+}
+
+bool Device::operator!=(const Device& other) const
+{
+	return !(other == *this);
+}
+
 QString Device::prettyName() const
 {
 	return QString("%2 (%1, %3)").arg(name()).arg(deviceNode()).arg(Capacity(*this).toString());
