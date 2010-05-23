@@ -156,6 +156,8 @@ void SizeDialogBase::onSpinFreeBeforeChanged(double newBefore)
 		success = dialogWidget().partResizerWidget().updateFirstSector(alignedFirstSector);
 	}
 
+	kDebug() << success;
+
 	if (success)
 		setDirty();
 	else

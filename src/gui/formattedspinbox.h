@@ -31,6 +31,9 @@ class FormattedSpinBox : public QDoubleSpinBox
 	public:
 		virtual QString textFromValue(double value) const;
 		virtual double valueFromText(const QString& text) const;
+
+	private:
+		QString stripped(const QString &t, int *pos = 0) const;
 };
 
 #endif
