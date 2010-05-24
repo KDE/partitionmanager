@@ -55,7 +55,7 @@ class CopyOperation : public Operation
 
 	public:
 		QString iconName() const { return "edit-copy"; }
-		QString description() const;
+		QString description() const { return m_Description; }
 
 		bool execute(Report& parent);
 		void preview();
@@ -97,6 +97,8 @@ class CopyOperation : public Operation
 		CheckFileSystemJob* checkTargetJob() { return m_CheckTargetJob; }
 		ResizeFileSystemJob* maximizeJob() { return m_MaximizeJob; }
 
+		QString makeDescription() const;
+
 	private:
 		Device& m_TargetDevice;
 		Partition* m_CopiedPartition;
@@ -110,6 +112,8 @@ class CopyOperation : public Operation
 		CopyFileSystemJob* m_CopyFSJob;
 		CheckFileSystemJob* m_CheckTargetJob;
 		ResizeFileSystemJob* m_MaximizeJob;
+
+		const QString m_Description;
 };
 
 #endif
