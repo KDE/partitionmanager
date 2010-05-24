@@ -902,6 +902,12 @@ void PartitionManagerWidget::onUndoOperation()
 	log() << i18nc("@info/plain", "Undoing operation: %1", operationStack().operations().last()->description());
 	operationStack().pop();
 
+	// it's possible the undo killed the partition in the clipboard. if there's a partition in the clipboard, try
+	// to find a device for it (OperationStack::findDeviceForPartition() only compares pointers, so an invalid
+	// pointer is not a problem). if no device is found, the pointer must be dangling, so clear the clipboard.
+	if (clipboardPartition() != NULL && operationStack().findDeviceForPartition(clipboardPartition()) == NULL)
+		setClipboardPartition(NULL);
+
 	updatePartitions();
 	emit operationsChanged();
 	emit statusChanged();
