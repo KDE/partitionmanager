@@ -97,7 +97,7 @@ class CopyOperation : public Operation
 		CheckFileSystemJob* checkTargetJob() { return m_CheckTargetJob; }
 		ResizeFileSystemJob* maximizeJob() { return m_MaximizeJob; }
 
-		QString makeDescription() const;
+		QString updateDescription() const;
 
 	private:
 		Device& m_TargetDevice;
@@ -113,7 +113,7 @@ class CopyOperation : public Operation
 		CheckFileSystemJob* m_CheckTargetJob;
 		ResizeFileSystemJob* m_MaximizeJob;
 
-		const QString m_Description;
+		QString m_Description;
 };
 
 #endif

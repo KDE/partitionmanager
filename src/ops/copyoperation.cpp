@@ -57,7 +57,7 @@ CopyOperation::CopyOperation(Device& targetdevice, Partition* copiedpartition, D
 	m_CopyFSJob(NULL),
 	m_CheckTargetJob(NULL),
 	m_MaximizeJob(NULL),
-	m_Description(makeDescription())
+	m_Description(updateDescription())
 {
 	Q_ASSERT(targetDevice().partitionTable());
 
@@ -196,7 +196,7 @@ bool CopyOperation::execute(Report& parent)
 	return rval;
 }
 
-QString CopyOperation::makeDescription() const
+QString CopyOperation::updateDescription() const
 {
 	if (overwrittenPartition())
 	{
