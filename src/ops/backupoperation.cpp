@@ -46,16 +46,6 @@ BackupOperation::BackupOperation(Device& d, Partition& p, const QString& filenam
 	addJob(backupJob());
 }
 
-bool BackupOperation::targets(const Device& d) const
-{
-	return d == targetDevice();
-}
-
-bool BackupOperation::targets(const Partition& p) const
-{
-	return p == backupPartition();
-}
-
 QString BackupOperation::description() const
 {
 	return QString(i18nc("@info/plain", "Backup partition <filename>%1</filename> (%2, %3) to <filename>%4</filename>", backupPartition().deviceNode(), Capacity(backupPartition()).toString(), backupPartition().fileSystem().name(), fileName()));
@@ -69,7 +59,7 @@ bool BackupOperation::canBackup(const Partition* p)
 {
 	if (p == NULL)
 		return false;
-	
+
 	if (p->isMounted())
 		return false;
 
