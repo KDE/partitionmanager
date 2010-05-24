@@ -47,7 +47,7 @@ SetFileSystemLabelOperation::SetFileSystemLabelOperation(Partition& p, const QSt
 
 bool SetFileSystemLabelOperation::targets(const Device& d) const
 {
-	return labeledPartition().parent() == d.partitionTable();
+	return labeledPartition().devicePath() == d.deviceNode();
 }
 
 bool SetFileSystemLabelOperation::targets(const Partition& p) const
@@ -69,6 +69,6 @@ QString SetFileSystemLabelOperation::description() const
 {
 	if (oldLabel().isEmpty())
 		return QString(i18nc("@info/plain", "Set label for partition <filename>%1</filename> to \"%2\"", labeledPartition().deviceNode(), newLabel()));
-	
+
 	return QString(i18nc("@info/plain", "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\"", labeledPartition().deviceNode(), oldLabel(), newLabel()));
 }
