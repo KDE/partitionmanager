@@ -124,7 +124,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 	public:
 		bool operator==(const Partition& other) const;
 		bool operator!=(const Partition& other) const;
-		
+
 		qint32 number() const { return m_Number; } /**< @return the Partition's device number, e.g. 7 for /dev/sdd7 */
 
 		bool isRoot() const { return false; } /**< @return always false for Partition */
@@ -135,7 +135,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 		Partitions& children() { return m_Children; } /**< @return the Partition's children. empty for non-extended. */
 		const Partitions& children() const { return m_Children; } /**< @return the Partition's children. empty for non-extended. */
 
-		const QString& devicePath() const { return m_DevicePath; } /**< @return the Partition's device path, e.g. /dev/sdd7 */
+		const QString& devicePath() const { return m_DevicePath; } /**< @return the Partition's device path, e.g. /dev/sdd */
 
 		qint64 firstSector() const { return m_FirstSector; } /**< @return the Partition's first sector on the Device */
 		qint64 lastSector() const { return m_LastSector; } /**< @return the Partition's last sector on the Device */
