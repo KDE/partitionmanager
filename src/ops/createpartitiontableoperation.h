@@ -65,7 +65,9 @@ class CreatePartitionTableOperation : public Operation
 
 		PartitionTable* partitionTable() { return m_PartitionTable; }
 		const PartitionTable* partitionTable() const { return m_PartitionTable; }
+
 		PartitionTable* oldPartitionTable() { return m_OldPartitionTable; }
+		void setOldPartitionTable(PartitionTable* old) { m_OldPartitionTable = old; }
 
 		CreatePartitionTableJob* createPartitionTableJob() { return m_CreatePartitionTableJob; }
 

@@ -100,7 +100,7 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 	CopyOperation* pushedCopyOp = dynamic_cast<CopyOperation*>(pushedOp);
 	SetFileSystemLabelOperation* pushedLabelOp = dynamic_cast<SetFileSystemLabelOperation*>(pushedOp);
 	CreateFileSystemOperation* pushedCreateFileSystemOp = dynamic_cast<CreateFileSystemOperation*>(pushedOp);
-	
+
 	// -- 1 --
 	if (pushedDeleteOp && &newOp->newPartition() == &pushedDeleteOp->deletedPartition() && !pushedDeleteOp->deletedPartition().roles().has(PartitionRole::Extended))
 	{
@@ -369,19 +369,31 @@ bool OperationStack::mergePartLabelOperation(Operation*& currentOp, Operation*& 
 	return false;
 }
 
+/** Tries to merge an existing CreatePartitionTableOperation with a new Operation pushed on the OperationStack.
+
+	If a new partition table is to be created on a device and a previous operation targets that
+	device, remove this previous operation.
+
+	@param currentOp the Operation already on the stack to try to merge with
+	@param pushedOp the newly pushed Operation
+	@return true if the OperationStack has been modified in a way that requires merging to stop
+*/
 bool OperationStack::mergeCreatePartitionTableOperation(Operation*& currentOp, Operation*& pushedOp)
 {
 	CreatePartitionTableOperation* pushedCreatePartitionTableOp = dynamic_cast<CreatePartitionTableOperation*>(pushedOp);
 
-	if (pushedCreatePartitionTableOp)
+	if (pushedCreatePartitionTableOp && currentOp->targets(pushedCreatePartitionTableOp->targetDevice()))
 	{
-		if (currentOp->targets(pushedCreatePartitionTableOp->targetDevice()))
-		{
-			Log() << i18nc("@info/plain", "Creating new partition table, discarding previous operation on device.");
-			currentOp->undo();
-			delete operations().takeAt(operations().indexOf(currentOp));
-			return true;
-		}
+		Log() << i18nc("@info/plain", "Creating new partition table, discarding previous operation on device.");
+
+		CreatePartitionTableOperation* createPartitionTableOp = dynamic_cast<CreatePartitionTableOperation*>(currentOp);
+		if (createPartitionTableOp != NULL)
+			pushedCreatePartitionTableOp->setOldPartitionTable(createPartitionTableOp->oldPartitionTable());
+
+		currentOp->undo();
+		delete operations().takeAt(operations().indexOf(currentOp));
+
+		return true;
 	}
 
 	return false;
