@@ -434,7 +434,7 @@ void MainWindow::enableActions()
 	actionCollection()->action("pastePartition")->setEnabled(!readOnly && CopyOperation::canPaste(part, pmWidget().clipboardPartition()));
 	actionCollection()->action("propertiesPartition")->setEnabled(part != NULL);
 
-	actionCollection()->action("editMountPoint")->setEnabled(part);
+	actionCollection()->action("editMountPoint")->setEnabled(part && !part->isMounted());
 	actionCollection()->action("mountPartition")->setEnabled(part && (part->canMount() || part->canUnmount()));
 
 	if (part != NULL)
