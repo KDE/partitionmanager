@@ -89,6 +89,11 @@ namespace FS
 		return SupportTool("btrfs-tools", KUrl("http://btrfs.wiki.kernel.org/"));
 	}
 
+	qint64 btrfs::minCapacity() const
+	{
+		 return 256 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
+	}
+
 	qint64 btrfs::maxCapacity() const
 	{
 		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
