@@ -18,3 +18,17 @@
  ***************************************************************************/
 
 #include "gui/sizedetailswidget.h"
+
+#include <kdebug.h>
+
+#include <limits>
+
+SizeDetailsWidget::SizeDetailsWidget(QWidget* parent) :
+	QWidget(parent),
+	Ui::SizeDetailsWidgetBase()
+{
+	setupUi(this);
+
+	spinFirstSector().setMaximum(std::numeric_limits<double>::max());
+	spinLastSector().setMaximum(std::numeric_limits<double>::max());
+}

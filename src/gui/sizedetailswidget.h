@@ -34,7 +34,7 @@ class SizeDetailsWidget : public QWidget, public Ui::SizeDetailsWidgetBase
 	Q_OBJECT
 
 	public:
-		SizeDetailsWidget(QWidget* parent) : QWidget(parent), Ui::SizeDetailsWidgetBase() { setupUi(this); }
+		SizeDetailsWidget(QWidget* parent);
 
 	public:
 		QDoubleSpinBox& spinFirstSector() { Q_ASSERT(m_SpinFirstSector); return *m_SpinFirstSector; }
