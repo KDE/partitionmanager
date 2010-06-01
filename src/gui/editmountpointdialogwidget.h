@@ -38,7 +38,7 @@ class QCheckBox;
 class QStringList;
 class QFile;
 
-struct MountEntry;
+class MountEntry;
 
 class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDialogWidgetBase
 {

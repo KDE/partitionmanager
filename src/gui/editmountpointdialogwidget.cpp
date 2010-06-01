@@ -21,6 +21,7 @@
 #include "gui/editmountoptionsdialog.h"
 
 #include "core/partition.h"
+#include "core/mountentry.h"
 
 #include "fs/filesystem.h"
 
@@ -38,41 +39,6 @@
 
 #include <mntent.h>
 #include <blkid/blkid.h>
-
-struct MountEntry
-{
-	enum IdentifyType { deviceNode, uuid, label };
-
-	MountEntry(const QString& n, const QString& p, const QString& t, const QStringList& o, qint32 d, qint32 pn, IdentifyType type) :
-		name(n),
-		path(p),
-		type(t),
-		options(o),
-		dumpFreq(d),
-		passNumber(pn),
-		identifyType(type)
-	{
-	}
-
-	MountEntry(struct mntent* p, IdentifyType type) :
-		name(p->mnt_fsname),
-		path(p->mnt_dir),
-		type(p->mnt_type),
-		options(QString(p->mnt_opts).split(',')),
-		dumpFreq(p->mnt_freq),
-		passNumber(p->mnt_passno),
-		identifyType(type)
-	{
-	}
-
-	QString name;
-	QString path;
-	QString type;
-	QStringList options;
-	qint32 dumpFreq;
-	qint32 passNumber;
-	IdentifyType identifyType;
-};
 
 static QString findBlkIdDevice(const QString& token, const QString& value)
 {
