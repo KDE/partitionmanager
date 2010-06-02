@@ -20,6 +20,7 @@
 #include "config/configureoptionsdialog.h"
 #include "config/generalpagewidget.h"
 #include "config/filesystemcolorspagewidget.h"
+#include "config/advancedpagewidget.h"
 
 #include "backend/corebackendmanager.h"
 
@@ -42,6 +43,7 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 	KConfigDialog(parent, name, Config::self()),
 	m_GeneralPageWidget(new GeneralPageWidget(this)),
 	m_FileSystemColorsPageWidget(new FileSystemColorsPageWidget(this)),
+	m_AdvancedPageWidget(new AdvancedPageWidget(this)),
 	m_OperationStack(ostack)
 {
 	setFaceType(List);
@@ -49,13 +51,18 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 	KPageWidgetItem* item = NULL;
 
 	item = addPage(&generalPageWidget(), i18nc("@title:tab general application settings", "General"), QString(), i18n("General Settings"));
-	item->setIcon(KIcon(DesktopIcon("configure")));
+	item->setIcon(KIcon(DesktopIcon("partitionmanager")));
 
 	connect(&generalPageWidget().comboDefaultFileSystem(), SIGNAL(activated(int)), SLOT(onComboDefaultFileSystemActivated(int)));
-	connect(&generalPageWidget().comboBackend(), SIGNAL(activated(int)), SLOT(onComboBackendActivated(int)));
 
 	item = addPage(&fileSystemColorsPageWidget(), i18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
 	item->setIcon(KIcon(DesktopIcon("format-fill-color")));
+
+	item = addPage(&advancedPageWidget(), i18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
+	item->setIcon(KIcon(DesktopIcon("configure")));
+
+	connect(&advancedPageWidget().comboBackend(), SIGNAL(activated(int)), SLOT(onComboBackendActivated(int)));
+
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "configureOptionsDialog"));
 }
@@ -79,9 +86,9 @@ void ConfigureOptionsDialog::updateSettings()
 		changed = true;
 	}
 
-	if (generalPageWidget().backend() != Config::backend())
+	if (advancedPageWidget().backend() != Config::backend())
 	{
-		Config::setBackend(generalPageWidget().backend());
+		Config::setBackend(advancedPageWidget().backend());
 		changed = true;
 	}
 
@@ -97,7 +104,7 @@ bool ConfigureOptionsDialog::hasChanged()
 	result = result || !kcItem->isEqual(generalPageWidget().defaultFileSystem());
 
 	kcItem = Config::self()->findItem("backend");
-	result = result || !kcItem->isEqual(generalPageWidget().backend());
+	result = result || !kcItem->isEqual(advancedPageWidget().backend());
 
 	return result;
 }
@@ -120,7 +127,7 @@ void ConfigureOptionsDialog::updateWidgetsDefault()
 {
 	bool useDefaults = Config::self()->useDefaults(true);
 	generalPageWidget().setDefaultFileSystem(FileSystem::defaultFileSystem());
-	generalPageWidget().setBackend(CoreBackendManager::defaultBackendName());
+	advancedPageWidget().setBackend(CoreBackendManager::defaultBackendName());
 	Config::self()->useDefaults(useDefaults);
 }
 
@@ -137,5 +144,5 @@ void ConfigureOptionsDialog::onComboBackendActivated(int)
 		settingsChangedSlot();
 	}
 	else
-		generalPageWidget().setBackend(CoreBackendManager::defaultBackendName());
+		advancedPageWidget().setBackend(CoreBackendManager::defaultBackendName());
 }

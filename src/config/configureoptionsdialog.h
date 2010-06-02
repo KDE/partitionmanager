@@ -26,6 +26,7 @@
 
 class GeneralPageWidget;
 class FileSystemColorsPageWidget;
+class AdvancedPageWidget;
 class OperationStack;
 
 class ConfigureOptionsDialog : public KConfigDialog
@@ -47,11 +48,14 @@ class ConfigureOptionsDialog : public KConfigDialog
 	protected:
 		GeneralPageWidget& generalPageWidget() { Q_ASSERT(m_GeneralPageWidget); return *m_GeneralPageWidget; }
 		FileSystemColorsPageWidget& fileSystemColorsPageWidget() { Q_ASSERT(m_FileSystemColorsPageWidget); return *m_FileSystemColorsPageWidget; }
+		AdvancedPageWidget& advancedPageWidget() { Q_ASSERT(m_AdvancedPageWidget); return *m_AdvancedPageWidget; }
+
 		const OperationStack& operationStack() const { return m_OperationStack; }
 
 	private:
 		GeneralPageWidget* m_GeneralPageWidget;
 		FileSystemColorsPageWidget* m_FileSystemColorsPageWidget;
+		AdvancedPageWidget* m_AdvancedPageWidget;
 		const OperationStack& m_OperationStack;
 };
 

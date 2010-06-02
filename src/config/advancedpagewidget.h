@@ -17,11 +17,11 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(GENERALPAGEWIDGET__H)
+#if !defined(ADVANCEDPAGEWIDGET__H)
 
-#define GENERALPAGEWIDGET__H
+#define ADVANCEDPAGEWIDGET__H
 
-#include "ui_configurepagegeneral.h"
+#include "ui_configurepageadvanced.h"
 
 #include "fs/filesystem.h"
 
@@ -30,17 +30,17 @@
 class QString;
 class KComboBox;
 
-class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
+class AdvancedPageWidget : public QWidget, public Ui::ConfigurePageAdvanced
 {
 	public:
-		GeneralPageWidget(QWidget* parent);
+		AdvancedPageWidget(QWidget* parent);
 
 	public:
-		KComboBox& comboDefaultFileSystem() { return *m_ComboDefaultFileSystem; }
-		const KComboBox& comboDefaultFileSystem() const { return *m_ComboDefaultFileSystem; }
+		KComboBox& comboBackend() { return *m_ComboBackend; }
+		const KComboBox& comboBackend() const { return *m_ComboBackend; }
 
-		FileSystem::Type defaultFileSystem() const;
-		void setDefaultFileSystem(FileSystem::Type t);
+		QString backend() const;
+		void setBackend(const QString& name);
 
 	private:
 		void setupDialog();

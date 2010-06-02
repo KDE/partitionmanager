@@ -46,26 +46,6 @@ void GeneralPageWidget::setDefaultFileSystem(FileSystem::Type t)
 	comboDefaultFileSystem().setCurrentIndex(idx != -1 ? idx : 0);
 }
 
-QString GeneralPageWidget::backend() const
-{
-	KService::List services = CoreBackendManager::self()->list();
-
-	foreach(KService::Ptr p, services)
-		if (p->name() == comboBackend().currentText())
-			return p->library();
-
-	return QString();
-}
-
-void GeneralPageWidget::setBackend(const QString& name)
-{
-	KService::List services = CoreBackendManager::self()->list();
-
-	foreach(KService::Ptr p, services)
-		if (p->library() == name)
-			comboBackend().setCurrentIndex(comboBackend().findText(p->name()));
-}
-
 void GeneralPageWidget::setupDialog()
 {
 	QStringList fsNames;
@@ -79,10 +59,4 @@ void GeneralPageWidget::setupDialog()
 		comboDefaultFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
 	setDefaultFileSystem(FileSystem::defaultFileSystem());
-
-	KService::List services = CoreBackendManager::self()->list();
-	foreach(KService::Ptr p, services)
-		comboBackend().addItem(p->name());
-
-	setBackend(Config::backend());
 }
