@@ -36,6 +36,7 @@
 #include <kiconloader.h>
 #include <kservice.h>
 #include <kmessagebox.h>
+#include <kcmdlineargs.h>
 
 #include <config.h>
 
@@ -58,11 +59,15 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 	item = addPage(&fileSystemColorsPageWidget(), i18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
 	item->setIcon(KIcon(DesktopIcon("format-fill-color")));
 
-	item = addPage(&advancedPageWidget(), i18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
-	item->setIcon(KIcon(DesktopIcon("configure")));
+	if (KCmdLineArgs::parsedArgs()->isSet("advconfig"))
+	{
+		item = addPage(&advancedPageWidget(), i18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
+		item->setIcon(KIcon(DesktopIcon("configure")));
 
-	connect(&advancedPageWidget().comboBackend(), SIGNAL(activated(int)), SLOT(onComboBackendActivated(int)));
-
+		connect(&advancedPageWidget().comboBackend(), SIGNAL(activated(int)), SLOT(onComboBackendActivated(int)));
+	}
+	else
+		advancedPageWidget().setVisible(false);
 
 	restoreDialogSize(KConfigGroup(KGlobal::config(), "configureOptionsDialog"));
 }
@@ -86,7 +91,7 @@ void ConfigureOptionsDialog::updateSettings()
 		changed = true;
 	}
 
-	if (advancedPageWidget().backend() != Config::backend())
+	if (advancedPageWidget().isVisible() && advancedPageWidget().backend() != Config::backend())
 	{
 		Config::setBackend(advancedPageWidget().backend());
 		changed = true;
@@ -103,8 +108,11 @@ bool ConfigureOptionsDialog::hasChanged()
 	KConfigSkeletonItem* kcItem = Config::self()->findItem("defaultFileSystem");
 	result = result || !kcItem->isEqual(generalPageWidget().defaultFileSystem());
 
-	kcItem = Config::self()->findItem("backend");
-	result = result || !kcItem->isEqual(advancedPageWidget().backend());
+	if (advancedPageWidget().isVisible())
+	{
+		kcItem = Config::self()->findItem("backend");
+		result = result || !kcItem->isEqual(advancedPageWidget().backend());
+	}
 
 	return result;
 }
@@ -127,12 +135,17 @@ void ConfigureOptionsDialog::updateWidgetsDefault()
 {
 	bool useDefaults = Config::self()->useDefaults(true);
 	generalPageWidget().setDefaultFileSystem(FileSystem::defaultFileSystem());
-	advancedPageWidget().setBackend(CoreBackendManager::defaultBackendName());
+
+	if (advancedPageWidget().isVisible())
+		advancedPageWidget().setBackend(CoreBackendManager::defaultBackendName());
+
 	Config::self()->useDefaults(useDefaults);
 }
 
 void ConfigureOptionsDialog::onComboBackendActivated(int)
 {
+	Q_ASSERT(advancedPageWidget().isVisible());
+
 	if (operationStack().size() == 0 || KMessageBox::warningContinueCancel(this,
 			i18nc("@info",
 				"<para>Do you really want to change the backend?</para>"

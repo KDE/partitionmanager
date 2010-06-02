@@ -36,6 +36,7 @@ int main(int argc, char* argv[])
 	KCmdLineArgs::init(argc, argv, createPartitionManagerAboutData());
 	KCmdLineOptions options;
 	options.add("dontsu", ki18nc("@info:shell", "Do not try to gain super user privileges"));
+	options.add("advconfig", ki18nc("@info:shell", "Show advanced tab in configuration dialog"));
 	options.add("+[device]", ki18nc("@info:shell", "Device(s) to manage"));
 	KCmdLineArgs::addCmdLineOptions(options);
 
