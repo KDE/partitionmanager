@@ -54,7 +54,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 	Q_DISABLE_COPY(MainWindow)
 
 	public:
-		explicit MainWindow(QWidget* parent = NULL, KActionCollection* coll = NULL);
+		explicit MainWindow(QWidget* parent = NULL);
 
 	protected:
 		void init();
@@ -73,12 +73,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void closeEvent(QCloseEvent*);
 		void changeEvent(QEvent* event);
 
-		bool isKPart() const;
-
 		void setSavedSelectedDeviceNode(const QString& s) { m_SavedSelectedDeviceNode = s; }
 		const QString& savedSelectedDeviceNode() const { return m_SavedSelectedDeviceNode; }
-
-		KActionCollection* actionCollection() const { return m_ActionCollection != NULL ? m_ActionCollection : KXmlGuiWindow::actionCollection(); }
 
 		InfoPane& infoPane() { Q_ASSERT(m_InfoPane); return *m_InfoPane; }
 
@@ -169,7 +165,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void onSelectedDeviceMenuTriggered(bool);
 
 	private:
-		KActionCollection* m_ActionCollection;
 		OperationStack* m_OperationStack;
 		OperationRunner* m_OperationRunner;
 		DeviceScanner* m_DeviceScanner;

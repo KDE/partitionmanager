@@ -82,12 +82,10 @@
 
 /** Creates a new MainWindow instance.
 	@param parent the parent widget
-	@param coll an action collection if used as a KPart
 */
-MainWindow::MainWindow(QWidget* parent, KActionCollection* coll) :
+MainWindow::MainWindow(QWidget* parent) :
 	KXmlGuiWindow(parent),
 	Ui::MainWindowBase(),
-	m_ActionCollection(coll),
 	m_OperationStack(new OperationStack(this)),
 	m_OperationRunner(new OperationRunner(this, operationStack())),
 	m_DeviceScanner(new DeviceScanner(this, operationStack())),
@@ -124,13 +122,7 @@ void MainWindow::init()
 	listOperations().setActionCollection(actionCollection());
 	pmWidget().init(&operationStack());
 
-	if (isKPart())
-	{
-		setupGUI(ToolBar | Keys | Save);
-		statusBar()->hide();
-	}
-	else
-		setupGUI(ToolBar | Keys | StatusBar | Save | Create);
+	setupGUI();
 
 	loadConfig();
 
@@ -387,8 +379,7 @@ void MainWindow::setupConnections()
 
 void MainWindow::setupStatusBar()
 {
-	if (!isKPart())
-		statusBar()->addWidget(&statusText());
+	statusBar()->addWidget(&statusText());
 }
 
 void MainWindow::loadConfig()
@@ -460,8 +451,7 @@ void MainWindow::on_m_OperationStack_operationsChanged()
 	// this will make sure that the info pane gets updated
 	on_m_PartitionManagerWidget_selectedPartitionChanged(pmWidget().selectedPartition());
 
-	if (!isKPart())
-		statusText().setText(i18ncp("@info:status", "One pending operation", "%1 pending operations", operationStack().size()));
+	statusText().setText(i18ncp("@info:status", "One pending operation", "%1 pending operations", operationStack().size()));
 }
 
 void MainWindow::on_m_OperationStack_devicesChanged()
@@ -556,12 +546,6 @@ void MainWindow::on_m_PartitionManagerWidget_selectedPartitionChanged(const Part
 
 	updateWindowTitle();
 	enableActions();
-}
-
-bool MainWindow::isKPart() const
-{
-	// If we were instantiated with an action collection we're supposed to be a KPart
-	return m_ActionCollection != NULL;
 }
 
 void MainWindow::onShowMenuBar()
