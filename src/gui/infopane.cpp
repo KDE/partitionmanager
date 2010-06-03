@@ -48,7 +48,7 @@ InfoPane::InfoPane(QWidget* parent) :
 /** Clears the InfoPane, leaving it empty */
 void InfoPane::clear()
 {
-	parentWidget()->setWindowTitle(i18nc("@title:window", "Information"));
+	parentWidget()->parentWidget()->setWindowTitle(i18nc("@title:window", "Information"));
 	qDeleteAll(findChildren<QLabel*>());
 	qDeleteAll(findChildren<QFrame*>());
 }
@@ -108,7 +108,7 @@ void InfoPane::createLabels(const QString& title, const QString& value, const in
 void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 {
 	clear();
-	parentWidget()->setWindowTitle(i18nc("@title:window", "Partition Information"));
+	parentWidget()->parentWidget()->setWindowTitle(i18nc("@title:window", "Partition Information"));
 
 	int x = 0;
 	int y = createHeader(p.deviceNode(), cols(area));
@@ -128,7 +128,7 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
 {
 	clear();
-	parentWidget()->setWindowTitle(i18nc("@title:window", "Device Information"));
+	parentWidget()->parentWidget()->setWindowTitle(i18nc("@title:window", "Device Information"));
 
 	int x = 0;
 	int y = createHeader(d.name(), cols(area));

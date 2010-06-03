@@ -91,8 +91,7 @@ MainWindow::MainWindow(QWidget* parent) :
 	m_DeviceScanner(new DeviceScanner(this, operationStack())),
 	m_ApplyProgressDialog(new ApplyProgressDialog(this, operationRunner())),
 	m_ScanProgressDialog(new ScanProgressDialog(this)),
-	m_StatusText(new QLabel(this)),
-	m_InfoPane(new InfoPane(this))
+	m_StatusText(new QLabel(this))
 {
 	setupObjectNames();
 	setupUi(this);
@@ -125,10 +124,6 @@ void MainWindow::init()
 	setupGUI();
 
 	loadConfig();
-
-	dockInformation().setWidget(&infoPane());
-
-	infoPane().clear();
 
 	scanDevices();
 }

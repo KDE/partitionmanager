@@ -171,7 +171,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		ApplyProgressDialog* m_ApplyProgressDialog;
 		ScanProgressDialog* m_ScanProgressDialog;
 		QLabel* m_StatusText;
-		InfoPane* m_InfoPane;
 		QString m_SavedSelectedDeviceNode;
 };
 

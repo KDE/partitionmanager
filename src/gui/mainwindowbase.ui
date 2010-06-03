@@ -64,7 +64,11 @@
     <number>1</number>
    </attribute>
    <widget class="QWidget" name="m_DockInformationContents">
-    <layout class="QGridLayout" name="dockInformationLayout"/>
+    <layout class="QGridLayout" name="dockInformationLayout">
+     <item row="0" column="0">
+      <widget class="InfoPane" name="m_InfoPane" native="true"/>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QDockWidget" name="m_DockLog">
@@ -109,6 +113,12 @@
    <class>TreeLog</class>
    <extends>QWidget</extends>
    <header>gui/treelog.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>InfoPane</class>
+   <extends>QWidget</extends>
+   <header>gui/infopane.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
