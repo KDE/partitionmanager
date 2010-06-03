@@ -118,7 +118,7 @@ void PartTableWidget::setActivePartition(const Partition* p)
 		return;
 
 	foreach (PartWidget* pw, findChildren<PartWidget*>())
-		if (&pw->partition() == p)
+		if (pw->partition() == p)
 		{
 			setActiveWidget(pw);
 			return;

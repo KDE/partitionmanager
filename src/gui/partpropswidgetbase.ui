@@ -12,7 +12,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" rowspan="2" colspan="3">
-    <widget class="PartResizerWidget" name="m_PartResizerWidget" native="true">
+    <widget class="PartWidget" name="m_PartWidget" native="true">
      <property name="minimumSize">
       <size>
        <width>300</width>
@@ -360,9 +360,9 @@
    <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
-   <class>PartResizerWidget</class>
+   <class>PartWidget</class>
    <extends>QWidget</extends>
-   <header>gui/partresizerwidget.h</header>
+   <header>gui/partwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

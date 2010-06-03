@@ -32,7 +32,7 @@ class PartPropsWidget : public QWidget, public Ui::PartPropsWidgetBase
 		PartPropsWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
 
 	public:
-		PartResizerWidget& partResizerWidget() { Q_ASSERT(m_PartResizerWidget); return *m_PartResizerWidget; }
+		PartWidget& partWidget() { Q_ASSERT(m_PartWidget); return *m_PartWidget; }
 
 		QLabel& mountPoint() { Q_ASSERT(m_LabelMountPoint); return *m_LabelMountPoint; }
 		QLabel& role() { Q_ASSERT(m_LabelRole); return *m_LabelRole; }

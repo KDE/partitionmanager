@@ -41,14 +41,15 @@ class PartWidget : public PartWidgetBase
 	Q_OBJECT
 
 	public:
-		PartWidget(QWidget* parent, const Partition* p);
+		PartWidget(QWidget* parent, const Partition* p = NULL);
 
 	public:
+		void init(const Partition* p);
 		void setActive(bool b) { m_Active = b; }
 		bool isActive() const { return m_Active; } /**< @return true if this is the currently active widget */
 		void updateChildren();
 
-		const Partition& partition() const { Q_ASSERT(m_Partition); return *m_Partition; } /**< @return the widget's Partition */
+		const Partition* partition() const { return m_Partition; } /**< @return the widget's Partition */
 
 	protected:
 		void paintEvent(QPaintEvent* event);

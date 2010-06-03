@@ -96,7 +96,7 @@ void PartPropsDialog::setupDialog()
 	enableButtonOk(false);
 	button(KDialog::Cancel)->setFocus();
 
-	dialogWidget().partResizerWidget().init(device(), partition(), partition().firstSector(), partition().lastSector(), true, false);
+	dialogWidget().partWidget().init(&partition());
 
 	const QString mp = partition().mountPoint().isEmpty()
 			? i18nc("@item mountpoint", "(none found)")
@@ -315,7 +315,7 @@ void PartPropsDialog::updatePartitionFileSystem()
 	FileSystem* fs = FileSystemFactory::create(newFileSystemType(), partition().firstSector(), partition().lastSector());
 	partition().deleteFileSystem();
 	partition().setFileSystem(fs);
-	dialogWidget().partResizerWidget().update();
+	dialogWidget().partWidget().update();
 }
 
 void PartPropsDialog::onFilesystemChanged(int)
