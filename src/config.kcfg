@@ -105,6 +105,16 @@
 			<default>FileSystem::Ext3</default>
 		</entry>
 		<entry key="preferredUnit" type="Int">
+			<label context="@label">Preferred unit:</label>
+			<choices>
+				<choice name="Byte">Capacity::Byte</choice>
+				<choice name="KiB">Capacity::KiB</choice>
+				<choice name="MiB">Capacity::MiB</choice>
+				<choice name="GiB">Capacity::GiB</choice>
+				<choice name="TiB">Capacity::TiB</choice>
+				<choice name="PiB">Capacity::PiB</choice>
+				<choice name="EiB">Capacity::EiB</choice>
+			</choices>
 			<default>Capacity::MiB</default>
 		</entry>
 		<entry key="shredSource" type="Enum">

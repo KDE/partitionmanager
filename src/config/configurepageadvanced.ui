@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>367</width>
-    <height>323</height>
+    <height>420</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -66,6 +66,70 @@
       </item>
       <item>
        <widget class="KComboBox" name="m_ComboBackend"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Units</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Preferred unit:</string>
+        </property>
+        <property name="buddy">
+         <cstring>m_ComboBackend</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="kcfg_preferredUnit">
+        <item>
+         <property name="text">
+          <string>Byte</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>KiB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>MiB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>GiB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>TiB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>PiB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>EiB</string>
+         </property>
+        </item>
+       </widget>
       </item>
      </layout>
     </widget>
