@@ -25,10 +25,10 @@
 #include <kdebug.h>
 #include <cmath>
 
-const qint32 PartWidgetBase::m_Spacing = 3;
-const qint32 PartWidgetBase::m_BorderWidth = 5;
-const qint32 PartWidgetBase::m_BorderHeight = 5;
-const qint32 PartWidgetBase::m_MinWidth = 20;
+const qint32 PartWidgetBase::m_Spacing = 2;
+const qint32 PartWidgetBase::m_BorderWidth = 3;
+const qint32 PartWidgetBase::m_BorderHeight = 3;
+const qint32 PartWidgetBase::m_MinWidth = 30;
 
 template<typename T>
 T sum(const QList<T>& list)
