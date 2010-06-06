@@ -62,7 +62,7 @@
 			<label context="@label">File system colors</label>
 			<parameter name="colorNumber" type="UInt" max="21"/>
 			<!-- numbers correspond to the enum in fs/filesystem.h -->
-			<default param="0">252,242,220</default> <!-- unknown -->
+			<default param="0">242,242,220</default> <!-- unknown -->
 			<default param="1">187,249,207</default> <!-- extended -->
 			<default param="2">102,121,150</default> <!-- ext2 -->
 			<default param="3">122,145,180</default> <!-- ext3 -->
@@ -78,7 +78,7 @@
 			<default param="13">210,136,142</default> <!-- hfs -->
 			<default param="14">240,165,171</default> <!-- hfs+ -->
 			<default param="15">151,220,134</default> <!-- ufs -->
-			<default param="16">252,242,222</default> <!-- unformatted -->
+			<default param="16">242,242,222</default> <!-- unformatted -->
 			<default param="17">173,205,255</default> <!-- btrfs -->
 			<default param="18">176,155,185</default> <!-- hpfs -->
 			<default param="19">170,30,77</default> <!-- luks -->
@@ -87,11 +87,11 @@
 		</entry>
 		<entry key="availableSpaceColorCode" type="Color">
 			<label context="@label">Color for available space</label>
-			<default>255,255,255</default>
+			<default>245,245,245</default>
 		</entry>
 		<entry key="usedSpaceColorCode" type="Color">
 			<label context="@label">Color for used space</label>
-			<default>255,255,200</default>
+			<default>245,245,200</default>
 		</entry>
 		<entry key="showMenuBar" type="Bool">
 			<label context="@label">Show the application's menu bar</label>
