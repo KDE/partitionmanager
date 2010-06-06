@@ -130,6 +130,8 @@ KAboutData* createPartitionManagerAboutData()
 	about->addAuthor(ki18nc("@info:credit", "Volker Lanz"), KLocalizedString(), "vl@fidra.de");
 	about->setHomepage("http://www.partitionmanager.org");
 
+	about->addCredit(ki18n("Hugo Pereira Da Costa"), ki18nc("@info:credit", "Partition Widget Design"), "hugo@oxygen-icons.org");
+
 	return about;
 }
 

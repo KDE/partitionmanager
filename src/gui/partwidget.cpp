@@ -102,7 +102,7 @@ void PartWidget::paintEvent(QPaintEvent*)
 
 	QPainter painter(this);
 	painter.setRenderHints(QPainter::Antialiasing);
-	drawGradient( &painter, activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())),QRect(0, 0, width() - 1, height() - 1));
+	drawGradient(&painter, activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())), QRect(0, 0, width() - 1, height() - 1));
 
 	if (partition()->roles().has(PartitionRole::Extended))
 		return;
@@ -110,10 +110,10 @@ void PartWidget::paintEvent(QPaintEvent*)
 	if (!partition()->roles().has(PartitionRole::Unallocated))
 	{
 		// draw free space background
-		drawGradient( &painter, activeColor(Config::availableSpaceColorCode()), QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), width() - 1 - (PartWidget::borderWidth() * 2), height() - (PartWidget::borderHeight() * 2)));
+		drawGradient(&painter, activeColor(Config::availableSpaceColorCode()), QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), width() - 1 - (PartWidget::borderWidth() * 2), height() - (PartWidget::borderHeight() * 2)));
 
 		// draw used space in front of that
-		drawGradient( &painter, activeColor(Config::usedSpaceColorCode()), QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), w, height() - (PartWidget::borderHeight() * 2)));
+		drawGradient(&painter, activeColor(Config::usedSpaceColorCode()), QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), w, height() - (PartWidget::borderHeight() * 2)));
 	}
 
 	// draw name and size
@@ -125,18 +125,18 @@ void PartWidget::paintEvent(QPaintEvent*)
 		painter.drawText(textRect, Qt::AlignVCenter | Qt::AlignHCenter, text);
 }
 
-void PartWidget::drawGradient( QPainter* painter, const QColor& color, const QRect& rect ) const
+void PartWidget::drawGradient(QPainter* painter, const QColor& color, const QRect& rect) const
 {
+	if (rect.width() < 8)
+		return;
 
-	if( rect.width() < 8 ) return;
 	QStyleOptionButton option;
 	option.initFrom(this);
 	option.rect = rect;
-	option.palette.setColor( QPalette::Button, color );
-	option.palette.setColor( QPalette::Window, color );
+	option.palette.setColor(QPalette::Button, color);
+	option.palette.setColor(QPalette::Window, color);
 	option.state |= QStyle::State_Raised;
 	option.state &= ~QStyle::State_MouseOver;
 
 	style()->drawControl(QStyle::CE_PushButtonBevel, &option, painter, this);
-
 }
