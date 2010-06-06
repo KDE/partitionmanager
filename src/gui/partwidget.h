@@ -57,6 +57,8 @@ class PartWidget : public PartWidgetBase
 
 		QColor activeColor(const QColor& col) const;
 
+		void drawGradient( QPainter*, const QColor&, const QRect& ) const;
+
 	private:
 		const Partition* m_Partition;
 		bool m_Active;

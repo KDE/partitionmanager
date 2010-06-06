@@ -31,11 +31,14 @@
 #include <QMouseEvent>
 #include <QPaintEvent>
 #include <QResizeEvent>
+#include <QStyleOptionToolBar>
+#include <QStyleOptionFrameV3>
+#include <QStyleOptionButton>
+#include <QTextStream>
 
 #include <kdebug.h>
 #include <kcolorscheme.h>
 
-const qint32 PartResizerWidget::m_HandleWidth = 16;
 const qint32 PartResizerWidget::m_HandleHeight = 59;
 
 /** Creates a new PartResizerWidget
@@ -85,9 +88,24 @@ void PartResizerWidget::init(Device& d, Partition& p, qint64 minFirst, qint64 ma
 	setMinimumLength(qMax(partition().sectorsUsed(), partition().minimumSectors()));
 	setMaximumLength(qMin(totalSectors(), partition().maximumSectors()));
 
+	// set margins to accomodate for top/bottom button asymetric layouts
+	QStyleOptionButton bOpt;
+	bOpt.initFrom( this );
+	QRect buttonRect( style()->subElementRect( QStyle::SE_PushButtonContents, &bOpt ) );
+	int asym = (rect().bottom() - buttonRect.bottom()) - (buttonRect.top() - rect().top());
+	if( asym > 0 ) setContentsMargins( 0, asym, 0, 0 );
+	else setContentsMargins( 0, 0, 0, asym );
+
 	/** @todo get real pixmaps for the handles */
 	QPixmap pixmap(handleWidth(), handleHeight());
-	pixmap.fill(QColor(0x44, 0x44, 0x44));
+	pixmap.fill( Qt::transparent );
+	{
+		QPainter p( &pixmap );
+		QStyleOption opt;
+		opt.state |= QStyle::State_Horizontal;
+		opt.rect = pixmap.rect().adjusted( 0, 2, 0, -2 );
+		style()->drawControl(QStyle::CE_Splitter, &opt, &p, this);
+	}
 
 	leftHandle().setPixmap(pixmap);
 	rightHandle().setPixmap(pixmap);
@@ -128,8 +146,9 @@ int PartResizerWidget::partWidgetWidth() const
 
 void PartResizerWidget::updatePositions()
 {
-	partWidget().move(partWidgetStart(), 0);
-	partWidget().resize(partWidgetWidth(), height() - 1);
+	QMargins margins( contentsMargins() );
+	partWidget().move(partWidgetStart() + margins.left(), margins.top());
+	partWidget().resize(partWidgetWidth() - margins.left() - margins.right(), height() - margins.top() - margins.bottom() );
 	leftHandle().move(partWidgetStart() - leftHandle().width(), 0);
 	rightHandle().move(partWidgetStart() + partWidgetWidth(), 0);
 
@@ -144,10 +163,18 @@ void PartResizerWidget::resizeEvent(QResizeEvent* event)
 
 void PartResizerWidget::paintEvent(QPaintEvent*)
 {
+	// draw sunken frame
 	QPainter painter(this);
-	painter.setPen(Qt::NoPen);
-	painter.setBrush(QColor(0x99, 0x99, 0x99));
-	painter.drawRect(QRect(handleWidth(), 0, width() - (2 * handleWidth()) - 1, height() - 1));
+	QStyleOptionFrameV3 opt;
+	opt.initFrom( this );
+	opt.frameShape = QFrame::StyledPanel;
+	opt.state |= QStyle::State_Sunken;
+
+	// disable mouse over and focus state
+	opt.state &= ~QStyle::State_MouseOver;
+	opt.state &= ~QStyle::State_HasFocus;
+	opt.rect.adjust( handleWidth(), 0, -handleWidth()-1, -1 );
+	style()->drawControl(QStyle::CE_ShapedFrame, &opt, &painter, this);
 }
 
 void PartResizerWidget::mousePressEvent(QMouseEvent* event)

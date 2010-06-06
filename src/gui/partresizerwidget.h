@@ -23,6 +23,7 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QStyle>
 
 class Partition;
 class PartWidget;
@@ -79,7 +80,7 @@ class PartResizerWidget : public QWidget
 		bool align() const { return m_Align; } /**< @return  true if the Partition is to be aligned */
 		void setAlign(bool b) { m_Align = b; } /**< @param b the new value for aligning the Partition */
 
-		static qint32 handleWidth() { return m_HandleWidth; } /**< @return the handle width in pixels */
+		qint32 handleWidth() const { return style()->pixelMetric( QStyle::PM_SplitterWidth ); } /**< @return the handle width in pixels */
 		static qint32 handleHeight() { return m_HandleHeight; } /**< @return the handle height in pixels */
 
 	signals:
@@ -152,7 +153,6 @@ class PartResizerWidget : public QWidget
 		bool m_ReadOnly;
 		bool m_Align;
 
-		static const qint32 m_HandleWidth;
 		static const qint32 m_HandleHeight;
 };
 

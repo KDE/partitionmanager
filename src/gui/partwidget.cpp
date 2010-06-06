@@ -26,6 +26,7 @@
 #include "fs/filesystem.h"
 
 #include <QPainter>
+#include <QStyleOptionButton>
 
 #include <kdebug.h>
 #include <kglobalsettings.h>
@@ -100,11 +101,8 @@ void PartWidget::paintEvent(QPaintEvent*)
 	const int w = (width() - 1 - (PartWidget::borderWidth() * 2)) * usedPercentage / 100;
 
 	QPainter painter(this);
-
-	// draw border
-	painter.setPen(isActive() ? QColor(250, 250, 250) : QColor(20, 20, 20));
-	painter.setBrush(activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())));
-	painter.drawRect(QRect(0, 0, width() - 1, height() - 1));
+	painter.setRenderHints(QPainter::Antialiasing);
+	drawGradient( &painter, activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())),QRect(0, 0, width() - 1, height() - 1));
 
 	if (partition()->roles().has(PartitionRole::Extended))
 		return;
@@ -112,12 +110,10 @@ void PartWidget::paintEvent(QPaintEvent*)
 	if (!partition()->roles().has(PartitionRole::Unallocated))
 	{
 		// draw free space background
-		painter.setBrush(activeColor(Config::availableSpaceColorCode()));
-		painter.drawRect(QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), width() - 1 - (PartWidget::borderWidth() * 2), height() - (PartWidget::borderHeight() * 2)));
+		drawGradient( &painter, activeColor(Config::availableSpaceColorCode()), QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), width() - 1 - (PartWidget::borderWidth() * 2), height() - (PartWidget::borderHeight() * 2)));
 
 		// draw used space in front of that
-		painter.setBrush(activeColor(Config::usedSpaceColorCode()));
-		painter.drawRect(QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), w, height() - (PartWidget::borderHeight() * 2)));
+		drawGradient( &painter, activeColor(Config::usedSpaceColorCode()), QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), w, height() - (PartWidget::borderHeight() * 2)));
 	}
 
 	// draw name and size
@@ -127,4 +123,20 @@ void PartWidget::paintEvent(QPaintEvent*)
 	const QRect boundingRect = painter.boundingRect(textRect, Qt::AlignVCenter | Qt::AlignHCenter, text);
 	if (boundingRect.x() > PartWidgetBase::borderWidth() && boundingRect.y() > PartWidgetBase::borderHeight())
 		painter.drawText(textRect, Qt::AlignVCenter | Qt::AlignHCenter, text);
+}
+
+void PartWidget::drawGradient( QPainter* painter, const QColor& color, const QRect& rect ) const
+{
+
+	if( rect.width() < 8 ) return;
+	QStyleOptionButton option;
+	option.initFrom(this);
+	option.rect = rect;
+	option.palette.setColor( QPalette::Button, color );
+	option.palette.setColor( QPalette::Window, color );
+	option.state |= QStyle::State_Raised;
+	option.state &= ~QStyle::State_MouseOver;
+
+	style()->drawControl(QStyle::CE_PushButtonBevel, &option, painter, this);
+
 }
