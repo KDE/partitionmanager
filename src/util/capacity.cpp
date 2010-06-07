@@ -78,9 +78,9 @@ QString Capacity::toString(Unit u, Flags f) const
 {
 	QString s = toStringInternal(u);
 	if ((f & AppendUnit) && s != invalidString())
-		s += ' ' + unitName(u);
+		s += ' ' + unitName(u, m_Size);
 	if ((f & AppendBytes) && s != invalidString())
-		s += " (" + KGlobal::locale()->formatNumber(m_Size, 0) + ' ' + unitName(Byte) + ')';
+		s += " (" + KGlobal::locale()->formatNumber(m_Size, 0) + ' ' + unitName(Byte, m_Size) + ')';
 
 	return s;
 }
@@ -155,18 +155,18 @@ Capacity::Unit Capacity::bestUnit() const
 /** @return the name of the Unit used in bestUnit() */
 QString Capacity::unitName() const
 {
-	return unitName(bestUnit());
+	return unitName(bestUnit(), m_Size);
 }
 
 /** Returns the name of a given Unit.
 	@param u the Unit to find the name for
 	@return the name
 */
-QString Capacity::unitName(Unit u)
+QString Capacity::unitName(Unit u, qint64 val)
 {
 	static QString unitNames[] =
 	{
-		i18nc("@info/plain unit", "Byte"),
+		i18ncp("@info/plain unit", "Byte", "Bytes", val),
 		i18nc("@info/plain unit", "KiB"),
 		i18nc("@info/plain unit", "MiB"),
 		i18nc("@info/plain unit", "GiB"),
