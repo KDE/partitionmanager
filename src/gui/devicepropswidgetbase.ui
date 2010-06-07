@@ -178,7 +178,7 @@
     </widget>
    </item>
    <item row="9" column="0">
-    <widget class="QLabel" name="m_LabelTextSectorSize">
+    <widget class="QLabel" name="m_LabelTextLogicalSectorSize">
      <property name="text">
       <string>Logical sector size:</string>
      </property>
@@ -188,7 +188,7 @@
     </widget>
    </item>
    <item row="9" column="1">
-    <widget class="QLabel" name="m_LabelSectorSize">
+    <widget class="QLabel" name="m_LabelLogicalSectorSize">
      <property name="text">
       <string/>
      </property>

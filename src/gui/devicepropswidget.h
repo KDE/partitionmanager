@@ -40,7 +40,7 @@ class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 		QLabel& capacity() { Q_ASSERT(m_LabelCapacity); return *m_LabelCapacity; }
 		QLabel& cylinderSize() { Q_ASSERT(m_LabelCylinderSize); return *m_LabelCylinderSize; }
 		QLabel& primariesMax() { Q_ASSERT(m_LabelPrimariesMax); return *m_LabelPrimariesMax; }
-		QLabel& sectorSize() { Q_ASSERT(m_LabelSectorSize); return *m_LabelSectorSize; }
+		QLabel& logicalSectorSize() { Q_ASSERT(m_LabelLogicalSectorSize); return *m_LabelLogicalSectorSize; }
 		QLabel& totalSectors() { Q_ASSERT(m_LabelTotalSectors); return *m_LabelTotalSectors; }
 		QLabel& type() { Q_ASSERT(m_LabelType); return *m_LabelType; }
 
