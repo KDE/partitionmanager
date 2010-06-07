@@ -62,7 +62,7 @@ Partition::Partition(PartitionNode* parent, const Device& device, const Partitio
 	m_AvailableFlags(availableFlags),
 	m_ActiveFlags(activeFlags),
 	m_IsMounted(mounted),
-	m_SectorSize(device.sectorSize()),
+	m_SectorSize(device.logicalSectorSize()),
 	m_State(state)
 {
 	Q_ASSERT(m_Parent);

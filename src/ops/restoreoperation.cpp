@@ -228,7 +228,7 @@ Partition* RestoreOperation::createRestorePartition(const Device& device, Partit
 	if (!fileInfo.exists())
 		return NULL;
 
-	const qint64 end = start + fileInfo.size() / device.sectorSize() - 1;
+	const qint64 end = start + fileInfo.size() / device.logicalSectorSize() - 1;
 	Partition* p = new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, -1);
 
 	p->setState(Partition::StateRestore);

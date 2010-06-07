@@ -58,7 +58,7 @@ bool CopyTargetDevice::open()
 /** @return the Device's sector size */
 qint32 CopyTargetDevice::sectorSize() const
 {
-	return device().sectorSize();
+	return device().logicalSectorSize();
 }
 
 /** Writes the given number of sectors to the Device.

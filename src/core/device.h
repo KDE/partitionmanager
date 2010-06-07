@@ -56,7 +56,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 	public:
 		bool operator==(const Device& other) const;
 		bool operator!=(const Device& other) const;
-		
+
 		const QString& name() const { return m_Name; } /**< @return the Device's name, usually some manufacturer string */
 		const QString& deviceNode() const { return m_DeviceNode; } /**< @return the Device's node, for example "/dev/sda" */
 		PartitionTable* partitionTable() { return m_PartitionTable; } /**< @return the Device's PartitionTable */
@@ -64,9 +64,9 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 		qint32 heads() const { return m_Heads; } /**< @return the number of heads on the Device in CHS notation */
 		qint32 cylinders() const { return m_Cylinders; } /**< @return the number of cylinders on the Device in CHS notation */
 		qint32 sectorsPerTrack() const { return m_SectorsPerTrack; } /**< @return the number of sectors on the Device in CHS notation */
-		qint32 sectorSize() const { return m_SectorSize; } /**< @return the sector size the Device claims to use */
+		qint32 logicalSectorSize() const { return m_SectorSize; } /**< @return the logical sector size the Device uses */
 		qint64 totalSectors() const { return static_cast<qint64>(heads()) * cylinders() * sectorsPerTrack(); } /**< @return the total number of sectors on the device */
-		qint64 capacity() const { return totalSectors() * sectorSize(); } /**< @return the Device's capacity in bytes */
+		qint64 capacity() const { return totalSectors() * logicalSectorSize(); } /**< @return the Device's capacity in bytes */
 		qint64 cylinderSize() const { return static_cast<qint64>(heads()) * sectorsPerTrack(); } /**< @return the size of a cylinder on this Device in sectors */
 
 		void setIconName(const QString& name) { m_IconName = name; }
