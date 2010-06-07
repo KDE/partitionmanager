@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>576</width>
+    <width>450</width>
     <height>343</height>
    </rect>
   </property>
@@ -64,12 +64,6 @@
    </item>
    <item row="2" column="1">
     <widget class="QLabel" name="m_LabelType">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>3</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <property name="text">
       <string/>
      </property>
@@ -125,12 +119,6 @@
    </item>
    <item row="5" column="1">
     <widget class="QLabel" name="m_LabelCapacity">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>3</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <property name="text">
       <string/>
      </property>
@@ -148,12 +136,6 @@
    </item>
    <item row="6" column="1">
     <widget class="QLabel" name="m_LabelTotalSectors">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>3</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <property name="text">
       <string/>
      </property>
@@ -168,6 +150,12 @@
    </item>
    <item row="8" column="0">
     <widget class="QLabel" name="m_LabelTextCHS">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>2</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
       <string>Cylinders/Heads/Sectors:</string>
      </property>
@@ -180,7 +168,7 @@
     <widget class="QLabel" name="m_LabelCHS">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>3</horstretch>
+       <horstretch>5</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
@@ -201,12 +189,6 @@
    </item>
    <item row="9" column="1">
     <widget class="QLabel" name="m_LabelSectorSize">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>3</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <property name="text">
       <string/>
      </property>
@@ -224,12 +206,6 @@
    </item>
    <item row="10" column="1">
     <widget class="QLabel" name="m_LabelCylinderSize">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>3</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <property name="text">
       <string/>
      </property>
@@ -254,12 +230,6 @@
    </item>
    <item row="12" column="1">
     <widget class="QLabel" name="m_LabelPrimariesMax">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>3</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <property name="text">
       <string/>
      </property>
