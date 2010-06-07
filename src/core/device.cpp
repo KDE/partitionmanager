@@ -44,7 +44,7 @@ Device::Device(const QString& name, const QString& devicenode, qint32 heads, qin
 	m_SectorsPerTrack(numSectors),
 	m_Cylinders(cylinders),
 	m_SectorSize(sectorSize),
-	m_IconName(iconname.isEmpty() ? "drive-hardisk" : iconname),
+	m_IconName(iconname.isEmpty() ? "drive-harddisk" : iconname),
 	m_SmartStatus(new SmartStatus(devicenode))
 {
 }
