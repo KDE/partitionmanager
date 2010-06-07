@@ -27,6 +27,56 @@
 #include <kdebug.h>
 #include <klocale.h>
 
+#include <QFile>
+#include <QByteArray>
+
+#include <sys/ioctl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <linux/fs.h>
+
+#if !defined(BLKPBSZGET)
+#define BLKPBSZGET _IO(0x12,123)/* get block physical sector size */
+#endif
+
+static qint32 getPhysicalSectorSize(const QString& device_node)
+{
+	/*
+	 * possible ways of getting the physical sector size for a drive:
+	 * - ioctl(BLKPBSZGET) -- supported with Linux 2.6.32 and later
+	 * - /sys/block/sda/queue/physical_block_size
+	 * - libblkid from util-linux-ng 2.17 or later
+	 * TODO: implement the blkid method
+	 */
+
+#if defined(BLKPBSZGET)
+	int phSectorSize = -1;
+	int fd = open(device_node.toLocal8Bit(), O_RDONLY);
+	if (fd != -1)
+	{
+		if (ioctl(fd, BLKPBSZGET, &phSectorSize) >= 0)
+		{
+			close(fd);
+			return phSectorSize;
+		}
+
+		close (fd);
+	}
+#endif
+
+	QFile f(QString("/sys/block/%1/queue/physical_block_size").arg(QString(device_node).remove("/dev/")));
+
+	if (f.open(QIODevice::ReadOnly))
+	{
+		QByteArray a = f.readLine();
+		return a.simplified().toInt();
+	}
+
+	return -1;
+}
+
 /** Constructs a Device with an empty PartitionTable.
 	@param name the Device's name, usually some string defined by the manufacturer
 	@param devicenode the Device's node, for example "/dev/sda"
@@ -43,7 +93,8 @@ Device::Device(const QString& name, const QString& devicenode, qint32 heads, qin
 	m_Heads(heads),
 	m_SectorsPerTrack(numSectors),
 	m_Cylinders(cylinders),
-	m_SectorSize(sectorSize),
+	m_LogicalSectorSize(sectorSize),
+	m_PhysicalSectorSize(getPhysicalSectorSize(devicenode)),
 	m_IconName(iconname.isEmpty() ? "drive-harddisk" : iconname),
 	m_SmartStatus(new SmartStatus(devicenode))
 {

@@ -64,7 +64,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 		qint32 heads() const { return m_Heads; } /**< @return the number of heads on the Device in CHS notation */
 		qint32 cylinders() const { return m_Cylinders; } /**< @return the number of cylinders on the Device in CHS notation */
 		qint32 sectorsPerTrack() const { return m_SectorsPerTrack; } /**< @return the number of sectors on the Device in CHS notation */
-		qint32 logicalSectorSize() const { return m_SectorSize; } /**< @return the logical sector size the Device uses */
+		qint32 physicalSectorSize() const { return m_PhysicalSectorSize; }  /**< @return the phyiscal sector size the Device uses or -1 if unknown */
+		qint32 logicalSectorSize() const { return m_LogicalSectorSize; } /**< @return the logical sector size the Device uses */
 		qint64 totalSectors() const { return static_cast<qint64>(heads()) * cylinders() * sectorsPerTrack(); } /**< @return the total number of sectors on the device */
 		qint64 capacity() const { return totalSectors() * logicalSectorSize(); } /**< @return the Device's capacity in bytes */
 		qint64 cylinderSize() const { return static_cast<qint64>(heads()) * sectorsPerTrack(); } /**< @return the size of a cylinder on this Device in sectors */
@@ -87,7 +88,8 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 		qint32 m_Heads;
 		qint32 m_SectorsPerTrack;
 		qint32 m_Cylinders;
-		qint32 m_SectorSize;
+		qint32 m_LogicalSectorSize;
+		qint32 m_PhysicalSectorSize;
 		QString m_IconName;
 		SmartStatus* m_SmartStatus;
 };
