@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>410</width>
-    <height>510</height>
+    <width>499</width>
+    <height>502</height>
    </rect>
   </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" rowspan="2" colspan="3">
+   <item row="0" column="0" colspan="2">
     <widget class="PartWidget" name="m_PartWidget" native="true">
      <property name="minimumSize">
       <size>
@@ -27,37 +30,23 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="m_LabelTextLabel">
-     <property name="text">
-      <string comment="@label">Label:</string>
+   <item row="1" column="0" colspan="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
      </property>
-     <property name="buddy">
-      <cstring>m_EditLabel</cstring>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>478</width>
+       <height>20</height>
+      </size>
      </property>
-    </widget>
+    </spacer>
    </item>
-   <item row="4" column="1" colspan="2">
-    <widget class="KLineEdit" name="m_EditLabel">
-     <property name="maxLength">
-      <number>16</number>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1" colspan="2">
-    <widget class="QLabel" name="m_LabelTextNoSetLabel">
-     <property name="text">
-      <string comment="@label">This file system does not support setting a label.</string>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
+   <item row="2" column="0">
     <widget class="QLabel" name="m_LabelFileSystem">
      <property name="text">
       <string comment="@label:listbox">File system:</string>
@@ -70,24 +59,54 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
-    <widget class="KComboBox" name="m_ComboFileSystem">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>2</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
+   <item row="2" column="1">
+    <widget class="KComboBox" name="m_ComboFileSystem"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="m_LabelTextLabel">
+     <property name="text">
+      <string comment="@label">Label:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>m_EditLabel</cstring>
      </property>
     </widget>
    </item>
-   <item row="8" column="0" colspan="3">
+   <item row="3" column="1">
+    <widget class="KLineEdit" name="m_EditLabel">
+     <property name="maxLength">
+      <number>16</number>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLabel" name="m_LabelTextNoSetLabel">
+     <property name="text">
+      <string comment="@label">This file system does not support setting a label.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QCheckBox" name="m_CheckRecreate">
+     <property name="text">
+      <string comment="@action:button">Recreate existing file system</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
     <widget class="Line" name="line_5">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="9" column="0">
+   <item row="7" column="0">
     <widget class="QLabel" name="m_LabelTextMountPoint">
      <property name="text">
       <string comment="@label">Mount point:</string>
@@ -97,14 +116,14 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="1" colspan="2">
+   <item row="7" column="1">
     <widget class="QLabel" name="m_LabelMountPoint">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="10" column="0">
+   <item row="8" column="0">
     <widget class="QLabel" name="m_LabelTextRole">
      <property name="text">
       <string comment="@label">Partition type:</string>
@@ -114,14 +133,14 @@
      </property>
     </widget>
    </item>
-   <item row="10" column="1" colspan="2">
+   <item row="8" column="1">
     <widget class="QLabel" name="m_LabelRole">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="11" column="0">
+   <item row="9" column="0">
     <widget class="QLabel" name="m_LabelTextStatus">
      <property name="text">
       <string comment="@label">Status:</string>
@@ -131,22 +150,45 @@
      </property>
     </widget>
    </item>
-   <item row="11" column="1" colspan="2">
+   <item row="9" column="1">
     <widget class="QLabel" name="m_LabelStatus">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="14" column="0" colspan="3">
+   <item row="10" column="0">
+    <widget class="QLabel" name="m_LabelTextUuid">
+     <property name="text">
+      <string comment="@label">UUID:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1">
+    <widget class="QLabel" name="m_LabelUuid">
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0" colspan="2">
     <widget class="Line" name="line_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="15" column="0">
+   <item row="12" column="0">
     <widget class="QLabel" name="m_LabelTextCapacity">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>2</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
       <string comment="@label">Size:</string>
      </property>
@@ -155,14 +197,20 @@
      </property>
     </widget>
    </item>
-   <item row="15" column="1" colspan="2">
+   <item row="12" column="1">
     <widget class="QLabel" name="m_LabelCapacity">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>5</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="16" column="0">
+   <item row="13" column="0">
     <widget class="QLabel" name="m_LabelTextAvailable">
      <property name="text">
       <string comment="@label partition capacity available">Available:</string>
@@ -172,14 +220,14 @@
      </property>
     </widget>
    </item>
-   <item row="16" column="1" colspan="2">
+   <item row="13" column="1">
     <widget class="QLabel" name="m_LabelAvailable">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="17" column="0">
+   <item row="14" column="0">
     <widget class="QLabel" name="m_LabelTextUsed">
      <property name="text">
       <string comment="@label partition capacity used">Used:</string>
@@ -189,21 +237,21 @@
      </property>
     </widget>
    </item>
-   <item row="17" column="1" colspan="2">
+   <item row="14" column="1">
     <widget class="QLabel" name="m_LabelUsed">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="18" column="0" colspan="3">
+   <item row="15" column="0" colspan="2">
     <widget class="Line" name="line">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="19" column="0">
+   <item row="16" column="0">
     <widget class="QLabel" name="m_LabelTextFirstSector">
      <property name="text">
       <string comment="@label">First sector:</string>
@@ -213,14 +261,14 @@
      </property>
     </widget>
    </item>
-   <item row="19" column="1" colspan="2">
+   <item row="16" column="1">
     <widget class="QLabel" name="m_LabelFirstSector">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="20" column="0">
+   <item row="17" column="0">
     <widget class="QLabel" name="m_LabelTextLastSector">
      <property name="text">
       <string comment="@label">Last sector:</string>
@@ -230,14 +278,14 @@
      </property>
     </widget>
    </item>
-   <item row="20" column="1" colspan="2">
+   <item row="17" column="1">
     <widget class="QLabel" name="m_LabelLastSector">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="21" column="0">
+   <item row="18" column="0">
     <widget class="QLabel" name="m_LabelTextNumSectors">
      <property name="text">
       <string comment="@label">Number of sectors:</string>
@@ -247,21 +295,21 @@
      </property>
     </widget>
    </item>
-   <item row="21" column="1" colspan="2">
+   <item row="18" column="1">
     <widget class="QLabel" name="m_LabelNumSectors">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="22" column="0" colspan="3">
+   <item row="19" column="0" colspan="2">
     <widget class="Line" name="m_LineListFlags">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="23" column="0">
+   <item row="20" column="0">
     <widget class="QLabel" name="m_LabelTextFlags">
      <property name="text">
       <string comment="@label">Flags:</string>
@@ -274,7 +322,7 @@
      </property>
     </widget>
    </item>
-   <item row="23" column="1" colspan="2">
+   <item row="20" column="1">
     <widget class="QListWidget" name="m_ListFlags">
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -290,7 +338,7 @@
      </property>
     </widget>
    </item>
-   <item row="24" column="1" colspan="2">
+   <item row="21" column="0" colspan="2">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -300,51 +348,11 @@
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>20</width>
+       <width>488</width>
        <height>20</height>
       </size>
      </property>
     </spacer>
-   </item>
-   <item row="6" column="1">
-    <widget class="QCheckBox" name="m_CheckRecreate">
-     <property name="text">
-      <string comment="@action:button">Recreate existing file system</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="2">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="12" column="0">
-    <widget class="QLabel" name="m_LabelTextUuid">
-     <property name="text">
-      <string comment="@label">UUID:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="12" column="1">
-    <widget class="QLabel" name="m_LabelUuid">
-     <property name="textInteractionFlags">
-      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-     </property>
-    </widget>
    </item>
   </layout>
  </widget>
@@ -367,8 +375,9 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>m_EditLabel</tabstop>
   <tabstop>m_ComboFileSystem</tabstop>
+  <tabstop>m_EditLabel</tabstop>
+  <tabstop>m_CheckRecreate</tabstop>
   <tabstop>m_ListFlags</tabstop>
  </tabstops>
  <resources/>
