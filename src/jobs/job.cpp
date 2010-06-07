@@ -45,7 +45,7 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 
 	if (source.sectorSize() != target.sectorSize())
 	{
-		report.line() << i18nc("@info/plain", "The sector size in the source and target for copying are not the same. This is currently unsupported.");
+		report.line() << i18nc("@info/plain", "The logical sector sizes in the source and target for copying are not the same. This is currently unsupported.");
 		return false;
 	}
 
