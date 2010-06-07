@@ -152,6 +152,7 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
 	createLabels(i18nc("@label device", "Cylinders:"), KGlobal::locale()->formatNumber(d.cylinders(), 0), cols(area), x, y);
 	createLabels(i18nc("@label device", "Sectors:"), KGlobal::locale()->formatNumber(d.sectorsPerTrack(), 0), cols(area), x, y);
 	createLabels(i18nc("@label device", "Logical sector size:"), Capacity(d.logicalSectorSize()).toString(Capacity::Byte, Capacity::AppendUnit), cols(area), x, y);
+	createLabels(i18nc("@label device", "Physical sector size:"), Capacity(d.physicalSectorSize()).toString(Capacity::Byte, Capacity::AppendUnit), cols(area), x, y);
 	createLabels(i18nc("@label device", "Cylinder size:"), i18ncp("@label", "1 Sector", "%1 Sectors", d.cylinderSize()), cols(area), x, y);
 	createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
 }

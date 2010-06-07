@@ -9,9 +9,23 @@ Bugs to fix for 1.1:
   if the new one is not legal. i.e., we must constantly update the valid ranges
   of the spin boxes if any value changes.
 
+* how does one remove an existing mount point?
+
 ===============================================================================
 
 For releases after 1.1:
+
+* can we use capacity (i.e. bytes/mib) instead of sector for alignment
+  configuration? would we need to know the physical sector size for that? are
+  we able to acquire that information?
+
+* make Job::copyBlocks() work for cases where the logical sector sizes of
+  source and target are not the same
+
+* find an elegant solution for the brokenness in design that is
+  Partition::sectorSize()... Either a Partition has a reference/pointer to the
+  Device it's on or the method is removed completely. -- Maybe the
+  PartitionTable should refernce the Device?
 
 * the file system support dialog is a usability nightmare
 

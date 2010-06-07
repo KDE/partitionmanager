@@ -106,6 +106,7 @@ void DevicePropsDialog::setupDialog()
 	dialogWidget().cylinderSize().setText(i18ncp("@label", "1 Sector", "%1 Sectors", device().cylinderSize()));
 	dialogWidget().primariesMax().setText(maxPrimaries);
 	dialogWidget().logicalSectorSize().setText(Capacity(device().logicalSectorSize()).toString(Capacity::Byte, Capacity::AppendUnit));
+	dialogWidget().physicalSectorSize().setText(Capacity(device().physicalSectorSize()).toString(Capacity::Byte, Capacity::AppendUnit));
 	dialogWidget().totalSectors().setText(KGlobal::locale()->formatNumber(device().totalSectors(), 0));
 	dialogWidget().type().setText(type);
 
