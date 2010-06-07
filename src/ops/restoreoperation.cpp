@@ -172,7 +172,7 @@ QString RestoreOperation::description() const
 	if (overwrittenPartition())
 		return QString(i18nc("@info/plain", "Restore partition from <filename>%1</filename> to <filename>%2</filename>", fileName(), overwrittenPartition()->deviceNode()));
 
-	return QString(i18nc("@info/plain", "Restore partition on <filename>%1</filename> at %2 from <filename>%3</filename>", targetDevice().deviceNode(), Capacity(restorePartition().firstSector() * restorePartition().sectorSize()).toString(), fileName()));
+	return QString(i18nc("@info/plain", "Restore partition on <filename>%1</filename> at %2 from <filename>%3</filename>", targetDevice().deviceNode(), Capacity(restorePartition().firstSector() * targetDevice().logicalSectorSize()).toString(), fileName()));
 }
 
 void RestoreOperation::setOverwrittenPartition(Partition* p)

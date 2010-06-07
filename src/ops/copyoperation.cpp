@@ -226,7 +226,7 @@ QString CopyOperation::updateDescription() const
 			sourcePartition().deviceNode(),
 			Capacity(sourcePartition()).toString(),
 			sourcePartition().fileSystem().name(),
-			Capacity(copiedPartition().firstSector() * copiedPartition().sectorSize()).toString(),
+			Capacity(copiedPartition().firstSector() * targetDevice().logicalSectorSize()).toString(),
 			targetDevice().deviceNode()
 		));
 
@@ -234,7 +234,7 @@ QString CopyOperation::updateDescription() const
 		sourcePartition().deviceNode(),
 		Capacity(sourcePartition()).toString(),
 		sourcePartition().fileSystem().name(),
-		Capacity(copiedPartition().firstSector() * copiedPartition().sectorSize()).toString(),
+		Capacity(copiedPartition().firstSector() * targetDevice().logicalSectorSize()).toString(),
 		targetDevice().deviceNode(),
 		Capacity(copiedPartition()).toString()
 	));

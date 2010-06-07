@@ -34,8 +34,8 @@
 
 #include <config.h>
 
-static double sectorsToDialogUnit(const Partition& p, qint64 v);
-static qint64 dialogUnitToSectors(const Partition& p, double v);
+static double sectorsToDialogUnit(const Device& d, qint64 v);
+static qint64 dialogUnitToSectors(const Device& d, double v);
 
 SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint64 minFirst, qint64 maxLast) :
 	KDialog(parent),
@@ -61,8 +61,8 @@ SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint
 
 void SizeDialogBase::setupDialog()
 {
-	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), partition().firstSector() - minimumFirstSector()));
-	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), maximumLastSector() - partition().lastSector()));
+	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(device(), partition().firstSector() - minimumFirstSector()));
+	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(device(), maximumLastSector() - partition().lastSector()));
 
 	dialogWidget().spinCapacity().setValue(Capacity(partition().capacity()).toDouble(Capacity::preferredUnit()));
 
@@ -87,18 +87,18 @@ void SizeDialogBase::setupConstraints()
 	dialogWidget().partResizerWidget().setMinimumLength(minimumLength());
 	dialogWidget().partResizerWidget().setMaximumLength(maximumLength());
 
-	dialogWidget().labelMinSize().setText(Capacity(minimumLength() * partition().sectorSize()).toString());
-	dialogWidget().labelMaxSize().setText(Capacity(maximumLength() * partition().sectorSize()).toString());
+	dialogWidget().labelMinSize().setText(Capacity(minimumLength() * device().logicalSectorSize()).toString());
+	dialogWidget().labelMaxSize().setText(Capacity(maximumLength() * device().logicalSectorSize()).toString());
 
 	dialogWidget().spinCapacity().setEnabled(canShrink() || canGrow());
 
 	dialogWidget().partResizerWidget().setMaximumFirstSector(maximumFirstSector());
 	dialogWidget().partResizerWidget().setMinimumLastSector(minimumLastSector());
 
-	const qint64 totalCapacity = sectorsToDialogUnit(partition(), maximumLastSector() - minimumFirstSector() + 1);
+	const qint64 totalCapacity = sectorsToDialogUnit(device(), maximumLastSector() - minimumFirstSector() + 1);
 
-	const qint64 minCapacity = sectorsToDialogUnit(partition(), minimumLength());
-	const qint64 maxCapacity = sectorsToDialogUnit(partition(), maximumLength());
+	const qint64 minCapacity = sectorsToDialogUnit(device(), minimumLength());
+	const qint64 maxCapacity = sectorsToDialogUnit(device(), maximumLength());
 	dialogWidget().spinCapacity().setRange(minCapacity, maxCapacity);
 
 	const qint64 maxFree = totalCapacity - minCapacity;
@@ -130,8 +130,8 @@ void SizeDialogBase::onSpinFreeBeforeChanged(double newBefore)
 {
 	bool success = false;
 
-	const double oldBefore = sectorsToDialogUnit(partition(), partition().firstSector() - minimumFirstSector());
-	const qint64 newFirstSector = minimumFirstSector() + dialogUnitToSectors(partition(), newBefore);
+	const double oldBefore = sectorsToDialogUnit(device(), partition().firstSector() - minimumFirstSector());
+	const qint64 newFirstSector = minimumFirstSector() + dialogUnitToSectors(device(), newBefore);
 	const qint64 deltaCorrection = newBefore > oldBefore
 		? PartitionAlignment::firstDelta(device(), partition(), newFirstSector)
 		: 0;
@@ -163,7 +163,7 @@ void SizeDialogBase::onSpinFreeBeforeChanged(double newBefore)
 	else
 		// TODO: this is not the best solution: we should prevent the user from entering
 		// illegal values with a validator
-		updateSpinFreeBefore(dialogUnitToSectors(partition(), oldBefore));
+		updateSpinFreeBefore(dialogUnitToSectors(device(), oldBefore));
 }
 
 void SizeDialogBase::onSpinCapacityChanged(double newCapacity)
@@ -172,7 +172,7 @@ void SizeDialogBase::onSpinCapacityChanged(double newCapacity)
 
 	qint64 newLength = qBound(
 			minimumLength(),
-			dialogUnitToSectors(partition(), newCapacity),
+			dialogUnitToSectors(device(), newCapacity),
 			qMin(maximumLastSector() - minimumFirstSector() + 1, maximumLength())
 	);
 
@@ -228,8 +228,8 @@ void SizeDialogBase::onSpinCapacityChanged(double newCapacity)
 void SizeDialogBase::onSpinFreeAfterChanged(double newAfter)
 {
 	bool success = false;
-	const double oldAfter = sectorsToDialogUnit(partition(), maximumLastSector() - partition().lastSector());
-	const qint64 newLastSector = maximumLastSector() - dialogUnitToSectors(partition(), newAfter);
+	const double oldAfter = sectorsToDialogUnit(device(), maximumLastSector() - partition().lastSector());
+	const qint64 newLastSector = maximumLastSector() - dialogUnitToSectors(device(), newAfter);
 	const qint64 deltaCorrection = newAfter > oldAfter
 		? PartitionAlignment::lastDelta(device(), partition(), newLastSector)
 		: 0;
@@ -256,7 +256,7 @@ void SizeDialogBase::onSpinFreeAfterChanged(double newAfter)
 	else
 		// TODO: this is not the best solution: we should prevent the user from entering
 		// illegal values with a validator
-		updateSpinFreeAfter(dialogUnitToSectors(partition(), oldAfter));
+		updateSpinFreeAfter(dialogUnitToSectors(device(), oldAfter));
 }
 
 void SizeDialogBase::onSpinFirstSectorChanged(double newFirst)
@@ -302,7 +302,7 @@ void SizeDialogBase::onAlignToggled(bool align)
 	detailsWidget().spinFirstSector().setSingleStep(align ? PartitionAlignment::sectorAlignment(device()) : 1);
 	detailsWidget().spinLastSector().setSingleStep(align ? PartitionAlignment::sectorAlignment(device()) : 1);
 
-	const double capacityStep = align ? sectorsToDialogUnit(partition(), PartitionAlignment::sectorAlignment(device())) : 1;
+	const double capacityStep = align ? sectorsToDialogUnit(device(), PartitionAlignment::sectorAlignment(device())) : 1;
 
 	dialogWidget().spinFreeBefore().setSingleStep(capacityStep);
 	dialogWidget().spinFreeBefore().setSingleStep(capacityStep);
@@ -317,21 +317,21 @@ void SizeDialogBase::onAlignToggled(bool align)
 void SizeDialogBase::updateSpinFreeBefore(qint64 sectorsFreeBefore)
 {
 	const bool signalState = dialogWidget().spinFreeBefore().blockSignals(true);
-	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(partition(), sectorsFreeBefore));
+	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(device(), sectorsFreeBefore));
 	dialogWidget().spinFreeBefore().blockSignals(signalState);
 }
 
 void SizeDialogBase::updateSpinCapacity(qint64 newLengthInSectors)
 {
 	bool state = dialogWidget().spinCapacity().blockSignals(true);
-	dialogWidget().spinCapacity().setValue(sectorsToDialogUnit(partition(), newLengthInSectors));
+	dialogWidget().spinCapacity().setValue(sectorsToDialogUnit(device(), newLengthInSectors));
 	dialogWidget().spinCapacity().blockSignals(state);
 }
 
 void SizeDialogBase::updateSpinFreeAfter(qint64 sectorsFreeAfter)
 {
 	const bool signalState = dialogWidget().spinFreeAfter().blockSignals(true);
-	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(partition(), sectorsFreeAfter));
+	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(device(), sectorsFreeAfter));
 	dialogWidget().spinFreeAfter().blockSignals(signalState);
 }
 
@@ -380,13 +380,13 @@ qint64 SizeDialogBase::maximumLength() const
 	return m_MaximumLength;
 }
 
-static double sectorsToDialogUnit(const Partition& p, qint64 v)
+static double sectorsToDialogUnit(const Device& d, qint64 v)
 {
-	return Capacity(v * p.sectorSize()).toDouble(Capacity::preferredUnit());
+	return Capacity(v * d.logicalSectorSize()).toDouble(Capacity::preferredUnit());
 }
 
-static qint64 dialogUnitToSectors(const Partition& p, double v)
+static qint64 dialogUnitToSectors(const Device& d, double v)
 {
-	return v * Capacity::unitFactor(Capacity::Byte, Capacity::preferredUnit()) / p.sectorSize();
+	return v * Capacity::unitFactor(Capacity::Byte, Capacity::preferredUnit()) / d.logicalSectorSize();
 }
 

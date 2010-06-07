@@ -93,7 +93,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 
 			case FileSystem::cmdSupportFileSystem:
 			{
-				const qint64 newLengthInByte = Capacity(newLength() * partition().sectorSize()).toInt(Capacity::Byte);
+				const qint64 newLengthInByte = Capacity(newLength() * device().logicalSectorSize()).toInt(Capacity::Byte);
 				rval = partition().fileSystem().resize(*report, partition().deviceNode(), newLengthInByte);
 				break;
 			}

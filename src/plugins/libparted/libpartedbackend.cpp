@@ -223,16 +223,16 @@ static qint64 readSectorsUsedLibParted(PedDisk* pedDisk, const Partition& p)
 	@param p the Partition the FileSystem is on
 	@param mountPoint mount point of the partition in question
 */
-static void readSectorsUsed(PedDisk* pedDisk, Partition& p, const QString& mountPoint)
+static void readSectorsUsed(PedDisk* pedDisk, const Device& d, Partition& p, const QString& mountPoint)
 {
 	Q_ASSERT(pedDisk);
 
 	const KDiskFreeSpaceInfo freeSpaceInfo = KDiskFreeSpaceInfo::freeSpaceInfo(mountPoint);
 
 	if (p.isMounted() && freeSpaceInfo.isValid())
-		p.fileSystem().setSectorsUsed(freeSpaceInfo.used() / p.sectorSize());
+		p.fileSystem().setSectorsUsed(freeSpaceInfo.used() / d.logicalSectorSize());
 	else if (p.fileSystem().supportGetUsed() == FileSystem::cmdSupportFileSystem)
-		p.fileSystem().setSectorsUsed(p.fileSystem().readUsedCapacity(p.deviceNode()) / p.sectorSize());
+		p.fileSystem().setSectorsUsed(p.fileSystem().readUsedCapacity(p.deviceNode()) / d.logicalSectorSize());
 	else if (p.fileSystem().supportGetUsed() == FileSystem::cmdSupportCore)
 		p.fileSystem().setSectorsUsed(readSectorsUsedLibParted(pedDisk, p));
 }
@@ -352,7 +352,7 @@ void LibPartedBackend::scanDevicePartitions(PedDevice*, Device& d, PedDisk* pedD
 
 		Partition* part = new Partition(parent, d, PartitionRole(r), fs, pedPartition->geom.start, pedPartition->geom.end, pedPartition->num, availableFlags(pedPartition), mountPoint, ped_partition_is_busy(pedPartition), activeFlags(pedPartition));
 
-		readSectorsUsed(pedDisk, *part, mountPoint);
+		readSectorsUsed(pedDisk, d, *part, mountPoint);
 
 		if (fs->supportGetLabel() != FileSystem::cmdSupportNone)
 			fs->setLabel(fs->readLabel(part->deviceNode()));
