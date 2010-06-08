@@ -120,6 +120,8 @@ void PartWidget::paintEvent(QPaintEvent*)
 
 		// draw used space in front of that
 		drawGradient(&painter, dark, QRect(0, 0, w, height()));
+	} else {
+		drawGradient(&painter, activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())), QRect(0, 0, width(), height()));
 	}
 
 	// draw name and size
