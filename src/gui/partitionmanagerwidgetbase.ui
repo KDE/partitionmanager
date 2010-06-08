@@ -14,6 +14,9 @@
    <string comment="@title:window">KDE Partition Manager</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="PartTableWidget" name="m_PartTableWidget" native="true">
      <property name="sizePolicy">
@@ -25,13 +28,13 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>80</height>
+       <height>74</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>80</height>
+       <height>74</height>
       </size>
      </property>
      <property name="contextMenuPolicy">

@@ -42,6 +42,8 @@ class PartTableWidget : public PartWidgetBase
 
 	public:
 		PartTableWidget(QWidget* parent);
+		virtual qint32 borderWidth() const { return 0; } /**< @return border width */
+		virtual qint32 borderHeight() const { return 0; } /**< @return border height */
 
 	public:
 		void setPartitionTable(const PartitionTable* ptable);
