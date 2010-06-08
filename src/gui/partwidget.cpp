@@ -98,22 +98,28 @@ void PartWidget::paintEvent(QPaintEvent*)
 		return;
 
 	const int usedPercentage = partition()->used() * 100 / partition()->capacity();
-	const int w = (width() - 1 - (PartWidget::borderWidth() * 2)) * usedPercentage / 100;
+	const int w = (width() - 1) * usedPercentage / 100;
 
 	QPainter painter(this);
 	painter.setRenderHints(QPainter::Antialiasing);
-	drawGradient(&painter, activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())), QRect(0, 0, width() - 1, height() - 1));
 
 	if (partition()->roles().has(PartitionRole::Extended))
+	{
+		drawGradient(&painter, activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())), QRect(0, 0, width() - 1, height()));
 		return;
+	}
 
 	if (!partition()->roles().has(PartitionRole::Unallocated))
 	{
+		QColor base( activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())) );
+		QColor dark = base.darker( 110 );
+		QColor light = base.lighter( 110 );
+
 		// draw free space background
-		drawGradient(&painter, activeColor(Config::availableSpaceColorCode()), QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), width() - 1 - (PartWidget::borderWidth() * 2), height() - (PartWidget::borderHeight() * 2)));
+		drawGradient(&painter, light, QRect(0, 0, width() - 1, height()));
 
 		// draw used space in front of that
-		drawGradient(&painter, activeColor(Config::usedSpaceColorCode()), QRect(PartWidget::borderWidth(), PartWidget::borderHeight(), w, height() - (PartWidget::borderHeight() * 2)));
+		drawGradient(&painter, dark, QRect(0, 0, w, height()));
 	}
 
 	// draw name and size
