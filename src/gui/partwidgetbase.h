@@ -43,15 +43,15 @@ class PartWidgetBase : public QWidget
 		virtual ~PartWidgetBase() {}
 
 	public:
-		static qint32 borderWidth() { return m_BorderWidth; } /**< @return border width */
-		static qint32 borderHeight() { return m_BorderHeight; } /**< @return border height */
+		virtual qint32 borderWidth() const { return m_BorderWidth; } /**< @return border width */
+		virtual qint32 borderHeight() const { return m_BorderHeight; } /**< @return border height */
 		static qint32 spacing() { return m_Spacing; } /**< @return spacing between Partitions */
 		static qint32 minWidth() { return m_MinWidth; } /**< @return minimum width for a Partition widget */
 
 		virtual QList<PartWidget*> childWidgets();
 
 	protected:
-		static void positionChildren(const QWidget* destWidget, const PartitionNode::Partitions& partitions, QList<PartWidget*> widgets);
+		virtual void positionChildren(const QWidget* destWidget, const PartitionNode::Partitions& partitions, QList<PartWidget*> widgets) const;
 
 	private:
 		static const qint32 m_Spacing;

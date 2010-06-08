@@ -99,7 +99,7 @@ bool levelChildrenWidths(QList<qint32>& childrenWidth, const QList<qint32>& minC
 	return true;
 }
 
-void PartWidgetBase::positionChildren(const QWidget* destWidget, const PartitionNode::Partitions& partitions, QList<PartWidget*> widgets)
+void PartWidgetBase::positionChildren(const QWidget* destWidget, const PartitionNode::Partitions& partitions, QList<PartWidget*> widgets) const
 {
 	if (partitions.size() == 0)
 		return;
