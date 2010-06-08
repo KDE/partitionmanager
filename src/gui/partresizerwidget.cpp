@@ -183,7 +183,7 @@ void PartResizerWidget::paintEvent(QPaintEvent*)
 	// disable mouse over and focus state
 	opt.state &= ~QStyle::State_MouseOver;
 	opt.state &= ~QStyle::State_HasFocus;
-	opt.rect.adjust(handleWidth(), 0, -handleWidth() - 1, 0);
+	opt.rect.adjust(handleWidth(), 0, -handleWidth(), 0);
 	style()->drawControl(QStyle::CE_ShapedFrame, &opt, &painter, this);
 }
 
