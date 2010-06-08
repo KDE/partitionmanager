@@ -62,7 +62,7 @@
 			<label context="@label">File system colors</label>
 			<parameter name="colorNumber" type="UInt" max="21"/>
 			<!-- numbers correspond to the enum in fs/filesystem.h -->
-			<default param="0">242,242,220</default> <!-- unknown -->
+			<default param="0">220,205,175</default> <!-- unknown -->
 			<default param="1">187,249,207</default> <!-- extended -->
 			<default param="2">102,121,150</default> <!-- ext2 -->
 			<default param="3">122,145,180</default> <!-- ext3 -->
@@ -78,7 +78,7 @@
 			<default param="13">210,136,142</default> <!-- hfs -->
 			<default param="14">240,165,171</default> <!-- hfs+ -->
 			<default param="15">151,220,134</default> <!-- ufs -->
-			<default param="16">242,242,222</default> <!-- unformatted -->
+			<default param="16">220,205,175</default> <!-- unformatted -->
 			<default param="17">173,205,255</default> <!-- btrfs -->
 			<default param="18">176,155,185</default> <!-- hpfs -->
 			<default param="19">170,30,77</default> <!-- luks -->
