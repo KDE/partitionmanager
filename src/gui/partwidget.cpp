@@ -109,20 +109,21 @@ void PartWidget::paintEvent(QPaintEvent*)
 		return;
 	}
 
+	const QColor base = activeColor(Config::fileSystemColorCode(partition()->fileSystem().type()));
+
 	if (!partition()->roles().has(PartitionRole::Unallocated))
 	{
-		QColor base( activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())) );
-		QColor dark = base.darker( 110 );
-		QColor light = base.lighter( 110 );
+		const QColor dark = base.darker(110);
+		const QColor light = base.lighter(110);
 
 		// draw free space background
 		drawGradient(&painter, light, QRect(0, 0, width(), height()));
 
 		// draw used space in front of that
 		drawGradient(&painter, dark, QRect(0, 0, w, height()));
-	} else {
-		drawGradient(&painter, activeColor(Config::fileSystemColorCode(partition()->fileSystem().type())), QRect(0, 0, width(), height()));
 	}
+	else
+		drawGradient(&painter, base, QRect(0, 0, width(), height()));
 
 	// draw name and size
 	QString text = partition()->deviceNode().remove("/dev/") + '\n' + Capacity(*partition()).toString();
