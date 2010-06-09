@@ -89,7 +89,7 @@ void PartWidget::resizeEvent(QResizeEvent*)
 
 QColor PartWidget::activeColor(const QColor& col) const
 {
-	return isActive() ? col.darker(130) : col;
+	return isActive() ? col.darker(190) : col;
 }
 
 void PartWidget::paintEvent(QPaintEvent*)
@@ -113,8 +113,8 @@ void PartWidget::paintEvent(QPaintEvent*)
 
 	if (!partition()->roles().has(PartitionRole::Unallocated))
 	{
-		const QColor dark = base.darker(110);
-		const QColor light = base.lighter(110);
+		const QColor dark = base.darker(105);
+		const QColor light = base.lighter(120);
 
 		// draw free space background
 		drawGradient(&painter, light, QRect(0, 0, width(), height()));
@@ -131,7 +131,11 @@ void PartWidget::paintEvent(QPaintEvent*)
 	const QRect textRect(0, 0, width() - 1, height() - 1);
 	const QRect boundingRect = painter.boundingRect(textRect, Qt::AlignVCenter | Qt::AlignHCenter, text);
 	if (boundingRect.x() > PartWidgetBase::borderWidth() && boundingRect.y() > PartWidgetBase::borderHeight())
+	{
+		if (isActive())
+			painter.setPen(QColor(255, 255, 255));
 		painter.drawText(textRect, Qt::AlignVCenter | Qt::AlignHCenter, text);
+	}
 }
 
 void PartWidget::drawGradient(QPainter* painter, const QColor& color, const QRect& rect) const
