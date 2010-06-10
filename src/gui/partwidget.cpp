@@ -117,13 +117,13 @@ void PartWidget::paintEvent(QPaintEvent*)
 		const QColor light = base.lighter(120);
 
 		// draw free space background
-		drawGradient(&painter, light, QRect(0, 0, width(), height()));
+		drawGradient(&painter, light, QRect(0, 0, width(), height()), isActive());
 
 		// draw used space in front of that
-		drawGradient(&painter, dark, QRect(0, 0, w, height()));
+		drawGradient(&painter, dark, QRect(0, 0, w, height() - 1));
 	}
 	else
-		drawGradient(&painter, base, QRect(0, 0, width(), height()));
+		drawGradient(&painter, base, QRect(0, 0, width(), height()), isActive());
 
 	// draw name and size
 	QString text = partition()->deviceNode().remove("/dev/") + '\n' + Capacity(*partition()).toString();
@@ -138,7 +138,7 @@ void PartWidget::paintEvent(QPaintEvent*)
 	}
 }
 
-void PartWidget::drawGradient(QPainter* painter, const QColor& color, const QRect& rect) const
+void PartWidget::drawGradient(QPainter* painter, const QColor& color, const QRect& rect, bool active) const
 {
 	if (rect.width() < 8)
 		return;
@@ -149,7 +149,10 @@ void PartWidget::drawGradient(QPainter* painter, const QColor& color, const QRec
 	option.palette.setColor(QPalette::Button, color);
 	option.palette.setColor(QPalette::Window, color);
 	option.state |= QStyle::State_Raised;
-	option.state &= ~QStyle::State_MouseOver;
+	if (!active)
+		option.state &= ~QStyle::State_MouseOver;
+	else
+		option.state |= QStyle::State_MouseOver;
 
 	style()->drawControl(QStyle::CE_PushButtonBevel, &option, painter, this);
 }
