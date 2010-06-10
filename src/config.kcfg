@@ -85,14 +85,6 @@
 			<default param="20">96,140,85</default> <!-- ocfs2 -->
 			<default param="21">33,137,108</default> <!-- zfs -->
 		</entry>
-		<entry key="availableSpaceColorCode" type="Color">
-			<label context="@label">Color for available space</label>
-			<default>245,245,245</default>
-		</entry>
-		<entry key="usedSpaceColorCode" type="Color">
-			<label context="@label">Color for used space</label>
-			<default>245,245,200</default>
-		</entry>
 		<entry key="showMenuBar" type="Bool">
 			<label context="@label">Show the application's menu bar</label>
 			<default>true</default>
