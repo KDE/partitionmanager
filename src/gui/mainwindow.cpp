@@ -912,7 +912,7 @@ void MainWindow::onImportPartitionTable()
 			Log(Log::warning) << i18nc("@info/plain", "Could not parse line %1 from import file. Ignoring it.", lineNo);
 	}
 
-	if (ptable->type() == PartitionTable::msdos && ptable->isSectorBased())
+	if (ptable->type() == PartitionTable::msdos && ptable->isSectorBased(device))
 		ptable->setType(device, PartitionTable::msdos_sectorbased);
 }
 

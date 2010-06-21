@@ -435,7 +435,7 @@ bool PartitionTable::tableTypeIsReadOnly(TableType l)
 	if its Partitions begin at sectors evenly divisable by Config::sectorAlignment().
 	@return true if is sector aligned, otherwise false
 */
-bool PartitionTable::isSectorBased() const
+bool PartitionTable::isSectorBased(const Device& d) const
 {
 	if (type() == PartitionTable::msdos)
 	{
@@ -443,17 +443,21 @@ bool PartitionTable::isSectorBased() const
 		if (numPrimaries() == 0)
 			return !Config::useCylinderAlignment();
 
+		quint32 numCylinderAligned = 0;
+		quint32 numSectorAligned = 0;
+
 		// if not all partitions start at a point evenly divisable by sectorAlignment it's
 		// a cylinder-aligned msdos partition table
 		foreach(const Partition* p, children())
-			if (p->firstSector() % Config::sectorAlignment() != 0)
-				return false;
+			if (p->firstSector() % Config::sectorAlignment() == 0)
+				numSectorAligned++;
+			else if (p->firstSector() % d.cylinderSize() == 0)
+				numCylinderAligned++;
 
-		// must be sector aligned
-		return true;
+		return numSectorAligned >= numCylinderAligned;
 	}
 
-	return false;
+	return type() == PartitionTable::msdos_sectorbased;
 }
 
 void PartitionTable::setType(const Device& d, TableType t)

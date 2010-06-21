@@ -366,7 +366,7 @@ void LibPartedBackend::scanDevicePartitions(PedDevice*, Device& d, PedDisk* pedD
 
 	d.partitionTable()->updateUnallocated(d);
 
-	if (d.partitionTable()->isSectorBased())
+	if (d.partitionTable()->isSectorBased(d))
 		d.partitionTable()->setType(d, PartitionTable::msdos_sectorbased);
 
 	foreach(const Partition* part, partitions)

@@ -126,7 +126,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 		void updateUnallocated(const Device& d);
 		void insertUnallocated(const Device& d, PartitionNode* p, qint64 start) const;
 
-		bool isSectorBased() const;
+		bool isSectorBased(const Device& d) const;
 
 		static QList<Flag> flagList();
 		static QString flagName(Flag f);
