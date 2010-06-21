@@ -156,8 +156,6 @@ void SizeDialogBase::onSpinFreeBeforeChanged(double newBefore)
 		success = dialogWidget().partResizerWidget().updateFirstSector(alignedFirstSector);
 	}
 
-	kDebug() << success;
-
 	if (success)
 		setDirty();
 	else
@@ -312,6 +310,12 @@ void SizeDialogBase::onAlignToggled(bool align)
 	foreach(QAbstractSpinBox* box, dialogWidget().findChildren<QAbstractSpinBox*>() +
 			detailsWidget().findChildren<QAbstractSpinBox*>())
 		box->setKeyboardTracking(!align);
+
+	if (align)
+	{
+		onSpinFirstSectorChanged(partition().firstSector());
+		onSpinLastSectorChanged(partition().lastSector());
+	}
 }
 
 void SizeDialogBase::updateSpinFreeBefore(qint64 sectorsFreeBefore)
