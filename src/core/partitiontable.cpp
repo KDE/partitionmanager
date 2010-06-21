@@ -439,9 +439,9 @@ bool PartitionTable::isSectorBased() const
 {
 	if (type() == PartitionTable::msdos)
 	{
-		// user has turned cylinder based alignment off and partition table is empty
-		if (Config::useCylinderAlignment() == false && numPrimaries() == 0)
-			return true;
+		// return configured default for empty partition tables
+		if (numPrimaries() == 0)
+			return !Config::useCylinderAlignment();
 
 		// if not all partitions start at a point evenly divisable by sectorAlignment it's
 		// a cylinder-aligned msdos partition table
