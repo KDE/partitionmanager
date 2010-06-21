@@ -11,16 +11,28 @@ Bugs to fix for 1.1:
 
 * how does one remove an existing mount point?
 
-===============================================================================
+* fix all bugs regarding 4096-KiB-sectors we can find
 
-For releases after 1.1:
+* how do we know the first usable sector for GPT when default is not aligned
+  and we've just created the new partitiontable op?
+
+* make Job::copyBlocks() work for cases where the logical sector sizes of
+  source and target are not the same
 
 * can we use capacity (i.e. bytes/mib) instead of sector for alignment
   configuration? would we need to know the physical sector size for that? are
   we able to acquire that information?
 
-* make Job::copyBlocks() work for cases where the logical sector sizes of
-  source and target are not the same
+* checking and unchecking align in size dialogs should align and un-align the
+  partition. it should also be aligned when the dialog opens the first time.
+
+* if a partition is new and has a file system set, it should be possible to set
+  "unformatted" in the partprops fs dropdown to make the newOp not create a
+  file system
+
+===============================================================================
+
+For releases after 1.1:
 
 * find an elegant solution for the brokenness in design that is
   Partition::sectorSize()... Either a Partition has a reference/pointer to the
