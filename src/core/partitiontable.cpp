@@ -446,8 +446,8 @@ bool PartitionTable::isSectorBased(const Device& d) const
 		quint32 numCylinderAligned = 0;
 		quint32 numSectorAligned = 0;
 
-		// if not all partitions start at a point evenly divisable by sectorAlignment it's
-		// a cylinder-aligned msdos partition table
+		// see if we have more cylinder aligned partitions than sector
+		// aligned ones.
 		foreach(const Partition* p, children())
 			if (p->firstSector() % Config::sectorAlignment() == 0)
 				numSectorAligned++;
