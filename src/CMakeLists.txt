@@ -48,7 +48,7 @@ kde4_add_app_icon(partitionmanager-bin_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icon
 
 kde4_add_executable(partitionmanager-bin ${partitionmanager-bin_SRCS})
 
-target_link_libraries(partitionmanager-bin partitionmanagerprivate ${KDE4_KDEUI_LIBS})
+target_link_libraries(partitionmanager-bin partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS})
 
 if(UNIX)
 	add_custom_target(partitionmanager ALL
