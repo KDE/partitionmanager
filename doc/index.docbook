@@ -2,6 +2,7 @@
 
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
 
+        <!ENTITY partman "<application>KDE Partition Manager</application>"> <!--remove this entity later, it is also in lang/user.entities to make it translatable-->
 	<!ENTITY partman-introduction SYSTEM "introduction.docbook">
 	<!ENTITY partman-usermanual SYSTEM "usermanual.docbook">
 	<!ENTITY partman-resizehowto SYSTEM "resizehowto.docbook">
