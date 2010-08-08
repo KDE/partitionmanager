@@ -48,7 +48,6 @@
 #include <kio/netaccess.h>
 #include <kio/jobuidelegate.h>
 #include <kio/copyjob.h>
-#include <ktemporaryfile.h>
 
 const QString ApplyProgressDialog::m_TimeFormat = "hh:mm:ss";
 

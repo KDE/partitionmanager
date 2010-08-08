@@ -759,7 +759,7 @@ void MainWindow::onImportPartitionTable()
 	QString fileName;
 	if (!KIO::NetAccess::download(url, fileName, this))
 	{
-		KMessageBox::error(this, i18nc("@info", "Could not open input file <filename>%1</filename> for import: %s", url.fileName(), KIO::NetAccess::lastErrorString()), i18nc("@title:window", "Error Importing Partition Table"));
+		KMessageBox::error(this, i18nc("@info", "Could not open input file <filename>%1</filename> for import: %2", url.fileName(), KIO::NetAccess::lastErrorString()), i18nc("@title:window", "Error Importing Partition Table"));
 		return;
 	}
 
@@ -844,8 +844,8 @@ void MainWindow::onImportPartitionTable()
 			qint64 lastSector = rxPartition.cap(3).toLongLong();
 			QString fsName = rxPartition.cap(4);
 			QString roleNames = rxPartition.cap(5);
-			QString volumeLabel = rxPartition.cap(6).replace('"', "");
-			QStringList flags = rxPartition.cap(7).replace('"', "").split(',');
+			QString volumeLabel = rxPartition.cap(6).replace('"', QString());
+			QStringList flags = rxPartition.cap(7).replace('"', QString()).split(',');
 
 			if (firstSector < ptable->firstUsable() || lastSector > ptable->lastUsable())
 			{

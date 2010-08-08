@@ -41,7 +41,7 @@ class PartWidget : public PartWidgetBase
 	Q_OBJECT
 
 	public:
-		PartWidget(QWidget* parent, const Partition* p = NULL);
+		explicit PartWidget(QWidget* parent, const Partition* p = NULL);
 
 	public:
 		void init(const Partition* p);

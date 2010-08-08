@@ -519,7 +519,7 @@ FileSystem::Type LibPartedBackend::detectFileSystem(PedPartition* pedPartition)
 			else if (s == "ufs") rval = FileSystem::Ufs;
 			else if (s == "vfat" && pedPartition->fs_type != NULL)
 			{
-				// libblkid does not distinguish betweeen fat16 and fat32, so we're still using libparted
+				// libblkid does not distinguish between fat16 and fat32, so we're still using libparted
 				// for those
 				if (strcmp(pedPartition->fs_type->name, "fat16") == 0)
 					rval = FileSystem::Fat16;

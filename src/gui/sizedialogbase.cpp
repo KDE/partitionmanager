@@ -21,7 +21,6 @@
 #include "gui/sizedetailswidget.h"
 #include "gui/partresizerwidget.h"
 #include "gui/sizedialogwidget.h"
-#include "gui/sizedetailswidget.h"
 
 #include "core/partitiontable.h"
 #include "core/device.h"

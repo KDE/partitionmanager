@@ -87,7 +87,7 @@ void PartResizerWidget::init(Device& d, Partition& p, qint64 minFirst, qint64 ma
 	setMinimumLength(qMax(partition().sectorsUsed(), partition().minimumSectors()));
 	setMaximumLength(qMin(totalSectors(), partition().maximumSectors()));
 
-	// set margins to accomodate for top/bottom button asymmetric layouts
+	// set margins to accommodate to top/bottom button asymmetric layouts
 	QStyleOptionButton bOpt;
 	bOpt.initFrom(this);
 

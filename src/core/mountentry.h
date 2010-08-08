@@ -17,6 +17,10 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
  ***************************************************************************/
 
+#if !defined(MOUNTENTRY__H)
+
+#define MOUNTENTRY__H
+
 #include <QString>
 #include <QStringList>
 #include <qglobal.h>
@@ -42,3 +46,4 @@ class MountEntry
 		IdentifyType identifyType;
 };
 
+#endif

@@ -67,3 +67,4 @@ void CreatePartitionTableDialog::onMSDOSToggled(bool on)
 		}
 	}
 }
+

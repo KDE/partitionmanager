@@ -233,7 +233,7 @@ QList<Solid::Device> getSolidDeviceList()
 		if (args->count() > 1)
 			predicate += "] ";
 
-		predicate += "]";
+		predicate += ']';
 	}
 
 	kDebug() << predicate;

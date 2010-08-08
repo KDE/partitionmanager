@@ -46,7 +46,7 @@ class FileSystem
 		class SupportTool
 		{
 			public:
-				SupportTool(const QString& n = QString(), const KUrl& u = KUrl()) : name(n), url(u) {}
+				explicit SupportTool(const QString& n = QString(), const KUrl& u = KUrl()) : name(n), url(u) {}
 
 				const QString name;
 				const KUrl url;

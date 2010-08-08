@@ -64,7 +64,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
 		qint32 heads() const { return m_Heads; } /**< @return the number of heads on the Device in CHS notation */
 		qint32 cylinders() const { return m_Cylinders; } /**< @return the number of cylinders on the Device in CHS notation */
 		qint32 sectorsPerTrack() const { return m_SectorsPerTrack; } /**< @return the number of sectors on the Device in CHS notation */
-		qint32 physicalSectorSize() const { return m_PhysicalSectorSize; }  /**< @return the phyiscal sector size the Device uses or -1 if unknown */
+		qint32 physicalSectorSize() const { return m_PhysicalSectorSize; }  /**< @return the physical sector size the Device uses or -1 if unknown */
 		qint32 logicalSectorSize() const { return m_LogicalSectorSize; } /**< @return the logical sector size the Device uses */
 		qint64 totalSectors() const { return static_cast<qint64>(heads()) * cylinders() * sectorsPerTrack(); } /**< @return the total number of sectors on the device */
 		qint64 capacity() const { return totalSectors() * logicalSectorSize(); } /**< @return the Device's capacity in bytes */

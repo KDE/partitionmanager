@@ -40,7 +40,6 @@
 #include <kicon.h>
 #include <kglobalsettings.h>
 #include <kglobal.h>
-#include <klocale.h>
 
 #include <QTreeWidgetItem>
 #include <QTextStream>
