@@ -1,3 +1,26 @@
+1.0.3 (2010-09-01)
+==================
+
+* Make sure available and used capacity are not printed in a partition's
+  properties dialog if they are not known
+
+* Make sure fsck.msdos does not want to modify a file system when it is being
+  called to read the file system usage
+
+* Warn the user when trying to overwrite an existing partition with another or
+  an image file
+
+* Clear the clipboard if undoing an operation deleted the partition that was in it
+
+* Keep the current UUID when resizing a swap partition
+
+* Fix the build by explicitly linking the partition manager executable against
+  the KDE libs it uses
+
+* Do not allow pasting a source partition on a bigger target partition when the
+  source partition's file system cannot be grown to fill the target partition
+
+
 1.0.2 (2010-04-23)
 ==================
 
