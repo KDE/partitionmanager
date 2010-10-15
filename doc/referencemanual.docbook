@@ -431,12 +431,12 @@
 									<warning>
 										<title>Warning: Possible loss of data</title>
 										
-										<para>Recreating a file system on a partition always means that all data on the partition is destroyed. Recreating a file system should only be used as a last ressort if the file system on a partition cannot be repaired anymore.</para>
+										<para>Recreating a file system on a partition always means that all data on the partition is destroyed. Recreating a file system should only be used as a last resort if the file system on a partition cannot be repaired anymore.</para>
 									</warning>
 								</listitem>
 								<listitem>
 									<para>Change a partition's flags</para>
-									<para>Depenging on the type of partition table used, there will be several flags available for each partition on the partition table. In most cases, modifying the flags is not necessary and should be considered an advanced feature.</para>
+									<para>Depending on the type of partition table used, there will be several flags available for each partition on the partition table. In most cases, modifying the flags is not necessary and should be considered an advanced feature.</para>
 								</listitem>
 							</itemizedlist>
 						</para>

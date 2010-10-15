@@ -50,7 +50,7 @@
 			</question>
 			<answer>
 				<para>
-					To modifiy a partition it must not be mounted. You can however not unmount the root partition. Neither will you be able to unmount the home partition if the home directory of the currently logged in user is on it.
+					To modify a partition it must not be mounted. You can however not unmount the root partition. Neither will you be able to unmount the home partition if the home directory of the currently logged in user is on it.
 				</para>
 				<para>
 					The solution for this problem is to boot from a Linux Live CD that comes with &partman; and modify these partitions from there.
