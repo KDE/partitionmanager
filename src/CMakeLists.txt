@@ -58,7 +58,7 @@ if(UNIX)
 endif(UNIX)
 install(TARGETS partitionmanager-bin ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES gui/partitionmanagerui.rc DESTINATION ${DATA_INSTALL_DIR}/partitionmanager)
-install(FILES partitionmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS partitionmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
 ############################################
 
