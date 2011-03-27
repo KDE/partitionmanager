@@ -43,7 +43,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListOperations : public QWidget, public 
 	Q_DISABLE_COPY(ListOperations)
 
 	public:
-		ListOperations(QWidget* parent);
+		ListOperations(QWidget* parent = NULL);
 
 	signals:
 		void contextMenuRequested(const QPoint&);

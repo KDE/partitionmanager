@@ -42,7 +42,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui:
 	Q_DISABLE_COPY(ListDevices)
 
 	public:
-		ListDevices(QWidget* parent);
+		ListDevices(QWidget* parent = NULL);
 
 	signals:
 		void selectionChanged(const QString& device_node);

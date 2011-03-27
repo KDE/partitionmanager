@@ -13,12 +13,8 @@
   <property name="windowTitle">
    <string comment="@title:window">KDE Partition Manager</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="PartitionManagerWidget" name="m_PartitionManagerWidget" native="true"/>
-    </item>
-   </layout>
+  <widget class="PartitionManagerWidget" name="m_PartitionManagerWidget">
+   <layout class="QVBoxLayout" name="verticalLayout"/>
   </widget>
   <widget class="QDockWidget" name="m_DockDevices">
    <property name="allowedAreas">
@@ -30,12 +26,8 @@
    <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
-   <widget class="QWidget" name="m_DockDevicesContents">
-    <layout class="QVBoxLayout">
-     <item>
-      <widget class="ListDevices" name="m_ListDevices" native="true"/>
-     </item>
-    </layout>
+   <widget class="ListDevices" name="m_ListDevices">
+    <layout class="QVBoxLayout"/>
    </widget>
   </widget>
   <widget class="QDockWidget" name="m_DockOperations">
@@ -48,12 +40,8 @@
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
-   <widget class="QWidget" name="m_DockOperationsContents">
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="ListOperations" name="m_ListOperations" native="true"/>
-     </item>
-    </layout>
+   <widget class="ListOperations" name="m_ListOperations">
+    <layout class="QVBoxLayout" name="verticalLayout_2"/>
    </widget>
   </widget>
   <widget class="QDockWidget" name="m_DockInformation">
@@ -63,12 +51,8 @@
    <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
-   <widget class="QWidget" name="m_DockInformationContents">
-    <layout class="QGridLayout" name="dockInformationLayout">
-     <item row="0" column="0">
-      <widget class="InfoPane" name="m_InfoPane" native="true"/>
-     </item>
-    </layout>
+   <widget class="InfoPane" name="m_InfoPane">
+    <layout class="QGridLayout" name="dockInformationLayout"/>
    </widget>
   </widget>
   <widget class="QDockWidget" name="m_DockLog">
@@ -81,12 +65,8 @@
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents">
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="TreeLog" name="m_TreeLog" native="true"/>
-     </item>
-    </layout>
+   <widget class="TreeLog" name="m_TreeLog">
+    <layout class="QGridLayout" name="gridLayout"/>
    </widget>
   </widget>
  </widget>

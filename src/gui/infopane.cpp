@@ -43,6 +43,7 @@ InfoPane::InfoPane(QWidget* parent) :
 	QWidget(parent),
 	m_GridLayout(new QGridLayout(this))
 {
+	layout()->setMargin(0);
 }
 
 /** Clears the InfoPane, leaving it empty */

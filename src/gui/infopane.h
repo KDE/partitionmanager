@@ -41,7 +41,7 @@ class InfoPane : public QWidget
 	Q_DISABLE_COPY(InfoPane)
 
 	public:
-		InfoPane(QWidget* parent);
+		InfoPane(QWidget* parent = NULL);
 
 	public:
 		void showPartition(Qt::DockWidgetArea area, const Partition& p);

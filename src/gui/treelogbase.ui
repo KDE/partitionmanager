@@ -11,6 +11,9 @@
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QTreeWidget" name="m_TreeLog">
      <property name="contextMenuPolicy">
@@ -43,9 +46,6 @@
      <property name="expandsOnDoubleClick">
       <bool>false</bool>
      </property>
-     <attribute name="headerVisible">
-      <bool>true</bool>
-     </attribute>
      <attribute name="headerVisible">
       <bool>true</bool>
      </attribute>

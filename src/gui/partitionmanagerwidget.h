@@ -48,7 +48,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 	Q_DISABLE_COPY(PartitionManagerWidget)
 
 	public:
-		PartitionManagerWidget(QWidget* parent);
+		PartitionManagerWidget(QWidget* parent = NULL);
 		virtual ~PartitionManagerWidget();
 
 	signals:
