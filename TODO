@@ -30,6 +30,9 @@ Bugs to fix for 1.1:
   "unformatted" in the partprops fs dropdown to make the newOp not create a
   file system
 
+* the list of partitions we don't have file system support for should be
+  natural-sorted (sda1, sda2, sda10, sda11, not sda1, sda10, sda11, sda2)
+
 ===============================================================================
 
 For releases after 1.1:
