@@ -1067,8 +1067,7 @@ void MainWindow::checkFileSystemSupport()
 	foreach(const Device* d, operationStack().previewDevices())
 		supportList << checkSupportInNode(d->partitionTable());
 
-	supportList.sort();
-	supportList.removeDuplicates();
+	qSort(supportList.begin(), supportList.end(), naturalLessThan);
 
 	if (!supportList.isEmpty())
 		KMessageBox::information(this,
