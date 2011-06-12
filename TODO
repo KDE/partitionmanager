@@ -26,10 +26,6 @@ Bugs to fix for 1.1:
 * checking and unchecking align in size dialogs should align and un-align the
   partition. it should also be aligned when the dialog opens the first time.
 
-* if a partition is new and has a file system set, it should be possible to set
-  "unformatted" in the partprops fs dropdown to make the newOp not create a
-  file system
-
 ===============================================================================
 
 For releases after 1.1:
