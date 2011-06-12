@@ -33,6 +33,7 @@
 #include <kcmdlineargs.h>
 #include <kdebug.h>
 #include <kmenu.h>
+#include <kstringhandler.h>
 
 #include <solid/device.h>
 
@@ -138,6 +139,11 @@ KAboutData* createPartitionManagerAboutData()
 bool caseInsensitiveLessThan(const QString& s1, const QString& s2)
 {
 	return s1.toLower() < s2.toLower();
+}
+
+bool naturalLessThan(const QString& s1, const QString& s2)
+{
+    return KStringHandler::naturalCompare(s1, s2) < 0;
 }
 
 QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
