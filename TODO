@@ -11,8 +11,6 @@ Bugs to fix for 1.1:
 
 * how does one remove an existing mount point?
 
-* fix all bugs regarding 4096-KiB-sectors we can find
-
 * how do we know the first usable sector for GPT when default is not aligned
   and we've just created the new partitiontable op?
 
