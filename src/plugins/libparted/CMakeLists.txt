@@ -15,6 +15,10 @@
 # Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
+find_package(LIBPARTED REQUIRED)
+
+include_directories(${LIBPARTED_INCLUDE_DIR})
+
 file (GLOB pmlibpartedbackendplugin_SRCS *.cpp)
 
 kde4_add_plugin(pmlibpartedbackendplugin ${pmlibpartedbackendplugin_SRCS})
