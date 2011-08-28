@@ -114,28 +114,17 @@ class FileSystem
 		virtual bool updateBootSector(Report& report, const QString& deviceNode) const;
 
 		virtual CommandSupportType supportGetUsed() const { return cmdSupportNone; } /**< @return CommandSupportType for getting used capacity */
-		virtual CommandSupportType supportGetLabel() const { return cmdSupportNone
-; } /**< @return CommandSupportType for reading label*/
-		virtual CommandSupportType supportCreate() const { return cmdSupportNone
-; } /**< @return CommandSupportType for creating */
-		virtual CommandSupportType supportGrow() const { return cmdSupportNone
-; } /**< @return CommandSupportType for growing */
-		virtual CommandSupportType supportShrink() const { return cmdSupportNone
-; } /**< @return CommandSupportType for shrinking */
-		virtual CommandSupportType supportMove() const { return cmdSupportNone
-; } /**< @return CommandSupportType for moving */
-		virtual CommandSupportType supportCheck() const { return cmdSupportNone
-; } /**< @return CommandSupportType for checking */
-		virtual CommandSupportType supportCopy() const { return cmdSupportNone
-; } /**< @return CommandSupportType for copying */
-		virtual CommandSupportType supportBackup() const { return cmdSupportNone
-; } /**< @return CommandSupportType for backing up */
-		virtual CommandSupportType supportSetLabel() const { return cmdSupportNone
-; } /**< @return CommandSupportType for setting label*/
-		virtual CommandSupportType supportUpdateUUID() const { return cmdSupportNone
-; } /**< @return CommandSupportType for updating the UUID */
-		virtual CommandSupportType supportGetUUID() const { return cmdSupportNone
-; } /**< @return CommandSupportType for reading the UUID */
+		virtual CommandSupportType supportGetLabel() const { return cmdSupportNone; } /**< @return CommandSupportType for reading label*/
+		virtual CommandSupportType supportCreate() const { return cmdSupportNone; } /**< @return CommandSupportType for creating */
+		virtual CommandSupportType supportGrow() const { return cmdSupportNone; } /**< @return CommandSupportType for growing */
+		virtual CommandSupportType supportShrink() const { return cmdSupportNone; } /**< @return CommandSupportType for shrinking */
+		virtual CommandSupportType supportMove() const { return cmdSupportNone; } /**< @return CommandSupportType for moving */
+		virtual CommandSupportType supportCheck() const { return cmdSupportNone; } /**< @return CommandSupportType for checking */
+		virtual CommandSupportType supportCopy() const { return cmdSupportNone; } /**< @return CommandSupportType for copying */
+		virtual CommandSupportType supportBackup() const { return cmdSupportNone; } /**< @return CommandSupportType for backing up */
+		virtual CommandSupportType supportSetLabel() const { return cmdSupportNone; } /**< @return CommandSupportType for setting label*/
+		virtual CommandSupportType supportUpdateUUID() const { return cmdSupportNone; } /**< @return CommandSupportType for updating the UUID */
+		virtual CommandSupportType supportGetUUID() const { return cmdSupportNone; } /**< @return CommandSupportType for reading the UUID */
 
 		virtual qint64 minCapacity() const;
 		virtual qint64 maxCapacity() const;
