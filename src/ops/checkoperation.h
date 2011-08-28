@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2011 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -35,6 +35,8 @@ class ResizeFileSystemJob;
 */
 class CheckOperation : public Operation
 {
+	friend class OperationStack;
+
 	Q_OBJECT
 	Q_DISABLE_COPY(CheckOperation)
 
