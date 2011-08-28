@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2011 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -41,9 +41,6 @@ namespace FS
 	void hfsplus::init()
 	{
 		m_Check = findExternal("hpfsck") ? cmdSupportFileSystem : cmdSupportNone;
-
-		m_GetUsed = cmdSupportCore;
-		m_Shrink = cmdSupportNone;
 		m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Backup = cmdSupportCore;
@@ -52,7 +49,7 @@ namespace FS
 	bool hfsplus::supportToolFound() const
 	{
 		return
-			m_GetUsed != cmdSupportNone &&
+//			m_GetUsed != cmdSupportNone &&
 // 			m_GetLabel != cmdSupportNone &&
 // 			m_SetLabel != cmdSupportNone &&
 // 			m_Create != cmdSupportNone &&

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009,2010 by Volker Lanz <vl@fidra.de>             *
+ *   Copyright (C) 2008,2009,2010,2011 by Volker Lanz <vl@fidra.de>        *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -191,6 +191,7 @@ static quint64 lastUsableSector(const Device& d)
 	@param p the Partition the FileSystem is on
 	@return the number of sectors used
 */
+#if defined LIBPARTED_FILESYSTEM_SUPPORT
 static qint64 readSectorsUsedLibParted(PedDisk* pedDisk, const Partition& p)
 {
 	Q_ASSERT(pedDisk);
@@ -217,6 +218,7 @@ static qint64 readSectorsUsedLibParted(PedDisk* pedDisk, const Partition& p)
 
 	return rval;
 }
+#endif
 
 /** Reads the sectors used in a FileSystem and stores the result in the Partition's FileSystem object.
 	@param pedDisk pointer to pedDisk  where the Partition and its FileSystem are
@@ -233,8 +235,12 @@ static void readSectorsUsed(PedDisk* pedDisk, const Device& d, Partition& p, con
 		p.fileSystem().setSectorsUsed(freeSpaceInfo.used() / d.logicalSectorSize());
 	else if (p.fileSystem().supportGetUsed() == FileSystem::cmdSupportFileSystem)
 		p.fileSystem().setSectorsUsed(p.fileSystem().readUsedCapacity(p.deviceNode()) / d.logicalSectorSize());
+#if defined LIBPARTED_FILESYSTEM_SUPPORT
 	else if (p.fileSystem().supportGetUsed() == FileSystem::cmdSupportCore)
 		p.fileSystem().setSectorsUsed(readSectorsUsedLibParted(pedDisk, p));
+#else
+	Q_UNUSED(pedDisk);
+#endif
 }
 
 static PartitionTable::Flags activeFlags(PedPartition* p)
@@ -283,10 +289,14 @@ LibPartedBackend::LibPartedBackend(QObject*, const QList<QVariant>&) :
 
 void LibPartedBackend::initFSSupport()
 {
+#if defined LIBPARTED_FILESYSTEM_SUPPORT
 	FS::fat16::m_Shrink = FileSystem::cmdSupportBackend;
 	FS::fat16::m_Grow = FileSystem::cmdSupportBackend;
 	FS::hfs::m_Shrink = FileSystem::cmdSupportBackend;
 	FS::hfsplus::m_Shrink = FileSystem::cmdSupportBackend;
+	FS::hfs::m_GetUsed = FileSystem::cmdSupportBackend;
+	FS::hfsplus::m_GetUsed = FileSystem::cmdSupportBackend;
+#endif
 }
 
 /** Scans a Device for Partitions.

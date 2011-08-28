@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2011 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -46,10 +46,6 @@ namespace FS
 		m_GetLabel = cmdSupportCore;
 		m_Create = findExternal("hformat") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Check = findExternal("hfsck") ? cmdSupportFileSystem : cmdSupportNone;
-
-		m_GetUsed = cmdSupportCore;
-		m_Shrink = cmdSupportNone;
-
 		m_Move = m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Backup = cmdSupportCore;
 	}

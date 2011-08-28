@@ -17,6 +17,10 @@
 
 find_package(LIBPARTED REQUIRED)
 
+if (LIBPARTED_FILESYSTEM_SUPPORT)
+	add_definitions(-DLIBPARTED_FILESYSTEM_SUPPORT)
+endif (LIBPARTED_FILESYSTEM_SUPPORT)
+
 include_directories(${LIBPARTED_INCLUDE_DIR})
 
 file (GLOB pmlibpartedbackendplugin_SRCS *.cpp)

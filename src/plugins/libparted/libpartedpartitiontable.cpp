@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de                        *
+ *   Copyright (C) 2010,2011 by Volker Lanz <vl@fidra.de                   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -55,7 +55,6 @@ bool LibPartedPartitionTable::open()
 
 	return m_PedDisk != NULL;
 }
-
 
 bool LibPartedPartitionTable::commit(quint32 timeout)
 {
@@ -260,6 +259,7 @@ bool LibPartedPartitionTable::clobberFileSystem(Report& report, const Partition&
 {
 	bool rval = false;
 
+#if defined LIBPARTED_FILESYSTEM_SUPPORT
 	if (PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), partition.firstSector()))
 	{
 		if (ped_file_system_clobber(&pedPartition->geom))
@@ -285,19 +285,33 @@ bool LibPartedPartitionTable::clobberFileSystem(Report& report, const Partition&
 	}
 	else
 		report.line() << i18nc("@info/plain", "Could not delete file system on partition <filename>%1</filename>: Failed to get partition.", partition.deviceNode());
+#else
+	// One would assume we'd need to implement clobbering ourselves here, now that libparted does not
+	// support it anymore.
+	// Strangely enough, creating a partition with a valid file system, then deleting it without any
+	// removing of file system signatues, then creating a new unfortmatted partition in its place with
+	// the exact same geometry does NOT result in the old file system being magically restored. So
+	// it appears to be ok to just skip clobbering altogether.
+	Q_UNUSED(report);
+	Q_UNUSED(partition);
+	rval = true;
+#endif
 
 	return rval;
 }
 
+#if defined LIBPARTED_FILESYSTEM_SUPPORT
 static void pedTimerHandler(PedTimer* pedTimer, void*)
 {
 	CoreBackendManager::self()->backend()->emitProgress(pedTimer->frac * 100);
 }
+#endif
 
 bool LibPartedPartitionTable::resizeFileSystem(Report& report, const Partition& partition, qint64 newLength)
 {
 	bool rval = false;
 
+#if defined LIBPARTED_FILESYSTEM_SUPPORT
 	if (PedGeometry* originalGeometry = ped_geometry_new(pedDevice(), partition.fileSystem().firstSector(), partition.fileSystem().length()))
 	{
 		if (PedFileSystem* pedFileSystem = ped_file_system_open(originalGeometry))
@@ -321,7 +335,12 @@ bool LibPartedPartitionTable::resizeFileSystem(Report& report, const Partition& 
 	}
 	else
 		report.line() << i18nc("@info/plain", "Could not read geometry for partition <filename>%1</filename> while trying to resize the file system.", partition.deviceNode());
-
+#else
+	Q_UNUSED(report);
+	Q_UNUSED(partition);
+	Q_UNUSED(newLength);
+#endif
+		
 	return rval;
 }
 

@@ -1,4 +1,4 @@
-# Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>
+# Copyright (C) 2008,2010,2011 by Volker Lanz <vl@fidra.de>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -21,6 +21,8 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+INCLUDE(CheckCSourceCompiles)
+
 if (LIBPARTED_INCLUDE_DIR AND LIBPARTED_LIBRARY)
   # Already in cache, be silent
   set(LIBPARTED_FIND_QUIETLY TRUE)
@@ -36,4 +38,16 @@ FIND_PACKAGE_HANDLE_STANDARD_ARGS(LIBPARTED DEFAULT_MSG LIBPARTED_LIBRARY LIBPAR
 
 SET(LIBPARTED_LIBS ${LIBPARTED_LIBRARY})
 
-MARK_AS_ADVANCED(LIBPARTED_LIBRARY LIBPARTED_INCLUDE_DIR)
+# KDE adds -ansi to the C make flags, parted headers use GNU extensions, so 
+# undo that
+unset(CMAKE_C_FLAGS)
+
+set(CMAKE_REQUIRED_INCLUDES ${LIBPARTED_INCLUDE_DIR})
+set(CMAKE_REQUIRED_LIBRARIES ${LIBPARTED_LIBS})
+
+CHECK_C_SOURCE_COMPILES("
+#include <parted/parted.h>
+int main() { ped_file_system_clobber(0); }
+" LIBPARTED_FILESYSTEM_SUPPORT)
+
+MARK_AS_ADVANCED(LIBPARTED_LIBRARY LIBPARTED_INCLUDE_DIR LIBPARTED_FILESYSTEM_SUPPORT)

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2008,2009,2011 by Volker Lanz <vl@fidra.de>             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -60,8 +60,6 @@ namespace FS
 		m_GetUsed = m_Check = findExternal("fsck.msdos", QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetLabel = cmdSupportCore;
 		m_SetLabel = cmdSupportFileSystem;
-		m_Grow = cmdSupportNone;
-		m_Shrink = cmdSupportNone;
 		m_Move = cmdSupportCore;
 		m_Copy = cmdSupportCore;
 		m_Backup = cmdSupportCore;
@@ -78,8 +76,8 @@ namespace FS
 			m_Create != cmdSupportNone &&
 			m_Check != cmdSupportNone &&
 			m_UpdateUUID != cmdSupportNone &&
-			m_Grow != cmdSupportNone &&
-			m_Shrink != cmdSupportNone &&
+//			m_Grow != cmdSupportNone &&
+//			m_Shrink != cmdSupportNone &&
 			m_Copy != cmdSupportNone &&
 			m_Move != cmdSupportNone &&
 			m_Backup != cmdSupportNone &&
