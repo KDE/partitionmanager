@@ -63,7 +63,7 @@ NewOperation::NewOperation(Device& d, Partition* p) :
 		// label. The operation stack will merge these operations with this one here
 		// and if the jobs don't exist things will break.
 		
-		m_CreateFileSystemJob = new CreateFileSystemJob(newPartition());
+		m_CreateFileSystemJob = new CreateFileSystemJob(targetDevice(), newPartition());
 		addJob(createFileSystemJob());
 
 		m_SetFileSystemLabelJob = new SetFileSystemLabelJob(newPartition(), fs.label());

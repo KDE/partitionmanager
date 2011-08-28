@@ -357,3 +357,19 @@ FileSystem::Type LibPartedPartitionTable::detectFileSystemBySector(Report& repor
 
 	return rval;
 }
+
+bool LibPartedPartitionTable::setPartitionSystemType(Report& report, const Partition& partition)
+{
+	PedFileSystemType* pedFsType = (partition.roles().has(PartitionRole::Extended) || partition.fileSystem().type() == FileSystem::Unformatted) ? NULL : getPedFileSystemType(partition.fileSystem().type());
+
+	PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), partition.firstSector());
+	
+	if (pedFsType == NULL || pedPartition == NULL)
+	{
+		report.line() << i18nc("@info/plain", "Could not update the system type for partition <filename>%1</filename>.", partition.deviceNode());
+		return false;
+	}
+
+	return ped_partition_set_system(pedPartition, pedFsType) != 0;
+}
+

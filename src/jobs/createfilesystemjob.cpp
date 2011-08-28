@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2011 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,6 +19,12 @@
 
 #include "jobs/createfilesystemjob.h"
 
+#include "backend/corebackend.h"
+#include "backend/corebackendmanager.h"
+#include "backend/corebackenddevice.h"
+#include "backend/corebackendpartitiontable.h"
+
+#include "core/device.h"
 #include "core/partition.h"
 
 #include "fs/filesystem.h"
@@ -30,8 +36,9 @@
 /** Creates a new CreateFileSystemJob
 	@param p the Partition the FileSystem to create is on
 */
-CreateFileSystemJob::CreateFileSystemJob(Partition& p) :
+CreateFileSystemJob::CreateFileSystemJob(Device& d, Partition& p) :
 	Job(),
+	m_Device(d),
 	m_Partition(p)
 {
 }
@@ -43,7 +50,36 @@ bool CreateFileSystemJob::run(Report& parent)
 	Report* report = jobStarted(parent);
 	
 	if (partition().fileSystem().supportCreate() == FileSystem::cmdSupportFileSystem)
-		rval = partition().fileSystem().create(*report, partition().deviceNode());
+	{
+		if (partition().fileSystem().create(*report, partition().deviceNode()))
+		{
+			CoreBackendDevice* backendDevice = CoreBackendManager::self()->backend()->openDevice(device().deviceNode());
+
+			if (backendDevice)
+			{
+				CoreBackendPartitionTable* backendPartitionTable = backendDevice->openPartitionTable();
+
+				if (backendPartitionTable)
+				{
+					if (backendPartitionTable->setPartitionSystemType(*report, partition()))
+					{
+						rval = true;
+						backendPartitionTable->commit();
+					}
+					else
+						report->line() << i18nc("@info/plain", "Failed to set the system type for the file system on partition <filename>%1</filename>.", partition().deviceNode());
+
+					delete backendPartitionTable;
+				}
+				else
+					report->line() << i18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to set the system type for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
+
+				delete backendDevice;
+			}
+			else
+				report->line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> to set the system type for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
+		}
+	}
 
 	jobFinished(*report, rval);
 

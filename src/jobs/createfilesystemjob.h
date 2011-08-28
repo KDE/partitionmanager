@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2011 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -23,6 +23,7 @@
 
 #include "jobs/job.h"
 
+class Device;
 class Partition;
 class Report;
 
@@ -34,7 +35,7 @@ class QString;
 class CreateFileSystemJob : public Job
 {
 	public:
-		CreateFileSystemJob(Partition& p);
+		CreateFileSystemJob(Device& d, Partition& p);
 
 	public:
 		virtual bool run(Report& parent);
@@ -44,7 +45,11 @@ class CreateFileSystemJob : public Job
 		Partition& partition() { return m_Partition; }
 		const Partition& partition() const { return m_Partition; }
 
+		Device& device() { return m_Device; }
+		const Device& device() const { return m_Device; }
+
 	private:
+		Device& m_Device;
 		Partition& m_Partition;
 };
 

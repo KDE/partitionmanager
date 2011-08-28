@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de                        *
+ *   Copyright (C) 2010,2011 by Volker Lanz <vl@fidra.de                   *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -117,6 +117,15 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendPartitionTable
 		  * @return true on success
 		  */
 		virtual bool updateGeometry(Report& report, const Partition& partition, qint64 sector_start, qint64 sector_end) = 0;
+
+		/**
+		 * Set the system type (e.g. 83 for Linux) of a partition. The type to set is taken from
+		 * the partition's file system.
+		 * @param report the report to write information to
+		 * @param partition the partition to set the system type for
+		 * @return true on success
+		 */
+		virtual bool setPartitionSystemType(Report& report, const Partition& partition) = 0;
 };
 
 #endif

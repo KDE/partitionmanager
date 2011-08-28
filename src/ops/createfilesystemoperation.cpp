@@ -46,7 +46,7 @@ CreateFileSystemOperation::CreateFileSystemOperation(Device& d, Partition& p, Fi
 	m_NewFileSystem(FileSystemFactory::cloneWithNewType(newType, partition().fileSystem())),
 	m_OldFileSystem(&p.fileSystem()),
 	m_DeleteJob(new DeleteFileSystemJob(targetDevice(), partition())),
-	m_CreateJob(new CreateFileSystemJob(partition())),
+	m_CreateJob(new CreateFileSystemJob(targetDevice(), partition())),
 	m_CheckJob(new CheckFileSystemJob(partition()))
 {
 	// We never know anything about the number of used sectors on a new file system.
