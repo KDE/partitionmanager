@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2011 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -31,6 +31,7 @@
 #include "ops/createfilesystemoperation.h"
 #include "ops/setpartflagsoperation.h"
 #include "ops/setfilesystemlabeloperation.h"
+#include "ops/checkoperation.h"
 
 #include "jobs/setfilesystemlabeljob.h"
 
@@ -77,6 +78,9 @@ OperationStack::~OperationStack()
 	<li>The label for a new Partition's FileSystem is modified: Modify in NewOperation and forget it.</li>
 	<!-- 5 -->
 	<li>File system is changed for a new Partition: Modify in NewOperation and forget it.</li>
+	<!-- 6 -->
+	<li>A file system on a new Partition is about to be checked: Just delete the CheckOperation, because
+		file systems are checked anyway when they're created. This fixes #275657.</li>
 	</ol>
 
 	@param currentOp the Operation already on the stack to try to merge with
@@ -95,7 +99,8 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 	CopyOperation* pushedCopyOp = dynamic_cast<CopyOperation*>(pushedOp);
 	SetFileSystemLabelOperation* pushedLabelOp = dynamic_cast<SetFileSystemLabelOperation*>(pushedOp);
 	CreateFileSystemOperation* pushedCreateFileSystemOp = dynamic_cast<CreateFileSystemOperation*>(pushedOp);
-
+	CheckOperation* pushedCheckOp = dynamic_cast<CheckOperation*>(pushedOp);
+	
 	// -- 1 --
 	if (pushedDeleteOp && &newOp->newPartition() == &pushedDeleteOp->deletedPartition() && !pushedDeleteOp->deletedPartition().roles().has(PartitionRole::Extended))
 	{
@@ -186,6 +191,17 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 		return true;
 	}
 
+	// -- 6 --
+	if (pushedCheckOp && &newOp->newPartition() == &pushedCheckOp->checkedPartition())
+	{
+		log() << i18nc("@info/plain", "Checking file systems is automatically done when creating them: No new operation required.");
+		
+		delete pushedOp;
+		pushedOp = NULL;
+		
+		return true;
+	}
+	
 	return false;
 }
 
