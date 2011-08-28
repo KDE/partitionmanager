@@ -58,14 +58,6 @@ void registerMetaTypes()
 	qRegisterMetaType<Log::Level>("Log::Level");
 }
 
-void unblockSigChild()
-{
-	sigset_t sset;
-	sigemptyset(&sset);
-	sigaddset(&sset, SIGCHLD);
-	sigprocmask(SIG_UNBLOCK, &sset, NULL);
-}
-
 static QString suCommand()
 {
 	KStandardDirs d;

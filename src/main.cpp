@@ -40,9 +40,6 @@ int main(int argc, char* argv[])
 	options.add("+[device]", ki18nc("@info:shell", "Device(s) to manage"));
 	KCmdLineArgs::addCmdLineOptions(options);
 
-	// workaround for https://bugs.launchpad.net/kdesudo/+bug/272427
-	unblockSigChild();
-
 	KApplication app;
 
 	registerMetaTypes();

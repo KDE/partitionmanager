@@ -37,7 +37,6 @@ namespace Solid
 }
 
 LIBPARTITIONMANAGERPRIVATE_EXPORT void registerMetaTypes();
-LIBPARTITIONMANAGERPRIVATE_EXPORT void unblockSigChild();
 LIBPARTITIONMANAGERPRIVATE_EXPORT bool checkPermissions();
 
 LIBPARTITIONMANAGERPRIVATE_EXPORT KAboutData* createPartitionManagerAboutData();
