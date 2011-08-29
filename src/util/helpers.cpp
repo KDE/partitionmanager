@@ -84,12 +84,7 @@ bool checkPermissions()
 		// endless loops of calling the same non-working (kde|gk)su(do) binary again and again.
 		if (!suCommand().isEmpty() && !args->isSet("dontsu"))
 		{
-			// arguments to partition manager must be _one_ argument to (kde|gk)su(do)
-			QString suArgs = qApp->applicationFilePath() + " --dontsu";
-			for (qint32 i = 0; i < args->count(); i++)
-				suArgs += QString(" %1").arg(args->arg(i));
-
-			if (QProcess::execute(suCommand(), QStringList() << suArgs) == 0)
+			if (QProcess::execute(suCommand(), QStringList() << args->allArguments().join(" ") + " --dontsu") == 0)
 				return false;
 		}
 
