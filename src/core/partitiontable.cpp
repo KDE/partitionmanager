@@ -224,7 +224,7 @@ bool PartitionTable::getUnallocatedRange(const Device& device, PartitionNode& pa
 		if (extended == NULL)
 		{
 			kWarning() << "extended is null. start: " << start << ", end: " << end << ", device: " << device.deviceNode();
-			return NULL;
+			return false;
 		}
 
 		// Leave a track (cylinder aligned) or sector alignment sectors (sector based) free at the
