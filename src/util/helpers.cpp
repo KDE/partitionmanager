@@ -203,6 +203,20 @@ bool loadBackend()
 	return true;
 }
 
+bool checkAccessibleDevices()
+{
+	if (getSolidDeviceList().empty())
+	{
+		KMessageBox::error(NULL,
+			i18nc("@info", "<para>No usable devices could be found.</para><para>Make sure you have sufficient "
+				"privileges to access block devices on your system.</para>"),
+			i18nc("@title:window", "Error: No Usable Devices Found"));
+		return false;
+	}
+	
+	return true;
+}
+
 QList<Solid::Device> getSolidDeviceList()
 {
 	QString predicate = "StorageDrive.driveType == 'HardDisk'";
@@ -228,8 +242,6 @@ QList<Solid::Device> getSolidDeviceList()
 
 		predicate += ']';
 	}
-
-	kDebug() << predicate;
 
 	return Solid::Device::listFromQuery(predicate);
 }

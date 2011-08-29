@@ -52,4 +52,6 @@ LIBPARTITIONMANAGERPRIVATE_EXPORT bool loadBackend();
 
 LIBPARTITIONMANAGERPRIVATE_EXPORT QList<Solid::Device> getSolidDeviceList();
 
+LIBPARTITIONMANAGERPRIVATE_EXPORT bool checkAccessibleDevices();
+
 #endif
