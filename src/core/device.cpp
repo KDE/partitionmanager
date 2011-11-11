@@ -87,7 +87,7 @@ static qint32 getPhysicalSectorSize(const QString& device_node)
 */
 Device::Device(const QString& name, const QString& devicenode, qint32 heads, qint32 numSectors, qint32 cylinders, qint64 sectorSize, const QString& iconname) :
 	QObject(),
-	m_Name(name),
+	m_Name(name.length() > 0 ? name : i18n("Unknown Device")),
 	m_DeviceNode(devicenode),
 	m_PartitionTable(NULL),
 	m_Heads(heads),
@@ -118,5 +118,5 @@ bool Device::operator!=(const Device& other) const
 
 QString Device::prettyName() const
 {
-	return QString("%2 (%1, %3)").arg(name()).arg(deviceNode()).arg(Capacity(*this).toString());
+	return QString("%1 (%2, %3)").arg(deviceNode()).arg(name()).arg(Capacity(*this).toString());
 }
