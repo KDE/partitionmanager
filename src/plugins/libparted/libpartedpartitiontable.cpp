@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010,2011 by Volker Lanz <vl@fidra.de                   *
+ *   Copyright (C) 2010,2011,2012 by Volker Lanz <vl@fidra.de              *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -46,13 +46,14 @@ LibPartedPartitionTable::LibPartedPartitionTable (PedDevice* device) :
 
 LibPartedPartitionTable::~LibPartedPartitionTable()
 {
-	ped_disk_destroy(m_PedDisk);
+	if (m_PedDisk != NULL)
+		ped_disk_destroy(m_PedDisk);
 }
 
 bool LibPartedPartitionTable::open()
 {
 	m_PedDisk = ped_disk_new(pedDevice());
-
+ 
 	return m_PedDisk != NULL;
 }
 
