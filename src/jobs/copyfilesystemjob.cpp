@@ -73,7 +73,7 @@ bool CopyFileSystemJob::run(Report& parent)
 		else
 		{
 			rval = copyBlocks(*report, copyTarget, copySource);
-			report->line() << i18nc("@info/plain", "Closing device. This may take a few seconds.");
+			report->line() << i18nc("@info/plain", "Closing device. This may take a while, especially on slow devices like Memory Sticks.");
 		}
 	}
 
