@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009,2010 by Volker Lanz <vl@fidra.de>             *
+ *   Copyright (C) 2008,2009,2010,2012 by Volker Lanz <vl@fidra.de>        *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -561,6 +561,10 @@ void MainWindow::onShowMenuBar()
 
 void MainWindow::scanDevices()
 {
+	Log(Log::information) << i18nc("@info/plain", "Using backend plugin: %1 (%2)", 
+			CoreBackendManager::self()->backend()->about().programName(),
+			CoreBackendManager::self()->backend()->about().version());
+
 	Log() << i18nc("@info/plain", "Scanning devices...");
 
 	// remember the currently selected device's node
