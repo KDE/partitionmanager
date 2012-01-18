@@ -123,10 +123,8 @@ class ApplyProgressDialog : public KDialog
 		static const QString& timeFormat() { return m_TimeFormat; }
 
 	private:
-		ApplyProgressDialogWidget
-* m_ProgressDialogWidget;
-		ApplyProgressDetailsWidget
-* m_ProgressDetailsWidget;
+		ApplyProgressDialogWidget* m_ProgressDialogWidget;
+		ApplyProgressDetailsWidget* m_ProgressDetailsWidget;
 		const OperationRunner& m_OperationRunner;
 		Report* m_Report;
 		QString m_SavedParentTitle;
