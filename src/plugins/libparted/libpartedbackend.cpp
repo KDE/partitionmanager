@@ -290,12 +290,23 @@ LibPartedBackend::LibPartedBackend(QObject*, const QList<QVariant>&) :
 void LibPartedBackend::initFSSupport()
 {
 #if defined LIBPARTED_FILESYSTEM_SUPPORT
-	FS::fat16::m_Shrink = FileSystem::cmdSupportBackend;
-	FS::fat16::m_Grow = FileSystem::cmdSupportBackend;
-	FS::hfs::m_Shrink = FileSystem::cmdSupportBackend;
-	FS::hfsplus::m_Shrink = FileSystem::cmdSupportBackend;
-	FS::hfs::m_GetUsed = FileSystem::cmdSupportBackend;
-	FS::hfsplus::m_GetUsed = FileSystem::cmdSupportBackend;
+	if (FS::fat16::m_Shrink == FileSystem::cmdSupportNone)
+		FS::fat16::m_Shrink = FileSystem::cmdSupportBackend;
+	
+	if (FS::fat16::m_Grow == FileSystem::cmdSupportNone)
+		FS::fat16::m_Grow = FileSystem::cmdSupportBackend;
+
+	if (FS::hfs::m_Shrink == FileSystem::cmdSupportNone)
+		FS::hfs::m_Shrink = FileSystem::cmdSupportBackend;
+	
+	if (FS::hfsplus::m_Shrink == FileSystem::cmdSupportNone)
+		FS::hfsplus::m_Shrink = FileSystem::cmdSupportBackend;
+	
+	if (FS::hfs::m_GetUsed == FileSystem::cmdSupportNone)
+		FS::hfs::m_GetUsed = FileSystem::cmdSupportBackend;
+	
+	if (FS::hfsplus::m_GetUsed == FileSystem::cmdSupportNone)
+		FS::hfsplus::m_GetUsed = FileSystem::cmdSupportBackend;
 #endif
 }
 
