@@ -72,23 +72,30 @@ bool checkPermissions()
 {
 	if (geteuid() != 0)
 	{
-		// only try to gain root privileges if we have a valid (kde|gk)su(do) command and 
-		// we did not try so before: the dontsu-option is there to make sure there are no 
+		KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
+		// only try to gain root privileges if we have a valid (kde|gk)su(do) command and
+		// we did not try so before: the dontsu-option is there to make sure there are no
 		// endless loops of calling the same non-working (kde|gk)su(do) binary again and again.
-		if (!suCommand().isEmpty() && !KCmdLineArgs::parsedArgs()->isSet("dontsu"))
+		if (!suCommand().isEmpty() && !args->isSet("dontsu"))
 		{
-			QStringList args = qApp->arguments();
+			QStringList argList;
 
-			// first argument is our own command again (i.e., argv[0])
-			if (!args.isEmpty())
-				args.removeFirst();
-		
-			// arguments to partition manager must be _one_ argument to (kde|gk)su(do)
-			const QString suArgs = qApp->applicationFilePath() + args.join(" ") + " --dontsu";
-			if (QProcess::execute(suCommand(), QStringList() << suArgs) == 0)
+			const QString suCmd = suCommand();
+			
+			// kdesu broke backward compatibility at some point and now only works with "-c";
+			// kdesudo accepts either (with or without "-c"), but the gk* helpers only work
+			// without. kdesu maintainers won't fix their app, so we need to work around that here.
+			if (suCmd.indexOf("kde") != -1)
+				argList << "-c";
+
+			argList << args->allArguments().join(" ") + " --dontsu";
+
+			kDebug() << "command: " << suCmd << ", arguments: " << argList;
+
+			if (QProcess::execute(suCmd, argList) == 0)
 				return false;
 		}
-		
+	
 		return KMessageBox::warningContinueCancel(NULL, i18nc("@info",
 				"<para><warning>You do not have administrative privileges.</warning></para>"
 				"<para>It is possible to run <application>%1</application> without these privileges. "
