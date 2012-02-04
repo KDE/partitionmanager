@@ -91,7 +91,7 @@ bool checkPermissions()
 			// kdesu broke backward compatibility at some point and now only works with "-c";
 			// kdesudo accepts either (with or without "-c"), but the gk* helpers only work
 			// without. kdesu maintainers won't fix their app, so we need to work around that here.
-			if (suCmd.startsWith("kde"))
+			if (suCmd.indexOf("kdesu") != -1)
 				argList << "-c";
 
 			argList << args->allArguments().join(" ") + " --dontsu";
