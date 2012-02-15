@@ -123,7 +123,7 @@ void PartPropsDialog::setupDialog()
 
 	 // don't do this before the file system combo box has been set up!
 	dialogWidget().label().setText(newLabel().isEmpty() ? partition().fileSystem().label() : newLabel());
-	dialogWidget().capacity().setText(Capacity(partition()).toString(Capacity::AppendUnit | Capacity::AppendBytes));
+	dialogWidget().capacity().setText(Capacity::formatByteSize(partition().capacity()));
 
 	if (Capacity(partition(), Capacity::Available).isValid())
 	{
@@ -131,10 +131,10 @@ void PartPropsDialog::setupDialog()
 
 		const QString availString = QString("%1% - %2")
 			.arg(availPercent)
-			.arg(Capacity(partition(), Capacity::Available).toString(Capacity::AppendUnit | Capacity::AppendBytes));
+			.arg(Capacity::formatByteSize(partition().available()));
 		const QString usedString = QString("%1% - %2")
 			.arg(100 - availPercent)
-			.arg(Capacity(partition(), Capacity::Used).toString(Capacity::AppendUnit | Capacity::AppendBytes));
+			.arg(Capacity::formatByteSize(partition().used()));
 
 		dialogWidget().available().setText(availString);
 		dialogWidget().used().setText(usedString);

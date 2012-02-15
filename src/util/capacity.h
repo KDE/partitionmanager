@@ -57,24 +57,16 @@ class Capacity
 		bool operator>=(const Capacity& other) const { return other.m_Size >= m_Size; }
 		bool operator<=(const Capacity& other) const { return other.m_Size <= m_Size; }
 
-		QString toString(Flags f = AppendUnit) const;
-		QString toString(Unit u, Flags f) const;
-		qint64 toInt() const;
 		qint64 toInt(Unit u) const;
 		double toDouble(Unit u) const;
 
-		QString unitName() const;
-		Unit bestUnit() const;
-
 		bool isValid() const;
 
+		static QString formatByteSize(double size, int precision = 2);
 		static const QString& invalidString() { return m_InvalidString; } /**< @return string representing an invalid capacity */
 		static QString unitName(Unit u, qint64 val = 1);
 		static qint64 unitFactor(Unit from, Unit to);
 		static Unit preferredUnit();
-
-	protected:
-		QString toStringInternal(Unit u) const;
 
 	private:
 		qint64 m_Size;

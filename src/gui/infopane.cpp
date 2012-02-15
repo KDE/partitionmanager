@@ -114,9 +114,9 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 	int x = 0;
 	int y = createHeader(p.deviceNode(), cols(area));
 	createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
-	createLabels(i18nc("@label partition", "Capacity:"), Capacity(p).toString(), cols(area), x, y);
-	createLabels(i18nc("@label partition", "Available:"), Capacity(p, Capacity::Available).toString(), cols(area), x, y);
-	createLabels(i18nc("@label partition", "Used:"), Capacity(p, Capacity::Used).toString(), cols(area), x, y);
+	createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
+	createLabels(i18nc("@label partition", "Available:"), Capacity::formatByteSize(p.available()), cols(area), x, y);
+	createLabels(i18nc("@label partition", "Used:"), Capacity::formatByteSize(p.used()), cols(area), x, y);
 	createLabels(i18nc("@label partition", "First sector:"), KGlobal::locale()->formatNumber(p.firstSector(), 0), cols(area), x, y);
 	createLabels(i18nc("@label partition", "Last sector:"), KGlobal::locale()->formatNumber(p.lastSector(), 0), cols(area), x, y);
 	createLabels(i18nc("@label partition", "Number of sectors:"), KGlobal::locale()->formatNumber(p.length(), 0), cols(area), x, y);
@@ -147,13 +147,13 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
 	}
 
 	createLabels(i18nc("@label device", "Type:"), type, cols(area), x, y);
-	createLabels(i18nc("@label device", "Capacity:"), Capacity(d).toString(), cols(area), x, y);
+	createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(d.capacity()), cols(area), x, y);
 	createLabels(i18nc("@label device", "Total sectors:"), KGlobal::locale()->formatNumber(d.totalSectors(), 0), cols(area), x, y);
 	createLabels(i18nc("@label device", "Heads:"), QString::number(d.heads()), cols(area), x, y);
 	createLabels(i18nc("@label device", "Cylinders:"), KGlobal::locale()->formatNumber(d.cylinders(), 0), cols(area), x, y);
 	createLabels(i18nc("@label device", "Sectors:"), KGlobal::locale()->formatNumber(d.sectorsPerTrack(), 0), cols(area), x, y);
-	createLabels(i18nc("@label device", "Logical sector size:"), Capacity(d.logicalSectorSize()).toString(Capacity::Byte, Capacity::AppendUnit), cols(area), x, y);
-	createLabels(i18nc("@label device", "Physical sector size:"), Capacity(d.physicalSectorSize()).toString(Capacity::Byte, Capacity::AppendUnit), cols(area), x, y);
+	createLabels(i18nc("@label device", "Logical sector size:"), Capacity::formatByteSize(d.logicalSectorSize()), cols(area), x, y);
+	createLabels(i18nc("@label device", "Physical sector size:"), Capacity::formatByteSize(d.physicalSectorSize()), cols(area), x, y);
 	createLabels(i18nc("@label device", "Cylinder size:"), i18ncp("@label", "1 Sector", "%1 Sectors", d.cylinderSize()), cols(area), x, y);
 	createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
 }

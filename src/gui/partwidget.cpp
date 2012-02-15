@@ -65,7 +65,7 @@ void PartWidget::init(const Partition* p)
 	m_Partition = p;
 
 	if (partition())
-		setToolTip(partition()->deviceNode() + '\n' + partition()->fileSystem().name() + ' ' + Capacity(*partition()).toString());
+		setToolTip(partition()->deviceNode() + '\n' + partition()->fileSystem().name() + ' ' + Capacity::formatByteSize(partition()->capacity()));
 	else
 		setToolTip(QString());
 
@@ -139,7 +139,7 @@ void PartWidget::paintEvent(QPaintEvent*)
 		drawGradient(&painter, base, QRect(0, 0, width(), height()), isActive());
 
 	// draw name and size
-	QString text = partition()->deviceNode().remove("/dev/") + '\n' + Capacity(*partition()).toString();
+	QString text = partition()->deviceNode().remove("/dev/") + '\n' + Capacity::formatByteSize(partition()->capacity());
 
 	const QRect textRect(0, 0, width() - 1, height() - 1);
 	const QRect boundingRect = painter.boundingRect(textRect, Qt::AlignVCenter | Qt::AlignHCenter, text);

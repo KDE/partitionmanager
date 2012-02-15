@@ -62,35 +62,6 @@ Capacity::Capacity(const Device& d) :
 {
 }
 
-/** Returns the Capacity as string.
-	@param f flags to set how to format the Capacity
-	@return the Capacity as string */
-QString Capacity::toString(Flags f) const
-{
-	return toString(bestUnit(), f);
-}
-
-/** Returns the Capacity as string.
-	@param u the unit to use
-	@param f flags to set how to format the Capacity
-	@return the Capacity as string */
-QString Capacity::toString(Unit u, Flags f) const
-{
-	QString s = toStringInternal(u);
-	if ((f & AppendUnit) && s != invalidString())
-		s += ' ' + unitName(u, m_Size);
-	if ((f & AppendBytes) && s != invalidString())
-		s += " (" + KGlobal::locale()->formatNumber(m_Size, 0) + ' ' + unitName(Byte, m_Size) + ')';
-
-	return s;
-}
-
-/** @return the Capacity as bytes */
-qint64 Capacity::toInt() const
-{
-	return static_cast<qint64>(m_Size / unitFactor(Byte, bestUnit()));
-}
-
 /** Returns the Capacity as qint64 converted to the given Unit.
 	@param u the Unit to use
 	@return the Capacity in the given Unit as qint64
@@ -135,29 +106,6 @@ qint64 Capacity::unitFactor(Unit from, Unit to)
 	return result;
 }
 
-/** Determine the best Unit to use for the Capacity.
-	@return the best Unit to use
-*/
-Capacity::Unit Capacity::bestUnit() const
-{
-	qint32 u = Byte;
-	qint64 size = m_Size;
-
-	while (size > 850)
-	{
-		size /= 1024;
-		u++;
-	}
-
-	return static_cast<Unit>(u);
-}
-
-/** @return the name of the Unit used in bestUnit() */
-QString Capacity::unitName() const
-{
-	return unitName(bestUnit(), m_Size);
-}
-
 /** Returns the name of a given Unit.
 	@param u the Unit to find the name for
 	@return the name
@@ -191,18 +139,14 @@ bool Capacity::isValid() const
 	return m_Size >= 0;
 }
 
-QString Capacity::toStringInternal(Unit u) const
-{
-	if (m_Size < 0)
-		return invalidString();
-
-	qint64 unitSize = unitFactor(Byte, u);
-	const double num = static_cast<double>(m_Size) / static_cast<double>(unitSize);
-	return KGlobal::locale()->formatNumber(num, u == Byte ? 0 : -1);
-}
-
 Capacity::Unit Capacity::preferredUnit()
 {
 	return static_cast<Unit>(Config::preferredUnit());
 }
 
+QString Capacity::formatByteSize(double size, int precision)
+{
+	if (size < 0)
+		return invalidString();
+	return KGlobal::locale()->formatByteSize(size, precision);
+}

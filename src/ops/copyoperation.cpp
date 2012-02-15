@@ -203,40 +203,40 @@ QString CopyOperation::updateDescription() const
 		if (copiedPartition().length() == overwrittenPartition()->length())
 			return QString(i18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> (%5, %6)",
 				sourcePartition().deviceNode(),
-				Capacity(sourcePartition()).toString(),
+				Capacity::formatByteSize(sourcePartition().capacity()),
 				sourcePartition().fileSystem().name(),
 				overwrittenPartition()->deviceNode(),
-				Capacity(*overwrittenPartition()).toString(),
+				Capacity::formatByteSize(overwrittenPartition()->capacity()),
 				overwrittenPartition()->fileSystem().name()
 			));
 
 		return QString(i18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> (%5, %6) and grow it to %7",
 			sourcePartition().deviceNode(),
-			Capacity(sourcePartition()).toString(),
+			Capacity::formatByteSize(sourcePartition().capacity()),
 			sourcePartition().fileSystem().name(),
 			overwrittenPartition()->deviceNode(),
-			Capacity(*overwrittenPartition()).toString(),
+			Capacity::formatByteSize(overwrittenPartition()->capacity()),
 			overwrittenPartition()->fileSystem().name(),
-			Capacity(copiedPartition()).toString()
+			Capacity::formatByteSize(copiedPartition().capacity())
 		));
 	}
 
 	if (copiedPartition().length() == sourcePartition().length())
 		return QString(i18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to unallocated space (starting at %4) on <filename>%5</filename>",
 			sourcePartition().deviceNode(),
-			Capacity(sourcePartition()).toString(),
+			Capacity::formatByteSize(sourcePartition().capacity()),
 			sourcePartition().fileSystem().name(),
-			Capacity(copiedPartition().firstSector() * targetDevice().logicalSectorSize()).toString(),
+			Capacity::formatByteSize(copiedPartition().firstSector() * targetDevice().logicalSectorSize()),
 			targetDevice().deviceNode()
 		));
 
 	return QString(i18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to unallocated space (starting at %4) on <filename>%5</filename> and grow it to %6",
 		sourcePartition().deviceNode(),
-		Capacity(sourcePartition()).toString(),
+		Capacity::formatByteSize(sourcePartition().capacity()),
 		sourcePartition().fileSystem().name(),
-		Capacity(copiedPartition().firstSector() * targetDevice().logicalSectorSize()).toString(),
+		Capacity::formatByteSize(copiedPartition().firstSector() * targetDevice().logicalSectorSize()),
 		targetDevice().deviceNode(),
-		Capacity(copiedPartition()).toString()
+		Capacity::formatByteSize(copiedPartition().capacity())
 	));
 }
 

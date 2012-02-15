@@ -86,8 +86,8 @@ void SizeDialogBase::setupConstraints()
 	dialogWidget().partResizerWidget().setMinimumLength(minimumLength());
 	dialogWidget().partResizerWidget().setMaximumLength(maximumLength());
 
-	dialogWidget().labelMinSize().setText(Capacity(minimumLength() * device().logicalSectorSize()).toString());
-	dialogWidget().labelMaxSize().setText(Capacity(maximumLength() * device().logicalSectorSize()).toString());
+	dialogWidget().labelMinSize().setText(Capacity::formatByteSize(minimumLength() * device().logicalSectorSize()));
+	dialogWidget().labelMaxSize().setText(Capacity::formatByteSize(maximumLength() * device().logicalSectorSize()));
 
 	dialogWidget().spinCapacity().setEnabled(canShrink() || canGrow());
 

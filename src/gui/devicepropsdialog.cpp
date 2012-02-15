@@ -96,7 +96,8 @@ void DevicePropsDialog::setupDialog()
 		dialogWidget().hideTypeRadioButtons();
 	}
 
-	dialogWidget().capacity().setText(Capacity(device()).toString(Capacity::AppendUnit | Capacity::AppendBytes));
+	dialogWidget().capacity().setText(Capacity::formatByteSize(device().capacity()));
+
 
 	const QString cyls = KGlobal::locale()->formatNumber(device().cylinders(), 0);
 	const QString heads = QString::number(device().heads());
@@ -105,8 +106,8 @@ void DevicePropsDialog::setupDialog()
 
 	dialogWidget().cylinderSize().setText(i18ncp("@label", "1 Sector", "%1 Sectors", device().cylinderSize()));
 	dialogWidget().primariesMax().setText(maxPrimaries);
-	dialogWidget().logicalSectorSize().setText(Capacity(device().logicalSectorSize()).toString(Capacity::Byte, Capacity::AppendUnit));
-	dialogWidget().physicalSectorSize().setText(Capacity(device().physicalSectorSize()).toString(Capacity::Byte, Capacity::AppendUnit));
+	dialogWidget().logicalSectorSize().setText(Capacity::formatByteSize(device().logicalSectorSize()));
+	dialogWidget().physicalSectorSize().setText(Capacity::formatByteSize(device().physicalSectorSize()));
 	dialogWidget().totalSectors().setText(KGlobal::locale()->formatNumber(device().totalSectors(), 0));
 	dialogWidget().type().setText(type);
 
