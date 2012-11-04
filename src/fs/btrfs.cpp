@@ -55,8 +55,8 @@ namespace FS
 		m_GetUsed = findExternal("btrfs-debug-tree") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
 
-		// TODO: are those not possible with btrfs (yet)?
-		m_SetLabel = cmdSupportNone;
+		m_GetLabel = cmdSupportCore;
+		m_SetLabel = findExternal("btrfs") ? cmdSupportFileSystem : cmdSupportNone;
 		m_UpdateUUID = cmdSupportNone;
 
 		m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
@@ -72,7 +72,7 @@ namespace FS
 		return
 			m_GetUsed != cmdSupportNone &&
 			m_GetLabel != cmdSupportNone &&
-// 			m_SetLabel != cmdSupportNone &&
+			m_SetLabel != cmdSupportNone &&
 			m_Create != cmdSupportNone &&
 			m_Check != cmdSupportNone &&
 // 			m_UpdateUUID != cmdSupportNone &&
@@ -129,16 +129,13 @@ namespace FS
 	bool btrfs::resize(Report& report, const QString& deviceNode, qint64 length) const
 	{
 		ExternalCommand cmd(report, "btrfsctl", QStringList() << deviceNode << "-r" << QString::number(length));
- 		return cmd.run(-1) && cmd.exitCode() == 0;
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool btrfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
-		Q_UNUSED(report);
-		Q_UNUSED(deviceNode);
-		Q_UNUSED(newLabel);
-
-		return false;
+		ExternalCommand cmd(report, "btrfs", QStringList() << "filesystem" << "label" << deviceNode << newLabel);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool btrfs::updateUUID(Report& report, const QString& deviceNode) const
