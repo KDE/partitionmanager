@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2008,2012 by Volker Lanz <vl@fidra.de>                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -29,6 +29,8 @@
 #include "jobs/setpartgeometryjob.h"
 #include "jobs/resizefilesystemjob.h"
 #include "jobs/movefilesystemjob.h"
+
+#include "fs/filesystem.h"
 
 #include "util/capacity.h"
 #include "util/report.h"
