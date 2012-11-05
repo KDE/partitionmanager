@@ -52,7 +52,7 @@ namespace FS
 	void btrfs::init()
 	{
 		m_Create = findExternal("mkfs.btrfs") ? cmdSupportFileSystem : cmdSupportNone;
-		m_Check = findExternal("fsck.btrfs", QStringList(), 1) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = findExternal("btrfsck", QStringList(), 1) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Grow = findExternal("btrfs") ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetUsed = findExternal("btrfs-debug-tree") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;

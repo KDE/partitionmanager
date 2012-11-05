@@ -131,6 +131,7 @@ KAboutData* createPartitionManagerAboutData()
 	about->setHomepage("http://www.partitionmanager.org");
 
 	about->addCredit(ki18n("Hugo Pereira Da Costa"), ki18nc("@info:credit", "Partition Widget Design"), "hugo@oxygen-icons.org");
+	about->addCredit(ki18n("Andrius Štikonas"), ki18nc("@info:credit", "Btrfs support"), "stikonas@gmail.com");
 
 	return about;
 }
