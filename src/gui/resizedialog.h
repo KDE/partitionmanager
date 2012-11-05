@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2010 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2008,2010,2012 Volker Lanz <vl@fidra.de>                *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -29,10 +29,6 @@ class Partition;
 class Device;
 
 /** Let the user resize or move a Partition.
-
-	@todo The ResizeDialog does not yet have a "dirty bit".
-	It should get one and disable its OK button as long as nothing has been
-	modified, much like the PartPropsDialog already does.
 
 	@author Volker Lanz <vl@fidra.de>
 */
