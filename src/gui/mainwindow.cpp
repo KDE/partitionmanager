@@ -349,7 +349,6 @@ void MainWindow::setupActions()
 	actionCollection()->addAction("toggleDockLog", dockLog().toggleViewAction());
 
 	// Settings Actions
-	KStandardAction::showMenubar(this, SLOT(onShowMenuBar()), actionCollection());
 	KStandardAction::preferences(this, SLOT(onConfigureOptions()), actionCollection());
 
 	// Log Actions
