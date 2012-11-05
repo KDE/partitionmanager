@@ -157,7 +157,7 @@ namespace FS
 
 		}
 		else
-			report.line() << i18nc("@info/plain", "Resizing Btršs file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
+			report.line() << i18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
 
 		return rval;
 	}
