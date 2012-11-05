@@ -107,7 +107,7 @@ namespace FS
 
 		if (cmd.run())
 		{
-			QRegExp rxBytesUsed("\nbytes used (\\d+)");
+			QRegExp rxBytesUsed(" bytes used (\\d+)");
 
 			if (rxBytesUsed.indexIn(cmd.output()) != -1)
 				return rxBytesUsed.cap(1).toLongLong();
