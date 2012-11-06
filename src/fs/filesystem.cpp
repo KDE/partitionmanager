@@ -273,6 +273,7 @@ static const QString* typeNames()
 		i18nc("@item/plain filesystem name", "luks"),
 		i18nc("@item/plain filesystem name", "ocfs2"),
 		i18nc("@item/plain filesystem name", "zfs"),
+		i18nc("@item/plain filesystem name", "exfat"),
 	};
 
 	return s;

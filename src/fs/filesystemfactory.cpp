@@ -21,6 +21,7 @@
 #include "fs/filesystem.h"
 
 #include "fs/btrfs.h"
+#include "fs/exfat.h"
 #include "fs/ext2.h"
 #include "fs/ext3.h"
 #include "fs/ext4.h"
@@ -55,6 +56,7 @@ void FileSystemFactory::init()
 	m_FileSystems.clear();
 
 	m_FileSystems.insert(FileSystem::Btrfs, new FS::btrfs(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Exfat, new FS::exfat(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Ext2, new FS::ext2(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Ext3, new FS::ext3(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Ext4, new FS::ext4(-1, -1, -1, QString()));
@@ -78,6 +80,7 @@ void FileSystemFactory::init()
 	m_FileSystems.insert(FileSystem::Zfs, new FS::zfs(-1, -1, -1, QString()));
 
 	FS::btrfs::init();
+	FS::exfat::init();
 	FS::ext2::init();
 	FS::ext3::init();
 	FS::ext4::init();
@@ -118,6 +121,7 @@ FileSystem* FileSystemFactory::create(FileSystem::Type t, qint64 firstsector, qi
 	switch(t)
 	{
 		case FileSystem::Btrfs:        fs = new FS::btrfs(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Exfat:        fs = new FS::exfat(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::Ext2:         fs = new FS::ext2(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::Ext3:         fs = new FS::ext3(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::Ext4:         fs = new FS::ext4(firstsector, lastsector, sectorsused, label); break;

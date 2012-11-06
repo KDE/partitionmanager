@@ -57,7 +57,6 @@ namespace FS
 		m_GetUsed = findExternal("btrfs-debug-tree") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
 
-		m_GetLabel = cmdSupportCore;
 		m_SetLabel = findExternal("btrfs") ? cmdSupportFileSystem : cmdSupportNone;
 		m_UpdateUUID = cmdSupportNone;
 
