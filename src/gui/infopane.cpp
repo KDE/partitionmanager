@@ -114,7 +114,7 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 
 	int x = 0;
 	int y = createHeader(p.deviceNode(), cols(area));
-	if (p.fileSystem().name() == "luks")
+	if (p.fileSystem().type() == FileSystem::Luks)
 	{
 		QString deviceNode = p.devicePath() + QString::number(p.number());
 		createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
