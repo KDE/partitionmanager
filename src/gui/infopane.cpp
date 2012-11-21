@@ -23,6 +23,7 @@
 #include "core/partition.h"
 
 #include "fs/filesystem.h"
+#include "fs/luks.h"
 
 #include "util/capacity.h"
 
@@ -113,13 +114,30 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 
 	int x = 0;
 	int y = createHeader(p.deviceNode(), cols(area));
-	createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
-	createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
-	createLabels(i18nc("@label partition", "Available:"), Capacity::formatByteSize(p.available()), cols(area), x, y);
-	createLabels(i18nc("@label partition", "Used:"), Capacity::formatByteSize(p.used()), cols(area), x, y);
-	createLabels(i18nc("@label partition", "First sector:"), KGlobal::locale()->formatNumber(p.firstSector(), 0), cols(area), x, y);
-	createLabels(i18nc("@label partition", "Last sector:"), KGlobal::locale()->formatNumber(p.lastSector(), 0), cols(area), x, y);
-	createLabels(i18nc("@label partition", "Number of sectors:"), KGlobal::locale()->formatNumber(p.length(), 0), cols(area), x, y);
+	if (p.fileSystem().name() == "luks")
+	{
+		QString deviceNode = p.devicePath() + QString::number(p.number());
+		createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Cipher name:"), FS::luks::getCipherName(deviceNode), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Cipher mode:"), FS::luks::getCipherMode(deviceNode), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Hash:"), FS::luks::getHashName(deviceNode), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Key size:"), FS::luks::getKeySize(deviceNode), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Payload offset:"), FS::luks::getPayloadOffset(deviceNode), cols(area), x, y);
+		createLabels(i18nc("@label partition", "First sector:"), KGlobal::locale()->formatNumber(p.firstSector(), 0), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Last sector:"), KGlobal::locale()->formatNumber(p.lastSector(), 0), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Number of sectors:"), KGlobal::locale()->formatNumber(p.length(), 0), cols(area), x, y);
+	}
+	else
+	{
+		createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Available:"), Capacity::formatByteSize(p.available()), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Used:"), Capacity::formatByteSize(p.used()), cols(area), x, y);
+		createLabels(i18nc("@label partition", "First sector:"), KGlobal::locale()->formatNumber(p.firstSector(), 0), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Last sector:"), KGlobal::locale()->formatNumber(p.lastSector(), 0), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Number of sectors:"), KGlobal::locale()->formatNumber(p.length(), 0), cols(area), x, y);
+	}
 }
 
 /** Shows information about a Device in the InfoPane

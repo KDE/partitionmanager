@@ -20,6 +20,7 @@
 #include "fs/luks.h"
 
 #include "util/capacity.h"
+#include "util/externalcommand.h"
 
 #include <QString>
 
@@ -50,5 +51,65 @@ namespace FS
 	qint64 luks::maxCapacity() const
 	{
 		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+	}
+
+	QString luks::getCipherName(const QString& deviceNode)
+	{
+		ExternalCommand cmd("cryptsetup", QStringList() << "luksDump" << deviceNode);
+		if (cmd.run())
+		{
+			QRegExp rxCipherName("(?:Cipher name:\\s+)([A-Za-z0-9-]+)");
+			if (rxCipherName.indexIn(cmd.output()) > -1)
+				return rxCipherName.cap(1);
+		}
+		return "---";
+	}
+
+	QString luks::getCipherMode(const QString& deviceNode)
+	{
+		ExternalCommand cmd("cryptsetup", QStringList() << "luksDump" << deviceNode);
+		if (cmd.run())
+		{
+			QRegExp rxCipherMode("(?:Cipher mode:\\s+)([A-Za-z0-9-]+)");
+			if (rxCipherMode.indexIn(cmd.output()) > -1)
+				return rxCipherMode.cap(1);
+		}
+		return "---";
+	}
+
+	QString luks::getHashName(const QString& deviceNode)
+	{
+		ExternalCommand cmd("cryptsetup", QStringList() << "luksDump" << deviceNode);
+		if (cmd.run())
+		{
+			QRegExp rxHash("(?:Hash spec:\\s+)([A-Za-z0-9-]+)");
+			if (rxHash.indexIn(cmd.output()) > -1)
+				return rxHash.cap(1);
+		}
+		return "---";
+	}
+
+	QString luks::getKeySize(const QString& deviceNode)
+	{
+		ExternalCommand cmd("cryptsetup", QStringList() << "luksDump" << deviceNode);
+		if (cmd.run())
+		{
+			QRegExp rxKeySize("(?:MK bits:\\s+)(\\d+)");
+			if (rxKeySize.indexIn(cmd.output()) > -1)
+				return rxKeySize.cap(1);
+		}
+		return "---";
+	}
+
+	QString luks::getPayloadOffset(const QString& deviceNode)
+	{
+		ExternalCommand cmd("cryptsetup", QStringList() << "luksDump" << deviceNode);
+		if (cmd.run())
+		{
+			QRegExp rxPayloadOffset("(?:Payload offset:\\s+)(\\d+)");
+			if (rxPayloadOffset.indexIn(cmd.output()) > -1)
+				return rxPayloadOffset.cap(1);
+		}
+		return "---";
 	}
 }

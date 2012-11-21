@@ -60,6 +60,12 @@ namespace FS
 			virtual qint64 maxCapacity() const;
 			virtual bool supportToolFound() const { return true; }
 
+			static QString getCipherName (const QString& deviceNode);
+			static QString getCipherMode (const QString& deviceNode);
+			static QString getHashName (const QString& deviceNode);
+			static QString getKeySize (const QString& deviceNode);
+			static QString getPayloadOffset (const QString& deviceNode);
+
 		public:
 			static CommandSupportType m_GetUsed;
 			static CommandSupportType m_GetLabel;
