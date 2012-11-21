@@ -58,6 +58,7 @@ namespace FS
 			virtual CommandSupportType supportGetUUID() const { return m_GetUUID; }
 
 			virtual qint64 maxCapacity() const;
+			virtual SupportTool supportToolName() const;
 			virtual bool supportToolFound() const { return true; }
 
 			static QString getCipherName (const QString& deviceNode);

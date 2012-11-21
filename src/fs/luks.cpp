@@ -31,10 +31,10 @@ namespace FS
 	FileSystem::CommandSupportType luks::m_Create = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType luks::m_Grow = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType luks::m_Shrink = FileSystem::cmdSupportNone;
-	FileSystem::CommandSupportType luks::m_Move = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType luks::m_Move = FileSystem::cmdSupportCore;
 	FileSystem::CommandSupportType luks::m_Check = FileSystem::cmdSupportNone;
-	FileSystem::CommandSupportType luks::m_Copy = FileSystem::cmdSupportNone;
-	FileSystem::CommandSupportType luks::m_Backup = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType luks::m_Copy = FileSystem::cmdSupportCore;
+	FileSystem::CommandSupportType luks::m_Backup = FileSystem::cmdSupportCore;
 	FileSystem::CommandSupportType luks::m_SetLabel = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType luks::m_UpdateUUID = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType luks::m_GetUUID = FileSystem::cmdSupportNone;
@@ -46,6 +46,11 @@ namespace FS
 
 	void luks::init()
 	{
+	}
+
+	FileSystem::SupportTool luks::supportToolName() const
+	{
+		return SupportTool("cryptsetup", KUrl("https://code.google.com/p/cryptsetup/"));
 	}
 
 	qint64 luks::maxCapacity() const
