@@ -23,6 +23,7 @@
 #include "util/externalcommand.h"
 
 #include <QString>
+#include <QUuid>
 
 namespace FS
 {
@@ -31,10 +32,10 @@ namespace FS
 	FileSystem::CommandSupportType luks::m_Create = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType luks::m_Grow = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType luks::m_Shrink = FileSystem::cmdSupportNone;
-	FileSystem::CommandSupportType luks::m_Move = FileSystem::cmdSupportCore;
+	FileSystem::CommandSupportType luks::m_Move = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType luks::m_Check = FileSystem::cmdSupportNone;
-	FileSystem::CommandSupportType luks::m_Copy = FileSystem::cmdSupportCore;
-	FileSystem::CommandSupportType luks::m_Backup = FileSystem::cmdSupportCore;
+	FileSystem::CommandSupportType luks::m_Copy = FileSystem::cmdSupportNone;
+	FileSystem::CommandSupportType luks::m_Backup = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType luks::m_SetLabel = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType luks::m_UpdateUUID = FileSystem::cmdSupportNone;
 	FileSystem::CommandSupportType luks::m_GetUUID = FileSystem::cmdSupportNone;
@@ -46,6 +47,28 @@ namespace FS
 
 	void luks::init()
 	{
+		m_UpdateUUID = findExternal("cryptsetup") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Copy = cmdSupportCore;
+		m_Move = cmdSupportCore;
+		m_Backup = cmdSupportCore;
+		m_GetUUID = findExternal("cryptsetup") ? cmdSupportFileSystem : cmdSupportNone;
+	}
+
+	bool luks::supportToolFound() const
+	{
+		return
+// 			m_GetUsed != cmdSupportNone &&
+// 			m_GetLabel != cmdSupportNone &&
+// 			m_SetLabel != cmdSupportNone &&
+// 			m_Create != cmdSupportNone &&
+// 			m_Check != cmdSupportNone &&
+			m_UpdateUUID != cmdSupportNone &&
+// 			m_Grow != cmdSupportNone &&
+// 			m_Shrink != cmdSupportNone &&
+			m_Copy != cmdSupportNone &&
+			m_Move != cmdSupportNone &&
+			m_Backup != cmdSupportNone &&
+			m_GetUUID != cmdSupportNone;
 	}
 
 	FileSystem::SupportTool luks::supportToolName() const
@@ -56,6 +79,25 @@ namespace FS
 	qint64 luks::maxCapacity() const
 	{
 		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+	}
+
+	QString luks::readUUID(const QString& deviceNode) const
+	{
+		ExternalCommand cmd("cryptsetup", QStringList() << "luksUUID" << deviceNode);
+		if (cmd.run())
+		{
+			return cmd.output().simplified();
+		}
+		return "---";
+	}
+
+
+	bool luks::updateUUID(Report& report, const QString& deviceNode) const
+	{
+		QUuid uuid = QUuid::createUuid();
+
+		ExternalCommand cmd(report, "cryptsetup", QStringList() << "luksUUID" << deviceNode << "--uuid" << uuid);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	QString luks::getCipherName(const QString& deviceNode)
