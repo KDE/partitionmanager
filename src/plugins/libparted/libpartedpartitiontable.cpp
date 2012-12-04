@@ -301,7 +301,7 @@ bool LibPartedPartitionTable::clobberFileSystem(Report& report, const Partition&
 	return rval;
 }
 
-#if defined LIBPARTED_FILESYSTEM_SUPPORT
+#if defined LIBPARTED_FS_RESIZE_LIBRARY_SUPPORT
 static void pedTimerHandler(PedTimer* pedTimer, void*)
 {
 	CoreBackendManager::self()->backend()->emitProgress(pedTimer->frac * 100);
@@ -312,7 +312,7 @@ bool LibPartedPartitionTable::resizeFileSystem(Report& report, const Partition& 
 {
 	bool rval = false;
 
-#if defined LIBPARTED_FILESYSTEM_SUPPORT
+#if defined LIBPARTED_FS_RESIZE_LIBRARY_SUPPORT
 	if (PedGeometry* originalGeometry = ped_geometry_new(pedDevice(), partition.fileSystem().firstSector(), partition.fileSystem().length()))
 	{
 		if (PedFileSystem* pedFileSystem = ped_file_system_open(originalGeometry))

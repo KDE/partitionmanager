@@ -91,7 +91,6 @@ namespace FS
 		return "---";
 	}
 
-
 	bool luks::updateUUID(Report& report, const QString& deviceNode) const
 	{
 		QUuid uuid = QUuid::createUuid();

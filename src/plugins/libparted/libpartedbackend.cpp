@@ -191,7 +191,7 @@ static quint64 lastUsableSector(const Device& d)
 	@param p the Partition the FileSystem is on
 	@return the number of sectors used
 */
-#if defined LIBPARTED_FILESYSTEM_SUPPORT
+#if defined LIBPARTED_FS_RESIZE_LIBRARY_SUPPORT
 static qint64 readSectorsUsedLibParted(PedDisk* pedDisk, const Partition& p)
 {
 	Q_ASSERT(pedDisk);
@@ -235,7 +235,7 @@ static void readSectorsUsed(PedDisk* pedDisk, const Device& d, Partition& p, con
 		p.fileSystem().setSectorsUsed(freeSpaceInfo.used() / d.logicalSectorSize());
 	else if (p.fileSystem().supportGetUsed() == FileSystem::cmdSupportFileSystem)
 		p.fileSystem().setSectorsUsed(p.fileSystem().readUsedCapacity(p.deviceNode()) / d.logicalSectorSize());
-#if defined LIBPARTED_FILESYSTEM_SUPPORT
+#if defined LIBPARTED_FS_RESIZE_LIBRARY_SUPPORT
 	else if (p.fileSystem().supportGetUsed() == FileSystem::cmdSupportCore)
 		p.fileSystem().setSectorsUsed(readSectorsUsedLibParted(pedDisk, p));
 #else
@@ -289,7 +289,7 @@ LibPartedBackend::LibPartedBackend(QObject*, const QList<QVariant>&) :
 
 void LibPartedBackend::initFSSupport()
 {
-#if defined LIBPARTED_FILESYSTEM_SUPPORT
+#if defined LIBPARTED_FS_RESIZE_LIBRARY_SUPPORT
 	if (FS::fat16::m_Shrink == FileSystem::cmdSupportNone)
 		FS::fat16::m_Shrink = FileSystem::cmdSupportBackend;
 	
