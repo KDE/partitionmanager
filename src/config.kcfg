@@ -60,7 +60,7 @@
 		</entry>
 		<entry key="fileSystemColorCode$(colorNumber)" type="Color">
 			<label context="@label">File system colors</label>
-			<parameter name="colorNumber" type="UInt" max="23"/>
+			<parameter name="colorNumber" type="UInt" max="24"/>
 			<!-- numbers correspond to the enum in fs/filesystem.h -->
 			<default param="0">220,205,175</default> <!-- unknown -->
 			<default param="1">187,249,207</default> <!-- extended -->
@@ -86,6 +86,7 @@
 			<default param="21">33,137,108</default> <!-- zfs -->
 			<default param="22">250,230,255</default> <!-- exfat -->
 			<default param="23">242,155,104</default> <!-- nilfs2 -->
+			<default param="24">160,210,180</default> <!-- lvm2 pv -->
 		</entry>
 		<entry key="showMenuBar" type="Bool">
 			<label context="@label">Show the application's menu bar</label>

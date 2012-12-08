@@ -17,9 +17,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA            *
  ***************************************************************************/
 
-#if !defined(NILFS2__H)
+#if !defined(LVM2_PV__H)
 
-#define NILFS2__H
+#define LVM2_PV__H
 
 #include "util/libpartitionmanagerexport.h"
 
@@ -33,13 +33,13 @@ class QString;
 
 namespace FS
 {
-	/** A nilfs2 file system.
-		@author Volker Lanz <vl@fidra.de>
+	/** LVM2 physical volume.
+		@author Andrius Štikonas <stikonas@gmail.com>
 	*/
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT nilfs2 : public FileSystem
+	class LIBPARTITIONMANAGERPRIVATE_EXPORT lvm2_pv : public FileSystem
 	{
 		public:
-			nilfs2(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
+			lvm2_pv(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
 
 		public:
 			static void init();
@@ -47,9 +47,9 @@ namespace FS
 // 			virtual qint64 readUsedCapacity(const QString& deviceNode) const;
 			virtual bool check(Report& report, const QString& deviceNode) const;
 			virtual bool create(Report& report, const QString& deviceNode) const;
-			virtual qint64 readUsedCapacity(const QString& deviceNode) const;
-			virtual bool resize(Report& report, const QString& deviceNode, qint64 length) const;
-			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
+			virtual bool remove(Report& report, const QString& deviceNode) const;
+// 			virtual bool resize(Report& report, const QString& deviceNode, qint64 length) const;
+// 			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
 			virtual bool updateUUID(Report& report, const QString& deviceNode) const;
 
 			virtual CommandSupportType supportGetUsed() const { return m_GetUsed; }
@@ -65,7 +65,7 @@ namespace FS
 			virtual CommandSupportType supportUpdateUUID() const { return m_UpdateUUID; }
 			virtual CommandSupportType supportGetUUID() const { return m_GetUUID; }
 
-			virtual qint64 minCapacity() const;
+// 			virtual qint64 minCapacity() const;
 			virtual qint64 maxCapacity() const;
 			virtual SupportTool supportToolName() const;
 			virtual bool supportToolFound() const;

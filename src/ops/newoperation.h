@@ -31,6 +31,7 @@ class OperationStack;
 class CreatePartitionJob;
 class CreateFileSystemJob;
 class SetFileSystemLabelJob;
+class SetPartFlagsJob;
 class CheckFileSystemJob;
 
 /** Create a Partition.
@@ -71,6 +72,7 @@ class NewOperation : public Operation
 
 		CreatePartitionJob* createPartitionJob() { return m_CreatePartitionJob; }
 		CreateFileSystemJob* createFileSystemJob() { return m_CreateFileSystemJob; }
+		SetPartFlagsJob* setPartFlagsJob() { return m_SetPartFlagsJob; }
 		SetFileSystemLabelJob* setLabelJob() { return m_SetFileSystemLabelJob; }
 		CheckFileSystemJob* checkJob() { return m_CheckFileSystemJob; }
 
@@ -79,6 +81,7 @@ class NewOperation : public Operation
 		Partition* m_NewPartition;
 		CreatePartitionJob* m_CreatePartitionJob;
 		CreateFileSystemJob* m_CreateFileSystemJob;
+		SetPartFlagsJob* m_SetPartFlagsJob;
 		SetFileSystemLabelJob* m_SetFileSystemLabelJob;
 		CheckFileSystemJob* m_CheckFileSystemJob;
 };

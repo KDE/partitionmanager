@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2012 by Volker Lanz <vl@fidra.de>                       *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -34,6 +34,7 @@
 #include "fs/jfs.h"
 #include "fs/linuxswap.h"
 #include "fs/luks.h"
+#include "fs/lvm2_pv.h"
 #include "fs/nilfs2.h"
 #include "fs/ntfs.h"
 #include "fs/ocfs2.h"
@@ -70,6 +71,7 @@ void FileSystemFactory::init()
 	m_FileSystems.insert(FileSystem::Jfs, new FS::jfs(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::LinuxSwap, new FS::linuxswap(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Luks, new FS::luks(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Lvm2_PV, new FS::lvm2_pv(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Nilfs2, new FS::nilfs2(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Ntfs, new FS::ntfs(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Ocfs2, new FS::ocfs2(-1, -1, -1, QString()));
@@ -95,6 +97,7 @@ void FileSystemFactory::init()
 	FS::jfs::init();
 	FS::linuxswap::init();
 	FS::luks::init();
+	FS::lvm2_pv::init();
 	FS::nilfs2::init();
 	FS::ntfs::init();
 	FS::ocfs2::init();
@@ -137,6 +140,7 @@ FileSystem* FileSystemFactory::create(FileSystem::Type t, qint64 firstsector, qi
 		case FileSystem::Jfs:          fs = new FS::jfs(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::LinuxSwap:    fs = new FS::linuxswap(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::Luks:         fs = new FS::luks(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Lvm2_PV:      fs = new FS::lvm2_pv(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::Nilfs2:       fs = new FS::nilfs2(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::Ntfs:         fs = new FS::ntfs(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::Ocfs2:        fs = new FS::ocfs2(firstsector, lastsector, sectorsused, label); break;

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2012 by Volker Lanz <vl@fidra.de>                       *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -80,8 +80,9 @@ class FileSystem
 			Zfs = 21,
 			Exfat = 22,
 			Nilfs2 = 23,
+			Lvm2_PV = 24,
 
-			__lastType = 24
+			__lastType = 25
 		};
 
 		/** The type of support for a given FileSystem action */
@@ -110,6 +111,7 @@ class FileSystem
 		virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
 		virtual bool copy(Report& report, const QString& targetDeviceNode, const QString& sourceDeviceNode) const;
 		virtual bool backup(Report& report, const Device& sourceDevice, const QString& deviceNode, const QString& filename) const;
+		virtual bool remove(Report& report, const QString& deviceNode) const;
 		virtual bool check(Report& report, const QString& deviceNode) const;
 		virtual bool updateUUID(Report& report, const QString& deviceNode) const;
 		virtual QString readUUID(const QString& deviceNode) const;

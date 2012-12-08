@@ -26,6 +26,7 @@
 #include "jobs/createpartitionjob.h"
 #include "jobs/createfilesystemjob.h"
 #include "jobs/setfilesystemlabeljob.h"
+#include "jobs/setpartflagsjob.h"
 #include "jobs/checkfilesystemjob.h"
 
 #include "fs/filesystem.h"
@@ -48,6 +49,7 @@ NewOperation::NewOperation(Device& d, Partition* p) :
 	m_NewPartition(p),
 	m_CreatePartitionJob(new CreatePartitionJob(targetDevice(), newPartition())),
 	m_CreateFileSystemJob(NULL),
+	m_SetPartFlagsJob(NULL),
 	m_SetFileSystemLabelJob(NULL),
 	m_CheckFileSystemJob(NULL)
 {
@@ -65,6 +67,12 @@ NewOperation::NewOperation(Device& d, Partition* p) :
 		
 		m_CreateFileSystemJob = new CreateFileSystemJob(targetDevice(), newPartition());
 		addJob(createFileSystemJob());
+
+		if (fs.type() == FileSystem::Lvm2_PV)
+		{
+			m_SetPartFlagsJob = new SetPartFlagsJob(targetDevice(), newPartition(), PartitionTable::FlagLvm);
+			addJob(setPartFlagsJob());
+		}
 
 		m_SetFileSystemLabelJob = new SetFileSystemLabelJob(newPartition(), fs.label());
 		addJob(setLabelJob());

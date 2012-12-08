@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2012 by Volker Lanz <vl@fidra.de>                       *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -61,6 +61,12 @@ bool DeleteFileSystemJob::run(Report& parent)
 		rval = true;
 	else
 	{
+		if (!partition().fileSystem().remove(*report, partition().deviceNode()))
+		{
+			jobFinished(*report, rval);
+			return false;
+		}
+
 		CoreBackendDevice* backendDevice = CoreBackendManager::self()->backend()->openDevice(device().deviceNode());
 
 		if (backendDevice)

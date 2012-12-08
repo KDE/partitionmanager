@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008,2009 by Volker Lanz <vl@fidra.de>                  *
+ *   Copyright (C) 2012 by Volker Lanz <vl@fidra.de>                       *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -178,6 +178,19 @@ bool FileSystem::backup(Report& report, const Device& sourceDevice, const QStrin
 	return false;
 }
 
+/** Removes a FileSystem
+	@param report Report to write status information to
+	@param deviceNode the device node for the Partition the FileSystem is on
+	@return true if FileSystem is removed
+*/
+bool FileSystem::remove(Report& report, const QString& deviceNode) const
+{
+	Q_UNUSED(report);
+	Q_UNUSED(deviceNode);
+
+	return true;
+}
+
 /** Checks a FileSystem for errors
 	@param report Report to write status information to
 	@param deviceNode the device node for the Partition the FileSystem is on
@@ -275,6 +288,7 @@ static const QString* typeNames()
 		i18nc("@item/plain filesystem name", "zfs"),
 		i18nc("@item/plain filesystem name", "exfat"),
 		i18nc("@item/plain filesystem name", "nilfs2"),
+		i18nc("@item/plain filesystem name", "lvm2 pv"),
 	};
 
 	return s;
