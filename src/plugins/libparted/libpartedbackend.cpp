@@ -553,6 +553,7 @@ FileSystem::Type LibPartedBackend::detectFileSystem(PedPartition* pedPartition)
 			else if (s == "hpfs") rval = FileSystem::Hpfs;
 			else if (s == "crypto_LUKS") rval = FileSystem::Luks;
 			else if (s == "exfat") rval = FileSystem::Exfat;
+			else if (s == "nilfs2") rval = FileSystem::Nilfs2;
 			else
 				kWarning() << "blkid: unknown file system type " << s << " on " << pedPath;
 		}

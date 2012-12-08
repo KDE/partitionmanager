@@ -79,8 +79,9 @@ class FileSystem
 			Ocfs2 = 20,
 			Zfs = 21,
 			Exfat = 22,
+			Nilfs2 = 23,
 
-			__lastType = 23
+			__lastType = 24
 		};
 
 		/** The type of support for a given FileSystem action */

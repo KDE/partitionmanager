@@ -577,6 +577,19 @@
       <item row="6" column="4">
        <widget class="KColorButton" name="kcfg_fileSystemColorCode22"/>
       </item>
+      <item row="6" column="6">
+       <widget class="QLabel" name="textLabel_27">
+        <property name="text">
+         <string>nilfs2:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="7">
+       <widget class="KColorButton" name="kcfg_fileSystemColorCode23"/>
+      </item>
      </layout>
     </widget>
    </item>

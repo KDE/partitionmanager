@@ -34,6 +34,7 @@
 #include "fs/jfs.h"
 #include "fs/linuxswap.h"
 #include "fs/luks.h"
+#include "fs/nilfs2.h"
 #include "fs/ntfs.h"
 #include "fs/ocfs2.h"
 #include "fs/reiser4.h"
@@ -69,6 +70,7 @@ void FileSystemFactory::init()
 	m_FileSystems.insert(FileSystem::Jfs, new FS::jfs(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::LinuxSwap, new FS::linuxswap(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Luks, new FS::luks(-1, -1, -1, QString()));
+	m_FileSystems.insert(FileSystem::Nilfs2, new FS::nilfs2(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Ntfs, new FS::ntfs(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::Ocfs2, new FS::ocfs2(-1, -1, -1, QString()));
 	m_FileSystems.insert(FileSystem::ReiserFS, new FS::reiserfs(-1, -1, -1, QString()));
@@ -93,6 +95,7 @@ void FileSystemFactory::init()
 	FS::jfs::init();
 	FS::linuxswap::init();
 	FS::luks::init();
+	FS::nilfs2::init();
 	FS::ntfs::init();
 	FS::ocfs2::init();
 	FS::reiserfs::init();
@@ -134,6 +137,7 @@ FileSystem* FileSystemFactory::create(FileSystem::Type t, qint64 firstsector, qi
 		case FileSystem::Jfs:          fs = new FS::jfs(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::LinuxSwap:    fs = new FS::linuxswap(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::Luks:         fs = new FS::luks(firstsector, lastsector, sectorsused, label); break;
+		case FileSystem::Nilfs2:       fs = new FS::nilfs2(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::Ntfs:         fs = new FS::ntfs(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::Ocfs2:        fs = new FS::ocfs2(firstsector, lastsector, sectorsused, label); break;
 		case FileSystem::ReiserFS:     fs = new FS::reiserfs(firstsector, lastsector, sectorsused, label); break;
