@@ -28,6 +28,7 @@
 #include <qglobal.h>
 
 class Report;
+
 class QString;
 
 namespace FS

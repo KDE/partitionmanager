@@ -54,7 +54,7 @@ namespace FS
 		m_Check = findExternal("e2fsck", QStringList() << "-V") ? cmdSupportFileSystem : cmdSupportNone;
 		m_UpdateUUID = findExternal("tune2fs") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Grow = (m_Check != cmdSupportNone && findExternal("resize2fs")) ? cmdSupportFileSystem : cmdSupportNone;
-		m_Shrink = m_GetUsed != cmdSupportNone ? cmdSupportFileSystem : cmdSupportNone;
+		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed) != cmdSupportNone ? cmdSupportFileSystem : cmdSupportNone;
 		m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Backup = cmdSupportCore;

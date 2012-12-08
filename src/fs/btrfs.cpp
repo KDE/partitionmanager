@@ -53,7 +53,7 @@ namespace FS
 	{
 		m_Create = findExternal("mkfs.btrfs") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Check = findExternal("btrfsck", QStringList(), 1) ? cmdSupportFileSystem : cmdSupportNone;
-		m_Grow = findExternal("btrfs") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Grow = (m_Check != cmdSupportNone && findExternal("btrfs")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetUsed = findExternal("btrfs-debug-tree") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
 
@@ -147,13 +147,12 @@ namespace FS
 			if (resizeCmd.run(-1) && resizeCmd.exitCode() == 0)
 				rval = true;
 			else
-				report.line() << i18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: btrfs filesystem resize failed.", deviceNode);
+				report.line() << i18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: btrfs file system resize failed.", deviceNode);
 
 			ExternalCommand unmountCmd(report, "umount", QStringList() << tempDir.name());
 
 			if (!unmountCmd.run(-1) && unmountCmd.exitCode() == 0 )
 				report.line() << i18nc("@info/plain", "Warning: Resizing Btrfs file system on partition <filename>%1</filename>: Unmount failed.", deviceNode);
-
 		}
 		else
 			report.line() << i18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);

@@ -58,7 +58,7 @@ namespace FS
 		m_GetLabel = cmdSupportCore;
 		m_SetLabel = findExternal("nilfs-tune") ? cmdSupportFileSystem : cmdSupportNone;
 		m_UpdateUUID = findExternal("nilfs-tune") ? cmdSupportFileSystem : cmdSupportNone;
-		
+
 		m_Grow = (m_Check != cmdSupportNone && findExternal("nilfs-resize")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetUsed = findExternal("nilfs-tune") ? cmdSupportFileSystem : cmdSupportNone;
 		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
