@@ -435,7 +435,7 @@ static quint32 countDevices(const QList<Solid::Device>& driveList)
 	foreach(const Solid::Device& solidDevice, driveList)
 	{
 		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
-		if (solidDrive->driveType() == Solid::StorageDrive::HardDisk)
+		if (solidDrive->driveType() == Solid::StorageDrive::HardDisk || solidDrive->driveType() == Solid::StorageDrive::CompactFlash || solidDrive->driveType() == Solid::StorageDrive::MemoryStick || solidDrive->driveType() == Solid::StorageDrive::SmartMedia || solidDrive->driveType() == Solid::StorageDrive::SdMmc  || solidDrive->driveType() == Solid::StorageDrive::Xd)
 			rval++;
 	}
 
@@ -448,18 +448,20 @@ QList<Device*> LibPartedBackend::scanDevices()
 
 	const QList<Solid::Device> driveList = getSolidDeviceList();
 	const quint32 totalDevices = countDevices(driveList);
+
 	quint32 count = 0;
 
 	foreach(const Solid::Device& solidDevice, driveList)
 	{
 		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
 
-		if (solidDrive->driveType() != Solid::StorageDrive::HardDisk)
+		if (solidDrive->driveType() != Solid::StorageDrive::HardDisk && solidDrive->driveType() != Solid::StorageDrive::CompactFlash && solidDrive->driveType() != Solid::StorageDrive::MemoryStick && solidDrive->driveType() != Solid::StorageDrive::SmartMedia && solidDrive->driveType() != Solid::StorageDrive::SdMmc && solidDrive->driveType() != Solid::StorageDrive::Xd)
 			continue;
 
 		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
 
 		Device* d = scanDevice(solidBlock->device());
+		kWarning() << solidBlock->device();
 
 		if (d != NULL)
 		{

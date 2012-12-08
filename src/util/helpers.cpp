@@ -232,7 +232,7 @@ bool checkAccessibleDevices()
 
 QList<Solid::Device> getSolidDeviceList()
 {
-	QString predicate = "StorageDrive.driveType == 'HardDisk'";
+	QString predicate = "[ [ [ StorageDrive.driveType == 'HardDisk' OR StorageDrive.driveType == 'CompactFlash'] OR [ StorageDrive.driveType == 'MemoryStick' OR StorageDrive.driveType == 'SmartMedia'] ] OR [ StorageDrive.driveType == 'SdMmc' OR StorageDrive.driveType == 'Xd'] ]";
 
 	KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
 	if (args->count() > 0)
