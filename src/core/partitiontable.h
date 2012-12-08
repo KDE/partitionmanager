@@ -110,7 +110,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
 		qint64 freeSectorsAfter(const Partition& p) const;
 
 		bool hasExtended() const;
-		Partition* extended();
+		Partition* extended() const;
 
 		PartitionRole::Roles childRoles(const Partition& p) const;
 

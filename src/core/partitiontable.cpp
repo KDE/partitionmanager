@@ -103,7 +103,7 @@ bool PartitionTable::hasExtended() const
 }
 
 /** @return pointer to the PartitionTable's extended Partition or NULL if none exists */
-Partition* PartitionTable::extended() /** FIXME: why not const? */
+Partition* PartitionTable::extended() const
 {
 	for (int i = 0; i < children().size(); i++)
 		if (children()[i]->roles().has(PartitionRole::Extended))
