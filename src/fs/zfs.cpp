@@ -86,6 +86,14 @@ namespace FS
 		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
+	bool zfs::remove(Report& report, const QString& deviceNode) const
+	{
+		Q_UNUSED(deviceNode)
+// 		TODO: check if -f option is needed
+		ExternalCommand cmd(report, "zpool", QStringList() << "destroy" << "-f" << this->label());
+		return cmd.run(-1) && cmd.exitCode() == 0;
+	}
+
 	bool zfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
 		Q_UNUSED(deviceNode)

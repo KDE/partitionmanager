@@ -44,6 +44,7 @@ namespace FS
 		public:
 			static void init();
 
+			virtual bool remove(Report& report, const QString& deviceNode) const;
 			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
 
 			virtual CommandSupportType supportGetUsed() const { return m_GetUsed; }

@@ -103,7 +103,6 @@ namespace FS
 	{
 // 		TODO: check if PV is a member of an exported VG
 		ExternalCommand cmd(report, "lvm", QStringList() << "pvremove" << "-ffy" << deviceNode);
-		cmd.run(-1);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
