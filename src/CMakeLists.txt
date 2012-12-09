@@ -1,4 +1,4 @@
-# Copyright (C) 2008 by Volker Lanz <vl@fidra.de>
+# Copyright (C) 2008,2012 by Volker Lanz <vl@fidra.de>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,27 +36,21 @@ kde4_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
 
 kde4_add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
 
-target_link_libraries(partitionmanagerprivate libfatlabel ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES} ${LIBATASMART_LIBRARIES} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS})
+target_link_libraries(partitionmanagerprivate ${LIBFATLABEL_LIBS} ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES} ${LIBATASMART_LIBRARIES} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS})
 
 install(TARGETS partitionmanagerprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ############################################
 
-file(GLOB partitionmanager-bin_SRCS	main.cpp)
+file(GLOB partitionmanager_SRCS	main.cpp)
 
-kde4_add_app_icon(partitionmanager-bin_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-apps-partitionmanager.png")
+kde4_add_app_icon(partitionmanager_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-apps-partitionmanager.png")
 
-kde4_add_executable(partitionmanager-bin ${partitionmanager-bin_SRCS})
+kde4_add_executable(partitionmanager ${partitionmanager_SRCS})
 
-target_link_libraries(partitionmanager-bin partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS})
+target_link_libraries(partitionmanager partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS})
 
-if(UNIX)
-	add_custom_target(partitionmanager ALL
-		COMMAND sed -e 's,@INSTALL_PATH@,${BIN_INSTALL_DIR},g' < ${CMAKE_CURRENT_SOURCE_DIR}/partitionmanager.in > ${CMAKE_CURRENT_BINARY_DIR}/partitionmanager
-	)
-	install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/partitionmanager DESTINATION ${BIN_INSTALL_DIR})
-endif(UNIX)
-install(TARGETS partitionmanager-bin ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES gui/partitionmanagerui.rc DESTINATION ${DATA_INSTALL_DIR}/partitionmanager)
 install(PROGRAMS partitionmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
