@@ -239,21 +239,24 @@ QList<Solid::Device> getSolidDeviceList()
 	{
 		predicate = " [ " + predicate + " AND ";
 
-		if (args->count() > 1)
+		qint32 brackets = (args->count() + 1) / 2;
+		brackets = args->count() == 1 ? 0 : brackets;
+		for (qint32 i = 0; i < brackets; i++)
 			predicate += "[ ";
 
-		for (qint32 i = 0; i < args->count(); i++)
+		bool right_bracket = false;
+		for (qint32 i = 0; i < args->count(); i++, right_bracket =! right_bracket)
 		{
 			predicate += QString("Block.device == '%1' ").arg(args->arg(i));
 
+			if (right_bracket)
+				predicate += i == 1 ? "] " : "] ] ";
 			if (i < args->count() - 1)
 				predicate += "OR ";
+			if (right_bracket && i != args->count() - 2 && i != args->count()-1)
+				predicate += "[ ";
 		}
-
-		if (args->count() > 1)
-			predicate += "] ";
-
-		predicate += ']';
+		predicate += right_bracket && brackets > 0 ? "] ]" : "]";
 	}
 
 	return Solid::Device::listFromQuery(predicate);
