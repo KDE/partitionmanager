@@ -551,7 +551,7 @@ FileSystem::Type LibPartedBackend::detectFileSystem(PedPartition* pedPartition)
 			}
 			else if (s == "btrfs") rval = FileSystem::Btrfs;
 			else if (s == "ocfs2") rval = FileSystem::Ocfs2;
-			else if (s == "zfs") rval = FileSystem::Zfs;
+			else if (s == "zfs_member") rval = FileSystem::Zfs;
 			else if (s == "hpfs") rval = FileSystem::Hpfs;
 			else if (s == "crypto_LUKS") rval = FileSystem::Luks;
 			else if (s == "exfat") rval = FileSystem::Exfat;

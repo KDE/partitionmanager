@@ -44,6 +44,8 @@ namespace FS
 		public:
 			static void init();
 
+			virtual bool writeLabel(Report& report, const QString& deviceNode, const QString& newLabel);
+
 			virtual CommandSupportType supportGetUsed() const { return m_GetUsed; }
 			virtual CommandSupportType supportGetLabel() const { return m_GetLabel; }
 			virtual CommandSupportType supportCreate() const { return m_Create; }
@@ -57,8 +59,10 @@ namespace FS
 			virtual CommandSupportType supportUpdateUUID() const { return m_UpdateUUID; }
 			virtual CommandSupportType supportGetUUID() const { return m_GetUUID; }
 
+			virtual qint64 minCapacity() const;
 			virtual qint64 maxCapacity() const;
-			virtual bool supportToolFound() const { return true; }
+			virtual SupportTool supportToolName() const;
+			virtual bool supportToolFound() const;
 
 		public:
 			static CommandSupportType m_GetUsed;

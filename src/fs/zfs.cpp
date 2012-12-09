@@ -19,7 +19,9 @@
 
 #include "fs/zfs.h"
 
+#include "util/externalcommand.h"
 #include "util/capacity.h"
+#include "util/report.h"
 
 #include <QString>
 
@@ -45,10 +47,50 @@ namespace FS
 
 	void zfs::init()
 	{
+		m_SetLabel = findExternal("zpool", QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
+
+		m_GetLabel = cmdSupportCore;
+		m_Backup = cmdSupportCore;
+		m_GetUUID = cmdSupportCore;
+	}
+
+	bool zfs::supportToolFound() const
+	{
+		return
+// 			m_GetUsed != cmdSupportNone &&
+			m_GetLabel != cmdSupportNone &&
+			m_SetLabel != cmdSupportNone &&
+// 			m_Create != cmdSupportNone &&
+// 			m_Check != cmdSupportNone &&
+// 			m_UpdateUUID != cmdSupportNone &&
+// 			m_Grow != cmdSupportNone &&
+// 			m_Shrink != cmdSupportNone &&
+// 			m_Copy != cmdSupportNone &&
+// 			m_Move != cmdSupportNone &&
+			m_Backup != cmdSupportNone &&
+			m_GetUUID != cmdSupportNone;
+	}
+
+	FileSystem::SupportTool zfs::supportToolName() const
+	{
+		return SupportTool("zfs", KUrl("http://zfsonlinux.org/"));
+	}
+
+	qint64 zfs::minCapacity() const
+	{
+		 return 64 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
 	}
 
 	qint64 zfs::maxCapacity() const
 	{
 		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+	}
+
+	bool zfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
+	{
+		Q_UNUSED(deviceNode)
+		ExternalCommand cmd1(report, "zpool", QStringList() << "export" << this->label());
+		ExternalCommand cmd2(report, "zpool", QStringList() << "import" << this->label() << newLabel);
+		return cmd1.run(-1) && cmd1.exitCode() == 0 && cmd2.run(-1) && cmd2.exitCode() == 0;
 	}
 }
