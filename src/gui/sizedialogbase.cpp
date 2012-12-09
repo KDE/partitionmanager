@@ -74,7 +74,10 @@ void SizeDialogBase::setupDialog()
 
 	detailsWidget().checkAlign().setChecked(Config::alignDefault());
 
-	dialogWidget().partResizerWidget().init(device(), partition(), minimumFirstSector(), maximumLastSector(), false, canMove());
+	if (canGrow() || canShrink())
+		dialogWidget().partResizerWidget().init(device(), partition(), minimumFirstSector(), maximumLastSector(), false, canMove());
+	else
+		dialogWidget().partResizerWidget().init(device(), partition(), minimumFirstSector(), maximumLastSector(), true, canMove());
 	dialogWidget().partResizerWidget().setAlign(Config::alignDefault());
 }
 

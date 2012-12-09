@@ -82,7 +82,7 @@ void PartResizerWidget::init(Device& d, Partition& p, qint64 minFirst, qint64 ma
 	setMaximumLastSector(maxLast);
 
 	setReadOnly(read_only);
-	setMoveAllowed(move_allowed && !read_only);
+	setMoveAllowed(move_allowed);
 
 	setMinimumLength(qMax(partition().sectorsUsed(), partition().minimumSectors()));
 	setMaximumLength(qMin(totalSectors(), partition().maximumSectors()));
@@ -121,12 +121,12 @@ void PartResizerWidget::init(Device& d, Partition& p, qint64 minFirst, qint64 ma
 	{
 		leftHandle().setCursor(Qt::SizeHorCursor);
 		rightHandle().setCursor(Qt::SizeHorCursor);
-
-		if (moveAllowed())
-			partWidget().setCursor(Qt::SizeAllCursor);
-
-		partWidget().setToolTip(QString());
 	}
+
+	if (moveAllowed())
+		partWidget().setCursor(Qt::SizeAllCursor);
+
+	partWidget().setToolTip(QString());
 
 	updatePositions();
 }
@@ -189,9 +189,6 @@ void PartResizerWidget::paintEvent(QPaintEvent*)
 
 void PartResizerWidget::mousePressEvent(QMouseEvent* event)
 {
-	if (readOnly())
-		return;
-
 	if (event->button() == Qt::LeftButton)
 	{
 		m_DraggedWidget = static_cast<QWidget*>(childAt(event->pos()));
