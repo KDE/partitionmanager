@@ -90,9 +90,14 @@ namespace FS
 		return SupportTool("ocfs2-tools", KUrl("http://oss.oracle.com/projects/ocfs2-tools/"));
 	}
 
+	qint64 ocfs2::minCapacity() const
+	{
+		 return 14000 * Capacity::unitFactor(Capacity::Byte, Capacity::KiB);
+	}
+
 	qint64 ocfs2::maxCapacity() const
 	{
-		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+		 return 4 * Capacity::unitFactor(Capacity::Byte, Capacity::PiB);
 	}
 
 	qint64 ocfs2::readUsedCapacity(const QString& deviceNode) const

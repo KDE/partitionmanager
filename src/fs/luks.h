@@ -57,7 +57,7 @@ namespace FS
 			virtual CommandSupportType supportUpdateUUID() const { return m_UpdateUUID; }
 			virtual CommandSupportType supportGetUUID() const { return m_GetUUID; }
 
-			virtual qint64 maxCapacity() const;
+			virtual qint64 minCapacity() const;
 			virtual SupportTool supportToolName() const;
 			virtual bool supportToolFound() const;
 			virtual QString readUUID(const QString& deviceNode) const;

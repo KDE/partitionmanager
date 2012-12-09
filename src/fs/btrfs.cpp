@@ -97,7 +97,7 @@ namespace FS
 
 	qint64 btrfs::maxCapacity() const
 	{
-		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+		 return 16 * Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
 	qint64 btrfs::readUsedCapacity(const QString& deviceNode) const

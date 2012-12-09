@@ -19,6 +19,7 @@
 
 #include "fs/linuxswap.h"
 
+#include "util/capacity.h"
 #include "util/externalcommand.h"
 
 #include <klocale.h>

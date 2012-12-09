@@ -70,7 +70,7 @@ namespace FS
 
 	qint64 hfsplus::maxCapacity() const
 	{
-		return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+		return 8 * Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
 	bool hfsplus::check(Report& report, const QString& deviceNode) const

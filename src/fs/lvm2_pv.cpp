@@ -82,9 +82,9 @@ namespace FS
 		return SupportTool("lvm2", KUrl("http://sourceware.org/lvm2/"));
 	}
 
-	qint64 lvm2_pv::maxCapacity() const
+	qint64 lvm2_pv::minCapacity() const
 	{
-		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+		 return 5 * Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
 	bool lvm2_pv::check(Report& report, const QString& deviceNode) const

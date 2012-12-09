@@ -76,9 +76,9 @@ namespace FS
 		return SupportTool("cryptsetup", KUrl("https://code.google.com/p/cryptsetup/"));
 	}
 
-	qint64 luks::maxCapacity() const
+	qint64 luks::minCapacity() const
 	{
-		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+		 return 3 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
 	}
 
 	QString luks::readUUID(const QString& deviceNode) const

@@ -40,7 +40,7 @@ namespace FS
 
 	qint64 fat32::maxCapacity() const
 	{
-		return 8 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
+		return 16 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
 	}
 	
 	bool fat32::create(Report& report, const QString& deviceNode) const

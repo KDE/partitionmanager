@@ -20,6 +20,7 @@
 #include "fs/ext4.h"
 
 #include "util/externalcommand.h"
+#include "util/capacity.h"
 
 #include <QStringList>
 
@@ -28,6 +29,11 @@ namespace FS
 	ext4::ext4(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label) :
 		ext2(firstsector, lastsector, sectorsused, label, FileSystem::Ext4)
 	{
+	}
+
+	qint64 ext4::maxCapacity() const
+	{
+		return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
 	bool ext4::create(Report& report, const QString& deviceNode) const

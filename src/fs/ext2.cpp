@@ -85,7 +85,7 @@ namespace FS
 
 	qint64 ext2::maxCapacity() const
 	{
-		return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+		return 32 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
 	}
 
 	qint64 ext2::readUsedCapacity(const QString& deviceNode) const

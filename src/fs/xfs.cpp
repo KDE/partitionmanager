@@ -92,7 +92,7 @@ namespace FS
 
 	qint64 xfs::maxCapacity() const
 	{
-		return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+		return 8 * Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
 	qint64 xfs::readUsedCapacity(const QString& deviceNode) const

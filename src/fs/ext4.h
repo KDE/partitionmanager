@@ -47,6 +47,7 @@ namespace FS
 		public:
 			static void init() {}
 			virtual bool create(Report& report, const QString& deviceNode) const;
+			virtual qint64 maxCapacity() const;
 	};
 }
 
