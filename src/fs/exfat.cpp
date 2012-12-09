@@ -86,7 +86,7 @@ namespace FS
 
 	qint64 exfat::maxCapacity() const
 	{
-		 return 64 * Capacity::unitFactor(Capacity::Byte, Capacity::ZiB);
+		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
 	bool exfat::check(Report& report, const QString& deviceNode) const
