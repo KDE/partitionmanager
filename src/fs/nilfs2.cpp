@@ -100,7 +100,7 @@ namespace FS
 
 	qint64 nilfs2::maxCapacity() const
 	{
-		 return 8 * Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
 	bool nilfs2::check(Report& report, const QString& deviceNode) const

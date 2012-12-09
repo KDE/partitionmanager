@@ -84,7 +84,7 @@ namespace FS
 
 	qint64 lvm2_pv::maxCapacity() const
 	{
-		 return 5 * Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
+		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
 	bool lvm2_pv::check(Report& report, const QString& deviceNode) const
