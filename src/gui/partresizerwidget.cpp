@@ -99,20 +99,22 @@ void PartResizerWidget::init(Device& d, Partition& p, qint64 minFirst, qint64 ma
 	else
 		setContentsMargins(0, 0, 0, asym);
 
-	QPixmap pixmap(handleWidth(), handleHeight());
-	pixmap.fill(Qt::transparent);
+	if (!readOnly())
 	{
+		QPixmap pixmap(handleWidth(), handleHeight());
+		pixmap.fill(Qt::transparent);
 		QPainter p(&pixmap);
 		QStyleOption opt;
 		opt.state |= QStyle::State_Horizontal;
 		opt.rect = pixmap.rect().adjusted(0, 2, 0, -2);
 		style()->drawControl(QStyle::CE_Splitter, &opt, &p, this);
-	}
 
-	leftHandle().setPixmap(pixmap);
-	rightHandle().setPixmap(pixmap);
-	leftHandle().setFixedSize(handleWidth(), handleHeight());
-	rightHandle().setFixedSize(handleWidth(), handleHeight());
+		leftHandle().setPixmap(pixmap);
+		rightHandle().setPixmap(pixmap);
+
+		leftHandle().setFixedSize(handleWidth(), handleHeight());
+		rightHandle().setFixedSize(handleWidth(), handleHeight());
+	}
 
 	delete m_PartWidget;
 	m_PartWidget = new PartWidget(this, &partition());
