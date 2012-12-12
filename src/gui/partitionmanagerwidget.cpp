@@ -75,7 +75,6 @@ class PartitionTreeWidgetItem : public QTreeWidgetItem
 
 /** Creates a new PartitionManagerWidget instance.
 	@param parent the parent widget
-	@param coll an action collection (may be NULL and set later)
 */
 PartitionManagerWidget::PartitionManagerWidget(QWidget* parent) :
 	QWidget(parent),
