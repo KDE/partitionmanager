@@ -142,8 +142,6 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		void on_m_TreeLog_contextMenuRequested(const QPoint& pos);
 		void on_m_ListOperations_contextMenuRequested(const QPoint& pos);
 
-		void onShowMenuBar();
-
 		void scanDevices();
 
 		void onRefreshDevices();

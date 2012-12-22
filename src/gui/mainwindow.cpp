@@ -542,22 +542,6 @@ void MainWindow::on_m_PartitionManagerWidget_selectedPartitionChanged(const Part
 	enableActions();
 }
 
-void MainWindow::onShowMenuBar()
-{
-	QAction* menuBarAction = actionCollection()->action(KStandardAction::name(KStandardAction::ShowMenubar));
-	if (menuBarAction->isChecked())
-		menuBar()->show();
-	else
-	{
-		const QString accel = menuBarAction->shortcut().toString();
-		KMessageBox::information(this, i18nc("@info", "This will hide the menu bar completely. You can show it again by typing %1.", accel), i18nc("@title:window", "Hide Menu Bar"), "hideMenuBarWarning");
-
-		menuBar()->hide();
-	}
-
-	Config::self()->setShowMenuBar(menuBarAction->isChecked());
-}
-
 void MainWindow::scanDevices()
 {
 	Log(Log::information) << i18nc("@info/plain", "Using backend plugin: %1 (%2)", 
