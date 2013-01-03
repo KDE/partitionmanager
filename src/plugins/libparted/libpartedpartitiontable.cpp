@@ -289,10 +289,6 @@ bool LibPartedPartitionTable::clobberFileSystem(Report& report, const Partition&
 #else
 	// One would assume we'd need to implement clobbering ourselves here, now that libparted does not
 	// support it anymore.
-	// Strangely enough, creating a partition with a valid file system, then deleting it without any
-	// removing of file system signatues, then creating a new unfortmatted partition in its place with
-	// the exact same geometry does NOT result in the old file system being magically restored. So
-	// it appears to be ok to just skip clobbering altogether.
 	Q_UNUSED(report);
 	Q_UNUSED(partition);
 	rval = true;
