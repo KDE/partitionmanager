@@ -101,6 +101,11 @@ namespace FS
 		return 4 * Capacity::unitFactor(Capacity::Byte, Capacity::GiB);
 	}
 
+	qint64 fat16::maxLabelLength() const
+	{
+		 return 11;
+	}
+
 	qint64 fat16::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("fsck.msdos", QStringList() << "-n" << "-v" << deviceNode);

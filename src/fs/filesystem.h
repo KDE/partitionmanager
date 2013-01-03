@@ -132,6 +132,7 @@ class FileSystem
 
 		virtual qint64 minCapacity() const;
 		virtual qint64 maxCapacity() const;
+		virtual qint64 maxLabelLength() const;
 
 		virtual SupportTool supportToolName() const;
 		virtual bool supportToolFound() const;

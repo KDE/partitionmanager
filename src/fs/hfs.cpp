@@ -78,6 +78,11 @@ namespace FS
 		 return 2 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
 	}
 
+	qint64 hfs::maxLabelLength() const
+	{
+		 return 27;
+	}
+
 	bool hfs::check(Report& report, const QString& deviceNode) const
 	{
 		ExternalCommand cmd(report, "hfsck", QStringList() << "-v" << deviceNode);

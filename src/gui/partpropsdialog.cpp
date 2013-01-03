@@ -308,6 +308,9 @@ void PartPropsDialog::setupFileSystemComboBox()
 		dialogWidget().fileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
 	dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));
+
+	const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, "");
+	dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
 }
 
 void PartPropsDialog::updatePartitionFileSystem()
@@ -331,6 +334,9 @@ void PartPropsDialog::onFilesystemChanged(int)
 		updateHideAndShow();
 		setWarnFileSystemChange();
 		updatePartitionFileSystem();
+
+		const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, "");
+		dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
 	}
 	else
 	{

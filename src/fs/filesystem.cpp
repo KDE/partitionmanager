@@ -252,6 +252,12 @@ qint64 FileSystem::maxCapacity() const
 	return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 }
 
+/** @return the maximum label length valid for this FileSystem */
+qint64 FileSystem::maxLabelLength() const
+{
+	return 16;
+}
+
 /** @return this FileSystem's type as printable name */
 QString FileSystem::name() const
 {

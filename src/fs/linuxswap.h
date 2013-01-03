@@ -69,6 +69,7 @@ namespace FS
 			virtual CommandSupportType supportUpdateUUID() const { return m_UpdateUUID; }
 			virtual CommandSupportType supportGetUUID() const { return m_GetUUID; }
 
+			virtual qint64 maxLabelLength() const;
 			virtual SupportTool supportToolName() const;
 			virtual bool supportToolFound() const;
 

@@ -50,7 +50,7 @@ class SizeDialogWidget : public QWidget, public Ui::SizeDialogWidgetBase
 		QRadioButton& radioExtended() { Q_ASSERT(m_RadioExtended); return *m_RadioExtended; }
 		QRadioButton& radioLogical() { Q_ASSERT(m_RadioLogical); return *m_RadioLogical; }
 
-		QComboBox& comboFileSystem() { Q_ASSERT(m_ComboFileSystem); return *m_ComboFileSystem; }
+		KComboBox& comboFileSystem() { Q_ASSERT(m_ComboFileSystem); return *m_ComboFileSystem; }
 
 		QLabel& textLabel() { Q_ASSERT(m_LabelTextLabel); return *m_LabelTextLabel; }
 		KLineEdit& label() { Q_ASSERT(m_EditLabel); return *m_EditLabel; }

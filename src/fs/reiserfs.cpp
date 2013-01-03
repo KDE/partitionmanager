@@ -94,6 +94,11 @@ namespace FS
 		return 16 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
 	}
 
+	qint64 reiserfs::maxLabelLength() const
+	{
+		 return 16;
+	}
+
 	qint64 reiserfs::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("debugreiserfs", QStringList() << deviceNode);

@@ -95,6 +95,11 @@ namespace FS
 		return 256 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
 	}
 
+	qint64 ntfs::maxLabelLength() const
+	{
+		 return 128;
+	}
+
 	qint64 ntfs::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("ntfsresize", QStringList() << "--info" << "--force" << "--no-progress-bar" << deviceNode);

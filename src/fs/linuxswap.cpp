@@ -71,6 +71,11 @@ namespace FS
 		return SupportTool("util-linux", KUrl("http://www.kernel.org/pub/linux/utils/util-linux-ng/"));
 	}
 
+	qint64 linuxswap::maxLabelLength() const
+	{
+		 return 15;
+	}
+
 	bool linuxswap::create(Report& report, const QString& deviceNode) const
 	{
 		ExternalCommand cmd(report, "mkswap", QStringList() << deviceNode);

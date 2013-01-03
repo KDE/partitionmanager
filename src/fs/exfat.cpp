@@ -89,6 +89,11 @@ namespace FS
 		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
+	qint64 exfat::maxLabelLength() const
+	{
+		 return 15;
+	}
+
 	bool exfat::check(Report& report, const QString& deviceNode) const
 	{
 		ExternalCommand cmd(report, "exfatfsck", QStringList() << deviceNode);

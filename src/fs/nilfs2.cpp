@@ -103,6 +103,11 @@ namespace FS
 		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
+	qint64 nilfs2::maxLabelLength() const
+	{
+		 return 80;
+	}
+
 	bool nilfs2::check(Report& report, const QString& deviceNode) const
 	{
 		ExternalCommand cmd(report, "fsck.nilfs2", QStringList() << deviceNode);

@@ -95,6 +95,11 @@ namespace FS
 		return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
+	qint64 xfs::maxLabelLength() const
+	{
+		 return 12;
+	}
+
 	qint64 xfs::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("xfs_db", QStringList() << "-c" << "sb 0" << "-c" << "print" << deviceNode);

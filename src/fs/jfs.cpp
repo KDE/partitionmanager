@@ -91,6 +91,11 @@ namespace FS
 		return 32 * Capacity::unitFactor(Capacity::Byte, Capacity::PiB);
 	}
 
+	qint64 jfs::maxLabelLength() const
+	{
+		 return 11;
+	}
+
 	qint64 jfs::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("jfs_debugfs", QStringList() << deviceNode);

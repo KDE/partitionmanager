@@ -100,6 +100,11 @@ namespace FS
 		 return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
 
+	qint64 btrfs::maxLabelLength() const
+	{
+		 return 255;
+	}
+
 	qint64 btrfs::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("btrfs-debug-tree", QStringList() << deviceNode);

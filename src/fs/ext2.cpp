@@ -88,6 +88,11 @@ namespace FS
 		return 32 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
 	}
 
+	qint64 ext2::maxLabelLength() const
+	{
+		 return 16;
+	}
+
 	qint64 ext2::readUsedCapacity(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("dumpe2fs", QStringList() << "-h" << deviceNode);

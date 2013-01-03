@@ -78,6 +78,11 @@ namespace FS
 		// http://en.wikipedia.org/wiki/Comparison_of_file_systems
 		return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
+	
+	qint64 reiser4::maxLabelLength() const
+	{
+		 return 16;
+	}
 
 	qint64 reiser4::readUsedCapacity(const QString& deviceNode) const
 	{
