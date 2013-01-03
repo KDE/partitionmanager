@@ -260,39 +260,26 @@ bool LibPartedPartitionTable::clobberFileSystem(Report& report, const Partition&
 {
 	bool rval = false;
 
-#if defined LIBPARTED_FILESYSTEM_SUPPORT
 	if (PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), partition.firstSector()))
 	{
-		if (ped_file_system_clobber(&pedPartition->geom))
+		if (pedPartition->type == PED_PARTITION_NORMAL || pedPartition->type == PED_PARTITION_LOGICAL)
 		{
-			if (pedPartition->type == PED_PARTITION_NORMAL || pedPartition->type == PED_PARTITION_LOGICAL)
+			if (ped_device_open(pedDevice()))
 			{
-				if (ped_device_open(pedDevice()))
-				{
-					// libparted doesn't deal with reiser4, so we overwrite it ourselves here
-					rval = ped_geometry_write(&pedPartition->geom, "0000000", 128, 1);
+				//reiser4 stores "ReIsEr4" at sector 128 with a sector size of 512 bytes
+				rval = ped_geometry_write(&pedPartition->geom, "0000000", 65536 / pedDevice()->sector_size, 1);
 
-					if (!rval)
-						report.line() << i18nc("@info/plain", "Failed to erase reiser4 signature on partition <filename>%1</filename>.", partition.deviceNode());
+				if (!rval)
+					report.line() << i18nc("@info/plain", "Failed to erase filesystem signature on partition <filename>%1</filename>.", partition.deviceNode());
 
-					ped_device_close(pedDevice());
-				}
+				ped_device_close(pedDevice());
 			}
-			else
-				rval = true;
 		}
 		else
-			report.line() << i18nc("@info/plain", "Failed to clobber file system on partition <filename>%1</filename>.", partition.deviceNode());
+			rval = true;
 	}
 	else
 		report.line() << i18nc("@info/plain", "Could not delete file system on partition <filename>%1</filename>: Failed to get partition.", partition.deviceNode());
-#else
-	// One would assume we'd need to implement clobbering ourselves here, now that libparted does not
-	// support it anymore.
-	Q_UNUSED(report);
-	Q_UNUSED(partition);
-	rval = true;
-#endif
 
 	return rval;
 }
