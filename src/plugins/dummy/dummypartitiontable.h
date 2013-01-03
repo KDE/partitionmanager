@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de                        *
+ *   Copyright (C) 2010, 2012 by Volker Lanz <vl@fidra.de                  *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -51,6 +51,7 @@ class DummyPartitionTable : public CoreBackendPartitionTable
 		virtual bool clobberFileSystem(Report& report, const Partition& partition);
 		virtual bool resizeFileSystem(Report& report, const Partition& partition, qint64 newLength);
 		virtual FileSystem::Type detectFileSystemBySector(Report& report, const Device& device, qint64 sector);
+		virtual bool setPartitionSystemType(Report& report, const Partition& partition);
 };
 
 #endif
