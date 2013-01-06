@@ -321,11 +321,6 @@ bool Partition::unmount(Report& report)
 
 	while (success)
 	{
-		KMountPoint::List mountPoints = KMountPoint::currentMountPoints(KMountPoint::NeedRealDeviceName);
-
-		if (!mountPoints.findByDevice(deviceNode()))
-			break;
-
 		if (fileSystem().canUnmount(deviceNode()))
 			success = fileSystem().unmount(deviceNode());
 		else
@@ -335,6 +330,11 @@ bool Partition::unmount(Report& report)
 			if (!umountCmd.run() || umountCmd.exitCode() != 0)
 				success = false;
 		}
+
+		KMountPoint::List mountPoints = KMountPoint::currentMountPoints(KMountPoint::NeedRealDeviceName);
+
+		if (!mountPoints.findByDevice(deviceNode()))
+			break;
 	}
 
 	setMounted(!success);
