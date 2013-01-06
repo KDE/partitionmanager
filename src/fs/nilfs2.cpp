@@ -53,7 +53,7 @@ namespace FS
 	void nilfs2::init()
 	{
 		m_Create = findExternal("mkfs.nilfs2") ? cmdSupportFileSystem : cmdSupportNone;
-		m_Check = cmdSupportNone;
+		m_Check = findExternal("fsck.nilfs2") ? cmdSupportFileSystem : cmdSupportNone;
 
 		m_GetLabel = cmdSupportCore;
 		m_SetLabel = findExternal("nilfs-tune") ? cmdSupportFileSystem : cmdSupportNone;
