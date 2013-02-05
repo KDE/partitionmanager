@@ -147,7 +147,7 @@ bool CopyOperation::execute(Report& parent)
 			if (overwrittenPartition())
 			{
 				copiedPartition().setDevicePath(overwrittenPartition()->devicePath());
-				copiedPartition().setNumber(overwrittenPartition()->number());
+				copiedPartition().setPartitionPath(overwrittenPartition()->devicePath());
 			}
 
 			// now run the copy job itself
@@ -273,8 +273,8 @@ Partition* CopyOperation::createCopy(const Partition& target, const Partition& s
 {
 	Partition* p = target.roles().has(PartitionRole::Unallocated) ? new Partition(source) : new Partition(target);
 
-	p->setNumber(source.number());
 	p->setDevicePath(source.devicePath());
+	p->setPartitionPath(source.partitionPath());
 	p->setState(Partition::StateCopy);
 
 	p->deleteFileSystem();

@@ -58,12 +58,12 @@ bool CreatePartitionJob::run(Report& parent)
 
 		if (backendPartitionTable)
 		{
-			qint32 num = backendPartitionTable->createPartition(*report, partition());
+			QString partitionPath = backendPartitionTable->createPartition(*report, partition());
 
-			if (num > 0)
+			if (partitionPath != "")
 			{
 				rval = true;
-				partition().setNumber(num);
+				partition().setPartitionPath(partitionPath);
 				partition().setState(Partition::StateNone);
 				backendPartitionTable->commit();
 			}

@@ -106,7 +106,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendPartitionTable
 		  * @param partition the new partition to create on disk
 		  * @return the new number the OS sees the partition under (e.g. 7 for "/dev/sda7") or -1 on failure
 		  */
-		virtual qint32 createPartition(Report& report, const Partition& partition) = 0;
+		virtual QString createPartition(Report& report, const Partition& partition) = 0;
 
 		/**
 		  * Update the geometry for a partition in the partition table.

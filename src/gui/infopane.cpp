@@ -116,7 +116,7 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 	int y = createHeader(p.deviceNode(), cols(area));
 	if (p.fileSystem().type() == FileSystem::Luks)
 	{
-		QString deviceNode = p.devicePath() + QString::number(p.number());
+		QString deviceNode = p.partitionPath();
 		createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
 		createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
 		createLabels(i18nc("@label partition", "Cipher name:"), FS::luks::getCipherName(deviceNode), cols(area), x, y);

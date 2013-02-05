@@ -114,7 +114,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 		};
 
 	public:
-		Partition(PartitionNode* parent, const Device& device, const PartitionRole& role, FileSystem* fs, qint64 sectorStart, qint64 sectorEnd, qint32 number, PartitionTable::Flags availableFlags = PartitionTable::FlagNone, const QString& mountPoint = QString(), bool mounted = false, PartitionTable::Flags activeFlags = PartitionTable::FlagNone, State state = StateNone);
+		Partition(PartitionNode* parent, const Device& device, const PartitionRole& role, FileSystem* fs, qint64 sectorStart, qint64 sectorEnd, QString partitionPath, PartitionTable::Flags availableFlags = PartitionTable::FlagNone, const QString& mountPoint = QString(), bool mounted = false, PartitionTable::Flags activeFlags = PartitionTable::FlagNone, State state = StateNone);
 		~Partition();
 
 	public:
@@ -136,6 +136,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 		const Partitions& children() const { return m_Children; } /**< @return the Partition's children. empty for non-extended. */
 
 		const QString& devicePath() const { return m_DevicePath; } /**< @return the Partition's device path, e.g. /dev/sdd */
+		const QString& partitionPath() const { return m_PartitionPath; } /**< @return the Partition's path, e.g. /dev/sdd1 */
 
 		qint64 firstSector() const { return m_FirstSector; } /**< @return the Partition's first sector on the Device */
 		qint64 lastSector() const { return m_LastSector; } /**< @return the Partition's last sector on the Device */
@@ -179,6 +180,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 	protected:
 		void append(Partition* p) { m_Children.append(p); }
 		void setDevicePath(const QString& s) { m_DevicePath = s; }
+		void setPartitionPath(const QString& s);
 		void setRoles(const PartitionRole& r) { m_Roles = r; }
 		void setMountPoint(const QString& s) { m_MountPoint = s; }
 		void setFlags(PartitionTable::Flags f) { m_ActiveFlags = f; }
@@ -191,11 +193,12 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 		void unsetFlag(PartitionTable::Flag f) { m_ActiveFlags &= ~f; }
 		void setParent(PartitionNode* p) { m_Parent = p; }
 		void setFileSystem(FileSystem* fs);
-		void setNumber(qint32 n) { m_Number = n; }
 		void setState(State s) { m_State = s; }
 		void deleteFileSystem();
 
 	private:
+		void setNumber(qint32 n) { m_Number = n; }
+
 		qint32 m_Number;
 		Partitions m_Children;
 		PartitionNode* m_Parent;
@@ -204,6 +207,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
 		qint64 m_FirstSector;
 		qint64 m_LastSector;
 		QString m_DevicePath;
+		QString m_PartitionPath;
 		QString m_MountPoint;
 		PartitionTable::Flags m_AvailableFlags;
 		PartitionTable::Flags m_ActiveFlags;

@@ -41,16 +41,15 @@
 	@param fs pointer to the Partition's FileSystem object. The Partition object will take ownership of this.
 	@param sectorStart the first sector of the Partition on its Device
 	@param sectorEnd the last sector of the Partition on its Device
-	@param number the Partition's device number, e.g. 7 for /dev/sdd7
+	@param partitionPath the Partition's path, e.g. /dev/sda4 or /dev/mmcblk0p1
 	@param availableFlags the flags available for this Partition
 	@param mountPoint mount point for this Partition
 	@param mounted true if the Partition is mounted
 	@param activeFlags active flags for this Partition
 	@param state the Partition's state
 */
-Partition::Partition(PartitionNode* parent, const Device& device, const PartitionRole& role, FileSystem* fs, qint64 sectorStart, qint64 sectorEnd, qint32 number, PartitionTable::Flags availableFlags, const QString& mountPoint, bool mounted, PartitionTable::Flags activeFlags, State state) :
+Partition::Partition(PartitionNode* parent, const Device& device, const PartitionRole& role, FileSystem* fs, qint64 sectorStart, qint64 sectorEnd, QString partitionPath, PartitionTable::Flags availableFlags, const QString& mountPoint, bool mounted, PartitionTable::Flags activeFlags, State state) :
 	PartitionNode(),
-	m_Number(number),
 	m_Children(),
 	m_Parent(parent),
 	m_FileSystem(fs),
@@ -65,6 +64,7 @@ Partition::Partition(PartitionNode* parent, const Device& device, const Partitio
 	m_SectorSize(device.logicalSectorSize()),
 	m_State(state)
 {
+	setPartitionPath(partitionPath);
 	Q_ASSERT(m_Parent);
 }
 
@@ -89,7 +89,6 @@ Partition::~Partition()
 */
 Partition::Partition(const Partition& other) :
 	PartitionNode(),
-	m_Number(other.m_Number),
 	m_Children(),
 	m_Parent(other.m_Parent),
 	m_FileSystem(FileSystemFactory::create(other.fileSystem())),
@@ -104,6 +103,7 @@ Partition::Partition(const Partition& other) :
 	m_SectorSize(other.m_SectorSize),
 	m_State(other.m_State)
 {
+	setPartitionPath(other.m_PartitionPath);
 	foreach(const Partition* child, other.children())
 	{
 		Partition* p = new Partition(*child);
@@ -133,6 +133,7 @@ Partition& Partition::operator=(const Partition& other)
 	m_FirstSector = other.m_FirstSector;
 	m_LastSector = other.m_LastSector;
 	m_DevicePath = other.m_DevicePath;
+	m_PartitionPath = other.m_PartitionPath;
 	m_MountPoint = other.m_MountPoint;
 	m_AvailableFlags = other.m_AvailableFlags;
 	m_ActiveFlags = other.m_ActiveFlags;
@@ -165,12 +166,10 @@ QString Partition::deviceNode() const
 	if (state() == StateRestore)
 		return i18nc("@item partition name", "Restored Partition");
 
-	QString res = m_DevicePath + QString::number(number());
-
 	if (state() == StateCopy)
-		return i18nc("@item partition name", "Copy of %1", res);
+		return i18nc("@item partition name", "Copy of %1", partitionPath());
 
-	return res;
+	return partitionPath();
 }
 
 /** @return the sectors used in the Partition's FileSystem or, in case of an extended partition, the sum of used sectors of the Partition's children */
@@ -216,10 +215,12 @@ void Partition::adjustLogicalNumbers(qint32 deletedNumber, qint32 insertedNumber
 
 	foreach (Partition* p, children())
 	{
+		QString path = p->partitionPath();
+		path.remove(QRegExp("([0-9]+$)"));
 		if (deletedNumber > 4 && p->number() > deletedNumber)
-			p->setNumber(p->number() - 1);
+			p->setPartitionPath(path + QString::number(p->number() - 1));
 		else if (insertedNumber > 4 && p->number() >= insertedNumber)
-			p->setNumber(p->number() + 1);
+			p->setPartitionPath(path + QString::number(p->number() + 1));
 	}
 }
 
@@ -350,6 +351,18 @@ void Partition::deleteFileSystem()
 {
 	delete m_FileSystem;
 	m_FileSystem = NULL;
+}
+
+void Partition::setPartitionPath(const QString& s)
+{
+	m_PartitionPath = s;
+	QRegExp rxPartitionNumber("([0-9]+$)");
+	if (rxPartitionNumber.indexIn(partitionPath()) > -1)
+	{
+		setNumber(rxPartitionNumber.cap().toInt());
+		return;
+	}
+	setNumber(-1);
 }
 
 void Partition::setFileSystem(FileSystem* fs)

@@ -144,11 +144,11 @@ static PedFileSystemType* getPedFileSystemType(FileSystem::Type t)
 	return ped_file_system_type_get("ext2");
 }
 
-qint32 LibPartedPartitionTable::createPartition(Report& report, const Partition& partition)
+QString LibPartedPartitionTable::createPartition(Report& report, const Partition& partition)
 {
 	Q_ASSERT(partition.devicePath() == pedDevice()->path);
 
-	qint32 rval = -1;
+	QString rval = "";
 
 	// According to libParted docs, PedPartitionType can be "NULL if unknown". That's obviously wrong,
 	// it's a typedef for an enum. So let's use something the libparted devs will hopefully never
@@ -165,7 +165,7 @@ qint32 LibPartedPartitionTable::createPartition(Report& report, const Partition&
 	if (pedType == static_cast<int>(0xffffffff))
 	{
 		report.line() << i18nc("@info/plain", "Unknown partition role for new partition <filename>%1</filename> (roles: %2)", partition.deviceNode(), partition.roles().toString());
-		return false;
+		return "";
 	}
 
 	PedFileSystemType* pedFsType = (partition.roles().has(PartitionRole::Extended) || partition.fileSystem().type() == FileSystem::Unformatted) ? NULL : getPedFileSystemType(partition.fileSystem().type());
@@ -175,7 +175,7 @@ qint32 LibPartedPartitionTable::createPartition(Report& report, const Partition&
 	if (pedPartition == NULL)
 	{
 		report.line() << i18nc("@info/plain", "Failed to create new partition <filename>%1</filename>.", partition.deviceNode());
-		return false;
+		return "";
 	}
 
 	PedConstraint* pedConstraint = NULL;
@@ -187,11 +187,11 @@ qint32 LibPartedPartitionTable::createPartition(Report& report, const Partition&
 	if (pedConstraint == NULL)
 	{
 		report.line() << i18nc("@info/plain", "Failed to create a new partition: could not get geometry for constraint.");
-		return -1;
+		return "";
 	}
 
 	if (ped_disk_add_partition(pedDisk(), pedPartition, pedConstraint))
-		rval = pedPartition->num;
+		rval = QString(ped_partition_get_path(pedPartition));
 	else
 		report.line() << i18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition.deviceNode(), pedDisk()->dev->path);
 

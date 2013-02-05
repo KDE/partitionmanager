@@ -367,7 +367,7 @@ void LibPartedBackend::scanDevicePartitions(PedDevice*, Device& d, PedDisk* pedD
 		if (parent == NULL)
 			parent = d.partitionTable();
 
-		const QString node = pedDisk->dev->path + QString::number(pedPartition->num);
+		const QString node = QString(ped_partition_get_path(pedPartition));
 		FileSystem* fs = FileSystemFactory::create(type, pedPartition->geom.start, pedPartition->geom.end);
 
 		// libparted does not handle LUKS partitions
@@ -384,7 +384,7 @@ void LibPartedBackend::scanDevicePartitions(PedDevice*, Device& d, PedDisk* pedD
 			mounted = ped_partition_is_busy(pedPartition);
 		}
 
-		Partition* part = new Partition(parent, d, PartitionRole(r), fs, pedPartition->geom.start, pedPartition->geom.end, pedPartition->num, availableFlags(pedPartition), mountPoint, mounted, activeFlags(pedPartition));
+		Partition* part = new Partition(parent, d, PartitionRole(r), fs, pedPartition->geom.start, pedPartition->geom.end, node, availableFlags(pedPartition), mountPoint, mounted, activeFlags(pedPartition));
 
 		readSectorsUsed(pedDisk, d, *part, mountPoint);
 

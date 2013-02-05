@@ -129,7 +129,7 @@ Partition* NewOperation::createNew(const Partition& cloneFrom)
 	p->deleteFileSystem();
 	p->setFileSystem(FileSystemFactory::create(FileSystem::defaultFileSystem(), p->firstSector(), p->lastSector()));
 	p->setState(Partition::StateNew);
-	p->setNumber(-1);
+	p->setPartitionPath("");
 
 	return p;
 }

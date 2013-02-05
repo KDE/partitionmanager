@@ -67,12 +67,12 @@ CoreBackendPartition* DummyPartitionTable::getPartitionBySector(qint64 sector)
 	return new DummyPartition();
 }
 
-qint32 DummyPartitionTable::createPartition(Report& report, const Partition& partition)
+QString DummyPartitionTable::createPartition(Report& report, const Partition& partition)
 {
 	Q_UNUSED(report);
 	Q_UNUSED(partition);
 
-	return true;
+	return "dummy";
 }
 
 bool DummyPartitionTable::deletePartition(Report& report, const Partition& partition)

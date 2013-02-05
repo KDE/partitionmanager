@@ -48,7 +48,7 @@ class LibPartedPartitionTable : public CoreBackendPartitionTable
 		virtual CoreBackendPartition* getExtendedPartition();
 		virtual CoreBackendPartition* getPartitionBySector(qint64 sector);
 
-		virtual qint32 createPartition(Report& report, const Partition& partition);
+		virtual QString createPartition(Report& report, const Partition& partition);
 		virtual bool deletePartition(Report& report, const Partition& partition);
 		virtual bool updateGeometry(Report& report, const Partition& partition, qint64 sector_start, qint64 sector_end);
 		virtual bool clobberFileSystem(Report& report, const Partition& partition);

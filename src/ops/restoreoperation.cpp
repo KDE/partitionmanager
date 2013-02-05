@@ -126,7 +126,7 @@ bool RestoreOperation::execute(Report& parent)
 	Report* report = parent.newChild(description());
 
 	if (overwrittenPartition())
-		restorePartition().setNumber(overwrittenPartition()->number());
+		restorePartition().setPartitionPath(overwrittenPartition()->devicePath());
 
 	if (overwrittenPartition() || (rval = createPartitionJob()->run(*report)))
 	{
@@ -229,7 +229,7 @@ Partition* RestoreOperation::createRestorePartition(const Device& device, Partit
 		return NULL;
 
 	const qint64 end = start + fileInfo.size() / device.logicalSectorSize() - 1;
-	Partition* p = new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, -1);
+	Partition* p = new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, "");
 
 	p->setState(Partition::StateRestore);
 	return p;
