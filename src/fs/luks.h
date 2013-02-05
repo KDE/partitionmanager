@@ -63,6 +63,13 @@ namespace FS
 			virtual QString readUUID(const QString& deviceNode) const;
 			virtual bool updateUUID(Report& report, const QString& deviceNode) const;
 
+			virtual bool canUnmount(const QString&) const { return true; };
+
+			virtual bool unmount(const QString& deviceNode);
+			virtual QString unmountTitle() const;
+
+			static QString mapperName (const QString& deviceNode);
+
 			static QString getCipherName (const QString& deviceNode);
 			static QString getCipherMode (const QString& deviceNode);
 			static QString getHashName (const QString& deviceNode);

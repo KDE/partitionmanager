@@ -1,5 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2012 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2013 by Andrius Štikonas <stikonas@gmail.com>           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -24,6 +25,8 @@
 
 #include <QString>
 #include <QUuid>
+
+#include <KLocale>
 
 namespace FS
 {
@@ -81,6 +84,17 @@ namespace FS
 		 return 3 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
 	}
 
+	QString luks::unmountTitle() const
+	{
+		return i18nc("@title:menu", "Deactivate");
+	}
+
+	bool luks::unmount(const QString& deviceNode)
+	{
+		ExternalCommand cmd("cryptsetup", QStringList() << "luksClose" << mapperName(deviceNode));
+		return cmd.run(-1) && cmd.exitCode() == 0;
+	}
+
 	QString luks::readUUID(const QString& deviceNode) const
 	{
 		ExternalCommand cmd("cryptsetup", QStringList() << "luksUUID" << deviceNode);
@@ -97,6 +111,18 @@ namespace FS
 
 		ExternalCommand cmd(report, "cryptsetup", QStringList() << "luksUUID" << deviceNode << "--uuid" << uuid);
 		return cmd.run(-1) && cmd.exitCode() == 0;
+	}
+
+	QString luks::mapperName (const QString& deviceNode)
+	{
+		ExternalCommand cmd("find", QStringList() << "/dev/mapper/" << "-exec" << "cryptsetup" << "status" << "{}" << ";");
+		if (cmd.run())
+		{
+			QRegExp rxDeviceName("(/dev/mapper/[A-Za-z0-9-/]+) is active[A-Za-z0-9- \\.\n]+[A-Za-z0-9-: \n]+" + deviceNode);
+			if (rxDeviceName.indexIn(cmd.output()) > -1)
+				return rxDeviceName.cap(1);
+		}
+		return "";
 	}
 
 	QString luks::getCipherName(const QString& deviceNode)

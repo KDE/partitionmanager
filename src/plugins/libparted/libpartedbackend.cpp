@@ -34,6 +34,7 @@
 #include "fs/fat16.h"
 #include "fs/hfs.h"
 #include "fs/hfsplus.h"
+#include "fs/luks.h"
 
 #include "util/globallog.h"
 #include "util/helpers.h"
@@ -369,9 +370,21 @@ void LibPartedBackend::scanDevicePartitions(PedDevice*, Device& d, PedDisk* pedD
 		const QString node = pedDisk->dev->path + QString::number(pedPartition->num);
 		FileSystem* fs = FileSystemFactory::create(type, pedPartition->geom.start, pedPartition->geom.end);
 
-		const QString mountPoint = mountPoints.findByDevice(node) ? mountPoints.findByDevice(node)->mountPoint() : QString();
+		// libparted does not handle LUKS partitions
+		QString mountPoint;
+		bool mounted;
+		if (fs->type() == FileSystem::Luks)
+		{
+			mountPoint = FS::luks::mapperName(node);
+			mounted = (mountPoint != "") ? true : false;
+		}
+		else
+		{
+			mountPoint = mountPoints.findByDevice(node) ? mountPoints.findByDevice(node)->mountPoint() : QString();
+			mounted = ped_partition_is_busy(pedPartition);
+		}
 
-		Partition* part = new Partition(parent, d, PartitionRole(r), fs, pedPartition->geom.start, pedPartition->geom.end, pedPartition->num, availableFlags(pedPartition), mountPoint, ped_partition_is_busy(pedPartition), activeFlags(pedPartition));
+		Partition* part = new Partition(parent, d, PartitionRole(r), fs, pedPartition->geom.start, pedPartition->geom.end, pedPartition->num, availableFlags(pedPartition), mountPoint, mounted, activeFlags(pedPartition));
 
 		readSectorsUsed(pedDisk, d, *part, mountPoint);
 
