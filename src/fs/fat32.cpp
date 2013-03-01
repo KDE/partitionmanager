@@ -45,7 +45,7 @@ namespace FS
 	
 	bool fat32::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "mkfs.msdos", QStringList() << "-F32" << "-v" << deviceNode);
+		ExternalCommand cmd(report, "mkfs.msdos", QStringList() << "-F32" << "-I" << "-v" << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 

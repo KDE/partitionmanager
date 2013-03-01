@@ -147,7 +147,7 @@ namespace FS
 
 	bool fat16::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "mkfs.msdos", QStringList() << "-F16" << "-v" << deviceNode);
+		ExternalCommand cmd(report, "mkfs.msdos", QStringList() << "-F16" << "-I" << "-v" << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
