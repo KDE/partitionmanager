@@ -90,6 +90,11 @@ namespace FS
 		return SupportTool("ntfsprogs", KUrl("http://www.linux-ntfs.org/doku.php?id=ntfsprogs"));
 	}
 
+	qint64 ntfs::minCapacity() const
+	{
+		return 2 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
+	}
+
 	qint64 ntfs::maxCapacity() const
 	{
 		return 256 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
