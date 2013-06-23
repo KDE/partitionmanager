@@ -293,19 +293,19 @@ void LibPartedBackend::initFSSupport()
 #if defined LIBPARTED_FS_RESIZE_LIBRARY_SUPPORT
 	if (FS::fat16::m_Shrink == FileSystem::cmdSupportNone)
 		FS::fat16::m_Shrink = FileSystem::cmdSupportBackend;
-	
+
 	if (FS::fat16::m_Grow == FileSystem::cmdSupportNone)
 		FS::fat16::m_Grow = FileSystem::cmdSupportBackend;
 
 	if (FS::hfs::m_Shrink == FileSystem::cmdSupportNone)
 		FS::hfs::m_Shrink = FileSystem::cmdSupportBackend;
-	
+
 	if (FS::hfsplus::m_Shrink == FileSystem::cmdSupportNone)
 		FS::hfsplus::m_Shrink = FileSystem::cmdSupportBackend;
-	
+
 	if (FS::hfs::m_GetUsed == FileSystem::cmdSupportNone)
 		FS::hfs::m_GetUsed = FileSystem::cmdSupportBackend;
-	
+
 	if (FS::hfsplus::m_GetUsed == FileSystem::cmdSupportNone)
 		FS::hfsplus::m_GetUsed = FileSystem::cmdSupportBackend;
 #endif
@@ -447,16 +447,18 @@ static quint32 countDevices(const QList<Solid::Device>& driveList)
 
 	foreach(const Solid::Device& solidDevice, driveList)
 	{
+                (void) solidDevice; // Silence compiler warning.
+#ifndef ENABLE_UDISKS2
 		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
-		if (solidDrive->driveType() == Solid::StorageDrive::HardDisk || 
-			solidDrive->driveType() == Solid::StorageDrive::CompactFlash || 
-			solidDrive->driveType() == Solid::StorageDrive::MemoryStick || 
-			solidDrive->driveType() == Solid::StorageDrive::SmartMedia || 
-			solidDrive->driveType() == Solid::StorageDrive::SdMmc || 
+		if (solidDrive->driveType() == Solid::StorageDrive::HardDisk ||
+			solidDrive->driveType() == Solid::StorageDrive::CompactFlash ||
+			solidDrive->driveType() == Solid::StorageDrive::MemoryStick ||
+			solidDrive->driveType() == Solid::StorageDrive::SmartMedia ||
+			solidDrive->driveType() == Solid::StorageDrive::SdMmc ||
 			solidDrive->driveType() == Solid::StorageDrive::Xd)
+#endif
 			rval++;
 	}
-
 	return rval;
 }
 
@@ -471,15 +473,17 @@ QList<Device*> LibPartedBackend::scanDevices()
 
 	foreach(const Solid::Device& solidDevice, driveList)
 	{
+#ifndef ENABLE_UDISKS2
 		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
 
-		if (solidDrive->driveType() != Solid::StorageDrive::HardDisk && 
-			solidDrive->driveType() != Solid::StorageDrive::CompactFlash && 
-			solidDrive->driveType() != Solid::StorageDrive::MemoryStick && 
-			solidDrive->driveType() != Solid::StorageDrive::SmartMedia && 
-			solidDrive->driveType() != Solid::StorageDrive::SdMmc && 
+		if (solidDrive->driveType() != Solid::StorageDrive::HardDisk &&
+			solidDrive->driveType() != Solid::StorageDrive::CompactFlash &&
+			solidDrive->driveType() != Solid::StorageDrive::MemoryStick &&
+			solidDrive->driveType() != Solid::StorageDrive::SmartMedia &&
+			solidDrive->driveType() != Solid::StorageDrive::SdMmc &&
 			solidDrive->driveType() != Solid::StorageDrive::Xd)
 			continue;
+#endif
 
 		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
 

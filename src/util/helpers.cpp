@@ -87,7 +87,7 @@ bool checkPermissions()
 			QStringList argList;
 
 			const QString suCmd = suCommand();
-			
+
 			// kdesu broke backward compatibility at some point and now only works with "-c";
 			// kdesudo accepts either (with or without "-c"), but the gk* helpers only work
 			// without. kdesu maintainers won't fix their app, so we need to work around that here.
@@ -99,7 +99,7 @@ bool checkPermissions()
 			if (QProcess::execute(suCmd, argList) == 0)
 				return false;
 		}
-	
+
 		return KMessageBox::warningContinueCancel(NULL, i18nc("@info",
 				"<para><warning>You do not have administrative privileges.</warning></para>"
 				"<para>It is possible to run <application>%1</application> without these privileges. "
@@ -226,15 +226,20 @@ bool checkAccessibleDevices()
 			i18nc("@title:window", "Error: No Usable Devices Found"));
 		return false;
 	}
-	
+
 	return true;
 }
 
 QList<Solid::Device> getSolidDeviceList()
 {
-	QString predicate = "[ [ [ StorageDrive.driveType == 'HardDisk' OR StorageDrive.driveType == 'CompactFlash'] OR "
-		"[ StorageDrive.driveType == 'MemoryStick' OR StorageDrive.driveType == 'SmartMedia'] ] OR "
-		"[ StorageDrive.driveType == 'SdMmc' OR StorageDrive.driveType == 'Xd'] ]";
+#ifdef ENABLE_UDISKS2
+        QString predicate = "StorageVolume.usage == 'PartitionTable'";
+
+#else
+        QString predicate = "[ [ [ StorageDrive.driveType == 'HardDisk' OR StorageDrive.driveType == 'CompactFlash'] OR "
+                "[ StorageDrive.driveType == 'MemoryStick' OR StorageDrive.driveType == 'SmartMedia'] ] OR "
+                "[ StorageDrive.driveType == 'SdMmc' OR StorageDrive.driveType == 'Xd'] ]";
+#endif
 
 	KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
 	if (args->count() > 0)

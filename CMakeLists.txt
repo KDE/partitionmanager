@@ -45,6 +45,11 @@ add_definitions(${KDE4_ENABLE_EXCEPTIONS})
 include(KDE4Defaults)
 include(MacroLibrary)
 
+option(ENABLE_UDISKS2 "Use UDisks2 backend." OFF)
+if (ENABLE_UDISKS2)
+	add_definitions(-DENABLE_UDISKS2)
+endif (ENABLE_UDISKS2)
+
 include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} lib/ src/)
 
 add_subdirectory(lib)
