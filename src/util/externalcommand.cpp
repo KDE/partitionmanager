@@ -24,17 +24,43 @@
 #include <QString>
 #include <QStringList>
 
-#include <klocale.h>
-#include <kdebug.h>
-
-#include <stdlib.h>
+#include <KLocale>
+#include <KDebug>
 
 /** Creates a new ExternalCommand instance without Report.
 	@param cmd the command to run
 	@param args the arguments to pass to the command
 */
 ExternalCommand::ExternalCommand(const QString& cmd, const QStringList& args) :
-	QProcess(),
+	m_Report(NULL),
+	m_ExitCode(-1),
+	m_Output()
+{
+	m_Command.push_back(cmd);
+	m_Args.push_back(args);
+	setup();
+}
+
+/** Creates a new ExternalCommand instance with Report.
+	@param report the Report to write output to.
+	@param cmd the command to run
+	@param args the arguments to pass to the command
+ */
+ExternalCommand::ExternalCommand(Report& report, const QString& cmd, const QStringList& args) :
+	m_Report(report.newChild()),
+	m_ExitCode(-1),
+	m_Output()
+{
+	m_Command.push_back(cmd);
+	m_Args.push_back(args);
+	setup();
+}
+
+/** Creates a new ExternalCommand instance without Report.
+	@param cmd the vector of the piped commands to run
+	@param args the vector of the arguments to pass to the commands
+*/
+ExternalCommand::ExternalCommand(const std::vector<QString> cmd, const std::vector<QStringList> args) :
 	m_Report(NULL),
 	m_Command(cmd),
 	m_Args(args),
@@ -46,11 +72,10 @@ ExternalCommand::ExternalCommand(const QString& cmd, const QStringList& args) :
 
 /** Creates a new ExternalCommand instance with Report.
 	@param report the Report to write output to.
-	@param cmd the command to run
-	@param args the arguments to pass to the command
+	@param cmd the vector of the piped commands to run
+	@param args the vector of the arguments to pass to the commands
  */
-ExternalCommand::ExternalCommand(Report& report, const QString& cmd, const QStringList& args) :
-	QProcess(),
+ExternalCommand::ExternalCommand(Report& report, const std::vector<QString> cmd, const std::vector<QStringList> args) :
 	m_Report(report.newChild()),
 	m_Command(cmd),
 	m_Args(args),
@@ -60,52 +85,79 @@ ExternalCommand::ExternalCommand(Report& report, const QString& cmd, const QStri
 	setup();
 }
 
+ExternalCommand::~ExternalCommand()
+{
+	delete[] processes;
+}
+
 void ExternalCommand::setup()
 {
 	setEnvironment(QStringList() << "LC_ALL=C" << QString("PATH=") + getenv("PATH"));
 	setProcessChannelMode(MergedChannels);
 
-	connect(this, SIGNAL(finished(int, QProcess::ExitStatus)), SLOT(onFinished(int)));
-	connect(this, SIGNAL(readyReadStandardOutput()), SLOT(onReadOutput()));
+	processes = new QProcess[command().size()];
+	connect(&processes[command().size()-1], SIGNAL(readyReadStandardOutput()), SLOT(onReadOutput()));
+	connect(&processes[command().size()-1], SIGNAL(finished(int, QProcess::ExitStatus)), SLOT(onFinished(int)));
+
+	for (unsigned int i = 0; i < command().size() - 1; i++)
+	{
+		processes[i].setStandardOutputProcess(&processes[i+1]);
+	}
 }
 
-/** Starts the external command.
+/** Starts the external commands.
 	@param timeout timeout to wait for the process to start
 	@return true on success
 */
 bool ExternalCommand::start(int timeout)
 {
-	QProcess::start(command(), args());
+	for (unsigned int i = 0; i < command().size(); i++)
+		processes[i].start(command()[i], args()[i]);
 
 	if (report())
-		report()->setCommand(i18nc("@info/plain", "Command: %1 %2", command(), args().join(" ")));
-	
-	if (!waitForStarted(timeout))
 	{
-		if (report())
-			report()->line() << i18nc("@info/plain", "(Command timeout while starting)");
-		return false;
+		QString s;
+		for (unsigned int i = 0; i < command().size(); i++)
+		{
+			s += command()[i] + " " + args()[i].join(" ");
+			if (i < command().size()-1)
+				s += " | ";
+		}
+		report()->setCommand(i18nc("@info/plain", "Command: %1", s));
+	}
+
+	for (unsigned int i = 0; i < command().size(); i++)
+	{
+		if (!processes[i].waitForStarted(timeout))
+		{
+			if  (report())
+				report()->line() << i18nc("@info/plain", "(Command timeout while starting \"%1\")", command()[i] + " " + args()[i].join(" "));
+
+			return false;
+		}
 	}
 
 	return true;
 }
 
-/** Waits for the external command to finish.
+/** Waits for the external commands to finish.
 	@param timeout timeout to wait until the process finishes.
 	@return true on success
 */
 bool ExternalCommand::waitFor(int timeout)
 {
-	closeWriteChannel();
-
-	if (!waitForFinished(timeout))
+	for (unsigned int i = 0; i < command().size(); i++)
 	{
-		if (report())
-			report()->line() << i18nc("@info/plain", "(Command timeout while running)");
-		return false;
-	}
+		processes[i].closeWriteChannel();
 
-	onReadOutput();
+		if (!processes[i].waitForFinished(timeout))
+		{
+			if  (report())
+				report()->line() << i18nc("@info/plain", "(Command timeout while running \"%1\")", command()[i] + " " + args()[i].join(" "));
+			return false;
+		}
+		onReadOutput();
+	}
 	return true;
 }
 
@@ -120,8 +172,8 @@ bool ExternalCommand::run(int timeout)
 
 void ExternalCommand::onReadOutput()
 {
-	const QString s = QString(readAllStandardOutput());
-	
+	const QString s = QString(processes[command().size()-1].readAllStandardOutput());
+
 	m_Output += s;
 
 	if (report())
