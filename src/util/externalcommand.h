@@ -55,8 +55,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ExternalCommand : public QProcess
 		void setCommand(const std::vector<QString> cmd) { m_Command = cmd; } /**< @param cmd the command to run */
 		const std::vector<QString> command() const { return m_Command; } /**< @return the command to run */
 
-		/** Starts the external commands.
-			@param s the argument to add
+		/**	@param s the argument to add
 			@param i the command to which the argument is added
 		*/
 		void addArg(const QString& s, const int i = 0) { m_Args[i] << s; }
