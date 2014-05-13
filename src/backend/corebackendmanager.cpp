@@ -20,12 +20,12 @@
 #include "backend/corebackendmanager.h"
 #include "backend/corebackend.h"
 
+#include <QDebug>
 #include <QStringList>
 #include <QString>
 
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
-#include <kdebug.h>
 #include <klocale.h>
 #include <kaboutdata.h>
 #include <kservice.h>
@@ -66,11 +66,11 @@ bool CoreBackendManager::load(const QString& name)
 	{
 		m_Backend = factory->create<CoreBackend>(NULL);
 		backend()->setAboutData(factory->componentData().aboutData());
-		kDebug() << "Loaded backend plugin: " << backend()->about().programName() << ", " << backend()->about().version();
+		qDebug() << "Loaded backend plugin: " << backend()->about().programName() << ", " << backend()->about().version();
 		return true;
 	}
 
-	kWarning() << "Could not load plugin for core backend " << name << ": " << loader.errorString();
+	qWarning() << "Could not load plugin for core backend " << name << ": " << loader.errorString();
 	return false;
 }
 

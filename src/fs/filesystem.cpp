@@ -24,7 +24,6 @@
 
 #include <blkid/blkid.h>
 #include <klocale.h>
-#include <kdebug.h>
 
 #include <config.h>
 

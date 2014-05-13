@@ -29,8 +29,6 @@
 
 #include <QWidget>
 
-#include <kdebug.h>
-
 class QTreeWidget;
 
 /** A tree for formatted log output.

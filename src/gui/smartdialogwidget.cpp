@@ -22,7 +22,6 @@
 #include "util/helpers.h"
 
 #include <klocale.h>
-#include <kdebug.h>
 
 #include <QStyledItemDelegate>
 #include <QPainter>

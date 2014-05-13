@@ -29,7 +29,6 @@
 
 #include <QString>
 
-#include <kdebug.h>
 #include <klocale.h>
 
 /** Creates a new CheckOperation.

@@ -27,7 +27,6 @@
 #include "util/helpers.h"
 #include "util/htmlreport.h"
 
-#include <kdebug.h>
 #include <kpushbutton.h>
 #include <kiconloader.h>
 #include <klocale.h>

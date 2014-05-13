@@ -24,9 +24,6 @@
 
 #include "fs/filesystem.h"
 
-
-#include <kdebug.h>
-
 /** Tries to find the predecessor for a Partition.
 	@param p the Partition to find a predecessor for
 	@return pointer to the predecessor or NULL if none was found

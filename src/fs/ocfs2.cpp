@@ -25,8 +25,6 @@
 #include <QString>
 #include <QRegExp>
 
-#include <kdebug.h>
-
 namespace FS
 {
 	FileSystem::CommandSupportType ocfs2::m_GetUsed = FileSystem::cmdSupportNone;

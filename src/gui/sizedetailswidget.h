@@ -24,7 +24,6 @@
 #include "ui_sizedetailswidgetbase.h"
 
 #include <QWidget>
-#include <qdebug.h>
 
 /** Details widget for the SizeDetailsBase
 	@author Volker Lanz <vl@fidra.de>

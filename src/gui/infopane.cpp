@@ -35,7 +35,6 @@
 #include <kglobal.h>
 #include <kglobalsettings.h>
 #include <klocale.h>
-#include <kdebug.h>
 
 /** Creates a new InfoPane instance
 	@param parent the parent widget

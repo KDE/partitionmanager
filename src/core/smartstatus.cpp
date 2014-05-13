@@ -20,10 +20,10 @@
 #include "core/smartstatus.h"
 #include "core/smartattribute.h"
 
-#include <kdebug.h>
 #include <klocale.h>
 #include <kglobal.h>
 
+#include <QDebug>
 #include <QString>
 #include <QStringList>
 
@@ -58,13 +58,13 @@ void SmartStatus::update()
 
 	if (sk_disk_open(devicePath().toLocal8Bit(), &skDisk) < 0)
 	{
-		kDebug() << "smart disk open failed for " << devicePath() << ": " << strerror(errno);
+		qDebug() << "smart disk open failed for " << devicePath() << ": " << strerror(errno);
 		return;
 	}
 
 	if (sk_disk_smart_status(skDisk, &skSmartStatus) < 0)
 	{
-		kDebug() << "getting smart status failed for " << devicePath() << ": " << strerror(errno);
+		qDebug() << "getting smart status failed for " << devicePath() << ": " << strerror(errno);
 		sk_disk_free(skDisk);
 		return;
 	}
@@ -73,7 +73,7 @@ void SmartStatus::update()
 
 	if (sk_disk_smart_read_data(skDisk) < 0)
 	{
-		kDebug() << "reading smart data failed for " << devicePath() << ": " << strerror(errno);
+		qDebug() << "reading smart data failed for " << devicePath() << ": " << strerror(errno);
 		sk_disk_free(skDisk);
 		return;
 	}
@@ -81,7 +81,7 @@ void SmartStatus::update()
 	const SkIdentifyParsedData* skIdentify;
 
 	if (sk_disk_identify_parse(skDisk, &skIdentify) < 0)
-		kDebug() << "getting identify data failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting identify data failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 	{
 		setModelName(skIdentify->model);
@@ -91,7 +91,7 @@ void SmartStatus::update()
 
 	const SkSmartParsedData* skParsed;
 	if (sk_disk_smart_parse(skDisk, &skParsed) < 0)
-		kDebug() << "parsing disk smart data failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "parsing disk smart data failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 	{
 		switch(skParsed->self_test_execution_status)
@@ -142,7 +142,7 @@ void SmartStatus::update()
 	SkSmartOverall overall;
 
 	if (sk_disk_smart_get_overall(skDisk, &overall) < 0)
-		kDebug() << "getting status failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting status failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 	{
 		switch(overall)
@@ -175,22 +175,22 @@ void SmartStatus::update()
 	}
 
 	if (sk_disk_smart_get_temperature(skDisk, &mkelvin) < 0)
-		kDebug() << "getting temp failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting temp failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 		setTemp(mkelvin);
 
 	if (sk_disk_smart_get_bad(skDisk, &skBadSectors) < 0)
-		kDebug() << "getting bad sectors failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting bad sectors failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 		setBadSectors(skBadSectors);
 
 	if (sk_disk_smart_get_power_on(skDisk, &skPoweredOn) < 0)
-		kDebug() << "getting powered on time failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting powered on time failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 		setPoweredOn(skPoweredOn);
 
 	if (sk_disk_smart_get_power_cycle(skDisk, &skPowerCycles) < 0)
-		kDebug() << "getting power cycles failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting power cycles failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 		setPowerCycles(skPowerCycles);
 

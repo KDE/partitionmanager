@@ -29,8 +29,9 @@
 
 #include "util/report.h"
 
+#include <QDebug>
+
 #include <klocale.h>
-#include <kdebug.h>
 
 /** Creates a new DeletePartitionJob
 	@param d the Device the Partition to delete is on
@@ -49,7 +50,7 @@ bool DeletePartitionJob::run(Report& parent)
 
 	if (device().deviceNode() != partition().devicePath())
 	{
-		kWarning() << "deviceNode: " << device().deviceNode() << ", partition path: " << partition().devicePath();
+		qWarning() << "deviceNode: " << device().deviceNode() << ", partition path: " << partition().devicePath();
 		return false;
 	}
 

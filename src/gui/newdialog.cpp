@@ -30,8 +30,6 @@
 #include "util/capacity.h"
 #include "util/helpers.h"
 
-#include <kdebug.h>
-
 #include <QtAlgorithms>
 
 /** Creates a NewDialog

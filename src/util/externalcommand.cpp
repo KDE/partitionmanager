@@ -21,11 +21,12 @@
 
 #include "util/report.h"
 
+#include <cstdlib>
+
 #include <QString>
 #include <QStringList>
 
 #include <KLocale>
-#include <KDebug>
 
 /** Creates a new ExternalCommand instance without Report.
 	@param cmd the command to run

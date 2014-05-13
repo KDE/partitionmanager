@@ -24,7 +24,6 @@
 
 #include <QMouseEvent>
 
-#include <kdebug.h>
 #include <klocale.h>
 
 /** Creates a new PartTableWidget.

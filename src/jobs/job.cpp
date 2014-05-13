@@ -27,10 +27,10 @@
 
 #include "util/report.h"
 
+#include <QDebug>
 #include <QIcon>
 #include <QTime>
 
-#include <kdebug.h>
 #include <klocale.h>
 #include <kiconloader.h>
 
@@ -103,7 +103,7 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 		Q_ASSERT(lastBlock < blockSize);
 
 		if (lastBlock >= blockSize)
-			kWarning() << "lastBlock: " << lastBlock << ", blockSize: " << blockSize;
+			qWarning() << "lastBlock: " << lastBlock << ", blockSize: " << blockSize;
 
 		const qint64 lastBlockReadOffset = copyDir > 0 ? readOffset + blockSize * blocksCopied : source.firstSector();
 		const qint64 lastBlockWriteOffset = copyDir > 0 ? writeOffset + blockSize * blocksCopied : target.firstSector();

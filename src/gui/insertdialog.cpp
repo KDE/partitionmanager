@@ -27,7 +27,6 @@
 
 #include "ops/resizeoperation.h"
 
-#include <kdebug.h>
 #include <klocale.h>
 
 /** Creates a new InsertDialog instance.

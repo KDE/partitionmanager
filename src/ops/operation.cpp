@@ -26,10 +26,10 @@
 
 #include "util/report.h"
 
+#include <QDebug>
 #include <QIcon>
 #include <QString>
 
-#include <kdebug.h>
 #include <kiconloader.h>
 #include <klocale.h>
 
@@ -64,7 +64,7 @@ void Operation::removePreviewPartition(Device& device, Partition& p)
 	if (p.parent()->remove(&p))
 		device.partitionTable()->updateUnallocated(device);
 	else
-		kWarning() << "failed to remove partition " << p.deviceNode() << " at " << &p << " from preview.";
+		qWarning() << "failed to remove partition " << p.deviceNode() << " at " << &p << " from preview.";
 }
 
 /** @return text describing the Operation's current status */
@@ -84,7 +84,7 @@ QString Operation::statusText() const
 
 	if (status() < 0 || static_cast<quint32>(status()) >= sizeof(s) / sizeof(s[0]))
 	{
-		kWarning() << "invalid status " << status();
+		qWarning() << "invalid status " << status();
 		return QString();
 	}
 
@@ -108,7 +108,7 @@ QIcon Operation::statusIcon() const
 
 	if (status() < 0 || static_cast<quint32>(status()) >= sizeof(icons) / sizeof(icons[0]))
 	{
-		kWarning() << "invalid status " << status();
+		qWarning() << "invalid status " << status();
 		return QIcon();
 	}
 

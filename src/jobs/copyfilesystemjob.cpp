@@ -29,7 +29,6 @@
 #include "util/report.h"
 
 #include <klocale.h>
-#include <kdebug.h>
 
 /** Creates a new CopyFileSystemJob
 	@param targetdevice the Device the FileSystem is to be copied to

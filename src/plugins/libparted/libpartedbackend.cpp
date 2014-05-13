@@ -41,8 +41,8 @@
 
 #include <QString>
 #include <QStringList>
+#include <QDebug>
 
-#include <kdebug.h>
 #include <klocale.h>
 #include <kmountpoint.h>
 #include <kdiskfreespaceinfo.h>
@@ -488,7 +488,7 @@ QList<Device*> LibPartedBackend::scanDevices()
 		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
 
 		Device* d = scanDevice(solidBlock->device());
-		kWarning() << solidBlock->device();
+		qWarning() << solidBlock->device();
 
 		if (d != NULL)
 		{
@@ -585,7 +585,7 @@ FileSystem::Type LibPartedBackend::detectFileSystem(PedPartition* pedPartition)
 			else if (s == "nilfs2") rval = FileSystem::Nilfs2;
 			else if (s == "LVM2_member") rval = FileSystem::Lvm2_PV;
 			else
-				kWarning() << "blkid: unknown file system type " << s << " on " << pedPath;
+				qWarning() << "blkid: unknown file system type " << s << " on " << pedPath;
 		}
 
 		blkid_put_cache(cache);

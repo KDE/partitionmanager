@@ -29,7 +29,6 @@
 
 #include <ktempdir.h>
 #include <klocale.h>
-#include <kdebug.h>
 
 #include <unistd.h>
 

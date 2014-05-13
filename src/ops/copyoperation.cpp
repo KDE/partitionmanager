@@ -33,9 +33,9 @@
 #include "util/capacity.h"
 #include "util/report.h"
 
+#include <QDebug>
 #include <QString>
 
-#include <kdebug.h>
 #include <klocale.h>
 
 /** Creates a new CopyOperation.
@@ -66,7 +66,7 @@ CopyOperation::CopyOperation(Device& targetdevice, Partition* copiedpartition, D
 	Q_ASSERT(dest);
 
 	if (dest == NULL)
-		kWarning() << "destination partition not found at sector " << copiedPartition().firstSector();
+		qWarning() << "destination partition not found at sector " << copiedPartition().firstSector();
 
 	if (dest && !dest->roles().has(PartitionRole::Unallocated))
 	{

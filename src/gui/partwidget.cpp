@@ -30,7 +30,6 @@
 #include <QApplication>
 #include <QPlastiqueStyle>
 
-#include <kdebug.h>
 #include <kglobalsettings.h>
 
 #include <config.h>

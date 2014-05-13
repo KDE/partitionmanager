@@ -29,8 +29,8 @@
 
 #include <QString>
 #include <QStringList>
+#include <QDebug>
 
-#include <kdebug.h>
 #include <klocale.h>
 #include <kmountpoint.h>
 

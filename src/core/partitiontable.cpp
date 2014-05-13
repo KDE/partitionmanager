@@ -30,10 +30,10 @@
 
 #include "util/globallog.h"
 
-#include <kdebug.h>
 #include <klocale.h>
 #include <kglobal.h>
 
+#include <QDebug>
 #include <QFile>
 #include <QTextStream>
 
@@ -223,7 +223,7 @@ bool PartitionTable::getUnallocatedRange(const Device& device, PartitionNode& pa
 
 		if (extended == NULL)
 		{
-			kWarning() << "extended is null. start: " << start << ", end: " << end << ", device: " << device.deviceNode();
+			qWarning() << "extended is null. start: " << start << ", end: " << end << ", device: " << device.deviceNode();
 			return false;
 		}
 

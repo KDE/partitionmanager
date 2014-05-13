@@ -25,7 +25,6 @@
 #include "util/helpers.h"
 
 #include <kactioncollection.h>
-#include <kdebug.h>
 #include <kiconloader.h>
 #include <kfiledialog.h>
 #include <kmessagebox.h>
@@ -35,6 +34,7 @@
 #include <kio/copyjob.h>
 #include <ktemporaryfile.h>
 
+#include <QDebug>
 #include <QFile>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
@@ -163,7 +163,7 @@ void TreeLog::onNewLogMessage(Log::Level logLevel, const QString& s)
 		"dialog-error"
 	};
 
-	kDebug() << s;
+	qDebug() << s;
 
 	if (logLevel >= Config::minLogLevel())
 	{

@@ -27,8 +27,6 @@
 #include "core/copytargetdevice.h"
 #include "core/device.h"
 
-#include <kdebug.h>
-
 /** Constructs a CopySource on the given Device
 	@param d Device from which to copy
 	@param firstsector First sector that will be copied

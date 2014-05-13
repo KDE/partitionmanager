@@ -28,7 +28,6 @@
 #include <klocale.h>
 #include <kfiledialog.h>
 #include <klineedit.h>
-#include <kdebug.h>
 #include <kmountpoint.h>
 #include <kmessagebox.h>
 
@@ -36,6 +35,7 @@
 #include <QWidget>
 #include <QFile>
 #include <QPointer>
+#include <QDebug>
 
 #include <mntent.h>
 #include <blkid/blkid.h>
@@ -241,7 +241,7 @@ bool EditMountPointDialogWidget::acceptChanges()
 
 	if (mountPoints().find(labelName().text()) == mountPoints().end())
 	{
-		kWarning() << "could not find device " << labelName().text() << " in mount points.";
+		qWarning() << "could not find device " << labelName().text() << " in mount points.";
 		return false;
 	}
 
@@ -270,7 +270,7 @@ bool EditMountPointDialogWidget::writeMountpoints(const QString& filename)
 
 	if (!out.open(QFile::ReadWrite | QFile::Truncate))
 	{
-		kWarning() << "could not open output file " << newFilename;
+		qWarning() << "could not open output file " << newFilename;
 		rval = false;
 	}
 	else
@@ -285,13 +285,13 @@ bool EditMountPointDialogWidget::writeMountpoints(const QString& filename)
 
 		if (QFile::exists(filename) && !QFile::rename(filename, bakFilename))
 		{
-			kWarning() << "could not rename " << filename << " to " << bakFilename;
+			qWarning() << "could not rename " << filename << " to " << bakFilename;
 			rval = false;
 		}
 
 		if (rval && !QFile::rename(newFilename, filename))
 		{
-			kWarning() << "could not rename " << newFilename << " to " << filename;
+			qWarning() << "could not rename " << newFilename << " to " << filename;
 			rval = false;
 		}
 	}

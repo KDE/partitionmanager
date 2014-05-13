@@ -24,7 +24,6 @@
 
 #include "util/capacity.h"
 
-#include <kdebug.h>
 #include <klocale.h>
 
 #include <QFile>

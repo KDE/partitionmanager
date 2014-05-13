@@ -23,7 +23,6 @@
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
 
-#include <kdebug.h>
 #include <klocale.h>
 #include <kpushbutton.h>
 #include <kiconloader.h>

@@ -24,7 +24,6 @@
 #include "ui_sizedialogwidgetbase.h"
 
 #include <QWidget>
-#include <qdebug.h>
 
 /** Central widget for the SizeDialogBase
 	@author Volker Lanz <vl@fidra.de>

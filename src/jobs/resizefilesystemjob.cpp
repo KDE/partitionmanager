@@ -32,8 +32,9 @@
 #include "util/report.h"
 #include "util/capacity.h"
 
+#include <QDebug>
+
 #include <klocale.h>
-#include <kdebug.h>
 
 /** Creates a new ResizeFileSystemJob
 	@param d the Device the FileSystem to be resized is on
@@ -62,7 +63,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 
 	if (partition().fileSystem().firstSector() == -1 || partition().fileSystem().lastSector() == -1 || newLength() > partition().length())
 	{
-		kWarning() << "file system first sector: " << partition().fileSystem().firstSector() << ", last sector: " << partition().fileSystem().lastSector() << ", new length: " << newLength() << ", partition length: " << partition().length();
+		qWarning() << "file system first sector: " << partition().fileSystem().firstSector() << ", last sector: " << partition().fileSystem().lastSector() << ", new length: " << newLength() << ", partition length: " << partition().length();
 		return false;
 	}
 

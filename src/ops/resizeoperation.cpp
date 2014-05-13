@@ -35,9 +35,9 @@
 #include "util/capacity.h"
 #include "util/report.h"
 
+#include <QDebug>
 #include <QString>
 
-#include <kdebug.h>
 #include <klocale.h>
 
 /** Creates a new ResizeOperation.
@@ -234,7 +234,7 @@ QString ResizeOperation::description() const
 			return i18nc("@info/plain describe resize/move action", "Move partition <filename>%1</filename> to the right by %2 and shrink it from %3 to %4", partition().deviceNode(), moveDelta, origCapacity, newCapacity);
 
 		default:
-			kWarning() << "Could not determine what to do with partition " << partition().deviceNode() << ".";
+			qWarning() << "Could not determine what to do with partition " << partition().deviceNode() << ".";
 			break;
 	}
 

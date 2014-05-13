@@ -31,7 +31,6 @@
 #include <kcomponentdata.h>
 #include <kstandarddirs.h>
 #include <kcmdlineargs.h>
-#include <kdebug.h>
 #include <kmenu.h>
 #include <kstringhandler.h>
 

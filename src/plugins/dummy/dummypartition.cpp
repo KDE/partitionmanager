@@ -23,7 +23,6 @@
 #include "util/report.h"
 
 #include <klocale.h>
-#include <kdebug.h>
 
 DummyPartition::DummyPartition() :
 	CoreBackendPartition()

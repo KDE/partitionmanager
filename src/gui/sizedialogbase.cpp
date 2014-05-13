@@ -29,8 +29,6 @@
 
 #include "util/capacity.h"
 
-#include <kdebug.h>
-
 #include <config.h>
 
 static double sectorsToDialogUnit(const Device& d, qint64 v);

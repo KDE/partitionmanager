@@ -36,9 +36,9 @@
 #include <QFont>
 #include <QKeyEvent>
 #include <QFile>
+#include <QTextStream>
 
 #include <kapplication.h>
-#include <kdebug.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 #include <krun.h>

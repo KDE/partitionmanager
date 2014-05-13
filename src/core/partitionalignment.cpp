@@ -28,7 +28,6 @@
 #include "util/globallog.h"
 
 #include <klocale.h>
-#include <kdebug.h>
 
 #include <config.h>
 

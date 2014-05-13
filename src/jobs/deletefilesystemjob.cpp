@@ -29,8 +29,9 @@
 
 #include "util/report.h"
 
+#include <QDebug>
+
 #include <klocale.h>
-#include <kdebug.h>
 
 /** Creates a new DeleteFileSystemJob
 	@param d the Device the FileSystem to delete is on
@@ -49,7 +50,7 @@ bool DeleteFileSystemJob::run(Report& parent)
 
 	if (device().deviceNode() != partition().devicePath())
 	{
-		kWarning() << "deviceNode: " << device().deviceNode() << ", partition path: " << partition().devicePath();
+		qWarning() << "deviceNode: " << device().deviceNode() << ", partition path: " << partition().devicePath();
 		return false;
 	}
 

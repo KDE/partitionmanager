@@ -27,7 +27,6 @@
 
 #include <QMutex>
 
-#include <kdebug.h>
 #include <klocale.h>
 
 /** Constructs an OperationRunner.

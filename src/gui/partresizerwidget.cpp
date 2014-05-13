@@ -27,6 +27,7 @@
 
 #include "fs/filesystem.h"
 
+#include <QDebug>
 #include <QPainter>
 #include <QMouseEvent>
 #include <QPaintEvent>
@@ -35,7 +36,6 @@
 #include <QStyleOptionFrameV3>
 #include <QStyleOptionButton>
 
-#include <kdebug.h>
 #include <kcolorscheme.h>
 
 const qint32 PartResizerWidget::m_HandleHeight = 59;
@@ -256,19 +256,19 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 
 	if (isLengthAligned && newLastSector - newFirstSector + 1 != partition().length())
 	{
-		kDebug() << "length changes while trying to move partition " << partition().deviceNode() << ". new first: " << newFirstSector << ", new last: " << newLastSector << ", old length: " << partition().length() << ", new length: " << newLastSector - newFirstSector + 1;
+		qDebug() << "length changes while trying to move partition " << partition().deviceNode() << ". new first: " << newFirstSector << ", new last: " << newLastSector << ", old length: " << partition().length() << ", new length: " << newLastSector - newFirstSector + 1;
 		return false;
 	}
 
 	if (!checkConstraints(newFirstSector, newLastSector))
 	{
-		kDebug() << "constraints not satisfied while trying to move partition " << partition().deviceNode() << ". new first: " << newFirstSector << ", new last: " << newLastSector;
+		qDebug() << "constraints not satisfied while trying to move partition " << partition().deviceNode() << ". new first: " << newFirstSector << ", new last: " << newLastSector;
 		return false;
 	}
 
 	if (align() && !PartitionAlignment::isAligned(device(), partition(), newFirstSector, newLastSector, true))
 	{
-		kDebug() << "partition " << partition().deviceNode() << " not aligned but supposed to be. new first: " << newFirstSector << " delta: " << PartitionAlignment::firstDelta(device(), partition(), newFirstSector) << ", new last: " << newLastSector << ", delta: " << PartitionAlignment::lastDelta(device(), partition(), newLastSector);
+		qDebug() << "partition " << partition().deviceNode() << " not aligned but supposed to be. new first: " << newFirstSector << " delta: " << PartitionAlignment::firstDelta(device(), partition(), newFirstSector) << ", new last: " << newLastSector << ", delta: " << PartitionAlignment::lastDelta(device(), partition(), newLastSector);
 		return false;
 	}
 
@@ -276,7 +276,7 @@ bool PartResizerWidget::movePartition(qint64 newFirstSector)
 		(!checkAlignment(*partition().children().first(), partition().firstSector() - newFirstSector) ||
 		!checkAlignment(*partition().children().last(), partition().lastSector() - newLastSector)))
 	{
-		kDebug() << "cannot align children while trying to move partition " << partition().deviceNode();
+		qDebug() << "cannot align children while trying to move partition " << partition().deviceNode();
 		return false;
 	}
 

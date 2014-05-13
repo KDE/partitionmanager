@@ -32,7 +32,6 @@
 #include <QString>
 #include <QStringList>
 
-#include <kdebug.h>
 #include <klocale.h>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>

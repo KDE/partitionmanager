@@ -29,8 +29,9 @@
 
 #include "util/report.h"
 
+#include <QDebug>
+
 #include <klocale.h>
-#include <kdebug.h>
 
 /** Creates a new ShredFileSystemJob
 	@param d the Device the FileSystem is on
@@ -54,7 +55,7 @@ bool ShredFileSystemJob::run(Report& parent)
 
 	if (device().deviceNode() != partition().devicePath())
 	{
-		kWarning() << "deviceNode: " << device().deviceNode() << ", partition path: " << partition().devicePath();
+		qWarning() << "deviceNode: " << device().deviceNode() << ", partition path: " << partition().devicePath();
 		return false;
 	}
 

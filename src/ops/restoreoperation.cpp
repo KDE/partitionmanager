@@ -36,10 +36,10 @@
 #include "util/capacity.h"
 #include "util/report.h"
 
+#include <QDebug>
 #include <QString>
 #include <QFileInfo>
 
-#include <kdebug.h>
 #include <klocale.h>
 
 /** Creates a new RestoreOperation.
@@ -69,7 +69,7 @@ RestoreOperation::RestoreOperation(Device& d, Partition* p, const QString& filen
 	Q_ASSERT(dest);
 
 	if (dest == NULL)
-		kWarning() << "destination partition not found at sector " << restorePartition().firstSector();
+		qWarning() << "destination partition not found at sector " << restorePartition().firstSector();
 
 	if (dest && !dest->roles().has(PartitionRole::Unallocated))
 	{

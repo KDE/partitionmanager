@@ -21,8 +21,6 @@
 
 #include <kglobal.h>
 #include <klocale.h>
-#include <kdebug.h>
-
 
 // private method from Qt sources, qabstractspinbox.h:
 

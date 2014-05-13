@@ -22,7 +22,6 @@
 
 #include <kglobal.h>
 #include <klocale.h>
-#include <kdebug.h>
 
 #include <atasmart.h>
 

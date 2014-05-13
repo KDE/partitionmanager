@@ -29,7 +29,6 @@
 
 #include "util/report.h"
 
-#include <kdebug.h>
 #include <klocale.h>
 
 /** Creates a new SetPartGeometryJob

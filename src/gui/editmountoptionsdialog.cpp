@@ -23,8 +23,6 @@
 #include <QString>
 #include <QStringList>
 
-#include <kdebug.h>
-
 EditMountOptionsDialog::EditMountOptionsDialog(QWidget* parent, const QStringList& options) :
 	KDialog(parent),
 	m_DialogWidget(new EditMountOptionsDialogWidget(this, options))

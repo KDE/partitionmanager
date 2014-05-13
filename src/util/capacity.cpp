@@ -24,7 +24,8 @@
 
 #include <kglobal.h>
 #include <klocale.h>
-#include <kdebug.h>
+
+#include <QDebug>
 
 #include <config.h>
 
@@ -91,7 +92,7 @@ qint64 Capacity::unitFactor(Unit from, Unit to)
 
 	if (from > to)
 	{
-		kWarning() << "from: " << from << ", to: " << to;
+		qWarning() << "from: " << from << ", to: " << to;
 		return 1;
 	}
 

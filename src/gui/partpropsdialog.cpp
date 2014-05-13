@@ -29,7 +29,6 @@
 #include "util/helpers.h"
 
 #include <kmessagebox.h>
-#include <kdebug.h>
 #include <kglobalsettings.h>
 #include <kpushbutton.h>
 #include <klineedit.h>

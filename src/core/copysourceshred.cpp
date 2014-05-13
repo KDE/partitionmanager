@@ -19,8 +19,6 @@
 
 #include "core/copysourceshred.h"
 
-#include <kdebug.h>
-
 #include <config.h>
 
 /** Constructs a CopySourceShred with the given @p size

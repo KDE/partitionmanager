@@ -29,7 +29,6 @@
 #include "util/capacity.h"
 #include "util/helpers.h"
 
-#include <kdebug.h>
 #include <kpushbutton.h>
 #include <kiconloader.h>
 #include <klocale.h>

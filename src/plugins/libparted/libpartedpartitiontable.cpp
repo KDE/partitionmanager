@@ -33,7 +33,6 @@
 #include "util/externalcommand.h"
 
 #include <klocale.h>
-#include <kdebug.h>
 
 #include <unistd.h>
 
