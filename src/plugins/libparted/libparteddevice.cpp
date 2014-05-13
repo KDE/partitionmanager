@@ -48,7 +48,7 @@ bool LibPartedDevice::open()
 	if (pedDevice())
 		return false;
 
-	m_PedDevice = ped_device_get(deviceNode().toAscii());
+	m_PedDevice = ped_device_get(deviceNode().toLatin1());
 
 	return m_PedDevice != NULL;
 }
@@ -92,7 +92,7 @@ CoreBackendPartitionTable* LibPartedDevice::openPartitionTable()
 
 bool LibPartedDevice::createPartitionTable(Report& report, const PartitionTable& ptable)
 {
-	PedDiskType* pedDiskType = ped_disk_type_get(ptable.typeName().toAscii());
+	PedDiskType* pedDiskType = ped_disk_type_get(ptable.typeName().toLatin1());
 
 	if (pedDiskType == NULL)
 	{
@@ -100,7 +100,7 @@ bool LibPartedDevice::createPartitionTable(Report& report, const PartitionTable&
 		return false;
 	}
 
-	PedDevice* dev = ped_device_get(deviceNode().toAscii());
+	PedDevice* dev = ped_device_get(deviceNode().toLatin1());
 
 	if (dev == NULL)
 	{

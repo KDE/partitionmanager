@@ -52,7 +52,7 @@ LibPartedPartitionTable::~LibPartedPartitionTable()
 bool LibPartedPartitionTable::open()
 {
 	m_PedDisk = ped_disk_new(pedDevice());
- 
+
 	return m_PedDisk != NULL;
 }
 
@@ -137,7 +137,7 @@ static PedFileSystemType* getPedFileSystemType(FileSystem::Type t)
 {
 	for (quint32 i = 0; i < sizeof(mapFileSystemTypeToLibPartedName) / sizeof(mapFileSystemTypeToLibPartedName[0]); i++)
 		if (mapFileSystemTypeToLibPartedName[i].type == t)
-			return ped_file_system_type_get(mapFileSystemTypeToLibPartedName[i].name.toAscii());
+			return ped_file_system_type_get(mapFileSystemTypeToLibPartedName[i].name.toLatin1());
 
 	// if we didn't find anything, go with ext2 as a safe fallback
 	return ped_file_system_type_get("ext2");

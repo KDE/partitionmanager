@@ -143,7 +143,7 @@ typedef struct _GPTDiskData GPTDiskData;
 */
 static quint64 firstUsableSector(const Device& d)
 {
-	PedDevice* pedDevice = ped_device_get(d.deviceNode().toAscii());
+	PedDevice* pedDevice = ped_device_get(d.deviceNode().toLatin1());
 	PedDisk* pedDisk = pedDevice ? ped_disk_new(pedDevice) : NULL;
 
 	quint64 rval = pedDisk->dev->bios_geom.sectors;
@@ -168,7 +168,7 @@ static quint64 firstUsableSector(const Device& d)
 */
 static quint64 lastUsableSector(const Device& d)
 {
-	PedDevice* pedDevice = ped_device_get(d.deviceNode().toAscii());
+	PedDevice* pedDevice = ped_device_get(d.deviceNode().toLatin1());
 	PedDisk* pedDisk = pedDevice ? ped_disk_new(pedDevice) : NULL;
 
 	quint64 rval = pedDisk->dev->bios_geom.sectors * pedDisk->dev->bios_geom.heads * pedDisk->dev->bios_geom.cylinders - 1;
