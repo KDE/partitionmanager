@@ -24,7 +24,7 @@
 #include "util/capacity.h"
 
 #include <qglobal.h>
-#include <qdebug.h>
+#include <QDebug>
 
 #include <kdialog.h>
 

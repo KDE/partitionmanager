@@ -394,7 +394,7 @@ void PartitionManagerWidget::onMountPartition()
 
 	if (p == NULL)
 	{
-		kWarning() << "no partition selected";
+		qWarning() << "no partition selected";
 		return;
 	}
 
@@ -420,7 +420,7 @@ void PartitionManagerWidget::onMountPartition()
 		if (parent != NULL)
 			parent->checkChildrenMounted();
 		else
-			kWarning() << "parent is null";
+			qWarning() << "parent is null";
 	}
 
 	updatePartitions();
@@ -468,7 +468,7 @@ void PartitionManagerWidget::onNewPartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
@@ -476,7 +476,7 @@ void PartitionManagerWidget::onNewPartition()
 
 	if (selectedDevice()->partitionTable() == NULL)
 	{
-		kWarning() << "partition table on selected device is null";
+		qWarning() << "partition table on selected device is null";
 		return;
 	}
 
@@ -501,7 +501,7 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
@@ -511,7 +511,7 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 
 		if (selectedPartition()->parent() == NULL)
 		{
-			kWarning() << "parent of selected partition is null.";
+			qWarning() << "parent of selected partition is null.";
 			return;
 		}
 
@@ -557,7 +557,7 @@ void PartitionManagerWidget::onResizePartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
@@ -565,7 +565,7 @@ void PartitionManagerWidget::onResizePartition()
 
 	if (selectedDevice()->partitionTable() == NULL)
 	{
-		kWarning() << "partition table on selected device is null";
+		qWarning() << "partition table on selected device is null";
 		return;
 	}
 
@@ -606,7 +606,7 @@ void PartitionManagerWidget::onCopyPartition()
 
 	if (selectedPartition() == NULL)
 	{
-		kWarning() << "selected partition: " << selectedPartition();
+		qWarning() << "selected partition: " << selectedPartition();
 		return;
 	}
 
@@ -621,13 +621,13 @@ void PartitionManagerWidget::onPastePartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
 	if (clipboardPartition() == NULL)
 	{
-		kWarning() << "no partition in the clipboard.";
+		qWarning() << "no partition in the clipboard.";
 		return;
 	}
 
@@ -640,7 +640,7 @@ void PartitionManagerWidget::onPastePartition()
 
 	if (dSource == NULL)
 	{
-		kWarning() << "source partition is null.";
+		qWarning() << "source partition is null.";
 		return;
 	}
 
@@ -659,7 +659,7 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return false;
 	}
 
@@ -719,7 +719,7 @@ void PartitionManagerWidget::onCheckPartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
@@ -733,7 +733,7 @@ void PartitionManagerWidget::onBackupPartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
@@ -754,7 +754,7 @@ void PartitionManagerWidget::onRestorePartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 

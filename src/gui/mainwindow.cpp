@@ -722,7 +722,7 @@ void MainWindow::onCreateNewPartitionTable()
 
 	if (pmWidget().selectedDevice() == NULL)
 	{
-		kWarning() << "selected device is null.";
+		qWarning() << "selected device is null.";
 		return;
 	}
 
