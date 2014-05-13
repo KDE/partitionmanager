@@ -28,7 +28,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new CreatePartitionTableJob
 	@param d the Device a new PartitionTable is to be created on

@@ -19,8 +19,7 @@
 
 #include "gui/formattedspinbox.h"
 
-#include <kglobal.h>
-#include <klocale.h>
+#include <QLocale>
 
 // private method from Qt sources, qabstractspinbox.h:
 
@@ -53,10 +52,10 @@ QString FormattedSpinBox::stripped(const QString &t, int *pos) const
 
 QString FormattedSpinBox::textFromValue(double value) const
 {
-	return KGlobal::locale()->formatNumber(value, decimals());
+	return QLocale().toString(value, 'f', decimals());
 }
 
 double FormattedSpinBox::valueFromText(const QString& text) const
 {
-	return KGlobal::locale()->readNumber(stripped(text));
+	return QLocale().toDouble(stripped(text));
 }

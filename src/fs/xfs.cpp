@@ -28,7 +28,7 @@
 #include <QRegExp>
 
 #include <ktempdir.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <unistd.h>
 

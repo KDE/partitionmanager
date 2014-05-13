@@ -24,8 +24,8 @@
 
 #include "ops/operation.h"
 
-#include <klocale.h>
 #include <kaboutdata.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kglobal.h>
 #include <kcomponentdata.h>

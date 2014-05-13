@@ -40,7 +40,7 @@
 
 #include "util/globallog.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <QReadLocker>
 #include <QWriteLocker>
@@ -104,7 +104,7 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 	SetFileSystemLabelOperation* pushedLabelOp = dynamic_cast<SetFileSystemLabelOperation*>(pushedOp);
 	CreateFileSystemOperation* pushedCreateFileSystemOp = dynamic_cast<CreateFileSystemOperation*>(pushedOp);
 	CheckOperation* pushedCheckOp = dynamic_cast<CheckOperation*>(pushedOp);
-	
+
 	// -- 1 --
 	if (pushedDeleteOp && &newOp->newPartition() == &pushedDeleteOp->deletedPartition() && !pushedDeleteOp->deletedPartition().roles().has(PartitionRole::Extended))
 	{
@@ -199,13 +199,13 @@ bool OperationStack::mergeNewOperation(Operation*& currentOp, Operation*& pushed
 	if (pushedCheckOp && &newOp->newPartition() == &pushedCheckOp->checkedPartition())
 	{
 		Log() << i18nc("@info/plain", "Checking file systems is automatically done when creating them: No new operation required.");
-		
+
 		delete pushedOp;
 		pushedOp = NULL;
-		
+
 		return true;
 	}
-	
+
 	return false;
 }
 

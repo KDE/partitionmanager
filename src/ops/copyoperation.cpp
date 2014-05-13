@@ -36,7 +36,7 @@
 #include <QDebug>
 #include <QString>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new CopyOperation.
 	@param targetdevice the Device to copy the Partition to

@@ -26,7 +26,7 @@
 #include <QString>
 #include <QRegExp>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <ktempdir.h>
 
 namespace FS

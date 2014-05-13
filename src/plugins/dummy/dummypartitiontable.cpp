@@ -28,8 +28,6 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
-
 #include <unistd.h>
 
 DummyPartitionTable::DummyPartitionTable() :

@@ -25,7 +25,7 @@
 
 #include "fs/filesystem.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kfiledialog.h>
 #include <klineedit.h>
 #include <kmountpoint.h>

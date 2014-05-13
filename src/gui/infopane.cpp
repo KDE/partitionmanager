@@ -31,10 +31,10 @@
 #include <QLabel>
 #include <QFrame>
 #include <QDockWidget>
+#include <QLocale>
 
-#include <kglobal.h>
 #include <kglobalsettings.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new InfoPane instance
 	@param parent the parent widget
@@ -123,9 +123,9 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 		createLabels(i18nc("@label partition", "Hash:"), FS::luks::getHashName(deviceNode), cols(area), x, y);
 		createLabels(i18nc("@label partition", "Key size:"), FS::luks::getKeySize(deviceNode), cols(area), x, y);
 		createLabels(i18nc("@label partition", "Payload offset:"), FS::luks::getPayloadOffset(deviceNode), cols(area), x, y);
-		createLabels(i18nc("@label partition", "First sector:"), KGlobal::locale()->formatNumber(p.firstSector(), 0), cols(area), x, y);
-		createLabels(i18nc("@label partition", "Last sector:"), KGlobal::locale()->formatNumber(p.lastSector(), 0), cols(area), x, y);
-		createLabels(i18nc("@label partition", "Number of sectors:"), KGlobal::locale()->formatNumber(p.length(), 0), cols(area), x, y);
+		createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
 	}
 	else
 	{
@@ -133,9 +133,9 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 		createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
 		createLabels(i18nc("@label partition", "Available:"), Capacity::formatByteSize(p.available()), cols(area), x, y);
 		createLabels(i18nc("@label partition", "Used:"), Capacity::formatByteSize(p.used()), cols(area), x, y);
-		createLabels(i18nc("@label partition", "First sector:"), KGlobal::locale()->formatNumber(p.firstSector(), 0), cols(area), x, y);
-		createLabels(i18nc("@label partition", "Last sector:"), KGlobal::locale()->formatNumber(p.lastSector(), 0), cols(area), x, y);
-		createLabels(i18nc("@label partition", "Number of sectors:"), KGlobal::locale()->formatNumber(p.length(), 0), cols(area), x, y);
+		createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
+		createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
 	}
 }
 
@@ -165,10 +165,10 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
 
 	createLabels(i18nc("@label device", "Type:"), type, cols(area), x, y);
 	createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(d.capacity()), cols(area), x, y);
-	createLabels(i18nc("@label device", "Total sectors:"), KGlobal::locale()->formatNumber(d.totalSectors(), 0), cols(area), x, y);
+	createLabels(i18nc("@label device", "Total sectors:"), QLocale().toString(d.totalSectors()), cols(area), x, y);
 	createLabels(i18nc("@label device", "Heads:"), QString::number(d.heads()), cols(area), x, y);
-	createLabels(i18nc("@label device", "Cylinders:"), KGlobal::locale()->formatNumber(d.cylinders(), 0), cols(area), x, y);
-	createLabels(i18nc("@label device", "Sectors:"), KGlobal::locale()->formatNumber(d.sectorsPerTrack(), 0), cols(area), x, y);
+	createLabels(i18nc("@label device", "Cylinders:"), QLocale().toString(d.cylinders()), cols(area), x, y);
+	createLabels(i18nc("@label device", "Sectors:"), QLocale().toString(d.sectorsPerTrack()), cols(area), x, y);
 	createLabels(i18nc("@label device", "Logical sector size:"), Capacity::formatByteSize(d.logicalSectorSize()), cols(area), x, y);
 	createLabels(i18nc("@label device", "Physical sector size:"), Capacity::formatByteSize(d.physicalSectorSize()), cols(area), x, y);
 	createLabels(i18nc("@label device", "Cylinder size:"), i18ncp("@label", "1 Sector", "%1 Sectors", d.cylinderSize()), cols(area), x, y);

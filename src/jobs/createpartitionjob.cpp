@@ -29,7 +29,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new CreatePartitionJob
 	@param d the Device the Partition to be created will be on

@@ -28,7 +28,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new BackupFileSystemJob
 	@param sourcedevice the device the FileSystem to back up is on

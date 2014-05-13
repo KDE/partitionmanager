@@ -20,7 +20,7 @@
 #include "core/smartstatus.h"
 #include "core/smartattribute.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kglobal.h>
 
 #include <QDebug>
@@ -206,7 +206,7 @@ QString SmartStatus::tempToString(qint64 mkelvin)
 {
 	const double celsius = (mkelvin - 273150.0) / 1000.0;
 	const double fahrenheit = 9.0 * celsius / 5.0 + 32;
-	return i18nc("@item:intable degrees in Celsius and Fahrenheit", "%1° C / %2° F", KGlobal::locale()->formatNumber(celsius, 1), KGlobal::locale()->formatNumber(fahrenheit, 1));
+	return i18nc("@item:intable degrees in Celsius and Fahrenheit", "%1° C / %2° F", QLocale().toString(celsius, 1), QLocale().toString(fahrenheit, 1));
 }
 
 QString SmartStatus::selfTestStatusToString(SmartStatus::SelfTestStatus s)

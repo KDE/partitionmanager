@@ -62,6 +62,7 @@
 #include <kaction.h>
 #include <kapplication.h>
 #include <kmenu.h>
+#include <KLocalizedString>
 #include <kxmlguifactory.h>
 #include <kfiledialog.h>
 #include <kio/netaccess.h>

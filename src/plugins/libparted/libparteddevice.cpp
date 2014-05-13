@@ -25,7 +25,7 @@
 #include "util/globallog.h"
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <unistd.h>
 

@@ -32,7 +32,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new SetPartFlagsJob
 	@param d the Device the Partition whose flags are to be set is on

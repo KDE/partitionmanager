@@ -25,8 +25,6 @@
 #include "core/operationstack.h"
 #include "core/device.h"
 
-#include <klocale.h>
-
 /** Constructs a DeviceScanner
 	@param ostack the OperationStack where the devices will be created
 */

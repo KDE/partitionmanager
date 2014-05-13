@@ -26,7 +26,7 @@
 #include <QString>
 #include <QStringList>
 
-#include <KLocale>
+#include <KLocalizedString>
 
 /** Creates a new ExternalCommand instance without Report.
 	@param cmd the command to run

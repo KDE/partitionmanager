@@ -27,7 +27,7 @@
 #include <QString>
 #include <QUuid>
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KTempDir>
 
 namespace FS

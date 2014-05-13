@@ -30,7 +30,7 @@
 
 #include <QString>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new SetPartFlagsOperation.
 	@param d the Device on which the Partition to set flags for is

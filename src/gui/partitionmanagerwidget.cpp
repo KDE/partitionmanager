@@ -49,13 +49,14 @@
 #include "util/report.h"
 #include "util/helpers.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmenu.h>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 #include <kglobal.h>
 
 #include <QCursor>
+#include <QLocale>
 #include <QPointer>
 #include <QReadLocker>
 
@@ -224,9 +225,9 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 	item->setText(i++, Capacity::formatByteSize(p.used()));
 	item->setText(i++, Capacity::formatByteSize(p.available()));
 
-	item->setText(i++, KGlobal::locale()->formatNumber(p.firstSector(), 0));
-	item->setText(i++, KGlobal::locale()->formatNumber(p.lastSector(), 0));
-	item->setText(i++, KGlobal::locale()->formatNumber(p.length(), 0));
+	item->setText(i++, QLocale().toString(p.firstSector()));
+	item->setText(i++, QLocale().toString(p.lastSector()));
+	item->setText(i++, QLocale().toString(p.length()));
 
 	item->setText(i++, PartitionTable::flagNames(p.activeFlags()).join(", "));
 

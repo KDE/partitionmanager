@@ -23,7 +23,7 @@
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kpushbutton.h>
 #include <kiconloader.h>
 

@@ -31,7 +31,7 @@
 
 #include <QString>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new CreateFileSystemOperation.
 	@param d the Device to create the new FileSystem on

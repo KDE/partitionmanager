@@ -20,7 +20,7 @@
 #include "core/partitionrole.h"
 
 #include <QString>
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** @return the role as string */
 QString PartitionRole::toString() const

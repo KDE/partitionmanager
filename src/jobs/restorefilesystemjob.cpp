@@ -34,7 +34,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new RestoreFileSystemJob
 	@param targetdevice the Device the FileSystem is to be restored to

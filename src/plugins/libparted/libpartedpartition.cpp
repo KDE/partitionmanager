@@ -22,7 +22,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 LibPartedPartition::LibPartedPartition(PedPartition* ped_partition) :
 	CoreBackendPartition(),

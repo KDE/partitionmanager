@@ -27,7 +27,7 @@
 
 #include "util/globallog.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <config.h>
 

@@ -26,7 +26,7 @@
 
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kaboutdata.h>
 #include <kservice.h>
 #include <kservicetypetrader.h>

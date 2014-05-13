@@ -21,7 +21,7 @@
 
 #include "util/helpers.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <QStyledItemDelegate>
 #include <QPainter>

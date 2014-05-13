@@ -39,6 +39,7 @@
 #include <QTextStream>
 
 #include <kapplication.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 #include <krun.h>

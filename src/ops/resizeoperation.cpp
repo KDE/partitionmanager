@@ -38,7 +38,7 @@
 #include <QDebug>
 #include <QString>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new ResizeOperation.
 	@param d the Device to resize a Partition on

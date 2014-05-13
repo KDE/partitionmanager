@@ -27,6 +27,7 @@
 #include <kactioncollection.h>
 #include <kiconloader.h>
 #include <kfiledialog.h>
+#include <KLocalizedString>
 #include <kmessagebox.h>
 #include <kstandardguiitem.h>
 #include <kio/netaccess.h>

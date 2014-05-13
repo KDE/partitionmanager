@@ -28,6 +28,7 @@
 #include <kcmdlineargs.h>
 #include <kmessagebox.h>
 #include <kaboutdata.h>
+#include <KLocalizedString>
 
 #include <config.h>
 

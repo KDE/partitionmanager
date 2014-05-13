@@ -28,7 +28,7 @@
 #include <QString>
 #include <QUuid>
 
-#include <KLocale>
+#include <KLocalizedString>
 
 namespace FS
 {

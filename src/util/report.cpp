@@ -29,7 +29,7 @@
 #include <kdatetime.h>
 #include <kglobal.h>
 #include <kaboutdata.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kcomponentdata.h>
 
 #include <sys/utsname.h>

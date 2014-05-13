@@ -25,7 +25,7 @@
 
 #include "fatlabel/fatlabel.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <QString>
 #include <QStringList>

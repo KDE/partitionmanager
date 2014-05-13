@@ -23,7 +23,7 @@
 #include "core/device.h"
 #include "core/partitiontable.h"
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KMessageBox>
 
 #include <config.h>

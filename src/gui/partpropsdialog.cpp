@@ -28,12 +28,13 @@
 #include "util/capacity.h"
 #include "util/helpers.h"
 
+#include <QtAlgorithms>
+
 #include <kmessagebox.h>
 #include <kglobalsettings.h>
+#include <KLocalizedString>
 #include <kpushbutton.h>
 #include <klineedit.h>
-
-#include <QtAlgorithms>
 
 /** Creates a new PartPropsDialog
 	@param parent pointer to the parent widget

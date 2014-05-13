@@ -34,7 +34,7 @@
 
 #include <QDebug>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new ResizeFileSystemJob
 	@param d the Device the FileSystem to be resized is on

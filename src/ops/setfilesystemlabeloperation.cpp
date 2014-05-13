@@ -28,7 +28,7 @@
 
 #include <QString>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new SetFileSystemLabelOperation.
 	@param p the Partition with the FileSystem to set the label for

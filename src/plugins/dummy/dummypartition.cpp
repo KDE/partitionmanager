@@ -22,8 +22,6 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
-
 DummyPartition::DummyPartition() :
 	CoreBackendPartition()
 {

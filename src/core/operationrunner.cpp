@@ -27,8 +27,6 @@
 
 #include <QMutex>
 
-#include <klocale.h>
-
 /** Constructs an OperationRunner.
 	@param ostack the OperationStack to act on
 */

@@ -20,6 +20,8 @@
 #include "core/smartattribute.h"
 #include "core/smartstatus.h"
 
+#include <QLocale>
+
 #include <kglobal.h>
 #include <klocale.h>
 
@@ -87,7 +89,7 @@ static QString getPrettyValue(qint64 value, qint64 unit)
 			break;
 
 		case SK_SMART_ATTRIBUTE_UNIT_NONE:
-			rval = KGlobal::locale()->formatNumber(value, 0);
+			rval = QLocale().toString(value);
 			break;
 
 		case SK_SMART_ATTRIBUTE_UNIT_UNKNOWN:

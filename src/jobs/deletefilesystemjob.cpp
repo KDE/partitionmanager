@@ -31,7 +31,7 @@
 
 #include <QDebug>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new DeleteFileSystemJob
 	@param d the Device the FileSystem to delete is on

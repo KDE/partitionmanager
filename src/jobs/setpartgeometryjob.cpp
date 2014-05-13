@@ -29,7 +29,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new SetPartGeometryJob
 	@param d the Device the Partition whose geometry is to be set is on

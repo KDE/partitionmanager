@@ -25,7 +25,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new CheckFileSystemJob
 	@param p the Partition whose FileSystem is to be checked
@@ -39,7 +39,7 @@ CheckFileSystemJob::CheckFileSystemJob(Partition& p) :
 bool CheckFileSystemJob::run(Report& parent)
 {
 	Report* report = jobStarted(parent);
-	
+
 	// if we cannot check, assume everything is fine
 	bool rval = true;
 
@@ -47,7 +47,7 @@ bool CheckFileSystemJob::run(Report& parent)
 		rval = partition().fileSystem().check(*report, partition().deviceNode());
 
 	jobFinished(*report, rval);
-		
+
 	return rval;
 }
 

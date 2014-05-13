@@ -23,6 +23,7 @@
 #include "core/partition.h"
 
 #include <kmessagebox.h>
+#include <KLocalizedString>
 #include <kguiitem.h>
 #include <kstandardguiitem.h>
 

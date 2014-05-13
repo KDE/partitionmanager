@@ -26,7 +26,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new MoveFileSystemJob
 	@param d the Device the Partition to move is on

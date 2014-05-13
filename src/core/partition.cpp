@@ -31,7 +31,7 @@
 #include <QStringList>
 #include <QDebug>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmountpoint.h>
 
 /** Creates a new Partition object.

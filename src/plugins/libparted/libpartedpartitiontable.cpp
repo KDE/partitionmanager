@@ -32,7 +32,7 @@
 #include "util/report.h"
 #include "util/externalcommand.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <unistd.h>
 
@@ -323,7 +323,7 @@ bool LibPartedPartitionTable::resizeFileSystem(Report& report, const Partition& 
 	Q_UNUSED(partition);
 	Q_UNUSED(newLength);
 #endif
-		
+
 	return rval;
 }
 

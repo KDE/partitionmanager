@@ -28,7 +28,7 @@
 
 #include <QString>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new BackupOperation.
 	@param d the Device where the FileSystem to back up is on

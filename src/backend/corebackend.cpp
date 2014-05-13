@@ -25,7 +25,6 @@
 #include "util/globallog.h"
 
 #include <QDebug>
-#include <klocale.h>
 
 #include <config.h>
 

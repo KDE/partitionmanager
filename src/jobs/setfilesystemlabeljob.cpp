@@ -25,7 +25,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new SetFileSystemLabelJob
 	@param p the Partition the FileSystem whose label is to be set is on
@@ -58,7 +58,7 @@ bool SetFileSystemLabelJob::run(Report& parent)
 	}
 
 	jobFinished(*report, rval);
-		
+
 	return rval;
 }
 

@@ -40,7 +40,7 @@
 #include <QString>
 #include <QFileInfo>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new RestoreOperation.
 	@param d the Device to restore the Partition to

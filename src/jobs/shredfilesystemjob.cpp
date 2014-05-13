@@ -31,7 +31,7 @@
 
 #include <QDebug>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new ShredFileSystemJob
 	@param d the Device the FileSystem is on

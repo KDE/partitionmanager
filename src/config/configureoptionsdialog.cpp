@@ -37,6 +37,7 @@
 #include <kservice.h>
 #include <kmessagebox.h>
 #include <kcmdlineargs.h>
+#include <KLocalizedString>
 
 #include <config.h>
 

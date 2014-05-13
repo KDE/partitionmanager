@@ -30,7 +30,7 @@
 
 #include "util/globallog.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kglobal.h>
 
 #include <QDebug>

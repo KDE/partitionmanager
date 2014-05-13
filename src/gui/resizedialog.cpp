@@ -29,6 +29,8 @@
 
 #include "util/capacity.h"
 
+#include <KLocalizedString>
+
 /** Creates a new ResizeDialog
 	@param parent pointer to the parent widget
 	@param device the Device the Partition to resize is on

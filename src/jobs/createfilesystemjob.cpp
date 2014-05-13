@@ -31,7 +31,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new CreateFileSystemJob
 	@param p the Partition the FileSystem to create is on
@@ -48,7 +48,7 @@ bool CreateFileSystemJob::run(Report& parent)
 	bool rval = false;
 
 	Report* report = jobStarted(parent);
-	
+
 	if (partition().fileSystem().supportCreate() == FileSystem::cmdSupportFileSystem)
 	{
 		if (partition().fileSystem().create(*report, partition().deviceNode()))
@@ -88,5 +88,5 @@ bool CreateFileSystemJob::run(Report& parent)
 
 QString CreateFileSystemJob::description() const
 {
-	return i18nc("@info/plain", "Create file system %1 on partition <filename>%2</filename>", partition().fileSystem().name(), partition().deviceNode());
+	return i18nc("@info/plain", "Create file system <filename>%1</filename> on partition <filename>%2</filename>", partition().fileSystem().name(), partition().deviceNode());
 }

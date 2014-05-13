@@ -36,7 +36,7 @@
 
 #include <QString>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new NewOperation.
 	@param d the Device to create a new Partition on
@@ -63,7 +63,7 @@ NewOperation::NewOperation(Device& d, Partition* p) :
 		// empty label). However, the user might later on decide to change FS or
 		// label. The operation stack will merge these operations with this one here
 		// and if the jobs don't exist things will break.
-		
+
 		m_CreateFileSystemJob = new CreateFileSystemJob(targetDevice(), newPartition());
 		addJob(createFileSystemJob());
 

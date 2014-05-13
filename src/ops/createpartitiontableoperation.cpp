@@ -27,7 +27,7 @@
 
 #include <QString>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new CreatePartitionTableOperation.
 	@param d the Device to create the new PartitionTable on

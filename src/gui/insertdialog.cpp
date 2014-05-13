@@ -27,7 +27,7 @@
 
 #include "ops/resizeoperation.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new InsertDialog instance.
 	@param parent the parent widget

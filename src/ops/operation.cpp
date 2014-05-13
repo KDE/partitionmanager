@@ -31,7 +31,7 @@
 #include <QString>
 
 #include <kiconloader.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 Operation::Operation() :
 	m_Status(StatusNone),

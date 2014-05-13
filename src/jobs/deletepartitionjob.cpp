@@ -31,7 +31,7 @@
 
 #include <QDebug>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new DeletePartitionJob
 	@param d the Device the Partition to delete is on

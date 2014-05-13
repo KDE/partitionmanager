@@ -24,7 +24,7 @@
 
 #include "util/capacity.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <QFile>
 #include <QByteArray>

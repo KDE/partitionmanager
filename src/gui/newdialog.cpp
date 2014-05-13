@@ -32,6 +32,8 @@
 
 #include <QtAlgorithms>
 
+#include <KLocalizedString>
+
 /** Creates a NewDialog
 	@param parent the parent widget
 	@param device the Device on which a new Partition is to be created

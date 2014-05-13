@@ -43,7 +43,7 @@
 #include <QStringList>
 #include <QDebug>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kmountpoint.h>
 #include <kdiskfreespaceinfo.h>
 #include <kpluginfactory.h>

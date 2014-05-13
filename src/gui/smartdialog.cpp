@@ -29,7 +29,7 @@
 
 #include <kpushbutton.h>
 #include <kiconloader.h>
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kfiledialog.h>
 #include <kio/copyjob.h>
 #include <kio/netaccess.h>
@@ -99,11 +99,11 @@ void SmartDialog::setupDialog()
 
 		dialogWidget().temperature().setText(SmartStatus::tempToString(device().smartStatus().temp()));
 		const QString badSectors = device().smartStatus().badSectors() > 0
-				? KGlobal::locale()->formatNumber(device().smartStatus().badSectors(), 0)
+				? QLocale().toString(device().smartStatus().badSectors())
 				: i18nc("@label SMART number of bad sectors", "none");
 		dialogWidget().badSectors().setText(badSectors);
 		dialogWidget().poweredOn().setText(KGlobal::locale()->formatDuration(device().smartStatus().poweredOn()));
-		dialogWidget().powerCycles().setText(KGlobal::locale()->formatNumber(device().smartStatus().powerCycles(), 0));
+		dialogWidget().powerCycles().setText(QLocale().toString(device().smartStatus().powerCycles()));
 		dialogWidget().overallAssessment().setText(SmartStatus::overallAssessmentToString(device().smartStatus().overall()));
 		dialogWidget().selfTests().setText(SmartStatus::selfTestStatusToString(device().smartStatus().selfTestStatus()));
 
@@ -118,13 +118,13 @@ void SmartDialog::setupDialog()
 		{
 			QTreeWidgetItem* item = new QTreeWidgetItem(
 				QStringList()
-					<< KGlobal::locale()->formatNumber(a.id(), 0)
+					<< QLocale().toString(a.id())
 					<< QString("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + "</span>")
 					<< (a.failureType() == SmartAttribute::PreFailure ? i18nc("@item:intable", "Pre-Failure") : i18nc("@item:intable", "Old-Age"))
 					<< (a.updateType() == SmartAttribute::Online ? i18nc("@item:intable", "Online") : i18nc("@item:intable", "Offline"))
-					<< KGlobal::locale()->formatNumber(a.worst(), 0)
-					<< KGlobal::locale()->formatNumber(a.current(), 0)
-					<< KGlobal::locale()->formatNumber(a.threshold(), 0)
+					<< QLocale().toString(a.worst())
+					<< QLocale().toString(a.current())
+					<< QLocale().toString(a.threshold())
 					<< a.raw()
 					<< a.assessmentToString()
 					<< a.value()
@@ -156,7 +156,7 @@ QString SmartDialog::toHtml() const
 		s << HtmlReport::tableLine(i18n("SMART status:"), i18nc("@label SMART disk status", "BAD"));
 
 	const QString badSectors = device().smartStatus().badSectors() > 0
-			? KGlobal::locale()->formatNumber(device().smartStatus().badSectors(), 0)
+			? QLocale().toString(device().smartStatus().badSectors())
 			: i18nc("@label SMART number of bad sectors", "none");
 
 	s << HtmlReport::tableLine(i18n("Model:"), device().smartStatus().modelName())
@@ -165,7 +165,7 @@ QString SmartDialog::toHtml() const
 		<< HtmlReport::tableLine(i18n("Temperature:"), SmartStatus::tempToString(device().smartStatus().temp()))
 		<< HtmlReport::tableLine(i18n("Bad sectors:"), badSectors)
 		<< HtmlReport::tableLine(i18n("Powered on for:"), KGlobal::locale()->formatDuration(device().smartStatus().poweredOn()))
-		<< HtmlReport::tableLine(i18n("Power cycles:"), KGlobal::locale()->formatNumber(device().smartStatus().powerCycles(), 0))
+		<< HtmlReport::tableLine(i18n("Power cycles:"), QLocale().toString(device().smartStatus().powerCycles()))
 		<< HtmlReport::tableLine(i18n("Self tests:"), SmartStatus::selfTestStatusToString(device().smartStatus().selfTestStatus()))
 		<< HtmlReport::tableLine(i18n("Overall assessment:"), SmartStatus::overallAssessmentToString(device().smartStatus().overall()));
 
@@ -185,13 +185,13 @@ QString SmartDialog::toHtml() const
 		{
 			s << "<tr>\n";
 
-			s << "<td>" << KGlobal::locale()->formatNumber(a.id(), 0) << "</td>\n"
+			s << "<td>" << QLocale().toString(a.id()) << "</td>\n"
 				<< "<td>" << QString("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + "</span>") << "</td>\n"
 				<< "<td>" << (a.failureType() == SmartAttribute::PreFailure ? i18nc("@item:intable", "Pre-Failure") : i18nc("@item:intable", "Old-Age")) << "</td>\n"
 				<< "<td>" << (a.updateType() == SmartAttribute::Online ? i18nc("@item:intable", "Online") : i18nc("@item:intable", "Offline")) << "</td>\n"
-				<< "<td>" << KGlobal::locale()->formatNumber(a.worst(), 0) << "</td>\n"
-				<< "<td>" << KGlobal::locale()->formatNumber(a.current(), 0) << "</td>\n"
-				<< "<td>" << KGlobal::locale()->formatNumber(a.threshold(), 0) << "</td>\n"
+				<< "<td>" << QLocale().toString(a.worst()) << "</td>\n"
+				<< "<td>" << QLocale().toString(a.current()) << "</td>\n"
+				<< "<td>" << QLocale().toString(a.threshold()) << "</td>\n"
 				<< "<td>" << a.raw() << "</td>\n"
 				<< "<td>" << a.assessmentToString() << "</td>\n"
 				<< "<td>" << a.value() << "</td>\n";

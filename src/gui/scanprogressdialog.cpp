@@ -19,7 +19,7 @@
 
 #include "gui/scanprogressdialog.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 ScanProgressDialog::ScanProgressDialog(QWidget* parent) :
 	KProgressDialog(parent)

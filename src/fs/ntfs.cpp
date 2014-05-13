@@ -24,7 +24,7 @@
 #include "util/report.h"
 #include "util/globallog.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 #include <QString>
 #include <QStringList>

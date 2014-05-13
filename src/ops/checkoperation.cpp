@@ -29,7 +29,7 @@
 
 #include <QString>
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new CheckOperation.
 	@param d the Device where the Partition to check is on.
@@ -69,7 +69,7 @@ bool CheckOperation::canCheck(const Partition* p)
 {
 	if (p == NULL)
 		return false;
-	
+
 	if (p->isMounted())
 		return false;
 

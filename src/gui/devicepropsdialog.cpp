@@ -29,9 +29,9 @@
 #include "util/capacity.h"
 #include "util/helpers.h"
 
+#include <KLocalizedString>
 #include <kpushbutton.h>
 #include <kiconloader.h>
-#include <klocale.h>
 #include <kglobal.h>
 #include <kglobalsettings.h>
 

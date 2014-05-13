@@ -32,7 +32,7 @@
 #include <QString>
 #include <QStringList>
 
-#include <klocale.h>
+#include <KLocalizedString>
 #include <kpluginfactory.h>
 #include <kaboutdata.h>
 
