@@ -130,7 +130,7 @@ Some file systems need external tools to be installed for them to be supported. 
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="KPushButton" name="m_ButtonRescan">
+      <widget class="QPushButton" name="m_ButtonRescan">
        <property name="text">
         <string comment="@action:button">Rescan Support</string>
        </property>
@@ -153,13 +153,6 @@ Some file systems need external tools to be installed for them to be supported. 
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

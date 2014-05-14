@@ -101,7 +101,7 @@
        </widget>
       </item>
       <item>
-       <widget class="KComboBox" name="kcfg_minLogLevel">
+       <widget class="QComboBox" name="kcfg_minLogLevel">
         <item>
          <property name="text">
           <string>Debug</string>
@@ -150,7 +150,7 @@
        </widget>
       </item>
       <item>
-       <widget class="KComboBox" name="m_ComboDefaultFileSystem"/>
+       <widget class="QComboBox" name="m_ComboDefaultFileSystem"/>
       </item>
      </layout>
     </widget>
@@ -193,19 +193,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KButtonGroup</class>
-   <extends>QGroupBox</extends>
-   <header>kbuttongroup.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

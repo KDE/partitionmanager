@@ -27,7 +27,7 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="KLineEdit" name="m_LineEditName"/>
+      <widget class="QLineEdit" name="m_LineEditName"/>
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="label_Pass">
@@ -40,9 +40,9 @@
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="KLineEdit" name="m_LineEditPassphrase">
-       <property name="passwordMode">
-        <bool>true</bool>
+      <widget class="QLineEdit" name="m_LineEditPassphrase">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
        </property>
       </widget>
      </item>
@@ -66,13 +66,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -44,11 +44,11 @@ class DecryptLuksDialog : public KDialog
 		const QString& m_DeviceNode;
 
 	public:
-		KLineEdit& luksName() { return widget().luksName(); }
-		const KLineEdit& luksName() const { return widget().luksName(); }
+		QLineEdit& luksName() { return widget().luksName(); }
+		const QLineEdit& luksName() const { return widget().luksName(); }
 
-		KLineEdit& luksPassphrase() { return widget().luksPassphrase(); }
-		const KLineEdit& luksPassphrase() const { return widget().luksPassphrase(); }
+		QLineEdit& luksPassphrase() { return widget().luksPassphrase(); }
+		const QLineEdit& luksPassphrase() const { return widget().luksPassphrase(); }
 };
 
 

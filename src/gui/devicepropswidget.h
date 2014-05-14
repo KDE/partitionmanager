@@ -55,7 +55,7 @@ class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 
 		QLabel& smartStatusText() { Q_ASSERT(m_LabelSmartStatusText); return *m_LabelSmartStatusText; }
 		QLabel& smartStatusIcon() { Q_ASSERT(m_LabelSmartStatusIcon); return *m_LabelSmartStatusIcon; }
-		KPushButton& buttonSmartMore() { Q_ASSERT(m_ButtonSmartMore); return *m_ButtonSmartMore; }
+		QPushButton& buttonSmartMore() { Q_ASSERT(m_ButtonSmartMore); return *m_ButtonSmartMore; }
 
 		void hideTypeRadioButtons();
 };

@@ -28,7 +28,6 @@
 #include <QWidget>
 
 class QString;
-class KComboBox;
 
 class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
 {
@@ -36,8 +35,8 @@ class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
 		GeneralPageWidget(QWidget* parent);
 
 	public:
-		KComboBox& comboDefaultFileSystem() { return *m_ComboDefaultFileSystem; }
-		const KComboBox& comboDefaultFileSystem() const { return *m_ComboDefaultFileSystem; }
+		QComboBox& comboDefaultFileSystem() { return *m_ComboDefaultFileSystem; }
+		const QComboBox& comboDefaultFileSystem() const { return *m_ComboDefaultFileSystem; }
 
 		FileSystem::Type defaultFileSystem() const;
 		void setDefaultFileSystem(FileSystem::Type t);

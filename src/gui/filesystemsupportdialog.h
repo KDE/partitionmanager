@@ -25,7 +25,7 @@
 
 #include <kdialog.h>
 
-class KPushButton;
+class QPushButton;
 
 class FileSystemSupportDialogWidget;
 

@@ -32,6 +32,7 @@
 
 #include <QtAlgorithms>
 
+#include <kglobalsettings.h>
 #include <KLocalizedString>
 
 /** Creates a NewDialog

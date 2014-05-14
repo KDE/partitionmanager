@@ -28,13 +28,11 @@
 
 class Partition;
 
-class KPushButton;
-class KLineEdit;
-class KComboBox;
-
 class QWidget;
 class QSpinBox;
 class QCheckBox;
+class QLineEdit;
+class QPushButton;
 class QStringList;
 class QFile;
 
@@ -49,9 +47,9 @@ class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDial
 		~EditMountPointDialogWidget();
 
 	public:
-		KPushButton& buttonMore() { return *m_ButtonMore; }
+		QPushButton& buttonMore() { return *m_ButtonMore; }
 		QLabel& labelName() { return *m_LabelNameValue; }
-		KLineEdit& editPath() { return *m_EditPath; }
+		QLineEdit& editPath() { return *m_EditPath; }
 		QSpinBox& spinDumpFreq() { return *m_SpinDumpFreq; }
 		QSpinBox& spinPassNumber() { return *m_SpinPassNumber; }
 		QLabel& labelType() { return *m_LabelTypeValue; }

@@ -25,6 +25,7 @@
 #include "util/capacity.h"
 #include "util/externalcommand.h"
 
+#include <QPointer>
 #include <QString>
 #include <QUuid>
 

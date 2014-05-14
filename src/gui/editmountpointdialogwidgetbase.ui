@@ -25,7 +25,7 @@
     </widget>
    </item>
    <item row="5" column="1" colspan="5">
-    <widget class="KLineEdit" name="m_EditPath">
+    <widget class="QLineEdit" name="m_EditPath">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
        <horstretch>3</horstretch>
@@ -35,7 +35,7 @@
     </widget>
    </item>
    <item row="5" column="6">
-    <widget class="KPushButton" name="m_ButtonSelect">
+    <widget class="QPushButton" name="m_ButtonSelect">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
        <horstretch>1</horstretch>
@@ -137,7 +137,7 @@
     </spacer>
    </item>
    <item row="11" column="6">
-    <widget class="KPushButton" name="m_ButtonMore">
+    <widget class="QPushButton" name="m_ButtonMore">
      <property name="text">
       <string>More...</string>
      </property>
@@ -315,18 +315,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
