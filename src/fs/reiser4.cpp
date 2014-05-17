@@ -69,7 +69,7 @@ namespace FS
 
 	FileSystem::SupportTool reiser4::supportToolName() const
 	{
-		return SupportTool("reiser4progs", KUrl("http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"));
+		return SupportTool("reiser4progs", QUrl("http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"));
 	}
 
 	qint64 reiser4::maxCapacity() const
@@ -78,7 +78,7 @@ namespace FS
 		// http://en.wikipedia.org/wiki/Comparison_of_file_systems
 		return Capacity::unitFactor(Capacity::Byte, Capacity::EiB);
 	}
-	
+
 	qint64 reiser4::maxLabelLength() const
 	{
 		 return 16;

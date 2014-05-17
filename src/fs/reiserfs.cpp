@@ -81,7 +81,7 @@ namespace FS
 
 	FileSystem::SupportTool reiserfs::supportToolName() const
 	{
-		return SupportTool("reiserfsprogs", KUrl("http://www.kernel.org/pub/linux/utils/fs/reiserfs/"));
+		return SupportTool("reiserfsprogs", QUrl("http://www.kernel.org/pub/linux/utils/fs/reiserfs/"));
 	}
 
 	qint64 reiserfs::minCapacity() const

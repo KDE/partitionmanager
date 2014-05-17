@@ -87,7 +87,7 @@ namespace FS
 
 	FileSystem::SupportTool btrfs::supportToolName() const
 	{
-		return SupportTool("btrfs-tools", KUrl("http://btrfs.wiki.kernel.org/"));
+		return SupportTool("btrfs-tools", QUrl("http://btrfs.wiki.kernel.org/"));
 	}
 
 	qint64 btrfs::minCapacity() const

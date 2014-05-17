@@ -68,7 +68,7 @@ namespace FS
 
 	FileSystem::SupportTool linuxswap::supportToolName() const
 	{
-		return SupportTool("util-linux", KUrl("http://www.kernel.org/pub/linux/utils/util-linux-ng/"));
+		return SupportTool("util-linux", QUrl("http://www.kernel.org/pub/linux/utils/util-linux-ng/"));
 	}
 
 	qint64 linuxswap::maxLabelLength() const

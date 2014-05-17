@@ -27,6 +27,7 @@
 #include <QStringList>
 #include <QString>
 #include <QList>
+#include <QUrl>
 
 class Device;
 class Report;
@@ -46,7 +47,7 @@ class FileSystem
 		class SupportTool
 		{
 			public:
-				explicit SupportTool(const QString& n = QString(), const KUrl& u = KUrl()) : name(n), url(u) {}
+				explicit SupportTool(const QString& n = QString(), const QUrl& u = QUrl()) : name(n), url(u) {}
 
 				const QString name;
 				const KUrl url;

@@ -79,7 +79,7 @@ namespace FS
 
 	FileSystem::SupportTool lvm2_pv::supportToolName() const
 	{
-		return SupportTool("lvm2", KUrl("http://sourceware.org/lvm2/"));
+		return SupportTool("lvm2", QUrl("http://sourceware.org/lvm2/"));
 	}
 
 	qint64 lvm2_pv::maxCapacity() const

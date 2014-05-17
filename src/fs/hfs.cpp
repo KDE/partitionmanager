@@ -69,7 +69,7 @@ namespace FS
 
 	FileSystem::SupportTool hfs::supportToolName() const
 	{
-		return SupportTool("hfsutils", KUrl("http://www.mars.org/home/rob/proj/hfs/"));
+		return SupportTool("hfsutils", QUrl("http://www.mars.org/home/rob/proj/hfs/"));
 	}
 
 

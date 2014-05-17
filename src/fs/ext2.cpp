@@ -80,7 +80,7 @@ namespace FS
 
 	FileSystem::SupportTool ext2::supportToolName() const
 	{
-		return SupportTool("e2fsprogs", KUrl("http://e2fsprogs.sf.net"));
+		return SupportTool("e2fsprogs", QUrl("http://e2fsprogs.sf.net"));
 	}
 
 	qint64 ext2::maxCapacity() const

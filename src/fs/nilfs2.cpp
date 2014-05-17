@@ -90,7 +90,7 @@ namespace FS
 
 	FileSystem::SupportTool nilfs2::supportToolName() const
 	{
-		return SupportTool("nilfs2-utils", KUrl("http://code.google.com/p/nilfs2/"));
+		return SupportTool("nilfs2-utils", QUrl("http://code.google.com/p/nilfs2/"));
 	}
 
 	qint64 nilfs2::minCapacity() const

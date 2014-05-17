@@ -86,7 +86,7 @@ namespace FS
 
 	FileSystem::SupportTool ntfs::supportToolName() const
 	{
-		return SupportTool("ntfsprogs", KUrl("http://www.linux-ntfs.org/doku.php?id=ntfsprogs"));
+		return SupportTool("ntfsprogs", QUrl("http://www.linux-ntfs.org/doku.php?id=ntfsprogs"));
 	}
 
 	qint64 ntfs::minCapacity() const

@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
 
 	if (!checkAccessibleDevices())
 		return 0;
-	
+
 	MainWindow* mainWindow = new MainWindow();
 	mainWindow->show();
 

@@ -65,7 +65,7 @@ namespace FS
 
 	FileSystem::SupportTool hfsplus::supportToolName() const
 	{
-		return SupportTool("hfsplus", KUrl());
+		return SupportTool("hfsplus", QUrl());
 	}
 
 	qint64 hfsplus::maxCapacity() const
