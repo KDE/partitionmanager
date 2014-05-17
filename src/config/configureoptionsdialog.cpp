@@ -39,6 +39,8 @@
 #include <kcmdlineargs.h>
 #include <KLocalizedString>
 
+#include <QIcon>
+
 #include <config.h>
 
 ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationStack& ostack, const QString& name) :

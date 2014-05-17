@@ -63,7 +63,7 @@ SmartDialog::SmartDialog(QWidget* parent, Device& d) :
 	setCaption(i18nc("@title:window", "SMART Properties: <filename>%1</filename>", device().deviceNode()));
 	setButtons(Close|User1);
 	setButtonText(User1, i18nc("@action:button", "Save SMART Report"));
-	button(User1)->setIcon(KIcon("document-save"));
+	button(User1)->setIcon(QIcon::fromTheme("document-save"));
 
 	setupDialog();
 	setupConnections();
