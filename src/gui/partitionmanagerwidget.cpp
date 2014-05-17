@@ -371,7 +371,7 @@ void PartitionManagerWidget::onPropertiesPartition()
 
 		QPointer<PartPropsDialog> dlg = new PartPropsDialog(this, *selectedDevice(), p);
 
-		if (dlg->exec() == KDialog::Accepted)
+		if (dlg->exec() == QDialog::Accepted)
 		{
 			if (dlg->newFileSystemType() != p.fileSystem().type() || dlg->forceRecreate())
 				operationStack().push(new CreateFileSystemOperation(*selectedDevice(), p, dlg->newFileSystemType()));
@@ -438,7 +438,7 @@ void PartitionManagerWidget::onEditMountPoint()
 
 	QPointer<EditMountPointDialog> dlg = new EditMountPointDialog(this, *p);
 
-	if (dlg->exec() == KDialog::Accepted)
+	if (dlg->exec() == QDialog::Accepted)
 		updatePartitions();
 
 	delete dlg;
@@ -487,7 +487,7 @@ void PartitionManagerWidget::onNewPartition()
 	Partition* newPartition = NewOperation::createNew(*selectedPartition());
 
 	QPointer<NewDialog> dlg = new NewDialog(this, *selectedDevice(), *newPartition, selectedDevice()->partitionTable()->childRoles(*selectedPartition()));
-	if (dlg->exec() == KDialog::Accepted)
+	if (dlg->exec() == QDialog::Accepted)
 		operationStack().push(new NewOperation(*selectedDevice(), newPartition));
 	else
 		delete newPartition;
@@ -579,7 +579,7 @@ void PartitionManagerWidget::onResizePartition()
 
 	QPointer<ResizeDialog> dlg = new ResizeDialog(this, *selectedDevice(), p, p.firstSector() - freeBefore, freeAfter + p.lastSector());
 
-	if (dlg->exec() == KDialog::Accepted)
+	if (dlg->exec() == QDialog::Accepted)
 	{
 		if (dlg->resizedFirstSector() == p.firstSector() && dlg->resizedLastSector() == p.lastSector())
 			Log(Log::information) << i18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", p.deviceNode());
@@ -677,7 +677,7 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
 		int result = dlg->exec();
 		delete dlg;
 
-		if (result != KDialog::Accepted)
+		if (result != QDialog::Accepted)
 			return false;
 	}
 	else if (KMessageBox::warningContinueCancel(this,

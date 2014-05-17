@@ -21,14 +21,14 @@
 
 #define EDITMOUNTOPTIONSDIALOG__H
 
-#include <kdialog.h>
+#include <QDialog>
 
 class EditMountOptionsDialogWidget;
 class QStringList;
 class QString;
 class QWidget;
 
-class EditMountOptionsDialog : public KDialog
+class EditMountOptionsDialog : public QDialog
 {
 	Q_OBJECT
 

@@ -30,6 +30,8 @@
 #include <kpushbutton.h>
 #include <kiconloader.h>
 #include <KLocalizedString>
+#include <KConfigGroup>
+#include <KSharedConfig>
 #include <kfiledialog.h>
 #include <kio/copyjob.h>
 #include <kio/netaccess.h>
@@ -40,6 +42,8 @@
 #include <kglobalsettings.h>
 #include <kglobal.h>
 
+#include <QDialogButtonBox>
+#include <QPushButton>
 #include <QTreeWidgetItem>
 #include <QTextStream>
 #include <QTextDocument>
@@ -55,27 +59,33 @@
 	@param d the Device
 */
 SmartDialog::SmartDialog(QWidget* parent, Device& d) :
-	KDialog(parent),
+	QDialog(parent),
 	m_Device(d),
 	m_DialogWidget(new SmartDialogWidget(this))
 {
-	setMainWidget(&dialogWidget());
-	setCaption(i18nc("@title:window", "SMART Properties: <filename>%1</filename>", device().deviceNode()));
-	setButtons(Close|User1);
-	setButtonText(User1, i18nc("@action:button", "Save SMART Report"));
-	button(User1)->setIcon(QIcon::fromTheme("document-save"));
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&dialogWidget());
+	setWindowTitle(i18nc("@title:window", "SMART Properties: <filename>%1</filename>", device().deviceNode()));
+
+	buttonBox = new QDialogButtonBox(this);
+	buttonBox->setStandardButtons(QDialogButtonBox::Save | QDialogButtonBox::Close);
+	buttonBox->button(QDialogButtonBox::Save)->setText(i18nc("@action:button", "Save SMART Report"));
+	buttonBox->button(QDialogButtonBox::Save)->setIcon(QIcon::fromTheme("document-save"));
+	mainLayout->addWidget(buttonBox);
 
 	setupDialog();
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "smartDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "smartDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a SmartDialog */
 SmartDialog::~SmartDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "smartDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "smartDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void SmartDialog::setupDialog()
@@ -142,7 +152,8 @@ void SmartDialog::setupDialog()
 
 void SmartDialog::setupConnections()
 {
-	connect(this, SIGNAL(user1Clicked()), SLOT(saveSmartReport()));
+	connect(buttonBox->button(QDialogButtonBox::Save), SIGNAL(clicked()), SLOT(saveSmartReport()));
+	connect(buttonBox->button(QDialogButtonBox::Close), SIGNAL(clicked()), SLOT(close()));
 }
 
 QString SmartDialog::toHtml() const

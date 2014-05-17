@@ -32,14 +32,17 @@
 #include "util/htmlreport.h"
 
 #include <QCloseEvent>
-#include <QTime>
+#include <QDialogButtonBox>
 #include <QFont>
 #include <QKeyEvent>
 #include <QFile>
+#include <QPushButton>
 #include <QTextStream>
 
 #include <kapplication.h>
 #include <KLocalizedString>
+#include <KConfigGroup>
+#include <KSharedConfig>
 #include <kmessagebox.h>
 #include <kfiledialog.h>
 #include <krun.h>
@@ -63,7 +66,7 @@ static QWidget* mainWindow(QWidget* w)
 	@param orunner the OperationRunner whose progress this dialog is showing
 */
 ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunner) :
-	KDialog(parent),
+	QDialog(parent),
 	m_ProgressDialogWidget(new ApplyProgressDialogWidget(this)),
 	m_ProgressDetailsWidget(new ApplyProgressDetailsWidget(this)),
 	m_OperationRunner(orunner),
@@ -75,13 +78,25 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
 	m_CurrentJobItem(NULL),
 	m_LastReportUpdate(0)
 {
-	setMainWidget(&dialogWidget());
-	setDetailsWidget(&detailsWidget());
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&dialogWidget());
+	QFrame* detailsBox = new QFrame( this );
+	mainLayout->addWidget(detailsBox);
+	QVBoxLayout *detailsLayout = new QVBoxLayout(detailsBox);
+	detailsLayout->addWidget(&detailsWidget());
+	detailsWidget().hide();
 
-	showButtonSeparator(true);
 	setAttribute(Qt::WA_ShowModal, true);
 
-	setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Details);
+	dialogButtonBox = new QDialogButtonBox;
+	okButton = dialogButtonBox->addButton( QDialogButtonBox::Ok );
+	cancelButton = dialogButtonBox->addButton( QDialogButtonBox::Cancel );
+	detailsButton = new QPushButton;
+	detailsButton->setText(i18n("&Details") + " >>");
+	detailsButton->setIcon(QIcon::fromTheme("help-about"));
+	dialogButtonBox->addButton(detailsButton, QDialogButtonBox::ActionRole);
+	mainLayout->addWidget(dialogButtonBox);
 
 	dialogWidget().treeTasks().setColumnWidth(0, width() * 0.8);
 	detailsWidget().buttonBrowser().setIcon(QIcon::fromTheme("document-open"));
@@ -89,14 +104,15 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
 
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "applyProgressDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "applyProgressDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a ProgressDialog */
 ApplyProgressDialog::~ApplyProgressDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "applyProgressDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "applyProgressDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 	delete m_Report;
 }
 
@@ -111,6 +127,9 @@ void ApplyProgressDialog::setupConnections()
 	connect(&timer(), SIGNAL(timeout()), SLOT(onSecondElapsed()));
 	connect(&detailsWidget().buttonSave(), SIGNAL(clicked()), SLOT(saveReport()));
 	connect(&detailsWidget().buttonBrowser(), SIGNAL(clicked()), SLOT(browserReport()));
+	connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(detailsButton, SIGNAL(clicked()), this, SLOT(toggleDetails()));
 }
 
 /** Shows the dialog */
@@ -124,8 +143,8 @@ void ApplyProgressDialog::show()
 	dialogWidget().progressTotal().setValue(0);
 
 	dialogWidget().treeTasks().clear();
-	showButton(KDialog::Ok, false);
-	showButton(KDialog::Cancel, true);
+	okButton->setVisible(false);
+	cancelButton->setVisible(true);
 
 	timer().start(1000);
 	time().start();
@@ -134,7 +153,7 @@ void ApplyProgressDialog::show()
 
 	onSecondElapsed(); // resets the total time output label
 
-	KDialog::show();
+	QDialog::show();
 }
 
 void ApplyProgressDialog::resetReport()
@@ -153,19 +172,25 @@ void ApplyProgressDialog::resetReport()
 void ApplyProgressDialog::closeEvent(QCloseEvent* e)
 {
 	e->ignore();
-	slotButtonClicked(operationRunner().isRunning() ? KDialog::Cancel : KDialog::Ok);
+	operationRunner().isRunning() ? onCancelButton() : onOkButton();
 }
 
-void ApplyProgressDialog::slotButtonClicked(int button)
+void ApplyProgressDialog::toggleDetails()
 {
-	if (button == KDialog::Details)
-	{
-		KDialog::slotButtonClicked(button);
-		updateReport(true);
-		return;
-	}
+	const bool isVisible = detailsWidget().isVisible();
+	detailsWidget().setVisible(!isVisible);
+	detailsButton->setText(i18n("&Details") + (isVisible ? " >>" : " <<"));
+}
 
-	if (button == KDialog::Cancel && operationRunner().isRunning())
+void ApplyProgressDialog::onDetailsButton()
+{
+	updateReport(true);
+	return;
+}
+
+void ApplyProgressDialog::onCancelButton()
+{
+	if (operationRunner().isRunning())
 	{
 		// only cancel once
 		if (operationRunner().isCancelling())
@@ -173,7 +198,7 @@ void ApplyProgressDialog::slotButtonClicked(int button)
 
 		KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
-		enableButtonCancel(false);
+		cancelButton->setEnabled(false);
 		setStatus(i18nc("@info:progress", "Waiting for operation to finish..."));
 		repaint();
 		dialogWidget().repaint();
@@ -181,7 +206,7 @@ void ApplyProgressDialog::slotButtonClicked(int button)
 		// suspend the runner, so it doesn't happily carry on while the user decides
 		// if he really wants to cancel
  		operationRunner().suspendMutex().lock();
-		enableButtonCancel(true);
+		cancelButton->setEnabled(true);
 
 		KApplication::restoreOverrideCursor();
 
@@ -191,13 +216,15 @@ void ApplyProgressDialog::slotButtonClicked(int button)
 				operationRunner().cancel();
 
 		operationRunner().suspendMutex().unlock();
-
-		return;
 	}
+	return;
+}
 
+void ApplyProgressDialog::onOkButton()
+{
 	mainWindow(this)->setWindowTitle(savedParentTitle());
 
-	KDialog::accept();
+	QDialog::accept();
 }
 
 void ApplyProgressDialog::onAllOpsFinished()
@@ -218,8 +245,8 @@ void ApplyProgressDialog::onAllOpsError()
 void ApplyProgressDialog::allOpsDone(const QString& msg)
 {
 	dialogWidget().progressTotal().setValue(operationRunner().numJobs());
-	showButton(KDialog::Cancel, false);
-	showButton(KDialog::Ok, true);
+	cancelButton->setVisible(false);
+	okButton->setVisible(true);
 	detailsWidget().buttonSave().setEnabled(true);
 	detailsWidget().buttonBrowser().setEnabled(true);
 	timer().stop();
@@ -315,7 +342,7 @@ void ApplyProgressDialog::setParentTitle(const QString& s)
 
 void ApplyProgressDialog::setStatus(const QString& s)
 {
-	setCaption(s);
+	setWindowTitle(s);
 	dialogWidget().status().setText(s);
 
 	setParentTitle(s);
@@ -370,12 +397,12 @@ void ApplyProgressDialog::keyPressEvent(QKeyEvent* e)
 	{
 		case Qt::Key_Return:
 		case Qt::Key_Enter:
-			if (isButtonEnabled(KDialog::Ok))
-				slotButtonClicked(KDialog::Ok);
+			if (okButton->isEnabled())
+				onOkButton();
 			break;
 
 		case Qt::Key_Escape:
-			slotButtonClicked(isButtonEnabled(KDialog::Cancel) ? KDialog::Cancel : KDialog::Ok);
+			cancelButton->isEnabled() ? onCancelButton() : onOkButton();
 			break;
 
 		default:

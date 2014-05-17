@@ -25,6 +25,7 @@
 #include "util/capacity.h"
 #include "util/externalcommand.h"
 
+#include <QDialog>
 #include <QPointer>
 #include <QString>
 #include <QUuid>
@@ -99,9 +100,9 @@ namespace FS
 
 	bool luks::mount(const QString& deviceNode)
 	{
-		QPointer<DecryptLuksDialog> dlg = new DecryptLuksDialog(deviceNode);
+		QPointer<DecryptLuksDialog> dlg = new DecryptLuksDialog(0, deviceNode); //TODO: parent widget instead of 0
 
-		if (dlg->exec() == KDialog::Accepted)
+		if (dlg->exec() == QDialog::Accepted)
 		{
 			std::vector<QString> commands;
 			commands.push_back("echo");

@@ -23,21 +23,27 @@
 #include <QString>
 #include <QStringList>
 
+#include <KConfigGroup>
+#include <KSharedConfig>
+
 EditMountOptionsDialog::EditMountOptionsDialog(QWidget* parent, const QStringList& options) :
-	KDialog(parent),
+	QDialog(parent),
 	m_DialogWidget(new EditMountOptionsDialogWidget(this, options))
 {
-	setMainWidget(&widget());
-	setCaption(i18nc("@title:window", "Edit additional mount options"));
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&widget());
+	setWindowTitle(i18nc("@title:window", "Edit additional mount options"));
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "editMountOptionsDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "editMountOptionsDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys an EditMOuntOptionsDialog instance */
 EditMountOptionsDialog::~EditMountOptionsDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "editMountOptionsDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "editMountOptionsDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 QStringList EditMountOptionsDialog::options()

@@ -23,7 +23,6 @@
 
 #include "ui_decryptluksdialogwidgetbase.h"
 
-#include <QWidget>
 #include <QLabel>
 #include <QLineEdit>
 

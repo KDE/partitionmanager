@@ -23,32 +23,40 @@
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
 
+#include <QDialogButtonBox>
+#include <QDialog>
+
 #include <KLocalizedString>
-#include <kpushbutton.h>
-#include <kiconloader.h>
+#include <KConfigGroup>
+#include <KSharedConfig>
 
 /** Creates a new FileSystemSupportDialog
 	@param parent the parent object
 */
 FileSystemSupportDialog::FileSystemSupportDialog(QWidget* parent) :
-	KDialog(parent),
+	QDialog(parent),
 	m_FileSystemSupportDialogWidget(new FileSystemSupportDialogWidget(this))
 {
-	setMainWidget(&dialogWidget());
-	setCaption(i18nc("@title:window", "File System Support"));
-	setButtons(KDialog::Ok);
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&dialogWidget());
+	setWindowTitle(i18nc("@title:window", "File System Support"));
+	dialogButtonBox = new QDialogButtonBox(this);
+	dialogButtonBox -> setStandardButtons(QDialogButtonBox::Ok);
+	mainLayout->addWidget(dialogButtonBox);
 
  	setupDialog();
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "fileSystemSupportDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "fileSystemSupportDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a FileSystemSupportDialog */
 FileSystemSupportDialog::~FileSystemSupportDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "fileSystemSupportDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "fileSystemSupportDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 QSize FileSystemSupportDialog::sizeHint() const
@@ -100,6 +108,7 @@ void FileSystemSupportDialog::setupDialog()
 
 void FileSystemSupportDialog::setupConnections()
 {
+	connect(dialogButtonBox->button(QDialogButtonBox::Ok), SIGNAL(clicked()), SLOT(close()));
 	connect(&dialogWidget().buttonRescan(), SIGNAL(clicked()), SLOT(onButtonRescanClicked()));
 }
 

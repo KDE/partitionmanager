@@ -22,9 +22,9 @@
 #include <KLocalizedString>
 
 ScanProgressDialog::ScanProgressDialog(QWidget* parent) :
-	KProgressDialog(parent)
+	QProgressDialog(parent)
 {
-	setCaption(i18nc("@title:window", "Scanning devices..."));
+	setWindowTitle(i18nc("@title:window", "Scanning devices..."));
 	setMinimumWidth(280);
 	setMinimumDuration(150);
 	setAttribute(Qt::WA_ShowModal, true);
@@ -40,7 +40,7 @@ void ScanProgressDialog::setDeviceName(const QString& d)
 
 void ScanProgressDialog::showEvent(QShowEvent* e)
 {
-	setAllowCancel(false);
+	setCancelButton(0);
 
-	KProgressDialog::showEvent(e);
+	QProgressDialog::showEvent(e);
 }

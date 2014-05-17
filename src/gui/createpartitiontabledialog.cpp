@@ -24,20 +24,31 @@
 #include "core/partitiontable.h"
 
 #include <KLocalizedString>
-#include <kmessagebox.h>
+#include <KMessageBox>
+
+#include <QDialogButtonBox>
+#include <QPushButton>
 
 #include <config.h>
 
 CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const Device& d) :
-	KDialog(parent),
+	QDialog(parent),
 	m_DialogWidget(new CreatePartitionTableWidget(this)),
 	m_Device(d)
 {
-	setMainWidget(&widget());
-	setCaption(i18nc("@title:window", "Create a New Partition Table on <filename>%1</filename>", device().deviceNode()));
-	setButtonText(KDialog::Ok, i18nc("@action:button", "&Create New Partition Table"));
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&widget());
+	setWindowTitle(i18nc("@title:window", "Create a New Partition Table on <filename>%1</filename>", device().deviceNode()));
+	dialogButtonBox = new QDialogButtonBox;
+	createButton = dialogButtonBox->addButton( QDialogButtonBox::Ok );
+	createButton->setText(i18n("Create &New Partition Table"));
+	cancelButton = dialogButtonBox->addButton( QDialogButtonBox::Cancel );
+	mainLayout->addWidget(dialogButtonBox);
 
 	connect(&widget().radioMSDOS(), SIGNAL(toggled(bool)), SLOT(onMSDOSToggled(bool)));
+	connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
 }
 
 PartitionTable::TableType CreatePartitionTableDialog::type() const

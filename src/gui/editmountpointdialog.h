@@ -21,7 +21,7 @@
 
 #define EDITMOUNTPOINTDIALOG__H
 
-#include <kdialog.h>
+#include <QDialog>
 
 class EditMountPointDialogWidget;
 class Partition;
@@ -29,7 +29,7 @@ class Partition;
 class QWidget;
 class QString;
 
-class EditMountPointDialog : public KDialog
+class EditMountPointDialog : public QDialog
 {
 	Q_OBJECT
 

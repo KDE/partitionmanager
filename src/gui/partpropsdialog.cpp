@@ -28,10 +28,15 @@
 #include "util/capacity.h"
 #include "util/helpers.h"
 
+#include <QComboBox>
+#include <QDialogButtonBox>
+#include <QLineEdit>
+#include <QPushButton>
 #include <QtAlgorithms>
 
 #include <kmessagebox.h>
-#include <kglobalsettings.h>
+#include <KConfigGroup>
+#include <KSharedConfig>
 #include <KLocalizedString>
 #include <kpushbutton.h>
 #include <klineedit.h>
@@ -42,7 +47,7 @@
 	@param p the Partition to show properties for
 */
 PartPropsDialog::PartPropsDialog(QWidget* parent, Device& d, Partition& p) :
-	KDialog(parent),
+	QDialog(parent),
 	m_Device(d),
 	m_Partition(p),
 	m_WarnFileSystemChange(false),
@@ -50,20 +55,24 @@ PartPropsDialog::PartPropsDialog(QWidget* parent, Device& d, Partition& p) :
 	m_ReadOnly(partition().isMounted() || partition().state() == Partition::StateCopy || partition().state() == Partition::StateRestore || d.partitionTable()->isReadOnly()),
 	m_ForceRecreate(false)
 {
-	setMainWidget(&dialogWidget());
-	setCaption(i18nc("@title:window", "Partition properties: <filename>%1</filename>", partition().deviceNode()));
+	mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&dialogWidget());
+
+	setWindowTitle(i18nc("@title:window", "Partition properties: <filename>%1</filename>", partition().deviceNode()));
 
 	setupDialog();
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "partPropsDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "partPropsDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a PartPropsDialog */
 PartPropsDialog::~PartPropsDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "partPropsDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "partPropsDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 /** @return the new label */
@@ -92,9 +101,15 @@ FileSystem::Type PartPropsDialog::newFileSystemType() const
 
 void PartPropsDialog::setupDialog()
 {
-	setDefaultButton(KDialog::Cancel);
-	enableButtonOk(false);
-	button(KDialog::Cancel)->setFocus();
+	dialogButtonBox = new QDialogButtonBox;
+	okButton = dialogButtonBox->addButton( QDialogButtonBox::Ok );
+	cancelButton = dialogButtonBox->addButton( QDialogButtonBox::Cancel );
+	mainLayout->addWidget(dialogButtonBox);
+	okButton->setEnabled(false);
+	cancelButton->setFocus();
+	cancelButton->setDefault(true);
+	connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 	dialogWidget().partWidget().init(&partition());
 
@@ -264,8 +279,8 @@ void PartPropsDialog::setupConnections()
 
 void PartPropsDialog::setDirty()
 {
-	setDefaultButton(KDialog::Ok);
-	enableButtonOk(true);
+	okButton->setEnabled(true);
+	okButton->setDefault(true);
 }
 
 void PartPropsDialog::setupFileSystemComboBox()

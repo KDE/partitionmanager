@@ -729,7 +729,7 @@ void MainWindow::onCreateNewPartitionTable()
 
 	QPointer<CreatePartitionTableDialog> dlg = new CreatePartitionTableDialog(this, *pmWidget().selectedDevice());
 
-	if (dlg->exec() == KDialog::Accepted)
+	if (dlg->exec() == QDialog::Accepted)
 		operationStack().push(new CreatePartitionTableOperation(*pmWidget().selectedDevice(), dlg->type()));
 
 	delete dlg;
@@ -1000,7 +1000,7 @@ void MainWindow::onPropertiesDevice(const QString&)
 		Device& d = *pmWidget().selectedDevice();
 
 		QPointer<DevicePropsDialog> dlg = new DevicePropsDialog(this, d);
-		if (dlg->exec() == KDialog::Accepted)
+		if (dlg->exec() == QDialog::Accepted)
 		{
 			if (d.partitionTable()->type() == PartitionTable::msdos && dlg->sectorBasedAlignment())
 				d.partitionTable()->setType(d, PartitionTable::msdos_sectorbased);

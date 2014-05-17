@@ -21,11 +21,14 @@
 
 #define DEVICEPROPSDIALOG__H
 
-#include <kdialog.h>
+#include <QDialog>
 
 class Device;
 class DevicePropsWidget;
 
+class QDialogButtonBox;
+class QPushButton;
+class QVBoxLayout;
 class QWidget;
 class QString;
 
@@ -35,7 +38,7 @@ class QString;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class DevicePropsDialog : public KDialog
+class DevicePropsDialog : public QDialog
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(DevicePropsDialog)
@@ -67,6 +70,11 @@ class DevicePropsDialog : public KDialog
 	private:
 		Device& m_Device;
 		DevicePropsWidget* m_DialogWidget;
+
+		QDialogButtonBox* dialogButtonBox;
+		QPushButton* okButton;
+		QPushButton* cancelButton;
+		QVBoxLayout *mainLayout;
 };
 
 #endif

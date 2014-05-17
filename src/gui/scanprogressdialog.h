@@ -21,11 +21,11 @@
 
 #define SCANPROGRESSDIALOG__H
 
-#include <kprogressdialog.h>
+#include <QProgressDialog>
 
 class QShowEvent;
 
-class ScanProgressDialog : public KProgressDialog
+class ScanProgressDialog : public QProgressDialog
 {
 	Q_OBJECT
 
@@ -36,7 +36,7 @@ class ScanProgressDialog : public KProgressDialog
 		virtual void showEvent(QShowEvent* e);
 
 	public:
-		void setProgress(quint32 p) { progressBar()->setValue(p); }
+		void setProgress(quint32 p) { setValue(p); }
 		void setDeviceName(const QString& d);
 };
 

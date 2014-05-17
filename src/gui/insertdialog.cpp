@@ -27,6 +27,8 @@
 
 #include "ops/resizeoperation.h"
 
+#include <KConfigGroup>
+#include <KSharedConfig>
 #include <KLocalizedString>
 
 /** Creates a new InsertDialog instance.
@@ -39,7 +41,7 @@ InsertDialog::InsertDialog(QWidget* parent, Device& device, Partition& insertedP
 	SizeDialogBase(parent, device, insertedPartition, destpartition.firstSector(), destpartition.lastSector()),
 	m_DestPartition(destpartition)
 {
-	setCaption(i18nc("@title:window", "Insert a partition"));
+	setWindowTitle(i18nc("@title:window", "Insert a partition"));
 
 	partition().move(destPartition().firstSector());
 	partition().fileSystem().move(destPartition().fileSystem().firstSector());
@@ -52,14 +54,15 @@ InsertDialog::InsertDialog(QWidget* parent, Device& device, Partition& insertedP
 	setupConstraints();
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "insertDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "insertDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys an InsertDialog instance */
 InsertDialog::~InsertDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "insertDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "insertDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 bool InsertDialog::canGrow() const

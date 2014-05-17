@@ -24,25 +24,28 @@
 
 #include <kmessagebox.h>
 #include <KLocalizedString>
-#include <kguiitem.h>
-#include <kstandardguiitem.h>
+#include <KConfigGroup>
+#include <KSharedConfig>
 
 EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
-	KDialog(parent),
+	QDialog(parent),
 	m_Partition(p),
 	m_DialogWidget(new EditMountPointDialogWidget(this, partition()))
 {
-	setMainWidget(&widget());
-	setCaption(i18nc("@title:window", "Edit mount point for <filename>%1</filename>", p.deviceNode()));
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&widget());
+	setWindowTitle(i18nc("@title:window", "Edit mount point for <filename>%1</filename>", p.deviceNode()));
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "editMountPointDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "editMountPointDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys an EditMOuntOptionsDialog instance */
 EditMountPointDialog::~EditMountPointDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "editMountPointDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "editMountPointDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void EditMountPointDialog::accept()
@@ -59,5 +62,5 @@ void EditMountPointDialog::accept()
 	if (widget().acceptChanges() && widget().writeMountpoints("/etc/fstab"))
 		partition().setMountPoint(widget().editPath().text());
 
-	KDialog::accept();
+	QDialog::accept();
 }

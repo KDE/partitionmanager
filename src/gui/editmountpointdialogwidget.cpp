@@ -154,7 +154,7 @@ void EditMountPointDialogWidget::on_m_ButtonMore_clicked(bool)
 {
 	QPointer<EditMountOptionsDialog>  dlg = new EditMountOptionsDialog(this, m_Options.split(','));
 
-	if (dlg->exec() == KDialog::Accepted)
+	if (dlg->exec() == QDialog::Accepted)
 		setupOptions(dlg->options());
 
 	delete dlg;

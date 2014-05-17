@@ -25,11 +25,13 @@
 
 #include "core/partitiontable.h"
 
-#include <kdialog.h>
+#include <QDialog>
 
 class Device;
+class QDialogButtonBox;
+class QPushButton;
 
-class CreatePartitionTableDialog : public KDialog
+class CreatePartitionTableDialog : public QDialog
 {
 	Q_OBJECT
 
@@ -50,6 +52,10 @@ class CreatePartitionTableDialog : public KDialog
 	private:
 		CreatePartitionTableWidget* m_DialogWidget;
 		const Device& m_Device;
+
+		QDialogButtonBox* dialogButtonBox;
+		QPushButton* createButton;
+		QPushButton* cancelButton;
 };
 
 

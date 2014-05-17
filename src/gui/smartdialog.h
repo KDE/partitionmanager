@@ -21,7 +21,7 @@
 
 #define SMARTDIALOG__H
 
-#include <kdialog.h>
+#include <QDialog>
 
 class Device;
 class SmartDialogWidget;
@@ -29,6 +29,7 @@ class SmartDialogWidget;
 class QWidget;
 class QString;
 class QPoint;
+class QDialogButtonBox;
 
 /** Show SMART properties.
 
@@ -36,7 +37,7 @@ class QPoint;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class SmartDialog : public KDialog
+class SmartDialog : public QDialog
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(SmartDialog)
@@ -63,6 +64,7 @@ class SmartDialog : public KDialog
 	private:
 		Device& m_Device;
 		SmartDialogWidget* m_DialogWidget;
+		QDialogButtonBox* buttonBox;
 };
 
 #endif

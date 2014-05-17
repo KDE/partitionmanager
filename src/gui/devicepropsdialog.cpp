@@ -30,44 +30,55 @@
 #include "util/helpers.h"
 
 #include <KLocalizedString>
-#include <kpushbutton.h>
+#include <KSharedConfig>
+#include <KConfigGroup>
 #include <kiconloader.h>
-#include <kglobal.h>
-#include <kglobalsettings.h>
 
-#include <QTreeWidgetItem>
+#include <QDialogButtonBox>
 #include <QPointer>
+#include <QPushButton>
+#include <QTreeWidgetItem>
 
 /** Creates a new DevicePropsDialog
 	@param parent pointer to the parent widget
 	@param d the Device to show properties for
 */
 DevicePropsDialog::DevicePropsDialog(QWidget* parent, Device& d) :
-	KDialog(parent),
+	QDialog(parent),
 	m_Device(d),
 	m_DialogWidget(new DevicePropsWidget(this))
 {
-	setMainWidget(&dialogWidget());
-	setCaption(i18nc("@title:window", "Device Properties: <filename>%1</filename>", device().deviceNode()));
+	mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&dialogWidget());
+	setWindowTitle(i18nc("@title:window", "Device Properties: <filename>%1</filename>", device().deviceNode()));
 
 	setupDialog();
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "devicePropsDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "devicePropsDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
+
 }
 
 /** Destroys a DevicePropsDialog */
 DevicePropsDialog::~DevicePropsDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "devicePropsDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "devicePropsDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void DevicePropsDialog::setupDialog()
 {
-	setDefaultButton(KDialog::Cancel);
-	enableButtonOk(false);
-	button(KDialog::Cancel)->setFocus();
+	dialogButtonBox = new QDialogButtonBox;
+	okButton = dialogButtonBox->addButton( QDialogButtonBox::Ok );
+	cancelButton = dialogButtonBox->addButton( QDialogButtonBox::Cancel );
+	mainLayout->addWidget(dialogButtonBox);
+	okButton->setEnabled(false);
+	cancelButton->setFocus();
+	cancelButton->setDefault(true);
+	connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 	QString type = "---";
 	QString maxPrimaries = "---";
@@ -143,8 +154,8 @@ void DevicePropsDialog::setupConnections()
 
 void DevicePropsDialog::setDirty(bool)
 {
-	setDefaultButton(KDialog::Ok);
-	enableButtonOk(true);
+	okButton->setEnabled(true);
+	okButton->setDefault(true);
 }
 
 bool DevicePropsDialog::cylinderBasedAlignment() const

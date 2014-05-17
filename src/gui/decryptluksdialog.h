@@ -23,16 +23,16 @@
 
 #include "gui/decryptluksdialogwidget.h"
 
-#include <KDialog>
+#include <QDialog>
 
 class Device;
 
-class DecryptLuksDialog : public KDialog
+class DecryptLuksDialog : public QDialog
 {
 	Q_OBJECT
 
 	public:
-		DecryptLuksDialog(/*QWidget* parent, */const QString& deviceNode);
+		DecryptLuksDialog(QWidget* parent, const QString& deviceNode);
 
 	protected:
 		DecryptLuksDialogWidget& widget() { return *m_DialogWidget; }

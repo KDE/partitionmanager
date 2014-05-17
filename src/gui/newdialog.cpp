@@ -33,7 +33,9 @@
 #include <QtAlgorithms>
 
 #include <kglobalsettings.h>
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
 
 /** Creates a NewDialog
 	@param parent the parent widget
@@ -45,19 +47,20 @@ NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPart
 	SizeDialogBase(parent, device, unallocatedPartition, unallocatedPartition.firstSector(), unallocatedPartition.lastSector()),
 	m_PartitionRoles(r)
 {
-	setCaption(i18nc("@title:window", "Create a new partition"));
+	setWindowTitle(i18nc("@title:window", "Create a new partition"));
 
 	setupDialog();
 	setupConstraints();
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "newDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "newDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 NewDialog::~NewDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "newDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "newDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void NewDialog::setupDialog()
@@ -112,7 +115,7 @@ void NewDialog::accept()
 		partition().setFileSystem(FileSystemFactory::create(FileSystem::Extended, partition().firstSector(), partition().lastSector()));
 	}
 
-	KDialog::accept();
+	QDialog::accept();
 }
 
 void NewDialog::onRoleChanged(bool)

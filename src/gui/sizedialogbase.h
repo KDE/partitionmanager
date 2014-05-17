@@ -25,8 +25,8 @@
 
 #include <qglobal.h>
 #include <QDebug>
-
-#include <kdialog.h>
+#include <QDialog>
+#include <QPushButton>
 
 class Device;
 class Partition;
@@ -37,7 +37,7 @@ class SizeDetailsWidget;
 /** Base class for all dialogs moving or resizing Partitions.
 	@author Volker Lanz <vl@fidra.de>
 */
-class SizeDialogBase : public KDialog
+class SizeDialogBase : public QDialog
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(SizeDialogBase)
@@ -95,6 +95,8 @@ class SizeDialogBase : public KDialog
 		void onSpinLastSectorChanged(double newLast);
 		void onAlignToggled(bool);
 
+		void toggleDetails();
+
 	protected:
 		SizeDialogWidget* m_SizeDialogWidget;
 		SizeDetailsWidget* m_SizeDetailsWidget;
@@ -104,6 +106,11 @@ class SizeDialogBase : public KDialog
 		qint64 m_MaximumLastSector;
 		qint64 m_MinimumLength;
 		qint64 m_MaximumLength;
+
+	public:
+		QPushButton* okButton;
+		QPushButton* cancelButton;
+		QPushButton* detailsButton;
 };
 
 #endif
