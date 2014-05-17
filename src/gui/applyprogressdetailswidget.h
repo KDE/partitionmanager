@@ -34,7 +34,7 @@ class ApplyProgressDetailsWidget : public QWidget, public Ui::ApplyProgressDetai
 		ApplyProgressDetailsWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
 
 	public:
-		KTextEdit& editReport() { Q_ASSERT(m_EditReport); return *m_EditReport; }
+		QTextEdit& editReport() { Q_ASSERT(m_EditReport); return *m_EditReport; }
 		QPushButton& buttonSave() { Q_ASSERT(m_ButtonSave); return *m_ButtonSave; }
 		QPushButton& buttonBrowser() { Q_ASSERT(m_ButtonBrowser); return *m_ButtonBrowser; }
 };

@@ -45,7 +45,6 @@
 #include <krun.h>
 #include <ktemporaryfile.h>
 #include <kaboutdata.h>
-#include <ktextedit.h>
 #include <kio/netaccess.h>
 #include <kio/jobuidelegate.h>
 #include <kio/copyjob.h>
@@ -231,7 +230,7 @@ void ApplyProgressDialog::allOpsDone(const QString& msg)
 
 void ApplyProgressDialog::updateReport(bool force)
 {
-	// Rendering the HTML in the KTextEdit is extremely expensive. So make sure not to do that
+	// Rendering the HTML in the QTextEdit is extremely expensive. So make sure not to do that
 	// unnecessarily and not too often:
 	// (1) If the widget isn't visible, don't update.
 	// (2) Also don't update if the last update was n msecs ago, BUT
