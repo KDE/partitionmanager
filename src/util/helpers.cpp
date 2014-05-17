@@ -31,7 +31,6 @@
 #include <kcomponentdata.h>
 #include <kstandarddirs.h>
 #include <kcmdlineargs.h>
-#include <kmenu.h>
 #include <kstringhandler.h>
 
 #include <solid/device.h>
@@ -39,6 +38,7 @@
 #include <QProcess>
 #include <QFileInfo>
 #include <QApplication>
+#include <QMenu>
 #include <QPainter>
 #include <QIcon>
 #include <QPixmap>
@@ -159,9 +159,7 @@ QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
 
 void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree)
 {
-	KMenu headerMenu;
-
-	headerMenu.addTitle(i18nc("@title:menu", "Columns"));
+	QMenu headerMenu(i18nc("@title:menu", "Columns"));
 
 	QHeaderView* header = tree.header();
 

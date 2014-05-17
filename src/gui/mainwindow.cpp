@@ -61,7 +61,6 @@
 #include <kstandardguiitem.h>
 #include <kaction.h>
 #include <kapplication.h>
-#include <kmenu.h>
 #include <KLocalizedString>
 #include <kxmlguifactory.h>
 #include <kfiledialog.h>
@@ -75,6 +74,7 @@
 #include <QPointer>
 #include <QFile>
 #include <QDateTime>
+#include <QMenu>
 #include <QTextStream>
 
 #include <config.h>
@@ -482,7 +482,7 @@ void MainWindow::updateWindowTitle()
 
 void MainWindow::on_m_ListOperations_contextMenuRequested(const QPoint& pos)
 {
-	KMenu* menu = static_cast<KMenu*>(guiFactory()->container("edit", this));
+	QMenu* menu = static_cast<QMenu*>(guiFactory()->container("edit", this));
 
 	if (menu)
 		menu->exec(pos);
@@ -490,7 +490,7 @@ void MainWindow::on_m_ListOperations_contextMenuRequested(const QPoint& pos)
 
 void MainWindow::on_m_TreeLog_contextMenuRequested(const QPoint& pos)
 {
-	KMenu* menu = static_cast<KMenu*>(guiFactory()->container("log", this));
+	QMenu* menu = static_cast<QMenu*>(guiFactory()->container("log", this));
 
 	if (menu)
 		menu->exec(pos);
@@ -498,7 +498,7 @@ void MainWindow::on_m_TreeLog_contextMenuRequested(const QPoint& pos)
 
 void MainWindow::on_m_ListDevices_contextMenuRequested(const QPoint& pos)
 {
-	KMenu* menu = static_cast<KMenu*>(guiFactory()->container("device", this));
+	QMenu* menu = static_cast<QMenu*>(guiFactory()->container("device", this));
 
 	if (menu)
 		menu->exec(pos);
@@ -506,15 +506,15 @@ void MainWindow::on_m_ListDevices_contextMenuRequested(const QPoint& pos)
 
 void MainWindow::on_m_PartitionManagerWidget_contextMenuRequested(const QPoint& pos)
 {
-	KMenu* menu = NULL;
+	QMenu* menu = NULL;
 
 	if (pmWidget().selectedPartition() == NULL)
 	{
 		if (pmWidget().selectedDevice() != NULL)
-			menu = static_cast<KMenu*>(guiFactory()->container("device", this));
+			menu = static_cast<QMenu*>(guiFactory()->container("device", this));
 	}
 	else
-		menu = static_cast<KMenu*>(guiFactory()->container("partition", this));
+		menu = static_cast<QMenu*>(guiFactory()->container("partition", this));
 
 	if (menu)
 		menu->exec(pos);
@@ -595,7 +595,7 @@ void MainWindow::on_m_DeviceScanner_finished()
 
 void MainWindow::updateSeletedDeviceMenu()
 {
-	KMenu* devicesMenu = static_cast<KMenu*>(guiFactory()->container("selectedDevice", this));
+	QMenu* devicesMenu = static_cast<QMenu*>(guiFactory()->container("selectedDevice", this));
 	devicesMenu->clear();
 
 	devicesMenu->setEnabled(!operationStack().previewDevices().isEmpty());
@@ -614,7 +614,7 @@ void MainWindow::updateSeletedDeviceMenu()
 void MainWindow::onSelectedDeviceMenuTriggered(bool)
 {
 	QAction* action = qobject_cast<QAction*>(sender());
-	KMenu* devicesMenu = static_cast<KMenu*>(guiFactory()->container("selectedDevice", this));
+	QMenu* devicesMenu = static_cast<QMenu*>(guiFactory()->container("selectedDevice", this));
 
 	if (action == NULL || action->parent() != devicesMenu)
 		return;
@@ -627,7 +627,7 @@ void MainWindow::onSelectedDeviceMenuTriggered(bool)
 
 void MainWindow::on_m_ListDevices_selectionChanged(const QString& device_node)
 {
-	KMenu* devicesMenu = static_cast<KMenu*>(guiFactory()->container("selectedDevice", this));
+	QMenu* devicesMenu = static_cast<QMenu*>(guiFactory()->container("selectedDevice", this));
 
 	foreach (QAction* entry, qFindChildren<QAction*>(devicesMenu))
 		entry->setChecked(entry->data().toString() == device_node);
