@@ -37,8 +37,6 @@ class Device;
 class Partition;
 class InfoPane;
 
-class KActionCollection;
-
 class QWidget;
 class QLabel;
 class QCloseEvent;
