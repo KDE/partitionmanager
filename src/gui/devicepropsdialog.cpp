@@ -109,16 +109,16 @@ void DevicePropsDialog::setupDialog()
 	dialogWidget().capacity().setText(Capacity::formatByteSize(device().capacity()));
 
 
-	const QString cyls = KGlobal::locale()->formatNumber(device().cylinders(), 0);
-	const QString heads = QString::number(device().heads());
-	const QString sectors = KGlobal::locale()->formatNumber(device().sectorsPerTrack(), 0);
+	const QString cyls = QLocale().toString((device().cylinders()));
+	const QString heads = QLocale().toString((device().heads()));
+	const QString sectors = QLocale().toString((device().sectorsPerTrack()));
 	dialogWidget().chs().setText(QString("%1/%2/%3").arg(cyls).arg(heads).arg(sectors));
 
 	dialogWidget().cylinderSize().setText(i18ncp("@label", "1 Sector", "%1 Sectors", device().cylinderSize()));
 	dialogWidget().primariesMax().setText(maxPrimaries);
 	dialogWidget().logicalSectorSize().setText(Capacity::formatByteSize(device().logicalSectorSize()));
 	dialogWidget().physicalSectorSize().setText(Capacity::formatByteSize(device().physicalSectorSize()));
-	dialogWidget().totalSectors().setText(KGlobal::locale()->formatNumber(device().totalSectors(), 0));
+	dialogWidget().totalSectors().setText(QLocale().toString((device().totalSectors())));
 	dialogWidget().type().setText(type);
 
 	if (device().smartStatus().isValid())

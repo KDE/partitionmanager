@@ -160,9 +160,9 @@ void PartPropsDialog::setupDialog()
 		dialogWidget().used().setText(Capacity::invalidString());
 	}
 
-	dialogWidget().firstSector().setText(KGlobal::locale()->formatNumber(partition().firstSector(), 0));
-	dialogWidget().lastSector().setText(KGlobal::locale()->formatNumber(partition().lastSector(), 0));
-	dialogWidget().numSectors().setText(KGlobal::locale()->formatNumber(partition().length(), 0));
+	dialogWidget().firstSector().setText(QLocale().toString(partition().firstSector()));
+	dialogWidget().lastSector().setText(QLocale().toString(partition().lastSector()));
+	dialogWidget().numSectors().setText(QLocale().toString(partition().length()));
 
 	setupFlagsList();
 
