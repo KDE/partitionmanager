@@ -133,7 +133,7 @@ namespace FS
 
 	bool fat16::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
-		report.line() << i18nc("@info/plain", "Setting label for partition <filename>%1</filename> to %2", deviceNode, newLabel);
+		report.line() << xi18nc("@info/plain", "Setting label for partition <filename>%1</filename> to %2", deviceNode, newLabel);
 
 		return fatlabel_set_label(deviceNode.toLocal8Bit(), newLabel.toLocal8Bit()) == 0;
 	}

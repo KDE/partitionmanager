@@ -47,7 +47,7 @@ ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minF
 	m_ResizedFirstSector(p.firstSector()),
 	m_ResizedLastSector(p.lastSector())
 {
-	setWindowTitle(i18nc("@title:window", "Resize/move partition: <filename>%1</filename>", partition().deviceNode()));
+	setWindowTitle(xi18nc("@title:window", "Resize/move partition: <filename>%1</filename>", partition().deviceNode()));
 
 	dialogWidget().hideRole();
 	dialogWidget().hideFileSystem();

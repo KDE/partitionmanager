@@ -25,12 +25,7 @@
 
 #include <QTextDocument>
 
-#include <kdeversion.h>
-#include <kdatetime.h>
-#include <kglobal.h>
-#include <kaboutdata.h>
 #include <KLocalizedString>
-#include <kcomponentdata.h>
 
 #include <sys/utsname.h>
 #include <unistd.h>
@@ -80,10 +75,10 @@ QString Report::toHtml() const
 		s += "<div style='margin-left:24px;margin-top:12px;margin-bottom:12px'>\n";
 
 	if (!command().isEmpty())
-		s += "\n<b>" + Qt::escape(command()) + "</b>\n\n";
+		s += "\n<b>" + QString(command()).toHtmlEscaped() + "</b>\n\n";
 
 	if (!output().isEmpty())
-		s += "<pre>" + Qt::escape(output()) + "</pre>\n\n";
+		s += "<pre>" + QString(output()).toHtmlEscaped() + "</pre>\n\n";
 
 	if (children().size() == 0)
 		s += "<br/>\n";
@@ -92,7 +87,7 @@ QString Report::toHtml() const
 			s += child->toHtml();
 
 	if (!status().isEmpty())
-		s += "<b>" + Qt::escape(status()) + "</b><br/>\n\n";
+		s += "<b>" + QString(status()).toHtmlEscaped() + "</b><br/>\n\n";
 
 	if (parent() != NULL)
 	s += "</div>\n\n";

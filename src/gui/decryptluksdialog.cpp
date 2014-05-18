@@ -38,7 +38,7 @@ DecryptLuksDialog::DecryptLuksDialog(QWidget* parent, const QString& deviceNode)
 	QVBoxLayout *mainLayout = new QVBoxLayout(this);
 	setLayout(mainLayout);
 	mainLayout->addWidget(&widget());
-	setWindowTitle(i18nc("@title:window", "Decrypt LUKS partition on <filename>%1</filename>", this->deviceNode()));
+	setWindowTitle(xi18nc("@title:window", "Decrypt LUKS partition on <filename>%1</filename>", this->deviceNode()));
 
 	QDialogButtonBox* dialogButtonBox = new QDialogButtonBox;
 	QPushButton* decryptButton = new QPushButton;

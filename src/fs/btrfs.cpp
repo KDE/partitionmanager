@@ -25,9 +25,9 @@
 
 #include <QString>
 #include <QRegExp>
+#include <QTemporaryDir>
 
 #include <KLocalizedString>
-#include <ktempdir.h>
 
 namespace FS
 {
@@ -134,33 +134,33 @@ namespace FS
 
 	bool btrfs::resize(Report& report, const QString& deviceNode, qint64 length) const
 	{
-		KTempDir tempDir;
-		if (!tempDir.exists())
+		QTemporaryDir tempDir;
+		if (!tempDir.isValid())
 		{
-			report.line() << i18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: Could not create temp dir.", deviceNode);
+			report.line() << xi18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: Could not create temp dir.", deviceNode);
 			return false;
 		}
 
 		bool rval = false;
 
-		ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << "-t" << "btrfs" << deviceNode << tempDir.name());
+		ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << "-t" << "btrfs" << deviceNode << tempDir.path());
 
 		if (mountCmd.run(-1) && mountCmd.exitCode() == 0)
 		{
-			ExternalCommand resizeCmd(report, "btrfs", QStringList() << "filesystem" << "resize" << QString::number(length) << tempDir.name());
-			
+			ExternalCommand resizeCmd(report, "btrfs", QStringList() << "filesystem" << "resize" << QString::number(length) << tempDir.path());
+
 			if (resizeCmd.run(-1) && resizeCmd.exitCode() == 0)
 				rval = true;
 			else
-				report.line() << i18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: btrfs file system resize failed.", deviceNode);
+				report.line() << xi18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: btrfs file system resize failed.", deviceNode);
 
-			ExternalCommand unmountCmd(report, "umount", QStringList() << tempDir.name());
+			ExternalCommand unmountCmd(report, "umount", QStringList() << tempDir.path());
 
 			if (!unmountCmd.run(-1) && unmountCmd.exitCode() == 0 )
-				report.line() << i18nc("@info/plain", "Warning: Resizing Btrfs file system on partition <filename>%1</filename>: Unmount failed.", deviceNode);
+				report.line() << xi18nc("@info/plain", "Warning: Resizing Btrfs file system on partition <filename>%1</filename>: Unmount failed.", deviceNode);
 		}
 		else
-			report.line() << i18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
+			report.line() << xi18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
 
 		return rval;
 	}

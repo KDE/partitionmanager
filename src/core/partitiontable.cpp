@@ -31,7 +31,6 @@
 #include "util/globallog.h"
 
 #include <KLocalizedString>
-#include <kglobal.h>
 
 #include <QDebug>
 #include <QFile>
@@ -401,7 +400,7 @@ QString PartitionTable::tableTypeToName(TableType l)
 		if (l == tableTypes[i].type)
 			return tableTypes[i].name;
 
-	return i18nc("@item/plain partition table name", "unknown");
+	return i18nc("@item partition table name", "unknown");
 }
 
 qint64 PartitionTable::maxPrimariesForTableType(TableType l)

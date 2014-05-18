@@ -194,7 +194,7 @@ namespace FS
 
 	bool ntfs::updateBootSector(Report& report, const QString& deviceNode) const
 	{
-		report.line() << i18nc("@info/plain", "Updating boot sector for NTFS file system on partition <filename>%1</filename>.", deviceNode);
+		report.line() << xi18nc("@info/plain", "Updating boot sector for NTFS file system on partition <filename>%1</filename>.", deviceNode);
 
 		quint32 n = firstSector();
 		char* s = reinterpret_cast<char*>(&n);
@@ -207,23 +207,23 @@ namespace FS
 		QFile device(deviceNode);
 		if (!device.open(QFile::ReadWrite | QFile::Unbuffered))
 		{
-			Log() << i18nc("@info/plain", "Could not open partition <filename>%1</filename> for writing when trying to update the NTFS boot sector.", deviceNode);
+			Log() << xi18nc("@info/plain", "Could not open partition <filename>%1</filename> for writing when trying to update the NTFS boot sector.", deviceNode);
 			return false;
 		}
 
 		if (!device.seek(0x1c))
 		{
-			Log() << i18nc("@info/plain", "Could not seek to position 0x1c on partition <filename>%1</filename> when trying to update the NTFS boot sector.", deviceNode);
+			Log() << xi18nc("@info/plain", "Could not seek to position 0x1c on partition <filename>%1</filename> when trying to update the NTFS boot sector.", deviceNode);
 			return false;
 		}
 
 		if (device.write(s, 4) != 4)
 		{
-			Log() << i18nc("@info/plain", "Could not write new start sector to partition <filename>%1</filename> when trying to update the NTFS boot sector.", deviceNode);
+			Log() << xi18nc("@info/plain", "Could not write new start sector to partition <filename>%1</filename> when trying to update the NTFS boot sector.", deviceNode);
 			return false;
 		}
 
-		Log() << i18nc("@info/plain", "Updated NTFS boot sector for partition <filename>%1</filename> successfully.", deviceNode);
+		Log() << xi18nc("@info/plain", "Updated NTFS boot sector for partition <filename>%1</filename> successfully.", deviceNode);
 
 		return true;
 	}

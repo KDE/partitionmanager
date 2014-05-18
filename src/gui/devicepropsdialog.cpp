@@ -32,7 +32,7 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <KConfigGroup>
-#include <kiconloader.h>
+#include <KIconThemes/KIconLoader>
 
 #include <QDialogButtonBox>
 #include <QPointer>
@@ -51,7 +51,7 @@ DevicePropsDialog::DevicePropsDialog(QWidget* parent, Device& d) :
 	mainLayout = new QVBoxLayout(this);
 	setLayout(mainLayout);
 	mainLayout->addWidget(&dialogWidget());
-	setWindowTitle(i18nc("@title:window", "Device Properties: <filename>%1</filename>", device().deviceNode()));
+	setWindowTitle(xi18nc("@title:window", "Device Properties: <filename>%1</filename>", device().deviceNode()));
 
 	setupDialog();
 	setupConnections();
@@ -126,12 +126,12 @@ void DevicePropsDialog::setupDialog()
 		if (device().smartStatus().status())
 		{
 			dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "good"));
-			dialogWidget().smartStatusIcon().setPixmap(SmallIcon("dialog-ok"));
+			dialogWidget().smartStatusIcon().setPixmap(KIconLoader().loadIcon(QLatin1String("dialog-ok"), KIconLoader::Small));
 		}
 		else
 		{
 			dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "BAD"));
-			dialogWidget().smartStatusIcon().setPixmap(SmallIcon("dialog-warning"));
+			dialogWidget().smartStatusIcon().setPixmap(KIconLoader().loadIcon(QLatin1String("dialog-warning"), KIconLoader::Small));
 		}
 	}
 	else

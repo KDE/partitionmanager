@@ -17,13 +17,12 @@
 
 project(partitionmanager)
 
-cmake_minimum_required(VERSION 2.6.2)
-
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/")
+cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 
 set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 
+set(QT_MIN_VERSION "5.3.0")
 set(VERSION_MAJOR "1")
 set(VERSION_MINOR "0")
 set(VERSION_RELEASE "60")
@@ -31,26 +30,59 @@ set(VERSION_SUFFIX "")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE}${VERSION_SUFFIX})
 add_definitions(-D'VERSION="${VERSION}"')
 
-set(KDE_MIN_VERSION 4.4)
-find_package(KDE4 REQUIRED)
+find_package(ECM 0.0.10 REQUIRED NO_MODULE)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/")
+include(ECMInstallIcons)
+
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
+include(FeatureSummary)
+include(GenerateExportHeader)
+
+find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
+  Core
+  DBus
+  Widgets
+  Sql
+  Test
+)
+
+# Load the frameworks we need
+find_package(KF5 CONFIG REQUIRED COMPONENTS
+  Config
+  DocTools
+  FrameworkIntegration
+  GuiAddons
+  I18n
+  IconThemes
+  Init
+  JobWidgets
+  KIO
+  Service
+  Parts
+  TextEditor
+  WindowSystem
+  XmlGui
+  WidgetsAddons
+)
+
+# use sane compile flags
+add_definitions(
+  -fexceptions
+)
 
 find_package(MSGFMT REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
 pkg_check_modules(LIBATASMART REQUIRED libatasmart)
 
-add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-add_definitions(${KDE4_ENABLE_EXCEPTIONS})
-
-include(KDE4Defaults)
-include(MacroLibrary)
-
 option(ENABLE_UDISKS2 "Use UDisks2 backend." OFF)
 if (ENABLE_UDISKS2)
 	add_definitions(-DENABLE_UDISKS2)
 endif (ENABLE_UDISKS2)
 
-include_directories(${KDE4_INCLUDES} ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} lib/ src/)
+include_directories(${Qt5Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} lib/ src/)
 
 add_subdirectory(lib)
 add_subdirectory(src)

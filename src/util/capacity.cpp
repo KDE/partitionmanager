@@ -22,8 +22,8 @@
 #include "core/partition.h"
 #include "core/device.h"
 
-#include <kglobal.h>
-#include <klocale.h>
+#include <KFormat>
+#include <KLocalizedString>
 
 #include <QDebug>
 
@@ -149,5 +149,5 @@ QString Capacity::formatByteSize(double size, int precision)
 {
 	if (size < 0)
 		return invalidString();
-	return KGlobal::locale()->formatByteSize(size, precision);
+	return KFormat().formatByteSize(size, precision);
 }

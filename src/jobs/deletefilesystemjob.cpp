@@ -79,7 +79,7 @@ bool DeleteFileSystemJob::run(Report& parent)
 				rval = backendPartitionTable->clobberFileSystem(*report, partition());
 
 				if (!rval)
-					report->line() << i18nc("@info/plain", "Could not delete file system on <filename>%1</filename>.", partition().deviceNode());
+					report->line() << xi18nc("@info/plain", "Could not delete file system on <filename>%1</filename>.", partition().deviceNode());
 				else
 					backendPartitionTable->commit();
 
@@ -87,12 +87,12 @@ bool DeleteFileSystemJob::run(Report& parent)
 
 			}
 			else
-				report->line() << i18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to delete file system on <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
+				report->line() << xi18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to delete file system on <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
 
 			delete backendDevice;
 		}
 		else
-			report->line() << i18nc("@info/plain", "Could not delete file system signature for partition <filename>%1</filename>: Failed to open device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
+			report->line() << xi18nc("@info/plain", "Could not delete file system signature for partition <filename>%1</filename>: Failed to open device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
 	}
 
 	jobFinished(*report, rval);
@@ -102,5 +102,5 @@ bool DeleteFileSystemJob::run(Report& parent)
 
 QString DeleteFileSystemJob::description() const
 {
-	return i18nc("@info/plain", "Delete file system on <filename>%1</filename>", partition().deviceNode());
+	return xi18nc("@info/plain", "Delete file system on <filename>%1</filename>", partition().deviceNode());
 }

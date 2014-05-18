@@ -23,11 +23,11 @@
 #include "core/device.h"
 #include "core/partitiontable.h"
 
-#include <KLocalizedString>
-#include <KMessageBox>
-
 #include <QDialogButtonBox>
 #include <QPushButton>
+
+#include <KLocalizedString>
+#include <KMessageBox>
 
 #include <config.h>
 
@@ -39,7 +39,7 @@ CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const De
 	QVBoxLayout *mainLayout = new QVBoxLayout(this);
 	setLayout(mainLayout);
 	mainLayout->addWidget(&widget());
-	setWindowTitle(i18nc("@title:window", "Create a New Partition Table on <filename>%1</filename>", device().deviceNode()));
+	setWindowTitle(xi18nc("@title:window", "Create a New Partition Table on <filename>%1</filename>", device().deviceNode()));
 	dialogButtonBox = new QDialogButtonBox;
 	createButton = dialogButtonBox->addButton( QDialogButtonBox::Ok );
 	createButton->setText(i18n("Create &New Partition Table"));
@@ -67,7 +67,7 @@ void CreatePartitionTableDialog::onMSDOSToggled(bool on)
 	if (on && device().totalSectors() > 0xffffffff)
 	{
 		if (KMessageBox::warningContinueCancel(this,
-				i18nc("@info",
+				xi18nc("@info",
 					"<para>Do you really want to create an MS-Dos partition table on <filename>%1</filename>?</para>"
 					"<para>This device has more than 2^32 sectors. That is the most the MS-Dos partition table type supports, so you will not be able to use the whole device.</para>", device().deviceNode()),
 				i18nc("@title:window", "Really Create MS-Dos Partition Table Type?"),

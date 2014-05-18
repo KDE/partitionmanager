@@ -31,26 +31,25 @@
 #include "util/report.h"
 #include "util/htmlreport.h"
 
+#include <QApplication>
 #include <QCloseEvent>
 #include <QDialogButtonBox>
 #include <QFont>
-#include <QKeyEvent>
 #include <QFile>
+#include <QFileDialog>
+#include <QKeyEvent>
 #include <QPushButton>
+#include <QTemporaryFile>
 #include <QTextStream>
 
-#include <kapplication.h>
-#include <KLocalizedString>
+#include <KAboutData>
 #include <KConfigGroup>
+#include <KIOWidgets/KRun>
+#include <KIO/CopyJob>
+#include <KJobUiDelegate>
+#include <KLocalizedString>
+#include <KMessageBox>
 #include <KSharedConfig>
-#include <kmessagebox.h>
-#include <kfiledialog.h>
-#include <krun.h>
-#include <ktemporaryfile.h>
-#include <kaboutdata.h>
-#include <kio/netaccess.h>
-#include <kio/jobuidelegate.h>
-#include <kio/copyjob.h>
 
 const QString ApplyProgressDialog::m_TimeFormat = "hh:mm:ss";
 
@@ -196,7 +195,7 @@ void ApplyProgressDialog::onCancelButton()
 		if (operationRunner().isCancelling())
 			return;
 
-		KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+		QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
 		cancelButton->setEnabled(false);
 		setStatus(i18nc("@info:progress", "Waiting for operation to finish..."));
@@ -208,7 +207,7 @@ void ApplyProgressDialog::onCancelButton()
  		operationRunner().suspendMutex().lock();
 		cancelButton->setEnabled(true);
 
-		KApplication::restoreOverrideCursor();
+		QApplication::restoreOverrideCursor();
 
 		if (KMessageBox::questionYesNo(this, i18nc("@info", "Do you really want to cancel?"), i18nc("@title:window", "Cancel Running Operations"), KGuiItem(i18nc("@action:button", "Yes, Cancel Operations"), "dialog-ok"), KStandardGuiItem::no()) == KMessageBox::Yes)
 			// in the meantime while we were showing the messagebox, the runner might have finished.
@@ -412,27 +411,28 @@ void ApplyProgressDialog::keyPressEvent(QKeyEvent* e)
 
 void ApplyProgressDialog::saveReport()
 {
-	const KUrl url = KFileDialog::getSaveUrl(KUrl("kfiledialog://saveReport"));
+	const QUrl url = QFileDialog::getSaveFileUrl();
 
 	if (url.isEmpty())
 		return;
 
-	KTemporaryFile tempFile;
+	QTemporaryFile tempFile;
 
 	if (tempFile.open())
 	{
 		QTextStream s(&tempFile);
-		
+
 		HtmlReport html;
-		
+
 		s << html.header()
 			<< report().toHtml()
 			<< html.footer();
 
 		tempFile.close();
 
-		KIO::CopyJob* job = KIO::move(tempFile.fileName(), url, KIO::HideProgressInfo);
-		if (!KIO::NetAccess::synchronousRun(job, NULL))
+		KIO::CopyJob* job = KIO::move(QUrl::fromLocalFile(tempFile.fileName()), url, KIO::HideProgressInfo);
+		job->exec();
+		if ( job->error() )
 			job->ui()->showErrorMessage();
 	}
 	else
@@ -441,11 +441,11 @@ void ApplyProgressDialog::saveReport()
 
 void ApplyProgressDialog::browserReport()
 {
-	KTemporaryFile file;
+	QTemporaryFile file;
 
 	// Make sure the temp file is created somewhere another user can read it: KRun::runUrl() will open
 	// the file as the logged in user, not as the user running our application.
-	file.setFileTemplate("/tmp/" + KGlobal::mainComponent().aboutData()->appName() + "-XXXXXX.html");
+	file.setFileTemplate("/tmp/" + QCoreApplication::applicationName() + "-XXXXXX.html");
 	file.setAutoRemove(false);
 
 	if (file.open())
@@ -453,7 +453,7 @@ void ApplyProgressDialog::browserReport()
 		QTextStream s(&file);
 
 		HtmlReport html;
-		
+
 		s << html.header()
 			<< report().toHtml()
 			<< html.footer();
@@ -465,5 +465,5 @@ void ApplyProgressDialog::browserReport()
 			KMessageBox::sorry(this, i18nc("@info", "The configured external browser could not be run. Please check your settings."), i18nc("@title:window", "Could Not Launch Browser."));
 	}
 	else
-		KMessageBox::sorry(this, i18nc("@info", "Could not create temporary file <filename>%1</filename> for writing.", file.fileName()), i18nc("@title:window", "Could Not Launch Browser."));
+		KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file <filename>%1</filename> for writing.", file.fileName()), i18nc("@title:window", "Could Not Launch Browser."));
 }

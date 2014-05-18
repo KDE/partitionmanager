@@ -71,9 +71,9 @@ bool RestoreFileSystemJob::run(Report& parent)
 		CopySourceFile copySource(fileName(), copyTarget.sectorSize());
 
 		if (!copySource.open())
-			report->line() << i18nc("@info/plain", "Could not open backup file <filename>%1</filename> to restore from.", fileName());
+			report->line() << xi18nc("@info/plain", "Could not open backup file <filename>%1</filename> to restore from.", fileName());
 		else if (!copyTarget.open())
-			report->line() << i18nc("@info/plain", "Could not open target partition <filename>%1</filename> to restore to.", targetPartition().deviceNode());
+			report->line() << xi18nc("@info/plain", "Could not open target partition <filename>%1</filename> to restore to.", targetPartition().deviceNode());
 		else
 		{
 			rval = copyBlocks(*report, copyTarget, copySource);
@@ -112,5 +112,5 @@ bool RestoreFileSystemJob::run(Report& parent)
 
 QString RestoreFileSystemJob::description() const
 {
-	return i18nc("@info/plain", "Restore the file system from file <filename>%1</filename> to partition <filename>%2</filename>", fileName(), targetPartition().deviceNode());
+	return xi18nc("@info/plain", "Restore the file system from file <filename>%1</filename> to partition <filename>%2</filename>", fileName(), targetPartition().deviceNode());
 }

@@ -96,7 +96,7 @@ bool LibPartedDevice::createPartitionTable(Report& report, const PartitionTable&
 
 	if (pedDiskType == NULL)
 	{
-		report.line() << i18nc("@info/plain", "Creating partition table failed: Could not retrieve partition table type \"%1\" for <filename>%2</filename>.", ptable.typeName(), deviceNode());
+		report.line() << xi18nc("@info/plain", "Creating partition table failed: Could not retrieve partition table type \"%1\" for <filename>%2</filename>.", ptable.typeName(), deviceNode());
 		return false;
 	}
 
@@ -104,7 +104,7 @@ bool LibPartedDevice::createPartitionTable(Report& report, const PartitionTable&
 
 	if (dev == NULL)
 	{
-		report.line() << i18nc("@info/plain", "Creating partition table failed: Could not open backend device <filename>%1</filename>.", deviceNode());
+		report.line() << xi18nc("@info/plain", "Creating partition table failed: Could not open backend device <filename>%1</filename>.", deviceNode());
 		return false;
 	}
 
@@ -112,7 +112,7 @@ bool LibPartedDevice::createPartitionTable(Report& report, const PartitionTable&
 
 	if (disk == NULL)
 	{
-		report.line() << i18nc("@info/plain", "Creating partition table failed: Could not create a new partition table in the backend for device <filename>%1</filename>.", deviceNode());
+		report.line() << xi18nc("@info/plain", "Creating partition table failed: Could not create a new partition table in the backend for device <filename>%1</filename>.", deviceNode());
 		return false;
 	}
 

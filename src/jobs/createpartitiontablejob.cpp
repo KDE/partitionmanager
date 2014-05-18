@@ -56,7 +56,7 @@ bool CreatePartitionTableJob::run(Report& parent)
 		delete backendDevice;
 	}
 	else
-		report->line() << i18nc("@info/plain", "Creating partition table failed: Could not open device <filename>%1</filename>.", device().deviceNode());
+		report->line() << xi18nc("@info/plain", "Creating partition table failed: Could not open device <filename>%1</filename>.", device().deviceNode());
 
 	jobFinished(*report, rval);
 
@@ -65,5 +65,5 @@ bool CreatePartitionTableJob::run(Report& parent)
 
 QString CreatePartitionTableJob::description() const
 {
-	return i18nc("@info/plain", "Create new partition table on device <filename>%1</filename>", device().deviceNode());
+	return xi18nc("@info/plain", "Create new partition table on device <filename>%1</filename>", device().deviceNode());
 }

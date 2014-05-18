@@ -32,7 +32,7 @@
 #include <QDebug>
 
 #include <KLocalizedString>
-#include <kmountpoint.h>
+#include <KIOCore/KMountPoint>
 
 /** Creates a new Partition object.
 	@param parent the Partition's parent. May be another Partition (for logicals) or a PartitionTable. Must not be NULL.

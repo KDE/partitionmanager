@@ -23,7 +23,7 @@
 
 #include "util/libpartitionmanagerexport.h"
 
-#include <kservice.h>
+#include <KService>
 
 class QString;
 class QStringList;

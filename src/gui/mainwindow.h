@@ -29,13 +29,15 @@
 
 #include "ui_mainwindowbase.h"
 
-#include <kxmlguiwindow.h>
+#include <KXmlGui/KXmlGuiWindow>
 
 class ApplyProgressDialog;
 class ScanProgressDialog;
 class Device;
 class Partition;
 class InfoPane;
+
+class KActionCollection;
 
 class QWidget;
 class QLabel;

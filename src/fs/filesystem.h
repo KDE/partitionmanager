@@ -21,8 +21,6 @@
 
 #define FILESYSTEM__H
 
-#include <kurl.h>
-
 #include <qglobal.h>
 #include <QStringList>
 #include <QString>
@@ -50,7 +48,7 @@ class FileSystem
 				explicit SupportTool(const QString& n = QString(), const QUrl& u = QUrl()) : name(n), url(u) {}
 
 				const QString name;
-				const KUrl url;
+				const QUrl url;
 		};
 
 		/** Supported FileSystem types */

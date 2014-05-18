@@ -21,7 +21,6 @@
 #include "core/smartattribute.h"
 
 #include <KLocalizedString>
-#include <kglobal.h>
 
 #include <QDebug>
 #include <QString>

@@ -68,17 +68,17 @@ bool CreatePartitionJob::run(Report& parent)
 				backendPartitionTable->commit();
 			}
 			else
-				report->line() << i18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
+				report->line() << xi18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition().deviceNode(), device().deviceNode());
 
 			delete backendPartitionTable;
 		}
 		else
-			report->line() << i18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to create new partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
+			report->line() << xi18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to create new partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
 
 		delete backendDevice;
 	}
 	else
-		report->line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> to create new partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
+		report->line() << xi18nc("@info/plain", "Could not open device <filename>%1</filename> to create new partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
 
 	jobFinished(*report, rval);
 
@@ -88,7 +88,7 @@ bool CreatePartitionJob::run(Report& parent)
 QString CreatePartitionJob::description() const
 {
 	if (partition().number() > 0)
-		return i18nc("@info/plain", "Create new partition <filename>%1</filename>", partition().deviceNode());
+		return xi18nc("@info/plain", "Create new partition <filename>%1</filename>", partition().deviceNode());
 
-	return i18nc("@info/plain", "Create new partition on device <filename>%1</filename>", device().deviceNode());
+	return xi18nc("@info/plain", "Create new partition on device <filename>%1</filename>", device().deviceNode());
 }

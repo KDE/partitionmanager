@@ -33,11 +33,9 @@
 
 #include "ui_configurepagefilesystemcolors.h"
 
-#include <kiconloader.h>
-#include <kservice.h>
-#include <kmessagebox.h>
-#include <kcmdlineargs.h>
+#include <KIconThemes/KIconLoader>
 #include <KLocalizedString>
+#include <KMessageBox>
 
 #include <QIcon>
 
@@ -55,31 +53,32 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 	KPageWidgetItem* item = NULL;
 
 	item = addPage(&generalPageWidget(), i18nc("@title:tab general application settings", "General"), QString(), i18n("General Settings"));
-	item->setIcon(KIcon(DesktopIcon("partitionmanager")));
+	item->setIcon(KIconLoader().loadIcon(QLatin1String("partitionmanager"), KIconLoader::Desktop));
 
 	connect(&generalPageWidget().comboDefaultFileSystem(), SIGNAL(activated(int)), SLOT(onComboDefaultFileSystemActivated(int)));
 
 	item = addPage(&fileSystemColorsPageWidget(), i18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
-	item->setIcon(KIcon(DesktopIcon("format-fill-color")));
+	item->setIcon(KIconLoader().loadIcon(QLatin1String("format-fill-color"), KIconLoader::Desktop));
 
-	if (KCmdLineArgs::parsedArgs()->isSet("advconfig"))
+	if (QCoreApplication::arguments().contains(QLatin1String("--advconfig")))
 	{
 		item = addPage(&advancedPageWidget(), i18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
-		item->setIcon(KIcon(DesktopIcon("configure")));
+		item->setIcon(KIconLoader().loadIcon(QLatin1String("configure"), KIconLoader::Desktop));
 
 		connect(&advancedPageWidget().comboBackend(), SIGNAL(activated(int)), SLOT(onComboBackendActivated(int)));
 	}
 	else
 		advancedPageWidget().setVisible(false);
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "configureOptionsDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "configureOptionsDialogs");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a ConfigureOptionsDialog instance */
 ConfigureOptionsDialog::~ConfigureOptionsDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "configureOptionsDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "configureOptionsDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void ConfigureOptionsDialog::updateSettings()
@@ -150,7 +149,7 @@ void ConfigureOptionsDialog::onComboBackendActivated(int)
 	Q_ASSERT(advancedPageWidget().isVisible());
 
 	if (operationStack().size() == 0 || KMessageBox::warningContinueCancel(this,
-			i18nc("@info",
+			xi18nc("@info",
 				"<para>Do you really want to change the backend?</para>"
 				"<para><warning>This will also rescan devices and thus clear the list of pending operations.</warning></para>"),
 			i18nc("@title:window", "Really Change Backend?"),

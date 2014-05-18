@@ -71,7 +71,7 @@ void SetPartFlagsOperation::undo()
 QString SetPartFlagsOperation::description() const
 {
 	if (PartitionTable::flagNames(newFlags()).size() == 0)
-		return QString(i18nc("@info/plain", "Clear flags for partition <filename>%1</filename>", flagPartition().deviceNode()));
-		
-	return QString(i18nc("@info/plain", "Set flags for partition <filename>%1</filename> to \"%2\"", flagPartition().deviceNode(), PartitionTable::flagNames(newFlags()).join(",")));
+		return QString(xi18nc("@info/plain", "Clear flags for partition <filename>%1</filename>", flagPartition().deviceNode()));
+
+	return QString(xi18nc("@info/plain", "Set flags for partition <filename>%1</filename> to \"%2\"", flagPartition().deviceNode(), PartitionTable::flagNames(newFlags()).join(",")));
 }

@@ -20,6 +20,7 @@
 #if !defined(COREBACKENDPARTITIONTABLE__H)
 
 #define COREBACKENDPARTITIONTABLE__H
+#include "libpartitionmanager_export.h"
 
 #include "util/libpartitionmanagerexport.h"
 

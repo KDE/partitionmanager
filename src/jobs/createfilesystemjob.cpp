@@ -67,17 +67,17 @@ bool CreateFileSystemJob::run(Report& parent)
 						backendPartitionTable->commit();
 					}
 					else
-						report->line() << i18nc("@info/plain", "Failed to set the system type for the file system on partition <filename>%1</filename>.", partition().deviceNode());
+						report->line() << xi18nc("@info/plain", "Failed to set the system type for the file system on partition <filename>%1</filename>.", partition().deviceNode());
 
 					delete backendPartitionTable;
 				}
 				else
-					report->line() << i18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to set the system type for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
+					report->line() << xi18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to set the system type for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
 
 				delete backendDevice;
 			}
 			else
-				report->line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> to set the system type for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
+				report->line() << xi18nc("@info/plain", "Could not open device <filename>%1</filename> to set the system type for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
 		}
 	}
 
@@ -88,5 +88,5 @@ bool CreateFileSystemJob::run(Report& parent)
 
 QString CreateFileSystemJob::description() const
 {
-	return i18nc("@info/plain", "Create file system <filename>%1</filename> on partition <filename>%2</filename>", partition().fileSystem().name(), partition().deviceNode());
+	return xi18nc("@info/plain", "Create file system <filename>%1</filename> on partition <filename>%2</filename>", partition().fileSystem().name(), partition().deviceNode());
 }

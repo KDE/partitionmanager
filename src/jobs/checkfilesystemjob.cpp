@@ -53,5 +53,5 @@ bool CheckFileSystemJob::run(Report& parent)
 
 QString CheckFileSystemJob::description() const
 {
-	return i18nc("@info/plain", "Check file system on partition <filename>%1</filename>", partition().deviceNode());
+	return xi18nc("@info/plain", "Check file system on partition <filename>%1</filename>", partition().deviceNode());
 }

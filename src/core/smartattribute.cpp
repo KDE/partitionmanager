@@ -22,8 +22,8 @@
 
 #include <QLocale>
 
-#include <kglobal.h>
-#include <klocale.h>
+#include <KLocalizedString>
+#include <KFormat>
 
 #include <atasmart.h>
 
@@ -77,7 +77,7 @@ static QString getPrettyValue(qint64 value, qint64 unit)
 	switch (unit)
 	{
 		case SK_SMART_ATTRIBUTE_UNIT_MSECONDS:
-			rval = KGlobal::locale()->formatDuration(value);
+			rval = KFormat().formatDuration(value);
 			break;
 
 		case SK_SMART_ATTRIBUTE_UNIT_SECTORS:

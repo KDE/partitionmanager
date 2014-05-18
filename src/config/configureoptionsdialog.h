@@ -21,7 +21,7 @@
 
 #define CONFIGUREOPTIONSDIALOG__H
 
-#include <kconfigdialog.h>
+#include <KConfigWidgets/KConfigDialog>
 
 class GeneralPageWidget;
 class FileSystemColorsPageWidget;

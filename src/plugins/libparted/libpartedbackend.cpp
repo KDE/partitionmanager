@@ -44,15 +44,15 @@
 #include <QDebug>
 
 #include <KLocalizedString>
-#include <kmountpoint.h>
-#include <kdiskfreespaceinfo.h>
-#include <kpluginfactory.h>
-#include <kaboutdata.h>
+#include <KIOCore/KMountPoint>
+#include <KIOCore/KDiskFreeSpaceInfo>
+#include <KPluginFactory>
+#include <KAboutData>
 
-#include <solid/device.h>
-#include <solid/deviceinterface.h>
-#include <solid/block.h>
-#include <solid/storagedrive.h>
+#include <Solid/Device>
+#include <Solid/DeviceInterface>
+#include <Solid/Block>
+#include <Solid/StorageDrive>
 
 #include <parted/parted.h>
 #include <unistd.h>
@@ -63,21 +63,19 @@ K_PLUGIN_FACTORY(LibPartedBackendFactory, registerPlugin<LibPartedBackend>(); )
 static KAboutData createPluginAboutData()
 {
 	KAboutData about(
-		"pmlibpartedbackendplugin",
-		NULL,
-		ki18nc("@title", "LibParted Backend Plugin"),
+		QStringLiteral("pmlibpartedbackendplugin"),
+		i18nc("@title", "LibParted Backend Plugin"),
 		QString("%1, libparted version: %2").arg(VERSION).arg(ped_get_version()).toUtf8(),
-		ki18n("KDE Partition Manager backend for libparted."),
-		KAboutData::License_GPL,
-		ki18n("Copyright 2008,2009,2010 Volker Lanz"));
+		i18n("KDE Partition Manager backend for libparted."),
+		KAboutLicense::GPL,
+		i18n("Copyright 2008,2009,2010 Volker Lanz"),
+		QString());
 
-	about.addAuthor(ki18nc("@info:credit", "Volker Lanz"), KLocalizedString(), "vl@fidra.de");
+	about.addAuthor(i18nc("@info:credit", "Volker Lanz"), "Maintainer", "vl@fidra.de");
 	about.setHomepage("http://www.partitionmanager.org");
 
 	return about;
 }
-
-K_EXPORT_PLUGIN(LibPartedBackendFactory(createPluginAboutData()))
 
 static struct
 {
@@ -419,7 +417,7 @@ Device* LibPartedBackend::scanDevice(const QString& device_node)
 
 	if (pedDevice == NULL)
 	{
-		Log(Log::warning) << i18nc("@info/plain", "Could not access device <filename>%1</filename>", device_node);
+		Log(Log::warning) << xi18nc("@info/plain", "Could not access device <filename>%1</filename>", device_node);
 		return NULL;
 	}
 
@@ -605,3 +603,4 @@ PedPartitionFlag LibPartedBackend::getPedFlag(PartitionTable::Flag flag)
 	return static_cast<PedPartitionFlag>(-1);
 }
 
+#include "libpartedbackend.moc"

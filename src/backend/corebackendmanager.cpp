@@ -24,12 +24,10 @@
 #include <QStringList>
 #include <QString>
 
-#include <kpluginfactory.h>
-#include <kpluginloader.h>
+#include <KAboutData>
 #include <KLocalizedString>
-#include <kaboutdata.h>
-#include <kservice.h>
-#include <kservicetypetrader.h>
+#include <KPluginLoader>
+#include <KServiceTypeTrader>
 
 #include <config.h>
 
@@ -65,8 +63,9 @@ bool CoreBackendManager::load(const QString& name)
 	if (factory != NULL)
 	{
 		m_Backend = factory->create<CoreBackend>(NULL);
-		backend()->setAboutData(factory->componentData().aboutData());
-		qDebug() << "Loaded backend plugin: " << backend()->about().programName() << ", " << backend()->about().version();
+// FIXME: port KF5
+//  		backend()->setAboutData(factory->componentData().aboutData());
+// 		qDebug() << "Loaded backend plugin: " << backend()->about().displayName() << ", " << backend()->about().version();
 		return true;
 	}
 

@@ -33,30 +33,27 @@
 #include <QStringList>
 
 #include <KLocalizedString>
-#include <kpluginfactory.h>
-#include <kaboutdata.h>
+#include <KPluginFactory>
+#include <KAboutData>
 
 K_PLUGIN_FACTORY(DummyBackendFactory, registerPlugin<DummyBackend>(); )
 
 static KAboutData createPluginAboutData()
 {
 	KAboutData about(
-		"pmdummybackendplugin",
-		NULL,
-		ki18nc("@title", "Dummy Backend Plugin"),
-		QString(VERSION).toUtf8(),
-		ki18n("KDE Partition Manager dummy backend."),
-		KAboutData::License_GPL,
-		ki18n("Copyright 2010 Volker Lanz"));
+		QStringLiteral("pmdummybackendplugin"),
+		i18nc("@title", "Dummy Backend Plugin"),
+		"1.1.60",
+		i18n("KDE Partition Manager dummy backend."),
+		KAboutLicense::GPL,
+		i18n("Copyright 2010 Volker Lanz"),
+		QString());
 
-	about.addAuthor(ki18nc("@info:credit", "Volker Lanz"), KLocalizedString(), "vl@fidra.de");
+	about.addAuthor(i18nc("@info:credit", "Volker Lanz"), "Maintainer", "vl@fidra.de");
 	about.setHomepage("http://www.partitionmanager.org");
 
 	return about;
 }
-
-K_EXPORT_PLUGIN(DummyBackendFactory(createPluginAboutData()))
-
 
 DummyBackend::DummyBackend(QObject*, const QList<QVariant>&) :
 	CoreBackend()
@@ -120,3 +117,5 @@ bool DummyBackend::closeDevice(CoreBackendDevice* core_device)
 {
 	return core_device->close();
 }
+
+#include "dummybackend.moc"

@@ -25,6 +25,7 @@
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <KLocalizedString>
 
 EditMountOptionsDialog::EditMountOptionsDialog(QWidget* parent, const QStringList& options) :
 	QDialog(parent),

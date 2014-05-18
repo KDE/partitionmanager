@@ -27,27 +27,23 @@
 #include "util/helpers.h"
 #include "util/htmlreport.h"
 
-#include <kpushbutton.h>
-#include <kiconloader.h>
-#include <KLocalizedString>
-#include <KConfigGroup>
-#include <KSharedConfig>
-#include <kfiledialog.h>
-#include <kio/copyjob.h>
-#include <kio/netaccess.h>
-#include <kio/jobuidelegate.h>
-#include <kmessagebox.h>
-#include <ktemporaryfile.h>
-#include <kicon.h>
-#include <kglobalsettings.h>
-#include <kglobal.h>
-
 #include <QDialogButtonBox>
+#include <QFileDialog>
+#include <QFontDatabase>
 #include <QPushButton>
-#include <QTreeWidgetItem>
-#include <QTextStream>
+#include <QTemporaryFile>
 #include <QTextDocument>
+#include <QTextStream>
+#include <QTreeWidgetItem>
 #include <qglobal.h>
+
+#include <KConfigGroup>
+#include <KFormat>
+#include <KLocalizedString>
+#include <KIconThemes/KIconLoader>
+#include <KIO/CopyJob>
+#include <KJobUiDelegate>
+#include <KMessageBox>
 
 #include <sys/utsname.h>
 #include <unistd.h>
@@ -66,7 +62,7 @@ SmartDialog::SmartDialog(QWidget* parent, Device& d) :
 	QVBoxLayout *mainLayout = new QVBoxLayout(this);
 	setLayout(mainLayout);
 	mainLayout->addWidget(&dialogWidget());
-	setWindowTitle(i18nc("@title:window", "SMART Properties: <filename>%1</filename>", device().deviceNode()));
+	setWindowTitle(xi18nc("@title:window", "SMART Properties: <filename>%1</filename>", device().deviceNode()));
 
 	buttonBox = new QDialogButtonBox(this);
 	buttonBox->setStandardButtons(QDialogButtonBox::Save | QDialogButtonBox::Close);
@@ -100,7 +96,7 @@ void SmartDialog::setupDialog()
 		else
 		{
 			dialogWidget().statusText().setText(i18nc("@label SMART disk status", "BAD"));
-			dialogWidget().statusIcon().setPixmap(SmallIcon("dialog-warning"));
+			dialogWidget().statusIcon().setPixmap(KIconLoader().loadIcon(QLatin1String("dialog-warning"), KIconLoader::Small));
 		}
 
 		dialogWidget().modelName().setText(device().smartStatus().modelName());
@@ -112,14 +108,14 @@ void SmartDialog::setupDialog()
 				? QLocale().toString(device().smartStatus().badSectors())
 				: i18nc("@label SMART number of bad sectors", "none");
 		dialogWidget().badSectors().setText(badSectors);
-		dialogWidget().poweredOn().setText(KGlobal::locale()->formatDuration(device().smartStatus().poweredOn()));
+		dialogWidget().poweredOn().setText(KFormat().formatDuration(device().smartStatus().poweredOn()));
 		dialogWidget().powerCycles().setText(QLocale().toString(device().smartStatus().powerCycles()));
 		dialogWidget().overallAssessment().setText(SmartStatus::overallAssessmentToString(device().smartStatus().overall()));
 		dialogWidget().selfTests().setText(SmartStatus::selfTestStatusToString(device().smartStatus().selfTestStatus()));
 
 		dialogWidget().treeSmartAttributes().clear();
 
-		const QFont f = KGlobalSettings::smallestReadableFont();
+		const QFont f = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
 		const QString size = f.pixelSize() != -1 ? QString("%1px").arg(f.pixelSize()) : QString("%1pt").arg(f.pointSize());
 
 		const QString st = QString("<span style=\"font-family:%1;font-size:%2;\">").arg(f.family()).arg(size);
@@ -175,7 +171,7 @@ QString SmartDialog::toHtml() const
 		<< HtmlReport::tableLine(i18n("Firmware revision:"), device().smartStatus().firmware())
 		<< HtmlReport::tableLine(i18n("Temperature:"), SmartStatus::tempToString(device().smartStatus().temp()))
 		<< HtmlReport::tableLine(i18n("Bad sectors:"), badSectors)
-		<< HtmlReport::tableLine(i18n("Powered on for:"), KGlobal::locale()->formatDuration(device().smartStatus().poweredOn()))
+		<< HtmlReport::tableLine(i18n("Powered on for:"), KFormat().formatDuration(device().smartStatus().poweredOn()))
 		<< HtmlReport::tableLine(i18n("Power cycles:"), QLocale().toString(device().smartStatus().powerCycles()))
 		<< HtmlReport::tableLine(i18n("Self tests:"), SmartStatus::selfTestStatusToString(device().smartStatus().selfTestStatus()))
 		<< HtmlReport::tableLine(i18n("Overall assessment:"), SmartStatus::overallAssessmentToString(device().smartStatus().overall()));
@@ -185,7 +181,7 @@ QString SmartDialog::toHtml() const
 	if (device().smartStatus().isValid())
 	{
 
-		const QFont f = KGlobalSettings::smallestReadableFont();
+		const QFont f = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
 		const QString size = f.pixelSize() != -1 ? QString("%1px").arg(f.pixelSize()) : QString("%1pt").arg(f.pointSize());
 
 		const QString st = QString("<span style=\"font-family:%1;font-size:%2;\">").arg(f.family()).arg(size);
@@ -222,12 +218,12 @@ QString SmartDialog::toHtml() const
 
 void SmartDialog::saveSmartReport()
 {
-	const KUrl url = KFileDialog::getSaveUrl(KUrl("kfiledialog://saveSMARTReport"));
+	const QUrl url = QFileDialog::getSaveFileUrl();
 
 	if (url.isEmpty())
 		return;
 
-	KTemporaryFile tempFile;
+	QTemporaryFile tempFile;
 
 	if (tempFile.open())
 	{
@@ -241,11 +237,12 @@ void SmartDialog::saveSmartReport()
 
 		tempFile.close();
 
-		KIO::CopyJob* job = KIO::move(tempFile.fileName(), url, KIO::HideProgressInfo);
-		if (!KIO::NetAccess::synchronousRun(job, NULL))
+		KIO::CopyJob* job = KIO::move(QUrl::fromLocalFile(tempFile.fileName()), url, KIO::HideProgressInfo);
+		job->exec();
+		if ( job->error() )
 			job->ui()->showErrorMessage();
 	}
 	else
-		KMessageBox::sorry(this, i18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Could Not Save SMART Report."));
+		KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Could Not Save SMART Report."));
 
 }

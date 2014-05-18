@@ -26,14 +26,13 @@
 #include "fs/filesystem.h"
 
 #include <KLocalizedString>
-#include <kfiledialog.h>
-#include <klineedit.h>
-#include <kmountpoint.h>
-#include <kmessagebox.h>
+#include <KIOCore/KMountPoint>
+#include <KMessageBox>
 
 #include <QString>
 #include <QWidget>
 #include <QFile>
+#include <QFileDialog>
 #include <QPointer>
 #include <QDebug>
 
@@ -145,7 +144,7 @@ void EditMountPointDialogWidget::setupOptions(const QStringList& options)
 
 void EditMountPointDialogWidget::on_m_ButtonSelect_clicked(bool)
 {
-	const QString s = KFileDialog::getExistingDirectory(KUrl(editPath().text()), this);
+	const QString s = QFileDialog::getExistingDirectory(this, editPath().text());
 	if (!s.isEmpty())
 		editPath().setText(s);
 }
@@ -178,7 +177,7 @@ bool EditMountPointDialogWidget::readMountpoints(const QString& filename)
 	if (fp == NULL)
 	{
 		KMessageBox::sorry(this,
-				i18nc("@info", "Could not open mount point file <filename>%1</filename>.", filename),
+				xi18nc("@info", "Could not open mount point file <filename>%1</filename>.", filename),
 				i18nc("@title:window", "Error while reading mount points"));
 		return false;
 	}
@@ -298,7 +297,7 @@ bool EditMountPointDialogWidget::writeMountpoints(const QString& filename)
 
 	if (!rval)
 		KMessageBox::sorry(this,
-				i18nc("@info", "Could not save mount points to file <filename>%1</filename>.", filename),
+				xi18nc("@info", "Could not save mount points to file <filename>%1</filename>.", filename),
 				i18nc("@title:window", "Error While Saving Mount Points"));
 
 	return rval;

@@ -50,32 +50,28 @@
 
 #include "util/helpers.h"
 
-#include <kstandardaction.h>
-#include <kactioncollection.h>
-#include <ktoolbar.h>
-#include <kstatusbar.h>
-#include <kmenubar.h>
-#include <kmessagebox.h>
-#include <kaboutdata.h>
-#include <kcomponentdata.h>
-#include <kstandardguiitem.h>
-#include <kaction.h>
-#include <kapplication.h>
-#include <KLocalizedString>
-#include <kxmlguifactory.h>
-#include <kfiledialog.h>
-#include <kio/netaccess.h>
-#include <kio/jobuidelegate.h>
-#include <kio/copyjob.h>
-#include <ktemporaryfile.h>
-
+#include <QApplication>
 #include <QCloseEvent>
-#include <QReadLocker>
-#include <QPointer>
-#include <QFile>
 #include <QDateTime>
+#include <QFile>
+#include <QFileDialog>
 #include <QMenu>
+#include <QPointer>
+#include <QReadLocker>
+#include <QStatusBar>
+#include <QTemporaryFile>
 #include <QTextStream>
+
+#include <KXmlGui/KActionCollection>
+#include <KMessageBox>
+#include <KAboutData>
+#include <KIconThemes/KIconLoader>
+#include <KLocalizedString>
+#include <KXmlGui/KXMLGUIFactory>
+#include <KJobUiDelegate>
+#include <KIO/CopyJob>
+#include <KIO/Job>
+#include <KJobWidgets/KJobWidgets>
 
 #include <config.h>
 
@@ -140,10 +136,10 @@ void MainWindow::closeEvent(QCloseEvent* event)
 	if (operationStack().size() > 0)
 	{
 		if (KMessageBox::warningContinueCancel(this,
-			i18ncp("@info", "<para>Do you really want to quit the application?</para><para>There is still an operation pending.</para>",
-    		"<para>Do you really want to quit the application?</para><para>There are still %1 operations pending.</para>", operationStack().size()),
+			xi18ncp("@info", "<para>Do you really want to quit the application?</para><para>There is still an operation pending.</para>",
+		"<para>Do you really want to quit the application?</para><para>There are still %1 operations pending.</para>", operationStack().size()),
 			i18nc("@title:window", "Discard Pending Operations and Quit?"),
-			KGuiItem(i18nc("@action:button", "Quit <application>%1</application>", KGlobal::mainComponent().aboutData()->programName()), "arrow-right"),
+			KGuiItem(xi18nc("@action:button", "Quit <application>%1</application>", QGuiApplication::applicationDisplayName()), "arrow-right"),
 			KStandardGuiItem::cancel(), "reallyQuit") == KMessageBox::Cancel)
 		{
 			event->ignore();
@@ -190,21 +186,21 @@ void MainWindow::setupActions()
 	undoOperation->setToolTip(i18nc("@info:tooltip", "Undo the last operation"));
 	undoOperation->setStatusTip(i18nc("@info:status", "Remove the last operation from the list."));
 	undoOperation->setShortcut(Qt::CTRL | Qt::Key_Z);
-	undoOperation->setIcon(BarIcon("edit-undo"));
+	undoOperation->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("edit-undo"), KIconLoader::Toolbar)));
 
 	QAction* clearAllOperations = actionCollection()->addAction("clearAllOperations", this, SLOT(onClearAllOperations()));
 	clearAllOperations->setEnabled(false);
 	clearAllOperations->setText(i18nc("@action:inmenu clear the list of operations", "Clear"));
 	clearAllOperations->setToolTip(i18nc("@info:tooltip", "Clear all operations"));
 	clearAllOperations->setStatusTip(i18nc("@info:status", "Empty the list of pending operations."));
-	clearAllOperations->setIcon(BarIcon("dialog-cancel"));
+	clearAllOperations->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("dialog-cancel"), KIconLoader::Toolbar)));
 
 	QAction* applyAllOperations = actionCollection()->addAction("applyAllOperations", this, SLOT(onApplyAllOperations()));
 	applyAllOperations->setEnabled(false);
 	applyAllOperations->setText(i18nc("@action:inmenu apply all operations", "Apply"));
 	applyAllOperations->setToolTip(i18nc("@info:tooltip", "Apply all operations"));
 	applyAllOperations->setStatusTip(i18nc("@info:status", "Apply the pending operations in the list."));
-	applyAllOperations->setIcon(BarIcon("dialog-ok-apply"));
+	applyAllOperations->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("dialog-ok-apply"), KIconLoader::Toolbar)));
 
 	// Device actions
 	QAction* refreshDevices = actionCollection()->addAction("refreshDevices",  this, SLOT(onRefreshDevices()));
@@ -212,7 +208,7 @@ void MainWindow::setupActions()
 	refreshDevices->setToolTip(i18nc("@info:tooltip", "Refresh all devices"));
 	refreshDevices->setStatusTip(i18nc("@info:status", "Renew the devices list."));
 	refreshDevices->setShortcut(Qt::Key_F5);
-	refreshDevices->setIcon(BarIcon("view-refresh"));
+	refreshDevices->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("view-refresh"), KIconLoader::Toolbar)));
 
 	QAction* createNewPartitionTable = actionCollection()->addAction("createNewPartitionTable", this, SLOT(onCreateNewPartitionTable()));
 	createNewPartitionTable->setEnabled(false);
@@ -220,21 +216,21 @@ void MainWindow::setupActions()
 	createNewPartitionTable->setToolTip(i18nc("@info:tooltip", "Create a new partition table"));
 	createNewPartitionTable->setStatusTip(i18nc("@info:status", "Create a new and empty partition table on a device."));
 	createNewPartitionTable->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_N);
-	createNewPartitionTable->setIcon(BarIcon("edit-clear"));
+	createNewPartitionTable->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("edit-clear"), KIconLoader::Toolbar)));
 
 	QAction* exportPartitionTable = actionCollection()->addAction("exportPartitionTable", this, SLOT(onExportPartitionTable()));
 	exportPartitionTable->setEnabled(false);
 	exportPartitionTable->setText(i18nc("@action:inmenu", "Export Partition Table"));
 	exportPartitionTable->setToolTip(i18nc("@info:tooltip", "Export a partition table"));
 	exportPartitionTable->setStatusTip(i18nc("@info:status", "Export the device's partition table to a text file."));
-	exportPartitionTable->setIcon(BarIcon("document-export"));
+	exportPartitionTable->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("document-export"), KIconLoader::Toolbar)));
 
 	QAction* importPartitionTable = actionCollection()->addAction("importPartitionTable", this, SLOT(onImportPartitionTable()));
 	importPartitionTable->setEnabled(false);
 	importPartitionTable->setText(i18nc("@action:inmenu", "Import Partition Table"));
 	importPartitionTable->setToolTip(i18nc("@info:tooltip", "Import a partition table"));
 	importPartitionTable->setStatusTip(i18nc("@info:status", "Import a partition table from a text file."));
-	importPartitionTable->setIcon(BarIcon("document-import"));
+	importPartitionTable->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("document-import"), KIconLoader::Toolbar)));
 
 	QAction* smartStatusDevice = actionCollection()->addAction("smartStatusDevice", this, SLOT(onSmartStatusDevice()));
 	smartStatusDevice->setEnabled(false);
@@ -247,7 +243,7 @@ void MainWindow::setupActions()
 	propertiesDevice->setText(i18nc("@action:inmenu", "Properties"));
 	propertiesDevice->setToolTip(i18nc("@info:tooltip", "Show device properties dialog"));
 	propertiesDevice->setStatusTip(i18nc("@info:status", "View and modify device properties"));
-	propertiesDevice->setIcon(BarIcon("document-properties"));
+	propertiesDevice->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("document-properties"), KIconLoader::Toolbar)));
 
 	// Partition actions
 	QAction* newPartition = actionCollection()->addAction("newPartition", &pmWidget(), SLOT(onNewPartition()));
@@ -256,7 +252,7 @@ void MainWindow::setupActions()
 	newPartition->setToolTip(i18nc("@info:tooltip", "New partition"));
 	newPartition->setStatusTip(i18nc("@info:status", "Create a new partition."));
 	newPartition->setShortcut(Qt::CTRL | Qt::Key_N);
-	newPartition->setIcon(BarIcon("document-new"));
+	newPartition->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("document-new"), KIconLoader::Toolbar)));
 
 	QAction* resizePartition = actionCollection()->addAction("resizePartition", &pmWidget(), SLOT(onResizePartition()));
 	resizePartition->setEnabled(false);
@@ -264,7 +260,7 @@ void MainWindow::setupActions()
 	resizePartition->setToolTip(i18nc("@info:tooltip", "Resize or move partition"));
 	resizePartition->setStatusTip(i18nc("@info:status", "Shrink, grow or move an existing partition."));
 	resizePartition->setShortcut(Qt::CTRL | Qt::Key_R);
-	resizePartition->setIcon(BarIcon("arrow-right-double"));
+	resizePartition->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("arrow-right-double"), KIconLoader::Toolbar)));
 
 	QAction* deletePartition = actionCollection()->addAction("deletePartition", &pmWidget(), SLOT(onDeletePartition()));
 	deletePartition->setEnabled(false);
@@ -272,7 +268,7 @@ void MainWindow::setupActions()
 	deletePartition->setToolTip(i18nc("@info:tooltip", "Delete partition"));
 	deletePartition->setStatusTip(i18nc("@info:status", "Delete a partition."));
 	deletePartition->setShortcut(Qt::Key_Delete);
-	deletePartition->setIcon(BarIcon("edit-delete"));
+	deletePartition->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("edit-delete"), KIconLoader::Toolbar)));
 
 	QAction* shredPartition = actionCollection()->addAction("shredPartition", &pmWidget(), SLOT(onShredPartition()));
 	shredPartition->setEnabled(false);
@@ -280,7 +276,7 @@ void MainWindow::setupActions()
 	shredPartition->setToolTip(i18nc("@info:tooltip", "Shred partition"));
 	shredPartition->setStatusTip(i18nc("@info:status", "Shred a partition so that its contents cannot be restored."));
 	shredPartition->setShortcut(Qt::SHIFT | Qt::Key_Delete);
-	shredPartition->setIcon(BarIcon("edit-delete-shred"));
+	shredPartition->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("edit-delete-shred"), KIconLoader::Toolbar)));
 
 	QAction* copyPartition = actionCollection()->addAction("copyPartition", &pmWidget(), SLOT(onCopyPartition()));
 	copyPartition->setEnabled(false);
@@ -288,7 +284,7 @@ void MainWindow::setupActions()
 	copyPartition->setToolTip(i18nc("@info:tooltip", "Copy partition"));
 	copyPartition->setStatusTip(i18nc("@info:status", "Copy an existing partition."));
 	copyPartition->setShortcut(Qt::CTRL | Qt::Key_C);
-	copyPartition->setIcon(BarIcon("edit-copy"));
+	copyPartition->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("edit-copy"), KIconLoader::Toolbar)));
 
 	QAction* pastePartition = actionCollection()->addAction("pastePartition", &pmWidget(), SLOT(onPastePartition()));
 	pastePartition->setEnabled(false);
@@ -296,7 +292,7 @@ void MainWindow::setupActions()
 	pastePartition->setToolTip(i18nc("@info:tooltip", "Paste partition"));
 	pastePartition->setStatusTip(i18nc("@info:status", "Paste a copied partition."));
 	pastePartition->setShortcut(Qt::CTRL | Qt::Key_V);
-	pastePartition->setIcon(BarIcon("edit-paste"));
+	pastePartition->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("edit-paste"), KIconLoader::Toolbar)));
 
 	QAction* editMountPoint = actionCollection()->addAction("editMountPoint", &pmWidget(), SLOT(onEditMountPoint()));
 	editMountPoint->setEnabled(false);
@@ -315,28 +311,28 @@ void MainWindow::setupActions()
 	checkPartition->setText(i18nc("@action:inmenu", "Check"));
 	checkPartition->setToolTip(i18nc("@info:tooltip", "Check partition"));
 	checkPartition->setStatusTip(i18nc("@info:status", "Check a filesystem on a partition for errors."));
-	checkPartition->setIcon(BarIcon("flag"));
+	checkPartition->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("flag"), KIconLoader::Toolbar)));
 
 	QAction* propertiesPartition = actionCollection()->addAction("propertiesPartition", &pmWidget(), SLOT(onPropertiesPartition()));
 	propertiesPartition->setEnabled(false);
 	propertiesPartition->setText(i18nc("@action:inmenu", "Properties"));
 	propertiesPartition->setToolTip(i18nc("@info:tooltip", "Show partition properties dialog"));
 	propertiesPartition->setStatusTip(i18nc("@info:status", "View and modify partition properties (label, partition flags, etc.)"));
-	propertiesPartition->setIcon(BarIcon("document-properties"));
+	propertiesPartition->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("document-properties"), KIconLoader::Toolbar)));
 
 	QAction* backup = actionCollection()->addAction("backupPartition", &pmWidget(), SLOT(onBackupPartition()));
 	backup->setEnabled(false);
 	backup->setText(i18nc("@action:inmenu", "Backup"));
 	backup->setToolTip(i18nc("@info:tooltip", "Backup partition"));
 	backup->setStatusTip(i18nc("@info:status", "Backup a partition to an image file."));
-	backup->setIcon(BarIcon("document-export"));
+	backup->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("document-export"), KIconLoader::Toolbar)));
 
 	QAction* restore = actionCollection()->addAction("restorePartition", &pmWidget(), SLOT(onRestorePartition()));
 	restore->setEnabled(false);
 	restore->setText(i18nc("@action:inmenu", "Restore"));
 	restore->setToolTip(i18nc("@info:tooltip", "Restore partition"));
 	restore->setStatusTip(i18nc("@info:status", "Restore a partition from an image file."));
-	restore->setIcon(BarIcon("document-import"));
+	restore->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("document-import"), KIconLoader::Toolbar)));
 
 	// View actions
 	QAction* fileSystemSupport = actionCollection()->addAction("fileSystemSupport", this, SLOT(onFileSystemSupport()));
@@ -357,13 +353,13 @@ void MainWindow::setupActions()
 	clearLog->setText(i18nc("@action:inmenu", "Clear Log"));
 	clearLog->setToolTip(i18nc("@info:tooltip", "Clear the log output"));
 	clearLog->setStatusTip(i18nc("@info:status", "Clear the log output panel."));
-	clearLog->setIcon(BarIcon("edit-clear-list"));
+	clearLog->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("edit-clear-list"), KIconLoader::Toolbar)));
 
 	QAction* saveLog = actionCollection()->addAction("saveLog", &treeLog(), SLOT(onSaveLog()));
 	saveLog->setText(i18nc("@action:inmenu", "Save Log"));
 	saveLog->setToolTip(i18nc("@info:tooltip", "Save the log output"));
 	saveLog->setStatusTip(i18nc("@info:status", "Save the log output to a file."));
-	saveLog->setIcon(BarIcon("document-save"));
+	saveLog->setIcon(QIcon(KIconLoader().loadIcon(QLatin1String("document-save"), KIconLoader::Toolbar)));
 }
 
 void MainWindow::setupConnections()
@@ -383,7 +379,6 @@ void MainWindow::loadConfig()
 	{
 		dockLog().setVisible(false);
 		dockInformation().setVisible(false);
-		toolBar("deviceToolBar")->setVisible(false);
 	}
 }
 
@@ -473,9 +468,7 @@ void MainWindow::updateWindowTitle()
 	QString title;
 
 	if (pmWidget().selectedDevice())
-		title = pmWidget().selectedDevice()->deviceNode() + " - ";
-
-	title += KGlobal::mainComponent().aboutData()->programName() + ' ' + KGlobal::mainComponent().aboutData()->version();
+		title = pmWidget().selectedDevice()->deviceNode();
 
 	setWindowTitle(title);
 }
@@ -545,9 +538,10 @@ void MainWindow::on_m_PartitionManagerWidget_selectedPartitionChanged(const Part
 
 void MainWindow::scanDevices()
 {
-	Log(Log::information) << i18nc("@info/plain", "Using backend plugin: %1 (%2)", 
-			CoreBackendManager::self()->backend()->about().programName(),
-			CoreBackendManager::self()->backend()->about().version());
+// 	FIXME: port KF5
+// 	Log(Log::information) << i18nc("@info/plain", "Using backend plugin: %1 (%2)",
+// 			CoreBackendManager::self()->backend()->about().displayName(),
+// 			CoreBackendManager::self()->backend()->about().version());
 
 	Log() << i18nc("@info/plain", "Scanning devices...");
 
@@ -556,7 +550,7 @@ void MainWindow::scanDevices()
 
 	pmWidget().clear();
 
-	KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+	QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
 	scanProgressDialog().setEnabled(true);
 	scanProgressDialog().show();
@@ -582,7 +576,7 @@ void MainWindow::on_m_DeviceScanner_finished()
 	pmWidget().updatePartitions();
 
 	Log() << i18nc("@info/plain", "Scan finished.");
-	KApplication::restoreOverrideCursor();
+	QApplication::restoreOverrideCursor();
 
 	// try to set the seleted device, either from the saved one or just select the
 	// first device
@@ -619,7 +613,7 @@ void MainWindow::onSelectedDeviceMenuTriggered(bool)
 	if (action == NULL || action->parent() != devicesMenu)
 		return;
 
-	foreach (QAction* entry, qFindChildren<QAction*>(devicesMenu))
+	foreach (QAction* entry, devicesMenu->findChildren<QAction*>())
 		entry->setChecked(entry == action);
 
 	listDevices().setSelectedDevice(action->data().toString());
@@ -629,14 +623,14 @@ void MainWindow::on_m_ListDevices_selectionChanged(const QString& device_node)
 {
 	QMenu* devicesMenu = static_cast<QMenu*>(guiFactory()->container("selectedDevice", this));
 
-	foreach (QAction* entry, qFindChildren<QAction*>(devicesMenu))
+	foreach (QAction* entry, devicesMenu->findChildren<QAction*>())
 		entry->setChecked(entry->data().toString() == device_node);
 }
 
 void MainWindow::onRefreshDevices()
 {
 	if (operationStack().size() == 0 || KMessageBox::warningContinueCancel(this,
-		i18nc("@info",
+		xi18nc("@info",
 			"<para>Do you really want to rescan the devices?</para>"
 			"<para><warning>This will also clear the list of pending operations.</warning></para>"),
 		i18nc("@title:window", "Really Rescan the Devices?"),
@@ -655,7 +649,7 @@ void MainWindow::onApplyAllOperations()
 		opList.append(op->description());
 
 	if (KMessageBox::warningContinueCancelList(this,
-		i18nc("@info",
+		xi18nc("@info",
 			"<para>Do you really want to apply the pending operations listed below?</para>"
 			"<para><warning>This will permanently modify your disks.</warning></para>"),
 		opList, i18nc("@title:window", "Apply Pending Operations?"),
@@ -739,15 +733,18 @@ void MainWindow::onImportPartitionTable()
 {
 	Q_ASSERT(pmWidget().selectedDevice());
 
-	const KUrl url = KFileDialog::getOpenUrl(KUrl("kfiledialog://importPartitionTable"));
+	const QUrl url = QFileDialog::getOpenFileUrl(this, "kfiledialog://importPartitionTable");
 
 	if (url.isEmpty())
 		return;
 
 	QString fileName;
-	if (!KIO::NetAccess::download(url, fileName, this))
+	KIO::FileCopyJob *job = KIO::file_copy(url, fileName);
+	KJobWidgets::setWindow(job, this);
+	job->exec();
+	if ( job->error() )
 	{
-		KMessageBox::error(this, i18nc("@info", "Could not open input file <filename>%1</filename> for import: %2", url.fileName(), KIO::NetAccess::lastErrorString()), i18nc("@title:window", "Error Importing Partition Table"));
+		KMessageBox::error(this, xi18nc("@info", "Could not open input file <filename>%1</filename> for import: %2", url.fileName(), job->errorString()), i18nc("@title:window", "Error Importing Partition Table"));
 		return;
 	}
 
@@ -755,7 +752,7 @@ void MainWindow::onImportPartitionTable()
 
 	if (!file.open(QFile::ReadOnly))
 	{
-		KMessageBox::error(this, i18nc("@info", "Could not open temporary file <filename>%1</filename> while trying to import from <filename>%2</filename>.", fileName, url.fileName()), i18nc("@title:window", "Error Importing Partition Table"));
+		KMessageBox::error(this, xi18nc("@info", "Could not open temporary file <filename>%1</filename> while trying to import from <filename>%2</filename>.", fileName, url.fileName()), i18nc("@title:window", "Error Importing Partition Table"));
 		return;
 	}
 
@@ -781,7 +778,7 @@ void MainWindow::onImportPartitionTable()
 
 		if (!haveMagic && rxMagic.indexIn(line) == -1)
 		{
-			KMessageBox::error(this, i18nc("@info", "The import file <filename>%1</filename> does not contain a valid partition table.", fileName), i18nc("@title:window", "Error While Importing Partition Table"));
+			KMessageBox::error(this, xi18nc("@info", "The import file <filename>%1</filename> does not contain a valid partition table.", fileName), i18nc("@title:window", "Error While Importing Partition Table"));
 			return;
 		}
 		else
@@ -909,16 +906,16 @@ void MainWindow::onExportPartitionTable()
 	Q_ASSERT(pmWidget().selectedDevice());
 	Q_ASSERT(pmWidget().selectedDevice()->partitionTable());
 
-	const KUrl url = KFileDialog::getSaveUrl(KUrl("kfiledialog://exportPartitionTable"));
+	const QUrl url = QFileDialog::getSaveFileUrl();
 
 	if (url.isEmpty())
 		return;
 
-	KTemporaryFile tempFile;
+	QTemporaryFile tempFile;
 
 	if (!tempFile.open())
 	{
-		KMessageBox::error(this, i18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Error Exporting Partition Table"));
+		KMessageBox::error(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Error Exporting Partition Table"));
 		return;
 	}
 
@@ -931,7 +928,8 @@ void MainWindow::onExportPartitionTable()
 	tempFile.close();
 
 	KIO::CopyJob* job = KIO::move(tempFile.fileName(), url, KIO::HideProgressInfo);
-	if (!KIO::NetAccess::synchronousRun(job, NULL))
+	job->exec();
+	if ( job->error() )
 		job->ui()->showErrorMessage();
 }
 
@@ -943,7 +941,7 @@ void MainWindow::onFileSystemSupport()
 
 void MainWindow::onSettingsChanged()
 {
-	if (CoreBackendManager::self()->backend()->about().appName() != Config::backend())
+	if (CoreBackendManager::self()->backend()->about().productName() != Config::backend())
 	{
 		CoreBackendManager::self()->unload();
 		// FIXME: if loadBackend() fails to load the configured backend and loads the default
@@ -1042,7 +1040,7 @@ static QStringList checkSupportInNode(const PartitionNode* parent)
 					.arg(p->deviceNode())
 					.arg(p->fileSystem().name())
 					.arg(p->fileSystem().supportToolName().name)
-					.arg(p->fileSystem().supportToolName().url.prettyUrl());
+					.arg(p->fileSystem().supportToolName().url.toString());
 	}
 
 	return rval;
@@ -1059,7 +1057,7 @@ void MainWindow::checkFileSystemSupport()
 
 	if (!supportList.isEmpty())
 		KMessageBox::information(this,
-				i18nc("@info",
+				xi18nc("@info",
 					"<para>No support tools were found for file systems currently present on hard disks in this computer:</para>"
 					"<table style='margin-top:12px'>"
 					"<tr>"

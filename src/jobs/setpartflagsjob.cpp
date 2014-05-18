@@ -82,7 +82,7 @@ bool SetPartFlagsJob::run(Report& parent)
 
 					if (!backendPartition->setFlag(*report, f, state))
 					{
-						report->line() << i18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(f), partition().deviceNode(), state ? i18nc("@info/plain flag turned on, active", "on") : i18nc("@info/plain flag turned off, inactive", "off"));
+						report->line() << xi18nc("@info/plain", "There was an error setting flag %1 for partition <filename>%2</filename> to state %3.", PartitionTable::flagName(f), partition().deviceNode(), state ? i18nc("@info/plain flag turned on, active", "on") : i18nc("@info/plain flag turned off, inactive", "off"));
 
 						rval = false;
 					}
@@ -91,7 +91,7 @@ bool SetPartFlagsJob::run(Report& parent)
 				delete backendPartition;
 			}
 			else
-				report->line() << i18nc("@info/plain", "Could not find partition <filename>%1</filename> on device <filename>%2</filename> to set partition flags.", partition().deviceNode(), device().deviceNode());
+				report->line() << xi18nc("@info/plain", "Could not find partition <filename>%1</filename> on device <filename>%2</filename> to set partition flags.", partition().deviceNode(), device().deviceNode());
 
 			if (rval)
 				backendPartitionTable->commit();
@@ -99,12 +99,12 @@ bool SetPartFlagsJob::run(Report& parent)
 			delete backendPartitionTable;
 		}
 		else
-			report->line() << i18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to set partition flags for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
+			report->line() << xi18nc("@info/plain", "Could not open partition table on device <filename>%1</filename> to set partition flags for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
 
 		delete backendDevice;
 	}
 	else
-		report->line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> to set partition flags for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
+		report->line() << xi18nc("@info/plain", "Could not open device <filename>%1</filename> to set partition flags for partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
 
 	if (rval)
 		partition().setFlags(flags());
@@ -117,7 +117,7 @@ bool SetPartFlagsJob::run(Report& parent)
 QString SetPartFlagsJob::description() const
 {
 	if (PartitionTable::flagNames(flags()).size() == 0)
-		return QString(i18nc("@info/plain", "Clear flags for partition <filename>%1</filename>", partition().deviceNode()));
+		return QString(xi18nc("@info/plain", "Clear flags for partition <filename>%1</filename>", partition().deviceNode()));
 
-	return i18nc("@info/plain", "Set the flags for partition <filename>%1</filename> to \"%2\"", partition().deviceNode(), PartitionTable::flagNames(flags()).join(","));
+	return xi18nc("@info/plain", "Set the flags for partition <filename>%1</filename> to \"%2\"", partition().deviceNode(), PartitionTable::flagNames(flags()).join(","));
 }

@@ -67,7 +67,7 @@ void SetFileSystemLabelOperation::undo()
 QString SetFileSystemLabelOperation::description() const
 {
 	if (oldLabel().isEmpty())
-		return QString(i18nc("@info/plain", "Set label for partition <filename>%1</filename> to \"%2\"", labeledPartition().deviceNode(), newLabel()));
+		return QString(xi18nc("@info/plain", "Set label for partition <filename>%1</filename> to \"%2\"", labeledPartition().deviceNode(), newLabel()));
 
-	return QString(i18nc("@info/plain", "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\"", labeledPartition().deviceNode(), oldLabel(), newLabel()));
+	return QString(xi18nc("@info/plain", "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\"", labeledPartition().deviceNode(), oldLabel(), newLabel()));
 }

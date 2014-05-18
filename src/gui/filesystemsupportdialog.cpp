@@ -26,6 +26,7 @@
 #include <QDialogButtonBox>
 #include <QDialog>
 
+#include <KIconThemes/KIconLoader>
 #include <KLocalizedString>
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -66,8 +67,8 @@ QSize FileSystemSupportDialog::sizeHint() const
 
 void FileSystemSupportDialog::setupDialog()
 {
-	QPixmap yes(BarIcon("dialog-ok"));
-	QPixmap no(BarIcon("dialog-error"));
+	QIcon yes = QIcon(KIconLoader().loadIcon(QLatin1String("dialog-ok"), KIconLoader::Toolbar));
+	QIcon no = QIcon(KIconLoader().loadIcon(QLatin1String("dialog-error"), KIconLoader::Toolbar));
 
 	dialogWidget().tree().clear();
 

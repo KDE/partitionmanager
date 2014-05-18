@@ -156,7 +156,7 @@
     </widget>
    </item>
    <item>
-    <widget class="KButtonGroup" name="kcfg_shredSource">
+    <widget class="QGroupBox" name="kcfg_shredSource">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>

@@ -139,7 +139,7 @@ namespace FS
 	{
 		QUuid uuid = QUuid::createUuid();
 
-		ExternalCommand cmd(report, "cryptsetup", QStringList() << "luksUUID" << deviceNode << "--uuid" << uuid);
+		ExternalCommand cmd(report, "cryptsetup", QStringList() << "luksUUID" << deviceNode << "--uuid" << uuid.toString());
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 

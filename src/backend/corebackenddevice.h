@@ -24,7 +24,6 @@
 #include "util/libpartitionmanagerexport.h"
 
 #include <QString>
-#include <qglobal.h>
 
 class CoreBackendPartition;
 class CoreBackendPartitionTable;

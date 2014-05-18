@@ -25,9 +25,9 @@
 
 #include <QStringList>
 #include <QRegExp>
+#include <QTemporaryDir>
 
 #include <KLocalizedString>
-#include <ktempdir.h>
 
 #include <unistd.h>
 
@@ -156,33 +156,33 @@ namespace FS
 
 	bool jfs::resize(Report& report, const QString& deviceNode, qint64) const
 	{
-		KTempDir tempDir;
-		if (!tempDir.exists())
+		QTemporaryDir tempDir;
+		if (!tempDir.isValid())
 		{
-			report.line() << i18nc("@info/plain", "Resizing JFS file system on partition <filename>%1</filename> failed: Could not create temp dir.", deviceNode);
+			report.line() << xi18nc("@info/plain", "Resizing JFS file system on partition <filename>%1</filename> failed: Could not create temp dir.", deviceNode);
 			return false;
 		}
 
 		bool rval = false;
 
-		ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << "-t" << "jfs" << deviceNode << tempDir.name());
+		ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << "-t" << "jfs" << deviceNode << tempDir.path());
 
 		if (mountCmd.run(-1))
 		{
-			ExternalCommand resizeMountCmd(report, "mount", QStringList() << "-v" << "-t" << "jfs" << "-o" << "remount,resize" << deviceNode << tempDir.name());
+			ExternalCommand resizeMountCmd(report, "mount", QStringList() << "-v" << "-t" << "jfs" << "-o" << "remount,resize" << deviceNode << tempDir.path());
 
 			if (resizeMountCmd.run(-1))
 				rval = true;
 			else
-				report.line() << i18nc("@info/plain", "Resizing JFS file system on partition <filename>%1</filename> failed: Remount failed.", deviceNode);
+				report.line() << xi18nc("@info/plain", "Resizing JFS file system on partition <filename>%1</filename> failed: Remount failed.", deviceNode);
 
-			ExternalCommand unmountCmd(report, "umount", QStringList() << tempDir.name());
+			ExternalCommand unmountCmd(report, "umount", QStringList() << tempDir.path());
 
 			if (!unmountCmd.run(-1))
-				report.line() << i18nc("@info/plain", "Warning: Resizing JFS file system on partition <filename>%1</filename>: Unmount failed.", deviceNode);
+				report.line() << xi18nc("@info/plain", "Warning: Resizing JFS file system on partition <filename>%1</filename>: Unmount failed.", deviceNode);
 		}
 		else
-			report.line() << i18nc("@info/plain", "Resizing JFS file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
+			report.line() << xi18nc("@info/plain", "Resizing JFS file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
 
 		return rval;
 	}

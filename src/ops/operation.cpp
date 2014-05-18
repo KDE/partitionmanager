@@ -30,7 +30,7 @@
 #include <QIcon>
 #include <QString>
 
-#include <kiconloader.h>
+#include <KIconThemes/KIconLoader>
 #include <KLocalizedString>
 
 Operation::Operation() :
@@ -115,7 +115,7 @@ QIcon Operation::statusIcon() const
 	if (status() == StatusNone)
 		return QIcon();
 
-	return SmallIcon(icons[status()]);
+	return QIcon(KIconLoader().loadIcon(icons[status()], KIconLoader::Small));
 }
 
 void Operation::addJob(Job* job)

@@ -24,11 +24,12 @@
 #include "util/report.h"
 
 #include <cmath>
+
 #include <QString>
+#include <QTemporaryDir>
 #include <QUuid>
 
 #include <KLocalizedString>
-#include <KTempDir>
 
 namespace FS
 {
@@ -138,33 +139,33 @@ namespace FS
 
 	bool nilfs2::resize(Report& report, const QString& deviceNode, qint64 length) const
 	{
-		KTempDir tempDir;
-		if (!tempDir.exists())
+		QTemporaryDir tempDir;
+		if (!tempDir.isValid())
 		{
-			report.line() << i18nc("@info/plain", "Resizing NILFS2 file system on partition <filename>%1</filename> failed: Could not create temp dir.", deviceNode);
+			report.line() << xi18nc("@info/plain", "Resizing NILFS2 file system on partition <filename>%1</filename> failed: Could not create temp dir.", deviceNode);
 			return false;
 		}
 
 		bool rval = false;
 
-		ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << "-t" << "nilfs2" << deviceNode << tempDir.name());
+		ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << "-t" << "nilfs2" << deviceNode << tempDir.path());
 
 		if (mountCmd.run(-1) && mountCmd.exitCode() == 0)
 		{
 			ExternalCommand resizeCmd(report, "nilfs-resize", QStringList() << "-v" << "-y" << deviceNode << QString::number(length));
-			
+
 			if (resizeCmd.run(-1) && resizeCmd.exitCode() == 0)
 				rval = true;
 			else
-				report.line() << i18nc("@info/plain", "Resizing NILFS2 file system on partition <filename>%1</filename> failed: NILFS2 file system resize failed.", deviceNode);
+				report.line() << xi18nc("@info/plain", "Resizing NILFS2 file system on partition <filename>%1</filename> failed: NILFS2 file system resize failed.", deviceNode);
 
-			ExternalCommand unmountCmd(report, "umount", QStringList() << tempDir.name());
+			ExternalCommand unmountCmd(report, "umount", QStringList() << tempDir.path());
 
 			if (!unmountCmd.run(-1) && unmountCmd.exitCode() == 0 )
-				report.line() << i18nc("@info/plain", "Warning: Resizing NILFS2 file system on partition <filename>%1</filename>: Unmount failed.", deviceNode);
+				report.line() << xi18nc("@info/plain", "Warning: Resizing NILFS2 file system on partition <filename>%1</filename>: Unmount failed.", deviceNode);
 		}
 		else
-			report.line() << i18nc("@info/plain", "Resizing NILFS2 file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
+			report.line() << xi18nc("@info/plain", "Resizing NILFS2 file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
 
 		return rval;
 	}
@@ -178,7 +179,7 @@ namespace FS
 	bool nilfs2::updateUUID(Report& report, const QString& deviceNode) const
 	{
 		QUuid uuid = QUuid::createUuid();
-		ExternalCommand cmd(report, "nilfs-tune", QStringList() << "-U" << uuid << deviceNode);
+		ExternalCommand cmd(report, "nilfs-tune", QStringList() << "-U" << uuid.toString() << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

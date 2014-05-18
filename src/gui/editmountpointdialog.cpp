@@ -22,7 +22,9 @@
 
 #include "core/partition.h"
 
-#include <kmessagebox.h>
+#include <KMessageBox>
+#include <KGuiItem>
+#include <KStandardGuiItem>
 #include <KLocalizedString>
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -35,7 +37,7 @@ EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
 	QVBoxLayout *mainLayout = new QVBoxLayout(this);
 	setLayout(mainLayout);
 	mainLayout->addWidget(&widget());
-	setWindowTitle(i18nc("@title:window", "Edit mount point for <filename>%1</filename>", p.deviceNode()));
+	setWindowTitle(xi18nc("@title:window", "Edit mount point for <filename>%1</filename>", p.deviceNode()));
 
 	KConfigGroup kcg(KSharedConfig::openConfig(), "editMountPointDialog");
 	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
@@ -51,7 +53,7 @@ EditMountPointDialog::~EditMountPointDialog()
 void EditMountPointDialog::accept()
 {
 	if (KMessageBox::warningContinueCancel(this,
-			i18nc("@info", "<para>Are you sure you want to save the changes you made to the system table file <filename>/etc/fstab</filename>?</para>"
+			xi18nc("@info", "<para>Are you sure you want to save the changes you made to the system table file <filename>/etc/fstab</filename>?</para>"
 			"<para><warning>This will overwrite the existing file on your hard drive now. This <strong>can not be undone</strong>.</warning></para>"),
 			i18nc("@title:window", "Really save changes?"),
 			KGuiItem(i18nc("@action:button", "Save changes"), "arrow-right"),

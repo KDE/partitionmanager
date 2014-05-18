@@ -27,13 +27,13 @@
 
 #include "util/capacity.h"
 
+#include <QDockWidget>
+#include <QFontDatabase>
+#include <QFrame>
 #include <QGridLayout>
 #include <QLabel>
-#include <QFrame>
-#include <QDockWidget>
 #include <QLocale>
 
-#include <kglobalsettings.h>
 #include <KLocalizedString>
 
 /** Creates a new InfoPane instance
@@ -77,7 +77,7 @@ int InfoPane::createHeader(const QString& title, const int num_cols)
 void InfoPane::createLabels(const QString& title, const QString& value, const int num_cols, int& x, int& y)
 {
 	QLabel* labelTitle = new QLabel(title, this);
-	labelTitle->setFont(KGlobalSettings::smallestReadableFont());
+	labelTitle->setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
 	labelTitle->setAlignment(Qt::AlignRight | Qt::AlignTrailing | Qt::AlignVCenter);
 
 	QPalette palette = labelTitle->palette();
@@ -90,7 +90,7 @@ void InfoPane::createLabels(const QString& title, const QString& value, const in
 
 	QLabel* labelValue = new QLabel(value, this);
 	labelValue->setTextInteractionFlags(Qt::TextBrowserInteraction);
-	labelValue->setFont(KGlobalSettings::smallestReadableFont());
+	labelValue->setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
 	gridLayout().addWidget(labelValue, y, x + 1, 1, 1);
 
 	x += 2;

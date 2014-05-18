@@ -30,9 +30,9 @@
 #include "util/capacity.h"
 #include "util/helpers.h"
 
+#include <QFontDatabase>
 #include <QtAlgorithms>
 
-#include <kglobalsettings.h>
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -181,7 +181,7 @@ void NewDialog::updateHideAndShow()
 	{
 		dialogWidget().label().setReadOnly(true);
 		dialogWidget().noSetLabel().setVisible(true);
-		dialogWidget().noSetLabel().setFont(KGlobalSettings::smallestReadableFont());
+		dialogWidget().noSetLabel().setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
 
 		QPalette palette = dialogWidget().noSetLabel().palette();
 		QColor f = palette.color(QPalette::Foreground);
