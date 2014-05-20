@@ -55,14 +55,14 @@ namespace FS
 
 	void fat16::init()
 	{
-		m_Create = findExternal("mkfs.msdos") ? cmdSupportFileSystem : cmdSupportNone;
-		m_GetUsed = m_Check = findExternal("fsck.msdos", QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal(QStringLiteral("mkfs.msdos")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetUsed = m_Check = findExternal(QStringLiteral("fsck.msdos"), QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetLabel = cmdSupportCore;
 		m_SetLabel = cmdSupportFileSystem;
 		m_Move = cmdSupportCore;
 		m_Copy = cmdSupportCore;
 		m_Backup = cmdSupportCore;
-		m_UpdateUUID = findExternal("dd") ? cmdSupportFileSystem : cmdSupportNone;
+		m_UpdateUUID = findExternal(QStringLiteral("dd")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetUUID = cmdSupportCore;
 	}
 
@@ -86,7 +86,7 @@ namespace FS
 	FileSystem::SupportTool fat16::supportToolName() const
 	{
 		// also, dd for updating the UUID, but let's assume it's there ;-)
-		return SupportTool("dosfstools", QUrl("http://www.daniel-baumann.ch/software/dosfstools/"));
+		return SupportTool(QStringLiteral("dosfstools"), QUrl(QStringLiteral("http://www.daniel-baumann.ch/software/dosfstools/")));
 	}
 
 
@@ -107,19 +107,19 @@ namespace FS
 
 	qint64 fat16::readUsedCapacity(const QString& deviceNode) const
 	{
-		ExternalCommand cmd("fsck.msdos", QStringList() << "-n" << "-v" << deviceNode);
+		ExternalCommand cmd(QStringLiteral("fsck.msdos"), QStringList() << QStringLiteral("-n") << QStringLiteral("-v") << deviceNode);
 
 		if (cmd.run())
 		{
 			qint64 usedClusters = -1;
-			QRegExp rxClusters("files, (\\d+)/\\d+ ");
+			QRegExp rxClusters(QStringLiteral("files, (\\d+)/\\d+ "));
 
 			if (rxClusters.indexIn(cmd.output()) != -1)
 				usedClusters = rxClusters.cap(1).toLongLong();
 
 			qint64 clusterSize = -1;
 
-			QRegExp rxClusterSize("(\\d+) bytes per cluster");
+			QRegExp rxClusterSize(QStringLiteral("(\\d+) bytes per cluster"));
 
 			if (rxClusterSize.indexIn(cmd.output()) != -1)
 				clusterSize = rxClusterSize.cap(1).toLongLong();
@@ -135,18 +135,18 @@ namespace FS
 	{
 		report.line() << xi18nc("@info/plain", "Setting label for partition <filename>%1</filename> to %2", deviceNode, newLabel);
 
-		return fatlabel_set_label(deviceNode.toLocal8Bit(), newLabel.toLocal8Bit()) == 0;
+		return fatlabel_set_label(deviceNode.toLocal8Bit().constData(), newLabel.toLocal8Bit().constData()) == 0;
 	}
 
 	bool fat16::check(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "fsck.msdos", QStringList() << "-a" << "-w" << "-v" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("fsck.msdos"), QStringList() << QStringLiteral("-a") << QStringLiteral("-w") << QStringLiteral("-v") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool fat16::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "mkfs.msdos", QStringList() << "-F16" << "-I" << "-v" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("mkfs.msdos"), QStringList() << QStringLiteral("-F16") << QStringLiteral("-I") << QStringLiteral("-v") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
@@ -158,7 +158,7 @@ namespace FS
 		for (quint32 i = 0; i < sizeof(uuid); i++, t >>= 8)
 			uuid[i] = t & 0xff;
 
-		ExternalCommand cmd(report, "dd", QStringList() << "of=" + deviceNode << "bs=1" << "count=4" << "seek=39");
+		ExternalCommand cmd(report, QStringLiteral("dd"), QStringList() << QStringLiteral("of=") + deviceNode << QStringLiteral("bs=1") << QStringLiteral("count=4") << QStringLiteral("seek=39"));
 
 		if (!cmd.start())
 			return false;

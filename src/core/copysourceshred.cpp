@@ -29,7 +29,7 @@ CopySourceShred::CopySourceShred (qint64 s, qint32 sectorsize) :
 	CopySource(),
 	m_Size(s),
 	m_SectorSize(sectorsize),
-	m_SourceFile(Config::shredSource() == Config::EnumShredSource::random ? "/dev/urandom" : "/dev/zero")
+	m_SourceFile(Config::shredSource() == Config::EnumShredSource::random ? QStringLiteral("/dev/urandom") : QStringLiteral("/dev/zero"))
 {
 }
 

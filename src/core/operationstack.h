@@ -54,7 +54,7 @@ class OperationStack : public QObject
 		OperationStack(QObject* parent = NULL);
 		~OperationStack();
 
-	signals:
+	Q_SIGNALS:
 		void operationsChanged();
 		void devicesChanged();
 

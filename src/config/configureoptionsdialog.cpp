@@ -107,12 +107,12 @@ bool ConfigureOptionsDialog::hasChanged()
 {
 	bool result = KConfigDialog::hasChanged();
 
-	KConfigSkeletonItem* kcItem = Config::self()->findItem("defaultFileSystem");
+	KConfigSkeletonItem* kcItem = Config::self()->findItem(QStringLiteral("defaultFileSystem"));
 	result = result || !kcItem->isEqual(generalPageWidget().defaultFileSystem());
 
 	if (advancedPageWidget().isVisible())
 	{
-		kcItem = Config::self()->findItem("backend");
+		kcItem = Config::self()->findItem(QStringLiteral("backend"));
 		result = result || !kcItem->isEqual(advancedPageWidget().backend());
 	}
 
@@ -153,8 +153,8 @@ void ConfigureOptionsDialog::onComboBackendActivated(int)
 				"<para>Do you really want to change the backend?</para>"
 				"<para><warning>This will also rescan devices and thus clear the list of pending operations.</warning></para>"),
 			i18nc("@title:window", "Really Change Backend?"),
-			KGuiItem(i18nc("@action:button", "Change the Backend"), "arrow-right"),
-			KGuiItem(i18nc("@action:button", "Do Not Change the Backend"), "dialog-cancel"), "reallyChangeBackend") == KMessageBox::Continue)
+			KGuiItem(i18nc("@action:button", "Change the Backend"), QStringLiteral("arrow-right")),
+			KGuiItem(i18nc("@action:button", "Do Not Change the Backend"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyChangeBackend")) == KMessageBox::Continue)
 	{
 		settingsChangedSlot();
 	}

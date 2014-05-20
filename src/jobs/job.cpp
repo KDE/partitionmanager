@@ -207,11 +207,11 @@ void Job::jobFinished(Report& report, bool b)
 /** @return the Job's current status icon */
 QIcon Job::statusIcon() const
 {
-	static const char* icons[] =
+	static const QString icons[] =
 	{
-		"dialog-information",
-		"dialog-ok",
-		"dialog-error"
+		QStringLiteral("dialog-information"),
+		QStringLiteral("dialog-ok"),
+		QStringLiteral("dialog-error")
 	};
 
 	Q_ASSERT(status() >= 0 && static_cast<quint32>(status()) < sizeof(icons) / sizeof(icons[0]));

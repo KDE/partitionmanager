@@ -84,8 +84,8 @@ bool LibPartedPartitionTable::commit(PedDisk* pd, quint32 timeout)
 		}
 	}
 
-	if (!ExternalCommand("udevadm", QStringList() << "settle" << "--timeout=" + QString::number(timeout)).run() &&
-			!ExternalCommand("udevsettle", QStringList() << "--timeout=" + QString::number(timeout)).run())
+	if (!ExternalCommand(QStringLiteral("udevadm"), QStringList() << QStringLiteral("settle") << QStringLiteral("--timeout=") + QString::number(timeout)).run() &&
+			!ExternalCommand(QStringLiteral("udevsettle"), QStringList() << QStringLiteral("--timeout=") + QString::number(timeout)).run())
 		sleep(timeout);
 
 	return rval;
@@ -117,27 +117,27 @@ static const struct
 	QString name;
 } mapFileSystemTypeToLibPartedName[] =
 {
-	{ FileSystem::Ext2, "ext2" },
-	{ FileSystem::Ext3, "ext3" },
-	{ FileSystem::Ext4, "ext4" },
-	{ FileSystem::LinuxSwap, "linux-swap" },
-	{ FileSystem::Fat16, "fat16" },
-	{ FileSystem::Fat32, "fat32" },
-	{ FileSystem::Ntfs, "ntfs" },
-	{ FileSystem::ReiserFS, "reiserfs" },
-	{ FileSystem::Reiser4, "reiser4" },
-	{ FileSystem::Xfs, "xfs" },
-	{ FileSystem::Jfs, "jfs" },
-	{ FileSystem::Hfs, "hfs" },
-	{ FileSystem::HfsPlus, "hfs+" },
-	{ FileSystem::Ufs, "ufs" }
+	{ FileSystem::Ext2, QStringLiteral("ext2") },
+	{ FileSystem::Ext3, QStringLiteral("ext3") },
+	{ FileSystem::Ext4, QStringLiteral("ext4") },
+	{ FileSystem::LinuxSwap, QStringLiteral("linux-swap") },
+	{ FileSystem::Fat16, QStringLiteral("fat16") },
+	{ FileSystem::Fat32, QStringLiteral("fat32") },
+	{ FileSystem::Ntfs, QStringLiteral("ntfs") },
+	{ FileSystem::ReiserFS, QStringLiteral("reiserfs") },
+	{ FileSystem::Reiser4, QStringLiteral("reiser4") },
+	{ FileSystem::Xfs, QStringLiteral("xfs") },
+	{ FileSystem::Jfs, QStringLiteral("jfs") },
+	{ FileSystem::Hfs, QStringLiteral("hfs") },
+	{ FileSystem::HfsPlus, QStringLiteral("hfs+") },
+	{ FileSystem::Ufs, QStringLiteral("ufs") }
 };
 
 static PedFileSystemType* getPedFileSystemType(FileSystem::Type t)
 {
 	for (quint32 i = 0; i < sizeof(mapFileSystemTypeToLibPartedName) / sizeof(mapFileSystemTypeToLibPartedName[0]); i++)
 		if (mapFileSystemTypeToLibPartedName[i].type == t)
-			return ped_file_system_type_get(mapFileSystemTypeToLibPartedName[i].name.toLatin1());
+			return ped_file_system_type_get(mapFileSystemTypeToLibPartedName[i].name.toLatin1().constData());
 
 	// if we didn't find anything, go with ext2 as a safe fallback
 	return ped_file_system_type_get("ext2");
@@ -147,7 +147,7 @@ QString LibPartedPartitionTable::createPartition(Report& report, const Partition
 {
 	Q_ASSERT(partition.devicePath() == pedDevice()->path);
 
-	QString rval = "";
+	QString rval = QString();
 
 	// According to libParted docs, PedPartitionType can be "NULL if unknown". That's obviously wrong,
 	// it's a typedef for an enum. So let's use something the libparted devs will hopefully never
@@ -164,7 +164,7 @@ QString LibPartedPartitionTable::createPartition(Report& report, const Partition
 	if (pedType == static_cast<int>(0xffffffff))
 	{
 		report.line() << xi18nc("@info/plain", "Unknown partition role for new partition <filename>%1</filename> (roles: %2)", partition.deviceNode(), partition.roles().toString());
-		return "";
+		return QString();
 	}
 
 	PedFileSystemType* pedFsType = (partition.roles().has(PartitionRole::Extended) || partition.fileSystem().type() == FileSystem::Unformatted) ? NULL : getPedFileSystemType(partition.fileSystem().type());
@@ -174,7 +174,7 @@ QString LibPartedPartitionTable::createPartition(Report& report, const Partition
 	if (pedPartition == NULL)
 	{
 		report.line() << xi18nc("@info/plain", "Failed to create new partition <filename>%1</filename>.", partition.deviceNode());
-		return "";
+		return QString();
 	}
 
 	PedConstraint* pedConstraint = NULL;
@@ -186,13 +186,13 @@ QString LibPartedPartitionTable::createPartition(Report& report, const Partition
 	if (pedConstraint == NULL)
 	{
 		report.line() << i18nc("@info/plain", "Failed to create a new partition: could not get geometry for constraint.");
-		return "";
+		return QString();
 	}
 
 	if (ped_disk_add_partition(pedDisk(), pedPartition, pedConstraint))
-		rval = QString(ped_partition_get_path(pedPartition));
+		rval = QString::fromUtf8(ped_partition_get_path(pedPartition));
 	else
-		report.line() << xi18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition.deviceNode(), pedDisk()->dev->path);
+		report.line() << xi18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition.deviceNode(), QString::fromUtf8(pedDisk()->dev->path));
 
 	ped_constraint_destroy(pedConstraint);
 

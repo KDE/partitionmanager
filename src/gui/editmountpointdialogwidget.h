@@ -61,7 +61,7 @@ class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDial
 		bool acceptChanges();
 		bool writeMountpoints(const QString& filename);
 
-	protected slots:
+	protected Q_SLOTS:
 		void on_m_ButtonSelect_clicked(bool);
 		void on_m_ButtonMore_clicked(bool);
 

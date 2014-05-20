@@ -48,7 +48,7 @@ class CreatePartitionTableOperation : public Operation
 		~CreatePartitionTableOperation();
 
 	public:
-		QString iconName() const { return "edit-clear"; }
+		QString iconName() const { return QStringLiteral("edit-clear"); }
 		QString description() const;
 		void preview();
 		void undo();

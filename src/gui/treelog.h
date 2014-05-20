@@ -43,13 +43,13 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT TreeLog: public QWidget, public Ui::Tree
 		TreeLog(QWidget* parent = NULL);
 		~TreeLog();
 
-	signals:
+	Q_SIGNALS:
 		void contextMenuRequested(const QPoint&);
 
 	public:
 		void init();
 
-	protected slots:
+	protected Q_SLOTS:
 		void onNewLogMessage(Log::Level logLevel, const QString& s);
 		void onHeaderContextMenu(const QPoint& pos);
 		void onClearLog();

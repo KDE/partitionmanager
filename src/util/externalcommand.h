@@ -76,7 +76,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ExternalCommand : public QProcess
 		void setExitCode(int i) { m_ExitCode = i; }
 		void setup();
 
-	protected slots:
+	protected Q_SLOTS:
 		void onFinished(int exitCode);
 		void onReadOutput();
 

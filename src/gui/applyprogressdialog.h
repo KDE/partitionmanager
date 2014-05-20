@@ -59,7 +59,7 @@ class ApplyProgressDialog : public QDialog
 		Report& report() { Q_ASSERT(m_Report); return *m_Report; } /**< @return the Report object for this dialog */
 		const Report& report() const { Q_ASSERT(m_Report); return *m_Report; } /**< @return the Report object for this dialog */
 
-	protected slots:
+	protected Q_SLOTS:
 		void onAllOpsFinished();
 		void onAllOpsCancelled();
 		void onAllOpsError();

@@ -33,10 +33,10 @@ MountEntry::MountEntry(const QString& n, const QString& p, const QString& t, con
 }
 
 MountEntry::MountEntry(struct mntent* p, IdentifyType type) :
-	name(p->mnt_fsname),
-	path(p->mnt_dir),
-	type(p->mnt_type),
-	options(QString(p->mnt_opts).split(',')),
+	name(QString::fromUtf8(p->mnt_fsname)),
+	path(QString::fromUtf8(p->mnt_dir)),
+	type(QString::fromUtf8(p->mnt_type)),
+	options(QString::fromUtf8(p->mnt_opts).split(QStringLiteral(","))),
 	dumpFreq(p->mnt_freq),
 	passNumber(p->mnt_passno),
 	identifyType(type)

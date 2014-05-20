@@ -46,11 +46,11 @@ namespace FS
 
 	void lvm2_pv::init()
 	{
-		m_Create = findExternal("lvm") ? cmdSupportFileSystem : cmdSupportNone;
-		m_Check = findExternal("lvm") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal(QStringLiteral("lvm")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = findExternal(QStringLiteral("lvm")) ? cmdSupportFileSystem : cmdSupportNone;
 
 		m_GetLabel = cmdSupportCore;
-		m_UpdateUUID = findExternal("lvm") ? cmdSupportFileSystem : cmdSupportNone;
+		m_UpdateUUID = findExternal(QStringLiteral("lvm")) ? cmdSupportFileSystem : cmdSupportNone;
 
 		m_Copy = cmdSupportNone; // Copying PV can confuse LVM
 		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
@@ -79,7 +79,7 @@ namespace FS
 
 	FileSystem::SupportTool lvm2_pv::supportToolName() const
 	{
-		return SupportTool("lvm2", QUrl("http://sourceware.org/lvm2/"));
+		return SupportTool(QStringLiteral("lvm2"), QUrl(QStringLiteral("http://sourceware.org/lvm2/")));
 	}
 
 	qint64 lvm2_pv::maxCapacity() const
@@ -89,26 +89,26 @@ namespace FS
 
 	bool lvm2_pv::check(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "lvm", QStringList() << "pvck" << "-v" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("lvm"), QStringList() << QStringLiteral("pvck") << QStringLiteral("-v") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool lvm2_pv::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "lvm", QStringList() << "pvcreate" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("lvm"), QStringList() << QStringLiteral("pvcreate") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool lvm2_pv::remove(Report& report, const QString& deviceNode) const
 	{
 // 		TODO: check if PV is a member of an exported VG
-		ExternalCommand cmd(report, "lvm", QStringList() << "pvremove" << "-ffy" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("lvm"), QStringList() << QStringLiteral("pvremove") << QStringLiteral("-ffy") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool lvm2_pv::updateUUID(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "lvm", QStringList() << "pvchange" << "-u" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("lvm"), QStringList() << QStringLiteral("pvchange") << QStringLiteral("-u") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

@@ -63,7 +63,7 @@ class DevicePropsDialog : public QDialog
 
 		void onButtonSmartMore();
 
-	protected slots:
+	protected Q_SLOTS:
 		void setDirty(bool);
 		void onButtonSmartMore(bool);
 

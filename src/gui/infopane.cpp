@@ -152,15 +152,15 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
 	int y = createHeader(d.name(), cols(area));
 	createLabels(i18nc("@label device", "Path:"), d.deviceNode(), cols(area), x, y);
 
-	QString type = "---";
-	QString maxPrimaries = "---";
+	QString type = QStringLiteral("---");
+	QString maxPrimaries = QStringLiteral("---");
 
 	if (d.partitionTable() != NULL)
 	{
 		type = (d.partitionTable()->isReadOnly())
 			? i18nc("@label device", "%1 (read only)", d.partitionTable()->typeName())
 			: d.partitionTable()->typeName();
-		maxPrimaries = QString("%1/%2").arg(d.partitionTable()->numPrimaries()).arg(d.partitionTable()->maxPrimaries());
+		maxPrimaries = QStringLiteral("%1/%2").arg(d.partitionTable()->numPrimaries()).arg(d.partitionTable()->maxPrimaries());
 	}
 
 	createLabels(i18nc("@label device", "Type:"), type, cols(area), x, y);

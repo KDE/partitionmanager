@@ -25,6 +25,6 @@ CreatePartitionTableWidget::CreatePartitionTableWidget(QWidget* parent) :
 	QWidget(parent)
 {
 	setupUi(this);
-	QIcon icon = QIcon::fromTheme("dialog-warning");
+	QIcon icon = QIcon::fromTheme(QStringLiteral("dialog-warning"));
 	iconLabel().setPixmap(icon.pixmap(32, 32));
 }

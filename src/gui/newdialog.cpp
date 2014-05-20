@@ -160,7 +160,7 @@ void NewDialog::onFilesystemChanged(int idx)
 
 	setupConstraints();
 
-	const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()), -1, -1, -1, "");
+	const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()), -1, -1, -1, QString());
 	dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
 
 	updateSpinCapacity(partition().length());

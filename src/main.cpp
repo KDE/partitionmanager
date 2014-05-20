@@ -58,7 +58,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
 	if (!checkPermissions())
 		return 0;
 
-	Config::instance("partitionmanagerrc");
+	Config::instance(QStringLiteral("partitionmanagerrc"));
 
 	if (!loadBackend())
 		return 0;

@@ -63,7 +63,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT GlobalLog : public QObject
 	private:
 		GlobalLog() : msg() {}
 
-	signals:
+	Q_SIGNALS:
 		void newMessage(Log::Level, const QString&);
 
 	public:

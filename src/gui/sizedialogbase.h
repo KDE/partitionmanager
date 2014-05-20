@@ -83,7 +83,7 @@ class SizeDialogBase : public QDialog
 		virtual void setMinimumLength(qint64 s) { m_MinimumLength = s; }
 		virtual void setMaximumLength(qint64 s) { m_MaximumLength = s; }
 
-	protected slots:
+	protected Q_SLOTS:
 		void onResizerWidgetFirstSectorChanged(qint64 newFirst);
 		void onResizerWidgetLastSectorChanged(qint64 newLast);
 

@@ -47,11 +47,11 @@ namespace FS
 
 	void exfat::init()
 	{
-		m_Create = findExternal("mkfs.exfat") ? cmdSupportFileSystem : cmdSupportNone;
-		m_Check = findExternal("exfatfsck", QStringList(), 1) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal(QStringLiteral("mkfs.exfat")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = findExternal(QStringLiteral("exfatfsck"), QStringList(), 1) ? cmdSupportFileSystem : cmdSupportNone;
 
 		m_GetLabel = cmdSupportCore;
-		m_SetLabel = findExternal("exfatlabel") ? cmdSupportFileSystem : cmdSupportNone;
+		m_SetLabel = findExternal(QStringLiteral("exfatlabel")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_UpdateUUID = cmdSupportNone;
 
 		m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
@@ -81,7 +81,7 @@ namespace FS
 
 	FileSystem::SupportTool exfat::supportToolName() const
 	{
-		return SupportTool("exfat-utils", QUrl("http://code.google.com/p/exfat/"));
+		return SupportTool(QStringLiteral("exfat-utils"), QUrl(QStringLiteral("http://code.google.com/p/exfat/")));
 	}
 
 	qint64 exfat::maxCapacity() const
@@ -96,19 +96,19 @@ namespace FS
 
 	bool exfat::check(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "exfatfsck", QStringList() << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("exfatfsck"), QStringList() << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool exfat::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "mkfs.exfat", QStringList() << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("mkfs.exfat"), QStringList() << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool exfat::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
-		ExternalCommand cmd(report, "exfatlabel", QStringList() << deviceNode << newLabel);
+		ExternalCommand cmd(report, QStringLiteral("exfatlabel"), QStringList() << deviceNode << newLabel);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 

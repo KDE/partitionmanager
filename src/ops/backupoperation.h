@@ -41,7 +41,7 @@ class BackupOperation : public Operation
 		BackupOperation(Device& targetDevice, Partition& backupPartition, const QString& filename);
 
 	public:
-		QString iconName() const { return "document-export"; }
+		QString iconName() const { return QStringLiteral("document-export"); }
 		QString description() const;
 		void preview() {}
 		void undo() {}

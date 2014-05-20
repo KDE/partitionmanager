@@ -46,7 +46,7 @@ class CreatePartitionTableDialog : public QDialog
 		const CreatePartitionTableWidget& widget() const { return *m_DialogWidget; }
 		const Device& device() const { return m_Device; }
 
-	protected slots:
+	protected Q_SLOTS:
 		void onMSDOSToggled(bool on);
 
 	private:

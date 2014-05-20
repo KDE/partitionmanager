@@ -52,7 +52,7 @@ static qint32 getPhysicalSectorSize(const QString& device_node)
 
 #if defined(BLKPBSZGET)
 	int phSectorSize = -1;
-	int fd = open(device_node.toLocal8Bit(), O_RDONLY);
+	int fd = open(device_node.toLocal8Bit().constData(), O_RDONLY);
 	if (fd != -1)
 	{
 		if (ioctl(fd, BLKPBSZGET, &phSectorSize) >= 0)
@@ -65,7 +65,7 @@ static qint32 getPhysicalSectorSize(const QString& device_node)
 	}
 #endif
 
-	QFile f(QString("/sys/block/%1/queue/physical_block_size").arg(QString(device_node).remove("/dev/")));
+	QFile f(QStringLiteral("/sys/block/%1/queue/physical_block_size").arg(QString(device_node).remove(QStringLiteral("/dev/"))));
 
 	if (f.open(QIODevice::ReadOnly))
 	{
@@ -94,7 +94,7 @@ Device::Device(const QString& name, const QString& devicenode, qint32 heads, qin
 	m_Cylinders(cylinders),
 	m_LogicalSectorSize(sectorSize),
 	m_PhysicalSectorSize(getPhysicalSectorSize(devicenode)),
-	m_IconName(iconname.isEmpty() ? "drive-harddisk" : iconname),
+	m_IconName(iconname.isEmpty() ? QStringLiteral("drive-harddisk") : iconname),
 	m_SmartStatus(new SmartStatus(devicenode))
 {
 }
@@ -117,5 +117,5 @@ bool Device::operator!=(const Device& other) const
 
 QString Device::prettyName() const
 {
-	return QString("%1 (%2, %3)").arg(deviceNode()).arg(name()).arg(Capacity::formatByteSize(this->capacity()));
+	return QStringLiteral("%1 (%2, %3)").arg(deviceNode()).arg(name()).arg(Capacity::formatByteSize(this->capacity()));
 }

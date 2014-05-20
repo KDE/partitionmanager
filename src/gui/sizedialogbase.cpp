@@ -63,7 +63,7 @@ SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint
 	detailsButton = new QPushButton;
 	okButton = dialogButtonBox->addButton( QDialogButtonBox::Ok );
 	cancelButton = dialogButtonBox->addButton( QDialogButtonBox::Cancel );
-	detailsButton->setText(i18nc("@item:button advanced settings button", "Advanced") + " >>");
+	detailsButton->setText(i18nc("@item:button advanced settings button", "Advanced") + QStringLiteral(" >>"));
 	dialogButtonBox->addButton( detailsButton, QDialogButtonBox::ActionRole);
 	mainLayout->addWidget(dialogButtonBox);
 
@@ -79,9 +79,9 @@ void SizeDialogBase::setupDialog()
 
 	dialogWidget().spinCapacity().setValue(Capacity(partition().capacity()).toDouble(Capacity::preferredUnit()));
 
-	dialogWidget().spinFreeBefore().setSuffix(QString(" ") + Capacity::unitName(Capacity::preferredUnit()));
-	dialogWidget().spinFreeAfter().setSuffix(QString(" ") + Capacity::unitName(Capacity::preferredUnit()));
-	dialogWidget().spinCapacity().setSuffix(QString(" ") + Capacity::unitName(Capacity::preferredUnit()));
+	dialogWidget().spinFreeBefore().setSuffix(QStringLiteral(" ") + Capacity::unitName(Capacity::preferredUnit()));
+	dialogWidget().spinFreeAfter().setSuffix(QStringLiteral(" ") + Capacity::unitName(Capacity::preferredUnit()));
+	dialogWidget().spinCapacity().setSuffix(QStringLiteral(" ") + Capacity::unitName(Capacity::preferredUnit()));
 
 	detailsWidget().spinFirstSector().setValue(partition().firstSector());
 	detailsWidget().spinLastSector().setValue(partition().lastSector());
@@ -146,7 +146,7 @@ void SizeDialogBase::toggleDetails()
 {
 	const bool isVisible = detailsWidget().isVisible();
 	detailsWidget().setVisible(!isVisible);
-	detailsButton->setText(i18n("&Advanced") + (isVisible ? " >>" : " <<"));
+	detailsButton->setText(i18n("&Advanced") + (isVisible ? QStringLiteral(" >>") : QStringLiteral(" <<")));
 }
 
 void SizeDialogBase::onSpinFreeBeforeChanged(double newBefore)

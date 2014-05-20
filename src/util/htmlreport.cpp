@@ -40,8 +40,8 @@ QString HtmlReport::tableLine(const QString& label, const QString contents)
 	QTextStream s(&rval);
 
 	s << "<tr>\n"
-		<< QString("<td style='font-weight:bold;padding-right:20px;'>%1</td>\n").arg(QString(label).toHtmlEscaped())
-		<< QString("<td>%1</td>\n").arg(QString(contents).toHtmlEscaped())
+		<< QStringLiteral("<td style='font-weight:bold;padding-right:20px;'>%1</td>\n").arg(QString(label).toHtmlEscaped())
+		<< QStringLiteral("<td>%1</td>\n").arg(QString(contents).toHtmlEscaped())
 		<< "</tr>\n";
 
 	s.flush();
@@ -72,7 +72,7 @@ QString HtmlReport::header()
 
 	struct utsname info;
 	uname(&info);
-	const QString unameString = QString(info.sysname) + ' ' + info.nodename + ' ' + info.release + ' ' + info.version + ' ' + info.machine;
+	const QString unameString = QString::fromUtf8(info.sysname) + QStringLiteral(" ") + QString::fromUtf8(info.nodename) + QStringLiteral(" ") + QString::fromUtf8(info.release) + QStringLiteral(" ") + QString::fromUtf8(info.version) + QStringLiteral(" ") + QString::fromUtf8(info.machine);
 
 	s << "<table>\n"
 		<< tableLine(i18n("Date:"), QLocale().toString(QDateTime::currentDateTime(), QLocale::ShortFormat))
@@ -91,5 +91,5 @@ QString HtmlReport::header()
 
 QString HtmlReport::footer()
 {
-	return "\n\n</body>\n</html>\n";
+	return QStringLiteral("\n\n</body>\n</html>\n");
 }

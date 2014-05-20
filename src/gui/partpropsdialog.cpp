@@ -143,10 +143,10 @@ void PartPropsDialog::setupDialog()
 	{
 		const qint64 availPercent = (partition().fileSystem().length() - partition().fileSystem().sectorsUsed()) * 100 / partition().fileSystem().length();
 
-		const QString availString = QString("%1% - %2")
+		const QString availString = QStringLiteral("%1% - %2")
 			.arg(availPercent)
 			.arg(Capacity::formatByteSize(partition().available()));
-		const QString usedString = QString("%1% - %2")
+		const QString usedString = QStringLiteral("%1% - %2")
 			.arg(100 - availPercent)
 			.arg(Capacity::formatByteSize(partition().used()));
 
@@ -193,7 +193,7 @@ void PartPropsDialog::setupFlagsList()
 void PartPropsDialog::updateHideAndShow()
 {
 	// create a temporary fs for some checks
-	const FileSystem* fs = FileSystemFactory::create(newFileSystemType(), -1, -1, -1, "");
+	const FileSystem* fs = FileSystemFactory::create(newFileSystemType(), -1, -1, -1, QString());
 
 	if (fs == NULL || fs->supportSetLabel() == FileSystem::cmdSupportNone)
 	{
@@ -323,7 +323,7 @@ void PartPropsDialog::setupFileSystemComboBox()
 
 	dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));
 
-	const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, "");
+	const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, QString());
 	dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
 }
 
@@ -341,15 +341,15 @@ void PartPropsDialog::onFilesystemChanged(int)
 			xi18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.<warning></para>"
 				"<para>Changing the file system on a partition already on disk will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filename>%1</filename> will unrecoverably be lost.</para>", partition().deviceNode()),
 			xi18nc("@title:window", "Really Recreate <filename>%1</filename> with File System %2?", partition().deviceNode(), dialogWidget().fileSystem().currentText()),
-			KGuiItem(i18nc("@action:button", "Change the File System"), "arrow-right"),
-			KGuiItem(i18nc("@action:button", "Do Not Change the File System"), "dialog-cancel"), "reallyChangeFileSystem") == KMessageBox::Continue)
+			KGuiItem(i18nc("@action:button", "Change the File System"), QStringLiteral("arrow-right")),
+			KGuiItem(i18nc("@action:button", "Do Not Change the File System"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyChangeFileSystem")) == KMessageBox::Continue)
 	{
 		setDirty();
 		updateHideAndShow();
 		setWarnFileSystemChange();
 		updatePartitionFileSystem();
 
-		const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, "");
+		const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, QString());
 		dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
 	}
 	else
@@ -366,8 +366,8 @@ void PartPropsDialog::onRecreate(int state)
 			xi18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.</warning></para>"
 				"<para>Recreating a file system will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filesystem>%1</filesyste> will unrecoverably be lost.</p>", partition().deviceNode()),
 			xi18nc("@title:window", "Really Recreate File System on <filename>%1</filename>?", partition().deviceNode()),
-			KGuiItem(i18nc("@action:button", "Recreate the File System"), "arrow-right"),
-			KGuiItem(i18nc("@action:button", "Do Not Recreate the File System"), "dialog-cancel"), "reallyRecreateFileSystem") == KMessageBox::Continue))
+			KGuiItem(i18nc("@action:button", "Recreate the File System"), QStringLiteral("arrow-right")),
+			KGuiItem(i18nc("@action:button", "Do Not Recreate the File System"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyRecreateFileSystem")) == KMessageBox::Continue))
 	{
 		setDirty();
 		setWarnFileSystemChange();

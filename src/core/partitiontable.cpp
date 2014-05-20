@@ -256,7 +256,7 @@ Partition* createUnallocated(const Device& device, PartitionNode& parent, qint64
 	if (!PartitionTable::getUnallocatedRange(device, parent, start, end))
 		return NULL;
 
-	return new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, "");
+	return new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, QString());
 }
 
 /** Removes all unallocated children from a PartitionNode
@@ -364,25 +364,25 @@ qint64 PartitionTable::defaultLastUsable(const Device& d, TableType t)
 
 static struct
 {
-	const char* name; /**< name of partition table type */
+	const QString name; /**< name of partition table type */
 	quint32 maxPrimaries; /**< max numbers of primary partitions supported */
 	bool canHaveExtended; /**< does partition table type support extended partitions */
 	bool isReadOnly; /**< does KDE Partition Manager support this only in read only mode */
 	PartitionTable::TableType type; /**< enum type */
 } tableTypes[] =
 {
-	{ "aix", 4, false, true, PartitionTable::aix },
-	{ "bsd", 8, false, true, PartitionTable::bsd },
-	{ "dasd", 1, false, true, PartitionTable::dasd },
-	{ "msdos", 4, true, false, PartitionTable::msdos },
-	{ "msdos", 4, true, false, PartitionTable::msdos_sectorbased },
-	{ "dvh", 16, true, true, PartitionTable::dvh },
-	{ "gpt", 128, false, false, PartitionTable::gpt },
-	{ "loop", 1, false, true, PartitionTable::loop },
-	{ "mac", 0xffff, false, true, PartitionTable::mac },
-	{ "pc98", 16, false, true, PartitionTable::pc98 },
-	{ "amiga", 128, false, true, PartitionTable::amiga },
-	{ "sun", 8, false, true, PartitionTable::sun }
+	{ QStringLiteral("aix"), 4, false, true, PartitionTable::aix },
+	{ QStringLiteral("bsd"), 8, false, true, PartitionTable::bsd },
+	{ QStringLiteral("dasd"), 1, false, true, PartitionTable::dasd },
+	{ QStringLiteral("msdos"), 4, true, false, PartitionTable::msdos },
+	{ QStringLiteral("msdos"), 4, true, false, PartitionTable::msdos_sectorbased },
+	{ QStringLiteral("dvh"), 16, true, true, PartitionTable::dvh },
+	{ QStringLiteral("gpt"), 128, false, false, PartitionTable::gpt },
+	{ QStringLiteral("loop"), 1, false, true, PartitionTable::loop },
+	{ QStringLiteral("mac"), 0xffff, false, true, PartitionTable::mac },
+	{ QStringLiteral("pc98"), 16, false, true, PartitionTable::pc98 },
+	{ QStringLiteral("amiga"), 128, false, true, PartitionTable::amiga },
+	{ QStringLiteral("sun"), 8, false, true, PartitionTable::sun }
 };
 
 PartitionTable::TableType PartitionTable::nameToTableType(const QString& n)

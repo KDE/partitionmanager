@@ -59,7 +59,7 @@ class SmartDialogWidget : public QWidget, public Ui::SmartDialogWidgetBase
 		void loadConfig();
 		void saveConfig() const;
 
-	protected slots:
+	protected Q_SLOTS:
 		void onHeaderContextMenu(const QPoint& p);
 
 	private:

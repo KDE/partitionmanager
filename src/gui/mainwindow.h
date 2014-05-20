@@ -120,7 +120,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, publi
 		ScanProgressDialog& scanProgressDialog() { Q_ASSERT(m_ScanProgressDialog); return *m_ScanProgressDialog; }
 		const ScanProgressDialog& scanProgressDialog() const { Q_ASSERT(m_ScanProgressDialog); return *m_ScanProgressDialog; }
 
-	protected slots:
+	protected Q_SLOTS:
 		void on_m_PartitionManagerWidget_selectedPartitionChanged(const Partition* p);
 		void on_m_PartitionManagerWidget_contextMenuRequested(const QPoint& pos);
 		void on_m_PartitionManagerWidget_deviceDoubleClicked(const Device*);

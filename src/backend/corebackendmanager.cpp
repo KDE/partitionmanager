@@ -48,7 +48,7 @@ CoreBackendManager* CoreBackendManager::self()
 
 KService::List CoreBackendManager::list() const
 {
-	return KServiceTypeTrader::self()->query("PartitionManager/Plugin", "[X-KDE-PluginInfo-Category] == 'BackendPlugin'");
+	return KServiceTypeTrader::self()->query(QStringLiteral("PartitionManager/Plugin"), QStringLiteral("[X-KDE-PluginInfo-Category] == 'BackendPlugin'"));
 }
 
 bool CoreBackendManager::load(const QString& name)

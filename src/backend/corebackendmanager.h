@@ -50,7 +50,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendManager
 		/**
 		  * @return the name of the default backend plugin
 		  */
-		static QString defaultBackendName() { return "pmlibpartedbackendplugin"; }
+		static QString defaultBackendName() { return QStringLiteral("pmlibpartedbackendplugin"); }
 
 		/**
 		  * @return a list of available backend plugins

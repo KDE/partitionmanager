@@ -83,7 +83,7 @@ class PartPropsDialog : public QDialog
 
 		void updatePartitionFileSystem();
 
-	protected slots:
+	protected Q_SLOTS:
 		void setDirty();
 		void onFilesystemChanged(int idx);
 		void onRecreate(int);

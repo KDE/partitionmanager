@@ -54,7 +54,7 @@ class CopyOperation : public Operation
 		~CopyOperation();
 
 	public:
-		QString iconName() const { return "edit-copy"; }
+		QString iconName() const { return QStringLiteral("edit-copy"); }
 		QString description() const { return m_Description; }
 
 		bool execute(Report& parent);

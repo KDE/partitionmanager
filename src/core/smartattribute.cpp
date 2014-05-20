@@ -174,7 +174,7 @@ static const AttrDetails* attrDetails()
 		{ 242,  i18nc("SMART attr name", "Total LBAs Read"), i18nc("SMART attr description", "Total LBAs Read")  },
 		{ 250,  i18nc("SMART attr name", "Read Error Retry Rate"), i18nc("SMART attr description", "Number of errors while reading from a disk")  },
 		{ 254,  i18nc("SMART attr name", "Free Fall Protection"), i18nc("SMART attr description", "Number of &quot;Free Fall Events&quot; detected") },
-		{ -1, NULL, NULL }
+		{ -1, QString(), QString() }
 	};
 
 	return details;
@@ -245,9 +245,9 @@ static SmartAttribute::Assessment getAssessment(const SkSmartAttributeParsedData
 
 static QString getRaw(const uint8_t* raw)
 {
-	QString rval = "0x";
+	QString rval = QStringLiteral("0x");
 	for (qint32 i = 5; i >= 0; i--)
-		rval += QString("%1").arg(raw[i], 2, 16, QChar('0'));
+		rval += QStringLiteral("%1").arg(raw[i], 2, 16, QLatin1Char('0'));
 
 	return rval;
 }

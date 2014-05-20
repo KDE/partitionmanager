@@ -42,10 +42,10 @@ namespace FS
 	{
 		return 16 * Capacity::unitFactor(Capacity::Byte, Capacity::TiB);
 	}
-	
+
 	bool fat32::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "mkfs.msdos", QStringList() << "-F32" << "-I" << "-v" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("mkfs.msdos"), QStringList() << QStringLiteral("-F32") << QStringLiteral("-I") << QStringLiteral("-v") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
@@ -56,8 +56,8 @@ namespace FS
 		char uuid[4];
 		for (quint32 i = 0; i < sizeof(uuid); i++, t >>= 8)
 			uuid[i] = t & 0xff;
-		
-		ExternalCommand cmd(report, "dd", QStringList() << "of=" + deviceNode << "bs=1" << "count=4" << "seek=67");
+
+		ExternalCommand cmd(report, QStringLiteral("dd"), QStringList() << QStringLiteral("of=") + deviceNode << QStringLiteral("bs=1") << QStringLiteral("count=4") << QStringLiteral("seek=67"));
 
 		if (!cmd.start())
 			return false;

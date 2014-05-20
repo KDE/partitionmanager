@@ -43,7 +43,7 @@ DecryptLuksDialog::DecryptLuksDialog(QWidget* parent, const QString& deviceNode)
 	QDialogButtonBox* dialogButtonBox = new QDialogButtonBox;
 	QPushButton* decryptButton = new QPushButton;
 	decryptButton->setText(i18nc("@action:button", "&Decrypt"));
-	decryptButton->setIcon(QIcon::fromTheme("object-unlocked"));
+	decryptButton->setIcon(QIcon::fromTheme(QStringLiteral("object-unlocked")));
 	dialogButtonBox->addButton(decryptButton, QDialogButtonBox::AcceptRole);
 	mainLayout->addWidget(dialogButtonBox);
 	connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));

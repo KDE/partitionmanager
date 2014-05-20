@@ -67,7 +67,7 @@ SmartDialog::SmartDialog(QWidget* parent, Device& d) :
 	buttonBox = new QDialogButtonBox(this);
 	buttonBox->setStandardButtons(QDialogButtonBox::Save | QDialogButtonBox::Close);
 	buttonBox->button(QDialogButtonBox::Save)->setText(i18nc("@action:button", "Save SMART Report"));
-	buttonBox->button(QDialogButtonBox::Save)->setIcon(QIcon::fromTheme("document-save"));
+	buttonBox->button(QDialogButtonBox::Save)->setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
 	mainLayout->addWidget(buttonBox);
 
 	setupDialog();
@@ -116,16 +116,16 @@ void SmartDialog::setupDialog()
 		dialogWidget().treeSmartAttributes().clear();
 
 		const QFont f = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
-		const QString size = f.pixelSize() != -1 ? QString("%1px").arg(f.pixelSize()) : QString("%1pt").arg(f.pointSize());
+		const QString size = f.pixelSize() != -1 ? QStringLiteral("%1px").arg(f.pixelSize()) : QStringLiteral("%1pt").arg(f.pointSize());
 
-		const QString st = QString("<span style=\"font-family:%1;font-size:%2;\">").arg(f.family()).arg(size);
+		const QString st = QStringLiteral("<span style=\"font-family:%1;font-size:%2;\">").arg(f.family()).arg(size);
 
 		foreach (const SmartAttribute& a, device().smartStatus().attributes())
 		{
 			QTreeWidgetItem* item = new QTreeWidgetItem(
 				QStringList()
 					<< QLocale().toString(a.id())
-					<< QString("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + "</span>")
+					<< QStringLiteral("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + QStringLiteral("</span>"))
 					<< (a.failureType() == SmartAttribute::PreFailure ? i18nc("@item:intable", "Pre-Failure") : i18nc("@item:intable", "Old-Age"))
 					<< (a.updateType() == SmartAttribute::Online ? i18nc("@item:intable", "Online") : i18nc("@item:intable", "Offline"))
 					<< QLocale().toString(a.worst())
@@ -182,9 +182,9 @@ QString SmartDialog::toHtml() const
 	{
 
 		const QFont f = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
-		const QString size = f.pixelSize() != -1 ? QString("%1px").arg(f.pixelSize()) : QString("%1pt").arg(f.pointSize());
+		const QString size = f.pixelSize() != -1 ? QStringLiteral("%1px").arg(f.pixelSize()) : QStringLiteral("%1pt").arg(f.pointSize());
 
-		const QString st = QString("<span style=\"font-family:%1;font-size:%2;\">").arg(f.family()).arg(size);
+		const QString st = QStringLiteral("<span style=\"font-family:%1;font-size:%2;\">").arg(f.family()).arg(size);
 
 		s << "<table>\n";
 
@@ -193,7 +193,7 @@ QString SmartDialog::toHtml() const
 			s << "<tr>\n";
 
 			s << "<td>" << QLocale().toString(a.id()) << "</td>\n"
-				<< "<td>" << QString("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + "</span>") << "</td>\n"
+				<< "<td>" << QStringLiteral("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + QStringLiteral("</span>")) << "</td>\n"
 				<< "<td>" << (a.failureType() == SmartAttribute::PreFailure ? i18nc("@item:intable", "Pre-Failure") : i18nc("@item:intable", "Old-Age")) << "</td>\n"
 				<< "<td>" << (a.updateType() == SmartAttribute::Online ? i18nc("@item:intable", "Online") : i18nc("@item:intable", "Offline")) << "</td>\n"
 				<< "<td>" << QLocale().toString(a.worst()) << "</td>\n"

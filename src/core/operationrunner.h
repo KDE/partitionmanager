@@ -54,7 +54,7 @@ class OperationRunner : public QThread
 		QString description(qint32 op) const;
 		void setReport(Report* report) { m_Report = report; } /**< @param report the Report to use while running */
 
-	signals:
+	Q_SIGNALS:
 		void progressSub(int);
 		void opStarted(int, Operation*);
 		void opFinished(int, Operation*);

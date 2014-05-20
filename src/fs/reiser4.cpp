@@ -43,9 +43,9 @@ namespace FS
 	void reiser4::init()
 	{
 		m_GetLabel = cmdSupportCore;
-		m_GetUsed = findExternal("debugfs.reiser4", QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
-		m_Create = findExternal("mkfs.reiser4", QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
-		m_Check = findExternal("fsck.reiser4", QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetUsed = findExternal(QStringLiteral("debugfs.reiser4"), QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal(QStringLiteral("mkfs.reiser4"), QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = findExternal(QStringLiteral("fsck.reiser4"), QStringList(), 16) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Move = m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Backup = cmdSupportCore;
 	}
@@ -69,7 +69,7 @@ namespace FS
 
 	FileSystem::SupportTool reiser4::supportToolName() const
 	{
-		return SupportTool("reiser4progs", QUrl("http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"));
+		return SupportTool(QStringLiteral("reiser4progs"), QUrl(QStringLiteral("http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/")));
 	}
 
 	qint64 reiser4::maxCapacity() const
@@ -86,24 +86,24 @@ namespace FS
 
 	qint64 reiser4::readUsedCapacity(const QString& deviceNode) const
 	{
-		ExternalCommand cmd("debugfs.reiser4", QStringList() << deviceNode);
+		ExternalCommand cmd(QStringLiteral("debugfs.reiser4"), QStringList() << deviceNode);
 
 		if (cmd.run())
 		{
 			qint64 blocks = -1;
-			QRegExp rxBlocks("blocks:\\s+(\\d+)");
+			QRegExp rxBlocks(QStringLiteral("blocks:\\s+(\\d+)"));
 
 			if (rxBlocks.indexIn(cmd.output()) != -1)
 				blocks = rxBlocks.cap(1).toLongLong();
 
 			qint64 blockSize = -1;
-			QRegExp rxBlockSize("blksize:\\s+(\\d+)");
+			QRegExp rxBlockSize(QStringLiteral("blksize:\\s+(\\d+)"));
 
 			if (rxBlockSize.indexIn(cmd.output()) != -1)
 				blockSize = rxBlockSize.cap(1).toLongLong();
 
 			qint64 freeBlocks = -1;
-			QRegExp rxFreeBlocks("free blocks:\\s+(\\d+)");
+			QRegExp rxFreeBlocks(QStringLiteral("free blocks:\\s+(\\d+)"));
 
 			if (rxFreeBlocks.indexIn(cmd.output()) != -1)
 				freeBlocks = rxFreeBlocks.cap(1).toLongLong();
@@ -117,13 +117,13 @@ namespace FS
 
 	bool reiser4::check(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "fsck.reiser4", QStringList() << "--fix" << "-y" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("fsck.reiser4"), QStringList() << QStringLiteral("--fix") << QStringLiteral("-y") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool reiser4::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "mkfs.reiser4", QStringList() << "--yes" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("mkfs.reiser4"), QStringList() << QStringLiteral("--yes") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

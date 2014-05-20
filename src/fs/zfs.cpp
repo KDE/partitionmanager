@@ -47,7 +47,7 @@ namespace FS
 
 	void zfs::init()
 	{
-		m_SetLabel = findExternal("zpool", QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
+		m_SetLabel = findExternal(QStringLiteral("zpool"), QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
 
 		m_GetLabel = cmdSupportCore;
 		m_Backup = cmdSupportCore;
@@ -73,7 +73,7 @@ namespace FS
 
 	FileSystem::SupportTool zfs::supportToolName() const
 	{
-		return SupportTool("zfs", QUrl("http://zfsonlinux.org/"));
+		return SupportTool(QStringLiteral("zfs"), QUrl(QStringLiteral("http://zfsonlinux.org/")));
 	}
 
 	qint64 zfs::minCapacity() const
@@ -90,15 +90,15 @@ namespace FS
 	{
 		Q_UNUSED(deviceNode)
 // 		TODO: check if -f option is needed
-		ExternalCommand cmd(report, "zpool", QStringList() << "destroy" << "-f" << this->label());
+		ExternalCommand cmd(report, QStringLiteral("zpool"), QStringList() << QStringLiteral("destroy") << QStringLiteral("-f") << this->label());
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool zfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
 		Q_UNUSED(deviceNode)
-		ExternalCommand cmd1(report, "zpool", QStringList() << "export" << this->label());
-		ExternalCommand cmd2(report, "zpool", QStringList() << "import" << this->label() << newLabel);
+		ExternalCommand cmd1(report, QStringLiteral("zpool"), QStringList() << QStringLiteral("export") << this->label());
+		ExternalCommand cmd2(report, QStringLiteral("zpool"), QStringList() << QStringLiteral("import") << this->label() << newLabel);
 		return cmd1.run(-1) && cmd1.exitCode() == 0 && cmd2.run(-1) && cmd2.exitCode() == 0;
 	}
 }

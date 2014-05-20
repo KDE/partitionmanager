@@ -51,7 +51,7 @@
 #include <KMessageBox>
 #include <KSharedConfig>
 
-const QString ApplyProgressDialog::m_TimeFormat = "hh:mm:ss";
+const QString ApplyProgressDialog::m_TimeFormat = QStringLiteral("hh:mm:ss");
 
 static QWidget* mainWindow(QWidget* w)
 {
@@ -92,14 +92,14 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
 	okButton = dialogButtonBox->addButton( QDialogButtonBox::Ok );
 	cancelButton = dialogButtonBox->addButton( QDialogButtonBox::Cancel );
 	detailsButton = new QPushButton;
-	detailsButton->setText(i18n("&Details") + " >>");
-	detailsButton->setIcon(QIcon::fromTheme("help-about"));
+	detailsButton->setText(i18n("&Details") + QStringLiteral(" >>"));
+	detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("help-about")));
 	dialogButtonBox->addButton(detailsButton, QDialogButtonBox::ActionRole);
 	mainLayout->addWidget(dialogButtonBox);
 
 	dialogWidget().treeTasks().setColumnWidth(0, width() * 0.8);
-	detailsWidget().buttonBrowser().setIcon(QIcon::fromTheme("document-open"));
-	detailsWidget().buttonSave().setIcon(QIcon::fromTheme("document-save"));
+	detailsWidget().buttonBrowser().setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
+	detailsWidget().buttonSave().setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
 
 	setupConnections();
 
@@ -178,7 +178,7 @@ void ApplyProgressDialog::toggleDetails()
 {
 	const bool isVisible = detailsWidget().isVisible();
 	detailsWidget().setVisible(!isVisible);
-	detailsButton->setText(i18n("&Details") + (isVisible ? " >>" : " <<"));
+	detailsButton->setText(i18n("&Details") + (isVisible ? QStringLiteral(" >>") : QStringLiteral(" <<")));
 }
 
 void ApplyProgressDialog::onDetailsButton()
@@ -209,7 +209,7 @@ void ApplyProgressDialog::onCancelButton()
 
 		QApplication::restoreOverrideCursor();
 
-		if (KMessageBox::questionYesNo(this, i18nc("@info", "Do you really want to cancel?"), i18nc("@title:window", "Cancel Running Operations"), KGuiItem(i18nc("@action:button", "Yes, Cancel Operations"), "dialog-ok"), KStandardGuiItem::no()) == KMessageBox::Yes)
+		if (KMessageBox::questionYesNo(this, i18nc("@info", "Do you really want to cancel?"), i18nc("@title:window", "Cancel Running Operations"), KGuiItem(i18nc("@action:button", "Yes, Cancel Operations"), QStringLiteral("dialog-ok")), KStandardGuiItem::no()) == KMessageBox::Yes)
 			// in the meantime while we were showing the messagebox, the runner might have finished.
 			if (operationRunner().isRunning())
 				operationRunner().cancel();
@@ -263,7 +263,7 @@ void ApplyProgressDialog::updateReport(bool force)
 	// (3) DO update if we're being forced to.
 	if (force || (detailsWidget().isVisible() && time().elapsed() - lastReportUpdate() > 2000))
 	{
-		detailsWidget().editReport().setHtml("<html><body>" + report().toHtml() + "</body></html>");
+		detailsWidget().editReport().setHtml(QStringLiteral("<html><body>") + report().toHtml() + QStringLiteral("</body></html>"));
 		detailsWidget().editReport().moveCursor(QTextCursor::End);
 		detailsWidget().editReport().ensureCursorVisible();
 
@@ -336,7 +336,7 @@ void ApplyProgressDialog::onOpFinished(int num, Operation* op)
 void ApplyProgressDialog::setParentTitle(const QString& s)
 {
 	const int percent = dialogWidget().progressTotal().value() * 100 / dialogWidget().progressTotal().maximum();
-	mainWindow(this)->setWindowTitle(QString::number(percent) + "% - " + s + " - " + savedParentTitle());
+	mainWindow(this)->setWindowTitle(QString::number(percent) + QStringLiteral("% - ") + s + QStringLiteral(" - ") + savedParentTitle());
 }
 
 void ApplyProgressDialog::setStatus(const QString& s)
@@ -436,7 +436,7 @@ void ApplyProgressDialog::saveReport()
 			job->ui()->showErrorMessage();
 	}
 	else
-		KMessageBox::sorry(this, i18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Could Not Save Report."));
+		KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Could Not Save Report."));
 }
 
 void ApplyProgressDialog::browserReport()
@@ -445,7 +445,7 @@ void ApplyProgressDialog::browserReport()
 
 	// Make sure the temp file is created somewhere another user can read it: KRun::runUrl() will open
 	// the file as the logged in user, not as the user running our application.
-	file.setFileTemplate("/tmp/" + QCoreApplication::applicationName() + "-XXXXXX.html");
+	file.setFileTemplate(QStringLiteral("/tmp/") + QCoreApplication::applicationName() + QStringLiteral("-XXXXXX.html"));
 	file.setAutoRemove(false);
 
 	if (file.open())
@@ -461,7 +461,7 @@ void ApplyProgressDialog::browserReport()
 		// set the temp file's permission for everyone to read it.
 		file.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ReadGroup | QFile::ReadOther);
 
-		if (!KRun::runUrl(file.fileName(), "text/html", this, true))
+		if (!KRun::runUrl(QUrl::fromLocalFile(file.fileName()), QStringLiteral("text/html"), this, true))
 			KMessageBox::sorry(this, i18nc("@info", "The configured external browser could not be run. Please check your settings."), i18nc("@title:window", "Could Not Launch Browser."));
 	}
 	else

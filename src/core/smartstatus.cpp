@@ -55,7 +55,7 @@ void SmartStatus::update()
 	uint64_t skPoweredOn = 0;
 	uint64_t skPowerCycles = 0;
 
-	if (sk_disk_open(devicePath().toLocal8Bit(), &skDisk) < 0)
+	if (sk_disk_open(devicePath().toLocal8Bit().constData(), &skDisk) < 0)
 	{
 		qDebug() << "smart disk open failed for " << devicePath() << ": " << strerror(errno);
 		return;
@@ -83,9 +83,9 @@ void SmartStatus::update()
 		qDebug() << "getting identify data failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 	{
-		setModelName(skIdentify->model);
-		setFirmware(skIdentify->firmware);
-		setSerial(skIdentify->serial);
+		setModelName(QString::fromUtf8(skIdentify->model));
+		setFirmware(QString::fromUtf8(skIdentify->firmware));
+		setSerial(QString::fromUtf8(skIdentify->serial));
 	}
 
 	const SkSmartParsedData* skParsed;

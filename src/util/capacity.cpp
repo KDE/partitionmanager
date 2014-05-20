@@ -29,7 +29,7 @@
 
 #include <config.h>
 
-const QString Capacity::m_InvalidString = "---";
+const QString Capacity::m_InvalidString = QStringLiteral("---");
 
 /** Creates a new Capacity instance.
 	@param size the size in bytes

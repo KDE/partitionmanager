@@ -40,7 +40,7 @@ class EditMountPointDialog : public QDialog
 	protected:
 		EditMountPointDialogWidget& widget() { return *m_DialogWidget; }
 
-	protected slots:
+	protected Q_SLOTS:
 		void accept();
 
 	private:

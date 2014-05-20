@@ -51,13 +51,13 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		PartitionManagerWidget(QWidget* parent = NULL);
 		virtual ~PartitionManagerWidget();
 
-	signals:
+	Q_SIGNALS:
 		void selectedPartitionChanged(const Partition*);
 		void contextMenuRequested(const QPoint&);
 		void deviceDoubleClicked(const Device*);
 		void partitionDoubleClicked(const Partition* p);
 
-	public slots:
+	public Q_SLOTS:
 		void setSelectedDevice(Device* d);
 		void setSelectedDevice(const QString& device_node);
 
@@ -111,7 +111,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget,
 		QTreeWidget& treePartitions() { Q_ASSERT(m_TreePartitions); return *m_TreePartitions; }
 		const QTreeWidget& treePartitions() const { Q_ASSERT(m_TreePartitions); return *m_TreePartitions; }
 
-	protected slots:
+	protected Q_SLOTS:
 		void on_m_TreePartitions_currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem* previous);
 		void on_m_TreePartitions_customContextMenuRequested(const QPoint& pos);
 		void on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, int);

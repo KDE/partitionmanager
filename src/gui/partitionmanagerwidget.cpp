@@ -228,7 +228,7 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 	item->setText(i++, QLocale().toString(p.lastSector()));
 	item->setText(i++, QLocale().toString(p.length()));
 
-	item->setText(i++, PartitionTable::flagNames(p.activeFlags()).join(", "));
+	item->setText(i++, PartitionTable::flagNames(p.activeFlags()).join(QStringLiteral(", ")));
 
 	item->setSizeHint(0, QSize(0, 32));
 
@@ -403,12 +403,12 @@ void PartitionManagerWidget::onMountPartition()
 	if (p->canMount())
 	{
 		if (!p->mount(report))
-			KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QString("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Mount File System."));
+			KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Mount File System."));
 	}
 	else if (p->canUnmount())
 	{
 		if (!p->unmount(report))
-			KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QString("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Unmount File System."));
+			KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QStringLiteral("pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Unmount File System."));
 	}
 
 	if (p->roles().has(PartitionRole::Logical))
@@ -535,8 +535,8 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 				"Do you really want to delete the partition that is currently in the clipboard? "
 				"It will no longer be available for pasting after it has been deleted."),
 			i18nc("@title:window", "Really Delete Partition in the Clipboard?"),
-				KGuiItem(i18nc("@action:button", "Delete It"), "arrow-right"),
-				KStandardGuiItem::cancel(), "reallyDeleteClipboardPartition") == KMessageBox::Cancel)
+				KGuiItem(i18nc("@action:button", "Delete It"), QStringLiteral("arrow-right")),
+				KStandardGuiItem::cancel(), QStringLiteral("reallyDeleteClipboardPartition")) == KMessageBox::Cancel)
 			return;
 
 		setClipboardPartition(NULL);
@@ -689,9 +689,9 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
 				"unrecoverably be overwritten.</para>",
 				selectedPartition()->deviceNode()),
 			i18nc("@title:window", "Really Overwrite Existing Partition?"),
-			KGuiItem(i18nc("@action:button", "Overwrite Partition"), "arrow-right"),
+			KGuiItem(i18nc("@action:button", "Overwrite Partition"), QStringLiteral("arrow-right")),
 			KStandardGuiItem::cancel(),
-			"reallyOverwriteExistingPartition") == KMessageBox::Cancel)
+			QStringLiteral("reallyOverwriteExistingPartition")) == KMessageBox::Cancel)
 		return false;
 
 	if (insertedPartition.length() < sourceLength)
@@ -737,13 +737,13 @@ void PartitionManagerWidget::onBackupPartition()
 		return;
 	}
 
-	QString fileName = QFileDialog::getSaveFileName(this, "kfiledialog://backupPartition");
+	QString fileName = QFileDialog::getSaveFileName(this, QStringLiteral("kfiledialog://backupPartition"));
 // 	QString fileName = "/tmp/backuptest.img";
 
 	if (fileName.isEmpty())
 		return;
 
-	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, xi18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "Overwrite File"), "arrow-right"), KStandardGuiItem::cancel()) == KMessageBox::Continue)
+	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, xi18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "Overwrite File"), QStringLiteral("arrow-right")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
 		operationStack().push(new BackupOperation(*selectedDevice(), *selectedPartition(), fileName));
 }
 
@@ -761,7 +761,7 @@ void PartitionManagerWidget::onRestorePartition()
 	if (checkTooManyPartitions(this, *selectedDevice(), *selectedPartition()))
 		return;
 
-	QString fileName = QFileDialog::getOpenFileName(this, "kfiledialog://restorePartition");
+	QString fileName = QFileDialog::getOpenFileName(this, QStringLiteral("kfiledialog://restorePartition"));
 // 	QString fileName = "/tmp/backuptest.img";
 
 	if (!fileName.isEmpty() && QFile::exists(fileName))

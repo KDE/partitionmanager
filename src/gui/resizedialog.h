@@ -45,7 +45,7 @@ class ResizeDialog : public SizeDialogBase
 		qint64 resizedFirstSector() const { return m_ResizedFirstSector; }
 		qint64 resizedLastSector() const { return m_ResizedLastSector; }
 
-	public slots:
+	public Q_SLOTS:
 		virtual void accept();
 		virtual void reject();
 

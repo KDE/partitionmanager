@@ -52,7 +52,7 @@ class NewOperation : public Operation
 		~NewOperation();
 
 	public:
-		QString iconName() const { return "document-new"; }
+		QString iconName() const { return QStringLiteral("document-new"); }
 		QString description() const;
 		void preview();
 		void undo();

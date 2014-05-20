@@ -82,11 +82,11 @@ class PartResizerWidget : public QWidget
 		qint32 handleWidth() const; /**< @return the handle width in pixels */
 		static qint32 handleHeight() { return m_HandleHeight; } /**< @return the handle height in pixels */
 
-	signals:
+	Q_SIGNALS:
 		void firstSectorChanged(qint64);
 		void lastSectorChanged(qint64);
 
-	public slots:
+	public Q_SLOTS:
 		bool updateFirstSector(qint64 newFirstSector);
 		bool updateLastSector(qint64 newLastSector);
 		bool movePartition(qint64 newFirstSector);

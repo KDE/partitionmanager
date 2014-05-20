@@ -36,7 +36,7 @@ class ConfigureOptionsDialog : public KConfigDialog
 		ConfigureOptionsDialog(QWidget* parent, const OperationStack& ostack, const QString& name);
 		~ConfigureOptionsDialog();
 
-	protected slots:
+	protected Q_SLOTS:
 		virtual void updateSettings();
 		virtual void updateWidgetsDefault();
 		virtual bool hasChanged();

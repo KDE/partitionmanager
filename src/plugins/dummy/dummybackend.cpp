@@ -43,14 +43,13 @@ static KAboutData createPluginAboutData()
 	KAboutData about(
 		QStringLiteral("pmdummybackendplugin"),
 		i18nc("@title", "Dummy Backend Plugin"),
-		"1.1.60",
+		QString::fromLatin1(VERSION),
 		i18n("KDE Partition Manager dummy backend."),
 		KAboutLicense::GPL,
-		i18n("Copyright 2010 Volker Lanz"),
-		QString());
+		i18n("Copyright 2010 Volker Lanz"));
 
-	about.addAuthor(i18nc("@info:credit", "Volker Lanz"), "Maintainer", "vl@fidra.de");
-	about.setHomepage("http://www.partitionmanager.org");
+	about.addAuthor(i18nc("@info:credit", "Volker Lanz"), i18n("Maintainer"), QStringLiteral("vl@fidra.de"));
+	about.setHomepage(QStringLiteral("http://www.partitionmanager.org"));
 
 	return about;
 }
@@ -67,20 +66,20 @@ void DummyBackend::initFSSupport()
 QList<Device*> DummyBackend::scanDevices()
 {
 	QList<Device*> result;
-	result.append(scanDevice("/dev/sda"));
+	result.append(scanDevice(QStringLiteral("/dev/sda")));
 
-	emitScanProgress("/dev/sda", 100);
+	emitScanProgress(QStringLiteral("/dev/sda"), 100);
 
 	return result;
 }
 
 Device* DummyBackend::scanDevice(const QString& device_node)
 {
-	Device* d = new Device("Dummy Device", QString("/tmp" + device_node), 255, 30, 63, 512);
+	Device* d = new Device(QStringLiteral("Dummy Device"), QStringLiteral("/tmp") + device_node, 255, 30, 63, 512);
 	CoreBackend::setPartitionTableForDevice(*d, new PartitionTable(PartitionTable::msdos_sectorbased, 2048, d->totalSectors() - 2048));
 	CoreBackend::setPartitionTableMaxPrimaries(*d->partitionTable(), 128);
 	d->partitionTable()->updateUnallocated(*d);
-	d->setIconName("drive-harddisk");
+	d->setIconName(QStringLiteral("drive-harddisk"));
 
 	CoreBackend::setPartitionTableMaxPrimaries(*d->partitionTable(), 4);
 

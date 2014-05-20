@@ -46,7 +46,7 @@ class SmartDialog : public QDialog
 		SmartDialog(QWidget* parent, Device& d);
 		~SmartDialog();
 
-	protected slots:
+	protected Q_SLOTS:
 		void saveSmartReport();
 
 	protected:

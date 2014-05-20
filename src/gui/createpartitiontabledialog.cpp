@@ -71,8 +71,8 @@ void CreatePartitionTableDialog::onMSDOSToggled(bool on)
 					"<para>Do you really want to create an MS-Dos partition table on <filename>%1</filename>?</para>"
 					"<para>This device has more than 2^32 sectors. That is the most the MS-Dos partition table type supports, so you will not be able to use the whole device.</para>", device().deviceNode()),
 				i18nc("@title:window", "Really Create MS-Dos Partition Table Type?"),
-				KGuiItem(i18nc("@action:button", "Create MS-Dos Type"), "arrow-right"),
-				KStandardGuiItem::cancel(), "reallyCreateMSDOSOnLargeDevice") == KMessageBox::Cancel)
+				KGuiItem(i18nc("@action:button", "Create MS-Dos Type"), QStringLiteral("arrow-right")),
+				KStandardGuiItem::cancel(), QStringLiteral("reallyCreateMSDOSOnLargeDevice")) == KMessageBox::Cancel)
 		{
 			widget().radioGPT().setChecked(true);
 		}

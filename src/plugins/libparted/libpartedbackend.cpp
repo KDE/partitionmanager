@@ -65,14 +65,13 @@ static KAboutData createPluginAboutData()
 	KAboutData about(
 		QStringLiteral("pmlibpartedbackendplugin"),
 		i18nc("@title", "LibParted Backend Plugin"),
-		QString("%1, libparted version: %2").arg(VERSION).arg(ped_get_version()).toUtf8(),
+		QStringLiteral("%1, libparted version: %2").arg(QString::fromLatin1(VERSION)).arg(QString::fromLatin1(ped_get_version())),
 		i18n("KDE Partition Manager backend for libparted."),
 		KAboutLicense::GPL,
-		i18n("Copyright 2008,2009,2010 Volker Lanz"),
-		QString());
+		i18n("Copyright 2008,2009,2010 Volker Lanz"));
 
-	about.addAuthor(i18nc("@info:credit", "Volker Lanz"), "Maintainer", "vl@fidra.de");
-	about.setHomepage("http://www.partitionmanager.org");
+	about.addAuthor(i18nc("@info:credit", "Volker Lanz"), i18n("Maintainer"), QStringLiteral("vl@fidra.de"));
+	about.setHomepage(QStringLiteral("http://www.partitionmanager.org"));
 
 	return about;
 }
@@ -141,7 +140,7 @@ typedef struct _GPTDiskData GPTDiskData;
 */
 static quint64 firstUsableSector(const Device& d)
 {
-	PedDevice* pedDevice = ped_device_get(d.deviceNode().toLatin1());
+	PedDevice* pedDevice = ped_device_get(d.deviceNode().toLatin1().constData());
 	PedDisk* pedDisk = pedDevice ? ped_disk_new(pedDevice) : NULL;
 
 	quint64 rval = pedDisk->dev->bios_geom.sectors;
@@ -166,7 +165,7 @@ static quint64 firstUsableSector(const Device& d)
 */
 static quint64 lastUsableSector(const Device& d)
 {
-	PedDevice* pedDevice = ped_device_get(d.deviceNode().toLatin1());
+	PedDevice* pedDevice = ped_device_get(d.deviceNode().toLatin1().constData());
 	PedDisk* pedDisk = pedDevice ? ped_disk_new(pedDevice) : NULL;
 
 	quint64 rval = pedDisk->dev->bios_geom.sectors * pedDisk->dev->bios_geom.heads * pedDisk->dev->bios_geom.cylinders - 1;
@@ -365,7 +364,7 @@ void LibPartedBackend::scanDevicePartitions(PedDevice*, Device& d, PedDisk* pedD
 		if (parent == NULL)
 			parent = d.partitionTable();
 
-		const QString node = QString(ped_partition_get_path(pedPartition));
+		const QString node = QString::fromUtf8(ped_partition_get_path(pedPartition));
 		FileSystem* fs = FileSystemFactory::create(type, pedPartition->geom.start, pedPartition->geom.end);
 
 		// libparted does not handle LUKS partitions
@@ -374,7 +373,7 @@ void LibPartedBackend::scanDevicePartitions(PedDevice*, Device& d, PedDisk* pedD
 		if (fs->type() == FileSystem::Luks)
 		{
 			mountPoint = FS::luks::mapperName(node);
-			mounted = (mountPoint != "") ? true : false;
+			mounted = (mountPoint != QString()) ? true : false;
 		}
 		else
 		{
@@ -413,7 +412,7 @@ void LibPartedBackend::scanDevicePartitions(PedDevice*, Device& d, PedDisk* pedD
 */
 Device* LibPartedBackend::scanDevice(const QString& device_node)
 {
-	PedDevice* pedDevice = ped_device_get(device_node.toLocal8Bit());
+	PedDevice* pedDevice = ped_device_get(device_node.toLocal8Bit().constData());
 
 	if (pedDevice == NULL)
 	{
@@ -421,15 +420,15 @@ Device* LibPartedBackend::scanDevice(const QString& device_node)
 		return NULL;
 	}
 
-	Log(Log::information) << i18nc("@info/plain", "Device found: %1", pedDevice->model);
+	Log(Log::information) << i18nc("@info/plain", "Device found: %1", QString::fromUtf8(pedDevice->model));
 
-	Device* d = new Device(pedDevice->model, pedDevice->path, pedDevice->bios_geom.heads, pedDevice->bios_geom.sectors, pedDevice->bios_geom.cylinders, pedDevice->sector_size);
+	Device* d = new Device(QString::fromUtf8(pedDevice->model), QString::fromUtf8(pedDevice->path), pedDevice->bios_geom.heads, pedDevice->bios_geom.sectors, pedDevice->bios_geom.cylinders, pedDevice->sector_size);
 
 	PedDisk* pedDisk = ped_disk_new(pedDevice);
 
 	if (pedDisk)
 	{
-		const PartitionTable::TableType type = PartitionTable::nameToTableType(pedDisk->type->name);
+		const PartitionTable::TableType type = PartitionTable::nameToTableType(QString::fromUtf8(pedDisk->type->name));
 		CoreBackend::setPartitionTableForDevice(*d, new PartitionTable(type, firstUsableSector(*d), lastUsableSector(*d)));
 		CoreBackend::setPartitionTableMaxPrimaries(*d->partitionTable(), ped_disk_get_max_primary_partition_count(pedDisk));
 
@@ -549,23 +548,21 @@ FileSystem::Type LibPartedBackend::detectFileSystem(PedPartition* pedPartition)
 
 		if ((dev = blkid_get_dev(cache, pedPath, BLKID_DEV_NORMAL)) != NULL)
 		{
-			char* tmp = blkid_get_tag_value(cache, "TYPE", pedPath);
-			const QString s(tmp);
-			free(tmp);
+			QString s = QString::fromUtf8(blkid_get_tag_value(cache, "TYPE", pedPath));
 
-			if (s == "ext2") rval = FileSystem::Ext2;
-			else if (s == "ext3") rval = FileSystem::Ext3;
-			else if (s.startsWith("ext4")) rval = FileSystem::Ext4;
-			else if (s == "swap") rval = FileSystem::LinuxSwap;
-			else if (s == "ntfs") rval = FileSystem::Ntfs;
-			else if (s == "reiserfs") rval = FileSystem::ReiserFS;
-			else if (s == "reiser4") rval = FileSystem::Reiser4;
-			else if (s == "xfs") rval = FileSystem::Xfs;
-			else if (s == "jfs") rval = FileSystem::Jfs;
-			else if (s == "hfs") rval = FileSystem::Hfs;
-			else if (s == "hfsplus") rval = FileSystem::HfsPlus;
-			else if (s == "ufs") rval = FileSystem::Ufs;
-			else if (s == "vfat" && pedPartition->fs_type != NULL)
+			if (s == QStringLiteral("ext2")) rval = FileSystem::Ext2;
+			else if (s == QStringLiteral("ext3")) rval = FileSystem::Ext3;
+			else if (s.startsWith(QStringLiteral("ext4"))) rval = FileSystem::Ext4;
+			else if (s == QStringLiteral("swap")) rval = FileSystem::LinuxSwap;
+			else if (s == QStringLiteral("ntfs")) rval = FileSystem::Ntfs;
+			else if (s == QStringLiteral("reiserfs")) rval = FileSystem::ReiserFS;
+			else if (s == QStringLiteral("reiser4")) rval = FileSystem::Reiser4;
+			else if (s == QStringLiteral("xfs")) rval = FileSystem::Xfs;
+			else if (s == QStringLiteral("jfs")) rval = FileSystem::Jfs;
+			else if (s == QStringLiteral("hfs")) rval = FileSystem::Hfs;
+			else if (s == QStringLiteral("hfsplus")) rval = FileSystem::HfsPlus;
+			else if (s == QStringLiteral("ufs")) rval = FileSystem::Ufs;
+			else if (s == QStringLiteral("vfat") && pedPartition->fs_type != NULL)
 			{
 				// libblkid does not distinguish between fat16 and fat32, so we're still using libparted
 				// for those
@@ -574,14 +571,14 @@ FileSystem::Type LibPartedBackend::detectFileSystem(PedPartition* pedPartition)
 				else if (strcmp(pedPartition->fs_type->name, "fat32") == 0)
 					rval = FileSystem::Fat32;
 			}
-			else if (s == "btrfs") rval = FileSystem::Btrfs;
-			else if (s == "ocfs2") rval = FileSystem::Ocfs2;
-			else if (s == "zfs_member") rval = FileSystem::Zfs;
-			else if (s == "hpfs") rval = FileSystem::Hpfs;
-			else if (s == "crypto_LUKS") rval = FileSystem::Luks;
-			else if (s == "exfat") rval = FileSystem::Exfat;
-			else if (s == "nilfs2") rval = FileSystem::Nilfs2;
-			else if (s == "LVM2_member") rval = FileSystem::Lvm2_PV;
+			else if (s == QStringLiteral("btrfs")) rval = FileSystem::Btrfs;
+			else if (s == QStringLiteral("ocfs2")) rval = FileSystem::Ocfs2;
+			else if (s == QStringLiteral("zfs_member")) rval = FileSystem::Zfs;
+			else if (s == QStringLiteral("hpfs")) rval = FileSystem::Hpfs;
+			else if (s == QStringLiteral("crypto_LUKS")) rval = FileSystem::Luks;
+			else if (s == QStringLiteral("exfat")) rval = FileSystem::Exfat;
+			else if (s == QStringLiteral("nilfs2")) rval = FileSystem::Nilfs2;
+			else if (s == QStringLiteral("LVM2_member")) rval = FileSystem::Lvm2_PV;
 			else
 				qWarning() << "blkid: unknown file system type " << s << " on " << pedPath;
 		}

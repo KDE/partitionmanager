@@ -57,7 +57,7 @@ void registerMetaTypes()
 
 static QString suCommand()
 {
-	const char* candidates[] = { "kdesu", "kdesudo", "gksudo", "gksu" };
+	const QString candidates[] = { QStringLiteral("kdesu"), QStringLiteral("kdesudo"), QStringLiteral("gksudo"), QStringLiteral("gksu") };
 	QString rval;
 
 	for (quint32 i = 0; i < sizeof(candidates) / sizeof(candidates[0]); i++)
@@ -86,10 +86,10 @@ bool checkPermissions()
 			// kdesu broke backward compatibility at some point and now only works with "-c";
 			// kdesudo accepts either (with or without "-c"), but the gk* helpers only work
 			// without. kdesu maintainers won't fix their app, so we need to work around that here.
-			if (suCmd.indexOf("kdesu") != -1)
-				argList << "-c";
+			if (suCmd.indexOf(QStringLiteral("kdesu")) != -1)
+				argList << QStringLiteral("-c");
 
-			argList << QCoreApplication::arguments() << " --dontsu";
+			argList << QCoreApplication::arguments() << QStringLiteral(" --dontsu");
 
 			if (QProcess::execute(suCmd, argList) == 0)
 				return false;
@@ -102,9 +102,9 @@ bool checkPermissions()
 				"<para>Do you want to continue running <application>%1</application>?</para>",
 				QGuiApplication::applicationDisplayName()),
 	 		i18nc("@title:window", "No administrative privileges"),
-			KGuiItem(i18nc("@action:button", "Run without administrative privileges"), "arrow-right"),
+			KGuiItem(i18nc("@action:button", "Run without administrative privileges"), QStringLiteral("arrow-right")),
 			KStandardGuiItem::cancel(),
-			"runWithoutRootPrivileges") == KMessageBox::Continue;
+			QStringLiteral("runWithoutRootPrivileges")) == KMessageBox::Continue;
 	}
 
 	return true;
@@ -231,7 +231,7 @@ bool checkAccessibleDevices()
 QList<Solid::Device> getSolidDeviceList()
 {
 #ifdef ENABLE_UDISKS2
-        QString predicate = "StorageVolume.usage == 'PartitionTable'";
+        QString predicate = QStringLiteral("StorageVolume.usage == 'PartitionTable'");
 
 #else
         QString predicate = "[ [ [ StorageDrive.driveType == 'HardDisk' OR StorageDrive.driveType == 'CompactFlash'] OR "
@@ -243,26 +243,26 @@ QList<Solid::Device> getSolidDeviceList()
 	int argc = argList.size();
 	if (argc > 0)
 	{
-		predicate = " [ " + predicate + " AND ";
+		predicate = QStringLiteral(" [ ") + predicate + QStringLiteral(" AND ");
 
 		qint32 brackets = (argc + 1) / 2;
 		brackets = argc == 1 ? 0 : brackets;
 		for (qint32 i = 0; i < brackets; i++)
-			predicate += "[ ";
+			predicate += QStringLiteral("[ ");
 
 		bool right_bracket = false;
 		for (qint32 i = 0; i < argc; i++, right_bracket =! right_bracket)
 		{
-			predicate += QString("Block.device == '%1' ").arg(argList[i]);
+			predicate += QStringLiteral("Block.device == '%1' ").arg(argList[i]);
 
 			if (right_bracket)
-				predicate += i == 1 ? "] " : "] ] ";
+				predicate += i == 1 ? QStringLiteral("] ") : QStringLiteral("] ] ");
 			if (i < argc - 1)
-				predicate += "OR ";
+				predicate += QStringLiteral("OR ");
 			if (right_bracket && i != argc - 2 && i != argc - 1)
-				predicate += "[ ";
+				predicate += QStringLiteral("[ ");
 		}
-		predicate += right_bracket && brackets > 0 ? "] ]" : "]";
+		predicate += right_bracket && brackets > 0 ? QStringLiteral("] ]") : QStringLiteral("]");
 	}
 
 	return Solid::Device::listFromQuery(predicate);

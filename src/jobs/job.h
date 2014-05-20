@@ -64,7 +64,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Job : public QObject
 	public:
 		virtual ~Job() {}
 
-	signals:
+	Q_SIGNALS:
 		void started();
 		void progress(int);
 		void finished();

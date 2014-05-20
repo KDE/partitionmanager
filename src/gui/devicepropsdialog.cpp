@@ -80,15 +80,15 @@ void DevicePropsDialog::setupDialog()
 	connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
 	connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
-	QString type = "---";
-	QString maxPrimaries = "---";
+	QString type = QStringLiteral("---");
+	QString maxPrimaries = QStringLiteral("---");
 
 	if (device().partitionTable() != NULL)
 	{
 		type = (device().partitionTable()->isReadOnly())
 			? i18nc("@label device", "%1 (read only)", device().partitionTable()->typeName())
 			: device().partitionTable()->typeName();
-		maxPrimaries = QString("%1/%2").arg(device().partitionTable()->numPrimaries()).arg(device().partitionTable()->maxPrimaries());
+		maxPrimaries = QStringLiteral("%1/%2").arg(device().partitionTable()->numPrimaries()).arg(device().partitionTable()->maxPrimaries());
 
 		dialogWidget().partTableWidget().setReadOnly(true);
 		dialogWidget().partTableWidget().setPartitionTable(device().partitionTable());
@@ -112,7 +112,7 @@ void DevicePropsDialog::setupDialog()
 	const QString cyls = QLocale().toString((device().cylinders()));
 	const QString heads = QLocale().toString((device().heads()));
 	const QString sectors = QLocale().toString((device().sectorsPerTrack()));
-	dialogWidget().chs().setText(QString("%1/%2/%3").arg(cyls).arg(heads).arg(sectors));
+	dialogWidget().chs().setText(QStringLiteral("%1/%2/%3").arg(cyls).arg(heads).arg(sectors));
 
 	dialogWidget().cylinderSize().setText(i18ncp("@label", "1 Sector", "%1 Sectors", device().cylinderSize()));
 	dialogWidget().primariesMax().setText(maxPrimaries);

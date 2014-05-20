@@ -75,7 +75,7 @@ class ResizeOperation : public Operation
 		ResizeOperation(Device& d, Partition& p, qint64 newfirst, qint64 newlast);
 
 	public:
-		QString iconName() const { return "arrow-right-double"; }
+		QString iconName() const { return QStringLiteral("arrow-right-double"); }
 		QString description() const;
 		bool execute(Report& parent);
 		void preview();

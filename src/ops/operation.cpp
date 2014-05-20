@@ -94,14 +94,14 @@ QString Operation::statusText() const
 /** @return icon for the current Operation's status */
 QIcon Operation::statusIcon() const
 {
-	static const char* icons[] =
+	static const QString icons[] =
 	{
-		"",
-		"dialog-information",
-		"dialog-information",
-		"dialog-ok",
-		"dialog-warning",
-		"dialog-error"
+		QString(),
+		QStringLiteral("dialog-information"),
+		QStringLiteral("dialog-information"),
+		QStringLiteral("dialog-ok"),
+		QStringLiteral("dialog-warning"),
+		QStringLiteral("dialog-error")
 	};
 
 	Q_ASSERT(status() >= 0 && static_cast<quint32>(status()) < sizeof(icons) / sizeof(icons[0]));

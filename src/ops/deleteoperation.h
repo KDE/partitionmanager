@@ -47,7 +47,7 @@ class DeleteOperation : public Operation
 		~DeleteOperation();
 
 	public:
-		QString iconName() const { return isSecure() ? "edit-delete-shred" : "edit-delete"; }
+		QString iconName() const { return isSecure() ? QStringLiteral("edit-delete-shred") : QStringLiteral("edit-delete"); }
 		QString description() const;
 		void preview();
 		void undo();

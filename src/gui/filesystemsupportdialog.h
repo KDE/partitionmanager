@@ -47,7 +47,7 @@ class FileSystemSupportDialog : public QDialog
 	public:
 		QSize sizeHint() const;
 
-	protected slots:
+	protected Q_SLOTS:
 		void onButtonRescanClicked();
 
 	protected:
