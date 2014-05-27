@@ -170,9 +170,9 @@ bool RestoreOperation::execute(Report& parent)
 QString RestoreOperation::description() const
 {
 	if (overwrittenPartition())
-		return QString(xi18nc("@info/plain", "Restore partition from <filename>%1</filename> to <filename>%2</filename>", fileName(), overwrittenPartition()->deviceNode()));
+		return xi18nc("@info/plain", "Restore partition from <filename>%1</filename> to <filename>%2</filename>", fileName(), overwrittenPartition()->deviceNode());
 
-	return QString(xi18nc("@info/plain", "Restore partition on <filename>%1</filename> at %2 from <filename>%3</filename>", targetDevice().deviceNode(), Capacity::formatByteSize(restorePartition().firstSector() * targetDevice().logicalSectorSize()), fileName()));
+	return xi18nc("@info/plain", "Restore partition on <filename>%1</filename> at %2 from <filename>%3</filename>", targetDevice().deviceNode(), Capacity::formatByteSize(restorePartition().firstSector() * targetDevice().logicalSectorSize()), fileName());
 }
 
 void RestoreOperation::setOverwrittenPartition(Partition* p)

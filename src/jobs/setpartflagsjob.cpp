@@ -117,7 +117,7 @@ bool SetPartFlagsJob::run(Report& parent)
 QString SetPartFlagsJob::description() const
 {
 	if (PartitionTable::flagNames(flags()).size() == 0)
-		return QString(xi18nc("@info/plain", "Clear flags for partition <filename>%1</filename>", partition().deviceNode()));
+		return xi18nc("@info/plain", "Clear flags for partition <filename>%1</filename>", partition().deviceNode());
 
 	return xi18nc("@info/plain", "Set the flags for partition <filename>%1</filename> to \"%2\"", partition().deviceNode(), PartitionTable::flagNames(flags()).join(QStringLiteral(",")));
 }

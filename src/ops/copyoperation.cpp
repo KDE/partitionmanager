@@ -201,16 +201,16 @@ QString CopyOperation::updateDescription() const
 	if (overwrittenPartition())
 	{
 		if (copiedPartition().length() == overwrittenPartition()->length())
-			return QString(xi18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> (%5, %6)",
+			return xi18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> (%5, %6)",
 				sourcePartition().deviceNode(),
 				Capacity::formatByteSize(sourcePartition().capacity()),
 				sourcePartition().fileSystem().name(),
 				overwrittenPartition()->deviceNode(),
 				Capacity::formatByteSize(overwrittenPartition()->capacity()),
 				overwrittenPartition()->fileSystem().name()
-			));
+			);
 
-		return QString(xi18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> (%5, %6) and grow it to %7",
+		return xi18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</filename> (%5, %6) and grow it to %7",
 			sourcePartition().deviceNode(),
 			Capacity::formatByteSize(sourcePartition().capacity()),
 			sourcePartition().fileSystem().name(),
@@ -218,26 +218,26 @@ QString CopyOperation::updateDescription() const
 			Capacity::formatByteSize(overwrittenPartition()->capacity()),
 			overwrittenPartition()->fileSystem().name(),
 			Capacity::formatByteSize(copiedPartition().capacity())
-		));
+		);
 	}
 
 	if (copiedPartition().length() == sourcePartition().length())
-		return QString(xi18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to unallocated space (starting at %4) on <filename>%5</filename>",
+		return xi18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to unallocated space (starting at %4) on <filename>%5</filename>",
 			sourcePartition().deviceNode(),
 			Capacity::formatByteSize(sourcePartition().capacity()),
 			sourcePartition().fileSystem().name(),
 			Capacity::formatByteSize(copiedPartition().firstSector() * targetDevice().logicalSectorSize()),
 			targetDevice().deviceNode()
-		));
+		);
 
-	return QString(xi18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to unallocated space (starting at %4) on <filename>%5</filename> and grow it to %6",
+	return xi18nc("@info/plain", "Copy partition <filename>%1</filename> (%2, %3) to unallocated space (starting at %4) on <filename>%5</filename> and grow it to %6",
 		sourcePartition().deviceNode(),
 		Capacity::formatByteSize(sourcePartition().capacity()),
 		sourcePartition().fileSystem().name(),
 		Capacity::formatByteSize(copiedPartition().firstSector() * targetDevice().logicalSectorSize()),
 		targetDevice().deviceNode(),
 		Capacity::formatByteSize(copiedPartition().capacity())
-	));
+	);
 }
 
 void CopyOperation::setOverwrittenPartition(Partition* p)
