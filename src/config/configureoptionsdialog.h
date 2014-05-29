@@ -42,6 +42,7 @@ class ConfigureOptionsDialog : public KConfigDialog
 		virtual bool hasChanged();
 		virtual bool isDefault();
 		void onComboDefaultFileSystemActivated(int) { settingsChangedSlot(); }
+		void onShredSourceActivated() { settingsChangedSlot(); }
 		void onComboBackendActivated(int);
 
 	protected:

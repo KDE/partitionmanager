@@ -56,6 +56,7 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 	item->setIcon(KIconLoader().loadIcon(QLatin1String("partitionmanager"), KIconLoader::Desktop));
 
 	connect(&generalPageWidget().comboDefaultFileSystem(), SIGNAL(activated(int)), SLOT(onComboDefaultFileSystemActivated(int)));
+	connect(generalPageWidget().radioButton, &QRadioButton::toggled, this, &ConfigureOptionsDialog::onShredSourceActivated);
 
 	item = addPage(&fileSystemColorsPageWidget(), i18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
 	item->setIcon(KIconLoader().loadIcon(QLatin1String("format-fill-color"), KIconLoader::Desktop));
@@ -93,6 +94,13 @@ void ConfigureOptionsDialog::updateSettings()
 		changed = true;
 	}
 
+	if (generalPageWidget().radioButton->isChecked() != (Config::shredSource() == Config::EnumShredSource::random))
+	{
+		qDebug() << "updateSettings: " << generalPageWidget().kcfg_shredSource->checkedId();
+		Config::setShredSource(generalPageWidget().kcfg_shredSource->checkedId());
+		changed = true;
+	}
+
 	if (advancedPageWidget().isVisible() && advancedPageWidget().backend() != Config::backend())
 	{
 		Config::setBackend(advancedPageWidget().backend());
@@ -109,6 +117,7 @@ bool ConfigureOptionsDialog::hasChanged()
 
 	KConfigSkeletonItem* kcItem = Config::self()->findItem(QStringLiteral("defaultFileSystem"));
 	result = result || !kcItem->isEqual(generalPageWidget().defaultFileSystem());
+	result = result || ( generalPageWidget().kcfg_shredSource->checkedId() != Config::shredSource() );
 
 	if (advancedPageWidget().isVisible())
 	{
@@ -137,6 +146,7 @@ void ConfigureOptionsDialog::updateWidgetsDefault()
 {
 	bool useDefaults = Config::self()->useDefaults(true);
 	generalPageWidget().setDefaultFileSystem(FileSystem::defaultFileSystem());
+	generalPageWidget().radioButton->setChecked(true);
 
 	if (advancedPageWidget().isVisible())
 		advancedPageWidget().setBackend(CoreBackendManager::defaultBackendName());
