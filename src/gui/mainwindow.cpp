@@ -972,6 +972,7 @@ void MainWindow::onConfigureOptions()
 	// FIXME: we'd normally use settingsChanged(), according to the kde api docs. however, this
 	// is emitted each time the user changes any of our own settings (backend, default file system), without
 	// applying or clicking ok. so the below is the workaround for that.
+	// FIXME: port KF5
 	connect(dlg, SIGNAL(applyClicked()), SLOT(onSettingsChanged()));
 	connect(dlg, SIGNAL(okClicked()), SLOT(onSettingsChanged()));
 
