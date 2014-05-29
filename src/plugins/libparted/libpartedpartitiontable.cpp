@@ -145,7 +145,7 @@ static PedFileSystemType* getPedFileSystemType(FileSystem::Type t)
 
 QString LibPartedPartitionTable::createPartition(Report& report, const Partition& partition)
 {
-	Q_ASSERT(partition.devicePath() == pedDevice()->path);
+	Q_ASSERT(partition.devicePath() == QString::fromUtf8(pedDevice()->path));
 
 	QString rval = QString();
 
@@ -201,7 +201,7 @@ QString LibPartedPartitionTable::createPartition(Report& report, const Partition
 
 bool LibPartedPartitionTable::deletePartition(Report& report, const Partition& partition)
 {
-	Q_ASSERT(partition.devicePath() == pedDevice()->path);
+	Q_ASSERT(partition.devicePath() == QString::fromUtf8(pedDevice()->path));
 
 	bool rval = false;
 
@@ -224,7 +224,7 @@ bool LibPartedPartitionTable::deletePartition(Report& report, const Partition& p
 
 bool LibPartedPartitionTable::updateGeometry(Report& report, const Partition& partition, qint64 sector_start, qint64 sector_end)
 {
-	Q_ASSERT(partition.devicePath() == pedDevice()->path);
+	Q_ASSERT(partition.devicePath() == QString::fromUtf8(pedDevice()->path));
 
 	bool rval = false;
 
