@@ -39,11 +39,6 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
 	KAboutData *aboutData = createPartitionManagerAboutData();
 	KAboutData::setApplicationData(*aboutData);
 
-	app.setApplicationName(aboutData->componentName());
-	app.setApplicationDisplayName(aboutData->displayName());
-	app.setOrganizationDomain(aboutData->organizationDomain());
-	app.setApplicationVersion(aboutData->version());
-
 	QCommandLineParser parser;
 	parser.setApplicationDescription( aboutData->shortDescription() );
 	parser.addHelpOption();
