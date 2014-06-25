@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<component type="desktop">
+  <id>partitionmanager.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+<project_license/>
+  <name>KDE Partition Manager</name>
+  <summary>Partition Editor</summary>
+  <description>
+    <p>KDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.</p>
+    <p>Features:</p>
+    <ul>
+      <li>Supports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and more</li>
+      <li>Makes use of already available external programs to get its job done</li>
+    </ul>
+  </description>
+  <url type="homepage">http://sourceforge.net/projects/partitionman/</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kdepartitionmanager</url>
+  <url type="help">http://docs.kde.org/development/en/extragear-sysadmin/partitionmanager/index.html</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>http://kde.org/images/screenshots/kdepartitionmanager.png</image>
+    </screenshot>
+  </screenshots>
+  <project_group>KDE</project_group>
+  <provides>
+    <binary>partitionmanager</binary>
+  </provides>
+</component>
