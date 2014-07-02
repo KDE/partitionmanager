@@ -233,9 +233,9 @@ QList<Solid::Device> getSolidDeviceList()
         QString predicate = QStringLiteral("StorageVolume.usage == 'PartitionTable'");
 
 #else
-        QString predicate = "[ [ [ StorageDrive.driveType == 'HardDisk' OR StorageDrive.driveType == 'CompactFlash'] OR "
+        QString predicate = QStringLiteral("[ [ [ StorageDrive.driveType == 'HardDisk' OR StorageDrive.driveType == 'CompactFlash'] OR "
                 "[ StorageDrive.driveType == 'MemoryStick' OR StorageDrive.driveType == 'SmartMedia'] ] OR "
-                "[ StorageDrive.driveType == 'SdMmc' OR StorageDrive.driveType == 'Xd'] ]";
+                "[ StorageDrive.driveType == 'SdMmc' OR StorageDrive.driveType == 'Xd'] ]");
 #endif
 
 	QStringList argList;
