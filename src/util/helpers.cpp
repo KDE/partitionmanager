@@ -127,11 +127,11 @@ KAboutData* createPartitionManagerAboutData()
 		ki18nc("@info:credit", "(c) 2008, 2009, 2010, 2011 Volker Lanz")
 	);
 
-	about->addAuthor(ki18nc("@info:credit", "Volker Lanz"), KLocalizedString(), "vl@fidra.de");
+	about->addAuthor(ki18nc("@info:credit", "Volker Lanz"), ki18nc("@info:credit", "Former maintainer"));
 	about->setHomepage("http://www.partitionmanager.org");
 
 	about->addCredit(ki18n("Hugo Pereira Da Costa"), ki18nc("@info:credit", "Partition Widget Design"), "hugo@oxygen-icons.org");
-	about->addCredit(ki18n("Andrius Štikonas"), ki18nc("@info:credit", "Btrfs support"), "stikonas@gmail.com");
+	about->addCredit(ki18n("Andrius Štikonas"), ki18nc("@info:credit", "Btrfs support"), "andrius@stikonas.eu");
 
 	return about;
 }
