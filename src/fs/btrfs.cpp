@@ -128,7 +128,7 @@ namespace FS
 
 	bool btrfs::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, QStringLiteral("mkfs.btrfs"), QStringList() << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("mkfs.btrfs"), QStringList() << QStringLiteral("-f") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 

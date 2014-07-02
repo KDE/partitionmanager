@@ -70,7 +70,7 @@ static KAboutData createPluginAboutData()
 		KAboutLicense::GPL,
 		i18n("Copyright 2008,2009,2010 Volker Lanz"));
 
-	about.addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Maintainer"), QStringLiteral("vl@fidra.de"));
+	about.addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Former maintainer"));
 	about.setHomepage(QStringLiteral("http://www.partitionmanager.org"));
 
 	return about;

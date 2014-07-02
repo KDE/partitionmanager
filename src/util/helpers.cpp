@@ -123,7 +123,7 @@ KAboutData* createPartitionManagerAboutData()
 	about->setProgramIconName(QStringLiteral("partitionmanager"));
 	about->setProductName(QByteArray("partitionmanager"));
 
-	about->addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Maintainer"), QStringLiteral("vl@fidra.de"));
+	about->addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Former maintainer"));
 	about->addAuthor(i18nc("@info:credit", "Andrius Štikonas"), i18nc("@info:credit", "Developer"), QStringLiteral("andrius@stikonas.eu"));
 	about->setHomepage(QStringLiteral("http://www.partitionmanager.org"));
 
