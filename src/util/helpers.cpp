@@ -124,7 +124,7 @@ KAboutData* createPartitionManagerAboutData()
 		VERSION,
 		ki18nc("@title", "Manage your disks, partitions and file systems"),
 		KAboutData::License_GPL,
-		ki18nc("@info:credit", "(c) 2008, 2009, 2010, 2011 Volker Lanz")
+		ki18nc("@info:credit", "© 2008-2013 Volker Lanz")
 	);
 
 	about->addAuthor(ki18nc("@info:credit", "Volker Lanz"), ki18nc("@info:credit", "Former maintainer"));
