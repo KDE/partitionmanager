@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>KDE Partition Manager</name>
+  <name xml:lang="ar">مدير أقسام كدي</name>
   <name xml:lang="cs">Správce diskových oddílů pro KDE</name>
   <name xml:lang="da">KDE Partitionshåndtering</name>
   <name xml:lang="es">Gestor de particiones de KDE</name>
@@ -22,6 +23,7 @@
   <name xml:lang="uk">Редактор розділів для KDE</name>
   <name xml:lang="x-test">xxKDE Partition Managerxx</name>
   <summary>Partition Editor</summary>
+  <summary xml:lang="ar">محرّر أقسام</summary>
   <summary xml:lang="cs">Editor diskových oddílů</summary>
   <summary xml:lang="da">Partitioneringsprogram</summary>
   <summary xml:lang="es">Editor de particiones</summary>
@@ -41,9 +43,11 @@
   <summary xml:lang="x-test">xxPartition Editorxx</summary>
   <description>
     <p>KDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.</p>
+    <p xml:lang="ar">إن مدير أقسام كدي برنامج يساعدك على إدارة أجهزة الأقراص، والأقسام وأنظمة الملفات في نظامك. ويسمح لك أن تُنشئ، وتنسخ، وتنقل، وتحذف، وتُحَجِّم دون فقدات البيانات، وتنسخ احتياطياً، وتستعيد من النسخ الاحتياطية بسهولة.</p>
     <p xml:lang="da">KDE Partition Manager er et værktøj til at hjælpe dig med at håndtere dine diskenheder og filsystemerne på din computer. Den lader dig nemt oprette, kopiere, flytte, slette, ændre størrelse uden at miste data, tage backup og gendanne partitioner.</p>
     <p xml:lang="es">El gestor de particiones de KDE es una utilidad que le ayuda a gestionar los dispositivos de disco duro, las particiones y el sistema de archivos de su equipo. Le permite crear, copiar, mover, borrar, cambiar el tamaño sin perder datos, hacer copia de seguridad y restaurar particiones.</p>
     <p xml:lang="fi">KDE:n osionhallinta on apuohjelma, joka auttaa hallitsemaan tietokoneen levyjä, osioita ja tiedostojärjestelmiä. Sillä voi luoda, kopioida, siirtää, poistaa, muuttaa kokoa menettämättä tietoja, varmuuskopioida ja palauttaa osioita.</p>
+    <p xml:lang="lt">KDE Skaidinių tvarkyklė yra programa padedanti tvarkyti jūsų kompiuterio diskų įrenginius, skaidinius ir failų sistemas. Ji leidžia lengvai kurti, kopijuoti, perkelti, trinti ir keisti dydį neprarandant duomenų, kurti atsargines skaidinių kopijas.</p>
     <p xml:lang="nl">KDE Partitiebeheerder is een hulpprogramma om u helpen bij het beheer van de schijven, partities en bestandssystemen op uw computer. Het stelt u in staat gemakkelijk partities te maken, te kopiëren, te verplaatsen, te verwijderen, hun grootte te wijzigen zonder verlies van gegevens en hiervan een reservekopie te maken of hier vanaf te herstellen.</p>
     <p xml:lang="pl">Zarządzanie partycjami KDE jest programem użytkowym mającym na celu pomoc przy zarządzaniu urządzeniami dyskowymi, partycjami i systemami plików na twoim komputerze. Umożliwia łatwe tworzenie, kopiowanie, przenoszenie, usuwanie i zamianę rozmiaru bez utraty danych, a także tworzenie i przywracanie kopii zapasowych partycji.</p>
     <p xml:lang="pt">O Gestor de Partições do KDE é um utilitário que o ajuda a gerir os dispositivos dos discos, as suas partições e sistemas de ficheiros no seu computador. Permite-lhe facilmente criar, copiar, mover, apagar, dimensionar sem perder dados, salvaguardar e repor partições.</p>
@@ -57,6 +61,7 @@
     <p xml:lang="uk">Редактор розділів KDE — допоміжна програма, яку призначено для полегшення керування дисковими пристроями, розділами та файловими системами на комп’ютері. За її допомогою ви зможете без проблем створювати, копіювати, пересувати, вилучати та змінювати розміри розділів без втрати даних, створювати резервні копії розділів та відновлювати дані з цих резервних копій.</p>
     <p xml:lang="x-test">xxKDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.xx</p>
     <p>Features:</p>
+    <p xml:lang="ar">المزايا:</p>
     <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="da">Funktioner:</p>
     <p xml:lang="es">Funciones:</p>
@@ -76,9 +81,11 @@
     <p xml:lang="x-test">xxFeatures:xx</p>
     <ul>
       <li>Supports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and more</li>
+      <li xml:lang="ar">يدعم عددًا كبيراً من أنظمة الملفات، منها ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS وغيرها الكثير</li>
       <li xml:lang="da">Understøtter et større antal filsystemer, derunder ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS og andre</li>
       <li xml:lang="es">Permite un gran número de sistemas de archivos, como ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS y XFS, entre otros</li>
       <li xml:lang="fi">Tukee monia tiedostojärjestelmiä kuten ext2/3/4, Btrfs, ReiserFS, NTFS, FAT16/32, JFS, XFS ja muita</li>
+      <li xml:lang="lt">Palaiko daug failų sistemų, tarp jų ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ir kitos</li>
       <li xml:lang="nl">Ondersteunt een groot aantal bestandssystemen, inclusief ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS en meer</li>
       <li xml:lang="pl">Obsługa wielu systemów plików, uwzględniając przy tym  ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i więcej</li>
       <li xml:lang="pt">Suporta um grande conjunto de sistemas de ficheiros, incluindo o ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS entre outros</li>
@@ -92,9 +99,11 @@
       <li xml:lang="uk">Підтримка широкого набору файлових систем, зокрема ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS тощо.</li>
       <li xml:lang="x-test">xxSupports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and morexx</li>
       <li>Makes use of already available external programs to get its job done</li>
+      <li xml:lang="ar">يستفيد من البرامج الخارجية المتاحة بالفعل لإتمام عمله</li>
       <li xml:lang="da">Gør brug af allerede tilgængelige eksterne programmer til at udføre arbejdet</li>
       <li xml:lang="es">Utiliza varios programas externos que deben estar disponibles para realizar el trabajo</li>
       <li xml:lang="fi">Hoitaa hommansa hyödyntäen valmiita ulkoisia ohjelmia</li>
+      <li xml:lang="lt">Užduotims atlikti naudoja išorinius įrankius</li>
       <li xml:lang="nl">Maakt gebruik van al beschikbare externe programma's om deze taken uit te voeren</li>
       <li xml:lang="pl">Wykorzystywanie już dostępnych programów zewnętrznych do wykonywania swojej pracy</li>
       <li xml:lang="pt">Tira partido dos programas externos já existentes para terminar a sua tarefa</li>
