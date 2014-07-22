@@ -344,12 +344,18 @@ FileSystem::Type LibPartedPartitionTable::detectFileSystemBySector(Report& repor
 bool LibPartedPartitionTable::setPartitionSystemType(Report& report, const Partition& partition)
 {
 	PedFileSystemType* pedFsType = (partition.roles().has(PartitionRole::Extended) || partition.fileSystem().type() == FileSystem::Unformatted) ? NULL : getPedFileSystemType(partition.fileSystem().type());
-
-	PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), partition.firstSector());
-
-	if (pedFsType == NULL || pedPartition == NULL)
+	if (pedFsType == NULL)
 	{
 		report.line() << xi18nc("@info/plain", "Could not update the system type for partition <filename>%1</filename>.", partition.deviceNode());
+		report.line() << xi18nc("@info/plain", "No file system defined.");
+		return false;
+	}
+
+	PedPartition* pedPartition = ped_disk_get_partition_by_sector(pedDisk(), partition.firstSector());
+	if (pedPartition == NULL)
+	{
+		report.line() << xi18nc("@info/plain", "Could not update the system type for partition <filename>%1</filename>.", partition.deviceNode());
+		report.line() << xi18nc("@info/plain", "No partition found at sector %1.", partition.firstSector());
 		return false;
 	}
 
