@@ -68,6 +68,8 @@ class LibPartedBackend : public CoreBackend
 		virtual Device* scanDevice(const QString& device_node);
 		virtual QList<Device*> scanDevices();
 
+		static QString lastPartedExceptionMessage();
+
 	private:
 		static FileSystem::Type detectFileSystem(PedPartition* pedPartition);
 		static PedPartitionFlag getPedFlag(PartitionTable::Flag flag);

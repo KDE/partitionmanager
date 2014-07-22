@@ -192,7 +192,10 @@ QString LibPartedPartitionTable::createPartition(Report& report, const Partition
 	if (ped_disk_add_partition(pedDisk(), pedPartition, pedConstraint))
 		rval = QString::fromUtf8(ped_partition_get_path(pedPartition));
 	else
+	{
 		report.line() << xi18nc("@info/plain", "Failed to add partition <filename>%1</filename> to device <filename>%2</filename>.", partition.deviceNode(), QString::fromUtf8(pedDisk()->dev->path));
+		report.line() << LibPartedBackend::lastPartedExceptionMessage();
+	}
 
 	ped_constraint_destroy(pedConstraint);
 

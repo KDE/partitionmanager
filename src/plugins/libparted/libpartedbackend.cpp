@@ -95,13 +95,15 @@ static struct
 	{ PED_PARTITION_MSFT_RESERVED, PartitionTable::FlagMsftReserved }
 };
 
+static QString s_lastPartedExceptionMessage;
+
 /** Callback to handle exceptions from libparted
 	@param e the libparted exception to handle
 */
 static PedExceptionOption pedExceptionHandler(PedException* e)
 {
-	/** @todo These messages should end up in the Report, not in the GlobalLog. */
 	Log(Log::error) << i18nc("@info/plain", "LibParted Exception: %1", QString::fromLocal8Bit(e->message));
+	s_lastPartedExceptionMessage = QString::fromLocal8Bit(e->message);
 	return PED_EXCEPTION_UNHANDLED;
 }
 
@@ -598,6 +600,11 @@ PedPartitionFlag LibPartedBackend::getPedFlag(PartitionTable::Flag flag)
 			return flagmap[i].pedFlag;
 
 	return static_cast<PedPartitionFlag>(-1);
+}
+
+QString LibPartedBackend::lastPartedExceptionMessage()
+{
+	return s_lastPartedExceptionMessage;
 }
 
 #include "libpartedbackend.moc"
