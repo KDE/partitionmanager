@@ -28,7 +28,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new BackupFileSystemJob
 	@param sourcedevice the device the FileSystem to back up is on
@@ -51,9 +51,9 @@ qint32 BackupFileSystemJob::numSteps() const
 bool BackupFileSystemJob::run(Report& parent)
 {
 	bool rval = false;
-	
+
 	Report* report = jobStarted(parent);
-	
+
 	if (sourcePartition().fileSystem().supportBackup() == FileSystem::cmdSupportFileSystem)
 		rval = sourcePartition().fileSystem().backup(*report, sourceDevice(), sourcePartition().deviceNode(), fileName());
 	else if (sourcePartition().fileSystem().supportBackup() == FileSystem::cmdSupportCore)
@@ -62,13 +62,13 @@ bool BackupFileSystemJob::run(Report& parent)
 		CopyTargetFile copyTarget(fileName(), sourceDevice().logicalSectorSize());
 
 		if (!copySource.open())
-			report->line() << i18nc("@info/plain", "Could not open file system on source partition <filename>%1</filename> for backup.", sourcePartition().deviceNode());
+			report->line() << xi18nc("@info/plain", "Could not open file system on source partition <filename>%1</filename> for backup.", sourcePartition().deviceNode());
 		else if (!copyTarget.open())
-			report->line() << i18nc("@info/plain", "Could not create backup file <filename>%1</filename>.", fileName());
+			report->line() << xi18nc("@info/plain", "Could not create backup file <filename>%1</filename>.", fileName());
 		else
 			rval = copyBlocks(*report, copyTarget, copySource);
 	}
-	
+
 	jobFinished(*report, rval);
 
 	return rval;
@@ -76,5 +76,5 @@ bool BackupFileSystemJob::run(Report& parent)
 
 QString BackupFileSystemJob::description() const
 {
-	return i18nc("@info/plain", "Back up file system on partition <filename>%1</filename> to <filename>%2</filename>", sourcePartition().deviceNode(), fileName());
+	return xi18nc("@info/plain", "Back up file system on partition <filename>%1</filename> to <filename>%2</filename>", sourcePartition().deviceNode(), fileName());
 }

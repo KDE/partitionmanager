@@ -21,8 +21,7 @@
 
 #define CONFIGUREOPTIONSDIALOG__H
 
-#include <kconfigdialog.h>
-#include <kdebug.h>
+#include <KConfigWidgets/KConfigDialog>
 
 class GeneralPageWidget;
 class FileSystemColorsPageWidget;
@@ -37,12 +36,13 @@ class ConfigureOptionsDialog : public KConfigDialog
 		ConfigureOptionsDialog(QWidget* parent, const OperationStack& ostack, const QString& name);
 		~ConfigureOptionsDialog();
 
-	protected slots:
+	protected Q_SLOTS:
 		virtual void updateSettings();
 		virtual void updateWidgetsDefault();
 		virtual bool hasChanged();
 		virtual bool isDefault();
 		void onComboDefaultFileSystemActivated(int) { settingsChangedSlot(); }
+		void onShredSourceActivated() { settingsChangedSlot(); }
 		void onComboBackendActivated(int);
 
 	protected:

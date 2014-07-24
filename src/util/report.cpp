@@ -25,12 +25,7 @@
 
 #include <QTextDocument>
 
-#include <kdeversion.h>
-#include <kdatetime.h>
-#include <kglobal.h>
-#include <kaboutdata.h>
-#include <klocale.h>
-#include <kcomponentdata.h>
+#include <KLocalizedString>
 
 #include <sys/utsname.h>
 #include <unistd.h>
@@ -75,27 +70,27 @@ QString Report::toHtml() const
 	QString s;
 
 	if (parent() == root())
-		s += "<div>\n";
+		s += QStringLiteral("<div>\n");
 	else if (parent() != NULL)
-		s += "<div style='margin-left:24px;margin-top:12px;margin-bottom:12px'>\n";
+		s += QStringLiteral("<div style='margin-left:24px;margin-top:12px;margin-bottom:12px'>\n");
 
 	if (!command().isEmpty())
-		s += "\n<b>" + Qt::escape(command()) + "</b>\n\n";
+		s += QStringLiteral("\n<b>") + command().toHtmlEscaped() + QStringLiteral("</b>\n\n");
 
 	if (!output().isEmpty())
-		s += "<pre>" + Qt::escape(output()) + "</pre>\n\n";
+		s += QStringLiteral("<pre>") + output().toHtmlEscaped() + QStringLiteral("</pre>\n\n");
 
 	if (children().size() == 0)
-		s += "<br/>\n";
+		s += QStringLiteral("<br/>\n");
 	else
 		foreach(Report* child, children())
 			s += child->toHtml();
 
 	if (!status().isEmpty())
-		s += "<b>" + Qt::escape(status()) + "</b><br/>\n\n";
+		s += QStringLiteral("<b>") + status().toHtmlEscaped() + QStringLiteral("</b><br/>\n\n");
 
 	if (parent() != NULL)
-	s += "</div>\n\n";
+	s += QStringLiteral("</div>\n\n");
 
 	return s;
 }
@@ -110,13 +105,13 @@ QString Report::toText() const
 
 	if (!command().isEmpty())
 	{
-		s += "==========================================================================================\n";
-		s += command() + '\n';
-		s += "==========================================================================================\n";
+		s += QStringLiteral("==========================================================================================\n");
+		s += command() + QStringLiteral("\n");
+		s += QStringLiteral("==========================================================================================\n");
 	}
 
 	if (!output().isEmpty())
-		s += output() + '\n';
+		s += output() + QStringLiteral("\n");
 
 	foreach(Report* child, children())
 		s += child->toText();

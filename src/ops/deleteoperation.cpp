@@ -31,8 +31,7 @@
 
 #include <QString>
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new DeleteOperation
 	@param d the Device to delete a Partition on
@@ -83,9 +82,9 @@ void DeleteOperation::undo()
 QString DeleteOperation::description() const
 {
 	if (isSecure())
-		return QString(i18nc("@info/plain", "Shred partition <filename>%1</filename> (%2, %3)", deletedPartition().deviceNode(), Capacity::formatByteSize(deletedPartition().capacity()), deletedPartition().fileSystem().name()));
+		return xi18nc("@info/plain", "Shred partition <filename>%1</filename> (%2, %3)", deletedPartition().deviceNode(), Capacity::formatByteSize(deletedPartition().capacity()), deletedPartition().fileSystem().name());
 	else
-		return QString(i18nc("@info/plain", "Delete partition <filename>%1</filename> (%2, %3)", deletedPartition().deviceNode(), Capacity::formatByteSize(deletedPartition().capacity()), deletedPartition().fileSystem().name()));
+		return xi18nc("@info/plain", "Delete partition <filename>%1</filename> (%2, %3)", deletedPartition().deviceNode(), Capacity::formatByteSize(deletedPartition().capacity()), deletedPartition().fileSystem().name());
 }
 
 void DeleteOperation::checkAdjustLogicalNumbers(Partition& p, bool undo)

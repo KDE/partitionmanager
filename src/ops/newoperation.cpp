@@ -36,8 +36,7 @@
 
 #include <QString>
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new NewOperation.
 	@param d the Device to create a new Partition on
@@ -64,7 +63,7 @@ NewOperation::NewOperation(Device& d, Partition* p) :
 		// empty label). However, the user might later on decide to change FS or
 		// label. The operation stack will merge these operations with this one here
 		// and if the jobs don't exist things will break.
-		
+
 		m_CreateFileSystemJob = new CreateFileSystemJob(targetDevice(), newPartition());
 		addJob(createFileSystemJob());
 
@@ -110,7 +109,7 @@ void NewOperation::undo()
 
 QString NewOperation::description() const
 {
-	return QString(i18nc("@info/plain", "Create a new partition (%1, %2) on <filename>%3</filename>", Capacity::formatByteSize(newPartition().capacity()), newPartition().fileSystem().name(), targetDevice().deviceNode()));
+	return xi18nc("@info/plain", "Create a new partition (%1, %2) on <filename>%3</filename>", Capacity::formatByteSize(newPartition().capacity()), newPartition().fileSystem().name(), targetDevice().deviceNode());
 }
 
 /** Can a Partition be created somewhere?
@@ -129,7 +128,7 @@ Partition* NewOperation::createNew(const Partition& cloneFrom)
 	p->deleteFileSystem();
 	p->setFileSystem(FileSystemFactory::create(FileSystem::defaultFileSystem(), p->firstSector(), p->lastSector()));
 	p->setState(Partition::StateNew);
-	p->setPartitionPath("");
+	p->setPartitionPath(QString());
 
 	return p;
 }

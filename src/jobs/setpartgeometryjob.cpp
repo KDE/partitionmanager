@@ -29,8 +29,7 @@
 
 #include "util/report.h"
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new SetPartGeometryJob
 	@param d the Device the Partition whose geometry is to be set is on
@@ -79,7 +78,7 @@ bool SetPartGeometryJob::run(Report& parent)
 		delete backendDevice;
 	}
 	else
-		report->line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> while trying to resize/move partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
+		report->line() << xi18nc("@info/plain", "Could not open device <filename>%1</filename> while trying to resize/move partition <filename>%2</filename>.", device().deviceNode(), partition().deviceNode());
 
 	jobFinished(*report, rval);
 
@@ -88,5 +87,5 @@ bool SetPartGeometryJob::run(Report& parent)
 
 QString SetPartGeometryJob::description() const
 {
-	return i18nc("@info/plain", "Set geometry of partition <filename>%1</filename>: Start sector: %2, length: %3", partition().deviceNode(), newStart(), newLength());
+	return xi18nc("@info/plain", "Set geometry of partition <filename>%1</filename>: Start sector: %2, length: %3", partition().deviceNode(), newStart(), newLength());
 }

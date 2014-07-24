@@ -29,7 +29,10 @@
 
 #include "util/capacity.h"
 
-#include <kdebug.h>
+#include <KLocalizedString>
+
+#include <QDialogButtonBox>
+#include <QPushButton>
 
 #include <config.h>
 
@@ -37,7 +40,7 @@ static double sectorsToDialogUnit(const Device& d, qint64 v);
 static qint64 dialogUnitToSectors(const Device& d, double v);
 
 SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint64 minFirst, qint64 maxLast) :
-	KDialog(parent),
+	QDialog(parent),
 	m_SizeDialogWidget(new SizeDialogWidget(this)),
 	m_SizeDetailsWidget(new SizeDetailsWidget(this)),
 	m_Device(d),
@@ -47,15 +50,26 @@ SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint
 	m_MinimumLength(-1),
 	m_MaximumLength(-1)
 {
-	setMainWidget(&dialogWidget());
-	setDetailsWidget(&detailsWidget());
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&dialogWidget());
+	QFrame* detailsBox = new QFrame( this );
+	mainLayout->addWidget(detailsBox);
+	QVBoxLayout *detailsLayout = new QVBoxLayout(detailsBox);
+	detailsLayout->addWidget(&detailsWidget());
+	detailsWidget().hide();
 
-	showButtonSeparator(true);
-	setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Details);
-	// Cannot use KGuiItem() for the details button due to a KDialog bug -- it has special handling
-	// for the details button text but not if using setButtonGuiItem
-	setButtonText(Details, i18nc("@item:button advanced settings button", "Advanced"));
-	setButtonIcon(Details, KIcon());
+	QDialogButtonBox* dialogButtonBox = new QDialogButtonBox;
+	detailsButton = new QPushButton;
+	okButton = dialogButtonBox->addButton( QDialogButtonBox::Ok );
+	cancelButton = dialogButtonBox->addButton( QDialogButtonBox::Cancel );
+	detailsButton->setText(i18nc("@item:button advanced settings button", "Advanced") + QStringLiteral(" >>"));
+	dialogButtonBox->addButton( detailsButton, QDialogButtonBox::ActionRole);
+	mainLayout->addWidget(dialogButtonBox);
+
+	connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(detailsButton, SIGNAL(clicked()), this, SLOT(toggleDetails()));
 }
 
 void SizeDialogBase::setupDialog()
@@ -65,9 +79,9 @@ void SizeDialogBase::setupDialog()
 
 	dialogWidget().spinCapacity().setValue(Capacity(partition().capacity()).toDouble(Capacity::preferredUnit()));
 
-	dialogWidget().spinFreeBefore().setSuffix(QString(" ") + Capacity::unitName(Capacity::preferredUnit()));
-	dialogWidget().spinFreeAfter().setSuffix(QString(" ") + Capacity::unitName(Capacity::preferredUnit()));
-	dialogWidget().spinCapacity().setSuffix(QString(" ") + Capacity::unitName(Capacity::preferredUnit()));
+	dialogWidget().spinFreeBefore().setSuffix(QStringLiteral(" ") + Capacity::unitName(Capacity::preferredUnit()));
+	dialogWidget().spinFreeAfter().setSuffix(QStringLiteral(" ") + Capacity::unitName(Capacity::preferredUnit()));
+	dialogWidget().spinCapacity().setSuffix(QStringLiteral(" ") + Capacity::unitName(Capacity::preferredUnit()));
 
 	detailsWidget().spinFirstSector().setValue(partition().firstSector());
 	detailsWidget().spinLastSector().setValue(partition().lastSector());
@@ -126,6 +140,13 @@ void SizeDialogBase::setupConnections()
 	connect(&detailsWidget().spinFirstSector(), SIGNAL(valueChanged(double)), SLOT(onSpinFirstSectorChanged(double)));
 	connect(&detailsWidget().spinLastSector(), SIGNAL(valueChanged(double)), SLOT(onSpinLastSectorChanged(double)));
 	connect(&detailsWidget().checkAlign(), SIGNAL(toggled(bool)), SLOT(onAlignToggled(bool)));
+}
+
+void SizeDialogBase::toggleDetails()
+{
+	const bool isVisible = detailsWidget().isVisible();
+	detailsWidget().setVisible(!isVisible);
+	detailsButton->setText(i18n("&Advanced") + (isVisible ? QStringLiteral(" >>") : QStringLiteral(" <<")));
 }
 
 void SizeDialogBase::onSpinFreeBeforeChanged(double newBefore)

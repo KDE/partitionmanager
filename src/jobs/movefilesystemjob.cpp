@@ -26,8 +26,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
-#include <kdebug.h>
+#include <KLocalizedString>
 
 /** Creates a new MoveFileSystemJob
 	@param d the Device the Partition to move is on
@@ -61,9 +60,9 @@ bool MoveFileSystemJob::run(Report& parent)
 		CopyTargetDevice moveTarget(device(), newStart(), newStart() + partition().fileSystem().length());
 
 		if (!moveSource.open())
-			report->line() << i18nc("@info/plain", "Could not open file system on partition <filename>%1</filename> for moving.", partition().deviceNode());
+			report->line() << xi18nc("@info/plain", "Could not open file system on partition <filename>%1</filename> for moving.", partition().deviceNode());
 		else if (!moveTarget.open())
-			report->line() << i18nc("@info/plain", "Could not create target for moving file system on partition <filename>%1</filename>.", partition().deviceNode());
+			report->line() << xi18nc("@info/plain", "Could not create target for moving file system on partition <filename>%1</filename>.", partition().deviceNode());
 		else
 		{
 			rval = copyBlocks(*report, moveTarget, moveSource);
@@ -75,7 +74,7 @@ bool MoveFileSystemJob::run(Report& parent)
 				partition().fileSystem().setLastSector(newStart() + savedLength);
 			}
 			else if (!rollbackCopyBlocks(*report, moveTarget, moveSource))
-				report->line() << i18nc("@info/plain", "Rollback for file system on partition <filename>%1</filename> failed.", partition().deviceNode());
+				report->line() << xi18nc("@info/plain", "Rollback for file system on partition <filename>%1</filename> failed.", partition().deviceNode());
 
 			report->line() << i18nc("@info/plain", "Closing device. This may take a few seconds.");
 		}
@@ -91,5 +90,5 @@ bool MoveFileSystemJob::run(Report& parent)
 
 QString MoveFileSystemJob::description() const
 {
-	return i18nc("@info/plain", "Move the file system on partition <filename>%1</filename> to sector %2", partition().deviceNode(), newStart());
+	return xi18nc("@info/plain", "Move the file system on partition <filename>%1</filename> to sector %2", partition().deviceNode(), newStart());
 }

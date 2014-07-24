@@ -23,8 +23,7 @@
 #include "util/capacity.h"
 
 #include <blkid/blkid.h>
-#include <klocale.h>
-#include <kdebug.h>
+#include <KLocalizedString>
 
 #include <config.h>
 
@@ -66,10 +65,10 @@ static QString readBlkIdValue(const QString& deviceNode, const QString& tag)
 		blkid_dev dev;
 
 		char* label = NULL;
-		if ((dev = blkid_get_dev(cache, deviceNode.toLocal8Bit(), BLKID_DEV_NORMAL)) != NULL &&
-				(label = blkid_get_tag_value(cache, tag.toLocal8Bit(), deviceNode.toLocal8Bit())))
+		if ((dev = blkid_get_dev(cache, deviceNode.toLocal8Bit().constData(), BLKID_DEV_NORMAL)) != NULL &&
+				(label = blkid_get_tag_value(cache, tag.toLocal8Bit().constData(), deviceNode.toLocal8Bit().constData())))
 		{
-			rval = label;
+			rval = QString::fromUtf8(label);
 			free(label);
 		}
 
@@ -85,7 +84,7 @@ static QString readBlkIdValue(const QString& deviceNode, const QString& tag)
 */
 QString FileSystem::readLabel(const QString& deviceNode) const
 {
-	return readBlkIdValue(deviceNode, "LABEL");
+	return readBlkIdValue(deviceNode, QStringLiteral("LABEL"));
 }
 
 /** Creates a new FileSystem
@@ -223,7 +222,7 @@ bool FileSystem::updateUUID(Report& report, const QString& deviceNode) const
  */
 QString FileSystem::readUUID(const QString& deviceNode) const
 {
-	return readBlkIdValue(deviceNode, "UUID");
+	return readBlkIdValue(deviceNode, QStringLiteral("UUID"));
 }
 
 /** Give implementations of FileSystem a chance to update the boot sector after the
@@ -269,32 +268,32 @@ static const QString* typeNames()
 {
 	static const QString s[] =
 	{
-		i18nc("@item/plain filesystem name", "unknown"),
-		i18nc("@item/plain filesystem name", "extended"),
+		i18nc("@item filesystem name", "unknown"),
+		i18nc("@item filesystem name", "extended"),
 
-		i18nc("@item/plain filesystem name", "ext2"),
-		i18nc("@item/plain filesystem name", "ext3"),
-		i18nc("@item/plain filesystem name", "ext4"),
-		i18nc("@item/plain filesystem name", "linuxswap"),
-		i18nc("@item/plain filesystem name", "fat16"),
-		i18nc("@item/plain filesystem name", "fat32"),
-		i18nc("@item/plain filesystem name", "ntfs"),
-		i18nc("@item/plain filesystem name", "reiser"),
-		i18nc("@item/plain filesystem name", "reiser4"),
-		i18nc("@item/plain filesystem name", "xfs"),
-		i18nc("@item/plain filesystem name", "jfs"),
-		i18nc("@item/plain filesystem name", "hfs"),
-		i18nc("@item/plain filesystem name", "hfsplus"),
-		i18nc("@item/plain filesystem name", "ufs"),
-		i18nc("@item/plain filesystem name", "unformatted"),
-		i18nc("@item/plain filesystem name", "btrfs"),
-		i18nc("@item/plain filesystem name", "hpfs"),
-		i18nc("@item/plain filesystem name", "luks"),
-		i18nc("@item/plain filesystem name", "ocfs2"),
-		i18nc("@item/plain filesystem name", "zfs"),
-		i18nc("@item/plain filesystem name", "exfat"),
-		i18nc("@item/plain filesystem name", "nilfs2"),
-		i18nc("@item/plain filesystem name", "lvm2 pv"),
+		i18nc("@item filesystem name", "ext2"),
+		i18nc("@item filesystem name", "ext3"),
+		i18nc("@item filesystem name", "ext4"),
+		i18nc("@item filesystem name", "linuxswap"),
+		i18nc("@item filesystem name", "fat16"),
+		i18nc("@item filesystem name", "fat32"),
+		i18nc("@item filesystem name", "ntfs"),
+		i18nc("@item filesystem name", "reiser"),
+		i18nc("@item filesystem name", "reiser4"),
+		i18nc("@item filesystem name", "xfs"),
+		i18nc("@item filesystem name", "jfs"),
+		i18nc("@item filesystem name", "hfs"),
+		i18nc("@item filesystem name", "hfsplus"),
+		i18nc("@item filesystem name", "ufs"),
+		i18nc("@item filesystem name", "unformatted"),
+		i18nc("@item filesystem name", "btrfs"),
+		i18nc("@item filesystem name", "hpfs"),
+		i18nc("@item filesystem name", "luks"),
+		i18nc("@item filesystem name", "ocfs2"),
+		i18nc("@item filesystem name", "zfs"),
+		i18nc("@item filesystem name", "exfat"),
+		i18nc("@item filesystem name", "nilfs2"),
+		i18nc("@item filesystem name", "lvm2 pv"),
 	};
 
 	return s;

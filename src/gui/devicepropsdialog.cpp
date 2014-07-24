@@ -29,56 +29,66 @@
 #include "util/capacity.h"
 #include "util/helpers.h"
 
-#include <kdebug.h>
-#include <kpushbutton.h>
-#include <kiconloader.h>
-#include <klocale.h>
-#include <kglobal.h>
-#include <kglobalsettings.h>
+#include <KLocalizedString>
+#include <KSharedConfig>
+#include <KConfigGroup>
+#include <KIconThemes/KIconLoader>
 
-#include <QTreeWidgetItem>
+#include <QDialogButtonBox>
 #include <QPointer>
+#include <QPushButton>
+#include <QTreeWidgetItem>
 
 /** Creates a new DevicePropsDialog
 	@param parent pointer to the parent widget
 	@param d the Device to show properties for
 */
 DevicePropsDialog::DevicePropsDialog(QWidget* parent, Device& d) :
-	KDialog(parent),
+	QDialog(parent),
 	m_Device(d),
 	m_DialogWidget(new DevicePropsWidget(this))
 {
-	setMainWidget(&dialogWidget());
-	setCaption(i18nc("@title:window", "Device Properties: <filename>%1</filename>", device().deviceNode()));
+	mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&dialogWidget());
+	setWindowTitle(xi18nc("@title:window", "Device Properties: <filename>%1</filename>", device().deviceNode()));
 
 	setupDialog();
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "devicePropsDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "devicePropsDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
+
 }
 
 /** Destroys a DevicePropsDialog */
 DevicePropsDialog::~DevicePropsDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "devicePropsDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "devicePropsDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void DevicePropsDialog::setupDialog()
 {
-	setDefaultButton(KDialog::Cancel);
-	enableButtonOk(false);
-	button(KDialog::Cancel)->setFocus();
+	dialogButtonBox = new QDialogButtonBox;
+	okButton = dialogButtonBox->addButton( QDialogButtonBox::Ok );
+	cancelButton = dialogButtonBox->addButton( QDialogButtonBox::Cancel );
+	mainLayout->addWidget(dialogButtonBox);
+	okButton->setEnabled(false);
+	cancelButton->setFocus();
+	cancelButton->setDefault(true);
+	connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
-	QString type = "---";
-	QString maxPrimaries = "---";
+	QString type = QStringLiteral("---");
+	QString maxPrimaries = QStringLiteral("---");
 
 	if (device().partitionTable() != NULL)
 	{
 		type = (device().partitionTable()->isReadOnly())
 			? i18nc("@label device", "%1 (read only)", device().partitionTable()->typeName())
 			: device().partitionTable()->typeName();
-		maxPrimaries = QString("%1/%2").arg(device().partitionTable()->numPrimaries()).arg(device().partitionTable()->maxPrimaries());
+		maxPrimaries = QStringLiteral("%1/%2").arg(device().partitionTable()->numPrimaries()).arg(device().partitionTable()->maxPrimaries());
 
 		dialogWidget().partTableWidget().setReadOnly(true);
 		dialogWidget().partTableWidget().setPartitionTable(device().partitionTable());
@@ -99,16 +109,16 @@ void DevicePropsDialog::setupDialog()
 	dialogWidget().capacity().setText(Capacity::formatByteSize(device().capacity()));
 
 
-	const QString cyls = KGlobal::locale()->formatNumber(device().cylinders(), 0);
-	const QString heads = QString::number(device().heads());
-	const QString sectors = KGlobal::locale()->formatNumber(device().sectorsPerTrack(), 0);
-	dialogWidget().chs().setText(QString("%1/%2/%3").arg(cyls).arg(heads).arg(sectors));
+	const QString cyls = QLocale().toString((device().cylinders()));
+	const QString heads = QLocale().toString((device().heads()));
+	const QString sectors = QLocale().toString((device().sectorsPerTrack()));
+	dialogWidget().chs().setText(QStringLiteral("%1/%2/%3").arg(cyls).arg(heads).arg(sectors));
 
 	dialogWidget().cylinderSize().setText(i18ncp("@label", "1 Sector", "%1 Sectors", device().cylinderSize()));
 	dialogWidget().primariesMax().setText(maxPrimaries);
 	dialogWidget().logicalSectorSize().setText(Capacity::formatByteSize(device().logicalSectorSize()));
 	dialogWidget().physicalSectorSize().setText(Capacity::formatByteSize(device().physicalSectorSize()));
-	dialogWidget().totalSectors().setText(KGlobal::locale()->formatNumber(device().totalSectors(), 0));
+	dialogWidget().totalSectors().setText(QLocale().toString((device().totalSectors())));
 	dialogWidget().type().setText(type);
 
 	if (device().smartStatus().isValid())
@@ -116,12 +126,12 @@ void DevicePropsDialog::setupDialog()
 		if (device().smartStatus().status())
 		{
 			dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "good"));
-			dialogWidget().smartStatusIcon().setPixmap(SmallIcon("dialog-ok"));
+			dialogWidget().smartStatusIcon().setPixmap(KIconLoader().loadIcon(QLatin1String("dialog-ok"), KIconLoader::Small));
 		}
 		else
 		{
 			dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "BAD"));
-			dialogWidget().smartStatusIcon().setPixmap(SmallIcon("dialog-warning"));
+			dialogWidget().smartStatusIcon().setPixmap(KIconLoader().loadIcon(QLatin1String("dialog-warning"), KIconLoader::Small));
 		}
 	}
 	else
@@ -144,8 +154,8 @@ void DevicePropsDialog::setupConnections()
 
 void DevicePropsDialog::setDirty(bool)
 {
-	setDefaultButton(KDialog::Ok);
-	enableButtonOk(true);
+	okButton->setEnabled(true);
+	okButton->setDefault(true);
 }
 
 bool DevicePropsDialog::cylinderBasedAlignment() const

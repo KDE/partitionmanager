@@ -40,7 +40,7 @@ namespace FS
 
 	void hfsplus::init()
 	{
-		m_Check = findExternal("hpfsck") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = findExternal(QStringLiteral("hpfsck")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Backup = cmdSupportCore;
@@ -65,7 +65,7 @@ namespace FS
 
 	FileSystem::SupportTool hfsplus::supportToolName() const
 	{
-		return SupportTool("hfsplus", KUrl());
+		return SupportTool(QStringLiteral("hfsplus"), QUrl());
 	}
 
 	qint64 hfsplus::maxCapacity() const
@@ -80,7 +80,7 @@ namespace FS
 
 	bool hfsplus::check(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "hpfsck", QStringList() << "-v" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("hpfsck"), QStringList() << QStringLiteral("-v") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

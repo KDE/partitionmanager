@@ -23,10 +23,8 @@
 
 #include "ui_decryptluksdialogwidgetbase.h"
 
-#include <QWidget>
 #include <QLabel>
-
-#include <KLineEdit>
+#include <QLineEdit>
 
 class DecryptLuksDialogWidget : public QWidget, public Ui::DecryptLuksDialogWidgetBase
 {
@@ -36,11 +34,11 @@ class DecryptLuksDialogWidget : public QWidget, public Ui::DecryptLuksDialogWidg
 		DecryptLuksDialogWidget(QWidget* parent);
 
 	public:
-		KLineEdit& luksName() { return *m_LineEditName; }
-		const KLineEdit& luksName() const { return *m_LineEditName; }
+		QLineEdit& luksName() { return *m_LineEditName; }
+		const QLineEdit& luksName() const { return *m_LineEditName; }
 
-		KLineEdit& luksPassphrase() { return *m_LineEditPassphrase; }
-		const KLineEdit& luksPassphrase() const { return *m_LineEditPassphrase; }
+		QLineEdit& luksPassphrase() { return *m_LineEditPassphrase; }
+		const QLineEdit& luksPassphrase() const { return *m_LineEditPassphrase; }
 };
 
 #endif

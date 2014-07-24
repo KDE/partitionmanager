@@ -26,12 +26,12 @@
 
 #include "util/report.h"
 
+#include <QDebug>
 #include <QIcon>
 #include <QString>
 
-#include <kdebug.h>
-#include <kiconloader.h>
-#include <klocale.h>
+#include <KIconThemes/KIconLoader>
+#include <KLocalizedString>
 
 Operation::Operation() :
 	m_Status(StatusNone),
@@ -64,7 +64,7 @@ void Operation::removePreviewPartition(Device& device, Partition& p)
 	if (p.parent()->remove(&p))
 		device.partitionTable()->updateUnallocated(device);
 	else
-		kWarning() << "failed to remove partition " << p.deviceNode() << " at " << &p << " from preview.";
+		qWarning() << "failed to remove partition " << p.deviceNode() << " at " << &p << " from preview.";
 }
 
 /** @return text describing the Operation's current status */
@@ -84,7 +84,7 @@ QString Operation::statusText() const
 
 	if (status() < 0 || static_cast<quint32>(status()) >= sizeof(s) / sizeof(s[0]))
 	{
-		kWarning() << "invalid status " << status();
+		qWarning() << "invalid status " << status();
 		return QString();
 	}
 
@@ -94,28 +94,28 @@ QString Operation::statusText() const
 /** @return icon for the current Operation's status */
 QIcon Operation::statusIcon() const
 {
-	static const char* icons[] =
+	static const QString icons[] =
 	{
-		"",
-		"dialog-information",
-		"dialog-information",
-		"dialog-ok",
-		"dialog-warning",
-		"dialog-error"
+		QString(),
+		QStringLiteral("dialog-information"),
+		QStringLiteral("dialog-information"),
+		QStringLiteral("dialog-ok"),
+		QStringLiteral("dialog-warning"),
+		QStringLiteral("dialog-error")
 	};
 
 	Q_ASSERT(status() >= 0 && static_cast<quint32>(status()) < sizeof(icons) / sizeof(icons[0]));
 
 	if (status() < 0 || static_cast<quint32>(status()) >= sizeof(icons) / sizeof(icons[0]))
 	{
-		kWarning() << "invalid status " << status();
+		qWarning() << "invalid status " << status();
 		return QIcon();
 	}
 
 	if (status() == StatusNone)
 		return QIcon();
 
-	return SmallIcon(icons[status()]);
+	return QIcon(KIconLoader().loadIcon(icons[status()], KIconLoader::Small));
 }
 
 void Operation::addJob(Job* job)

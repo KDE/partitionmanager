@@ -21,7 +21,7 @@
 
 #include "util/externalcommand.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 namespace FS
 {
@@ -42,7 +42,7 @@ namespace FS
 
 	void linuxswap::init()
 	{
-		m_SetLabel = m_Shrink = m_Grow = m_Create = m_UpdateUUID = (findExternal("mkswap")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_SetLabel = m_Shrink = m_Grow = m_Create = m_UpdateUUID = (findExternal(QStringLiteral("mkswap"))) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetLabel = cmdSupportCore;
 		m_Copy = cmdSupportFileSystem;
 		m_Move = cmdSupportCore;
@@ -68,7 +68,7 @@ namespace FS
 
 	FileSystem::SupportTool linuxswap::supportToolName() const
 	{
-		return SupportTool("util-linux", KUrl("http://www.kernel.org/pub/linux/utils/util-linux-ng/"));
+		return SupportTool(QStringLiteral("util-linux"), QUrl(QStringLiteral("http://www.kernel.org/pub/linux/utils/util-linux-ng/")));
 	}
 
 	qint64 linuxswap::maxLabelLength() const
@@ -78,7 +78,7 @@ namespace FS
 
 	bool linuxswap::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "mkswap", QStringList() << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("mkswap"), QStringList() << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
@@ -89,13 +89,13 @@ namespace FS
 
 		QStringList args;
 		if (!label.isEmpty())
-			args << "-L" << label;
+			args << QStringLiteral("-L") << label;
 		if (!uuid.isEmpty())
-			args << "-U" << uuid;
+			args << QStringLiteral("-U") << uuid;
 
 		args << deviceNode << QString::number(length / 1024);
 
-		ExternalCommand cmd(report, "mkswap", args);
+		ExternalCommand cmd(report, QStringLiteral("mkswap"), args);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
@@ -106,19 +106,19 @@ namespace FS
 
 		QStringList args;
 		if (!label.isEmpty())
-			args << "-L" << label;
+			args << QStringLiteral("-L") << label;
 		if (!uuid.isEmpty())
-			args << "-U" << uuid;
+			args << QStringLiteral("-U") << uuid;
 
 		args << targetDeviceNode;
 
-		ExternalCommand cmd(report, "mkswap", args);
+		ExternalCommand cmd(report, QStringLiteral("mkswap"), args);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool linuxswap::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
-		ExternalCommand cmd(report, "mkswap", QStringList() << "-L" << newLabel << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("mkswap"), QStringList() << QStringLiteral("-L") << newLabel << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
@@ -134,13 +134,13 @@ namespace FS
 
 	bool linuxswap::mount(const QString& deviceNode)
 	{
-		ExternalCommand cmd("swapon", QStringList() << deviceNode);
+		ExternalCommand cmd(QStringLiteral("swapon"), QStringList() << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool linuxswap::unmount(const QString& deviceNode)
 	{
-		ExternalCommand cmd("swapoff", QStringList() << deviceNode);
+		ExternalCommand cmd(QStringLiteral("swapoff"), QStringList() << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
@@ -150,11 +150,11 @@ namespace FS
 
 		QStringList args;
 		if (!label.isEmpty())
-			args << "-L" << label;
+			args << QStringLiteral("-L") << label;
 
 		args << deviceNode;
 
-		ExternalCommand cmd(report, "mkswap", args);
+		ExternalCommand cmd(report, QStringLiteral("mkswap"), args);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

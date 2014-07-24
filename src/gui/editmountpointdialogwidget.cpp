@@ -25,17 +25,16 @@
 
 #include "fs/filesystem.h"
 
-#include <klocale.h>
-#include <kfiledialog.h>
-#include <klineedit.h>
-#include <kdebug.h>
-#include <kmountpoint.h>
-#include <kmessagebox.h>
+#include <KLocalizedString>
+#include <KIOCore/KMountPoint>
+#include <KMessageBox>
 
 #include <QString>
 #include <QWidget>
 #include <QFile>
+#include <QFileDialog>
 #include <QPointer>
+#include <QDebug>
 
 #include <mntent.h>
 #include <blkid/blkid.h>
@@ -47,9 +46,9 @@ static QString findBlkIdDevice(const QString& token, const QString& value)
 
 	if (blkid_get_cache(&cache, NULL) == 0)
 	{
-		if (char* c = blkid_evaluate_tag(token.toLocal8Bit(), value.toLocal8Bit(), &cache))
+		if (char* c = blkid_evaluate_tag(token.toLocal8Bit().constData(), value.toLocal8Bit().constData(), &cache))
 		{
-			rval = c;
+			rval = QString::fromLocal8Bit(c);
 			free(c);
 		}
 
@@ -63,7 +62,7 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
 	QWidget(parent),
 	m_Partition(p)
 {
-	readMountpoints("/etc/fstab");
+	readMountpoints(QStringLiteral("/etc/fstab"));
 
 	setupUi(this);
 
@@ -98,14 +97,14 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
 				radioDeviceNode().setChecked(true);
 		}
 
-		boxOptions()["ro"] = m_CheckReadOnly;
-		boxOptions()["users"] = m_CheckUsers;
-		boxOptions()["noauto"] = m_CheckNoAuto;
-		boxOptions()["noatime"] = m_CheckNoAtime;
-		boxOptions()["nodiratime"] = m_CheckNoDirAtime;
-		boxOptions()["sync"] = m_CheckSync;
-		boxOptions()["noexec"] = m_CheckNoExec;
-		boxOptions()["relatime"] = m_CheckRelAtime;
+		boxOptions()[QStringLiteral("ro")] = m_CheckReadOnly;
+		boxOptions()[QStringLiteral("users")] = m_CheckUsers;
+		boxOptions()[QStringLiteral("noauto")] = m_CheckNoAuto;
+		boxOptions()[QStringLiteral("noatime")] = m_CheckNoAtime;
+		boxOptions()[QStringLiteral("nodiratime")] = m_CheckNoDirAtime;
+		boxOptions()[QStringLiteral("sync")] = m_CheckSync;
+		boxOptions()[QStringLiteral("noexec")] = m_CheckNoExec;
+		boxOptions()[QStringLiteral("relatime")] = m_CheckRelAtime;
 
 		setupOptions(entry->options);
 	}
@@ -140,21 +139,21 @@ void EditMountPointDialogWidget::setupOptions(const QStringList& options)
 		else
 			optTmpList.append(o);
 
-	m_Options = optTmpList.join(",");
+	m_Options = optTmpList.join(QStringLiteral(","));
 }
 
 void EditMountPointDialogWidget::on_m_ButtonSelect_clicked(bool)
 {
-	const QString s = KFileDialog::getExistingDirectory(KUrl(editPath().text()), this);
+	const QString s = QFileDialog::getExistingDirectory(this, editPath().text());
 	if (!s.isEmpty())
 		editPath().setText(s);
 }
 
 void EditMountPointDialogWidget::on_m_ButtonMore_clicked(bool)
 {
-	QPointer<EditMountOptionsDialog>  dlg = new EditMountOptionsDialog(this, m_Options.split(','));
+	QPointer<EditMountOptionsDialog>  dlg = new EditMountOptionsDialog(this, m_Options.split(QStringLiteral(",")));
 
-	if (dlg->exec() == KDialog::Accepted)
+	if (dlg->exec() == QDialog::Accepted)
 		setupOptions(dlg->options());
 
 	delete dlg;
@@ -162,7 +161,7 @@ void EditMountPointDialogWidget::on_m_ButtonMore_clicked(bool)
 
 QStringList EditMountPointDialogWidget::options()
 {
-	QStringList optList = m_Options.split(',', QString::SkipEmptyParts);
+	QStringList optList = m_Options.split(QStringLiteral(","), QString::SkipEmptyParts);
 
 	foreach (const QString& s, boxOptions().keys())
 		if (boxOptions()[s]->isChecked())
@@ -173,12 +172,12 @@ QStringList EditMountPointDialogWidget::options()
 
 bool EditMountPointDialogWidget::readMountpoints(const QString& filename)
 {
-	FILE* fp = setmntent(filename.toLocal8Bit(), "r");
+	FILE* fp = setmntent(filename.toLocal8Bit().constData(), "r");
 
 	if (fp == NULL)
 	{
 		KMessageBox::sorry(this,
-				i18nc("@info", "Could not open mount point file <filename>%1</filename>.", filename),
+				xi18nc("@info", "Could not open mount point file <filename>%1</filename>.", filename),
 				i18nc("@title:window", "Error while reading mount points"));
 		return false;
 	}
@@ -187,25 +186,25 @@ bool EditMountPointDialogWidget::readMountpoints(const QString& filename)
 
 	while ((mnt = getmntent(fp)) != NULL)
 	{
-		QString device = mnt->mnt_fsname;
+		QString device = QString::fromUtf8(mnt->mnt_fsname);
 		MountEntry::IdentifyType type = MountEntry::deviceNode;
 
-		if (device.startsWith("UUID="))
+		if (device.startsWith(QStringLiteral("UUID=")))
 		{
 			type = MountEntry::uuid;
-			device = findBlkIdDevice("UUID", QString(device).remove("UUID="));
+			device = findBlkIdDevice(QStringLiteral("UUID"), QString(device).remove(QStringLiteral("UUID=")));
 		}
-		else if (device.startsWith("LABEL="))
+		else if (device.startsWith(QStringLiteral("LABEL=")))
 		{
 			type = MountEntry::label;
-			device = findBlkIdDevice("LABEL", QString(device).remove("LABEL="));
+			device = findBlkIdDevice(QStringLiteral("LABEL"), QString(device).remove(QStringLiteral("LABEL=")));
 		}
-		else if (device.startsWith('/'))
+		else if (device.startsWith(QStringLiteral("/")))
 			device = QFile::symLinkTarget(device);
 
 		if (!device.isEmpty())
 		{
-			QString mountPoint = mnt->mnt_dir;
+			QString mountPoint = QString::fromUtf8(mnt->mnt_dir);
 			mountPoints()[device] = new MountEntry(mnt, type);
 		}
 	}
@@ -230,7 +229,7 @@ static void writeEntry(QFile& output, const MountEntry* entry)
 	s << entry->name << "\t"
 		<< entry->path << "\t"
 		<< entry->type << "\t"
-		<< (entry->options.size() > 0 ? entry->options.join(",") : "defaults") << "\t"
+		<< (entry->options.size() > 0 ? entry->options.join(QStringLiteral(",")) : QStringLiteral("defaults")) << "\t"
 		<< entry->dumpFreq << "\t"
 		<< entry->passNumber << "\n";
 }
@@ -241,7 +240,7 @@ bool EditMountPointDialogWidget::acceptChanges()
 
 	if (mountPoints().find(labelName().text()) == mountPoints().end())
 	{
-		kWarning() << "could not find device " << labelName().text() << " in mount points.";
+		qWarning() << "could not find device " << labelName().text() << " in mount points.";
 		return false;
 	}
 
@@ -253,9 +252,9 @@ bool EditMountPointDialogWidget::acceptChanges()
 	entry->options = options();
 
 	if (radioUUID().isChecked() && !partition().fileSystem().uuid().isEmpty())
-		entry->name = "UUID=" + partition().fileSystem().uuid();
+		entry->name = QStringLiteral("UUID=") + partition().fileSystem().uuid();
 	else if (radioLabel().isChecked() && !partition().fileSystem().label().isEmpty())
-		entry->name = "LABEL=" + partition().fileSystem().label();
+		entry->name = QStringLiteral("LABEL=") + partition().fileSystem().label();
 	else
 		entry->name = partition().deviceNode();
 
@@ -265,12 +264,12 @@ bool EditMountPointDialogWidget::acceptChanges()
 bool EditMountPointDialogWidget::writeMountpoints(const QString& filename)
 {
 	bool rval = true;
-	const QString newFilename = QString("%1.new").arg(filename);
+	const QString newFilename = QStringLiteral("%1.new").arg(filename);
 	QFile out(newFilename);
 
 	if (!out.open(QFile::ReadWrite | QFile::Truncate))
 	{
-		kWarning() << "could not open output file " << newFilename;
+		qWarning() << "could not open output file " << newFilename;
 		rval = false;
 	}
 	else
@@ -280,25 +279,25 @@ bool EditMountPointDialogWidget::writeMountpoints(const QString& filename)
 
 		out.close();
 
-		const QString bakFilename = QString("%1.bak").arg(filename);
+		const QString bakFilename = QStringLiteral("%1.bak").arg(filename);
 		QFile::remove(bakFilename);
 
 		if (QFile::exists(filename) && !QFile::rename(filename, bakFilename))
 		{
-			kWarning() << "could not rename " << filename << " to " << bakFilename;
+			qWarning() << "could not rename " << filename << " to " << bakFilename;
 			rval = false;
 		}
 
 		if (rval && !QFile::rename(newFilename, filename))
 		{
-			kWarning() << "could not rename " << newFilename << " to " << filename;
+			qWarning() << "could not rename " << newFilename << " to " << filename;
 			rval = false;
 		}
 	}
 
 	if (!rval)
 		KMessageBox::sorry(this,
-				i18nc("@info", "Could not save mount points to file <filename>%1</filename>.", filename),
+				xi18nc("@info", "Could not save mount points to file <filename>%1</filename>.", filename),
 				i18nc("@title:window", "Error While Saving Mount Points"));
 
 	return rval;

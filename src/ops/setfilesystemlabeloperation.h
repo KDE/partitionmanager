@@ -47,7 +47,7 @@ class SetFileSystemLabelOperation : public Operation
 		SetFileSystemLabelOperation(Partition& p, const QString& newlabel);
 
 	public:
-		QString iconName() const { return "edit-rename"; }
+		QString iconName() const { return QStringLiteral("edit-rename"); }
 		QString description() const;
 		void preview();
 		void undo();

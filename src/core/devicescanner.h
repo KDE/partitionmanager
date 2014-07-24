@@ -42,7 +42,7 @@ class DeviceScanner : public QThread
 		void scan(); /**< do the actual scanning; blocks if called directly */
 		void setupConnections();
 
-	signals:
+	Q_SIGNALS:
 		void progress(const QString& device_node, int progress);
 
 	protected:

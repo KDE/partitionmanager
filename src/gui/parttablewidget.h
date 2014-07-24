@@ -57,7 +57,7 @@ class PartTableWidget : public PartWidgetBase
 		void setReadOnly(bool b) { m_ReadOnly = b; } /**< @param b the new value for read only */
 		bool isReadOnly() const { return m_ReadOnly; } /** @return true if the widget is read only */
 
-	signals:
+	Q_SIGNALS:
 		void itemSelectionChanged(PartWidget*);
 		void itemDoubleClicked(const PartWidget*);
 

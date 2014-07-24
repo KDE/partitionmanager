@@ -23,7 +23,7 @@
 
 #include "util/libpartitionmanagerexport.h"
 
-#include <kservice.h>
+#include <KService>
 
 class QString;
 class QStringList;
@@ -50,7 +50,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendManager
 		/**
 		  * @return the name of the default backend plugin
 		  */
-		static QString defaultBackendName() { return "pmlibpartedbackendplugin"; }
+		static QString defaultBackendName() { return QStringLiteral("pmlibpartedbackendplugin"); }
 
 		/**
 		  * @return a list of available backend plugins

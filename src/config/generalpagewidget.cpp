@@ -59,4 +59,9 @@ void GeneralPageWidget::setupDialog()
 		comboDefaultFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
 	setDefaultFileSystem(FileSystem::defaultFileSystem());
+
+	kcfg_shredSource->setId(radioButton, 0);
+	kcfg_shredSource->setId(radioButton_2, 1);
+	radioButton->setChecked(Config::shredSource() == Config::EnumShredSource::random);
+	radioButton_2->setChecked(Config::shredSource() == Config::EnumShredSource::zeros);
 }

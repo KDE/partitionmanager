@@ -24,6 +24,7 @@
 #include "backend/corebackend.h"
 
 #include "core/partitiontable.h"
+#include "util/libpartitionmanagerexport.h"
 
 #include "fs/filesystem.h"
 

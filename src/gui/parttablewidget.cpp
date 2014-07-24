@@ -24,8 +24,7 @@
 
 #include <QMouseEvent>
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new PartTableWidget.
 	@param parent pointer to the parent widget

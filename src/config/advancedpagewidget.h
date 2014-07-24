@@ -28,7 +28,7 @@
 #include <QWidget>
 
 class QString;
-class KComboBox;
+class QComboBox;
 
 class AdvancedPageWidget : public QWidget, public Ui::ConfigurePageAdvanced
 {
@@ -36,8 +36,8 @@ class AdvancedPageWidget : public QWidget, public Ui::ConfigurePageAdvanced
 		AdvancedPageWidget(QWidget* parent);
 
 	public:
-		KComboBox& comboBackend() { return *m_ComboBackend; }
-		const KComboBox& comboBackend() const { return *m_ComboBackend; }
+		QComboBox& comboBackend() { return *m_ComboBackend; }
+		const QComboBox& comboBackend() const { return *m_ComboBackend; }
 
 		QString backend() const;
 		void setBackend(const QString& name);

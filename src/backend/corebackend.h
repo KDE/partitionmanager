@@ -51,7 +51,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 		CoreBackend();
 		virtual ~CoreBackend();
 
-	signals:
+	Q_SIGNALS:
 		/**
 		 * Emitted to inform about progress of any kind.
 		  * @param i the progress in percent (from 0 to 100)

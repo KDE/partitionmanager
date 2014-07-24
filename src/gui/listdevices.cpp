@@ -24,15 +24,13 @@
 #include "util/globallog.h"
 #include "util/capacity.h"
 
-#include <kmenu.h>
-#include <kactioncollection.h>
-#include <kdebug.h>
+#include <KIconThemes/KIconLoader>
 
 class ListDeviceWidgetItem : public QListWidgetItem
 {
 	public:
 		ListDeviceWidgetItem(const Device& d) :
-			QListWidgetItem(DesktopIcon(d.iconName()), d.prettyName()),
+			QListWidgetItem(QIcon(KIconLoader().loadIcon(d.iconName(), KIconLoader::Desktop)), d.prettyName()),
 			deviceNode(d.deviceNode())
 		{
 			setToolTip(d.prettyName());

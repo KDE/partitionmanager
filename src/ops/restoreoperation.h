@@ -55,7 +55,7 @@ class RestoreOperation : public Operation
 		~RestoreOperation();
 
 	public:
-		QString iconName() const { return "document-import"; }
+		QString iconName() const { return QStringLiteral("document-import"); }
 		QString description() const;
 		bool execute(Report& parent);
 		void undo();

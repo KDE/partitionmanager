@@ -22,13 +22,14 @@
 #include "core/partition.h"
 #include "core/device.h"
 
-#include <kglobal.h>
-#include <klocale.h>
-#include <kdebug.h>
+#include <KFormat>
+#include <KLocalizedString>
+
+#include <QDebug>
 
 #include <config.h>
 
-const QString Capacity::m_InvalidString = "---";
+const QString Capacity::m_InvalidString = QStringLiteral("---");
 
 /** Creates a new Capacity instance.
 	@param size the size in bytes
@@ -91,7 +92,7 @@ qint64 Capacity::unitFactor(Unit from, Unit to)
 
 	if (from > to)
 	{
-		kWarning() << "from: " << from << ", to: " << to;
+		qWarning() << "from: " << from << ", to: " << to;
 		return 1;
 	}
 
@@ -148,5 +149,5 @@ QString Capacity::formatByteSize(double size, int precision)
 {
 	if (size < 0)
 		return invalidString();
-	return KGlobal::locale()->formatByteSize(size, precision);
+	return KFormat().formatByteSize(size, precision);
 }

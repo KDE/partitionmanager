@@ -24,8 +24,7 @@
 #include "util/report.h"
 #include "util/globallog.h"
 
-#include <klocale.h>
-#include <kdebug.h>
+#include <KLocalizedString>
 
 #include <QString>
 #include <QStringList>
@@ -57,13 +56,13 @@ namespace FS
 
 	void ntfs::init()
 	{
-		m_Shrink = m_Grow = m_Check = m_GetUsed = findExternal("ntfsresize") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Shrink = m_Grow = m_Check = m_GetUsed = findExternal(QStringLiteral("ntfsresize")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetLabel = cmdSupportCore;
-		m_SetLabel = findExternal("ntfslabel") ? cmdSupportFileSystem : cmdSupportNone;
-		m_Create = findExternal("mkfs.ntfs") ? cmdSupportFileSystem : cmdSupportNone;
-		m_Copy = findExternal("ntfsclone") ? cmdSupportFileSystem : cmdSupportNone;
+		m_SetLabel = findExternal(QStringLiteral("ntfslabel")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal(QStringLiteral("mkfs.ntfs")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Copy = findExternal(QStringLiteral("ntfsclone")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Backup = cmdSupportCore;
-		m_UpdateUUID = findExternal("dd") ? cmdSupportFileSystem : cmdSupportNone;
+		m_UpdateUUID = findExternal(QStringLiteral("dd")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Move = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_GetUUID = cmdSupportCore;
 	}
@@ -87,7 +86,7 @@ namespace FS
 
 	FileSystem::SupportTool ntfs::supportToolName() const
 	{
-		return SupportTool("ntfsprogs", KUrl("http://www.linux-ntfs.org/doku.php?id=ntfsprogs"));
+		return SupportTool(QStringLiteral("ntfsprogs"), QUrl(QStringLiteral("http://www.linux-ntfs.org/doku.php?id=ntfsprogs")));
 	}
 
 	qint64 ntfs::minCapacity() const
@@ -107,12 +106,12 @@ namespace FS
 
 	qint64 ntfs::readUsedCapacity(const QString& deviceNode) const
 	{
-		ExternalCommand cmd("ntfsresize", QStringList() << "--info" << "--force" << "--no-progress-bar" << deviceNode);
+		ExternalCommand cmd(QStringLiteral("ntfsresize"), QStringList() << QStringLiteral("--info") << QStringLiteral("--force") << QStringLiteral("--no-progress-bar") << deviceNode);
 
 		if (cmd.run())
 		{
 			qint64 usedBytes = -1;
-			QRegExp rxUsedBytes("resize at (\\d+) bytes");
+			QRegExp rxUsedBytes(QStringLiteral("resize at (\\d+) bytes"));
 
 			if (rxUsedBytes.indexIn(cmd.output()) != -1)
 				usedBytes = rxUsedBytes.cap(1).toLongLong();
@@ -126,13 +125,13 @@ namespace FS
 
 	bool ntfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
-		ExternalCommand writeCmd(report, "ntfslabel", QStringList() << "--force" << deviceNode << newLabel.simplified());
+		ExternalCommand writeCmd(report, QStringLiteral("ntfslabel"), QStringList() << QStringLiteral("--force") << deviceNode << newLabel.simplified());
 		writeCmd.setProcessChannelMode(QProcess::SeparateChannels);
 
 		if (!writeCmd.run(-1))
 			return false;
 
-		ExternalCommand testCmd("ntfslabel", QStringList() << "--force" << deviceNode);
+		ExternalCommand testCmd(QStringLiteral("ntfslabel"), QStringList() << QStringLiteral("--force") << deviceNode);
 		testCmd.setProcessChannelMode(QProcess::SeparateChannels);
 
 		if (!testCmd.run(-1))
@@ -143,19 +142,19 @@ namespace FS
 
 	bool ntfs::check(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "ntfsresize", QStringList() << "-P" << "-i" << "-f" << "-v" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("ntfsresize"), QStringList() << QStringLiteral("-P") << QStringLiteral("-i") << QStringLiteral("-f") << QStringLiteral("-v") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool ntfs::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "mkfs.ntfs", QStringList() << "-f" << "-vv" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("mkfs.ntfs"), QStringList() << QStringLiteral("-f") << QStringLiteral("-vv") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool ntfs::copy(Report& report, const QString& targetDeviceNode, const QString& sourceDeviceNode) const
 	{
- 		ExternalCommand cmd(report, "ntfsclone", QStringList() << "-f" << "--overwrite" << targetDeviceNode << sourceDeviceNode);
+ 		ExternalCommand cmd(report, QStringLiteral("ntfsclone"), QStringList() << QStringLiteral("-f") << QStringLiteral("--overwrite") << targetDeviceNode << sourceDeviceNode);
 
  		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
@@ -163,15 +162,15 @@ namespace FS
 	bool ntfs::resize(Report& report, const QString& deviceNode, qint64 length) const
 	{
 		QStringList args;
-		args << "-P" << "-f" << deviceNode << "-s" << QString::number(length);
+		args << QStringLiteral("-P") << QStringLiteral("-f") << deviceNode << QStringLiteral("-s") << QString::number(length);
 
 		QStringList dryRunArgs = args;
-		dryRunArgs << "-n";
-		ExternalCommand cmdDryRun("ntfsresize", dryRunArgs);
+		dryRunArgs << QStringLiteral("-n");
+		ExternalCommand cmdDryRun(QStringLiteral("ntfsresize"), dryRunArgs);
 
 		if (cmdDryRun.run(-1) && cmdDryRun.exitCode() == 0)
 		{
-			ExternalCommand cmd(report, "ntfsresize", args);
+			ExternalCommand cmd(report, QStringLiteral("ntfsresize"), args);
 			return cmd.run(-1) && cmd.exitCode() == 0;
 		}
 
@@ -182,7 +181,7 @@ namespace FS
 	{
 		QUuid uuid = QUuid::createUuid();
 
-		ExternalCommand cmd(report, "dd", QStringList() << "of=" + deviceNode << "bs=1" << "count=8" << "seek=72");
+		ExternalCommand cmd(report, QStringLiteral("dd"), QStringList() << QStringLiteral("of=") + deviceNode << QStringLiteral("bs=1") << QStringLiteral("count=8") << QStringLiteral("seek=72"));
 
 		if (!cmd.start())
 			return false;
@@ -195,7 +194,7 @@ namespace FS
 
 	bool ntfs::updateBootSector(Report& report, const QString& deviceNode) const
 	{
-		report.line() << i18nc("@info/plain", "Updating boot sector for NTFS file system on partition <filename>%1</filename>.", deviceNode);
+		report.line() << xi18nc("@info/plain", "Updating boot sector for NTFS file system on partition <filename>%1</filename>.", deviceNode);
 
 		quint32 n = firstSector();
 		char* s = reinterpret_cast<char*>(&n);
@@ -208,23 +207,23 @@ namespace FS
 		QFile device(deviceNode);
 		if (!device.open(QFile::ReadWrite | QFile::Unbuffered))
 		{
-			Log() << i18nc("@info/plain", "Could not open partition <filename>%1</filename> for writing when trying to update the NTFS boot sector.", deviceNode);
+			Log() << xi18nc("@info/plain", "Could not open partition <filename>%1</filename> for writing when trying to update the NTFS boot sector.", deviceNode);
 			return false;
 		}
 
 		if (!device.seek(0x1c))
 		{
-			Log() << i18nc("@info/plain", "Could not seek to position 0x1c on partition <filename>%1</filename> when trying to update the NTFS boot sector.", deviceNode);
+			Log() << xi18nc("@info/plain", "Could not seek to position 0x1c on partition <filename>%1</filename> when trying to update the NTFS boot sector.", deviceNode);
 			return false;
 		}
 
 		if (device.write(s, 4) != 4)
 		{
-			Log() << i18nc("@info/plain", "Could not write new start sector to partition <filename>%1</filename> when trying to update the NTFS boot sector.", deviceNode);
+			Log() << xi18nc("@info/plain", "Could not write new start sector to partition <filename>%1</filename> when trying to update the NTFS boot sector.", deviceNode);
 			return false;
 		}
 
-		Log() << i18nc("@info/plain", "Updated NTFS boot sector for partition <filename>%1</filename> successfully.", deviceNode);
+		Log() << xi18nc("@info/plain", "Updated NTFS boot sector for partition <filename>%1</filename> successfully.", deviceNode);
 
 		return true;
 	}

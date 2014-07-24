@@ -19,8 +19,6 @@
 
 #include "gui/sizedetailswidget.h"
 
-#include <kdebug.h>
-
 #include <limits>
 
 SizeDetailsWidget::SizeDetailsWidget(QWidget* parent) :

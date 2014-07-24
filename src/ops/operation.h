@@ -94,7 +94,7 @@ class Operation : public QObject
 		Operation();
 		virtual ~Operation();
 
-	signals:
+	Q_SIGNALS:
 		int progress(int);
 		void jobStarted(Job*, Operation*);
 		void jobFinished(Job*, Operation*);
@@ -107,8 +107,8 @@ class Operation : public QObject
 		virtual bool execute(Report& parent);
 
 		virtual bool targets(const Device&) const = 0;
-		virtual bool targets(const Partition&) const = 0; 
-		
+		virtual bool targets(const Partition&) const = 0;
+
 		virtual OperationStatus status() const { return m_Status; } /**< @return the current status */
 		virtual QString statusText() const;
 		virtual QIcon statusIcon() const;
@@ -117,7 +117,7 @@ class Operation : public QObject
 
 		qint32 totalProgress() const;
 
-	protected slots:
+	protected Q_SLOTS:
 		void onJobStarted();
 		void onJobFinished();
 

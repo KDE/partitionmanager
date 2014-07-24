@@ -45,8 +45,8 @@ class PartPropsWidget : public QWidget, public Ui::PartPropsWidgetBase
 		QLabel& used() { Q_ASSERT(m_LabelUsed); return *m_LabelUsed; }
 
 		QLabel& textFileSystem() { Q_ASSERT(m_LabelFileSystem); return *m_LabelFileSystem; }
-		KComboBox& fileSystem() { Q_ASSERT(m_ComboFileSystem); return *m_ComboFileSystem; }
-		const KComboBox& fileSystem() const { Q_ASSERT(m_ComboFileSystem); return *m_ComboFileSystem; }
+		QComboBox& fileSystem() { Q_ASSERT(m_ComboFileSystem); return *m_ComboFileSystem; }
+		const QComboBox& fileSystem() const { Q_ASSERT(m_ComboFileSystem); return *m_ComboFileSystem; }
 
 		QCheckBox& checkRecreate() { Q_ASSERT(m_CheckRecreate); return *m_CheckRecreate; }
 
@@ -59,8 +59,8 @@ class PartPropsWidget : public QWidget, public Ui::PartPropsWidgetBase
 		QLabel& uuid() { Q_ASSERT(m_LabelUuid); return *m_LabelUuid; }
 
 		QLabel& textLabel() { Q_ASSERT(m_LabelTextLabel); return *m_LabelTextLabel; }
-		KLineEdit& label() { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
-		const KLineEdit& label() const { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
+		QLineEdit& label() { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
+		const QLineEdit& label() const { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
 		QLabel& noSetLabel() { Q_ASSERT(m_LabelTextNoSetLabel); return *m_LabelTextNoSetLabel; }
 
 		QLabel& textFlags() { Q_ASSERT(m_LabelTextFlags); return *m_LabelTextFlags; }

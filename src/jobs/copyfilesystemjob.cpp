@@ -28,8 +28,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
-#include <kdebug.h>
+#include <KLocalizedString>
 
 /** Creates a new CopyFileSystemJob
 	@param targetdevice the Device the FileSystem is to be copied to
@@ -58,7 +57,7 @@ bool CopyFileSystemJob::run(Report& parent)
 	Report* report = jobStarted(parent);
 
 	if (targetPartition().fileSystem().length() < sourcePartition().fileSystem().length())
-		report->line() << i18nc("@info/plain", "Cannot copy file system: File system on target partition <filename>%1</filename> is smaller than the file system on source partition <filename>%2</filename>.", targetPartition().deviceNode(), sourcePartition().deviceNode());
+		report->line() << xi18nc("@info/plain", "Cannot copy file system: File system on target partition <filename>%1</filename> is smaller than the file system on source partition <filename>%2</filename>.", targetPartition().deviceNode(), sourcePartition().deviceNode());
 	else if (sourcePartition().fileSystem().supportCopy() == FileSystem::cmdSupportFileSystem)
 		rval = sourcePartition().fileSystem().copy(*report, targetPartition().deviceNode(), sourcePartition().deviceNode());
 	else if (sourcePartition().fileSystem().supportCopy() == FileSystem::cmdSupportCore)
@@ -67,9 +66,9 @@ bool CopyFileSystemJob::run(Report& parent)
 		CopyTargetDevice copyTarget(targetDevice(), targetPartition().fileSystem().firstSector(), targetPartition().fileSystem().lastSector());
 
 		if (!copySource.open())
-			report->line() << i18nc("@info/plain", "Could not open file system on source partition <filename>%1</filename> for copying.", sourcePartition().deviceNode());
+			report->line() << xi18nc("@info/plain", "Could not open file system on source partition <filename>%1</filename> for copying.", sourcePartition().deviceNode());
 		else if (!copyTarget.open())
-			report->line() << i18nc("@info/plain", "Could not open file system on target partition <filename>%1</filename> for copying.", targetPartition().deviceNode());
+			report->line() << xi18nc("@info/plain", "Could not open file system on target partition <filename>%1</filename> for copying.", targetPartition().deviceNode());
 		else
 		{
 			rval = copyBlocks(*report, copyTarget, copySource);
@@ -102,5 +101,5 @@ bool CopyFileSystemJob::run(Report& parent)
 
 QString CopyFileSystemJob::description() const
 {
-	return i18nc("@info/plain", "Copy file system on partition <filename>%1</filename> to partition <filename>%2</filename>", sourcePartition().deviceNode(), targetPartition().deviceNode());
+	return xi18nc("@info/plain", "Copy file system on partition <filename>%1</filename> to partition <filename>%2</filename>", sourcePartition().deviceNode(), targetPartition().deviceNode());
 }

@@ -20,16 +20,14 @@
 #include "backend/corebackendmanager.h"
 #include "backend/corebackend.h"
 
+#include <QDebug>
 #include <QStringList>
 #include <QString>
 
-#include <kpluginfactory.h>
-#include <kpluginloader.h>
-#include <kdebug.h>
-#include <klocale.h>
-#include <kaboutdata.h>
-#include <kservice.h>
-#include <kservicetypetrader.h>
+#include <KAboutData>
+#include <KLocalizedString>
+#include <KPluginLoader>
+#include <KServiceTypeTrader>
 
 #include <config.h>
 
@@ -50,7 +48,7 @@ CoreBackendManager* CoreBackendManager::self()
 
 KService::List CoreBackendManager::list() const
 {
-	return KServiceTypeTrader::self()->query("PartitionManager/Plugin", "[X-KDE-PluginInfo-Category] == 'BackendPlugin'");
+	return KServiceTypeTrader::self()->query(QStringLiteral("PartitionManager/Plugin"), QStringLiteral("[X-KDE-PluginInfo-Category] == 'BackendPlugin'"));
 }
 
 bool CoreBackendManager::load(const QString& name)
@@ -65,12 +63,13 @@ bool CoreBackendManager::load(const QString& name)
 	if (factory != NULL)
 	{
 		m_Backend = factory->create<CoreBackend>(NULL);
-		backend()->setAboutData(factory->componentData().aboutData());
-		kDebug() << "Loaded backend plugin: " << backend()->about().programName() << ", " << backend()->about().version();
+// FIXME: port KF5
+//  		backend()->setAboutData(factory->componentData().aboutData());
+// 		qDebug() << "Loaded backend plugin: " << backend()->about().displayName() << ", " << backend()->about().version();
 		return true;
 	}
 
-	kWarning() << "Could not load plugin for core backend " << name << ": " << loader.errorString();
+	qWarning() << "Could not load plugin for core backend " << name << ": " << loader.errorString();
 	return false;
 }
 

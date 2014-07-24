@@ -25,9 +25,6 @@
 #include "util/globallog.h"
 #include "util/report.h"
 
-#include <klocale.h>
-#include <kdebug.h>
-
 DummyDevice::DummyDevice(const QString& device_node) :
 	CoreBackendDevice(device_node)
 {

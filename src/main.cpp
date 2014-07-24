@@ -24,36 +24,43 @@
 
 #include "util/helpers.h"
 
-#include <kapplication.h>
-#include <kcmdlineargs.h>
-#include <kmessagebox.h>
-#include <kaboutdata.h>
+#include <QApplication>
+#include <QCommandLineParser>
+
+#include <KAboutData>
+#include <KMessageBox>
+#include <KLocalizedString>
 
 #include <config.h>
 
-int main(int argc, char* argv[])
+int Q_DECL_IMPORT main(int argc, char* argv[])
 {
-	KCmdLineArgs::init(argc, argv, createPartitionManagerAboutData());
-	KCmdLineOptions options;
-	options.add("dontsu", ki18nc("@info:shell", "Do not try to gain super user privileges"));
-	options.add("advconfig", ki18nc("@info:shell", "Show advanced tab in configuration dialog"));
-	options.add("+[device]", ki18nc("@info:shell", "Device(s) to manage"));
-	KCmdLineArgs::addCmdLineOptions(options);
+	QApplication app(argc, argv);
+	KAboutData *aboutData = createPartitionManagerAboutData();
+	KAboutData::setApplicationData(*aboutData);
 
-	KApplication app;
+	QCommandLineParser parser;
+	parser.setApplicationDescription( aboutData->shortDescription() );
+	parser.addHelpOption();
+	parser.addVersionOption();
+	parser.addOption( QCommandLineOption( QLatin1Literal("dontsu"), i18nc("@info:shell", "Do not try to gain super user privileges")));
+	parser.addOption( QCommandLineOption( QLatin1Literal("advconfig"), i18nc("@info:shell", "Show advanced tab in configuration dialog")));
+	parser.addPositionalArgument( QStringLiteral("device"), i18nc("@info:shell", "Device(s) to manage"), QStringLiteral("[device...]") );
+
+	parser.process(app);
 
 	registerMetaTypes();
 	if (!checkPermissions())
 		return 0;
 
-	Config::instance("partitionmanagerrc");
+	Config::instance(QStringLiteral("partitionmanagerrc"));
 
 	if (!loadBackend())
 		return 0;
 
 	if (!checkAccessibleDevices())
 		return 0;
-	
+
 	MainWindow* mainWindow = new MainWindow();
 	mainWindow->show();
 

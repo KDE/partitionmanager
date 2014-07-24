@@ -24,8 +24,7 @@
 
 #include "util/globallog.h"
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <QDebug>
 
 #include <config.h>
 

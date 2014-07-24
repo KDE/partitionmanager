@@ -27,8 +27,7 @@
 
 #include "util/globallog.h"
 
-#include <klocale.h>
-#include <kdebug.h>
+#include <KLocalizedString>
 
 #include <config.h>
 
@@ -86,10 +85,10 @@ bool PartitionAlignment::isAligned(const Device& d, const Partition& p, bool qui
 bool PartitionAlignment::isAligned(const Device& d, const Partition& p, qint64 newFirst, qint64 newLast, bool quiet)
 {
 	if (firstDelta(d, p, newFirst) && !quiet)
-		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> is not properly aligned (first sector: %2, modulo: %3).", p.deviceNode(), newFirst, firstDelta(d, p, newFirst));
+		Log(Log::warning) << xi18nc("@info/plain", "Partition <filename>%1</filename> is not properly aligned (first sector: %2, modulo: %3).", p.deviceNode(), newFirst, firstDelta(d, p, newFirst));
 
 	if (lastDelta(d, p, newLast) && !quiet)
-		Log(Log::warning) << i18nc("@info/plain", "Partition <filename>%1</filename> is not properly aligned (last sector: %2, modulo: %3).", p.deviceNode(), newLast, lastDelta(d, p, newLast));
+		Log(Log::warning) << xi18nc("@info/plain", "Partition <filename>%1</filename> is not properly aligned (last sector: %2, modulo: %3).", p.deviceNode(), newLast, lastDelta(d, p, newLast));
 
 	return firstDelta(d, p, newFirst) == 0 && lastDelta(d, p, newLast) == 0;
 }

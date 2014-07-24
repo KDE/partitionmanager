@@ -24,7 +24,6 @@
 #include "ui_sizedialogwidgetbase.h"
 
 #include <QWidget>
-#include <qdebug.h>
 
 /** Central widget for the SizeDialogBase
 	@author Volker Lanz <vl@fidra.de>
@@ -50,11 +49,11 @@ class SizeDialogWidget : public QWidget, public Ui::SizeDialogWidgetBase
 		QRadioButton& radioExtended() { Q_ASSERT(m_RadioExtended); return *m_RadioExtended; }
 		QRadioButton& radioLogical() { Q_ASSERT(m_RadioLogical); return *m_RadioLogical; }
 
-		KComboBox& comboFileSystem() { Q_ASSERT(m_ComboFileSystem); return *m_ComboFileSystem; }
+		QComboBox& comboFileSystem() { Q_ASSERT(m_ComboFileSystem); return *m_ComboFileSystem; }
 
 		QLabel& textLabel() { Q_ASSERT(m_LabelTextLabel); return *m_LabelTextLabel; }
-		KLineEdit& label() { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
-		const KLineEdit& label() const { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
+		QLineEdit& label() { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
+		const QLineEdit& label() const { Q_ASSERT(m_EditLabel); return *m_EditLabel; }
 		QLabel& noSetLabel() { Q_ASSERT(m_LabelTextNoSetLabel); return *m_LabelTextNoSetLabel; }
 
 		void hideRole() { delete m_LabelRole; m_LabelRole = NULL; delete m_RadioPrimary; m_RadioPrimary = NULL; delete m_RadioExtended; m_RadioExtended = NULL; delete m_RadioLogical; m_RadioLogical = NULL; }

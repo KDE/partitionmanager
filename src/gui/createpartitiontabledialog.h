@@ -25,11 +25,13 @@
 
 #include "core/partitiontable.h"
 
-#include <kdialog.h>
+#include <QDialog>
 
 class Device;
+class QDialogButtonBox;
+class QPushButton;
 
-class CreatePartitionTableDialog : public KDialog
+class CreatePartitionTableDialog : public QDialog
 {
 	Q_OBJECT
 
@@ -44,12 +46,16 @@ class CreatePartitionTableDialog : public KDialog
 		const CreatePartitionTableWidget& widget() const { return *m_DialogWidget; }
 		const Device& device() const { return m_Device; }
 
-	protected slots:
+	protected Q_SLOTS:
 		void onMSDOSToggled(bool on);
 
 	private:
 		CreatePartitionTableWidget* m_DialogWidget;
 		const Device& m_Device;
+
+		QDialogButtonBox* dialogButtonBox;
+		QPushButton* createButton;
+		QPushButton* cancelButton;
 };
 
 

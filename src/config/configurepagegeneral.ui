@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>403</width>
+    <width>427</width>
     <height>327</height>
    </rect>
   </property>
@@ -101,7 +101,7 @@
        </widget>
       </item>
       <item>
-       <widget class="KComboBox" name="kcfg_minLogLevel">
+       <widget class="QComboBox" name="kcfg_minLogLevel">
         <item>
          <property name="text">
           <string>Debug</string>
@@ -150,13 +150,13 @@
        </widget>
       </item>
       <item>
-       <widget class="KComboBox" name="m_ComboDefaultFileSystem"/>
+       <widget class="QComboBox" name="m_ComboDefaultFileSystem"/>
       </item>
      </layout>
     </widget>
    </item>
    <item>
-    <widget class="KButtonGroup" name="kcfg_shredSource">
+    <widget class="QGroupBox" name="groupBox_5">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
@@ -179,6 +179,9 @@
         <property name="text">
          <string>Random data</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">kcfg_shredSource</string>
+        </attribute>
        </widget>
       </item>
       <item>
@@ -186,6 +189,9 @@
         <property name="text">
          <string>Zeros</string>
         </property>
+        <attribute name="buttonGroup">
+         <string notr="true">kcfg_shredSource</string>
+        </attribute>
        </widget>
       </item>
      </layout>
@@ -193,19 +199,9 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KButtonGroup</class>
-   <extends>QGroupBox</extends>
-   <header>kbuttongroup.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="kcfg_shredSource"/>
+ </buttongroups>
 </ui>

@@ -49,15 +49,15 @@
 #include "util/report.h"
 #include "util/helpers.h"
 
-#include <klocale.h>
-#include <kmenu.h>
-#include <kmessagebox.h>
-#include <kfiledialog.h>
-#include <kglobal.h>
-
 #include <QCursor>
+#include <QFileDialog>
+#include <QLocale>
 #include <QPointer>
 #include <QReadLocker>
+
+#include <KIconThemes/KIconLoader>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 #include <config.h>
 
@@ -215,7 +215,7 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 
 	item->setText(i, p.mountPoint());
 	if (p.isMounted())
-		item->setIcon(i, SmallIcon("object-locked"));
+		item->setIcon(i, QIcon(KIconLoader().loadIcon(QLatin1String("object-locked"), KIconLoader::Small)));
 	i++;
 
 	item->setText(i++, p.fileSystem().label());
@@ -224,11 +224,11 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 	item->setText(i++, Capacity::formatByteSize(p.used()));
 	item->setText(i++, Capacity::formatByteSize(p.available()));
 
-	item->setText(i++, KGlobal::locale()->formatNumber(p.firstSector(), 0));
-	item->setText(i++, KGlobal::locale()->formatNumber(p.lastSector(), 0));
-	item->setText(i++, KGlobal::locale()->formatNumber(p.length(), 0));
+	item->setText(i++, QLocale().toString(p.firstSector()));
+	item->setText(i++, QLocale().toString(p.lastSector()));
+	item->setText(i++, QLocale().toString(p.length()));
 
-	item->setText(i++, PartitionTable::flagNames(p.activeFlags()).join(", "));
+	item->setText(i++, PartitionTable::flagNames(p.activeFlags()).join(QStringLiteral(", ")));
 
 	item->setSizeHint(0, QSize(0, 32));
 
@@ -253,7 +253,7 @@ void PartitionManagerWidget::updatePartitions()
 	deviceItem->setFont(0, font);
 
 	deviceItem->setText(0, selectedDevice()->prettyName());
-	deviceItem->setIcon(0, DesktopIcon(selectedDevice()->iconName()));
+	deviceItem->setIcon(0, QIcon(KIconLoader().loadIcon(selectedDevice()->iconName(), KIconLoader::Desktop)));
 	deviceItem->setSizeHint(0, QSize(0, 32));
 
 	treePartitions().addTopLevelItem(deviceItem);
@@ -370,7 +370,7 @@ void PartitionManagerWidget::onPropertiesPartition()
 
 		QPointer<PartPropsDialog> dlg = new PartPropsDialog(this, *selectedDevice(), p);
 
-		if (dlg->exec() == KDialog::Accepted)
+		if (dlg->exec() == QDialog::Accepted)
 		{
 			if (dlg->newFileSystemType() != p.fileSystem().type() || dlg->forceRecreate())
 				operationStack().push(new CreateFileSystemOperation(*selectedDevice(), p, dlg->newFileSystemType()));
@@ -394,7 +394,7 @@ void PartitionManagerWidget::onMountPartition()
 
 	if (p == NULL)
 	{
-		kWarning() << "no partition selected";
+		qWarning() << "no partition selected";
 		return;
 	}
 
@@ -403,12 +403,12 @@ void PartitionManagerWidget::onMountPartition()
 	if (p->canMount())
 	{
 		if (!p->mount(report))
-			KMessageBox::detailedSorry(this, i18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QString("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Mount File System."));
+			KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Mount File System."));
 	}
 	else if (p->canUnmount())
 	{
 		if (!p->unmount(report))
-			KMessageBox::detailedSorry(this, i18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QString("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Unmount File System."));
+			KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QStringLiteral("pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Unmount File System."));
 	}
 
 	if (p->roles().has(PartitionRole::Logical))
@@ -420,7 +420,7 @@ void PartitionManagerWidget::onMountPartition()
 		if (parent != NULL)
 			parent->checkChildrenMounted();
 		else
-			kWarning() << "parent is null";
+			qWarning() << "parent is null";
 	}
 
 	updatePartitions();
@@ -437,7 +437,7 @@ void PartitionManagerWidget::onEditMountPoint()
 
 	QPointer<EditMountPointDialog> dlg = new EditMountPointDialog(this, *p);
 
-	if (dlg->exec() == KDialog::Accepted)
+	if (dlg->exec() == QDialog::Accepted)
 		updatePartitions();
 
 	delete dlg;
@@ -449,7 +449,7 @@ static bool checkTooManyPartitions(QWidget* parent, const Device& d, const Parti
 
 	if (p.roles().has(PartitionRole::Unallocated) && d.partitionTable()->numPrimaries() >= d.partitionTable()->maxPrimaries() && !p.roles().has(PartitionRole::Logical))
 	{
-		KMessageBox::sorry(parent, i18ncp("@info",
+		KMessageBox::sorry(parent, xi18ncp("@info",
 			"<para>There is already one primary partition on this device. This is the maximum number its partition table type can handle.</para>"
 			"<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
 		   "<para>There are already %1 primary partitions on this device. This is the maximum number its partition table type can handle.</para>"
@@ -468,7 +468,7 @@ void PartitionManagerWidget::onNewPartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
@@ -476,7 +476,7 @@ void PartitionManagerWidget::onNewPartition()
 
 	if (selectedDevice()->partitionTable() == NULL)
 	{
-		kWarning() << "partition table on selected device is null";
+		qWarning() << "partition table on selected device is null";
 		return;
 	}
 
@@ -486,7 +486,7 @@ void PartitionManagerWidget::onNewPartition()
 	Partition* newPartition = NewOperation::createNew(*selectedPartition());
 
 	QPointer<NewDialog> dlg = new NewDialog(this, *selectedDevice(), *newPartition, selectedDevice()->partitionTable()->childRoles(*selectedPartition()));
-	if (dlg->exec() == KDialog::Accepted)
+	if (dlg->exec() == QDialog::Accepted)
 		operationStack().push(new NewOperation(*selectedDevice(), newPartition));
 	else
 		delete newPartition;
@@ -501,7 +501,7 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
@@ -511,14 +511,14 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 
 		if (selectedPartition()->parent() == NULL)
 		{
-			kWarning() << "parent of selected partition is null.";
+			qWarning() << "parent of selected partition is null.";
 			return;
 		}
 
 		if (selectedPartition()->number() > 0 && selectedPartition()->parent()->highestMountedChild() > selectedPartition()->number())
 		{
 			KMessageBox::sorry(this,
-				i18nc("@info",
+				xi18nc("@info",
 					"<para>The partition <filename>%1</filename> cannot currently be deleted because one or more partitions with higher logical numbers are still mounted.</para>"
 					"<para>Please unmount all partitions with higher logical numbers than %2 first.</para>",
 				selectedPartition()->deviceNode(), selectedPartition()->number()),
@@ -535,8 +535,8 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 				"Do you really want to delete the partition that is currently in the clipboard? "
 				"It will no longer be available for pasting after it has been deleted."),
 			i18nc("@title:window", "Really Delete Partition in the Clipboard?"),
-				KGuiItem(i18nc("@action:button", "Delete It"), "arrow-right"),
-				KStandardGuiItem::cancel(), "reallyDeleteClipboardPartition") == KMessageBox::Cancel)
+				KGuiItem(i18nc("@action:button", "Delete It"), QStringLiteral("arrow-right")),
+				KStandardGuiItem::cancel(), QStringLiteral("reallyDeleteClipboardPartition")) == KMessageBox::Cancel)
 			return;
 
 		setClipboardPartition(NULL);
@@ -557,7 +557,7 @@ void PartitionManagerWidget::onResizePartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
@@ -565,7 +565,7 @@ void PartitionManagerWidget::onResizePartition()
 
 	if (selectedDevice()->partitionTable() == NULL)
 	{
-		kWarning() << "partition table on selected device is null";
+		qWarning() << "partition table on selected device is null";
 		return;
 	}
 
@@ -578,10 +578,10 @@ void PartitionManagerWidget::onResizePartition()
 
 	QPointer<ResizeDialog> dlg = new ResizeDialog(this, *selectedDevice(), p, p.firstSector() - freeBefore, freeAfter + p.lastSector());
 
-	if (dlg->exec() == KDialog::Accepted)
+	if (dlg->exec() == QDialog::Accepted)
 	{
 		if (dlg->resizedFirstSector() == p.firstSector() && dlg->resizedLastSector() == p.lastSector())
-			Log(Log::information) << i18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", p.deviceNode());
+			Log(Log::information) << xi18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", p.deviceNode());
 		else
 			operationStack().push(new ResizeOperation(*selectedDevice(), p, dlg->resizedFirstSector(), dlg->resizedLastSector()));
 	}
@@ -606,12 +606,12 @@ void PartitionManagerWidget::onCopyPartition()
 
 	if (selectedPartition() == NULL)
 	{
-		kWarning() << "selected partition: " << selectedPartition();
+		qWarning() << "selected partition: " << selectedPartition();
 		return;
 	}
 
 	setClipboardPartition(selectedPartition());
-	Log() << i18nc("@info/plain", "Partition <filename>%1</filename> has been copied to the clipboard.", selectedPartition()->deviceNode());
+	Log() << xi18nc("@info/plain", "Partition <filename>%1</filename> has been copied to the clipboard.", selectedPartition()->deviceNode());
 }
 
 void PartitionManagerWidget::onPastePartition()
@@ -621,13 +621,13 @@ void PartitionManagerWidget::onPastePartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
 	if (clipboardPartition() == NULL)
 	{
-		kWarning() << "no partition in the clipboard.";
+		qWarning() << "no partition in the clipboard.";
 		return;
 	}
 
@@ -640,7 +640,7 @@ void PartitionManagerWidget::onPastePartition()
 
 	if (dSource == NULL)
 	{
-		kWarning() << "source partition is null.";
+		qWarning() << "source partition is null.";
 		return;
 	}
 
@@ -659,7 +659,7 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return false;
 	}
 
@@ -676,11 +676,11 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
 		int result = dlg->exec();
 		delete dlg;
 
-		if (result != KDialog::Accepted)
+		if (result != QDialog::Accepted)
 			return false;
 	}
 	else if (KMessageBox::warningContinueCancel(this,
-			i18nc("@info", "<para><warning>You are about to lose all data on partition "
+			xi18nc("@info", "<para><warning>You are about to lose all data on partition "
 				"<filename>%1</filename>.</warning></para>"
 				"<para>Overwriting one partition with another (or with an image file) will "
 				"destroy all data on this target partition.</para>"
@@ -689,19 +689,19 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
 				"unrecoverably be overwritten.</para>",
 				selectedPartition()->deviceNode()),
 			i18nc("@title:window", "Really Overwrite Existing Partition?"),
-			KGuiItem(i18nc("@action:button", "Overwrite Partition"), "arrow-right"),
+			KGuiItem(i18nc("@action:button", "Overwrite Partition"), QStringLiteral("arrow-right")),
 			KStandardGuiItem::cancel(),
-			"reallyOverwriteExistingPartition") == KMessageBox::Cancel)
+			QStringLiteral("reallyOverwriteExistingPartition")) == KMessageBox::Cancel)
 		return false;
 
 	if (insertedPartition.length() < sourceLength)
 	{
 		if (overwrite)
-			KMessageBox::error(this, i18nc("@info",
+			KMessageBox::error(this, xi18nc("@info",
 				"<para>The selected partition is not large enough to hold the source partition or the backup file.</para>"
 				"<para>Pick another target or resize this partition so it is as large as the source.</para>"), i18nc("@title:window", "Target Not Large Enough"));
 		else
-			KMessageBox::sorry(this, i18nc("@info",
+			KMessageBox::sorry(this, xi18nc("@info",
 				"<para>It is not possible to create the target partition large enough to hold the source.</para>"
 				"<para>This may happen if not all partitions on a device are correctly aligned "
 				"or when copying a primary partition into an extended partition.</para>"),
@@ -719,7 +719,7 @@ void PartitionManagerWidget::onCheckPartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
@@ -733,17 +733,17 @@ void PartitionManagerWidget::onBackupPartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
-	QString fileName = KFileDialog::getSaveFileName(KUrl("kfiledialog://backupPartition"));
+	QString fileName = QFileDialog::getSaveFileName(this, QStringLiteral("kfiledialog://backupPartition"));
 // 	QString fileName = "/tmp/backuptest.img";
 
 	if (fileName.isEmpty())
 		return;
 
-	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, i18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "Overwrite File"), "arrow-right"), KStandardGuiItem::cancel()) == KMessageBox::Continue)
+	if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, xi18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "Overwrite File"), QStringLiteral("arrow-right")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
 		operationStack().push(new BackupOperation(*selectedDevice(), *selectedPartition(), fileName));
 }
 
@@ -754,14 +754,14 @@ void PartitionManagerWidget::onRestorePartition()
 
 	if (selectedDevice() == NULL || selectedPartition() == NULL)
 	{
-		kWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
+		qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
 		return;
 	}
 
 	if (checkTooManyPartitions(this, *selectedDevice(), *selectedPartition()))
 		return;
 
-	QString fileName = KFileDialog::getOpenFileName(KUrl("kfiledialog://backupPartition"));
+	QString fileName = QFileDialog::getOpenFileName(this, QStringLiteral("kfiledialog://restorePartition"));
 // 	QString fileName = "/tmp/backuptest.img";
 
 	if (!fileName.isEmpty() && QFile::exists(fileName))
@@ -770,7 +770,7 @@ void PartitionManagerWidget::onRestorePartition()
 
 		if (restorePartition->length() > selectedPartition()->length())
 		{
-			KMessageBox::error(this, i18nc("@info", "The file system in the image file <filename>%1</filename> is too large to be restored to the selected partition.", fileName), i18nc("@title:window", "Not Enough Space to Restore File System."));
+			KMessageBox::error(this, xi18nc("@info", "The file system in the image file <filename>%1</filename> is too large to be restored to the selected partition.", fileName), i18nc("@title:window", "Not Enough Space to Restore File System."));
 			delete restorePartition;
 			return;
 		}

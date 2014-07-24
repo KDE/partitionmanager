@@ -24,22 +24,21 @@
 #include "util/globallog.h"
 #include "util/helpers.h"
 
-#include <kactioncollection.h>
-#include <kdebug.h>
-#include <kiconloader.h>
-#include <kfiledialog.h>
-#include <kmessagebox.h>
-#include <kstandardguiitem.h>
-#include <kio/netaccess.h>
-#include <kio/jobuidelegate.h>
-#include <kio/copyjob.h>
-#include <ktemporaryfile.h>
-
+#include <QDateTime>
+#include <QDebug>
 #include <QFile>
+#include <QFileDialog>
+#include <QMenu>
+#include <QTemporaryFile>
+#include <QTextStream>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include <QDateTime>
-#include <QTextStream>
+
+#include <KIconThemes/KIconLoader>
+#include <KIO/CopyJob>
+#include <KJobUiDelegate>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 #include <config.h>
 
@@ -120,15 +119,15 @@ void TreeLog::onClearLog()
 
 void TreeLog::onSaveLog()
 {
-	const KUrl url = KFileDialog::getSaveUrl(KUrl("kfiledialog://saveLog"));
+	const QUrl url = QFileDialog::getSaveFileUrl();
 
 	if (!url.isEmpty())
 	{
-		KTemporaryFile tempFile;
+		QTemporaryFile tempFile;
 
 		if (!tempFile.open())
 		{
-			KMessageBox::error(this, i18nc("@info", "Could not create temporary output file to save <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Error Saving Log File"));
+			KMessageBox::error(this, xi18nc("@info", "Could not create temporary output file to save <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Error Saving Log File"));
 			return;
 		}
 
@@ -142,8 +141,9 @@ void TreeLog::onSaveLog()
 
 		tempFile.close();
 
-		KIO::CopyJob* job = KIO::move(tempFile.fileName(), url, KIO::HideProgressInfo);
-		if (!KIO::NetAccess::synchronousRun(job, NULL))
+		KIO::CopyJob* job = KIO::move(QUrl::fromLocalFile(tempFile.fileName()), url, KIO::HideProgressInfo);
+		job->exec();
+		if ( job->error() )
 			job->ui()->showErrorMessage();
 	}
 }
@@ -155,22 +155,22 @@ void TreeLog::on_m_TreeLog_customContextMenuRequested(const QPoint& pos)
 
 void TreeLog::onNewLogMessage(Log::Level logLevel, const QString& s)
 {
-	static const char* icons[] =
+	static const QString icons[] =
 	{
-		"tools-report-bug",
-		"dialog-information",
-		"dialog-warning",
-		"dialog-error"
+		QStringLiteral("tools-report-bug"),
+		QStringLiteral("dialog-information"),
+		QStringLiteral("dialog-warning"),
+		QStringLiteral("dialog-error")
 	};
 
-	kDebug() << s;
+	qDebug() << s;
 
 	if (logLevel >= Config::minLogLevel())
 	{
 		QTreeWidgetItem* item = new QTreeWidgetItem();
 
-		item->setIcon(0, SmallIcon(icons[logLevel]));
-		item->setText(1, QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
+		item->setIcon(0, QIcon(KIconLoader().loadIcon(icons[logLevel], KIconLoader::Small)));
+		item->setText(1, QDateTime::currentDateTime().toString(QStringLiteral("yyyy-MM-dd hh:mm:ss")));
 		item->setText(2, s);
 
 		treeLog().addTopLevelItem(item);

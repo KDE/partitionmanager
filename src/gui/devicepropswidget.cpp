@@ -19,8 +19,6 @@
 
 #include "gui/devicepropswidget.h"
 
-#include <kdebug.h>
-
 DevicePropsWidget::DevicePropsWidget(QWidget* parent) :
 	QWidget(parent)
 {

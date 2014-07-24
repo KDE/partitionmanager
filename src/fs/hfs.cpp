@@ -44,8 +44,8 @@ namespace FS
 	void hfs::init()
 	{
 		m_GetLabel = cmdSupportCore;
-		m_Create = findExternal("hformat") ? cmdSupportFileSystem : cmdSupportNone;
-		m_Check = findExternal("hfsck") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal(QStringLiteral("hformat")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = findExternal(QStringLiteral("hfsck")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Move = m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
 		m_Backup = cmdSupportCore;
 	}
@@ -69,7 +69,7 @@ namespace FS
 
 	FileSystem::SupportTool hfs::supportToolName() const
 	{
-		return SupportTool("hfsutils", KUrl("http://www.mars.org/home/rob/proj/hfs/"));
+		return SupportTool(QStringLiteral("hfsutils"), QUrl(QStringLiteral("http://www.mars.org/home/rob/proj/hfs/")));
 	}
 
 
@@ -85,13 +85,13 @@ namespace FS
 
 	bool hfs::check(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "hfsck", QStringList() << "-v" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("hfsck"), QStringList() << QStringLiteral("-v") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool hfs::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "hformat", QStringList() << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("hformat"), QStringList() << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 }

@@ -19,14 +19,12 @@
 
 #include "gui/createpartitiontablewidget.h"
 
-#include <kiconloader.h>
-
 #include <QIcon>
 
 CreatePartitionTableWidget::CreatePartitionTableWidget(QWidget* parent) :
 	QWidget(parent)
 {
 	setupUi(this);
-	QIcon icon = KIconLoader::global()->loadIcon("dialog-warning", KIconLoader::NoGroup);
+	QIcon icon = QIcon::fromTheme(QStringLiteral("dialog-warning"));
 	iconLabel().setPixmap(icon.pixmap(32, 32));
 }

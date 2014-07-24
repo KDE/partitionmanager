@@ -22,8 +22,6 @@
 #include <QFile>
 #include <QFileInfo>
 
-#include <kdebug.h>
-
 /** Constructs a CopySourceFile from the given @p filename.
 	@param filename filename of the file to copy from
 	@param sectorsize the sector size to assume for the file, usually the target Device's sector size

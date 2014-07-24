@@ -23,33 +23,41 @@
 #include "fs/filesystem.h"
 #include "fs/filesystemfactory.h"
 
-#include <kdebug.h>
-#include <klocale.h>
-#include <kpushbutton.h>
-#include <kiconloader.h>
+#include <QDialogButtonBox>
+#include <QDialog>
+
+#include <KIconThemes/KIconLoader>
+#include <KLocalizedString>
+#include <KConfigGroup>
+#include <KSharedConfig>
 
 /** Creates a new FileSystemSupportDialog
 	@param parent the parent object
 */
 FileSystemSupportDialog::FileSystemSupportDialog(QWidget* parent) :
-	KDialog(parent),
+	QDialog(parent),
 	m_FileSystemSupportDialogWidget(new FileSystemSupportDialogWidget(this))
 {
-	setMainWidget(&dialogWidget());
-	setCaption(i18nc("@title:window", "File System Support"));
-	setButtons(KDialog::Ok);
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&dialogWidget());
+	setWindowTitle(i18nc("@title:window", "File System Support"));
+	dialogButtonBox = new QDialogButtonBox(this);
+	dialogButtonBox -> setStandardButtons(QDialogButtonBox::Ok);
+	mainLayout->addWidget(dialogButtonBox);
 
  	setupDialog();
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "fileSystemSupportDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "fileSystemSupportDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a FileSystemSupportDialog */
 FileSystemSupportDialog::~FileSystemSupportDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "fileSystemSupportDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "fileSystemSupportDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 QSize FileSystemSupportDialog::sizeHint() const
@@ -59,8 +67,8 @@ QSize FileSystemSupportDialog::sizeHint() const
 
 void FileSystemSupportDialog::setupDialog()
 {
-	QPixmap yes(BarIcon("dialog-ok"));
-	QPixmap no(BarIcon("dialog-error"));
+	QIcon yes = QIcon(KIconLoader().loadIcon(QLatin1String("dialog-ok"), KIconLoader::Toolbar));
+	QIcon no = QIcon(KIconLoader().loadIcon(QLatin1String("dialog-error"), KIconLoader::Toolbar));
 
 	dialogWidget().tree().clear();
 
@@ -88,7 +96,7 @@ void FileSystemSupportDialog::setupDialog()
 		// if a file is an image of a supported or unsupported (or even invalid) filesystem
 		item->setIcon(i++, yes);
 
-		item->setText(i++, fs->supportToolName().name.isEmpty() ? "---" : fs->supportToolName().name);
+		item->setText(i++, fs->supportToolName().name.isEmpty() ? QStringLiteral("---") : fs->supportToolName().name);
 
 		dialogWidget().tree().addTopLevelItem(item);
 	}
@@ -101,6 +109,7 @@ void FileSystemSupportDialog::setupDialog()
 
 void FileSystemSupportDialog::setupConnections()
 {
+	connect(dialogButtonBox->button(QDialogButtonBox::Ok), SIGNAL(clicked()), SLOT(close()));
 	connect(&dialogWidget().buttonRescan(), SIGNAL(clicked()), SLOT(onButtonRescanClicked()));
 }
 

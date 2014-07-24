@@ -26,11 +26,13 @@
 #include "core/partition.h"
 #include "core/partitiontable.h"
 
-#include <kdialog.h>
+#include <QDialog>
 
 class Device;
 class PartPropsWidget;
 
+class QDialogButtonBox;
+class QVBoxLayout;
 class QWidget;
 class QString;
 
@@ -42,7 +44,7 @@ class QString;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class PartPropsDialog : public KDialog
+class PartPropsDialog : public QDialog
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(PartPropsDialog)
@@ -81,7 +83,7 @@ class PartPropsDialog : public KDialog
 
 		void updatePartitionFileSystem();
 
-	protected slots:
+	protected Q_SLOTS:
 		void setDirty();
 		void onFilesystemChanged(int idx);
 		void onRecreate(int);
@@ -99,6 +101,12 @@ class PartPropsDialog : public KDialog
 		PartPropsWidget* m_DialogWidget;
 		bool m_ReadOnly;
 		bool m_ForceRecreate;
+
+		QDialogButtonBox* dialogButtonBox;
+		QPushButton* okButton;
+		QPushButton* cancelButton;
+		QVBoxLayout *mainLayout;
+
 };
 
 #endif

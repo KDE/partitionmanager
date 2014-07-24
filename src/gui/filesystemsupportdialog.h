@@ -22,10 +22,10 @@
 #define FILESYSTEMSUPPORTDIALOG__H
 
 #include <QWidget>
+#include <QDialog>
 
-#include <kdialog.h>
-
-class KPushButton;
+class QDialogButtonBox;
+class QPushButton;
 
 class FileSystemSupportDialogWidget;
 
@@ -35,7 +35,7 @@ class FileSystemSupportDialogWidget;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class FileSystemSupportDialog : public KDialog
+class FileSystemSupportDialog : public QDialog
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(FileSystemSupportDialog)
@@ -47,7 +47,7 @@ class FileSystemSupportDialog : public KDialog
 	public:
 		QSize sizeHint() const;
 
-	protected slots:
+	protected Q_SLOTS:
 		void onButtonRescanClicked();
 
 	protected:
@@ -58,6 +58,7 @@ class FileSystemSupportDialog : public KDialog
 
 	private:
 		FileSystemSupportDialogWidget* m_FileSystemSupportDialogWidget;
+		QDialogButtonBox* dialogButtonBox;
 };
 
 #endif

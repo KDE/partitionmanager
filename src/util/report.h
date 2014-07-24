@@ -48,7 +48,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Report : public QObject
 		explicit Report(Report* p, const QString& cmd = QString());
 		~Report();
 
-	signals:
+	Q_SIGNALS:
 		void outputChanged();
 
 	public:
@@ -111,7 +111,7 @@ class ReportLine
 		ReportLine(Report& r) : ref(1), report(r.newChild()) {}
 
 	public:
-		~ReportLine() { if (--ref == 0) *report << "\n"; }
+		~ReportLine() { if (--ref == 0) *report << QStringLiteral("\n"); }
 		ReportLine(const ReportLine& other) : ref(other.ref + 1), report(other.report) {}
 
 	private:

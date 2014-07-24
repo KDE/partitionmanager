@@ -298,7 +298,7 @@
       </widget>
      </item>
      <item>
-      <widget class="KPushButton" name="m_ButtonSmartMore">
+      <widget class="QPushButton" name="m_ButtonSmartMore">
        <property name="text">
         <string>More...</string>
        </property>
@@ -325,11 +325,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
   <customwidget>
    <class>PartTableWidget</class>
    <extends>QWidget</extends>

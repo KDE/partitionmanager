@@ -29,7 +29,9 @@
 
 #include "util/capacity.h"
 
-#include <kdebug.h>
+#include <KConfigGroup>
+#include <KLocalizedString>
+#include <KSharedConfig>
 
 /** Creates a new ResizeDialog
 	@param parent pointer to the parent widget
@@ -45,7 +47,7 @@ ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minF
 	m_ResizedFirstSector(p.firstSector()),
 	m_ResizedLastSector(p.lastSector())
 {
-	setCaption(i18nc("@title:window", "Resize/move partition: <filename>%1</filename>", partition().deviceNode()));
+	setWindowTitle(xi18nc("@title:window", "Resize/move partition: <filename>%1</filename>", partition().deviceNode()));
 
 	dialogWidget().hideRole();
 	dialogWidget().hideFileSystem();
@@ -55,14 +57,15 @@ ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minF
 	setupConstraints();
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "resizeDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "resizeDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a ResizeDialog */
 ResizeDialog::~ResizeDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "resizeDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "resizeDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void ResizeDialog::rollback()
@@ -86,24 +89,24 @@ void ResizeDialog::accept()
 	setResizedLastSector(partition().lastSector());
 
 	rollback();
-	KDialog::accept();
+	QDialog::accept();
 }
 
 void ResizeDialog::reject()
 {
 	rollback();
-	KDialog::reject();
+	QDialog::reject();
 }
 
 void ResizeDialog::setupDialog()
 {
 	SizeDialogBase::setupDialog();
-	enableButtonOk(false);
+	okButton->setEnabled(false);
 }
 
 void ResizeDialog::setDirty()
 {
-	enableButtonOk(isModified());
+	okButton->setEnabled(isModified());
 }
 
 /** @return true if the user modified anything */

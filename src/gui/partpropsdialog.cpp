@@ -28,13 +28,17 @@
 #include "util/capacity.h"
 #include "util/helpers.h"
 
-#include <kmessagebox.h>
-#include <kdebug.h>
-#include <kglobalsettings.h>
-#include <kpushbutton.h>
-#include <klineedit.h>
-
+#include <QComboBox>
+#include <QFontDatabase>
+#include <QLineEdit>
+#include <QLocale>
+#include <QPushButton>
 #include <QtAlgorithms>
+
+#include <KConfigGroup>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <KSharedConfig>
 
 /** Creates a new PartPropsDialog
 	@param parent pointer to the parent widget
@@ -42,7 +46,7 @@
 	@param p the Partition to show properties for
 */
 PartPropsDialog::PartPropsDialog(QWidget* parent, Device& d, Partition& p) :
-	KDialog(parent),
+	QDialog(parent),
 	m_Device(d),
 	m_Partition(p),
 	m_WarnFileSystemChange(false),
@@ -50,20 +54,24 @@ PartPropsDialog::PartPropsDialog(QWidget* parent, Device& d, Partition& p) :
 	m_ReadOnly(partition().isMounted() || partition().state() == Partition::StateCopy || partition().state() == Partition::StateRestore || d.partitionTable()->isReadOnly()),
 	m_ForceRecreate(false)
 {
-	setMainWidget(&dialogWidget());
-	setCaption(i18nc("@title:window", "Partition properties: <filename>%1</filename>", partition().deviceNode()));
+	mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&dialogWidget());
+
+	setWindowTitle(xi18nc("@title:window", "Partition properties: <filename>%1</filename>", partition().deviceNode()));
 
 	setupDialog();
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "partPropsDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "partPropsDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a PartPropsDialog */
 PartPropsDialog::~PartPropsDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "partPropsDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "partPropsDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 /** @return the new label */
@@ -92,9 +100,15 @@ FileSystem::Type PartPropsDialog::newFileSystemType() const
 
 void PartPropsDialog::setupDialog()
 {
-	setDefaultButton(KDialog::Cancel);
-	enableButtonOk(false);
-	button(KDialog::Cancel)->setFocus();
+	dialogButtonBox = new QDialogButtonBox;
+	okButton = dialogButtonBox->addButton( QDialogButtonBox::Ok );
+	cancelButton = dialogButtonBox->addButton( QDialogButtonBox::Cancel );
+	mainLayout->addWidget(dialogButtonBox);
+	okButton->setEnabled(false);
+	cancelButton->setFocus();
+	cancelButton->setDefault(true);
+	connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 	dialogWidget().partWidget().init(&partition());
 
@@ -111,7 +125,7 @@ void PartPropsDialog::setupDialog()
 		if (partition().roles().has(PartitionRole::Extended))
 			statusText = i18nc("@label partition state", "At least one logical partition is mounted.");
 		else if (!partition().mountPoint().isEmpty())
-			statusText = i18nc("@label partition state", "mounted on <filename>%1</filename>", mp);
+			statusText = xi18nc("@label partition state", "mounted on <filename>%1</filename>", mp);
 		else
 			statusText = i18nc("@label partition state", "mounted");
 	}
@@ -129,10 +143,10 @@ void PartPropsDialog::setupDialog()
 	{
 		const qint64 availPercent = (partition().fileSystem().length() - partition().fileSystem().sectorsUsed()) * 100 / partition().fileSystem().length();
 
-		const QString availString = QString("%1% - %2")
+		const QString availString = QStringLiteral("%1% - %2")
 			.arg(availPercent)
 			.arg(Capacity::formatByteSize(partition().available()));
-		const QString usedString = QString("%1% - %2")
+		const QString usedString = QStringLiteral("%1% - %2")
 			.arg(100 - availPercent)
 			.arg(Capacity::formatByteSize(partition().used()));
 
@@ -145,9 +159,9 @@ void PartPropsDialog::setupDialog()
 		dialogWidget().used().setText(Capacity::invalidString());
 	}
 
-	dialogWidget().firstSector().setText(KGlobal::locale()->formatNumber(partition().firstSector(), 0));
-	dialogWidget().lastSector().setText(KGlobal::locale()->formatNumber(partition().lastSector(), 0));
-	dialogWidget().numSectors().setText(KGlobal::locale()->formatNumber(partition().length(), 0));
+	dialogWidget().firstSector().setText(QLocale().toString(partition().firstSector()));
+	dialogWidget().lastSector().setText(QLocale().toString(partition().lastSector()));
+	dialogWidget().numSectors().setText(QLocale().toString(partition().length()));
 
 	setupFlagsList();
 
@@ -179,13 +193,13 @@ void PartPropsDialog::setupFlagsList()
 void PartPropsDialog::updateHideAndShow()
 {
 	// create a temporary fs for some checks
-	const FileSystem* fs = FileSystemFactory::create(newFileSystemType(), -1, -1, -1, "");
+	const FileSystem* fs = FileSystemFactory::create(newFileSystemType(), -1, -1, -1, QString());
 
 	if (fs == NULL || fs->supportSetLabel() == FileSystem::cmdSupportNone)
 	{
 		dialogWidget().label().setReadOnly(true);
 		dialogWidget().noSetLabel().setVisible(true);
-		dialogWidget().noSetLabel().setFont(KGlobalSettings::smallestReadableFont());
+		dialogWidget().noSetLabel().setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
 
 		QPalette palette = dialogWidget().noSetLabel().palette();
 		QColor f = palette.color(QPalette::Foreground);
@@ -264,8 +278,8 @@ void PartPropsDialog::setupConnections()
 
 void PartPropsDialog::setDirty()
 {
-	setDefaultButton(KDialog::Ok);
-	enableButtonOk(true);
+	okButton->setEnabled(true);
+	okButton->setDefault(true);
 }
 
 void PartPropsDialog::setupFileSystemComboBox()
@@ -309,7 +323,7 @@ void PartPropsDialog::setupFileSystemComboBox()
 
 	dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));
 
-	const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, "");
+	const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, QString());
 	dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
 }
 
@@ -324,18 +338,18 @@ void PartPropsDialog::updatePartitionFileSystem()
 void PartPropsDialog::onFilesystemChanged(int)
 {
 	if (partition().state() == Partition::StateNew || warnFileSystemChange() || KMessageBox::warningContinueCancel(this,
-			i18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.</warning></para>"
+			xi18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.<warning></para>"
 				"<para>Changing the file system on a partition already on disk will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filename>%1</filename> will unrecoverably be lost.</para>", partition().deviceNode()),
-			i18nc("@title:window", "Really Recreate <filename>%1</filename> with File System %2?", partition().deviceNode(), dialogWidget().fileSystem().currentText()),
-			KGuiItem(i18nc("@action:button", "Change the File System"), "arrow-right"),
-			KGuiItem(i18nc("@action:button", "Do Not Change the File System"), "dialog-cancel"), "reallyChangeFileSystem") == KMessageBox::Continue)
+			xi18nc("@title:window", "Really Recreate <filename>%1</filename> with File System %2?", partition().deviceNode(), dialogWidget().fileSystem().currentText()),
+			KGuiItem(i18nc("@action:button", "Change the File System"), QStringLiteral("arrow-right")),
+			KGuiItem(i18nc("@action:button", "Do Not Change the File System"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyChangeFileSystem")) == KMessageBox::Continue)
 	{
 		setDirty();
 		updateHideAndShow();
 		setWarnFileSystemChange();
 		updatePartitionFileSystem();
 
-		const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, "");
+		const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, QString());
 		dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
 	}
 	else
@@ -349,11 +363,11 @@ void PartPropsDialog::onFilesystemChanged(int)
 void PartPropsDialog::onRecreate(int state)
 {
 	if (state == Qt::Checked && (warnFileSystemChange() || KMessageBox::warningContinueCancel(this,
-			i18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.</warning></para>"
-				"<para>Recreating a file system will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filename>%1</filename> will unrecoverably be lost.</para>", partition().deviceNode()),
-			i18nc("@title:window", "Really Recreate File System on <filename>%1</filename>?", partition().deviceNode()),
-			KGuiItem(i18nc("@action:button", "Recreate the File System"), "arrow-right"),
-			KGuiItem(i18nc("@action:button", "Do Not Recreate the File System"), "dialog-cancel"), "reallyRecreateFileSystem") == KMessageBox::Continue))
+			xi18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.</warning></para>"
+				"<para>Recreating a file system will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filesystem>%1</filesyste> will unrecoverably be lost.</p>", partition().deviceNode()),
+			xi18nc("@title:window", "Really Recreate File System on <filename>%1</filename>?", partition().deviceNode()),
+			KGuiItem(i18nc("@action:button", "Recreate the File System"), QStringLiteral("arrow-right")),
+			KGuiItem(i18nc("@action:button", "Do Not Recreate the File System"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyRecreateFileSystem")) == KMessageBox::Continue))
 	{
 		setDirty();
 		setWarnFileSystemChange();

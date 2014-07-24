@@ -50,7 +50,7 @@ class SetPartFlagsOperation : public Operation
 		SetPartFlagsOperation(Device& d, Partition& p, const PartitionTable::Flags& flags);
 
 	public:
-		QString iconName() const { return "flag-blue"; }
+		QString iconName() const { return QStringLiteral("flag-blue"); }
 		QString description() const;
 		void preview();
 		void undo();

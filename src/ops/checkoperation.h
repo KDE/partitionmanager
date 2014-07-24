@@ -44,7 +44,7 @@ class CheckOperation : public Operation
 		CheckOperation(Device& targetDevice, Partition& checkedPartition);
 
 	public:
-		QString iconName() const { return "flag"; }
+		QString iconName() const { return QStringLiteral("flag"); }
 		QString description() const;
 		void preview() {}
 		void undo() {}

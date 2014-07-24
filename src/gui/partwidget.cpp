@@ -28,10 +28,7 @@
 #include <QPainter>
 #include <QStyleOptionButton>
 #include <QApplication>
-#include <QPlastiqueStyle>
-
-#include <kdebug.h>
-#include <kglobalsettings.h>
+#include <QFontDatabase>
 
 #include <config.h>
 
@@ -44,19 +41,20 @@ PartWidget::PartWidget(QWidget* parent, const Partition* p) :
 	m_Partition(NULL),
 	m_Active(false)
 {
-	setFont(KGlobalSettings::smallestReadableFont());
+	setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
 
 	// Check if user is running a GTK style; in that case, use plastique as a fallback
 	// style for the PartWidget to work around GTK styles not showing the FS colors
 	// correctly.
 	// Inspired by Aurélien Gâteau's similar workaround in Gwenview (230aebbd)
-	if (qstrcmp(QApplication::style()->metaObject()->className(), "QGtkStyle") == 0)
+	//FIXME: port KF5. Is this still necessary?
+	/*if (qstrcmp(QApplication::style()->metaObject()->className(), "QGtkStyle") == 0)
 	{
 		QStyle* style = new QPlastiqueStyle();
 		style->setParent(this);
 		setStyle(style);
-	}
-	
+	}*/
+
 	init(p);
 }
 
@@ -65,7 +63,7 @@ void PartWidget::init(const Partition* p)
 	m_Partition = p;
 
 	if (partition())
-		setToolTip(partition()->deviceNode() + '\n' + partition()->fileSystem().name() + ' ' + Capacity::formatByteSize(partition()->capacity()));
+		setToolTip(partition()->deviceNode() + QStringLiteral("\n") + partition()->fileSystem().name() + QStringLiteral(" ") + QString(Capacity::formatByteSize(partition()->capacity())));
 	else
 		setToolTip(QString());
 
@@ -139,7 +137,7 @@ void PartWidget::paintEvent(QPaintEvent*)
 		drawGradient(&painter, base, QRect(0, 0, width(), height()), isActive());
 
 	// draw name and size
-	QString text = partition()->deviceNode().remove("/dev/") + '\n' + Capacity::formatByteSize(partition()->capacity());
+	QString text = partition()->deviceNode().remove(QStringLiteral("/dev/")) + QStringLiteral("\n") + QString(Capacity::formatByteSize(partition()->capacity()));
 
 	const QRect textRect(0, 0, width() - 1, height() - 1);
 	const QRect boundingRect = painter.boundingRect(textRect, Qt::AlignVCenter | Qt::AlignHCenter, text);

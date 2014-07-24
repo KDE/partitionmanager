@@ -25,7 +25,7 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new SetFileSystemLabelJob
 	@param p the Partition the FileSystem whose label is to be set is on
@@ -48,7 +48,7 @@ bool SetFileSystemLabelJob::run(Report& parent)
 	// just ignore the request and say all is well. This helps in operations because
 	// we don't have to check for support to avoid having a failed job.
 	if (partition().fileSystem().supportSetLabel() == FileSystem::cmdSupportNone)
-		report->line() << i18nc("@info/plain", "File system on partition <filename>%1</filename> does not support setting labels. Job ignored.", partition().deviceNode());
+		report->line() << xi18nc("@info/plain", "File system on partition <filename>%1</filename> does not support setting labels. Job ignored.", partition().deviceNode());
 	else if (partition().fileSystem().supportSetLabel() == FileSystem::cmdSupportFileSystem)
 	{
 		rval = partition().fileSystem().writeLabel(*report, partition().deviceNode(), label());
@@ -58,11 +58,11 @@ bool SetFileSystemLabelJob::run(Report& parent)
 	}
 
 	jobFinished(*report, rval);
-		
+
 	return rval;
 }
 
 QString SetFileSystemLabelJob::description() const
 {
-	return i18nc("@info/plain", "Set the file system label on partition <filename>%1</filename> to \"%2\"", partition().deviceNode(), label());
+	return xi18nc("@info/plain", "Set the file system label on partition <filename>%1</filename> to \"%2\"", partition().deviceNode(), label());
 }

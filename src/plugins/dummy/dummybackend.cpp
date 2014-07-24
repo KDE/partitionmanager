@@ -32,32 +32,27 @@
 #include <QString>
 #include <QStringList>
 
-#include <kdebug.h>
-#include <klocale.h>
-#include <kpluginfactory.h>
-#include <kaboutdata.h>
+#include <KLocalizedString>
+#include <KPluginFactory>
+#include <KAboutData>
 
 K_PLUGIN_FACTORY(DummyBackendFactory, registerPlugin<DummyBackend>(); )
 
 static KAboutData createPluginAboutData()
 {
 	KAboutData about(
-		"pmdummybackendplugin",
-		NULL,
-		ki18nc("@title", "Dummy Backend Plugin"),
-		QString(VERSION).toUtf8(),
-		ki18n("KDE Partition Manager dummy backend."),
-		KAboutData::License_GPL,
-		ki18n("Copyright 2010 Volker Lanz"));
+		QStringLiteral("pmdummybackendplugin"),
+		i18nc("@title", "Dummy Backend Plugin"),
+		QString::fromLatin1(VERSION),
+		i18n("KDE Partition Manager dummy backend."),
+		KAboutLicense::GPL,
+		i18n("Copyright 2010 Volker Lanz"));
 
-	about.addAuthor(ki18nc("@info:credit", "Volker Lanz"));
-	about.setHomepage("http://www.partitionmanager.org");
+	about.addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Former maintainer"));
+	about.setHomepage(QStringLiteral("http://www.partitionmanager.org"));
 
 	return about;
 }
-
-K_EXPORT_PLUGIN(DummyBackendFactory(createPluginAboutData()))
-
 
 DummyBackend::DummyBackend(QObject*, const QList<QVariant>&) :
 	CoreBackend()
@@ -71,20 +66,20 @@ void DummyBackend::initFSSupport()
 QList<Device*> DummyBackend::scanDevices()
 {
 	QList<Device*> result;
-	result.append(scanDevice("/dev/sda"));
+	result.append(scanDevice(QStringLiteral("/dev/sda")));
 
-	emitScanProgress("/dev/sda", 100);
+	emitScanProgress(QStringLiteral("/dev/sda"), 100);
 
 	return result;
 }
 
 Device* DummyBackend::scanDevice(const QString& device_node)
 {
-	Device* d = new Device("Dummy Device", QString("/tmp" + device_node), 255, 30, 63, 512);
+	Device* d = new Device(QStringLiteral("Dummy Device"), QStringLiteral("/tmp") + device_node, 255, 30, 63, 512);
 	CoreBackend::setPartitionTableForDevice(*d, new PartitionTable(PartitionTable::msdos_sectorbased, 2048, d->totalSectors() - 2048));
 	CoreBackend::setPartitionTableMaxPrimaries(*d->partitionTable(), 128);
 	d->partitionTable()->updateUnallocated(*d);
-	d->setIconName("drive-harddisk");
+	d->setIconName(QStringLiteral("drive-harddisk"));
 
 	CoreBackend::setPartitionTableMaxPrimaries(*d->partitionTable(), 4);
 
@@ -121,3 +116,5 @@ bool DummyBackend::closeDevice(CoreBackendDevice* core_device)
 {
 	return core_device->close();
 }
+
+#include "dummybackend.moc"

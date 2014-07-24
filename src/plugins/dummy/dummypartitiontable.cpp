@@ -28,9 +28,6 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
-#include <kdebug.h>
-
 #include <unistd.h>
 
 DummyPartitionTable::DummyPartitionTable() :
@@ -72,7 +69,7 @@ QString DummyPartitionTable::createPartition(Report& report, const Partition& pa
 	Q_UNUSED(report);
 	Q_UNUSED(partition);
 
-	return "dummy";
+	return QStringLiteral("dummy");
 }
 
 bool DummyPartitionTable::deletePartition(Report& report, const Partition& partition)

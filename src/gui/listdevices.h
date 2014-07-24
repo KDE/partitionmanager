@@ -44,7 +44,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui:
 	public:
 		ListDevices(QWidget* parent = NULL);
 
-	signals:
+	Q_SIGNALS:
 		void selectionChanged(const QString& device_node);
 		void deviceDoubleClicked(const QString& device_node);
 		void contextMenuRequested(const QPoint&);
@@ -53,7 +53,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui:
 		void setActionCollection(KActionCollection* coll) { m_ActionCollection = coll; }
 		bool setSelectedDevice(const QString& device_node);
 
-	public slots:
+	public Q_SLOTS:
 		void updateDevices(OperationStack::Devices& devices);
 
 	protected:
@@ -61,7 +61,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListDevices : public QWidget, public Ui:
 		const QListWidget& listDevices() const { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
 		KActionCollection* actionCollection() { return m_ActionCollection; }
 
-	protected slots:
+	protected Q_SLOTS:
 		void on_m_ListDevices_itemSelectionChanged();
 		void on_m_ListDevices_customContextMenuRequested(const QPoint& pos);
 		void on_m_ListDevices_itemDoubleClicked(QListWidgetItem* list_item);

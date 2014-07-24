@@ -25,8 +25,7 @@
 #include "util/globallog.h"
 #include "util/report.h"
 
-#include <klocale.h>
-#include <kdebug.h>
+#include <KLocalizedString>
 
 #include <unistd.h>
 
@@ -49,7 +48,7 @@ bool LibPartedDevice::open()
 	if (pedDevice())
 		return false;
 
-	m_PedDevice = ped_device_get(deviceNode().toAscii());
+	m_PedDevice = ped_device_get(deviceNode().toLatin1().constData());
 
 	return m_PedDevice != NULL;
 }
@@ -93,19 +92,19 @@ CoreBackendPartitionTable* LibPartedDevice::openPartitionTable()
 
 bool LibPartedDevice::createPartitionTable(Report& report, const PartitionTable& ptable)
 {
-	PedDiskType* pedDiskType = ped_disk_type_get(ptable.typeName().toAscii());
+	PedDiskType* pedDiskType = ped_disk_type_get(ptable.typeName().toLatin1().constData());
 
 	if (pedDiskType == NULL)
 	{
-		report.line() << i18nc("@info/plain", "Creating partition table failed: Could not retrieve partition table type \"%1\" for <filename>%2</filename>.", ptable.typeName(), deviceNode());
+		report.line() << xi18nc("@info/plain", "Creating partition table failed: Could not retrieve partition table type \"%1\" for <filename>%2</filename>.", ptable.typeName(), deviceNode());
 		return false;
 	}
 
-	PedDevice* dev = ped_device_get(deviceNode().toAscii());
+	PedDevice* dev = ped_device_get(deviceNode().toLatin1().constData());
 
 	if (dev == NULL)
 	{
-		report.line() << i18nc("@info/plain", "Creating partition table failed: Could not open backend device <filename>%1</filename>.", deviceNode());
+		report.line() << xi18nc("@info/plain", "Creating partition table failed: Could not open backend device <filename>%1</filename>.", deviceNode());
 		return false;
 	}
 
@@ -113,7 +112,7 @@ bool LibPartedDevice::createPartitionTable(Report& report, const PartitionTable&
 
 	if (disk == NULL)
 	{
-		report.line() << i18nc("@info/plain", "Creating partition table failed: Could not create a new partition table in the backend for device <filename>%1</filename>.", deviceNode());
+		report.line() << xi18nc("@info/plain", "Creating partition table failed: Could not create a new partition table in the backend for device <filename>%1</filename>.", deviceNode());
 		return false;
 	}
 

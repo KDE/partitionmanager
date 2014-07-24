@@ -29,8 +29,9 @@
 
 #include "util/report.h"
 
-#include <klocale.h>
-#include <kdebug.h>
+#include <QDebug>
+
+#include <KLocalizedString>
 
 /** Creates a new ShredFileSystemJob
 	@param d the Device the FileSystem is on
@@ -54,7 +55,7 @@ bool ShredFileSystemJob::run(Report& parent)
 
 	if (device().deviceNode() != partition().devicePath())
 	{
-		kWarning() << "deviceNode: " << device().deviceNode() << ", partition path: " << partition().devicePath();
+		qWarning() << "deviceNode: " << device().deviceNode() << ", partition path: " << partition().devicePath();
 		return false;
 	}
 
@@ -70,7 +71,7 @@ bool ShredFileSystemJob::run(Report& parent)
 		if (!copySource.open())
 			report->line() << i18nc("@info/plain", "Could not open random data source to overwrite file system.");
 		else if (!copyTarget.open())
-			report->line() << i18nc("@info/plain", "Could not open target partition <filename>%1</filename> to restore to.", partition().deviceNode());
+			report->line() << xi18nc("@info/plain", "Could not open target partition <filename>%1</filename> to restore to.", partition().deviceNode());
 		else
 		{
 			rval = copyBlocks(*report, copyTarget, copySource);
@@ -85,5 +86,5 @@ bool ShredFileSystemJob::run(Report& parent)
 
 QString ShredFileSystemJob::description() const
 {
-	return i18nc("@info/plain", "Shred the file system on <filename>%1</filename>", partition().deviceNode());
+	return xi18nc("@info/plain", "Shred the file system on <filename>%1</filename>", partition().deviceNode());
 }

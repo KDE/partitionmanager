@@ -62,7 +62,7 @@
        </widget>
       </item>
       <item>
-       <widget class="KComboBox" name="m_ComboBackend"/>
+       <widget class="QComboBox" name="m_ComboBackend"/>
       </item>
      </layout>
     </widget>
@@ -90,7 +90,7 @@
        </widget>
       </item>
       <item>
-       <widget class="KComboBox" name="kcfg_preferredUnit">
+       <widget class="QComboBox" name="kcfg_preferredUnit">
         <item>
          <property name="text">
           <string>Byte</string>
@@ -133,13 +133,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

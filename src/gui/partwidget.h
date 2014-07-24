@@ -23,8 +23,6 @@
 
 #include "gui/partwidgetbase.h"
 
-#include <kdebug.h>
-
 class Partition;
 
 class QPaintEvent;

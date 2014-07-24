@@ -43,7 +43,7 @@ class NewDialog : public SizeDialogBase
 		NewDialog(QWidget* parent, Device& device, Partition& unallocatedPartition, PartitionRole::Roles r);
 		~NewDialog();
 
-	protected slots:
+	protected Q_SLOTS:
 		void accept();
 		void onRoleChanged(bool);
 		void onFilesystemChanged(int);

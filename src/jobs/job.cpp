@@ -27,12 +27,12 @@
 
 #include "util/report.h"
 
+#include <QDebug>
 #include <QIcon>
 #include <QTime>
 
-#include <kdebug.h>
-#include <klocale.h>
-#include <kiconloader.h>
+#include <KIconThemes/KIconLoader>
+#include <KLocalizedString>
 
 Job::Job() :
 	m_Status(Pending)
@@ -103,7 +103,7 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 		Q_ASSERT(lastBlock < blockSize);
 
 		if (lastBlock >= blockSize)
-			kWarning() << "lastBlock: " << lastBlock << ", blockSize: " << blockSize;
+			qWarning() << "lastBlock: " << lastBlock << ", blockSize: " << blockSize;
 
 		const qint64 lastBlockReadOffset = copyDir > 0 ? readOffset + blockSize * blocksCopied : source.firstSector();
 		const qint64 lastBlockWriteOffset = copyDir > 0 ? writeOffset + blockSize * blocksCopied : target.firstSector();
@@ -121,7 +121,7 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 
 	free(buffer);
 
- 	report.line() << i18ncp("@info/plain argument 2 is a string such as 7 sectors (localized accordingly)", "Copying 1 block (%2) finished.", "Copying %1 blocks (%2) finished.", blocksCopied, i18np("1 sector", "%1 sectors", target.sectorsWritten()));
+	report.line() << i18ncp("@info/plain argument 2 is a string such as 7 sectors (localized accordingly)", "Copying 1 block (%2) finished.", "Copying %1 blocks (%2) finished.", blocksCopied, i18np("1 sector", "%1 sectors", target.sectorsWritten()));
 
 	return rval;
 }
@@ -162,14 +162,14 @@ bool Job::rollbackCopyBlocks(Report& report, CopyTarget& origTarget, CopySource&
 		CopySourceDevice undoSource(ctd.device(), undoSourceFirstSector, undoSourceLastSector);
 		if (!undoSource.open())
 		{
-			report.line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> to rollback copying.", ctd.device().deviceNode());
+			report.line() << xi18nc("@info/plain", "Could not open device <filename>%1</filename> to rollback copying.", ctd.device().deviceNode());
 			return false;
 		}
 
 		CopyTargetDevice undoTarget(csd.device(), undoTargetFirstSector, undoTargetLastSector);
 		if (!undoTarget.open())
 		{
-			report.line() << i18nc("@info/plain", "Could not open device <filename>%1</filename> to rollback copying.", csd.device().deviceNode());
+			report.line() << xi18nc("@info/plain", "Could not open device <filename>%1</filename> to rollback copying.", csd.device().deviceNode());
 			return false;
 		}
 
@@ -192,7 +192,7 @@ Report* Job::jobStarted(Report& parent)
 {
 	emit started();
 
- 	return parent.newChild(i18nc("@info/plain", "Job: %1", description()));
+	return parent.newChild(i18nc("@info/plain", "Job: %1", description()));
 }
 
 void Job::jobFinished(Report& report, bool b)
@@ -207,11 +207,11 @@ void Job::jobFinished(Report& report, bool b)
 /** @return the Job's current status icon */
 QIcon Job::statusIcon() const
 {
-	static const char* icons[] =
+	static const QString icons[] =
 	{
-		"dialog-information",
-		"dialog-ok",
-		"dialog-error"
+		QStringLiteral("dialog-information"),
+		QStringLiteral("dialog-ok"),
+		QStringLiteral("dialog-error")
 	};
 
 	Q_ASSERT(status() >= 0 && static_cast<quint32>(status()) < sizeof(icons) / sizeof(icons[0]));
@@ -219,7 +219,7 @@ QIcon Job::statusIcon() const
 	if (status() < 0 || static_cast<quint32>(status()) >= sizeof(icons) / sizeof(icons[0]))
 		return QIcon();
 
-	return SmallIcon(icons[status()]);
+	return QIcon(KIconLoader().loadIcon(icons[status()], KIconLoader::Small));
 }
 
 /** @return the Job's current status text */

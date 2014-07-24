@@ -25,9 +25,9 @@
 
 #include <QString>
 #include <QRegExp>
+#include <QTemporaryDir>
 
-#include <klocale.h>
-#include <ktempdir.h>
+#include <KLocalizedString>
 
 namespace FS
 {
@@ -51,13 +51,13 @@ namespace FS
 
 	void btrfs::init()
 	{
-		m_Create = findExternal("mkfs.btrfs") ? cmdSupportFileSystem : cmdSupportNone;
-		m_Check = findExternal("btrfsck", QStringList(), 1) ? cmdSupportFileSystem : cmdSupportNone;
-		m_Grow = (m_Check != cmdSupportNone && findExternal("btrfs")) ? cmdSupportFileSystem : cmdSupportNone;
-		m_GetUsed = findExternal("btrfs-debug-tree") ? cmdSupportFileSystem : cmdSupportNone;
+		m_Create = findExternal(QStringLiteral("mkfs.btrfs")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Check = findExternal(QStringLiteral("btrfsck"), QStringList(), 1) ? cmdSupportFileSystem : cmdSupportNone;
+		m_Grow = (m_Check != cmdSupportNone && findExternal(QStringLiteral("btrfs"))) ? cmdSupportFileSystem : cmdSupportNone;
+		m_GetUsed = findExternal(QStringLiteral("btrfs-debug-tree")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Shrink = (m_Grow != cmdSupportNone && m_GetUsed != cmdSupportNone) ? cmdSupportFileSystem : cmdSupportNone;
 
-		m_SetLabel = findExternal("btrfs") ? cmdSupportFileSystem : cmdSupportNone;
+		m_SetLabel = findExternal(QStringLiteral("btrfs")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_UpdateUUID = cmdSupportNone;
 
 		m_Copy = (m_Check != cmdSupportNone) ? cmdSupportCore : cmdSupportNone;
@@ -87,7 +87,7 @@ namespace FS
 
 	FileSystem::SupportTool btrfs::supportToolName() const
 	{
-		return SupportTool("btrfs-tools", KUrl("http://btrfs.wiki.kernel.org/"));
+		return SupportTool(QStringLiteral("btrfs-tools"), QUrl(QStringLiteral("http://btrfs.wiki.kernel.org/")));
 	}
 
 	qint64 btrfs::minCapacity() const
@@ -107,11 +107,11 @@ namespace FS
 
 	qint64 btrfs::readUsedCapacity(const QString& deviceNode) const
 	{
-		ExternalCommand cmd("btrfs-debug-tree", QStringList() << deviceNode);
+		ExternalCommand cmd(QStringLiteral("btrfs-debug-tree"), QStringList() << deviceNode);
 
 		if (cmd.run())
 		{
-			QRegExp rxBytesUsed(" bytes used (\\d+)");
+			QRegExp rxBytesUsed(QStringLiteral(" bytes used (\\d+)"));
 
 			if (rxBytesUsed.indexIn(cmd.output()) != -1)
 				return rxBytesUsed.cap(1).toLongLong();
@@ -122,52 +122,52 @@ namespace FS
 
 	bool btrfs::check(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "btrfsck", QStringList() << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("btrfsck"), QStringList() << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool btrfs::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, "mkfs.btrfs", QStringList() << "-f" << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("mkfs.btrfs"), QStringList() << QStringLiteral("-f") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool btrfs::resize(Report& report, const QString& deviceNode, qint64 length) const
 	{
-		KTempDir tempDir;
-		if (!tempDir.exists())
+		QTemporaryDir tempDir;
+		if (!tempDir.isValid())
 		{
-			report.line() << i18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: Could not create temp dir.", deviceNode);
+			report.line() << xi18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: Could not create temp dir.", deviceNode);
 			return false;
 		}
 
 		bool rval = false;
 
-		ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << "-t" << "btrfs" << deviceNode << tempDir.name());
+		ExternalCommand mountCmd(report, QStringLiteral("mount"), QStringList() << QStringLiteral("-v") << QStringLiteral("-t") << QStringLiteral("btrfs") << deviceNode << tempDir.path());
 
 		if (mountCmd.run(-1) && mountCmd.exitCode() == 0)
 		{
-			ExternalCommand resizeCmd(report, "btrfs", QStringList() << "filesystem" << "resize" << QString::number(length) << tempDir.name());
-			
+			ExternalCommand resizeCmd(report, QStringLiteral("btrfs"), QStringList() << QStringLiteral("filesystem") << QStringLiteral("resize") << QString::number(length) << tempDir.path());
+
 			if (resizeCmd.run(-1) && resizeCmd.exitCode() == 0)
 				rval = true;
 			else
-				report.line() << i18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: btrfs file system resize failed.", deviceNode);
+				report.line() << xi18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: btrfs file system resize failed.", deviceNode);
 
-			ExternalCommand unmountCmd(report, "umount", QStringList() << tempDir.name());
+			ExternalCommand unmountCmd(report, QStringLiteral("umount"), QStringList() << tempDir.path());
 
 			if (!unmountCmd.run(-1) && unmountCmd.exitCode() == 0 )
-				report.line() << i18nc("@info/plain", "Warning: Resizing Btrfs file system on partition <filename>%1</filename>: Unmount failed.", deviceNode);
+				report.line() << xi18nc("@info/plain", "Warning: Resizing Btrfs file system on partition <filename>%1</filename>: Unmount failed.", deviceNode);
 		}
 		else
-			report.line() << i18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
+			report.line() << xi18nc("@info/plain", "Resizing Btrfs file system on partition <filename>%1</filename> failed: Initial mount failed.", deviceNode);
 
 		return rval;
 	}
 
 	bool btrfs::writeLabel(Report& report, const QString& deviceNode, const QString& newLabel)
 	{
-		ExternalCommand cmd(report, "btrfs", QStringList() << "filesystem" << "label" << deviceNode << newLabel);
+		ExternalCommand cmd(report, QStringLiteral("btrfs"), QStringList() << QStringLiteral("filesystem") << QStringLiteral("label") << deviceNode << newLabel);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 

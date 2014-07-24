@@ -32,8 +32,9 @@
 #include "util/report.h"
 #include "util/capacity.h"
 
-#include <klocale.h>
-#include <kdebug.h>
+#include <QDebug>
+
+#include <KLocalizedString>
 
 /** Creates a new ResizeFileSystemJob
 	@param d the Device the FileSystem to be resized is on
@@ -62,7 +63,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 
 	if (partition().fileSystem().firstSector() == -1 || partition().fileSystem().lastSector() == -1 || newLength() > partition().length())
 	{
-		kWarning() << "file system first sector: " << partition().fileSystem().firstSector() << ", last sector: " << partition().fileSystem().lastSector() << ", new length: " << newLength() << ", partition length: " << partition().length();
+		qWarning() << "file system first sector: " << partition().fileSystem().firstSector() << ", last sector: " << partition().fileSystem().lastSector() << ", new length: " << newLength() << ", partition length: " << partition().length();
 		return false;
 	}
 
@@ -72,7 +73,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 
 	if (partition().fileSystem().length() == newLength())
 	{
-		report->line() << i18ncp("@info/plain", "The file system on partition <filename>%2</filename> already has the requested length of 1 sector.", "The file system on partition <filename>%2</filename> already has the requested length of %1 sectors.", newLength(), partition().deviceNode());
+		report->line() << xi18ncp("@info/plain", "The file system on partition <filename>%2</filename> already has the requested length of 1 sector.", "The file system on partition <filename>%2</filename> already has the requested length of %1 sectors.", newLength(), partition().deviceNode());
 		rval = true;
 	}
 	else
@@ -99,7 +100,7 @@ bool ResizeFileSystemJob::run(Report& parent)
 			}
 
 			default:
-				report->line() << i18nc("@info/plain", "The file system on partition <filename>%1</filename> cannot be resized because there is no support for it.", partition().deviceNode());
+				report->line() << xi18nc("@info/plain", "The file system on partition <filename>%1</filename> cannot be resized because there is no support for it.", partition().deviceNode());
 				break;
 		}
 
@@ -137,12 +138,12 @@ bool ResizeFileSystemJob::resizeFileSystemBackend(Report& report)
 			delete backendPartitionTable;
 		}
 		else
-			report.line() << i18nc("@info/plain", "Could not open partition <filename>%1</filename> while trying to resize the file system.", partition().deviceNode());
+			report.line() << xi18nc("@info/plain", "Could not open partition <filename>%1</filename> while trying to resize the file system.", partition().deviceNode());
 
 		delete backendDevice;
 	}
 	else
-		report.line() << i18nc("@info/plain", "Could not read geometry for partition <filename>%1</filename> while trying to resize the file system.", partition().deviceNode());
+		report.line() << xi18nc("@info/plain", "Could not read geometry for partition <filename>%1</filename> while trying to resize the file system.", partition().deviceNode());
 
 	return rval;
 }
@@ -150,7 +151,7 @@ bool ResizeFileSystemJob::resizeFileSystemBackend(Report& report)
 QString ResizeFileSystemJob::description() const
 {
 	if (isMaximizing())
-		return i18nc("@info/plain", "Maximize file system on <filename>%1</filename> to fill the partition", partition().deviceNode());
+		return xi18nc("@info/plain", "Maximize file system on <filename>%1</filename> to fill the partition", partition().deviceNode());
 
-	return i18ncp("@info/plain", "Resize file system on partition <filename>%2</filename> to 1 sector", "Resize file system on partition <filename>%2</filename> to %1 sectors", newLength(), partition().deviceNode());
+	return xi18ncp("@info/plain", "Resize file system on partition <filename>%2</filename> to 1 sector", "Resize file system on partition <filename>%2</filename> to %1 sectors", newLength(), partition().deviceNode());
 }

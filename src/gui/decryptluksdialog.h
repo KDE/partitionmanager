@@ -23,16 +23,16 @@
 
 #include "gui/decryptluksdialogwidget.h"
 
-#include <KDialog>
+#include <QDialog>
 
 class Device;
 
-class DecryptLuksDialog : public KDialog
+class DecryptLuksDialog : public QDialog
 {
 	Q_OBJECT
 
 	public:
-		DecryptLuksDialog(/*QWidget* parent, */const QString& deviceNode);
+		DecryptLuksDialog(QWidget* parent, const QString& deviceNode);
 
 	protected:
 		DecryptLuksDialogWidget& widget() { return *m_DialogWidget; }
@@ -44,11 +44,11 @@ class DecryptLuksDialog : public KDialog
 		const QString& m_DeviceNode;
 
 	public:
-		KLineEdit& luksName() { return widget().luksName(); }
-		const KLineEdit& luksName() const { return widget().luksName(); }
+		QLineEdit& luksName() { return widget().luksName(); }
+		const QLineEdit& luksName() const { return widget().luksName(); }
 
-		KLineEdit& luksPassphrase() { return widget().luksPassphrase(); }
-		const KLineEdit& luksPassphrase() const { return widget().luksPassphrase(); }
+		QLineEdit& luksPassphrase() { return widget().luksPassphrase(); }
+		const QLineEdit& luksPassphrase() const { return widget().luksPassphrase(); }
 };
 
 

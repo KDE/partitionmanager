@@ -52,7 +52,7 @@ class CreateFileSystemOperation : public Operation
 		~CreateFileSystemOperation();
 
 	public:
-		QString iconName() const { return "draw-eraser"; }
+		QString iconName() const { return QStringLiteral("draw-eraser"); }
 		QString description() const;
 		void preview();
 		void undo();

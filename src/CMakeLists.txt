@@ -30,13 +30,26 @@ file(GLOB partitionmanagerprivate_SRCS
 
 file(GLOB partitionmanagerprivate_UIFILES config/*.ui gui/*.ui)
 
-kde4_add_ui_files(partitionmanagerprivate_SRCS ${partitionmanagerprivate_UIFILES})
+qt5_wrap_ui(partitionmanagerprivate_SRCS ${partitionmanagerprivate_UIFILES})
 
-kde4_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
+kconfig_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
+install(FILES config.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 
-kde4_add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
 
-target_link_libraries(partitionmanagerprivate libfatlabel ${KDE4_KDECORE_LIBS} ${KDE4_KFILE_LIBS} ${KDE4_KIO_LIBS} ${UUID_LIBRARIES} ${BLKID_LIBRARIES} ${LIBATASMART_LIBRARIES} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS})
+add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
+generate_export_header(partitionmanagerprivate EXPORT_FILE_NAME libpartitionmanager_export.h)
+target_link_libraries( partitionmanagerprivate libfatlabel
+    ${UUID_LIBRARIES} ${BLKID_LIBRARIES} ${LIBATASMART_LIBRARIES}
+    KF5::I18n
+    KF5::IconThemes
+    KF5::JobWidgets
+    KF5::KIOCore
+    KF5::KIOWidgets
+    KF5::Service
+    KF5::Solid
+    KF5::XmlGui
+    KF5::WidgetsAddons
+)
 
 install(TARGETS partitionmanagerprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -44,11 +57,9 @@ install(TARGETS partitionmanagerprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 file(GLOB partitionmanager_SRCS	main.cpp)
 
-kde4_add_app_icon(partitionmanager_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../icons/hi*-apps-partitionmanager.png")
+add_executable(partitionmanager ${partitionmanager_SRCS})
 
-kde4_add_executable(partitionmanager ${partitionmanager_SRCS})
-
-target_link_libraries(partitionmanager partitionmanagerprivate ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS})
+target_link_libraries(partitionmanager partitionmanagerprivate)
 
 install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/partitionmanager.appdata.xml DESTINATION share/appdata)

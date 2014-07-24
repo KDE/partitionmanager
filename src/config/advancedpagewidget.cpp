@@ -23,6 +23,8 @@
 
 #include "util/helpers.h"
 
+#include <QComboBox>
+
 #include <config.h>
 
 AdvancedPageWidget::AdvancedPageWidget(QWidget* parent) :

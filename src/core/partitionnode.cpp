@@ -24,9 +24,6 @@
 
 #include "fs/filesystem.h"
 
-
-#include <kdebug.h>
-
 /** Tries to find the predecessor for a Partition.
 	@param p the Partition to find a predecessor for
 	@return pointer to the predecessor or NULL if none was found
@@ -151,7 +148,7 @@ Partition* PartitionNode::findPartitionBySector(qint64 s, const PartitionRole& r
 		foreach (Partition* child, p->children())
 			if ((child->roles().roles() & role.roles()) && s >= child->firstSector() && s <= child->lastSector())
 				return child;
-		
+
 		if ((p->roles().roles() & role.roles()) && s >= p->firstSector() && s <= p->lastSector())
 			return p;
 	}
@@ -201,7 +198,7 @@ qint32 PartitionNode::highestMountedChild() const
 	foreach (const Partition* p, children())
 		if (p->number() > result && p->isMounted())
 			result = p->number();
-	
+
 	return result;
 }
 

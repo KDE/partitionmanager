@@ -31,8 +31,7 @@
 
 #include <QString>
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new CreateFileSystemOperation.
 	@param d the Device to create the new FileSystem on
@@ -94,5 +93,5 @@ bool CreateFileSystemOperation::execute(Report& parent)
 
 QString CreateFileSystemOperation::description() const
 {
-	return QString(i18nc("@info/plain", "Create filesystem %1 on partition <filename>%2</filename>", newFileSystem()->name(), partition().deviceNode()));
+	return xi18nc("@info/plain", "Create filesystem %1 on partition <filename>%2</filename>", newFileSystem()->name(), partition().deviceNode());
 }

@@ -21,11 +21,10 @@
 
 #define APPLYPROGRESSDIALOG__H
 
-#include <kdialog.h>
-
-#include <QTimer>
-#include <QTime>
+#include <QDialog>
 #include <QString>
+#include <QTime>
+#include <QTimer>
 
 class OperationRunner;
 class Operation;
@@ -34,7 +33,7 @@ class ApplyProgressDialogWidget;
 class ApplyProgressDetailsWidget;
 class Report;
 
-
+class QDialogButtonBox;
 class QTreeWidgetItem;
 class QCloseEvent;
 class QKeyEvent;
@@ -45,7 +44,7 @@ class QKeyEvent;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class ApplyProgressDialog : public KDialog
+class ApplyProgressDialog : public QDialog
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(ApplyProgressDialog)
@@ -60,17 +59,20 @@ class ApplyProgressDialog : public KDialog
 		Report& report() { Q_ASSERT(m_Report); return *m_Report; } /**< @return the Report object for this dialog */
 		const Report& report() const { Q_ASSERT(m_Report); return *m_Report; } /**< @return the Report object for this dialog */
 
-	protected slots:
-		void slotButtonClicked(int);
+	protected Q_SLOTS:
 		void onAllOpsFinished();
 		void onAllOpsCancelled();
 		void onAllOpsError();
+		void onCancelButton();
+		void onDetailsButton();
+		void onOkButton();
 		void onOpStarted(int num, Operation* op);
 		void onOpFinished(int num, Operation* op);
 		void onJobStarted(Job* job, Operation* op);
 		void onJobFinished(Job* job, Operation* op);
 		void onSecondElapsed();
 		void saveReport();
+		void toggleDetails();
 		void browserReport();
 		void updateReport(bool force = false);
 
@@ -133,6 +135,11 @@ class ApplyProgressDialog : public KDialog
 		QTreeWidgetItem* m_CurrentOpItem;
 		QTreeWidgetItem* m_CurrentJobItem;
 		int m_LastReportUpdate;
+
+		QDialogButtonBox* dialogButtonBox;
+		QPushButton* okButton;
+		QPushButton* cancelButton;
+		QPushButton* detailsButton;
 
 		static const QString m_TimeFormat;
 };

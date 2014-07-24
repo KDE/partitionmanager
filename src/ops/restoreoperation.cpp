@@ -36,11 +36,11 @@
 #include "util/capacity.h"
 #include "util/report.h"
 
+#include <QDebug>
 #include <QString>
 #include <QFileInfo>
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new RestoreOperation.
 	@param d the Device to restore the Partition to
@@ -69,7 +69,7 @@ RestoreOperation::RestoreOperation(Device& d, Partition* p, const QString& filen
 	Q_ASSERT(dest);
 
 	if (dest == NULL)
-		kWarning() << "destination partition not found at sector " << restorePartition().firstSector();
+		qWarning() << "destination partition not found at sector " << restorePartition().firstSector();
 
 	if (dest && !dest->roles().has(PartitionRole::Unallocated))
 	{
@@ -141,10 +141,10 @@ bool RestoreOperation::execute(Report& parent)
 				// or the image length, whichever is larger. If this fails, don't return an error, just
 				// warn the user.
 				if ((warning = !maximizeJob()->run(*report)))
-					report->line() << i18nc("@info/plain", "Warning: Maximizing file system on target partition <filename>%1</filename> to the size of the partition failed.", restorePartition().deviceNode());
+					report->line() << xi18nc("@info/plain", "Warning: Maximizing file system on target partition <filename>%1</filename> to the size of the partition failed.", restorePartition().deviceNode());
 			}
 			else
-				report->line() << i18nc("@info/plain", "Checking target file system on partition <filename>%1</filename> after the restore failed.", restorePartition().deviceNode());
+				report->line() << xi18nc("@info/plain", "Checking target file system on partition <filename>%1</filename> after the restore failed.", restorePartition().deviceNode());
 		}
 		else
 		{
@@ -170,9 +170,9 @@ bool RestoreOperation::execute(Report& parent)
 QString RestoreOperation::description() const
 {
 	if (overwrittenPartition())
-		return QString(i18nc("@info/plain", "Restore partition from <filename>%1</filename> to <filename>%2</filename>", fileName(), overwrittenPartition()->deviceNode()));
+		return xi18nc("@info/plain", "Restore partition from <filename>%1</filename> to <filename>%2</filename>", fileName(), overwrittenPartition()->deviceNode());
 
-	return QString(i18nc("@info/plain", "Restore partition on <filename>%1</filename> at %2 from <filename>%3</filename>", targetDevice().deviceNode(), Capacity::formatByteSize(restorePartition().firstSector() * targetDevice().logicalSectorSize()), fileName()));
+	return xi18nc("@info/plain", "Restore partition on <filename>%1</filename> at %2 from <filename>%3</filename>", targetDevice().deviceNode(), Capacity::formatByteSize(restorePartition().firstSector() * targetDevice().logicalSectorSize()), fileName());
 }
 
 void RestoreOperation::setOverwrittenPartition(Partition* p)
@@ -229,7 +229,7 @@ Partition* RestoreOperation::createRestorePartition(const Device& device, Partit
 		return NULL;
 
 	const qint64 end = start + fileInfo.size() / device.logicalSectorSize() - 1;
-	Partition* p = new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, "");
+	Partition* p = new Partition(&parent, device, PartitionRole(r), FileSystemFactory::create(FileSystem::Unknown, start, end), start, end, QString());
 
 	p->setState(Partition::StateRestore);
 	return p;

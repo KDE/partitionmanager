@@ -20,10 +20,9 @@
 #include "core/smartstatus.h"
 #include "core/smartattribute.h"
 
-#include <kdebug.h>
-#include <klocale.h>
-#include <kglobal.h>
+#include <KLocalizedString>
 
+#include <QDebug>
 #include <QString>
 #include <QStringList>
 
@@ -56,15 +55,15 @@ void SmartStatus::update()
 	uint64_t skPoweredOn = 0;
 	uint64_t skPowerCycles = 0;
 
-	if (sk_disk_open(devicePath().toLocal8Bit(), &skDisk) < 0)
+	if (sk_disk_open(devicePath().toLocal8Bit().constData(), &skDisk) < 0)
 	{
-		kDebug() << "smart disk open failed for " << devicePath() << ": " << strerror(errno);
+		qDebug() << "smart disk open failed for " << devicePath() << ": " << strerror(errno);
 		return;
 	}
 
 	if (sk_disk_smart_status(skDisk, &skSmartStatus) < 0)
 	{
-		kDebug() << "getting smart status failed for " << devicePath() << ": " << strerror(errno);
+		qDebug() << "getting smart status failed for " << devicePath() << ": " << strerror(errno);
 		sk_disk_free(skDisk);
 		return;
 	}
@@ -73,7 +72,7 @@ void SmartStatus::update()
 
 	if (sk_disk_smart_read_data(skDisk) < 0)
 	{
-		kDebug() << "reading smart data failed for " << devicePath() << ": " << strerror(errno);
+		qDebug() << "reading smart data failed for " << devicePath() << ": " << strerror(errno);
 		sk_disk_free(skDisk);
 		return;
 	}
@@ -81,17 +80,17 @@ void SmartStatus::update()
 	const SkIdentifyParsedData* skIdentify;
 
 	if (sk_disk_identify_parse(skDisk, &skIdentify) < 0)
-		kDebug() << "getting identify data failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting identify data failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 	{
-		setModelName(skIdentify->model);
-		setFirmware(skIdentify->firmware);
-		setSerial(skIdentify->serial);
+		setModelName(QString::fromUtf8(skIdentify->model));
+		setFirmware(QString::fromUtf8(skIdentify->firmware));
+		setSerial(QString::fromUtf8(skIdentify->serial));
 	}
 
 	const SkSmartParsedData* skParsed;
 	if (sk_disk_smart_parse(skDisk, &skParsed) < 0)
-		kDebug() << "parsing disk smart data failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "parsing disk smart data failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 	{
 		switch(skParsed->self_test_execution_status)
@@ -142,7 +141,7 @@ void SmartStatus::update()
 	SkSmartOverall overall;
 
 	if (sk_disk_smart_get_overall(skDisk, &overall) < 0)
-		kDebug() << "getting status failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting status failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 	{
 		switch(overall)
@@ -175,22 +174,22 @@ void SmartStatus::update()
 	}
 
 	if (sk_disk_smart_get_temperature(skDisk, &mkelvin) < 0)
-		kDebug() << "getting temp failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting temp failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 		setTemp(mkelvin);
 
 	if (sk_disk_smart_get_bad(skDisk, &skBadSectors) < 0)
-		kDebug() << "getting bad sectors failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting bad sectors failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 		setBadSectors(skBadSectors);
 
 	if (sk_disk_smart_get_power_on(skDisk, &skPoweredOn) < 0)
-		kDebug() << "getting powered on time failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting powered on time failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 		setPoweredOn(skPoweredOn);
 
 	if (sk_disk_smart_get_power_cycle(skDisk, &skPowerCycles) < 0)
-		kDebug() << "getting power cycles failed for " <<  devicePath() << ": " << strerror(errno);
+		qDebug() << "getting power cycles failed for " <<  devicePath() << ": " << strerror(errno);
 	else
 		setPowerCycles(skPowerCycles);
 
@@ -206,7 +205,7 @@ QString SmartStatus::tempToString(qint64 mkelvin)
 {
 	const double celsius = (mkelvin - 273150.0) / 1000.0;
 	const double fahrenheit = 9.0 * celsius / 5.0 + 32;
-	return i18nc("@item:intable degrees in Celsius and Fahrenheit", "%1° C / %2° F", KGlobal::locale()->formatNumber(celsius, 1), KGlobal::locale()->formatNumber(fahrenheit, 1));
+	return i18nc("@item:intable degrees in Celsius and Fahrenheit", "%1° C / %2° F", QLocale().toString(celsius, 1), QLocale().toString(fahrenheit, 1));
 }
 
 QString SmartStatus::selfTestStatusToString(SmartStatus::SelfTestStatus s)

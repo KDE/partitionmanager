@@ -21,11 +21,12 @@
 
 #include "util/report.h"
 
+#include <cstdlib>
+
 #include <QString>
 #include <QStringList>
 
-#include <KLocale>
-#include <KDebug>
+#include <KLocalizedString>
 
 /** Creates a new ExternalCommand instance without Report.
 	@param cmd the command to run
@@ -92,7 +93,7 @@ ExternalCommand::~ExternalCommand()
 
 void ExternalCommand::setup()
 {
-	setEnvironment(QStringList() << "LC_ALL=C" << QString("PATH=") + getenv("PATH"));
+	setEnvironment(QStringList() << QStringLiteral("LC_ALL=C") << QStringLiteral("PATH=") + QString::fromUtf8(getenv("PATH")));
 	setProcessChannelMode(MergedChannels);
 
 	processes = new QProcess[command().size()];
@@ -119,9 +120,9 @@ bool ExternalCommand::start(int timeout)
 		QString s;
 		for (unsigned int i = 0; i < command().size(); i++)
 		{
-			s += command()[i] + " " + args()[i].join(" ");
+			s += command()[i] + QStringLiteral(" ") + args()[i].join(QStringLiteral(" "));
 			if (i < command().size()-1)
-				s += " | ";
+				s += QStringLiteral(" | ");
 		}
 		report()->setCommand(i18nc("@info/plain", "Command: %1", s));
 	}
@@ -131,7 +132,7 @@ bool ExternalCommand::start(int timeout)
 		if (!processes[i].waitForStarted(timeout))
 		{
 			if  (report())
-				report()->line() << i18nc("@info/plain", "(Command timeout while starting \"%1\")", command()[i] + " " + args()[i].join(" "));
+				report()->line() << i18nc("@info/plain", "(Command timeout while starting \"%1\")", command()[i] + QStringLiteral(" ") + args()[i].join(QStringLiteral(" ")));
 
 			return false;
 		}
@@ -153,7 +154,7 @@ bool ExternalCommand::waitFor(int timeout)
 		if (!processes[i].waitForFinished(timeout))
 		{
 			if  (report())
-				report()->line() << i18nc("@info/plain", "(Command timeout while running \"%1\")", command()[i] + " " + args()[i].join(" "));
+				report()->line() << i18nc("@info/plain", "(Command timeout while running \"%1\")", command()[i] + QStringLiteral(" ") + args()[i].join(QStringLiteral(" ")));
 			return false;
 		}
 		onReadOutput();
@@ -172,7 +173,7 @@ bool ExternalCommand::run(int timeout)
 
 void ExternalCommand::onReadOutput()
 {
-	const QString s = QString(processes[command().size()-1].readAllStandardOutput());
+	const QString s = QString::fromUtf8(processes[command().size()-1].readAllStandardOutput());
 
 	m_Output += s;
 

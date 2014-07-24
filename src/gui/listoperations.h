@@ -45,13 +45,13 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListOperations : public QWidget, public 
 	public:
 		ListOperations(QWidget* parent = NULL);
 
-	signals:
+	Q_SIGNALS:
 		void contextMenuRequested(const QPoint&);
 
 	public:
 		void setActionCollection(KActionCollection* coll) { m_ActionCollection = coll; }
 
-	public slots:
+	public Q_SLOTS:
 		void updateOperations(const OperationStack::Operations& ops);
 
 	protected:
@@ -60,7 +60,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT ListOperations : public QWidget, public 
 		QListWidget& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 		const QListWidget& listOperations() const { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
 
-	protected slots:
+	protected Q_SLOTS:
 		void on_m_ListOperations_customContextMenuRequested(const QPoint& pos);
 
 	private:

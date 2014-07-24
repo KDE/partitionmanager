@@ -24,28 +24,25 @@
 
 #include "ops/operation.h"
 
-#include <klocale.h>
-#include <kaboutdata.h>
-#include <kmessagebox.h>
-#include <kglobal.h>
-#include <kcomponentdata.h>
-#include <kstandarddirs.h>
-#include <kcmdlineargs.h>
-#include <kdebug.h>
-#include <kmenu.h>
-#include <kstringhandler.h>
+#include <KAboutData>
+#include <KMessageBox>
+#include <KLocalizedString>
 
-#include <solid/device.h>
+#include <Solid/Device>
 
-#include <QProcess>
-#include <QFileInfo>
+#include <QAction>
 #include <QApplication>
-#include <QPainter>
+#include <QCollator>
+#include <QFileInfo>
 #include <QIcon>
+#include <QMenu>
+#include <QHeaderView>
+#include <QPainter>
 #include <QPixmap>
+#include <QProcess>
+#include <QStandardPaths>
 #include <QRect>
 #include <QTreeWidget>
-#include <QHeaderView>
 
 #include <config.h>
 
@@ -60,13 +57,12 @@ void registerMetaTypes()
 
 static QString suCommand()
 {
-	KStandardDirs d;
-	const char* candidates[] = { "kdesu", "kdesudo", "gksudo", "gksu" };
+	const QString candidates[] = { QStringLiteral("kdesu"), QStringLiteral("kdesudo"), QStringLiteral("gksudo"), QStringLiteral("gksu") };
 	QString rval;
 
 	for (quint32 i = 0; i < sizeof(candidates) / sizeof(candidates[0]); i++)
 	{
-		rval = d.locate("exe", candidates[i]);
+		rval = QStandardPaths::findExecutable(candidates[i]);
 		if (QFileInfo(rval).isExecutable())
 			return rval;
 	}
@@ -78,11 +74,10 @@ bool checkPermissions()
 {
 	if (geteuid() != 0)
 	{
-		KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
 		// only try to gain root privileges if we have a valid (kde|gk)su(do) command and
 		// we did not try so before: the dontsu-option is there to make sure there are no
 		// endless loops of calling the same non-working (kde|gk)su(do) binary again and again.
-		if (!suCommand().isEmpty() && !args->isSet("dontsu"))
+		if (!suCommand().isEmpty() && !QCoreApplication::arguments().contains(QLatin1String("--dontsu")))
 		{
 			QStringList argList;
 
@@ -91,25 +86,25 @@ bool checkPermissions()
 			// kdesu broke backward compatibility at some point and now only works with "-c";
 			// kdesudo accepts either (with or without "-c"), but the gk* helpers only work
 			// without. kdesu maintainers won't fix their app, so we need to work around that here.
-			if (suCmd.indexOf("kdesu") != -1)
-				argList << "-c";
+			if (suCmd.indexOf(QStringLiteral("kdesu")) != -1)
+				argList << QStringLiteral("-c");
 
-			argList << args->allArguments().join(" ") + " --dontsu";
+			argList << QCoreApplication::arguments() << QStringLiteral(" --dontsu");
 
 			if (QProcess::execute(suCmd, argList) == 0)
 				return false;
 		}
 
-		return KMessageBox::warningContinueCancel(NULL, i18nc("@info",
+		return KMessageBox::warningContinueCancel(NULL, xi18nc("@info",
 				"<para><warning>You do not have administrative privileges.</warning></para>"
 				"<para>It is possible to run <application>%1</application> without these privileges. "
 				"You will, however, <emphasis>not</emphasis> be allowed to apply operations.</para>"
 				"<para>Do you want to continue running <application>%1</application>?</para>",
-				KGlobal::mainComponent().aboutData()->programName()),
+				QGuiApplication::applicationDisplayName()),
 	 		i18nc("@title:window", "No administrative privileges"),
-			KGuiItem(i18nc("@action:button", "Run without administrative privileges"), "arrow-right"),
+			KGuiItem(i18nc("@action:button", "Run without administrative privileges"), QStringLiteral("arrow-right")),
 			KStandardGuiItem::cancel(),
-			"runWithoutRootPrivileges") == KMessageBox::Continue;
+			QStringLiteral("runWithoutRootPrivileges")) == KMessageBox::Continue;
 	}
 
 	return true;
@@ -118,20 +113,21 @@ bool checkPermissions()
 KAboutData* createPartitionManagerAboutData()
 {
 	KAboutData* about = new KAboutData(
-		"partitionmanager",
-		NULL,
-		ki18nc("@title", "<application>KDE Partition Manager</application>"),
-		VERSION,
-		ki18nc("@title", "Manage your disks, partitions and file systems"),
-		KAboutData::License_GPL,
-		ki18nc("@info:credit", "© 2008-2013 Volker Lanz")
-	);
+		QStringLiteral("partitionmanager"),
+		xi18nc("@title", "<application>KDE Partition Manager</application>"),
+		QStringLiteral(VERSION),
+		i18nc("@title", "Manage your disks, partitions and file systems"),
+		KAboutLicense::GPL,
+		i18nc("@info:credit", "© 2008-2013 Volker Lanz"));
+	about->setOrganizationDomain(QByteArray("kde.org"));
+	about->setProgramIconName(QStringLiteral("partitionmanager"));
+	about->setProductName(QByteArray("partitionmanager"));
 
-	about->addAuthor(ki18nc("@info:credit", "Volker Lanz"), ki18nc("@info:credit", "Former maintainer"));
-	about->setHomepage("http://www.partitionmanager.org");
+	about->addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Former maintainer"));
+	about->addAuthor(i18nc("@info:credit", "Andrius Štikonas"), i18nc("@info:credit", "Developer"), QStringLiteral("andrius@stikonas.eu"));
+	about->setHomepage(QStringLiteral("http://www.partitionmanager.org"));
 
-	about->addCredit(ki18n("Hugo Pereira Da Costa"), ki18nc("@info:credit", "Partition Widget Design"), "hugo@oxygen-icons.org");
-	about->addCredit(ki18n("Andrius Štikonas"), ki18nc("@info:credit", "Btrfs support"), "andrius@stikonas.eu");
+	about->addCredit(i18n("Hugo Pereira Da Costa"), i18nc("@info:credit", "Partition Widget Design"), QStringLiteral("hugo@oxygen-icons.org"));
 
 	return about;
 }
@@ -143,7 +139,10 @@ bool caseInsensitiveLessThan(const QString& s1, const QString& s2)
 
 bool naturalLessThan(const QString& s1, const QString& s2)
 {
-    return KStringHandler::naturalCompare(s1, s2) < 0;
+	QCollator c;
+	c.setNumericMode(true);
+	c.setCaseSensitivity(Qt::CaseSensitive);
+	return c.compare(s1, s2) < 0;
 }
 
 QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
@@ -160,9 +159,7 @@ QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
 
 void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree)
 {
-	KMenu headerMenu;
-
-	headerMenu.addTitle(i18nc("@title:menu", "Columns"));
+	QMenu headerMenu(i18nc("@title:menu", "Columns"));
 
 	QHeaderView* header = tree.header();
 
@@ -196,7 +193,7 @@ bool loadBackend()
 		if (CoreBackendManager::self()->load(CoreBackendManager::defaultBackendName()))
 		{
 			KMessageBox::sorry(NULL,
-				i18nc("@info", "<para>The configured backend plugin \"%1\" could not be loaded.</para>"
+				xi18nc("@info", "<para>The configured backend plugin \"%1\" could not be loaded.</para>"
 					"<para>Loading the default backend plugin \"%2\" instead.</para>",
 				Config::backend(), CoreBackendManager::defaultBackendName()),
 				i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
@@ -205,7 +202,7 @@ bool loadBackend()
 		else
 		{
 			KMessageBox::error(NULL,
-				i18nc("@info", "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+				xi18nc("@info", "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 					"plugin could be loaded.</para><para>Please check your installation.</para>",
 				Config::backend(), CoreBackendManager::defaultBackendName()),
 				i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
@@ -221,7 +218,7 @@ bool checkAccessibleDevices()
 	if (getSolidDeviceList().empty())
 	{
 		KMessageBox::error(NULL,
-			i18nc("@info", "<para>No usable devices could be found.</para><para>Make sure you have sufficient "
+			xi18nc("@info", "<para>No usable devices could be found.</para><para>Make sure you have sufficient "
 				"privileges to access block devices on your system.</para>"),
 			i18nc("@title:window", "Error: No Usable Devices Found"));
 		return false;
@@ -233,37 +230,38 @@ bool checkAccessibleDevices()
 QList<Solid::Device> getSolidDeviceList()
 {
 #ifdef ENABLE_UDISKS2
-        QString predicate = "StorageVolume.usage == 'PartitionTable'";
+        QString predicate = QStringLiteral("StorageVolume.usage == 'PartitionTable'");
 
 #else
-        QString predicate = "[ [ [ StorageDrive.driveType == 'HardDisk' OR StorageDrive.driveType == 'CompactFlash'] OR "
+        QString predicate = QStringLiteral("[ [ [ StorageDrive.driveType == 'HardDisk' OR StorageDrive.driveType == 'CompactFlash'] OR "
                 "[ StorageDrive.driveType == 'MemoryStick' OR StorageDrive.driveType == 'SmartMedia'] ] OR "
-                "[ StorageDrive.driveType == 'SdMmc' OR StorageDrive.driveType == 'Xd'] ]";
+                "[ StorageDrive.driveType == 'SdMmc' OR StorageDrive.driveType == 'Xd'] ]");
 #endif
 
-	KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
-	if (args->count() > 0)
+	QStringList argList;
+	int argc = argList.size();
+	if (argc > 0)
 	{
-		predicate = " [ " + predicate + " AND ";
+		predicate = QStringLiteral(" [ ") + predicate + QStringLiteral(" AND ");
 
-		qint32 brackets = (args->count() + 1) / 2;
-		brackets = args->count() == 1 ? 0 : brackets;
+		qint32 brackets = (argc + 1) / 2;
+		brackets = argc == 1 ? 0 : brackets;
 		for (qint32 i = 0; i < brackets; i++)
-			predicate += "[ ";
+			predicate += QStringLiteral("[ ");
 
 		bool right_bracket = false;
-		for (qint32 i = 0; i < args->count(); i++, right_bracket =! right_bracket)
+		for (qint32 i = 0; i < argc; i++, right_bracket =! right_bracket)
 		{
-			predicate += QString("Block.device == '%1' ").arg(args->arg(i));
+			predicate += QStringLiteral("Block.device == '%1' ").arg(argList[i]);
 
 			if (right_bracket)
-				predicate += i == 1 ? "] " : "] ] ";
-			if (i < args->count() - 1)
-				predicate += "OR ";
-			if (right_bracket && i != args->count() - 2 && i != args->count()-1)
-				predicate += "[ ";
+				predicate += i == 1 ? QStringLiteral("] ") : QStringLiteral("] ] ");
+			if (i < argc - 1)
+				predicate += QStringLiteral("OR ");
+			if (right_bracket && i != argc - 2 && i != argc - 1)
+				predicate += QStringLiteral("[ ");
 		}
-		predicate += right_bracket && brackets > 0 ? "] ]" : "]";
+		predicate += right_bracket && brackets > 0 ? QStringLiteral("] ]") : QStringLiteral("]");
 	}
 
 	return Solid::Device::listFromQuery(predicate);

@@ -27,24 +27,23 @@
 #include "util/helpers.h"
 #include "util/htmlreport.h"
 
-#include <kdebug.h>
-#include <kpushbutton.h>
-#include <kiconloader.h>
-#include <klocale.h>
-#include <kfiledialog.h>
-#include <kio/copyjob.h>
-#include <kio/netaccess.h>
-#include <kio/jobuidelegate.h>
-#include <kmessagebox.h>
-#include <ktemporaryfile.h>
-#include <kicon.h>
-#include <kglobalsettings.h>
-#include <kglobal.h>
-
-#include <QTreeWidgetItem>
-#include <QTextStream>
+#include <QDialogButtonBox>
+#include <QFileDialog>
+#include <QFontDatabase>
+#include <QPushButton>
+#include <QTemporaryFile>
 #include <QTextDocument>
+#include <QTextStream>
+#include <QTreeWidgetItem>
 #include <qglobal.h>
+
+#include <KConfigGroup>
+#include <KFormat>
+#include <KLocalizedString>
+#include <KIconThemes/KIconLoader>
+#include <KIO/CopyJob>
+#include <KJobUiDelegate>
+#include <KMessageBox>
 
 #include <sys/utsname.h>
 #include <unistd.h>
@@ -56,27 +55,33 @@
 	@param d the Device
 */
 SmartDialog::SmartDialog(QWidget* parent, Device& d) :
-	KDialog(parent),
+	QDialog(parent),
 	m_Device(d),
 	m_DialogWidget(new SmartDialogWidget(this))
 {
-	setMainWidget(&dialogWidget());
-	setCaption(i18nc("@title:window", "SMART Properties: <filename>%1</filename>", device().deviceNode()));
-	setButtons(Close|User1);
-	setButtonText(User1, i18nc("@action:button", "Save SMART Report"));
-	button(User1)->setIcon(KIcon("document-save"));
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&dialogWidget());
+	setWindowTitle(xi18nc("@title:window", "SMART Properties: <filename>%1</filename>", device().deviceNode()));
+
+	buttonBox = new QDialogButtonBox(this);
+	buttonBox->setStandardButtons(QDialogButtonBox::Save | QDialogButtonBox::Close);
+	buttonBox->button(QDialogButtonBox::Save)->setText(i18nc("@action:button", "Save SMART Report"));
+	buttonBox->button(QDialogButtonBox::Save)->setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
+	mainLayout->addWidget(buttonBox);
 
 	setupDialog();
 	setupConnections();
 
-	restoreDialogSize(KConfigGroup(KGlobal::config(), "smartDialog"));
+	KConfigGroup kcg(KSharedConfig::openConfig(), "smartDialog");
+	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a SmartDialog */
 SmartDialog::~SmartDialog()
 {
-	KConfigGroup kcg(KGlobal::config(), "smartDialog");
-	saveDialogSize(kcg);
+	KConfigGroup kcg(KSharedConfig::openConfig(), "smartDialog");
+	kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void SmartDialog::setupDialog()
@@ -91,7 +96,7 @@ void SmartDialog::setupDialog()
 		else
 		{
 			dialogWidget().statusText().setText(i18nc("@label SMART disk status", "BAD"));
-			dialogWidget().statusIcon().setPixmap(SmallIcon("dialog-warning"));
+			dialogWidget().statusIcon().setPixmap(KIconLoader().loadIcon(QLatin1String("dialog-warning"), KIconLoader::Small));
 		}
 
 		dialogWidget().modelName().setText(device().smartStatus().modelName());
@@ -100,32 +105,32 @@ void SmartDialog::setupDialog()
 
 		dialogWidget().temperature().setText(SmartStatus::tempToString(device().smartStatus().temp()));
 		const QString badSectors = device().smartStatus().badSectors() > 0
-				? KGlobal::locale()->formatNumber(device().smartStatus().badSectors(), 0)
+				? QLocale().toString(device().smartStatus().badSectors())
 				: i18nc("@label SMART number of bad sectors", "none");
 		dialogWidget().badSectors().setText(badSectors);
-		dialogWidget().poweredOn().setText(KGlobal::locale()->formatDuration(device().smartStatus().poweredOn()));
-		dialogWidget().powerCycles().setText(KGlobal::locale()->formatNumber(device().smartStatus().powerCycles(), 0));
+		dialogWidget().poweredOn().setText(KFormat().formatDuration(device().smartStatus().poweredOn()));
+		dialogWidget().powerCycles().setText(QLocale().toString(device().smartStatus().powerCycles()));
 		dialogWidget().overallAssessment().setText(SmartStatus::overallAssessmentToString(device().smartStatus().overall()));
 		dialogWidget().selfTests().setText(SmartStatus::selfTestStatusToString(device().smartStatus().selfTestStatus()));
 
 		dialogWidget().treeSmartAttributes().clear();
 
-		const QFont f = KGlobalSettings::smallestReadableFont();
-		const QString size = f.pixelSize() != -1 ? QString("%1px").arg(f.pixelSize()) : QString("%1pt").arg(f.pointSize());
+		const QFont f = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
+		const QString size = f.pixelSize() != -1 ? QStringLiteral("%1px").arg(f.pixelSize()) : QStringLiteral("%1pt").arg(f.pointSize());
 
-		const QString st = QString("<span style=\"font-family:%1;font-size:%2;\">").arg(f.family()).arg(size);
+		const QString st = QStringLiteral("<span style=\"font-family:%1;font-size:%2;\">").arg(f.family()).arg(size);
 
 		foreach (const SmartAttribute& a, device().smartStatus().attributes())
 		{
 			QTreeWidgetItem* item = new QTreeWidgetItem(
 				QStringList()
-					<< KGlobal::locale()->formatNumber(a.id(), 0)
-					<< QString("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + "</span>")
+					<< QLocale().toString(a.id())
+					<< QStringLiteral("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + QStringLiteral("</span>"))
 					<< (a.failureType() == SmartAttribute::PreFailure ? i18nc("@item:intable", "Pre-Failure") : i18nc("@item:intable", "Old-Age"))
 					<< (a.updateType() == SmartAttribute::Online ? i18nc("@item:intable", "Online") : i18nc("@item:intable", "Offline"))
-					<< KGlobal::locale()->formatNumber(a.worst(), 0)
-					<< KGlobal::locale()->formatNumber(a.current(), 0)
-					<< KGlobal::locale()->formatNumber(a.threshold(), 0)
+					<< QLocale().toString(a.worst())
+					<< QLocale().toString(a.current())
+					<< QLocale().toString(a.threshold())
 					<< a.raw()
 					<< a.assessmentToString()
 					<< a.value()
@@ -143,7 +148,8 @@ void SmartDialog::setupDialog()
 
 void SmartDialog::setupConnections()
 {
-	connect(this, SIGNAL(user1Clicked()), SLOT(saveSmartReport()));
+	connect(buttonBox->button(QDialogButtonBox::Save), SIGNAL(clicked()), SLOT(saveSmartReport()));
+	connect(buttonBox->button(QDialogButtonBox::Close), SIGNAL(clicked()), SLOT(close()));
 }
 
 QString SmartDialog::toHtml() const
@@ -157,7 +163,7 @@ QString SmartDialog::toHtml() const
 		s << HtmlReport::tableLine(i18n("SMART status:"), i18nc("@label SMART disk status", "BAD"));
 
 	const QString badSectors = device().smartStatus().badSectors() > 0
-			? KGlobal::locale()->formatNumber(device().smartStatus().badSectors(), 0)
+			? QLocale().toString(device().smartStatus().badSectors())
 			: i18nc("@label SMART number of bad sectors", "none");
 
 	s << HtmlReport::tableLine(i18n("Model:"), device().smartStatus().modelName())
@@ -165,8 +171,8 @@ QString SmartDialog::toHtml() const
 		<< HtmlReport::tableLine(i18n("Firmware revision:"), device().smartStatus().firmware())
 		<< HtmlReport::tableLine(i18n("Temperature:"), SmartStatus::tempToString(device().smartStatus().temp()))
 		<< HtmlReport::tableLine(i18n("Bad sectors:"), badSectors)
-		<< HtmlReport::tableLine(i18n("Powered on for:"), KGlobal::locale()->formatDuration(device().smartStatus().poweredOn()))
-		<< HtmlReport::tableLine(i18n("Power cycles:"), KGlobal::locale()->formatNumber(device().smartStatus().powerCycles(), 0))
+		<< HtmlReport::tableLine(i18n("Powered on for:"), KFormat().formatDuration(device().smartStatus().poweredOn()))
+		<< HtmlReport::tableLine(i18n("Power cycles:"), QLocale().toString(device().smartStatus().powerCycles()))
 		<< HtmlReport::tableLine(i18n("Self tests:"), SmartStatus::selfTestStatusToString(device().smartStatus().selfTestStatus()))
 		<< HtmlReport::tableLine(i18n("Overall assessment:"), SmartStatus::overallAssessmentToString(device().smartStatus().overall()));
 
@@ -175,10 +181,10 @@ QString SmartDialog::toHtml() const
 	if (device().smartStatus().isValid())
 	{
 
-		const QFont f = KGlobalSettings::smallestReadableFont();
-		const QString size = f.pixelSize() != -1 ? QString("%1px").arg(f.pixelSize()) : QString("%1pt").arg(f.pointSize());
+		const QFont f = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
+		const QString size = f.pixelSize() != -1 ? QStringLiteral("%1px").arg(f.pixelSize()) : QStringLiteral("%1pt").arg(f.pointSize());
 
-		const QString st = QString("<span style=\"font-family:%1;font-size:%2;\">").arg(f.family()).arg(size);
+		const QString st = QStringLiteral("<span style=\"font-family:%1;font-size:%2;\">").arg(f.family()).arg(size);
 
 		s << "<table>\n";
 
@@ -186,13 +192,13 @@ QString SmartDialog::toHtml() const
 		{
 			s << "<tr>\n";
 
-			s << "<td>" << KGlobal::locale()->formatNumber(a.id(), 0) << "</td>\n"
-				<< "<td>" << QString("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + "</span>") << "</td>\n"
+			s << "<td>" << QLocale().toString(a.id()) << "</td>\n"
+				<< "<td>" << QStringLiteral("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + QStringLiteral("</span>")) << "</td>\n"
 				<< "<td>" << (a.failureType() == SmartAttribute::PreFailure ? i18nc("@item:intable", "Pre-Failure") : i18nc("@item:intable", "Old-Age")) << "</td>\n"
 				<< "<td>" << (a.updateType() == SmartAttribute::Online ? i18nc("@item:intable", "Online") : i18nc("@item:intable", "Offline")) << "</td>\n"
-				<< "<td>" << KGlobal::locale()->formatNumber(a.worst(), 0) << "</td>\n"
-				<< "<td>" << KGlobal::locale()->formatNumber(a.current(), 0) << "</td>\n"
-				<< "<td>" << KGlobal::locale()->formatNumber(a.threshold(), 0) << "</td>\n"
+				<< "<td>" << QLocale().toString(a.worst()) << "</td>\n"
+				<< "<td>" << QLocale().toString(a.current()) << "</td>\n"
+				<< "<td>" << QLocale().toString(a.threshold()) << "</td>\n"
 				<< "<td>" << a.raw() << "</td>\n"
 				<< "<td>" << a.assessmentToString() << "</td>\n"
 				<< "<td>" << a.value() << "</td>\n";
@@ -212,12 +218,12 @@ QString SmartDialog::toHtml() const
 
 void SmartDialog::saveSmartReport()
 {
-	const KUrl url = KFileDialog::getSaveUrl(KUrl("kfiledialog://saveSMARTReport"));
+	const QUrl url = QFileDialog::getSaveFileUrl();
 
 	if (url.isEmpty())
 		return;
 
-	KTemporaryFile tempFile;
+	QTemporaryFile tempFile;
 
 	if (tempFile.open())
 	{
@@ -231,11 +237,12 @@ void SmartDialog::saveSmartReport()
 
 		tempFile.close();
 
-		KIO::CopyJob* job = KIO::move(tempFile.fileName(), url, KIO::HideProgressInfo);
-		if (!KIO::NetAccess::synchronousRun(job, NULL))
+		KIO::CopyJob* job = KIO::move(QUrl::fromLocalFile(tempFile.fileName()), url, KIO::HideProgressInfo);
+		job->exec();
+		if ( job->error() )
 			job->ui()->showErrorMessage();
 	}
 	else
-		KMessageBox::sorry(this, i18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Could Not Save SMART Report."));
+		KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Could Not Save SMART Report."));
 
 }

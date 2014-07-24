@@ -22,7 +22,6 @@
 
 #include "core/partition.h"
 
-#include <kdebug.h>
 #include <cmath>
 
 const qint32 PartWidgetBase::m_Spacing = 2;

@@ -27,8 +27,7 @@
 
 #include <QString>
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new CreatePartitionTableOperation.
 	@param d the Device to create the new PartitionTable on
@@ -100,5 +99,5 @@ bool CreatePartitionTableOperation::canCreate(const Device* device)
 
 QString CreatePartitionTableOperation::description() const
 {
-	return QString(i18nc("@info/plain", "Create a new partition table (type: %1) on <filename>%2</filename>", partitionTable()->typeName(), targetDevice().deviceNode()));
+	return xi18nc("@info/plain", "Create a new partition table (type: %1) on <filename>%2</filename>", partitionTable()->typeName(), targetDevice().deviceNode());
 }

@@ -23,17 +23,28 @@
 #include "core/device.h"
 #include "core/partitiontable.h"
 
-#include <KLocale>
-#include <KMessageBox>
+#include <KLocalizedString>
+
+#include <QDialogButtonBox>
+#include <QPushButton>
 
 #include <config.h>
 
-DecryptLuksDialog::DecryptLuksDialog(/*QWidget* parent, */const QString& deviceNode) :
-// 	KDialog(parent),
+DecryptLuksDialog::DecryptLuksDialog(QWidget* parent, const QString& deviceNode) :
+	QDialog(parent),
 	m_DialogWidget(new DecryptLuksDialogWidget(this)),
 	m_DeviceNode(deviceNode)
 {
-	setMainWidget(&widget());
-	setCaption(i18nc("@title:window", "Decrypt LUKS partition on <filename>%1</filename>", this->deviceNode()));
-	setButtonText(KDialog::Ok, i18nc("@action:button", "&Decrypt"));
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+	setLayout(mainLayout);
+	mainLayout->addWidget(&widget());
+	setWindowTitle(xi18nc("@title:window", "Decrypt LUKS partition on <filename>%1</filename>", this->deviceNode()));
+
+	QDialogButtonBox* dialogButtonBox = new QDialogButtonBox;
+	QPushButton* decryptButton = new QPushButton;
+	decryptButton->setText(i18nc("@action:button", "&Decrypt"));
+	decryptButton->setIcon(QIcon::fromTheme(QStringLiteral("object-unlocked")));
+	dialogButtonBox->addButton(decryptButton, QDialogButtonBox::AcceptRole);
+	mainLayout->addWidget(dialogButtonBox);
+	connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
 }

@@ -29,8 +29,7 @@
 
 #include <QString>
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <KLocalizedString>
 
 /** Creates a new CheckOperation.
 	@param d the Device where the Partition to check is on.
@@ -59,7 +58,7 @@ bool CheckOperation::targets(const Partition& p) const
 
 QString CheckOperation::description() const
 {
-	return QString(i18nc("@info/plain", "Check and repair partition <filename>%1</filename> (%2, %3)", checkedPartition().deviceNode(), Capacity::formatByteSize(checkedPartition().capacity()), checkedPartition().fileSystem().name()));
+	return xi18nc("@info/plain", "Check and repair partition <filename>%1</filename> (%2, %3)", checkedPartition().deviceNode(), Capacity::formatByteSize(checkedPartition().capacity()), checkedPartition().fileSystem().name());
 }
 
 /** Can a Partition be checked?
@@ -70,7 +69,7 @@ bool CheckOperation::canCheck(const Partition* p)
 {
 	if (p == NULL)
 		return false;
-	
+
 	if (p->isMounted())
 		return false;
 

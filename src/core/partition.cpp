@@ -29,10 +29,10 @@
 
 #include <QString>
 #include <QStringList>
+#include <QDebug>
 
-#include <kdebug.h>
-#include <klocale.h>
-#include <kmountpoint.h>
+#include <KLocalizedString>
+#include <KIOCore/KMountPoint>
 
 /** Creates a new Partition object.
 	@param parent the Partition's parent. May be another Partition (for logicals) or a PartitionTable. Must not be NULL.
@@ -216,7 +216,7 @@ void Partition::adjustLogicalNumbers(qint32 deletedNumber, qint32 insertedNumber
 	foreach (Partition* p, children())
 	{
 		QString path = p->partitionPath();
-		path.remove(QRegExp("([0-9]+$)"));
+		path.remove(QRegExp(QStringLiteral("([0-9]+$)")));
 		if (deletedNumber > 4 && p->number() > deletedNumber)
 			p->setPartitionPath(path + QString::number(p->number() - 1));
 		else if (insertedNumber > 4 && p->number() >= insertedNumber)
@@ -300,7 +300,7 @@ bool Partition::mount(Report& report)
 		success = fileSystem().mount(deviceNode());
 	else
 	{
-		ExternalCommand mountCmd(report, "mount", QStringList() << "-v" << deviceNode() << mountPoint());
+		ExternalCommand mountCmd(report, QStringLiteral("mount"), QStringList() << QStringLiteral("-v") << deviceNode() << mountPoint());
 		if (mountCmd.run() && mountCmd.exitCode() == 0)
 			success = true;
 	}
@@ -326,12 +326,12 @@ bool Partition::unmount(Report& report)
 		{
 			success = fileSystem().unmount(deviceNode());
 			if (success)
-				setMountPoint("");
+				setMountPoint(QString());
 		}
 		else
 		{
 
-			ExternalCommand umountCmd(report, "umount", QStringList() << "-v" << deviceNode());
+			ExternalCommand umountCmd(report, QStringLiteral("umount"), QStringList() << QStringLiteral("-v") << deviceNode());
 			if (!umountCmd.run() || umountCmd.exitCode() != 0)
 				success = false;
 		}
@@ -356,7 +356,7 @@ void Partition::deleteFileSystem()
 void Partition::setPartitionPath(const QString& s)
 {
 	m_PartitionPath = s;
-	QRegExp rxPartitionNumber("([0-9]+$)");
+	QRegExp rxPartitionNumber(QStringLiteral("([0-9]+$)"));
 	if (rxPartitionNumber.indexIn(partitionPath()) > -1)
 	{
 		setNumber(rxPartitionNumber.cap().toInt());
@@ -387,7 +387,7 @@ QTextStream& operator<<(QTextStream& stream, const Partition& p)
 			flagList.append(PartitionTable::flagName(f));
 	}
 
-	const QString sep(';');
+	const QString sep(QStringLiteral(";"));
 
 	// number - start - end - type - roles - label - flags
 	stream << p.number() << sep
@@ -395,8 +395,8 @@ QTextStream& operator<<(QTextStream& stream, const Partition& p)
 		<< p.lastSector() << sep
 		<< p.fileSystem().name() << sep
 		<< p.roles().toString() << sep
-		<< "\"" << p.fileSystem().label() << "\"" << sep
-		<< "\"" << flagList.join(",") << "\""
+		<< "\"" << p.fileSystem().label() << QStringLiteral("\"") << sep
+		<< "\"" << flagList.join(QStringLiteral(",")) << QStringLiteral("\"")
 		<< "\n";
 
 	return stream;
