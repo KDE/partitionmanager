@@ -1,3 +1,5 @@
+
+
 # Copyright (C) 2008,2010,2011 by Volker Lanz <vl@fidra.de>
 #
 # Redistribution and use in source and binary forms, with or without
@@ -22,12 +24,12 @@
 # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 INCLUDE(CheckCSourceCompiles)
+include(CheckFunctionExists)
 
 if (LIBPARTED_INCLUDE_DIR AND LIBPARTED_LIBRARY)
   # Already in cache, be silent
   set(LIBPARTED_FIND_QUIETLY TRUE)
 endif (LIBPARTED_INCLUDE_DIR AND LIBPARTED_LIBRARY)
-
 
 FIND_PATH(LIBPARTED_INCLUDE_DIR parted.h PATH_SUFFIXES parted )
 
