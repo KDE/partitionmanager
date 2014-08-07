@@ -185,7 +185,6 @@ void PartResizerWidget::paintEvent(QPaintEvent*)
 	opt.midLineWidth = 0;
 	opt.state |= QStyle::State_Sunken;
 
-	opt.rect.adjust(handleWidth(), 0, -handleWidth(), 0);
 	style()->drawPrimitive(QStyle::PE_PanelLineEdit, &opt, &painter, this);
 }
 
