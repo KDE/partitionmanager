@@ -180,13 +180,13 @@ void PartResizerWidget::paintEvent(QPaintEvent*)
 	QStyleOptionFrameV3 opt;
 	opt.initFrom(this);
 	opt.frameShape = QFrame::StyledPanel;
+	opt.rect = contentsRect();
+	opt.lineWidth = style()->pixelMetric(QStyle::PM_DefaultFrameWidth, &opt, this);
+	opt.midLineWidth = 0;
 	opt.state |= QStyle::State_Sunken;
 
-	// disable mouse over and focus state
-	opt.state &= ~QStyle::State_MouseOver;
-	opt.state &= ~QStyle::State_HasFocus;
 	opt.rect.adjust(handleWidth(), 0, -handleWidth(), 0);
-	style()->drawControl(QStyle::CE_ShapedFrame, &opt, &painter, this);
+	style()->drawPrimitive(QStyle::PE_PanelLineEdit, &opt, &painter, this);
 }
 
 void PartResizerWidget::mousePressEvent(QMouseEvent* event)
