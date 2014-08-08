@@ -49,11 +49,6 @@
 #include <KPluginFactory>
 #include <KAboutData>
 
-#include <Solid/Device>
-#include <Solid/DeviceInterface>
-#include <Solid/Block>
-#include <Solid/StorageDrive>
-
 #include <parted/parted.h>
 #include <unistd.h>
 #include <blkid/blkid.h>
@@ -440,62 +435,23 @@ Device* LibPartedBackend::scanDevice(const QString& device_node)
 	return d;
 }
 
-static quint32 countDevices(const QList<Solid::Device>& driveList)
-{
-	quint32 rval = 0;
-
-	foreach(const Solid::Device& solidDevice, driveList)
-	{
-                (void) solidDevice; // Silence compiler warning.
-#ifndef ENABLE_UDISKS2
-		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
-		if (solidDrive->driveType() == Solid::StorageDrive::HardDisk ||
-			solidDrive->driveType() == Solid::StorageDrive::CompactFlash ||
-			solidDrive->driveType() == Solid::StorageDrive::MemoryStick ||
-			solidDrive->driveType() == Solid::StorageDrive::SmartMedia ||
-			solidDrive->driveType() == Solid::StorageDrive::SdMmc ||
-			solidDrive->driveType() == Solid::StorageDrive::Xd)
-#endif
-			rval++;
-	}
-	return rval;
-}
-
 QList<Device*> LibPartedBackend::scanDevices()
 {
 	QList<Device*> result;
 
-	const QList<Solid::Device> driveList = getSolidDeviceList();
-	const quint32 totalDevices = countDevices(driveList);
-
-	quint32 count = 0;
-
-	foreach(const Solid::Device& solidDevice, driveList)
+	ped_device_probe_all();
+	PedDevice* pedDevice = NULL;
+	while (true)
 	{
-#ifndef ENABLE_UDISKS2
-		const Solid::StorageDrive* solidDrive = solidDevice.as<Solid::StorageDrive>();
-
-		if (solidDrive->driveType() != Solid::StorageDrive::HardDisk &&
-			solidDrive->driveType() != Solid::StorageDrive::CompactFlash &&
-			solidDrive->driveType() != Solid::StorageDrive::MemoryStick &&
-			solidDrive->driveType() != Solid::StorageDrive::SmartMedia &&
-			solidDrive->driveType() != Solid::StorageDrive::SdMmc &&
-			solidDrive->driveType() != Solid::StorageDrive::Xd)
+		pedDevice = ped_device_get_next(pedDevice);
+		if (!pedDevice)
+			break;
+		if (pedDevice->type == PED_DEVICE_DM)
 			continue;
-#endif
-
-		const Solid::Block* solidBlock = solidDevice.as<Solid::Block>();
-
-		Device* d = scanDevice(solidBlock->device());
-		qWarning() << solidBlock->device();
-
-		if (d != NULL)
-		{
-			d->setIconName(solidDevice.icon());
+		QString path = QString::fromUtf8(pedDevice->path);
+		Device* d = scanDevice(path);
+		if (d)
 			result.append(d);
-		}
-
-		emitScanProgress(solidBlock->device(), (++count) * 100 / totalDevices);
 	}
 
 	return result;
