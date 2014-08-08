@@ -36,8 +36,6 @@
 #include <QStyleOptionFrameV3>
 #include <QStyleOptionButton>
 
-#include <kcolorscheme.h>
-
 const qint32 PartResizerWidget::m_HandleHeight = 59;
 
 /** Creates a new PartResizerWidget
