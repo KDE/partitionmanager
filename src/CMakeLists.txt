@@ -46,7 +46,6 @@ target_link_libraries( partitionmanagerprivate libfatlabel
     KF5::KIOCore
     KF5::KIOWidgets
     KF5::Service
-    KF5::Solid
     KF5::XmlGui
     KF5::WidgetsAddons
 )

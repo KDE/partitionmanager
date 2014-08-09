@@ -28,8 +28,6 @@
 #include <KMessageBox>
 #include <KLocalizedString>
 
-#include <Solid/Device>
-
 #include <QAction>
 #include <QApplication>
 #include <QCollator>
@@ -211,58 +209,4 @@ bool loadBackend()
 	}
 
 	return true;
-}
-
-bool checkAccessibleDevices()
-{
-	if (getSolidDeviceList().empty())
-	{
-		KMessageBox::error(NULL,
-			xi18nc("@info", "<para>No usable devices could be found.</para><para>Make sure you have sufficient "
-				"privileges to access block devices on your system.</para>"),
-			i18nc("@title:window", "Error: No Usable Devices Found"));
-		return false;
-	}
-
-	return true;
-}
-
-QList<Solid::Device> getSolidDeviceList()
-{
-#ifdef ENABLE_UDISKS2
-        QString predicate = QStringLiteral("StorageVolume.usage == 'PartitionTable'");
-
-#else
-        QString predicate = QStringLiteral("[ [ [ StorageDrive.driveType == 'HardDisk' OR StorageDrive.driveType == 'CompactFlash'] OR "
-                "[ StorageDrive.driveType == 'MemoryStick' OR StorageDrive.driveType == 'SmartMedia'] ] OR "
-                "[ StorageDrive.driveType == 'SdMmc' OR StorageDrive.driveType == 'Xd'] ]");
-#endif
-
-	QStringList argList;
-	int argc = argList.size();
-	if (argc > 0)
-	{
-		predicate = QStringLiteral(" [ ") + predicate + QStringLiteral(" AND ");
-
-		qint32 brackets = (argc + 1) / 2;
-		brackets = argc == 1 ? 0 : brackets;
-		for (qint32 i = 0; i < brackets; i++)
-			predicate += QStringLiteral("[ ");
-
-		bool right_bracket = false;
-		for (qint32 i = 0; i < argc; i++, right_bracket =! right_bracket)
-		{
-			predicate += QStringLiteral("Block.device == '%1' ").arg(argList[i]);
-
-			if (right_bracket)
-				predicate += i == 1 ? QStringLiteral("] ") : QStringLiteral("] ] ");
-			if (i < argc - 1)
-				predicate += QStringLiteral("OR ");
-			if (right_bracket && i != argc - 2 && i != argc - 1)
-				predicate += QStringLiteral("[ ");
-		}
-		predicate += right_bracket && brackets > 0 ? QStringLiteral("] ]") : QStringLiteral("]");
-	}
-
-	return Solid::Device::listFromQuery(predicate);
 }

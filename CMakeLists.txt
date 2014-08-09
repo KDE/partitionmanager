@@ -85,11 +85,6 @@ find_package(PkgConfig REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
 pkg_check_modules(LIBATASMART REQUIRED libatasmart)
 
-option(ENABLE_UDISKS2 "Use UDisks2 backend." OFF)
-if (ENABLE_UDISKS2)
-	add_definitions(-DENABLE_UDISKS2)
-endif (ENABLE_UDISKS2)
-
 include_directories(${Qt5Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} lib/ src/)
 
 add_subdirectory(lib)
