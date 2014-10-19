@@ -30,7 +30,7 @@ file(GLOB partitionmanagerprivate_SRCS
 
 file(GLOB partitionmanagerprivate_UIFILES config/*.ui gui/*.ui)
 
-qt5_wrap_ui(partitionmanagerprivate_SRCS ${partitionmanagerprivate_UIFILES})
+ki18n_wrap_ui(partitionmanagerprivate_SRCS ${partitionmanagerprivate_UIFILES})
 
 kconfig_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
 install(FILES config.kcfg DESTINATION ${KCFG_INSTALL_DIR})

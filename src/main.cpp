@@ -36,6 +36,7 @@
 int Q_DECL_IMPORT main(int argc, char* argv[])
 {
 	QApplication app(argc, argv);
+	KLocalizedString::setApplicationDomain("partitionmanager");
 	KAboutData *aboutData = createPartitionManagerAboutData();
 	KAboutData::setApplicationData(*aboutData);
 
