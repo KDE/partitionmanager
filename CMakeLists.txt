@@ -42,26 +42,16 @@ include(GenerateExportHeader)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
   Core
-  DBus
   Widgets
-  Sql
-  Test
 )
 
 # Load the frameworks we need
 find_package(KF5 REQUIRED
   Config
   DocTools
-  FrameworkIntegration
-  GuiAddons
   I18n
-  IconThemes
-  Init
   JobWidgets
   KIO
-  Service
-  Parts
-  TextEditor
   WindowSystem
   XmlGui
   WidgetsAddons

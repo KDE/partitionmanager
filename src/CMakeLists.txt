@@ -35,19 +35,20 @@ ki18n_wrap_ui(partitionmanagerprivate_SRCS ${partitionmanagerprivate_UIFILES})
 kconfig_add_kcfg_files(partitionmanagerprivate_SRCS config.kcfgc)
 install(FILES config.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 
-
 add_library(partitionmanagerprivate SHARED ${partitionmanagerprivate_SRCS})
 generate_export_header(partitionmanagerprivate EXPORT_FILE_NAME libpartitionmanager_export.h)
 target_link_libraries( partitionmanagerprivate libfatlabel
     ${UUID_LIBRARIES} ${BLKID_LIBRARIES} ${LIBATASMART_LIBRARIES}
+    KF5::ConfigCore
+    KF5::ConfigGui
     KF5::I18n
     KF5::IconThemes
     KF5::JobWidgets
     KF5::KIOCore
     KF5::KIOWidgets
-    KF5::Service
     KF5::XmlGui
     KF5::WidgetsAddons
+    KF5::WindowSystem
 )
 
 install(TARGETS partitionmanagerprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
