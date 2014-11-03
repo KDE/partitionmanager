@@ -103,7 +103,7 @@ void TreeLog::saveConfig() const
 	Config::setTreeLogColumnVisible(colVisible);
 	Config::setTreeLogColumnWidths(colWidths);
 
-	Config::self()->writeConfig();
+	Config::self()->save();
 }
 
 void TreeLog::onHeaderContextMenu(const QPoint& pos)

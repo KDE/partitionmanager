@@ -121,7 +121,7 @@ void SmartDialogWidget::saveConfig() const
 	Config::setTreeSmartAttributesColumnVisible(colVisible);
 	Config::setTreeSmartAttributesColumnWidths(colWidths);
 
-	Config::self()->writeConfig();
+	Config::self()->save();
 }
 
 void SmartDialogWidget::setupConnections()

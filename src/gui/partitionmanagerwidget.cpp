@@ -142,7 +142,7 @@ void PartitionManagerWidget::saveConfig() const
 	Config::setTreePartitionColumnVisible(colVisible);
 	Config::setTreePartitionColumnWidths(colWidths);
 
-	Config::self()->writeConfig();
+	Config::self()->save();
 }
 
 void PartitionManagerWidget::setupConnections()

@@ -385,7 +385,7 @@ void MainWindow::loadConfig()
 void MainWindow::saveConfig() const
 {
 	Config::setFirstRun(false);
-	Config::self()->writeConfig();
+	Config::self()->save();
 }
 
 void MainWindow::enableActions()

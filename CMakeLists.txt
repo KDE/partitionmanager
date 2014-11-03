@@ -50,6 +50,7 @@ find_package(KF5 REQUIRED
   Config
   DocTools
   I18n
+  IconThemes
   JobWidgets
   KIO
   WindowSystem

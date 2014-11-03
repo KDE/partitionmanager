@@ -118,7 +118,6 @@ KAboutData* createPartitionManagerAboutData()
 		KAboutLicense::GPL,
 		i18nc("@info:credit", "© 2008-2013 Volker Lanz"));
 	about->setOrganizationDomain(QByteArray("kde.org"));
-	about->setProgramIconName(QStringLiteral("partitionmanager"));
 	about->setProductName(QByteArray("partitionmanager"));
 
 	about->addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Former maintainer"));
