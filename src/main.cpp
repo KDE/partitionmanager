@@ -35,6 +35,11 @@
 
 int Q_DECL_IMPORT main(int argc, char* argv[])
 {
+	Kdelibs4ConfigMigrator migrate(QLatin1Literal("partitionmanager"));
+	migrate.setConfigFiles(QStringList() << QLatin1Literal("partitionmanagerrc"));
+	migrate.setUiFiles(QStringList() << QStringLiteral("partitionmanagerui.rc");
+	migrate.migrate();
+
 	QApplication app(argc, argv);
 	KLocalizedString::setApplicationDomain("partitionmanager");
 	KAboutData *aboutData = createPartitionManagerAboutData();
