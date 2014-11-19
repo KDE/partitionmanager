@@ -33,7 +33,7 @@
 
 #include "ui_configurepagefilesystemcolors.h"
 
-#include <KIconThemes/KIconLoader>
+#include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
 

@@ -62,16 +62,16 @@
 #include <QTemporaryFile>
 #include <QTextStream>
 
-#include <KXmlGui/KActionCollection>
+#include <KActionCollection>
 #include <KMessageBox>
 #include <KAboutData>
-#include <KIconThemes/KIconLoader>
+#include <KIconLoader>
 #include <KLocalizedString>
-#include <KXmlGui/KXMLGUIFactory>
+#include <KXMLGUIFactory>
 #include <KJobUiDelegate>
 #include <KIO/CopyJob>
 #include <KIO/Job>
-#include <KJobWidgets/KJobWidgets>
+#include <KJobWidgets>
 
 #include <config.h>
 
