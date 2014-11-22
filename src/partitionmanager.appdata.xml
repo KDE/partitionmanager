@@ -9,6 +9,7 @@
   <name xml:lang="cs">Správce diskových oddílů pro KDE</name>
   <name xml:lang="da">KDE Partitionshåndtering</name>
   <name xml:lang="de">KDE-Partitionsverwaltung</name>
+  <name xml:lang="el">Διαχειριστής κατατμήσεων του KDE</name>
   <name xml:lang="en-GB">KDE Partition Manager</name>
   <name xml:lang="es">Gestor de particiones de KDE</name>
   <name xml:lang="et">KDE partitsioonide haldur</name>
@@ -39,6 +40,7 @@
   <summary xml:lang="cs">Editor diskových oddílů</summary>
   <summary xml:lang="da">Partitioneringsprogram</summary>
   <summary xml:lang="de">Partition-Editor</summary>
+  <summary xml:lang="el">Διαχειριστής κατατμήσεων</summary>
   <summary xml:lang="en-GB">Partition Editor</summary>
   <summary xml:lang="es">Editor de particiones</summary>
   <summary xml:lang="et">Partitsiooniredaktor</summary>
@@ -69,6 +71,7 @@
     <p xml:lang="ca">El gestor de particions del KDE és un programa d'utilitats que us ajuda a gestionar els dispositius de disc, les particions i els sistemes de fitxers de l'ordinador. Us permet crear, moure, eliminar, redimensionar sense perdre dades, fer còpies de seguretat i restaurar particions fàcilment.</p>
     <p xml:lang="da">KDE Partition Manager er et værktøj til at hjælpe dig med at håndtere dine diskenheder og filsystemerne på din computer. Den lader dig nemt oprette, kopiere, flytte, slette, ændre størrelse uden at miste data, tage backup og gendanne partitioner.</p>
     <p xml:lang="de">KDE-Partitionsverwaltung ist ein Dienstprogramm zur Verwaltung der Festplattengeräte, Partitionen und Dateisystemen auf Ihrem Rechner. Damit können Sie Partitionen einfach erstellen, kopieren, verschieben, deren Größe ohne Datenverlust verändern und Partitionen sichern und wieder herstellen.</p>
+    <p xml:lang="el">Ο διαχειριστής κατατμήσεων του KDE είναι ένα εργαλείο που σας βοηθά να διαχειριστείτε τους δίσκους, τις κατατμήσεις και τα συστήματα αρχείων του υπολογιστή σας. Σας επιτρέπει να δημιουργείτε,αντιγράφετε, μετακινείτε, διαγράφετε, να αλλάζετε το μέγεθος χωρίς να χάνετε δεδομένα, να κρατάτε αντίγραφα ασφαλείας και να επαναφέρετε κατατμήσεις εύκολα.</p>
     <p xml:lang="en-GB">KDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.</p>
     <p xml:lang="es">El gestor de particiones de KDE es una utilidad que le ayuda a gestionar los dispositivos de disco duro, las particiones y el sistema de archivos de su equipo. Le permite crear, copiar, mover, borrar, cambiar el tamaño sin perder datos, hacer copia de seguridad y restaurar particiones.</p>
     <p xml:lang="et">KDE partitsioonide haldur on tööriist, mis aitab hallata kettaseadmeid, partitsioone ja failisüsteeme sinu arvutis. See võimaldab vähese vaevaga partitsioone luua, kopeerida, liigutada, kustutada, muuta suurust andmeid kaotamata, varundada ja taastada.</p>
@@ -97,6 +100,7 @@
     <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="da">Funktioner:</p>
     <p xml:lang="de">Funktionen:</p>
+    <p xml:lang="el">Χαρακτηριστικά:</p>
     <p xml:lang="en-GB">Features:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="et">Omadused:</p>
@@ -127,6 +131,7 @@
       <li xml:lang="ca">Accepta un gran nombre de sistemes de fitxers, incloent ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i més</li>
       <li xml:lang="da">Understøtter et større antal filsystemer, derunder ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS og andre</li>
       <li xml:lang="de">Unterstützt eine große Zahl von Dateisystemen, einschließlich ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS und weitere</li>
+      <li xml:lang="el">Υποστηρίζει μαι σειρά συστημάτων αρχείων, συμπεριλαμβανομένων των ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS και άλλων</li>
       <li xml:lang="en-GB">Supports a large number of file systems, including Ext2/3/4, Btrfs, ReiserFS, NTFS, FAT16/32, JFS, XFS and more</li>
       <li xml:lang="es">Permite un gran número de sistemas de archivos, como ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS y XFS, entre otros</li>
       <li xml:lang="et">Paljude failisüsteemide toetus, sealhulgas ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ja veel paljud</li>
@@ -154,6 +159,7 @@
       <li xml:lang="ca">Fa ús de programes externs ja disponibles per fer la seva feina</li>
       <li xml:lang="da">Gør brug af allerede tilgængelige eksterne programmer til at udføre arbejdet</li>
       <li xml:lang="de">Verwendet bereits vorhandene externe Programme, um die Aufgaben zu erfüllen</li>
+      <li xml:lang="el">Χρησιμοποιεί τα ήδη διαθέσιμα εξωτερικά προγράμματα για να κάνει τη δουλειά του</li>
       <li xml:lang="en-GB">Makes use of already available external programs to get its job done</li>
       <li xml:lang="es">Utiliza varios programas externos que deben estar disponibles para realizar el trabajo</li>
       <li xml:lang="et">Saadaolevate väliste programmide kasutamine vajalike tegevuste sooritamiseks</li>
