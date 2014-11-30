@@ -338,7 +338,7 @@ void PartPropsDialog::updatePartitionFileSystem()
 void PartPropsDialog::onFilesystemChanged(int)
 {
 	if (partition().state() == Partition::StateNew || warnFileSystemChange() || KMessageBox::warningContinueCancel(this,
-			xi18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.<warning></para>"
+			xi18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.</warning></para>"
 				"<para>Changing the file system on a partition already on disk will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filename>%1</filename> will unrecoverably be lost.</para>", partition().deviceNode()),
 			xi18nc("@title:window", "Really Recreate <filename>%1</filename> with File System %2?", partition().deviceNode(), dialogWidget().fileSystem().currentText()),
 			KGuiItem(i18nc("@action:button", "Change the File System"), QStringLiteral("arrow-right")),
@@ -364,7 +364,7 @@ void PartPropsDialog::onRecreate(int state)
 {
 	if (state == Qt::Checked && (warnFileSystemChange() || KMessageBox::warningContinueCancel(this,
 			xi18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.</warning></para>"
-				"<para>Recreating a file system will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filesystem>%1</filesyste> will unrecoverably be lost.</p>", partition().deviceNode()),
+				"<para>Recreating a file system will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</para>", partition().deviceNode()),
 			xi18nc("@title:window", "Really Recreate File System on <filename>%1</filename>?", partition().deviceNode()),
 			KGuiItem(i18nc("@action:button", "Recreate the File System"), QStringLiteral("arrow-right")),
 			KGuiItem(i18nc("@action:button", "Do Not Recreate the File System"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyRecreateFileSystem")) == KMessageBox::Continue))
