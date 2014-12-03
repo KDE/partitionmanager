@@ -108,7 +108,7 @@ bool Job::copyBlocks(Report& report, CopyTarget& target, CopySource& source)
 		const qint64 lastBlockReadOffset = copyDir > 0 ? readOffset + blockSize * blocksCopied : source.firstSector();
 		const qint64 lastBlockWriteOffset = copyDir > 0 ? writeOffset + blockSize * blocksCopied : target.firstSector();
 
-		report.line() << i18nc("@info/plain", "Copying remainder of block size %1 from  %2 to %3.", lastBlock, lastBlockReadOffset, lastBlockWriteOffset);
+		report.line() << i18nc("@info/plain", "Copying remainder of block size %1 from %2 to %3.", lastBlock, lastBlockReadOffset, lastBlockWriteOffset);
 
 		rval = source.readSectors(buffer, lastBlockReadOffset, lastBlock);
 
