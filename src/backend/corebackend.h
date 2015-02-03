@@ -31,8 +31,6 @@ class CoreBackendDevice;
 class Device;
 class PartitionTable;
 
-class KAboutData;
-
 class QString;
 
 /**
@@ -66,11 +64,11 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 		void scanProgress(const QString& device_node, int i);
 
 	public:
-		/**
-		  * Return the plugin's KAboutData
-		  * @return the plugin's KAboutData
-		  */
-		virtual const KAboutData& about() const { return *m_AboutData; }
+        /**
+          * Return the plugin's unique Id from JSON metadata
+          * @return the plugin's unique Id from JSON metadata
+          */
+        QString id() { return m_id; }
 
 		/**
 		  * Initialize the plugin's FileSystem support
@@ -140,11 +138,11 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 		static void setPartitionTableForDevice(Device& d, PartitionTable* p);
 		static void setPartitionTableMaxPrimaries(PartitionTable& p, qint32 max_primaries);
 
-	private:
-		void setAboutData(const KAboutData* a) { m_AboutData = a; }
+    private:
+        void setId(const QString& id) { m_id = id; }
 
 	private:
-		const KAboutData* m_AboutData;
+        QString m_id;
 
 		class CoreBackendPrivate;
 		CoreBackendPrivate* d;

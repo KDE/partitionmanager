@@ -1,5 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de                        *
+ *   Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                       *
+ *   Copyright (C) 2015 by Teo Mrnjavac <teo@kde.org>                      *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -24,7 +25,6 @@
 #include <QStringList>
 #include <QString>
 
-#include <KAboutData>
 #include <KLocalizedString>
 #include <KPluginLoader>
 #include <KServiceTypeTrader>
@@ -48,7 +48,8 @@ CoreBackendManager* CoreBackendManager::self()
 
 KService::List CoreBackendManager::list() const
 {
-	return KServiceTypeTrader::self()->query(QStringLiteral("PartitionManager/Plugin"), QStringLiteral("[X-KDE-PluginInfo-Category] == 'BackendPlugin'"));
+    return KServiceTypeTrader::self()->query(QStringLiteral("PartitionManager/Plugin"),
+                                             QStringLiteral("[X-KDE-PluginInfo-Category] == 'BackendPlugin'"));
 }
 
 bool CoreBackendManager::load(const QString& name)
@@ -58,14 +59,19 @@ bool CoreBackendManager::load(const QString& name)
 
 	KPluginLoader loader(name);
 
-	KPluginFactory* factory = loader.factory();
+    KPluginFactory* factory = loader.factory();
 
 	if (factory != NULL)
 	{
-		m_Backend = factory->create<CoreBackend>(NULL);
-// FIXME: port KF5
-//  		backend()->setAboutData(factory->componentData().aboutData());
-// 		qDebug() << "Loaded backend plugin: " << backend()->about().displayName() << ", " << backend()->about().version();
+        m_Backend = factory->create<CoreBackend>(NULL);
+
+        QString id = loader.metaData().toVariantMap().value(QStringLiteral("KPlugin"))
+                     .toMap().value(QStringLiteral("Id")).toString();
+        if ( id.isEmpty() )
+            return false;
+
+        backend()->setId( id );
+        qDebug() << "Loaded backend plugin: " << backend()->id();
 		return true;
 	}
 

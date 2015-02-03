@@ -34,4 +34,5 @@ add_library(pmlibpartedbackendplugin SHARED ${pmlibpartedbackendplugin_SRCS})
 target_link_libraries(pmlibpartedbackendplugin partitionmanagerprivate ${LIBPARTED_LIBS} ${BLKID_LIBRARIES} KF5::KIOCore)
 
 install(TARGETS pmlibpartedbackendplugin DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES pmlibpartedbackendplugin.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+kservice_desktop_to_json(pmlibpartedbackendplugin pmlibpartedbackendplugin.desktop)
+install(FILES pmlibpartedbackendplugin.json DESTINATION ${SERVICES_INSTALL_DIR})

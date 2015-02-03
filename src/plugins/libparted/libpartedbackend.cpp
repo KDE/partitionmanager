@@ -47,29 +47,12 @@
 #include <KIOCore/KMountPoint>
 #include <KIOCore/KDiskFreeSpaceInfo>
 #include <KPluginFactory>
-#include <KAboutData>
 
 #include <parted/parted.h>
 #include <unistd.h>
 #include <blkid/blkid.h>
 
-K_PLUGIN_FACTORY(LibPartedBackendFactory, registerPlugin<LibPartedBackend>(); )
-
-static KAboutData createPluginAboutData()
-{
-	KAboutData about(
-		QStringLiteral("pmlibpartedbackendplugin"),
-		i18nc("@title", "LibParted Backend Plugin"),
-		QStringLiteral("%1, libparted version: %2").arg(QString::fromLatin1(VERSION)).arg(QString::fromLatin1(ped_get_version())),
-		i18n("KDE Partition Manager backend for libparted."),
-		KAboutLicense::GPL,
-		i18n("Copyright 2008,2009,2010 Volker Lanz"));
-
-	about.addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Former maintainer"));
-	about.setHomepage(QStringLiteral("http://www.partitionmanager.org"));
-
-	return about;
-}
+K_PLUGIN_FACTORY_WITH_JSON(LibPartedBackendFactory, "pmlibpartedbackendplugin.json", registerPlugin<LibPartedBackend>();)
 
 static struct
 {

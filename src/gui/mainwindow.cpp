@@ -942,7 +942,7 @@ void MainWindow::onFileSystemSupport()
 void MainWindow::onSettingsChanged()
 {
 // 	FIXME: port KF5
-	if (CoreBackendManager::self()->backend()->about().productName() != Config::backend())
+    if (CoreBackendManager::self()->backend()->id() != Config::backend())
 	{
 		CoreBackendManager::self()->unload();
 		// FIXME: if loadBackend() fails to load the configured backend and loads the default

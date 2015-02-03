@@ -34,25 +34,9 @@
 
 #include <KLocalizedString>
 #include <KPluginFactory>
-#include <KAboutData>
 
-K_PLUGIN_FACTORY(DummyBackendFactory, registerPlugin<DummyBackend>(); )
+K_PLUGIN_FACTORY_WITH_JSON(DummyBackendFactory, "pmdummybackendplugin.json", registerPlugin<DummyBackend>(); )
 
-static KAboutData createPluginAboutData()
-{
-	KAboutData about(
-		QStringLiteral("pmdummybackendplugin"),
-		i18nc("@title", "Dummy Backend Plugin"),
-		QString::fromLatin1(VERSION),
-		i18n("KDE Partition Manager dummy backend."),
-		KAboutLicense::GPL,
-		i18n("Copyright 2010 Volker Lanz"));
-
-	about.addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Former maintainer"));
-	about.setHomepage(QStringLiteral("http://www.partitionmanager.org"));
-
-	return about;
-}
 
 DummyBackend::DummyBackend(QObject*, const QList<QVariant>&) :
 	CoreBackend()

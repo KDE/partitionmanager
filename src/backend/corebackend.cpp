@@ -38,7 +38,6 @@ class CoreBackend::CoreBackendPrivate
 };
 
 CoreBackend::CoreBackend() :
-	m_AboutData(NULL),
 	d(new CoreBackendPrivate(*this))
 {
 }
