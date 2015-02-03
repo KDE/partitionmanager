@@ -442,6 +442,8 @@ QList<Device*> LibPartedBackend::scanDevices()
 
 	ped_device_probe_all();
 	PedDevice* pedDevice = NULL;
+	QVector<QString> path;
+	quint32 totalDevices = 0;
 	while (true)
 	{
 		pedDevice = ped_device_get_next(pedDevice);
@@ -449,9 +451,13 @@ QList<Device*> LibPartedBackend::scanDevices()
 			break;
 		if (pedDevice->type == PED_DEVICE_DM)
 			continue;
-
-		QString path = QString::fromUtf8(pedDevice->path);
-		Device* d = scanDevice(path);
+		path.push_back(QString::fromUtf8(pedDevice->path));
+		++totalDevices;
+	}
+	for (quint32 i = 0; i < totalDevices; ++i)
+	{
+		emitScanProgress(path[i], i * 100 / totalDevices);
+		Device* d = scanDevice(path[i]);
 		if (d)
 			result.append(d);
 	}
