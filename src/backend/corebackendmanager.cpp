@@ -66,7 +66,7 @@ bool CoreBackendManager::load(const QString& name)
         m_Backend = factory->create<CoreBackend>(NULL);
 
         QString id = loader.metaData().toVariantMap().value(QStringLiteral("MetaData"))
-                     .toMap().value(QStringLiteral("X-KDE-PluginInfo-Name")).toString();
+                     .toMap().value(QStringLiteral("KPlugin")).toMap().value(QStringLiteral("Id")).toString();
         if ( id.isEmpty() )
             return false;
 
