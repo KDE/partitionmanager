@@ -77,7 +77,7 @@ bool checkPermissions()
 		// endless loops of calling the same non-working (kde|gk)su(do) binary again and again.
 		if (!suCommand().isEmpty() && !QCoreApplication::arguments().contains(QLatin1String("--dontsu")))
 		{
-			QStringList argList;
+			QString argList;
 
 			const QString suCmd = suCommand();
 
@@ -85,11 +85,11 @@ bool checkPermissions()
 			// kdesudo accepts either (with or without "-c"), but the gk* helpers only work
 			// without. kdesu maintainers won't fix their app, so we need to work around that here.
 			if (suCmd.indexOf(QStringLiteral("kdesu")) != -1)
-				argList << QStringLiteral("-c");
+				argList = QStringLiteral("-c ");
 
-			argList << QCoreApplication::arguments() << QStringLiteral(" --dontsu");
+			argList += QCoreApplication::arguments().join(QStringLiteral(" ")) + QStringLiteral(" --dontsu");
 
-			if (QProcess::execute(suCmd, argList) == 0)
+			if (QProcess::execute(suCmd, QStringList(argList)) == 0)
 				return false;
 		}
 
