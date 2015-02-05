@@ -116,7 +116,7 @@ KAboutData* createPartitionManagerAboutData()
 		QStringLiteral(VERSION),
 		i18nc("@title", "Manage your disks, partitions and file systems"),
 		KAboutLicense::GPL_V3,
-		i18nc("@info:credit", "© 2008-2013 Volker Lanz"));
+		i18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2015 Andrius Štikonas"));
 	about->setOrganizationDomain(QByteArray("kde.org"));
 	about->setProductName(QByteArray("partitionmanager"));
 
