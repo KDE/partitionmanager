@@ -70,6 +70,12 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
           */
         QString id() { return m_id; }
 
+        /**
+          * Return the plugin's version from JSON metadata
+          * @return the plugin's version from JSON metadata
+          */
+        QString version() { return m_version; }
+
 		/**
 		  * Initialize the plugin's FileSystem support
 		  */
@@ -140,9 +146,10 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
 
     private:
         void setId(const QString& id) { m_id = id; }
+        void setVersion(const QString& version) { m_version = version; }
 
 	private:
-        QString m_id;
+        QString m_id, m_version;
 
 		class CoreBackendPrivate;
 		CoreBackendPrivate* d;

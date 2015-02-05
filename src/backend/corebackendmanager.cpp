@@ -67,10 +67,13 @@ bool CoreBackendManager::load(const QString& name)
 
         QString id = loader.metaData().toVariantMap().value(QStringLiteral("MetaData"))
                      .toMap().value(QStringLiteral("KPlugin")).toMap().value(QStringLiteral("Id")).toString();
+	QString version = loader.metaData().toVariantMap().value(QStringLiteral("MetaData"))
+                     .toMap().value(QStringLiteral("KPlugin")).toMap().value(QStringLiteral("Version")).toString();
         if ( id.isEmpty() )
             return false;
 
         backend()->setId( id );
+	backend()->setVersion ( version );
         qDebug() << "Loaded backend plugin: " << backend()->id();
 		return true;
 	}

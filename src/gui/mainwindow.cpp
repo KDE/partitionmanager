@@ -57,6 +57,7 @@
 #include <QFileDialog>
 #include <QMenu>
 #include <QPointer>
+#include <QPushButton>
 #include <QReadLocker>
 #include <QStatusBar>
 #include <QTemporaryFile>
@@ -538,10 +539,9 @@ void MainWindow::on_m_PartitionManagerWidget_selectedPartitionChanged(const Part
 
 void MainWindow::scanDevices()
 {
-// 	FIXME: port KF5
-// 	Log(Log::information) << i18nc("@info/plain", "Using backend plugin: %1 (%2)",
-// 			CoreBackendManager::self()->backend()->about().displayName(),
-// 			CoreBackendManager::self()->backend()->about().version());
+	Log(Log::information) << i18nc("@info/plain", "Using backend plugin: %1 (%2)",
+			CoreBackendManager::self()->backend()->id(),
+			CoreBackendManager::self()->backend()->version());
 
 	Log() << i18nc("@info/plain", "Scanning devices...");
 
@@ -941,7 +941,6 @@ void MainWindow::onFileSystemSupport()
 
 void MainWindow::onSettingsChanged()
 {
-// 	FIXME: port KF5
     if (CoreBackendManager::self()->backend()->id() != Config::backend())
 	{
 		CoreBackendManager::self()->unload();
@@ -972,9 +971,8 @@ void MainWindow::onConfigureOptions()
 	// FIXME: we'd normally use settingsChanged(), according to the kde api docs. however, this
 	// is emitted each time the user changes any of our own settings (backend, default file system), without
 	// applying or clicking ok. so the below is the workaround for that.
-	// FIXME: port KF5
-	connect(dlg, SIGNAL(applyClicked()), SLOT(onSettingsChanged()));
-	connect(dlg, SIGNAL(okClicked()), SLOT(onSettingsChanged()));
+	connect(dlg->button(QDialogButtonBox::Apply), &QPushButton::clicked, this, &MainWindow::onSettingsChanged);
+	connect(dlg->button(QDialogButtonBox::Ok), &QPushButton::clicked, this, &MainWindow::onSettingsChanged);
 
 	dlg->show();
 }

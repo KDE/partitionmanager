@@ -78,7 +78,7 @@ QString HtmlReport::header()
 	s << "<table>\n"
 		<< tableLine(i18n("Date:"), QLocale().toString(QDateTime::currentDateTime(), QLocale::ShortFormat))
 		<< tableLine(i18n("Program version:"), QCoreApplication::applicationVersion())
-// 		<< tableLine(i18n("Backend:"), QString("%1 (%2)").arg(CoreBackendManager::self()->backend()->about().displayName()).arg(CoreBackendManager::self()->backend()->about().version())) /* FIXME: port KF5 */
+		<< tableLine(i18n("Backend:"), QStringLiteral("%1 (%2)").arg(CoreBackendManager::self()->backend()->id()).arg(CoreBackendManager::self()->backend()->version()))
 		<< tableLine(i18n("KDE Frameworks version:"), QStringLiteral(KXMLGUI_VERSION_STRING))
 		<< tableLine(i18n("Machine:"), unameString)
 		<< "</table>\n<br/>\n";
