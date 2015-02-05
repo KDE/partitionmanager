@@ -31,14 +31,11 @@
 class CoreBackend::CoreBackendPrivate
 {
 	public:
-		CoreBackendPrivate(CoreBackend& cb) : coreBackend(cb) {}
-
-	private:
-		CoreBackend& coreBackend;
+		CoreBackendPrivate() {}
 };
 
 CoreBackend::CoreBackend() :
-	d(new CoreBackendPrivate(*this))
+	d(new CoreBackendPrivate())
 {
 }
 

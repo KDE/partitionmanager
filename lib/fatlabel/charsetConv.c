@@ -35,9 +35,9 @@ struct doscp_t
 } doscp_t;
 
 static unsigned int mtools_default_codepage = 850;
-static char *wcharCp = NULL;
+static const char *wcharCp = NULL;
 
-static char* wcharTries[] =
+static const char* wcharTries[] =
 {
 	"WCHAR_T",
 	"UTF-32BE", "UTF-32LE",
@@ -48,9 +48,9 @@ static char* wcharTries[] =
 	"UCS-4", "UCS-2"
 };
 
-static wchar_t *testString = L"ab";
+static const wchar_t *testString = L"ab";
 
-static int tryConvert(char *testCp)
+static int tryConvert(const char *testCp)
 {
 	char *inbuf = (char *)testString;
 	size_t inbufLen = 2*sizeof(wchar_t);
