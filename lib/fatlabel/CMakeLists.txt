@@ -15,7 +15,8 @@
 # Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -W -Wall -std=c99 -Wno-sign-compare -Wno-type-limits -fno-strict-aliasing -fvisibility=hidden")
+set(CMAKE_VISIBILITY_INLINES_HIDDEN 0)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -W -Wall -std=gnu11 -Wno-sign-compare -Wno-type-limits -fno-strict-aliasing")
 
 file(GLOB libfatlabel_SRCS
 	*.c
