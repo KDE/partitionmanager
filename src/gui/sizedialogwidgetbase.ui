@@ -52,7 +52,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string comment="@label:listbox">Partition type:</string>
+      <string comment="@label:listbox">Partition &amp;type:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -67,21 +67,21 @@
      <item>
       <widget class="QRadioButton" name="m_RadioPrimary">
        <property name="text">
-        <string>Primary</string>
+        <string>Primar&amp;y</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QRadioButton" name="m_RadioExtended">
        <property name="text">
-        <string>Extended</string>
+        <string>E&amp;xtended</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QRadioButton" name="m_RadioLogical">
        <property name="text">
-        <string>Logical</string>
+        <string>&amp;Logical</string>
        </property>
       </widget>
      </item>
@@ -125,8 +125,7 @@
    <item row="4" column="1">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLineEdit" name="m_EditLabel">
-      </widget>
+      <widget class="QLineEdit" name="m_EditLabel"/>
      </item>
      <item>
       <widget class="QLabel" name="m_LabelTextNoSetLabel">
@@ -230,7 +229,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string comment="@label:listbox">Size:</string>
+      <string comment="@label:listbox">Si&amp;ze:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

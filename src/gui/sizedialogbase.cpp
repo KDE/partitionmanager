@@ -65,6 +65,7 @@ SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint
 	cancelButton = dialogButtonBox->addButton( QDialogButtonBox::Cancel );
 	detailsButton->setText(i18nc("@item:button advanced settings button", "Advanced") + QStringLiteral(" >>"));
 	dialogButtonBox->addButton( detailsButton, QDialogButtonBox::ActionRole);
+	mainLayout->setSizeConstraint(QLayout::SetFixedSize);
 	mainLayout->addWidget(dialogButtonBox);
 
 	connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
