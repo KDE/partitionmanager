@@ -49,6 +49,9 @@ bool CreateFileSystemJob::run(Report& parent)
 
 	Report* report = jobStarted(parent);
 
+	if (partition().fileSystem().type() == FileSystem::Unformatted)
+		return true;
+
 	if (partition().fileSystem().supportCreate() == FileSystem::cmdSupportFileSystem)
 	{
 		if (partition().fileSystem().create(*report, partition().deviceNode()))
