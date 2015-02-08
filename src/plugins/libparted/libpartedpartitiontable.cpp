@@ -124,6 +124,7 @@ static const struct
 	{ FileSystem::Fat32, QStringLiteral("fat32") },
 	{ FileSystem::Nilfs2, QStringLiteral("nilfs2") },
 	{ FileSystem::Ntfs, QStringLiteral("ntfs") },
+	{ FileSystem::Exfat, QStringLiteral("ntfs") },
 	{ FileSystem::ReiserFS, QStringLiteral("reiserfs") },
 	{ FileSystem::Reiser4, QStringLiteral("reiser4") },
 	{ FileSystem::Xfs, QStringLiteral("xfs") },
