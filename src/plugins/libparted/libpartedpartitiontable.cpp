@@ -115,12 +115,14 @@ static const struct
 	QString name;
 } mapFileSystemTypeToLibPartedName[] =
 {
+	{ FileSystem::Btrfs, QStringLiteral("btrfs") },
 	{ FileSystem::Ext2, QStringLiteral("ext2") },
 	{ FileSystem::Ext3, QStringLiteral("ext3") },
 	{ FileSystem::Ext4, QStringLiteral("ext4") },
 	{ FileSystem::LinuxSwap, QStringLiteral("linux-swap") },
 	{ FileSystem::Fat16, QStringLiteral("fat16") },
 	{ FileSystem::Fat32, QStringLiteral("fat32") },
+	{ FileSystem::Nilfs2, QStringLiteral("nilfs2") },
 	{ FileSystem::Ntfs, QStringLiteral("ntfs") },
 	{ FileSystem::ReiserFS, QStringLiteral("reiserfs") },
 	{ FileSystem::Reiser4, QStringLiteral("reiser4") },
