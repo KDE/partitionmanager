@@ -80,10 +80,14 @@ include_directories(${Qt5Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE
 add_subdirectory(lib)
 add_subdirectory(src)
 add_subdirectory(icons)
+add_subdirectory(doc)
+
+ki18n_install(po)
+
+get_filename_component(_doc_translations_path doc-translations ABSOLUTE)
+
+if (EXISTS ${_doc_translations_path}/CMakeLists.txt)
+    add_subdirectory(doc-translations)
+endif()
 
 message(STATUS "KDE Partition Manager ${VERSION} will be built for install into ${CMAKE_INSTALL_PREFIX}")
-
-add_custom_target(docs
-	COMMAND doxygen Doxyfile
-	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-)
