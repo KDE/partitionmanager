@@ -19,6 +19,7 @@ cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 
 set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
+set(KDE_INSTALL_USE_QT_SYS_PATHS ON CACHE BOOL "Install mkspecs files, Plugins and Imports to the Qt 5 install dir" FORCE)
 
 set(QT_MIN_VERSION "5.3.0")
 set(VERSION_MAJOR "1")
