@@ -120,7 +120,7 @@ KAboutData* createPartitionManagerAboutData()
 
 	about->addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Former maintainer"));
 	about->addAuthor(i18nc("@info:credit", "Andrius Štikonas"), i18nc("@info:credit", "Maintainer"), QStringLiteral("andrius@stikonas.eu"));
-	about->setHomepage(QStringLiteral("http://www.partitionmanager.org"));
+	about->setHomepage(QStringLiteral("https://www.kde.org/applications/system/kdepartitionmanager"));
 
 	about->addCredit(i18n("Hugo Pereira Da Costa"), i18nc("@info:credit", "Partition Widget Design"), QStringLiteral("hugo@oxygen-icons.org"));
 
