@@ -18,6 +18,7 @@
 #if !defined(CAPACITY__H)
 
 #define CAPACITY__H
+#include "util/libpartitionmanagerexport.h"
 
 class Partition;
 class Device;
@@ -31,7 +32,7 @@ class Device;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class Capacity
+class LIBKPMCORE_EXPORT Capacity
 {
 	public:
 		/** Units we can deal with */

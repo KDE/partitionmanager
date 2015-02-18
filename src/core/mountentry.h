@@ -18,6 +18,7 @@
 #if !defined(MOUNTENTRY__H)
 
 #define MOUNTENTRY__H
+#include "util/libpartitionmanagerexport.h"
 
 #include <QString>
 #include <QStringList>
@@ -25,7 +26,7 @@
 
 struct mntent;
 
-class MountEntry
+class LIBKPMCORE_EXPORT MountEntry
 {
 	public:
 		enum IdentifyType { deviceNode, uuid, label };

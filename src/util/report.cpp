@@ -21,8 +21,6 @@
 #include "backend/corebackend.h"
 #include "backend/corebackendmanager.h"
 
-#include <QTextDocument>
-
 #include <KLocalizedString>
 
 #include <sys/utsname.h>

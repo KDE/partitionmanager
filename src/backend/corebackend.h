@@ -36,7 +36,7 @@ class QString;
   * @author Volker Lanz <vl@fidra.de>
   */
 
-class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackend : public QObject
+class LIBKPMCORE_EXPORT CoreBackend : public QObject
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(CoreBackend)

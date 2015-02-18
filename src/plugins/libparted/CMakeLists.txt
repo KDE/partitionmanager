@@ -29,7 +29,7 @@ file (GLOB pmlibpartedbackendplugin_SRCS *.cpp)
 
 add_library(pmlibpartedbackendplugin SHARED ${pmlibpartedbackendplugin_SRCS})
 
-target_link_libraries(pmlibpartedbackendplugin partitionmanagerprivate ${LIBPARTED_LIBS} ${BLKID_LIBRARIES} KF5::KIOCore)
+target_link_libraries(pmlibpartedbackendplugin kpmgui ${LIBPARTED_LIBS} ${BLKID_LIBRARIES} KF5::KIOCore)
 
 install(TARGETS pmlibpartedbackendplugin DESTINATION ${PLUGIN_INSTALL_DIR})
 kcoreaddons_desktop_to_json(pmlibpartedbackendplugin pmlibpartedbackendplugin.desktop)

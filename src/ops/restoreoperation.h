@@ -18,6 +18,7 @@
 #if !defined(RESTOREOPERATION__H)
 
 #define RESTOREOPERATION__H
+#include "util/libpartitionmanagerexport.h"
 
 #include "ops/operation.h"
 
@@ -41,7 +42,7 @@ class ResizeFileSystemJob;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class RestoreOperation : public Operation
+class LIBKPMCORE_EXPORT RestoreOperation : public Operation
 {
 	friend class OperationStack;
 

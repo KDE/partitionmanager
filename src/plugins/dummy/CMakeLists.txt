@@ -17,7 +17,7 @@ file (GLOB pmdummybackendplugin_SRCS *.cpp)
 
 add_library(pmdummybackendplugin SHARED ${pmdummybackendplugin_SRCS})
 
-target_link_libraries(pmdummybackendplugin partitionmanagerprivate KF5::KIOCore ${LIBPARTED_LIBS} ${BLKID_LIBRARIES} KF5::Solid)
+target_link_libraries(pmdummybackendplugin kpmgui KF5::KIOCore ${LIBPARTED_LIBS} ${BLKID_LIBRARIES} KF5::Solid)
 
 install(TARGETS pmdummybackendplugin DESTINATION ${PLUGIN_INSTALL_DIR})
 kcoreaddons_desktop_to_json(pmdummybackendplugin pmdummybackendplugin.desktop)

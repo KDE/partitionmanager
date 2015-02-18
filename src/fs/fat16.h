@@ -34,7 +34,7 @@ namespace FS
 	/** A fat16 file system.
 		@author Volker Lanz <vl@fidra.de>
 	 */
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT fat16 : public FileSystem
+	class LIBKPMCORE_EXPORT fat16 : public FileSystem
 	{
 		public:
 			fat16(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t = FileSystem::Fat16);

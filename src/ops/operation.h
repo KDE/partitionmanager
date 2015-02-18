@@ -19,6 +19,8 @@
 
 #define OPERATION__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include <QObject>
 #include <QList>
 #include <qglobal.h>
@@ -113,7 +115,7 @@ class Operation : public QObject
 
 		virtual void setStatus(OperationStatus s) { m_Status = s; } /**< @param s the new status */
 
-		qint32 totalProgress() const;
+		LIBKPMCORE_EXPORT qint32 totalProgress() const;
 
 	protected Q_SLOTS:
 		void onJobStarted();

@@ -18,6 +18,7 @@
 #if !defined(COPYOPERATION__H)
 
 #define COPYOPERATION__H
+#include "util/libpartitionmanagerexport.h"
 
 #include "ops/operation.h"
 
@@ -40,7 +41,7 @@ class ResizeFileSystemJob;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class CopyOperation : public Operation
+class LIBKPMCORE_EXPORT CopyOperation : public Operation
 {
 	friend class OperationStack;
 

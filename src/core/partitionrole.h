@@ -31,7 +31,7 @@ class QString;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionRole
+class LIBKPMCORE_EXPORT PartitionRole
 {
 	public:
 		/** A Partition's role: What kind of Partition is it? */

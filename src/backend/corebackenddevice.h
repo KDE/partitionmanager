@@ -33,7 +33,7 @@ class Report;
   * Interface class representing a device in the backend plugin.
   * @author Volker Lanz <vl@fidra.de>
   */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendDevice
+class LIBKPMCORE_EXPORT CoreBackendDevice
 {
 	public:
 		CoreBackendDevice(const QString& device_node);

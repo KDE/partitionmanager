@@ -18,12 +18,9 @@
 
 #include "fs/luks.h"
 
-#include "gui/decryptluksdialog.h"
-
 #include "util/capacity.h"
 #include "util/externalcommand.h"
 
-#include <QDialog>
 #include <QPointer>
 #include <QString>
 #include <QUuid>
@@ -86,35 +83,9 @@ namespace FS
 		 return 3 * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
 	}
 
-	QString luks::mountTitle() const
-	{
-		return i18nc("@title:menu", "Decrypt");
-	}
-
 	QString luks::unmountTitle() const
 	{
 		return i18nc("@title:menu", "Deactivate");
-	}
-
-	bool luks::mount(const QString& deviceNode)
-	{
-		QPointer<DecryptLuksDialog> dlg = new DecryptLuksDialog(0, deviceNode); //TODO: parent widget instead of 0
-
-		if (dlg->exec() == QDialog::Accepted)
-		{
-			std::vector<QString> commands;
-			commands.push_back(QStringLiteral("echo"));
-			commands.push_back(QStringLiteral("cryptsetup"));
-			std::vector<QStringList> args;
-			args.push_back(QStringList() << dlg->luksPassphrase().text());
-			args.push_back(QStringList() << QStringLiteral("luksOpen") << deviceNode << dlg->luksName().text());
-			ExternalCommand cmd(commands, args);
-			delete dlg;
-			return cmd.run(-1) && cmd.exitCode() == 0;
-		}
-
-		delete dlg;
-		return false;
 	}
 
 	bool luks::unmount(const QString& deviceNode)

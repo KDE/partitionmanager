@@ -18,10 +18,11 @@
 #if !defined(HTMLREPORT__H)
 
 #define HTMLREPORT__H
+#include "util/libpartitionmanagerexport.h"
 
 class QString;
 
-class HtmlReport
+class LIBKPMCORE_EXPORT HtmlReport
 {
 	public:
 		HtmlReport() {}

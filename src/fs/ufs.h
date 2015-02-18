@@ -32,7 +32,7 @@ namespace FS
 	/** A UFS file system.
 		@author Volker Lanz <vl@fidra.de>
 	 */
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT ufs : public FileSystem
+	class LIBKPMCORE_EXPORT ufs : public FileSystem
 	{
 		public:
 			ufs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

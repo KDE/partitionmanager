@@ -31,7 +31,7 @@ class QString;
 /** Factory to create instances of FileSystem.
 	@author Volker Lanz <vl@fidra.de>
  */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT FileSystemFactory
+class LIBKPMCORE_EXPORT FileSystemFactory
 {
 	public:
 		/** map of FileSystem::Types to pointers of FileSystem */

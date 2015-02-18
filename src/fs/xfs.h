@@ -34,7 +34,7 @@ namespace FS
 	/** An XFS file system.
 		@author Volker Lanz <vl@fidra.de>
 	*/
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT xfs : public FileSystem
+	class LIBKPMCORE_EXPORT xfs : public FileSystem
 	{
 		public:
 			xfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

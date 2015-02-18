@@ -34,7 +34,7 @@ namespace FS
 	/** A nilfs2 file system.
 		@author Volker Lanz <vl@fidra.de>
 	*/
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT nilfs2 : public FileSystem
+	class LIBKPMCORE_EXPORT nilfs2 : public FileSystem
 	{
 		public:
 			nilfs2(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

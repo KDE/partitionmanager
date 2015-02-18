@@ -34,7 +34,7 @@ namespace FS
 	/** An hfsplus file system.
 		@author Volker Lanz <vl@fidra.de>
 	 */
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT hfsplus : public FileSystem
+	class LIBKPMCORE_EXPORT hfsplus : public FileSystem
 	{
 		public:
 			hfsplus(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

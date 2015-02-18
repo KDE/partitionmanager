@@ -18,6 +18,7 @@
 #if !defined(SMARTSTATUS__H)
 
 #define SMARTSTATUS__H
+#include "util/libpartitionmanagerexport.h"
 
 #include <qglobal.h>
 #include <QString>
@@ -28,7 +29,7 @@ class SmartAttribute;
 struct SkSmartAttributeParsedData;
 struct SkDisk;
 
-class SmartStatus
+class LIBKPMCORE_EXPORT SmartStatus
 {
 	public:
 		enum Overall

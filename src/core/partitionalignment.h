@@ -26,7 +26,7 @@
 class Device;
 class Partition;
 
-class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionAlignment
+class LIBKPMCORE_EXPORT PartitionAlignment
 {
 	private:
 		PartitionAlignment();

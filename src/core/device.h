@@ -39,7 +39,7 @@ class SmartStatus;
 	@see PartitionTable, Partition
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT Device : public QObject
+class LIBKPMCORE_EXPORT Device : public QObject
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(Device)

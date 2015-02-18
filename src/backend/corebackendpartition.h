@@ -29,7 +29,7 @@ class Report;
   * Represents a partition in the backend plugin.
   * @author Volker Lanz <vl@fidra.de>
   */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendPartition
+class LIBKPMCORE_EXPORT CoreBackendPartition
 {
 	public:
 		CoreBackendPartition();

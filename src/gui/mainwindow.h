@@ -46,7 +46,7 @@ class QEvent;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
+class LIBKPMCORE_EXPORT MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(MainWindow)

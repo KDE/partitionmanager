@@ -34,7 +34,7 @@ namespace FS
 	/** A hpfs file system.
 		@author Volker Lanz <vl@fidra.de>
 	*/
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT hpfs : public FileSystem
+	class LIBKPMCORE_EXPORT hpfs : public FileSystem
 	{
 		public:
 			hpfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

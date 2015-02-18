@@ -70,7 +70,7 @@ class QTextStream;
 	@see PartitionTable, Device, FileSystem
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT Partition : public PartitionNode
+class LIBKPMCORE_EXPORT Partition : public PartitionNode
 {
 	friend class PartitionTable;
 	friend class OperationStack;

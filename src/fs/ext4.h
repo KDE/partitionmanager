@@ -37,7 +37,7 @@ namespace FS
 
 		@author Volker Lanz <vl@fidra.de>
 	 */
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT ext4 : public ext2
+	class LIBKPMCORE_EXPORT ext4 : public ext2
 	{
 		public:
 			ext4(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

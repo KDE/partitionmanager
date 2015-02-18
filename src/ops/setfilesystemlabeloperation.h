@@ -18,6 +18,7 @@
 #if !defined(SETFILESYSTEMLABELOPERATION__H)
 
 #define SETFILESYSTEMLABELOPERATION__H
+#include "util/libpartitionmanagerexport.h"
 
 #include "ops/operation.h"
 
@@ -34,7 +35,7 @@ class SetFileSystemLabelJob;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class SetFileSystemLabelOperation : public Operation
+class LIBKPMCORE_EXPORT SetFileSystemLabelOperation : public Operation
 {
 	friend class OperationStack;
 

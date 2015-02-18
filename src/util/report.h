@@ -34,7 +34,7 @@ class ReportLine;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT Report : public QObject
+class LIBKPMCORE_EXPORT Report : public QObject
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(Report)

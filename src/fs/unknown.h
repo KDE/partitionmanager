@@ -30,7 +30,7 @@ namespace FS
 	/** A pseudo file system for partitions whose file system we cannot determine.
 		@author Volker Lanz <vl@fidra.de>
 	*/
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT unknown : public FileSystem
+	class LIBKPMCORE_EXPORT unknown : public FileSystem
 	{
 		public:
 			unknown(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

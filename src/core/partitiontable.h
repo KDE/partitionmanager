@@ -41,12 +41,12 @@ class QTextStream;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionTable : public PartitionNode
+class LIBKPMCORE_EXPORT PartitionTable : public PartitionNode
 {
 	Q_DISABLE_COPY(PartitionTable)
 
 	friend class CoreBackend;
-	friend QTextStream& operator<<(QTextStream& stream, const PartitionTable& ptable);
+	friend LIBKPMCORE_EXPORT QTextStream& operator<<(QTextStream& stream, const PartitionTable& ptable);
 
 	public:
 		enum TableType

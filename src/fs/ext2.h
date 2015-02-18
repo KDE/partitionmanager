@@ -34,7 +34,7 @@ namespace FS
 	/** An ext2 file system.
 		@author Volker Lanz <vl@fidra.de>
 	*/
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT ext2 : public FileSystem
+	class LIBKPMCORE_EXPORT ext2 : public FileSystem
 	{
 		public:
 			ext2(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label, FileSystem::Type t = FileSystem::Ext2);

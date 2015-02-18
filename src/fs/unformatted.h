@@ -34,7 +34,7 @@ namespace FS
 	/** A pseudo file system for unformatted partitions.
 		@author Volker Lanz <vl@fidra.de>
 	 */
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT unformatted : public FileSystem
+	class LIBKPMCORE_EXPORT unformatted : public FileSystem
 	{
 		public:
 			unformatted(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

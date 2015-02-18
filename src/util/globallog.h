@@ -25,7 +25,7 @@
 #include <QObject>
 #include <qglobal.h>
 
-class LIBPARTITIONMANAGERPRIVATE_EXPORT Log
+class LIBKPMCORE_EXPORT Log
 {
 	public:
 		enum Level
@@ -49,7 +49,7 @@ class LIBPARTITIONMANAGERPRIVATE_EXPORT Log
 /** Global logging.
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT GlobalLog : public QObject
+class LIBKPMCORE_EXPORT GlobalLog : public QObject
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(GlobalLog)

@@ -18,12 +18,13 @@
 #if !defined(SMARTATTRIBUTE__H)
 
 #define SMARTATTRIBUTE__H
+#include "util/libpartitionmanagerexport.h"
 
 #include <QString>
 
 struct SkSmartAttributeParsedData;
 
-class SmartAttribute
+class LIBKPMCORE_EXPORT SmartAttribute
 {
 	public:
 		enum FailureType

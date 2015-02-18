@@ -35,7 +35,7 @@ class KActionCollection;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT ListOperations : public QWidget, public Ui::ListOperationsBase
+class LIBKPMCORE_EXPORT ListOperations : public QWidget, public Ui::ListOperationsBase
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(ListOperations)

@@ -1,0 +1,18 @@
+set(JOBS_SRC
+	jobs/resizefilesystemjob.cpp
+	jobs/createfilesystemjob.cpp
+	jobs/job.cpp
+	jobs/checkfilesystemjob.cpp
+	jobs/shredfilesystemjob.cpp
+	jobs/createpartitionjob.cpp
+	jobs/createpartitiontablejob.cpp
+	jobs/setfilesystemlabeljob.cpp
+	jobs/deletepartitionjob.cpp
+	jobs/restorefilesystemjob.cpp
+	jobs/setpartgeometryjob.cpp
+	jobs/deletefilesystemjob.cpp
+	jobs/backupfilesystemjob.cpp
+	jobs/setpartflagsjob.cpp
+	jobs/copyfilesystemjob.cpp
+	jobs/movefilesystemjob.cpp
+)

@@ -34,7 +34,7 @@ class CoreBackend;
   * selected backend and also to manage the available backend plugins.
   * @author Volker Lanz <vl@fidra.de>
   */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendManager
+class LIBKPMCORE_EXPORT CoreBackendManager
 {
 	private:
 		CoreBackendManager();

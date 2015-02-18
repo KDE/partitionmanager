@@ -18,6 +18,7 @@
 #if !defined(PARTITIONNODE__H)
 
 #define PARTITIONNODE__H
+#include "util/libpartitionmanagerexport.h"
 
 #include <QObject>
 #include <QList>
@@ -34,7 +35,7 @@ class PartitionRole;
 	@see Device, PartitionTable, Partition
 	@author Volker Lanz <vl@fidra.de>
 */
-class PartitionNode : public QObject
+class LIBKPMCORE_EXPORT PartitionNode : public QObject
 {
 	Q_OBJECT
 

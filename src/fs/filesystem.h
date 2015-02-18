@@ -18,6 +18,7 @@
 #if !defined(FILESYSTEM__H)
 
 #define FILESYSTEM__H
+#include "util/libpartitionmanagerexport.h"
 
 #include <qglobal.h>
 #include <QStringList>
@@ -35,7 +36,7 @@ class Report;
 
 	@author Volker Lanz <vl@fidra.de>
  */
-class FileSystem
+class LIBKPMCORE_EXPORT FileSystem
 {
 	Q_DISABLE_COPY(FileSystem)
 

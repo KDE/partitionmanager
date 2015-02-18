@@ -35,7 +35,7 @@ class Partition;
   * Interface class to represent a partition table in the backend.
   * @author Volker Lanz <vl@fidra.de>
   */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT CoreBackendPartitionTable
+class LIBKPMCORE_EXPORT CoreBackendPartitionTable
 {
 	public:
 		virtual ~CoreBackendPartitionTable() {}

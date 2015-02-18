@@ -18,6 +18,7 @@
 #if !defined(BACKUPOPERATION__H)
 
 #define BACKUPOPERATION__H
+#include "util/libpartitionmanagerexport.h"
 
 #include "ops/operation.h"
 
@@ -30,7 +31,7 @@ class BackupFileSystemJob;
 /** Back up a FileSystem.
 	@author Volker Lanz <vl@fidra.de>
 */
-class BackupOperation : public Operation
+class LIBKPMCORE_EXPORT BackupOperation : public Operation
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(BackupOperation)

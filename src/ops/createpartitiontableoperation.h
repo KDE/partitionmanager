@@ -18,6 +18,7 @@
 #if !defined(CREATEPARTITIONTABLEOPERATION__H)
 
 #define CREATEPARTITIONTABLEOPERATION__H
+#include "util/libpartitionmanagerexport.h"
 
 #include "ops/operation.h"
 
@@ -33,7 +34,7 @@ class OperationStack;
 /** Create a PartitionTable.
 	@author Volker Lanz <vl@fidra.de>
 */
-class CreatePartitionTableOperation : public Operation
+class LIBKPMCORE_EXPORT CreatePartitionTableOperation : public Operation
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(CreatePartitionTableOperation)

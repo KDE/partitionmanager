@@ -18,6 +18,7 @@
 #if !defined(SETPARTFLAGSOPERATION__H)
 
 #define SETPARTFLAGSOPERATION__H
+#include "util/libpartitionmanagerexport.h"
 
 #include "ops/operation.h"
 
@@ -37,7 +38,7 @@ class SetPartFlagsJob;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class SetPartFlagsOperation : public Operation
+class LIBKPMCORE_EXPORT SetPartFlagsOperation : public Operation
 {
 	friend class OperationStack;
 

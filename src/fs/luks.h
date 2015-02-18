@@ -34,7 +34,7 @@ namespace FS
 	/** A LUKS crypto file system.
 		@author Volker Lanz <vl@fidra.de>
 	*/
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT luks : public FileSystem
+	class LIBKPMCORE_EXPORT luks : public FileSystem
 	{
 		public:
 			luks(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
@@ -61,12 +61,9 @@ namespace FS
 			virtual QString readUUID(const QString& deviceNode) const;
 			virtual bool updateUUID(Report& report, const QString& deviceNode) const;
 
-			virtual bool canMount(const QString&) const { return true; };
 			virtual bool canUnmount(const QString&) const { return true; };
 
-			virtual bool mount(const QString& deviceNode);
 			virtual bool unmount(const QString& deviceNode);
-			virtual QString mountTitle() const;
 			virtual QString unmountTitle() const;
 
 			static QString mapperName (const QString& deviceNode);

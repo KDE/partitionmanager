@@ -17,6 +17,7 @@
 
 #ifndef DEVICESCANNER_H
 #define DEVICESCANNER_H
+#include "util/libpartitionmanagerexport.h"
 
 #include <QThread>
 
@@ -28,7 +29,7 @@ class OperationStack;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class DeviceScanner : public QThread
+class LIBKPMCORE_EXPORT DeviceScanner : public QThread
 {
 	Q_OBJECT
 

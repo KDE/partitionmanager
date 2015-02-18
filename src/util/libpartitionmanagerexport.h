@@ -17,12 +17,13 @@
 
 #include "libpartitionmanager_export.h"
 
-
 #if !defined(LIBPARTITIONMANAGEREXPORT__H)
 #define LIBPARTITIONMANAGEREXPORT__H
 
-#if !defined(LIBPARTITIONMANAGERPRIVATE_EXPORT)
-	#define LIBPARTITIONMANAGERPRIVATE_EXPORT Q_DECL_EXPORT
+#include <QtGlobal>
+
+#if !defined(LIBKPMCORE_EXPORT)
+	#define LIBKPMCORE_EXPORT Q_DECL_EXPORT
 #endif
 
 #endif

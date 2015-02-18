@@ -19,6 +19,8 @@
 
 #define OPERATIONRUNNER__H
 
+#include "util/libpartitionmanagerexport.h"
+
 #include <QThread>
 #include <QMutex>
 #include <qglobal.h>
@@ -33,7 +35,7 @@ class Report;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class OperationRunner : public QThread
+class LIBKPMCORE_EXPORT OperationRunner : public QThread
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(OperationRunner)
@@ -43,9 +45,9 @@ class OperationRunner : public QThread
 
 	public:
 		void run();
-		qint32 numJobs() const;
-		qint32 numOperations() const;
-		qint32 numProgressSub() const;
+		LIBKPMCORE_EXPORT qint32 numJobs() const;
+		LIBKPMCORE_EXPORT qint32 numOperations() const;
+		LIBKPMCORE_EXPORT qint32 numProgressSub() const;
 		bool isCancelling() const { return m_Cancelling; } /**< @return if the user has requested cancelling */
 		void cancel() const { m_Cancelling = true; } /**< Sets cancelling to true. */
 		QMutex& suspendMutex() const { return m_SuspendMutex; } /**< @return the QMutex used for syncing */

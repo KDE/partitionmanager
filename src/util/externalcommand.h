@@ -37,7 +37,7 @@ class Report;
 	@author Volker Lanz <vl@fidra.de>
 	@author Andrius Štikonas <andrius@stikonas.eu>
 */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT ExternalCommand : public QProcess
+class LIBKPMCORE_EXPORT ExternalCommand : public QProcess
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(ExternalCommand)

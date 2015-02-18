@@ -30,20 +30,20 @@ class QPoint;
 class QTreeWidget;
 
 
-LIBPARTITIONMANAGERPRIVATE_EXPORT void registerMetaTypes();
-LIBPARTITIONMANAGERPRIVATE_EXPORT bool checkPermissions();
+LIBKPMCORE_EXPORT void registerMetaTypes();
+LIBKPMCORE_EXPORT bool checkPermissions();
 
-LIBPARTITIONMANAGERPRIVATE_EXPORT KAboutData* createPartitionManagerAboutData();
+LIBKPMCORE_EXPORT KAboutData* createPartitionManagerAboutData();
 
-LIBPARTITIONMANAGERPRIVATE_EXPORT bool caseInsensitiveLessThan(const QString& s1, const QString& s2);
-LIBPARTITIONMANAGERPRIVATE_EXPORT bool naturalLessThan(const QString& s1, const QString& s2);
+LIBKPMCORE_EXPORT bool caseInsensitiveLessThan(const QString& s1, const QString& s2);
+LIBKPMCORE_EXPORT bool naturalLessThan(const QString& s1, const QString& s2);
 
-LIBPARTITIONMANAGERPRIVATE_EXPORT QIcon createFileSystemColor(FileSystem::Type type, quint32 size);
+LIBKPMCORE_EXPORT QIcon createFileSystemColor(FileSystem::Type type, quint32 size);
 
-LIBPARTITIONMANAGERPRIVATE_EXPORT void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree);
+LIBKPMCORE_EXPORT void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree);
 
-LIBPARTITIONMANAGERPRIVATE_EXPORT bool loadBackend();
+LIBKPMCORE_EXPORT bool loadBackend();
 
-LIBPARTITIONMANAGERPRIVATE_EXPORT bool checkAccessibleDevices();
+LIBKPMCORE_EXPORT bool checkAccessibleDevices();
 
 #endif

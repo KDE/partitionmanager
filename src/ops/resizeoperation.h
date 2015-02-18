@@ -18,6 +18,7 @@
 #if !defined(RESIZEOPERATION__H)
 
 #define RESIZEOPERATION__H
+#include "util/libpartitionmanagerexport.h"
 
 #include "ops/operation.h"
 
@@ -45,7 +46,7 @@ class CheckFileSystemJob;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class ResizeOperation : public Operation
+class LIBKPMCORE_EXPORT ResizeOperation : public Operation
 {
 	friend class OperationStack;
 

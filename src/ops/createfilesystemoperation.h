@@ -18,6 +18,7 @@
 #if !defined(CREATEFILESYSTEMOPERATION__H)
 
 #define CREATEFILESYSTEMOPERATION__H
+#include "util/libpartitionmanagerexport.h"
 
 #include "ops/operation.h"
 
@@ -38,7 +39,7 @@ class CheckFileSystemJob;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class CreateFileSystemOperation : public Operation
+class LIBKPMCORE_EXPORT CreateFileSystemOperation : public Operation
 {
 	friend class OperationStack;
 

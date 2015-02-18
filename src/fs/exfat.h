@@ -34,7 +34,7 @@ namespace FS
 	/** An exfat file system.
 		@author Volker Lanz <vl@fidra.de>
 	*/
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT exfat : public FileSystem
+	class LIBKPMCORE_EXPORT exfat : public FileSystem
 	{
 		public:
 			exfat(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

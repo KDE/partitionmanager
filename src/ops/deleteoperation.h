@@ -18,6 +18,7 @@
 #if !defined(DELETEOPERATION__H)
 
 #define DELETEOPERATION__H
+#include "util/libpartitionmanagerexport.h"
 
 #include "ops/operation.h"
 
@@ -33,7 +34,7 @@ class DeletePartitionJob;
 /** Delete a Partition.
 	@author Volker Lanz <vl@fidra.de>
 */
-class DeleteOperation : public Operation
+class LIBKPMCORE_EXPORT DeleteOperation : public Operation
 {
 	friend class OperationStack;
 

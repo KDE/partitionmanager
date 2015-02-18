@@ -40,7 +40,7 @@ class QPoint;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBPARTITIONMANAGERPRIVATE_EXPORT PartitionManagerWidget : public QWidget, Ui::PartitionManagerWidgetBase
+class LIBKPMCORE_EXPORT PartitionManagerWidget : public QWidget, Ui::PartitionManagerWidgetBase
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(PartitionManagerWidget)

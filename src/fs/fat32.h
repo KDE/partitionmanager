@@ -37,7 +37,7 @@ namespace FS
 
 		@author Volker Lanz <vl@fidra.de>
 	 */
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT fat32 : public fat16
+	class LIBKPMCORE_EXPORT fat32 : public fat16
 	{
 		public:
 			fat32(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

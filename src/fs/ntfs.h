@@ -34,7 +34,7 @@ namespace FS
 	/** An NTFS file system.
 		@author Volker Lanz <vl@fidra.de>
 	 */
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT ntfs : public FileSystem
+	class LIBKPMCORE_EXPORT ntfs : public FileSystem
 	{
 		public:
 			ntfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

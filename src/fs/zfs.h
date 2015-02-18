@@ -34,7 +34,7 @@ namespace FS
 	/** A zfs file system.
 		@author Volker Lanz <vl@fidra.de>
 	*/
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT zfs : public FileSystem
+	class LIBKPMCORE_EXPORT zfs : public FileSystem
 	{
 		public:
 			zfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

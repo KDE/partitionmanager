@@ -34,7 +34,7 @@ namespace FS
 	/** A linux swap pseudo file system.
 		@author Volker Lanz <vl@fidra.de>
 	 */
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT linuxswap : public FileSystem
+	class LIBKPMCORE_EXPORT linuxswap : public FileSystem
 	{
 		public:
 			linuxswap(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

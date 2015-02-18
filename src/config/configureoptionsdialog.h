@@ -18,6 +18,7 @@
 #if !defined(CONFIGUREOPTIONSDIALOG__H)
 
 #define CONFIGUREOPTIONSDIALOG__H
+#include "util/libpartitionmanagerexport.h"
 
 #include <KConfigDialog>
 
@@ -26,7 +27,7 @@ class FileSystemColorsPageWidget;
 class AdvancedPageWidget;
 class OperationStack;
 
-class ConfigureOptionsDialog : public KConfigDialog
+class LIBKPMCORE_EXPORT ConfigureOptionsDialog : public KConfigDialog
 {
 	Q_OBJECT
 

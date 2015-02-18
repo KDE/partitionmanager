@@ -34,7 +34,7 @@ namespace FS
 	/** A JFS file system.
 		@author Volker Lanz <vl@fidra.de>
 	 */
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT jfs : public FileSystem
+	class LIBKPMCORE_EXPORT jfs : public FileSystem
 	{
 		public:
 			jfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);

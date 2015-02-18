@@ -36,7 +36,7 @@ namespace FS
 	/** A ReiserFS file system.
 		@author Volker Lanz <vl@fidra.de>
 	 */
-	class LIBPARTITIONMANAGERPRIVATE_EXPORT reiserfs : public FileSystem
+	class LIBKPMCORE_EXPORT reiserfs : public FileSystem
 	{
 		public:
 			reiserfs(qint64 firstsector, qint64 lastsector, qint64 sectorsused, const QString& label);
