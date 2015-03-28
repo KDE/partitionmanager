@@ -33,8 +33,6 @@ class QTreeWidget;
 LIBKPMCORE_EXPORT void registerMetaTypes();
 LIBKPMCORE_EXPORT bool checkPermissions();
 
-LIBKPMCORE_EXPORT KAboutData* createPartitionManagerAboutData();
-
 LIBKPMCORE_EXPORT bool caseInsensitiveLessThan(const QString& s1, const QString& s2);
 LIBKPMCORE_EXPORT bool naturalLessThan(const QString& s1, const QString& s2);
 

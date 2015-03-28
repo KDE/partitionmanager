@@ -41,7 +41,21 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
 
 	QApplication app(argc, argv);
 	KLocalizedString::setApplicationDomain("partitionmanager");
-	KAboutData *aboutData = createPartitionManagerAboutData();
+	KAboutData* aboutData = new KAboutData(
+		QStringLiteral("partitionmanager"),
+		xi18nc("@title", "<application>KDE Partition Manager</application>"),
+		QStringLiteral(VERSION),
+		i18nc("@title", "Manage your disks, partitions and file systems"),
+		KAboutLicense::GPL_V3,
+		i18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2015 Andrius Štikonas"));
+	aboutData->setOrganizationDomain(QByteArray("kde.org"));
+	aboutData->setProductName(QByteArray("partitionmanager"));
+
+	aboutData->addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Former maintainer"));
+	aboutData->addAuthor(i18nc("@info:credit", "Andrius Štikonas"), i18nc("@info:credit", "Maintainer"), QStringLiteral("andrius@stikonas.eu"));
+	aboutData->setHomepage(QStringLiteral("https://www.kde.org/applications/system/kdepartitionmanager"));
+
+	aboutData->addCredit(i18n("Hugo Pereira Da Costa"), i18nc("@info:credit", "Partition Widget Design"), QStringLiteral("hugo@oxygen-icons.org"));
 	KAboutData::setApplicationData(*aboutData);
 
 	QCommandLineParser parser;
