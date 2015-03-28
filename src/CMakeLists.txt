@@ -62,6 +62,7 @@ target_link_libraries( kpmcore libfatlabel
 )
 
 add_library(kpmgui SHARED ${kpmgui_SRCS})
+generate_export_header(kpmgui EXPORT_FILE_NAME libpartitionmanagergui_export.h)
 target_link_libraries( kpmgui
 	kpmcore
 	KF5::JobWidgets

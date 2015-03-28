@@ -22,7 +22,7 @@
 #include "core/operationstack.h"
 #include "core/operationrunner.h"
 
-#include "util/libpartitionmanagerexport.h"
+#include "util/libpartitionmanagerguiexport.h"
 
 #include "ui_partitionmanagerwidgetbase.h"
 
@@ -40,7 +40,7 @@ class QPoint;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBKPMCORE_EXPORT PartitionManagerWidget : public QWidget, Ui::PartitionManagerWidgetBase
+class LIBKPMGUI_EXPORT PartitionManagerWidget : public QWidget, Ui::PartitionManagerWidgetBase
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(PartitionManagerWidget)

@@ -19,7 +19,7 @@
 
 #define LISTDEVICES__H
 
-#include "util/libpartitionmanagerexport.h"
+#include "util/libpartitionmanagerguiexport.h"
 
 #include "core/operationstack.h"
 
@@ -34,7 +34,7 @@ class KActionCollection;
 /** A list of devices.
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBKPMCORE_EXPORT ListDevices : public QWidget, public Ui::ListDevicesBase
+class LIBKPMGUI_EXPORT ListDevices : public QWidget, public Ui::ListDevicesBase
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(ListDevices)

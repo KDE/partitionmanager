@@ -19,7 +19,7 @@
 
 #define TREELOG__H
 
-#include "util/libpartitionmanagerexport.h"
+#include "util/libpartitionmanagerguiexport.h"
 
 #include "ui_treelogbase.h"
 
@@ -32,7 +32,7 @@ class QTreeWidget;
 /** A tree for formatted log output.
 	@author Volker Lanz <vl@fidra.de>
 */
-class LIBKPMCORE_EXPORT TreeLog: public QWidget, public Ui::TreeLogBase
+class LIBKPMGUI_EXPORT TreeLog: public QWidget, public Ui::TreeLogBase
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(TreeLog)
