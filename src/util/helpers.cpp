@@ -111,14 +111,6 @@ bool caseInsensitiveLessThan(const QString& s1, const QString& s2)
 	return s1.toLower() < s2.toLower();
 }
 
-bool naturalLessThan(const QString& s1, const QString& s2)
-{
-	QCollator c;
-	c.setNumericMode(true);
-	c.setCaseSensitivity(Qt::CaseSensitive);
-	return c.compare(s1, s2) < 0;
-}
-
 QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
 {
 	QPixmap pixmap(size, size);

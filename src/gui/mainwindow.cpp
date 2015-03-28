@@ -50,6 +50,7 @@
 
 #include <QApplication>
 #include <QCloseEvent>
+#include <QCollator>
 #include <QDateTime>
 #include <QFile>
 #include <QFileDialog>
@@ -1051,7 +1052,10 @@ void MainWindow::checkFileSystemSupport()
 	foreach(const Device* d, operationStack().previewDevices())
 		supportList << checkSupportInNode(d->partitionTable());
 
-	qSort(supportList.begin(), supportList.end(), naturalLessThan);
+	QCollator m_collator;
+	m_collator.setNumericMode(true);
+	m_collator.setCaseSensitivity(Qt::CaseSensitive);
+	std::sort(supportList.begin(), supportList.end(), [&m_collator](QString a, QString b) { return m_collator.compare(a, b) < 0; });
 
 	if (!supportList.isEmpty())
 		KMessageBox::information(this,

@@ -15,32 +15,15 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(HELPERS__H)
+#include "libpartitionmanagergui_export.h"
 
-#define HELPERS__H
+#if !defined(LIBPARTITIONMANAGERGUIEXPORT__H)
+#define LIBPARTITIONMANAGERGUIEXPORT__H
 
-#include "util/libpartitionmanagerexport.h"
+#include <QtGlobal>
 
-#include "fs/filesystem.h"
-
-class KAboutData;
-class QString;
-class QIcon;
-class QPoint;
-class QTreeWidget;
-
-
-LIBKPMCORE_EXPORT void registerMetaTypes();
-LIBKPMCORE_EXPORT bool checkPermissions();
-
-LIBKPMCORE_EXPORT bool caseInsensitiveLessThan(const QString& s1, const QString& s2);
-
-LIBKPMCORE_EXPORT QIcon createFileSystemColor(FileSystem::Type type, quint32 size);
-
-LIBKPMCORE_EXPORT void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree);
-
-LIBKPMCORE_EXPORT bool loadBackend();
-
-LIBKPMCORE_EXPORT bool checkAccessibleDevices();
+#if !defined(LIBKPMGUI_EXPORT)
+	#define LIBKPMGUI_EXPORT Q_DECL_EXPORT
+#endif
 
 #endif
