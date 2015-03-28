@@ -29,7 +29,7 @@ set(VERSION_SUFFIX "")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE}${VERSION_SUFFIX})
 add_definitions(-D'VERSION="${VERSION}"')
 
-find_package(ECM 0.0.13 REQUIRED NO_MODULE)
+find_package(ECM 1.0.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/")
 include(ECMInstallIcons)
 
@@ -92,3 +92,5 @@ if (EXISTS ${_doc_translations_path}/CMakeLists.txt)
 endif()
 
 message(STATUS "KDE Partition Manager ${VERSION} will be built for install into ${CMAKE_INSTALL_PREFIX}")
+
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
