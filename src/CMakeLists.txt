@@ -66,6 +66,9 @@ add_library(kpmgui SHARED ${kpmgui_SRCS})
 generate_export_header(kpmgui EXPORT_FILE_NAME libpartitionmanagergui_export.h)
 target_link_libraries( kpmgui
 	kpmcore
+	KF5::Crash
+	KF5::I18n
+	KF5::IconThemes
 	KF5::JobWidgets
 	KF5::KIOWidgets
 	KF5::WidgetsAddons
@@ -78,7 +81,7 @@ install(TARGETS kpmcore kpmgui ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 add_executable(partitionmanager main.cpp)
 
-target_link_libraries(partitionmanager kpmcore kpmgui)
+target_link_libraries(partitionmanager kpmgui)
 
 install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.PartitionManager.appdata.xml DESTINATION share/appdata)
