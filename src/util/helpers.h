@@ -19,7 +19,7 @@
 
 #define HELPERS__H
 
-#include "util/libpartitionmanagerexport.h"
+#include "util/libpartitionmanagerguiexport.h"
 
 #include "fs/filesystem.h"
 
@@ -29,18 +29,17 @@ class QIcon;
 class QPoint;
 class QTreeWidget;
 
+LIBKPMGUI_EXPORT void registerMetaTypes();
+LIBKPMGUI_EXPORT bool checkPermissions();
 
-LIBKPMCORE_EXPORT void registerMetaTypes();
-LIBKPMCORE_EXPORT bool checkPermissions();
+LIBKPMGUI_EXPORT bool caseInsensitiveLessThan(const QString& s1, const QString& s2);
 
-LIBKPMCORE_EXPORT bool caseInsensitiveLessThan(const QString& s1, const QString& s2);
+LIBKPMGUI_EXPORT QIcon createFileSystemColor(FileSystem::Type type, quint32 size);
 
-LIBKPMCORE_EXPORT QIcon createFileSystemColor(FileSystem::Type type, quint32 size);
+LIBKPMGUI_EXPORT void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree);
 
-LIBKPMCORE_EXPORT void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree);
+LIBKPMGUI_EXPORT bool loadBackend();
 
-LIBKPMCORE_EXPORT bool loadBackend();
-
-LIBKPMCORE_EXPORT bool checkAccessibleDevices();
+LIBKPMGUI_EXPORT bool checkAccessibleDevices();
 
 #endif

@@ -53,6 +53,7 @@ find_package(KF5 REQUIRED
   IconThemes
   JobWidgets
   KIO
+  Service
   XmlGui
   WidgetsAddons
 )

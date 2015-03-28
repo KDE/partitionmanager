@@ -28,14 +28,15 @@ set(kpmcore_SRCS
 	${BACKEND_SRC}
 	${FS_SRC}
 	${CORE_SRC}
-	${UTIL_SRC}
 	${OPS_SRC}
 	${JOBS_SRC}
+	${UTIL_SRC}
 )
 
 set(kpmgui_SRCS
 	${CONFIG_SRC}
 	${GUI_SRC}
+	${UTILGUI_SRC}
 )
 
 file(GLOB kpmcore_UIFILES config/*.ui)
@@ -58,7 +59,7 @@ target_link_libraries( kpmcore libfatlabel
 	KF5::I18n
 	KF5::IconThemes
 	KF5::KIOCore
-	KF5::WidgetsAddons
+	KF5::Service
 )
 
 add_library(kpmgui SHARED ${kpmgui_SRCS})
@@ -67,6 +68,7 @@ target_link_libraries( kpmgui
 	kpmcore
 	KF5::JobWidgets
 	KF5::KIOWidgets
+	KF5::WidgetsAddons
 	KF5::XmlGui
 )
 

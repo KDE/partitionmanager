@@ -70,7 +70,7 @@ class QIcon;
 
 	@author Volker Lanz <vl@fidra.de>
 */
-class Operation : public QObject
+class LIBKPMCORE_EXPORT Operation : public QObject
 {
 	Q_OBJECT
 	Q_DISABLE_COPY(Operation)
