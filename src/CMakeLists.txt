@@ -47,7 +47,7 @@ ki18n_wrap_ui(kpmgui_SRCS ${kpmgui_UIFILES})
 
 kconfig_add_kcfg_files(kpmcore_SRCS config.kcfgc)
 kconfig_add_kcfg_files(kpmgui_SRCS config.kcfgc)
-install(FILES config.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+install(FILES partitionmanager.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 
 add_library(kpmcore SHARED ${kpmcore_SRCS})
 generate_export_header(kpmcore EXPORT_FILE_NAME libpartitionmanager_export.h)
