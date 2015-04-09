@@ -22,13 +22,13 @@
 #include "util/globallog.h"
 #include "util/capacity.h"
 
-#include <KIconThemes/KIconLoader>
+#include <KIconLoader>
 
 class ListDeviceWidgetItem : public QListWidgetItem
 {
 	public:
 		ListDeviceWidgetItem(const Device& d) :
-			QListWidgetItem(QIcon(KIconLoader().loadIcon(d.iconName(), KIconLoader::Desktop)), d.prettyName()),
+			QListWidgetItem(QIcon::fromTheme(d.iconName()).pixmap(IconSize(KIconLoader::Desktop)), d.prettyName()),
 			deviceNode(d.deviceNode())
 		{
 			setToolTip(d.prettyName());

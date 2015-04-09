@@ -32,7 +32,7 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 
-#include <KIconThemes/KIconLoader>
+#include <KIconLoader>
 #include <KIO/CopyJob>
 #include <KJobUiDelegate>
 #include <KLocalizedString>
@@ -167,7 +167,7 @@ void TreeLog::onNewLogMessage(Log::Level logLevel, const QString& s)
 	{
 		QTreeWidgetItem* item = new QTreeWidgetItem();
 
-		item->setIcon(0, QIcon(KIconLoader().loadIcon(icons[logLevel], KIconLoader::Small)));
+		item->setIcon(0, QIcon::fromTheme(icons[logLevel]).pixmap(IconSize(KIconLoader::Small)));
 		item->setText(1, QDateTime::currentDateTime().toString(QStringLiteral("yyyy-MM-dd hh:mm:ss")));
 		item->setText(2, s);
 

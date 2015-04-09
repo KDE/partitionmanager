@@ -51,18 +51,18 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 	KPageWidgetItem* item = NULL;
 
 	item = addPage(&generalPageWidget(), i18nc("@title:tab general application settings", "General"), QString(), i18n("General Settings"));
-	item->setIcon(KIconLoader().loadIcon(QLatin1String("partitionmanager"), KIconLoader::Desktop));
+	item->setIcon(QIcon::fromTheme(QStringLiteral("partitionmanager")).pixmap(IconSize(KIconLoader::Desktop)));
 
 	connect(&generalPageWidget().comboDefaultFileSystem(), SIGNAL(activated(int)), SLOT(onComboDefaultFileSystemActivated(int)));
 	connect(generalPageWidget().radioButton, &QRadioButton::toggled, this, &ConfigureOptionsDialog::onShredSourceActivated);
 
 	item = addPage(&fileSystemColorsPageWidget(), i18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
-	item->setIcon(KIconLoader().loadIcon(QLatin1String("format-fill-color"), KIconLoader::Desktop));
+	item->setIcon(QIcon::fromTheme(QStringLiteral("format-fill-color")).pixmap(IconSize(KIconLoader::Desktop)));
 
 	if (QCoreApplication::arguments().contains(QLatin1String("--advconfig")))
 	{
 		item = addPage(&advancedPageWidget(), i18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
-		item->setIcon(KIconLoader().loadIcon(QLatin1String("configure"), KIconLoader::Desktop));
+		item->setIcon(QIcon::fromTheme(QStringLiteral("configure")).pixmap(IconSize(KIconLoader::Desktop)));
 
 		connect(&advancedPageWidget().comboBackend(), SIGNAL(activated(int)), SLOT(onComboBackendActivated(int)));
 	}

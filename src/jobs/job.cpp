@@ -29,7 +29,7 @@
 #include <QIcon>
 #include <QTime>
 
-#include <KIconThemes/KIconLoader>
+#include <KIconLoader>
 #include <KLocalizedString>
 
 Job::Job() :
@@ -217,7 +217,7 @@ QIcon Job::statusIcon() const
 	if (status() < 0 || static_cast<quint32>(status()) >= sizeof(icons) / sizeof(icons[0]))
 		return QIcon();
 
-	return QIcon(KIconLoader().loadIcon(icons[status()], KIconLoader::Small));
+	return QIcon::fromTheme(icons[status()]).pixmap(IconSize(KIconLoader::Small));
 }
 
 /** @return the Job's current status text */

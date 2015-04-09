@@ -28,7 +28,7 @@
 #include <QIcon>
 #include <QString>
 
-#include <KIconThemes/KIconLoader>
+#include <KIconLoader>
 #include <KLocalizedString>
 
 Operation::Operation() :
@@ -113,7 +113,7 @@ QIcon Operation::statusIcon() const
 	if (status() == StatusNone)
 		return QIcon();
 
-	return QIcon(KIconLoader().loadIcon(icons[status()], KIconLoader::Small));
+	return QIcon::fromTheme(icons[status()]).pixmap(IconSize(KIconLoader::Small));
 }
 
 void Operation::addJob(Job* job)

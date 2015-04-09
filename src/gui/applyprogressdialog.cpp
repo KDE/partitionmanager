@@ -46,6 +46,7 @@
 #include <KIO/CopyJob>
 #include <KJobUiDelegate>
 #include <KLocalizedString>
+#include <KIconLoader>
 #include <KMessageBox>
 #include <KSharedConfig>
 
@@ -91,13 +92,13 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
 	cancelButton = dialogButtonBox->addButton( QDialogButtonBox::Cancel );
 	detailsButton = new QPushButton;
 	detailsButton->setText(i18n("&Details") + QStringLiteral(" >>"));
-	detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("help-about")));
+	detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("help-about")).pixmap(IconSize(KIconLoader::Toolbar)));
 	dialogButtonBox->addButton(detailsButton, QDialogButtonBox::ActionRole);
 	mainLayout->addWidget(dialogButtonBox);
 
 	dialogWidget().treeTasks().setColumnWidth(0, width() * 0.8);
-	detailsWidget().buttonBrowser().setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
-	detailsWidget().buttonSave().setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
+	detailsWidget().buttonBrowser().setIcon(QIcon::fromTheme(QStringLiteral("document-open")).pixmap(IconSize(KIconLoader::Toolbar)));
+	detailsWidget().buttonSave().setIcon(QIcon::fromTheme(QStringLiteral("document-save")).pixmap(IconSize(KIconLoader::Toolbar)));
 
 	setupConnections();
 

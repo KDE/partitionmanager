@@ -30,7 +30,7 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <KConfigGroup>
-#include <KIconThemes/KIconLoader>
+#include <KIconLoader>
 
 #include <QDialogButtonBox>
 #include <QPointer>
@@ -124,12 +124,12 @@ void DevicePropsDialog::setupDialog()
 		if (device().smartStatus().status())
 		{
 			dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "good"));
-			dialogWidget().smartStatusIcon().setPixmap(KIconLoader().loadIcon(QLatin1String("dialog-ok"), KIconLoader::Small));
+			dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(IconSize(KIconLoader::Small)));
 		}
 		else
 		{
 			dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "BAD"));
-			dialogWidget().smartStatusIcon().setPixmap(KIconLoader().loadIcon(QLatin1String("dialog-warning"), KIconLoader::Small));
+			dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(IconSize(KIconLoader::Small)));
 		}
 	}
 	else
