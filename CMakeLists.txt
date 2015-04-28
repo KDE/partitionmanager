@@ -78,7 +78,6 @@ pkg_check_modules(LIBATASMART REQUIRED libatasmart)
 
 include_directories(${Qt5Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} lib/ src/)
 
-add_subdirectory(lib)
 add_subdirectory(src)
 add_subdirectory(icons)
 add_subdirectory(doc)

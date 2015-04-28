@@ -25,7 +25,6 @@
 #include "fs/filesystem.h"
 
 #include <qglobal.h>
-#include <fatlabel/partition.h>
 
 class CoreBackendPartition;
 class Report;

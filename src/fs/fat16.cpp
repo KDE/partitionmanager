@@ -21,8 +21,6 @@
 #include "util/capacity.h"
 #include "util/report.h"
 
-#include "fatlabel/fatlabel.h"
-
 #include <KLocalizedString>
 
 #include <QString>
@@ -56,7 +54,7 @@ namespace FS
 		m_Create = findExternal(QStringLiteral("mkfs.msdos")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetUsed = m_Check = findExternal(QStringLiteral("fsck.msdos"), QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetLabel = cmdSupportCore;
-		m_SetLabel = cmdSupportFileSystem;
+		m_SetLabel = findExternal(QStringLiteral("mlabel")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Move = cmdSupportCore;
 		m_Copy = cmdSupportCore;
 		m_Backup = cmdSupportCore;
@@ -133,7 +131,8 @@ namespace FS
 	{
 		report.line() << xi18nc("@info/plain", "Setting label for partition <filename>%1</filename> to %2", deviceNode, newLabel);
 
-		return fatlabel_set_label(deviceNode.toLocal8Bit().constData(), newLabel.toLocal8Bit().constData()) == 0;
+		ExternalCommand cmd(report, QStringLiteral("mlabel"), QStringList() << QStringLiteral("-i") << deviceNode << QStringLiteral("::") + newLabel);
+		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
 	bool fat16::check(Report& report, const QString& deviceNode) const

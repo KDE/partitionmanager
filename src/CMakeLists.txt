@@ -51,7 +51,7 @@ install(FILES partitionmanager.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 
 add_library(kpmcore SHARED ${kpmcore_SRCS})
 generate_export_header(kpmcore EXPORT_FILE_NAME libpartitionmanager_export.h)
-target_link_libraries( kpmcore libfatlabel
+target_link_libraries( kpmcore
 	${UUID_LIBRARIES} ${BLKID_LIBRARIES} ${LIBATASMART_LIBRARIES}
 	KF5::ConfigCore
 	KF5::ConfigGui
