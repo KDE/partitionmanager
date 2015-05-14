@@ -54,7 +54,7 @@ namespace FS
 		m_Create = findExternal(QStringLiteral("mkfs.msdos")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetUsed = m_Check = findExternal(QStringLiteral("fsck.msdos"), QStringList(), 2) ? cmdSupportFileSystem : cmdSupportNone;
 		m_GetLabel = cmdSupportCore;
-		m_SetLabel = findExternal(QStringLiteral("mlabel")) ? cmdSupportFileSystem : cmdSupportNone;
+		m_SetLabel = findExternal(QStringLiteral("fatlabel")) ? cmdSupportFileSystem : cmdSupportNone;
 		m_Move = cmdSupportCore;
 		m_Copy = cmdSupportCore;
 		m_Backup = cmdSupportCore;
@@ -131,7 +131,7 @@ namespace FS
 	{
 		report.line() << xi18nc("@info/plain", "Setting label for partition <filename>%1</filename> to %2", deviceNode, newLabel);
 
-		ExternalCommand cmd(report, QStringLiteral("mlabel"), QStringList() << QStringLiteral("-i") << deviceNode << QStringLiteral("::") + newLabel);
+		ExternalCommand cmd(report, QStringLiteral("fatlabel"), QStringList() << deviceNode << newLabel);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
