@@ -130,7 +130,7 @@ namespace FS
 
 	bool ext2::create(Report& report, const QString& deviceNode) const
 	{
-		ExternalCommand cmd(report, QStringLiteral("mkfs.ext2"), QStringList() << QStringLiteral("-q") << deviceNode);
+		ExternalCommand cmd(report, QStringLiteral("mkfs.ext2"), QStringList() << QStringLiteral("-qF") << deviceNode);
 		return cmd.run(-1) && cmd.exitCode() == 0;
 	}
 
