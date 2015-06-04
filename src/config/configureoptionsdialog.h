@@ -18,6 +18,7 @@
 #if !defined(CONFIGUREOPTIONSDIALOG__H)
 
 #define CONFIGUREOPTIONSDIALOG__H
+
 #include "util/libpartitionmanagerguiexport.h"
 
 #include <KConfigDialog>

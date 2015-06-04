@@ -19,7 +19,7 @@
 
 #define PARTWIDGETBASE__H
 
-#include "core/partitionnode.h"
+#include <kpmcore/core/partitionnode.h>
 
 #include <QList>
 #include <QWidget>

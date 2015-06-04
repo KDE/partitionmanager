@@ -19,7 +19,7 @@
 
 #define LISTOPERATIONS__H
 
-#include "core/operationstack.h"
+#include <kpmcore/core/operationstack.h>
 
 #include "util/libpartitionmanagerguiexport.h"
 

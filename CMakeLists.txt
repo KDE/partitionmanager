@@ -21,16 +21,16 @@ set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 set(KDE_INSTALL_USE_QT_SYS_PATHS ON CACHE BOOL "Install mkspecs files, Plugins and Imports to the Qt 5 install dir" FORCE)
 
-set(QT_MIN_VERSION "5.3.0")
+set(QT_MIN_VERSION "5.4.1")
 set(VERSION_MAJOR "1")
 set(VERSION_MINOR "2")
 set(VERSION_RELEASE "1")
 set(VERSION_SUFFIX "")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE}${VERSION_SUFFIX})
-add_definitions(-D'VERSION="${VERSION}"')
+add_definitions(-D'VERSION="${VERSION}"') #"
 
 find_package(ECM 1.0.0 REQUIRED NO_MODULE)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/")
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
 include(ECMInstallIcons)
 
 include(KDEInstallDirs)
@@ -41,6 +41,7 @@ include(GenerateExportHeader)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
   Core
+  Gui
   Widgets
 )
 
@@ -71,8 +72,8 @@ add_definitions(
   -DQT_USE_FAST_OPERATOR_PLUS
 )
 
-find_package(MSGFMT REQUIRED)
 find_package(PkgConfig REQUIRED)
+find_package(PartitionManager CONFIG REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
 pkg_check_modules(LIBATASMART REQUIRED libatasmart)
 

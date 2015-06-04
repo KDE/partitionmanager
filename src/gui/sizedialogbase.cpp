@@ -20,12 +20,12 @@
 #include "gui/partresizerwidget.h"
 #include "gui/sizedialogwidget.h"
 
-#include "core/partitiontable.h"
-#include "core/device.h"
-#include "core/partition.h"
-#include "core/partitionalignment.h"
+#include <kpmcore/core/partitiontable.h>
+#include <kpmcore/core/device.h>
+#include <kpmcore/core/partition.h>
+#include <kpmcore/core/partitionalignment.h>
 
-#include "util/capacity.h"
+#include <kpmcore/util/capacity.h>
 
 #include <KLocalizedString>
 

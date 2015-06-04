@@ -17,9 +17,9 @@
 
 #include "config/advancedpagewidget.h"
 
-#include "backend/corebackendmanager.h"
+#include <kpmcore/backend/corebackendmanager.h>
 
-#include "util/helpers.h"
+#include <kpmcore/util/helpers.h>
 
 #include <QComboBox>
 

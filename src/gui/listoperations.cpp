@@ -17,10 +17,10 @@
 
 #include "gui/listoperations.h"
 
-#include "ops/operation.h"
+#include <kpmcore/ops/operation.h>
 
-#include "util/globallog.h"
-#include "util/capacity.h"
+#include <kpmcore/util/globallog.h>
+#include <kpmcore/util/capacity.h>
 
 #include <KIconLoader>
 

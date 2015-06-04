@@ -18,12 +18,12 @@
 #include "gui/partresizerwidget.h"
 #include "gui/partwidget.h"
 
-#include "core/partition.h"
-#include "core/device.h"
-#include "core/partitiontable.h"
-#include "core/partitionalignment.h"
+#include <kpmcore/core/partition.h>
+#include <kpmcore/core/device.h>
+#include <kpmcore/core/partitiontable.h>
+#include <kpmcore/core/partitionalignment.h>
 
-#include "fs/filesystem.h"
+#include <kpmcore/fs/filesystem.h>
 
 #include <QDebug>
 #include <QPainter>

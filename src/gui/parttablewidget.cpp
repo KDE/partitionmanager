@@ -18,7 +18,7 @@
 #include "gui/parttablewidget.h"
 #include "gui/partwidget.h"
 
-#include "core/partitiontable.h"
+#include <kpmcore/core/partitiontable.h>
 
 #include <QMouseEvent>
 

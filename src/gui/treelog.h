@@ -23,7 +23,7 @@
 
 #include "ui_treelogbase.h"
 
-#include "util/globallog.h"
+#include <kpmcore/util/globallog.h>
 
 #include <QWidget>
 

@@ -19,8 +19,8 @@
 
 #define PARTITIONMANAGERWIDGET__H
 
-#include "core/operationstack.h"
-#include "core/operationrunner.h"
+#include <kpmcore/core/operationstack.h>
+#include <kpmcore/core/operationrunner.h>
 
 #include "util/libpartitionmanagerguiexport.h"
 

@@ -18,12 +18,12 @@
 #include "gui/smartdialog.h"
 #include "gui/smartdialogwidget.h"
 
-#include "core/device.h"
-#include "core/smartstatus.h"
-#include "core/smartattribute.h"
+#include <kpmcore/core/device.h>
+#include <kpmcore/core/smartstatus.h>
+#include <kpmcore/core/smartattribute.h>
 
-#include "util/helpers.h"
-#include "util/htmlreport.h"
+#include <kpmcore/util/helpers.h>
+#include <kpmcore/util/htmlreport.h>
 
 #include <QDialogButtonBox>
 #include <QFileDialog>

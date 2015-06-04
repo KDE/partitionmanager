@@ -17,11 +17,11 @@
 
 #include "gui/partwidget.h"
 
-#include "util/capacity.h"
+#include <kpmcore/util/capacity.h>
 
-#include "core/partition.h"
+#include <kpmcore/core/partition.h>
 
-#include "fs/filesystem.h"
+#include <kpmcore/fs/filesystem.h>
 
 #include <QPainter>
 #include <QStyleOptionButton>

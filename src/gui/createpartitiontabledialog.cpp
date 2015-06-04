@@ -18,8 +18,7 @@
 #include "gui/createpartitiontabledialog.h"
 #include "gui/createpartitiontablewidget.h"
 
-#include "core/device.h"
-#include "core/partitiontable.h"
+#include <kpmcore/core/device.h>
 
 #include <QDialogButtonBox>
 #include <QPushButton>

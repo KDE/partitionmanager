@@ -19,11 +19,11 @@
 #include "gui/sizedialogwidget.h"
 #include "gui/sizedetailswidget.h"
 
-#include "core/partition.h"
+#include <kpmcore/core/partition.h>
 
-#include "fs/filesystem.h"
+#include <kpmcore/fs/filesystem.h>
 
-#include "ops/resizeoperation.h"
+#include <kpmcore/ops/resizeoperation.h>
 
 #include <KConfigGroup>
 #include <KSharedConfig>

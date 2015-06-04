@@ -17,12 +17,11 @@
 
 #include "config/generalpagewidget.h"
 
-#include "backend/corebackendmanager.h"
+#include <kpmcore/backend/corebackendmanager.h>
 
-#include "fs/filesystem.h"
-#include "fs/filesystemfactory.h"
+#include <kpmcore/fs/filesystemfactory.h>
 
-#include "util/helpers.h"
+#include <kpmcore/util/helpers.h>
 
 #include <config.h>
 

@@ -18,7 +18,7 @@
 
 #define SIZEDIALOGBASE__H
 
-#include "util/capacity.h"
+#include <kpmcore/util/capacity.h>
 
 #include <qglobal.h>
 #include <QDebug>

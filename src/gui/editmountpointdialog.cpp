@@ -18,7 +18,7 @@
 #include "gui/editmountpointdialog.h"
 #include "gui/editmountpointdialogwidget.h"
 
-#include "core/partition.h"
+#include <kpmcore/core/partition.h>
 
 #include <KMessageBox>
 #include <KGuiItem>

@@ -15,56 +15,23 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include "util/helpers.h"
-#include "util/globallog.h"
+#include "util/guihelpers.h"
 
-#include "backend/corebackendmanager.h"
+#include <kpmcore/backend/corebackendmanager.h>
 
-#include "ops/operation.h"
-
-#include <KAboutData>
-#include <KMessageBox>
-#include <KLocalizedString>
-
-#include <QAction>
 #include <QApplication>
-#include <QCollator>
 #include <QFileInfo>
-#include <QIcon>
-#include <QMenu>
-#include <QHeaderView>
-#include <QPainter>
-#include <QPixmap>
 #include <QProcess>
 #include <QStandardPaths>
-#include <QRect>
-#include <QTreeWidget>
+#include <QString>
 
-#include <config.h>
+#include <KLocalizedString>
+#include <KMessageBox>
 
 #include <unistd.h>
 #include <signal.h>
 
-void registerMetaTypes()
-{
-	qRegisterMetaType<Operation*>("Operation*");
-	qRegisterMetaType<Log::Level>("Log::Level");
-}
-
-static QString suCommand()
-{
-	const QString candidates[] = { QStringLiteral("kdesu"), QStringLiteral("kdesudo"), QStringLiteral("gksudo"), QStringLiteral("gksu") };
-	QString rval;
-
-	for (quint32 i = 0; i < sizeof(candidates) / sizeof(candidates[0]); i++)
-	{
-		rval = QStandardPaths::findExecutable(candidates[i]);
-		if (QFileInfo(rval).isExecutable())
-			return rval;
-	}
-
-	return QString();
-}
+#include <config.h>
 
 bool checkPermissions()
 {
@@ -106,52 +73,6 @@ bool checkPermissions()
 	return true;
 }
 
-bool caseInsensitiveLessThan(const QString& s1, const QString& s2)
-{
-	return s1.toLower() < s2.toLower();
-}
-
-QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
-{
-	QPixmap pixmap(size, size);
-	QPainter painter(&pixmap);
-	painter.setPen(QColor(0, 0, 0));
-	painter.setBrush(Config::fileSystemColorCode(type));
-	painter.drawRect(QRect(0, 0, pixmap.width() - 1, pixmap.height() - 1));
-	painter.end();
-
-	return QIcon(pixmap);
-}
-
-void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree)
-{
-	QMenu headerMenu(i18nc("@title:menu", "Columns"));
-
-	QHeaderView* header = tree.header();
-
-	for (qint32 i = 0; i < tree.model()->columnCount(); i++)
-	{
-		const int idx = header->logicalIndex(i);
-		const QString text = tree.model()->headerData(idx, Qt::Horizontal).toString();
-
-		QAction* action = headerMenu.addAction(text);
-		action->setCheckable(true);
-		action->setChecked(!header->isSectionHidden(idx));
-		action->setData(idx);
-		action->setEnabled(idx > 0);
-	}
-
-	QAction* action = headerMenu.exec(tree.header()->mapToGlobal(p));
-
-	if (action != NULL)
-	{
-		const bool hidden = !action->isChecked();
-		tree.setColumnHidden(action->data().toInt(), hidden);
-		if (!hidden)
-			tree.resizeColumnToContents(action->data().toInt());
-	}
-}
-
 bool loadBackend()
 {
 	if (CoreBackendManager::self()->load(Config::backend()) == false)
@@ -177,4 +98,19 @@ bool loadBackend()
 	}
 
 	return true;
+}
+
+QString suCommand()
+{
+	const QString candidates[] = { QStringLiteral("kdesu"), QStringLiteral("kdesudo"), QStringLiteral("gksudo"), QStringLiteral("gksu") };
+	QString rval;
+
+	for (quint32 i = 0; i < sizeof(candidates) / sizeof(candidates[0]); i++)
+	{
+		rval = QStandardPaths::findExecutable(candidates[i]);
+		if (QFileInfo(rval).isExecutable())
+			return rval;
+	}
+
+	return QString();
 }

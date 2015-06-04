@@ -21,9 +21,9 @@
 
 #include "gui/sizedialogbase.h"
 
-#include "core/partition.h"
+#include <kpmcore/core/partition.h>
 
-#include "fs/filesystem.h"
+#include <kpmcore/fs/filesystem.h>
 
 class Device;
 

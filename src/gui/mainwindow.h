@@ -19,15 +19,15 @@
 
 #define MAINWINDOW__H
 
-#include "core/operationrunner.h"
-#include "core/operationstack.h"
-#include "core/devicescanner.h"
+#include <kpmcore/core/operationrunner.h>
+#include <kpmcore/core/operationstack.h>
+#include <kpmcore/core/devicescanner.h>
 
 #include "util/libpartitionmanagerguiexport.h"
 
 #include "ui_mainwindowbase.h"
 
-#include <KXmlGui/KXmlGuiWindow>
+#include <KXmlGuiWindow>
 
 class ApplyProgressDialog;
 class ScanProgressDialog;

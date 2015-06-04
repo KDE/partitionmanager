@@ -18,7 +18,7 @@
 #include "gui/partwidgetbase.h"
 #include "gui/partwidget.h"
 
-#include "core/partition.h"
+#include <kpmcore/core/partition.h>
 
 #include <cmath>
 

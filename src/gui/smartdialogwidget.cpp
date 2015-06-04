@@ -17,7 +17,7 @@
 
 #include "gui/smartdialogwidget.h"
 
-#include "util/helpers.h"
+#include <kpmcore/util/helpers.h>
 
 #include <KLocalizedString>
 

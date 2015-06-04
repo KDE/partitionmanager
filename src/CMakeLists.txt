@@ -16,56 +16,28 @@
 ############################################
 
 include(config/CMakeLists.txt)
-include(backend/CMakeLists.txt)
-include(core/CMakeLists.txt)
-include(util/CMakeLists.txt)
-include(ops/CMakeLists.txt)
-include(jobs/CMakeLists.txt)
-include(fs/CMakeLists.txt)
 include(gui/CMakeLists.txt)
-
-set(kpmcore_SRCS
-	${BACKEND_SRC}
-	${FS_SRC}
-	${CORE_SRC}
-	${OPS_SRC}
-	${JOBS_SRC}
-	${UTIL_SRC}
-)
+include(util/CMakeLists.txt)
 
 set(kpmgui_SRCS
 	${CONFIG_SRC}
 	${GUI_SRC}
-	${UTILGUI_SRC}
+	${UTIL_SRC}
 )
 
-file(GLOB kpmcore_UIFILES config/*.ui)
-file(GLOB kpmgui_UIFILES gui/*.ui)
+file(GLOB kpmgui_UIFILES config/*.ui gui/*.ui)
 
-ki18n_wrap_ui(kpmcore_SRCS ${kpmcore_UIFILES})
 ki18n_wrap_ui(kpmgui_SRCS ${kpmgui_UIFILES})
 
-kconfig_add_kcfg_files(kpmcore_SRCS config.kcfgc)
 kconfig_add_kcfg_files(kpmgui_SRCS config.kcfgc)
 install(FILES partitionmanager.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 
-add_library(kpmcore SHARED ${kpmcore_SRCS})
-generate_export_header(kpmcore EXPORT_FILE_NAME libpartitionmanager_export.h)
-target_link_libraries( kpmcore
-	${UUID_LIBRARIES} ${BLKID_LIBRARIES} ${LIBATASMART_LIBRARIES}
-	KF5::ConfigCore
-	KF5::ConfigGui
-	KF5::Crash
-	KF5::I18n
-	KF5::IconThemes
-	KF5::KIOCore
-	KF5::Service
-)
-
 add_library(kpmgui SHARED ${kpmgui_SRCS})
 generate_export_header(kpmgui EXPORT_FILE_NAME libpartitionmanagergui_export.h)
-target_link_libraries( kpmgui
+target_link_libraries( kpmgui ${BLKID_LIBRARIES}
 	kpmcore
+	KF5::ConfigCore
+	KF5::ConfigGui
 	KF5::Crash
 	KF5::I18n
 	KF5::IconThemes
@@ -75,7 +47,7 @@ target_link_libraries( kpmgui
 	KF5::XmlGui
 )
 
-install(TARGETS kpmcore kpmgui ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kpmgui ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ############################################
 
@@ -85,9 +57,7 @@ target_link_libraries(partitionmanager kpmgui)
 
 install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.PartitionManager.appdata.xml DESTINATION share/appdata)
-install(FILES gui/partitionmanagerui.rc DESTINATION ${DATA_INSTALL_DIR}/partitionmanager)
+install(FILES gui/partitionmanagerui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/partitionmanager)
 install(PROGRAMS org.kde.PartitionManager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
 ############################################
-
-add_subdirectory(plugins)

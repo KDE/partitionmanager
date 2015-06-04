@@ -21,7 +21,7 @@
 
 #include "util/libpartitionmanagerguiexport.h"
 
-#include "core/operationstack.h"
+#include <kpmcore/core/operationstack.h>
 
 #include "ui_listdevicesbase.h"
 

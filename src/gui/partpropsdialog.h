@@ -19,10 +19,10 @@
 
 #define PARTPROPSDIALOG__H
 
-#include "fs/filesystem.h"
+#include <kpmcore/fs/filesystem.h>
 
-#include "core/partition.h"
-#include "core/partitiontable.h"
+#include <kpmcore/core/partition.h>
+#include <kpmcore/core/partitiontable.h>
 
 #include <QDialog>
 

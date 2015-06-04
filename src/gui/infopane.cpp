@@ -17,13 +17,13 @@
 
 #include "gui/infopane.h"
 
-#include "core/device.h"
-#include "core/partition.h"
+#include <kpmcore/core/device.h>
+#include <kpmcore/core/partition.h>
 
-#include "fs/filesystem.h"
-#include "fs/luks.h"
+#include <kpmcore/fs/filesystem.h>
+#include <kpmcore/fs/luks.h>
 
-#include "util/capacity.h"
+#include <kpmcore/util/capacity.h>
 
 #include <QDockWidget>
 #include <QFontDatabase>

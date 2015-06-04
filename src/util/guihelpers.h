@@ -15,25 +15,16 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include "core/partitionrole.h"
+#if !defined(GUIHELPERS__H)
 
-#include <QString>
-#include <KLocalizedString>
+#define GUIHELPERS__H
 
-/** @return the role as string */
-QString PartitionRole::toString() const
-{
-	if (roles() & Unallocated)
-		return i18nc("@item partition role", "unallocated");
+#include "util/libpartitionmanagerguiexport.h"
 
-	if (roles() & Logical)
-		return i18nc("@item partition role", "logical");
+class QString;
 
-	if (roles() & Extended)
-		return i18nc("@item partition role", "extended");
+LIBKPMGUI_EXPORT bool checkPermissions();
+LIBKPMGUI_EXPORT bool loadBackend();
+QString suCommand();
 
-	if (roles() & Primary)
-		return i18nc("@item partition role", "primary");
-
-	return i18nc("@item partition role", "none");
-}
+#endif

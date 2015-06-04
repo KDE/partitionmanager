@@ -18,13 +18,13 @@
 #include "gui/partpropsdialog.h"
 #include "gui/partpropswidget.h"
 
-#include "core/partition.h"
-#include "core/device.h"
+#include <kpmcore/core/partition.h>
+#include <kpmcore/core/device.h>
 
-#include "fs/filesystemfactory.h"
+#include <kpmcore/fs/filesystemfactory.h>
 
-#include "util/capacity.h"
-#include "util/helpers.h"
+#include <kpmcore/util/capacity.h>
+#include <kpmcore/util/helpers.h>
 
 #include <QComboBox>
 #include <QFontDatabase>
