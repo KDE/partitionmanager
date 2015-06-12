@@ -21,10 +21,15 @@
 
 #include "util/libpartitionmanagerguiexport.h"
 
+#include <kpmcore/fs/filesystem.h>
+
 class QString;
+class QIcon;
 
 LIBKPMGUI_EXPORT bool checkPermissions();
 LIBKPMGUI_EXPORT bool loadBackend();
+LIBKPMGUI_EXPORT QIcon createFileSystemColor(FileSystem::Type type, quint32 size);
+
 QString suCommand();
 
 #endif

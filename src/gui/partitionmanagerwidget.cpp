@@ -46,6 +46,7 @@
 #include <kpmcore/util/capacity.h>
 #include <kpmcore/util/report.h>
 #include <kpmcore/util/helpers.h>
+#include "util/guihelpers.h"
 
 #include <QCursor>
 #include <QFileDialog>

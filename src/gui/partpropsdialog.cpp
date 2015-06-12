@@ -25,6 +25,7 @@
 
 #include <kpmcore/util/capacity.h>
 #include <kpmcore/util/helpers.h>
+#include "util/guihelpers.h"
 
 #include <QComboBox>
 #include <QFontDatabase>

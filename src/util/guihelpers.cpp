@@ -21,6 +21,9 @@
 
 #include <QApplication>
 #include <QFileInfo>
+#include <QIcon>
+#include <QPainter>
+#include <QPixmap>
 #include <QProcess>
 #include <QStandardPaths>
 #include <QString>
@@ -32,6 +35,18 @@
 #include <signal.h>
 
 #include <config.h>
+
+QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
+{
+	QPixmap pixmap(size, size);
+	QPainter painter(&pixmap);
+	painter.setPen(QColor(0, 0, 0));
+	painter.setBrush(Config::fileSystemColorCode(type));
+	painter.drawRect(QRect(0, 0, pixmap.width() - 1, pixmap.height() - 1));
+	painter.end();
+
+	return QIcon(pixmap);
+}
 
 bool checkPermissions()
 {
