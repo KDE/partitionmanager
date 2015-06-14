@@ -129,3 +129,8 @@ QString suCommand()
 
 	return QString();
 }
+
+Capacity::Unit preferredUnit()
+{
+	return static_cast<Capacity::Unit>(Config::preferredUnit());
+}

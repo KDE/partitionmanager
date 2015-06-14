@@ -20,6 +20,8 @@
 #include "gui/partresizerwidget.h"
 #include "gui/sizedialogwidget.h"
 
+#include "util/guihelpers.h"
+
 #include <kpmcore/core/partitiontable.h>
 #include <kpmcore/core/device.h>
 #include <kpmcore/core/partition.h>
@@ -76,11 +78,11 @@ void SizeDialogBase::setupDialog()
 	dialogWidget().spinFreeBefore().setValue(sectorsToDialogUnit(device(), partition().firstSector() - minimumFirstSector()));
 	dialogWidget().spinFreeAfter().setValue(sectorsToDialogUnit(device(), maximumLastSector() - partition().lastSector()));
 
-	dialogWidget().spinCapacity().setValue(Capacity(partition().capacity()).toDouble(Capacity::preferredUnit()));
+	dialogWidget().spinCapacity().setValue(Capacity(partition().capacity()).toDouble(preferredUnit()));
 
-	dialogWidget().spinFreeBefore().setSuffix(QStringLiteral(" ") + Capacity::unitName(Capacity::preferredUnit()));
-	dialogWidget().spinFreeAfter().setSuffix(QStringLiteral(" ") + Capacity::unitName(Capacity::preferredUnit()));
-	dialogWidget().spinCapacity().setSuffix(QStringLiteral(" ") + Capacity::unitName(Capacity::preferredUnit()));
+	dialogWidget().spinFreeBefore().setSuffix(QStringLiteral(" ") + Capacity::unitName(preferredUnit()));
+	dialogWidget().spinFreeAfter().setSuffix(QStringLiteral(" ") + Capacity::unitName(preferredUnit()));
+	dialogWidget().spinCapacity().setSuffix(QStringLiteral(" ") + Capacity::unitName(preferredUnit()));
 
 	detailsWidget().spinFirstSector().setValue(partition().firstSector());
 	detailsWidget().spinLastSector().setValue(partition().lastSector());
@@ -408,11 +410,11 @@ qint64 SizeDialogBase::maximumLength() const
 
 static double sectorsToDialogUnit(const Device& d, qint64 v)
 {
-	return Capacity(v * d.logicalSectorSize()).toDouble(Capacity::preferredUnit());
+	return Capacity(v * d.logicalSectorSize()).toDouble(preferredUnit());
 }
 
 static qint64 dialogUnitToSectors(const Device& d, double v)
 {
-	return v * Capacity::unitFactor(Capacity::Byte, Capacity::preferredUnit()) / d.logicalSectorSize();
+	return v * Capacity::unitFactor(Capacity::Byte, preferredUnit()) / d.logicalSectorSize();
 }
 
