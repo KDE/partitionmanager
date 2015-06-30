@@ -31,6 +31,9 @@ LIBKPMGUI_EXPORT bool checkPermissions();
 LIBKPMGUI_EXPORT bool loadBackend();
 QIcon createFileSystemColor(FileSystem::Type type, quint32 size);
 Capacity::Unit preferredUnit();
+namespace GuiHelpers {
+	FileSystem::Type defaultFileSystem();
+}
 
 QString suCommand();
 

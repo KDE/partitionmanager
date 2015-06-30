@@ -28,6 +28,7 @@
 #include <kpmcore/fs/filesystemfactory.h>
 
 #include <kpmcore/util/helpers.h>
+#include "util/guihelpers.h"
 
 #include "ui_configurepagefilesystemcolors.h"
 
@@ -143,7 +144,7 @@ bool ConfigureOptionsDialog::isDefault()
 void ConfigureOptionsDialog::updateWidgetsDefault()
 {
 	bool useDefaults = Config::self()->useDefaults(true);
-	generalPageWidget().setDefaultFileSystem(FileSystem::defaultFileSystem());
+	generalPageWidget().setDefaultFileSystem(GuiHelpers::defaultFileSystem());
 	generalPageWidget().radioButton->setChecked(true);
 
 	if (advancedPageWidget().isVisible())

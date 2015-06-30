@@ -134,3 +134,12 @@ Capacity::Unit preferredUnit()
 {
 	return static_cast<Capacity::Unit>(Config::preferredUnit());
 }
+
+namespace GuiHelpers {
+
+	FileSystem::Type defaultFileSystem()
+	{
+		return static_cast<FileSystem::Type>(Config::defaultFileSystem());
+	}
+
+}

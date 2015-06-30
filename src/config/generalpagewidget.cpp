@@ -55,7 +55,7 @@ void GeneralPageWidget::setupDialog()
 	foreach (const QString& fsName, fsNames)
 		comboDefaultFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
-	setDefaultFileSystem(FileSystem::defaultFileSystem());
+	setDefaultFileSystem(GuiHelpers::defaultFileSystem());
 
 	kcfg_shredSource->setId(radioButton, 0);
 	kcfg_shredSource->setId(radioButton_2, 1);

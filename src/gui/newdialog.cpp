@@ -73,7 +73,7 @@ void NewDialog::setupDialog()
 	foreach (const QString& fsName, fsNames)
 		dialogWidget().comboFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
-	QString selected = FileSystem::nameForType(FileSystem::defaultFileSystem());
+	QString selected = FileSystem::nameForType(GuiHelpers::defaultFileSystem());
 	const int idx = dialogWidget().comboFileSystem().findText(selected);
 	dialogWidget().comboFileSystem().setCurrentIndex(idx != -1 ? idx : 0);
 
