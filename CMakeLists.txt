@@ -73,7 +73,7 @@ add_definitions(
 )
 
 find_package(PkgConfig REQUIRED)
-find_package(PartitionManager CONFIG REQUIRED)
+find_package(KPMcore CONFIG REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
 pkg_check_modules(LIBATASMART REQUIRED libatasmart)
 
