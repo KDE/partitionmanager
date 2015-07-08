@@ -16,9 +16,10 @@
  *************************************************************************/
 
 #include "gui/parttablewidget.h"
-#include "gui/partwidget.h"
 
 #include <kpmcore/core/partitiontable.h>
+
+#include <kpmcore/gui/partwidget.h>
 
 #include <QMouseEvent>
 

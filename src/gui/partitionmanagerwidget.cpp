@@ -16,7 +16,6 @@
  *************************************************************************/
 
 #include "gui/partitionmanagerwidget.h"
-#include "gui/partwidget.h"
 #include "gui/partpropsdialog.h"
 #include "gui/resizedialog.h"
 #include "gui/newdialog.h"
@@ -30,6 +29,8 @@
 #include <kpmcore/core/partitiontable.h>
 
 #include <kpmcore/fs/filesystemfactory.h>
+
+#include <kpmcore/gui/partwidget.h>
 
 #include <kpmcore/ops/deleteoperation.h>
 #include <kpmcore/ops/resizeoperation.h>

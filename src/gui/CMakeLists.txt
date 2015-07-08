@@ -21,9 +21,6 @@ set(GUI_SRC
 	gui/newdialog.cpp
 	gui/partitionmanagerwidget.cpp
 	gui/partpropsdialog.cpp
-	gui/partresizerwidget.cpp
-	gui/partwidget.cpp
-	gui/partwidgetbase.cpp
 	gui/parttablewidget.cpp
 	gui/resizedialog.cpp
 	gui/scanprogressdialog.cpp

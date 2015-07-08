@@ -17,7 +17,6 @@
 
 #include "gui/sizedialogbase.h"
 #include "gui/sizedetailswidget.h"
-#include "gui/partresizerwidget.h"
 #include "gui/sizedialogwidget.h"
 
 #include "util/guihelpers.h"
@@ -26,6 +25,8 @@
 #include <kpmcore/core/device.h>
 #include <kpmcore/core/partition.h>
 #include <kpmcore/core/partitionalignment.h>
+
+#include <kpmcore/gui/partresizerwidget.h>
 
 #include <kpmcore/util/capacity.h>
 
