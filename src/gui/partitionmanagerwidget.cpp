@@ -543,7 +543,12 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 		setClipboardPartition(NULL);
 	}
 
-	operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), shred));
+    if (shred && Config::shredSource() == Config::EnumShredSource::random)
+        operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), DeleteOperation::RandomShred));
+    else if (shred && Config::shredSource() == Config::EnumShredSource::zeros)
+        operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), DeleteOperation::ZeroShred));
+    else
+        operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), DeleteOperation::NoShred));
 }
 
 void PartitionManagerWidget::onShredPartition()
