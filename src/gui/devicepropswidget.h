@@ -24,38 +24,89 @@
 class PartTableWidget;
 
 /** Central widget in the DevicePropsDialog.
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 {
-	public:
-		DevicePropsWidget(QWidget* parent);
+public:
+    DevicePropsWidget(QWidget* parent);
 
-	public:
-		PartTableWidget& partTableWidget() { Q_ASSERT(m_PartTableWidget); return *m_PartTableWidget; }
+public:
+    PartTableWidget& partTableWidget() {
+        Q_ASSERT(m_PartTableWidget);
+        return *m_PartTableWidget;
+    }
 
-		QLabel& chs() { Q_ASSERT(m_LabelCHS); return *m_LabelCHS; }
-		QLabel& capacity() { Q_ASSERT(m_LabelCapacity); return *m_LabelCapacity; }
-		QLabel& cylinderSize() { Q_ASSERT(m_LabelCylinderSize); return *m_LabelCylinderSize; }
-		QLabel& primariesMax() { Q_ASSERT(m_LabelPrimariesMax); return *m_LabelPrimariesMax; }
-		QLabel& logicalSectorSize() { Q_ASSERT(m_LabelLogicalSectorSize); return *m_LabelLogicalSectorSize; }
-		QLabel& physicalSectorSize() { Q_ASSERT(m_LabelPhysicalSectorSize); return *m_LabelPhysicalSectorSize; }
-		QLabel& totalSectors() { Q_ASSERT(m_LabelTotalSectors); return *m_LabelTotalSectors; }
-		QLabel& type() { Q_ASSERT(m_LabelType); return *m_LabelType; }
+    QLabel& chs() {
+        Q_ASSERT(m_LabelCHS);
+        return *m_LabelCHS;
+    }
+    QLabel& capacity() {
+        Q_ASSERT(m_LabelCapacity);
+        return *m_LabelCapacity;
+    }
+    QLabel& cylinderSize() {
+        Q_ASSERT(m_LabelCylinderSize);
+        return *m_LabelCylinderSize;
+    }
+    QLabel& primariesMax() {
+        Q_ASSERT(m_LabelPrimariesMax);
+        return *m_LabelPrimariesMax;
+    }
+    QLabel& logicalSectorSize() {
+        Q_ASSERT(m_LabelLogicalSectorSize);
+        return *m_LabelLogicalSectorSize;
+    }
+    QLabel& physicalSectorSize() {
+        Q_ASSERT(m_LabelPhysicalSectorSize);
+        return *m_LabelPhysicalSectorSize;
+    }
+    QLabel& totalSectors() {
+        Q_ASSERT(m_LabelTotalSectors);
+        return *m_LabelTotalSectors;
+    }
+    QLabel& type() {
+        Q_ASSERT(m_LabelType);
+        return *m_LabelType;
+    }
 
-		QRadioButton& radioCylinderBased() { Q_ASSERT(m_RadioCylinderBased); return *m_RadioCylinderBased; }
-		const QRadioButton& radioCylinderBased() const { Q_ASSERT(m_RadioCylinderBased); return *m_RadioCylinderBased; }
+    QRadioButton& radioCylinderBased() {
+        Q_ASSERT(m_RadioCylinderBased);
+        return *m_RadioCylinderBased;
+    }
+    const QRadioButton& radioCylinderBased() const {
+        Q_ASSERT(m_RadioCylinderBased);
+        return *m_RadioCylinderBased;
+    }
 
-		QRadioButton& radioSectorBased() { Q_ASSERT(m_RadioSectorBased); return *m_RadioSectorBased; }
-		const QRadioButton& radioSectorBased() const { Q_ASSERT(m_RadioSectorBased); return *m_RadioSectorBased; }
+    QRadioButton& radioSectorBased() {
+        Q_ASSERT(m_RadioSectorBased);
+        return *m_RadioSectorBased;
+    }
+    const QRadioButton& radioSectorBased() const {
+        Q_ASSERT(m_RadioSectorBased);
+        return *m_RadioSectorBased;
+    }
 
-		QSpacerItem& spacerType() { Q_ASSERT(m_SpacerType); return *m_SpacerType; }
+    QSpacerItem& spacerType() {
+        Q_ASSERT(m_SpacerType);
+        return *m_SpacerType;
+    }
 
-		QLabel& smartStatusText() { Q_ASSERT(m_LabelSmartStatusText); return *m_LabelSmartStatusText; }
-		QLabel& smartStatusIcon() { Q_ASSERT(m_LabelSmartStatusIcon); return *m_LabelSmartStatusIcon; }
-		QPushButton& buttonSmartMore() { Q_ASSERT(m_ButtonSmartMore); return *m_ButtonSmartMore; }
+    QLabel& smartStatusText() {
+        Q_ASSERT(m_LabelSmartStatusText);
+        return *m_LabelSmartStatusText;
+    }
+    QLabel& smartStatusIcon() {
+        Q_ASSERT(m_LabelSmartStatusIcon);
+        return *m_LabelSmartStatusIcon;
+    }
+    QPushButton& buttonSmartMore() {
+        Q_ASSERT(m_ButtonSmartMore);
+        return *m_ButtonSmartMore;
+    }
 
-		void hideTypeRadioButtons();
+    void hideTypeRadioButtons();
 };
 
 #endif

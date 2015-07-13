@@ -30,18 +30,22 @@ class QComboBox;
 
 class AdvancedPageWidget : public QWidget, public Ui::ConfigurePageAdvanced
 {
-	public:
-		AdvancedPageWidget(QWidget* parent);
+public:
+    AdvancedPageWidget(QWidget* parent);
 
-	public:
-		QComboBox& comboBackend() { return *m_ComboBackend; }
-		const QComboBox& comboBackend() const { return *m_ComboBackend; }
+public:
+    QComboBox& comboBackend() {
+        return *m_ComboBackend;
+    }
+    const QComboBox& comboBackend() const {
+        return *m_ComboBackend;
+    }
 
-		QString backend() const;
-		void setBackend(const QString& name);
+    QString backend() const;
+    void setBackend(const QString& name);
 
-	private:
-		void setupDialog();
+private:
+    void setupDialog();
 };
 
 #endif

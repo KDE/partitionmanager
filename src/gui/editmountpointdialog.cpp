@@ -28,39 +28,39 @@
 #include <KSharedConfig>
 
 EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
-	QDialog(parent),
-	m_Partition(p),
-	m_DialogWidget(new EditMountPointDialogWidget(this, partition()))
+    QDialog(parent),
+    m_Partition(p),
+    m_DialogWidget(new EditMountPointDialogWidget(this, partition()))
 {
-	QVBoxLayout *mainLayout = new QVBoxLayout(this);
-	setLayout(mainLayout);
-	mainLayout->addWidget(&widget());
-	setWindowTitle(xi18nc("@title:window", "Edit mount point for <filename>%1</filename>", p.deviceNode()));
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    setLayout(mainLayout);
+    mainLayout->addWidget(&widget());
+    setWindowTitle(xi18nc("@title:window", "Edit mount point for <filename>%1</filename>", p.deviceNode()));
 
-	KConfigGroup kcg(KSharedConfig::openConfig(), "editMountPointDialog");
-	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
+    KConfigGroup kcg(KSharedConfig::openConfig(), "editMountPointDialog");
+    restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys an EditMOuntOptionsDialog instance */
 EditMountPointDialog::~EditMountPointDialog()
 {
-	KConfigGroup kcg(KSharedConfig::openConfig(), "editMountPointDialog");
-	kcg.writeEntry("Geometry", saveGeometry());
+    KConfigGroup kcg(KSharedConfig::openConfig(), "editMountPointDialog");
+    kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void EditMountPointDialog::accept()
 {
-	if (KMessageBox::warningContinueCancel(this,
-			xi18nc("@info", "<para>Are you sure you want to save the changes you made to the system table file <filename>/etc/fstab</filename>?</para>"
-			"<para><warning>This will overwrite the existing file on your hard drive now. This <strong>can not be undone</strong>.</warning></para>"),
-			i18nc("@title:window", "Really save changes?"),
-			KGuiItem(i18nc("@action:button", "Save changes"), QStringLiteral("arrow-right")),
-			KStandardGuiItem::cancel(),
-			QStringLiteral("reallyWriteMountPoints")) == KMessageBox::Cancel)
-		return;
+    if (KMessageBox::warningContinueCancel(this,
+                                           xi18nc("@info", "<para>Are you sure you want to save the changes you made to the system table file <filename>/etc/fstab</filename>?</para>"
+                                                   "<para><warning>This will overwrite the existing file on your hard drive now. This <strong>can not be undone</strong>.</warning></para>"),
+                                           i18nc("@title:window", "Really save changes?"),
+                                           KGuiItem(i18nc("@action:button", "Save changes"), QStringLiteral("arrow-right")),
+                                           KStandardGuiItem::cancel(),
+                                           QStringLiteral("reallyWriteMountPoints")) == KMessageBox::Cancel)
+        return;
 
-	if (widget().acceptChanges() && widget().writeMountpoints(QStringLiteral("/etc/fstab")))
-		partition().setMountPoint(widget().editPath().text());
+    if (widget().acceptChanges() && widget().writeMountpoints(QStringLiteral("/etc/fstab")))
+        partition().setMountPoint(widget().editPath().text());
 
-	QDialog::accept();
+    QDialog::accept();
 }

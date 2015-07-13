@@ -31,48 +31,62 @@ class QResizeEvent;
 class QMouseEvent;
 
 /** Widget that represents a PartitionTable.
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class PartTableWidget : public PartWidgetBase
 {
-	Q_OBJECT
-	Q_DISABLE_COPY(PartTableWidget)
+    Q_OBJECT
+    Q_DISABLE_COPY(PartTableWidget)
 
-	public:
-		PartTableWidget(QWidget* parent);
-		virtual qint32 borderWidth() const { return 0; } /**< @return border width */
-		virtual qint32 borderHeight() const { return 0; } /**< @return border height */
+public:
+    PartTableWidget(QWidget* parent);
+    virtual qint32 borderWidth() const {
+        return 0;    /**< @return border width */
+    }
+    virtual qint32 borderHeight() const {
+        return 0;    /**< @return border height */
+    }
 
-	public:
-		void setPartitionTable(const PartitionTable* ptable);
+public:
+    void setPartitionTable(const PartitionTable* ptable);
 
-		PartWidget* activeWidget(); /**< @return the active widget or NULL if none */
-		const PartWidget* activeWidget() const; /**< @return the active widget or NULL if none */
+    PartWidget* activeWidget(); /**< @return the active widget or NULL if none */
+    const PartWidget* activeWidget() const; /**< @return the active widget or NULL if none */
 
-		void setActiveWidget(PartWidget* partWidget);
-		void setActivePartition(const Partition* p);
-		void clear();
-		void setReadOnly(bool b) { m_ReadOnly = b; } /**< @param b the new value for read only */
-		bool isReadOnly() const { return m_ReadOnly; } /** @return true if the widget is read only */
+    void setActiveWidget(PartWidget* partWidget);
+    void setActivePartition(const Partition* p);
+    void clear();
+    void setReadOnly(bool b) {
+        m_ReadOnly = b;    /**< @param b the new value for read only */
+    }
+    bool isReadOnly() const {
+        return m_ReadOnly;    /** @return true if the widget is read only */
+    }
 
-	Q_SIGNALS:
-		void itemSelectionChanged(PartWidget*);
-		void itemDoubleClicked(const PartWidget*);
+Q_SIGNALS:
+    void itemSelectionChanged(PartWidget*);
+    void itemDoubleClicked(const PartWidget*);
 
-	protected:
-		void resizeEvent(QResizeEvent* event);
-		void mousePressEvent(QMouseEvent* event);
-		void mouseDoubleClickEvent(QMouseEvent* event);
+protected:
+    void resizeEvent(QResizeEvent* event);
+    void mousePressEvent(QMouseEvent* event);
+    void mouseDoubleClickEvent(QMouseEvent* event);
 
-		const PartitionTable* partitionTable() const { return m_PartitionTable; }
+    const PartitionTable* partitionTable() const {
+        return m_PartitionTable;
+    }
 
-		QLabel& labelEmpty() { return m_LabelEmpty; }
-		const QLabel& labelEmpty() const { return m_LabelEmpty; }
+    QLabel& labelEmpty() {
+        return m_LabelEmpty;
+    }
+    const QLabel& labelEmpty() const {
+        return m_LabelEmpty;
+    }
 
-	private:
-		const PartitionTable* m_PartitionTable;
-		QLabel m_LabelEmpty;
-		bool m_ReadOnly;
+private:
+    const PartitionTable* m_PartitionTable;
+    QLabel m_LabelEmpty;
+    bool m_ReadOnly;
 };
 
 #endif

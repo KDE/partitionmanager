@@ -36,160 +36,156 @@
 #include <KSharedConfig>
 
 /** Creates a NewDialog
-	@param parent the parent widget
-	@param device the Device on which a new Partition is to be created
-	@param unallocatedPartition the unallocated space on the Device to create a Partition in
-	@param r the permitted Roles for the new Partition
+    @param parent the parent widget
+    @param device the Device on which a new Partition is to be created
+    @param unallocatedPartition the unallocated space on the Device to create a Partition in
+    @param r the permitted Roles for the new Partition
 */
 NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPartition, PartitionRole::Roles r) :
-	SizeDialogBase(parent, device, unallocatedPartition, unallocatedPartition.firstSector(), unallocatedPartition.lastSector()),
-	m_PartitionRoles(r)
+    SizeDialogBase(parent, device, unallocatedPartition, unallocatedPartition.firstSector(), unallocatedPartition.lastSector()),
+    m_PartitionRoles(r)
 {
-	setWindowTitle(i18nc("@title:window", "Create a new partition"));
+    setWindowTitle(i18nc("@title:window", "Create a new partition"));
 
-	setupDialog();
-	setupConstraints();
-	setupConnections();
+    setupDialog();
+    setupConstraints();
+    setupConnections();
 
-	KConfigGroup kcg(KSharedConfig::openConfig(), "newDialog");
-	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
+    KConfigGroup kcg(KSharedConfig::openConfig(), "newDialog");
+    restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 NewDialog::~NewDialog()
 {
-	KConfigGroup kcg(KSharedConfig::openConfig(), "newDialog");
-	kcg.writeEntry("Geometry", saveGeometry());
+    KConfigGroup kcg(KSharedConfig::openConfig(), "newDialog");
+    kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void NewDialog::setupDialog()
 {
-	QStringList fsNames;
-	foreach (const FileSystem* fs, FileSystemFactory::map())
-		if (fs->supportCreate() != FileSystem::cmdSupportNone && fs->type() != FileSystem::Extended)
-			fsNames.append(fs->name());
+    QStringList fsNames;
+    foreach(const FileSystem * fs, FileSystemFactory::map())
+    if (fs->supportCreate() != FileSystem::cmdSupportNone && fs->type() != FileSystem::Extended)
+        fsNames.append(fs->name());
 
-	qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
+    qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-	foreach (const QString& fsName, fsNames)
-		dialogWidget().comboFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
+    foreach(const QString & fsName, fsNames)
+    dialogWidget().comboFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
-	QString selected = FileSystem::nameForType(GuiHelpers::defaultFileSystem());
-	const int idx = dialogWidget().comboFileSystem().findText(selected);
-	dialogWidget().comboFileSystem().setCurrentIndex(idx != -1 ? idx : 0);
+    QString selected = FileSystem::nameForType(GuiHelpers::defaultFileSystem());
+    const int idx = dialogWidget().comboFileSystem().findText(selected);
+    dialogWidget().comboFileSystem().setCurrentIndex(idx != -1 ? idx : 0);
 
-	dialogWidget().radioPrimary().setVisible(partitionRoles() & PartitionRole::Primary);
-	dialogWidget().radioExtended().setVisible(partitionRoles() & PartitionRole::Extended);
-	dialogWidget().radioLogical().setVisible(partitionRoles() & PartitionRole::Logical);
+    dialogWidget().radioPrimary().setVisible(partitionRoles() & PartitionRole::Primary);
+    dialogWidget().radioExtended().setVisible(partitionRoles() & PartitionRole::Extended);
+    dialogWidget().radioLogical().setVisible(partitionRoles() & PartitionRole::Logical);
 
-	if (partitionRoles() & PartitionRole::Primary)
-		dialogWidget().radioPrimary().setChecked(true);
-	else
-		dialogWidget().radioLogical().setChecked(true);
+    if (partitionRoles() & PartitionRole::Primary)
+        dialogWidget().radioPrimary().setChecked(true);
+    else
+        dialogWidget().radioLogical().setChecked(true);
 
-	SizeDialogBase::setupDialog();
+    SizeDialogBase::setupDialog();
 
-	// don't move these above the call to parent's setupDialog, because only after that has
-	// run there is a valid partition set in the part resizer widget and they will need that.
-	onRoleChanged(false);
-	onFilesystemChanged(dialogWidget().comboFileSystem().currentIndex());
+    // don't move these above the call to parent's setupDialog, because only after that has
+    // run there is a valid partition set in the part resizer widget and they will need that.
+    onRoleChanged(false);
+    onFilesystemChanged(dialogWidget().comboFileSystem().currentIndex());
 }
 
 void NewDialog::setupConnections()
 {
-	connect(&dialogWidget().radioPrimary(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
-	connect(&dialogWidget().radioExtended(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
-	connect(&dialogWidget().radioLogical(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
-	connect(&dialogWidget().comboFileSystem(), SIGNAL(currentIndexChanged(int)), SLOT(onFilesystemChanged(int)));
-	connect(&dialogWidget().label(), SIGNAL(textChanged(const QString&)), SLOT(onLabelChanged(const QString&)));
+    connect(&dialogWidget().radioPrimary(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
+    connect(&dialogWidget().radioExtended(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
+    connect(&dialogWidget().radioLogical(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
+    connect(&dialogWidget().comboFileSystem(), SIGNAL(currentIndexChanged(int)), SLOT(onFilesystemChanged(int)));
+    connect(&dialogWidget().label(), SIGNAL(textChanged(const QString&)), SLOT(onLabelChanged(const QString&)));
 
-	SizeDialogBase::setupConnections();
+    SizeDialogBase::setupConnections();
 }
 
 void NewDialog::accept()
 {
-	if (partition().roles().has(PartitionRole::Extended))
-	{
-		partition().deleteFileSystem();
-		partition().setFileSystem(FileSystemFactory::create(FileSystem::Extended, partition().firstSector(), partition().lastSector()));
-	}
+    if (partition().roles().has(PartitionRole::Extended)) {
+        partition().deleteFileSystem();
+        partition().setFileSystem(FileSystemFactory::create(FileSystem::Extended, partition().firstSector(), partition().lastSector()));
+    }
 
-	QDialog::accept();
+    QDialog::accept();
 }
 
 void NewDialog::onRoleChanged(bool)
 {
-	PartitionRole::Roles r = PartitionRole::None;
+    PartitionRole::Roles r = PartitionRole::None;
 
-	if (dialogWidget().radioPrimary().isChecked())
-		r = PartitionRole::Primary;
-	else if (dialogWidget().radioExtended().isChecked())
-		r = PartitionRole::Extended;
-	else if (dialogWidget().radioLogical().isChecked())
-		r = PartitionRole::Logical;
+    if (dialogWidget().radioPrimary().isChecked())
+        r = PartitionRole::Primary;
+    else if (dialogWidget().radioExtended().isChecked())
+        r = PartitionRole::Extended;
+    else if (dialogWidget().radioLogical().isChecked())
+        r = PartitionRole::Logical;
 
-	// Make sure an extended partition gets correctly displayed: Set its file system to extended.
-	// Also make sure to set a primary's or logical's file system once the user goes back from
-	// extended to any of those.
-	if (r == PartitionRole::Extended)
-		updateFileSystem(FileSystem::Extended);
-	else
-		updateFileSystem(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()));
+    // Make sure an extended partition gets correctly displayed: Set its file system to extended.
+    // Also make sure to set a primary's or logical's file system once the user goes back from
+    // extended to any of those.
+    if (r == PartitionRole::Extended)
+        updateFileSystem(FileSystem::Extended);
+    else
+        updateFileSystem(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()));
 
-	dialogWidget().comboFileSystem().setEnabled(r != PartitionRole::Extended);
-	partition().setRoles(PartitionRole(r));
+    dialogWidget().comboFileSystem().setEnabled(r != PartitionRole::Extended);
+    partition().setRoles(PartitionRole(r));
 
-	setupConstraints();
+    setupConstraints();
 
-	dialogWidget().partResizerWidget().resizeLogicals(0, 0, true);
-	dialogWidget().partResizerWidget().update();
+    dialogWidget().partResizerWidget().resizeLogicals(0, 0, true);
+    dialogWidget().partResizerWidget().update();
 
-	updateHideAndShow();
+    updateHideAndShow();
 }
 
 void NewDialog::updateFileSystem(FileSystem::Type t)
 {
-	partition().deleteFileSystem();
-	partition().setFileSystem(FileSystemFactory::create(t, partition().firstSector(), partition().lastSector()));
+    partition().deleteFileSystem();
+    partition().setFileSystem(FileSystemFactory::create(t, partition().firstSector(), partition().lastSector()));
 }
 
 void NewDialog::onFilesystemChanged(int idx)
 {
-	updateFileSystem(FileSystem::typeForName(dialogWidget().comboFileSystem().itemText(idx)));
+    updateFileSystem(FileSystem::typeForName(dialogWidget().comboFileSystem().itemText(idx)));
 
-	setupConstraints();
+    setupConstraints();
 
-	const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()), -1, -1, -1, QString());
-	dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
+    const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()), -1, -1, -1, QString());
+    dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
 
-	updateSpinCapacity(partition().length());
-	dialogWidget().partResizerWidget().update();
+    updateSpinCapacity(partition().length());
+    dialogWidget().partResizerWidget().update();
 
-	updateHideAndShow();
+    updateHideAndShow();
 }
 
 void NewDialog::onLabelChanged(const QString& newLabel)
 {
-	partition().fileSystem().setLabel(newLabel);
+    partition().fileSystem().setLabel(newLabel);
 }
 
 void NewDialog::updateHideAndShow()
 {
-	// this is mostly copy'n'pasted from PartPropsDialog::updateHideAndShow()
-	if (partition().roles().has(PartitionRole::Extended) || partition().fileSystem().supportSetLabel() == FileSystem::cmdSupportNone)
-	{
-		dialogWidget().label().setReadOnly(true);
-		dialogWidget().noSetLabel().setVisible(true);
-		dialogWidget().noSetLabel().setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
+    // this is mostly copy'n'pasted from PartPropsDialog::updateHideAndShow()
+    if (partition().roles().has(PartitionRole::Extended) || partition().fileSystem().supportSetLabel() == FileSystem::cmdSupportNone) {
+        dialogWidget().label().setReadOnly(true);
+        dialogWidget().noSetLabel().setVisible(true);
+        dialogWidget().noSetLabel().setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
 
-		QPalette palette = dialogWidget().noSetLabel().palette();
-		QColor f = palette.color(QPalette::Foreground);
-		f.setAlpha(128);
-		palette.setColor(QPalette::Foreground, f);
-		dialogWidget().noSetLabel().setPalette(palette);
-	}
-	else
-	{
-		dialogWidget().label().setReadOnly(false);
-		dialogWidget().noSetLabel().setVisible(false);
-	}
+        QPalette palette = dialogWidget().noSetLabel().palette();
+        QColor f = palette.color(QPalette::Foreground);
+        f.setAlpha(128);
+        palette.setColor(QPalette::Foreground, f);
+        dialogWidget().noSetLabel().setPalette(palette);
+    } else {
+        dialogWidget().label().setReadOnly(false);
+        dialogWidget().noSetLabel().setVisible(false);
+    }
 }

@@ -22,19 +22,36 @@
 #include "ui_applyprogressdialogwidgetbase.h"
 
 /** Central widget for the ProgressDialog.
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class ApplyProgressDialogWidget : public QWidget, public Ui::ApplyProgressDialogWidgetBase
 {
-	public:
-		ApplyProgressDialogWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
+public:
+    ApplyProgressDialogWidget(QWidget* parent) : QWidget(parent) {
+        setupUi(this);
+    }
 
-	public:
-		QTreeWidget& treeTasks() { Q_ASSERT(m_TreeTasks); return *m_TreeTasks; }
-		QProgressBar& progressTotal() { Q_ASSERT(m_ProgressTotal); return *m_ProgressTotal; }
-		QProgressBar& progressSub() { Q_ASSERT(m_ProgressSub); return *m_ProgressSub; }
-		QLabel& status() { Q_ASSERT(m_LabelStatus); return *m_LabelStatus; }
-		QLabel& totalTime() { Q_ASSERT(m_LabelTime); return *m_LabelTime; }
+public:
+    QTreeWidget& treeTasks() {
+        Q_ASSERT(m_TreeTasks);
+        return *m_TreeTasks;
+    }
+    QProgressBar& progressTotal() {
+        Q_ASSERT(m_ProgressTotal);
+        return *m_ProgressTotal;
+    }
+    QProgressBar& progressSub() {
+        Q_ASSERT(m_ProgressSub);
+        return *m_ProgressSub;
+    }
+    QLabel& status() {
+        Q_ASSERT(m_LabelStatus);
+        return *m_LabelStatus;
+    }
+    QLabel& totalTime() {
+        Q_ASSERT(m_LabelTime);
+        return *m_LabelTime;
+    }
 };
 
 #endif

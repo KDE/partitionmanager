@@ -33,36 +33,46 @@ class KActionCollection;
 
 /** A list of pending operations.
 
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class LIBKPMGUI_EXPORT ListOperations : public QWidget, public Ui::ListOperationsBase
 {
-	Q_OBJECT
-	Q_DISABLE_COPY(ListOperations)
+    Q_OBJECT
+    Q_DISABLE_COPY(ListOperations)
 
-	public:
-		ListOperations(QWidget* parent = NULL);
+public:
+    ListOperations(QWidget* parent = NULL);
 
-	Q_SIGNALS:
-		void contextMenuRequested(const QPoint&);
+Q_SIGNALS:
+    void contextMenuRequested(const QPoint&);
 
-	public:
-		void setActionCollection(KActionCollection* coll) { m_ActionCollection = coll; }
+public:
+    void setActionCollection(KActionCollection* coll) {
+        m_ActionCollection = coll;
+    }
 
-	public Q_SLOTS:
-		void updateOperations(const OperationStack::Operations& ops);
+public Q_SLOTS:
+    void updateOperations(const OperationStack::Operations& ops);
 
-	protected:
-		KActionCollection* actionCollection() { return m_ActionCollection; }
+protected:
+    KActionCollection* actionCollection() {
+        return m_ActionCollection;
+    }
 
-		QListWidget& listOperations() { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
-		const QListWidget& listOperations() const { Q_ASSERT(m_ListOperations); return *m_ListOperations; }
+    QListWidget& listOperations() {
+        Q_ASSERT(m_ListOperations);
+        return *m_ListOperations;
+    }
+    const QListWidget& listOperations() const {
+        Q_ASSERT(m_ListOperations);
+        return *m_ListOperations;
+    }
 
-	protected Q_SLOTS:
-		void on_m_ListOperations_customContextMenuRequested(const QPoint& pos);
+protected Q_SLOTS:
+    void on_m_ListOperations_customContextMenuRequested(const QPoint& pos);
 
-	private:
-		KActionCollection* m_ActionCollection;
+private:
+    KActionCollection* m_ActionCollection;
 };
 
 #endif

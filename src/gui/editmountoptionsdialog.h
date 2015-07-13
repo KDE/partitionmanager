@@ -28,20 +28,22 @@ class QWidget;
 
 class EditMountOptionsDialog : public QDialog
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		EditMountOptionsDialog(QWidget* parent, const QStringList& options);
-		~EditMountOptionsDialog();
+public:
+    EditMountOptionsDialog(QWidget* parent, const QStringList& options);
+    ~EditMountOptionsDialog();
 
-	public:
-		QStringList options();
+public:
+    QStringList options();
 
-	protected:
-		EditMountOptionsDialogWidget& widget() { return *m_DialogWidget; }
+protected:
+    EditMountOptionsDialogWidget& widget() {
+        return *m_DialogWidget;
+    }
 
-	private:
-		EditMountOptionsDialogWidget* m_DialogWidget;
+private:
+    EditMountOptionsDialogWidget* m_DialogWidget;
 };
 
 #endif

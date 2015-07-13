@@ -31,38 +31,48 @@ class QDialogButtonBox;
 
 /** Show SMART properties.
 
-	Dialog that shows SMART status and properties for a device
+    Dialog that shows SMART status and properties for a device
 
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class SmartDialog : public QDialog
 {
-	Q_OBJECT
-	Q_DISABLE_COPY(SmartDialog)
+    Q_OBJECT
+    Q_DISABLE_COPY(SmartDialog)
 
-	public:
-		SmartDialog(QWidget* parent, Device& d);
-		~SmartDialog();
+public:
+    SmartDialog(QWidget* parent, Device& d);
+    ~SmartDialog();
 
-	protected Q_SLOTS:
-		void saveSmartReport();
+protected Q_SLOTS:
+    void saveSmartReport();
 
-	protected:
-		void setupDialog();
-		void setupConnections();
+protected:
+    void setupDialog();
+    void setupConnections();
 
-		Device& device() { return m_Device; }
-		const Device& device() const { return m_Device; }
+    Device& device() {
+        return m_Device;
+    }
+    const Device& device() const {
+        return m_Device;
+    }
 
-		SmartDialogWidget& dialogWidget() { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
-		const SmartDialogWidget& dialogWidget() const { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
+    SmartDialogWidget& dialogWidget() {
+        Q_ASSERT(m_DialogWidget);
+        return *m_DialogWidget;
+    }
+    const SmartDialogWidget& dialogWidget() const {
+        Q_ASSERT(m_DialogWidget);
+        return *m_DialogWidget;
+    }
 
-		QString toHtml() const;
+    QString toHtml() const;
 
-	private:
-		Device& m_Device;
-		SmartDialogWidget* m_DialogWidget;
-		QDialogButtonBox* buttonBox;
+private:
+    Device& m_Device;
+    SmartDialogWidget* m_DialogWidget;
+    QDialogButtonBox* buttonBox;
 };
 
 #endif

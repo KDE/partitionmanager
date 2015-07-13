@@ -22,19 +22,30 @@
 #include "ui_applyprogressdetailswidgetbase.h"
 
 /** Details widget for the ProgressDialog.
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class ApplyProgressDetailsWidget : public QWidget, public Ui::ApplyProgressDetailsWidgetBase
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		ApplyProgressDetailsWidget(QWidget* parent) : QWidget(parent) { setupUi(this); }
+public:
+    ApplyProgressDetailsWidget(QWidget* parent) : QWidget(parent) {
+        setupUi(this);
+    }
 
-	public:
-		QTextEdit& editReport() { Q_ASSERT(m_EditReport); return *m_EditReport; }
-		QPushButton& buttonSave() { Q_ASSERT(m_ButtonSave); return *m_ButtonSave; }
-		QPushButton& buttonBrowser() { Q_ASSERT(m_ButtonBrowser); return *m_ButtonBrowser; }
+public:
+    QTextEdit& editReport() {
+        Q_ASSERT(m_EditReport);
+        return *m_EditReport;
+    }
+    QPushButton& buttonSave() {
+        Q_ASSERT(m_ButtonSave);
+        return *m_ButtonSave;
+    }
+    QPushButton& buttonBrowser() {
+        Q_ASSERT(m_ButtonBrowser);
+        return *m_ButtonBrowser;
+    }
 };
 
 #endif

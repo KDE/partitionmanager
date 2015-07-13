@@ -29,34 +29,40 @@ class FileSystemSupportDialogWidget;
 
 /** Show supported Operations
 
-	Dialog to show which Operations are supported for which type of FileSystem.
+    Dialog to show which Operations are supported for which type of FileSystem.
 
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class FileSystemSupportDialog : public QDialog
 {
-	Q_OBJECT
-	Q_DISABLE_COPY(FileSystemSupportDialog)
+    Q_OBJECT
+    Q_DISABLE_COPY(FileSystemSupportDialog)
 
-	public:
-		FileSystemSupportDialog(QWidget* parent);
-		~FileSystemSupportDialog();
+public:
+    FileSystemSupportDialog(QWidget* parent);
+    ~FileSystemSupportDialog();
 
-	public:
-		QSize sizeHint() const;
+public:
+    QSize sizeHint() const;
 
-	protected Q_SLOTS:
-		void onButtonRescanClicked();
+protected Q_SLOTS:
+    void onButtonRescanClicked();
 
-	protected:
-		FileSystemSupportDialogWidget& dialogWidget() { Q_ASSERT(m_FileSystemSupportDialogWidget); return *m_FileSystemSupportDialogWidget; }
-		const FileSystemSupportDialogWidget& dialogWidget() const { Q_ASSERT(m_FileSystemSupportDialogWidget); return *m_FileSystemSupportDialogWidget; }
-		void setupDialog();
-		void setupConnections();
+protected:
+    FileSystemSupportDialogWidget& dialogWidget() {
+        Q_ASSERT(m_FileSystemSupportDialogWidget);
+        return *m_FileSystemSupportDialogWidget;
+    }
+    const FileSystemSupportDialogWidget& dialogWidget() const {
+        Q_ASSERT(m_FileSystemSupportDialogWidget);
+        return *m_FileSystemSupportDialogWidget;
+    }
+    void setupDialog();
+    void setupConnections();
 
-	private:
-		FileSystemSupportDialogWidget* m_FileSystemSupportDialogWidget;
-		QDialogButtonBox* dialogButtonBox;
+private:
+    FileSystemSupportDialogWidget* m_FileSystemSupportDialogWidget;
+    QDialogButtonBox* dialogButtonBox;
 };
 
 #endif

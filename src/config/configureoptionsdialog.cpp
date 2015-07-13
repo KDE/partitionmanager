@@ -41,132 +41,123 @@
 #include <config.h>
 
 ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationStack& ostack, const QString& name) :
-	KConfigDialog(parent, name, Config::self()),
-	m_GeneralPageWidget(new GeneralPageWidget(this)),
-	m_FileSystemColorsPageWidget(new FileSystemColorsPageWidget(this)),
-	m_AdvancedPageWidget(new AdvancedPageWidget(this)),
-	m_OperationStack(ostack)
+    KConfigDialog(parent, name, Config::self()),
+    m_GeneralPageWidget(new GeneralPageWidget(this)),
+    m_FileSystemColorsPageWidget(new FileSystemColorsPageWidget(this)),
+    m_AdvancedPageWidget(new AdvancedPageWidget(this)),
+    m_OperationStack(ostack)
 {
-	setFaceType(List);
+    setFaceType(List);
 
-	KPageWidgetItem* item = NULL;
+    KPageWidgetItem* item = NULL;
 
-	item = addPage(&generalPageWidget(), i18nc("@title:tab general application settings", "General"), QString(), i18n("General Settings"));
-	item->setIcon(QIcon::fromTheme(QStringLiteral("partitionmanager")).pixmap(IconSize(KIconLoader::Desktop)));
+    item = addPage(&generalPageWidget(), i18nc("@title:tab general application settings", "General"), QString(), i18n("General Settings"));
+    item->setIcon(QIcon::fromTheme(QStringLiteral("partitionmanager")).pixmap(IconSize(KIconLoader::Desktop)));
 
-	connect(&generalPageWidget().comboDefaultFileSystem(), SIGNAL(activated(int)), SLOT(onComboDefaultFileSystemActivated(int)));
-	connect(generalPageWidget().radioButton, &QRadioButton::toggled, this, &ConfigureOptionsDialog::onShredSourceActivated);
+    connect(&generalPageWidget().comboDefaultFileSystem(), SIGNAL(activated(int)), SLOT(onComboDefaultFileSystemActivated(int)));
+    connect(generalPageWidget().radioButton, &QRadioButton::toggled, this, &ConfigureOptionsDialog::onShredSourceActivated);
 
-	item = addPage(&fileSystemColorsPageWidget(), i18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
-	item->setIcon(QIcon::fromTheme(QStringLiteral("format-fill-color")).pixmap(IconSize(KIconLoader::Desktop)));
+    item = addPage(&fileSystemColorsPageWidget(), i18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
+    item->setIcon(QIcon::fromTheme(QStringLiteral("format-fill-color")).pixmap(IconSize(KIconLoader::Desktop)));
 
-	if (QCoreApplication::arguments().contains(QLatin1String("--advconfig")))
-	{
-		item = addPage(&advancedPageWidget(), i18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
-		item->setIcon(QIcon::fromTheme(QStringLiteral("configure")).pixmap(IconSize(KIconLoader::Desktop)));
+    if (QCoreApplication::arguments().contains(QLatin1String("--advconfig"))) {
+        item = addPage(&advancedPageWidget(), i18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
+        item->setIcon(QIcon::fromTheme(QStringLiteral("configure")).pixmap(IconSize(KIconLoader::Desktop)));
 
-		connect(&advancedPageWidget().comboBackend(), SIGNAL(activated(int)), SLOT(onComboBackendActivated(int)));
-	}
-	else
-		advancedPageWidget().setVisible(false);
+        connect(&advancedPageWidget().comboBackend(), SIGNAL(activated(int)), SLOT(onComboBackendActivated(int)));
+    } else
+        advancedPageWidget().setVisible(false);
 
-	KConfigGroup kcg(KSharedConfig::openConfig(), "configureOptionsDialogs");
-	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
+    KConfigGroup kcg(KSharedConfig::openConfig(), "configureOptionsDialogs");
+    restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a ConfigureOptionsDialog instance */
 ConfigureOptionsDialog::~ConfigureOptionsDialog()
 {
-	KConfigGroup kcg(KSharedConfig::openConfig(), "configureOptionsDialog");
-	kcg.writeEntry("Geometry", saveGeometry());
+    KConfigGroup kcg(KSharedConfig::openConfig(), "configureOptionsDialog");
+    kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void ConfigureOptionsDialog::updateSettings()
 {
-	KConfigDialog::updateSettings();
+    KConfigDialog::updateSettings();
 
-	bool changed = false;
+    bool changed = false;
 
-	if (generalPageWidget().defaultFileSystem() != Config::defaultFileSystem())
-	{
-		Config::setDefaultFileSystem(generalPageWidget().defaultFileSystem());
-		changed = true;
-	}
+    if (generalPageWidget().defaultFileSystem() != Config::defaultFileSystem()) {
+        Config::setDefaultFileSystem(generalPageWidget().defaultFileSystem());
+        changed = true;
+    }
 
-	if (generalPageWidget().radioButton->isChecked() != (Config::shredSource() == Config::EnumShredSource::random))
-	{
-		qDebug() << "updateSettings: " << generalPageWidget().kcfg_shredSource->checkedId();
-		Config::setShredSource(generalPageWidget().kcfg_shredSource->checkedId());
-		changed = true;
-	}
+    if (generalPageWidget().radioButton->isChecked() != (Config::shredSource() == Config::EnumShredSource::random)) {
+        qDebug() << "updateSettings: " << generalPageWidget().kcfg_shredSource->checkedId();
+        Config::setShredSource(generalPageWidget().kcfg_shredSource->checkedId());
+        changed = true;
+    }
 
-	if (advancedPageWidget().isVisible() && advancedPageWidget().backend() != Config::backend())
-	{
-		Config::setBackend(advancedPageWidget().backend());
-		changed = true;
-	}
+    if (advancedPageWidget().isVisible() && advancedPageWidget().backend() != Config::backend()) {
+        Config::setBackend(advancedPageWidget().backend());
+        changed = true;
+    }
 
-	if (changed)
-		emit KConfigDialog::settingsChanged(i18n("General Settings"));
+    if (changed)
+        emit KConfigDialog::settingsChanged(i18n("General Settings"));
 }
 
 bool ConfigureOptionsDialog::hasChanged()
 {
-	bool result = KConfigDialog::hasChanged();
+    bool result = KConfigDialog::hasChanged();
 
-	KConfigSkeletonItem* kcItem = Config::self()->findItem(QStringLiteral("defaultFileSystem"));
-	result = result || !kcItem->isEqual(generalPageWidget().defaultFileSystem());
-	result = result || ( generalPageWidget().kcfg_shredSource->checkedId() != Config::shredSource() );
+    KConfigSkeletonItem* kcItem = Config::self()->findItem(QStringLiteral("defaultFileSystem"));
+    result = result || !kcItem->isEqual(generalPageWidget().defaultFileSystem());
+    result = result || (generalPageWidget().kcfg_shredSource->checkedId() != Config::shredSource());
 
-	if (advancedPageWidget().isVisible())
-	{
-		kcItem = Config::self()->findItem(QStringLiteral("backend"));
-		result = result || !kcItem->isEqual(advancedPageWidget().backend());
-	}
+    if (advancedPageWidget().isVisible()) {
+        kcItem = Config::self()->findItem(QStringLiteral("backend"));
+        result = result || !kcItem->isEqual(advancedPageWidget().backend());
+    }
 
-	return result;
+    return result;
 }
 
 bool ConfigureOptionsDialog::isDefault()
 {
-	bool result = KConfigDialog::isDefault();
+    bool result = KConfigDialog::isDefault();
 
-	if (result)
-	{
-		const bool useDefaults = Config::self()->useDefaults(true);
-		result = !hasChanged();
-		Config::self()->useDefaults(useDefaults);
-	}
+    if (result) {
+        const bool useDefaults = Config::self()->useDefaults(true);
+        result = !hasChanged();
+        Config::self()->useDefaults(useDefaults);
+    }
 
-	return result;
+    return result;
 }
 
 void ConfigureOptionsDialog::updateWidgetsDefault()
 {
-	bool useDefaults = Config::self()->useDefaults(true);
-	generalPageWidget().setDefaultFileSystem(GuiHelpers::defaultFileSystem());
-	generalPageWidget().radioButton->setChecked(true);
+    bool useDefaults = Config::self()->useDefaults(true);
+    generalPageWidget().setDefaultFileSystem(GuiHelpers::defaultFileSystem());
+    generalPageWidget().radioButton->setChecked(true);
 
-	if (advancedPageWidget().isVisible())
-		advancedPageWidget().setBackend(CoreBackendManager::defaultBackendName());
+    if (advancedPageWidget().isVisible())
+        advancedPageWidget().setBackend(CoreBackendManager::defaultBackendName());
 
-	Config::self()->useDefaults(useDefaults);
+    Config::self()->useDefaults(useDefaults);
 }
 
 void ConfigureOptionsDialog::onComboBackendActivated(int)
 {
-	Q_ASSERT(advancedPageWidget().isVisible());
+    Q_ASSERT(advancedPageWidget().isVisible());
 
-	if (operationStack().size() == 0 || KMessageBox::warningContinueCancel(this,
-			xi18nc("@info",
-				"<para>Do you really want to change the backend?</para>"
-				"<para><warning>This will also rescan devices and thus clear the list of pending operations.</warning></para>"),
-			i18nc("@title:window", "Really Change Backend?"),
-			KGuiItem(i18nc("@action:button", "Change the Backend"), QStringLiteral("arrow-right")),
-			KGuiItem(i18nc("@action:button", "Do Not Change the Backend"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyChangeBackend")) == KMessageBox::Continue)
-	{
-		settingsChangedSlot();
-	}
-	else
-		advancedPageWidget().setBackend(CoreBackendManager::defaultBackendName());
+    if (operationStack().size() == 0 || KMessageBox::warningContinueCancel(this,
+            xi18nc("@info",
+                   "<para>Do you really want to change the backend?</para>"
+                   "<para><warning>This will also rescan devices and thus clear the list of pending operations.</warning></para>"),
+            i18nc("@title:window", "Really Change Backend?"),
+            KGuiItem(i18nc("@action:button", "Change the Backend"), QStringLiteral("arrow-right")),
+            KGuiItem(i18nc("@action:button", "Do Not Change the Backend"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyChangeBackend")) == KMessageBox::Continue) {
+        settingsChangedSlot();
+    } else
+        advancedPageWidget().setBackend(CoreBackendManager::defaultBackendName());
 }

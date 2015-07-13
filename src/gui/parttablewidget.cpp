@@ -26,153 +26,146 @@
 #include <KLocalizedString>
 
 /** Creates a new PartTableWidget.
-	@param parent pointer to the parent widget
+    @param parent pointer to the parent widget
 */
 PartTableWidget::PartTableWidget(QWidget* parent) :
-	PartWidgetBase(parent),
-	m_PartitionTable(NULL),
-	m_LabelEmpty(i18nc("@info", "Please select a device."), this),
-	m_ReadOnly(false)
+    PartWidgetBase(parent),
+    m_PartitionTable(NULL),
+    m_LabelEmpty(i18nc("@info", "Please select a device."), this),
+    m_ReadOnly(false)
 {
-	labelEmpty().setAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
+    labelEmpty().setAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
 }
 
 /** Sets the PartitionTable this widget shows.
-	@param ptable pointer to the PartitionTable to show. Must not be NULL.
+    @param ptable pointer to the PartitionTable to show. Must not be NULL.
 */
 void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 {
-	clear();
+    clear();
 
-	m_PartitionTable = ptable;
+    m_PartitionTable = ptable;
 
-	if (partitionTable() != NULL)
-	{
-		foreach(const Partition* p, partitionTable()->children())
-		{
-			QWidget* w = new PartWidget(this, p);
-			w->setVisible(true);
-		}
-	}
+    if (partitionTable() != NULL) {
+        foreach(const Partition * p, partitionTable()->children()) {
+            QWidget* w = new PartWidget(this, p);
+            w->setVisible(true);
+        }
+    }
 
-	if (childWidgets().isEmpty())
-	{
-		labelEmpty().setVisible(true);
-		labelEmpty().setText(i18nc("@info", "No valid partition table was found on this device."));
-		labelEmpty().resize(size());
-	}
-	else
-	{
-		labelEmpty().setVisible(false);
-		positionChildren(this, partitionTable()->children(), childWidgets());
-	}
+    if (childWidgets().isEmpty()) {
+        labelEmpty().setVisible(true);
+        labelEmpty().setText(i18nc("@info", "No valid partition table was found on this device."));
+        labelEmpty().resize(size());
+    } else {
+        labelEmpty().setVisible(false);
+        positionChildren(this, partitionTable()->children(), childWidgets());
+    }
 
-	update();
+    update();
 }
 
 PartWidget* PartTableWidget::activeWidget()
 {
-	foreach (PartWidget* pw, findChildren<PartWidget*>())
-		if (pw->isActive())
-			return pw;
+    foreach(PartWidget * pw, findChildren<PartWidget*>())
+    if (pw->isActive())
+        return pw;
 
-	return NULL;
+    return NULL;
 }
 
 const PartWidget* PartTableWidget::activeWidget() const
 {
-	foreach (const PartWidget* pw, findChildren<PartWidget*>())
-		if (pw->isActive())
-			return pw;
+    foreach(const PartWidget * pw, findChildren<PartWidget*>())
+    if (pw->isActive())
+        return pw;
 
-	return NULL;
+    return NULL;
 }
 
 /** Sets a widget active.
-	@param p pointer to the PartWidget to set active. May be NULL.
+    @param p pointer to the PartWidget to set active. May be NULL.
 */
 void PartTableWidget::setActiveWidget(PartWidget* p)
 {
-	if (isReadOnly() || p == activeWidget())
-		return;
+    if (isReadOnly() || p == activeWidget())
+        return;
 
-	if (activeWidget())
-		activeWidget()->setActive(false);
+    if (activeWidget())
+        activeWidget()->setActive(false);
 
-	if (p != NULL)
-		p->setActive(true);
+    if (p != NULL)
+        p->setActive(true);
 
-	emit itemSelectionChanged(p);
+    emit itemSelectionChanged(p);
 
-	update();
+    update();
 }
 
 /** Sets a widget for the given Partition active.
-	@param p pointer to the Partition whose widget is to be set active. May be NULL.
+    @param p pointer to the Partition whose widget is to be set active. May be NULL.
 */
 void PartTableWidget::setActivePartition(const Partition* p)
 {
-	if (isReadOnly())
-		return;
+    if (isReadOnly())
+        return;
 
-	foreach (PartWidget* pw, findChildren<PartWidget*>())
-		if (pw->partition() == p)
-		{
-			setActiveWidget(pw);
-			return;
-		}
+    foreach(PartWidget * pw, findChildren<PartWidget*>())
+    if (pw->partition() == p) {
+        setActiveWidget(pw);
+        return;
+    }
 
-	setActiveWidget(NULL);
+    setActiveWidget(NULL);
 }
 
 /** Clears the PartTableWidget.
 */
 void PartTableWidget::clear()
 {
-	setActiveWidget(NULL);
-	m_PartitionTable = NULL;
+    setActiveWidget(NULL);
+    m_PartitionTable = NULL;
 
-	// we might have been invoked indirectly via a widget's context menu, so
-	// that its event handler is currently running. therefore, do not delete
-	// the part widgets here but schedule them for deletion once the app
-	// returns to the main loop (and the event handler has finished).
-	foreach(PartWidget* p, childWidgets())
-	{
-		p->setVisible(false);
-		p->deleteLater();
-		p->setParent(NULL);
-	}
+    // we might have been invoked indirectly via a widget's context menu, so
+    // that its event handler is currently running. therefore, do not delete
+    // the part widgets here but schedule them for deletion once the app
+    // returns to the main loop (and the event handler has finished).
+    foreach(PartWidget * p, childWidgets()) {
+        p->setVisible(false);
+        p->deleteLater();
+        p->setParent(NULL);
+    }
 
-	update();
+    update();
 }
 
 void PartTableWidget::resizeEvent(QResizeEvent*)
 {
-	if (partitionTable() == NULL || childWidgets().isEmpty())
-		labelEmpty().resize(size());
-	else
-		positionChildren(this, partitionTable()->children(), childWidgets());
+    if (partitionTable() == NULL || childWidgets().isEmpty())
+        labelEmpty().resize(size());
+    else
+        positionChildren(this, partitionTable()->children(), childWidgets());
 }
 
 void PartTableWidget::mousePressEvent(QMouseEvent* event)
 {
-	if (isReadOnly())
-		return;
+    if (isReadOnly())
+        return;
 
-	event->accept();
-	PartWidget* child = qobject_cast<PartWidget*>(childAt(event->pos()));
-	setActiveWidget(child);
+    event->accept();
+    PartWidget* child = qobject_cast<PartWidget*>(childAt(event->pos()));
+    setActiveWidget(child);
 }
 
 void PartTableWidget::mouseDoubleClickEvent(QMouseEvent* event)
 {
-	if (isReadOnly() || event->button() != Qt::LeftButton)
-		return;
+    if (isReadOnly() || event->button() != Qt::LeftButton)
+        return;
 
-	event->accept();
+    event->accept();
 
-	const PartWidget* child = static_cast<PartWidget*>(childAt(event->pos()));
+    const PartWidget* child = static_cast<PartWidget*>(childAt(event->pos()));
 
-	if (child != NULL)
-		emit itemDoubleClicked(child);
+    if (child != NULL)
+        emit itemDoubleClicked(child);
 }

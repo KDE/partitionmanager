@@ -21,10 +21,10 @@
 #include <QPlainTextEdit>
 
 EditMountOptionsDialogWidget::EditMountOptionsDialogWidget(QWidget* parent, const QStringList& options) :
-	QWidget(parent)
+    QWidget(parent)
 {
-	setupUi(this);
+    setupUi(this);
 
-	foreach(const QString& o, options)
-		editOptions().appendPlainText(o);
+    foreach(const QString & o, options)
+    editOptions().appendPlainText(o);
 }

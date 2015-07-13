@@ -20,25 +20,25 @@
 #include <KLocalizedString>
 
 ScanProgressDialog::ScanProgressDialog(QWidget* parent) :
-	QProgressDialog(parent)
+    QProgressDialog(parent)
 {
-	setWindowTitle(i18nc("@title:window", "Scanning devices..."));
-	setMinimumWidth(280);
-	setMinimumDuration(150);
-	setAttribute(Qt::WA_ShowModal, true);
+    setWindowTitle(i18nc("@title:window", "Scanning devices..."));
+    setMinimumWidth(280);
+    setMinimumDuration(150);
+    setAttribute(Qt::WA_ShowModal, true);
 }
 
 void ScanProgressDialog::setDeviceName(const QString& d)
 {
-	if (d.isEmpty())
-		setLabelText(i18nc("@label", "Scanning..."));
-	else
-		setLabelText(xi18nc("@label", "Scanning device: <filename>%1</filename>", d));
+    if (d.isEmpty())
+        setLabelText(i18nc("@label", "Scanning..."));
+    else
+        setLabelText(xi18nc("@label", "Scanning device: <filename>%1</filename>", d));
 }
 
 void ScanProgressDialog::showEvent(QShowEvent* e)
 {
-	setCancelButton(0);
+    setCancelButton(0);
 
-	QProgressDialog::showEvent(e);
+    QProgressDialog::showEvent(e);
 }

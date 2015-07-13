@@ -32,47 +32,57 @@ class QString;
 
 /** Show Device properties.
 
-	Dialog that shows a Device's properties.
+    Dialog that shows a Device's properties.
 
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class DevicePropsDialog : public QDialog
 {
-	Q_OBJECT
-	Q_DISABLE_COPY(DevicePropsDialog)
+    Q_OBJECT
+    Q_DISABLE_COPY(DevicePropsDialog)
 
-	public:
-		DevicePropsDialog(QWidget* parent, Device& d);
-		~DevicePropsDialog();
+public:
+    DevicePropsDialog(QWidget* parent, Device& d);
+    ~DevicePropsDialog();
 
-	public:
-		bool cylinderBasedAlignment() const;
-		bool sectorBasedAlignment() const;
+public:
+    bool cylinderBasedAlignment() const;
+    bool sectorBasedAlignment() const;
 
-	protected:
-		void setupDialog();
-		void setupConnections();
+protected:
+    void setupDialog();
+    void setupConnections();
 
-		Device& device() { return m_Device; }
-		const Device& device() const { return m_Device; }
+    Device& device() {
+        return m_Device;
+    }
+    const Device& device() const {
+        return m_Device;
+    }
 
-		DevicePropsWidget& dialogWidget() { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
-		const DevicePropsWidget& dialogWidget() const { Q_ASSERT(m_DialogWidget); return *m_DialogWidget; }
+    DevicePropsWidget& dialogWidget() {
+        Q_ASSERT(m_DialogWidget);
+        return *m_DialogWidget;
+    }
+    const DevicePropsWidget& dialogWidget() const {
+        Q_ASSERT(m_DialogWidget);
+        return *m_DialogWidget;
+    }
 
-		void onButtonSmartMore();
+    void onButtonSmartMore();
 
-	protected Q_SLOTS:
-		void setDirty(bool);
-		void onButtonSmartMore(bool);
+protected Q_SLOTS:
+    void setDirty(bool);
+    void onButtonSmartMore(bool);
 
-	private:
-		Device& m_Device;
-		DevicePropsWidget* m_DialogWidget;
+private:
+    Device& m_Device;
+    DevicePropsWidget* m_DialogWidget;
 
-		QDialogButtonBox* dialogButtonBox;
-		QPushButton* okButton;
-		QPushButton* cancelButton;
-		QVBoxLayout *mainLayout;
+    QDialogButtonBox* dialogButtonBox;
+    QPushButton* okButton;
+    QPushButton* cancelButton;
+    QVBoxLayout *mainLayout;
 };
 
 #endif

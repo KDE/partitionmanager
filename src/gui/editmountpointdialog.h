@@ -29,24 +29,28 @@ class QString;
 
 class EditMountPointDialog : public QDialog
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		EditMountPointDialog(QWidget* parent, Partition& p);
-		~EditMountPointDialog();
+public:
+    EditMountPointDialog(QWidget* parent, Partition& p);
+    ~EditMountPointDialog();
 
-	protected:
-		EditMountPointDialogWidget& widget() { return *m_DialogWidget; }
+protected:
+    EditMountPointDialogWidget& widget() {
+        return *m_DialogWidget;
+    }
 
-	protected Q_SLOTS:
-		void accept();
+protected Q_SLOTS:
+    void accept();
 
-	private:
-		Partition& partition() { return m_Partition; }
+private:
+    Partition& partition() {
+        return m_Partition;
+    }
 
-	private:
-		Partition& m_Partition;
-		EditMountPointDialogWidget* m_DialogWidget;
+private:
+    Partition& m_Partition;
+    EditMountPointDialogWidget* m_DialogWidget;
 };
 
 #endif

@@ -32,98 +32,97 @@
 #include <KSharedConfig>
 
 /** Creates a new ResizeDialog
-	@param parent pointer to the parent widget
-	@param device the Device the Partition to resize is on
-	@param p the Partition to resize
-	@param freebefore number of sectors free before the Partition to resize
-	@param freeafter number of sectors free after the Partition to resize
+    @param parent pointer to the parent widget
+    @param device the Device the Partition to resize is on
+    @param p the Partition to resize
+    @param freebefore number of sectors free before the Partition to resize
+    @param freeafter number of sectors free after the Partition to resize
 */
 ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minFirst, qint64 maxLast) :
-	SizeDialogBase(parent, d, p, minFirst, maxLast),
-	m_OriginalFirstSector(p.firstSector()),
-	m_OriginalLastSector(p.lastSector()),
-	m_ResizedFirstSector(p.firstSector()),
-	m_ResizedLastSector(p.lastSector())
+    SizeDialogBase(parent, d, p, minFirst, maxLast),
+    m_OriginalFirstSector(p.firstSector()),
+    m_OriginalLastSector(p.lastSector()),
+    m_ResizedFirstSector(p.firstSector()),
+    m_ResizedLastSector(p.lastSector())
 {
-	setWindowTitle(xi18nc("@title:window", "Resize/move partition: <filename>%1</filename>", partition().deviceNode()));
+    setWindowTitle(xi18nc("@title:window", "Resize/move partition: <filename>%1</filename>", partition().deviceNode()));
 
-	dialogWidget().hideRole();
-	dialogWidget().hideFileSystem();
-	dialogWidget().hideLabel();
+    dialogWidget().hideRole();
+    dialogWidget().hideFileSystem();
+    dialogWidget().hideLabel();
 
-	setupDialog();
-	setupConstraints();
-	setupConnections();
+    setupDialog();
+    setupConstraints();
+    setupConnections();
 
-	KConfigGroup kcg(KSharedConfig::openConfig(), "resizeDialog");
-	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
+    KConfigGroup kcg(KSharedConfig::openConfig(), "resizeDialog");
+    restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a ResizeDialog */
 ResizeDialog::~ResizeDialog()
 {
-	KConfigGroup kcg(KSharedConfig::openConfig(), "resizeDialog");
-	kcg.writeEntry("Geometry", saveGeometry());
+    KConfigGroup kcg(KSharedConfig::openConfig(), "resizeDialog");
+    kcg.writeEntry("Geometry", saveGeometry());
 }
 
 void ResizeDialog::rollback()
 {
-	partition().setFirstSector(originalFirstSector());
-	partition().fileSystem().setFirstSector(originalFirstSector());
+    partition().setFirstSector(originalFirstSector());
+    partition().fileSystem().setFirstSector(originalFirstSector());
 
-	partition().setLastSector(originalLastSector());
-	partition().fileSystem().setLastSector(originalLastSector());
+    partition().setLastSector(originalLastSector());
+    partition().fileSystem().setLastSector(originalLastSector());
 
-	if (partition().roles().has(PartitionRole::Extended))
-	{
-		device().partitionTable()->removeUnallocated(&partition());
-		device().partitionTable()->insertUnallocated(device(), &partition(), partition().firstSector());
-	}
+    if (partition().roles().has(PartitionRole::Extended)) {
+        device().partitionTable()->removeUnallocated(&partition());
+        device().partitionTable()->insertUnallocated(device(), &partition(), partition().firstSector());
+    }
 }
 
 void ResizeDialog::accept()
 {
-	setResizedFirstSector(partition().firstSector());
-	setResizedLastSector(partition().lastSector());
+    setResizedFirstSector(partition().firstSector());
+    setResizedLastSector(partition().lastSector());
 
-	rollback();
-	QDialog::accept();
+    rollback();
+    QDialog::accept();
 }
 
 void ResizeDialog::reject()
 {
-	rollback();
-	QDialog::reject();
+    rollback();
+    QDialog::reject();
 }
 
 void ResizeDialog::setupDialog()
 {
-	SizeDialogBase::setupDialog();
-	okButton->setEnabled(false);
+    SizeDialogBase::setupDialog();
+    okButton->setEnabled(false);
 }
 
 void ResizeDialog::setDirty()
 {
-	okButton->setEnabled(isModified());
+    okButton->setEnabled(isModified());
 }
 
 /** @return true if the user modified anything */
 bool ResizeDialog::isModified() const
 {
-	return partition().firstSector() != originalFirstSector() || partition().lastSector() != originalLastSector();
+    return partition().firstSector() != originalFirstSector() || partition().lastSector() != originalLastSector();
 }
 
 bool ResizeDialog::canGrow() const
 {
-	return ResizeOperation::canGrow(&partition());
+    return ResizeOperation::canGrow(&partition());
 }
 
 bool ResizeDialog::canShrink() const
 {
-	return ResizeOperation::canShrink(&partition());
+    return ResizeOperation::canShrink(&partition());
 }
 
 bool ResizeDialog::canMove() const
 {
-	return ResizeOperation::canMove(&partition());
+    return ResizeOperation::canMove(&partition());
 }

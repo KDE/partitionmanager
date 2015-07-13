@@ -30,40 +30,40 @@
 #include <KLocalizedString>
 
 /** Creates a new InsertDialog instance.
-	@param parent the parent widget
-	@param device the Device the Partition to insert is on
-	@param insertedPartition the Partition to insert
-	@param destpartition the Partition the new one is to be inserted to
+    @param parent the parent widget
+    @param device the Device the Partition to insert is on
+    @param insertedPartition the Partition to insert
+    @param destpartition the Partition the new one is to be inserted to
 */
 InsertDialog::InsertDialog(QWidget* parent, Device& device, Partition& insertedPartition, const Partition& destpartition) :
-	SizeDialogBase(parent, device, insertedPartition, destpartition.firstSector(), destpartition.lastSector()),
-	m_DestPartition(destpartition)
+    SizeDialogBase(parent, device, insertedPartition, destpartition.firstSector(), destpartition.lastSector()),
+    m_DestPartition(destpartition)
 {
-	setWindowTitle(i18nc("@title:window", "Insert a partition"));
+    setWindowTitle(i18nc("@title:window", "Insert a partition"));
 
-	partition().move(destPartition().firstSector());
-	partition().fileSystem().move(destPartition().fileSystem().firstSector());
+    partition().move(destPartition().firstSector());
+    partition().fileSystem().move(destPartition().fileSystem().firstSector());
 
-	dialogWidget().hideRole();
-	dialogWidget().hideFileSystem();
-	dialogWidget().hideLabel();
+    dialogWidget().hideRole();
+    dialogWidget().hideFileSystem();
+    dialogWidget().hideLabel();
 
-	setupDialog();
-	setupConstraints();
-	setupConnections();
+    setupDialog();
+    setupConstraints();
+    setupConnections();
 
-	KConfigGroup kcg(KSharedConfig::openConfig(), "insertDialog");
-	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
+    KConfigGroup kcg(KSharedConfig::openConfig(), "insertDialog");
+    restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys an InsertDialog instance */
 InsertDialog::~InsertDialog()
 {
-	KConfigGroup kcg(KSharedConfig::openConfig(), "insertDialog");
-	kcg.writeEntry("Geometry", saveGeometry());
+    KConfigGroup kcg(KSharedConfig::openConfig(), "insertDialog");
+    kcg.writeEntry("Geometry", saveGeometry());
 }
 
 bool InsertDialog::canGrow() const
 {
-	return ResizeOperation::canGrow(&partition());
+    return ResizeOperation::canGrow(&partition());
 }

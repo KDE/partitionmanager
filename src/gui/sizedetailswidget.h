@@ -24,24 +24,42 @@
 #include <QWidget>
 
 /** Details widget for the SizeDetailsBase
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class SizeDetailsWidget : public QWidget, public Ui::SizeDetailsWidgetBase
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		SizeDetailsWidget(QWidget* parent);
+public:
+    SizeDetailsWidget(QWidget* parent);
 
-	public:
-		QDoubleSpinBox& spinFirstSector() { Q_ASSERT(m_SpinFirstSector); return *m_SpinFirstSector; }
-		const QDoubleSpinBox& spinFirstSector() const { Q_ASSERT(m_SpinFirstSector); return *m_SpinFirstSector; }
+public:
+    QDoubleSpinBox& spinFirstSector() {
+        Q_ASSERT(m_SpinFirstSector);
+        return *m_SpinFirstSector;
+    }
+    const QDoubleSpinBox& spinFirstSector() const {
+        Q_ASSERT(m_SpinFirstSector);
+        return *m_SpinFirstSector;
+    }
 
-		QDoubleSpinBox& spinLastSector() { Q_ASSERT(m_SpinLastSector); return *m_SpinLastSector; }
-		const QDoubleSpinBox& spinLastSector() const { Q_ASSERT(m_SpinLastSector); return *m_SpinLastSector; }
+    QDoubleSpinBox& spinLastSector() {
+        Q_ASSERT(m_SpinLastSector);
+        return *m_SpinLastSector;
+    }
+    const QDoubleSpinBox& spinLastSector() const {
+        Q_ASSERT(m_SpinLastSector);
+        return *m_SpinLastSector;
+    }
 
-		QCheckBox& checkAlign() { Q_ASSERT(m_CheckAlign); return *m_CheckAlign; }
-		const QCheckBox& checkAlign() const { Q_ASSERT(m_CheckAlign); return *m_CheckAlign; }
+    QCheckBox& checkAlign() {
+        Q_ASSERT(m_CheckAlign);
+        return *m_CheckAlign;
+    }
+    const QCheckBox& checkAlign() const {
+        Q_ASSERT(m_CheckAlign);
+        return *m_CheckAlign;
+    }
 };
 
 #endif

@@ -18,7 +18,7 @@
 #include "gui/filesystemsupportdialogwidget.h"
 
 FileSystemSupportDialogWidget::FileSystemSupportDialogWidget(QWidget* parent) :
-	QWidget(parent)
+    QWidget(parent)
 {
-	setupUi(this);
+    setupUi(this);
 }

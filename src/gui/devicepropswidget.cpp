@@ -18,13 +18,13 @@
 #include "gui/devicepropswidget.h"
 
 DevicePropsWidget::DevicePropsWidget(QWidget* parent) :
-	QWidget(parent)
+    QWidget(parent)
 {
-	setupUi(this);
+    setupUi(this);
 }
 
 void DevicePropsWidget::hideTypeRadioButtons()
 {
-	radioSectorBased().setVisible(false);
-	radioCylinderBased().setVisible(false);
+    radioSectorBased().setVisible(false);
+    radioCylinderBased().setVisible(false);
 }

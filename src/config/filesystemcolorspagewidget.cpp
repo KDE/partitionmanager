@@ -18,7 +18,7 @@
 #include "config/filesystemcolorspagewidget.h"
 
 FileSystemColorsPageWidget::FileSystemColorsPageWidget(QWidget* parent) :
-	QWidget(parent)
+    QWidget(parent)
 {
-	setupUi(this);
+    setupUi(this);
 }

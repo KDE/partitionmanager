@@ -30,33 +30,48 @@ class OperationStack;
 
 class LIBKPMGUI_EXPORT ConfigureOptionsDialog : public KConfigDialog
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		ConfigureOptionsDialog(QWidget* parent, const OperationStack& ostack, const QString& name);
-		~ConfigureOptionsDialog();
+public:
+    ConfigureOptionsDialog(QWidget* parent, const OperationStack& ostack, const QString& name);
+    ~ConfigureOptionsDialog();
 
-	protected Q_SLOTS:
-		virtual void updateSettings();
-		virtual void updateWidgetsDefault();
-		virtual bool hasChanged();
-		virtual bool isDefault();
-		void onComboDefaultFileSystemActivated(int) { settingsChangedSlot(); }
-		void onShredSourceActivated() { settingsChangedSlot(); }
-		void onComboBackendActivated(int);
+protected Q_SLOTS:
+    virtual void updateSettings();
+    virtual void updateWidgetsDefault();
+    virtual bool hasChanged();
+    virtual bool isDefault();
+    void onComboDefaultFileSystemActivated(int) {
+        settingsChangedSlot();
+    }
+    void onShredSourceActivated() {
+        settingsChangedSlot();
+    }
+    void onComboBackendActivated(int);
 
-	protected:
-		GeneralPageWidget& generalPageWidget() { Q_ASSERT(m_GeneralPageWidget); return *m_GeneralPageWidget; }
-		FileSystemColorsPageWidget& fileSystemColorsPageWidget() { Q_ASSERT(m_FileSystemColorsPageWidget); return *m_FileSystemColorsPageWidget; }
-		AdvancedPageWidget& advancedPageWidget() { Q_ASSERT(m_AdvancedPageWidget); return *m_AdvancedPageWidget; }
+protected:
+    GeneralPageWidget& generalPageWidget() {
+        Q_ASSERT(m_GeneralPageWidget);
+        return *m_GeneralPageWidget;
+    }
+    FileSystemColorsPageWidget& fileSystemColorsPageWidget() {
+        Q_ASSERT(m_FileSystemColorsPageWidget);
+        return *m_FileSystemColorsPageWidget;
+    }
+    AdvancedPageWidget& advancedPageWidget() {
+        Q_ASSERT(m_AdvancedPageWidget);
+        return *m_AdvancedPageWidget;
+    }
 
-		const OperationStack& operationStack() const { return m_OperationStack; }
+    const OperationStack& operationStack() const {
+        return m_OperationStack;
+    }
 
-	private:
-		GeneralPageWidget* m_GeneralPageWidget;
-		FileSystemColorsPageWidget* m_FileSystemColorsPageWidget;
-		AdvancedPageWidget* m_AdvancedPageWidget;
-		const OperationStack& m_OperationStack;
+private:
+    GeneralPageWidget* m_GeneralPageWidget;
+    FileSystemColorsPageWidget* m_FileSystemColorsPageWidget;
+    AdvancedPageWidget* m_AdvancedPageWidget;
+    const OperationStack& m_OperationStack;
 };
 
 #endif

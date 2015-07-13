@@ -28,44 +28,56 @@ class Device;
 
 /** Let the user resize or move a Partition.
 
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class ResizeDialog : public SizeDialogBase
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		ResizeDialog(QWidget* parent, Device& device, Partition& p, qint64 minFirst, qint64 maxLast);
-		~ResizeDialog();
+public:
+    ResizeDialog(QWidget* parent, Device& device, Partition& p, qint64 minFirst, qint64 maxLast);
+    ~ResizeDialog();
 
-	public:
-		bool isModified() const;
-		qint64 resizedFirstSector() const { return m_ResizedFirstSector; }
-		qint64 resizedLastSector() const { return m_ResizedLastSector; }
+public:
+    bool isModified() const;
+    qint64 resizedFirstSector() const {
+        return m_ResizedFirstSector;
+    }
+    qint64 resizedLastSector() const {
+        return m_ResizedLastSector;
+    }
 
-	public Q_SLOTS:
-		virtual void accept();
-		virtual void reject();
+public Q_SLOTS:
+    virtual void accept();
+    virtual void reject();
 
-	protected:
-		virtual bool canGrow() const;
-		virtual bool canShrink() const;
-		virtual bool canMove() const;
-		virtual void setupDialog();
-		virtual void setDirty();
-		void rollback();
-		void setResizedFirstSector(qint64 s) { m_ResizedFirstSector = s; }
-		void setResizedLastSector(qint64 s) { m_ResizedLastSector = s; }
+protected:
+    virtual bool canGrow() const;
+    virtual bool canShrink() const;
+    virtual bool canMove() const;
+    virtual void setupDialog();
+    virtual void setDirty();
+    void rollback();
+    void setResizedFirstSector(qint64 s) {
+        m_ResizedFirstSector = s;
+    }
+    void setResizedLastSector(qint64 s) {
+        m_ResizedLastSector = s;
+    }
 
-	protected:
-		qint64 originalFirstSector() const { return m_OriginalFirstSector; }
-		qint64 originalLastSector() const { return m_OriginalLastSector; }
+protected:
+    qint64 originalFirstSector() const {
+        return m_OriginalFirstSector;
+    }
+    qint64 originalLastSector() const {
+        return m_OriginalLastSector;
+    }
 
-	private:
-		qint64 m_OriginalFirstSector;
-		qint64 m_OriginalLastSector;
-		qint64 m_ResizedFirstSector;
-		qint64 m_ResizedLastSector;
+private:
+    qint64 m_OriginalFirstSector;
+    qint64 m_OriginalLastSector;
+    qint64 m_ResizedFirstSector;
+    qint64 m_ResizedLastSector;
 };
 
 #endif

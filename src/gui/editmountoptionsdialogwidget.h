@@ -28,11 +28,13 @@ class QPlainTextEdit;
 
 class EditMountOptionsDialogWidget : public QWidget, public Ui::EditMountOptionsDialogWidgetBase
 {
-	public:
-		EditMountOptionsDialogWidget(QWidget* parent, const QStringList& options);
+public:
+    EditMountOptionsDialogWidget(QWidget* parent, const QStringList& options);
 
-	public:
-		QPlainTextEdit& editOptions() { return *m_EditOptions; }
+public:
+    QPlainTextEdit& editOptions() {
+        return *m_EditOptions;
+    }
 };
 
 #endif

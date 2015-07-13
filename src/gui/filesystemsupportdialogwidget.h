@@ -23,14 +23,26 @@
 
 class FileSystemSupportDialogWidget : public QWidget, public Ui::FileSystemSupportDialogWidgetBase
 {
-	public:
-		FileSystemSupportDialogWidget(QWidget* parent);
+public:
+    FileSystemSupportDialogWidget(QWidget* parent);
 
-	public:
-		QTreeWidget& tree() { Q_ASSERT(m_Tree); return *m_Tree; }
-		const QTreeWidget& tree() const { Q_ASSERT(m_Tree); return *m_Tree; }
-		QPushButton& buttonRescan() { Q_ASSERT(m_ButtonRescan); return *m_ButtonRescan; }
-		const QPushButton& buttonRescan() const { Q_ASSERT(m_ButtonRescan); return *m_ButtonRescan; }
+public:
+    QTreeWidget& tree() {
+        Q_ASSERT(m_Tree);
+        return *m_Tree;
+    }
+    const QTreeWidget& tree() const {
+        Q_ASSERT(m_Tree);
+        return *m_Tree;
+    }
+    QPushButton& buttonRescan() {
+        Q_ASSERT(m_ButtonRescan);
+        return *m_ButtonRescan;
+    }
+    const QPushButton& buttonRescan() const {
+        Q_ASSERT(m_ButtonRescan);
+        return *m_ButtonRescan;
+    }
 };
 
 #endif

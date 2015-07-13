@@ -27,19 +27,29 @@
 
 class CreatePartitionTableWidget : public QWidget, public Ui::CreatePartitionTableWidgetBase
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		CreatePartitionTableWidget(QWidget* parent);
+public:
+    CreatePartitionTableWidget(QWidget* parent);
 
-	public:
-		QRadioButton& radioMSDOS() { return *m_RadioMSDOS; }
-		const QRadioButton& radioMSDOS() const { return *m_RadioMSDOS; }
+public:
+    QRadioButton& radioMSDOS() {
+        return *m_RadioMSDOS;
+    }
+    const QRadioButton& radioMSDOS() const {
+        return *m_RadioMSDOS;
+    }
 
-		QRadioButton& radioGPT() { return *m_RadioGPT; }
-		const QRadioButton& radioGPT() const { return *m_RadioGPT; }
+    QRadioButton& radioGPT() {
+        return *m_RadioGPT;
+    }
+    const QRadioButton& radioGPT() const {
+        return *m_RadioGPT;
+    }
 
-		QLabel& iconLabel() { return *m_IconLabel; }
+    QLabel& iconLabel() {
+        return *m_IconLabel;
+    }
 };
 
 #endif

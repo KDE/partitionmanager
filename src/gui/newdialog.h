@@ -29,36 +29,44 @@ class Device;
 
 /** Dialog to create new Partitions.
 
-	Dialog to create a new Partition in some unallocated space on a Device.
+    Dialog to create a new Partition in some unallocated space on a Device.
 
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class NewDialog : public SizeDialogBase
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		NewDialog(QWidget* parent, Device& device, Partition& unallocatedPartition, PartitionRole::Roles r);
-		~NewDialog();
+public:
+    NewDialog(QWidget* parent, Device& device, Partition& unallocatedPartition, PartitionRole::Roles r);
+    ~NewDialog();
 
-	protected Q_SLOTS:
-		void accept();
-		void onRoleChanged(bool);
-		void onFilesystemChanged(int);
-		void onLabelChanged(const QString& newLabel);
+protected Q_SLOTS:
+    void accept();
+    void onRoleChanged(bool);
+    void onFilesystemChanged(int);
+    void onLabelChanged(const QString& newLabel);
 
-	protected:
-		void setupConnections();
-		void setupDialog();
-		void updateHideAndShow();
-		void updateFileSystem(FileSystem::Type t);
-		PartitionRole::Roles partitionRoles() const { return m_PartitionRoles; }
-		virtual bool canGrow() const { return true; }
-		virtual bool canShrink() const { return true; }
-		virtual bool canMove() const { return true; }
+protected:
+    void setupConnections();
+    void setupDialog();
+    void updateHideAndShow();
+    void updateFileSystem(FileSystem::Type t);
+    PartitionRole::Roles partitionRoles() const {
+        return m_PartitionRoles;
+    }
+    virtual bool canGrow() const {
+        return true;
+    }
+    virtual bool canShrink() const {
+        return true;
+    }
+    virtual bool canMove() const {
+        return true;
+    }
 
-	private:
-		PartitionRole::Roles m_PartitionRoles;
+private:
+    PartitionRole::Roles m_PartitionRoles;
 };
 
 #endif

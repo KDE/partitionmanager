@@ -29,18 +29,22 @@ class QString;
 
 class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
 {
-	public:
-		GeneralPageWidget(QWidget* parent);
+public:
+    GeneralPageWidget(QWidget* parent);
 
-	public:
-		QComboBox& comboDefaultFileSystem() { return *m_ComboDefaultFileSystem; }
-		const QComboBox& comboDefaultFileSystem() const { return *m_ComboDefaultFileSystem; }
+public:
+    QComboBox& comboDefaultFileSystem() {
+        return *m_ComboDefaultFileSystem;
+    }
+    const QComboBox& comboDefaultFileSystem() const {
+        return *m_ComboDefaultFileSystem;
+    }
 
-		FileSystem::Type defaultFileSystem() const;
-		void setDefaultFileSystem(FileSystem::Type t);
+    FileSystem::Type defaultFileSystem() const;
+    void setDefaultFileSystem(FileSystem::Type t);
 
-	private:
-		void setupDialog();
+private:
+    void setupDialog();
 };
 
 #endif

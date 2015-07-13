@@ -25,32 +25,31 @@
 #include <KIconLoader>
 
 /** Creates a new ListOperations instance.
-	@param parent the parent widget
+    @param parent the parent widget
 */
 ListOperations::ListOperations(QWidget* parent) :
-	QWidget(parent),
-	Ui::ListOperationsBase(),
-	m_ActionCollection(NULL)
+    QWidget(parent),
+    Ui::ListOperationsBase(),
+    m_ActionCollection(NULL)
 {
-	setupUi(this);
+    setupUi(this);
 }
 
 void ListOperations::updateOperations(const OperationStack::Operations& ops)
 {
-	listOperations().clear();
+    listOperations().clear();
 
-	foreach (const Operation* op, ops)
-	{
-		QListWidgetItem* item = new QListWidgetItem(QIcon::fromTheme(op->iconName()).pixmap(IconSize(KIconLoader::Small)), op->description());
-		item->setToolTip(op->description());
-		listOperations().addItem(item);
-	}
+    foreach(const Operation * op, ops) {
+        QListWidgetItem* item = new QListWidgetItem(QIcon::fromTheme(op->iconName()).pixmap(IconSize(KIconLoader::Small)), op->description());
+        item->setToolTip(op->description());
+        listOperations().addItem(item);
+    }
 
-	listOperations().scrollToBottom();
+    listOperations().scrollToBottom();
 }
 
 void ListOperations::on_m_ListOperations_customContextMenuRequested(const QPoint& pos)
 {
-	emit contextMenuRequested(listOperations().viewport()->mapToGlobal(pos));
+    emit contextMenuRequested(listOperations().viewport()->mapToGlobal(pos));
 }
 

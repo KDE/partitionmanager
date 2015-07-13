@@ -32,40 +32,50 @@ class QPoint;
 class KActionCollection;
 
 /** A list of devices.
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class LIBKPMGUI_EXPORT ListDevices : public QWidget, public Ui::ListDevicesBase
 {
-	Q_OBJECT
-	Q_DISABLE_COPY(ListDevices)
+    Q_OBJECT
+    Q_DISABLE_COPY(ListDevices)
 
-	public:
-		ListDevices(QWidget* parent = NULL);
+public:
+    ListDevices(QWidget* parent = NULL);
 
-	Q_SIGNALS:
-		void selectionChanged(const QString& device_node);
-		void deviceDoubleClicked(const QString& device_node);
-		void contextMenuRequested(const QPoint&);
+Q_SIGNALS:
+    void selectionChanged(const QString& device_node);
+    void deviceDoubleClicked(const QString& device_node);
+    void contextMenuRequested(const QPoint&);
 
-	public:
-		void setActionCollection(KActionCollection* coll) { m_ActionCollection = coll; }
-		bool setSelectedDevice(const QString& device_node);
+public:
+    void setActionCollection(KActionCollection* coll) {
+        m_ActionCollection = coll;
+    }
+    bool setSelectedDevice(const QString& device_node);
 
-	public Q_SLOTS:
-		void updateDevices(OperationStack::Devices& devices);
+public Q_SLOTS:
+    void updateDevices(OperationStack::Devices& devices);
 
-	protected:
-		QListWidget& listDevices() { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
-		const QListWidget& listDevices() const { Q_ASSERT(m_ListDevices); return *m_ListDevices; }
-		KActionCollection* actionCollection() { return m_ActionCollection; }
+protected:
+    QListWidget& listDevices() {
+        Q_ASSERT(m_ListDevices);
+        return *m_ListDevices;
+    }
+    const QListWidget& listDevices() const {
+        Q_ASSERT(m_ListDevices);
+        return *m_ListDevices;
+    }
+    KActionCollection* actionCollection() {
+        return m_ActionCollection;
+    }
 
-	protected Q_SLOTS:
-		void on_m_ListDevices_itemSelectionChanged();
-		void on_m_ListDevices_customContextMenuRequested(const QPoint& pos);
-		void on_m_ListDevices_itemDoubleClicked(QListWidgetItem* list_item);
+protected Q_SLOTS:
+    void on_m_ListDevices_itemSelectionChanged();
+    void on_m_ListDevices_customContextMenuRequested(const QPoint& pos);
+    void on_m_ListDevices_itemDoubleClicked(QListWidgetItem* list_item);
 
-	private:
-		KActionCollection* m_ActionCollection;
+private:
+    KActionCollection* m_ActionCollection;
 };
 
 #endif

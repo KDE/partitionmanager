@@ -31,29 +31,35 @@ class QPushButton;
 
 class CreatePartitionTableDialog : public QDialog
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		CreatePartitionTableDialog(QWidget* parent, const Device& d);
+public:
+    CreatePartitionTableDialog(QWidget* parent, const Device& d);
 
-	public:
-		PartitionTable::TableType type() const;
+public:
+    PartitionTable::TableType type() const;
 
-	protected:
-		CreatePartitionTableWidget& widget() { return *m_DialogWidget; }
-		const CreatePartitionTableWidget& widget() const { return *m_DialogWidget; }
-		const Device& device() const { return m_Device; }
+protected:
+    CreatePartitionTableWidget& widget() {
+        return *m_DialogWidget;
+    }
+    const CreatePartitionTableWidget& widget() const {
+        return *m_DialogWidget;
+    }
+    const Device& device() const {
+        return m_Device;
+    }
 
-	protected Q_SLOTS:
-		void onMSDOSToggled(bool on);
+protected Q_SLOTS:
+    void onMSDOSToggled(bool on);
 
-	private:
-		CreatePartitionTableWidget* m_DialogWidget;
-		const Device& m_Device;
+private:
+    CreatePartitionTableWidget* m_DialogWidget;
+    const Device& m_Device;
 
-		QDialogButtonBox* dialogButtonBox;
-		QPushButton* createButton;
-		QPushButton* cancelButton;
+    QDialogButtonBox* dialogButtonBox;
+    QPushButton* createButton;
+    QPushButton* cancelButton;
 };
 
 

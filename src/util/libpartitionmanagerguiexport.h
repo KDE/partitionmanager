@@ -23,7 +23,7 @@
 #include <QtGlobal>
 
 #if !defined(LIBKPMGUI_EXPORT)
-	#define LIBKPMGUI_EXPORT Q_DECL_EXPORT
+#define LIBKPMGUI_EXPORT Q_DECL_EXPORT
 #endif
 
 #endif

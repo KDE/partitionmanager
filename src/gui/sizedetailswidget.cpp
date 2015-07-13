@@ -20,11 +20,11 @@
 #include <limits>
 
 SizeDetailsWidget::SizeDetailsWidget(QWidget* parent) :
-	QWidget(parent),
-	Ui::SizeDetailsWidgetBase()
+    QWidget(parent),
+    Ui::SizeDetailsWidgetBase()
 {
-	setupUi(this);
+    setupUi(this);
 
-	spinFirstSector().setMaximum(std::numeric_limits<double>::max());
-	spinLastSector().setMaximum(std::numeric_limits<double>::max());
+    spinFirstSector().setMaximum(std::numeric_limits<double>::max());
+    spinLastSector().setMaximum(std::numeric_limits<double>::max());
 }

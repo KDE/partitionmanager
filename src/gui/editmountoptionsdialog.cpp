@@ -26,30 +26,30 @@
 #include <KLocalizedString>
 
 EditMountOptionsDialog::EditMountOptionsDialog(QWidget* parent, const QStringList& options) :
-	QDialog(parent),
-	m_DialogWidget(new EditMountOptionsDialogWidget(this, options))
+    QDialog(parent),
+    m_DialogWidget(new EditMountOptionsDialogWidget(this, options))
 {
-	QVBoxLayout *mainLayout = new QVBoxLayout(this);
-	setLayout(mainLayout);
-	mainLayout->addWidget(&widget());
-	setWindowTitle(i18nc("@title:window", "Edit additional mount options"));
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    setLayout(mainLayout);
+    mainLayout->addWidget(&widget());
+    setWindowTitle(i18nc("@title:window", "Edit additional mount options"));
 
-	KConfigGroup kcg(KSharedConfig::openConfig(), "editMountOptionsDialog");
-	restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
+    KConfigGroup kcg(KSharedConfig::openConfig(), "editMountOptionsDialog");
+    restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys an EditMOuntOptionsDialog instance */
 EditMountOptionsDialog::~EditMountOptionsDialog()
 {
-	KConfigGroup kcg(KSharedConfig::openConfig(), "editMountOptionsDialog");
-	kcg.writeEntry("Geometry", saveGeometry());
+    KConfigGroup kcg(KSharedConfig::openConfig(), "editMountOptionsDialog");
+    kcg.writeEntry("Geometry", saveGeometry());
 }
 
 QStringList EditMountOptionsDialog::options()
 {
-	QStringList rval;
-	const QStringList lines = widget().editOptions().toPlainText().split(QStringLiteral("\n"));
-	foreach (const QString& line, lines)
-		rval.append(line.simplified().toLower());
-	return rval;
+    QStringList rval;
+    const QStringList lines = widget().editOptions().toPlainText().split(QStringLiteral("\n"));
+    foreach(const QString & line, lines)
+    rval.append(line.simplified().toLower());
+    return rval;
 }

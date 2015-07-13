@@ -25,17 +25,19 @@ class QShowEvent;
 
 class ScanProgressDialog : public QProgressDialog
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		ScanProgressDialog(QWidget* parent);
+public:
+    ScanProgressDialog(QWidget* parent);
 
-	protected:
-		virtual void showEvent(QShowEvent* e);
+protected:
+    virtual void showEvent(QShowEvent* e);
 
-	public:
-		void setProgress(quint32 p) { setValue(p); }
-		void setDeviceName(const QString& d);
+public:
+    void setProgress(quint32 p) {
+        setValue(p);
+    }
+    void setDeviceName(const QString& d);
 };
 
 #endif

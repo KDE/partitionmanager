@@ -38,44 +38,70 @@ class MountEntry;
 
 class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDialogWidgetBase
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		EditMountPointDialogWidget(QWidget* parent, const Partition& p);
-		~EditMountPointDialogWidget();
+public:
+    EditMountPointDialogWidget(QWidget* parent, const Partition& p);
+    ~EditMountPointDialogWidget();
 
-	public:
-		QPushButton& buttonMore() { return *m_ButtonMore; }
-		QLabel& labelName() { return *m_LabelNameValue; }
-		QLineEdit& editPath() { return *m_EditPath; }
-		QSpinBox& spinDumpFreq() { return *m_SpinDumpFreq; }
-		QSpinBox& spinPassNumber() { return *m_SpinPassNumber; }
-		QLabel& labelType() { return *m_LabelTypeValue; }
-		QStringList options();
-		QRadioButton& radioUUID() { return *m_RadioUUID; }
-		QRadioButton& radioLabel() { return *m_RadioLabel; }
-		QRadioButton& radioDeviceNode() { return *m_RadioDeviceNode; }
+public:
+    QPushButton& buttonMore() {
+        return *m_ButtonMore;
+    }
+    QLabel& labelName() {
+        return *m_LabelNameValue;
+    }
+    QLineEdit& editPath() {
+        return *m_EditPath;
+    }
+    QSpinBox& spinDumpFreq() {
+        return *m_SpinDumpFreq;
+    }
+    QSpinBox& spinPassNumber() {
+        return *m_SpinPassNumber;
+    }
+    QLabel& labelType() {
+        return *m_LabelTypeValue;
+    }
+    QStringList options();
+    QRadioButton& radioUUID() {
+        return *m_RadioUUID;
+    }
+    QRadioButton& radioLabel() {
+        return *m_RadioLabel;
+    }
+    QRadioButton& radioDeviceNode() {
+        return *m_RadioDeviceNode;
+    }
 
-		bool acceptChanges();
-		bool writeMountpoints(const QString& filename);
+    bool acceptChanges();
+    bool writeMountpoints(const QString& filename);
 
-	protected Q_SLOTS:
-		void on_m_ButtonSelect_clicked(bool);
-		void on_m_ButtonMore_clicked(bool);
+protected Q_SLOTS:
+    void on_m_ButtonSelect_clicked(bool);
+    void on_m_ButtonMore_clicked(bool);
 
-	private:
-		void setupOptions(const QStringList& options);
-		QMap<QString, QCheckBox*>& boxOptions() { return m_BoxOptions; }
-		const QMap<QString, QCheckBox*>& boxOptions() const { return m_BoxOptions; }
-		bool readMountpoints(const QString& filename);
-		QMap<QString, MountEntry*>& mountPoints() { return m_MountPoints; }
-		const Partition& partition() const { return m_Partition; }
+private:
+    void setupOptions(const QStringList& options);
+    QMap<QString, QCheckBox*>& boxOptions() {
+        return m_BoxOptions;
+    }
+    const QMap<QString, QCheckBox*>& boxOptions() const {
+        return m_BoxOptions;
+    }
+    bool readMountpoints(const QString& filename);
+    QMap<QString, MountEntry*>& mountPoints() {
+        return m_MountPoints;
+    }
+    const Partition& partition() const {
+        return m_Partition;
+    }
 
-	private:
-		const Partition& m_Partition;
-		QMap<QString, MountEntry*> m_MountPoints;
-		QString m_Options;
-		QMap<QString, QCheckBox*> m_BoxOptions;
+private:
+    const Partition& m_Partition;
+    QMap<QString, MountEntry*> m_MountPoints;
+    QString m_Options;
+    QMap<QString, QCheckBox*> m_BoxOptions;
 };
 
 #endif

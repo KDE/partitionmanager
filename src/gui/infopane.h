@@ -29,31 +29,34 @@ class QString;
 
 /** Show information about Partitions and Devices
 
-	Child widget of the QDockWidget to show some details about the currently selected Partition
-	or Device
+    Child widget of the QDockWidget to show some details about the currently selected Partition
+    or Device
 
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class InfoPane : public QWidget
 {
-	Q_DISABLE_COPY(InfoPane)
+    Q_DISABLE_COPY(InfoPane)
 
-	public:
-		InfoPane(QWidget* parent = NULL);
+public:
+    InfoPane(QWidget* parent = NULL);
 
-	public:
-		void showPartition(Qt::DockWidgetArea area, const Partition& p);
-		void showDevice(Qt::DockWidgetArea area, const Device& d);
-		void clear();
+public:
+    void showPartition(Qt::DockWidgetArea area, const Partition& p);
+    void showDevice(Qt::DockWidgetArea area, const Device& d);
+    void clear();
 
-	protected:
-		void createLabels(const QString& title, const QString& value, const int cols, int& x, int& y);
-		int createHeader(const QString& title, const int cols);
-		QGridLayout& gridLayout() { Q_ASSERT(m_GridLayout); return *m_GridLayout; }
-		quint32 cols(Qt::DockWidgetArea area) const;
+protected:
+    void createLabels(const QString& title, const QString& value, const int cols, int& x, int& y);
+    int createHeader(const QString& title, const int cols);
+    QGridLayout& gridLayout() {
+        Q_ASSERT(m_GridLayout);
+        return *m_GridLayout;
+    }
+    quint32 cols(Qt::DockWidgetArea area) const;
 
-	private:
-		QGridLayout* m_GridLayout;
+private:
+    QGridLayout* m_GridLayout;
 };
 
 #endif

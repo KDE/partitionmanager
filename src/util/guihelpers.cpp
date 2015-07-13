@@ -38,108 +38,102 @@
 
 QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
 {
-	QPixmap pixmap(size, size);
-	QPainter painter(&pixmap);
-	painter.setPen(QColor(0, 0, 0));
-	painter.setBrush(Config::fileSystemColorCode(type));
-	painter.drawRect(QRect(0, 0, pixmap.width() - 1, pixmap.height() - 1));
-	painter.end();
+    QPixmap pixmap(size, size);
+    QPainter painter(&pixmap);
+    painter.setPen(QColor(0, 0, 0));
+    painter.setBrush(Config::fileSystemColorCode(type));
+    painter.drawRect(QRect(0, 0, pixmap.width() - 1, pixmap.height() - 1));
+    painter.end();
 
-	return QIcon(pixmap);
+    return QIcon(pixmap);
 }
 
 bool checkPermissions()
 {
-	if (geteuid() != 0)
-	{
-		// only try to gain root privileges if we have a valid (kde|gk)su(do) command and
-		// we did not try so before: the dontsu-option is there to make sure there are no
-		// endless loops of calling the same non-working (kde|gk)su(do) binary again and again.
-		if (!suCommand().isEmpty() && !QCoreApplication::arguments().contains(QLatin1String("--dontsu")))
-		{
-			QString argList;
+    if (geteuid() != 0) {
+        // only try to gain root privileges if we have a valid (kde|gk)su(do) command and
+        // we did not try so before: the dontsu-option is there to make sure there are no
+        // endless loops of calling the same non-working (kde|gk)su(do) binary again and again.
+        if (!suCommand().isEmpty() && !QCoreApplication::arguments().contains(QLatin1String("--dontsu"))) {
+            QString argList;
 
-			const QString suCmd = suCommand();
+            const QString suCmd = suCommand();
 
-			// kdesu broke backward compatibility at some point and now only works with "-c";
-			// kdesudo accepts either (with or without "-c"), but the gk* helpers only work
-			// without. kdesu maintainers won't fix their app, so we need to work around that here.
-			if (suCmd.indexOf(QStringLiteral("kdesu")) != -1)
-				argList = QStringLiteral("-c ");
+            // kdesu broke backward compatibility at some point and now only works with "-c";
+            // kdesudo accepts either (with or without "-c"), but the gk* helpers only work
+            // without. kdesu maintainers won't fix their app, so we need to work around that here.
+            if (suCmd.indexOf(QStringLiteral("kdesu")) != -1)
+                argList = QStringLiteral("-c ");
 
-			argList += QCoreApplication::arguments().join(QStringLiteral(" ")) + QStringLiteral(" --dontsu");
+            argList += QCoreApplication::arguments().join(QStringLiteral(" ")) + QStringLiteral(" --dontsu");
 
-			if (QProcess::execute(suCmd, QStringList(argList)) == 0)
-				return false;
-		}
+            if (QProcess::execute(suCmd, QStringList(argList)) == 0)
+                return false;
+        }
 
-		return KMessageBox::warningContinueCancel(NULL, xi18nc("@info",
-				"<para><warning>You do not have administrative privileges.</warning></para>"
-				"<para>It is possible to run <application>%1</application> without these privileges. "
-				"You will, however, <emphasis>not</emphasis> be allowed to apply operations.</para>"
-				"<para>Do you want to continue running <application>%1</application>?</para>",
-				QGuiApplication::applicationDisplayName()),
-	 		i18nc("@title:window", "No administrative privileges"),
-			KGuiItem(i18nc("@action:button", "Run without administrative privileges"), QStringLiteral("arrow-right")),
-			KStandardGuiItem::cancel(),
-			QStringLiteral("runWithoutRootPrivileges")) == KMessageBox::Continue;
-	}
+        return KMessageBox::warningContinueCancel(NULL, xi18nc("@info",
+                "<para><warning>You do not have administrative privileges.</warning></para>"
+                "<para>It is possible to run <application>%1</application> without these privileges. "
+                "You will, however, <emphasis>not</emphasis> be allowed to apply operations.</para>"
+                "<para>Do you want to continue running <application>%1</application>?</para>",
+                QGuiApplication::applicationDisplayName()),
+                i18nc("@title:window", "No administrative privileges"),
+                KGuiItem(i18nc("@action:button", "Run without administrative privileges"), QStringLiteral("arrow-right")),
+                KStandardGuiItem::cancel(),
+                QStringLiteral("runWithoutRootPrivileges")) == KMessageBox::Continue;
+    }
 
-	return true;
+    return true;
 }
 
 bool loadBackend()
 {
-	if (CoreBackendManager::self()->load(Config::backend()) == false)
-	{
-		if (CoreBackendManager::self()->load(CoreBackendManager::defaultBackendName()))
-		{
-			KMessageBox::sorry(NULL,
-				xi18nc("@info", "<para>The configured backend plugin \"%1\" could not be loaded.</para>"
-					"<para>Loading the default backend plugin \"%2\" instead.</para>",
-				Config::backend(), CoreBackendManager::defaultBackendName()),
-				i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
-			Config::setBackend(CoreBackendManager::defaultBackendName());
-		}
-		else
-		{
-			KMessageBox::error(NULL,
-				xi18nc("@info", "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
-					"plugin could be loaded.</para><para>Please check your installation.</para>",
-				Config::backend(), CoreBackendManager::defaultBackendName()),
-				i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
-			return false;
-		}
-	}
+    if (CoreBackendManager::self()->load(Config::backend()) == false) {
+        if (CoreBackendManager::self()->load(CoreBackendManager::defaultBackendName())) {
+            KMessageBox::sorry(NULL,
+                               xi18nc("@info", "<para>The configured backend plugin \"%1\" could not be loaded.</para>"
+                                      "<para>Loading the default backend plugin \"%2\" instead.</para>",
+                                      Config::backend(), CoreBackendManager::defaultBackendName()),
+                               i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
+            Config::setBackend(CoreBackendManager::defaultBackendName());
+        } else {
+            KMessageBox::error(NULL,
+                               xi18nc("@info", "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+                                      "plugin could be loaded.</para><para>Please check your installation.</para>",
+                                      Config::backend(), CoreBackendManager::defaultBackendName()),
+                               i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
+            return false;
+        }
+    }
 
-	return true;
+    return true;
 }
 
 QString suCommand()
 {
-	const QString candidates[] = { QStringLiteral("kdesu"), QStringLiteral("kdesudo"), QStringLiteral("gksudo"), QStringLiteral("gksu") };
-	QString rval;
+    const QString candidates[] = { QStringLiteral("kdesu"), QStringLiteral("kdesudo"), QStringLiteral("gksudo"), QStringLiteral("gksu") };
+    QString rval;
 
-	for (quint32 i = 0; i < sizeof(candidates) / sizeof(candidates[0]); i++)
-	{
-		rval = QStandardPaths::findExecutable(candidates[i]);
-		if (QFileInfo(rval).isExecutable())
-			return rval;
-	}
+    for (quint32 i = 0; i < sizeof(candidates) / sizeof(candidates[0]); i++) {
+        rval = QStandardPaths::findExecutable(candidates[i]);
+        if (QFileInfo(rval).isExecutable())
+            return rval;
+    }
 
-	return QString();
+    return QString();
 }
 
 Capacity::Unit preferredUnit()
 {
-	return static_cast<Capacity::Unit>(Config::preferredUnit());
+    return static_cast<Capacity::Unit>(Config::preferredUnit());
 }
 
-namespace GuiHelpers {
+namespace GuiHelpers
+{
 
-	FileSystem::Type defaultFileSystem()
-	{
-		return static_cast<FileSystem::Type>(Config::defaultFileSystem());
-	}
+FileSystem::Type defaultFileSystem()
+{
+    return static_cast<FileSystem::Type>(Config::defaultFileSystem());
+}
 
 }

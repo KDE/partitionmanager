@@ -26,26 +26,30 @@ class Device;
 
 /** Base class for dialogs to insert Partitions.
 
-	Base class for dialogs that need to insert a Partition into some unallocated space on
-	a Device.
+    Base class for dialogs that need to insert a Partition into some unallocated space on
+    a Device.
 
-	@author Volker Lanz <vl@fidra.de>
+    @author Volker Lanz <vl@fidra.de>
 */
 class InsertDialog : public SizeDialogBase
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		InsertDialog(QWidget* parent, Device& device, Partition& insertedPartition, const Partition& destPartition);
-		~InsertDialog();
+public:
+    InsertDialog(QWidget* parent, Device& device, Partition& insertedPartition, const Partition& destPartition);
+    ~InsertDialog();
 
-	protected:
-		const Partition& destPartition() const { return m_DestPartition; }
-		virtual bool canGrow() const;
-		virtual bool canShrink() const { return false; }
+protected:
+    const Partition& destPartition() const {
+        return m_DestPartition;
+    }
+    virtual bool canGrow() const;
+    virtual bool canShrink() const {
+        return false;
+    }
 
-	private:
-		const Partition& m_DestPartition;
+private:
+    const Partition& m_DestPartition;
 };
 
 #endif
