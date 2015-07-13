@@ -484,7 +484,8 @@ void PartitionManagerWidget::onNewPartition()
 	if (checkTooManyPartitions(this, *selectedDevice(), *selectedPartition()))
 		return;
 
-	Partition* newPartition = NewOperation::createNew(*selectedPartition());
+    Partition* newPartition = NewOperation::createNew(*selectedPartition(),
+                                                      static_cast<FileSystem::Type>(Config::defaultFileSystem()));
 
 	QPointer<NewDialog> dlg = new NewDialog(this, *selectedDevice(), *newPartition, selectedDevice()->partitionTable()->childRoles(*selectedPartition()));
 	if (dlg->exec() == QDialog::Accepted)
