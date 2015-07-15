@@ -31,6 +31,7 @@
 
 #include <kpmcore/core/device.h>
 #include <kpmcore/core/partition.h>
+#include <kpmcore/core/partitionalignment.h>
 #include <kpmcore/core/smartstatus.h>
 
 #include <kpmcore/ops/operation.h>
@@ -375,6 +376,7 @@ void MainWindow::loadConfig()
         dockLog().setVisible(false);
         dockInformation().setVisible(false);
     }
+    PartitionAlignment::setSectorAlignment(Config::sectorAlignment());
 }
 
 void MainWindow::saveConfig() const
@@ -918,6 +920,8 @@ void MainWindow::onSettingsChanged()
 
     enableActions();
     pmWidget().updatePartitions();
+
+    PartitionAlignment::setSectorAlignment(Config::sectorAlignment());
 }
 
 void MainWindow::onConfigureOptions()
