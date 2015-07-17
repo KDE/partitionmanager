@@ -16,11 +16,14 @@
  *************************************************************************/
 
 #include "gui/parttablewidget.h"
+#include "util/guihelpers.h"
+#include "mainwindow.h"
 
 #include <kpmcore/core/partitiontable.h>
 
 #include <kpmcore/gui/partwidget.h>
 
+#include <QApplication>
 #include <QMouseEvent>
 
 #include <KLocalizedString>
@@ -48,8 +51,24 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 
     if (partitionTable() != NULL) {
         foreach(const Partition * p, partitionTable()->children()) {
-            QWidget* w = new PartWidget(this, p);
+            PartWidget* w = new PartWidget(this, p);
             w->setVisible(true);
+            w->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());
+            MainWindow* mw = nullptr;
+            foreach( QWidget* widget, qApp->topLevelWidgets() )
+            {
+                mw = qobject_cast< MainWindow* >( widget );
+                if ( mw )
+                    break;
+            }
+            if ( mw )
+            {
+                connect( mw, &MainWindow::settingsChanged,
+                         this, [w]
+                {
+                    w->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());
+                });
+            }
         }
     }
 

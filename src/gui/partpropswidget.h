@@ -21,6 +21,9 @@
 
 #include "ui_partpropswidgetbase.h"
 
+#include "mainwindow.h"
+#include "util/guihelpers.h"
+
 /** Central widget in the PartPropsDialog.
     @author Volker Lanz <vl@fidra.de>
 */
@@ -29,6 +32,24 @@ class PartPropsWidget : public QWidget, public Ui::PartPropsWidgetBase
 public:
     PartPropsWidget(QWidget* parent) : QWidget(parent) {
         setupUi(this);
+
+        m_PartWidget->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());
+        MainWindow* mw = nullptr;
+        foreach( QWidget* widget, qApp->topLevelWidgets() )
+        {
+            mw = qobject_cast< MainWindow* >( widget );
+            if ( mw )
+                break;
+        }
+        if ( mw )
+        {
+            connect( mw, &MainWindow::settingsChanged,
+                     this, [this]
+            {
+                m_PartWidget->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());
+            });
+        }
+
     }
 
 public:

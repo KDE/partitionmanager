@@ -922,6 +922,8 @@ void MainWindow::onSettingsChanged()
     pmWidget().updatePartitions();
 
     PartitionAlignment::setSectorAlignment(Config::sectorAlignment());
+
+    emit settingsChanged();
 }
 
 void MainWindow::onConfigureOptions()

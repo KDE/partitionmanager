@@ -54,6 +54,9 @@ class LIBKPMGUI_EXPORT MainWindow : public KXmlGuiWindow, public Ui::MainWindowB
 public:
     explicit MainWindow(QWidget* parent = NULL);
 
+Q_SIGNALS:
+    void settingsChanged();
+
 protected:
     void init();
     void setupObjectNames();
