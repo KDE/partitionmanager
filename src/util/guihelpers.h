@@ -34,6 +34,7 @@ Capacity::Unit preferredUnit();
 namespace GuiHelpers
 {
 FileSystem::Type defaultFileSystem();
+std::array< QColor, FileSystem::__lastType > fileSystemColorCodesFromSettings();
 }
 
 QString suCommand();

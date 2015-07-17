@@ -136,4 +136,14 @@ FileSystem::Type defaultFileSystem()
     return static_cast<FileSystem::Type>(Config::defaultFileSystem());
 }
 
+std::array< QColor, FileSystem::__lastType > fileSystemColorCodesFromSettings()
+{
+    std::array< QColor, FileSystem::__lastType > cc;
+    for (int i = 0; i < FileSystem::__lastType; ++i)
+    {
+        cc[ i ] = Config::fileSystemColorCode( i );
+    }
+    return cc;
+}
+
 }
