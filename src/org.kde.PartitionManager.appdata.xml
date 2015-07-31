@@ -21,6 +21,7 @@
   <name xml:lang="hu">KDE partíciókezelő</name>
   <name xml:lang="id">Manajer Partisi KDE</name>
   <name xml:lang="it">Gestore delle partizioni di KDE</name>
+  <name xml:lang="ko">KDE 파티션 관리자</name>
   <name xml:lang="lt">KDE Skaidinių tvarkyklė</name>
   <name xml:lang="nl">KDE Partitiebeheerder</name>
   <name xml:lang="pa">KDE ਪਾਰਟੀਸ਼ਨ ਮੈਨੇਜਰ</name>
@@ -57,6 +58,7 @@
   <summary xml:lang="hu">Partíciószerkesztő</summary>
   <summary xml:lang="id">Penyunting Partisi</summary>
   <summary xml:lang="it">Editor delle partizioni</summary>
+  <summary xml:lang="ko">파티션 편집기</summary>
   <summary xml:lang="lt">Skaidinių tvarkyklė</summary>
   <summary xml:lang="nl">Partitiebewerker</summary>
   <summary xml:lang="pa">ਪਾਰਟੀਸ਼ਨ ਮੈਨੇਜਰ</summary>
@@ -92,6 +94,7 @@
     <p xml:lang="hu">A KDE partíciókezelő egy segédprogram, mely segít Önnek lemezek, partíciók és fájlrendszerek kezelésében. Lehetővé teszi partíciók létrehozását, másolását, mozgatását, törlését, adatvesztés nélküli átméretezését, biztonsági mentését és visszaállítását.</p>
     <p xml:lang="id">Manajer Partisi KDE adalah sebuah program utilitas untuk membantu anda mengelola perangkat disk, partisi dan sistem berkas di komputer anda. Hal ini memungkinkan anda untuk mudah membuat, menyalin, memindahkan, menghapus, mengubah ukuran tanpa kehilangan data, mencadangkan dan memulihkan partisi.</p>
     <p xml:lang="it">Il gestore delle partizioni di KDE è un programma che ti aiuta a gestire i dischi, le partizioni e i filesystem sul tuo computer. Ti consente di creare, copiare, spostare, eliminare, ridimensionare senza perdere dati, effettuare copie di sicurezza e ripristinare partizioni con grande semplicità.</p>
+    <p xml:lang="ko">KDE 파티션 관리자는 컴퓨터의 디스크 장치, 파티션, 파일 시스템을 관리하는 도구입니다. 파티션 작업, 무손실 크기 조정, 백업과 복원이 가능합니다.</p>
     <p xml:lang="lt">KDE Skaidinių tvarkyklė yra programa padedanti tvarkyti jūsų kompiuterio diskų įrenginius, skaidinius ir failų sistemas. Ji leidžia lengvai kurti, kopijuoti, perkelti, trinti ir keisti dydį neprarandant duomenų, kurti atsargines skaidinių kopijas.</p>
     <p xml:lang="nl">KDE Partitiebeheerder is een hulpprogramma om u helpen bij het beheer van de schijven, partities en bestandssystemen op uw computer. Het stelt u in staat gemakkelijk partities te maken, te kopiëren, te verplaatsen, te verwijderen, hun grootte te wijzigen zonder verlies van gegevens en hiervan een reservekopie te maken of hier vanaf te herstellen.</p>
     <p xml:lang="pl">Zarządzanie partycjami KDE jest programem użytkowym mającym na celu pomoc przy zarządzaniu urządzeniami dyskowymi, partycjami i systemami plików na twoim komputerze. Umożliwia łatwe tworzenie, kopiowanie, przenoszenie, usuwanie i zamianę rozmiaru bez utraty danych, a także tworzenie i przywracanie kopii zapasowych partycji.</p>
@@ -126,6 +129,7 @@
     <p xml:lang="hu">Szolgáltatások:</p>
     <p xml:lang="id">Fitur:</p>
     <p xml:lang="it">Funzionalità:</p>
+    <p xml:lang="ko">기능:</p>
     <p xml:lang="lt">Ypatybės:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pa">ਲੱਛਣ:</p>
@@ -161,6 +165,7 @@
       <li xml:lang="hu">Számos fájlrendszer támogatása, többek között ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS és továbbiak</li>
       <li xml:lang="id">Mendukung sejumlah besar sistem berkas, termasuk ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS dan lebih</li>
       <li xml:lang="it">Supporta un vasto numero di filesystem, tra cui ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS e altri</li>
+      <li xml:lang="ko">EXT2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS 등 파일 시스템 지원</li>
       <li xml:lang="lt">Palaiko daug failų sistemų, tarp jų ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ir kitos</li>
       <li xml:lang="nl">Ondersteunt een groot aantal bestandssystemen, inclusief ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS en meer</li>
       <li xml:lang="pl">Obsługa wielu systemów plików, uwzględniając przy tym  ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i więcej</li>
@@ -193,6 +198,7 @@
       <li xml:lang="hu">A meglévő külső programokat használja a feladatok elvégzésére</li>
       <li xml:lang="id">Memanfaatkan program eksternal yang sudah tersedia untuk mendapatkan pekerjaan yang dilakukan</li>
       <li xml:lang="it">Utilizza programmi esterni già disponibili per fare il suo lavoro</li>
+      <li xml:lang="ko">외부 프로그램을 사용한 작업 관리</li>
       <li xml:lang="lt">Užduotims atlikti naudoja išorinius įrankius</li>
       <li xml:lang="nl">Maakt gebruik van al beschikbare externe programma's om deze taken uit te voeren</li>
       <li xml:lang="pl">Wykorzystywanie już dostępnych programów zewnętrznych do wykonywania swojej pracy</li>
