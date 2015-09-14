@@ -56,7 +56,7 @@ add_executable(partitionmanager main.cpp)
 target_link_libraries(partitionmanager kpmgui)
 
 install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.PartitionManager.appdata.xml DESTINATION share/appdata)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.PartitionManager.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata)
 install(FILES gui/partitionmanagerui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/partitionmanager)
 install(PROGRAMS org.kde.PartitionManager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
