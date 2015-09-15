@@ -1,5 +1,6 @@
 /*************************************************************************
  *  Copyright (C) 2008, 2009, 2010, 2012 by Volker Lanz <vl@fidra.de>    *
+ *  Copyright (C) 2015 by Teo Mrnjavac <teo@kde.org>                     *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -46,6 +47,7 @@
 
 #include <kpmcore/fs/filesystem.h>
 #include <kpmcore/fs/filesystemfactory.h>
+#include <kpmcore/fs/luks.h>
 
 #include <kpmcore/util/helpers.h>
 #include "util/guihelpers.h"
@@ -154,14 +156,14 @@ void MainWindow::closeEvent(QCloseEvent* event)
 void MainWindow::changeEvent(QEvent* event)
 {
     if ((event->type() == QEvent::ActivationChange || event->type() == QEvent::WindowStateChange) && event->spontaneous() && isActiveWindow()) {
-        QWidget* w = NULL;
+        QWidget* w = nullptr;
 
         if (applyProgressDialog().isVisible())
             w = &applyProgressDialog();
         else if (scanProgressDialog().isVisible())
             w = &scanProgressDialog();
 
-        if (w != NULL) {
+        if (w != nullptr) {
             w->activateWindow();
             w->raise();
             w->setFocus();
@@ -303,6 +305,12 @@ void MainWindow::setupActions()
     mountPartition->setToolTip(i18nc("@info:tooltip", "Mount or unmount partition"));
     mountPartition->setStatusTip(i18nc("@info:status", "Mount or unmount a partition."));
 
+    QAction* decryptPartition = actionCollection()->addAction(QStringLiteral("decryptPartition"), &pmWidget(), SLOT(onDecryptPartition()));
+    decryptPartition->setEnabled(false);
+    decryptPartition->setText(i18nc("@action:inmenu", "Unlock"));
+    decryptPartition->setToolTip(i18nc("@info:tooltip", "Unlock or lock encrypted partition"));
+    decryptPartition->setStatusTip(i18nc("@info:status", "Unlock or lock encrypted partition."));
+
     QAction* checkPartition = actionCollection()->addAction(QStringLiteral("checkPartition"), &pmWidget(), SLOT(onCheckPartition()));
     checkPartition->setEnabled(false);
     checkPartition->setText(i18nc("@action:inmenu", "Check"));
@@ -387,41 +395,87 @@ void MainWindow::saveConfig() const
 
 void MainWindow::enableActions()
 {
-    actionCollection()->action(QStringLiteral("createNewPartitionTable"))->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
-    actionCollection()->action(QStringLiteral("exportPartitionTable"))->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->partitionTable() && operationStack().size() == 0);
-    actionCollection()->action(QStringLiteral("importPartitionTable"))->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
-    actionCollection()->action(QStringLiteral("smartStatusDevice"))->setEnabled(pmWidget().selectedDevice() != NULL && pmWidget().selectedDevice()->smartStatus().isValid());
-    actionCollection()->action(QStringLiteral("propertiesDevice"))->setEnabled(pmWidget().selectedDevice() != NULL);
+    actionCollection()->action(QStringLiteral("createNewPartitionTable"))
+            ->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
+    actionCollection()->action(QStringLiteral("exportPartitionTable"))
+            ->setEnabled(pmWidget().selectedDevice() &&
+                         pmWidget().selectedDevice()->partitionTable() &&
+                         operationStack().size() == 0);
+    actionCollection()->action(QStringLiteral("importPartitionTable"))
+            ->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
+    actionCollection()->action(QStringLiteral("smartStatusDevice"))
+            ->setEnabled(pmWidget().selectedDevice() != nullptr &&
+                                                        pmWidget().selectedDevice()->smartStatus().isValid());
+    actionCollection()->action(QStringLiteral("propertiesDevice"))
+            ->setEnabled(pmWidget().selectedDevice() != nullptr);
 
-    actionCollection()->action(QStringLiteral("undoOperation"))->setEnabled(operationStack().size() > 0);
-    actionCollection()->action(QStringLiteral("clearAllOperations"))->setEnabled(operationStack().size() > 0);
-    actionCollection()->action(QStringLiteral("applyAllOperations"))->setEnabled(operationStack().size() > 0 && (geteuid() == 0 || Config::allowApplyOperationsAsNonRoot()));
+    actionCollection()->action(QStringLiteral("undoOperation"))
+            ->setEnabled(operationStack().size() > 0);
+    actionCollection()->action(QStringLiteral("clearAllOperations"))
+            ->setEnabled(operationStack().size() > 0);
+    actionCollection()->action(QStringLiteral("applyAllOperations"))
+            ->setEnabled(operationStack().size() > 0 && (geteuid() == 0 ||
+                                                         Config::allowApplyOperationsAsNonRoot()));
 
-    const bool readOnly = pmWidget().selectedDevice() == NULL ||
-                          pmWidget().selectedDevice()->partitionTable() == NULL ||
+    const bool readOnly = pmWidget().selectedDevice() == nullptr ||
+                          pmWidget().selectedDevice()->partitionTable() == nullptr ||
                           pmWidget().selectedDevice()->partitionTable()->isReadOnly();
 
     const Partition* part = pmWidget().selectedPartition();
 
-    actionCollection()->action(QStringLiteral("newPartition"))->setEnabled(!readOnly && NewOperation::canCreateNew(part));
-    const bool canResize = ResizeOperation::canGrow(part) || ResizeOperation::canShrink(part) || ResizeOperation::canMove(part);
-    actionCollection()->action(QStringLiteral("resizePartition"))->setEnabled(!readOnly && canResize);
-    actionCollection()->action(QStringLiteral("copyPartition"))->setEnabled(CopyOperation::canCopy(part));
-    actionCollection()->action(QStringLiteral("deletePartition"))->setEnabled(!readOnly && DeleteOperation::canDelete(part));
-    actionCollection()->action(QStringLiteral("shredPartition"))->setEnabled(!readOnly && DeleteOperation::canDelete(part));
-    actionCollection()->action(QStringLiteral("pastePartition"))->setEnabled(!readOnly && CopyOperation::canPaste(part, pmWidget().clipboardPartition()));
-    actionCollection()->action(QStringLiteral("propertiesPartition"))->setEnabled(part != NULL);
+    actionCollection()->action(QStringLiteral("newPartition"))
+            ->setEnabled(!readOnly && NewOperation::canCreateNew(part));
 
-    actionCollection()->action(QStringLiteral("editMountPoint"))->setEnabled(part && !part->isMounted());
-    actionCollection()->action(QStringLiteral("mountPartition"))->setEnabled(part && (part->canMount() || part->canUnmount()));
+    const bool canResize = ResizeOperation::canGrow(part) ||
+                           ResizeOperation::canShrink(part) ||
+                           ResizeOperation::canMove(part);
+    actionCollection()->action(QStringLiteral("resizePartition"))
+            ->setEnabled(!readOnly && canResize);
 
-    if (part != NULL)
-        actionCollection()->action(QStringLiteral("mountPartition"))->setText(part->isMounted() ? part->fileSystem().unmountTitle() : part->fileSystem().mountTitle());
+    actionCollection()->action(QStringLiteral("copyPartition"))
+            ->setEnabled(CopyOperation::canCopy(part));
+    actionCollection()->action(QStringLiteral("deletePartition"))
+            ->setEnabled(!readOnly && DeleteOperation::canDelete(part));
+    actionCollection()->action(QStringLiteral("shredPartition"))
+            ->setEnabled(!readOnly && DeleteOperation::canDelete(part));
+    actionCollection()->action(QStringLiteral("pastePartition"))
+            ->setEnabled(!readOnly && CopyOperation::canPaste(part, pmWidget().clipboardPartition()));
+    actionCollection()->action(QStringLiteral("propertiesPartition"))
+            ->setEnabled(part != nullptr);
 
-    actionCollection()->action(QStringLiteral("checkPartition"))->setEnabled(!readOnly && CheckOperation::canCheck(part));
+    actionCollection()->action(QStringLiteral("editMountPoint"))
+            ->setEnabled(part && !part->isMounted());
 
-    actionCollection()->action(QStringLiteral("backupPartition"))->setEnabled(BackupOperation::canBackup(part));
-    actionCollection()->action(QStringLiteral("restorePartition"))->setEnabled(RestoreOperation::canRestore(part));
+    actionCollection()->action(QStringLiteral("mountPartition"))
+            ->setEnabled(part &&
+                         (part->canMount() || part->canUnmount()));
+    if (part != nullptr)
+        actionCollection()->action(QStringLiteral("mountPartition"))
+                ->setText(part->isMounted() ?
+                          part->fileSystem().unmountTitle() :
+                          part->fileSystem().mountTitle());
+
+    actionCollection()->action(QStringLiteral("decryptPartition"))
+            ->setEnabled(part &&
+                         (part->fileSystem().type() == FileSystem::Luks) &&
+                         (dynamic_cast<const FS::luks&>(part->fileSystem()).canCryptOpen(part->partitionPath()) ||
+                          dynamic_cast<const FS::luks&>(part->fileSystem()).canCryptClose(part->partitionPath())));
+    if (part && part->fileSystem().type() == FileSystem::Luks)
+    {
+        const FS::luks& luksFs = dynamic_cast<const FS::luks&>(part->fileSystem());
+        actionCollection()->action(QStringLiteral("decryptPartition"))
+                ->setText(luksFs.isCryptOpen() ?
+                          luksFs.cryptCloseTitle() :
+                          luksFs.cryptOpenTitle());
+    }
+
+    actionCollection()->action(QStringLiteral("checkPartition"))
+            ->setEnabled(!readOnly && CheckOperation::canCheck(part));
+
+    actionCollection()->action(QStringLiteral("backupPartition"))
+            ->setEnabled(BackupOperation::canBackup(part));
+    actionCollection()->action(QStringLiteral("restorePartition"))
+            ->setEnabled(RestoreOperation::canRestore(part));
 }
 
 void MainWindow::on_m_ApplyProgressDialog_finished()
@@ -496,10 +550,10 @@ void MainWindow::on_m_ListDevices_contextMenuRequested(const QPoint& pos)
 
 void MainWindow::on_m_PartitionManagerWidget_contextMenuRequested(const QPoint& pos)
 {
-    QMenu* menu = NULL;
+    QMenu* menu = nullptr;
 
-    if (pmWidget().selectedPartition() == NULL) {
-        if (pmWidget().selectedDevice() != NULL)
+    if (pmWidget().selectedPartition() == nullptr) {
+        if (pmWidget().selectedDevice() != nullptr)
             menu = static_cast<QMenu*>(guiFactory()->container(QStringLiteral("device"), this));
     } else
         menu = static_cast<QMenu*>(guiFactory()->container(QStringLiteral("partition"), this));
@@ -603,7 +657,7 @@ void MainWindow::onSelectedDeviceMenuTriggered(bool)
     QAction* action = qobject_cast<QAction*>(sender());
     QMenu* devicesMenu = static_cast<QMenu*>(guiFactory()->container(QStringLiteral("selectedDevice"), this));
 
-    if (action == NULL || action->parent() != devicesMenu)
+    if (action == nullptr || action->parent() != devicesMenu)
         return;
 
     foreach(QAction * entry, devicesMenu->findChildren<QAction*>())
@@ -678,8 +732,8 @@ void MainWindow::onUndoOperation()
     // it's possible the undo killed the partition in the clipboard. if there's a partition in the clipboard, try
     // to find a device for it (OperationStack::findDeviceForPartition() only compares pointers, so an invalid
     // pointer is not a problem). if no device is found, the pointer must be dangling, so clear the clipboard.
-    if (pmWidget().clipboardPartition() != NULL && operationStack().findDeviceForPartition(pmWidget().clipboardPartition()) == NULL)
-        pmWidget().setClipboardPartition(NULL);
+    if (pmWidget().clipboardPartition() != nullptr && operationStack().findDeviceForPartition(pmWidget().clipboardPartition()) == nullptr)
+        pmWidget().setClipboardPartition(nullptr);
 
     pmWidget().updatePartitions();
     enableActions();
@@ -704,7 +758,7 @@ void MainWindow::onCreateNewPartitionTable()
 {
     Q_ASSERT(pmWidget().selectedDevice());
 
-    if (pmWidget().selectedDevice() == NULL) {
+    if (pmWidget().selectedDevice() == nullptr) {
         qWarning() << "selected device is null.";
         return;
     }
@@ -751,7 +805,7 @@ void MainWindow::onImportPartitionTable()
     QRegExp rxMagic(QStringLiteral("^##|v(\\d+)|##"));
     quint32 lineNo = 0;
     bool haveMagic = false;
-    PartitionTable* ptable = NULL;
+    PartitionTable* ptable = nullptr;
     PartitionTable::TableType tableType = PartitionTable::unknownTableType;
 
     while (!(line = file.readLine()).isEmpty()) {
@@ -771,7 +825,7 @@ void MainWindow::onImportPartitionTable()
             continue;
 
         if (rxType.indexIn(QString::fromUtf8(line.constData())) != -1) {
-            if (ptable != NULL) {
+            if (ptable != nullptr) {
                 KMessageBox::error(this, i18nc("@info", "Found more than one partition table type in import file (line %1).", lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
                 return;
             }
@@ -793,7 +847,7 @@ void MainWindow::onImportPartitionTable()
         } else if (rxAlign.indexIn(QString::fromUtf8(line.constData())) != -1) {
             // currently ignored
         } else if (rxPartition.indexIn(QString::fromUtf8(line.constData())) != -1) {
-            if (ptable == NULL) {
+            if (ptable == nullptr) {
                 KMessageBox::error(this, i18nc("@info", "Found partition but no partition table type (line %1).",  lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
                 return;
             }
@@ -835,7 +889,7 @@ void MainWindow::onImportPartitionTable()
                 return;
             }
 
-            if (parent == NULL) {
+            if (parent == nullptr) {
                 KMessageBox::error(this, i18nc("@info the partition is NOT a device path, just a number", "No parent partition or partition table found for partition %1 (line %2).", num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
                 return;
             }
@@ -847,7 +901,7 @@ void MainWindow::onImportPartitionTable()
 
             FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(fsName), firstSector, lastSector);
 
-            if (fs == NULL) {
+            if (fs == nullptr) {
                 KMessageBox::error(this, i18nc("@info the partition is NOT a device path, just a number", "Could not create file system \"%1\" for partition %2 (line %3).", fsName, num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
                 return;
             }
@@ -977,7 +1031,7 @@ void MainWindow::onPropertiesDevice(const QString&)
 
 static QStringList checkSupportInNode(const PartitionNode* parent)
 {
-    if (parent == NULL)
+    if (parent == nullptr)
         return QStringList();
 
     QStringList rval;
@@ -985,7 +1039,7 @@ static QStringList checkSupportInNode(const PartitionNode* parent)
     foreach(const PartitionNode * node, parent->children()) {
         const Partition* p = dynamic_cast<const Partition*>(node);
 
-        if (p == NULL)
+        if (p == nullptr)
             continue;
 
         if (node->children().size() > 0)
