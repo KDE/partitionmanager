@@ -1,6 +1,5 @@
 /*************************************************************************
  *  Copyright (C) 2008-2010 by Volker Lanz <vl@fidra.de>                 *
- *  Copyright (C) 2015 by Teo Mrnjavac <teo@kde.org>                     *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -70,7 +69,6 @@ public Q_SLOTS:
 
     void onEditMountPoint();
     void onMountPartition();
-    void onDecryptPartition();
 
     void onCheckPartition();
 

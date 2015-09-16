@@ -1,6 +1,5 @@
 /*************************************************************************
  *  Copyright (C) 2008-2010 by Volker Lanz <vl@fidra.de>                 *
- *  Copyright (C) 2015 by Teo Mrnjavac <teo@kde.org>                     *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -30,7 +29,6 @@
 #include <kpmcore/core/partitiontable.h>
 
 #include <kpmcore/fs/filesystemfactory.h>
-#include <kpmcore/fs/luks.h>
 
 #include <kpmcore/gui/partwidget.h>
 
@@ -83,9 +81,9 @@ private:
 PartitionManagerWidget::PartitionManagerWidget(QWidget* parent) :
     QWidget(parent),
     Ui::PartitionManagerWidgetBase(),
-    m_OperationStack(nullptr),
-    m_SelectedDevice(nullptr),
-    m_ClipboardPartition(nullptr)
+    m_OperationStack(NULL),
+    m_SelectedDevice(NULL),
+    m_ClipboardPartition(NULL)
 {
     setupUi(this);
 
@@ -154,17 +152,17 @@ void PartitionManagerWidget::setupConnections()
 
 void PartitionManagerWidget::clear()
 {
-    setSelectedDevice(nullptr);
-    setClipboardPartition(nullptr);
+    setSelectedDevice(NULL);
+    setClipboardPartition(NULL);
     treePartitions().clear();
     partTableWidget().clear();
 }
 
 void PartitionManagerWidget::setSelectedPartition(const Partition* p)
 {
-    if (p == nullptr) {
-        treePartitions().setCurrentItem(nullptr);
-        emit selectedPartitionChanged(nullptr);
+    if (p == NULL) {
+        treePartitions().setCurrentItem(NULL);
+        emit selectedPartitionChanged(NULL);
         updatePartitions();
     } else
         partTableWidget().setActivePartition(p);
@@ -172,8 +170,8 @@ void PartitionManagerWidget::setSelectedPartition(const Partition* p)
 
 Partition* PartitionManagerWidget::selectedPartition()
 {
-    if (selectedDevice() == nullptr || selectedDevice()->partitionTable() == nullptr || partTableWidget().activeWidget() == nullptr)
-        return nullptr;
+    if (selectedDevice() == NULL || selectedDevice()->partitionTable() == NULL || partTableWidget().activeWidget() == NULL)
+        return NULL;
 
     // The active partition we get from the part table widget is const; we need non-const.
     // So take the first sector and find the partition in the selected device's
@@ -192,13 +190,13 @@ void PartitionManagerWidget::setSelectedDevice(const QString& device_node)
         return;
     }
 
-    setSelectedDevice(nullptr);
+    setSelectedDevice(NULL);
 }
 
 void PartitionManagerWidget::setSelectedDevice(Device* d)
 {
     m_SelectedDevice = d;
-    setSelectedPartition(nullptr);
+    setSelectedPartition(NULL);
 }
 
 static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
@@ -236,7 +234,7 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 
 void PartitionManagerWidget::updatePartitions()
 {
-    if (selectedDevice() == nullptr)
+    if (selectedDevice() == NULL)
         return;
 
     treePartitions().clear();
@@ -258,7 +256,7 @@ void PartitionManagerWidget::updatePartitions()
 
     treePartitions().addTopLevelItem(deviceItem);
 
-    if (selectedDevice()->partitionTable() != nullptr) {
+    if (selectedDevice()->partitionTable() != NULL) {
         foreach(const Partition * p, selectedDevice()->partitionTable()->children()) {
             QTreeWidgetItem* item = createTreeWidgetItem(*p);
 
@@ -283,18 +281,18 @@ void PartitionManagerWidget::on_m_TreePartitions_currentItemChanged(QTreeWidgetI
 {
     if (current) {
         const PartitionTreeWidgetItem* ptwItem = dynamic_cast<PartitionTreeWidgetItem*>(current);
-        partTableWidget().setActivePartition(ptwItem ? ptwItem->partition() : nullptr);
+        partTableWidget().setActivePartition(ptwItem ? ptwItem->partition() : NULL);
     } else
-        partTableWidget().setActiveWidget(nullptr);
+        partTableWidget().setActiveWidget(NULL);
 }
 
 void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, int)
 {
     if (item == treePartitions().topLevelItem(0)) {
-        if (selectedDevice() != nullptr)
+        if (selectedDevice() != NULL)
             emit deviceDoubleClicked(selectedDevice());
     } else {
-        if (selectedPartition() != nullptr)
+        if (selectedPartition() != NULL)
             emit partitionDoubleClicked(selectedPartition());
     }
 }
@@ -306,9 +304,9 @@ void PartitionManagerWidget::onHeaderContextMenu(const QPoint& p)
 
 void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidget* item)
 {
-    if (item == nullptr) {
-        treePartitions().setCurrentItem(nullptr);
-        emit selectedPartitionChanged(nullptr);
+    if (item == NULL) {
+        treePartitions().setCurrentItem(NULL);
+        emit selectedPartitionChanged(NULL);
         return;
     }
 
@@ -378,12 +376,12 @@ void PartitionManagerWidget::onMountPartition()
 
     Q_ASSERT(p);
 
-    if (p == nullptr) {
+    if (p == NULL) {
         qWarning() << "no partition selected";
         return;
     }
 
-    Report report(nullptr);
+    Report report(NULL);
 
     if (p->canMount()) {
         if (!p->mount(report))
@@ -398,37 +396,10 @@ void PartitionManagerWidget::onMountPartition()
 
         Q_ASSERT(parent);
 
-        if (parent != nullptr)
+        if (parent != NULL)
             parent->checkChildrenMounted();
         else
             qWarning() << "parent is null";
-    }
-
-    updatePartitions();
-}
-
-void PartitionManagerWidget::onDecryptPartition()
-{
-    Partition* p = selectedPartition();
-
-    Q_ASSERT(p);
-
-    if (p == nullptr) {
-        qWarning() << "no partition selected";
-        return;
-    }
-
-    if (p->fileSystem().type() != FileSystem::Luks)
-        return;
-
-    FS::luks& luksFs = dynamic_cast<FS::luks&>(p->fileSystem());
-
-    if (luksFs.canCryptOpen(p->partitionPath())) {
-        if (!luksFs.cryptOpen(p->partitionPath()))
-            KMessageBox::detailedSorry(this, xi18nc("@info", "The encrypted file system on partition <filename>%1</filename> could not be unlocked.", p->deviceNode()), QString(), i18nc("@title:window", "Could Not Unlock Encrypted File System."));
-    } else if (luksFs.canCryptClose(p->partitionPath())) {
-        if (!luksFs.cryptClose(p->partitionPath()))
-            KMessageBox::detailedSorry(this, xi18nc("@info", "The encrypted file system on partition <filename>%1</filename> could not be locked.", p->deviceNode()), QString(), i18nc("@title:window", "Could Not Lock Encrypted File System."));
     }
 
     updatePartitions();
@@ -440,7 +411,7 @@ void PartitionManagerWidget::onEditMountPoint()
 
     Q_ASSERT(p);
 
-    if (p == nullptr)
+    if (p == NULL)
         return;
 
     QPointer<EditMountPointDialog> dlg = new EditMountPointDialog(this, *p);
@@ -473,14 +444,14 @@ void PartitionManagerWidget::onNewPartition()
     Q_ASSERT(selectedDevice());
     Q_ASSERT(selectedPartition());
 
-    if (selectedDevice() == nullptr || selectedPartition() == nullptr) {
+    if (selectedDevice() == NULL || selectedPartition() == NULL) {
         qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
         return;
     }
 
     Q_ASSERT(selectedDevice()->partitionTable());
 
-    if (selectedDevice()->partitionTable() == nullptr) {
+    if (selectedDevice()->partitionTable() == NULL) {
         qWarning() << "partition table on selected device is null";
         return;
     }
@@ -504,7 +475,7 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
     Q_ASSERT(selectedDevice());
     Q_ASSERT(selectedPartition());
 
-    if (selectedDevice() == nullptr || selectedPartition() == nullptr) {
+    if (selectedDevice() == NULL || selectedPartition() == NULL) {
         qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
         return;
     }
@@ -512,7 +483,7 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
     if (selectedPartition()->roles().has(PartitionRole::Logical)) {
         Q_ASSERT(selectedPartition()->parent());
 
-        if (selectedPartition()->parent() == nullptr) {
+        if (selectedPartition()->parent() == NULL) {
             qWarning() << "parent of selected partition is null.";
             return;
         }
@@ -539,7 +510,7 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
                                                KStandardGuiItem::cancel(), QStringLiteral("reallyDeleteClipboardPartition")) == KMessageBox::Cancel)
             return;
 
-        setClipboardPartition(nullptr);
+        setClipboardPartition(NULL);
     }
 
     if (shred && Config::shredSource() == Config::EnumShredSource::random)
@@ -560,14 +531,14 @@ void PartitionManagerWidget::onResizePartition()
     Q_ASSERT(selectedDevice());
     Q_ASSERT(selectedPartition());
 
-    if (selectedDevice() == nullptr || selectedPartition() == nullptr) {
+    if (selectedDevice() == NULL || selectedPartition() == NULL) {
         qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
         return;
     }
 
     Q_ASSERT(selectedDevice()->partitionTable());
 
-    if (selectedDevice()->partitionTable() == nullptr) {
+    if (selectedDevice()->partitionTable() == NULL) {
         qWarning() << "partition table on selected device is null";
         return;
     }
@@ -605,7 +576,7 @@ void PartitionManagerWidget::onCopyPartition()
 {
     Q_ASSERT(selectedPartition());
 
-    if (selectedPartition() == nullptr) {
+    if (selectedPartition() == NULL) {
         qWarning() << "selected partition: " << selectedPartition();
         return;
     }
@@ -619,12 +590,12 @@ void PartitionManagerWidget::onPastePartition()
     Q_ASSERT(selectedDevice());
     Q_ASSERT(selectedPartition());
 
-    if (selectedDevice() == nullptr || selectedPartition() == nullptr) {
+    if (selectedDevice() == NULL || selectedPartition() == NULL) {
         qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
         return;
     }
 
-    if (clipboardPartition() == nullptr) {
+    if (clipboardPartition() == NULL) {
         qWarning() << "no partition in the clipboard.";
         return;
     }
@@ -636,7 +607,7 @@ void PartitionManagerWidget::onPastePartition()
 
     Q_ASSERT(dSource);
 
-    if (dSource == nullptr) {
+    if (dSource == NULL) {
         qWarning() << "source partition is null.";
         return;
     }
@@ -654,7 +625,7 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
     Q_ASSERT(selectedDevice());
     Q_ASSERT(selectedPartition());
 
-    if (selectedDevice() == nullptr || selectedPartition() == nullptr) {
+    if (selectedDevice() == NULL || selectedPartition() == NULL) {
         qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
         return false;
     }
@@ -710,7 +681,7 @@ void PartitionManagerWidget::onCheckPartition()
     Q_ASSERT(selectedDevice());
     Q_ASSERT(selectedPartition());
 
-    if (selectedDevice() == nullptr || selectedPartition() == nullptr) {
+    if (selectedDevice() == NULL || selectedPartition() == NULL) {
         qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
         return;
     }
@@ -723,7 +694,7 @@ void PartitionManagerWidget::onBackupPartition()
     Q_ASSERT(selectedDevice());
     Q_ASSERT(selectedPartition());
 
-    if (selectedDevice() == nullptr || selectedPartition() == nullptr) {
+    if (selectedDevice() == NULL || selectedPartition() == NULL) {
         qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
         return;
     }
@@ -743,7 +714,7 @@ void PartitionManagerWidget::onRestorePartition()
     Q_ASSERT(selectedDevice());
     Q_ASSERT(selectedPartition());
 
-    if (selectedDevice() == nullptr || selectedPartition() == nullptr) {
+    if (selectedDevice() == NULL || selectedPartition() == NULL) {
         qWarning() << "selected device: " << selectedDevice() << ", selected partition: " << selectedPartition();
         return;
     }
