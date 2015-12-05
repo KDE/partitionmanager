@@ -27,6 +27,7 @@
 #include <QCommandLineParser>
 
 #include <KAboutData>
+#include <KCrash>
 #include <Kdelibs4ConfigMigrator>
 #include <KMessageBox>
 #include <KLocalizedString>
@@ -60,6 +61,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     aboutData->addCredit(i18n("Hugo Pereira Da Costa"), i18nc("@info:credit", "Partition Widget Design"), QStringLiteral("hugo@oxygen-icons.org"));
     KAboutData::setApplicationData(*aboutData);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+    KCrash::initialize();
 
     QCommandLineParser parser;
     parser.setApplicationDescription(aboutData->shortDescription());
