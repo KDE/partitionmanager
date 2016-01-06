@@ -21,8 +21,6 @@
 
 #include <kpmcore/core/operationstack.h>
 
-#include "util/libpartitionmanagerguiexport.h"
-
 #include "ui_listoperationsbase.h"
 
 #include <QWidget>
@@ -35,7 +33,7 @@ class KActionCollection;
 
     @author Volker Lanz <vl@fidra.de>
 */
-class LIBKPMGUI_EXPORT ListOperations : public QWidget, public Ui::ListOperationsBase
+class ListOperations : public QWidget, public Ui::ListOperationsBase
 {
     Q_OBJECT
     Q_DISABLE_COPY(ListOperations)

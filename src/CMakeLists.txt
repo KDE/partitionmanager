@@ -19,22 +19,25 @@ include(config/CMakeLists.txt)
 include(gui/CMakeLists.txt)
 include(util/CMakeLists.txt)
 
-set(kpmgui_SRCS
+set(partitionmanager_SRCS
+	main.cpp
 	${CONFIG_SRC}
 	${GUI_SRC}
 	${UTIL_SRC}
 )
 
-file(GLOB kpmgui_UIFILES config/*.ui gui/*.ui)
+file(GLOB partitionmanager_UIFILES config/*.ui gui/*.ui)
 
-ki18n_wrap_ui(kpmgui_SRCS ${kpmgui_UIFILES})
+ki18n_wrap_ui(partitionmanager_SRCS ${partitionmanager_UIFILES})
 
-kconfig_add_kcfg_files(kpmgui_SRCS config.kcfgc)
+kconfig_add_kcfg_files(partitionmanager_SRCS config.kcfgc)
 install(FILES partitionmanager.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 
-add_library(kpmgui SHARED ${kpmgui_SRCS})
-generate_export_header(kpmgui EXPORT_FILE_NAME libpartitionmanagergui_export.h)
-target_link_libraries( kpmgui ${BLKID_LIBRARIES}
+############################################
+
+add_executable(partitionmanager ${partitionmanager_SRCS} )
+
+target_link_libraries( partitionmanager ${BLKID_LIBRARIES}
 	kpmcore
 	KF5::ConfigCore
 	KF5::ConfigGui
@@ -46,14 +49,6 @@ target_link_libraries( kpmgui ${BLKID_LIBRARIES}
 	KF5::WidgetsAddons
 	KF5::XmlGui
 )
-
-install(TARGETS kpmgui ${INSTALL_TARGETS_DEFAULT_ARGS})
-
-############################################
-
-add_executable(partitionmanager main.cpp)
-
-target_link_libraries(partitionmanager kpmgui)
 
 install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.PartitionManager.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata)

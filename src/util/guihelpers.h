@@ -19,16 +19,14 @@
 
 #define GUIHELPERS__H
 
-#include "util/libpartitionmanagerguiexport.h"
-
 #include <kpmcore/fs/filesystem.h>
 #include <kpmcore/util/capacity.h>
 
 class QString;
 class QIcon;
 
-LIBKPMGUI_EXPORT bool checkPermissions();
-LIBKPMGUI_EXPORT bool loadBackend();
+bool checkPermissions();
+bool loadBackend();
 QIcon createFileSystemColor(FileSystem::Type type, quint32 size);
 Capacity::Unit preferredUnit();
 namespace GuiHelpers

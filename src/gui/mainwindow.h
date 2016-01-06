@@ -23,8 +23,6 @@
 #include <kpmcore/core/operationstack.h>
 #include <kpmcore/core/devicescanner.h>
 
-#include "util/libpartitionmanagerguiexport.h"
-
 #include "ui_mainwindowbase.h"
 
 #include <KXmlGuiWindow>
@@ -46,7 +44,7 @@ class QEvent;
 
     @author Volker Lanz <vl@fidra.de>
 */
-class LIBKPMGUI_EXPORT MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
+class MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
 {
     Q_OBJECT
     Q_DISABLE_COPY(MainWindow)

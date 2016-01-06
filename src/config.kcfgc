@@ -2,7 +2,5 @@ File=partitionmanager.kcfg
 ClassName=Config
 Singleton=true
 Mutators=true
-Visibility=LIBKPMGUI_EXPORT
-IncludeFiles=\"util/libpartitionmanagerguiexport.h\"
 ItemAccessors=true
 SetUserTexts=true
