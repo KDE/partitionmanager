@@ -23,30 +23,30 @@
 #include "gui/insertdialog.h"
 #include "gui/editmountpointdialog.h"
 
-#include <kpmcore/core/partition.h>
-#include <kpmcore/core/device.h>
-#include <kpmcore/core/operationstack.h>
-#include <kpmcore/core/partitiontable.h>
+#include <core/partition.h>
+#include <core/device.h>
+#include <core/operationstack.h>
+#include <core/partitiontable.h>
 
-#include <kpmcore/fs/filesystemfactory.h>
+#include <fs/filesystemfactory.h>
 
-#include <kpmcore/gui/partwidget.h>
+#include <gui/partwidget.h>
 
-#include <kpmcore/ops/deleteoperation.h>
-#include <kpmcore/ops/resizeoperation.h>
-#include <kpmcore/ops/newoperation.h>
-#include <kpmcore/ops/copyoperation.h>
-#include <kpmcore/ops/checkoperation.h>
-#include <kpmcore/ops/backupoperation.h>
-#include <kpmcore/ops/restoreoperation.h>
-#include <kpmcore/ops/setfilesystemlabeloperation.h>
-#include <kpmcore/ops/setpartflagsoperation.h>
-#include <kpmcore/ops/createfilesystemoperation.h>
+#include <ops/deleteoperation.h>
+#include <ops/resizeoperation.h>
+#include <ops/newoperation.h>
+#include <ops/copyoperation.h>
+#include <ops/checkoperation.h>
+#include <ops/backupoperation.h>
+#include <ops/restoreoperation.h>
+#include <ops/setfilesystemlabeloperation.h>
+#include <ops/setpartflagsoperation.h>
+#include <ops/createfilesystemoperation.h>
 
-#include <kpmcore/util/globallog.h>
-#include <kpmcore/util/capacity.h>
-#include <kpmcore/util/report.h>
-#include <kpmcore/util/helpers.h>
+#include <util/globallog.h>
+#include <util/capacity.h>
+#include <util/report.h>
+#include <util/helpers.h>
 #include "util/guihelpers.h"
 
 #include <QCursor>

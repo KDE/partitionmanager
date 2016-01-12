@@ -17,7 +17,7 @@
 
 #include "util/guihelpers.h"
 
-#include <kpmcore/backend/corebackendmanager.h>
+#include <backend/corebackendmanager.h>
 
 #include <QApplication>
 #include <QFileInfo>

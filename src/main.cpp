@@ -17,10 +17,10 @@
 
 #include "gui/mainwindow.h"
 
-#include <kpmcore/backend/corebackend.h>
-#include <kpmcore/backend/corebackendmanager.h>
+#include <backend/corebackend.h>
+#include <backend/corebackendmanager.h>
 
-#include <kpmcore/util/helpers.h>
+#include <util/helpers.h>
 #include "util/guihelpers.h"
 
 #include <QApplication>

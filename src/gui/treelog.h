@@ -21,7 +21,7 @@
 
 #include "ui_treelogbase.h"
 
-#include <kpmcore/util/globallog.h>
+#include <util/globallog.h>
 
 #include <QWidget>
 

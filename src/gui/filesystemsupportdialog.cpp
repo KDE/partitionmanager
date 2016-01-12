@@ -18,8 +18,8 @@
 #include "gui/filesystemsupportdialog.h"
 #include "gui/filesystemsupportdialogwidget.h"
 
-#include <kpmcore/fs/filesystem.h>
-#include <kpmcore/fs/filesystemfactory.h>
+#include <fs/filesystem.h>
+#include <fs/filesystemfactory.h>
 
 #include <QDialogButtonBox>
 #include <QDialog>

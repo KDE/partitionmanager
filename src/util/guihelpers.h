@@ -19,8 +19,8 @@
 
 #define GUIHELPERS__H
 
-#include <kpmcore/fs/filesystem.h>
-#include <kpmcore/util/capacity.h>
+#include <fs/filesystem.h>
+#include <util/capacity.h>
 
 class QString;
 class QIcon;

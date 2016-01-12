@@ -26,28 +26,28 @@
 
 #include "config/configureoptionsdialog.h"
 
-#include <kpmcore/backend/corebackendmanager.h>
-#include <kpmcore/backend/corebackend.h>
+#include <backend/corebackendmanager.h>
+#include <backend/corebackend.h>
 
-#include <kpmcore/core/device.h>
-#include <kpmcore/core/partition.h>
-#include <kpmcore/core/partitionalignment.h>
-#include <kpmcore/core/smartstatus.h>
+#include <core/device.h>
+#include <core/partition.h>
+#include <core/partitionalignment.h>
+#include <core/smartstatus.h>
 
-#include <kpmcore/ops/operation.h>
-#include <kpmcore/ops/createpartitiontableoperation.h>
-#include <kpmcore/ops/resizeoperation.h>
-#include <kpmcore/ops/copyoperation.h>
-#include <kpmcore/ops/deleteoperation.h>
-#include <kpmcore/ops/newoperation.h>
-#include <kpmcore/ops/backupoperation.h>
-#include <kpmcore/ops/restoreoperation.h>
-#include <kpmcore/ops/checkoperation.h>
+#include <ops/operation.h>
+#include <ops/createpartitiontableoperation.h>
+#include <ops/resizeoperation.h>
+#include <ops/copyoperation.h>
+#include <ops/deleteoperation.h>
+#include <ops/newoperation.h>
+#include <ops/backupoperation.h>
+#include <ops/restoreoperation.h>
+#include <ops/checkoperation.h>
 
-#include <kpmcore/fs/filesystem.h>
-#include <kpmcore/fs/filesystemfactory.h>
+#include <fs/filesystem.h>
+#include <fs/filesystemfactory.h>
 
-#include <kpmcore/util/helpers.h>
+#include <util/helpers.h>
 #include "util/guihelpers.h"
 
 #include <QApplication>

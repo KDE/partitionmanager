@@ -20,14 +20,14 @@
 #include "gui/applyprogressdialogwidget.h"
 #include "gui/applyprogressdetailswidget.h"
 
-#include <kpmcore/core/operationrunner.h>
+#include <core/operationrunner.h>
 
-#include <kpmcore/ops/operation.h>
+#include <ops/operation.h>
 
-#include <kpmcore/jobs/job.h>
+#include <jobs/job.h>
 
-#include <kpmcore/util/report.h>
-#include <kpmcore/util/htmlreport.h>
+#include <util/report.h>
+#include <util/htmlreport.h>
 
 #include <QApplication>
 #include <QCloseEvent>

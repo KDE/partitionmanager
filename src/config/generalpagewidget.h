@@ -21,7 +21,7 @@
 
 #include "ui_configurepagegeneral.h"
 
-#include <kpmcore/fs/filesystem.h>
+#include <fs/filesystem.h>
 
 #include <QWidget>
 

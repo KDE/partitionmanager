@@ -22,9 +22,9 @@ set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 set(KDE_INSTALL_USE_QT_SYS_PATHS ON CACHE BOOL "Install mkspecs files, Plugins and Imports to the Qt 5 install dir" FORCE)
 
 set(QT_MIN_VERSION "5.4.1")
-set(VERSION_MAJOR "1")
-set(VERSION_MINOR "9")
-set(VERSION_RELEASE "50")
+set(VERSION_MAJOR "2")
+set(VERSION_MINOR "0")
+set(VERSION_RELEASE "0")
 set(VERSION_SUFFIX "")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE}${VERSION_SUFFIX})
 add_definitions(-D'VERSION="${VERSION}"') #"
@@ -73,11 +73,11 @@ add_definitions(
 )
 
 find_package(PkgConfig REQUIRED)
-find_package(KPMcore CONFIG REQUIRED)
+find_package(KPMcore 2.0.0 CONFIG REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
 pkg_check_modules(LIBATASMART REQUIRED libatasmart)
 
-include_directories(${Qt5Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} lib/ src/)
+include_directories(${Qt5Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} ${KPMCORE_INCLUDE_DIR} lib/ src/)
 
 add_subdirectory(src)
 add_subdirectory(icons)

@@ -20,14 +20,14 @@
 #include "config/filesystemcolorspagewidget.h"
 #include "config/advancedpagewidget.h"
 
-#include <kpmcore/backend/corebackendmanager.h>
+#include <backend/corebackendmanager.h>
 
-#include <kpmcore/core/operationstack.h>
+#include <core/operationstack.h>
 
-#include <kpmcore/fs/filesystem.h>
-#include <kpmcore/fs/filesystemfactory.h>
+#include <fs/filesystem.h>
+#include <fs/filesystemfactory.h>
 
-#include <kpmcore/util/helpers.h>
+#include <util/helpers.h>
 #include "util/guihelpers.h"
 
 #include "ui_configurepagefilesystemcolors.h"

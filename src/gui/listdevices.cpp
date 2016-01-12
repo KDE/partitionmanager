@@ -17,10 +17,10 @@
 
 #include "gui/listdevices.h"
 
-#include <kpmcore/core/device.h>
+#include <core/device.h>
 
-#include <kpmcore/util/globallog.h>
-#include <kpmcore/util/capacity.h>
+#include <util/globallog.h>
+#include <util/capacity.h>
 
 #include <KIconLoader>
 

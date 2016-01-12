@@ -19,9 +19,9 @@
 #include "util/guihelpers.h"
 #include "mainwindow.h"
 
-#include <kpmcore/core/partitiontable.h>
+#include <core/partitiontable.h>
 
-#include <kpmcore/gui/partwidget.h>
+#include <gui/partwidget.h>
 
 #include <QApplication>
 #include <QMouseEvent>

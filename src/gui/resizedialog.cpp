@@ -18,14 +18,14 @@
 #include "gui/resizedialog.h"
 #include "gui/sizedialogwidget.h"
 
-#include <kpmcore/core/partition.h>
-#include <kpmcore/core/device.h>
+#include <core/partition.h>
+#include <core/device.h>
 
-#include <kpmcore/fs/filesystem.h>
+#include <fs/filesystem.h>
 
-#include <kpmcore/ops/resizeoperation.h>
+#include <ops/resizeoperation.h>
 
-#include <kpmcore/util/capacity.h>
+#include <util/capacity.h>
 
 #include <KConfigGroup>
 #include <KLocalizedString>

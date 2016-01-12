@@ -19,8 +19,8 @@
 
 #include "gui/partitionmanagerwidget.h"
 
-#include <kpmcore/util/globallog.h>
-#include <kpmcore/util/helpers.h>
+#include <util/globallog.h>
+#include <util/helpers.h>
 
 #include <QDateTime>
 #include <QDebug>

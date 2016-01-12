@@ -21,14 +21,14 @@
 
 #include "util/guihelpers.h"
 
-#include <kpmcore/core/partitiontable.h>
-#include <kpmcore/core/device.h>
-#include <kpmcore/core/partition.h>
-#include <kpmcore/core/partitionalignment.h>
+#include <core/partitiontable.h>
+#include <core/device.h>
+#include <core/partition.h>
+#include <core/partitionalignment.h>
 
-#include <kpmcore/gui/partresizerwidget.h>
+#include <gui/partresizerwidget.h>
 
-#include <kpmcore/util/capacity.h>
+#include <util/capacity.h>
 
 #include <KLocalizedString>
 

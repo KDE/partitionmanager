@@ -18,10 +18,10 @@
 #include "gui/editmountpointdialogwidget.h"
 #include "gui/editmountoptionsdialog.h"
 
-#include <kpmcore/core/partition.h>
-#include <kpmcore/core/mountentry.h>
+#include <core/partition.h>
+#include <core/mountentry.h>
 
-#include <kpmcore/fs/filesystem.h>
+#include <fs/filesystem.h>
 
 #include <KLocalizedString>
 #include <KIOCore/KMountPoint>

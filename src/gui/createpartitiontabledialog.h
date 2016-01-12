@@ -21,7 +21,7 @@
 
 #include "gui/createpartitiontablewidget.h"
 
-#include <kpmcore/core/partitiontable.h>
+#include <core/partitiontable.h>
 
 #include <QDialog>
 

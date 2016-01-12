@@ -19,7 +19,7 @@
 
 #define PARTTABLEWIDGET__H
 
-#include <kpmcore/gui/partwidgetbase.h>
+#include <gui/partwidgetbase.h>
 
 #include <QList>
 #include <QLabel>

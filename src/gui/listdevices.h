@@ -19,7 +19,7 @@
 
 #define LISTDEVICES__H
 
-#include <kpmcore/core/operationstack.h>
+#include <core/operationstack.h>
 
 #include "ui_listdevicesbase.h"
 

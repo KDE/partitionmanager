@@ -19,9 +19,9 @@
 
 #define MAINWINDOW__H
 
-#include <kpmcore/core/operationrunner.h>
-#include <kpmcore/core/operationstack.h>
-#include <kpmcore/core/devicescanner.h>
+#include <core/operationrunner.h>
+#include <core/operationstack.h>
+#include <core/devicescanner.h>
 
 #include "ui_mainwindowbase.h"
 

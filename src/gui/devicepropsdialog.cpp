@@ -20,12 +20,12 @@
 
 #include "gui/smartdialog.h"
 
-#include <kpmcore/core/device.h>
-#include <kpmcore/core/partitiontable.h>
-#include <kpmcore/core/smartstatus.h>
+#include <core/device.h>
+#include <core/partitiontable.h>
+#include <core/smartstatus.h>
 
-#include <kpmcore/util/capacity.h>
-#include <kpmcore/util/helpers.h>
+#include <util/capacity.h>
+#include <util/helpers.h>
 
 #include <KLocalizedString>
 #include <KSharedConfig>
