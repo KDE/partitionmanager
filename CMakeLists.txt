@@ -73,6 +73,7 @@ add_definitions(
 )
 
 find_package(KPMcore 2.0.0 CONFIG REQUIRED)
+pkg_check_modules(BLKID REQUIRED blkid)
 
 include_directories(${Qt5Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} ${KPMCORE_INCLUDE_DIR} lib/ src/)
 
