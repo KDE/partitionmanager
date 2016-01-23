@@ -72,10 +72,7 @@ add_definitions(
   -DQT_USE_FAST_OPERATOR_PLUS
 )
 
-find_package(PkgConfig REQUIRED)
 find_package(KPMcore 2.0.0 CONFIG REQUIRED)
-pkg_check_modules(BLKID REQUIRED blkid)
-pkg_check_modules(LIBATASMART REQUIRED libatasmart)
 
 include_directories(${Qt5Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} ${KPMCORE_INCLUDE_DIR} lib/ src/)
 
