@@ -72,6 +72,7 @@ add_definitions(
   -DQT_USE_FAST_OPERATOR_PLUS
 )
 
+find_package(PkgConfig REQUIRED)
 find_package(KPMcore 2.0.0 CONFIG REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
 
