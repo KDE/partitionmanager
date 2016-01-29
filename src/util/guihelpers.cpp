@@ -111,7 +111,8 @@ bool loadBackend()
 
 QString suCommand()
 {
-    const QString candidates[] = { QStringLiteral("kdesu"), QStringLiteral("kdesudo"), QStringLiteral("gksudo"), QStringLiteral("gksu") };
+    QString kdesuPath = QLatin1String(CMAKE_INSTALL_FULL_LIBEXECDIR_KF5) + QStringLiteral("/kdesu");
+    const QString candidates[] = { kdesuPath, QStringLiteral("kdesu"), QStringLiteral("kdesudo"), QStringLiteral("gksudo"), QStringLiteral("gksu") };
     QString rval;
 
     for (quint32 i = 0; i < sizeof(candidates) / sizeof(candidates[0]); i++) {

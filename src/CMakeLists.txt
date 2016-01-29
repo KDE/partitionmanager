@@ -37,7 +37,7 @@ install(FILES partitionmanager.kcfg DESTINATION ${KCFG_INSTALL_DIR})
 
 add_executable(partitionmanager ${partitionmanager_SRCS} )
 
-target_link_libraries( partitionmanager ${BLKID_LIBRARIES}
+target_link_libraries(partitionmanager ${BLKID_LIBRARIES}
 	kpmcore
 	KF5::ConfigCore
 	KF5::ConfigGui
@@ -49,6 +49,8 @@ target_link_libraries( partitionmanager ${BLKID_LIBRARIES}
 	KF5::WidgetsAddons
 	KF5::XmlGui
 )
+
+target_compile_definitions(partitionmanager PRIVATE -DCMAKE_INSTALL_FULL_LIBEXECDIR_KF5=\"${CMAKE_INSTALL_FULL_LIBEXECDIR_KF5}\")
 
 install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/org.kde.PartitionManager.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata)
