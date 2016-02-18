@@ -975,12 +975,12 @@ void MainWindow::onPropertiesDevice(const QString&)
     }
 }
 
-static QStringList checkSupportInNode(const PartitionNode* parent)
+static KLocalizedString checkSupportInNode(const PartitionNode* parent)
 {
     if (parent == NULL)
-        return QStringList();
+        return KLocalizedString();
 
-    QStringList rval;
+    KLocalizedString rval;
 
     foreach(const PartitionNode * node, parent->children()) {
         const Partition* p = dynamic_cast<const Partition*>(node);
@@ -989,19 +989,19 @@ static QStringList checkSupportInNode(const PartitionNode* parent)
             continue;
 
         if (node->children().size() > 0)
-            rval << checkSupportInNode(node);
+            rval = kxi18n("%1 %2").subs(rval).subs(checkSupportInNode(node));
 
         if (!p->fileSystem().supportToolFound() && !p->fileSystem().supportToolName().name.isEmpty())
-            rval << QStringLiteral("<tr>"
+            rval = kxi18n("%1 %2").subs(rval).subs(kxi18n("<tr>"
                                    "<td>%1</td>"
                                    "<td>%2</td>"
                                    "<td>%3</td>"
                                    "<td><a href=\"%4\">%4</a></td>"
                                    "</tr>")
-                 .arg(p->deviceNode())
-                 .arg(p->fileSystem().name())
-                 .arg(p->fileSystem().supportToolName().name)
-                 .arg(p->fileSystem().supportToolName().url.toString());
+                 .subs(p->deviceNode())
+                 .subs(p->fileSystem().name())
+                 .subs(p->fileSystem().supportToolName().name)
+                 .subs(p->fileSystem().supportToolName().url.toString()));
     }
 
     return rval;
@@ -1009,19 +1009,18 @@ static QStringList checkSupportInNode(const PartitionNode* parent)
 
 void MainWindow::checkFileSystemSupport()
 {
-    QStringList supportList;
+    KLocalizedString supportList, supportInNode;
+    bool missingSupportTools = false;
 
-    foreach(const Device * d, operationStack().previewDevices())
-    supportList << checkSupportInNode(d->partitionTable());
+    foreach(const Device * d, operationStack().previewDevices()) {
+        supportInNode = checkSupportInNode(d->partitionTable());
+        if (!supportInNode.isEmpty()) {
+            missingSupportTools = true;
+            supportList = kxi18n("%1 %2").subs(supportList).subs(supportInNode);
+        }
+    }
 
-    QCollator m_collator;
-    m_collator.setNumericMode(true);
-    m_collator.setCaseSensitivity(Qt::CaseSensitive);
-    std::sort(supportList.begin(), supportList.end(), [&m_collator](QString a, QString b) {
-        return m_collator.compare(a, b) < 0;
-    });
-
-    if (!supportList.isEmpty())
+    if (missingSupportTools)
         KMessageBox::information(this,
                                  xi18nc("@info",
                                         "<para>No support tools were found for file systems currently present on hard disks in this computer:</para>"
@@ -1036,7 +1035,7 @@ void MainWindow::checkFileSystemSupport()
                                         "</table>"
                                         "<para>As long as the support tools for these file systems are not installed you will not be able to modify them.</para>"
                                         "<para>You should find packages with these support tools in your distribution's package manager.</para>",
-                                        supportList.join(QStringLiteral("\n"))),
+                                        supportList),
                                  i18nc("@title:window", "Missing File System Support Packages"),
                                  QStringLiteral("showInformationOnMissingFileSystemSupport"), KMessageBox::Notify | KMessageBox::AllowLink);
 }
