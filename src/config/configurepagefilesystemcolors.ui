@@ -632,6 +632,22 @@
       <item row="7" column="1">
        <widget class="KColorButton" name="kcfg_fileSystemColorCode24"/>
       </item>
+      <item row="7" column="3">
+       <widget class="QLabel" name="textLabel_29">
+        <property name="text">
+         <string>f2fs:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="4">
+       <widget class="KColorButton" name="kcfg_fileSystemColorCode25"/>
+      </item>
      </layout>
     </widget>
    </item>
