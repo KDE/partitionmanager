@@ -54,21 +54,6 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
             PartWidget* w = new PartWidget(this, p);
             w->setVisible(true);
             w->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());
-            MainWindow* mw = nullptr;
-            foreach( QWidget* widget, qApp->topLevelWidgets() )
-            {
-                mw = qobject_cast< MainWindow* >( widget );
-                if ( mw )
-                    break;
-            }
-            if ( mw )
-            {
-                connect( mw, &MainWindow::settingsChanged,
-                         this, [w]
-                {
-                    w->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());
-                });
-            }
         }
     }
 
