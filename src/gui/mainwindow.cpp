@@ -989,10 +989,10 @@ static KLocalizedString checkSupportInNode(const PartitionNode* parent)
             continue;
 
         if (node->children().size() > 0)
-            rval = kxi18n("%1 %2").subs(rval).subs(checkSupportInNode(node));
+            rval = kxi18n("%1%2").subs(rval).subs(checkSupportInNode(node));
 
         if (!p->fileSystem().supportToolFound() && !p->fileSystem().supportToolName().name.isEmpty())
-            rval = kxi18n("%1 %2").subs(rval).subs(kxi18n("<tr>"
+            rval = kxi18n("%1%2").subs(rval).subs(kxi18n("<tr>"
                                    "<td>%1</td>"
                                    "<td>%2</td>"
                                    "<td>%3</td>"
@@ -1014,9 +1014,9 @@ void MainWindow::checkFileSystemSupport()
 
     foreach(const Device * d, operationStack().previewDevices()) {
         supportInNode = checkSupportInNode(d->partitionTable());
-        if (!supportInNode.isEmpty()) {
+        if (supportInNode.toString() != QStringLiteral()) {
             missingSupportTools = true;
-            supportList = kxi18n("%1 %2").subs(supportList).subs(supportInNode);
+            supportList = kxi18n("%1%2").subs(supportList).subs(supportInNode);
         }
     }
 
