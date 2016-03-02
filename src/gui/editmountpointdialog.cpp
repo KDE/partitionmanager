@@ -1,6 +1,7 @@
 /*************************************************************************
  *  Copyright (C) 2009, 2010 by Volker Lanz <vl@fidra.de>                *
  *  Copyright (C) 2015 by Teo Mrnjavac <teo@kde.org>                     *
+ *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
