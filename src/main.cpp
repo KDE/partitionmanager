@@ -50,7 +50,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
         QStringLiteral(VERSION),
         i18nc("@title", "Manage your disks, partitions and file systems"),
         KAboutLicense::GPL_V3,
-        i18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2015 Andrius Štikonas"));
+        i18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2016 Andrius Štikonas"));
     aboutData->setOrganizationDomain(QByteArray("kde.org"));
     aboutData->setProductName(QByteArray("partitionmanager"));
 
@@ -59,6 +59,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     aboutData->setHomepage(QStringLiteral("https://www.kde.org/applications/system/kdepartitionmanager"));
 
     aboutData->addCredit(i18n("Hugo Pereira Da Costa"), i18nc("@info:credit", "Partition Widget Design"), QStringLiteral("hugo@oxygen-icons.org"));
+    aboutData->addCredit(i18n("Teo Mrnjavac"), i18nc("@info:credit", "Calamares developer"), QStringLiteral("teo@kde.org"));
     KAboutData::setApplicationData(*aboutData);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     KCrash::initialize();
