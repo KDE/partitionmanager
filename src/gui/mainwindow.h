@@ -51,7 +51,7 @@ class MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
     Q_DISABLE_COPY(MainWindow)
 
 public:
-    explicit MainWindow(QWidget* parent = NULL);
+    explicit MainWindow(QWidget* parent = nullptr);
 
 Q_SIGNALS:
     void settingsChanged();

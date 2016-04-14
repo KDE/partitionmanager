@@ -34,7 +34,7 @@
 */
 PartTableWidget::PartTableWidget(QWidget* parent) :
     PartWidgetBase(parent),
-    m_PartitionTable(NULL),
+    m_PartitionTable(nullptr),
     m_LabelEmpty(i18nc("@info", "Please select a device."), this),
     m_ReadOnly(false)
 {
@@ -42,7 +42,7 @@ PartTableWidget::PartTableWidget(QWidget* parent) :
 }
 
 /** Sets the PartitionTable this widget shows.
-    @param ptable pointer to the PartitionTable to show. Must not be NULL.
+    @param ptable pointer to the PartitionTable to show. Must not be nullptr.
 */
 void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 {
@@ -50,7 +50,7 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 
     m_PartitionTable = ptable;
 
-    if (partitionTable() != NULL) {
+    if (partitionTable() != nullptr) {
         foreach(const Partition * p, partitionTable()->children()) {
             PartWidget* w = new PartWidget(this, p);
             w->setVisible(true);
@@ -76,7 +76,7 @@ PartWidget* PartTableWidget::activeWidget()
     if (pw->isActive())
         return pw;
 
-    return NULL;
+    return nullptr;
 }
 
 const PartWidget* PartTableWidget::activeWidget() const
@@ -85,11 +85,11 @@ const PartWidget* PartTableWidget::activeWidget() const
     if (pw->isActive())
         return pw;
 
-    return NULL;
+    return nullptr;
 }
 
 /** Sets a widget active.
-    @param p pointer to the PartWidget to set active. May be NULL.
+    @param p pointer to the PartWidget to set active. May be nullptr.
 */
 void PartTableWidget::setActiveWidget(PartWidget* p)
 {
@@ -99,7 +99,7 @@ void PartTableWidget::setActiveWidget(PartWidget* p)
     if (activeWidget())
         activeWidget()->setActive(false);
 
-    if (p != NULL)
+    if (p != nullptr)
         p->setActive(true);
 
     emit itemSelectionChanged(p);
@@ -108,7 +108,7 @@ void PartTableWidget::setActiveWidget(PartWidget* p)
 }
 
 /** Sets a widget for the given Partition active.
-    @param p pointer to the Partition whose widget is to be set active. May be NULL.
+    @param p pointer to the Partition whose widget is to be set active. May be nullptr.
 */
 void PartTableWidget::setActivePartition(const Partition* p)
 {
@@ -121,15 +121,15 @@ void PartTableWidget::setActivePartition(const Partition* p)
         return;
     }
 
-    setActiveWidget(NULL);
+    setActiveWidget(nullptr);
 }
 
 /** Clears the PartTableWidget.
 */
 void PartTableWidget::clear()
 {
-    setActiveWidget(NULL);
-    m_PartitionTable = NULL;
+    setActiveWidget(nullptr);
+    m_PartitionTable = nullptr;
 
     // we might have been invoked indirectly via a widget's context menu, so
     // that its event handler is currently running. therefore, do not delete
@@ -138,7 +138,7 @@ void PartTableWidget::clear()
     foreach(PartWidget * p, childWidgets()) {
         p->setVisible(false);
         p->deleteLater();
-        p->setParent(NULL);
+        p->setParent(nullptr);
     }
 
     update();
@@ -146,7 +146,7 @@ void PartTableWidget::clear()
 
 void PartTableWidget::resizeEvent(QResizeEvent*)
 {
-    if (partitionTable() == NULL || childWidgets().isEmpty())
+    if (partitionTable() == nullptr || childWidgets().isEmpty())
         labelEmpty().resize(size());
     else
         positionChildren(this, partitionTable()->children(), childWidgets());
@@ -171,6 +171,6 @@ void PartTableWidget::mouseDoubleClickEvent(QMouseEvent* event)
 
     const PartWidget* child = static_cast<PartWidget*>(childAt(event->pos()));
 
-    if (child != NULL)
+    if (child != nullptr)
         emit itemDoubleClicked(child);
 }

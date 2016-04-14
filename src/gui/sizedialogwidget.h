@@ -100,27 +100,27 @@ public:
 
     void hideRole() {
         delete m_LabelRole;
-        m_LabelRole = NULL;
+        m_LabelRole = nullptr;
         delete m_RadioPrimary;
-        m_RadioPrimary = NULL;
+        m_RadioPrimary = nullptr;
         delete m_RadioExtended;
-        m_RadioExtended = NULL;
+        m_RadioExtended = nullptr;
         delete m_RadioLogical;
-        m_RadioLogical = NULL;
+        m_RadioLogical = nullptr;
     }
     void hideFileSystem() {
         delete m_LabelFileSystem;
-        m_LabelFileSystem = NULL;
+        m_LabelFileSystem = nullptr;
         delete m_ComboFileSystem;
-        m_ComboFileSystem = NULL;
+        m_ComboFileSystem = nullptr;
     }
     void hideLabel() {
         delete m_LabelTextLabel;
-        m_LabelTextLabel = NULL;
+        m_LabelTextLabel = nullptr;
         delete m_EditLabel;
-        m_EditLabel = NULL;
+        m_EditLabel = nullptr;
         delete m_LabelTextNoSetLabel;
-        m_LabelTextNoSetLabel = NULL;
+        m_LabelTextNoSetLabel = nullptr;
     }
 };
 

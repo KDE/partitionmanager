@@ -50,7 +50,7 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 {
     setFaceType(List);
 
-    KPageWidgetItem* item = NULL;
+    KPageWidgetItem* item = nullptr;
 
     item = addPage(&generalPageWidget(), i18nc("@title:tab general application settings", "General"), QString(), i18n("General Settings"));
     item->setIcon(QIcon::fromTheme(QStringLiteral("partitionmanager")).pixmap(IconSize(KIconLoader::Desktop)));

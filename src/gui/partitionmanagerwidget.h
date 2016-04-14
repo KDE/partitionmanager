@@ -44,7 +44,7 @@ class PartitionManagerWidget : public QWidget, Ui::PartitionManagerWidgetBase
     Q_DISABLE_COPY(PartitionManagerWidget)
 
 public:
-    PartitionManagerWidget(QWidget* parent = NULL);
+    PartitionManagerWidget(QWidget* parent = nullptr);
     virtual ~PartitionManagerWidget();
 
 Q_SIGNALS:

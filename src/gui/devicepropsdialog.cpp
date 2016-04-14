@@ -82,7 +82,7 @@ void DevicePropsDialog::setupDialog()
     QString type = QStringLiteral("---");
     QString maxPrimaries = QStringLiteral("---");
 
-    if (device().partitionTable() != NULL) {
+    if (device().partitionTable() != nullptr) {
         type = (device().partitionTable()->isReadOnly())
                ? i18nc("@label device", "%1 (read only)", device().partitionTable()->typeName())
                : device().partitionTable()->typeName();

@@ -36,7 +36,7 @@ class TreeLog: public QWidget, public Ui::TreeLogBase
     Q_DISABLE_COPY(TreeLog)
 
 public:
-    TreeLog(QWidget* parent = NULL);
+    TreeLog(QWidget* parent = nullptr);
     ~TreeLog();
 
 Q_SIGNALS:

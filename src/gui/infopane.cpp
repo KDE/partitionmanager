@@ -150,7 +150,7 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
     QString type = QStringLiteral("---");
     QString maxPrimaries = QStringLiteral("---");
 
-    if (d.partitionTable() != NULL) {
+    if (d.partitionTable() != nullptr) {
         type = (d.partitionTable()->isReadOnly())
                ? i18nc("@label device", "%1 (read only)", d.partitionTable()->typeName())
                : d.partitionTable()->typeName();

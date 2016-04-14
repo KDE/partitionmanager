@@ -50,8 +50,8 @@ public:
 public:
     void setPartitionTable(const PartitionTable* ptable);
 
-    PartWidget* activeWidget(); /**< @return the active widget or NULL if none */
-    const PartWidget* activeWidget() const; /**< @return the active widget or NULL if none */
+    PartWidget* activeWidget(); /**< @return the active widget or nullptr if none */
+    const PartWidget* activeWidget() const; /**< @return the active widget or nullptr if none */
 
     void setActiveWidget(PartWidget* partWidget);
     void setActivePartition(const Partition* p);

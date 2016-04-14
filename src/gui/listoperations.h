@@ -39,7 +39,7 @@ class ListOperations : public QWidget, public Ui::ListOperationsBase
     Q_DISABLE_COPY(ListOperations)
 
 public:
-    ListOperations(QWidget* parent = NULL);
+    ListOperations(QWidget* parent = nullptr);
 
 Q_SIGNALS:
     void contextMenuRequested(const QPoint&);
