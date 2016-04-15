@@ -24,6 +24,7 @@
 #include <core/device.h>
 
 #include <fs/filesystemfactory.h>
+#include <fs/luks.h>
 
 #include <util/capacity.h>
 #include <util/helpers.h>
@@ -65,14 +66,16 @@ NewDialog::~NewDialog()
 void NewDialog::setupDialog()
 {
     QStringList fsNames;
-    foreach(const FileSystem * fs, FileSystemFactory::map())
-    if (fs->supportCreate() != FileSystem::cmdSupportNone && fs->type() != FileSystem::Extended)
-        fsNames.append(fs->name());
+    foreach (const FileSystem * fs, FileSystemFactory::map())
+        if (fs->supportCreate() != FileSystem::cmdSupportNone &&
+            fs->type() != FileSystem::Extended &&
+            fs->type() != FileSystem::Luks)
+            fsNames.append(fs->name());
 
     qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    foreach(const QString & fsName, fsNames)
-    dialogWidget().comboFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
+    foreach (const QString & fsName, fsNames)
+        dialogWidget().comboFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     QString selected = FileSystem::nameForType(GuiHelpers::defaultFileSystem());
     const int idx = dialogWidget().comboFileSystem().findText(selected);
@@ -100,6 +103,7 @@ void NewDialog::setupConnections()
     connect(&dialogWidget().radioPrimary(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
     connect(&dialogWidget().radioExtended(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
     connect(&dialogWidget().radioLogical(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
+    connect(&dialogWidget().checkBoxEncrypt(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
     connect(&dialogWidget().comboFileSystem(), SIGNAL(currentIndexChanged(int)), SLOT(onFilesystemChanged(int)));
     connect(&dialogWidget().label(), SIGNAL(textChanged(const QString&)), SLOT(onLabelChanged(const QString&)));
 
@@ -110,7 +114,19 @@ void NewDialog::accept()
 {
     if (partition().roles().has(PartitionRole::Extended)) {
         partition().deleteFileSystem();
-        partition().setFileSystem(FileSystemFactory::create(FileSystem::Extended, partition().firstSector(), partition().lastSector()));
+        partition().setFileSystem(FileSystemFactory::create(FileSystem::Extended,
+                                                            partition().firstSector(),
+                                                            partition().lastSector()));
+    }
+    else if (partition().roles().has(PartitionRole::LUKS)) {
+        FileSystem::Type innerFsType = partition().fileSystem().type();
+        partition().deleteFileSystem();
+        FS::luks* luksFs = dynamic_cast< FS::luks* >(
+                               FileSystemFactory::create(FileSystem::Luks,
+                                                         partition().firstSector(),
+                                                         partition().lastSector()));
+        luksFs->createInnerFileSystem(innerFsType);
+        partition().setFileSystem(luksFs);
     }
 
     QDialog::accept();
@@ -126,6 +142,10 @@ void NewDialog::onRoleChanged(bool)
         r = PartitionRole::Extended;
     else if (dialogWidget().radioLogical().isChecked())
         r = PartitionRole::Logical;
+
+    if (dialogWidget().checkBoxEncrypt().isVisible() &&
+        dialogWidget().checkBoxEncrypt().isChecked())
+        r |= PartitionRole::LUKS;
 
     // Make sure an extended partition gets correctly displayed: Set its file system to extended.
     // Also make sure to set a primary's or logical's file system once the user goes back from
@@ -185,8 +205,16 @@ void NewDialog::updateHideAndShow()
         f.setAlpha(128);
         palette.setColor(QPalette::Foreground, f);
         dialogWidget().noSetLabel().setPalette(palette);
+        dialogWidget().checkBoxEncrypt().hide();
     } else {
         dialogWidget().label().setReadOnly(false);
         dialogWidget().noSetLabel().setVisible(false);
+        if (FS::luks::canEncryptType(
+                FileSystem::typeForName(dialogWidget()
+                                        .comboFileSystem()
+                                        .currentText())))
+            dialogWidget().checkBoxEncrypt().show();
+        else
+            dialogWidget().checkBoxEncrypt().hide();
     }
 }
