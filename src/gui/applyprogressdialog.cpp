@@ -69,12 +69,12 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
     m_ProgressDialogWidget(new ApplyProgressDialogWidget(this)),
     m_ProgressDetailsWidget(new ApplyProgressDetailsWidget(this)),
     m_OperationRunner(orunner),
-    m_Report(NULL),
+    m_Report(nullptr),
     m_SavedParentTitle(mainWindow(this)->windowTitle()),
     m_Timer(this),
     m_Time(),
-    m_CurrentOpItem(NULL),
-    m_CurrentJobItem(NULL),
+    m_CurrentOpItem(nullptr),
+    m_CurrentJobItem(nullptr),
     m_LastReportUpdate(0)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -158,7 +158,7 @@ void ApplyProgressDialog::show()
 void ApplyProgressDialog::resetReport()
 {
     delete m_Report;
-    m_Report = new Report(NULL);
+    m_Report = new Report(nullptr);
 
     detailsWidget().editReport().clear();
     detailsWidget().editReport().setCursorWidth(0);
@@ -286,7 +286,7 @@ void ApplyProgressDialog::onJobStarted(Job* job, Operation* op)
     for (qint32 i = 0; i < dialogWidget().treeTasks().topLevelItemCount(); i++) {
         QTreeWidgetItem* item = dialogWidget().treeTasks().topLevelItem(i);
 
-        if (item == NULL || reinterpret_cast<const Operation*>(item->data(0, Qt::UserRole).toULongLong()) != op)
+        if (item == nullptr || reinterpret_cast<const Operation*>(item->data(0, Qt::UserRole).toULongLong()) != op)
             continue;
 
         QTreeWidgetItem* child = new QTreeWidgetItem();
@@ -305,7 +305,7 @@ void ApplyProgressDialog::onJobFinished(Job* job, Operation* op)
     if (currentJobItem())
         currentJobItem()->setIcon(0, job->statusIcon());
 
-    setCurrentJobItem(NULL);
+    setCurrentJobItem(nullptr);
 
     const int current = dialogWidget().progressTotal().value();
     dialogWidget().progressTotal().setValue(current + 1);
@@ -321,7 +321,7 @@ void ApplyProgressDialog::onOpFinished(int num, Operation* op)
         currentOpItem()->setIcon(0, op->statusIcon());
     }
 
-    setCurrentOpItem(NULL);
+    setCurrentOpItem(nullptr);
 
     setStatus(op->description());
 

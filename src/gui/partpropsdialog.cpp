@@ -189,7 +189,7 @@ void PartPropsDialog::updateHideAndShow()
     // create a temporary fs for some checks
     const FileSystem* fs = FileSystemFactory::create(newFileSystemType(), -1, -1, -1, QString());
 
-    if (fs == NULL || fs->supportSetLabel() == FileSystem::cmdSupportNone) {
+    if (fs == nullptr || fs->supportSetLabel() == FileSystem::cmdSupportNone) {
         dialogWidget().label().setReadOnly(true);
         dialogWidget().noSetLabel().setVisible(true);
         dialogWidget().noSetLabel().setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
@@ -207,7 +207,7 @@ void PartPropsDialog::updateHideAndShow()
     // when do we show the uuid?
     const bool showUuid =
         partition().state() != Partition::StateNew &&                           // not for new partitions
-        !(fs == NULL || fs->supportGetUUID() == FileSystem::cmdSupportNone);       // not if the FS doesn't support it
+        !(fs == nullptr || fs->supportGetUUID() == FileSystem::cmdSupportNone);       // not if the FS doesn't support it
 
     dialogWidget().showUuid(showUuid);
 

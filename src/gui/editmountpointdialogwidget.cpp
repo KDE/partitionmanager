@@ -43,7 +43,7 @@ static QString findBlkIdDevice(const QString& token, const QString& value)
     blkid_cache cache;
     QString rval;
 
-    if (blkid_get_cache(&cache, NULL) == 0) {
+    if (blkid_get_cache(&cache, nullptr) == 0) {
         if (char* c = blkid_evaluate_tag(token.toLocal8Bit().constData(), value.toLocal8Bit().constData(), &cache)) {
             rval = QString::fromLocal8Bit(c);
             free(c);
@@ -167,16 +167,16 @@ bool EditMountPointDialogWidget::readMountpoints(const QString& filename)
 {
     FILE* fp = setmntent(filename.toLocal8Bit().constData(), "r");
 
-    if (fp == NULL) {
+    if (fp == nullptr) {
         KMessageBox::sorry(this,
                            xi18nc("@info", "Could not open mount point file <filename>%1</filename>.", filename),
                            i18nc("@title:window", "Error while reading mount points"));
         return false;
     }
 
-    struct mntent* mnt = NULL;
+    struct mntent* mnt = nullptr;
 
-    while ((mnt = getmntent(fp)) != NULL) {
+    while ((mnt = getmntent(fp)) != nullptr) {
         QString device = QString::fromUtf8(mnt->mnt_fsname);
         MountEntry::IdentifyType type = MountEntry::deviceNode;
 
@@ -204,7 +204,7 @@ static void writeEntry(QFile& output, const MountEntry* entry)
 {
     Q_ASSERT(entry);
 
-    if (entry == NULL)
+    if (entry == nullptr)
         return;
 
     if (entry->path.isEmpty())
@@ -222,7 +222,7 @@ static void writeEntry(QFile& output, const MountEntry* entry)
 
 bool EditMountPointDialogWidget::acceptChanges()
 {
-    MountEntry* entry = NULL;
+    MountEntry* entry = nullptr;
 
     if (mountPoints().find(labelName().text()) == mountPoints().end()) {
         qWarning() << "could not find device " << labelName().text() << " in mount points.";

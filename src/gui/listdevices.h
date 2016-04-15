@@ -38,7 +38,7 @@ class ListDevices : public QWidget, public Ui::ListDevicesBase
     Q_DISABLE_COPY(ListDevices)
 
 public:
-    ListDevices(QWidget* parent = NULL);
+    ListDevices(QWidget* parent = nullptr);
 
 Q_SIGNALS:
     void selectionChanged(const QString& device_node);

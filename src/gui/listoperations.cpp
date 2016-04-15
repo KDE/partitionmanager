@@ -31,7 +31,7 @@
 ListOperations::ListOperations(QWidget* parent) :
     QWidget(parent),
     Ui::ListOperationsBase(),
-    m_ActionCollection(NULL)
+    m_ActionCollection(nullptr)
 {
     setupUi(this);
 }

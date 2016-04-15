@@ -72,7 +72,7 @@ bool checkPermissions()
                 return false;
         }
 
-        return KMessageBox::warningContinueCancel(NULL, xi18nc("@info",
+        return KMessageBox::warningContinueCancel(nullptr, xi18nc("@info",
                 "<para><warning>You do not have administrative privileges.</warning></para>"
                 "<para>It is possible to run <application>%1</application> without these privileges. "
                 "You will, however, <emphasis>not</emphasis> be allowed to apply operations.</para>"
@@ -91,14 +91,14 @@ bool loadBackend()
 {
     if (CoreBackendManager::self()->load(Config::backend()) == false) {
         if (CoreBackendManager::self()->load(CoreBackendManager::defaultBackendName())) {
-            KMessageBox::sorry(NULL,
+            KMessageBox::sorry(nullptr,
                                xi18nc("@info", "<para>The configured backend plugin \"%1\" could not be loaded.</para>"
                                       "<para>Loading the default backend plugin \"%2\" instead.</para>",
                                       Config::backend(), CoreBackendManager::defaultBackendName()),
                                i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
             Config::setBackend(CoreBackendManager::defaultBackendName());
         } else {
-            KMessageBox::error(NULL,
+            KMessageBox::error(nullptr,
                                xi18nc("@info", "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
                                       "plugin could be loaded.</para><para>Please check your installation.</para>",
                                       Config::backend(), CoreBackendManager::defaultBackendName()),

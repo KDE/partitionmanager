@@ -1032,7 +1032,7 @@ void MainWindow::onPropertiesDevice(const QString&)
 
 static KLocalizedString checkSupportInNode(const PartitionNode* parent)
 {
-    if (parent == NULL)
+    if (parent == nullptr)
         return KLocalizedString();
 
     KLocalizedString rval;
