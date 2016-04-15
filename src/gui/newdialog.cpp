@@ -210,12 +210,10 @@ void NewDialog::updateHideAndShow()
     } else {
         dialogWidget().label().setReadOnly(false);
         dialogWidget().noSetLabel().setVisible(false);
-        if (FS::luks::canEncryptType(
-                FileSystem::typeForName(dialogWidget()
-                                        .comboFileSystem()
-                                        .currentText())))
-            dialogWidget().checkBoxEncrypt().show();
-        else
-            dialogWidget().checkBoxEncrypt().hide();
     }
+    if (FS::luks::canEncryptType(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText())))
+        dialogWidget().checkBoxEncrypt().show();
+    else
+        dialogWidget().checkBoxEncrypt().hide();
+
 }
