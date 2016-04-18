@@ -21,7 +21,7 @@
 
 #include "gui/sizedialogbase.h"
 
-#include <qglobal.h>
+#include <QtGlobal>
 
 class Partition;
 class Device;

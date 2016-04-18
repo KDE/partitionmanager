@@ -21,7 +21,7 @@
 
 #include <util/capacity.h>
 
-#include <qglobal.h>
+#include <QtGlobal>
 #include <QDebug>
 #include <QDialog>
 #include <QPushButton>
