@@ -119,7 +119,7 @@ void NewDialog::accept()
                                                             partition().firstSector(),
                                                             partition().lastSector()));
     }
-    else if (partition().roles().has(PartitionRole::LUKS)) {
+    else if (partition().roles().has(PartitionRole::Luks)) {
         FileSystem::Type innerFsType = partition().fileSystem().type();
         partition().deleteFileSystem();
         FS::luks* luksFs = dynamic_cast< FS::luks* >(
@@ -146,7 +146,7 @@ void NewDialog::onRoleChanged(bool)
 
     if (dialogWidget().checkBoxEncrypt().isVisible() &&
         dialogWidget().checkBoxEncrypt().isChecked())
-        r |= PartitionRole::LUKS;
+        r |= PartitionRole::Luks;
 
     // Make sure an extended partition gets correctly displayed: Set its file system to extended.
     // Also make sure to set a primary's or logical's file system once the user goes back from
