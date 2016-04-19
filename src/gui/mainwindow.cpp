@@ -81,6 +81,7 @@
 #include <config.h>
 
 #include <unistd.h>
+#include <typeinfo>
 
 /** Creates a new MainWindow instance.
     @param parent the parent widget
@@ -456,19 +457,25 @@ void MainWindow::enableActions()
                           part->fileSystem().unmountTitle() :
                           part->fileSystem().mountTitle());
 
-    actionCollection()->action(QStringLiteral("decryptPartition"))
-            ->setEnabled(part &&
-                         (part->fileSystem().type() == FileSystem::Luks) &&
-                         (dynamic_cast<const FS::luks&>(part->fileSystem()).canCryptOpen(part->partitionPath()) ||
-                          dynamic_cast<const FS::luks&>(part->fileSystem()).canCryptClose(part->partitionPath())));
-    if (part && part->fileSystem().type() == FileSystem::Luks)
-    {
-        const FS::luks& luksFs = dynamic_cast<const FS::luks&>(part->fileSystem());
+    try {
         actionCollection()->action(QStringLiteral("decryptPartition"))
-                ->setText(luksFs.isCryptOpen() ?
-                          luksFs.cryptCloseTitle() :
-                          luksFs.cryptOpenTitle());
+                ->setEnabled(part &&
+                             (part->roles().has(PartitionRole::Luks)) &&
+                             (dynamic_cast<const FS::luks&>(part->fileSystem()).canCryptOpen(part->partitionPath()) ||
+                              dynamic_cast<const FS::luks&>(part->fileSystem()).canCryptClose(part->partitionPath())));
+        if (part && part->roles().has(PartitionRole::Luks))
+        {
+                const FS::luks& luksFs = dynamic_cast<const FS::luks&>(part->fileSystem());
+                actionCollection()->action(QStringLiteral("decryptPartition"))
+                        ->setText(luksFs.isCryptOpen() ?
+                                  luksFs.cryptCloseTitle() :
+                                  luksFs.cryptOpenTitle());
+        }
+    } catch (const std::bad_cast&) {
+        actionCollection()->action(QStringLiteral("decryptPartition"))
+                ->setEnabled(false);
     }
+
 
     actionCollection()->action(QStringLiteral("checkPartition"))
             ->setEnabled(!readOnly && CheckOperation::canCheck(part));
