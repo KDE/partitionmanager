@@ -457,21 +457,22 @@ void MainWindow::enableActions()
                           part->fileSystem().unmountTitle() :
                           part->fileSystem().mountTitle());
 
-    try {
+    if (part && part->roles().has(PartitionRole::Luks)) {
+        const FileSystem& fsRef = part->fileSystem();
+        const FS::luks* luksFs = dynamic_cast<const FS::luks*>(&fsRef);
+
         actionCollection()->action(QStringLiteral("decryptPartition"))
-                ->setEnabled(part &&
-                             (part->roles().has(PartitionRole::Luks)) &&
-                             (dynamic_cast<const FS::luks&>(part->fileSystem()).canCryptOpen(part->partitionPath()) ||
-                              dynamic_cast<const FS::luks&>(part->fileSystem()).canCryptClose(part->partitionPath())));
-        if (part && part->roles().has(PartitionRole::Luks))
-        {
-                const FS::luks& luksFs = dynamic_cast<const FS::luks&>(part->fileSystem());
-                actionCollection()->action(QStringLiteral("decryptPartition"))
-                        ->setText(luksFs.isCryptOpen() ?
-                                  luksFs.cryptCloseTitle() :
-                                  luksFs.cryptOpenTitle());
+                ->setEnabled(luksFs &&
+                             (luksFs->canCryptOpen(part->partitionPath()) ||
+                              luksFs->canCryptClose(part->partitionPath())));
+        if (luksFs) {
+            actionCollection()->action(QStringLiteral("decryptPartition"))
+                    ->setText(luksFs->isCryptOpen() ?
+                              luksFs->cryptCloseTitle() :
+                              luksFs->cryptOpenTitle());
         }
-    } catch (const std::bad_cast&) {
+    }
+    else {
         actionCollection()->action(QStringLiteral("decryptPartition"))
                 ->setEnabled(false);
     }
