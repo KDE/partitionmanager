@@ -425,20 +425,35 @@ void PartitionManagerWidget::onDecryptPartition()
     if (!p->roles().has(PartitionRole::Luks))
         return;
 
-    try {
-        FS::luks& luksFs = dynamic_cast<FS::luks&>(p->fileSystem());
-
-        if (luksFs.canCryptOpen(p->partitionPath())) {
-            if (!luksFs.cryptOpen(p->partitionPath()))
-                KMessageBox::detailedSorry(this, xi18nc("@info", "The encrypted file system on partition <filename>%1</filename> could not be unlocked.", p->deviceNode()), QString(), i18nc("@title:window", "Could Not Unlock Encrypted File System."));
-        } else if (luksFs.canCryptClose(p->partitionPath())) {
-            if (!luksFs.cryptClose(p->partitionPath()))
-                KMessageBox::detailedSorry(this, xi18nc("@info", "The encrypted file system on partition <filename>%1</filename> could not be locked.", p->deviceNode()), QString(), i18nc("@title:window", "Could Not Lock Encrypted File System."));
-        }
-    } catch (const std::bad_cast&)
-    {
+    const FileSystem& fsRef = p->fileSystem();
+    FS::luks* luksFs = const_cast<FS::luks*>(dynamic_cast<const FS::luks*>(&fsRef));
+    if (!luksFs)
         return;
+
+    if (luksFs->canCryptOpen(p->partitionPath())) {
+        if (!luksFs->cryptOpen(p->partitionPath()))
+            KMessageBox::detailedSorry(this,
+                                       xi18nc("@info",
+                                              "The encrypted file system on partition "
+                                              "<filename>%1</filename> could not be "
+                                              "unlocked.",
+                                              p->deviceNode()),
+                                       QString(),
+                                       i18nc("@title:window",
+                                             "Could Not Unlock Encrypted File System."));
+    } else if (luksFs->canCryptClose(p->partitionPath())) {
+        if (!luksFs->cryptClose(p->partitionPath()))
+            KMessageBox::detailedSorry(this,
+                                       xi18nc("@info",
+                                              "The encrypted file system on partition "
+                                              "<filename>%1</filename> could not be "
+                                              "locked.",
+                                              p->deviceNode()),
+                                       QString(),
+                                       i18nc("@title:window",
+                                             "Could Not Lock Encrypted File System."));
     }
+
     updatePartitions();
 }
 
