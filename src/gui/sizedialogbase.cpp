@@ -97,10 +97,6 @@ void SizeDialogBase::setupDialog()
     else
         dialogWidget().partResizerWidget().init(device(), partition(), minimumFirstSector(), maximumLastSector(), true, canMove());
     dialogWidget().partResizerWidget().setAlign(Config::alignDefault());
-
-    dialogWidget().checkBoxEncrypt().hide();
-    dialogWidget().labelPassphrase().hide();
-    dialogWidget().editPassphrase().hide();
 }
 
 void SizeDialogBase::setupConstraints()
