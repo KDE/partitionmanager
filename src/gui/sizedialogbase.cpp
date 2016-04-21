@@ -99,6 +99,8 @@ void SizeDialogBase::setupDialog()
     dialogWidget().partResizerWidget().setAlign(Config::alignDefault());
 
     dialogWidget().checkBoxEncrypt().hide();
+    dialogWidget().labelPassphrase().hide();
+    dialogWidget().editPassphrase().hide();
 }
 
 void SizeDialogBase::setupConstraints()
