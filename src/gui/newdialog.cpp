@@ -225,6 +225,10 @@ void NewDialog::updateHideAndShow()
     if (FS::luks::canEncryptType(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText())))
         dialogWidget().checkBoxEncrypt().show();
     else
+    {
         dialogWidget().checkBoxEncrypt().hide();
+        dialogWidget().labelPassphrase().hide();
+        dialogWidget().editPassphrase().hide();
+    }
 
 }
