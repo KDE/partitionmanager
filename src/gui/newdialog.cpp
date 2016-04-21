@@ -127,6 +127,7 @@ void NewDialog::accept()
                                                          partition().firstSector(),
                                                          partition().lastSector()));
         luksFs->createInnerFileSystem(innerFsType);
+        luksFs->setPassphrase(dialogWidget().editPassphrase().text());
         partition().setFileSystem(luksFs);
     }
 
@@ -144,9 +145,13 @@ void NewDialog::onRoleChanged(bool)
     else if (dialogWidget().radioLogical().isChecked())
         r = PartitionRole::Logical;
 
-    if (dialogWidget().checkBoxEncrypt().isVisible() &&
-        dialogWidget().checkBoxEncrypt().isChecked())
+    bool doEncrypt = dialogWidget().checkBoxEncrypt().isVisible() &&
+                       dialogWidget().checkBoxEncrypt().isChecked();
+    if (doEncrypt)
         r |= PartitionRole::Luks;
+
+    dialogWidget().labelPassphrase().setVisible(doEncrypt);
+    dialogWidget().editPassphrase().setVisible(doEncrypt);
 
     // Make sure an extended partition gets correctly displayed: Set its file system to extended.
     // Also make sure to set a primary's or logical's file system once the user goes back from
@@ -207,6 +212,8 @@ void NewDialog::updateHideAndShow()
         palette.setColor(QPalette::Foreground, f);
         dialogWidget().noSetLabel().setPalette(palette);
         dialogWidget().checkBoxEncrypt().hide();
+        dialogWidget().labelPassphrase().hide();
+        dialogWidget().editPassphrase().hide();
     } else {
         dialogWidget().label().setReadOnly(false);
         dialogWidget().noSetLabel().setVisible(false);
