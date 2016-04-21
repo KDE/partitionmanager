@@ -7,10 +7,30 @@
     <x>0</x>
     <y>0</y>
     <width>653</width>
-    <height>655</height>
+    <height>693</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="10" column="1">
+    <widget class="FormattedSpinBox" name="m_SpinCapacity">
+     <property name="minimum">
+      <double>0.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>999999999.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="m_LabelPassphrase">
+     <property name="text">
+      <string>Passphrase:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
    <item row="1" column="0" colspan="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
@@ -106,7 +126,7 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
+   <item row="6" column="0">
     <widget class="QLabel" name="m_LabelTextLabel">
      <property name="text">
       <string comment="@label">Label:</string>
@@ -119,7 +139,7 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="1">
+   <item row="6" column="1">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLineEdit" name="m_EditLabel"/>
@@ -136,7 +156,7 @@
      </item>
     </layout>
    </item>
-   <item row="6" column="0">
+   <item row="7" column="0">
     <widget class="QLabel" name="label_4">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -152,14 +172,14 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="1">
+   <item row="7" column="1">
     <widget class="QLabel" name="m_LabelMinSize">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="7" column="0">
+   <item row="8" column="0">
     <widget class="QLabel" name="label_5">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -175,14 +195,14 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="1">
+   <item row="8" column="1">
     <widget class="QLabel" name="m_LabelMaxSize">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="8" column="0">
+   <item row="9" column="0">
     <widget class="QLabel" name="label">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -191,7 +211,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string comment="@label:listbox">Free space before:</string>
+      <string comment="@label:listbox">F&amp;ree space before:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -201,7 +221,7 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="1">
+   <item row="9" column="1">
     <widget class="FormattedSpinBox" name="m_SpinFreeBefore">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -217,7 +237,7 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="0">
+   <item row="10" column="0">
     <widget class="QLabel" name="label_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -236,17 +256,7 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="1">
-    <widget class="FormattedSpinBox" name="m_SpinCapacity">
-     <property name="minimum">
-      <double>0.000000000000000</double>
-     </property>
-     <property name="maximum">
-      <double>999999999.000000000000000</double>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="0">
+   <item row="11" column="0">
     <widget class="QLabel" name="label_3">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -265,7 +275,7 @@
      </property>
     </widget>
    </item>
-   <item row="10" column="1">
+   <item row="11" column="1">
     <widget class="FormattedSpinBox" name="m_SpinFreeAfter">
      <property name="minimum">
       <double>0.000000000000000</double>
@@ -275,7 +285,7 @@
      </property>
     </widget>
    </item>
-   <item row="11" column="0" colspan="2">
+   <item row="12" column="0" colspan="2">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -296,13 +306,24 @@
      <item>
       <widget class="QComboBox" name="m_ComboFileSystem"/>
      </item>
+    </layout>
+   </item>
+   <item row="4" column="1">
+    <widget class="QCheckBox" name="m_CheckBoxEncrypt">
+     <property name="toolTip">
+      <string>Set up encryption for this filesystem with LUKS. You will be asked to provide a passphrase.</string>
+     </property>
+     <property name="text">
+      <string>Encrypt with LUKS</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QCheckBox" name="m_CheckBoxEncrypt">
-       <property name="toolTip">
-        <string>Set up encryption for this filesystem with LUKS. You will be asked to provide a passphrase.</string>
-       </property>
-       <property name="text">
-        <string>Encrypt with LUKS</string>
+      <widget class="QLineEdit" name="m_EditPassphrase">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
        </property>
       </widget>
      </item>

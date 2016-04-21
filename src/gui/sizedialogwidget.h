@@ -87,6 +87,15 @@ public:
         return *m_CheckBoxEncrypt;
     }
 
+    QLineEdit& editPassphrase() {
+        Q_ASSERT(m_EditPassphrase);
+        return *m_EditPassphrase;
+    }
+    QLabel& labelPassphrase() {
+        Q_ASSERT(m_LabelPassphrase);
+        return *m_LabelPassphrase;
+    }
+
     QLabel& textLabel() {
         Q_ASSERT(m_LabelTextLabel);
         return *m_LabelTextLabel;
@@ -121,6 +130,10 @@ public:
         m_ComboFileSystem = nullptr;
         delete m_CheckBoxEncrypt;
         m_CheckBoxEncrypt = nullptr;
+        delete m_LabelPassphrase;
+        m_LabelPassphrase = nullptr;
+        delete m_EditPassphrase;
+        m_EditPassphrase = nullptr;
     }
     void hideLabel() {
         delete m_LabelTextLabel;
