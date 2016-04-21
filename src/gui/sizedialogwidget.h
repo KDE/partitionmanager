@@ -128,12 +128,12 @@ public:
         m_LabelFileSystem = nullptr;
         delete m_ComboFileSystem;
         m_ComboFileSystem = nullptr;
-        delete m_CheckBoxEncrypt;
-        m_CheckBoxEncrypt = nullptr;
-        delete m_LabelPassphrase;
-        m_LabelPassphrase = nullptr;
-        delete m_EditPassphrase;
-        m_EditPassphrase = nullptr;
+//         delete m_CheckBoxEncrypt; // FIXME: why is this necessary?
+//         m_CheckBoxEncrypt = nullptr;
+//         delete m_LabelPassphrase;
+//         m_LabelPassphrase = nullptr;
+//         delete m_EditPassphrase;
+//         m_EditPassphrase = nullptr;
     }
     void hideLabel() {
         delete m_LabelTextLabel;
