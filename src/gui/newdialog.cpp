@@ -133,6 +133,7 @@ void NewDialog::accept()
         luksFs->createInnerFileSystem(innerFsType);
         luksFs->setPassphrase(dialogWidget().editPassphrase().text());
         partition().setFileSystem(luksFs);
+        partition().fileSystem().setLabel(dialogWidget().label().text());
     }
 
     QDialog::accept();
