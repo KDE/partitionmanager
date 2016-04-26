@@ -1077,7 +1077,7 @@ void MainWindow::checkFileSystemSupport()
 
     foreach(const Device * d, operationStack().previewDevices()) {
         supportInNode = checkSupportInNode(d->partitionTable());
-        if (supportInNode.toString() != QStringLiteral()) {
+        if (supportInNode.toString() != QString()) {
             missingSupportTools = true;
             supportList = kxi18n("%1%2").subs(supportList).subs(supportInNode);
         }
