@@ -223,7 +223,7 @@ void NewDialog::updateHideAndShow()
         dialogWidget().label().setReadOnly(false);
         dialogWidget().noSetLabel().setVisible(false);
     }
-    if (FS::luks::canEncryptType(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText())))
+    if (FS::luks::canEncryptType(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText())) && !partition().roles().has(PartitionRole::Extended) )
     {
         dialogWidget().checkBoxEncrypt().show();
         if (dialogWidget().checkBoxEncrypt().isChecked())
