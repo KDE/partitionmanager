@@ -389,7 +389,7 @@ void PartitionManagerWidget::onMountPartition()
             KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Mount File System."));
     } else if (p->canUnmount()) {
         if (!p->unmount(report))
-            KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QStringLiteral("pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Unmount File System."));
+            KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Unmount File System."));
     }
 
     if (p->roles().has(PartitionRole::Logical)) {
