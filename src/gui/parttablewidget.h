@@ -40,10 +40,10 @@ class PartTableWidget : public PartWidgetBase
 
 public:
     PartTableWidget(QWidget* parent);
-    virtual qint32 borderWidth() const {
+    virtual qint32 borderWidth() const override {
         return 0;    /**< @return border width */
     }
-    virtual qint32 borderHeight() const {
+    virtual qint32 borderHeight() const override {
         return 0;    /**< @return border height */
     }
 
@@ -68,9 +68,9 @@ Q_SIGNALS:
     void itemDoubleClicked(const PartWidget*);
 
 protected:
-    void resizeEvent(QResizeEvent* event);
-    void mousePressEvent(QMouseEvent* event);
-    void mouseDoubleClickEvent(QMouseEvent* event);
+    void resizeEvent(QResizeEvent* event) override;
+    void mousePressEvent(QMouseEvent* event) override;
+    void mouseDoubleClickEvent(QMouseEvent* event) override;
 
     const PartitionTable* partitionTable() const {
         return m_PartitionTable;

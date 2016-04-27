@@ -43,7 +43,7 @@ public:
     ~FileSystemSupportDialog();
 
 public:
-    QSize sizeHint() const;
+    QSize sizeHint() const override;
 
 protected Q_SLOTS:
     void onButtonRescanClicked();

@@ -42,26 +42,26 @@ public:
     ~NewDialog();
 
 protected Q_SLOTS:
-    void accept();
+    void accept() override;
     void onRoleChanged(bool);
     void onFilesystemChanged(int);
     void onLabelChanged(const QString& newLabel);
 
 protected:
-    void setupConnections();
-    void setupDialog();
+    void setupConnections() override;
+    void setupDialog() override;
     void updateHideAndShow();
     void updateFileSystem(FileSystem::Type t);
     PartitionRole::Roles partitionRoles() const {
         return m_PartitionRoles;
     }
-    virtual bool canGrow() const {
+    virtual bool canGrow() const override {
         return true;
     }
-    virtual bool canShrink() const {
+    virtual bool canShrink() const override {
         return true;
     }
-    virtual bool canMove() const {
+    virtual bool canMove() const override {
         return true;
     }
 
