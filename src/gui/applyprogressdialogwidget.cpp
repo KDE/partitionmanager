@@ -16,3 +16,8 @@
  *************************************************************************/
 
 #include "gui/applyprogressdialogwidget.h"
+
+ApplyProgressDialogWidget::ApplyProgressDialogWidget(QWidget* parent) : QWidget(parent) {
+    setupUi(this);
+    m_TreeTasks->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+}
