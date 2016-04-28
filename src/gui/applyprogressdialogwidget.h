@@ -29,6 +29,7 @@ class ApplyProgressDialogWidget : public QWidget, public Ui::ApplyProgressDialog
 public:
     ApplyProgressDialogWidget(QWidget* parent) : QWidget(parent) {
         setupUi(this);
+        m_TreeTasks->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
     }
 
 public:
