@@ -164,7 +164,7 @@
 							</screenshot>
 						</para>
 						<para>
-							The blue check marks mean <quote>supported</quote>, the red crosses mean <quote>not supported</quote>. Some combinations are never supported, for example checking a linuxswap file system, because they are inherently impossible. Others cannot be supported because the external tools lack the functionality. This is for instance the case with writing labels for FAT file systems.
+							The blue check marks mean <quote>supported</quote>, the red crosses mean <quote>not supported</quote>. Some combinations are never supported, for example checking a linuxswap file system, because they are inherently impossible. Others cannot be supported because the external tools lack the functionality.
 						</para>
 						<para>
 							If you have installed new tools while &partman; is running click on <guibutton>Rescan Support</guibutton> to force a recheck of installed  file system support tools.
