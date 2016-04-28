@@ -42,7 +42,7 @@ protected:
     }
 
 protected Q_SLOTS:
-    void accept();
+    void accept() override;
 
 private:
     Partition& partition() {

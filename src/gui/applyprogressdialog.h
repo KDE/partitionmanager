@@ -82,8 +82,8 @@ protected Q_SLOTS:
     void updateReport(bool force = false);
 
 protected:
-    void closeEvent(QCloseEvent* e);
-    void keyPressEvent(QKeyEvent* e);
+    void closeEvent(QCloseEvent* e) override;
+    void keyPressEvent(QKeyEvent* e) override;
 
     void setupConnections();
 

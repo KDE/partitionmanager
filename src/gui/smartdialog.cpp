@@ -34,7 +34,7 @@
 #include <QTextDocument>
 #include <QTextStream>
 #include <QTreeWidgetItem>
-#include <qglobal.h>
+#include <QtGlobal>
 
 #include <KConfigGroup>
 #include <KFormat>

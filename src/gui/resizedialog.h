@@ -21,7 +21,7 @@
 
 #include "gui/sizedialogbase.h"
 
-#include <qglobal.h>
+#include <QtGlobal>
 
 class Partition;
 class Device;
@@ -48,15 +48,15 @@ public:
     }
 
 public Q_SLOTS:
-    virtual void accept();
-    virtual void reject();
+    virtual void accept() override;
+    virtual void reject() override;
 
 protected:
-    virtual bool canGrow() const;
-    virtual bool canShrink() const;
-    virtual bool canMove() const;
-    virtual void setupDialog();
-    virtual void setDirty();
+    virtual bool canGrow() const override;
+    virtual bool canShrink() const override;
+    virtual bool canMove() const override;
+    virtual void setupDialog() override;
+    virtual void setDirty() override;
     void rollback();
     void setResizedFirstSector(qint64 s) {
         m_ResizedFirstSector = s;

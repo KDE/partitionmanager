@@ -43,8 +43,8 @@ protected:
     const Partition& destPartition() const {
         return m_DestPartition;
     }
-    virtual bool canGrow() const;
-    virtual bool canShrink() const {
+    virtual bool canGrow() const override;
+    virtual bool canShrink() const override {
         return false;
     }
 
