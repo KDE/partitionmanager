@@ -87,13 +87,9 @@ public:
         return *m_CheckBoxEncrypt;
     }
 
-    QLineEdit& editPassphrase() {
+    KNewPasswordWidget& editPassphrase() {
         Q_ASSERT(m_EditPassphrase);
         return *m_EditPassphrase;
-    }
-    QLabel& labelPassphrase() {
-        Q_ASSERT(m_LabelPassphrase);
-        return *m_LabelPassphrase;
     }
 
     QLabel& textLabel() {
@@ -130,8 +126,6 @@ public:
         m_ComboFileSystem = nullptr;
         delete m_CheckBoxEncrypt;
         m_CheckBoxEncrypt = nullptr;
-        delete m_LabelPassphrase;
-        m_LabelPassphrase = nullptr;
         delete m_EditPassphrase;
         m_EditPassphrase = nullptr;
     }

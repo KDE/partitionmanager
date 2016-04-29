@@ -94,7 +94,6 @@ void NewDialog::setupDialog()
     SizeDialogBase::setupDialog();
 
     dialogWidget().checkBoxEncrypt().hide();
-    dialogWidget().labelPassphrase().hide();
     dialogWidget().editPassphrase().hide();
 
     // don't move these above the call to parent's setupDialog, because only after that has
@@ -131,7 +130,7 @@ void NewDialog::accept()
                                                          partition().firstSector(),
                                                          partition().lastSector()));
         luksFs->createInnerFileSystem(innerFsType);
-        luksFs->setPassphrase(dialogWidget().editPassphrase().text());
+        luksFs->setPassphrase(dialogWidget().editPassphrase().password());
         partition().setFileSystem(luksFs);
         partition().fileSystem().setLabel(dialogWidget().label().text());
     }
@@ -155,7 +154,6 @@ void NewDialog::onRoleChanged(bool)
     if (doEncrypt)
         r |= PartitionRole::Luks;
 
-    dialogWidget().labelPassphrase().setVisible(doEncrypt);
     dialogWidget().editPassphrase().setVisible(doEncrypt);
 
     // Make sure an extended partition gets correctly displayed: Set its file system to extended.
@@ -217,7 +215,6 @@ void NewDialog::updateHideAndShow()
         palette.setColor(QPalette::Foreground, f);
         dialogWidget().noSetLabel().setPalette(palette);
         dialogWidget().checkBoxEncrypt().hide();
-        dialogWidget().labelPassphrase().hide();
         dialogWidget().editPassphrase().hide();
     } else {
         dialogWidget().label().setReadOnly(false);
@@ -228,14 +225,12 @@ void NewDialog::updateHideAndShow()
         dialogWidget().checkBoxEncrypt().show();
         if (dialogWidget().checkBoxEncrypt().isChecked())
         {
-            dialogWidget().labelPassphrase().show();
             dialogWidget().editPassphrase().show();
         }
     }
     else
     {
         dialogWidget().checkBoxEncrypt().hide();
-        dialogWidget().labelPassphrase().hide();
         dialogWidget().editPassphrase().hide();
     }
 
