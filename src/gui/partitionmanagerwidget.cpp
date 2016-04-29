@@ -431,7 +431,7 @@ void PartitionManagerWidget::onDecryptPartition()
         return;
 
     if (luksFs->canCryptOpen(p->partitionPath())) {
-        if (!luksFs->cryptOpen(p->partitionPath()))
+        if (!luksFs->cryptOpen(this, p->partitionPath()))
             KMessageBox::detailedSorry(this,
                                        xi18nc("@info",
                                               "The encrypted file system on partition "
