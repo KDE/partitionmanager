@@ -46,7 +46,7 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 )
 
 # Load the frameworks we need
-find_package(KF5 5.15 REQUIRED
+find_package(KF5 5.16 REQUIRED
   Config
   Crash
   DocTools

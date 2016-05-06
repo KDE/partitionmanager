@@ -1,5 +1,6 @@
 /*************************************************************************
  *  Copyright (C) 2008, 2010 by Volker Lanz <vl@fidra.de>                *
+ *  Copyright (C) 2016 by Teo Mrnjavac <teo@kde.org>                     *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -81,6 +82,16 @@ public:
         return *m_ComboFileSystem;
     }
 
+    QCheckBox& checkBoxEncrypt() {
+        Q_ASSERT(m_CheckBoxEncrypt);
+        return *m_CheckBoxEncrypt;
+    }
+
+    KNewPasswordWidget& editPassphrase() {
+        Q_ASSERT(m_EditPassphrase);
+        return *m_EditPassphrase;
+    }
+
     QLabel& textLabel() {
         Q_ASSERT(m_LabelTextLabel);
         return *m_LabelTextLabel;
@@ -113,6 +124,10 @@ public:
         m_LabelFileSystem = nullptr;
         delete m_ComboFileSystem;
         m_ComboFileSystem = nullptr;
+        delete m_CheckBoxEncrypt;
+        m_CheckBoxEncrypt = nullptr;
+        delete m_EditPassphrase;
+        m_EditPassphrase = nullptr;
     }
     void hideLabel() {
         delete m_LabelTextLabel;

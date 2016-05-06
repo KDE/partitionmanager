@@ -1,5 +1,6 @@
 /*************************************************************************
  *  Copyright (C) 2008-2010 by Volker Lanz <vl@fidra.de>                 *
+ *  Copyright (C) 2015 by Teo Mrnjavac <teo@kde.org>                     *
  *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
@@ -30,6 +31,7 @@
 #include <core/partitiontable.h>
 
 #include <fs/filesystemfactory.h>
+#include <fs/luks.h>
 
 #include <gui/partwidget.h>
 
@@ -48,6 +50,7 @@
 #include <util/capacity.h>
 #include <util/report.h>
 #include <util/helpers.h>
+
 #include "util/guihelpers.h"
 
 #include <QCursor>
@@ -61,6 +64,8 @@
 #include <KMessageBox>
 
 #include <config.h>
+
+#include <typeinfo>
 
 class PartitionTreeWidgetItem : public QTreeWidgetItem
 {
@@ -401,6 +406,52 @@ void PartitionManagerWidget::onMountPartition()
             parent->checkChildrenMounted();
         else
             qWarning() << "parent is null";
+    }
+
+    updatePartitions();
+}
+
+void PartitionManagerWidget::onDecryptPartition()
+{
+    Partition* p = selectedPartition();
+
+    Q_ASSERT(p);
+
+    if (p == nullptr) {
+        qWarning() << "no partition selected";
+        return;
+    }
+
+    if (!p->roles().has(PartitionRole::Luks))
+        return;
+
+    const FileSystem& fsRef = p->fileSystem();
+    FS::luks* luksFs = const_cast<FS::luks*>(dynamic_cast<const FS::luks*>(&fsRef));
+    if (!luksFs)
+        return;
+
+    if (luksFs->canCryptOpen(p->partitionPath())) {
+        if (!luksFs->cryptOpen(this, p->partitionPath()))
+            KMessageBox::detailedSorry(this,
+                                       xi18nc("@info",
+                                              "The encrypted file system on partition "
+                                              "<filename>%1</filename> could not be "
+                                              "unlocked.",
+                                              p->deviceNode()),
+                                       QString(),
+                                       i18nc("@title:window",
+                                             "Could Not Unlock Encrypted File System."));
+    } else if (luksFs->canCryptClose(p->partitionPath())) {
+        if (!luksFs->cryptClose(p->partitionPath()))
+            KMessageBox::detailedSorry(this,
+                                       xi18nc("@info",
+                                              "The encrypted file system on partition "
+                                              "<filename>%1</filename> could not be "
+                                              "locked.",
+                                              p->deviceNode()),
+                                       QString(),
+                                       i18nc("@title:window",
+                                             "Could Not Lock Encrypted File System."));
     }
 
     updatePartitions();
