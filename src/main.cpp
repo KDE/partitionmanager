@@ -56,10 +56,10 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
 
     aboutData->addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Former maintainer"));
     aboutData->addAuthor(i18nc("@info:credit", "Andrius Štikonas"), i18nc("@info:credit", "Maintainer"), QStringLiteral("andrius@stikonas.eu"));
+    aboutData->addAuthor(i18n("Teo Mrnjavac"), i18nc("@info:credit", "Calamares maintainer"), QStringLiteral("teo@kde.org"));
     aboutData->setHomepage(QStringLiteral("https://www.kde.org/applications/system/kdepartitionmanager"));
 
     aboutData->addCredit(i18n("Hugo Pereira Da Costa"), i18nc("@info:credit", "Partition Widget Design"), QStringLiteral("hugo@oxygen-icons.org"));
-    aboutData->addCredit(i18n("Teo Mrnjavac"), i18nc("@info:credit", "Calamares developer"), QStringLiteral("teo@kde.org"));
     KAboutData::setApplicationData(*aboutData);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     KCrash::initialize();
