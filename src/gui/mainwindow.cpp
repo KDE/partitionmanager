@@ -186,7 +186,7 @@ void MainWindow::setupActions()
     undoOperation->setText(i18nc("@action:inmenu", "Undo"));
     undoOperation->setToolTip(i18nc("@info:tooltip", "Undo the last operation"));
     undoOperation->setStatusTip(i18nc("@info:status", "Remove the last operation from the list."));
-    undoOperation->setShortcut(Qt::CTRL | Qt::Key_Z);
+    actionCollection()->setDefaultShortcut(undoOperation, QKeySequence(Qt::CTRL + Qt::Key_Z));
     undoOperation->setIcon(QIcon::fromTheme(QStringLiteral("edit-undo")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* clearAllOperations = actionCollection()->addAction(QStringLiteral("clearAllOperations"), this, SLOT(onClearAllOperations()));
@@ -208,7 +208,7 @@ void MainWindow::setupActions()
     refreshDevices->setText(i18nc("@action:inmenu refresh list of devices", "Refresh Devices"));
     refreshDevices->setToolTip(i18nc("@info:tooltip", "Refresh all devices"));
     refreshDevices->setStatusTip(i18nc("@info:status", "Renew the devices list."));
-    refreshDevices->setShortcut(Qt::Key_F5);
+    actionCollection()->setDefaultShortcut(refreshDevices, Qt::Key_F5);
     refreshDevices->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* createNewPartitionTable = actionCollection()->addAction(QStringLiteral("createNewPartitionTable"), this, SLOT(onCreateNewPartitionTable()));
@@ -216,7 +216,7 @@ void MainWindow::setupActions()
     createNewPartitionTable->setText(i18nc("@action:inmenu", "New Partition Table"));
     createNewPartitionTable->setToolTip(i18nc("@info:tooltip", "Create a new partition table"));
     createNewPartitionTable->setStatusTip(i18nc("@info:status", "Create a new and empty partition table on a device."));
-    createNewPartitionTable->setShortcut(Qt::CTRL | Qt::SHIFT | Qt::Key_N);
+    actionCollection()->setDefaultShortcut(createNewPartitionTable, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_N));
     createNewPartitionTable->setIcon(QIcon::fromTheme(QStringLiteral("edit-clear")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* exportPartitionTable = actionCollection()->addAction(QStringLiteral("exportPartitionTable"), this, SLOT(onExportPartitionTable()));
@@ -252,7 +252,7 @@ void MainWindow::setupActions()
     newPartition->setText(i18nc("@action:inmenu create a new partition", "New"));
     newPartition->setToolTip(i18nc("@info:tooltip", "New partition"));
     newPartition->setStatusTip(i18nc("@info:status", "Create a new partition."));
-    newPartition->setShortcut(Qt::CTRL | Qt::Key_N);
+    actionCollection()->setDefaultShortcut(newPartition, QKeySequence(Qt::CTRL + Qt::Key_N));
     newPartition->setIcon(QIcon::fromTheme(QStringLiteral("document-new")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* resizePartition = actionCollection()->addAction(QStringLiteral("resizePartition"), &pmWidget(), SLOT(onResizePartition()));
@@ -260,7 +260,7 @@ void MainWindow::setupActions()
     resizePartition->setText(i18nc("@action:inmenu", "Resize/Move"));
     resizePartition->setToolTip(i18nc("@info:tooltip", "Resize or move partition"));
     resizePartition->setStatusTip(i18nc("@info:status", "Shrink, grow or move an existing partition."));
-    resizePartition->setShortcut(Qt::CTRL | Qt::Key_R);
+    actionCollection()->setDefaultShortcut(resizePartition, QKeySequence(Qt::CTRL + Qt::Key_R));
     resizePartition->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* deletePartition = actionCollection()->addAction(QStringLiteral("deletePartition"), &pmWidget(), SLOT(onDeletePartition()));
@@ -268,7 +268,7 @@ void MainWindow::setupActions()
     deletePartition->setText(i18nc("@action:inmenu", "Delete"));
     deletePartition->setToolTip(i18nc("@info:tooltip", "Delete partition"));
     deletePartition->setStatusTip(i18nc("@info:status", "Delete a partition."));
-    deletePartition->setShortcut(Qt::Key_Delete);
+    actionCollection()->setDefaultShortcut(deletePartition, QKeySequence::Delete);
     deletePartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* shredPartition = actionCollection()->addAction(QStringLiteral("shredPartition"), &pmWidget(), SLOT(onShredPartition()));
@@ -276,7 +276,7 @@ void MainWindow::setupActions()
     shredPartition->setText(i18nc("@action:inmenu", "Shred"));
     shredPartition->setToolTip(i18nc("@info:tooltip", "Shred partition"));
     shredPartition->setStatusTip(i18nc("@info:status", "Shred a partition so that its contents cannot be restored."));
-    shredPartition->setShortcut(Qt::SHIFT | Qt::Key_Delete);
+    actionCollection()->setDefaultShortcut(shredPartition, QKeySequence(Qt::SHIFT + Qt::Key_Delete));
     shredPartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete-shred")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* copyPartition = actionCollection()->addAction(QStringLiteral("copyPartition"), &pmWidget(), SLOT(onCopyPartition()));
@@ -284,7 +284,7 @@ void MainWindow::setupActions()
     copyPartition->setText(i18nc("@action:inmenu", "Copy"));
     copyPartition->setToolTip(i18nc("@info:tooltip", "Copy partition"));
     copyPartition->setStatusTip(i18nc("@info:status", "Copy an existing partition."));
-    copyPartition->setShortcut(Qt::CTRL | Qt::Key_C);
+    actionCollection()->setDefaultShortcut(copyPartition, QKeySequence(Qt::CTRL + Qt::Key_C));
     copyPartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* pastePartition = actionCollection()->addAction(QStringLiteral("pastePartition"), &pmWidget(), SLOT(onPastePartition()));
@@ -292,7 +292,7 @@ void MainWindow::setupActions()
     pastePartition->setText(i18nc("@action:inmenu", "Paste"));
     pastePartition->setToolTip(i18nc("@info:tooltip", "Paste partition"));
     pastePartition->setStatusTip(i18nc("@info:status", "Paste a copied partition."));
-    pastePartition->setShortcut(Qt::CTRL | Qt::Key_V);
+    actionCollection()->setDefaultShortcut(pastePartition, QKeySequence(Qt::CTRL + Qt::Key_V));
     pastePartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-paste")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* editMountPoint = actionCollection()->addAction(QStringLiteral("editMountPoint"), &pmWidget(), SLOT(onEditMountPoint()));
