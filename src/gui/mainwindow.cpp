@@ -63,6 +63,7 @@
 #include <QPointer>
 #include <QPushButton>
 #include <QReadLocker>
+#include <QRegularExpression>
 #include <QStatusBar>
 #include <QTemporaryFile>
 #include <QTextStream>
@@ -826,67 +827,72 @@ void MainWindow::onImportPartitionTable()
 
     Device& device = *pmWidget().selectedDevice();
 
-    QByteArray line;
-    QRegExp rxPartition(QStringLiteral("(\\d+);(\\d+);(\\d+);(\\w+);(\\w+);(\"\\w*\");(\"[^\"]*\")"));
-    QRegExp rxType(QStringLiteral("type:\\s\"(.+)\""));
-    QRegExp rxAlign(QStringLiteral("align:\\s\"(cylinder|sector)\""));
-    QRegExp rxMagic(QStringLiteral("^##|v(\\d+)|##"));
+    QString line;
     quint32 lineNo = 0;
     bool haveMagic = false;
     PartitionTable* ptable = nullptr;
     PartitionTable::TableType tableType = PartitionTable::unknownTableType;
 
-    while (!(line = file.readLine()).isEmpty()) {
+    while (!(line = QString::fromUtf8(file.readLine())).isEmpty()) {
         lineNo++;
-        line = line.simplified();
+        line = line.trimmed();
 
         if (line.isEmpty())
             continue;
 
-        if (!haveMagic && rxMagic.indexIn(QString::fromUtf8(line.constData())) == -1) {
+        QRegularExpression re(QStringLiteral("(\\d+);(\\d+);(\\d+);(\\w+);(\\w+);(\"\\w*\");(\"[^\"]*\")"));
+        QRegularExpressionMatch rePartition = re.match(line);
+        re.setPattern(QStringLiteral("type:\\s\"(.+)\""));
+        QRegularExpressionMatch reType = re.match(line);
+        re.setPattern(QStringLiteral("align:\\s\"(cylinder|sector)\""));
+        QRegularExpressionMatch reAlign = re.match(line);
+        re.setPattern(QStringLiteral("^##|v(\\d+)|##"));
+        QRegularExpressionMatch reMagic = re.match(line);
+
+        if (!(haveMagic || reMagic.hasMatch())) {
             KMessageBox::error(this, xi18nc("@info", "The import file <filename>%1</filename> does not contain a valid partition table.", url.fileName()), i18nc("@title:window", "Error While Importing Partition Table"));
             return;
         } else
             haveMagic = true;
 
-        if (line.startsWith('#'))
+        if (line.startsWith(QStringLiteral("#")))
             continue;
 
-        if (rxType.indexIn(QString::fromUtf8(line.constData())) != -1) {
+        if (reType.hasMatch()) {
             if (ptable != nullptr) {
                 KMessageBox::error(this, i18nc("@info", "Found more than one partition table type in import file (line %1).", lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
                 return;
             }
 
-            tableType = PartitionTable::nameToTableType(rxType.cap(1));
+            tableType = PartitionTable::nameToTableType(reType.captured(1));
 
             if (tableType == PartitionTable::unknownTableType) {
-                KMessageBox::error(this, i18nc("@info", "Partition table type \"%1\" is unknown (line %2).", rxType.cap(1), lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+                KMessageBox::error(this, i18nc("@info", "Partition table type \"%1\" is unknown (line %2).", reType.captured(1), lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
                 return;
             }
 
             if (tableType != PartitionTable::msdos && tableType != PartitionTable::gpt) {
-                KMessageBox::error(this, i18nc("@info", "Partition table type \"%1\" is not supported for import (line %2).", rxType.cap(1), lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
+                KMessageBox::error(this, i18nc("@info", "Partition table type \"%1\" is not supported for import (line %2).", reType.captured(1), lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
                 return;
             }
 
             ptable = new PartitionTable(tableType, PartitionTable::defaultFirstUsable(device, tableType), PartitionTable::defaultLastUsable(device, tableType));
             operationStack().push(new CreatePartitionTableOperation(device, ptable));
-        } else if (rxAlign.indexIn(QString::fromUtf8(line.constData())) != -1) {
+        } else if (reAlign.hasMatch()) {
             // currently ignored
-        } else if (rxPartition.indexIn(QString::fromUtf8(line.constData())) != -1) {
+        } else if (rePartition.hasMatch()) {
             if (ptable == nullptr) {
                 KMessageBox::error(this, i18nc("@info", "Found partition but no partition table type (line %1).",  lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
                 return;
             }
 
-            qint32 num = rxPartition.cap(1).toInt();
-            qint64 firstSector = rxPartition.cap(2).toLongLong();
-            qint64 lastSector = rxPartition.cap(3).toLongLong();
-            QString fsName = rxPartition.cap(4);
-            QString roleNames = rxPartition.cap(5);
-            QString volumeLabel = rxPartition.cap(6).replace(QStringLiteral("\""), QString());
-            QStringList flags = rxPartition.cap(7).replace(QStringLiteral("\""), QString()).split(QStringLiteral(","));
+            qint32 num = rePartition.captured(1).toInt();
+            qint64 firstSector = rePartition.captured(2).toLongLong();
+            qint64 lastSector = rePartition.captured(3).toLongLong();
+            QString fsName = rePartition.captured(4);
+            QString roleNames = rePartition.captured(5);
+            QString volumeLabel = rePartition.captured(6).replace(QStringLiteral("\""), QString());
+            QStringList flags = rePartition.captured(7).replace(QStringLiteral("\""), QString()).split(QStringLiteral(","));
 
             if (firstSector < ptable->firstUsable() || lastSector > ptable->lastUsable()) {
                 KMessageBox::error(this, i18nc("@info the partition is NOT a device path, just a number", "Partition %1 would be outside the device's boundaries (line %2).", num, lineNo), i18nc("@title:window", "Error While Importing Partition Table"));
