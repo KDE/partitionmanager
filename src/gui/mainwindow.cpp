@@ -817,7 +817,7 @@ void MainWindow::onImportPartitionTable()
             KMessageBox::error(this, xi18nc("@info", "Could not open input file <filename>%1</filename> for import: %2", url.fileName(), job->errorString()), i18nc("@title:window", "Error Importing Partition Table"));
             return;
         }
-        file.setFileName(url.toLocalFile());
+        file.setFileName(tempFile.fileName());
         if (!file.open(QFile::ReadOnly))
         {
             KMessageBox::error(this, xi18nc("@info", "Could not open temporary file <filename>%1</filename> while trying to import from <filename>%2</filename>.", tempFile.fileName(), url.fileName()), i18nc("@title:window", "Error Importing Partition Table"));
