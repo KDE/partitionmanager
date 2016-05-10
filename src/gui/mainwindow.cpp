@@ -784,25 +784,44 @@ void MainWindow::onImportPartitionTable()
 {
     Q_ASSERT(pmWidget().selectedDevice());
 
-    const QUrl url = QFileDialog::getOpenFileUrl(this, QStringLiteral("kfiledialog://importPartitionTable"));
+    const QUrl url = QFileDialog::getOpenFileUrl(this, QStringLiteral("Import Partition Table"));
 
     if (url.isEmpty())
         return;
 
-    QString fileName;
-    KIO::FileCopyJob *job = KIO::file_copy(url, QUrl::fromLocalFile(fileName));
-    KJobWidgets::setWindow(job, this);
-    job->exec();
-    if (job->error()) {
-        KMessageBox::error(this, xi18nc("@info", "Could not open input file <filename>%1</filename> for import: %2", url.fileName(), job->errorString()), i18nc("@title:window", "Error Importing Partition Table"));
-        return;
+    QFile file;
+    if (url.isLocalFile())
+    {
+        file.setFileName(url.toLocalFile());
+        if (!file.open(QFile::ReadOnly))
+        {
+            KMessageBox::error(this, xi18nc("@info", "Could not open input file <filename>%1</filename> for import", url.toLocalFile()), i18nc("@title:window", "Error Importing Partition Table"));
+            return;
+        }
+
     }
+    else
+    {
+        QTemporaryFile tempFile;
 
-    QFile file(fileName);
+        if (!tempFile.open()) {
+            KMessageBox::error(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", tempFile.fileName()), i18nc("@title:window", "Error Importing Partition Table"));
+            return;
+        }
 
-    if (!file.open(QFile::ReadOnly)) {
-        KMessageBox::error(this, xi18nc("@info", "Could not open temporary file <filename>%1</filename> while trying to import from <filename>%2</filename>.", fileName, url.fileName()), i18nc("@title:window", "Error Importing Partition Table"));
-        return;
+        KIO::FileCopyJob *job = KIO::file_copy(url, QUrl::fromLocalFile(tempFile.fileName()));
+        KJobWidgets::setWindow(job, this);
+        job->exec();
+        if (job->error()) {
+            KMessageBox::error(this, xi18nc("@info", "Could not open input file <filename>%1</filename> for import: %2", url.fileName(), job->errorString()), i18nc("@title:window", "Error Importing Partition Table"));
+            return;
+        }
+        file.setFileName(url.toLocalFile());
+        if (!file.open(QFile::ReadOnly))
+        {
+            KMessageBox::error(this, xi18nc("@info", "Could not open temporary file <filename>%1</filename> while trying to import from <filename>%2</filename>.", tempFile.fileName(), url.fileName()), i18nc("@title:window", "Error Importing Partition Table"));
+            return;
+        }
     }
 
     Device& device = *pmWidget().selectedDevice();
@@ -825,7 +844,7 @@ void MainWindow::onImportPartitionTable()
             continue;
 
         if (!haveMagic && rxMagic.indexIn(QString::fromUtf8(line.constData())) == -1) {
-            KMessageBox::error(this, xi18nc("@info", "The import file <filename>%1</filename> does not contain a valid partition table.", fileName), i18nc("@title:window", "Error While Importing Partition Table"));
+            KMessageBox::error(this, xi18nc("@info", "The import file <filename>%1</filename> does not contain a valid partition table.", url.fileName()), i18nc("@title:window", "Error While Importing Partition Table"));
             return;
         } else
             haveMagic = true;
