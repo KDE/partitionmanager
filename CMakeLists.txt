@@ -61,7 +61,7 @@ find_package(KF5 5.16 REQUIRED
 
 # use sane compile flags
 add_definitions(
-  -fexceptions
+#   -fexceptions
   -DQT_USE_QSTRINGBUILDER
   -DQT_NO_CAST_TO_ASCII
   -DQT_NO_CAST_FROM_ASCII
