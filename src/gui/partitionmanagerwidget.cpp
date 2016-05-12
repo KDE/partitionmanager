@@ -751,7 +751,7 @@ void PartitionManagerWidget::onBackupPartition()
         return;
     }
 
-    QString fileName = QFileDialog::getSaveFileName(this, QStringLiteral("kfiledialog://backupPartition"));
+    QString fileName = QFileDialog::getSaveFileName(this);
 //  QString fileName = "/tmp/backuptest.img";
 
     if (fileName.isEmpty())
@@ -774,7 +774,7 @@ void PartitionManagerWidget::onRestorePartition()
     if (checkTooManyPartitions(this, *selectedDevice(), *selectedPartition()))
         return;
 
-    QString fileName = QFileDialog::getOpenFileName(this, QStringLiteral("kfiledialog://restorePartition"));
+    QString fileName = QFileDialog::getOpenFileName(this);
 //  QString fileName = "/tmp/backuptest.img";
 
     if (!fileName.isEmpty() && QFile::exists(fileName)) {
