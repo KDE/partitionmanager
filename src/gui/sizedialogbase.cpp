@@ -120,6 +120,7 @@ void SizeDialogBase::setupConstraints()
     const qint64 minCapacity = sectorsToDialogUnit(device(), minimumLength());
     const qint64 maxCapacity = sectorsToDialogUnit(device(), maximumLength());
     dialogWidget().spinCapacity().setRange(minCapacity, maxCapacity);
+    minCapacity > maxCapacity ? okButton->setEnabled(false) : okButton->setEnabled(true);
 
     const qint64 maxFree = totalCapacity - minCapacity;
 
