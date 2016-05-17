@@ -235,7 +235,8 @@ void PartPropsDialog::updateHideAndShow()
         showFileSystem &&                                                       // only if we also show the file system
         partition().fileSystem().supportCreate() != FileSystem::cmdSupportNone &&  // and support creating this file system
         partition().fileSystem().type() != FileSystem::Unknown &&               // and not for unknown file systems
-        partition().state() != Partition::StateNew;                             // or new partitions
+        partition().state() != Partition::StateNew &&                           // or new partitions
+        !partition().roles().has(PartitionRole::Luks);                          // or encrypted filesystems
 
     dialogWidget().showCheckRecreate(showCheckRecreate);
 
