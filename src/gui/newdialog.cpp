@@ -70,8 +70,7 @@ void NewDialog::setupDialog()
     QStringList fsNames;
     foreach (const FileSystem * fs, FileSystemFactory::map())
         if (fs->supportCreate() != FileSystem::cmdSupportNone &&
-            fs->type() != FileSystem::Extended &&
-            fs->type() != FileSystem::Luks)
+            fs->type() != FileSystem::Extended)
             fsNames.append(fs->name());
 
     qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
