@@ -31,7 +31,7 @@ public:
     ScanProgressDialog(QWidget* parent);
 
 protected:
-    virtual void showEvent(QShowEvent* e) override;
+    void showEvent(QShowEvent* e) override;
 
 public:
     void setProgress(quint32 p) {

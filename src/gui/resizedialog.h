@@ -48,15 +48,15 @@ public:
     }
 
 public Q_SLOTS:
-    virtual void accept() override;
-    virtual void reject() override;
+    void accept() override;
+    void reject() override;
 
 protected:
-    virtual bool canGrow() const override;
-    virtual bool canShrink() const override;
-    virtual bool canMove() const override;
-    virtual void setupDialog() override;
-    virtual void setDirty() override;
+    bool canGrow() const override;
+    bool canShrink() const override;
+    bool canMove() const override;
+    void setupDialog() override;
+    void setDirty() override;
     void rollback();
     void setResizedFirstSector(qint64 s) {
         m_ResizedFirstSector = s;

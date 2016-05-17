@@ -36,10 +36,10 @@ public:
     ~ConfigureOptionsDialog();
 
 protected Q_SLOTS:
-    virtual void updateSettings() override;
-    virtual void updateWidgetsDefault() override;
-    virtual bool hasChanged() override;
-    virtual bool isDefault() override;
+    void updateSettings() override;
+    void updateWidgetsDefault() override;
+    bool hasChanged() override;
+    bool isDefault() override;
     void onComboDefaultFileSystemActivated(int) {
         settingsChangedSlot();
     }

@@ -56,13 +56,13 @@ protected:
     PartitionRole::Roles partitionRoles() const {
         return m_PartitionRoles;
     }
-    virtual bool canGrow() const override {
+    bool canGrow() const override {
         return true;
     }
-    virtual bool canShrink() const override {
+    bool canShrink() const override {
         return true;
     }
-    virtual bool canMove() const override {
+    bool canMove() const override {
         return true;
     }
 

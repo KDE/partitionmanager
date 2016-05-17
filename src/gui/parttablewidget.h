@@ -40,10 +40,10 @@ class PartTableWidget : public PartWidgetBase
 
 public:
     PartTableWidget(QWidget* parent);
-    virtual qint32 borderWidth() const override {
+    qint32 borderWidth() const override {
         return 0;    /**< @return border width */
     }
-    virtual qint32 borderHeight() const override {
+    qint32 borderHeight() const override {
         return 0;    /**< @return border height */
     }
 

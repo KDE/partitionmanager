@@ -27,8 +27,8 @@ public:
     FormattedSpinBox(QWidget* parent = nullptr) : QDoubleSpinBox(parent) {}
 
 public:
-    virtual QString textFromValue(double value) const override;
-    virtual double valueFromText(const QString& text) const override;
+    QString textFromValue(double value) const override;
+    double valueFromText(const QString& text) const override;
 
 private:
     QString stripped(const QString &t, int *pos = 0) const;
