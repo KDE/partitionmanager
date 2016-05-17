@@ -212,7 +212,10 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
     quint32 i = 0;
     item->setText(i++, p.deviceNode());
 
-    item->setText(i, p.fileSystem().name());
+    if (p.roles().has(PartitionRole::Luks) && p.fileSystem().name() != p.fileSystem().nameForType(FileSystem::Luks))
+        item->setText(i, p.fileSystem().name() + QStringLiteral(" [") + p.fileSystem().nameForType(FileSystem::Luks) + QStringLiteral("]")); // FIXME after string freeze
+    else
+        item->setText(i, p.fileSystem().name());
     item->setIcon(i, createFileSystemColor(p.fileSystem().type(), 14));
     i++;
 
