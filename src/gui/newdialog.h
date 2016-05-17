@@ -50,6 +50,7 @@ protected Q_SLOTS:
 protected:
     void setupConnections() override;
     void setupDialog() override;
+    void slotPasswordStatusChanged();
     void updateHideAndShow();
     void updateFileSystem(FileSystem::Type t);
     PartitionRole::Roles partitionRoles() const {

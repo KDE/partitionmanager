@@ -34,6 +34,7 @@
 #include <QFontDatabase>
 #include <QtAlgorithms>
 
+#include <KColorScheme>
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -95,6 +96,16 @@ void NewDialog::setupDialog()
 
     dialogWidget().checkBoxEncrypt().hide();
     dialogWidget().editPassphrase().hide();
+
+    dialogWidget().editPassphrase().setMinimumPasswordLength(1);
+    dialogWidget().editPassphrase().setMaximumPasswordLength(512); // cryptsetup does not support longer passwords
+
+    // set a background warning color (taken from the current color scheme)
+    KColorScheme colorScheme(QPalette::Active, KColorScheme::View);
+    dialogWidget().editPassphrase().setBackgroundWarningColor(colorScheme.background(KColorScheme::NegativeBackground).color());
+
+    // listen to password status updates
+    connect(&dialogWidget().editPassphrase(), &KNewPasswordWidget::passwordStatusChanged, this, &NewDialog::slotPasswordStatusChanged);
 
     // don't move these above the call to parent's setupDialog, because only after that has
     // run there is a valid partition set in the part resizer widget and they will need that.
@@ -201,6 +212,21 @@ void NewDialog::onLabelChanged(const QString& newLabel)
     partition().fileSystem().setLabel(newLabel);
 }
 
+void NewDialog::slotPasswordStatusChanged()
+{
+    // You may want to extend this switch with more cases,
+    // in order to warn the user about all the possible password issues.
+    switch (dialogWidget().editPassphrase().passwordStatus()) {
+    case KNewPasswordWidget::WeakPassword:
+    case KNewPasswordWidget::StrongPassword:
+        okButton->setEnabled(true);
+        break;
+    default:
+        okButton->setEnabled(false);
+        break;
+    }
+}
+
 void NewDialog::updateHideAndShow()
 {
     // this is mostly copy'n'pasted from PartPropsDialog::updateHideAndShow()
@@ -226,6 +252,7 @@ void NewDialog::updateHideAndShow()
         if (dialogWidget().checkBoxEncrypt().isChecked())
         {
             dialogWidget().editPassphrase().show();
+            slotPasswordStatusChanged();
         }
     }
     else
