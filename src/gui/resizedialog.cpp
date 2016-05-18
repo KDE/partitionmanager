@@ -34,10 +34,10 @@
 
 /** Creates a new ResizeDialog
     @param parent pointer to the parent widget
-    @param device the Device the Partition to resize is on
+    @param d the Device the Partition to resize is on
     @param p the Partition to resize
-    @param freebefore number of sectors free before the Partition to resize
-    @param freeafter number of sectors free after the Partition to resize
+    @param minFirst the first free sector before the Partition to resize
+    @param maxLast the last free sector free after the Partition to resize
 */
 ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minFirst, qint64 maxLast) :
     SizeDialogBase(parent, d, p, minFirst, maxLast),
