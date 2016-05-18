@@ -463,7 +463,7 @@ void MainWindow::enableActions()
         const FS::luks* luksFs = dynamic_cast<const FS::luks*>(&fsRef);
 
         actionCollection()->action(QStringLiteral("decryptPartition"))
-                ->setEnabled(luksFs && operationStack().size() == 0 &&
+                ->setEnabled(luksFs && !operationStack().contains(part) &&
                              (luksFs->canCryptOpen(part->partitionPath()) ||
                               luksFs->canCryptClose(part->partitionPath())));
         if (luksFs) {
