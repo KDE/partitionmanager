@@ -47,14 +47,14 @@ void GeneralPageWidget::setDefaultFileSystem(FileSystem::Type t)
 void GeneralPageWidget::setupDialog()
 {
     QStringList fsNames;
-    foreach(const FileSystem * fs, FileSystemFactory::map())
-    if (fs->supportCreate() != FileSystem::cmdSupportNone && fs->type() != FileSystem::Extended)
-        fsNames.append(fs->name());
+    for (const FileSystem * fs : FileSystemFactory::map())
+        if (fs->supportCreate() != FileSystem::cmdSupportNone && fs->type() != FileSystem::Extended && fs->type() != FileSystem::Luks)
+            fsNames.append(fs->name());
 
     qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    foreach(const QString & fsName, fsNames)
-    comboDefaultFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
+    for (const QString & fsName : fsNames)
+        comboDefaultFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     setDefaultFileSystem(GuiHelpers::defaultFileSystem());
 
