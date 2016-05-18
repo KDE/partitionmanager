@@ -45,8 +45,8 @@ CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const De
     mainLayout->addWidget(dialogButtonBox);
 
     connect(&widget().radioMSDOS(), SIGNAL(toggled(bool)), SLOT(onMSDOSToggled(bool)));
-    connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &CreatePartitionTableDialog::accept);
+    connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &CreatePartitionTableDialog::reject);
 }
 
 PartitionTable::TableType CreatePartitionTableDialog::type() const

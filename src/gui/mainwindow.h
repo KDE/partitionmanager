@@ -211,6 +211,8 @@ protected:
         return *m_ScanProgressDialog;
     }
 
+    void onSelectedDeviceMenuTriggered(bool);
+
 protected Q_SLOTS:
     void on_m_PartitionManagerWidget_selectedPartitionChanged(const Partition* p);
     void on_m_PartitionManagerWidget_contextMenuRequested(const QPoint& pos);
@@ -251,7 +253,6 @@ protected Q_SLOTS:
 
     void onSmartStatusDevice();
     void onPropertiesDevice(const QString& device_node = QString());
-    void onSelectedDeviceMenuTriggered(bool);
 
 private:
     OperationStack* m_OperationStack;

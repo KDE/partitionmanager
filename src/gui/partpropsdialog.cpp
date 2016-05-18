@@ -107,8 +107,8 @@ void PartPropsDialog::setupDialog()
     okButton->setEnabled(false);
     cancelButton->setFocus();
     cancelButton->setDefault(true);
-    connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &PartPropsDialog::accept);
+    connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &PartPropsDialog::reject);
 
     dialogWidget().partWidget().init(&partition());
 

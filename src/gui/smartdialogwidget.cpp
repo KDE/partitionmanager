@@ -122,7 +122,7 @@ void SmartDialogWidget::saveConfig() const
 
 void SmartDialogWidget::setupConnections()
 {
-    connect(treeSmartAttributes().header(), SIGNAL(customContextMenuRequested(const QPoint&)), SLOT(onHeaderContextMenu(const QPoint&)));
+    connect(treeSmartAttributes().header(), &QHeaderView::customContextMenuRequested, this, &SmartDialogWidget::onHeaderContextMenu);
 }
 
 void SmartDialogWidget::onHeaderContextMenu(const QPoint& p)

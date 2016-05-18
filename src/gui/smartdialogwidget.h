@@ -29,8 +29,6 @@ class QPoint;
 */
 class SmartDialogWidget : public QWidget, public Ui::SmartDialogWidgetBase
 {
-    Q_OBJECT
-
 public:
     SmartDialogWidget(QWidget* parent);
     ~SmartDialogWidget();
@@ -95,8 +93,6 @@ protected:
     void setupConnections();
     void loadConfig();
     void saveConfig() const;
-
-protected Q_SLOTS:
     void onHeaderContextMenu(const QPoint& p);
 
 private:

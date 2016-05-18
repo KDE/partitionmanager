@@ -126,9 +126,9 @@ void ApplyProgressDialog::setupConnections()
     connect(&timer(), SIGNAL(timeout()), SLOT(onSecondElapsed()));
     connect(&detailsWidget().buttonSave(), SIGNAL(clicked()), SLOT(saveReport()));
     connect(&detailsWidget().buttonBrowser(), SIGNAL(clicked()), SLOT(browserReport()));
-    connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
-    connect(detailsButton, SIGNAL(clicked()), this, SLOT(toggleDetails()));
+    connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &ApplyProgressDialog::accept);
+    connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &ApplyProgressDialog::reject);
+    connect(detailsButton, &QPushButton::clicked, this, &ApplyProgressDialog::toggleDetails);
 }
 
 /** Shows the dialog */
@@ -277,8 +277,8 @@ void ApplyProgressDialog::onOpStarted(int num, Operation* op)
     dialogWidget().progressSub().setValue(0);
     dialogWidget().progressSub().setRange(0, op->totalProgress());
 
-    connect(op, SIGNAL(jobStarted(Job*, Operation*)), SLOT(onJobStarted(Job*, Operation*)));
-    connect(op, SIGNAL(jobFinished(Job*, Operation*)), SLOT(onJobFinished(Job*, Operation*)));
+    connect(op, &Operation::jobStarted, this, &ApplyProgressDialog::onJobStarted);
+    connect(op, &Operation::jobFinished, this, &ApplyProgressDialog::onJobFinished);
 }
 
 void ApplyProgressDialog::onJobStarted(Job* job, Operation* op)

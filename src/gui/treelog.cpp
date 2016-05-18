@@ -51,7 +51,7 @@ TreeLog::TreeLog(QWidget* parent) :
     setupUi(this);
 
     treeLog().header()->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(treeLog().header(), SIGNAL(customContextMenuRequested(const QPoint&)), SLOT(onHeaderContextMenu(const QPoint&)));
+    connect(treeLog().header(), &QHeaderView::customContextMenuRequested, this, &TreeLog::onHeaderContextMenu);
 
 }
 

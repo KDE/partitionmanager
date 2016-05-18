@@ -44,15 +44,16 @@ Q_SIGNALS:
 
 public:
     void init();
+    void onNewLogMessage(Log::Level logLevel, const QString& s);
 
 protected Q_SLOTS:
-    void onNewLogMessage(Log::Level logLevel, const QString& s);
-    void onHeaderContextMenu(const QPoint& pos);
     void onClearLog();
     void onSaveLog();
     void on_m_TreeLog_customContextMenuRequested(const QPoint& pos);
 
 protected:
+    void onHeaderContextMenu(const QPoint& pos);
+
     QTreeWidget& treeLog() {
         Q_ASSERT(m_TreeLog);
         return *m_TreeLog;

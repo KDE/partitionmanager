@@ -153,7 +153,7 @@ void PartitionManagerWidget::saveConfig() const
 
 void PartitionManagerWidget::setupConnections()
 {
-    connect(treePartitions().header(), SIGNAL(customContextMenuRequested(const QPoint&)), SLOT(onHeaderContextMenu(const QPoint&)));
+    connect(treePartitions().header(), &QHeaderView::customContextMenuRequested, this, &PartitionManagerWidget::onHeaderContextMenu);
 }
 
 void PartitionManagerWidget::clear()

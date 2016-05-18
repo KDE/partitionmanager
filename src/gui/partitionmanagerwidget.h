@@ -135,6 +135,8 @@ protected:
         return *m_TreePartitions;
     }
 
+    void onHeaderContextMenu(const QPoint& p);
+
 protected Q_SLOTS:
     void on_m_TreePartitions_currentItemChanged(QTreeWidgetItem* current, QTreeWidgetItem* previous);
     void on_m_TreePartitions_customContextMenuRequested(const QPoint& pos);
@@ -143,8 +145,6 @@ protected Q_SLOTS:
     void on_m_PartTableWidget_itemSelectionChanged(PartWidget* item);
     void on_m_PartTableWidget_customContextMenuRequested(const QPoint& pos);
     void on_m_PartTableWidget_itemDoubleClicked();
-
-    void onHeaderContextMenu(const QPoint& p);
 
 private:
     OperationStack* m_OperationStack;

@@ -38,17 +38,15 @@ class QDialogButtonBox;
 */
 class SmartDialog : public QDialog
 {
-    Q_OBJECT
     Q_DISABLE_COPY(SmartDialog)
 
 public:
     SmartDialog(QWidget* parent, Device& d);
     ~SmartDialog();
 
-protected Q_SLOTS:
+protected:
     void saveSmartReport();
 
-protected:
     void setupDialog();
     void setupConnections();
 

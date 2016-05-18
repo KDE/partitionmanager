@@ -141,8 +141,8 @@ void SmartDialog::setupDialog()
 
 void SmartDialog::setupConnections()
 {
-    connect(buttonBox->button(QDialogButtonBox::Save), SIGNAL(clicked()), SLOT(saveSmartReport()));
-    connect(buttonBox->button(QDialogButtonBox::Close), SIGNAL(clicked()), SLOT(close()));
+    connect(buttonBox->button(QDialogButtonBox::Save), &QPushButton::clicked, this, &SmartDialog::saveSmartReport);
+    connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &SmartDialog::close);
 }
 
 QString SmartDialog::toHtml() const

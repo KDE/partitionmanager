@@ -127,9 +127,9 @@ protected Q_SLOTS:
     void onSpinLastSectorChanged(double newLast);
     void onAlignToggled(bool);
 
+protected:
     void toggleDetails();
 
-protected:
     SizeDialogWidget* m_SizeDialogWidget;
     SizeDetailsWidget* m_SizeDetailsWidget;
     Device& m_Device;

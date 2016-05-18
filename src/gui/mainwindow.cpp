@@ -115,7 +115,7 @@ void MainWindow::init()
 {
     treeLog().init();
 
-    connect(GlobalLog::instance(), SIGNAL(newMessage(Log::Level, const QString&)), &treeLog(), SLOT(onNewLogMessage(Log::Level, const QString&)));
+    connect(GlobalLog::instance(), &GlobalLog::newMessage, &treeLog(), &TreeLog::onNewLogMessage);
 
     setupActions();
     setupStatusBar();
@@ -657,7 +657,7 @@ void MainWindow::updateSeletedDeviceMenu()
         action->setCheckable(true);
         action->setChecked(d->deviceNode() == pmWidget().selectedDevice()->deviceNode());
         action->setData(d->deviceNode());
-        connect(action, SIGNAL(triggered(bool)), SLOT(onSelectedDeviceMenuTriggered(bool)));
+        connect(action, &QAction::triggered, this, &MainWindow::onSelectedDeviceMenuTriggered);
         devicesMenu->addAction(action);
     }
 }

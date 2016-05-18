@@ -71,9 +71,9 @@ SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint
     mainLayout->setSizeConstraint(QLayout::SetFixedSize);
     mainLayout->addWidget(dialogButtonBox);
 
-    connect(dialogButtonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(dialogButtonBox, SIGNAL(rejected()), this, SLOT(reject()));
-    connect(detailsButton, SIGNAL(clicked()), this, SLOT(toggleDetails()));
+    connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &SizeDialogBase::accept);
+    connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &SizeDialogBase::reject);
+    connect(detailsButton, &QPushButton::clicked, this, &SizeDialogBase::toggleDetails);
 }
 
 void SizeDialogBase::setupDialog()

@@ -107,7 +107,7 @@ void FileSystemSupportDialog::setupDialog()
 
 void FileSystemSupportDialog::setupConnections()
 {
-    connect(dialogButtonBox->button(QDialogButtonBox::Ok), SIGNAL(clicked()), SLOT(close()));
+    connect(dialogButtonBox->button(QDialogButtonBox::Ok), &QPushButton::clicked, this, &FileSystemSupportDialog::close);
     connect(&dialogWidget().buttonRescan(), SIGNAL(clicked()), SLOT(onButtonRescanClicked()));
 }
 

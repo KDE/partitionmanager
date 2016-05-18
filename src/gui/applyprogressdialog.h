@@ -73,15 +73,16 @@ protected Q_SLOTS:
     void onOkButton();
     void onOpStarted(int num, Operation* op);
     void onOpFinished(int num, Operation* op);
-    void onJobStarted(Job* job, Operation* op);
-    void onJobFinished(Job* job, Operation* op);
     void onSecondElapsed();
     void saveReport();
-    void toggleDetails();
     void browserReport();
     void updateReport(bool force = false);
 
 protected:
+    void onJobStarted(Job* job, Operation* op);
+    void onJobFinished(Job* job, Operation* op);
+    void toggleDetails();
+
     void closeEvent(QCloseEvent* e) override;
     void keyPressEvent(QKeyEvent* e) override;
 
