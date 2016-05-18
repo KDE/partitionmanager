@@ -227,8 +227,8 @@ void PartPropsDialog::updateHideAndShow()
     const bool showFileSystem =
         !partition().roles().has(PartitionRole::Extended) &&                    // not for extended, they have no file system
         !partition().roles().has(PartitionRole::Unallocated) &&                 // and not for unallocated: no choice there
-        !partition().roles().has(PartitionRole::Luks);                          // and not for luks partitions, we do not allow creating them without inner file system
-
+                                                                                // do now show file system comboBox for open luks volumes.
+        !(partition().roles().has(PartitionRole::Luks) && partition().fileSystem().type() != FileSystem::Luks);
     dialogWidget().showFileSystem(showFileSystem);
 
     // when do we show the recreate file system check box?
@@ -266,7 +266,6 @@ void PartPropsDialog::setupConnections()
     // seldom.
     connect(&dialogWidget().listFlags(), SIGNAL(itemClicked(QListWidgetItem*)), SLOT(setDirty()));
     connect(&dialogWidget().listFlags(), SIGNAL(currentRowChanged(int)), SLOT(setDirty()));
-
 }
 
 void PartPropsDialog::setDirty()
@@ -281,34 +280,40 @@ void PartPropsDialog::setupFileSystemComboBox()
     QString selected;
     QStringList fsNames;
 
-    foreach(const FileSystem * fs, FileSystemFactory::map())
-    if (partition().fileSystem().type() == fs->type() || (fs->supportCreate() != FileSystem::cmdSupportNone && partition().capacity() >= fs->minCapacity() && partition().capacity() <= fs->maxCapacity())) {
-        QString name = fs->name();
-
-        if (partition().fileSystem().type() == fs->type())
-            selected = name;
-
-        // If the partition isn't extended, skip the extended FS
-        if (fs->type() == FileSystem::Extended && !partition().roles().has(PartitionRole::Extended))
+    for(const FileSystem * fs : FileSystemFactory::map())
+    {
+        // If the partition isn't encrypted, skip the luks FS
+        if (fs->type() == FileSystem::Luks && partition().fileSystem().type() != FileSystem::Luks)
             continue;
+        if (partition().fileSystem().type() == fs->type() || (fs->supportCreate() != FileSystem::cmdSupportNone &&
+                            partition().capacity() >= fs->minCapacity() && partition().capacity() <= fs->maxCapacity())) {
+            QString name = fs->name();
 
-        // The user cannot change the filesystem back to "unformatted" once a filesystem has been created.
-        if (fs->type() == FileSystem::Unformatted) {
-            // .. but if the file system is unknown to us, show the unformatted option as the currently selected one
-            if (partition().fileSystem().type() == FileSystem::Unknown) {
-                name = FileSystem::nameForType(FileSystem::Unformatted);
+            if (partition().fileSystem().type() == fs->type())
                 selected = name;
-            } else if (partition().fileSystem().type() != FileSystem::Unformatted && partition().state() != Partition::StateNew)
-                continue;
-        }
 
-        fsNames.append(name);
+            // If the partition isn't extended, skip the extended FS
+            if (fs->type() == FileSystem::Extended && !partition().roles().has(PartitionRole::Extended))
+                continue;
+
+            // The user cannot change the filesystem back to "unformatted" once a filesystem has been created.
+            if (fs->type() == FileSystem::Unformatted) {
+                // .. but if the file system is unknown to us, show the unformatted option as the currently selected one
+                if (partition().fileSystem().type() == FileSystem::Unknown) {
+                    name = FileSystem::nameForType(FileSystem::Unformatted);
+                    selected = name;
+                } else if (partition().fileSystem().type() != FileSystem::Unformatted && partition().state() != Partition::StateNew)
+                    continue;
+            }
+
+            fsNames.append(name);
+        }
     }
 
     qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    foreach(const QString & fsName, fsNames)
-    dialogWidget().fileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
+    for (const QString & fsName : fsNames)
+        dialogWidget().fileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));
 
