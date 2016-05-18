@@ -226,7 +226,8 @@ void PartPropsDialog::updateHideAndShow()
     // when do we show the file system combo box?
     const bool showFileSystem =
         !partition().roles().has(PartitionRole::Extended) &&                    // not for extended, they have no file system
-        !partition().roles().has(PartitionRole::Unallocated);                   // and not for unallocated: no choice there
+        !partition().roles().has(PartitionRole::Unallocated) &&                 // and not for unallocated: no choice there
+        !partition().roles().has(PartitionRole::Luks);                          // and not for luks partitions, we do not allow creating them without inner file system
 
     dialogWidget().showFileSystem(showFileSystem);
 
