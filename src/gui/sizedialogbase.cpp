@@ -101,6 +101,14 @@ void SizeDialogBase::setupDialog()
 
 void SizeDialogBase::setupConstraints()
 {
+    // Do not allow moving first sector if moving partition is disabled
+    bool moveAllowed = canMove();
+    if (!moveAllowed)
+        m_MinimumFirstSector = partition().firstSector();
+    dialogWidget().spinFreeBefore().setEnabled(moveAllowed);
+    dialogWidget().spinFreeAfter().setEnabled(moveAllowed);
+    detailsWidget().spinFirstSector().setEnabled(moveAllowed);
+
     setMinimumLength(!canShrink() ? partition().length() : qMax(partition().sectorsUsed(), partition().minimumSectors()));
     setMaximumLength(!canGrow() ? partition().length() : qMin(maximumLastSector() - minimumFirstSector() + 1, partition().maximumSectors()));
 
@@ -129,12 +137,6 @@ void SizeDialogBase::setupConstraints()
 
     detailsWidget().spinFirstSector().setRange(minimumFirstSector(), maximumLastSector());
     detailsWidget().spinLastSector().setRange(minimumFirstSector(), maximumLastSector());
-
-    // Do not allow moving first sector if moving partition is disabled
-    dialogWidget().spinFreeBefore().setEnabled(canMove());
-    dialogWidget().spinFreeAfter().setEnabled(canMove());
-    detailsWidget().spinFirstSector().setEnabled(canMove());
-    detailsWidget().spinLastSector().setEnabled(canMove());
 
     onAlignToggled(align());
 }
