@@ -112,14 +112,15 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
     int x = 0;
     int y = createHeader(p.deviceNode(), cols(area));
     if (p.fileSystem().type() == FileSystem::Luks) {
+        const FS::luks* luksFs = dynamic_cast<const FS::luks*>(&p.fileSystem());
         QString deviceNode = p.partitionPath();
         createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
         createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Cipher name:"), FS::luks::getCipherName(deviceNode), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Cipher mode:"), FS::luks::getCipherMode(deviceNode), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Hash:"), FS::luks::getHashName(deviceNode), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Key size:"), FS::luks::getKeySize(deviceNode), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Payload offset:"), FS::luks::getPayloadOffset(deviceNode), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Cipher name:"), luksFs->getCipherName(deviceNode), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Cipher mode:"), luksFs->getCipherMode(deviceNode), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Hash:"), luksFs->getHashName(deviceNode), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Key size:"), QString::number(luksFs->getKeySize(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Payload offset:"), QString::number(luksFs->getPayloadOffset(deviceNode)), cols(area), x, y);
         createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
