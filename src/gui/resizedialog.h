@@ -32,8 +32,6 @@ class Device;
 */
 class ResizeDialog : public SizeDialogBase
 {
-    Q_OBJECT
-
 public:
     ResizeDialog(QWidget* parent, Device& device, Partition& p, qint64 minFirst, qint64 maxLast);
     ~ResizeDialog();
@@ -47,7 +45,6 @@ public:
         return m_ResizedLastSector;
     }
 
-public Q_SLOTS:
     void accept() override;
     void reject() override;
 

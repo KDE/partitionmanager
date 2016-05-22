@@ -54,7 +54,7 @@ Q_SIGNALS:
     void deviceDoubleClicked(const Device*);
     void partitionDoubleClicked(const Partition* p);
 
-public Q_SLOTS:
+public:
     void setSelectedDevice(Device* d);
     void setSelectedDevice(const QString& device_node);
 
@@ -77,7 +77,6 @@ public Q_SLOTS:
 
     void onPropertiesPartition();
 
-public:
     void init(OperationStack* ostack);
 
     void clear();

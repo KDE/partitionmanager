@@ -30,8 +30,6 @@ class QString;
 
 class EditMountPointDialog : public QDialog
 {
-    Q_OBJECT
-
 public:
     EditMountPointDialog(QWidget* parent, Partition& p);
     ~EditMountPointDialog();
@@ -41,7 +39,6 @@ protected:
         return *m_DialogWidget;
     }
 
-protected Q_SLOTS:
     void accept() override;
 
 private:

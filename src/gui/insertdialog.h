@@ -33,8 +33,6 @@ class Device;
 */
 class InsertDialog : public SizeDialogBase
 {
-    Q_OBJECT
-
 public:
     InsertDialog(QWidget* parent, Device& device, Partition& insertedPartition, const Partition& destPartition);
     ~InsertDialog();

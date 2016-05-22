@@ -255,20 +255,20 @@ void PartPropsDialog::updateHideAndShow()
 
 void PartPropsDialog::setupConnections()
 {
-    connect(&dialogWidget().label(), SIGNAL(textEdited(const QString&)), SLOT(setDirty()));
-    connect(&dialogWidget().fileSystem(), SIGNAL(currentIndexChanged(int)), SLOT(onFilesystemChanged(int)));
-    connect(&dialogWidget().checkRecreate(), SIGNAL(stateChanged(int)), SLOT(onRecreate(int)));
+    connect(&dialogWidget().label(), &QLineEdit::textEdited, this, &PartPropsDialog::setDirty2);
+    connect(&dialogWidget().fileSystem(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PartPropsDialog::onFilesystemChanged);
+    connect(&dialogWidget().checkRecreate(), &QCheckBox::stateChanged, this, &PartPropsDialog::onRecreate);
 
     // We want to enable the OK-button whenever the user checks or unchecks a flag in the flag list.
     // But it seems Qt doesn't offer a foolproof way to detect if this has happened: The currentRow/ItemChanged
     // signal only means the _current_ item has changed, but not necessarily that it was checked/unchecked. And
     // itemClicked alone isn't enough either. We choose to rather enable the OK-button too often than too
     // seldom.
-    connect(&dialogWidget().listFlags(), SIGNAL(itemClicked(QListWidgetItem*)), SLOT(setDirty()));
-    connect(&dialogWidget().listFlags(), SIGNAL(currentRowChanged(int)), SLOT(setDirty()));
+    connect(&dialogWidget().listFlags(), &QListWidget::itemClicked, this, &PartPropsDialog::setDirty);
+    connect(&dialogWidget().listFlags(), &QListWidget::currentRowChanged, this, &PartPropsDialog::setDirty3);
 }
 
-void PartPropsDialog::setDirty()
+void PartPropsDialog::setDirty(void*)
 {
     okButton->setEnabled(true);
     okButton->setDefault(true);
@@ -347,7 +347,7 @@ void PartPropsDialog::onFilesystemChanged(int)
     } else {
         dialogWidget().fileSystem().disconnect(this);
         setupFileSystemComboBox();
-        connect(&dialogWidget().fileSystem(), SIGNAL(currentIndexChanged(int)), SLOT(onFilesystemChanged(int)));
+        connect(&dialogWidget().fileSystem(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PartPropsDialog::onFilesystemChanged);
     }
 }
 

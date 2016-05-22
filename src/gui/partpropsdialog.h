@@ -45,7 +45,6 @@ class QString;
 */
 class PartPropsDialog : public QDialog
 {
-    Q_OBJECT
     Q_DISABLE_COPY(PartPropsDialog)
 
 public:
@@ -106,8 +105,10 @@ protected:
 
     void updatePartitionFileSystem();
 
-protected Q_SLOTS:
-    void setDirty();
+protected:
+    void setDirty(void *unused = nullptr);
+    void setDirty2(QString) {setDirty();};
+    void setDirty3(int) {setDirty();};
     void onFilesystemChanged(int idx);
     void onRecreate(int);
 

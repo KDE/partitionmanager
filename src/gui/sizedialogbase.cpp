@@ -143,16 +143,16 @@ void SizeDialogBase::setupConstraints()
 
 void SizeDialogBase::setupConnections()
 {
-    connect(&dialogWidget().partResizerWidget(), SIGNAL(firstSectorChanged(qint64)), SLOT(onResizerWidgetFirstSectorChanged(qint64)));
-    connect(&dialogWidget().partResizerWidget(), SIGNAL(lastSectorChanged(qint64)), SLOT(onResizerWidgetLastSectorChanged(qint64)));
+    connect(&dialogWidget().partResizerWidget(), &PartResizerWidget::firstSectorChanged, this, &SizeDialogBase::onResizerWidgetFirstSectorChanged);
+    connect(&dialogWidget().partResizerWidget(), &PartResizerWidget::lastSectorChanged, this, &SizeDialogBase::onResizerWidgetLastSectorChanged);
 
-    connect(&dialogWidget().spinFreeBefore(), SIGNAL(valueChanged(double)), SLOT(onSpinFreeBeforeChanged(double)));
-    connect(&dialogWidget().spinFreeAfter(), SIGNAL(valueChanged(double)), SLOT(onSpinFreeAfterChanged(double)));
-    connect(&dialogWidget().spinCapacity(), SIGNAL(valueChanged(double)), SLOT(onSpinCapacityChanged(double)));
+    connect(&dialogWidget().spinFreeBefore(), static_cast<void(QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinFreeBeforeChanged);
+    connect(&dialogWidget().spinFreeAfter(), static_cast<void(QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinFreeAfterChanged);
+    connect(&dialogWidget().spinCapacity(), static_cast<void(QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinCapacityChanged);
 
-    connect(&detailsWidget().spinFirstSector(), SIGNAL(valueChanged(double)), SLOT(onSpinFirstSectorChanged(double)));
-    connect(&detailsWidget().spinLastSector(), SIGNAL(valueChanged(double)), SLOT(onSpinLastSectorChanged(double)));
-    connect(&detailsWidget().checkAlign(), SIGNAL(toggled(bool)), SLOT(onAlignToggled(bool)));
+    connect(&detailsWidget().spinFirstSector(), static_cast<void(QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinFirstSectorChanged);
+    connect(&detailsWidget().spinLastSector(), static_cast<void(QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinLastSectorChanged);
+    connect(&detailsWidget().checkAlign(), &QCheckBox::toggled, this, &SizeDialogBase::onAlignToggled);
 }
 
 void SizeDialogBase::toggleDetails()

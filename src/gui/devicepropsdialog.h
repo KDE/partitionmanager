@@ -39,7 +39,6 @@ class QString;
 */
 class DevicePropsDialog : public QDialog
 {
-    Q_OBJECT
     Q_DISABLE_COPY(DevicePropsDialog)
 
 public:
@@ -70,9 +69,6 @@ protected:
         return *m_DialogWidget;
     }
 
-    void onButtonSmartMore();
-
-protected Q_SLOTS:
     void setDirty(bool);
     void onButtonSmartMore(bool);
 

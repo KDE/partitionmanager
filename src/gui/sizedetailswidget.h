@@ -28,8 +28,6 @@
 */
 class SizeDetailsWidget : public QWidget, public Ui::SizeDetailsWidgetBase
 {
-    Q_OBJECT
-
 public:
     SizeDetailsWidget(QWidget* parent);
 

@@ -182,7 +182,8 @@ void MainWindow::setupActions()
     KStandardAction::quit(this, SLOT(close()), actionCollection());
 
     // Edit actions
-    QAction* undoOperation = actionCollection()->addAction(QStringLiteral("undoOperation"), this, SLOT(onUndoOperation()));
+    QAction* undoOperation = actionCollection()->addAction(QStringLiteral("undoOperation"));
+    connect(undoOperation, &QAction::triggered, this, &MainWindow::onUndoOperation);
     undoOperation->setEnabled(false);
     undoOperation->setText(i18nc("@action:inmenu", "Undo"));
     undoOperation->setToolTip(i18nc("@info:tooltip", "Undo the last operation"));
@@ -190,14 +191,16 @@ void MainWindow::setupActions()
     actionCollection()->setDefaultShortcut(undoOperation, QKeySequence(Qt::CTRL + Qt::Key_Z));
     undoOperation->setIcon(QIcon::fromTheme(QStringLiteral("edit-undo")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* clearAllOperations = actionCollection()->addAction(QStringLiteral("clearAllOperations"), this, SLOT(onClearAllOperations()));
+    QAction* clearAllOperations = actionCollection()->addAction(QStringLiteral("clearAllOperations"));
+    connect(clearAllOperations, &QAction::triggered, this, &MainWindow::onClearAllOperations);
     clearAllOperations->setEnabled(false);
     clearAllOperations->setText(i18nc("@action:inmenu clear the list of operations", "Clear"));
     clearAllOperations->setToolTip(i18nc("@info:tooltip", "Clear all operations"));
     clearAllOperations->setStatusTip(i18nc("@info:status", "Empty the list of pending operations."));
     clearAllOperations->setIcon(QIcon::fromTheme(QStringLiteral("dialog-cancel")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* applyAllOperations = actionCollection()->addAction(QStringLiteral("applyAllOperations"), this, SLOT(onApplyAllOperations()));
+    QAction* applyAllOperations = actionCollection()->addAction(QStringLiteral("applyAllOperations"));
+    connect(applyAllOperations, &QAction::triggered, this, &MainWindow::onApplyAllOperations);
     applyAllOperations->setEnabled(false);
     applyAllOperations->setText(i18nc("@action:inmenu apply all operations", "Apply"));
     applyAllOperations->setToolTip(i18nc("@info:tooltip", "Apply all operations"));
@@ -205,14 +208,16 @@ void MainWindow::setupActions()
     applyAllOperations->setIcon(QIcon::fromTheme(QStringLiteral("dialog-ok-apply")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     // Device actions
-    QAction* refreshDevices = actionCollection()->addAction(QStringLiteral("refreshDevices"),  this, SLOT(onRefreshDevices()));
+    QAction* refreshDevices = actionCollection()->addAction(QStringLiteral("refreshDevices"));
+    connect(refreshDevices, &QAction::triggered, this, &MainWindow::onRefreshDevices);
     refreshDevices->setText(i18nc("@action:inmenu refresh list of devices", "Refresh Devices"));
     refreshDevices->setToolTip(i18nc("@info:tooltip", "Refresh all devices"));
     refreshDevices->setStatusTip(i18nc("@info:status", "Renew the devices list."));
     actionCollection()->setDefaultShortcut(refreshDevices, Qt::Key_F5);
     refreshDevices->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* createNewPartitionTable = actionCollection()->addAction(QStringLiteral("createNewPartitionTable"), this, SLOT(onCreateNewPartitionTable()));
+    QAction* createNewPartitionTable = actionCollection()->addAction(QStringLiteral("createNewPartitionTable"));
+    connect(createNewPartitionTable, &QAction::triggered, this, &MainWindow::onCreateNewPartitionTable);
     createNewPartitionTable->setEnabled(false);
     createNewPartitionTable->setText(i18nc("@action:inmenu", "New Partition Table"));
     createNewPartitionTable->setToolTip(i18nc("@info:tooltip", "Create a new partition table"));
@@ -220,27 +225,31 @@ void MainWindow::setupActions()
     actionCollection()->setDefaultShortcut(createNewPartitionTable, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_N));
     createNewPartitionTable->setIcon(QIcon::fromTheme(QStringLiteral("edit-clear")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* exportPartitionTable = actionCollection()->addAction(QStringLiteral("exportPartitionTable"), this, SLOT(onExportPartitionTable()));
+    QAction* exportPartitionTable = actionCollection()->addAction(QStringLiteral("exportPartitionTable"));
+    connect(exportPartitionTable, &QAction::triggered, this, &MainWindow::onExportPartitionTable);
     exportPartitionTable->setEnabled(false);
     exportPartitionTable->setText(i18nc("@action:inmenu", "Export Partition Table"));
     exportPartitionTable->setToolTip(i18nc("@info:tooltip", "Export a partition table"));
     exportPartitionTable->setStatusTip(i18nc("@info:status", "Export the device's partition table to a text file."));
     exportPartitionTable->setIcon(QIcon::fromTheme(QStringLiteral("document-export")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* importPartitionTable = actionCollection()->addAction(QStringLiteral("importPartitionTable"), this, SLOT(onImportPartitionTable()));
+    QAction* importPartitionTable = actionCollection()->addAction(QStringLiteral("importPartitionTable"));
+    connect(importPartitionTable, &QAction::triggered, this, &MainWindow::onImportPartitionTable);
     importPartitionTable->setEnabled(false);
     importPartitionTable->setText(i18nc("@action:inmenu", "Import Partition Table"));
     importPartitionTable->setToolTip(i18nc("@info:tooltip", "Import a partition table"));
     importPartitionTable->setStatusTip(i18nc("@info:status", "Import a partition table from a text file."));
     importPartitionTable->setIcon(QIcon::fromTheme(QStringLiteral("document-import")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* smartStatusDevice = actionCollection()->addAction(QStringLiteral("smartStatusDevice"), this, SLOT(onSmartStatusDevice()));
+    QAction* smartStatusDevice = actionCollection()->addAction(QStringLiteral("smartStatusDevice"));
+    connect(smartStatusDevice, &QAction::triggered, this, &MainWindow::onSmartStatusDevice);
     smartStatusDevice->setEnabled(false);
     smartStatusDevice->setText(i18nc("@action:inmenu", "SMART Status"));
     smartStatusDevice->setToolTip(i18nc("@info:tooltip", "Show SMART status"));
     smartStatusDevice->setStatusTip(i18nc("@info:status", "Show the device's SMART status if supported"));
 
-    QAction* propertiesDevice = actionCollection()->addAction(QStringLiteral("propertiesDevice"), this, SLOT(onPropertiesDevice()));
+    QAction* propertiesDevice = actionCollection()->addAction(QStringLiteral("propertiesDevice"));
+    connect(propertiesDevice, &QAction::triggered, this, &MainWindow::onPropertiesDevice2);
     propertiesDevice->setEnabled(false);
     propertiesDevice->setText(i18nc("@action:inmenu", "Properties"));
     propertiesDevice->setToolTip(i18nc("@info:tooltip", "Show device properties dialog"));
@@ -248,7 +257,8 @@ void MainWindow::setupActions()
     propertiesDevice->setIcon(QIcon::fromTheme(QStringLiteral("document-properties")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     // Partition actions
-    QAction* newPartition = actionCollection()->addAction(QStringLiteral("newPartition"), &pmWidget(), SLOT(onNewPartition()));
+    QAction* newPartition = actionCollection()->addAction(QStringLiteral("newPartition"));
+    connect(newPartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onNewPartition);
     newPartition->setEnabled(false);
     newPartition->setText(i18nc("@action:inmenu create a new partition", "New"));
     newPartition->setToolTip(i18nc("@info:tooltip", "New partition"));
@@ -256,7 +266,8 @@ void MainWindow::setupActions()
     actionCollection()->setDefaultShortcut(newPartition, QKeySequence(Qt::CTRL + Qt::Key_N));
     newPartition->setIcon(QIcon::fromTheme(QStringLiteral("document-new")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* resizePartition = actionCollection()->addAction(QStringLiteral("resizePartition"), &pmWidget(), SLOT(onResizePartition()));
+    QAction* resizePartition = actionCollection()->addAction(QStringLiteral("resizePartition"));
+    connect(resizePartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onResizePartition);
     resizePartition->setEnabled(false);
     resizePartition->setText(i18nc("@action:inmenu", "Resize/Move"));
     resizePartition->setToolTip(i18nc("@info:tooltip", "Resize or move partition"));
@@ -264,7 +275,8 @@ void MainWindow::setupActions()
     actionCollection()->setDefaultShortcut(resizePartition, QKeySequence(Qt::CTRL + Qt::Key_R));
     resizePartition->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* deletePartition = actionCollection()->addAction(QStringLiteral("deletePartition"), &pmWidget(), SLOT(onDeletePartition()));
+    QAction* deletePartition = actionCollection()->addAction(QStringLiteral("deletePartition"));
+    connect(deletePartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onDeletePartition);
     deletePartition->setEnabled(false);
     deletePartition->setText(i18nc("@action:inmenu", "Delete"));
     deletePartition->setToolTip(i18nc("@info:tooltip", "Delete partition"));
@@ -272,7 +284,8 @@ void MainWindow::setupActions()
     actionCollection()->setDefaultShortcut(deletePartition, QKeySequence::Delete);
     deletePartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* shredPartition = actionCollection()->addAction(QStringLiteral("shredPartition"), &pmWidget(), SLOT(onShredPartition()));
+    QAction* shredPartition = actionCollection()->addAction(QStringLiteral("shredPartition"));
+    connect(shredPartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onShredPartition);
     shredPartition->setEnabled(false);
     shredPartition->setText(i18nc("@action:inmenu", "Shred"));
     shredPartition->setToolTip(i18nc("@info:tooltip", "Shred partition"));
@@ -280,7 +293,8 @@ void MainWindow::setupActions()
     actionCollection()->setDefaultShortcut(shredPartition, QKeySequence(Qt::SHIFT + Qt::Key_Delete));
     shredPartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete-shred")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* copyPartition = actionCollection()->addAction(QStringLiteral("copyPartition"), &pmWidget(), SLOT(onCopyPartition()));
+    QAction* copyPartition = actionCollection()->addAction(QStringLiteral("copyPartition"));
+    connect(copyPartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onCopyPartition);
     copyPartition->setEnabled(false);
     copyPartition->setText(i18nc("@action:inmenu", "Copy"));
     copyPartition->setToolTip(i18nc("@info:tooltip", "Copy partition"));
@@ -288,7 +302,8 @@ void MainWindow::setupActions()
     actionCollection()->setDefaultShortcut(copyPartition, QKeySequence(Qt::CTRL + Qt::Key_C));
     copyPartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* pastePartition = actionCollection()->addAction(QStringLiteral("pastePartition"), &pmWidget(), SLOT(onPastePartition()));
+    QAction* pastePartition = actionCollection()->addAction(QStringLiteral("pastePartition"));
+    connect(pastePartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onPastePartition);
     pastePartition->setEnabled(false);
     pastePartition->setText(i18nc("@action:inmenu", "Paste"));
     pastePartition->setToolTip(i18nc("@info:tooltip", "Paste partition"));
@@ -296,46 +311,53 @@ void MainWindow::setupActions()
     actionCollection()->setDefaultShortcut(pastePartition, QKeySequence(Qt::CTRL + Qt::Key_V));
     pastePartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-paste")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* editMountPoint = actionCollection()->addAction(QStringLiteral("editMountPoint"), &pmWidget(), SLOT(onEditMountPoint()));
+    QAction* editMountPoint = actionCollection()->addAction(QStringLiteral("editMountPoint"));
+    connect(editMountPoint, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onEditMountPoint);
     editMountPoint->setEnabled(false);
     editMountPoint->setText(i18nc("@action:inmenu", "Edit Mount Point"));
     editMountPoint->setToolTip(i18nc("@info:tooltip", "Edit mount point"));
     editMountPoint->setStatusTip(i18nc("@info:status", "Edit a partition's mount point and options."));
 
-    QAction* mountPartition = actionCollection()->addAction(QStringLiteral("mountPartition"), &pmWidget(), SLOT(onMountPartition()));
+    QAction* mountPartition = actionCollection()->addAction(QStringLiteral("mountPartition"));
+    connect(mountPartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onMountPartition);
     mountPartition->setEnabled(false);
     mountPartition->setText(i18nc("@action:inmenu", "Mount"));
     mountPartition->setToolTip(i18nc("@info:tooltip", "Mount or unmount partition"));
     mountPartition->setStatusTip(i18nc("@info:status", "Mount or unmount a partition."));
 
-    QAction* decryptPartition = actionCollection()->addAction(QStringLiteral("decryptPartition"), &pmWidget(), SLOT(onDecryptPartition()));
+    QAction* decryptPartition = actionCollection()->addAction(QStringLiteral("decryptPartition"));
+    connect(decryptPartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onDecryptPartition);
     decryptPartition->setEnabled(false);
     decryptPartition->setText(i18nc("@action:inmenu", "Unlock"));
     decryptPartition->setToolTip(i18nc("@info:tooltip", "Unlock or lock encrypted partition"));
     decryptPartition->setStatusTip(i18nc("@info:status", "Unlock or lock encrypted partition."));
 
-    QAction* checkPartition = actionCollection()->addAction(QStringLiteral("checkPartition"), &pmWidget(), SLOT(onCheckPartition()));
+    QAction* checkPartition = actionCollection()->addAction(QStringLiteral("checkPartition"));
+    connect(checkPartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onCheckPartition);
     checkPartition->setEnabled(false);
     checkPartition->setText(i18nc("@action:inmenu", "Check"));
     checkPartition->setToolTip(i18nc("@info:tooltip", "Check partition"));
     checkPartition->setStatusTip(i18nc("@info:status", "Check a filesystem on a partition for errors."));
     checkPartition->setIcon(QIcon::fromTheme(QStringLiteral("flag")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* propertiesPartition = actionCollection()->addAction(QStringLiteral("propertiesPartition"), &pmWidget(), SLOT(onPropertiesPartition()));
+    QAction* propertiesPartition = actionCollection()->addAction(QStringLiteral("propertiesPartition"));
+    connect(propertiesPartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onPropertiesPartition);
     propertiesPartition->setEnabled(false);
     propertiesPartition->setText(i18nc("@action:inmenu", "Properties"));
     propertiesPartition->setToolTip(i18nc("@info:tooltip", "Show partition properties dialog"));
     propertiesPartition->setStatusTip(i18nc("@info:status", "View and modify partition properties (label, partition flags, etc.)"));
     propertiesPartition->setIcon(QIcon::fromTheme(QStringLiteral("document-properties")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* backup = actionCollection()->addAction(QStringLiteral("backupPartition"), &pmWidget(), SLOT(onBackupPartition()));
+    QAction* backup = actionCollection()->addAction(QStringLiteral("backupPartition"));
+    connect(backup, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onBackupPartition);
     backup->setEnabled(false);
     backup->setText(i18nc("@action:inmenu", "Backup"));
     backup->setToolTip(i18nc("@info:tooltip", "Backup partition"));
     backup->setStatusTip(i18nc("@info:status", "Backup a partition to an image file."));
     backup->setIcon(QIcon::fromTheme(QStringLiteral("document-export")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* restore = actionCollection()->addAction(QStringLiteral("restorePartition"), &pmWidget(), SLOT(onRestorePartition()));
+    QAction* restore = actionCollection()->addAction(QStringLiteral("restorePartition"));
+    connect(restore, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onRestorePartition);
     restore->setEnabled(false);
     restore->setText(i18nc("@action:inmenu", "Restore"));
     restore->setToolTip(i18nc("@info:tooltip", "Restore partition"));
@@ -343,7 +365,8 @@ void MainWindow::setupActions()
     restore->setIcon(QIcon::fromTheme(QStringLiteral("document-import")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     // View actions
-    QAction* fileSystemSupport = actionCollection()->addAction(QStringLiteral("fileSystemSupport"), this, SLOT(onFileSystemSupport()));
+    QAction* fileSystemSupport = actionCollection()->addAction(QStringLiteral("fileSystemSupport"));
+    connect(fileSystemSupport, &QAction::triggered, this, &MainWindow::onFileSystemSupport);
     fileSystemSupport->setText(i18nc("@action:inmenu", "File System Support"));
     fileSystemSupport->setToolTip(i18nc("@info:tooltip", "View file system support information"));
     fileSystemSupport->setStatusTip(i18nc("@info:status", "Show information about supported file systems."));
@@ -357,13 +380,15 @@ void MainWindow::setupActions()
     KStandardAction::preferences(this, SLOT(onConfigureOptions()), actionCollection());
 
     // Log Actions
-    QAction* clearLog = actionCollection()->addAction(QStringLiteral("clearLog"), &treeLog(), SLOT(onClearLog()));
+    QAction* clearLog = actionCollection()->addAction(QStringLiteral("clearLog"));
+    connect(clearLog, &QAction::triggered, &treeLog(), &TreeLog::onClearLog);
     clearLog->setText(i18nc("@action:inmenu", "Clear Log"));
     clearLog->setToolTip(i18nc("@info:tooltip", "Clear the log output"));
     clearLog->setStatusTip(i18nc("@info:status", "Clear the log output panel."));
     clearLog->setIcon(QIcon::fromTheme(QStringLiteral("edit-clear-list")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    QAction* saveLog = actionCollection()->addAction(QStringLiteral("saveLog"), &treeLog(), SLOT(onSaveLog()));
+    QAction* saveLog = actionCollection()->addAction(QStringLiteral("saveLog"));
+    connect(saveLog, &QAction::triggered, &treeLog(), &TreeLog::onSaveLog);
     saveLog->setText(i18nc("@action:inmenu", "Save Log"));
     saveLog->setToolTip(i18nc("@info:tooltip", "Save the log output"));
     saveLog->setStatusTip(i18nc("@info:status", "Save the log output to a file."));
@@ -372,8 +397,8 @@ void MainWindow::setupActions()
 
 void MainWindow::setupConnections()
 {
-    connect(&listDevices(), SIGNAL(selectionChanged(const QString&)), &pmWidget(), SLOT(setSelectedDevice(const QString&)));
-    connect(&listDevices(), SIGNAL(deviceDoubleClicked(const QString&)), SLOT(onPropertiesDevice(const QString&)));
+    connect(&listDevices(), &ListDevices::selectionChanged, &pmWidget(), static_cast<void(PartitionManagerWidget::*)(const QString&)>(&PartitionManagerWidget::setSelectedDevice));
+    connect(&listDevices(), &ListDevices::deviceDoubleClicked, this, &MainWindow::onPropertiesDevice);
 }
 
 void MainWindow::setupStatusBar()
@@ -1039,6 +1064,11 @@ void MainWindow::onSmartStatusDevice()
         dlg->exec();
         delete dlg;
     }
+}
+
+void MainWindow::onPropertiesDevice2()
+{
+    onPropertiesDevice({});
 }
 
 void MainWindow::onPropertiesDevice(const QString&)

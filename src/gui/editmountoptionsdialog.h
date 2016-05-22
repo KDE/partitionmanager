@@ -29,8 +29,6 @@ class QWidget;
 
 class EditMountOptionsDialog : public QDialog
 {
-    Q_OBJECT
-
 public:
     EditMountOptionsDialog(QWidget* parent, const QStringList& options);
     ~EditMountOptionsDialog();

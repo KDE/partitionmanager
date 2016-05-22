@@ -29,13 +29,11 @@ class OperationStack;
 
 class ConfigureOptionsDialog : public KConfigDialog
 {
-    Q_OBJECT
-
 public:
     ConfigureOptionsDialog(QWidget* parent, const OperationStack& ostack, const QString& name);
     ~ConfigureOptionsDialog();
 
-protected Q_SLOTS:
+protected:
     void updateSettings() override;
     void updateWidgetsDefault() override;
     bool hasChanged() override;
@@ -48,7 +46,6 @@ protected Q_SLOTS:
     }
     void onComboBackendActivated(int);
 
-protected:
     GeneralPageWidget& generalPageWidget() {
         Q_ASSERT(m_GeneralPageWidget);
         return *m_GeneralPageWidget;

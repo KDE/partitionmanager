@@ -35,19 +35,16 @@ class Device;
 */
 class NewDialog : public SizeDialogBase
 {
-    Q_OBJECT
-
 public:
     NewDialog(QWidget* parent, Device& device, Partition& unallocatedPartition, PartitionRole::Roles r);
     ~NewDialog();
 
-protected Q_SLOTS:
+protected:
     void accept() override;
     void onRoleChanged(bool);
     void onFilesystemChanged(int);
     void onLabelChanged(const QString& newLabel);
 
-protected:
     void setupConnections() override;
     void setupDialog() override;
     void slotPasswordStatusChanged();

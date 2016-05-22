@@ -46,12 +46,11 @@ public:
     void init();
     void onNewLogMessage(Log::Level logLevel, const QString& s);
 
-protected Q_SLOTS:
     void onClearLog();
     void onSaveLog();
-    void on_m_TreeLog_customContextMenuRequested(const QPoint& pos);
 
 protected:
+    void on_m_TreeLog_customContextMenuRequested(const QPoint& pos);
     void onHeaderContextMenu(const QPoint& pos);
 
     QTreeWidget& treeLog() {

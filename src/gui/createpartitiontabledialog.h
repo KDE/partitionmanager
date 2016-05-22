@@ -32,8 +32,6 @@ class QPushButton;
 
 class CreatePartitionTableDialog : public QDialog
 {
-    Q_OBJECT
-
 public:
     CreatePartitionTableDialog(QWidget* parent, const Device& d);
 
@@ -51,7 +49,6 @@ protected:
         return m_Device;
     }
 
-protected Q_SLOTS:
     void onMSDOSToggled(bool on);
 
 private:

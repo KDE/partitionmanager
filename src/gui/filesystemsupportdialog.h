@@ -35,7 +35,6 @@ class FileSystemSupportDialogWidget;
 */
 class FileSystemSupportDialog : public QDialog
 {
-    Q_OBJECT
     Q_DISABLE_COPY(FileSystemSupportDialog)
 
 public:
@@ -45,10 +44,9 @@ public:
 public:
     QSize sizeHint() const override;
 
-protected Q_SLOTS:
+protected:
     void onButtonRescanClicked();
 
-protected:
     FileSystemSupportDialogWidget& dialogWidget() {
         Q_ASSERT(m_FileSystemSupportDialogWidget);
         return *m_FileSystemSupportDialogWidget;

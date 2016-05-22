@@ -252,7 +252,8 @@ protected Q_SLOTS:
     void onFileSystemSupport();
 
     void onSmartStatusDevice();
-    void onPropertiesDevice(const QString& device_node = QString());
+    void onPropertiesDevice2();
+    void onPropertiesDevice(const QString& deviceNode = {});
 
 private:
     OperationStack* m_OperationStack;

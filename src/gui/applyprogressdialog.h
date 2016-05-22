@@ -45,7 +45,6 @@ class QKeyEvent;
 */
 class ApplyProgressDialog : public QDialog
 {
-    Q_OBJECT
     Q_DISABLE_COPY(ApplyProgressDialog)
 
 public:
@@ -64,7 +63,7 @@ public:
         return *m_Report;
     }
 
-protected Q_SLOTS:
+protected:
     void onAllOpsFinished();
     void onAllOpsCancelled();
     void onAllOpsError();
@@ -76,9 +75,9 @@ protected Q_SLOTS:
     void onSecondElapsed();
     void saveReport();
     void browserReport();
+    void updateReportUnforced();
     void updateReport(bool force = false);
 
-protected:
     void onJobStarted(Job* job, Operation* op);
     void onJobFinished(Job* job, Operation* op);
     void toggleDetails();

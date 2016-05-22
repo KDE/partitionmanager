@@ -27,8 +27,6 @@
 
 class CreatePartitionTableWidget : public QWidget, public Ui::CreatePartitionTableWidgetBase
 {
-    Q_OBJECT
-
 public:
     CreatePartitionTableWidget(QWidget* parent);
 

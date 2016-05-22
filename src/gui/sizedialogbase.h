@@ -37,7 +37,6 @@ class SizeDetailsWidget;
 */
 class SizeDialogBase : public QDialog
 {
-    Q_OBJECT
     Q_DISABLE_COPY(SizeDialogBase)
 
 protected:
@@ -115,7 +114,7 @@ protected:
         m_MaximumLength = s;
     }
 
-protected Q_SLOTS:
+protected:
     void onResizerWidgetFirstSectorChanged(qint64 newFirst);
     void onResizerWidgetLastSectorChanged(qint64 newLast);
 
@@ -127,7 +126,6 @@ protected Q_SLOTS:
     void onSpinLastSectorChanged(double newLast);
     void onAlignToggled(bool);
 
-protected:
     void toggleDetails();
 
     SizeDialogWidget* m_SizeDialogWidget;

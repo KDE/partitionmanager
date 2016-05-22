@@ -44,7 +44,7 @@ CreatePartitionTableDialog::CreatePartitionTableDialog(QWidget* parent, const De
     cancelButton = dialogButtonBox->addButton(QDialogButtonBox::Cancel);
     mainLayout->addWidget(dialogButtonBox);
 
-    connect(&widget().radioMSDOS(), SIGNAL(toggled(bool)), SLOT(onMSDOSToggled(bool)));
+    connect(&widget().radioMSDOS(), &QRadioButton::toggled, this, &CreatePartitionTableDialog::onMSDOSToggled);
     connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &CreatePartitionTableDialog::accept);
     connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &CreatePartitionTableDialog::reject);
 }

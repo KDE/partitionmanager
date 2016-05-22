@@ -43,7 +43,7 @@
 
 #include <KAboutData>
 #include <KConfigGroup>
-#include <KIOWidgets/KRun>
+#include <KRun>
 #include <KIO/CopyJob>
 #include <KJobUiDelegate>
 #include <KLocalizedString>
@@ -117,15 +117,15 @@ ApplyProgressDialog::~ApplyProgressDialog()
 
 void ApplyProgressDialog::setupConnections()
 {
-    connect(&operationRunner(), SIGNAL(progressSub(int)), &dialogWidget().progressSub(), SLOT(setValue(int)));
-    connect(&operationRunner(), SIGNAL(finished()), SLOT(onAllOpsFinished()));
-    connect(&operationRunner(), SIGNAL(cancelled()), SLOT(onAllOpsCancelled()));
-    connect(&operationRunner(), SIGNAL(error()), SLOT(onAllOpsError()));
-    connect(&operationRunner(), SIGNAL(opStarted(int, Operation*)), SLOT(onOpStarted(int, Operation*)));
-    connect(&operationRunner(), SIGNAL(opFinished(int, Operation*)), SLOT(onOpFinished(int, Operation*)));
-    connect(&timer(), SIGNAL(timeout()), SLOT(onSecondElapsed()));
-    connect(&detailsWidget().buttonSave(), SIGNAL(clicked()), SLOT(saveReport()));
-    connect(&detailsWidget().buttonBrowser(), SIGNAL(clicked()), SLOT(browserReport()));
+    connect(&operationRunner(), &OperationRunner::progressSub, &dialogWidget().progressSub(), &QProgressBar::setValue);
+    connect(&operationRunner(), &OperationRunner::finished, this, &ApplyProgressDialog::onAllOpsFinished);
+    connect(&operationRunner(), &OperationRunner::cancelled, this, &ApplyProgressDialog::onAllOpsCancelled);
+    connect(&operationRunner(), &OperationRunner::error, this, &ApplyProgressDialog::onAllOpsError);
+    connect(&operationRunner(), &OperationRunner::opStarted, this, &ApplyProgressDialog::onOpStarted);
+    connect(&operationRunner(), &OperationRunner::opFinished, this, &ApplyProgressDialog::onOpFinished);
+    connect(&timer(), &QTimer::timeout, this, &ApplyProgressDialog::onSecondElapsed);
+    connect(&detailsWidget().buttonSave(), &QPushButton::clicked, this, &ApplyProgressDialog::saveReport);
+    connect(&detailsWidget().buttonBrowser(), &QPushButton::clicked, this, &ApplyProgressDialog::browserReport);
     connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &ApplyProgressDialog::accept);
     connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &ApplyProgressDialog::reject);
     connect(detailsButton, &QPushButton::clicked, this, &ApplyProgressDialog::toggleDetails);
@@ -165,7 +165,7 @@ void ApplyProgressDialog::resetReport()
     detailsWidget().buttonSave().setEnabled(false);
     detailsWidget().buttonBrowser().setEnabled(false);
 
-    connect(&report(), SIGNAL(outputChanged()), SLOT(updateReport()));
+    connect(&report(), &Report::outputChanged, this, &ApplyProgressDialog::updateReportUnforced);
 }
 
 void ApplyProgressDialog::closeEvent(QCloseEvent* e)
@@ -251,6 +251,11 @@ void ApplyProgressDialog::allOpsDone(const QString& msg)
     updateReport(true);
 
     setStatus(msg);
+}
+
+void ApplyProgressDialog::updateReportUnforced()
+{
+    updateReport(false);
 }
 
 void ApplyProgressDialog::updateReport(bool force)

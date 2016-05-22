@@ -51,7 +51,6 @@ public:
     }
     bool setSelectedDevice(const QString& device_node);
 
-public Q_SLOTS:
     void updateDevices(OperationStack::Devices& devices);
 
 protected:

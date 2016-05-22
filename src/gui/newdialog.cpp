@@ -115,12 +115,12 @@ void NewDialog::setupDialog()
 
 void NewDialog::setupConnections()
 {
-    connect(&dialogWidget().radioPrimary(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
-    connect(&dialogWidget().radioExtended(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
-    connect(&dialogWidget().radioLogical(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
-    connect(&dialogWidget().checkBoxEncrypt(), SIGNAL(toggled(bool)), SLOT(onRoleChanged(bool)));
-    connect(&dialogWidget().comboFileSystem(), SIGNAL(currentIndexChanged(int)), SLOT(onFilesystemChanged(int)));
-    connect(&dialogWidget().label(), SIGNAL(textChanged(const QString&)), SLOT(onLabelChanged(const QString&)));
+    connect(&dialogWidget().radioPrimary(), &QRadioButton::toggled, this, &NewDialog::onRoleChanged);
+    connect(&dialogWidget().radioExtended(), &QRadioButton::toggled, this, &NewDialog::onRoleChanged);
+    connect(&dialogWidget().radioLogical(), &QRadioButton::toggled, this, &NewDialog::onRoleChanged);
+    connect(&dialogWidget().checkBoxEncrypt(), &QCheckBox::toggled, this, &NewDialog::onRoleChanged);
+    connect(&dialogWidget().comboFileSystem(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &NewDialog::onFilesystemChanged);
+    connect(&dialogWidget().label(), &QLineEdit::textChanged, this, &NewDialog::onLabelChanged);
 
     SizeDialogBase::setupConnections();
 }

@@ -49,7 +49,6 @@ public:
         m_ActionCollection = coll;
     }
 
-public Q_SLOTS:
     void updateOperations(const OperationStack::Operations& ops);
 
 protected:

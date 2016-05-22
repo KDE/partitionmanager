@@ -29,8 +29,6 @@
 */
 class SizeDialogWidget : public QWidget, public Ui::SizeDialogWidgetBase
 {
-    Q_OBJECT
-
 public:
     SizeDialogWidget(QWidget* parent) : QWidget(parent), Ui::SizeDialogWidgetBase() {
         setupUi(this);

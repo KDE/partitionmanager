@@ -137,9 +137,9 @@ void DevicePropsDialog::setupDialog()
 
 void DevicePropsDialog::setupConnections()
 {
-    connect(&dialogWidget().radioSectorBased(), SIGNAL(toggled(bool)), SLOT(setDirty(bool)));
-    connect(&dialogWidget().radioCylinderBased(), SIGNAL(toggled(bool)), SLOT(setDirty(bool)));
-    connect(&dialogWidget().buttonSmartMore(), SIGNAL(clicked(bool)), SLOT(onButtonSmartMore(bool)));
+    connect(&dialogWidget().radioSectorBased(), &QRadioButton::toggled, this, &DevicePropsDialog::setDirty);
+    connect(&dialogWidget().radioCylinderBased(), &QRadioButton::toggled, this, &DevicePropsDialog::setDirty);
+    connect(&dialogWidget().buttonSmartMore(), &QPushButton::clicked, this, &DevicePropsDialog::onButtonSmartMore);
 }
 
 void DevicePropsDialog::setDirty(bool)
