@@ -31,7 +31,6 @@ class EditMountOptionsDialogWidget : public QWidget, public Ui::EditMountOptions
 public:
     EditMountOptionsDialogWidget(QWidget* parent, const QStringList& options);
 
-public:
     QPlainTextEdit& editOptions() {
         return *m_EditOptions;
     }

@@ -101,6 +101,7 @@ private:
     const Partition& m_Partition;
     QMap<QString, MountEntry*> m_MountPoints;
     QString m_Options;
+    QString m_deviceNode;
     QMap<QString, QCheckBox*> m_BoxOptions;
 };
 

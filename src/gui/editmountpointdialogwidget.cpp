@@ -23,6 +23,7 @@
 #include <core/mountentry.h>
 
 #include <fs/filesystem.h>
+#include <fs/luks.h>
 
 #include <KLocalizedString>
 #include <KIOCore/KMountPoint>
@@ -63,13 +64,18 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
 
     setupUi(this);
 
-    labelName().setText(partition().deviceNode());
+    m_deviceNode = partition().deviceNode();
+    if (partition().roles().has(PartitionRole::Luks) && partition().fileSystem().type() != FileSystem::Luks) {
+        const FS::luks* luksFs = dynamic_cast<const FS::luks*>(&partition().fileSystem());
+        m_deviceNode = luksFs->mapperName(m_deviceNode);
+    }
+    labelName().setText(m_deviceNode);
     labelType().setText(partition().fileSystem().name());
 
-    if (mountPoints().find(partition().deviceNode()) == mountPoints().end())
-        mountPoints()[partition().deviceNode()] = new MountEntry(partition().deviceNode(), QString(), partition().fileSystem().name(), QStringList(), 0, 0, MountEntry::deviceNode);
+    if (mountPoints().find(m_deviceNode) == mountPoints().end())
+        mountPoints()[m_deviceNode] = new MountEntry(m_deviceNode, QString(), partition().fileSystem().name(), QStringList(), 0, 0, MountEntry::deviceNode);
 
-    MountEntry* entry = mountPoints()[partition().deviceNode()];
+    MountEntry* entry = mountPoints()[m_deviceNode];
 
     Q_ASSERT(entry);
 
@@ -241,7 +247,7 @@ bool EditMountPointDialogWidget::acceptChanges()
     else if (radioLabel().isChecked() && !partition().fileSystem().label().isEmpty())
         entry->name = QStringLiteral("LABEL=") + partition().fileSystem().label();
     else
-        entry->name = partition().deviceNode();
+        entry->name = m_deviceNode;
 
     return true;
 }
