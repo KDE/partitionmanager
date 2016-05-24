@@ -472,7 +472,7 @@ void MainWindow::enableActions()
             ->setEnabled(part != nullptr);
 
     actionCollection()->action(QStringLiteral("editMountPoint"))
-            ->setEnabled(part && !part->isMounted());
+            ->setEnabled(part && !part->isMounted() && part->fileSystem().canMount(part->deviceNode(), QStringLiteral("/")));
 
     actionCollection()->action(QStringLiteral("mountPartition"))
             ->setEnabled(part &&
