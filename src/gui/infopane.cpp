@@ -23,6 +23,7 @@
 
 #include <fs/filesystem.h>
 #include <fs/luks.h>
+#include <fs/lvm2_pv.h>
 
 #include <util/capacity.h>
 
@@ -114,16 +115,31 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
     if (p.fileSystem().type() == FileSystem::Luks) {
         const FS::luks* luksFs = dynamic_cast<const FS::luks*>(&p.fileSystem());
         QString deviceNode = p.partitionPath();
-        createLabels(xi18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
-        createLabels(xi18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
-        createLabels(xi18nc("@label partition", "Cipher name:"), luksFs->getCipherName(deviceNode), cols(area), x, y);
-        createLabels(xi18nc("@label partition", "Cipher mode:"), luksFs->getCipherMode(deviceNode), cols(area), x, y);
-        createLabels(xi18nc("@label partition", "Hash:"), luksFs->getHashName(deviceNode), cols(area), x, y);
-        createLabels(xi18nc("@label partition", "Key size:"), QString::number(luksFs->getKeySize(deviceNode)), cols(area), x, y);
-        createLabels(xi18nc("@label partition", "Payload offset:"), QString::number(luksFs->getPayloadOffset(deviceNode)), cols(area), x, y);
-        createLabels(xi18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
-        createLabels(xi18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
-        createLabels(xi18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Cipher name:"), luksFs->getCipherName(deviceNode), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Cipher mode:"), luksFs->getCipherMode(deviceNode), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Hash:"), luksFs->getHashName(deviceNode), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Key size:"), QString::number(luksFs->getKeySize(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Payload offset:"), QString::number(luksFs->getPayloadOffset(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
+    } else if (p.fileSystem().type() == FileSystem::Lvm2_PV) {
+        const FS::lvm2_pv* lvm = dynamic_cast<const FS::lvm2_pv*>(&p.fileSystem());
+        QString deviceNode = p.partitionPath();
+        createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Available:"), Capacity::formatByteSize(p.available()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Used:"), Capacity::formatByteSize(p.used()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "PV Size:"),  Capacity::formatByteSize(lvm->getPVSize(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "PE Size:"),  Capacity::formatByteSize(lvm->getPESize(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Total PE :"), QString::number(lvm->getTotalPE(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Free  PE:"),  QString::number(lvm->getFreePE(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Allocated  PE:"),  QString::number(lvm->getAllocatedPE(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
     } else {
         createLabels(xi18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
         createLabels(xi18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
