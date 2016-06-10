@@ -19,6 +19,8 @@
 #include "gui/infopane.h"
 
 #include <core/device.h>
+#include <core/diskdevice.h>
+#include <core/lvmdevice.h>
 #include <core/partition.h>
 
 #include <fs/filesystem.h>
@@ -174,16 +176,27 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         maxPrimaries = QStringLiteral("%1/%2").arg(d.partitionTable()->numPrimaries()).arg(d.partitionTable()->maxPrimaries());
     }
 
-    createLabels(xi18nc("@label device", "Type:"), type, cols(area), x, y);
-    createLabels(xi18nc("@label device", "Capacity:"), Capacity::formatByteSize(d.capacity()), cols(area), x, y);
-    createLabels(xi18nc("@label device", "Total sectors:"), QLocale().toString(d.totalSectors()), cols(area), x, y);
-    createLabels(xi18nc("@label device", "Heads:"), QString::number(d.heads()), cols(area), x, y);
-    createLabels(xi18nc("@label device", "Cylinders:"), QLocale().toString(d.cylinders()), cols(area), x, y);
-    createLabels(xi18nc("@label device", "Sectors:"), QLocale().toString(d.sectorsPerTrack()), cols(area), x, y);
-    createLabels(xi18nc("@label device", "Logical sector size:"), Capacity::formatByteSize(d.logicalSectorSize()), cols(area), x, y);
-    createLabels(xi18nc("@label device", "Physical sector size:"), Capacity::formatByteSize(d.physicalSectorSize()), cols(area), x, y);
-    createLabels(xi18nc("@label device", "Cylinder size:"), xi18ncp("@label", "1 Sector", "%1 Sectors", d.cylinderSize()), cols(area), x, y);
-    createLabels(xi18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
+    if (d.type() == Device::Disk_Device) {
+        const DiskDevice& disk = dynamic_cast<const DiskDevice&>(d);
+
+        createLabels(i18nc("@label device", "Type:"), type, cols(area), x, y);
+        createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(disk.capacity()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Total sectors:"), QLocale().toString(disk.totalSectors()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Heads:"), QString::number(disk.heads()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Cylinders:"), QLocale().toString(disk.cylinders()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Sectors:"), QLocale().toString(disk.sectorsPerTrack()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Logical sector size:"), Capacity::formatByteSize(disk.logicalSectorSize()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Physical sector size:"), Capacity::formatByteSize(disk.physicalSectorSize()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Cylinder size:"), i18ncp("@label", "1 Sector", "%1 Sectors", disk.cylinderSize()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
+    } else if (d.type() == Device::LVM_Device) {
+        const LvmDevice& lvm = dynamic_cast<const LvmDevice&>(d);
+        //TODO: add LVM device info
+        createLabels(i18nc("@label device", "PE Size:"), Capacity::formatByteSize(lvm.peSize()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Total PE:"),QString::number(lvm.totalPE()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Allocated PE:"), QString::number(lvm.allocatedPE()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Free PE:"), QString::number(lvm.freePE()), cols(area), x, y);
+    }
 }
 
 quint32 InfoPane::cols(Qt::DockWidgetArea area) const

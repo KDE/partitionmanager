@@ -62,7 +62,7 @@ PartitionTable::TableType CreatePartitionTableDialog::type() const
 
 void CreatePartitionTableDialog::onMSDOSToggled(bool on)
 {
-    if (on && device().totalSectors() > 0xffffffff) {
+    if (on && device().totalLogical() > 0xffffffff) {
         if (KMessageBox::warningContinueCancel(this,
                                                xi18nc("@info",
                                                        "<para>Do you really want to create an MS-Dos partition table on <filename>%1</filename>?</para>"

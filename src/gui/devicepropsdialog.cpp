@@ -22,6 +22,7 @@
 #include "gui/smartdialog.h"
 
 #include <core/device.h>
+#include <core/diskdevice.h>
 #include <core/partitiontable.h>
 #include <core/smartstatus.h>
 
@@ -104,18 +105,22 @@ void DevicePropsDialog::setupDialog()
 
     dialogWidget().capacity().setText(Capacity::formatByteSize(device().capacity()));
 
+    if (device().type() == Device::Disk_Device) {
 
-    const QString cyls = QLocale().toString((device().cylinders()));
-    const QString heads = QLocale().toString((device().heads()));
-    const QString sectors = QLocale().toString((device().sectorsPerTrack()));
-    dialogWidget().chs().setText(QStringLiteral("%1/%2/%3").arg(cyls).arg(heads).arg(sectors));
+        const DiskDevice& disk = dynamic_cast<const DiskDevice&>(device());
+        const QString cyls = QLocale().toString((disk.cylinders()));
+        const QString heads = QLocale().toString((disk.heads()));
+        const QString sectors = QLocale().toString((disk.sectorsPerTrack()));
+        dialogWidget().chs().setText(QStringLiteral("%1/%2/%3").arg(cyls).arg(heads).arg(sectors));
 
-    dialogWidget().cylinderSize().setText(xi18ncp("@label", "1 Sector", "%1 Sectors", device().cylinderSize()));
-    dialogWidget().primariesMax().setText(maxPrimaries);
-    dialogWidget().logicalSectorSize().setText(Capacity::formatByteSize(device().logicalSectorSize()));
-    dialogWidget().physicalSectorSize().setText(Capacity::formatByteSize(device().physicalSectorSize()));
-    dialogWidget().totalSectors().setText(QLocale().toString((device().totalSectors())));
-    dialogWidget().type().setText(type);
+        dialogWidget().cylinderSize().setText(i18ncp("@label", "1 Sector", "%1 Sectors", disk.cylinderSize()));
+        dialogWidget().primariesMax().setText(maxPrimaries);
+        dialogWidget().logicalSectorSize().setText(Capacity::formatByteSize(disk.logicalSectorSize()));
+        dialogWidget().physicalSectorSize().setText(Capacity::formatByteSize(disk.physicalSectorSize()));
+        dialogWidget().totalSectors().setText(QLocale().toString((disk.totalSectors())));
+
+        dialogWidget().type().setText(type);
+    }
 
     if (device().smartStatus().isValid()) {
         if (device().smartStatus().status()) {

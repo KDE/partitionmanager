@@ -115,8 +115,8 @@ void SizeDialogBase::setupConstraints()
     dialogWidget().partResizerWidget().setMinimumLength(minimumLength());
     dialogWidget().partResizerWidget().setMaximumLength(maximumLength());
 
-    dialogWidget().labelMinSize().setText(Capacity::formatByteSize(minimumLength() * device().logicalSectorSize()));
-    dialogWidget().labelMaxSize().setText(Capacity::formatByteSize(maximumLength() * device().logicalSectorSize()));
+    dialogWidget().labelMinSize().setText(Capacity::formatByteSize(minimumLength() * device().logicalSize()));
+    dialogWidget().labelMaxSize().setText(Capacity::formatByteSize(maximumLength() * device().logicalSize()));
 
     dialogWidget().spinCapacity().setEnabled(canShrink() || canGrow());
 
@@ -415,11 +415,11 @@ qint64 SizeDialogBase::maximumLength() const
 
 static double sectorsToDialogUnit(const Device& d, qint64 v)
 {
-    return Capacity(v * d.logicalSectorSize()).toDouble(preferredUnit());
+    return Capacity(v * d.logicalSize()).toDouble(preferredUnit());
 }
 
 static qint64 dialogUnitToSectors(const Device& d, double v)
 {
-    return v * Capacity::unitFactor(Capacity::Byte, preferredUnit()) / d.logicalSectorSize();
+    return v * Capacity::unitFactor(Capacity::Byte, preferredUnit()) / d.logicalSize();
 }
 
