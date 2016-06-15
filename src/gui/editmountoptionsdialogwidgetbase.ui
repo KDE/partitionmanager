@@ -22,7 +22,11 @@
     </widget>
    </item>
    <item>
-    <widget class="QPlainTextEdit" name="m_EditOptions"/>
+    <widget class="QPlainTextEdit" name="m_EditOptions">
+     <property name="placeholderText">
+      <string>Option1,Option2</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
