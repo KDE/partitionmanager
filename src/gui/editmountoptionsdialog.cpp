@@ -19,6 +19,7 @@
 #include "gui/editmountoptionsdialog.h"
 #include "gui/editmountoptionsdialogwidget.h"
 
+#include <QDialogButtonBox>
 #include <QString>
 #include <QStringList>
 
@@ -37,6 +38,13 @@ EditMountOptionsDialog::EditMountOptionsDialog(QWidget* parent, const QStringLis
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "editMountOptionsDialog");
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
+
+    QDialogButtonBox* dbb = new QDialogButtonBox( QDialogButtonBox::Ok | QDialogButtonBox::Cancel,
+                                                  Qt::Horizontal,
+                                                  this );
+    mainLayout->addWidget(dbb);
+    connect(dbb, &QDialogButtonBox::accepted, this, &EditMountOptionsDialog::accept);
+    connect(dbb, &QDialogButtonBox::rejected, this, &EditMountOptionsDialog::reject);
 }
 
 /** Destroys an EditMOuntOptionsDialog instance */
