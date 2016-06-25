@@ -40,9 +40,17 @@ public:
         return *m_PartResizerWidget;
     }
 
+    QLabel& labelFreeBefore() {
+        Q_ASSERT(m_LabelFreeBefore);
+        return *m_LabelFreeBefore;
+    }
     QDoubleSpinBox& spinFreeBefore() {
         Q_ASSERT(m_SpinFreeBefore);
         return *m_SpinFreeBefore;
+    }
+    QLabel& labelFreeAfter() {
+        Q_ASSERT(m_LabelFreeAfter);
+        return *m_LabelFreeAfter;
     }
     QDoubleSpinBox& spinFreeAfter() {
         Q_ASSERT(m_SpinFreeAfter);
@@ -88,6 +96,14 @@ public:
     KNewPasswordWidget& editPassphrase() {
         Q_ASSERT(m_EditPassphrase);
         return *m_EditPassphrase;
+    }
+    QLabel& textLVName() {
+        Q_ASSERT(m_LabelTextLVName);
+        return *m_LabelTextLVName;
+    }
+    QLineEdit& lvName() {
+        Q_ASSERT(m_EditLVName);
+        return *m_EditLVName;
     }
 
     QLabel& textLabel() {

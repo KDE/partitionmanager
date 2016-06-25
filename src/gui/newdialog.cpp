@@ -97,6 +97,17 @@ void NewDialog::setupDialog()
     dialogWidget().checkBoxEncrypt().hide();
     dialogWidget().editPassphrase().hide();
 
+    if (device().type() == Device::Disk_Device) {
+        dialogWidget().lvName().hide();
+        dialogWidget().textLVName().hide();
+    }
+    if (device().type() == Device::LVM_Device) {
+        dialogWidget().labelFreeBefore().hide();
+        dialogWidget().spinFreeBefore().hide();
+        dialogWidget().labelFreeAfter().hide();
+        dialogWidget().spinFreeAfter().hide();
+    }
+
     dialogWidget().editPassphrase().setMinimumPasswordLength(1);
     dialogWidget().editPassphrase().setMaximumPasswordLength(512); // cryptsetup does not support longer passwords
 
@@ -104,8 +115,6 @@ void NewDialog::setupDialog()
     KColorScheme colorScheme(QPalette::Active, KColorScheme::View);
     dialogWidget().editPassphrase().setBackgroundWarningColor(colorScheme.background(KColorScheme::NegativeBackground).color());
 
-    // listen to password status updates
-    connect(&dialogWidget().editPassphrase(), &KNewPasswordWidget::passwordStatusChanged, this, &NewDialog::slotPasswordStatusChanged);
 
     // don't move these above the call to parent's setupDialog, because only after that has
     // run there is a valid partition set in the part resizer widget and they will need that.
@@ -121,6 +130,9 @@ void NewDialog::setupConnections()
     connect(&dialogWidget().checkBoxEncrypt(), &QCheckBox::toggled, this, &NewDialog::onRoleChanged);
     connect(&dialogWidget().comboFileSystem(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &NewDialog::onFilesystemChanged);
     connect(&dialogWidget().label(), &QLineEdit::textChanged, this, &NewDialog::onLabelChanged);
+    // listen to password status updates
+    connect(&dialogWidget().editPassphrase(), &KNewPasswordWidget::passwordStatusChanged, this, &NewDialog::slotPasswordStatusChanged);
+    connect(&dialogWidget().lvName(), &QLineEdit::textChanged, this, &NewDialog::onLVNameChanged);
 
     SizeDialogBase::setupConnections();
 }
@@ -225,6 +237,12 @@ void NewDialog::slotPasswordStatusChanged()
         okButton->setEnabled(false);
         break;
     }
+}
+
+void NewDialog::onLVNameChanged(const QString& newName)
+{
+    //TODO: filter lvName
+    partition().setPartitionPath(device().deviceNode() + QStringLiteral("/") + newName.trimmed());
 }
 
 void NewDialog::updateHideAndShow()

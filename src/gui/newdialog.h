@@ -44,6 +44,7 @@ protected:
     void onRoleChanged(bool);
     void onFilesystemChanged(int);
     void onLabelChanged(const QString& newLabel);
+    void onLVNameChanged(const QString& newName);
 
     void setupConnections() override;
     void setupDialog() override;
