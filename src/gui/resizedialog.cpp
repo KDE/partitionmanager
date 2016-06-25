@@ -51,6 +51,8 @@ ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minF
     dialogWidget().hideRole();
     dialogWidget().hideFileSystem();
     dialogWidget().hideLabel();
+    dialogWidget().textLVName().hide();
+    dialogWidget().lvName().hide();
 
     setupDialog();
     setupConstraints();
