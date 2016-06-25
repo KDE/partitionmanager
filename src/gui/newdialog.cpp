@@ -101,11 +101,9 @@ void NewDialog::setupDialog()
         dialogWidget().lvName().hide();
         dialogWidget().textLVName().hide();
     }
+
     if (device().type() == Device::LVM_Device) {
-        dialogWidget().labelFreeBefore().hide();
-        dialogWidget().spinFreeBefore().hide();
-        dialogWidget().labelFreeAfter().hide();
-        dialogWidget().spinFreeAfter().hide();
+        dialogWidget().hideBeforeAndAfter();
     }
 
     dialogWidget().editPassphrase().setMinimumPasswordLength(1);

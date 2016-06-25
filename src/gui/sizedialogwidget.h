@@ -151,6 +151,12 @@ public:
         delete m_LabelTextNoSetLabel;
         m_LabelTextNoSetLabel = nullptr;
     }
+    void hideBeforeAndAfter() {
+        labelFreeBefore().hide();
+        spinFreeBefore().hide();
+        labelFreeAfter().hide();
+        spinFreeAfter().hide();
+    }
 };
 
 #endif

@@ -54,6 +54,10 @@ ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minF
     dialogWidget().textLVName().hide();
     dialogWidget().lvName().hide();
 
+    if (device().type() == Device::LVM_Device) {
+        dialogWidget().hideBeforeAndAfter();
+    }
+
     setupDialog();
     setupConstraints();
     setupConnections();
