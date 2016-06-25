@@ -137,6 +137,11 @@ void NewDialog::setupConnections()
     SizeDialogBase::setupConnections();
 }
 
+bool NewDialog::canMove() const
+{
+    return (device().type() == Device::LVM_Device) ? false : true;
+}
+
 void NewDialog::accept()
 {
     if (partition().roles().has(PartitionRole::Extended)) {

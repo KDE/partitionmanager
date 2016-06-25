@@ -60,9 +60,7 @@ protected:
     bool canShrink() const override {
         return true;
     }
-    bool canMove() const override {
-        return true;
-    }
+    bool canMove() const override;
 
 private:
     PartitionRole::Roles m_PartitionRoles;
