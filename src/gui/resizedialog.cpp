@@ -18,6 +18,7 @@
 
 #include "gui/resizedialog.h"
 #include "gui/sizedialogwidget.h"
+#include "gui/sizedetailswidget.h"
 
 #include <core/partition.h>
 #include <core/device.h>
@@ -54,9 +55,6 @@ ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minF
     dialogWidget().textLVName().hide();
     dialogWidget().lvName().hide();
 
-    if (device().type() == Device::LVM_Device) {
-        dialogWidget().hideBeforeAndAfter();
-    }
 
     setupDialog();
     setupConstraints();
@@ -105,6 +103,12 @@ void ResizeDialog::reject()
 void ResizeDialog::setupDialog()
 {
     SizeDialogBase::setupDialog();
+    if (device().type() == Device::LVM_Device) {
+        dialogWidget().hideBeforeAndAfter();
+        detailsWidget().checkAlign().setChecked(false);
+        detailsWidget().checkAlign().setEnabled(false);
+        detailsButton->hide();
+    }
     okButton->setEnabled(false);
 }
 
