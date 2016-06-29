@@ -22,6 +22,7 @@
 #include "gui/applyprogressdialog.h"
 #include "gui/scanprogressdialog.h"
 #include "gui/createpartitiontabledialog.h"
+#include "gui/createvolumedialog.h"
 #include "gui/filesystemsupportdialog.h"
 #include "gui/devicepropsdialog.h"
 #include "gui/smartdialog.h"
@@ -38,6 +39,7 @@
 
 #include <ops/operation.h>
 #include <ops/createpartitiontableoperation.h>
+#include <ops/createvolumegroupoperation.h>
 #include <ops/resizeoperation.h>
 #include <ops/copyoperation.h>
 #include <ops/deleteoperation.h>
@@ -243,6 +245,15 @@ void MainWindow::setupActions()
     importPartitionTable->setToolTip(xi18nc("@info:tooltip", "Import a partition table"));
     importPartitionTable->setStatusTip(xi18nc("@info:status", "Import a partition table from a text file."));
     importPartitionTable->setIcon(QIcon::fromTheme(QStringLiteral("document-import")).pixmap(IconSize(KIconLoader::Toolbar)));
+
+    QAction* createVolumeGroup = actionCollection()->addAction(QStringLiteral("createVolumeGroup"));
+    connect(createVolumeGroup, &QAction::triggered, this, &MainWindow::onCreateNewVolumeGroup);
+    createVolumeGroup->setEnabled(false);
+    createVolumeGroup->setText(i18nc("@action:inmenu", "New LVM Volume Group"));
+    createVolumeGroup->setToolTip(i18nc("@info:tooltip", "Create a new LVM Volume Group"));
+    createVolumeGroup->setStatusTip(i18nc("@info:status", "Create a new LVM Volume Group as a device."));
+    actionCollection()->setDefaultShortcut(createVolumeGroup, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_L));
+    createVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("document-new")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* smartStatusDevice = actionCollection()->addAction(QStringLiteral("smartStatusDevice"));
     connect(smartStatusDevice, &QAction::triggered, this, &MainWindow::onSmartStatusDevice);
@@ -456,6 +467,9 @@ void MainWindow::enableActions()
 
     actionCollection()->action(QStringLiteral("newPartition"))
             ->setEnabled(!readOnly && NewOperation::canCreateNew(part));
+
+    actionCollection()->action(QStringLiteral("createVolumeGroup"))
+            ->setEnabled(CreateVolumeGroupOperation::canCreate());
 
     const bool canResize = ResizeOperation::canGrow(part) ||
                            ResizeOperation::canShrink(part) ||
@@ -1011,6 +1025,18 @@ void MainWindow::onExportPartitionTable()
     job->exec();
     if (job->error())
         job->ui()->showErrorMessage();
+}
+
+void MainWindow::onCreateNewVolumeGroup()
+{
+    QPointer<CreateVolumeDialog> dlg = new CreateVolumeDialog(this);
+    QString vgname;
+    QList<Partition*> pvlist;
+    if (dlg->exec() == QDialog::Accepted) {
+        operationStack().push(new CreateVolumeGroupOperation(vgname, pvlist));
+    }
+
+    delete dlg;
 }
 
 void MainWindow::onFileSystemSupport()
