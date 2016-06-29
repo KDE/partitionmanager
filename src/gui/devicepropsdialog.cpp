@@ -103,7 +103,9 @@ void DevicePropsDialog::setupDialog()
         dialogWidget().hideTypeRadioButtons();
     }
 
+    dialogWidget().type().setText(type);
     dialogWidget().capacity().setText(Capacity::formatByteSize(device().capacity()));
+    dialogWidget().totalSectors().setText(QLocale().toString(device().totalLogical()));
 
     if (device().type() == Device::Disk_Device) {
 
@@ -117,9 +119,6 @@ void DevicePropsDialog::setupDialog()
         dialogWidget().primariesMax().setText(maxPrimaries);
         dialogWidget().logicalSectorSize().setText(Capacity::formatByteSize(disk.logicalSectorSize()));
         dialogWidget().physicalSectorSize().setText(Capacity::formatByteSize(disk.physicalSectorSize()));
-        dialogWidget().totalSectors().setText(QLocale().toString((disk.totalSectors())));
-
-        dialogWidget().type().setText(type);
     }
 
     if (device().smartStatus().isValid()) {
