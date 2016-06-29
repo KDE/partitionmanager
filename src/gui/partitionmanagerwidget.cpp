@@ -602,8 +602,13 @@ void PartitionManagerWidget::onResizePartition()
     // clear the selection, so we'll lose the partition after the dialog's been exec'd
     Partition& p = *selectedPartition();
 
-    const qint64 freeBefore = selectedDevice()->partitionTable()->freeSectorsBefore(p);
-    const qint64 freeAfter = selectedDevice()->partitionTable()->freeSectorsAfter(p);
+    qint64 freeBefore = selectedDevice()->partitionTable()->freeSectorsBefore(p);
+    qint64 freeAfter = selectedDevice()->partitionTable()->freeSectorsAfter(p);
+
+    if (selectedDevice()->type() == Device::LVM_Device) {
+        freeBefore = 0;
+        freeAfter  = selectedDevice()->partitionTable()->freeSectors();
+    }
 
     QPointer<ResizeDialog> dlg = new ResizeDialog(this, *selectedDevice(), p, p.firstSector() - freeBefore, freeAfter + p.lastSector());
 
