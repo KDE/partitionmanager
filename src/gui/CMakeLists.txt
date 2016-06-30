@@ -4,8 +4,9 @@ set(GUI_SRC
 	gui/applyprogressdialogwidget.cpp
 	gui/createpartitiontabledialog.cpp
 	gui/createpartitiontablewidget.cpp
+    gui/volumewidget.cpp
+    gui/volumedialog.cpp
     gui/createvolumedialog.cpp
-    gui/createvolumewidget.cpp
 	gui/devicepropsdialog.cpp
 	gui/devicepropswidget.cpp
 	gui/editmountpointdialog.cpp

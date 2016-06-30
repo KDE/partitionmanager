@@ -19,17 +19,9 @@
 
 #define CREATEVOLUMEDIALOG__H
 
-#include <QDialog>
+#include "gui/volumedialog.h"
 
-class CreateVolumeWidget;
-
-class QDialogButtonBox;
-class QPushButton;
-class QVBoxLayout;
-class QWidget;
-class QString;
-
-class CreateVolumeDialog : public QDialog
+class CreateVolumeDialog : public VolumeDialog
 {
     Q_DISABLE_COPY(CreateVolumeDialog)
 
@@ -38,25 +30,8 @@ public:
     ~CreateVolumeDialog();
 
 protected:
-    void setupDialog();
-    void setupConnections();
-
-    CreateVolumeWidget& dialogWidget() {
-        Q_ASSERT(m_DialogWidget);
-        return *m_DialogWidget;
-    }
-    const CreateVolumeWidget& dialogWidget() const {
-        Q_ASSERT(m_DialogWidget);
-        return *m_DialogWidget;
-    }
-
-private:
-    CreateVolumeWidget* m_DialogWidget;
-
-    QDialogButtonBox* dialogButtonBox;
-    QPushButton* okButton;
-    QPushButton* cancelButton;
-    QVBoxLayout *mainLayout;
+    void setupDialog() override;
+    void setupConnections() override;
 };
 
 #endif

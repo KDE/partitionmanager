@@ -15,52 +15,48 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include "gui/volumewidget.h"
-#include "gui/volumedialog.h"
-#include "gui/createvolumedialog.h"
+#if !defined(VOLUMEDIALOG__H)
 
-#include <core/lvmdevice.h>
+#define VOLUMEDIALOG__H
 
-#include <util/capacity.h>
-#include <util/helpers.h>
+#include <QDialog>
 
-#include <KLocalizedString>
-#include <KSharedConfig>
-#include <KConfigGroup>
-#include <KIconLoader>
+class VolumeWidget;
 
-#include <QPointer>
-#include <QPushButton>
-#include <QTreeWidgetItem>
-#include <QDialogButtonBox>
+class QDialogButtonBox;
+class QPushButton;
+class QVBoxLayout;
+class QWidget;
+class QString;
 
-/** Creates a new CreateVolumeDialog
-    @param parent pointer to the parent widget
-    @param d the Device to show properties for
-*/
-CreateVolumeDialog::CreateVolumeDialog(QWidget* parent) :
-    VolumeDialog(parent)
+class VolumeDialog : public QDialog
 {
-    setWindowTitle(xi18nc("@title:window", "Cretae new Volume Group"));
+    Q_DISABLE_COPY(VolumeDialog)
 
-    setupDialog();
-    setupConnections();
+public:
+    VolumeDialog(QWidget* parent);
+    ~VolumeDialog();
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "createVolumeDialog");
-    restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
-}
+protected:
+    virtual void setupDialog();
+    virtual void setupConnections();
 
-/** Destroys a CreateVolumeDialog */
-CreateVolumeDialog::~CreateVolumeDialog()
-{
-}
+    VolumeWidget& dialogWidget() {
+        Q_ASSERT(m_DialogWidget);
+        return *m_DialogWidget;
+    }
+    const VolumeWidget& dialogWidget() const {
+        Q_ASSERT(m_DialogWidget);
+        return *m_DialogWidget;
+    }
 
-void CreateVolumeDialog::setupDialog()
-{
-    VolumeDialog::setupDialog();
-}
+protected:
+    VolumeWidget* m_DialogWidget;
 
-void CreateVolumeDialog::setupConnections()
-{
-    VolumeDialog::setupConnections();
-}
+    QDialogButtonBox* dialogButtonBox;
+    QPushButton* okButton;
+    QPushButton* cancelButton;
+    QVBoxLayout *mainLayout;
+};
+
+#endif

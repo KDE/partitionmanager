@@ -15,9 +15,8 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include "gui/volumewidget.h"
 #include "gui/volumedialog.h"
-#include "gui/createvolumedialog.h"
+#include "gui/volumewidget.h"
 
 #include <core/lvmdevice.h>
 
@@ -34,33 +33,45 @@
 #include <QTreeWidgetItem>
 #include <QDialogButtonBox>
 
-/** Creates a new CreateVolumeDialog
+/** Creates a new VolumeDialog
     @param parent pointer to the parent widget
     @param d the Device to show properties for
 */
-CreateVolumeDialog::CreateVolumeDialog(QWidget* parent) :
-    VolumeDialog(parent)
+VolumeDialog::VolumeDialog(QWidget* parent) :
+    QDialog(parent),
+    m_DialogWidget(new VolumeWidget(this))
 {
-    setWindowTitle(xi18nc("@title:window", "Cretae new Volume Group"));
+    mainLayout = new QVBoxLayout(this);
+    setLayout(mainLayout);
+    mainLayout->addWidget(&dialogWidget());
+
+    dialogButtonBox = new QDialogButtonBox;
+    okButton = dialogButtonBox->addButton(QDialogButtonBox::Ok);
+    cancelButton = dialogButtonBox->addButton(QDialogButtonBox::Cancel);
+    mainLayout->addWidget(dialogButtonBox);
+    okButton->setEnabled(false);
+    cancelButton->setFocus();
+    cancelButton->setDefault(true);
+    connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &VolumeDialog::accept);
+    connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &VolumeDialog::reject);
 
     setupDialog();
     setupConnections();
+}
 
+/** Destroys a VolumeDialog */
+VolumeDialog::~VolumeDialog()
+{
     KConfigGroup kcg(KSharedConfig::openConfig(), "createVolumeDialog");
-    restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
+    kcg.writeEntry("Geometry", saveGeometry());
 }
 
-/** Destroys a CreateVolumeDialog */
-CreateVolumeDialog::~CreateVolumeDialog()
+void VolumeDialog::setupDialog()
 {
+    setMinimumSize(dialogWidget().size());
+    resize(dialogWidget().size());
 }
 
-void CreateVolumeDialog::setupDialog()
+void VolumeDialog::setupConnections()
 {
-    VolumeDialog::setupDialog();
-}
-
-void CreateVolumeDialog::setupConnections()
-{
-    VolumeDialog::setupConnections();
 }

@@ -15,18 +15,20 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(CREATEVOLUMEWIDGET__H)
+#if !defined(VOLUMEWIDGET__H)
 
-#define CREATEVOLUMEWIDGET__H
+#define VOLUMEWIDGET__H
 
-#include "ui_createvolumewidgetbase.h"
+#include "ui_volumewidgetbase.h"
 
 #include <QWidget>
 
-class CreateVolumeWidget : public QWidget, public Ui::CreateVolumeWidgetBase
+class  VolumeWidget : public QWidget, public Ui::VolumeWidgetBase
 {
 public:
-    CreateVolumeWidget(QWidget* parent) : QWidget(parent), Ui::CreateVolumeWidgetBase() {
+    VolumeWidget(QWidget* parent) :
+        QWidget(parent), Ui::VolumeWidgetBase()
+    {
         setupUi(this);
     }
 
