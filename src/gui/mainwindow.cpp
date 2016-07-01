@@ -249,7 +249,7 @@ void MainWindow::setupActions()
     smartStatusDevice->setStatusTip(i18nc("@info:status", "Show the device's SMART status if supported"));
 
     QAction* propertiesDevice = actionCollection()->addAction(QStringLiteral("propertiesDevice"));
-    connect(propertiesDevice, &QAction::triggered, this, &MainWindow::onPropertiesDevice2);
+    connect(propertiesDevice, &QAction::triggered, [this] {onPropertiesDevice({});});
     propertiesDevice->setEnabled(false);
     propertiesDevice->setText(i18nc("@action:inmenu", "Properties"));
     propertiesDevice->setToolTip(i18nc("@info:tooltip", "Show device properties dialog"));
@@ -1064,11 +1064,6 @@ void MainWindow::onSmartStatusDevice()
         dlg->exec();
         delete dlg;
     }
-}
-
-void MainWindow::onPropertiesDevice2()
-{
-    onPropertiesDevice({});
 }
 
 void MainWindow::onPropertiesDevice(const QString&)

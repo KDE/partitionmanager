@@ -107,8 +107,6 @@ protected:
 
 protected:
     void setDirty(void *unused = nullptr);
-    void setDirty2(QString) {setDirty();};
-    void setDirty3(int) {setDirty();};
     void onFilesystemChanged(int idx);
     void onRecreate(int);
 

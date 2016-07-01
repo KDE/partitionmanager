@@ -255,7 +255,7 @@ void PartPropsDialog::updateHideAndShow()
 
 void PartPropsDialog::setupConnections()
 {
-    connect(&dialogWidget().label(), &QLineEdit::textEdited, this, &PartPropsDialog::setDirty2);
+    connect(&dialogWidget().label(), &QLineEdit::textEdited, [this] (const QString &) {setDirty();});
     connect(&dialogWidget().fileSystem(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PartPropsDialog::onFilesystemChanged);
     connect(&dialogWidget().checkRecreate(), &QCheckBox::stateChanged, this, &PartPropsDialog::onRecreate);
 
@@ -265,7 +265,7 @@ void PartPropsDialog::setupConnections()
     // itemClicked alone isn't enough either. We choose to rather enable the OK-button too often than too
     // seldom.
     connect(&dialogWidget().listFlags(), &QListWidget::itemClicked, this, &PartPropsDialog::setDirty);
-    connect(&dialogWidget().listFlags(), &QListWidget::currentRowChanged, this, &PartPropsDialog::setDirty3);
+    connect(&dialogWidget().listFlags(), &QListWidget::currentRowChanged, [this] (int) {setDirty();});
 }
 
 void PartPropsDialog::setDirty(void*)

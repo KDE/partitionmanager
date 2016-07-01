@@ -253,7 +253,6 @@ protected:
     void onFileSystemSupport();
 
     void onSmartStatusDevice();
-    void onPropertiesDevice2();
     void onPropertiesDevice(const QString& deviceNode = {});
 
 private:
