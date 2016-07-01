@@ -235,6 +235,7 @@ protected Q_SLOTS:
     void on_m_TreeLog_contextMenuRequested(const QPoint& pos);
     void on_m_ListOperations_contextMenuRequested(const QPoint& pos);
 
+protected:
     void scanDevices();
 
     void onRefreshDevices();

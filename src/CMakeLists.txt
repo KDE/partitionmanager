@@ -41,11 +41,14 @@ target_link_libraries(partitionmanager ${BLKID_LIBRARIES}
 	kpmcore
 	KF5::ConfigCore
 	KF5::ConfigGui
+	KF5::ConfigWidgets
+	KF5::CoreAddons
 	KF5::Crash
 	KF5::I18n
 	KF5::IconThemes
 	KF5::JobWidgets
 	KF5::KIOWidgets
+	KF5::Service
 	KF5::WidgetsAddons
 	KF5::XmlGui
 )

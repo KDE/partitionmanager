@@ -179,7 +179,7 @@ void MainWindow::changeEvent(QEvent* event)
 void MainWindow::setupActions()
 {
     // File actions
-    KStandardAction::quit(this, SLOT(close()), actionCollection());
+    KStandardAction::quit(this, &MainWindow::close, actionCollection());
 
     // Edit actions
     QAction* undoOperation = actionCollection()->addAction(QStringLiteral("undoOperation"));
@@ -377,7 +377,7 @@ void MainWindow::setupActions()
     actionCollection()->addAction(QStringLiteral("toggleDockLog"), dockLog().toggleViewAction());
 
     // Settings Actions
-    KStandardAction::preferences(this, SLOT(onConfigureOptions()), actionCollection());
+    KStandardAction::preferences(this, &MainWindow::onConfigureOptions, actionCollection());
 
     // Log Actions
     QAction* clearLog = actionCollection()->addAction(QStringLiteral("clearLog"));
