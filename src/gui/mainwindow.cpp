@@ -99,6 +99,9 @@ MainWindow::MainWindow(QWidget* parent) :
 {
     setupObjectNames();
     setupUi(this);
+    connect(&m_ListDevices->listDevices(), &QListWidget::customContextMenuRequested, this, &MainWindow::listDevicesContextMenuRequested);
+    connect(&m_TreeLog->treeLog(), &QTreeWidget::customContextMenuRequested, this, &MainWindow::treeLogContextMenuRequested);
+    connect(&m_ListOperations->listOperations(), &QListWidget::customContextMenuRequested, this, &MainWindow::listOperationsContextMenuRequested);
     init();
 }
 
@@ -559,28 +562,28 @@ void MainWindow::updateWindowTitle()
     setWindowTitle(title);
 }
 
-void MainWindow::on_m_ListOperations_contextMenuRequested(const QPoint& pos)
+void MainWindow::listOperationsContextMenuRequested(const QPoint& pos)
 {
     QMenu* menu = static_cast<QMenu*>(guiFactory()->container(QStringLiteral("edit"), this));
 
     if (menu)
-        menu->exec(pos);
+        menu->exec(m_ListOperations->listOperations().viewport()->mapToGlobal(pos));
 }
 
-void MainWindow::on_m_TreeLog_contextMenuRequested(const QPoint& pos)
+void MainWindow::treeLogContextMenuRequested(const QPoint& pos)
 {
     QMenu* menu = static_cast<QMenu*>(guiFactory()->container(QStringLiteral("log"), this));
 
     if (menu)
-        menu->exec(pos);
+        menu->exec(m_TreeLog->treeLog().viewport()->mapToGlobal(pos));
 }
 
-void MainWindow::on_m_ListDevices_contextMenuRequested(const QPoint& pos)
+void MainWindow::listDevicesContextMenuRequested(const QPoint& pos)
 {
     QMenu* menu = static_cast<QMenu*>(guiFactory()->container(QStringLiteral("device"), this));
 
     if (menu)
-        menu->exec(pos);
+        menu->exec(m_ListDevices->listDevices().viewport()->mapToGlobal(pos));
 }
 
 void MainWindow::on_m_PartitionManagerWidget_contextMenuRequested(const QPoint& pos)

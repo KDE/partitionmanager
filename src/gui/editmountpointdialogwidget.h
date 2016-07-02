@@ -38,13 +38,10 @@ class MountEntry;
 
 class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDialogWidgetBase
 {
-    Q_OBJECT
-
 public:
     EditMountPointDialogWidget(QWidget* parent, const Partition& p);
     ~EditMountPointDialogWidget();
 
-public:
     QPushButton& buttonMore() {
         return *m_ButtonMore;
     }
@@ -77,9 +74,9 @@ public:
     bool acceptChanges();
     bool writeMountpoints(const QString& filename);
 
-protected Q_SLOTS:
-    void on_m_ButtonSelect_clicked(bool);
-    void on_m_ButtonMore_clicked(bool);
+protected:
+    void buttonSelectClicked(bool);
+    void buttonMoreClicked(bool);
 
 private:
     void setupOptions(const QStringList& options);

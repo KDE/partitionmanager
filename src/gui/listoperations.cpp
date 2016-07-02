@@ -48,9 +48,3 @@ void ListOperations::updateOperations(const OperationStack::Operations& ops)
 
     listOperations().scrollToBottom();
 }
-
-void ListOperations::on_m_ListOperations_customContextMenuRequested(const QPoint& pos)
-{
-    emit contextMenuRequested(listOperations().viewport()->mapToGlobal(pos));
-}
-

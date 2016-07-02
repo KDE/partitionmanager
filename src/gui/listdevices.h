@@ -43,7 +43,6 @@ public:
 Q_SIGNALS:
     void selectionChanged(const QString& device_node);
     void deviceDoubleClicked(const QString& device_node);
-    void contextMenuRequested(const QPoint&);
 
 public:
     void setActionCollection(KActionCollection* coll) {
@@ -53,11 +52,11 @@ public:
 
     void updateDevices(OperationStack::Devices& devices);
 
-protected:
     QListWidget& listDevices() {
         Q_ASSERT(m_ListDevices);
         return *m_ListDevices;
     }
+protected:
     const QListWidget& listDevices() const {
         Q_ASSERT(m_ListDevices);
         return *m_ListDevices;
@@ -66,9 +65,10 @@ protected:
         return m_ActionCollection;
     }
 
+    void customContextMenuRequested(const QPoint& pos);
+
 protected Q_SLOTS:
     void on_m_ListDevices_itemSelectionChanged();
-    void on_m_ListDevices_customContextMenuRequested(const QPoint& pos);
     void on_m_ListDevices_itemDoubleClicked(QListWidgetItem* list_item);
 
 private:

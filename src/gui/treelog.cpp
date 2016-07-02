@@ -142,11 +142,6 @@ void TreeLog::onSaveLog()
     }
 }
 
-void TreeLog::on_m_TreeLog_customContextMenuRequested(const QPoint& pos)
-{
-    emit contextMenuRequested(treeLog().viewport()->mapToGlobal(pos));
-}
-
 void TreeLog::onNewLogMessage(Log::Level logLevel, const QString& s)
 {
     static const QString icons[] = {

@@ -32,15 +32,11 @@ class QTreeWidget;
 */
 class TreeLog: public QWidget, public Ui::TreeLogBase
 {
-    Q_OBJECT
     Q_DISABLE_COPY(TreeLog)
 
 public:
     TreeLog(QWidget* parent = nullptr);
     ~TreeLog();
-
-Q_SIGNALS:
-    void contextMenuRequested(const QPoint&);
 
 public:
     void init();
@@ -49,14 +45,14 @@ public:
     void onClearLog();
     void onSaveLog();
 
-protected:
-    void on_m_TreeLog_customContextMenuRequested(const QPoint& pos);
-    void onHeaderContextMenu(const QPoint& pos);
-
     QTreeWidget& treeLog() {
         Q_ASSERT(m_TreeLog);
         return *m_TreeLog;
     }
+
+protected:
+    void onHeaderContextMenu(const QPoint& pos);
+
     const QTreeWidget& treeLog() const {
         Q_ASSERT(m_TreeLog);
         return *m_TreeLog;

@@ -121,6 +121,9 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
         if (radioLabel().isChecked())
             radioDeviceNode().setChecked(true);
     }
+
+    connect(m_ButtonMore, &QPushButton::clicked, this, &EditMountPointDialogWidget::buttonMoreClicked);
+    connect(m_ButtonSelect, &QPushButton::clicked, this, &EditMountPointDialogWidget::buttonSelectClicked);
 }
 
 EditMountPointDialogWidget::~EditMountPointDialogWidget()
@@ -141,14 +144,14 @@ void EditMountPointDialogWidget::setupOptions(const QStringList& options)
     m_Options = optTmpList.join(QStringLiteral(","));
 }
 
-void EditMountPointDialogWidget::on_m_ButtonSelect_clicked(bool)
+void EditMountPointDialogWidget::buttonSelectClicked(bool)
 {
     const QString s = QFileDialog::getExistingDirectory(this, editPath().text());
     if (!s.isEmpty())
         editPath().setText(s);
 }
 
-void EditMountPointDialogWidget::on_m_ButtonMore_clicked(bool)
+void EditMountPointDialogWidget::buttonMoreClicked(bool)
 {
     QPointer<EditMountOptionsDialog>  dlg = new EditMountOptionsDialog(this, m_Options.split(QStringLiteral(",")));
 

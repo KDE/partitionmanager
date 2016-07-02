@@ -229,11 +229,11 @@ protected Q_SLOTS:
 
     void on_m_ApplyProgressDialog_finished();
 
-    void on_m_ListDevices_contextMenuRequested(const QPoint& pos);
+    void listDevicesContextMenuRequested(const QPoint& pos);
     void on_m_ListDevices_selectionChanged(const QString& device_node);
 
-    void on_m_TreeLog_contextMenuRequested(const QPoint& pos);
-    void on_m_ListOperations_contextMenuRequested(const QPoint& pos);
+    void treeLogContextMenuRequested(const QPoint& pos);
+    void listOperationsContextMenuRequested(const QPoint& pos);
 
 protected:
     void scanDevices();

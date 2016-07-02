@@ -67,11 +67,6 @@ void ListDevices::on_m_ListDevices_itemSelectionChanged()
     }
 }
 
-void ListDevices::on_m_ListDevices_customContextMenuRequested(const QPoint& pos)
-{
-    emit contextMenuRequested(listDevices().viewport()->mapToGlobal(pos));
-}
-
 void ListDevices::on_m_ListDevices_itemDoubleClicked(QListWidgetItem* list_item)
 {
     ListDeviceWidgetItem* item = dynamic_cast<ListDeviceWidgetItem*>(list_item);
