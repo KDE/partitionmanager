@@ -26,12 +26,18 @@ class CreateVolumeDialog : public VolumeDialog
     Q_DISABLE_COPY(CreateVolumeDialog)
 
 public:
-    CreateVolumeDialog(QWidget* parent);
+    CreateVolumeDialog(QWidget* parent, QString& vgname, QList<Partition*>& pvlist);
     ~CreateVolumeDialog();
 
 protected:
+    void accept() override;
     void setupDialog() override;
+    void setupConstraints() override;
     void setupConnections() override;
+
+protected:
+    void onVGNameChanged(const QString& vgname);
+    void onSpinPESizeChanged(int newsize);
 };
 
 #endif

@@ -38,8 +38,8 @@
     @param parent pointer to the parent widget
     @param d the Device to show properties for
 */
-CreateVolumeDialog::CreateVolumeDialog(QWidget* parent) :
-    VolumeDialog(parent)
+CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QList<Partition*>& pvlist) :
+    VolumeDialog(parent, vgname, pvlist)
 {
     setWindowTitle(xi18nc("@title:window", "Cretae new Volume Group"));
 
@@ -60,7 +60,31 @@ void CreateVolumeDialog::setupDialog()
     VolumeDialog::setupDialog();
 }
 
+void CreateVolumeDialog::setupConstraints()
+{
+    VolumeDialog::setupConstraints();
+}
+
 void CreateVolumeDialog::setupConnections()
 {
     VolumeDialog::setupConnections();
+    connect(&dialogWidget().vgName(), &QLineEdit::textChanged, this, &CreateVolumeDialog::onVGNameChanged);
+    connect(&dialogWidget().spinPESize(), static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &CreateVolumeDialog::onSpinPESizeChanged);
+}
+
+void  CreateVolumeDialog::accept()
+{
+    QDialog::accept();
+}
+
+void CreateVolumeDialog::onVGNameChanged(const QString& vgname)
+{
+    Q_UNUSED(vgname);
+    updateOkButtonStatus();
+}
+
+void CreateVolumeDialog::onSpinPESizeChanged(int newsize)
+{
+    Q_UNUSED(newsize);
+    updateOkButtonStatus();
 }

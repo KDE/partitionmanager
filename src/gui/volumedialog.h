@@ -22,6 +22,7 @@
 #include <QDialog>
 
 class VolumeWidget;
+class Partition;
 
 class QDialogButtonBox;
 class QPushButton;
@@ -34,12 +35,17 @@ class VolumeDialog : public QDialog
     Q_DISABLE_COPY(VolumeDialog)
 
 public:
-    VolumeDialog(QWidget* parent);
+    VolumeDialog(QWidget* parent, QString& vgname, QList<Partition*>& pvlist);
     ~VolumeDialog();
 
 protected:
     virtual void setupDialog();
+    virtual void setupConstraints();
     virtual void setupConnections();
+
+    virtual void updateOkButtonStatus();
+    virtual void updatePartTable();
+    virtual void updateSizeInfos();
 
     VolumeWidget& dialogWidget() {
         Q_ASSERT(m_DialogWidget);
@@ -50,8 +56,16 @@ protected:
         return *m_DialogWidget;
     }
 
+    const QString originalName() const {
+        return m_OriginalName;
+    }
+
+protected:
+    virtual void onPartitionListChanged();
+
 protected:
     VolumeWidget* m_DialogWidget;
+    QString m_OriginalName;
 
     QDialogButtonBox* dialogButtonBox;
     QPushButton* okButton;

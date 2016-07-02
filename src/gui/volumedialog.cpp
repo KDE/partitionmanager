@@ -37,25 +37,30 @@
     @param parent pointer to the parent widget
     @param d the Device to show properties for
 */
-VolumeDialog::VolumeDialog(QWidget* parent) :
+VolumeDialog::VolumeDialog(QWidget* parent, QString& vgname, QList<Partition*>& pvlist) :
     QDialog(parent),
-    m_DialogWidget(new VolumeWidget(this))
+    m_DialogWidget(new VolumeWidget(this)),
+    m_OriginalName(vgname)
 {
+    Q_UNUSED(pvlist);
     mainLayout = new QVBoxLayout(this);
     setLayout(mainLayout);
     mainLayout->addWidget(&dialogWidget());
+
+    dialogWidget().listPV().addItem(QStringLiteral("TESTING ITEM"));
 
     dialogButtonBox = new QDialogButtonBox;
     okButton = dialogButtonBox->addButton(QDialogButtonBox::Ok);
     cancelButton = dialogButtonBox->addButton(QDialogButtonBox::Cancel);
     mainLayout->addWidget(dialogButtonBox);
-    okButton->setEnabled(false);
+    updateOkButtonStatus();
     cancelButton->setFocus();
     cancelButton->setDefault(true);
     connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &VolumeDialog::accept);
     connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &VolumeDialog::reject);
 
     setupDialog();
+    setupConstraints();
     setupConnections();
 }
 
@@ -68,10 +73,41 @@ VolumeDialog::~VolumeDialog()
 
 void VolumeDialog::setupDialog()
 {
+    dialogWidget().vgName().text() = originalName();
     setMinimumSize(dialogWidget().size());
     resize(dialogWidget().size());
 }
 
 void VolumeDialog::setupConnections()
+{
+}
+
+void VolumeDialog::setupConstraints()
+{
+}
+
+void VolumeDialog::updateOkButtonStatus()
+{
+    bool enable = true;
+
+    if (dialogWidget().vgName().text().isEmpty()) {
+        enable = false;
+    }
+    if (dialogWidget().spinPESize().value() <= 0) {
+        enable = false;
+    }
+
+    okButton->setEnabled(enable);
+}
+
+void VolumeDialog::updatePartTable()
+{
+}
+
+void VolumeDialog::updateSizeInfos()
+{
+}
+
+void VolumeDialog::onPartitionListChanged()
 {
 }
