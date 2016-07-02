@@ -49,7 +49,7 @@ public:
         return *m_SpinPESize;
 
     }
-    QListWidget& listPV() {
+    ListPhysicalVolumes& listPV() {
         Q_ASSERT(m_ListPV);
         return *m_ListPV;
     }

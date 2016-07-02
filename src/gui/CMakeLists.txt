@@ -20,6 +20,7 @@ set(GUI_SRC
 	gui/insertdialog.cpp
 	gui/listdevices.cpp
 	gui/listoperations.cpp
+    gui/listphysicalvolumes.cpp
 	gui/mainwindow.cpp
 	gui/newdialog.cpp
 	gui/partitionmanagerwidget.cpp

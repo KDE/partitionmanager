@@ -34,10 +34,6 @@
 #include <QTreeWidgetItem>
 #include <QDialogButtonBox>
 
-/** Creates a new CreateVolumeDialog
-    @param parent pointer to the parent widget
-    @param d the Device to show properties for
-*/
 CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QList<Partition*>& pvlist) :
     VolumeDialog(parent, vgname, pvlist)
 {

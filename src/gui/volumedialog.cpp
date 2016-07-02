@@ -47,8 +47,6 @@ VolumeDialog::VolumeDialog(QWidget* parent, QString& vgname, QList<Partition*>& 
     setLayout(mainLayout);
     mainLayout->addWidget(&dialogWidget());
 
-    dialogWidget().listPV().addItem(QStringLiteral("TESTING ITEM"));
-
     dialogButtonBox = new QDialogButtonBox;
     okButton = dialogButtonBox->addButton(QDialogButtonBox::Ok);
     cancelButton = dialogButtonBox->addButton(QDialogButtonBox::Cancel);
