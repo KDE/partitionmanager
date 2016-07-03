@@ -33,13 +33,13 @@
 #include <backend/corebackend.h>
 
 #include <core/device.h>
-#include <core/partition.h>
 #include <core/partitionalignment.h>
 #include <core/smartstatus.h>
 
 #include <ops/operation.h>
 #include <ops/createpartitiontableoperation.h>
 #include <ops/createvolumegroupoperation.h>
+#include <ops/removevolumegroupoperation.h>
 #include <ops/resizeoperation.h>
 #include <ops/copyoperation.h>
 #include <ops/deleteoperation.h>
@@ -51,6 +51,7 @@
 #include <fs/filesystem.h>
 #include <fs/filesystemfactory.h>
 #include <fs/luks.h>
+#include <fs/lvm2_pv.h>
 
 #include <util/helpers.h>
 #include "util/guihelpers.h"
@@ -249,11 +250,29 @@ void MainWindow::setupActions()
     QAction* createVolumeGroup = actionCollection()->addAction(QStringLiteral("createVolumeGroup"));
     connect(createVolumeGroup, &QAction::triggered, this, &MainWindow::onCreateNewVolumeGroup);
     createVolumeGroup->setEnabled(false);
-    createVolumeGroup->setText(i18nc("@action:inmenu", "New LVM Volume Group"));
+    createVolumeGroup->setText(i18nc("@action:inmenu", "New Volume"));
     createVolumeGroup->setToolTip(i18nc("@info:tooltip", "Create a new LVM Volume Group"));
     createVolumeGroup->setStatusTip(i18nc("@info:status", "Create a new LVM Volume Group as a device."));
     actionCollection()->setDefaultShortcut(createVolumeGroup, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_L));
     createVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("document-new")).pixmap(IconSize(KIconLoader::Toolbar)));
+
+    QAction* removeVolumeGroup = actionCollection()->addAction(QStringLiteral("removeVolumeGroup"));
+    connect(removeVolumeGroup, &QAction::triggered, this, &MainWindow::onRemoveVolumeGroup);
+    removeVolumeGroup->setEnabled(false);
+    removeVolumeGroup->setText(i18nc("@action:inmenu", "Remove Volume"));
+    removeVolumeGroup->setToolTip(i18nc("@info:tooltip", "Remove selected Volume Device"));
+    removeVolumeGroup->setStatusTip(i18nc("@info:status", "Remove selected Volume Device"));
+    //actionCollection()->setDefaultShortcut(removeVolumeGroup, QKeySequence(/*SHORTCUT KEY HERE*/));
+    removeVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")).pixmap(IconSize(KIconLoader::Toolbar)));
+
+    QAction* resizeVolumeGroup = actionCollection()->addAction(QStringLiteral("resizeVolumeGroup"));
+    connect(resizeVolumeGroup, &QAction::triggered, this, &MainWindow::onResizeVolumeGroup);
+    resizeVolumeGroup->setEnabled(false);
+    resizeVolumeGroup->setText(i18nc("@action:inmenu", "Resize Volume"));
+    resizeVolumeGroup->setToolTip(i18nc("@info:tooltip", "Resize selected Volume device"));
+    resizeVolumeGroup->setStatusTip(i18nc("@info:status", "Resize selected Volume device"));
+    //actionCollection()->setDefaultShortcut(resizeVolumeGroup, QKeySequence(/*SHORTCUT KEY HERE*/));
+    resizeVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* smartStatusDevice = actionCollection()->addAction(QStringLiteral("smartStatusDevice"));
     connect(smartStatusDevice, &QAction::triggered, this, &MainWindow::onSmartStatusDevice);
@@ -470,6 +489,12 @@ void MainWindow::enableActions()
 
     actionCollection()->action(QStringLiteral("createVolumeGroup"))
             ->setEnabled(CreateVolumeGroupOperation::canCreate());
+
+    actionCollection()->action(QStringLiteral("removeVolumeGroup"))
+            ->setEnabled(RemoveVolumeGroupOperation::canRemove());
+
+    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))
+            ->setEnabled(true);
 
     const bool canResize = ResizeOperation::canGrow(part) ||
                            ResizeOperation::canShrink(part) ||
@@ -1029,14 +1054,28 @@ void MainWindow::onExportPartitionTable()
 
 void MainWindow::onCreateNewVolumeGroup()
 {
-    QPointer<CreateVolumeDialog> dlg = new CreateVolumeDialog(this);
-    QString vgname;
-    QList<Partition*> pvlist;
+    QString* vgname = new QString();
+    QStringList* pvlist = new QStringList();
+    // *NOTE*: vgname & pvlist will be modified and validate by the dialog
+    QPointer<CreateVolumeDialog> dlg = new CreateVolumeDialog(this, *vgname, *pvlist);
     if (dlg->exec() == QDialog::Accepted) {
-        operationStack().push(new CreateVolumeGroupOperation(vgname, pvlist));
+        operationStack().push(new CreateVolumeGroupOperation(*vgname, *pvlist));
     }
-
     delete dlg;
+    delete vgname;
+    delete pvlist;
+}
+
+void MainWindow::onRemoveVolumeGroup()
+{
+    Device* tmpDev = pmWidget().selectedDevice();
+    if (tmpDev->type() == Device::LVM_Device) {
+        operationStack().push(new RemoveVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) ));
+    }
+}
+
+void MainWindow::onResizeVolumeGroup()
+{
 }
 
 void MainWindow::onFileSystemSupport()
