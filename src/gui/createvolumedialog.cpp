@@ -20,6 +20,7 @@
 #include "gui/createvolumedialog.h"
 
 #include <core/lvmdevice.h>
+#include <fs/lvm2_pv.h>
 
 #include <util/capacity.h>
 #include <util/helpers.h>
@@ -31,7 +32,6 @@
 
 #include <QPointer>
 #include <QPushButton>
-#include <QTreeWidgetItem>
 #include <QDialogButtonBox>
 
 CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist) :
@@ -40,6 +40,7 @@ CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QString
     setWindowTitle(xi18nc("@title:window", "Cretae new Volume Group"));
 
     setupDialog();
+    setupConstraints();
     setupConnections();
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "createVolumeDialog");
@@ -53,11 +54,11 @@ CreateVolumeDialog::~CreateVolumeDialog()
 
 void CreateVolumeDialog::setupDialog()
 {
+    dialogWidget().listPV().addPartitionList(FS::lvm2_pv::getFreePV(), false);
 }
 
 void CreateVolumeDialog::setupConstraints()
 {
-    VolumeDialog::setupConstraints();
 }
 
 void CreateVolumeDialog::setupConnections()
@@ -71,14 +72,9 @@ void  CreateVolumeDialog::accept()
     QString& tname = targetName();
     tname = dialogWidget().vgName().text();
 
-    targetPVList() << dialogWidget().listPV().selectedText();
+    targetPVList() << dialogWidget().listPV().checkedItems();
 
     QDialog::accept();
-}
-
-void CreateVolumeDialog::reject()
-{
-    QDialog::reject();
 }
 
 void CreateVolumeDialog::onVGNameChanged(const QString& vgname)

@@ -17,8 +17,6 @@
 
 #include "gui/listphysicalvolumes.h"
 
-#include <fs/lvm2_pv.h>
-
 #include <util/globallog.h>
 #include <util/capacity.h>
 
@@ -27,11 +25,12 @@
 class ListPhysicalVolumeWidgetItem : public QListWidgetItem
 {
 public:
-    ListPhysicalVolumeWidgetItem(const QString& pvnode) :
+    ListPhysicalVolumeWidgetItem(const QString& pvnode, bool checked) :
         QListWidgetItem(pvnode)
     {
         setToolTip(pvnode);
         setSizeHint(QSize(0, 32));
+        setCheckState( checked ? Qt::Checked : Qt::Unchecked);
     }
 };
 
@@ -40,13 +39,32 @@ ListPhysicalVolumes::ListPhysicalVolumes(QWidget* parent) :
     Ui::ListPhysicalVolumesBase()
 {
     setupUi(this);
-    QStringList pvlist = FS::lvm2_pv::getFreePV();
-    foreach (QString pvnode, pvlist) {
-        listPhysicalVolumes().addItem(new ListPhysicalVolumeWidgetItem(pvnode));
+}
+
+void ListPhysicalVolumes::addPartitionList(const QStringList& partlist, bool checked)
+{
+    foreach (const QString part, partlist) {
+        addPartition(part, checked);
     }
 }
 
-void onSelectionToggled()
+void ListPhysicalVolumes::addPartition(const QString& part, bool checked)
 {
+    ListPhysicalVolumeWidgetItem *item = new ListPhysicalVolumeWidgetItem(part, checked);
+    listPhysicalVolumes().addItem(item);
+}
+
+QStringList ListPhysicalVolumes::checkedItems()
+{
+    QStringList rlist = QStringList();
+    for (int i = 0; i < listPhysicalVolumes().count(); i++) {
+        QListWidgetItem* item = listPhysicalVolumes().item(i);
+        if (item) {
+            if(item->checkState() == Qt::Checked) {
+                rlist << item->text();
+            }
+        }
+    }
+    return rlist;
 }
 

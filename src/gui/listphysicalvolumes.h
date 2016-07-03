@@ -34,13 +34,10 @@ class ListPhysicalVolumes : public QWidget, public Ui::ListPhysicalVolumesBase
 public:
     ListPhysicalVolumes(QWidget* parent = nullptr);
 
-    void selectionToggled(const QString& pvnode, bool checked);
+    void addPartitionList(const QStringList& partlist, bool checked);
+    void addPartition(const QString& part, bool checked);
 
-    void onSelectionToggled();
-
-    QString selectedText() {
-        return listPhysicalVolumes().currentItem()->text();
-    }
+    QStringList checkedItems();
 
 protected:
     QListWidget& listPhysicalVolumes() {
