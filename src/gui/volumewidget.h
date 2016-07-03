@@ -44,6 +44,11 @@ public:
         return *m_EditVGName;
     }
 
+    QComboBox& volumeType() {
+        Q_ASSERT(m_ComboVolumeType);
+        return *m_ComboVolumeType;
+    }
+
     QSpinBox& spinPESize() {
         Q_ASSERT(m_SpinPESize);
         return *m_SpinPESize;
@@ -72,6 +77,11 @@ public:
     QLabel& textVGName() {
         Q_ASSERT(m_LabelTextVGName);
         return *m_LabelTextVGName;
+    }
+
+    QLabel& textVolumeType() {
+        Q_ASSERT(m_LabelTextVolumeType);
+        return *m_LabelTextVolumeType;
     }
 
     QLabel& textTotalSize() {
