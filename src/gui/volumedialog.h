@@ -35,7 +35,7 @@ class VolumeDialog : public QDialog
     Q_DISABLE_COPY(VolumeDialog)
 
 public:
-    VolumeDialog(QWidget* parent, QString& vgname, QList<Partition*>& pvlist);
+    VolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist);
     ~VolumeDialog();
 
 protected:
@@ -46,6 +46,9 @@ protected:
     virtual void updateOkButtonStatus();
     virtual void updatePartTable();
     virtual void updateSizeInfos();
+    virtual void updatePartitionList();
+
+    virtual void onVolumeTypeChanged(int index);
 
     VolumeWidget& dialogWidget() {
         Q_ASSERT(m_DialogWidget);
@@ -56,8 +59,20 @@ protected:
         return *m_DialogWidget;
     }
 
-    const QString originalName() const {
-        return m_OriginalName;
+    QString& targetName() {
+        return m_TargetName;
+    }
+
+    const QString& targetName() const {
+        return m_TargetName;
+    }
+
+    QStringList& targetPVList() {
+        return m_TargetPVList;
+    }
+
+    const QStringList& targetPVList() const {
+        return m_TargetPVList;
     }
 
 protected:
@@ -65,7 +80,8 @@ protected:
 
 protected:
     VolumeWidget* m_DialogWidget;
-    QString m_OriginalName;
+    QString& m_TargetName;
+    QStringList& m_TargetPVList;
 
     QDialogButtonBox* dialogButtonBox;
     QPushButton* okButton;

@@ -29,13 +29,18 @@ class KActionCollection;
 
 class ListPhysicalVolumes : public QWidget, public Ui::ListPhysicalVolumesBase
 {
-    Q_OBJECT
     Q_DISABLE_COPY(ListPhysicalVolumes)
 
 public:
     ListPhysicalVolumes(QWidget* parent = nullptr);
 
-    void selectionToggled(const QString& pvnode);
+    void selectionToggled(const QString& pvnode, bool checked);
+
+    void onSelectionToggled();
+
+    QString selectedText() {
+        return listPhysicalVolumes().currentItem()->text();
+    }
 
 protected:
     QListWidget& listPhysicalVolumes() {
@@ -46,6 +51,7 @@ protected:
         Q_ASSERT(m_ListPhysicalVolumes);
         return *m_ListPhysicalVolumes;
     }
+
 };
 
 #endif

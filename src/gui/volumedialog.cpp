@@ -18,7 +18,9 @@
 #include "gui/volumedialog.h"
 #include "gui/volumewidget.h"
 
+#include <core/partitiontable.h>
 #include <core/lvmdevice.h>
+#include <fs/lvm2_pv.h>
 
 #include <util/capacity.h>
 #include <util/helpers.h>
@@ -37,10 +39,11 @@
     @param parent pointer to the parent widget
     @param d the Device to show properties for
 */
-VolumeDialog::VolumeDialog(QWidget* parent, QString& vgname, QList<Partition*>& pvlist) :
+VolumeDialog::VolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist) :
     QDialog(parent),
     m_DialogWidget(new VolumeWidget(this)),
-    m_OriginalName(vgname)
+    m_TargetName(vgname),
+    m_TargetPVList(pvlist)
 {
     Q_UNUSED(pvlist);
     mainLayout = new QVBoxLayout(this);
@@ -54,8 +57,6 @@ VolumeDialog::VolumeDialog(QWidget* parent, QString& vgname, QList<Partition*>& 
     updateOkButtonStatus();
     cancelButton->setFocus();
     cancelButton->setDefault(true);
-    connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &VolumeDialog::accept);
-    connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &VolumeDialog::reject);
 
     setupDialog();
     setupConstraints();
@@ -71,13 +72,23 @@ VolumeDialog::~VolumeDialog()
 
 void VolumeDialog::setupDialog()
 {
-    dialogWidget().vgName().text() = originalName();
+    dialogWidget().vgName().text() = targetName();
+
+    dialogWidget().volumeType().addItem(QStringLiteral("LVM"));
+    dialogWidget().volumeType().addItem(QStringLiteral("RAID"));
+    dialogWidget().volumeType().setCurrentIndex(0);
+
     setMinimumSize(dialogWidget().size());
     resize(dialogWidget().size());
+
+    updatePartTable();
 }
 
 void VolumeDialog::setupConnections()
 {
+    connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &VolumeDialog::accept);
+    connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &VolumeDialog::reject);
+    connect(&dialogWidget().volumeType(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VolumeDialog::onVolumeTypeChanged);
 }
 
 void VolumeDialog::setupConstraints()
@@ -106,6 +117,16 @@ void VolumeDialog::updateSizeInfos()
 {
 }
 
+void VolumeDialog::updatePartitionList()
+{
+}
+
 void VolumeDialog::onPartitionListChanged()
 {
+}
+
+
+void VolumeDialog::onVolumeTypeChanged(int index)
+{
+    updatePartitionList();
 }

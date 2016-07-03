@@ -17,7 +17,7 @@
 
 #include "gui/listphysicalvolumes.h"
 
-#include <core/lvmdevice.h>
+#include <fs/lvm2_pv.h>
 
 #include <util/globallog.h>
 #include <util/capacity.h>
@@ -40,11 +40,13 @@ ListPhysicalVolumes::ListPhysicalVolumes(QWidget* parent) :
     Ui::ListPhysicalVolumesBase()
 {
     setupUi(this);
-    listPhysicalVolumes().addItem(new ListPhysicalVolumeWidgetItem(QStringLiteral("TESTING STRING")));
+    QStringList pvlist = FS::lvm2_pv::getFreePV();
+    foreach (QString pvnode, pvlist) {
+        listPhysicalVolumes().addItem(new ListPhysicalVolumeWidgetItem(pvnode));
+    }
 }
 
-void selectionToggled(const QString& pvnode)
+void onSelectionToggled()
 {
-    Q_UNUSED(pvnode);
 }
 

@@ -34,7 +34,7 @@
 #include <QTreeWidgetItem>
 #include <QDialogButtonBox>
 
-CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QList<Partition*>& pvlist) :
+CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist) :
     VolumeDialog(parent, vgname, pvlist)
 {
     setWindowTitle(xi18nc("@title:window", "Cretae new Volume Group"));
@@ -53,7 +53,6 @@ CreateVolumeDialog::~CreateVolumeDialog()
 
 void CreateVolumeDialog::setupDialog()
 {
-    VolumeDialog::setupDialog();
 }
 
 void CreateVolumeDialog::setupConstraints()
@@ -63,14 +62,23 @@ void CreateVolumeDialog::setupConstraints()
 
 void CreateVolumeDialog::setupConnections()
 {
-    VolumeDialog::setupConnections();
     connect(&dialogWidget().vgName(), &QLineEdit::textChanged, this, &CreateVolumeDialog::onVGNameChanged);
     connect(&dialogWidget().spinPESize(), static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &CreateVolumeDialog::onSpinPESizeChanged);
 }
 
 void  CreateVolumeDialog::accept()
 {
+    QString& tname = targetName();
+    tname = dialogWidget().vgName().text();
+
+    targetPVList() << dialogWidget().listPV().selectedText();
+
     QDialog::accept();
+}
+
+void CreateVolumeDialog::reject()
+{
+    QDialog::reject();
 }
 
 void CreateVolumeDialog::onVGNameChanged(const QString& vgname)
