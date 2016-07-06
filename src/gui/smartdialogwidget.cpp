@@ -43,7 +43,7 @@ void SmartAttrDelegate::paint(QPainter* painter, const QStyleOptionViewItem& opt
 
     painter->save();
 
-    QStyleOptionViewItemV4 opt = option;
+    QStyleOptionViewItem opt = option;
     initStyleOption(&opt, index);
 
     QApplication::style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &opt, painter);
