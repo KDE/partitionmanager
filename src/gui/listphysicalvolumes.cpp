@@ -59,10 +59,8 @@ QStringList ListPhysicalVolumes::checkedItems()
     QStringList rlist = QStringList();
     for (int i = 0; i < listPhysicalVolumes().count(); i++) {
         QListWidgetItem* item = listPhysicalVolumes().item(i);
-        if (item) {
-            if(item->checkState() == Qt::Checked) {
-                rlist << item->text();
-            }
+        if(item && item->checkState() == Qt::Checked) {
+            rlist << item->text();
         }
     }
     return rlist;
