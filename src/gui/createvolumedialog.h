@@ -27,7 +27,6 @@ class CreateVolumeDialog : public VolumeDialog
 
 public:
     CreateVolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist);
-    ~CreateVolumeDialog();
 
 protected:
     void accept() override;

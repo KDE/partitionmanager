@@ -47,11 +47,6 @@ CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QString
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
-/** Destroys a CreateVolumeDialog */
-CreateVolumeDialog::~CreateVolumeDialog()
-{
-}
-
 void CreateVolumeDialog::setupDialog()
 {
     dialogWidget().listPV().addPartitionList(FS::lvm2_pv::getFreePV(), false);
