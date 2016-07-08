@@ -72,7 +72,7 @@ VolumeDialog::~VolumeDialog()
 
 void VolumeDialog::setupDialog()
 {
-    dialogWidget().vgName().text() = targetName();
+    dialogWidget().vgName().setText(targetName());
 
     dialogWidget().volumeType().addItem(QStringLiteral("LVM"));
     dialogWidget().volumeType().addItem(QStringLiteral("RAID"));
@@ -93,6 +93,9 @@ void VolumeDialog::setupConnections()
 
 void VolumeDialog::setupConstraints()
 {
+    updatePartTable();
+    updateSizeInfos();
+    updateOkButtonStatus();
 }
 
 void VolumeDialog::updateOkButtonStatus()
