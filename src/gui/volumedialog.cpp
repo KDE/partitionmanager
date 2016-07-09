@@ -32,6 +32,7 @@
 
 #include <QPointer>
 #include <QPushButton>
+#include <QListWidgetItem>
 #include <QDialogButtonBox>
 
 /** Creates a new VolumeDialog
@@ -88,6 +89,10 @@ void VolumeDialog::setupConnections()
     connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &VolumeDialog::accept);
     connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &VolumeDialog::reject);
     connect(&dialogWidget().volumeType(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VolumeDialog::onVolumeTypeChanged);
+    connect(&dialogWidget().listPV().listPhysicalVolumes(), &QListWidget::itemChanged,
+            this, [=] ( QListWidgetItem*) {
+                updateSizeInfos();
+            });
 }
 
 void VolumeDialog::setupConstraints()
@@ -130,13 +135,19 @@ void VolumeDialog::updateSizeInfos()
     if (!checkedPartitions.isEmpty()) {
         totalSize = FS::lvm2_pv::getPVSize(checkedPartitions);
         if (peSize > 0) {
-            totalUsedSize = FS::lvm2_pv::getAllocatedPE(checkedPartitions) * peSize;
             totalSectors = totalSize / peSize;
         }
     }
 
-    if (!dialogWidget().vgName().text().isEmpty()) {
-        QStringList lvlist = LvmDevice::getLVs(dialogWidget().vgName().text());
+    QString vgname = dialogWidget().vgName().text();
+    if (!vgname.isEmpty()) {
+
+        // allocated PE and PE size value  are both 32 bit. will overflow if stringed together.
+        totalUsedSize = LvmDevice::getAllocatedPE(vgname);
+        totalUsedSize *= LvmDevice::getPeSize(vgname);
+
+
+        QStringList lvlist = LvmDevice::getLVs(vgname);
         if (!lvlist.isEmpty() ) {
             totalLV = lvlist.count();
         }
@@ -159,5 +170,6 @@ void VolumeDialog::onPartitionListChanged()
 
 void VolumeDialog::onVolumeTypeChanged(int index)
 {
+    Q_UNUSED(index)
     updatePartitionList();
 }

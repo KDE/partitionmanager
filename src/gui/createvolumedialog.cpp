@@ -52,10 +52,6 @@ void CreateVolumeDialog::setupDialog()
     dialogWidget().listPV().addPartitionList(FS::lvm2_pv::getFreePV(), false);
 }
 
-void CreateVolumeDialog::setupConstraints()
-{
-}
-
 void CreateVolumeDialog::setupConnections()
 {
     connect(&dialogWidget().vgName(), &QLineEdit::textChanged, this, &CreateVolumeDialog::onVGNameChanged);

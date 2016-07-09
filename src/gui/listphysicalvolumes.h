@@ -39,7 +39,6 @@ public:
 
     QStringList checkedItems();
 
-protected:
     QListWidget& listPhysicalVolumes() {
         Q_ASSERT(m_ListPhysicalVolumes);
         return *m_ListPhysicalVolumes;

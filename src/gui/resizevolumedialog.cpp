@@ -62,6 +62,7 @@ void ResizeVolumeDialog::setupConstraints()
     dialogWidget().vgName().setEnabled(false);
     dialogWidget().spinPESize().setEnabled(false);
     dialogWidget().volumeType().setEnabled(false);
+    VolumeDialog::setupConstraints();
 }
 
 void ResizeVolumeDialog::accept()

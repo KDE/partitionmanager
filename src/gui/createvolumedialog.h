@@ -31,7 +31,6 @@ public:
 protected:
     void accept() override;
     void setupDialog() override;
-    void setupConstraints() override;
     void setupConnections() override;
 
 protected:
