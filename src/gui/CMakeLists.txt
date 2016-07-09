@@ -7,6 +7,7 @@ set(GUI_SRC
     gui/volumewidget.cpp
     gui/volumedialog.cpp
     gui/createvolumedialog.cpp
+    gui/resizevolumedialog.cpp
 	gui/devicepropsdialog.cpp
 	gui/devicepropswidget.cpp
 	gui/editmountpointdialog.cpp

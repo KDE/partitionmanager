@@ -47,6 +47,10 @@
 			<Action name="exportPartitionTable"/>
 			<Action name="importPartitionTable"/>
 			<separator/>
+			<Action name="createVolumeGroup"/>
+			<Action name="resizeVolumeGroup"/>
+			<Action name="removeVolumeGroup"/>
+			<separator/>
 			<Action name="smartStatusDevice"/>
 			<Action name="propertiesDevice"/>
 		</Menu>

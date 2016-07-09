@@ -23,6 +23,7 @@
 #include "gui/scanprogressdialog.h"
 #include "gui/createpartitiontabledialog.h"
 #include "gui/createvolumedialog.h"
+#include "gui/resizevolumedialog.h"
 #include "gui/filesystemsupportdialog.h"
 #include "gui/devicepropsdialog.h"
 #include "gui/smartdialog.h"
@@ -39,6 +40,7 @@
 #include <ops/operation.h>
 #include <ops/createpartitiontableoperation.h>
 #include <ops/createvolumegroupoperation.h>
+#include <ops/resizevolumegroupoperation.h>
 #include <ops/removevolumegroupoperation.h>
 #include <ops/resizeoperation.h>
 #include <ops/copyoperation.h>
@@ -482,19 +484,20 @@ void MainWindow::enableActions()
                           pmWidget().selectedDevice()->partitionTable() == nullptr ||
                           pmWidget().selectedDevice()->partitionTable()->isReadOnly();
 
-    const Partition* part = pmWidget().selectedPartition();
-
-    actionCollection()->action(QStringLiteral("newPartition"))
-            ->setEnabled(!readOnly && NewOperation::canCreateNew(part));
-
     actionCollection()->action(QStringLiteral("createVolumeGroup"))
             ->setEnabled(CreateVolumeGroupOperation::canCreate());
 
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))
-            ->setEnabled(RemoveVolumeGroupOperation::canRemove());
+            ->setEnabled(true);
 
     actionCollection()->action(QStringLiteral("resizeVolumeGroup"))
             ->setEnabled(true);
+
+
+    const Partition* part = pmWidget().selectedPartition();
+
+    actionCollection()->action(QStringLiteral("newPartition"))
+            ->setEnabled(!readOnly && NewOperation::canCreateNew(part));
 
     const bool canResize = ResizeOperation::canGrow(part) ||
                            ResizeOperation::canShrink(part) ||
@@ -1076,6 +1079,20 @@ void MainWindow::onRemoveVolumeGroup()
 
 void MainWindow::onResizeVolumeGroup()
 {
+    if (pmWidget().selectedDevice()->type() == Device::LVM_Device) {
+        LvmDevice* tmpDev = dynamic_cast<LvmDevice*>(pmWidget().selectedDevice());
+
+        QString* vgname = new QString(tmpDev->name()); // This line only purpose is to make volumeDialog happy
+        QStringList* pvlist = new QStringList();
+        // *NOTE*: vgname & pvlist will be modified and validate by the dialog
+
+        QPointer<ResizeVolumeDialog> dlg = new ResizeVolumeDialog(this, *vgname, *pvlist);
+        if (dlg->exec() == QDialog::Accepted) {
+            operationStack().push(new ResizeVolumeGroupOperation(*tmpDev, *pvlist));
+        }
+        delete dlg;
+        delete pvlist;
+    }
 }
 
 void MainWindow::onFileSystemSupport()
