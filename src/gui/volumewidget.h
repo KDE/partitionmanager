@@ -64,9 +64,15 @@ public:
         return *m_LabelTotalSize;
     }
 
+
     QLabel& totalSectors() {
         Q_ASSERT(m_LabelTotalSectors);
         return *m_LabelTotalSectors;
+    }
+
+    QLabel& totalAllocatedSectors() {
+        Q_ASSERT(m_LabelTotalAllocatedSectors);
+        return *m_LabelTotalAllocatedSectors;
     }
 
     QLabel& totalLV() {
@@ -92,6 +98,11 @@ public:
     QLabel& textTotalSectors() {
         Q_ASSERT(m_LabelTextTotalSectors);
         return *m_LabelTextTotalSectors;
+    }
+
+    QLabel& textTotalAllocatedSectors() {
+        Q_ASSERT(m_LabelTextTotalAllocatedSectors);
+        return *m_LabelTextTotalAllocatedSectors;
     }
 
     QLabel& textTotalLV() {

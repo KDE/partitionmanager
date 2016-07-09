@@ -33,40 +33,21 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="2">
-    <widget class="QLabel" name="m_LabelTotalLV">
-     <property name="text">
-      <string>---</string>
-     </property>
-     <property name="textInteractionFlags">
-      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item row="4" column="2">
+    <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLineEdit" name="m_EditVGName"/>
+      <widget class="QSpinBox" name="m_SpinPESize">
+       <property name="value">
+        <number>4</number>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
-   <item row="6" column="1">
-    <widget class="QLabel" name="m_LabelTextTotalSectors">
+   <item row="2" column="1">
+    <widget class="QLabel" name="m_LabelTextVGName">
      <property name="text">
-      <string>Total Sectors: </string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="textInteractionFlags">
-      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="1">
-    <widget class="QLabel" name="m_LabelTextTotalSize">
-     <property name="text">
-      <string>Total Size: </string>
+      <string>Volume Name: </string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -85,6 +66,13 @@
       </size>
      </property>
     </widget>
+   </item>
+   <item row="2" column="2">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLineEdit" name="m_EditVGName"/>
+     </item>
+    </layout>
    </item>
    <item row="7" column="2">
     <widget class="QLabel" name="m_LabelTotalSize">
@@ -121,10 +109,10 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
-    <widget class="QLabel" name="m_LabelTextVGName">
+   <item row="7" column="1">
+    <widget class="QLabel" name="m_LabelTextTotalSize">
      <property name="text">
-      <string>Volume Name: </string>
+      <string>Total Size: </string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -134,8 +122,8 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="2">
-    <widget class="QLabel" name="m_LabelTotalSectors">
+   <item row="8" column="2">
+    <widget class="QLabel" name="m_LabelTotalLV">
      <property name="text">
       <string>---</string>
      </property>
@@ -143,17 +131,6 @@
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
-   </item>
-   <item row="4" column="2">
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QSpinBox" name="m_SpinPESize">
-       <property name="value">
-        <number>4</number>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </item>
    <item row="4" column="1">
     <widget class="QLabel" name="m_LabelTextPESize">
@@ -184,6 +161,52 @@
       <widget class="QComboBox" name="m_ComboVolumeType"/>
      </item>
     </layout>
+   </item>
+   <item row="5" column="2">
+    <widget class="QLabel" name="m_LabelTotalSectors">
+     <property name="text">
+      <string>---</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLabel" name="m_LabelTextTotalSectors">
+     <property name="text">
+      <string>Total Sectors: </string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLabel" name="m_LabelTextTotalAllocatedSectors">
+     <property name="text">
+      <string>Allocated Sectors: </string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2">
+    <widget class="QLabel" name="m_LabelTotalAllocatedSectors">
+     <property name="text">
+      <string>---</string>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
