@@ -32,7 +32,6 @@
 
 #include <QPointer>
 #include <QPushButton>
-#include <QTreeWidgetItem>
 #include <QDialogButtonBox>
 
 /** Creates a new VolumeDialog
@@ -118,6 +117,35 @@ void VolumeDialog::updatePartTable()
 
 void VolumeDialog::updateSizeInfos()
 {
+    qint64 totalSize = 0;
+    qint64 totalUsedSize = 0;
+    qint32 totalSectors = 0;
+    qint32 totalLV = 0;
+    qint32 peSize = 0;
+
+    // we can't use LvmDevice mothod here because pv that is not in any VG will return 0
+    peSize = dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
+
+    QStringList checkedPartitions = dialogWidget().listPV().checkedItems();
+    if (!checkedPartitions.isEmpty()) {
+        totalSize = FS::lvm2_pv::getPVSize(checkedPartitions);
+        if (peSize > 0) {
+            totalUsedSize = FS::lvm2_pv::getAllocatedPE(checkedPartitions) * peSize;
+            totalSectors = totalSize / peSize;
+        }
+    }
+
+    if (!dialogWidget().vgName().text().isEmpty()) {
+        QStringList lvlist = LvmDevice::getLVs(dialogWidget().vgName().text());
+        if (!lvlist.isEmpty() ) {
+            totalLV = lvlist.count();
+        }
+    }
+
+    dialogWidget().totalSize().setText(Capacity::formatByteSize(totalSize));
+    dialogWidget().totalUsedSize().setText(Capacity::formatByteSize(totalUsedSize));
+    dialogWidget().totalSectors().setText(QString::number(totalSectors));
+    dialogWidget().totalLV().setText(QString::number(totalLV));
 }
 
 void VolumeDialog::updatePartitionList()
