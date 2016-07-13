@@ -39,8 +39,8 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     QApplication app(argc, argv);
 
     Kdelibs4ConfigMigrator migrate(QLatin1Literal("partitionmanager"));
-    migrate.setConfigFiles(QStringList() << QLatin1Literal("partitionmanagerrc"));
-    migrate.setUiFiles(QStringList() << QStringLiteral("partitionmanagerui.rc"));
+    migrate.setConfigFiles({ QLatin1Literal("partitionmanagerrc") });
+    migrate.setUiFiles({ QStringLiteral("partitionmanagerui.rc") });
     migrate.migrate();
 
     KLocalizedString::setApplicationDomain("partitionmanager");
@@ -48,7 +48,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
         QStringLiteral("partitionmanager"),
         xi18nc("@title", "<application>KDE Partition Manager</application>"),
         QStringLiteral(VERSION),
-        i18nc("@description", "Manage your disks, partitions and file systems"),
+        i18nc("@title", "Manage your disks, partitions and file systems"),
         KAboutLicense::GPL_V3,
         i18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2016 Andrius Štikonas"));
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
