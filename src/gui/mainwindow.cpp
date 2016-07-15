@@ -1073,7 +1073,11 @@ void MainWindow::onRemoveVolumeGroup()
 {
     Device* tmpDev = pmWidget().selectedDevice();
     if (tmpDev->type() == Device::LVM_Device) {
-        operationStack().push(new RemoveVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) ));
+        if (LvmDevice::getLVs(tmpDev->name()).count()) {
+            KMessageBox::error(this, xi18nc("@info", "Could not remove <filename>%1</filename>. There are still Logical Volumes on the Volume Group.", tmpDev->name()), i18nc("@title:window", "Error Removing Volume Group"));
+        } else {
+            operationStack().push(new RemoveVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) ));
+        }
     }
 }
 
