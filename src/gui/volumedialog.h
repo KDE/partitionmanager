@@ -75,6 +75,10 @@ protected:
         return m_TargetPVList;
     }
 
+    bool isLegeSize() const {
+        return m_IsLegalSize;
+    }
+
 protected:
     virtual void onPartitionListChanged();
 
@@ -82,6 +86,7 @@ protected:
     VolumeWidget* m_DialogWidget;
     QString& m_TargetName;
     QStringList& m_TargetPVList;
+    bool m_IsLegalSize;
 
     QDialogButtonBox* dialogButtonBox;
     QPushButton* okButton;
