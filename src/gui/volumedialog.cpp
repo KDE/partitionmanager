@@ -141,12 +141,7 @@ void VolumeDialog::updateSizeInfos()
 
     QString vgname = dialogWidget().vgName().text();
     if (!vgname.isEmpty()) {
-
-        // allocated PE and PE size value  are both 32 bit. will overflow if stringed together.
-        totalUsedSize = LvmDevice::getAllocatedPE(vgname);
-        totalUsedSize *= LvmDevice::getPeSize(vgname);
-
-
+        totalUsedSize = LvmDevice::getAllocatedPE(vgname) * LvmDevice::getPeSize(vgname);
         QStringList lvlist = LvmDevice::getLVs(vgname);
         if (!lvlist.isEmpty() ) {
             totalLV = lvlist.count();
