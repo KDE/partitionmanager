@@ -135,5 +135,5 @@ bool ResizeDialog::canShrink() const
 
 bool ResizeDialog::canMove() const
 {
-    return ResizeOperation::canMove(&partition());
+    return (device().type() == Device::LVM_Device) ? false : ResizeOperation::canMove(&partition());
 }
