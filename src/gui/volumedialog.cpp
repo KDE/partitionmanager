@@ -104,7 +104,7 @@ void VolumeDialog::setupConstraints()
 
 void VolumeDialog::updateOkButtonStatus()
 {
-    bool enable = isLegeSize();
+    bool enable = isValidSize();
 
     if (dialogWidget().vgName().text().isEmpty()) {
         enable = false;
@@ -154,7 +154,7 @@ void VolumeDialog::updateSizeInfos()
     dialogWidget().totalLV().setText(QString::number(totalLV));
 
     //Probably a bad design for updating state here; the state should be changed inside the update button function.
-    m_IsLegalSize = totalSize > totalUsedSize;
+    m_IsValidSize = totalSize > totalUsedSize;
     updateOkButtonStatus();
 }
 
