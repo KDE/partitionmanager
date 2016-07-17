@@ -47,13 +47,17 @@
 */
 NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPartition, PartitionRole::Roles r) :
     SizeDialogBase(parent, device, unallocatedPartition, unallocatedPartition.firstSector(), unallocatedPartition.lastSector()),
-    m_PartitionRoles(r)
+    m_PartitionRoles(r),
+    m_IsValidPassword(true),
+    m_IsValidLVName(true)
 {
     setWindowTitle(xi18nc("@title:window", "Create a new partition"));
 
     setupDialog();
     setupConstraints();
     setupConnections();
+
+    updateOkButtonStatus();
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "newDialog");
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
@@ -107,6 +111,7 @@ void NewDialog::setupDialog()
         detailsWidget().checkAlign().setChecked(false);
         detailsWidget().checkAlign().setEnabled(false);
         detailsButton->hide();
+        m_IsValidLVName = false;
     }
 
     dialogWidget().editPassphrase().setMinimumPasswordLength(1);
@@ -237,18 +242,25 @@ void NewDialog::slotPasswordStatusChanged()
     switch (dialogWidget().editPassphrase().passwordStatus()) {
     case KNewPasswordWidget::WeakPassword:
     case KNewPasswordWidget::StrongPassword:
-        okButton->setEnabled(true);
+        m_IsValidPassword = true;
         break;
     default:
-        okButton->setEnabled(false);
+        m_IsValidPassword = false;
         break;
     }
+    updateOkButtonStatus();
 }
 
 void NewDialog::onLVNameChanged(const QString& newName)
 {
-    //TODO: filter lvName
+    //TODO: validate lvName
     partition().setPartitionPath(device().deviceNode() + QStringLiteral("/") + newName.trimmed());
+    if (dialogWidget().lvName().isVisible() && dialogWidget().lvName().text().isEmpty()) {
+        m_IsValidLVName = false;
+    } else {
+        m_IsValidLVName = true;
+    }
+    updateOkButtonStatus();
 }
 
 void NewDialog::updateHideAndShow()
@@ -285,4 +297,9 @@ void NewDialog::updateHideAndShow()
         dialogWidget().editPassphrase().hide();
     }
 
+}
+
+void NewDialog::updateOkButtonStatus()
+{
+    okButton->setEnabled(isValidPassword() && isValidLVName());
 }

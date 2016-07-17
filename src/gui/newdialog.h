@@ -50,6 +50,7 @@ protected:
     void setupDialog() override;
     void slotPasswordStatusChanged();
     void updateHideAndShow();
+    void updateOkButtonStatus();
     void updateFileSystem(FileSystem::Type t);
     PartitionRole::Roles partitionRoles() const {
         return m_PartitionRoles;
@@ -62,8 +63,17 @@ protected:
     }
     bool canMove() const override;
 
+    bool isValidPassword() const {
+        return m_IsValidPassword;
+    }
+    bool isValidLVName() const {
+        return m_IsValidLVName;
+    }
+
 private:
     PartitionRole::Roles m_PartitionRoles;
+    bool m_IsValidPassword;
+    bool m_IsValidLVName;
 };
 
 #endif
