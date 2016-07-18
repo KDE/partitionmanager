@@ -1059,10 +1059,11 @@ void MainWindow::onCreateNewVolumeGroup()
 {
     QString* vgname = new QString();
     QStringList* pvlist = new QStringList();
+    qint32 pesize = 4;
     // *NOTE*: vgname & pvlist will be modified and validate by the dialog
-    QPointer<CreateVolumeDialog> dlg = new CreateVolumeDialog(this, *vgname, *pvlist);
+    QPointer<CreateVolumeDialog> dlg = new CreateVolumeDialog(this, *vgname, *pvlist, pesize);
     if (dlg->exec() == QDialog::Accepted) {
-        operationStack().push(new CreateVolumeGroupOperation(*vgname, *pvlist));
+        operationStack().push(new CreateVolumeGroupOperation(*vgname, *pvlist, pesize));
     }
     delete dlg;
     delete vgname;

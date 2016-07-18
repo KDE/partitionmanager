@@ -610,7 +610,7 @@ void PartitionManagerWidget::onResizePartition()
         freeAfter  = selectedDevice()->partitionTable()->freeSectors();
     }
 
-    QPointer<ResizeDialog> dlg = new ResizeDialog(this, *selectedDevice(), p, p.firstSector() - freeBefore, freeAfter + p.lastSector());
+    QPointer<ResizeDialog> dlg = new ResizeDialog(this, *selectedDevice(), p, p.firstSector() - freeBefore, p.lastSector() + freeAfter);
 
     if (dlg->exec() == QDialog::Accepted) {
         if (dlg->resizedFirstSector() == p.firstSector() && dlg->resizedLastSector() == p.lastSector())

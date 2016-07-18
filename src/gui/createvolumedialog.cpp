@@ -34,8 +34,9 @@
 #include <QPushButton>
 #include <QDialogButtonBox>
 
-CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist) :
-    VolumeDialog(parent, vgname, pvlist)
+CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist, qint32& pesize) :
+    VolumeDialog(parent, vgname, pvlist),
+    m_PESize(pesize)
 {
     setWindowTitle(xi18nc("@title:window", "Cretae new Volume Group"));
 
@@ -44,7 +45,6 @@ CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QString
     setupConnections();
 
     // disable volume type and PE size for now, until the features are implemented.
-    dialogWidget().spinPESize().setEnabled(false);
     dialogWidget().volumeType().setEnabled(false);
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "createVolumeDialog");
@@ -68,6 +68,9 @@ void  CreateVolumeDialog::accept()
     tname = dialogWidget().vgName().text();
 
     targetPVList() << dialogWidget().listPV().checkedItems();
+
+    qint32& pesize = peSize();
+    pesize = dialogWidget().spinPESize().value();
 
     QDialog::accept();
 }
