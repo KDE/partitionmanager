@@ -122,7 +122,7 @@ void TreeLog::onSaveLog()
         QTemporaryFile tempFile;
 
         if (!tempFile.open()) {
-            KMessageBox::error(this, xi18nc("@info", "Could not create temporary output file to save <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Error Saving Log File"));
+            KMessageBox::error(this, xi18nc("@info", "Could not create temporary output file to save <filename>%1</filename>.", url.fileName()), xi18nc("@title:window", "Error Saving Log File"));
             return;
         }
 

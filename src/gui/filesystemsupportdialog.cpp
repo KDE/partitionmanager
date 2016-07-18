@@ -40,7 +40,7 @@ FileSystemSupportDialog::FileSystemSupportDialog(QWidget* parent) :
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     setLayout(mainLayout);
     mainLayout->addWidget(&dialogWidget());
-    setWindowTitle(i18nc("@title:window", "File System Support"));
+    setWindowTitle(xi18nc("@title:window", "File System Support"));
     dialogButtonBox = new QDialogButtonBox(this);
     dialogButtonBox -> setStandardButtons(QDialogButtonBox::Ok);
     mainLayout->addWidget(dialogButtonBox);

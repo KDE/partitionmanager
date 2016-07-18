@@ -65,7 +65,7 @@ SmartDialog::SmartDialog(QWidget* parent, Device& d) :
 
     buttonBox = new QDialogButtonBox(this);
     buttonBox->setStandardButtons(QDialogButtonBox::Save | QDialogButtonBox::Close);
-    buttonBox->button(QDialogButtonBox::Save)->setText(i18nc("@action:button", "Save SMART Report"));
+    buttonBox->button(QDialogButtonBox::Save)->setText(xi18nc("@action:button", "Save SMART Report"));
     buttonBox->button(QDialogButtonBox::Save)->setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
     mainLayout->addWidget(buttonBox);
 
@@ -87,10 +87,10 @@ void SmartDialog::setupDialog()
 {
     if (device().smartStatus().isValid()) {
         if (device().smartStatus().status()) {
-            dialogWidget().statusText().setText(i18nc("@label SMART disk status", "good"));
+            dialogWidget().statusText().setText(xi18nc("@label SMART disk status", "good"));
             dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(IconSize(KIconLoader::Small)));
         } else {
-            dialogWidget().statusText().setText(i18nc("@label SMART disk status", "BAD"));
+            dialogWidget().statusText().setText(xi18nc("@label SMART disk status", "BAD"));
             dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(IconSize(KIconLoader::Small)));
         }
 
@@ -101,7 +101,7 @@ void SmartDialog::setupDialog()
         dialogWidget().temperature().setText(SmartStatus::tempToString(device().smartStatus().temp()));
         const QString badSectors = device().smartStatus().badSectors() > 0
                                    ? QLocale().toString(device().smartStatus().badSectors())
-                                   : i18nc("@label SMART number of bad sectors", "none");
+                                   : xi18nc("@label SMART number of bad sectors", "none");
         dialogWidget().badSectors().setText(badSectors);
         dialogWidget().poweredOn().setText(KFormat().formatDuration(device().smartStatus().poweredOn()));
         dialogWidget().powerCycles().setText(QLocale().toString(device().smartStatus().powerCycles()));
@@ -120,8 +120,8 @@ void SmartDialog::setupDialog()
                 QStringList()
                 << QLocale().toString(a.id())
                 << QStringLiteral("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + QStringLiteral("</span>"))
-                << (a.failureType() == SmartAttribute::PreFailure ? i18nc("@item:intable", "Pre-Failure") : i18nc("@item:intable", "Old-Age"))
-                << (a.updateType() == SmartAttribute::Online ? i18nc("@item:intable", "Online") : i18nc("@item:intable", "Offline"))
+                << (a.failureType() == SmartAttribute::PreFailure ? xi18nc("@item:intable", "Pre-Failure") : xi18nc("@item:intable", "Old-Age"))
+                << (a.updateType() == SmartAttribute::Online ? xi18nc("@item:intable", "Online") : xi18nc("@item:intable", "Offline"))
                 << QLocale().toString(a.worst())
                 << QLocale().toString(a.current())
                 << QLocale().toString(a.threshold())
@@ -133,7 +133,7 @@ void SmartDialog::setupDialog()
             dialogWidget().treeSmartAttributes().addTopLevelItem(item);
         }
     } else
-        dialogWidget().statusText().setText(i18nc("@label", "(unknown)"));
+        dialogWidget().statusText().setText(xi18nc("@label", "(unknown)"));
 
     setMinimumSize(dialogWidget().size());
     resize(dialogWidget().size());
@@ -151,9 +151,9 @@ QString SmartDialog::toHtml() const
     QTextStream s(&rval);
 
     if (device().smartStatus().status())
-        s << HtmlReport::tableLine(i18n("SMART status:"), i18nc("@label SMART disk status", "good"));
+        s << HtmlReport::tableLine(i18n("SMART status:"), xi18nc("@label SMART disk status", "good"));
     else
-        s << HtmlReport::tableLine(i18n("SMART status:"), i18nc("@label SMART disk status", "BAD"));
+        s << HtmlReport::tableLine(i18n("SMART status:"), xi18nc("@label SMART disk status", "BAD"));
 
     const QString badSectors = device().smartStatus().badSectors() > 0
                                ? QLocale().toString(device().smartStatus().badSectors())
@@ -185,8 +185,8 @@ QString SmartDialog::toHtml() const
 
             s << "<td>" << QLocale().toString(a.id()) << "</td>\n"
               << "<td>" << QStringLiteral("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + QStringLiteral("</span>")) << "</td>\n"
-              << "<td>" << (a.failureType() == SmartAttribute::PreFailure ? i18nc("@item:intable", "Pre-Failure") : i18nc("@item:intable", "Old-Age")) << "</td>\n"
-              << "<td>" << (a.updateType() == SmartAttribute::Online ? i18nc("@item:intable", "Online") : i18nc("@item:intable", "Offline")) << "</td>\n"
+              << "<td>" << (a.failureType() == SmartAttribute::PreFailure ? xi18nc("@item:intable", "Pre-Failure") : xi18nc("@item:intable", "Old-Age")) << "</td>\n"
+              << "<td>" << (a.updateType() == SmartAttribute::Online ? xi18nc("@item:intable", "Online") : xi18nc("@item:intable", "Offline")) << "</td>\n"
               << "<td>" << QLocale().toString(a.worst()) << "</td>\n"
               << "<td>" << QLocale().toString(a.current()) << "</td>\n"
               << "<td>" << QLocale().toString(a.threshold()) << "</td>\n"
@@ -231,6 +231,6 @@ void SmartDialog::saveSmartReport()
         if (job->error())
             job->ui()->showErrorMessage();
     } else
-        KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Could Not Save SMART Report."));
+        KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), xi18nc("@title:window", "Could Not Save SMART Report."));
 
 }

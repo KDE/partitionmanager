@@ -52,17 +52,17 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 
     KPageWidgetItem* item = nullptr;
 
-    item = addPage(&generalPageWidget(), i18nc("@title:tab general application settings", "General"), QString(), i18n("General Settings"));
+    item = addPage(&generalPageWidget(), xi18nc("@title:tab general application settings", "General"), QString(), i18n("General Settings"));
     item->setIcon(QIcon::fromTheme(QStringLiteral("partitionmanager")).pixmap(IconSize(KIconLoader::Desktop)));
 
     connect(&generalPageWidget().comboDefaultFileSystem(), static_cast<void(QComboBox::*)(int)>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
     connect(generalPageWidget().radioButton, &QRadioButton::toggled, this, &ConfigureOptionsDialog::onShredSourceActivated);
 
-    item = addPage(&fileSystemColorsPageWidget(), i18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
+    item = addPage(&fileSystemColorsPageWidget(), xi18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
     item->setIcon(QIcon::fromTheme(QStringLiteral("format-fill-color")).pixmap(IconSize(KIconLoader::Desktop)));
 
     if (QCoreApplication::arguments().contains(QLatin1String("--advconfig"))) {
-        item = addPage(&advancedPageWidget(), i18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
+        item = addPage(&advancedPageWidget(), xi18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
         item->setIcon(QIcon::fromTheme(QStringLiteral("configure")).pixmap(IconSize(KIconLoader::Desktop)));
 
         connect(&advancedPageWidget().comboBackend(), static_cast<void(QComboBox::*)(int)>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);

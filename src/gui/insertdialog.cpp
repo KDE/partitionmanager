@@ -40,7 +40,7 @@ InsertDialog::InsertDialog(QWidget* parent, Device& device, Partition& insertedP
     SizeDialogBase(parent, device, insertedPartition, destpartition.firstSector(), destpartition.lastSector()),
     m_DestPartition(destpartition)
 {
-    setWindowTitle(i18nc("@title:window", "Insert a partition"));
+    setWindowTitle(xi18nc("@title:window", "Insert a partition"));
 
     partition().move(destPartition().firstSector());
     partition().fileSystem().move(destPartition().fileSystem().firstSector());

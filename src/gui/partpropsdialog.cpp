@@ -113,24 +113,24 @@ void PartPropsDialog::setupDialog()
     dialogWidget().partWidget().init(&partition());
 
     const QString mp = partition().mountPoint().isEmpty()
-                       ? i18nc("@item mountpoint", "(none found)")
+                       ? xi18nc("@item mountpoint", "(none found)")
                        : partition().mountPoint();
     dialogWidget().mountPoint().setText(mp);
 
     dialogWidget().role().setText(partition().roles().toString());
 
-    QString statusText = i18nc("@label partition state", "idle");
+    QString statusText = xi18nc("@label partition state", "idle");
     if (partition().isMounted()) {
         if (partition().roles().has(PartitionRole::Extended))
-            statusText = i18nc("@label partition state", "At least one logical partition is mounted.");
+            statusText = xi18nc("@label partition state", "At least one logical partition is mounted.");
         else if (!partition().mountPoint().isEmpty())
             statusText = xi18nc("@label partition state", "mounted on <filename>%1</filename>", mp);
         else
-            statusText = i18nc("@label partition state", "mounted");
+            statusText = xi18nc("@label partition state", "mounted");
     }
 
     dialogWidget().status().setText(statusText);
-    dialogWidget().uuid().setText(partition().fileSystem().uuid().isEmpty() ? i18nc("@item uuid", "(none)") : partition().fileSystem().uuid());
+    dialogWidget().uuid().setText(partition().fileSystem().uuid().isEmpty() ? xi18nc("@item uuid", "(none)") : partition().fileSystem().uuid());
 
     setupFileSystemComboBox();
 
@@ -335,8 +335,8 @@ void PartPropsDialog::onFilesystemChanged(int)
             xi18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.</warning></para>"
                    "<para>Changing the file system on a partition already on disk will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filename>%1</filename> will unrecoverably be lost.</para>", partition().deviceNode()),
             xi18nc("@title:window", "Really Recreate <filename>%1</filename> with File System %2?", partition().deviceNode(), dialogWidget().fileSystem().currentText()),
-            KGuiItem(i18nc("@action:button", "Change the File System"), QStringLiteral("arrow-right")),
-            KGuiItem(i18nc("@action:button", "Do Not Change the File System"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyChangeFileSystem")) == KMessageBox::Continue) {
+            KGuiItem(xi18nc("@action:button", "Change the File System"), QStringLiteral("arrow-right")),
+            KGuiItem(xi18nc("@action:button", "Do Not Change the File System"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyChangeFileSystem")) == KMessageBox::Continue) {
         setDirty();
         updateHideAndShow();
         setWarnFileSystemChange();
@@ -357,8 +357,8 @@ void PartPropsDialog::onRecreate(int state)
                                  xi18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.</warning></para>"
                                         "<para>Recreating a file system will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</para>", partition().deviceNode()),
                                  xi18nc("@title:window", "Really Recreate File System on <filename>%1</filename>?", partition().deviceNode()),
-                                 KGuiItem(i18nc("@action:button", "Recreate the File System"), QStringLiteral("arrow-right")),
-                                 KGuiItem(i18nc("@action:button", "Do Not Recreate the File System"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyRecreateFileSystem")) == KMessageBox::Continue)) {
+                                 KGuiItem(xi18nc("@action:button", "Recreate the File System"), QStringLiteral("arrow-right")),
+                                 KGuiItem(xi18nc("@action:button", "Do Not Recreate the File System"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyRecreateFileSystem")) == KMessageBox::Continue)) {
         setDirty();
         setWarnFileSystemChange();
         setForceRecreate(true);

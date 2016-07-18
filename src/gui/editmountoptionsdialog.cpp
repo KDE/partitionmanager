@@ -34,7 +34,7 @@ EditMountOptionsDialog::EditMountOptionsDialog(QWidget* parent, const QStringLis
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     setLayout(mainLayout);
     mainLayout->addWidget(&widget());
-    setWindowTitle(i18nc("@title:window", "Edit additional mount options"));
+    setWindowTitle(xi18nc("@title:window", "Edit additional mount options"));
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "editMountOptionsDialog");
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));

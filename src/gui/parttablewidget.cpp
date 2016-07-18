@@ -35,7 +35,7 @@
 PartTableWidget::PartTableWidget(QWidget* parent) :
     PartWidgetBase(parent),
     m_PartitionTable(nullptr),
-    m_LabelEmpty(i18nc("@info", "Please select a device."), this),
+    m_LabelEmpty(xi18nc("@info", "Please select a device."), this),
     m_ReadOnly(false)
 {
     labelEmpty().setAlignment(Qt::AlignVCenter | Qt::AlignHCenter);
@@ -60,7 +60,7 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 
     if (childWidgets().isEmpty()) {
         labelEmpty().setVisible(true);
-        labelEmpty().setText(i18nc("@info", "No valid partition table was found on this device."));
+        labelEmpty().setText(xi18nc("@info", "No valid partition table was found on this device."));
         labelEmpty().resize(size());
     } else {
         labelEmpty().setVisible(false);

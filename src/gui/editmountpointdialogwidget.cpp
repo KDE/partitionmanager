@@ -179,7 +179,7 @@ bool EditMountPointDialogWidget::readMountpoints(const QString& filename)
     if (fp == nullptr) {
         KMessageBox::sorry(this,
                            xi18nc("@info", "Could not open mount point file <filename>%1</filename>.", filename),
-                           i18nc("@title:window", "Error while reading mount points"));
+                           xi18nc("@title:window", "Error while reading mount points"));
         return false;
     }
 
@@ -287,7 +287,7 @@ bool EditMountPointDialogWidget::writeMountpoints(const QString& filename)
     if (!rval)
         KMessageBox::sorry(this,
                            xi18nc("@info", "Could not save mount points to file <filename>%1</filename>.", filename),
-                           i18nc("@title:window", "Error While Saving Mount Points"));
+                           xi18nc("@title:window", "Error While Saving Mount Points"));
 
     return rval;
 }

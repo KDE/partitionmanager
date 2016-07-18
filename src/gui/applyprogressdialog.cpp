@@ -92,7 +92,7 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
     okButton = dialogButtonBox->addButton(QDialogButtonBox::Ok);
     cancelButton = dialogButtonBox->addButton(QDialogButtonBox::Cancel);
     detailsButton = new QPushButton;
-    detailsButton->setText(i18n("&Details") + QStringLiteral(" >>"));
+    detailsButton->setText(xi18nc("@action:button", "&Details") + QStringLiteral(" >>"));
     detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("help-about")).pixmap(IconSize(KIconLoader::Toolbar)));
     dialogButtonBox->addButton(detailsButton, QDialogButtonBox::ActionRole);
     mainLayout->addWidget(dialogButtonBox);
@@ -134,7 +134,7 @@ void ApplyProgressDialog::setupConnections()
 /** Shows the dialog */
 void ApplyProgressDialog::show()
 {
-    setStatus(i18nc("@info:progress", "Setting up..."));
+    setStatus(xi18nc("@info:progress", "Setting up..."));
 
     resetReport();
 
@@ -178,7 +178,7 @@ void ApplyProgressDialog::toggleDetails()
 {
     const bool isVisible = detailsWidget().isVisible();
     detailsWidget().setVisible(!isVisible);
-    detailsButton->setText(i18n("&Details") + (isVisible ? QStringLiteral(" >>") : QStringLiteral(" <<")));
+    detailsButton->setText(xi18nc("@action:button", "&Details") + (isVisible ? QStringLiteral(" >>") : QStringLiteral(" <<")));
 }
 
 void ApplyProgressDialog::onDetailsButton()
@@ -197,7 +197,7 @@ void ApplyProgressDialog::onCancelButton()
         QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 
         cancelButton->setEnabled(false);
-        setStatus(i18nc("@info:progress", "Waiting for operation to finish..."));
+        setStatus(xi18nc("@info:progress", "Waiting for operation to finish..."));
         repaint();
         dialogWidget().repaint();
 
@@ -208,7 +208,7 @@ void ApplyProgressDialog::onCancelButton()
 
         QApplication::restoreOverrideCursor();
 
-        if (KMessageBox::questionYesNo(this, i18nc("@info", "Do you really want to cancel?"), i18nc("@title:window", "Cancel Running Operations"), KGuiItem(i18nc("@action:button", "Yes, Cancel Operations"), QStringLiteral("dialog-ok")), KStandardGuiItem::no()) == KMessageBox::Yes)
+        if (KMessageBox::questionYesNo(this, xi18nc("@info", "Do you really want to cancel?"), xi18nc("@title:window", "Cancel Running Operations"), KGuiItem(xi18nc("@action:button", "Yes, Cancel Operations"), QStringLiteral("dialog-ok")), KStandardGuiItem::no()) == KMessageBox::Yes)
             // in the meantime while we were showing the messagebox, the runner might have finished.
             if (operationRunner().isRunning())
                 operationRunner().cancel();
@@ -227,17 +227,17 @@ void ApplyProgressDialog::onOkButton()
 
 void ApplyProgressDialog::onAllOpsFinished()
 {
-    allOpsDone(i18nc("@info:progress", "All operations successfully finished."));
+    allOpsDone(xi18nc("@info:progress", "All operations successfully finished."));
 }
 
 void ApplyProgressDialog::onAllOpsCancelled()
 {
-    allOpsDone(i18nc("@info:progress", "Operations cancelled."));
+    allOpsDone(xi18nc("@info:progress", "Operations cancelled."));
 }
 
 void ApplyProgressDialog::onAllOpsError()
 {
-    allOpsDone(i18nc("@info:progress", "There were errors while applying operations. Aborted."));
+    allOpsDone(xi18nc("@info:progress", "There were errors while applying operations. Aborted."));
 }
 
 void ApplyProgressDialog::allOpsDone(const QString& msg)
@@ -350,7 +350,7 @@ void ApplyProgressDialog::setStatus(const QString& s)
 
 QString ApplyProgressDialog::opDesc(int num, const Operation& op) const
 {
-    return i18nc("@info:progress", "[%1/%2] - %3: %4", num, operationRunner().numOperations(), op.statusText(), op.description());
+    return xi18nc("@info:progress", "[%1/%2] - %3: %4", num, operationRunner().numOperations(), op.statusText(), op.description());
 }
 
 void ApplyProgressDialog::addTaskOutput(int num, const Operation& op)
@@ -384,7 +384,7 @@ void ApplyProgressDialog::onSecondElapsed()
     }
 
     const QTime outputTime = QTime(0, 0).addMSecs(time().elapsed());
-    dialogWidget().totalTime().setText(i18nc("@info:progress", "Total Time: %1", outputTime.toString(timeFormat())));
+    dialogWidget().totalTime().setText(xi18nc("@info:progress", "Total Time: %1", outputTime.toString(timeFormat())));
 }
 
 void ApplyProgressDialog::keyPressEvent(QKeyEvent* e)
@@ -432,7 +432,7 @@ void ApplyProgressDialog::saveReport()
         if (job->error())
             job->ui()->showErrorMessage();
     } else
-        KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), i18nc("@title:window", "Could Not Save Report."));
+        KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), xi18nc("@title:window", "Could Not Save Report."));
 }
 
 void ApplyProgressDialog::browserReport()
@@ -457,7 +457,7 @@ void ApplyProgressDialog::browserReport()
         file.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ReadGroup | QFile::ReadOther);
 
         if (!KRun::runUrl(QUrl::fromLocalFile(file.fileName()), QStringLiteral("text/html"), this, true))
-            KMessageBox::sorry(this, i18nc("@info", "The configured external browser could not be run. Please check your settings."), i18nc("@title:window", "Could Not Launch Browser."));
+            KMessageBox::sorry(this, xi18nc("@info", "The configured external browser could not be run. Please check your settings."), xi18nc("@title:window", "Could Not Launch Browser."));
     } else
         KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file <filename>%1</filename> for writing.", file.fileName()), i18nc("@title:window", "Could Not Launch Browser."));
 }

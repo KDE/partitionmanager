@@ -23,7 +23,7 @@
 ScanProgressDialog::ScanProgressDialog(QWidget* parent) :
     QProgressDialog(parent)
 {
-    setWindowTitle(i18nc("@title:window", "Scanning devices..."));
+    setWindowTitle(xi18nc("@title:window", "Scanning devices..."));
     setMinimumWidth(280);
     setMinimumDuration(150);
     setAttribute(Qt::WA_ShowModal, true);
@@ -32,7 +32,7 @@ ScanProgressDialog::ScanProgressDialog(QWidget* parent) :
 void ScanProgressDialog::setDeviceName(const QString& d)
 {
     if (d.isEmpty())
-        setLabelText(i18nc("@label", "Scanning..."));
+        setLabelText(xi18nc("@label", "Scanning..."));
     else
         setLabelText(xi18nc("@label", "Scanning device: <filename>%1</filename>", d));
 }

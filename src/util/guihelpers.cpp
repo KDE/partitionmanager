@@ -102,7 +102,7 @@ bool loadBackend()
                                xi18nc("@info", "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
                                       "plugin could be loaded.</para><para>Please check your installation.</para>",
                                       Config::backend(), CoreBackendManager::defaultBackendName()),
-                               i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
+                               xi18nc("@title:window", "Error: Could Not Load Backend Plugin"));
             return false;
         }
     }

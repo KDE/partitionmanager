@@ -394,10 +394,10 @@ void PartitionManagerWidget::onMountPartition()
 
     if (p->canMount()) {
         if (!p->mount(report))
-            KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Mount File System."));
+            KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), xi18nc("@title:window", "Could Not Mount File System."));
     } else if (p->canUnmount()) {
         if (!p->unmount(report))
-            KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), i18nc("@title:window", "Could Not Unmount File System."));
+            KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), xi18nc("@title:window", "Could Not Unmount File System."));
     }
 
     if (p->roles().has(PartitionRole::Logical)) {
@@ -442,7 +442,7 @@ void PartitionManagerWidget::onDecryptPartition()
                                               "unlocked.",
                                               p->deviceNode()),
                                        QString(),
-                                       i18nc("@title:window",
+                                       xi18nc("@title:window",
                                              "Could Not Unlock Encrypted File System."));
     } else if (luksFs->canCryptClose(p->partitionPath())) {
         if (!luksFs->cryptClose(p->partitionPath()))
@@ -453,7 +453,7 @@ void PartitionManagerWidget::onDecryptPartition()
                                               "locked.",
                                               p->deviceNode()),
                                        QString(),
-                                       i18nc("@title:window",
+                                       xi18nc("@title:window",
                                              "Could Not Lock Encrypted File System."));
     }
 
@@ -487,7 +487,7 @@ static bool checkTooManyPartitions(QWidget* parent, const Device& d, const Parti
                                            "<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
                                            "<para>There are already %1 primary partitions on this device. This is the maximum number its partition table type can handle.</para>"
                                            "<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
-                                           d.partitionTable()->numPrimaries()), i18nc("@title:window", "Too Many Primary Partitions."));
+                                           d.partitionTable()->numPrimaries()), xi18nc("@title:window", "Too Many Primary Partitions."));
         return true;
     }
 
@@ -549,7 +549,7 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
                                       "<para>The partition <filename>%1</filename> cannot currently be deleted because one or more partitions with higher logical numbers are still mounted.</para>"
                                       "<para>Please unmount all partitions with higher logical numbers than %2 first.</para>",
                                       selectedPartition()->deviceNode(), selectedPartition()->number()),
-                               i18nc("@title:window", "Cannot Delete Partition."));
+                               xi18nc("@title:window", "Cannot Delete Partition."));
 
             return;
         }
@@ -557,11 +557,11 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
 
     if (clipboardPartition() == selectedPartition()) {
         if (KMessageBox::warningContinueCancel(this,
-                                               i18nc("@info",
+                                               xi18nc("@info",
                                                        "Do you really want to delete the partition that is currently in the clipboard? "
                                                        "It will no longer be available for pasting after it has been deleted."),
-                                               i18nc("@title:window", "Really Delete Partition in the Clipboard?"),
-                                               KGuiItem(i18nc("@action:button", "Delete It"), QStringLiteral("arrow-right")),
+                                               xi18nc("@title:window", "Really Delete Partition in the Clipboard?"),
+                                               KGuiItem(xi18nc("@action:button", "Delete It"), QStringLiteral("arrow-right")),
                                                KStandardGuiItem::cancel(), QStringLiteral("reallyDeleteClipboardPartition")) == KMessageBox::Cancel)
             return;
 
@@ -609,7 +609,7 @@ void PartitionManagerWidget::onResizePartition()
 
     if (dlg->exec() == QDialog::Accepted) {
         if (dlg->resizedFirstSector() == p.firstSector() && dlg->resizedLastSector() == p.lastSector())
-            Log(Log::information) << xi18nc("@info/plain", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", p.deviceNode());
+            Log(Log::information) << xi18nc("@info:status", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", p.deviceNode());
         else
             operationStack().push(new ResizeOperation(*selectedDevice(), p, dlg->resizedFirstSector(), dlg->resizedLastSector()));
     }
@@ -637,7 +637,7 @@ void PartitionManagerWidget::onCopyPartition()
     }
 
     setClipboardPartition(selectedPartition());
-    Log() << xi18nc("@info/plain", "Partition <filename>%1</filename> has been copied to the clipboard.", selectedPartition()->deviceNode());
+    Log() << xi18nc("@info:status", "Partition <filename>%1</filename> has been copied to the clipboard.", selectedPartition()->deviceNode());
 }
 
 void PartitionManagerWidget::onPastePartition()
@@ -708,8 +708,8 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
                       "window, all data currently stored on <filename>%1</filename> will "
                       "unrecoverably be overwritten.</para>",
                       selectedPartition()->deviceNode()),
-               i18nc("@title:window", "Really Overwrite Existing Partition?"),
-               KGuiItem(i18nc("@action:button", "Overwrite Partition"), QStringLiteral("arrow-right")),
+               xi18nc("@title:window", "Really Overwrite Existing Partition?"),
+               KGuiItem(xi18nc("@action:button", "Overwrite Partition"), QStringLiteral("arrow-right")),
                KStandardGuiItem::cancel(),
                QStringLiteral("reallyOverwriteExistingPartition")) == KMessageBox::Cancel)
         return false;
@@ -718,13 +718,13 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
         if (overwrite)
             KMessageBox::error(this, xi18nc("@info",
                                             "<para>The selected partition is not large enough to hold the source partition or the backup file.</para>"
-                                            "<para>Pick another target or resize this partition so it is as large as the source.</para>"), i18nc("@title:window", "Target Not Large Enough"));
+                                            "<para>Pick another target or resize this partition so it is as large as the source.</para>"), xi18nc("@title:window", "Target Not Large Enough"));
         else
             KMessageBox::sorry(this, xi18nc("@info",
                                             "<para>It is not possible to create the target partition large enough to hold the source.</para>"
                                             "<para>This may happen if not all partitions on a device are correctly aligned "
                                             "or when copying a primary partition into an extended partition.</para>"),
-                               i18nc("@title:window", "Cannot Create Target Partition."));
+                               xi18nc("@title:window", "Cannot Create Target Partition."));
         return false;
     }
 
@@ -760,7 +760,7 @@ void PartitionManagerWidget::onBackupPartition()
     if (fileName.isEmpty())
         return;
 
-    if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, xi18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), i18nc("@title:window", "Overwrite Existing File?"), KGuiItem(i18nc("@action:button", "Overwrite File"), QStringLiteral("arrow-right")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
+    if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, xi18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), xi18nc("@title:window", "Overwrite Existing File?"), KGuiItem(xi18nc("@action:button", "Overwrite File"), QStringLiteral("arrow-right")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
         operationStack().push(new BackupOperation(*selectedDevice(), *selectedPartition(), fileName));
 }
 
@@ -784,7 +784,7 @@ void PartitionManagerWidget::onRestorePartition()
         Partition* restorePartition = RestoreOperation::createRestorePartition(*selectedDevice(), *selectedPartition()->parent(), selectedPartition()->firstSector(), fileName);
 
         if (restorePartition->length() > selectedPartition()->length()) {
-            KMessageBox::error(this, xi18nc("@info", "The file system in the image file <filename>%1</filename> is too large to be restored to the selected partition.", fileName), i18nc("@title:window", "Not Enough Space to Restore File System."));
+            KMessageBox::error(this, xi18nc("@info", "The file system in the image file <filename>%1</filename> is too large to be restored to the selected partition.", fileName), xi18nc("@title:window", "Not Enough Space to Restore File System."));
             delete restorePartition;
             return;
         }

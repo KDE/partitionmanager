@@ -66,7 +66,7 @@ SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint
     detailsButton = new QPushButton;
     okButton = dialogButtonBox->addButton(QDialogButtonBox::Ok);
     cancelButton = dialogButtonBox->addButton(QDialogButtonBox::Cancel);
-    detailsButton->setText(i18nc("@item:button advanced settings button", "Advanced") + QStringLiteral(" >>"));
+    detailsButton->setText(xi18nc("@item:button advanced settings button", "Advanced") + QStringLiteral(" >>"));
     dialogButtonBox->addButton(detailsButton, QDialogButtonBox::ActionRole);
     mainLayout->setSizeConstraint(QLayout::SetFixedSize);
     mainLayout->addWidget(dialogButtonBox);
@@ -159,7 +159,7 @@ void SizeDialogBase::toggleDetails()
 {
     const bool isVisible = detailsWidget().isVisible();
     detailsWidget().setVisible(!isVisible);
-    detailsButton->setText(i18n("&Advanced") + (isVisible ? QStringLiteral(" >>") : QStringLiteral(" <<")));
+    detailsButton->setText(xi18nc("@action:button", "&Advanced") + (isVisible ? QStringLiteral(" >>") : QStringLiteral(" <<")));
 }
 
 void SizeDialogBase::onSpinFreeBeforeChanged(double newBefore)

@@ -48,7 +48,7 @@ InfoPane::InfoPane(QWidget* parent) :
 /** Clears the InfoPane, leaving it empty */
 void InfoPane::clear()
 {
-    parentWidget()->parentWidget()->setWindowTitle(i18nc("@title:window", "Information"));
+    parentWidget()->parentWidget()->setWindowTitle(xi18nc("@title:window", "Information"));
     qDeleteAll(findChildren<QLabel*>());
     qDeleteAll(findChildren<QFrame*>());
 }
@@ -107,31 +107,31 @@ void InfoPane::createLabels(const QString& title, const QString& value, const in
 void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 {
     clear();
-    parentWidget()->parentWidget()->setWindowTitle(i18nc("@title:window", "Partition Information"));
+    parentWidget()->parentWidget()->setWindowTitle(xi18nc("@title:window", "Partition Information"));
 
     int x = 0;
     int y = createHeader(p.deviceNode(), cols(area));
     if (p.fileSystem().type() == FileSystem::Luks) {
         const FS::luks* luksFs = dynamic_cast<const FS::luks*>(&p.fileSystem());
         QString deviceNode = p.partitionPath();
-        createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Cipher name:"), luksFs->getCipherName(deviceNode), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Cipher mode:"), luksFs->getCipherMode(deviceNode), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Hash:"), luksFs->getHashName(deviceNode), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Key size:"), QString::number(luksFs->getKeySize(deviceNode)), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Payload offset:"), QString::number(luksFs->getPayloadOffset(deviceNode)), cols(area), x, y);
-        createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Cipher name:"), luksFs->getCipherName(deviceNode), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Cipher mode:"), luksFs->getCipherMode(deviceNode), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Hash:"), luksFs->getHashName(deviceNode), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Key size:"), QString::number(luksFs->getKeySize(deviceNode)), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Payload offset:"), QString::number(luksFs->getPayloadOffset(deviceNode)), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
     } else {
-        createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Available:"), Capacity::formatByteSize(p.available()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Used:"), Capacity::formatByteSize(p.used()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Available:"), Capacity::formatByteSize(p.available()), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Used:"), Capacity::formatByteSize(p.used()), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
+        createLabels(xi18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
     }
 }
 
@@ -142,32 +142,32 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
 {
     clear();
-    parentWidget()->parentWidget()->setWindowTitle(i18nc("@title:window", "Device Information"));
+    parentWidget()->parentWidget()->setWindowTitle(xi18nc("@title:window", "Device Information"));
 
     int x = 0;
     int y = createHeader(d.name(), cols(area));
-    createLabels(i18nc("@label device", "Path:"), d.deviceNode(), cols(area), x, y);
+    createLabels(xi18nc("@label device", "Path:"), d.deviceNode(), cols(area), x, y);
 
     QString type = QStringLiteral("---");
     QString maxPrimaries = QStringLiteral("---");
 
     if (d.partitionTable() != nullptr) {
         type = (d.partitionTable()->isReadOnly())
-               ? i18nc("@label device", "%1 (read only)", d.partitionTable()->typeName())
+               ? xi18nc("@label device", "%1 (read only)", d.partitionTable()->typeName())
                : d.partitionTable()->typeName();
         maxPrimaries = QStringLiteral("%1/%2").arg(d.partitionTable()->numPrimaries()).arg(d.partitionTable()->maxPrimaries());
     }
 
-    createLabels(i18nc("@label device", "Type:"), type, cols(area), x, y);
-    createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(d.capacity()), cols(area), x, y);
-    createLabels(i18nc("@label device", "Total sectors:"), QLocale().toString(d.totalSectors()), cols(area), x, y);
-    createLabels(i18nc("@label device", "Heads:"), QString::number(d.heads()), cols(area), x, y);
-    createLabels(i18nc("@label device", "Cylinders:"), QLocale().toString(d.cylinders()), cols(area), x, y);
-    createLabels(i18nc("@label device", "Sectors:"), QLocale().toString(d.sectorsPerTrack()), cols(area), x, y);
-    createLabels(i18nc("@label device", "Logical sector size:"), Capacity::formatByteSize(d.logicalSectorSize()), cols(area), x, y);
-    createLabels(i18nc("@label device", "Physical sector size:"), Capacity::formatByteSize(d.physicalSectorSize()), cols(area), x, y);
-    createLabels(i18nc("@label device", "Cylinder size:"), i18ncp("@label", "1 Sector", "%1 Sectors", d.cylinderSize()), cols(area), x, y);
-    createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
+    createLabels(xi18nc("@label device", "Type:"), type, cols(area), x, y);
+    createLabels(xi18nc("@label device", "Capacity:"), Capacity::formatByteSize(d.capacity()), cols(area), x, y);
+    createLabels(xi18nc("@label device", "Total sectors:"), QLocale().toString(d.totalSectors()), cols(area), x, y);
+    createLabels(xi18nc("@label device", "Heads:"), QString::number(d.heads()), cols(area), x, y);
+    createLabels(xi18nc("@label device", "Cylinders:"), QLocale().toString(d.cylinders()), cols(area), x, y);
+    createLabels(xi18nc("@label device", "Sectors:"), QLocale().toString(d.sectorsPerTrack()), cols(area), x, y);
+    createLabels(xi18nc("@label device", "Logical sector size:"), Capacity::formatByteSize(d.logicalSectorSize()), cols(area), x, y);
+    createLabels(xi18nc("@label device", "Physical sector size:"), Capacity::formatByteSize(d.physicalSectorSize()), cols(area), x, y);
+    createLabels(xi18nc("@label device", "Cylinder size:"), xi18ncp("@label", "1 Sector", "%1 Sectors", d.cylinderSize()), cols(area), x, y);
+    createLabels(xi18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
 }
 
 quint32 InfoPane::cols(Qt::DockWidgetArea area) const

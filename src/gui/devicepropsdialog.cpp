@@ -84,7 +84,7 @@ void DevicePropsDialog::setupDialog()
 
     if (device().partitionTable() != nullptr) {
         type = (device().partitionTable()->isReadOnly())
-               ? i18nc("@label device", "%1 (read only)", device().partitionTable()->typeName())
+               ? xi18nc("@label device", "%1 (read only)", device().partitionTable()->typeName())
                : device().partitionTable()->typeName();
         maxPrimaries = QStringLiteral("%1/%2").arg(device().partitionTable()->numPrimaries()).arg(device().partitionTable()->maxPrimaries());
 
@@ -110,7 +110,7 @@ void DevicePropsDialog::setupDialog()
     const QString sectors = QLocale().toString((device().sectorsPerTrack()));
     dialogWidget().chs().setText(QStringLiteral("%1/%2/%3").arg(cyls).arg(heads).arg(sectors));
 
-    dialogWidget().cylinderSize().setText(i18ncp("@label", "1 Sector", "%1 Sectors", device().cylinderSize()));
+    dialogWidget().cylinderSize().setText(xi18ncp("@label", "1 Sector", "%1 Sectors", device().cylinderSize()));
     dialogWidget().primariesMax().setText(maxPrimaries);
     dialogWidget().logicalSectorSize().setText(Capacity::formatByteSize(device().logicalSectorSize()));
     dialogWidget().physicalSectorSize().setText(Capacity::formatByteSize(device().physicalSectorSize()));
@@ -119,14 +119,14 @@ void DevicePropsDialog::setupDialog()
 
     if (device().smartStatus().isValid()) {
         if (device().smartStatus().status()) {
-            dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "good"));
+            dialogWidget().smartStatusText().setText(xi18nc("@label SMART disk status", "good"));
             dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(IconSize(KIconLoader::Small)));
         } else {
-            dialogWidget().smartStatusText().setText(i18nc("@label SMART disk status", "BAD"));
+            dialogWidget().smartStatusText().setText(xi18nc("@label SMART disk status", "BAD"));
             dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(IconSize(KIconLoader::Small)));
         }
     } else {
-        dialogWidget().smartStatusText().setText(i18nc("@label", "(unknown)"));
+        dialogWidget().smartStatusText().setText(xi18nc("@label", "(unknown)"));
         dialogWidget().smartStatusIcon().setVisible(false);
         dialogWidget().buttonSmartMore().setVisible(false);
     }
