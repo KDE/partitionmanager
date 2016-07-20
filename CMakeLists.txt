@@ -51,6 +51,7 @@ find_package(KF5 5.23 REQUIRED
   ConfigWidgets
   CoreAddons
   Crash
+  DBusAddons
   DocTools
   I18n
   IconThemes
