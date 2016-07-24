@@ -1109,7 +1109,7 @@ static KLocalizedString checkSupportInNode(const PartitionNode* parent)
         else
             rval = checkSupportInNode(node);
 
-        if (!p->fileSystem().supportToolFound() && !p->fileSystem().supportToolName().name.isEmpty() && !rval.isEmpty())
+        if ((!p->fileSystem().supportToolFound() && !p->fileSystem().supportToolName().name.isEmpty()) && !rval.isEmpty())
             rval = kxi18n("%1%2").subs(rval).subs(kxi18n("<tr>"
                                    "<td>%1</td>"
                                    "<td>%2</td>"
@@ -1120,7 +1120,7 @@ static KLocalizedString checkSupportInNode(const PartitionNode* parent)
                  .subs(p->fileSystem().name())
                  .subs(p->fileSystem().supportToolName().name)
                  .subs(p->fileSystem().supportToolName().url.toString()));
-        else
+        else if (!p->fileSystem().supportToolFound() && !p->fileSystem().supportToolName().name.isEmpty())
             rval =kxi18n("<tr>"
                                    "<td>%1</td>"
                                    "<td>%2</td>"
@@ -1147,7 +1147,7 @@ void MainWindow::checkFileSystemSupport()
             missingSupportTools = true;
             supportList = kxi18n("%1%2").subs(supportList).subs(supportInNode);
         }
-        else {
+        else if (!supportInNode.isEmpty()) {
             missingSupportTools = true;
             supportList = supportInNode;
         }
