@@ -190,7 +190,8 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
     } else if (d.type() == Device::LVM_Device) {
         const LvmDevice& lvm = dynamic_cast<const LvmDevice&>(d);
-        //TODO: add LVM device info
+        createLabels(i18nc("@label device", "Volume Type:"), QStringLiteral("LVM"), cols(area), x, y);
+        createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(lvm.capacity()), cols(area), x, y);
         createLabels(i18nc("@label device", "PE Size:"), Capacity::formatByteSize(lvm.peSize()), cols(area), x, y);
         createLabels(i18nc("@label device", "Total PE:"),QString::number(lvm.totalPE()), cols(area), x, y);
         createLabels(i18nc("@label device", "Allocated PE:"), QString::number(lvm.allocatedPE()), cols(area), x, y);
