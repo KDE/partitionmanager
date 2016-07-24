@@ -47,7 +47,6 @@ public:
         Q_ASSERT(m_ListPhysicalVolumes);
         return *m_ListPhysicalVolumes;
     }
-
 };
 
 #endif
