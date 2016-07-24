@@ -24,6 +24,9 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QSpinBox" name="m_SpinPESize">
+       <property name="suffix">
+        <string> MiB</string>
+       </property>
        <property name="value">
         <number>4</number>
        </property>
