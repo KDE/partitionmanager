@@ -1109,7 +1109,7 @@ static KLocalizedString checkSupportInNode(const PartitionNode* parent)
         else
             rval = checkSupportInNode(node);
 
-        if (!p->fileSystem().supportToolFound() && !p->fileSystem().supportToolName().name.isEmpty())
+        if (!p->fileSystem().supportToolFound() && !p->fileSystem().supportToolName().name.isEmpty() && !rval.isEmpty())
             rval = kxi18n("%1%2").subs(rval).subs(kxi18n("<tr>"
                                    "<td>%1</td>"
                                    "<td>%2</td>"
@@ -1120,6 +1120,17 @@ static KLocalizedString checkSupportInNode(const PartitionNode* parent)
                  .subs(p->fileSystem().name())
                  .subs(p->fileSystem().supportToolName().name)
                  .subs(p->fileSystem().supportToolName().url.toString()));
+        else
+            rval =kxi18n("<tr>"
+                                   "<td>%1</td>"
+                                   "<td>%2</td>"
+                                   "<td>%3</td>"
+                                   "<td><link>%4</link></td>"
+                                   "</tr>")
+                 .subs(p->deviceNode())
+                 .subs(p->fileSystem().name())
+                 .subs(p->fileSystem().supportToolName().name)
+                 .subs(p->fileSystem().supportToolName().url.toString());
     }
 
     return rval;
@@ -1132,9 +1143,13 @@ void MainWindow::checkFileSystemSupport()
 
     foreach(const Device * d, operationStack().previewDevices()) {
         supportInNode = checkSupportInNode(d->partitionTable());
-        if (!supportInNode.isEmpty()) {
+        if (!supportInNode.isEmpty() && !supportList.isEmpty()) {
             missingSupportTools = true;
             supportList = kxi18n("%1%2").subs(supportList).subs(supportInNode);
+        }
+        else {
+            missingSupportTools = true;
+            supportList = supportInNode;
         }
     }
 
