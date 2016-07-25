@@ -488,10 +488,10 @@ void MainWindow::enableActions()
             ->setEnabled(CreateVolumeGroupOperation::canCreate());
 
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))
-            ->setEnabled(true);
+            ->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device);
 
     actionCollection()->action(QStringLiteral("resizeVolumeGroup"))
-            ->setEnabled(true);
+            ->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device);
 
 
     const Partition* part = pmWidget().selectedPartition();
