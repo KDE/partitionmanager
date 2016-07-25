@@ -38,7 +38,7 @@ CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QString
     VolumeDialog(parent, vgname, pvlist),
     m_PESize(pesize)
 {
-    setWindowTitle(xi18nc("@title:window", "Cretae new Volume Group"));
+    setWindowTitle(xi18nc("@title:window", "Create new Volume Group"));
 
     setupDialog();
     setupConstraints();
