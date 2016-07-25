@@ -27,7 +27,7 @@ class ListPhysicalVolumeWidgetItem : public QListWidgetItem
 {
 public:
     ListPhysicalVolumeWidgetItem(const QString& pvnode, bool checked) :
-        QListWidgetItem(pvnode + QStringLiteral(" - ") + Capacity::formatByteSize(FS::lvm2_pv::getPVSize(pvnode)))
+        QListWidgetItem(pvnode + QStringLiteral(" | ") + Capacity::formatByteSize(FS::lvm2_pv::getPVSize(pvnode)))
     {
         setToolTip(pvnode);
         setSizeHint(QSize(0, 32));
@@ -61,7 +61,7 @@ QStringList ListPhysicalVolumes::checkedItems()
     for (int i = 0; i < listPhysicalVolumes().count(); i++) {
         QListWidgetItem* item = listPhysicalVolumes().item(i);
         if(item && item->checkState() == Qt::Checked) {
-            rlist << item->text().split(QStringLiteral("-"))[0].trimmed();
+            rlist << item->text().split(QStringLiteral("|"))[0].trimmed();
         }
     }
     return rlist;
