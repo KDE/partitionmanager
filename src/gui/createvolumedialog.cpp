@@ -54,6 +54,7 @@ CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QString
 void CreateVolumeDialog::setupDialog()
 {
     dialogWidget().listPV().addPartitionList(FS::lvm2_pv::getFreePV(), false);
+    dialogWidget().partTableWidget().setVisible(false);
 }
 
 void CreateVolumeDialog::setupConnections()
