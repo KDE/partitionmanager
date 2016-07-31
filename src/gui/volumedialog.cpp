@@ -43,7 +43,9 @@ VolumeDialog::VolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist
     QDialog(parent),
     m_DialogWidget(new VolumeWidget(this)),
     m_TargetName(vgname),
-    m_TargetPVList(pvlist)
+    m_TargetPVList(pvlist),
+    m_IsValidSize(false),
+    m_TotalUsedSize(0)
 {
     Q_UNUSED(pvlist);
     mainLayout = new QVBoxLayout(this);
@@ -77,6 +79,18 @@ void VolumeDialog::setupDialog()
     dialogWidget().volumeType().addItem(QStringLiteral("LVM"));
     dialogWidget().volumeType().addItem(QStringLiteral("RAID"));
     dialogWidget().volumeType().setCurrentIndex(0);
+
+    qint32 totalLV = 0;
+    QString vgname = dialogWidget().vgName().text();
+    if (!vgname.isEmpty()) {
+        m_TotalUsedSize = LvmDevice::getAllocatedPE(vgname) * LvmDevice::getPeSize(vgname);
+        QStringList lvlist = LvmDevice::getLVs(vgname);
+        if (!lvlist.isEmpty() ) {
+            totalLV = lvlist.count();
+        }
+    }
+    dialogWidget().totalUsedSize().setText(Capacity::formatByteSize(m_TotalUsedSize));
+    dialogWidget().totalLV().setText(QString::number(totalLV));
 
     setMinimumSize(dialogWidget().size());
     resize(dialogWidget().size());
@@ -123,9 +137,7 @@ void VolumeDialog::updatePartTable()
 void VolumeDialog::updateSizeInfos()
 {
     qint64 totalSize = 0;
-    qint64 totalUsedSize = 0;
     qint32 totalSectors = 0;
-    qint32 totalLV = 0;
     qint32 peSize = 0;
 
     // we can't use LvmDevice mothod here because pv that is not in any VG will return 0
@@ -139,22 +151,11 @@ void VolumeDialog::updateSizeInfos()
         }
     }
 
-    QString vgname = dialogWidget().vgName().text();
-    if (!vgname.isEmpty()) {
-        totalUsedSize = LvmDevice::getAllocatedPE(vgname) * LvmDevice::getPeSize(vgname);
-        QStringList lvlist = LvmDevice::getLVs(vgname);
-        if (!lvlist.isEmpty() ) {
-            totalLV = lvlist.count();
-        }
-    }
-
     dialogWidget().totalSize().setText(Capacity::formatByteSize(totalSize));
-    dialogWidget().totalUsedSize().setText(Capacity::formatByteSize(totalUsedSize));
     dialogWidget().totalSectors().setText(QString::number(totalSectors));
-    dialogWidget().totalLV().setText(QString::number(totalLV));
 
     //Probably a bad design for updating state here; the state should be changed inside the update button function.
-    m_IsValidSize = totalSize > totalUsedSize;
+    m_IsValidSize = totalSize > m_TotalUsedSize;
     updateOkButtonStatus();
 }
 

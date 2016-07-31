@@ -87,6 +87,7 @@ protected:
     QString& m_TargetName;
     QStringList& m_TargetPVList;
     bool m_IsValidSize;
+    qint64 m_TotalUsedSize;
 
     QDialogButtonBox* dialogButtonBox;
     QPushButton* okButton;
