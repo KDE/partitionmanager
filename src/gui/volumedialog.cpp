@@ -45,7 +45,9 @@ VolumeDialog::VolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist
     m_TargetName(vgname),
     m_TargetPVList(pvlist),
     m_IsValidSize(false),
-    m_TotalUsedSize(0)
+    m_TotalSize(0),
+    m_TotalUsedSize(0),
+    m_ExtentSize(0)
 {
     Q_UNUSED(pvlist);
     mainLayout = new QVBoxLayout(this);
@@ -80,6 +82,7 @@ void VolumeDialog::setupDialog()
     dialogWidget().volumeType().addItem(QStringLiteral("RAID"));
     dialogWidget().volumeType().setCurrentIndex(0);
 
+    //update used size and LV infos
     qint32 totalLV = 0;
     QString vgname = dialogWidget().vgName().text();
     if (!vgname.isEmpty()) {
@@ -134,28 +137,28 @@ void VolumeDialog::updatePartTable()
 {
 }
 
+void VolumeDialog::updateSectorInfos()
+{
+    qint32 totalSectors = 0;
+    // we can't use LvmDevice mothod here because pv that is not in any VG will return 0
+    m_ExtentSize = dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
+    if (m_ExtentSize > 0) {
+        totalSectors = m_TotalSize / m_ExtentSize;
+    }
+    dialogWidget().totalSectors().setText(QString::number(totalSectors));
+}
+
 void VolumeDialog::updateSizeInfos()
 {
-    qint64 totalSize = 0;
-    qint32 totalSectors = 0;
-    qint32 peSize = 0;
-
-    // we can't use LvmDevice mothod here because pv that is not in any VG will return 0
-    peSize = dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
-
     QStringList checkedPartitions = dialogWidget().listPV().checkedItems();
     if (!checkedPartitions.isEmpty()) {
-        totalSize = FS::lvm2_pv::getPVSize(checkedPartitions);
-        if (peSize > 0) {
-            totalSectors = totalSize / peSize;
-        }
+        m_TotalSize = FS::lvm2_pv::getPVSize(checkedPartitions);
     }
-
-    dialogWidget().totalSize().setText(Capacity::formatByteSize(totalSize));
-    dialogWidget().totalSectors().setText(QString::number(totalSectors));
+    dialogWidget().totalSize().setText(Capacity::formatByteSize(m_TotalSize));
 
     //Probably a bad design for updating state here; the state should be changed inside the update button function.
-    m_IsValidSize = totalSize > m_TotalUsedSize;
+    m_IsValidSize = m_TotalSize > m_TotalUsedSize;
+    updateSectorInfos();
     updateOkButtonStatus();
 }
 
@@ -166,7 +169,6 @@ void VolumeDialog::updatePartitionList()
 void VolumeDialog::onPartitionListChanged()
 {
 }
-
 
 void VolumeDialog::onVolumeTypeChanged(int index)
 {

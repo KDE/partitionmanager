@@ -86,5 +86,5 @@ void CreateVolumeDialog::onSpinPESizeChanged(int newsize)
 {
     Q_UNUSED(newsize);
     updateOkButtonStatus();
-    updateSizeInfos();
+    updateSectorInfos();
 }

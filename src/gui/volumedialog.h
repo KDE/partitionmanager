@@ -46,6 +46,7 @@ protected:
     virtual void updateOkButtonStatus();
     virtual void updatePartTable();
     virtual void updateSizeInfos();
+    virtual void updateSectorInfos();
     virtual void updatePartitionList();
 
     virtual void onVolumeTypeChanged(int index);
@@ -87,7 +88,10 @@ protected:
     QString& m_TargetName;
     QStringList& m_TargetPVList;
     bool m_IsValidSize;
+
+    qint64 m_TotalSize;
     qint64 m_TotalUsedSize;
+    qint32 m_ExtentSize;
 
     QDialogButtonBox* dialogButtonBox;
     QPushButton* okButton;
