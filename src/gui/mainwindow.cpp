@@ -467,7 +467,7 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("importPartitionTable"))
             ->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
     actionCollection()->action(QStringLiteral("smartStatusDevice"))
-            ->setEnabled(pmWidget().selectedDevice() != nullptr &&
+            ->setEnabled(pmWidget().selectedDevice() != nullptr && pmWidget().selectedDevice()->type() == Device::Disk_Device &&
                                                         pmWidget().selectedDevice()->smartStatus().isValid());
     actionCollection()->action(QStringLiteral("propertiesDevice"))
             ->setEnabled(pmWidget().selectedDevice() != nullptr);
