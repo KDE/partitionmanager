@@ -114,6 +114,8 @@ void VolumeDialog::setupConnections()
 
 void VolumeDialog::setupConstraints()
 {
+    dialogWidget().spinPESize().setMinimum(1);
+
     updatePartTable();
     updateSizeInfos();
     updateOkButtonStatus();
