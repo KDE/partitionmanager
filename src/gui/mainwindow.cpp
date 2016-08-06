@@ -488,7 +488,7 @@ void MainWindow::enableActions()
             ->setEnabled(CreateVolumeGroupOperation::canCreate());
 
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))
-            ->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device);
+            ->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device && !LvmDevice::getLVs(pmWidget().selectedDevice()->name()).count());
 
     actionCollection()->action(QStringLiteral("resizeVolumeGroup"))
             ->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device);
