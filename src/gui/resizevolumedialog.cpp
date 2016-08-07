@@ -20,6 +20,8 @@
 #include "gui/resizevolumedialog.h"
 
 #include <core/lvmdevice.h>
+#include <core/volumemanagerdevice.h>
+#include <core/partitiontable.h>
 #include <fs/lvm2_pv.h>
 
 #include <util/capacity.h>
@@ -39,8 +41,9 @@
     @param parent pointer to the parent widget
     @param d the Device to show properties for
 */
-ResizeVolumeDialog::ResizeVolumeDialog(QWidget* parent, QString& vgname, QStringList& partlist) :
-    VolumeDialog(parent, vgname, partlist)
+ResizeVolumeDialog::ResizeVolumeDialog(QWidget* parent, QString& vgname, QStringList& partlist, VolumeManagerDevice& dev) :
+    VolumeDialog(parent, vgname, partlist),
+    m_Device(dev)
 {
     setWindowTitle(xi18nc("@title:window", "Resize Volume Group"));
 
@@ -54,8 +57,10 @@ ResizeVolumeDialog::ResizeVolumeDialog(QWidget* parent, QString& vgname, QString
 void ResizeVolumeDialog::setupDialog()
 {
     dialogWidget().partTableWidget().setVisible(false);
-    dialogWidget().listPV().addPartitionList(LvmDevice::getPVs(targetName()), true);
-    dialogWidget().listPV().addPartitionList(FS::lvm2_pv::getFreePV(), false);
+    if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
+        dialogWidget().listPV().addPartitionList(LvmDevice::getPVs(targetName()), true);
+        dialogWidget().listPV().addPartitionList(FS::lvm2_pv::getFreePV(), false);
+    }
 }
 
 void ResizeVolumeDialog::setupConstraints()
@@ -71,4 +76,3 @@ void ResizeVolumeDialog::accept()
     targetPVList() << dialogWidget().listPV().checkedItems();
     QDialog::accept();
 }
-

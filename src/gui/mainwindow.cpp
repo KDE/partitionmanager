@@ -1091,7 +1091,7 @@ void MainWindow::onResizeVolumeGroup()
         QStringList* pvlist = new QStringList();
         // *NOTE*: vgname & pvlist will be modified and validate by the dialog
 
-        QPointer<ResizeVolumeDialog> dlg = new ResizeVolumeDialog(this, *vgname, *pvlist);
+        QPointer<ResizeVolumeDialog> dlg = new ResizeVolumeDialog(this, *vgname, *pvlist, *tmpDev);
         if (dlg->exec() == QDialog::Accepted) {
             operationStack().push(new ResizeVolumeGroupOperation(*tmpDev, *pvlist));
         }

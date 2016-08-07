@@ -21,19 +21,26 @@
 
 #include "gui/volumedialog.h"
 
-class LvmDevice;
+class VolumeManagerDevice;
 
 class ResizeVolumeDialog : public VolumeDialog
 {
     Q_DISABLE_COPY(ResizeVolumeDialog)
 
 public:
-    ResizeVolumeDialog(QWidget* parent, QString& vgname, QStringList& partlist);
+    ResizeVolumeDialog(QWidget* parent, QString& vgname, QStringList& partlist, VolumeManagerDevice& dev);
 
 protected:
     void accept() override;
     void setupDialog() override;
     void setupConstraints() override;
+
+    VolumeManagerDevice& device() const {
+        return m_Device;
+    }
+
+private:
+    VolumeManagerDevice& m_Device;
 };
 
 #endif
