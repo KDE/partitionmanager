@@ -119,18 +119,23 @@ void DevicePropsDialog::setupDialog()
         dialogWidget().primariesMax().setText(maxPrimaries);
         dialogWidget().logicalSectorSize().setText(Capacity::formatByteSize(disk.logicalSectorSize()));
         dialogWidget().physicalSectorSize().setText(Capacity::formatByteSize(disk.physicalSectorSize()));
-    }
-
-    if (device().smartStatus().isValid()) {
-        if (device().smartStatus().status()) {
-            dialogWidget().smartStatusText().setText(xi18nc("@label SMART disk status", "good"));
-            dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(IconSize(KIconLoader::Small)));
+        if (device().smartStatus().isValid()) {
+            if (device().smartStatus().status()) {
+                dialogWidget().smartStatusText().setText(xi18nc("@label SMART disk status", "good"));
+                dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(IconSize(KIconLoader::Small)));
+            } else {
+                dialogWidget().smartStatusText().setText(xi18nc("@label SMART disk status", "BAD"));
+                dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(IconSize(KIconLoader::Small)));
+            }
         } else {
-            dialogWidget().smartStatusText().setText(xi18nc("@label SMART disk status", "BAD"));
-            dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(IconSize(KIconLoader::Small)));
+            dialogWidget().smartStatusText().setText(xi18nc("@label", "(unknown)"));
+            dialogWidget().smartStatusIcon().setVisible(false);
+            dialogWidget().buttonSmartMore().setVisible(false);
         }
     } else {
-        dialogWidget().smartStatusText().setText(xi18nc("@label", "(unknown)"));
+        //TODO: add Volume Manger Device info
+        dialogWidget().type().setText(xi18nc("@label device", "Volume Manager Device"));
+        dialogWidget().smartStatusText().setVisible(false);
         dialogWidget().smartStatusIcon().setVisible(false);
         dialogWidget().buttonSmartMore().setVisible(false);
     }
