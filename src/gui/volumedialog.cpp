@@ -97,8 +97,6 @@ void VolumeDialog::setupDialog()
 
     setMinimumSize(dialogWidget().size());
     resize(dialogWidget().size());
-
-    updatePartTable();
 }
 
 void VolumeDialog::setupConnections()
@@ -109,12 +107,12 @@ void VolumeDialog::setupConnections()
     connect(&dialogWidget().listPV().listPhysicalVolumes(), &QListWidget::itemChanged,
             this, [=] ( QListWidgetItem*) {
                 updateSizeInfos();
+                updatePartTable();
             });
 }
 
 void VolumeDialog::setupConstraints()
 {
-    updatePartTable();
     updateSizeInfos();
     updateOkButtonStatus();
 }
