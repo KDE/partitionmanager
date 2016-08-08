@@ -23,6 +23,7 @@
 
 #include <core/partition.h>
 #include <core/device.h>
+#include <core/lvmdevice.h>
 
 #include <fs/filesystemfactory.h>
 #include <fs/luks.h>
@@ -254,9 +255,11 @@ void NewDialog::slotPasswordStatusChanged()
 
 void NewDialog::onLVNameChanged(const QString& newName)
 {
-    //TODO: validate lvName
     partition().setPartitionPath(device().deviceNode() + QStringLiteral("/") + newName.trimmed());
-    if (dialogWidget().lvName().isVisible() && dialogWidget().lvName().text().isEmpty()) {
+    if ((dialogWidget().lvName().isVisible() &&
+        dialogWidget().lvName().text().isEmpty()) ||
+        (device().type() == Device::LVM_Device &&
+         dynamic_cast<LvmDevice&>(device()).lvPathList().contains(partition().partitionPath())) ) {
         m_IsValidLVName = false;
     } else {
         m_IsValidLVName = true;
