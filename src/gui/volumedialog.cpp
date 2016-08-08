@@ -150,9 +150,7 @@ void VolumeDialog::updateSectorInfos()
 void VolumeDialog::updateSizeInfos()
 {
     QStringList checkedPartitions = dialogWidget().listPV().checkedItems();
-    if (!checkedPartitions.isEmpty()) {
-        m_TotalSize = FS::lvm2_pv::getPVSize(checkedPartitions);
-    }
+    m_TotalSize = FS::lvm2_pv::getPVSize(checkedPartitions);
     dialogWidget().totalSize().setText(Capacity::formatByteSize(m_TotalSize));
 
     //Probably a bad design for updating state here; the state should be changed inside the update button function.
