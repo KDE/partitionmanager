@@ -42,6 +42,8 @@ protected:
     }
 
     qint32& m_PESize;
+private:
+    QStringList m_SystemVGList;
 };
 
 #endif

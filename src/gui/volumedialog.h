@@ -80,6 +80,10 @@ protected:
         return m_IsValidSize;
     }
 
+    bool isValidName() const {
+        return m_IsValidName;
+    }
+
 protected:
     virtual void onPartitionListChanged();
 
@@ -88,6 +92,7 @@ protected:
     QString& m_TargetName;
     QStringList& m_TargetPVList;
     bool m_IsValidSize;
+    bool m_IsValidName;
 
     qint64 m_TotalSize;
     qint64 m_TotalUsedSize;

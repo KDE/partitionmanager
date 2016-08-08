@@ -45,6 +45,7 @@ VolumeDialog::VolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist
     m_TargetName(vgname),
     m_TargetPVList(pvlist),
     m_IsValidSize(false),
+    m_IsValidName(true),
     m_TotalSize(0),
     m_TotalUsedSize(0),
     m_ExtentSize(0)
@@ -121,7 +122,7 @@ void VolumeDialog::updateOkButtonStatus()
 {
     bool enable = isValidSize();
 
-    if (dialogWidget().vgName().text().isEmpty()) {
+    if (dialogWidget().vgName().text().isEmpty() || !isValidName()) {
         enable = false;
     }
     if (dialogWidget().spinPESize().value() <= 0) {

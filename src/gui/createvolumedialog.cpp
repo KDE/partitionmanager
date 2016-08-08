@@ -36,7 +36,8 @@
 
 CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist, qint32& pesize) :
     VolumeDialog(parent, vgname, pvlist),
-    m_PESize(pesize)
+    m_PESize(pesize),
+    m_SystemVGList(LvmDevice::getVGs())
 {
     setWindowTitle(xi18nc("@title:window", "Create new Volume Group"));
 
@@ -78,7 +79,11 @@ void  CreateVolumeDialog::accept()
 
 void CreateVolumeDialog::onVGNameChanged(const QString& vgname)
 {
-    Q_UNUSED(vgname);
+    if (m_SystemVGList.contains(vgname)) {
+        m_IsValidName = false;
+    } else {
+        m_IsValidName = true;
+    }
     updateOkButtonStatus();
 }
 
