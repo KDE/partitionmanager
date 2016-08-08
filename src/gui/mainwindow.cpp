@@ -734,7 +734,7 @@ void MainWindow::updateSeletedDeviceMenu()
 
     devicesMenu->setEnabled(!operationStack().previewDevices().isEmpty());
 
-    foreach(const Device * d, operationStack().previewDevices()) {
+    foreach(auto const &d, operationStack().previewDevices()) {
         QAction* action = new QAction(d->prettyName(), devicesMenu);
         action->setCheckable(true);
         action->setChecked(d->deviceNode() == pmWidget().selectedDevice()->deviceNode());
@@ -752,8 +752,8 @@ void MainWindow::onSelectedDeviceMenuTriggered(bool)
     if (action == nullptr || action->parent() != devicesMenu)
         return;
 
-    foreach(QAction * entry, devicesMenu->findChildren<QAction*>())
-    entry->setChecked(entry == action);
+    foreach(auto &entry, devicesMenu->findChildren<QAction*>())
+        entry->setChecked(entry == action);
 
     listDevices().setSelectedDevice(action->data().toString());
 }
@@ -762,8 +762,8 @@ void MainWindow::on_m_ListDevices_selectionChanged(const QString& device_node)
 {
     QMenu* devicesMenu = static_cast<QMenu*>(guiFactory()->container(QStringLiteral("selectedDevice"), this));
 
-    foreach(QAction * entry, devicesMenu->findChildren<QAction*>())
-    entry->setChecked(entry->data().toString() == device_node);
+    foreach(auto &entry, devicesMenu->findChildren<QAction*>())
+        entry->setChecked(entry->data().toString() == device_node);
 }
 
 void MainWindow::onRefreshDevices()
@@ -783,8 +783,8 @@ void MainWindow::onApplyAllOperations()
 {
     QStringList opList;
 
-    foreach(const Operation * op, operationStack().operations())
-    opList.append(op->description());
+    foreach(const auto &op, operationStack().operations())
+        opList.append(op->description());
 
     if (KMessageBox::warningContinueCancelList(this,
             xi18nc("@info",
@@ -1205,7 +1205,7 @@ static KLocalizedString checkSupportInNode(const PartitionNode* parent)
 
     KLocalizedString rval;
 
-    foreach(const PartitionNode * node, parent->children()) {
+    for (auto const &node : parent->children()) {
         const Partition* p = dynamic_cast<const Partition*>(node);
 
         if (p == nullptr)
@@ -1248,7 +1248,7 @@ void MainWindow::checkFileSystemSupport()
     KLocalizedString supportList, supportInNode;
     bool missingSupportTools = false;
 
-    foreach(const Device * d, operationStack().previewDevices()) {
+    foreach(auto const &d, operationStack().previewDevices()) {
         supportInNode = checkSupportInNode(d->partitionTable());
         if (!supportInNode.isEmpty() && !supportList.isEmpty()) {
             missingSupportTools = true;

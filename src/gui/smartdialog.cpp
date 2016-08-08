@@ -115,7 +115,7 @@ void SmartDialog::setupDialog()
 
         const QString st = QStringLiteral("<span style=\"font-family:%1;font-size:%2;\">").arg(f.family()).arg(size);
 
-        foreach(const SmartAttribute & a, device().smartStatus().attributes()) {
+        for (auto const &a : device().smartStatus().attributes()) {
             QTreeWidgetItem* item = new QTreeWidgetItem(
                 QStringList()
                 << QLocale().toString(a.id())
@@ -180,7 +180,7 @@ QString SmartDialog::toHtml() const
 
         s << "<table>\n";
 
-        foreach(const SmartAttribute & a, device().smartStatus().attributes()) {
+        for (auto const &a : device().smartStatus().attributes()) {
             s << "<tr>\n";
 
             s << "<td>" << QLocale().toString(a.id()) << "</td>\n"

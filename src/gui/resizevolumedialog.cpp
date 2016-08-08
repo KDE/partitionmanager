@@ -39,7 +39,7 @@
 
 /** Creates a new ResizeVolumeDialog
     @param parent pointer to the parent widget
-    @param d the Device to show properties for
+    @param dev the Device to show properties for
 */
 ResizeVolumeDialog::ResizeVolumeDialog(QWidget* parent, QString& vgname, QStringList& partlist, VolumeManagerDevice& dev) :
     VolumeDialog(parent, vgname, partlist),
@@ -58,7 +58,7 @@ void ResizeVolumeDialog::setupDialog()
 {
     if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
         dialogWidget().listPV().addPartitionList(device().deviceNodeList(), true);
-        foreach (QString pvpath, FS::lvm2_pv::getFreePV()) {
+        for (auto const &pvpath : FS::lvm2_pv::getFreePV()) {
             if (!LvmDevice::s_DirtyPVs.contains(pvpath)) {
                 dialogWidget().listPV().addPartition(pvpath, false);
             }

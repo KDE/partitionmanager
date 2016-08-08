@@ -44,7 +44,7 @@ ListPhysicalVolumes::ListPhysicalVolumes(QWidget* parent) :
 
 void ListPhysicalVolumes::addPartitionList(const QStringList& partlist, bool checked)
 {
-    foreach (const QString part, partlist) {
+    for (auto const &part : partlist) {
         addPartition(part, checked);
     }
 }

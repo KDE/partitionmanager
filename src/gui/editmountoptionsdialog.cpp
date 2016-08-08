@@ -58,7 +58,7 @@ QStringList EditMountOptionsDialog::options()
 {
     QStringList rval;
     const QStringList lines = widget().editOptions().toPlainText().split(QStringLiteral("\n"));
-    foreach(const QString & line, lines)
-    rval.append(line.simplified().toLower());
+    for (auto const &line : lines)
+        rval.append(line.simplified().toLower());
     return rval;
 }

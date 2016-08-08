@@ -51,7 +51,7 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
     m_PartitionTable = ptable;
 
     if (partitionTable() != nullptr) {
-        foreach(const Partition * p, partitionTable()->children()) {
+        for (auto const &p : partitionTable()->children()) {
             PartWidget* w = new PartWidget(this, p);
             w->setVisible(true);
             w->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());
@@ -72,18 +72,18 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 
 PartWidget* PartTableWidget::activeWidget()
 {
-    foreach(PartWidget * pw, findChildren<PartWidget*>())
-    if (pw->isActive())
-        return pw;
+    foreach(auto &pw, findChildren<PartWidget*>())
+        if (pw->isActive())
+            return pw;
 
     return nullptr;
 }
 
 const PartWidget* PartTableWidget::activeWidget() const
 {
-    foreach(const PartWidget * pw, findChildren<PartWidget*>())
-    if (pw->isActive())
-        return pw;
+    foreach(auto const &pw, findChildren<PartWidget*>())
+        if (pw->isActive())
+            return pw;
 
     return nullptr;
 }
@@ -115,10 +115,11 @@ void PartTableWidget::setActivePartition(const Partition* p)
     if (isReadOnly())
         return;
 
-    foreach(PartWidget * pw, findChildren<PartWidget*>())
-    if (pw->partition() == p) {
-        setActiveWidget(pw);
-        return;
+    foreach(auto &pw, findChildren<PartWidget*>()) {
+        if (pw->partition() == p) {
+            setActiveWidget(pw);
+            return;
+        }
     }
 
     setActiveWidget(nullptr);
@@ -135,7 +136,7 @@ void PartTableWidget::clear()
     // that its event handler is currently running. therefore, do not delete
     // the part widgets here but schedule them for deletion once the app
     // returns to the main loop (and the event handler has finished).
-    foreach(PartWidget * p, childWidgets()) {
+    foreach(auto &p, childWidgets()) {
         p->setVisible(false);
         p->deleteLater();
         p->setParent(nullptr);

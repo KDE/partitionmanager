@@ -54,7 +54,7 @@ CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QString
 
 void CreateVolumeDialog::setupDialog()
 {
-    foreach (QString pvpath, FS::lvm2_pv::getFreePV()) {
+    for (const auto &pvpath : FS::lvm2_pv::getFreePV()) {
         if (!LvmDevice::s_DirtyPVs.contains(pvpath)) {
             dialogWidget().listPV().addPartition(pvpath, false);
         }

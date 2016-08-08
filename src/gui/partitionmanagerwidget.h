@@ -56,7 +56,7 @@ Q_SIGNALS:
 
 public:
     void setSelectedDevice(Device* d);
-    void setSelectedDevice(const QString& device_node);
+    void setSelectedDevice(const QString& deviceNode);
 
     void onNewPartition();
     void onResizePartition();

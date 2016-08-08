@@ -49,12 +49,12 @@ ListDevices::ListDevices(QWidget* parent) :
     setupUi(this);
 }
 
-void ListDevices::updateDevices(OperationStack::Devices& devices)
+void ListDevices::updateDevices(const OperationStack::Devices& devices)
 {
     listDevices().clear();
 
-    foreach(const Device * d, devices)
-    listDevices().addItem(new ListDeviceWidgetItem(*d));
+    for (const auto &d : devices)
+        listDevices().addItem(new ListDeviceWidgetItem(*d));
 }
 
 void ListDevices::on_m_ListDevices_itemSelectionChanged()

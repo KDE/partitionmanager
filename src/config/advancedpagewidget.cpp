@@ -35,29 +35,29 @@ AdvancedPageWidget::AdvancedPageWidget(QWidget* parent) :
 
 QString AdvancedPageWidget::backend() const
 {
-    KService::List services = CoreBackendManager::self()->list();
+    const KService::List services = CoreBackendManager::self()->list();
 
-    foreach(KService::Ptr p, services)
-    if (p->name() == comboBackend().currentText())
-        return p->library();
+    for (auto const &p : services)
+        if (p->name() == comboBackend().currentText())
+            return p->library();
 
     return QString();
 }
 
 void AdvancedPageWidget::setBackend(const QString& name)
 {
-    KService::List services = CoreBackendManager::self()->list();
+    const KService::List services = CoreBackendManager::self()->list();
 
-    foreach(KService::Ptr p, services)
-    if (p->library() == name)
-        comboBackend().setCurrentIndex(comboBackend().findText(p->name()));
+    for (auto const &p : services)
+        if (p->library() == name)
+            comboBackend().setCurrentIndex(comboBackend().findText(p->name()));
 }
 
 void AdvancedPageWidget::setupDialog()
 {
-    KService::List services = CoreBackendManager::self()->list();
-    foreach(KService::Ptr p, services)
-    comboBackend().addItem(p->name());
+    const KService::List services = CoreBackendManager::self()->list();
+    for (auto const &p : services)
+        comboBackend().addItem(p->name());
 
     setBackend(Config::backend());
 }

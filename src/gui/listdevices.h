@@ -50,7 +50,7 @@ public:
     }
     bool setSelectedDevice(const QString& device_node);
 
-    void updateDevices(OperationStack::Devices& devices);
+    void updateDevices(const OperationStack::Devices& devices);
 
     QListWidget& listDevices() {
         Q_ASSERT(m_ListDevices);
