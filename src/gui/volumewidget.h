@@ -34,11 +34,6 @@ public:
 
 public:
 
-    PartTableWidget& partTableWidget() {
-        Q_ASSERT(m_PartTableWidget);
-        return *m_PartTableWidget;
-    }
-
     QLineEdit& vgName() {
         Q_ASSERT(m_EditVGName);
         return *m_EditVGName;

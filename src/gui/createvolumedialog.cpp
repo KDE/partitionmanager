@@ -59,7 +59,6 @@ void CreateVolumeDialog::setupDialog()
             dialogWidget().listPV().addPartition(pvpath, false);
         }
     }
-    dialogWidget().partTableWidget().setVisible(false);
 }
 
 void CreateVolumeDialog::setupConnections()

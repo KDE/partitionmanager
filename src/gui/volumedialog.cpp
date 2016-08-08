@@ -108,7 +108,6 @@ void VolumeDialog::setupConnections()
     connect(&dialogWidget().listPV().listPhysicalVolumes(), &QListWidget::itemChanged,
             this, [=] ( QListWidgetItem*) {
                 updateSizeInfos();
-                updatePartTable();
             });
 }
 
@@ -130,10 +129,6 @@ void VolumeDialog::updateOkButtonStatus()
     }
 
     okButton->setEnabled(enable);
-}
-
-void VolumeDialog::updatePartTable()
-{
 }
 
 void VolumeDialog::updateSectorInfos()

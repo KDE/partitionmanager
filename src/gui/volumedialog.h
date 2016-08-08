@@ -44,7 +44,6 @@ protected:
     virtual void setupConnections();
 
     virtual void updateOkButtonStatus();
-    virtual void updatePartTable();
     virtual void updateSizeInfos();
     virtual void updateSectorInfos();
     virtual void updatePartitionList();
