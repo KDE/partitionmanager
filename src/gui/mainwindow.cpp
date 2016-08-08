@@ -280,9 +280,9 @@ void MainWindow::setupActions()
     QAction* deactivateVolumeGroup = actionCollection()->addAction(QStringLiteral("deactivateVolumeGroup"));
     connect(deactivateVolumeGroup, &QAction::triggered, this, &MainWindow::onDeactivateVolumeGroup);
     deactivateVolumeGroup->setEnabled(false);
-    deactivateVolumeGroup->setText(i18nc("@action:inmenu", "deactivate Volume"));
-    deactivateVolumeGroup->setToolTip(i18nc("@info:tooltip", "deactivate selected Volume Device"));
-    deactivateVolumeGroup->setStatusTip(i18nc("@info:status", "deactivate selected Volume Device"));
+    deactivateVolumeGroup->setText(i18nc("@action:inmenu", "Deactivate Volume"));
+    deactivateVolumeGroup->setToolTip(i18nc("@info:tooltip", "Deactivate selected Volume Device"));
+    deactivateVolumeGroup->setStatusTip(i18nc("@info:status", "Deactivate selected Volume Device"));
     deactivateVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* smartStatusDevice = actionCollection()->addAction(QStringLiteral("smartStatusDevice"));
