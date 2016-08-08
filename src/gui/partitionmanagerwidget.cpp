@@ -267,7 +267,7 @@ void PartitionManagerWidget::updatePartitions()
     treePartitions().addTopLevelItem(deviceItem);
 
     if (selectedDevice()->partitionTable() != nullptr) {
-        foreach(auto const &p, selectedDevice()->partitionTable()->children()) {
+        foreach(auto const * p, selectedDevice()->partitionTable()->children()) {
             QTreeWidgetItem* item = createTreeWidgetItem(*p);
 
             for (auto const &child : p->children()) {
