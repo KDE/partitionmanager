@@ -243,6 +243,7 @@ protected:
     void onCreateNewVolumeGroup();
     void onRemoveVolumeGroup();
     void onResizeVolumeGroup();
+    void onDeactivateVolumeGroup();
     void onExportPartitionTable();
     void onImportPartitionTable();
 

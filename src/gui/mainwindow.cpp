@@ -42,6 +42,7 @@
 #include <ops/createvolumegroupoperation.h>
 #include <ops/resizevolumegroupoperation.h>
 #include <ops/removevolumegroupoperation.h>
+#include <ops/deactivatevolumegroupoperation.h>
 #include <ops/resizeoperation.h>
 #include <ops/copyoperation.h>
 #include <ops/deleteoperation.h>
@@ -276,6 +277,14 @@ void MainWindow::setupActions()
     //actionCollection()->setDefaultShortcut(resizeVolumeGroup, QKeySequence(/*SHORTCUT KEY HERE*/));
     resizeVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")).pixmap(IconSize(KIconLoader::Toolbar)));
 
+    QAction* deactivateVolumeGroup = actionCollection()->addAction(QStringLiteral("deactivateVolumeGroup"));
+    connect(deactivateVolumeGroup, &QAction::triggered, this, &MainWindow::onDeactivateVolumeGroup);
+    deactivateVolumeGroup->setEnabled(false);
+    deactivateVolumeGroup->setText(i18nc("@action:inmenu", "deactivate Volume"));
+    deactivateVolumeGroup->setToolTip(i18nc("@info:tooltip", "deactivate selected Volume Device"));
+    deactivateVolumeGroup->setStatusTip(i18nc("@info:status", "deactivate selected Volume Device"));
+    deactivateVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")).pixmap(IconSize(KIconLoader::Toolbar)));
+
     QAction* smartStatusDevice = actionCollection()->addAction(QStringLiteral("smartStatusDevice"));
     connect(smartStatusDevice, &QAction::triggered, this, &MainWindow::onSmartStatusDevice);
     smartStatusDevice->setEnabled(false);
@@ -489,6 +498,9 @@ void MainWindow::enableActions()
 
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))
             ->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device && !LvmDevice::getLVs(pmWidget().selectedDevice()->name()).count());
+
+    actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))
+            ->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device);
 
     actionCollection()->action(QStringLiteral("resizeVolumeGroup"))
             ->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device);
@@ -1079,6 +1091,14 @@ void MainWindow::onRemoveVolumeGroup()
         } else {
             operationStack().push(new RemoveVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) ));
         }
+    }
+}
+
+void MainWindow::onDeactivateVolumeGroup()
+{
+    Device* tmpDev = pmWidget().selectedDevice();
+    if (tmpDev->type() == Device::LVM_Device) {
+        operationStack().push(new DeactivateVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) ));
     }
 }
 
