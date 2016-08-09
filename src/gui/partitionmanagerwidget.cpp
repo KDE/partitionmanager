@@ -327,11 +327,11 @@ void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidge
     if (p) {
         QList<QTreeWidgetItem*> findResult = treePartitions().findItems(p->deviceNode(), Qt::MatchFixedString | Qt::MatchRecursive, 0);
 
-        for (int idx = 0; idx < findResult.size(); idx++) {
-            const PartitionTreeWidgetItem* ptwItem = dynamic_cast<PartitionTreeWidgetItem*>(findResult[idx]);
+        for (const auto &item : findResult) {
+            const PartitionTreeWidgetItem* ptwItem = dynamic_cast<PartitionTreeWidgetItem*>(item);
 
             if (ptwItem && ptwItem->partition() == p) {
-                treePartitions().setCurrentItem(findResult[idx]);
+                treePartitions().setCurrentItem(item);
                 break;
             }
         }

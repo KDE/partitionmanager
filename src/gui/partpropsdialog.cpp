@@ -280,7 +280,7 @@ void PartPropsDialog::setupFileSystemComboBox()
     QString selected;
     QStringList fsNames;
 
-    for(const FileSystem * fs : FileSystemFactory::map())
+    for(const auto &fs : FileSystemFactory::map())
     {
         // If the partition isn't encrypted, skip the luks FS
         if (fs->type() == FileSystem::Luks && partition().fileSystem().type() != FileSystem::Luks)
@@ -312,7 +312,7 @@ void PartPropsDialog::setupFileSystemComboBox()
 
     qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    for (const QString & fsName : fsNames)
+    for (const auto &fsName : fsNames)
         dialogWidget().fileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));

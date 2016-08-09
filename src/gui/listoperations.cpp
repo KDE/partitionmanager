@@ -40,7 +40,7 @@ void ListOperations::updateOperations(const OperationStack::Operations& ops)
 {
     listOperations().clear();
 
-    for (auto const &op : ops) {
+    for (const auto &op : ops) {
         QListWidgetItem* item = new QListWidgetItem(QIcon::fromTheme(op->iconName()).pixmap(IconSize(KIconLoader::Small)), op->description());
         item->setToolTip(op->description());
         listOperations().addItem(item);

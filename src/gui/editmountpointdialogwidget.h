@@ -60,7 +60,7 @@ public:
     QLabel& labelType() {
         return *m_LabelTypeValue;
     }
-    QStringList options();
+    QStringList options() const;
     QRadioButton& radioUUID() {
         return *m_RadioUUID;
     }

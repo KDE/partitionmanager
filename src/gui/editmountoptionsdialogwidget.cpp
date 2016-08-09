@@ -25,6 +25,6 @@ EditMountOptionsDialogWidget::EditMountOptionsDialogWidget(QWidget* parent, cons
 {
     setupUi(this);
 
-    for (auto const &o : options)
+    for (const auto &o : options)
         editOptions().appendPlainText(o);
 }

@@ -135,7 +135,7 @@ void EditMountPointDialogWidget::setupOptions(const QStringList& options)
 {
     QStringList optTmpList;
 
-    for (auto const &o : options) {
+    for (const auto &o : options) {
         if (boxOptions().find(o) != boxOptions().end())
             boxOptions()[o]->setChecked(true);
         else
@@ -162,11 +162,11 @@ void EditMountPointDialogWidget::buttonMoreClicked(bool)
     delete dlg;
 }
 
-QStringList EditMountPointDialogWidget::options()
+QStringList EditMountPointDialogWidget::options() const
 {
     QStringList optList = m_Options.split(QStringLiteral(","), QString::SkipEmptyParts);
 
-    foreach(auto const &s, boxOptions().keys())
+    foreach(const auto &s, boxOptions().keys())
         if (boxOptions()[s]->isChecked())
             optList.append(s);
 
@@ -266,7 +266,7 @@ bool EditMountPointDialogWidget::writeMountpoints(const QString& filename)
         qWarning() << "could not open output file " << newFilename;
         rval = false;
     } else {
-        foreach(auto const &me, mountPoints())
+        foreach(const auto &me, mountPoints())
             writeEntry(out, me);
 
         out.close();

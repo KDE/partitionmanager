@@ -116,8 +116,8 @@ QString suCommand()
     const QString candidates[] = { QStringLiteral(CMAKE_INSTALL_FULL_LIBEXECDIR_KF5"/kdesu"), QStringLiteral("kdesu"), QStringLiteral("kdesudo"), QStringLiteral("gksudo"), QStringLiteral("gksu") };
     QString rval;
 
-    for (quint32 i = 0; i < sizeof(candidates) / sizeof(candidates[0]); i++) {
-        rval = QStandardPaths::findExecutable(candidates[i]);
+    for (const auto &candidate : candidates) {
+        rval = QStandardPaths::findExecutable(candidate);
         if (QFileInfo(rval).isExecutable())
             return rval;
     }

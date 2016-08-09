@@ -73,7 +73,7 @@ NewDialog::~NewDialog()
 void NewDialog::setupDialog()
 {
     QStringList fsNames;
-    for (auto const &fs : FileSystemFactory::map()) {
+    for (const auto &fs : FileSystemFactory::map()) {
         if (fs->supportCreate() != FileSystem::cmdSupportNone &&
             fs->type() != FileSystem::Extended &&
             fs->type() != FileSystem::Luks)
@@ -82,7 +82,7 @@ void NewDialog::setupDialog()
 
     qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    foreach (auto const &fsName, fsNames)
+    foreach (const auto &fsName, fsNames)
         dialogWidget().comboFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     QString selected = FileSystem::nameForType(GuiHelpers::defaultFileSystem());

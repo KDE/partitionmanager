@@ -71,7 +71,7 @@ void FileSystemSupportDialog::setupDialog()
 
     dialogWidget().tree().clear();
 
-    for (auto const &fs : FileSystemFactory::map()) {
+    for (const auto &fs : FileSystemFactory::map()) {
         if (fs->type() == FileSystem::Unknown || fs->type() == FileSystem::Extended || fs->type() == FileSystem::Luks)
             continue;
 

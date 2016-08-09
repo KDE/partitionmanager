@@ -37,7 +37,7 @@ QString AdvancedPageWidget::backend() const
 {
     const KService::List services = CoreBackendManager::self()->list();
 
-    for (auto const &p : services)
+    for (const auto &p : services)
         if (p->name() == comboBackend().currentText())
             return p->library();
 
@@ -48,7 +48,7 @@ void AdvancedPageWidget::setBackend(const QString& name)
 {
     const KService::List services = CoreBackendManager::self()->list();
 
-    for (auto const &p : services)
+    for (const auto &p : services)
         if (p->library() == name)
             comboBackend().setCurrentIndex(comboBackend().findText(p->name()));
 }
@@ -56,7 +56,7 @@ void AdvancedPageWidget::setBackend(const QString& name)
 void AdvancedPageWidget::setupDialog()
 {
     const KService::List services = CoreBackendManager::self()->list();
-    for (auto const &p : services)
+    for (const auto &p : services)
         comboBackend().addItem(p->name());
 
     setBackend(Config::backend());
