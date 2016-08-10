@@ -57,7 +57,7 @@ ResizeVolumeDialog::ResizeVolumeDialog(QWidget* parent, QString& vgname, QString
 void ResizeVolumeDialog::setupDialog()
 {
     if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
-        dialogWidget().listPV().addPartitionList(device().deviceNodeList(), true);
+        dialogWidget().listPV().addPartitionList(device().deviceNodes(), true);
         for (const auto &pvpath : FS::lvm2_pv::getFreePV()) {
             if (!LvmDevice::s_DirtyPVs.contains(pvpath)) {
                 dialogWidget().listPV().addPartition(pvpath, false);

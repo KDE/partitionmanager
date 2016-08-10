@@ -260,7 +260,7 @@ void NewDialog::onLVNameChanged(const QString& newName)
     if ((dialogWidget().lvName().isVisible() &&
         dialogWidget().lvName().text().isEmpty()) ||
         (device().type() == Device::LVM_Device &&
-         dynamic_cast<LvmDevice&>(device()).lvPathList().contains(partition().partitionPath())) ) {
+         dynamic_cast<LvmDevice&>(device()).partitionNodes().contains(partition().partitionPath())) ) {
         m_IsValidLVName = false;
     } else {
         m_IsValidLVName = true;
