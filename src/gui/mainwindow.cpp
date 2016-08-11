@@ -57,7 +57,8 @@
 #include <fs/lvm2_pv.h>
 
 #include <util/helpers.h>
-#include "util/guihelpers.h"
+#include <util/guihelpers.h>
+#include <util/report.h>
 
 #include <QApplication>
 #include <QCloseEvent>
@@ -1078,7 +1079,7 @@ void MainWindow::onCreateNewVolumeGroup()
     QString* vgname = new QString();
     QStringList* pvlist = new QStringList();
     qint32 pesize = 4;
-    // *NOTE*: vgname & pvlist will be modified and validate by the dialog
+    // *NOTE*: vgname & pvlist will be modified and validated by the dialog
     QPointer<CreateVolumeDialog> dlg = new CreateVolumeDialog(this, *vgname, *pvlist, pesize);
     if (dlg->exec() == QDialog::Accepted) {
         operationStack().push(new CreateVolumeGroupOperation(*vgname, *pvlist, pesize));
@@ -1104,7 +1105,11 @@ void MainWindow::onDeactivateVolumeGroup()
 {
     Device* tmpDev = pmWidget().selectedDevice();
     if (tmpDev->type() == Device::LVM_Device) {
-        operationStack().push(new DeactivateVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) ));
+        DeactivateVolumeGroupOperation* deactivate = new DeactivateVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) );
+        Report* tmpReport = new Report(nullptr);
+        deactivate->execute(*tmpReport);
+        delete tmpReport;
+        pmWidget().updatePartitions();
     }
 }
 
@@ -1115,7 +1120,7 @@ void MainWindow::onResizeVolumeGroup()
 
         QString* vgname = new QString(tmpDev->name()); // This line only purpose is to make volumeDialog happy
         QStringList* pvlist = new QStringList();
-        // *NOTE*: vgname & pvlist will be modified and validate by the dialog
+        // *NOTE*: pvlist will be modified and validated by the dialog
 
         QPointer<ResizeVolumeDialog> dlg = new ResizeVolumeDialog(this, *vgname, *pvlist, *tmpDev);
         if (dlg->exec() == QDialog::Accepted) {
