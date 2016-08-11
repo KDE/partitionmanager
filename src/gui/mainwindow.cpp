@@ -262,6 +262,7 @@ void MainWindow::setupActions()
     QAction* removeVolumeGroup = actionCollection()->addAction(QStringLiteral("removeVolumeGroup"));
     connect(removeVolumeGroup, &QAction::triggered, this, &MainWindow::onRemoveVolumeGroup);
     removeVolumeGroup->setEnabled(false);
+    removeVolumeGroup->setVisible(false);
     removeVolumeGroup->setText(i18nc("@action:inmenu", "Remove Volume"));
     removeVolumeGroup->setToolTip(i18nc("@info:tooltip", "Remove selected Volume Device"));
     removeVolumeGroup->setStatusTip(i18nc("@info:status", "Remove selected Volume Device"));
@@ -271,6 +272,7 @@ void MainWindow::setupActions()
     QAction* resizeVolumeGroup = actionCollection()->addAction(QStringLiteral("resizeVolumeGroup"));
     connect(resizeVolumeGroup, &QAction::triggered, this, &MainWindow::onResizeVolumeGroup);
     resizeVolumeGroup->setEnabled(false);
+    resizeVolumeGroup->setVisible(false);
     resizeVolumeGroup->setText(i18nc("@action:inmenu", "Resize Volume"));
     resizeVolumeGroup->setToolTip(i18nc("@info:tooltip", "Resize selected Volume device"));
     resizeVolumeGroup->setStatusTip(i18nc("@info:status", "Resize selected Volume device"));
@@ -280,6 +282,7 @@ void MainWindow::setupActions()
     QAction* deactivateVolumeGroup = actionCollection()->addAction(QStringLiteral("deactivateVolumeGroup"));
     connect(deactivateVolumeGroup, &QAction::triggered, this, &MainWindow::onDeactivateVolumeGroup);
     deactivateVolumeGroup->setEnabled(false);
+    deactivateVolumeGroup->setVisible(false);
     deactivateVolumeGroup->setText(i18nc("@action:inmenu", "Deactivate Volume"));
     deactivateVolumeGroup->setToolTip(i18nc("@info:tooltip", "Deactivate selected Volume Device"));
     deactivateVolumeGroup->setStatusTip(i18nc("@info:status", "Deactivate selected Volume Device"));
@@ -496,14 +499,17 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("createVolumeGroup"))
             ->setEnabled(CreateVolumeGroupOperation::canCreate());
 
-    actionCollection()->action(QStringLiteral("removeVolumeGroup"))
-            ->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device && !LvmDevice::getLVs(pmWidget().selectedDevice()->name()).count());
+    bool removable = pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device && !LvmDevice::getLVs(pmWidget().selectedDevice()->name()).count();
+    actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setEnabled(removable);
+    actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setVisible(removable);
 
-    actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))
-            ->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device);
+    bool deactivatable = pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device;
+    actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setEnabled(deactivatable);
+    actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setVisible(deactivatable);
 
-    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))
-            ->setEnabled(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device);
+    bool resizable = pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device;
+    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setEnabled(resizable);
+    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setVisible(resizable);
 
 
     const Partition* part = pmWidget().selectedPartition();
