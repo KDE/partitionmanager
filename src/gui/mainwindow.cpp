@@ -509,16 +509,8 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setEnabled(removable);
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setVisible(lvmDevice);
 
-    bool deactivatable = lvmDevice;
-    if(lvmDevice) {
-        const auto logicalVolumes = pmWidget().selectedDevice()->partitionTable()->children();
-        for (const auto &p : logicalVolumes) {
-            if (p->isMounted()) {
-                deactivatable = false;
-                break;
-            }
-        }
-    }
+    bool deactivatable = lvmDevice ?
+        DeactivateVolumeGroupOperation::isDeactivatable(dynamic_cast<LvmDevice*>(pmWidget().selectedDevice())) : false;
     actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setEnabled(deactivatable);
     actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setVisible(lvmDevice);
 
