@@ -1116,8 +1116,11 @@ void MainWindow::onDeactivateVolumeGroup()
     if (tmpDev->type() == Device::LVM_Device) {
         DeactivateVolumeGroupOperation* deactivate = new DeactivateVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) );
         Report* tmpReport = new Report(nullptr);
-        deactivate->preview();
-        deactivate->execute(*tmpReport);
+        if (deactivate->execute(*tmpReport)) {
+            deactivate->preview();
+            actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setEnabled(false);
+            actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setEnabled(false);
+        }
         delete tmpReport;
         pmWidget().updatePartitions();
     }
