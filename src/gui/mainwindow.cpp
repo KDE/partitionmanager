@@ -473,6 +473,8 @@ void MainWindow::enableActions()
 {
     actionCollection()->action(QStringLiteral("createNewPartitionTable"))
             ->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
+    actionCollection()->action(QStringLiteral("createNewPartitionTable"))
+            ->setVisible(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::Disk_Device);
     actionCollection()->action(QStringLiteral("exportPartitionTable"))
             ->setEnabled(pmWidget().selectedDevice() &&
                          pmWidget().selectedDevice()->partitionTable() &&
@@ -482,6 +484,8 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("smartStatusDevice"))
             ->setEnabled(pmWidget().selectedDevice() != nullptr && pmWidget().selectedDevice()->type() == Device::Disk_Device &&
                                                         pmWidget().selectedDevice()->smartStatus().isValid());
+    actionCollection()->action(QStringLiteral("smartStatusDevice"))
+            ->setVisible(pmWidget().selectedDevice() != nullptr && pmWidget().selectedDevice()->type() == Device::Disk_Device);
     actionCollection()->action(QStringLiteral("propertiesDevice"))
             ->setEnabled(pmWidget().selectedDevice() != nullptr);
 
