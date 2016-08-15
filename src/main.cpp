@@ -49,18 +49,18 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
         QStringLiteral("partitionmanager"),
         xi18nc("@title", "<application>KDE Partition Manager</application>"),
         QStringLiteral(VERSION),
-        i18nc("@title", "Manage your disks, partitions and file systems"),
+        xi18nc("@title", "Manage your disks, partitions and file systems"),
         KAboutLicense::GPL_V3,
-        i18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2016 Andrius Štikonas"));
+        xi18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2016 Andrius Štikonas"));
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
     aboutData.setProductName(QByteArray("partitionmanager"));
 
-    aboutData.addAuthor(i18nc("@info:credit", "Volker Lanz"), i18nc("@info:credit", "Former maintainer"));
-    aboutData.addAuthor(i18nc("@info:credit", "Andrius Štikonas"), i18nc("@info:credit", "Maintainer"), QStringLiteral("andrius@stikonas.eu"));
-    aboutData.addAuthor(i18n("Teo Mrnjavac"), i18nc("@info:credit", "Calamares maintainer"), QStringLiteral("teo@kde.org"));
+    aboutData.addAuthor(xi18nc("@info:credit", "Volker Lanz"), xi18nc("@info:credit", "Former maintainer"));
+    aboutData.addAuthor(xi18nc("@info:credit", "Andrius Štikonas"), xi18nc("@info:credit", "Maintainer"), QStringLiteral("andrius@stikonas.eu"));
+    aboutData.addAuthor(xi18n("Teo Mrnjavac"), i18nc("@info:credit", "Calamares maintainer"), QStringLiteral("teo@kde.org"));
     aboutData.setHomepage(QStringLiteral("https://www.kde.org/applications/system/kdepartitionmanager"));
 
-    aboutData.addCredit(i18n("Hugo Pereira Da Costa"), i18nc("@info:credit", "Partition Widget Design"), QStringLiteral("hugo@oxygen-icons.org"));
+    aboutData.addCredit(i18n("Hugo Pereira Da Costa"), xi18nc("@info:credit", "Partition Widget Design"), QStringLiteral("hugo@oxygen-icons.org"));
     KAboutData::setApplicationData(aboutData);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     KCrash::initialize();
@@ -70,9 +70,9 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     parser.addHelpOption();
     parser.addVersionOption();
     aboutData.setupCommandLine(&parser);
-    parser.addOption(QCommandLineOption(QLatin1Literal("dontsu"), i18nc("@info:shell", "Do not try to gain super user privileges")));
-    parser.addOption(QCommandLineOption(QLatin1Literal("advconfig"), i18nc("@info:shell", "Show advanced tab in configuration dialog")));
-    parser.addPositionalArgument(QStringLiteral("device"), i18nc("@info:shell", "Device(s) to manage"), QStringLiteral("[device...]"));
+    parser.addOption(QCommandLineOption(QLatin1Literal("dontsu"), xi18nc("@info:shell", "Do not try to gain super user privileges")));
+    parser.addOption(QCommandLineOption(QLatin1Literal("advconfig"), xi18nc("@info:shell", "Show advanced tab in configuration dialog")));
+    parser.addPositionalArgument(QStringLiteral("device"), xi18nc("@info:shell", "Device(s) to manage"), QStringLiteral("[device...]"));
 
     parser.process(app);
     aboutData.processCommandLine(&parser);

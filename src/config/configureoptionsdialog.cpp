@@ -155,9 +155,9 @@ void ConfigureOptionsDialog::onComboBackendActivated(int)
             xi18nc("@info",
                    "<para>Do you really want to change the backend?</para>"
                    "<para><warning>This will also rescan devices and thus clear the list of pending operations.</warning></para>"),
-            i18nc("@title:window", "Really Change Backend?"),
-            KGuiItem(i18nc("@action:button", "Change the Backend"), QStringLiteral("arrow-right")),
-            KGuiItem(i18nc("@action:button", "Do Not Change the Backend"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyChangeBackend")) == KMessageBox::Continue) {
+            xi18nc("@title:window", "Really Change Backend?"),
+            KGuiItem(xi18nc("@action:button", "Change the Backend"), QStringLiteral("arrow-right")),
+            KGuiItem(xi18nc("@action:button", "Do Not Change the Backend"), QStringLiteral("dialog-cancel")), QStringLiteral("reallyChangeBackend")) == KMessageBox::Continue) {
         settingsChangedSlot();
     } else
         advancedPageWidget().setBackend(CoreBackendManager::defaultBackendName());

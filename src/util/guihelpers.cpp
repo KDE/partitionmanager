@@ -78,8 +78,8 @@ bool checkPermissions()
                 "You will, however, <emphasis>not</emphasis> be allowed to apply operations.</para>"
                 "<para>Do you want to continue running <application>%1</application>?</para>",
                 QGuiApplication::applicationDisplayName()),
-                i18nc("@title:window", "No administrative privileges"),
-                KGuiItem(i18nc("@action:button", "Run without administrative privileges"), QStringLiteral("arrow-right")),
+                xi18nc("@title:window", "No administrative privileges"),
+                KGuiItem(xi18nc("@action:button", "Run without administrative privileges"), QStringLiteral("arrow-right")),
                 KStandardGuiItem::cancel(),
                 QStringLiteral("runWithoutRootPrivileges")) == KMessageBox::Continue;
     }
@@ -95,7 +95,7 @@ bool loadBackend()
                                xi18nc("@info", "<para>The configured backend plugin \"%1\" could not be loaded.</para>"
                                       "<para>Loading the default backend plugin \"%2\" instead.</para>",
                                       Config::backend(), CoreBackendManager::defaultBackendName()),
-                               i18nc("@title:window", "Error: Could Not Load Backend Plugin"));
+                               xi18nc("@title:window", "Error: Could Not Load Backend Plugin"));
             Config::setBackend(CoreBackendManager::defaultBackendName());
         } else {
             KMessageBox::error(nullptr,
