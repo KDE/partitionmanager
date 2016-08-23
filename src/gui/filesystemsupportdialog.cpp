@@ -25,9 +25,9 @@
 #include <QDialogButtonBox>
 #include <QDialog>
 
+#include <KConfigGroup>
 #include <KIconLoader>
 #include <KLocalizedString>
-#include <KConfigGroup>
 #include <KSharedConfig>
 
 /** Creates a new FileSystemSupportDialog

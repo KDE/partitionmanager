@@ -29,7 +29,6 @@
 
 #include <util/capacity.h>
 
-#include <QDockWidget>
 #include <QFontDatabase>
 #include <QFrame>
 #include <QGridLayout>

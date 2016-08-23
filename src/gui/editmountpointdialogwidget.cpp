@@ -26,15 +26,14 @@
 #include <fs/luks.h>
 
 #include <KLocalizedString>
-#include <KIOCore/KMountPoint>
 #include <KMessageBox>
+#include <KMountPoint>
 
-#include <QString>
-#include <QWidget>
+#include <QDebug>
 #include <QFile>
 #include <QFileDialog>
 #include <QPointer>
-#include <QDebug>
+#include <QString>
 
 #include <mntent.h>
 #include <blkid/blkid.h>

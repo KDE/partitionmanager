@@ -22,12 +22,12 @@
 
 #include <core/partition.h>
 
-#include <KMessageBox>
-#include <KGuiItem>
-#include <KStandardGuiItem>
-#include <KLocalizedString>
 #include <KConfigGroup>
+#include <KGuiItem>
+#include <KLocalizedString>
+#include <KMessageBox>
 #include <KSharedConfig>
+#include <KStandardGuiItem>
 
 #include <QDialogButtonBox>
 

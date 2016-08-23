@@ -25,32 +25,28 @@
 #include <util/capacity.h>
 #include <util/helpers.h>
 
+#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <KConfigGroup>
-#include <KIconLoader>
 
-#include <QPointer>
-#include <QPushButton>
 #include <QListWidgetItem>
-#include <QDialogButtonBox>
 
 /** Creates a new VolumeDialog
     @param parent pointer to the parent widget
-    @param d the Device to show properties for
+    @param vgName Volume Group name
+    @param pvList List of LVM Physical Volumes used to create Volume Group
 */
-VolumeDialog::VolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist) :
+VolumeDialog::VolumeDialog(QWidget* parent, QString& vgName, QStringList& pvList) :
     QDialog(parent),
     m_DialogWidget(new VolumeWidget(this)),
-    m_TargetName(vgname),
-    m_TargetPVList(pvlist),
+    m_TargetName(vgName),
+    m_TargetPVList(pvList),
     m_IsValidSize(false),
     m_IsValidName(true),
     m_TotalSize(0),
     m_TotalUsedSize(0),
     m_ExtentSize(0)
 {
-    Q_UNUSED(pvlist);
     mainLayout = new QVBoxLayout(this);
     setLayout(mainLayout);
     mainLayout->addWidget(&dialogWidget());

@@ -20,22 +20,19 @@
 #define VOLUMEDIALOG__H
 
 #include <QDialog>
+#include <QDialogButtonBox>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 class VolumeWidget;
 class Partition;
-
-class QDialogButtonBox;
-class QPushButton;
-class QVBoxLayout;
-class QWidget;
-class QString;
 
 class VolumeDialog : public QDialog
 {
     Q_DISABLE_COPY(VolumeDialog)
 
 public:
-    VolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist);
+    VolumeDialog(QWidget* parent, QString& vgName, QStringList& pvList);
     ~VolumeDialog();
 
 protected:

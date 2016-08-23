@@ -23,16 +23,16 @@
 
 #include <QMap>
 #include <QString>
+#include <QWidget>
 
 class Partition;
 
-class QWidget;
+class QFile;
 class QSpinBox;
 class QCheckBox;
 class QLineEdit;
 class QPushButton;
 class QStringList;
-class QFile;
 
 class MountEntry;
 

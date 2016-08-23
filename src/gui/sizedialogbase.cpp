@@ -34,8 +34,10 @@
 
 #include <KLocalizedString>
 
+#include <QFrame>
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QVBoxLayout>
 
 #include <config.h>
 

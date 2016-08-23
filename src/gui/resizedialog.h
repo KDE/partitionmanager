@@ -21,8 +21,6 @@
 
 #include "gui/sizedialogbase.h"
 
-#include <QtGlobal>
-
 class Partition;
 class Device;
 
@@ -62,7 +60,6 @@ protected:
         m_ResizedLastSector = s;
     }
 
-protected:
     qint64 originalFirstSector() const {
         return m_OriginalFirstSector;
     }

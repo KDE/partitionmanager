@@ -21,8 +21,6 @@
 #include <util/globallog.h>
 #include <util/capacity.h>
 
-#include <KIconLoader>
-
 class ListPhysicalVolumeWidgetItem : public QListWidgetItem
 {
 public:

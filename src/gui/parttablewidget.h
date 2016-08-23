@@ -21,7 +21,6 @@
 
 #include <gui/partwidgetbase.h>
 
-#include <QList>
 #include <QLabel>
 
 class PartWidget;

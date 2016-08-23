@@ -31,7 +31,6 @@
 #include <QFontDatabase>
 #include <QPushButton>
 #include <QTemporaryFile>
-#include <QTextDocument>
 #include <QTextStream>
 #include <QTreeWidgetItem>
 #include <QtGlobal>
@@ -43,6 +42,7 @@
 #include <KIO/CopyJob>
 #include <KJobUiDelegate>
 #include <KMessageBox>
+#include <KSharedConfig>
 
 #include <sys/utsname.h>
 #include <unistd.h>

@@ -22,10 +22,10 @@
 #include <KLocalizedString>
 
 #include <QStyledItemDelegate>
+#include <QStyleOptionViewItem>
 #include <QPainter>
-#include <QTextDocument>
-#include <QAbstractTextDocumentLayout>
 #include <QPoint>
+#include <QTextDocument>
 
 #include <config.h>
 

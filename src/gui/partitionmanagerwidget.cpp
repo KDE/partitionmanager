@@ -53,7 +53,6 @@
 
 #include "util/guihelpers.h"
 
-#include <QCursor>
 #include <QFileDialog>
 #include <QLocale>
 #include <QPointer>

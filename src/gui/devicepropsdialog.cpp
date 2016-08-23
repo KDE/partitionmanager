@@ -29,15 +29,14 @@
 #include <util/capacity.h>
 #include <util/helpers.h>
 
-#include <KLocalizedString>
-#include <KSharedConfig>
 #include <KConfigGroup>
 #include <KIconLoader>
+#include <KLocalizedString>
+#include <KSharedConfig>
 
 #include <QDialogButtonBox>
 #include <QPointer>
 #include <QPushButton>
-#include <QTreeWidgetItem>
 
 /** Creates a new DevicePropsDialog
     @param parent pointer to the parent widget

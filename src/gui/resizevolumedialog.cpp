@@ -27,15 +27,9 @@
 #include <util/capacity.h>
 #include <util/helpers.h>
 
+#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <KConfigGroup>
-#include <KIconLoader>
-
-#include <QPointer>
-#include <QPushButton>
-#include <QTreeWidgetItem>
-#include <QDialogButtonBox>
 
 /** Creates a new ResizeVolumeDialog
     @param parent pointer to the parent widget

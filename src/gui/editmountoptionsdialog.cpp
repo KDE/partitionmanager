@@ -20,12 +20,11 @@
 #include "gui/editmountoptionsdialogwidget.h"
 
 #include <QDialogButtonBox>
-#include <QString>
 #include <QStringList>
 
 #include <KConfigGroup>
-#include <KSharedConfig>
 #include <KLocalizedString>
+#include <KSharedConfig>
 
 EditMountOptionsDialog::EditMountOptionsDialog(QWidget* parent, const QStringList& options) :
     QDialog(parent),

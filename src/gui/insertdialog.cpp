@@ -27,8 +27,8 @@
 #include <ops/resizeoperation.h>
 
 #include <KConfigGroup>
-#include <KSharedConfig>
 #include <KLocalizedString>
+#include <KSharedConfig>
 
 /** Creates a new InsertDialog instance.
     @param parent the parent widget

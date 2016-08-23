@@ -27,7 +27,6 @@
 #include <QDebug>
 #include <QFile>
 #include <QFileDialog>
-#include <QMenu>
 #include <QTemporaryFile>
 #include <QTextStream>
 #include <QTreeWidget>

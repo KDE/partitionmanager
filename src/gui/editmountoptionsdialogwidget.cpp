@@ -17,8 +17,7 @@
 
 #include "gui/editmountoptionsdialogwidget.h"
 
-#include <QString>
-#include <QPlainTextEdit>
+#include <QStringList>
 
 EditMountOptionsDialogWidget::EditMountOptionsDialogWidget(QWidget* parent, const QStringList& options) :
     QWidget(parent)

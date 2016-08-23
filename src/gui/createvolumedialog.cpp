@@ -25,14 +25,9 @@
 #include <util/capacity.h>
 #include <util/helpers.h>
 
+#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <KConfigGroup>
-#include <KIconLoader>
-
-#include <QPointer>
-#include <QPushButton>
-#include <QDialogButtonBox>
 
 CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist, qint32& pesize) :
     VolumeDialog(parent, vgname, pvlist),

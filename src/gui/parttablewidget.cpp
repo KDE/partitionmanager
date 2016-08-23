@@ -24,7 +24,6 @@
 
 #include <gui/partwidget.h>
 
-#include <QApplication>
 #include <QMouseEvent>
 
 #include <KLocalizedString>
