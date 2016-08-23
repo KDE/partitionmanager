@@ -133,8 +133,11 @@ void DevicePropsDialog::setupDialog()
             dialogWidget().buttonSmartMore().setVisible(false);
         }
     } else {
+        if (device().type() == Device::LVM_Device)
+            dialogWidget().type().setText(xi18nc("@label device", "LVM Volume Group"));
+        else
+            dialogWidget().type().setText(xi18nc("@label device", "Volume Manager Device"));
         //TODO: add Volume Manger Device info
-        dialogWidget().type().setText(xi18nc("@label device", "Volume Manager Device"));
         dialogWidget().smartStatusText().setVisible(false);
         dialogWidget().smartStatusIcon().setVisible(false);
         dialogWidget().buttonSmartMore().setVisible(false);
