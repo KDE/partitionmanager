@@ -73,8 +73,8 @@
             <Action name="propertiesPartition"/>
         </Menu>
         <Menu name="settings">
-            <Menu name="panels">
-                <text context="@title:menu">Panels</text>
+            <Menu name="panels" append="show_toolbar_merge">
+                <text context="@title:menu">Panels Shown</text>
                 <Action name="toggleDockDevices"/>
                 <Action name="toggleDockOperations"/>
                 <Action name="toggleDockInformation"/>
