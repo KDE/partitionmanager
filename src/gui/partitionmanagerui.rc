@@ -82,7 +82,9 @@
             </Menu>
             <separator/>
         </Menu>
-        <Menu name="help"/>
+        <Menu name="help">
+            <Action name="aboutKPMcore" append="about_merge"/>
+        </Menu>
     </MenuBar>
 
     <StatusBar/>

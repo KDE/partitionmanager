@@ -255,6 +255,7 @@ protected:
     void onSettingsChanged();
 
     void onFileSystemSupport();
+    void onShowAboutKPMcore();
 
     void onSmartStatusDevice();
     void onPropertiesDevice(const QString& deviceNode = {});

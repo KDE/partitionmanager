@@ -75,6 +75,7 @@
 #include <QTemporaryFile>
 #include <QTextStream>
 
+#include <KAboutApplicationDialog>
 #include <KActionCollection>
 #include <KMessageBox>
 #include <KAboutData>
@@ -218,14 +219,6 @@ void MainWindow::setupActions()
     applyAllOperations->setIcon(QIcon::fromTheme(QStringLiteral("dialog-ok-apply")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     // Device actions
-    QAction* refreshDevices = actionCollection()->addAction(QStringLiteral("refreshDevices"));
-    connect(refreshDevices, &QAction::triggered, this, &MainWindow::onRefreshDevices);
-    refreshDevices->setText(xi18nc("@action:inmenu refresh list of devices", "Refresh Devices"));
-    refreshDevices->setToolTip(xi18nc("@info:tooltip", "Refresh all devices"));
-    refreshDevices->setStatusTip(xi18nc("@info:status", "Renew the devices list."));
-    actionCollection()->setDefaultShortcut(refreshDevices, Qt::Key_F5);
-    refreshDevices->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")).pixmap(IconSize(KIconLoader::Toolbar)));
-
     QAction* createNewPartitionTable = actionCollection()->addAction(QStringLiteral("createNewPartitionTable"));
     connect(createNewPartitionTable, &QAction::triggered, this, &MainWindow::onCreateNewPartitionTable);
     createNewPartitionTable->setEnabled(false);
@@ -250,15 +243,6 @@ void MainWindow::setupActions()
     importPartitionTable->setToolTip(xi18nc("@info:tooltip", "Import a partition table"));
     importPartitionTable->setStatusTip(xi18nc("@info:status", "Import a partition table from a text file."));
     importPartitionTable->setIcon(QIcon::fromTheme(QStringLiteral("document-import")).pixmap(IconSize(KIconLoader::Toolbar)));
-
-    QAction* createVolumeGroup = actionCollection()->addAction(QStringLiteral("createVolumeGroup"));
-    connect(createVolumeGroup, &QAction::triggered, this, &MainWindow::onCreateNewVolumeGroup);
-    createVolumeGroup->setEnabled(false);
-    createVolumeGroup->setText(i18nc("@action:inmenu", "New Volume"));
-    createVolumeGroup->setToolTip(i18nc("@info:tooltip", "Create a new LVM Volume Group"));
-    createVolumeGroup->setStatusTip(i18nc("@info:status", "Create a new LVM Volume Group as a device."));
-    actionCollection()->setDefaultShortcut(createVolumeGroup, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_L));
-    createVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("document-new")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* removeVolumeGroup = actionCollection()->addAction(QStringLiteral("removeVolumeGroup"));
     connect(removeVolumeGroup, &QAction::triggered, this, &MainWindow::onRemoveVolumeGroup);
@@ -412,7 +396,16 @@ void MainWindow::setupActions()
     restore->setStatusTip(xi18nc("@info:status", "Restore a partition from an image file."));
     restore->setIcon(QIcon::fromTheme(QStringLiteral("document-import")).pixmap(IconSize(KIconLoader::Toolbar)));
 
-    // View actions
+    // Tools actions
+    QAction* createVolumeGroup = actionCollection()->addAction(QStringLiteral("createVolumeGroup"));
+    connect(createVolumeGroup, &QAction::triggered, this, &MainWindow::onCreateNewVolumeGroup);
+    createVolumeGroup->setEnabled(false);
+    createVolumeGroup->setText(i18nc("@action:inmenu", "New Volume"));
+    createVolumeGroup->setToolTip(i18nc("@info:tooltip", "Create a new LVM Volume Group"));
+    createVolumeGroup->setStatusTip(i18nc("@info:status", "Create a new LVM Volume Group as a device."));
+    actionCollection()->setDefaultShortcut(createVolumeGroup, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_L));
+    createVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("document-new")).pixmap(IconSize(KIconLoader::Toolbar)));
+
     QAction* fileSystemSupport = actionCollection()->addAction(QStringLiteral("fileSystemSupport"));
     connect(fileSystemSupport, &QAction::triggered, this, &MainWindow::onFileSystemSupport);
     fileSystemSupport->setText(xi18nc("@action:inmenu", "File System Support"));
@@ -423,6 +416,15 @@ void MainWindow::setupActions()
     actionCollection()->addAction(QStringLiteral("toggleDockOperations"), dockOperations().toggleViewAction());
     actionCollection()->addAction(QStringLiteral("toggleDockInformation"), dockInformation().toggleViewAction());
     actionCollection()->addAction(QStringLiteral("toggleDockLog"), dockLog().toggleViewAction());
+
+
+    QAction* refreshDevices = actionCollection()->addAction(QStringLiteral("refreshDevices"));
+    connect(refreshDevices, &QAction::triggered, this, &MainWindow::onRefreshDevices);
+    refreshDevices->setText(xi18nc("@action:inmenu refresh list of devices", "Refresh Devices"));
+    refreshDevices->setToolTip(xi18nc("@info:tooltip", "Refresh all devices"));
+    refreshDevices->setStatusTip(xi18nc("@info:status", "Renew the devices list."));
+    actionCollection()->setDefaultShortcut(refreshDevices, Qt::Key_F5);
+    refreshDevices->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     // Settings Actions
     KStandardAction::preferences(this, &MainWindow::onConfigureOptions, actionCollection());
@@ -441,6 +443,14 @@ void MainWindow::setupActions()
     saveLog->setToolTip(xi18nc("@info:tooltip", "Save the log output"));
     saveLog->setStatusTip(xi18nc("@info:status", "Save the log output to a file."));
     saveLog->setIcon(QIcon::fromTheme(QStringLiteral("document-save")).pixmap(IconSize(KIconLoader::Toolbar)));
+
+    // Help Actions
+    QAction* aboutKPMcore = actionCollection()->addAction(QStringLiteral("aboutKPMcore"));
+    connect(aboutKPMcore, &QAction::triggered, this, &MainWindow::onShowAboutKPMcore);
+    aboutKPMcore->setText(xi18nc("@action:inmenu", "About KPMcore Library"));
+    aboutKPMcore->setToolTip(xi18nc("@info:tooltip", "Show About KPMcore dialog"));
+    aboutKPMcore->setStatusTip(xi18nc("@info:status", "Show About KPMcore dialog."));
+    aboutKPMcore->setIcon(QIcon::fromTheme(QStringLiteral("partitionmanager")).pixmap(IconSize(KIconLoader::Toolbar)));
 }
 
 void MainWindow::setupConnections()
@@ -1143,6 +1153,12 @@ void MainWindow::onResizeVolumeGroup()
 void MainWindow::onFileSystemSupport()
 {
     FileSystemSupportDialog dlg(this);
+    dlg.exec();
+}
+
+void MainWindow::onShowAboutKPMcore()
+{
+    KAboutApplicationDialog dlg(aboutKPMcore(), this);
     dlg.exec();
 }
 
