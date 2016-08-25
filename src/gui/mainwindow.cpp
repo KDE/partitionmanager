@@ -248,9 +248,9 @@ void MainWindow::setupActions()
     connect(removeVolumeGroup, &QAction::triggered, this, &MainWindow::onRemoveVolumeGroup);
     removeVolumeGroup->setEnabled(false);
     removeVolumeGroup->setVisible(false);
-    removeVolumeGroup->setText(i18nc("@action:inmenu", "Remove Volume"));
-    removeVolumeGroup->setToolTip(i18nc("@info:tooltip", "Remove selected Volume Device"));
-    removeVolumeGroup->setStatusTip(i18nc("@info:status", "Remove selected Volume Device"));
+    removeVolumeGroup->setText(i18nc("@action:inmenu", "Remove Volume Group"));
+    removeVolumeGroup->setToolTip(i18nc("@info:tooltip", "Remove selected Volume Group"));
+    removeVolumeGroup->setStatusTip(i18nc("@info:status", "Remove selected Volume Group."));
     //actionCollection()->setDefaultShortcut(removeVolumeGroup, QKeySequence(/*SHORTCUT KEY HERE*/));
     removeVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")).pixmap(IconSize(KIconLoader::Toolbar)));
 
@@ -258,9 +258,9 @@ void MainWindow::setupActions()
     connect(resizeVolumeGroup, &QAction::triggered, this, &MainWindow::onResizeVolumeGroup);
     resizeVolumeGroup->setEnabled(false);
     resizeVolumeGroup->setVisible(false);
-    resizeVolumeGroup->setText(i18nc("@action:inmenu", "Resize Volume"));
-    resizeVolumeGroup->setToolTip(i18nc("@info:tooltip", "Resize selected Volume device"));
-    resizeVolumeGroup->setStatusTip(i18nc("@info:status", "Resize selected Volume device"));
+    resizeVolumeGroup->setText(i18nc("@action:inmenu", "Resize Volume Group"));
+    resizeVolumeGroup->setToolTip(i18nc("@info:tooltip", "Resize selected Volume Group"));
+    resizeVolumeGroup->setStatusTip(i18nc("@info:status", "Extend or reduce selected Volume Group."));
     //actionCollection()->setDefaultShortcut(resizeVolumeGroup, QKeySequence(/*SHORTCUT KEY HERE*/));
     resizeVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")).pixmap(IconSize(KIconLoader::Toolbar)));
 
@@ -268,9 +268,9 @@ void MainWindow::setupActions()
     connect(deactivateVolumeGroup, &QAction::triggered, this, &MainWindow::onDeactivateVolumeGroup);
     deactivateVolumeGroup->setEnabled(false);
     deactivateVolumeGroup->setVisible(false);
-    deactivateVolumeGroup->setText(i18nc("@action:inmenu", "Deactivate Volume"));
-    deactivateVolumeGroup->setToolTip(i18nc("@info:tooltip", "Deactivate selected Volume Device"));
-    deactivateVolumeGroup->setStatusTip(i18nc("@info:status", "Deactivate selected Volume Device"));
+    deactivateVolumeGroup->setText(i18nc("@action:inmenu", "Deactivate Volume Group"));
+    deactivateVolumeGroup->setToolTip(i18nc("@info:tooltip", "Deactivate selected Volume Group"));
+    deactivateVolumeGroup->setStatusTip(i18nc("@info:status", "Deactivate selected Volume Group before unplugging removable devices."));
     deactivateVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("media-eject")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* smartStatusDevice = actionCollection()->addAction(QStringLiteral("smartStatusDevice"));
@@ -400,7 +400,7 @@ void MainWindow::setupActions()
     QAction* createVolumeGroup = actionCollection()->addAction(QStringLiteral("createVolumeGroup"));
     connect(createVolumeGroup, &QAction::triggered, this, &MainWindow::onCreateNewVolumeGroup);
     createVolumeGroup->setEnabled(false);
-    createVolumeGroup->setText(i18nc("@action:inmenu", "New Volume"));
+    createVolumeGroup->setText(i18nc("@action:inmenu", "New Volume Group"));
     createVolumeGroup->setToolTip(i18nc("@info:tooltip", "Create a new LVM Volume Group"));
     createVolumeGroup->setStatusTip(i18nc("@info:status", "Create a new LVM Volume Group as a device."));
     actionCollection()->setDefaultShortcut(createVolumeGroup, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_L));
@@ -412,12 +412,6 @@ void MainWindow::setupActions()
     fileSystemSupport->setToolTip(xi18nc("@info:tooltip", "View file system support information"));
     fileSystemSupport->setStatusTip(xi18nc("@info:status", "Show information about supported file systems."));
 
-    actionCollection()->addAction(QStringLiteral("toggleDockDevices"), dockDevices().toggleViewAction());
-    actionCollection()->addAction(QStringLiteral("toggleDockOperations"), dockOperations().toggleViewAction());
-    actionCollection()->addAction(QStringLiteral("toggleDockInformation"), dockInformation().toggleViewAction());
-    actionCollection()->addAction(QStringLiteral("toggleDockLog"), dockLog().toggleViewAction());
-
-
     QAction* refreshDevices = actionCollection()->addAction(QStringLiteral("refreshDevices"));
     connect(refreshDevices, &QAction::triggered, this, &MainWindow::onRefreshDevices);
     refreshDevices->setText(xi18nc("@action:inmenu refresh list of devices", "Refresh Devices"));
@@ -427,6 +421,11 @@ void MainWindow::setupActions()
     refreshDevices->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     // Settings Actions
+    actionCollection()->addAction(QStringLiteral("toggleDockDevices"), dockDevices().toggleViewAction());
+    actionCollection()->addAction(QStringLiteral("toggleDockOperations"), dockOperations().toggleViewAction());
+    actionCollection()->addAction(QStringLiteral("toggleDockInformation"), dockInformation().toggleViewAction());
+    actionCollection()->addAction(QStringLiteral("toggleDockLog"), dockLog().toggleViewAction());
+
     KStandardAction::preferences(this, &MainWindow::onConfigureOptions, actionCollection());
 
     // Log Actions
