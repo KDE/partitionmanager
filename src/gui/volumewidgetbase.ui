@@ -27,7 +27,7 @@
    <item row="1" column="1">
     <widget class="QLabel" name="m_LabelTextVGName">
      <property name="text">
-      <string>Volume Name: </string>
+      <string>Volume Group Name: </string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -123,7 +123,7 @@
    <item row="2" column="1">
     <widget class="QLabel" name="m_LabelTextVolumeType">
      <property name="text">
-      <string>Volume Type</string>
+      <string>Volume Group Type</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
