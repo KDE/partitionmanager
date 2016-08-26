@@ -223,6 +223,7 @@ void NewDialog::onFilesystemChanged(int idx)
     updateFileSystem(FileSystem::typeForName(dialogWidget().comboFileSystem().itemText(idx)));
 
     setupConstraints();
+    updateOkButtonStatus();
 
     const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()), -1, -1, -1, QString());
     dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
