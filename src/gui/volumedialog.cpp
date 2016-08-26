@@ -55,7 +55,7 @@ VolumeDialog::VolumeDialog(QWidget* parent, QString& vgName, QStringList& pvList
     okButton = dialogButtonBox->addButton(QDialogButtonBox::Ok);
     cancelButton = dialogButtonBox->addButton(QDialogButtonBox::Cancel);
     mainLayout->addWidget(dialogButtonBox);
-    updateOkButtonStatus();
+
     cancelButton->setFocus();
     cancelButton->setDefault(true);
 
