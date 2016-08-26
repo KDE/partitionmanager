@@ -200,7 +200,7 @@ void PartPropsDialog::updateHideAndShow()
         palette.setColor(QPalette::Foreground, f);
         dialogWidget().noSetLabel().setPalette(palette);
     } else {
-        dialogWidget().label().setReadOnly(isReadOnly());
+        dialogWidget().label().setReadOnly(isReadOnly() && !partition().fileSystem().supportSetLabelOnline());
         dialogWidget().noSetLabel().setVisible(false);
     }
 
