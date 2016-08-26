@@ -64,8 +64,8 @@ SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint
     detailsLayout->addWidget(&detailsWidget());
     detailsWidget().hide();
 
-    QDialogButtonBox* dialogButtonBox = new QDialogButtonBox;
-    detailsButton = new QPushButton;
+    QDialogButtonBox* dialogButtonBox = new QDialogButtonBox(this);
+    detailsButton = new QPushButton(dialogButtonBox);
     okButton = dialogButtonBox->addButton(QDialogButtonBox::Ok);
     cancelButton = dialogButtonBox->addButton(QDialogButtonBox::Cancel);
     detailsButton->setText(xi18nc("@action:button advanced settings button", "Advanced") + QStringLiteral(" >>"));
