@@ -71,7 +71,8 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
 
 PartWidget* PartTableWidget::activeWidget()
 {
-    foreach(auto &pw, findChildren<PartWidget*>())
+    const auto children = findChildren<PartWidget*>();
+    for (auto &pw : children)
         if (pw->isActive())
             return pw;
 
@@ -80,7 +81,8 @@ PartWidget* PartTableWidget::activeWidget()
 
 const PartWidget* PartTableWidget::activeWidget() const
 {
-    foreach(auto const &pw, findChildren<PartWidget*>())
+    const auto children = findChildren<PartWidget*>();
+    for (const auto &pw : children)
         if (pw->isActive())
             return pw;
 
@@ -114,7 +116,8 @@ void PartTableWidget::setActivePartition(const Partition* p)
     if (isReadOnly())
         return;
 
-    foreach(auto &pw, findChildren<PartWidget*>()) {
+    const auto children = findChildren<PartWidget*>();
+    for (auto &pw : children) {
         if (pw->partition() == p) {
             setActiveWidget(pw);
             return;
@@ -135,7 +138,7 @@ void PartTableWidget::clear()
     // that its event handler is currently running. therefore, do not delete
     // the part widgets here but schedule them for deletion once the app
     // returns to the main loop (and the event handler has finished).
-    foreach(auto &p, childWidgets()) {
+    for (auto &p : childWidgets()) {
         p->setVisible(false);
         p->deleteLater();
         p->setParent(nullptr);

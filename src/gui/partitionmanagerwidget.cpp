@@ -189,7 +189,8 @@ void PartitionManagerWidget::setSelectedDevice(const QString& deviceNode)
 {
     QReadLocker lockDevices(&operationStack().lock());
 
-    foreach(auto &d, operationStack().previewDevices()) {
+    const auto previewDevices = operationStack().previewDevices();
+    for (const auto &d : previewDevices) {
         if (d->deviceNode() == deviceNode) {
             setSelectedDevice(d);
             return;
@@ -266,10 +267,11 @@ void PartitionManagerWidget::updatePartitions()
     treePartitions().addTopLevelItem(deviceItem);
 
     if (selectedDevice()->partitionTable() != nullptr) {
-        foreach(auto const * p, selectedDevice()->partitionTable()->children()) {
+        const auto children = selectedDevice()->partitionTable()->children();
+        for (const auto * p : children) {
             QTreeWidgetItem* item = createTreeWidgetItem(*p);
 
-            for (auto const &child : p->children()) {
+            for (const auto &child : p->children()) {
                 QTreeWidgetItem* childItem = createTreeWidgetItem(*child);
                 item->addChild(childItem);
             }

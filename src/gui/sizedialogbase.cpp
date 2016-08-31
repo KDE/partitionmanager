@@ -339,7 +339,8 @@ void SizeDialogBase::onAlignToggled(bool align)
     dialogWidget().spinCapacity().setSingleStep(capacityStep);
 
     // if align is on, turn off keyboard tracking for all spin boxes to avoid the two clashing
-    foreach(const auto &box, dialogWidget().findChildren<QAbstractSpinBox*>() + detailsWidget().findChildren<QAbstractSpinBox*>())
+    const auto children = dialogWidget().findChildren<QAbstractSpinBox*>() + detailsWidget().findChildren<QAbstractSpinBox*>();
+    for (const auto &box : children)
         box->setKeyboardTracking(!align);
 
     if (align) {

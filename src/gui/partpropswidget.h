@@ -35,7 +35,8 @@ public:
 
         m_PartWidget->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());
         MainWindow* mw = nullptr;
-        foreach( auto &widget, qApp->topLevelWidgets() )
+        const auto widgets = qApp->topLevelWidgets();
+        for (auto &widget : widgets)
         {
             mw = qobject_cast< MainWindow* >( widget );
             if ( mw )

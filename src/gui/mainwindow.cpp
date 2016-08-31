@@ -755,7 +755,8 @@ void MainWindow::updateSeletedDeviceMenu()
 
     devicesMenu->setEnabled(!operationStack().previewDevices().isEmpty());
 
-    foreach(auto const &d, operationStack().previewDevices()) {
+    const auto previewDevices = operationStack().previewDevices();
+    for (auto const &d : previewDevices) {
         QAction* action = new QAction(d->prettyName(), devicesMenu);
         action->setCheckable(true);
         action->setChecked(d->deviceNode() == pmWidget().selectedDevice()->deviceNode());
@@ -773,7 +774,8 @@ void MainWindow::onSelectedDeviceMenuTriggered(bool)
     if (action == nullptr || action->parent() != devicesMenu)
         return;
 
-    foreach(auto &entry, devicesMenu->findChildren<QAction*>())
+    const auto children = devicesMenu->findChildren<QAction*>();
+    for (auto &entry : children)
         entry->setChecked(entry == action);
 
     listDevices().setSelectedDevice(action->data().toString());
@@ -783,7 +785,8 @@ void MainWindow::on_m_ListDevices_selectionChanged(const QString& device_node)
 {
     QMenu* devicesMenu = static_cast<QMenu*>(guiFactory()->container(QStringLiteral("selectedDevice"), this));
 
-    foreach(auto &entry, devicesMenu->findChildren<QAction*>())
+    const auto children = devicesMenu->findChildren<QAction*>();
+    for (auto &entry : children)
         entry->setChecked(entry->data().toString() == device_node);
 }
 
@@ -804,7 +807,8 @@ void MainWindow::onApplyAllOperations()
 {
     QStringList opList;
 
-    foreach(const auto &op, operationStack().operations())
+    const auto operations = operationStack().operations();
+    for (const auto &op : operations)
         opList.append(op->description());
 
     if (KMessageBox::warningContinueCancelList(this,
@@ -1283,7 +1287,8 @@ void MainWindow::checkFileSystemSupport()
     KLocalizedString supportList, supportInNode;
     bool missingSupportTools = false;
 
-    foreach(auto const &d, operationStack().previewDevices()) {
+    const auto previewDevices = operationStack().previewDevices();
+    for (auto const &d : previewDevices ) {
         supportInNode = checkSupportInNode(d->partitionTable());
         if (!supportInNode.isEmpty() && !supportList.isEmpty()) {
             missingSupportTools = true;
