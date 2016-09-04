@@ -54,7 +54,6 @@
 #include <fs/filesystem.h>
 #include <fs/filesystemfactory.h>
 #include <fs/luks.h>
-#include <fs/lvm2_pv.h>
 
 #include <util/helpers.h>
 #include <util/guihelpers.h>

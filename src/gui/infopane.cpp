@@ -127,15 +127,16 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
         createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
     } else if (p.fileSystem().type() == FileSystem::Lvm2_PV) {
+        const FS::lvm2_pv* lvm2PVFs = dynamic_cast<const FS::lvm2_pv*>(&p.fileSystem());
         QString deviceNode = p.partitionPath();
         createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
         createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Available:"), Capacity::formatByteSize(p.available()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Used:"), Capacity::formatByteSize(p.used()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "PE Size:"),  Capacity::formatByteSize(FS::lvm2_pv::getPESize(deviceNode)), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Total PE:"), QString::number(FS::lvm2_pv::getTotalPE(deviceNode)), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Free PE:"),  QString::number(FS::lvm2_pv::getFreePE(deviceNode)), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Allocated PE:"),  QString::number(FS::lvm2_pv::getAllocatedPE(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "PE Size:"),  Capacity::formatByteSize(lvm2PVFs->getPESize(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Total PE:"), QString::number(lvm2PVFs->getTotalPE(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Free PE:"),  QString::number(lvm2PVFs->getFreePE(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Allocated PE:"),  QString::number(lvm2PVFs->getAllocatedPE(deviceNode)), cols(area), x, y);
         createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
