@@ -15,35 +15,32 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(CREATEVOLUMEDIALOG__H)
+#if !defined(RESIZEVOLUMEGROUPDIALOG__H)
 
-#define CREATEVOLUMEDIALOG__H
+#define RESIZEVOLUMEGROUPDIALOG__H
 
-#include "gui/volumedialog.h"
+#include "gui/volumegroupdialog.h"
 
-class CreateVolumeDialog : public VolumeDialog
+class VolumeManagerDevice;
+
+class ResizeVolumeGroupDialog : public VolumeGroupDialog
 {
-    Q_DISABLE_COPY(CreateVolumeDialog)
+    Q_DISABLE_COPY(ResizeVolumeGroupDialog)
 
 public:
-    CreateVolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist, qint32& pesize);
+    ResizeVolumeGroupDialog(QWidget* parent, QString& vgname, QStringList& partlist, VolumeManagerDevice& dev);
 
 protected:
     void accept() override;
     void setupDialog() override;
-    void setupConnections() override;
+    void setupConstraints() override;
 
-protected:
-    void onVGNameChanged(const QString& vgname);
-    void onSpinPESizeChanged(int newsize);
-
-    qint32& peSize() {
-        return m_PESize;
+    VolumeManagerDevice& device() const {
+        return m_Device;
     }
 
-    qint32& m_PESize;
 private:
-    QStringList m_SystemVGList;
+    VolumeManagerDevice& m_Device;
 };
 
 #endif

@@ -15,9 +15,8 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include "gui/volumewidget.h"
-#include "gui/volumedialog.h"
-#include "gui/createvolumedialog.h"
+#include "gui/createvolumegroupdialog.h"
+#include "gui/volumegroupwidget.h"
 
 #include <core/lvmdevice.h>
 #include <fs/lvm2_pv.h>
@@ -29,8 +28,8 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QStringList& pvlist, qint32& pesize) :
-    VolumeDialog(parent, vgname, pvlist),
+CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgname, QStringList& pvlist, qint32& pesize) :
+    VolumeGroupDialog(parent, vgname, pvlist),
     m_PESize(pesize),
     m_SystemVGList(LvmDevice::getVGs())
 {
@@ -47,7 +46,7 @@ CreateVolumeDialog::CreateVolumeDialog(QWidget* parent, QString& vgname, QString
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
-void CreateVolumeDialog::setupDialog()
+void CreateVolumeGroupDialog::setupDialog()
 {
     for (const auto &pvpath : FS::lvm2_pv::getFreePV()) {
         if (!LvmDevice::s_DirtyPVs.contains(pvpath)) {
@@ -56,13 +55,13 @@ void CreateVolumeDialog::setupDialog()
     }
 }
 
-void CreateVolumeDialog::setupConnections()
+void CreateVolumeGroupDialog::setupConnections()
 {
-    connect(&dialogWidget().vgName(), &QLineEdit::textChanged, this, &CreateVolumeDialog::onVGNameChanged);
-    connect(&dialogWidget().spinPESize(), static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &CreateVolumeDialog::onSpinPESizeChanged);
+    connect(&dialogWidget().vgName(), &QLineEdit::textChanged, this, &CreateVolumeGroupDialog::onVGNameChanged);
+    connect(&dialogWidget().spinPESize(), static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &CreateVolumeGroupDialog::onSpinPESizeChanged);
 }
 
-void  CreateVolumeDialog::accept()
+void  CreateVolumeGroupDialog::accept()
 {
     QString& tname = targetName();
     tname = dialogWidget().vgName().text();
@@ -75,7 +74,7 @@ void  CreateVolumeDialog::accept()
     QDialog::accept();
 }
 
-void CreateVolumeDialog::onVGNameChanged(const QString& vgname)
+void CreateVolumeGroupDialog::onVGNameChanged(const QString& vgname)
 {
     if (m_SystemVGList.contains(vgname)) {
         m_IsValidName = false;
@@ -85,7 +84,7 @@ void CreateVolumeDialog::onVGNameChanged(const QString& vgname)
     updateOkButtonStatus();
 }
 
-void CreateVolumeDialog::onSpinPESizeChanged(int newsize)
+void CreateVolumeGroupDialog::onSpinPESizeChanged(int newsize)
 {
     Q_UNUSED(newsize);
     updateOkButtonStatus();

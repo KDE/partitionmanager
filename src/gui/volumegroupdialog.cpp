@@ -15,8 +15,8 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include "gui/volumedialog.h"
-#include "gui/volumewidget.h"
+#include "gui/volumegroupdialog.h"
+#include "gui/volumegroupwidget.h"
 
 #include <core/partitiontable.h>
 #include <core/lvmdevice.h>
@@ -31,14 +31,14 @@
 
 #include <QListWidgetItem>
 
-/** Creates a new VolumeDialog
+/** Creates a new VolumeGroupDialog
     @param parent pointer to the parent widget
     @param vgName Volume Group name
     @param pvList List of LVM Physical Volumes used to create Volume Group
 */
-VolumeDialog::VolumeDialog(QWidget* parent, QString& vgName, QStringList& pvList) :
+VolumeGroupDialog::VolumeGroupDialog(QWidget* parent, QString& vgName, QStringList& pvList) :
     QDialog(parent),
-    m_DialogWidget(new VolumeWidget(this)),
+    m_DialogWidget(new VolumeGroupWidget(this)),
     m_TargetName(vgName),
     m_TargetPVList(pvList),
     m_IsValidSize(false),
@@ -64,14 +64,14 @@ VolumeDialog::VolumeDialog(QWidget* parent, QString& vgName, QStringList& pvList
     setupConnections();
 }
 
-/** Destroys a VolumeDialog */
-VolumeDialog::~VolumeDialog()
+/** Destroys a VolumeGroupDialog */
+VolumeGroupDialog::~VolumeGroupDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "createVolumeDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), "createVolumeGroupDialog");
     kcg.writeEntry("Geometry", saveGeometry());
 }
 
-void VolumeDialog::setupDialog()
+void VolumeGroupDialog::setupDialog()
 {
     dialogWidget().vgName().setText(targetName());
 
@@ -96,24 +96,24 @@ void VolumeDialog::setupDialog()
     resize(dialogWidget().size());
 }
 
-void VolumeDialog::setupConnections()
+void VolumeGroupDialog::setupConnections()
 {
-    connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &VolumeDialog::accept);
-    connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &VolumeDialog::reject);
-    connect(&dialogWidget().volumeType(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VolumeDialog::onVolumeTypeChanged);
+    connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &VolumeGroupDialog::accept);
+    connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &VolumeGroupDialog::reject);
+    connect(&dialogWidget().volumeType(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VolumeGroupDialog::onVolumeTypeChanged);
     connect(&dialogWidget().listPV().listPhysicalVolumes(), &QListWidget::itemChanged,
             this, [=] ( QListWidgetItem*) {
                 updateSizeInfos();
             });
 }
 
-void VolumeDialog::setupConstraints()
+void VolumeGroupDialog::setupConstraints()
 {
     updateSizeInfos();
     updateOkButtonStatus();
 }
 
-void VolumeDialog::updateOkButtonStatus()
+void VolumeGroupDialog::updateOkButtonStatus()
 {
     bool enable = isValidSize();
 
@@ -127,7 +127,7 @@ void VolumeDialog::updateOkButtonStatus()
     okButton->setEnabled(enable);
 }
 
-void VolumeDialog::updateSectorInfos()
+void VolumeGroupDialog::updateSectorInfos()
 {
     qint32 totalSectors = 0;
     // we can't use LvmDevice mothod here because pv that is not in any VG will return 0
@@ -138,7 +138,7 @@ void VolumeDialog::updateSectorInfos()
     dialogWidget().totalSectors().setText(QString::number(totalSectors));
 }
 
-void VolumeDialog::updateSizeInfos()
+void VolumeGroupDialog::updateSizeInfos()
 {
     QStringList checkedPartitions = dialogWidget().listPV().checkedItems();
     m_TotalSize = FS::lvm2_pv::getPVSize(checkedPartitions);
@@ -150,15 +150,15 @@ void VolumeDialog::updateSizeInfos()
     updateOkButtonStatus();
 }
 
-void VolumeDialog::updatePartitionList()
+void VolumeGroupDialog::updatePartitionList()
 {
 }
 
-void VolumeDialog::onPartitionListChanged()
+void VolumeGroupDialog::onPartitionListChanged()
 {
 }
 
-void VolumeDialog::onVolumeTypeChanged(int index)
+void VolumeGroupDialog::onVolumeTypeChanged(int index)
 {
     Q_UNUSED(index)
     updatePartitionList();

@@ -15,9 +15,8 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include "gui/volumewidget.h"
-#include "gui/volumedialog.h"
-#include "gui/resizevolumedialog.h"
+#include "gui/resizevolumegroupdialog.h"
+#include "gui/volumegroupwidget.h"
 
 #include <core/lvmdevice.h>
 #include <core/volumemanagerdevice.h>
@@ -31,12 +30,12 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-/** Creates a new ResizeVolumeDialog
+/** Creates a new ResizeVolumeGroupDialog
     @param parent pointer to the parent widget
     @param dev the Device to show properties for
 */
-ResizeVolumeDialog::ResizeVolumeDialog(QWidget* parent, QString& vgname, QStringList& partlist, VolumeManagerDevice& dev) :
-    VolumeDialog(parent, vgname, partlist),
+ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, QString& vgname, QStringList& partlist, VolumeManagerDevice& dev) :
+    VolumeGroupDialog(parent, vgname, partlist),
     m_Device(dev)
 {
     setWindowTitle(xi18nc("@title:window", "Resize Volume Group"));
@@ -48,7 +47,7 @@ ResizeVolumeDialog::ResizeVolumeDialog(QWidget* parent, QString& vgname, QString
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
-void ResizeVolumeDialog::setupDialog()
+void ResizeVolumeGroupDialog::setupDialog()
 {
     if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
         dialogWidget().listPV().addPartitionList(device().deviceNodes(), true);
@@ -60,15 +59,15 @@ void ResizeVolumeDialog::setupDialog()
     }
 }
 
-void ResizeVolumeDialog::setupConstraints()
+void ResizeVolumeGroupDialog::setupConstraints()
 {
     dialogWidget().vgName().setEnabled(false);
     dialogWidget().spinPESize().setEnabled(false);
     dialogWidget().volumeType().setEnabled(false);
-    VolumeDialog::setupConstraints();
+    VolumeGroupDialog::setupConstraints();
 }
 
-void ResizeVolumeDialog::accept()
+void ResizeVolumeGroupDialog::accept()
 {
     targetPVList() << dialogWidget().listPV().checkedItems();
     QDialog::accept();

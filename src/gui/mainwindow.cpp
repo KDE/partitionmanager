@@ -22,8 +22,8 @@
 #include "gui/applyprogressdialog.h"
 #include "gui/scanprogressdialog.h"
 #include "gui/createpartitiontabledialog.h"
-#include "gui/createvolumedialog.h"
-#include "gui/resizevolumedialog.h"
+#include "gui/createvolumegroupdialog.h"
+#include "gui/resizevolumegroupdialog.h"
 #include "gui/filesystemsupportdialog.h"
 #include "gui/devicepropsdialog.h"
 #include "gui/smartdialog.h"
@@ -1097,7 +1097,7 @@ void MainWindow::onCreateNewVolumeGroup()
     QStringList* pvlist = new QStringList();
     qint32 pesize = 4;
     // *NOTE*: vgname & pvlist will be modified and validated by the dialog
-    QPointer<CreateVolumeDialog> dlg = new CreateVolumeDialog(this, *vgname, *pvlist, pesize);
+    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, *vgname, *pvlist, pesize);
     if (dlg->exec() == QDialog::Accepted) {
         operationStack().push(new CreateVolumeGroupOperation(*vgname, *pvlist, pesize));
     }
@@ -1139,16 +1139,16 @@ void MainWindow::onResizeVolumeGroup()
     if (pmWidget().selectedDevice()->type() == Device::LVM_Device) {
         LvmDevice* tmpDev = dynamic_cast<LvmDevice*>(pmWidget().selectedDevice());
 
-        QString* vgname = new QString(tmpDev->name()); // This line only purpose is to make volumeDialog happy
-        QStringList* pvlist = new QStringList();
-        // *NOTE*: pvlist will be modified and validated by the dialog
+        QString* vgName = new QString(tmpDev->name()); // This line only purpose is to make volumeGroupDialog happy
+        QStringList* pvList = new QStringList();
+        // *NOTE*: pvList will be modified and validated by the dialog
 
-        QPointer<ResizeVolumeDialog> dlg = new ResizeVolumeDialog(this, *vgname, *pvlist, *tmpDev);
+        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, *vgName, *pvList, *tmpDev);
         if (dlg->exec() == QDialog::Accepted) {
-            operationStack().push(new ResizeVolumeGroupOperation(*tmpDev, *pvlist));
+            operationStack().push(new ResizeVolumeGroupOperation(*tmpDev, *pvList));
         }
         delete dlg;
-        delete pvlist;
+        delete pvList;
     }
 }
 

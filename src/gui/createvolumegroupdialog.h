@@ -15,4 +15,35 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#include "gui/volumewidget.h"
+#if !defined(CREATEVOLUMEGROUPDIALOG__H)
+
+#define CREATEVOLUMEGROUPDIALOG__H
+
+#include "gui/volumegroupdialog.h"
+
+class CreateVolumeGroupDialog : public VolumeGroupDialog
+{
+    Q_DISABLE_COPY(CreateVolumeGroupDialog)
+
+public:
+    CreateVolumeGroupDialog(QWidget* parent, QString& vgname, QStringList& pvlist, qint32& pesize);
+
+protected:
+    void accept() override;
+    void setupDialog() override;
+    void setupConnections() override;
+
+protected:
+    void onVGNameChanged(const QString& vgname);
+    void onSpinPESizeChanged(int newsize);
+
+    qint32& peSize() {
+        return m_PESize;
+    }
+
+    qint32& m_PESize;
+private:
+    QStringList m_SystemVGList;
+};
+
+#endif

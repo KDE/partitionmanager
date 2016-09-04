@@ -15,25 +15,25 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(VOLUMEDIALOG__H)
+#if !defined(VOLUMEGROUPDIALOG__H)
 
-#define VOLUMEDIALOG__H
+#define VOLUMEGROUPDIALOG__H
 
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
 
-class VolumeWidget;
+class VolumeGroupWidget;
 class Partition;
 
-class VolumeDialog : public QDialog
+class VolumeGroupDialog : public QDialog
 {
-    Q_DISABLE_COPY(VolumeDialog)
+    Q_DISABLE_COPY(VolumeGroupDialog)
 
 public:
-    VolumeDialog(QWidget* parent, QString& vgName, QStringList& pvList);
-    ~VolumeDialog();
+    VolumeGroupDialog(QWidget* parent, QString& vgName, QStringList& pvList);
+    ~VolumeGroupDialog();
 
 protected:
     virtual void setupDialog();
@@ -47,11 +47,11 @@ protected:
 
     virtual void onVolumeTypeChanged(int index);
 
-    VolumeWidget& dialogWidget() {
+    VolumeGroupWidget& dialogWidget() {
         Q_ASSERT(m_DialogWidget);
         return *m_DialogWidget;
     }
-    const VolumeWidget& dialogWidget() const {
+    const VolumeGroupWidget& dialogWidget() const {
         Q_ASSERT(m_DialogWidget);
         return *m_DialogWidget;
     }
@@ -84,7 +84,7 @@ protected:
     virtual void onPartitionListChanged();
 
 protected:
-    VolumeWidget* m_DialogWidget;
+    VolumeGroupWidget* m_DialogWidget;
     QString& m_TargetName;
     QStringList& m_TargetPVList;
     bool m_IsValidSize;
