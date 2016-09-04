@@ -513,7 +513,9 @@ void MainWindow::enableActions()
             ->setEnabled(CreateVolumeGroupOperation::canCreate());
 
     bool lvmDevice = pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device;
-    bool removable = pmWidget().selectedDevice() && !LvmDevice::getLVs(pmWidget().selectedDevice()->name()).count();
+    bool removable = false;
+    if (lvmDevice && !LvmDevice::getLVs(pmWidget().selectedDevice()->name()).count())
+        removable = true;
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setEnabled(removable);
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setVisible(lvmDevice);
 
@@ -524,7 +526,6 @@ void MainWindow::enableActions()
 
     actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setEnabled(lvmDevice);
     actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setVisible(lvmDevice);
-
 
     const Partition* part = pmWidget().selectedPartition();
 

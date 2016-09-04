@@ -118,11 +118,11 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
         QString deviceNode = p.partitionPath();
         createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
         createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Cipher name:"), luksFs->getCipherName(deviceNode), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Cipher mode:"), luksFs->getCipherMode(deviceNode), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Hash:"), luksFs->getHashName(deviceNode), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Key size:"), QString::number(luksFs->getKeySize(deviceNode)), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Payload offset:"), Capacity::formatByteSize(luksFs->getPayloadOffset(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Cipher name:"), luksFs->cipherName(), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Cipher mode:"), luksFs->cipherMode(), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Hash:"), luksFs->hashName(), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Key size:"), QString::number(luksFs->keySize()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Payload offset:"), Capacity::formatByteSize(luksFs->payloadOffset()), cols(area), x, y);
         createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
