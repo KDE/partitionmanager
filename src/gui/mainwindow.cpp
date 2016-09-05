@@ -570,6 +570,8 @@ void MainWindow::enableActions()
         const FS::luks* luksFs = dynamic_cast<const FS::luks*>(&fsRef);
 
         actionCollection()->action(QStringLiteral("decryptPartition"))
+                ->setVisible(true);
+        actionCollection()->action(QStringLiteral("decryptPartition"))
                 ->setEnabled(luksFs && !operationStack().contains(part) &&
                              (luksFs->canCryptOpen(part->partitionPath()) ||
                               luksFs->canCryptClose(part->partitionPath())));
@@ -583,6 +585,8 @@ void MainWindow::enableActions()
     else {
         actionCollection()->action(QStringLiteral("decryptPartition"))
                 ->setEnabled(false);
+        actionCollection()->action(QStringLiteral("decryptPartition"))
+                ->setVisible(false);
     }
 
 
@@ -1116,7 +1120,7 @@ void MainWindow::onRemoveVolumeGroup()
     Device* tmpDev = pmWidget().selectedDevice();
     if (tmpDev->type() == Device::LVM_Device) {
         LvmDevice* d = static_cast<LvmDevice*>(tmpDev);
-        if(!d->LVPathList()->count()) {
+        if(d->LVPathList()->count()) {
             KMessageBox::error(this, xi18nc("@info", "Could not remove <filename>%1</filename>. There are still Logical Volumes on the Volume Group.", tmpDev->name()), i18nc("@title:window", "Error Removing Volume Group"));
         } else {
             operationStack().push(new RemoveVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) ));
