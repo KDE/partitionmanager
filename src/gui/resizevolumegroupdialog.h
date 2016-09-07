@@ -21,6 +21,7 @@
 
 #include "gui/volumegroupdialog.h"
 
+class Device;
 class VolumeManagerDevice;
 
 class ResizeVolumeGroupDialog : public VolumeGroupDialog
@@ -28,7 +29,7 @@ class ResizeVolumeGroupDialog : public VolumeGroupDialog
     Q_DISABLE_COPY(ResizeVolumeGroupDialog)
 
 public:
-    ResizeVolumeGroupDialog(QWidget* parent, QString& vgname, QStringList& partlist, VolumeManagerDevice& dev);
+    ResizeVolumeGroupDialog(QWidget* parent, const QList<Device*>& devices, QString& vgName, QStringList& partList, VolumeManagerDevice& d);
 
 protected:
     void accept() override;
@@ -40,6 +41,7 @@ protected:
     }
 
 private:
+    const QList<Device*>& m_Devices; // List of all devices found on the system
     VolumeManagerDevice& m_Device;
 };
 

@@ -28,9 +28,10 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgname, QStringList& pvlist, qint32& pesize) :
-    VolumeGroupDialog(parent, vgname, pvlist),
-    m_PESize(pesize),
+CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, const QList<Device*>& devices, QString& vgName, QStringList& pvList, qint32& peSize) :
+    VolumeGroupDialog(parent, vgName, pvList),
+    m_PESize(peSize),
+    m_Devices(devices),
     m_SystemVGList(LvmDevice::getVGs())
 {
     setWindowTitle(xi18nc("@title:window", "Create new Volume Group"));
@@ -48,9 +49,9 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgnam
 
 void CreateVolumeGroupDialog::setupDialog()
 {
-    for (const auto &pvpath : FS::lvm2_pv::getFreePV()) {
-        if (!LvmDevice::s_DirtyPVs.contains(pvpath)) {
-            dialogWidget().listPV().addPartition(pvpath, false);
+    for (const auto &p : FS::lvm2_pv::getFreePV(m_Devices)) {
+        if (!LvmDevice::s_DirtyPVs.contains(p->deviceNode())) {
+            dialogWidget().listPV().addPartition(p->deviceNode(), false);
         }
     }
 }

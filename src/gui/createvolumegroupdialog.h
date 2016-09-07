@@ -21,12 +21,14 @@
 
 #include "gui/volumegroupdialog.h"
 
+class Device;
+
 class CreateVolumeGroupDialog : public VolumeGroupDialog
 {
     Q_DISABLE_COPY(CreateVolumeGroupDialog)
 
 public:
-    CreateVolumeGroupDialog(QWidget* parent, QString& vgname, QStringList& pvlist, qint32& pesize);
+    CreateVolumeGroupDialog(QWidget* parent, const QList<Device*>& devices, QString& vgName, QStringList& pvList, qint32& peSize);
 
 protected:
     void accept() override;
@@ -42,6 +44,8 @@ protected:
     }
 
     qint32& m_PESize;
+    const QList<Device*>& m_Devices; // List of all devices found on the system
+
 private:
     QStringList m_SystemVGList;
 };

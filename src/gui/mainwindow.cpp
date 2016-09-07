@@ -1106,7 +1106,7 @@ void MainWindow::onCreateNewVolumeGroup()
     QStringList* pvlist = new QStringList();
     qint32 pesize = 4;
     // *NOTE*: vgname & pvlist will be modified and validated by the dialog
-    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, *vgname, *pvlist, pesize);
+    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, operationStack().previewDevices(), *vgname, *pvlist, pesize);
     if (dlg->exec() == QDialog::Accepted) {
         operationStack().push(new CreateVolumeGroupOperation(*vgname, *pvlist, pesize));
     }
@@ -1153,7 +1153,7 @@ void MainWindow::onResizeVolumeGroup()
         QStringList* pvList = new QStringList();
         // *NOTE*: pvList will be modified and validated by the dialog
 
-        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, *vgName, *pvList, *tmpDev);
+        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, operationStack().previewDevices(), *vgName, *pvList, *tmpDev);
         if (dlg->exec() == QDialog::Accepted) {
             operationStack().push(new ResizeVolumeGroupOperation(*tmpDev, *pvList));
         }
@@ -1253,7 +1253,7 @@ static KLocalizedString checkSupportInNode(const PartitionNode* parent)
 
     KLocalizedString rval;
 
-    for (auto const &node : parent->children()) {
+    for (const auto &node : parent->children()) {
         const Partition* p = dynamic_cast<const Partition*>(node);
 
         if (p == nullptr)

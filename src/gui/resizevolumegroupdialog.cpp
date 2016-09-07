@@ -34,9 +34,10 @@
     @param parent pointer to the parent widget
     @param dev the Device to show properties for
 */
-ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, QString& vgname, QStringList& partlist, VolumeManagerDevice& dev) :
-    VolumeGroupDialog(parent, vgname, partlist),
-    m_Device(dev)
+ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, const QList<Device*>& devices, QString& vgName, QStringList& partList, VolumeManagerDevice& d) :
+    VolumeGroupDialog(parent, vgName, partList),
+    m_Devices(devices),
+    m_Device(d)
 {
     setWindowTitle(xi18nc("@title:window", "Resize Volume Group"));
 
@@ -51,9 +52,9 @@ void ResizeVolumeGroupDialog::setupDialog()
 {
     if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
         dialogWidget().listPV().addPartitionList(device().deviceNodes(), true);
-        for (const auto &pvpath : FS::lvm2_pv::getFreePV()) {
-            if (!LvmDevice::s_DirtyPVs.contains(pvpath)) {
-                dialogWidget().listPV().addPartition(pvpath, false);
+        for (const auto &p : FS::lvm2_pv::getFreePV(m_Devices)) {
+            if (!LvmDevice::s_DirtyPVs.contains(p->deviceNode())) {
+                dialogWidget().listPV().addPartition(p->deviceNode(), false);
             }
         }
     }
