@@ -49,7 +49,7 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, const QList<De
 
 void CreateVolumeGroupDialog::setupDialog()
 {
-    for (const auto &p : FS::lvm2_pv::getFreePV(m_Devices)) {
+    for (const auto &p : FS::lvm2_pv::getPVs(m_Devices)) {
         if (!LvmDevice::s_DirtyPVs.contains(p->deviceNode())) {
             dialogWidget().listPV().addPartition(p->deviceNode(), false);
         }

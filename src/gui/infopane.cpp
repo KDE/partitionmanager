@@ -136,9 +136,9 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
         createLabels(i18nc("@label partition", "Available:"), Capacity::formatByteSize(p.available()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Used:"), Capacity::formatByteSize(p.used()), cols(area), x, y);
         createLabels(i18nc("@label partition", "PE Size:"), Capacity::formatByteSize(lvm2PVFs->peSize()), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Total PE:"), QString::number(lvm2PVFs->getTotalPE(deviceNode)), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Free PE:"), QString::number(lvm2PVFs->getFreePE(deviceNode)), cols(area), x, y);
-        createLabels(i18nc("@label partition", "Allocated PE:"), QString::number(lvm2PVFs->getAllocatedPE(deviceNode)), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Total PE:"), QString::number(lvm2PVFs->totalPE()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Free PE:"), QString::number(lvm2PVFs->freePE()), cols(area), x, y);
+        createLabels(i18nc("@label partition", "Allocated PE:"), QString::number(lvm2PVFs->allocatedPE()), cols(area), x, y);
         createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);

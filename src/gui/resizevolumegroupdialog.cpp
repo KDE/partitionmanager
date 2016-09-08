@@ -32,7 +32,7 @@
 
 /** Creates a new ResizeVolumeGroupDialog
     @param parent pointer to the parent widget
-    @param dev the Device to show properties for
+    @param d the Device to show properties for
 */
 ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, const QList<Device*>& devices, QString& vgName, QStringList& partList, VolumeManagerDevice& d) :
     VolumeGroupDialog(parent, vgName, partList),
@@ -52,7 +52,7 @@ void ResizeVolumeGroupDialog::setupDialog()
 {
     if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
         dialogWidget().listPV().addPartitionList(device().deviceNodes(), true);
-        for (const auto &p : FS::lvm2_pv::getFreePV(m_Devices)) {
+        for (const auto &p : FS::lvm2_pv::getPVs(m_Devices)) {
             if (!LvmDevice::s_DirtyPVs.contains(p->deviceNode())) {
                 dialogWidget().listPV().addPartition(p->deviceNode(), false);
             }
