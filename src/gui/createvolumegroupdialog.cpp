@@ -19,7 +19,6 @@
 #include "gui/volumegroupwidget.h"
 
 #include <core/lvmdevice.h>
-#include <fs/lvm2_pv.h>
 
 #include <util/capacity.h>
 #include <util/helpers.h>
@@ -28,11 +27,11 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, const QList<Device*>& devices, QString& vgName, QStringList& pvList, qint32& peSize) :
-    VolumeGroupDialog(parent, vgName, pvList),
-    m_PESize(peSize),
-    m_Devices(devices),
-    m_SystemVGList(LvmDevice::getVGs())
+CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, FS::lvm2_pv::PhysicalVolumes physicalVolumes, QString& vgName, QStringList& pvList, qint32& peSize)
+    : VolumeGroupDialog(parent, vgName, pvList)
+    , m_PESize(peSize)
+    , m_SystemVGList(LvmDevice::getVGs())
+    , m_PhysicalVolumes(physicalVolumes)
 {
     setWindowTitle(xi18nc("@title:window", "Create new Volume Group"));
 
@@ -49,9 +48,9 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, const QList<De
 
 void CreateVolumeGroupDialog::setupDialog()
 {
-    for (const auto &p : FS::lvm2_pv::getPVs(m_Devices)) {
-        if (!LvmDevice::s_DirtyPVs.contains(p->deviceNode())) {
-            dialogWidget().listPV().addPartition(p->deviceNode(), false);
+    for (const auto &p : m_PhysicalVolumes) {
+        if (!LvmDevice::s_DirtyPVs.contains(p.second->deviceNode())) {
+            dialogWidget().listPV().addPartition(p.second->deviceNode(), false);
         }
     }
 }

@@ -19,6 +19,8 @@
 
 #define CREATEVOLUMEGROUPDIALOG__H
 
+#include <fs/lvm2_pv.h>
+
 #include "gui/volumegroupdialog.h"
 
 class Device;
@@ -28,7 +30,7 @@ class CreateVolumeGroupDialog : public VolumeGroupDialog
     Q_DISABLE_COPY(CreateVolumeGroupDialog)
 
 public:
-    CreateVolumeGroupDialog(QWidget* parent, const QList<Device*>& devices, QString& vgName, QStringList& pvList, qint32& peSize);
+    CreateVolumeGroupDialog(QWidget* parent, FS::lvm2_pv::PhysicalVolumes physicalVolumes, QString& vgName, QStringList& pvList, qint32& peSize);
 
 protected:
     void accept() override;
@@ -44,10 +46,10 @@ protected:
     }
 
     qint32& m_PESize;
-    const QList<Device*>& m_Devices; // List of all devices found on the system
 
 private:
     QStringList m_SystemVGList;
+    FS::lvm2_pv::PhysicalVolumes m_PhysicalVolumes; // List of all devices found on the system
 };
 
 #endif
