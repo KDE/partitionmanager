@@ -48,11 +48,9 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, FS::lvm2_pv::P
 
 void CreateVolumeGroupDialog::setupDialog()
 {
-    for (const auto &p : m_PhysicalVolumes) {
-        if (!LvmDevice::s_DirtyPVs.contains(p.second->deviceNode())) {
-            dialogWidget().listPV().addPartition(p.second->deviceNode(), false);
-        }
-    }
+    for (const auto &p : m_PhysicalVolumes)
+        if (p.first == QString() && !LvmDevice::s_DirtyPVs.contains(p.second->deviceNode()))
+            dialogWidget().listPV().addPartition(*p.second, false);
 }
 
 void CreateVolumeGroupDialog::setupConnections()

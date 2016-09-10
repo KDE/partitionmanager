@@ -21,6 +21,8 @@
 
 #include "ui_listphysicalvolumesbase.h"
 
+#include <core/partition.h>
+
 #include <QWidget>
 
 class Device;
@@ -34,8 +36,7 @@ class ListPhysicalVolumes : public QWidget, public Ui::ListPhysicalVolumesBase
 public:
     ListPhysicalVolumes(QWidget* parent = nullptr);
 
-    void addPartitionList(const QStringList& partlist, bool checked);
-    void addPartition(const QString& part, bool checked);
+    void addPartition(const Partition& p, bool checked);
 
     QStringList checkedItems();
 

@@ -51,11 +51,11 @@ ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, FS::lvm2_pv::P
 void ResizeVolumeGroupDialog::setupDialog()
 {
     if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
-        dialogWidget().listPV().addPartitionList(device().deviceNodes(), true);
         for (const auto &p : m_PhysicalVolumes) {
-            if (!LvmDevice::s_DirtyPVs.contains(p.second->deviceNode())) {
-                dialogWidget().listPV().addPartition(p.second->deviceNode(), false);
-            }
+            if (p.first == device().name())
+                dialogWidget().listPV().addPartition(*p.second, true);
+            else if (p.first == QString() && !LvmDevice::s_DirtyPVs.contains(p.second->deviceNode())) // TODO: Remove LVM PVs in current VG
+                dialogWidget().listPV().addPartition(*p.second, false);
         }
     }
 }

@@ -49,7 +49,7 @@ protected:
 
 private:
     QStringList m_SystemVGList;
-    FS::lvm2_pv::PhysicalVolumes m_PhysicalVolumes; // List of all devices found on the system
+    const FS::lvm2_pv::PhysicalVolumes m_PhysicalVolumes; // List of all devices found on the system
 };
 
 #endif

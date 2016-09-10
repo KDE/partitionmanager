@@ -24,10 +24,10 @@
 class ListPhysicalVolumeWidgetItem : public QListWidgetItem
 {
 public:
-    ListPhysicalVolumeWidgetItem(const QString& pvnode, bool checked) :
-        QListWidgetItem(pvnode + QStringLiteral(" | ") + Capacity::formatByteSize(FS::lvm2_pv::getPVSize(pvnode)))
+    ListPhysicalVolumeWidgetItem(const Partition& p, bool checked) :
+        QListWidgetItem(p.deviceNode() + QStringLiteral(" | ") + Capacity::formatByteSize(p.capacity()))
     {
-        setToolTip(pvnode);
+        setToolTip(p.deviceNode());
         setSizeHint(QSize(0, 32));
         setCheckState( checked ? Qt::Checked : Qt::Unchecked);
     }
@@ -40,16 +40,9 @@ ListPhysicalVolumes::ListPhysicalVolumes(QWidget* parent) :
     setupUi(this);
 }
 
-void ListPhysicalVolumes::addPartitionList(const QStringList& partlist, bool checked)
+void ListPhysicalVolumes::addPartition(const Partition& p, bool checked)
 {
-    for (auto const &part : partlist) {
-        addPartition(part, checked);
-    }
-}
-
-void ListPhysicalVolumes::addPartition(const QString& part, bool checked)
-{
-    ListPhysicalVolumeWidgetItem *item = new ListPhysicalVolumeWidgetItem(part, checked);
+    ListPhysicalVolumeWidgetItem *item = new ListPhysicalVolumeWidgetItem(p, checked);
     listPhysicalVolumes().addItem(item);
 }
 
