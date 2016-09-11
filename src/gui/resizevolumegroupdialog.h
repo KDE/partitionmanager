@@ -31,7 +31,7 @@ class ResizeVolumeGroupDialog : public VolumeGroupDialog
     Q_DISABLE_COPY(ResizeVolumeGroupDialog)
 
 public:
-    ResizeVolumeGroupDialog(QWidget* parent, FS::lvm2_pv::PhysicalVolumes physicalVolumes, QString& vgName, QStringList& partList, VolumeManagerDevice& d);
+    ResizeVolumeGroupDialog(QWidget* parent, QString& vgName, QStringList& partList, VolumeManagerDevice& d, FS::lvm2_pv::PhysicalVolumes physicalVolumes);
 
 protected:
     void accept() override;

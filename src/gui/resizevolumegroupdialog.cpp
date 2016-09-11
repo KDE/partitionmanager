@@ -34,7 +34,7 @@
     @param parent pointer to the parent widget
     @param d the Device to show properties for
 */
-ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, FS::lvm2_pv::PhysicalVolumes physicalVolumes, QString& vgName, QStringList& partList, VolumeManagerDevice& d)
+ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, QString& vgName, QStringList& partList, VolumeManagerDevice& d, FS::lvm2_pv::PhysicalVolumes physicalVolumes)
     : VolumeGroupDialog(parent, vgName, partList)
     , m_Device(d)
     , m_PhysicalVolumes(physicalVolumes)

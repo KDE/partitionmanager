@@ -27,11 +27,11 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, FS::lvm2_pv::PhysicalVolumes physicalVolumes, QString& vgName, QStringList& pvList, qint32& peSize)
+CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QStringList& pvList, qint32& peSize, FS::lvm2_pv::PhysicalVolumes physicalVolumes, QList<Device*> devices)
     : VolumeGroupDialog(parent, vgName, pvList)
     , m_PESize(peSize)
-    , m_SystemVGList(LvmDevice::getVGs())
     , m_PhysicalVolumes(physicalVolumes)
+    , m_Devices(devices)
 {
     setWindowTitle(xi18nc("@title:window", "Create new Volume Group"));
 
@@ -74,10 +74,15 @@ void  CreateVolumeGroupDialog::accept()
 
 void CreateVolumeGroupDialog::onVGNameChanged(const QString& vgname)
 {
-    if (m_SystemVGList.contains(vgname)) {
-        m_IsValidName = false;
-    } else {
-        m_IsValidName = true;
+    for (const auto &d : m_Devices) {
+        if (dynamic_cast<LvmDevice*>(d)) {
+            if (d->name() == vgname) {
+                m_IsValidName = false;
+                break;
+            }
+            else
+                m_IsValidName = true;
+        }
     }
     updateOkButtonStatus();
 }
