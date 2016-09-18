@@ -48,7 +48,7 @@ QList<const Partition *> ListPhysicalVolumes::checkedItems()
 }
 
 ListPhysicalVolumeWidgetItem::ListPhysicalVolumeWidgetItem(const Partition& p, bool checked)
-    : QListWidgetItem(xi18nc("@item:inlistbox ", "%1 | %2",  p.deviceNode(), Capacity::formatByteSize(p.capacity())))
+    : QListWidgetItem(xi18nc("@item:inlistbox Device | Capacity", "%1 | %2",  p.deviceNode(), Capacity::formatByteSize(p.capacity())))
     , m_Partition(&p)
 {
     setToolTip(p.deviceNode());
