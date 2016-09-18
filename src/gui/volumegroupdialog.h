@@ -32,7 +32,7 @@ class VolumeGroupDialog : public QDialog
     Q_DISABLE_COPY(VolumeGroupDialog)
 
 public:
-    VolumeGroupDialog(QWidget* parent, QString& vgName, QStringList& pvList);
+    VolumeGroupDialog(QWidget* parent, QString& vgName, QList<const Partition*>& pvList);
     ~VolumeGroupDialog();
 
 protected:
@@ -64,11 +64,11 @@ protected:
         return m_TargetName;
     }
 
-    QStringList& targetPVList() {
+    QList<const Partition*>& targetPVList() {
         return m_TargetPVList;
     }
 
-    const QStringList& targetPVList() const {
+    const QList<const Partition*>& targetPVList() const {
         return m_TargetPVList;
     }
 
@@ -86,7 +86,7 @@ protected:
 protected:
     VolumeGroupWidget* m_DialogWidget;
     QString& m_TargetName;
-    QStringList& m_TargetPVList;
+    QList<const Partition*>& m_TargetPVList;
     bool m_IsValidSize;
     bool m_IsValidName;
 

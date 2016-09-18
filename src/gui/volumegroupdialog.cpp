@@ -36,7 +36,7 @@
     @param vgName Volume Group name
     @param pvList List of LVM Physical Volumes used to create Volume Group
 */
-VolumeGroupDialog::VolumeGroupDialog(QWidget* parent, QString& vgName, QStringList& pvList) :
+VolumeGroupDialog::VolumeGroupDialog(QWidget* parent, QString& vgName, QList<const Partition*>& pvList) :
     QDialog(parent),
     m_DialogWidget(new VolumeGroupWidget(this)),
     m_TargetName(vgName),
@@ -140,8 +140,11 @@ void VolumeGroupDialog::updateSectorInfos()
 
 void VolumeGroupDialog::updateSizeInfos()
 {
-    QStringList checkedPartitions = dialogWidget().listPV().checkedItems();
-    m_TotalSize = FS::lvm2_pv::getPVSize(checkedPartitions);
+    const QList <const Partition *> checkedPartitions = dialogWidget().listPV().checkedItems();
+    m_TotalSize = 0;
+    for (const auto &p : checkedPartitions)
+        m_TotalSize += p->capacity() - p->capacity() % (dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Byte, Capacity::MiB)); // subtract space which is too small to hold PE
+
     dialogWidget().totalSize().setText(Capacity::formatByteSize(m_TotalSize));
 
     //Probably a bad design for updating state here; the state should be changed inside the update button function.

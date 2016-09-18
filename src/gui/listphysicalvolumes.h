@@ -29,6 +29,16 @@ class Device;
 class QPoint;
 class KActionCollection;
 
+class ListPhysicalVolumeWidgetItem : public QListWidgetItem
+{
+public:
+    ListPhysicalVolumeWidgetItem(const Partition& p, bool checked);
+    const Partition* partition() const { return m_Partition; }
+
+private:
+    const Partition* m_Partition;
+};
+
 class ListPhysicalVolumes : public QWidget, public Ui::ListPhysicalVolumesBase
 {
     Q_DISABLE_COPY(ListPhysicalVolumes)
@@ -38,7 +48,7 @@ public:
 
     void addPartition(const Partition& p, bool checked);
 
-    QStringList checkedItems();
+    QList<const Partition *> checkedItems();
 
     QListWidget& listPhysicalVolumes() {
         Q_ASSERT(m_ListPhysicalVolumes);

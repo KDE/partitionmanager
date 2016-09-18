@@ -1102,17 +1102,32 @@ void MainWindow::onExportPartitionTable()
 
 void MainWindow::onCreateNewVolumeGroup()
 {
-    QString* vgname = new QString();
-    QStringList* pvlist = new QStringList();
-    qint32 pesize = 4;
-    // *NOTE*: vgname & pvlist will be modified and validated by the dialog
-    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, *vgname, *pvlist, pesize, operationStack().physicalVolumes(), operationStack().previewDevices());
-    if (dlg->exec() == QDialog::Accepted) {
-        operationStack().push(new CreateVolumeGroupOperation(*vgname, *pvlist, pesize));
-    }
+    QString vgName;
+    QList<const Partition*> pvList;
+    qint32 peSize = 4;
+    // *NOTE*: vgName & pvList will be modified and validated by the dialog
+    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList, peSize, operationStack().physicalVolumes(), operationStack().previewDevices());
+    if (dlg->exec() == QDialog::Accepted)
+        operationStack().push(new CreateVolumeGroupOperation(vgName, pvList, peSize));
+
     delete dlg;
-    delete vgname;
-    delete pvlist;
+}
+
+void MainWindow::onResizeVolumeGroup()
+{
+    if (pmWidget().selectedDevice()->type() == Device::LVM_Device) {
+        LvmDevice* tmpDev = dynamic_cast<LvmDevice*>(pmWidget().selectedDevice());
+
+        QString* vgName = new QString(tmpDev->name()); // This line only purpose is to make volumeGroupDialog happy
+        QList<const Partition*> pvList;
+        // *NOTE*: pvList will be modified and validated by the dialog
+
+        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, *vgName, pvList, *tmpDev, operationStack().physicalVolumes());
+        if (dlg->exec() == QDialog::Accepted)
+            operationStack().push(new ResizeVolumeGroupOperation(*tmpDev, pvList));
+
+        delete dlg;
+    }
 }
 
 void MainWindow::onRemoveVolumeGroup()
@@ -1141,24 +1156,6 @@ void MainWindow::onDeactivateVolumeGroup()
         }
         delete tmpReport;
         pmWidget().updatePartitions();
-    }
-}
-
-void MainWindow::onResizeVolumeGroup()
-{
-    if (pmWidget().selectedDevice()->type() == Device::LVM_Device) {
-        LvmDevice* tmpDev = dynamic_cast<LvmDevice*>(pmWidget().selectedDevice());
-
-        QString* vgName = new QString(tmpDev->name()); // This line only purpose is to make volumeGroupDialog happy
-        QStringList* pvList = new QStringList();
-        // *NOTE*: pvList will be modified and validated by the dialog
-
-        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, *vgName, *pvList, *tmpDev, operationStack().physicalVolumes());
-        if (dlg->exec() == QDialog::Accepted) {
-            operationStack().push(new ResizeVolumeGroupOperation(*tmpDev, *pvList));
-        }
-        delete dlg;
-        delete pvList;
     }
 }
 

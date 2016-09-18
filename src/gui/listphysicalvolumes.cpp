@@ -21,17 +21,7 @@
 #include <util/globallog.h>
 #include <util/capacity.h>
 
-class ListPhysicalVolumeWidgetItem : public QListWidgetItem
-{
-public:
-    ListPhysicalVolumeWidgetItem(const Partition& p, bool checked) :
-        QListWidgetItem(p.deviceNode() + QStringLiteral(" | ") + Capacity::formatByteSize(p.capacity()))
-    {
-        setToolTip(p.deviceNode());
-        setSizeHint(QSize(0, 32));
-        setCheckState( checked ? Qt::Checked : Qt::Unchecked);
-    }
-};
+
 
 ListPhysicalVolumes::ListPhysicalVolumes(QWidget* parent) :
     QWidget(parent),
@@ -46,15 +36,22 @@ void ListPhysicalVolumes::addPartition(const Partition& p, bool checked)
     listPhysicalVolumes().addItem(item);
 }
 
-QStringList ListPhysicalVolumes::checkedItems()
+QList<const Partition *> ListPhysicalVolumes::checkedItems()
 {
-    QStringList rlist = QStringList();
+    QList<const Partition *> partitionList;
     for (int i = 0; i < listPhysicalVolumes().count(); i++) {
-        QListWidgetItem* item = listPhysicalVolumes().item(i);
-        if(item && item->checkState() == Qt::Checked) {
-            rlist << item->text().split(QStringLiteral("|"))[0].trimmed();
-        }
+        ListPhysicalVolumeWidgetItem* item = dynamic_cast<ListPhysicalVolumeWidgetItem*>(listPhysicalVolumes().item(i));
+        if(item && item->checkState() == Qt::Checked)
+            partitionList.append(item->partition());
     }
-    return rlist;
+    return partitionList;
 }
 
+ListPhysicalVolumeWidgetItem::ListPhysicalVolumeWidgetItem(const Partition& p, bool checked)
+    : QListWidgetItem(p.deviceNode() + QStringLiteral(" | ") + Capacity::formatByteSize(p.capacity()))
+    , m_Partition(&p)
+{
+    setToolTip(p.deviceNode());
+    setSizeHint(QSize(0, 32));
+    setCheckState( checked ? Qt::Checked : Qt::Unchecked);
+}

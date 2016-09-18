@@ -27,7 +27,7 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QStringList& pvList, qint32& peSize, FS::lvm2_pv::PhysicalVolumes physicalVolumes, QList<Device*> devices)
+CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QList<const Partition*>& pvList, qint32& peSize, FS::lvm2_pv::PhysicalVolumes physicalVolumes, QList<Device*> devices)
     : VolumeGroupDialog(parent, vgName, pvList)
     , m_PESize(peSize)
     , m_PhysicalVolumes(physicalVolumes)
@@ -49,7 +49,7 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgNam
 void CreateVolumeGroupDialog::setupDialog()
 {
     for (const auto &p : m_PhysicalVolumes)
-        if (p.first == QString() && !LvmDevice::s_DirtyPVs.contains(p.second->deviceNode()))
+        if (p.first == QString() && !LvmDevice::s_DirtyPVs.contains(p.second))
             dialogWidget().listPV().addPartition(*p.second, false);
 }
 

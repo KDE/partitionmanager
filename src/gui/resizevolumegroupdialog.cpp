@@ -34,7 +34,7 @@
     @param parent pointer to the parent widget
     @param d the Device to show properties for
 */
-ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, QString& vgName, QStringList& partList, VolumeManagerDevice& d, FS::lvm2_pv::PhysicalVolumes physicalVolumes)
+ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, QString& vgName, QList<const Partition*>& partList, VolumeManagerDevice& d, FS::lvm2_pv::PhysicalVolumes physicalVolumes)
     : VolumeGroupDialog(parent, vgName, partList)
     , m_Device(d)
     , m_PhysicalVolumes(physicalVolumes)
@@ -54,7 +54,7 @@ void ResizeVolumeGroupDialog::setupDialog()
         for (const auto &p : m_PhysicalVolumes) {
             if (p.first == device().name())
                 dialogWidget().listPV().addPartition(*p.second, true);
-            else if (p.first == QString() && !LvmDevice::s_DirtyPVs.contains(p.second->deviceNode())) // TODO: Remove LVM PVs in current VG
+            else if (p.first == QString() && !LvmDevice::s_DirtyPVs.contains(p.second)) // TODO: Remove LVM PVs in current VG
                 dialogWidget().listPV().addPartition(*p.second, false);
         }
     }
