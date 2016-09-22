@@ -28,6 +28,7 @@
 #include <fs/lvm2_pv.h>
 
 #include <util/capacity.h>
+#include <util/helpers.h>
 
 #include <QFontDatabase>
 #include <QFrame>
@@ -127,9 +128,8 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
         createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
     } else if (p.fileSystem().type() == FileSystem::Lvm2_PV) {
-        const FS::lvm2_pv* lvm2PVFs = p.roles().has(PartitionRole::Luks) ?
-                    static_cast<const FS::lvm2_pv*>(static_cast<const FS::luks*>(&p.fileSystem())->innerFS()) : // LVM inside LUKS partition
-                    static_cast<const FS::lvm2_pv*>(&p.fileSystem()); // simple LVM
+        FS::lvm2_pv *lvm2PVFs;
+        innerFS(&p, lvm2PVFs);
         QString deviceNode = p.partitionPath();
         createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
         createLabels(i18nc("@label partition", "Capacity:"), Capacity::formatByteSize(p.capacity()), cols(area), x, y);
