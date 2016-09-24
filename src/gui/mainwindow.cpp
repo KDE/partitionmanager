@@ -1116,15 +1116,14 @@ void MainWindow::onCreateNewVolumeGroup()
 void MainWindow::onResizeVolumeGroup()
 {
     if (pmWidget().selectedDevice()->type() == Device::LVM_Device) {
-        LvmDevice* tmpDev = dynamic_cast<LvmDevice*>(pmWidget().selectedDevice());
+        LvmDevice* d = dynamic_cast<LvmDevice*>(pmWidget().selectedDevice());
 
-        QString* vgName = new QString(tmpDev->name()); // This line only purpose is to make volumeGroupDialog happy
         QList<const Partition*> pvList;
         // *NOTE*: pvList will be modified and validated by the dialog
 
-        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, *vgName, pvList, *tmpDev, operationStack().physicalVolumes());
+        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, d, pvList, operationStack().physicalVolumes());
         if (dlg->exec() == QDialog::Accepted)
-            operationStack().push(new ResizeVolumeGroupOperation(*tmpDev, pvList));
+            operationStack().push(new ResizeVolumeGroupOperation(*d, pvList));
 
         delete dlg;
     }

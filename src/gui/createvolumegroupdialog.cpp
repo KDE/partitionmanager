@@ -72,11 +72,11 @@ void  CreateVolumeGroupDialog::accept()
     QDialog::accept();
 }
 
-void CreateVolumeGroupDialog::onVGNameChanged(const QString& vgname)
+void CreateVolumeGroupDialog::onVGNameChanged(const QString& vgName)
 {
     for (const auto &d : m_Devices) {
         if (dynamic_cast<LvmDevice*>(d)) {
-            if (d->name() == vgname) {
+            if (d->name() == vgName) {
                 m_IsValidName = false;
                 break;
             }

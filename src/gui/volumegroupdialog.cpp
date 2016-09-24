@@ -79,19 +79,6 @@ void VolumeGroupDialog::setupDialog()
     dialogWidget().volumeType().addItem(QStringLiteral("RAID"));
     dialogWidget().volumeType().setCurrentIndex(0);
 
-    //update used size and LV infos
-    qint32 totalLV = 0;
-    QString vgname = dialogWidget().vgName().text();
-    if (!vgname.isEmpty()) {
-        m_TotalUsedSize = LvmDevice::getAllocatedPE(vgname) * LvmDevice::getPeSize(vgname);
-        QStringList lvlist = LvmDevice::getLVs(vgname);
-        if (!lvlist.isEmpty() ) {
-            totalLV = lvlist.count();
-        }
-    }
-    dialogWidget().totalUsedSize().setText(Capacity::formatByteSize(m_TotalUsedSize));
-    dialogWidget().totalLV().setText(QString::number(totalLV));
-
     setMinimumSize(dialogWidget().size());
     resize(dialogWidget().size());
 }

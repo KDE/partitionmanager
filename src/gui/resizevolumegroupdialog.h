@@ -31,19 +31,19 @@ class ResizeVolumeGroupDialog : public VolumeGroupDialog
     Q_DISABLE_COPY(ResizeVolumeGroupDialog)
 
 public:
-    ResizeVolumeGroupDialog(QWidget* parent, QString& vgName, QList<const Partition*>& partList, VolumeManagerDevice& d, FS::lvm2_pv::PhysicalVolumes physicalVolumes);
+    ResizeVolumeGroupDialog(QWidget* parent, VolumeManagerDevice *d, QList<const Partition*>& partList, FS::lvm2_pv::PhysicalVolumes physicalVolumes);
 
 protected:
     void accept() override;
     void setupDialog() override;
     void setupConstraints() override;
 
-    VolumeManagerDevice& device() const {
+    VolumeManagerDevice* device() const {
         return m_Device;
     }
 
 private:
-    VolumeManagerDevice& m_Device;
+    VolumeManagerDevice* m_Device;
     const FS::lvm2_pv::PhysicalVolumes m_PhysicalVolumes; // List of all devices found on the system
 };
 
