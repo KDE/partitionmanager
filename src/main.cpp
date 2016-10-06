@@ -28,7 +28,6 @@
 
 #include <KAboutData>
 #include <KCrash>
-#include <KDBusService>
 #include <Kdelibs4ConfigMigrator>
 #include <KMessageBox>
 #include <KLocalizedString>
@@ -86,8 +85,6 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
 
     if (!loadBackend())
         return 0;
-
-    KDBusService service(KDBusService::Unique);
 
     MainWindow* mainWindow = new MainWindow();
     mainWindow->show();
