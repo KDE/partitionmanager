@@ -41,6 +41,7 @@
   <name xml:lang="uk">Редактор розділів для KDE</name>
   <name xml:lang="x-test">xxKDE Partition Managerxx</name>
   <name xml:lang="zh-CN">KDE 分区管理器</name>
+  <name xml:lang="zh-TW">KDE 磁碟分割區管理員</name>
   <summary>Partition Editor</summary>
   <summary xml:lang="ar">محرّر أقسام</summary>
   <summary xml:lang="ast">Editor de particiones</summary>
@@ -79,6 +80,7 @@
   <summary xml:lang="uk">Редактор розділів диска</summary>
   <summary xml:lang="x-test">xxPartition Editorxx</summary>
   <summary xml:lang="zh-CN">分区编辑器</summary>
+  <summary xml:lang="zh-TW">磁碟分割區編輯器</summary>
   <description>
     <p>KDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.</p>
     <p xml:lang="ar">إن مدير أقسام كدي برنامج يساعدك على إدارة أجهزة الأقراص، والأقسام وأنظمة الملفات في نظامك. ويسمح لك أن تُنشئ، وتنسخ، وتنقل، وتحذف، وتُحَجِّم دون فقدات البيانات، وتنسخ احتياطياً، وتستعيد من النسخ الاحتياطية بسهولة.</p>
@@ -114,6 +116,7 @@
     <p xml:lang="uk">Редактор розділів KDE — допоміжна програма, яку призначено для полегшення керування дисковими пристроями, розділами та файловими системами на комп’ютері. За її допомогою ви зможете без проблем створювати, копіювати, пересувати, вилучати та змінювати розміри розділів без втрати даних, створювати резервні копії розділів та відновлювати дані з цих резервних копій.</p>
     <p xml:lang="x-test">xxKDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.xx</p>
     <p xml:lang="zh-CN">KDE 分区管理器是一个帮助您管理就计算机上的磁盘设备，分区，文件系统的工具程序。它可以帮助您简单地创建，复制，移动，删除，无损调整大小，备份和恢复分区。</p>
+    <p xml:lang="zh-TW">KDE 磁碟分割區管理員是一個可以協助您管理您電腦上的磁碟裝置、分割區以及檔案系統的工具。它讓您可以很容易地建立、複製、移動、刪除、不遺失資料的調整大小、備份與恢復分割區。</p>
     <p>Features:</p>
     <p xml:lang="ar">المزايا:</p>
     <p xml:lang="ast">Carauterístiques:</p>
@@ -152,6 +155,7 @@
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
     <p xml:lang="zh-CN">功能：</p>
+    <p xml:lang="zh-TW">功能：</p>
     <ul>
       <li>Supports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and more</li>
       <li xml:lang="ar">يدعم عددًا كبيراً من أنظمة الملفات، منها ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS وغيرها الكثير</li>
@@ -187,6 +191,7 @@
       <li xml:lang="uk">Підтримка широкого набору файлових систем, зокрема ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS тощо.</li>
       <li xml:lang="x-test">xxSupports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and morexx</li>
       <li xml:lang="zh-CN">支持许多文件系统，包括 ext2/3/4，btrfs，reiserfs，NTFS，FAT16/32,JFS，XFS 和更多</li>
+      <li xml:lang="zh-TW">支援大量的檔案系統，包含了 ext2/3/4、btrfs、reiserfs、NTFS、FAT16/32、JFS、XFS 以及更多</li>
       <li>Makes use of already available external programs to get its job done</li>
       <li xml:lang="ar">يستفيد من البرامج الخارجية المتاحة بالفعل لإتمام عمله</li>
       <li xml:lang="ast">Fai usu de programes yá disponibles pa consiguir facer el so trabayu</li>
@@ -221,6 +226,7 @@
       <li xml:lang="uk">Використання доступних зовнішніх інструментів для виконання завдань.</li>
       <li xml:lang="x-test">xxMakes use of already available external programs to get its job donexx</li>
       <li xml:lang="zh-CN">使用已有的外部程序完成任务</li>
+      <li xml:lang="zh-TW">利用已有的外部程式來完成其工作</li>
     </ul>
   </description>
   <url type="homepage">http://sourceforge.net/projects/partitionman/</url>
