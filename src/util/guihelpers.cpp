@@ -67,9 +67,14 @@ bool checkPermissions()
                 argList = QStringLiteral("-c ");
 
             // Workaround for ugly GUI when kdesu uses sudo
+            const QStringList envVars = { QStringLiteral("KDE_FULL_SESSION"),
+                                          QStringLiteral("QT_WAYLAND_FORCE_DPI"),
+                                          QStringLiteral("QT_QPA_PLATFORM"),
+                                          QStringLiteral("XDG_RUNTIME_DIR") };
             QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-            if (env.value(QStringLiteral("KDE_FULL_SESSION")) == QStringLiteral("true"))
-                argList += QStringLiteral("KDE_FULL_SESSION=true ");
+            for (const auto &var : envVars)
+                if (env.contains(var))
+                    argList += var + QStringLiteral("=") + env.value(var) + QStringLiteral(" ");
 
             argList += QCoreApplication::arguments().join(QStringLiteral(" ")) + QStringLiteral(" --dontsu");
 
