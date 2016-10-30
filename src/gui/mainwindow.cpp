@@ -1155,6 +1155,7 @@ void MainWindow::onDeactivateVolumeGroup()
         }
         delete tmpReport;
         pmWidget().updatePartitions();
+        enableActions();
     }
 }
 
