@@ -31,7 +31,7 @@ class CreateVolumeGroupDialog : public VolumeGroupDialog
     Q_DISABLE_COPY(CreateVolumeGroupDialog)
 
 public:
-    CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QList<const Partition*>& pvList, qint32& peSize, FS::lvm2_pv::PhysicalVolumes physicalVolumes, QList<Device*> devices);
+    CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QList<const Partition*>& pvList, qint32& peSize, QList<LvmPV> physicalVolumes, QList<Device*> devices);
 
 protected:
     void accept() override;
@@ -49,7 +49,7 @@ protected:
     qint32& m_PESize;
 
 private:
-    const FS::lvm2_pv::PhysicalVolumes m_PhysicalVolumes; // List of all LVM Physical Volumes found on the system
+    const QList<LvmPV> m_PhysicalVolumes; // List of all LVM Physical Volumes found on the system
     const QList<Device*> m_Devices; // List of all devices found on the system
 };
 
