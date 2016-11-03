@@ -1106,7 +1106,7 @@ void MainWindow::onCreateNewVolumeGroup()
     QList<const Partition*> pvList;
     qint32 peSize = 4;
     // *NOTE*: vgName & pvList will be modified and validated by the dialog
-    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList, peSize, operationStack().physicalVolumes(), operationStack().previewDevices());
+    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList, peSize, operationStack().previewDevices());
     if (dlg->exec() == QDialog::Accepted)
         operationStack().push(new CreateVolumeGroupOperation(vgName, pvList, peSize));
 
@@ -1121,7 +1121,7 @@ void MainWindow::onResizeVolumeGroup()
         QList<const Partition*> pvList;
         // *NOTE*: pvList will be modified and validated by the dialog
 
-        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, d, pvList, operationStack().physicalVolumes());
+        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, d, pvList);
         if (dlg->exec() == QDialog::Accepted)
             operationStack().push(new ResizeVolumeGroupOperation(*d, pvList));
 

@@ -20,6 +20,8 @@
 
 #include <core/lvmdevice.h>
 
+#include <fs/lvm2_pv.h>
+
 #include <util/capacity.h>
 #include <util/helpers.h>
 
@@ -27,10 +29,9 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QList<const Partition*>& pvList, qint32& peSize, QList<LvmPV> physicalVolumes, QList<Device*> devices)
+CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QList<const Partition*>& pvList, qint32& peSize, QList<Device*> devices)
     : VolumeGroupDialog(parent, vgName, pvList)
     , m_PESize(peSize)
-    , m_PhysicalVolumes(physicalVolumes)
     , m_Devices(devices)
 {
     setWindowTitle(xi18nc("@title:window", "Create new Volume Group"));
@@ -48,7 +49,7 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgNam
 
 void CreateVolumeGroupDialog::setupDialog()
 {
-    for (const auto &p : m_PhysicalVolumes)
+    for (const auto &p : LVM::pvList) // FIXME: qAsConst
         if (p.vgName() == QString() && !LvmDevice::s_DirtyPVs.contains(p.partition()))
             dialogWidget().listPV().addPartition(*p.partition(), false);
 }
