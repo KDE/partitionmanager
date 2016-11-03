@@ -51,6 +51,8 @@ void ResizeVolumeGroupDialog::setupDialog()
 {
     if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
         for (const auto &p : LVM::pvList) { // FIXME: qAsConst
+            if (p.isLuks())
+                continue;
             if (p.vgName() == device()->name())
                 dialogWidget().listPV().addPartition(*p.partition(), true);
             else if (p.vgName() == QString() && !LvmDevice::s_DirtyPVs.contains(p.partition())) // TODO: Remove LVM PVs in current VG
