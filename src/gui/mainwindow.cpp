@@ -515,11 +515,9 @@ void MainWindow::enableActions()
     bool lvmDevice = pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device;
     bool removable = false;
 
-    if (lvmDevice) {
-        LvmDevice* d = static_cast<LvmDevice*>(pmWidget().selectedDevice());
-        if(!d->LVPathList()->count())
-            removable = true;
-    }
+    if (lvmDevice)
+        removable = RemoveVolumeGroupOperation::isRemovable(dynamic_cast<LvmDevice*>(pmWidget().selectedDevice()));
+
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setEnabled(removable);
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setVisible(lvmDevice);
 
@@ -1133,12 +1131,7 @@ void MainWindow::onRemoveVolumeGroup()
 {
     Device* tmpDev = pmWidget().selectedDevice();
     if (tmpDev->type() == Device::LVM_Device) {
-        LvmDevice* d = static_cast<LvmDevice*>(tmpDev);
-        if(d->LVPathList()->count()) {
-            KMessageBox::error(this, xi18nc("@info", "Could not remove <filename>%1</filename>. There are still Logical Volumes on the Volume Group.", tmpDev->name()), i18nc("@title:window", "Error Removing Volume Group"));
-        } else {
-            operationStack().push(new RemoveVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) ));
-        }
+        operationStack().push(new RemoveVolumeGroupOperation(*(dynamic_cast<LvmDevice*>(tmpDev))));
     }
 }
 
