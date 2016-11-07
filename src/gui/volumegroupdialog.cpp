@@ -136,7 +136,7 @@ void VolumeGroupDialog::updateSizeInfos()
     dialogWidget().totalSize().setText(Capacity::formatByteSize(m_TotalSize));
 
     //Probably a bad design for updating state here; the state should be changed inside the update button function.
-    m_IsValidSize = m_TotalSize > m_TotalUsedSize;
+    m_IsValidSize = m_TotalSize >= m_TotalUsedSize;
     updateSectorInfos();
     updateOkButtonStatus();
 }
