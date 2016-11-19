@@ -14,7 +14,6 @@
    <string comment="@title:window">KDE Partition Manager</string>
   </property>
   <widget class="PartitionManagerWidget" name="m_PartitionManagerWidget">
-   <layout class="QVBoxLayout" name="verticalLayout"/>
   </widget>
   <widget class="QDockWidget" name="m_DockDevices">
    <property name="allowedAreas">
@@ -27,7 +26,6 @@
     <number>1</number>
    </attribute>
    <widget class="ListDevices" name="m_ListDevices">
-    <layout class="QVBoxLayout"/>
    </widget>
   </widget>
   <widget class="QDockWidget" name="m_DockOperations">
@@ -41,7 +39,6 @@
     <number>8</number>
    </attribute>
    <widget class="ListOperations" name="m_ListOperations">
-    <layout class="QVBoxLayout" name="verticalLayout_2"/>
    </widget>
   </widget>
   <widget class="QDockWidget" name="m_DockInformation">
@@ -52,7 +49,6 @@
     <number>1</number>
    </attribute>
    <widget class="InfoPane" name="m_InfoPane">
-    <layout class="QGridLayout" name="dockInformationLayout"/>
    </widget>
   </widget>
   <widget class="QDockWidget" name="m_DockLog">
@@ -66,7 +62,6 @@
     <number>8</number>
    </attribute>
    <widget class="TreeLog" name="m_TreeLog">
-    <layout class="QGridLayout" name="gridLayout"/>
    </widget>
   </widget>
  </widget>
