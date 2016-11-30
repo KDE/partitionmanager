@@ -23,9 +23,9 @@ set(KDE_INSTALL_USE_QT_SYS_PATHS ON CACHE BOOL "Install mkspecs files, Plugins a
 
 set(QT_MIN_VERSION "5.4.1")
 # Check KPMcore dependency when bumping
-set(VERSION_MAJOR "2")
-set(VERSION_MINOR "9")
-set(VERSION_RELEASE "90")
+set(VERSION_MAJOR "3")
+set(VERSION_MINOR "0")
+set(VERSION_RELEASE "0")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE})
 add_definitions(-D'VERSION="${VERSION}"') #"
 
@@ -74,7 +74,7 @@ add_definitions(
 )
 
 find_package(PkgConfig REQUIRED)
-find_package(KPMcore 2.9.90 REQUIRED)
+find_package(KPMcore 3.0.0 REQUIRED)
 pkg_check_modules(BLKID REQUIRED blkid)
 
 include_directories(${Qt5Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} ${KPMCORE_INCLUDE_DIR} lib/ src/)
