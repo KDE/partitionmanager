@@ -2,7 +2,6 @@
 
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
 
-        <!ENTITY partman "<application>KDE Partition Manager</application>"> <!--remove this entity later, it is also in lang/user.entities to make it translatable-->
 	<!ENTITY partman-introduction SYSTEM "introduction.docbook">
 	<!ENTITY partman-usermanual SYSTEM "usermanual.docbook">
 	<!ENTITY partman-resizehowto SYSTEM "resizehowto.docbook">
@@ -11,27 +10,8 @@
 	<!ENTITY partman-referencemanual SYSTEM "referencemanual.docbook">
 	<!ENTITY partman-faq SYSTEM "faq.docbook">
 	<!ENTITY partman-credits SYSTEM "credits.docbook">
-	<!ENTITY partman-appendix SYSTEM "appendix.docbook">
 	<!ENTITY partman-glossary SYSTEM "glossary.docbook">
 
-	<!ENTITY debugfsreiser4 "<application>debugfs.reiser4</application>">
-	<!ENTITY debugreiserfs "<application>debugreiserfs</application>">
-	<!ENTITY dumpe2fs "<application>dumpe2fs</application>">
-	<!ENTITY e2label "<application>e2label</application>">
-	<!ENTITY fsckmsdos "<application>fsck.msdos</application>">
-	<!ENTITY hfsck "<application>hfsck</application>">
-	<!ENTITY hpfsck "<application>hpfsck</application>">
-	<!ENTITY jfsdebugfs "<application>jfs_debugfs</application>">
-	<!ENTITY jfstune "<application>jfs_tune</application>">
-	<!ENTITY ntfslabel "<application>ntfslabel</application>">
-	<!ENTITY ntfsresize "<application>ntfsresize</application>">
-	<!ENTITY swapoff "<application>swapoff</application>">
-	<!ENTITY swapon "<application>swapon</application>">
-	<!ENTITY volid "<application>vol_id</application>">
-	<!ENTITY xfsdb "<application>xfs_db</application>">
-
-	<!ENTITY kappname "&partman;">
-	<!ENTITY package "extragear">
 	<!ENTITY % addindex "IGNORE">
 	<!ENTITY % English "INCLUDE">
 ]>
@@ -54,8 +34,8 @@
 
 		<legalnotice>&FDLNotice;</legalnotice>
 
-		<date>2010-01-08</date>
-		<releaseinfo>1.00.00</releaseinfo>
+		<date>2016-12-01</date>
+		<releaseinfo>&partman; 3.0.0</releaseinfo>
 
 		<abstract>
 			<para>Manage your disks, partitions and file systems.</para>
@@ -82,8 +62,6 @@
 	&partman-faq;
 
 	&partman-credits;
-	
-	&partman-appendix;
 
 	&partman-glossary;
 

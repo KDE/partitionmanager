@@ -102,6 +102,14 @@
 		<glosssee otherterm="glossary-partitionflag"/>
 	</glossentry>
 	
+	<glossentry>
+		<glossterm>GPT</glossterm>
+		<glossdef>
+			<para>A modern partition table format supported by most modern computers and operating systems. It supports more than 4 <link linkend="glossary-primarypartition">primary partitions</link> unlike older MS-DOS partition table.
+			</para>
+		</glossdef>
+	</glossentry>
+
 	<glossentry id="glossary-head">
 		<glossterm>Head</glossterm>
 		<glossdef>
@@ -124,7 +132,7 @@
 		</glossdef>
 	</glossentry>
 
-	<glossentry>
+	<glossentry id="glossary-label">
 		<glossterm>Label</glossterm>
 		<glossdef>
 			<para>
@@ -143,6 +151,26 @@
 			</para>
 			<glossseealso otherterm="glossary-primarypartition"/>
 			<glossseealso otherterm="glossary-extendedpartition"/>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-luks">
+		<glossterm>LUKS</glossterm>
+		<glossdef>
+			<para>Linux Unified Key Setup is the standard encryption format for Linux.
+			</para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-lvm">
+		<glossterm>LVM</glossterm>
+		<glossdef>
+			<para>LVM is a system for managing logical partitions that is more flexible than normal partitions. It consists of three main components:</para>
+			<simplelist>
+			<member>LVM physical volumes are partitions on the disk whose space is managed by LVM.</member>
+			<member>LVM volume group is a collection of LVM physical volumes that can be partitioned into logical partitions. It might be used to create file systems spanning over multiple devices or to split encrypted <link linkend="glossary-luks">LUKS</link> volume into smaller partitions.</member>
+			<member>LVM logical volumes are similar to normal partitions except that they reside on LVM volume group. Also, the location of LVM logical partitions does not matter and they do not have to be physically contiguous. Therefore, &partman; does not allow to move LVM logical volumes and displays the remaining free space at the end of the device.</member>
+			</simplelist>
 		</glossdef>
 	</glossentry>
 

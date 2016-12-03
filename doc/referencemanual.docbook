@@ -4,10 +4,9 @@
 	<sect1 id="reference-overview">
 		<title>Overview</title>
 		<para>This chapter gives detailed explanations of all commands available in &partman;. It is intended as a reference to accompany the information given in <xref linkend="usermanual"/>.</para>
-	</sect1>
-	
-	<sect1 id="menu-file">
-		<title>The <guimenu>File</guimenu> Menu</title>
+
+	<sect2 id="menu-file">
+		<title>The File Menu</title>
 		<para>
 			<variablelist>
 				<varlistentry id="menu-file-quit">
@@ -26,10 +25,10 @@
 				</varlistentry>
 			</variablelist>
 		</para>
-	</sect1>
+	</sect2>
 
-	<sect1 id="menu-edit">
-		<title>The <guimenu>Edit</guimenu> Menu</title>
+	<sect2 id="menu-edit">
+		<title>The Edit Menu</title>
 		<para>
 			<variablelist>
 				<varlistentry id="menu-edit-undo">
@@ -83,68 +82,118 @@
 				</varlistentry>
 			</variablelist>
 		</para>
-	</sect1>
+	</sect2>
 
-	<sect1 id="menu-view">
-		<title>The <guimenu>View</guimenu> Menu</title>
+	<sect2 id="menu-device">
+		<title>The Device Menu</title>
 		<para>
 			<variablelist>
-				<varlistentry id="menu-view-devices">
+				<varlistentry id="menu-device-selectcurrentdevice">
 					<term>
 						<menuchoice>
-							<guimenu>View</guimenu>
-							<guimenuitem>Devices</guimenuitem>
+							<guimenu>Device</guimenu>
+							<guimenuitem>Select Current Device</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>Allows you to select a device from a submenu with all available devices of the system.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-createpartitiontable">
+					<term>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo></shortcut>
+							<guimenu>Device</guimenu>
+							<guimenuitem>New Partition Table</guimenuitem>
 						</menuchoice>
 					</term>
 					<listitem>
 						<para>
-							<action>Toggles the Devices panel</action>: This command turns the display of the devices list on and off.
+							<action>Creates a new partition table</action>: This command creates a new and empty GPT or MSDOS partition table on the currently selected device. This will delete all partitions on the device and all data on them, so you will want to be careful with this command.
+						</para>
+						<para>
+							This command is only enabled if a device is selected and no partition on this device
+							is currently mounted.
 						</para>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-view-operations">
+				<varlistentry id="menu-device-exportpartitiontable">
 					<term>
 						<menuchoice>
-							<guimenu>View</guimenu>
-							<guimenuitem>Pending Operations</guimenuitem>
+							<guimenu>Device</guimenu>
+							<guimenuitem>Export Partition Table</guimenuitem>
 						</menuchoice>
 					</term>
 					<listitem>
-						<para>
-							<action>Toggles the Pending Operations panel</action>: This command turns the display of the operation list on and off.
+						<para>Allows you to export a list of all partitions on the selected device into a file.
 						</para>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-view-information">
+				<varlistentry id="menu-device-importpartitiontable">
 					<term>
 						<menuchoice>
-							<guimenu>View</guimenu>
-							<guimenuitem>Information</guimenuitem>
+							<guimenu>Device</guimenu>
+							<guimenuitem>Import Partition Table</guimenuitem>
 						</menuchoice>
 					</term>
 					<listitem>
-						<para>
-							<action>Toggles the Information panel</action>: This command turns the display of the information panel on and off. The information panel will either display details about the currently selected device or, if one is selected, the selected partition.
-						</para>
+						<para>Allows you to import partition table from a previously exported file.</para>
+						<para>This will delete all partitions on the device and all data on them,
+						so you will want to be careful with this command.</para>
+						<para>This command is only enabled if a device is selected and no partition on this device is
+						currently mounted. Importing into logical devices such as LVM Volume Groups is currently not supported.</para>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-view-log">
+				<varlistentry id="menu-device-smartstatus">
 					<term>
 						<menuchoice>
-							<guimenu>View</guimenu>
-							<guimenuitem>Log Output</guimenuitem>
+							<guimenu>Device</guimenu>
+							<guimenuitem>SMART Status</guimenuitem>
 						</menuchoice>
 					</term>
 					<listitem>
-						<para>
-							<action>Toggles the Log Output panel</action>: This command turns the display of the log output panel on and off.
-						</para>
+						<para>Shows a SMART report. SMART is a monitoring system included in hard disk and solid-state drives
+						that detects and reports on various indicators of drive reliability, with the intent of enabling the
+						anticipation of hardware failures.</para>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-view-filesystemsupport">
+				<varlistentry id="menu-device-properties">
 					<term>
 						<menuchoice>
-							<guimenu>View</guimenu>
+							<guimenu>Device</guimenu>
+							<guimenuitem>Properties</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>Shows information about currently selected devices. In this dialog you can find capacity, sector sizes,
+						partition table type as well as used and maximum number of primary partitions.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title>The Tools Menu</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo></shortcut>
+							<guimenu>Tools</guimenu>
+							<guimenuitem>New Volume Group</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>Create a new logical device such as <link linkend="glossary-lvm">LVM</link> Volume Group.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice>
+							<guimenu>Tools</guimenu>
 							<guimenuitem>File System Support</guimenuitem>
 						</menuchoice>
 					</term>
@@ -169,16 +218,13 @@
 						<para>
 							If you have installed new tools while &partman; is running click on <guibutton>Rescan Support</guibutton> to force a recheck of installed  file system support tools.
 						</para>
-						<para>
-							Also see <xref linkend="requirements"/> for which external tool is required for which operation.
-						</para>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-view-refresh">
+				<varlistentry id="menu-tools-refresh">
 					<term>
 						<menuchoice>
 							<shortcut><keycap>F5</keycap></shortcut>
-							<guimenu>View</guimenu>
+							<guimenu>Tools</guimenu>
 							<guimenuitem>Refresh Devices</guimenuitem>
 						</menuchoice>
 					</term>
@@ -190,36 +236,10 @@
 				</varlistentry>
 			</variablelist>
 		</para>
-	</sect1>
+	</sect2>
 
-	<sect1 id="menu-device">
-		<title>The <guimenu>Device</guimenu> Menu</title>
-		<para>
-			<variablelist>
-				<varlistentry id="menu-device-createpartitiontable">
-					<term>
-						<menuchoice>
-							<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo></shortcut>
-							<guimenu>Device</guimenu>
-							<guimenuitem>Create New Partition Table</guimenuitem>
-						</menuchoice>
-					</term>
-					<listitem>
-						<para>
-							<action>Creates a new partition table</action>: This command creates a new and empty MSDOS partition table on the currently selected device. This will delete all partitions on the device and all data on them, so you will want to be careful with this command.
-						</para>
-						<para>
-							This command is only enabled if a device is selected and no partition on this device
-							is currently mounted.
-						</para>
-					</listitem>
-				</varlistentry>
-			</variablelist>
-		</para>
-	</sect1>
-
-	<sect1 id="menu-partition">
-		<title>The <guimenu>Partition</guimenu> Menu</title>
+	<sect2 id="menu-partition">
+		<title>The Partition Menu</title>
 
 		<para>
 			<variablelist>
@@ -253,7 +273,7 @@
 					</term>
 					<listitem>
 						<para>
-							<action>Resizes or moves a partition</action>: Opens the dialog to resize or move an existing partition. Depending on the partition's file system and the external tools installed on your computer, not all three possible resize-related actions -- that is, moving the partition, making it smaller (<quote>shrinking</quote> it) or making it larger (<quote>growing</quote> it) -- may be available in this dialog. See <xref linkend="menu-view-filesystemsupport"/>.
+							<action>Resizes or moves a partition</action>: Opens the dialog to resize or move an existing partition. Depending on the partition's file system and the external tools installed on your computer, not all three possible resize-related actions -- that is, moving the partition, making it smaller (<quote>shrinking</quote> it) or making it larger (<quote>growing</quote> it) -- may be available in this dialog. See <xref linkend="menu-tools-filesystemsupport"/>.
 						</para>
 						<para>
 							This command is only enabled if a partition is selected that is not currently mounted and whose file system can be shrunk, grown or moved. For an extended partition, it is only enabled if none of the logicals in the extended partition are mounted.
@@ -263,7 +283,7 @@
 				<varlistentry id="menu-partition-delete">
 					<term>
 						<menuchoice>
-							<shortcut><keycap>Del</keycap></shortcut>
+							<shortcut>&Del;</shortcut>
 							<guimenu>Partition</guimenu>
 							<guimenuitem>Delete</guimenuitem>
 						</menuchoice>
@@ -278,6 +298,27 @@
 						<warning>
 							<title>Warning: Possible loss of data</title>
 							<para>Deleting a partition means that all data on the partition is destroyed.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-shred">
+					<term>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;&Del;</keycombo></shortcut>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Shred</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>
+							<action>Shreds a partition</action>: This command shreds the currently selected partition.
+						</para>
+						<para>
+							This command is only enabled if a partition is selected that is not currently mounted. For an extended partition, it is only enabled if it does not contain any logical partitions.
+						</para>
+						<warning>
+							<title>Warning: Loss of data</title>
+							<para>Shreding a partition means that all data on the partition is destroyed.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
@@ -335,6 +376,22 @@
 						</para>
 						<para>
 							This command is only enabled if a partition is selected that can be mounted or unmounted. If the operating system does not know a mount point for the partition you can not mount it from &partman;.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-edit-mount">
+					<term>
+						<menuchoice>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Edit Mount Point</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>
+							<action>Opens a dialog</action> to edit the mount point and the mount options.
+						</para>
+						<para>
+							This command is only enabled if a partition unmounted.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -447,18 +504,20 @@
 				</varlistentry>
 			</variablelist>
 		</para>
-	</sect1>
+	</sect2>
 
-	<sect1 id="menu-settings">
-		<title>The <guimenu>Settings</guimenu> Menu</title>
+	<sect2 id="menu-settings-help">
+		<title>The Settings and Help Menu</title>
 
 		<para>
-			This is the common <guimenu>Settings</guimenu> menu present in most &kde; applications. Please see the &kde; documentation for details on this menu.
+		&partman; has the common &kde; <ulink url="help:/fundamentals/ui.html#menus-settings">Settings</ulink> and
+		<ulink url="help:/fundamentals/ui.html#menus-help">Help</ulink> menu described in
+		the &kde; Fundamentals with an additional submenu <guisubmenu>Panels Shown</guisubmenu>,
+		where you can toggle the display of the <guimenuitem>Devices</guimenuitem>,
+                <guimenuitem>Pending Operations</guimenuitem>, <guimenuitem>Information</guimenuitem>
+                and panels <guimenuitem>Log Output</guimenuitem> on and off.
 		</para>
+	</sect2>
 	</sect1>
 
-	<sect1 id="menu-help">
-		<title>The <guimenu>Help</guimenu> Menu</title>
-		&help.menu.documentation;
-	</sect1>
 </chapter>
