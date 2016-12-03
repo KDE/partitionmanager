@@ -78,7 +78,7 @@
 		<glossterm>File System</glossterm>
 		<glossdef>
 			<para>
-				A file system defines how the storage of data (files with their metadata, folders and their metadata, free space) is organized within a <link linkend="glossary-partition">partition</link>. There are various different types of file systems, some coming originally from the Unix/Linux world, some not. Examples for commonly used file systems on Unix/Linux are ext2, ext3, reiserfs and xfs.
+				A file system defines how the storage of data (files with their metadata, folders and their metadata, free space) is organized within a <link linkend="glossary-partition">partition</link>. There are various different types of file systems, some coming originally from the Unix/Linux world, some not. Examples for commonly used file systems on Unix/Linux are Btrfs, ext4 and XFS.
 			</para>
 		</glossdef>
 	</glossentry>
@@ -87,7 +87,7 @@
 		<glossterm>File System Label</glossterm>
 		<glossdef>
 			<para>
-				A title of a file system. Some file systems (among them ext2/3/4, FAT16/32 and NTFS) support setting a label for the file system so it can be identified in tools like &partman; or other applications.
+				A title of a file system. Some file systems (among them Btrfs, ext2/3/4, FAT16/32 and NTFS) support setting a label for the file system so it can be identified in tools like &partman; or other applications.
 			</para>
 			<para>
 				<note>
