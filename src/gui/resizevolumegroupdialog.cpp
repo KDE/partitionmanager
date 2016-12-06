@@ -56,7 +56,7 @@ void ResizeVolumeGroupDialog::setupDialog()
                 continue;
             if (p.vgName() == device()->name())
                 dialogWidget().listPV().addPartition(*p.partition(), true);
-            else if (p.vgName() == QString() && !LvmDevice::s_DirtyPVs.contains(p.partition()) && targetName() != device()->name())
+            else if (p.vgName() == QString() && !LvmDevice::s_DirtyPVs.contains(p.partition())) // TODO: Remove LVM PVs in current VG
                 dialogWidget().listPV().addPartition(*p.partition(), false);
         }
     }
