@@ -74,6 +74,9 @@ VolumeGroupDialog::~VolumeGroupDialog()
 
 void VolumeGroupDialog::setupDialog()
 {
+    QRegExp re(QStringLiteral("[\\w-.+]+"));
+    QRegExpValidator *validator = new QRegExpValidator(re, this);
+    dialogWidget().vgName().setValidator(validator);
     dialogWidget().vgName().setText(targetName());
 
     dialogWidget().volumeType().addItem(QStringLiteral("LVM"));
