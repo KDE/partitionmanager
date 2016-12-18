@@ -21,7 +21,7 @@ set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 set(KDE_INSTALL_USE_QT_SYS_PATHS ON CACHE BOOL "Install mkspecs files, Plugins and Imports to the Qt 5 install dir" FORCE)
 
-set(QT_MIN_VERSION "5.4.1")
+set(QT_MIN_VERSION "5.6.1")
 # Check KPMcore dependency when bumping
 set(VERSION_MAJOR "3")
 set(VERSION_MINOR "0")
