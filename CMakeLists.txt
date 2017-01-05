@@ -25,7 +25,7 @@ set(QT_MIN_VERSION "5.6.1")
 # Check KPMcore dependency when bumping
 set(VERSION_MAJOR "3")
 set(VERSION_MINOR "0")
-set(VERSION_RELEASE "1")
+set(VERSION_RELEASE "50")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE})
 add_definitions(-D'VERSION="${VERSION}"') #"
 
