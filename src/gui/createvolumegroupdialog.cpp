@@ -50,7 +50,7 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgNam
 
 void CreateVolumeGroupDialog::setupDialog()
 {
-    for (const auto &p : LVM::pvList) // FIXME: qAsConst
+    for (const auto &p : qAsConst(LVM::pvList))
         if (!p.isLuks() && p.vgName() == QString() && !LvmDevice::s_DirtyPVs.contains(p.partition()))
             dialogWidget().listPV().addPartition(*p.partition(), false);
 }

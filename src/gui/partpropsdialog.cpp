@@ -312,7 +312,7 @@ void PartPropsDialog::setupFileSystemComboBox()
 
     qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    for (const auto &fsName : fsNames)
+    for (const auto &fsName : qAsConst(fsNames))
         dialogWidget().fileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));

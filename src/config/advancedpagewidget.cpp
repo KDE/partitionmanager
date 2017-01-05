@@ -19,7 +19,6 @@
 #include "config/advancedpagewidget.h"
 
 #include <backend/corebackendmanager.h>
-
 #include <util/helpers.h>
 
 #include <QComboBox>
@@ -36,7 +35,6 @@ AdvancedPageWidget::AdvancedPageWidget(QWidget* parent) :
 QString AdvancedPageWidget::backend() const
 {
     const KService::List services = CoreBackendManager::self()->list();
-
     for (const auto &p : services)
         if (p->name() == comboBackend().currentText())
             return p->library();
@@ -47,7 +45,6 @@ QString AdvancedPageWidget::backend() const
 void AdvancedPageWidget::setBackend(const QString& name)
 {
     const KService::List services = CoreBackendManager::self()->list();
-
     for (const auto &p : services)
         if (p->library() == name)
             comboBackend().setCurrentIndex(comboBackend().findText(p->name()));

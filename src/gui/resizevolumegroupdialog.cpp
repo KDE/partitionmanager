@@ -51,7 +51,7 @@ ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, VolumeManagerD
 void ResizeVolumeGroupDialog::setupDialog()
 {
     if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
-        for (const auto &p : LVM::pvList) { // FIXME: qAsConst
+        for (const auto &p : qAsConst(LVM::pvList)) {
             if (p.isLuks())
                 continue;
             if (p.vgName() == device()->name())

@@ -53,7 +53,7 @@ void GeneralPageWidget::setupDialog()
 
     qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    for (const auto &fsName : fsNames)
+    for (const auto &fsName : qAsConst(fsNames))
         comboDefaultFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     setDefaultFileSystem(GuiHelpers::defaultFileSystem());

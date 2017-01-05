@@ -82,7 +82,7 @@ void NewDialog::setupDialog()
 
     qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    foreach (const auto &fsName, fsNames)
+    for (const auto &fsName : qAsConst(fsNames))
         dialogWidget().comboFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     QString selected = FileSystem::nameForType(GuiHelpers::defaultFileSystem());
