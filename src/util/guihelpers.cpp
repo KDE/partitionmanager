@@ -70,6 +70,7 @@ bool checkPermissions()
             const QStringList envVars = { QStringLiteral("KDE_FULL_SESSION"),
                                           QStringLiteral("QT_WAYLAND_FORCE_DPI"),
                                           QStringLiteral("QT_QPA_PLATFORM"),
+                                          QStringLiteral("HOME"),
                                           QStringLiteral("XDG_RUNTIME_DIR") };
             QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
             for (const auto &var : envVars)
