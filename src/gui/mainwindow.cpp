@@ -1095,7 +1095,7 @@ void MainWindow::onExportPartitionTable()
     KIO::CopyJob* job = KIO::move(QUrl::fromLocalFile(tempFile.fileName()), url, KIO::HideProgressInfo);
     job->exec();
     if (job->error())
-        job->ui()->showErrorMessage();
+        job->uiDelegate()->showErrorMessage();
 }
 
 void MainWindow::onCreateNewVolumeGroup()

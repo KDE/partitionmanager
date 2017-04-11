@@ -430,7 +430,7 @@ void ApplyProgressDialog::saveReport()
         KIO::CopyJob* job = KIO::move(QUrl::fromLocalFile(tempFile.fileName()), url, KIO::HideProgressInfo);
         job->exec();
         if (job->error())
-            job->ui()->showErrorMessage();
+            job->uiDelegate()->showErrorMessage();
     } else
         KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), xi18nc("@title:window", "Could Not Save Report."));
 }
