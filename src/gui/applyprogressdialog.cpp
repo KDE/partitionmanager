@@ -456,7 +456,7 @@ void ApplyProgressDialog::browserReport()
         // set the temp file's permission for everyone to read it.
         file.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ReadGroup | QFile::ReadOther);
 
-        if (!KRun::runUrl(QUrl::fromLocalFile(file.fileName()), QStringLiteral("text/html"), this, true))
+        if (!KRun::runUrl(QUrl::fromLocalFile(file.fileName()), QStringLiteral("text/html"), this, KRun::RunFlags()))
             KMessageBox::sorry(this, xi18nc("@info", "The configured external browser could not be run. Please check your settings."), xi18nc("@title:window", "Could Not Launch Browser."));
     } else
         KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file <filename>%1</filename> for writing.", file.fileName()), i18nc("@title:window", "Could Not Launch Browser."));
