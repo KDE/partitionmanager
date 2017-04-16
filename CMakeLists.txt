@@ -46,7 +46,7 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 )
 
 # Load the frameworks we need
-find_package(KF5 5.23 REQUIRED
+find_package(KF5 5.31 REQUIRED
   Config
   ConfigWidgets
   CoreAddons
