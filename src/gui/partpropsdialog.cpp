@@ -310,7 +310,7 @@ void PartPropsDialog::setupFileSystemComboBox()
         }
     }
 
-    qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
+    std::sort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
     for (const auto &fsName : qAsConst(fsNames))
         dialogWidget().fileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);

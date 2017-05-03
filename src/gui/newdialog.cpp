@@ -80,7 +80,7 @@ void NewDialog::setupDialog()
             fsNames.append(fs->name());
     }
 
-    qSort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
+    std::sort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
     for (const auto &fsName : qAsConst(fsNames))
         dialogWidget().comboFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
