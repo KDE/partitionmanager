@@ -86,12 +86,15 @@ bool checkPermissions()
                 "<para><warning>You do not have administrative privileges.</warning></para>"
                 "<para>It is possible to run <application>%1</application> without these privileges. "
                 "You will, however, <emphasis>not</emphasis> be allowed to apply operations.</para>"
-                "<para>Do you want to continue running <application>%1</application>?</para>",
+                "<para>Do you want to continue running <application>%1</application>?</para>"
+                "<para><note>If administrator login is disabled and your password is "
+                "not accepted, then check <command>kdesu</command> "
+                "<link url='https://wiki.archlinux.org/index.php/sudo#kdesu'>configuration</link>.</note></para>",
                 QGuiApplication::applicationDisplayName()),
                 xi18nc("@title:window", "No administrative privileges"),
                 KGuiItem(xi18nc("@action:button", "Run without administrative privileges"), QStringLiteral("arrow-right")),
                 KStandardGuiItem::cancel(),
-                QStringLiteral("runWithoutRootPrivileges")) == KMessageBox::Continue;
+                QStringLiteral("runWithoutRootPrivileges"), KMessageBox::AllowLink) == KMessageBox::Continue;
     }
 
     return true;
