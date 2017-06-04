@@ -1101,12 +1101,12 @@ void MainWindow::onExportPartitionTable()
 void MainWindow::onCreateNewVolumeGroup()
 {
     QString vgName;
-    QList<const Partition*> pvList;
+    std::vector<const Partition*> pvList;
     qint32 peSize = 4;
     // *NOTE*: vgName & pvList will be modified and validated by the dialog
     QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList, peSize, operationStack().previewDevices());
     if (dlg->exec() == QDialog::Accepted)
-        operationStack().push(new CreateVolumeGroupOperation(vgName, pvList, peSize));
+        operationStack().push(new CreateVolumeGroupOperation(vgName, QList<const Partition*>::fromVector(QVector<const Partition*>::fromStdVector(pvList)), peSize));
 
     delete dlg;
 }
@@ -1116,12 +1116,12 @@ void MainWindow::onResizeVolumeGroup()
     if (pmWidget().selectedDevice()->type() == Device::LVM_Device) {
         LvmDevice* d = dynamic_cast<LvmDevice*>(pmWidget().selectedDevice());
 
-        QList<const Partition*> pvList;
+        std::vector<const Partition*> pvList;
         // *NOTE*: pvList will be modified and validated by the dialog
 
         QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, d, pvList);
         if (dlg->exec() == QDialog::Accepted)
-            operationStack().push(new ResizeVolumeGroupOperation(*d, pvList));
+            operationStack().push(new ResizeVolumeGroupOperation(*d, QList<const Partition*>::fromVector(QVector<const Partition*>::fromStdVector(pvList))));
 
         delete dlg;
     }

@@ -22,8 +22,6 @@
 #include <util/globallog.h>
 #include <util/capacity.h>
 
-
-
 ListPhysicalVolumes::ListPhysicalVolumes(QWidget* parent) :
     QWidget(parent),
     Ui::ListPhysicalVolumesBase()
@@ -37,13 +35,13 @@ void ListPhysicalVolumes::addPartition(const Partition& p, bool checked)
     listPhysicalVolumes().addItem(item);
 }
 
-QList<const Partition *> ListPhysicalVolumes::checkedItems()
+std::vector<const Partition *> ListPhysicalVolumes::checkedItems()
 {
-    QList<const Partition *> partitionList;
+    std::vector<const Partition *> partitionList;
     for (int i = 0; i < listPhysicalVolumes().count(); i++) {
         ListPhysicalVolumeWidgetItem* item = dynamic_cast<ListPhysicalVolumeWidgetItem*>(listPhysicalVolumes().item(i));
         if(item && item->checkState() == Qt::Checked)
-            partitionList.append(item->partition());
+            partitionList.push_back(item->partition());
     }
     return partitionList;
 }

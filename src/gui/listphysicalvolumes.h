@@ -23,6 +23,8 @@
 
 #include <core/partition.h>
 
+#include <vector>
+
 #include <QWidget>
 
 class Device;
@@ -48,7 +50,7 @@ public:
 
     void addPartition(const Partition& p, bool checked);
 
-    QList<const Partition *> checkedItems();
+    std::vector<const Partition *> checkedItems();
 
     QListWidget& listPhysicalVolumes() {
         Q_ASSERT(m_ListPhysicalVolumes);

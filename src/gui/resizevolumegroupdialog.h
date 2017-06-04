@@ -31,7 +31,7 @@ class ResizeVolumeGroupDialog : public VolumeGroupDialog
     Q_DISABLE_COPY(ResizeVolumeGroupDialog)
 
 public:
-    ResizeVolumeGroupDialog(QWidget* parent, VolumeManagerDevice *d, QList<const Partition*>& partList);
+    ResizeVolumeGroupDialog(QWidget* parent, VolumeManagerDevice *d, std::vector<const Partition*>& partList);
 
 protected:
     void accept() override;

@@ -17,8 +17,8 @@
  *************************************************************************/
 
 #include "gui/treelog.h"
-
 #include "gui/partitionmanagerwidget.h"
+#include "config.h"
 
 #include <util/globallog.h>
 #include <util/helpers.h>
@@ -37,8 +37,6 @@
 #include <KJobUiDelegate>
 #include <KLocalizedString>
 #include <KMessageBox>
-
-#include <config.h>
 
 /** Creates a new TreeLog instance.
     @param parent the parent widget
