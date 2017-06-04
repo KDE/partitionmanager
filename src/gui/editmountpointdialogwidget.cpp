@@ -72,9 +72,10 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
     labelType().setText(partition().fileSystem().name());
 
     if (mountPoints().find(m_deviceNode) == mountPoints().end())
-        mountPoints()[m_deviceNode] = new MountEntry(m_deviceNode, QString(), partition().fileSystem().name(), QStringList(), 0, 0, MountEntry::deviceNode);
+        mountPoints().insert(std::pair<QString, MountEntry*>(m_deviceNode, new MountEntry(m_deviceNode, QString(), partition().fileSystem().name(), QStringList(), 0, 0, MountEntry::deviceNode)));
 
-    MountEntry* entry = mountPoints()[m_deviceNode];
+    auto search = mountPoints().find(m_deviceNode); // FIXME: Only one mountpoint entry corresponding to given device is shown
+    MountEntry* entry = search->second;
 
     Q_ASSERT(entry);
 
@@ -127,7 +128,8 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
 
 EditMountPointDialogWidget::~EditMountPointDialogWidget()
 {
-    qDeleteAll(mountPoints().values());
+    for (const auto &mp : mountPoints())
+        delete mp.second;
 }
 
 void EditMountPointDialogWidget::setupOptions(const QStringList& options)
@@ -165,10 +167,10 @@ QStringList EditMountPointDialogWidget::options() const
 {
     QStringList optList = m_Options.split(QStringLiteral(","), QString::SkipEmptyParts);
 
-    const auto keys = boxOptions().keys();
+    const auto keys = boxOptions();
     for (const auto &s : keys)
-        if (boxOptions()[s]->isChecked())
-            optList.append(s);
+        if (s.second->isChecked())
+            optList.append(s.first);
 
     return optList;
 }
@@ -201,7 +203,7 @@ bool EditMountPointDialogWidget::readMountpoints(const QString& filename)
 
         if (!device.isEmpty()) {
             QString mountPoint = QString::fromUtf8(mnt->mnt_dir);
-            mountPoints()[device] = new MountEntry(mnt, type);
+            mountPoints().insert(std::pair<QString, MountEntry*>(device, new MountEntry(mnt, type)));
         }
     }
 
@@ -239,7 +241,8 @@ bool EditMountPointDialogWidget::acceptChanges()
         return false;
     }
 
-    entry = mountPoints()[labelName().text()];
+    auto search = mountPoints().find(labelName().text());
+    entry = search->second;
 
     entry->dumpFreq = spinDumpFreq().value();
     entry->passNumber = spinPassNumber().value();
@@ -268,7 +271,7 @@ bool EditMountPointDialogWidget::writeMountpoints(const QString& filename)
     } else {
         const auto mp = mountPoints();
         for (const auto &me : mp)
-            writeEntry(out, me);
+            writeEntry(out, me.second);
 
         out.close();
 

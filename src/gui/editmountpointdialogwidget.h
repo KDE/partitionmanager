@@ -21,7 +21,8 @@
 
 #include "ui_editmountpointdialogwidgetbase.h"
 
-#include <QMap>
+#include <map>
+
 #include <QString>
 #include <QWidget>
 
@@ -80,14 +81,14 @@ protected:
 
 private:
     void setupOptions(const QStringList& options);
-    QMap<QString, QCheckBox*>& boxOptions() {
+    std::map<QString, QCheckBox*>& boxOptions() {
         return m_BoxOptions;
     }
-    const QMap<QString, QCheckBox*>& boxOptions() const {
+    const std::map<QString, QCheckBox*>& boxOptions() const {
         return m_BoxOptions;
     }
     bool readMountpoints(const QString& filename);
-    QMap<QString, MountEntry*>& mountPoints() {
+    std::multimap<QString, MountEntry*>& mountPoints() {
         return m_MountPoints;
     }
     const Partition& partition() const {
@@ -96,10 +97,10 @@ private:
 
 private:
     const Partition& m_Partition;
-    QMap<QString, MountEntry*> m_MountPoints;
+    std::multimap<QString, MountEntry*> m_MountPoints;
     QString m_Options;
     QString m_deviceNode;
-    QMap<QString, QCheckBox*> m_BoxOptions;
+    std::map<QString, QCheckBox*> m_BoxOptions;
 };
 
 #endif
