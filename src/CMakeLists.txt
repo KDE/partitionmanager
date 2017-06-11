@@ -57,7 +57,7 @@ target_compile_definitions(partitionmanager PRIVATE -DCMAKE_INSTALL_FULL_LIBEXEC
 
 install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.partitionmanager.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
-install(FILES gui/partitionmanagerui.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/partitionmanager)
+install(FILES gui/partitionmanagerui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/partitionmanager)
 install(PROGRAMS org.kde.partitionmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
 ############################################
