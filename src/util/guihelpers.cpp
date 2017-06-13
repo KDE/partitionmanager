@@ -17,6 +17,7 @@
  *************************************************************************/
 
 #include "util/guihelpers.h"
+#include "config.h"
 
 #include <backend/corebackendmanager.h>
 
@@ -33,9 +34,6 @@
 #include <KMessageBox>
 
 #include <unistd.h>
-#include <signal.h>
-
-#include <config.h>
 
 QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
 {
@@ -67,15 +65,39 @@ bool checkPermissions()
                 argList = QStringLiteral("-c ");
 
             // Workaround for ugly GUI when kdesu uses sudo
+            QString DBusString = QStringLiteral("DBUS_SESSION_BUS_ADDRESS");
             const QStringList envVars = { QStringLiteral("KDE_FULL_SESSION"),
                                           QStringLiteral("QT_WAYLAND_FORCE_DPI"),
                                           QStringLiteral("QT_QPA_PLATFORM"),
                                           QStringLiteral("XDG_RUNTIME_DIR"),
-                                          QStringLiteral("DBUS_SESSION_BUS_ADDRESS") };
+                                          DBusString };
             QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
             for (const auto &var : envVars)
                 if (env.contains(var))
                     argList += var + QStringLiteral("=") + env.value(var) + QStringLiteral(" ");
+
+            QString displayString = QStringLiteral("DISPLAY");
+            QString homeString = QStringLiteral("HOME");
+            if (!env.contains(DBusString) && env.contains(displayString) && env.contains(homeString)) {
+                QFile file(QStringLiteral("/var/lib/dbus/machine-id"));
+                if (file.open(QIODevice::ReadOnly)) {
+                    QTextStream in(&file);
+                    QString machineId = in.readLine();
+                    file.close();
+                    QString display = env.value(displayString).remove(0,1);
+                    QFile sessionFile(env.value(homeString) + QStringLiteral("/.dbus/session-bus/") + machineId + QStringLiteral("-") + display);
+                    if (sessionFile.open(QIODevice::ReadOnly)) {
+                        QTextStream in2(&sessionFile);
+                        while (!in2.atEnd()) {
+                            QString line = in2.readLine();
+                            if (line.startsWith(DBusString)) {
+                                argList += line + QStringLiteral(" ");
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
 
             argList += QCoreApplication::arguments().join(QStringLiteral(" ")) + QStringLiteral(" --dontsu");
 
