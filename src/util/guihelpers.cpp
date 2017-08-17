@@ -101,6 +101,7 @@ bool checkPermissions()
 
             argList += QCoreApplication::arguments().join(QStringLiteral(" ")) + QStringLiteral(" --dontsu");
 
+            qDebug() << "Executing: " << suCmd << argList;
             if (QProcess::execute(suCmd, QStringList(argList)) == 0)
                 return false;
         }
