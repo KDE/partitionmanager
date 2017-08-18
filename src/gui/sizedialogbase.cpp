@@ -32,6 +32,8 @@
 
 #include <util/capacity.h>
 
+#include <algorithm>
+
 #include <KLocalizedString>
 
 #include <QFrame>
@@ -234,7 +236,7 @@ void SizeDialogBase::onSpinCapacityChanged(double newCapacity)
         }
     }
 
-    tmp = qMin(delta, partition().firstSector() - minimumFirstSector());
+    tmp = std::min(delta, partition().firstSector() - minimumFirstSector());
     delta -= tmp;
 
     if (tmp != 0) {

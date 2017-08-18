@@ -272,7 +272,10 @@ void NewDialog::onLVNameChanged(const QString& newName)
 void NewDialog::updateHideAndShow()
 {
     // this is mostly copy'n'pasted from PartPropsDialog::updateHideAndShow()
-    if (partition().roles().has(PartitionRole::Extended) || partition().fileSystem().supportSetLabel() == FileSystem::cmdSupportNone) {
+    if (partition().roles().has(PartitionRole::Extended) ||
+       (partition().fileSystem().supportSetLabel() == FileSystem::cmdSupportNone &&
+        partition().fileSystem().supportCreateWithLabel() == FileSystem::cmdSupportNone) )
+    {
         dialogWidget().label().setReadOnly(true);
         dialogWidget().noSetLabel().setVisible(true);
         dialogWidget().noSetLabel().setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
