@@ -35,7 +35,7 @@
     @param parent pointer to the parent widget
     @param d the Device to show properties for
 */
-ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, VolumeManagerDevice* d, std::vector<const Partition*>& partList)
+ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, VolumeManagerDevice* d, QVector<const Partition*>& partList)
     : VolumeGroupDialog(parent, d->name(), partList)
     , m_Device(d)
 {
@@ -83,6 +83,6 @@ void ResizeVolumeGroupDialog::setupConstraints()
 
 void ResizeVolumeGroupDialog::accept()
 {
-    targetPVList().insert(targetPVList().end(), dialogWidget().listPV().checkedItems().begin(), dialogWidget().listPV().checkedItems().end());
+    targetPVList().append(dialogWidget().listPV().checkedItems());
     QDialog::accept();
 }

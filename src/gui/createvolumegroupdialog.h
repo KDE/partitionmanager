@@ -31,7 +31,7 @@ class CreateVolumeGroupDialog : public VolumeGroupDialog
     Q_DISABLE_COPY(CreateVolumeGroupDialog)
 
 public:
-    CreateVolumeGroupDialog(QWidget* parent, QString& vgName, std::vector<const Partition*>& pvList, qint32& peSize, QList<Device*> devices);
+    CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& pvList, qint32& peSize, QList<Device*> devices);
 
 protected:
     void accept() override;

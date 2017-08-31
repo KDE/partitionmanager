@@ -20,7 +20,7 @@
 
 #define VOLUMEGROUPDIALOG__H
 
-#include <vector>
+#include <QVector>
 
 #include <QDialog>
 #include <QDialogButtonBox>
@@ -35,7 +35,7 @@ class VolumeGroupDialog : public QDialog
     Q_DISABLE_COPY(VolumeGroupDialog)
 
 public:
-    VolumeGroupDialog(QWidget* parent, QString& vgName, std::vector<const Partition*>& pvList);
+    VolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& pvList);
     ~VolumeGroupDialog();
 
 protected:
@@ -67,11 +67,11 @@ protected:
         return m_TargetName;
     }
 
-    std::vector<const Partition*>& targetPVList() {
+    QVector<const Partition*>& targetPVList() {
         return m_TargetPVList;
     }
 
-    const std::vector<const Partition*>& targetPVList() const {
+    const QVector<const Partition*>& targetPVList() const {
         return m_TargetPVList;
     }
 
@@ -89,7 +89,7 @@ protected:
 protected:
     VolumeGroupWidget* m_DialogWidget;
     QString& m_TargetName;
-    std::vector<const Partition*>& m_TargetPVList;
+    QVector<const Partition*>& m_TargetPVList;
     bool m_IsValidSize;
     bool m_IsValidName;
 
