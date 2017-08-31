@@ -1106,7 +1106,7 @@ void MainWindow::onCreateNewVolumeGroup()
     // *NOTE*: vgName & pvList will be modified and validated by the dialog
     QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList, peSize, operationStack().previewDevices());
     if (dlg->exec() == QDialog::Accepted)
-        operationStack().push(new CreateVolumeGroupOperation(vgName, QList<const Partition*>::fromVector(pvList), peSize));
+        operationStack().push(new CreateVolumeGroupOperation(vgName, pvList, peSize));
 
     delete dlg;
 }
@@ -1121,7 +1121,7 @@ void MainWindow::onResizeVolumeGroup()
 
         QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, d, pvList);
         if (dlg->exec() == QDialog::Accepted)
-            operationStack().push(new ResizeVolumeGroupOperation(*d, QList<const Partition*>::fromVector(pvList)));
+            operationStack().push(new ResizeVolumeGroupOperation(*d, pvList));
 
         delete dlg;
     }
