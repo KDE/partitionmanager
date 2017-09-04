@@ -318,7 +318,9 @@ void PartPropsDialog::setupFileSystemComboBox()
     dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));
 
     const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, -1, QString());
-    dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
+    m_EditLabelConnection = connect(dialogWidget().m_EditLabel, &QLineEdit::textChanged, [=] (const QString& text) {
+        dialogWidget().m_EditLabel->setText(fs->validateLabel(text));
+    });
 }
 
 void PartPropsDialog::updatePartitionFileSystem()
@@ -343,7 +345,10 @@ void PartPropsDialog::onFilesystemChanged(int)
         updatePartitionFileSystem();
 
         const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, -1, QString());
-        dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
+        disconnect( m_EditLabelConnection );
+        m_EditLabelConnection = connect(dialogWidget().m_EditLabel, &QLineEdit::textChanged, [=] (const QString& text) {
+            dialogWidget().m_EditLabel->setText(fs->validateLabel(text));
+        });
     } else {
         dialogWidget().fileSystem().disconnect(this);
         setupFileSystemComboBox();

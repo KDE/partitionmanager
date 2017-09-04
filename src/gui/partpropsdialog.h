@@ -129,6 +129,7 @@ private:
     QPushButton* cancelButton;
     QVBoxLayout *mainLayout;
 
+    QMetaObject::Connection m_EditLabelConnection;
 };
 
 #endif
