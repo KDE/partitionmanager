@@ -31,6 +31,7 @@
 #include <KSharedConfig>
 
 #include <QListWidgetItem>
+#include <QRegularExpressionValidator>
 
 /** Creates a new VolumeGroupDialog
     @param parent pointer to the parent widget
@@ -74,8 +75,8 @@ VolumeGroupDialog::~VolumeGroupDialog()
 
 void VolumeGroupDialog::setupDialog()
 {
-    QRegExp re(QStringLiteral("[\\w-.+]+"));
-    QRegExpValidator *validator = new QRegExpValidator(re, this);
+    QRegularExpression re(QStringLiteral("[\\w-.+]+"));
+    QRegularExpressionValidator *validator = new QRegularExpressionValidator(re, this);
     dialogWidget().vgName().setValidator(validator);
     dialogWidget().vgName().setText(targetName());
 
