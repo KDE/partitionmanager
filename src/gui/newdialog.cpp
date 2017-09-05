@@ -228,9 +228,8 @@ void NewDialog::onFilesystemChanged(int idx)
     updateOkButtonStatus();
 
     const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()), -1, -1, -1, -1, QString());
-    connect(dialogWidget().m_EditLabel, &QLineEdit::textChanged, [=] (const QString& text) {
-        dialogWidget().m_EditLabel->setText(fs->validateLabel(text));
-    });
+    dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
+    dialogWidget().m_EditLabel->setValidator(fs->labelValidator(dialogWidget().m_EditLabel));
 
     updateSpinCapacity(partition().length());
     dialogWidget().partResizerWidget().update();

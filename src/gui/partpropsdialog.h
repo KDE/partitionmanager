@@ -128,8 +128,6 @@ private:
     QPushButton* okButton;
     QPushButton* cancelButton;
     QVBoxLayout *mainLayout;
-
-    QMetaObject::Connection m_EditLabelConnection;
 };
 
 #endif
