@@ -126,8 +126,8 @@ void ApplyProgressDialog::setupConnections()
     connect(&timer(), &QTimer::timeout, this, &ApplyProgressDialog::onSecondElapsed);
     connect(&detailsWidget().buttonSave(), &QPushButton::clicked, this, &ApplyProgressDialog::saveReport);
     connect(&detailsWidget().buttonBrowser(), &QPushButton::clicked, this, &ApplyProgressDialog::browserReport);
-    connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &ApplyProgressDialog::accept);
-    connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &ApplyProgressDialog::reject);
+    connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &ApplyProgressDialog::onOkButton);
+    connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &ApplyProgressDialog::onCancelButton);
     connect(detailsButton, &QPushButton::clicked, this, &ApplyProgressDialog::toggleDetails);
 }
 
