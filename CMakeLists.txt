@@ -26,7 +26,7 @@ set(KPMCORE_MIN_VERSION "3.0.0")
 # Check KPMcore dependency when bumping
 set(VERSION_MAJOR "3")
 set(VERSION_MINOR "1")
-set(VERSION_RELEASE "0")
+set(VERSION_RELEASE "1")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE})
 add_definitions(-D'VERSION="${VERSION}"') #"
 
