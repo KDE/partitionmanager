@@ -23,7 +23,7 @@
 
 #include <core/partition.h>
 
-#include <vector>
+#include <QVector>
 
 #include <QWidget>
 
@@ -50,7 +50,7 @@ public:
 
     void addPartition(const Partition& p, bool checked);
 
-    std::vector<const Partition *> checkedItems();
+    QVector<const Partition *> checkedItems();
 
     QListWidget& listPhysicalVolumes() {
         Q_ASSERT(m_ListPhysicalVolumes);

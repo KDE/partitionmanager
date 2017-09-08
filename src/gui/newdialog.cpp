@@ -157,7 +157,8 @@ void NewDialog::accept()
         partition().deleteFileSystem();
         partition().setFileSystem(FileSystemFactory::create(FileSystem::Extended,
                                                             partition().firstSector(),
-                                                            partition().lastSector()));
+                                                            partition().lastSector(),
+                                                            partition().sectorSize()));
     }
     else if (partition().roles().has(PartitionRole::Luks)) {
         FileSystem::Type innerFsType = partition().fileSystem().type();
@@ -165,7 +166,8 @@ void NewDialog::accept()
         FS::luks* luksFs = dynamic_cast< FS::luks* >(
                                FileSystemFactory::create(FileSystem::Luks,
                                                          partition().firstSector(),
-                                                         partition().lastSector()));
+                                                         partition().lastSector(),
+                                                         partition().sectorSize()));
         luksFs->createInnerFileSystem(innerFsType);
         luksFs->setPassphrase(dialogWidget().editPassphrase().password());
         partition().setFileSystem(luksFs);
@@ -215,7 +217,7 @@ void NewDialog::onRoleChanged(bool)
 void NewDialog::updateFileSystem(FileSystem::Type t)
 {
     partition().deleteFileSystem();
-    partition().setFileSystem(FileSystemFactory::create(t, partition().firstSector(), partition().lastSector()));
+    partition().setFileSystem(FileSystemFactory::create(t, partition().firstSector(), partition().lastSector(), partition().sectorSize()));
 }
 
 void NewDialog::onFilesystemChanged(int idx)
@@ -225,8 +227,9 @@ void NewDialog::onFilesystemChanged(int idx)
     setupConstraints();
     updateOkButtonStatus();
 
-    const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()), -1, -1, -1, QString());
+    const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()), -1, -1, -1, -1, QString());
     dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
+    dialogWidget().m_EditLabel->setValidator(fs->labelValidator(dialogWidget().m_EditLabel));
 
     updateSpinCapacity(partition().length());
     dialogWidget().partResizerWidget().update();
@@ -272,7 +275,10 @@ void NewDialog::onLVNameChanged(const QString& newName)
 void NewDialog::updateHideAndShow()
 {
     // this is mostly copy'n'pasted from PartPropsDialog::updateHideAndShow()
-    if (partition().roles().has(PartitionRole::Extended) || partition().fileSystem().supportSetLabel() == FileSystem::cmdSupportNone) {
+    if (partition().roles().has(PartitionRole::Extended) ||
+       (partition().fileSystem().supportSetLabel() == FileSystem::cmdSupportNone &&
+        partition().fileSystem().supportCreateWithLabel() == FileSystem::cmdSupportNone) )
+    {
         dialogWidget().label().setReadOnly(true);
         dialogWidget().noSetLabel().setVisible(true);
         dialogWidget().noSetLabel().setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));

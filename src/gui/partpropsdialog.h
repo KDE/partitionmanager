@@ -128,7 +128,6 @@ private:
     QPushButton* okButton;
     QPushButton* cancelButton;
     QVBoxLayout *mainLayout;
-
 };
 
 #endif

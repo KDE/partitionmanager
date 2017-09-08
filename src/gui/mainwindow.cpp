@@ -1046,7 +1046,7 @@ void MainWindow::onImportPartitionTable()
                 return;
             }
 
-            FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(fsName), firstSector, lastSector);
+            FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(fsName), firstSector, lastSector, device.logicalSize());
 
             if (fs == nullptr) {
                 KMessageBox::error(this, xi18nc("@info the partition is NOT a device path, just a number", "Could not create file system \"%1\" for partition %2 (line %3).", fsName, num, lineNo), xi18nc("@title:window", "Error While Importing Partition Table"));
@@ -1101,12 +1101,12 @@ void MainWindow::onExportPartitionTable()
 void MainWindow::onCreateNewVolumeGroup()
 {
     QString vgName;
-    std::vector<const Partition*> pvList;
+    QVector<const Partition*> pvList;
     qint32 peSize = 4;
     // *NOTE*: vgName & pvList will be modified and validated by the dialog
     QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList, peSize, operationStack().previewDevices());
     if (dlg->exec() == QDialog::Accepted)
-        operationStack().push(new CreateVolumeGroupOperation(vgName, QList<const Partition*>::fromVector(QVector<const Partition*>::fromStdVector(pvList)), peSize));
+        operationStack().push(new CreateVolumeGroupOperation(vgName, pvList, peSize));
 
     delete dlg;
 }
@@ -1116,12 +1116,12 @@ void MainWindow::onResizeVolumeGroup()
     if (pmWidget().selectedDevice()->type() == Device::LVM_Device) {
         LvmDevice* d = dynamic_cast<LvmDevice*>(pmWidget().selectedDevice());
 
-        std::vector<const Partition*> pvList;
+        QVector<const Partition*> pvList;
         // *NOTE*: pvList will be modified and validated by the dialog
 
         QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, d, pvList);
         if (dlg->exec() == QDialog::Accepted)
-            operationStack().push(new ResizeVolumeGroupOperation(*d, QList<const Partition*>::fromVector(QVector<const Partition*>::fromStdVector(pvList))));
+            operationStack().push(new ResizeVolumeGroupOperation(*d, pvList));
 
         delete dlg;
     }

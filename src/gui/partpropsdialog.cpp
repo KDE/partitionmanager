@@ -187,7 +187,7 @@ void PartPropsDialog::setupFlagsList()
 void PartPropsDialog::updateHideAndShow()
 {
     // create a temporary fs for some checks
-    const FileSystem* fs = FileSystemFactory::create(newFileSystemType(), -1, -1, -1, QString());
+    const FileSystem* fs = FileSystemFactory::create(newFileSystemType(), -1, -1, -1, -1, QString());
 
     if (fs == nullptr || fs->supportSetLabel() == FileSystem::cmdSupportNone) {
         dialogWidget().label().setReadOnly(true);
@@ -317,13 +317,14 @@ void PartPropsDialog::setupFileSystemComboBox()
 
     dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));
 
-    const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, QString());
+    const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, -1, QString());
     dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
+    dialogWidget().m_EditLabel->setValidator(fs->labelValidator(dialogWidget().m_EditLabel));
 }
 
 void PartPropsDialog::updatePartitionFileSystem()
 {
-    FileSystem* fs = FileSystemFactory::create(newFileSystemType(), partition().firstSector(), partition().lastSector());
+    FileSystem* fs = FileSystemFactory::create(newFileSystemType(), partition().firstSector(), partition().lastSector(), partition().sectorSize());
     partition().deleteFileSystem();
     partition().setFileSystem(fs);
     dialogWidget().partWidget().update();
@@ -342,8 +343,9 @@ void PartPropsDialog::onFilesystemChanged(int)
         setWarnFileSystemChange();
         updatePartitionFileSystem();
 
-        const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, QString());
+        const FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(dialogWidget().fileSystem().currentText()), -1, -1, -1, -1, QString());
         dialogWidget().m_EditLabel->setMaxLength(fs->maxLabelLength());
+        dialogWidget().m_EditLabel->setValidator(fs->labelValidator(dialogWidget().m_EditLabel));
     } else {
         dialogWidget().fileSystem().disconnect(this);
         setupFileSystemComboBox();

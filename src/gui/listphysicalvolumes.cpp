@@ -35,9 +35,9 @@ void ListPhysicalVolumes::addPartition(const Partition& p, bool checked)
     listPhysicalVolumes().addItem(item);
 }
 
-std::vector<const Partition *> ListPhysicalVolumes::checkedItems()
+QVector<const Partition *> ListPhysicalVolumes::checkedItems()
 {
-    std::vector<const Partition *> partitionList;
+    QVector<const Partition *> partitionList;
     for (int i = 0; i < listPhysicalVolumes().count(); i++) {
         ListPhysicalVolumeWidgetItem* item = dynamic_cast<ListPhysicalVolumeWidgetItem*>(listPhysicalVolumes().item(i));
         if(item && item->checkState() == Qt::Checked)

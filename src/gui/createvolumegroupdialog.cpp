@@ -30,7 +30,7 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgName, std::vector<const Partition*>& partList, qint32& peSize, QList<Device*> devices)
+CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& partList, qint32& peSize, QList<Device*> devices)
     : VolumeGroupDialog(parent, vgName, partList)
     , m_PESize(peSize)
     , m_Devices(devices)
@@ -66,7 +66,7 @@ void  CreateVolumeGroupDialog::accept()
     QString& tname = targetName();
     tname = dialogWidget().vgName().text();
 
-    targetPVList().insert(targetPVList().end(), dialogWidget().listPV().checkedItems().begin(), dialogWidget().listPV().checkedItems().end());
+    targetPVList().append(dialogWidget().listPV().checkedItems());
 
     qint32& pesize = peSize();
     pesize = dialogWidget().spinPESize().value();

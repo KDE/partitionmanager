@@ -31,13 +31,14 @@
 #include <KSharedConfig>
 
 #include <QListWidgetItem>
+#include <QRegularExpressionValidator>
 
 /** Creates a new VolumeGroupDialog
     @param parent pointer to the parent widget
     @param vgName Volume Group name
     @param pvList List of LVM Physical Volumes used to create Volume Group
 */
-VolumeGroupDialog::VolumeGroupDialog(QWidget* parent, QString& vgName, std::vector<const Partition*>& pvList) :
+VolumeGroupDialog::VolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& pvList) :
     QDialog(parent),
     m_DialogWidget(new VolumeGroupWidget(this)),
     m_TargetName(vgName),
@@ -74,8 +75,8 @@ VolumeGroupDialog::~VolumeGroupDialog()
 
 void VolumeGroupDialog::setupDialog()
 {
-    QRegExp re(QStringLiteral("[\\w-.+]+"));
-    QRegExpValidator *validator = new QRegExpValidator(re, this);
+    QRegularExpression re(QStringLiteral("[\\w-.+]+"));
+    QRegularExpressionValidator *validator = new QRegularExpressionValidator(re, this);
     dialogWidget().vgName().setValidator(validator);
     dialogWidget().vgName().setText(targetName());
 
@@ -131,7 +132,7 @@ void VolumeGroupDialog::updateSectorInfos()
 
 void VolumeGroupDialog::updateSizeInfos()
 {
-    const std::vector<const Partition *> checkedPartitions = dialogWidget().listPV().checkedItems();
+    const QVector<const Partition *> checkedPartitions = dialogWidget().listPV().checkedItems();
     m_TotalSize = 0;
     for (const auto &p : checkedPartitions)
         m_TotalSize += p->capacity() - p->capacity() % (dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Byte, Capacity::MiB)); // subtract space which is too small to hold PE
