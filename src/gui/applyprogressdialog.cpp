@@ -296,7 +296,7 @@ void ApplyProgressDialog::onJobStarted(Job* job, Operation* op)
 
         QTreeWidgetItem* child = new QTreeWidgetItem();
         child->setText(0, job->description());
-        child->setIcon(0, job->statusIcon());
+        child->setIcon(0, QIcon::fromTheme(job->statusIcon()).pixmap(IconSize(KIconLoader::Small)));
         child->setText(1, QTime(0, 0).toString(timeFormat()));
         item->addChild(child);
         dialogWidget().treeTasks().scrollToBottom();
@@ -308,7 +308,7 @@ void ApplyProgressDialog::onJobStarted(Job* job, Operation* op)
 void ApplyProgressDialog::onJobFinished(Job* job, Operation* op)
 {
     if (currentJobItem())
-        currentJobItem()->setIcon(0, job->statusIcon());
+        currentJobItem()->setIcon(0, QIcon::fromTheme(job->statusIcon()).pixmap(IconSize(KIconLoader::Small)));
 
     setCurrentJobItem(nullptr);
 
@@ -323,7 +323,7 @@ void ApplyProgressDialog::onOpFinished(int num, Operation* op)
 {
     if (currentOpItem()) {
         currentOpItem()->setText(0, opDesc(num, *op));
-        currentOpItem()->setIcon(0, op->statusIcon());
+        currentOpItem()->setIcon(0, QIcon::fromTheme(op->statusIcon()).pixmap(IconSize(KIconLoader::Small)));
     }
 
     setCurrentOpItem(nullptr);
@@ -356,7 +356,7 @@ QString ApplyProgressDialog::opDesc(int num, const Operation& op) const
 void ApplyProgressDialog::addTaskOutput(int num, const Operation& op)
 {
     QTreeWidgetItem* item = new QTreeWidgetItem();
-    item->setIcon(0, op.statusIcon());
+    item->setIcon(0, QIcon::fromTheme(op.statusIcon()).pixmap(IconSize(KIconLoader::Small)));
     item->setText(0, opDesc(num, op));
     item->setText(1, QTime(0, 0).toString(timeFormat()));
 
