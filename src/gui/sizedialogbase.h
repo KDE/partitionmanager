@@ -15,9 +15,9 @@
  *  You should have received a copy of the GNU General Public License    *
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
-#if !defined(SIZEDIALOGBASE__H)
+#if !defined(SIZEDIALOGBASE_H)
 
-#define SIZEDIALOGBASE__H
+#define SIZEDIALOGBASE_H
 
 #include <util/capacity.h>
 

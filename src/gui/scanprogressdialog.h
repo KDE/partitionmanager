@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(SCANPROGRESSDIALOG__H)
+#if !defined(SCANPROGRESSDIALOG_H)
 
-#define SCANPROGRESSDIALOG__H
+#define SCANPROGRESSDIALOG_H
 
 #include <QProgressDialog>
 

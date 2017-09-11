@@ -16,9 +16,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(DEVICEPROPSDIALOG__H)
+#if !defined(DEVICEPROPSDIALOG_H)
 
-#define DEVICEPROPSDIALOG__H
+#define DEVICEPROPSDIALOG_H
 
 #include <QDialog>
 

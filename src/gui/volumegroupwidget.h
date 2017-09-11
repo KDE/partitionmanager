@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(VOLUMEGROUPWIDGET__H)
+#if !defined(VOLUMEGROUPWIDGET_H)
 
-#define VOLUMEGROUPWIDGET__H
+#define VOLUMEGROUPWIDGET_H
 
 #include "ui_volumegroupwidgetbase.h"
 

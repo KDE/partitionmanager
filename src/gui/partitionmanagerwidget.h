@@ -16,9 +16,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(PARTITIONMANAGERWIDGET__H)
+#if !defined(PARTITIONMANAGERWIDGET_H)
 
-#define PARTITIONMANAGERWIDGET__H
+#define PARTITIONMANAGERWIDGET_H
 
 #include <core/operationstack.h>
 #include <core/operationrunner.h>

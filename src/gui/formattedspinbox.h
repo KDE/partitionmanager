@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(FORMATTEDSPINBOX__H)
+#if !defined(FORMATTEDSPINBOX_H)
 
-#define FORMATTEDSPINBOX__H
+#define FORMATTEDSPINBOX_H
 
 #include <QDoubleSpinBox>
 

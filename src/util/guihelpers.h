@@ -16,9 +16,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(GUIHELPERS__H)
+#if !defined(GUIHELPERS_H)
 
-#define GUIHELPERS__H
+#define GUIHELPERS_H
 
 #include <fs/filesystem.h>
 #include <util/capacity.h>

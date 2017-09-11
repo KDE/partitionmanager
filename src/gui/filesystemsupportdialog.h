@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(FILESYSTEMSUPPORTDIALOG__H)
+#if !defined(FILESYSTEMSUPPORTDIALOG_H)
 
-#define FILESYSTEMSUPPORTDIALOG__H
+#define FILESYSTEMSUPPORTDIALOG_H
 
 #include <QWidget>
 #include <QDialog>

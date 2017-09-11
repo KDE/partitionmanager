@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(APPLYPROGRESSDETAILSWIDGET__H)
+#if !defined(APPLYPROGRESSDETAILSWIDGET_H)
 
-#define APPLYPROGRESSDETAILSWIDGET__H
+#define APPLYPROGRESSDETAILSWIDGET_H
 
 #include "ui_applyprogressdetailswidgetbase.h"
 

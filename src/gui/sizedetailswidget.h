@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(SIZEDETAILSWIDGET__H)
+#if !defined(SIZEDETAILSWIDGET_H)
 
-#define SIZEDETAILSWIDGET__H
+#define SIZEDETAILSWIDGET_H
 
 #include "ui_sizedetailswidgetbase.h"
 

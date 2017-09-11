@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(SMARTDIALOGWIDGET__H)
+#if !defined(SMARTDIALOGWIDGET_H)
 
-#define SMARTDIALOGWIDGET__H
+#define SMARTDIALOGWIDGET_H
 
 #include "ui_smartdialogwidgetbase.h"
 

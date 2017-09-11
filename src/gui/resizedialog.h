@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(RESIZEDIALOG__H)
+#if !defined(RESIZEDIALOG_H)
 
-#define RESIZEDIALOG__H
+#define RESIZEDIALOG_H
 
 #include "gui/sizedialogbase.h"
 

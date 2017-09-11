@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(FILESYSTEMCOLORSPAGEWIDGET__H)
+#if !defined(FILESYSTEMCOLORSPAGEWIDGET_H)
 
-#define FILESYSTEMCOLORSPAGEWIDGET__H
+#define FILESYSTEMCOLORSPAGEWIDGET_H
 
 #include "ui_configurepagefilesystemcolors.h"
 

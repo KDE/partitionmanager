@@ -16,9 +16,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(APPLYPROGRESSDIALOG__H)
+#if !defined(APPLYPROGRESSDIALOG_H)
 
-#define APPLYPROGRESSDIALOG__H
+#define APPLYPROGRESSDIALOG_H
 
 #include <QDialog>
 #include <QString>

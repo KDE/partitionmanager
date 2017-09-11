@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(PARTPROPSWIDGET__H)
+#if !defined(PARTPROPSWIDGET_H)
 
-#define PARTPROPSWIDGET__H
+#define PARTPROPSWIDGET_H
 
 #include "ui_partpropswidgetbase.h"
 

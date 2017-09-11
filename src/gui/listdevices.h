@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(LISTDEVICES__H)
+#if !defined(LISTDEVICES_H)
 
-#define LISTDEVICES__H
+#define LISTDEVICES_H
 
 #include <core/operationstack.h>
 

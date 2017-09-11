@@ -16,9 +16,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(VOLUMEGROUPDIALOG__H)
+#if !defined(VOLUMEGROUPDIALOG_H)
 
-#define VOLUMEGROUPDIALOG__H
+#define VOLUMEGROUPDIALOG_H
 
 #include <QVector>
 

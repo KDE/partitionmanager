@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(APPLYPROGRESSDIALOGWIDGET__H)
+#if !defined(APPLYPROGRESSDIALOGWIDGET_H)
 
-#define APPLYPROGRESSDIALOGWIDGET__H
+#define APPLYPROGRESSDIALOGWIDGET_H
 
 #include "ui_applyprogressdialogwidgetbase.h"
 

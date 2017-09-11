@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(INSERTDIALOG__H)
+#if !defined(INSERTDIALOG_H)
 
-#define INSERTDIALOG__H
+#define INSERTDIALOG_H
 
 #include "gui/sizedialogbase.h"
 

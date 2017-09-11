@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(INFOPANE__H)
+#if !defined(INFOPANE_H)
 
-#define INFOPANE__H
+#define INFOPANE_H
 
 #include <QWidget>
 

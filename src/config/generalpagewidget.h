@@ -16,9 +16,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(GENERALPAGEWIDGET__H)
+#if !defined(GENERALPAGEWIDGET_H)
 
-#define GENERALPAGEWIDGET__H
+#define GENERALPAGEWIDGET_H
 
 #include "ui_configurepagegeneral.h"
 

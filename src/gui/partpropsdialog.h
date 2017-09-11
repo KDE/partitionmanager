@@ -16,9 +16,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(PARTPROPSDIALOG__H)
+#if !defined(PARTPROPSDIALOG_H)
 
-#define PARTPROPSDIALOG__H
+#define PARTPROPSDIALOG_H
 
 #include <fs/filesystem.h>
 

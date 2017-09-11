@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(LISTOPERATIONS__H)
+#if !defined(LISTOPERATIONS_H)
 
-#define LISTOPERATIONS__H
+#define LISTOPERATIONS_H
 
 #include <core/operationstack.h>
 

@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(RESIZEVOLUMEGROUPDIALOG__H)
+#if !defined(RESIZEVOLUMEGROUPDIALOG_H)
 
-#define RESIZEVOLUMEGROUPDIALOG__H
+#define RESIZEVOLUMEGROUPDIALOG_H
 
 #include <fs/lvm2_pv.h>
 

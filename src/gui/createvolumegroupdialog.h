@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(CREATEVOLUMEGROUPDIALOG__H)
+#if !defined(CREATEVOLUMEGROUPDIALOG_H)
 
-#define CREATEVOLUMEGROUPDIALOG__H
+#define CREATEVOLUMEGROUPDIALOG_H
 
 #include <core/device.h>
 #include <fs/lvm2_pv.h>

@@ -16,9 +16,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(CONFIGUREOPTIONSDIALOG__H)
+#if !defined(CONFIGUREOPTIONSDIALOG_H)
 
-#define CONFIGUREOPTIONSDIALOG__H
+#define CONFIGUREOPTIONSDIALOG_H
 
 #include <KConfigDialog>
 

@@ -16,9 +16,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(SIZEDIALOGWIDGET__H)
+#if !defined(SIZEDIALOGWIDGET_H)
 
-#define SIZEDIALOGWIDGET__H
+#define SIZEDIALOGWIDGET_H
 
 #include "ui_sizedialogwidgetbase.h"
 

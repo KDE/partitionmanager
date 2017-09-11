@@ -16,9 +16,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(EDITMOUNTPOINTDIALOG__H)
+#if !defined(EDITMOUNTPOINTDIALOG_H)
 
-#define EDITMOUNTPOINTDIALOG__H
+#define EDITMOUNTPOINTDIALOG_H
 
 #include <QDialog>
 

@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(CREATEPARTITIONTABLEWIDGET__H)
+#if !defined(CREATEPARTITIONTABLEWIDGET_H)
 
-#define CREATEPARTITIONTABLEWIDGET__H
+#define CREATEPARTITIONTABLEWIDGET_H
 
 #include "ui_createpartitiontablewidgetbase.h"
 

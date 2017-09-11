@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(PARTTABLEWIDGET__H)
+#if !defined(PARTTABLEWIDGET_H)
 
-#define PARTTABLEWIDGET__H
+#define PARTTABLEWIDGET_H
 
 #include <gui/partwidgetbase.h>
 

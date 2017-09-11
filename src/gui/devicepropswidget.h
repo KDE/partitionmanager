@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(DEVICEPROPSWIDGET__H)
+#if !defined(DEVICEPROPSWIDGET_H)
 
-#define DEVICEPROPSWIDGET__H
+#define DEVICEPROPSWIDGET_H
 
 #include "ui_devicepropswidgetbase.h"
 

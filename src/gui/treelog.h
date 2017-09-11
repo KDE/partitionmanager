@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(TREELOG__H)
+#if !defined(TREELOG_H)
 
-#define TREELOG__H
+#define TREELOG_H
 
 #include "ui_treelogbase.h"
 

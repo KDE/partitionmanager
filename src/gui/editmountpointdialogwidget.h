@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(EDITMOUNTPOINTDIALOGWIDGET__H)
+#if !defined(EDITMOUNTPOINTDIALOGWIDGET_H)
 
-#define EDITMOUNTPOINTDIALOGWIDGET__H
+#define EDITMOUNTPOINTDIALOGWIDGET_H
 
 #include "ui_editmountpointdialogwidgetbase.h"
 

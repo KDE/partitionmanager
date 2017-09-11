@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(FILESYSTEMSUPPORTDIALOGWIDGET__H)
+#if !defined(FILESYSTEMSUPPORTDIALOGWIDGET_H)
 
-#define FILESYSTEMSUPPORTDIALOGWIDGET__H
+#define FILESYSTEMSUPPORTDIALOGWIDGET_H
 
 #include "ui_filesystemsupportdialogwidgetbase.h"
 

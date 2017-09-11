@@ -15,9 +15,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(LISTPHYSICALVOLUMES__H)
+#if !defined(LISTPHYSICALVOLUMES_H)
 
-#define LISTPHYSICALVOLUMES__H
+#define LISTPHYSICALVOLUMES_H
 
 #include "ui_listphysicalvolumesbase.h"
 

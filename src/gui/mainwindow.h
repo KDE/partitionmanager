@@ -16,9 +16,9 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(MAINWINDOW__H)
+#if !defined(MAINWINDOW_H)
 
-#define MAINWINDOW__H
+#define MAINWINDOW_H
 
 #include <core/operationrunner.h>
 #include <core/operationstack.h>
