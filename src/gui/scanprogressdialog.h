@@ -28,7 +28,7 @@ class ScanProgressDialog : public QProgressDialog
 public:
     ScanProgressDialog(QWidget* parent);
 
-    void setProgress(quint32 p) {
+    void setProgress(int p) {
         setValue(p);
     }
     void setDeviceName(const QString& d);

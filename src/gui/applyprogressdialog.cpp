@@ -97,7 +97,7 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
     dialogButtonBox->addButton(detailsButton, QDialogButtonBox::ActionRole);
     mainLayout->addWidget(dialogButtonBox);
 
-    dialogWidget().treeTasks().setColumnWidth(0, width() * 0.8);
+    dialogWidget().treeTasks().setColumnWidth(0, width() * 8 / 10);
     detailsWidget().buttonBrowser().setIcon(QIcon::fromTheme(QStringLiteral("document-open")).pixmap(IconSize(KIconLoader::Toolbar)));
     detailsWidget().buttonSave().setIcon(QIcon::fromTheme(QStringLiteral("document-save")).pixmap(IconSize(KIconLoader::Toolbar)));
 

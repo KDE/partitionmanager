@@ -113,8 +113,8 @@ void SizeDialogBase::setupConstraints()
     dialogWidget().spinFreeAfter().setEnabled(moveAllowed);
     detailsWidget().spinFirstSector().setEnabled(moveAllowed);
 
-    setMinimumLength(!canShrink() ? partition().length() : qMax(partition().sectorsUsed(), partition().minimumSectors()));
-    setMaximumLength(!canGrow() ? partition().length() : qMin(maximumLastSector() - minimumFirstSector() + 1, partition().maximumSectors()));
+    setMinimumLength(!canShrink() ? partition().length() : std::max(partition().sectorsUsed(), partition().minimumSectors()));
+    setMaximumLength(!canGrow() ? partition().length() : std::min(maximumLastSector() - minimumFirstSector() + 1, partition().maximumSectors()));
 
     dialogWidget().partResizerWidget().setMinimumLength(minimumLength());
     dialogWidget().partResizerWidget().setMaximumLength(maximumLength());
@@ -210,7 +210,7 @@ void SizeDialogBase::onSpinCapacityChanged(double newCapacity)
     qint64 newLength = qBound(
                            minimumLength(),
                            dialogUnitToSectors(device(), newCapacity),
-                           qMin(maximumLastSector() - minimumFirstSector() + 1, maximumLength())
+                           std::min(maximumLastSector() - minimumFirstSector() + 1, maximumLength())
                        );
 
     if (newLength == partition().length())
@@ -218,7 +218,7 @@ void SizeDialogBase::onSpinCapacityChanged(double newCapacity)
 
     qint64 delta = newLength - partition().length();
 
-    qint64 tmp = qMin(delta, maximumLastSector() - partition().lastSector());
+    qint64 tmp = std::min(delta, maximumLastSector() - partition().lastSector());
     delta -= tmp;
 
     const bool signalState = dialogWidget().partResizerWidget().blockSignals(true);
@@ -291,7 +291,7 @@ void SizeDialogBase::onSpinFreeAfterChanged(double newAfter)
         updateSpinFreeAfter(dialogUnitToSectors(device(), oldAfter));
 }
 
-void SizeDialogBase::onSpinFirstSectorChanged(double newFirst)
+void SizeDialogBase::onSpinFirstSectorChanged(qint64 newFirst)
 {
     if (newFirst >= minimumFirstSector() && dialogWidget().partResizerWidget().updateFirstSector(newFirst))
         setDirty();
@@ -301,7 +301,7 @@ void SizeDialogBase::onSpinFirstSectorChanged(double newFirst)
         updateSpinFirstSector(partition().firstSector());
 }
 
-void SizeDialogBase::onSpinLastSectorChanged(double newLast)
+void SizeDialogBase::onSpinLastSectorChanged(qint64 newLast)
 {
     if (newLast <= maximumLastSector() && dialogWidget().partResizerWidget().updateLastSector(newLast))
         setDirty();

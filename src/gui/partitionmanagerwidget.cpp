@@ -210,7 +210,7 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 {
     QTreeWidgetItem* item = new PartitionTreeWidgetItem(&p);
 
-    quint32 i = 0;
+    int i = 0;
     item->setText(i++, p.deviceNode());
 
     if (p.roles().has(PartitionRole::Luks) && p.fileSystem().name() != p.fileSystem().nameForType(FileSystem::Luks))
@@ -328,11 +328,11 @@ void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidge
     if (p) {
         QList<QTreeWidgetItem*> findResult = treePartitions().findItems(p->deviceNode(), Qt::MatchFixedString | Qt::MatchRecursive, 0);
 
-        for (const auto &item : findResult) {
-            const PartitionTreeWidgetItem* ptwItem = dynamic_cast<PartitionTreeWidgetItem*>(item);
+        for (const auto &treeWidgetItem : findResult) {
+            const PartitionTreeWidgetItem* ptwItem = dynamic_cast<PartitionTreeWidgetItem*>(treeWidgetItem);
 
             if (ptwItem && ptwItem->partition() == p) {
-                treePartitions().setCurrentItem(item);
+                treePartitions().setCurrentItem(treeWidgetItem);
                 break;
             }
         }

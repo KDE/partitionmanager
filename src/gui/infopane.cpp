@@ -200,7 +200,7 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
     }
 }
 
-quint32 InfoPane::cols(Qt::DockWidgetArea area) const
+qint32 InfoPane::cols(Qt::DockWidgetArea area) const
 {
     if (area == Qt::LeftDockWidgetArea || area == Qt::RightDockWidgetArea)
         return 2;

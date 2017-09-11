@@ -53,7 +53,7 @@ protected:
         Q_ASSERT(m_GridLayout);
         return *m_GridLayout;
     }
-    quint32 cols(Qt::DockWidgetArea area) const;
+    qint32 cols(Qt::DockWidgetArea area) const;
 
 private:
     QGridLayout* m_GridLayout;

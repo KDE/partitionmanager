@@ -122,8 +122,8 @@ protected:
     void onSpinFreeBeforeChanged(double newBefore);
     void onSpinFreeAfterChanged(double newAfter);
 
-    void onSpinFirstSectorChanged(double newFirst);
-    void onSpinLastSectorChanged(double newLast);
+    void onSpinFirstSectorChanged(qint64 newFirst);
+    void onSpinLastSectorChanged(qint64 newLast);
     void onAlignToggled(bool);
 
     void toggleDetails();
