@@ -24,6 +24,7 @@
 #include "gui/applyprogressdialog.h"
 #include "gui/insertdialog.h"
 #include "gui/editmountpointdialog.h"
+#include "util/guihelpers.h"
 
 #include <core/partition.h>
 #include <core/device.h>
@@ -50,8 +51,6 @@
 #include <util/capacity.h>
 #include <util/report.h>
 #include <util/helpers.h>
-
-#include "util/guihelpers.h"
 
 #include <QFileDialog>
 #include <QLocale>

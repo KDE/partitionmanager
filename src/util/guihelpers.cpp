@@ -21,14 +21,19 @@
 
 #include <backend/corebackendmanager.h>
 
+#include <QAction>
 #include <QApplication>
 #include <QFileInfo>
 #include <QIcon>
+#include <QHeaderView>
+#include <QMenu>
 #include <QPainter>
 #include <QPixmap>
 #include <QProcess>
+#include <QRect>
 #include <QStandardPaths>
 #include <QString>
+#include <QTreeWidget>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -165,6 +170,33 @@ QString suCommand()
 Capacity::Unit preferredUnit()
 {
     return static_cast<Capacity::Unit>(Config::preferredUnit());
+}
+
+void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree)
+{
+    QMenu headerMenu(xi18nc("@title:menu", "Columns"));
+
+    QHeaderView* header = tree.header();
+
+    for (qint32 i = 0; i < tree.model()->columnCount(); i++) {
+        const int idx = header->logicalIndex(i);
+        const QString text = tree.model()->headerData(idx, Qt::Horizontal).toString();
+
+        QAction* action = headerMenu.addAction(text);
+        action->setCheckable(true);
+        action->setChecked(!header->isSectionHidden(idx));
+        action->setData(idx);
+        action->setEnabled(idx > 0);
+    }
+
+    QAction* action = headerMenu.exec(tree.header()->mapToGlobal(p));
+
+    if (action != nullptr) {
+        const bool hidden = !action->isChecked();
+        tree.setColumnHidden(action->data().toInt(), hidden);
+        if (!hidden)
+            tree.resizeColumnToContents(action->data().toInt());
+    }
 }
 
 namespace GuiHelpers

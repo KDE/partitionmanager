@@ -17,7 +17,7 @@
 
 #include "gui/smartdialogwidget.h"
 
-#include <util/helpers.h>
+#include "util/guihelpers.h"
 
 #include <KLocalizedString>
 

@@ -23,13 +23,16 @@
 #include <fs/filesystem.h>
 #include <util/capacity.h>
 
-class QString;
 class QIcon;
+class QPoint;
+class QString;
+class QTreeWidget;
 
 bool checkPermissions();
 bool loadBackend();
 QIcon createFileSystemColor(FileSystem::Type type, quint32 size);
 Capacity::Unit preferredUnit();
+void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree);
 namespace GuiHelpers
 {
 FileSystem::Type defaultFileSystem();

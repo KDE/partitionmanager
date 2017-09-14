@@ -18,10 +18,10 @@
 
 #include "gui/treelog.h"
 #include "gui/partitionmanagerwidget.h"
+#include "util/guihelpers.h"
 #include "config.h"
 
 #include <util/globallog.h>
-#include <util/helpers.h>
 
 #include <QDateTime>
 #include <QDebug>
