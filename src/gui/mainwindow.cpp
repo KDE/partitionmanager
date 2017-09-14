@@ -1002,7 +1002,7 @@ void MainWindow::onImportPartitionTable()
             qint32 num = rePartition.captured(1).toInt();
             qint64 firstSector = rePartition.captured(2).toLongLong();
             qint64 lastSector = rePartition.captured(3).toLongLong();
-            QString fsName = rePartition.captured(4);
+            QLatin1String fsName = QLatin1String(rePartition.captured(4).toLatin1());
             QString roleNames = rePartition.captured(5);
             QString volumeLabel = rePartition.captured(6).replace(QStringLiteral("\""), QString());
             QStringList flags = rePartition.captured(7).replace(QStringLiteral("\""), QString()).split(QStringLiteral(","));
@@ -1046,7 +1046,7 @@ void MainWindow::onImportPartitionTable()
                 return;
             }
 
-            FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(fsName), firstSector, lastSector, device.logicalSize());
+            FileSystem* fs = FileSystemFactory::create(FileSystem::typeForUntranslatedName(fsName), firstSector, lastSector, device.logicalSize());
 
             if (fs == nullptr) {
                 KMessageBox::error(this, xi18nc("@info the partition is NOT a device path, just a number", "Could not create file system \"%1\" for partition %2 (line %3).", fsName, num, lineNo), xi18nc("@title:window", "Error While Importing Partition Table"));

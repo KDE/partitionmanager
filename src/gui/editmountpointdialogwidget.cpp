@@ -143,7 +143,7 @@ void EditMountPointDialogWidget::setupOptions(const QStringList& options)
             optTmpList.append(o);
     }
 
-    m_Options = optTmpList.join(QStringLiteral(","));
+    m_Options = optTmpList.join(QLatin1Char(','));
 }
 
 void EditMountPointDialogWidget::buttonSelectClicked(bool)
@@ -155,7 +155,7 @@ void EditMountPointDialogWidget::buttonSelectClicked(bool)
 
 void EditMountPointDialogWidget::buttonMoreClicked(bool)
 {
-    QPointer<EditMountOptionsDialog>  dlg = new EditMountOptionsDialog(this, m_Options.split(QStringLiteral(",")));
+    QPointer<EditMountOptionsDialog>  dlg = new EditMountOptionsDialog(this, m_Options.split(QLatin1Char(',')));
 
     if (dlg->exec() == QDialog::Accepted)
         setupOptions(dlg->options());
@@ -165,7 +165,7 @@ void EditMountPointDialogWidget::buttonMoreClicked(bool)
 
 QStringList EditMountPointDialogWidget::options() const
 {
-    QStringList optList = m_Options.split(QStringLiteral(","), QString::SkipEmptyParts);
+    QStringList optList = m_Options.split(QLatin1Char(','), QString::SkipEmptyParts);
 
     const auto keys = boxOptions();
     for (const auto &s : keys)
