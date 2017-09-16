@@ -72,8 +72,12 @@ void EditMountPointDialog::accept()
                                            QStringLiteral("reallyWriteMountPoints")) == KMessageBox::Cancel)
         return;
 
-    if (widget().acceptChanges() && widget().writeMountpoints(QStringLiteral("/etc/fstab")))
+    if (writeMountpoints(widget().fstabEntries()))
         partition().setMountPoint(widget().editPath().text());
+    else
+        KMessageBox::sorry(this,
+                   xi18nc("@info", "Could not save mount points to file <filename>/etc/fstab</filename>."),
+                   xi18nc("@title:window", "Error While Saving Mount Points"));
 
     QDialog::accept();
 }

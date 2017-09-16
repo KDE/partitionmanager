@@ -1,6 +1,6 @@
 /*************************************************************************
  *  Copyright (C) 2009, 2010 by Volker Lanz <vl@fidra.de>                *
- *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
+ *  Copyright (C) 2017 by Andrius Štikonas <andrius@stikonas.eu>         *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -56,7 +56,7 @@ EditMountOptionsDialog::~EditMountOptionsDialog()
 QStringList EditMountOptionsDialog::options()
 {
     QStringList rval;
-    const QStringList lines = widget().editOptions().toPlainText().split(QStringLiteral("\n"));
+    const QStringList lines = widget().editOptions().toPlainText().split(QLatin1Char('\n'));
     for (const auto &line : lines)
         rval.append(line.simplified().toLower());
     return rval;

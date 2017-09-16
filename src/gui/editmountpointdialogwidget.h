@@ -20,6 +20,7 @@
 #define EDITMOUNTPOINTDIALOGWIDGET_H
 
 #include "ui_editmountpointdialogwidgetbase.h"
+#include <core/fstab.h>
 
 #include <map>
 
@@ -34,8 +35,6 @@ class QCheckBox;
 class QLineEdit;
 class QPushButton;
 class QStringList;
-
-class MountEntry;
 
 class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDialogWidgetBase
 {
@@ -71,8 +70,11 @@ public:
     QRadioButton& radioDeviceNode() {
         return *m_RadioDeviceNode;
     }
+    FstabEntryList& fstabEntries() {
+        return m_fstabEntries;
+    }
 
-    bool acceptChanges();
+    void acceptChanges();
     bool writeMountpoints(const QString& filename);
 
 protected:
@@ -87,17 +89,16 @@ private:
     const std::map<QString, QCheckBox*>& boxOptions() const {
         return m_BoxOptions;
     }
-    bool readMountpoints(const QString& filename);
-    std::multimap<QString, MountEntry*>& mountPoints() {
-        return m_MountPoints;
-    }
+
     const Partition& partition() const {
         return m_Partition;
     }
 
 private:
+    FstabEntryList m_fstabEntries;
+    FstabEntry *entry;
+
     const Partition& m_Partition;
-    std::multimap<QString, MountEntry*> m_MountPoints;
     QString m_Options;
     QString m_deviceNode;
     std::map<QString, QCheckBox*> m_BoxOptions;
