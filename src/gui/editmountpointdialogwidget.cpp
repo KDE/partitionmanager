@@ -26,15 +26,12 @@
 
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KMountPoint>
 
 #include <QDebug>
 #include <QFile>
 #include <QFileDialog>
 #include <QPointer>
 #include <QString>
-
-#include <blkid/blkid.h>
 
 EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Partition& p) :
     QWidget(parent),
@@ -60,9 +57,11 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
         }
     }
 
-    // FIXME name() != fstabfsname (swap)
     if (!entryFound) {
-        entry = new FstabEntry(m_deviceNode, QString(), partition().fileSystem().name(), QString());
+        QString fsName = partition().fileSystem().name();
+        if (fsName == FileSystem::nameForType(FileSystem::LinuxSwap))
+            fsName = QStringLiteral("swap");
+        entry = new FstabEntry(m_deviceNode, QString(), fsName, QString());
         m_fstabEntries.append(*entry);
     }
 
