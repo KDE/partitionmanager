@@ -51,7 +51,9 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
 
     bool entryFound = false;
     for (auto &e : m_fstabEntries) {
-        if (e.deviceNode() == m_deviceNode) { // FIXME kernel paths, fix multiple mountpoints
+        QString canonicalEntryPath = QFileInfo(e.deviceNode()).canonicalFilePath();
+        QString canonicalDevicePath = QFileInfo(m_deviceNode).canonicalFilePath();
+        if (canonicalEntryPath == canonicalDevicePath) { // FIXME fix multiple mountpoints
             entryFound = true;
             entry = &e;
         }

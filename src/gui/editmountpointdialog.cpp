@@ -72,6 +72,7 @@ void EditMountPointDialog::accept()
                                            QStringLiteral("reallyWriteMountPoints")) == KMessageBox::Cancel)
         return;
 
+    widget().acceptChanges();
     if (writeMountpoints(widget().fstabEntries()))
         partition().setMountPoint(widget().editPath().text());
     else
