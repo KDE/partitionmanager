@@ -23,6 +23,8 @@
 
 #include <QComboBox>
 
+#include <KPluginMetaData>
+
 #include <config.h>
 
 AdvancedPageWidget::AdvancedPageWidget(QWidget* parent) :
@@ -34,27 +36,27 @@ AdvancedPageWidget::AdvancedPageWidget(QWidget* parent) :
 
 QString AdvancedPageWidget::backend() const
 {
-    const KService::List services = CoreBackendManager::self()->list();
-    for (const auto &p : services)
-        if (p->name() == comboBackend().currentText())
-            return p->library();
+    const auto backends = CoreBackendManager::self()->list();
+    for (const auto &backend : backends)
+        if (backend.name() == comboBackend().currentText())
+            return backend.pluginId();
 
     return QString();
 }
 
 void AdvancedPageWidget::setBackend(const QString& name)
 {
-    const KService::List services = CoreBackendManager::self()->list();
-    for (const auto &p : services)
-        if (p->library() == name)
-            comboBackend().setCurrentIndex(comboBackend().findText(p->name()));
+    const auto backends = CoreBackendManager::self()->list();
+    for (const auto &backend : backends)
+        if (backend.pluginId() == name)
+            comboBackend().setCurrentIndex(comboBackend().findText(backend.name()));
 }
 
 void AdvancedPageWidget::setupDialog()
 {
-    const KService::List services = CoreBackendManager::self()->list();
-    for (const auto &p : services)
-        comboBackend().addItem(p->name());
+    const auto backends = CoreBackendManager::self()->list();
+    for (const auto &backend : backends)
+        comboBackend().addItem(backend.name());
 
     setBackend(Config::backend());
 }
