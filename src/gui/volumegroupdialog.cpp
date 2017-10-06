@@ -75,7 +75,10 @@ VolumeGroupDialog::~VolumeGroupDialog()
 
 void VolumeGroupDialog::setupDialog()
 {
-    QRegularExpression re(QStringLiteral("[\\w-.+]+"));
+    /* LVM Volume group name can consists of: letters numbers _ . - +
+     * It cannot start with underscore _ and must not be equal to . or .. or any entry in /dev/
+     * QLineEdit accepts QValidator::Intermediate, so we just disable . at the beginning */
+    QRegularExpression re(QStringLiteral(R"(^(?!_|.)[\w\-.+]+)"));
     QRegularExpressionValidator *validator = new QRegularExpressionValidator(re, this);
     dialogWidget().vgName().setValidator(validator);
     dialogWidget().vgName().setText(targetName());
