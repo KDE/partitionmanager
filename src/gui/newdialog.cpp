@@ -115,6 +115,13 @@ void NewDialog::setupDialog()
         detailsButton->hide();
         dialogWidget().comboFileSystem().removeItem(dialogWidget().comboFileSystem().findText(QStringLiteral("lvm2 pv")));
         m_IsValidLVName = false;
+
+        /* LVM logical volume name can consist of: letters numbers _ . - +
+         * It cannot start with underscore _ and must not be equal to . or .. or any entry in /dev/
+         * QLineEdit accepts QValidator::Intermediate, so we just disable . at the beginning */
+        QRegularExpression re(QStringLiteral(R"(^(?!_|\.)[\w\-.+]+)"));
+        QRegularExpressionValidator *validator = new QRegularExpressionValidator(re, this);
+        dialogWidget().lvName().setValidator(validator);
     }
 
     dialogWidget().editPassphrase().setMinimumPasswordLength(1);
