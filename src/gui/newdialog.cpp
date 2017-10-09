@@ -32,8 +32,8 @@
 #include <util/helpers.h>
 #include "util/guihelpers.h"
 
+#include <QtGlobal>
 #include <QFontDatabase>
-#include <QtAlgorithms>
 
 #include <KColorScheme>
 #include <KConfigGroup>
@@ -137,7 +137,7 @@ void NewDialog::setupConnections()
     connect(&dialogWidget().radioExtended(), &QRadioButton::toggled, this, &NewDialog::onRoleChanged);
     connect(&dialogWidget().radioLogical(), &QRadioButton::toggled, this, &NewDialog::onRoleChanged);
     connect(&dialogWidget().checkBoxEncrypt(), &QCheckBox::toggled, this, &NewDialog::onRoleChanged);
-    connect(&dialogWidget().comboFileSystem(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &NewDialog::onFilesystemChanged);
+    connect(&dialogWidget().comboFileSystem(), qOverload<int>(&QComboBox::currentIndexChanged), this, &NewDialog::onFilesystemChanged);
     connect(&dialogWidget().label(), &QLineEdit::textChanged, this, &NewDialog::onLabelChanged);
     // listen to password status updates
     connect(&dialogWidget().editPassphrase(), &KNewPasswordWidget::passwordStatusChanged, this, &NewDialog::slotPasswordStatusChanged);

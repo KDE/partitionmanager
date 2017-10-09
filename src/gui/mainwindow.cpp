@@ -65,6 +65,7 @@
 #include <QDateTime>
 #include <QFile>
 #include <QFileDialog>
+#include <QtGlobal>
 #include <QMenu>
 #include <QPointer>
 #include <QPushButton>
@@ -453,7 +454,7 @@ void MainWindow::setupActions()
 
 void MainWindow::setupConnections()
 {
-    connect(&listDevices(), &ListDevices::selectionChanged, &pmWidget(), static_cast<void(PartitionManagerWidget::*)(const QString&)>(&PartitionManagerWidget::setSelectedDevice));
+    connect(&listDevices(), &ListDevices::selectionChanged, &pmWidget(), qOverload<const QString&>(&PartitionManagerWidget::setSelectedDevice));
     connect(&listDevices(), &ListDevices::deviceDoubleClicked, this, &MainWindow::onPropertiesDevice);
 }
 

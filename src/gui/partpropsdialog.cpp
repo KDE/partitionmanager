@@ -30,10 +30,10 @@
 
 #include <QComboBox>
 #include <QFontDatabase>
+#include <QtGlobal>
 #include <QLineEdit>
 #include <QLocale>
 #include <QPushButton>
-#include <QtAlgorithms>
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -256,7 +256,7 @@ void PartPropsDialog::updateHideAndShow()
 void PartPropsDialog::setupConnections()
 {
     connect(&dialogWidget().label(), &QLineEdit::textEdited, [this] (const QString &) {setDirty();});
-    connect(&dialogWidget().fileSystem(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PartPropsDialog::onFilesystemChanged);
+    connect(&dialogWidget().fileSystem(), qOverload<int>(&QComboBox::currentIndexChanged), this, &PartPropsDialog::onFilesystemChanged);
     connect(&dialogWidget().checkRecreate(), &QCheckBox::stateChanged, this, &PartPropsDialog::onRecreate);
 
     // We want to enable the OK-button whenever the user checks or unchecks a flag in the flag list.
@@ -349,7 +349,7 @@ void PartPropsDialog::onFilesystemChanged(int)
     } else {
         dialogWidget().fileSystem().disconnect(this);
         setupFileSystemComboBox();
-        connect(&dialogWidget().fileSystem(), static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PartPropsDialog::onFilesystemChanged);
+        connect(&dialogWidget().fileSystem(), qOverload<int>(&QComboBox::currentIndexChanged), this, &PartPropsDialog::onFilesystemChanged);
     }
 }
 

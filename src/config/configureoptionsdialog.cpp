@@ -37,6 +37,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
+#include <QtGlobal>
 #include <QIcon>
 
 #include <config.h>
@@ -55,7 +56,7 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
     item = addPage(&generalPageWidget(), xi18nc("@title:tab general application settings", "General"), QString(), i18n("General Settings"));
     item->setIcon(QIcon::fromTheme(QStringLiteral("partitionmanager")).pixmap(IconSize(KIconLoader::Desktop)));
 
-    connect(&generalPageWidget().comboDefaultFileSystem(), static_cast<void(QComboBox::*)(int)>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
+    connect(&generalPageWidget().comboDefaultFileSystem(), qOverload<int>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
     connect(generalPageWidget().radioButton, &QRadioButton::toggled, this, &ConfigureOptionsDialog::onShredSourceActivated);
 
     item = addPage(&fileSystemColorsPageWidget(), xi18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
@@ -65,7 +66,7 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
         item = addPage(&advancedPageWidget(), xi18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
         item->setIcon(QIcon::fromTheme(QStringLiteral("configure")).pixmap(IconSize(KIconLoader::Desktop)));
 
-        connect(&advancedPageWidget().comboBackend(), static_cast<void(QComboBox::*)(int)>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
+        connect(&advancedPageWidget().comboBackend(), qOverload<int>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
     } else
         advancedPageWidget().setVisible(false);
 

@@ -26,6 +26,8 @@
 #include <util/capacity.h>
 #include <util/helpers.h>
 
+#include <QtGlobal>
+
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -58,7 +60,7 @@ void CreateVolumeGroupDialog::setupDialog()
 void CreateVolumeGroupDialog::setupConnections()
 {
     connect(&dialogWidget().vgName(), &QLineEdit::textChanged, this, &CreateVolumeGroupDialog::onVGNameChanged);
-    connect(&dialogWidget().spinPESize(), static_cast<void(QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &CreateVolumeGroupDialog::onSpinPESizeChanged);
+    connect(&dialogWidget().spinPESize(), qOverload<int>(&QSpinBox::valueChanged), this, &CreateVolumeGroupDialog::onSpinPESizeChanged);
 }
 
 void  CreateVolumeGroupDialog::accept()
