@@ -67,9 +67,6 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     KCrash::initialize();
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(aboutData.shortDescription());
-    parser.addHelpOption();
-    parser.addVersionOption();
     aboutData.setupCommandLine(&parser);
     parser.addOption(QCommandLineOption(QLatin1Literal("dontsu"), xi18nc("@info:shell", "Do not try to gain super user privileges")));
     parser.addOption(QCommandLineOption(QLatin1Literal("advconfig"), xi18nc("@info:shell", "Show advanced tab in configuration dialog")));
