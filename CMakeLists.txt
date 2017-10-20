@@ -22,6 +22,7 @@ set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 set(KDE_INSTALL_USE_QT_SYS_PATHS ON CACHE BOOL "Install mkspecs files, Plugins and Imports to the Qt 5 install dir" FORCE)
 
 set(QT_MIN_VERSION "5.7.0")
+set(KF5_MIN_VERSION "5.31")
 set(KPMCORE_MIN_VERSION "3.2.0")
 # Check KPMcore dependency when bumping
 set(VERSION_MAJOR "3")
@@ -50,12 +51,11 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 )
 
 # Load the frameworks we need
-find_package(KF5 5.31 REQUIRED
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
   Config
   ConfigWidgets
   CoreAddons
   Crash
-  DocTools
   I18n
   IconThemes
   JobWidgets
@@ -64,6 +64,7 @@ find_package(KF5 5.31 REQUIRED
   XmlGui
   WidgetsAddons
 )
+find_package(KF5DocTools ${KF5_MIN_VERSION})
 
 # use sane compile flags
 add_definitions(
@@ -76,6 +77,7 @@ add_definitions(
   -DQT_NO_CAST_TO_BYTEARRAY
   -DQT_NO_SIGNALS_SLOTS_KEYWORDS
   -DQT_USE_FAST_OPERATOR_PLUS
+  -DQT_DISABLE_DEPRECATED_BEFORE=0x050900
 )
 
 find_package(PkgConfig REQUIRED)
@@ -86,7 +88,9 @@ include_directories(${Qt5Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE
 
 add_subdirectory(src)
 add_subdirectory(icons)
-add_subdirectory(doc)
+if (KF5DocTools_FOUND)
+    add_subdirectory(doc)
+endif()
 
 ki18n_install(po)
 
