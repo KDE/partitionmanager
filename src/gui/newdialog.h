@@ -44,13 +44,12 @@ protected:
     void onRoleChanged(bool);
     void onFilesystemChanged(int);
     void onLabelChanged(const QString& newLabel);
-    void onLVNameChanged(const QString& newName);
 
     void setupConnections() override;
     void setupDialog() override;
     void slotPasswordStatusChanged();
     void updateHideAndShow();
-    void updateOkButtonStatus();
+    void updateOkButtonStatus() override;
     void updateFileSystem(FileSystem::Type t);
     PartitionRole::Roles partitionRoles() const {
         return m_PartitionRoles;
@@ -66,14 +65,10 @@ protected:
     bool isValidPassword() const {
         return m_IsValidPassword;
     }
-    bool isValidLVName() const {
-        return m_IsValidLVName;
-    }
 
 private:
     PartitionRole::Roles m_PartitionRoles;
     bool m_IsValidPassword;
-    bool m_IsValidLVName;
 };
 
 #endif

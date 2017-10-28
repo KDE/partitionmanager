@@ -25,6 +25,7 @@
 
 #include <core/partitiontable.h>
 #include <core/device.h>
+#include <core/lvmdevice.h>
 #include <core/partition.h>
 #include <core/partitionalignment.h>
 
@@ -56,7 +57,8 @@ SizeDialogBase::SizeDialogBase(QWidget* parent, Device& d, Partition& part, qint
     m_MinimumFirstSector(minFirst),
     m_MaximumLastSector(maxLast),
     m_MinimumLength(-1),
-    m_MaximumLength(-1)
+    m_MaximumLength(-1),
+    m_IsValidLVName(true)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     setLayout(mainLayout);
@@ -102,6 +104,26 @@ void SizeDialogBase::setupDialog()
     else
         dialogWidget().partResizerWidget().init(device(), partition(), minimumFirstSector(), maximumLastSector(), true, canMove());
     dialogWidget().partResizerWidget().setAlign(Config::alignDefault());
+
+    if (device().type() == Device::Disk_Device) {
+        dialogWidget().lvName().hide();
+        dialogWidget().textLVName().hide();
+    }
+    if (device().type() == Device::LVM_Device) {
+        dialogWidget().hideBeforeAndAfter();
+        detailsWidget().checkAlign().setChecked(false);
+        detailsWidget().checkAlign().setEnabled(false);
+        detailsButton->hide();
+        dialogWidget().comboFileSystem().removeItem(dialogWidget().comboFileSystem().findText(QStringLiteral("lvm2 pv")));
+        m_IsValidLVName = false;
+
+        /* LVM logical volume name can consist of: letters numbers _ . - +
+         * It cannot start with underscore _ and must not be equal to . or .. or any entry in /dev/
+         * QLineEdit accepts QValidator::Intermediate, so we just disable . at the beginning */
+        QRegularExpression re(QStringLiteral(R"(^(?!_|\.)[\w\-.+]+)"));
+        QRegularExpressionValidator *validator = new QRegularExpressionValidator(re, this);
+        dialogWidget().lvName().setValidator(validator);
+    }
 }
 
 void SizeDialogBase::setupConstraints()
@@ -158,6 +180,8 @@ void SizeDialogBase::setupConnections()
     connect(&detailsWidget().spinFirstSector(), qOverload<double>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinFirstSectorChanged);
     connect(&detailsWidget().spinLastSector(), qOverload<double>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinLastSectorChanged);
     connect(&detailsWidget().checkAlign(), &QCheckBox::toggled, this, &SizeDialogBase::onAlignToggled);
+
+    connect(&dialogWidget().lvName(), &QLineEdit::textChanged, this, &SizeDialogBase::onLVNameChanged);
 }
 
 void SizeDialogBase::toggleDetails()
@@ -350,6 +374,25 @@ void SizeDialogBase::onAlignToggled(bool align)
         onSpinFirstSectorChanged(partition().firstSector());
         onSpinLastSectorChanged(partition().lastSector());
     }
+}
+
+void SizeDialogBase::onLVNameChanged(const QString& newName)
+{
+    partition().setPartitionPath(device().deviceNode() + QStringLiteral("/") + newName.trimmed());
+    if ((dialogWidget().lvName().isVisible() &&
+        dialogWidget().lvName().text().isEmpty()) ||
+        (device().type() == Device::LVM_Device &&
+         dynamic_cast<LvmDevice&>(device()).partitionNodes().contains(partition().partitionPath())) ) {
+        m_IsValidLVName = false;
+    } else {
+        m_IsValidLVName = true;
+    }
+    updateOkButtonStatus();
+}
+
+void SizeDialogBase::updateOkButtonStatus()
+{
+    okButton->setEnabled(isValidLVName());
 }
 
 void SizeDialogBase::updateSpinFreeBefore(qint64 sectorsFreeBefore)

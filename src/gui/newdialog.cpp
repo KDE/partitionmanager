@@ -23,7 +23,6 @@
 
 #include <core/partition.h>
 #include <core/device.h>
-#include <core/lvmdevice.h>
 
 #include <fs/filesystemfactory.h>
 #include <fs/luks.h>
@@ -49,8 +48,7 @@
 NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPartition, PartitionRole::Roles r) :
     SizeDialogBase(parent, device, unallocatedPartition, unallocatedPartition.firstSector(), unallocatedPartition.lastSector()),
     m_PartitionRoles(r),
-    m_IsValidPassword(true),
-    m_IsValidLVName(true)
+    m_IsValidPassword(true)
 {
     setWindowTitle(xi18nc("@title:window", "Create a new partition"));
 
@@ -103,27 +101,6 @@ void NewDialog::setupDialog()
     dialogWidget().checkBoxEncrypt().hide();
     dialogWidget().editPassphrase().hide();
 
-    if (device().type() == Device::Disk_Device) {
-        dialogWidget().lvName().hide();
-        dialogWidget().textLVName().hide();
-    }
-
-    if (device().type() == Device::LVM_Device) {
-        dialogWidget().hideBeforeAndAfter();
-        detailsWidget().checkAlign().setChecked(false);
-        detailsWidget().checkAlign().setEnabled(false);
-        detailsButton->hide();
-        dialogWidget().comboFileSystem().removeItem(dialogWidget().comboFileSystem().findText(QStringLiteral("lvm2 pv")));
-        m_IsValidLVName = false;
-
-        /* LVM logical volume name can consist of: letters numbers _ . - +
-         * It cannot start with underscore _ and must not be equal to . or .. or any entry in /dev/
-         * QLineEdit accepts QValidator::Intermediate, so we just disable . at the beginning */
-        QRegularExpression re(QStringLiteral(R"(^(?!_|\.)[\w\-.+]+)"));
-        QRegularExpressionValidator *validator = new QRegularExpressionValidator(re, this);
-        dialogWidget().lvName().setValidator(validator);
-    }
-
     dialogWidget().editPassphrase().setMinimumPasswordLength(1);
     dialogWidget().editPassphrase().setMaximumPasswordLength(512); // cryptsetup does not support longer passwords
 
@@ -148,7 +125,6 @@ void NewDialog::setupConnections()
     connect(&dialogWidget().label(), &QLineEdit::textChanged, this, &NewDialog::onLabelChanged);
     // listen to password status updates
     connect(&dialogWidget().editPassphrase(), &KNewPasswordWidget::passwordStatusChanged, this, &NewDialog::slotPasswordStatusChanged);
-    connect(&dialogWidget().lvName(), &QLineEdit::textChanged, this, &NewDialog::onLVNameChanged);
 
     SizeDialogBase::setupConnections();
 }
@@ -261,20 +237,6 @@ void NewDialog::slotPasswordStatusChanged()
     default:
         m_IsValidPassword = false;
         break;
-    }
-    updateOkButtonStatus();
-}
-
-void NewDialog::onLVNameChanged(const QString& newName)
-{
-    partition().setPartitionPath(device().deviceNode() + QStringLiteral("/") + newName.trimmed());
-    if ((dialogWidget().lvName().isVisible() &&
-        dialogWidget().lvName().text().isEmpty()) ||
-        (device().type() == Device::LVM_Device &&
-         dynamic_cast<LvmDevice&>(device()).partitionNodes().contains(partition().partitionPath())) ) {
-        m_IsValidLVName = false;
-    } else {
-        m_IsValidLVName = true;
     }
     updateOkButtonStatus();
 }

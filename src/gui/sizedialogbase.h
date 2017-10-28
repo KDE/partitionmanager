@@ -114,6 +114,10 @@ protected:
         m_MaximumLength = s;
     }
 
+    bool isValidLVName() const {
+        return m_IsValidLVName;
+    }
+
 protected:
     void onResizerWidgetFirstSectorChanged(qint64 newFirst);
     void onResizerWidgetLastSectorChanged(qint64 newLast);
@@ -126,6 +130,9 @@ protected:
     void onSpinLastSectorChanged(qint64 newLast);
     void onAlignToggled(bool);
 
+    void onLVNameChanged(const QString& newName);
+    virtual void updateOkButtonStatus();
+
     void toggleDetails();
 
     SizeDialogWidget* m_SizeDialogWidget;
@@ -136,6 +143,7 @@ protected:
     qint64 m_MaximumLastSector;
     qint64 m_MinimumLength;
     qint64 m_MaximumLength;
+    bool m_IsValidLVName;
 
 public:
     QPushButton* okButton;
