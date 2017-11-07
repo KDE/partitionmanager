@@ -182,12 +182,8 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         createLabels(i18nc("@label device", "Type:"), type, cols(area), x, y);
         createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(disk.capacity()), cols(area), x, y);
         createLabels(i18nc("@label device", "Total sectors:"), QLocale().toString(disk.totalSectors()), cols(area), x, y);
-        createLabels(i18nc("@label device", "Heads:"), QString::number(disk.heads()), cols(area), x, y);
-        createLabels(i18nc("@label device", "Cylinders:"), QLocale().toString(disk.cylinders()), cols(area), x, y);
-        createLabels(i18nc("@label device", "Sectors:"), QLocale().toString(disk.sectorsPerTrack()), cols(area), x, y);
         createLabels(i18nc("@label device", "Logical sector size:"), Capacity::formatByteSize(disk.logicalSectorSize()), cols(area), x, y);
         createLabels(i18nc("@label device", "Physical sector size:"), Capacity::formatByteSize(disk.physicalSectorSize()), cols(area), x, y);
-        createLabels(i18nc("@label device", "Cylinder size:"), i18ncp("@label", "1 Sector", "%1 Sectors", disk.cylinderSize()), cols(area), x, y);
         createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
     } else if (d.type() == Device::LVM_Device) {
         const LvmDevice& lvm = dynamic_cast<const LvmDevice&>(d);
