@@ -98,7 +98,7 @@ void ConfigureOptionsDialog::updateSettings()
         changed = true;
     }
 
-    if (advancedPageWidget().isVisible() && advancedPageWidget().backend() != Config::backend()) {
+    if (advancedPageWidget().backend() != Config::backend()) {
         Config::setBackend(advancedPageWidget().backend());
         changed = true;
     }
