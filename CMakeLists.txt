@@ -52,19 +52,21 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 
 # Load the frameworks we need
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
-  Config
-  ConfigWidgets
-  CoreAddons
-  Crash
-  I18n
-  IconThemes
-  JobWidgets
-  KIO
-  Service
-  XmlGui
-  WidgetsAddons
+  COMPONENTS
+    Config
+    ConfigWidgets
+    CoreAddons
+    Crash
+    I18n
+    IconThemes
+    JobWidgets
+    KIO
+    Service
+    XmlGui
+    WidgetsAddons
+  OPTIONAL_COMPONENTS
+    DocTools
 )
-find_package(KF5DocTools ${KF5_MIN_VERSION})
 
 # use sane compile flags
 add_definitions(
