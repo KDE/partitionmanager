@@ -60,9 +60,20 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
     }
 
     if (!entryFound) {
-        QString fsName = partition().fileSystem().name();
-        if (fsName == FileSystem::nameForType(FileSystem::LinuxSwap))
+        FileSystem::Type type = partition().fileSystem().type();
+        QString fsName;
+        switch (type) {
+        case FileSystem::LinuxSwap:
             fsName = QStringLiteral("swap");
+            break;
+        case FileSystem::Fat16:
+        case FileSystem::Fat32:
+            fsName = QStringLiteral("vfat");
+            break;
+        default:
+            fsName = partition().fileSystem().name();
+        }
+
         entry = new FstabEntry(m_deviceNode, QString(), fsName, QString());
         m_fstabEntries.append(*entry);
     }
