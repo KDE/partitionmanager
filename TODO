@@ -1,16 +1,17 @@
 ===============================================================================
 
-For releases after 3.0:
+For releases after 3.3:
 
 * add a way for the user to remove an existing mount point
 
 * make Job::copyBlocks() work for cases where the logical sector sizes of
-  source and target are not the same
+  source and target are not the same. This is probably fixed now. Does not
+  work with LVM though.
 
 * find an elegant solution for the brokenness in design that is
   Partition::sectorSize()... Either a Partition has a reference/pointer to the
   Device it's on or the method is removed completely. -- Maybe the
-  PartitionTable should refernce the Device?
+  PartitionTable should reference the Device?
 
 * the file system support dialog is a usability nightmare
 
@@ -29,9 +30,6 @@ For releases after 3.0:
   least an array in FileSystem).
 
 * Add a SMART self test operation.
-
-* support KLocale::BinaryUnitDialect and use KLocale's formatting methods (how
-  feasable is that? does it make sense?)
 
 * Information about file system on a separate tab in the properties, unique
   to the file system in use.
