@@ -74,8 +74,8 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Pa
             fsName = partition().fileSystem().name();
         }
 
-        entry = new FstabEntry(m_deviceNode, QString(), fsName, QString());
-        m_fstabEntries.append(*entry);
+        m_fstabEntries.append(FstabEntry(m_deviceNode, QString(), fsName, QString()));
+        entry = &m_fstabEntries.last();
     }
 
     editPath().setText(entry->mountPoint());
