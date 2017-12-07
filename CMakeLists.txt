@@ -23,11 +23,11 @@ set(KDE_INSTALL_USE_QT_SYS_PATHS ON CACHE BOOL "Install mkspecs files, Plugins a
 
 set(QT_MIN_VERSION "5.7.0")
 set(KF5_MIN_VERSION "5.31")
-set(KPMCORE_MIN_VERSION "3.2.0")
+set(KPMCORE_MIN_VERSION "3.3.0")
 # Check KPMcore dependency when bumping
 set(VERSION_MAJOR "3")
-set(VERSION_MINOR "2")
-set(VERSION_RELEASE "1")
+set(VERSION_MINOR "3")
+set(VERSION_RELEASE "0")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE})
 add_definitions(-D'VERSION="${VERSION}"') #"
 
