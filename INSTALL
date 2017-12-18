@@ -4,26 +4,19 @@ Building and installing KDE Partition Manager from source
 
 1. Dependencies
 
-libparted: Either get it from http://www.gnu.org/software/parted/download.shtml
-and build it yourself or, preferably, install your distribution's packages
-(don't forget the dev-package).
-
-libblkid: Part of the util-linux-ng project available at
-http://userweb.kernel.org/~kzak/util-linux-ng/.
-
-libatasmart: Available from http://0pointer.de/blog/projects/being-smart.html
-
 KDE Frameworks: The minimum required version is 5.31.
+
+KPMcore: https://cgit.kde.org/kpmcore.git/
 
 
 2. Configure
 
-KDE Partition Manager is built with cmake, like most of KDE4 today. It is
+KDE Partition Manager is built with cmake. It is
 recommended to build out of tree: After unpacking the source, create a separate
 build directory and run cmake there:
 
-$ tar xfj partitionmanager-1.0.60.tar.bz2
-$ cd partitionmanager-1.0.60
+$ tar xfj partitionmanager-x.y.z.tar.bz2
+$ cd partitionmanager-x.y.z
 $ mkdir build
 $ cd build
 $ cmake ..
