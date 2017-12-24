@@ -60,7 +60,7 @@
 		</entry>
 		<entry key="fileSystemColorCode$(colorNumber)" type="Color">
 			<label context="@label">File system colors</label>
-			<parameter name="colorNumber" type="UInt" max="27"/>
+			<parameter name="colorNumber" type="UInt" max="29"/>
 			<!-- numbers correspond to the enum in kpmcore/fs/filesystem.h -->
 			<default param="0">220,205,175</default> <!-- unknown -->
 			<default param="1">187,249,207</default> <!-- extended -->
@@ -90,6 +90,8 @@
 			<default param="25">255,170,0</default> <!-- f2fs -->
 			<default param="26">170,120,255</default> <!-- udf -->
                         <default param="27">177,82,69</default> <!-- iso9660 -->
+                        <default param="28">223,39,104</default> <!-- luks2 -->
+                        <default param="29">204,179,255</default> <!-- fat12 -->
 		</entry>
 		<entry key="showMenuBar" type="Bool">
 			<label context="@label">Show the application's menu bar</label>
