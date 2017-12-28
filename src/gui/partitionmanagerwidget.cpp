@@ -212,8 +212,8 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
     int i = 0;
     item->setText(i++, p.deviceNode());
 
-    if (p.roles().has(PartitionRole::Luks) && p.fileSystem().name() != p.fileSystem().nameForType(FileSystem::Luks))
-        item->setText(i, xi18nc("@item:intable Encrypted file systems, e.g. btrfs[luks]", "%1 [%2]", p.fileSystem().name(), p.fileSystem().nameForType(FileSystem::Luks)));
+    if (p.roles().has(PartitionRole::Luks) && (p.fileSystem().name() != p.fileSystem().nameForType(FileSystem::Luks) && p.fileSystem().name() != p.fileSystem().nameForType(FileSystem::Luks2)))
+        item->setText(i, xi18nc("@item:intable Encrypted file systems, e.g. btrfs[Encrypted]", "%1 [Encrypted]", p.fileSystem().name()));
     else
         item->setText(i, p.fileSystem().name());
     item->setIcon(i, createFileSystemColor(p.fileSystem().type(), 14));

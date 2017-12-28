@@ -72,8 +72,10 @@ void FileSystemSupportDialog::setupDialog()
     dialogWidget().tree().clear();
 
     for (const auto &fs : FileSystemFactory::map()) {
-        if (fs->type() == FileSystem::Unknown || fs->type() == FileSystem::Extended || fs->type() == FileSystem::Luks)
+        if (fs->type() == FileSystem::Unknown || fs->type() == FileSystem::Extended ||
+            fs->type() == FileSystem::Luks || fs->type() == FileSystem::Luks2) {
             continue;
+        }
 
         QTreeWidgetItem* item = new QTreeWidgetItem();
 
