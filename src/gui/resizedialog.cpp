@@ -24,6 +24,7 @@
 #include <core/device.h>
 
 #include <fs/filesystem.h>
+#include <fs/luks2.h>
 
 #include <ops/resizeoperation.h>
 
@@ -31,6 +32,7 @@
 
 #include <KConfigGroup>
 #include <KLocalizedString>
+#include <KPasswordDialog>
 #include <KSharedConfig>
 
 /** Creates a new ResizeDialog
@@ -54,7 +56,6 @@ ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minF
     dialogWidget().hideLabel();
     dialogWidget().textLVName().hide();
     dialogWidget().lvName().hide();
-
 
     setupDialog();
     setupConstraints();
@@ -87,6 +88,32 @@ void ResizeDialog::rollback()
 
 void ResizeDialog::accept()
 {
+    if (partition().roles().has(PartitionRole::Luks)) {
+        FS::luks2* luksFs = dynamic_cast<FS::luks2*>(&partition().fileSystem());
+        if (luksFs) {
+            if (luksFs->keyLocation() == FS::luks::keyring) {
+                bool validPassphrase = false;
+                QString errorMessage;
+                QString passphrase;
+
+                while(!validPassphrase) {
+                    KPasswordDialog dlg( this );
+                    dlg.setPrompt(i18nc("%2 is either empty or says Invalid passphrase.", "%2Enter passphrase for %1:", partition().deviceNode(), errorMessage));
+                    if( !dlg.exec() ) {
+                        reject();
+                        return;
+                    }
+
+                    passphrase = dlg.password();
+                    validPassphrase = luksFs->testPassphrase(partition().deviceNode(), passphrase);
+                    if(!validPassphrase)
+                        errorMessage = i18nc("Part of %2Enter passphrase for %1:", "Invalid passphrase. ");
+                }
+                luksFs->setPassphrase(passphrase);
+            }
+        }
+    }
+
     setResizedFirstSector(partition().firstSector());
     setResizedLastSector(partition().lastSector());
 
