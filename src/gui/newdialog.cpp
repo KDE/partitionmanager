@@ -74,7 +74,8 @@ void NewDialog::setupDialog()
     for (const auto &fs : FileSystemFactory::map()) {
         if (fs->supportCreate() != FileSystem::cmdSupportNone &&
             fs->type() != FileSystem::Extended &&
-            fs->type() != FileSystem::Luks)
+            fs->type() != FileSystem::Luks &&
+            fs->type() != FileSystem::Luks2)
             fsNames.append(fs->name());
     }
 
