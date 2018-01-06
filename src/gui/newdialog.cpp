@@ -101,6 +101,11 @@ void NewDialog::setupDialog()
     dialogWidget().checkBoxEncrypt().hide();
     dialogWidget().editPassphrase().hide();
 
+    if (device().type() == Device::LVM_Device) {
+        dialogWidget().comboFileSystem().removeItem(dialogWidget().comboFileSystem().findText(QStringLiteral("lvm2 pv")));
+    }
+
+
     dialogWidget().editPassphrase().setMinimumPasswordLength(1);
     dialogWidget().editPassphrase().setMaximumPasswordLength(512); // cryptsetup does not support longer passwords
 
