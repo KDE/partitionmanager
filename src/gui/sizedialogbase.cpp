@@ -114,7 +114,6 @@ void SizeDialogBase::setupDialog()
         detailsWidget().checkAlign().setChecked(false);
         detailsWidget().checkAlign().setEnabled(false);
         detailsButton->hide();
-        dialogWidget().comboFileSystem().removeItem(dialogWidget().comboFileSystem().findText(QStringLiteral("lvm2 pv")));
         m_IsValidLVName = false;
 
         /* LVM logical volume name can consist of: letters numbers _ . - +
