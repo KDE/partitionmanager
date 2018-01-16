@@ -69,8 +69,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
     parser.addOption(QCommandLineOption(QLatin1Literal("dontsu"), xi18nc("@info:shell", "Do not try to gain super user privileges")));
-    parser.addOption(QCommandLineOption(QLatin1Literal("advconfig"), xi18nc("@info:shell", "Show advanced tab in configuration dialog")));
-    parser.addPositionalArgument(QStringLiteral("device"), xi18nc("@info:shell", "Device(s) to manage"), QStringLiteral("[device...]"));
+// FIXME    parser.addPositionalArgument(QStringLiteral("device"), xi18nc("@info:shell", "Device(s) to manage"), QStringLiteral("[device...]"));
 
     parser.process(app);
     aboutData.processCommandLine(&parser);

@@ -62,13 +62,10 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
     item = addPage(&fileSystemColorsPageWidget(), xi18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
     item->setIcon(QIcon::fromTheme(QStringLiteral("format-fill-color")).pixmap(IconSize(KIconLoader::Desktop)));
 
-    if (QCoreApplication::arguments().contains(QLatin1String("--advconfig"))) {
-        item = addPage(&advancedPageWidget(), xi18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
-        item->setIcon(QIcon::fromTheme(QStringLiteral("configure")).pixmap(IconSize(KIconLoader::Desktop)));
+    item = addPage(&advancedPageWidget(), xi18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
+    item->setIcon(QIcon::fromTheme(QStringLiteral("configure")).pixmap(IconSize(KIconLoader::Desktop)));
 
-        connect(&advancedPageWidget().comboBackend(), qOverload<int>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
-    } else
-        advancedPageWidget().setVisible(false);
+    connect(&advancedPageWidget().comboBackend(), qOverload<int>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "configureOptionsDialogs");
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
