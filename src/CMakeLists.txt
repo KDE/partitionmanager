@@ -48,7 +48,6 @@ target_link_libraries(partitionmanager ${BLKID_LIBRARIES}
 	KF5::IconThemes
 	KF5::JobWidgets
 	KF5::KIOWidgets
-	KF5::Service
 	KF5::WidgetsAddons
 	KF5::XmlGui
 )
