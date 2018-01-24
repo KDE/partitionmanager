@@ -20,11 +20,6 @@ For releases after 3.3:
   in the kernel. that should cover all cases where we actually need root
   privileges now. -- we actually also need root privs for SMART now.
 
-* The interface between core and the file systems needs some more thought.
-  Ideally we'd be free to use either external helper apps (like we do now) or
-  libraries to achieve the same things. Libraries in this case being libntfs-3g
-  and libext2fs. There's one for reiserfs too, iirc.
-
 * Convert the fs implementations into plugins. Redesign the support-stuff, make
   that more flexible (no statics in the FS classes, some helper class or at
   least an array in FileSystem).
