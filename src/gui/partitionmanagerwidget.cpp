@@ -226,6 +226,9 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 
     item->setText(i++, p.fileSystem().label());
     item->setText(i++, p.fileSystem().uuid());
+    item->setText(i++, p.label());
+    item->setText(i++, p.uuid());
+
     item->setText(i++, Capacity::formatByteSize(p.capacity()));
     item->setText(i++, Capacity::formatByteSize(p.used()));
     item->setText(i++, Capacity::formatByteSize(p.available()));
