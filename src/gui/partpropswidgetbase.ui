@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>499</width>
-    <height>502</height>
+    <width>634</width>
+    <height>673</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -308,7 +308,7 @@
    <item row="20" column="0">
     <widget class="QLabel" name="m_LabelTextFlags">
      <property name="text">
-      <string comment="@label">Flags:</string>
+      <string comment="@label">Fla&amp;gs:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>

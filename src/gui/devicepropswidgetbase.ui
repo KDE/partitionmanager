@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
-    <height>361</height>
+    <width>643</width>
+    <height>496</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -74,14 +74,14 @@
      <item>
       <widget class="QRadioButton" name="m_RadioCylinderBased">
        <property name="text">
-        <string>Cylinder alignment</string>
+        <string>&amp;Cylinder alignment</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QRadioButton" name="m_RadioSectorBased">
        <property name="text">
-        <string>Sector based alignment</string>
+        <string>Sector based al&amp;ignment</string>
        </property>
       </widget>
      </item>
