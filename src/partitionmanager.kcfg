@@ -99,7 +99,6 @@
 		</entry>
 		<entry key="backend" type="String">
 			<label context="@label">Backend plugin</label>
-			<default>pmlibpartedbackendplugin</default>
 		</entry>
 		<entry key="defaultFileSystem" type="Int">
 			<default>FileSystem::Ext4</default>
