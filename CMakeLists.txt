@@ -81,9 +81,7 @@ add_definitions(
   -DQT_DISABLE_DEPRECATED_BEFORE=0x050900
 )
 
-find_package(PkgConfig REQUIRED)
 find_package(KPMcore ${KPMCORE_MIN_VERSION} REQUIRED)
-pkg_check_modules(BLKID REQUIRED blkid)
 
 include_directories(${Qt5Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} ${KPMCORE_INCLUDE_DIR} lib/ src/)
 
