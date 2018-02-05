@@ -764,13 +764,11 @@ void PartitionManagerWidget::onBackupPartition()
     }
 
     QString fileName = QFileDialog::getSaveFileName(this);
-//  QString fileName = "/tmp/backuptest.img";
 
     if (fileName.isEmpty())
         return;
 
-    if (!QFile::exists(fileName) || KMessageBox::warningContinueCancel(this, xi18nc("@info", "Do you want to overwrite the existing file <filename>%1</filename>?", fileName), xi18nc("@title:window", "Overwrite Existing File?"), KGuiItem(xi18nc("@action:button", "Overwrite File"), QStringLiteral("arrow-right")), KStandardGuiItem::cancel()) == KMessageBox::Continue)
-        operationStack().push(new BackupOperation(*selectedDevice(), *selectedPartition(), fileName));
+    operationStack().push(new BackupOperation(*selectedDevice(), *selectedPartition(), fileName));
 }
 
 void PartitionManagerWidget::onRestorePartition()
