@@ -132,6 +132,20 @@ void PartPropsDialog::setupDialog()
     dialogWidget().status().setText(statusText);
     dialogWidget().uuid().setText(partition().fileSystem().uuid().isEmpty() ? xi18nc("@item uuid", "(none)") : partition().fileSystem().uuid());
 
+    if(device().partitionTable()->type() == PartitionTable::gpt){
+        QString PartitionLabel = partition().label().isEmpty() ? xi18nc("@item uuid", "(none)") : partition().label();
+        QString PartitionUUID = partition().uuid().isEmpty() ? xi18nc("@item uuid", "(none)") : partition().uuid();
+
+        dialogWidget().partitionLabel().setText(PartitionLabel);
+        dialogWidget().partitionUuid().setText(PartitionUUID);
+    }
+    else{
+        dialogWidget().partitionLabel().hide();
+        dialogWidget().partitionTextLabel().hide();
+        dialogWidget().partitionUuid().hide();
+        dialogWidget().partitionTextUuid().hide();
+    }
+
     setupFileSystemComboBox();
 
     // don't do this before the file system combo box has been set up!

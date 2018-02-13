@@ -142,6 +142,24 @@ public:
         Q_ASSERT(m_EditLabel);
         return *m_EditLabel;
     }
+
+    QLabel& partitionTextUuid() {
+        Q_ASSERT(m_LabelTextPartitionUuid);
+        return *m_LabelTextPartitionUuid;
+    }
+    QLabel& partitionUuid() {
+        Q_ASSERT(m_LabelPartitionUuid);
+        return *m_LabelPartitionUuid;
+    }
+
+    QLabel& partitionTextLabel() {
+        Q_ASSERT(m_LabelTextPartitionLabel);
+        return *m_LabelTextPartitionLabel;
+    }
+    QLabel& partitionLabel() {
+        Q_ASSERT(m_LabelPartitionLabel);
+        return *m_LabelPartitionLabel;
+    }
     const QLineEdit& label() const {
         Q_ASSERT(m_EditLabel);
         return *m_EditLabel;

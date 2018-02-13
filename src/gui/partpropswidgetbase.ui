@@ -6,27 +6,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>634</width>
-    <height>673</height>
+    <width>506</width>
+    <height>600</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" colspan="2">
-    <widget class="PartWidget" name="m_PartWidget" native="true">
-     <property name="minimumSize">
-      <size>
-       <width>300</width>
-       <height>60</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>60</height>
-      </size>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="0" colspan="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
@@ -56,22 +40,6 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
-    <widget class="QComboBox" name="m_ComboFileSystem"/>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="m_LabelTextLabel">
-     <property name="text">
-      <string comment="@label">&amp;Label:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="buddy">
-      <cstring>m_EditLabel</cstring>
-     </property>
-    </widget>
-   </item>
    <item row="3" column="1">
     <widget class="QLineEdit" name="m_EditLabel"/>
    </item>
@@ -84,6 +52,9 @@
       <bool>true</bool>
      </property>
     </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="m_ComboFileSystem"/>
    </item>
    <item row="5" column="1">
     <widget class="QCheckBox" name="m_CheckRecreate">
@@ -99,6 +70,22 @@
     <widget class="Line" name="line_5">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="PartWidget" name="m_PartWidget" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>60</height>
+      </size>
      </property>
     </widget>
    </item>
@@ -126,6 +113,19 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="m_LabelTextLabel">
+     <property name="text">
+      <string comment="@label">&amp;Label:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>m_EditLabel</cstring>
      </property>
     </widget>
    </item>
@@ -170,14 +170,14 @@
      </property>
     </widget>
    </item>
-   <item row="11" column="0" colspan="2">
+   <item row="13" column="0" colspan="2">
     <widget class="Line" name="line_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="12" column="0">
+   <item row="14" column="0">
     <widget class="QLabel" name="m_LabelTextCapacity">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -193,7 +193,7 @@
      </property>
     </widget>
    </item>
-   <item row="12" column="1">
+   <item row="14" column="1">
     <widget class="QLabel" name="m_LabelCapacity">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -206,7 +206,7 @@
      </property>
     </widget>
    </item>
-   <item row="13" column="0">
+   <item row="15" column="0">
     <widget class="QLabel" name="m_LabelTextAvailable">
      <property name="text">
       <string comment="@label partition capacity available">Available:</string>
@@ -216,14 +216,14 @@
      </property>
     </widget>
    </item>
-   <item row="13" column="1">
+   <item row="15" column="1">
     <widget class="QLabel" name="m_LabelAvailable">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="14" column="0">
+   <item row="16" column="0">
     <widget class="QLabel" name="m_LabelTextUsed">
      <property name="text">
       <string comment="@label partition capacity used">Used:</string>
@@ -233,21 +233,21 @@
      </property>
     </widget>
    </item>
-   <item row="14" column="1">
+   <item row="16" column="1">
     <widget class="QLabel" name="m_LabelUsed">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="15" column="0" colspan="2">
+   <item row="17" column="0" colspan="2">
     <widget class="Line" name="line">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="16" column="0">
+   <item row="18" column="0">
     <widget class="QLabel" name="m_LabelTextFirstSector">
      <property name="text">
       <string comment="@label">First sector:</string>
@@ -257,14 +257,14 @@
      </property>
     </widget>
    </item>
-   <item row="16" column="1">
+   <item row="18" column="1">
     <widget class="QLabel" name="m_LabelFirstSector">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="17" column="0">
+   <item row="19" column="0">
     <widget class="QLabel" name="m_LabelTextLastSector">
      <property name="text">
       <string comment="@label">Last sector:</string>
@@ -274,14 +274,14 @@
      </property>
     </widget>
    </item>
-   <item row="17" column="1">
+   <item row="19" column="1">
     <widget class="QLabel" name="m_LabelLastSector">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="18" column="0">
+   <item row="20" column="0">
     <widget class="QLabel" name="m_LabelTextNumSectors">
      <property name="text">
       <string comment="@label">Number of sectors:</string>
@@ -291,24 +291,24 @@
      </property>
     </widget>
    </item>
-   <item row="18" column="1">
+   <item row="20" column="1">
     <widget class="QLabel" name="m_LabelNumSectors">
      <property name="textInteractionFlags">
       <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="19" column="0" colspan="2">
+   <item row="21" column="0" colspan="2">
     <widget class="Line" name="m_LineListFlags">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="20" column="0">
+   <item row="22" column="0">
     <widget class="QLabel" name="m_LabelTextFlags">
      <property name="text">
-      <string comment="@label">Fla&amp;gs:</string>
+      <string comment="@label">&amp;Flags:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
@@ -318,7 +318,7 @@
      </property>
     </widget>
    </item>
-   <item row="20" column="1">
+   <item row="22" column="1">
     <widget class="QListWidget" name="m_ListFlags">
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -334,7 +334,7 @@
      </property>
     </widget>
    </item>
-   <item row="21" column="0" colspan="2">
+   <item row="23" column="0" colspan="2">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -349,6 +349,40 @@
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="m_LabelTextPartitionLabel">
+     <property name="text">
+      <string>Partition Label:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLabel" name="m_LabelTextPartitionUuid">
+     <property name="text">
+      <string>Partition UUID:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="1">
+    <widget class="QLabel" name="m_LabelPartitionUuid">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="1">
+    <widget class="QLabel" name="m_LabelPartitionLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
