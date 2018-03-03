@@ -30,8 +30,8 @@ class QString;
 
 enum MountPointAction
 {
-    Remove = 1,
-    Edit = 2
+    Remove,
+    Edit
 };
 
 class EditMountPointDialog : public QDialog
