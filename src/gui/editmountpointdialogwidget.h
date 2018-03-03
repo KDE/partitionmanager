@@ -39,7 +39,7 @@ class QStringList;
 class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDialogWidgetBase
 {
 public:
-    EditMountPointDialogWidget(QWidget* parent, const Partition& p);
+    EditMountPointDialogWidget(QWidget* parent, Partition& p);
     ~EditMountPointDialogWidget();
 
     QPushButton& buttonMore() {
@@ -75,6 +75,7 @@ public:
     }
 
     void acceptChanges();
+    void removeMountPoint();
     bool writeMountpoints(const QString& filename);
 
 protected:
@@ -90,6 +91,10 @@ private:
         return m_BoxOptions;
     }
 
+    Partition& partition() {
+        return m_Partition;
+    }
+
     const Partition& partition() const {
         return m_Partition;
     }
@@ -98,7 +103,7 @@ private:
     FstabEntryList m_fstabEntries;
     FstabEntry *entry;
 
-    const Partition& m_Partition;
+    Partition& m_Partition;
     QString m_Options;
     QString m_deviceNode;
     std::map<QString, QCheckBox*> m_BoxOptions;

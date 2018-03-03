@@ -28,6 +28,12 @@ class Partition;
 class QWidget;
 class QString;
 
+enum MountPointAction
+{
+    Remove = 1,
+    Edit = 2
+};
+
 class EditMountPointDialog : public QDialog
 {
 public:
@@ -39,7 +45,7 @@ protected:
         return *m_DialogWidget;
     }
 
-    void accept() override;
+    void accept_(MountPointAction action);
 
 private:
     Partition& partition() {

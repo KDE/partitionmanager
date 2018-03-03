@@ -177,11 +177,7 @@ Partition* PartitionManagerWidget::selectedPartition()
     if (selectedDevice() == nullptr || selectedDevice()->partitionTable() == nullptr || partTableWidget().activeWidget() == nullptr)
         return nullptr;
 
-    // The active partition we get from the part table widget is const; we need non-const.
-    // So take the first sector and find the partition in the selected device's
-    // partition table.
-    const Partition* activePartition = partTableWidget().activeWidget()->partition();
-    return selectedDevice()->partitionTable()->findPartitionBySector(activePartition->firstSector(), PartitionRole(PartitionRole::Any));
+    return partTableWidget().activeWidget()->partition();
 }
 
 void PartitionManagerWidget::setSelectedDevice(const QString& deviceNode)

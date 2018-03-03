@@ -49,19 +49,20 @@ EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
                                                   this );
     mainLayout->addWidget(dbb);
     connect(dbb, &QDialogButtonBox::accepted,
-            this, &EditMountPointDialog::accept);
+            this, [=] () {accept_(Edit);} );
     connect(dbb, &QDialogButtonBox::rejected,
             this, &EditMountPointDialog::reject);
+    connect(widget().m_ButtonRemove, &QPushButton::clicked, this, [=] () {accept_(Remove);} );
 }
 
-/** Destroys an EditMOuntOptionsDialog instance */
+/** Destroys an EditMountOptionsDialog instance */
 EditMountPointDialog::~EditMountPointDialog()
 {
     KConfigGroup kcg(KSharedConfig::openConfig(), "editMountPointDialog");
     kcg.writeEntry("Geometry", saveGeometry());
 }
 
-void EditMountPointDialog::accept()
+void EditMountPointDialog::accept_(MountPointAction action)
 {
     if (KMessageBox::warningContinueCancel(this,
                                            xi18nc("@info", "<para>Are you sure you want to save the changes you made to the system table file <filename>/etc/fstab</filename>?</para>"
@@ -71,10 +72,14 @@ void EditMountPointDialog::accept()
                                            KStandardGuiItem::cancel(),
                                            QStringLiteral("reallyWriteMountPoints")) == KMessageBox::Cancel)
         return;
-
-    widget().acceptChanges();
-    if (writeMountpoints(widget().fstabEntries()))
-        partition().setMountPoint(widget().editPath().text());
+    if(action == Remove)
+        widget().removeMountPoint();
+    else if (action == Edit)
+        widget().acceptChanges();
+    if (writeMountpoints(widget().fstabEntries())) {
+        if (action == Edit)
+            partition().setMountPoint(widget().editPath().text());
+    }
     else
         KMessageBox::sorry(this,
                    xi18nc("@info", "Could not save mount points to file <filename>/etc/fstab</filename>."),

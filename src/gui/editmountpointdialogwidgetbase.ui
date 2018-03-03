@@ -6,11 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>534</width>
-    <height>353</height>
+    <width>600</width>
+    <height>374</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="5" column="1" colspan="3">
+    <widget class="QLineEdit" name="m_EditPath">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>3</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
    <item row="5" column="0">
     <widget class="QLabel" name="m_LabelPath">
      <property name="text">
@@ -21,29 +31,6 @@
      </property>
      <property name="buddy">
       <cstring>m_EditPath</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1" colspan="5">
-    <widget class="QLineEdit" name="m_EditPath">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>3</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="6">
-    <widget class="QPushButton" name="m_ButtonSelect">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-       <horstretch>1</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Select...</string>
      </property>
     </widget>
    </item>
@@ -146,7 +133,7 @@
    <item row="12" column="0">
     <widget class="QLabel" name="m_LabelDumpFreq">
      <property name="text">
-      <string>Dump Frequency:</string>
+      <string>Dump &amp;Frequency:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -175,7 +162,7 @@
    <item row="12" column="3">
     <widget class="QLabel" name="m_LabelPassNumber">
      <property name="text">
-      <string>Pass Number:</string>
+      <string>Pass &amp;Number:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -187,19 +174,6 @@
    </item>
    <item row="12" column="4">
     <widget class="QSpinBox" name="m_SpinPassNumber"/>
-   </item>
-   <item row="12" column="5" colspan="2">
-    <spacer name="horizontalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>135</width>
-       <height>23</height>
-      </size>
-     </property>
-    </spacer>
    </item>
    <item row="0" column="0" colspan="7">
     <widget class="QLabel" name="m_LabelNameValue">
@@ -282,7 +256,7 @@
    <item row="4" column="1">
     <widget class="QRadioButton" name="m_RadioDeviceNode">
      <property name="text">
-      <string>Device Node</string>
+      <string>De&amp;vice Node</string>
      </property>
      <property name="checked">
       <bool>true</bool>
@@ -292,14 +266,14 @@
    <item row="4" column="2">
     <widget class="QRadioButton" name="m_RadioUUID">
      <property name="text">
-      <string>UUID</string>
+      <string>UU&amp;ID</string>
      </property>
     </widget>
    </item>
    <item row="4" column="3">
     <widget class="QRadioButton" name="m_RadioLabel">
      <property name="text">
-      <string>Label</string>
+      <string>&amp;Label</string>
      </property>
     </widget>
    </item>
@@ -310,6 +284,45 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="5" colspan="2">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>135</width>
+       <height>23</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="4">
+    <widget class="QPushButton" name="m_ButtonSelect">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>1</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Select...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="6">
+    <widget class="QPushButton" name="m_ButtonRemove">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>1</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Remove</string>
      </property>
     </widget>
    </item>

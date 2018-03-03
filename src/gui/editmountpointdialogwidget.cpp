@@ -33,7 +33,7 @@
 #include <QPointer>
 #include <QString>
 
-EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, const Partition& p) :
+EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partition& p) :
     QWidget(parent),
     m_Partition(p)
 {
@@ -157,6 +157,22 @@ void EditMountPointDialogWidget::buttonSelectClicked(bool)
     const QString s = QFileDialog::getExistingDirectory(this, editPath().text());
     if (!s.isEmpty())
         editPath().setText(s);
+}
+
+void EditMountPointDialogWidget::removeMountPoint()
+{
+    int i=0;
+    for (const auto &e : fstabEntries()) {
+        if(e.fsSpec().contains(partition().deviceNode()) || e.fsSpec().contains(partition().fileSystem().uuid()) ||
+           e.fsSpec().contains(partition().fileSystem().label()) || e.fsSpec().contains(partition().label()) || e.fsSpec().contains(partition().uuid()) )
+        {
+            fstabEntries().removeAt(i);
+            partition().setMountPoint(QString());
+            i--;
+        }
+        i++;
+    }
+
 }
 
 void EditMountPointDialogWidget::buttonMoreClicked(bool)
