@@ -28,7 +28,6 @@ class QPoint;
 class QString;
 class QTreeWidget;
 
-bool checkPermissions();
 bool loadBackend();
 QIcon createFileSystemColor(FileSystem::Type type, quint32 size);
 Capacity::Unit preferredUnit();
@@ -38,7 +37,5 @@ namespace GuiHelpers
 FileSystem::Type defaultFileSystem();
 std::array< QColor, FileSystem::__lastType > fileSystemColorCodesFromSettings();
 }
-
-QString suCommand();
 
 #endif

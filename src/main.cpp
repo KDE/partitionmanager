@@ -75,8 +75,6 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     aboutData.processCommandLine(&parser);
 
     registerMetaTypes();
-    if (!checkPermissions())
-        return 0;
 
     Config::instance(QStringLiteral("partitionmanagerrc"));
 
