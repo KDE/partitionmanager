@@ -63,7 +63,6 @@
 #include <QCloseEvent>
 #include <QCollator>
 #include <QDateTime>
-#include <QDBusInterface>
 #include <QFile>
 #include <QFileDialog>
 #include <QtGlobal>
@@ -167,9 +166,7 @@ void MainWindow::closeEvent(QCloseEvent* event)
 
     KXmlGuiWindow::closeEvent(event);
 
-    QDBusInterface iface(QStringLiteral("org.kde.kpmcore.helperinterface"), QStringLiteral("/Helper"), QStringLiteral("org.kde.kpmcore.externalcommand"), QDBusConnection::systemBus());
-    if (iface.isValid())
-        iface.call(QStringLiteral("exit"), CoreBackendManager::self()->Uuid());
+    CoreBackendManager::stopExternalCommandHelper();
 }
 
 void MainWindow::changeEvent(QEvent* event)
