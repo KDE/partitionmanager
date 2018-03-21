@@ -163,9 +163,9 @@ void EditMountPointDialogWidget::removeMountPoint()
 {
     int i=0;
     for (const auto &e : fstabEntries()) {
-        if(e.fsSpec().contains(partition().deviceNode()) || e.fsSpec().contains(partition().fileSystem().uuid()) ||
-           e.fsSpec().contains(partition().fileSystem().label()) || e.fsSpec().contains(partition().label()) || e.fsSpec().contains(partition().uuid()) )
-        {
+       if((e.fsSpec().contains(partition().deviceNode()) && !partition().deviceNode().isEmpty() ) || (e.fsSpec().contains(partition().fileSystem().uuid()) && !partition().fileSystem().uuid().isEmpty()) ||
+           (e.fsSpec().contains(partition().fileSystem().label()) && !partition().fileSystem().label().isEmpty()) || (e.fsSpec().contains(partition().label()) && !partition().label().isEmpty() ) || (e.fsSpec().contains(partition().uuid()) && !partition().uuid().isEmpty() ) )
+       {
             fstabEntries().removeAt(i);
             partition().setMountPoint(QString());
             i--;
