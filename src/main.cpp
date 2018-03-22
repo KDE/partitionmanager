@@ -32,10 +32,25 @@
 #include <KMessageBox>
 #include <KLocalizedString>
 
-#include <config.h>
+#include "config.h"
+
+#ifndef Q_OS_WIN
+#include <unistd.h>
+#endif
+#include <iostream>
 
 int Q_DECL_IMPORT main(int argc, char* argv[])
 {
+#ifndef Q_OS_WIN
+    /**
+     * Check whether we are running as root
+     **/
+    if (getuid() == 0) {
+        std::cout << "Executing KDE Partition Manager as root is not possible." << std::endl;
+        return 0;
+    }
+#endif
+
     QApplication app(argc, argv);
 
     Kdelibs4ConfigMigrator migrate(QLatin1Literal("partitionmanager"));
