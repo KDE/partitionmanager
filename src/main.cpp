@@ -28,6 +28,7 @@
 
 #include <KAboutData>
 #include <KCrash>
+#include <KDBusService>
 #include <Kdelibs4ConfigMigrator>
 #include <KMessageBox>
 #include <KLocalizedString>
@@ -72,6 +73,8 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
 
     parser.process(app);
     aboutData.processCommandLine(&parser);
+
+    KDBusService service(KDBusService::Unique);
 
     registerMetaTypes();
 
