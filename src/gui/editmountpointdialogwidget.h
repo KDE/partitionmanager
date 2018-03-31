@@ -32,7 +32,7 @@ class Partition;
 class QFile;
 class QSpinBox;
 class QCheckBox;
-class QLineEdit;
+class QComboBox;
 class QPushButton;
 class QStringList;
 
@@ -48,7 +48,7 @@ public:
     QLabel& labelName() {
         return *m_LabelNameValue;
     }
-    QLineEdit& editPath() {
+    QComboBox& editPath() {
         return *m_EditPath;
     }
     QSpinBox& spinDumpFreq() {
@@ -84,6 +84,7 @@ protected:
 
 private:
     void setupOptions(const QStringList& options);
+    void setupRadio(const FstabEntryType entryType);
     std::map<QString, QCheckBox*>& boxOptions() {
         return m_BoxOptions;
     }
@@ -101,12 +102,14 @@ private:
 
 private:
     FstabEntryList m_fstabEntries;
-    FstabEntry *entry;
-
+    QList<FstabEntry *> entry;
+    FstabEntry *currentEntry;
     Partition& m_Partition;
     QString m_Options;
     QString m_deviceNode;
+    QStringList mountPointList;
     std::map<QString, QCheckBox*> m_BoxOptions;
+    std::map<QString, QCheckBox*>::iterator iterator_BoxOptions;
 };
 
 #endif

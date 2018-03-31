@@ -31,6 +31,7 @@
 #include <QFontDatabase>
 #include <QPushButton>
 #include <QTemporaryFile>
+#include <QTextDocumentFragment>
 #include <QTextStream>
 #include <QTreeWidgetItem>
 #include <QtGlobal>
@@ -130,6 +131,7 @@ void SmartDialog::setupDialog()
                 << a.value()
             );
             item->setSizeHint(0, QSize(0, 64));
+            item->setToolTip(1, QTextDocumentFragment::fromHtml(a.desc()).toPlainText());
             dialogWidget().treeSmartAttributes().addTopLevelItem(item);
         }
     } else

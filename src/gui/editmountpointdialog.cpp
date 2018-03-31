@@ -78,7 +78,7 @@ void EditMountPointDialog::accept_(MountPointAction action)
         widget().acceptChanges();
     if (writeMountpoints(widget().fstabEntries())) {
         if (action == Edit)
-            partition().setMountPoint(widget().editPath().text());
+            partition().setMountPoint(widget().editPath().currentText());
     }
     else
         KMessageBox::sorry(this,

@@ -144,6 +144,8 @@ void ApplyProgressDialog::show()
     dialogWidget().treeTasks().clear();
     okButton->setVisible(false);
     cancelButton->setVisible(true);
+    cancelButton->setEnabled(true);
+
 
     timer().start(1000);
     time().start();
@@ -194,24 +196,21 @@ void ApplyProgressDialog::onCancelButton()
         if (operationRunner().isCancelling())
             return;
 
-        QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
-
-        cancelButton->setEnabled(false);
-        setStatus(xi18nc("@info:progress", "Waiting for operation to finish..."));
-        repaint();
-        dialogWidget().repaint();
-
         // suspend the runner, so it doesn't happily carry on while the user decides
         // if he really wants to cancel
         operationRunner().suspendMutex().lock();
-        cancelButton->setEnabled(true);
-
-        QApplication::restoreOverrideCursor();
 
         if (KMessageBox::questionYesNo(this, xi18nc("@info", "Do you really want to cancel?"), xi18nc("@title:window", "Cancel Running Operations"), KGuiItem(xi18nc("@action:button", "Yes, Cancel Operations"), QStringLiteral("dialog-ok")), KStandardGuiItem::no()) == KMessageBox::Yes)
             // in the meantime while we were showing the messagebox, the runner might have finished.
-            if (operationRunner().isRunning())
+            if (operationRunner().isRunning()) {
+                QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+                cancelButton->setEnabled(false);
+                setStatus(xi18nc("@info:progress", "Waiting for operation to finish..."));
+                repaint();
+                dialogWidget().repaint();
+                QApplication::restoreOverrideCursor();
                 operationRunner().cancel();
+            }
 
         operationRunner().suspendMutex().unlock();
     }
