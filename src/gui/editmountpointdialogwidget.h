@@ -102,7 +102,7 @@ private:
 
 private:
     FstabEntryList m_fstabEntries;
-    QList<FstabEntry *> entry;
+    QList<FstabEntry *> entry; // All fstab entries for this partition
     FstabEntry *currentEntry;
     Partition& m_Partition;
     QString m_Options;
