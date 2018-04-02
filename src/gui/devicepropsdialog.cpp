@@ -109,12 +109,7 @@ void DevicePropsDialog::setupDialog()
     if (device().type() == Device::Disk_Device) {
 
         const DiskDevice& disk = dynamic_cast<const DiskDevice&>(device());
-        const QString cyls = QLocale().toString((disk.cylinders()));
-        const QString heads = QLocale().toString((disk.heads()));
-        const QString sectors = QLocale().toString((disk.sectorsPerTrack()));
-        dialogWidget().chs().setText(QStringLiteral("%1/%2/%3").arg(cyls).arg(heads).arg(sectors));
 
-        dialogWidget().cylinderSize().setText(i18ncp("@label", "1 Sector", "%1 Sectors", disk.cylinderSize()));
         dialogWidget().primariesMax().setText(maxPrimaries);
         dialogWidget().logicalSectorSize().setText(Capacity::formatByteSize(disk.logicalSectorSize()));
         dialogWidget().physicalSectorSize().setText(Capacity::formatByteSize(disk.physicalSectorSize()));

@@ -37,17 +37,9 @@ public:
         return *m_PartTableWidget;
     }
 
-    QLabel& chs() {
-        Q_ASSERT(m_LabelCHS);
-        return *m_LabelCHS;
-    }
     QLabel& capacity() {
         Q_ASSERT(m_LabelCapacity);
         return *m_LabelCapacity;
-    }
-    QLabel& cylinderSize() {
-        Q_ASSERT(m_LabelCylinderSize);
-        return *m_LabelCylinderSize;
     }
     QLabel& primariesMax() {
         Q_ASSERT(m_LabelPrimariesMax);
