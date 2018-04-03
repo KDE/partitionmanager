@@ -86,11 +86,7 @@
 #include <KIO/CopyJob>
 #include <KIO/Job>
 #include <KJobWidgets>
-
-#include <config.h>
-
-#include <unistd.h>
-#include <typeinfo>
+#include "config.h"
 
 /** Creates a new MainWindow instance.
     @param parent the parent widget
@@ -505,8 +501,7 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("clearAllOperations"))
             ->setEnabled(operationStack().size() > 0);
     actionCollection()->action(QStringLiteral("applyAllOperations"))
-            ->setEnabled(operationStack().size() > 0 && (geteuid() == 0 ||
-                                                         Config::allowApplyOperationsAsNonRoot()));
+            ->setEnabled(operationStack().size() > 0);
 
     const bool readOnly = pmWidget().selectedDevice() == nullptr ||
                           pmWidget().selectedDevice()->partitionTable() == nullptr ||
