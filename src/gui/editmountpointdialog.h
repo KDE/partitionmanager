@@ -28,7 +28,7 @@ class Partition;
 class QWidget;
 class QString;
 
-enum MountPointAction
+enum class MountPointAction
 {
     Remove,
     Edit
