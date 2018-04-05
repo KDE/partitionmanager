@@ -16,12 +16,13 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(GUIHELPERS_H)
-
+#ifndef GUIHELPERS_H
 #define GUIHELPERS_H
 
 #include <fs/filesystem.h>
 #include <util/capacity.h>
+
+#include <vector>
 
 class QIcon;
 class QPoint;
@@ -35,7 +36,7 @@ void showColumnsContextMenu(const QPoint& p, QTreeWidget& tree);
 namespace GuiHelpers
 {
 FileSystem::Type defaultFileSystem();
-std::array< QColor, FileSystem::__lastType > fileSystemColorCodesFromSettings();
+std::vector<QColor> fileSystemColorCodesFromSettings();
 }
 
 #endif
