@@ -232,7 +232,7 @@ void PartPropsDialog::updateHideAndShow()
         partition().state() != Partition::StateNew &&                           // not for new partitions
         !partition().roles().has(PartitionRole::Extended) &&                    // neither for extended
         !partition().roles().has(PartitionRole::Unallocated) &&                 // or for unallocated
-        newFileSystemType() != FileSystem::Unformatted;                         // and not for unformatted file systems
+        newFileSystemType() != FileSystem::Type::Unformatted;                   // and not for unformatted file systems
 
     dialogWidget().showAvailable(showAvailableAndUsed);
     dialogWidget().showUsed(showAvailableAndUsed);
@@ -242,14 +242,14 @@ void PartPropsDialog::updateHideAndShow()
         !partition().roles().has(PartitionRole::Extended) &&                    // not for extended, they have no file system
         !partition().roles().has(PartitionRole::Unallocated) &&                 // and not for unallocated: no choice there
                                                                                 // do now show file system comboBox for open luks volumes.
-        !(partition().roles().has(PartitionRole::Luks) && partition().fileSystem().type() != FileSystem::Luks);
+        !(partition().roles().has(PartitionRole::Luks) && partition().fileSystem().type() != FileSystem::Type::Luks);
     dialogWidget().showFileSystem(showFileSystem);
 
     // when do we show the recreate file system check box?
     const bool showCheckRecreate =
         showFileSystem &&                                                       // only if we also show the file system
         partition().fileSystem().supportCreate() != FileSystem::cmdSupportNone &&  // and support creating this file system
-        partition().fileSystem().type() != FileSystem::Unknown &&               // and not for unknown file systems
+        partition().fileSystem().type() != FileSystem::Type::Unknown &&         // and not for unknown file systems
         partition().state() != Partition::StateNew &&                           // or new partitions
         !partition().roles().has(PartitionRole::Luks);                          // or encrypted filesystems
 
@@ -297,7 +297,7 @@ void PartPropsDialog::setupFileSystemComboBox()
     for(const auto &fs : FileSystemFactory::map())
     {
         // If the partition isn't encrypted, skip the luks FS
-        if (fs->type() == FileSystem::Luks && partition().fileSystem().type() != FileSystem::Luks)
+        if (fs->type() == FileSystem::Type::Luks && partition().fileSystem().type() != FileSystem::Type::Luks)
             continue;
         if (partition().fileSystem().type() == fs->type() || (fs->supportCreate() != FileSystem::cmdSupportNone &&
                             partition().capacity() >= fs->minCapacity() && partition().capacity() <= fs->maxCapacity())) {
@@ -307,16 +307,16 @@ void PartPropsDialog::setupFileSystemComboBox()
                 selected = name;
 
             // If the partition isn't extended, skip the extended FS
-            if (fs->type() == FileSystem::Extended && !partition().roles().has(PartitionRole::Extended))
+            if (fs->type() == FileSystem::Type::Extended && !partition().roles().has(PartitionRole::Extended))
                 continue;
 
             // The user cannot change the filesystem back to "unformatted" once a filesystem has been created.
-            if (fs->type() == FileSystem::Unformatted) {
+            if (fs->type() == FileSystem::Type::Unformatted) {
                 // .. but if the file system is unknown to us, show the unformatted option as the currently selected one
-                if (partition().fileSystem().type() == FileSystem::Unknown) {
-                    name = FileSystem::nameForType(FileSystem::Unformatted);
+                if (partition().fileSystem().type() == FileSystem::Type::Unknown) {
+                    name = FileSystem::nameForType(FileSystem::Type::Unformatted);
                     selected = name;
-                } else if (partition().fileSystem().type() != FileSystem::Unformatted && partition().state() != Partition::StateNew)
+                } else if (partition().fileSystem().type() != FileSystem::Type::Unformatted && partition().state() != Partition::StateNew)
                     continue;
             }
 

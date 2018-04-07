@@ -73,9 +73,9 @@ void NewDialog::setupDialog()
     QStringList fsNames;
     for (const auto &fs : FileSystemFactory::map()) {
         if (fs->supportCreate() != FileSystem::cmdSupportNone &&
-            fs->type() != FileSystem::Extended &&
-            fs->type() != FileSystem::Luks &&
-            fs->type() != FileSystem::Luks2)
+            fs->type() != FileSystem::Type::Extended &&
+            fs->type() != FileSystem::Type::Luks &&
+            fs->type() != FileSystem::Type::Luks2)
             fsNames.append(fs->name());
     }
 
@@ -144,7 +144,7 @@ void NewDialog::accept()
 {
     if (partition().roles().has(PartitionRole::Extended)) {
         partition().deleteFileSystem();
-        partition().setFileSystem(FileSystemFactory::create(FileSystem::Extended,
+        partition().setFileSystem(FileSystemFactory::create(FileSystem::Type::Extended,
                                                             partition().firstSector(),
                                                             partition().lastSector(),
                                                             partition().sectorSize()));
@@ -153,7 +153,7 @@ void NewDialog::accept()
         FileSystem::Type innerFsType = partition().fileSystem().type();
         partition().deleteFileSystem();
         FS::luks* luksFs = dynamic_cast< FS::luks* >(
-                               FileSystemFactory::create(FileSystem::Luks,
+                               FileSystemFactory::create(FileSystem::Type::Luks,
                                                          partition().firstSector(),
                                                          partition().lastSector(),
                                                          partition().sectorSize()));
@@ -188,7 +188,7 @@ void NewDialog::onRoleChanged(bool)
     // Also make sure to set a primary's or logical's file system once the user goes back from
     // extended to any of those.
     if (r == PartitionRole::Extended)
-        updateFileSystem(FileSystem::Extended);
+        updateFileSystem(FileSystem::Type::Extended);
     else
         updateFileSystem(FileSystem::typeForName(dialogWidget().comboFileSystem().currentText()));
 

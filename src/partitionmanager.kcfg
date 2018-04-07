@@ -130,7 +130,7 @@
 			<label context="@label">Backend plugin</label>
 		</entry>
 		<entry key="defaultFileSystem" type="Int">
-			<default>FileSystem::Type::Ext4</default>
+                    <default>static_cast&lt;int&gt;(FileSystem::Type::Ext4)</default>
 		</entry>
 		<entry key="preferredUnit" type="Int">
 			<label context="@label">Preferred unit:</label>

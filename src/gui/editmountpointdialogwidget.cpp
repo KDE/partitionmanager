@@ -42,7 +42,7 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partitio
     setupUi(this);
 
     m_deviceNode = partition().deviceNode();
-    if (partition().roles().has(PartitionRole::Luks) && partition().fileSystem().type() != FileSystem::Luks) {
+    if (partition().roles().has(PartitionRole::Luks) && partition().fileSystem().type() != FileSystem::Type::Luks) {
         const FS::luks* luksFs = dynamic_cast<const FS::luks*>(&partition().fileSystem());
         m_deviceNode = luksFs->mapperName();
     }
@@ -54,7 +54,7 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partitio
     for (auto &e : m_fstabEntries) {
         QString canonicalEntryPath = QFileInfo(e.deviceNode()).canonicalFilePath();
         QString canonicalDevicePath = QFileInfo(m_deviceNode).canonicalFilePath();
-        if (canonicalEntryPath == canonicalDevicePath) { // FIXME fix multiple mountpoints
+        if (canonicalEntryPath == canonicalDevicePath) {
             entryFound = true;
             entry.push_back(&e);
             mountPointList = possibleMountPoints(e.deviceNode());
@@ -65,11 +65,11 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partitio
         FileSystem::Type type = partition().fileSystem().type();
         QString fsName;
         switch (type) {
-        case FileSystem::LinuxSwap:
+        case FileSystem::Type::LinuxSwap:
             fsName = QStringLiteral("swap");
             break;
-        case FileSystem::Fat16:
-        case FileSystem::Fat32:
+        case FileSystem::Type::Fat16:
+        case FileSystem::Type::Fat32:
             fsName = QStringLiteral("vfat");
             break;
         default:

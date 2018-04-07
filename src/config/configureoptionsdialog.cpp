@@ -84,8 +84,8 @@ void ConfigureOptionsDialog::updateSettings()
 
     bool changed = false;
 
-    if (generalPageWidget().defaultFileSystem() != Config::defaultFileSystem()) {
-        Config::setDefaultFileSystem(generalPageWidget().defaultFileSystem());
+    if (generalPageWidget().defaultFileSystem() != static_cast<FileSystem::Type>(Config::defaultFileSystem())) {
+        Config::setDefaultFileSystem(static_cast<int>(generalPageWidget().defaultFileSystem()));
         changed = true;
     }
 
@@ -109,7 +109,7 @@ bool ConfigureOptionsDialog::hasChanged()
     bool result = KConfigDialog::hasChanged();
 
     KConfigSkeletonItem* kcItem = Config::self()->findItem(QStringLiteral("defaultFileSystem"));
-    result = result || !kcItem->isEqual(generalPageWidget().defaultFileSystem());
+    result = result || !kcItem->isEqual(static_cast<int>(generalPageWidget().defaultFileSystem()));
     result = result || (generalPageWidget().kcfg_shredSource->checkedId() != Config::shredSource());
 
     if (advancedPageWidget().isVisible()) {

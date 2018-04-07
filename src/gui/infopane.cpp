@@ -114,7 +114,7 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 
     int x = 0;
     int y = createHeader(p.deviceNode(), cols(area));
-    if (p.fileSystem().type() == FileSystem::Luks) { // inactive LUKS partition
+    if (p.fileSystem().type() == FileSystem::Type::Luks) { // inactive LUKS partition
         const FS::luks* luksFs = static_cast<const FS::luks*>(&p.fileSystem());
         QString deviceNode = p.partitionPath();
         createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
@@ -127,7 +127,7 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
         createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
-    } else if (p.fileSystem().type() == FileSystem::Lvm2_PV) {
+    } else if (p.fileSystem().type() == FileSystem::Type::Lvm2_PV) {
         FS::lvm2_pv *lvm2PVFs;
         innerFS(&p, lvm2PVFs);
         QString deviceNode = p.partitionPath();
