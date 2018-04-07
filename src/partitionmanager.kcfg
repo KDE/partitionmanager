@@ -54,40 +54,73 @@
 			<label context="@label">Align partitions per default</label>
 			<default>true</default>
 		</entry>
-		<entry key="fileSystemColorCode$(colorNumber)" type="Color">
+		<entry key="fileSystemColorCode$(FileSystem)" type="Color">
 			<label context="@label">File system colors</label>
-			<parameter name="colorNumber" type="UInt" max="29"/>
-			<!-- numbers correspond to the enum in kpmcore/fs/filesystem.h -->
-			<default param="0">220,205,175</default> <!-- unknown -->
-			<default param="1">187,249,207</default> <!-- extended -->
-			<default param="2">102,121,150</default> <!-- ext2 -->
-			<default param="3">122,145,180</default> <!-- ext3 -->
-			<default param="4">143,170,210</default> <!-- ext4 -->
-			<default param="5">155,155,130</default> <!-- swap -->
-			<default param="6">204,179,215</default> <!-- fat16 -->
-			<default param="7">229,201,240</default> <!-- fat32 -->
-			<default param="8">244,214,255</default> <!-- ntfs -->
-			<default param="9">216,220,135</default> <!-- reiser-->
-			<default param="10">251,255,157</default> <!-- reiser4 -->
-			<default param="11">200,255,254</default> <!-- xfs -->
-			<default param="12">137,200,198</default> <!-- jfs -->
-			<default param="13">210,136,142</default> <!-- hfs -->
-			<default param="14">240,165,171</default> <!-- hfs+ -->
-			<default param="15">151,220,134</default> <!-- ufs -->
-			<default param="16">220,205,175</default> <!-- unformatted -->
-			<default param="17">173,205,255</default> <!-- btrfs -->
-			<default param="18">176,155,185</default> <!-- hpfs -->
-			<default param="19">170,30,77</default> <!-- luks -->
-			<default param="20">96,140,85</default> <!-- ocfs2 -->
-			<default param="21">33,137,108</default> <!-- zfs -->
-			<default param="22">250,230,255</default> <!-- exfat -->
-			<default param="23">242,155,104</default> <!-- nilfs2 -->
-			<default param="24">160,210,180</default> <!-- lvm2 pv -->
-			<default param="25">255,170,0</default> <!-- f2fs -->
-			<default param="26">170,120,255</default> <!-- udf -->
-                        <default param="27">177,82,69</default> <!-- iso9660 -->
-                        <default param="28">223,39,104</default> <!-- luks2 -->
-                        <default param="29">204,179,255</default> <!-- fat12 -->
+			<parameter name="FileSystem" type="Enum">
+				<!-- values correspond to the enum in kpmcore/fs/filesystem.h -->
+				<values>
+					<value>Unknown</value>
+					<value>Extended</value>
+					<value>Ext2</value>
+					<value>Ext3</value>
+					<value>Ext4</value>
+					<value>LinuxSwap</value>
+					<value>Fat16</value>
+					<value>Fat32</value>
+					<value>Ntfs</value>
+					<value>ReiserFS</value>
+					<value>Reiser4</value>
+					<value>Xfs</value>
+					<value>Jfs</value>
+					<value>Hfs</value>
+					<value>HfsPlus</value>
+					<value>Ufs</value>
+					<value>Unformatted</value>
+					<value>Btrfs</value>
+					<value>Hpfs</value>
+					<value>Luks</value>
+					<value>Ocfs2</value>
+					<value>Zfs</value>
+					<value>Exfat</value>
+					<value>Nilfs2</value>
+					<value>Lvm2_PV</value>
+					<value>F2fs</value>
+					<value>Udf</value>
+					<value>Iso9660</value>
+					<value>Luks2</value>
+					<value>Fat12</value>
+				</values>
+			</parameter>
+			<default param="Unknown">220,205,175</default>
+			<default param="Extended">187,249,207</default>
+			<default param="Ext2">102,121,150</default>
+			<default param="Ext3">122,145,180</default>
+			<default param="Ext4">143,170,210</default>
+			<default param="LinuxSwap">155,155,130</default>
+			<default param="Fat16">204,179,215</default>
+			<default param="Fat32">229,201,240</default>
+			<default param="Ntfs">244,214,255</default>
+			<default param="ReiserFS">216,220,135</default>
+			<default param="Reiser4">251,255,157</default>
+			<default param="Xfs">200,255,254</default>
+			<default param="Jfs">137,200,198</default>
+			<default param="Hfs">210,136,142</default>
+			<default param="HfsPlus">240,165,171</default>
+			<default param="Ufs">151,220,134</default>
+			<default param="Unformatted">220,205,175</default>
+			<default param="Btrfs">173,205,255</default>
+			<default param="Hpfs">176,155,185</default>
+			<default param="Luks">170,30,77</default>
+			<default param="Ocfs2">96,140,85</default>
+			<default param="Zfs">33,137,108</default>
+			<default param="Exfat">250,230,255</default>
+			<default param="Nilfs2">242,155,104</default>
+			<default param="Lvm2_PV">160,210,180</default>
+			<default param="F2fs">255,170,0</default>
+			<default param="Udf">170,120,255</default>
+			<default param="Iso9660">177,82,69</default>
+			<default param="Luks2">223,39,104</default>
+			<default param="Fat12">204,179,255</default>
 		</entry>
 		<entry key="showMenuBar" type="Bool">
 			<label context="@label">Show the application's menu bar</label>
@@ -97,7 +130,7 @@
 			<label context="@label">Backend plugin</label>
 		</entry>
 		<entry key="defaultFileSystem" type="Int">
-			<default>FileSystem::Ext4</default>
+			<default>FileSystem::Type::Ext4</default>
 		</entry>
 		<entry key="preferredUnit" type="Int">
 			<label context="@label">Preferred unit:</label>
