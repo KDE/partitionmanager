@@ -127,7 +127,7 @@ void VolumeGroupDialog::updateSectorInfos()
 {
     qint32 totalSectors = 0;
     // we can't use LvmDevice mothod here because pv that is not in any VG will return 0
-    m_ExtentSize = dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Byte, Capacity::MiB);
+    m_ExtentSize = dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Unit::Byte, Capacity::Unit::MiB);
     if (m_ExtentSize > 0) {
         totalSectors = m_TotalSize / m_ExtentSize;
     }
@@ -139,7 +139,7 @@ void VolumeGroupDialog::updateSizeInfos()
     const QVector<const Partition *> checkedPartitions = dialogWidget().listPV().checkedItems();
     m_TotalSize = 0;
     for (const auto &p : checkedPartitions)
-        m_TotalSize += p->capacity() - p->capacity() % (dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Byte, Capacity::MiB)); // subtract space which is too small to hold PE
+        m_TotalSize += p->capacity() - p->capacity() % (dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Unit::Byte, Capacity::Unit::MiB)); // subtract space which is too small to hold PE
 
     dialogWidget().totalSize().setText(Capacity::formatByteSize(m_TotalSize));
 

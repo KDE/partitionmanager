@@ -127,7 +127,7 @@ void EditMountPointDialogWidget::setupOptions(const QStringList& options)
     m_Options = optTmpList.join(QLatin1Char(','));
 }
 
-void EditMountPointDialogWidget::setupRadio(const FstabEntryType entryType)
+void EditMountPointDialogWidget::setupRadio(const FstabEntry::Type entryType)
 {
     if (partition().fileSystem().uuid().isEmpty()) {
         radioUUID().setEnabled(false);
@@ -141,26 +141,26 @@ void EditMountPointDialogWidget::setupRadio(const FstabEntryType entryType)
             radioDeviceNode().setChecked(true);
     }
     switch (entryType) {
-    case FstabEntryType::uuid:
+    case FstabEntry::Type::uuid:
         radioUUID().setChecked(true);
         break;
 
-    case FstabEntryType::label:
+    case FstabEntry::Type::label:
         radioLabel().setChecked(true);
         break;
 
-    case FstabEntryType::partuuid:
+    case FstabEntry::Type::partuuid:
         radioUUID().setChecked(true);
         break;
 
-    case FstabEntryType::partlabel:
+    case FstabEntry::Type::partlabel:
         radioLabel().setChecked(true);
         break;
 
-    case FstabEntryType::deviceNode:
+    case FstabEntry::Type::deviceNode:
         radioDeviceNode().setChecked(true);
         break;
-    case FstabEntryType::comment:
+    case FstabEntry::Type::comment:
         break;
     }
 }

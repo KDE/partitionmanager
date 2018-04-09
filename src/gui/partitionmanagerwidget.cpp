@@ -569,11 +569,11 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
     }
 
     if (shred && Config::shredSource() == Config::EnumShredSource::random)
-        operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), DeleteOperation::RandomShred));
+        operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), DeleteOperation::ShredAction::RandomShred));
     else if (shred && Config::shredSource() == Config::EnumShredSource::zeros)
-        operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), DeleteOperation::ZeroShred));
+        operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), DeleteOperation::ShredAction::ZeroShred));
     else
-        operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), DeleteOperation::NoShred));
+        operationStack().push(new DeleteOperation(*selectedDevice(), selectedPartition(), DeleteOperation::ShredAction::NoShred));
 }
 
 void PartitionManagerWidget::onShredPartition()
@@ -614,7 +614,7 @@ void PartitionManagerWidget::onResizePartition()
 
     if (dlg->exec() == QDialog::Accepted) {
         if (dlg->resizedFirstSector() == p.firstSector() && dlg->resizedLastSector() == p.lastSector())
-            Log(Log::information) << xi18nc("@info:status", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", p.deviceNode());
+            Log(Log::Level::information) << xi18nc("@info:status", "Partition <filename>%1</filename> has the same position and size after resize/move. Ignoring operation.", p.deviceNode());
         else
             operationStack().push(new ResizeOperation(*selectedDevice(), p, dlg->resizedFirstSector(), dlg->resizedLastSector()));
     }

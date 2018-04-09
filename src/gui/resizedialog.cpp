@@ -91,7 +91,7 @@ void ResizeDialog::accept()
     if (partition().roles().has(PartitionRole::Luks)) {
         FS::luks2* luksFs = dynamic_cast<FS::luks2*>(&partition().fileSystem());
         if (luksFs) {
-            if (luksFs->keyLocation() == FS::luks::keyring) {
+            if (luksFs->keyLocation() == FS::luks::KeyLocation::keyring) {
                 bool validPassphrase = false;
                 QString errorMessage;
                 QString passphrase;

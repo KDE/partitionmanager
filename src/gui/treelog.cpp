@@ -150,10 +150,10 @@ void TreeLog::onNewLogMessage(Log::Level logLevel, const QString& s)
 
     qDebug() << s;
 
-    if (logLevel >= Config::minLogLevel()) {
+    if (static_cast<int>(logLevel) >= Config::minLogLevel()) {
         QTreeWidgetItem* item = new QTreeWidgetItem();
 
-        item->setIcon(0, QIcon::fromTheme(icons[logLevel]).pixmap(IconSize(KIconLoader::Small)));
+        item->setIcon(0, QIcon::fromTheme(icons[static_cast<int>(logLevel)]).pixmap(IconSize(KIconLoader::Small)));
         item->setText(1, QDateTime::currentDateTime().toString(QStringLiteral("yyyy-MM-dd hh:mm:ss")));
         item->setText(2, s);
 

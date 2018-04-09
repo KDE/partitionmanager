@@ -84,7 +84,7 @@ protected:
 
 private:
     void setupOptions(const QStringList& options);
-    void setupRadio(const FstabEntryType entryType);
+    void setupRadio(const FstabEntry::Type entryType);
     std::map<QString, QCheckBox*>& boxOptions() {
         return m_BoxOptions;
     }

@@ -704,7 +704,7 @@ void MainWindow::on_m_PartitionManagerWidget_selectedPartitionChanged(const Part
 
 void MainWindow::scanDevices()
 {
-    Log(Log::information) << xi18nc("@info:progress", "Using backend plugin: %1 (%2)",
+    Log(Log::Level::information) << xi18nc("@info:progress", "Using backend plugin: %1 (%2)",
                                    CoreBackendManager::self()->backend()->id(),
                                    CoreBackendManager::self()->backend()->version());
 
@@ -1054,11 +1054,11 @@ void MainWindow::onImportPartitionTable()
             if (fs->supportSetLabel() != FileSystem::cmdSupportNone && !volumeLabel.isEmpty())
                 fs->setLabel(volumeLabel);
 
-            Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, QString(), PartitionTable::FlagNone, QString(), false, PartitionTable::FlagNone, Partition::StateNew);
+            Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, QString(), PartitionTable::FlagNone, QString(), false, PartitionTable::FlagNone, Partition::State::New);
 
             operationStack().push(new NewOperation(device, p));
         } else
-            Log(Log::warning) << xi18nc("@info:status", "Could not parse line %1 from import file. Ignoring it.", lineNo);
+            Log(Log::Level::warning) << xi18nc("@info:status", "Could not parse line %1 from import file. Ignoring it.", lineNo);
     }
 
     if (ptable->type() == PartitionTable::msdos && ptable->isSectorBased(device))

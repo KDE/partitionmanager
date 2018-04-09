@@ -51,7 +51,7 @@ PartPropsDialog::PartPropsDialog(QWidget* parent, Device& d, Partition& p) :
     m_Partition(p),
     m_WarnFileSystemChange(false),
     m_DialogWidget(new PartPropsWidget(this)),
-    m_ReadOnly(partition().isMounted() || partition().state() == Partition::StateCopy || partition().state() == Partition::StateRestore || d.partitionTable()->isReadOnly()),
+    m_ReadOnly(partition().isMounted() || partition().state() == Partition::State::Copy || partition().state() == Partition::State::Restore || d.partitionTable()->isReadOnly()),
     m_ForceRecreate(false)
 {
     mainLayout = new QVBoxLayout(this);
@@ -152,7 +152,7 @@ void PartPropsDialog::setupDialog()
     dialogWidget().label().setText(newLabel().isEmpty() ? partition().fileSystem().label() : newLabel());
     dialogWidget().capacity().setText(Capacity::formatByteSize(partition().capacity()));
 
-    if (Capacity(partition(), Capacity::Available).isValid()) {
+    if (Capacity(partition(), Capacity::Type::Available).isValid()) {
         const qint64 availPercent = (partition().fileSystem().length() - partition().fileSystem().sectorsUsed()) * 100 / partition().fileSystem().length();
 
         const QString availString = QStringLiteral("%1% - %2")
@@ -220,7 +220,7 @@ void PartPropsDialog::updateHideAndShow()
 
     // when do we show the uuid?
     const bool showUuid =
-        partition().state() != Partition::StateNew &&                           // not for new partitions
+        partition().state() != Partition::State::New &&                           // not for new partitions
         !(fs == nullptr || fs->supportGetUUID() == FileSystem::cmdSupportNone);       // not if the FS doesn't support it
 
     dialogWidget().showUuid(showUuid);
@@ -229,7 +229,7 @@ void PartPropsDialog::updateHideAndShow()
 
     // when do we show available and used capacity?
     const bool showAvailableAndUsed =
-        partition().state() != Partition::StateNew &&                           // not for new partitions
+        partition().state() != Partition::State::New &&                           // not for new partitions
         !partition().roles().has(PartitionRole::Extended) &&                    // neither for extended
         !partition().roles().has(PartitionRole::Unallocated) &&                 // or for unallocated
         newFileSystemType() != FileSystem::Type::Unformatted;                   // and not for unformatted file systems
@@ -250,14 +250,14 @@ void PartPropsDialog::updateHideAndShow()
         showFileSystem &&                                                       // only if we also show the file system
         partition().fileSystem().supportCreate() != FileSystem::cmdSupportNone &&  // and support creating this file system
         partition().fileSystem().type() != FileSystem::Type::Unknown &&         // and not for unknown file systems
-        partition().state() != Partition::StateNew &&                           // or new partitions
+        partition().state() != Partition::State::New &&                           // or new partitions
         !partition().roles().has(PartitionRole::Luks);                          // or encrypted filesystems
 
     dialogWidget().showCheckRecreate(showCheckRecreate);
 
     // when do we show the list of partition flags?
     const bool showListFlags =
-        partition().state() != Partition::StateNew &&                           // not for new partitions
+        partition().state() != Partition::State::New &&                           // not for new partitions
         !partition().roles().has(PartitionRole::Unallocated);                   // and not for unallocated space
 
     dialogWidget().showListFlags(showListFlags);
@@ -316,7 +316,7 @@ void PartPropsDialog::setupFileSystemComboBox()
                 if (partition().fileSystem().type() == FileSystem::Type::Unknown) {
                     name = FileSystem::nameForType(FileSystem::Type::Unformatted);
                     selected = name;
-                } else if (partition().fileSystem().type() != FileSystem::Type::Unformatted && partition().state() != Partition::StateNew)
+                } else if (partition().fileSystem().type() != FileSystem::Type::Unformatted && partition().state() != Partition::State::New)
                     continue;
             }
 
@@ -346,7 +346,7 @@ void PartPropsDialog::updatePartitionFileSystem()
 
 void PartPropsDialog::onFilesystemChanged(int)
 {
-    if (partition().state() == Partition::StateNew || warnFileSystemChange() || KMessageBox::warningContinueCancel(this,
+    if (partition().state() == Partition::State::New || warnFileSystemChange() || KMessageBox::warningContinueCancel(this,
             xi18nc("@info", "<para><warning>You are about to lose all data on partition <filename>%1</filename>.</warning></para>"
                    "<para>Changing the file system on a partition already on disk will erase all its contents. If you continue now and apply the resulting operation in the main window, all data on <filename>%1</filename> will unrecoverably be lost.</para>", partition().deviceNode()),
             xi18nc("@title:window", "Really Recreate <filename>%1</filename> with File System %2?", partition().deviceNode(), dialogWidget().fileSystem().currentText()),

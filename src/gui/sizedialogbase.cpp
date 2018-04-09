@@ -467,6 +467,6 @@ static double sectorsToDialogUnit(const Device& d, qint64 v)
 
 static qint64 dialogUnitToSectors(const Device& d, double v)
 {
-    return v * Capacity::unitFactor(Capacity::Byte, preferredUnit()) / d.logicalSize();
+    return v * Capacity::unitFactor(Capacity::Unit::Byte, preferredUnit()) / d.logicalSize();
 }
 
