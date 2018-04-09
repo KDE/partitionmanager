@@ -102,7 +102,7 @@ void NewDialog::setupDialog()
     dialogWidget().checkBoxEncrypt().hide();
     dialogWidget().editPassphrase().hide();
 
-    if (device().type() == Device::LVM_Device) {
+    if (device().type() == Device::Type::LVM_Device) {
         dialogWidget().comboFileSystem().removeItem(dialogWidget().comboFileSystem().findText(QStringLiteral("lvm2 pv")));
     }
 
@@ -137,7 +137,7 @@ void NewDialog::setupConnections()
 
 bool NewDialog::canMove() const
 {
-    return (device().type() == Device::LVM_Device) ? false : true;
+    return (device().type() == Device::Type::LVM_Device) ? false : true;
 }
 
 void NewDialog::accept()

@@ -106,7 +106,7 @@ void DevicePropsDialog::setupDialog()
     dialogWidget().capacity().setText(Capacity::formatByteSize(device().capacity()));
     dialogWidget().totalSectors().setText(QLocale().toString(device().totalLogical()));
 
-    if (device().type() == Device::Disk_Device) {
+    if (device().type() == Device::Type::Disk_Device) {
 
         const DiskDevice& disk = dynamic_cast<const DiskDevice&>(device());
 
@@ -127,7 +127,7 @@ void DevicePropsDialog::setupDialog()
             dialogWidget().buttonSmartMore().setVisible(false);
         }
     } else {
-        if (device().type() == Device::LVM_Device)
+        if (device().type() == Device::Type::LVM_Device)
             dialogWidget().type().setText(xi18nc("@label device", "LVM Volume Group"));
         else
             dialogWidget().type().setText(xi18nc("@label device", "Volume Manager Device"));

@@ -176,7 +176,7 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         maxPrimaries = QStringLiteral("%1/%2").arg(d.partitionTable()->numPrimaries()).arg(d.partitionTable()->maxPrimaries());
     }
 
-    if (d.type() == Device::Disk_Device) {
+    if (d.type() == Device::Type::Disk_Device) {
         const DiskDevice& disk = dynamic_cast<const DiskDevice&>(d);
 
         createLabels(i18nc("@label device", "Type:"), type, cols(area), x, y);
@@ -185,7 +185,7 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         createLabels(i18nc("@label device", "Logical sector size:"), Capacity::formatByteSize(disk.logicalSectorSize()), cols(area), x, y);
         createLabels(i18nc("@label device", "Physical sector size:"), Capacity::formatByteSize(disk.physicalSectorSize()), cols(area), x, y);
         createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
-    } else if (d.type() == Device::LVM_Device) {
+    } else if (d.type() == Device::Type::LVM_Device) {
         const LvmDevice& lvm = dynamic_cast<const LvmDevice&>(d);
         createLabels(i18nc("@label device", "Volume Type:"), QStringLiteral("LVM"), cols(area), x, y);
         createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(lvm.capacity()), cols(area), x, y);

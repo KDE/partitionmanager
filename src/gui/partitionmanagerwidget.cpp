@@ -605,7 +605,7 @@ void PartitionManagerWidget::onResizePartition()
     qint64 freeBefore = selectedDevice()->partitionTable()->freeSectorsBefore(p);
     qint64 freeAfter = selectedDevice()->partitionTable()->freeSectorsAfter(p);
 
-    if (selectedDevice()->type() == Device::LVM_Device) {
+    if (selectedDevice()->type() == Device::Type::LVM_Device) {
         freeBefore = 0;
         freeAfter  = selectedDevice()->partitionTable()->freeSectors();
     }

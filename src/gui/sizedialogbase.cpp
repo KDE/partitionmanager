@@ -105,11 +105,11 @@ void SizeDialogBase::setupDialog()
         dialogWidget().partResizerWidget().init(device(), partition(), minimumFirstSector(), maximumLastSector(), true, canMove());
     dialogWidget().partResizerWidget().setAlign(Config::alignDefault());
 
-    if (device().type() == Device::Disk_Device) {
+    if (device().type() == Device::Type::Disk_Device) {
         dialogWidget().lvName().hide();
         dialogWidget().textLVName().hide();
     }
-    if (device().type() == Device::LVM_Device) {
+    if (device().type() == Device::Type::LVM_Device) {
         dialogWidget().hideBeforeAndAfter();
         detailsWidget().checkAlign().setChecked(false);
         detailsWidget().checkAlign().setEnabled(false);
@@ -380,7 +380,7 @@ void SizeDialogBase::onLVNameChanged(const QString& newName)
     partition().setPartitionPath(device().deviceNode() + QStringLiteral("/") + newName.trimmed());
     if ((dialogWidget().lvName().isVisible() &&
         dialogWidget().lvName().text().isEmpty()) ||
-        (device().type() == Device::LVM_Device &&
+        (device().type() == Device::Type::LVM_Device &&
          dynamic_cast<LvmDevice&>(device()).partitionNodes().contains(partition().partitionPath())) ) {
         m_IsValidLVName = false;
     } else {
