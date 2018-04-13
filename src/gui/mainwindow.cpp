@@ -162,7 +162,7 @@ void MainWindow::closeEvent(QCloseEvent* event)
 
     KXmlGuiWindow::closeEvent(event);
 
-    CoreBackendManager::stopExternalCommandHelper();
+    CoreBackendManager::self()->stopExternalCommandHelper();
 }
 
 void MainWindow::changeEvent(QEvent* event)
