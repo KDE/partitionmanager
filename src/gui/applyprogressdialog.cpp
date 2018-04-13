@@ -143,6 +143,7 @@ void ApplyProgressDialog::show()
 
     dialogWidget().treeTasks().clear();
     okButton->setVisible(false);
+    okButton->setEnabled(false);
     cancelButton->setVisible(true);
     cancelButton->setEnabled(true);
 
@@ -244,6 +245,7 @@ void ApplyProgressDialog::allOpsDone(const QString& msg)
     dialogWidget().progressTotal().setValue(operationRunner().numJobs());
     cancelButton->setVisible(false);
     okButton->setVisible(true);
+    okButton->setEnabled(true);
     detailsWidget().buttonSave().setEnabled(true);
     detailsWidget().buttonBrowser().setEnabled(true);
     timer().stop();
