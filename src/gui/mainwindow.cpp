@@ -131,11 +131,13 @@ void MainWindow::init()
 
     listDevices().setActionCollection(actionCollection());
     listOperations().setActionCollection(actionCollection());
-    pmWidget().init(&operationStack());
 
     setupGUI();
 
     loadConfig();
+
+    show();
+    pmWidget().init(&operationStack());
 
     scanDevices();
 }

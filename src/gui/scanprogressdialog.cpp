@@ -26,6 +26,7 @@ ScanProgressDialog::ScanProgressDialog(QWidget* parent) :
     setWindowTitle(xi18nc("@title:window", "Scanning devices..."));
     setMinimumWidth(280);
     setMinimumDuration(150);
+    setValue(0);
     setAttribute(Qt::WA_ShowModal, true);
 }
 

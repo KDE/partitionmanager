@@ -84,7 +84,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
         return 0;
 
     MainWindow* mainWindow = new MainWindow();
-    mainWindow->show();
+    Q_UNUSED(mainWindow);
 
     return app.exec();
 }
