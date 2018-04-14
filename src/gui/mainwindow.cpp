@@ -137,6 +137,7 @@ void MainWindow::init()
     loadConfig();
 
     show();
+    ExternalCommand::setParentWidget(this);
     pmWidget().init(&operationStack());
 
     scanDevices();
