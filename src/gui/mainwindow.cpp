@@ -55,6 +55,7 @@
 #include <fs/filesystemfactory.h>
 #include <fs/luks.h>
 
+#include <util/externalcommand.h>
 #include <util/helpers.h>
 #include <util/guihelpers.h>
 #include <util/report.h>
@@ -161,8 +162,7 @@ void MainWindow::closeEvent(QCloseEvent* event)
     saveConfig();
 
     KXmlGuiWindow::closeEvent(event);
-
-    CoreBackendManager::self()->stopExternalCommandHelper();
+    ExternalCommand::stopHelper();
 }
 
 void MainWindow::changeEvent(QEvent* event)
