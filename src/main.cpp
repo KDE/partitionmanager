@@ -1,5 +1,6 @@
 /*************************************************************************
  *  Copyright (C) 2008,2011 by Volker Lanz <vl@fidra.de>                 *
+ *  Copyright (C) 2014-2018 by Andrius Štikonas <andrius@stikonas.eu>    *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -51,7 +52,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
         QStringLiteral(VERSION),
         xi18nc("@title", "Manage your disks, partitions and file systems"),
         KAboutLicense::GPL_V3,
-        xi18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2017 Andrius Štikonas"));
+        xi18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2018 Andrius Štikonas"));
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
     aboutData.setProductName(QByteArray("partitionmanager"));
 
