@@ -15,8 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(SCANPROGRESSDIALOG_H)
-
+#ifndef SCANPROGRESSDIALOG_H
 #define SCANPROGRESSDIALOG_H
 
 #include <QProgressDialog>
@@ -34,6 +33,7 @@ public:
     void setDeviceName(const QString& d);
 
 protected:
+    void closeEvent(QCloseEvent* e) override;
     void showEvent(QShowEvent* e) override;
 
 };
