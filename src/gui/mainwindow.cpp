@@ -1105,7 +1105,7 @@ void MainWindow::onCreateNewVolumeGroup()
     QVector<const Partition*> pvList;
     qint32 peSize = 4;
     // *NOTE*: vgName & pvList will be modified and validated by the dialog
-    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList, peSize, operationStack().previewDevices());
+    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList, peSize, operationStack().previewDevices(), operationStack().operations());
     if (dlg->exec() == QDialog::Accepted)
         operationStack().push(new CreateVolumeGroupOperation(vgName, pvList, peSize));
 

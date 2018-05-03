@@ -19,9 +19,14 @@
 #include "gui/createvolumegroupdialog.h"
 #include "gui/volumegroupwidget.h"
 
+#include <core/device.h>
 #include <core/lvmdevice.h>
+#include <core/partitiontable.h>
 
 #include <fs/lvm2_pv.h>
+
+#include <ops/createvolumegroupoperation.h>
+#include <ops/deleteoperation.h>
 
 #include <util/capacity.h>
 #include <util/helpers.h>
@@ -32,10 +37,11 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& partList, qint32& peSize, QList<Device*> devices)
+CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& partList, qint32& peSize, QList<Device*> devices, QList<Operation*> pendingOps)
     : VolumeGroupDialog(parent, vgName, partList)
     , m_PESize(peSize)
     , m_Devices(devices)
+    , m_PendingOps(pendingOps)
 {
     setWindowTitle(xi18nc("@title:window", "Create new Volume Group"));
 
@@ -52,9 +58,44 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgNam
 
 void CreateVolumeGroupDialog::setupDialog()
 {
-    for (const auto &p : qAsConst(LVM::pvList))
+    for (const auto &p : qAsConst(LVM::pvList)) {
+        bool toBeDeleted = false;
+
+        // Ignore partitions that are going to be deleted
+        for (const auto &o : qAsConst(m_PendingOps)) {
+            if (dynamic_cast<DeleteOperation *>(o) && o->targets(*p.partition())) {
+                toBeDeleted = true;
+                break;
+            }
+        }
+
+        if (toBeDeleted)
+            continue;
+
         if (!p.isLuks() && p.vgName() == QString() && !LvmDevice::s_DirtyPVs.contains(p.partition()))
             dialogWidget().listPV().addPartition(*p.partition(), false);
+    }
+
+    for (const Device *d : qAsConst(m_Devices)) {
+        for (const Partition *p : qAsConst(d->partitionTable()->children())) {
+            bool alreadyInPendingVG = false;
+
+            // Looking if there is another VG creation that contains this partition
+            for (const auto &o : qAsConst(m_PendingOps)) {
+                if (dynamic_cast<CreateVolumeGroupOperation *>(o) && o->targets(*p)) {
+                    alreadyInPendingVG = true;
+                    break;
+                }
+            }
+
+            if (alreadyInPendingVG)
+                continue;
+
+            // Including new LVM PVs (that are currently in OperationStack and that aren't at other VG creation)
+            if (p->state() == Partition::State::New && p->fileSystem().type() == FileSystem::Type::Lvm2_PV)
+                dialogWidget().listPV().addPartition(*p, false);
+        }
+    }
 }
 
 void CreateVolumeGroupDialog::setupConnections()
@@ -74,6 +115,14 @@ void  CreateVolumeGroupDialog::accept()
     pesize = dialogWidget().spinPESize().value();
 
     QDialog::accept();
+}
+
+void CreateVolumeGroupDialog::updateOkButtonStatus()
+{
+    VolumeGroupDialog::updateOkButtonStatus();
+
+    if (okButton->isEnabled())
+        okButton->setEnabled(!dialogWidget().listPV().checkedItems().empty());
 }
 
 void CreateVolumeGroupDialog::onVGNameChanged(const QString& vgName)
