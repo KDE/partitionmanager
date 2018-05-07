@@ -92,8 +92,16 @@ void CreateVolumeGroupDialog::setupDialog()
                 continue;
 
             // Including new LVM PVs (that are currently in OperationStack and that aren't at other VG creation)
-            if (p->state() == Partition::State::New && p->fileSystem().type() == FileSystem::Type::Lvm2_PV)
-                dialogWidget().listPV().addPartition(*p, false);
+            if (p->state() == Partition::State::New) {
+                if (p->fileSystem().type() == FileSystem::Type::Lvm2_PV)
+                    dialogWidget().listPV().addPartition(*p, false);
+                else if (p->fileSystem().type() == FileSystem::Type::Luks || p->fileSystem().type() == FileSystem::Type::Luks2) {
+                    FileSystem *fs = static_cast<const FS::luks *>(&p->fileSystem())->innerFS();
+
+                    if (fs->type() == FileSystem::Type::Lvm2_PV)
+                        dialogWidget().listPV().addPartition(*p, false);
+                }
+            }
         }
     }
 }
