@@ -58,7 +58,7 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgNam
 
 void CreateVolumeGroupDialog::setupDialog()
 {
-    for (const auto &p : qAsConst(LVM::pvList)) {
+    for (const auto &p : qAsConst(LVM::pvList::list())) {
         bool toBeDeleted = false;
 
         // Ignore partitions that are going to be deleted

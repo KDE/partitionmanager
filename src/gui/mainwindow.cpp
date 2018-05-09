@@ -535,7 +535,7 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("newPartition"))
             ->setEnabled(!readOnly && NewOperation::canCreateNew(part));
 
-    const bool canResize = ResizeOperation::canGrow(part) ||
+    const bool canResize = ResizeOperation::canGrow(part, m_OperationStack->operations()) ||
                            ResizeOperation::canShrink(part, m_OperationStack->operations()) ||
                            ResizeOperation::canMove(part, m_OperationStack->operations());
     actionCollection()->action(QStringLiteral("resizePartition"))
