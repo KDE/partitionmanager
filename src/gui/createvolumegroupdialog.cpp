@@ -78,17 +78,8 @@ void CreateVolumeGroupDialog::setupDialog()
 
     for (const Device *d : qAsConst(m_Devices)) {
         for (const Partition *p : qAsConst(d->partitionTable()->children())) {
-            bool alreadyInPendingVG = false;
-
             // Looking if there is another VG creation that contains this partition
-            for (const auto &o : qAsConst(m_PendingOps)) {
-                if (dynamic_cast<CreateVolumeGroupOperation *>(o) && o->targets(*p)) {
-                    alreadyInPendingVG = true;
-                    break;
-                }
-            }
-
-            if (alreadyInPendingVG)
+            if (LvmDevice::s_DirtyPVs.contains(p))
                 continue;
 
             // Including new LVM PVs (that are currently in OperationStack and that aren't at other VG creation)
