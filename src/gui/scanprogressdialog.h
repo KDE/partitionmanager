@@ -20,8 +20,6 @@
 
 #include <QProgressDialog>
 
-class QShowEvent;
-
 class ScanProgressDialog : public QProgressDialog
 {
 public:

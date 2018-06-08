@@ -30,7 +30,6 @@
 #include <KAboutData>
 #include <KCrash>
 #include <KDBusService>
-#include <Kdelibs4ConfigMigrator>
 #include <KMessageBox>
 #include <KLocalizedString>
 
@@ -39,11 +38,6 @@
 int Q_DECL_IMPORT main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
-
-    Kdelibs4ConfigMigrator migrate(QLatin1Literal("partitionmanager"));
-    migrate.setConfigFiles({ QLatin1Literal("partitionmanagerrc") });
-    migrate.setUiFiles({ QStringLiteral("partitionmanagerui.rc") });
-    migrate.migrate();
 
     KLocalizedString::setApplicationDomain("partitionmanager");
     KAboutData aboutData (
