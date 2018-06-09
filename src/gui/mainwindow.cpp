@@ -758,6 +758,9 @@ void MainWindow::on_m_DeviceScanner_finished()
 void MainWindow::updateSeletedDeviceMenu()
 {
     QMenu* devicesMenu = static_cast<QMenu*>(guiFactory()->container(QStringLiteral("selectedDevice"), this));
+    if (!devicesMenu)
+        return;
+
     devicesMenu->clear();
 
     devicesMenu->setEnabled(!operationStack().previewDevices().isEmpty());
@@ -778,7 +781,7 @@ void MainWindow::onSelectedDeviceMenuTriggered(bool)
     QAction* action = qobject_cast<QAction*>(sender());
     QMenu* devicesMenu = static_cast<QMenu*>(guiFactory()->container(QStringLiteral("selectedDevice"), this));
 
-    if (action == nullptr || action->parent() != devicesMenu)
+    if (action == nullptr || action->parent() != devicesMenu || !devicesMenu)
         return;
 
     const auto children = devicesMenu->findChildren<QAction*>();
@@ -791,6 +794,8 @@ void MainWindow::onSelectedDeviceMenuTriggered(bool)
 void MainWindow::on_m_ListDevices_selectionChanged(const QString& device_node)
 {
     QMenu* devicesMenu = static_cast<QMenu*>(guiFactory()->container(QStringLiteral("selectedDevice"), this));
+    if (!devicesMenu)
+        return;
 
     const auto children = devicesMenu->findChildren<QAction*>();
     for (auto &entry : children)
