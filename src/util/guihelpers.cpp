@@ -119,7 +119,7 @@ FileSystem::Type defaultFileSystem()
 std::vector<QColor> fileSystemColorCodesFromSettings()
 {
     std::vector<QColor> cc;
-    cc.reserve(Config::EnumFileSystem::type::COUNT);
+    cc.resize(Config::EnumFileSystem::type::COUNT);
     for (int i = 0; i < Config::EnumFileSystem::type::COUNT; ++i)
     {
         cc[i] = Config::fileSystemColorCode(i);
