@@ -366,7 +366,7 @@ void ApplyProgressDialog::addTaskOutput(int num, const Operation& op)
     item->setFont(0, f);
     item->setFont(1, f);
 
-    item->setData(0, Qt::UserRole, reinterpret_cast<const qulonglong>(&op));
+    item->setData(0, Qt::UserRole, reinterpret_cast<qulonglong>(&op));
     dialogWidget().treeTasks().addTopLevelItem(item);
     dialogWidget().treeTasks().scrollToBottom();
     setCurrentOpItem(item);
