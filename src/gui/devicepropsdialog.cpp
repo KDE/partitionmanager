@@ -129,6 +129,8 @@ void DevicePropsDialog::setupDialog()
     } else {
         if (device().type() == Device::Type::LVM_Device)
             dialogWidget().type().setText(xi18nc("@label device", "LVM Volume Group"));
+        else if (device().type() == Device::Type::SoftwareRAID_Device)
+            dialogWidget().type().setText(xi18nc("@label device", "Software RAID Device"));
         else
             dialogWidget().type().setText(xi18nc("@label device", "Volume Manager Device"));
         //TODO: add Volume Manger Device info

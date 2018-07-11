@@ -484,7 +484,8 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("createNewPartitionTable"))
             ->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
     actionCollection()->action(QStringLiteral("createNewPartitionTable"))
-            ->setVisible(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::Type::Disk_Device);
+            ->setVisible(pmWidget().selectedDevice() && (pmWidget().selectedDevice()->type() == Device::Type::Disk_Device ||
+                                                         pmWidget().selectedDevice()->type() == Device::Type::SoftwareRAID_Device));
     actionCollection()->action(QStringLiteral("exportPartitionTable"))
             ->setEnabled(pmWidget().selectedDevice() &&
                          pmWidget().selectedDevice()->partitionTable() &&
