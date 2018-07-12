@@ -178,7 +178,7 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
     }
 
     if (d.type() == Device::Type::Disk_Device) {
-        const DiskDevice& disk = dynamic_cast<const DiskDevice&>(d);
+        const DiskDevice& disk = static_cast<const DiskDevice&>(d);
 
         createLabels(i18nc("@label device", "Type:"), type, cols(area), x, y);
         createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(disk.capacity()), cols(area), x, y);
@@ -187,7 +187,7 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         createLabels(i18nc("@label device", "Physical sector size:"), Capacity::formatByteSize(disk.physicalSectorSize()), cols(area), x, y);
         createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
     } else if (d.type() == Device::Type::LVM_Device) {
-        const LvmDevice& lvm = dynamic_cast<const LvmDevice&>(d);
+        const LvmDevice& lvm = static_cast<const LvmDevice&>(d);
         createLabels(i18nc("@label device", "Volume Type:"), QStringLiteral("LVM"), cols(area), x, y);
         createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(lvm.capacity()), cols(area), x, y);
         createLabels(i18nc("@label device", "PE Size:"), Capacity::formatByteSize(lvm.peSize()), cols(area), x, y);
@@ -195,7 +195,7 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         createLabels(i18nc("@label device", "Allocated PE:"), QString::number(lvm.allocatedPE()), cols(area), x, y);
         createLabels(i18nc("@label device", "Free PE:"), QString::number(lvm.freePE()), cols(area), x, y);
     } else if (d.type() == Device::Type::SoftwareRAID_Device) {
-        const SoftwareRAID& raid = dynamic_cast<const SoftwareRAID&>(d);
+        const SoftwareRAID& raid = static_cast<const SoftwareRAID&>(d);
         createLabels(i18nc("@label device", "Volume Type:"), QStringLiteral("RAID"), cols(area), x, y);
         createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(raid.capacity()), cols(area), x, y);
         createLabels(i18nc("@label device", "RAID Level:"), QString::number(raid.raidLevel()), cols(area), x, y);
