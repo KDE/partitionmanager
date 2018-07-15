@@ -15,17 +15,16 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(CREATEVOLUMEGROUPDIALOG_H)
-
+#ifndef CREATEVOLUMEGROUPDIALOG_H
 #define CREATEVOLUMEGROUPDIALOG_H
 
 #include <core/device.h>
 #include <fs/lvm2_pv.h>
-#include <ops/operation.h>
 
 #include "gui/volumegroupdialog.h"
 
 class Device;
+class Operation;
 
 class CreateVolumeGroupDialog : public VolumeGroupDialog
 {

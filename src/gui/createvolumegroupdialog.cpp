@@ -25,7 +25,6 @@
 
 #include <fs/lvm2_pv.h>
 
-#include <ops/createvolumegroupoperation.h>
 #include <ops/deleteoperation.h>
 
 #include <util/capacity.h>

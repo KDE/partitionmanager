@@ -1121,7 +1121,7 @@ void MainWindow::onResizeVolumeGroup()
         QVector<const Partition*> pvList;
         // *NOTE*: pvList will be modified and validated by the dialog
 
-        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, d, pvList);
+        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, d, pvList, operationStack().previewDevices(), operationStack().operations());
         if (dlg->exec() == QDialog::Accepted)
             operationStack().push(new ResizeVolumeGroupOperation(*d, pvList));
 
