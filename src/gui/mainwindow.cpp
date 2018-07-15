@@ -536,18 +536,18 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("newPartition"))
             ->setEnabled(!readOnly && NewOperation::canCreateNew(part));
 
-    const bool canResize = ResizeOperation::canGrow(part, m_OperationStack->operations()) ||
-                           ResizeOperation::canShrink(part, m_OperationStack->operations()) ||
-                           ResizeOperation::canMove(part, m_OperationStack->operations());
+    const bool canResize = ResizeOperation::canGrow(part) ||
+                           ResizeOperation::canShrink(part) ||
+                           ResizeOperation::canMove(part);
     actionCollection()->action(QStringLiteral("resizePartition"))
             ->setEnabled(!readOnly && canResize);
 
     actionCollection()->action(QStringLiteral("copyPartition"))
             ->setEnabled(CopyOperation::canCopy(part));
     actionCollection()->action(QStringLiteral("deletePartition"))
-            ->setEnabled(!readOnly && DeleteOperation::canDelete(part, m_OperationStack->operations()));
+            ->setEnabled(!readOnly && DeleteOperation::canDelete(part));
     actionCollection()->action(QStringLiteral("shredPartition"))
-            ->setEnabled(!readOnly && DeleteOperation::canDelete(part, m_OperationStack->operations()));
+            ->setEnabled(!readOnly && DeleteOperation::canDelete(part));
     actionCollection()->action(QStringLiteral("pastePartition"))
             ->setEnabled(!readOnly && CopyOperation::canPaste(part, pmWidget().clipboardPartition()));
     actionCollection()->action(QStringLiteral("propertiesPartition"))
