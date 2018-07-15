@@ -89,6 +89,7 @@
 					<value>Iso9660</value>
 					<value>Luks2</value>
 					<value>Fat12</value>
+                                        <value>LinuxRaidMember</value>
 				</values>
 			</parameter>
 			<default param="Unknown">220,205,175</default>
@@ -121,6 +122,7 @@
 			<default param="Iso9660">177,82,69</default>
 			<default param="Luks2">223,39,104</default>
 			<default param="Fat12">204,179,255</default>
+                        <default param="LinuxRaidMember">255,100,100</default>
 		</entry>
 		<entry key="showMenuBar" type="Bool">
 			<label context="@label">Show the application's menu bar</label>
