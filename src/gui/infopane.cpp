@@ -198,7 +198,7 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         const SoftwareRAID& raid = static_cast<const SoftwareRAID&>(d);
         createLabels(i18nc("@label device", "Volume Type:"), QStringLiteral("RAID"), cols(area), x, y);
         createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(raid.capacity()), cols(area), x, y);
-        createLabels(i18nc("@label device", "RAID Level:"), QString::number(raid.raidLevel()), cols(area), x, y);
+        createLabels(i18nc("@label device", "RAID Level:"), raid.raidLevel() < 0 ? QStringLiteral("---") : QString::number(raid.raidLevel()), cols(area), x, y);
         createLabels(i18nc("@label device", "Chunk Size:"),Capacity::formatByteSize(raid.chunkSize()), cols(area), x, y);
         createLabels(i18nc("@label device", "Total Chunk:"), Capacity::formatByteSize(raid.totalChunk()), cols(area), x, y);
         createLabels(i18nc("@label device", "Array Size:"), Capacity::formatByteSize(raid.arraySize()), cols(area), x, y);
