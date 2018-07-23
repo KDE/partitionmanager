@@ -77,25 +77,31 @@ void ResizeVolumeGroupDialog::setupDialog()
                 dialogWidget().listPV().addPartition(*p.partition(), false);
         }
 
-     for (const Device *d : qAsConst(m_Devices)) {
-        for (const Partition *p : qAsConst(d->partitionTable()->children())) {
-            // Looking if there is another VG creation that contains this partition
-            if (LvmDevice::s_DirtyPVs.contains(p))
-                continue;
+        for (const Device *d : qAsConst(m_Devices)) {
+            if (d->partitionTable() != nullptr) {
+                for (const Partition *p : qAsConst(d->partitionTable()->children())) {
+                    // Looking if there is another VG creation that contains this partition
+                    if (LvmDevice::s_DirtyPVs.contains(p))
+                        continue;
 
-            // Including new LVM PVs (that are currently in OperationStack and that aren't at other VG creation)
-            if (p->state() == Partition::State::New) {
-                if (p->fileSystem().type() == FileSystem::Type::Lvm2_PV)
-                    dialogWidget().listPV().addPartition(*p, false);
-                else if (p->fileSystem().type() == FileSystem::Type::Luks || p->fileSystem().type() == FileSystem::Type::Luks2) {
-                    FileSystem *fs = static_cast<const FS::luks *>(&p->fileSystem())->innerFS();
+                    // Including new LVM PVs (that are currently in OperationStack and that aren't at other VG creation)
+                    if (p->state() == Partition::State::New) {
+                        if (p->fileSystem().type() == FileSystem::Type::Lvm2_PV)
+                            dialogWidget().listPV().addPartition(*p, false);
+                        else if (p->fileSystem().type() == FileSystem::Type::Luks || p->fileSystem().type() == FileSystem::Type::Luks2) {
+                            FileSystem *fs = static_cast<const FS::luks *>(&p->fileSystem())->innerFS();
 
-                    if (fs->type() == FileSystem::Type::Lvm2_PV)
-                        dialogWidget().listPV().addPartition(*p, false);
+                            if (fs->type() == FileSystem::Type::Lvm2_PV)
+                                dialogWidget().listPV().addPartition(*p, false);
+                        }
+                    }
                 }
             }
         }
-    }
+
+        for (const Partition *p : qAsConst(LvmDevice::s_OrphanPVs))
+            if (!LvmDevice::s_DirtyPVs.contains(p))
+                dialogWidget().listPV().addPartition(*p, false);
     }
 
     //update used size and LV infos
