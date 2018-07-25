@@ -18,6 +18,8 @@
 
 #include "gui/scanprogressdialog.h"
 
+#include <QCloseEvent>
+
 #include <KLocalizedString>
 
 ScanProgressDialog::ScanProgressDialog(QWidget* parent) :
@@ -26,7 +28,13 @@ ScanProgressDialog::ScanProgressDialog(QWidget* parent) :
     setWindowTitle(xi18nc("@title:window", "Scanning devices..."));
     setMinimumWidth(280);
     setMinimumDuration(150);
+    setValue(0);
     setAttribute(Qt::WA_ShowModal, true);
+}
+
+void ScanProgressDialog::closeEvent(QCloseEvent* e)
+{
+    e->ignore();
 }
 
 void ScanProgressDialog::setDeviceName(const QString& d)
@@ -39,7 +47,7 @@ void ScanProgressDialog::setDeviceName(const QString& d)
 
 void ScanProgressDialog::showEvent(QShowEvent* e)
 {
-    setCancelButton(0);
+    setCancelButton(nullptr);
 
     QProgressDialog::showEvent(e);
 }

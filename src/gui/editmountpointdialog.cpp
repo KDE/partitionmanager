@@ -49,10 +49,10 @@ EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
                                                   this );
     mainLayout->addWidget(dbb);
     connect(dbb, &QDialogButtonBox::accepted,
-            this, [=] () {accept_(Edit);} );
+            this, [=] () {accept_(MountPointAction::Edit);} );
     connect(dbb, &QDialogButtonBox::rejected,
             this, &EditMountPointDialog::reject);
-    connect(widget().m_ButtonRemove, &QPushButton::clicked, this, [=] () {accept_(Remove);} );
+    connect(widget().m_ButtonRemove, &QPushButton::clicked, this, [=] () {accept_(MountPointAction::Remove);} );
 }
 
 /** Destroys an EditMountOptionsDialog instance */
@@ -72,12 +72,12 @@ void EditMountPointDialog::accept_(MountPointAction action)
                                            KStandardGuiItem::cancel(),
                                            QStringLiteral("reallyWriteMountPoints")) == KMessageBox::Cancel)
         return;
-    if(action == Remove)
+    if(action == MountPointAction::Remove)
         widget().removeMountPoint();
-    else if (action == Edit)
+    else if (action == MountPointAction::Edit)
         widget().acceptChanges();
     if (writeMountpoints(widget().fstabEntries())) {
-        if (action == Edit)
+        if (action == MountPointAction::Edit)
             partition().setMountPoint(widget().editPath().currentText());
     }
     else

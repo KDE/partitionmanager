@@ -22,6 +22,7 @@
 #include <core/diskdevice.h>
 #include <core/lvmdevice.h>
 #include <core/partition.h>
+#include <core/softwareraid.h>
 
 #include <fs/filesystem.h>
 #include <fs/luks.h>
@@ -114,7 +115,7 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
 
     int x = 0;
     int y = createHeader(p.deviceNode(), cols(area));
-    if (p.fileSystem().type() == FileSystem::Luks) { // inactive LUKS partition
+    if (p.fileSystem().type() == FileSystem::Type::Luks) { // inactive LUKS partition
         const FS::luks* luksFs = static_cast<const FS::luks*>(&p.fileSystem());
         QString deviceNode = p.partitionPath();
         createLabels(i18nc("@label partition", "File system:"), p.fileSystem().name(), cols(area), x, y);
@@ -127,7 +128,7 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
         createLabels(i18nc("@label partition", "First sector:"), QLocale().toString(p.firstSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
         createLabels(i18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
-    } else if (p.fileSystem().type() == FileSystem::Lvm2_PV) {
+    } else if (p.fileSystem().type() == FileSystem::Type::Lvm2_PV) {
         FS::lvm2_pv *lvm2PVFs;
         innerFS(&p, lvm2PVFs);
         QString deviceNode = p.partitionPath();
@@ -176,8 +177,8 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         maxPrimaries = QStringLiteral("%1/%2").arg(d.partitionTable()->numPrimaries()).arg(d.partitionTable()->maxPrimaries());
     }
 
-    if (d.type() == Device::Disk_Device) {
-        const DiskDevice& disk = dynamic_cast<const DiskDevice&>(d);
+    if (d.type() == Device::Type::Disk_Device) {
+        const DiskDevice& disk = static_cast<const DiskDevice&>(d);
 
         createLabels(i18nc("@label device", "Type:"), type, cols(area), x, y);
         createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(disk.capacity()), cols(area), x, y);
@@ -185,14 +186,22 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         createLabels(i18nc("@label device", "Logical sector size:"), Capacity::formatByteSize(disk.logicalSectorSize()), cols(area), x, y);
         createLabels(i18nc("@label device", "Physical sector size:"), Capacity::formatByteSize(disk.physicalSectorSize()), cols(area), x, y);
         createLabels(i18nc("@label device", "Primaries/Max:"), maxPrimaries, cols(area), x, y);
-    } else if (d.type() == Device::LVM_Device) {
-        const LvmDevice& lvm = dynamic_cast<const LvmDevice&>(d);
+    } else if (d.type() == Device::Type::LVM_Device) {
+        const LvmDevice& lvm = static_cast<const LvmDevice&>(d);
         createLabels(i18nc("@label device", "Volume Type:"), QStringLiteral("LVM"), cols(area), x, y);
         createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(lvm.capacity()), cols(area), x, y);
         createLabels(i18nc("@label device", "PE Size:"), Capacity::formatByteSize(lvm.peSize()), cols(area), x, y);
         createLabels(i18nc("@label device", "Total PE:"),QString::number(lvm.totalPE()), cols(area), x, y);
         createLabels(i18nc("@label device", "Allocated PE:"), QString::number(lvm.allocatedPE()), cols(area), x, y);
         createLabels(i18nc("@label device", "Free PE:"), QString::number(lvm.freePE()), cols(area), x, y);
+    } else if (d.type() == Device::Type::SoftwareRAID_Device) {
+        const SoftwareRAID& raid = static_cast<const SoftwareRAID&>(d);
+        createLabels(i18nc("@label device", "Volume Type:"), QStringLiteral("RAID"), cols(area), x, y);
+        createLabels(i18nc("@label device", "Capacity:"), Capacity::formatByteSize(raid.capacity()), cols(area), x, y);
+        createLabels(i18nc("@label device", "RAID Level:"), raid.raidLevel() < 0 ? QStringLiteral("---") : QString::number(raid.raidLevel()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Chunk Size:"),Capacity::formatByteSize(raid.chunkSize()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Total Chunk:"), Capacity::formatByteSize(raid.totalChunk()), cols(area), x, y);
+        createLabels(i18nc("@label device", "Array Size:"), Capacity::formatByteSize(raid.arraySize()), cols(area), x, y);
     }
 }
 

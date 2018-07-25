@@ -15,8 +15,7 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *************************************************************************/
 
-#if !defined(CREATEVOLUMEGROUPDIALOG_H)
-
+#ifndef CREATEVOLUMEGROUPDIALOG_H
 #define CREATEVOLUMEGROUPDIALOG_H
 
 #include <core/device.h>
@@ -25,13 +24,14 @@
 #include "gui/volumegroupdialog.h"
 
 class Device;
+class Operation;
 
 class CreateVolumeGroupDialog : public VolumeGroupDialog
 {
     Q_DISABLE_COPY(CreateVolumeGroupDialog)
 
 public:
-    CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& pvList, qint32& peSize, QList<Device*> devices);
+    CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& pvList, qint32& peSize, QList<Device*> devices, QList<Operation*> pendingOps = QList<Operation *>());
 
 protected:
     void accept() override;
@@ -39,6 +39,7 @@ protected:
     void setupConnections() override;
 
 protected:
+    virtual void updateOkButtonStatus() override;
     void onVGNameChanged(const QString& vgname);
     void onSpinPESizeChanged(int newsize);
 
@@ -50,6 +51,7 @@ protected:
 
 private:
     const QList<Device*> m_Devices; // List of all devices found on the system
+    const QList<Operation*> m_PendingOps; // List of pending operations in KPM
 };
 
 #endif

@@ -106,15 +106,10 @@ void DevicePropsDialog::setupDialog()
     dialogWidget().capacity().setText(Capacity::formatByteSize(device().capacity()));
     dialogWidget().totalSectors().setText(QLocale().toString(device().totalLogical()));
 
-    if (device().type() == Device::Disk_Device) {
+    if (device().type() == Device::Type::Disk_Device) {
 
         const DiskDevice& disk = dynamic_cast<const DiskDevice&>(device());
-        const QString cyls = QLocale().toString((disk.cylinders()));
-        const QString heads = QLocale().toString((disk.heads()));
-        const QString sectors = QLocale().toString((disk.sectorsPerTrack()));
-        dialogWidget().chs().setText(QStringLiteral("%1/%2/%3").arg(cyls).arg(heads).arg(sectors));
 
-        dialogWidget().cylinderSize().setText(i18ncp("@label", "1 Sector", "%1 Sectors", disk.cylinderSize()));
         dialogWidget().primariesMax().setText(maxPrimaries);
         dialogWidget().logicalSectorSize().setText(Capacity::formatByteSize(disk.logicalSectorSize()));
         dialogWidget().physicalSectorSize().setText(Capacity::formatByteSize(disk.physicalSectorSize()));
@@ -132,8 +127,10 @@ void DevicePropsDialog::setupDialog()
             dialogWidget().buttonSmartMore().setVisible(false);
         }
     } else {
-        if (device().type() == Device::LVM_Device)
+        if (device().type() == Device::Type::LVM_Device)
             dialogWidget().type().setText(xi18nc("@label device", "LVM Volume Group"));
+        else if (device().type() == Device::Type::SoftwareRAID_Device)
+            dialogWidget().type().setText(xi18nc("@label device", "Software RAID Device"));
         else
             dialogWidget().type().setText(xi18nc("@label device", "Volume Manager Device"));
         //TODO: add Volume Manger Device info

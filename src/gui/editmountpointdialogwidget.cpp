@@ -42,7 +42,7 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partitio
     setupUi(this);
 
     m_deviceNode = partition().deviceNode();
-    if (partition().roles().has(PartitionRole::Luks) && partition().fileSystem().type() != FileSystem::Luks) {
+    if (partition().roles().has(PartitionRole::Luks) && partition().fileSystem().type() != FileSystem::Type::Luks) {
         const FS::luks* luksFs = dynamic_cast<const FS::luks*>(&partition().fileSystem());
         m_deviceNode = luksFs->mapperName();
     }
@@ -54,9 +54,9 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partitio
     for (auto &e : m_fstabEntries) {
         QString canonicalEntryPath = QFileInfo(e.deviceNode()).canonicalFilePath();
         QString canonicalDevicePath = QFileInfo(m_deviceNode).canonicalFilePath();
-        if (canonicalEntryPath == canonicalDevicePath) { // FIXME fix multiple mountpoints
+        if (canonicalEntryPath == canonicalDevicePath) {
             entryFound = true;
-            entry.append(&e);
+            entry.push_back(&e);
             mountPointList = possibleMountPoints(e.deviceNode());
         }
     }
@@ -65,19 +65,19 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partitio
         FileSystem::Type type = partition().fileSystem().type();
         QString fsName;
         switch (type) {
-        case FileSystem::LinuxSwap:
+        case FileSystem::Type::LinuxSwap:
             fsName = QStringLiteral("swap");
             break;
-        case FileSystem::Fat16:
-        case FileSystem::Fat32:
+        case FileSystem::Type::Fat16:
+        case FileSystem::Type::Fat32:
             fsName = QStringLiteral("vfat");
             break;
         default:
             fsName = partition().fileSystem().name();
         }
 
-        m_fstabEntries.append(FstabEntry(m_deviceNode, QString(), fsName, QString()));
-        entry.append(&m_fstabEntries.last());
+        m_fstabEntries.push_back(FstabEntry(m_deviceNode, QString(), fsName, QString()));
+        entry.push_back(&m_fstabEntries.back());
     }
     currentEntry = entry[0];
     editPath().addItems(mountPointList);
@@ -127,7 +127,7 @@ void EditMountPointDialogWidget::setupOptions(const QStringList& options)
     m_Options = optTmpList.join(QLatin1Char(','));
 }
 
-void EditMountPointDialogWidget::setupRadio(const FstabEntryType entryType)
+void EditMountPointDialogWidget::setupRadio(const FstabEntry::Type entryType)
 {
     if (partition().fileSystem().uuid().isEmpty()) {
         radioUUID().setEnabled(false);
@@ -141,26 +141,26 @@ void EditMountPointDialogWidget::setupRadio(const FstabEntryType entryType)
             radioDeviceNode().setChecked(true);
     }
     switch (entryType) {
-    case FstabEntryType::uuid:
+    case FstabEntry::Type::uuid:
         radioUUID().setChecked(true);
         break;
 
-    case FstabEntryType::label:
+    case FstabEntry::Type::label:
         radioLabel().setChecked(true);
         break;
 
-    case FstabEntryType::partuuid:
+    case FstabEntry::Type::partuuid:
         radioUUID().setChecked(true);
         break;
 
-    case FstabEntryType::partlabel:
+    case FstabEntry::Type::partlabel:
         radioLabel().setChecked(true);
         break;
 
-    case FstabEntryType::deviceNode:
+    case FstabEntry::Type::deviceNode:
         radioDeviceNode().setChecked(true);
         break;
-    case FstabEntryType::comment:
+    case FstabEntry::Type::comment:
         break;
     }
 }
@@ -174,24 +174,24 @@ void EditMountPointDialogWidget::buttonSelectClicked(bool)
 
 void EditMountPointDialogWidget::removeMountPoint()
 {
-    int i=0;
-    for (const auto &e : fstabEntries()) {
-       if(editPath().count()<=1 && ((e.fsSpec().contains(partition().deviceNode()) && !partition().deviceNode().isEmpty() ) || (e.fsSpec().contains(partition().fileSystem().uuid()) && !partition().fileSystem().uuid().isEmpty()) ||
-           (e.fsSpec().contains(partition().fileSystem().label()) && !partition().fileSystem().label().isEmpty()) || (e.fsSpec().contains(partition().label()) && !partition().label().isEmpty() ) || (e.fsSpec().contains(partition().uuid()) && !partition().uuid().isEmpty()  )))
-       {
-            fstabEntries().removeAt(i);
+    for (auto it = fstabEntries().begin(); it != fstabEntries().end(); ) {
+        if (editPath().count() <= 1 && (
+                (it->fsSpec().contains(partition().deviceNode()) && !partition().deviceNode().isEmpty() ) ||
+                (it->fsSpec().contains(partition().fileSystem().uuid()) && !partition().fileSystem().uuid().isEmpty() ) ||
+                (it->fsSpec().contains(partition().fileSystem().label()) && !partition().fileSystem().label().isEmpty()) || 
+                (it->fsSpec().contains(partition().label()) && !partition().label().isEmpty() ) ||
+                (it->fsSpec().contains(partition().uuid()) && !partition().uuid().isEmpty() )))
+        {
+            fstabEntries().erase(it);
             partition().setMountPoint(QString());
-            i--;
-       }
-       else if(editPath().count()>1 && ((&e == currentEntry)))
-       {
-            fstabEntries().removeAt(i);
+        }
+        else if (editPath().count() > 1 && ((&*it == currentEntry)))
+        {
+            fstabEntries().erase(it);
             editPath().removeItem(editPath().currentIndex());
             partition().setMountPoint(editPath().itemText(editPath().currentIndex()));
-            i--;
             break;
         }
-        i++;
     }
 
 }

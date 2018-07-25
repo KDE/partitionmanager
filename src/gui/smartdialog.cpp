@@ -121,8 +121,8 @@ void SmartDialog::setupDialog()
                 QStringList()
                 << QLocale().toString(a.id())
                 << QStringLiteral("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + QStringLiteral("</span>"))
-                << (a.failureType() == SmartAttribute::PreFailure ? xi18nc("@item:intable", "Pre-Failure") : xi18nc("@item:intable", "Old-Age"))
-                << (a.updateType() == SmartAttribute::Online ? xi18nc("@item:intable", "Online") : xi18nc("@item:intable", "Offline"))
+                << (a.failureType() == SmartAttribute::FailureType::PreFailure ? xi18nc("@item:intable", "Pre-Failure") : xi18nc("@item:intable", "Old-Age"))
+                << (a.updateType() == SmartAttribute::UpdateType::Online ? xi18nc("@item:intable", "Online") : xi18nc("@item:intable", "Offline"))
                 << QLocale().toString(a.worst())
                 << QLocale().toString(a.current())
                 << QLocale().toString(a.threshold())
@@ -187,8 +187,8 @@ QString SmartDialog::toHtml() const
 
             s << "<td>" << QLocale().toString(a.id()) << "</td>\n"
               << "<td>" << QStringLiteral("<b>%1</b><br/>%2").arg(a.name()).arg(st + a.desc() + QStringLiteral("</span>")) << "</td>\n"
-              << "<td>" << (a.failureType() == SmartAttribute::PreFailure ? xi18nc("@item:intable", "Pre-Failure") : xi18nc("@item:intable", "Old-Age")) << "</td>\n"
-              << "<td>" << (a.updateType() == SmartAttribute::Online ? xi18nc("@item:intable", "Online") : xi18nc("@item:intable", "Offline")) << "</td>\n"
+              << "<td>" << (a.failureType() == SmartAttribute::FailureType::PreFailure ? xi18nc("@item:intable", "Pre-Failure") : xi18nc("@item:intable", "Old-Age")) << "</td>\n"
+              << "<td>" << (a.updateType() == SmartAttribute::UpdateType::Online ? xi18nc("@item:intable", "Online") : xi18nc("@item:intable", "Offline")) << "</td>\n"
               << "<td>" << QLocale().toString(a.worst()) << "</td>\n"
               << "<td>" << QLocale().toString(a.current()) << "</td>\n"
               << "<td>" << QLocale().toString(a.threshold()) << "</td>\n"

@@ -48,7 +48,7 @@ void GeneralPageWidget::setupDialog()
 {
     QStringList fsNames;
     for (const auto &fs : FileSystemFactory::map())
-        if (fs->supportCreate() != FileSystem::cmdSupportNone && fs->type() != FileSystem::Extended && fs->type() != FileSystem::Luks)
+        if (fs->supportCreate() != FileSystem::cmdSupportNone && fs->type() != FileSystem::Type::Extended && fs->type() != FileSystem::Type::Luks)
             fsNames.append(fs->name());
 
     std::sort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);

@@ -55,6 +55,7 @@
 #include <fs/filesystemfactory.h>
 #include <fs/luks.h>
 
+#include <util/externalcommand.h>
 #include <util/helpers.h>
 #include <util/guihelpers.h>
 #include <util/report.h>
@@ -86,11 +87,7 @@
 #include <KIO/CopyJob>
 #include <KIO/Job>
 #include <KJobWidgets>
-
-#include <config.h>
-
-#include <unistd.h>
-#include <typeinfo>
+#include "config.h"
 
 /** Creates a new MainWindow instance.
     @param parent the parent widget
@@ -134,11 +131,14 @@ void MainWindow::init()
 
     listDevices().setActionCollection(actionCollection());
     listOperations().setActionCollection(actionCollection());
-    pmWidget().init(&operationStack());
 
     setupGUI();
 
     loadConfig();
+
+    show();
+    ExternalCommand::setParentWidget(this);
+    pmWidget().init(&operationStack());
 
     scanDevices();
 }
@@ -165,6 +165,7 @@ void MainWindow::closeEvent(QCloseEvent* event)
     saveConfig();
 
     KXmlGuiWindow::closeEvent(event);
+    ExternalCommand::stopHelper();
 }
 
 void MainWindow::changeEvent(QEvent* event)
@@ -483,7 +484,8 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("createNewPartitionTable"))
             ->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
     actionCollection()->action(QStringLiteral("createNewPartitionTable"))
-            ->setVisible(pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::Disk_Device);
+            ->setVisible(pmWidget().selectedDevice() && (pmWidget().selectedDevice()->type() == Device::Type::Disk_Device ||
+                                                         pmWidget().selectedDevice()->type() == Device::Type::SoftwareRAID_Device));
     actionCollection()->action(QStringLiteral("exportPartitionTable"))
             ->setEnabled(pmWidget().selectedDevice() &&
                          pmWidget().selectedDevice()->partitionTable() &&
@@ -491,10 +493,10 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("importPartitionTable"))
             ->setEnabled(CreatePartitionTableOperation::canCreate(pmWidget().selectedDevice()));
     actionCollection()->action(QStringLiteral("smartStatusDevice"))
-            ->setEnabled(pmWidget().selectedDevice() != nullptr && pmWidget().selectedDevice()->type() == Device::Disk_Device &&
+            ->setEnabled(pmWidget().selectedDevice() != nullptr && pmWidget().selectedDevice()->type() == Device::Type::Disk_Device &&
                                                         pmWidget().selectedDevice()->smartStatus().isValid());
     actionCollection()->action(QStringLiteral("smartStatusDevice"))
-            ->setVisible(pmWidget().selectedDevice() != nullptr && pmWidget().selectedDevice()->type() == Device::Disk_Device);
+            ->setVisible(pmWidget().selectedDevice() != nullptr && pmWidget().selectedDevice()->type() == Device::Type::Disk_Device);
     actionCollection()->action(QStringLiteral("propertiesDevice"))
             ->setEnabled(pmWidget().selectedDevice() != nullptr);
 
@@ -503,8 +505,7 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("clearAllOperations"))
             ->setEnabled(operationStack().size() > 0);
     actionCollection()->action(QStringLiteral("applyAllOperations"))
-            ->setEnabled(operationStack().size() > 0 && (geteuid() == 0 ||
-                                                         Config::allowApplyOperationsAsNonRoot()));
+            ->setEnabled(operationStack().size() > 0);
 
     const bool readOnly = pmWidget().selectedDevice() == nullptr ||
                           pmWidget().selectedDevice()->partitionTable() == nullptr ||
@@ -513,7 +514,7 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("createVolumeGroup"))
             ->setEnabled(CreateVolumeGroupOperation::canCreate());
 
-    bool lvmDevice = pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::LVM_Device;
+    bool lvmDevice = pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::Type::LVM_Device;
     bool removable = false;
 
     if (lvmDevice)
@@ -707,7 +708,7 @@ void MainWindow::on_m_PartitionManagerWidget_selectedPartitionChanged(const Part
 
 void MainWindow::scanDevices()
 {
-    Log(Log::information) << xi18nc("@info:progress", "Using backend plugin: %1 (%2)",
+    Log(Log::Level::information) << xi18nc("@info:progress", "Using backend plugin: %1 (%2)",
                                    CoreBackendManager::self()->backend()->id(),
                                    CoreBackendManager::self()->backend()->version());
 
@@ -1062,11 +1063,11 @@ void MainWindow::onImportPartitionTable()
             if (fs->supportSetLabel() != FileSystem::cmdSupportNone && !volumeLabel.isEmpty())
                 fs->setLabel(volumeLabel);
 
-            Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, QString(), PartitionTable::FlagNone, QString(), false, PartitionTable::FlagNone, Partition::StateNew);
+            Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, QString(), PartitionTable::FlagNone, QString(), false, PartitionTable::FlagNone, Partition::State::New);
 
             operationStack().push(new NewOperation(device, p));
         } else
-            Log(Log::warning) << xi18nc("@info:status", "Could not parse line %1 from import file. Ignoring it.", lineNo);
+            Log(Log::Level::warning) << xi18nc("@info:status", "Could not parse line %1 from import file. Ignoring it.", lineNo);
     }
 
     if (ptable->type() == PartitionTable::msdos && ptable->isSectorBased(device))
@@ -1110,7 +1111,7 @@ void MainWindow::onCreateNewVolumeGroup()
     QVector<const Partition*> pvList;
     qint32 peSize = 4;
     // *NOTE*: vgName & pvList will be modified and validated by the dialog
-    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList, peSize, operationStack().previewDevices());
+    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList, peSize, operationStack().previewDevices(), operationStack().operations());
     if (dlg->exec() == QDialog::Accepted)
         operationStack().push(new CreateVolumeGroupOperation(vgName, pvList, peSize));
 
@@ -1119,13 +1120,13 @@ void MainWindow::onCreateNewVolumeGroup()
 
 void MainWindow::onResizeVolumeGroup()
 {
-    if (pmWidget().selectedDevice()->type() == Device::LVM_Device) {
+    if (pmWidget().selectedDevice()->type() == Device::Type::LVM_Device) {
         LvmDevice* d = dynamic_cast<LvmDevice*>(pmWidget().selectedDevice());
 
         QVector<const Partition*> pvList;
         // *NOTE*: pvList will be modified and validated by the dialog
 
-        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, d, pvList);
+        QPointer<ResizeVolumeGroupDialog> dlg = new ResizeVolumeGroupDialog(this, d, pvList, operationStack().previewDevices(), operationStack().operations());
         if (dlg->exec() == QDialog::Accepted)
             operationStack().push(new ResizeVolumeGroupOperation(*d, pvList));
 
@@ -1136,7 +1137,7 @@ void MainWindow::onResizeVolumeGroup()
 void MainWindow::onRemoveVolumeGroup()
 {
     Device* tmpDev = pmWidget().selectedDevice();
-    if (tmpDev->type() == Device::LVM_Device) {
+    if (tmpDev->type() == Device::Type::LVM_Device) {
         operationStack().push(new RemoveVolumeGroupOperation(*(dynamic_cast<LvmDevice*>(tmpDev))));
     }
 }
@@ -1144,7 +1145,7 @@ void MainWindow::onRemoveVolumeGroup()
 void MainWindow::onDeactivateVolumeGroup()
 {
     Device* tmpDev = pmWidget().selectedDevice();
-    if (tmpDev->type() == Device::LVM_Device) {
+    if (tmpDev->type() == Device::Type::LVM_Device) {
         DeactivateVolumeGroupOperation* deactivate = new DeactivateVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) );
         Report* tmpReport = new Report(nullptr);
         if (deactivate->execute(*tmpReport)) {

@@ -1,4 +1,5 @@
 # Copyright (C) 2008 by Volker Lanz <vl@fidra.de>
+# Copyright (C) 2014-2018 by Andrius Štikonas <andrius@stikonas.eu>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License as
@@ -15,19 +16,21 @@
 
 project(partitionmanager)
 
-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
+
+# Dependencies
+set(QT_MIN_VERSION "5.10.0")
+set(KF5_MIN_VERSION "5.31")
+set(KPMCORE_MIN_VERSION "3.50.0")
 
 set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 set(KDE_INSTALL_USE_QT_SYS_PATHS ON CACHE BOOL "Install mkspecs files, Plugins and Imports to the Qt 5 install dir" FORCE)
 
-set(QT_MIN_VERSION "5.7.0")
-set(KF5_MIN_VERSION "5.31")
-set(KPMCORE_MIN_VERSION "3.3.0")
 # Check KPMcore dependency when bumping
 set(VERSION_MAJOR "3")
-set(VERSION_MINOR "3")
-set(VERSION_RELEASE "1")
+set(VERSION_MINOR "50")
+set(VERSION_RELEASE "0")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE})
 add_definitions(-D'VERSION="${VERSION}"') #"
 
@@ -57,6 +60,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     ConfigWidgets
     CoreAddons
     Crash
+    DBusAddons
     I18n
     IconThemes
     JobWidgets

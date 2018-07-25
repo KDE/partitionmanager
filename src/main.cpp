@@ -1,5 +1,6 @@
 /*************************************************************************
  *  Copyright (C) 2008,2011 by Volker Lanz <vl@fidra.de>                 *
+ *  Copyright (C) 2014-2018 by Andrius Štikonas <andrius@stikonas.eu>    *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -28,7 +29,7 @@
 
 #include <KAboutData>
 #include <KCrash>
-#include <Kdelibs4ConfigMigrator>
+#include <KDBusService>
 #include <KMessageBox>
 #include <KLocalizedString>
 
@@ -38,11 +39,6 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    Kdelibs4ConfigMigrator migrate(QLatin1Literal("partitionmanager"));
-    migrate.setConfigFiles({ QLatin1Literal("partitionmanagerrc") });
-    migrate.setUiFiles({ QStringLiteral("partitionmanagerui.rc") });
-    migrate.migrate();
-
     KLocalizedString::setApplicationDomain("partitionmanager");
     KAboutData aboutData (
         QStringLiteral("partitionmanager"),
@@ -50,7 +46,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
         QStringLiteral(VERSION),
         xi18nc("@title", "Manage your disks, partitions and file systems"),
         KAboutLicense::GPL_V3,
-        xi18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2017 Andrius Štikonas"));
+        xi18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2018 Andrius Štikonas"));
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
     aboutData.setProductName(QByteArray("partitionmanager"));
 
@@ -68,15 +64,14 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
-    parser.addOption(QCommandLineOption(QLatin1Literal("dontsu"), xi18nc("@info:shell", "Do not try to gain super user privileges")));
 // FIXME    parser.addPositionalArgument(QStringLiteral("device"), xi18nc("@info:shell", "Device(s) to manage"), QStringLiteral("[device...]"));
 
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
+    KDBusService service(KDBusService::Unique);
+
     registerMetaTypes();
-    if (!checkPermissions())
-        return 0;
 
     Config::instance(QStringLiteral("partitionmanagerrc"));
 
@@ -84,7 +79,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
         return 0;
 
     MainWindow* mainWindow = new MainWindow();
-    mainWindow->show();
+    Q_UNUSED(mainWindow)
 
     return app.exec();
 }

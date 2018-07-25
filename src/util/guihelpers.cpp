@@ -45,88 +45,11 @@ QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
     QPixmap pixmap(size, size);
     QPainter painter(&pixmap);
     painter.setPen(QColor(0, 0, 0));
-    painter.setBrush(Config::fileSystemColorCode(type));
+    painter.setBrush(Config::fileSystemColorCode(static_cast<int>(type)));
     painter.drawRect(QRect(0, 0, pixmap.width() - 1, pixmap.height() - 1));
     painter.end();
 
     return QIcon(pixmap);
-}
-
-bool checkPermissions()
-{
-    if (geteuid() != 0) {
-        // only try to gain root privileges if we have a valid (kde|gk)su(do) command and
-        // we did not try so before: the dontsu-option is there to make sure there are no
-        // endless loops of calling the same non-working (kde|gk)su(do) binary again and again.
-        if (!suCommand().isEmpty() && !QCoreApplication::arguments().contains(QLatin1String("--dontsu"))) {
-            QString argList;
-
-            const QString suCmd = suCommand();
-
-            // kdesu broke backward compatibility at some point and now only works with "-c";
-            // kdesudo accepts either (with or without "-c"), but the gk* helpers only work
-            // without. kdesu maintainers won't fix their app, so we need to work around that here.
-            if (suCmd.indexOf(QStringLiteral("kdesu")) != -1)
-                argList = QStringLiteral("-c ");
-
-            // Workaround for ugly GUI when kdesu uses sudo
-            QString DBusString = QStringLiteral("DBUS_SESSION_BUS_ADDRESS");
-            const QStringList envVars = { QStringLiteral("KDE_FULL_SESSION"),
-                                          QStringLiteral("QT_WAYLAND_FORCE_DPI"),
-                                          QStringLiteral("QT_QPA_PLATFORM"),
-                                          QStringLiteral("XDG_RUNTIME_DIR"),
-                                          DBusString };
-            QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-            for (const auto &var : envVars)
-                if (env.contains(var))
-                    argList += var + QStringLiteral("=") + env.value(var) + QStringLiteral(" ");
-
-            QString displayString = QStringLiteral("DISPLAY");
-            QString homeString = QStringLiteral("HOME");
-            if (!env.contains(DBusString) && env.contains(displayString) && env.contains(homeString)) {
-                QFile file(QStringLiteral("/var/lib/dbus/machine-id"));
-                if (file.open(QIODevice::ReadOnly)) {
-                    QTextStream in(&file);
-                    QString machineId = in.readLine();
-                    file.close();
-                    QString display = env.value(displayString).remove(0,1);
-                    QFile sessionFile(env.value(homeString) + QStringLiteral("/.dbus/session-bus/") + machineId + QStringLiteral("-") + display);
-                    if (sessionFile.open(QIODevice::ReadOnly)) {
-                        QTextStream in2(&sessionFile);
-                        while (!in2.atEnd()) {
-                            QString line = in2.readLine();
-                            if (line.startsWith(DBusString)) {
-                                argList += line + QStringLiteral(" ");
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-
-            argList += QCoreApplication::arguments().join(QStringLiteral(" ")) + QStringLiteral(" --dontsu");
-
-            qDebug() << "Executing: " << suCmd << argList;
-            if (QProcess::execute(suCmd, QStringList(argList)) == 0)
-                return false;
-        }
-
-        return KMessageBox::warningContinueCancel(nullptr, xi18nc("@info",
-                "<para><warning>You do not have administrative privileges.</warning></para>"
-                "<para>It is possible to run <application>%1</application> without these privileges. "
-                "You will, however, <emphasis>not</emphasis> be allowed to apply operations.</para>"
-                "<para>Do you want to continue running <application>%1</application>?</para>"
-                "<para><note>If administrator login is disabled and your password is "
-                "not accepted, then check <command>kdesu</command> "
-                "<link url='https://wiki.archlinux.org/index.php/sudo#kdesu'>configuration</link>.</note></para>",
-                QGuiApplication::applicationDisplayName()),
-                xi18nc("@title:window", "No administrative privileges"),
-                KGuiItem(xi18nc("@action:button", "Run without administrative privileges"), QStringLiteral("arrow-right")),
-                KStandardGuiItem::cancel(),
-                QStringLiteral("runWithoutRootPrivileges"), KMessageBox::AllowLink) == KMessageBox::Continue;
-    }
-
-    return true;
 }
 
 bool loadBackend()
@@ -151,21 +74,6 @@ bool loadBackend()
     }
 
     return true;
-}
-
-QString suCommand()
-{
-    // First look for KF5 version of kdesu in libexec folder
-    const QString candidates[] = { QStringLiteral(CMAKE_INSTALL_FULL_LIBEXECDIR_KF5"/kdesu"), QStringLiteral("kdesu"), QStringLiteral("kdesudo"), QStringLiteral("gksudo"), QStringLiteral("gksu") };
-    QString rval;
-
-    for (const auto &candidate : candidates) {
-        rval = QStandardPaths::findExecutable(candidate);
-        if (QFileInfo(rval).isExecutable())
-            return rval;
-    }
-
-    return QString();
 }
 
 Capacity::Unit preferredUnit()
@@ -208,12 +116,13 @@ FileSystem::Type defaultFileSystem()
     return static_cast<FileSystem::Type>(Config::defaultFileSystem());
 }
 
-std::array< QColor, FileSystem::__lastType > fileSystemColorCodesFromSettings()
+std::vector<QColor> fileSystemColorCodesFromSettings()
 {
-    std::array< QColor, FileSystem::__lastType > cc;
-    for (int i = 0; i < FileSystem::__lastType; ++i)
+    std::vector<QColor> cc;
+    cc.resize(Config::EnumFileSystem::type::COUNT);
+    for (int i = 0; i < Config::EnumFileSystem::type::COUNT; ++i)
     {
-        cc[ i ] = Config::fileSystemColorCode( i );
+        cc[i] = Config::fileSystemColorCode(i);
     }
     return cc;
 }

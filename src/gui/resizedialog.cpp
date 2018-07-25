@@ -91,7 +91,7 @@ void ResizeDialog::accept()
     if (partition().roles().has(PartitionRole::Luks)) {
         FS::luks2* luksFs = dynamic_cast<FS::luks2*>(&partition().fileSystem());
         if (luksFs) {
-            if (luksFs->keyLocation() == FS::luks::keyring) {
+            if (luksFs->keyLocation() == FS::luks::KeyLocation::keyring) {
                 bool validPassphrase = false;
                 QString errorMessage;
                 QString passphrase;
@@ -130,7 +130,7 @@ void ResizeDialog::reject()
 void ResizeDialog::setupDialog()
 {
     SizeDialogBase::setupDialog();
-    if (device().type() == Device::LVM_Device) {
+    if (device().type() == Device::Type::LVM_Device) {
         dialogWidget().hideBeforeAndAfter();
         detailsWidget().checkAlign().setChecked(false);
         detailsWidget().checkAlign().setEnabled(false);
@@ -162,5 +162,5 @@ bool ResizeDialog::canShrink() const
 
 bool ResizeDialog::canMove() const
 {
-    return (device().type() == Device::LVM_Device) ? false : ResizeOperation::canMove(&partition());
+    return (device().type() == Device::Type::LVM_Device) ? false : ResizeOperation::canMove(&partition());
 }
