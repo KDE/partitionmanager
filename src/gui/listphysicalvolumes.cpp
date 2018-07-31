@@ -35,6 +35,11 @@ void ListPhysicalVolumes::addPartition(const Partition& p, bool checked)
     listPhysicalVolumes().addItem(item);
 }
 
+void ListPhysicalVolumes::clear()
+{
+    listPhysicalVolumes().clear();
+}
+
 QVector<const Partition *> ListPhysicalVolumes::checkedItems()
 {
     QVector<const Partition *> partitionList;

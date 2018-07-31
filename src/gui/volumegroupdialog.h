@@ -86,6 +86,9 @@ protected:
 protected:
     virtual void onPartitionListChanged();
 
+private:
+    virtual void updateNameValidator();
+
 protected:
     VolumeGroupWidget* m_DialogWidget;
     QString& m_TargetName;

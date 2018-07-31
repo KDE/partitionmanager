@@ -50,6 +50,8 @@ public:
 
     void addPartition(const Partition& p, bool checked);
 
+    void clear();
+
     QVector<const Partition *> checkedItems();
 
     QListWidget& listPhysicalVolumes() {

@@ -37,6 +37,7 @@ protected:
     void accept() override;
     void setupDialog() override;
     void setupConnections() override;
+    void updatePartitionList() override;
 
 protected:
     virtual void updateOkButtonStatus() override;

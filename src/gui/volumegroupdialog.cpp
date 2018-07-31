@@ -76,17 +76,11 @@ VolumeGroupDialog::~VolumeGroupDialog()
 
 void VolumeGroupDialog::setupDialog()
 {
-    /* LVM Volume group name can consist of: letters numbers _ . - +
-     * It cannot start with underscore _ and must not be equal to . or .. or any entry in /dev/
-     * QLineEdit accepts QValidator::Intermediate, so we just disable . at the beginning */
-    QRegularExpression re(QStringLiteral(R"(^(?!_|\.)[\w\-.+]+)"));
-    QRegularExpressionValidator *validator = new QRegularExpressionValidator(re, this);
-    dialogWidget().vgName().setValidator(validator);
-    dialogWidget().vgName().setText(targetName());
-
     dialogWidget().volumeType().addItem(QStringLiteral("LVM"));
     dialogWidget().volumeType().addItem(QStringLiteral("RAID"));
     dialogWidget().volumeType().setCurrentIndex(0);
+
+    updateNameValidator();
 
     setMinimumSize(dialogWidget().size());
     resize(dialogWidget().size());
@@ -153,6 +147,23 @@ void VolumeGroupDialog::updatePartitionList()
 {
 }
 
+void VolumeGroupDialog::updateNameValidator()
+{
+    if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
+        /* LVM Volume group name can consist of: letters numbers _ . - +
+         * It cannot start with underscore _ and must not be equal to . or .. or any entry in /dev/
+         * QLineEdit accepts QValidator::Intermediate, so we just disable . at the beginning */
+
+        QRegularExpression re(QStringLiteral(R"(^(?!_|\.)[\w\-.+]+)"));
+        QRegularExpressionValidator *validator = new QRegularExpressionValidator(re, this);
+        dialogWidget().vgName().setValidator(validator);
+        dialogWidget().vgName().setText(targetName());
+    }
+    else if (dialogWidget().volumeType().currentText() == QStringLiteral("RAID")) {
+        // TODO: See how Software RAID names should be validated.
+    }
+}
+
 void VolumeGroupDialog::onPartitionListChanged()
 {
 }
@@ -160,5 +171,6 @@ void VolumeGroupDialog::onPartitionListChanged()
 void VolumeGroupDialog::onVolumeTypeChanged(int index)
 {
     Q_UNUSED(index)
+    updateNameValidator();
     updatePartitionList();
 }

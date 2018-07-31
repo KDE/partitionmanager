@@ -49,7 +49,7 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgNam
     setupConnections();
 
     // disable volume type and PE size for now, until the features are implemented.
-    dialogWidget().volumeType().setEnabled(false);
+    dialogWidget().volumeType().setEnabled(true);
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "createVolumeDialog");
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
@@ -57,49 +57,7 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgNam
 
 void CreateVolumeGroupDialog::setupDialog()
 {
-    for (const auto &p : qAsConst(LVM::pvList::list())) {
-        bool toBeDeleted = false;
-
-        // Ignore partitions that are going to be deleted
-        for (const auto &o : qAsConst(m_PendingOps)) {
-            if (dynamic_cast<DeleteOperation *>(o) && o->targets(*p.partition())) {
-                toBeDeleted = true;
-                break;
-            }
-        }
-
-        if (toBeDeleted)
-            continue;
-
-        if (!p.isLuks() && p.vgName() == QString() && !LvmDevice::s_DirtyPVs.contains(p.partition()))
-            dialogWidget().listPV().addPartition(*p.partition(), false);
-    }
-
-    for (const Device *d : qAsConst(m_Devices)) {
-        if (d->partitionTable() != nullptr) {
-            for (const Partition *p : qAsConst(d->partitionTable()->children())) {
-                // Looking if there is another VG creation that contains this partition
-                if (LvmDevice::s_DirtyPVs.contains(p))
-                    continue;
-
-                // Including new LVM PVs (that are currently in OperationStack and that aren't at other VG creation)
-                if (p->state() == Partition::State::New) {
-                    if (p->fileSystem().type() == FileSystem::Type::Lvm2_PV)
-                        dialogWidget().listPV().addPartition(*p, false);
-                    else if (p->fileSystem().type() == FileSystem::Type::Luks || p->fileSystem().type() == FileSystem::Type::Luks2) {
-                        FileSystem *fs = static_cast<const FS::luks *>(&p->fileSystem())->innerFS();
-
-                        if (fs->type() == FileSystem::Type::Lvm2_PV)
-                            dialogWidget().listPV().addPartition(*p, false);
-                    }
-                }
-            }
-        }
-    }
-
-    for (const Partition *p : qAsConst(LvmDevice::s_OrphanPVs))
-        if (!LvmDevice::s_DirtyPVs.contains(p))
-            dialogWidget().listPV().addPartition(*p, false);
+    updatePartitionList();
 }
 
 void CreateVolumeGroupDialog::setupConnections()
@@ -108,7 +66,69 @@ void CreateVolumeGroupDialog::setupConnections()
     connect(&dialogWidget().spinPESize(), qOverload<int>(&QSpinBox::valueChanged), this, &CreateVolumeGroupDialog::onSpinPESizeChanged);
 }
 
-void  CreateVolumeGroupDialog::accept()
+void CreateVolumeGroupDialog::updatePartitionList()
+{
+    if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
+        dialogWidget().listPV().clear();
+
+        for (const auto &p : qAsConst(LVM::pvList::list())) {
+            bool toBeDeleted = false;
+
+            // Ignore partitions that are going to be deleted
+            for (const auto &o : qAsConst(m_PendingOps)) {
+                if (dynamic_cast<DeleteOperation *>(o) && o->targets(*p.partition())) {
+                    toBeDeleted = true;
+                    break;
+                }
+            }
+
+            if (toBeDeleted)
+                continue;
+
+            if (!p.isLuks() && p.vgName() == QString() && !LvmDevice::s_DirtyPVs.contains(p.partition()))
+                dialogWidget().listPV().addPartition(*p.partition(), false);
+        }
+
+        for (const Device *d : qAsConst(m_Devices)) {
+            if (d->partitionTable() != nullptr) {
+                for (const Partition *p : qAsConst(d->partitionTable()->children())) {
+                    // Looking if there is another VG creation that contains this partition
+                    if (LvmDevice::s_DirtyPVs.contains(p))
+                        continue;
+
+                    // Including new LVM PVs (that are currently in OperationStack and that aren't at other VG creation)
+                    if (p->state() == Partition::State::New) {
+                        if (p->fileSystem().type() == FileSystem::Type::Lvm2_PV)
+                            dialogWidget().listPV().addPartition(*p, false);
+                        else if (p->fileSystem().type() == FileSystem::Type::Luks || p->fileSystem().type() == FileSystem::Type::Luks2) {
+                            FileSystem *fs = static_cast<const FS::luks *>(&p->fileSystem())->innerFS();
+
+                            if (fs->type() == FileSystem::Type::Lvm2_PV)
+                                dialogWidget().listPV().addPartition(*p, false);
+                        }
+                    }
+                }
+            }
+        }
+
+        for (const Partition *p : qAsConst(LvmDevice::s_OrphanPVs))
+            if (!LvmDevice::s_DirtyPVs.contains(p))
+                dialogWidget().listPV().addPartition(*p, false);
+    }
+    else if (dialogWidget().volumeType().currentText() == QStringLiteral("RAID")) {
+        for (const Device *d : qAsConst(m_Devices)) {
+            if (d->type() != Device::Type::SoftwareRAID_Device && d->partitionTable() != nullptr) {
+                for (const Partition *p : qAsConst(d->partitionTable()->children())) {
+                    if (p->fileSystem().type() != FileSystem::Type::LinuxRaidMember &&
+                            !p->roles().has(PartitionRole::Role::Unallocated))
+                        dialogWidget().listPV().addPartition(*p, false);
+                }
+            }
+        }
+    }
+}
+
+void CreateVolumeGroupDialog::accept()
 {
     QString& tname = targetName();
     tname = dialogWidget().vgName().text();
