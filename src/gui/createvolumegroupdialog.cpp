@@ -119,8 +119,7 @@ void CreateVolumeGroupDialog::updatePartitionList()
         for (const Device *d : qAsConst(m_Devices)) {
             if (d->type() != Device::Type::SoftwareRAID_Device && d->partitionTable() != nullptr) {
                 for (const Partition *p : qAsConst(d->partitionTable()->children())) {
-                    if (p->fileSystem().type() != FileSystem::Type::LinuxRaidMember &&
-                            !p->roles().has(PartitionRole::Role::Unallocated))
+                    if (p->fileSystem().type() == FileSystem::Type::LinuxRaidMember)
                         dialogWidget().listPV().addPartition(*p, false);
                 }
             }
