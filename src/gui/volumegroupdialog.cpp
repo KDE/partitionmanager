@@ -124,20 +124,35 @@ void VolumeGroupDialog::updateOkButtonStatus()
 void VolumeGroupDialog::updateSectorInfos()
 {
     qint32 totalSectors = 0;
-    // we can't use LvmDevice mothod here because pv that is not in any VG will return 0
-    m_ExtentSize = dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Unit::Byte, Capacity::Unit::MiB);
-    if (m_ExtentSize > 0) {
-        totalSectors = m_TotalSize / m_ExtentSize;
+
+    if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
+        // we can't use LvmDevice mothod here because pv that is not in any VG will return 0
+        m_ExtentSize = dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Unit::Byte, Capacity::Unit::MiB);
+
+        if (m_ExtentSize > 0)
+            totalSectors = m_TotalSize / m_ExtentSize;
     }
+    else if (dialogWidget().volumeType().currentText() == QStringLiteral("RAID")) {
+        m_ExtentSize = dialogWidget().chunkSize().value() * Capacity::unitFactor(Capacity::Unit::Byte, Capacity::Unit::KiB);
+
+        if (m_ExtentSize > 0)
+            totalSectors = m_TotalSize / m_ExtentSize;
+    }
+
     dialogWidget().totalSectors().setText(QString::number(totalSectors));
 }
 
 void VolumeGroupDialog::updateSizeInfos()
 {
+    QString type = dialogWidget().volumeType().currentText();
     const QVector<const Partition *> checkedPartitions = dialogWidget().listPV().checkedItems();
     m_TotalSize = 0;
     for (const auto &p : checkedPartitions)
-        m_TotalSize += p->capacity() - p->capacity() % (dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Unit::Byte, Capacity::Unit::MiB)); // subtract space which is too small to hold PE
+        m_TotalSize += p->capacity() - p->capacity() %
+                (type == QStringLiteral("LVM") ?
+                    (dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Unit::Byte, Capacity::Unit::MiB)) :
+                    (dialogWidget().chunkSize().value() * Capacity::unitFactor(Capacity::Unit::Byte, Capacity::Unit::KiB)));
+    // subtract space which is too small to hold PE
 
     dialogWidget().totalSize().setText(Capacity::formatByteSize(m_TotalSize));
 
