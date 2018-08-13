@@ -47,7 +47,9 @@ protected:
     virtual void updateSizeInfos();
     virtual void updateSectorInfos();
     virtual void updatePartitionList();
+    virtual void updateNameValidator();
 
+    virtual void onPartitionListChanged();
     virtual void onVolumeTypeChanged(int index);
 
     VolumeGroupWidget& dialogWidget() {
@@ -83,11 +85,8 @@ protected:
         return m_IsValidName;
     }
 
-protected:
-    virtual void onPartitionListChanged();
-
 private:
-    virtual void updateNameValidator();
+    void updateComponents();
 
 protected:
     VolumeGroupWidget* m_DialogWidget;

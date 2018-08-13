@@ -76,11 +76,15 @@ VolumeGroupDialog::~VolumeGroupDialog()
 
 void VolumeGroupDialog::setupDialog()
 {
-    dialogWidget().volumeType().addItem(QStringLiteral("LVM"));
-    dialogWidget().volumeType().addItem(QStringLiteral("RAID"));
+    dialogWidget().volumeType().addItems({ QStringLiteral("LVM"), QStringLiteral("RAID") });
     dialogWidget().volumeType().setCurrentIndex(0);
 
+    dialogWidget().raidLevel().addItems({ QStringLiteral("0"), QStringLiteral("1"),
+                                          QStringLiteral("4"), QStringLiteral("5"),
+                                          QStringLiteral("6"), QStringLiteral("10") });
+
     updateNameValidator();
+    updateComponents();
 
     setMinimumSize(dialogWidget().size());
     resize(dialogWidget().size());
@@ -173,4 +177,15 @@ void VolumeGroupDialog::onVolumeTypeChanged(int index)
     Q_UNUSED(index)
     updateNameValidator();
     updatePartitionList();
+    updateComponents();
+}
+
+void VolumeGroupDialog::updateComponents()
+{
+    dialogWidget().spinPESize().setVisible(dialogWidget().volumeType().currentText() == QStringLiteral("LVM"));
+    dialogWidget().textTotalPESize().setVisible(dialogWidget().volumeType().currentText() == QStringLiteral("LVM"));
+    dialogWidget().raidLevel().setVisible(dialogWidget().volumeType().currentText() == QStringLiteral("RAID"));
+    dialogWidget().textRaidLevel().setVisible(dialogWidget().volumeType().currentText() == QStringLiteral("RAID"));
+    dialogWidget().chunkSize().setVisible(dialogWidget().volumeType().currentText() == QStringLiteral("RAID"));
+    dialogWidget().textChunkSize().setVisible(dialogWidget().volumeType().currentText() == QStringLiteral("RAID"));
 }
