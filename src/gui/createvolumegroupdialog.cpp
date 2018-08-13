@@ -1,6 +1,7 @@
 /*************************************************************************
  *  Copyright (C) 2016 by Chantara Tith <tith.chantara@gmail.com>        *
  *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
+ *  Copyright (C) 2018 by Caio Carvalho <caiojcarvalho@gmail.com>        *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -36,9 +37,14 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& partList, qint32& peSize, QList<Device*> devices, QList<Operation*> pendingOps)
+CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& partList,
+                                                 QString& type, qint32& raidLevel, qint32& chunkSize, qint32& peSize,
+                                                 QList<Device*> devices, QList<Operation*> pendingOps)
     : VolumeGroupDialog(parent, vgName, partList)
+    , m_type(type)
     , m_PESize(peSize)
+    , m_raidLevel(raidLevel)
+    , m_chunkSize(chunkSize)
     , m_Devices(devices)
     , m_PendingOps(pendingOps)
 {
@@ -47,9 +53,6 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgNam
     setupDialog();
     setupConstraints();
     setupConnections();
-
-    // disable volume type and PE size for now, until the features are implemented.
-    dialogWidget().volumeType().setEnabled(true);
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "createVolumeDialog");
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
@@ -137,8 +140,17 @@ void CreateVolumeGroupDialog::accept()
 
     targetPVList().append(dialogWidget().listPV().checkedItems());
 
+    QString& vgType = type();
+    vgType = dialogWidget().volumeType().currentText();
+
     qint32& pesize = peSize();
     pesize = dialogWidget().spinPESize().value();
+
+    qint32& raidlvl = raidLevel();
+    raidlvl = dialogWidget().raidLevel().currentText().toInt();
+
+    qint32& chunk = chunkSize();
+    chunk = dialogWidget().chunkSize().value();
 
     QDialog::accept();
 }
@@ -147,21 +159,27 @@ void CreateVolumeGroupDialog::updateOkButtonStatus()
 {
     VolumeGroupDialog::updateOkButtonStatus();
 
-    if (okButton->isEnabled())
+    if (okButton->isEnabled()) {
         okButton->setEnabled(!dialogWidget().listPV().checkedItems().empty());
+
+        if (dialogWidget().volumeType().currentText() == QStringLiteral("RAID")) {
+            bool ok = dialogWidget().listPV().checkedItems().count() >= 2 &&
+                    dialogWidget().vgName().text().startsWith(QStringLiteral("md"));
+
+            okButton->setEnabled(ok);
+        }
+    }
 }
 
 void CreateVolumeGroupDialog::onVGNameChanged(const QString& vgName)
 {
     for (const auto &d : m_Devices) {
-        if (dynamic_cast<LvmDevice*>(d)) {
-            if (d->name() == vgName) {
-                m_IsValidName = false;
-                break;
-            }
-            else
-                m_IsValidName = true;
+        if (d->name() == vgName) {
+            m_IsValidName = false;
+            break;
         }
+        else
+            m_IsValidName = true;
     }
     updateOkButtonStatus();
 }

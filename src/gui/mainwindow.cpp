@@ -1109,13 +1109,21 @@ void MainWindow::onCreateNewVolumeGroup()
 {
     QString vgName;
     QVector<const Partition*> pvList;
+    QString type;
+    qint32 raidLevel = 0;
     qint32 peSize = 4;
+    qint32 chunkSize = 512;
     // *NOTE*: vgName & pvList will be modified and validated by the dialog
-    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList,
+    QPointer<CreateVolumeGroupDialog> dlg = new CreateVolumeGroupDialog(this, vgName, pvList, type, raidLevel, chunkSize,
                                                                         peSize, operationStack().previewDevices(),
                                                                         operationStack().operations());
     if (dlg->exec() == QDialog::Accepted)
-        operationStack().push(new CreateVolumeGroupOperation(vgName, pvList, peSize));
+    {
+        if (type == QStringLiteral("LVM"))
+            operationStack().push(new CreateVolumeGroupOperation(vgName, pvList, Device::Type::LVM_Device, peSize));
+        else if (type == QStringLiteral("RAID"))
+            operationStack().push(new CreateVolumeGroupOperation(vgName, pvList, Device::Type::SoftwareRAID_Device, raidLevel, chunkSize));
+    }
 
     delete dlg;
 }

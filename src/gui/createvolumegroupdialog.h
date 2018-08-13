@@ -1,5 +1,6 @@
 /*************************************************************************
  *  Copyright (C) 2016 by Chantara Tith <tith.chantara@gmail.com>        *
+ *  Copyright (C) 2018 by Caio Carvalho <caiojcarvalho@gmail.com>        *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -31,7 +32,9 @@ class CreateVolumeGroupDialog : public VolumeGroupDialog
     Q_DISABLE_COPY(CreateVolumeGroupDialog)
 
 public:
-    CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& pvList, qint32& peSize, QList<Device*> devices, QList<Operation*> pendingOps = QList<Operation *>());
+    CreateVolumeGroupDialog(QWidget* parent, QString& vgName, QVector<const Partition*>& pvList, QString& type,
+                            qint32& raidLevel, qint32& chunkSize, qint32& peSize, QList<Device*> devices,
+                            QList<Operation*> pendingOps = QList<Operation *>());
 
 protected:
     void accept() override;
@@ -44,11 +47,27 @@ protected:
     void onVGNameChanged(const QString& vgname);
     void onSpinPESizeChanged(int newsize);
 
-    qint32& peSize() {
+    QString& type() const {
+        return m_type;
+    }
+
+    qint32& peSize() const {
         return m_PESize;
     }
 
+    qint32& raidLevel() const {
+        return m_raidLevel;
+    }
+
+    qint32& chunkSize() const {
+        return m_chunkSize;
+    }
+
+    QString& m_type;
+
     qint32& m_PESize;
+    qint32& m_raidLevel;
+    qint32& m_chunkSize;
 
 private:
     const QList<Device*> m_Devices; // List of all devices found on the system
