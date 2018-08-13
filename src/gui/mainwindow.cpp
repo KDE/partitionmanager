@@ -524,7 +524,7 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setVisible(lvmDevice);
 
     bool deactivatable = lvmDevice ?
-        DeactivateVolumeGroupOperation::isDeactivatable(dynamic_cast<LvmDevice*>(pmWidget().selectedDevice())) : false;
+        DeactivateVolumeGroupOperation::isDeactivatable(dynamic_cast<VolumeManagerDevice*>(pmWidget().selectedDevice())) : false;
     actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setEnabled(deactivatable);
     actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setVisible(lvmDevice);
 
