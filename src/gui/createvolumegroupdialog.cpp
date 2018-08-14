@@ -164,6 +164,7 @@ void CreateVolumeGroupDialog::updateOkButtonStatus()
 
         if (dialogWidget().volumeType().currentText() == QStringLiteral("RAID")) {
             bool ok = dialogWidget().listPV().checkedItems().count() >= 2 &&
+                    dialogWidget().vgName().text().length() > 2 &&
                     dialogWidget().vgName().text().startsWith(QStringLiteral("md"));
 
             okButton->setEnabled(ok);
