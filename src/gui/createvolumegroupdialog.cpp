@@ -23,6 +23,7 @@
 #include <core/device.h>
 #include <core/lvmdevice.h>
 #include <core/partitiontable.h>
+#include <core/softwareraid.h>
 
 #include <fs/lvm2_pv.h>
 
@@ -122,7 +123,8 @@ void CreateVolumeGroupDialog::updatePartitionList()
         for (const Device *d : qAsConst(m_Devices)) {
             if (d->type() != Device::Type::SoftwareRAID_Device && d->partitionTable() != nullptr) {
                 for (const Partition *p : qAsConst(d->partitionTable()->children())) {
-                    if ((p->fileSystem().type() == FileSystem::Type::LinuxRaidMember ||
+                    if (((p->fileSystem().type() == FileSystem::Type::LinuxRaidMember &&
+                          SoftwareRAID::getRaidArrayName(p->partitionPath()).isEmpty()) ||
                             p->fileSystem().type() == FileSystem::Type::Unformatted ||
                             p->fileSystem().type() == FileSystem::Type::Unknown) &&
                             !p->roles().has(PartitionRole::Role::Unallocated))
