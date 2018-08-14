@@ -514,22 +514,24 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("createVolumeGroup"))
             ->setEnabled(CreateVolumeGroupOperation::canCreate());
 
-    bool lvmDevice = pmWidget().selectedDevice() && pmWidget().selectedDevice()->type() == Device::Type::LVM_Device;
+    bool vgDevice = pmWidget().selectedDevice() &&
+            (pmWidget().selectedDevice()->type() == Device::Type::LVM_Device ||
+             pmWidget().selectedDevice()->type() == Device::Type::SoftwareRAID_Device);
     bool removable = false;
 
-    if (lvmDevice)
-        removable = RemoveVolumeGroupOperation::isRemovable(dynamic_cast<LvmDevice*>(pmWidget().selectedDevice()));
+    if (vgDevice)
+        removable = RemoveVolumeGroupOperation::isRemovable(dynamic_cast<VolumeManagerDevice*>(pmWidget().selectedDevice()));
 
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setEnabled(removable);
-    actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setVisible(lvmDevice);
+    actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setVisible(vgDevice);
 
-    bool deactivatable = lvmDevice ?
+    bool deactivatable = vgDevice ?
         DeactivateVolumeGroupOperation::isDeactivatable(dynamic_cast<VolumeManagerDevice*>(pmWidget().selectedDevice())) : false;
     actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setEnabled(deactivatable);
-    actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setVisible(lvmDevice);
+    actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setVisible(vgDevice);
 
-    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setEnabled(lvmDevice);
-    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setVisible(lvmDevice);
+    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setEnabled(vgDevice);
+    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setVisible(vgDevice);
 
     const Partition* part = pmWidget().selectedPartition();
 
