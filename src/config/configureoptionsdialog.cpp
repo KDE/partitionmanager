@@ -41,6 +41,7 @@
 #include <QIcon>
 
 #include <config.h>
+#include <kpmcore/core/softwareraid.h>
 
 ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationStack& ostack, const QString& name) :
     KConfigDialog(parent, name, Config::self()),
@@ -99,6 +100,9 @@ void ConfigureOptionsDialog::updateSettings()
         Config::setBackend(advancedPageWidget().backend());
         changed = true;
     }
+
+    if (advancedPageWidget().raidConfigurationFile() != SoftwareRAID::raidConfigurationFilePath())
+        SoftwareRAID::setRaidConfigurationFilePath(advancedPageWidget().raidConfigurationFile());
 
     if (changed)
         emit KConfigDialog::settingsChanged(i18n("General Settings"));

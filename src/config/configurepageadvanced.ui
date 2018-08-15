@@ -6,12 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>449</width>
+    <width>511</width>
     <height>420</height>
    </rect>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>420</height>
+   </size>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
     <widget class="QGroupBox" name="groupBox_5">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -26,7 +32,7 @@
       <item>
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>Active backend:</string>
+         <string>Acti&amp;ve backend:</string>
         </property>
         <property name="buddy">
          <cstring>m_ComboBackend</cstring>
@@ -39,7 +45,47 @@
      </layout>
     </widget>
    </item>
-   <item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Software RAID configuration</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Configuration file:</string>
+        </property>
+        <property name="buddy">
+         <cstring>raidConfigFilePath</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLineEdit" name="raidConfigFilePath">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="selectRaidFileButton">
+          <property name="text">
+           <string>Select File</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
     <widget class="QGroupBox" name="groupBox_6">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -50,11 +96,11 @@
      <property name="title">
       <string>Units</string>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>Preferred unit:</string>
+         <string>Preferred &amp;unit:</string>
         </property>
         <property name="buddy">
          <cstring>m_ComboBackend</cstring>

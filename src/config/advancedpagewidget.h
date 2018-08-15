@@ -1,6 +1,7 @@
 /*************************************************************************
  *  Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                      *
  *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
+ *  Copyright (C) 2018 by Caio Carvalho <caiojcarvalho@gmail.com>        *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -44,6 +45,11 @@ public:
 
     QString backend() const;
     void setBackend(const QString& name);
+
+    QString raidConfigurationFile() const;
+
+protected Q_SLOTS:
+    void searchForRaidConfigFile();
 
 private:
     void setupDialog();

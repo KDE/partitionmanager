@@ -1,6 +1,7 @@
 /*************************************************************************
  *  Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                      *
  *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
+ *  Copyright (C) 2018 by Caio Carvalho <caiojcarvalho@gmail.com>        *
  *                                                                       *
  *  This program is free software; you can redistribute it and/or        *
  *  modify it under the terms of the GNU General Public License as       *
@@ -22,16 +23,23 @@
 #include <util/helpers.h>
 
 #include <QComboBox>
+#include <QFileDialog>
 
 #include <KPluginMetaData>
 
 #include <config.h>
+#include <kpmcore/core/softwareraid.h>
 
 AdvancedPageWidget::AdvancedPageWidget(QWidget* parent) :
     QWidget(parent)
 {
     setupUi(this);
     setupDialog();
+
+    raidConfigFilePath->clear();
+    raidConfigFilePath->insert(SoftwareRAID::raidConfigurationFilePath());
+
+    connect(selectRaidFileButton, &QPushButton::clicked, this, &AdvancedPageWidget::searchForRaidConfigFile);
 }
 
 QString AdvancedPageWidget::backend() const
@@ -59,4 +67,29 @@ void AdvancedPageWidget::setupDialog()
         comboBackend().addItem(backend.name());
 
     setBackend(Config::backend());
+}
+
+QString AdvancedPageWidget::raidConfigurationFile() const
+{
+    return raidConfigFilePath->text();
+}
+
+void AdvancedPageWidget::searchForRaidConfigFile()
+{
+    QPointer<QFileDialog> dialog = new QFileDialog(this, QStringLiteral("Select Software RAID configuration file"),
+                                                         QStringLiteral("/"));
+
+    dialog->setFileMode(QFileDialog::FileMode::ExistingFile);
+    dialog->setNameFilter(QStringLiteral("Configuration files (*.conf)"));
+
+    auto updateConfig = [this](const QString& file){
+        if (!file.isEmpty()) {
+            raidConfigFilePath->clear();
+            raidConfigFilePath->insert(file);
+        }
+     };
+
+    connect(dialog, &QFileDialog::fileSelected, updateConfig);
+
+    dialog->exec();
 }
