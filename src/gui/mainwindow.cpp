@@ -1187,10 +1187,15 @@ void MainWindow::onShowAboutKPMcore()
 
 void MainWindow::onSettingsChanged()
 {
-    if (SoftwareRAID::raidConfigurationFilePath() != Config::raidConfigurationFilePath())
+    bool raidChanged = false, backendChanged = false;
+
+    if (SoftwareRAID::raidConfigurationFilePath() != Config::raidConfigurationFilePath()) {
+        raidChanged = true;
         loadRaidConfiguration();
+    }
 
     if (CoreBackendManager::self()->backend()->id() != Config::backend()) {
+        backendChanged = true;
         CoreBackendManager::self()->unload();
         // FIXME: if loadBackend() fails to load the configured backend and loads the default
         // one instead it also sets the default backend in the config; the config dialog will
@@ -1202,6 +1207,9 @@ void MainWindow::onSettingsChanged()
         } else
             close();
     }
+
+    if (raidChanged && !backendChanged)
+        scanDevices();
 
     enableActions();
     pmWidget().updatePartitions();
