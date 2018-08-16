@@ -40,6 +40,8 @@
 
 #include <unistd.h>
 
+#include <kpmcore/core/softwareraid.h>
+
 QIcon createFileSystemColor(FileSystem::Type type, quint32 size)
 {
     QPixmap pixmap(size, size);
@@ -74,6 +76,11 @@ bool loadBackend()
     }
 
     return true;
+}
+
+void loadRaidConfiguration()
+{
+    SoftwareRAID::setRaidConfigurationFilePath(Config::raidConfigurationFilePath());
 }
 
 Capacity::Unit preferredUnit()

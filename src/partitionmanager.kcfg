@@ -154,5 +154,8 @@
 			</choices>
 			<default>random</default>
 		</entry>
+                <entry key="raidConfigurationFilePath" type="String">
+                        <default>/etc/mdadm.conf</default>
+                </entry>
 	</group>
 </kcfg>

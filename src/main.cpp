@@ -78,6 +78,8 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     if (!loadBackend())
         return 0;
 
+    loadRaidConfiguration();
+
     MainWindow* mainWindow = new MainWindow();
     Q_UNUSED(mainWindow)
 

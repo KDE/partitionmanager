@@ -36,9 +36,6 @@ AdvancedPageWidget::AdvancedPageWidget(QWidget* parent) :
     setupUi(this);
     setupDialog();
 
-    raidConfigFilePath->clear();
-    raidConfigFilePath->insert(SoftwareRAID::raidConfigurationFilePath());
-
     connect(selectRaidFileButton, &QPushButton::clicked, this, &AdvancedPageWidget::searchForRaidConfigFile);
 }
 
@@ -67,11 +64,17 @@ void AdvancedPageWidget::setupDialog()
         comboBackend().addItem(backend.name());
 
     setBackend(Config::backend());
+    setRaidConfigurationFile(Config::raidConfigurationFilePath());
 }
 
 QString AdvancedPageWidget::raidConfigurationFile() const
 {
     return raidConfigFilePath->text();
+}
+
+void AdvancedPageWidget::setRaidConfigurationFile(const QString &file)
+{
+    raidConfigFilePath->insert(file);
 }
 
 void AdvancedPageWidget::searchForRaidConfigFile()

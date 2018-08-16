@@ -101,8 +101,11 @@ void ConfigureOptionsDialog::updateSettings()
         changed = true;
     }
 
-    if (advancedPageWidget().raidConfigurationFile() != SoftwareRAID::raidConfigurationFilePath())
+    if (advancedPageWidget().raidConfigurationFile() != Config::raidConfigurationFilePath()) {
         SoftwareRAID::setRaidConfigurationFilePath(advancedPageWidget().raidConfigurationFile());
+        Config::setRaidConfigurationFilePath(advancedPageWidget().raidConfigurationFile());
+        changed = true;
+    }
 
     if (changed)
         emit KConfigDialog::settingsChanged(i18n("General Settings"));
@@ -119,6 +122,9 @@ bool ConfigureOptionsDialog::hasChanged()
     if (advancedPageWidget().isVisible()) {
         kcItem = Config::self()->findItem(QStringLiteral("backend"));
         result = result || !kcItem->isEqual(advancedPageWidget().backend());
+
+        kcItem = Config::self()->findItem(QStringLiteral("raidConfigurationFilePath"));
+        result = result || !kcItem->isEqual(advancedPageWidget().raidConfigurationFile());
     }
 
     return result;
@@ -143,8 +149,10 @@ void ConfigureOptionsDialog::updateWidgetsDefault()
     generalPageWidget().setDefaultFileSystem(GuiHelpers::defaultFileSystem());
     generalPageWidget().radioButton->setChecked(true);
 
-    if (advancedPageWidget().isVisible())
+    if (advancedPageWidget().isVisible()) {
         advancedPageWidget().setBackend(CoreBackendManager::defaultBackendName());
+        advancedPageWidget().setRaidConfigurationFile(SoftwareRAID::getDefaultRaidConfigFile());
+    }
 
     Config::self()->useDefaults(useDefaults);
 }

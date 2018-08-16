@@ -47,6 +47,7 @@ public:
     void setBackend(const QString& name);
 
     QString raidConfigurationFile() const;
+    void setRaidConfigurationFile(const QString& file);
 
 protected Q_SLOTS:
     void searchForRaidConfigFile();
