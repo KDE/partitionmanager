@@ -89,6 +89,8 @@
 #include <KJobWidgets>
 #include "config.h"
 
+#include <kpmcore/core/softwareraid.h>
+
 /** Creates a new MainWindow instance.
     @param parent the parent widget
 */
@@ -1185,6 +1187,9 @@ void MainWindow::onShowAboutKPMcore()
 
 void MainWindow::onSettingsChanged()
 {
+    if (SoftwareRAID::raidConfigurationFilePath() != Config::raidConfigurationFilePath())
+        loadRaidConfiguration();
+
     if (CoreBackendManager::self()->backend()->id() != Config::backend()) {
         CoreBackendManager::self()->unload();
         // FIXME: if loadBackend() fails to load the configured backend and loads the default

@@ -102,7 +102,6 @@ void ConfigureOptionsDialog::updateSettings()
     }
 
     if (advancedPageWidget().raidConfigurationFile() != Config::raidConfigurationFilePath()) {
-        SoftwareRAID::setRaidConfigurationFilePath(advancedPageWidget().raidConfigurationFile());
         Config::setRaidConfigurationFilePath(advancedPageWidget().raidConfigurationFile());
         changed = true;
     }
