@@ -42,6 +42,9 @@ public:
     const QComboBox& comboBackend() const {
         return *m_ComboBackend;
     }
+    const QLineEdit& raidConfigurationLine() const {
+        return *raidConfigFilePath;
+    }
 
     QString backend() const;
     void setBackend(const QString& name);

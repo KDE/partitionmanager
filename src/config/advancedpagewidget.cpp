@@ -69,11 +69,12 @@ void AdvancedPageWidget::setupDialog()
 
 QString AdvancedPageWidget::raidConfigurationFile() const
 {
-    return raidConfigFilePath->text();
+    return raidConfigFilePath->text().trimmed();
 }
 
 void AdvancedPageWidget::setRaidConfigurationFile(const QString &file)
 {
+    raidConfigFilePath->clear();
     raidConfigFilePath->insert(file);
 }
 

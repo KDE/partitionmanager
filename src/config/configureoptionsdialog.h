@@ -44,6 +44,9 @@ protected:
     void onShredSourceActivated() {
         settingsChangedSlot();
     }
+    void onRaidConfigFilePathActivated() {
+        settingsChangedSlot();
+    }
     void onComboBackendActivated(int);
 
     GeneralPageWidget& generalPageWidget() {

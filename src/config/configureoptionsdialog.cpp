@@ -67,6 +67,7 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
     item->setIcon(QIcon::fromTheme(QStringLiteral("configure")).pixmap(IconSize(KIconLoader::Desktop)));
 
     connect(&advancedPageWidget().comboBackend(), qOverload<int>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
+    connect(&advancedPageWidget().raidConfigurationLine(), &QLineEdit::textChanged, this, &ConfigureOptionsDialog::onRaidConfigFilePathActivated);
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "configureOptionsDialogs");
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
