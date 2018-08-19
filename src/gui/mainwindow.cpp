@@ -1159,15 +1159,14 @@ void MainWindow::onRemoveVolumeGroup()
 void MainWindow::onDeactivateVolumeGroup()
 {
     Device* tmpDev = pmWidget().selectedDevice();
-    if (tmpDev->type() == Device::Type::LVM_Device) {
-        DeactivateVolumeGroupOperation* deactivate = new DeactivateVolumeGroupOperation( *(dynamic_cast<LvmDevice*>(tmpDev)) );
-        Report* tmpReport = new Report(nullptr);
-        if (deactivate->execute(*tmpReport)) {
+    if (tmpDev->type() == Device::Type::LVM_Device || tmpDev->type() == Device::Type::SoftwareRAID_Device) {
+        DeactivateVolumeGroupOperation* deactivate = new DeactivateVolumeGroupOperation( *(dynamic_cast<VolumeManagerDevice*>(tmpDev)) );
+        Report tmpReport(nullptr);
+        if (deactivate->execute(tmpReport)) {
             deactivate->preview();
             actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setEnabled(false);
             actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setEnabled(false);
         }
-        delete tmpReport;
         pmWidget().updatePartitions();
         enableActions();
     }
