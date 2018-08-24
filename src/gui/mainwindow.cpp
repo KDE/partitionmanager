@@ -532,8 +532,17 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setEnabled(deactivatable);
     actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setVisible(vgDevice);
 
-    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setEnabled(vgDevice);
-    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setVisible(vgDevice);
+    bool canResizeVG = vgDevice;
+
+    if (vgDevice && pmWidget().selectedDevice()->type() == Device::Type::SoftwareRAID_Device) {
+        SoftwareRAID *raid = static_cast<SoftwareRAID*>(pmWidget().selectedDevice());
+
+        if (raid->status() != SoftwareRAID::Status::Active)
+            canResizeVG = false;
+    }
+
+    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setEnabled(canResizeVG);
+    actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setVisible(canResizeVG);
 
     const Partition* part = pmWidget().selectedPartition();
 
