@@ -267,6 +267,15 @@ void MainWindow::setupActions()
     //actionCollection()->setDefaultShortcut(resizeVolumeGroup, QKeySequence(/*SHORTCUT KEY HERE*/));
     resizeVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")).pixmap(IconSize(KIconLoader::Toolbar)));
 
+    QAction* activateRAID = actionCollection()->addAction(QStringLiteral("activateRAID"));
+    connect(activateRAID, &QAction::triggered, this, &MainWindow::onActivateRAID);
+    activateRAID->setEnabled(false);
+    activateRAID->setVisible(false);
+    activateRAID->setText(i18nc("@action:inmenu", "Activate RAID"));
+    activateRAID->setToolTip(i18nc("@info:tooltip", "Activate selected RAID device"));
+    activateRAID->setStatusTip(i18nc("@info:status", "Activate selected RAID device"));
+    activateRAID->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")).pixmap(IconSize(KIconLoader::Toolbar)));
+
     QAction* deactivateVolumeGroup = actionCollection()->addAction(QStringLiteral("deactivateVolumeGroup"));
     connect(deactivateVolumeGroup, &QAction::triggered, this, &MainWindow::onDeactivateVolumeGroup);
     deactivateVolumeGroup->setEnabled(false);
@@ -527,6 +536,15 @@ void MainWindow::enableActions()
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setEnabled(removable);
     actionCollection()->action(QStringLiteral("removeVolumeGroup"))->setVisible(vgDevice);
 
+    bool isRaid = vgDevice &&
+            pmWidget().selectedDevice()->type() == Device::Type::SoftwareRAID_Device;
+
+    bool canActivateRAID = isRaid &&
+            static_cast< SoftwareRAID* >(pmWidget().selectedDevice())->status() == SoftwareRAID::Status::Inactive;
+
+    actionCollection()->action(QStringLiteral("activateRAID"))->setEnabled(canActivateRAID);
+    actionCollection()->action(QStringLiteral("activateRAID"))->setVisible(isRaid);
+
     bool deactivatable = vgDevice ?
         DeactivateVolumeGroupOperation::isDeactivatable(dynamic_cast<VolumeManagerDevice*>(pmWidget().selectedDevice())) : false;
     actionCollection()->action(QStringLiteral("deactivateVolumeGroup"))->setEnabled(deactivatable);
@@ -534,12 +552,8 @@ void MainWindow::enableActions()
 
     bool canResizeVG = vgDevice;
 
-    if (vgDevice && pmWidget().selectedDevice()->type() == Device::Type::SoftwareRAID_Device) {
-        SoftwareRAID *raid = static_cast<SoftwareRAID*>(pmWidget().selectedDevice());
-
-        if (raid->status() != SoftwareRAID::Status::Active)
-            canResizeVG = false;
-    }
+    if (isRaid)
+        canResizeVG = static_cast<SoftwareRAID*>(pmWidget().selectedDevice())->status() == SoftwareRAID::Status::Active;
 
     actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setEnabled(canResizeVG);
     actionCollection()->action(QStringLiteral("resizeVolumeGroup"))->setVisible(canResizeVG);
@@ -1179,6 +1193,11 @@ void MainWindow::onDeactivateVolumeGroup()
         pmWidget().updatePartitions();
         enableActions();
     }
+}
+
+void MainWindow::onActivateRAID()
+{
+
 }
 
 void MainWindow::onFileSystemSupport()

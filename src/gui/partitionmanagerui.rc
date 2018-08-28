@@ -38,6 +38,7 @@
             <Action name="importPartitionTable"/>
             <separator/>
             <Action name="resizeVolumeGroup"/>
+            <Action name="activateRAID"/>
             <Action name="deactivateVolumeGroup"/>
             <Action name="removeVolumeGroup"/>
             <separator/>

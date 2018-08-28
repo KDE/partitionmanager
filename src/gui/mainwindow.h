@@ -244,6 +244,7 @@ protected:
     void onRemoveVolumeGroup();
     void onResizeVolumeGroup();
     void onDeactivateVolumeGroup();
+    void onActivateRAID();
     void onExportPartitionTable();
     void onImportPartitionTable();
 
