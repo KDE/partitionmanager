@@ -38,6 +38,7 @@
 #include <core/smartstatus.h>
 
 #include <ops/operation.h>
+#include <ops/activateraidoperation.h>
 #include <ops/createpartitiontableoperation.h>
 #include <ops/createvolumegroupoperation.h>
 #include <ops/resizevolumegroupoperation.h>
@@ -274,7 +275,7 @@ void MainWindow::setupActions()
     activateRAID->setText(i18nc("@action:inmenu", "Activate RAID"));
     activateRAID->setToolTip(i18nc("@info:tooltip", "Activate selected RAID device"));
     activateRAID->setStatusTip(i18nc("@info:status", "Activate selected RAID device"));
-    activateRAID->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")).pixmap(IconSize(KIconLoader::Toolbar)));
+    activateRAID->setIcon(QIcon::fromTheme(QStringLiteral("answer")).pixmap(IconSize(KIconLoader::Toolbar)));
 
     QAction* deactivateVolumeGroup = actionCollection()->addAction(QStringLiteral("deactivateVolumeGroup"));
     connect(deactivateVolumeGroup, &QAction::triggered, this, &MainWindow::onDeactivateVolumeGroup);
@@ -1197,7 +1198,29 @@ void MainWindow::onDeactivateVolumeGroup()
 
 void MainWindow::onActivateRAID()
 {
+    Device* dev = pmWidget().selectedDevice();
 
+    if (dev->type() == Device::Type::SoftwareRAID_Device) {
+        ActivateRaidOperation activate(static_cast<SoftwareRAID*>(dev));
+
+        Report report(nullptr);
+
+        if (activate.execute(report))
+            activate.preview();
+
+        Device *tmp = CoreBackendManager::self()->backend()->scanDevice(dev->deviceNode());
+
+        if (tmp) {
+            PartitionTable* ptable = new PartitionTable(*tmp->partitionTable());
+
+            dev->setPartitionTable(ptable);
+        }
+
+        delete tmp;
+
+        pmWidget().updatePartitions();
+        enableActions();
+    }
 }
 
 void MainWindow::onFileSystemSupport()
