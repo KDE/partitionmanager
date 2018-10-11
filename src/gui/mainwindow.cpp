@@ -1175,8 +1175,9 @@ void MainWindow::onResizeVolumeGroup()
 void MainWindow::onRemoveVolumeGroup()
 {
     Device* tmpDev = pmWidget().selectedDevice();
-    if (tmpDev->type() == Device::Type::LVM_Device) {
-        operationStack().push(new RemoveVolumeGroupOperation(*(dynamic_cast<LvmDevice*>(tmpDev))));
+    if (tmpDev->type() == Device::Type::LVM_Device ||
+            tmpDev->type() == Device::Type::SoftwareRAID_Device) {
+        operationStack().push(new RemoveVolumeGroupOperation(*(dynamic_cast<VolumeManagerDevice*>(tmpDev))));
     }
 }
 
