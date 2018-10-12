@@ -1158,8 +1158,9 @@ void MainWindow::onCreateNewVolumeGroup()
 
 void MainWindow::onResizeVolumeGroup()
 {
-    if (pmWidget().selectedDevice()->type() == Device::Type::LVM_Device) {
-        LvmDevice* d = dynamic_cast<LvmDevice*>(pmWidget().selectedDevice());
+    if (pmWidget().selectedDevice()->type() == Device::Type::LVM_Device ||
+            pmWidget().selectedDevice()->type() == Device::Type::SoftwareRAID_Device) {
+        VolumeManagerDevice* d = dynamic_cast<VolumeManagerDevice*>(pmWidget().selectedDevice());
 
         QVector<const Partition*> pvList;
         // *NOTE*: pvList will be modified and validated by the dialog

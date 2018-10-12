@@ -22,6 +22,8 @@
 #include <core/lvmdevice.h>
 #include <core/volumemanagerdevice.h>
 #include <core/partitiontable.h>
+#include <core/softwareraid.h>
+
 #include <fs/lvm2_pv.h>
 
 #include <ops/deleteoperation.h>
@@ -32,6 +34,8 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
+
+#include <QDebug>
 
 /** Creates a new ResizeVolumeGroupDialog
     @param parent pointer to the parent widget
@@ -54,7 +58,9 @@ ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, VolumeManagerD
 
 void ResizeVolumeGroupDialog::setupDialog()
 {
-    if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
+    if (device()->type() == Device::Type::LVM_Device) {
+        dialogWidget().volumeType().setCurrentIndex(0);
+
         for (const auto &p : qAsConst(LVM::pvList::list())) {
             bool toBeDeleted = false;
 
@@ -66,11 +72,9 @@ void ResizeVolumeGroupDialog::setupDialog()
                 }
             }
 
-            if (toBeDeleted)
+            if (toBeDeleted || p.isLuks())
                 continue;
 
-            if (p.isLuks())
-                continue;
             if (p.vgName() == device()->name())
                 dialogWidget().listPV().addPartition(*p.partition(), true);
             else if (p.vgName() == QString() && !LvmDevice::s_DirtyPVs.contains(p.partition())) // TODO: Remove LVM PVs in current VG
@@ -102,17 +106,56 @@ void ResizeVolumeGroupDialog::setupDialog()
         for (const Partition *p : qAsConst(LvmDevice::s_OrphanPVs))
             if (!LvmDevice::s_DirtyPVs.contains(p))
                 dialogWidget().listPV().addPartition(*p, false);
-    }
 
-    //update used size and LV infos
-    qint32 totalLV = 0;
-    LvmDevice *lvmDevice = dynamic_cast<LvmDevice *>(device());
-    if (lvmDevice != nullptr) {
+        LvmDevice *lvmDevice = static_cast<LvmDevice*>(device());
+
         m_TotalUsedSize = lvmDevice->allocatedPE() * lvmDevice->peSize();
-        totalLV = lvmDevice->partitionTable()->children().count();
+
+        dialogWidget().totalUsedSize().setText(Capacity::formatByteSize(m_TotalUsedSize));
+    }
+    else if (device()->type() == Device::Type::SoftwareRAID_Device) {
+        dialogWidget().volumeType().setCurrentIndex(1);
+
+        for (const Device *d : qAsConst(m_Devices)) {
+            if (d != device() && d->partitionTable() != nullptr) {
+                for (const Partition *p : qAsConst(d->partitionTable()->children())) {
+                    QString arrayName = SoftwareRAID::getRaidArrayName(p->partitionPath());
+                    if (arrayName == device()->deviceNode())
+                        dialogWidget().listPV().addPartition(*p, true);
+                    else if (((p->fileSystem().type() == FileSystem::Type::LinuxRaidMember &&
+                          arrayName.isEmpty()) || p->fileSystem().type() == FileSystem::Type::Unformatted ||
+                          p->fileSystem().type() == FileSystem::Type::Unknown) && !p->roles().has(PartitionRole::Role::Unallocated))
+                        dialogWidget().listPV().addPartition(*p, false);
+                }
+            }
+        }
+
+        SoftwareRAID* raid = static_cast<SoftwareRAID*>(device());
+
+        m_TotalUsedSize = 0;
+
+        for (const Partition* p : device()->partitionTable()->children())
+            if (!p->roles().has(PartitionRole::Unallocated))
+                m_TotalUsedSize += p->used();
+
+        dialogWidget().totalUsedSize().setText(Capacity::formatByteSize(m_TotalUsedSize));
+
+        int index = dialogWidget().raidLevel().findText(QString::number(raid->raidLevel()));
+
+        if (index != -1)
+            dialogWidget().raidLevel().setCurrentIndex(index);
+
+        dialogWidget().chunkSize().setValue(raid->chunkSize());
     }
 
-    dialogWidget().totalUsedSize().setText(Capacity::formatByteSize(m_TotalUsedSize));
+    int totalLV = 0;
+
+    if (device()->partitionTable()) {
+        for (const Partition* p : device()->partitionTable()->children())
+            if (!p->roles().has(PartitionRole::Role::Unallocated))
+                totalLV++;
+    }
+
     dialogWidget().totalLV().setText(QString::number(totalLV));
 }
 
@@ -121,6 +164,11 @@ void ResizeVolumeGroupDialog::setupConstraints()
     dialogWidget().vgName().setEnabled(false);
     dialogWidget().spinPESize().setEnabled(false);
     dialogWidget().volumeType().setEnabled(false);
+
+    // set constraints for raid
+    dialogWidget().raidLevel().setEnabled(false);
+    dialogWidget().chunkSize().setEnabled(false);
+
     VolumeGroupDialog::setupConstraints();
 }
 
