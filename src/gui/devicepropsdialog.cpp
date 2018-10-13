@@ -86,6 +86,10 @@ void DevicePropsDialog::setupDialog()
         type = (device().partitionTable()->isReadOnly())
                ? xi18nc("@label device", "%1 (read only)", device().partitionTable()->typeName())
                : device().partitionTable()->typeName();
+
+        if (device().type() == Device::Type::SoftwareRAID_Device)
+            type += QStringLiteral(" [Software RAID Device]");
+
         maxPrimaries = QStringLiteral("%1/%2").arg(device().partitionTable()->numPrimaries()).arg(device().partitionTable()->maxPrimaries());
 
         dialogWidget().partTableWidget().setReadOnly(true);
@@ -129,9 +133,7 @@ void DevicePropsDialog::setupDialog()
     } else {
         if (device().type() == Device::Type::LVM_Device)
             dialogWidget().type().setText(xi18nc("@label device", "LVM Volume Group"));
-        else if (device().type() == Device::Type::SoftwareRAID_Device)
-            dialogWidget().type().setText(xi18nc("@label device", "Software RAID Device"));
-        else
+        else if (device().type() != Device::Type::SoftwareRAID_Device)
             dialogWidget().type().setText(xi18nc("@label device", "Volume Manager Device"));
         //TODO: add Volume Manger Device info
         dialogWidget().smartStatusText().setVisible(false);
