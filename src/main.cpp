@@ -38,6 +38,7 @@
 int Q_DECL_IMPORT main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("partitionmanager")));
 
     KLocalizedString::setApplicationDomain("partitionmanager");
     KAboutData aboutData (
