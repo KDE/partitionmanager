@@ -96,10 +96,10 @@ void ResizeDialog::accept()
                 QString errorMessage;
                 QString passphrase;
 
-                while(!validPassphrase) {
+                while  (!validPassphrase) {
                     KPasswordDialog dlg( this );
                     dlg.setPrompt(i18nc("%2 is either empty or says Invalid passphrase.", "%2Enter passphrase for %1:", partition().deviceNode(), errorMessage));
-                    if( !dlg.exec() ) {
+                    if (!dlg.exec()) {
                         reject();
                         return;
                     }
