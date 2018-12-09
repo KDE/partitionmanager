@@ -126,7 +126,7 @@ void VolumeGroupDialog::updateOkButtonStatus()
 void VolumeGroupDialog::updateSectorInfos()
 {
     qint32 totalSectors = 0;
-    // we can't use LvmDevice mothod here because pv that is not in any VG will return 0
+    // we can't use LvmDevice method here because pv that is not in any VG will return 0
     m_ExtentSize = dialogWidget().spinPESize().value() * Capacity::unitFactor(Capacity::Unit::Byte, Capacity::Unit::MiB);
     if (m_ExtentSize > 0) {
         totalSectors = m_TotalSize / m_ExtentSize;
