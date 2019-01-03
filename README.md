@@ -5,7 +5,7 @@ KDE Partition Manager
 
 KDE Partition Manager is a potentially dangerous program for your data. It has
 been tested carefully and there are currently no known bugs that could lead to
-data loss, but nevertheless there is always a chance for an error to ocurr and
+data loss, but nevertheless there is always a chance for an error to ocur and
 you might lose your data.
 
 ### BACK UP YOUR DATA BEFORE USING THIS SOFTWARE!
@@ -24,12 +24,13 @@ of supported file systems:
  * LUKS encryption support
  * and more....
 
-It is a KF5 application, so you will need KDE frameworks libraries to run it on
-your computer. It also makes use of external programs to get its job done, so
+It is a KF5 application, so you will need
+[KDE frameworks](https://www.kde.org/products/frameworks/) libraries to run it
+on your computer. It also makes use of external programs to get its job done, so
 you might have to install additional software (preferably packages from your
 distribution) to make use of all features and get full support for all file
 systems.
 
-For quick install instructions see INSTALL.
+For quick install instructions see [INSTALL](INSTALL).
 
-For a list of changes since the previous release see CHANGES.
+For a list of changes since the previous release see [CHANGES](CHANGES).
