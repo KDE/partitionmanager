@@ -1,35 +1,87 @@
-KDE Partition Manager
-=====================
+# KDE Partition Manager
 
-### WARNING
+<img src="https://invent.kde.org/kde/partitionmanager/raw/master/icons/sc-apps-partitionmanager.svg" align="right"
+     title="KDE Partition Manager logo" width="96" height="96">
 
-KDE Partition Manager is a potentially dangerous program for your data. It has
-been tested carefully and there are currently no known bugs that could lead to
-data loss, but nevertheless there is always a chance for an error to ocurr and
-you might lose your data.
+KDE Partition Manager is an application to help you manage the disk devices,
+partitions and file systems on your computer. It allows you to easily create,
+copy, move, delete, resize without losing data, backup and restore partitions.
 
-### BACK UP YOUR DATA BEFORE USING THIS SOFTWARE!
+A large number of file systems are also supported:
+- ext2/3/4, Btrfs, Linux swap
+- Reiserfs
+- F2FS
+- NTFS
+- FAT
+- exFAT
+- LUKS encryption support
+- and more....
 
-This software allows you to manage your disks, partitions and file systems:
-Create, resize, delete, copy, backup and restore partitions with a large number
-of supported file systems:
- * ext2/3/4
- * Btrfs
- * Linux swap
- * Reiserfs
- * F2FS
- * NTFS
- * FAT
- * exFAT
- * LUKS encryption support
- * and more....
+:zap: **Back up your data before using this software**. KDE Partition Manager is
+a potentially dangerous program for your data. It has been tested carefully and
+there are currently no known bugs that could lead to data loss, but nevertheless
+there is always a chance for an error to ocur and you might lose your data.
 
-It is a KF5 application, so you will need KDE frameworks libraries to run it on
-your computer. It also makes use of external programs to get its job done, so
+<img src="https://docs.kde.org/trunk5/en/extragear-sysadmin/partitionmanager/resize_howto_4.png" align="center"
+     title="KDE Partition Manager" width="800">
+
+## Installation
+
+KDE Partition Manager is a KF5 application, so you will need the
+[KDE frameworks](https://www.kde.org/products/frameworks/) libraries to run it
+on your computer. Most modern OSs will install them as dependencies
+for you when you use their default package manager as the installation method.
+
+It also makes use of external programs to get its job done, so
 you might have to install additional software (preferably packages from your
 distribution) to make use of all features and get full support for all file
 systems.
 
-For quick install instructions see INSTALL.
+The methods listed below for each major OS are based on executing the
+installation commands on a terminal window. Alternatively, you can use
+your OS' package management app. 
 
-For a list of changes since the previous release see CHANGES.
+### Ubuntu
+
+```
+sudo apt install partitionmanager
+```
+
+### Debian
+
+As the `root` user:
+
+```
+apt install partitionmanager
+```
+
+### CentOS, Fedora, RHEL
+
+```
+sudo yum install kde-partitionmanager
+```
+
+### OpenSUSE
+```
+sudo zypper install partitionmanager
+```
+
+### ArchLinux
+
+1. Enable the community repository on `/etc/pacman.conf`:
+    ```
+    [community]
+    Include = /etc/pacman.d/mirrorlist
+    ```
+1. Install the `partitionmanager` xz package:
+    ```
+    # pacman -Sy partitionmanager
+    ```
+
+### From source
+
+See [INSTALL](INSTALL).
+
+## Changelog
+
+For a list of changes since the previous release see [CHANGES](CHANGES).
