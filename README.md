@@ -20,7 +20,7 @@ A large number of file systems are also supported:
 :zap: **Back up your data before using this software**. KDE Partition Manager is
 a potentially dangerous program for your data. It has been tested carefully and
 there are currently no known bugs that could lead to data loss, but nevertheless
-there is always a chance for an error to ocur and you might lose your data.
+there is always a chance for an error to occur and you might lose your data.
 
 <img src="https://docs.kde.org/trunk5/en/extragear-sysadmin/partitionmanager/resize_howto_4.png" align="center"
      title="KDE Partition Manager" width="800">
