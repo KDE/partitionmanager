@@ -5,7 +5,7 @@
   <project_license>GPL-3.0+</project_license>
   <name>KDE Partition Manager</name>
   <name xml:lang="ar">مدير كدي للأقسام</name>
-  <name xml:lang="ast">Xestor KDE de particiones</name>
+  <name xml:lang="ast">Xestor de particiones de KDE</name>
   <name xml:lang="bs">KDE‑ov menadžer particija</name>
   <name xml:lang="ca">Gestor de particions del KDE</name>
   <name xml:lang="ca-valencia">Gestor de particions del KDE</name>
@@ -84,7 +84,7 @@
   <description>
     <p>KDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.</p>
     <p xml:lang="ar">«مدير كدي للأقسام» هو أداة تساعدك على إدارة أجهزة الأقراص، والأقسام وأنظمة الملفّات في حاسوبك. ويتيح لك الإنشاء، والنّسخ، والنّقل، والحذف، والتّحجيم دون فقدات البيانات، والنّسخ الاحتياطيّ واسترجاع الأقسام بسهولة.</p>
-    <p xml:lang="ast">El xestor KDE de particiones ye una utilidá p'ayudate a xestionar los discos, particiones y sistemes de ficheros nel to ordenador. Permítete crear, copiar, mover, desaniciar, redimensionar ensin perder nada, respaldar y restaurar particiones de mou cenciellu.</p>
+    <p xml:lang="ast">El xestor de particiones de KDE ye una utilidá p'ayudate a xestionar los preseos d'almacenamientu, particiones y sistemes de ficheros del ordenador. Permítete crear, copiar, mover, desaniciar, redimensionar ensin perder datos, facer copies de seguranza y restaurar particiones fácilmente</p>
     <p xml:lang="ca">El gestor de particions del KDE és un programa d'utilitats que us ajuda a gestionar els dispositius de disc, les particions i els sistemes de fitxers de l'ordinador. Us permet crear, moure, eliminar, redimensionar sense perdre dades, fer còpies de seguretat i restaurar particions fàcilment.</p>
     <p xml:lang="ca-valencia">El gestor de particions del KDE és un programa d'utilitats que vos ajuda a gestionar els dispositius de disc, les particions i els sistemes de fitxers de l'ordinador. Vos permet crear, moure, eliminar, redimensionar sense perdre dades, fer còpies de seguretat i restaurar particions fàcilment.</p>
     <p xml:lang="da">KDE Partition Manager er et værktøj til at hjælpe dig med at håndtere dine diskenheder og filsystemerne på din computer. Den lader dig nemt oprette, kopiere, flytte, slette, ændre størrelse uden at miste data, tage backup og gendanne partitioner.</p>
@@ -119,7 +119,7 @@
     <p xml:lang="zh-TW">KDE 磁碟分割區管理員是一個可以協助您管理您電腦上的磁碟裝置、分割區以及檔案系統的工具。它讓您可以很容易地建立、複製、移動、刪除、不遺失資料的調整大小、備份與恢復分割區。</p>
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
-    <p xml:lang="ast">Carauterístiques</p>
+    <p xml:lang="ast">Carauterístiques:</p>
     <p xml:lang="bs">Svojstva:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
@@ -159,7 +159,7 @@
     <ul>
       <li>Supports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and more</li>
       <li xml:lang="ar">يدعم عددًا كبيرًا من أنظمة الملفّات، منها ext2/3/4، وbtrfs، وreiserfs، وNTFS، وFAT16/32، وJFS، وXFS وغيرها</li>
-      <li xml:lang="ast">Sofita un númberu grande de sistemes de ficheros incluyendo ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS y más</li>
+      <li xml:lang="ast">Sofita un númberu grande de sistemes de ficheros, incluyendo ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS y más</li>
       <li xml:lang="ca">Accepta un gran nombre de sistemes de fitxers, incloent-hi ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i més</li>
       <li xml:lang="ca-valencia">Accepta un gran nombre de sistemes de fitxers, incloent-hi ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i més</li>
       <li xml:lang="da">Understøtter et større antal filsystemer, derunder ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS og andre</li>
@@ -194,7 +194,7 @@
       <li xml:lang="zh-TW">支援大量的檔案系統，包含了 ext2/3/4、btrfs、reiserfs、NTFS、FAT16/32、JFS、XFS 以及更多</li>
       <li>Makes use of already available external programs to get its job done</li>
       <li xml:lang="ar">يستخدم البرامج الخارجيّة المتوفّرة لإنهاء عمله</li>
-      <li xml:lang="ast">Fai usu de programes esternos yá disponibles pa facer el so trabayu</li>
+      <li xml:lang="ast">Fai usu de programes esternos que yá tean disponibles pa facer el trabayu</li>
       <li xml:lang="ca">Fa ús de programes externs ja disponibles per fer la seva feina</li>
       <li xml:lang="ca-valencia">Fa ús de programes externs ja disponibles per fer la seua faena</li>
       <li xml:lang="da">Gør brug af allerede tilgængelige eksterne programmer til at udføre arbejdet</li>

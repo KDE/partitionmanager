@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>649</width>
-    <height>483</height>
+    <width>750</width>
+    <height>550</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -51,7 +51,7 @@
      </item>
     </layout>
    </item>
-   <item row="2" column="0">
+   <item row="3" column="0">
     <widget class="QLabel" name="m_LabelTextSmartModelName">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -67,7 +67,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1" colspan="2">
+   <item row="3" column="1" colspan="2">
     <widget class="QLabel" name="m_LabelSmartModelName">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -80,7 +80,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="4" column="0">
     <widget class="QLabel" name="m_LabelTextSmartSerialNumber">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -96,7 +96,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1" colspan="2">
+   <item row="4" column="1" colspan="2">
     <widget class="QLabel" name="m_LabelSmartSerialNumber">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -109,7 +109,7 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0">
+   <item row="5" column="0">
     <widget class="QLabel" name="m_LabelTextSmartFirmware">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -125,7 +125,7 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="1" colspan="2">
+   <item row="5" column="1" colspan="2">
     <widget class="QLabel" name="m_LabelSmartFirmware">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -138,7 +138,7 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
+   <item row="3" column="3">
     <widget class="QLabel" name="m_LabelTextSmartTemperature">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -154,7 +154,7 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="1" colspan="2">
+   <item row="3" column="4" colspan="2">
     <widget class="QLabel" name="m_LabelSmartTemperature">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -167,7 +167,7 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="0">
+   <item row="4" column="3">
     <widget class="QLabel" name="m_LabelTextSmartBadSectors">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -183,7 +183,7 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="1" colspan="2">
+   <item row="4" column="4" colspan="2">
     <widget class="QLabel" name="m_LabelSmartBadSectors">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -196,7 +196,7 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="0">
+   <item row="5" column="3">
     <widget class="QLabel" name="m_LabelTextSmartPoweredOn">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -212,7 +212,7 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="1" colspan="2">
+   <item row="5" column="4" colspan="2">
     <widget class="QLabel" name="m_LabelSmartPoweredOn">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -225,7 +225,7 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="0">
+   <item row="1" column="0">
     <widget class="QLabel" name="m_LabelTextSmartPowerCycles">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -241,7 +241,7 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="1" colspan="2">
+   <item row="1" column="1" colspan="2">
     <widget class="QLabel" name="m_LabelSmartPowerCycles">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -270,7 +270,7 @@
      </property>
     </spacer>
    </item>
-   <item row="16" column="0" colspan="3">
+   <item row="16" column="0" colspan="6">
     <widget class="QTreeWidget" name="m_TreeSmartAttributes">
      <property name="alternatingRowColors">
       <bool>true</bool>
@@ -352,28 +352,21 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="0" colspan="3">
+   <item row="2" column="0" colspan="6">
     <widget class="Line" name="line">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="5" column="0" colspan="3">
+   <item row="10" column="0" colspan="6">
     <widget class="Line" name="line_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="10" column="0" colspan="3">
-    <widget class="Line" name="line_3">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="13" column="0">
+   <item row="0" column="3">
     <widget class="QLabel" name="m_LabelTextSmartOverallAssessment">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -389,7 +382,7 @@
      </property>
     </widget>
    </item>
-   <item row="13" column="1" colspan="2">
+   <item row="0" column="4" colspan="2">
     <widget class="QLabel" name="m_LabelSmartOverallAssessment">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -402,7 +395,7 @@
      </property>
     </widget>
    </item>
-   <item row="12" column="0">
+   <item row="1" column="3">
     <widget class="QLabel" name="m_LabelTextSmartSelfTests">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -418,7 +411,7 @@
      </property>
     </widget>
    </item>
-   <item row="12" column="1" colspan="2">
+   <item row="1" column="4" colspan="2">
     <widget class="QLabel" name="m_LabelSmartSelfTests">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
