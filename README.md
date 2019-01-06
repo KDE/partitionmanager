@@ -85,7 +85,7 @@ sudo emerge partitionmanager
 
 ### From source
 
-See [INSTALL](INSTALL).
+See [INSTALL](INSTALL.md).
 
 ## Changelog
 
