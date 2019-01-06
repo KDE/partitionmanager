@@ -78,6 +78,11 @@ sudo zypper install partitionmanager
     # pacman -Sy partitionmanager
     ```
 
+### Gentoo
+```
+sudo emerge partitionmanager
+```
+
 ### From source
 
 See [INSTALL](INSTALL).
