@@ -91,6 +91,7 @@
 					<value>Fat12</value>
                                         <value>LinuxRaidMember</value>
                                         <value>BitLocker</value>
+                                        <value>Apfs</value>
 				</values>
 			</parameter>
 			<default param="Unknown">220,205,175</default>
@@ -125,6 +126,7 @@
 			<default param="Fat12">204,179,255</default>
 			<default param="LinuxRaidMember">255,100,100</default>
                         <default param="BitLocker">110,20,50</default>
+                        <default param="Apfs">255,155,174</default>
 		</entry>
 		<entry key="showMenuBar" type="Bool">
 			<label context="@label">Show the application's menu bar</label>
