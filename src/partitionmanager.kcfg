@@ -138,18 +138,18 @@
 		<entry key="defaultFileSystem" type="Int">
 			<default>static_cast&lt;int&gt;(FileSystem::Type::Ext4)</default>
 		</entry>
-		<entry key="preferredUnit" type="Int">
+		<entry key="preferredUnit" type="Enum">
 			<label context="@label">Preferred unit:</label>
 			<choices>
-				<choice name="Byte">Capacity::Byte</choice>
-				<choice name="KiB">Capacity::KiB</choice>
-				<choice name="MiB">Capacity::MiB</choice>
-				<choice name="GiB">Capacity::GiB</choice>
-				<choice name="TiB">Capacity::TiB</choice>
-				<choice name="PiB">Capacity::PiB</choice>
-				<choice name="EiB">Capacity::EiB</choice>
+				<choice name="Byte"/>
+				<choice name="KiB"/>
+				<choice name="MiB"/>
+				<choice name="GiB"/>
+				<choice name="TiB"/>
+				<choice name="PiB"/>
+				<choice name="EiB"/>
 			</choices>
-			<default>Capacity::MiB</default>
+			<default>MiB</default>
 		</entry>
 		<entry key="shredSource" type="Enum">
 			<choices>
