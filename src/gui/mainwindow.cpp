@@ -1064,7 +1064,7 @@ void MainWindow::onImportPartitionTable()
             if (fs->supportSetLabel() != FileSystem::cmdSupportNone && !volumeLabel.isEmpty())
                 fs->setLabel(volumeLabel);
 
-            Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, QString(), PartitionTable::FlagNone, QString(), false, PartitionTable::FlagNone, Partition::State::New);
+            Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, QString(), PartitionTable::Flag::None, QString(), false, PartitionTable::Flag::None, Partition::State::New);
 
             operationStack().push(new NewOperation(device, p));
         } else
