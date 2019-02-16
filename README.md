@@ -74,8 +74,8 @@ sudo zypper install partitionmanager
     Include = /etc/pacman.d/mirrorlist
     ```
 1. Install the `partitionmanager` xz package:
-    ```
-    # pacman -Sy partitionmanager
+    ```bash
+    pacman -Sy partitionmanager
     ```
 
 ### Gentoo
