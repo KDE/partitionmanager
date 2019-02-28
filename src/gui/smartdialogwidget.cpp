@@ -34,7 +34,7 @@ class SmartAttrDelegate : public QStyledItemDelegate
 public:
     SmartAttrDelegate() : QStyledItemDelegate() {}
 
-    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 };
 
 void SmartAttrDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
