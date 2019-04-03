@@ -70,8 +70,8 @@ protected:
 
     void enableActions();
 
-    void closeEvent(QCloseEvent*);
-    void changeEvent(QEvent* event);
+    void closeEvent(QCloseEvent*) override;
+    void changeEvent(QEvent* event) override;
 
     void setSavedSelectedDeviceNode(const QString& s) {
         m_SavedSelectedDeviceNode = s;

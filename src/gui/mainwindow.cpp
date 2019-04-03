@@ -1038,7 +1038,7 @@ void MainWindow::onImportPartitionTable()
             qint32 num = rePartition.captured(1).toInt();
             qint64 firstSector = rePartition.captured(2).toLongLong();
             qint64 lastSector = rePartition.captured(3).toLongLong();
-            QLatin1String fsName = QLatin1String(rePartition.captured(4).toLatin1());
+            QString fsName = rePartition.captured(4);
             QString roleNames = rePartition.captured(5);
             QString volumeLabel = rePartition.captured(6).replace(QStringLiteral("\""), QString());
             QStringList flags = rePartition.captured(7).replace(QStringLiteral("\""), QString()).split(QStringLiteral(","));
@@ -1092,7 +1092,7 @@ void MainWindow::onImportPartitionTable()
             if (fs->supportSetLabel() != FileSystem::cmdSupportNone && !volumeLabel.isEmpty())
                 fs->setLabel(volumeLabel);
 
-            Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, QString(), PartitionTable::FlagNone, QString(), false, PartitionTable::FlagNone, Partition::State::New);
+            Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, QString(), PartitionTable::flagsFromList(flags), QString(), false, PartitionTable::flagsFromList(flags), Partition::State::New);
 
             operationStack().push(new NewOperation(device, p));
         } else

@@ -90,6 +90,8 @@
 					<value>Luks2</value>
 					<value>Fat12</value>
                                         <value>LinuxRaidMember</value>
+                                        <value>BitLocker</value>
+                                        <value>Apfs</value>
 				</values>
 			</parameter>
 			<default param="Unknown">220,205,175</default>
@@ -123,6 +125,8 @@
 			<default param="Luks2">223,39,104</default>
 			<default param="Fat12">204,179,255</default>
 			<default param="LinuxRaidMember">255,100,100</default>
+                        <default param="BitLocker">110,20,50</default>
+                        <default param="Apfs">255,155,174</default>
 		</entry>
 		<entry key="showMenuBar" type="Bool">
 			<label context="@label">Show the application's menu bar</label>
@@ -134,18 +138,18 @@
 		<entry key="defaultFileSystem" type="Int">
 			<default>static_cast&lt;int&gt;(FileSystem::Type::Ext4)</default>
 		</entry>
-		<entry key="preferredUnit" type="Int">
+		<entry key="preferredUnit" type="Enum">
 			<label context="@label">Preferred unit:</label>
 			<choices>
-				<choice name="Byte">Capacity::Byte</choice>
-				<choice name="KiB">Capacity::KiB</choice>
-				<choice name="MiB">Capacity::MiB</choice>
-				<choice name="GiB">Capacity::GiB</choice>
-				<choice name="TiB">Capacity::TiB</choice>
-				<choice name="PiB">Capacity::PiB</choice>
-				<choice name="EiB">Capacity::EiB</choice>
+				<choice name="Byte"/>
+				<choice name="KiB"/>
+				<choice name="MiB"/>
+				<choice name="GiB"/>
+				<choice name="TiB"/>
+				<choice name="PiB"/>
+				<choice name="EiB"/>
 			</choices>
-			<default>Capacity::MiB</default>
+			<default>MiB</default>
 		</entry>
 		<entry key="shredSource" type="Enum">
 			<choices>

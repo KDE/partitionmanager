@@ -43,7 +43,7 @@ your OS' package management app.
 
 ### Ubuntu
 
-```
+```bash
 sudo apt install partitionmanager
 ```
 
@@ -51,36 +51,41 @@ sudo apt install partitionmanager
 
 As the `root` user:
 
-```
+```bash
 apt install partitionmanager
 ```
 
 ### CentOS, Fedora, RHEL
 
-```
+```bash
 sudo yum install kde-partitionmanager
 ```
 
 ### OpenSUSE
-```
+```bash
 sudo zypper install partitionmanager
 ```
 
 ### ArchLinux
 
 1. Enable the community repository on `/etc/pacman.conf`:
-    ```
+    ```ini
     [community]
     Include = /etc/pacman.d/mirrorlist
     ```
 1. Install the `partitionmanager` xz package:
+    ```bash
+    pacman -Sy partitionmanager
     ```
-    # pacman -Sy partitionmanager
-    ```
+
+### Gentoo
+```bash
+sudo emerge partitionmanager
+```
 
 ### From source
 
-See [INSTALL](INSTALL).
+See [INSTALL](INSTALL.md).
 
 ## Changelog
 
