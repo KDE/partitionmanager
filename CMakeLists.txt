@@ -65,8 +65,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     IconThemes
     JobWidgets
     KIO
-    XmlGui
     WidgetsAddons
+    XmlGui
   OPTIONAL_COMPONENTS
     DocTools
 )
