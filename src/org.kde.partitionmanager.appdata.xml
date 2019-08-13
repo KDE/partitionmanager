@@ -16,6 +16,7 @@
   <name xml:lang="en-GB">KDE Partition Manager</name>
   <name xml:lang="es">Gestor de particiones de KDE</name>
   <name xml:lang="et">KDE partitsioonide haldur</name>
+  <name xml:lang="eu">KDE Partizio Kudeatzailea</name>
   <name xml:lang="fi">KDE:n osionhallinta</name>
   <name xml:lang="fr">Gestionnaire de partitions de KDE</name>
   <name xml:lang="gl">Xestor de particións de KDE</name>
@@ -56,6 +57,7 @@
   <summary xml:lang="en-GB">Partition Editor</summary>
   <summary xml:lang="es">Editor de particiones</summary>
   <summary xml:lang="et">Partitsiooniredaktor</summary>
+  <summary xml:lang="eu">Partizio editorea</summary>
   <summary xml:lang="fi">Osionhallinta</summary>
   <summary xml:lang="fr">Éditeur de partitions</summary>
   <summary xml:lang="gl">Editor de particións</summary>
@@ -95,6 +97,7 @@
     <p xml:lang="en-GB">KDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.</p>
     <p xml:lang="es">El gestor de particiones de KDE es una utilidad que le ayuda a gestionar los dispositivos de disco duro, las particiones y el sistema de archivos de su equipo. Le permite crear, copiar, mover, borrar, cambiar el tamaño sin perder datos, hacer copia de seguridad y restaurar particiones.</p>
     <p xml:lang="et">KDE partitsioonide haldur on tööriist, mis aitab hallata kettaseadmeid, partitsioone ja failisüsteeme sinu arvutis. See võimaldab vähese vaevaga partitsioone luua, kopeerida, liigutada, kustutada, muuta suurust andmeid kaotamata, varundada ja taastada.</p>
+    <p xml:lang="eu">KDE Partizio Kudeatzailea zure ordenagailuko disko-gailuak, partizioak eta fitxategi-sistemak kudeatzen laguntzeko baliagarritasun programa bat da. Era errazean partizioak sortu, kopiatu, mugitu, ezabatu, daturik galdu gabe neurria aldatu, babes-kopia egin eta lehengoratzen uzten dizu.</p>
     <p xml:lang="fi">KDE:n osionhallinta on apuohjelma, joka auttaa hallitsemaan tietokoneen levyjä, osioita ja tiedostojärjestelmiä. Sillä voi luoda, kopioida, siirtää, poistaa, muuttaa kokoa menettämättä tietoja, varmuuskopioida ja palauttaa osioita.</p>
     <p xml:lang="fr">Le gestionnaire de partitions de KDE est un utilitaire qui vous aide à gérer les disques, partitions et systèmes de fichiers de votre ordinateur. Il vous permet de créer, copier, déplacer, supprimer, redimensionner sans perte, sauvegarder et rétablir des partitions facilement.</p>
     <p xml:lang="gl">O xestor de particións de KDE é unha ferramenta que lle permite xestionar os seus dispositivos de almacenamento, as particións e os sistemas de ficheiros do seu computador. A ferramenta permite crear, copiar, mover, eliminar, cambiar de tamaño sen perder datos, facer copias de seguranza e restaurar particións, todo de maneira sinxela.</p>
@@ -133,6 +136,7 @@
     <p xml:lang="en-GB">Features:</p>
     <p xml:lang="es">Funciones:</p>
     <p xml:lang="et">Omadused:</p>
+    <p xml:lang="eu">Eginbideak:</p>
     <p xml:lang="fi">Ominaisuudet:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
@@ -172,6 +176,7 @@
       <li xml:lang="en-GB">Supports a large number of file systems, including Ext2/3/4, Btrfs, ReiserFS, NTFS, FAT16/32, JFS, XFS and more</li>
       <li xml:lang="es">Permite un gran número de sistemas de archivos, como ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS y XFS, entre otros</li>
       <li xml:lang="et">Paljude failisüsteemide toetus, sealhulgas ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ja veel paljud</li>
+      <li xml:lang="eu">Fitxategi-sistema kopuru handirako euskarria dauka, tartean ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS eta gehiago</li>
       <li xml:lang="fi">Tukee monia tiedostojärjestelmiä kuten ext2/3/4, Btrfs, ReiserFS, NTFS, FAT16/32, JFS, XFS ja muita</li>
       <li xml:lang="fr">Prend en charge un grand nombre de systèmes de fichiers, notamment ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS et d'autres</li>
       <li xml:lang="gl">Compatíbel cun gran número de sistemas de ficheiros, entre eles ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS, e máis.</li>
@@ -208,6 +213,7 @@
       <li xml:lang="en-GB">Makes use of already available external programs to get its job done</li>
       <li xml:lang="es">Utiliza varios programas externos que deben estar disponibles para realizar el trabajo</li>
       <li xml:lang="et">Saadaolevate väliste programmide kasutamine vajalike tegevuste sooritamiseks</li>
+      <li xml:lang="eu">Bere lana burutzeko dagoeneko erabilgarri dauden kanpoko programak erabiltzen ditu</li>
       <li xml:lang="fi">Hoitaa hommansa hyödyntäen valmiita ulkoisia ohjelmia</li>
       <li xml:lang="fr">Utilise des programmes externes existants pour faire le travail</li>
       <li xml:lang="gl">Usa programas externos para realizar as tarefas.</li>
