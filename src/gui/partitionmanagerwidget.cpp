@@ -279,7 +279,7 @@ void PartitionManagerWidget::updatePartitions()
         }
     }
 
-    treePartitions().setFirstItemColumnSpanned(deviceItem, true);
+    deviceItem->setFirstColumnSpanned(true);
     deviceItem->setExpanded(true);
     deviceItem->setFlags(Qt::ItemIsEnabled);
 
