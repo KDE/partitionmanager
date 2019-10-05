@@ -1,21 +1,13 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
 
 <gui name="KDE Partition Manager" version="11">
-    <ToolBar name="editToolBar">
-        <text context="@title:menu turn on and off edit toolbar">Edit Toolbar</text>
+    <ToolBar name="partitionToolBar">
+        <text context="@title:menu">Partition Manager Toolbar</text>
         <Action name="applyAllOperations"/>
         <Action name="undoOperation"/>
-    </ToolBar>
-
-    <ToolBar name="partitionToolBar">
-        <text context="@title:menu">Partition Toolbar</text>
         <Action name="newPartition"/>
         <Action name="resizePartition"/>
         <Action name="deletePartition"/>
-    </ToolBar>
-
-    <ToolBar name="deviceToolBar">
-        <text context="@title:menu">Device Toolbar</text>
         <Action name="createNewPartitionTable"/>
     </ToolBar>
 
