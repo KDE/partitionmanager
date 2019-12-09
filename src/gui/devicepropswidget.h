@@ -29,7 +29,7 @@ class PartTableWidget;
 class DevicePropsWidget : public QWidget, public Ui::DevicePropsWidgetBase
 {
 public:
-    DevicePropsWidget(QWidget* parent);
+    explicit DevicePropsWidget(QWidget* parent);
 
 public:
     PartTableWidget& partTableWidget() {

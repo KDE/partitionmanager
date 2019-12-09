@@ -29,7 +29,7 @@
 class SizeDetailsWidget : public QWidget, public Ui::SizeDetailsWidgetBase
 {
 public:
-    SizeDetailsWidget(QWidget* parent);
+    explicit SizeDetailsWidget(QWidget* parent);
 
 public:
     QDoubleSpinBox& spinFirstSector() {

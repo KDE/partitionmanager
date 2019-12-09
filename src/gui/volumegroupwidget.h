@@ -26,7 +26,7 @@
 class  VolumeGroupWidget : public QWidget, public Ui::VolumeGroupWidgetBase
 {
 public:
-    VolumeGroupWidget(QWidget* parent) :
+    explicit VolumeGroupWidget(QWidget* parent) :
         QWidget(parent), Ui::VolumeGroupWidgetBase()
     {
         setupUi(this);

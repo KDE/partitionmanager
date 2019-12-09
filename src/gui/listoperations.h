@@ -38,7 +38,7 @@ class ListOperations : public QWidget, public Ui::ListOperationsBase
     Q_DISABLE_COPY(ListOperations)
 
 public:
-    ListOperations(QWidget* parent = nullptr);
+    explicit ListOperations(QWidget* parent = nullptr);
 
 public:
     void setActionCollection(KActionCollection* coll) {

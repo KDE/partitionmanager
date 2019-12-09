@@ -32,7 +32,7 @@ class QComboBox;
 class AdvancedPageWidget : public QWidget, public Ui::ConfigurePageAdvanced
 {
 public:
-    AdvancedPageWidget(QWidget* parent);
+    explicit AdvancedPageWidget(QWidget* parent);
 
 public:
     QComboBox& comboBackend() {

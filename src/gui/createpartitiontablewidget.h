@@ -28,7 +28,7 @@
 class CreatePartitionTableWidget : public QWidget, public Ui::CreatePartitionTableWidgetBase
 {
 public:
-    CreatePartitionTableWidget(QWidget* parent);
+    explicit CreatePartitionTableWidget(QWidget* parent);
 
 public:
     QRadioButton& radioMSDOS() {

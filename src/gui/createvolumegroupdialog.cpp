@@ -71,7 +71,7 @@ void CreateVolumeGroupDialog::setupDialog()
         if (toBeDeleted)
             continue;
 
-        if (!p.isLuks() && p.vgName() == QString() && !LvmDevice::s_DirtyPVs.contains(p.partition()))
+        if (!p.isLuks() && p.vgName().isEmpty() && !LvmDevice::s_DirtyPVs.contains(p.partition()))
             dialogWidget().listPV().addPartition(*p.partition(), false);
     }
 

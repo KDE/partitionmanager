@@ -26,7 +26,7 @@
 class FileSystemColorsPageWidget : public QWidget, public Ui::ConfigurePageFileSystemColors
 {
 public:
-    FileSystemColorsPageWidget(QWidget* parent);
+    explicit FileSystemColorsPageWidget(QWidget* parent);
 };
 
 #endif

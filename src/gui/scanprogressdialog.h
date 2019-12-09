@@ -23,7 +23,7 @@
 class ScanProgressDialog : public QProgressDialog
 {
 public:
-    ScanProgressDialog(QWidget* parent);
+    explicit ScanProgressDialog(QWidget* parent);
 
     void setProgress(int p) {
         setValue(p);

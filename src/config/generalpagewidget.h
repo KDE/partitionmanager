@@ -31,7 +31,7 @@ class QString;
 class GeneralPageWidget : public QWidget, public Ui::ConfigurePageGeneral
 {
 public:
-    GeneralPageWidget(QWidget* parent);
+    explicit GeneralPageWidget(QWidget* parent);
 
 public:
     QComboBox& comboDefaultFileSystem() {

@@ -27,7 +27,7 @@
 class ApplyProgressDetailsWidget : public QWidget, public Ui::ApplyProgressDetailsWidgetBase
 {
 public:
-    ApplyProgressDetailsWidget(QWidget* parent) : QWidget(parent) {
+    explicit ApplyProgressDetailsWidget(QWidget* parent) : QWidget(parent) {
         setupUi(this);
     }
 

@@ -27,7 +27,7 @@
 class ApplyProgressDialogWidget : public QWidget, public Ui::ApplyProgressDialogWidgetBase
 {
 public:
-    ApplyProgressDialogWidget(QWidget* parent);
+    explicit ApplyProgressDialogWidget(QWidget* parent);
 
 public:
     QTreeWidget& treeTasks() {

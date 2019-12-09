@@ -46,7 +46,7 @@ class ListPhysicalVolumes : public QWidget, public Ui::ListPhysicalVolumesBase
     Q_DISABLE_COPY(ListPhysicalVolumes)
 
 public:
-    ListPhysicalVolumes(QWidget* parent = nullptr);
+    explicit ListPhysicalVolumes(QWidget* parent = nullptr);
 
     void addPartition(const Partition& p, bool checked);
 

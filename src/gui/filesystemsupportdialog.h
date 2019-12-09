@@ -38,7 +38,7 @@ class FileSystemSupportDialog : public QDialog
     Q_DISABLE_COPY(FileSystemSupportDialog)
 
 public:
-    FileSystemSupportDialog(QWidget* parent);
+    explicit FileSystemSupportDialog(QWidget* parent);
     ~FileSystemSupportDialog();
 
 public:

@@ -30,7 +30,7 @@ class QPoint;
 class SmartDialogWidget : public QWidget, public Ui::SmartDialogWidgetBase
 {
 public:
-    SmartDialogWidget(QWidget* parent);
+    explicit SmartDialogWidget(QWidget* parent);
     ~SmartDialogWidget();
 
 public:

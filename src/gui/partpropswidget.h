@@ -30,7 +30,7 @@
 class PartPropsWidget : public QWidget, public Ui::PartPropsWidgetBase
 {
 public:
-    PartPropsWidget(QWidget* parent) : QWidget(parent) {
+    explicit PartPropsWidget(QWidget* parent) : QWidget(parent) {
         setupUi(this);
 
         m_PartWidget->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());

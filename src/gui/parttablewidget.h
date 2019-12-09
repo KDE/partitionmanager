@@ -38,7 +38,7 @@ class PartTableWidget : public PartWidgetBase
     Q_DISABLE_COPY(PartTableWidget)
 
 public:
-    PartTableWidget(QWidget* parent);
+    explicit PartTableWidget(QWidget* parent);
     qint32 borderWidth() const override {
         return 0;    /**< @return border width */
     }

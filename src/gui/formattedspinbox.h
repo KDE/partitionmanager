@@ -24,7 +24,7 @@
 class FormattedSpinBox : public QDoubleSpinBox
 {
 public:
-    FormattedSpinBox(QWidget* parent = nullptr) : QDoubleSpinBox(parent) {}
+    explicit FormattedSpinBox(QWidget* parent = nullptr) : QDoubleSpinBox(parent) {}
 
 public:
     QString textFromValue(double value) const override;

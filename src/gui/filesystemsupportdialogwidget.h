@@ -24,7 +24,7 @@
 class FileSystemSupportDialogWidget : public QWidget, public Ui::FileSystemSupportDialogWidgetBase
 {
 public:
-    FileSystemSupportDialogWidget(QWidget* parent);
+    explicit FileSystemSupportDialogWidget(QWidget* parent);
 
 public:
     QTreeWidget& tree() {
