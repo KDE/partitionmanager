@@ -21,7 +21,7 @@ cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 # Dependencies
 set(QT_MIN_VERSION "5.10.0")
 set(KF5_MIN_VERSION "5.56")
-set(KPMCORE_MIN_VERSION "4.0.0")
+set(KPMCORE_MIN_VERSION "4.1.0")
 
 set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
@@ -29,7 +29,7 @@ set(KDE_INSTALL_USE_QT_SYS_PATHS ON CACHE BOOL "Install mkspecs files, Plugins a
 
 # Check KPMcore dependency when bumping
 set(VERSION_MAJOR "4")
-set(VERSION_MINOR "0")
+set(VERSION_MINOR "1")
 set(VERSION_RELEASE "0")
 set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE})
 add_definitions(-D'VERSION="${VERSION}"') #"
