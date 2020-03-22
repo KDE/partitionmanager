@@ -66,8 +66,8 @@ QSize FileSystemSupportDialog::sizeHint() const
 
 void FileSystemSupportDialog::setupDialog()
 {
-    QIcon yes = QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(IconSize(KIconLoader::Toolbar));
-    QIcon no = QIcon::fromTheme(QStringLiteral("dialog-error")).pixmap(IconSize(KIconLoader::Toolbar));
+    QIcon yes = QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Toolbar));
+    QIcon no = QIcon::fromTheme(QStringLiteral("dialog-error")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Toolbar));
 
     dialogWidget().tree().clear();
 

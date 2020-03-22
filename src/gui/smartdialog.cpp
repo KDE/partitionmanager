@@ -89,10 +89,10 @@ void SmartDialog::setupDialog()
     if (device().smartStatus().isValid()) {
         if (device().smartStatus().status()) {
             dialogWidget().statusText().setText(xi18nc("@label SMART disk status", "good"));
-            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(IconSize(KIconLoader::Small)));
+            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Small)));
         } else {
             dialogWidget().statusText().setText(xi18nc("@label SMART disk status", "BAD"));
-            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(IconSize(KIconLoader::Small)));
+            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Small)));
         }
 
         dialogWidget().modelName().setText(device().smartStatus().modelName());

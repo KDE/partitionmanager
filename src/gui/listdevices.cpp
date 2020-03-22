@@ -29,7 +29,7 @@ class ListDeviceWidgetItem : public QListWidgetItem
 {
 public:
     ListDeviceWidgetItem(const Device& d) :
-        QListWidgetItem(QIcon::fromTheme(d.iconName()).pixmap(IconSize(KIconLoader::Desktop)), d.prettyName()),
+        QListWidgetItem(QIcon::fromTheme(d.iconName()).pixmap(KIconLoader::global()->currentSize(KIconLoader::Desktop)), d.prettyName()),
         deviceNode(d.deviceNode()) {
         setToolTip(d.prettyName());
         setSizeHint(QSize(0, 32));
