@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>506</width>
-    <height>600</height>
+    <height>669</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -375,12 +375,18 @@
      <property name="text">
       <string/>
      </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
     </widget>
    </item>
    <item row="11" column="1">
     <widget class="QLabel" name="m_LabelPartitionLabel">
      <property name="text">
       <string/>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
