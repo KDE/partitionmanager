@@ -59,7 +59,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     aboutData.addCredit(i18n("Hugo Pereira Da Costa"), xi18nc("@info:credit", "Partition Widget Design"), QStringLiteral("hugo@oxygen-icons.org"));
     aboutData.addCredit(xi18nc("@info:credit", "Caio Jordão Carvalho"), i18nc("@info:credit", "Improved SMART support"), QStringLiteral("caiojcarvalho@gmail.com"));
     
-    aboutData.setHomepage(QStringLiteral("https://www.kde.org/applications/system/kdepartitionmanager"));
+    aboutData.setHomepage(QStringLiteral("https://www.kde.org/applications/system/partitionmanager"));
 
     KAboutData::setApplicationData(aboutData);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
