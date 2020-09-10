@@ -64,13 +64,14 @@ EditMountPointDialog::~EditMountPointDialog()
 
 void EditMountPointDialog::accept_(MountPointAction action)
 {
-    if (KMessageBox::warningContinueCancel(this,
+    const auto dialogResult = KMessageBox::warningContinueCancel(this,
                                            xi18nc("@info", "<para>Are you sure you want to save the changes you made to the system table file <filename>/etc/fstab</filename>?</para>"
                                                    "<para><warning>This will overwrite the existing file on your hard drive now. This <emphasis strong='1'>can not be undone</emphasis>.</warning></para>"),
                                            xi18nc("@title:window", "Really save changes?"),
                                            KGuiItem(xi18nc("@action:button", "Save changes"), QStringLiteral("arrow-right")),
                                            KStandardGuiItem::cancel(),
-                                           QStringLiteral("reallyWriteMountPoints")) == KMessageBox::Cancel)
+                                           QStringLiteral("reallyWriteMountPoints"));
+    if (dialogResult == KMessageBox::Cancel)
         return;
     if(action == MountPointAction::Remove)
         widget().removeMountPoint();
