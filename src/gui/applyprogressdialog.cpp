@@ -43,8 +43,8 @@
 
 #include <KAboutData>
 #include <KConfigGroup>
-#include <KRun>
 #include <KIO/CopyJob>
+#include <KIO/OpenUrlJob>
 #include <KJobUiDelegate>
 #include <KLocalizedString>
 #include <KIconLoader>
@@ -440,8 +440,6 @@ void ApplyProgressDialog::browserReport()
 {
     QTemporaryFile file;
 
-    // Make sure the temp file is created somewhere another user can read it: KRun::runUrl() will open
-    // the file as the logged in user, not as the user running our application.
     file.setFileTemplate(QStringLiteral("/tmp/") + QCoreApplication::applicationName() + QStringLiteral("-XXXXXX.html"));
     file.setAutoRemove(false);
 
@@ -454,11 +452,10 @@ void ApplyProgressDialog::browserReport()
           << report().toHtml()
           << html.footer();
 
-        // set the temp file's permission for everyone to read it.
-        file.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ReadGroup | QFile::ReadOther);
+        file.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
 
-        if (!KRun::runUrl(QUrl::fromLocalFile(file.fileName()), QStringLiteral("text/html"), this, KRun::RunFlags()))
-            KMessageBox::sorry(this, xi18nc("@info", "The configured external browser could not be run. Please check your settings."), xi18nc("@title:window", "Could Not Launch Browser."));
+        auto *job = new KIO::OpenUrlJob(QUrl::fromLocalFile(file.fileName()), QStringLiteral("text/html"), this);
+        job->start();
     } else
         KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file <filename>%1</filename> for writing.", file.fileName()), i18nc("@title:window", "Could Not Launch Browser."));
 }

@@ -20,7 +20,7 @@ cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 
 # Dependencies
 set(QT_MIN_VERSION "5.10.0")
-set(KF5_MIN_VERSION "5.56")
+set(KF5_MIN_VERSION "5.71")
 set(KPMCORE_MIN_VERSION "4.1.0")
 
 set(CMAKE_USE_RELATIVE_PATHS OFF)
