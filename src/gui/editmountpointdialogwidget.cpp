@@ -174,7 +174,7 @@ void EditMountPointDialogWidget::buttonSelectClicked(bool)
 
 void EditMountPointDialogWidget::removeMountPoint()
 {
-    for (auto it = fstabEntries().begin(); it != fstabEntries().end(); ) {
+    for (auto it = fstabEntries().begin(); it != fstabEntries().end(); ++it) {
         if (editPath().count() <= 1 && (
                 (it->fsSpec().contains(partition().deviceNode()) && !partition().deviceNode().isEmpty() ) ||
                 (it->fsSpec().contains(partition().fileSystem().uuid()) && !partition().fileSystem().uuid().isEmpty() ) ||
