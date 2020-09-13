@@ -185,7 +185,7 @@ void EditMountPointDialogWidget::removeMountPoint()
             fstabEntries().erase(it);
             partition().setMountPoint(QString());
         }
-        else if (editPath().count() > 1 && ((&*it == currentEntry)))
+        else if (editPath().count() > 1 && (&*it == currentEntry))
         {
             fstabEntries().erase(it);
             editPath().removeItem(editPath().currentIndex());
