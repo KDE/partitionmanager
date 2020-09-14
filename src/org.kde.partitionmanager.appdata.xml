@@ -49,6 +49,7 @@
   <summary xml:lang="ca-valencia">Gestiona dispositius de disc, particions i sistemes de fitxers de l'ordinador</summary>
   <summary xml:lang="cs">Spravujte disky, oddíly a souborové systémy ve vašem počítači</summary>
   <summary xml:lang="da">Håndtér diskenheder, partitioner og filsystemer på din computer</summary>
+  <summary xml:lang="el">Διαχειρίζεται συσκευές δίσκων, κατατμήσεις και συστήματα αρχείων στον υπολογιστή σας</summary>
   <summary xml:lang="en-GB">Manage disk devices, partitions and file systems on your computer</summary>
   <summary xml:lang="es">Gestión de discos, particiones y sistema de archivos de su equipo</summary>
   <summary xml:lang="eu">Kudeatu zure sistemako disko gailuak, partizioak eta fitxategi-sistemak</summary>
@@ -59,6 +60,7 @@
   <summary xml:lang="nl">Schijfapparaten, partities en bestandssystemen op uw computer beheren</summary>
   <summary xml:lang="pt">Faz a gestão de dispositivos, partições e sistemas de ficheiros dos discos no seu computador</summary>
   <summary xml:lang="pt-BR">Gerencie dispositivos de disco, partições e sistemas de arquivos no seu computador</summary>
+  <summary xml:lang="ro">Gestionează discuri, partiții și sisteme de fișiere din calculator</summary>
   <summary xml:lang="ru">Управление дисковыми устройствами, разделами и файловыми системами</summary>
   <summary xml:lang="sk">Spravujte diskové zariadenia, oddiely a súborové systémy v počítači</summary>
   <summary xml:lang="sl">Upravlja diskovne naprave, razdelke diskov in datotečne sisteme na vašem računalniku</summary>
@@ -92,6 +94,7 @@
     <p xml:lang="pl">Zarządzanie partycjami KDE jest programem użytkowym mającym na celu pomoc przy zarządzaniu urządzeniami dyskowymi, partycjami i systemami plików na twoim komputerze. Umożliwia łatwe tworzenie, kopiowanie, przenoszenie, usuwanie i zamianę rozmiaru bez utraty danych, a także tworzenie i przywracanie kopii zapasowych partycji.</p>
     <p xml:lang="pt">O Gestor de Partições do KDE é um utilitário que o ajuda a gerir os dispositivos dos discos, as suas partições e sistemas de ficheiros no seu computador. Permite-lhe facilmente criar, copiar, mover, apagar, dimensionar sem perder dados, salvaguardar e repor partições.</p>
     <p xml:lang="pt-BR">O Gerenciador de Partições do KDE é um utilitário que o ajuda a gerenciar os dispositivos de disco, suas partições e sistemas de arquivos no seu computador. Permite-lhe facilmente criar, copiar, mover, excluir, redimensionar sem perder dados, criar backup e restaurar partições.</p>
+    <p xml:lang="ro">Gestionarul de partiții KDE este un utilitar ce vă ajută să gestionați discuri, partiții și sisteme de fișiere din calculator. Acesta vă permite cu ușurință să creați, copiați, mutați, ștergeți, redimensionați fără pierderea datelor, faceți copii de rezervă și restabiliți partiții.</p>
     <p xml:lang="ru">Диспетчер разделов от KDE — утилита, позволяющая без лишних сложностей управлять дисковыми устройствами, разделами и файловыми системами на компьютере. Она способна создавать, копировать, перемещать, удалять разделы, менять их размеры без потери данных, создавать резервные копии разделов и восстанавливать из них.</p>
     <p xml:lang="sk">KDE správca partícií je nástroj, ktorý vám má pomôcť spravovať diskové zariadenia, partície a súborové systémy na vašom počítači. Umožňuje vám jednoducho vytvoriť, kopírovať, presúvať, mazať a meniť veľkosť bez straty dám, zálohovať a obnovovať partície.</p>
     <p xml:lang="sl">Upravljalnik razdelkov za KDE je pripomoček, ki vam omogoča upravljanje z diski, razdelki in datotečnimi sistemi na vašem računalniku. Z njim lahko enostavno ustvarite, kopirate, premaknete, izbrišete, varnostno kopirate in obnovite ter spreminjate velikost razdelkov brez izgube podatkov.</p>
@@ -172,6 +175,7 @@
       <li xml:lang="pl">Obsługa wielu systemów plików, uwzględniając przy tym  ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i więcej</li>
       <li xml:lang="pt">Suporta um grande conjunto de sistemas de ficheiros, incluindo o ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS entre outros</li>
       <li xml:lang="pt-BR">Suporte a um grande conjunto de sistemas de arquivos, incluindo o ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS, entre outros</li>
+      <li xml:lang="ro">Susține un număr mare de sisteme de fișiere, inclusiv ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS și altele</li>
       <li xml:lang="ru">Поддержка большого числа файловых систем, в том числе ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS и других.</li>
       <li xml:lang="sk">Podporuje veľký počet súborových systémov, vrátane ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS a viac</li>
       <li xml:lang="sl">Podpira številne datotečne sisteme vključno z ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS in XFS</li>
@@ -210,6 +214,7 @@
       <li xml:lang="pl">Wykorzystywanie już dostępnych programów zewnętrznych do wykonywania swojej pracy</li>
       <li xml:lang="pt">Tira partido dos programas externos já existentes para terminar a sua tarefa</li>
       <li xml:lang="pt-BR">Utiliza os programas externos já existentes para terminar a sua tarefa</li>
+      <li xml:lang="ro">Folosește programele externe disponibile pentru a-și face meseria</li>
       <li xml:lang="ru">Полагается на доступные внешние программы для выполнения задач.</li>
       <li xml:lang="sk">Používa už existujúce dostupné externé programy na vykonanie svojej práce</li>
       <li xml:lang="sl">Za izvedbo poslov uporablja že obstoječe zunanje programe</li>
