@@ -72,7 +72,7 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
     m_Report(nullptr),
     m_SavedParentTitle(mainWindow(this)->windowTitle()),
     m_Timer(this),
-    m_Time(),
+    m_ElapsedTimer(),
     m_CurrentOpItem(nullptr),
     m_CurrentJobItem(nullptr),
     m_LastReportUpdate(0)

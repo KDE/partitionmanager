@@ -21,7 +21,7 @@
 
 #include <QDialog>
 #include <QString>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QTimer>
 
 class OperationRunner;
@@ -124,8 +124,8 @@ protected:
 
     void allOpsDone(const QString& msg);
 
-    QTime& time() {
-        return m_Time;
+    QElapsedTimer& time() {
+        return m_ElapsedTimer;
     }
 
     QTimer& timer() {
@@ -171,7 +171,7 @@ private:
     Report* m_Report;
     QString m_SavedParentTitle;
     QTimer m_Timer;
-    QTime m_Time;
+    QElapsedTimer m_ElapsedTimer;
     QTreeWidgetItem* m_CurrentOpItem;
     QTreeWidgetItem* m_CurrentJobItem;
     int m_LastReportUpdate;
