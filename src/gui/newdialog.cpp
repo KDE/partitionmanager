@@ -1,21 +1,12 @@
-/*************************************************************************
- *  Copyright (C) 2008, 2010 by Volker Lanz <vl@fidra.de>                *
- *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
- *  Copyright (C) 2016 by Teo Mrnjavac <teo@kde.org>                     *
- *                                                                       *
- *  This program is free software; you can redistribute it and/or        *
- *  modify it under the terms of the GNU General Public License as       *
- *  published by the Free Software Foundation; either version 3 of       *
- *  the License, or (at your option) any later version.                  *
- *                                                                       *
- *  This program is distributed in the hope that it will be useful,      *
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of       *
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the        *
- *  GNU General Public License for more details.                         *
- *                                                                       *
- *  You should have received a copy of the GNU General Public License    *
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
- *************************************************************************/
+/*
+    SPDX-FileCopyrightText: 2008-2012 Volker Lanz <vl@fidra.de>
+    SPDX-FileCopyrightText: 2013-2018 Andrius Štikonas <andrius@stikonas.eu>
+    SPDX-FileCopyrightText: 2015 Teo Mrnjavac <teo@kde.org>
+    SPDX-FileCopyrightText: 2016 Chantara Tith <tith.chantara@gmail.com>
+    SPDX-FileCopyrightText: 2018 Caio Jordão Carvalho <caiojcarvalho@gmail.com>
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+*/
 
 #include "gui/newdialog.h"
 #include "gui/sizedialogwidget.h"
