@@ -96,7 +96,7 @@ void ConfigureOptionsDialog::updateSettings()
     }
 
     if (changed)
-        emit KConfigDialog::settingsChanged(i18n("General Settings"));
+        Q_EMIT KConfigDialog::settingsChanged(i18n("General Settings"));
 }
 
 bool ConfigureOptionsDialog::hasChanged()

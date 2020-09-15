@@ -166,7 +166,7 @@ void PartitionManagerWidget::setSelectedPartition(const Partition* p)
 {
     if (p == nullptr) {
         treePartitions().setCurrentItem(nullptr);
-        emit selectedPartitionChanged(nullptr);
+        Q_EMIT selectedPartitionChanged(nullptr);
         updatePartitions();
     } else
         partTableWidget().setActivePartition(p);
@@ -299,10 +299,10 @@ void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetIt
 {
     if (item == treePartitions().topLevelItem(0)) {
         if (selectedDevice() != nullptr)
-            emit deviceDoubleClicked(selectedDevice());
+            Q_EMIT deviceDoubleClicked(selectedDevice());
     } else {
         if (selectedPartition() != nullptr)
-            emit partitionDoubleClicked(selectedPartition());
+            Q_EMIT partitionDoubleClicked(selectedPartition());
     }
 }
 
@@ -315,7 +315,7 @@ void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidge
 {
     if (item == nullptr) {
         treePartitions().setCurrentItem(nullptr);
-        emit selectedPartitionChanged(nullptr);
+        Q_EMIT selectedPartitionChanged(nullptr);
         return;
     }
 
@@ -336,23 +336,23 @@ void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidge
         }
     }
 
-    emit selectedPartitionChanged(p);
+    Q_EMIT selectedPartitionChanged(p);
 }
 
 void PartitionManagerWidget::on_m_PartTableWidget_customContextMenuRequested(const QPoint& pos)
 {
-    emit contextMenuRequested(partTableWidget().mapToGlobal(pos));
+    Q_EMIT contextMenuRequested(partTableWidget().mapToGlobal(pos));
 }
 
 void PartitionManagerWidget::on_m_PartTableWidget_itemDoubleClicked()
 {
     if (selectedPartition())
-        emit partitionDoubleClicked(selectedPartition());
+        Q_EMIT partitionDoubleClicked(selectedPartition());
 }
 
 void PartitionManagerWidget::on_m_TreePartitions_customContextMenuRequested(const QPoint& pos)
 {
-    emit contextMenuRequested(treePartitions().viewport()->mapToGlobal(pos));
+    Q_EMIT contextMenuRequested(treePartitions().viewport()->mapToGlobal(pos));
 }
 
 void PartitionManagerWidget::onPropertiesPartition()

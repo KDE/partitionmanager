@@ -1192,7 +1192,7 @@ void MainWindow::onSettingsChanged()
 
     PartitionAlignment::setSectorAlignment(Config::sectorAlignment());
 
-    emit settingsChanged();
+    Q_EMIT settingsChanged();
 }
 
 void MainWindow::onConfigureOptions()

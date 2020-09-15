@@ -63,7 +63,7 @@ void ListDevices::on_m_ListDevices_itemSelectionChanged()
         ListDeviceWidgetItem* item = dynamic_cast<ListDeviceWidgetItem*>(listDevices().selectedItems()[0]);
 
         if (item != nullptr)
-            emit selectionChanged(item->deviceNode);
+            Q_EMIT selectionChanged(item->deviceNode);
     }
 }
 
@@ -72,7 +72,7 @@ void ListDevices::on_m_ListDevices_itemDoubleClicked(QListWidgetItem* list_item)
     ListDeviceWidgetItem* item = dynamic_cast<ListDeviceWidgetItem*>(list_item);
 
     if (item != nullptr)
-        emit deviceDoubleClicked(item->deviceNode);
+        Q_EMIT deviceDoubleClicked(item->deviceNode);
 }
 
 bool ListDevices::setSelectedDevice(const QString& device_node)

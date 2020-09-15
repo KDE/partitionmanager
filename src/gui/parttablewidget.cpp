@@ -103,7 +103,7 @@ void PartTableWidget::setActiveWidget(PartWidget* p)
     if (p != nullptr)
         p->setActive(true);
 
-    emit itemSelectionChanged(p);
+    Q_EMIT itemSelectionChanged(p);
 
     update();
 }
@@ -175,5 +175,5 @@ void PartTableWidget::mouseDoubleClickEvent(QMouseEvent* event)
     const PartWidget* child = static_cast<PartWidget*>(childAt(event->pos()));
 
     if (child != nullptr)
-        emit itemDoubleClicked(child);
+        Q_EMIT itemDoubleClicked(child);
 }
