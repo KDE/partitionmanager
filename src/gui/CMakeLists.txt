@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2015 Andrius Štikonas <andrius@stikonas.eu>
+# SPDX-FileCopyrightText: 2015 Chris Campbell <c.j.campbell@ed.ac.uk>
+# SPDX-FileCopyrightText: 2015 Teo Mrnjavac <teo@kde.org>
+# SPDX-FileCopyrightText: 2016 Chantara Tith <tith.chantara@gmail.com>
+
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 set(GUI_SRC
     gui/applyprogressdetailswidget.cpp
     gui/applyprogressdialog.cpp
