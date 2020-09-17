@@ -1,4 +1,9 @@
 #! /usr/bin/env bash
+
+# SPDX-FileCopyrightText: 2008 Laurent Montel <montel@kde.org>
+
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 $EXTRACTRC `find -name \*.rc` >> rc.cpp || exit 11
 $EXTRACTRC `find -name \*.ui` >> rc.cpp || exit 12
 $EXTRACTRC `find -name \*.kcfg` >> rc.cpp || exit 12
