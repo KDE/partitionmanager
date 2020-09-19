@@ -2,7 +2,7 @@
 
 # SPDX-FileCopyrightText: 2008 Laurent Montel <montel@kde.org>
 
-# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 
 $EXTRACTRC `find -name \*.rc` >> rc.cpp || exit 11
 $EXTRACTRC `find -name \*.ui` >> rc.cpp || exit 12
