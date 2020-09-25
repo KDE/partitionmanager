@@ -6,6 +6,7 @@
   <name>KDE Partition Manager</name>
   <name xml:lang="ar">مدير كدي للأقسام</name>
   <name xml:lang="ast">Xestor de particiones de KDE</name>
+  <name xml:lang="az">KDE Bölmələr Meneceri</name>
   <name xml:lang="bs">KDE‑ov menadžer particija</name>
   <name xml:lang="ca">Gestor de particions del KDE</name>
   <name xml:lang="ca-valencia">Gestor de particions del KDE</name>
@@ -45,6 +46,7 @@
   <name xml:lang="zh-CN">KDE 分区管理器</name>
   <name xml:lang="zh-TW">KDE 磁碟分割區管理員</name>
   <summary>Manage disk devices, partitions and file systems on your computer</summary>
+  <summary xml:lang="az">Kompyuterinizdəki disk qurğularının, bölmələrin və fayl sistemlərinin idarə edilməsi</summary>
   <summary xml:lang="ca">Gestiona dispositius de disc, particions i sistemes de fitxers de l'ordinador</summary>
   <summary xml:lang="ca-valencia">Gestiona dispositius de disc, particions i sistemes de fitxers de l'ordinador</summary>
   <summary xml:lang="cs">Spravujte disky, oddíly a souborové systémy ve vašem počítači</summary>
@@ -72,6 +74,7 @@
     <p>KDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.</p>
     <p xml:lang="ar">«مدير كدي للأقسام» هو أداة تساعدك على إدارة أجهزة الأقراص، والأقسام وأنظمة الملفّات في حاسوبك. ويتيح لك الإنشاء، والنّسخ، والنّقل، والحذف، والتّحجيم دون فقدات البيانات، والنّسخ الاحتياطيّ واسترجاع الأقسام بسهولة.</p>
     <p xml:lang="ast">El xestor de particiones de KDE ye una utilidá p'ayudate a xestionar los preseos d'almacenamientu, particiones y sistemes de ficheros del ordenador. Permítete crear, copiar, mover, desaniciar, redimensionar ensin perder datos, facer copies de seguranza y restaurar particiones fácilmente</p>
+    <p xml:lang="az">KDE Bölmələr Meneceri, kompüterinizdəki disk qurğularını, bölmələrini və fayl sistemlərini idarə etməyə kömək edən bir yardımçı proqramıdır. Məlumatlarınızı itirmədən asanlıqla yaratmaq, kopyalamaq, köçürmək, silmək, ölçüsünü dəyişdirmək, bölmələri bərpa etmək imkanı verir.</p>
     <p xml:lang="ca">El gestor de particions del KDE és un programa d'utilitats que us ajuda a gestionar els dispositius de disc, les particions i els sistemes de fitxers de l'ordinador. Permet crear, moure, eliminar, redimensionar sense perdre dades, fer còpies de seguretat i restaurar particions fàcilment.</p>
     <p xml:lang="ca-valencia">El gestor de particions del KDE és un programa d'utilitats que vos ajuda a gestionar els dispositius de disc, les particions i els sistemes de fitxers de l'ordinador. Permet crear, moure, eliminar, redimensionar sense perdre dades, fer còpies de seguretat i restaurar particions fàcilment.</p>
     <p xml:lang="da">KDE Partition Manager er et værktøj til at hjælpe dig med at håndtere dine diskenheder og filsystemerne på din computer. Den lader dig nemt oprette, kopiere, flytte, slette, ændre størrelse uden at miste data, tage backup og gendanne partitioner.</p>
@@ -111,6 +114,7 @@
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
     <p xml:lang="ast">Carauterístiques:</p>
+    <p xml:lang="az">İmkanlar:</p>
     <p xml:lang="bs">Svojstva:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
@@ -153,6 +157,7 @@
       <li>Supports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and more</li>
       <li xml:lang="ar">يدعم عددًا كبيرًا من أنظمة الملفّات، منها ext2/3/4، وbtrfs، وreiserfs، وNTFS، وFAT16/32، وJFS، وXFS وغيرها</li>
       <li xml:lang="ast">Sofita un númberu grande de sistemes de ficheros, incluyendo ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS y más</li>
+      <li xml:lang="az">Böyük ölçülü fayl sistemlərini, həmçinin  ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS və bir çoxlarını dəstəkləyir</li>
       <li xml:lang="ca">Accepta un gran nombre de sistemes de fitxers, incloent-hi ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i més</li>
       <li xml:lang="ca-valencia">Accepta un gran nombre de sistemes de fitxers, incloent-hi ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i més</li>
       <li xml:lang="da">Understøtter et større antal filsystemer, derunder ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS og andre</li>
@@ -192,6 +197,7 @@
       <li>Makes use of already available external programs to get its job done</li>
       <li xml:lang="ar">يستخدم البرامج الخارجيّة المتوفّرة لإنهاء عمله</li>
       <li xml:lang="ast">Fai usu de programes esternos que yá tean disponibles pa facer el trabayu</li>
+      <li xml:lang="az">Öz işini başa çatdırmaq üçün artıq mövcud olan xarici proqramlardan istifadə edir</li>
       <li xml:lang="ca">Fa ús de programes externs ja disponibles per a fer la seva feina</li>
       <li xml:lang="ca-valencia">Fa ús de programes externs ja disponibles per a fer la seua faena</li>
       <li xml:lang="da">Gør brug af allerede tilgængelige eksterne programmer til at udføre arbejdet</li>
