@@ -19,6 +19,7 @@
 #include <QFileDialog>
 #include <QFontDatabase>
 #include <QPushButton>
+#include <QStyle>
 #include <QTemporaryFile>
 #include <QTextDocumentFragment>
 #include <QTextStream>
@@ -77,10 +78,12 @@ void SmartDialog::setupDialog()
     if (device().smartStatus().isValid()) {
         if (device().smartStatus().status()) {
             dialogWidget().statusText().setText(xi18nc("@label SMART disk status", "good"));
-            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(16, 16));
+            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok"))
+                    .pixmap(QApplication::style()->pixelMetric(QStyle::PixelMetric::PM_SmallIconSize)));
         } else {
             dialogWidget().statusText().setText(xi18nc("@label SMART disk status", "BAD"));
-            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(16, 16));
+            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning"))
+                    .pixmap(QApplication::style()->pixelMetric(QStyle::PixelMetric::PM_SmallIconSize)));
         }
 
         dialogWidget().modelName().setText(device().smartStatus().modelName());

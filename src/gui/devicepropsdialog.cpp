@@ -25,6 +25,7 @@
 #include <QDialogButtonBox>
 #include <QPointer>
 #include <QPushButton>
+#include <QStyle>
 
 /** Creates a new DevicePropsDialog
     @param parent pointer to the parent widget
@@ -104,11 +105,13 @@ void DevicePropsDialog::setupDialog()
         if (device().smartStatus().isValid()) {
             if (device().smartStatus().status()) {
                 dialogWidget().smartStatusText().setText(xi18nc("@label SMART disk status", "good"));
-                dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(16, 16));
+                dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok"))
+                            .pixmap(QApplication::style()->pixelMetric(QStyle::PixelMetric::PM_SmallIconSize)));
 
             } else {
                 dialogWidget().smartStatusText().setText(xi18nc("@label SMART disk status", "BAD"));
-                dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(16, 16));
+                dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning"))
+                            .pixmap(QApplication::style()->pixelMetric(QStyle::PixelMetric::PM_SmallIconSize)));
             }
         } else {
             dialogWidget().smartStatusText().setText(xi18nc("@label", "(unknown)"));
