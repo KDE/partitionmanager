@@ -22,7 +22,6 @@
 
 #include "ui_configurepagefilesystemcolors.h"
 
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
 

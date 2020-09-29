@@ -28,7 +28,6 @@
 #include <KConfigGroup>
 #include <KFormat>
 #include <KLocalizedString>
-#include <KIconLoader>
 #include <KIO/CopyJob>
 #include <KJobUiDelegate>
 #include <KMessageBox>
@@ -78,10 +77,10 @@ void SmartDialog::setupDialog()
     if (device().smartStatus().isValid()) {
         if (device().smartStatus().status()) {
             dialogWidget().statusText().setText(xi18nc("@label SMART disk status", "good"));
-            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Small)));
+            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(16, 16));
         } else {
             dialogWidget().statusText().setText(xi18nc("@label SMART disk status", "BAD"));
-            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Small)));
+            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(16, 16));
         }
 
         dialogWidget().modelName().setText(device().smartStatus().modelName());

@@ -19,7 +19,6 @@
 #include <util/helpers.h>
 
 #include <KConfigGroup>
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KSharedConfig>
 
@@ -105,10 +104,11 @@ void DevicePropsDialog::setupDialog()
         if (device().smartStatus().isValid()) {
             if (device().smartStatus().status()) {
                 dialogWidget().smartStatusText().setText(xi18nc("@label SMART disk status", "good"));
-                dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Small)));
+                dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(16, 16));
+
             } else {
                 dialogWidget().smartStatusText().setText(xi18nc("@label SMART disk status", "BAD"));
-                dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Small)));
+                dialogWidget().smartStatusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(16, 16));
             }
         } else {
             dialogWidget().smartStatusText().setText(xi18nc("@label", "(unknown)"));

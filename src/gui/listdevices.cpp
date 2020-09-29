@@ -12,14 +12,11 @@
 #include <util/globallog.h>
 #include <util/capacity.h>
 
-#include <KIconLoader>
-
 class ListDeviceWidgetItem : public QListWidgetItem
 {
 public:
     ListDeviceWidgetItem(const Device& d) :
-        QListWidgetItem(QIcon::fromTheme(d.iconName()).pixmap(KIconLoader::global()->currentSize(KIconLoader::Desktop)), d.prettyName()),
-        deviceNode(d.deviceNode()) {
+        QListWidgetItem(QIcon::fromTheme(d.iconName()), d.prettyName()), deviceNode(d.deviceNode()) {
         setToolTip(d.prettyName());
         setSizeHint(QSize(0, 32));
     }

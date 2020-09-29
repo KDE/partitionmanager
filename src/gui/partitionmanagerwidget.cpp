@@ -48,7 +48,6 @@
 #include <QPointer>
 #include <QReadLocker>
 
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -208,7 +207,7 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 
     item->setText(i, p.mountPoint());
     if (p.isMounted())
-        item->setIcon(i, QIcon::fromTheme(QStringLiteral("object-locked")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Panel)));
+        item->setIcon(i, QIcon::fromTheme(QStringLiteral("object-locked")));
     i++;
 
     item->setText(i++, p.fileSystem().label());
@@ -249,7 +248,7 @@ void PartitionManagerWidget::updatePartitions()
     deviceItem->setFont(0, font);
 
     deviceItem->setText(0, selectedDevice()->prettyName());
-    deviceItem->setIcon(0, QIcon::fromTheme(selectedDevice()->iconName()).pixmap(KIconLoader::global()->currentSize(KIconLoader::Desktop)));
+    deviceItem->setIcon(0, QIcon::fromTheme(selectedDevice()->iconName()));
 
     deviceItem->setSizeHint(0, QSize(0, 32));
 

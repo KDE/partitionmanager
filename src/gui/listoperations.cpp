@@ -12,8 +12,6 @@
 #include <util/globallog.h>
 #include <util/capacity.h>
 
-#include <KIconLoader>
-
 /** Creates a new ListOperations instance.
     @param parent the parent widget
 */
@@ -30,7 +28,7 @@ void ListOperations::updateOperations(const OperationStack::Operations& ops)
     listOperations().clear();
 
     for (const auto &op : ops) {
-        QListWidgetItem* item = new QListWidgetItem(QIcon::fromTheme(op->iconName()).pixmap(KIconLoader::global()->currentSize(KIconLoader::Small)), op->description());
+        QListWidgetItem* item = new QListWidgetItem(QIcon::fromTheme(op->iconName()), op->description());
         item->setToolTip(op->description());
         listOperations().addItem(item);
     }

@@ -36,7 +36,6 @@
 #include <KIO/OpenUrlJob>
 #include <KJobUiDelegate>
 #include <KLocalizedString>
-#include <KIconLoader>
 #include <KMessageBox>
 #include <KSharedConfig>
 
@@ -82,13 +81,13 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
     cancelButton = dialogButtonBox->addButton(QDialogButtonBox::Cancel);
     detailsButton = new QPushButton;
     detailsButton->setText(xi18nc("@action:button", "&Details") + QStringLiteral(" >>"));
-    detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("help-about")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Toolbar)));
+    detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("help-about")));
     dialogButtonBox->addButton(detailsButton, QDialogButtonBox::ActionRole);
     mainLayout->addWidget(dialogButtonBox);
 
     dialogWidget().treeTasks().setColumnWidth(0, width() * 8 / 10);
-    detailsWidget().buttonBrowser().setIcon(QIcon::fromTheme(QStringLiteral("document-open")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Toolbar)));
-    detailsWidget().buttonSave().setIcon(QIcon::fromTheme(QStringLiteral("document-save")).pixmap(KIconLoader::global()->currentSize(KIconLoader::Toolbar)));
+    detailsWidget().buttonBrowser().setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
+    detailsWidget().buttonSave().setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
 
     setupConnections();
 
@@ -286,7 +285,7 @@ void ApplyProgressDialog::onJobStarted(Job* job, Operation* op)
 
         QTreeWidgetItem* child = new QTreeWidgetItem();
         child->setText(0, job->description());
-        child->setIcon(0, QIcon::fromTheme(job->statusIcon()).pixmap(KIconLoader::global()->currentSize(KIconLoader::Small)));
+        child->setIcon(0, QIcon::fromTheme(job->statusIcon()));
         child->setText(1, QTime(0, 0).toString(timeFormat()));
         item->addChild(child);
         dialogWidget().treeTasks().scrollToBottom();
@@ -298,7 +297,7 @@ void ApplyProgressDialog::onJobStarted(Job* job, Operation* op)
 void ApplyProgressDialog::onJobFinished(Job* job, Operation* op)
 {
     if (currentJobItem())
-        currentJobItem()->setIcon(0, QIcon::fromTheme(job->statusIcon()).pixmap(KIconLoader::global()->currentSize(KIconLoader::Small)));
+        currentJobItem()->setIcon(0, QIcon::fromTheme(job->statusIcon()));
 
     setCurrentJobItem(nullptr);
 
@@ -313,7 +312,7 @@ void ApplyProgressDialog::onOpFinished(int num, Operation* op)
 {
     if (currentOpItem()) {
         currentOpItem()->setText(0, opDesc(num, *op));
-        currentOpItem()->setIcon(0, QIcon::fromTheme(op->statusIcon()).pixmap(KIconLoader::global()->currentSize(KIconLoader::Small)));
+        currentOpItem()->setIcon(0, QIcon::fromTheme(op->statusIcon()));
     }
 
     setCurrentOpItem(nullptr);
@@ -346,7 +345,7 @@ QString ApplyProgressDialog::opDesc(int num, const Operation& op) const
 void ApplyProgressDialog::addTaskOutput(int num, const Operation& op)
 {
     QTreeWidgetItem* item = new QTreeWidgetItem();
-    item->setIcon(0, QIcon::fromTheme(op.statusIcon()).pixmap(KIconLoader::global()->currentSize(KIconLoader::Small)));
+    item->setIcon(0, QIcon::fromTheme(op.statusIcon()));
     item->setText(0, opDesc(num, op));
     item->setText(1, QTime(0, 0).toString(timeFormat()));
 
