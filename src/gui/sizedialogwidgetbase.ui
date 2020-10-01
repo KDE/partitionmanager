@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>
+SPDX-FileCopyrightText: 2008-2010 Volker Lanz &lt;vl@fidra.de&gt;
+SPDX-FileCopyrightText: 2013-2016 Andrius Štikonas &lt;andrius@stikonas.eu&gt;
+SPDX-FileCopyrightText: 2015-2016 Teo Mrnjavac &lt;teo@kde.org&gt;
+SPDX-FileCopyrightText: 2016 Chantara Tith &lt;tith.chantara@gmail.com&gt;
+SPDX-License-Identifier: GPL-3.0-or-later
+ </author>
  <class>SizeDialogWidgetBase</class>
  <widget class="QWidget" name="SizeDialogWidgetBase">
   <property name="geometry">
