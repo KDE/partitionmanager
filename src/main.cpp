@@ -37,7 +37,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
         QStringLiteral(VERSION),
         xi18nc("@title", "Manage your disks, partitions and file systems"),
         KAboutLicense::GPL_V3,
-        xi18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2019 Andrius Štikonas"));
+        xi18nc("@info:credit", "© 2008-2013 Volker Lanz\n© 2012-2020 Andrius Štikonas"));
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
     aboutData.setProductName(QByteArray("partitionmanager"));
 
