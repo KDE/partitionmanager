@@ -1,3 +1,9 @@
+<!-- SPDX-FileCopyrightText: 2008-2009 Volker Lanz <vl@fidra.de>
+     SPDX-FileCopyrightText: 2016-2019 Andrius Štikonas <andrius@stikonas.eu>
+     SPDX-FileCopyrightText: 2019 David Planella <david.planella@ubuntu.com>
+     SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # KDE Partition Manager
 
 <img src="https://invent.kde.org/kde/partitionmanager/raw/master/icons/sc-apps-partitionmanager.svg" align="right"
