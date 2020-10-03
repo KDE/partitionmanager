@@ -212,7 +212,7 @@ void PartPropsDialog::updateHideAndShow()
     // when do we show the uuid?
     const bool showUuid =
         partition().state() != Partition::State::New &&                           // not for new partitions
-        !(fs == nullptr || fs->supportGetUUID() == FileSystem::cmdSupportNone);       // not if the FS doesn't support it
+        !(fs == nullptr || fs->supportGetUUID() == FileSystem::cmdSupportNone);   // not if the FS doesn't support it
 
     dialogWidget().showUuid(showUuid);
 
@@ -220,19 +220,19 @@ void PartPropsDialog::updateHideAndShow()
 
     // when do we show available and used capacity?
     const bool showAvailableAndUsed =
-        partition().state() != Partition::State::New &&                           // not for new partitions
-        !partition().roles().has(PartitionRole::Extended) &&                    // neither for extended
-        !partition().roles().has(PartitionRole::Unallocated) &&                 // or for unallocated
-        newFileSystemType() != FileSystem::Type::Unformatted;                   // and not for unformatted file systems
+        partition().state() != Partition::State::New &&             // not for new partitions
+        !partition().roles().has(PartitionRole::Extended) &&        // neither for extended
+        !partition().roles().has(PartitionRole::Unallocated) &&     // or for unallocated
+        newFileSystemType() != FileSystem::Type::Unformatted;       // and not for unformatted file systems
 
     dialogWidget().showAvailable(showAvailableAndUsed);
     dialogWidget().showUsed(showAvailableAndUsed);
 
     // when do we show the file system combo box?
     const bool showFileSystem =
-        !partition().roles().has(PartitionRole::Extended) &&                    // not for extended, they have no file system
-        !partition().roles().has(PartitionRole::Unallocated) &&                 // and not for unallocated: no choice there
-                                                                                // do now show file system comboBox for open luks volumes.
+        !partition().roles().has(PartitionRole::Extended) &&        // not for extended, they have no file system
+        !partition().roles().has(PartitionRole::Unallocated) &&     // and not for unallocated: no choice there
+                                                                    // do not show file system comboBox for open luks volumes.
         !(partition().roles().has(PartitionRole::Luks) && partition().fileSystem().type() != FileSystem::Type::Luks);
     dialogWidget().showFileSystem(showFileSystem);
 
@@ -241,14 +241,14 @@ void PartPropsDialog::updateHideAndShow()
         showFileSystem &&                                                       // only if we also show the file system
         partition().fileSystem().supportCreate() != FileSystem::cmdSupportNone &&  // and support creating this file system
         partition().fileSystem().type() != FileSystem::Type::Unknown &&         // and not for unknown file systems
-        partition().state() != Partition::State::New &&                           // or new partitions
+        partition().state() != Partition::State::New &&                         // or new partitions
         !partition().roles().has(PartitionRole::Luks);                          // or encrypted filesystems
 
     dialogWidget().showCheckRecreate(showCheckRecreate);
 
     // when do we show the list of partition flags?
     const bool showListFlags =
-        partition().state() != Partition::State::New &&                           // not for new partitions
+        partition().state() != Partition::State::New &&                         // not for new partitions
         !partition().roles().has(PartitionRole::Unallocated);                   // and not for unallocated space
 
     dialogWidget().showListFlags(showListFlags);
@@ -289,6 +289,8 @@ void PartPropsDialog::setupFileSystemComboBox()
     {
         // If the partition isn't encrypted, skip the luks FS
         if (fs->type() == FileSystem::Type::Luks && partition().fileSystem().type() != FileSystem::Type::Luks)
+            continue;
+        if (fs->type() == FileSystem::Type::Luks2 && partition().fileSystem().type() != FileSystem::Type::Luks2)
             continue;
         if (partition().fileSystem().type() == fs->type() || (fs->supportCreate() != FileSystem::cmdSupportNone &&
                             partition().capacity() >= fs->minCapacity() && partition().capacity() <= fs->maxCapacity())) {
