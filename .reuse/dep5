@@ -2,10 +2,23 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: KDE Partition Manager
 Source: https://invent.kde.org/system/partitionmanager
 
-### TRANSLATIONS
+### Translations
 Files: po/*.po
 License: GPL-3.0-or-later
 Copyright: 2020 KDE translators
+
+# .desktop file
+FILES: src/org.kde.partitionmanager.desktop
+License: GPL-3.0-or-later
+Copyright: 2008 Volker Lanz <vl@fidra.de>
+Copyright: 2017 Andrius Štikonas <andrius@stikonas.eu>
+Copyright: 2020 KDE translators
+
+### DBus interface
+Files: src/org.kde.partitionmanager.xml
+License: MIT
+Copyright: 2010 Volker Lanz <vl@fidra.de>
+Copyright: 2017 Andrius Štikonas <andrius@stikonas.eu>
 
 ### Documentation
 Files: doc/*.docbook

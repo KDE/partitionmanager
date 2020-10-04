@@ -1,5 +1,12 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<!--
+SPDX-FileCopyrightText: 2008-2010 Volker Lanz <vl@fidra.de>
+SPDX-FileCopyrightText: 2015-2016 Teo Mrnjavac <teo@kde.org>
+SPDX-FileCopyrightText: 2016 Chantara Tith <tith.chantara@gmail.com>
+SPDX-FileCopyrightText: 2016-2019 Andrius Štikonas <andrius@stikonas.eu>
 
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
 <gui name="KDE Partition Manager" version="11">
     <ToolBar name="partitionToolBar">
         <text context="@title:menu">Partition Manager Toolbar</text>
