@@ -984,7 +984,7 @@ void MainWindow::onImportPartitionTable()
                 return;
             }
 
-            if (tableType != PartitionTable::msdos && tableType != PartitionTable::gpt) {
+            if (tableType != PartitionTable::msdos && tableType != PartitionTable::gpt && tableType != PartitionTable::none) {
                 KMessageBox::error(this, xi18nc("@info", "Partition table type \"%1\" is not supported for import (line %2).", reType.captured(1), lineNo), xi18nc("@title:window", "Error While Importing Partition Table"));
                 return;
             }
