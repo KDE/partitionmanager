@@ -43,6 +43,7 @@
 #include <ops/backupoperation.h>
 #include <ops/restoreoperation.h>
 #include <ops/checkoperation.h>
+#include <ops/setpartflagsoperation.h>
 
 #include <fs/filesystem.h>
 #include <fs/filesystemfactory.h>
@@ -1056,9 +1057,13 @@ void MainWindow::onImportPartitionTable()
             if (fs->supportSetLabel() != FileSystem::cmdSupportNone && !volumeLabel.isEmpty())
                 fs->setLabel(volumeLabel);
 
-            Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, QString(), PartitionTable::flagsFromList(flags), QString(), false, PartitionTable::flagsFromList(flags), Partition::State::New);
+            Partition* p = new Partition(parent, device, role, fs, firstSector, lastSector, QString(), PartitionTable::Flag::None, QString(), false, PartitionTable::Flag::None, Partition::State::New);
 
             operationStack().push(new NewOperation(device, p));
+
+            auto newFlags = PartitionTable::flagsFromList(flags);
+            if (newFlags != PartitionTable::Flag::None)
+                operationStack().push(new SetPartFlagsOperation(device, *p, newFlags));
         } else
             Log(Log::Level::warning) << xi18nc("@info:status", "Could not parse line %1 from import file. Ignoring it.", lineNo);
     }
