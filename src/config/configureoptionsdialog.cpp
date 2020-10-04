@@ -1,20 +1,9 @@
-/*************************************************************************
- *  Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                      *
- *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
- *                                                                       *
- *  This program is free software; you can redistribute it and/or        *
- *  modify it under the terms of the GNU General Public License as       *
- *  published by the Free Software Foundation; either version 3 of       *
- *  the License, or (at your option) any later version.                  *
- *                                                                       *
- *  This program is distributed in the hope that it will be useful,      *
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of       *
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the        *
- *  GNU General Public License for more details.                         *
- *                                                                       *
- *  You should have received a copy of the GNU General Public License    *
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
- *************************************************************************/
+/*
+    SPDX-FileCopyrightText: 2010 Volker Lanz <vl@fidra.de>
+    SPDX-FileCopyrightText: 2014-2020 Andrius Štikonas <andrius@stikonas.eu>
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+*/
 
 #include "config/configureoptionsdialog.h"
 #include "config/generalpagewidget.h"
@@ -33,7 +22,6 @@
 
 #include "ui_configurepagefilesystemcolors.h"
 
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -52,19 +40,14 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 {
     setFaceType(List);
 
-    KPageWidgetItem* item = nullptr;
-
-    item = addPage(&generalPageWidget(), xi18nc("@title:tab general application settings", "General"), QString(), i18n("General Settings"));
-    item->setIcon(QIcon::fromTheme(QStringLiteral("partitionmanager")).pixmap(IconSize(KIconLoader::Desktop)));
+    addPage(&generalPageWidget(), xi18nc("@title:tab general application settings", "General"), QStringLiteral("partitionmanager"), i18n("General Settings"));
 
     connect(&generalPageWidget().comboDefaultFileSystem(), qOverload<int>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
     connect(generalPageWidget().radioButton, &QRadioButton::toggled, this, &ConfigureOptionsDialog::onShredSourceActivated);
 
-    item = addPage(&fileSystemColorsPageWidget(), xi18nc("@title:tab", "File System Colors"), QString(), i18n("File System Color Settings"));
-    item->setIcon(QIcon::fromTheme(QStringLiteral("format-fill-color")).pixmap(IconSize(KIconLoader::Desktop)));
+    addPage(&fileSystemColorsPageWidget(), xi18nc("@title:tab", "File System Colors"), QStringLiteral("preferences-desktop-color"), i18n("File System Color Settings"));
 
-    item = addPage(&advancedPageWidget(), xi18nc("@title:tab advanced application settings", "Advanced"), QString(), i18n("Advanced Settings"));
-    item->setIcon(QIcon::fromTheme(QStringLiteral("configure")).pixmap(IconSize(KIconLoader::Desktop)));
+    addPage(&advancedPageWidget(), xi18nc("@title:tab advanced application settings", "Advanced"), QStringLiteral("preferences-other"), i18n("Advanced Settings"));
 
     connect(&advancedPageWidget().comboBackend(), qOverload<int>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
     connect(&advancedPageWidget().raidConfigurationLine(), &QLineEdit::textChanged, this, &ConfigureOptionsDialog::onRaidConfigFilePathActivated);
@@ -108,7 +91,7 @@ void ConfigureOptionsDialog::updateSettings()
     }
 
     if (changed)
-        emit KConfigDialog::settingsChanged(i18n("General Settings"));
+        Q_EMIT KConfigDialog::settingsChanged(i18n("General Settings"));
 }
 
 bool ConfigureOptionsDialog::hasChanged()

@@ -1,20 +1,9 @@
-/*************************************************************************
- *  Copyright (C) 2010 by Volker Lanz <vl@fidra.de>                      *
- *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
- *                                                                       *
- *  This program is free software; you can redistribute it and/or        *
- *  modify it under the terms of the GNU General Public License as       *
- *  published by the Free Software Foundation; either version 3 of       *
- *  the License, or (at your option) any later version.                  *
- *                                                                       *
- *  This program is distributed in the hope that it will be useful,      *
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of       *
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the        *
- *  GNU General Public License for more details.                         *
- *                                                                       *
- *  You should have received a copy of the GNU General Public License    *
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
- *************************************************************************/
+/*
+    SPDX-FileCopyrightText: 2010 Volker Lanz <vl@fidra.de>
+    SPDX-FileCopyrightText: 2014-2020 Andrius Štikonas <andrius@stikonas.eu>
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+*/
 
 #include "gui/smartdialog.h"
 #include "gui/smartdialogwidget.h"
@@ -30,6 +19,7 @@
 #include <QFileDialog>
 #include <QFontDatabase>
 #include <QPushButton>
+#include <QStyle>
 #include <QTemporaryFile>
 #include <QTextDocumentFragment>
 #include <QTextStream>
@@ -39,7 +29,6 @@
 #include <KConfigGroup>
 #include <KFormat>
 #include <KLocalizedString>
-#include <KIconLoader>
 #include <KIO/CopyJob>
 #include <KJobUiDelegate>
 #include <KMessageBox>
@@ -89,10 +78,12 @@ void SmartDialog::setupDialog()
     if (device().smartStatus().isValid()) {
         if (device().smartStatus().status()) {
             dialogWidget().statusText().setText(xi18nc("@label SMART disk status", "good"));
-            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(IconSize(KIconLoader::Small)));
+            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-ok"))
+                    .pixmap(QApplication::style()->pixelMetric(QStyle::PixelMetric::PM_SmallIconSize)));
         } else {
             dialogWidget().statusText().setText(xi18nc("@label SMART disk status", "BAD"));
-            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(IconSize(KIconLoader::Small)));
+            dialogWidget().statusIcon().setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning"))
+                    .pixmap(QApplication::style()->pixelMetric(QStyle::PixelMetric::PM_SmallIconSize)));
         }
 
         dialogWidget().modelName().setText(device().smartStatus().modelName());

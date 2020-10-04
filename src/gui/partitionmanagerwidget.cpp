@@ -1,21 +1,12 @@
-/*************************************************************************
- *  Copyright (C) 2008-2010 by Volker Lanz <vl@fidra.de>                 *
- *  Copyright (C) 2015 by Teo Mrnjavac <teo@kde.org>                     *
- *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
- *                                                                       *
- *  This program is free software; you can redistribute it and/or        *
- *  modify it under the terms of the GNU General Public License as       *
- *  published by the Free Software Foundation; either version 3 of       *
- *  the License, or (at your option) any later version.                  *
- *                                                                       *
- *  This program is distributed in the hope that it will be useful,      *
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of       *
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the        *
- *  GNU General Public License for more details.                         *
- *                                                                       *
- *  You should have received a copy of the GNU General Public License    *
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
- *************************************************************************/
+/*
+    SPDX-FileCopyrightText: 2008-2012 Volker Lanz <vl@fidra.de>
+    SPDX-FileCopyrightText: 2014-2020 Andrius Štikonas <andrius@stikonas.eu>
+    SPDX-FileCopyrightText: 2015-2016 Teo Mrnjavac <teo@kde.org>
+    SPDX-FileCopyrightText: 2016 Chantara Tith <tith.chantara@gmail.com>
+    SPDX-FileCopyrightText: 2018 Abhijeet Sharma <sharma.abhijeet2096@gmail.com>
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+*/
 
 #include "gui/partitionmanagerwidget.h"
 #include "gui/partpropsdialog.h"
@@ -57,7 +48,6 @@
 #include <QPointer>
 #include <QReadLocker>
 
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -166,7 +156,7 @@ void PartitionManagerWidget::setSelectedPartition(const Partition* p)
 {
     if (p == nullptr) {
         treePartitions().setCurrentItem(nullptr);
-        emit selectedPartitionChanged(nullptr);
+        Q_EMIT selectedPartitionChanged(nullptr);
         updatePartitions();
     } else
         partTableWidget().setActivePartition(p);
@@ -217,7 +207,7 @@ static QTreeWidgetItem* createTreeWidgetItem(const Partition& p)
 
     item->setText(i, p.mountPoint());
     if (p.isMounted())
-        item->setIcon(i, QIcon::fromTheme(QStringLiteral("object-locked")).pixmap(IconSize(KIconLoader::Panel)));
+        item->setIcon(i, QIcon::fromTheme(QStringLiteral("object-locked")));
     i++;
 
     item->setText(i++, p.fileSystem().label());
@@ -258,7 +248,7 @@ void PartitionManagerWidget::updatePartitions()
     deviceItem->setFont(0, font);
 
     deviceItem->setText(0, selectedDevice()->prettyName());
-    deviceItem->setIcon(0, QIcon::fromTheme(selectedDevice()->iconName()).pixmap(IconSize(KIconLoader::Desktop)));
+    deviceItem->setIcon(0, QIcon::fromTheme(selectedDevice()->iconName()));
 
     deviceItem->setSizeHint(0, QSize(0, 32));
 
@@ -279,7 +269,7 @@ void PartitionManagerWidget::updatePartitions()
         }
     }
 
-    treePartitions().setFirstItemColumnSpanned(deviceItem, true);
+    deviceItem->setFirstColumnSpanned(true);
     deviceItem->setExpanded(true);
     deviceItem->setFlags(Qt::ItemIsEnabled);
 
@@ -299,10 +289,10 @@ void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetIt
 {
     if (item == treePartitions().topLevelItem(0)) {
         if (selectedDevice() != nullptr)
-            emit deviceDoubleClicked(selectedDevice());
+            Q_EMIT deviceDoubleClicked(selectedDevice());
     } else {
         if (selectedPartition() != nullptr)
-            emit partitionDoubleClicked(selectedPartition());
+            Q_EMIT partitionDoubleClicked(selectedPartition());
     }
 }
 
@@ -315,7 +305,7 @@ void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidge
 {
     if (item == nullptr) {
         treePartitions().setCurrentItem(nullptr);
-        emit selectedPartitionChanged(nullptr);
+        Q_EMIT selectedPartitionChanged(nullptr);
         return;
     }
 
@@ -336,23 +326,23 @@ void PartitionManagerWidget::on_m_PartTableWidget_itemSelectionChanged(PartWidge
         }
     }
 
-    emit selectedPartitionChanged(p);
+    Q_EMIT selectedPartitionChanged(p);
 }
 
 void PartitionManagerWidget::on_m_PartTableWidget_customContextMenuRequested(const QPoint& pos)
 {
-    emit contextMenuRequested(partTableWidget().mapToGlobal(pos));
+    Q_EMIT contextMenuRequested(partTableWidget().mapToGlobal(pos));
 }
 
 void PartitionManagerWidget::on_m_PartTableWidget_itemDoubleClicked()
 {
     if (selectedPartition())
-        emit partitionDoubleClicked(selectedPartition());
+        Q_EMIT partitionDoubleClicked(selectedPartition());
 }
 
 void PartitionManagerWidget::on_m_TreePartitions_customContextMenuRequested(const QPoint& pos)
 {
-    emit contextMenuRequested(treePartitions().viewport()->mapToGlobal(pos));
+    Q_EMIT contextMenuRequested(treePartitions().viewport()->mapToGlobal(pos));
 }
 
 void PartitionManagerWidget::onPropertiesPartition()

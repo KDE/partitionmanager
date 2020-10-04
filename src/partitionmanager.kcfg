@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+SPDX-FileCopyrightText: 2008-2010 Volker Lanz <vl@fidra.de>
+SPDX-FileCopyrightText: 2012-2019 Andrius Štikonas <andrius@stikonas.eu>
+SPDX-FileCopyrightText: 2018 Caio Jordão Carvalho <caiojcarvalho@gmail.com>
+SPDX-FileCopyrightText: 2019 Shubham Jangra <aryan100jangid@gmail.com>
 
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
 <kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
@@ -89,9 +96,10 @@
 					<value>Iso9660</value>
 					<value>Luks2</value>
 					<value>Fat12</value>
-                                        <value>LinuxRaidMember</value>
-                                        <value>BitLocker</value>
-                                        <value>Apfs</value>
+					<value>LinuxRaidMember</value>
+					<value>BitLocker</value>
+					<value>Apfs</value>
+					<value>Minix</value>
 				</values>
 			</parameter>
 			<default param="Unknown">220,205,175</default>
@@ -125,8 +133,9 @@
 			<default param="Luks2">223,39,104</default>
 			<default param="Fat12">204,179,255</default>
 			<default param="LinuxRaidMember">255,100,100</default>
-                        <default param="BitLocker">110,20,50</default>
-                        <default param="Apfs">255,155,174</default>
+			<default param="BitLocker">110,20,50</default>
+			<default param="Apfs">255,155,174</default>
+			<default param="Minix">0,170,255</default>            
 		</entry>
 		<entry key="showMenuBar" type="Bool">
 			<label context="@label">Show the application's menu bar</label>

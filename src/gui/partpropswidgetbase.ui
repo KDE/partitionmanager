@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>
+SPDX-FileCopyrightText: 2008-2010 Volker Lanz &lt;vl@fidra.de&gt;
+SPDX-FileCopyrightText: 2013-2020 Andrius Štikonas &lt;andrius@stikonas.eu&gt;
+SPDX-FileCopyrightText: 2018 Abhijeet Sharma &lt;sharma.abhijeet2096@gmail.com&gt;
+SPDX-License-Identifier: GPL-3.0-or-later
+ </author>
  <class>PartPropsWidgetBase</class>
  <widget class="QWidget" name="PartPropsWidgetBase">
   <property name="geometry">
@@ -7,7 +13,7 @@
     <x>0</x>
     <y>0</y>
     <width>506</width>
-    <height>600</height>
+    <height>669</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -375,12 +381,18 @@
      <property name="text">
       <string/>
      </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
     </widget>
    </item>
    <item row="11" column="1">
     <widget class="QLabel" name="m_LabelPartitionLabel">
      <property name="text">
       <string/>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>

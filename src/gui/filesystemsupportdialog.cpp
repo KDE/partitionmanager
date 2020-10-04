@@ -1,20 +1,9 @@
-/*************************************************************************
- *  Copyright (C) 2008, 2010 by Volker Lanz <vl@fidra.de>                *
- *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
- *                                                                       *
- *  This program is free software; you can redistribute it and/or        *
- *  modify it under the terms of the GNU General Public License as       *
- *  published by the Free Software Foundation; either version 3 of       *
- *  the License, or (at your option) any later version.                  *
- *                                                                       *
- *  This program is distributed in the hope that it will be useful,      *
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of       *
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the        *
- *  GNU General Public License for more details.                         *
- *                                                                       *
- *  You should have received a copy of the GNU General Public License    *
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
- *************************************************************************/
+/*
+    SPDX-FileCopyrightText: 2010 Volker Lanz <vl@fidra.de>
+    SPDX-FileCopyrightText: 2014-2020 Andrius Štikonas <andrius@stikonas.eu>
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+*/
 
 #include "gui/filesystemsupportdialog.h"
 #include "gui/filesystemsupportdialogwidget.h"
@@ -26,7 +15,6 @@
 #include <QDialog>
 
 #include <KConfigGroup>
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KSharedConfig>
 
@@ -66,8 +54,8 @@ QSize FileSystemSupportDialog::sizeHint() const
 
 void FileSystemSupportDialog::setupDialog()
 {
-    QIcon yes = QIcon::fromTheme(QStringLiteral("dialog-ok")).pixmap(IconSize(KIconLoader::Toolbar));
-    QIcon no = QIcon::fromTheme(QStringLiteral("dialog-error")).pixmap(IconSize(KIconLoader::Toolbar));
+    QIcon yes = QIcon::fromTheme(QStringLiteral("dialog-ok"));
+    QIcon no = QIcon::fromTheme(QStringLiteral("dialog-error"));
 
     dialogWidget().tree().clear();
 

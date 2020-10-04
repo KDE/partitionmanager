@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>
+SPDX-FileCopyrightText: 2010 Volker Lanz &lt;vl@fidra.de&gt;
+SPDX-FileCopyrightText: 2016 Andrius Štikonas &lt;andrius@stikonas.eu&gt;
+SPDX-License-Identifier: GPL-3.0-or-later
+ </author>
  <class>ApplyProgressDialogWidgetBase</class>
  <widget class="QWidget" name="ApplyProgressDialogWidgetBase">
   <property name="geometry">

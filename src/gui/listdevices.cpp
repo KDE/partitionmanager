@@ -1,20 +1,9 @@
-/*************************************************************************
- *  Copyright (C) 2008-2010 by Volker Lanz <vl@fidra.de>                 *
- *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
- *                                                                       *
- *  This program is free software; you can redistribute it and/or        *
- *  modify it under the terms of the GNU General Public License as       *
- *  published by the Free Software Foundation; either version 3 of       *
- *  the License, or (at your option) any later version.                  *
- *                                                                       *
- *  This program is distributed in the hope that it will be useful,      *
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of       *
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the        *
- *  GNU General Public License for more details.                         *
- *                                                                       *
- *  You should have received a copy of the GNU General Public License    *
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
- *************************************************************************/
+/*
+    SPDX-FileCopyrightText: 2009-2010 Volker Lanz <vl@fidra.de>
+    SPDX-FileCopyrightText: 2014-2020 Andrius Štikonas <andrius@stikonas.eu>
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+*/
 
 #include "gui/listdevices.h"
 
@@ -23,14 +12,11 @@
 #include <util/globallog.h>
 #include <util/capacity.h>
 
-#include <KIconLoader>
-
 class ListDeviceWidgetItem : public QListWidgetItem
 {
 public:
     ListDeviceWidgetItem(const Device& d) :
-        QListWidgetItem(QIcon::fromTheme(d.iconName()).pixmap(IconSize(KIconLoader::Desktop)), d.prettyName()),
-        deviceNode(d.deviceNode()) {
+        QListWidgetItem(QIcon::fromTheme(d.iconName()), d.prettyName()), deviceNode(d.deviceNode()) {
         setToolTip(d.prettyName());
         setSizeHint(QSize(0, 32));
     }
@@ -63,7 +49,7 @@ void ListDevices::on_m_ListDevices_itemSelectionChanged()
         ListDeviceWidgetItem* item = dynamic_cast<ListDeviceWidgetItem*>(listDevices().selectedItems()[0]);
 
         if (item != nullptr)
-            emit selectionChanged(item->deviceNode);
+            Q_EMIT selectionChanged(item->deviceNode);
     }
 }
 
@@ -72,7 +58,7 @@ void ListDevices::on_m_ListDevices_itemDoubleClicked(QListWidgetItem* list_item)
     ListDeviceWidgetItem* item = dynamic_cast<ListDeviceWidgetItem*>(list_item);
 
     if (item != nullptr)
-        emit deviceDoubleClicked(item->deviceNode);
+        Q_EMIT deviceDoubleClicked(item->deviceNode);
 }
 
 bool ListDevices::setSelectedDevice(const QString& device_node)

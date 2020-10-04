@@ -1,20 +1,9 @@
-/*************************************************************************
- *  Copyright (C) 2008 by Volker Lanz <vl@fidra.de>                      *
- *  Copyright (C) 2016 by Andrius Štikonas <andrius@stikonas.eu>         *
- *                                                                       *
- *  This program is free software; you can redistribute it and/or        *
- *  modify it under the terms of the GNU General Public License as       *
- *  published by the Free Software Foundation; either version 3 of       *
- *  the License, or (at your option) any later version.                  *
- *                                                                       *
- *  This program is distributed in the hope that it will be useful,      *
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of       *
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the        *
- *  GNU General Public License for more details.                         *
- *                                                                       *
- *  You should have received a copy of the GNU General Public License    *
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
- *************************************************************************/
+/*
+    SPDX-FileCopyrightText: 2010 Volker Lanz <vl@fidra.de>
+    SPDX-FileCopyrightText: 2014-2020 Andrius Štikonas <andrius@stikonas.eu>
+
+    SPDX-License-Identifier: GPL-3.0-or-later
+*/
 
 #include "gui/applyprogressdialog.h"
 
@@ -43,11 +32,10 @@
 
 #include <KAboutData>
 #include <KConfigGroup>
-#include <KRun>
 #include <KIO/CopyJob>
+#include <KIO/OpenUrlJob>
 #include <KJobUiDelegate>
 #include <KLocalizedString>
-#include <KIconLoader>
 #include <KMessageBox>
 #include <KSharedConfig>
 
@@ -72,7 +60,7 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
     m_Report(nullptr),
     m_SavedParentTitle(mainWindow(this)->windowTitle()),
     m_Timer(this),
-    m_Time(),
+    m_ElapsedTimer(),
     m_CurrentOpItem(nullptr),
     m_CurrentJobItem(nullptr),
     m_LastReportUpdate(0)
@@ -93,13 +81,13 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
     cancelButton = dialogButtonBox->addButton(QDialogButtonBox::Cancel);
     detailsButton = new QPushButton;
     detailsButton->setText(xi18nc("@action:button", "&Details") + QStringLiteral(" >>"));
-    detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("help-about")).pixmap(IconSize(KIconLoader::Toolbar)));
+    detailsButton->setIcon(QIcon::fromTheme(QStringLiteral("help-about")));
     dialogButtonBox->addButton(detailsButton, QDialogButtonBox::ActionRole);
     mainLayout->addWidget(dialogButtonBox);
 
     dialogWidget().treeTasks().setColumnWidth(0, width() * 8 / 10);
-    detailsWidget().buttonBrowser().setIcon(QIcon::fromTheme(QStringLiteral("document-open")).pixmap(IconSize(KIconLoader::Toolbar)));
-    detailsWidget().buttonSave().setIcon(QIcon::fromTheme(QStringLiteral("document-save")).pixmap(IconSize(KIconLoader::Toolbar)));
+    detailsWidget().buttonBrowser().setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
+    detailsWidget().buttonSave().setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
 
     setupConnections();
 
@@ -297,7 +285,7 @@ void ApplyProgressDialog::onJobStarted(Job* job, Operation* op)
 
         QTreeWidgetItem* child = new QTreeWidgetItem();
         child->setText(0, job->description());
-        child->setIcon(0, QIcon::fromTheme(job->statusIcon()).pixmap(IconSize(KIconLoader::Small)));
+        child->setIcon(0, QIcon::fromTheme(job->statusIcon()));
         child->setText(1, QTime(0, 0).toString(timeFormat()));
         item->addChild(child);
         dialogWidget().treeTasks().scrollToBottom();
@@ -309,7 +297,7 @@ void ApplyProgressDialog::onJobStarted(Job* job, Operation* op)
 void ApplyProgressDialog::onJobFinished(Job* job, Operation* op)
 {
     if (currentJobItem())
-        currentJobItem()->setIcon(0, QIcon::fromTheme(job->statusIcon()).pixmap(IconSize(KIconLoader::Small)));
+        currentJobItem()->setIcon(0, QIcon::fromTheme(job->statusIcon()));
 
     setCurrentJobItem(nullptr);
 
@@ -324,7 +312,7 @@ void ApplyProgressDialog::onOpFinished(int num, Operation* op)
 {
     if (currentOpItem()) {
         currentOpItem()->setText(0, opDesc(num, *op));
-        currentOpItem()->setIcon(0, QIcon::fromTheme(op->statusIcon()).pixmap(IconSize(KIconLoader::Small)));
+        currentOpItem()->setIcon(0, QIcon::fromTheme(op->statusIcon()));
     }
 
     setCurrentOpItem(nullptr);
@@ -357,7 +345,7 @@ QString ApplyProgressDialog::opDesc(int num, const Operation& op) const
 void ApplyProgressDialog::addTaskOutput(int num, const Operation& op)
 {
     QTreeWidgetItem* item = new QTreeWidgetItem();
-    item->setIcon(0, QIcon::fromTheme(op.statusIcon()).pixmap(IconSize(KIconLoader::Small)));
+    item->setIcon(0, QIcon::fromTheme(op.statusIcon()));
     item->setText(0, opDesc(num, op));
     item->setText(1, QTime(0, 0).toString(timeFormat()));
 
@@ -440,8 +428,6 @@ void ApplyProgressDialog::browserReport()
 {
     QTemporaryFile file;
 
-    // Make sure the temp file is created somewhere another user can read it: KRun::runUrl() will open
-    // the file as the logged in user, not as the user running our application.
     file.setFileTemplate(QStringLiteral("/tmp/") + QCoreApplication::applicationName() + QStringLiteral("-XXXXXX.html"));
     file.setAutoRemove(false);
 
@@ -454,11 +440,10 @@ void ApplyProgressDialog::browserReport()
           << report().toHtml()
           << html.footer();
 
-        // set the temp file's permission for everyone to read it.
-        file.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ReadGroup | QFile::ReadOther);
+        file.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
 
-        if (!KRun::runUrl(QUrl::fromLocalFile(file.fileName()), QStringLiteral("text/html"), this, KRun::RunFlags()))
-            KMessageBox::sorry(this, xi18nc("@info", "The configured external browser could not be run. Please check your settings."), xi18nc("@title:window", "Could Not Launch Browser."));
+        auto *job = new KIO::OpenUrlJob(QUrl::fromLocalFile(file.fileName()), QStringLiteral("text/html"), this);
+        job->start();
     } else
         KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file <filename>%1</filename> for writing.", file.fileName()), i18nc("@title:window", "Could Not Launch Browser."));
 }
