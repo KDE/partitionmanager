@@ -43,6 +43,9 @@ void PartTableWidget::setPartitionTable(const PartitionTable* ptable)
             PartWidget* w = new PartWidget(this, p);
             w->setVisible(true);
             w->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());
+            const auto children = w->childWidgets();
+            for (const auto &child : children)
+                child->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());
         }
     }
 
