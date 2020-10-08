@@ -158,7 +158,6 @@ void MainWindow::closeEvent(QCloseEvent* event)
     saveConfig();
 
     KXmlGuiWindow::closeEvent(event);
-    ExternalCommand::stopHelper();
     delete m_ApplyProgressDialog;
 }
 
