@@ -1,6 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2008-2012 Volker Lanz <vl@fidra.de>
-    SPDX-FileCopyrightText: 2013-2018 Andrius Štikonas <andrius@stikonas.eu>
+    SPDX-FileCopyrightText: 2013-2020 Andrius Štikonas <andrius@stikonas.eu>
     SPDX-FileCopyrightText: 2015 Teo Mrnjavac <teo@kde.org>
     SPDX-FileCopyrightText: 2016 Chantara Tith <tith.chantara@gmail.com>
     SPDX-FileCopyrightText: 2018 Caio Jordão Carvalho <caiojcarvalho@gmail.com>
@@ -21,6 +21,8 @@
 #include <util/capacity.h>
 #include <util/helpers.h>
 #include "util/guihelpers.h"
+
+#include <utility>
 
 #include <QtGlobal>
 #include <QFontDatabase>
@@ -72,7 +74,7 @@ void NewDialog::setupDialog()
 
     std::sort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    for (const auto &fsName : qAsConst(fsNames))
+    for (const auto &fsName : std::as_const(fsNames))
         dialogWidget().comboFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     QString selected = FileSystem::nameForType(GuiHelpers::defaultFileSystem());

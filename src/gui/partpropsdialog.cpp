@@ -1,6 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2008-2010 Volker Lanz <vl@fidra.de>
-    SPDX-FileCopyrightText: 2014-2017 Andrius Štikonas <andrius@stikonas.eu>
+    SPDX-FileCopyrightText: 2014-2020 Andrius Štikonas <andrius@stikonas.eu>
     SPDX-FileCopyrightText: 2014 Yuri Chornoivan <yurchor@ukr.net>
     SPDX-FileCopyrightText: 2018 Abhijeet Sharma <sharma.abhijeet2096@gmail.com>
 
@@ -18,6 +18,8 @@
 #include <util/capacity.h>
 #include <util/helpers.h>
 #include "util/guihelpers.h"
+
+#include <utility>
 
 #include <QComboBox>
 #include <QFontDatabase>
@@ -319,7 +321,7 @@ void PartPropsDialog::setupFileSystemComboBox()
 
     std::sort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    for (const auto &fsName : qAsConst(fsNames))
+    for (const auto &fsName : std::as_const(fsNames))
         dialogWidget().fileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));

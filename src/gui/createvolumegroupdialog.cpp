@@ -1,6 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2016 Chantara Tith <tith.chantara@gmail.com>
-    SPDX-FileCopyrightText: 2016 Andrius Štikonas <andrius@stikonas.eu>
+    SPDX-FileCopyrightText: 2016-2020 Andrius Štikonas <andrius@stikonas.eu>
     SPDX-FileCopyrightText: 2018 Caio Jordão Carvalho <caiojcarvalho@gmail.com>
     SPDX-FileCopyrightText: 2019 Yuri Chornoivan <yurchor@ukr.net>
 
@@ -20,6 +20,8 @@
 
 #include <util/capacity.h>
 #include <util/helpers.h>
+
+#include <utility>
 
 #include <QtGlobal>
 
@@ -48,11 +50,11 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgNam
 
 void CreateVolumeGroupDialog::setupDialog()
 {
-    for (const auto &p : qAsConst(LVM::pvList::list())) {
+    for (const auto &p : std::as_const(LVM::pvList::list())) {
         bool toBeDeleted = false;
 
         // Ignore partitions that are going to be deleted
-        for (const auto &o : qAsConst(m_PendingOps)) {
+        for (const auto &o : std::as_const(m_PendingOps)) {
             if (dynamic_cast<DeleteOperation *>(o) && o->targets(*p.partition())) {
                 toBeDeleted = true;
                 break;
@@ -66,9 +68,9 @@ void CreateVolumeGroupDialog::setupDialog()
             dialogWidget().listPV().addPartition(*p.partition(), false);
     }
 
-    for (const Device *d : qAsConst(m_Devices)) {
+    for (const Device *d : std::as_const(m_Devices)) {
         if (d->partitionTable() != nullptr) {
-            for (const Partition *p : qAsConst(d->partitionTable()->children())) {
+            for (const Partition *p : std::as_const(d->partitionTable()->children())) {
                 // Looking if there is another VG creation that contains this partition
                 if (LvmDevice::s_DirtyPVs.contains(p))
                     continue;
@@ -88,7 +90,7 @@ void CreateVolumeGroupDialog::setupDialog()
         }
     }
 
-    for (const Partition *p : qAsConst(LvmDevice::s_OrphanPVs))
+    for (const Partition *p : std::as_const(LvmDevice::s_OrphanPVs))
         if (!LvmDevice::s_DirtyPVs.contains(p))
             dialogWidget().listPV().addPartition(*p, false);
 }
