@@ -26,6 +26,7 @@
 #include <QtGlobal>
 #include <QLineEdit>
 #include <QLocale>
+#include <QPalette>
 #include <QPushButton>
 
 #include <KConfigGroup>
@@ -202,9 +203,9 @@ void PartPropsDialog::updateHideAndShow()
         dialogWidget().noSetLabel().setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
 
         QPalette palette = dialogWidget().noSetLabel().palette();
-        QColor f = palette.color(QPalette::Foreground);
+        QColor f = palette.color(QPalette::WindowText);
         f.setAlpha(128);
-        palette.setColor(QPalette::Foreground, f);
+        palette.setColor(QPalette::WindowText, f);
         dialogWidget().noSetLabel().setPalette(palette);
     } else {
         dialogWidget().label().setReadOnly(isReadOnly() && !partition().fileSystem().supportSetLabelOnline());

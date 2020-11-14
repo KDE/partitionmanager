@@ -27,6 +27,7 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QLocale>
+#include <QPalette>
 
 #include <KLocalizedString>
 
@@ -75,9 +76,9 @@ void InfoPane::createLabels(const QString& title, const QString& value, const in
     labelTitle->setAlignment(Qt::AlignRight | Qt::AlignTrailing | Qt::AlignVCenter);
 
     QPalette palette = labelTitle->palette();
-    QColor f = palette.color(QPalette::Foreground);
+    QColor f = palette.color(QPalette::WindowText);
     f.setAlpha(128);
-    palette.setColor(QPalette::Foreground, f);
+    palette.setColor(QPalette::WindowText, f);
     labelTitle->setPalette(palette);
 
     gridLayout().addWidget(labelTitle, y, x, 1, 1);

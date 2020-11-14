@@ -26,6 +26,7 @@
 
 #include <QtGlobal>
 #include <QFontDatabase>
+#include <QPalette>
 
 #include <KColorScheme>
 #include <KConfigGroup>
@@ -252,9 +253,9 @@ void NewDialog::updateHideAndShow()
         dialogWidget().noSetLabel().setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
 
         QPalette palette = dialogWidget().noSetLabel().palette();
-        QColor f = palette.color(QPalette::Foreground);
+        QColor f = palette.color(QPalette::WindowText);
         f.setAlpha(128);
-        palette.setColor(QPalette::Foreground, f);
+        palette.setColor(QPalette::WindowText, f);
         dialogWidget().noSetLabel().setPalette(palette);
         dialogWidget().checkBoxEncrypt().hide();
         dialogWidget().editPassphrase().hide();
