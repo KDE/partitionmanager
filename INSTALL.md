@@ -1,3 +1,8 @@
+<!-- SPDX-FileCopyrightText: 2008-2010 Volker Lanz <vl@fidra.de>
+     SPDX-FileCopyrightText: 2016-2019 Andrius Štikonas <andrius@stikonas.eu>
+     SPDX-License-Identifier: GFDL-1.2-or-later
+-->
+
 Building and installing KDE Partition Manager from source
 =========================================================
 

@@ -3,27 +3,27 @@
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-project(partitionmanager)
-
 cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 
+# KDE Application Version, managed by release script
+set (RELEASE_SERVICE_VERSION_MAJOR "21")
+set (RELEASE_SERVICE_VERSION_MINOR "03")
+set (RELEASE_SERVICE_VERSION_MICRO "70")
+set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
+project(partitionmanager VERSION ${RELEASE_SERVICE_VERSION})
+
 # Dependencies
-set(QT_MIN_VERSION "5.10.0")
-set(KF5_MIN_VERSION "5.71")
-set(KPMCORE_MIN_VERSION "4.2.0")
+set(QT_MIN_VERSION "5.14.0")
+set(KF5_MIN_VERSION "5.73")
+set(KPMCORE_MIN_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}")
 
 set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 set(KDE_INSTALL_USE_QT_SYS_PATHS ON CACHE BOOL "Install mkspecs files, Plugins and Imports to the Qt 5 install dir" FORCE)
 
-# Check KPMcore dependency when bumping
-set(VERSION_MAJOR "4")
-set(VERSION_MINOR "2")
-set(VERSION_RELEASE "0")
-set(VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_RELEASE})
-add_definitions(-D'VERSION="${VERSION}"') #"
+add_definitions(-D'VERSION="${RELEASE_SERVICE_VERSION}"')
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
@@ -81,10 +81,11 @@ add_subdirectory(src)
 add_subdirectory(icons)
 if (KF5DocTools_FOUND)
     add_subdirectory(doc)
+    kdoctools_install(po)
 endif()
 
 ki18n_install(po)
 
-message(STATUS "KDE Partition Manager ${VERSION} will be built for install into ${CMAKE_INSTALL_PREFIX}")
+message(STATUS "KDE Partition Manager ${RELEASE_SERVICE_VERSION} will be built for install into ${CMAKE_INSTALL_PREFIX}")
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

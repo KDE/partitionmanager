@@ -1,6 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2016 Chantara Tith <tith.chantara@gmail.com>
-    SPDX-FileCopyrightText: 2016 Andrius Štikonas <andrius@stikonas.eu>
+    SPDX-FileCopyrightText: 2016-2020 Andrius Štikonas <andrius@stikonas.eu>
     SPDX-FileCopyrightText: 2018 Caio Jordão Carvalho <caiojcarvalho@gmail.com>
     SPDX-FileCopyrightText: 2019 Yuri Chornoivan <yurchor@ukr.net>
 
@@ -21,6 +21,8 @@
 
 #include <util/capacity.h>
 #include <util/helpers.h>
+
+#include <utility>
 
 #include <QtGlobal>
 
@@ -60,22 +62,16 @@ void CreateVolumeGroupDialog::setupConnections()
     connect(&dialogWidget().spinPESize(), qOverload<int>(&QSpinBox::valueChanged), this, &CreateVolumeGroupDialog::onSpinPESizeChanged);
 }
 
-<<<<<<< HEAD
 void CreateVolumeGroupDialog::updatePartitionList()
 {
     if (dialogWidget().volumeType().currentText() == QStringLiteral("LVM")) {
         dialogWidget().listPV().clear();
-=======
-        if (!p.isLuks() && p.vgName().isEmpty() && !LvmDevice::s_DirtyPVs.contains(p.partition()))
-            dialogWidget().listPV().addPartition(*p.partition(), false);
-    }
->>>>>>> master
 
-        for (const auto &p : qAsConst(LVM::pvList::list())) {
+        for (const auto &p : std::as_const(LVM::pvList::list())) {
             bool toBeDeleted = false;
 
             // Ignore partitions that are going to be deleted
-            for (const auto &o : qAsConst(m_PendingOps)) {
+            for (const auto &o : std::as_const(m_PendingOps)) {
                 if (dynamic_cast<DeleteOperation *>(o) && o->targets(*p.partition())) {
                     toBeDeleted = true;
                     break;
@@ -111,14 +107,14 @@ void CreateVolumeGroupDialog::updatePartitionList()
             }
         }
 
-        for (const Partition *p : qAsConst(LvmDevice::s_OrphanPVs))
+        for (const Partition *p : std::as_const(LvmDevice::s_OrphanPVs))
             if (!LvmDevice::s_DirtyPVs.contains(p))
                 dialogWidget().listPV().addPartition(*p, false);
     }
     else if (dialogWidget().volumeType().currentText() == QStringLiteral("RAID")) {
-        for (const Device *d : qAsConst(m_Devices)) {
+        for (const Device *d : std::as_const(m_Devices)) {
             if (d->type() != Device::Type::SoftwareRAID_Device && d->partitionTable() != nullptr) {
-                for (const Partition *p : qAsConst(d->partitionTable()->children())) {
+                for (const Partition *p : std::as_const(d->partitionTable()->children())) {
                     if (((p->fileSystem().type() == FileSystem::Type::LinuxRaidMember &&
                           SoftwareRAID::getRaidArrayName(p->partitionPath()).isEmpty()) ||
                             p->fileSystem().type() == FileSystem::Type::Unformatted ||

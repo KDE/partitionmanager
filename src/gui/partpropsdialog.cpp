@@ -1,6 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2008-2010 Volker Lanz <vl@fidra.de>
-    SPDX-FileCopyrightText: 2014-2017 Andrius Štikonas <andrius@stikonas.eu>
+    SPDX-FileCopyrightText: 2014-2020 Andrius Štikonas <andrius@stikonas.eu>
     SPDX-FileCopyrightText: 2014 Yuri Chornoivan <yurchor@ukr.net>
     SPDX-FileCopyrightText: 2018 Abhijeet Sharma <sharma.abhijeet2096@gmail.com>
 
@@ -19,11 +19,14 @@
 #include <util/helpers.h>
 #include "util/guihelpers.h"
 
+#include <utility>
+
 #include <QComboBox>
 #include <QFontDatabase>
 #include <QtGlobal>
 #include <QLineEdit>
 #include <QLocale>
+#include <QPalette>
 #include <QPushButton>
 
 #include <KConfigGroup>
@@ -200,9 +203,9 @@ void PartPropsDialog::updateHideAndShow()
         dialogWidget().noSetLabel().setFont(QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont));
 
         QPalette palette = dialogWidget().noSetLabel().palette();
-        QColor f = palette.color(QPalette::Foreground);
+        QColor f = palette.color(QPalette::WindowText);
         f.setAlpha(128);
-        palette.setColor(QPalette::Foreground, f);
+        palette.setColor(QPalette::WindowText, f);
         dialogWidget().noSetLabel().setPalette(palette);
     } else {
         dialogWidget().label().setReadOnly(isReadOnly() && !partition().fileSystem().supportSetLabelOnline());
@@ -319,7 +322,7 @@ void PartPropsDialog::setupFileSystemComboBox()
 
     std::sort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    for (const auto &fsName : qAsConst(fsNames))
+    for (const auto &fsName : std::as_const(fsNames))
         dialogWidget().fileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     dialogWidget().fileSystem().setCurrentIndex(dialogWidget().fileSystem().findText(selected));

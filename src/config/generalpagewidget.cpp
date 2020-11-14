@@ -1,6 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2010 Volker Lanz <vl@fidra.de>
-    SPDX-FileCopyrightText: 2014-2018 Andrius Štikonas <andrius@stikonas.eu>
+    SPDX-FileCopyrightText: 2014-2020 Andrius Štikonas <andrius@stikonas.eu>
 
     SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -12,6 +12,8 @@
 
 #include <util/helpers.h>
 #include "util/guihelpers.h"
+
+#include <utility>
 
 #include <config.h>
 
@@ -42,7 +44,7 @@ void GeneralPageWidget::setupDialog()
 
     std::sort(fsNames.begin(), fsNames.end(), caseInsensitiveLessThan);
 
-    for (const auto &fsName : qAsConst(fsNames))
+    for (const auto &fsName : std::as_const(fsNames))
         comboDefaultFileSystem().addItem(createFileSystemColor(FileSystem::typeForName(fsName), 8), fsName);
 
     setDefaultFileSystem(GuiHelpers::defaultFileSystem());
