@@ -28,7 +28,7 @@ a potentially dangerous program for your data. It has been tested carefully and
 there are currently no known bugs that could lead to data loss, but nevertheless
 there is always a chance for an error to occur and you might lose your data.
 
-<img src="https://docs.kde.org/trunk5/en/extragear-sysadmin/partitionmanager/resize_howto_4.png" align="center"
+<img src="https://cdn.kde.org/screenshots/partitionmanager/partitionmanager.png" align="center"
      title="KDE Partition Manager" width="800">
 
 ## Installation
