@@ -63,7 +63,7 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partitio
             fsName = QStringLiteral("vfat");
             break;
         default:
-            fsName = partition().fileSystem().name();
+            fsName = partition().fileSystem().name({QStringLiteral("C")});
         }
 
         m_fstabEntries.push_back(FstabEntry(m_deviceNode, QString(), fsName, QString()));
