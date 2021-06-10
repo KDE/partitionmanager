@@ -145,7 +145,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 			<label context="@label">Backend plugin</label>
 		</entry>
 		<entry key="defaultFileSystem" type="Int">
-			<default>static_cast&lt;int&gt;(FileSystem::Type::Ext4)</default>
+			<default>static_cast&lt;int&gt;(FileSystem::Type::Btrfs)</default>
 		</entry>
 		<entry key="preferredUnit" type="Enum">
 			<label context="@label">Preferred unit:</label>
