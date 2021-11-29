@@ -95,6 +95,8 @@ MainWindow::MainWindow(QWidget* parent) :
     m_ScanProgressDialog(new ScanProgressDialog(this)),
     m_StatusText(new QLabel(this))
 {
+    CoreBackend::isPolkitInstalledCorrectly();
+
     setupObjectNames();
     setupUi(this);
     connect(&m_ListDevices->listDevices(), &QListWidget::customContextMenuRequested, this, &MainWindow::listDevicesContextMenuRequested);
