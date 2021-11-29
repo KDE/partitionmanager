@@ -26,12 +26,13 @@ void ScanProgressDialog::closeEvent(QCloseEvent* e)
     e->ignore();
 }
 
-void ScanProgressDialog::setDeviceName(const QString& d)
+void ScanProgressDialog::setDeviceName(const QString& device)
 {
-    if (d.isEmpty())
+    if (device.isEmpty()) {
         setLabelText(xi18nc("@label", "Scanning..."));
-    else
-        setLabelText(xi18nc("@label", "Scanning device: <filename>%1</filename>", d));
+    } else {
+        setLabelText(xi18nc("@label", "Scanning device: <filename>%1</filename>", device));
+    }
 }
 
 void ScanProgressDialog::showEvent(QShowEvent* e)
