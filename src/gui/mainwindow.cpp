@@ -99,9 +99,6 @@ MainWindow::MainWindow(QWidget* parent) :
 
     setupObjectNames();
     setupUi(this);
-    connect(&m_ListDevices->listDevices(), &QListWidget::customContextMenuRequested, this, &MainWindow::listDevicesContextMenuRequested);
-    connect(&m_TreeLog->treeLog(), &QTreeWidget::customContextMenuRequested, this, &MainWindow::treeLogContextMenuRequested);
-    connect(&m_ListOperations->listOperations(), &QListWidget::customContextMenuRequested, this, &MainWindow::listOperationsContextMenuRequested);
     init();
 }
 
@@ -117,8 +114,6 @@ void MainWindow::setupObjectNames()
 void MainWindow::init()
 {
     treeLog().init();
-
-    connect(GlobalLog::instance(), &GlobalLog::newMessage, &treeLog(), &TreeLog::onNewLogMessage);
 
     setupActions();
     setupStatusBar();
@@ -449,8 +444,21 @@ void MainWindow::setupActions()
 
 void MainWindow::setupConnections()
 {
-    connect(&listDevices(), &ListDevices::selectionChanged, &pmWidget(), qOverload<const QString&>(&PartitionManagerWidget::setSelectedDevice));
-    connect(&listDevices(), &ListDevices::deviceDoubleClicked, this, &MainWindow::onPropertiesDevice);
+    connect(&listDevices(), &ListDevices::selectionChanged,
+            &pmWidget(), qOverload<const QString&>(&PartitionManagerWidget::setSelectedDevice));
+
+    connect(&listDevices(), &ListDevices::deviceDoubleClicked,
+            this, &MainWindow::onPropertiesDevice);
+
+    connect(&m_ListDevices->listDevices(), &QListWidget::customContextMenuRequested,
+            this, &MainWindow::listDevicesContextMenuRequested);
+    connect(&m_TreeLog->treeLog(), &QTreeWidget::customContextMenuRequested,
+            this, &MainWindow::treeLogContextMenuRequested);
+    connect(&m_ListOperations->listOperations(), &QListWidget::customContextMenuRequested,
+            this, &MainWindow::listOperationsContextMenuRequested);
+
+    connect(GlobalLog::instance(), &GlobalLog::newMessage,
+            &treeLog(), &TreeLog::onNewLogMessage);
 }
 
 void MainWindow::setupStatusBar()
