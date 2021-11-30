@@ -39,6 +39,8 @@ public:
     void setActionCollection(KActionCollection* coll) {
         m_ActionCollection = coll;
     }
+
+    // Selects the device specified by the device node, such as /dev/sda
     bool setSelectedDevice(const QString& device_node);
 
     void updateDevices(const OperationStack::Devices& devices);
