@@ -46,6 +46,7 @@ public:
 
 Q_SIGNALS:
     void settingsChanged();
+    void scanFinished();
 
 protected:
     void init();

@@ -756,6 +756,7 @@ void MainWindow::on_m_DeviceScanner_finished()
 
     updateSeletedDeviceMenu();
     checkFileSystemSupport();
+    Q_EMIT scanFinished();
 }
 
 void MainWindow::updateSeletedDeviceMenu()
