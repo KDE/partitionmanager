@@ -44,6 +44,9 @@ class MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
 public:
     explicit MainWindow(QWidget* parent = nullptr);
 
+    // for instance `/dev/sda`
+    void setCurrentDeviceByName(const QString& name);
+
 Q_SIGNALS:
     void settingsChanged();
     void scanFinished();

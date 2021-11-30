@@ -16,6 +16,7 @@
 
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QCommandLineOption>
 
 #include <KAboutData>
 #include <KCrash>
@@ -57,7 +58,9 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
-// FIXME    parser.addPositionalArgument(QStringLiteral("device"), xi18nc("@info:shell", "Device(s) to manage"), QStringLiteral("[device...]"));
+
+    QCommandLineOption deviceOption({QStringLiteral("device")}, xi18nc("@info:shell", "Device to manage"), QStringLiteral("device"));
+    parser.addOption(deviceOption);
 
     parser.process(app);
     aboutData.processCommandLine(&parser);
@@ -71,8 +74,14 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     if (!loadBackend())
         return 0;
 
+    const QString selectedDevice = parser.value(deviceOption);
+
     MainWindow* mainWindow = new MainWindow();
-    Q_UNUSED(mainWindow)
+    QObject::connect(mainWindow, &MainWindow::scanFinished, mainWindow, [mainWindow, selectedDevice] {
+        if (selectedDevice.length()) {
+            mainWindow->setCurrentDeviceByName(selectedDevice);
+        }
+    });
 
     return app.exec();
 }

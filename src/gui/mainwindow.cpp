@@ -1336,3 +1336,15 @@ void MainWindow::checkFileSystemSupport()
                                  xi18nc("@title:window", "Missing File System Support Packages"),
                                  QStringLiteral("showInformationOnMissingFileSystemSupport"), KMessageBox::Notify | KMessageBox::AllowLink);
 }
+
+void MainWindow::setCurrentDeviceByName(const QString& name)
+{
+    // TODO: Port KPartitionManager away from KMessageBox into KMessageWidget.
+    // TODO: setSelectedDevice from m_ListDevices is not using a device name, but
+    // just issuing a match query on a string list, this will produce false results.
+    if (!m_ListDevices->setSelectedDevice(name)) {
+        KMessageBox::error(this,
+                           xi18nc("@info device should be inside of /dev", "Unrecognized device \"%1\" ", name),
+                           xi18nc("@title:window", "Error While Importing Partition Table"));
+    }
+}
