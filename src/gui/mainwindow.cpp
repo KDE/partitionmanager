@@ -907,6 +907,8 @@ void MainWindow::onImportPartitionTable()
 {
     Q_ASSERT(pmWidget().selectedDevice());
 
+    // TODO: This method looks like should live somewhere completely different.
+    // It's importing the partition table, why it's not on the partition table source?
     const QUrl url = QFileDialog::getOpenFileUrl(this, QStringLiteral("Import Partition Table"));
 
     if (url.isEmpty())
@@ -1267,6 +1269,7 @@ static KLocalizedString checkSupportInNode(const PartitionNode* parent)
         else
             rval = checkSupportInNode(node);
 
+        // TODO: Don't create HTML tables manually.
         if ((!p->fileSystem().supportToolFound() && !p->fileSystem().supportToolName().name.isEmpty()) && !rval.isEmpty())
             rval = kxi18n("%1%2").subs(rval).subs(kxi18n("<tr>"
                                    "<td>%1</td>"
@@ -1313,6 +1316,7 @@ void MainWindow::checkFileSystemSupport()
     }
 
     if (missingSupportTools)
+        // TODO: Don't create HTML manually.
         KMessageBox::information(this,
                                  xi18nc("@info",
                                         "<para>No support tools were found for file systems currently present on hard disks in this computer:</para>"
