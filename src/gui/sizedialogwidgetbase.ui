@@ -339,6 +339,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
  </widget>
  <customwidgets>
   <customwidget>
+   <class>KNewPasswordWidget</class>
+   <extends>QWidget</extends>
+   <header>knewpasswordwidget.h</header>
+  </customwidget>
+  <customwidget>
    <class>PartResizerWidget</class>
    <extends>QWidget</extends>
    <header>kpmcore/gui/partresizerwidget.h</header>
@@ -349,16 +354,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <extends>QDoubleSpinBox</extends>
    <header>gui/formattedspinbox.h</header>
   </customwidget>
-  <customwidget>
-   <class>KNewPasswordWidget</class>
-   <extends>QLineEdit</extends>
-   <header>KNewPasswordWidget</header>
-  </customwidget>
  </customwidgets>
  <tabstops>
   <tabstop>m_RadioPrimary</tabstop>
   <tabstop>m_RadioExtended</tabstop>
   <tabstop>m_RadioLogical</tabstop>
+  <tabstop>m_ComboFileSystem</tabstop>
+  <tabstop>m_CheckBoxEncrypt</tabstop>
+  <tabstop>m_EditLVName</tabstop>
   <tabstop>m_EditLabel</tabstop>
   <tabstop>m_SpinFreeBefore</tabstop>
   <tabstop>m_SpinCapacity</tabstop>
