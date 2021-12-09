@@ -58,6 +58,8 @@ NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPart
 
     // Hack on top of hack. The dialog is created via two inheritances.
     auto *allowEveryone = new QCheckBox(i18n("Allow everyone to use this partition"));
+    allowEveryone->setToolTip(i18n("If you are creating a partition on a usb stick, leave this on"));
+
     QBoxLayout *l = qobject_cast<QBoxLayout*>(layout());
     int lCount = l->count();
     l->insertWidget(lCount-1, allowEveryone);
