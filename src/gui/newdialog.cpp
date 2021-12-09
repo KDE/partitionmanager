@@ -27,6 +27,7 @@
 #include <QtGlobal>
 #include <QFontDatabase>
 #include <QPalette>
+#include <QCheckBox>
 
 #include <KColorScheme>
 #include <KConfigGroup>
@@ -54,6 +55,12 @@ NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPart
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "newDialog");
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
+
+    // Hack on top of hack. The dialog is created via two inheritances.
+    auto *allowEveryone = new QCheckBox(i18n("Allow everyone to use this partition"));
+    QBoxLayout *l = qobject_cast<QBoxLayout*>(layout());
+    int lCount = l->count();
+    l->insertWidget(lCount-1, allowEveryone);
 }
 
 NewDialog::~NewDialog()
@@ -283,4 +290,9 @@ void NewDialog::updateHideAndShow()
 void NewDialog::updateOkButtonStatus()
 {
     okButton->setEnabled(isValidPassword() && isValidLVName());
+}
+
+bool NewDialog::useUnsecuredPartition() const
+{
+    return m_unsecuredPartition->checkState() == Qt::CheckState::Checked;
 }

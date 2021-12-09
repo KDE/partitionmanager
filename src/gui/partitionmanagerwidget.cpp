@@ -504,10 +504,14 @@ void PartitionManagerWidget::onNewPartition()
     Partition* newPartition = NewOperation::createNew(*selectedPartition(), static_cast<FileSystem::Type>(Config::defaultFileSystem()));
 
     QPointer<NewDialog> dlg = new NewDialog(this, *selectedDevice(), *newPartition, selectedDevice()->partitionTable()->childRoles(*selectedPartition()));
-    if (dlg->exec() == QDialog::Accepted)
+    if (dlg->exec() == QDialog::Accepted) {
         operationStack().push(new NewOperation(*selectedDevice(), newPartition));
-    else
+        if (dlg->useUnsecuredPartition()) {
+            // operationStac().push(new ChangePermissionOperation("777", *selectedDevice(), newPartition);
+        }
+    } else {
         delete newPartition;
+    }
 
     delete dlg;
 }
