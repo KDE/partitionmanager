@@ -506,7 +506,7 @@ void PartitionManagerWidget::onNewPartition()
     QPointer<NewDialog> dlg = new NewDialog(this, *selectedDevice(), *newPartition, selectedDevice()->partitionTable()->childRoles(*selectedPartition()));
     if (dlg->exec() == QDialog::Accepted) {
         if (dlg->useUnsecuredPartition()) {
-            newPartition->setPermissions(QStringLiteral("777"));
+            newPartition->fileSystem().setPosixPermissions(QStringLiteral("777"));
         }
         operationStack().push(new NewOperation(*selectedDevice(), newPartition));
     } else {

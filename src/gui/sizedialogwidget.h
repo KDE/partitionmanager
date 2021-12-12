@@ -22,6 +22,7 @@ class SizeDialogWidget : public QWidget, public Ui::SizeDialogWidgetBase
 public:
     SizeDialogWidget(QWidget* parent) : QWidget(parent), Ui::SizeDialogWidgetBase() {
         setupUi(this);
+        hidePosixPermissions();
     }
 
 public:
@@ -141,6 +142,23 @@ public:
         delete m_LabelTextNoSetLabel;
         m_LabelTextNoSetLabel = nullptr;
     }
+
+    void hidePosixPermissions() {
+        m_permissionEveryone->hide();
+        m_permissionOnlyRoot->hide();
+        m_labelPermission->hide();
+    }
+
+    void showPosixPermissions() {
+        m_permissionEveryone->show();
+        m_permissionOnlyRoot->show();
+        m_labelPermission->show();
+    }
+
+    bool isPermissionOnlyRoot() const {
+        return m_permissionOnlyRoot->isVisible() && m_permissionOnlyRoot->isChecked();
+    }
+
     void hideBeforeAndAfter() {
         labelFreeBefore().hide();
         spinFreeBefore().hide();

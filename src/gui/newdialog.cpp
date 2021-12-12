@@ -55,14 +55,6 @@ NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPart
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "newDialog");
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
-
-    // Hack on top of hack. The dialog is created via two inheritances.
-    auto *allowEveryone = new QCheckBox(i18n("Allow everyone to use this partition"));
-    allowEveryone->setToolTip(i18n("If you are creating a partition on a usb stick, leave this on"));
-
-    QBoxLayout *l = qobject_cast<QBoxLayout*>(layout());
-    int lCount = l->count();
-    l->insertWidget(lCount-1, allowEveryone);
 }
 
 NewDialog::~NewDialog()
@@ -122,6 +114,20 @@ void NewDialog::setupDialog()
     // run there is a valid partition set in the part resizer widget and they will need that.
     onRoleChanged(false);
     onFilesystemChanged(dialogWidget().comboFileSystem().currentIndex());
+
+    connect(&dialogWidget().comboFileSystem(), QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]{
+        const QString currText = dialogWidget().comboFileSystem().currentText();
+        const bool enablePosixPermission = QList<QString>({
+                QStringLiteral("ext2"),
+                QStringLiteral("ext3"),
+                QStringLiteral("ext4")}
+            ).contains(currText);
+        if (enablePosixPermission) {
+            dialogWidget().showPosixPermissions();
+        } else {
+            dialogWidget().hidePosixPermissions();
+        }
+    });
 }
 
 void NewDialog::setupConnections()
@@ -296,5 +302,5 @@ void NewDialog::updateOkButtonStatus()
 
 bool NewDialog::useUnsecuredPartition() const
 {
-    return m_unsecuredPartition->checkState() == Qt::CheckState::Checked;
+    return !dialogWidget().isPermissionOnlyRoot();
 }
