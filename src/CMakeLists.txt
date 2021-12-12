@@ -49,3 +49,7 @@ install(FILES gui/partitionmanagerui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/p
 install(PROGRAMS org.kde.partitionmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
 ############################################
+
+install(FILES open_in_partitionmanager.desktop
+    open_in_partitionmanager.desktop
+    DESTINATION ${KDE_INSTALL_DATADIR}/solid/actions/)
