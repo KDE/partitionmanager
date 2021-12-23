@@ -94,9 +94,6 @@ void PartitionManagerWidget::init(OperationStack* ostack)
 {
     m_OperationStack = ostack;
 
-    // TODO: shouldn't this also go to the main window class?
-    FileSystemFactory::init();
-
     loadConfig();
     setupConnections();
 }

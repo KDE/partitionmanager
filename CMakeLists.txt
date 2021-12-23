@@ -59,6 +59,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     DocTools
 )
 
+find_package(PolkitQt5-1 REQUIRED)
+
 # use sane compile flags
 add_definitions(
   -DQT_USE_QSTRINGBUILDER

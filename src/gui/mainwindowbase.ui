@@ -17,8 +17,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <property name="windowTitle">
    <string comment="@title:window">KDE Partition Manager</string>
   </property>
-  <widget class="PartitionManagerWidget" name="m_PartitionManagerWidget">
-  </widget>
+  <widget class="PartitionManagerWidget" name="m_PartitionManagerWidget"/>
   <widget class="QDockWidget" name="m_DockDevices">
    <property name="allowedAreas">
     <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
@@ -29,8 +28,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
-   <widget class="ListDevices" name="m_ListDevices">
-   </widget>
+   <widget class="ListDevices" name="m_ListDevices"/>
   </widget>
   <widget class="QDockWidget" name="m_DockOperations">
    <property name="allowedAreas">
@@ -42,8 +40,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
-   <widget class="ListOperations" name="m_ListOperations">
-   </widget>
+   <widget class="ListOperations" name="m_ListOperations"/>
   </widget>
   <widget class="QDockWidget" name="m_DockInformation">
    <property name="windowTitle">
@@ -52,8 +49,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
-   <widget class="InfoPane" name="m_InfoPane">
-   </widget>
+   <widget class="InfoPane" name="m_InfoPane"/>
   </widget>
   <widget class="QDockWidget" name="m_DockLog">
    <property name="allowedAreas">
@@ -65,11 +61,34 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
-   <widget class="TreeLog" name="m_TreeLog">
+   <widget class="TreeLog" name="m_TreeLog"/>
+  </widget>
+  <widget class="QDockWidget" name="MessageWidgetDock">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="features">
+    <set>QDockWidget::NoDockWidgetFeatures</set>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>4</number>
+   </attribute>
+   <widget class="KMessageWidget" name="m_MessageWidget">
+    <property name="messageType">
+     <enum>KMessageWidget::Warning</enum>
+    </property>
    </widget>
   </widget>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>KMessageWidget</class>
+   <extends>QFrame</extends>
+   <header>kmessagewidget.h</header>
+  </customwidget>
   <customwidget>
    <class>PartitionManagerWidget</class>
    <extends>QWidget</extends>

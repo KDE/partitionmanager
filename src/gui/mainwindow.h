@@ -17,6 +17,7 @@
 
 #include "ui_mainwindowbase.h"
 
+#include <KMessageWidget>
 #include <KXmlGuiWindow>
 
 class ApplyProgressDialog;
@@ -206,6 +207,15 @@ protected:
         return *m_ScanProgressDialog;
     }
 
+    KMessageWidget &MessageWidget() {
+        Q_ASSERT(m_MessageWidget);
+        return *m_MessageWidget;
+    }
+    const KMessageWidget &MessageWidget() const {
+        Q_ASSERT(m_MessageWidget);
+        return *m_MessageWidget;
+    }
+
     void onSelectedDeviceMenuTriggered(bool);
 
 protected Q_SLOTS:
@@ -256,6 +266,15 @@ protected:
     void onPropertiesDevice(const QString& deviceNode = {});
 
 private:
+    QMenu* createPopupMenu() override;
+
+    void askForPermissions();
+
+Q_SIGNALS:
+    void showMessageWidget();
+    void hideMessageWidget();
+
+private:
     OperationStack* m_OperationStack;
     OperationRunner* m_OperationRunner;
     DeviceScanner* m_DeviceScanner;
@@ -263,6 +282,8 @@ private:
     ScanProgressDialog* m_ScanProgressDialog;
     QLabel* m_StatusText;
     QString m_SavedSelectedDeviceNode;
+
+    bool m_permissionGranted;
 };
 
 #endif

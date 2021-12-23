@@ -54,6 +54,8 @@
 #include <util/guihelpers.h>
 #include <util/report.h>
 
+#include <algorithm>
+
 #include <QApplication>
 #include <QCloseEvent>
 #include <QCollator>
@@ -69,6 +71,9 @@
 #include <QStatusBar>
 #include <QTemporaryFile>
 #include <QTextStream>
+
+#include <PolkitQt1/Authority>
+#include <polkitqt1-version.h>
 
 #include <KAboutApplicationDialog>
 #include <KActionCollection>
@@ -126,10 +131,67 @@ void MainWindow::init()
 
     loadConfig();
 
+    // this is done in order to hide the title bar of MessageWidget dock
+    findChild<QDockWidget*>(QStringLiteral("MessageWidgetDock"))->setTitleBarWidget(new QWidget());
+
+    MessageWidget().hide();
+    MessageWidget().setText(
+        i18nc("@info", "Partition Manager requires privileges in order to work. Please refresh the devices and authenticate when prompted."));
+
     show();
     pmWidget().init(&operationStack());
 
-    scanDevices();
+    scanProgressDialog().cancel();
+    setEnabled(false);
+    guiFactory()->container(QStringLiteral("selectedDevice"), this)->setEnabled(false);
+
+    askForPermissions();
+
+    if (m_permissionGranted) {
+        FileSystemFactory::init();
+        scanDevices();
+    } else
+        Q_EMIT showMessageWidget();
+
+    setEnabled(true);
+}
+
+void MainWindow::askForPermissions()
+{
+    PolkitQt1::UnixProcessSubject subject(QApplication::applicationPid());
+    PolkitQt1::Authority *authority = PolkitQt1::Authority::instance();
+
+    PolkitQt1::Authority::Result result;
+    QEventLoop e;
+    connect(authority, &PolkitQt1::Authority::checkAuthorizationFinished, &e,
+            [&e, &result](PolkitQt1::Authority::Result _result) {
+                result = _result;
+                e.quit();
+            });
+
+    authority->checkAuthorization(QStringLiteral("org.kde.kpmcore.externalcommand.init"), subject, PolkitQt1::Authority::AllowUserInteraction);
+    e.exec();
+
+    if (authority->hasError()) {
+        qDebug() << "Encountered error while checking authorization, error code:"
+                 << authority->lastError() << authority->errorDetails();
+        authority->clearError();
+    }
+
+    m_permissionGranted = result == PolkitQt1::Authority::Yes;
+}
+
+QMenu *MainWindow::createPopupMenu()
+{
+    auto menu = QMainWindow::createPopupMenu();
+    auto actions = menu->actions();
+    QAction *toRemove =
+        *std::find_if(actions.begin(), actions.end(),
+                      [](QAction *x) { return x->text().isEmpty(); });
+    // this is done in order to hide the entry for the MessageWidget dock
+    menu->removeAction(toRemove);
+
+    return menu;
 }
 
 void MainWindow::closeEvent(QCloseEvent* event)
@@ -409,6 +471,7 @@ void MainWindow::setupActions()
     refreshDevices->setStatusTip(xi18nc("@info:status", "Renew the devices list."));
     actionCollection()->setDefaultShortcut(refreshDevices, Qt::Key_F5);
     refreshDevices->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
+    MessageWidget().addAction(refreshDevices);
 
     // Settings Actions
     actionCollection()->addAction(QStringLiteral("toggleDockDevices"), dockDevices().toggleViewAction());
@@ -459,6 +522,11 @@ void MainWindow::setupConnections()
 
     connect(GlobalLog::instance(), &GlobalLog::newMessage,
             &treeLog(), &TreeLog::onNewLogMessage);
+
+    connect(this, &MainWindow::showMessageWidget, &MessageWidget(),
+            &KMessageWidget::animatedShow);
+    connect(this, &MainWindow::hideMessageWidget, &MessageWidget(),
+            &KMessageWidget::animatedHide);
 }
 
 void MainWindow::setupStatusBar()
@@ -741,7 +809,13 @@ void MainWindow::on_m_DeviceScanner_finished()
 
     scanProgressDialog().setProgress(100);
 
-    if (!operationStack().previewDevices().isEmpty())
+    bool foundDevices = !operationStack().previewDevices().isEmpty();
+
+    guiFactory()
+        ->container(QStringLiteral("selectedDevice"), this)
+        ->setEnabled(foundDevices);
+
+    if (foundDevices)
         pmWidget().setSelectedDevice(operationStack().previewDevices()[0]);
 
     pmWidget().updatePartitions();
@@ -751,7 +825,7 @@ void MainWindow::on_m_DeviceScanner_finished()
 
     // try to set the seleted device, either from the saved one or just select the
     // first device
-    if (!listDevices().setSelectedDevice(savedSelectedDeviceNode()) && !operationStack().previewDevices().isEmpty())
+    if (!listDevices().setSelectedDevice(savedSelectedDeviceNode()) && foundDevices)
         listDevices().setSelectedDevice(operationStack().previewDevices()[0]->deviceNode());
 
     updateSeletedDeviceMenu();
@@ -815,7 +889,17 @@ void MainWindow::onRefreshDevices()
             xi18nc("@title:window", "Really Rescan the Devices?"),
             KGuiItem(xi18nc("@action:button", "Rescan Devices"), QStringLiteral("arrow-right")),
             KStandardGuiItem::cancel(), QStringLiteral("reallyRescanDevices")) == KMessageBox::Continue) {
-        scanDevices();
+
+        if (m_permissionGranted) {
+            scanDevices();
+        } else {
+            askForPermissions();
+            if (m_permissionGranted) {
+                  Q_EMIT hideMessageWidget();
+                  FileSystemFactory::init();
+                  scanDevices();
+            }
+        }
     }
 }
 
