@@ -154,7 +154,7 @@ public:
     }
 
     bool isPermissionOnlyRoot() const {
-        return m_permissionOnlyRoot->isVisible() && m_permissionOnlyRoot->isChecked();
+        return !m_permissionEveryone->isChecked();
     }
 
     void hideBeforeAndAfter() {
