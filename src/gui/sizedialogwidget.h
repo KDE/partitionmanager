@@ -144,14 +144,12 @@ public:
     }
 
     void hidePosixPermissions() {
-        m_permissionEveryone->hide();
-        m_permissionOnlyRoot->hide();
+        m_groupBox_permissions->hide();
         m_labelPermission->hide();
     }
 
     void showPosixPermissions() {
-        m_permissionEveryone->show();
-        m_permissionOnlyRoot->show();
+        m_groupBox_permissions->show();
         m_labelPermission->show();
     }
 

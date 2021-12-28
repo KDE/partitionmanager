@@ -59,40 +59,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
       </sizepolicy>
      </property>
      <property name="text">
-      <string comment="@label:listbox">Partition &amp;type:</string>
+      <string comment="@label:listbox">Partition type:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
-     <property name="buddy">
-      <cstring>m_RadioPrimary</cstring>
-     </property>
     </widget>
-   </item>
-   <item row="2" column="1">
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QRadioButton" name="m_RadioPrimary">
-       <property name="text">
-        <string>Primar&amp;y</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="m_RadioExtended">
-       <property name="text">
-        <string>E&amp;xtended</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="m_RadioLogical">
-       <property name="text">
-        <string>&amp;Logical</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </item>
    <item row="3" column="0">
     <widget class="QLabel" name="m_LabelFileSystem">
@@ -329,30 +301,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="13" column="1">
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QRadioButton" name="m_permissionEveryone">
-       <property name="toolTip">
-        <string>Allow everyone to write and read on this device</string>
-       </property>
-       <property name="text">
-        <string>Everyone</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="m_permissionOnlyRoot">
-       <property name="toolTip">
-        <string>Allow only root to write and read on this device, you will need to setup per-folder permissions</string>
-       </property>
-       <property name="text">
-        <string>Only Root</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
    <item row="14" column="0" colspan="2">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
@@ -368,6 +316,59 @@ SPDX-License-Identifier: GPL-3.0-or-later
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="13" column="1">
+    <widget class="QGroupBox" name="m_groupBox_permissions">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QRadioButton" name="m_permissionEveryone">
+        <property name="toolTip">
+         <string>Allow everyone to write and read on this device</string>
+        </property>
+        <property name="text">
+         <string>Everyone</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="m_permissionOnlyRoot">
+        <property name="toolTip">
+         <string>Allow only root to write and read on this device, you will need to setup per-folder permissions</string>
+        </property>
+        <property name="text">
+         <string>Only Root</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QGroupBox" name="m_groupBox_type">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QRadioButton" name="m_RadioPrimary">
+        <property name="text">
+         <string>Primar&amp;y</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="m_RadioExtended">
+        <property name="text">
+         <string>E&amp;xtended</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="m_RadioLogical">
+        <property name="text">
+         <string>&amp;Logical</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>
