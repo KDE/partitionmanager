@@ -74,6 +74,11 @@ public:
         return *m_RadioLogical;
     }
 
+    QRadioButton& radioRootPermissions() {
+        Q_ASSERT(m_permissionOnlyRoot);
+        return *m_permissionOnlyRoot;
+    }
+
     QComboBox& comboFileSystem() {
         Q_ASSERT(m_ComboFileSystem);
         return *m_ComboFileSystem;

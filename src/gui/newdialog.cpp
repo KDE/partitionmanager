@@ -140,6 +140,7 @@ void NewDialog::setupDialog()
     };
     connect(&dialogWidget().comboFileSystem(), QOverload<int>::of(&QComboBox::currentIndexChanged), this, showPermissionsGroup);
     showPermissionsGroup();
+    dialogWidget().radioRootPermissions().setChecked(true);
 }
 
 void NewDialog::setupConnections()
