@@ -118,9 +118,20 @@ void NewDialog::setupDialog()
     connect(&dialogWidget().comboFileSystem(), QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]{
         const QString currText = dialogWidget().comboFileSystem().currentText();
         const bool enablePosixPermission = QList<QString>({
+                QStringLiteral("btrfs"),
                 QStringLiteral("ext2"),
                 QStringLiteral("ext3"),
-                QStringLiteral("ext4")}
+                QStringLiteral("ext4"),
+                QStringLiteral("f2fs"),
+                QStringLiteral("hfsplus"),
+                QStringLiteral("jfs"),
+                QStringLiteral("minix"),
+                QStringLiteral("ocfs2"),
+                QStringLiteral("reiserfs"),
+                QStringLiteral("reiser4"),
+                QStringLiteral("udf"),
+                QStringLiteral("xfs"),
+                QStringLiteral("zfs"),}
             ).contains(currText);
         if (enablePosixPermission) {
             dialogWidget().showPosixPermissions();
