@@ -27,7 +27,6 @@
 #include <QtGlobal>
 #include <QFontDatabase>
 #include <QPalette>
-#include <QCheckBox>
 
 #include <KColorScheme>
 #include <KConfigGroup>

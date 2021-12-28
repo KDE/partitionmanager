@@ -17,7 +17,6 @@
 #include <fs/filesystem.h>
 
 class Device;
-class QCheckBox;
 
 /** Dialog to create new Partitions.
 
@@ -64,7 +63,6 @@ protected:
 private:
     PartitionRole::Roles m_PartitionRoles;
     bool m_IsValidPassword;
-    QCheckBox *m_unsecuredPartition;
 };
 
 #endif
