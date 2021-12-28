@@ -114,7 +114,7 @@ void NewDialog::setupDialog()
     onRoleChanged(false);
     onFilesystemChanged(dialogWidget().comboFileSystem().currentIndex());
 
-    connect(&dialogWidget().comboFileSystem(), QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]{
+    auto showPermissionsGroup = [this] {
         const QString currText = dialogWidget().comboFileSystem().currentText();
         const bool enablePosixPermission = QList<QString>({
                 QStringLiteral("btrfs"),
@@ -137,7 +137,9 @@ void NewDialog::setupDialog()
         } else {
             dialogWidget().hidePosixPermissions();
         }
-    });
+    };
+    connect(&dialogWidget().comboFileSystem(), QOverload<int>::of(&QComboBox::currentIndexChanged), this, showPermissionsGroup);
+    showPermissionsGroup();
 }
 
 void NewDialog::setupConnections()
