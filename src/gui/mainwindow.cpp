@@ -1432,3 +1432,12 @@ void MainWindow::setCurrentDeviceByName(const QString& name)
                            xi18nc("@title:window", "Error While Importing Partition Table"));
     }
 }
+
+void MainWindow::setCurrentPartitionByName(const QString& partitionName)
+{
+    if (!pmWidget().setCurrentPartitionByName(partitionName)) {
+        KMessageBox::error(this,
+                           xi18nc("@info device should be inside of /dev", "Unrecognized partition \"%1\" ", partitionName),
+                           xi18nc("@title:window", "Error opening partition"));
+    }
+}

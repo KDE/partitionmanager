@@ -94,6 +94,9 @@ public:
 
     void updatePartitions();
 
+    // here we expect the full "sda1" or "nvme1n1p1"
+    bool setCurrentPartitionByName(const QString& partitionName);
+
 protected:
     OperationStack& operationStack() {
         return *m_OperationStack;
@@ -124,6 +127,7 @@ protected:
         Q_ASSERT(m_TreePartitions);
         return *m_TreePartitions;
     }
+
 
     void onHeaderContextMenu(const QPoint& p);
 

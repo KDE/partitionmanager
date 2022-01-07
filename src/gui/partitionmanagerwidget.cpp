@@ -282,6 +282,25 @@ void PartitionManagerWidget::on_m_TreePartitions_currentItemChanged(QTreeWidgetI
         partTableWidget().setActiveWidget(nullptr);
 }
 
+bool PartitionManagerWidget::setCurrentPartitionByName(const QString& name)
+{
+    auto rootNode = treePartitions().invisibleRootItem();
+    for (int i = 0; i < rootNode->childCount(); i++) {
+        auto driveNode = rootNode->child(i);
+        for (int e = 0; e < driveNode->childCount(); e++) {
+            auto partitionNode = driveNode->child(e);
+            const QString text = partitionNode->data(0, Qt::DisplayRole).toString();
+            if (text.endsWith(name)) {
+                partitionNode->setSelected(true);
+                treePartitions().setCurrentItem(partitionNode);
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
 void PartitionManagerWidget::on_m_TreePartitions_itemDoubleClicked(QTreeWidgetItem* item, int)
 {
     if (item == treePartitions().topLevelItem(0)) {

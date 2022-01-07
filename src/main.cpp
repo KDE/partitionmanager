@@ -113,13 +113,18 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     if (!loadBackend())
         return 0;
 
+    // device is the selected device minus the partition number.
+    // we need all of them to select properly the things on screen.
     const QString selectedDevice = parser.value(deviceOption);
     auto [device, partitionNr] = parseDevice(selectedDevice);
 
     MainWindow* mainWindow = new MainWindow();
-    QObject::connect(mainWindow, &MainWindow::scanFinished, mainWindow, [mainWindow, selectedDevice] {
-        if (selectedDevice.length()) {
-            mainWindow->setCurrentDeviceByName(selectedDevice);
+    QObject::connect(mainWindow, &MainWindow::scanFinished, mainWindow, [mainWindow, device, selectedDevice, partitionNr] {
+        if (device.length()) {
+            mainWindow->setCurrentDeviceByName(device);
+            if (partitionNr.length()) {
+                mainWindow->setCurrentPartitionByName(selectedDevice);
+            }
         }
     });
 

@@ -48,6 +48,8 @@ public:
     // for instance `/dev/sda`
     void setCurrentDeviceByName(const QString& name);
 
+    void setCurrentPartitionByName(const QString& partitionNumber);
+
 Q_SIGNALS:
     void settingsChanged();
     void scanFinished();
