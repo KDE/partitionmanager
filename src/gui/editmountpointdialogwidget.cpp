@@ -152,6 +152,8 @@ void EditMountPointDialogWidget::setupRadio(const FstabEntry::Type entryType)
         break;
     case FstabEntry::Type::comment:
         break;
+    default:
+        break;
     }
 }
 
