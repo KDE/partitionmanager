@@ -115,7 +115,11 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
 
     // device is the selected device minus the partition number.
     // we need all of them to select properly the things on screen.
-    const QString selectedDevice = parser.value(deviceOption);
+
+    QString selectedDevice = parser.value(deviceOption);
+    if (selectedDevice.startsWith(QStringLiteral("/dev/"))) {
+        selectedDevice.remove(QStringLiteral("/dev/"));
+    }
     auto [device, partitionNr] = parseDevice(selectedDevice);
 
     MainWindow* mainWindow = new MainWindow();
