@@ -123,7 +123,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     auto [device, partitionNr] = parseDevice(selectedDevice);
 
     MainWindow* mainWindow = new MainWindow();
-    QObject::connect(mainWindow, &MainWindow::scanFinished, mainWindow, [mainWindow, device, selectedDevice, partitionNr] {
+    QObject::connect(mainWindow, &MainWindow::scanFinished, mainWindow, [mainWindow, device = device, selectedDevice, partitionNr = partitionNr] {
         if (device.length()) {
             mainWindow->setCurrentDeviceByName(device);
             if (partitionNr.length()) {
