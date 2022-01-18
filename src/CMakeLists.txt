@@ -21,13 +21,13 @@ file(GLOB partitionmanager_UIFILES config/*.ui gui/*.ui)
 ki18n_wrap_ui(partitionmanager_SRCS ${partitionmanager_UIFILES})
 
 kconfig_add_kcfg_files(partitionmanager_SRCS config.kcfgc)
-install(FILES partitionmanager.kcfg DESTINATION ${KCFG_INSTALL_DIR})
+install(FILES partitionmanager.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
 
 ############################################
 
 add_executable(partitionmanager ${partitionmanager_SRCS} )
 
-target_link_libraries(partitionmanager ${BLKID_LIBRARIES}
+target_link_libraries(partitionmanager
 	kpmcore
 	KF5::ConfigCore
 	KF5::ConfigGui
@@ -40,7 +40,7 @@ target_link_libraries(partitionmanager ${BLKID_LIBRARIES}
 	KF5::KIOWidgets
 	KF5::WidgetsAddons
 	KF5::XmlGui
-	PolkitQt5-1::Core
+	PolkitQt${QT_MAJOR_VERSION}-1::Core
 )
 
 target_compile_definitions(partitionmanager PRIVATE -DCMAKE_INSTALL_FULL_LIBEXECDIR_KF5=\"${CMAKE_INSTALL_FULL_LIBEXECDIR_KF5}\")
@@ -48,7 +48,7 @@ target_compile_definitions(partitionmanager PRIVATE -DCMAKE_INSTALL_FULL_LIBEXEC
 install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.partitionmanager.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES gui/partitionmanagerui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/partitionmanager)
-install(PROGRAMS org.kde.partitionmanager.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS org.kde.partitionmanager.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
 ############################################
 
