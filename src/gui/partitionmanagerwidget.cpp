@@ -241,7 +241,7 @@ void PartitionManagerWidget::updatePartitions()
 
     QFont font;
     font.setBold(true);
-    font.setWeight(75);
+    font.setWeight(QFont::Bold);
     deviceItem->setFont(0, font);
 
     deviceItem->setText(0, selectedDevice()->prettyName());

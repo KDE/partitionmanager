@@ -56,7 +56,7 @@ int InfoPane::createHeader(const QString& title, const int num_cols)
     QLabel* label = new QLabel(title, this);
     QFont font;
     font.setBold(true);
-    font.setWeight(75);
+    font.setWeight(QFont::Bold);
     label->setFont(font);
     label->setAlignment(Qt::AlignCenter);
     gridLayout().addWidget(label, y++, 0, 1, num_cols);
