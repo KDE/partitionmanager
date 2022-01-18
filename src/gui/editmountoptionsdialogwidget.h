@@ -10,9 +10,9 @@
 
 #include "ui_editmountoptionsdialogwidgetbase.h"
 
+#include <QStringList>
 #include <QWidget>
 
-class QStringList;
 class QPlainTextEdit;
 
 class EditMountOptionsDialogWidget : public QWidget, public Ui::EditMountOptionsDialogWidgetBase

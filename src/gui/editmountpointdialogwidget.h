@@ -16,6 +16,7 @@
 #include <map>
 
 #include <QString>
+#include <QStringList>
 #include <QWidget>
 
 class Partition;
@@ -25,7 +26,6 @@ class QSpinBox;
 class QCheckBox;
 class QComboBox;
 class QPushButton;
-class QStringList;
 
 class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDialogWidgetBase
 {

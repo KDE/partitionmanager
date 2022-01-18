@@ -10,9 +10,9 @@
 #define EDITMOUNTOPTIONSDIALOG_H
 
 #include <QDialog>
+#include <QStringList>
 
 class EditMountOptionsDialogWidget;
-class QStringList;
 class QString;
 class QWidget;
 
