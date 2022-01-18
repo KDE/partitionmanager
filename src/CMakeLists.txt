@@ -7,6 +7,8 @@ include(config/CMakeLists.txt)
 include(gui/CMakeLists.txt)
 include(util/CMakeLists.txt)
 
+set_property(SOURCE main.cpp APPEND PROPERTY COMPILE_DEFINITIONS "VERSION=\"${RELEASE_SERVICE_VERSION}\"")
+
 set(partitionmanager_SRCS
 	main.cpp
 	${CONFIG_SRC}
