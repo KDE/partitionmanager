@@ -75,8 +75,6 @@ add_definitions(
 
 find_package(KPMcore ${KPMCORE_MIN_VERSION} REQUIRED)
 
-include_directories(${Qt${QT_MAJOR_VERSION}Core_INCLUDE_DIRS} ${UUID_INCLUDE_DIRS} ${BLKID_INCLUDE_DIRS} ${KPMCORE_INCLUDE_DIR} src/)
-
 add_subdirectory(src)
 add_subdirectory(icons)
 if (KF5DocTools_FOUND)
