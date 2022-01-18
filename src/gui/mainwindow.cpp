@@ -251,7 +251,7 @@ void MainWindow::setupActions()
     undoOperation->setText(xi18nc("@action:inmenu", "Undo"));
     undoOperation->setToolTip(xi18nc("@info:tooltip", "Undo the last operation"));
     undoOperation->setStatusTip(xi18nc("@info:status", "Remove the last operation from the list."));
-    actionCollection()->setDefaultShortcut(undoOperation, QKeySequence(Qt::CTRL + Qt::Key_Z));
+    actionCollection()->setDefaultShortcut(undoOperation, QKeySequence(Qt::CTRL | Qt::Key_Z));
     undoOperation->setIcon(QIcon::fromTheme(QStringLiteral("edit-undo")));
 
     QAction* clearAllOperations = actionCollection()->addAction(QStringLiteral("clearAllOperations"));
@@ -277,7 +277,7 @@ void MainWindow::setupActions()
     createNewPartitionTable->setText(xi18nc("@action:inmenu", "New Partition Table"));
     createNewPartitionTable->setToolTip(xi18nc("@info:tooltip", "Create a new partition table"));
     createNewPartitionTable->setStatusTip(xi18nc("@info:status", "Create a new and empty partition table on a device."));
-    actionCollection()->setDefaultShortcut(createNewPartitionTable, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_N));
+    actionCollection()->setDefaultShortcut(createNewPartitionTable, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_N));
     createNewPartitionTable->setIcon(QIcon::fromTheme(QStringLiteral("edit-clear")));
 
     QAction* exportPartitionTable = actionCollection()->addAction(QStringLiteral("exportPartitionTable"));
@@ -347,7 +347,7 @@ void MainWindow::setupActions()
     newPartition->setText(xi18nc("@action:inmenu create a new partition", "New"));
     newPartition->setToolTip(xi18nc("@info:tooltip", "New partition"));
     newPartition->setStatusTip(xi18nc("@info:status", "Create a new partition."));
-    actionCollection()->setDefaultShortcut(newPartition, QKeySequence(Qt::CTRL + Qt::Key_N));
+    actionCollection()->setDefaultShortcut(newPartition, QKeySequence(Qt::CTRL | Qt::Key_N));
     newPartition->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
 
     QAction* resizePartition = actionCollection()->addAction(QStringLiteral("resizePartition"));
@@ -356,7 +356,7 @@ void MainWindow::setupActions()
     resizePartition->setText(xi18nc("@action:inmenu", "Resize/Move"));
     resizePartition->setToolTip(xi18nc("@info:tooltip", "Resize or move partition"));
     resizePartition->setStatusTip(xi18nc("@info:status", "Shrink, grow or move an existing partition."));
-    actionCollection()->setDefaultShortcut(resizePartition, QKeySequence(Qt::CTRL + Qt::Key_R));
+    actionCollection()->setDefaultShortcut(resizePartition, QKeySequence(Qt::CTRL | Qt::Key_R));
     resizePartition->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")));
 
     QAction* deletePartition = actionCollection()->addAction(QStringLiteral("deletePartition"));
@@ -374,7 +374,7 @@ void MainWindow::setupActions()
     shredPartition->setText(xi18nc("@action:inmenu", "Shred"));
     shredPartition->setToolTip(xi18nc("@info:tooltip", "Shred partition"));
     shredPartition->setStatusTip(xi18nc("@info:status", "Shred a partition so that its contents cannot be restored."));
-    actionCollection()->setDefaultShortcut(shredPartition, QKeySequence(Qt::SHIFT + Qt::Key_Delete));
+    actionCollection()->setDefaultShortcut(shredPartition, QKeySequence(Qt::SHIFT | Qt::Key_Delete));
     shredPartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete-shred")));
 
     QAction* copyPartition = actionCollection()->addAction(QStringLiteral("copyPartition"));
@@ -383,7 +383,7 @@ void MainWindow::setupActions()
     copyPartition->setText(xi18nc("@action:inmenu", "Copy"));
     copyPartition->setToolTip(xi18nc("@info:tooltip", "Copy partition"));
     copyPartition->setStatusTip(xi18nc("@info:status", "Copy an existing partition."));
-    actionCollection()->setDefaultShortcut(copyPartition, QKeySequence(Qt::CTRL + Qt::Key_C));
+    actionCollection()->setDefaultShortcut(copyPartition, QKeySequence(Qt::CTRL | Qt::Key_C));
     copyPartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
 
     QAction* pastePartition = actionCollection()->addAction(QStringLiteral("pastePartition"));
@@ -392,7 +392,7 @@ void MainWindow::setupActions()
     pastePartition->setText(xi18nc("@action:inmenu", "Paste"));
     pastePartition->setToolTip(xi18nc("@info:tooltip", "Paste partition"));
     pastePartition->setStatusTip(xi18nc("@info:status", "Paste a copied partition."));
-    actionCollection()->setDefaultShortcut(pastePartition, QKeySequence(Qt::CTRL + Qt::Key_V));
+    actionCollection()->setDefaultShortcut(pastePartition, QKeySequence(Qt::CTRL | Qt::Key_V));
     pastePartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-paste")));
 
     QAction* editMountPoint = actionCollection()->addAction(QStringLiteral("editMountPoint"));
@@ -455,7 +455,7 @@ void MainWindow::setupActions()
     createVolumeGroup->setText(i18nc("@action:inmenu", "New Volume Group"));
     createVolumeGroup->setToolTip(i18nc("@info:tooltip", "Create a new LVM Volume Group"));
     createVolumeGroup->setStatusTip(i18nc("@info:status", "Create a new LVM Volume Group as a device."));
-    actionCollection()->setDefaultShortcut(createVolumeGroup, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_L));
+    actionCollection()->setDefaultShortcut(createVolumeGroup, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L));
     createVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
 
     QAction* fileSystemSupport = actionCollection()->addAction(QStringLiteral("fileSystemSupport"));
