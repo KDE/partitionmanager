@@ -20,7 +20,7 @@ public:
     double valueFromText(const QString& text) const override;
 
 private:
-    QString stripped(const QString &t, int *pos = 0) const;
+    QString stripped(const QString &t, int *pos = nullptr) const;
 };
 
 #endif
