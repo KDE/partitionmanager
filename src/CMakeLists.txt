@@ -45,7 +45,7 @@ target_link_libraries(partitionmanager
 
 target_compile_definitions(partitionmanager PRIVATE -DCMAKE_INSTALL_FULL_LIBEXECDIR_KF5=\"${CMAKE_INSTALL_FULL_LIBEXECDIR_KF5}\")
 
-install(TARGETS partitionmanager ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS partitionmanager ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.partitionmanager.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES gui/partitionmanagerui.rc DESTINATION ${KDE_INSTALL_KXMLGUI5DIR}/partitionmanager)
 install(PROGRAMS org.kde.partitionmanager.desktop DESTINATION ${KDE_INSTALL_APPDIR})
