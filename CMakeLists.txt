@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2008 Volker Lanz <vl@fidra.de>
-# SPDX-FileCopyrightText: 2014-2020 Andrius Štikonas <andrius@stikonas.eu>
+# SPDX-FileCopyrightText: 2014-2022 Andrius Štikonas <andrius@stikonas.eu>
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -17,12 +17,10 @@ set(QT_MIN_VERSION "5.15.0")
 set(KF5_MIN_VERSION "5.90")
 set(KPMCORE_MIN_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}")
 
+set(KDE_COMPILERSETTINGS_LEVEL "5.85")
+
 set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
-set(KDE_INSTALL_USE_QT_SYS_PATHS ON CACHE BOOL "Install mkspecs files, Plugins and Imports to the Qt 5 install dir" FORCE)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
@@ -65,16 +63,9 @@ find_package(PolkitQt${QT_MAJOR_VERSION}-1 REQUIRED)
 
 # use sane compile flags
 add_definitions(
-  -DQT_USE_QSTRINGBUILDER
-  -DQT_NO_CAST_TO_ASCII
-  -DQT_NO_CAST_FROM_ASCII
-  -DQT_STRICT_ITERATORS
-  -DQT_NO_URL_CAST_FROM_STRING
-  -DQT_NO_CAST_FROM_BYTEARRAY
   -DQT_NO_CAST_TO_BYTEARRAY
   -DQT_USE_FAST_OPERATOR_PLUS
   -DQT_DISABLE_DEPRECATED_BEFORE=0x050f00
-  -DQT_NO_KEYWORDS
 )
 
 find_package(KPMcore ${KPMCORE_MIN_VERSION} REQUIRED)
