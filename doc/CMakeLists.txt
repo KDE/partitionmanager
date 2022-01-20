@@ -3,4 +3,4 @@
 
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-kdoctools_create_handbook( index.docbook  INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en SUBDIR partitionmanager )
+kdoctools_create_handbook( index.docbook  INSTALL_DESTINATION ${KDE_INSTALL_DOCBUNDLEDIR}/en SUBDIR partitionmanager )
