@@ -50,6 +50,13 @@ public:
 
     void setCurrentPartitionByName(const QString& partitionNumber);
 
+    // forbids the user to select another device.
+    // this is used in conjunction with --device
+    // rationale is that if the user specifies a device,
+    // we can't allow him to select another one by mistake while
+    // clicking in the UI.
+    void setDisallowOtherDevices();
+
 Q_SIGNALS:
     void settingsChanged();
     void scanFinished();

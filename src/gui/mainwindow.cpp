@@ -116,6 +116,15 @@ void MainWindow::setupObjectNames()
     m_ScanProgressDialog->setObjectName(QStringLiteral("m_ScanProgressDialog"));
 }
 
+void MainWindow::setDisallowOtherDevices()
+{
+    // because of how Qt works, the user still can enable the
+    // dock widget via a mouse click, so we need to also set it to disabled.
+    // so that the user doesn't select it by mistake.
+    m_DockDevices->setVisible(false);
+    m_DockDevices->setEnabled(false);
+}
+
 void MainWindow::init()
 {
     treeLog().init();

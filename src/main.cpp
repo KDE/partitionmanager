@@ -131,6 +131,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
             if (partitionNr.length()) {
                 mainWindow->setCurrentPartitionByName(selectedDevice);
             }
+            mainWindow->setDisallowOtherDevices();
         }
     });
 
