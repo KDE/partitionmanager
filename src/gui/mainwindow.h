@@ -57,6 +57,13 @@ public:
     // clicking in the UI.
     void setDisallowOtherDevices();
 
+    // disallowOtherDevices hides the DockWidget, but unfortunately
+    // this is saved by the Window State when restored, even if we
+    // are not disallowing it this time. At the same time the user
+    // could have hidden it, so we need to restore only if hidden
+    // just by the call to disallowOtherDevices().
+    void showDevicePanelIfPreviouslyHiddenByDisallowOtherDevices();
+
 Q_SIGNALS:
     void settingsChanged();
     void scanFinished();

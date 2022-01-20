@@ -132,6 +132,8 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
                 mainWindow->setCurrentPartitionByName(selectedDevice);
             }
             mainWindow->setDisallowOtherDevices();
+        } else {
+            mainWindow->showDevicePanelIfPreviouslyHiddenByDisallowOtherDevices();
         }
     });
 
