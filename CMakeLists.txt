@@ -61,12 +61,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
 
 find_package(PolkitQt${QT_MAJOR_VERSION}-1 REQUIRED)
 
-# use sane compile flags
-add_definitions(
-  -DQT_NO_CAST_TO_BYTEARRAY
-  -DQT_USE_FAST_OPERATOR_PLUS
-  -DQT_DISABLE_DEPRECATED_BEFORE=0x050f00
-)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
 
 find_package(KPMcore ${KPMCORE_MIN_VERSION} REQUIRED)
 
