@@ -119,7 +119,7 @@ void MainWindow::setupObjectNames()
 void MainWindow::setDisallowOtherDevices()
 {
     // We need to store that we are hiding this for this session only
-    // but only if it's currently visible (ie, the user didn't selected
+    // but only if it's currently visible (ie, the user didn't select
     // that it should be hidden on purpose.
     if (m_DockDevices->isVisible() == true) {
         Config::self()->setHideDeviceDockWidgetByCmdArgs(true);
