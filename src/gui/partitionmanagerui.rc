@@ -15,6 +15,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <Action name="newPartition"/>
         <Action name="resizePartition"/>
         <Action name="deletePartition"/>
+        <Action name="refreshDevices"/>
         <Action name="createNewPartitionTable"/>
     </ToolBar>
 
@@ -30,6 +31,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <Menu name="selectedDevice">
                 <text context="@title:menu">Select Current Device</text>
             </Menu>
+            <Action name="refreshDevices"/>
             <separator/>
             <Action name="createNewPartitionTable"/>
             <separator/>
@@ -48,7 +50,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <Action name="createVolumeGroup"/>
             <separator/>
             <Action name="fileSystemSupport"/>
-            <Action name="refreshDevices"/>
         </Menu>
         <Menu name="partition">
             <text context="@title:menu">Partition</text>
