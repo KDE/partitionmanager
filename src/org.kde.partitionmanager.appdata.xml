@@ -83,7 +83,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <summary xml:lang="sv">Hantera diskenheter, partitioner och filsystem på datorn</summary>
   <summary xml:lang="uk">Керування дисковими пристроями, розділами та файловими системами вашого комп'ютера</summary>
   <summary xml:lang="x-test">xxManage disk devices, partitions and file systems on your computerxx</summary>
-  <summary xml:lang="zh-CN">管理电脑上的磁盘设备、分区和文件系统</summary>
+  <summary xml:lang="zh-CN">管理电脑中的磁盘设备、分区和文件系统</summary>
   <description>
     <p>KDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.</p>
     <p xml:lang="ar">«مدير كدي للأقسام» هو أداة تساعدك على إدارة أجهزة الأقراص، والأقسام وأنظمة الملفّات في حاسوبك. ويتيح لك الإنشاء، والنّسخ، والنّقل، والحذف، والتّحجيم دون فقدات البيانات، والنّسخ الاحتياطيّ واسترجاع الأقسام بسهولة.</p>
@@ -123,7 +123,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <p xml:lang="tr">KDE Disk Bölümü Düzenleyici; bilgisayarınızdaki disk aygıtlarını, bölümlerinizi ve dosya sistemlerinizi yönetmenize yardımcı olan bir programdır. Kolaylıkla disk bölümü oluşturmanızı, kopyalamanızı, taşımanızı, silmenizi, veri kaybetmeden yeniden boyutlandırmanızı, yedeklemenizi ve yedekten geri yüklemenizi sağlar.</p>
     <p xml:lang="uk">Редактор розділів KDE — допоміжна програма, яку призначено для полегшення керування дисковими пристроями, розділами та файловими системами на комп’ютері. За її допомогою ви зможете без проблем створювати, копіювати, пересувати, вилучати та змінювати розміри розділів без втрати даних, створювати резервні копії розділів та відновлювати дані з цих резервних копій.</p>
     <p xml:lang="x-test">xxKDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.xx</p>
-    <p xml:lang="zh-CN">KDE 分区管理器是一个帮助您管理就计算机上的磁盘设备，分区，文件系统的工具程序。它可以帮助您简单地创建，复制，移动，删除，无损调整大小，备份和恢复分区。</p>
+    <p xml:lang="zh-CN">KDE 分区管理器是一款用于管理计算机的磁盘设备，分区，文件系统的工具程序。您可以使用它方便地创建、复制、移动、删除、在保留数据的前提下调整分区大小、备份和恢复分区等。</p>
     <p xml:lang="zh-TW">KDE 磁碟分割區管理員是一個可以協助您管理您電腦上的磁碟裝置、分割區以及檔案系統的工具。它讓您可以很容易地建立、複製、移動、刪除、不遺失資料的調整大小、備份與恢復分割區。</p>
     <p>Features:</p>
     <p xml:lang="ar">الميزات:</p>
@@ -166,7 +166,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <p xml:lang="tr">Özellikler:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
-    <p xml:lang="zh-CN">功能：</p>
+    <p xml:lang="zh-CN">程序功能：</p>
     <p xml:lang="zh-TW">功能：</p>
     <ul>
       <li>Supports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and more</li>
@@ -207,7 +207,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <li xml:lang="tr">Ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ve daha birçok sayıda dosya sistemi destekler</li>
       <li xml:lang="uk">Підтримка широкого набору файлових систем, зокрема ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS тощо.</li>
       <li xml:lang="x-test">xxSupports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and morexx</li>
-      <li xml:lang="zh-CN">支持许多文件系统，包括 ext2/3/4，btrfs，reiserfs，NTFS，FAT16/32,JFS，XFS 和更多</li>
+      <li xml:lang="zh-CN">支持大量文件系统，包括 ext2/3/4、btrfs、reiserfs、NTFS、FAT16/32、JFS、XFS 和更多其他类型</li>
       <li xml:lang="zh-TW">支援大量的檔案系統，包含了 ext2/3/4、btrfs、reiserfs、NTFS、FAT16/32、JFS、XFS 以及更多</li>
       <li>Makes use of already available external programs to get its job done</li>
       <li xml:lang="ar">يستخدم البرامج الخارجيّة المتوفّرة لإنهاء عمله</li>
