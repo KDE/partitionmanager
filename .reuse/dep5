@@ -14,6 +14,12 @@ Copyright: 2008 Volker Lanz <vl@fidra.de>
 Copyright: 2017 Andrius Štikonas <andrius@stikonas.eu>
 Copyright: 2020 KDE translators
 
+# .desktop file
+FILES: src/open_in_partitionmanager.desktop
+License: GPL-3.0-or-later
+Copyright: 2021 Nate Graham
+Copyright: 2021 KDE translators
+
 ### DBus interface
 Files: src/org.kde.partitionmanager.xml
 License: MIT
