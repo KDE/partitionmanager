@@ -46,7 +46,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <name xml:lang="sr-ijekavian">КДЕ‑ов менаџер партиција</name>
   <name xml:lang="sr-ijekavianlatin">KDE‑ov menadžer particija</name>
   <name xml:lang="sv">KDE:s partitionshanterare</name>
-  <name xml:lang="tr">KDE Disk Bölüm Yöneticisi</name>
+  <name xml:lang="tr">KDE Bölümlendirme Yöneticisi</name>
   <name xml:lang="uk">Редактор розділів для KDE</name>
   <name xml:lang="x-test">xxKDE Partition Managerxx</name>
   <name xml:lang="zh-CN">KDE 分区管理器</name>
@@ -81,6 +81,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <summary xml:lang="sk">Spravujte diskové zariadenia, oddiely a súborové systémy v počítači</summary>
   <summary xml:lang="sl">Upravlja diskovne naprave, razdelke diskov in datotečne sisteme na vašem računalniku</summary>
   <summary xml:lang="sv">Hantera diskenheter, partitioner och filsystem på datorn</summary>
+  <summary xml:lang="tr">Bilgisayarınızdaki disk aygıtlarını, bölümleri ve dosya sistemlerini yönetin</summary>
   <summary xml:lang="uk">Керування дисковими пристроями, розділами та файловими системами вашого комп'ютера</summary>
   <summary xml:lang="x-test">xxManage disk devices, partitions and file systems on your computerxx</summary>
   <summary xml:lang="zh-CN">管理电脑中的磁盘设备、分区和文件系统</summary>
@@ -120,7 +121,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <p xml:lang="sr-ijekavian">КДЕ‑ов менаџер партиција је алатка за управљање дисковима, партицијама и фајл системима на рачунару. Омогућава лако стварање, копирање, премештање и брисање партиција, промену величине без губитка података, прављење и враћање резерва партиција.</p>
     <p xml:lang="sr-ijekavianlatin">KDE‑ov menadžer particija je alatka za upravljanje diskovima, particijama i fajl sistemima na računaru. Omogućava lako stvaranje, kopiranje, premeštanje i brisanje particija, promenu veličine bez gubitka podataka, pravljenje i vraćanje rezerva particija.</p>
     <p xml:lang="sv">KDE Partition Manager är ett verktyg för att hjälpa till att hantera diskenheter, partitioner och filsystem på datorn. Det låter dig enkelt skapa, kopiera, flytta, ta bort, ändra storlek utan dataförlust, säkerhetskopiera och återställa partitioner.</p>
-    <p xml:lang="tr">KDE Disk Bölümü Düzenleyici; bilgisayarınızdaki disk aygıtlarını, bölümlerinizi ve dosya sistemlerinizi yönetmenize yardımcı olan bir programdır. Kolaylıkla disk bölümü oluşturmanızı, kopyalamanızı, taşımanızı, silmenizi, veri kaybetmeden yeniden boyutlandırmanızı, yedeklemenizi ve yedekten geri yüklemenizi sağlar.</p>
+    <p xml:lang="tr">KDE Bölümlendirme Yöneticisi; bilgisayarınızdaki disk aygıtlarını, bölümlerinizi ve dosya sistemlerinizi yönetmenize yardımcı olan bir programdır. Kolaylıkla disk bölümü oluşturmanızı, kopyalamanızı, taşımanızı, silmenizi, veri kaybetmeden yeniden boyutlandırmanızı, yedeklemenizi ve yedekten geri yüklemenizi sağlar.</p>
     <p xml:lang="uk">Редактор розділів KDE — допоміжна програма, яку призначено для полегшення керування дисковими пристроями, розділами та файловими системами на комп’ютері. За її допомогою ви зможете без проблем створювати, копіювати, пересувати, вилучати та змінювати розміри розділів без втрати даних, створювати резервні копії розділів та відновлювати дані з цих резервних копій.</p>
     <p xml:lang="x-test">xxKDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.xx</p>
     <p xml:lang="zh-CN">KDE 分区管理器是一款用于管理计算机的磁盘设备，分区，文件系统的工具程序。您可以使用它方便地创建、复制、移动、删除、在保留数据的前提下调整分区大小、备份和恢复分区等。</p>
@@ -204,7 +205,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <li xml:lang="sr-ijekavian">Подржава велики број фајл система, укључујући екст‑2/3/4, бтрфс, рајзер, НТФС, ФАТ‑16/32, ЈФС, ИксФС, и друге.</li>
       <li xml:lang="sr-ijekavianlatin">Podržava veliki broj fajl sistema, uključujući ext2/3/4, btrfs, reiser, NTFS, FAT16/32, JFS, XFS, i druge.</li>
       <li xml:lang="sv">Stöder ett stort antal filsystem, inklusive ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS med flera</li>
-      <li xml:lang="tr">Ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ve daha birçok sayıda dosya sistemi destekler</li>
+      <li xml:lang="tr">Ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ve daha birçok sayıda dosya sistemini destekler</li>
       <li xml:lang="uk">Підтримка широкого набору файлових систем, зокрема ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS тощо.</li>
       <li xml:lang="x-test">xxSupports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and morexx</li>
       <li xml:lang="zh-CN">支持大量文件系统，包括 ext2/3/4、btrfs、reiserfs、NTFS、FAT16/32、JFS、XFS 和更多其他类型</li>
