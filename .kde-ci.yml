@@ -17,3 +17,6 @@ Dependencies:
     'frameworks/kwidgetaddons': '@stable'
     'frameworks/kxmlgui': '@stable'
     'system/kpmcore': '@same'
+
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD' ]      
