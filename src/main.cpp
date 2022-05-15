@@ -23,6 +23,7 @@
 #include <KDBusService>
 #include <KMessageBox>
 #include <KLocalizedString>
+#include <KWindowSystem>
 
 #include <config.h>
 #include <utility>
@@ -135,6 +136,11 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
         } else {
             mainWindow->showDevicePanelIfPreviouslyHiddenByDisallowOtherDevices();
         }
+    });
+
+    QObject::connect(&service, &KDBusService::activateRequested, mainWindow, [mainWindow](const QStringList &/*args*/, const QString &/*workingDir*/) {
+        KWindowSystem::updateStartupId(mainWindow->windowHandle());
+        KWindowSystem::activateWindow(mainWindow->windowHandle());
     });
 
     return app.exec();
