@@ -128,6 +128,8 @@ public:
         m_RadioExtended = nullptr;
         delete m_RadioLogical;
         m_RadioLogical = nullptr;
+        delete m_groupBox_type;
+        m_groupBox_type = nullptr;
     }
     void hideFileSystem() {
         delete m_LabelFileSystem;
