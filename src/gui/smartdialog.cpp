@@ -201,7 +201,7 @@ QString SmartDialog::toHtml() const
 
 void SmartDialog::saveSmartReport()
 {
-    const QUrl url = QFileDialog::getSaveFileUrl();
+    const QUrl url = QFileDialog::getSaveFileUrl(this, QString(), QUrl(), tr("HTML-Files (*.htm *.html);;All Files (*)"));
 
     if (url.isEmpty())
         return;
