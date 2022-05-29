@@ -157,7 +157,7 @@ QString SmartDialog::toHtml() const
       << HtmlReport::tableLine(i18n("Firmware revision:"), device().smartStatus().firmware())
       << HtmlReport::tableLine(i18n("Temperature:"), SmartStatus::tempToString(device().smartStatus().temp()))
       << HtmlReport::tableLine(i18n("Bad sectors:"), badSectors)
-      << HtmlReport::tableLine(i18n("Powered on for:"), KFormat().formatDuration(device().smartStatus().poweredOn()))
+      << HtmlReport::tableLine(i18n("Powered on for:"), KFormat().formatSpelloutDuration(device().smartStatus().poweredOn()))
       << HtmlReport::tableLine(i18n("Power cycles:"), QLocale().toString(device().smartStatus().powerCycles()))
       << HtmlReport::tableLine(i18n("Self tests:"), SmartStatus::selfTestStatusToString(device().smartStatus().selfTestStatus()))
       << HtmlReport::tableLine(i18n("Overall assessment:"), SmartStatus::overallAssessmentToString(device().smartStatus().overall()));
