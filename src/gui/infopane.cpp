@@ -144,6 +144,7 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
         createLabels(xi18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
         createLabels(xi18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
     }
+    gridLayout().setAlignment(Qt::AlignTop);
 }
 
 /** Shows information about a Device in the InfoPane
@@ -195,6 +196,7 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         createLabels(i18nc("@label device", "Total Chunk:"), Capacity::formatByteSize(raid.totalChunk()), cols(area), x, y);
         createLabels(i18nc("@label device", "Array Size:"), Capacity::formatByteSize(raid.arraySize()), cols(area), x, y);
     }
+    gridLayout().setAlignment(Qt::AlignTop);
 }
 
 qint32 InfoPane::cols(Qt::DockWidgetArea area) const

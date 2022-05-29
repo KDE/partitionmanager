@@ -89,7 +89,7 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     aboutData.addCredit(xi18nc("@info:credit", "Pali Rohár"), i18nc("@info:credit", "UDF support"), QStringLiteral("pali.rohar@gmail.com"));
     aboutData.addCredit(i18n("Hugo Pereira Da Costa"), xi18nc("@info:credit", "Partition Widget Design"), QStringLiteral("hugo@oxygen-icons.org"));
     aboutData.addCredit(xi18nc("@info:credit", "Caio Jordão Carvalho"), i18nc("@info:credit", "Improved SMART support"), QStringLiteral("caiojcarvalho@gmail.com"));
-    
+
     aboutData.setHomepage(QStringLiteral("https://www.kde.org/applications/system/partitionmanager"));
 
     KAboutData::setApplicationData(aboutData);
