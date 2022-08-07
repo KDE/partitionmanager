@@ -421,7 +421,7 @@ void ApplyProgressDialog::saveReport()
         if (job->error())
             job->uiDelegate()->showErrorMessage();
     } else
-        KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), xi18nc("@title:window", "Could Not Save Report."));
+        KMessageBox::error(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), xi18nc("@title:window", "Could Not Save Report."));
 }
 
 void ApplyProgressDialog::browserReport()
@@ -445,5 +445,5 @@ void ApplyProgressDialog::browserReport()
         auto *job = new KIO::OpenUrlJob(QUrl::fromLocalFile(file.fileName()), QStringLiteral("text/html"), this);
         job->start();
     } else
-        KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file <filename>%1</filename> for writing.", file.fileName()), i18nc("@title:window", "Could Not Launch Browser."));
+        KMessageBox::error(this, xi18nc("@info", "Could not create temporary file <filename>%1</filename> for writing.", file.fileName()), i18nc("@title:window", "Could Not Launch Browser."));
 }

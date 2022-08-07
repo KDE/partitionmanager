@@ -46,7 +46,7 @@ bool loadBackend()
     if (CoreBackendManager::self()->load(Config::backend()) == false) {
         if (CoreBackendManager::self()->load(CoreBackendManager::defaultBackendName())) {
             if (!Config::firstRun())
-                KMessageBox::sorry(nullptr,
+                KMessageBox::error(nullptr,
                                xi18nc("@info", "<para>The configured backend plugin \"%1\" could not be loaded.</para>"
                                       "<para>Loading the default backend plugin \"%2\" instead.</para>",
                                       Config::backend(), CoreBackendManager::defaultBackendName()),

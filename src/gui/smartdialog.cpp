@@ -224,6 +224,6 @@ void SmartDialog::saveSmartReport()
         if (job->error())
             job->uiDelegate()->showErrorMessage();
     } else
-        KMessageBox::sorry(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), xi18nc("@title:window", "Could Not Save SMART Report."));
+        KMessageBox::error(this, xi18nc("@info", "Could not create temporary file when trying to save to <filename>%1</filename>.", url.fileName()), xi18nc("@title:window", "Could Not Save SMART Report."));
 
 }

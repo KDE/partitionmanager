@@ -400,10 +400,10 @@ void PartitionManagerWidget::onMountPartition()
 
     if (p->canMount()) {
         if (!p->mount(report))
-            KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), xi18nc("@title:window", "Could Not Mount File System."));
+            KMessageBox::detailedError(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be mounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), xi18nc("@title:window", "Could Not Mount File System."));
     } else if (p->canUnmount()) {
         if (!p->unmount(report))
-            KMessageBox::detailedSorry(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), xi18nc("@title:window", "Could Not Unmount File System."));
+            KMessageBox::detailedError(this, xi18nc("@info", "The file system on partition <filename>%1</filename> could not be unmounted.", p->deviceNode()), QStringLiteral("<pre>%1</pre>").arg(report.toText()), xi18nc("@title:window", "Could Not Unmount File System."));
     }
 
     if (p->roles().has(PartitionRole::Logical)) {
@@ -441,7 +441,7 @@ void PartitionManagerWidget::onDecryptPartition()
 
     if (luksFs->canCryptOpen(p->partitionPath())) {
         if (!luksFs->cryptOpen(this, p->partitionPath()))
-            KMessageBox::detailedSorry(this,
+            KMessageBox::detailedError(this,
                                        xi18nc("@info",
                                               "The encrypted file system on partition "
                                               "<filename>%1</filename> could not be "
@@ -452,7 +452,7 @@ void PartitionManagerWidget::onDecryptPartition()
                                              "Could Not Unlock Encrypted File System."));
     } else if (luksFs->canCryptClose(p->partitionPath())) {
         if (!luksFs->cryptClose(p->partitionPath()))
-            KMessageBox::detailedSorry(this,
+            KMessageBox::detailedError(this,
                                        xi18nc("@info",
                                               "The encrypted file system on partition "
                                               "<filename>%1</filename> could not be "
@@ -488,7 +488,7 @@ static bool checkTooManyPartitions(QWidget* parent, const Device& d, const Parti
     Q_ASSERT(d.partitionTable());
 
     if (p.roles().has(PartitionRole::Unallocated) && d.partitionTable()->numPrimaries() >= d.partitionTable()->maxPrimaries() && !p.roles().has(PartitionRole::Logical)) {
-        KMessageBox::sorry(parent, xi18ncp("@info",
+        KMessageBox::error(parent, xi18ncp("@info",
                                            "<para>There is already one primary partition on this device. This is the maximum number its partition table type can handle.</para>"
                                            "<para>You cannot create, paste or restore a primary partition on it before you delete an existing one.</para>",
                                            "<para>There are already %1 primary partitions on this device. This is the maximum number its partition table type can handle.</para>"
@@ -554,7 +554,7 @@ void PartitionManagerWidget::onDeletePartition(bool shred)
         }
 
         if (selectedPartition()->number() > 0 && selectedPartition()->parent()->highestMountedChild() > selectedPartition()->number()) {
-            KMessageBox::sorry(this,
+            KMessageBox::error(this,
                                xi18nc("@info",
                                       "<para>The partition <filename>%1</filename> cannot currently be deleted because one or more partitions with higher logical numbers are still mounted.</para>"
                                       "<para>Please unmount all partitions with higher logical numbers than %2 first.</para>",
@@ -735,7 +735,7 @@ bool PartitionManagerWidget::showInsertDialog(Partition& insertedPartition, qint
                                             "<para>The selected partition is not large enough to hold the source partition or the backup file.</para>"
                                             "<para>Pick another target or resize this partition so it is as large as the source.</para>"), xi18nc("@title:window", "Target Not Large Enough"));
         else
-            KMessageBox::sorry(this, xi18nc("@info",
+            KMessageBox::error(this, xi18nc("@info",
                                             "<para>It is not possible to create the target partition large enough to hold the source.</para>"
                                             "<para>This may happen if not all partitions on a device are correctly aligned "
                                             "or when copying a primary partition into an extended partition.</para>"),
