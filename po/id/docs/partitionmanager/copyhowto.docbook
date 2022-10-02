@@ -1,0 +1,64 @@
+<sect1 id="howto-copypartition">
+	<title
+>How-To: Menyalin sebuah Partisi</title>
+
+	<para
+>How-to ini menerangjelaskan menyalin sebuah partisi. Kita akan menganggap bahwa niatnya adalah untuk menyalin sebuah partisi dari salah satu perangkat ke lainnya dan menimpa partisi sasaran yang ada, tetapi prosedur scara umum tidak begitu banyak berbeda ketika menyalin ke perangkat yang sama atau ke beberapa area unalocated. </para>
+
+	<para
+>Cuplikanlayar berikut menunjukkan bagaimana perangkat sumber terlihat: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Jendela utama dengan perangkat sumber</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Partisi sumber dalam contoh kita bahwa <quote
+>sdb1</quote
+> yang telah terkait saat ini, ditunjukkan oleh ikon kunci di sebelah nama titik kait dalam cuplikanlayar. Sebuah partisi terkait tidak bisa disalin, Anda harus melepas-kait terlebih dulu: Klik padanya kemudian pilih <xref linkend="menu-partition-mount"/>. </para>
+
+	<para
+>Setelah melepaskait partisi, ikon kunci menjadi hilang dan sekarang memungkinkan untuk memilih <xref linkend="menu-partition-copy"/>. Ini meletakkan <quote
+>sdb1</quote
+> dalam &partman;'s papan-klip; dengan kata lain: sekarang <quote
+>sdb1</quote
+> adalah partisi yang akan disisipkan ketika Anda memilih <xref linkend="menu-partition-paste"/>. </para>
+	
+	<para
+>Perangkat tujuan untuk penyalinan di how-to ini adalah <quote
+>/dev/sdc</quote
+>. Klik dia di dalam panel Perangkat. Ini adalah bagaimana perangkat terlihat sebelum penyalinan: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Jendela utama dengan perangkat tujuan sebelum penyalinan</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Partisi untuk ditimpa adalah <quote
+>sdc5</quote
+>. Untuk menempel salinan partisi ke dalamnya, klik dia dan pilih <xref linkend="menu-partition-paste"/>. Anda akan melihat operasi penyalinan partisi yang ditambahkan ke daftar operasi tunda. Ingat di sini tidak memerlukan kotak dialog untuk menyisipkan partisi sebagaimana dalam kasus jika Anda tempel di dalam  sebuah area unallocated: Awal dan akhir dari partisi yang ditempel ditentukan oleh partisi yang ditimpa. </para>
+
+	<para
+>Sekarang pilih <xref linkend="menu-edit-apply"/> dan partisi akan disalin. Lihat <link linkend="howto-resizepartition"
+>how-to pada pengubahan-ukuran partisi</link
+> untuk rincian tentang penerapan operasi. </para>
+</sect1>
+

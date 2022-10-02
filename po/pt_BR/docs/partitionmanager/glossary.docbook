@@ -1,0 +1,354 @@
+<glossary id="glossary">
+
+	<glossentry id="glossary-command">
+		<glossterm
+>Comando</glossterm>
+		<glossdef>
+			<para
+>No &partman;, os comandos são o que compõe as <link linkend="glossary-job"
+>tarefas</link
+>. Estes são os passos de muito baixo nível que são executados, sendo normalmente da responsabilidade de uma ferramenta externa e apenas visíveis no relatório de progresso detalhado. </para>
+			<para
+>O usuário normalmente não tem que se preocupar com os comandos. </para>
+<glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-job"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylinder">
+		<glossterm
+>Cilindro</glossterm>
+		<glossdef>
+			<para
+>Uma unidade usada para dividir um <link linkend="glossary-device"
+>dispositivo</link
+>. Alguns sistemas operacionais, bem como muitas ferramentas de gerenciamento de discos, necessitam que as <link linkend="glossary-partition"
+>partições</link
+> comecem e terminem num cilindro. Assim, o &partman; ajusta automaticamente as partições aos limites entre cilindros, quando altera o seu início e fim. </para>
+<glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylindersize">
+		<glossterm
+>Tamanho do cilindro</glossterm>
+		<glossdef>
+			<para
+>O número de <link linkend="glossary-sector"
+>setores</link
+> por <link linkend="glossary-cylinder"
+>cilindro</link
+> num <link linkend="glossary-device"
+>dispositivo</link
+>. É calculado como sendo o número de <link linkend="glossary-head"
+>cabeças</link
+> multiplicado pelo número de <link linkend="glossary-sector"
+>setores</link
+> por faixa. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-device">
+		<glossterm
+>Dispositivo</glossterm>
+		<glossdef>
+			<para
+>Um dispositivo de disco físico. Os dispositivos de discos físicos são divididos em seções lógicas, chamadas <link linkend="glossary-partition"
+>partições</link
+>, com a utilização das <link linkend="glossary-partitiontable"
+>tabelas de partições</link
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-disklabel">
+		<glossterm
+>Rótulo do disco</glossterm>
+		<glossdef>
+			<para
+>Outro nome para uma <link linkend="glossary-partitiontable"
+>tabela de partições</link
+>, sendo um remanescente do mundo da SUN/BSD. </para>
+			<para>
+				<note>
+					<para
+>São fáceis de confundir, mas um rótulo de disco não tem nada a ver com uma <link linkend="glossary-filesystemlabel"
+>rótulo do sistema de arquivos</link
+>. </para>
+					<para
+>Veja esta <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel"
+>entrada na Wikipédia</ulink
+> para detalhes sobre o nome. </para>
+				</note>
+			</para>
+			<glossseealso otherterm="glossary-partitiontable"
+></glossseealso>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-extendedpartition">
+		<glossterm
+>Partição estendida</glossterm>
+		<glossdef>
+			<para
+>Uma <link linkend="glossary-partition"
+>partição</link
+> que contém outras partições. As partições estendidas só podem ser elas próprias <link linkend="glossary-primarypartition"
+>partições primárias</link
+>. Se as partições estendidas estão disponíveis ou não depende do tipo de <link linkend="glossary-partitiontable"
+>tabela de partições</link
+> usado. As tabelas de partições do MS-DOS permitem apenas uma partição estendida por <link linkend="glossary-device"
+>dispositivo</link
+>. </para>
+<glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystem">
+		<glossterm
+>Sistema de arquivos</glossterm>
+		<glossdef>
+			<para
+>Um sistema de arquivos define como está organizado o armazenamento dos dados (arquivos ou pastas e os seus metadados ou o espaço livre) dentro de uma <link linkend="glossary-partition"
+>partição</link
+>. Existem diversos tipos de sistemas de arquivos diferentes, vindo alguns originalmente do mundo do Unix/Linux, enquanto outros não. Alguns exemplos de sistemas de arquivos comuns no Unix/Linux são o 'ext2', o 'ext3', o 'reiserfs' e o 'xfs'. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystemlabel">
+		<glossterm
+>Rótulo do sistema de arquivos</glossterm>
+		<glossdef>
+			<para
+>O título ou etiqueta de um sistema de arquivos. Alguns sistemas de arquivos (entre eles o 'ext2/3/4', o FAT16/32 e o NTFS) suportam a definição de um rótulo para o sistema de arquivos, de modo que este possa ser identificado nas ferramentas como o &partman; ou em outras aplicações. </para>
+			<para>
+				<note>
+					<para
+>São fáceis de confundir, mas um rótulo de sistema de arquivos não tem nada a ver com uma <link linkend="glossary-disklabel"
+>rótulo de disco</link
+>.</para>
+				</note>
+			</para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-flag">
+		<glossterm
+>Bandeira</glossterm>
+		<glosssee otherterm="glossary-partitionflag"/>
+	</glossentry>
+	
+	<glossentry id="glossary-head">
+		<glossterm
+>Cabeçalho</glossterm>
+		<glossdef>
+			<para
+>Uma unidade usada para dividir um <link linkend="glossary-device"
+>dispositivo</link
+>. </para>
+<glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-job">
+		<glossterm
+>Trabalho</glossterm>
+		<glossdef>
+			<para
+>No &partman;, um conjunto de tarefas é o que compõe as <link linkend="glossary-operation"
+>operações</link
+>. Normalmente, você não tem que se preocupar com as tarefas; elas só se tornam aparentes ao aplicar a lista de operações pendentes: aí sim, o &partman; irá então mostrar uma janela de progresso, composta por todas as operações e respectivas tarefas, que mostra a operação e a tarefa que está sendo executada no momento. </para>
+<glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry>
+		<glossterm
+>Rótulo</glossterm>
+		<glossdef>
+			<para
+>Tanto um <link linkend="glossary-disklabel"
+>rótulo do disco</link
+> como um <link linkend="glossary-filesystemlabel"
+>rótulo do sistema de arquivos</link
+>. </para>
+<glossseealso otherterm="glossary-disklabel"
+></glossseealso
+> <glossseealso otherterm="glossary-filesystemlabel"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-logicalpartition">
+		<glossterm
+>Partição lógica</glossterm>
+		<glossdef>
+			<para
+>Uma <link linkend="glossary-partition"
+>partição</link
+> dentro de uma <link linkend="glossary-extendedpartition"
+>partição estendida</link
+>. </para>
+<glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-operation">
+		<glossterm
+>Operação</glossterm>
+		<glossdef>
+			<para
+>O &partman; divide o trabalho que ele faz em operações, <link linkend="glossary-job"
+>trabalhos</link
+> e <link linkend="glossary-command"
+>comandos</link
+>. </para>
+			<para
+>As operações são o nível mais visível das três. Se você escolher uma ação na interface gráfica do usuário, ela irá resultar provavelmente numa nova operação que será adicionada à lista de operações pendentes. A ideia por trás deste conceito é: provavelmente você irá querer configurar alguns passos que transformam o estado atual dos seus dispositivos de discos no estado que tem em mente. Alguns destes passos poderão levar bastante tempo para serem executados (como a cópia de um sistema de arquivos grande ou o dimensionamento de um sistema de arquivos quase cheio). Para poupá-lo de ficar sentado à espera que o seu computador termine um passo para iniciar o seguinte, as operações permitem-lhe definir exatamente como deverão ficar os dispositivos do computador quando tudo terminar, deixando então depois o &partman; aplicando as operações e regressando apenas no fim de todas elas. </para>
+			<para
+>As operações são mantidas numa lista de operações pendentes. Enquanto uma operação não tiver sido aplicada, será possível <link linkend="menu-edit-undo"
+>anulá-la facilmente</link
+>, sem que nada seja modificado. </para>
+<glossseealso otherterm="glossary-job"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partition">
+		<glossterm
+>Partição</glossterm>
+		<glossdef>
+			<para
+>Uma seção de um <link linkend="glossary-device"
+>dispositivo de disco rígido</link
+> que poderá conter um <link linkend="glossary-filesystem"
+>sistema de arquivos</link
+> ou outras partições. Sem ter pelo menos uma partição válida, você não pode usar um determinado disco. </para>
+<glossseealso otherterm="glossary-device"
+></glossseealso
+> <glossseealso otherterm="glossary-partitiontable"
+></glossseealso
+> <glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partitionflag">
+		<glossterm
+>Opção da Partição</glossterm>
+		<glossdef>
+			<para
+>Um marcador para uma <link linkend="glossary-partition"
+>partição</link
+>. A disponibilidade destas opções depende do tipo de <link linkend="glossary-partitiontable"
+>tabela de partições</link
+> que for usado. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-partitiontable">
+		<glossterm
+>Tabela de partições</glossterm>
+		<glossdef>
+			<para
+>Uma pequena seção no início de um <link linkend="glossary-device"
+>dispositivo</link
+> que é usada para guardar informações sobre a disposição das <link linkend="glossary-partition"
+>partições</link
+> do dispositivo. Existem diferentes tipos de tabelas de partições, tendo cada uma delas as suas próprias limitações. </para>
+			<para
+>Alguma vezes também chamado de <quote
+>rótulo do disco</quote
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-primarypartition">
+		<glossterm
+>Partição primária</glossterm>
+		<glossdef>
+			<para
+>Uma <link linkend="glossary-partition"
+>partição</link
+> que está diretamente dentro de uma <link linkend="glossary-partitiontable"
+>tabela de partições</link
+>, em oposição às <link linkend="glossary-logicalpartition"
+>partições lógicas</link
+>, que se encontram dentro das <link linkend="glossary-extendedpartition"
+>partições estendidas</link
+>. </para>
+			<para
+>As <link linkend="glossary-partitiontable"
+>tabelas de partições</link
+> normalmente impõem restrições sobre o número máximo de partições primárias que poderão ser criadas num <link linkend="glossary-device"
+>dispositivo</link
+>. Para as tabelas de partições do tipo do MS-DOS, por exemplo, este número máximo é igual a quatro. </para>
+<glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-sector">
+		<glossterm
+>Setor</glossterm>
+		<glossdef>
+			<para
+>Uma unidade usada para dividir um <link linkend="glossary-device"
+>dispositivo</link
+>. As <link linkend="glossary-partition"
+>partições</link
+> devem sempre começar e terminar num setor. </para>
+<glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-sectorsize">
+		<glossterm
+>Tamanho do setor</glossterm>
+		<glossdef>
+			<para
+>O número de bytes por <link linkend="glossary-sector"
+>setor</link
+> em um <link linkend="glossary-device"
+>dispositivo</link
+>. O tamanho do setor da maioria dos dispositivos em uso hoje em dia é de 512 bytes. </para>
+		</glossdef>
+	</glossentry>
+	
+	<!--
+		<glossentry>
+			<glossterm
+></glossterm>
+			 
+		</glossentry>
+		-->
+
+</glossary>

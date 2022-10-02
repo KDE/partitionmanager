@@ -1,0 +1,154 @@
+<chapter id="faq">
+	<title
+>Küsimused ja vastused</title>
+&reporting.bugs; &updating.documentation; <qandaset id="faqlist">
+		<qandaentry>
+			<question>
+				<para
+>Kui suurt ohtu kujutab partitsioonihaldur minu andmetele?</para>
+			</question>
+			<answer>
+				<para
+>Esiteks ei tohi kunagi ühtegi võimalikku kahju tekitavat operatsiooni (kustutamine, liigutamine, suuruse muutmine) ette võtta enne kõigest, mida operatsioon puudutab, täieliku varukoopia valmistamist. </para>
+				<para
+>Seda silmas pidades on partitsioonihalduri kasutamine ohutu. Rakendus sooritab põhjalikud kontrollid enne ja pärast iga operatsiooni. Kasutatakse väliseid tööriistu, mille on loonud ja mida toetavad failisüsteemide autorid. Nii neid kui ka meie rakendust on ka põhjalikult testitud. </para>
+				<para
+>Siiski valitseb alati andmekao oht mõne seni teadmata vea tõttu. Partitsioonihalduri autorid on üritanud seda ohtu pisendada, aga loomulikult ei saa kunagi anda täielikku garantiid. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Paigaldasin kõik soovitatud välised failisüsteemi toetuse paketid, aga ikka ei ole kõigi failisüsteemide korral kõik operatsioonid toetatud.</para>
+			</question>
+			<answer>
+				<para
+>Mitte kõike, mida partitsioonihaldur põhimõtteliselt suudab teha, ei saa teha kõigi failisüsteemidega. </para>
+				<para
+>Üks näide on failisüsteemi kontroll Linuxi saaleala partitsioonil (linuxswap). See ei ole lihtsalt võimalik. On teisigi piiranguid, mis käivad teatava failisüsteemiga kaasas. Näiteks ei saa ei partitsioonihalduris ega ka muul moel kahandada JFS või XFS failisüsteeme, sest need ei näe seda üldse ette. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Miks ma ei näe failisüsteemi suuruse muutmisel mingit teavet edenemise kohta?</para>
+			</question>
+			<answer>
+				<para
+>Partitsioonihaldur saab edenemist näidata ainult siis, kui on teada, kui kaua võtavad operatsiooni tööd aega. Paraku partitsiooni suuruse muutmisel seda tavaliselt teha ei saa, sest selle juures on kindlalt kõige kauem aega võttev töö partitsiooni failisüsteemi suuruse muutmine. Selle eest hoolitsevad enamikul juhtudel välised tööriistad, mis aga ei paku partitsioonihaldurile vähegi mõistlikku teavet edenemise kohta, mistõttu partitsioonihalduril ei ole nende tegevuse ajal ka midagi teada anda. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Miks ma ei saa muuta juurpartitsiooni suurust? Kuidas muuta partitsiooni suurust, millel paikneb minu /home?</para>
+			</question>
+			<answer>
+				<para
+>Partitsiooni suuruse muutmiseks peab see olema lahutatud. Juurpartitsiooni aga lahutada ei saa. Samamoodi ei saa lahutada ka home-partitsiooni, kui oled parajasti sisse logitud oma kodukataloogi (mis reeglina asub just sellel partitsioonil). </para>
+				<para
+>Lahenduseks on käivitada mõni Linuxi Live CD, mille peal on olemas partitsioonihaldur, ning muuta siis neid partitsioone. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Ma saan logi väljundis hoiatusi, et partitsiooni ei saa luua sellise suurusega, mida ma tahan, ja et see luuakse väiksemana. Miks nii?</para>
+			</question>
+			<answer>
+				<para
+>MS-DOS partitsioonitabelis peavad partitsiooni algama ja lõppema silindri piiril. Selle põhjused ulatuvad ajalukku. Partitsioonihaldur tegeleb sellega sisemiselt ise ja üritab mitte vaevata kasutajat niisuguse teabega. </para>
+				<para
+>Haruharva ei suuda partitsioonihaldur mainitud piirangu tõttu siiski operatsiooni teostada nii, nagu seda soovis kasutaja. Näiteks kui seadme silinder on 8 MiB suurusega ja üritad muuta partitsiooni suurust 6 MiB jagu, ei ole see võimalik. </para>
+				<para
+>Samuti võib seda teadet kohata siis, kui sul on seade ja partitsioonitabel, mille partitsioonid ei ole mis tahes põhjusel joondatud täpselt silindrite piiridega, ning sa üritad neid partitsioone esimest korda liigutada või kopeerida. </para>
+				<para
+>Teade ise on ohutu ja annab vaid kasutajale teada, et midagi ei saa teha täpselt nii, nagu kasutaja seda soovis. Sinu partitsioone ega andmeid sellise teate peale miski igatahes ei ohusta. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Kui palju operatsioone saab ootel operatsioonide nimekirja lisada?</para>
+			</question>
+			<answer>
+				<para
+>Siin piirangut ei ole. </para>
+				<para
+>Siiski ei ole soovitatav nimekirja liiga palju operatsioone lisada. Alati on olemas tilluke võimalus, et mõni operatsioon võib tõrke tõttu nurjuda, millisel juhul partitsioonihaldur peatab operatsioonide teostamise. Sel juhul on palju hõlpsam mõista, mis toimus (ning uuesti lisada operatsioone, mida ei teostatud), kui ootel operatsioonide nimekiri pole ülemäära pikk. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Ext2 või ext3 failisüsteemi suuruse muutmine nurjus ning aruandes kõneldi midagi, et <quote
+>seadmes pole ruumi</quote
+>. Mis lahti? Kas mu andmed on nüüd rikutud?</para>
+			</question>
+			<answer>
+				<para
+>See on käsu <command
+>e2resize</command
+> ning ext2/3/4 failisüsteemi probleem. Kui failisüsteem on peaaegu täis, ei suuda <command
+>e2resize</command
+> seda enam väiksemaks teha, isegi kui vabade sektorite järgi peaks see võimalik olema. Partitsioonihaldur ei suuda kahjuks aga ette teada, kas <command
+>e2resize</command
+> katkestab antud failisüsteemi puhul töö mainitud teatega või mitte. Kui see peaks nii juhtuma, ei võeta tegelikult midagi ette ning sinu andmeid see ei ohusta. </para>
+				<para
+>Praegu ei ole selle probleemile mingit lahendust. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Miks ei saa partitsioonihalduriga vormindada disketti? Miks ei ole toetatud CD või DVD kirjutamine?</para>
+			</question>
+			<answer>
+				<para
+>Partitsioonihaldur ei ole lihtsalt nendeks ülesanneteks mõeldud. Tegu on rakendusega, mille objektiks on partitsioonid ja neil olevad failisüsteemid. Disketid, CD-d ja DVD- ei kasuta või ei vaja partitsioone. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Miks ei saa muuta amiga või bsd partitsioonitabeliga seadmete partitsioone?</para>
+			</question>
+			<answer>
+				<para
+>Partitsioonihaldur võimaldab praegu muid kui MS-DOS partitsioonitabeleid ainult lugeda. Põhjuseks on turvalisus. Partitsioonihaldur lihtsalt ei toeta veel neid partitsioonitabeli tüüpe ja nii palju, kui ta seda ka teeb, ei ole see veel nii testitud, et seda võiks julgelt kasutada. </para>
+				<para
+>Loomulikult võib ikkagi luua oma seadmel uue MS-DOS partitsioonitabeli, aga vaevalt on see see, mida tegelikult soovid. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Käivitamisel hangub partitsioonihaldur mitmeks minutiks, püüdes nähtavasti uurida arvuti disketiseadet.</para>
+			</question>
+			<answer>
+				<para
+>See juhtub siis, kui arvuti BIOS-es on disketiseade seadistatud, aga tegelikult seda ühendatud ei ole. Kui sul pole disketiseadet, uuri oma BIOS-e seadistusi ja lülita seal kõik disketiseadmed välja. See võib probleemi kaotada. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Käivitamise ajal annab partitsioonihaldur teada seadmete uurimisest ja et see võib võtta kaua aega või isegi lõppeda krahhiga.</para>
+			</question>
+			<answer>
+				<para
+>Taustateegil LibParted, mida partitsioonihaldur kasutab, on probleeme süsteemidega, milles Linuxi seadmete seondajat (devicemapper) on kasutatud viisil, mida teek ei mõista. Paraku reageerib teek sellisel juhul mõnikord krahhiga. Seepärast üritab partitsioonihaldur niisuguseid olukordi vältida ja kasutab teist viisi arvuti ketaste läbiuurimiseks. Kui seda aga ei õnnestu teha ja tuleb toetuda LibParted'ile, näidataksegi mainitud teadet. Kui asi ometi korda läheb, ei ole põhjust end sellest teatest häirida lasta. </para>
+			</answer>
+		</qandaentry>
+<!--
+		<qandaentry>
+			<question>
+				<para
+></para>
+			</question>
+			 
+		</qandaentry>
+-->
+	</qandaset>
+</chapter>
+

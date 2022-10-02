@@ -1,0 +1,155 @@
+<chapter id="faq">
+	<title
+>Vanliga frågor</title>
+
+	<qandaset id="faqlist">
+		<qandaentry>
+			<question>
+				<para
+>Hur farlig är Partition Manager för min data?</para>
+			</question>
+			<answer>
+				<para
+>För det första ska du aldrig utföra några destruktiva åtgärder (ta bort, flytta, ändra storlek) utan att först göra en fullständig säkerhetskopiering av allt som påverkas. </para>
+				<para
+>Med detta sagt, är Partition Manager säkert att använda. Det utför omfattande kontroller före och efter varje operation. Det anropar externa verktyg skrivna och stödda av filsystemets upphovsmän. Och det har provats utförligt. </para>
+				<para
+>Det finns alltid risk för dataförlust på grund av ett okänt fel. Partition Managers upphovsmän försöker att minimera denna risk, men det finns naturligtvis inga garantier. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Jag har installerat alla rekommenderade stödpaket för externa filsystem och får fortfarande inte stöd för alla åtgärder på alla filsystem.</para>
+			</question>
+			<answer>
+				<para
+>Inte allt som Partition Manager i princip kan utföra, kan utföras med alla filsystem. </para>
+				<para
+>Ett exempel är att utföra en filsystemkontroll på linuxswap: det är helt enkelt inte möjligt. Det finns andra begränsningar som är inneboende i vissa filsystem. Du kan inte krympa JFS- eller XFS-filsystem eftersom inget av de två stöder att krympas över huvud taget, med eller utan Partition Manager. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Varför ser man inte någon meningsfull förloppsinformation vid storleksändring av en partition?</para>
+			</question>
+			<answer>
+				<para
+>Partition Manager kan bara visa förloppsinformation när det vet hur länge jobben i en åtgärd kommer att ta. Tyvärr är det oftast inte fallet när storleken på partitioner ändras, eftersom det överlägset längsta jobbet som ingår är att ändra storlek hos filsystemet på partitionen. Att ändra storlek på filsystem är i de flesta fall något ett externt verktyg gör åt Partition Manager och dessa externa verktyg tillhandahåller inte meningsfull förloppsinformation till Partition Manager, så det finns ingenting att rapportera när de kör. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Varför kan man inte ändra rotpartitionens storlek? Hur kan man ändra storlek på partitionen där /home finns?</para>
+			</question>
+			<answer>
+				<para
+>För att ändra en partition får den inte vara monterad. Du kan dock inte avmontera rotpartitionen. Du kommer heller inte att kunna avmontera partitionen home om hemkatalogen för användaren som för närvarande är inloggad finns på den. </para>
+				<para
+>Lösningen på problemet är att starta från en Linux Live-cd som levereras med Partition Manager och ändra partitionerna därifrån. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Jag får ett varningsmeddelande i loggutmatningen med något om att en partition inte kan skapas med storleken jag begärde, och att den istället blir mindre. Vad var det som hände?</para>
+			</question>
+			<answer>
+				<para
+>I MS-DOS partitionstabeller måste partitioner börja och sluta på cylindergränser. Det är i huvudsak av historiska skäl. Partition Manager hanterar det internt, och försöker att inte besvära användaren med begränsningen. </para>
+				<para
+>I sällsynta fall kommer Partition Manager dock inte att kunna skapa en åtgärd på det sätt som användaren begärde på grund av denna begränsning. Om exempelvis en cylinder på en enhet är 8 MiB stor och du försöker ändra storlek på en partition med 6 MiB, kommer det inte att fungera. </para>
+				<para
+>Du kan också stöta på meddelandet om du har en enhet och partitionstabell där partitionerna av någon anledning inte är riktigt låsta till cylindergränser, och du försöker flytta eller kopiera partitionerna för första gången. </para>
+				<para
+>Själva meddelandet är ofarligt och finns bara för att informera användaren att någonting inte kan göras exakt som användaren förväntar sig. Partitioner och data kommer inte att påverkas negativt på något sätt när meddelandet visas. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Hur många åtgärder kan man lägga till i listan med väntande åtgärder?</para>
+			</question>
+			<answer>
+				<para
+>Det finns ingen begränsning. </para>
+				<para
+>Det är dock inte rekommenderat att lägga till alltför många åtgärder i listan. Det finns alltid en liten risk att en åtgärd kan misslyckas med ett felmeddelande, vilket gör att Partition Manager stoppar utföra åtgärder. I detta fall är det mycket enklare att ta reda på vad som hände (och lägga till alla åtgärder som inte kunde utföras igen) om listan med väntande åtgärder inte är överdrivet lång. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Storleksändring av ett ext2 eller ext3 filsystem misslyckades med något i still med <quote
+>inget utrymme kvar på enheten</quote
+> i rapporten. Vad var det som hände? Har data blivit skadad nu?</para>
+			</question>
+			<answer>
+				<para
+>Det är ett problem med kommandot <command
+>e2resize</command
+> och det underliggande ext2/3/4 filsystemet. Om ett filsystem nästan är fullt, kan inte <command
+>e2resize</command
+> göra det mindre även om det skulle vara möjligt från antal kvarvarande lediga sektorer. Partition Manager kan tyvärr inte veta på förhand om <command
+>e2resize</command
+> kommer att avbrytas med felmeddelandet för ett givet filsystem eller inte. Om det inträffar har ingenting alls utförts, och data har inte påverkats negativt. </para>
+				<para
+>För närvarande finns det inte något bra sätt att gå förbi problemet. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Varför kan man inte formatera en diskett med Partition Manager? Varför finns det inget stöd för att skriva en cd eller bränna en dvd?</para>
+			</question>
+			<answer>
+				<para
+>Inget av detta är vad Partition Manager är konstruerat att göra: Det är ett program som hanterar partitioner och filsystemen på dessa partitioner. Disketter, cd-skivor eller dvd-skivor behöver eller använder inte partitioner. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Varför kan man inte ändra partitioner på en enhet med Amiga eller BSD partitionstabeller?</para>
+			</question>
+			<answer>
+				<para
+>Partition Manager tillåter för närvarande bara läsåtkomst av andra partitionstyper än MS-DOS. Det görs av säkerhetsskäl: Stöd för dessa partitionstabeller finns egentligen inte i Partition Manager, och det som finns (eller bara råkar fungera) har inte utprovats nog för att användas med förtroende. </para>
+				<para
+>Du kan naturligtvis ändå skapa en ny MS-DOS partitionstabell på enheten i fråga, men det är troligen inte det du vill. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Efter start hänger Partition Manager några minuter medan det uppenbarligen försöker söka igenom disketten på datorn.</para>
+			</question>
+			<answer>
+				<para
+>Detta inträffar om du har ställt in en diskettenhet i datorns BIOS-inställningar, men i själva verket inte anslutit någon. Om du inte har en diskettenhet, kontrollera BIOS-inställningarna, och inaktivera eventuella inställda diskettenheter där, för att se om det gör att problemet försvinner. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Vid start skriver Partition Manager ut några meddelanden om att enheter söks igenom, och det kan till och med krascha, eller åtminstone ta lång tid.</para>
+			</question>
+			<answer>
+				<para
+>LibParted, ett gränssnittsbibliotek som Partition Manager använder, har problem med system där Linux enhetshanterare används på ett sätt som det inte förstår. Tyvärr reagerar det med segmenteringsfel, dvs. kraschar, för vissa av dessa situationer. Partition Manager försöker därför undvika situationerna genom att använda ett alternativt sätt att söka efter diskar på datorn. Om det dock inte går att göra det, utan det måste förlita sig på LibParted, skrivs ett meddelande ut som det nyss nämnda, och det försöker göra det bästa möjliga. Om sökning efter diskar fungerar, kan du ignorera meddelandet utan problem. </para>
+			</answer>
+		</qandaentry>
+<!--
+		<qandaentry>
+			<question>
+				<para
+></para>
+			</question>
+			 
+		</qandaentry>
+-->
+	</qandaset>
+</chapter>
+

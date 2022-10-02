@@ -1,0 +1,238 @@
+<sect1 id="howto-resizepartition">
+	<title
+>How-To: Mengubah ukuran sebuah Partisi</title>
+
+	<para
+>How-to ini menjelaskan pengubahan ukuran dari sebuah <glossterm linkend="glossary-partition"
+>partisi</glossterm
+> yang terlalu penuh. Lihat cuplikan berikut ini untuk mengenali situasi sebelum mengubah ukuran: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Jendela utama sebelum mengubah ukuran partisi</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Pada <glossterm linkend="glossary-device"
+>perangkat</glossterm
+> <quote
+>/dev/sdb</quote
+>, partisi <quote
+>sdb2</quote
+> hanya memiliki sedikit ruang bebas tersisa ketika partisi lain, <quote
+>sdb1</quote
+>, jauh dari penuh. Oleh karena itu disarankan untuk membuat partisi pertama sedikit lebih kecil dan menumbuhkan <quote
+>sdb2</quote
+> jadi memiliki lebih banyak ruang kosong yang tersedia. </para>
+
+	<note>
+		<title
+>Catat: Anda tak bisa memodif partisi yang ter-mount.</title>
+		<para
+>Pada cuplikan di atas kedua partisi saat ini tidak ter-mount. Jika salah satu atau keduanya di-mount, Anda harus meng-lepas kait terlebih dulu menggunakan <xref linkend="menu-partition-mount"/>.</para>
+	</note>
+
+	<para
+>Langkah pertama adalah membuat lebih banyak ruang agar partisi bisa ditumbuhkan, jadi mulailah dengan menyusutkan <quote
+>sdb1</quote
+>. Klik pada partisi dan pilihlah <xref linkend="menu-partition-resize"/>. Muncul dialog berikut: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Dialog ubah-ukuran sebelum mengubah ukuran /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Dialog ini memungkinkan Anda mengubah ukuran partisi dengan berbagai cara. Anda bisa menyeret pegangan yang tepat ke kiri sampai partisi memiliki ukuran yang diinginkan atau cukup masukkan ukurannya ke bidang teks <guilabel
+>Ukuran</guilabel
+>. Kemungkinan lain adalah menyesuaikan ukuran dengan mengeklik panah kecil di samping bidang teks, tapi itu agak membosankan untuk perubahan yang lebih besar. </para>
+
+	<para
+>Apapun cara yang Anda inginkan untuk mengeset ukuran baru, dialog seharusnya terlihat seperti ini: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Dialog ubah-ukuran setelah mengubah ukuran /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Setelah Anda mengeklik <guibutton
+>Oke</guibutton
+>, sebuah operasi baru ditambahkan ke daftar operasi tunda dan tampilan grafis dan tampilan ranting perangkat diperbarui untuk mencerminkan situasi baru: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Jendela utama setelah mengubah ukuran /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<note>
+		<title
+>Catatan: Operasi dipratinjau dulu sebelum menerapkannya.</title>
+		<para
+>Meskipun window utama mencerminkan keadaan perangkat bagaimana akan setelah menerapkan operasi baru, operasi sebenarnya belum diterapkan: Sementara operasi masih dalam tunda, Anda bisa mengurungkannya (satu per satu menggunakan <xref linkend="menu-edit-undo"/> atau <xref linkend="menu-edit-clear"/> untuk membatalkan semuanya) atau berhentikan &partman;, dan tidak akan ada yang dimodifikasi sama sekali.</para>
+	</note>
+	
+	<para
+>Sekarang ada beberapa ruang kosong antara dua partisi yang bisa Anda geserkan dan tumbuhkan partisi <quote
+>sdb2</quote
+>. Pertama, klik pada <quote
+>sdb2</quote
+> dan pilihlah <xref linkend="menu-partition-resize"/> lagi. Dialog ubah-ukuran muncul sekali lagi, kali ini untuk partisi kedua. Seret pegangan kiri ke ujung paling kiri sehingga dialog terlihat seperti ini: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Dialog ubah-ukuran setelah mengubah ukuran /dev/sdb2</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Hati-hati untuk memastikan bahwa <guilabel
+>ruang kosong sebelum</guilabel
+> isian teks benar-benar menampilkan <quote
+>0 MiB</quote
+> karena jika tidak akan ada sedikit ruang kosong dibiarkan di antara partisi yang kemudian akan terbuang. </para>
+
+	<para
+>Sekarang klik tombol <guibutton
+>Oke</guibutton
+> lagi. Di window utama sehingga terlihat seperti ini: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Jendela utama setelah mengubah ukuran /dev/sdb2</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Ini sudah seperti yang Anda inginkan, jadi pilih <xref linkend="menu-edit-apply"/>. Sebuah kotak dialog akan muncul dan bertanya kepada Anda apakah Anda yakin untuk menerapkan operasi tunda. Konfirmasikan kotak dialog ini dan &partman; akan mulai mengeksekusi operasi: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>&partman; telah menerapkan operasi</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Saat operasi dieksekusi, Anda bisa mengeklik tanda plus di sebelahnya setiap operasi dalam daftar untuk mengetahui tugas yang terdiri dari dan melihat tugas apa yang sedang dijalankan. </para>
+
+	<para
+>Mengubah ukuran partisi dengan cara Anda mengubah ukuran <quote
+>/dev/sdb2</quote
+> di atas selalu berarti harus digeserkan ke kiri terlebih dahulu sebelum dapat ditumbuhkan karena partisi tidak dapat langsung ditumbuhkan ke kiri. Sayangnya, memindahkan partisi besar seperti itu akan memakan waktu lama. Bukan hal yang aneh jika operasi seperti ini memakan waktu beberapa menit atau bahkan lebih. </para>
+
+	<para
+>Yang terakhir, semua operasi telah lengkap dengan sukses: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Dialog progres setelah sukses menerapkan operasi</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Dengan mengeklik <guibutton
+>Oke</guibutton
+> Anda sekarang dapat menutup dialog progresnya dan kembali ke window utama. &partman; akan mencari-ulang perangkat Anda di titik ini sehingga mungkin butuh beberapa detik. </para>
+
+	<para
+>Jika Anda tertarik dengan beberapa perincian selebihnya tentang operasi yang baru saja jalan klik pada <guibutton
+>Perincian</guibutton
+>. Anda akan melihat laporan terperinci yang selalu dihasilkan (dan diperbarui dengan cepat) ketika &partman; mengeksekusi operasi: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Perincian dialog progres</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Laporan ini sangat menarik jika terjadi error saat mengeksekusi operasi. Sebuah laporan menampilkan setiap operasi, masing-masing tugas dan masing-masing perintah eksternal yang sedang jalan dan dengan demikian sangat membantu ketika mencoba untuk melacak masalah. </para>
+
+	<para
+>Anda bisa menyimpan laporan sebagai <acronym
+>HTML</acronym
+> atau meniliknya di browser web eksternal. </para>
+
+	<tip>
+		<para
+>Selalu simpan laporan terperinci sebagai <acronym
+>HTML</acronym
+> ketika mengeksekusi operasi yang gagal dengan error atau peringatan untuk referensi kelak. Anda mungkin juga ingin menyertakannya ke dalam laporan bug yang Anda ajukan ke sistem pelacakan bug &kde; di <ulink url="https://bugs.kde.org"
+>bugs.kde.org</ulink
+>. </para>
+	</tip>
+	
+	<para
+>Untuk menyembunyikan perincian lagi klik pada <guibutton
+>Perincian</guibutton
+> dan yang terakhir tutup dialog progres klik pada <guibutton
+>Oke</guibutton
+>. </para>
+</sect1>

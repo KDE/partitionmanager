@@ -1,0 +1,48 @@
+<chapter id="introduction">
+	<title
+>Introduction</title>
+	<para
+>Le &partman; est un programme utilitaire conçu pour vous aider à gérer les <glossterm linkend="glossary-device"
+>périphériques disques</glossterm
+>, les <glossterm linkend="glossary-partition"
+>partitions</glossterm
+> et les <glossterm linkend="glossary-filesystem"
+>systèmes de fichiers</glossterm
+> sur votre ordinateur. </para>
+	<para
+>Il permet de <link linkend="howto-installos"
+>créer facilement de nouvelles partitions</link
+>, créer des systèmes de fichiers sur des partitions nouvelles ou existantes, <link linkend="howto-copypartition"
+>copier</link
+>, déplacer ou supprimer des partitions et également <link linkend="howto-resizepartition"
+>modifier la taille d'une partition</link
+> sans perdre les données qu'elle contient. </para>
+
+	<para
+>Pour pouvoir fonctionner efficacement, l'application &partman; fait appel à des outils externes pour prendre en charge une longue liste de systèmes de fichiers. Il est fort probable que les outils requis pour les systèmes de fichiers soient déjà installés sur votre ordinateur. </para>
+
+	<warning>
+		<title
+>Faites toujours une sauvegarde de vos données !</title>
+		<para
+>Le &partman; a été conçu et écrit avec beaucoup de soin, en mettant l'accent sur l'intégrité des données. Il y a cependant toujours un certain risque à prendre en compte lorsqu'on modifie la table des partitions d'un périphérique ou ses partitions : il pourrait toujours rester un bogue dans le &partman;, une panne d'alimentation inattendue ou un problème avec le matériel installé dans l'ordinateur. </para>
+		<para
+>Pour ces raisons, vous devrez <emphasis
+>toujours disposer d'une sauvegarde de vos données importantes</emphasis
+> avant d'effectuer quelque modification que ce soit avec un outil comme le &partman;. </para>
+		<para
+>Les auteurs de ce programme ne seront en aucun cas tenus pour responsables au cas où vous perdriez des données lorsque vous utilisez le &partman;. </para>
+	</warning>
+
+	<para
+>Le &partman; utilise des <glossterm linkend="glossary-operation"
+>opérations</glossterm
+>, des <glossterm linkend="glossary-job"
+>tâches</glossterm
+> et des <glossterm linkend="glossary-command"
+>commandes</glossterm
+> pour diviser de façon logique le travail qu'il effectue. Consultez le <link linkend="glossary"
+>glossaire</link
+> pour plus de détails à ce sujet. </para>
+
+</chapter>

@@ -1,0 +1,155 @@
+<chapter id="faq">
+	<title
+>Preguntas y respuestas</title>
+
+	<qandaset id="faqlist">
+		<qandaentry>
+			<question>
+				<para
+>¿Cuán peligroso es &partman; para mis datos?</para>
+			</question>
+			<answer>
+				<para
+>Antes de nada, nunca debe llevar a cabo una operación destructiva (borrado, movimiento o redimensionamiento) sin hacer primero una copia de respaldo de los archivos afectados. </para>
+				<para
+>Una vez dicho esto, &partman; es seguro. Realiza comprobaciones exhaustivas antes y después de cada operación, ejecuta herramientas externas escritas y admitidas por los autores de los sistemas de archivos y ha sido probado intensivamente. </para>
+				<para
+>Siempre existe el riesgo de perder datos debido a un fallo desconocido. Los autores de &partman; intentan minimizarlo, pero no se le puede ofrecer total garantía. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>He instalado todos los paquetes externos para admitir los sistemas de archivos y aun así no puedo realizar todas las operaciones sobre todos los sistemas.</para>
+			</question>
+			<answer>
+				<para
+>No todas las tareas que lleva a cabo &partman; se pueden realizar sobre todos los sistemas de archivos. </para>
+				<para
+>Un ejemplo es la realización de comprobaciones del sistema de archivos en linuxswap: simplemente es imposible. Otros sistemas de archivos poseen otras limitaciones. No puede reducir un sistema de archivos JFS o XFS porque ninguno de ellos lo admite, con o sin &partman; </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>¿Por qué no veo ninguna información significativa de progreso mientras se redimesiona una partición?</para>
+			</question>
+			<answer>
+				<para
+>&partman; solo puede mostrar información de progreso cuando sabe el tiempo que tardará en realizar una operación. Por desgracia, no es siempre el caso cuando se trata de redimensionar particiones, porque el trabajo más largo del proceso es el redimensionamiento del sistema de archivos. Esta tarea suele ser llevada a cabo por herramientas externas al servicio de &partman;, y estas no le proporcionan información de progreso útil, por lo que mientras se ejecutan no hay nada que notificar. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>¿Por qué no puedo redimensionar la partición raíz? ¿Cómo puedo redimensionar la partición donde se encuentra /home?</para>
+			</question>
+			<answer>
+				<para
+>Para modificar una partición, esta no puede estar montada. Sin embargo, no puede desmontar la partición raíz, ni tampoco la partición home en caso de que la carpeta personal del usuario con el que ha accedido al sistema esté contenida en ella. </para>
+				<para
+>La solución a este problema es arrancar desde un Linux Live CD que incluya &partman; y modificar las particiones desde ahí. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Se me muestra una advertencia en la salida de log, indicando que una partición no se puede crear con el tamaño que pedí y que en su lugar se hará más pequeña. ¿Qué ha pasado?</para>
+			</question>
+			<answer>
+				<para
+>En las tablas de partición de MS-DOS, las particiones deben empezar y terminar en los límites de un cilindro, mayormente por razones históricas. &partman; gestiona esto internamente e intenta no complicar al usuario con dicha limitación. </para>
+				<para
+>Bajo circunstancias extrañas, &partman; puede no ser capaz de preparar una operación tal como el usuario la ha solicitado debido a esta limitación. Por ejemplo, si un cilindro de un dispositivo ocupa 8 MiB y usted intenta redimensionar una partición en 6 MiB. </para>
+				<para
+>También podría recibir este mensaje si posee un dispositivo y tabla de particiones donde por alguna razón las particiones no están correctamente ajustadas a los límites de los cilindros, e intenta moverlas o copiarlas por primera vez. </para>
+				<para
+>El mensaje en sí no tiene ningún riesgo y solo pretende informar al usuario de que algo no podrá ser llevado acabo exactamente como espera. Sus particiones y datos no se verán afectados negativamente de ninguna manera cuando reciba este mensaje. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>¿Cuántas operaciones puedo añadir a la lista de operaciones pendientes?</para>
+			</question>
+			<answer>
+				<para
+>No hay ningún límite. </para>
+				<para
+>Sin embargo, no se recomienda añadir muchas operaciones a la lista. Siempre existe la pequeña posibilidad de que una operación falle, en cuyo caso &partman; detendrá la ejecución de las demás. En tal caso es mucho más fácil descubrir qué ha ocurrido (y re-añadir las operaciones que no se ejecutaron) si la lista de operaciones pendientes no es excesivamente grande. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>El redimensionamiento de un sistema ext2 o ext3 falló con un informe de <quote
+>no hay espacio restante en el dispositivo</quote
+>. ¿Qué ha pasado? ¿Ahora mis datos estarán dañados?</para>
+			</question>
+			<answer>
+				<para
+>Este es un problema con la orden <command
+>e2resize</command
+> y el sistema de archivos ext2/3/4 subyacente. Si un sistema de archivos está a punto de llenarse, <command
+>e2resize</command
+> no puede hacerlo más pequeño aunque sea posible según el número de sectores libres. Por desgracia, &partman; no sabe de antemano si <command
+>e2resize</command
+> fallará con este error. Si ocurre, no se realizará ninguna acción y los datos no se verán afectados negativamente. </para>
+				<para
+>Ahora mismo no hay una verdadera solución a este problema. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>¿Por qué no puedo formar mi disco flexible con &partman;? ¿Por qué no admite la escritura de CD o la grabación de DVD?</para>
+			</question>
+			<answer>
+				<para
+>&partman; no ha sido diseñado para ninguna de esas tareas: es una aplicación que trabaja con particiones y los sistemas de archivos contenidos en ella. Los discos flexibles, CD o DVD no necesitan o usan particiones. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>¿Por qué no puedo modificar particiones en un dispositivo con una tabla de particiones amiga o bsd?</para>
+			</question>
+			<answer>
+				<para
+>En la actualidad, &partman; solo permite permite accesos de solo lectura a tablas de particiones distintas de MS-DOS, por razones de seguridad: la implementación de &partman; de dichos tipos realmente no está ahí y si está (o por casualidad funciona), no ha sido probado para usarlo con confianza. </para>
+				<para
+>Por supuesto, puede crear una nueva tabla de particiones MS-DOS en el dispositivo en cuestión, pero probablemente no sea lo que desea. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Cuando se inicia, &partman; se queda congelado durante un par de minutos mientras parece que está escaneando la disquetera de mi ordenador.</para>
+			</question>
+			<answer>
+				<para
+>Esto parece ocurrir cuando tiene una disquetera configurada en las preferencias de su BIOS pero en realidad no ha conectado ninguna. Por favor, compruebe la configuración de su BIOS y deshabilite cualquier disquetera configurada para ver si esto resuelve el problema. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Durante el arranque, &partman; muestra un mensaje sobre pruebas de dispositivos, y puede fallar o tardar un tiempo.</para>
+			</question>
+			<answer>
+				<para
+>LibParted, una de las bibliotecas en las que delega &partman;, tiene problemas con sistemas donde se use el Linux Device Mapper en una manera que no entienda. Por desgracia, a veces reacciona ante estas situaciones con fallos de segmentación, es decir, cuelgues. &partman; intenta evitar estas situaciones usando una alternativa para buscar discos en su equipo pero, si no puede y tiene que delegar en LibParted, mostrará un mensaje como el antes citado. Si el escaneo de discos funciona, puede despreocuparse del mensaje. </para>
+			</answer>
+		</qandaentry>
+<!--
+		<qandaentry>
+			<question>
+				<para
+></para>
+			</question>
+			 
+		</qandaentry>
+-->
+	</qandaset>
+</chapter>
+

@@ -1,0 +1,663 @@
+<chapter id="reference">
+	<title
+>Overzicht van de opdrachten</title>
+
+	<sect1 id="reference-overview">
+		<title
+>Overzicht</title>
+		<para
+>Dit hoofdstuk geeft u gedetailleerde uitleg over alle in &partman; beschikbare commando's. Het is bedoeld als index die behoort bij de informatie in <xref linkend="usermanual"/>.</para>
+
+	<sect2 id="menu-file">
+		<title
+>Het menu Bestand</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-file-quit">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Afsluiten</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Stopt &partman;</action
+> zonder de wachtende bewerkingen uit te voeren. Het programma vraagt wel om het besluit om te stoppen te bevestigen als er nog wachtende bewerkingen zijn. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-edit">
+		<title
+>Het menu Bewerken</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-edit-undo">
+					<term>
+						<menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Ongedaan maken</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Ongedaan maken van de laatste bewerking</action
+> dat aan de stapel bewerkingen is toegevoegd. </para>
+						<para
+>Dit commando is alleen ingeschakeld als de lijst met bewerkingen niet leeg is. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-clear">
+					<term>
+						<menuchoice
+><guimenu
+>Bewerken</guimenu
+><guimenuitem
+>Wissen</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Wist de lijst met bewerkingen</action
+> zonder een van hen toe te passen. </para>
+						<para
+>Dit commando is alleen ingeschakeld als de lijst met bewerkingen niet leeg is. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-apply">
+					<term>
+						<menuchoice
+><guimenu
+>Bewerken</guimenu
+> <guimenuitem
+>Toepassen</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Lijst met bewerkingen uitvoeren</action
+>. Dit commando zal alle bewerkingen in de lijst uitvoeren zodat alle wijzigingen van de schijven permanent worden. Nadat de bewerkingen zijn uitgevoerd, wordt de lijst gewist en is er geen methode om welke bewerking dan ook ongedaan te maken. </para>
+						<para
+>Dit commando is alleen ingeschakeld als de lijst met bewerkingen niet leeg is. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-device">
+		<title
+>Het Menu Apparaat</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-device-selectcurrentdevice">
+					<term>
+						<menuchoice
+><guimenu
+>Apparaat</guimenu
+> <guimenuitem
+>Selecteer huidige apparaat</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Stelt u in staat om een apparaat te selecteren uit een submenu met alle beschikbare apparaten in het systeem. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-createpartitiontable">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Apparaat</guimenu
+> <guimenuitem
+>Nieuwe partitietabel</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Maakt een nieuwe partitietabel aan</action
+>: Dit commando maakt een nieuwe lege GPT of MSDOS partitietabel op het geselecteerde apparaat aan. Dit zal alle partities op het apparaat en alle data in deze partities verwijderen, wees daarom voorzichtig met dit commando. </para>
+						<para
+>Dit commando is alleen mogelijk als een apparaat is geselecteerd en daarop op dit moment geen partitie is aangekoppeld. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-exportpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Apparaat</guimenu
+> <guimenuitem
+>Partitietabel exporteren</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Staat u toe een lijst met alle partities op het geselecteerde apparaat in een bestand te exporteren. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-importpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Apparaat</guimenu
+> <guimenuitem
+>Partitietabel importeren</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Stelt u in staat een partitietabel uit een eerder geëxporteerd bestand importeren.</para>
+						<para
+>Dit zal alle partities op het apparaat en alle data in deze partities verwijderen, wees daarom voorzichtig met dit commando.</para>
+						<para
+>Dit commando is alleen mogelijk als een apparaat is geselecteerd en daarop op dit moment geen partitie is aangekoppeld. Importeren in logische apparaten zoals LVM Volumegroepen wordt nu niet ondersteund.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-smartstatus">
+					<term>
+						<menuchoice
+><guimenu
+>Apparaat</guimenu
+> <guimenuitem
+>SMART status</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Toont een SMART rapport. SMART is een monitorsysteem ingebakken in vaste schijven en solid-state schijven die detecteert en rapporteert over verschillende indicatoren voor betrouwbaarheid van het apparaat, met de bedoeling het anticiperen op hardware fouten in te schakelen.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Apparaat</guimenu
+> <guimenuitem
+>Eigenschappen</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Toont informatie over nu geselecteerde apparaten. In deze dialoog kunt u capaciteit, sectorgrootten en type partitietabel vinden, evenals gebruikte en maximaal aantal primaire partities.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Het menu Hulpmiddelen</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Hulpmiddelen</guimenu
+> <guimenuitem
+>Nieuwe Volumegroep</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Een nieuw logisch apparaat aanmaken zoals <link linkend="glossary-lvm"
+>LVM</link
+> Volumegroep.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+> <guimenuitem
+>Bestandssysteemondersteuning</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Toont het venster voor ondersteuning van bestandssystemen</action
+>: Dit venster laat in detail zien welke bewerkingen kunnen worden uitgevoerd voor elk van de ondersteunde bestandssystemen. </para>
+						<para
+>Hier is een voorbeeld van hoe de dialoog er uit kan zien als de meeste externe hulpmiddelen zijn geïnstalleerd: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Dialoog van bestandssysteemondersteuning met de meeste externe hulpmiddelen geïnstalleerd</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>De blauwe vinkjes betekenen <quote
+>ondersteund</quote
+>, de rode kruizen betekenen <quote
+>niet ondersteund</quote
+>. Sommige combinaties worden niet ondersteund, bijvoorbeeld het controleren van een linuxswap bestandssysteem omdat dit fundamenteel onmogelijk is. Andere kunnen niet ondersteund worden omdat de externe hulpprogramma's dit niet kunnen. </para>
+						<para
+>Nadat er nieuwe onderdelen zijn geïnstalleerd terwijl &partman; in werking is, moet u op <guibutton
+>Ondersteuning opnieuw aftasten</guibutton
+> klikken voor controle van de geïnstalleerde hulpmiddelen voor ondersteuning van bestandssystemen. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Hulpmiddelen</guimenu
+> <guimenuitem
+>Vernieuw apparaten</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Ververs de apparaten</action
+>: Dit commando dwingt &partman; om de apparaten in de computer opnieuw te scannen. Dit is handig als bijvoorbeeld een externe USB harde schijf is ingeplugd nadat &partman; is opgestart. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-partition">
+		<title
+>Het Menu Partitie</title>
+
+		<para>
+			<variablelist>
+				<varlistentry id="menu-partition-new">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Nieuw</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Maakt een nieuwe partitie aan</action
+>: Opent de dialoog voor het aanmaken van een nieuwe partitie waarbij de soort, de grootte, de positie en het bestandssysteem gekozen kan worden. </para>
+						<para
+>Merk op dat de soort partitietabel beperkingen kan geven over hoeveel partities kunnen worden aangemaakt. Bijvoorbeeld MS-DOS partitietabellen staan alleen vier primaire partities toe. </para>
+						<para
+>Dit commando is alleen mogelijk als een nog niet ingedeeld gebied is geselecteerd. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-resize">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Herschaal/verplaats</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Herschaalt of verplaatst een partitie</action
+>: Opent de dialoog voor het herschalen of verplaatsen van een bestaande partitie. Afhankelijk van het bestandssysteem op de partitie en de externe hulpprogramma's zijn misschien niet alle drie de mogelijkheden, dat zijn: verplaatsen van de partitie, kleiner maken (het <quote
+>krimpen</quote
+>) of groter maken (het <quote
+>groeien</quote
+>) in het venster beschikbaar zijn. Lees <xref linkend="menu-tools-filesystemsupport"/>. voor meer informatie hierover. </para>
+						<para
+>Dit commando is alleen mogelijk als een partitie is geselecteerd die op dit moment niet is aangekoppeld en waarvan het bestandssysteem kleiner of groter dan wel verplaatst kan worden. Bij een uitgebreide partitie is dit alleen mogelijk als geen enkele logische partitie daarop is aangekoppeld. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-delete">
+					<term>
+						<menuchoice
+><shortcut
+>&Del;</shortcut
+> <guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Verwijderen</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Verwijdert een partitie</action
+>: Dit commando verwijdert de geselecteerde partitie. </para>
+						<para
+>Dit commando is alleen mogelijk als een partitie is geselecteerd die op dit moment niet is aangekoppeld. Bij een uitgebreide partitie is dit alleen mogelijk als daarop geen enkele logische partitie meer aanwezig is. </para>
+						<warning>
+							<title
+>Waarschuwing: gevaar voor verlies van data</title>
+							<para
+>Verwijderen van een partitie betekent dat alle data in deze partitie verloren gaat.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-shred">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Del;</keycombo
+></shortcut
+> <guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Vernietigen</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Vernietigt een partitie</action
+>: Dit commando vernietigt de geselecteerde partitie. </para>
+						<para
+>Dit commando is alleen mogelijk als een partitie is geselecteerd die op dit moment niet is aangekoppeld. Bij een uitgebreide partitie is dit alleen mogelijk als daarop geen enkele logische partitie meer aanwezig is. </para>
+						<warning>
+							<title
+>Waarschuwing: gevaar voor verlies van gegevens</title>
+							<para
+>Vernietigen van een partitie betekent dat alle gegevens in deze partitie vernietigd worden.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-copy">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Kopiëren</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Kopieert een partitie</action
+>: Dit commando kopieert de geselecteerde partitie naar het klembord van &partman;. </para>
+						<para
+>Dit commando is alleen mogelijk als een partitie is geselecteerd die op dit moment niet is aangekoppeld en waarvan het bestandssysteem gekopieerd kan worden. Uitgebreide partities kunnen niet gekopieerd worden. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-paste">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Plakken</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Een partitie plakken</action
+>: Dit commando plakt de partitie vanaf het klembord van &partman; naar de geselecteerde partitie of nog niet ingedeeld gebied. </para>
+						<para
+>Bij het plakken naar een nog niet ingedeeld gebied wordt een dialoog geopend waarmee de geplakte kopie verplaatst of vergroot kan worden. Bij het overschrijven van een bestaande partitie wordt deze dialoog niet geopend. </para>
+						<para
+>Dit commando is alleen mogelijk als het klembord een partitie bevat en een geldig doel (een partitie dan wel een nog niet ingedeeld gebied) is geselecteerd. Het doel moet ook groot genoeg zijn voor de bron en mag niet aangekoppeld zijn. Een partitie kan niet naar zichzelf gekopieerd worden. </para>
+						<warning>
+							<title
+>Waarschuwing: gevaar voor verlies van data</title>
+							<para
+>Plakken van een partitie op een bestaande betekent dat alle gegevens op de bestaande partitie vernietigd worden en vervangen door de gegevens afkomstig van de partitie die wordt geplakt.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Aan-/afkoppelen</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Aan- of afkoppelen van een partitie</action
+>: Dit commando koppelt (mounten) een partitie aan of af, afhankelijk van de huidige status. </para>
+						<para
+>Dit commando is alleen mogelijk als een partitie is geselecteerd die kan worden aan- of afgekoppeld. Als er binnen het besturingssysteem geen aankoppelpunt is voor de partitie dan kan het binnen &partman; niet aangekoppeld worden. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-edit-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Aankoppelpunt bewerken</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Opent een dialoog</action
+> om het aankoppelpunt en de aankoppelopties te bewerken. </para>
+						<para
+>Dit commando is alleen ingeschakeld als de een partitie niet is aangekoppeld. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-check">
+					<term>
+						<menuchoice
+><guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Controleren</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Controleert een partitie</action
+>: Dit commando controleert de geselecteerde partitie en het erbij horende bestandssysteem op problemen en probeert vervolgens de gevonden problemen te corrigeren. Tijdens dit proces zal het bestandssysteem herschaald worden om de partitie compleet te vullen. </para>
+						<para
+>Dit commando is alleen mogelijk als een partitie is geselecteerd die gecontroleerd kan worden en op dit moment niet is aangekoppeld (gemount). </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-backup">
+					<term>
+						<menuchoice
+><guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Reservekopie</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Maakt een reservekopie van een partitie</action
+>: Dit commando maakt een reservekopie van het bestandssysteem op de geselecteerde partitie naar een bestand. Er zal worden gevraagd waar het image-bestand moet worden opgeslagen na het activeren van dit commando. </para>
+						<para
+>Het aangemaakte image-bestand is een sector-voor sector kopie van het bestandssysteem op de partitie. Het is niet gecomprimeerd en heeft ook geen extra meta informatie, het kan daarom direct aangekoppeld worden door gebruik van een loop device buiten &partman; om, als het besturingssysteem dit ondersteunt. </para>
+						<para
+>Dit commando is alleen mogelijk als een partitie is geselecteerd en een reservekopie van het bestandssysteem daarop gemaakt kan worden. De partitie mag op dit moment niet aangekoppeld (gemount) zijn. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-restore">
+					<term>
+						<menuchoice
+><guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Herstellen</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Een partitie herstellen</action
+>: Dit commando schrijft een bestandssysteem terug van een image-bestand naar een partitie. Na het starten van dit commando wordt er gevraagd naar de naam van het image-bestand dat teruggeschreven moet worden. Het doelpartitie moet groot genoeg zijn voor het image-bestand. </para>
+						<para
+>Het commando is alleen ingeschakeld als of een niet toegekend gebeid is geselecteerd of een partitie die nu niet is aangekoppeld. </para>
+						<warning>
+							<title
+>Waarschuwing: gevaar voor verlies van data</title>
+							<para
+>Herstellen van een partitie op een bestaande betekent dat alle gegevens op de bestaande partitie vernietigd worden en vervangen door de gegevens afkomstig van het image-bestand voor herstel.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Eigenschappen</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Toont de eigenschappen van een partitie</action
+>: Dit commando toont een dialoog met de informatie van de geselecteerde partitie of nog niet ingedeeld gebied. </para>
+						<para
+>De getoonde informatie en wat verandert kan worden in deze dialoog is afhankelijk van het type partitie, het type bestandssysteem op deze partitie en of de partitie is aangekoppeld (gemount) of niet. </para>
+						<para
+>Niet alle types bestandssystemen ondersteunen bijvoorbeeld het gebruik van een label. Meestal is het ook niet mogelijk om de eigenschappen te veranderen als de partitie is aangekoppeld. </para>
+						<para
+>Dit is een lijst met alle eigenschappen van partities en bestandssystemen die normaal gesproken veranderd kunnen worden in deze dialoog: <itemizedlist>
+								<listitem>
+									<para
+>Stel in of wijzig een label van een bestandssysteem</para>
+								</listitem>
+								<listitem>
+									<para
+>Wijzig het bestandssysteem op een partitie.</para>
+
+									<warning>
+										<title
+>Waarschuwing: gevaar voor verlies van data</title>
+										<para
+>Het wijzigen van een bestandssysteem op een partitie betekent altijd dat alle data op de partitie is vernietigd.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Opnieuw aanmaken van het bestandssysteem op de partitie</para>
+
+									<warning>
+										<title
+>Waarschuwing: gevaar voor verlies van data</title>
+										
+										<para
+>Opnieuw aanmaken van een bestandssysteem op een partitie betekent altijd dat alle data op de partitie is vernietigd. Het opnieuw aanmaken van een bestandssysteem moet altijd als laatste redmiddel gebruikt worden in de situatie dat een partitie niet meer gerepareerd kan worden.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Wijzig de vlaggen van een partitie</para>
+									<para
+>Afhankelijk van de gebruikte soort partitietabel zijn er verschillende vlaggen beschikbaar voor elke partitie in de partitietabel. In de meeste gevallen is het niet noodzakelijk om de vlaggen aan te passen en wordt daarom beschouwd als iets voor gevorderden.</para>
+								</listitem>
+							</itemizedlist>
+						</para>
+						<para
+>Dit commando is alleen beschikbaar als een partitie of een nog niet ingedeeld gebied is geselecteerd. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-settings-help">
+		<title
+>De menu's Instellingen en Help</title>
+
+		<para
+>&partman; heeft de gemeenschappelijke &kde; <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Instellingen</ulink
+> en het menu <ulink url="help:/fundamentals/menus.html#menus-help"
+>Help</ulink
+> beschreven in de &kde; Fundamentals met een extra submenu <guisubmenu
+>Getoonde panelen</guisubmenu
+>, waar u het weergeven aan en uit kunt schakelen van de <guimenuitem
+>Apparaten</guimenuitem
+>, <guimenuitem
+>Bewerkingen nog bezig</guimenuitem
+>, <guimenuitem
+>Informatie</guimenuitem
+> en panelen <guimenuitem
+> Uitvoer van de log</guimenuitem
+>. </para>
+	</sect2>
+	</sect1>
+
+</chapter>

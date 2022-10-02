@@ -1,0 +1,48 @@
+<chapter id="introduction">
+	<title
+>Inledning</title>
+	<para
+>Partition Manager är ett verktyg för att hjälpa till att hantera <glossterm linkend="glossary-device"
+>diskenheter</glossterm
+>, <glossterm linkend="glossary-partition"
+>partitioner</glossterm
+> och <glossterm linkend="glossary-filesystem"
+>filsystem</glossterm
+> på datorn. </para>
+	<para
+>Det låter dig enkelt <link linkend="howto-installos"
+>skapa nya partitioner</link
+>, skapa filsystem på nya eller befintliga partitioner, <link linkend="howto-copypartition"
+>kopiera</link
+>, flytta eller ta bort partitioner och dessutom <link linkend="howto-resizepartition"
+>ändra storlek på en partition</link
+> utan att förlora data på den. </para>
+
+	<para
+>För att utföra sitt jobb effektivt, utnyttjar Partition Manager externa verktyg för att stödja en lång lista med filsystem. Du har troligen redan de verktyg som krävs för filsystemen på din dator installerade. </para>
+
+	<warning>
+		<title
+>Gör alltid en säkerhetskopiering av data!</title>
+		<para
+>Partition Manager har konstruerats och skrivits mycket omsorgsfullt med betoning på dataintegritet. Det finns dock alltid en viss risk inblandad när en enhets partitionstabell eller dess partitioner ändras: Det kan fortfarande finnas fel i Partition Manager, ett oväntat strömavbrott eller ett problem med datorns hårdvara. </para>
+		<para
+>Av dessa orsaker ska du <emphasis
+>alltid göra en säkerhetskopia av viktig data</emphasis
+> innan du gör några ändringar med ett verktyg som Partition Manager. </para>
+		<para
+>Programmets upphovsmän tar inte något som helst ansvar om någon data går förlorad vid användning av Partition Manager. </para>
+	</warning>
+
+	<para
+>Partition Manager använder <glossterm linkend="glossary-operation"
+>åtgärder</glossterm
+>, <glossterm linkend="glossary-job"
+>jobb</glossterm
+> och <glossterm linkend="glossary-command"
+>kommandon</glossterm
+> för att logiskt dela upp arbetet som utförs. Se <link linkend="glossary"
+>ordlistan</link
+> för detaljinformation om det. </para>
+
+</chapter>

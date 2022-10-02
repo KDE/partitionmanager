@@ -1,0 +1,101 @@
+<chapter id="usermanual">
+	<title
+>Het gebruik van &partman;</title>
+
+	<sect1 id="mainwindow">
+		<title
+>Het hoofdvenster</title>
+
+		<para
+>Naast het hoofdvenster die het nu geselecteerde apparaat op een grafische manier en als een boomstructuur toont, gebruikt &partman; <quote
+>verankeringswidgets</quote
+> van &Qt; of panelen om enige informatie te tonen en selecties toe te staan. Zie de volgende schermafdruk voor een overzicht van het hoofdvenster van &partman;. </para>
+
+		<para>
+			<screenshot>
+				<screeninfo
+>Het hoofdvenster van &partman;</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Hoofdvenster</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>Menubalk: de menubalk biedt enige gewone en niet-standaard menu's om uit te voeren acties te doen. Alle commando's worden in detail beschreven in <xref linkend="reference"/>.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Werkbalk: de werkbalk van &partman; is een standaard werkbalk. Deze kan volledig worden aangepast; voor details zie <xref linkend="menu-settings-help"/>. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Apparatenpaneel: dit paneel toont alle op de computer gevonden <glossterm linkend="glossary-device"
+>apparaten</glossterm
+> die door &partman; bewerkt kunnen worden. U kunt in dit paneel zowel in de grafische als in de boomstructuurweergave een apparaat selecteren om nader te bekijken of te wijzigen.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>Grafische weergave: &partman; geeft een grafische weergave van het geselecteerde apparaat. Elke <glossterm linkend="glossary-partition"
+>partitie</glossterm
+> op het apparaat heeft zijn eigen vak met zijn naam (<quote
+>sda1</quote
+> voor de eerste partitie in de schermafdruk hierboven) en informatie over het gebruik (het donker paarse gebied in de schermafdruk). </para>
+					<para
+><glossterm linkend="glossary-extendedpartition"
+>Uitgebreide partities</glossterm
+> worden visueel anders getoond door een extra rand (lichtgroen in de schermafdruk hierboven) er omheen. </para>
+					<para
+>Een partitie kan in de grafische weergave gekozen worden door erop te klikken. Een dubbele klik opent <link linkend="menu-partition-properties"
+> het venster met de eigenschappen van de partitie</link
+>. Een klik met de &RMB; toont een contextmenu van de partitie. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Boomstructuurweergave: de boomstructuurweergave geeft uitgebreide informatie over elke partitie op het geselecteerde apparaat. De geselecteerde partitie licht op. Dubbelklikken op een partitie opent het <link linkend="menu-partition-properties"
+>Venster Partitie-eigenschappen</link
+>. Een klik met &RMB; opent het contextmenu van de partitie. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Informatiepaneel: het informatiepaneel toont enkele details over het geselecteerde apparaat of partitie. Standaard is het niet ingeschakeld.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Paneel met wachtende opdrachten: Dit paneel toont alle opdrachten die uitgevoerd zullen worden nadat <xref linkend="menu-edit-apply"/> is gekozen. </para>
+					<para
+>In de schermafdruk hierboven is te zien dat een opdracht klaar staat: als de gebruiker de opdrachten nu in gebruik gaat nemen dan zal het <glossterm linkend="glossary-filesystem"
+>bestandssysteem</glossterm
+> op /dev/sdb3 worden gecontroleerd op fouten en indien nodig hersteld. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Statusbalk: De statusbalk toont hoeveel opdrachten er op dit moment wachten. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Paneel voor loguitvoer: dit paneel toont loginformatie. Deze is minder belangrijk voor niet-gevorderde gebruikers en is daarom standaard niet ingeschakeld.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+

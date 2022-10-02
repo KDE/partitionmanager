@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+
+	<!ENTITY partman-introduction SYSTEM "introduction.docbook">
+	<!ENTITY partman-usermanual SYSTEM "usermanual.docbook">
+	<!ENTITY partman-resizehowto SYSTEM "resizehowto.docbook">
+	<!ENTITY partman-copyhowto SYSTEM "copyhowto.docbook">
+	<!ENTITY partman-installoshowto SYSTEM "installoshowto.docbook">
+	<!ENTITY partman-referencemanual SYSTEM "referencemanual.docbook">
+	<!ENTITY partman-faq SYSTEM "faq.docbook">
+	<!ENTITY partman-credits SYSTEM "credits.docbook">
+	<!ENTITY partman-glossary SYSTEM "glossary.docbook">
+
+	<!ENTITY % addindex "IGNORE">
+	<!ENTITY % French "INCLUDE">
+]>
+
+<book id="partitionmanager" lang="&language;">
+	<bookinfo>
+		<title
+>Manuel utilisateur du &partman;</title>
+		<authorgroup>
+			<author
+><firstname
+>Volker</firstname
+> <surname
+>Lanz</surname
+> </author>
+			&traducteurJoelleCornavin; 
+		</authorgroup>
+
+		<copyright>
+			<year
+>2008, 2009, 2010</year>
+			<holder
+>Volker Lanz</holder>
+		</copyright>
+
+		<legalnotice
+>&FDLNotice;</legalnotice>
+
+		<date
+>01-12-2016</date>
+		<releaseinfo
+>&partman; 3.0.0</releaseinfo>
+
+		<abstract>
+			<para
+>Gérez vos disques, partitions et systèmes de fichiers.</para>
+		</abstract>
+
+		<keywordset>
+			<keyword
+>KDE</keyword>
+			<keyword
+>sysadmin</keyword>
+			<keyword
+>partition</keyword>
+			<keyword
+>gestionnaire</keyword>
+			<keyword
+>disque</keyword>
+			<keyword
+>périphérique</keyword>
+			<keyword
+>système de fichiers</keyword>
+		</keywordset>
+
+	</bookinfo>
+
+	&partman-introduction;
+
+	&partman-usermanual;
+
+	&partman-referencemanual;
+
+	&partman-faq;
+
+	&partman-credits;
+
+	&partman-glossary;
+
+	&documentation.index;
+
+</book>
+

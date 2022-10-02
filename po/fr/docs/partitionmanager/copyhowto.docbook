@@ -1,0 +1,66 @@
+<sect1 id="howto-copypartition">
+	<title
+>Guide : copier une partition</title>
+
+	<para
+>Ce guide décrit comment copier une partition. On partira du principe que l'intention est de copier une partition depuis un périphérique vers un autre et d'écraser une partition cible existante. Cependant, la procédure générale ne serait pas très différente s'il s'agissait d'effectuer une copie dans le même périphérique ou dans une zone non allouée. </para>
+
+	<para
+>La capture d'écran suivante montre à quoi ressemble le périphérique source : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La fenêtre principale avec le périphérique source</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>La partition source, dans notre exemple, sera <quote
+>sdb1</quote
+>, laquelle est actuellement montée, ce qui est indiqué par l'icône de verrou située à côté du point de montage dans la capture d'écran. Comme on ne peut pas copier une partition montée, il faudra d'abord la libérer : cliquez dessus et choisissez <xref linkend="menu-partition-mount"/>. </para>
+
+	<para
+>Une fois la partition libérée, l'icône de verrou a disparu et il est maintenant possible de choisir <xref linkend="menu-partition-copy"/>. Cette action place <quote
+>sdb1</quote
+> dans le presse-papiers du &partman; :autrement dit, <quote
+>sdb1</quote
+> est à présent la partition qui sera insérée quand vous cliquerez sur <xref linkend="menu-partition-paste"/>. </para>
+	
+	<para
+>Le phériphérique de destination de la copie dans ce guide est <quote
+>/dev/sdc</quote
+>. Cliquez dessus dans le panneau <quote
+>Périphériques</quote
+>. Voici comment se présente le périphérique avant la copie : </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La fenêtre principale avec le périphérique de destination avant la copie</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>La partition à écraser est <quote
+>sdc5</quote
+>. Pour y coller la partition copiée, cliquez dessus et choisissez <xref linkend="menu-partition-paste"/>. Vous constatez que l'opération consistant à copier la partition a été ajoutée à la liste des opérations en attente. Notez qu'il n'y a aucune boîte de dialogue requise pour insérer la partition comme ce serait le cas si vous l'aviez collée dans une zone non allouée : le début et la fin de la partition collée sont déterminés par la partition écrasée. </para>
+
+	<para
+>Choisissez à présent <xref linkend="menu-edit-apply"/>, et la partition sera copiée. Consultez le <link linkend="howto-resizepartition"
+>guide consacré au redimensionnementdes partitions</link
+> pour plus de détails sur l'application des opérations. </para>
+</sect1>
+

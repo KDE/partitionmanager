@@ -1,0 +1,393 @@
+<glossary id="glossary">
+
+	<glossentry id="glossary-command">
+		<glossterm
+>Perintah</glossterm>
+		<glossdef>
+			<para
+>Dalam perintah &partman; adalah yang terdiri dari <link linkend="glossary-job"
+>jobs</link
+>. Ini adalah langkah tingkat rendah yang diambil, sering dilakukan oleh alat eksternal, dan hanya terlihat dalam laporan kemajuan terperinci. </para>
+			<para
+>Pengguna biasanya tidak perlu repot dengan perintah sama sekali. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-job"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylinder">
+		<glossterm
+>Silinder</glossterm>
+		<glossdef>
+			<para
+>Unit yang digunakan untuk membagi sebuah <link linkend="glossary-device"
+>perangkat </link
+>. Beberapa sistem operasi dan banyak alat-alat disk memerlukan <link linkend="glossary-partition"
+>partisi</link
+> untuk awal dan akhir sebuah silinder. Oleh karena itu &partman; secara otomatis menjepret partisi pada batas silinder saat mengubah awal atau akhir. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylindersize">
+		<glossterm
+>Ukuran Silinder</glossterm>
+		<glossdef>
+			<para
+>Jumlah <link linkend="glossary-sector"
+>sektor</link
+> per <link linkend="glossary-cylinder"
+>silinder</link
+> pada <link linkend="glossary-device"
+>perangkat</link
+>. Terhitung sebagai jumlah lipatganda <link linkend="glossary-head"
+>head</link
+> dengan jumlah <link linkend="glossary-sector"
+>sektor</link
+> per track. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-device">
+		<glossterm
+>Perangkat</glossterm>
+		<glossdef>
+			<para
+>Sebuah perangkat disk fisik. Perangkat disk fisik terbagi kedalam seksi logical disebut <link linkend="glossary-partition"
+>partisi</link
+> dengan penggunaan <link linkend="glossary-partitiontable"
+>tabel partisi</link
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-disklabel">
+		<glossterm
+>Label Disk</glossterm>
+		<glossdef>
+			<para
+>Nama lain untuk <link linkend="glossary-partitiontable"
+>tabel partisi</link
+> berasal dari dunia SUN/BSD. </para>
+			<para>
+				<note>
+					<para
+>Mereka mudah mengacaukan, tapi label disk tidak ada hubungannya dengan <link linkend="glossary-filesystemlabel"
+>label sistem file </link
+>. </para>
+					<para
+>Lihat <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel"
+>entri Wikipedia ini</ulink
+> untuk rincian mengenai nama. </para>
+				</note>
+			</para>
+			<glossseealso otherterm="glossary-partitiontable"
+></glossseealso>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-extendedpartition">
+		<glossterm
+>Partisi Extended</glossterm>
+		<glossdef>
+			<para
+>Sebuah <link linkend="glossary-partition"
+>partisi</link
+> yang berisi partisi lain. Partisi extended bisa saja menjadi <link linkend="glossary-primarypartition"
+>partisi primer</link
+> sendiri. Apakah partisi extended sudah ada atau tidak tergantung pada tipe <link linkend="glossary-partitiontable"
+>tabel partisi</link
+> yang digunakan. Tabel partisi MS-DOS memungkinkan satu partisi extended per <link linkend="glossary-device"
+>perangkat</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystem">
+		<glossterm
+>Sistem File</glossterm>
+		<glossdef>
+			<para
+>Sebuah sistem file mendefinisikan bagaimana penyimpanan data (file dengan metadata mereka, folder dan metadata mereka, ruang kosong) telah diatur dalam <link linkend="glossary-partition"
+>partisi</link
+>. Ada berbagai macam jenis sistem file , beberapa berasal dari dunia Unix/Linux, beberapa tidak. Contoh untuk sistem file yang umum yang digunakan di Unix/Linux adalah Btrfs, ext4 dan XFS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystemlabel">
+		<glossterm
+>Label Sistem File</glossterm>
+		<glossdef>
+			<para
+>Sebuah judul dari sebuah sistem file . Beberapa sistem file (diantaranya Btrfs, ext2/3/4, FAT16/32 dan NTFS) mendukung pengaturan label untuk sistem file sehingga bisa teridentifikasi dalam alat seperti &partman; atau aplikasi lainnya. </para>
+			<para>
+				<note>
+					<para
+>Mereka mudah mengacaukan, tapi label sistem file tidak ada hubungannya dengan <link linkend="glossary-disklabel"
+>label disk</link
+>.</para>
+				</note>
+			</para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-flag">
+		<glossterm
+>Bendera</glossterm>
+		<glosssee otherterm="glossary-partitionflag"/>
+	</glossentry>
+	
+	<glossentry>
+		<glossterm
+>GPT</glossterm>
+		<glossdef>
+			<para
+>Sebuah format tabel partisi modern yang didukung oleh sebagian besar sistem operasi dan komputer modern. Ini mendukung lebih dari 4 <link linkend="glossary-primarypartition"
+>partisi primer</link
+> tidak seperti tabel partisi MS-DOS lawas. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-head">
+		<glossterm
+>Head</glossterm>
+		<glossdef>
+			<para
+>Sebuah unit yang digunakan untuk membagikan <link linkend="glossary-device"
+>perangkat</link
+>. </para
+><glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-job">
+		<glossterm
+>Tugas</glossterm>
+		<glossdef>
+			<para
+>Dalam &partman; sejumlah tugas apakah <link linkend="glossary-operation"
+>operasi</link
+> telah dibuatkan. Anda biasanya tidak perlu repot-repot dengan tugas sama sekali; itu hanya menjadi jelas ketika menerapkan daftar operasi tunda: kemudian &partman; akan menampilkan dialog progres yang terdiri dari semua operasi dan tugas mereka dan menampilkan operasi dan tugas yang saat ini sedang dieksekusi. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-label">
+		<glossterm
+>Label</glossterm>
+		<glossdef>
+			<para
+>Antara sebuah <link linkend="glossary-disklabel"
+>label disk</link
+> atau sebuah <link linkend="glossary-filesystemlabel"
+>label sistem file </link
+>. </para
+><glossseealso otherterm="glossary-disklabel"
+></glossseealso
+> <glossseealso otherterm="glossary-filesystemlabel"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-logicalpartition">
+		<glossterm
+>Partisi Logical</glossterm>
+		<glossdef>
+			<para
+>Sebuah <link linkend="glossary-partition"
+>partisi</link
+> di dalam sebuah <link linkend="glossary-extendedpartition"
+>partisi extended</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-luks">
+		<glossterm
+>LUKS</glossterm>
+		<glossdef>
+			<para
+>Linux Unified Key Pengesetan adalah format enkripsi standar untuk Linux. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-lvm">
+		<glossterm
+>LVM</glossterm>
+		<glossdef>
+			<para
+>LVM adalah sistem untuk mengelola partisi logical yang lebih fleksibel dari pada partisi biasanya. Terdiri dari tiga komponen utama:</para>
+			<simplelist>
+			<member
+>Volume fisik LVM adalah partisi pada disk yang ruangnya dikelola oleh LVM.</member>
+			<member
+>Kelompok volume LVM adalah sebuah kumpulan volume fisik LVM yang bisa dipartisi menjadi partisi logical. Ini bisa digunakan untuk menciptakan sistem file mencakup lebih dari beberapa perangkat atau untuk membagi volume <link linkend="glossary-luks"
+>LUKS</link
+> terenkripsi menjadi partisi yang lebih kecil.</member>
+			<member
+>Volume logical LVM serupa dengan partisi normal kecuali mereka yang berada pada kelompok volume LVM. Juga, lokasi partisi logical LVM yang tidak berarti dan mereka tidak harus secara fisik bersebelahan. Karena itu, &partman; tidak memungkinkan untuk mengeser volume logical LVM dan menampilkan sisa ruang kosong di ujung perangkat.</member>
+			</simplelist>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-operation">
+		<glossterm
+>Operasi</glossterm>
+		<glossdef>
+			<para
+>&partman; membagi pekerjaan yang dilakukannya dalam operasi, <link linkend="glossary-job"
+>tugas</link
+> dan <link linkend="glossary-command"
+>perintah</link
+>. </para>
+			<para
+>Operasi adalah yang paling terlihat dari ketiganya. Jika Anda memilih tindakan di antarmuka pengguna grafis, ini kemungkinan akan menghasilkan operasi baru yang ditambahkan ke daftar operasi tunda. Gagasan di balik itu adalah: Anda akan melakukan yang kemungkinan besar ingin mengatur beberapa langkah untuk mengubah keadaan perangkat disk Anda saat ini ke keadaan yang ada dalam pikiran Anda. Beberapa langkah-langkah ini mungkin memerlukan waktu yang cukup lama untuk mengeksekusi (seperti menyalin sistem file besar atau mengubah ukuran sistem file yang hampir penuh). Untuk menyelamatkan Anda dari harus duduk di depan komputer dalam waktu yang lama menunggu satu langkah untuk menyelesaikan dan kemudian memulai operasi selanjutnya, operasi memungkinkan Anda untuk menentukan dengan tepat bagaimana perangkat komputer seharusnya terlihat setelah semuanya diselesaikan, lalu biarkan &partman; menerapkan operasi dan kembali bila sudah mengeksekusi mereka semua. </para>
+			<para
+>Operasi disimpan dalam daftar operasi tunda. Selama operasi belum diterapkan itu masih bisa <link linkend="menu-edit-undo"
+>diambil kembali dengan mudah</link
+> dan tidak ada yang akan dimodifikasi. </para
+><glossseealso otherterm="glossary-job"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partition">
+		<glossterm
+>Partisi</glossterm>
+		<glossdef>
+			<para
+>Sebuah bagian dari <link linkend="glossary-device"
+>perangkat hard disk</link
+> yang bisa memegang sebuah <link linkend="glossary-filesystem"
+>sistem file </link
+> atau partisi lainnya. Tanpa setidaknya satu partisi yang valid, sebuah disk yang tidak bisa digunakan. </para
+><glossseealso otherterm="glossary-device"
+></glossseealso
+> <glossseealso otherterm="glossary-partitiontable"
+></glossseealso
+> <glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partitionflag">
+		<glossterm
+>Bendera Partisi</glossterm>
+		<glossdef>
+			<para
+>Sebuah tanda untuk <link linkend="glossary-partition"
+>partisi</link
+>. Ketersediaan bendera ini tergantung dari tipe <link linkend="glossary-partitiontable"
+>tabel partisi</link
+> yang digunakan. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-partitiontable">
+		<glossterm
+>Tabel Partisi</glossterm>
+		<glossdef>
+			<para
+>Sebuah bagian kecil di awal <link linkend="glossary-device"
+>perangkat</link
+> yang digunakan untuk menyimpan informasi tentang tataletak perangkat <link linkend="glossary-partition"
+>partisi</link
+>. Ada tipe tabel partisi yang berbeda, yang masing-masing dengan keterbatasan mereka sendiri. </para>
+			<para
+>Terkadang juga disebut sebagai <quote
+>label disk</quote
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-primarypartition">
+		<glossterm
+>Partisi Primer</glossterm>
+		<glossdef>
+			<para
+>Sebuah <link linkend="glossary-partition"
+>partisi</link
+> langsung di dalam sebuah <link linkend="glossary-partitiontable"
+>tabel partisi</link
+>, sebagai lawan dari <link linkend="glossary-logicalpartition"
+>partisi logical</link
+>, yang berada dalam <link linkend="glossary-extendedpartition"
+>partisi extended</link
+>. </para>
+			<para
+><link linkend="glossary-partitiontable"
+>Tabel partisi</link
+> biasanya memberlakukan pembatasan jumlah maksimal pada partisi primer yang bisa diciptakan pada <link linkend="glossary-device"
+>perangkat</link
+>. Untuk tabel partisi tipe MS-DOS, contohnya, jumlah maksimal ini adalah empat. </para
+><glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-sector">
+		<glossterm
+>Sektor</glossterm>
+		<glossdef>
+			<para
+>Sebuah unit yang digunakan untuk membagikan <link linkend="glossary-device"
+>perangkat</link
+>. <link linkend="glossary-partition"
+>Partisi</link
+> harus selalu di awal dan akhir pada sebuah sektor. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-sectorsize">
+		<glossterm
+>Ukuran Sektor</glossterm>
+		<glossdef>
+			<para
+>Jumlah bita per <link linkend="glossary-sector"
+>sektor</link
+> pada sebuah <link linkend="glossary-device"
+>perangkat</link
+>. Ukuran sektor dari perangkat yang paling banyak digunakan hari ini adalah 512 bita. </para>
+		</glossdef>
+	</glossentry>
+	
+	<!--
+		<glossentry>
+			<glossterm
+></glossterm>
+			 
+		</glossentry>
+		-->
+
+</glossary>

@@ -1,0 +1,155 @@
+<chapter id="faq">
+	<title
+>Fragen und Antworten</title>
+
+	<qandaset id="faqlist">
+		<qandaentry>
+			<question>
+				<para
+>Wie gefährlich ist &partman; für meine Daten?</para>
+			</question>
+			<answer>
+				<para
+>Erstens sollten Sie niemals destruktive Operationen (Löschen, Verschieben, Größe ändern) ausführen, ohne vorher eine Sicherungskopie all Ihrer Daten zu machen, die betroffen sein könnten. </para>
+				<para
+>Vor diesem Hintergrund ist &partman; ein sicheres Werkzeug. Es führt vor und nach jeder Operation ausführliche Prüfungen durch. Es werden externe Dienstprogramme aufgerufen, die von den Entwicklern des Dateisystems geschrieben und unterstützt werden und es wurde umfassend getestet. </para>
+				<para
+>Es besteht immer das Risiko des Datenverlustes wegen eines unbekannten Programmfehlers. Die Entwickler von &partman; sind bemüht, dieses Risiko zu minimieren, jedoch gibt es selbstverständlich keine Garantien. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Ich habe alle empfohlenen externen Pakete zur Unterstützung der Dateisysteme installiert, es werden aber immer noch nicht alle Operationen auf allen Dateisystemen unterstützt.</para>
+			</question>
+			<answer>
+				<para
+>Nicht alles, was &partman; prinzipiell beherrscht, kann mit allen Dateisystemen gemacht werden. </para>
+				<para
+>Ein Beispiel ist das Ausführen einer Dateisystemüberprüfung auf linuxswap: Dies ist schlicht unmöglich. Es gibt weitere Einschränkungen ähnlicher Art, die für gewisse Dateisysteme bestehen. Es ist nicht möglich, JFS oder XFS zu komprimieren, da keins von beiden Komprimierung unterstützt, mit oder ohne &partman;. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Warum sehe ich keine vernünftigen Informationen zum Fortschritt, wenn ich die Größe einer Partition verändere?</para>
+			</question>
+			<answer>
+				<para
+>&partman; kann nur Informationen zum Fortschritt anzeigen, wenn es die Dauer der Einzelaufgaben bei einer Operation kennt. Leider ist dies bei einer Veränderung der Partitionsgröße in der Regel nicht der Fall, da die mit Abstand längste Einzelaufgabe dabei ist, die Größe des Dateisystems auf der Partition zu verändern. Größenveränderungen der Partitionen werden in den meisten Fällen von einem externen Hilfsprogramm durchgeführt, welches von &partman; aufgerufen wird. Diese Hilfsprogramme überliefern aber keine nützlichen Informationen bezüglich ihres Fortschritts an &partman;, sodass nichts zu berichten ist, während sie laufen. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Warum kann ich die Größe der root-Partition nicht verändern? Wie kann ich die Größe der Partition verändern, auf welcher sich der Ordner /home befindet?</para>
+			</question>
+			<answer>
+				<para
+>Um eine Partition zu modifizieren, darf diese nicht eingehängt sein. Die root-Partition kann jedoch nicht ausgehängt werden. Genauso wenig kann die home-Partition ausgehängt werden, wenn sich der persönliche Ordner (/home) eines gerade angemeldeten Benutzers darauf befindet. </para>
+				<para
+>Um dies zu umgehen, kann man das System von einer Linux-Live-CD starten, welche das Paket &partman; enthält, und von dort aus die entsprechenden Partitionen modifizieren. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Ich bekomme eine Warnmeldung in der Protokollausgabe, in der irgendetwas darüber steht, dass die Partition mit der von mir angegebenen Größe nicht erstellt werden kann und stattdessen kleiner sein wird. Was ist passiert?</para>
+			</question>
+			<answer>
+				<para
+>Bei MS-DOS-Partitionstabellen müssen Partitionen an den Zylindergrenzen beginnen und enden. Dies hat vorwiegend historische Gründe. &partman; wird dies intern handhaben und versuchen, den Benutzer nicht mit dieser Einschränkung zu belästigen. </para>
+				<para
+>Unter seltenen Umständen wird &partman; jedoch wegen dieser Einschränkung nicht in der Lage sein, die Operation so einzurichten, wie der Benutzer dies gefordert hat. Zum Beispiel wenn ein Zylinder auf dem Gerät 8 MiB groß ist, und es wird versucht, die Partition um 6 MiB zu verkleinern, wird dies nicht funktionieren. </para>
+				<para
+>Diese Meldung kann auch vorkommen, wenn ein Gerät und eine Partitionstabelle vorliegen, bei welchen die Partitionen – aus welchem Grund auch immer – nicht korrekt an die Zylindergrenzen angepasst sind, und es wird zum ersten Mal versucht, diese Partitionen zu verschieben oder zu kopieren. </para>
+				<para
+>Diese Meldung an sich ist harmlos und wird nur ausgegeben, um den Benutzer zu informieren, dass etwas nicht exakt so gemacht werden kann, wie es der Benutzer erwartet. Ihre Partitionen und Daten werden auf keine Weise negativ beeinflusst, wenn Sie diese Meldung sehen. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Wie viele Operationen kann ich zur Liste der ausstehenden Operationen hinzufügen?</para>
+			</question>
+			<answer>
+				<para
+>Es gibt keine Beschränkung. </para>
+				<para
+>Es wird jedoch nicht empfohlen, zu viele Operationen zur Liste hinzuzufügen. Es besteht immer eine kleine Wahrscheinlichkeit, dass eine der Operationen nicht erfolgreich abgeschlossen werden kann und mit einem Fehler abbricht; &partman; wird dann die Durchführung der Operationen anhalten. In diesem Fall ist es viel einfacher, herauszufinden, was passiert ist (und alle Operationen wieder hinzuzufügen, die nicht durchgelaufen sind), wenn die Liste der ausstehenden Operationen nicht allzu lang war. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Veränderung der Größe eines ext2- oder ext3-Dateisystems ist gescheitert, wobei in dem Bericht etwas über <quote
+>kein Speicherplatz mehr auf dem Gerät</quote
+> stand. Was ist passiert? Sind meine Daten jetzt beschädigt?</para>
+			</question>
+			<answer>
+				<para
+>Dies ist ein Problem des <command
+>e2resize</command
+>-Befehls und des zugrunde liegenden ext2/3/4-Dateisystems. Wenn ein Dateisystem fast voll ist, kann <command
+>e2resize</command
+> es nicht verkleinern, obwohl dies von der Anzahl der verbleibenden freien Sektoren her möglich sein sollte. &partman; kann leider nicht im Voraus wissen, ob <command
+>e2resize</command
+> mit diesem Fehler für ein angegebenes System abbricht oder nicht. Sollte dies passieren, wird nichts weiter durchgeführt und Ihre Daten werden nicht negativ beeinflusst. </para>
+				<para
+>Zurzeit kann dieses Problem nicht wirklich umgangen werden. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Warum kann ich meine Floppy-Diskette nicht mit &partman; formatieren? Warum gibt es keine Unterstützung für das Schreiben auf CDs oder das Brennen von DVDs?</para>
+			</question>
+			<answer>
+				<para
+>&partman; wurde für keinen dieser Zwecke entwickelt: Dies ist eine Anwendung, die mit Partitionen und Dateisystemen auf diesen Partitionen arbeitet. Floppy-Disketten, CDs oder DVDs brauchen bzw. nutzen keine Partitionen. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Warum kann ich keine Partitionen auf Geräten mit Amiga- oder BSD-Partitionstabellen modifizieren?</para>
+			</question>
+			<answer>
+				<para
+>&partman; erlaubt zurzeit lediglich „Nur Lesen“-Zugriff auf alle Typen von Partitionstabellen außer MS-DOS. Dies ist aus Sicherheitsgründen so: Unterstützung dieser Typen von Partitionstabellen in &partman; ist eigentlich nicht da und das, was da ist (oder nur per Zufall funktioniert) wurde nicht genügend getestet, um es verlässlich nutzen zu können. </para>
+				<para
+>Natürlich können Sie immer noch eine neue MS-DOS-Partitionstabelle auf einem solchen Gerät erstellen, dies ist jedoch wahrscheinlich nicht gerade das, was Sie wünschen. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Beim Starten hängt &partman; einige Minuten, während es anscheinend versucht, das Floppy-Laufwerk auf meinem Rechner zu scannen.</para>
+			</question>
+			<answer>
+				<para
+>Dies passiert, wenn ein Floppy-Laufwerk in den BIOS-Einstellungen Ihres Rechners eingerichtet ist, tatsächlich aber nicht angeschlossen ist. Wenn Sie kein Floppy-Laufwerk haben, überprüfen Sie Ihre BIOS-Einstellungen und deaktivieren Sie alle Floppy-Laufwerke, die dort eingerichtet sind; überprüfen Sie anschließend, ob das Problem behoben wurde. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Während des Starts gibt &partman; eine Meldung darüber aus, dass Geräte gesucht werden und dass es sogar zum Absturz kommen kann oder zumindest eine Lange Zeit dauern kann.</para>
+			</question>
+			<answer>
+				<para
+>LibParted, die von &partman; genutzte Backend-Bibliothek, hat Probleme mit Systemen, in denen Linux Device Mapper auf eine Weise verwendet wird, die sie nicht versteht. Leider reagiert die Bibliothek auf solche Situationen manchmal mit Speicherzugriffsfehlern, d. h. sie stürzt ab. &partman; versucht deswegen, diese Situationen zu vermeiden, indem es einen alternativen Weg nutzt, um Laufwerke auf Ihrem Rechner zu suchen. Wenn es dies jedoch nicht schafft und sich also auf LibParted verlassen muss, wird eine derartige Meldung ausgegeben. Falls die Suche nach Laufwerken funktioniert, können Sie die Meldung bedenkenlos ignorieren. </para>
+			</answer>
+		</qandaentry>
+<!--
+		<qandaentry>
+			<question>
+				<para
+></para>
+			</question>
+			 
+		</qandaentry>
+-->
+	</qandaset>
+</chapter>
+

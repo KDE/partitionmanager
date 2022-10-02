@@ -1,0 +1,166 @@
+<sect1 id="howto-installos">
+	<title
+>Howto: een nieuw besturingssysteem installeren</title>
+
+	<para
+>Deze howto beschrijft het voorbereiden van een nieuwe harde schijf voor het installeren van een besturingssysteem: Veronderstel dat u een nieuwe harde schijf hebt gekocht en u wilt deze gebruiken als vervanger van de oude die nu uw besturingssysteem bevat en gegevenspartities. U wilt van deze gelegenheid ook gebruik maken om een nieuw besturingssysteem te installeren. Er zullen dan verschillende stappen moeten worden genomen voor de overgang van het oude naar het nieuwe systeem en het apparaat. </para>
+
+	<para
+>In het volgende is <quote
+>/dev/sdb</quote
+> de oude harde schijf en <quote
+>/dev/sdc</quote
+> is de nieuwe. Deze schermafdruk toont de situatie op het bronapparaat: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Hoofdvenster met bronapparaat</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Het nieuwe apparaat zal er zo uit zien. Merk op dat het geen geldige partitietabel bevat, dus de eerst stap is het maken ervan door <xref linkend="menu-device-createpartitiontable"/> te selecteren: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Hoofdvenster met bestemmingsapparaat</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Na het bevestigen van de waarschuwing kunt u starten met het aanmaken van partities op het nieuwe apparaat door de uitgebreide partitie te kiezen en <xref linkend="menu-partition-new"/> te selecteren. Begin met een uitgebreide partitie aan het einde van het apparaat waar later de home- en de swap-partitie moeten komen. </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Een uitgebreide partitie maken</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Klik op <guibutton
+>OK</guibutton
+> en de bewerking om deze uitgebreide partitie te maken wordt toegevoegd aan de lijst. </para>
+
+	<para
+>Maak nu een primaire partitie aan op de rest van het apparaat waar het nieuwe besturingssysteem geïnstalleerd zal worden. Gebruik hiervoor de rest van het nog niet toegekende gebied voor de net aangemaakte uitgebreide partitie: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Een primaire partitie aanmaken</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Na het klikken op <guibutton
+>OK</guibutton
+> is de bewerking voor het aanmaken van de nieuwe primaire partitie toegevoegd aan de lijst met bewerkingen. </para>
+	
+	<para
+>Het is nu tijd voor het kopiëren van de home-partitie van de oude harde schijf naar de uitgebreide partitie op de nieuwe harde schijf. Selecteer de oude harde schijf in de apparatenlijst en klik op de partitie <quote
+>sdb5</quote
+> en kies <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>Ga vervolgens terug naar de nieuwe harde schijf en selecteer de uitgebreide partitie. Kies <xref linkend="menu-partition-paste"/>. Het volgende venster wordt zichtbaar: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Het plakken van de home-partitie</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Dit lijkt al bijna goed maar het is al bekend dat zoveel vrije ruimte na de home-partitie niet nodig is omdat hier later een swap-partitie aangemaakt zal worden. </para>
+
+	<para
+>Pak de rechterknop in het herschaal-widget en verplaats het naar rechts totdat de vrije ruimte na de geplakte partitie een meer geschikte grootte heeft voor een swap-partitie: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>De grootte van een geplakte partitie aanpassen</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Dit ziet er goed uit. Klik op <guibutton
+>OK</guibutton
+> voor de acceptatie van de gemaakte keuzes en sluit het dialoog. Een nieuwe bewerking voor het plakken van de gekopieerde partitie naar de uitgebreide partitie op <quote
+>sdc</quote
+> is nu toegevoegd aan de lijst met bewerkingen. Merk op dat deze bewerking ook de nieuwe grootte instelt. </para>
+
+	<para
+>Tenslotte wilt u een nieuwe swap-partitie aan het eind van de uitgebreide partitie op <quote
+>sdc</quote
+> aanmaken. Het is niet zinvol om de bestaande swap-partitie van <quote
+>sdb</quote
+> te kopiëren omdat swap geen permanente informatie bevat dat waard is om te bewaren. Maak daarom eenvoudig een nieuwe partitie van de soort linuxswap aan die de rest van het niet toegekende gebied na de nieuwe home partitie in beslag neemt. </para>
+
+	<para
+>Het hoofdvenster met alle bewerkingen en de voorbeeldweergave van hoe <quote
+>sdc</quote
+> er uit ziet nadat deze zijn toegepast ziet er als volgt uit: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Hoofdvenster na het instellen van alle bewerkingen</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Dit ziet er geweldig uit, selecteer daarom <xref linkend="menu-edit-apply"/>, bevestig het waarschuwingsvenster en wacht vervolgens totdat de bewerkingen zijn uitgevoerd. Lees <link linkend="howto-resizepartition"
+>de how-to voor het wijzigen van de grootte van een partitie</link
+> voor meer informatie over het uitvoeren van bewerkingen </para>
+	
+	<para
+>De nieuwe harde schijf is nu klaar voor de installatie van het nieuwe besturingssysteem. </para>
+
+</sect1>

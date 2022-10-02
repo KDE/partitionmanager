@@ -1,0 +1,655 @@
+<chapter id="reference">
+	<title
+>Referencia de órdenes</title>
+
+	<sect1 id="reference-overview">
+		<title
+>Resumen</title>
+		<para
+>Este capítulo explica en detalle todas las órdenes disponibles en &partman;. Se pretende que sirva como referencia para acompañar la información proporcionada en <xref linkend="usermanual"/>.</para>
+
+	<sect2 id="menu-file">
+		<title
+>Menú «Archivo»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-file-quit">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Salir</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Sale de &partman;</action
+> sin aplicar ninguna operación pendiente. Sin embargo, si hay alguna, la aplicación le pedirá que confirme que desea salir. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-edit">
+		<title
+>Menú «Editar»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-edit-undo">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Editar</guimenu
+> <guimenuitem
+>Deshacer</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Deshace la última operación</action
+> añadida a la pila de operaciones. </para>
+						<para
+>Esta orden solo está disponible si la lista de operaciones no está vacía. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-clear">
+					<term>
+						<menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Limpiar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Vacía la lista de operaciones</action
+> sin aplicar ninguna de ellas. </para>
+						<para
+>Esta orden solo está disponible si la lista de operaciones no está vacía. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-apply">
+					<term>
+						<menuchoice
+><guimenu
+>Editar</guimenu
+> <guimenuitem
+>Aplicar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Aplica la lista de operaciones</action
+>. Esta orden aplicará todas las operaciones de la lista para que los cambios se escriban permanentemente en el disco. Una vez aplicadas, la lista quedará vacía y no habrá manera de deshacer ninguna operación. </para>
+						<para
+>Esta orden solo está disponible si la lista de operaciones no está vacía. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-device">
+		<title
+>Menú «Dispositivo»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-device-selectcurrentdevice">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Seleccionar dispositivo actual</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Permite seleccionar un dispositivo de un submenú con todos los dispositivos disponibles en el sistema. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-createpartitiontable">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Nueva tabla de particiones</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Crea una nueva tabla de particiones</action
+>: esta orden crea una nueva tabla de particiones GPT o MS-DOS vacía en el dispositivo seleccionado. Esto borrará todas las particiones del dispositivo y los datos que contengan, por lo que se debe tener cuidado con esta orden. </para>
+						<para
+>Esta orden solo está disponible si ha seleccionado algún dispositivo y ninguna de sus particiones está montada. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-exportpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Exportar tabla de particiones</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Permite exportar una lista de todas las particiones del dispositivo seleccionado a un archivo. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-importpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Importar tabla de particiones</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Permite importar una tabla de particiones a partir de un archivo previamente exportado.</para>
+						<para
+>Esto borrará todas las particiones del dispositivo y los datos que contengan, por lo que se debe tener cuidado con esta orden.</para>
+						<para
+>Esta orden solo está disponible si se ha seleccionado algún dispositivo y ninguna de sus particiones está montada actualmente. No se puede importar en dispositivos lógicos como grupos de volúmenes LVM.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-smartstatus">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Estado SMART</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Muestra un informe SMART. SMART es un sistema de monitorización incluido en las unidades de disco duro y de estado sólido que detectan varios indicadores sobre la fiabilidad de la unidad y ofrecen información sobre ellos con la intención de permitir anticiparse a los fallos de hardware.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Propiedades</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Muestra información sobre los dispositivos seleccionados actualmente. En este diálogo, se encuentran la capacidad, los tamaños de sector y el tipo de tabla de particiones, así como el número máximo de particiones primarias y el número de particiones primarias utilizadas.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Menú «Herramientas»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Herramientas</guimenu
+> <guimenuitem
+>Nuevo grupo de volúmenes</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Crear un nuevo dispositivo lógico como grupo de volúmenes <link linkend="glossary-lvm"
+>LVM</link
+>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Herramientas</guimenu
+> <guimenuitem
+>Implementación del sistema de archivos</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Muestra el cuadro de diálogo de implementación del sistema de archivos</action
+>: este diálogo muestra en detalle qué operaciones se pueden realizar en cada uno de los sistemas de archivos admitidos. </para>
+						<para
+>A continuación puede ver un ejemplo del cuadro de diálogo con la mayoría de herramientas externas instaladas: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Diálogo de implementación de sistemas de archivos con la mayoría de herramientas externas instaladas</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>La marca azul significa «permitido», mientras que la cruz roja significa «no permitido». Algunas combinaciones no se permiten nunca, como la comprobación de un sistema linuxswap, porque es inherentemente imposible. Otras no se permiten porque las herramientas externas carecen de la funcionalidad. </para>
+						<para
+>Si instala nuevas herramientas mientras &partman; se está ejecutando, haga clic en <guibutton
+>Volver a comprobar la implementación</guibutton
+> para forzar una comprobación de si se admiten las herramientas instaladas. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Herramientas</guimenu
+> <guimenuitem
+>Actualizar dispositivos</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Refresca los dispositivos</action
+>: Esta orden obliga a &partman; a escanear y leer otra vez los dispositivos de su ordenador, lo que puede ser útil si, por ejemplo, ha conectado un disco duro USB después de iniciar &partman;. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-partition">
+		<title
+>Menú «Partición»</title>
+
+		<para>
+			<variablelist>
+				<varlistentry id="menu-partition-new">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partición</guimenu
+> <guimenuitem
+>Nueva</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Crea una nueva partición</action
+>: Abre el cuadro de diálogo para crear una partición nueva, donde podrá indicar el tipo, tamaño, posición y sistema de archivos a utilizar. </para>
+						<para
+>Tenga en cuenta que la tabla de particiones puede imponer restricciones sobre cuántas particiones se pueden crear. Por ejemplo, las tablas de particiones MS-DOS solo permiten cuatro particiones primarias. </para>
+						<para
+>Esta orden solo está activada cuando selecciona un área sin reservar de un dispositivo. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-resize">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partición</guimenu
+> <guimenuitem
+>Redimensionar/Mover</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Cambia el tamaño de una partición o la mueve</action
+>: abre un cuadro de diálogo para cambiar el tamaño o mover una partición existente. Dependiendo de su sistema de archivos y de las herramientas externas instaladas en su equipo, puede que no todas las acciones de cambio de tamaño estén disponibles en este cuadro de diálogo, es decir, mover la partición, reducirla («encogiéndola») o ampliarla («agrandándola». Consulte <xref linkend="menu-tools-filesystemsupport"/>.. </para>
+						<para
+>Esta orden solo está disponible si la partición seleccionada no está montada y si su sistema de archivos puede ser reducido, agrandado o movido. En el caso de una partición extendida, solo está disponible si ninguna de sus particiones lógicas está montada. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-delete">
+					<term>
+						<menuchoice
+><shortcut
+>&Del;</shortcut
+> <guimenu
+>Partición</guimenu
+> <guimenuitem
+>Borrar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Borra una partición</action
+>: Esta orden borra la partición seleccionada. </para>
+						<para
+>Esta orden solo está disponible si la partición seleccionada no está montada. En el caso de particiones extendidas, solo está disponible si no contiene particiones lógicas. </para>
+						<warning>
+							<title
+>Advertencia: Posible pérdida de datos</title>
+							<para
+>El borrado de una partición implica la destrucción de todos sus datos.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-shred">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Del;</keycombo
+></shortcut
+> <guimenu
+>Partición</guimenu
+> <guimenuitem
+>Borrar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Borra una partición</action
+>: esta orden destruye la partición seleccionada. </para>
+						<para
+>Esta orden solo está disponible si la partición seleccionada no está montada. En el caso de particiones extendidas, solo está disponible si no contiene particiones lógicas. </para>
+						<warning>
+							<title
+>Advertencia: pérdida de datos</title>
+							<para
+>El borrado de una partición implica la destrucción de todos sus datos.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-copy">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partición</guimenu
+> <guimenuitem
+>Copiar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Copia una partición</action
+>: Esta orden copia la partición seleccionada al portapapeles de &partman;. </para>
+						<para
+>Esta orden solo está disponible si la partición seleccionada no está montada y su sistema de archivos se puede copiar. Las particiones extendidas no pueden copiarse. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-paste">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partición</guimenu
+> <guimenuitem
+>Pegar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Pega una partición</action
+>: Esta orden pega la partición del portapapeles de &partman; a la partición seleccionada o al área sin reservar. </para>
+						<para
+>Al pegar sobre un área sin reservar, se abrirá un cuadro de diálogo para permitirle mover o agrandar la copia insertada. Este diálogo no se mostrará cuando vaya a sobreescribir una partición existente. </para>
+						<para
+>Esta orden solo está disponible cuando hay una partición en el portapapeles y cuando haya seleccionado un destino válido (una partición o un área sin reservar). El destino debe ser lo bastante grande para albergar el origen, y no puede estar montado. No puede copiar una partición sobre sí misma. </para>
+						<warning>
+							<title
+>Advertencia: Posible pérdida de datos</title>
+							<para
+>Al pegar una partición sobre otra ya existente, todos los datos de esta última se destruirán y serán reemplazados con los de la partición pegada.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partición</guimenu
+> <guimenuitem
+>Montar/Desmontar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Monta o desmonta una partición</action
+>: Esta orden monta o desmonta la partición seleccionada, dependiendo de su estado actual. </para>
+						<para
+>Esta orden solo está disponible cuando la partición seleccionada se puede montar o desmontar. Si el sistema operativo no reconoce el punto de montaje de la partición, no podrá montarla desde &partman;. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-edit-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partición</guimenu
+> <guimenuitem
+>Editar el punto de montaje</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Abre un diálogo</action
+> para editar el punto y las opciones de montaje. </para>
+						<para
+>Esta orden solo está disponible si se desmonta una partición. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-check">
+					<term>
+						<menuchoice
+><guimenu
+>Partición</guimenu
+> <guimenuitem
+>Comprobar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Comprueba una partición</action
+>: Esta orden comprueba posibles errores en la partición seleccionada y en su sistema de archivos, e intenta corregir todos los que encuentra. Durante el proceso, el sistema de archivos se redimensionará para ocupar completamente la partición. </para>
+						<para
+>Esta orden solo está disponible si la partición seleccionada puede ser comprobada y no está montada. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-backup">
+					<term>
+						<menuchoice
+><guimenu
+>Partición</guimenu
+> <guimenuitem
+>Copia de seguridad</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Hace una copia de seguridad de una partición</action
+>: Esta orden hace una copia de seguridad del sistema de archivos o partición seleccionada a un archivo. Tras activar la orden, se le preguntará dónde quiere almacenar el archivo de imagen. </para>
+						<para
+>La imagen creada es una copia sector a sector del sistema de archivos de la partición. No está comprimida ni posee metadatos especiales o cabeceras añadidas, por lo que puede ser montada mediante un bucle de dispositivos ajeno a &partman; si el sistema operativo lo admite. </para>
+						<para
+>Esta orden solo está disponible si la partición seleccionada y el sistema de archivos que contiene pueden ser respaldados. La partición no debe estar montada. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-restore">
+					<term>
+						<menuchoice
+><guimenu
+>Partición</guimenu
+> <guimenuitem
+>Restaurar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Restaura una partición</action
+>: Esta orden restaura un sistema de archivos, de un archivo de imagen a una partición. Tras activar la orden, se le preguntará el nombre del archivo de imagen. El destino de la restauración debe ser lo bastante grande para albergar el archivo de imagen. </para>
+						<para
+>Esta orden solo está disponible si selecciona el área sin reservar o una partición que no esté montada. </para>
+						<warning>
+							<title
+>Advertencia: Posible pérdida de datos</title>
+							<para
+>Al restaurar una partición sobre otra, todos los datos de la partición ya existente se destruirán y serán reemplazados por los del archivo de imagen restaurado.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Partición</guimenu
+> <guimenuitem
+>Propiedades</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Muestra las propiedades de una partición</action
+>: Esta orden muestra un cuadro de diálogo con información de la partición seleccionada o del espacio sin reservar. </para>
+						<para
+>Lo que se muestre y se pueda modificar en el diálogo depende del tipo de partición, del sistema de archivos que contenga y de que la partición esté montada o no. </para>
+						<para
+>Por ejemplo, no todos los sistemas de archivos admiten etiquetas. Normalmente, tampoco es posible modificar las propiedades de una partición montada. </para>
+						<para
+>A continuación se muestra una lista con todas las propiedades de particiones y sistemas de archivos que se pueden modificar, en general, en este cuadro de diálogo: <itemizedlist>
+								<listitem>
+									<para
+>Establecer o modificar la etiqueta de un sistema de archivos</para>
+								</listitem>
+								<listitem>
+									<para
+>Cambiar el sistema de archivos de una partición.</para>
+
+									<warning>
+										<title
+>Advertencia: Posible pérdida de datos</title>
+										<para
+>Modificar el sistema de archivos de una partición implica siempre la destrucción de todos los datos de la partición.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Volver a crear el sistema de archivos de una partición</para>
+
+									<warning>
+										<title
+>Advertencia: Posible pérdida de datos</title>
+										
+										<para
+>Volver a crear un sistema de archivos en una partición implica siempre la destrucción de todos los datos de la partición. La recreación de un sistema de archivos solo debe utilizarse como último recurso si este no puede ser reparado.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Cambiar las banderas de una partición</para>
+									<para
+>Según el tipo de tabla de particiones usada, cada una de sus particiones tendrá disponibles muchos indicadores . En la mayoría de casos, no es necesario modificarlos y se considera una característica avanzada.</para>
+								</listitem>
+							</itemizedlist>
+						</para>
+						<para
+>Esta orden solo está activada cuando selecciona un área sin reservar o una partición. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-settings-help">
+		<title
+>Los menús «Preferencias» y «Ayuda»</title>
+
+		<para
+>&partman; tiene las <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Preferencias</ulink
+> y el menú <ulink url="help:/fundamentals/menus.html#menus-help"
+>Ayuda</ulink
+> de &kde; tal como se describen en «Aspectos básicos de&kde;» con un submenú adicional <guisubmenu
+>Paneles mostrados</guisubmenu
+>, en el que se puede elegir que aparezcan o no los  <guimenuitem
+>Dispositivos</guimenuitem
+>, <guimenuitem
+>Operaciones pendientes</guimenuitem
+>, <guimenuitem
+>Información</guimenuitem
+> y los paneles <guimenuitem
+>Salida del registro</guimenuitem
+>. </para>
+	</sect2>
+	</sect1>
+
+</chapter>

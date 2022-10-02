@@ -1,0 +1,101 @@
+<chapter id="usermanual">
+	<title
+>Menggunakan &partman;</title>
+
+	<sect1 id="mainwindow">
+		<title
+>Window Utama</title>
+
+		<para
+>Selain tampilan utama yang menampilkan perangkat yang dipilih saat ini dalam tampilan grafis dan tampilan ranting, &partman; menggunakan &Qt; <quote
+>dock widget</quote
+> atau panel untuk menampilkan beberapa informasi dan mengizinkan pilihan. Lihat cuplikanlayar berikut untuk melihat ikhtisar window utama &partman;. </para>
+
+		<para>
+			<screenshot>
+				<screeninfo
+>Jendela utama &partman;</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Window Utama</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>Bilah Menu: Bilah menu menghadirkan beberapa menu khusus dan beberapa menu non-standar untuk memilih aksi yang akan dilakukan. Semua perintah dijelaskan secara terperinci di <xref linkend="reference"/>.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Bilah Alat: Bilah alat &partman; adalah bilah alat standar. Hal ini bisa secara penuh disesuaikan; untuk perinciannya lihat <xref linkend="menu-settings-help"/>. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Devices Panel: Panel ini mencantumkan semua <glossterm linkend="glossary-device"
+>perangkat</glossterm
+> yang terdapat di komputer Anda yang &partman; bisa tangani. Pilih perangkat di panel ini untuk menilik atau memodifnya dalam tampilan perangkat grafis atau tampilan perangkat hierarki.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>Graphical Device View: Dalam tampilan ini &partman; menampilkan representasi grafis dari perangkat yang dipilih saat ini. Masing-masing perangkat <glossterm linkend="glossary-partition"
+>partisi</glossterm
+> memiliki kotak sendiri dengan nama node perangkat (<quote
+>sda1</quote
+> untuk partisi pertama dalam cuplikan di atas) dan informasi penggunaan (area ungu gelap dalam cuplikan). </para>
+					<para
+><glossterm linkend="glossary-extendedpartition"
+>Partisi extended</glossterm
+> secara visual berbeda dengan batas ekstra mereka (hijau muda pada cuplikan di atas) di sekitar mereka. </para>
+					<para
+>Anda bisa memilih partisi dengan mengekliknya pada tampilan perangkat grafis. Klik dua kali terbuka <link linkend="menu-partition-properties"
+>dialog properti partisi</link
+>. Klik kanan menampilkan menu konteks partisi. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Tree Device View: Tampilan perangkat hierarki menampilkan informasi extended tentang setiap partisi pada perangkat yang dipilih. Partisi yang dipilih saat ini yang disorot. Klik dua kali sebuah partisi yang akan terbuka <link linkend="menu-partition-properties"
+>dialog properti partisi</link
+>. Klik kanan menampilkan menu konteks partisi. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Information Panel: Panel informasi menampilkan beberapa rincian tentang perangkat atau partisi yang saat ini dipilih. Ini tidak difungsikan secara baku.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Pending Operations Panel: Panel ini mencantumkan semua operasi yang akan dieksekusi setelah Anda memilih <xref linkend="menu-edit-apply"/>. </para>
+					<para
+>Pada cuplikan di atas, satu operasi telah tertunda: Jika pengguna menerapkan operasi sekarang, <glossterm linkend="glossary-filesystem"
+>sistem file </glossterm
+> pada /dev/sdb3 akan diperiksa untuk keerroran dan, jika diperlukan, diperbaiki. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Bilah Status: Bilah status menampilkan berapa banyak operasi yang saat ini tertunda. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Log Output Panel: Panel ini menampilkan informasi log. Ini hanya kepentingan sekunder bagi pengguna non-lanjutan dan tidak difungsikan secara baku.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+

@@ -1,0 +1,101 @@
+<chapter id="usermanual">
+	<title
+>Partitsioonihalduri kasutamine</title>
+
+	<sect1 id="mainwindow">
+		<title
+>Peaaken</title>
+
+		<para
+>Lisaks põhivaatele, mis näitab parajasti valitud seadet graafilisena ja puu kujul, kasutab partitsioonihaldur &Qt; <quote
+>dokividinaid</quote
+> ehk paneele, kus kuvatakse mõningat teavet ja võimaldatakse langetada valikuid. Allpool ongi näha partitsioonihalduri peaaken. </para>
+		
+		<para>
+			<screenshot>
+				<screeninfo
+>Partitsioonihalduri peaaken</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Peaaken</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>Menüüriba: menüüriba pakub mõningaid tavapäraseid ja mõningaid rakendusele spetsiifilisi menüüsid toimingute sooritamiseks. Kõiki käske kirjeldab üksikasjalikult <xref linkend="reference"/>.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Tööriistariba: partitsioonihalduri tööriistariba on &kde; 4 standardne tööriisariba. Seda saab igati kohandada, millest kõneleb täpsemalt <xref linkend="menu-settings"/>. </para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Seadmete paneel: see paneel näitab kõiki sinu arvutis leitud <glossterm linkend="glossary-device"
+>seadmeid</glossterm
+>, millega partitsioonihaldur suudab midagi ette võtta. Seadme valimine paneelil võimaldab seda näha või muuta graafilises või puuvaates.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>Seadme graafiline vaade: siin näitab partitsioonihaldur graafiliselt parajasti valitud seadet. Kõigile seadme <glossterm linkend="glossary-partition"
+>partitsioonidele</glossterm
+> on eraldatud oma kastike, milles näeb seadmeosa nime (<quote
+>sda1</quote
+> pildil oleva seadme esimese partitsiooni puhul) ning teavet kasutuse kohta (pildil tumelilla ala). </para>
+					<para
+><glossterm linkend="glossary-extendedpartition"
+>Laiendatud partitsioone</glossterm
+> eristab visuaalselt nende ümber tõmmatud lisapiire (pildil heleroheline). </para>
+					<para
+>Partitsiooni saab valida sellele seadme graafilises vaates klõpsates. Topeltklõps avab <link linkend="menu-partition-properties"
+>partitsiooni omaduste dialoogi</link
+>. Paremklõpsuga saab avada partitsiooni kontekstimenüü. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Seadme puuvaade: siin näidatakse täiendavat teavet valitud seadme kõigi partitsioonide kohta. Parajasti valitud partitsioon on esile tõstetud. Topeltklõps partitsioonil avab <link linkend="menu-partition-properties"
+>partitsiooni omaduste dialoogi</link
+>. Paremklõpsuga saab avada partitsiooni kontekstimenüü. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Teabepaneel: siin näeb üksikasju parajasti valitud seadme või partitsiooni kohta. Vaikimisi seda ei näidata.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Ootel operatsioonide paneel: siin on kirjas kõik operatsioonid, mis täidetakse, kui valid menüükäsu <xref linkend="menu-edit-apply"/>. </para>
+					<para
+>Siinsel pildil on üks ootel operatsioon. Kui kasutaja otsustab selle täita, kontrollitakse /dev/sdb3 <glossterm linkend="glossary-filesystem"
+>failisüsteemi</glossterm
+> terviklikkust ja vajadusel seda parandatakse. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Olekuriba: siin näeb, kui palju operatsioone on parajasti ootel. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Logi väljund: siin näeb logi. Tavalistele kasutajatele ei ole sellest kuigi palju abi, mistõttu see ei ole ka vaikimisi näha.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1>
+&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+

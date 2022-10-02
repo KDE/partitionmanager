@@ -1,0 +1,166 @@
+<sect1 id="howto-installos">
+	<title
+>Anleitung: Installation eines neues Betriebssystems</title>
+
+	<para
+>Diese Anleitung beschreibt die Vorbereitung einer neuen Festplatte zur Installation eines Betriebssystems. Angenommen, Sie haben eine neue Festplatte gekauft und möchten diese nun als Ersatz für Ihre bisherige Festplatte verwenden, welche bisher das Betriebssystem und die Datenpartition enthält. Des Weiteren möchten Sie ein neues Betriebssystem installieren. Für diesen Übergang von einem alten System und Gerät sind mehrere Schritte notwendig. </para>
+
+	<para
+>Im Folgenden ist <quote
+>/dev/sdb</quote
+> ist die alte und <quote
+>/dev/sdc</quote
+> ist die neue Festplatte. Das Bildschirmfoto zeigt die Situation auf dem Quellgerät. </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Hauptfenster mit Quellgerät</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Das neue Gerät sieht wie im Folgenden aus. Beachten Sie, dass es noch keine gültige Partitionstabelle hat, daher sollte als erstes eine Partitionstabelle durch die Auswahl von <xref linkend="menu-device-createpartitiontable"/> erstellt werden. </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Hauptfenster mit Zielgerät</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Nachdem Sie den Warnungsdialog bestätigt haben, können Sie mit der Erstellung von Partitionen auf dem neuen Gerät beginnen, indem Sie die erweiterte Partition auswählen und <xref linkend="menu-partition-new"/> wählen. Beginnen Sie mit einer erweiterten Partition am Ende des Geräts, welche später die Benutzerordner und die Swap-Partition enthalten soll: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Erweiterte Partition erstellen</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Klicken Sie auf <guibutton
+>OK</guibutton
+> und die Operation zur Erstellung einer erweiterten Partition wird zur Liste hinzugefügt. </para>
+
+	<para
+>Erstellen Sie jetzt eine primäre Partition auf dem verbleibenden Teil des Geräts, wo das neue Betriebssystem installiert wird. Wählen Sie den gesamten verbleibenden nicht zugewiesenen Bereich vor der erweiterten Partition. </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Eine primäre Partition erstellen</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Klicken Sie im Dialog auf <guibutton
+>OK</guibutton
+>, um Ihre Auswahl zu übernehmen. Die Operation zur Erstellung einer neuen primären Partition wird zur Liste der Operationen hinzugefügt. </para>
+	
+	<para
+>Jetzt sollte die eigene Partition auf dem alten Gerät auf die erweiterte Partition auf dem neuen Gerät kopiert werden. Wählen Sie das alte Gerät in der Geräteliste, klicken Sie auf die Partition <quote
+>sdb5</quote
+> und wählen Sie <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>Gehen Sie dann zurück zum neuen Gerät und klicken Sie auf die erweiterte Partition. Wählen Sie <xref linkend="menu-partition-paste"/>. Der folgende Dialog wird angezeigt. </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Einfügen der Partition mit den Benutzerordnern</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Das Ergebnis sieht bereits in Ordnung aus, allerdings wissen Sie bereits, dass Sie den freien Speicherplatz nach der Partition für die Benutzerordner nicht benötigen, da hier später eine Swap-Partition erstellt wird. </para>
+
+	<para
+>Schieben Sie den rechten Schieberegler zum Verändern der Partitionsgröße nach rechts, bis die Größe des freien Speicherplatzes hinter der eingefügten Partition eine für eine Swap-Partition passendere Größe hat: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Größe einer eingefügten Partition ändern</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Das Ergebnis sieht gut aus. Klicken Sie auf <guibutton
+>OK</guibutton
+>, um das Ergebnis zu akzeptieren und den Dialog zu schließen. Daraufhin wird eine neue Operation zum Einfügen der kopierten Partition in die erweiterte Partition auf dem Gerät <quote
+>sdc</quote
+> zur Liste ausstehender Operationen hinzugefügt. Diese Operation wird auch die neue Größe der Partition setzen. </para>
+
+	<para
+>Schließlich möchten Sie noch eine neue Swap-Partition am Ende der erweiterten Partition auf <quote
+>sdc</quote
+> einfügen. Es besteht kein Grund, die auf <quote
+>sdb</quote
+> existierende Swap-Partition zu kopieren, da Swap-Partitionen keine permanenten, sinnvollen Informationen enthalten. Erstellen Sie also eine neue Partition mit dem Dateisystem-Typ linuxswap, welche den kompletten nicht zugewiesenen Speicherplatz hinter der neuen Partition für die Benutzerordner einnimmt. </para>
+
+	<para
+>Das Hauptfenster mit allen Operationen und der Vorschau, wie <quote
+>sdc</quote
+> nach Anwendung der Operationen aussehen wird: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Hauptfenster nach Einstellung aller Operationen</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Da das Ergebnis wie gewünscht aussieht, wählen Sie <xref linkend="menu-edit-apply"/>, bestätigen Sie den Warnungsdialog und warten Sie, bis alle Operationen ausgeführt wurden. Details über das Ausführen der Operationen finden Sie in der <link linkend="howto-resizepartition"
+>Anleitung zur Größenänderung von Partitionen</link
+>. </para>
+	
+	<para
+>Ihre neue Festplatte ist jetzt bereit für die Installation Ihres neuen Betriebssystems. </para>
+
+</sect1>

@@ -1,0 +1,155 @@
+<chapter id="faq">
+	<title
+>Vragen en antwoorden</title>
+
+	<qandaset id="faqlist">
+		<qandaentry>
+			<question>
+				<para
+>Hoe gevaarlijk is &partman; voor mijn gegevens?</para>
+			</question>
+			<answer>
+				<para
+>Ten eerste moet u nooit een destructieve bewerking doen (verwijderen, verplaatsen, grootte wijzigen) zonder eerst een complete reservekopie van alles wat er mee van doen heeft te maken. </para>
+				<para
+>Nadat te hebben opgemerkt, is &partman; veilig in gebruik. Het doet uitgebreide controles voor en na elke bewerking. Het roept externe hulpmiddelen aan die zijn geschreven en ondersteund door de auteurs van bestandsystemen. En het is uitgebreid getest. </para>
+				<para
+>Er is altijd het risico van verlies van gegevens door een onbekende bug. De auteurs van &partman; proberen dat risico te minimaliseren, maar er zijn natuurlijk geen garanties. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Ik heb alle aanbevolen externe ondersteuningspakketten voor bestandssystemen en kan toch niet de ondersteuning vinden voor alle bewerkingen op alle bestandssystemen.</para>
+			</question>
+			<answer>
+				<para
+>Niet alles wat &partman; in principe kan doen kan gedaan worden met alle bestandssystemen. </para>
+				<para
+>Een voorbeeld is het uitvoeren van een controle op het bestandssysteem linuxswap: dat is gewoon niet mogelijk. Er zijn andere beperkingen die inherent zijn in sommige bestandssystemen. U kunt geen JFS- of XFS-bestandssysteem kleiner laten worden geen van die twee ondersteunen kleiner worden, met of zonder &partman;. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Waarom zie ik geen voortgangsinformatie van enige betekenis bij het wijzigen van de grootte van een partitie?</para>
+			</question>
+			<answer>
+				<para
+>&partman; kan alleen voortgangsinformatie tonen wanneer het weet hoe lang de taken in een bewerking gaan duren. Helaas is dat meestal niet het geval bij aanpassen van de grootte van een bestandssysteem in een partitie. In de meeste gevallen geeft &partman; de opdracht tot het aanpassen van een bestandssysteem aan een apart programma en deze externe programma's geven geen zinvolle voortgangsinformatie aan &partman;, er is daarom niets te melden. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Waarom kan ik de root-partitie niet van grootte laten veranderen? Hoe kan ik de partitie waar /home zich op bevindt van grootte laten wijzigen?</para>
+			</question>
+			<answer>
+				<para
+>Om een partitie te wijzigen mag het niet zijn aangekoppeld. U kunt de root-partitie niet afkoppelen. Evenzo kunt u de home-partitie  niet afkoppelen als de thuismap van de nu aangemelde gebruiker zich daar op bevindt. </para>
+				<para
+>De oplossing voor dit probleem is om op te starten vanaf een Linux Live CD die &partman; bevat en deze partities vanaf daar te wijzigen. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Ik krijg een waarschuwing over het gegeven dat een partitie niet aangemaakt kan worden met het gewenste formaat en dat het daarom kleiner zal zijn. Wat is er aan de hand?</para>
+			</question>
+			<answer>
+				<para
+>Bij MS-DOS partitietabellen moeten partities beginnen en eindigen bij een cilinder-grens. Dit voornamelijk vanwege historische redenen. &partman; handelt dit zelf af en valt de gebruiker er niet mee lastig. </para>
+				<para
+>In sommige gevallen kan &partman; de bewerking niet uitvoeren zoals de gebruiker het in gedachten heeft vanwege deze beperking. Bijvoorbeeld als een cilinder op een harde schijf 8 MiB groot is en de gebruiker wil de partitie met 6 MiB veranderen dan zal dit niet gaan. </para>
+				<para
+>U kunt dit bericht ook krijgen als u een apparaat met een partitietabel heeft waar, voor wat voor reden dan ook, de partities niet op cilinder-grenzen eindigen en er voor het eerst geprobeerd wordt om deze partities te verplaatsen of te kopiëren. </para>
+				<para
+>Het bericht duidt niet op gevaar en is er alleen maar om te informeren dat iets niet helemaal uitgevoerd kan worden zoals de gebruiker verwacht. De partities en de data daarop zullen daar op geen enkele manier hinder van ondervinden. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Hoeveel bewerkingen kan ik toevoegen aan de lijst met wachtende bewerkingen?</para>
+			</question>
+			<answer>
+				<para
+>Daar is geen grens aan. </para>
+				<para
+>Maar het wordt aangeraden om niet teveel bewerkingen aan de lijst toe te voegen. Er is altijd een kleine kans dat een bewerking met een foutmelding mislukt waarna in dat geval &partman; stopt met het uitvoeren van verdere bewerkingen. In dat geval is het veel gemakkelijker uit te zoeken wat er gebeurde (en opnieuw de bewerkingen die niet zijn uitgevoerd aan de lijst toe te voegen) als de lijst met lopende bewerkingen niet al te lang is.  </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Het verschalen van een ext2 of ext3 bestandssysteem mislukte met iets in het rapport over <quote
+>geen ruimte meer op apparaat</quote
+>. Wat is er gebeurt? Is mijn data nu corrupt?</para>
+			</question>
+			<answer>
+				<para
+>Dit is een probleem van het commando <command
+>e2resize</command
+> en het onderliggende ext2/3/4 bestandssysteem. Als een bestandssysteem bijna vol is, dan kan <command
+>e2resize</command
+> het niet kleiner maken, zelfs als dat mogelijk is met het aantal aanwezige lege sectors. &partman; kan helaas niet op voorhand weten of <command
+>e2resize</command
+> zal afbreken met deze foutmelding bij een bepaalde bestandssysteem. Als deze melding komt dan is er niets verandert en de data zal op geen enkele manier daar hinder van ondervinden. </para>
+				<para
+>Op dit moment is voor dit probleem geen oplossing bekend. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Waarom kan ik mijn floppy disk niet met &partman; formatteren? Waarom is er geen mogelijkheid voor het schrijven naar CD of het branden van een DVD?</para>
+			</question>
+			<answer>
+				<para
+>&partman; is hier niet voor ontworpen, het is een programma dat met partities en de bestandssystemen op deze partities in de weer is. Floppy disks, CDs of DVDs hebben geen partities nodig. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Waarom kan ik geen partities veranderen op een apparaat met een amiga of bsd partitietabel? </para>
+			</question>
+			<answer>
+				<para
+>&partman; ondersteunt op dit moment alleen lezen voor andere soorten partitietabellen dan MS-DOS. Dit is gedaan voor de veiligheid: &partman; ondersteunt eigenlijk geen andere partitietabellen en wat er is (of toevallig werkt) is nog niet genoeg getest om met vertrouwen te gebruiken. </para>
+				<para
+>Maar u kunt natuurlijk altijd nog een nieuwe MS-DOS partitietabel op het apparaat in kwestie aanmaken, maar dat is waarschijnlijk niet de bedoeling. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Bij het starten blijft &partman; een paar minuten bezig met wat lijkt op het scannen van de floppy-drive in mijn computer.</para>
+			</question>
+			<answer>
+				<para
+>Dit gebeurt als in de BIOS een floppy-drive ingesteld staat terwijl er in werkelijkheid geen floppy-drive aanwezig is. Controleer de BIOS-instellingen als er geen floppy-drive aanwezig is en schakel de instellingen voor floppy-drives in de BIOS uit, misschien gaat dit probleem dan weg. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Tijdens het starten van &partman; verschijnen er berichten over het onderzoeken van apparaateigenschappen en dat het zelfs crasht of minstens heel lang duurt.</para>
+			</question>
+			<answer>
+				<para
+>LibParted, een extern programma gebruikt door &partman;, heeft problemen met systemen waar de Linux Device Mapper is gebruikt op een manier die het niet begrijpt. Helaas reageert het op deze situaties met 'segmentation faults', d.w.z het crasht. Daarom probeert &partman; deze situaties ter vermijden door op een andere manier de computer te scannen naar disks. Maar als dat niet lukt en het LibParted moet gebruiken dan geeft het een bericht zoals hierboven af. Het bericht kan genegeerd worden als het scannen naar disks succesvol is. </para>
+			</answer>
+		</qandaentry>
+<!--
+		<qandaentry>
+			<question>
+				<para
+></para>
+			</question>
+			 
+		</qandaentry>
+-->
+	</qandaset>
+</chapter>
+

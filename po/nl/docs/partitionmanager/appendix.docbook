@@ -1,0 +1,192 @@
+<appendix id="installation">
+	<title
+>Installatie</title>
+
+	<sect1 id="obtaining">
+		<title
+>Hoe &partman; te verkrijgen</title>
+
+		<para
+>De hoofdwebsite voor &partman; is <ulink url="http://www.partitionmanager.org"
+>www.partitionmanager.org</ulink
+>. Voor de meest recente versie is dit de plek om te raadplegen. </para>
+	</sect1>
+
+	<sect1 id="requirements">
+		<title
+>Vereisten</title>
+
+		<para
+>Om net succes &partman; te gebruiken hebt u &kde; 4.2 of later en &Qt; 4.4.0 of later nodig. Het is echter niet nodig om in &kde; aangemeld te zijn om het te gebruiken: &partman; werkt prima in elke andere bureaubladomgeving zolang de basis bibliotheken van &kde; zijn geïnstalleerd. </para>
+
+		<para
+>De basis functionaliteit van &partman; hangt voor een groot gedeelte af van <ulink url="http://www.gnu.org/software/parted/index.shtml"
+>libparted</ulink
+>. Om UUID's voor gekopieerde bestabdssystemen te genereren gebruikt het libuuid, wat onderdel is van <ulink url="http://e2fsprogs.sourceforge.net"
+>e2fsprogs</ulink
+>. Het gebruikt ook de <ulink url="http://userweb.kernel.org/~kzak/util-linux-ng/"
+>libblkid-bibliotheek uit het project util-linux-ng</ulink
+> om informatie over partities en de bestandssystemen te verkrijgen. Deze zijn allemaal vereist voor bouwen of gebruiken van &partman;. </para>
+
+		<para
+>&partman; maakt uitgebreid gebruik van externe hulpmiddelen om een brede reeks van bestandssystemen te ondersteunen. Een specifiek hulpmiddel is alleen vereist als u de ondersteuning voor een bewerking nodig hebt die het levert voor een bepaald bestandssysteem. Als u bijvoorbeeld geen NTFS bestandssysteem van grote wilt wijzigen, dan is het niet vereist om <quote
+>ntfsresize</quote
+> geïnstalleerd te hebben. Geen van deze hulpmiddelen zijn vereist om &partman; uit broncode te bouwen. </para>
+
+		<para
+>Hier is een lijst met alle externe hulpmiddelen waar &partman; gebruik van kan maken: </para>
+
+		<itemizedlist>
+			<listitem>
+				<para
+>&debugfsreiser4;: leest gebruikinformatie en labels voor bestandssystemen voor reiser4 bestandssystemen. Onderdeel van de toepassingensuite reiser4progs die gedownload kan worden vanaf <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&debugreiserfs;: leest gebruikinformatie en labels voor bestandssystemen voor reiserfs bestandssystemen. Onderdeel van de toepassingensuite reiserfsprogs die gedownload kan worden vanaf <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiserfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&dumpe2fs;: leest gebruikinformatie voor ext2/ext3/ext4 bestandssystemen. Onderdeel van de toepassingensuite e2fsprogs die gedownload kan worden vanaf <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&e2label;: leest en schrijft labels van het bestandssysteem voor ext2/ext3/ext4 bestandssystemen. Onderdeel van de toepassingensuite e2fsprogs die gedownload kan worden vanaf <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&fsckmsdos;: leest gebruikinformatie en controleert FAT16 en FAT32 bestandssystemen. Onderdeel van de toepassingensuite dosfstools die gedownload kan worden vanaf <ulink url="http://www.daniel-baumann.ch/software/dosfstools/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hfsck;: leest labels van het bestandssysteem en controleert HFS bestandssystemen. Het is onderdeel van de toepassingensuite hfsutils die gedownload kan worden vanaf <ulink url="http://www.mars.org/home/rob/proj/hfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hpfsck;: controleert HFS+ bestandssystemen. Het is onderdeel van de toepassingensuite hfsplusutils die gedownload kan worden vanaf <ulink url="http://www.penguinppc.org/historical/hfsplus/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfsdebugfs;: leest gebruikinformatie van JFS bestandssystemen. Het is onderdeel van de toepassingensuite jfsutils die gedownload kan worden vanaf <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfstune;: leest en schrijft labels van het bestandssysteem voor JFS bestandssystemen. Het is onderdeel van de toepassingensuite jfsutils die gedownload kan worden vanaf <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfslabel;: leest en schrijft labels van het bestandssysteem voor NTFS bestandssystemen. Het is onderdeel van de toepassingensuite ntfsprogs die gedownload kan worden vanaf <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfsresize;: leest gebruikinformatie, controleert en verschaalt NTFS bestandssystemen. Onderdeel van de toepassingensuite ntfsprogs die gedownload kan worden vanaf <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapoff;: schakelt swap-bestandssystemen uit. Onderdeel van de toepassingensuite util-linux-ng die gedownload kan worden vanaf <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapon;: Schakelt swap bestandssystemen weer in. Onderdeel van de toepassingensuite util-linux-ng die gedownload kan worden vanaf <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&volid;: leest labels van het bestandssysteem van linuxswap-bestandssystemen. Onderdeel van de toepassingensuite udev die gedownload kan worden vanaf <ulink url="http://www.us.kernel.org/pub/linux/utils/kernel/hotplug/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&xfsdb;: leest gebruikinformatie, controleert en leest en schrijft labels van het bestandssysteem voor XFS bestandssystemen. Onderdeel van de toepassingensuite xfsprogs die gedownload kan worden vanaf <ulink url="ftp://oss.sgi.com/projects/xfs/cmd_tars/"
+></ulink
+>. </para>
+			</listitem>
+		</itemizedlist>
+	</sect1>
+
+	<sect1 id="compilation">
+		<title
+>Compilatie en installatie</title>
+&install.compile.documentation; </sect1>
+
+	<sect1 id="furtherreading">
+		<title
+>Verder lezen</title>
+
+		<itemizedlist>
+			<listitem>
+				<para
+><ulink url="http://www.linfo.org/"
+>The Linux Information Project</ulink
+> bevat zeer veel informatie over vele aspecten van Linux. Het artikel over <ulink url="http://www.linfo.org/partition.html"
+>partities</ulink
+> is erg informatief. Maar kijk ook naar artikelen op <ulink url="http://www.linfo.org/partition_table.html"
+>partitietabellen</ulink
+>, <ulink url="http://www.linfo.org/hdd.html"
+>harde schijven</ulink
+> en <ulink url="http://www.linfo.org/filesystem.html"
+>bestandssystemen</ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>De Engelse documentatie <ulink url="http://tldp.org/HOWTO/Partition/index.html"
+>Linux Partition HOWTO</ulink
+> bevat een basis overzicht over de behandeling en het partitioneren van schijven in Linux en het eigen Linux bestandssystemen. Het dekt ook swap-partities. </para>
+			</listitem>
+
+			<listitem>
+				<para
+><ulink url="http://www.wikipedia.org"
+>Wikipedia</ulink
+> heeft een pagina over <ulink url="http://nl.wikipedia.org/wiki/Partitie_%28informatica%29"
+>partitioneren van een schijf</ulink
+>. </para>
+			</listitem>
+			
+		</itemizedlist>
+		
+	</sect1>
+	
+</appendix>

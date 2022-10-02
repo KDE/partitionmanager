@@ -1,0 +1,155 @@
+<chapter id="faq">
+	<title
+>Preguntes i respostes</title>
+
+	<qandaset id="faqlist">
+		<qandaentry>
+			<question>
+				<para
+>Com de perillós és el &partman; per les meves dades?</para>
+			</question>
+			<answer>
+				<para
+>Primer de tot, mai heu de realitzar cap operació destructiva (suprimir, moure, redimensionar) sense crear primer una còpia de seguretat completa de tot el que es vegi afectat. </para>
+				<para
+>Havent dit això, usar el &partman; és segur. Realitza intenses comprovacions abans i després de cada operació. Crida eines externes escrites i suportades pels autors del sistema de fitxers i s'han provat intensivament. </para>
+				<para
+>Sempre hi ha el risc de la pèrdua de les dades per culpa d'un error desconegut. Els autors del &partman; han intentat minimitzar aquest risc, però per descomptat no hi ha garanties. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>He instal·lat tots els paquets de les eines externes recomanades per la compatibilitat amb els sistemes de fitxers i encara no he obtingut la implementació de totes les operacions en tots els sistemes de fitxers.</para>
+			</question>
+			<answer>
+				<para
+>No tot el que el &partman; pot fer en un principi, es pot fer amb tots els sistemes de fitxers. </para>
+				<para
+>Un exemple és realitzar una comprovació d'un sistema de fitxers linuxswap: simplement no és possible. Hi ha altres limitacions com aquelles que són inherents a alguns sistemes de fitxers. No podeu encongir sistemes de fitxers JFS o XFS perquè cap dels dos implementen ser encongits, amb el &partman; o sense ell. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Per què no puc veure cap informació de progrés significativa en redimensionar una partició?</para>
+			</question>
+			<answer>
+				<para
+>El &partman; només pot mostrar la informació del progrés quan coneix quant trigarà la tasca en una operació. Desafortunadament aquest no és el cas en redimensionar particions perquè la tasca més llarga amb diferència és redimensionar el sistema de fitxers d'una partició. Redimensionar sistemes de fitxers és en la majoria dels casos alguna cosa que fa una eina externa en nom del &partman; i aquestes eines externes no proporcionen cap informació de progrés útil al &partman;, per tant no hi ha res a informar mentre són en execució. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Per què no puc redimensionar la partició root? Com puc redimensionar la partició on està /home?</para>
+			</question>
+			<answer>
+				<para
+>Per modificar una partició ha d'estar desmuntada. Òbviament no podeu desmuntar la partició root. Tampoc podreu desmuntar la partició «home» del directori d'inici d'un usuari que ha iniciat la sessió. </para>
+				<para
+>La solució per aquest problema és iniciar des d'un Live CD Linux que porti el &partman; i modificar aquestes particions des d'ell. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Estic obtenint un missatge d'avis en el registre de la sortida quant a una partició que no es pot crear amb la mida que he sol·licitat i que ha de ser més petita. Què ha passat?</para>
+			</question>
+			<answer>
+				<para
+>En les taules de particions MS-DOS, les particions han de començar i acabar en els límits d'un cilindre. Això es deu principalment a raons històriques. El &partman; s'ocuparà d'això internament i tractarà de no molestar a l'usuari amb aquesta limitació. </para>
+				<para
+>Sota circumstàncies estranyes, no obstant això el &partman; no podrà arranjar una operació de la forma en la qual l'usuari l'ha sol·licitat a causa d'aquesta limitació. Per exemple, si un cilindre d'un dispositiu té una mida de 8 MiB i intenteu redimensionar una partició a 6 MiB, això no funcionarà. </para>
+				<para
+>També podeu trobar aquest missatge si teniu un dispositiu i la taula de particions on són les particions, per algun motiu, no està correctament ajustada als límits d'un cilindre i intenteu moure o copiar aquestes particions per primera vegada. </para>
+				<para
+>El missatge en si mateix és inofensiu i només serveix per informar a l'usuari que alguna cosa no es pot fer exactament de la manera que l'usuari esperava. Les particions i les dades no es veuran afectades negativament de cap manera si veieu aquest missatge. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Quantes operacions puc afegir a la llista d'operacions pendents?</para>
+			</question>
+			<answer>
+				<para
+>No hi ha cap límit. </para>
+				<para
+>No obstant això no està recomanat afegir massa operacions a la llista. Sempre hi ha una petita possibilitat que una operació falli amb un error, en aquest cas el &partman; pararà d'executar operacions. En aquest cas és molt més fàcil trobar que ha ocorregut (i tornar a afegir totes les operacions que no s'han pogut executar) si la llista d'operacions pendents no era excessivament llarga. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Ha fallat en redimensionar un sistema de fitxers ext2 o ext3 dient alguna cosa en l'informe quant a què <quote
+>no hi ha espai lliure en el dispositiu</quote
+>. Què ha passat? S'han corromput les meves dades?</para>
+			</question>
+			<answer>
+				<para
+>Aquest és un problema de l'ordre <command
+>e2resize</command
+> i del sistema de fitxers subjacent ext2/3/4. Si un sistema de fitxers és pròxim a estar ple, <command
+>e2resize</command
+> no pot fer-lo més petit encara que això fos possible pel nombre de sectors lliures. El &partman; malauradament no pot conèixer amb antelació si <command
+>e2resize</command
+> fallarà amb aquest error per un sistema de fitxers donat o no. Si succeeix això, no s'haurà fet res i les vostres dades no s'hauran vist afectades negativament. </para>
+				<para
+>De moment no hi ha cap solució real a aquest problema. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Per què no puc formatar el meu disc flexible amb el &partman;? Per què no hi ha implementació per escriure CD o llegir DVD?</para>
+			</question>
+			<answer>
+				<para
+>El &partman; no ha estat dissenyat per fer cap d'aquestes coses: és una aplicació que s'ocupa de les particions i dels sistemes de fitxers d'aquestes particions. Els discos flexibles, els CD o els DVD no necessiten ni usen particions. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Per què no puc modificar particions en un dispositiu amb una taula de particions amiga o bsd?</para>
+			</question>
+			<answer>
+				<para
+>Actualment el &partman; només permet l'accés de només lectura a qualsevol altre tipus de taula de particions que no sigui MS-DOS. Això és per motius de seguretat: la implementació per a aquests tipus de taules de particions no existeix en el &partman;i el que hi ha (o simplement el que funciona per casualitat) no s'ha provat prou per usar-lo amb confiança. </para>
+				<para
+>Per descomptat podeu crear una nova taula de particions MS-DOS en el dispositiu en qüestió, però probablement no és el que voleu. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>En iniciar, el &partman; es queda penjat uns quants minuts mentre aparentment intenta explorar la unitat de disc flexible del meu ordinador.</para>
+			</question>
+			<answer>
+				<para
+>Això sembla passar si teniu una unitat de disc flexible configurada en l'arranjament del BIOS del vostre ordinador, però no en teniu cap de connectada. Si us plau, comproveu l'arranjament del vostre BIOS i deshabiteu qualsevol unitat de disc flexible configurada per veure si això soluciona el problema. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Durant l'inici, el &partman; imprimeix algun missatge sobre els dispositius que prova, fins i tot es pot bloquejar o almenys prendre un llarg temps.</para>
+			</question>
+			<answer>
+				<para
+>Libparted, una biblioteca de dorsal usada per &partman;, té problemes amb els sistemes en els quals s'utilitza «Linux Device Mapper» d'una manera que no entén. Per desgràcia, respon a alguns d'aquests casos amb errors de segmentació, &ead;, es bloqueja. Pel que &partman; tracta d'evitar aquestes situacions mitjançant l'ús d'una manera alternativa d'analitzar els discs de l'ordinador. Si no pot fer-ho, però, i per tant confiarà en libparted, imprimirà un missatge com l'esmentat. Si es tracta de l'escaneig dels discs, podeu ignorar amb seguretat el missatge. </para>
+			</answer>
+		</qandaentry>
+<!--
+		<qandaentry>
+			<question>
+				<para
+></para>
+			</question>
+			 
+		</qandaentry>
+-->
+	</qandaset>
+</chapter>
+

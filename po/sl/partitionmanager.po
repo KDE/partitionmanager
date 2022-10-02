@@ -1,0 +1,6015 @@
+# Slovenian translation of partition-manager
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Andrej Mernik <andrejm@ubuntu.si>, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-30 00:48+0000\n"
+"PO-Revision-Date: 2022-01-12 08:14+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrej Mernik,Andrej Žnidaršič,Matjaž Jeran"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrejm@ubuntu.si,andrej.znidarsic@gmail.com,matjaz.jeran@amis.net"
+
+#: config/configureoptionsdialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:tab general application settings"
+msgid "General"
+msgstr "Splošno"
+
+#: config/configureoptionsdialog.cpp:42 config/configureoptionsdialog.cpp:87
+#, kde-format
+msgid "General Settings"
+msgstr "Splošne nastavitve"
+
+#: config/configureoptionsdialog.cpp:47
+#, kde-kuit-format
+msgctxt "@title:tab"
+msgid "File System Colors"
+msgstr "Barve datotečnega sistema"
+
+#: config/configureoptionsdialog.cpp:47
+#, kde-format
+msgid "File System Color Settings"
+msgstr "Nastavitve barv datotečnega sistema"
+
+#: config/configureoptionsdialog.cpp:49
+#, kde-kuit-format
+msgctxt "@title:tab advanced application settings"
+msgid "Advanced"
+msgstr "Napredno"
+
+#: config/configureoptionsdialog.cpp:49
+#, kde-format
+msgid "Advanced Settings"
+msgstr "Napredne nastavitve"
+
+#: config/configureoptionsdialog.cpp:137
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to change the backend?</para><para><warning>This "
+"will also rescan devices and thus clear the list of pending operations.</"
+"warning></para>"
+msgstr ""
+"<para>Ali resnično želite spremeniti zaledje?</para><para><warning>To bo "
+"znova pregledalo naprave in tako počistilo seznam čakajočih opravil.</"
+"warning></para>"
+
+#: config/configureoptionsdialog.cpp:139
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Change Backend?"
+msgstr "Ali resnično spremenim zaledje?"
+
+#: config/configureoptionsdialog.cpp:140
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Change the Backend"
+msgstr "Spremeni zaledje"
+
+#: config/configureoptionsdialog.cpp:141
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Change the Backend"
+msgstr "Ne spremeni zaledja"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepageadvanced.ui:29
+#, kde-format
+msgid "Backend"
+msgstr "Zaledje"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: config/configurepageadvanced.ui:35
+#, kde-format
+msgid "Active backend:"
+msgstr "Dejavno zaledje:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
+#: config/configurepageadvanced.ui:57
+#, kde-format
+msgid "Units"
+msgstr "Enote"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepageadvanced.ui:63
+#, kde-format
+msgid "Preferred unit:"
+msgstr "Prednostna enota:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:74
+#, kde-format
+msgid "Byte"
+msgstr "Bajt"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:79
+#, kde-format
+msgid "KiB"
+msgstr "KiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:84
+#, kde-format
+msgid "MiB"
+msgstr "MiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:89
+#, kde-format
+msgid "GiB"
+msgstr "GiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:94
+#, kde-format
+msgid "TiB"
+msgstr "TiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:99
+#, kde-format
+msgid "PiB"
+msgstr "PiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:104
+#, kde-format
+msgid "EiB"
+msgstr "EiB"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: config/configurepagefilesystemcolors.ui:30
+#: config/configurepagegeneral.ui:144
+#, kde-format
+msgid "File Systems"
+msgstr "Datotečni sistemi"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_7)
+#: config/configurepagefilesystemcolors.ui:39
+#, kde-format
+msgid "ReiserFS:"
+msgstr "ReiserFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_15)
+#: config/configurepagefilesystemcolors.ui:68
+#, kde-format
+msgid "UFS:"
+msgstr "UFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_31)
+#: config/configurepagefilesystemcolors.ui:81
+#, kde-format
+msgid "ISO 9660:"
+msgstr "ISO 9660:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_24)
+#: config/configurepagefilesystemcolors.ui:100
+#, kde-format
+msgid "OCFS2:"
+msgstr "OCFS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_22)
+#: config/configurepagefilesystemcolors.ui:116
+#, kde-format
+msgid "XFS:"
+msgstr "XFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_27)
+#: config/configurepagefilesystemcolors.ui:135
+#, kde-format
+msgid "NILFS2:"
+msgstr "NILFS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_6)
+#: config/configurepagefilesystemcolors.ui:184
+#, kde-format
+msgid "FAT16:"
+msgstr "FAT16:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_13)
+#: config/configurepagefilesystemcolors.ui:197
+#, kde-format
+msgid "extended:"
+msgstr "razširjeno:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_33)
+#: config/configurepagefilesystemcolors.ui:210
+#, kde-format
+msgid "LUKS2:"
+msgstr "LUKS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_17)
+#: config/configurepagefilesystemcolors.ui:226
+#, kde-format
+msgid "unformatted:"
+msgstr "neformatirano:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_30)
+#: config/configurepagefilesystemcolors.ui:245
+#, kde-format
+msgid "UDF:"
+msgstr "UDF:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_25)
+#: config/configurepagefilesystemcolors.ui:258
+#, kde-format
+msgid "ZFS:"
+msgstr "ZFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_3)
+#: config/configurepagefilesystemcolors.ui:306
+#, kde-format
+msgid "ext4:"
+msgstr "ext4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_10)
+#: config/configurepagefilesystemcolors.ui:322
+#, kde-format
+msgid "HPFS:"
+msgstr "HPFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_11)
+#: config/configurepagefilesystemcolors.ui:380
+#, kde-format
+msgid "JFS:"
+msgstr "JFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_2)
+#: config/configurepagefilesystemcolors.ui:393
+#, kde-format
+msgid "ext3:"
+msgstr "ext3:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_8)
+#: config/configurepagefilesystemcolors.ui:419
+#, kde-format
+msgid "Reiser4:"
+msgstr "Reiser4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_21)
+#: config/configurepagefilesystemcolors.ui:451
+#, kde-format
+msgid "Btrfs:"
+msgstr "Btrfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: config/configurepagefilesystemcolors.ui:493
+#, kde-format
+msgid "ext2:"
+msgstr "ext2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_29)
+#: config/configurepagefilesystemcolors.ui:512
+#, kde-format
+msgid "F2FS:"
+msgstr "F2FS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_28)
+#: config/configurepagefilesystemcolors.ui:531
+#, kde-format
+msgid "LVM2 PV:"
+msgstr "LVM2 PV:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_26)
+#: config/configurepagefilesystemcolors.ui:557
+#, kde-format
+msgid "exFAT:"
+msgstr "exFAT:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_9)
+#: config/configurepagefilesystemcolors.ui:570
+#, kde-format
+msgid "NTFS:"
+msgstr "NTFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_20)
+#: config/configurepagefilesystemcolors.ui:596
+#, kde-format
+msgid "LUKS:"
+msgstr "LUKS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_4)
+#: config/configurepagefilesystemcolors.ui:625
+#, kde-format
+msgid "Linux Swap:"
+msgstr "Linux Swap:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_32)
+#: config/configurepagefilesystemcolors.ui:676
+#, kde-format
+msgid "FAT12:"
+msgstr "FAT12:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_12)
+#: config/configurepagefilesystemcolors.ui:689
+#, kde-format
+msgid "HFS:"
+msgstr "HFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_35)
+#: config/configurepagefilesystemcolors.ui:721
+#, kde-format
+msgid "APFS:"
+msgstr "APFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_5)
+#: config/configurepagefilesystemcolors.ui:734
+#, kde-format
+msgid "FAT32:"
+msgstr "FAT32:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_18)
+#: config/configurepagefilesystemcolors.ui:766
+#, kde-format
+msgid "Linux RAID:"
+msgstr "Linux RAID:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_34)
+#: config/configurepagefilesystemcolors.ui:779
+#, kde-format
+msgid "BitLocker:"
+msgstr "BitLocker:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_14)
+#: config/configurepagefilesystemcolors.ui:808
+#, kde-format
+msgid "HFS+:"
+msgstr "HFS+:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_16)
+#: config/configurepagefilesystemcolors.ui:834
+#, kde-format
+msgid "unknown:"
+msgstr "neznano:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagefilesystemcolors.ui:847
+#, kde-format
+msgid "          Minix:"
+msgstr "          Minix:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: config/configurepagegeneral.ui:28
+#, kde-format
+msgid "Partition Alignment"
+msgstr "Poravnava razdelka"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
+#: config/configurepagegeneral.ui:34
+#, kde-format
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Uporabi poravnavo temelječo na cilindrih (združljivo z Windows XP)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagegeneral.ui:47
+#, kde-format
+msgid "Sector alignment:"
+msgstr "Poravnava sektorja:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
+#: config/configurepagegeneral.ui:60
+#, kde-format
+msgid " sectors"
+msgstr " sektorjev"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
+#: config/configurepagegeneral.ui:76
+#, kde-format
+msgid "Align partitions per default"
+msgstr "Razdelke poravnaj privzeto"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: config/configurepagegeneral.ui:95
+#, kde-format
+msgid "Logging"
+msgstr "Beleženje"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: config/configurepagegeneral.ui:101
+#, kde-format
+msgid "Hide messages below:"
+msgstr "Skrij spodnja sporočila:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:112
+#, kde-format
+msgid "Debug"
+msgstr "Razhrošči"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:117
+#, kde-format
+msgid "Information"
+msgstr "Podrobnosti"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:122
+#, kde-format
+msgid "Warning"
+msgstr "Opozorilo"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:127
+#, kde-format
+msgid "Error"
+msgstr "Napaka"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: config/configurepagegeneral.ui:150
+#, kde-format
+msgid "Default file system:"
+msgstr "Privzet datotečni sistem:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepagegeneral.ui:172
+#, kde-format
+msgid "Shredding"
+msgstr "Popolno prepisovanje"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepagegeneral.ui:178
+#, kde-format
+msgid "Overwrite with:"
+msgstr "Prepiši z:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton)
+#: config/configurepagegeneral.ui:185
+#, kde-format
+msgid "Random data"
+msgstr "Naključni podatki"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
+#: config/configurepagegeneral.ui:195
+#, kde-format
+msgid "Zeros"
+msgstr "Ničle"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
+#: gui/applyprogressdetailswidgetbase.ui:42
+#, kde-format
+msgid "Save"
+msgstr "Shrani"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonBrowser)
+#: gui/applyprogressdetailswidgetbase.ui:49
+#, kde-format
+msgid "Open in External Browser"
+msgstr "Odpri v zunanjem brskalniku"
+
+#: gui/applyprogressdialog.cpp:83 gui/applyprogressdialog.cpp:172
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "&Details"
+msgstr "Po&drobnosti"
+
+#: gui/applyprogressdialog.cpp:125
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Setting up..."
+msgstr "Nastavljanje ..."
+
+#: gui/applyprogressdialog.cpp:192
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to cancel?"
+msgstr "Ali res želite preklicati?"
+
+#: gui/applyprogressdialog.cpp:192
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cancel Running Operations"
+msgstr "Prekliči opravila v teku"
+
+#: gui/applyprogressdialog.cpp:192
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Yes, Cancel Operations"
+msgstr "Da, prekliči opravila"
+
+#: gui/applyprogressdialog.cpp:197
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Waiting for operation to finish..."
+msgstr "Čakanje, da se opravilo konča ..."
+
+#: gui/applyprogressdialog.cpp:218
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "All operations successfully finished."
+msgstr "Vsa opravila so bila uspešno končana."
+
+#: gui/applyprogressdialog.cpp:223
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Operations cancelled."
+msgstr "Opravila preklicana."
+
+#: gui/applyprogressdialog.cpp:228
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "There were errors while applying operations. Aborted."
+msgstr "Med uveljavljanjem opravil je prišlo do napak. Prekinjeno."
+
+#: gui/applyprogressdialog.cpp:342
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "[%1/%2] - %3: %4"
+msgstr "[%1/%2] - %3: %4"
+
+#: gui/applyprogressdialog.cpp:376
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Total Time: %1"
+msgstr "Skupni čas: %1"
+
+#: gui/applyprogressdialog.cpp:424 gui/mainwindow.cpp:1043
+#: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Could not create temporary file when trying to save to <filename>%1</"
+"filename>."
+msgstr ""
+"Med shranjevanjem na <filename>%1</filename> ni bilo mogoče ustvariti "
+"začasne datoteke."
+
+#: gui/applyprogressdialog.cpp:424
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Save Report."
+msgstr "Ni bilo mogoče shraniti poročila."
+
+#: gui/applyprogressdialog.cpp:448
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not create temporary file <filename>%1</filename> for writing."
+msgstr ""
+"Ni bilo mogoče ustvariti začasne datoteke <filename>%1</filename> za "
+"zapisovanje."
+
+#: gui/applyprogressdialog.cpp:448
+#, kde-format
+msgctxt "@title:window"
+msgid "Could Not Launch Browser."
+msgstr "Ni bilo mogoče zagnati brskalnika."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:41
+#, kde-format
+msgid "Operations and Jobs"
+msgstr "Opravila in posli"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:46
+#, kde-format
+msgid "Time Elapsed"
+msgstr "Pretečen čas"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
+#: gui/applyprogressdialogwidgetbase.ui:72
+#, kde-format
+msgid "Total Time: 00:00:00"
+msgstr "Skupni čas: 00:00:00"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
+#: gui/applyprogressdialogwidgetbase.ui:89
+#, no-c-format, kde-format
+msgid "Operation: %p%"
+msgstr "Opravilo: %p %"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
+#: gui/applyprogressdialogwidgetbase.ui:99
+#, kde-format
+msgid "Status"
+msgstr "Stanje"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressTotal)
+#: gui/applyprogressdialogwidgetbase.ui:115
+#, no-c-format, kde-format
+msgid "Total: %p%"
+msgstr "Skupno: %p %"
+
+#: gui/createpartitiontabledialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create a New Partition Table on <filename>%1</filename>"
+msgstr "Ustvari novo razpredelnico razdelkov na <filename>%1</filename>"
+
+#: gui/createpartitiontabledialog.cpp:34
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Create &New Partition Table"
+msgstr "Ustvari &novo razpredelnico razdelkov"
+
+#: gui/createpartitiontabledialog.cpp:59
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to create an MS-Dos partition table on <filename>"
+"%1</filename>?</para><para>This device has more than 2^32 sectors. That is "
+"the most the MS-Dos partition table type supports, so you will not be able "
+"to use the whole device.</para>"
+msgstr ""
+"<para>Ali resnično želite ustvariti razpredelnico razdelkov MS-DOS na "
+"<filename>%1</filename>?</para><para>Ta naprava ima več kot 2^32 sektorjev. "
+"To je največ kar razpredelnica razdelkov MS-DOS podpira, tako da ne boste "
+"mogli uporabiti celotne naprave.</para>"
+
+#: gui/createpartitiontabledialog.cpp:61
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Create MS-Dos Partition Table Type?"
+msgstr "Ali resnično želite ustvariti razpredelnico razdelkov MS-DOS?"
+
+#: gui/createpartitiontabledialog.cpp:62
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Create MS-Dos Type"
+msgstr "Ustvari vrsto MS-DOS"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/createpartitiontablewidgetbase.ui:24
+#, kde-format
+msgid "Choose the type of partition table you want to create:"
+msgstr "Izberite vrsto razpredelnice razdelkov, ki bi jo radi ustvarili:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
+#: gui/createpartitiontablewidgetbase.ui:33
+#, kde-format
+msgid "GPT"
+msgstr "GPT"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
+#: gui/createpartitiontablewidgetbase.ui:43
+#, kde-format
+msgid "MS-Dos"
+msgstr "MS-DOS"
+
+#. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
+#: gui/createpartitiontablewidgetbase.ui:70
+#, kde-format
+msgid "(icon)"
+msgstr "(ikona)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: gui/createpartitiontablewidgetbase.ui:83
+#, kde-format
+msgid "<b>Warning:</b> This will destroy all data on the device!"
+msgstr "<b>Pozor:</b> to bo uničilo vse podatke na napravi!"
+
+#: gui/createvolumegroupdialog.cpp:38
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create new Volume Group"
+msgstr "Ustvari novo skupino nosilcev"
+
+#: gui/devicepropsdialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Device Properties: <filename>%1</filename>"
+msgstr "Lastnosti naprave: <filename>%1</filename>"
+
+#: gui/devicepropsdialog.cpp:76 gui/infopane.cpp:168
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "%1 (read only)"
+msgstr "%1 (samo za branje)"
+
+#: gui/devicepropsdialog.cpp:107 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
+#, kde-kuit-format
+msgctxt "@label SMART disk status"
+msgid "good"
+msgstr "dober"
+
+#: gui/devicepropsdialog.cpp:112 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
+#, kde-kuit-format
+msgctxt "@label SMART disk status"
+msgid "BAD"
+msgstr "SLAB"
+
+#: gui/devicepropsdialog.cpp:117 gui/smartdialog.cpp:129
+#, kde-kuit-format
+msgctxt "@label"
+msgid "(unknown)"
+msgstr "(neznano)"
+
+#: gui/devicepropsdialog.cpp:123
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "LVM Volume Group"
+msgstr "Skupina nosilcev LVM"
+
+#: gui/devicepropsdialog.cpp:125
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Software RAID Device"
+msgstr "Software RAID naprava"
+
+#: gui/devicepropsdialog.cpp:127
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Volume Manager Device"
+msgstr "Naprava za upravljanje z nosilci"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
+#: gui/devicepropswidgetbase.ui:63
+#, kde-format
+msgid "Partition table:"
+msgstr "Razpredelnica razdelkov:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
+#: gui/devicepropswidgetbase.ui:85
+#, kde-format
+msgid "&Cylinder alignment"
+msgstr "Poravnava na &cilindre"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
+#: gui/devicepropswidgetbase.ui:92
+#, kde-format
+msgid "Sector based align&ment"
+msgstr "Poravnava po sektorjih"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/devicepropswidgetbase.ui:121
+#, kde-format
+msgid "Capacity:"
+msgstr "Velikost:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/devicepropswidgetbase.ui:141
+#, kde-format
+msgid "Total sectors:"
+msgstr "Skupno sektorjev:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
+#: gui/devicepropswidgetbase.ui:168
+#, kde-format
+msgid "Logical sector size:"
+msgstr "Logična velikost sektorja:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
+#: gui/devicepropswidgetbase.ui:188
+#, kde-format
+msgid "Physical sector size:"
+msgstr "Fizična velikost sektorja:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
+#: gui/devicepropswidgetbase.ui:222
+#, kde-format
+msgid "Primaries/Max:"
+msgstr "Primarne/največ:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
+#: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
+#: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
+#, kde-format
+msgid "SMART status:"
+msgstr "Stanje SMART:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
+#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:81
+#, kde-format
+msgid "More..."
+msgstr "Več ..."
+
+#: gui/editmountoptionsdialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Edit additional mount options"
+msgstr "Uredi dodatne možnosti priklopa"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
+#: gui/editmountoptionsdialogwidgetbase.ui:19
+#, kde-format
+msgid "Edit Mount Options"
+msgstr "Uredi možnosti priklopa"
+
+#. i18n: ectx: property (text), widget (QLabel, m_Label)
+#: gui/editmountoptionsdialogwidgetbase.ui:25
+#, kde-format
+msgid "Edit the mount options for this file system:"
+msgstr "Uredi možnosti priklopa za ta datotečni sistem:"
+
+#. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, m_EditOptions)
+#: gui/editmountoptionsdialogwidgetbase.ui:32
+#, kde-format
+msgid "Option1,Option2"
+msgstr "Možnost1,možnost2"
+
+#: gui/editmountpointdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Edit mount point for <filename>%1</filename>"
+msgstr "Uredi priklopno točko za <filename>%1</filename>"
+
+#: gui/editmountpointdialog.cpp:58
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Are you sure you want to save the changes you made to the system table "
+"file <filename>/etc/fstab</filename>?</para><para><warning>This will "
+"overwrite the existing file on your hard drive now. This <emphasis "
+"strong='1'>can not be undone</emphasis>.</warning></para>"
+msgstr ""
+"<para>Ali ste prepričani, da želite shraniti spremembe, ki ste jih napravili "
+"v datoteki s sistemskimi razpredelnicami <filename>/etc/fstab</filename>?</"
+"para><para><warning>To bo sedaj prepisalo obstoječo datoteko na vašem trdem "
+"disku. Tega <emphasis strong='1'>ni mogoče razveljaviti</emphasis>.</"
+"warning></para>"
+
+#: gui/editmountpointdialog.cpp:60
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really save changes?"
+msgstr "Resnično shranim spremembe?"
+
+#: gui/editmountpointdialog.cpp:61
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Save changes"
+msgstr "Shrani spremembe"
+
+#: gui/editmountpointdialog.cpp:76
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
+msgstr ""
+"Ni bilo mogoče shraniti priklopnih točk v datoteko <filename>/etc/fstab</"
+"filename>."
+
+#: gui/editmountpointdialog.cpp:77
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error While Saving Mount Points"
+msgstr "Napaka med shranjevanjem priklopnih točk"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:23
+#, kde-format
+msgid "UU&ID"
+msgstr "UU&ID"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:33
+#, kde-format
+msgid "Users can mount and unmount"
+msgstr "Uporabniki lahko priklapljajo in odklapljajo"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:40
+#, kde-format
+msgid "Update access times relative to modification"
+msgstr "Posodobi dostopne čase relativno na spremembo"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:61
+#, kde-format
+msgid "Read-only"
+msgstr "Samo za branje"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:68
+#, kde-format
+msgid "Pass &Number:"
+msgstr "Številka prehoda:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:101
+#, kde-format
+msgid "De&vice Node"
+msgstr "Vozlišče naprave"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:111
+#, kde-format
+msgid "Options:"
+msgstr "Možnosti:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
+#: gui/editmountpointdialogwidgetbase.ui:137
+#, kde-format
+msgid "&Label"
+msgstr "Oznaka"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:144
+#, kde-format
+msgid "No binary execution"
+msgstr "Brez dvojiške izvedbe"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:167
+#, kde-format
+msgid "No automatic mount"
+msgstr "Brez samodejnega priklopa"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
+#: gui/editmountpointdialogwidgetbase.ui:180
+#, kde-format
+msgid "Remove"
+msgstr "Odstrani"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:193
+#, kde-format
+msgid "Select..."
+msgstr "Izberi ..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:200
+#, kde-format
+msgid "No update of directory access times"
+msgstr "Brez posodobitve časov dostopov do map"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
+#: gui/editmountpointdialogwidgetbase.ui:207
+#, kde-format
+msgid "Dump &Frequency:"
+msgstr "Izpiši pogostost:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:236
+#, kde-format
+msgid "Type:"
+msgstr "Vrsta:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:246
+#, kde-format
+msgid "Path:"
+msgstr "Pot:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:288
+#, kde-format
+msgid "No update of file access times"
+msgstr "Brez posodobitve časov dostopov do datotek"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
+#: gui/editmountpointdialogwidgetbase.ui:295
+#, kde-format
+msgid "Synchronous access"
+msgstr "Sinhron dostop"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/editmountpointdialogwidgetbase.ui:315
+#, kde-format
+msgid "Identify by:"
+msgstr "Določi po:"
+
+#: gui/filesystemsupportdialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "File System Support"
+msgstr "Podpora datotečnim sistemom"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/filesystemsupportdialogwidgetbase.ui:23
+#, kde-format
+msgid ""
+"This table shows which file systems are supported and which specific "
+"operations can be performed on them.\n"
+"Some file systems need external tools to be installed for them to be "
+"supported. But not all operations can be performed on all file systems, even "
+"if all required tools are installed. Please see the documentation for "
+"details. "
+msgstr ""
+"Ta razpredelnica pokaže kateri datotečni sistemi so podprti in katera "
+"določena opravila lahko izvedete na njih.\n"
+"Nekateri datotečni sistemi potrebujejo zunanja orodja, ki jih je potrebno "
+"namestiti, da postanejo podprti. Na vseh datotečnih sistemih ni mogoče "
+"izvesti vseh opravil, tudi če so nameščena vsa zahtevana orodja. Za "
+"podrobnosti si oglejte dokumentacijo. "
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:70
+#, kde-format
+msgid "File System"
+msgstr "Datotečni sistem"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:75
+#, kde-format
+msgid "Create"
+msgstr "Ustvari"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:80
+#, kde-format
+msgid "Grow"
+msgstr "Pusti rasti"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:85
+#, kde-format
+msgid "Shrink"
+msgstr "Skrči"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:90
+#, kde-format
+msgid "Move"
+msgstr "Premakni"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:95
+#, kde-format
+msgid "Copy"
+msgstr "Kopiraj"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:100
+#, kde-format
+msgid "Check"
+msgstr "Preveri"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:105
+#, kde-format
+msgid "Read Label"
+msgstr "Preberi oznako"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:110
+#, kde-format
+msgid "Write Label"
+msgstr "Zapiši oznako"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:115
+#, kde-format
+msgid "Read Usage"
+msgstr "Preberi uporabo"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:120
+#, kde-format
+msgid "Backup"
+msgstr "Varnostno kopiraj"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:125
+#, kde-format
+msgid "Restore"
+msgstr "Obnovi"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:130
+#, kde-format
+msgid "Support Tools"
+msgstr "Podporna orodja"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRescan)
+#: gui/filesystemsupportdialogwidgetbase.ui:140
+#, kde-format
+msgctxt "@action:button"
+msgid "Rescan Support"
+msgstr "Znova preglej podporo"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
+#: gui/infopane.cpp:47 gui/mainwindowbase.ui:47
+#, kde-format, kde-kuit-format
+msgctxt "@title:window"
+msgid "Information"
+msgstr "Podrobnosti"
+
+#: gui/infopane.cpp:106
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Partition Information"
+msgstr "Podrobnosti o razdelku"
+
+#: gui/infopane.cpp:113 gui/infopane.cpp:127 gui/infopane.cpp:139
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "File system:"
+msgstr "Datotečni sistem:"
+
+#: gui/infopane.cpp:114 gui/infopane.cpp:128 gui/infopane.cpp:140
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Capacity:"
+msgstr "Velikost:"
+
+#: gui/infopane.cpp:115
+#, kde-format
+msgctxt "@label partition"
+msgid "Cipher name:"
+msgstr "Ime šifrirnega algoritma:"
+
+#: gui/infopane.cpp:116
+#, kde-format
+msgctxt "@label partition"
+msgid "Cipher mode:"
+msgstr "Način šifrirnega algoritma:"
+
+#: gui/infopane.cpp:117
+#, kde-format
+msgctxt "@label partition"
+msgid "Hash:"
+msgstr "Razpršilo:"
+
+#: gui/infopane.cpp:118
+#, kde-format
+msgctxt "@label partition"
+msgid "Key size:"
+msgstr "Velikost ključa:"
+
+#: gui/infopane.cpp:119
+#, kde-format
+msgctxt "@label partition"
+msgid "Payload offset:"
+msgstr "Zamik tovora:"
+
+#: gui/infopane.cpp:120 gui/infopane.cpp:135 gui/infopane.cpp:143
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "First sector:"
+msgstr "Prvi sektor:"
+
+#: gui/infopane.cpp:121 gui/infopane.cpp:136 gui/infopane.cpp:144
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Last sector:"
+msgstr "Zadnji sektor:"
+
+#: gui/infopane.cpp:122 gui/infopane.cpp:137 gui/infopane.cpp:145
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Number of sectors:"
+msgstr "Število sektorjev:"
+
+#: gui/infopane.cpp:129 gui/infopane.cpp:141
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Available:"
+msgstr "Na voljo:"
+
+#: gui/infopane.cpp:130 gui/infopane.cpp:142
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Used:"
+msgstr "Uporabljeno:"
+
+#: gui/infopane.cpp:131
+#, kde-format
+msgctxt "@label partition"
+msgid "PE Size:"
+msgstr "Velikost PE:"
+
+#: gui/infopane.cpp:132
+#, kde-format
+msgctxt "@label partition"
+msgid "Total PE:"
+msgstr "Skupno PE:"
+
+#: gui/infopane.cpp:133
+#, kde-format
+msgctxt "@label partition"
+msgid "Free PE:"
+msgstr "Neporabljen PE:"
+
+#: gui/infopane.cpp:134
+#, kde-format
+msgctxt "@label partition"
+msgid "Allocated PE:"
+msgstr "Dodeljen PE:"
+
+#: gui/infopane.cpp:157
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Device Information"
+msgstr "Podatki o napravi"
+
+#: gui/infopane.cpp:161
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Path:"
+msgstr "Pot:"
+
+#: gui/infopane.cpp:176
+#, kde-format
+msgctxt "@label device"
+msgid "Type:"
+msgstr "Vrsta:"
+
+#: gui/infopane.cpp:177 gui/infopane.cpp:185 gui/infopane.cpp:193
+#, kde-format
+msgctxt "@label device"
+msgid "Capacity:"
+msgstr "Velikost:"
+
+#: gui/infopane.cpp:178
+#, kde-format
+msgctxt "@label device"
+msgid "Total sectors:"
+msgstr "Skupno sektorjev:"
+
+#: gui/infopane.cpp:179
+#, kde-format
+msgctxt "@label device"
+msgid "Logical sector size:"
+msgstr "Logična velikost sektorja:"
+
+#: gui/infopane.cpp:180
+#, kde-format
+msgctxt "@label device"
+msgid "Physical sector size:"
+msgstr "Fizična velikost sektorja:"
+
+#: gui/infopane.cpp:181
+#, kde-format
+msgctxt "@label device"
+msgid "Primaries/Max:"
+msgstr "Primarne/največ:"
+
+#: gui/infopane.cpp:184 gui/infopane.cpp:192
+#, kde-format
+msgctxt "@label device"
+msgid "Volume Type:"
+msgstr "Vrsta nosilca:"
+
+#: gui/infopane.cpp:186
+#, kde-format
+msgctxt "@label device"
+msgid "PE Size:"
+msgstr "Velikost PE:"
+
+#: gui/infopane.cpp:187
+#, kde-format
+msgctxt "@label device"
+msgid "Total PE:"
+msgstr "Skupno PE:"
+
+#: gui/infopane.cpp:188
+#, kde-format
+msgctxt "@label device"
+msgid "Allocated PE:"
+msgstr "Dodeljen PE:"
+
+#: gui/infopane.cpp:189
+#, kde-format
+msgctxt "@label device"
+msgid "Free PE:"
+msgstr "Neporabljen PE:"
+
+#: gui/infopane.cpp:194
+#, kde-format
+msgctxt "@label device"
+msgid "RAID Level:"
+msgstr "Nivo RAID:"
+
+#: gui/infopane.cpp:195
+#, kde-format
+msgctxt "@label device"
+msgid "Chunk Size:"
+msgstr "Velikost koščka:"
+
+#: gui/infopane.cpp:196
+#, kde-format
+msgctxt "@label device"
+msgid "Total Chunk:"
+msgstr "Skupno koščkov:"
+
+#: gui/infopane.cpp:197
+#, kde-format
+msgctxt "@label device"
+msgid "Array Size:"
+msgstr "Velikost polja:"
+
+#: gui/insertdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Insert a partition"
+msgstr "Vstavi razdelek"
+
+#: gui/listphysicalvolumes.cpp:39
+#, kde-kuit-format
+msgctxt "@item:inlistbox Device | Capacity"
+msgid "%1 | %2"
+msgstr "%1 | %2"
+
+#: gui/mainwindow.cpp:164
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Partition Manager requires privileges in order to work. Please refresh the "
+"devices and authenticate when prompted."
+msgstr ""
+"Partition Manager zahteva pravice, da bi lahko deloval. Prosim, osvežite "
+"naprave in prijave, ko vas računalnik pozove."
+
+#: gui/mainwindow.cpp:231
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to quit the application?</para><para>There is still "
+"an operation pending.</para>"
+msgid_plural ""
+"<para>Do you really want to quit the application?</para><para>There are "
+"still %1 operations pending.</para>"
+msgstr[0] ""
+"<para>Ali resnično želite končati program?</para><para>Še vedno čaka %1 "
+"opravilo.</para>"
+msgstr[1] ""
+"<para>Ali resnično želite končati program?</para><para>Še vedno čakata %1 "
+"opravili.</para>"
+msgstr[2] ""
+"<para>Ali resnično želite končati program?</para><para>Še vedno čakajo %1 "
+"opravila.</para>"
+msgstr[3] ""
+"<para>Ali resnično želite končati program?</para><para>Še vedno čaka %1 "
+"opravil.</para>"
+
+#: gui/mainwindow.cpp:233
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Discard Pending Operations and Quit?"
+msgstr "Zavržem čakajoča opravila in končam?"
+
+#: gui/mainwindow.cpp:234
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Quit <application>%1</application>"
+msgstr "Končaj <application>%1</application>"
+
+#: gui/mainwindow.cpp:276
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Undo"
+msgstr "Razveljavi"
+
+#: gui/mainwindow.cpp:277
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Undo the last operation"
+msgstr "Razveljavi zadnje opravilo"
+
+#: gui/mainwindow.cpp:278
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Remove the last operation from the list."
+msgstr "Odstrani zadnje opravilo iz seznama."
+
+#: gui/mainwindow.cpp:285
+#, kde-kuit-format
+msgctxt "@action:inmenu clear the list of operations"
+msgid "Clear"
+msgstr "Počisti"
+
+#: gui/mainwindow.cpp:286
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Clear all operations"
+msgstr "Počisti vsa opravila"
+
+#: gui/mainwindow.cpp:287
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Empty the list of pending operations."
+msgstr "Izprazni seznam čakajočih opravil."
+
+#: gui/mainwindow.cpp:293
+#, kde-kuit-format
+msgctxt "@action:inmenu apply all operations"
+msgid "Apply"
+msgstr "Uveljavi"
+
+#: gui/mainwindow.cpp:294
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Apply all operations"
+msgstr "Uveljavi vsa opravila"
+
+#: gui/mainwindow.cpp:295
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Apply the pending operations in the list."
+msgstr "Uveljavi čakajoča opravila na seznamu."
+
+#: gui/mainwindow.cpp:302
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "New Partition Table"
+msgstr "Nova razpredelnica razdelkov"
+
+#: gui/mainwindow.cpp:303
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Create a new partition table"
+msgstr "Ustvari novo razpredelnico razdelkov"
+
+#: gui/mainwindow.cpp:304
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Create a new and empty partition table on a device."
+msgstr "Ustvari novo in prazno razpredelnico razdelkov na napravi."
+
+#: gui/mainwindow.cpp:311
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Export Partition Table"
+msgstr "Izvozi razpredelnico razdelkov"
+
+#: gui/mainwindow.cpp:312
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Export a partition table"
+msgstr "Izvozi razpredelnico razdelkov"
+
+#: gui/mainwindow.cpp:313
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Export the device's partition table to a text file."
+msgstr "Izvozi razpredelnico razdelkov naprave v besedilno datoteko."
+
+#: gui/mainwindow.cpp:319
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Import Partition Table"
+msgstr "Uvozi razpredelnico razdelkov"
+
+#: gui/mainwindow.cpp:320
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Import a partition table"
+msgstr "Uvozi razpredelnico razdelkov"
+
+#: gui/mainwindow.cpp:321
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Import a partition table from a text file."
+msgstr "Uvozi razpredelnico razdelkov iz besedilne datoteke."
+
+#: gui/mainwindow.cpp:328
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove Volume Group"
+msgstr "Odstrani skupino nosilcev"
+
+#: gui/mainwindow.cpp:329
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove selected Volume Group"
+msgstr "Odstrani izbrano skupino nosilcev"
+
+#: gui/mainwindow.cpp:330
+#, kde-format
+msgctxt "@info:status"
+msgid "Remove selected Volume Group."
+msgstr "Odstrani izbrano skupino nosilcev."
+
+#: gui/mainwindow.cpp:338
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Resize Volume Group"
+msgstr "Spremeni velikost skupine nosilcev"
+
+#: gui/mainwindow.cpp:339
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Resize selected Volume Group"
+msgstr "Spremeni velikost izbrane skupine nosilcev"
+
+#: gui/mainwindow.cpp:340
+#, kde-format
+msgctxt "@info:status"
+msgid "Extend or reduce selected Volume Group."
+msgstr "Razširi ali skrči izbrano skupino nosilcev."
+
+#: gui/mainwindow.cpp:348
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Deactivate Volume Group"
+msgstr "Onemogoči skupino nosilcev"
+
+#: gui/mainwindow.cpp:349
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Deactivate selected Volume Group"
+msgstr "Onemogoči izbrano skupino nosilcev"
+
+#: gui/mainwindow.cpp:350
+#, kde-format
+msgctxt "@info:status"
+msgid "Deactivate selected Volume Group before unplugging removable devices."
+msgstr "Onemogoči izbrano skupino nosilcev pred odklopom odstranljivih naprav."
+
+#: gui/mainwindow.cpp:356
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "SMART Status"
+msgstr "Stanje SMART"
+
+#: gui/mainwindow.cpp:357
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show SMART status"
+msgstr "Pokaži stanje SMART"
+
+#: gui/mainwindow.cpp:358
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show the device's SMART status if supported"
+msgstr "Pokaži stanje SMART, če je podprto"
+
+#: gui/mainwindow.cpp:363 gui/mainwindow.cpp:455
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Lastnosti"
+
+#: gui/mainwindow.cpp:364
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show device properties dialog"
+msgstr "Pokaži pogovorno okno z lastnostmi naprave"
+
+#: gui/mainwindow.cpp:365
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "View and modify device properties"
+msgstr "Oglejte si in spremenite lastnosti naprave"
+
+#: gui/mainwindow.cpp:372
+#, kde-kuit-format
+msgctxt "@action:inmenu create a new partition"
+msgid "New"
+msgstr "Nov"
+
+#: gui/mainwindow.cpp:373
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "New partition"
+msgstr "Nov razdelek"
+
+#: gui/mainwindow.cpp:374
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Create a new partition."
+msgstr "Ustvari nov razdelek."
+
+#: gui/mainwindow.cpp:381
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Resize/Move"
+msgstr "Spremeni velikost/premakni"
+
+#: gui/mainwindow.cpp:382
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Resize or move partition"
+msgstr "Spremeni velikost razdelka ali ga premakne"
+
+#: gui/mainwindow.cpp:383
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Shrink, grow or move an existing partition."
+msgstr "Skrči, pusti rasti ali premakne obstoječ razdelek."
+
+#: gui/mainwindow.cpp:390
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Izbriši"
+
+#: gui/mainwindow.cpp:391
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Delete partition"
+msgstr "Izbriši razdelek"
+
+#: gui/mainwindow.cpp:392
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Delete a partition."
+msgstr "Izbriše razdelek."
+
+#: gui/mainwindow.cpp:399
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Shred"
+msgstr "Popolno prepiši"
+
+#: gui/mainwindow.cpp:400
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Shred partition"
+msgstr "Popolno prepiši razdelek"
+
+#: gui/mainwindow.cpp:401
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Shred a partition so that its contents cannot be restored."
+msgstr ""
+"Popolno prepiši razdelek, da njegovih podatkov ne bo mogoče več obnoviti."
+
+#: gui/mainwindow.cpp:408
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Copy"
+msgstr "Kopiraj"
+
+#: gui/mainwindow.cpp:409
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Copy partition"
+msgstr "Kopiraj razdelek"
+
+#: gui/mainwindow.cpp:410
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Copy an existing partition."
+msgstr "Kopira obstoječi razdelek."
+
+#: gui/mainwindow.cpp:417
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Paste"
+msgstr "Prilepi"
+
+#: gui/mainwindow.cpp:418
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Paste partition"
+msgstr "Prilepi razdelek"
+
+#: gui/mainwindow.cpp:419
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Paste a copied partition."
+msgstr "Prilepi kopiran razdelek."
+
+#: gui/mainwindow.cpp:426
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Edit Mount Point"
+msgstr "Uredi priklopno točko"
+
+#: gui/mainwindow.cpp:427
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Edit mount point"
+msgstr "Uredi priklopno točko"
+
+#: gui/mainwindow.cpp:428
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Edit a partition's mount point and options."
+msgstr "Uredi priklopno točko razdelka in njegove možnosti."
+
+#: gui/mainwindow.cpp:433
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Mount"
+msgstr "Priklopi"
+
+#: gui/mainwindow.cpp:434
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Mount or unmount partition"
+msgstr "Priklopi ali odklopi razdelek"
+
+#: gui/mainwindow.cpp:435
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Mount or unmount a partition."
+msgstr "Priklopi ali odklopi razdelek."
+
+#: gui/mainwindow.cpp:440
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Unlock"
+msgstr "Odkleni"
+
+#: gui/mainwindow.cpp:441
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Unlock or lock encrypted partition"
+msgstr "Odkleni ali zakleni šifriran razdelek"
+
+#: gui/mainwindow.cpp:442
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Unlock or lock encrypted partition."
+msgstr "Odkleni ali zakleni šifriran razdelek."
+
+#: gui/mainwindow.cpp:447
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Check"
+msgstr "Preveri"
+
+#: gui/mainwindow.cpp:448
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Check partition"
+msgstr "Preveri razdelek"
+
+#: gui/mainwindow.cpp:449
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Check a filesystem on a partition for errors."
+msgstr "Preveri datotečni sistem na razdelku za napakami."
+
+#: gui/mainwindow.cpp:456
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show partition properties dialog"
+msgstr "Pokaži pogovorno okno z lastnostmi razdelka"
+
+#: gui/mainwindow.cpp:457
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "View and modify partition properties (label, partition flags, etc.)"
+msgstr "Oglejte si in spremenite lastnosti razdelka (oznaka, zastavice, itd.)"
+
+#: gui/mainwindow.cpp:463
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Backup"
+msgstr "Varnostno kopiraj"
+
+#: gui/mainwindow.cpp:464
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Backup partition"
+msgstr "Varnostno kopiraj razdelek"
+
+#: gui/mainwindow.cpp:465
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Backup a partition to an image file."
+msgstr "Varnostno kopiraj razdelek v datoteko z odtisom."
+
+#: gui/mainwindow.cpp:471
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Restore"
+msgstr "Obnovi"
+
+#: gui/mainwindow.cpp:472
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Restore partition"
+msgstr "Obnovi razdelek"
+
+#: gui/mainwindow.cpp:473
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Restore a partition from an image file."
+msgstr "Obnovi razdelek iz datoteke z odtisom."
+
+#: gui/mainwindow.cpp:480
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New Volume Group"
+msgstr "Nova skupina nosilcev"
+
+#: gui/mainwindow.cpp:481
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create a new LVM Volume Group"
+msgstr "Ustvari novo skupino nosilcev LVM"
+
+#: gui/mainwindow.cpp:482
+#, kde-format
+msgctxt "@info:status"
+msgid "Create a new LVM Volume Group as a device."
+msgstr "Ustvari novo skupino nosilcev LVM kot napravo."
+
+#: gui/mainwindow.cpp:488
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "File System Support"
+msgstr "Podpora datotečnim sistemom"
+
+#: gui/mainwindow.cpp:489
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "View file system support information"
+msgstr "Oglejte si podrobnosti o podpori datotečnim sistemom"
+
+#: gui/mainwindow.cpp:490
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show information about supported file systems."
+msgstr "Pokaže podrobnosti o vseh podprtih datotečnih sistemih."
+
+#: gui/mainwindow.cpp:494
+#, kde-kuit-format
+msgctxt "@action:inmenu refresh list of devices"
+msgid "Refresh Devices"
+msgstr "Osveži naprave"
+
+#: gui/mainwindow.cpp:495
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Refresh all devices"
+msgstr "Osveži vse naprave"
+
+#: gui/mainwindow.cpp:496
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Renew the devices list."
+msgstr "Obnovi seznam naprav."
+
+#: gui/mainwindow.cpp:512
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Clear Log"
+msgstr "Počisti dnevnik"
+
+#: gui/mainwindow.cpp:513
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Clear the log output"
+msgstr "Počisti izhod dnevnika"
+
+#: gui/mainwindow.cpp:514
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Clear the log output panel."
+msgstr "Počisti pult izhoda dnevnika."
+
+#: gui/mainwindow.cpp:519
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Save Log"
+msgstr "Shrani dnevnik"
+
+#: gui/mainwindow.cpp:520
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Save the log output"
+msgstr "Shrani izhod dnevnika"
+
+#: gui/mainwindow.cpp:521
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Save the log output to a file."
+msgstr "Shrani izhod dnevnika v datoteko."
+
+#: gui/mainwindow.cpp:527
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "About KPMcore Library"
+msgstr "O knjižnici KPMcore"
+
+#: gui/mainwindow.cpp:528
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show About KPMcore dialog"
+msgstr "Pokaži pogovorno okno s podatki o KPMcore"
+
+#: gui/mainwindow.cpp:529
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show About KPMcore dialog."
+msgstr "Pokaži pogovorno okno s podatki o KPMcore."
+
+#: gui/mainwindow.cpp:711
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "One pending operation"
+msgid_plural "%1 pending operations"
+msgstr[0] "%1 čakajoče opravilo"
+msgstr[1] "%1 čakajoči opravili"
+msgstr[2] "%1 čakajoča opravila"
+msgstr[3] "%1 čakajočih opravil"
+
+#: gui/mainwindow.cpp:806
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Using backend plugin: %1 (%2)"
+msgstr "Uporabljen je vstavek zaledja: %1 (%2)"
+
+#: gui/mainwindow.cpp:810
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Scanning devices..."
+msgstr "Preiskovanje za novimi napravami ..."
+
+#: gui/mainwindow.cpp:848
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Scan finished."
+msgstr "Preiskovanje je končano."
+
+#: gui/mainwindow.cpp:912
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to rescan the devices?</para><para><warning>This "
+"will also clear the list of pending operations.</warning></para>"
+msgstr ""
+"<para>Ali želite resnično znova pregledati naprave?</para><para><warning>To "
+"bo hkrati počistilo seznam čakajočih opravil.</warning></para>"
+
+#: gui/mainwindow.cpp:914
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Rescan the Devices?"
+msgstr "Ali želite znova pregledati naprave?"
+
+#: gui/mainwindow.cpp:915
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Rescan Devices"
+msgstr "Znova preglej naprave"
+
+#: gui/mainwindow.cpp:941
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to apply the pending operations listed below?</"
+"para><para><warning>This will permanently modify your disks.</warning></para>"
+msgstr ""
+"<para>Ali resnično želite uveljaviti spodnja čakajoča opravila?</"
+"para><para><warning>To bo trajno spremenilo vaše diske.</warning></para>"
+
+#: gui/mainwindow.cpp:943
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Apply Pending Operations?"
+msgstr "Ali želite uveljaviti čakajoča opravila?"
+
+#: gui/mainwindow.cpp:944
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Apply Pending Operations"
+msgstr "Uveljavi čakajoča opravila"
+
+#: gui/mainwindow.cpp:946
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Applying operations..."
+msgstr "Uveljavljanje opravil ..."
+
+#: gui/mainwindow.cpp:971
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Undoing operation: %1"
+msgstr "Razveljavljanje opravila: %1"
+
+#: gui/mainwindow.cpp:987
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to clear the list of pending operations?"
+msgstr "Ali resnično želite počistiti seznam čakajočih opravil?"
+
+#: gui/mainwindow.cpp:988
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Clear Pending Operations?"
+msgstr "Počistim čakajoča opravila?"
+
+#: gui/mainwindow.cpp:989
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Clear Pending Operations"
+msgstr "Počisti čakajoča opravila"
+
+#: gui/mainwindow.cpp:991
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Clearing the list of pending operations."
+msgstr "Čiščenje seznama čakajočih opravil."
+
+#: gui/mainwindow.cpp:1033
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import"
+msgstr ""
+"Ni bilo mogoče odpreti vhodne datoteke <filename>%1</filename> za uvažanje"
+
+#: gui/mainwindow.cpp:1033 gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1051
+#: gui/mainwindow.cpp:1057
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Importing Partition Table"
+msgstr "Napaka med uvažanjem razpredelnice razdelkov"
+
+#: gui/mainwindow.cpp:1051
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import: %2"
+msgstr ""
+"Ni bilo mogoče odpreti vhodne datoteke <filename>%1</filename> za uvažanje: "
+"%2"
+
+#: gui/mainwindow.cpp:1057
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Could not open temporary file <filename>%1</filename> while trying to import "
+"from <filename>%2</filename>."
+msgstr ""
+"Med poskusom uvažanja iz <filename>%2</filename> ni bilo mogoče odpreti "
+"začasne datoteke <filename>%1</filename>."
+
+#: gui/mainwindow.cpp:1087
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The import file <filename>%1</filename> does not contain a valid partition "
+"table."
+msgstr ""
+"Uvožena datoteka <filename>%1</filename> ne vsebuje veljavne razpredelnice "
+"razdelkov."
+
+#: gui/mainwindow.cpp:1087 gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1104
+#: gui/mainwindow.cpp:1109 gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1132
+#: gui/mainwindow.cpp:1137 gui/mainwindow.cpp:1156 gui/mainwindow.cpp:1161
+#: gui/mainwindow.cpp:1166 gui/mainwindow.cpp:1173 gui/mainwindow.cpp:1457
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error While Importing Partition Table"
+msgstr "Napaka med uvažanjem razpredelnice razdelkov"
+
+#: gui/mainwindow.cpp:1097
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Found more than one partition table type in import file (line %1)."
+msgstr ""
+"V uvoženi datoteki je bilo najdena več kot ena vrsta razpredelnic razdelkov "
+"(vrstica %1)."
+
+#: gui/mainwindow.cpp:1104
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is unknown (line %2)."
+msgstr "Vrsta razpredelnice razdelkov \"%1\" je neznana (vrstica %2)."
+
+#: gui/mainwindow.cpp:1109
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is not supported for import (line %2)."
+msgstr "Vrsta razpredelnice razdelkov \"%1\" ni podprta za uvoz (vrstica %2)."
+
+#: gui/mainwindow.cpp:1119
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Found partition but no partition table type (line %1)."
+msgstr ""
+"Najden je bil razdelek, ampak brez vrste razpredelnice razdelkov (vrstica "
+"%1)."
+
+#: gui/mainwindow.cpp:1132
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Partition %1 would be outside the device's boundaries (line %2)."
+msgstr "Razdelek %1 se bi nahajal zunaj mej naprave (vrstica %2)."
+
+#: gui/mainwindow.cpp:1137
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition %1 has end before start sector (line %2)."
+msgstr "Razdelek %1 se konča pred začetnim sektorjem (vrstica %2)."
+
+#: gui/mainwindow.cpp:1156
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+msgstr "Neznana vloga razdelka \"%1\" za razdelek %2 (vrstica %3)."
+
+#: gui/mainwindow.cpp:1161
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid ""
+"No parent partition or partition table found for partition %1 (line %2)."
+msgstr ""
+"Ni nadrejenega razdelka ali ni bile najdene razpredelnice razdelkov za "
+"razdelek %1 (vrstica %2)."
+
+#: gui/mainwindow.cpp:1166
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The partition table type \"%1\" does not support extended partitions, but "
+"one was found (line %2)."
+msgstr ""
+"Vrsta razpredelnice razdelkov \"%1\" ne podpira razširjenih razdelkov, kljub "
+"temu pa je bil en najden (vrstica %2)."
+
+#: gui/mainwindow.cpp:1173
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Could not create file system \"%1\" for partition %2 (line %3)."
+msgstr ""
+"Ni bilo mogoče ustvariti datotečnega sistema \"%1\" za razdelek %2 (vrstica "
+"%3)."
+
+#: gui/mainwindow.cpp:1188
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Could not parse line %1 from import file. Ignoring it."
+msgstr ""
+"Ni bilo mogoče razčleniti vrstice %1 iz uvožene datoteke. Vrstica bo prezrta."
+
+#: gui/mainwindow.cpp:1208
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Exporting Partition Table"
+msgstr "Napaka med izvažanjem razpredelnice razdelkov"
+
+#: gui/mainwindow.cpp:1378 gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1420
+#, kde-kuit-format
+msgid "%1%2"
+msgstr "%1%2"
+
+#: gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1395
+#, kde-kuit-format
+msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
+msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
+
+#: gui/mainwindow.cpp:1432
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>No support tools were found for file systems currently present on hard "
+"disks in this computer:</para><table style='margin-top:12px'><tr><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Partition</"
+"td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>File "
+"System</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Support Tools</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>URL</td></tr>%1</table><para>As long as the support "
+"tools for these file systems are not installed you will not be able to "
+"modify them.</para><para>You should find packages with these support tools "
+"in your distribution's package manager.</para>"
+msgstr ""
+"<para>Za datotečne sisteme, ki so trenutno prisotni na trdih diskih v tem "
+"računalniku, ni bilo najdenih podpornih orodij:</para><table style='margin-"
+"top:12px'><tr><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Razdelek</td><td style='font-weight:bold;padding-right:12px;white-"
+"space:nowrap;'>Datotečni sistem</td><td style='font-weight:bold;padding-"
+"right:12px;white-space:nowrap;'>Podporna orodja</td><td style='font-weight:"
+"bold;padding-right:12px;white-space:nowrap;'>Naslov URL</td></tr>%1</"
+"table><para>Dokler ne namestite teh podpornih orodij, ne boste mogli "
+"spreminjati teh datotečnih sistemov.</para><para>Pakete s temi podpornimi "
+"orodji bi morali najti v upravljalniku paketov svoje distribucije.</para>"
+
+#: gui/mainwindow.cpp:1445
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Missing File System Support Packages"
+msgstr "Manjkajo podporni paketi za podporo datotečnemu sistemu"
+
+#: gui/mainwindow.cpp:1456
+#, kde-kuit-format
+msgctxt "@info device should be inside of /dev"
+msgid "Unrecognized device \"%1\" "
+msgstr "Nerazpoznavna naprava \"%1\" "
+
+#: gui/mainwindow.cpp:1465
+#, kde-kuit-format
+msgctxt "@info device should be inside of /dev"
+msgid "Unrecognized partition \"%1\" "
+msgstr "Nerazpoznaven razdelek \"%1\" "
+
+#: gui/mainwindow.cpp:1466
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error opening partition"
+msgstr "Napaka pri odpiranju razdelka"
+
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
+#. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
+#: gui/mainwindowbase.ui:18 gui/partitionmanagerwidgetbase.ui:20
+#, kde-format
+msgctxt "@title:window"
+msgid "KDE Partition Manager"
+msgstr "Upravljalnik razdelkov za KDE"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
+#: gui/mainwindowbase.ui:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Devices"
+msgstr "Naprave"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
+#: gui/mainwindowbase.ui:38
+#, kde-format
+msgctxt "@title:window"
+msgid "Pending Operations"
+msgstr "Čakajoča opravila"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
+#: gui/mainwindowbase.ui:59
+#, kde-format
+msgctxt "@title:window"
+msgid "Log Output"
+msgstr "Shranjuj izhod"
+
+#: gui/newdialog.cpp:47
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create a new partition"
+msgstr "Ustvari nov razdelek"
+
+#. i18n: ectx: ToolBar (partitionToolBar)
+#: gui/partitionmanagerui.rc:12
+#, kde-format
+msgctxt "@title:menu"
+msgid "Partition Manager Toolbar"
+msgstr "Orodna vrstica upravljavnika particij"
+
+#. i18n: ectx: Menu (device)
+#: gui/partitionmanagerui.rc:30
+#, kde-format
+msgctxt "@title:menu"
+msgid "Device"
+msgstr "Naprava"
+
+#. i18n: ectx: Menu (selectedDevice)
+#: gui/partitionmanagerui.rc:32
+#, kde-format
+msgctxt "@title:menu"
+msgid "Select Current Device"
+msgstr "Izberi trenutno napravo"
+
+#. i18n: ectx: Menu (tools)
+#: gui/partitionmanagerui.rc:49
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tools"
+msgstr "Orodja"
+
+#. i18n: ectx: Menu (partition)
+#: gui/partitionmanagerui.rc:55
+#, kde-format
+msgctxt "@title:menu"
+msgid "Partition"
+msgstr "Razdelek"
+
+#. i18n: ectx: Menu (panels)
+#: gui/partitionmanagerui.rc:77
+#, kde-format
+msgctxt "@title:menu"
+msgid "Panels Shown"
+msgstr "Prikazani pulti"
+
+#: gui/partitionmanagerwidget.cpp:199
+#, kde-kuit-format
+msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
+msgid "%1 [Encrypted]"
+msgstr "%1 [šifriran]"
+
+#: gui/partitionmanagerwidget.cpp:403
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be mounted."
+msgstr ""
+"Datotečnega sistema na razdelku <filename>%1</filename> ni bilo mogoče "
+"priklopiti."
+
+#: gui/partitionmanagerwidget.cpp:403
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Mount File System."
+msgstr "Ni bilo mogoče priklopiti datotečnega sistema."
+
+#: gui/partitionmanagerwidget.cpp:406
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be unmounted."
+msgstr ""
+"Datotečnega sistema na razdelku <filename>%1</filename> ni bilo mogoče "
+"odklopiti."
+
+#: gui/partitionmanagerwidget.cpp:406
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Unmount File System."
+msgstr "Ni bilo mogoče odklopiti datotečnega sistema."
+
+#: gui/partitionmanagerwidget.cpp:446
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The encrypted file system on partition <filename>%1</filename> could not be "
+"unlocked."
+msgstr ""
+"Šifriranega datotečnega sistema na razdelku <filename>%1</filename> ni bilo "
+"mogoče odkleniti."
+
+#: gui/partitionmanagerwidget.cpp:452
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Unlock Encrypted File System."
+msgstr "Ni bilo mogoče odkleniti šifriranega datotečnega sistema."
+
+#: gui/partitionmanagerwidget.cpp:457
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The encrypted file system on partition <filename>%1</filename> could not be "
+"locked."
+msgstr ""
+"Šifriranega datotečnega sistema na razdelku <filename>%1</filename> ni bilo "
+"mogoče zakleniti."
+
+#: gui/partitionmanagerwidget.cpp:463
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Lock Encrypted File System."
+msgstr "Ni bilo mogoče zakleniti šifriranega datotečnega sistema."
+
+#: gui/partitionmanagerwidget.cpp:492
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>There is already one primary partition on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgid_plural ""
+"<para>There are already %1 primary partitions on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgstr[0] ""
+"<para>Na tej napravi je že %1 primarni razdelek. To je največ kar jih lahko "
+"obravnava ta vrsta razpredelnice razdelkov.</para><para>Preden ne izbrišete "
+"obstoječega razdelka, na njem ne boste mogli ustvarjati, lepiti ali "
+"obnavljati primarnih razdelkov.</para>"
+msgstr[1] ""
+"<para>Na tej napravi je že %1 primarna razdelka. To je največ kar jih lahko "
+"obravnava ta vrsta razpredelnice razdelkov.</para><para>Preden ne izbrišete "
+"obstoječih razdelkov, na njem ne boste mogli ustvarjati, lepiti ali "
+"obnavljati primarnih razdelkov.</para>"
+msgstr[2] ""
+"<para>Na tej napravi so že %1 primarni razdelki. To je največ kar jih lahko "
+"obravnava ta vrsta razpredelnice razdelkov.</para><para>Preden ne izbrišete "
+"obstoječih razdelkov, na njem ne boste mogli ustvarjati, lepiti ali "
+"obnavljati primarnih razdelkov.</para>"
+msgstr[3] ""
+"<para>Na tej napravi je že %1 primarnih razdelkov. To je največ kar jih "
+"lahko obravnava ta vrsta razpredelnice razdelkov.</para><para>Preden ne "
+"izbrišete obstoječih razdelkov, na njem ne boste mogli ustvarjati, lepiti "
+"ali obnavljati primarnih razdelkov.</para>"
+
+#: gui/partitionmanagerwidget.cpp:496
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Too Many Primary Partitions."
+msgstr "Preveč primarnih razdelkov."
+
+#: gui/partitionmanagerwidget.cpp:559
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The partition <filename>%1</filename> cannot currently be deleted "
+"because one or more partitions with higher logical numbers are still mounted."
+"</para><para>Please unmount all partitions with higher logical numbers than "
+"%2 first.</para>"
+msgstr ""
+"<para>Razdelka <filename>%1</filename> trenutno ni mogoče izbrisati, saj je "
+"še vedno priklopljen vsaj en razdelek z višjo logično številko.</"
+"para><para>Najprej odklopite vse razdelke z višjo logično številko kot %2.</"
+"para>"
+
+#: gui/partitionmanagerwidget.cpp:562
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cannot Delete Partition."
+msgstr "Ni mogoče izbrisati razdelka."
+
+#: gui/partitionmanagerwidget.cpp:571
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Do you really want to delete the partition that is currently in the "
+"clipboard? It will no longer be available for pasting after it has been "
+"deleted."
+msgstr ""
+"Ali resnično želite izbrisati razdelek, ki je trenutno v odložišču? Potem, "
+"ko bo izbrisan, ne bo več na voljo za lepljenje."
+
+#: gui/partitionmanagerwidget.cpp:573
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Delete Partition in the Clipboard?"
+msgstr "Resnično izbrišem razdelek v odložišču?"
+
+#: gui/partitionmanagerwidget.cpp:574
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Delete It"
+msgstr "Izbriši ga"
+
+#: gui/partitionmanagerwidget.cpp:627
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Partition <filename>%1</filename> has the same position and size after "
+"resize/move. Ignoring operation."
+msgstr ""
+"Razdelek <filename>%1</filename> ima enak položaj in velikost po opravilu "
+"spremembe velikosti/premika. Opravilo bo prezrto."
+
+#: gui/partitionmanagerwidget.cpp:655
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+msgstr "Razdelek <filename>%1</filename> je bil kopiran v odložišče."
+
+#: gui/partitionmanagerwidget.cpp:718
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Overwriting one partition with another (or "
+"with an image file) will destroy all data on this target partition.</"
+"para><para>If you continue now and apply the resulting operation in the main "
+"window, all data currently stored on <filename>%1</filename> will "
+"unrecoverably be overwritten.</para>"
+msgstr ""
+"<para><warning>Pravkar boste izgubili vse podatke na razdelku <filename>%1</"
+"filename>.</warning></para><para>Prepis enega razdelka z drugim (ali z "
+"datoteko odtisa) bo uničil vse podatke na tem ciljnem razdelku.</"
+"para><para>Če nadaljujete sedaj in uveljavite opravilo v glavnem oknu, bodo "
+"vsi podatki, ki so trenutno shranjeni na <filename>%1</filename>, "
+"nepreklicno prepisani.</para>"
+
+#: gui/partitionmanagerwidget.cpp:726
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Overwrite Existing Partition?"
+msgstr "Resnično prepišem obstoječ razdelek?"
+
+#: gui/partitionmanagerwidget.cpp:727
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Overwrite Partition"
+msgstr "Prepiši razdelek"
+
+#: gui/partitionmanagerwidget.cpp:735
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The selected partition is not large enough to hold the source "
+"partition or the backup file.</para><para>Pick another target or resize this "
+"partition so it is as large as the source.</para>"
+msgstr ""
+"<para>Izbran razdelek ni dovolj velik, da bi lahko vseboval izvorni razdelek "
+"ali datoteko z varnostno kopijo.</para><para>Izberite drug cilj ali "
+"spremenite velikost tega razdelka, da bo enako velik kot vir.</para>"
+
+#: gui/partitionmanagerwidget.cpp:736
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Target Not Large Enough"
+msgstr "Cilj ni dovolj velik"
+
+#: gui/partitionmanagerwidget.cpp:739
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>It is not possible to create the target partition large enough to hold "
+"the source.</para><para>This may happen if not all partitions on a device "
+"are correctly aligned or when copying a primary partition into an extended "
+"partition.</para>"
+msgstr ""
+"<para>Ni mogoče ustvariti dovolj velikega ciljnega razdelka, da bi nanj "
+"lahko umestili vir.</para><para>To se lahko zgodi, če so nekateri razdelki "
+"na napravi napačno poravnani ali pa kopirate primarni razdelek na razširjeni "
+"razdelek.</para>"
+
+#: gui/partitionmanagerwidget.cpp:742
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cannot Create Target Partition."
+msgstr "Ni mogoče ustvariti ciljnega razdelka."
+
+#: gui/partitionmanagerwidget.cpp:800
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system in the image file <filename>%1</filename> is too large to be "
+"restored to the selected partition."
+msgstr ""
+"Datotečni sistem v datoteki odtisa <filename>%1</filename> je prevelik, da "
+"bi ga lahko obnovili na izbranem razdelku."
+
+#: gui/partitionmanagerwidget.cpp:800
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Not Enough Space to Restore File System."
+msgstr "Ni dovolj prostora za obnovitev datotečnega sistema."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:76
+#, kde-format
+msgid "Partition"
+msgstr "Razdelek"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:81
+#, kde-format
+msgid "Type"
+msgstr "Vrsta"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:86
+#, kde-format
+msgid "Mount Point"
+msgstr "Priklopna točka"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:91
+#, kde-format
+msgid "Label"
+msgstr "Oznaka"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:96
+#, kde-format
+msgid "UUID"
+msgstr "UUID"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:101
+#, kde-format
+msgid "Partition Label"
+msgstr "Oznaka razdelka"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:106
+#, kde-format
+msgid "Partition UUID"
+msgstr "UUID razdelka"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:111
+#, kde-format
+msgid "Size"
+msgstr "Velikost"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:116
+#, kde-format
+msgid "Used"
+msgstr "Uporabljeno"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:121
+#, kde-format
+msgid "Available"
+msgstr "Na voljo"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:126
+#, kde-format
+msgid "First Sector"
+msgstr "Prvi sektor"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:131
+#, kde-format
+msgid "Last Sector"
+msgstr "Zadnji sektor"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:136
+#, kde-format
+msgid "Number of Sectors"
+msgstr "Število sektorjev"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:141
+#, kde-format
+msgid "Flags"
+msgstr "Zastavice"
+
+#: gui/partpropsdialog.cpp:55
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Partition properties: <filename>%1</filename>"
+msgstr "Lastnosti razdelka: <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:110
+#, kde-kuit-format
+msgctxt "@item mountpoint"
+msgid "(none found)"
+msgstr "(ni najdena)"
+
+#: gui/partpropsdialog.cpp:116
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "idle"
+msgstr "nedejaven"
+
+#: gui/partpropsdialog.cpp:119
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "At least one logical partition is mounted."
+msgstr "Vsaj en logičen razdelek je priklopljen."
+
+#: gui/partpropsdialog.cpp:121
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "mounted on <filename>%1</filename>"
+msgstr "priklopljen na <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:123
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "mounted"
+msgstr "priklopljen"
+
+#: gui/partpropsdialog.cpp:127 gui/partpropsdialog.cpp:130
+#: gui/partpropsdialog.cpp:131
+#, kde-kuit-format
+msgctxt "@item uuid"
+msgid "(none)"
+msgstr "(brez)"
+
+#: gui/partpropsdialog.cpp:346
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Changing the file system on a partition "
+"already on disk will erase all its contents. If you continue now and apply "
+"the resulting operation in the main window, all data on <filename>%1</"
+"filename> will unrecoverably be lost.</para>"
+msgstr ""
+"<para><warning>Pravkar boste izgubili vse podatke na razdelku <filename>%1</"
+"filename>.</warning></para><para>Sprememba datotečnega sistema na razdelku, "
+"ki že obstaja, bo izbrisala vso njegovo vsebino. Če nadaljujete sedaj in "
+"uveljavite to opravilo v glavnem oknu, bodo vsi podatki na <filename>%1</"
+"filename> nepreklicno izgubljeni.</para>"
+
+#: gui/partpropsdialog.cpp:348
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Recreate <filename>%1</filename> with File System %2?"
+msgstr ""
+"Ali resnično želite znova ustvariti <filename>%1</filename> z datotečnim "
+"sistemom %2?"
+
+#: gui/partpropsdialog.cpp:349
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Change the File System"
+msgstr "Spremeni datotečni sistem"
+
+#: gui/partpropsdialog.cpp:350
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Change the File System"
+msgstr "Ne spremeni datotečnega sistema"
+
+#: gui/partpropsdialog.cpp:369
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Recreating a file system will erase all its "
+"contents. If you continue now and apply the resulting operation in the main "
+"window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
+"para>"
+msgstr ""
+"<para><warning>Pravkar boste izgubili vse podatke na razdelku <filename>%1</"
+"filename>.</warning></para><para>Če znova ustvarite datotečni sistem, bo to "
+"izbrisalo vso njegovo vsebino. Če nadaljujete sedaj in uveljavite to "
+"opravilo v glavnem oknu, bodo vsi podatki na <filesystem>%1</filesystem> "
+"nepreklicno izgubljeni.</para>"
+
+#: gui/partpropsdialog.cpp:371
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Recreate File System on <filename>%1</filename>?"
+msgstr ""
+"Ali resnično znova želite ustvariti datotečni sistem na <filename>%1</"
+"filename>?"
+
+#: gui/partpropsdialog.cpp:372
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Recreate the File System"
+msgstr "Znova ustvari datotečni sistem"
+
+#: gui/partpropsdialog.cpp:373
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Recreate the File System"
+msgstr "Datotečnega sistema ne ustvari znova"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/partpropswidgetbase.ui:39
+#, kde-format
+msgctxt "@label:listbox"
+msgid "File syste&m:"
+msgstr "Datotečni siste&m:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
+#: gui/partpropswidgetbase.ui:55 gui/sizedialogwidgetbase.ui:146
+#, kde-format
+msgctxt "@label"
+msgid "This file system does not support setting a label."
+msgstr "Ta datotečni sistem ne podpira nastavljanje oznake."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:68
+#, kde-format
+msgid ""
+"This will reformat the filesystem, losing all contents, but keeping the same "
+"filesystem type."
+msgstr ""
+"To bo ponovno formatiralo datotečni sistem. Pri tem bodo podatki izgubljeni, "
+"bo pa ohranjena vrsta datotečnega sistema."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:71
+#, kde-format
+msgctxt "@action:button"
+msgid "Recreate existing file system"
+msgstr "Znova ustvari obstoječ datotečni sistem"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
+#: gui/partpropswidgetbase.ui:101
+#, kde-format
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Priklopna točka:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
+#: gui/partpropswidgetbase.ui:118
+#, kde-format
+msgctxt "@label"
+msgid "Partition type:"
+msgstr "Vrsta razdelka:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/partpropswidgetbase.ui:128
+#, kde-format
+msgctxt "@label"
+msgid "&Label:"
+msgstr "&Oznaka:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
+#: gui/partpropswidgetbase.ui:148
+#, kde-format
+msgctxt "@label"
+msgid "Status:"
+msgstr "Stanje:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
+#: gui/partpropswidgetbase.ui:165
+#, kde-format
+msgctxt "@label"
+msgid "UUID:"
+msgstr "UUID:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/partpropswidgetbase.ui:195
+#, kde-format
+msgctxt "@label"
+msgid "Size:"
+msgstr "Velikost:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
+#: gui/partpropswidgetbase.ui:218
+#, kde-format
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Na voljo:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
+#: gui/partpropswidgetbase.ui:235
+#, kde-format
+msgctxt "@label partition capacity used"
+msgid "Used:"
+msgstr "Uporabljeno:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
+#: gui/partpropswidgetbase.ui:259
+#, kde-format
+msgctxt "@label"
+msgid "First sector:"
+msgstr "Prvi sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
+#: gui/partpropswidgetbase.ui:276
+#, kde-format
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Zadnji sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
+#: gui/partpropswidgetbase.ui:293
+#, kde-format
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr "Število sektorjev:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
+#: gui/partpropswidgetbase.ui:317
+#, kde-format
+msgctxt "@label"
+msgid "&Flags:"
+msgstr "&Zastavice:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
+#: gui/partpropswidgetbase.ui:362
+#, kde-format
+msgid "Partition Label:"
+msgstr "Oznaka razdelka:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
+#: gui/partpropswidgetbase.ui:372
+#, kde-format
+msgid "Partition UUID:"
+msgstr "UUID razdelka:"
+
+#: gui/parttablewidget.cpp:26
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Please select a device."
+msgstr "Izberite napravo."
+
+#: gui/parttablewidget.cpp:54
+#, kde-kuit-format
+msgctxt "@info"
+msgid "No valid partition table was found on this device."
+msgstr "Na tej napravi ni bilo najdene veljavne razpredelnice razdelkov."
+
+#: gui/resizedialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Resize/move partition: <filename>%1</filename>"
+msgstr "Spremeni velikost/premakni razdelek: <filename>%1</filename>"
+
+#: gui/resizedialog.cpp:91
+#, kde-format
+msgctxt "%2 is either empty or says Invalid passphrase."
+msgid "%2Enter passphrase for %1:"
+msgstr "%2Vnesite šifrirno frazo za %1:"
+
+#: gui/resizedialog.cpp:100
+#, kde-format
+msgctxt "Part of %2Enter passphrase for %1:"
+msgid "Invalid passphrase. "
+msgstr "Neveljavna šifrirna fraza. "
+
+#: gui/resizevolumegroupdialog.cpp:39
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Resize Volume Group"
+msgstr "Spremeni velikost skupine nosilcev"
+
+#: gui/scanprogressdialog.cpp:17
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Scanning devices..."
+msgstr "Preiskovanje za novimi napravami ..."
+
+#: gui/scanprogressdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Scanning..."
+msgstr "Preiskovanje ..."
+
+#: gui/scanprogressdialog.cpp:34
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Scanning device: <filename>%1</filename>"
+msgstr "Preiskovanje naprave: <filename>%1</filename>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: gui/sizedetailswidgetbase.ui:66
+#, kde-format
+msgctxt "@label:listbox"
+msgid "First sector:"
+msgstr "Prvi sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: gui/sizedetailswidgetbase.ui:101
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Last sector:"
+msgstr "Zadnji sektor:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
+#: gui/sizedetailswidgetbase.ui:124
+#, kde-format
+msgid "Align partition"
+msgstr "Poravnaj razdelek"
+
+#: gui/sizedialogbase.cpp:66
+#, kde-kuit-format
+msgctxt "@action:button advanced settings button"
+msgid "Advanced"
+msgstr "Napredno"
+
+#: gui/sizedialogbase.cpp:181
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "&Advanced"
+msgstr "N&apredno"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:62
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "Vrsta razdelka:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/sizedialogwidgetbase.ui:78
+#, kde-format
+msgctxt "@label:listbox"
+msgid "File system:"
+msgstr "Datotečni sistem:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:98
+#, kde-format
+msgid ""
+"Set up encryption for this filesystem with LUKS. You will be asked to "
+"provide a passphrase."
+msgstr ""
+"Nastavi šifriranje z LUKS za ta datotečni sistem. Vprašani boste za šifrirno "
+"frazo."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:101
+#, kde-format
+msgid "Encrypt with LUKS"
+msgstr "Šifriraj z LUKS"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
+#: gui/sizedialogwidgetbase.ui:111
+#, kde-format
+msgid "Logical Volume Name:"
+msgstr "Ime logičnega nosilca:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/sizedialogwidgetbase.ui:128
+#, kde-format
+msgctxt "@label"
+msgid "Label:"
+msgstr "Oznaka:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:164
+#, kde-format
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Najmanjša velikost:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:187
+#, kde-format
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Največja velikost:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
+#: gui/sizedialogwidgetbase.ui:210
+#, kde-format
+msgctxt "@label:listbox"
+msgid "F&ree space before:"
+msgstr "Nepo&rabljen prostor pred:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: gui/sizedialogwidgetbase.ui:245
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Si&ze:"
+msgstr "Velikos&t:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
+#: gui/sizedialogwidgetbase.ui:274
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Neporabljen prostor za:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
+#: gui/sizedialogwidgetbase.ui:297
+#, kde-format
+msgid "Permissions"
+msgstr "Dovoljenja"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
+#: gui/sizedialogwidgetbase.ui:326
+#, kde-format
+msgid "Allow everyone to write and read on this device"
+msgstr "Dovoli vsakomur, da piše in bere na tej napravi"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
+#: gui/sizedialogwidgetbase.ui:329
+#, kde-format
+msgid "Everyone"
+msgstr "Vsak"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
+#: gui/sizedialogwidgetbase.ui:336
+#, kde-format
+msgid ""
+"Allow only root to write and read on this device, you will need to setup per-"
+"folder permissions"
+msgstr ""
+"Dovoli samo uporabniku root pisanje in branje te naprave, potrebna je "
+"nastavitev dovoljenj po mapah"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
+#: gui/sizedialogwidgetbase.ui:339
+#, kde-format
+msgid "Only Root"
+msgstr "Samo Root"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:352
+#, kde-format
+msgid "Primar&y"
+msgstr "Primarn&i"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:359
+#, kde-format
+msgid "E&xtended"
+msgstr "Ra&zširjen"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:366
+#, kde-format
+msgid "&Logical"
+msgstr "&Logični"
+
+#: gui/smartdialog.cpp:54
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "SMART Properties: <filename>%1</filename>"
+msgstr "Lastnosti SMART: <filename>%1</filename>"
+
+#: gui/smartdialog.cpp:58
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Save SMART Report"
+msgstr "Shrani poročilo SMART"
+
+#: gui/smartdialog.cpp:96 gui/smartdialog.cpp:153
+#, kde-format, kde-kuit-format
+msgctxt "@label SMART number of bad sectors"
+msgid "none"
+msgstr "brez"
+
+#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Pre-Failure"
+msgstr "Pred-napaka"
+
+#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Old-Age"
+msgstr "Velika-starost"
+
+#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Online"
+msgstr "Povezan"
+
+#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Offline"
+msgstr "Nepovezan"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
+#: gui/smartdialog.cpp:155 gui/smartdialogwidgetbase.ui:68
+#, kde-format
+msgid "Model:"
+msgstr "Model:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
+#: gui/smartdialog.cpp:156 gui/smartdialogwidgetbase.ui:97
+#, kde-format
+msgid "Serial number:"
+msgstr "Zaporedna številka:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
+#: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
+#, kde-format
+msgid "Firmware revision:"
+msgstr "Različica strojne programske opreme:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
+#: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
+#, kde-format
+msgid "Temperature:"
+msgstr "Temperatura:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
+#: gui/smartdialog.cpp:159 gui/smartdialogwidgetbase.ui:184
+#, kde-format
+msgid "Bad sectors:"
+msgstr "Slabi sektorji:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
+#: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
+#, kde-format
+msgid "Powered on for:"
+msgstr "Vklopljen za:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
+#: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
+#, kde-format
+msgid "Power cycles:"
+msgstr "Število vklopov/izklopov:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
+#: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
+#, kde-format
+msgid "Self tests:"
+msgstr "Samodejni preizkusi:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
+#: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
+#, kde-format
+msgid "Overall assessment:"
+msgstr "Skupna ocena:"
+
+#: gui/smartdialog.cpp:227
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Save SMART Report."
+msgstr "Ni bilo mogoče shraniti poročila SMART."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:294
+#, kde-format
+msgid "Id"
+msgstr "Id"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:299
+#, kde-format
+msgid "Attribute"
+msgstr "Atribut"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:304
+#, kde-format
+msgid "Failure Type"
+msgstr "Vrsta napake"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:309
+#, kde-format
+msgid "Update Type"
+msgstr "Vrsta posodobitve"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:314
+#, kde-format
+msgid "Worst"
+msgstr "Najslabše"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:319
+#, kde-format
+msgid "Current"
+msgstr "Trenutno"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:324
+#, kde-format
+msgid "Threshold"
+msgstr "Prag"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:329
+#, kde-format
+msgid "Raw"
+msgstr "Surovo"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:334
+#, kde-format
+msgid "Assessment"
+msgstr "Ocena"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:339
+#, kde-format
+msgid "Value"
+msgstr "Vrednost"
+
+#: gui/treelog.cpp:110
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not create temporary output file to save <filename>%1</filename>."
+msgstr ""
+"Ni bilo mogoče ustvariti začasne datoteke z izhodom za shranjevanje "
+"<filename>%1</filename>."
+
+#: gui/treelog.cpp:110
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Saving Log File"
+msgstr "Napaka med shranjevanjem dnevnika"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:59
+#, kde-format
+msgctxt ""
+"@title:column Severity of a log entry / log level. Text must be very short."
+msgid "Sev."
+msgstr "Res."
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:62
+#, kde-format
+msgid "Severity"
+msgstr "Resnost"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:67
+#, kde-format
+msgctxt "@title:column a time stamp of a log entry"
+msgid "Time"
+msgstr "Čas"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:72
+#, kde-format
+msgctxt "@title:column the text message of a log entry"
+msgid "Message"
+msgstr "Sporočilo"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextVGName)
+#: gui/volumegroupwidgetbase.ui:34
+#, kde-format
+msgid "Volume Group Name: "
+msgstr "Ime skupine nosilcev: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
+#: gui/volumegroupwidgetbase.ui:47
+#, kde-format
+msgid "Physical Extent Size: "
+msgstr "Velikost fizičnega obsega (PE): "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSize)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalUsedSize)
+#: gui/volumegroupwidgetbase.ui:60 gui/volumegroupwidgetbase.ui:120
+#: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
+#, kde-format
+msgid "---"
+msgstr "---"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
+#: gui/volumegroupwidgetbase.ui:79
+#, kde-format
+msgid " MiB"
+msgstr " MiB"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalLV)
+#: gui/volumegroupwidgetbase.ui:107
+#, kde-format
+msgid "Total LV: "
+msgstr "Skupno LN: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
+#: gui/volumegroupwidgetbase.ui:130
+#, kde-format
+msgid "Volume Group Type: "
+msgstr "Vrsta skupine nosilcev: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
+#: gui/volumegroupwidgetbase.ui:140
+#, kde-format
+msgid "Total Size: "
+msgstr "Skupna velikost: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/volumegroupwidgetbase.ui:153
+#, kde-format
+msgid "Total Sectors: "
+msgstr "Skupno sektorjev: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
+#: gui/volumegroupwidgetbase.ui:186
+#, kde-format
+msgid "Used Size: "
+msgstr "Uporabljena velikost: "
+
+#: main.cpp:77
+#, kde-kuit-format
+msgctxt "@title"
+msgid "<application>KDE Partition Manager</application>"
+msgstr "<application>Upravljalnik razdelkov za KDE</application>"
+
+#: main.cpp:79
+#, kde-kuit-format
+msgctxt "@title"
+msgid "Manage your disks, partitions and file systems"
+msgstr "Upravljajte z vašimi diski, razdelki in datotečnimi sistemi"
+
+#: main.cpp:81
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid ""
+"© 2008-2013 Volker Lanz\n"
+"© 2012-2020 Andrius Štikonas"
+msgstr ""
+"© 2008-2013 Volker Lanz\n"
+"© 2012-2020 Andrius Štikonas"
+
+#: main.cpp:85
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Volker Lanz"
+msgstr "Volker Lanz"
+
+#: main.cpp:85
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Former maintainer"
+msgstr "Prejšnji vzdrževalec"
+
+#: main.cpp:86
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Andrius Štikonas"
+msgstr "Andrius Štikonas"
+
+#: main.cpp:86
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Maintainer"
+msgstr "Vzdrževalec"
+
+#: main.cpp:87
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Teo Mrnjavac"
+msgstr "Teo Mrnjavac"
+
+#: main.cpp:87
+#, kde-format
+msgctxt "@info:credit"
+msgid "Former Calamares maintainer"
+msgstr "Predhodni vzdrževalec programa Calamares"
+
+#: main.cpp:88
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Chantara Tith"
+msgstr "Chantara Tith"
+
+#: main.cpp:88
+#, kde-format
+msgctxt "@info:credit"
+msgid "LVM support"
+msgstr "Podpora LVM"
+
+#: main.cpp:89
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Pali Rohár"
+msgstr "Pali Rohár"
+
+#: main.cpp:89
+#, kde-format
+msgctxt "@info:credit"
+msgid "UDF support"
+msgstr "Podpora UDF"
+
+#: main.cpp:90
+#, kde-format
+msgid "Hugo Pereira Da Costa"
+msgstr "Hugo Pereira Da Costa"
+
+#: main.cpp:90
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Partition Widget Design"
+msgstr "Zasnova gradnikov za razdelke"
+
+#: main.cpp:91
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Caio Jordão Carvalho"
+msgstr "Caio Jordão Carvalho"
+
+#: main.cpp:91
+#, kde-format
+msgctxt "@info:credit"
+msgid "Improved SMART support"
+msgstr "Izboljšana podpora SMART"
+
+#: main.cpp:104
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Device to manage"
+msgstr "Naprava za upravljanje"
+
+#. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
+#: partitionmanager.kcfg:45
+#, kde-format
+msgctxt "@label"
+msgid "Is this the first time KDE Partition Manager is being run?"
+msgstr "Ali je to prvi zagon Upravljalnika razdelkov za KDE?"
+
+#. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
+#: partitionmanager.kcfg:49
+#, kde-format
+msgctxt "@label"
+msgid "Hide log messages below"
+msgstr "Skrij spodnja sporočila dnevnika"
+
+#. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
+#: partitionmanager.kcfg:53
+#, kde-format
+msgctxt "@label"
+msgid "Partition sector alignment"
+msgstr "Poravnava sektorja razdelka"
+
+#. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
+#: partitionmanager.kcfg:57
+#, kde-format
+msgctxt "@label"
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Uporabi poravnavo temelječo na cilindrih (združljivo z Windows XP)"
+
+#. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
+#: partitionmanager.kcfg:61
+#, kde-format
+msgctxt "@label"
+msgid "Align partitions per default"
+msgstr "Razdelke poravnaj privzeto"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:65
+#, kde-format
+msgctxt "@label"
+msgid "File system colors"
+msgstr "Barve datotečnega sistema"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:141
+#, kde-format
+msgctxt "@label"
+msgid "Show the application's menu bar"
+msgstr "Pokaži menijsko vrstico programa"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:145
+#, kde-format
+msgctxt "@label"
+msgid "Backend plugin"
+msgstr "Vstavek zaledja"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:151
+#, kde-format
+msgctxt "@label"
+msgid "Preferred unit:"
+msgstr "Prednostna enota:"
+
+#: util/guihelpers.cpp:50
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The configured backend plugin \"%1\" could not be loaded.</"
+"para><para>Loading the default backend plugin \"%2\" instead.</para>"
+msgstr ""
+"<para>Nastavljenega vstavka zaledja \"%1\" ni bilo mogoče naložiti.</"
+"para><para>Nalaganje privzetega vstavka zaledja \"%2\".</para>"
+
+#: util/guihelpers.cpp:53 util/guihelpers.cpp:60
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error: Could Not Load Backend Plugin"
+msgstr "Napaka: ni bilo mogoče naložiti vstavka zaledja"
+
+#: util/guihelpers.cpp:57
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+"plugin could be loaded.</para><para>Please check your installation.</para>"
+msgstr ""
+"<para>Ni bilo mogoče naložiti niti nastavljenega (\"%1\") niti privzetega "
+"(\"%2\") vstavka zaledja.</para><para>Preverite svojo namestitev.</para>"
+
+#: util/guihelpers.cpp:75
+#, kde-kuit-format
+msgctxt "@title:menu"
+msgid "Columns"
+msgstr "Stolpci"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Partition &type:"
+#~ msgstr "Vrs&ta razdelka:"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The configured external browser could not be run. Please check your "
+#~ "settings."
+#~ msgstr ""
+#~ "Nastavljenega zunanjega brskalnika ni bilo mogoče zagnati. Preverite vaše "
+#~ "nastavitve."
+
+#~ msgctxt "@title:menu turn on and off edit toolbar"
+#~ msgid "Edit Toolbar"
+#~ msgstr "Orodna vrstica urejanja"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Device Toolbar"
+#~ msgstr "Orodna vrstica naprav"
+
+#~ msgid "Allow applying operations without administrator privileges"
+#~ msgstr "Dovoli uveljavljanje opravil brez skrbniških dovoljenj"
+
+#~ msgctxt "@label"
+#~ msgid "1 Sector"
+#~ msgid_plural "%1 Sectors"
+#~ msgstr[0] "%1 sektor"
+#~ msgstr[1] "%1 sektorja"
+#~ msgstr[2] "%1 sektorji"
+#~ msgstr[3] "%1 sektorjev"
+
+#~ msgid "Cylinders/Heads/Sectors:"
+#~ msgstr "Cilindrov/glav/sektorjev:"
+
+#~ msgid "Cylinder size:"
+#~ msgstr "Velikost cilindra:"
+
+#~ msgctxt "@info:shell"
+#~ msgid "Do not try to gain super user privileges"
+#~ msgstr "Ne poskušaj pridobiti skrbniških dovoljenj"
+
+#~ msgctxt "@label"
+#~ msgid "Allow applying operations without administrator privileges"
+#~ msgstr "Dovoli uveljavljanje opravil brez skrbniških dovoljenj"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "<para><warning>You do not have administrative privileges.</warning></"
+#~ "para><para>It is possible to run <application>%1</application> without "
+#~ "these privileges. You will, however, <emphasis>not</emphasis> be allowed "
+#~ "to apply operations.</para><para>Do you want to continue running "
+#~ "<application>%1</application>?</para><para><note>If administrator login "
+#~ "is disabled and your password is not accepted, then check <command>kdesu</"
+#~ "command> <link url='https://wiki.archlinux.org/index.php/"
+#~ "sudo#kdesu'>configuration</link>.</note></para>"
+#~ msgstr ""
+#~ "<para><warning>Nimate skrbniških dovoljenj.</warning></para><para>Brez "
+#~ "teh dovoljenj lahko zaženete <application>%1</application>, vendar vam "
+#~ "<emphasis>ne bo</emphasis> dovoljeno uveljavljati opravil.</"
+#~ "para><para>Ali želite nadaljevati z zaganjanjem <application>%1</"
+#~ "application>?</para><para><note>Če je skrbniška prijava onemogočena in "
+#~ "vaše geslo ni sprejeto, preverite <link url='https://wiki.archlinux.org/"
+#~ "index.php/sudo#kdesu'>nastavitev</link> ukaza <command>kdesu</command>.</"
+#~ "note></para>"
+
+#~ msgctxt "@title:window"
+#~ msgid "No administrative privileges"
+#~ msgstr "Ni skrbniških dovoljenj"
+
+#~ msgctxt "@action:button"
+#~ msgid "Run without administrative privileges"
+#~ msgstr "Zaženi brez skrbniških dovoljenj"
+
+#~ msgctxt "@info"
+#~ msgid "Do you want to overwrite the existing file <filename>%1</filename>?"
+#~ msgstr "Ali želite prepisati obstoječo datoteko <filename>%1</filename>?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Overwrite Existing File?"
+#~ msgstr "Prepišem obstoječo datoteko?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Overwrite File"
+#~ msgstr "Prepiši datoteko"
+
+#~ msgctxt "@info:shell"
+#~ msgid "Show advanced tab in configuration dialog"
+#~ msgstr "V pogovornem oknu z nastavitvami pokaži zavihek Napredno"
+
+#~ msgctxt "@item:intable Encrypted file systems, e.g. btrfs[luks]"
+#~ msgid "%1 [%2]"
+#~ msgstr "%1 [%2]"
+
+#~ msgid "luks:"
+#~ msgstr "luks:"
+
+#~ msgid "ntfs:"
+#~ msgstr "ntfs:"
+
+#~ msgid "fat16:"
+#~ msgstr "fat16:"
+
+#~ msgid "fat32:"
+#~ msgstr "fat32:"
+
+#~ msgid "zfs:"
+#~ msgstr "zfs:"
+
+#~ msgid "reiserfs:"
+#~ msgstr "reiserfs:"
+
+#~ msgid "hpfs:"
+#~ msgstr "hpfs:"
+
+#~ msgid "jfs"
+#~ msgstr "jfs"
+
+#~ msgid "hfs:"
+#~ msgstr "hfs:"
+
+#~ msgid "hfsplus:"
+#~ msgstr "hfsplus:"
+
+#~ msgid "ufs:"
+#~ msgstr "ufs:"
+
+#~ msgid "xfs:"
+#~ msgstr "xfs:"
+
+#~ msgid "ocfs2:"
+#~ msgstr "ocfs2:"
+
+#~ msgid "exfat:"
+#~ msgstr "exfat:"
+
+#~ msgid "nilfs2:"
+#~ msgstr "nilfs2:"
+
+#~ msgid "lvm2 pv:"
+#~ msgstr "lvm2 pv:"
+
+#~ msgid "f2fs:"
+#~ msgstr "f2fs:"
+
+#~ msgctxt "@label device"
+#~ msgid "Heads:"
+#~ msgstr "Glav:"
+
+#~ msgctxt "@label device"
+#~ msgid "Cylinders:"
+#~ msgstr "Cilindrov:"
+
+#~ msgctxt "@label device"
+#~ msgid "Sectors:"
+#~ msgstr "Sektorjev:"
+
+#~ msgctxt "@label device"
+#~ msgid "Cylinder size:"
+#~ msgstr "Velikost cilindra:"
+
+#~ msgctxt "@info"
+#~ msgid "Could not open mount point file <filename>%1</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti datoteke s priklopno točko <filename>%1</filename>."
+
+#~ msgctxt "@title:window"
+#~ msgid "Error while reading mount points"
+#~ msgstr "Napaka med branjem priklopnih točk"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Could not remove <filename>%1</filename>. There are still Logical Volumes "
+#~ "on the Volume Group."
+#~ msgstr ""
+#~ "Ni bilo mogoče odstraniti <filename>%1</filename>. V skupini nosilcev še "
+#~ "vedno obstajajo logični nosilci."
+
+#~ msgctxt "@title:window"
+#~ msgid "Error Removing Volume Group"
+#~ msgstr "Napaka med odstranjevanjem skupine nosilcev"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Resize Volume"
+#~ msgstr "Spremeni velikost nosilca"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Resize selected Volume device"
+#~ msgstr "Spremeni velikost izbrane naprave nosilca"
+
+#~ msgctxt "@info:status"
+#~ msgid "Resize selected Volume device"
+#~ msgstr "Spremeni velikost izbrane naprave nosilca"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "New Volume"
+#~ msgstr "Nov nosilec"
+
+#~ msgctxt "@title:menu"
+#~ msgid "View"
+#~ msgstr "Pogled"
+
+#~ msgctxt "@item:button advanced settings button"
+#~ msgid "Advanced"
+#~ msgstr "Napredno"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Calamares developer"
+#~ msgstr "Razvijalec programa Calamares"
+
+#~ msgid "Unknown Device"
+#~ msgstr "Neznana naprava"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting a partition just created: Undoing the operation to create the "
+#~ "partition."
+#~ msgstr ""
+#~ "Brisanje razdelka, ki je bil ravno ustvarjen: razveljavljanje opravila "
+#~ "ustvarjanja razdelka."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing a partition just created: Updating start and end in existing "
+#~ "operation."
+#~ msgstr ""
+#~ "Spreminjanje velikosti razdelka, ki je bil ravno ustvarjen: posodabljanje "
+#~ "začetka in konca v obstoječem opravilu."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying a new partition: Creating a new partition instead."
+#~ msgstr ""
+#~ "Kopiranje novega razdelka: namesto tega ustvarjanje novega razdelka."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing label for a new partition: No new operation required."
+#~ msgstr ""
+#~ "Spreminjanje oznake novega razdelka: ni zahtevanega novega opravila."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing file system for a new partition: No new operation required."
+#~ msgstr ""
+#~ "Spreminjanje datotečnega sistema novega razdelka: ni zahtevanega novega "
+#~ "opravila."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Checking file systems is automatically done when creating them: No new "
+#~ "operation required."
+#~ msgstr ""
+#~ "Preverjanje datotečnih sistemov je samodejno končano med njihovim "
+#~ "ustvarjanjem: ni zahtevanega novega opravila."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Deleting a partition just copied: Removing the copy."
+#~ msgstr "Brisanje razdelka, ki je bil ravno kopiran: odstranjevanje kopije."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting a partition just copied over an existing partition: Removing the "
+#~ "copy and deleting the existing partition."
+#~ msgstr ""
+#~ "Brisanje razdelka, ki je bil ravno kopiran čez obstoječ razdelek: "
+#~ "odstranjevanje kopije in brisanje obstoječega razdelka."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copying a partition that is itself a copy: Copying the original source "
+#~ "partition instead."
+#~ msgstr ""
+#~ "Kopiranje razdelka, ki je že kopija: namesto tega bo kopiran izvorni "
+#~ "razdelek."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Deleting a partition just restored: Removing the restore operation."
+#~ msgstr ""
+#~ "Brisanje razdelka, ki je bil ravno obnovljen: odstranjevanje opravila "
+#~ "obnovitve."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting a partition just restored to an existing partition: Removing the "
+#~ "restore operation and deleting the existing partition."
+#~ msgstr ""
+#~ "Brisanje razdelka, ki je bil ravno obnovljen v obstoječ razdelek: "
+#~ "odstranjevanje opravila obnovitve in brisanje obstoječega razdelka."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing flags again for the same partition: Removing old operation."
+#~ msgstr ""
+#~ "Ponovno spreminjanje zastavic za enak razdelek: odstranjevanje starega "
+#~ "opravila."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing label again for the same partition: Removing old operation."
+#~ msgstr ""
+#~ "Ponovno spreminjanje oznak za enak razdelek: odstranjevanje starega "
+#~ "opravila."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating new partition table, discarding previous operation on device."
+#~ msgstr ""
+#~ "Ustvarjanje nove razpredelnice razdelkov, predhodna opravila na napravi "
+#~ "bodo zavržena."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Add operation: %1"
+#~ msgstr "Dodaj opravilo: %1"
+
+#~ msgctxt "@item partition name"
+#~ msgid "New Partition"
+#~ msgstr "Nov razdelek"
+
+#~ msgctxt "@item partition name"
+#~ msgid "Restored Partition"
+#~ msgstr "Obnovljen razdelek"
+
+#~ msgctxt "@item partition name"
+#~ msgid "Copy of %1"
+#~ msgstr "Kopija od %1"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Partition <filename>%1</filename> is not properly aligned (first sector: "
+#~ "%2, modulo: %3)."
+#~ msgstr ""
+#~ "Razdelek <filename>%1</filename> ni pravilno poravnan (prvi sektor: %2, "
+#~ "modulo: %3)."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Partition <filename>%1</filename> is not properly aligned (last sector: "
+#~ "%2, modulo: %3)."
+#~ msgstr ""
+#~ "Razdelek <filename>%1</filename> ni pravilno poravnan (zadnji sektor: %2, "
+#~ "modulo: %3)."
+
+#~ msgctxt "@item partition role"
+#~ msgid "unallocated"
+#~ msgstr "ni dodeljen"
+
+#~ msgctxt "@item partition role"
+#~ msgid "logical"
+#~ msgstr "logični"
+
+#~ msgctxt "@item partition role"
+#~ msgid "extended"
+#~ msgstr "razširjen"
+
+#~ msgctxt "@item partition role"
+#~ msgid "primary"
+#~ msgstr "primarni"
+
+#~ msgctxt "@item partition role"
+#~ msgid "none"
+#~ msgstr "brez"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "boot"
+#~ msgstr "zagonski"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "root"
+#~ msgstr "korenski"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "swap"
+#~ msgstr "izmenjalni"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "hidden"
+#~ msgstr "skrit"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "raid"
+#~ msgstr "raid"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "lvm"
+#~ msgstr "lvm"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "lba"
+#~ msgstr "lba"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "hpservice"
+#~ msgstr "hpservice"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "palo"
+#~ msgstr "palo"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "prep"
+#~ msgstr "prep"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "msft-reserved"
+#~ msgstr "msft-reserved"
+
+#~ msgctxt "@item partition table name"
+#~ msgid "unknown"
+#~ msgstr "neznano"
+
+#~ msgctxt "@item:intable"
+#~ msgid "failing"
+#~ msgstr "se kvari"
+
+#~ msgctxt "@item:intable"
+#~ msgid "has failed"
+#~ msgstr "je okvarjen"
+
+#~ msgctxt "@item:intable"
+#~ msgid "warning"
+#~ msgstr "opozorilo"
+
+#~ msgctxt "@item:intable"
+#~ msgid "good"
+#~ msgstr "dober"
+
+#~ msgctxt "@item:intable not applicable"
+#~ msgid "N/A"
+#~ msgstr "Ni na voljo"
+
+#~ msgctxt "@item:intable"
+#~ msgid "%1 sector"
+#~ msgid_plural "%1 sectors"
+#~ msgstr[0] "%1 sektor"
+#~ msgstr[1] "%1 sektorja"
+#~ msgstr[2] "%1 sektorji"
+#~ msgstr[3] "%1 sektorjev"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Read Error Rate"
+#~ msgstr "Raven napak med branjem"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Rate of hardware read errors while reading data from the disk surface."
+#~ msgstr "Raven strojnih napak branja med branjem podatkov iz površine diska."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Throughput Performance"
+#~ msgstr "Zmogljivost prenosa"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Overall (general) throughput performance of a hard disk drive. If the "
+#~ "value of this attribute is decreasing there is a high probability that "
+#~ "there is a problem with the disk."
+#~ msgstr ""
+#~ "Splošna zmogljivost pretoka trdega diska. Če se vrednost tega atributa "
+#~ "zmanjšuje, potem obstaja velika verjetnost, da gre za težavo z diskom."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Spin-Up Time"
+#~ msgstr "Čas za sukanje na polni hitrosti vrtenja"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Average time of spindle spin up from zero RPM to fully operational."
+#~ msgstr ""
+#~ "Povprečen čas, ki je potreben, da se vreteno zavrti iz mirovanja do "
+#~ "polnega zagona."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Start/Stop Count"
+#~ msgstr "Števec zagonov/zaustavitev"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "A tally of spindle start/stop cycles."
+#~ msgstr "Število ponovitev zagona/zaustavitve vretena."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Reallocated Sectors Count"
+#~ msgstr "Števec prerazvrščenih sektorjev"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of reallocated sectors. When the hard drive finds a read/write/"
+#~ "verification error, it marks this sector as &quot;reallocated&quot; and "
+#~ "transfers data to a special reserved area (spare area)."
+#~ msgstr ""
+#~ "Števec prerazvrščenih sektorjev. Kadar trdi disk najde napako med branjem/"
+#~ "pisanjem/potrditvijo, označi sektor kot \"prerazvrščen\" in prenese "
+#~ "podatke v posebno pridržano območje (nadomestno območje)."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Read Channel Margin"
+#~ msgstr "Rob bralnega kanala"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Margin of a channel while reading data. The function of this attribute is "
+#~ "not specified."
+#~ msgstr ""
+#~ "Rob kanala med branjem podatkov. Funkcija tega atributa ni določena."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Seek Error Rate"
+#~ msgstr "Raven napak iskanja"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Rate of seek errors of the magnetic heads. If there is a partial failure "
+#~ "in the mechanical positioning system, then seek errors will arise."
+#~ msgstr ""
+#~ "Raven napak iskanja magnetnih glav. Če gre za delno napako v sistemu "
+#~ "mehaničnega pozicioniranja, bo prišlo do napak iskanja."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Seek Time Performance"
+#~ msgstr "Povprečni čas za iskanje"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Average performance of seek operations of the magnetic heads. If this "
+#~ "attribute is decreasing, it is a sign of problems in the mechanical "
+#~ "subsystem."
+#~ msgstr ""
+#~ "Povprečna zmogljivost opravil iskanja magnetnih glav. Če se ta atribut "
+#~ "zmanjšuje, je to znak težav v mehanskem podsistemu trdega diska."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power-On Hours"
+#~ msgstr "Ure obratovanja"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of hours in power-on state."
+#~ msgstr "Število ur v vklopljenem stanju."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Spin Retry Count"
+#~ msgstr "Števec ponovnih poskusov zasukanja"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of retry of spin start attempts if the first attempt was "
+#~ "unsuccessful. An increase of this attribute value is a sign of problems "
+#~ "in the hard disk mechanical subsystem."
+#~ msgstr ""
+#~ "Število ponovitev poskusov zagona zasuka (če je bil prvi poskus "
+#~ "neuspešen). Povečanje vrednosti atributa je znak težav v mehanskem "
+#~ "podsistemu trdega diska."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Recalibration Retries"
+#~ msgstr "Ponovitve umerjanja"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of recalibrations requested if the first attempt was unsuccessful. "
+#~ "An increase of this attribute value is a sign of problems in the hard "
+#~ "disk mechanical subsystem."
+#~ msgstr ""
+#~ "Število zahtevanih ponovitev umeritve (če je bil prvi poskus neuspešen). "
+#~ "Povečanje vrednosti atributa je znak težav v mehanskem podsistemu trdega "
+#~ "diska."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power Cycle Count"
+#~ msgstr "Števec ponovnih vklopov"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of full hard disk power on/off cycles."
+#~ msgstr "Število polnih vklopov/izklopov trdega diska."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Soft Read Error Rate"
+#~ msgstr "Raven napak mehkega branja"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Uncorrected read errors reported to the operating system."
+#~ msgstr ""
+#~ "Nepopravljene napake branja o katerih je poročano operacijskemu sistemu."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "SATA Downshift Error Count"
+#~ msgstr "Števec napak SATA Downshift"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Western Digital and Samsung attribute."
+#~ msgstr "Atribut trdih diskov Western Digital in Samsung."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "End-to-End Error"
+#~ msgstr "Napaka End-to-End"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Part of HP's SMART IV technology: After transferring through the cache "
+#~ "RAM data buffer the parity data between the host and the hard drive did "
+#~ "not match."
+#~ msgstr ""
+#~ "Del tehnologije HP SMART IV. Po prenosu podatkov skozi medpomnilnik se ni "
+#~ "ujemala parnost med podatki gostitelja in trdega diska."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Head Stability"
+#~ msgstr "Stabilnost glave"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Western Digital attribute."
+#~ msgstr "Atribut trdih diskov Western Digital."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Induced Op-Vibration Detection"
+#~ msgstr "Zaznava povzročenih Op-vibracij"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Reported Uncorrectable Errors"
+#~ msgstr "Sporočene nepopravljive napake"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of errors that could not be recovered using hardware ECC."
+#~ msgstr "Število napak, ki jih ni mogoče obnoviti s strojnim ECC."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Command Timeout"
+#~ msgstr "Časovni pretek ukaza"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of aborted operations due to HDD timeout."
+#~ msgstr "Število prekinjenih opravil zaradi časovnega preteka trdega diska."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "High Fly Writes"
+#~ msgstr "Premik izven zapisovalnega območja"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of fly height errors detected."
+#~ msgstr "Število zaznanih premikov izven zapisovalnega območja"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Temperature Difference From 100"
+#~ msgstr "Temperaturna razlika od 100"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Value is equal to (100 &ndash; temp. °C), allowing manufacturer to set a "
+#~ "minimum threshold which corresponds to a maximum temperature."
+#~ msgstr ""
+#~ "Vrednost je enaka (100 &ndash; °C), kar dovoljuje proizvajalcu, da "
+#~ "nastavi najmanjši prag, ki ustreza najvišji temperaturi."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "G-sense Error Rate"
+#~ msgstr "Raven napak G-sense"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of errors resulting from externally-induced shock and vibration."
+#~ msgstr "Število napak, ki so posledica zunanjih šokov in vibracij."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power Off Retract Count"
+#~ msgstr "Števec izklopnih oddaljevanj"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of power-off or emergency retract cycles"
+#~ msgstr "Števec izklopnih ali ponovitev oddaljevanj v sili"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Load Cycle Count"
+#~ msgstr "Števec ponovitev obremenitev"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of load/unload cycles into head landing zone position."
+#~ msgstr ""
+#~ "Število ponovitev obremenitev/razbremenitev v položaj pristajalnega pasu "
+#~ "glave."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Temperature"
+#~ msgstr "Temperatura"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Current internal temperature."
+#~ msgstr "Trenutna notranja temperatura."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Hardware ECC Recovered"
+#~ msgstr "Strojni ECC je obnovljen"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of errors that could be recovered using hardware ECC."
+#~ msgstr "Število napak, ki jih je bilo mogoče obnoviti s strojnim ECC."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Reallocation Event Count"
+#~ msgstr "Števec prerazporeditev dogodkov"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of remap operations. The raw value of this attribute shows the "
+#~ "total number of attempts to transfer data from reallocated sectors to a "
+#~ "spare area."
+#~ msgstr ""
+#~ "Število dejanj preslikav. Surova vrednost prikazuje skupno število "
+#~ "poskusov prenosa podatkov iz prerazvrščenih sektorjev na nadomestna "
+#~ "območja."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Current Pending Sector Count"
+#~ msgstr "Trenutno število zadržanih sektorjev"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Number of &quot;unstable&quot; sectors (waiting to be remapped, because "
+#~ "of read errors)."
+#~ msgstr ""
+#~ "Število &quot;nestabilnih&quot; sektorjev (čakajo na prerazporeditev "
+#~ "zaradi napak branja)."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Uncorrectable Sector Count"
+#~ msgstr "Števec nepopravljivih sektorjev"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of uncorrectable errors when reading/writing a sector."
+#~ msgstr "Število nepopravljivih napak med branjem/zapisovanjem na sektor."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "UltraDMA CRC Error Count"
+#~ msgstr "Števec napak UltraDMA CRC"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of errors in data transfer via the interface cable as determined by "
+#~ "ICRC."
+#~ msgstr ""
+#~ "Število napak, ki jih določi ICRC med prenosom podatkov preko vmesnega "
+#~ "kabla."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Multi-Zone Error Rate<br/>Write Error Rate"
+#~ msgstr "Raven napak Multi-Zone<br/>Raven napak zapisovanja"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "The total number of errors when writing a sector."
+#~ msgstr "Skupno število napak med zapisovanjem na sektor."
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of off-track errors."
+#~ msgstr "Število napak izven sledi."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Data Address Mark Errors"
+#~ msgstr "Napake oznak naslovov podatkov"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of Data Address Mark errors (or vendor-specific)."
+#~ msgstr "Število napak oznak naslovov podatkov (ali ponudniških napak)."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Run Out Cancel"
+#~ msgstr "Napake ECC"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of ECC errors"
+#~ msgstr "Število napak ECC"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Soft ECC Correction"
+#~ msgstr "Mehko popravljanje ECC"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of errors corrected by software ECC"
+#~ msgstr "Število napak popravljenih s programskim ECC"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Thermal Asperity Rate"
+#~ msgstr "Raven toplotne hrapavosti"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of errors due to high temperature."
+#~ msgstr "Število napak zaradi visoke temperature."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Flying Height"
+#~ msgstr "Oddaljenost glave"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Height of heads above the disk surface. A flying height that is too low "
+#~ "increases the chances of a head crash while a flying height that is too "
+#~ "high increases the chances of a read/write error."
+#~ msgstr ""
+#~ "Višina glav nad površino diska. Premajhna oddaljenost poveča verjetnost "
+#~ "za udarec glave, medtem ko prevelika oddaljenost poveča možnosti za "
+#~ "napako branja/pisanja."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Spin High Current"
+#~ msgstr "Tok zasuka"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Amount of surge current used to spin up the drive."
+#~ msgstr "Količina toka, ki je uporabljen za zasuk pogona."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Spin Buzz"
+#~ msgstr "Brnenje"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Number of buzz routines needed to spin up the drive due to insufficient "
+#~ "power."
+#~ msgstr ""
+#~ "Število brnenj, ki so potrebna za zasuk pogona, če je na voljo premalo "
+#~ "moči."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Offline Seek Performance"
+#~ msgstr "Zmogljivost iskanja brez povezave"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Drive's seek performance during its internal tests."
+#~ msgstr "Iskalna zmogljivost diska med notranjimi preizkusi."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Vibration During Write"
+#~ msgstr "Vibracije med zapisovanjem"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Vibration During Write"
+#~ msgstr "Vibracije med zapisovanjem"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Shock During Write"
+#~ msgstr "Šok med zapisovanjem"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Shock During Write"
+#~ msgstr "Šok med zapisovanjem"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Disk Shift"
+#~ msgstr "Zamik diska"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Distance the disk has shifted relative to the spindle (usually due to "
+#~ "shock or temperature)."
+#~ msgstr ""
+#~ "Razdalja za katero se je disk premaknil relativno na vreteno (običajno "
+#~ "zaradi temperaturnega šoka)."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "G-Sense Error Rate"
+#~ msgstr "Raven napak G-sense"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "The number of errors resulting from externally-induced shock and "
+#~ "vibration."
+#~ msgstr "Število napak, ki so posledica zunanjih šokov in vibracij."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Loaded Hours"
+#~ msgstr "Obremenitveni čas"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Time spent operating under data load."
+#~ msgstr "Čas obratovanja pod naloženimi podatki."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Load/Unload Retry Count"
+#~ msgstr "Števec poskusov obremenitev/razbremenitev"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of times head changes position."
+#~ msgstr "Kolikokrat glava spremeni položaj."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Load Friction"
+#~ msgstr "Trenje obremenitve"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Resistance caused by friction in mechanical parts while operating."
+#~ msgstr "Upor, ki ga povzroča trenje v mehanskih delih med delovanjem."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Load/Unload Cycle Count"
+#~ msgstr "Števec obremenitev/razbremenitev"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Total number of load cycles."
+#~ msgstr "Skupno število obremenitev."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Load-In Time"
+#~ msgstr "Čas obremenjevanja"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Total time of loading on the magnetic heads actuator (time not spent in "
+#~ "parking area)."
+#~ msgstr ""
+#~ "Skupen čas nalaganja magnetnih glav aktuatorja (čas, ko glava ni "
+#~ "parkirana)."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Torque Amplification Count"
+#~ msgstr "Števec povečanega navora"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of attempts to compensate for platter speed variations."
+#~ msgstr "Število poskusov kompenzacije spremenljive hitrosti plošč."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power-Off Retract Cycle"
+#~ msgstr "Števec izklopnih oddaljevanj"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "The number of times the magnetic armature was retracted automatically as "
+#~ "a result of cutting power."
+#~ msgstr ""
+#~ "Kolikokrat je bila magnetna armatura samodejno oddaljena kot posledica "
+#~ "izpada napajanja."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "GMR Head Amplitude"
+#~ msgstr "Amplituda glave GMR"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Amplitude of &quot;thrashing&quot; (distance of repetitive forward/"
+#~ "reverse head motion)"
+#~ msgstr ""
+#~ "Amplituda &quot;udarcev&quot; (razdalja ponovljivih gibanj glave naprej/"
+#~ "nazaj)"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Drive Temperature"
+#~ msgstr "Temperatura pogona"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Endurance Remaining"
+#~ msgstr "Preostala vzdržljivost"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of physical erase cycles completed on the drive as a percentage of "
+#~ "the maximum physical erase cycles the drive supports"
+#~ msgstr ""
+#~ "Število dokončanih fizičnih izbrisov na pogonu kot odstotek največjega "
+#~ "števila fizičnih izbrisov za ta pogon"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power-On Seconds"
+#~ msgstr "Čas vklopa v sekundah"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Time elapsed in the power-on state"
+#~ msgstr "Čas pretečen v vklopljenem stanju"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Unrecoverable ECC Count"
+#~ msgstr "Števec nepopravljivih napak ECC."
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of unrecoverable ECC errors"
+#~ msgstr "Števec nepopravljivih napak ECC."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Good Block Rate"
+#~ msgstr "Raven dobrih blokov"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of available reserved blocks as percentage of the total number of "
+#~ "reserved blocks"
+#~ msgstr ""
+#~ "Število razpoložljivih zadržanih blokov kot odstotek vseh zadržanih blokov"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Head Flying Hours<br/>or Transfer Error Rate (Fujitsu)"
+#~ msgstr "Števec ur oddaljenosti glav<br/> ali raven napak prenosa (Fujitsu)"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Time while head is positioning<br/>or counts the number of times the link "
+#~ "is reset during a data transfer."
+#~ msgstr ""
+#~ "Čas postavljanja glave v položaj<br/>ali število ponastavitev povezave "
+#~ "med prenosom podatkov."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Total LBAs Written"
+#~ msgstr "Skupno zapisanih LBA-jev"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Total LBAs Written"
+#~ msgstr "Skupno zapisanih LBA-jev"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Total LBAs Read"
+#~ msgstr "Skupno prebranih LBA-jev"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Total LBAs Read"
+#~ msgstr "Skupno prebranih LBA-jev"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Read Error Retry Rate"
+#~ msgstr "Raven napak ponovnega branja"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of errors while reading from a disk"
+#~ msgstr "Število napak med branjem z diska"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Free Fall Protection"
+#~ msgstr "Zaščita pred prostim padom"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of &quot;Free Fall Events&quot; detected"
+#~ msgstr "Število zaznanih &quot;dogodkov prostega pada&quot;"
+
+#~ msgctxt "@item:intable degrees in Celsius and Fahrenheit"
+#~ msgid "%1° C / %2° F"
+#~ msgstr "%1 °C / %2 °F"
+
+#~ msgctxt "@item"
+#~ msgid "Aborted"
+#~ msgstr "Prekinjeno"
+
+#~ msgctxt "@item"
+#~ msgid "Interrupted"
+#~ msgstr "Prekinjeno"
+
+#~ msgctxt "@item"
+#~ msgid "Fatal error"
+#~ msgstr "Usodna napaka"
+
+#~ msgctxt "@item"
+#~ msgid "Unknown error"
+#~ msgstr "Neznana napaka"
+
+#~ msgctxt "@item"
+#~ msgid "Electrical error"
+#~ msgstr "Električna napaka"
+
+#~ msgctxt "@item"
+#~ msgid "Servo error"
+#~ msgstr "Napaka servo"
+
+#~ msgctxt "@item"
+#~ msgid "Read error"
+#~ msgstr "Napaka med branjem"
+
+#~ msgctxt "@item"
+#~ msgid "Handling error"
+#~ msgstr "Napaka obravnavanja"
+
+#~ msgctxt "@item"
+#~ msgid "Self test in progress"
+#~ msgstr "Samopreizkus je v teku"
+
+#~ msgctxt "@item"
+#~ msgid "Success"
+#~ msgstr "Uspeh"
+
+#~ msgctxt "@item"
+#~ msgid "Healthy"
+#~ msgstr "Zdrav"
+
+#~ msgctxt "@item"
+#~ msgid "Has been used outside of its design parameters in the past."
+#~ msgstr ""
+#~ "Je bil v preteklosti uporabljen zunaj parametrov, ki so bili določeni ob "
+#~ "zasnovi."
+
+#~ msgctxt "@item"
+#~ msgid "Has some bad sectors."
+#~ msgstr "Ima nekaj slabih sektorjev."
+
+#~ msgctxt "@item"
+#~ msgid "Is being used outside of its design parameters right now."
+#~ msgstr ""
+#~ "Se sedaj uporablja zunaj parametrov, ki so bili določeni ob zasnovi."
+
+#~ msgctxt "@item"
+#~ msgid "Has many bad sectors."
+#~ msgstr "Ima veliko slabih sektorjev."
+
+#~ msgctxt "@item"
+#~ msgid "Disk failure is imminent. Backup all data!"
+#~ msgstr ""
+#~ "Napaka diska je neizogibna. Ustvarite varnostno kopijo vseh podatkov!"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema btrfs na razdelku <filename>"
+#~ "%1</filename> je spodletelo: ni bilo mogoče ustvariti začasne mape."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+#~ "btrfs file system resize failed."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema btrfs na razdelku <filename>"
+#~ "%1</filename> je spodletelo: spreminjanje velikosti datotečnega sistema "
+#~ "btrfs je spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing Btrfs file system on partition <filename>%1</filename>: "
+#~ "Unmount failed."
+#~ msgstr ""
+#~ "Pozor: spreminjanje velikosti datotečnega sistema btrfs na razdelku "
+#~ "<filename>%1</filename>: odklop je spodletel."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema btrfs na razdelku <filename>"
+#~ "%1</filename> je spodletelo: začetni priklop je spodletel."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Setting label for partition <filename>%1</filename> to %2"
+#~ msgstr "Nastavljanje oznake za razdelek <filename>%1</filename> v %2"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "unknown"
+#~ msgstr "neznan"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "extended"
+#~ msgstr "razširjen"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ext2"
+#~ msgstr "ext2"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ext3"
+#~ msgstr "ext3"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ext4"
+#~ msgstr "ext4"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "linuxswap"
+#~ msgstr "linuxswap"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "fat16"
+#~ msgstr "fat16"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "fat32"
+#~ msgstr "fat32"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ntfs"
+#~ msgstr "ntfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "reiser"
+#~ msgstr "reiser"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "reiser4"
+#~ msgstr "reiser4"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "xfs"
+#~ msgstr "xfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "jfs"
+#~ msgstr "jfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "hfs"
+#~ msgstr "hfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "hfsplus"
+#~ msgstr "hfsplus"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ufs"
+#~ msgstr "ufs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "unformatted"
+#~ msgstr "neformatiran"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "btrfs"
+#~ msgstr "btrfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "hpfs"
+#~ msgstr "hpfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "luks"
+#~ msgstr "luks"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ocfs2"
+#~ msgstr "ocfs2"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "zfs"
+#~ msgstr "zfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "exfat"
+#~ msgstr "exfat"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "nilfs2"
+#~ msgstr "nilfs2"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "lvm2 pv"
+#~ msgstr "lvm2 pv"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Mount"
+#~ msgstr "Priklopi"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Unmount"
+#~ msgstr "Odklopi"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema JFS na razdelku <filename>%1</"
+#~ "filename> je spodletelo: ni bilo mogoče ustvariti začasne mape."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#~ "Remount failed."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema JFS na razdelku <filename>%1</"
+#~ "filename> je spodletelo: ponovni priklop ni uspel."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing JFS file system on partition <filename>%1</filename>: "
+#~ "Unmount failed."
+#~ msgstr ""
+#~ "Pozor: spreminjanje velikosti datotečnega sistema JFS na razdelku "
+#~ "<filename>%1</filename>: odklop je spodletel."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema JFS na razdelku <filename>%1</"
+#~ "filename> je spodletelo: začetni priklop je spodletel."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Activate swap"
+#~ msgstr "Omogoči izmenjalni prostor"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Deactivate swap"
+#~ msgstr "Onemogoči izmenjalni prostor"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema NILFS2 na razdelku <filename>"
+#~ "%1</filename> je spodletelo: ni bilo mogoče ustvariti začasne mape."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+#~ "NILFS2 file system resize failed."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema NILFS2 na razdelku <filename>"
+#~ "%1</filename> je spodletelo: spreminjanje velikosti datotečnega sistema "
+#~ "NILFS2 je spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing NILFS2 file system on partition <filename>%1</"
+#~ "filename>: Unmount failed."
+#~ msgstr ""
+#~ "Pozor: spreminjanje velikosti datotečnega sistema NILFS2 na razdelku "
+#~ "<filename>%1</filename>: odklop je spodletel."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema NILFS2 na razdelku <filename>"
+#~ "%1</filename> je spodletelo: začetni priklop je spodletel."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Updating boot sector for NTFS file system on partition <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Posodabljanje zagonskega sektorja za datotečni sistem NTFS na razdelku "
+#~ "<filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition <filename>%1</filename> for writing when trying "
+#~ "to update the NTFS boot sector."
+#~ msgstr ""
+#~ "Med poskusom posodobitve zagonskega sektorja NTFS ni bilo mogoče odpreti "
+#~ "razdelka <filename>%1</filename> za zapisovanje."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not seek to position 0x1c on partition <filename>%1</filename> when "
+#~ "trying to update the NTFS boot sector."
+#~ msgstr ""
+#~ "Med poskusom posodobitve zagonskega sektorja NTFS ni bilo mogoče "
+#~ "preskočiti do položaja 0x1c na razdelku <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not write new start sector to partition <filename>%1</filename> "
+#~ "when trying to update the NTFS boot sector."
+#~ msgstr ""
+#~ "Med poskusom posodobitve zagonskega sektorja NTFS ni bilo mogoče zapisati "
+#~ "novega začetnega sektorja na razdelku <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Updated NTFS boot sector for partition <filename>%1</filename> "
+#~ "successfully."
+#~ msgstr ""
+#~ "Zagonski sektor NTFS za razdelek <filename>%1</filename> je bil uspešno "
+#~ "posodobljen."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema XFS na razdelku <filename>%1</"
+#~ "filename> je spodletelo: ni bilo mogoče ustvariti začasne mape."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#~ "xfs_growfs failed."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema XFS na razdelku <filename>%1</"
+#~ "filename> je spodletelo: xfs_growfs ni uspel."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing XFS file system on partition <filename>%1</filename>: "
+#~ "Unmount failed."
+#~ msgstr ""
+#~ "Pozor: spreminjanje velikosti datotečnega sistema XFS na razdelku "
+#~ "<filename>%1</filename>: odklop je spodletel."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema XFS na razdelku <filename>%1</"
+#~ "filename> je spodletelo: začetni priklop je spodletel."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on source partition <filename>%1</filename> "
+#~ "for backup."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti datotečnega sistema na izvornem razdelku <filename>"
+#~ "%1</filename> za ustvarjanje varnostne kopije."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not create backup file <filename>%1</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče ustvariti datoteke varnostne kopije <filename>%1</"
+#~ "filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Back up file system on partition <filename>%1</filename> to <filename>%2</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Ustvari varnostno kopijo sistema na razdelku <filename>%1</filename> v "
+#~ "<filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Check file system on partition <filename>%1</filename>"
+#~ msgstr "Preveri datotečni sistem razdelka <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Cannot copy file system: File system on target partition <filename>%1</"
+#~ "filename> is smaller than the file system on source partition <filename>"
+#~ "%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče kopirati datotečnega sistema: datotečni sistem na razdelku "
+#~ "<filename>%1</filename> je manjši od datotečnega sistema na izvornem "
+#~ "razdelku <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on source partition <filename>%1</filename> "
+#~ "for copying."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti datotečnega sistema na izvornem razdelku <filename>"
+#~ "%1</filename> za kopiranje."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on target partition <filename>%1</filename> "
+#~ "for copying."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti datotečnega sistema na ciljnem razdelku <filename>"
+#~ "%1</filename> za kopiranje."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Closing device. This may take a while, especially on slow devices like "
+#~ "Memory Sticks."
+#~ msgstr ""
+#~ "Zapiranje naprave. To zna trajati nekaj časa, še posebej na počasnih "
+#~ "napravah kot so pomnilniški ključki."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy file system on partition <filename>%1</filename> to partition "
+#~ "<filename>%2</filename>"
+#~ msgstr ""
+#~ "Kopiraj datotečni sistem iz razdelka <filename>%1</filename> na razdelek "
+#~ "<filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Failed to set the system type for the file system on partition <filename>"
+#~ "%1</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče nastaviti vrste datotečnega sistema na razdelku <filename>"
+#~ "%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to set "
+#~ "the system type for partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti razpredelnice razdelkov na napravi <filename>%1</"
+#~ "filename> in nastaviti vrste sistema za razdelek <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> to set the system type for "
+#~ "partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti naprave <filename>%1</filename> in nastaviti vrste "
+#~ "sistema za razdelek <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Create file system <filename>%1</filename> on partition <filename>%2</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Ustvari datotečni sistem <filename>%1</filename> na razdelku <filename>"
+#~ "%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Failed to add partition <filename>%1</filename> to device <filename>%2</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče dodati razdelka <filename>%1</filename> na napravo "
+#~ "<filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to "
+#~ "create new partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti razpredelnice razdelkov na napravi <filename>%1</"
+#~ "filename> in ustvariti novega razdelka <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> to create new partition "
+#~ "<filename>%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti naprave <filename>%1</filename> in ustvariti "
+#~ "novega razdelka <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create new partition <filename>%1</filename>"
+#~ msgstr "Ustvari nov razdelek <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create new partition on device <filename>%1</filename>"
+#~ msgstr "Ustvari nov razdelek na napravi <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not open device <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Ustvarjanje razpredelnice razdelkov je spodletelo: ni bilo mogoče odpreti "
+#~ "naprave <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create new partition table on device <filename>%1</filename>"
+#~ msgstr ""
+#~ "Ustvari novo razpredelnico razdelkov na napravi <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not delete file system on <filename>%1</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče izbrisati datotečnega sistema na <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to "
+#~ "delete file system on <filename>%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti razpredelnice razdelkov na napravi <filename>%1</"
+#~ "filename> in izbrisati datotečnega sistema na <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not delete file system signature for partition <filename>%1</"
+#~ "filename>: Failed to open device <filename>%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče izbrisati podpisa datotečnega sistema za razdelek "
+#~ "<filename>%1</filename>: ni bilo mogoče odpreti naprave <filename>%2</"
+#~ "filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Delete file system on <filename>%1</filename>"
+#~ msgstr "Izbriši datotečni sistem na <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not delete partition <filename>%1</filename>."
+#~ msgstr "Ni bilo mogoče izbrisati razdelka <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to "
+#~ "delete partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti razpredelnice razdelkov na napravi <filename>%1</"
+#~ "filename> in izbrisati razdelka <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting partition failed: Could not open device <filename>%1</filename>."
+#~ msgstr ""
+#~ "Brisanje razdelka je spodletelo: ni bilo mogoče odpreti naprave <filename>"
+#~ "%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Delete the partition <filename>%1</filename>"
+#~ msgstr "Izbriši razdelek <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "The logical sector sizes in the source and target for copying are not the "
+#~ "same. This is currently unsupported."
+#~ msgstr ""
+#~ "Logične velikosti sektorjev za kopiranje vira in cilja niso enake. To "
+#~ "trenutno ni podprto. "
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying %1 blocks (%2 sectors) from %3 to %4, direction: %5."
+#~ msgstr "Kopiranje %1 blokov (%2 sektorjev) iz %3 v %4, smer: %5."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying %1 MiB/second, estimated time left: %2"
+#~ msgstr "Kopiranje z %1 MiB/sekundo, preostali čas: %2"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying remainder of block size %1 from %2 to %3."
+#~ msgstr "Kopiranje preostanka velikosti bloka %1 iz %2 v %3."
+
+#~ msgid "1 sector"
+#~ msgid_plural "%1 sectors"
+#~ msgstr[0] "%1 sektor"
+#~ msgstr[1] "%1 sektorja"
+#~ msgstr[2] "%1 sektorji"
+#~ msgstr[3] "%1 sektorjev"
+
+#~ msgctxt ""
+#~ "@info/plain argument 2 is a string such as 7 sectors (localized "
+#~ "accordingly)"
+#~ msgid "Copying 1 block (%2) finished."
+#~ msgid_plural "Copying %1 blocks (%2) finished."
+#~ msgstr[0] "Kopiranje %1 bloka (%2) je končano."
+#~ msgstr[1] "Kopiranje %1 blokov (%2) je končano."
+#~ msgstr[2] "Kopiranje %1 blokov (%2) je končano."
+#~ msgstr[3] "Kopiranje %1 blokov (%2) je končano."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Source and target for copying do not overlap: Rollback is not required."
+#~ msgstr "Vir in cilj za kopiranje se ne prekrivata: povrnitev ni zahtevana."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Rollback from: First sector: %1, last sector: %2."
+#~ msgstr "Povrnitev iz: prvi sektor: %1, zadnji sektor: %2."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Rollback to: First sector: %1, last sector: %2."
+#~ msgstr "Povrnitev v: prvi sektor: %1, zadnji sektor: %2."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not open device <filename>%1</filename> to rollback copying."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti naprave <filename>%1</filename> za povrnitev "
+#~ "kopiranja."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Rollback failed: Source or target are not devices."
+#~ msgstr "Povrnitev je spodletela: vir ali cilj nista napravi."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Job: %1"
+#~ msgstr "Posel: %1"
+
+#~ msgctxt "@info/plain job status (error, warning, ...)"
+#~ msgid "%1: %2"
+#~ msgstr "%1: %2"
+
+#~ msgctxt "@info:progress job"
+#~ msgid "Pending"
+#~ msgstr "Na čakanju"
+
+#~ msgctxt "@info:progress job"
+#~ msgid "Success"
+#~ msgstr "Uspeh"
+
+#~ msgctxt "@info:progress job"
+#~ msgid "Error"
+#~ msgstr "Napaka"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on partition <filename>%1</filename> for "
+#~ "moving."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti datotečnega sistema na razdelku <filename>%1</"
+#~ "filename> za premikanje."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not create target for moving file system on partition <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče ustvariti cilja za premikanje datotečnega sistema na "
+#~ "razdelku <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Rollback for file system on partition <filename>%1</filename> failed."
+#~ msgstr ""
+#~ "Povrnitev za datotečni sistem na razdelku <filename>%1</filename> je "
+#~ "spodletela."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Closing device. This may take a few seconds."
+#~ msgstr "Zapiranje naprave. To lahko traja nekaj sekund."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Move the file system on partition <filename>%1</filename> to sector %2"
+#~ msgstr ""
+#~ "Premakni datotečni sistem na razdelku <filename>%1</filename> na sektor %2"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "The file system on partition <filename>%2</filename> already has the "
+#~ "requested length of 1 sector."
+#~ msgid_plural ""
+#~ "The file system on partition <filename>%2</filename> already has the "
+#~ "requested length of %1 sectors."
+#~ msgstr[0] ""
+#~ "Datotečni sistem na razdelku <filename>%2</filename> ima že zahtevano "
+#~ "velikost %1 sektor."
+#~ msgstr[1] ""
+#~ "Datotečni sistem na razdelku <filename>%2</filename> ima že zahtevano "
+#~ "velikost %1 sektorja."
+#~ msgstr[2] ""
+#~ "Datotečni sistem na razdelku <filename>%2</filename> ima že zahtevano "
+#~ "velikost %1 sektorje."
+#~ msgstr[3] ""
+#~ "Datotečni sistem na razdelku <filename>%2</filename> ima že zahtevano "
+#~ "velikost %1 sektorjev."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Resizing file system from %1 to %2 sectors."
+#~ msgstr "Spreminjanje velikosti datotečnega sistema iz %1 na %2 sektorjev."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Resizing a %1 file system using internal backend functions."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema %1 z uporabo funkcij "
+#~ "notranjega zaledja."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "The file system on partition <filename>%1</filename> cannot be resized "
+#~ "because there is no support for it."
+#~ msgstr ""
+#~ "Datotečnemu sistemu na razdelku <filename>%1</filename> ni mogoče "
+#~ "spremeniti velikosti, ker zanj ni podpore."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Successfully resized file system using internal backend functions."
+#~ msgstr ""
+#~ "Spreminjanje velikosti datotečnega sistema z uporabo funkcij notranjega "
+#~ "zaledja je uspelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not read geometry for partition <filename>%1</filename> while "
+#~ "trying to resize the file system."
+#~ msgstr ""
+#~ "Med poskusom spremembe velikosti datotečnega sistema ni bilo mogoče "
+#~ "prebrati geometrije za razdelek <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Maximize file system on <filename>%1</filename> to fill the partition"
+#~ msgstr ""
+#~ "Razpni datotečni sistem na <filename>%1</filename> tako da bo zapolnil "
+#~ "razdelek"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Resize file system on partition <filename>%2</filename> to 1 sector"
+#~ msgid_plural ""
+#~ "Resize file system on partition <filename>%2</filename> to %1 sectors"
+#~ msgstr[0] ""
+#~ "Spremeni velikost datotečnega sistema na razdelku <filename>%2</filename> "
+#~ "na %1 sektorjev"
+#~ msgstr[1] ""
+#~ "Spremeni velikost datotečnega sistema na razdelku <filename>%2</filename> "
+#~ "na %1 sektor"
+#~ msgstr[2] ""
+#~ "Spremeni velikost datotečnega sistema na razdelku <filename>%2</filename> "
+#~ "na %1 sektorja"
+#~ msgstr[3] ""
+#~ "Spremeni velikost datotečnega sistema na razdelku <filename>%2</filename> "
+#~ "na %1 sektorje"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not open backup file <filename>%1</filename> to restore from."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti datoteke z varnostno kopijo <filename>%1</"
+#~ "filename> in obnoviti iz nje."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open target partition <filename>%1</filename> to restore to."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti ciljnega razdelka <filename>%1</filename> za "
+#~ "obnovitev."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Restore the file system from file <filename>%1</filename> to partition "
+#~ "<filename>%2</filename>"
+#~ msgstr ""
+#~ "Obnovi datotečni sistem iz datoteke <filename>%1</filename> na razdelek "
+#~ "<filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "File system on partition <filename>%1</filename> does not support setting "
+#~ "labels. Job ignored."
+#~ msgstr ""
+#~ "Datotečni sistem na razdelku <filename>%1</filename> ne podpira "
+#~ "nastavitve oznak. Posel bo prezrt."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Set the file system label on partition <filename>%1</filename> to \"%2\""
+#~ msgstr ""
+#~ "Nastavi oznako datotečnega sistema na razdelku <filename>%1</filename> v "
+#~ "\"%2\""
+
+#~ msgctxt "@info/plain flag turned on, active"
+#~ msgid "on"
+#~ msgstr "vključeno"
+
+#~ msgctxt "@info/plain flag turned off, inactive"
+#~ msgid "off"
+#~ msgstr "Izključeno"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "There was an error setting flag %1 for partition <filename>%2</filename> "
+#~ "to state %3."
+#~ msgstr ""
+#~ "Med nastavljanjem zastavice %1 za razdelek <filename>%2</filename> v "
+#~ "stanje %3 je prišlo do napake."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not find partition <filename>%1</filename> on device <filename>%2</"
+#~ "filename> to set partition flags."
+#~ msgstr ""
+#~ "Ni bilo mogoče najti razdelka <filename>%1</filename> na napravi "
+#~ "<filename>%2</filename> in nastaviti zastavic razdelka."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to set "
+#~ "partition flags for partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti razpredelnice razdelkov na napravi <filename>%1</"
+#~ "filename> in nastaviti zastavic za razdelek <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> to set partition flags for "
+#~ "partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti naprave <filename>%1</filename> in nastaviti "
+#~ "zastavic za razdelek <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Clear flags for partition <filename>%1</filename>"
+#~ msgstr "Počisti zastavice za razdelek <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Set the flags for partition <filename>%1</filename> to \"%2\""
+#~ msgstr "Nastavi zastavice za razdelek <filename>%1</filename> v \"%2\""
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> while trying to resize/move "
+#~ "partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti naprave <filename>%1</filename> in spremeniti "
+#~ "velikosti/premakniti razdelka <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Set geometry of partition <filename>%1</filename>: Start sector: %2, "
+#~ "length: %3"
+#~ msgstr ""
+#~ "Nastavi geometrijo razdelka <filename>%1</filename>: začetni sektor: %2, "
+#~ "velikost: %3"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not open random data source to overwrite file system."
+#~ msgstr ""
+#~ "Ni bilo mogoče odpreti vira naključnih podatkov za prepis datotečnega "
+#~ "sistema."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Shred the file system on <filename>%1</filename>"
+#~ msgstr "Popolnoma prepiši datotečni sistem na <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Backup partition <filename>%1</filename> (%2, %3) to <filename>%4</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Ustvari varnostno kopijo razdelka <filename>%1</filename> (%2, %3) v "
+#~ "<filename>%4</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Check and repair partition <filename>%1</filename> (%2, %3)"
+#~ msgstr "Preveri in popravi razdelek <filename>%1</filename> (%2, %3)"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Maximizing file system on target partition <filename>%1</"
+#~ "filename> to the size of the partition failed."
+#~ msgstr ""
+#~ "Pozor: razširitev datotečnega sistema na ciljnem razdelku <filename>%1</"
+#~ "filename> na velikost razdelka je spodletela."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Checking target partition <filename>%1</filename> after copy failed."
+#~ msgstr ""
+#~ "Preverjanje ciljnega razdelka <filename>%1</filename> po kopiranju je "
+#~ "spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying source to target partition failed."
+#~ msgstr "Kopiranje izvornega v ciljni razdelek je spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Creating target partition for copying failed."
+#~ msgstr "Ustvarjanje razdelka za kopiranje je spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Checking source partition <filename>%1</filename> failed."
+#~ msgstr ""
+#~ "Preverjanje izvirnega razdelka <filename>%1</filename> je spodletelo."
+
+#~ msgctxt "@info/plain status (success, error, warning...) of operation"
+#~ msgid "%1: %2"
+#~ msgstr "%1: %2"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</"
+#~ "filename> (%5, %6)"
+#~ msgstr ""
+#~ "Kopiraj razdelek <filename>%1</filename> (%2, %3) v <filename>%4</"
+#~ "filename> (%5, %6)"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</"
+#~ "filename> (%5, %6) and grow it to %7"
+#~ msgstr ""
+#~ "Kopiraj razdelek <filename>%1</filename> (%2, %3) v <filename>%4</"
+#~ "filename> (%5, %6) in ga pusti rasti do %7"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+#~ "(starting at %4) on <filename>%5</filename>"
+#~ msgstr ""
+#~ "Kopiraj razdelek <filename>%1</filename> (%2, %3) na nedodeljen prostor "
+#~ "(ki se začne pri %4) na <filename>%5</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+#~ "(starting at %4) on <filename>%5</filename> and grow it to %6"
+#~ msgstr ""
+#~ "Kopiraj razdelek <filename>%1</filename> (%2, %3) na nedodeljen prostor "
+#~ "(ki se začne pri %4) na <filename>%5</filename> in ga povečaj do %6"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create filesystem %1 on partition <filename>%2</filename>"
+#~ msgstr "Na razdelku <filename>%2</filename> ustvari datotečni sistem %1"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create a new partition table (type: %1) on <filename>%2</filename>"
+#~ msgstr ""
+#~ "Ustvari novo razpredelnico razdelkov (vrsta: %1) na <filename>%2</"
+#~ "filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Shred partition <filename>%1</filename> (%2, %3)"
+#~ msgstr "Popolnoma prepiši razdelek <filename>%1</filename> (%2, %3)"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Delete partition <filename>%1</filename> (%2, %3)"
+#~ msgstr "Izbriši razdelek <filename>%1</filename> (%2, %3)"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create a new partition (%1, %2) on <filename>%3</filename>"
+#~ msgstr "Ustvari nov razdelek (%1, %2) na <filename>%3</filename>"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "None"
+#~ msgstr "Brez"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Pending"
+#~ msgstr "Na čakanju"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Running"
+#~ msgstr "V teku"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Success"
+#~ msgstr "Uspeh"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Warning"
+#~ msgstr "Opozorilo"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Error"
+#~ msgstr "Napaka"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Moving extended partition <filename>%1</filename> failed."
+#~ msgstr ""
+#~ "Premikanje razširjenega razdelka <filename>%1</filename> je spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Checking partition <filename>%1</filename> after resize/move failed."
+#~ msgstr ""
+#~ "Preverjanje razdelka <filename>%1</filename> po spremembi velikosti/"
+#~ "kopiranju je spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Resizing/moving partition <filename>%1</filename> failed."
+#~ msgstr ""
+#~ "Spreminjanje velikosti/premikanje razdelka <filename>%1</filename> je "
+#~ "spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Checking partition <filename>%1</filename> before resize/move failed."
+#~ msgstr ""
+#~ "Preverjanje razdelka <filename>%1</filename> pred spremembo velikosti/"
+#~ "kopiranjem je spodletelo."
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Move partition <filename>%1</filename> to the left by %2"
+#~ msgstr "Premakni razdelek <filename>%1</filename> na levo za %2"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Move partition <filename>%1</filename> to the right by %2"
+#~ msgstr "Premakni razdelek <filename>%1</filename> na desno za %2"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Grow partition <filename>%1</filename> from %2 to %3"
+#~ msgstr "Povečaj razdelek <filename>%1</filename> iz %2 na %3"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Shrink partition <filename>%1</filename> from %2 to %3"
+#~ msgstr "Skrči razdelek <filename>%1</filename> iz %2 v %3"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the left by %2 and grow it from "
+#~ "%3 to %4"
+#~ msgstr ""
+#~ "Premakni razdelek <filename>%1</filename> na levo za %2 in ga povečaj od "
+#~ "%3 do %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the right by %2 and grow it "
+#~ "from %3 to %4"
+#~ msgstr ""
+#~ "Premakni razdelek <filename>%1</filename> na desno za %2 in ga povečaj od "
+#~ "%3 do %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the left by %2 and shrink it "
+#~ "from %3 to %4"
+#~ msgstr ""
+#~ "Premakni razdelek <filename>%1</filename> na levo za %2 in ga skrči od %3 "
+#~ "do %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the right by %2 and shrink it "
+#~ "from %3 to %4"
+#~ msgstr ""
+#~ "Premakni razdelek <filename>%1</filename> na desno za %2 in ga skrči od "
+#~ "%3 do %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Unknown resize/move action."
+#~ msgstr "Neznano dejanje spremembe velikosti/premika."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not resize file system to shrink partition "
+#~ "<filename>%1</filename>."
+#~ msgstr ""
+#~ "Sprememba velikosti/premik je spodletel: ni bilo mogoče spremeniti "
+#~ "velikosti datotečnega sistema in skrčiti razdelka <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not shrink partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Sprememba velikosti/premik je spodletel: ni bilo mogoče skrčiti razdelka "
+#~ "<filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Moving partition <filename>%1</filename> failed."
+#~ msgstr "Premikanje razdelka <filename>%1</filename> je spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Moving the filesystem for partition <filename>%1</filename> failed. "
+#~ "Rolling back."
+#~ msgstr ""
+#~ "Premikanje datotečnega sistema razdelka <filename>%1</filename> je "
+#~ "spodletelo. Razveljavljanje."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Moving back partition <filename>%1</filename> to its original position "
+#~ "failed."
+#~ msgstr ""
+#~ "Premikanje razdelka <filename>%1</filename> na njegov izvorni položaj je "
+#~ "spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not grow partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Sprememba velikosti/premik je spodletel: ni bilo mogoče pustiti rasti "
+#~ "razdelka <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not resize the file system on partition "
+#~ "<filename>%1</filename>"
+#~ msgstr ""
+#~ "Sprememba velikosti/premik je spodletel: ni bilo mogoče spremeniti "
+#~ "velikosti datotečnega sistema na razdelku <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not restore old partition size for partition <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče obnoviti stare velikosti razdelka <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Checking target file system on partition <filename>%1</filename> after "
+#~ "the restore failed."
+#~ msgstr ""
+#~ "Preverjanje ciljnega datotečnega sistema na razdelku <filename>%1</"
+#~ "filename> po obnovitvi je spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Restoring file system failed."
+#~ msgstr "Obnovitev datotečnega sistema je spodletela."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Creating the destination partition to restore to failed."
+#~ msgstr "Ustvarjanje ciljnega razdelka za obnovitev je spodletelo."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Restore partition from <filename>%1</filename> to <filename>%2</filename>"
+#~ msgstr ""
+#~ "Obnovi razdelek iz <filename>%1</filename> v <filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Restore partition on <filename>%1</filename> at %2 from <filename>%3</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Obnovi razdelek na <filename>%1</filename> pri %2 iz <filename>%3</"
+#~ "filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Set label for partition <filename>%1</filename> to \"%2\""
+#~ msgstr "Nastavi oznako za razdelek <filename>%1</filename> v \"%2\""
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\""
+#~ msgstr ""
+#~ "Nastavi oznako za razdelek <filename>%1</filename> iz \"%2\" v \"%3\""
+
+#~ msgctxt "@info/plain"
+#~ msgid "Set flags for partition <filename>%1</filename> to \"%2\""
+#~ msgstr "Nastavi zastavice za razdelek <filename>%1</filename> v \"%2\""
+
+#~ msgctxt "@info/plain"
+#~ msgid "LibParted Exception: %1"
+#~ msgstr "Izjema LibParted: %1"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not access device <filename>%1</filename>"
+#~ msgstr "Ni bilo mogoče dostopati do naprave <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Device found: %1"
+#~ msgstr "Naprava je bila najdena: %1"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not retrieve partition table type "
+#~ "\"%1\" for <filename>%2</filename>."
+#~ msgstr ""
+#~ "Ustvarjanje razpredelnice razdelkov je spodletelo: ni bilo mogoče "
+#~ "pridobiti vrste razpredelnice razdelkov \"%1\" za <filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not open backend device <filename>"
+#~ "%1</filename>."
+#~ msgstr ""
+#~ "Ustvarjanje razpredelnice razdelkov je spodletelo: ni bilo mogoče odpreti "
+#~ "naprave zaledja <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not create a new partition table "
+#~ "in the backend for device <filename>%1</filename>."
+#~ msgstr ""
+#~ "Ustvarjanje razpredelnice razdelkov je spodletelo: ni bilo mogoče "
+#~ "ustvariti nove razpredelnice razdelkov v zaledju za napravo <filename>%1</"
+#~ "filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "The flag \"%1\" is not available on the partition's partition table."
+#~ msgstr "Zastavica \"%1\" ni na voljo na razpredelnici razdelkov razdelka."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Unknown partition role for new partition <filename>%1</filename> (roles: "
+#~ "%2)"
+#~ msgstr ""
+#~ "Neznana vloga razdelka za nov razdelek <filename>%1</filename> (vloge: %2)"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Failed to create new partition <filename>%1</filename>."
+#~ msgstr "Ni bilo mogoče ustvariti novega razdelka <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Failed to create a new partition: could not get geometry for constraint."
+#~ msgstr ""
+#~ "Ni bilo mogoče ustvariti novega razdelka: ni bilo mogoče pridobiti "
+#~ "geometrije za omejitev."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting partition failed: Partition to delete (<filename>%1</filename>) "
+#~ "not found on disk."
+#~ msgstr ""
+#~ "Brisanje razdelka je spodletelo: razdelka za brisanje (<filename>%1</"
+#~ "filename>) ni bilo mogoče najti na disku."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not set geometry for partition <filename>%1</filename> while trying "
+#~ "to resize/move it."
+#~ msgstr ""
+#~ "Med poskusom spremembe velikosti/premika razdelka <filename>%1</filename> "
+#~ "ni bilo mogoče nastaviti njegove geometrije."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not get constraint for partition <filename>%1</filename> while "
+#~ "trying to resize/move it."
+#~ msgstr ""
+#~ "Med poskusom spremembe velikosti/premika razdelka <filename>%1</filename> "
+#~ "ni bilo mogoče pridobiti njegovih omejitev."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not get geometry for partition <filename>%1</filename> while trying "
+#~ "to resize/move it."
+#~ msgstr ""
+#~ "Med poskusom spremembe velikosti/premika razdelka <filename>%1</filename> "
+#~ "ni bilo mogoče pridobiti njegove geometrije."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition <filename>%1</filename> while trying to resize/"
+#~ "move it."
+#~ msgstr ""
+#~ "Med poskusom spremembe velikosti/premika razdelka <filename>%1</filename> "
+#~ "ni bilo mogoče odpreti razdelka."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Failed to erase filesystem signature on partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "sPodpisa datotečnega sistema ni bilo mogoče izbrisati iz razdelka "
+#~ "<filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not delete file system on partition <filename>%1</filename>: Failed "
+#~ "to get partition."
+#~ msgstr ""
+#~ "Ni bilo mogoče izbrisati datotečnega sistema na razdelku <filename>%1</"
+#~ "filename>. Razdelka ni uspelo dobiti."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not resize file system on partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče spremeniti velikosti datotečnega sistema na razdelku "
+#~ "<filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not get geometry for resized partition <filename>%1</filename> "
+#~ "while trying to resize the file system."
+#~ msgstr ""
+#~ "Med poskusom spremembe velikosti datotečnega sistema ni bilo mogoče "
+#~ "pridobiti geometrije za razdelek <filename>%1</filename> s spremenjeno "
+#~ "velikostjo."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not determine file system of partition at sector %1 on device "
+#~ "<filename>%2</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče prepoznati datotečnega sistema razdelka pri sektorju %1 na "
+#~ "napravi <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not update the system type for partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Ni bilo mogoče posodobiti vrste datotečnega sistema za razdelek <filename>"
+#~ "%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "No file system defined."
+#~ msgstr "Datotečni sistem ni določen."
+
+#~ msgctxt "@info/plain"
+#~ msgid "No partition found at sector %1."
+#~ msgstr "Pri sektorju %1 ni bilo najdenega nobenega razdelka."
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "Byte"
+#~ msgid_plural "Bytes"
+#~ msgstr[0] "Bajtov"
+#~ msgstr[1] "Bajt"
+#~ msgstr[2] "Bajta"
+#~ msgstr[3] "Bajti"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "KiB"
+#~ msgstr "KiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "MiB"
+#~ msgstr "MiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "GiB"
+#~ msgstr "GiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "TiB"
+#~ msgstr "TiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "PiB"
+#~ msgstr "PiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "EiB"
+#~ msgstr "EiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "ZiB"
+#~ msgstr "ZiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "YiB"
+#~ msgstr "YiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "(unknown unit)"
+#~ msgstr "(neznana enota)"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Command: %1"
+#~ msgstr "Ukaz: %1"
+
+#~ msgctxt "@info/plain"
+#~ msgid "(Command timeout while starting \"%1\")"
+#~ msgstr "(časovni pretek ukaza med začenjanjem \"%1\")"
+
+#~ msgctxt "@info/plain"
+#~ msgid "(Command timeout while running \"%1\")"
+#~ msgstr "(časovni pretek ukaza med izvajanjem \"%1\")"
+
+#~ msgid "%1: SMART Status Report"
+#~ msgstr "%1: poročilo stanja SMART"
+
+#~ msgid "Date:"
+#~ msgstr "Datum:"
+
+#~ msgid "Program version:"
+#~ msgstr "Različica programa:"
+
+#~ msgid "Backend:"
+#~ msgstr "Zaledje:"
+
+#~ msgid "KDE Frameworks version:"
+#~ msgstr "Različica ogrodja KDE:"
+
+#~ msgid "Machine:"
+#~ msgstr "Računalnik:"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Decrypt"
+#~ msgstr "Odšifriraj"
+
+#~ msgctxt "@title:window"
+#~ msgid "Decrypt LUKS partition on <filename>%1</filename>"
+#~ msgstr "Odšifriraj razdelek LUKS na <filename>%1</filename>"
+
+#~ msgctxt "@action:button"
+#~ msgid "&Decrypt"
+#~ msgstr "O&dšifriraj"
+
+#~ msgid "&Name:"
+#~ msgstr "I&me:"
+
+#~ msgid "&Passphrase:"
+#~ msgstr "&Šifrirna fraza:"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Size:"
+#~ msgstr "Velikost:"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Developer"
+#~ msgstr "Razvijalec"
+
+#~ msgctxt "@title"
+#~ msgid "Dummy Backend Plugin"
+#~ msgstr "Preizkusni vstavek zaledja"
+
+#~ msgid "KDE Partition Manager dummy backend."
+#~ msgstr "Preizkusno zaledje za upravljalnik razdelkov za KDE."
+
+#~ msgid "Copyright 2010 Volker Lanz"
+#~ msgstr "Avtorske pravice 2010 Volker Lanz"
+
+#~ msgctxt "@title"
+#~ msgid "LibParted Backend Plugin"
+#~ msgstr "Vstavek zaledja LibParted"
+
+#~ msgid "KDE Partition Manager backend for libparted."
+#~ msgstr "Zaledje upravljalnika razdelkov za KDE za libparted"
+
+#~ msgid "Copyright 2008,2009,2010 Volker Lanz"
+#~ msgstr "Avtorske pravice 2008,2009,2010 Volker Lanz"
+
+#~ msgctxt "@title:window"
+#~ msgid "Error: No Usable Devices Found"
+#~ msgstr "Napaka: ni bilo najdenih uporabnih naprav"
+
+#~ msgctxt "@item/plain filesystem name"
+#~ msgid "unknown"
+#~ msgstr "neznano"
+
+#~ msgctxt "@item/plain filesystem name"
+#~ msgid "extended"
+#~ msgstr "razširjen"
+
+#~ msgctxt "@item/plain filesystem name"
+#~ msgid "jfs"
+#~ msgstr "jfs"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create file system %1 on partition <filename>%2</filename>"
+#~ msgstr "Ustvari datotečni sistem %1 na razdelku <filename>%2</filename>"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "<para>No usable devices could be found.</para><para>Make sure you have "
+#~ "sufficient privileges to access block devices on your system.</para>"
+#~ msgstr ""
+#~ "<para>Ni bilo mogoče najti uporabnih naprav.</para><para>Prepričajte se, "
+#~ "da imate zadostna dovoljenja, da lahko dostopate do blokovnih naprav na "
+#~ "vašem sistemu.</para>"
+
+#~ msgctxt "@info:credit"
+#~ msgid "(c) 2008, 2009, 2010, 2011 Volker Lanz"
+#~ msgstr "(c) 2008, 2009, 2010, 2011 Volker Lanz"

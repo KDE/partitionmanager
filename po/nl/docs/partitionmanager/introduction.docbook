@@ -1,0 +1,48 @@
+<chapter id="introduction">
+	<title
+>Inleiding</title>
+	<para
+>&partman; is een hulpprogramma om u te helpen bij het beheren van de <glossterm linkend="glossary-device"
+>schijfapparaten</glossterm
+>, <glossterm linkend="glossary-partition"
+>partities</glossterm
+> en <glossterm linkend="glossary-filesystem"
+>bestandssystemen</glossterm
+> op uw computer. </para>
+	<para
+>Het maakt het makkelijk om <link linkend="howto-installos"
+>nieuwe partities aan te maken</link
+>, nieuwe bestandssystemen op nieuwe of bestaande partities aan te maken, <link linkend="howto-copypartition"
+>kopiëren</link
+>, verplaatsen of verwijderen van partities en ook <link linkend="howto-resizepartition"
+>aanpassen van de grootte van een partitie</link
+> zonder verlies van de aanwezige data. </para>
+
+	<para
+>Om deze taak efficient uit te voeren maakt &partman; gebruik van externe programma's voor de ondersteuning van een lange lijst van bestandssystemen. Waarschijnlijk zijn de nodige programma's al geïnstalleerd. </para>
+
+	<warning>
+		<title
+>Maak altijd een reservekopie van uw gegevens!</title>
+		<para
+>&partman; is ontworpen voor betrouwbaarheid en met extra aandacht voor data-integriteit. Maar er is altijd een risico wanneer partities worden aangepast. Er kan altijd nog een bug in &partman; aanwezig zijn, er kan een onverwachte storing in de spanning zijn of een probleem met de hardware van de computer. </para>
+		<para
+>Vanwege deze redenen moet men <emphasis
+>van belangrijke data altijd een backup</emphasis
+> maken voordat men wijzigingen aanbrengt met een programma zoals &partman;. </para>
+		<para
+>De auteurs van het programma nemen geen enkele verantwoordelijkheid als u door het gebruikt van &partman; gegevens verliest. </para>
+	</warning>
+
+	<para
+>&partman; gebruikt <glossterm linkend="glossary-operation"
+>bewerkingen</glossterm
+>, <glossterm linkend="glossary-job"
+>taken</glossterm
+> en <glossterm linkend="glossary-command"
+>commando's</glossterm
+> om het werk logisch in te delen. Lees de <link linkend="glossary"
+>woordenlijst</link
+> voor meer details hierover. </para>
+
+</chapter>

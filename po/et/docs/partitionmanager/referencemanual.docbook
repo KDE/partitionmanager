@@ -1,0 +1,595 @@
+<chapter id="reference">
+	<title
+>Käskude seletused</title>
+
+	<sect1 id="reference-overview">
+		<title
+>Ülevaade</title>
+		<para
+>Järgnevalt selgitatakse üksikasjalikult kõiki partitsioonihalduri käske. See on täiendus kasutajaliidese tutvustusele, mille andis <xref linkend="usermanual"/>.</para>
+	</sect1>
+	
+	<sect1 id="menu-file">
+		<title
+>Menüü <guimenu
+>Fail</guimenu
+></title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-file-quit">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Välju</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Lõpetab partitsioonihalduri töö</action
+> ilma ühtegi ootel operatsiooni teostamata. Rakendus küsib siiski sinu käest, kas soovid tõesti väljuda, kui mõni operatsioon peaks ootel olema. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect1>
+
+	<sect1 id="menu-edit">
+		<title
+>Menüü <guimenu
+>Redigeerimine</guimenu
+></title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-edit-undo">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Võta tagasi</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Tühistab viimase operatsiooni</action
+>, mis on lisatud operatsioonide nimekirja. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui operatsioonide nimekiri ei ole tühi. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-clear">
+					<term>
+						<menuchoice
+><guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Puhasta</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Puhastab operatsioonide nimekirja</action
+> ilma neist ühtegi teostamata. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui operatsioonide nimekiri ei ole tühi. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-apply">
+					<term>
+						<menuchoice
+><guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Rakenda</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Teostab operatsioonide nimekirja operatsioonid</action
+>. Selle käsuga rakendatakse kõik nimekirjas olevad operatsioonid, millega kirjutatakse kõik muudatused jäädavalt ketastele. Pärast operatsioonide teostamist nimekiri puhastatakse ning pole enam mingit võimalust neid tagasi võtta. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui operatsioonide nimekiri ei ole tühi. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect1>
+
+	<sect1 id="menu-view">
+		<title
+>Menüü <guimenu
+>Vaade</guimenu
+></title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-view-devices">
+					<term>
+						<menuchoice
+><guimenu
+>Vaade</guimenu
+> <guimenuitem
+>Seadmed</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Lülitab seadmete paneeli näitamist</action
+> sisse või välja. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-view-operations">
+					<term>
+						<menuchoice
+><guimenu
+>Vaade</guimenu
+> <guimenuitem
+>Ootel operatsioonid</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Lülitab ootel operatsioonide paneeli näitamise</action
+> sisse või välja. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-view-information">
+					<term>
+						<menuchoice
+><guimenu
+>Vaade</guimenu
+> <guimenuitem
+>Teave</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Lülitab teabepaneeli näitamise</action
+> sisse või välja. See paneel näitab kas parajasti valitud seadme või partitsiooni üksikasju. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-view-log">
+					<term>
+						<menuchoice
+><guimenu
+>Vaade</guimenu
+> <guimenuitem
+>Logi väljund</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Lülitab logi väljundi paneeli näitamise</action
+> sisse või välja. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-view-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Vaade</guimenu
+><guimenuitem
+> Failisüsteemi toetus</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Näitab failisüsteemi toetuse dialoog</action
+>. Selles saab üksikasjalikult teada, milliseid operatsioone saab millise toetatud failisüsteemi korral ette võtta. </para>
+						<para
+>Niisugune võib dialoog välja näha, kui paigaldatud on enamik väliseid tööriistu: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Failisüsteemi toetuse dialoog enamiku väliste tööriistade paigaldamise korral</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>Sinine linnuke tähendab, et omadus on <quote
+>toetatud</quote
+>, punane rist aga, et <quote
+>toetamata</quote
+>. Mõned asjad on alati toetamata, näiteks saaleala failisüsteemi (linuxswap) kontroll, sest see on olemuslikult võimatu. Mõningaid võimalusi aga ei saa toetada väliste tööriistade puudumise tõttu. Nii on asi näiteks FAT-failisüsteemi nime kirjutamise puhul. </para>
+						<para
+>Kui oled paigaldatud partitsioonihalduri töö ajal uusi tööriistu, klõpsa nupule <guibutton
+>Uuri uuesti toetust</guibutton
+>, millega sunnitakse peale paigaldatud failisüsteemi toetuse tööriistade olemasolu ülekontrollimine. </para>
+						<para
+>Seda, millist välist tööriista millise operatsiooni jaoks tarvis läheb, tutvustab <xref linkend="requirements"/>. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-view-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Vaade</guimenu
+> <guimenuitem
+>Värskenda seadmeid</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Võimaldab värskendada seadmeid</action
+>: selle käsuga sunnitakse partitsioonihaldur taas üle uurima kõik sinu arvuti seadmed. Sellest võib olla kasu näiteks siis, kui oled pärast partitsioonihalduri käivitamist ühendanud välise USB-kõvaketta. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect1>
+
+	<sect1 id="menu-device">
+		<title
+>Menüü <guimenu
+>Seade</guimenu
+></title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-device-createpartitiontable">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Seade</guimenu
+> <guimenuitem
+>Loo uus partitsioonitabel</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Loob uue partitsioonitabeli</action
+>: selle käsuga luuakse parajasti valitud seadmes uus ja tühi MSDOS partitsioonitabel. See kustutab kõik seadme partitsioonid ja neil olevad andmed, nii et selle käsuga tasuks ettevaatlik olla. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui seade on valitud ja ükski seadme partitsioon pole ühendatud. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect1>
+
+	<sect1 id="menu-partition">
+		<title
+>Menüü <guimenu
+>Partitsioon</guimenu
+></title>
+
+		<para>
+			<variablelist>
+				<varlistentry id="menu-partition-new">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partitsioon</guimenu
+> <guimenuitem
+>Uus</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Loob uue partitsiooni</action
+>: avatakse uue partitsiooni loomise dialoog, kus saab määrata loodava partitsiooni tüübi, suuruse, asukoha ja failisüsteemi. </para>
+						<para
+>Palun arvesta, et seadme partitsioonitabel võib piirata seda, kui palju partitsioone saab luua. Näiteks MS-DOS partitsioonitabelid võimaldavad luua ainult neli peamist partitsiooni. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui valitud on seadme tühi ala. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-resize">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partitsioon</guimenu
+> <guimenuitem
+>Muuda suurust/Liiguta</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Muudab partitsiooni suurus või liigutab seda</action
+>: avatakse dialoog, milles saab olemasoleva partitsiooni suurust muuta või seda liigutada. Sõltuvalt partitsiooni failisüsteemis ja sinu arvutisse paigaldatud välistest tööriistadest ei pruugi olla võimalik kasutada kõiki kolme antud käsuga seotud võimalust, see tähendab partitsiooni liigutamist, selle muutmist väiksemaks (<quote
+>kahandamist</quote
+>) või selle muutmist suuremaks (<quote
+>kasvatamist</quote
+>). Vt. ka <xref linkend="menu-view-filesystemsupport"/>. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui valitud partitsioon ei ole ühendatud ning selle failisüsteemi saab kahandada, kasvatada või liigutada. Laiendatud partitsiooni korral saab käsku kasutada ainult siis, kui ükski partitsiooni loogilistest osadest ei ole ühendatud. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-delete">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>Del</keycap
+></shortcut
+> <guimenu
+>Partitsioon</guimenu
+> <guimenuitem
+>Kustuta</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Kustutab partitsiooni</action
+>, mis on parajasti valitud. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui valitud partitsioon ei ole ühendatud. Laiendatud partitsiooni korral saab käsku kasutada ainult siis, kui see ei sisalda ühtegi loogilist partitsiooni. </para>
+						<warning>
+							<title
+>Hoiatus: võib kaasa tuua andmekadu</title>
+							<para
+>Partitsiooni kustutamine tähendab seda, et kõik partitsioonil leiduvad andmed hävitatakse.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-copy">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partitsioon</guimenu
+> <guimenuitem
+>Kopeeri</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Kopeerib partitsiooni</action
+>, mis on parajasti valitud, partitsioonihalduri lõikepuhvrisse. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui valitud partitsioon ei ole ühendatud ning selle failisüsteemi saab kopeerida. Laiendatud partitsioone kopeerida ei saa. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-paste">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partitsioon</guimenu
+> <guimenuitem
+>Aseta</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Asetab partitsiooni</action
+> partitsioonihalduri lõikepuhvrist parajasti valitud partitsiooni või tühjale alale. </para>
+						<para
+>Asetamisel tühjale alale ilmub dialoog, mis võimaldab asetatavat koopiat liigutada või kasvatada. Olemasoleva partitsiooni ülekirjutamisel dialoogi ei näidata. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui lõikepuhvris on parajasti partitsioon ning valitud on sobiv sihtmärk (kas partitsioon või tühi ala). Sihtmärk peab ühtlasi olema piisavalt suur, et mahutada lähtepartitsiooni, ega tohi olla ühendatud. Partitsiooni ei saa kopeerida iseendasse. </para>
+						<warning>
+							<title
+>Hoiatus: võib kaasa tuua andmekadu</title>
+							<para
+>Partitsiooni asetamine olemasolevasse partitsiooni tähendab olemasoleva partitsiooni kõigi andmete hävitamist ja asendamist asetatava partitsiooni andmetega.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partitsioon</guimenu
+> <guimenuitem
+>Ühenda/Lahuta</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Ühendab või lahutab partitsiooni</action
+> vastavalt sellele, kas valitud partitsioon on parajasti lahutatud või ühendatud. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui on valitud partitsioon, mida saab ühendada või lahutada. Kui operatsioonisüsteem ei tea partitsiooni ühenduspunkti, ei saa seda ka partitsioonihalduris ühendada. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-check">
+					<term>
+						<menuchoice
+><guimenu
+>Partitsioon</guimenu
+> <guimenuitem
+>Kontrolli</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Kontrollib partitsiooni</action
+>: selle käsuga otsitakse valitud partitsioonis ja selle failisüsteemis võimalikke vigu ning püütakse leitud probleemid parandada. Ühtlasi muudetakse partitsiooni failisüsteemi suurust nii, et see täidaks terve partitsiooni. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui on valitud partitsioon, mida saab kontrollida ja mis pole ühendatud. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-backup">
+					<term>
+						<menuchoice
+><guimenu
+>Partitsioon</guimenu
+> <guimenuitem
+>Varunda</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Varundab partitsiooni</action
+>: selle käsuga saab teha valitud partitsiooni failisüsteemist varukoopiafaili. Sinu käest päritakse, kuhu salvestada käsu aktiveerimise järel loodud tõmmisefail. </para>
+						<para
+>Loodud tõmmisefail on sektorite kaupa koopia partitsiooni failisüsteemist. See ei ole tihendatud ning sellele ei ole lisatud täiendavat metainfot ega päiseid, nii et seda saab väljaspool partitsioonihaldurit ka silmusseadme abil otse ühendada, kui operatsioonisüsteem seda toetab. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui partitsioon on valitud ja selle failisüsteemi saab varundada. Samuti ei tohi partitsioon olla ühendatud. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-restore">
+					<term>
+						<menuchoice
+><guimenu
+>Partitsioon</guimenu
+> <guimenuitem
+>Taasta</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Taastab partitsiooni</action
+>: selle käsuga saab failisüsteemi tõmmisefaili põhjal partitsioonile taastada. Käsu aktiveerimise järel päritakse sinu käest tõmmisefaili nime, mille põhjal taastamine ette võtta. Taastamise sihtmärk peab olema piisavalt suur tõmmisefaili mahutamiseks. </para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui valitud on kas tühi ala või partitsioon, mis ei ole parajasti ühendatud. </para>
+						<warning>
+							<title
+>Hoiatus: võib kaasa tuua andmekadu</title>
+							<para
+>Partitsiooni taastamine olemasolevasse partitsiooni tähendab olemasoleva partitsiooni kõigi andmete hävitamist ja asendamist taastatava tõmmisefaili andmetega.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Partitsioon</guimenu
+> <guimenuitem
+>Omadused</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Näitab partitsiooni omadusi</action
+>, avades dialoogi teabega parajasti valitud partitsiooni või tühja ala kohta. </para>
+						<para
+>Mida dialoogis näidatakse ja mida seal muuta saab, sõltub partitsiooni ja sellel oleva failisüsteemi tüübist ning sellest, kas partitsioon on parajasti ühendatud või mitte. </para>
+						<para
+>Nii näiteks ei toeta sugugi kõik failisüsteemid nime määramist. Enamasti ei ole ka võimalik muuta ühtegi omadust,kui partitsioon on ühendatud. </para>
+						<para
+>Toome ära kõik partitsioonide ja failisüsteemide omadused, mida üldjuhul saab dialoogis muuta: <itemizedlist>
+								<listitem>
+									<para
+>Failisüsteemi nime määramine või muutmine</para>
+								</listitem>
+								<listitem>
+									<para
+>Partitsiooni failisüsteemi muutmine</para>
+
+									<warning>
+										<title
+>Hoiatus: võib kaasa tuua andmekadu</title>
+										<para
+>Partitsiooni failisüsteemi muutmine tähendab alati kõigi partitsiooni andmete hävitamist.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Failisüsteemi taasloomine partitsioonil</para>
+
+									<warning>
+										<title
+>Hoiatus: võib kaasa tuua andmekadu</title>
+										
+										<para
+>Partitsiooni failisüsteemi taasloomine tähendab alati partitsiooni kõigi andmete hävitamist. Failisüsteemi taasloomist tuleks kasutada ainult viimase abinõuna, kui partitsiooni failisüsteemi ei saa enam mingil muul moel parandada.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Partitsiooni lippude muutmine</para>
+									<para
+>Sõltuvalt kasutatavast partitsioonitabelist on kõigil selle partitsioonidel teatav hulk lippe. Üldjuhul ei ole lippude muutmine vajalik ja seda tuleks teha vaid siis, kui oled täiesti kindel, et tead, mida teed.</para>
+								</listitem>
+							</itemizedlist>
+						</para>
+						<para
+>Seda käsku saab kasutada ainult siis, kui valitud on kas tühi ala või partitsioon. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect1>
+
+	<sect1 id="menu-settings">
+		<title
+>Menüü <guimenu
+>Seadistused</guimenu
+></title>
+
+		<para
+>See on tavaline <guimenu
+>seadistuste</guimenu
+>menüü, mille leiab enamikus &kde; rakendustes. Täpsemalt kõneleb sellest &kde; põhialuste käsiraamat. </para>
+	</sect1>
+
+	<sect1 id="menu-help">
+		<title
+>Menüü <guimenu
+>Abi</guimenu
+></title>
+&help.menu.documentation; </sect1>
+</chapter>

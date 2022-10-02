@@ -1,0 +1,48 @@
+<chapter id="introduction">
+	<title
+>Introducció</title>
+	<para
+>El &partman; és un programa d'utilitat per ajudar-vos a gestionar els <glossterm linkend="glossary-device"
+>dispositius de disc</glossterm
+>, les <glossterm linkend="glossary-partition"
+>particions</glossterm
+> i els <glossterm linkend="glossary-filesystem"
+>sistemes de fitxers</glossterm
+> del vostre ordinador. </para>
+	<para
+>Us permet <link linkend="howto-installos"
+>crear noves particions</link
+> fàcilment, crear sistemes de fitxers en particions noves o existents, <link linkend="howto-copypartition"
+>copiar</link
+>, moure o suprimir particions i també <link linkend="howto-resizepartition"
+>modificar la mida d'una partició</link
+> sense perdre'n les dades. </para>
+
+	<para
+>Per fer aquesta tasca de manera eficient el &partman; usa eines externes per implementar una llarga llista de sistemes de fitxers. Probablement ja teniu les eines necessàries per als sistemes de fitxers instal·lades en el vostre sistema. </para>
+
+	<warning>
+		<title
+>Feu sempre una còpia de seguretat de les vostres dades!</title>
+		<para
+>El &partman; ha estat dissenyat i escrit amb una alta diligència i un èmfasi en la integritat de les dades. No obstant això sempre hi pot haver perill en modificar la taula de particions d'un dispositiu o les seves particions: hi pot haver una errada en &partman;, una fallada elèctrica o un problema amb el maquinari de l'ordinador. </para>
+		<para
+>Per aquestes raons hauríeu de <emphasis
+>tenir sempre una còpia de seguretat de les vostres dades importants</emphasis
+> abans de fer qualsevol modificació amb una eina com el &partman;. </para>
+		<para
+>Els autors del programa no es responsabilitzen de res si perdeu dades mentre useu el &partman;. </para>
+	</warning>
+
+	<para
+>El &partman; usa <glossterm linkend="glossary-operation"
+>operacions</glossterm
+>, <glossterm linkend="glossary-job"
+>tasques</glossterm
+> i <glossterm linkend="glossary-command"
+>ordres</glossterm
+> per dividir lògicament el treball que fa. Mireu el <link linkend="glossary"
+>glossari</link
+> per detalls d'això. </para>
+
+</chapter>

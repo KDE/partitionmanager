@@ -1,0 +1,393 @@
+<glossary id="glossary">
+
+	<glossentry id="glossary-command">
+		<glossterm
+>Команда</glossterm>
+		<glossdef>
+			<para
+>У &partman; команди — це те, з чого складаються <link linkend="glossary-job"
+>завдання</link
+>. Це кроки найнижчого рівня, які слід виконати, часто такі кроки виконуються зовнішніми інструментами, за ними можна прослідкувати лише за докладним звітом про поступ виконання. </para>
+			<para
+>Зазвичай, користувачеві не слід перейматися тим, з яких команд складаються дії. </para>
+<glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-job"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylinder">
+		<glossterm
+>Циліндр</glossterm>
+		<glossdef>
+			<para
+>Одиниця, яка використовується для поділу <link linkend="glossary-device"
+>пристрою</link
+>. Деякі операційні системи і багато інструментів для роботи з дисками вимагають, щоб <link linkend="glossary-partition"
+>розділи</link
+> починалися і завершувалися на межах циліндрів. Тому &partman; автоматично прив’язує розділи до меж циліндрів під час зміни розташування початку і кінця розділу. </para>
+<glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylindersize">
+		<glossterm
+>Розмір циліндра</glossterm>
+		<glossdef>
+			<para
+>Кількість <link linkend="glossary-sector"
+>секторів</link
+>, яка припадає на один <link linkend="glossary-cylinder"
+>циліндр</link
+> на <link linkend="glossary-device"
+>пристрої</link
+>. Обчислюється як кількість <link linkend="glossary-head"
+>голівок</link
+> помножена на кількість <link linkend="glossary-sector"
+>секторів</link
+> на доріжці. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-device">
+		<glossterm
+>Пристрій</glossterm>
+		<glossdef>
+			<para
+>Фізичний дисковий пристрій. Фізичні дискові пристрої поділяються на логічні розділи, які називають <link linkend="glossary-partition"
+>розділами диска</link
+> за допомогою <link linkend="glossary-partitiontable"
+>таблиць розділів</link
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-disklabel">
+		<glossterm
+>Мітка диска</glossterm>
+		<glossdef>
+			<para
+>Інша назва <link linkend="glossary-partitiontable"
+>таблиці розділів</link
+>, що походить зі світу SUN/BSD. </para>
+			<para>
+				<note>
+					<para
+>Ці терміни легко сплутати, але мітка диска не має нічого спільного з <link linkend="glossary-filesystemlabel"
+>міткою файлової системи</link
+>. </para>
+					<para
+>Прочитайте <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel"
+>цю статтю у Вікіпедії</ulink
+>, щоб отримати додаткові відомості щодо назви. </para>
+				</note>
+			</para>
+			<glossseealso otherterm="glossary-partitiontable"
+></glossseealso>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-extendedpartition">
+		<glossterm
+>Розширений розділ</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>Розділ</link
+>, у якому містяться інші розділи. Розширені розділи можуть бути лише <link linkend="glossary-primarypartition"
+>основними розділами</link
+>. Чи будуть розширені розділи доступними, чи ні, залежить від використаного <link linkend="glossary-partitiontable"
+>таблиці розділів</link
+>. Таблиці розділів MS-DOS дозволяють створювати лише по одному розширеному розділу на <link linkend="glossary-device"
+>пристрій</link
+>. </para>
+<glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystem">
+		<glossterm
+>Файлова система</glossterm>
+		<glossdef>
+			<para
+>Файлова система визначає спосіб впорядкування збережених даних (файлів з їх метаданими, тек з їх метаданими, вільного простору) на <link linkend="glossary-partition"
+>розділі</link
+>. Існують різні типи файлових систем, деякі мають свій початок у світі Unix/Linux, а деякі — ні. Прикладами файлових систем, які використовуються найчастіше у Unix/Linux, є Btrfs, ext4 та XFS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystemlabel">
+		<glossterm
+>Мітка файлової системи</glossterm>
+		<glossdef>
+			<para
+>Заголовок файлової системи. Деякі з файлових систем (серед таких систем Btrfs, ext2/3/4, FAT16/32 і NTFS) підтримують встановлення міток для файлових систем для того, щоб за цими мітками &partman; та інші програми могли ідентифікувати файлову систему. </para>
+			<para>
+				<note>
+					<para
+>Ці терміни легко сплутати, але мітка файлової системи не має нічого спільного з <link linkend="glossary-disklabel"
+>міткою диска</link
+>.</para>
+				</note>
+			</para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-flag">
+		<glossterm
+>Прапорець</glossterm>
+		<glosssee otherterm="glossary-partitionflag"/>
+	</glossentry>
+	
+	<glossentry>
+		<glossterm
+>GPT</glossterm>
+		<glossdef>
+			<para
+>Сучасний формат таблиці розділів, підтримку якого передбачено у більшості сучасних комп’ютерів та сучасних операційних системах. У ній передбачено можливість використання понад 4 <link linkend="glossary-primarypartition"
+>основних розділів</link
+> на відміну від застарілої таблиці розділів MS-DOS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-head">
+		<glossterm
+>Голівка</glossterm>
+		<glossdef>
+			<para
+>Одиниця призначена для того, щоб розділяти <link linkend="glossary-device"
+>пристрій</link
+>. </para>
+<glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-job">
+		<glossterm
+>Завдання</glossterm>
+		<glossdef>
+			<para
+>У &partman; завдання — це те, з чого складаються <link linkend="glossary-operation"
+>дії</link
+>. Зазвичай, вам не слід надто перейматися завданнями, — вони відіграють роль лише у випадку, якщо ви застосовуєте список черги дій. У такому випадку &partman; показуватиме діалогове вікно поступу, у якому буде показано список всіх дій і відповідних завдань, а також позначено поточне завдання дії, яке виконуватиметься. </para>
+<glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-label">
+		<glossterm
+>Мітка</glossterm>
+		<glossdef>
+			<para
+>Або <link linkend="glossary-disklabel"
+>мітка диска</link
+> або <link linkend="glossary-filesystemlabel"
+>мітка файлової системи</link
+>. </para>
+<glossseealso otherterm="glossary-disklabel"
+></glossseealso
+> <glossseealso otherterm="glossary-filesystemlabel"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-logicalpartition">
+		<glossterm
+>Логічний розділ</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>Розділ</link
+> у <link linkend="glossary-extendedpartition"
+>розширеному розділі</link
+>. </para>
+<glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-luks">
+		<glossterm
+>LUKS</glossterm>
+		<glossdef>
+			<para
+>Linux Unified Key Setup (система уніфікованих ключів Linux) є стандартним форматом шифрування для Linux. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-lvm">
+		<glossterm
+>LVM</glossterm>
+		<glossdef>
+			<para
+>LVM — система керування логічними розділами, яка є гнучкішою за звичайні розділи. Складається з трьох основних компонентів:</para>
+			<simplelist>
+			<member
+>Фізичні томи LVM є розділами на диску, простір на яких керується LVM.</member>
+			<member
+>Група томів LVM є збіркою фізичних томів LVM, яку можна поділити на логічні розділи. Нею можна скористатися для створення файлових систем, дані яких можуть зберігатися на декількох пристроях, або поділу шифрованого тому <link linkend="glossary-luks"
+>LUKS</link
+> на декілька менших розділів.</member>
+			<member
+>Логічні томи LVM подібні до звичайних розділів, але вони можуть розміщуватися на групі томів LVM. Крім того, розміщення розділів LVM є гнучкішим: вони не обов’язково мають бути фізично неперервними. Саме тому, &partman; не дозволяє пересувати логічні томи LVM і показує залишок вільного місця наприкінці пристрою.</member>
+			</simplelist>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-operation">
+		<glossterm
+>Дія</glossterm>
+		<glossdef>
+			<para
+>&partman; поділяє роботу, яку він виконує на дії, <link linkend="glossary-job"
+>завдання</link
+> і <link linkend="glossary-command"
+>команди</link
+>. </para>
+			<para
+>Серед цих трьох елементів поділу найпомітнішими є дії. Якщо ви виконаєте певні маніпуляції за допомогою графічного інтерфейсу користувача, скоріше за все, це призведе до додавання нової дії до списку черги дій. Основною ідеєю, яка за цим криється є така: ймовірно, вам знадобиться декілька кроків для перетворення поточного стану ваших дискових пристроїв на стан, який вам потрібен. Виконання деяких з цих кроків може тривати досить довго (копіювання великої файлової системи або зміна розмірів файлової системи, вільний простір на якій є незначним). Щоб ви не сиділи перед монітором довгий час, очікуючи на завершення одного з таких кроків, щоб потім почати виконання наступного, дії надають вам змогу вказати, як мають виглядати пристрої після виконання всіх дій, потім надати змогу &partman; виконати всі потрібні дії і повернутися після того, як виконання всіх дій буде завершено. </para>
+			<para
+>Дії зберігаються у списку черги дій. До того часу, доки дію не було застосовано, її <link linkend="menu-edit-undo"
+>легко можна скасувати</link
+>, при цьому ніяких змін даних виконано не буде. </para>
+<glossseealso otherterm="glossary-job"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partition">
+		<glossterm
+>Розділ диска</glossterm>
+		<glossdef>
+			<para
+>Розділ <link linkend="glossary-device"
+>пристрою жорсткого диска</link
+>, на якому може міститися <link linkend="glossary-filesystem"
+>файлова система</link
+> або інші розділи. Без принаймні одного чинного розділу диск не можна використовувати. </para>
+<glossseealso otherterm="glossary-device"
+></glossseealso
+> <glossseealso otherterm="glossary-partitiontable"
+></glossseealso
+> <glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partitionflag">
+		<glossterm
+>Прапорець розділу</glossterm>
+		<glossdef>
+			<para
+>Позначка для <link linkend="glossary-partition"
+>розділу</link
+>. Наявність таких прапорців залежить від типу використаної <link linkend="glossary-partitiontable"
+>таблиці розділів</link
+>. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-partitiontable">
+		<glossterm
+>Таблиця розділу</glossterm>
+		<glossdef>
+			<para
+>Невеличкий розділ на початку фізичного простору <link linkend="glossary-device"
+>пристрою</link
+>, який використовується для зберігання відомостей про компонування <link linkend="glossary-partition"
+>розділів</link
+> пристрою. Існують різні типи таблиць розділів, у кожного з них є власні обмеження. </para>
+			<para
+>Іноді використовують термін <quote
+>мітка диска</quote
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-primarypartition">
+		<glossterm
+>Основний розділ</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>Розділ</link
+> безпосередньо у <link linkend="glossary-partitiontable"
+>таблиці розділів</link
+>, на відміну від <link linkend="glossary-logicalpartition"
+>логічних розділів</link
+>, які розміщено у <link linkend="glossary-extendedpartition"
+>розширених розділах</link
+>. </para>
+			<para
+><link linkend="glossary-partitiontable"
+>Таблиці розділів</link
+>, зазвичай, накладають обмеження на максимальну кількість основних розділів, які може бути створено на одному <link linkend="glossary-device"
+>пристрої</link
+>. Для типу таблиць розділів MS-DOS, наприклад, максимальну кількість обмежено чотирма розділами. </para>
+<glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-sector">
+		<glossterm
+>Сектор</glossterm>
+		<glossdef>
+			<para
+>Одиниця, яку використовують для поділу <link linkend="glossary-device"
+>пристрою</link
+>. <link linkend="glossary-partition"
+>Розділи</link
+> завжди мають починатися і закінчуватися на межі секторів. </para>
+<glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-sectorsize">
+		<glossterm
+>Розмір сектора</glossterm>
+		<glossdef>
+			<para
+>Кількість байтів на один <link linkend="glossary-sector"
+>сектор</link
+> на <link linkend="glossary-device"
+>пристрої</link
+>. Розмір сектора на більшості пристроїв, які використовуються зараз, дорівнює 512 байтам. </para>
+		</glossdef>
+	</glossentry>
+	
+	<!--
+		<glossentry>
+			<glossterm
+></glossterm>
+			 
+		</glossentry>
+		-->
+
+</glossary>

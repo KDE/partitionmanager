@@ -1,0 +1,164 @@
+<sect1 id="howto-installos">
+	<title
+>Cómo instalar un nuevo sistema operativo</title>
+
+	<para
+>Esta guía describe cómo preparar un nuevo disco duro para la instalación de un SO: supongamos que acaba de adquirir un disco duro y pretende utilizarlo como reemplazo para el antiguo, que aloja en la actualidad sus particiones de SO y de datos. También le gustaría aprovechar la oportunidad para instalar un nuevo sistema operativo. Para realizar esta transición entre el viejo y el nuevo sistema y dispositivo, se deben llevar a cabo varios pasos. </para>
+
+	<para
+>En lo siguiente, <quote
+>/dev/sdb</quote
+> será el disco duro antiguo y <quote
+>/dev/sdc</quote
+> será el nuevo. La siguiente captura muestra la situación del dispositivo de origen: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ventana principal con el dispositivo de origen</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>El nuevo dispositivo tendrá esta apariencia. Tenga en cuenta que aún no posee una tabla de particiones válida, por lo que el primer paso será crear una seleccionando <xref linkend="menu-device-createpartitiontable"/>: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ventana principal con el dispositivo de destino</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Tras dar su confirmación en el cuadro de advertencia, puede empezar a crear particiones en el nuevo dispositivo haciendo clic en la partición extendida y seleccionando <xref linkend="menu-partition-new"/>. Comience con una partición extendida al final del dispositivo, que será la que después almacene las particiones home y swap: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Crear una partición extendida</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Pulse el botón <guibutton
+>Aceptar</guibutton
+> y la operación de crear esta partición extendida se añadirá a la lista. </para>
+
+	<para
+>Ahora, cree una partición primaria en el resto del dispositivo, donde se instalará el nuevo SO. Hágala tan grande como el área no reservada y antes de la partición extendida: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Crear una partición primaria</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Pulse el botón <guibutton
+>Aceptar</guibutton
+> del cuadro de diálogo para aceptar su selección. La operación de crear una partición primaria se añadirá a la lista. </para>
+	
+	<para
+>Ahora debe copiar la partición home del dispositivo antiguo a la partición extendida del nuevo. Seleccione el antiguo en el panel Lista de dispositivos, haga clic en el partición <quote
+>sdb5</quote
+> y elija <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>Ahora vuelva al nuevo dispositivo, seleccione la partición extendida y después <xref linkend="menu-partition-paste"/>. Se le mostrará el siguiente diálogo: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Pegar la partición home</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Ya casi está listo, pero usted ya sabe que no va a necesitar tanto espacio libre detrás de la partición home porque la que creará a continuación es la de swap. </para>
+
+	<para
+>Así que pulse el agarre derecho en el componente de redimensionamiento y muévalo hacia la derecha hasta que el espacio libre a continuación de la partición pegada sea más adecuado para una partición de swap: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Redimensionar una partición pegada</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Así está bien. Presione <guibutton
+>Aceptar</guibutton
+> para aceptar y cerrar el cuadro de diálogo. A la lista de operaciones se añadirá una nueva operación para pegar la partición copiada a la partición extendida. Fíjese en que esta operación también establecerá el nuevo tamaño. </para>
+
+	<para
+>Finalmente, usted desea crear una nueva partición swap al final de la partición extendida de <quote
+>sdc</quote
+>. No es necesario copiar la partición de swap existente en <quote
+>sdb</quote
+> porque no almacena ninguna información persistente que merezca la pena. Simplemente, cree una nueva partición de tipo linuxswap que ocupe todo el espacio sin reservar después de la partición home. </para>
+
+	<para
+>La ventana principal con todas las operaciones y la vista previa de cómo quedará <quote
+>sdc</quote
+> una vez aplicadas se verá como la siguiente: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ventana principal tras definir todas las operaciones</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Así está genial, así que seleccione <xref linkend="menu-edit-apply"/>, dé su confirmación en el cuadro de advertencia y espere hasta que todas las operaciones se hayan ejecutado. Para más detalles sobre la ejecución de operaciones, consulte <link linkend="howto-resizepartition"
+>cómo redimensionar particiones</link
+>. </para>
+	
+	<para
+>Su disco duro ya está listo para la instalación de su nuevo sistema operativo. </para>
+
+</sect1>

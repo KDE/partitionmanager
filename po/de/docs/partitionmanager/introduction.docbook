@@ -1,0 +1,48 @@
+<chapter id="introduction">
+	<title
+>Einführung</title>
+	<para
+>&partman; ist ein Dienstprogramm zur Verwaltung von <glossterm linkend="glossary-device"
+>Festplatten</glossterm
+>, <glossterm linkend="glossary-partition"
+>Partitionen</glossterm
+> und <glossterm linkend="glossary-filesystem"
+>Dateisystemen</glossterm
+> auf Ihrem Rechner. </para>
+	<para
+>Sie können hiermit einfach und ohne Datenverlust <link linkend="howto-installos"
+>neue Partitionen erstellen</link
+>, neue Dateisysteme auf existierenden Partitionen einrichten, Partitionen  <link linkend="howto-copypartition"
+>kopieren</link
+>, verschieben oder löschen, sowie <link linkend="howto-resizepartition"
+>die Größe einer Partition ändern</link
+>. </para>
+
+	<para
+>&partman; verwendet externe Dienstprogramme, um eine Vielzahl von Dateisystemen effizient verwalten zu können. Vermutlich sind die Dienstprogramme, die zur Verwaltung der Dateisysteme Ihres Systems benötigt werden, bereits installiert. </para>
+
+	<warning>
+		<title
+>Erstellen Sie immer eine Sicherung Ihrer Daten.</title>
+		<para
+>Bei der Entwicklung von &partman; wurde großen Wert auf Datenintegrität gelegt. Bei einer Änderung der Partitionstabelle oder der Partitionen besteht jedoch stets eine Gefahr des Datenverlusts: unentdeckte Fehler in &partman;, ein Stromausfall oder ein Problem mit der Hardware Ihres Rechners können nicht vollständig ausgeschlossen werden. </para>
+		<para
+>Aus diesen Gründen sollten Sie immer eine <emphasis
+>Sicherung Ihrer wichtigen Daten</emphasis
+> erstellen, ehe Sie irgendwelche Änderungen mit einem Programm wie &partman; vornehmen. </para>
+		<para
+>Der Autor des Programms übernimmt keine Verantwortung für einen Datenverlust durch den Einsatz von &partman;. </para>
+	</warning>
+
+	<para
+>&partman; benutzt <glossterm linkend="glossary-operation"
+>Operationen</glossterm
+>, <glossterm linkend="glossary-job"
+>Einzelaufgaben</glossterm
+> und <glossterm linkend="glossary-command"
+>Befehle</glossterm
+>, um die Arbeit logisch aufzuteilen. Weitere Details dazu finden Sie im <link linkend="glossary"
+>Glossar</link
+>. </para>
+
+</chapter>

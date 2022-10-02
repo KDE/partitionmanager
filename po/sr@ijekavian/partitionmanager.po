@@ -1,0 +1,3533 @@
+# Translation of partitionmanager.po into Serbian.
+# Slobodan Simic <slsimic@gmail.com>, 2008, 2009, 2010.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Dalibor Djuric <daliborddjuric@gmail.com>, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: partitionmanager\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-05-31 18:17+0200\n"
+"PO-Revision-Date: 2018-01-06 09:21+0100\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde, partitionmanager\n"
+"X-Generator: Lokalize 1.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Слободан Симић"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "slsimic@gmail.com"
+
+#: config/configureoptionsdialog.cpp:54
+#, kde-kuit-format
+msgctxt "@title:tab general application settings"
+msgid "General"
+msgstr "Опште"
+
+#: config/configureoptionsdialog.cpp:54 config/configureoptionsdialog.cpp:99
+#, kde-format
+msgid "General Settings"
+msgstr "Опште поставке"
+
+#: config/configureoptionsdialog.cpp:59
+#, kde-kuit-format
+msgctxt "@title:tab"
+msgid "File System Colors"
+msgstr "Боје фајл система"
+
+#: config/configureoptionsdialog.cpp:59
+#, kde-format
+msgid "File System Color Settings"
+msgstr "Поставке боја за фајл системе"
+
+#: config/configureoptionsdialog.cpp:61
+#, kde-kuit-format
+msgctxt "@title:tab advanced application settings"
+msgid "Advanced"
+msgstr "Напредно"
+
+#: config/configureoptionsdialog.cpp:61
+#, kde-format
+msgid "Advanced Settings"
+msgstr "Напредне поставке"
+
+#: config/configureoptionsdialog.cpp:149
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to change the backend?</para><para><warning>This "
+"will also rescan devices and thus clear the list of pending operations.</"
+"warning></para>"
+msgstr ""
+"<para>Желите ли заиста да промените позадину?</para><para><warning>Ово ће "
+"такође поново скенирати уређаје, па тако и очистити списак наступајућих "
+"операција.</warning></para>"
+
+#: config/configureoptionsdialog.cpp:151
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Change Backend?"
+msgstr "Заиста променити позадину?"
+
+#: config/configureoptionsdialog.cpp:152
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Change the Backend"
+msgstr "Промијени позадину"
+
+#: config/configureoptionsdialog.cpp:153
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Change the Backend"
+msgstr "Не мијењај позадину"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepageadvanced.ui:23
+#, kde-format
+msgid "Backend"
+msgstr "Позадина"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: config/configurepageadvanced.ui:29
+#, kde-format
+msgid "Active backend:"
+msgstr "Активна позадина:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
+#: config/configurepageadvanced.ui:51
+#, kde-format
+msgid "Units"
+msgstr "Јединице"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepageadvanced.ui:57
+#, kde-format
+msgid "Preferred unit:"
+msgstr "Жељена јединица:"
+
+# Све наредне јединице су симболи.
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:68
+#, kde-format
+msgid "Byte"
+msgstr "B"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:73
+#, kde-format
+msgid "KiB"
+msgstr "KiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:78
+#, kde-format
+msgid "MiB"
+msgstr "MiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:83
+#, kde-format
+msgid "GiB"
+msgstr "GiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:88
+#, kde-format
+msgid "TiB"
+msgstr "TiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:93
+#, kde-format
+msgid "PiB"
+msgstr "PiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:98
+#, kde-format
+msgid "EiB"
+msgstr "EiB"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: config/configurepagefilesystemcolors.ui:23
+#: config/configurepagegeneral.ui:139
+#, kde-format
+msgid "File Systems"
+msgstr "Фајл системи"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_7)
+#: config/configurepagefilesystemcolors.ui:32
+#, kde-format
+msgid "ReiserFS:"
+msgstr "рајзер:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_15)
+#: config/configurepagefilesystemcolors.ui:61
+#, kde-format
+msgid "UFS:"
+msgstr "УФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_31)
+#: config/configurepagefilesystemcolors.ui:74
+#, kde-format
+msgid "ISO 9660:"
+msgstr "ИСО‑9660:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_24)
+#: config/configurepagefilesystemcolors.ui:93
+#, kde-format
+msgid "OCFS2:"
+msgstr "ОЦФС2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_22)
+#: config/configurepagefilesystemcolors.ui:109
+#, kde-format
+msgid "XFS:"
+msgstr "ИксФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_27)
+#: config/configurepagefilesystemcolors.ui:128
+#, kde-format
+msgid "NILFS2:"
+msgstr "НИЛФС‑2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_6)
+#: config/configurepagefilesystemcolors.ui:177
+#, kde-format
+msgid "FAT16:"
+msgstr "ФАТ‑16:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_13)
+#: config/configurepagefilesystemcolors.ui:190
+#, kde-format
+msgid "extended:"
+msgstr "продужена:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_33)
+#: config/configurepagefilesystemcolors.ui:203
+#, kde-format
+msgid "LUKS2:"
+msgstr "ЛУКС‑2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_17)
+#: config/configurepagefilesystemcolors.ui:219
+#, kde-format
+msgid "unformatted:"
+msgstr "неформатирано:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_30)
+#: config/configurepagefilesystemcolors.ui:238
+#, kde-format
+msgid "UDF:"
+msgstr "УФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_25)
+#: config/configurepagefilesystemcolors.ui:251
+#, kde-format
+msgid "ZFS:"
+msgstr "ЗФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_3)
+#: config/configurepagefilesystemcolors.ui:299
+#, kde-format
+msgid "ext4:"
+msgstr "екст‑4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_10)
+#: config/configurepagefilesystemcolors.ui:315
+#, kde-format
+msgid "HPFS:"
+msgstr "ХПФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_11)
+#: config/configurepagefilesystemcolors.ui:373
+#, kde-format
+msgid "JFS:"
+msgstr "ЈФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_2)
+#: config/configurepagefilesystemcolors.ui:386
+#, kde-format
+msgid "ext3:"
+msgstr "екст‑3:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_8)
+#: config/configurepagefilesystemcolors.ui:412
+#, kde-format
+msgid "Reiser4:"
+msgstr "рајзер‑4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_21)
+#: config/configurepagefilesystemcolors.ui:444
+#, kde-format
+msgid "Btrfs:"
+msgstr "бтрфс:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: config/configurepagefilesystemcolors.ui:486
+#, kde-format
+msgid "ext2:"
+msgstr "екст‑2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_29)
+#: config/configurepagefilesystemcolors.ui:505
+#, kde-format
+msgid "F2FS:"
+msgstr "Ф2ФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_28)
+#: config/configurepagefilesystemcolors.ui:524
+#, kde-format
+msgid "LVM2 PV:"
+msgstr "ЛВМ‑2 ПВ:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_26)
+#: config/configurepagefilesystemcolors.ui:550
+#, kde-format
+msgid "exFAT:"
+msgstr "ексФАТ:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_9)
+#: config/configurepagefilesystemcolors.ui:563
+#, kde-format
+msgid "NTFS:"
+msgstr "НТФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_20)
+#: config/configurepagefilesystemcolors.ui:589
+#, kde-format
+msgid "LUKS:"
+msgstr "ЛУКС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_4)
+#: config/configurepagefilesystemcolors.ui:618
+#, kde-format
+msgid "Linux Swap:"
+msgstr "линукс-размијена:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_32)
+#: config/configurepagefilesystemcolors.ui:669
+#, kde-format
+msgid "FAT12:"
+msgstr "ФАТ‑12:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_12)
+#: config/configurepagefilesystemcolors.ui:682
+#, kde-format
+msgid "HFS:"
+msgstr "ХФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_35)
+#: config/configurepagefilesystemcolors.ui:714
+#, fuzzy, kde-format
+#| msgid "HPFS:"
+msgid "APFS:"
+msgstr "ХПФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_5)
+#: config/configurepagefilesystemcolors.ui:727
+#, kde-format
+msgid "FAT32:"
+msgstr "ФАТ‑32:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_18)
+#: config/configurepagefilesystemcolors.ui:759
+#, fuzzy, kde-format
+#| msgid "Linux Swap:"
+msgid "Linux RAID:"
+msgstr "линукс-размијена:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_34)
+#: config/configurepagefilesystemcolors.ui:772
+#, kde-format
+msgid "BitLocker:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_14)
+#: config/configurepagefilesystemcolors.ui:801
+#, kde-format
+msgid "HFS+:"
+msgstr "ХФС плус:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_16)
+#: config/configurepagefilesystemcolors.ui:827
+#, kde-format
+msgid "unknown:"
+msgstr "непознато:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagefilesystemcolors.ui:840
+#, kde-format
+msgid "          Minix:"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: config/configurepagegeneral.ui:23
+#, kde-format
+msgid "Partition Alignment"
+msgstr "Поравнање партиције"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
+#: config/configurepagegeneral.ui:29
+#, kde-format
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Поравнање на основу цилиндара (сагласно са Виндоузом ИксП)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagegeneral.ui:42
+#, kde-format
+msgid "Sector alignment:"
+msgstr "Поравнање сектора:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
+#: config/configurepagegeneral.ui:55
+#, kde-format
+msgid " sectors"
+msgstr " сектора"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
+#: config/configurepagegeneral.ui:71
+#, kde-format
+msgid "Align partitions per default"
+msgstr "Поравнање како је подразумевано"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: config/configurepagegeneral.ui:90
+#, kde-format
+msgid "Logging"
+msgstr "Биљежење"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: config/configurepagegeneral.ui:96
+#, kde-format
+msgid "Hide messages below:"
+msgstr "Сакриј поруке испод:"
+
+# >> @item:inlistbox Hide messages below:
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:107
+#, kde-format
+msgid "Debug"
+msgstr "исправљања"
+
+# >> @item:inlistbox Hide messages below:
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:112
+#, kde-format
+msgid "Information"
+msgstr "информација"
+
+# >> @item:inlistbox Hide messages below:
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:117
+#, kde-format
+msgid "Warning"
+msgstr "упозорења"
+
+# >> @item:inlistbox Hide messages below:
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:122
+#, kde-format
+msgid "Error"
+msgstr "грешака"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: config/configurepagegeneral.ui:145
+#, kde-format
+msgid "Default file system:"
+msgstr "Подразумевани фајл систем:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepagegeneral.ui:167
+#, kde-format
+msgid "Shredding"
+msgstr "Сецкање"
+
+# У наставку инструментал.
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepagegeneral.ui:173
+#, kde-format
+msgid "Overwrite with:"
+msgstr "Пребриши:"
+
+# >> @option:radion Overwrite with:
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton)
+#: config/configurepagegeneral.ui:180
+#, kde-format
+msgid "Random data"
+msgstr "насумичним подацима"
+
+# >> @option:radion Overwrite with:
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
+#: config/configurepagegeneral.ui:190
+#, kde-format
+msgid "Zeros"
+msgstr "нулама"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
+#: gui/applyprogressdetailswidgetbase.ui:37
+#, kde-format
+msgid "Save"
+msgstr "Сачувај"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonBrowser)
+#: gui/applyprogressdetailswidgetbase.ui:44
+#, kde-format
+msgid "Open in External Browser"
+msgstr "Отвори у спољашњем прегледачу"
+
+#: gui/applyprogressdialog.cpp:95 gui/applyprogressdialog.cpp:184
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "&Details"
+msgstr "&Детаљи"
+
+# skip-rule: t-setting
+#: gui/applyprogressdialog.cpp:137
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Setting up..."
+msgstr "Подешавам..."
+
+#: gui/applyprogressdialog.cpp:204
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to cancel?"
+msgstr "Заиста желите да откажете?"
+
+#: gui/applyprogressdialog.cpp:204
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cancel Running Operations"
+msgstr "Отказивање покренутих операција"
+
+#: gui/applyprogressdialog.cpp:204
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Yes, Cancel Operations"
+msgstr "Да, откажи операције"
+
+#: gui/applyprogressdialog.cpp:209
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Waiting for operation to finish..."
+msgstr "Чекам да се операција заврши..."
+
+#: gui/applyprogressdialog.cpp:230
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "All operations successfully finished."
+msgstr "Све операције су успјешно завршене."
+
+#: gui/applyprogressdialog.cpp:235
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Operations cancelled."
+msgstr "Операције су отказане."
+
+#: gui/applyprogressdialog.cpp:240
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "There were errors while applying operations. Aborted."
+msgstr "Грешка при примјени операција. Прекинуто."
+
+#: gui/applyprogressdialog.cpp:354
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "[%1/%2] - %3: %4"
+msgstr "[%1/%2] — %3: %4"
+
+#: gui/applyprogressdialog.cpp:388
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Total Time: %1"
+msgstr "Укупно вријеме: %1"
+
+#: gui/applyprogressdialog.cpp:436 gui/mainwindow.cpp:930
+#: gui/mainwindow.cpp:1091 gui/smartdialog.cpp:236
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Could not create temporary file when trying to save to <filename>%1</"
+"filename>."
+msgstr ""
+"Не могу да направим привремени фајл ради уписивања у <filename>%1</filename>."
+
+#: gui/applyprogressdialog.cpp:436
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Save Report."
+msgstr "Не могу да сачувам извјештај."
+
+#: gui/applyprogressdialog.cpp:461
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The configured external browser could not be run. Please check your settings."
+msgstr "Подешени спољашњи прегледач не може се покренути. Провјерите поставке."
+
+#: gui/applyprogressdialog.cpp:461 gui/applyprogressdialog.cpp:463
+#, kde-format, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Launch Browser."
+msgstr "Не могу да покренем прегледач"
+
+#: gui/applyprogressdialog.cpp:463
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not create temporary file <filename>%1</filename> for writing."
+msgstr ""
+"Не могу да направим привремени фајл <filename>%1</filename> ради уписа."
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:36
+#, kde-format
+msgid "Operations and Jobs"
+msgstr "операције и послови"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:41
+#, kde-format
+msgid "Time Elapsed"
+msgstr "протекло вријеме"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
+#: gui/applyprogressdialogwidgetbase.ui:67
+#, kde-format
+msgid "Total Time: 00:00:00"
+msgstr "Укупно вријеме: 00:00:00"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
+#: gui/applyprogressdialogwidgetbase.ui:84
+#, no-c-format, kde-format
+msgid "Operation: %p%"
+msgstr "Операција: %p%"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
+#: gui/applyprogressdialogwidgetbase.ui:94
+#, kde-format
+msgid "Status"
+msgstr "Стање"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressTotal)
+#: gui/applyprogressdialogwidgetbase.ui:110
+#, no-c-format, kde-format
+msgid "Total: %p%"
+msgstr "Укупно: %p%"
+
+# >> Operation description, used as tooltip and in operation lists.
+#: gui/createpartitiontabledialog.cpp:40
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create a New Partition Table on <filename>%1</filename>"
+msgstr "Прављење нове табеле партиција на <filename>%1</filename>"
+
+#: gui/createpartitiontabledialog.cpp:43
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Create &New Partition Table"
+msgstr "&Направи нову табелу партиција"
+
+#: gui/createpartitiontabledialog.cpp:68
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to create an MS-Dos partition table on <filename>"
+"%1</filename>?</para><para>This device has more than 2^32 sectors. That is "
+"the most the MS-Dos partition table type supports, so you will not be able "
+"to use the whole device.</para>"
+msgstr ""
+"<para>Желите ли заиста да направите МС‑ДОС табелу партиција на <filename>%1</"
+"filename>?</para><para>Овај уређај има више од 2^32 сектора, колико највише "
+"подржава МС‑ДОС табела партиција. Зато нећете моћи да искористите цео уређај."
+"</para>"
+
+#: gui/createpartitiontabledialog.cpp:70
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Create MS-Dos Partition Table Type?"
+msgstr "Заиста направити МС‑ДОС табелу партиција?"
+
+#: gui/createpartitiontabledialog.cpp:71
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Create MS-Dos Type"
+msgstr "Направи МС‑ДОС"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/createpartitiontablewidgetbase.ui:20
+#, kde-format
+msgid "Choose the type of partition table you want to create:"
+msgstr "Изаберите тип табеле партиција коју желите да направите:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
+#: gui/createpartitiontablewidgetbase.ui:29
+#, kde-format
+msgid "GPT"
+msgstr "ГПТ"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
+#: gui/createpartitiontablewidgetbase.ui:39
+#, kde-format
+msgid "MS-Dos"
+msgstr "МС‑ДОС"
+
+#. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
+#: gui/createpartitiontablewidgetbase.ui:66
+#, kde-format
+msgid "(icon)"
+msgstr "(иконица)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: gui/createpartitiontablewidgetbase.ui:79
+#, kde-format
+msgid "<b>Warning:</b> This will destroy all data on the device!"
+msgstr "<b>Пажња:</b> Ово ће уништити све податке на уређају!"
+
+#: gui/createvolumegroupdialog.cpp:45
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create new Volume Group"
+msgstr "Прављење нове деоне групе"
+
+#: gui/devicepropsdialog.cpp:53
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Device Properties: <filename>%1</filename>"
+msgstr "Својства уређаја: <filename>%1</filename>"
+
+#: gui/devicepropsdialog.cpp:87 gui/infopane.cpp:175
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "%1 (read only)"
+msgstr "%1 (само за читање)"
+
+#: gui/devicepropsdialog.cpp:118 gui/smartdialog.cpp:91 gui/smartdialog.cpp:156
+#, kde-kuit-format
+msgctxt "@label SMART disk status"
+msgid "good"
+msgstr "добар"
+
+#: gui/devicepropsdialog.cpp:121 gui/smartdialog.cpp:94 gui/smartdialog.cpp:158
+#, kde-kuit-format
+msgctxt "@label SMART disk status"
+msgid "BAD"
+msgstr "ЛОШ"
+
+#: gui/devicepropsdialog.cpp:125 gui/smartdialog.cpp:138
+#, kde-kuit-format
+msgctxt "@label"
+msgid "(unknown)"
+msgstr "(непознато)"
+
+#: gui/devicepropsdialog.cpp:131
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "LVM Volume Group"
+msgstr "ЛВМ деона група"
+
+#: gui/devicepropsdialog.cpp:133
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Software RAID Device"
+msgstr ""
+
+#: gui/devicepropsdialog.cpp:135
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Volume Manager Device"
+msgstr "Уређај менаџера делова"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
+#: gui/devicepropswidgetbase.ui:58
+#, kde-format
+msgid "Partition table:"
+msgstr "Табела партиција:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
+#: gui/devicepropswidgetbase.ui:80
+#, fuzzy, kde-format
+#| msgid "Cylinder alignment"
+msgid "&Cylinder alignment"
+msgstr "Поравнање по цилиндрима"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
+#: gui/devicepropswidgetbase.ui:87
+#, fuzzy, kde-format
+#| msgid "Sector based alignment"
+msgid "Sector based align&ment"
+msgstr "Поравнање на основу сектора"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/devicepropswidgetbase.ui:116
+#, kde-format
+msgid "Capacity:"
+msgstr "Капацитет:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/devicepropswidgetbase.ui:136
+#, kde-format
+msgid "Total sectors:"
+msgstr "Укупно сектора:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
+#: gui/devicepropswidgetbase.ui:163
+#, kde-format
+msgid "Logical sector size:"
+msgstr "Величина логичког сектора:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
+#: gui/devicepropswidgetbase.ui:183
+#, kde-format
+msgid "Physical sector size:"
+msgstr "Величина физичког сектора:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
+#: gui/devicepropswidgetbase.ui:217
+#, kde-format
+msgid "Primaries/Max:"
+msgstr "Примарних/макс.:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
+#: gui/devicepropswidgetbase.ui:237 gui/smartdialog.cpp:156
+#: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:23
+#, kde-format
+msgid "SMART status:"
+msgstr "СМАРТ стање:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
+#: gui/devicepropswidgetbase.ui:278 gui/editmountpointdialogwidgetbase.ui:75
+#, kde-format
+msgid "More..."
+msgstr "Још..."
+
+#: gui/editmountoptionsdialog.cpp:36
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Edit additional mount options"
+msgstr "Уређивање додатних опција монтирања"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
+#: gui/editmountoptionsdialogwidgetbase.ui:14
+#, kde-format
+msgid "Edit Mount Options"
+msgstr "Уређивање опција монтирања"
+
+#. i18n: ectx: property (text), widget (QLabel, m_Label)
+#: gui/editmountoptionsdialogwidgetbase.ui:20
+#, kde-format
+msgid "Edit the mount options for this file system:"
+msgstr "Уредите опције монтирања за овај фајл систем:"
+
+#. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, m_EditOptions)
+#: gui/editmountoptionsdialogwidgetbase.ui:27
+#, kde-format
+msgid "Option1,Option2"
+msgstr "opcija1,opcija2"
+
+#: gui/editmountpointdialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Edit mount point for <filename>%1</filename>"
+msgstr "Уређивање тачке монтирања за <filename>%1</filename>"
+
+#: gui/editmountpointdialog.cpp:68
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Are you sure you want to save the changes you made to the system table "
+"file <filename>/etc/fstab</filename>?</para><para><warning>This will "
+"overwrite the existing file on your hard drive now. This <emphasis "
+"strong='1'>can not be undone</emphasis>.</warning></para>"
+msgstr ""
+"<para>Да ли желите да сачувате измјене које сте направили у фајлу системске "
+"табеле <filename>/etc/fstab</filename>?</para><para><warning>Ово ће "
+"пребрисати постојећи фајл на хард‑диску и <emphasis strong='1'>не може се "
+"опозвати</emphasis>.</warning></para>"
+
+#: gui/editmountpointdialog.cpp:70
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really save changes?"
+msgstr "Заиста сачувати измјене?"
+
+#: gui/editmountpointdialog.cpp:71
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Save changes"
+msgstr "Сачувај измјене"
+
+#: gui/editmountpointdialog.cpp:85
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
+msgstr ""
+"Не могу да сачувам тачке монтирања у фајл <filename>/etc/fstab</filename>."
+
+#: gui/editmountpointdialog.cpp:86
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error While Saving Mount Points"
+msgstr "Грешка при уписивању тачака монтирања"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:17
+#, kde-format
+msgid "UU&ID"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:27
+#, kde-format
+msgid "Users can mount and unmount"
+msgstr "Корисници могу да монтирају и демонтирају"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:34
+#, kde-format
+msgid "Update access times relative to modification"
+msgstr "Ажурирај времена приступа у односу на измјену"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:55
+#, kde-format
+msgid "Read-only"
+msgstr "Само за читање"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:62
+#, fuzzy, kde-format
+#| msgid "Pass Number:"
+msgid "Pass &Number:"
+msgstr "Број пролаза:"
+
+# >> @option:radio Identify by:
+# >! Contexts.
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:95
+#, fuzzy, kde-format
+#| msgid "Device Node"
+msgid "De&vice Node"
+msgstr "чвор уређаја"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:105
+#, kde-format
+msgid "Options:"
+msgstr "Опције:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
+#: gui/editmountpointdialogwidgetbase.ui:131
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "&Label:"
+msgid "&Label"
+msgstr "&Етикета:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:138
+#, kde-format
+msgid "No binary execution"
+msgstr "Без извршавања програма"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:161
+#, kde-format
+msgid "No automatic mount"
+msgstr "Без аутоматског монтирања"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
+#: gui/editmountpointdialogwidgetbase.ui:174
+#, kde-format
+msgid "Remove"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:187
+#, kde-format
+msgid "Select..."
+msgstr "Изабери..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:194
+#, kde-format
+msgid "No update of directory access times"
+msgstr "Без ажурирања времена̂ приступа фасциклама"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
+#: gui/editmountpointdialogwidgetbase.ui:201
+#, fuzzy, kde-format
+#| msgid "Dump Frequency:"
+msgid "Dump &Frequency:"
+msgstr "Учестаност пописивања:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:230
+#, kde-format
+msgid "Type:"
+msgstr "Тип:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:240
+#, kde-format
+msgid "Path:"
+msgstr "Путања:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:282
+#, kde-format
+msgid "No update of file access times"
+msgstr "Без ажурирања времена̂ приступа фајловима"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
+#: gui/editmountpointdialogwidgetbase.ui:289
+#, kde-format
+msgid "Synchronous access"
+msgstr "Синхрони приступ"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/editmountpointdialogwidgetbase.ui:309
+#, kde-format
+msgid "Identify by:"
+msgstr "Препознај по:"
+
+#: gui/filesystemsupportdialog.cpp:43
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "File System Support"
+msgstr "Подршка за фајл системе"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/filesystemsupportdialogwidgetbase.ui:18
+#, kde-format
+msgid ""
+"This table shows which file systems are supported and which specific "
+"operations can be performed on them.\n"
+"Some file systems need external tools to be installed for them to be "
+"supported. But not all operations can be performed on all file systems, even "
+"if all required tools are installed. Please see the documentation for "
+"details. "
+msgstr ""
+"Ова табела приказује који фајл системи су подржани и који поступци могу бити "
+"изведени над њима.\n"
+"За подршку неких фајл система потребно је да су инсталиране спољашње алатке. "
+"Чак и када су тражене алатке инсталиране, не могу сви поступци бити изведени "
+"над свим фајл системима. Погледајте документацију за детаље."
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:65
+#, kde-format
+msgid "File System"
+msgstr "фајл систем"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:70
+#, kde-format
+msgid "Create"
+msgstr "прављење"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:75
+#, kde-format
+msgid "Grow"
+msgstr "ширење"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:80
+#, kde-format
+msgid "Shrink"
+msgstr "скупљање"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:85
+#, kde-format
+msgid "Move"
+msgstr "премијештање"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:90
+#, kde-format
+msgid "Copy"
+msgstr "копирање"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:95
+#, kde-format
+msgid "Check"
+msgstr "провјера"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:100
+#, kde-format
+msgid "Read Label"
+msgstr "читање етикете"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:105
+#, kde-format
+msgid "Write Label"
+msgstr "писање етикете"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:110
+#, kde-format
+msgid "Read Usage"
+msgstr "читање искоришћења"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:115
+#, kde-format
+msgid "Backup"
+msgstr "архивирање"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:120
+#, kde-format
+msgid "Restore"
+msgstr "враћање"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:125
+#, kde-format
+msgid "Support Tools"
+msgstr "Алатке за подршку"
+
+# rewrite-msgid: /Rescan/Recheck/
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRescan)
+#: gui/filesystemsupportdialogwidgetbase.ui:135
+#, kde-format
+msgctxt "@action:button"
+msgid "Rescan Support"
+msgstr "Поново провјери подршку"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
+#: gui/infopane.cpp:55 gui/mainwindowbase.ui:46
+#, kde-format, kde-kuit-format
+msgctxt "@title:window"
+msgid "Information"
+msgstr "Подаци"
+
+#: gui/infopane.cpp:114
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Partition Information"
+msgstr "Подаци о партицији"
+
+#: gui/infopane.cpp:121 gui/infopane.cpp:135 gui/infopane.cpp:147
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "File system:"
+msgstr "Фајл систем:"
+
+#: gui/infopane.cpp:122 gui/infopane.cpp:136 gui/infopane.cpp:148
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Capacity:"
+msgstr "Капацитет:"
+
+#: gui/infopane.cpp:123
+#, kde-format
+msgctxt "@label partition"
+msgid "Cipher name:"
+msgstr "Назив шифрара:"
+
+#: gui/infopane.cpp:124
+#, kde-format
+msgctxt "@label partition"
+msgid "Cipher mode:"
+msgstr "Режим шифрара:"
+
+#: gui/infopane.cpp:125
+#, kde-format
+msgctxt "@label partition"
+msgid "Hash:"
+msgstr "Дисперзија:"
+
+#: gui/infopane.cpp:126
+#, kde-format
+msgctxt "@label partition"
+msgid "Key size:"
+msgstr "Величина кључа:"
+
+#: gui/infopane.cpp:127
+#, kde-format
+msgctxt "@label partition"
+msgid "Payload offset:"
+msgstr "Помак товара:"
+
+#: gui/infopane.cpp:128 gui/infopane.cpp:143 gui/infopane.cpp:151
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "First sector:"
+msgstr "Први сектор:"
+
+#: gui/infopane.cpp:129 gui/infopane.cpp:144 gui/infopane.cpp:152
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Last sector:"
+msgstr "Посљедњи сектор:"
+
+#: gui/infopane.cpp:130 gui/infopane.cpp:145 gui/infopane.cpp:153
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Number of sectors:"
+msgstr "Број сектора:"
+
+#: gui/infopane.cpp:137 gui/infopane.cpp:149
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Available:"
+msgstr "Доступно:"
+
+#: gui/infopane.cpp:138 gui/infopane.cpp:150
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Used:"
+msgstr "Искоришћено:"
+
+#: gui/infopane.cpp:139
+#, kde-format
+msgctxt "@label partition"
+msgid "PE Size:"
+msgstr "Величина физичког опсега:"
+
+#: gui/infopane.cpp:140
+#, kde-format
+msgctxt "@label partition"
+msgid "Total PE:"
+msgstr "Укупно физичких опсега:"
+
+#: gui/infopane.cpp:141
+#, kde-format
+msgctxt "@label partition"
+msgid "Free PE:"
+msgstr "Слободних физичких опсега:"
+
+#: gui/infopane.cpp:142
+#, kde-format
+msgctxt "@label partition"
+msgid "Allocated PE:"
+msgstr "Резервисаних физичких опсега:"
+
+#: gui/infopane.cpp:164
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Device Information"
+msgstr "Подаци о уређају"
+
+#: gui/infopane.cpp:168
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Path:"
+msgstr "Путања:"
+
+#: gui/infopane.cpp:183
+#, kde-format
+msgctxt "@label device"
+msgid "Type:"
+msgstr "Тип:"
+
+#: gui/infopane.cpp:184 gui/infopane.cpp:192 gui/infopane.cpp:200
+#, kde-format
+msgctxt "@label device"
+msgid "Capacity:"
+msgstr "Капацитет:"
+
+#: gui/infopane.cpp:185
+#, kde-format
+msgctxt "@label device"
+msgid "Total sectors:"
+msgstr "Укупно сектора:"
+
+#: gui/infopane.cpp:186
+#, kde-format
+msgctxt "@label device"
+msgid "Logical sector size:"
+msgstr "Величина логичког сектора:"
+
+#: gui/infopane.cpp:187
+#, kde-format
+msgctxt "@label device"
+msgid "Physical sector size:"
+msgstr "Величина физичког сектора:"
+
+#: gui/infopane.cpp:188
+#, kde-format
+msgctxt "@label device"
+msgid "Primaries/Max:"
+msgstr "Примарних/макс.:"
+
+#: gui/infopane.cpp:191 gui/infopane.cpp:199
+#, kde-format
+msgctxt "@label device"
+msgid "Volume Type:"
+msgstr "Тип дела:"
+
+#: gui/infopane.cpp:193
+#, kde-format
+msgctxt "@label device"
+msgid "PE Size:"
+msgstr "Величина физичког опсега:"
+
+#: gui/infopane.cpp:194
+#, kde-format
+msgctxt "@label device"
+msgid "Total PE:"
+msgstr "Укупно физичких опсега:"
+
+#: gui/infopane.cpp:195
+#, kde-format
+msgctxt "@label device"
+msgid "Allocated PE:"
+msgstr "Резервисаних физичких опсега:"
+
+#: gui/infopane.cpp:196
+#, kde-format
+msgctxt "@label device"
+msgid "Free PE:"
+msgstr "Слободних физичких опсега:"
+
+#: gui/infopane.cpp:201
+#, kde-format
+msgctxt "@label device"
+msgid "RAID Level:"
+msgstr ""
+
+#: gui/infopane.cpp:202
+#, fuzzy, kde-format
+#| msgctxt "@label device"
+#| msgid "PE Size:"
+msgctxt "@label device"
+msgid "Chunk Size:"
+msgstr "Величина физичког опсега:"
+
+#: gui/infopane.cpp:203
+#, fuzzy, kde-format
+#| msgctxt "@label device"
+#| msgid "Total PE:"
+msgctxt "@label device"
+msgid "Total Chunk:"
+msgstr "Укупно физичких опсега:"
+
+#: gui/infopane.cpp:204
+#, fuzzy, kde-format
+#| msgctxt "@label device"
+#| msgid "PE Size:"
+msgctxt "@label device"
+msgid "Array Size:"
+msgstr "Величина физичког опсега:"
+
+#: gui/insertdialog.cpp:43
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Insert a partition"
+msgstr "Уметање партиције"
+
+#: gui/listphysicalvolumes.cpp:50
+#, kde-kuit-format
+msgctxt "@item:inlistbox Device | Capacity"
+msgid "%1 | %2"
+msgstr "%1 | %2"
+
+#: gui/mainwindow.cpp:155
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to quit the application?</para><para>There is still "
+"an operation pending.</para>"
+msgid_plural ""
+"<para>Do you really want to quit the application?</para><para>There are "
+"still %1 operations pending.</para>"
+msgstr[0] ""
+"<para>Желите ли заиста да напустите програм?</para><para>Још увијек треба да "
+"се обави %1 операција.</para>"
+msgstr[1] ""
+"<para>Желите ли заиста да напустите програм?</para><para>Још увијек треба да "
+"се обаве %1 операције.</para>"
+msgstr[2] ""
+"<para>Желите ли заиста да напустите програм?</para><para>Још увијек треба да "
+"се обави %1 операција.</para>"
+msgstr[3] ""
+"<para>Желите ли заиста да напустите програм?</para><para>Још увијек треба да "
+"се обави једна операција.</para>"
+
+# rewrite-msgid: /Quit/Exit/
+#: gui/mainwindow.cpp:157
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Discard Pending Operations and Quit?"
+msgstr "Одбацити преостале операције и изаћи?"
+
+# >! Put application name into the message.
+#: gui/mainwindow.cpp:158
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Quit <application>%1</application>"
+msgstr ""
+"Напусти <application>%1</application>|/|Напусти <application>$[аку %1]</"
+"application>"
+
+#: gui/mainwindow.cpp:201
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Undo"
+msgstr "Опозови"
+
+#: gui/mainwindow.cpp:202
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Undo the last operation"
+msgstr "Опозив посљедње операције"
+
+#: gui/mainwindow.cpp:203
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Remove the last operation from the list."
+msgstr "Уклони посљедњу операцију са списка."
+
+#: gui/mainwindow.cpp:210
+#, kde-kuit-format
+msgctxt "@action:inmenu clear the list of operations"
+msgid "Clear"
+msgstr "Очисти"
+
+#: gui/mainwindow.cpp:211
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Clear all operations"
+msgstr "Очисти све операције"
+
+#: gui/mainwindow.cpp:212
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Empty the list of pending operations."
+msgstr "Испразни списак наступајућих операција."
+
+#: gui/mainwindow.cpp:218
+#, kde-kuit-format
+msgctxt "@action:inmenu apply all operations"
+msgid "Apply"
+msgstr "Примијени"
+
+#: gui/mainwindow.cpp:219
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Apply all operations"
+msgstr "Примијени све операције"
+
+#: gui/mainwindow.cpp:220
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Apply the pending operations in the list."
+msgstr "Примијени наступајуће операције са списка."
+
+#: gui/mainwindow.cpp:227
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "New Partition Table"
+msgstr "Нова табела партиција"
+
+#: gui/mainwindow.cpp:228
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Create a new partition table"
+msgstr "Направи нову табелу партиција"
+
+#: gui/mainwindow.cpp:229
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Create a new and empty partition table on a device."
+msgstr "Прави нову и празну табелу партиција на уређају."
+
+#: gui/mainwindow.cpp:236
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Export Partition Table"
+msgstr "Извези табелу партиција"
+
+#: gui/mainwindow.cpp:237
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Export a partition table"
+msgstr "Извези табелу партиција"
+
+#: gui/mainwindow.cpp:238
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Export the device's partition table to a text file."
+msgstr "Извезите табелу партиција уређаја у текстуални фајл."
+
+#: gui/mainwindow.cpp:244
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Import Partition Table"
+msgstr "Увези табелу партиција"
+
+#: gui/mainwindow.cpp:245
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Import a partition table"
+msgstr "Увези табелу партиција"
+
+#: gui/mainwindow.cpp:246
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Import a partition table from a text file."
+msgstr "Увезите табелу партиција из текстуалног фајла."
+
+#: gui/mainwindow.cpp:253
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove Volume Group"
+msgstr "Уклони деону групу"
+
+#: gui/mainwindow.cpp:254
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove selected Volume Group"
+msgstr "Уклони изабрану деону групу"
+
+#: gui/mainwindow.cpp:255
+#, kde-format
+msgctxt "@info:status"
+msgid "Remove selected Volume Group."
+msgstr "Уклања изабрану деону групу."
+
+#: gui/mainwindow.cpp:263
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Resize Volume Group"
+msgstr "Промјени величину деоне групе"
+
+#: gui/mainwindow.cpp:264
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Resize selected Volume Group"
+msgstr "Промјени величину изабране деоне групе"
+
+#: gui/mainwindow.cpp:265
+#, kde-format
+msgctxt "@info:status"
+msgid "Extend or reduce selected Volume Group."
+msgstr "Проширује или сажима изабрану деону групу."
+
+#: gui/mainwindow.cpp:273
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Deactivate Volume Group"
+msgstr "Деактивирај деону групу"
+
+#: gui/mainwindow.cpp:274
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Deactivate selected Volume Group"
+msgstr "Деактивирај изабрану деону групу"
+
+#: gui/mainwindow.cpp:275
+#, kde-format
+msgctxt "@info:status"
+msgid "Deactivate selected Volume Group before unplugging removable devices."
+msgstr "Деактивира изабрану деону групу пре извлачења уклоњивог уређаја."
+
+#: gui/mainwindow.cpp:281
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "SMART Status"
+msgstr "СМАРТ стање"
+
+#: gui/mainwindow.cpp:282
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show SMART status"
+msgstr "Прикажи СМАРТ стање"
+
+#: gui/mainwindow.cpp:283
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show the device's SMART status if supported"
+msgstr "Прикажите СМАРТ стање уређаја, ако је подржано."
+
+#: gui/mainwindow.cpp:288 gui/mainwindow.cpp:380
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Својства"
+
+#: gui/mainwindow.cpp:289
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show device properties dialog"
+msgstr "Прикажи дијалог својстава уређаја"
+
+#: gui/mainwindow.cpp:290
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "View and modify device properties"
+msgstr "Приказ и измјена својстава уређаја"
+
+#: gui/mainwindow.cpp:297
+#, kde-kuit-format
+msgctxt "@action:inmenu create a new partition"
+msgid "New"
+msgstr "Нова"
+
+#: gui/mainwindow.cpp:298
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "New partition"
+msgstr "Нова партиција"
+
+#: gui/mainwindow.cpp:299
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Create a new partition."
+msgstr "Направи нову партицију."
+
+#: gui/mainwindow.cpp:306
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Resize/Move"
+msgstr "Измијени/помјери"
+
+#: gui/mainwindow.cpp:307
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Resize or move partition"
+msgstr "Мијења величину или помијера партицију"
+
+#: gui/mainwindow.cpp:308
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Shrink, grow or move an existing partition."
+msgstr "Скупља, шири или помијера постојећу партицију."
+
+#: gui/mainwindow.cpp:315
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Обриши"
+
+#: gui/mainwindow.cpp:316
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Delete partition"
+msgstr "Обриши партицију"
+
+#: gui/mainwindow.cpp:317
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Delete a partition."
+msgstr "Брише партицију."
+
+#: gui/mainwindow.cpp:324
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Shred"
+msgstr "Исјецкај"
+
+#: gui/mainwindow.cpp:325
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Shred partition"
+msgstr "Исјецкај партицију"
+
+#: gui/mainwindow.cpp:326
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Shred a partition so that its contents cannot be restored."
+msgstr "Уништава партицију тако да се садржај не може повратити."
+
+#: gui/mainwindow.cpp:333
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Copy"
+msgstr "Копирај"
+
+#: gui/mainwindow.cpp:334
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Copy partition"
+msgstr "Копирај партицију"
+
+#: gui/mainwindow.cpp:335
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Copy an existing partition."
+msgstr "Копира постојећу партицију."
+
+#: gui/mainwindow.cpp:342
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Paste"
+msgstr "Налијепи"
+
+#: gui/mainwindow.cpp:343
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Paste partition"
+msgstr "Налијепи партицију"
+
+#: gui/mainwindow.cpp:344
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Paste a copied partition."
+msgstr "Наљепљује копирану партицију."
+
+#: gui/mainwindow.cpp:351
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Edit Mount Point"
+msgstr "Уреди тачку монтирања"
+
+#: gui/mainwindow.cpp:352
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Edit mount point"
+msgstr "Уреди тачку монтирања"
+
+#: gui/mainwindow.cpp:353
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Edit a partition's mount point and options."
+msgstr "Уређивање опција и тачке монтирања уређаја."
+
+#: gui/mainwindow.cpp:358
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Mount"
+msgstr "Монтирај"
+
+#: gui/mainwindow.cpp:359
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Mount or unmount partition"
+msgstr "Монтирај или демонтирај партицију"
+
+#: gui/mainwindow.cpp:360
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Mount or unmount a partition."
+msgstr "Монтира или демонтира партицију."
+
+#: gui/mainwindow.cpp:365
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Unlock"
+msgstr "Откључај"
+
+#: gui/mainwindow.cpp:366
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Unlock or lock encrypted partition"
+msgstr "Откључај или закључај шифровану партицију"
+
+#: gui/mainwindow.cpp:367
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Unlock or lock encrypted partition."
+msgstr "Откључава или закључава шифровану партицију."
+
+#: gui/mainwindow.cpp:372
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Check"
+msgstr "Провјери"
+
+#: gui/mainwindow.cpp:373
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Check partition"
+msgstr "Провјери партицију"
+
+#: gui/mainwindow.cpp:374
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Check a filesystem on a partition for errors."
+msgstr "Провјерава да ли фајл систем на партицији има грешке."
+
+#: gui/mainwindow.cpp:381
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show partition properties dialog"
+msgstr "Прикажи дијалог својстава партиције"
+
+#: gui/mainwindow.cpp:382
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "View and modify partition properties (label, partition flags, etc.)"
+msgstr ""
+"Приказ и измјена својстава партиције (етикета, заставице партиције, итд.)"
+
+#: gui/mainwindow.cpp:388
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Backup"
+msgstr "Архивирај"
+
+#: gui/mainwindow.cpp:389
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Backup partition"
+msgstr "Архивирај партицију"
+
+#: gui/mainwindow.cpp:390
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Backup a partition to an image file."
+msgstr "Архивира партицију у фајл одраза."
+
+#: gui/mainwindow.cpp:396
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Restore"
+msgstr "Поврати"
+
+#: gui/mainwindow.cpp:397
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Restore partition"
+msgstr "Поврати партицију"
+
+#: gui/mainwindow.cpp:398
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Restore a partition from an image file."
+msgstr "Враћа партицију из фајла одраза."
+
+#: gui/mainwindow.cpp:405
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New Volume Group"
+msgstr "Нова деона група"
+
+#: gui/mainwindow.cpp:406
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create a new LVM Volume Group"
+msgstr "Направи нову ЛВМ деону групу"
+
+#: gui/mainwindow.cpp:407
+#, kde-format
+msgctxt "@info:status"
+msgid "Create a new LVM Volume Group as a device."
+msgstr "Прави нову ЛВМ деону групу као уређај."
+
+#: gui/mainwindow.cpp:413
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "File System Support"
+msgstr "Подршка за фајл системе"
+
+#: gui/mainwindow.cpp:414
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "View file system support information"
+msgstr "Приказ података о подршци фајл система"
+
+#: gui/mainwindow.cpp:415
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show information about supported file systems."
+msgstr "Приказ података о подржаним фајл системима."
+
+#: gui/mainwindow.cpp:419
+#, kde-kuit-format
+msgctxt "@action:inmenu refresh list of devices"
+msgid "Refresh Devices"
+msgstr "Освјежи уређаје"
+
+#: gui/mainwindow.cpp:420
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Refresh all devices"
+msgstr "Освјежи све уређаје"
+
+#: gui/mainwindow.cpp:421
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Renew the devices list."
+msgstr "Обнавља списак уређаја."
+
+#: gui/mainwindow.cpp:436
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Clear Log"
+msgstr "Очисти дневник"
+
+#: gui/mainwindow.cpp:437
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Clear the log output"
+msgstr "Очисти дневнички излаз"
+
+#: gui/mainwindow.cpp:438
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Clear the log output panel."
+msgstr "Очистите панел дневничког излаза."
+
+#: gui/mainwindow.cpp:443
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Save Log"
+msgstr "Сачувај дневник"
+
+#: gui/mainwindow.cpp:444
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Save the log output"
+msgstr "Сачувај дневнички излаз"
+
+#: gui/mainwindow.cpp:445
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Save the log output to a file."
+msgstr "Сачувајте дневнички излаз у фајл."
+
+#: gui/mainwindow.cpp:451
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "About KPMcore Library"
+msgstr "О библиотеци КПМ‑језгро"
+
+#: gui/mainwindow.cpp:452
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show About KPMcore dialog"
+msgstr "Прикажи дијалог о КПМ‑језгру"
+
+#: gui/mainwindow.cpp:453
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show About KPMcore dialog."
+msgstr "Приказује дијалог о КПМ‑језгру."
+
+#: gui/mainwindow.cpp:617
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "One pending operation"
+msgid_plural "%1 pending operations"
+msgstr[0] "%1 наступајућа операција"
+msgstr[1] "%1 наступајуће операције"
+msgstr[2] "%1 наступајућих операција"
+msgstr[3] "1 наступајућа операција"
+
+#: gui/mainwindow.cpp:712
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Using backend plugin: %1 (%2)"
+msgstr "Користим прикључак позадине: %1 (%2)"
+
+#: gui/mainwindow.cpp:716
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Scanning devices..."
+msgstr "Скенирам уређаје..."
+
+#: gui/mainwindow.cpp:748
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Scan finished."
+msgstr "Скенирање завршено."
+
+#: gui/mainwindow.cpp:811
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to rescan the devices?</para><para><warning>This "
+"will also clear the list of pending operations.</warning></para>"
+msgstr ""
+"<para>Желите ли заиста да поново скенирате уређаје?</para><para><warning>Ово "
+"ће такође очистити списак наступајућих операција.</warning></para>"
+
+#: gui/mainwindow.cpp:813
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Rescan the Devices?"
+msgstr "Поново скенирати уређаје?"
+
+#: gui/mainwindow.cpp:814
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Rescan Devices"
+msgstr "Скенирај уређаје"
+
+#: gui/mainwindow.cpp:830
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to apply the pending operations listed below?</"
+"para><para><warning>This will permanently modify your disks.</warning></para>"
+msgstr ""
+"<para>Желите ли заиста да примијените наступајуће операције наведене испод?</"
+"para><para><warning>То ће трајно измијенити ваш диск.</warning></para>"
+
+#: gui/mainwindow.cpp:832
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Apply Pending Operations?"
+msgstr "Примијенити наступајуће операције?"
+
+#: gui/mainwindow.cpp:833
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Apply Pending Operations"
+msgstr "Примијени наступајуће операције"
+
+#: gui/mainwindow.cpp:835
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Applying operations..."
+msgstr "Примјењујем операције..."
+
+# >> %1 is operation description
+#: gui/mainwindow.cpp:860
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Undoing operation: %1"
+msgstr "Опозивам операцију: %1"
+
+#: gui/mainwindow.cpp:876
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to clear the list of pending operations?"
+msgstr "Желите ли заиста да очистите списак наступајућих операција?"
+
+#: gui/mainwindow.cpp:877
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Clear Pending Operations?"
+msgstr "Очистити наступајуће операције?"
+
+#: gui/mainwindow.cpp:878
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Clear Pending Operations"
+msgstr "Очисти наступајуће операције"
+
+#: gui/mainwindow.cpp:880
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Clearing the list of pending operations."
+msgstr "Чистим списак наступајућих операција."
+
+#: gui/mainwindow.cpp:920
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import"
+msgstr "Не могу да отворим улазни фајл <filename>%1</filename> ради увоза."
+
+#: gui/mainwindow.cpp:920 gui/mainwindow.cpp:930 gui/mainwindow.cpp:938
+#: gui/mainwindow.cpp:944
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Importing Partition Table"
+msgstr "Грешка при увозу табеле партиција"
+
+#: gui/mainwindow.cpp:938
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import: %2"
+msgstr "Не могу да отворим улазни фајл <filename>%1</filename> ради увоза: %2"
+
+#: gui/mainwindow.cpp:944
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Could not open temporary file <filename>%1</filename> while trying to import "
+"from <filename>%2</filename>."
+msgstr ""
+"Не могу да отворим привремени фајл <filename>%1</filename> при покушају "
+"увоза из <filename>%2</filename>."
+
+#: gui/mainwindow.cpp:974
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The import file <filename>%1</filename> does not contain a valid partition "
+"table."
+msgstr "Фајл увоза <filename>%1</filename> не садржи добру табелу партиција."
+
+#: gui/mainwindow.cpp:974 gui/mainwindow.cpp:984 gui/mainwindow.cpp:991
+#: gui/mainwindow.cpp:996 gui/mainwindow.cpp:1006 gui/mainwindow.cpp:1019
+#: gui/mainwindow.cpp:1024 gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1048
+#: gui/mainwindow.cpp:1053 gui/mainwindow.cpp:1060
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error While Importing Partition Table"
+msgstr "Грешка при увозу табеле партиција"
+
+#: gui/mainwindow.cpp:984
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Found more than one partition table type in import file (line %1)."
+msgstr "Фајл увоза садржи више од једног типа табеле партиција (ред %1)."
+
+#: gui/mainwindow.cpp:991
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is unknown (line %2)."
+msgstr "Тип табеле партиција „%1“ није познат (ред %2)."
+
+#: gui/mainwindow.cpp:996
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is not supported for import (line %2)."
+msgstr "Тип табеле партиција „%1“ није подржан за увоз (ред %2)."
+
+#: gui/mainwindow.cpp:1006
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Found partition but no partition table type (line %1)."
+msgstr "Нађена партиција али нема типа табеле партиција (ред %1)."
+
+#: gui/mainwindow.cpp:1019
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Partition %1 would be outside the device's boundaries (line %2)."
+msgstr "Партиција %1 била би изван граница уређаја (ред %2)."
+
+#: gui/mainwindow.cpp:1024
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition %1 has end before start sector (line %2)."
+msgstr "Партиција %1 има крај пре почетка сектора (ред %2)."
+
+#: gui/mainwindow.cpp:1043
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+msgstr "Непозната улога партиције „%1“ за партицију %2 (ред %3)."
+
+#: gui/mainwindow.cpp:1048
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid ""
+"No parent partition or partition table found for partition %1 (line %2)."
+msgstr ""
+"Нема родитељске партиције или табеле партиција за партицију %1 (ред %2)."
+
+#: gui/mainwindow.cpp:1053
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The partition table type \"%1\" does not support extended partitions, but "
+"one was found (line %2)."
+msgstr ""
+"Тип табеле партиција „%1“ не подржава продужене партиције, али је таква "
+"нађена (ред %2)."
+
+#: gui/mainwindow.cpp:1060
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Could not create file system \"%1\" for partition %2 (line %3)."
+msgstr "Не могу да направим фајл систем „%1“ за партицију %2 (ред %3)."
+
+#: gui/mainwindow.cpp:1071
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Could not parse line %1 from import file. Ignoring it."
+msgstr "Не могу да рашчланим ред %1 из фајла увоза. Игноришем га."
+
+#: gui/mainwindow.cpp:1091
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Exporting Partition Table"
+msgstr "Грешка при увозу табеле партиција"
+
+#: gui/mainwindow.cpp:1261 gui/mainwindow.cpp:1266 gui/mainwindow.cpp:1302
+#, kde-kuit-format
+msgid "%1%2"
+msgstr "%1%2"
+
+#: gui/mainwindow.cpp:1266 gui/mainwindow.cpp:1277
+#, kde-kuit-format
+msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
+msgstr ""
+"<html><tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr></"
+"html>"
+
+#: gui/mainwindow.cpp:1313
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>No support tools were found for file systems currently present on hard "
+"disks in this computer:</para><table style='margin-top:12px'><tr><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Partition</"
+"td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>File "
+"System</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Support Tools</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>URL</td></tr>%1</table><para>As long as the support "
+"tools for these file systems are not installed you will not be able to "
+"modify them.</para><para>You should find packages with these support tools "
+"in your distribution's package manager.</para>"
+msgstr ""
+"<para>Није нађена ниједна алатка за подршку фајл система тренутно присутних "
+"на овом рачунару:</para><table style='margin-top:12px'><tr><td style='font-"
+"weight:bold;padding-right:12px;white-space:nowrap;'>партиција</td><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>фајл систем</"
+"td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>алатке</td><td style='font-weight:bold;padding-right:12px;white-"
+"space:nowrap;'>УРЛ</td></tr>%1</table><para>Ове фајл системе неће моћи да "
+"мењате док год тражене алатке за подршку не буду инсталиране.</"
+"para><para>Требало би да можете да нађете ове алатке у менаџеру пакета своје "
+"дистрибуције.</para>"
+
+#: gui/mainwindow.cpp:1326
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Missing File System Support Packages"
+msgstr "Недостају пакети подршке за фајл системе"
+
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
+#. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
+#: gui/mainwindowbase.ui:14 gui/partitionmanagerwidgetbase.ui:14
+#, kde-format
+msgctxt "@title:window"
+msgid "KDE Partition Manager"
+msgstr "КДЕ‑ов менаџер партиција"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
+#: gui/mainwindowbase.ui:23
+#, kde-format
+msgctxt "@title:window"
+msgid "Devices"
+msgstr "Уређаји"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
+#: gui/mainwindowbase.ui:36
+#, kde-format
+msgctxt "@title:window"
+msgid "Pending Operations"
+msgstr "Наступајуће операције"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
+#: gui/mainwindowbase.ui:59
+#, kde-format
+msgctxt "@title:window"
+msgid "Log Output"
+msgstr "Излаз дневника"
+
+#: gui/newdialog.cpp:53
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create a new partition"
+msgstr "Прављење нове партиције"
+
+# rewrite-msgid: /Toolbar/Tools/
+#. i18n: ectx: ToolBar (partitionToolBar)
+#: gui/partitionmanagerui.rc:5
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "Partition Toolbar"
+msgctxt "@title:menu"
+msgid "Partition Manager Toolbar"
+msgstr "Алатке партиције"
+
+#. i18n: ectx: Menu (device)
+#: gui/partitionmanagerui.rc:22
+#, kde-format
+msgctxt "@title:menu"
+msgid "Device"
+msgstr "Уређај"
+
+#. i18n: ectx: Menu (selectedDevice)
+#: gui/partitionmanagerui.rc:24
+#, kde-format
+msgctxt "@title:menu"
+msgid "Select Current Device"
+msgstr "Избор текућег уређаја"
+
+#. i18n: ectx: Menu (tools)
+#: gui/partitionmanagerui.rc:40
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tools"
+msgstr "Алатке"
+
+#. i18n: ectx: Menu (partition)
+#: gui/partitionmanagerui.rc:47
+#, kde-format
+msgctxt "@title:menu"
+msgid "Partition"
+msgstr "Партиција"
+
+#. i18n: ectx: Menu (panels)
+#: gui/partitionmanagerui.rc:69
+#, kde-format
+msgctxt "@title:menu"
+msgid "Panels Shown"
+msgstr "Приказани панели"
+
+#: gui/partitionmanagerwidget.cpp:212
+#, kde-kuit-format
+msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
+msgid "%1 [Encrypted]"
+msgstr "%1 [шифровано]"
+
+#: gui/partitionmanagerwidget.cpp:397
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be mounted."
+msgstr ""
+"Фајл систем на партицији <filename>%1</filename> не може да се монтира."
+
+#: gui/partitionmanagerwidget.cpp:397
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Mount File System."
+msgstr "Не могу да монтирам фајл систем."
+
+#: gui/partitionmanagerwidget.cpp:400
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be unmounted."
+msgstr ""
+"Фајл систем на партицији <filename>%1</filename> не може да се демонтира."
+
+#: gui/partitionmanagerwidget.cpp:400
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Unmount File System."
+msgstr "Не могу да демонтирам фајл систем."
+
+#: gui/partitionmanagerwidget.cpp:440
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The encrypted file system on partition <filename>%1</filename> could not be "
+"unlocked."
+msgstr ""
+"Шифровани фајл систем на партицији <filename>%1</filename> не може да се "
+"откључа."
+
+#: gui/partitionmanagerwidget.cpp:446
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Unlock Encrypted File System."
+msgstr "Не могу да откључам шифровани фајл систем."
+
+#: gui/partitionmanagerwidget.cpp:451
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The encrypted file system on partition <filename>%1</filename> could not be "
+"locked."
+msgstr ""
+"Шифровани фајл систем на партицији <filename>%1</filename> не може да се "
+"закључа."
+
+#: gui/partitionmanagerwidget.cpp:457
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Lock Encrypted File System."
+msgstr "Не могу да закључам шифровани фајл систем."
+
+#: gui/partitionmanagerwidget.cpp:486
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>There is already one primary partition on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgid_plural ""
+"<para>There are already %1 primary partitions on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgstr[0] ""
+"<para>Већ постоји %1 примарна партиција на овом уређају, што је највећи број "
+"који дати тип табеле партиција може да садржи.</para><para>Не можете "
+"направити, налијепити нити повратити примарну партицију на уређају прије "
+"него што обришете постојећу.</para>"
+msgstr[1] ""
+"<para>Већ постоје %1 примарне партиције на овом уређају, што је највећи број "
+"који дати тип табеле партиција може да садржи.</para><para>Не можете "
+"направити, налијепити нити повратити примарну партицију на уређају прије "
+"него што обришете постојећу.</para>"
+msgstr[2] ""
+"<para>Већ постоји %1 примарних партиција на овом уређају, што је највећи "
+"број који дати тип табеле партиција може да садржи.</para><para>Не можете "
+"направити, налијепити нити повратити примарну партицију на уређају прије "
+"него што обришете постојећу.</para>"
+msgstr[3] ""
+"<para>Већ постоји једна примарна партиција на овом уређају, што је највећи "
+"број који дати тип табеле партиција може да садржи.</para><para>Не можете "
+"направити, налијепити нити повратити примарну партицију на уређају прије "
+"него што обришете постојећу.</para>"
+
+#: gui/partitionmanagerwidget.cpp:490
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Too Many Primary Partitions."
+msgstr "Превише примарних партиција"
+
+#: gui/partitionmanagerwidget.cpp:549
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The partition <filename>%1</filename> cannot currently be deleted "
+"because one or more partitions with higher logical numbers are still mounted."
+"</para><para>Please unmount all partitions with higher logical numbers than "
+"%2 first.</para>"
+msgstr ""
+"<para>Партиција <filename>%1</filename> тренутно не може бити обрисана јер "
+"су једна или више партиција са вишим логичким бројем још увијек монтиране.</"
+"para><para>Прво демонтирајте све партиције са логичким бројем вишим од %2.</"
+"para>"
+
+#: gui/partitionmanagerwidget.cpp:552
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cannot Delete Partition."
+msgstr "Не могу да обришем партицију"
+
+#: gui/partitionmanagerwidget.cpp:561
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Do you really want to delete the partition that is currently in the "
+"clipboard? It will no longer be available for pasting after it has been "
+"deleted."
+msgstr ""
+"Желите ли заиста да обришете партицију која је тренутно у клипборду? Након "
+"брисања она више неће бити доступна за наљепљивање."
+
+#: gui/partitionmanagerwidget.cpp:563
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Delete Partition in the Clipboard?"
+msgstr "Заиста обрисати партицију у клипборду?"
+
+#: gui/partitionmanagerwidget.cpp:564
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Delete It"
+msgstr "Обриши"
+
+#: gui/partitionmanagerwidget.cpp:617
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Partition <filename>%1</filename> has the same position and size after "
+"resize/move. Ignoring operation."
+msgstr ""
+"Партиција <filename>%1</filename> има исти положај и величину након измене/"
+"помијерања. Занемарујем операцију."
+
+#: gui/partitionmanagerwidget.cpp:645
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+msgstr "Партиција <filename>%1</filename> је копирана у клипборд."
+
+#: gui/partitionmanagerwidget.cpp:708
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Overwriting one partition with another (or "
+"with an image file) will destroy all data on this target partition.</"
+"para><para>If you continue now and apply the resulting operation in the main "
+"window, all data currently stored on <filename>%1</filename> will "
+"unrecoverably be overwritten.</para>"
+msgstr ""
+"<para><warning>Изгубићете све податке на партицији  <filename>%1</filename>."
+"</warning></para><para>Пребрисавање једне партиције другом (или фајлом "
+"одраза) уништиће све податке на одредишној партицији.</para><para>Ако сада "
+"наставите и примијените операције из главног прозора, сви подаци тренутно "
+"ускладиштени на <filename>%1</filename> биће неповратно пребрисани.</para>"
+
+#: gui/partitionmanagerwidget.cpp:716
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Overwrite Existing Partition?"
+msgstr "Заиста пребрисати постојећу партицију?"
+
+#: gui/partitionmanagerwidget.cpp:717
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Overwrite Partition"
+msgstr "Пребриши партицију"
+
+#: gui/partitionmanagerwidget.cpp:725
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The selected partition is not large enough to hold the source "
+"partition or the backup file.</para><para>Pick another target or resize this "
+"partition so it is as large as the source.</para>"
+msgstr ""
+"<para>Изабрана партиција није довољно велика да прими изворну партицију или "
+"фајл архиве.</para><para>Изаберите друго одредиште или повећајте партицију "
+"да буде велика као и извор.</para>"
+
+#: gui/partitionmanagerwidget.cpp:726
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Target Not Large Enough"
+msgstr "Одредиште није довољно велико"
+
+#: gui/partitionmanagerwidget.cpp:729
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>It is not possible to create the target partition large enough to hold "
+"the source.</para><para>This may happen if not all partitions on a device "
+"are correctly aligned or when copying a primary partition into an extended "
+"partition.</para>"
+msgstr ""
+"<para>Није могуће направити одредишну партицију довољно велику да прими "
+"извор.</para><para>До овога може доћи ако неке партиције нису правилно "
+"поравнате, или када се копира примарна на продужену партицију.</para>"
+
+#: gui/partitionmanagerwidget.cpp:732
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cannot Create Target Partition."
+msgstr "Не могу да направим одредишну партицију"
+
+#: gui/partitionmanagerwidget.cpp:790
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system in the image file <filename>%1</filename> is too large to be "
+"restored to the selected partition."
+msgstr ""
+"Фајл систем у фајлу одраза <filename>%1</filename> превелик је да би се "
+"повратио на изабрану партицију."
+
+#: gui/partitionmanagerwidget.cpp:790
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Not Enough Space to Restore File System."
+msgstr "Недовољно простора за враћање фајл система"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:70
+#, kde-format
+msgid "Partition"
+msgstr "партиција"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:75
+#, kde-format
+msgid "Type"
+msgstr "тип"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:80
+#, kde-format
+msgid "Mount Point"
+msgstr "тачка монтирања"
+
+# >> @option:radio Identify by:
+# >! Contexts.
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:85
+#, kde-format
+msgid "Label"
+msgstr "етикета"
+
+# >> @option:radio Identify by:
+# >! Contexts.
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:90
+#, kde-format
+msgid "UUID"
+msgstr "УУИД"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:95
+#, fuzzy, kde-format
+#| msgid "Partition table:"
+msgid "Partition Label"
+msgstr "Табела партиција:"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:100
+#, fuzzy, kde-format
+#| msgid "Partition"
+msgid "Partition UUID"
+msgstr "партиција"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:105
+#, kde-format
+msgid "Size"
+msgstr "величина"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:110
+#, kde-format
+msgid "Used"
+msgstr "искоришћено"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:115
+#, kde-format
+msgid "Available"
+msgstr "доступно"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:120
+#, kde-format
+msgid "First Sector"
+msgstr "први сектор"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:125
+#, kde-format
+msgid "Last Sector"
+msgstr "посљедњи сектор"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:130
+#, kde-format
+msgid "Number of Sectors"
+msgstr "број сектора"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:135
+#, kde-format
+msgid "Flags"
+msgstr "заставице"
+
+#: gui/partpropsdialog.cpp:61
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Partition properties: <filename>%1</filename>"
+msgstr "Својства партиције: <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:116
+#, kde-kuit-format
+msgctxt "@item mountpoint"
+msgid "(none found)"
+msgstr "(није нађена)"
+
+#: gui/partpropsdialog.cpp:122
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "idle"
+msgstr "мирује"
+
+#: gui/partpropsdialog.cpp:125
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "At least one logical partition is mounted."
+msgstr "Бар једна логичка партиција је монтирана."
+
+#: gui/partpropsdialog.cpp:127
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "mounted on <filename>%1</filename>"
+msgstr "монтирана у <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:129
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "mounted"
+msgstr "монтирана"
+
+#: gui/partpropsdialog.cpp:133 gui/partpropsdialog.cpp:136
+#: gui/partpropsdialog.cpp:137
+#, kde-kuit-format
+msgctxt "@item uuid"
+msgid "(none)"
+msgstr "(нема)"
+
+#: gui/partpropsdialog.cpp:350
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Changing the file system on a partition "
+"already on disk will erase all its contents. If you continue now and apply "
+"the resulting operation in the main window, all data on <filename>%1</"
+"filename> will unrecoverably be lost.</para>"
+msgstr ""
+"<para><warning>Изгубићете све податке на партицији  <filename>%1</filename>."
+"</warning></para><para>Измјена фајл система партиције која је већ на диску "
+"довешће до брисања њеног садржаја. Ако сада наставите и примијените "
+"операцију, сви подаци на  <filename>%1</filename> биће неповратно изгубљени."
+"</para>"
+
+#: gui/partpropsdialog.cpp:352
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Recreate <filename>%1</filename> with File System %2?"
+msgstr "Заиста поново направити <filename>%1</filename> са фајл системом %2?"
+
+#: gui/partpropsdialog.cpp:353
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Change the File System"
+msgstr "Промијени фајл систем"
+
+#: gui/partpropsdialog.cpp:354
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Change the File System"
+msgstr "Не мијењај фајл систем"
+
+# пров-об: filesystem -> filename
+#: gui/partpropsdialog.cpp:373
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Recreating a file system will erase all its "
+"contents. If you continue now and apply the resulting operation in the main "
+"window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
+"para>"
+msgstr ""
+"<para><warning>Изгубићете све податке на партицији  <filename>%1</filename>."
+"</warning></para><para>Поновно прављење фајл система довешће до брисања "
+"његовог садржаја. Ако сада наставите и примијените операцију, сви подаци на "
+"<filename>%1</filename> биће неповратно изгубљени.</para>"
+
+#: gui/partpropsdialog.cpp:375
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Recreate File System on <filename>%1</filename>?"
+msgstr "Заиста поново направити фајл систем на <filename>%1</filename>?"
+
+#: gui/partpropsdialog.cpp:376
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Recreate the File System"
+msgstr "Поново направи фајл систем"
+
+#: gui/partpropsdialog.cpp:377
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Recreate the File System"
+msgstr "Не прави поново фајл систем"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/partpropswidgetbase.ui:33
+#, kde-format
+msgctxt "@label:listbox"
+msgid "File syste&m:"
+msgstr "&Фајл систем:"
+
+# skip-rule: t-setting
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
+#: gui/partpropswidgetbase.ui:49 gui/sizedialogwidgetbase.ui:144
+#, kde-format
+msgctxt "@label"
+msgid "This file system does not support setting a label."
+msgstr "Овај фајл систем не подржава постављање етикете."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:62
+#, kde-format
+msgid ""
+"This will reformat the filesystem, losing all contents, but keeping the same "
+"filesystem type."
+msgstr ""
+"Ово ће поново форматирати фајл систем, чиме ће нестати сав садржај, али ће "
+"остати исти тип фајл система."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:65
+#, kde-format
+msgctxt "@action:button"
+msgid "Recreate existing file system"
+msgstr "Поново направи постојећи фајл систем"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
+#: gui/partpropswidgetbase.ui:95
+#, kde-format
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Тачка монтирања:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
+#: gui/partpropswidgetbase.ui:112
+#, kde-format
+msgctxt "@label"
+msgid "Partition type:"
+msgstr "Тип партиције:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/partpropswidgetbase.ui:122
+#, kde-format
+msgctxt "@label"
+msgid "&Label:"
+msgstr "&Етикета:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
+#: gui/partpropswidgetbase.ui:142
+#, kde-format
+msgctxt "@label"
+msgid "Status:"
+msgstr "Стање:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
+#: gui/partpropswidgetbase.ui:159
+#, kde-format
+msgctxt "@label"
+msgid "UUID:"
+msgstr "УУИД:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/partpropswidgetbase.ui:189
+#, kde-format
+msgctxt "@label"
+msgid "Size:"
+msgstr "Величина:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
+#: gui/partpropswidgetbase.ui:212
+#, kde-format
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Доступно:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
+#: gui/partpropswidgetbase.ui:229
+#, kde-format
+msgctxt "@label partition capacity used"
+msgid "Used:"
+msgstr "Искоришћено:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
+#: gui/partpropswidgetbase.ui:253
+#, kde-format
+msgctxt "@label"
+msgid "First sector:"
+msgstr "Први сектор:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
+#: gui/partpropswidgetbase.ui:270
+#, kde-format
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Посљедњи сектор:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
+#: gui/partpropswidgetbase.ui:287
+#, kde-format
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr "Број сектора:"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
+#: gui/partpropswidgetbase.ui:311
+#, fuzzy, kde-format
+#| msgid "Flags"
+msgctxt "@label"
+msgid "&Flags:"
+msgstr "заставице"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
+#: gui/partpropswidgetbase.ui:356
+#, fuzzy, kde-format
+#| msgid "Partition table:"
+msgid "Partition Label:"
+msgstr "Табела партиција:"
+
+# >> @title:column
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
+#: gui/partpropswidgetbase.ui:366
+#, fuzzy, kde-format
+#| msgid "Partition"
+msgid "Partition UUID:"
+msgstr "партиција"
+
+#: gui/parttablewidget.cpp:37
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Please select a device."
+msgstr "Изаберите уређај."
+
+#: gui/parttablewidget.cpp:62
+#, kde-kuit-format
+msgctxt "@info"
+msgid "No valid partition table was found on this device."
+msgstr "На овом уређају није нађена табела партиција."
+
+#: gui/resizedialog.cpp:52
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Resize/move partition: <filename>%1</filename>"
+msgstr "Измијени/помјери партицију: <filename>%1</filename>"
+
+#: gui/resizedialog.cpp:101
+#, kde-format
+msgctxt "%2 is either empty or says Invalid passphrase."
+msgid "%2Enter passphrase for %1:"
+msgstr "%2Унесите лозинку за %1:"
+
+#: gui/resizedialog.cpp:110
+#, kde-format
+msgctxt "Part of %2Enter passphrase for %1:"
+msgid "Invalid passphrase. "
+msgstr "Лоша лозинка. "
+
+#: gui/resizevolumegroupdialog.cpp:46
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Resize Volume Group"
+msgstr "Промјена величине деоне групе"
+
+#: gui/scanprogressdialog.cpp:28
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Scanning devices..."
+msgstr "Скенирам уређаје..."
+
+#: gui/scanprogressdialog.cpp:43
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Scanning..."
+msgstr "Скенирам..."
+
+#: gui/scanprogressdialog.cpp:45
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Scanning device: <filename>%1</filename>"
+msgstr "Скенирам уређаје: <filename>%1</filename>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: gui/sizedetailswidgetbase.ui:62
+#, kde-format
+msgctxt "@label:listbox"
+msgid "First sector:"
+msgstr "Први сектор:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: gui/sizedetailswidgetbase.ui:97
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Last sector:"
+msgstr "Посљедњи сектор:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
+#: gui/sizedetailswidgetbase.ui:120
+#, kde-format
+msgid "Align partition"
+msgstr "Поравнај партицију"
+
+#: gui/sizedialogbase.cpp:76
+#, kde-kuit-format
+msgctxt "@action:button advanced settings button"
+msgid "Advanced"
+msgstr "Напредно"
+
+#: gui/sizedialogbase.cpp:190
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "&Advanced"
+msgstr "&Напредно"
+
+# rewrite-msgid: /F&ree space/Free/
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
+#: gui/sizedialogwidgetbase.ui:23
+#, kde-format
+msgctxt "@label:listbox"
+msgid "F&ree space before:"
+msgstr "Слободно &испред:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/sizedialogwidgetbase.ui:68
+#, kde-format
+msgctxt "@label:listbox"
+msgid "File system:"
+msgstr "Фајл систем:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:81
+#, kde-format
+msgid ""
+"Set up encryption for this filesystem with LUKS. You will be asked to "
+"provide a passphrase."
+msgstr ""
+"Поставите шифровање за овај фајл систем помоћу ЛУКС‑а. Биће вам затражена "
+"лозинка."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:84
+#, kde-format
+msgid "Encrypt with LUKS"
+msgstr "Шифровано ЛУКС‑ом"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:97
+#, kde-format
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Највише:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:116
+#, kde-format
+msgid "Primar&y"
+msgstr "&примарна"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:123
+#, kde-format
+msgid "E&xtended"
+msgstr "про&дужена"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:130
+#, kde-format
+msgid "&Logical"
+msgstr "&логичка"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:185
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Partition &type:"
+msgstr "&Тип партиције:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/sizedialogwidgetbase.ui:198
+#, kde-format
+msgctxt "@label"
+msgid "Label:"
+msgstr "Етикета:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:217
+#, kde-format
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Најмање:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: gui/sizedialogwidgetbase.ui:249
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Si&ze:"
+msgstr "&Величина:"
+
+# rewrite-msgid: /Free space/Free/
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
+#: gui/sizedialogwidgetbase.ui:268
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Слободно и&за:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
+#: gui/sizedialogwidgetbase.ui:317
+#, kde-format
+msgid "Logical Volume Name:"
+msgstr "Име логичког дела:"
+
+#: gui/smartdialog.cpp:65
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "SMART Properties: <filename>%1</filename>"
+msgstr "СМАРТ својства: <filename>%1</filename>"
+
+#: gui/smartdialog.cpp:69
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Save SMART Report"
+msgstr "Сачувај извештај СМАРТ‑а"
+
+#: gui/smartdialog.cpp:105 gui/smartdialog.cpp:162
+#, kde-format, kde-kuit-format
+msgctxt "@label SMART number of bad sectors"
+msgid "none"
+msgstr "ниједан"
+
+#: gui/smartdialog.cpp:124 gui/smartdialog.cpp:190
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Pre-Failure"
+msgstr "пред крахом"
+
+#: gui/smartdialog.cpp:124 gui/smartdialog.cpp:190
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Old-Age"
+msgstr "остарио"
+
+#: gui/smartdialog.cpp:125 gui/smartdialog.cpp:191
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Online"
+msgstr "на вези"
+
+#: gui/smartdialog.cpp:125 gui/smartdialog.cpp:191
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Offline"
+msgstr "ван везе"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
+#: gui/smartdialog.cpp:164 gui/smartdialogwidgetbase.ui:63
+#, kde-format
+msgid "Model:"
+msgstr "Модел:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
+#: gui/smartdialog.cpp:165 gui/smartdialogwidgetbase.ui:92
+#, kde-format
+msgid "Serial number:"
+msgstr "Серијски број:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
+#: gui/smartdialog.cpp:166 gui/smartdialogwidgetbase.ui:121
+#, kde-format
+msgid "Firmware revision:"
+msgstr "Ревизија фирмвера:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
+#: gui/smartdialog.cpp:167 gui/smartdialogwidgetbase.ui:150
+#, kde-format
+msgid "Temperature:"
+msgstr "Температура:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
+#: gui/smartdialog.cpp:168 gui/smartdialogwidgetbase.ui:179
+#, kde-format
+msgid "Bad sectors:"
+msgstr "Лоших сектора:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
+#: gui/smartdialog.cpp:169 gui/smartdialogwidgetbase.ui:208
+#, kde-format
+msgid "Powered on for:"
+msgstr "Под напајањем:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
+#: gui/smartdialog.cpp:170 gui/smartdialogwidgetbase.ui:237
+#, kde-format
+msgid "Power cycles:"
+msgstr "Циклуса напајања:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
+#: gui/smartdialog.cpp:171 gui/smartdialogwidgetbase.ui:407
+#, kde-format
+msgid "Self tests:"
+msgstr "Самопроба:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
+#: gui/smartdialog.cpp:172 gui/smartdialogwidgetbase.ui:378
+#, kde-format
+msgid "Overall assessment:"
+msgstr "Укупна процена:"
+
+#: gui/smartdialog.cpp:236
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Save SMART Report."
+msgstr "Не могу да сачувам извјештај СМАРТ‑а."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:289
+#, kde-format
+msgid "Id"
+msgstr "ИД"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:294
+#, kde-format
+msgid "Attribute"
+msgstr "атрибут"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:299
+#, kde-format
+msgid "Failure Type"
+msgstr "тип краха"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:304
+#, kde-format
+msgid "Update Type"
+msgstr "тип ажурирања"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:309
+#, kde-format
+msgid "Worst"
+msgstr "најгоре"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:314
+#, kde-format
+msgid "Current"
+msgstr "тренутно"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:319
+#, kde-format
+msgid "Threshold"
+msgstr "праг"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:324
+#, kde-format
+msgid "Raw"
+msgstr "сирово"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:329
+#, kde-format
+msgid "Assessment"
+msgstr "процена"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:334
+#, kde-format
+msgid "Value"
+msgstr "вредност"
+
+#: gui/treelog.cpp:122
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not create temporary output file to save <filename>%1</filename>."
+msgstr ""
+"Не могу да направим привремени фајл ради уписивања у <filename>%1</filename>."
+
+#: gui/treelog.cpp:122
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Saving Log File"
+msgstr "Грешка при уписивању дневничког фајла"
+
+# well-spelled: озб
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:54
+#, kde-format
+msgctxt ""
+"@title:column Severity of a log entry / log level. Text must be very short."
+msgid "Sev."
+msgstr "озб."
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:57
+#, kde-format
+msgid "Severity"
+msgstr "Озбиљност"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:62
+#, kde-format
+msgctxt "@title:column a time stamp of a log entry"
+msgid "Time"
+msgstr "вријеме"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:67
+#, kde-format
+msgctxt "@title:column the text message of a log entry"
+msgid "Message"
+msgstr "порука"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextVGName)
+#: gui/volumegroupwidgetbase.ui:30
+#, kde-format
+msgid "Volume Group Name: "
+msgstr "Име деоне групе: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
+#: gui/volumegroupwidgetbase.ui:43
+#, kde-format
+msgid "Physical Extent Size: "
+msgstr "Величина физичког опсега: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSize)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalUsedSize)
+#: gui/volumegroupwidgetbase.ui:56 gui/volumegroupwidgetbase.ui:116
+#: gui/volumegroupwidgetbase.ui:162 gui/volumegroupwidgetbase.ui:172
+#, kde-format
+msgid "---"
+msgstr "---"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
+#: gui/volumegroupwidgetbase.ui:75
+#, kde-format
+msgid " MiB"
+msgstr " MiB"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalLV)
+#: gui/volumegroupwidgetbase.ui:103
+#, kde-format
+msgid "Total LV: "
+msgstr "Укупно логичких делова:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
+#: gui/volumegroupwidgetbase.ui:126
+#, kde-format
+msgid "Volume Group Type: "
+msgstr "Тип деоне групе: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
+#: gui/volumegroupwidgetbase.ui:136
+#, kde-format
+msgid "Total Size: "
+msgstr "Укупна величина: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/volumegroupwidgetbase.ui:149
+#, kde-format
+msgid "Total Sectors: "
+msgstr "Укупно сектора: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
+#: gui/volumegroupwidgetbase.ui:182
+#, kde-format
+msgid "Used Size: "
+msgstr "Искоришћена величина: "
+
+#: main.cpp:46
+#, kde-kuit-format
+msgctxt "@title"
+msgid "<application>KDE Partition Manager</application>"
+msgstr "<application>КДЕ‑ов менаџер партиција</application>"
+
+#: main.cpp:48
+#, kde-kuit-format
+msgctxt "@title"
+msgid "Manage your disks, partitions and file systems"
+msgstr "Управљање дисковима, партицијама и фајл системима"
+
+#: main.cpp:50
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:credit"
+#| msgid ""
+#| "© 2008-2013 Volker Lanz\n"
+#| "© 2012-2017 Andrius Štikonas"
+msgctxt "@info:credit"
+msgid ""
+"© 2008-2013 Volker Lanz\n"
+"© 2012-2019 Andrius Štikonas"
+msgstr ""
+"© 2008–2013, Фолкер Ланц\n"
+"© 2012–2017, Андријус Штиконас"
+
+#: main.cpp:54
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Volker Lanz"
+msgstr "Фолкер Ланц"
+
+#: main.cpp:54
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Former maintainer"
+msgstr "Бивши одржавалац"
+
+#: main.cpp:55
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Andrius Štikonas"
+msgstr "Андријус Штиконас"
+
+#: main.cpp:55
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Maintainer"
+msgstr "Одржавалац"
+
+#: main.cpp:56
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Teo Mrnjavac"
+msgstr "Тео Мрњавац"
+
+#: main.cpp:56
+#, kde-format
+msgctxt "@info:credit"
+msgid "Former Calamares maintainer"
+msgstr "Бивши одржавалац Каламареса"
+
+#: main.cpp:57
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Chantara Tith"
+msgstr "Чантара Тит"
+
+#: main.cpp:57
+#, kde-format
+msgctxt "@info:credit"
+msgid "LVM support"
+msgstr "Подршка за ЛВМ"
+
+#: main.cpp:58
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Pali Rohár"
+msgstr "Пали Рохар"
+
+#: main.cpp:58
+#, kde-format
+msgctxt "@info:credit"
+msgid "UDF support"
+msgstr "Подршка за УДФ"
+
+#: main.cpp:59
+#, kde-format
+msgid "Hugo Pereira Da Costa"
+msgstr "Иго Переира да Коста"
+
+#: main.cpp:59
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Partition Widget Design"
+msgstr "Дизајнирање виџета партиције"
+
+#: main.cpp:60
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Caio Jordão Carvalho"
+msgstr ""
+
+#: main.cpp:60
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Save SMART Report"
+msgctxt "@info:credit"
+msgid "Improved SMART support"
+msgstr "Сачувај извештај СМАРТ‑а"
+
+#. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
+#: partitionmanager.kcfg:38
+#, kde-format
+msgctxt "@label"
+msgid "Is this the first time KDE Partition Manager is being run?"
+msgstr "Да ли је ово прво покретање КДЕ‑овог менаџера партиција?"
+
+#. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
+#: partitionmanager.kcfg:42
+#, kde-format
+msgctxt "@label"
+msgid "Hide log messages below"
+msgstr "Сакриј дневничке поруке испод"
+
+#. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
+#: partitionmanager.kcfg:46
+#, kde-format
+msgctxt "@label"
+msgid "Partition sector alignment"
+msgstr "Поравнање сектора партиције"
+
+#. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
+#: partitionmanager.kcfg:50
+#, kde-format
+msgctxt "@label"
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Поравнање на основу цилиндара (сагласно са Виндоузом ИксП)"
+
+#. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
+#: partitionmanager.kcfg:54
+#, kde-format
+msgctxt "@label"
+msgid "Align partitions per default"
+msgstr "Поравнање како је подразумевано"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:58
+#, kde-format
+msgctxt "@label"
+msgid "File system colors"
+msgstr "Боје фајл система"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:134
+#, kde-format
+msgctxt "@label"
+msgid "Show the application's menu bar"
+msgstr "Прикажи траку менија програма"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:138
+#, kde-format
+msgctxt "@label"
+msgid "Backend plugin"
+msgstr "Прикључак позадине"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:144
+#, kde-format
+msgctxt "@label"
+msgid "Preferred unit:"
+msgstr "Жељене јединице:"
+
+#: util/guihelpers.cpp:61
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The configured backend plugin \"%1\" could not be loaded.</"
+"para><para>Loading the default backend plugin \"%2\" instead.</para>"
+msgstr ""
+"<para>Подешен прикључак позадине „%1“ не може да се учита.</"
+"para><para>Уместо тога учитавам подразумевани прикључак „%2“.</para>"
+
+#: util/guihelpers.cpp:64 util/guihelpers.cpp:71
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error: Could Not Load Backend Plugin"
+msgstr "Не могу да учитам прикључак позадине"
+
+#: util/guihelpers.cpp:68
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+"plugin could be loaded.</para><para>Please check your installation.</para>"
+msgstr ""
+"<para>Ни подешени („%1“) ни подразумевани („%2“) прикључак позадине не може "
+"да се учита.</para><para>Проверите инсталацију.</para>"
+
+#: util/guihelpers.cpp:86
+#, kde-kuit-format
+msgctxt "@title:menu"
+msgid "Columns"
+msgstr "Колоне"

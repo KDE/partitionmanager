@@ -1,0 +1,166 @@
+<sect1 id="howto-installos">
+	<title
+>Como: Instalar um Novo Sistema Operativo</title>
+
+	<para
+>Este manual descreve a preparação de um novo dispositivo de disco rígido para a instalação de um SO: Suponha que comprou um novo disco rígido e que pretende usá-lo agora como substituição para o antigo, o qual contém de momento o seu SO e as partições de dados. Também gostaria de aproveitar esta oportunidade para instalar um sistema operativo novo. Terá de efectuar bastantes passos para efectuar a transição do sistema antigo para o novo. </para>
+
+	<para
+>No seguinte, o <quote
+>/dev/sdb</quote
+> é o disco rígido antigo e o <quote
+>/dev/sdc</quote
+> é o novo. Esta imagem mostra a situação no dispositivo de origem: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>A janela principal com o dispositivo de origem</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>O novo dispositivo irá ficar semelhante ao seguinte. Repare que este ainda não tem nenhuma tabela de partições válida, pelo que o primeiro passo é criar uma, através da selecção de <xref linkend="menu-device-createpartitiontable"/>: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>A janela principal com o dispositivo de destino</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Depois de confirmar a janela de aviso, poderá começar a criar partições no dispositivo novo, carregando na partição extendida e seleccionando a opção <xref linkend="menu-partition-new"/>. Comece por uma partição extendida no fim do disco, para esta conter depois as partições das áreas dos utilizadores e de memória virtual: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Criar uma partição extendida</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Carregue em <guibutton
+>OK</guibutton
+> para que a operação que cria esta partição extendida seja adicionada à lista. </para>
+
+	<para
+>Agora crie uma partição primária no resto do dispositivo onde será instalado o novo sistema operativo. Torne-a tão grande quanto o espaço livre à frente da partição extendida: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Criar uma partição primária</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Carregue em <guibutton
+>OK</guibutton
+> na janela, de modo a aceitar a sua escolha. A operação para criar a partição primária nova será então adicionada à lista de operações. </para>
+	
+	<para
+>Agora é altura de copiar a partição das áreas dos utilizadores do dispositivo antigo para a partição extendida do dispositivo novo. Seleccione o dispositivo antigo no painel da Lista de Dispositivos, carregue na partição <quote
+>sdb5</quote
+> e escolha a opção <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>Agora volte ao dispositivo novo e carregue na partição extendida. Seleccione a opção <xref linkend="menu-partition-paste"/>. Assim, fará aparecer a seguinte janela: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Colar a partição das áreas dos utilizadores</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Isto já tem um bom aspecto, mas já saberá à partida que não irá necessitar de tanto espaço livre a seguir à partição das áreas dos utilizadores, dado que irá criar mais tarde aí uma partição de memória virtual. </para>
+
+	<para
+>Como tal, carregue na pega direita de dimensionamento e desloque-a para a direita até que o espaço livre a seguir à partição colada tenha um tamanho mais adequado para uma partição de memória virtual: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Dimensionar uma partição colada</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Isto parece óptimo. Carregue em <guibutton
+>OK</guibutton
+> para aceitar e fechar a janela. Será adicionada à lista de operações uma operação nova para colar a partição copiada à partição extendida em <quote
+>sdc</quote
+>. Lembre-se que esta operação também irá definir o tamanho novo. </para>
+
+	<para
+>Finalmente, irá querer criar uma partição de memória virtual nova no fim da partição extendida em <quote
+>sdc</quote
+>. Não há necessidade de copiar a partição existente em <quote
+>sdb</quote
+>, porque esta partição não contém nenhuma informação permanente que valha a pena manter. Basta criar uma partição nova do tipo 'linuxswap' que preencha o tamanho total da área livre a seguir à partição nova com as áreas dos utilizadores. </para>
+
+	<para
+>A janela principal, com todas as operações e uma antevisão de como irá ficar a <quote
+>sdc</quote
+> após a sua aplicação, será algo semelhante a isto: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>A janela principal depois de definir todas as operações</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Isto parece perfeito; como tal, seleccione a opção <xref linkend="menu-edit-apply"/>, confirme a janela de aviso e espere até todas as operações terem sido executadas. Para mais detalhes sobre as operações em execução, veja a secção sobre   <link linkend="howto-resizepartition"
+>o dimensionamento de partições</link
+>. </para>
+	
+	<para
+>O seu disco rígido novo está agora pronto para a instalação do seu sistema operativo também novo. </para>
+
+</sect1>

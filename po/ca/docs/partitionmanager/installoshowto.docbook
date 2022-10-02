@@ -1,0 +1,166 @@
+<sect1 id="howto-installos">
+	<title
+>Com: instal·lar un nou sistema operatiu</title>
+
+	<para
+>Aquest exemple descriu la preparació d'un nou dispositiu de disc dur per la instal·lació d'un sistema operatiu: Suposem que heu comprat un nou disc dur i teniu la intenció d'usar-lo com a reemplaçament de l'antic que actualment conté el vostre sistema operatiu i les particions de dades. També voleu aprofitar aquesta oportunitat per instal·lar un sistema operatiu nou. S'han de fer diversos passos per fer la transició de l'antic al nou disc i sistema. </para>
+
+	<para
+>A continuació <quote
+>/dev/sdb</quote
+> és l'antic disc dur i <quote
+>/dev/sdc</quote
+> és el nou. Aquesta captura de pantalla mostra la situació del dispositiu d'origen: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Finestra principal amb el dispositiu d'origen</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>El nou dispositiu s'ha de veure així. Noteu que encara no té una taula de particions vàlida, per tant el primer pas a donar és crear-ne una seleccionant<xref linkend="menu-device-createpartitiontable"/>: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Finestra principal amb el dispositiu de destinació</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Després de confirmar aquest diàleg d'avís podeu començar a crear particions en el nou dispositiu clicant la partició ampliada i seleccionant <xref linkend="menu-partition-new"/>. Comenceu amb una partició ampliada al final del dispositiu per contenir més tard les particions «home» i «swap»: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Creant una nova partició ampliada</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Cliqueu <guibutton
+>D'acord</guibutton
+> i l'operació de crear aquesta partició ampliada s'afegirà a la llista. </para>
+
+	<para
+>Ara creeu una partició primària en la resta del dispositiu on s'instal·larà el nou sistema operatiu. Feu-la tan gran com l'àrea sense assignar davant de la partició ampliada: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Creant una partició primària</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Cliqueu <guibutton
+>D'acord</guibutton
+> en el diàleg per acceptar la vostra selecció. L'operació de crear una nova partició primària s'afegirà a la llista d'operacions. </para>
+	
+	<para
+>Ara és hora de copiar la partició «home» des de l'antic dispositiu a la partició ampliada del nou dispositiu. Seleccioneu l'antic dispositiu en el plafó de la llista de dispositius, cliqueu en la partició <quote
+>sdb5</quote
+> i seleccioneu <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>Després torneu al nou dispositiu i cliqueu la partició ampliada. Seleccioneu <xref linkend="menu-partition-paste"/>. Apareixerà el següent diàleg: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Enganxant la partició «home»</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Això sembla correcte en gran part, però ja sabeu que no necessiteu massa espai buit després de la partició «home» perquè més tard creareu aquí una partició d'intercanvi. </para>
+
+	<para
+>Per tant, agafeu el tirador d'amidament dret en el diàleg del giny amidador i moveu-lo cap a la dreta fins que l'espai lliure després de la partició enganxada tingui una mida més adequada per una partició d'intercanvi: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Redimensionant una partició enganxada</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Això es veu força bé. Cliqueu <guibutton
+>D'acord</guibutton
+> per acceptar i tancar el diàleg. Una nova operació d'enganxar la partició copiada a la partició ampliada en <quote
+>sdc</quote
+> s'afegirà a la llista d'operacions. Noteu que aquesta operació també estableix la nova mida. </para>
+
+	<para
+>Finalment voldreu crear una nova partició d'intercanvi al final de la partició ampliada en <quote
+>sdc</quote
+>. No necessiteu copiar la partició d'intercanvi existent des de <quote
+>sdb</quote
+> perquè la partició d'intercanvi no conté cap informació permanent que s'hagi de conservar. Simplement creeu una nova partició amb tipus linuxswap que empleni totalment l'àrea sense assignar a continuació de la nova partició «home». </para>
+
+	<para
+>La finestra principal amb totes les operacions i la vista prèvia de com es veurà <quote
+>sdc</quote
+> una vegada que apliqueu les operacions ara es mostra així: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Finestra principal després d'establir totes les operacions</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Això es veu molt bé per tant seleccioneu <xref linkend="menu-edit-apply"/>, confirmeu el diàleg d'avís i espereu fins que les operacions s'hagin executat. Per detalls sobre l'execució d'operacions mireu <link linkend="howto-resizepartition"
+>com redimensionar particions</link
+>. </para>
+	
+	<para
+>El vostre nou disc dur és preparat per la instal·lació del vostre nou sistema operatiu. </para>
+
+</sect1>

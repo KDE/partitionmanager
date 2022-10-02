@@ -1,0 +1,101 @@
+<chapter id="usermanual">
+	<title
+>Usant el &partman;</title>
+
+	<sect1 id="mainwindow">
+		<title
+>La finestra principal</title>
+
+		<para
+>A part de la vista principal mostrant el dispositiu seleccionat actualment en una vista gràfica i en arbre, el &partman; usa <quote
+>ginys acoblables</quote
+> de les &Qt; o plafons per mostrar informació i permetre seleccions. Mireu la següent instantània per una vista general de la finestra principal del &partman;. </para>
+
+		<para>
+			<screenshot>
+				<screeninfo
+>La finestra principal del &partman;</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Finestra principal</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>Barra de menús: la barra de menús presenta alguns menús personalitzats i no estàndards per seleccionar accions a realitzar. Totes les ordres són descrites detalladament en <xref linkend="reference"/>.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Barra d'eines: la barra d'eines del &partman; és una barra d'eines estàndard. Es pot personalitzar completament; pels detalls mireu <xref linkend="menu-settings-help"/>. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Plafó de dispositius: aquest plafó llista tots els <glossterm linkend="glossary-device"
+>dispositius</glossterm
+> trobats en el vostre ordinador que el &partman; pot gestionar. Seleccioneu un dispositiu en aquest plafó per veure'l o modificar-lo en la vista gràfica de dispositiu o en la vista d'arbre de dispositiu.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>Vista gràfica de dispositius: En aquesta vista el &partman; mostra una representació gràfica del dispositiu seleccionat actualment. Cadascuna de les <glossterm linkend="glossary-partition"
+>particions</glossterm
+> del dispositiu té el seu propi quadre amb el nom del node del dispositiu (<quote
+>sda1</quote
+> per a la primera partició en la captura de pantalla de dalt) i la informació d'ús (l'àrea de color lila fosc en la captura de pantalla). </para>
+					<para
+>Les <glossterm linkend="glossary-extendedpartition"
+>particions esteses</glossterm
+> són visualment diferents pel seu contorn extra (verd clar en la captura de pantalla de dalt) envoltant-les. </para>
+					<para
+>Podeu seleccionar una partició clicant-la en la vista gràfica de dispositius. Un doble clic obre el <link linkend="menu-partition-properties"
+>diàleg de les propietats de la partició</link
+>. Un clic dret mostra el menú contextual de la partició. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Vista d'arbre de dispositius: la vista d'arbre de dispositius mostra informació ampliada quant a cada partició del dispositiu seleccionat. La partició seleccionada actualment està ressaltada. Dobleclicant una partició s'obre el <link linkend="menu-partition-properties"
+>diàleg de les propietats de la partició</link
+>. Un clic dret mostra el menú contextual de la partició. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Plafó d'informació: el plafó d'informació mostra alguns detalls quant al dispositiu seleccionat actualment o la partició. No està habilitat per omissió.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Plafó d'operacions pendents: aquest plafó llista totes les operacions que s'executaran una vegada que seleccioneu <xref linkend="menu-edit-apply"/>. </para>
+					<para
+>En la captura de pantalla de dalt, hi ha una operació pendent: Si l'usuari aplica ara les operacions, el <glossterm linkend="glossary-filesystem"
+>sistema de fitxers</glossterm
+> a /dev/sdb3 serà comprovat per errors i, si es requereix, reparat. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Barra d'estat: la barra d'estat mostra quantes operacions hi ha pendents actualment. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Plafó de sortida del registre: aquest plafó mostra informació de registre, només és d'importància secundària per a usuaris no avançats i no està habilitat per omissió.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+

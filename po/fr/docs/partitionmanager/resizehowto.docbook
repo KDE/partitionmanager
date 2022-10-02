@@ -1,0 +1,256 @@
+<sect1 id="howto-resizepartition">
+	<title
+>Guide : comment redimensionner une partition</title>
+
+	<para
+>Ce guide décrit comment redimensionner une <glossterm linkend="glossary-partition"
+>partition</glossterm
+> qui devient trop pleine. Regardez la capture d'écran suivante pour voir la situation initiale avant le redimensionnement : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La fenêtre principale avant le redimensionnement des partitions</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Sur le <glossterm linkend="glossary-device"
+>périphérique</glossterm
+> <quote
+>/dev/sdb</quote
+>, il ne reste que peu d'espace sur la partition <quote
+>sdb2</quote
+>, alors que l'autre partition, <quote
+>sdb1</quote
+>, est loin d'être pleine. Pour cette raison, il semble recommandé de réduire un peu la première partition et d'agrandir <quote
+>sdb2</quote
+> pour qu'elle ait plus d'espace libre disponible. </para>
+
+	<note>
+		<title
+>Remarque : vous ne pouvez pas modifier des partitions montées.</title>
+		<para
+>Dans la capture d'écran ci-dessus, les deux partitions ne sont actuellement pas montées. Si une partition ou les deux étaient montées, vous devriez les libérer d'abord à l'aide de <xref linkend="menu-partition-mount"/>.</para>
+	</note>
+
+	<para
+>Comme la première étape consiste à faire plus de place pour que la partition s'agrandisse, commencez par réduire la taille de <quote
+>sdb1</quote
+>. Cliquez sur la partition et choisissez <xref linkend="menu-partition-resize"/>. La boîte de dialogue suivante apparaît : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La boîte de dialogue <quote
+>Redimensionner</quote
+> avant le redimensionnement de <quote
+>/dev/sdb1</quote
+></phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>La boîte de dialogue permet de redimensionner la partition de différentes manières. Vous pouvez soit faire glisser la poignée droite vers la gauche jusqu'à ce que la partition ait atteint la taille souhaitée, soit simplement en saisir la taille dans le champ de texte <guilabel
+>Taille</guilabel
+>. Une autre possibilité serait d'ajuster la taille en cliquant sur les petites flèches situées près du champ de texte, mais cette solution est un peu fastidieuse pour des modifications de plus grande ampleur. </para>
+
+	<para
+>Quelle que soit la méthode que vous préférez pour définir la nouvelle taille, voici à quoi la boîte de dialogue devrait ressembler : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La boîte de dialogue <quote
+>Redimensionner</quote
+> après le redimensionnement de <quote
+>/dev/sdb1</quote
+></phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Après que vous avez cliqué sur <guibutton
+>Ok</guibutton
+>, une nouvelle opération est ajoutée à la liste des opérations en attente et la vue graphique ainsi que la vue enn arbre du périphérique sont mis à jour pour refléter la nouvelle situation : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La fenêtre principale après redimensionnement de <quote
+>/dev/sdb1</quote
+></phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<note>
+		<title
+>Remarque : les opérations sont affichées d'abord sous forme d'aperçu avant de les appliquer.</title>
+		<para
+>Bien que la fenêtre principale reflète l'état du périphérique tel qu'il sera après avoir appliqué la nouvelle opération, l'opération n'a en fait pas encore été appliquée : tant que les opérations sont en attente, vous pouvez encore les annuler (une par une à l'aide de <xref linkend="menu-edit-undo"/> ou <xref linkend="menu-edit-clear"/> pour les annuler en totalité) ou quitter le &partman;, et absolument rien ne sera modifié.</para>
+	</note>
+	
+	<para
+>Maintenant qu'il y a de l'espace libre disponible entre les deux partitions, vous pouvez déplacer et agrandir la partition <quote
+>sdb2</quote
+>. Tout d'abord, cliquez sur <quote
+>sdb2</quote
+> et choisissez <xref linkend="menu-partition-resize"/> à nouveau. La boîte de dialogue de redimensionnement apparaît une fois de plus, cette fois pour la seconde partition. Faites glisser sa poignée gauche vers l'extrémité la plus à gauche pour que la boîte de dialogue ressemble à celle-ci : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La boîte de dialogue <quote
+>Redimensionner</quote
+> après le redimensionnement de <quote
+>/dev/sdb2</quote
+></phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Prenez soin de vous vérifier que le champ de texte <guilabel
+>Espace libre avant</guilabel
+> affiche réellement <quote
+>0 Mio</quote
+> car sinon, il resterait un petit espace libre entre les partitions qui serait alors gaspillé. </para>
+
+	<para
+>À présent, cliquez sur <guibutton
+>Ok</guibutton
+> à nouveau. Voici la nouvelle apparence de la fenêtre principale : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La fenêtre principale après le redimensionnement de <quote
+>/dev/sdb2</quote
+></phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Comme celle-ci est déjà plus conforme à vos souhaits, choisissez <xref linkend="menu-edit-apply"/>. Une boîte de dialogue apparaît et vous demande si vous voulez vraiment appliquer les opérations en attente. Confirmez cette boîte de dialogue et le &partman; commencera à exécuter les opérations : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Le &partman; applique les opérations</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Pendant que les opérations sont en cours d'exécution, vous pouvez cliquer sur le signe <quote
+>+</quote
+> situé près de chaque opération dans la liste, pour savoir de quelles tâches elle est composée et voir quelle est la tâche actuellement exécutée. </para>
+
+	<para
+>Redimensionner une partition de la manière dont vous avez procédé pour <quote
+>/dev/sdb2</quote
+> plus haut signifie toujours qu'il faudra déplacer cette partition vers la gauche d'abord, avant de pouvoir l'agrandir, car il est impossible de les agrandir vers la gauche directement. Malheureusement, le déplacement d'une partition aussi grande demandera un certain temps. Il n'est pas rare qu'une opération comme celle-ci prenne plusieurs minutes, voire plus. </para>
+
+	<para
+>Pour finir, toutes les opérations auront été effectuées avec succès : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La boîte de dialogue de progression après l'application réussie des opérations</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>En cliquant sur <guibutton
+>Ok</guibutton
+>, vous pouvez maintenant fermer la boîte de dialogue de progression et revenir à la fenêtre principale. Le &partman; analysera à nouveau vos périphériques à ce stade, ce qui pourra prendre quelques secondes. </para>
+
+	<para
+>Si vous souhaitez obtenir plus de détails sur les opérations récemment effectuées, cliquez sur <guibutton
+>Détails</guibutton
+>. Vous verrez le rapport détaillé qui est toujours généré (et mis à jour à la volée) pendant que le &partman; exécute les opérations : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Les détails de la boîte de dialogue de progression</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Ce rapport est particulièrement intéressant si une erreur se produit pendant l'exécution des opérations. Un rapport affiche chaque opération, chaque tâche et chaque commande externe en cours d'exécution, et peut donc s'avérer très utile lorsqu'on essaie d'identifier des problèmes. </para>
+
+	<para
+>Vous pouvez enregistrer le rapport en <acronym
+>HTML</acronym
+> ou le voir dans un navigateur web externe. </para>
+
+	<tip>
+		<para
+>Enregistrez toujours le rapport détaillé en <acronym
+>HTML</acronym
+> lorsque l'exécution des opérations échoue, avec des erreurs ou des avertissements pour vous y reporter ultérieurement. Vous pouvez aussi être amené à l'inclure dans un rapport de bogue que vous soumettez au système de rapports de bogues de &kde; à l'adresse <ulink url="https://bugs.kde.org"
+>bugs.kde.org</ulink
+>. </para>
+	</tip>
+	
+	<para
+>Pour cacher les détails à nouveau, cliquez sur <guibutton
+>Détails</guibutton
+> et enfin, pour fermer la boîte de dialogue de progression, cliquez sur <guibutton
+>Ok</guibutton
+>. </para>
+</sect1>

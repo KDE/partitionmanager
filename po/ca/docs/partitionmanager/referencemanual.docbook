@@ -1,0 +1,663 @@
+<chapter id="reference">
+	<title
+>Referència d'ordres</title>
+
+	<sect1 id="reference-overview">
+		<title
+>Vista general</title>
+		<para
+>Aquest capítol dona explicacions detallades de totes les ordres disponibles en el &partman;. Està pensat com una referència per acompanyar a la informació donada en <xref linkend="usermanual"/>.</para>
+
+	<sect2 id="menu-file">
+		<title
+>El menú Fitxer</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-file-quit">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Fitxer</guimenu
+> <guimenuitem
+>Surt</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Surt del &partman;</action
+> sense aplicar cap operació pendent. L'aplicació però us demanarà que confirmeu la vostra elecció de sortir si hi ha operacions pendents. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-edit">
+		<title
+>El menú Edita</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-edit-undo">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Edita</guimenu
+> <guimenuitem
+>Desfés</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Desfà la darrera operació</action
+> que s'ha afegit a la pila d'operacions. </para>
+						<para
+>Aquesta ordre només és habilitada si la llista d'operacions no és buida. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-clear">
+					<term>
+						<menuchoice
+><guimenu
+>Edita</guimenu
+> <guimenuitem
+>Neteja</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Neteja la llista d'operacions</action
+> sense aplicar cap d'elles. </para>
+						<para
+>Aquesta ordre només és habilitada si la llista d'operacions no és buida. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-apply">
+					<term>
+						<menuchoice
+><guimenu
+>Edita</guimenu
+> <guimenuitem
+>Aplica</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Aplica la llista d'operacions</action
+>. Aquesta ordre aplicarà totes les operacions de la llista per tant tots els canvis s'escriuran permanentment en el vostre disc. Després que les operacions s'hagin aplicat, la llista és netejada i ni hi haurà forma de desfer cap operació. </para>
+						<para
+>Aquesta ordre només és habilitada si la llista d'operacions no és buida. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-device">
+		<title
+>El menú Dispositiu</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-device-selectcurrentdevice">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositiu</guimenu
+> <guimenuitem
+>Selecció del dispositiu actual</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Permet seleccionar un dispositiu des d'un submenú amb tots els dispositius disponibles del sistema. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-createpartitiontable">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Dispositiu</guimenu
+> <guimenuitem
+>Taula de particions nova</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Crea una taula de particions nova</action
+>: aquesta ordre crea una taula de particions GPT o MSDOS nova i buida en el dispositiu seleccionat actualment. Això suprimirà totes les particions del dispositiu i totes les dades en elles, per tant, heu d'anar amb compte amb aquesta ordre. </para>
+						<para
+>Aquesta ordre només està habilitada si hi ha un dispositiu seleccionat i no hi ha cap partició muntada d'aquest dispositiu. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-exportpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositiu</guimenu
+> <guimenuitem
+>Exporta la taula de particions</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Permet exportar a dins d'un fitxer una llista de totes les particions al dispositiu seleccionat. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-importpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositiu</guimenu
+> <guimenuitem
+>Importa la taula de particions</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Permet importar la taula de particions des d'un fitxer exportat prèviament.</para>
+						<para
+>Això suprimirà totes les particions del dispositiu i totes les dades en elles, per tant, heu d'anar amb compte amb aquesta ordre.</para>
+						<para
+>Aquesta ordre només està habilitada si hi ha un dispositiu seleccionat i no hi ha cap partició muntada d'aquest dispositiu. Actualment no s'admet la importació en els dispositius lògics com ara grups de volums LVM.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-smartstatus">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositiu</guimenu
+> <guimenuitem
+>Estat SMART</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Mostra un informe SMART. SMART és un sistema de control inclòs en discs durs i unitats d'estat sòlid que detecta i informa sobre diversos indicadors sobre la fiabilitat de la unitat, amb la intenció de permetre prevenir de les fallades del maquinari.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositiu</guimenu
+> <guimenuitem
+>Propietats</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Mostra informació sobre els dispositius seleccionats. En aquest diàleg trobareu la capacitat, mides de sector, tipus de la taula de particions, així com ús i nombre màxim de particions primàries.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>El menú Eines</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Eines</guimenu
+> <guimenuitem
+>Grup de volums nou</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Crea un dispositiu lògic nou com un grup de volums <link linkend="glossary-lvm"
+>LVM</link
+>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Eines</guimenu
+> <guimenuitem
+>Compatibilitat amb els sistemes de fitxers</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Mostra el diàleg de compatibilitat amb els sistemes de fitxers.</action
+> Aquest diàleg mostra detalladament quines operacions es poden realitzar pels sistemes de fitxers implementats. </para>
+						<para
+>Aquí hi ha un exemple de com s'ha de veure el diàleg amb la majoria d'eines externes instal·lades: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Diàleg de la compatibilitat amb els sistemes de fitxers amb la majoria d'eines externes instal·lades</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>Les marques de selecció en blau volen dir <quote
+>implementat</quote
+>, les creus vermelles volen dir <quote
+>no implementat</quote
+>. Algunes combinacions mai estan implementades, per exemple la comprovació d'un sistema de fitxers linuxswap, perquè és inherentment impossible. Altres no poden estar implementades perquè les eines externes manquen d'aquesta funcionalitat. </para>
+						<para
+>Si heu instal·lat eines noves mentre el &partman; és en execució, cliqueu a <guibutton
+>Torna a explorar la compatibilitat</guibutton
+> per forçar una recomprovació de les eines de compatibilitat amb els sistemes de fitxers instal·lats. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Eines</guimenu
+> <guimenuitem
+>Actualitza la llista dels dispositius</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Actualitza la llista dels dispositius</action
+>: aquesta ordre força al &partman; a tornar a explorar i llegir els dispositius del sistema. Això pot ser útil, per exemple si heu endollat un disc dur USB extern després d'haver iniciat el &partman;. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-partition">
+		<title
+>El menú Partició</title>
+
+		<para>
+			<variablelist>
+				<varlistentry id="menu-partition-new">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partició</guimenu
+> <guimenuitem
+>Nova</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Crea una partició nova</action
+>: obre el diàleg per crear una nova partició on podreu establir el tipus, la mida, la posició i el sistema de fitxers de la partició a crear. </para>
+						<para
+>Si us plau, noteu que la taula de particions d'un dispositiu pot imposar restriccions sobre quantes particions es poden crear. Les taules de particions MS-DOS, per exemple, només permeten quatre particions primàries. </para>
+						<para
+>Aquesta ordre només està habilitada si està seleccionada una àrea sense assignar d'un dispositiu. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-resize">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partició</guimenu
+> <guimenuitem
+>Amida/mou</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Redimensiona o mou una partició</action
+>: obre el diàleg per redimensionar o moure una partició existent. Depenent del sistema de fitxers de la partició i de les eines externes instal·lades en el vostre ordinador, no totes les tres accions relacionades amb la mida -- moure la partició, fer-la més petita (<quote
+>encongir-la</quote
+>) o fer-la més gran (<quote
+>engrandir-la</quote
+>) -- poden estar disponibles en aquest diàleg. Mireu <xref linkend="menu-tools-filesystemsupport"/>. </para>
+						<para
+>Aquesta opció està habilitada només si està seleccionada una partició que no està muntada i el seu sistema de fitxers es pot encongir, engrandir o moure. Per una partició ampliada, només està habilitada si cap de les particions lògiques de la partició ampliada està muntada. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-delete">
+					<term>
+						<menuchoice
+><shortcut
+>&Del;</shortcut
+> <guimenu
+>Partició</guimenu
+> <guimenuitem
+>Suprimeix</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Suprimeix una partició</action
+>: aquesta ordre suprimeix la partició seleccionada actualment. </para>
+						<para
+>Aquesta ordre està habilitada només si està seleccionada una partició que no està muntada actualment. Per una partició ampliada, només està habilitada si no conté cap partició lògica. </para>
+						<warning>
+							<title
+>Avís: possible pèrdua de dades</title>
+							<para
+>Suprimir una partició significa que totes les dades de la partició es destruiran.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-shred">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Del;</keycombo
+></shortcut
+> <guimenu
+>Partició</guimenu
+> <guimenuitem
+>Tritura</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Tritura una partició</action
+>: aquesta ordre tritura la partició seleccionada. </para>
+						<para
+>Aquesta ordre està habilitada només si està seleccionada una partició que no està muntada actualment. Per una partició ampliada, només està habilitada si no conté cap partició lògica. </para>
+						<warning>
+							<title
+>Avís: pèrdua de les dades</title>
+							<para
+>El fet de triturar una partició significa que totes les dades de la partició es destruiran.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-copy">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partició</guimenu
+> <guimenuitem
+>Copia</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Copia una partició</action
+>: aquesta ordre copia la partició seleccionada actualment al porta-retalls del &partman;. </para>
+						<para
+>Aquesta ordre només està habilitada si està seleccionada una partició que no està muntada i el seu sistema de fitxers es pot copiar. Les particions esteses no es poden copiar. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-paste">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partició</guimenu
+> <guimenuitem
+>Enganxa</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Enganxa una partició</action
+>: aquesta ordre enganxa una partició des del porta-retalls del &partman; a la partició o àrea sense assignar seleccionada actualment. </para>
+						<para
+>En enganxar a una àrea sense assignar, s'obre un diàleg permetent-vos moure o engrandir la còpia inserida. En sobreescriure una partició existent no es mostra aquest diàleg. </para>
+						<para
+>Aquesta ordre només està habilitada si hi ha una partició en el porta-retalls i s'ha seleccionat un objectiu vàlid (ja bé sigui una partició o una àrea sense assignar). L'objectiu ha de ser prou gran per allotjar l'origen i no pot estar muntat. No podeu copiar una partició en ella mateixa. </para>
+						<warning>
+							<title
+>Avís: possible pèrdua de dades</title>
+							<para
+>Enganxar una partició en una d'existent significa que totes les dades en la partició existent es destruiran i seran reemplaçades per les dades de la partició enganxada.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partició</guimenu
+> <guimenuitem
+>Munta/Desmunta</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Munta o desmunta una partició</action
+>: aquesta ordre munta o desmunta la partició seleccionada, depenent del seu estat actual. </para>
+						<para
+>Aquesta ordre només està habilitada si està seleccionada una partició que es pot muntar o desmuntar. Si el sistema operatiu no coneix el punt de muntatge de la partició, no podreu desmuntar-la des del &partman;. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-edit-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partició</guimenu
+> <guimenuitem
+>Edita el punt de muntatge</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Obre un diàleg</action
+> per editar el punt de muntatge i les opcions de muntatge. </para>
+						<para
+>Aquesta ordre només es troba activada si la partició no està muntada. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-check">
+					<term>
+						<menuchoice
+><guimenu
+>Partició</guimenu
+> <guimenuitem
+>Comprova</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Comprova una partició</action
+>: aquesta ordre comprova la partició seleccionada i el seu sistema de fitxers per cercar errors i prova de corregir qualsevol problema que trobi. Durant aquest procés el sistema de fitxers de la partició és redimensionarà per emplenar completament la partició. </para>
+						<para
+>Aquesta ordre només estarà habilitada si la partició seleccionada es pot comprovar i no està muntada. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-backup">
+					<term>
+						<menuchoice
+><guimenu
+>Partició</guimenu
+> <guimenuitem
+>Còpia de seguretat</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Crea una còpia de seguretat d'una partició</action
+>: aquesta ordre crea una còpia de seguretat del sistema de fitxers de la partició seleccionada en un fitxer. Sereu preguntat on voleu emmagatzemar el fitxer d'imatge després d'activar aquesta ordre. </para>
+						<para
+>El fitxer d'imatge creat és una còpia sector per sector del sistema de fitxers de la partició. No està comprimida i té cap meta informació o capçalera afegida, per tant es pot muntar directament usant un dispositiu loop fora del &partman; si el sistema operatiu ho permet. </para>
+						<para
+>Aquesta ordre només està habilitada si es pot fer una còpia de seguretat de la partició seleccionada i el sistema de fitxers. La partició tampoc pot estar muntada. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-restore">
+					<term>
+						<menuchoice
+><guimenu
+>Partició</guimenu
+> <guimenuitem
+>Restaura</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Restaura una partició</action
+>: aquesta ordre restaura un sistema de fitxers des d'un fitxer a una partició. Sereu preguntat pel nom del fitxer d'imatge a restaurar després d'activar aquesta ordre. L'objectiu a restaurar ha de ser prou gran per allotjar el fitxer d'imatge. </para>
+						<para
+>Aquesta ordre només està habilitada si està seleccionada una partició o àrea sense assignar que no està muntada. </para>
+						<warning>
+							<title
+>Avís: possible pèrdua de dades</title>
+							<para
+>Restaurar una partició en una d'existent significa que totes les dades de la partició existent es destruiran i seran reemplaçades amb les dades del fitxer d'imatge restaurat.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Partició</guimenu
+> <guimenuitem
+>Propietats</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Mostra les propietats d'una partició</action
+>: aquesta ordre mostra un diàleg amb informació quant a la partició seleccionada o l'espai sense assignar. </para>
+						<para
+>El que es mostra i el que pot ser modificat en aquest diàleg depèn del tipus de partició, el tipus del sistema de fitxers de la partició i de si la partició està muntada o no. </para>
+						<para
+>No tots els sistemes de fitxers, per exemple tenen implementat l'establiment d'una etiqueta. Normalment tampoc és possible modificar cap propietat si la partició està muntada. </para>
+						<para
+>Aquesta és una llista de les propietats de totes les particions i tots els sistemes de fitxers que en general es poden modificar amb aquest diàleg: <itemizedlist>
+								<listitem>
+									<para
+>Establir o modificar l'etiqueta d'un sistema de fitxers</para>
+								</listitem>
+								<listitem>
+									<para
+>Canviar el sistema de fitxers de la partició.</para>
+
+									<warning>
+										<title
+>Avís: possible pèrdua de dades</title>
+										<para
+>Canviar el sistema de fitxers d'una partició sempre implica que totes les dades de la partició es destruiran.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Recrear el sistema de fitxers de la partició</para>
+
+									<warning>
+										<title
+>Avís: possible pèrdua de dades</title>
+										
+										<para
+>Recrear un sistema de fitxers a una partició sempre implica que totes les dades de la partició es destruiran. Recrear un sistema de fitxers només s'ha d'usar com a darrer recurs si el sistema de fitxers o la partició ja no es poden reparar.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Canviar els indicadors de la partició</para>
+									<para
+>Depenent del tipus de taula de particions usada, hi haurà diversos indicadors disponibles per a cada partició de la taula de particions. En la majoria dels casos, no és necessari modificar els indicadors i s'ha de considerar una característica avançada.</para>
+								</listitem>
+							</itemizedlist>
+						</para>
+						<para
+>Aquesta ordre només està habilitada si hi ha seleccionada una partició o una àrea sense assignar. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-settings-help">
+		<title
+>Els menús Arranjament i Ajuda</title>
+
+		<para
+>El &partman; té la configuració comuna al &kde; i elements dels menús <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Arranjament</ulink
+> i <ulink url="help:/fundamentals/menus.html#menus-help"
+>Ajuda</ulink
+> descrits en els Fonaments del &kde; amb un submenú addicional <guisubmenu
+>Mostra els plafons</guisubmenu
+>, on podreu canviar la visualització dels plafons <guimenuitem
+>Dispositius</guimenuitem
+>, <guimenuitem
+>Operacions pendents</guimenuitem
+>, <guimenuitem
+>Informació</guimenuitem
+> i <guimenuitem
+>Registre de sortida</guimenuitem
+>. </para>
+	</sect2>
+	</sect1>
+
+</chapter>

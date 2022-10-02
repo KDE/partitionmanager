@@ -1,0 +1,48 @@
+<chapter id="introduction">
+	<title
+>Introdução</title>
+	<para
+>O &partman; é um programa utilitário para ajudá-lo a gerenciar os <glossterm linkend="glossary-device"
+>dispositivos de discos</glossterm
+>, <glossterm linkend="glossary-partition"
+>partições</glossterm
+> e <glossterm linkend="glossary-filesystem"
+>sistemas de arquivos</glossterm
+> do seu computador. </para>
+	<para
+>Ele permite <link linkend="howto-installos"
+>criar facilmente partições novas</link
+>, criar sistemas de arquivos sobre partições novas ou existentes, <link linkend="howto-copypartition"
+>copiar</link
+>, mover ou apagar as partições e ainda <link linkend="howto-resizepartition"
+>modificar o tamanho de uma partição</link
+> sem perder os seus dados. </para>
+
+	<para
+>Para efetuar o seu trabalho de forma eficiente, o &partman; tira partido de ferramentas externas para suportar uma longa lista de sistemas de arquivos. Veja os <xref linkend="requirements"/> para saber mais detalhes. Você poderá ter as ferramentas necessárias já instaladas para os sistemas de arquivos do seu computador. </para>
+
+	<warning>
+		<title
+>Sempre faça o backup de seus dados!</title>
+		<para
+>O &partman; foi desenhado e concebido de forma a ter uma grande ênfase sobre a integridade dos dados. Existe de qualquer forma algum perigo inerente quando se modifica a tabela de partições de um dispositivo ou uma das suas constituintes: Poderá existir sempre algum erro no &partman;, uma falta de energia inesperada ou um problema com o 'hardware' do computador. </para>
+		<para
+>Por essas razões você deverá <emphasis
+>ter sempre uma cópia de segurança dos seus dados importantes</emphasis
+> antes de efetuar qualquer modificação com uma ferramenta como o &partman;. </para>
+		<para
+>Os autores do programa não assumem qualquer responsabilidade se perder dados ao usar o &partman;. </para>
+	</warning>
+
+	<para
+>O &partman; usa as <glossterm linkend="glossary-operation"
+>operações</glossterm
+>, as <glossterm linkend="glossary-job"
+>tarefas</glossterm
+> e os <glossterm linkend="glossary-command"
+>comandos</glossterm
+> para dividir de forma lógica o trabalho que irá efetuar. Veja o <link linkend="glossary"
+>glossário</link
+> para saber mais detalhes sobre eles. </para>
+
+</chapter>

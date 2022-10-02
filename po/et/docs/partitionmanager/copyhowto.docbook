@@ -1,0 +1,64 @@
+<sect1 id="howto-copypartition">
+	<title
+>Partitsiooni kopeerimine</title>
+
+	<para
+>Allpool kirjeldatakse partitsiooni kopeerimist. Eeldame, et eesmärk on kopeerida partitsioon ühest seadmest teise ja olemasoleva sihtpartitsiooni ülekirjutamine, kuid protseduur ei erine ka siis, kui kopeerid samas seadmes või tühjale alale. </para>
+
+	<para
+>Allpool näeb, milline näeb välja lähteseade: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Peaaken lähteseadmega</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Lähtepartitsioon on meie näites <quote
+>sdb1</quote
+>, mis on parajasti ühendatud, nagu näitab lukuikoon ühenduspunkti nime kõrval. Ühendatud partitsiooni ei saa kopeerida, mistõttu see tuleb kõigepealt lahutada. Klõpsa partitsioonil ja vali seejärel menüükäsk <xref linkend="menu-partition-mount"/>. </para>
+
+	<para
+>Partitsiooni lahutamise järel lukuikoon kaob ja saad valida menüükäsu <xref linkend="menu-partition-copy"/>. See paigutab <quote
+>sdb1</quote
+> partitsioonihalduri lõikepuhvrisse ehk teisisõnu: <quote
+>sdb1</quote
+> on nüüd partitsioon, mis sihtkohta asetatakse, kui valid menüükäsu <xref linkend="menu-partition-paste"/>. </para>
+	
+	<para
+>Meie näites on kopeerimise sihtkohaks <quote
+>/dev/sdc</quote
+>. Klõpsa sellel seadmete paneelis. Selline näeb seade välja enne kopeerimist: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Peaaken sihtseadmega enne kopeerimist</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Partitsioon, mida soovime üle kirjutada, on <quote
+>sdc5</quote
+>. Kopeeritud partitsiooni asetamiseks sinna klõpsa sihtpartitsioonil ja vali menüükäsk <xref linkend="menu-partition-paste"/>. Näed, et partitsiooni kopeerimise operatsioon lisati ootel operatsioonide nimekirja. Pane tähele, et partitsiooni lisamisel ei ilmu erinevalt partitsiooni asetamisest tühjale alale mingit dialoogi. Asetatava partitsiooni alguse ja lõpu määrab kindlaks ülekirjutatav partitsioon. </para>
+
+	<para
+>Nüüd vali menüükäsk <xref linkend="menu-edit-apply"/> ja partitsioon kopeeritaksegi. Täpsemalt kõneleb operatsioonide teostamisest <link linkend="howto-resizepartition"
+>partitsioonide suuruse muutmist käsitlev osa</link
+>. </para>
+</sect1>
+

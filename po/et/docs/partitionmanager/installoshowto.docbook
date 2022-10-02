@@ -1,0 +1,166 @@
+<sect1 id="howto-installos">
+	<title
+>Uue operatsioonisüsteemi paigaldamine</title>
+
+	<para
+>Allpool kirjeldatakse uue kõvakettaseadme ettevalmistamist operatsioonisüsteemi paigaldamiseks. Oletame, et ostsid uue kõvaketta ning kavatsed seda kasutada asendusena vanale, millel asuvad praegu sinu operatsioonisüsteemi ja andmete partitsioonid. Samuti soovid kasutada võimalust uue operatsioonisüsteemi paigaldamiseks. Vanast süsteemist ja kettalt uuele üleminek nõuab mitut sammu. </para>
+
+	<para
+>Allpool tähistab <quote
+>/dev/sdb</quote
+> vana ja <quote
+>/dev/sdc</quote
+> uut kõvaketast. Pilt näitab lähteseadme ülevaadet: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Peaaken lähteseadmega</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Uus seade näeb välja aga järgmine: Pane tähele, et sel pole veel kehtivat partitsioonitabelit, mistõttu kõigepealt tulekski see luua, valides menüükäsu <xref linkend="menu-device-createpartitiontable"/>: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Peaaken sihtseadmega</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Hoiatusdialoogis kinnituse andmise järel võid hakata uues seadmes partitsioone looma, klõpsates laiendatud partitsioonile ja valides menüükäsu <xref linkend="menu-partition-new"/>. Alusta laiendatud partitsiooni seadme lõpus, kuhu hiljem lähevad kodu (home) ja saaleala (swap) partitsioonid: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Laiendatud partitsiooni loomine</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Klõpsa nupule <guibutton
+>OK</guibutton
+> ning laiendatud partitsiooni loomise operatsioon lisatakse nimekirja. </para>
+
+	<para
+>Nüüd loo ülejäänud seadmes primaarne ehk peamine partitsioon, kuhu paigaldatakse ka operatsioonisüsteem. Anna selle käsutusse kogu seni tühi ala laiendatud partitsiooni ees. </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Peamise partitsiooni loomine</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Klõpsa oma valiku kinnitamiseks nupule <guibutton
+>OK</guibutton
+>. Uue peamise partitsiooni loomise operatsioon lisatakse nüüd operatsioonide nimekirja. </para>
+	
+	<para
+>Kätte on jõudnud aeg kopeerida vana seadme kodu (home) partitsioon uue seadme laiendatud partitsioonile. Vali seadmete paneelis vana seade, klõpsa partitsioonile <quote
+>sdb5</quote
+> ja vali menüükäsk <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>Nüüd mine tagasi uue seadme juurde ja klõpsa laiendatud partitsioonile. Vali menüükäsk <xref linkend="menu-partition-paste"/>. Ilmub järgmine dialoog: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Kodupartitsiooni asetamine</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>See tundub juba enam-vähem sobivat, aga sa tead ette, et ei vaja nii palju vaba ruumi kodupartitsiooni järel, sest sinna tuleb hiljem luua saaleala partitsioon. </para>
+
+	<para
+>Sestap haara parempoolsest pidemest ning liiguta seda nii kaua paremale, kuni allesjääv vaba ruum asetatava partitsiooni järel vastab paremini sellele, mida vajab saaleala: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Asetatava partitsiooni suuruse muutmine</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Nüüd on asjad korras. Klõpsa nupule <guibutton
+>OK</guibutton
+> dialoogi sulgemiseks. Operatsioonide nimekirja lisatakse uus operatsioon kopeeritud partitsiooni asetamiseks seadme <quote
+>sdc</quote
+> laiendatud partitsioonile. Pane tähele, et operatsioon kehtestab ühtlasi uue suuruse. </para>
+
+	<para
+>Lõpuks tuleb luua uus saaleala partitsioon <quote
+>sdc</quote
+> laiendatud partitsiooni lõppu. Pole mingit põhjust kopeerida olemasolevat saaleala partitsiooni seadmest <quote
+>sdb</quote
+>, sest saaleala ei sisalda vähimatki teavet, mis vääriks säilitamist. Loo lihtsalt uus partitsioon tüübiga linuxswap, mis täidab kogu seni tühja ala vastselt loodud kodupartitsiooni järel. </para>
+
+	<para
+>Peaaken koos kõigi operatsioonide ja <quote
+>sdc</quote
+> tulevase ülesehitusega näeb nüüd välja selline: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Peaaken pärast kõigi operatsioonide ettevalmistamist</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Kõik näeb välja täpselt nii, nagu vaja. Vali menüükäsk <xref linkend="menu-edit-apply"/>, anna hoiatusdialoogis kinnitus ja oota, kuni kõik operatsioonid on teostatud. Täpsemalt kõneleb operatsioonide teostamisest <link linkend="howto-resizepartition"
+>partitsioonide suuruse muutmist käsitlev osa</link
+>. </para>
+	
+	<para
+>Sinu uus kõvaketas on nüüd valmis uue operatsioonisüsteemi paigaldamiseks. </para>
+
+</sect1>

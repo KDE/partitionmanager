@@ -1,0 +1,166 @@
+<sect1 id="howto-installos">
+	<title
+>How-To: Menginstal sebuah Sistem Operasi Baru</title>
+
+	<para
+>How-to ini menerangjelaskan persiapan perangkat hard disk baru untuk penginstalan OS: Misalnya Anda membeli hard disk baru dan sekarang berniat menggunakannya sebagai pengganti yang lawas yang saat ini memegang partisi OS dan data Anda. Anda juga ingin memanfaatkan kesempatan ini untuk menginstal sistem operasi baru. Beberapa langkah harus diambil untuk melakukan transisi dari sistem lawas ke sistem dan drive yang baru. </para>
+
+	<para
+>Berikut ini, <quote
+>/dev/sdb</quote
+> adalah hard disk lawas dan <quote
+>/dev/sdc</quote
+> adalah yang baru. Cuplikanlayar ini menampilkan situasi pada perangkat sumber: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Jendela utama dengan perangkat sumber</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Perangkat baru akan terlihat seperti ini. Ingat bahwa itu tabel partisi yang belum berlaku, jadi langkah pertama yang harus dilakukan adalah menciptakan dengan memilih <xref linkend="menu-device-createpartitiontable"/>: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Jendela utama dengan perangkat tujuan</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Setelah mengkonfirmasikan dialog peringatan Anda dapat mulai menciptakan partisi pada perangkat baru dengan mengeklik partisi extended dan memilih <xref linkend="menu-partition-new"/>. Mulailah dengan partisi extended di akhir perangkat untuk kemudian memegang partisi home dan swap: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Menciptakan sebuah partisi extended</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Klik <guibutton
+>Oke</guibutton
+> dan operasi untuk menciptakan partisi extended ini ditambahkan ke daftar. </para>
+
+	<para
+>Sekarang ciptakan partisi primer di bagian perangkat yang akan diinstal OS baru. Jadikan itu sama besarnya dengan area yang unallocated di depan partisi extended: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Menciptakan sebuah partisi primer</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Klik <guibutton
+>Oke</guibutton
+> di dalam kotak dialog untuk menyetujui pilihan Anda. Operasi untuk menciptakan partisi primer baru yang kemudian ditambahkan ke daftar. </para>
+	
+	<para
+>Sekarang saatnya untuk menyalin partisi home dari perangkat lawas ke partisi extended pada perangkat baru. Pilih perangkat lawas di dalam panel Daftar Perangkat, klik pada partisi <quote
+>sdb5</quote
+> dan petik <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>Kemudian kembali ke perangkat baru dan klik partisi extended. Pilih <xref linkend="menu-partition-paste"/>. Dialog berikut akan muncul: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Menempel partisi home</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Ini sepertinya terlihat sudah oke tapi Anda sudah tahu bahwa Anda tidak akan membutuhkan banyak ruang kosong setelah partisi home karena nanti Anda akan menciptakan partisi swap disana. </para>
+
+	<para
+>Jadi raih penanganan ukuran yang tepat di dialog widget resizer dan menggeserkannya ke kanan sampai ruang kosong setelah partisi tertempel memiliki ukuran yang sesuai untuk partisi swap: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Mengubah ukuran sebuah partisi tertempel</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Ini terlihat baik-baik saja. Klik <guibutton
+>Oke</guibutton
+> untuk menyetujui dan menutup dialog. Sebuah operasi baru untuk menempel partisi tersalin ke partisi extended pada <quote
+>sdc</quote
+> yang ditambahkan ke daftar operasi. Ingat operasi ini juga akan diset ukuran baru. </para>
+
+	<para
+>Terakhir Anda ingin menciptakan partisi swap baru di ujung partisi extended pada <quote
+>sdc</quote
+>. Tidak perlu untuk menyalin partisi swap yang ada dari <quote
+>sdb</quote
+> karena swap tidak memegang informasi tetap apa pun yang layak disimpan. Cukup ciptakan sebuah partisi baru dengan ketik linuxswap yang mengisi seluruh area yang unallocated setelah partisi home baru. </para>
+
+	<para
+>Jendela utama dengan semua operasi dan pratinjau bagaimana <quote
+>sdc</quote
+> akan terlihat seperti salah satu yang diterapkan sekarang terlihat seperti ini: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Jendela utama setelah mengeset semua operasi</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Ini terlihat bagus jadi pilih <xref linkend="menu-edit-apply"/>, konfirmasikan dialog peringatan dan tunggu sampai operasi melakukan semua tereksekusi. Untuk perincian pada operasi pengeksekusian lihat <link linkend="howto-resizepartition"
+>bagaimana cara mengubah ukuran partisi</link
+>. </para>
+	
+	<para
+>Perangkat baru Anda sekarang sudah siap untuk penginstalan sistem operasi Anda. </para>
+
+</sect1>

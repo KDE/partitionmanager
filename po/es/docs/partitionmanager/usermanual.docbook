@@ -1,0 +1,101 @@
+<chapter id="usermanual">
+	<title
+>Uso de &partman;</title>
+
+	<sect1 id="mainwindow">
+		<title
+>La ventana principal</title>
+
+		<para
+>Además de la vista principal con el dispositivo actualmente seleccionado en una gráfica y en árbol, &partman; utiliza los <quote
+>componentes empotrados</quote
+> de &Qt; o paneles para mostrar información y permitir selecciones. Vea la siguiente captura de pantalla para un resumen de la ventana principal de &partman;. </para>
+
+		<para>
+			<screenshot>
+				<screeninfo
+>Ventana principal de &partman;</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Ventana principal</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>Barra de menús: La barra de menús muestra algunos menús personalizados y otros no estándar para elegir las acciones a realizar. Todas las órdenes están descritas en detalle en <xref linkend="reference"/>.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Barra de herramientas: la barra de herramientas de &partman; es estándar, pero puede personalizarse completamente. Para obtener más información, consulte <xref linkend="menu-settings-help"/>. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Panel de dispositivos: Este panel lista todos los <glossterm linkend="glossary-device"
+>dispositivos</glossterm
+> encontrados en su ordenador y que &partman; puede manejar. Seleccione un dispositivo en este panel para verlo o modificarlo en la vista gráfica de dispositivos o en la vista de árbol.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>Vista gráfica de dispositivos: En esta vista, &partman; representa gráficamente el dispositivo actualmente seleccionado. Cada una de sus <glossterm linkend="glossary-partition"
+>particiones</glossterm
+> tiene su propia caja con su nombre de nodo (<quote
+>sda1</quote
+> para la primera partición en la captura superior) e información de uso (el área violeta oscuro en la captura de pantalla). </para>
+					<para
+><glossterm linkend="glossary-extendedpartition"
+>Las particiones extendidas</glossterm
+> se distinguen visualmente por el borde adicional (verde claro en la captura superior) que las rodea. </para>
+					<para
+>Puede seleccionar una partición haciendo clic en ella en la vista gráfica de dispositivos. Haciendo doble clic se abre <link linkend="menu-partition-properties"
+>el diálogo de propiedades de partición</link
+>, y con clic derecho se muestra el menú de contexto de la partición. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Vista de dispositivos en árbol: Esta vista muestra información extendida sobre cada partición del dispositivo seleccionado, resaltando la partición actualmente seleccionada. Haciendo doble clic en una partición se abre <link linkend="menu-partition-properties"
+>el diálogo de propiedades de partición</link
+>, y haciendo clic derecho se muestra el menú de contexto de la partición. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Panel de información: el panel de información muestra algunos detalles sobre el dispositivo o partición actualmente seleccionado. No está activada de manera predeterminada.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Panel de operaciones pendientes: Este panel lista todas las operaciones que serán ejecutadas una vez seleccione <xref linkend="menu-edit-apply"/>. </para>
+					<para
+>En la captura superior hay una operación pendiente: si el usuario aplica las operaciones ahora, el <glossterm linkend="glossary-filesystem"
+>sistema de archivos</glossterm
+> en /dev/sdb3 será analizado en busca de errores y, si es necesario, será reparado. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Barra de estado: La barra de estado muestra el número de operaciones pendientes. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Panel de salida de registro: este panel muestra información de registro. Su importancia para usuarios no avanzados es secundaria y no está activada de manera predeterminada.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+

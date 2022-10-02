@@ -1,0 +1,194 @@
+<appendix id="installation">
+	<title
+>Installazione</title>
+
+	<sect1 id="obtaining">
+		<title
+>Come ottenere &partman;</title>
+
+		<para
+>Il sito internet di &partman; è <ulink url="http://www.partitionmanager.org"
+>www.partitionmanager.org</ulink
+>. Questo è il posto nel quale andare per ottenere la versione più recente. </para>
+	</sect1>
+
+	<sect1 id="requirements">
+		<title
+>Requisiti</title>
+
+		<para
+>Per poter utilizzare &partman;, devi avere &kde; 4.2 o successivo e &Qt; 4.4.0 o successive. Non è comunque necessario che tu sia in una sessione di &kde; per usarlo: &partman; potrà essere eseguito senza problemi su qualsiasi altro ambiente grafico, a patto di avere installato le librerie di base di &kde;. </para>
+
+		<para
+>Per gran parte delle sue funzionalità di base &partman; fa affidamento su <ulink url="http://www.gnu.org/software/parted/index.shtml"
+>libparted</ulink
+>. Per generare gli UUID per i file system copiati utilizza libuuid, che è parte di <ulink url="http://e2fsprogs.sourceforge.net"
+>e2fsprogs</ulink
+>. Esso inoltre usa la <ulink url="http://userweb.kernel.org/~kzak/util-linux-ng/"
+>libreria libblkid del progetto util-linux-ng</ulink
+> per ottenere informazioni sulle partizioni ed i file system. Tutti questi pacchetti sono richiesti per compilare od eseguire &partman;. </para>
+
+		<para
+>&partman; fa estesamente uso di strumenti esterni per supportare un'ampia gamma di file system. E' richiesto uno specifico strumento solo se necessiti del supporto da esso fornito per un'operazione su uno specifico file system. Se, ad esempio, non devi ridimensionare file system NTFS non hai necessità di avere installato <quote
+>ntfsresize</quote
+>. Nessuno di questi strumenti è richiesto per compilare &partman; dai sorgenti. </para>
+
+		<para
+>Di seguito, una lista di tutti gli strumenti esterni di cui &partman; può far uso: </para>
+
+		<itemizedlist>
+			<listitem>
+				<para
+>&debugfsreiser4;: legge le informazioni sull'utilizzo e le etichette del file system per i file system reiser4. E' parte della serie di programmi di utilità reiser4progs, che può essere scaricata da <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&debugreiserfs;: legge le informazioni sull'utilizzo e le etichette del file system per i file system ReiserFS. E' parte della serie di programmi di utilità reiserfsprogs, che può essere scaricata da <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiserfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&dumpe2fs;: legge le informazioni sull'utilizzo per i file system ext2, ext3 ed ext4. E' parte della serie di programmi di utilità e2fsprogs, che può essere scaricata da <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&e2label;: legge e scrive le etichette del file system per i file system ext2, ext3 ed ext4. E' parte della serie di programmi di utilità e2fsprogs, che può essere scaricata da <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&fsckmsdos;: legge le informazioni sull'utilizzo e verifica i file system FAT16 e FAT32. E' parte della serie di programmi di utilità dosfstools, che può essere scaricata da <ulink url="http://www.daniel-baumann.ch/software/dosfstools/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hfsck;: legge le etichette del file system e verifica i file system HFS. E' parte della serie di programmi di utilità hfsutils, che può essere scaricata da <ulink url="http://www.mars.org/home/rob/proj/hfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hpfsck;: verifica i file system HFS+. E' parte della serie di programmi di utilità hfsplusutils, che può essere scaricata da <ulink url="http://www.penguinppc.org/historical/hfsplus/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfsdebugfs;: legge le informazioni sull'utilizzo dei file system JFS. E' parte della serie di programmi di utilità jfsutils, che può essere scaricata da <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfstune;: legge e scrive le etichette del file system per i file system JFS. E' parte della serie di programmi di utilità jfsutils, che può essere scaricata da <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfslabel;: legge e scrive le etichette del file system per i file system NTFS. E' parte della serie di programmi di utilità ntfsprogs, che può essere scaricata da <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfsresize;: legge le informazioni sull'utilizzo, verifica e ridimensiona i file system NTFS. E' parte della serie di programmi di utilità ntfsprogs, che può essere scaricata da <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapoff;: disattiva i file system di swap. E' parte della serie di programmi di utilità util-linux-ng, che può essere scaricata da <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapon;: attiva i file system di swap. E' parte della serie di programmi di utilità util-linux-ng, che può essere scaricata da <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&volid;: legge le etichette del file system per i file system linuxswap. E' parte di udev, che può essere scaricato da <ulink url="http://www.us.kernel.org/pub/linux/utils/kernel/hotplug/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&xfsdb;: legge le informazioni sull'utilizzo, legge e scrive le etichette del file system per i file system XFS. E' parte della serie di programmi di utilità xfsprogs, che può essere scaricata da <ulink url="ftp://oss.sgi.com/projects/xfs/cmd_tars/"
+></ulink
+>. </para>
+			</listitem>
+		</itemizedlist>
+	</sect1>
+
+	<sect1 id="compilation">
+		<title
+>Compilazione ed installazione</title>
+&install.compile.documentation; </sect1>
+
+	<sect1 id="furtherreading">
+		<title
+>Approfondimenti</title>
+
+		<itemizedlist>
+			<listitem>
+				<para
+><ulink url="http://www.linfo.org/"
+>The Linux Information Project</ulink
+> offre una gran quantità di informazioni su molteplici aspetti di Linux. Il loro articolo sulle <ulink url="http://www.linfo.org/partition.html"
+>partizioni</ulink
+> è estremamente istruttivo. Così come gli articoli sulle <ulink url="http://www.linfo.org/partition_table.html"
+>tabelle delle partizioni</ulink
+>, sui <ulink url="http://www.linfo.org/hdd.html"
+>dispositivi a disco fisso</ulink
+> e sui <ulink url="http://www.linfo.org/filesystem.html"
+>file system</ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>La guida <ulink url="http://tldp.org/HOWTO/Partition/index.html"
+>Linux Partition HOWTO</ulink
+> presenta una visione d'insieme sulla gestione ed il partizionamento dei dispositivi a disco e sui file system nativi nei sistemi Linux. Comprende anche le partizioni di swap. </para>
+			</listitem>
+
+			<listitem>
+				<para
+><ulink url="http://www.wikipedia.org"
+>Wikipedia</ulink
+> contiene una voce sul partizionamento del disco (<ulink url="http://en.wikipedia.org/wiki/Disk_partitioning"
+>articolo in inglese</ulink
+>, <ulink url="http://it.wikipedia.org/wiki/Partizione_%28informatica%29"
+>articolo in italiano</ulink
+>). </para>
+			</listitem>
+			
+		</itemizedlist>
+		
+	</sect1>
+	
+</appendix>

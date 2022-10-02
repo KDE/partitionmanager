@@ -1,0 +1,64 @@
+<sect1 id="howto-copypartition">
+	<title
+>How-to: kopiëren van een partitie</title>
+
+	<para
+>Deze how-to beschrijft het kopiëren van een partitie. We nemen aan dat het de bedoeling is om een partitie te kopiëren van het ene apparaat naar het andere en een bestaande doelpartitie te overschrijven, maar de algemene procedure zal niet veel verschillen bij het kopiëren naar hetzelfde apparaat of naar een niet toegekend gebied. </para>
+
+	<para
+>De volgende schermafdruk toont de situatie op het bronapparaat: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Hoofdvenster met bronapparaat</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>De bronpartitie in ons voorbeeld is <quote
+>sdb1</quote
+> die nu is aangekoppeld, wat wordt aangegeven door de slotpictogram naast de naam van het aankoppelpunt in de schermafdruk. Een aangekoppelde partitie kan niet worden gekopieerd, u moet deze eerst afkoppelen: klik erop en selecteer dan <xref linkend="menu-partition-mount"/>. </para>
+
+	<para
+>Na het afkoppelen van de partitie is het vergrendelpictogram verdwenen en is het nu mogelijk om <xref linkend="menu-partition-copy"/> te selecteren. Dit zet <quote
+>sdb1</quote
+> in het klembord van &partman;, in andere woorden: <quote
+>sdb1</quote
+> is nu de partitie die zal worden ingevoegd wanneer u <xref linkend="menu-partition-paste"/> selecteert. </para>
+	
+	<para
+>Het bestemmingsapparaat voor het kopiëren in deze how-to is <quote
+>/dev/sdc</quote
+>. Klik erop in het paneel Apparaten. Dit is hoe het apparaat er uit ziet voor het kopiëren: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Hoofdvenster met bestemmingsapparaat voor het kopiëren</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>De te overschrijven partitie is <quote
+>sdc5</quote
+>. Om de gekopieerde partitie erin te plakken, klikt u er op en selecteert u <xref linkend="menu-partition-paste"/>. U zult zien dat de actie van het kopiëren van de partitie aan de lijst van wachtende acties is toegevoegd. Merk op dat er geen dialoogvenster vereist is om de partitie in te voegen zoals het geval zou zijn als u het in een niet toegewezen gebied zou plakken: Begin en eind van de geplakte partition worden bepaald door de overschreven partitie. </para>
+
+	<para
+>Selecteer nu <xref linkend="menu-edit-apply"/> en de partitie zal worden gekopieerd. Zie de <link linkend="howto-resizepartition"
+>hoe partities van grootte wijzigen</link
+> voor details over het toepassen van bewerkingen. </para>
+</sect1>
+

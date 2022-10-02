@@ -1,0 +1,48 @@
+<chapter id="introduction">
+	<title
+>Sissejuhatus</title>
+	<para
+>KDE partitsioonide haldur on tööriist, mis aitab hallata <glossterm linkend="glossary-device"
+>kettaseadmeid</glossterm
+>, <glossterm linkend="glossary-partition"
+>partitsioone</glossterm
+> ja <glossterm linkend="glossary-filesystem"
+>failisüsteeme</glossterm
+> sinu arvutis. </para>
+	<para
+>See võimaldab vähese vaevaga <link linkend="howto-installos"
+>luua uusi partitsioone</link
+>, luua failisüsteeme uutel või olemasolevatel partitsioonidel, <link linkend="howto-copypartition"
+>kopeerida</link
+>, liigutada või kustutada partitsioone, samuti <link linkend="howto-resizepartition"
+>muuta partitsioonide suurust</link
+> andmeid kaotamata. </para>
+
+	<para
+>Töö tõhusamaks tegemiseks kasutab partitsioonihaldur väliseid tööriistu, mis tagavad paljude failisüsteemide toetuse. Täpsemalt kõneleb sellest osa <xref linkend="requirements"/>. Tõenäoliselt on failisüsteemide toetuseks vajalikud tööriistad juba sinu arvutisse paigaldatud. </para>
+
+	<warning>
+		<title
+>Varunda alati andmeid!</title>
+		<para
+>Partitsioonihalduri loomisel on pandud suurt rõhku andmete terviklikkuse tagamisele. Siiski valitseb seadme partitsioonitabeli või partitsioonide muutmisel alati teatav oht. Ka partitsioonihalduris endas võib olla vigu, kuid mõjuda võib ka ootamatu voolukadu või mõni probleem riistvaraga. </para>
+		<para
+>Seepärast tuleks <emphasis
+>alati tagada oluliste andmete varukoopia</emphasis
+> olemasolu, enne kui hakata kasutama sellised tööriistu nagu partitsioonihaldur. </para>
+		<para
+>Rakenduse autorid ei võta endale vähimatki vastutust selle eest, kui kaotad partitsioonihaldurit kasutades andmeid. </para>
+	</warning>
+
+	<para
+>Partitsioonihaldur kasutab oma tegevuse loogilisel liigendamisel <glossterm linkend="glossary-operation"
+></glossterm
+>operatsioone<glossterm linkend="glossary-job"
+>töid</glossterm
+> ja <glossterm linkend="glossary-command"
+>käske</glossterm
+>. Täpsemalt kõneleb neist <link linkend="glossary"
+>sõnastik</link
+>. </para>
+
+</chapter>
