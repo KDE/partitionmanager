@@ -838,9 +838,9 @@ msgid ""
 "strong='1'>can not be undone</emphasis>.</warning></para>"
 msgstr ""
 "<para>Segur que voleu guardar els canvis que heu fet en el fitxer de taula "
-"del sistema <filename>/etc/fstab</filename>?</"
-"para><para><warning>Sobreescriurà el fitxer existent en el vostre disc dur. "
-"Açò <emphasis strong='1'>no es pot desfer</emphasis>.</warning></para>"
+"del sistema <filename>/etc/fstab</filename>?</para><para><warning>Açò "
+"sobreescriurà el fitxer existent en el vostre disc dur. Açò <emphasis "
+"strong='1'>no es pot desfer</emphasis>.</warning></para>"
 
 #: gui/editmountpointdialog.cpp:60
 #, kde-kuit-format
@@ -2287,7 +2287,7 @@ msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be mounted."
 msgstr ""
-"No s'ha pogut muntar el sistema de fitxers a la partició <filename>%1</"
+"No s'ha pogut muntar el sistema de fitxers en la partició <filename>%1</"
 "filename>."
 
 #: gui/partitionmanagerwidget.cpp:403
@@ -2302,7 +2302,7 @@ msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be unmounted."
 msgstr ""
-"No s'ha pogut desmuntar el sistema de fitxers a la partició <filename>%1</"
+"No s'ha pogut desmuntar el sistema de fitxers en la partició <filename>%1</"
 "filename>."
 
 #: gui/partitionmanagerwidget.cpp:406
@@ -2318,7 +2318,7 @@ msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "unlocked."
 msgstr ""
-"No s'ha pogut desbloquejar el sistema de fitxers encriptat a la partició "
+"No s'ha pogut desbloquejar el sistema de fitxers encriptat en la partició "
 "<filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:452
@@ -2334,7 +2334,7 @@ msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "locked."
 msgstr ""
-"No s'ha pogut bloquejar el sistema de fitxers encriptat a la partició "
+"No s'ha pogut bloquejar el sistema de fitxers encriptat en la partició "
 "<filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:463
