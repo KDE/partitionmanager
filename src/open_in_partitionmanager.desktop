@@ -2,6 +2,7 @@
 X-KDE-Solid-Predicate=[ StorageVolume.ignored == false AND StorageVolume.usage == 'FileSystem' ]
 Type=Service
 Actions=open;
+X-KDE-AliasFor=org.kde.partitionmanager
 
 [Desktop Action open]
 # %f gives StorageAccess.filePath, %d gives Block.device, %i gives UDI
