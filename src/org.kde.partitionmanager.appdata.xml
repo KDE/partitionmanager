@@ -51,7 +51,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <name xml:lang="x-test">xxKDE Partition Managerxx</name>
   <name xml:lang="zh-CN">KDE 分区管理器</name>
   <name xml:lang="zh-TW">KDE 磁碟分割區管理員</name>
-  <summary>Manage disk devices, partitions and file systems on your computer</summary>
+  <summary>Manage disks, partitions, and file systems</summary>
   <summary xml:lang="ar">أدِر الأقراص، والأقسام وأنظمة الملفّات على حاسوبك</summary>
   <summary xml:lang="az">Kompyuterinizdəki disk qurğularının, bölmələrin və fayl sistemlərinin idarə edilməsi</summary>
   <summary xml:lang="bg">Управлявайте вашите дискове, дялове и файлови системи</summary>
@@ -87,7 +87,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <summary xml:lang="x-test">xxManage disk devices, partitions and file systems on your computerxx</summary>
   <summary xml:lang="zh-CN">管理电脑中的磁盘设备、分区和文件系统</summary>
   <description>
-    <p>KDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.</p>
+    <p>KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer. It allows you to easily create, copy, move, delete, back up, restore, and resize them without losing data. It supports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and more.</p>
     <p xml:lang="ar">«مدير كدي للأقسام» هو أداة تساعدك على إدارة أجهزة الأقراص، والأقسام وأنظمة الملفّات في حاسوبك. ويتيح لك الإنشاء، والنّسخ، والنّقل، والحذف، والتّحجيم دون فقدات البيانات، والنّسخ الاحتياطيّ واسترجاع الأقسام بسهولة.</p>
     <p xml:lang="az">KDE Bölmələr Meneceri, kompüterinizdəki disk qurğularını, bölmələrini və fayl sistemlərini idarə etməyə kömək edən bir yardımçı proqramıdır. Məlumatlarınızı itirmədən asanlıqla yaratmaq, kopyalamaq, köçürmək, silmək, ölçüsünü dəyişdirmək, bölmələri bərpa etmək imkanı verir.</p>
     <p xml:lang="bg">KDE Partition Manager е помощна програма, която ви помага да управлявате диска устройства, дялове и файлови системи на вашия компютър. Тя ви позволява да лесно да създавате, копирате, премествате, изтривате, променяте размера без загуба на данни, да създавате резервни копия и възстановяване на дялове.</p>
@@ -127,132 +127,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <p xml:lang="x-test">xxKDE Partition Manager is a utility program to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.xx</p>
     <p xml:lang="zh-CN">KDE 分区管理器是一款用于管理计算机的磁盘设备，分区，文件系统的工具程序。您可以使用它方便地创建、复制、移动、删除、在保留数据的前提下调整分区大小、备份和恢复分区等。</p>
     <p xml:lang="zh-TW">KDE 磁碟分割區管理員是一個可以協助您管理您電腦上的磁碟裝置、分割區以及檔案系統的工具。它讓您可以很容易地建立、複製、移動、刪除、不遺失資料的調整大小、備份與恢復分割區。</p>
-    <p>Features:</p>
-    <p xml:lang="ar">الميزات:</p>
-    <p xml:lang="az">İmkanlar:</p>
-    <p xml:lang="bg">Функции:</p>
-    <p xml:lang="bs">Svojstva:</p>
-    <p xml:lang="ca">Característiques:</p>
-    <p xml:lang="ca-valencia">Característiques:</p>
-    <p xml:lang="cs">Vlastnosti:</p>
-    <p xml:lang="da">Funktioner:</p>
-    <p xml:lang="de">Funktionen:</p>
-    <p xml:lang="el">Χαρακτηριστικά:</p>
-    <p xml:lang="en-GB">Features:</p>
-    <p xml:lang="es">Funciones:</p>
-    <p xml:lang="et">Omadused:</p>
-    <p xml:lang="eu">Ezaugarriak:</p>
-    <p xml:lang="fi">Ominaisuudet:</p>
-    <p xml:lang="fr">Fonctionnalités :</p>
-    <p xml:lang="gl">Funcionalidades:</p>
-    <p xml:lang="hu">Szolgáltatások:</p>
-    <p xml:lang="ia">Characteristicas:</p>
-    <p xml:lang="id">Fitur:</p>
-    <p xml:lang="it">Funzionalità:</p>
-    <p xml:lang="ko">기능:</p>
-    <p xml:lang="lt">Ypatybės:</p>
-    <p xml:lang="nl">Mogelijkheden:</p>
-    <p xml:lang="pa">ਲੱਛਣ:</p>
-    <p xml:lang="pl">Możliwości:</p>
-    <p xml:lang="pt">Funcionalidades:</p>
-    <p xml:lang="pt-BR">Funcionalidades:</p>
-    <p xml:lang="ro">Caracteristici:</p>
-    <p xml:lang="ru">Возможности:</p>
-    <p xml:lang="sk">Funkcie:</p>
-    <p xml:lang="sl">Zmožnosti:</p>
-    <p xml:lang="sr">Могућности:</p>
-    <p xml:lang="sr-Latn">Mogućnosti:</p>
-    <p xml:lang="sr-ijekavian">Могућности:</p>
-    <p xml:lang="sr-ijekavianlatin">Mogućnosti:</p>
-    <p xml:lang="sv">Funktioner:</p>
-    <p xml:lang="tr">Özellikler:</p>
-    <p xml:lang="uk">Можливості:</p>
-    <p xml:lang="x-test">xxFeatures:xx</p>
-    <p xml:lang="zh-CN">程序功能：</p>
-    <p xml:lang="zh-TW">功能：</p>
-    <ul>
-      <li>Supports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and more</li>
-      <li xml:lang="ar">يدعم عددًا كبيرًا من أنظمة الملفّات، منها ext2/3/4، وbtrfs، وreiserfs، وNTFS، وFAT16/32، وJFS، وXFS وغيرها</li>
-      <li xml:lang="az">Böyük ölçülü fayl sistemlərini, həmçinin  ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS və bir çoxlarını dəstəkləyir</li>
-      <li xml:lang="bg">Поддържа голям брой файлови системи, включително ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS и др.</li>
-      <li xml:lang="ca">Accepta un gran nombre de sistemes de fitxers, incloent-hi ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i més</li>
-      <li xml:lang="ca-valencia">Accepta un gran nombre de sistemes de fitxers, incloent-hi ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i més</li>
-      <li xml:lang="da">Understøtter et større antal filsystemer, derunder ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS og andre</li>
-      <li xml:lang="de">Unterstützt eine große Zahl von Dateisystemen, einschließlich ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS und weitere</li>
-      <li xml:lang="el">Υποστηρίζει μαι σειρά συστημάτων αρχείων, συμπεριλαμβανομένων των ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS και άλλων</li>
-      <li xml:lang="en-GB">Supports a large number of file systems, including Ext2/3/4, Btrfs, ReiserFS, NTFS, FAT16/32, JFS, XFS and more</li>
-      <li xml:lang="es">Permite un gran número de sistemas de archivos, como ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS y XFS, entre otros</li>
-      <li xml:lang="et">Paljude failisüsteemide toetus, sealhulgas ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ja veel paljud</li>
-      <li xml:lang="eu">Fitxategi-sistema kopuru handirako euskarria dauka, tartean ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS eta gehiago</li>
-      <li xml:lang="fi">Tukee monia tiedostojärjestelmiä kuten ext2/3/4, Btrfs, ReiserFS, NTFS, FAT16/32, JFS, XFS ja muita</li>
-      <li xml:lang="fr">Prend en charge un grand nombre de systèmes de fichiers, notamment ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS et d'autres</li>
-      <li xml:lang="gl">Compatíbel cun gran número de sistemas de ficheiros, entre eles ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS, e máis.</li>
-      <li xml:lang="hu">Számos fájlrendszer támogatása, többek között ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS és továbbiak</li>
-      <li xml:lang="id">Mendukung sejumlah besar sistem file , termasuk ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS dan lebih banyak lagi</li>
-      <li xml:lang="it">Supporta un vasto numero di filesystem, tra cui ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS e altri</li>
-      <li xml:lang="ko">EXT2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS 등 파일 시스템 지원</li>
-      <li xml:lang="lt">Palaiko daug failų sistemų, tarp jų ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ir kitos</li>
-      <li xml:lang="nl">Ondersteunt een groot aantal bestandssystemen, inclusief ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS en meer</li>
-      <li xml:lang="pa">ਵੱਡੀ ਗਿਣਤੀ ਦੇ ਫਾਇਲ ਸਿਸਟਮਾਂ ਲਈ ਸਹਾਇਕ ਹੈ, ਜਿਸ ਵਿੱਚ ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ਅਤੇ ਕਈ ਹੋਰ।</li>
-      <li xml:lang="pl">Obsługa wielu systemów plików, uwzględniając przy tym  ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i więcej</li>
-      <li xml:lang="pt">Suporta um grande conjunto de sistemas de ficheiros, incluindo o ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS entre outros</li>
-      <li xml:lang="pt-BR">Suporte a um grande conjunto de sistemas de arquivos, incluindo o ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS, entre outros</li>
-      <li xml:lang="ro">Susține un număr mare de sisteme de fișiere, inclusiv ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS și altele</li>
-      <li xml:lang="ru">Поддержка большого числа файловых систем, в том числе ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS и других.</li>
-      <li xml:lang="sk">Podporuje veľký počet súborových systémov, vrátane ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS a viac</li>
-      <li xml:lang="sl">Podpira številne datotečne sisteme vključno z ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS in XFS</li>
-      <li xml:lang="sr">Подржава велики број фајл система, укључујући екст‑2/3/4, бтрфс, рајзер, НТФС, ФАТ‑16/32, ЈФС, ИксФС, и друге.</li>
-      <li xml:lang="sr-Latn">Podržava veliki broj fajl sistema, uključujući ext2/3/4, btrfs, reiser, NTFS, FAT16/32, JFS, XFS, i druge.</li>
-      <li xml:lang="sr-ijekavian">Подржава велики број фајл система, укључујући екст‑2/3/4, бтрфс, рајзер, НТФС, ФАТ‑16/32, ЈФС, ИксФС, и друге.</li>
-      <li xml:lang="sr-ijekavianlatin">Podržava veliki broj fajl sistema, uključujući ext2/3/4, btrfs, reiser, NTFS, FAT16/32, JFS, XFS, i druge.</li>
-      <li xml:lang="sv">Stöder ett stort antal filsystem, inklusive ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS med flera</li>
-      <li xml:lang="tr">Ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ve daha birçok sayıda dosya sistemini destekler</li>
-      <li xml:lang="uk">Підтримка широкого набору файлових систем, зокрема ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS тощо.</li>
-      <li xml:lang="x-test">xxSupports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and morexx</li>
-      <li xml:lang="zh-CN">支持大量文件系统，包括 ext2/3/4、btrfs、reiserfs、NTFS、FAT16/32、JFS、XFS 和更多其他类型</li>
-      <li xml:lang="zh-TW">支援大量的檔案系統，包含了 ext2/3/4、btrfs、reiserfs、NTFS、FAT16/32、JFS、XFS 以及更多</li>
-      <li>Makes use of already available external programs to get its job done</li>
-      <li xml:lang="ar">يستخدم البرامج الخارجيّة المتوفّرة لإنهاء عمله</li>
-      <li xml:lang="az">Öz işini başa çatdırmaq üçün artıq mövcud olan xarici proqramlardan istifadə edir</li>
-      <li xml:lang="bg">Използва вече налични външни програми, за да свърши работата си</li>
-      <li xml:lang="ca">Fa ús de programes externs ja disponibles per a fer la seva feina</li>
-      <li xml:lang="ca-valencia">Fa ús de programes externs ja disponibles per a fer la seua faena</li>
-      <li xml:lang="da">Gør brug af allerede tilgængelige eksterne programmer til at udføre arbejdet</li>
-      <li xml:lang="de">Verwendet bereits vorhandene externe Programme, um die Aufgaben zu erfüllen</li>
-      <li xml:lang="el">Χρησιμοποιεί τα ήδη διαθέσιμα εξωτερικά προγράμματα για να κάνει τη δουλειά του</li>
-      <li xml:lang="en-GB">Makes use of already available external programs to get its job done</li>
-      <li xml:lang="es">Utiliza varios programas externos que deben estar disponibles para realizar el trabajo</li>
-      <li xml:lang="et">Saadaolevate väliste programmide kasutamine vajalike tegevuste sooritamiseks</li>
-      <li xml:lang="eu">Bere lana burutzeko dagoeneko erabilgarri dauden kanpoko programak erabiltzen ditu</li>
-      <li xml:lang="fi">Hoitaa hommansa hyödyntäen valmiita ulkoisia ohjelmia</li>
-      <li xml:lang="fr">Utilise des programmes externes existants pour faire le travail</li>
-      <li xml:lang="gl">Usa programas externos para realizar as tarefas.</li>
-      <li xml:lang="hu">A meglévő külső programokat használja a feladatok elvégzésére</li>
-      <li xml:lang="ia">Face uso de programmas externe jam disponibile pro obtener que su carga es facite</li>
-      <li xml:lang="id">Membuat penggunaan program eksternal yang sudah ada untuk menyelesaikan pekerjaannya</li>
-      <li xml:lang="it">Utilizza programmi esterni già disponibili per fare il suo lavoro</li>
-      <li xml:lang="ko">외부 프로그램을 사용한 작업 관리</li>
-      <li xml:lang="lt">Užduotims atlikti naudoja išorinius įrankius</li>
-      <li xml:lang="nl">Maakt gebruik van al beschikbare externe programma's om deze taken uit te voeren</li>
-      <li xml:lang="pa">ਪੱਕਾ ਕਰੋ ਕਿ ਇਹ ਕੰਮ ਕਰਨ ਲਈ ਹੋਰ ਬਾਹਰੀ ਪਰੋਗਰਾਮ ਉਪਲਬਧ ਹਨ</li>
-      <li xml:lang="pl">Wykorzystywanie już dostępnych programów zewnętrznych do wykonywania swojej pracy</li>
-      <li xml:lang="pt">Tira partido dos programas externos já existentes para terminar a sua tarefa</li>
-      <li xml:lang="pt-BR">Utiliza os programas externos já existentes para terminar a sua tarefa</li>
-      <li xml:lang="ro">Folosește programele externe disponibile pentru a-și face meseria</li>
-      <li xml:lang="ru">Полагается на доступные внешние программы для выполнения задач.</li>
-      <li xml:lang="sk">Používa už existujúce dostupné externé programy na vykonanie svojej práce</li>
-      <li xml:lang="sl">Za izvedbo poslov uporablja že obstoječe zunanje programe</li>
-      <li xml:lang="sr">Користи разне већ постојеће спољашње програма да обави посао.</li>
-      <li xml:lang="sr-Latn">Koristi razne već postojeće spoljašnje programa da obavi posao.</li>
-      <li xml:lang="sr-ijekavian">Користи разне већ постојеће спољашње програма да обави посао.</li>
-      <li xml:lang="sr-ijekavianlatin">Koristi razne već postojeće spoljašnje programa da obavi posao.</li>
-      <li xml:lang="sv">Drar nytta av redan tillgängliga externa program för att få jobbet gjort</li>
-      <li xml:lang="tr">İşlemlerin yapılabilmesi için zaten mevcut olan harici programlardan yararlanır</li>
-      <li xml:lang="uk">Використання доступних зовнішніх інструментів для виконання завдань.</li>
-      <li xml:lang="x-test">xxMakes use of already available external programs to get its job donexx</li>
-      <li xml:lang="zh-CN">使用已有的外部程序完成任务</li>
-      <li xml:lang="zh-TW">利用已有的外部程式來完成其工作</li>
-    </ul>
   </description>
   <url type="homepage">https://apps.kde.org/partitionmanager//</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=partitionmanager</url>
