@@ -31,6 +31,7 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(FeatureSummary)
 include(GenerateExportHeader)
+include(ECMDeprecationSettings)
 
 if (NOT QT_MAJOR_VERSION)
     set(QT_MAJOR_VERSION "5")
@@ -61,8 +62,10 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
 )
 
 find_package(PolkitQt${QT_MAJOR_VERSION}-1 REQUIRED)
+ecm_set_disabled_deprecation_versions(QT 5.15.2
+    KF 5.99
+)
 
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
 
 find_package(KPMcore ${KPMCORE_MIN_VERSION} REQUIRED)
 
