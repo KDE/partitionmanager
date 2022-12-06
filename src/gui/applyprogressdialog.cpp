@@ -18,6 +18,7 @@
 
 #include <util/report.h>
 #include <util/htmlreport.h>
+#include <kwidgetsaddons_version.h>
 
 #include <QApplication>
 #include <QCloseEvent>
@@ -188,8 +189,11 @@ void ApplyProgressDialog::onCancelButton()
         // suspend the runner, so it doesn't happily carry on while the user decides
         // if he really wants to cancel
         operationRunner().suspendMutex().lock();
-
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        if (KMessageBox::warningTwoActions(this, xi18nc("@info", "Do you really want to cancel?"), xi18nc("@title:window", "Cancel Running Operations"), KGuiItem(xi18nc("@action:button", "Yes, Cancel Operations"), QStringLiteral("dialog-ok")), KStandardGuiItem::cancel()) == KMessageBox::PrimaryAction)
+#else
         if (KMessageBox::questionYesNo(this, xi18nc("@info", "Do you really want to cancel?"), xi18nc("@title:window", "Cancel Running Operations"), KGuiItem(xi18nc("@action:button", "Yes, Cancel Operations"), QStringLiteral("dialog-ok")), KStandardGuiItem::no()) == KMessageBox::Yes)
+#endif
             // in the meantime while we were showing the messagebox, the runner might have finished.
             if (operationRunner().isRunning()) {
                 QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
