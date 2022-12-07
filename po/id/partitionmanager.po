@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE Frameworks 5 Applications\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-30 00:48+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2022-09-27 18:12+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -480,73 +480,73 @@ msgstr "Simpan"
 msgid "Open in External Browser"
 msgstr "Buka di Penelusur Eksternal"
 
-#: gui/applyprogressdialog.cpp:83 gui/applyprogressdialog.cpp:172
+#: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
 msgstr "&Perincian"
 
-#: gui/applyprogressdialog.cpp:125
+#: gui/applyprogressdialog.cpp:126
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
 msgstr "Mempersiapkan..."
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "Apakah Anda benar-benar ingin membatalkan?"
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
 msgstr "Batalkan Operasi Berjalan"
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
 msgstr "Ya, Batalkan Operasi"
 
-#: gui/applyprogressdialog.cpp:197
+#: gui/applyprogressdialog.cpp:201
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
 msgstr "Menunggu operasi selesai..."
 
-#: gui/applyprogressdialog.cpp:218
+#: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
 msgstr "Semua operasi dengan sukses selesai."
 
-#: gui/applyprogressdialog.cpp:223
+#: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
 msgstr "Operasi diatalkan."
 
-#: gui/applyprogressdialog.cpp:228
+#: gui/applyprogressdialog.cpp:232
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
 msgstr "Ada error selagi menerapkan operasi. Digugurkan."
 
-#: gui/applyprogressdialog.cpp:342
+#: gui/applyprogressdialog.cpp:346
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
 msgstr "[%1/%2] - %3: %4"
 
-#: gui/applyprogressdialog.cpp:376
+#: gui/applyprogressdialog.cpp:380
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Total Waktu: %1"
 
-#: gui/applyprogressdialog.cpp:424 gui/mainwindow.cpp:1043
+#: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
 #: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
@@ -557,20 +557,20 @@ msgstr ""
 "Tidak bisa menciptakan file temporer ketika mencoba simpan ke <filename>%1</"
 "filename>."
 
-#: gui/applyprogressdialog.cpp:424
+#: gui/applyprogressdialog.cpp:428
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
 msgstr "Tidak Bisa Simpan Laporan."
 
-#: gui/applyprogressdialog.cpp:448
+#: gui/applyprogressdialog.cpp:452
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
 msgstr ""
 "Tidak bisa menciptakan file temporer <filename>%1</filename> untuk penulisan."
 
-#: gui/applyprogressdialog.cpp:448
+#: gui/applyprogressdialog.cpp:452
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."

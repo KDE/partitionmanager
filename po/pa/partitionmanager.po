@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-30 00:48+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2020-10-10 21:33-0700\n"
 "Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -476,73 +476,73 @@ msgstr "ਸੰਭਾਲੋ"
 msgid "Open in External Browser"
 msgstr "ਬਾਹਰੀ ਬਰਾਊਜ਼ਰ ਵਿੱਚ ਖੋਲ੍ਹੋ"
 
-#: gui/applyprogressdialog.cpp:83 gui/applyprogressdialog.cpp:172
+#: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
 msgstr "ਵੇਰਵੇ(&D)"
 
-#: gui/applyprogressdialog.cpp:125
+#: gui/applyprogressdialog.cpp:126
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
 msgstr "ਸੈੱਟ ਅੱਪ..."
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "ਕੀ ਤੁਸੀਂ ਰੱਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
 msgstr "ਚੱਲ ਰਹੇ ਓਪਰੇਸ਼ਨ ਰੱਦ ਕਰੋ"
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
 msgstr "ਹਾਂ, ਓਪਰੇਸ਼ਨ ਰੱਦ ਕਰ ਦਿਓ"
 
-#: gui/applyprogressdialog.cpp:197
+#: gui/applyprogressdialog.cpp:201
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
 msgstr "...ਓਪਰੇਸ਼ਨ ਦੇ ਪੂਰਾ ਹੋਣ ਦੀ ਉਡੀਕ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"
 
-#: gui/applyprogressdialog.cpp:218
+#: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
 msgstr "ਸਭ ਓਪਰੇਸ਼ਨ ਠੀਕ ਤਰ੍ਹਾਂ ਪੂਰੇ ਹੋ ਗਏ ਹਨ।"
 
-#: gui/applyprogressdialog.cpp:223
+#: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
 msgstr "ਓਪਰੇਸ਼ਨ ਰੱਦ ਕੀਤੇ ਗਏ।"
 
-#: gui/applyprogressdialog.cpp:228
+#: gui/applyprogressdialog.cpp:232
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
 msgstr "ਓਪਰੇਸ਼ਨ ਲਾਗੂ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀਆਂ ਆਇਆਂ ਹਨ। ਅਧੂਰਾ ਛੱਡੇ।"
 
-#: gui/applyprogressdialog.cpp:342
+#: gui/applyprogressdialog.cpp:346
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
 msgstr "[%1/%2] - %3: %4"
 
-#: gui/applyprogressdialog.cpp:376
+#: gui/applyprogressdialog.cpp:380
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "ਕੁੱਲ ਸਮਾਂ: %1"
 
-#: gui/applyprogressdialog.cpp:424 gui/mainwindow.cpp:1043
+#: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
 #: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
@@ -552,19 +552,19 @@ msgid ""
 msgstr ""
 "<filename>%1</filename> ਸੰਭਾਲ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਨ ਦੌਰਾਨ ਆਰਜ਼ੀ ਫਾਇਲ ਨਹੀਂ ਬਣਾਈ ਜਾ ਸਕੀ।"
 
-#: gui/applyprogressdialog.cpp:424
+#: gui/applyprogressdialog.cpp:428
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
 msgstr "ਰਿਪੋਰਟ ਸੰਭਾਲੀ ਨਹੀਂ ਜਾ ਸਕੀ।"
 
-#: gui/applyprogressdialog.cpp:448
+#: gui/applyprogressdialog.cpp:452
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
 msgstr "ਆਰਜ਼ੀ ਫਾਇਲ <filename>%1</filename> ਲਿਖਣ ਲਈ ਖੋਲ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕੀ।"
 
-#: gui/applyprogressdialog.cpp:448
+#: gui/applyprogressdialog.cpp:452
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."

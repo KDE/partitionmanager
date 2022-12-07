@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-30 00:48+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2022-02-20 10:13+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -480,73 +480,73 @@ msgstr "Gorde"
 msgid "Open in External Browser"
 msgstr "Ireki kanpoko arakatzailean"
 
-#: gui/applyprogressdialog.cpp:83 gui/applyprogressdialog.cpp:172
+#: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
 msgstr "&Zehaztasunak"
 
-#: gui/applyprogressdialog.cpp:125
+#: gui/applyprogressdialog.cpp:126
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
 msgstr "Eraikitzen..."
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "Bertan behera utzi nahi duzu benetan?"
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
 msgstr "Bertan behera utzi martxan dauden eragiketak"
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
 msgstr "Bai, utzi eragiketak"
 
-#: gui/applyprogressdialog.cpp:197
+#: gui/applyprogressdialog.cpp:201
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
 msgstr "Eragiketak amaitu zain..."
 
-#: gui/applyprogressdialog.cpp:218
+#: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
 msgstr "Eragiketa guztiak ondo amaitu dira."
 
-#: gui/applyprogressdialog.cpp:223
+#: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
 msgstr "Eragiketak bertan behera utzi dira."
 
-#: gui/applyprogressdialog.cpp:228
+#: gui/applyprogressdialog.cpp:232
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
 msgstr "Erroreak egon dira eragiketak ezartzean. Galarazi egin dira."
 
-#: gui/applyprogressdialog.cpp:342
+#: gui/applyprogressdialog.cpp:346
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
 msgstr "[%1/%2] - %3: %4"
 
-#: gui/applyprogressdialog.cpp:376
+#: gui/applyprogressdialog.cpp:380
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Denbora osoa: %1"
 
-#: gui/applyprogressdialog.cpp:424 gui/mainwindow.cpp:1043
+#: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
 #: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
@@ -557,20 +557,20 @@ msgstr ""
 "Ezin izan da aldi baterako fitxategia sortu <filename>%1</filename> "
 "gordetzen saiatzean."
 
-#: gui/applyprogressdialog.cpp:424
+#: gui/applyprogressdialog.cpp:428
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
 msgstr "Ezin izan da txostena gorde."
 
-#: gui/applyprogressdialog.cpp:448
+#: gui/applyprogressdialog.cpp:452
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
 msgstr ""
 "Ezin izan da <filename>%1</filename> aldi baterako fitxategia idazteko sortu."
 
-#: gui/applyprogressdialog.cpp:448
+#: gui/applyprogressdialog.cpp:452
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."

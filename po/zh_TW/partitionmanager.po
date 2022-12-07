@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-30 00:48+0000\n"
+"POT-Creation-Date: 2022-12-07 00:51+0000\n"
 "PO-Revision-Date: 2020-04-12 00:46+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -478,73 +478,73 @@ msgstr "儲存"
 msgid "Open in External Browser"
 msgstr "在外部瀏覽器開啟"
 
-#: gui/applyprogressdialog.cpp:83 gui/applyprogressdialog.cpp:172
+#: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
 msgstr "詳細資料(&D)"
 
-#: gui/applyprogressdialog.cpp:125
+#: gui/applyprogressdialog.cpp:126
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
 msgstr "設定中..."
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "您真的想要取消嗎?"
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
 msgstr "取消執行操作"
 
-#: gui/applyprogressdialog.cpp:192
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
 msgstr "是的，取消操作"
 
-#: gui/applyprogressdialog.cpp:197
+#: gui/applyprogressdialog.cpp:201
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
 msgstr "等待操作完成..."
 
-#: gui/applyprogressdialog.cpp:218
+#: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
 msgstr "所有操作都已成功完成。"
 
-#: gui/applyprogressdialog.cpp:223
+#: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
 msgstr "操作已取消。"
 
-#: gui/applyprogressdialog.cpp:228
+#: gui/applyprogressdialog.cpp:232
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
 msgstr "套用操作時發生錯誤。已中止。"
 
-#: gui/applyprogressdialog.cpp:342
+#: gui/applyprogressdialog.cpp:346
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
 msgstr "【%1/%2】─%3：%4"
 
-#: gui/applyprogressdialog.cpp:376
+#: gui/applyprogressdialog.cpp:380
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "總計時間：%1"
 
-#: gui/applyprogressdialog.cpp:424 gui/mainwindow.cpp:1043
+#: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
 #: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
@@ -553,19 +553,19 @@ msgid ""
 "filename>."
 msgstr "儲存到 <filename>%1</filename> 時無法建立暫存檔。"
 
-#: gui/applyprogressdialog.cpp:424
+#: gui/applyprogressdialog.cpp:428
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
 msgstr "無法儲存報告。"
 
-#: gui/applyprogressdialog.cpp:448
+#: gui/applyprogressdialog.cpp:452
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
 msgstr "無法建立暫存檔 <filename>%1</filename> 以寫入。"
 
-#: gui/applyprogressdialog.cpp:448
+#: gui/applyprogressdialog.cpp:452
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."
