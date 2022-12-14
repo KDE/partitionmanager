@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-05-30 00:48+0000\n"
-"PO-Revision-Date: 2022-12-12 10:01+0100\n"
+"PO-Revision-Date: 2022-12-13 06:38+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -69,6 +69,9 @@ msgid ""
 "will also rescan devices and thus clear the list of pending operations.</"
 "warning></para>"
 msgstr ""
+"<para>მართლა გნებავთ უკანაბოლოს შეცვლა?</para><para><warning>ეს ასევე "
+"თავიდან დაასკანირებს მოწყობილობებს და ამით დარჩენილი ოპერაციების სიას "
+"გაასუფთავებს.</warning></para>"
 
 #: config/configureoptionsdialog.cpp:139
 #, kde-kuit-format
@@ -626,6 +629,10 @@ msgid ""
 "the most the MS-Dos partition table type supports, so you will not be able "
 "to use the whole device.</para>"
 msgstr ""
+"<para>მართლა გნებავთ <filename>%1</filename>-ზე MS-DOS-ის დანაყოფების "
+"ცხრილის შექმნა?</para><para>ეს მოწყობილობა 2^32 სექტორზე დიდია. ეს კი "
+"მაქსიმუმია, რისი მხარდაჭერაც MS-Dos -ის დანაყოფების ცხრილს გააჩნია, ასე რომ, "
+"მთლიან მოწყობილობას ვერ გამოიყენებთ.</para>"
 
 #: gui/createpartitiontabledialog.cpp:61
 #, kde-kuit-format
@@ -1487,6 +1494,8 @@ msgstr "ტომების მონიშნული ჯგფის დე
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr ""
+"მოხსნადი მოწყობილობების გამოძრობამდე მონიშნული ტომების ჯგუფის დეაქტივაცია "
+"აუცილებელია."
 
 #: gui/mainwindow.cpp:356
 #, kde-kuit-format
@@ -1966,7 +1975,7 @@ msgstr "დარჩენილი ოპერაციების გას�
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
-msgstr ""
+msgstr "შეყვანის ფაილის <filename>%1</filename> გახნა შეუძლებელია"
 
 #: gui/mainwindow.cpp:1033 gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1051
 #: gui/mainwindow.cpp:1057
@@ -1988,6 +1997,8 @@ msgid ""
 "Could not open temporary file <filename>%1</filename> while trying to import "
 "from <filename>%2</filename>."
 msgstr ""
+"დროებით ფაილის <filename>%1</filename> გახსნის შეცდომა <filename>%2</"
+"filename>-დან შემოტანისას."
 
 #: gui/mainwindow.cpp:1087
 #, kde-kuit-format
@@ -1996,6 +2007,7 @@ msgid ""
 "The import file <filename>%1</filename> does not contain a valid partition "
 "table."
 msgstr ""
+"შემოსატანი ფაილი <filename>%1</filename> სწორ დანაყოფების ცხრილს არ შეიცავს."
 
 #: gui/mainwindow.cpp:1087 gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1104
 #: gui/mainwindow.cpp:1109 gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1132
@@ -2010,7 +2022,7 @@ msgstr "დანაყოფების ცხრილის შემოტ�
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
-msgstr ""
+msgstr "შემოსატან ფაილში ნაპოვნია ერთზე მეტი დანაყოფების ტიპი (ხაზი %1)."
 
 #: gui/mainwindow.cpp:1104
 #, kde-kuit-format
@@ -2023,6 +2035,7 @@ msgstr "დანაყოფების ცხრილის ტიპი \"%
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr ""
+"დანაყოფების ცხრილის ტიპი \"%1\" შემოსატანად მხარდაჭერილი არაა (ხაზი %2)."
 
 #: gui/mainwindow.cpp:1119
 #, kde-kuit-format
@@ -2034,19 +2047,19 @@ msgstr "აღმოჩენილია დანაყოფი ცხრი�
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
-msgstr ""
+msgstr "დანაყოფი %1 მოწყობილობის საზღვრებს მიღმა აღმოჩნდებოდა (ხაზი %2)."
 
 #: gui/mainwindow.cpp:1137
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
-msgstr ""
+msgstr "დანაყოფი %1 საწყის სექტორზე ადრე სრულდება (ხაზი %2)."
 
 #: gui/mainwindow.cpp:1156
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr ""
+msgstr "უცნობი დანაყოფის როლი \"%1\" დანაყოფისთვის %2 (ხაზი %3)."
 
 #: gui/mainwindow.cpp:1161
 #, kde-kuit-format
@@ -2054,6 +2067,8 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
 msgstr ""
+"დანაყოფისთვის %1 მშობელი დანაყოფი ან დანაყოფების ცხრილი არ არსებობს (ხაზი "
+"%2)."
 
 #: gui/mainwindow.cpp:1166
 #, kde-kuit-format
@@ -2067,7 +2082,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
-msgstr ""
+msgstr "ფაილური სისტემის \"%1\" შექმნის შეცდომა დანაყოფისთვის %2 (ხაზი %3)."
 
 #: gui/mainwindow.cpp:1188
 #, kde-kuit-format
@@ -2327,7 +2342,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
-msgstr ""
+msgstr "მართლა წავშალო დანაყოფი ბუფერში?"
 
 #: gui/partitionmanagerwidget.cpp:574
 #, kde-kuit-format
@@ -2342,6 +2357,8 @@ msgid ""
 "Partition <filename>%1</filename> has the same position and size after "
 "resize/move. Ignoring operation."
 msgstr ""
+"დანაყოფს <filename>%1</filename> ზომის ცვლილებისა და გადატანის შემდეგ იგივე "
+"მდებარეობა და ზომა გააჩნია. ოპერაცია იგნორირებულია."
 
 #: gui/partitionmanagerwidget.cpp:655
 #, kde-kuit-format
@@ -2560,7 +2577,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
-msgstr ""
+msgstr "მართლა შევქმნა თავიდან <filename>%1</filename> ფაილური სისტემით %2?"
 
 #: gui/partpropsdialog.cpp:349
 #, kde-kuit-format
@@ -2589,7 +2606,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
-msgstr ""
+msgstr "მართლა შევქმნა თავიდან ფაილური სისიტემა <filename>%1</filename>-ზე?"
 
 #: gui/partpropsdialog.cpp:372
 #, kde-kuit-format
@@ -2624,6 +2641,8 @@ msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
 "filesystem type."
 msgstr ""
+"ეს თავიდან დააფორმატებს ფაილურ სისტემას, რითიც დაიკარგება მისი შემცველობა, "
+"მაგრამ ფაილური სისტემის ტიპი შენარჩუნდება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:71
@@ -2834,7 +2853,7 @@ msgstr "ფაილური სისტემა:"
 msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
 "provide a passphrase."
-msgstr ""
+msgstr "ამ ფაილური სისტემის LUKS-ით დაშიფვრა. პაროლს გკითხავთ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:101
@@ -2915,6 +2934,8 @@ msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
 "folder permissions"
 msgstr ""
+"მოწყობილობაზე ჩაწერისა და წაკითხვის უფლების მხოლოდ root-სთვის მიცემა. "
+"დაგჭირდებათ, რომ წვდომები თითოეულ საქაღალდეზე ხელით მიუთითოთ"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:339
@@ -3152,7 +3173,7 @@ msgstr "ტომების ჯგუფის სახელი: "
 #: gui/volumegroupwidgetbase.ui:47
 #, kde-format
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "ფიზიკური დიაპაზონის ზომა: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
@@ -3381,6 +3402,8 @@ msgid ""
 "<para>The configured backend plugin \"%1\" could not be loaded.</"
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
+"<para>მორგებული უკანაბოლოს დამატების \"%1\" ჩატვირთვა შეუძლებელია.</"
+"para><para>მის მაგიერ ნაგულისხმები დამატება, \"%2\" ჩაიტვირთება.</para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
 #, kde-kuit-format
@@ -3395,6 +3418,8 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
+"<para>მითითებული (\"%1\") და ნაგულისხმები (\"%2\") უკანაბოლოების დამატებების "
+"ჩატვირთვა შეუძლებელია.</para><para>შეამოწმეთ პროგრამის ფაილები.</para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
