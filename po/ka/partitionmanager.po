@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2022-12-13 02:40+0100\n"
+"PO-Revision-Date: 2022-12-14 10:20+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -992,6 +992,11 @@ msgid ""
 "if all required tools are installed. Please see the documentation for "
 "details. "
 msgstr ""
+"ამ ცხრილში მოყვანილია მხარდაჭერილი ფაილური სისტემები და რომელი კონკრეტული "
+"ოპერაციების ჩატარება შეიძლება მათზე.\n"
+"ზოგიერთ ფაილურ სისტემას გარე პროგრამების დაყენება სჭირდება. მაგრამ ყველა "
+"ოპერაციის ჩატარება ყველა ფაილურ სისტემაზე შეუძლებელია მაშინაც კი, თუ ყველა "
+"საჭირო პროგრამა გიყენიათ. დეტალებისთვის იხილეთ დოკუმენტაცია. "
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:70
@@ -1308,6 +1313,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
+"დანაყოფების მმართველს სამუშაოდ პრივილეგიები ესაჭიროება. განაახლეთ "
+"მოწყობილობები და შეიყვანეთ ავტორიზაციის დეტალები, როცა გკითხავენ."
 
 #: gui/mainwindow.cpp:231
 #, kde-kuit-format
@@ -1319,7 +1326,11 @@ msgid_plural ""
 "<para>Do you really want to quit the application?</para><para>There are "
 "still %1 operations pending.</para>"
 msgstr[0] ""
+"<para>მართლა გნებავთ აპლიკაციიდან გასვლა?</para><para>ოპერაცია ჯერ კიდევ "
+"დარჩენილია.</para>"
 msgstr[1] ""
+"<para>მართლა გნებავთ აპლიკაციიდან გასვლა?</para><para>%1 ოპერაცია ჯერ კიდევ "
+"დარჩენილია.</para>"
 
 #: gui/mainwindow.cpp:233
 #, kde-kuit-format
@@ -1902,6 +1913,9 @@ msgid ""
 "<para>Do you really want to rescan the devices?</para><para><warning>This "
 "will also clear the list of pending operations.</warning></para>"
 msgstr ""
+"<para>მართლა გნებავთ მოწყობილობების თავიდან სკანირება?</"
+"para><para><warning>ეს ასევე დარჩენილი ოპერაციების სიას გაასუფთავებს.</"
+"warning></para>"
 
 #: gui/mainwindow.cpp:914
 #, kde-kuit-format
@@ -1922,6 +1936,9 @@ msgid ""
 "<para>Do you really want to apply the pending operations listed below?</"
 "para><para><warning>This will permanently modify your disks.</warning></para>"
 msgstr ""
+"<para>დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაატაროთ ქვემო სიაში "
+"ჩამოთვლილი ოპერაციები?</para><para><warning>ეს სამუდამოს შეცვლის თქვენს "
+"დისკებს.</warning></para>"
 
 #: gui/mainwindow.cpp:943
 #, kde-kuit-format
@@ -2077,6 +2094,8 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
+"დანაყოფების ცხრილის ტიპს \"%1\" გაფართოებული დანაყოფების მხარდაჭერა არ "
+"გააჩნია, მაგრამ ერთი ნაპოვნია (ხაზი %2)."
 
 #: gui/mainwindow.cpp:1173
 #, kde-kuit-format
@@ -2121,6 +2140,16 @@ msgid ""
 "modify them.</para><para>You should find packages with these support tools "
 "in your distribution's package manager.</para>"
 msgstr ""
+"<para>თქვენს კომპიუტერზე არსებული ფაილური სისტემების მხარდაჭერის პროგრამები "
+"აღმოჩენილი არაა:</para><table style='margin-top:12px'><tr><td style='font-"
+"weight:bold;padding-right:12px;white-space:nowrap;'>დანაყოფი</td><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>ფაილური "
+"სისტემა</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>მხარდაჭერის პროგრამები</td><td style='font-weight:bold;padding-"
+"right:12px;white-space:nowrap;'>URL</td></tr>%1</table><para>იქამდე, სანამ "
+"ამ ფაილური სისტემების მხარდაჭერის პროგრამებს არ დააყენებთ, მათი ცვლილება არ "
+"შეგეძლებათ.</para><para>ამ პაკეტების პოვნა თქვენი დისტრიბუტივის პაკეტების "
+"მმართველით შეგიძლიათ.</para>"
 
 #: gui/mainwindow.cpp:1445
 #, kde-kuit-format
@@ -2305,7 +2334,15 @@ msgid_plural ""
 "create, paste or restore a primary partition on it before you delete an "
 "existing one.</para>"
 msgstr[0] ""
+"<para>მოწყობილობაზე ძირითადი დანაყოფი უკვე არსებობს. ეს მაქსიმალური "
+"რაოდენობაა, რომლის მხარდაჭერაც ამ დანაყოფების ცხრილს გააჩნია..</"
+"para><para>თქვენ არ შეგიძლიათ შექმნათ, ჩასვათ ან აღდგინოთ ძირითადი დანაყოფი "
+"მანამდე, სანამ არსებულს არ წაშლით..</para>"
 msgstr[1] ""
+"<para>მოწყობილობაზე უკვე %1 ძირითადი დანაყოფი არსებობს. ეს მაქსიმალური "
+"რაოდენობაა, რომლის მხარდაჭერაც ამ დანაყოფების ცხრილს გააჩნია..</"
+"para><para>თქვენ არ შეგიძლიათ შექმნათ, ჩასვათ ან აღდგინოთ ძირითადი დანაყოფი "
+"მანამდე, სანამ არსებულს არ წაშლით..</para>"
 
 #: gui/partitionmanagerwidget.cpp:496
 #, kde-kuit-format
@@ -2322,6 +2359,10 @@ msgid ""
 "</para><para>Please unmount all partitions with higher logical numbers than "
 "%2 first.</para>"
 msgstr ""
+"<para>დანაყოფის <filename>%1</filename> წაშლა ამჟამად შეუძლებელია, რადგან "
+"ერთი ან მეტი დანაყოფი უფრო მაღლი ლოგიკური ნომრებით ჯერ კიდევ მიმაგრებულია.</"
+"para><para>ჯერ საჭიროა უფრო მაღალი ლოგიკური ნომრების, ვიდრე %2, მქონე "
+"დანაყოფების მიმაგრების მოხსნა.</para>"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
@@ -2337,6 +2378,8 @@ msgid ""
 "clipboard? It will no longer be available for pasting after it has been "
 "deleted."
 msgstr ""
+"მართლა გნებავთ ბუფერში მყოფი დანაყოფის წაშლა? წაშლის შემდეგ მისი ჩასმა "
+"შეუძლებელი იქნება."
 
 #: gui/partitionmanagerwidget.cpp:573
 #, kde-kuit-format
@@ -2377,6 +2420,11 @@ msgid ""
 "window, all data currently stored on <filename>%1</filename> will "
 "unrecoverably be overwritten.</para>"
 msgstr ""
+"<para><warning>თქვენ დისკზე მყოფ მონაცემებს დაკარგავთ:<filename>%1</"
+"filename>.</warning></para><para>დანაყოფის თავზე სხვა დანაყოფის ან ასლის "
+"ფაილის გადაწერა სამიზნე დანაყოფზე მონაცემებს გაანადგურებს.</para><para>თუ "
+"გააგრძელებთ და გადაატარებთ მთავარ ფანჯარაში აღწერილ ოპერაციას, <filename>%1</"
+"filename> -ზე არსებული მონაცემებს ზედ სამუდამოდ გადაეწერება.</para>"
 
 #: gui/partitionmanagerwidget.cpp:726
 #, kde-kuit-format
@@ -2398,6 +2446,9 @@ msgid ""
 "partition or the backup file.</para><para>Pick another target or resize this "
 "partition so it is as large as the source.</para>"
 msgstr ""
+"<para>მონიშნული დანაყოფის ზომა საწყისი დანაყოფის ან მარქაფის ფაილის "
+"დასატევად საკმარისი არაა.</para><para>აირჩიეთ სხვა სამიზნე ან შეცვალეთ "
+"დანაყოფის ზომა, რომ წყაროს ზომას დაემთხვეს.</para>"
 
 #: gui/partitionmanagerwidget.cpp:736
 #, kde-kuit-format
@@ -2414,6 +2465,10 @@ msgid ""
 "are correctly aligned or when copying a primary partition into an extended "
 "partition.</para>"
 msgstr ""
+"<para>იმხელა დანაყოფის შექმნა, რომ წყარო დაიტიოს, შეუძლებელია.</"
+"para><para>ეს ხდება მაშინ, როცა მოწყობილობაზე არსებული დანაყოფები "
+"არასწორადაა გადანაწილებული და მთავარი დანაყოფიდან გაფართოებულ დანაყოფზე "
+"კოპირებისას.</para>"
 
 #: gui/partitionmanagerwidget.cpp:742
 #, kde-kuit-format
@@ -2428,6 +2483,8 @@ msgid ""
 "The file system in the image file <filename>%1</filename> is too large to be "
 "restored to the selected partition."
 msgstr ""
+"ფაილური სისტემა დისკის ასლის ფაილში <filename>%1</filename> მონიშნულ "
+"დანაყოფზე აღსადგენად მეტისმეტად დიდია."
 
 #: gui/partitionmanagerwidget.cpp:800
 #, kde-kuit-format
@@ -2572,6 +2629,11 @@ msgid ""
 "the resulting operation in the main window, all data on <filename>%1</"
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
+"<para><warning>დაკარგავთ მონაცემებს დანაყოფზე <filename>%1</filename>.</"
+"warning></para><para>ფაილური სისტემის ცვლილება დანაყოფზე, რომელსაც ის უკვე "
+"ჰქონდა, ზედ არსებულ მონაცემებს სამუდამოდ წაშლის. თუ გააგრძელებთ და მთავარ "
+"ფანჯარაშ არსებულ ოპერაციას გადაატარებთ, <filename>%1</filename> -ზე არსებული "
+"მონაცემები სამუდამოდ წაიშლება.</para>"
 
 #: gui/partpropsdialog.cpp:348
 #, kde-kuit-format
@@ -2601,6 +2663,11 @@ msgid ""
 "window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
 "para>"
 msgstr ""
+"<para><warning>დაკარგავთ ყველა მონაცემს დანაყოფზე <filename>%1</filename>.</"
+"warning></para><para>ფაილური სისტემის თავიდან შექმნის პროცესი მის "
+"შემცველობას წაშლის. თუ გააგრძელებთ და გადაატარებთ მთავარ ფანჯარაში არსებულ "
+"ოპერაციას, <filesystem>%1</filesystem> -ზე არსებული მონაცემები სამუდამოდ "
+"წაიშლება.</para>"
 
 #: gui/partpropsdialog.cpp:371
 #, kde-kuit-format
