@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the partitionmanager package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2021.
+# Giovanni Sora <g.sora@tiscali.it>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2021-12-29 10:28+0100\n"
+"PO-Revision-Date: 2022-12-20 17:21+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -994,13 +994,13 @@ msgstr "Crea"
 #: gui/filesystemsupportdialogwidgetbase.ui:80
 #, kde-format
 msgid "Grow"
-msgstr ""
+msgstr "Cresce"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:85
 #, kde-format
 msgid "Shrink"
-msgstr ""
+msgstr "Restringe"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:90
@@ -2628,7 +2628,7 @@ msgstr "Puncto de montage:"
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
-msgstr ""
+msgstr "Typo  de partition:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:128
@@ -3146,7 +3146,7 @@ msgstr ""
 #: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
 #, kde-format
 msgid "---"
-msgstr ""
+msgstr "---"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
 #: gui/volumegroupwidgetbase.ui:79
