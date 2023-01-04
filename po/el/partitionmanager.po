@@ -4,14 +4,14 @@
 # Toussis Manolis <manolis@koppermind.homelinux.org>, 2008, 2009.
 # Petros Vidalis <p_vidalis@hotmail.com>, 2009.
 # Petros <pvidalis@gmail.com>, 2009.
-# Stelios <sstavra@gmail.com>, 2011, 2012, 2017, 2018, 2019, 2020.
+# Stelios <sstavra@gmail.com>, 2011, 2012, 2017, 2018, 2019, 2020, 2023.
 # Dimitris Kardarakos <dimkard@gmail.com>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-05-30 00:48+0000\n"
-"PO-Revision-Date: 2020-10-04 09:20+0300\n"
+"PO-Revision-Date: 2023-01-03 09:01+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1324,6 +1324,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
+"Ο διαχειριστής κατατμήσεων χρειάζεται προνόμια για να λειτουργήσει. "
+"Ανανεώστε τις συσκευές σας και ταυτοποιηθείτε όταν σας ζητηθεί."
 
 #: gui/mainwindow.cpp:231
 #, kde-kuit-format
@@ -2184,23 +2186,19 @@ msgstr "Λείπουν πακέτα υποστήριξης του συστήμα
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr ""
+msgstr "Άγνωστη συσκευή «%1» "
 
 #: gui/mainwindow.cpp:1465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info the partition is NOT a device path, just a number"
-#| msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+#, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr "Άγνωστος ρόλος \"%1\" κατάτμησης για την κατάτμηση %2 (γραμμή %3)."
+msgstr "Άγνωστη κατάτμηση \"%1\" "
 
 #: gui/mainwindow.cpp:1466
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error Importing Partition Table"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr "Σφάλμα κατά την εισαγωγή πίνακα κατατμήσεων"
+msgstr "Σφάλμα κατά το άνοιγμα της κατάτμησης"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -3016,13 +3014,13 @@ msgstr "Δικαιώματα"
 #: gui/sizedialogwidgetbase.ui:326
 #, kde-format
 msgid "Allow everyone to write and read on this device"
-msgstr ""
+msgstr "Να επιτρέπεται σε όλους να γράφουν και να διαβάζουν σε αυτή τη συσκευή"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:329
 #, kde-format
 msgid "Everyone"
-msgstr ""
+msgstr "Όλοι"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:336
@@ -3031,12 +3029,14 @@ msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
 "folder permissions"
 msgstr ""
+"Να επιτρέπεται μόνο στον root να διαβάζει και να γράφει σε αυτήν τη συσκευή, "
+"θα χρειαστεί να ρυθμίσετε δικαιώματα ανά φάκελο"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:339
 #, kde-format
 msgid "Only Root"
-msgstr ""
+msgstr "Μόνο ο root"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
 #: gui/sizedialogwidgetbase.ui:352
@@ -3424,12 +3424,10 @@ msgid "Improved SMART support"
 msgstr "Βελτιωμένη υποστήριξη SMART"
 
 #: main.cpp:104
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Device(s) to manage"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"
-msgstr "Συσκευές για διαχείριση"
+msgstr "Συσκευή για διαχείριση"
 
 #. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
 #: partitionmanager.kcfg:45
