@@ -63,7 +63,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
 
 find_package(PolkitQt${QT_MAJOR_VERSION}-1 REQUIRED)
 ecm_set_disabled_deprecation_versions(QT 5.15.2
-    KF 5.99
+    KF 5.101.0
 )
 
 
