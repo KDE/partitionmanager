@@ -13,72 +13,42 @@
 	<!ENTITY partman-glossary SYSTEM "glossary.docbook">
 
 	<!ENTITY % addindex "IGNORE">
-	<!ENTITY % German "INCLUDE">
+	<!ENTITY % English "INCLUDE">
 ]>
 
 <book id="partitionmanager" lang="&language;">
 	<bookinfo>
-		<title
->Das Handbuch zu &partman;</title>
+		<title>The &partman; Handbook</title>
 		<authorgroup>
-			<author
-><firstname
->Volker</firstname
-> <surname
->Lanz</surname
-> </author>
-			<othercredit role="translator"
-><firstname
->Thomas</firstname
-><surname
->Bögel</surname
-><affiliation
-><address
-><email
->boegel.thomas@gmail.com</email
-></address
-></affiliation
-><contrib
->Übersetzung</contrib
-></othercredit
-> 
+			<author>
+				<firstname>Volker</firstname>
+				<surname>Lanz</surname>
+			</author>
+			<!-- TRANS:ROLES_OF_TRANSLATORS -->
 		</authorgroup>
 
 		<copyright>
-			<year
->2008, 2009, 2010</year>
-			<holder
->Volker Lanz</holder>
+			<year>2008, 2009, 2010</year>
+			<holder>Volker Lanz</holder>
 		</copyright>
 
-		<legalnotice
->&FDLNotice;</legalnotice>
+		<legalnotice>&FDLNotice;</legalnotice>
 
-		<date
->2016-12-01</date>
-		<releaseinfo
->&partman; 3.0.0</releaseinfo>
+		<date>2016-12-01</date>
+		<releaseinfo>&partman; 3.0.0</releaseinfo>
 
 		<abstract>
-			<para
->Verwaltung von Festplatten, Partitionen und Dateisystemen.</para>
+			<para>Manage your disks, partitions and file systems.</para>
 		</abstract>
 
 		<keywordset>
-			<keyword
->KDE</keyword>
-			<keyword
->sysadmin</keyword>
-			<keyword
->Partition</keyword>
-			<keyword
->Verwaltung</keyword>
-			<keyword
->Festplatte</keyword>
-			<keyword
->Gerät</keyword>
-			<keyword
->Dateisystem</keyword>
+			<keyword>KDE</keyword>
+			<keyword>sysadmin</keyword>
+			<keyword>partition</keyword>
+			<keyword>manager</keyword>
+			<keyword>disk</keyword>
+			<keyword>device</keyword>
+			<keyword>filesystem</keyword>
 		</keywordset>
 
 	</bookinfo>

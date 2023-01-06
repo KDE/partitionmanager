@@ -1,153 +1,156 @@
 <chapter id="faq">
-	<title
->Fragen und Antworten</title>
+	<title>Questions and Answers</title>
 
 	<qandaset id="faqlist">
 		<qandaentry>
 			<question>
-				<para
->Wie gefährlich ist &partman; für meine Daten?</para>
+				<para>How dangerous is &partman; for my data?</para>
 			</question>
 			<answer>
-				<para
->Erstens sollten Sie niemals destruktive Operationen (Löschen, Verschieben, Größe ändern) ausführen, ohne vorher eine Sicherungskopie all Ihrer Daten zu machen, die betroffen sein könnten. </para>
-				<para
->Vor diesem Hintergrund ist &partman; ein sicheres Werkzeug. Es führt vor und nach jeder Operation ausführliche Prüfungen durch. Es werden externe Dienstprogramme aufgerufen, die von den Entwicklern des Dateisystems geschrieben und unterstützt werden und es wurde umfassend getestet. </para>
-				<para
->Es besteht immer das Risiko des Datenverlustes wegen eines unbekannten Programmfehlers. Die Entwickler von &partman; sind bemüht, dieses Risiko zu minimieren, jedoch gibt es selbstverständlich keine Garantien. </para>
+				<para>
+					First of all, you should never perform any destructive operations (delete, move, resize) without first making a complete backup of everything affected.
+				</para>
+				<para>
+					Having said that, &partman; is safe to use. It performs extensive checks before and after every operation. It calls external tools written and supported by the file system authors. And it has been tested extensively.
+				</para>
+				<para>
+					There is always the risk of data loss due to an unknown bug. &partman;'s authors try to minimize this risk, but there are of course no guarantees.
+				</para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para
->Ich habe alle empfohlenen externen Pakete zur Unterstützung der Dateisysteme installiert, es werden aber immer noch nicht alle Operationen auf allen Dateisystemen unterstützt.</para>
+				<para>I have installed all recommended external file system support packages and still do not get support for all operations on all file systems.</para>
 			</question>
 			<answer>
-				<para
->Nicht alles, was &partman; prinzipiell beherrscht, kann mit allen Dateisystemen gemacht werden. </para>
-				<para
->Ein Beispiel ist das Ausführen einer Dateisystemüberprüfung auf linuxswap: Dies ist schlicht unmöglich. Es gibt weitere Einschränkungen ähnlicher Art, die für gewisse Dateisysteme bestehen. Es ist nicht möglich, JFS oder XFS zu komprimieren, da keins von beiden Komprimierung unterstützt, mit oder ohne &partman;. </para>
+				<para>
+					Not everything &partman; can do in principle can be done with all file systems.
+				</para>
+				<para>
+					One example is performing a file system check on linuxswap: It is just not possible. There are other limitations like that inherent in some file systems. You cannot shrink JFS or XFS file systems because neither of the two supports shrinking at all, with or without &partman;.
+				</para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para
->Warum sehe ich keine vernünftigen Informationen zum Fortschritt, wenn ich die Größe einer Partition verändere?</para>
+				<para>Why can't I see any meaningful progress information when resizing a partition?</para>
 			</question>
 			<answer>
-				<para
->&partman; kann nur Informationen zum Fortschritt anzeigen, wenn es die Dauer der Einzelaufgaben bei einer Operation kennt. Leider ist dies bei einer Veränderung der Partitionsgröße in der Regel nicht der Fall, da die mit Abstand längste Einzelaufgabe dabei ist, die Größe des Dateisystems auf der Partition zu verändern. Größenveränderungen der Partitionen werden in den meisten Fällen von einem externen Hilfsprogramm durchgeführt, welches von &partman; aufgerufen wird. Diese Hilfsprogramme überliefern aber keine nützlichen Informationen bezüglich ihres Fortschritts an &partman;, sodass nichts zu berichten ist, während sie laufen. </para>
+				<para>
+					&partman; can only show progress information when it knows how long the jobs in an operation will take. Unfortunately this is usually not the case when resizing partitions because the by far longest job when doing so is resizing the file system on the partition. Resizing file systems is in most cases something an external tool will do on behalf of &partman; and these external tools do not provide useful progress information to &partman;, so there's nothing to report while they are running.
+				</para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para
->Warum kann ich die Größe der root-Partition nicht verändern? Wie kann ich die Größe der Partition verändern, auf welcher sich der Ordner /home befindet?</para>
+				<para>Why can't I resize the root partition? How can I resize the partition /home is on?</para>
 			</question>
 			<answer>
-				<para
->Um eine Partition zu modifizieren, darf diese nicht eingehängt sein. Die root-Partition kann jedoch nicht ausgehängt werden. Genauso wenig kann die home-Partition ausgehängt werden, wenn sich der persönliche Ordner (/home) eines gerade angemeldeten Benutzers darauf befindet. </para>
-				<para
->Um dies zu umgehen, kann man das System von einer Linux-Live-CD starten, welche das Paket &partman; enthält, und von dort aus die entsprechenden Partitionen modifizieren. </para>
+				<para>
+					To modify a partition it must not be mounted. You can however not unmount the root partition. Neither will you be able to unmount the home partition if the home directory of the currently logged in user is on it.
+				</para>
+				<para>
+					The solution for this problem is to boot from a Linux Live CD that comes with &partman; and modify these partitions from there.
+				</para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para
->Ich bekomme eine Warnmeldung in der Protokollausgabe, in der irgendetwas darüber steht, dass die Partition mit der von mir angegebenen Größe nicht erstellt werden kann und stattdessen kleiner sein wird. Was ist passiert?</para>
+				<para>I'm getting a warning message in the log output about something that a partition cannot be created with the size I requested and that it will instead be smaller. What happened?</para>
 			</question>
 			<answer>
-				<para
->Bei MS-DOS-Partitionstabellen müssen Partitionen an den Zylindergrenzen beginnen und enden. Dies hat vorwiegend historische Gründe. &partman; wird dies intern handhaben und versuchen, den Benutzer nicht mit dieser Einschränkung zu belästigen. </para>
-				<para
->Unter seltenen Umständen wird &partman; jedoch wegen dieser Einschränkung nicht in der Lage sein, die Operation so einzurichten, wie der Benutzer dies gefordert hat. Zum Beispiel wenn ein Zylinder auf dem Gerät 8 MiB groß ist, und es wird versucht, die Partition um 6 MiB zu verkleinern, wird dies nicht funktionieren. </para>
-				<para
->Diese Meldung kann auch vorkommen, wenn ein Gerät und eine Partitionstabelle vorliegen, bei welchen die Partitionen – aus welchem Grund auch immer – nicht korrekt an die Zylindergrenzen angepasst sind, und es wird zum ersten Mal versucht, diese Partitionen zu verschieben oder zu kopieren. </para>
-				<para
->Diese Meldung an sich ist harmlos und wird nur ausgegeben, um den Benutzer zu informieren, dass etwas nicht exakt so gemacht werden kann, wie es der Benutzer erwartet. Ihre Partitionen und Daten werden auf keine Weise negativ beeinflusst, wenn Sie diese Meldung sehen. </para>
+				<para>
+					On MS-DOS partition tables, partitions have to begin and end on cylinder boundaries. This is mainly for historical reasons. &partman; will deal with this internally and try not to bother the user with that limitation.
+				</para>
+				<para>
+					Under rare circumstances, &partman; will however not be able to set up an operation in the way the user requested it due to this limitation. For example, if one cylinder on a device is 8 MiB large and you try to resize a partition by 6 MiB, this will not work.
+				</para>
+				<para>
+					You might also encounter this message if you have a device and partition table where the partitions are, for whatever reason, not correctly snapped to cylinder boundaries and you try to move or copy these partitions for the first time.
+				</para>
+				<para>
+					The message itself is harmless and only exists to inform the user that something can not be done quite exactly the way the user expects. Your partitions and data will not be negatively affected in any way if you see this message.
+				</para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para
->Wie viele Operationen kann ich zur Liste der ausstehenden Operationen hinzufügen?</para>
+				<para>How many operations can I add to the list of pending operations?</para>
 			</question>
 			<answer>
-				<para
->Es gibt keine Beschränkung. </para>
-				<para
->Es wird jedoch nicht empfohlen, zu viele Operationen zur Liste hinzuzufügen. Es besteht immer eine kleine Wahrscheinlichkeit, dass eine der Operationen nicht erfolgreich abgeschlossen werden kann und mit einem Fehler abbricht; &partman; wird dann die Durchführung der Operationen anhalten. In diesem Fall ist es viel einfacher, herauszufinden, was passiert ist (und alle Operationen wieder hinzuzufügen, die nicht durchgelaufen sind), wenn die Liste der ausstehenden Operationen nicht allzu lang war. </para>
+				<para>
+					There is no limit.
+				</para>
+				<para>
+					It is however not recommended to add too many operations to the list. There is always a small chance an operation might fail with an error, in which case &partman; will stop executing operations. In that case it is a lot easier to find out what happened (and to re-add all the operations that could not be executed) if the list of pending operations was not exceedingly long.
+				</para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para
->Veränderung der Größe eines ext2- oder ext3-Dateisystems ist gescheitert, wobei in dem Bericht etwas über <quote
->kein Speicherplatz mehr auf dem Gerät</quote
-> stand. Was ist passiert? Sind meine Daten jetzt beschädigt?</para>
+				<para>Resizing an ext2 or ext3 file system failed with something in the report about <quote>no space left on device</quote>. What happened? Is my data corrupted now?</para>
 			</question>
 			<answer>
-				<para
->Dies ist ein Problem des <command
->e2resize</command
->-Befehls und des zugrunde liegenden ext2/3/4-Dateisystems. Wenn ein Dateisystem fast voll ist, kann <command
->e2resize</command
-> es nicht verkleinern, obwohl dies von der Anzahl der verbleibenden freien Sektoren her möglich sein sollte. &partman; kann leider nicht im Voraus wissen, ob <command
->e2resize</command
-> mit diesem Fehler für ein angegebenes System abbricht oder nicht. Sollte dies passieren, wird nichts weiter durchgeführt und Ihre Daten werden nicht negativ beeinflusst. </para>
-				<para
->Zurzeit kann dieses Problem nicht wirklich umgangen werden. </para>
+				<para>
+					This is a problem of the <command>e2resize</command> command and the underlying ext2/3/4 file system. If a file system is nearly full, <command>e2resize</command> cannot make it any smaller even though that should be possible from the number of free sectors left. &partman; can unfortunately not know beforehand if <command>e2resize</command> will abort with this error for a given file system or not. If it happens nothing will be done at all and your data will not be negatively affected.
+				</para>
+				<para>
+					There is no real workaround for this problem right now.
+				</para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para
->Warum kann ich meine Floppy-Diskette nicht mit &partman; formatieren? Warum gibt es keine Unterstützung für das Schreiben auf CDs oder das Brennen von DVDs?</para>
+				<para>Why can't I format my floppy disk with &partman;? Why is there no support for CD writing or DVD burning?</para>
 			</question>
 			<answer>
-				<para
->&partman; wurde für keinen dieser Zwecke entwickelt: Dies ist eine Anwendung, die mit Partitionen und Dateisystemen auf diesen Partitionen arbeitet. Floppy-Disketten, CDs oder DVDs brauchen bzw. nutzen keine Partitionen. </para>
+				<para>
+					None of this is what &partman; has been designed to do: It is an application that deals with partitions and the file systems on these partitions. Floppy disks, CDs or DVDs do not need or use partitions.
+				</para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para
->Warum kann ich keine Partitionen auf Geräten mit Amiga- oder BSD-Partitionstabellen modifizieren?</para>
+				<para>Why can't I modify partitions on a device with an amiga or bsd partition table?</para>
 			</question>
 			<answer>
-				<para
->&partman; erlaubt zurzeit lediglich „Nur Lesen“-Zugriff auf alle Typen von Partitionstabellen außer MS-DOS. Dies ist aus Sicherheitsgründen so: Unterstützung dieser Typen von Partitionstabellen in &partman; ist eigentlich nicht da und das, was da ist (oder nur per Zufall funktioniert) wurde nicht genügend getestet, um es verlässlich nutzen zu können. </para>
-				<para
->Natürlich können Sie immer noch eine neue MS-DOS-Partitionstabelle auf einem solchen Gerät erstellen, dies ist jedoch wahrscheinlich nicht gerade das, was Sie wünschen. </para>
+				<para>
+					&partman; currently only allows read-only access to any other partition table type than MS-DOS. This is for safety reasons: Support in &partman; for this partition table types is not really there and what is there (or just incidentally works) has not been tested enough to use it with confidence.
+				</para>
+				<para>
+					Of course you can still create a new MS-DOS partition table on the device in question, but that is probably not what you want.
+				</para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para
->Beim Starten hängt &partman; einige Minuten, während es anscheinend versucht, das Floppy-Laufwerk auf meinem Rechner zu scannen.</para>
+				<para>On startup, &partman; hangs for a couple of minutes while it apparently tries to scan the floppy drive on my computer.</para>
 			</question>
 			<answer>
-				<para
->Dies passiert, wenn ein Floppy-Laufwerk in den BIOS-Einstellungen Ihres Rechners eingerichtet ist, tatsächlich aber nicht angeschlossen ist. Wenn Sie kein Floppy-Laufwerk haben, überprüfen Sie Ihre BIOS-Einstellungen und deaktivieren Sie alle Floppy-Laufwerke, die dort eingerichtet sind; überprüfen Sie anschließend, ob das Problem behoben wurde. </para>
+				<para>
+					This happens if you have a floppy drive configured in your computer's BIOS settings but have not actually connected one. If you do not have a floppy drive check your BIOS settings and disable any floppy drives configured there to see if this makes the problem go away.
+				</para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para
->Während des Starts gibt &partman; eine Meldung darüber aus, dass Geräte gesucht werden und dass es sogar zum Absturz kommen kann oder zumindest eine Lange Zeit dauern kann.</para>
+				<para>During startup, &partman; prints some message about probing devices and that it might even crash or at least take a long time.</para>
 			</question>
 			<answer>
-				<para
->LibParted, die von &partman; genutzte Backend-Bibliothek, hat Probleme mit Systemen, in denen Linux Device Mapper auf eine Weise verwendet wird, die sie nicht versteht. Leider reagiert die Bibliothek auf solche Situationen manchmal mit Speicherzugriffsfehlern, d. h. sie stürzt ab. &partman; versucht deswegen, diese Situationen zu vermeiden, indem es einen alternativen Weg nutzt, um Laufwerke auf Ihrem Rechner zu suchen. Wenn es dies jedoch nicht schafft und sich also auf LibParted verlassen muss, wird eine derartige Meldung ausgegeben. Falls die Suche nach Laufwerken funktioniert, können Sie die Meldung bedenkenlos ignorieren. </para>
+				<para>
+					LibParted, a backend library &partman; uses, has problems with systems where the Linux Device Mapper is used in a way it doesn't understand. Unfortunately it reacts to some of these situations with segmentation faults, i.e. crashes. &partman; therefore tries to avoid these situations by using an alternative way to scan your computer for disks. If it cannot do that, however, and therefore has to rely on LibParted, it will print a message like the one mentioned. If the scanning for disks works, you can safely disregard the message.
+				</para>
 			</answer>
 		</qandaentry>
 <!--
 		<qandaentry>
 			<question>
-				<para
-></para>
+				<para></para>
 			</question>
-			 
+			<answer>
+				<para>
+				</para>
+			</answer>
 		</qandaentry>
 -->
 	</qandaset>

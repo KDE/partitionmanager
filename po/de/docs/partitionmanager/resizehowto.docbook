@@ -1,236 +1,172 @@
 <sect1 id="howto-resizepartition">
-	<title
->Anleitung: Größenänderung einer Partition</title>
+	<title>How-To: Resizing a Partition</title>
 
-	<para
->Diese Anleitung beschreibt das Vorgehen bei einer Größenänderung einer <glossterm linkend="glossary-partition"
->Partition</glossterm
->, auf der zu wenig freier Speicherplatz verblieben ist. Auf den folgenden Bildschirmfotos wird die Situation vor der Größenänderung dargestellt: </para>
+	<para>
+		This how-to explains the resizing of a <glossterm linkend="glossary-partition">partition</glossterm> that is becoming too full. See the following screenshot for the initial situation before resizing:
+	</para>
 
 	<para>
 		<screenshot>
 			<mediaobject>
-				<imageobject
-><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
-				<textobject
-><phrase
->Hauptfenster vor der Änderung der Partitionsgröße</phrase
-></textobject>
+				<imageobject><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
+				<textobject><phrase>Main window before resizing partitions</phrase></textobject>
 			</mediaobject>
 		</screenshot>
 	</para>
 
-	<para
->Auf dem <glossterm linkend="glossary-device"
->Gerät</glossterm
-> <quote
->/dev/sdb</quote
-> verbleibt auf Partition <quote
->sdb2</quote
-> nur noch wenig freier Speicherplatz, während die andere Partition, <quote
->sdb1</quote
->, noch sehr viel freien Speicherplatz aufweist. Aus diesem Grund scheint es sinnvoll zu sein, die erste Partition zu verkleinern um den freien Speicherplatz auf <quote
->sdb2</quote
-> zu erhöhen. </para>
+	<para>
+		On <glossterm linkend="glossary-device">device</glossterm> <quote>/dev/sdb</quote>, partition <quote>sdb2</quote> has only little free space left while the other partition, <quote>sdb1</quote>, is far from being full. For that reason it seems advisable to make the first partition a little smaller and grow <quote>sdb2</quote> so it has more free space available.
+	</para>
 
 	<note>
-		<title
->Hinweis: Eingehängte Partitionen können nicht geändert werden.</title>
-		<para
->Im obigen Bildschirmfoto ist keine der beiden Partitionen eingehängt. Wenn eine oder beide Partitionen eingehängt wären, müssten diese zunächst mit dem Befehl <xref linkend="menu-partition-mount"/> ausgehängt werden.</para>
+		<title>Note: You cannot modify mounted partitions.</title>
+		<para>In the screenshot above both partitions are not currently mounted. If one or both of them were mounted you would have to unmount them first using <xref linkend="menu-partition-mount"/>.</para>
 	</note>
 
-	<para
->Im ersten Schritt wird zusätzlicher Platz zum Vergrößern der Partition geschaffen, weshalb zunächst die Partition <quote
->sdb1</quote
-> verkleinert wird. Klicken Sie auf die Partition und wählen Sie <xref linkend="menu-partition-resize"/>. Es erscheint folgender Dialog: </para>
+	<para>
+		The first step is to make more room for the partition to grow, so start by shrinking <quote>sdb1</quote>. Click on the partition and choose <xref linkend="menu-partition-resize"/>. The following dialog comes up:
+	</para>
 
 	<para>
 		<screenshot>
 			<mediaobject>
-				<imageobject
-><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
-				<textobject
-><phrase
->Dialog zur Größenänderung von /dev/sdb1</phrase
-></textobject>
+				<imageobject><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
+				<textobject><phrase>Resize dialog before resizing /dev/sdb1</phrase></textobject>
 			</mediaobject>
 		</screenshot>
 	</para>
 
-	<para
->Dieser Dialog bietet mehrere Möglichkeiten, um die Größe der Partition zu verändern. Sie können entweder den rechten Schieberegler nach links ziehen, bis die Partition die gewünschte Größe hat oder die Größe direkt in das Feld <guilabel
->Größe</guilabel
-> eingeben. Eine weitere Möglichkeit ist das Anklicken der kleinen Pfeile neben dem Textfeld, was jedoch für größere Änderungen aufwändiger ist. </para>
+	<para>
+		The dialog allows you to resize the partition in multiple ways. You can either drag the right handle to the left until the partition has the desired size or simply enter the size in the <guilabel>Size</guilabel> text field. Another possibility would be to adjust the size by clicking on the little arrows next to the text field, but that is a little tedious for larger changes.
+	</para>
 
-	<para
->Unabhängig von der gewählten Methode sollte der Dialog nun folgendermaßen aussehen: </para>
+	<para>
+		Whichever way you prefer for setting the new size, the dialog should now look like this:
+	</para>
 
 	<para>
 		<screenshot>
 			<mediaobject>
-				<imageobject
-><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
-				<textobject
-><phrase
->Dialog zur Größenänderung von /dev/sdb1 nach der Änderung</phrase
-></textobject>
+				<imageobject><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
+				<textobject><phrase>Resize dialog after resizing /dev/sdb1</phrase></textobject>
 			</mediaobject>
 		</screenshot>
 	</para>
 
-	<para
->Wenn Sie auf <guibutton
->OK</guibutton
-> klicken, wird eine neue Operation zur Liste der anstehenden Operationen hinzugefügt und sowohl die grafische Ansicht, als auch die Baumansicht des Gerätes werden aktualisiert, um die geänderte Größe anzuzeigen: </para>
+	<para>
+		After you click on <guibutton>OK</guibutton>, a new operation is added to the pending operations list and the graphical view and tree view of the device are updated to reflect the new situation:
+	</para>
 
 	<para>
 		<screenshot>
 			<mediaobject>
-				<imageobject
-><imagedata fileref="resize_howto_4.png" format="PNG"/></imageobject>
-				<textobject
-><phrase
->Hauptfenster nach der Größenänderung von /dev/sdb1</phrase
-></textobject>
+				<imageobject><imagedata fileref="resize_howto_4.png" format="PNG"/></imageobject>
+				<textobject><phrase>Main window after resizing /dev/sdb1</phrase></textobject>
 			</mediaobject>
 		</screenshot>
 	</para>
 
 	<note>
-		<title
->Beachten Sie: Vor der Anwendung von Operationen wird eine Vorschau angezeigt.</title>
-		<para
->Obwohl das Hauptfenster eine Vorschau des Zustandes des Gerätes nach der Änderung anzeigt, wurde die Operation noch nicht ausgeführt: ausstehende Operationen können rückgängig gemacht werden (einzeln mit Hilfe des Befehls <xref linkend="menu-edit-undo"/>, bzw. alle Operationen auf einmal mit dem Befehl <xref linkend="menu-edit-clear"/>) oder &partman; kann beendet werden, was dazu führt, dass keinerlei Änderungen durchgeführt werden.</para>
+		<title>Note: Operations are previewed first before applying them.</title>
+		<para>Although the main window reflects the device's state how it will be after applying the new operation, the operation has in fact not been applied yet: While operations are pending you can still undo them (one by one using <xref linkend="menu-edit-undo"/> or <xref linkend="menu-edit-clear"/> to undo all of them) or quit &partman;, and nothing will have been modified at all.</para>
 	</note>
 	
-	<para
->Da nun freier Speicherplatz zwischen den zwei Partitionen existiert, können Sie die Partition <quote
->sdb2</quote
-> verschieben und vergrößern. Klicken Sie hierzu auf <quote
->sdb2</quote
-> und wählen Sie wiederum  <xref linkend="menu-partition-resize"/>. Es erscheint erneut der Dialog zur Größenänderung, in diesem Fall der zweiten Partition. Ziehen Sie den linken Schieberegler ganz nach links, sodass der Dialog wie folgt aussieht: </para>
+	<para>
+		Now that there is some free space between the two partitions you can move and grow partition <quote>sdb2</quote>. First, click on <quote>sdb2</quote> and choose <xref linkend="menu-partition-resize"/> again. The resize dialog comes up once more, this time for the second partition. Drag its left handle to the leftmost end so that the dialog looks like this:
+	</para>
 
 	<para>
 		<screenshot>
 			<mediaobject>
-				<imageobject
-><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
-				<textobject
-><phrase
->Dialog zur Größenänderung von /dev/sdb2 nach der Änderung</phrase
-></textobject>
+				<imageobject><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
+				<textobject><phrase>Resize dialog after resizing /dev/sdb2</phrase></textobject>
 			</mediaobject>
 		</screenshot>
 	</para>
 
-	<para
->Achten Sie darauf, dass das Beschriftungsfeld <guilabel
->Freier Speicherplatz davor</guilabel
-> den Wert <quote
->0 MiB</quote
-> anzeigt, da andererseits ein kleiner Anteil des freien Speicherplatzes zwischen den Partitionen verschwendet wird. </para>
+	<para>
+		Be careful to make sure that the <guilabel>Free space before</guilabel> text field really does show <quote>0 MiB</quote> because otherwise there will be a little free space left between the partitions that will then be wasted.
+	</para>
 
-	<para
->Klicken Sie nun auf den Knopf <guibutton
->OK</guibutton
->. Das Hauptfenster sieht nun folgendermaßen aus: </para>
+	<para>
+		Now click <guibutton>OK</guibutton> again. In the main window things now look like this:
+	</para>
 
 	<para>
 		<screenshot>
 			<mediaobject>
-				<imageobject
-><imagedata fileref="resize_howto_6.png" format="PNG"/></imageobject>
-				<textobject
-><phrase
->Hauptfenster nach der Größenänderung von /dev/sdb2</phrase
-></textobject>
+				<imageobject><imagedata fileref="resize_howto_6.png" format="PNG"/></imageobject>
+				<textobject><phrase>Main window after resizing /dev/sdb2</phrase></textobject>
 			</mediaobject>
 		</screenshot>
 	</para>
 
-	<para
->Das Ergebnis sieht wie gewünscht aus, wählen Sie also <xref linkend="menu-edit-apply"/>. Es öffnet sich ein Dialogfenster, das Sie dazu auffordert, die ausstehenden Operationen zu bestätigen. Bestätigen Sie diesen Dialog und &partman; wird nun damit beginnen, die Änderungen auszuführen. </para>
+	<para>
+		This already looks like what you wanted, so choose <xref linkend="menu-edit-apply"/>. A dialog box will come up and ask you if you are sure to apply the pending operations. Confirm this dialog box and &partman; will begin executing operations:
+	</para>
 
 	<para>
 		<screenshot>
 			<mediaobject>
-				<imageobject
-><imagedata fileref="resize_howto_7.png" format="PNG"/></imageobject>
-				<textobject
-><phrase
->&partman; führt die Änderungen aus</phrase
-></textobject>
+				<imageobject><imagedata fileref="resize_howto_7.png" format="PNG"/></imageobject>
+				<textobject><phrase>&partman; is applying operations</phrase></textobject>
 			</mediaobject>
 		</screenshot>
 	</para>
 
-	<para
->Während die Änderungen ausgeführt werden, können Sie auf das Plus-Symbol neben jeder Operation in der Liste klicken, um die Einzelaufgabe angezeigt zu bekommen, aus denen die Operation besteht und welcher Schritt gerade durchgeführt wird. </para>
+	<para>
+		While operations are being executed you can click on the plus-sign next to each operation in the list to find out the jobs it is made up of and see which job is currently being run.
+	</para>
 
-	<para
->Bei einer Vergrößerung von Partitionen zur linken Seite, wie oben am Beispiel von <quote
->/dev/sdb2</quote
-> beschrieben, muss immer die Partition zunächst nach links verschoben werden, bevor sie vergrößert werden kann, da Partitionen nicht direkt nach links vergrößert werden können. Leider nimmt das Bewegen einer großen Partition einige Zeit in Anspruch. Es ist nicht ungewöhnlich, dass eine derartige Operation mehrere Minuten oder noch länger dauert. </para>
+	<para>
+		Resizing a partition in the way you resized <quote>/dev/sdb2</quote> above always means it has to be moved to the left first before it can be grown because partitions can never be grown to the left directly. Unfortunately, moving such a large partition will take quite some time. It is not unusual for an operation like this to take several minutes or even more.
+	</para>
 
-	<para
->Alle Änderungen wurden erfolgreich durchgeführt: </para>
+	<para>
+		Finally, all operations will have been successfully completed:
+	</para>
 
 	<para>
 		<screenshot>
 			<mediaobject>
-				<imageobject
-><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
-				<textobject
-><phrase
->Fortschrittsdialog nach der erfolgreichen Durchführung aller Änderungen</phrase
-></textobject>
+				<imageobject><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
+				<textobject><phrase>Progress dialog after successfully applying operations</phrase></textobject>
 			</mediaobject>
 		</screenshot>
 	</para>
 
-	<para
->Schließen Sie die Fortschrittsanzeige, indem Sie <guibutton
->OK</guibutton
-> wählen, um zum Hauptfenster zurückzukehren. &partman; liest nun Ihre Geräte neu ein, was einige Sekunden in Anspruch nehmen kann. </para>
+	<para>
+		By clicking on <guibutton>OK</guibutton> you can now close the progress dialog and return to the main window. &partman; will rescan your devices at this point so that might take a few seconds.
+	</para>
 
-	<para
->Klicken Sie auf den Knopf <guibutton
->Details</guibutton
->, dann werden alle durchgeführten Änderungen angezeigt. </para>
+	<para>
+		If you are interested in some more details about the operations that were just run click on <guibutton>Details</guibutton>. You will see the detailed report that is always generated (and updated on the fly) while &partman; executes operations:
+	</para>
 
 	<para>
 		<screenshot>
 			<mediaobject>
-				<imageobject
-><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
-				<textobject
-><phrase
->Details im Fortschrittsdialog</phrase
-></textobject>
+				<imageobject><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
+				<textobject><phrase>Progress dialog details</phrase></textobject>
 			</mediaobject>
 		</screenshot>
 	</para>
 
-	<para
->Der Bericht ist insbesondere dann hilfreich, wenn ein Fehler während der Durchführung von Änderungen auftritt. Ein Bericht zeigt jede Operation, jede Einzelaufgabe und jeden externen Befehl an, der ausgeführt wird und ist daher für die Fehlerbehebung sehr nützlich. </para>
+	<para>
+		This report is particularly of interest if an error occurs while executing operations. A report shows each operation, each job and each external command that is being run and is thus very helpful when trying to track down problems.
+	</para>
 
-	<para
->Sie können sich den Bericht als <acronym
->HTML</acronym
->-Datei speichern oder in einem externen Webbrowser anzeigen lassen. </para>
+	<para>
+		You can save the report as <acronym>HTML</acronym> or view it in an external web browser.
+	</para>
 
 	<tip>
-		<para
->Wenn bei der Ausführung von Operationen Fehler auftreten, speichern Sie den Bericht als HTML-Datei ab, um später aufgetretene Fehlermeldungen und Warnungen nachsehen zu können. Des Weiteren können Sie diesen hinzufügen, wenn Sie beim Fehlerberichtsystem von &kde; unter <ulink url="https://bugs.kde.org"
->bugs.kde.org</ulink
-> einen Fehlerbericht erstellen. </para>
+		<para>
+			Always save the detailed report as <acronym>HTML</acronym> when executing the operations fails with errors or warnings for later reference. You might also want to include it in a bug report you submit to the &kde; bug tracking system at <ulink url="https://bugs.kde.org">bugs.kde.org</ulink>.
+		</para>
 	</tip>
 	
-	<para
->Um die Details auszublenden, wählen Sie erneut den Knopf <guibutton
->Details</guibutton
-> und klicken Sie auf <guibutton
->OK</guibutton
->, um den Fortschrittsdialog zu schließen. </para>
+	<para>
+		To hide the details again click on <guibutton>Details</guibutton> and to finally close the progress dialog click on <guibutton>OK</guibutton>.
+	</para>
 </sect1>

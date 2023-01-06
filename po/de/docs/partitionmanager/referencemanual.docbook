@@ -1,40 +1,26 @@
 <chapter id="reference">
-	<title
->Befehlsreferenz</title>
+	<title>Command Reference</title>
 
 	<sect1 id="reference-overview">
-		<title
->Übersicht</title>
-		<para
->Dieses Kapitel erklärt detailliert alle Befehle, die in &partman; vorhanden sind. Es ist als Referenz gedacht, um Informationen in <xref linkend="usermanual"/> zu ergänzen.</para>
+		<title>Overview</title>
+		<para>This chapter gives detailed explanations of all commands available in &partman;. It is intended as a reference to accompany the information given in <xref linkend="usermanual"/>.</para>
 
 	<sect2 id="menu-file">
-		<title
->Das Menü <quote
->Datei</quote
-></title>
+		<title>The File Menu</title>
 		<para>
 			<variablelist>
 				<varlistentry id="menu-file-quit">
 					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->Q</keycap
-></keycombo
-> </shortcut
-><guimenu
->Datei</guimenu
-><guimenuitem
->Beenden</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo></shortcut>
+							<guimenu>File</guimenu>
+							<guimenuitem>Quit</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Beendet &partman;</action
-> ohne die ausstehenden Operationen anzuwenden. &partman; bittet Sie jedoch, das Beenden zu bestätigen, wenn Operationen ausstehen. </para>
+						<para>
+							<action>Quits &partman;</action> without applying any pending operations. The application will however ask you to confirm your choice to quit if there are pending operations.
+						</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -42,70 +28,56 @@
 	</sect2>
 
 	<sect2 id="menu-edit">
-		<title
->Das Menü <quote
->Bearbeiten</quote
-></title>
+		<title>The Edit Menu</title>
 		<para>
 			<variablelist>
 				<varlistentry id="menu-edit-undo">
 					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->Z</keycap
-></keycombo
-></shortcut
-> <guimenu
->Bearbeiten</guimenu
-> <guimenuitem
->Rückgängig</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo></shortcut>
+							<guimenu>Edit</guimenu>
+							<guimenuitem>Undo</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Macht die letzte Operation rückgängig</action
->, die als letztes zur Liste der Operationen hinzugefügt wurde. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn die Liste der Operationen nicht leer ist. </para>
+						<para>
+							<action>Undoes the last operation</action> that has been added to the operation stack.
+						</para>
+						<para>
+							This command is only enabled if the list of operations is not empty.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-edit-clear">
 					<term>
-						<menuchoice
-><guimenu
->Bearbeiten</guimenu
-> <guimenuitem
->Löschen</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Edit</guimenu>
+							<guimenuitem>Clear</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Löscht die Liste der Operationen</action
->, ohne diese anzuwenden. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn die Liste der Operationen nicht leer ist. </para>
+						<para>
+							<action>Clears the list of operations</action> without applying any of them.
+						</para>
+						<para>
+							This command is only enabled if the list of operations is not empty.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-edit-apply">
 					<term>
-						<menuchoice
-><guimenu
->Bearbeiten</guimenu
-> <guimenuitem
->Anwenden</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Edit</guimenu>
+							<guimenuitem>Apply</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Wendet die Liste von Operationen an</action
->. Dieser Befehl wendet alle Operationen in der Liste an, sodass die Änderungen dauerhaft auf die Festplatten geschrieben werden. Nach Anwendung der Änderungen wird die Liste der anstehenden Änderungen geleert und es gibt keine Möglichkeit, die Änderungen rückgängig zu machen. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn die Liste der Operationen nicht leer ist. </para>
+						<para>
+							<action>Applies the list of operations</action>. This command will apply all operations in the list so that all changes are permanently written to your disks. After the operations have been applied, the list is cleared and there will be no way to undo any operation.
+						</para>
+						<para>
+							This command is only enabled if the list of operations is not empty.
+						</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -113,108 +85,89 @@
 	</sect2>
 
 	<sect2 id="menu-device">
-		<title
->Das Menü <quote
->Gerät</quote
-></title>
+		<title>The Device Menu</title>
 		<para>
 			<variablelist>
 				<varlistentry id="menu-device-selectcurrentdevice">
 					<term>
-						<menuchoice
-><guimenu
->Gerät</guimenu
-> <guimenuitem
->Aktuelles Gerät auswählen</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Device</guimenu>
+							<guimenuitem>Select Current Device</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
->Hierüber können Sie ein Gerät aus einem Untermenü wählen, in dem alle Geräte Ihres Systems aufgezählt werden. </para>
+						<para>Allows you to select a device from a submenu with all available devices of the system.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;&Shift;<keycap
->N</keycap
-></keycombo
-></shortcut
-> <guimenu
->Gerät</guimenu
-> <guimenuitem
->Neue Partitionstabelle</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo></shortcut>
+							<guimenu>Device</guimenu>
+							<guimenuitem>New Partition Table</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Erstellt eine neue Partitionstabelle</action
->: Dieser Befehl erstellt eine neue, leere GTP- oder MSDOS-Partitionstabelle auf dem aktuell ausgewählten Gerät. Dadurch werden alle Partitionen und somit alle Daten auf dem Gerät gelöscht. Seien Sie daher vorsichtig bei der Anwendung dieses Befehls. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn ein Gerät ausgewählt ist und keine Partition des Gerätes eingehängt ist. </para>
+						<para>
+							<action>Creates a new partition table</action>: This command creates a new and empty GPT or MSDOS partition table on the currently selected device. This will delete all partitions on the device and all data on them, so you will want to be careful with this command.
+						</para>
+						<para>
+							This command is only enabled if a device is selected and no partition on this device
+							is currently mounted.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-device-exportpartitiontable">
 					<term>
-						<menuchoice
-><guimenu
->Gerät</guimenu
-> <guimenuitem
->Partitionstabelle exportieren</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Device</guimenu>
+							<guimenuitem>Export Partition Table</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
->Hierüber können Sie eine Liste aller Partitionen des ausgewählten Geräts in eine Datei exportieren. </para>
+						<para>Allows you to export a list of all partitions on the selected device into a file.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-device-importpartitiontable">
 					<term>
-						<menuchoice
-><guimenu
->Gerät</guimenu
-> <guimenuitem
->Partitionstabelle importieren</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Device</guimenu>
+							<guimenuitem>Import Partition Table</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
->Hierüber können Sie eine Partitionstabelle aus einer vormals exportierten Datei importieren.</para>
-						<para
->Dieser Befehl löscht alle Partitionen und somit alle Daten auf dem Gerät. Seien Sie daher vorsichtig bei der Anwendung dieses Befehls.</para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn ein Gerät ausgewählt ist und keine Partition des Gerätes eingehängt ist. Der Import in ein logisches Gerät wie z.B. LVM Volume Groups wird zur Zeit nicht unterstützt.</para>
+						<para>Allows you to import partition table from a previously exported file.</para>
+						<para>This will delete all partitions on the device and all data on them,
+						so you will want to be careful with this command.</para>
+						<para>This command is only enabled if a device is selected and no partition on this device is
+						currently mounted. Importing into logical devices such as LVM Volume Groups is currently not supported.</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-device-smartstatus">
 					<term>
-						<menuchoice
-><guimenu
->Gerät</guimenu
-> <guimenuitem
->SMART-Status</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Device</guimenu>
+							<guimenuitem>SMART Status</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
->Zeigt einen SMART-Bericht an. SMART ist ein in Festplatten und SSDs eingebautes Überwachungssystem zur Erkennung von und Benachrichtigung über verschiedene Kennwerte zur Zuverlässigkeit des Laufwerks. Der Zweck ist die Vorhersage von Hardware-Versagen.</para>
+						<para>Shows a SMART report. SMART is a monitoring system included in hard disk and solid-state drives
+						that detects and reports on various indicators of drive reliability, with the intent of enabling the
+						anticipation of hardware failures.</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-device-properties">
 					<term>
-						<menuchoice
-><guimenu
->Gerät</guimenu
-> <guimenuitem
->Eigenschaften</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Device</guimenu>
+							<guimenuitem>Properties</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
->Zeigt Informationen über ausgewählte Geräte. In diesem Dialog finden Sie die Kapazität, Sektorgröße, Partitionstabelle, sowie die aktuelle und maximale Anzahl an Primärpartitionen.</para>
+						<para>Shows information about currently selected devices. In this dialog you can find capacity, sector sizes,
+						partition table type as well as used and maximum number of primary partitions.</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -222,92 +175,63 @@
 	</sect2>
 
 	<sect2 id="menu-tools">
-		<title
->Das Menu <quote
->Extras</quote
-> </title>
+		<title>The Tools Menu</title>
 		<para>
 			<variablelist>
 				<varlistentry id="menu-tools-volumegroup">
 					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->L</keycap
-></keycombo
-></shortcut
-> <guimenu
->Extras</guimenu
-> <guimenuitem
->Neue „Volume Group“</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo></shortcut>
+							<guimenu>Tools</guimenu>
+							<guimenuitem>New Volume Group</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
->Erzeugt eine neues logisches Gerät wie z.B. eine <link linkend="glossary-lvm"
->LVM</link
-> Volume Group.</para>
+						<para>Create a new logical device such as <link linkend="glossary-lvm">LVM</link> Volume Group.</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-tools-filesystemsupport">
 					<term>
-						<menuchoice
-><guimenu
->Extras</guimenu
-> <guimenuitem
->Dateisystem-Unterstützung</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Tools</guimenu>
+							<guimenuitem>File System Support</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Zeigt die Liste unterstützter Dateisysteme an.</action
-> Dieser Dialog zeigt an, welche Operationen für einzelne Dateisysteme unterstützt werden. </para>
-						<para
->Hier sehen Sie eine Beispielansicht der Liste unterstützter Dateisysteme, wenn die meisten externen Dienstprogramme installiert sind: </para>
+						<para>
+							<action>Shows the file system support dialog.</action> This dialog shows in detail which operations can be performed for which of the supported file systems.
+						</para>
+						<para>
+							Here is an example how the dialog might look like with most external tools installed:
+						</para>
 						<para>
 							<screenshot>
 								<mediaobject>
-									<imageobject
-><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject
-><phrase
->Liste unterstützter Dateisysteme, wenn die meisten externen Dienstprogramme installiert sind</phrase
-></textobject>
+									<imageobject><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject><phrase>File system support dialog with most external tools installed</phrase></textobject>
 								</mediaobject>
 							</screenshot>
 						</para>
-						<para
->Blaue Haken bedeuten <quote
->unterstützt</quote
->, rote Kreuze bedeuten <quote
->nicht unterstützt</quote
->. Einige Kombinationen werden nicht unterstützt, weil sie sich ausschließen, beispielsweise die Überprüfung eines linuxswap-Dateisystems. Andere Operationen werden nicht unterstützt, weil die zugrunde liegenden Dienstprogramme die Funktionalität nicht unterstützen </para>
-						<para
->Wenn Sie neue Dienstprogramme installieren, während &partman; ausgeführt wird, wählen Sie <guibutton
->Erneut prüfen</guibutton
->, um eine erneute Überprüfung auf installierte Dienstprogramme zu erzwingen. </para>
+						<para>
+							The blue check marks mean <quote>supported</quote>, the red crosses mean <quote>not supported</quote>. Some combinations are never supported, for example checking a linuxswap file system, because they are inherently impossible. Others cannot be supported because the external tools lack the functionality.
+						</para>
+						<para>
+							If you have installed new tools while &partman; is running click on <guibutton>Rescan Support</guibutton> to force a recheck of installed  file system support tools.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-tools-refresh">
 					<term>
-						<menuchoice
-><shortcut
-><keycap
->F5</keycap
-></shortcut
-> <guimenu
->Extras</guimenu
-> <guimenuitem
->Geräte aktualisieren</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<shortcut><keycap>F5</keycap></shortcut>
+							<guimenu>Tools</guimenu>
+							<guimenuitem>Refresh Devices</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Aktualisiert die Geräteliste</action
->: Dieser Befehl erzwingt ein erneutes Analysieren und Einlesen der Geräte in Ihrem Computer. Dies kann beispielsweise notwendig sein, wenn Sie während der Ausführung von &partman; eine externe USB-Festplatte anschließen. </para>
+						<para>
+							<action>Refreshes the devices</action>: This command forces &partman; to scan and read the devices on your computer again. This may for example be useful if you plugged in an external USB hard disk after you started &partman;.
+						</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -315,328 +239,267 @@
 	</sect2>
 
 	<sect2 id="menu-partition">
-		<title
->Das Menü <quote
->Partition</quote
-></title>
+		<title>The Partition Menu</title>
 
 		<para>
 			<variablelist>
 				<varlistentry id="menu-partition-new">
 					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->N</keycap
-></keycombo
-></shortcut
-> <guimenu
->Partition</guimenu
-> <guimenuitem
->Neu</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo></shortcut>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>New</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Erstellt eine neue Partition</action
->: Öffnet den Dialog zum Erstellen einer neuen Partition. In diesem Dialog können Sie den Typ, die Größe, Position und das Dateisystem der zu erstellenden Partition einrichten. </para>
-						<para
->Bitte beachten Sie, dass die Partitionstabelle auf einem Gerät unter Umständen vorgibt, wie viele Partitionen maximal erstellt werden können. MSDOS-Partitionstabellen ermöglichen beispielsweise nur vier primäre Partitionen. </para>
-						<para
->Der Befehl ist nur verfügbar, wenn ein nicht zugewiesener Bereich des Gerätes ausgewählt wurde. </para>
+						<para>
+							<action>Creates a new partition</action>: Opens the dialog to create a new partition where you will be able to set type, size, position and file system of the partition to create.
+						</para>
+						<para>
+							Please note that the partition table on a device may impose restrictions on how many partitions can be created. MS-DOS partition tables, for example, allow only four primary partitions.
+						</para>
+						<para>
+							This command is only enabled if an unallocated area on a device is selected.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-resize">
 					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->R</keycap
-></keycombo
-></shortcut
-> <guimenu
->Partition</guimenu
-> <guimenuitem
->Größe ändern/verschieben</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;<keycap>R</keycap></keycombo></shortcut>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Resize/Move</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Verändert die Größe einer Partition oder verschiebt diese</action
->: Öffnet den Dialog zur Größenänderung oder zum Verschieben einer existierenden Partition. Je nach dem Dateisystem der Partition und den auf Ihrem Computer installierten Dienstprogrammen sind nicht alle der Operationen zur Größenänderung (Verschieben, Verkleinern oder Vergrößern der Partition) verfügbar. Weitere Informationen finden Sie im Kapitel <xref linkend="menu-tools-filesystemsupport"/>. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn eine Partition ausgewählt ist, die nicht eingehängt ist und für deren Dateisystem die Operationen Verkleinern, Vergrößern oder Verschieben unterstützt werden. Eine erweiterte Option kann nur bearbeitet werden, wenn keine der logischen Partitionen in der erweiterten Partition eingehängt ist. </para>
+						<para>
+							<action>Resizes or moves a partition</action>: Opens the dialog to resize or move an existing partition. Depending on the partition's file system and the external tools installed on your computer, not all three possible resize-related actions -- that is, moving the partition, making it smaller (<quote>shrinking</quote> it) or making it larger (<quote>growing</quote> it) -- may be available in this dialog. See <xref linkend="menu-tools-filesystemsupport"/>.
+						</para>
+						<para>
+							This command is only enabled if a partition is selected that is not currently mounted and whose file system can be shrunk, grown or moved. For an extended partition, it is only enabled if none of the logicals in the extended partition are mounted.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-delete">
 					<term>
-						<menuchoice
-><shortcut
->&Del;</shortcut
-> <guimenu
->Partition</guimenu
-> <guimenuitem
->Löschen</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<shortcut>&Del;</shortcut>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Delete</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Löscht eine Partition</action
->: Dieser Befehl löscht die aktuell ausgewählte Partition. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn eine Partition ausgewählt ist, die nicht eingehängt ist. Eine erweiterte Partition kann nur gelöscht werden, wenn sie keine logischen Partitionen enthält. </para>
+						<para>
+							<action>Deletes a partition</action>: This command deletes the currently selected partition.
+						</para>
+						<para>
+							This command is only enabled if a partition is selected that is not currently mounted. For an extended partition, it is only enabled if it does not contain any logical partitions.
+						</para>
 						<warning>
-							<title
->Achtung: Dieser Befehl kann zu Datenverlust führen</title>
-							<para
->Das Löschen einer Partition führt zur Vernichtung aller auf der Partition befindlichen Daten.</para>
+							<title>Warning: Possible loss of data</title>
+							<para>Deleting a partition means that all data on the partition is destroyed.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-shred">
 					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;&Del;</keycombo
-></shortcut
-> <guimenu
->Partition</guimenu
-> <guimenuitem
->Schreddern</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;&Del;</keycombo></shortcut>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Shred</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Schreddert eine Partition</action
->: Dieser Befehl löscht die aktuell ausgewählte Partition auf sichere Weise. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn eine Partition ausgewählt ist, die nicht eingehängt ist. Eine erweiterte Partition kann nur gelöscht werden, wenn sie keine logischen Partitionen enthält. </para>
+						<para>
+							<action>Shreds a partition</action>: This command shreds the currently selected partition.
+						</para>
+						<para>
+							This command is only enabled if a partition is selected that is not currently mounted. For an extended partition, it is only enabled if it does not contain any logical partitions.
+						</para>
 						<warning>
-							<title
->Achtung: Dieser Befehl führt zu Datenverlust</title>
-							<para
->Das Schreddern einer Partition führt zur Vernichtung aller auf der Partition befindlichen Daten.</para>
+							<title>Warning: Loss of data</title>
+							<para>Shreding a partition means that all data on the partition is destroyed.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-copy">
 					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->C</keycap
-></keycombo
-></shortcut
-> <guimenu
->Partition</guimenu
-> <guimenuitem
->Kopieren</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo></shortcut>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Copy</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Kopiert eine Partition</action
->: Dieser Befehl kopiert die aktuell ausgewählte Partition in die Zwischenablage von &partman;. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn eine Partition ausgewählt ist, die nicht eingehängt ist und deren Dateisystem kopiert werden kann. Erweiterte Partitionen können nicht kopiert werden. </para>
+						<para>
+							<action>Copies a partition</action>: This command copies the currently selected partition to &partman;'s clipboard.
+						</para>
+						<para>
+							This command is only enabled if a partition is selected that is not currently mounted and whose file system can be copied. Extended partitions can not be copied.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-paste">
 					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->V</keycap
-></keycombo
-></shortcut
-> <guimenu
->Partition</guimenu
-> <guimenuitem
->Einfügen</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo></shortcut>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Paste</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Fügt eine Partition ein</action
->: Dieser Befehl fügt eine Partition aus der Zwischenablage von &partman; in die aktuell ausgewählte Partition oder nicht zugewiesenen Speicherbereich ein. </para>
-						<para
->Beim Einfügen in einen nicht zugewiesenen Bereich erscheint ein Dialog, in dem Sie die einzufügende Partition verschieben oder Vergrößern können. Dieser Dialog erscheint nicht beim Überschreiben einer bereits existierenden Partition. </para>
-						<para
->Der Befehl ist nur verfügbar, wenn eine Partition in der Zwischenablage liegt und ein gültiges Ziel (entweder eine Partition oder nicht zugewiesener Speicherplatz) ausgewählt ist. Des Weiteren muss das Ziel groß genug für die einzufügende Partition sein und darf nicht eingehängt sein. Eine Partition kann nicht auf sich selbst kopiert werden.  </para>
+						<para>
+							<action>Paste a partition</action>: This command pastes the partition from &partman;'s clipboard to the currently selected partition or unallocated area.
+						</para>
+						<para>
+							When pasting to an unallocated area, a dialog will open allowing you to move or grow the inserted copy. When overwriting an existing partition this dialog will not be shown.
+						</para>
+						<para>
+							This command is only enabled if a partition is currently in the clipboard and a valid target (either a partition or an unallocated area) is selected. The target must also be large enough to hold the source and can not be mounted. You can not copy a partition onto itself.
+						</para>
 						<warning>
-							<title
->Achtung: Dieser Befehl kann zu Datenverlust führen</title>
-							<para
->Das Einfügen einer Partition in eine bereits existierende führt zu einem unumkehrbaren Überschreiben aller Daten auf der bereits existierenden Partition.</para>
+							<title>Warning: Possible loss of data</title>
+							<para>Pasting a partition on an existing one means that all data on the existing partition is destroyed and replaced with the data from the pasted partition.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-mount">
 					<term>
-						<menuchoice
-><guimenu
->Partition</guimenu
-> <guimenuitem
->Einhängen/Aushängen</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Mount/Unmount</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Hängt eine Partition ein oder aus</action
->: Dieser Befehl hängt eine ausgewählte Partition ein, wenn sie nicht eingehängt ist oder hängt sie aus, wenn sie eingehängt ist. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn eine Partition ausgewählt ist, die eingehängt bzw. ausgehängt werden kann. Wenn dem Betriebssystem der Pfad, an dem die Partition eingehängt werden soll, nicht bekannt ist, kann &partman; sie nicht einhängen. </para>
+						<para>
+							<action>Mounts or umounts a partition</action>: This command mounts or unmounts the selected partition, depending on its current state.
+						</para>
+						<para>
+							This command is only enabled if a partition is selected that can be mounted or unmounted. If the operating system does not know a mount point for the partition you can not mount it from &partman;.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-edit-mount">
 					<term>
-						<menuchoice
-><guimenu
->Partition</guimenu
-> <guimenuitem
->Einhängepunkt bearbeiten</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Edit Mount Point</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Öffnet einen Dialog</action
->, um dir Einhängepunkte und deren Optionen zu bearbeiten. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn die Partition nicht eingehängt ist. </para>
+						<para>
+							<action>Opens a dialog</action> to edit the mount point and the mount options.
+						</para>
+						<para>
+							This command is only enabled if a partition unmounted.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-check">
 					<term>
-						<menuchoice
-><guimenu
->Partition</guimenu
-> <guimenuitem
->Prüfen</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Check</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Überprüft eine Partition</action
->: Dieser Befehl überprüft eine ausgewählte Partition und deren Dateisystem auf Fehler und versucht, gefundene Fehler zu beheben. Während dieses Prozesses wird die Größe des Dateisystems auf der Partition geändert, sodass es die komplette Partition umfasst. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn eine Partition ausgewählt ist, die überprüft werden kann und die nicht eingehängt ist. </para>
+						<para>
+							<action>Checks a partition</action>: This command checks the selected partition and its file system for errors and tries to correct any problems it finds. During this process the file system on the partition will also be resized to fill the partition completely.
+						</para>
+						<para>
+							This command is only enabled if a partition is selected that can be checked and is not currently mounted.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-backup">
 					<term>
-						<menuchoice
-><guimenu
->Partition</guimenu
-> <guimenuitem
->Sichern</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Backup</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Sichert eine Partition</action
->: Dieser Befehl sichert das Dateisystem auf einer ausgewählten Partition in eine Datei. Nach Auswahl des Befehls werden Sie dazu aufgefordert, den Speicherort für die Abbilddatei anzugeben. </para>
-						<para
->Beim Sichern einer Partition in eine Abbilddatei wird das Dateisystem Sektor für Sektor in die Abbilddatei geschrieben. Das Abbild ist nicht komprimiert und enthält keinerlei zusätzliche Meta-Informationen oder Kenninformationen und kann daher direkt als Gerät außerhalb von &partman; eingehängt werden, wenn dies vom Betriebssystem unterstützt wird. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn eine Partition ausgewählt ist, die gesichert werden kann und die nicht eingehängt ist. </para>
+						<para>
+							<action>Backs up a partition</action>: This command backs up the file system on the selected partition to a file. You will be asked where to store the image file after activating this command.
+						</para>
+						<para>
+							The created image file is a sector-for-sector copy of the file system on the partition. It is not compressed and does not have any additional meta information or header added to it, thus it can be directly mounted using a loop device outside of &partman; if the operation system supports that.
+						</para>
+						<para>
+							This command is only enabled if a partition is selected and the file system on it can be backed up. The partition must also not be mounted.
+						</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-restore">
 					<term>
-						<menuchoice
-><guimenu
->Partition</guimenu
-> <guimenuitem
->Wiederherstellen</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Restore</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Stellt eine Partition wieder her</action
->: Dieser Befehl stellt das Dateisystem einer Abbilddatei auf eine Zielpartition wieder her. Nach Auswahl des Befehls werden Sie dazu aufgefordert, den Speicherort der Abbilddatei anzugeben. Die Zielpartition muss groß genug für die Abbilddatei sein. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn nicht zugewiesener Speicherplatz oder eine Partition, die nicht eingehängt ist, ausgewählt ist. </para>
+						<para>
+							<action>Restores a partition</action>: This command restores a file system from an image file to a partition. You will be asked for the name of the image file to restore after activating this command. The target to restore to must be large enough for the image file.
+						</para>
+						<para>
+							The command is only enabled if either an unallocated area is selected or a partition that is not currently mounted.
+						</para>
 						<warning>
-							<title
->Achtung: Dieser Befehl kann zu Datenverlust führen</title>
-							<para
->Das Wiederherstellen einer Partition in eine bereits existierende führt zu einem unumkehrbaren Überschreiben aller Daten auf der bereits existierenden Partition.</para>
+							<title>Warning: Possible loss of data</title>
+							<para>Restoring a partition on an existing one means that all data on the existing partition is destroyed and replaced with the data from the restored image file.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-properties">
 					<term>
-						<menuchoice
-><guimenu
->Partition</guimenu
-> <guimenuitem
->Eigenschaften</guimenuitem
-> </menuchoice>
+						<menuchoice>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Properties</guimenuitem>
+						</menuchoice>
 					</term>
 					<listitem>
-						<para
-><action
->Zeigt die Eigenschaften einer Partition</action
->: Dieser Befehl zeigt einen Dialog mit Informationen über die aktuell ausgewählte Partition oder den nicht zugewiesenen Speicherplatz an. </para>
-						<para
->Die angezeigten Informationen und Änderungsmöglichkeiten in diesem Dialog hängen vom Typ der Partition und des Dateisystems auf der Partition ab, sowie davon, ob die Partition eingehängt ist oder nicht. </para>
-						<para
->Das Setzen von Bezeichnungen wird beispielsweise nicht von jedem Dateisystem unterstützt. Des Weiteren ist es nicht möglich, Eigenschaften zu ändern, wenn die Partition eingehängt ist. </para>
-						<para
->Die folgende Liste enthält alle Eigenschaften von Partitionen und Dateisystemen, die über diesen Dialog geändert werden können: <itemizedlist>
+						<para>
+							<action>Shows a partition's properties</action>: This command shows a dialog with information about the currently selected partition or unallocated space.
+						</para>
+						<para>
+							What is displayed and what can be modified in this dialog depends on the type of partition, the type of the file system on the partition and on the partition being currently mounted or not.
+						</para>
+						<para>
+							Not all file systems, for example, support setting a label. It is also generally not possible to modify any properties if the partition is mounted.
+						</para>
+						<para>
+							This is a list of all partition and file system properties that can in general be modified in this dialog:
+							
+							<itemizedlist>
 								<listitem>
-									<para
->Setzen oder Ändern der Bezeichnung für ein Dateisystem.</para>
+									<para>Set or modify a file system's label</para>
 								</listitem>
 								<listitem>
-									<para
->Verändern des Dateisystems auf der Partition.</para>
+									<para>Change the partition's file system.</para>
 
 									<warning>
-										<title
->Achtung: Dieser Befehl kann zu Datenverlust führen</title>
-										<para
->Das Verändern des Dateisystems einer Partition führt immer dazu, dass alle Daten auf der Partition unwiederbringlich gelöscht werden.</para>
+										<title>Warning: Possible loss of data</title>
+										<para>Changing the file system for a partition always means that all data on the partition is destroyed.</para>
 									</warning>
 								</listitem>
 								<listitem>
-									<para
->Neuerstellung des Dateisystems auf der Partition</para>
+									<para>Recreate the file system on the partition</para>
 
 									<warning>
-										<title
->Achtung: Dieser Befehl kann zu Datenverlust führen</title>
+										<title>Warning: Possible loss of data</title>
 										
-										<para
->Die Neuerstellung des Dateisystems einer Partition führt immer dazu, dass alle Daten auf der Partition unwiederbringlich gelöscht werden. Diese Option sollte nur als letzte Lösungsmöglichkeit genutzt werden, wenn das Dateisystem auf einer Partition nicht mehr repariert werden kann.</para>
+										<para>Recreating a file system on a partition always means that all data on the partition is destroyed. Recreating a file system should only be used as a last resort if the file system on a partition cannot be repaired anymore.</para>
 									</warning>
 								</listitem>
 								<listitem>
-									<para
->Änderung der Schalter einer Partition</para>
-									<para
->Abhängig vom Typ der verwendeten Partitionstabelle gibt es verschiedene Schalter für jede Partition in der Partitionstabelle. In den meisten Fällen ist es nicht notwendig, Schalter von Partitionen zu verändern, weshalb dieser Befehl für fortgeschrittene Benutzer gedacht ist.</para>
+									<para>Change a partition's flags</para>
+									<para>Depending on the type of partition table used, there will be several flags available for each partition on the partition table. In most cases, modifying the flags is not necessary and should be considered an advanced feature.</para>
 								</listitem>
 							</itemizedlist>
 						</para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn entweder nicht zugewiesener Speicherplatz oder eine Partition ausgewählt ist. </para>
+						<para>
+							The command is only enabled if either an unallocated area or a partition is selected.
+						</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -644,29 +507,16 @@
 	</sect2>
 
 	<sect2 id="menu-settings-help">
-		<title
->Die Menüs <quote
->Einstellungen</quote
-> und <quote
->Hilfe</quote
-></title>
+		<title>The Settings and Help Menu</title>
 
-		<para
->&partman; verfügt über die üblichen &kde;-Menüs <ulink url="help:/fundamentals/menus.html#menus-settings"
->Einstellungen</ulink
-> und <ulink url="help:/fundamentals/ui.html#menus-help"
->Hilfe</ulink
->, die in &kde;-Grundlagen beschrieben sind. Zusätzlich gibt es das Untermenü <guisubmenu
->Angezeigte Leisten</guisubmenu
->, in dem Sie die Anzeige der Leisten <guimenuitem
->Geräte</guimenuitem
->, <guimenuitem
->Ausstehende Operationen</guimenuitem
->, <guimenuitem
->Informationen</guimenuitem
-> und <guimenuitem
->Protokollausgabe</guimenuitem
-> an und aus schalten können. </para>
+		<para>
+		&partman; has the common &kde; <ulink url="help:/fundamentals/menus.html#menus-settings">Settings</ulink> and
+		<ulink url="help:/fundamentals/menus.html#menus-help">Help</ulink> menu described in
+		the &kde; Fundamentals with an additional submenu <guisubmenu>Panels Shown</guisubmenu>,
+		where you can toggle the display of the <guimenuitem>Devices</guimenuitem>,
+                <guimenuitem>Pending Operations</guimenuitem>, <guimenuitem>Information</guimenuitem>
+                and panels <guimenuitem>Log Output</guimenuitem> on and off.
+		</para>
 	</sect2>
 	</sect1>
 
