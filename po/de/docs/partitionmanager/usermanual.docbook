@@ -1,19 +1,25 @@
 <chapter id="usermanual">
-	<title>Using &partman;</title>
+	<title
+>&partman; verwenden </title>
 
 	<sect1 id="mainwindow">
-		<title>The Main Window</title>
+		<title
+>Das Hauptfenster</title>
 
-		<para>
-			Besides the main view showing the currently selected device in a graphical and a tree view, &partman; uses &Qt;'s <quote>dock widgets</quote> or panels to display some information and allow selections. See the following screen shot for an overview of &partman;'s main window.
-		</para>
+		<para
+>Neben der Hauptansicht, die das aktuell ausgewählte Gerät in einer grafischen und einer Baumansicht darstellt, verwendet &partman; &Qt;-Bedienelemente oder Kontrollleisten zur Auswahl von Elementen und um Informationen anzuzeigen. Auf dem folgenden Bildschirmfoto ist das Hauptfenster von &partman; dargestellt. </para>
 
 		<para>
 			<screenshot>
-				<screeninfo>&partman;'s main window</screeninfo>
+				<screeninfo
+>Hauptfenster von &partman;</screeninfo>
 				<mediaobject>
-					<imageobject><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
-					<textobject><phrase>Main Window</phrase></textobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Hauptfenster</phrase
+></textobject>
 				</mediaobject>
 			</screenshot>
 		</para>
@@ -21,69 +27,73 @@
 		<para>
 			<itemizedlist>
 				<listitem>
-					<para>Menubar: The menu bar presents some custom and some non-standard menus to choose actions to perform. All commands are described in detail in <xref linkend="reference"/>.</para>
+					<para
+>Menüleiste: Die Menüleiste stellt gebräuchliche und auch seltener verwendete Menüs zur Verfügung, um Aktionen auszuführen. Alle Befehle werden detailliert im Abschnitt <xref linkend="reference"/> beschrieben.</para>
 				</listitem>
 			
 				<listitem>
-					<para>Toolbar: &partman;'s tool bar is a standard tool bar. It can be fully customized; for details see <xref linkend="menu-settings-help"/>.
-					</para>
+					<para
+>Werkzeugleiste: Die Werkzeugleiste in &partman; ist eine Standard-Werkzeugleiste. Sie kann beliebig angepasst werden; nähere Details hierzu finden Sie im Kapitel <xref linkend="menu-settings-help"/>. </para>
 				</listitem>
 
 				<listitem>
-					<para>Devices Panel: This panel lists all <glossterm linkend="glossary-device">devices</glossterm> found on your computer that &partman; can handle. Select a device in this panel to view or modify it in the graphical device view or in the tree device view.</para>
+					<para
+>Geräteliste: Diese Liste zeigt alle <glossterm linkend="glossary-device"
+>Geräte</glossterm
+> auf Ihrem Rechner an, die &partman; verwalten kann. Wählen Sie in dieser Liste ein Gerät aus, um es in der grafischen Geräteansicht oder der Baumansicht anzuzeigen und zu bearbeiten.</para>
 				</listitem>
 
 				<listitem>
-					<para>
-						Graphical Device View: In this view &partman; shows a graphical representation of the currently selected device. Each of the device's <glossterm linkend="glossary-partition">partitions</glossterm> has its own box with device node name (<quote>sda1</quote> for the first partition in the screenshot above) and usage information (the dark violet area in the screenshot).
-					</para>
-					<para>
-						<glossterm linkend="glossary-extendedpartition">Extended partitions</glossterm> are visually distinct by their extra border (light green in the screenshot above) around them.
-					</para>
-					<para>
-						You can select a partition by clicking on it in the graphical device view. A double click opens <link linkend="menu-partition-properties">the partition's properties dialog</link>. A right click shows the partition context menu.
-					</para>
+					<para
+>Grafische Geräteansicht: Diese Ansicht stellt eine grafische Ansicht des aktuell ausgewählten Gerätes dar. Jede <glossterm linkend="glossary-partition"
+>Partition</glossterm
+> auf dem Gerät wird durch ein eigenes Rechteck repräsentiert, welches mit dem Knotennamen (<quote
+>sda1</quote
+> für die erste Partition im Bildschirmfoto) beschriftet ist und in welchem der belegte Speicherplatz angezeigt wird (entspricht der dunkel-violetten Fläche im Bildschirmfoto). </para>
+					<para
+><glossterm linkend="glossary-extendedpartition"
+>Erweiterte Partitionen</glossterm
+> werden grafisch durch einen zusätzlichen Rahmen um das entsprechende Rechteck repräsentiert (entspricht dem hellgrünen Rahmen im Bildschirmfoto). </para>
+					<para
+>Sie können sich eine Partition anzeigen lassen, indem Sie sie in der grafischen Geräteansicht anklicken. Mit einem Doppelklick auf eine Partition öffnet sich <link linkend="menu-partition-properties"
+>der Eigenschaftsdialog der Partition</link
+>. Mit einem Rechtsklick können Sie sich das Kontextmenü der Partition anzeigen lassen. </para>
 				</listitem>
 
 				<listitem>
-					<para>
-						Tree Device View: The tree device view shows extended information about each partition on the selected device. The currently selected partition is highlighted. Double-clicking a partition opens <link linkend="menu-partition-properties">the partition's properties dialog</link>. A right click shows the partition context menu.
-					</para>
+					<para
+>Die Baumansicht: Die Baumansicht zeigt erweiterte Informationen über jede Partition auf dem ausgewählten Gerät an. Die aktuell ausgewählte Partition ist hervorgehoben. Mit einem Doppelklick auf eine Partition öffnet sich <link linkend="menu-partition-properties"
+>der Eigenschaftsdialog der Partition</link
+>. Mit einem Rechtsklick können Sie sich das Kontextmenü der Partition anzeigen lassen. </para>
 				</listitem>
 				
 				<listitem>
-					<para>Information Panel: The information panel shows some details about the currently selected device or partition. It is not enabled by default.</para>
+					<para
+>Informations-Kontrollleiste: Die Informations-Kontrollleiste zeigt Detail-Informationen über das aktuell ausgewählte Gerät oder die ausgewählte Partition an. In der Standardeinstellung wird es nicht angezeigt.</para>
 				</listitem>
 				
 				<listitem>
-					<para>
-						Pending Operations Panel: This panel lists all operations that will be executed once you choose <xref linkend="menu-edit-apply"/>.
-					</para>
-					<para>
-						In the screenshot above, one operation is pending: If the user applies the operations now, the <glossterm linkend="glossary-filesystem">file system</glossterm> on /dev/sdb3 will be checked for errors and, if required, repaired.
-					</para>
+					<para
+>Liste ausstehender Operationen: Diese Liste zeigt alle Operationen an, die bei der Menüauswahl <xref linkend="menu-edit-apply"/> ausgeführt werden. </para>
+					<para
+>Im oben dargestellten Bildschirmfoto gibt es eine ausstehende Operation: wenn der Benutzer die Operationen nun anwendet, wird das <glossterm linkend="glossary-filesystem"
+>Dateisystem</glossterm
+> auf /dev/sdb3 auf Fehler hin überprüft und, sofern notwendig, repariert. </para>
 				</listitem>
 				
 				<listitem>
-					<para>
-						Statusbar: The status bar shows how many operations are currently pending.
-					</para>
+					<para
+>Statusleiste: Die Statusleiste zeigt an, wie viele Operationen im Moment noch ausstehen. </para>
 				</listitem>
 				
 				<listitem>
-					<para>Log Output Panel: This panel shows log information. It is only of secondary importance for non-advanced users and is not enabled by default.</para>
+					<para
+>Protokollausgabe: die Protokollausgabe zeigt Protokoll-Informationen an. Da diese Informationen nur für fortgeschrittene Benutzer hilfreich sind, wird die Protokollausgabe standardmäßig nicht angezeigt.</para>
 				</listitem>
 
 			</itemizedlist>
 		</para>
 		
-	</sect1>
-	
-	&partman-resizehowto;
-	
-	&partman-copyhowto;
-	
-	&partman-installoshowto;
-	
-</chapter>
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
 
