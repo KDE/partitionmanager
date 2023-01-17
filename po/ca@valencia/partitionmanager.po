@@ -52,7 +52,7 @@ msgstr "Colors del sistema de fitxers"
 #: config/configureoptionsdialog.cpp:47
 #, kde-format
 msgid "File System Color Settings"
-msgstr "Configuració del color del sistema de fitxers"
+msgstr "Configureu el color del sistema de fitxers"
 
 #: config/configureoptionsdialog.cpp:49
 #, kde-kuit-format
@@ -686,7 +686,7 @@ msgstr "<b>Avis:</b> açò destruirà totes les dades del dispositiu!"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create new Volume Group"
-msgstr "Creació d'un grup de volums nou"
+msgstr "Creeu un grup de volums nou"
 
 #: gui/devicepropsdialog.cpp:42
 #, kde-kuit-format
@@ -3223,7 +3223,8 @@ msgstr "Valor"
 msgctxt "@info"
 msgid "Could not create temporary output file to save <filename>%1</filename>."
 msgstr ""
-"No s'ha pogut crear el fitxer d'eixida per a guardar <filename>%1</filename>."
+"No s'ha pogut crear el fitxer d'eixida per que es guardarà <filename>%1</"
+"filename>."
 
 #: gui/treelog.cpp:110
 #, kde-kuit-format
