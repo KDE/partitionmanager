@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Safa Alfulaij <safaalfulaij@hotmail.com>, 2013.
 # Automatically generated, 2013.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021, 2022.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-05-30 00:48+0000\n"
-"PO-Revision-Date: 2022-01-22 22:28+0400\n"
+"PO-Revision-Date: 2023-01-26 16:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -500,7 +500,7 @@ msgstr "أتود حقًّا الإلغاء؟"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
-msgstr ""
+msgstr "ألغ العمليات التي تعمل"
 
 #: gui/applyprogressdialog.cpp:192
 #, kde-kuit-format
@@ -1024,13 +1024,13 @@ msgstr "أنشئ"
 #: gui/filesystemsupportdialogwidgetbase.ui:80
 #, kde-format
 msgid "Grow"
-msgstr ""
+msgstr "وسع"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:85
 #, kde-format
 msgid "Shrink"
-msgstr ""
+msgstr "قلّص"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:90
@@ -1733,10 +1733,10 @@ msgid "Mount or unmount a partition."
 msgstr "ضم أو إزالة ضم قسم."
 
 #: gui/mainwindow.cpp:440
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
-msgstr "فك القفل"
+msgstr "فكّ القفل"
 
 #: gui/mainwindow.cpp:441
 #, fuzzy, kde-kuit-format
@@ -2230,12 +2230,10 @@ msgid "Unrecognized partition \"%1\" "
 msgstr "مزّق قسمًا"
 
 #: gui/mainwindow.cpp:1466
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error Importing Partition Table"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr "تعذّر استيراد جدول التقسيم"
+msgstr "خطأ في فتح القسم"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -2274,12 +2272,10 @@ msgstr "أنشئ قسمًا جديدًا"
 
 #. i18n: ectx: ToolBar (partitionToolBar)
 #: gui/partitionmanagerui.rc:12
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Partition Toolbar"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Partition Manager Toolbar"
-msgstr "شريط أدوات الأقسام"
+msgstr "شريط أدوات مدير الأقسام"
 
 #. i18n: ectx: Menu (device)
 #: gui/partitionmanagerui.rc:30
@@ -2991,26 +2987,20 @@ msgid "Align partition"
 msgstr ""
 
 #: gui/sizedialogbase.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:tab advanced application settings"
-#| msgid "Advanced"
+#, kde-kuit-format
 msgctxt "@action:button advanced settings button"
 msgid "Advanced"
 msgstr "متقدّم"
 
 #: gui/sizedialogbase.cpp:181
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:tab advanced application settings"
-#| msgid "Advanced"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Advanced"
 msgstr "مت&قدّم"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
 #: gui/sizedialogwidgetbase.ui:62
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Partition type:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
 msgstr "نوع القسم:"
@@ -3103,7 +3093,7 @@ msgstr ""
 #: gui/sizedialogwidgetbase.ui:329
 #, kde-format
 msgid "Everyone"
-msgstr ""
+msgstr "الكلّ"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:336
@@ -3117,7 +3107,7 @@ msgstr ""
 #: gui/sizedialogwidgetbase.ui:339
 #, kde-format
 msgid "Only Root"
-msgstr ""
+msgstr "الجذر فقط"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
 #: gui/sizedialogwidgetbase.ui:352
