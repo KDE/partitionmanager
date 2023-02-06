@@ -100,6 +100,20 @@
 						</para>
 					</listitem>
 				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice>
+							<shortcut><keycap>F5</keycap></shortcut>
+							<guimenu>Device</guimenu>
+							<guimenuitem>Refresh Devices</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>
+							<action>Refreshes the devices</action>: This command forces &partman; to scan and read the devices on your computer again. This may for example be useful if you plugged in an external USB hard disk after you started &partman;.
+						</para>
+					</listitem>
+				</varlistentry>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice>
@@ -217,20 +231,6 @@
 						</para>
 						<para>
 							If you have installed new tools while &partman; is running click on <guibutton>Rescan Support</guibutton> to force a recheck of installed  file system support tools.
-						</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-refresh">
-					<term>
-						<menuchoice>
-							<shortcut><keycap>F5</keycap></shortcut>
-							<guimenu>Tools</guimenu>
-							<guimenuitem>Refresh Devices</guimenuitem>
-						</menuchoice>
-					</term>
-					<listitem>
-						<para>
-							<action>Refreshes the devices</action>: This command forces &partman; to scan and read the devices on your computer again. This may for example be useful if you plugged in an external USB hard disk after you started &partman;.
 						</para>
 					</listitem>
 				</varlistentry>
