@@ -188,56 +188,6 @@
 		</para>
 	</sect2>
 
-	<sect2 id="menu-tools">
-		<title>The Tools Menu</title>
-		<para>
-			<variablelist>
-				<varlistentry id="menu-tools-volumegroup">
-					<term>
-						<menuchoice>
-							<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo></shortcut>
-							<guimenu>Tools</guimenu>
-							<guimenuitem>New Volume Group</guimenuitem>
-						</menuchoice>
-					</term>
-					<listitem>
-						<para>Create a new logical device such as <link linkend="glossary-lvm">LVM</link> Volume Group.</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-filesystemsupport">
-					<term>
-						<menuchoice>
-							<guimenu>Tools</guimenu>
-							<guimenuitem>File System Support</guimenuitem>
-						</menuchoice>
-					</term>
-					<listitem>
-						<para>
-							<action>Shows the file system support dialog.</action> This dialog shows in detail which operations can be performed for which of the supported file systems.
-						</para>
-						<para>
-							Here is an example how the dialog might look like with most external tools installed:
-						</para>
-						<para>
-							<screenshot>
-								<mediaobject>
-									<imageobject><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject><phrase>File system support dialog with most external tools installed</phrase></textobject>
-								</mediaobject>
-							</screenshot>
-						</para>
-						<para>
-							The blue check marks mean <quote>supported</quote>, the red crosses mean <quote>not supported</quote>. Some combinations are never supported, for example checking a linuxswap file system, because they are inherently impossible. Others cannot be supported because the external tools lack the functionality.
-						</para>
-						<para>
-							If you have installed new tools while &partman; is running click on <guibutton>Rescan Support</guibutton> to force a recheck of installed  file system support tools.
-						</para>
-					</listitem>
-				</varlistentry>
-			</variablelist>
-		</para>
-	</sect2>
-
 	<sect2 id="menu-partition">
 		<title>The Partition Menu</title>
 
@@ -499,6 +449,56 @@
 						</para>
 						<para>
 							The command is only enabled if either an unallocated area or a partition is selected.
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title>The Tools Menu</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo></shortcut>
+							<guimenu>Tools</guimenu>
+							<guimenuitem>New Volume Group</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>Create a new logical device such as <link linkend="glossary-lvm">LVM</link> Volume Group.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice>
+							<guimenu>Tools</guimenu>
+							<guimenuitem>File System Support</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>
+							<action>Shows the file system support dialog.</action> This dialog shows in detail which operations can be performed for which of the supported file systems.
+						</para>
+						<para>
+							Here is an example how the dialog might look like with most external tools installed:
+						</para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject><phrase>File system support dialog with most external tools installed</phrase></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para>
+							The blue check marks mean <quote>supported</quote>, the red crosses mean <quote>not supported</quote>. Some combinations are never supported, for example checking a linuxswap file system, because they are inherently impossible. Others cannot be supported because the external tools lack the functionality.
+						</para>
+						<para>
+							If you have installed new tools while &partman; is running click on <guibutton>Rescan Support</guibutton> to force a recheck of installed  file system support tools.
 						</para>
 					</listitem>
 				</varlistentry>
