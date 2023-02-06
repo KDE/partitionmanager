@@ -313,22 +313,6 @@
 						</warning>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-partition-mount">
-					<term>
-						<menuchoice>
-							<guimenu>Partition</guimenu>
-							<guimenuitem>Mount/Unmount</guimenuitem>
-						</menuchoice>
-					</term>
-					<listitem>
-						<para>
-							<action>Mounts or umounts a partition</action>: This command mounts or unmounts the selected partition, depending on its current state.
-						</para>
-						<para>
-							This command is only enabled if a partition is selected that can be mounted or unmounted. If the operating system does not know a mount point for the partition you can not mount it from &partman;.
-						</para>
-					</listitem>
-				</varlistentry>
 				<varlistentry id="menu-partition-edit-mount">
 					<term>
 						<menuchoice>
@@ -342,6 +326,22 @@
 						</para>
 						<para>
 							This command is only enabled if a partition unmounted.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Mount/Unmount</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>
+							<action>Mounts or umounts a partition</action>: This command mounts or unmounts the selected partition, depending on its current state.
+						</para>
+						<para>
+							This command is only enabled if a partition is selected that can be mounted or unmounted. If the operating system does not know a mount point for the partition you can not mount it from &partman;.
 						</para>
 					</listitem>
 				</varlistentry>
