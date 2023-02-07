@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2023-01-31 22:09+0300\n"
+"PO-Revision-Date: 2023-02-06 21:18+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -449,7 +449,7 @@ msgstr "Öntanımlı dosya sistemi:"
 #: config/configurepagegeneral.ui:172
 #, kde-format
 msgid "Shredding"
-msgstr "Bölme"
+msgstr "Parçalama"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: config/configurepagegeneral.ui:178
@@ -616,14 +616,13 @@ msgstr "Toplam: %p%"
 msgctxt "@title:window"
 msgid "Create a New Partition Table on <filename>%1</filename>"
 msgstr ""
-"<filename>%1</filename> üzerinde yeni bir disk bölümlendirme tablosu "
-"oluşturulamadı"
+"<filename>%1</filename> üzerinde yeni bir disk bölümü tablosu oluşturulamadı"
 
 #: gui/createpartitiontabledialog.cpp:34
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create &New Partition Table"
-msgstr "&Yeni Disk Bölümlendirme Tablosu Oluştur"
+msgstr "&Yeni Disk Bölümü Tablosu Oluştur"
 
 #: gui/createpartitiontabledialog.cpp:59
 #, kde-kuit-format
@@ -634,16 +633,16 @@ msgid ""
 "the most the MS-Dos partition table type supports, so you will not be able "
 "to use the whole device.</para>"
 msgstr ""
-"<para>Gerçekten <filename>%1</filename> üzerinde bir MS-Dos bölümleme "
-"tablosu oluşturmak istiyor musunuz?</para><para>Bu aygıt üzerinde 2^32'den "
-"fazla sektör var. Bu MS-Dos bölümleme tablosu türünün desteğinin üst sınırı "
+"<para>Gerçekten <filename>%1</filename> üzerinde bir MS-DOS bölümü tablosu "
+"oluşturmak istiyor musunuz?</para><para>Bu aygıt üzerinde 2^32'den fazla "
+"sektör var. Bu MS-DOS bölümü tablosu türünün desteğinin üst sınırı "
 "olduğundan bütün aygıtı kullanamayacaksınız.</para>"
 
 #: gui/createpartitiontabledialog.cpp:61
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Create MS-Dos Partition Table Type?"
-msgstr "Gerçekten MS-DOS Disk Bölümlendirme Tablosu Oluşturulsun mu?"
+msgstr "Gerçekten MS-DOS Disk Bölümü Tablosu Oluşturulsun mu?"
 
 #: gui/createpartitiontabledialog.cpp:62
 #, kde-kuit-format
@@ -655,7 +654,7 @@ msgstr "MS-Dos Türü Oluştur"
 #: gui/createpartitiontablewidgetbase.ui:24
 #, kde-format
 msgid "Choose the type of partition table you want to create:"
-msgstr "Oluşturmak istediğiniz disk bölümlendirme tablosunun türünü seçin:"
+msgstr "Oluşturmak istediğiniz disk bölümü tablosunun türünü seçin:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
 #: gui/createpartitiontablewidgetbase.ui:33
@@ -685,7 +684,7 @@ msgstr "<b>Uyarı:</b> Bu işlem, aygıt üzerindeki tüm verileri yok eder!"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create new Volume Group"
-msgstr "Yeni Birim Grubu Oluştur"
+msgstr "Yeni Bölüm Grubu Oluştur"
 
 #: gui/devicepropsdialog.cpp:42
 #, kde-kuit-format
@@ -1087,7 +1086,7 @@ msgstr "Destek Araçları"
 #, kde-format
 msgctxt "@action:button"
 msgid "Rescan Support"
-msgstr "Yeniden Tarama Desteği"
+msgstr "Desteği Yeniden Tara"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
 #: gui/infopane.cpp:47 gui/mainwindowbase.ui:47
@@ -1408,19 +1407,19 @@ msgstr "Listedeki tüm işlemleri uygula."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
-msgstr "Yeni Disk Bölümlendirme Tablosu"
+msgstr "Yeni Disk Bölümü Tablosu"
 
 #: gui/mainwindow.cpp:303
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
-msgstr "Yeni disk bölümlendirme tablosu oluştur"
+msgstr "Yeni disk bölümü tablosu oluştur"
 
 #: gui/mainwindow.cpp:304
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
-msgstr "Bir aygıt üzerinde boş bir disk bölümlendirme tablosu oluştur."
+msgstr "Bir aygıt üzerinde boş bir disk bölümü tablosu oluştur."
 
 #: gui/mainwindow.cpp:311
 #, kde-kuit-format
@@ -1432,31 +1431,31 @@ msgstr "Bölüm Tablosunu Dışa Aktar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
-msgstr "Bir bölümleme tablosunu dışa aktar"
+msgstr "Bir bölüm tablosunu dışa aktar"
 
 #: gui/mainwindow.cpp:313
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
-msgstr "Disk bölümlendirme tablosunu bir metin dosyasına aktar."
+msgstr "Disk bölüm tablosunu bir metin dosyasına aktar."
 
 #: gui/mainwindow.cpp:319
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
-msgstr "Disk Bölümlendirme Tablosu İçe Aktar"
+msgstr "Bölüm Tablosu İçe Aktar"
 
 #: gui/mainwindow.cpp:320
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
-msgstr "Bir disk bölümlendirme tablosunu içe aktar"
+msgstr "Bir disk bölümü tablosunu içe aktar"
 
 #: gui/mainwindow.cpp:321
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
-msgstr "Bir disk bölümlendirme tablosunu, bir metin dosyasından içe aktar."
+msgstr "Bir disk bölümü tablosunu, bir metin dosyasından içe aktar."
 
 #: gui/mainwindow.cpp:328
 #, kde-format
@@ -1608,7 +1607,7 @@ msgstr "Bir disk bölümünü sil."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
-msgstr "Daha Fazla Parçaya Böl"
+msgstr "Parçala"
 
 #: gui/mainwindow.cpp:400
 #, kde-kuit-format
@@ -1621,7 +1620,7 @@ msgstr "Disk bölümünü daha fazla parçaya böl"
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr ""
-"Disk bölümünü daha fazla parçaya böl, disk bölümünün içindekiler geri "
+"Disk bölümünü daha fazla parçaya böl; disk bölümünün içindekiler geri "
 "alınamaz."
 
 #: gui/mainwindow.cpp:408
@@ -1786,7 +1785,7 @@ msgstr "Disk bölümünü bir kalıp dosyasından geri yükle."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
-msgstr "Yeni Birim Grubu"
+msgstr "Yeni Bölüm Grubu"
 
 #: gui/mainwindow.cpp:481
 #, kde-format
@@ -1846,13 +1845,13 @@ msgstr "Günlüğü Kaydını Temizle"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
-msgstr "Günlük kaydı çıktısını temizle"
+msgstr "Günlük çıktısını temizle"
 
 #: gui/mainwindow.cpp:514
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
-msgstr "Günlük kaydı çıktı panelini temizle."
+msgstr "Günlük çıktısı panelini temizle."
 
 #: gui/mainwindow.cpp:519
 #, kde-kuit-format
@@ -1864,13 +1863,13 @@ msgstr "Günlüğü Kaydet"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
-msgstr "Günlük kayıtlarını kaydet"
+msgstr "Günlüğü kaydet"
 
 #: gui/mainwindow.cpp:521
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
-msgstr "Günlük kayıtlarını bir dosyaya kaydet."
+msgstr "Günlüğü bir dosyaya kaydet."
 
 #: gui/mainwindow.cpp:527
 #, kde-kuit-format
@@ -2051,27 +2050,25 @@ msgstr "Bölüm Tablosu İçe Aktarılırken Hata"
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr ""
-"İçe aktarma dosyasında birden fazla bölümleme tablosu türü bulundu (satır "
-"%1)."
+"İçe aktarma dosyasında birden fazla bölümü tablosu türü bulundu (satır %1)."
 
 #: gui/mainwindow.cpp:1104
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
-msgstr "Bölümleme tablosu türü \"%1\" bilinmiyor (satır %2)."
+msgstr "Bölüm tablosu türü \"%1\" bilinmiyor (satır %2)."
 
 #: gui/mainwindow.cpp:1109
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
-msgstr ""
-"Bölümleme tablosu türü \"%1\" içe aktarmak için desteklenmiyor (satır %2)."
+msgstr "Bölüm tablosu türü \"%1\" içe aktarmak için desteklenmiyor (satır %2)."
 
 #: gui/mainwindow.cpp:1119
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
-msgstr "Bölümleme tablosu türü olmayan bölüm bulundu (satır %1)."
+msgstr "Bölüm tablosu türü olmayan bölüm bulundu (satır %1)."
 
 #: gui/mainwindow.cpp:1132
 #, kde-kuit-format
@@ -2107,8 +2104,8 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
-"\"%1\" bölümleme tablosu türü uzatılmış bölümleri desteklememesine rağmen "
-"bir tane bulundu (satır %2)."
+"\"%1\" bölümü tablosu türü uzatılmış bölümleri desteklememesine rağmen bir "
+"tane bulundu (satır %2)."
 
 #: gui/mainwindow.cpp:1173
 #, kde-kuit-format
@@ -2126,7 +2123,7 @@ msgstr "İçe aktarılan dosyada satır %1 ayrıştırılamadı. Atlanıyor."
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
-msgstr "Disk Bölümlendirme Tablosu Dışa Aktarılırken Hata"
+msgstr "Disk Bölümü Tablosu Dışa Aktarılırken Hata"
 
 #: gui/mainwindow.cpp:1378 gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1420
 #, kde-kuit-format
@@ -2208,14 +2205,14 @@ msgstr "Aygıtlar"
 #, kde-format
 msgctxt "@title:window"
 msgid "Pending Operations"
-msgstr "Bekleyen işlemler"
+msgstr "Bekleyen İşlemler"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
 #: gui/mainwindowbase.ui:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Log Output"
-msgstr "Günlük Kaydı Çıktısı"
+msgstr "Günlük Çıktısı"
 
 #: gui/newdialog.cpp:47
 #, kde-kuit-format
@@ -2347,7 +2344,7 @@ msgid_plural ""
 "existing one.</para>"
 msgstr[0] ""
 "<para>Bu aygıt üzerinde zaten %1 birincil disk bölümü var. Bu, disk bölümü "
-"tablosunun bulundurabileceği en fazla sayıdır.</para><para>Varolan bir "
+"tablosunun bulundurabileceği en fazla sayıdır.</para><para>Var olan bir "
 "birincil disk bölümünü silmeden yeni bir birincil disk bölümü "
 "oluşturamazsınız, yapıştıramazsınız veya geri yükleyemezsiniz.</para>"
 msgstr[1] ""
@@ -2842,7 +2839,7 @@ msgstr "Lüften bir aygıt seçin."
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No valid partition table was found on this device."
-msgstr "Bu aygıt üzerinde geçerli bir disk bölümlendirme tablosu bulunamadı."
+msgstr "Bu aygıt üzerinde geçerli bir disk bölümü tablosu bulunamadı."
 
 #: gui/resizedialog.cpp:42
 #, kde-kuit-format
