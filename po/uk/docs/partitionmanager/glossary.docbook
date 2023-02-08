@@ -9,8 +9,8 @@
 >завдання</link
 >. Це кроки найнижчого рівня, які слід виконати, часто такі кроки виконуються зовнішніми інструментами, за ними можна прослідкувати лише за докладним звітом про поступ виконання. </para>
 			<para
->Зазвичай, користувачеві не слід перейматися тим, з яких команд складаються дії. </para>
-<glossseealso otherterm="glossary-operation"
+>Зазвичай, користувачеві не слід перейматися тим, з яких команд складаються дії. </para
+><glossseealso otherterm="glossary-operation"
 ></glossseealso
 > <glossseealso otherterm="glossary-job"
 ></glossseealso
@@ -26,8 +26,8 @@
 >пристрою</link
 >. Деякі операційні системи і багато інструментів для роботи з дисками вимагають, щоб <link linkend="glossary-partition"
 >розділи</link
-> починалися і завершувалися на межах циліндрів. Тому &partman; автоматично прив’язує розділи до меж циліндрів під час зміни розташування початку і кінця розділу. </para>
-<glossseealso otherterm="glossary-head"
+> починалися і завершувалися на межах циліндрів. Тому &partman; автоматично прив’язує розділи до меж циліндрів під час зміни розташування початку і кінця розділу. </para
+><glossseealso otherterm="glossary-head"
 ></glossseealso
 > <glossseealso otherterm="glossary-sector"
 ></glossseealso
@@ -104,8 +104,8 @@
 >таблиці розділів</link
 >. Таблиці розділів MS-DOS дозволяють створювати лише по одному розширеному розділу на <link linkend="glossary-device"
 >пристрій</link
->. </para>
-<glossseealso otherterm="glossary-primarypartition"
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
 ></glossseealso
 > <glossseealso otherterm="glossary-logicalpartition"
 ></glossseealso
@@ -164,8 +164,8 @@
 			<para
 >Одиниця призначена для того, щоб розділяти <link linkend="glossary-device"
 >пристрій</link
->. </para>
-<glossseealso otherterm="glossary-cylinder"
+>. </para
+><glossseealso otherterm="glossary-cylinder"
 ></glossseealso
 > <glossseealso otherterm="glossary-sector"
 ></glossseealso
@@ -179,8 +179,8 @@
 			<para
 >У &partman; завдання — це те, з чого складаються <link linkend="glossary-operation"
 >дії</link
->. Зазвичай, вам не слід надто перейматися завданнями, — вони відіграють роль лише у випадку, якщо ви застосовуєте список черги дій. У такому випадку &partman; показуватиме діалогове вікно поступу, у якому буде показано список всіх дій і відповідних завдань, а також позначено поточне завдання дії, яке виконуватиметься. </para>
-<glossseealso otherterm="glossary-operation"
+>. Зазвичай, вам не слід надто перейматися завданнями, — вони відіграють роль лише у випадку, якщо ви застосовуєте список черги дій. У такому випадку &partman; показуватиме діалогове вікно поступу, у якому буде показано список всіх дій і відповідних завдань, а також позначено поточне завдання дії, яке виконуватиметься. </para
+><glossseealso otherterm="glossary-operation"
 ></glossseealso
 > <glossseealso otherterm="glossary-command"
 ></glossseealso
@@ -196,8 +196,8 @@
 >мітка диска</link
 > або <link linkend="glossary-filesystemlabel"
 >мітка файлової системи</link
->. </para>
-<glossseealso otherterm="glossary-disklabel"
+>. </para
+><glossseealso otherterm="glossary-disklabel"
 ></glossseealso
 > <glossseealso otherterm="glossary-filesystemlabel"
 ></glossseealso
@@ -213,8 +213,8 @@
 >Розділ</link
 > у <link linkend="glossary-extendedpartition"
 >розширеному розділі</link
->. </para>
-<glossseealso otherterm="glossary-primarypartition"
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
 ></glossseealso
 > <glossseealso otherterm="glossary-extendedpartition"
 ></glossseealso
@@ -264,8 +264,8 @@
 			<para
 >Дії зберігаються у списку черги дій. До того часу, доки дію не було застосовано, її <link linkend="menu-edit-undo"
 >легко можна скасувати</link
->, при цьому ніяких змін даних виконано не буде. </para>
-<glossseealso otherterm="glossary-job"
+>, при цьому ніяких змін даних виконано не буде. </para
+><glossseealso otherterm="glossary-job"
 ></glossseealso
 > <glossseealso otherterm="glossary-command"
 ></glossseealso
@@ -281,8 +281,8 @@
 >пристрою жорсткого диска</link
 >, на якому може міститися <link linkend="glossary-filesystem"
 >файлова система</link
-> або інші розділи. Без принаймні одного чинного розділу диск не можна використовувати. </para>
-<glossseealso otherterm="glossary-device"
+> або інші розділи. Без принаймні одного чинного розділу диск не можна використовувати. </para
+><glossseealso otherterm="glossary-device"
 ></glossseealso
 > <glossseealso otherterm="glossary-partitiontable"
 ></glossseealso
@@ -344,8 +344,8 @@
 >Таблиці розділів</link
 >, зазвичай, накладають обмеження на максимальну кількість основних розділів, які може бути створено на одному <link linkend="glossary-device"
 >пристрої</link
->. Для типу таблиць розділів MS-DOS, наприклад, максимальну кількість обмежено чотирма розділами. </para>
-<glossseealso otherterm="glossary-extendedpartition"
+>. Для типу таблиць розділів MS-DOS, наприклад, максимальну кількість обмежено чотирма розділами. </para
+><glossseealso otherterm="glossary-extendedpartition"
 ></glossseealso
 > <glossseealso otherterm="glossary-logicalpartition"
 ></glossseealso
@@ -361,8 +361,8 @@
 >пристрою</link
 >. <link linkend="glossary-partition"
 >Розділи</link
-> завжди мають починатися і закінчуватися на межі секторів. </para>
-<glossseealso otherterm="glossary-head"
+> завжди мають починатися і закінчуватися на межі секторів. </para
+><glossseealso otherterm="glossary-head"
 ></glossseealso
 > <glossseealso otherterm="glossary-cylinder"
 ></glossseealso

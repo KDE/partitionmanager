@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2023-02-06 21:18+0300\n"
+"PO-Revision-Date: 2023-02-07 21:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2977,7 +2977,7 @@ msgstr "En büyük boyut:"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "F&ree space before:"
-msgstr "Öncesinde bırakılacak boş alan:"
+msgstr "Öncesindeki &boş alan:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: gui/sizedialogwidgetbase.ui:245
@@ -2991,7 +2991,7 @@ msgstr "Bo&yut:"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Free space after:"
-msgstr "Sonrasında bırakılacak boş alan:"
+msgstr "Sonrasındaki boş alan:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
 #: gui/sizedialogwidgetbase.ui:297

@@ -127,6 +127,26 @@
 >Permite seleccionar un dispositivo de un submenú con todos los dispositivos disponibles en el sistema. </para>
 					</listitem>
 				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Actualizar dispositivos</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Refresca los dispositivos</action
+>: Esta orden obliga a &partman; a escanear y leer otra vez los dispositivos de su ordenador, lo que puede ser útil si, por ejemplo, ha conectado un disco duro USB después de iniciar &partman;. </para>
+					</listitem>
+				</varlistentry>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice
@@ -209,93 +229,6 @@
 					<listitem>
 						<para
 >Muestra información sobre los dispositivos seleccionados actualmente. En este diálogo, se encuentran la capacidad, los tamaños de sector y el tipo de tabla de particiones, así como el número máximo de particiones primarias y el número de particiones primarias utilizadas.</para>
-					</listitem>
-				</varlistentry>
-			</variablelist>
-		</para>
-	</sect2>
-
-	<sect2 id="menu-tools">
-		<title
->Menú «Herramientas»</title>
-		<para>
-			<variablelist>
-				<varlistentry id="menu-tools-volumegroup">
-					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->L</keycap
-></keycombo
-></shortcut
-> <guimenu
->Herramientas</guimenu
-> <guimenuitem
->Nuevo grupo de volúmenes</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
->Crear un nuevo dispositivo lógico como grupo de volúmenes <link linkend="glossary-lvm"
->LVM</link
->.</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-filesystemsupport">
-					<term>
-						<menuchoice
-><guimenu
->Herramientas</guimenu
-> <guimenuitem
->Implementación del sistema de archivos</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Muestra el cuadro de diálogo de implementación del sistema de archivos</action
->: este diálogo muestra en detalle qué operaciones se pueden realizar en cada uno de los sistemas de archivos admitidos. </para>
-						<para
->A continuación puede ver un ejemplo del cuadro de diálogo con la mayoría de herramientas externas instaladas: </para>
-						<para>
-							<screenshot>
-								<mediaobject>
-									<imageobject
-><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject
-><phrase
->Diálogo de implementación de sistemas de archivos con la mayoría de herramientas externas instaladas</phrase
-></textobject>
-								</mediaobject>
-							</screenshot>
-						</para>
-						<para
->La marca azul significa «permitido», mientras que la cruz roja significa «no permitido». Algunas combinaciones no se permiten nunca, como la comprobación de un sistema linuxswap, porque es inherentemente imposible. Otras no se permiten porque las herramientas externas carecen de la funcionalidad. </para>
-						<para
->Si instala nuevas herramientas mientras &partman; se está ejecutando, haga clic en <guibutton
->Volver a comprobar la implementación</guibutton
-> para forzar una comprobación de si se admiten las herramientas instaladas. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-refresh">
-					<term>
-						<menuchoice
-><shortcut
-><keycap
->F5</keycap
-></shortcut
-> <guimenu
->Herramientas</guimenu
-> <guimenuitem
->Actualizar dispositivos</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Refresca los dispositivos</action
->: Esta orden obliga a &partman; a escanear y leer otra vez los dispositivos de su ordenador, lo que puede ser útil si, por ejemplo, ha conectado un disco duro USB después de iniciar &partman;. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -468,24 +401,6 @@
 						</warning>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-partition-mount">
-					<term>
-						<menuchoice
-><guimenu
->Partición</guimenu
-> <guimenuitem
->Montar/Desmontar</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Monta o desmonta una partición</action
->: Esta orden monta o desmonta la partición seleccionada, dependiendo de su estado actual. </para>
-						<para
->Esta orden solo está disponible cuando la partición seleccionada se puede montar o desmontar. Si el sistema operativo no reconoce el punto de montaje de la partición, no podrá montarla desde &partman;. </para>
-					</listitem>
-				</varlistentry>
 				<varlistentry id="menu-partition-edit-mount">
 					<term>
 						<menuchoice
@@ -502,6 +417,24 @@
 > para editar el punto y las opciones de montaje. </para>
 						<para
 >Esta orden solo está disponible si se desmonta una partición. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partición</guimenu
+> <guimenuitem
+>Montar/Desmontar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Monta o desmonta una partición</action
+>: Esta orden monta o desmonta la partición seleccionada, dependiendo de su estado actual. </para>
+						<para
+>Esta orden solo está disponible cuando la partición seleccionada se puede montar o desmontar. Si el sistema operativo no reconoce el punto de montaje de la partición, no podrá montarla desde &partman;. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-check">
@@ -623,6 +556,73 @@
 						</para>
 						<para
 >Esta orden solo está activada cuando selecciona un área sin reservar o una partición. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Menú «Herramientas»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Herramientas</guimenu
+> <guimenuitem
+>Nuevo grupo de volúmenes</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Crear un nuevo dispositivo lógico como grupo de volúmenes <link linkend="glossary-lvm"
+>LVM</link
+>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Herramientas</guimenu
+> <guimenuitem
+>Implementación del sistema de archivos</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Muestra el cuadro de diálogo de implementación del sistema de archivos</action
+>: este diálogo muestra en detalle qué operaciones se pueden realizar en cada uno de los sistemas de archivos admitidos. </para>
+						<para
+>A continuación puede ver un ejemplo del cuadro de diálogo con la mayoría de herramientas externas instaladas: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Diálogo de implementación de sistemas de archivos con la mayoría de herramientas externas instaladas</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>La marca azul significa «permitido», mientras que la cruz roja significa «no permitido». Algunas combinaciones no se permiten nunca, como la comprobación de un sistema linuxswap, porque es inherentemente imposible. Otras no se permiten porque las herramientas externas carecen de la funcionalidad. </para>
+						<para
+>Si instala nuevas herramientas mientras &partman; se está ejecutando, haga clic en <guibutton
+>Volver a comprobar la implementación</guibutton
+> para forzar una comprobación de si se admiten las herramientas instaladas. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>

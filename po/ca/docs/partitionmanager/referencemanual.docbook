@@ -127,6 +127,26 @@
 >Permet seleccionar un dispositiu des d'un submenú amb tots els dispositius disponibles del sistema. </para>
 					</listitem>
 				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Dispositiu</guimenu
+> <guimenuitem
+>Actualitza la llista dels dispositius</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Actualitza la llista dels dispositius</action
+>: aquesta ordre força al &partman; a tornar a explorar i llegir els dispositius del sistema. Això pot ser útil, per exemple si heu endollat un disc dur USB extern després d'haver iniciat el &partman;. </para>
+					</listitem>
+				</varlistentry>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice
@@ -209,97 +229,6 @@
 					<listitem>
 						<para
 >Mostra informació sobre els dispositius seleccionats. En aquest diàleg trobareu la capacitat, mides de sector, tipus de la taula de particions, així com ús i nombre màxim de particions primàries.</para>
-					</listitem>
-				</varlistentry>
-			</variablelist>
-		</para>
-	</sect2>
-
-	<sect2 id="menu-tools">
-		<title
->El menú Eines</title>
-		<para>
-			<variablelist>
-				<varlistentry id="menu-tools-volumegroup">
-					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;&Maj;<keycap
->L</keycap
-></keycombo
-></shortcut
-> <guimenu
->Eines</guimenu
-> <guimenuitem
->Grup de volums nou</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
->Crea un dispositiu lògic nou com un grup de volums <link linkend="glossary-lvm"
->LVM</link
->.</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-filesystemsupport">
-					<term>
-						<menuchoice
-><guimenu
->Eines</guimenu
-> <guimenuitem
->Compatibilitat amb els sistemes de fitxers</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Mostra el diàleg de compatibilitat amb els sistemes de fitxers.</action
-> Aquest diàleg mostra detalladament quines operacions es poden realitzar pels sistemes de fitxers implementats. </para>
-						<para
->Aquí hi ha un exemple de com s'ha de veure el diàleg amb la majoria d'eines externes instal·lades: </para>
-						<para>
-							<screenshot>
-								<mediaobject>
-									<imageobject
-><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject
-><phrase
->Diàleg de la compatibilitat amb els sistemes de fitxers amb la majoria d'eines externes instal·lades</phrase
-></textobject>
-								</mediaobject>
-							</screenshot>
-						</para>
-						<para
->Les marques de selecció en blau volen dir <quote
->implementat</quote
->, les creus vermelles volen dir <quote
->no implementat</quote
->. Algunes combinacions mai estan implementades, per exemple la comprovació d'un sistema de fitxers linuxswap, perquè és inherentment impossible. Altres no poden estar implementades perquè les eines externes manquen d'aquesta funcionalitat. </para>
-						<para
->Si heu instal·lat eines noves mentre el &partman; és en execució, cliqueu a <guibutton
->Torna a explorar la compatibilitat</guibutton
-> per forçar una recomprovació de les eines de compatibilitat amb els sistemes de fitxers instal·lats. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-refresh">
-					<term>
-						<menuchoice
-><shortcut
-><keycap
->F5</keycap
-></shortcut
-> <guimenu
->Eines</guimenu
-> <guimenuitem
->Actualitza la llista dels dispositius</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Actualitza la llista dels dispositius</action
->: aquesta ordre força al &partman; a tornar a explorar i llegir els dispositius del sistema. Això pot ser útil, per exemple si heu endollat un disc dur USB extern després d'haver iniciat el &partman;. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -476,24 +405,6 @@
 						</warning>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-partition-mount">
-					<term>
-						<menuchoice
-><guimenu
->Partició</guimenu
-> <guimenuitem
->Munta/Desmunta</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Munta o desmunta una partició</action
->: aquesta ordre munta o desmunta la partició seleccionada, depenent del seu estat actual. </para>
-						<para
->Aquesta ordre només està habilitada si està seleccionada una partició que es pot muntar o desmuntar. Si el sistema operatiu no coneix el punt de muntatge de la partició, no podreu desmuntar-la des del &partman;. </para>
-					</listitem>
-				</varlistentry>
 				<varlistentry id="menu-partition-edit-mount">
 					<term>
 						<menuchoice
@@ -510,6 +421,24 @@
 > per editar el punt de muntatge i les opcions de muntatge. </para>
 						<para
 >Aquesta ordre només es troba activada si la partició no està muntada. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partició</guimenu
+> <guimenuitem
+>Munta/Desmunta</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Munta o desmunta una partició</action
+>: aquesta ordre munta o desmunta la partició seleccionada, depenent del seu estat actual. </para>
+						<para
+>Aquesta ordre només està habilitada si està seleccionada una partició que es pot muntar o desmuntar. Si el sistema operatiu no coneix el punt de muntatge de la partició, no podreu desmuntar-la des del &partman;. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-check">
@@ -631,6 +560,77 @@
 						</para>
 						<para
 >Aquesta ordre només està habilitada si hi ha seleccionada una partició o una àrea sense assignar. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>El menú Eines</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Maj;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Eines</guimenu
+> <guimenuitem
+>Grup de volums nou</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Crea un dispositiu lògic nou com un grup de volums <link linkend="glossary-lvm"
+>LVM</link
+>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Eines</guimenu
+> <guimenuitem
+>Compatibilitat amb els sistemes de fitxers</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Mostra el diàleg de compatibilitat amb els sistemes de fitxers.</action
+> Aquest diàleg mostra detalladament quines operacions es poden realitzar pels sistemes de fitxers implementats. </para>
+						<para
+>Aquí hi ha un exemple de com s'ha de veure el diàleg amb la majoria d'eines externes instal·lades: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Diàleg de la compatibilitat amb els sistemes de fitxers amb la majoria d'eines externes instal·lades</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>Les marques de selecció en blau volen dir <quote
+>implementat</quote
+>, les creus vermelles volen dir <quote
+>no implementat</quote
+>. Algunes combinacions mai estan implementades, per exemple la comprovació d'un sistema de fitxers linuxswap, perquè és inherentment impossible. Altres no poden estar implementades perquè les eines externes manquen d'aquesta funcionalitat. </para>
+						<para
+>Si heu instal·lat eines noves mentre el &partman; és en execució, cliqueu a <guibutton
+>Torna a explorar la compatibilitat</guibutton
+> per forçar una recomprovació de les eines de compatibilitat amb els sistemes de fitxers instal·lats. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>

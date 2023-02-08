@@ -127,6 +127,26 @@
 >Надає вам змогу вибрати пристрій з підменю, де буде показано список усіх доступних пристроїв системи. </para>
 					</listitem>
 				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Пристрій</guimenu
+> <guimenuitem
+>Оновити список пристроїв</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Оновлює список пристроїв</action
+>: за допомогою цього пункту можна змусити &partman; повторно визначити і прочитати дані пристроїв на вашому комп’ютері. Така дія може, наприклад, знадобитися, якщо ви з’єднали з комп’ютером зовнішній жорсткий диск за допомогою USB вже після запуску &partman;. </para>
+					</listitem>
+				</varlistentry>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice
@@ -209,97 +229,6 @@
 					<listitem>
 						<para
 >Показує дані щодо поточних позначених пристроїв. За допомогою відповідного діалогового вікна ви зможете ознайомитися з місткістю диска, даними щодо розміру секторів, типу таблиці розділів, а також кількості використаних основних розділів та їхньої максимальної кількості.</para>
-					</listitem>
-				</varlistentry>
-			</variablelist>
-		</para>
-	</sect2>
-
-	<sect2 id="menu-tools">
-		<title
->Меню «Інструменти»</title>
-		<para>
-			<variablelist>
-				<varlistentry id="menu-tools-volumegroup">
-					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;&Shift;<keycap
->L</keycap
-></keycombo
-></shortcut
-> <guimenu
->Інструменти</guimenu
-> <guimenuitem
->Створити групу томів</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
->Створити логічний пристрій, наприклад групу томів <link linkend="glossary-lvm"
->LVM</link
->.</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-filesystemsupport">
-					<term>
-						<menuchoice
-><guimenu
->Інструменти</guimenu
-> <guimenuitem
->Підтримка файлових систем</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Показує діалогове вікно списку підтримки файлових систем.</action
-> У цьому діалоговому вікні буде показано подробиці щодо того, які дії можна виконувати з кожною з файлових систем, які підтримуються програмою. </para>
-						<para
->Ось приклад вигляду діалогового вікна за встановлення більшості зовнішніх інструментів: </para>
-						<para>
-							<screenshot>
-								<mediaobject>
-									<imageobject
-><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject
-><phrase
->Діалогове вікно підтримки файлових систем за встановлення більшості зовнішніх інструментів</phrase
-></textobject>
-								</mediaobject>
-							</screenshot>
-						</para>
-						<para
->Сині позначки означають <quote
->підтримується</quote
->, червоні хрестики — <quote
->не підтримується</quote
->. Деякі з комбінацій не підтримуються ні за яких умов, наприклад перевірка файлових систем linuxswap, оскільки такі перевірки неможливі через саму природу файлової системи. Інші можливості можуть не підтримуватися через функціональні обмеження зовнішніх інструментів. </para>
-						<para
->Якщо ви встановили нові інструменти під час виконання програми &partman;, натисніть кнопку <guibutton
->Повторно визначити</guibutton
->, щоб програма у примусовому порядку виконала перевірку встановлених інструментів підтримки файлових систем. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-refresh">
-					<term>
-						<menuchoice
-><shortcut
-><keycap
->F5</keycap
-></shortcut
-> <guimenu
->Інструменти</guimenu
-> <guimenuitem
->Оновити список пристроїв</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Оновлює список пристроїв</action
->: за допомогою цього пункту можна змусити &partman; повторно визначити і прочитати дані пристроїв на вашому комп’ютері. Така дія може, наприклад, знадобитися, якщо ви з’єднали з комп’ютером зовнішній жорсткий диск за допомогою USB вже після запуску &partman;. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -476,24 +405,6 @@
 						</warning>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-partition-mount">
-					<term>
-						<menuchoice
-><guimenu
->Розділ</guimenu
-> <guimenuitem
->Змонтувати/Демонтувати</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Монтує або демонтує розділ</action
->: за допомогою цього пункту можна змонтувати або демонтувати обраний розділ, залежно від його поточного стану. </para>
-						<para
->Цим пунктом можна буде скористатися, лише якщо вибраний розділ можна монтувати або демонтувати. Якщо операційній системі не буде відома точка монтування розділу, ви не зможете змонтувати його за допомогою &partman;. </para>
-					</listitem>
-				</varlistentry>
 				<varlistentry id="menu-partition-edit-mount">
 					<term>
 						<menuchoice
@@ -510,6 +421,24 @@
 > для редагування точки монтування та параметрів монтування. </para>
 						<para
 >Цією командою можна буде скористатися, лише якщо розділ демонтовано. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Змонтувати/Демонтувати</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Монтує або демонтує розділ</action
+>: за допомогою цього пункту можна змонтувати або демонтувати обраний розділ, залежно від його поточного стану. </para>
+						<para
+>Цим пунктом можна буде скористатися, лише якщо вибраний розділ можна монтувати або демонтувати. Якщо операційній системі не буде відома точка монтування розділу, ви не зможете змонтувати його за допомогою &partman;. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-check">
@@ -631,6 +560,77 @@
 						</para>
 						<para
 >Цей пункт стане доступним лише за вибору нерозподіленого простору на диску або розділу. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Меню «Інструменти»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Інструменти</guimenu
+> <guimenuitem
+>Створити групу томів</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Створити логічний пристрій, наприклад групу томів <link linkend="glossary-lvm"
+>LVM</link
+>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Інструменти</guimenu
+> <guimenuitem
+>Підтримка файлових систем</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Показує діалогове вікно списку підтримки файлових систем.</action
+> У цьому діалоговому вікні буде показано подробиці щодо того, які дії можна виконувати з кожною з файлових систем, які підтримуються програмою. </para>
+						<para
+>Ось приклад вигляду діалогового вікна за встановлення більшості зовнішніх інструментів: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Діалогове вікно підтримки файлових систем за встановлення більшості зовнішніх інструментів</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>Сині позначки означають <quote
+>підтримується</quote
+>, червоні хрестики — <quote
+>не підтримується</quote
+>. Деякі з комбінацій не підтримуються ні за яких умов, наприклад перевірка файлових систем linuxswap, оскільки такі перевірки неможливі через саму природу файлової системи. Інші можливості можуть не підтримуватися через функціональні обмеження зовнішніх інструментів. </para>
+						<para
+>Якщо ви встановили нові інструменти під час виконання програми &partman;, натисніть кнопку <guibutton
+>Повторно визначити</guibutton
+>, щоб програма у примусовому порядку виконала перевірку встановлених інструментів підтримки файлових систем. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
