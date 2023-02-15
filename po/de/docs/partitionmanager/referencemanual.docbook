@@ -133,6 +133,26 @@
 >Hierüber können Sie ein Gerät aus einem Untermenü wählen, in dem alle Geräte Ihres Systems aufgezählt werden. </para>
 					</listitem>
 				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Gerät</guimenu
+> <guimenuitem
+>Geräte aktualisieren</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Aktualisiert die Geräteliste</action
+>: Dieser Befehl erzwingt ein erneutes Analysieren und Einlesen der Geräte in Ihrem Computer. Dies kann beispielsweise notwendig sein, wenn Sie während der Ausführung von &partman; eine externe USB-Festplatte anschließen. </para>
+					</listitem>
+				</varlistentry>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice
@@ -215,99 +235,6 @@
 					<listitem>
 						<para
 >Zeigt Informationen über ausgewählte Geräte. In diesem Dialog finden Sie die Kapazität, Sektorgröße, Partitionstabelle, sowie die aktuelle und maximale Anzahl an Primärpartitionen.</para>
-					</listitem>
-				</varlistentry>
-			</variablelist>
-		</para>
-	</sect2>
-
-	<sect2 id="menu-tools">
-		<title
->Das Menu <quote
->Extras</quote
-> </title>
-		<para>
-			<variablelist>
-				<varlistentry id="menu-tools-volumegroup">
-					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;<keycap
->L</keycap
-></keycombo
-></shortcut
-> <guimenu
->Extras</guimenu
-> <guimenuitem
->Neue „Volume Group“</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
->Erzeugt eine neues logisches Gerät wie z.B. eine <link linkend="glossary-lvm"
->LVM</link
-> Volume Group.</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-filesystemsupport">
-					<term>
-						<menuchoice
-><guimenu
->Extras</guimenu
-> <guimenuitem
->Dateisystem-Unterstützung</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Zeigt die Liste unterstützter Dateisysteme an.</action
-> Dieser Dialog zeigt an, welche Operationen für einzelne Dateisysteme unterstützt werden. </para>
-						<para
->Hier sehen Sie eine Beispielansicht der Liste unterstützter Dateisysteme, wenn die meisten externen Dienstprogramme installiert sind: </para>
-						<para>
-							<screenshot>
-								<mediaobject>
-									<imageobject
-><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject
-><phrase
->Liste unterstützter Dateisysteme, wenn die meisten externen Dienstprogramme installiert sind</phrase
-></textobject>
-								</mediaobject>
-							</screenshot>
-						</para>
-						<para
->Blaue Haken bedeuten <quote
->unterstützt</quote
->, rote Kreuze bedeuten <quote
->nicht unterstützt</quote
->. Einige Kombinationen werden nicht unterstützt, weil sie sich ausschließen, beispielsweise die Überprüfung eines linuxswap-Dateisystems. Andere Operationen werden nicht unterstützt, weil die zugrunde liegenden Dienstprogramme die Funktionalität nicht unterstützen </para>
-						<para
->Wenn Sie neue Dienstprogramme installieren, während &partman; ausgeführt wird, wählen Sie <guibutton
->Erneut prüfen</guibutton
->, um eine erneute Überprüfung auf installierte Dienstprogramme zu erzwingen. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-refresh">
-					<term>
-						<menuchoice
-><shortcut
-><keycap
->F5</keycap
-></shortcut
-> <guimenu
->Extras</guimenu
-> <guimenuitem
->Geräte aktualisieren</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Aktualisiert die Geräteliste</action
->: Dieser Befehl erzwingt ein erneutes Analysieren und Einlesen der Geräte in Ihrem Computer. Dies kann beispielsweise notwendig sein, wenn Sie während der Ausführung von &partman; eine externe USB-Festplatte anschließen. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -482,24 +409,6 @@
 						</warning>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-partition-mount">
-					<term>
-						<menuchoice
-><guimenu
->Partition</guimenu
-> <guimenuitem
->Einhängen/Aushängen</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Hängt eine Partition ein oder aus</action
->: Dieser Befehl hängt eine ausgewählte Partition ein, wenn sie nicht eingehängt ist oder hängt sie aus, wenn sie eingehängt ist. </para>
-						<para
->Dieser Befehl ist nur verfügbar, wenn eine Partition ausgewählt ist, die eingehängt bzw. ausgehängt werden kann. Wenn dem Betriebssystem der Pfad, an dem die Partition eingehängt werden soll, nicht bekannt ist, kann &partman; sie nicht einhängen. </para>
-					</listitem>
-				</varlistentry>
 				<varlistentry id="menu-partition-edit-mount">
 					<term>
 						<menuchoice
@@ -516,6 +425,24 @@
 >, um dir Einhängepunkte und deren Optionen zu bearbeiten. </para>
 						<para
 >Dieser Befehl ist nur verfügbar, wenn die Partition nicht eingehängt ist. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partition</guimenu
+> <guimenuitem
+>Einhängen/Aushängen</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Hängt eine Partition ein oder aus</action
+>: Dieser Befehl hängt eine ausgewählte Partition ein, wenn sie nicht eingehängt ist oder hängt sie aus, wenn sie eingehängt ist. </para>
+						<para
+>Dieser Befehl ist nur verfügbar, wenn eine Partition ausgewählt ist, die eingehängt bzw. ausgehängt werden kann. Wenn dem Betriebssystem der Pfad, an dem die Partition eingehängt werden soll, nicht bekannt ist, kann &partman; sie nicht einhängen. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-check">
@@ -637,6 +564,79 @@
 						</para>
 						<para
 >Dieser Befehl ist nur verfügbar, wenn entweder nicht zugewiesener Speicherplatz oder eine Partition ausgewählt ist. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Das Menu <quote
+>Extras</quote
+> </title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Extras</guimenu
+> <guimenuitem
+>Neue „Volume Group“</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Erzeugt eine neues logisches Gerät wie z.B. eine <link linkend="glossary-lvm"
+>LVM</link
+> Volume Group.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Extras</guimenu
+> <guimenuitem
+>Dateisystem-Unterstützung</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Zeigt die Liste unterstützter Dateisysteme an.</action
+> Dieser Dialog zeigt an, welche Operationen für einzelne Dateisysteme unterstützt werden. </para>
+						<para
+>Hier sehen Sie eine Beispielansicht der Liste unterstützter Dateisysteme, wenn die meisten externen Dienstprogramme installiert sind: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Liste unterstützter Dateisysteme, wenn die meisten externen Dienstprogramme installiert sind</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>Blaue Haken bedeuten <quote
+>unterstützt</quote
+>, rote Kreuze bedeuten <quote
+>nicht unterstützt</quote
+>. Einige Kombinationen werden nicht unterstützt, weil sie sich ausschließen, beispielsweise die Überprüfung eines linuxswap-Dateisystems. Andere Operationen werden nicht unterstützt, weil die zugrunde liegenden Dienstprogramme die Funktionalität nicht unterstützen </para>
+						<para
+>Wenn Sie neue Dienstprogramme installieren, während &partman; ausgeführt wird, wählen Sie <guibutton
+>Erneut prüfen</guibutton
+>, um eine erneute Überprüfung auf installierte Dienstprogramme zu erzwingen. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
