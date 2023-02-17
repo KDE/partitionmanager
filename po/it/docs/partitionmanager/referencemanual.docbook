@@ -127,6 +127,26 @@
 >Ti consente di selezionare un dispositivo da un sottomenu con tutti i dispositivi disponibili del sistema. </para>
 					</listitem>
 				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Aggiorna i dispositivi</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Aggiorna i dispositivi</action
+>: questo comando forza &partman; ad eseguire una nuova scansione e lettura dei dispositivi collegati al tuo computer. Questo potrebbe essere ad esempio utile nel caso tu abbia collegato un disco rigido USB dopo l'avvio di &partman;. </para>
+					</listitem>
+				</varlistentry>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice
@@ -209,97 +229,6 @@
 					<listitem>
 						<para
 >Mostra informazioni sui dispositivi attualmente selezionati. In questa finestra è possibile trovare la capacità, le dimensioni dei settori, il tipo di tabella delle partizioni, così come il numero utilizzato e massimo di partizioni primarie.</para>
-					</listitem>
-				</varlistentry>
-			</variablelist>
-		</para>
-	</sect2>
-
-	<sect2 id="menu-tools">
-		<title
->Il menu Strumenti</title>
-		<para>
-			<variablelist>
-				<varlistentry id="menu-tools-volumegroup">
-					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;&Shift;<keycap
->L</keycap
-></keycombo
-></shortcut
-> <guimenu
->Strumenti</guimenu
-> <guimenuitem
->Nuovo gruppo di volumi</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
->Crea un nuovo dispositivo logico come gruppo di volumi <link linkend="glossary-lvm"
->LVM</link
->.</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-filesystemsupport">
-					<term>
-						<menuchoice
-><guimenu
->Strumenti</guimenu
-> <guimenuitem
->File system supportati</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Visualizza la finestra dei file system supportati</action
->. La finestra mostra nel dettaglio quali operazioni possono essere eseguite per i singoli file system supportati. </para>
-						<para
->Ecco un esempio di come potrebbe apparire la finestra con la maggior parte degli strumenti esterni installata: </para>
-						<para>
-							<screenshot>
-								<mediaobject>
-									<imageobject
-><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject
-><phrase
->Finestra dei file system supportati, con la maggior parte degli strumenti esterni installata</phrase
-></textobject>
-								</mediaobject>
-							</screenshot>
-						</para>
-						<para
->I segni di spunta blu significano <quote
->supportato</quote
->, le croci rosse <quote
->non supportato</quote
->. Alcune combinazioni non sono mai supportate (ad esempio, verificare un file system linuxswap) perché esse sono intrinsecamente impossibili. Altre non possono essere supportate perché gli strumenti esterni sono privi della relativa funzionalità. </para>
-						<para
->Se hai installato nuovi strumenti mentre &partman; è in esecuzione, fai clic su <guibutton
->Nuova analisi del supporto</guibutton
-> per forzare una nuova verifica degli strumenti di supporto dei file system installati. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-refresh">
-					<term>
-						<menuchoice
-><shortcut
-><keycap
->F5</keycap
-></shortcut
-> <guimenu
->Strumenti</guimenu
-> <guimenuitem
->Aggiorna dispositivi</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Aggiorna i dispositivi</action
->: questo comando forza &partman; ad eseguire una nuova scansione e lettura dei dispositivi collegati al tuo computer. Questo potrebbe essere ad esempio utile nel caso tu abbia collegato un disco rigido USB dopo l'avvio di &partman;. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -476,24 +405,6 @@
 						</warning>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-partition-mount">
-					<term>
-						<menuchoice
-><guimenu
->Partizione</guimenu
-> <guimenuitem
->Monta/smonta</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Monta o smonta una partizione</action
->: questo comando monta oppure smonta la partizione selezionata, a seconda del suo stato corrente. </para>
-						<para
->Questo comando è abilitato solo se è selezionata una partizione che possa essere montata o smontata. Se il sistema operativo non conosce un punto di montaggio per la partizione, non ti sarà possibile montarla in &partman;. </para>
-					</listitem>
-				</varlistentry>
 				<varlistentry id="menu-partition-edit-mount">
 					<term>
 						<menuchoice
@@ -510,6 +421,24 @@
 > per modificare il punto di montaggio e le opzioni relative. </para>
 						<para
 >Questo comando è abilitato solo se una partizione è smontata. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partizione</guimenu
+> <guimenuitem
+>Monta/smonta</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Monta o smonta una partizione</action
+>: questo comando monta oppure smonta la partizione selezionata, a seconda del suo stato corrente. </para>
+						<para
+>Questo comando è abilitato solo se è selezionata una partizione che possa essere montata o smontata. Se il sistema operativo non conosce un punto di montaggio per la partizione, non ti sarà possibile montarla in &partman;. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-check">
@@ -631,6 +560,77 @@
 						</para>
 						<para
 >Il comando è abilitato solo se sono selezionate un'area non allocata oppure una partizione. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Il menu Strumenti</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Strumenti</guimenu
+> <guimenuitem
+>Nuovo gruppo di volumi</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Crea un nuovo dispositivo logico come gruppo di volumi <link linkend="glossary-lvm"
+>LVM</link
+>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Strumenti</guimenu
+> <guimenuitem
+>File system supportati</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Visualizza la finestra dei file system supportati</action
+>. La finestra mostra nel dettaglio quali operazioni possono essere eseguite per i singoli file system supportati. </para>
+						<para
+>Ecco un esempio di come potrebbe apparire la finestra con la maggior parte degli strumenti esterni installata: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Finestra dei file system supportati, con la maggior parte degli strumenti esterni installata</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>I segni di spunta blu significano <quote
+>supportato</quote
+>, le croci rosse <quote
+>non supportato</quote
+>. Alcune combinazioni non sono mai supportate (ad esempio, verificare un file system linuxswap) perché esse sono intrinsecamente impossibili. Altre non possono essere supportate perché gli strumenti esterni sono privi della relativa funzionalità. </para>
+						<para
+>Se hai installato nuovi strumenti mentre &partman; è in esecuzione, fai clic su <guibutton
+>Nuova analisi del supporto</guibutton
+> per forzare una nuova verifica degli strumenti di supporto dei file system installati. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
