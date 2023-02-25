@@ -10,7 +10,7 @@
 >Além da área principal, que mostra o dispositivo atualmente selecionado de forma gráfica e em árvore, o &partman; usa as <quote
 >áreas acopláveis</quote
 > ou painéis do &Qt; para mostrar alguma informação e permitir algumas seleções. Veja a seguinte imagem para ter uma ideia geral da janela principal do &partman;. </para>
-		
+
 		<para>
 			<screenshot>
 				<screeninfo
@@ -35,9 +35,9 @@
 			
 				<listitem>
 					<para
->Barra de Ferramentas: A barra de ferramentas do &partman; é uma barra normal do &kde; 4. Pode ser completamente personalizada; para mais detalhes, veja em <xref linkend="menu-settings"/>. </para>
+>Barra de ferramentas: A barra de ferramentas do &partman; é uma barra de ferramentas normal. Pode ser completamente personalizada; para mais detalhes, veja em <xref linkend="menu-settings-help"/>. </para>
 				</listitem>
-			
+
 				<listitem>
 					<para
 >Painel de Dispositivos: Este painel apresenta todos os <glossterm linkend="glossary-device"
@@ -61,7 +61,7 @@
 >janela de propriedades da partição</link
 >. Se clicar com o botão direito, irá abrir o menu de contexto da partição. </para>
 				</listitem>
-				
+
 				<listitem>
 					<para
 >Área em Árvore do Dispositivo: Esta área mostra informações estendidas sobre cada partição do dispositivo selecionado. A partição atualmente selecionada encontra-se realçada. Se fizer duplo-clique sobre uma partição, irá abrir a <link linkend="menu-partition-properties"
@@ -96,6 +96,6 @@
 			</itemizedlist>
 		</para>
 		
-	</sect1>
-&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
 
