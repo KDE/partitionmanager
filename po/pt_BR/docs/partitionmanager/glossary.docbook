@@ -9,8 +9,8 @@
 >tarefas</link
 >. Estes são os passos de muito baixo nível que são executados, sendo normalmente da responsabilidade de uma ferramenta externa e apenas visíveis no relatório de progresso detalhado. </para>
 			<para
->O usuário normalmente não tem que se preocupar com os comandos. </para>
-<glossseealso otherterm="glossary-operation"
+>O usuário normalmente não tem que se preocupar com os comandos. </para
+><glossseealso otherterm="glossary-operation"
 ></glossseealso
 > <glossseealso otherterm="glossary-job"
 ></glossseealso
@@ -26,8 +26,8 @@
 >dispositivo</link
 >. Alguns sistemas operacionais, bem como muitas ferramentas de gerenciamento de discos, necessitam que as <link linkend="glossary-partition"
 >partições</link
-> comecem e terminem num cilindro. Assim, o &partman; ajusta automaticamente as partições aos limites entre cilindros, quando altera o seu início e fim. </para>
-<glossseealso otherterm="glossary-head"
+> comecem e terminem num cilindro. Assim, o &partman; ajusta automaticamente as partições aos limites entre cilindros, quando altera o seu início e fim. </para
+><glossseealso otherterm="glossary-head"
 ></glossseealso
 > <glossseealso otherterm="glossary-sector"
 ></glossseealso
@@ -104,8 +104,8 @@
 >tabela de partições</link
 > usado. As tabelas de partições do MS-DOS permitem apenas uma partição estendida por <link linkend="glossary-device"
 >dispositivo</link
->. </para>
-<glossseealso otherterm="glossary-primarypartition"
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
 ></glossseealso
 > <glossseealso otherterm="glossary-logicalpartition"
 ></glossseealso
@@ -119,7 +119,7 @@
 			<para
 >Um sistema de arquivos define como está organizado o armazenamento dos dados (arquivos ou pastas e os seus metadados ou o espaço livre) dentro de uma <link linkend="glossary-partition"
 >partição</link
->. Existem diversos tipos de sistemas de arquivos diferentes, vindo alguns originalmente do mundo do Unix/Linux, enquanto outros não. Alguns exemplos de sistemas de arquivos comuns no Unix/Linux são o 'ext2', o 'ext3', o 'reiserfs' e o 'xfs'. </para>
+>. Existem diversos tipos de sistemas de arquivos diferentes, vindo alguns originalmente do mundo do Unix/Linux, enquanto outros não. Alguns exemplos de sistemas de arquivos comuns no Unix/Linux são o Btrfs, ext4 e XFS. </para>
 		</glossdef>
 	</glossentry>
 
@@ -128,7 +128,7 @@
 >Rótulo do sistema de arquivos</glossterm>
 		<glossdef>
 			<para
->O título ou etiqueta de um sistema de arquivos. Alguns sistemas de arquivos (entre eles o 'ext2/3/4', o FAT16/32 e o NTFS) suportam a definição de um rótulo para o sistema de arquivos, de modo que este possa ser identificado nas ferramentas como o &partman; ou em outras aplicações. </para>
+>O título ou etiqueta de um sistema de arquivos. Alguns sistemas de arquivos (entre eles o Btrfs, ext2/3/4, o FAT16/32 e o NTFS) suportam a definição de um rótulo para o sistema de arquivos, de modo que este possa ser identificado nas ferramentas como o &partman; ou em outras aplicações. </para>
 			<para>
 				<note>
 					<para
@@ -146,6 +146,17 @@
 		<glosssee otherterm="glossary-partitionflag"/>
 	</glossentry>
 	
+	<glossentry>
+		<glossterm
+>GPT</glossterm>
+		<glossdef>
+			<para
+>Um formato de tabela de partição moderno suportado pela maioria dos computadores e sistemas operacionais modernos. Ele suporta mais que 4 <link linkend="glossary-primarypartition"
+>partições primárias</link
+> ao contrário da tabela de partição MS-DOS. </para>
+		</glossdef>
+	</glossentry>
+
 	<glossentry id="glossary-head">
 		<glossterm
 >Cabeçalho</glossterm>
@@ -153,8 +164,8 @@
 			<para
 >Uma unidade usada para dividir um <link linkend="glossary-device"
 >dispositivo</link
->. </para>
-<glossseealso otherterm="glossary-cylinder"
+>. </para
+><glossseealso otherterm="glossary-cylinder"
 ></glossseealso
 > <glossseealso otherterm="glossary-sector"
 ></glossseealso
@@ -168,15 +179,15 @@
 			<para
 >No &partman;, um conjunto de tarefas é o que compõe as <link linkend="glossary-operation"
 >operações</link
->. Normalmente, você não tem que se preocupar com as tarefas; elas só se tornam aparentes ao aplicar a lista de operações pendentes: aí sim, o &partman; irá então mostrar uma janela de progresso, composta por todas as operações e respectivas tarefas, que mostra a operação e a tarefa que está sendo executada no momento. </para>
-<glossseealso otherterm="glossary-operation"
+>. Normalmente, você não tem que se preocupar com as tarefas; elas só se tornam aparentes ao aplicar a lista de operações pendentes: aí sim, o &partman; irá então mostrar uma janela de progresso, composta por todas as operações e respectivas tarefas, que mostra a operação e a tarefa que está sendo executada no momento. </para
+><glossseealso otherterm="glossary-operation"
 ></glossseealso
 > <glossseealso otherterm="glossary-command"
 ></glossseealso
 > </glossdef>
 	</glossentry>
 
-	<glossentry>
+	<glossentry id="glossary-label">
 		<glossterm
 >Rótulo</glossterm>
 		<glossdef>
@@ -185,8 +196,8 @@
 >rótulo do disco</link
 > como um <link linkend="glossary-filesystemlabel"
 >rótulo do sistema de arquivos</link
->. </para>
-<glossseealso otherterm="glossary-disklabel"
+>. </para
+><glossseealso otherterm="glossary-disklabel"
 ></glossseealso
 > <glossseealso otherterm="glossary-filesystemlabel"
 ></glossseealso
@@ -202,12 +213,40 @@
 >partição</link
 > dentro de uma <link linkend="glossary-extendedpartition"
 >partição estendida</link
->. </para>
-<glossseealso otherterm="glossary-primarypartition"
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
 ></glossseealso
 > <glossseealso otherterm="glossary-extendedpartition"
 ></glossseealso
 > </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-luks">
+		<glossterm
+>LUKS</glossterm>
+		<glossdef>
+			<para
+>O LUKS (Linux Unified Key Setup) é o formato de criptografia padrão para o Linux. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-lvm">
+		<glossterm
+>LVM</glossterm>
+		<glossdef>
+			<para
+>LVM é um sistema para gerenciar partições lógicas que é mais flexível que as partições normais. Ele consiste em três componentes  principais:</para>
+			<simplelist>
+			<member
+>Volumes físicos LVM são partições no disco cujo espaço é gerenciado pelo LVM.</member>
+			<member
+>Grupo de volume LVM é uma coleção de volumes físicos LVM que podem ser particionados em partições lógicas. Pode ser usado para criar sistemas de arquivos abrangendo múltiplos dispositivos ou para dividir volumes <link linkend="glossary-luks"
+>LUKS</link
+> criptografados em partições menores.</member>
+			<member
+>Volumes lógicos LVM são similares às partições normais, exceto que elas residem no grupo de volume LVM. Também, a localização das partições lógicas LVM não importam e elas não precisam ser fisicamente contínuas. Portanto, o &partman; não permite mover volumes lógicos LVM e mostra o espaço livre restante ao final do dispositivo.</member>
+			</simplelist>
+		</glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-operation">
@@ -225,8 +264,8 @@
 			<para
 >As operações são mantidas numa lista de operações pendentes. Enquanto uma operação não tiver sido aplicada, será possível <link linkend="menu-edit-undo"
 >anulá-la facilmente</link
->, sem que nada seja modificado. </para>
-<glossseealso otherterm="glossary-job"
+>, sem que nada seja modificado. </para
+><glossseealso otherterm="glossary-job"
 ></glossseealso
 > <glossseealso otherterm="glossary-command"
 ></glossseealso
@@ -242,8 +281,8 @@
 >dispositivo de disco rígido</link
 > que poderá conter um <link linkend="glossary-filesystem"
 >sistema de arquivos</link
-> ou outras partições. Sem ter pelo menos uma partição válida, você não pode usar um determinado disco. </para>
-<glossseealso otherterm="glossary-device"
+> ou outras partições. Sem ter pelo menos uma partição válida, você não pode usar um determinado disco. </para
+><glossseealso otherterm="glossary-device"
 ></glossseealso
 > <glossseealso otherterm="glossary-partitiontable"
 ></glossseealso
@@ -276,7 +315,7 @@
 			<para
 >Uma pequena seção no início de um <link linkend="glossary-device"
 >dispositivo</link
-> que é usada para guardar informações sobre a disposição das <link linkend="glossary-partition"
+> que é usada para guardar informações sobre o layout das <link linkend="glossary-partition"
 >partições</link
 > do dispositivo. Existem diferentes tipos de tabelas de partições, tendo cada uma delas as suas próprias limitações. </para>
 			<para
@@ -305,8 +344,8 @@
 >tabelas de partições</link
 > normalmente impõem restrições sobre o número máximo de partições primárias que poderão ser criadas num <link linkend="glossary-device"
 >dispositivo</link
->. Para as tabelas de partições do tipo do MS-DOS, por exemplo, este número máximo é igual a quatro. </para>
-<glossseealso otherterm="glossary-extendedpartition"
+>. Para as tabelas de partições do tipo do MS-DOS, por exemplo, este número máximo é igual a quatro. </para
+><glossseealso otherterm="glossary-extendedpartition"
 ></glossseealso
 > <glossseealso otherterm="glossary-logicalpartition"
 ></glossseealso
@@ -322,8 +361,8 @@
 >dispositivo</link
 >. As <link linkend="glossary-partition"
 >partições</link
-> devem sempre começar e terminar num setor. </para>
-<glossseealso otherterm="glossary-head"
+> devem sempre começar e terminar num setor. </para
+><glossseealso otherterm="glossary-head"
 ></glossseealso
 > <glossseealso otherterm="glossary-cylinder"
 ></glossseealso

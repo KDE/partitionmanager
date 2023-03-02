@@ -7,13 +7,10 @@
 >Resumo</title>
 		<para
 >Este capítulo fornece uma explicação mais detalhada sobre todos os comandos disponíveis no &partman;. Ele pretende ser uma referência para acompanhar a informação apresentada em <xref linkend="usermanual"/>.</para>
-	</sect1>
-	
-	<sect1 id="menu-file">
+
+	<sect2 id="menu-file">
 		<title
->Menu <guimenu
->Arquivo</guimenu
-></title>
+>O menu Arquivo</title>
 		<para>
 			<variablelist>
 				<varlistentry id="menu-file-quit">
@@ -40,13 +37,11 @@
 				</varlistentry>
 			</variablelist>
 		</para>
-	</sect1>
+	</sect2>
 
-	<sect1 id="menu-edit">
+	<sect2 id="menu-edit">
 		<title
->O menu <guimenu
->Editar</guimenu
-></title>
+>O menu Editar</title>
 		<para>
 			<variablelist>
 				<varlistentry id="menu-edit-undo">
@@ -111,122 +106,28 @@
 				</varlistentry>
 			</variablelist>
 		</para>
-	</sect1>
+	</sect2>
 
-	<sect1 id="menu-view">
+	<sect2 id="menu-device">
 		<title
->O menu <guimenu
->Exibir</guimenu
-></title>
+>O menu Dispositivo</title>
 		<para>
 			<variablelist>
-				<varlistentry id="menu-view-devices">
+				<varlistentry id="menu-device-selectcurrentdevice">
 					<term>
 						<menuchoice
 ><guimenu
->Exibir</guimenu
+>Dispositivo</guimenu
 > <guimenuitem
->Dispositivos</guimenuitem
+>Selecionar dispositivo atual</guimenuitem
 > </menuchoice>
 					</term>
 					<listitem>
 						<para
-><action
->Comuta o painel de Dispositivos</action
->: Este comando ativa ou desativa a lista de dispositivos. </para>
+>Permite selecionar um dispositivo em um submenu com todos os dispositivos disponíveis no sistema. </para>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-view-operations">
-					<term>
-						<menuchoice
-><guimenu
->Exibir</guimenu
-> <guimenuitem
->Operações Pendentes</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Comuta o painel de Operações Pendentes</action
->: Este comando ativa ou desativa a lista de operações pendentes. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-view-information">
-					<term>
-						<menuchoice
-><guimenu
->Exibir</guimenu
-> <guimenuitem
->Informação</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Comuta o painel de Informação</action
->: Este comando ativa ou desativa a visibilidade do painel de informações. Este painel tanto irá mostrar detalhes sobre o dispositivo atualmente selecionado como, se for selecionada alguma, a partição escolhida. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-view-log">
-					<term>
-						<menuchoice
-><guimenu
->Exibir</guimenu
-> <guimenuitem
->Saída do Registro</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Comuta o painel de saída do registro</action
->: Este comando ativa ou desativa o painel da saída dos registros. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-view-filesystemsupport">
-					<term>
-						<menuchoice
-><guimenu
->Exibir</guimenu
-> <guimenuitem
->Suporte do Sistema de Arquivos</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Mostra a janela de suporte ao sistema de arquivos.</action
-> Esta janela mostra em detalhe as operações que poderão ser efetuadas para cada um dos sistemas de arquivos suportados. </para>
-						<para
->Aqui está um exemplo de como poderá aparecer a janela com a maioria das ferramentas externas instaladas: </para>
-						<para>
-							<screenshot>
-								<mediaobject>
-									<imageobject
-><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject
-><phrase
->A janela de suporte ao sistema de arquivos com a maioria das ferramentas instaladas</phrase
-></textobject>
-								</mediaobject>
-							</screenshot>
-						</para>
-						<para
->A marcação em azul significa <quote
->suportado</quote
->, enquanto a cruz vermelha significa <quote
->não suportado</quote
->. Algumas combinações nunca são suportadas, como a verificação das partições de memória virtual, por ser inerentemente impossível. Outras poderão não ser suportadas por falta de funcionalidade por parte das ferramentas. Isso acontece, por exemplo, com a gravação de rótulos dos sistemas de arquivos FAT. </para>
-						<para
->Se você tiver instalado ferramenta novas enquanto o &partman; estiver em execução, clique em <guibutton
->Analisar de Novo o Suporte</guibutton
-> para forçar uma atualização da sondagem de ferramentas de suporte aos sistemas de arquivos. </para>
-						<para
->Veja também a seção <xref linkend="requirements"/> para saber qual a ferramenta que é necessária para cada operação. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-view-refresh">
+				<varlistentry id="menu-tools-refresh">
 					<term>
 						<menuchoice
 ><shortcut
@@ -234,9 +135,9 @@
 >F5</keycap
 ></shortcut
 > <guimenu
->Ver</guimenu
+>Dispositivo</guimenu
 > <guimenuitem
->Atualizar os Dispositivos</guimenuitem
+>Atualizar dispositivos</guimenuitem
 > </menuchoice>
 					</term>
 					<listitem>
@@ -246,17 +147,6 @@
 >: Este comando obriga o &partman; a sondar e a ler os dispositivos do seu computador de novo. Isto poderá ser útil, por exemplo, se tiver conectado um disco rígido USB externo, após ter iniciado o &partman;. </para>
 					</listitem>
 				</varlistentry>
-			</variablelist>
-		</para>
-	</sect1>
-
-	<sect1 id="menu-device">
-		<title
->O menu <guimenu
->Dispositivo</guimenu
-></title>
-		<para>
-			<variablelist>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice
@@ -269,27 +159,85 @@
 > <guimenu
 >Dispositivo</guimenu
 > <guimenuitem
->Criar nova tabela de partição</guimenuitem
+>Nova tabela de partição</guimenuitem
 > </menuchoice>
 					</term>
 					<listitem>
 						<para
 ><action
 >Cria uma tabela de partições nova</action
->: Este comando cria uma tabela de partições de MS-DOS nova e em branco no dispositivo selecionado. Isto irá apagar todas as partições no dispositivo, bem como todos os dados no mesmo; por isso, é bom ter cuidado com este comando. </para>
+>: Este comando cria uma tabela de partições GPT ou MS-DOS nova e em branco no dispositivo selecionado. Isto irá apagar todas as partições no dispositivo, bem como todos os dados no mesmo; por isso, é bom ter cuidado com este comando. </para>
 						<para
 >Este comando só fica ativo se tiver selecionado um dispositivo e se não tiver nenhuma partição dele montada. </para>
 					</listitem>
 				</varlistentry>
+				<varlistentry id="menu-device-exportpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Exportar tabela de partição</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Permite exportar uma lista de todas as partições no dispositivo selecionado para um arquivo. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-importpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Importar tabela de partição</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Permite importar uma tabela de partição de um arquivo previamente exportado.</para>
+						<para
+>Isto irá apagar todas as partições no dispositivo, bem como todos os dados no mesmo; por isso, é bom ter cuidado com este comando.</para>
+						<para
+>Este comando só fica ativo se tiver selecionado um dispositivo e se não tiver nenhuma partição dele montada. Importando para dispositivos lógicos, como grupos de volumes LVM não são suportados no momento.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-smartstatus">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Status do SMART</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Mostra um relatório SMART. O SMART é um sistema de monitoramento incluído em unidades de disco rígido e de estado sólido que detecta e relata vários indicadores de confiabilidade da unidade, com o objetivo de permitir a antecipação de falhas de hardware.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Dispositivo</guimenu
+> <guimenuitem
+>Propriedades</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Mostra informações sobre os dispositivos atualmente selecionados. Neste diálogo, você pode encontrar capacidade, tamanhos de setor, tipo de tabela de partição, bem como o número máximo e o usado de partições primárias.</para>
+					</listitem>
+				</varlistentry>
 			</variablelist>
 		</para>
-	</sect1>
+	</sect2>
 
-	<sect1 id="menu-partition">
+	<sect2 id="menu-partition">
 		<title
->O menu <guimenu
->Partição</guimenu
-></title>
+>O menu Partição</title>
 
 		<para>
 			<variablelist>
@@ -342,7 +290,7 @@
 >diminuir a partição</quote
 >) ou aumentá-lo (<quote
 >aumentar a partição</quote
->) -- poderão estar disponíveis nesta janela. Veja a seção <xref linkend="menu-view-filesystemsupport"/>. </para>
+>) -- poderão estar disponíveis nesta janela. Veja a seção <xref linkend="menu-tools-filesystemsupport"/>. </para>
 						<para
 >Este comando só fica ativo se tiver selecionado uma partição que não esteja montada no momento e cujo sistema de arquivos possa ser diminuído, aumentado ou movido. No caso de uma partição estendida, só ficará ativo se nenhuma das partições lógicas da partição estendida estiver montada. </para>
 					</listitem>
@@ -351,9 +299,7 @@
 					<term>
 						<menuchoice
 ><shortcut
-><keycap
->Del</keycap
-></shortcut
+>&Del;</shortcut
 > <guimenu
 >Partição</guimenu
 > <guimenuitem
@@ -372,6 +318,34 @@
 >Aviso: possível perda de dados</title>
 							<para
 >Quando apagar uma partição, isto significa que todos os dados da partição serão destruídos.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-shred">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Del;</keycombo
+></shortcut
+> <guimenu
+>Partição</guimenu
+> <guimenuitem
+>Destruir</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Destrói uma partição</action
+>: Este comando destrói a partição atualmente selecionada. </para>
+						<para
+>Este comando só fica ativo se estiver selecionada uma partição que não esteja montada no momento. No caso de uma partição estendida, só fica ativa se ela não contiver nenhuma partição lógica. </para>
+						<warning>
+							<title
+>Aviso: perda de dados</title>
+							<para
+>Quando destruir uma partição, isto significa que todos os dados da partição serão destruídos.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
@@ -429,6 +403,24 @@
 							<para
 >A colagem de uma partição sobre uma existente significa que todos os dados da partição existente serão destruídos e substituídos pelos dados da partição colada.</para>
 						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-edit-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partição</guimenu
+> <guimenuitem
+>Editar ponto de montagem</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Abre um diálogo</action
+> para editar o ponto de montagem e as opções de montagem. </para>
+						<para
+>Este comando só é habilitado se uma partição estiver montada. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-mount">
@@ -572,24 +564,100 @@
 				</varlistentry>
 			</variablelist>
 		</para>
-	</sect1>
+	</sect2>
 
-	<sect1 id="menu-settings">
+	<sect2 id="menu-tools">
 		<title
->O menu <guimenu
->Configurações</guimenu
-></title>
+>O menu Ferramentas</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Ferramentas</guimenu
+> <guimenuitem
+>Novo grupo de volumes</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Cria um novo dispositivo lógico como um grupo de volume <link linkend="glossary-lvm"
+>LVM</link
+>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Ferramentas</guimenu
+> <guimenuitem
+>Suporte do sistema de arquivos</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Mostra a janela de suporte ao sistema de arquivos.</action
+> Esta janela mostra em detalhe as operações que poderão ser efetuadas para cada um dos sistemas de arquivos suportados. </para>
+						<para
+>Aqui está um exemplo de como poderá aparecer a janela com a maioria das ferramentas externas instaladas: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>A janela de suporte ao sistema de arquivos com a maioria das ferramentas instaladas</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>A marcação em azul significa <quote
+>suportado</quote
+>, enquanto a cruz vermelha significa <quote
+>não suportado</quote
+>. Algumas combinações nunca são suportadas, como a verificação das partições de memória virtual, por ser inerentemente impossível. Outras poderão não ser suportadas por falta de funcionalidade por parte das ferramentas. </para>
+						<para
+>Se você tiver instalado ferramenta novas enquanto o &partman; estiver em execução, clique em <guibutton
+>Analisar de Novo o Suporte</guibutton
+> para forçar uma atualização da sondagem de ferramentas de suporte aos sistemas de arquivos. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-settings-help">
+		<title
+>Os menus Configurações e Ajuda</title>
 
 		<para
->Este é o menu de <guimenu
->Configurações</guimenu
-> presente na maioria das aplicações do &kde;. Veja por favor a documentação do &kde; para saber mais detalhes sobre este menu. </para>
+>&partman; tem os menus comuns do &kde; <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Configurações</ulink
+> e <ulink url="help:/fundamentals/menus.html#menus-help"
+>Ajudas</ulink
+> descrito nos Fundamentos do &kde; com submenu adicional <guisubmenu
+>Painéis exibidos</guisubmenu
+>, onde você pode alternar a exibição dos <guimenuitem
+>Dispositivos</guimenuitem
+>, <guimenuitem
+>Operações pendentes</guimenuitem
+>, <guimenuitem
+>Informações</guimenuitem
+> e os painéis ligar e desligar a <guimenuitem
+>Saída do log</guimenuitem
+>. </para>
+	</sect2>
 	</sect1>
 
-	<sect1 id="menu-help">
-		<title
->O menu <guimenu
->Ajuda</guimenu
-></title>
-&help.menu.documentation; </sect1>
 </chapter>
