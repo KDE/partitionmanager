@@ -14,7 +14,7 @@ project(partitionmanager VERSION ${RELEASE_SERVICE_VERSION})
 
 # Dependencies
 set(QT_MIN_VERSION "5.15.2")
-set(KF5_MIN_VERSION "5.91")
+set(KF_MIN_VERSION "5.91")
 set(KPMCORE_MIN_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}")
 
 set(KDE_COMPILERSETTINGS_LEVEL "5.85")
@@ -22,7 +22,7 @@ set(KDE_COMPILERSETTINGS_LEVEL "5.85")
 set(CMAKE_USE_RELATIVE_PATHS OFF)
 set(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
 
-find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
 include(ECMInstallIcons)
 
@@ -32,6 +32,13 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(FeatureSummary)
 include(GenerateExportHeader)
 include(ECMDeprecationSettings)
+if (QT_MAJOR_VERSION STREQUAL "6")
+    set(QT_REQUIRED_VERSION "6.4.0")
+    set(KF_MIN_VERSION "5.240.0")
+    set(KF_MAJOR_VERSION "6")
+else()
+    set(KF_MAJOR_VERSION "5")
+endif()
 
 if (NOT QT_MAJOR_VERSION)
     set(QT_MAJOR_VERSION "5")
@@ -44,7 +51,7 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 )
 
 # Load the frameworks we need
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED
   COMPONENTS
     Config
     ConfigWidgets
@@ -62,7 +69,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
 )
 
 find_package(PolkitQt${QT_MAJOR_VERSION}-1 REQUIRED)
-ecm_set_disabled_deprecation_versions(QT 5.15.2
+ecm_set_disabled_deprecation_versions(QT 6.4
     KF 5.101.0
 )
 
@@ -71,7 +78,7 @@ find_package(KPMcore ${KPMCORE_MIN_VERSION} REQUIRED)
 
 add_subdirectory(src)
 add_subdirectory(icons)
-if (KF5DocTools_FOUND)
+if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
     add_subdirectory(doc)
     kdoctools_install(po)
 endif()

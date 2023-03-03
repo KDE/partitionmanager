@@ -29,17 +29,18 @@ add_executable(partitionmanager ${partitionmanager_SRCS} )
 
 target_link_libraries(partitionmanager
 	kpmcore
-	KF5::ConfigCore
-	KF5::ConfigGui
-	KF5::ConfigWidgets
-	KF5::CoreAddons
-	KF5::Crash
-	KF5::DBusAddons
-	KF5::I18n
-	KF5::JobWidgets
-	KF5::KIOWidgets
-	KF5::WidgetsAddons
-	KF5::XmlGui
+	KF${KF_MAJOR_VERSION}::ConfigCore
+	KF${KF_MAJOR_VERSION}::ConfigGui
+	KF${KF_MAJOR_VERSION}::ConfigWidgets
+	KF${KF_MAJOR_VERSION}::CoreAddons
+	KF${KF_MAJOR_VERSION}::Crash
+	KF${KF_MAJOR_VERSION}::DBusAddons
+	KF${KF_MAJOR_VERSION}::I18n
+	KF${KF_MAJOR_VERSION}::JobWidgets
+	KF${KF_MAJOR_VERSION}::KIOWidgets
+	KF${KF_MAJOR_VERSION}::WidgetsAddons
+	KF${KF_MAJOR_VERSION}::XmlGui
+	KF${KF_MAJOR_VERSION}::WindowSystem
 	PolkitQt${QT_MAJOR_VERSION}-1::Core
 )
 
