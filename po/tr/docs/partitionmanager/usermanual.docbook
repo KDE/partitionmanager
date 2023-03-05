@@ -1,0 +1,99 @@
+<chapter id="usermanual">
+	<title
+> &partman; Kullanımı</title>
+
+	<sect1 id="mainwindow">
+		<title
+>Ana Pencere</title>
+
+		<para
+>O anda seçili olan aygıtı grafik ve ağaç görünümünde gösteren ana görünümün yanı sıra, &partman; bazı bilgileri görüntülemek ve seçimlere izin vermek için &Qt;'nin <quote
+>rıhtım araç takımlarını</quote
+> veya panellerini kullanır. &partman; uygulamasının ana penceresine genel bir bakış için aşağıdaki ekran görüntüsüne bakın. </para>
+
+		<para>
+			<screenshot>
+				<screeninfo
+>&partman; uygulamasının ana penceresi</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Ana Pencere</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>Menü çubuğu: Menü çubuğu, gerçekleştirilecek eylemleri seçmek için bazı özel ve bazı standart olmayan menüler sunar. Tüm komutlar ayrıntılı olarak <xref linkend="reference"/> içinde açıklanmıştır.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Araç Çubuğu: &partman;'ın araç çubuğu standart bir araç çubuğudur. Tamamen özelleştirilebilirdir; ayrıntılar için bkz. <xref linkend="menu-settings-help"/>. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Aygıtlar Paneli: Bu panel, bilgisayarınızda bulunan &partman; baş edebilir. Grafik aygıt görünümünde veya ağaç aygıt görünümünde görüntülemek veya değiştirmek için bu panelde bir aygıt seçin.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>Grafik Aygıt Görünümü: Bu görünümde &partman;, seçili olan aygıtın grafiksel bir temsilini gösterir. Aygıtın <glossterm linkend="glossary-partition"
+>disk bölümlerinin</glossterm
+> her birinin, aygıt düğüm adını (yukarıdaki ekran görüntüsündeki ilk bölüm için <quote
+>sda1</quote
+>) ve kullanım bilgilerini ( ekran görüntüsündeki koyu mor alan) gösteren bir kutusu vardır. </para>
+					<para
+><glossterm linkend="glossary-extendedpartition"
+>Genişletilmiş disk bölümleri</glossterm
+>, etraflarındaki ek kenarlıklarıyla (yukarıdaki ekran görüntüsünde açık yeşil) görsel olarak farklıdır. </para>
+					<para
+>Grafik aygıt görünümünde üzerine tıklayarak bir bölüm seçebilirsiniz. Çift tıklama, <link linkend="menu-partition-properties"
+>bölümün özellikler iletişim kutusunu</link
+> açar. Sağ tıklama, bölüm içerik menüsünü gösterir. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Ağaç Aygıt Görünümü: Ağaç aygıt görünümü, seçilen aygıttaki her bölüm hakkında genişletilmiş bilgileri gösterir. Seçili olan bölüm vurgulanır. Bir bölüme çift tıklamak, <link linkend="menu-partition-properties"
+>bölümün özellikler iletişim kutusunu</link
+> açar. Sağ tıklama, bölüm içerik menüsünü gösterir. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Bilgi Paneli: Bilgi paneli, seçili olan aygıt veya bölüm hakkında bazı ayrıntıları gösterir. Öntanımlı olarak etkin değildir.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Bekleyen İşlemler Paneli: Bu panel, <xref linkend="menu-edit-apply"/> öğesini seçtiğinizde yürütülecek tüm işlemleri listeler. </para>
+					<para
+>Yukarıdaki ekran görüntüsünde bekleyen bir işlem var: Kullanıcı işlemleri şimdi uygularsa /dev/sdb3 üzerindeki <glossterm linkend="glossary-filesystem"
+>dosya sistemi</glossterm
+> hatalara karşı denetlenecek ve gerekirse onarılacak. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Durum Çubuğu: Durum çubuğu, o anda kaç işlemin beklemede olduğunu gösterir. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Günlük Çıktı Paneli: Bu panel, günlük bilgilerini gösterir. Gelişmiş olmayan kullanıcılar için yalnızca ikincil öneme sahiptir ve öntanımlı olarak etkin değildir.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+
