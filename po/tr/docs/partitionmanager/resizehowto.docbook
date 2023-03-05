@@ -1,0 +1,238 @@
+<sect1 id="howto-resizepartition">
+	<title
+>Nasıl Yapılır: Bir Bölümü Yeniden Boyutlandırma</title>
+
+	<para
+>Bu nasıl yapılır belgesi, fazla dolmakta olan bir <glossterm linkend="glossary-partition"
+>bölümün</glossterm
+> yeniden boyutlandırılmasını açıklar. Yeniden boyutlandırmadan önceki ilk durum için aşağıdaki ekran görüntüsüne bakın: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Bölümleri yeniden boyutlandırmadan önce ana pencere</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+><quote
+>/dev/sdb</quote
+> <glossterm linkend="glossary-device"
+>aygıtı</glossterm
+>üzerinde, <quote
+>sdb2</quote
+> disk bölümünde çok az boş alan kalırken, diğer bölüm <quote 
+>sdb1</quote
+>, dolu olmaktan çok uzak. Bu nedenle, ilk bölümün biraz daha küçültülmesi ve daha fazla kullanılabilir boş alana sahip olması için <quote
+>sdb2</quote
+> ögesinin büyütülmesi tavsiye edilir. </para>
+
+	<note>
+		<title
+>Not: Bağlı bölümleri değiştiremezsiniz.</title>
+		<para
+>Yukarıdaki ekran görüntüsünde, her iki bölüm de şu anda takılı değil. Bunlardan biri veya her ikisi takılıysa önce <xref linkend="menu-partition-mount"/> kullanarak bunları kaldırmanız gerekir.</para>
+	</note>
+
+	<para
+>İlk adım, bölümün büyütülmesi için daha fazla yer açmaktır, bu nedenle <quote
+>sdb1</quote
+>'i küçülterek başlayın. Bölüme tıklayın ve <xref linkend="menu-partition-resize"/> ögesini seçin. Aşağıdaki iletişim kutusu gelir: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>/dev/sdb1 bölümünü yeniden boyutlandırmadan önceki pencere</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>İletişim kutusu, bölümü birden çok şekilde yeniden boyutlandırmanıza olanak tanır. Bölüm istenen boyuta gelene kadar sağ tutacı sola sürükleyebilir veya boyutu <guilabel
+>Boyut</guilabel
+> metin alanına girebilirsiniz. Başka bir olasılık, metin alanının yanındaki küçük oklara tıklayarak boyutu ayarlamak olabilir; ancak bu, daha büyük değişiklikler için biraz can sıkıcıdır. </para>
+
+	<para
+>Yeni boyutu ayarlamak için hangi yolu tercih ederseniz edin, iletişim kutusu şu şekilde görünmelidir: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>/dev/sdb1'i yeniden boyutlandırdıktan sonra yeniden boyutlandırma iletişim kutusu</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+><guibutton
+>Tamam</guibutton
+>'a tıkladıktan sonra bekleyen işlemler listesine yeni bir işlem eklenir ve aygıtın grafik görünümü ve ağaç görünümü yeni durumu yansıtacak şekilde güncellenir: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>/dev/sdb1'i yeniden boyutlandırdıktan sonra ana pencere</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<note>
+		<title
+>Not: İşlemler, uygulanmadan önce önizlenir.</title>
+		<para
+>Ana pencere, aygıtın durumunu yeni işlemi uyguladıktan sonra nasıl olacağını yansıtsa da, işlem aslında henüz uygulanmadı: İşlemler beklemedeyken yine de onları geri alabilirsiniz (<xref linkend="menu-edit kullanarak birer birer) Hepsini geri almak için -undo"/> veya <xref linkend="menu-edit-clear"/>) veya &partman; uygulamasından çıkın ve hiçbir şey değiştirilmemiş olacaktır.</para>
+	</note>
+	
+	<para
+>Artık iki bölüm arasında bir miktar boş alan olduğuna göre, <quote
+>sdb2</quote
+> bölümünü taşıyabilir ve büyütebilirsiniz. Önce <quote
+>sdb2</quote
+> üzerine tıklayın ve yeniden <xref linkend="menu-partition-resize"/> ögesini seçin. Yeniden boyutlandırma iletişim kutusu, bu sefer ikinci bölüm için bir kez daha açılır. İletişim kutusunun şöyle görünmesi için sol tutacını en sol uca sürükleyin: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>/dev/sdb2'yi yeniden boyutlandırma sonrası yeniden boyutlandırma iletişim kutusu</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+><guilabel
+>Öncesindeki boş alan</guilabel
+> metin alanının gerçekten <quote
+>0 MiB</quote
+> gösterdiğinden emin olun, aksi takdirde bölümler arasında kalan ve daha sonra boşa gidecek olan biraz boş alan olacaktır. </para>
+
+	<para
+>Şimdi yeniden <gui button
+>Tamam</gui button
+>'a tıklayın. Ana pencerede işler şimdi şöyle görünür: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>/dev/sdb2'yi yeniden boyutlandırma sonra ana pencere</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Bu zaten istediğiniz gibi görünüyor, bu yüzden <xref linkend="menu-edit-apply"/> ögesini seçin. Bir iletişim kutusu açılacak ve bekleyen işlemleri uygulayacağınızdan emin olup olmadığınızı soracaktır. Bu iletişim kutusunu onaylayın ve &partman; işlemleri yürütmeye başlayacak: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>&partman;, işlemleri uyguluyor</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>İşlemler yapılırken listedeki her işlemin yanındaki artı işaretine tıklayarak o işlemin hangi işlerden oluştuğunu öğrenebilir ve o anda hangi işin çalıştığını görebilirsiniz. </para>
+
+	<para
+>Bir bölümü yukarıda <quote
+>/dev/sdb2</quote
+> olarak yeniden boyutlandırdığınız şekilde yeniden boyutlandırmak, bölümler hiçbir zaman doğrudan sola doğru büyütülemeyeceğinden, büyütülebilmesi için önce sola taşınması gerektiği anlamına gelir. Ne yazık ki, bu kadar büyük bir bölümü taşımak oldukça zaman alacaktır. Bunun gibi bir işlemin birkaç dakika veya daha fazla sürmesi alışılmadık bir durum değildir. </para>
+
+	<para
+>Son olarak, tüm işlemler başarıyla tamamlanmış olacaktır: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>İşlemleri başarıyla uyguladıktan sonra ilerleme penceresi</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+><guibutton
+>Tamam</guibutton
+>'a tıklayarak artık ilerleme iletişim kutusunu kapatabilir ve ana pencereye dönebilirsiniz. &partman;, bu noktada aygıtlarınızı yeniden tarar, bu işlem birkaç saniye sürebilir. </para>
+
+	<para
+>Az önce çalıştırılan işlemlerle ilgili daha fazla ayrıntıyla ilgileniyorsanız <guibutton
+>Ayrıntılar</guibutton
+>'a tıklayın. &partman; uygulamasının işlemleri yürütmesi sırasında her zaman oluşturulan (ve anında güncellenen) ayrıntılı raporu göreceksiniz: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>İlerleme penceresi ayrıntıları</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Bu rapor, özellikle işlemler yürütülürken bir hata oluşursa ilgi çekicidir. Bir rapor, çalıştırılmakta olan her işlemi, her işi ve her harici komutu gösterir ve bu nedenle sorunları izlemeye çalışırken çok yardımcı olur. </para>
+
+	<para
+>Raporu <acronym
+>HTML</acronym
+> olarak kaydedebilir veya dış bir web tarayıcısında görüntüleyebilirsiniz. </para>
+
+	<tip>
+		<para
+>İşlemler yürütülürken hatalarla veya uyarılarla başarısız olduğunda daha sonra başvurmak üzere ayrıntılı raporu her zaman <acronym
+>HTML</acronym
+> olarak kaydedin. Bunu, <ulink url="https://bugs.kde.org"
+>bugs.kde.org</ulink
+> adresindeki &kde; hata izleme sistemine gönderdiğiniz bir hata raporunda da içermek isteyebilirsiniz. </para>
+	</tip>
+	
+	<para
+>Ayrıntıları yeniden gizlemek için <guibutton
+>Ayrıntılar</guibutton
+>'a tıklayın ve son olarak ilerleme iletişim kutusunu kapatmak için <guibutton
+>Tamam</guibutton
+>'a tıklayın. </para>
+</sect1>

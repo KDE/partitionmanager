@@ -1,0 +1,663 @@
+<chapter id="reference">
+	<title
+>Komut Başvurusu</title>
+
+	<sect1 id="reference-overview">
+		<title
+>Genel Görünüm</title>
+		<para
+>Bu bölüm ;&partman;'da bulunan tüm komutların ayrıntılı açıklamalarını verir. Bu, verilen <xref linkend="usermanual"/> için eşlik edecek bir başvuru olarak tasarlanmıştır.</para>
+
+	<sect2 id="menu-file">
+		<title
+>Dosya Menüsü</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-file-quit">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Dosya</guimenu
+> <guimenuitem
+>Çık</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Bekleyen işlemleri uygulamadan <action
+>&partman; uygulamasından çıkar</action
+>. Uygulama, bekleyen işlemleriniz varsa sizden yine de onay isteyecektir. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-edit">
+		<title
+>Düzen Menüsü</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-edit-undo">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Düzen</guimenu
+> <guimenuitem
+>Geri Al</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>İşlem yığınına eklenen <action
+>son işlemi geri alır</action
+>. </para>
+						<para
+>Bu komut, yalnızca işlem listesi boş değilse etkindir. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-clear">
+					<term>
+						<menuchoice
+><guimenu
+>Düzen</guimenu
+> <guimenuitem
+>Temizle</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Herhangi bir işlemi uygulamadan <action
+>işlem listesini temizler</action
+>. </para>
+						<para
+>Bu komut, yalnızca işlem listesi boş değilse etkindir. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-apply">
+					<term>
+						<menuchoice
+><guimenu
+>Düzen</guimenu
+> <guimenuitem
+>Uygula</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>İşlemlerin listesini uygular</action
+>. Bu komut, listedeki tüm işlemleri uygular ve böylece listedeki tüm değişiklikler kalıcı olarak diskinize kaydedilir. İşlemler uygulandıktan sonra liste temizlenir ve işlemi geri almanız için bir yol yoktur. </para>
+						<para
+>Bu komut, yalnızca işlem listesi boş değilse etkindir. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-device">
+		<title
+>Aygıt Menüsü</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-device-selectcurrentdevice">
+					<term>
+						<menuchoice
+><guimenu
+>Aygıt</guimenu
+> <guimenuitem
+>Geçerli Aygıtı Seç</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Sistemin tüm kullanılabilir aygıtlarının bulunduğu bir alt menüden bir aygıt seçmenizi sağlar. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-createpartitiontable">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Aygıt</guimenu
+> <guimenuitem
+>Yeni Disk Bölümü Tablosu</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Yeni bir bölüm tablosu oluşturur</action
+>: Bu komut, seçili olan aygıtta yeni ve boş bir GPT veya MSDOS bölüm tablosu oluşturur. Bu, aygıttaki tüm bölümleri ve üzerilerindeki tüm verileri silecektir, bu nedenle bu komuta dikkat etmek isteyeceksiniz. </para>
+						<para
+>Bu komut yalnızca bir aygıt seçiliyse ve bu aygıtta şu anda hiçbir bölüm takılı değilse etkinleştirilir. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-exportpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Aygıt</guimenu
+> <guimenuitem
+>Bölüm Tablosunu Dışa Aktar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Seçili aygıttaki tüm bölümlerin bir listesini bir dosyaya aktarmanıza izin verir. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-importpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Aygıt</guimenu
+> <guimenuitem
+>Bölüm Tablosu İçe Aktar</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Daha önce dışa aktarılan bir dosyadan bölüm tablosu içe aktarmanıza izin verir.</para>
+						<para
+>Bu, aygıttaki tüm bölümleri ve üzerilerindeki tüm verileri silecektir, bu nedenle bu komuta dikkat etmek isteyeceksiniz.</para>
+						<para
+>Bu komut yalnızca bir aygıt seçiliyse ve bu aygıtta şu anda hiçbir bölüm takılı değilse etkinleştirilir. LVM Birim Grupları gibi mantıksal aygıtlara içe aktarım şu anda desteklenmemektedir.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-smartstatus">
+					<term>
+						<menuchoice
+><guimenu
+>Aygıt</guimenu
+> <guimenuitem
+>SMART Durumu</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Bir SMART raporu gösterir. SMART, donanım arızalarının önceden tahmin edilmesini sağlamak amacıyla sürücü güvenilirliğinin çeşitli göstergelerini algılayan ve raporlayan sabit disk ve katı hal sürücülerinde bulunan bir izleme sistemidir.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Aygıt</guimenu
+> <guimenuitem
+>Özellikler</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Geçerli olarak seçili aygıtlarla ilgili bilgileri gösterir. Bu iletişim kutusunda, kapasiteyi, sektör boyutlarını, bölüm tablosu türünün yanı sıra kullanılan ve en çok birincil bölüm sayısını bulabilirsiniz.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Araçlar Menüsü</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Tools</guimenu
+> <guimenuitem
+>Yeni Bölüm Grubu</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><link linkend="glossary-lvm"
+>LVM</link
+> Bölüm Grubu gibi yeni bir mantıksal aygıt oluşturun.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Araçlar</guimenu
+> <guimenuitem
+>Dosya Sistemi Desteği</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Dosya sistemi desteği iletişim kutusunu gösterir.</action
+> Bu iletişim kutusu, desteklenen dosya sistemlerinden hangileri için hangi işlemlerin gerçekleştirilebileceğini ayrıntılı olarak gösterir. </para>
+						<para
+>Çoğu dış araç kuruluyken iletişim kutusunun nasıl görünebileceğine bir örnek: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Çoğu dış aracın yüklü olduğu dosya sistemi desteği iletişim kutusu</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>Mavi onay işaretleri <quote
+>destekleniyor</quote
+>, kırmızı çarpılar <quote
+>desteklenmiyor</quote
+> anlamına gelir. Bazı kombinasyonlar, örneğin bir linuxswap dosya sisteminin denetlenmesi gibi, hiçbir zaman desteklenmez; çünkü bunlar doğası gereği olanaksızdır. Diğerleri, dış araçlar işlevsellikten yoksun olduğu için desteklenemez. </para>
+						<para
+>&partman; çalışırken kurulu dosya sistemi destek araçlarını yeniden denetlemeye zorlamak için <guibutton
+>Desteği Yeniden Tara</guibutton
+> seçeneğine tıklayın. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Araçlar</guimenu
+> <guimenuitem
+>Aygıtları Yenile</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Aygıtları yeniler</action
+>: Bu komut, &parman; uygulamasına bilgisayarınızdaki aygıtları yeniden okumasını ve taramasını söyler. Bu, &partman; uygulamasını başlattıktan sonra dış bir USB sabit disk taktığınızda algılanabilmesi için kullanışlıdır. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-partition">
+		<title
+>Disk Bölümü Menüsü</title>
+
+		<para>
+			<variablelist>
+				<varlistentry id="menu-partition-new">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Disk Bölümü</guimenu
+> <guimenuitem
+>Yeni</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Yeni bir disk bölümü oluşturur</action
+>: Oluşturacak bölümün türünü, boyutunu, konumunu ve dosya sistemini ayarlayabileceğiniz yeni bir bölüm oluşturmak için iletişim penceresini açar. </para>
+						<para
+>Lütfen bir aygıttaki bölüm tablosunun kaç bölümün oluşturulabileceği konusunda kısıtlamalar getirebileceğini unutmayın. Örneğin, MS-DOS bölüm tabloları yalnızca dört birincil bölüme izin verir. </para>
+						<para
+>Bu komut yalnızca bir aygıtta ayrılmamış bir alan seçildiğinde etkinleştirilir. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-resize">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Disk Bölümü</guimenu
+> <guimenuitem
+>Yeniden Boyutlandır/Taşı</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bir bölümü yeniden boyutlandırır veya taşır</action
+>: Var olan bir bölümü yeniden boyutlandırmak veya taşımak için iletişim kutusunu açar. Bölümün dosya sistemine ve bilgisayarınızda kurulu dış araçlara bağlı olarak, yeniden boyutlandırmayla ilgili olası üç eylemin tümü - yani bölümü taşıma, küçültme (<quote
+>küçültme</quote
+>) veya büyütme (<quote
+>büyütme</quote
+>) -- bu iletişim kutusunda bulunabilir. <xref linkend="menu-tools-filesystemsupport"/> bölümüne bakın. </para>
+						<para
+>Bu komut yalnızca şu anda takılı olmayan ve dosya sistemi küçültülebilen, büyütülebilen veya taşınabilen bir bölüm seçildiğinde etkinleştirilir. Genişletilmiş bir bölüm için, yalnızca genişletilmiş bölümdeki mantıksalların hiçbiri bağlanmamışsa etkinleştirilir. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-delete">
+					<term>
+						<menuchoice
+><shortcut
+>&Del;</shortcut
+> <guimenu
+>Disk Bölümü</guimenu
+> <guimenuitem
+>Sil</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bir disk bölümünü siler</action
+>: Bu komut, şu anda seçili olan bölümü siler. </para>
+						<para
+>Bu komut yalnızca şu anda bağlı olmayan bir bölüm seçildiğinde etkinleştirilir. Genişletilmiş bir bölüm için yalnızca herhangi bir mantıksal bölüm içermiyorsa etkinleştirilir. </para>
+						<warning>
+							<title
+>Uyarı: Olası veri kaybı</title>
+							<para
+>Bir disk bölümünün silinmesi, bölümdeki tüm verilerin yok edilmesi anlamına gelir.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-shred">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Del;</keycombo
+></shortcut
+> <guimenu
+>Disk Bölümü</guimenu
+> <guimenuitem
+>Parçala</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bir bölümü parçalar</action
+>: Bu komut geçerli olarak seçili bölümü parçalar. </para>
+						<para
+>Bu komut yalnızca şu anda bağlı olmayan bir bölüm seçildiğinde etkinleştirilir. Genişletilmiş bir bölüm için yalnızca herhangi bir mantıksal bölüm içermiyorsa etkinleştirilir. </para>
+						<warning>
+							<title
+>Uyarı: Olası veri kaybı</title>
+							<para
+>Bir bölümü parçalamak, bölümdeki tüm verilerin yok edilmesi anlamına gelir.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-copy">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Disk Bölümü</guimenu
+> <guimenuitem
+>Kopyala</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bir disk bölümünü kopyalar</action
+>: Bu komut, seçili olan bölümü &partman; panosuna kopyalar. </para>
+						<para
+>Bu komut yalnızca şu anda bağlı olmayan ve dosya sistemi kopyalanabilen bir bölüm seçildiğinde etkinleştirilir. Genişletilmiş bölümler kopyalanamaz. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-paste">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Disk Bölümü</guimenu
+> <guimenuitem
+>Yapıştır</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bir disk bölümünü yapıştır</action
+>: Bu komut, bölümü &partman; panosundan seçili olan bölüme veya ayrılmamış alana yapıştırır. </para>
+						<para
+>Ayrılmamış bir alana yapıştırırken, eklenen kopyayı taşımanıza veya büyütmenize izin veren bir iletişim kutusu açılır. Var olan bir bölümün üzerine yazarken bu iletişim kutusu gösterilmeyecektir. </para>
+						<para
+>Bu komut yalnızca panoda o anda bir bölüm varsa ve geçerli bir hedef (bölüm veya ayrılmamış bir alan) seçilirse etkinleştirilir. Hedef ayrıca kaynağı tutacak kadar büyük olmalı ve bağlanamaz. Bir bölümü kendi üzerine kopyalayamazsınız. </para>
+						<warning>
+							<title
+>Uyarı: Olası veri kaybı</title>
+							<para
+>Var olan bir disk bölümüne başka bir disk bölümü yapıştırmak, var olan bölümdeki tüm verilerin yok edilmesi ve yapıştırılan bölümdeki verilerle değiştirilmesi anlamına gelir.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Disk Bölümü</guimenu
+> <guimenuitem
+>Bağla/Bağlantıyı Kes</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bir disk bölümünü bağlar veya bağlantısını keser</action
+>: Bu komut, geçerli durumuna bağlı olarak seçilen bölümü bağlar veya ayırır. </para>
+						<para
+>Bu komut yalnızca bağlanabilen veya bağlantısı kesilebilen bir disk bölümü seçildiğinde etkinleştirilir. İşletim sistemi bölüm için bir bağlama noktası bilmiyorsa bölümü &partman; uygulamasından bağlayamazsınız. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-edit-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Disk Bölümü</guimenu
+> <guimenuitem
+>Bağlama Noktasını Düzenle</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Bağlama noktasını ve bağlama seçeneklerini düzenlemek için <action
+>bir iletişim kutusu açar</action
+>. </para>
+						<para
+>Bu komut, yalnızca bir bölümün bağlantısı kesilmişse etkinleştirilir. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-check">
+					<term>
+						<menuchoice
+><guimenu
+>Disk Bölümünü</guimenu
+> <guimenuitem
+>Denetle</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bir bölümü denetler</action
+>: Bu komut, seçili bölümü ve dosya sistemini hatalara karşı denetler ve bulduğu sorunları düzeltmeye çalışır. Bu işlem sırasında bölümdeki dosya sistemi de bölümü tamamen dolduracak şekilde yeniden boyutlandırılacaktır. </para>
+						<para
+>Bu komut, yalnızca denetlenebilen ve şu anda bağlı olmayan bir bölüm seçildiğinde etkinleştirilir. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-backup">
+					<term>
+						<menuchoice
+><guimenu
+>Disk Bölümü</guimenu
+> <guimenuitem
+>Yedekle</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bir bölümü yedekler</action
+>: Bu komut, seçilen bölümdeki dosya sistemini bir dosyaya yedekler. Bu komutu etkinleştirdikten sonra kalıp dosyasının nerede saklanacağı sorulacaktır. </para>
+						<para
+>Oluşturulan kalıp dosyası, bölümdeki dosya sisteminin sektör sektör kopyasıdır. Sıkıştırılmamıştır ve herhangi bir ek üst bilgisi veya eklenmiş başlığı yoktur, bu nedenle işletim sistemi destekliyorsa &partman; dışında bir döngü aygıtı kullanılarak doğrudan bağlanabilir. </para>
+						<para
+>Bu komut yalnızca bir bölüm seçildiğinde ve bu bölümdeki dosya sistemi yedeklenebildiğinde etkinleştirilir. Bölüm ayrıca bağlanmamalıdır. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-restore">
+					<term>
+						<menuchoice
+><guimenu
+>Disk Bölümü</guimenu
+> <guimenuitem
+>Geri Yükle</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bir bölümü geri yükler</action
+>: Bu komut, bir dosya sistemini bir kalıp dosyasından bir bölüme geri yükler. Bu komutu etkinleştirdikten sonra geri yüklenecek kalıp dosyasının adı sorulacaktır. Geri yüklenecek hedef, kalıp dosyası için yeterince büyük olmalıdır. </para>
+						<para
+>Komut yalnızca ayrılmamış bir alan seçildiğinde veya şu anda bağlı olmayan bir disk bölümü seçildiğinde etkinleştirilir. </para>
+						<warning>
+							<title
+>Uyarı: Olası veri kaybı</title>
+							<para
+>Var olan bir bölümdeki bir bölümü geri yüklemek, var olan disk bölümündeki tüm verilerin yok edildiği ve geri yüklenen kalıp dosyasındaki verilerle değiştirildiği anlamına gelir.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Disk Bölümü</guimenu
+> <guimenuitem
+>Özellikler</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bir bölümün özelliklerini gösterir</action
+>: Bu komut, seçili olan bölüm veya ayrılmamış alan hakkında bilgi içeren bir iletişim kutusu gösterir. </para>
+						<para
+>Bu iletişim kutusunda nelerin görüntüleneceği ve nelerin değiştirilebileceği bölümün türüne, bölümdeki dosya sisteminin türüne ve bölümün şu anda bağlı olup olmamasına bağlıdır. </para>
+						<para
+>Örneğin, tüm dosya sistemleri bir etiket ayarlamayı desteklemez. Bölüm bağlıysa herhangi bir özelliği değiştirmek de genellikle olanaklı değildir. </para>
+						<para
+>Bu, genel olarak bu iletişim kutusunda değiştirilebilen tüm disk bölümü ve dosya sistemi özelliklerinin bir listesidir: <itemizedlist>
+								<listitem>
+									<para
+>Bir dosya sisteminin etiketini ayarla veya değiştir</para>
+								</listitem>
+								<listitem>
+									<para
+>Disk bölümünün dosya sistemini değiştirin.</para>
+
+									<warning>
+										<title
+>Uyarı: Olası veri kaybı</title>
+										<para
+>Bir bölümün dosya sistemini değiştirmek, her zaman bölümdeki tüm verilerin yok edilmesi anlamına gelir.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Bölümdeki dosya sistemini yeniden oluştur</para>
+
+									<warning>
+										<title
+>Uyarı: Olası veri kaybı</title>
+										
+										<para
+>Bir dosya sistemini bir bölüm üzerinde yeniden oluşturmak, her zaman bölümdeki tüm verilerin yok edilmesi anlamına gelir. Bir dosya sistemini yeniden oluşturmak, yalnızca bir bölümdeki dosya sistemi artık onarılamazsa son çare olarak kullanılmalıdır.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Bir disk bölümünün bayraklarını değiştir</para>
+									<para
+>Kullanılan bölümleme tablosunun türüne bağlı olarak, bölümleme tablosundaki her bölüm için birkaç bayrak olacaktır. Çoğu durumda bayrakları değiştirmek gerekli değildir ve gelişmiş bir özellik olarak düşünülmelidir.</para>
+								</listitem>
+							</itemizedlist>
+						</para>
+						<para
+>Komut yalnızca ayrılmamış bir alan veya bir bölüm seçildiğinde etkinleştirilir. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-settings-help">
+		<title
+>Ayarlar ve Yardım Menüsü</title>
+
+		<para
+>&partman;, &kde; Temelleri içinde açıklanan &kde; <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Ayarlar</ulink
+> ve <ulink url="help:/fundamentals/menus.html#menus-help"
+>Yardım</ulink
+> menüsüne ve ek olarak <guimenuitem
+>Aygıtlar</guimenuitem
+>, <guimenuitem
+>Bekleyen İşlemler</guimenuitem
+>, <guimenuitem
+>Bilgi</guimenuitem
+> ve <guimenuitem
+>Günlük Çıktısı</guimenuitem
+> panellerinin gösterilip gösterilmeyeceğini denetleyen bir <guisubmenu
+>Gösterilen Paneller</guisubmenu
+>  ek alt menüsüne sahiptir. </para>
+	</sect2>
+	</sect1>
+
+</chapter>
