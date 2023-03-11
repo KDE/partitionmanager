@@ -54,7 +54,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <name xml:lang="zh-TW">KDE 磁碟分割區管理員</name>
   <summary>Manage disks, partitions, and file systems</summary>
   <summary xml:lang="ar">أدِر الأقراص، والأقسام وأنظمة الملفّات</summary>
-  <summary xml:lang="az">Disklərin idarə edilməsi, bölmələr və fayl sistemləri</summary>
   <summary xml:lang="bg">Управление на дискове, дялове и файлови системи</summary>
   <summary xml:lang="ca">Gestiona dispositius de disc, particions i sistemes de fitxers</summary>
   <summary xml:lang="ca-valencia">Gestiona dispositius de disc, particions i sistemes de fitxers</summary>
@@ -75,15 +74,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <summary xml:lang="pt-BR">Gerencia discos, partições e sistemas de arquivos</summary>
   <summary xml:lang="ru">Управление дисками, разделами и файловыми системами</summary>
   <summary xml:lang="sl">Upravlja diskovne naprave, razdelke diskov in datotečne sisteme</summary>
+  <summary xml:lang="sv">Hantera hårddiskar, partitioner och filsystem</summary>
   <summary xml:lang="tr">Diskleri, disk bölümlerini ve dosya sistemlerini yönetin</summary>
   <summary xml:lang="uk">Керування дисковими пристроями, розділами та файловими системами вашого комп'ютера</summary>
   <summary xml:lang="x-test">xxManage disks, partitions, and file systemsxx</summary>
   <summary xml:lang="zh-CN">管理磁盘、分区和文件系统</summary>
-  <summary xml:lang="zh-TW">管理磁碟、分割區及檔案系統</summary>
   <description>
     <p>KDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer. It allows you to easily create, copy, move, delete, back up, restore, and resize them without losing data. It supports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and more.</p>
     <p xml:lang="ar">«مدير كِيدِي للأقسام» هو أداة تساعدك على إدارة الأقراص، والأقسام وأنظمة الملفّات في حاسوبك. ويتيح لك الإنشاء، والنّسخ، والنّقل، والحذف، والتّحجيم، والنّسخ الاحتياطيّ واسترجاع الأقسام دون فقدات البيانات. يدعم مدير كِيدِي للأقسام عدد كبير من أنظمة الملفات مثل ext2/3/4 و btrfs و reiserfs و NTFS و FAT16/32 و JFS و XFS</p>
-    <p xml:lang="az">KDE Bölmələr Meneceri, kompüterinizdəki diskləri, bölmələri və fayl sistemlərini idarə etməyə kömək edən bir yardımçı proqramıdır. Məlumatlarınızı itirmədən asanlıqla yaratmaq, kopyalamaq, köçürmək, silmək, ölçüsünü dəyişdirmək, bölmələri bərpa etmək imkanı verir. O, ext2, btrfs,reiserfs, NTFS, FAT16/32, JFS, XFS və s. daxil olmaqla çox sayda fayl sistemlərini dəstəkləyir.</p>
     <p xml:lang="bg">KDE Partition Manager е помощна програма, която ви помага да управлявате дискови устройства, дялове и файлови системи на вашия компютър. Тя ви позволява лесно да създавате, копирате, премествате, изтривате, променяте размера без загуба на данни, да създавате резервни копия и възстановяване на дялове.</p>
     <p xml:lang="ca">El gestor de particions del KDE és un programa d'utilitats que us ajuda a gestionar els dispositius de disc, les particions i els sistemes de fitxers de l'ordinador. Permet crear, copiar, moure, eliminar, redimensionar sense perdre dades, fer còpies de seguretat i restaurar particions fàcilment sense perdre dades. Accepta un gran nombre de sistemes de fitxers, incloent-hi ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i altres.</p>
     <p xml:lang="ca-valencia">El gestor de particions de KDE és un programa d'utilitats que us ajuda a gestionar els dispositius de disc, les particions i els sistemes de fitxers de l'ordinador. Permet crear, copiar, moure, eliminar, redimensionar sense perdre dades, fer còpies de seguretat i restaurar particions amb facilitat sense perdre dades. Accepta un gran nombre de sistemes de fitxers, incloent-hi ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS i altres.</p>
@@ -103,11 +101,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <p xml:lang="pt-BR">O Gerenciador de Partições do KDE é um utilitário que o ajuda a gerenciar os discos, suas partições e sistemas de arquivos no seu computador. Permite-lhe facilmente criar, copiar, mover, excluir, criar backup, restaurar e redimensionar sem perder dados. Suporta um grande número de sistemas de arquivos incluindo ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS e mais.</p>
     <p xml:lang="ru">Диспетчер разделов от KDE — приложение, позволяющая без лишних сложностей управлять дисками, разделами и файловыми системами на компьютере. Приложение позволяет создавать, копировать, перемещать, удалять разделы, изменять размеры разделов без потери данных и создавать резервные копии разделов. Приложение поддерживает множество типов файловых систем, включая ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS и другие.</p>
     <p xml:lang="sl">Upravljalnik razdelkov za KDE je pripomoček, ki vam omogoča upravljanje z diski, razdelki in datotečnimi sistemi na vašem računalniku. Z njim lahko enostavno ustvarite, kopirate, premaknete, izbrišete, varnostno kopirate in obnovite ter spreminjate velikost razdelkov brez izgube podatkov. Podpira veliko število datotečnih sistemov vključno z ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS in drugimi.</p>
+    <p xml:lang="sv">KDE Partition Manager är ett verktyg för att hjälpa till att hantera diskenheter, partitioner och filsystem på datorn. Det låter dig enkelt skapa, kopiera, flytta, ta bort, säkerhetskopiera, återställa, dem och ändra storlek utan dataförlust. Det stödjer ett stort antal filsystem, inklusive ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS med flera.</p>
     <p xml:lang="tr">KDE Bölümlendirme Yöneticisi; bilgisayarınızdaki disk aygıtlarını, bölümlerinizi ve dosya sistemlerinizi yönetmenize yardımcı olan bir izlencedir. Kolaylıkla disk bölümleri oluşturmanızı, kopyalamanızı, taşımanızı, silmenizi, yedeklemenizi, geri yüklemenizi ve veri kaybetmeden kolaylıkla yeniden boyutlandırmanızı sağlar. ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS ve çok daha fazlası da dahil olmak üzere çok sayıda dosya sistemini destekler.</p>
     <p xml:lang="uk">Редактор розділів KDE — допоміжна програма, яку призначено для полегшення керування дисковими пристроями, розділами та файловими системами на комп’ютері. За її допомогою ви зможете без проблем створювати, копіювати, пересувати, вилучати, створювати резервні копії, відновлювати дані з резервних копій та змінювати розміри розділів без втрати даних. Передбачено підтримку багатьох файлових систем, зокрема ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS та інших.</p>
     <p xml:lang="x-test">xxKDE Partition Manager is a utility to help you manage the disks, partitions, and file systems on your computer. It allows you to easily create, copy, move, delete, back up, restore, and resize them without losing data. It supports a large number of file systems, including ext2/3/4, btrfs, reiserfs, NTFS, FAT16/32, JFS, XFS and more.xx</p>
     <p xml:lang="zh-CN">KDE 分区管理器是一款用于管理计算机的磁盘、分区、文件系统的工具程序。您可以使用它方便地创建、复制、移动、删除分区，对分区进行备份和恢复操作，在保留数据的前提下调整分区大小。它支持各种文件系统，包括但不限于 ext2/3/4、btrfs、reiserFS、NTFS、FAT16/32、JFS、XFS 等。</p>
-    <p xml:lang="zh-TW">KDE 磁碟分割區管理員是一個可以協助您管理電腦上的磁碟、分割區及檔案系統的工具。它讓您可以很容易地建立它們或對它們進行複製、移動、刪除、備份、還原、以及不遺失資料的調整大小。它支援非常多檔案系統，包含 ext2/3/4、btrfs、reiserfs、NTFS、FAT16/32、JFS、XFS 及其他。</p>
   </description>
   <url type="homepage">https://apps.kde.org/partitionmanager//</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=partitionmanager</url>
