@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2022-01-11 19:28+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2558,8 +2558,9 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:101
-#, kde-format
-msgid "Partition Label"
+#, fuzzy, kde-format
+#| msgid "Partition Label"
+msgid "Partition Name"
 msgstr "Etiqueta de la partición"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -2841,9 +2842,10 @@ msgstr "&Banderas:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:362
-#, kde-format
-msgid "Partition Label:"
-msgstr "Etiqueta de la partición:"
+#, fuzzy, kde-format
+#| msgid "Partition table:"
+msgid "Partition Name:"
+msgstr "Tabla de particiones:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:372
@@ -3536,6 +3538,9 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Columnas"
+
+#~ msgid "Partition Label:"
+#~ msgstr "Etiqueta de la partición:"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "Partition &type:"

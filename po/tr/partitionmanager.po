@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2023-02-07 21:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2535,8 +2535,9 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:101
-#, kde-format
-msgid "Partition Label"
+#, fuzzy, kde-format
+#| msgid "Partition Label"
+msgid "Partition Name"
 msgstr "Bölüm Etiketi"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -2819,9 +2820,10 @@ msgstr "&Bayraklar:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:362
-#, kde-format
-msgid "Partition Label:"
-msgstr "Disk Bölümü Etiketi:"
+#, fuzzy, kde-format
+#| msgid "Partition table:"
+msgid "Partition Name:"
+msgstr "Disk bölümü tablosu:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:372
@@ -3512,3 +3514,6 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Sütunlar"
+
+#~ msgid "Partition Label:"
+#~ msgstr "Disk Bölümü Etiketi:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2015-01-10 12:07+0100\n"
 "Last-Translator: Samir Ribic <samir.ribic@etf.unsa.ba>\n"
 "Language-Team: Bosnian <kde-i18n-bs@kde.org>\n"
@@ -2657,7 +2657,7 @@ msgstr "UUID"
 #: gui/partitionmanagerwidgetbase.ui:101
 #, fuzzy, kde-format
 #| msgid "Partition table:"
-msgid "Partition Label"
+msgid "Partition Name"
 msgstr "Particiona tabela:"
 
 # >> @title:column
@@ -2952,7 +2952,7 @@ msgstr "Naznake:"
 #: gui/partpropswidgetbase.ui:362
 #, fuzzy, kde-format
 #| msgid "Partition table:"
-msgid "Partition Label:"
+msgid "Partition Name:"
 msgstr "Particiona tabela:"
 
 # >> @title:column
@@ -3670,6 +3670,11 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Kolone"
+
+#, fuzzy
+#~| msgid "Partition table:"
+#~ msgid "Partition Label:"
+#~ msgstr "Particiona tabela:"
 
 #, fuzzy
 #~ msgctxt "@label:listbox"

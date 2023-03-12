@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2023-01-03 09:01+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -2548,8 +2548,9 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:101
-#, kde-format
-msgid "Partition Label"
+#, fuzzy, kde-format
+#| msgid "Partition Label"
+msgid "Partition Name"
 msgstr "Ετικέτα κατάτμησης"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -2830,9 +2831,10 @@ msgstr "&Σημαίες:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:362
-#, kde-format
-msgid "Partition Label:"
-msgstr "Ετικέτα κατάτμησης:"
+#, fuzzy, kde-format
+#| msgid "Partition table:"
+msgid "Partition Name:"
+msgstr "Πίνακας κατατμήσεων:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:372
@@ -3526,6 +3528,9 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Στήλες"
+
+#~ msgid "Partition Label:"
+#~ msgstr "Ετικέτα κατάτμησης:"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "Partition &type:"

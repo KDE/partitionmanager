@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2010-09-24 20:32+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -2465,7 +2465,7 @@ msgstr "UUID"
 #: gui/partitionmanagerwidgetbase.ui:101
 #, fuzzy, kde-format
 #| msgid "Partition"
-msgid "Partition Label"
+msgid "Partition Name"
 msgstr "विभाजन"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -2741,7 +2741,7 @@ msgstr "फ्लैग:"
 #: gui/partpropswidgetbase.ui:362
 #, fuzzy, kde-format
 #| msgid "Partition"
-msgid "Partition Label:"
+msgid "Partition Name:"
 msgstr "विभाजन"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)

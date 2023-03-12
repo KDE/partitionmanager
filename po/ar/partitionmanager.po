@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2023-01-26 16:50+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2604,7 +2604,7 @@ msgstr "UUID"
 #: gui/partitionmanagerwidgetbase.ui:101
 #, fuzzy, kde-format
 #| msgid "Partition table:"
-msgid "Partition Label"
+msgid "Partition Name"
 msgstr "جدول التقسيم:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -2900,7 +2900,7 @@ msgstr "الأعلام"
 #: gui/partpropswidgetbase.ui:362
 #, fuzzy, kde-format
 #| msgid "Partition table:"
-msgid "Partition Label:"
+msgid "Partition Name:"
 msgstr "جدول التقسيم:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
@@ -3618,6 +3618,11 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "الأعمدة"
+
+#, fuzzy
+#~| msgid "Partition table:"
+#~ msgid "Partition Label:"
+#~ msgstr "جدول التقسيم:"
 
 #, fuzzy
 #~| msgctxt "@label:listbox"

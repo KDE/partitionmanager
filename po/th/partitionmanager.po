@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2010-03-06 19:47+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -2724,7 +2724,7 @@ msgstr "ค่า UUID"
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Partition type:"
-msgid "Partition Label"
+msgid "Partition Name"
 msgstr "พาร์ทิชันประเภท:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -3034,7 +3034,7 @@ msgstr "แ&ฟล็กต่าง ๆ:"
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Partition type:"
-msgid "Partition Label:"
+msgid "Partition Name:"
 msgstr "พาร์ทิชันประเภท:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
@@ -3789,6 +3789,12 @@ msgstr "ไม่สามารถโหลดแกนของส่วนเ
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "คอลัมน์ต่าง ๆ"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Partition type:"
+#~ msgid "Partition Label:"
+#~ msgstr "พาร์ทิชันประเภท:"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "Partition &type:"

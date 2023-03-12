@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2009-01-11 18:55+0200\n"
 "Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -2792,7 +2792,7 @@ msgstr "Lietotāja ID:"
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Partition type:"
-msgid "Partition Label"
+msgid "Partition Name"
 msgstr "Sadaļas tips:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -3097,7 +3097,7 @@ msgstr "&Karogi:"
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Partition type:"
-msgid "Partition Label:"
+msgid "Partition Name:"
 msgstr "Sadaļas tips:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
@@ -3863,6 +3863,12 @@ msgstr "Neizdevās palaist konfigurēto ārējo pārlūku. Pārbaudiet iestatīj
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Partition type:"
+#~ msgid "Partition Label:"
+#~ msgstr "Sadaļas tips:"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "Partition &type:"

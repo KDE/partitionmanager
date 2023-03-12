@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2014-03-12 23:25+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -2718,7 +2718,7 @@ msgstr "UUID"
 #: gui/partitionmanagerwidgetbase.ui:101
 #, fuzzy, kde-format
 #| msgid "Partition table:"
-msgid "Partition Label"
+msgid "Partition Name"
 msgstr "Partitschonentabell:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -3026,7 +3026,7 @@ msgstr "Marken:"
 #: gui/partpropswidgetbase.ui:362
 #, fuzzy, kde-format
 #| msgid "Partition table:"
-msgid "Partition Label:"
+msgid "Partition Name:"
 msgstr "Partitschonentabell:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
@@ -3772,6 +3772,11 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Striepen"
+
+#, fuzzy
+#~| msgid "Partition table:"
+#~ msgid "Partition Label:"
+#~ msgstr "Partitschonentabell:"
 
 #~ msgctxt "@label:listbox"
 #~ msgid "Partition &type:"

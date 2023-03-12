@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-sysadmin/partitionmanager.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2009-01-20 10:11-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -2455,7 +2455,7 @@ msgstr "UUID"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:101
 #, kde-format
-msgid "Partition Label"
+msgid "Partition Name"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -2726,7 +2726,7 @@ msgstr "Bratacha"
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:362
 #, kde-format
-msgid "Partition Label:"
+msgid "Partition Name:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)

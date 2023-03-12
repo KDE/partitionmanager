@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2009-11-15 12:06+0100\n"
 "Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -2482,7 +2482,7 @@ msgstr "UUID"
 #: gui/partitionmanagerwidgetbase.ui:101
 #, fuzzy, kde-format
 #| msgid "Mount Point"
-msgid "Partition Label"
+msgid "Partition Name"
 msgstr "Kroĉpunkto"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -2760,7 +2760,7 @@ msgstr "Flagoj:"
 #: gui/partpropswidgetbase.ui:362
 #, fuzzy, kde-format
 #| msgid "Mount Point"
-msgid "Partition Label:"
+msgid "Partition Name:"
 msgstr "Kroĉpunkto"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)

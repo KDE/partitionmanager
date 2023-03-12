@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2009-01-06 23:32+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2762,7 +2762,7 @@ msgstr "ユーザ ID:"
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Partition type:"
-msgid "Partition Label"
+msgid "Partition Name"
 msgstr "パーティションのタイプ:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -3071,7 +3071,7 @@ msgstr "フラグ"
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Partition type:"
-msgid "Partition Label:"
+msgid "Partition Name:"
 msgstr "パーティションのタイプ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
@@ -3819,3 +3819,9 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Partition type:"
+#~ msgid "Partition Label:"
+#~ msgstr "パーティションのタイプ:"

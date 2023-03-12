@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2010-01-21 11:18+0100\n"
 "Last-Translator: Andrej Dundović <adundovi@gmail.com>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -2563,7 +2563,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Partition Information"
-msgid "Partition Label"
+msgid "Partition Name"
 msgstr "Informacije o particijama"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -2846,7 +2846,7 @@ msgstr "&Zastavice:"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Partition Information"
-msgid "Partition Label:"
+msgid "Partition Name:"
 msgstr "Informacije o particijama"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
@@ -3574,6 +3574,12 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "Partition Information"
+#~ msgid "Partition Label:"
+#~ msgstr "Informacije o particijama"
 
 #, fuzzy
 #~| msgctxt "@action:button"
