@@ -3,7 +3,7 @@
 # Marco Poletti <poletti.marco@gmail.com>, 2010.
 # Calogero Lo Leggio <calogero@loleggio.net>, 2010.
 # Jacopo Reggiani <jacopo.reggiani@gmail.com>, 2010.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Vincenzo Reale <smart2128vr@gmail.com>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Paolo Zamponi <zapaolo@email.it>, 2022.
 #
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-12 00:49+0000\n"
-"PO-Revision-Date: 2022-11-06 16:52+0100\n"
+"PO-Revision-Date: 2023-03-12 19:35+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2547,10 +2547,9 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:101
-#, fuzzy, kde-format
-#| msgid "Partition Label"
+#, kde-format
 msgid "Partition Name"
-msgstr "Etichetta partizione"
+msgstr "Nome della partizione"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:106
@@ -2829,10 +2828,9 @@ msgstr "Para&metri:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:362
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name:"
-msgstr "Tabella delle partizioni:"
+msgstr "Nome della partizione:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:372

@@ -4,14 +4,14 @@
 #
 # Kristof Bal <kristof.bal@gmail.com>, 2008, 2009.
 # Freek de Kruijf <f.de.kruijf@hetnet.nl>, 2009.
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Rinse de Vries <rinsedevries@kde.nl>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-12 00:49+0000\n"
-"PO-Revision-Date: 2022-10-21 13:30+0200\n"
+"PO-Revision-Date: 2023-03-12 15:32+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Kristof Bal, Freek de Kruijf - t/m 2019;2021 t/m 2022"
+msgstr "Kristof Bal, Freek de Kruijf - t/m 2019;2021-2023"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -2535,10 +2535,9 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:101
-#, fuzzy, kde-format
-#| msgid "Partition Label"
+#, kde-format
 msgid "Partition Name"
-msgstr "Partitielabel"
+msgstr "Partitienaam"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:106
@@ -2816,10 +2815,9 @@ msgstr "&Vlaggen:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:362
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name:"
-msgstr "Partitietabel:"
+msgstr "Partitienaam:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:372
