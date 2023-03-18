@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:51+0000\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
 "PO-Revision-Date: 2014-03-23 11:51+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -2512,7 +2512,7 @@ msgstr "UUID"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:101
 #, kde-format
-msgid "Partition Label"
+msgid "Partition Name"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -2786,7 +2786,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:362
 #, kde-format
-msgid "Partition Label:"
+msgid "Partition Name:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
