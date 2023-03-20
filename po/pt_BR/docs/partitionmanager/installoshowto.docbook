@@ -1,0 +1,166 @@
+<sect1 id="howto-installos">
+	<title
+>Como: Instalar um Novo Sistema Operacional</title>
+
+	<para
+>Este manual descreve a preparação de um novo dispositivo de disco rígido para a instalação de um sistema operacional (SO): Suponha que você comprou um novo disco rígido e que pretende usá-lo agora como substituição para o antigo, que contém atualmente o seu SO e as partições de dados. Você também gostaria de aproveitar esta oportunidade para instalar um sistema operacional. Você terá que efetuar vários passos para fazer a transição do sistema antigo para o novo. </para>
+
+	<para
+>A seguir, o <quote
+>/dev/sdb</quote
+> é o disco rígido antigo e o <quote
+>/dev/sdc</quote
+> é o novo. Esta imagem mostra a situação no dispositivo de origem: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>A janela principal com o dispositivo fonte</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>O novo dispositivo irá ficar semelhante ao seguinte. Repare que ele ainda não tem nenhuma tabela de partições válida, assim o primeiro passo é criar uma, através da seleção de <xref linkend="menu-device-createpartitiontable"/>: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>A janela principal com o dispositivo de destino</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Depois de confirmar a janela de aviso, você poderá começar a criar partições no dispositivo novo, clicando na partição estendida e selecionando a opção <xref linkend="menu-partition-new"/>. Comece com uma partição estendida no fim do disco, para ela conter depois as partições das áreas dos usuários e de memória virtual: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Criando uma partição estendida</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Clique em <guibutton
+>OK</guibutton
+> e a operação para criar esta partição estendida é adicionada a lista. </para>
+
+	<para
+>Agora crie uma partição primária no resto do dispositivo onde será instalado o novo sistema operacional. Torne-a tão grande quanto o espaço livre à frente da partição estendida: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Criando uma partição primária</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Clique em <guibutton
+>OK</guibutton
+> na janela, de modo a aceitar a sua escolha. A operação para criar a partição primária nova será então adicionada à lista de operações. </para>
+	
+	<para
+>Agora é o momento de copiar a partição das áreas dos usuários do dispositivo antigo para a partição estendida do dispositivo novo. Selecione o dispositivo antigo no painel da Lista de Dispositivos, clique na partição <quote
+>sdb5</quote
+> e escolha a opção <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>Agora volte ao dispositivo novo e clique na partição estendida. Selecione a opção <xref linkend="menu-partition-paste"/>. Aparecerá a seguinte janela: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Colar a partição das áreas dos usuários</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Isto já parece bom, mas você sabe já de início que não irá necessitar de tanto espaço livre após a partição das áreas dos usuários, uma vez que irá criar mais tarde aí uma partição de memória virtual. </para>
+
+	<para
+>Assim, clique na pega direita de redimensionamento e desloque-a para a direita até que o espaço livre após a partição colada tenha um tamanho mais adequado para uma partição de memória virtual: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Redimensionar uma partição colada</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Isto parece ótimo. Clique em <guibutton
+>OK</guibutton
+> para aceitar e fechar a janela. Será adicionada à lista de operações uma operação nova para colar a partição copiada à partição estendida em <quote
+>sdc</quote
+>. Lembre-se que esta operação também irá definir o tamanho novo. </para>
+
+	<para
+>Finalmente, você irá querer criar uma partição de memória virtual nova no fim da partição estendida em <quote
+>sdc</quote
+>. Não há necessidade de copiar a partição existente em <quote
+>sdb</quote
+>, porque esta partição não contém nenhuma informação permanente que valha a pena manter. Basta criar uma partição nova do tipo 'linuxswap' que preencha o tamanho total da área livre após a partição nova com as áreas dos usuários. </para>
+
+	<para
+>A janela principal, com todas as operações e uma previsão de como irá ficar a <quote
+>sdc</quote
+> após a sua aplicação, será algo semelhante a isto: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Janela principal após configurar todas as operações</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Isto parece perfeito; assim, selecione a opção <xref linkend="menu-edit-apply"/>, confirme a janela de aviso e espere até todas as operações terem sido executadas. Para mais detalhes sobre as operações em execução, veja a seção sobre <link linkend="howto-resizepartition"
+>o dimensionamento de partições</link
+>. </para>
+	
+	<para
+>O seu disco rígido novo está agora pronto para a instalação do seu sistema operacional novo. </para>
+
+</sect1>

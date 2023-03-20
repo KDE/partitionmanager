@@ -1,0 +1,663 @@
+<chapter id="reference">
+	<title
+>Referensi Perintah</title>
+
+	<sect1 id="reference-overview">
+		<title
+>Ikhtisar</title>
+		<para
+>Bab ini memberikan penjelasan terperinci tentang semua perintah yang tersedia dalam &partman;. Hal ini dimaksudkan sebagai referensi untuk menyertai informasi yang diberikan dalam <xref linkend="usermanual"/>.</para>
+
+	<sect2 id="menu-file">
+		<title
+>Menu File</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-file-quit">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>File</guimenu
+> <guimenuitem
+>Berhenti</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Berhentikan &partman;</action
+> tanpa menerapkan operasi tunda apa pun. Namun aplikasi akan meminta Anda untuk mengkonfirmasi pilihan Anda untuk berhenti jika ada operasi yang tertunda. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-edit">
+		<title
+>Menu Edit</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-edit-undo">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Edit</guimenu
+> <guimenuitem
+>Urungkan</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Mengurungkan operasi terakhir</action
+> yang telah ditambahkan ke tumpukan operasi. </para>
+						<para
+>Perintah ini hanya difungsikan jika daftar operasi tidak kosong. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-clear">
+					<term>
+						<menuchoice
+><guimenu
+>Edit</guimenu
+> <guimenuitem
+>Bersihkan</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bersihkan daftar operasi</action
+> tanpa menerapkan apa pun. </para>
+						<para
+>Perintah ini hanya difungsikan jika daftar operasi tidak kosong. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-apply">
+					<term>
+						<menuchoice
+><guimenu
+>Edit</guimenu
+> <guimenuitem
+>Terapkan</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Menerapkan daftar operasi </action
+>. Perintah ini akan menerapkan semua operasi dalam daftar sehingga semua perubahan ditulis secara permanen ke disk Anda. Setelah operasi telah diterapkan, daftar akan dibersihkan dan tidak akan ada cara untuk mengurungkan operasi apa pun. </para>
+						<para
+>Perintah ini hanya difungsikan jika daftar operasi tidak kosong. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-device">
+		<title
+>Menu Perangkat</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-device-selectcurrentdevice">
+					<term>
+						<menuchoice
+><guimenu
+>Perangkat</guimenu
+> <guimenuitem
+>Pilih Perangkat Saat Ini</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Memungkinkan Anda untuk memilih perangkat dari submenu dengan semua perangkat yang tersedia dari sistem. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-createpartitiontable">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Perangkat</guimenu
+> <guimenuitem
+>Tabel Partisi Baru</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Menciptakan tabel partisi baru</action
+>: Perintah ini menciptakan tabel partisi GPT atau MSDOS baru dan kosong pada perangkat yang saat ini dipilih. Ini akan menghapus semua partisi pada perangkat dan semua datanya, jadi Anda hendaklah berhati-hati dengan perintah ini. </para>
+						<para
+>Perintah ini hanya difungsikan jika perangkat telah dipilih dan tiada partisi pada perangkat ini yang saat ini ter-mount. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-exportpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Perangkat</guimenu
+> <guimenuitem
+>Ekspor Tabel Partisi</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Memungkinkan Anda untuk mengekspor daftar semua partisi pada perangkat yang dipilih ke dalam file. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-importpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Perangkat</guimenu
+> <guimenuitem
+>Impor Tabel Partisi</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Memungkinkan Anda untuk mengimpor tabel partisi dari file yang telah diekspor sebelumnya.</para>
+						<para
+>Ini akan menghapus semua partisi pada perangkat dan semua datanya, jadi Anda hendaklah berhati-hati dengan perintah ini.</para>
+						<para
+>Perintah ini hanya difungsikan jika perangkat telah dipilih dan tiada partisi pada perangkat ini yang saat ini ter-mount. Mengimpor ke perangkat logical seperti LVM Volume Groups yang saat ini tidak didukung.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-smartstatus">
+					<term>
+						<menuchoice
+><guimenu
+>Perangkat</guimenu
+> <guimenuitem
+>Status SMART</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Menampilkan laporan SMART. SMART adalah sistem pemantauan yang disertakan dalam hard disk dan solid-state drive yang mendeteksi dan melaporkan berbagai indikator keandalan drive, dengan maksud untuk memungkinkan antisipasi kegagalan perangkat keras.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Perangkat</guimenu
+> <guimenuitem
+>Properti</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Menampilkan informasi tentang perangkat yang dipilih saat ini. Dalam dialog ini Anda bisa menemukan kapasitas, ukuran sektor, tipe tabel partisi dan serta jumlah maksimal partisi primer yang digunakan.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Menu Peralatan</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Peralatan</guimenu
+> <guimenuitem
+>Grup Volume Baru</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Ciptakan perangkat logical baru sebagaimana <link linkend="glossary-lvm"
+>LVM</link
+> Grup Volume.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Peralatan</guimenu
+> <guimenuitem
+>Dukungan Sistem File</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Menampilkan dialog dukungan sistem file .</action
+> Dialog ini menampilkan secara perinci operasi mana yang dapat dilakukan untuk sistem file yang didukung. </para>
+						<para
+>Berikut adalah contoh bagaimana dialog mungkin terlihat seperti kebanyakan alat eksternal yang terinstal: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Dialog dukungan sistem file dengan sebagian besar alat eksternal yang terinstal</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>Tanda centang biru berarti <quote
+>didukung</quote
+>, tanda silang merah berarti <quote
+>tidak didukung</quote
+>. Beberapa kombinasi yang tidak pernah didukung, misalnya memeriksa sistem file linuxswap, karena secara inheren tidak mungkin dilakukan. Yang lainnya tidak dapat didukung karena alat eksternal kekurangan fungsionalitas. </para>
+						<para
+>Jika Anda memiliki alat baru yang terinstal ketika &partman; sedang berjalan klik pada <guibutton
+>Pindai-ulang Dukungan</guibutton
+> untuk memaksa pemeriksaan kembali alat dukungan sistem file yang terinstal. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Peralatan</guimenu
+> <guimenuitem
+>Segarkan Perangkat</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Menyegarkan perangkat</action
+>: Perintah ini memaksa &partman; untuk memindai dan membaca lagi perangkat pada komputer Anda. Ini mungkin berguna jika Anda menancapkan hard disk USB eksternal setelah Anda memulai &partman;. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-partition">
+		<title
+>Menu Partisi</title>
+
+		<para>
+			<variablelist>
+				<varlistentry id="menu-partition-new">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Baru</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Menciptakan partisi baru</action
+>: Membuka dialog untuk menciptakan partisi baru di mana Anda dapat mengeset tipe, ukuran, posisi, dan sistem file dari partisi yang akan diciptakan. </para>
+						<para
+>Harap dicatat bahwa tabel partisi pada perangkat mungkin memberlakukan pembatasan jumlah partisi yang dapat diciptakan. Tabel partisi MS-DOS, misalnya, hanya memungkinkan empat partisi primer. </para>
+						<para
+>Perintah ini hanya difungsikan jika area unallocated pada perangkat yang dipilih. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-resize">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Ubah-ukuran/Geser</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Mengubah ukuran atau memindah partisi</action
+>: Membuka dialog untuk mengubah ukuran atau memindah partisi yang ada. Tergantung pada sistem file  partisi dan alat eksternal yang terinstal di komputer Anda, tidak semua kemungkinan yaitu yang terkait aksi dengan ubah-ukuran, menggeser partisi, membuatnya lebih kecil (<quote
+>menyusutkan</quote
+>nya) atau membuat lebih besar (<quote
+>menumbuhkan</quote
+>nya) mungkin tersedia dalam dialog ini. Lihat <xref linkend="menu-tools-filesystemsupport"/>. </para>
+						<para
+>Perintah ini hanya difungsikan jika partisi yang dipilih saat ini tidak terkait dan sistemfilenya bisa disusutkan, ditumbuhkan atau digeserkan. Untuk partisi extended, hanya difungsikan jika tidak ada logical di partisi extended yang terkait. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-delete">
+					<term>
+						<menuchoice
+><shortcut
+>&Del;</shortcut
+> <guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Hapus</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Menghapus partisi</action
+>: Perintah ini menghapus partisi yang dipilih saat ini. </para>
+						<para
+>Perintah ini hanya difungsikan jika sebuah partisi terpilih yang saat ini tidak ter-mount. Untuk partisi extended, hanya difungsikan jika tidak berisi partisi logical. </para>
+						<warning>
+							<title
+>Peringatan: Memungkinkan hilangnya data</title>
+							<para
+>Penghapusan partisi berarti semua data pada partisi dimusnahkan.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-shred">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Del;</keycombo
+></shortcut
+> <guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Cabik</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Mencabik partisi</action
+>: Perintah ini mencabik partisi yang dipilih saat ini. </para>
+						<para
+>Perintah ini hanya difungsikan jika sebuah partisi terpilih yang saat ini tidak ter-mount. Untuk partisi extended, hanya difungsikan jika tidak berisi partisi logical. </para>
+						<warning>
+							<title
+>Peringatan: Hilangnya data</title>
+							<para
+>Pencabikan partisi berarti semua data pada partisi dimusnahkan.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-copy">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Salin</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Menyalin partisi</action
+>: Perintah ini menyalin partisi yang dipilih saat ini ke papan-klip &partman;. </para>
+						<para
+>Perintah ini hanya difungsikan jika partisi yang dipilih saat ini tidak ter-kaitdan sistem file nya bisa disalin. Partisi extended tidak bisa disalin. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-paste">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Tempel</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Menempel partisi</action
+>: Perintah ini menempel partisi dari papan-klip &partman; ke partisi yang dipilih saat ini atau area unallocated. </para>
+						<para
+>Ketika menempelkan ke area unallocated, sebuah dialog akan terbuka yang memungkinkan Anda untuk menggeserkan atau menumbuhkan salinan yang disisipkan. Ketika menimpa sebuah partisi yang ada dialog ini tidak akan ditampilkan. </para>
+						<para
+>Perintah ini hanya difungsikan jika sebuah partisi sedang berada di papan-klip dan sasaran valid (baik partisi atau area yang unallocated) yang dipilih. Sasaran juga harus cukup besar untuk menahan sumber dan tidak bisa di-mount. Anda tidak bisa menyalin partisi ke dirinya sendiri. </para>
+						<warning>
+							<title
+>Peringatan: Memungkinkan hilangnya data</title>
+							<para
+>Menempelkan partisi yang sudah ada berarti semua data yang ada pada partisi dimusnahkan dan diganti dengan data dari partisi yang ditempelkan.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Mount/Unmount</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Mount atau unkaitpartisi</action
+>: Perintah ini me-kaitatau meng-unkaitpartiisi yang dipilih, tergantung pada keadaan saat ini. </para>
+						<para
+>Perintah ini hanya difungsikan jika sebuah partisi terpilih yang bisa di-mount atau di-unmount. Jika sistem operasi tidak mengetahui titik kait untuk partisi, Anda tidak bisa me-mount-nya dari &partman;. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-edit-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Edit Titik Kait</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Bukaan sebuah dialog</action
+> untuk mengedit titik kait dan pilihan kait. </para>
+						<para
+>Perintah ini hanya difungsikan jika partisi ter-unmount. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-check">
+					<term>
+						<menuchoice
+><guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Periksa</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Memeriksa partisi</action
+>: Perintah ini memeriksa partisi yang dipilih dan sistem file nya untuk erroran dan mencoba untuk memperbaiki masalah yang ditemukannya. Selama proses ini, sistem file pada partisi juga akan diubah ukurannya untuk mengisi partisi sepenuhnya. </para>
+						<para
+>Perintah ini hanya difungsikan jika partisi yang dipilih bisa diperiksa dan yang saat ini tidak ter-mount. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-backup">
+					<term>
+						<menuchoice
+><guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Backup</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Mem-backup partisi</action
+>: Perintah ini mem-backup sistem file pada partisi yang dipilih ke sebuah file . Anda akan ditanya dimana untuk menyimpan file citra setelah mengaktifkan perintah ini. </para>
+						<para
+>File citra yang diciptakan adalah salinan sektor-untuk-sektor dari sistem file pada partisi. Ini tidak dikompres dan tidak memiliki informasi meta tambahan atau header yang ditambahkan padanya, sehingga dapat di-mount langsung menggunakan perangkat loop di luar &partman; jika sistem operasi mendukung itu. </para>
+						<para
+>Perintah ini hanya difungsikan jika partisi dipilih dan sistem file di atasnya dapat di-backup. Partisi juga harus tidak ter-mount. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-restore">
+					<term>
+						<menuchoice
+><guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Kembalikan</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Mengembalikan partisi</action
+>: Perintah ini mengembalikan sistem file dari file citra ke partisi. Anda akan ditanyai nama file citra yang akan dikembalikan setelah mengaktifkan perintah ini. Sasaran untuk mengembalikannya harus cukup besar untuk file citra. </para>
+						<para
+>Perintah hanya difungsikan jika salah satu area unallocated telah dipilih atau partisi yang saat ini tidak ter-mount. </para>
+						<warning>
+							<title
+>Peringatan: Memungkinkan hilangnya data</title>
+							<para
+>Mengembalikan partisi yang sudah ada berarti semua data pada partisi yang ada dimusnahkan dan diganti dengan data dari file citra yang dikembalikan.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Partisi</guimenu
+> <guimenuitem
+>Properti</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Menampilkan properti partisi</action
+>: Perintah ini menampilkan dialog dengan informasi tentang partisi yang saat ini dipilih atau ruang unallocated. </para>
+						<para
+>Apa yang ditampilkan dan apa yang bisa dimodifikasi dalam dialog ini tergantung pada tipe partisi, tipe sistem file pada partisi dan pada partisi yang saat ini sedang di-kaitatau tidak. </para>
+						<para
+>Tidak semua sistem file , misalnya mendukung pengaturan label. Hal ini juga umumnya tidak mungkin untuk memodifikasi properti apa pun jika partisi ter-mount. </para>
+						<para
+>Ini adalah daftar semua properti partisi dan sistem file yang pada umumnya dapat dimodifikasi dalam dialog ini: <itemizedlist>
+								<listitem>
+									<para
+>Set atau modif sebuah label sistem file </para>
+								</listitem>
+								<listitem>
+									<para
+>Ubah sistem file partisi.</para>
+
+									<warning>
+										<title
+>Peringatan: Memungkinkan hilangnya data</title>
+										<para
+>Pengubahan sistem file untuk sebuah partisi yang berarti semua data pada partisi dimusnahkan.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Ciptakan-ulang sistem file pada partisi</para>
+
+									<warning>
+										<title
+>Peringatan: Memungkinkan hilangnya data</title>
+										
+										<para
+>Menciptakan-ulang sistem file pada sebuah partisi yang berarti bahwa semua data pada partisi dimusnahkan. Menciptakan-ulang sistem file seharusnya hanya digunakan sebagai jalan terakhir jika sistem file pada partisi tidak bisa diperbaiki lagi.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Ubah flag partisi</para>
+									<para
+>Tergantung pada tipe tabel partisi yang digunakan, akan ada beberapa flag yang tersedia untuk setiap partisi pada tabel partisi. Dalam kebanyakan kasus, memodifikasi flag tidak diperlukan dan seharusnya dianggap sebagai fitur lanjutan.</para>
+								</listitem>
+							</itemizedlist>
+						</para>
+						<para
+>Perintah hanya difungsikan jika salah satu area unallocated atau partisi telah dipilih. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-settings-help">
+		<title
+>Pengaturan dan Menu Bantuan</title>
+
+		<para
+>&partman; memiliki <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Pengaturan</ulink
+> &kde; pada umumnya dan menu <ulink url="help:/fundamentals/ui.html#menus-help"
+>Bantuan</ulink
+> yang diterangjelaskan dalam &kde; Fundamentals dengan sebuah submenu <guisubmenu
+>Tampakan Panel</guisubmenu
+> tambahan, dimana Anda bisa menjungkit tampilannya <guimenuitem
+>Perangkat</guimenuitem
+>, <guimenuitem
+>Operasi Tunda</guimenuitem
+>, <guimenuitem
+>Informasi</guimenuitem
+> dand panel-panel <guimenuitem
+>Output Log</guimenuitem
+> on dan off. </para>
+	</sect2>
+	</sect1>
+
+</chapter>

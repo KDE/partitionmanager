@@ -186,7 +186,7 @@ void CreateVolumeGroupDialog::onVGNameChanged(const QString& vgName)
 
 void CreateVolumeGroupDialog::onSpinPESizeChanged(int newsize)
 {
-    Q_UNUSED(newsize);
+    Q_UNUSED(newsize)
     updateOkButtonStatus();
     updateSectorInfos();
 }

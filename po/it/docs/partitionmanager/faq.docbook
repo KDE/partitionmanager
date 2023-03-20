@@ -1,0 +1,155 @@
+<chapter id="faq">
+	<title
+>Domande e risposte</title>
+
+	<qandaset id="faqlist">
+		<qandaentry>
+			<question>
+				<para
+>Quanto è pericoloso &partman; per i miei dati?</para>
+			</question>
+			<answer>
+				<para
+>Innanzi tutto, non dovresti mai eseguire operazioni distruttive (cancellazione, spostamento, ridimensionamento) senza aver prima compiuto una copia di sicurezza completa di tutti i dati coinvolti. </para>
+				<para
+>Con questa premessa, l'uso di &partman; è sicuro. Esso esegue controlli approfonditi prima e dopo ciascuna operazione. Fa uso di strumenti esterni scritti e supportati dagli autori del file system. Infine è stato provato in maniera approfondita. </para>
+				<para
+>C'è sempre il rischio di una perdita di dati dovuta ad un bug sconosciuto. Gli autori di &partman; cercano di ridurre questo rischio quanto più possibile, ma ovviamente non ci sono garanzie. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Ho installato tutti i pacchetti esterni raccomandati per il supporto del file system, ma ciò nonostante non sono supportate tutte le operazioni su tutti i file system.</para>
+			</question>
+			<answer>
+				<para
+>Non tutto ciò che in teoria &partman; può fare può essere fatto con qualsiasi file system. </para>
+				<para
+>Un esempio è l'esecuzione di un controllo del file system su linuxswap: semplicemente non è possibile. Ci sono altre limitazioni come questa che riguardano alcuni file system. Non puoi ridurre file system JFS o XFS perché nessuno di essi supporta alcun tipo di riduzione, indipendentemente da &partman;. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Perché non posso vedere alcuna significativa informazione di avanzamento durante il ridimensionamento di una partizione?</para>
+			</question>
+			<answer>
+				<para
+>&partman; può mostrare informazioni di avanzamento solo quando conosce quanto tempo occorrerà per l'esecuzione delle attività ricomprese in un'operazione. Sfortunatamente questo di solito non avviene nel caso del ridimensionamento di partizioni perché l'attività di gran lunga più lunga in queste operazioni è il ridimensionamento del file system nella partizione. Il ridimensionamento del file system nella maggior parte dei casi viene eseguito per conto di &partman; da uno strumento esterno e questi strumenti esterni non forniscono a &partman; alcuna informazione utile sull'avanzamento, così non ci sono informazioni da visualizzare durante la loro esecuzione. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Perché non posso ridimensionare la partizione radice? Come posso ridimensionare la partizione su cui si trova /home?</para>
+			</question>
+			<answer>
+				<para
+>Perché possa essere modificata, una partizione non deve essere montata. In ogni caso, non puoi smontare la partizione radice, né puoi smontare la partizione home se su di essa si trova la cartella home dell'utente attualmente connesso. </para>
+				<para
+>La soluzione per questo problema è avviare il sistema da un CD Live che contenga un sistema Linux dotato di &partman; e procedere così alla modifica di queste partizioni. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Il log contiene un messaggio di avvertimento riguardo il fatto che è impossibile creare una partizione con le dimensioni che ho indicato, e che essa sarà invece più piccola. Che cosa è successo?</para>
+			</question>
+			<answer>
+				<para
+>Nelle tabelle di partizione MS-DOS, le partizioni devono iniziare e finire in corrispondenza di un cilindro. Questa limitazione esiste principalmente per ragioni storiche. &partman; se ne occuperà internamente, tentando di non infastidire l'utente con questa limitazione. </para>
+				<para
+>In rari casi, comunque, &partman; potrà non essere in grado di eseguire una operazione nel modo richiesto dall'utente a causa di questa limitazione. Ad esempio, se le dimensioni di un cilindro di un dispositivo sono pari a 8 MiB non sarà possibile ridimensionare una partizione a 6 MiB. </para>
+				<para
+>Potresti anche ricevere questo messaggio quando, avendo un dispositivo ed una tabella delle partizioni in cui, per qualsiasi motivo, le partizioni non sono correttamente interrotte in corrispondenza dei limiti di un cilindro, tenti per la prima volta di spostarle o di copiarle. </para>
+				<para
+>Il messaggio di per sé è innocuo e serve solo per indicare all'utente che qualcosa non può essere eseguito esattamente come egli si aspetta. Le tue partizioni ed i tuoi dati non subiranno alcuna conseguenza negativa. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Quante operazioni posso aggiungere alla lista delle operazioni in attesa?</para>
+			</question>
+			<answer>
+				<para
+>Non esiste alcun limite. </para>
+				<para
+>Non è comunque raccomandato aggiungere troppe operazioni alla lista. C'è sempre una minima possibilità che un'operazione fallisca a causa di un errore, nel qual caso &partman; interromperebbe l'esecuzione delle operazioni. In una situazione simile sarebbe molto più semplice scoprire cos'è successo (ed aggiungere nuovamente tutte le operazioni non eseguite) in presenza di una lista delle operazioni in attesa non eccessivamente lunga. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Il ridimensionamento di un file system ext3 o ext3 è fallito, con l'indicazione nel log di qualcosa riguardo lo <quote
+>spazio esaurito sul dispositivo</quote
+>. Che cosa è successo? I miei dati sono danneggiati?</para>
+			</question>
+			<answer>
+				<para
+>Questo è un problema del comandi <command
+>e2resize</command
+> e del file system ext2/3/4. Se un file system è quasi pieno, <command
+>e2resize</command
+> non è in grado di ridurlo anche se l'operazione sarebbe possibile in base al numero di settori liberi disponibili. Sfortunatamente, &partman; non può sapere prima se <command
+>e2resize</command
+> si arresterà restituendo questo errore oppure no. Se ciò accade non sarà eseguita alcuna operazione ed i tuoi dati non riceveranno alcun danno. </para>
+				<para
+>Non esiste al momento alcun modo per aggirare questo problema. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Perché non posso formattare il mio disco floppy con &partman;? Perché non c'è supporto per la scrittura su CD o la masterizzazione di DVD?</para>
+			</question>
+			<answer>
+				<para
+>Nessuna di queste operazioni corrisponde a ciò per cui è stato progettato &partman;: esso è un'applicazione che gestisce le partizioni ed i file system presenti in esse. I dischi floppy, i CD ed i DVD non hanno necessità né fanno uso delle partizioni. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Perché non posso modificare le partizioni su un dispositivo con una tabella delle partizioni amiga o bsd?</para>
+			</question>
+			<answer>
+				<para
+>Al momento &partman; consente unicamente un accesso in sola lettura a qualunque tipo di tabella delle partizioni diverso da MS-DOS. La scelta è dettata da ragioni di sicurezza: non esiste in &partman; un vero supporto per questi tipi di tabella delle partizioni, e quel minimo supporto esistente (che per caso funziona) non è stato provato a sufficienza per poter essere utilizzato con sicurezza. </para>
+				<para
+>Ovviamente puoi creare una nuova tabella delle partizioni MS-DOS sul dispositivo in questione, ma probabilmente non è questo che vuoi fare. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>All'avvio &partman; rimane bloccato per un paio di minuti, mentre apparentemente tenta di esaminare l'unità a dischetto del mio computer.</para>
+			</question>
+			<answer>
+				<para
+>Ciò accade se nelle impostazioni del BIOS è configurata una unità a dischetto, ma in realtà non è connessa alcuna unità di questo tipo. Se non possiedi una unità a dischetto verifica le impostazioni del tuo BIOS e disabilita ogni unità a dischetto configurata. Questo dovrebbe risolvere il problema. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Durante l'avvio &partman; visualizza qualche messaggio riguardo la ricerca dei dispositivi ed il fatto che esso potrebbe anche andare in crash o che l'operazione potrebbe richiedere un lungo tempo.</para>
+			</question>
+			<answer>
+				<para
+>LibParted, una libreria utilizzata da &partman;, ha problemi con i sistemi nei quali il Linux Device Mapper è usato in un modo che essa non comprende. Sfortunatamente la libreria reagisce ad alcune di queste situazioni con un errore di segmentazione, cioè va in crash. &partman; tenta quindi di evitare ciò facendo ricorso ad una modalità differente per cercare le unità a disco presenti sul tuo computer. Se però non è in grado di farlo, e deve quindi affidarsi a LibParted, il programma visualizza un avvertimento di questo tipo. Se la ricerca delle unità a disco funziona, puoi tranquillamente ignorare il messaggio. </para>
+			</answer>
+		</qandaentry>
+<!--
+		<qandaentry>
+			<question>
+				<para
+></para>
+			</question>
+			 
+		</qandaentry>
+-->
+	</qandaset>
+</chapter>
+

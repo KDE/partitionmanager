@@ -1,0 +1,354 @@
+<glossary id="glossary">
+
+	<glossentry id="glossary-command">
+		<glossterm
+>Käsk</glossterm>
+		<glossdef>
+			<para
+>Partitsioonihalduris on käsk üks osa <link linkend="glossary-job"
+>tööst</link
+>. Need on väga süvataseme sammud, mida sageli teostab mõni väline tööriist ja millest saab aimu ainult üksikasjalikus edenemisaruandes. </para>
+			<para
+>Kasutajal pole tavaliselt vaja käskudega üldse pead vaevata. </para>
+<glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-job"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylinder">
+		<glossterm
+>Silinder</glossterm>
+		<glossdef>
+			<para
+>Üksus, milleks on jagatud <link linkend="glossary-device"
+>seade</link
+>. Mõned operatsioonisüsteemid ja paljud kettatööriistad nõuavad, et <link linkend="glossary-partition"
+>partitsioonid</link
+> algaksid ja lõpeksid silindri piiril. Partitsioonihaldur seob seepärast partitsioonid automaatselt silindripiiriga, kui kasutaja muudab nende algust või lõppu. </para>
+<glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylindersize">
+		<glossterm
+>Silindri suurus</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-sector"
+>Sektorite</link
+> arv <link linkend="glossary-device"
+>seadme</link
+> <link linkend="glossary-cylinder"
+>silindris</link
+>. Selle arvutamiseks korrutatakse <link linkend="glossary-head"
+>peade</link
+> arv <link linkend="glossary-sector"
+>sektorite</link
+> arvuga rajal. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-device">
+		<glossterm
+>Seade</glossterm>
+		<glossdef>
+			<para
+>Füüsiline kettaseade. Need jagunevad loogilisteks sektsioonideks, mida nimetatakse <link linkend="glossary-partition"
+>partitsioonideks</link
+>, vastavalt <link linkend="glossary-partitiontable"
+>partitsioonitabelile</link
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-disklabel">
+		<glossterm
+>Kettanimi</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partitiontable"
+>Partitsioonitabeli</link
+> teine nimi, mis on pärit SUN/BSD maailmast. </para>
+			<para>
+				<note>
+					<para
+>Neid on hõlpus segi ajada, kuid kettanimel ei ole midagi ühist <link linkend="glossary-filesystemlabel"
+>failisüsteemi nimega</link
+>. </para>
+					<para
+>Nime kohta kõneleb lähemalt <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel"
+>see Wikipedia artikkel</ulink
+>. </para>
+				</note>
+			</para>
+			<glossseealso otherterm="glossary-partitiontable"
+></glossseealso>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-extendedpartition">
+		<glossterm
+>Laiendatud partitsioon</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>Partitsioon</link
+>, mis sisaldab teisi partitsioone. Laiendatud partitsioonid ise saavad olla ainult <link linkend="glossary-primarypartition"
+>peamised ehk primaarsed partitsioonid</link
+>. Laiendatud partitsioonide olemasolu sõltub kasutatavast <link linkend="glossary-partitiontable"
+>partitsioonitabeli</link
+> tüübist. MS-DOS partitsioonitabelid lubavad üht laiendatud partitsiooni <link linkend="glossary-device"
+> seadme</link
+> kohta. </para>
+<glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystem">
+		<glossterm
+>Failisüsteem</glossterm>
+		<glossdef>
+			<para
+>Failisüsteem määrab, kuidas on <link linkend="glossary-partition"
+>partitsioonis</link
+> korraldatud andmete hoidmine (failid koos oma metaandmetega, kataloogid ja nende metaandmed, vaba ruum). Failisüsteemide tüüpe on väga palju, mõned on algselt pärit UNIX-i või Linuxi maailmast, mõned mitte. UNIX-i ja Linuxi levinumateks failisüteemideks on näiteks ext2, ext3, reiserfs ja xfs. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystemlabel">
+		<glossterm
+>Failisüsteemi nimi</glossterm>
+		<glossdef>
+			<para
+>Mõned failisüsteemid (nende seas ext2/3/4, FAT16/32 ja NTFS) toetavad failisüsteemile nime määramist, mida suudavad seejärel tuvastada sellised tööriistad nagu partitsioonihaldur või muud rakendused. </para>
+			<para>
+				<note>
+					<para
+>Neid on hõlpus segi ajada, kuid failisüsteemi nimel ei ole midagi ühist <link linkend="glossary-disklabel"
+>kettanimega</link
+>.</para>
+				</note>
+			</para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-flag">
+		<glossterm
+>Lipp</glossterm>
+		<glosssee otherterm="glossary-partitionflag"/>
+	</glossentry>
+	
+	<glossentry id="glossary-head">
+		<glossterm
+>Pea</glossterm>
+		<glossdef>
+			<para
+>Üksus, milleks on jagatud <link linkend="glossary-device"
+>seade</link
+>. </para>
+<glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-job">
+		<glossterm
+>Töö</glossterm>
+		<glossdef>
+			<para
+>Partitsioonihalduris koosnevad <link linkend="glossary-operation"
+>operatsioonid</link
+> töödest. Tavaliselt ei puutu kasutaja töödega üldse kokku, neist saab aimu ainult ootel operatsioonide teostamisel. Siis näitab partitsioonihaldur edenemisdialoogi, kus on kirjas kõik operatsioonid ja nende tööd ning näha, millist operatsiooni ja tööd parajasti teostatakse. </para>
+<glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry>
+		<glossterm
+>Nimi</glossterm>
+		<glossdef>
+			<para
+>Kas <link linkend="glossary-disklabel"
+>kettanimi</link
+> või <link linkend="glossary-filesystemlabel"
+>failisüsteemi nimi</link
+>. </para>
+<glossseealso otherterm="glossary-disklabel"
+></glossseealso
+> <glossseealso otherterm="glossary-filesystemlabel"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-logicalpartition">
+		<glossterm
+>Loogiline partitsioon</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>Partitsioon</link
+> <link linkend="glossary-extendedpartition"
+>laiendatud partitsiooni sees</link
+>. </para>
+<glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-operation">
+		<glossterm
+>Operatsioon</glossterm>
+		<glossdef>
+			<para
+>Partitsioonihaldur jagab oma tegevuse operatsioonideks, <link linkend="glossary-job"
+>töödeks</link
+> ja <link linkend="glossary-command"
+>käskudeks</link
+>. </para>
+			<para
+>Operatsioonid on neist kõige nähtavamad. Kui valid graafilises kasutajaliideses mõne toimingu, siis lisab see peaaegu kindlasti uue operatsiooni ootel operatsioonide nimekirja. Asja tuum on järgmine: tõenäoliselt läheb vaja õige mitu sammu, et käia läbi teekond praegusest olukorrast selleni, mida sina soovid. Mõne sammu teostamine võib võtta omajagu aega (näiteks suure failisüsteemi kopeerimine või peaaegu täis failisüsteemi suuruse muutmine). Et sa ei peaks istuma pikalt arvuti ees ja ootama, kuni selline samm täidetakse, enne kui saad ette võtta uue sammu, võimaldavad operatsioonid määrata kindlaks, mida arvuti peab tegema, et sinu soovitud olukorda jõuda. Seejärel saad lasta hakata partitsioonihalduril operatsioone teostama ning võid ise arvuti juurde tagasi tulla alles siis, kui kõik on juba tehtud. </para>
+			<para
+>Operatsioonid on näha ootel operatsioonide nimekirjas. Kuni operatsiooni pole teostatud, võib selle <link linkend="menu-edit-undo"
+>hõlpsasti tagasi võtta</link
+>, ilma et midagi kuskil muudetaks. </para>
+<glossseealso otherterm="glossary-job"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partition">
+		<glossterm
+>Partitsioon</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-device"
+>Kõvakettaseadme</link
+> osa, mis võib sisaldada <link linkend="glossary-filesystem"
+>failisüsteemi</link
+> või teist partitsiooni. Ilma vähemalt ühe töökõlbliku partitsioonita ei saa ketast kasutada. </para>
+<glossseealso otherterm="glossary-device"
+></glossseealso
+> <glossseealso otherterm="glossary-partitiontable"
+></glossseealso
+> <glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partitionflag">
+		<glossterm
+>Partitsiooni lipp</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>Partitsiooni</link
+> tähis. Nende olemasolu sõltub kasutatava <link linkend="glossary-partitiontable"
+>partitsioonitabeli</link
+> tüübist. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-partitiontable">
+		<glossterm
+>Partitsioonitabel</glossterm>
+		<glossdef>
+			<para
+>Väike sektsioon <link linkend="glossary-device"
+>seadme</link
+> alguses, kuhu salvestatakse teave seadme <link linkend="glossary-partition"
+>partitsioonide</link
+> paigutuse kohta. Partitsioonitabeleid on eri tüüpi, kõigil oma piirangud. </para>
+			<para
+>Mõnikord nimetatakse neid ka <quote
+>kettanimeks</quote
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-primarypartition">
+		<glossterm
+>Peamine (primaarne) partitsioon</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>Partitsioon</link
+>, mis asub otse <link linkend="glossary-partitiontable"
+>partitsioonitabelis</link
+>, erinedes sellega <link linkend="glossary-logicalpartition"
+>loogilistest partitsioonidest</link
+>, mis asuvad <link linkend="glossary-extendedpartition"
+>laiendatud partitsioonis</link
+>. </para>
+			<para
+><link linkend="glossary-partitiontable"
+>Partitsioonitabelid</link
+> tavaliselt piiravad peamiste partitsioonide arvu, mida <link linkend="glossary-device"
+>seadmes</link
+> saab luua. MS-DOS partitsioonitabelid lubavad näiteks luua maksimaalselt neli peamist partitsiooni. </para>
+<glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-sector">
+		<glossterm
+>Sektor</glossterm>
+		<glossdef>
+			<para
+>Üksus, milleks jagunevad <link linkend="glossary-device"
+>seadmed</link
+>. <link linkend="glossary-partition"
+>Partitsioonid</link
+> peavad alati algama ja lõppema sektori piiril. </para>
+<glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-sectorsize">
+		<glossterm
+>Sektori suurus</glossterm>
+		<glossdef>
+			<para
+>Baitide arv <link linkend="glossary-sector"
+>sektori</link
+> kohta <link linkend="glossary-device"
+>seadmes</link
+>. Enamiku tänapäeva seadmete sektori suurus on 512 baiti. </para>
+		</glossdef>
+	</glossentry>
+	
+	<!--
+		<glossentry>
+			<glossterm
+></glossterm>
+			 
+		</glossentry>
+		-->
+
+</glossary>

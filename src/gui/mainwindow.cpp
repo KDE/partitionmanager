@@ -55,6 +55,8 @@
 #include <util/guihelpers.h>
 #include <util/report.h>
 
+#include <algorithm>
+
 #include <QApplication>
 #include <QCloseEvent>
 #include <QCollator>
@@ -70,6 +72,9 @@
 #include <QStatusBar>
 #include <QTemporaryFile>
 #include <QTextStream>
+
+#include <PolkitQt1/Authority>
+#include <polkitqt1-version.h>
 
 #include <KAboutApplicationDialog>
 #include <KActionCollection>
@@ -98,11 +103,10 @@ MainWindow::MainWindow(QWidget* parent) :
     m_ScanProgressDialog(new ScanProgressDialog(this)),
     m_StatusText(new QLabel(this))
 {
+    CoreBackend::isPolkitInstalledCorrectly();
+
     setupObjectNames();
     setupUi(this);
-    connect(&m_ListDevices->listDevices(), &QListWidget::customContextMenuRequested, this, &MainWindow::listDevicesContextMenuRequested);
-    connect(&m_TreeLog->treeLog(), &QTreeWidget::customContextMenuRequested, this, &MainWindow::treeLogContextMenuRequested);
-    connect(&m_ListOperations->listOperations(), &QListWidget::customContextMenuRequested, this, &MainWindow::listOperationsContextMenuRequested);
     init();
 }
 
@@ -115,11 +119,34 @@ void MainWindow::setupObjectNames()
     m_ScanProgressDialog->setObjectName(QStringLiteral("m_ScanProgressDialog"));
 }
 
+void MainWindow::setDisallowOtherDevices()
+{
+    // We need to store that we are hiding this for this session only
+    // but only if it's currently visible (ie, the user didn't select
+    // that it should be hidden on purpose.
+    if (m_DockDevices->isVisible() == true) {
+        Config::self()->setHideDeviceDockWidgetByCmdArgs(true);
+    }
+
+    // because of how Qt works, the user still can enable the
+    // dock widget via a mouse click, so we need to also set it to disabled.
+    // so that the user doesn't select it by mistake.
+
+    m_DockDevices->setVisible(false);
+    m_DockDevices->setEnabled(false);
+}
+
+void MainWindow::showDevicePanelIfPreviouslyHiddenByDisallowOtherDevices()
+{
+    if (Config::self()->hideDeviceDockWidgetByCmdArgs()) {
+        m_DockDevices->setVisible(true);
+        Config::self()->setHideDeviceDockWidgetByCmdArgs(false);
+    }
+}
+
 void MainWindow::init()
 {
     treeLog().init();
-
-    connect(GlobalLog::instance(), &GlobalLog::newMessage, &treeLog(), &TreeLog::onNewLogMessage);
 
     setupActions();
     setupStatusBar();
@@ -132,10 +159,67 @@ void MainWindow::init()
 
     loadConfig();
 
+    // this is done in order to hide the title bar of MessageWidget dock
+    findChild<QDockWidget*>(QStringLiteral("MessageWidgetDock"))->setTitleBarWidget(new QWidget());
+
+    MessageWidget().hide();
+    MessageWidget().setText(
+        i18nc("@info", "Partition Manager requires privileges in order to work. Please refresh the devices and authenticate when prompted."));
+
     show();
     pmWidget().init(&operationStack());
 
-    scanDevices();
+    scanProgressDialog().cancel();
+    setEnabled(false);
+    guiFactory()->container(QStringLiteral("selectedDevice"), this)->setEnabled(false);
+
+    askForPermissions();
+
+    if (m_permissionGranted) {
+        FileSystemFactory::init();
+        scanDevices();
+    } else
+        Q_EMIT showMessageWidget();
+
+    setEnabled(true);
+}
+
+void MainWindow::askForPermissions()
+{
+    PolkitQt1::UnixProcessSubject subject(QApplication::applicationPid());
+    PolkitQt1::Authority *authority = PolkitQt1::Authority::instance();
+
+    PolkitQt1::Authority::Result result;
+    QEventLoop e;
+    connect(authority, &PolkitQt1::Authority::checkAuthorizationFinished, &e,
+            [&e, &result](PolkitQt1::Authority::Result _result) {
+                result = _result;
+                e.quit();
+            });
+
+    authority->checkAuthorization(QStringLiteral("org.kde.kpmcore.externalcommand.init"), subject, PolkitQt1::Authority::AllowUserInteraction);
+    e.exec();
+
+    if (authority->hasError()) {
+        qDebug() << "Encountered error while checking authorization, error code:"
+                 << authority->lastError() << authority->errorDetails();
+        authority->clearError();
+    }
+
+    m_permissionGranted = result == PolkitQt1::Authority::Yes;
+}
+
+QMenu *MainWindow::createPopupMenu()
+{
+    auto menu = QMainWindow::createPopupMenu();
+    auto actions = menu->actions();
+    QAction *toRemove =
+        *std::find_if(actions.begin(), actions.end(),
+                      [](QAction *x) { return x->text().isEmpty(); });
+    // this is done in order to hide the entry for the MessageWidget dock
+    menu->removeAction(toRemove);
+
+    return menu;
 }
 
 void MainWindow::closeEvent(QCloseEvent* event)
@@ -195,7 +279,7 @@ void MainWindow::setupActions()
     undoOperation->setText(xi18nc("@action:inmenu", "Undo"));
     undoOperation->setToolTip(xi18nc("@info:tooltip", "Undo the last operation"));
     undoOperation->setStatusTip(xi18nc("@info:status", "Remove the last operation from the list."));
-    actionCollection()->setDefaultShortcut(undoOperation, QKeySequence(Qt::CTRL + Qt::Key_Z));
+    actionCollection()->setDefaultShortcut(undoOperation, QKeySequence(Qt::CTRL | Qt::Key_Z));
     undoOperation->setIcon(QIcon::fromTheme(QStringLiteral("edit-undo")));
 
     QAction* clearAllOperations = actionCollection()->addAction(QStringLiteral("clearAllOperations"));
@@ -221,7 +305,7 @@ void MainWindow::setupActions()
     createNewPartitionTable->setText(xi18nc("@action:inmenu", "New Partition Table"));
     createNewPartitionTable->setToolTip(xi18nc("@info:tooltip", "Create a new partition table"));
     createNewPartitionTable->setStatusTip(xi18nc("@info:status", "Create a new and empty partition table on a device."));
-    actionCollection()->setDefaultShortcut(createNewPartitionTable, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_N));
+    actionCollection()->setDefaultShortcut(createNewPartitionTable, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_N));
     createNewPartitionTable->setIcon(QIcon::fromTheme(QStringLiteral("edit-clear")));
 
     QAction* exportPartitionTable = actionCollection()->addAction(QStringLiteral("exportPartitionTable"));
@@ -300,7 +384,7 @@ void MainWindow::setupActions()
     newPartition->setText(xi18nc("@action:inmenu create a new partition", "New"));
     newPartition->setToolTip(xi18nc("@info:tooltip", "New partition"));
     newPartition->setStatusTip(xi18nc("@info:status", "Create a new partition."));
-    actionCollection()->setDefaultShortcut(newPartition, QKeySequence(Qt::CTRL + Qt::Key_N));
+    actionCollection()->setDefaultShortcut(newPartition, QKeySequence(Qt::CTRL | Qt::Key_N));
     newPartition->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
 
     QAction* resizePartition = actionCollection()->addAction(QStringLiteral("resizePartition"));
@@ -309,7 +393,7 @@ void MainWindow::setupActions()
     resizePartition->setText(xi18nc("@action:inmenu", "Resize/Move"));
     resizePartition->setToolTip(xi18nc("@info:tooltip", "Resize or move partition"));
     resizePartition->setStatusTip(xi18nc("@info:status", "Shrink, grow or move an existing partition."));
-    actionCollection()->setDefaultShortcut(resizePartition, QKeySequence(Qt::CTRL + Qt::Key_R));
+    actionCollection()->setDefaultShortcut(resizePartition, QKeySequence(Qt::CTRL | Qt::Key_R));
     resizePartition->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")));
 
     QAction* deletePartition = actionCollection()->addAction(QStringLiteral("deletePartition"));
@@ -327,7 +411,7 @@ void MainWindow::setupActions()
     shredPartition->setText(xi18nc("@action:inmenu", "Shred"));
     shredPartition->setToolTip(xi18nc("@info:tooltip", "Shred partition"));
     shredPartition->setStatusTip(xi18nc("@info:status", "Shred a partition so that its contents cannot be restored."));
-    actionCollection()->setDefaultShortcut(shredPartition, QKeySequence(Qt::SHIFT + Qt::Key_Delete));
+    actionCollection()->setDefaultShortcut(shredPartition, QKeySequence(Qt::SHIFT | Qt::Key_Delete));
     shredPartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete-shred")));
 
     QAction* copyPartition = actionCollection()->addAction(QStringLiteral("copyPartition"));
@@ -336,7 +420,7 @@ void MainWindow::setupActions()
     copyPartition->setText(xi18nc("@action:inmenu", "Copy"));
     copyPartition->setToolTip(xi18nc("@info:tooltip", "Copy partition"));
     copyPartition->setStatusTip(xi18nc("@info:status", "Copy an existing partition."));
-    actionCollection()->setDefaultShortcut(copyPartition, QKeySequence(Qt::CTRL + Qt::Key_C));
+    actionCollection()->setDefaultShortcut(copyPartition, QKeySequence(Qt::CTRL | Qt::Key_C));
     copyPartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
 
     QAction* pastePartition = actionCollection()->addAction(QStringLiteral("pastePartition"));
@@ -345,7 +429,7 @@ void MainWindow::setupActions()
     pastePartition->setText(xi18nc("@action:inmenu", "Paste"));
     pastePartition->setToolTip(xi18nc("@info:tooltip", "Paste partition"));
     pastePartition->setStatusTip(xi18nc("@info:status", "Paste a copied partition."));
-    actionCollection()->setDefaultShortcut(pastePartition, QKeySequence(Qt::CTRL + Qt::Key_V));
+    actionCollection()->setDefaultShortcut(pastePartition, QKeySequence(Qt::CTRL | Qt::Key_V));
     pastePartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-paste")));
 
     QAction* editMountPoint = actionCollection()->addAction(QStringLiteral("editMountPoint"));
@@ -408,7 +492,7 @@ void MainWindow::setupActions()
     createVolumeGroup->setText(i18nc("@action:inmenu", "New Volume Group"));
     createVolumeGroup->setToolTip(i18nc("@info:tooltip", "Create a new LVM Volume Group"));
     createVolumeGroup->setStatusTip(i18nc("@info:status", "Create a new LVM Volume Group as a device."));
-    actionCollection()->setDefaultShortcut(createVolumeGroup, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_L));
+    actionCollection()->setDefaultShortcut(createVolumeGroup, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L));
     createVolumeGroup->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
 
     QAction* fileSystemSupport = actionCollection()->addAction(QStringLiteral("fileSystemSupport"));
@@ -424,6 +508,7 @@ void MainWindow::setupActions()
     refreshDevices->setStatusTip(xi18nc("@info:status", "Renew the devices list."));
     actionCollection()->setDefaultShortcut(refreshDevices, Qt::Key_F5);
     refreshDevices->setIcon(QIcon::fromTheme(QStringLiteral("view-refresh")));
+    MessageWidget().addAction(refreshDevices);
 
     // Settings Actions
     actionCollection()->addAction(QStringLiteral("toggleDockDevices"), dockDevices().toggleViewAction());
@@ -459,8 +544,26 @@ void MainWindow::setupActions()
 
 void MainWindow::setupConnections()
 {
-    connect(&listDevices(), &ListDevices::selectionChanged, &pmWidget(), qOverload<const QString&>(&PartitionManagerWidget::setSelectedDevice));
-    connect(&listDevices(), &ListDevices::deviceDoubleClicked, this, &MainWindow::onPropertiesDevice);
+    connect(&listDevices(), &ListDevices::selectionChanged,
+            &pmWidget(), qOverload<const QString&>(&PartitionManagerWidget::setSelectedDevice));
+
+    connect(&listDevices(), &ListDevices::deviceDoubleClicked,
+            this, &MainWindow::onPropertiesDevice);
+
+    connect(&m_ListDevices->listDevices(), &QListWidget::customContextMenuRequested,
+            this, &MainWindow::listDevicesContextMenuRequested);
+    connect(&m_TreeLog->treeLog(), &QTreeWidget::customContextMenuRequested,
+            this, &MainWindow::treeLogContextMenuRequested);
+    connect(&m_ListOperations->listOperations(), &QListWidget::customContextMenuRequested,
+            this, &MainWindow::listOperationsContextMenuRequested);
+
+    connect(GlobalLog::instance(), &GlobalLog::newMessage,
+            &treeLog(), &TreeLog::onNewLogMessage);
+
+    connect(this, &MainWindow::showMessageWidget, &MessageWidget(),
+            &KMessageWidget::animatedShow);
+    connect(this, &MainWindow::hideMessageWidget, &MessageWidget(),
+            &KMessageWidget::animatedHide);
 }
 
 void MainWindow::setupStatusBar()
@@ -759,7 +862,13 @@ void MainWindow::on_m_DeviceScanner_finished()
 
     scanProgressDialog().setProgress(100);
 
-    if (!operationStack().previewDevices().isEmpty())
+    bool foundDevices = !operationStack().previewDevices().isEmpty();
+
+    guiFactory()
+        ->container(QStringLiteral("selectedDevice"), this)
+        ->setEnabled(foundDevices);
+
+    if (foundDevices)
         pmWidget().setSelectedDevice(operationStack().previewDevices()[0]);
 
     pmWidget().updatePartitions();
@@ -769,11 +878,12 @@ void MainWindow::on_m_DeviceScanner_finished()
 
     // try to set the seleted device, either from the saved one or just select the
     // first device
-    if (!listDevices().setSelectedDevice(savedSelectedDeviceNode()) && !operationStack().previewDevices().isEmpty())
+    if (!listDevices().setSelectedDevice(savedSelectedDeviceNode()) && foundDevices)
         listDevices().setSelectedDevice(operationStack().previewDevices()[0]->deviceNode());
 
     updateSeletedDeviceMenu();
     checkFileSystemSupport();
+    Q_EMIT scanFinished();
 }
 
 void MainWindow::updateSeletedDeviceMenu()
@@ -832,7 +942,17 @@ void MainWindow::onRefreshDevices()
             xi18nc("@title:window", "Really Rescan the Devices?"),
             KGuiItem(xi18nc("@action:button", "Rescan Devices"), QStringLiteral("arrow-right")),
             KStandardGuiItem::cancel(), QStringLiteral("reallyRescanDevices")) == KMessageBox::Continue) {
-        scanDevices();
+
+        if (m_permissionGranted) {
+            scanDevices();
+        } else {
+            askForPermissions();
+            if (m_permissionGranted) {
+                  Q_EMIT hideMessageWidget();
+                  FileSystemFactory::init();
+                  scanDevices();
+            }
+        }
     }
 }
 
@@ -925,6 +1045,8 @@ void MainWindow::onImportPartitionTable()
 {
     Q_ASSERT(pmWidget().selectedDevice());
 
+    // TODO: This method looks like should live somewhere completely different.
+    // It's importing the partition table, why it's not on the partition table source?
     const QUrl url = QFileDialog::getOpenFileUrl(this, QStringLiteral("Import Partition Table"));
 
     if (url.isEmpty())
@@ -1334,6 +1456,7 @@ static KLocalizedString checkSupportInNode(const PartitionNode* parent)
         else
             rval = checkSupportInNode(node);
 
+        // TODO: Don't create HTML tables manually.
         if ((!p->fileSystem().supportToolFound() && !p->fileSystem().supportToolName().name.isEmpty()) && !rval.isEmpty())
             rval = kxi18n("%1%2").subs(rval).subs(kxi18n("<tr>"
                                    "<td>%1</td>"
@@ -1380,6 +1503,7 @@ void MainWindow::checkFileSystemSupport()
     }
 
     if (missingSupportTools)
+        // TODO: Don't create HTML manually.
         KMessageBox::information(this,
                                  xi18nc("@info",
                                         "<para>No support tools were found for file systems currently present on hard disks in this computer:</para>"
@@ -1397,4 +1521,25 @@ void MainWindow::checkFileSystemSupport()
                                         supportList),
                                  xi18nc("@title:window", "Missing File System Support Packages"),
                                  QStringLiteral("showInformationOnMissingFileSystemSupport"), KMessageBox::Notify | KMessageBox::AllowLink);
+}
+
+void MainWindow::setCurrentDeviceByName(const QString& name)
+{
+    // TODO: Port KPartitionManager away from KMessageBox into KMessageWidget.
+    // TODO: setSelectedDevice from m_ListDevices is not using a device name, but
+    // just issuing a match query on a string list, this will produce false results.
+    if (!m_ListDevices->setSelectedDevice(name)) {
+        KMessageBox::error(this,
+                           xi18nc("@info device should be inside of /dev", "Unrecognized device \"%1\" ", name),
+                           xi18nc("@title:window", "Error While Importing Partition Table"));
+    }
+}
+
+void MainWindow::setCurrentPartitionByName(const QString& partitionName)
+{
+    if (!pmWidget().setCurrentPartitionByName(partitionName)) {
+        KMessageBox::error(this,
+                           xi18nc("@info device should be inside of /dev", "Unrecognized partition \"%1\" ", partitionName),
+                           xi18nc("@title:window", "Error opening partition"));
+    }
 }

@@ -1,0 +1,64 @@
+<sect1 id="howto-copypartition">
+	<title
+>Come si fa: copiare una partizione</title>
+
+	<para
+>Questa guida illustra la copia di una partizione. Partiremo dall'assunto che l'intenzione sia quella di copiare una partizione da un dispositivo a un altro sovrascrivendo una partizione di destinazione già esistente, ma la procedura complessiva non sarebbe molto differente se la copia avvenisse all'interno dello stesso dispositivo oppure verso uno spazio non allocato. </para>
+
+	<para
+>Le seguenti schermate mostrano come appare il dispositivo sorgente: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La finestra principale con il dispositivo sorgente</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Nel nostro esempio, la partizione sorgente sarà <quote
+>sdb1</quote
+> che è attualmente montata, come indicato dall'icona del lucchetto posta accanto al nome del punto di montaggio nella schermata. Una partizione montata non può essere copiata, quindi è necessario prima smontarla: fai clic su di essa quindi seleziona <xref linkend="menu-partition-mount"/>. </para>
+
+	<para
+>Dopo aver smontato la partizione l'icona del lucchetto scompare ed è ora possibile selezionare <xref linkend="menu-partition-copy"/>. In questo modo <quote
+>sdb1</quote
+> viene inserita negli appunti di &partman;; in altre parole: <quote
+>sdb1</quote
+> è ora la partizione che sarà inserita quando selezioni <xref linkend="menu-partition-paste"/>. </para>
+	
+	<para
+>In questa spiegazione, il dispositivo di destinazione per la copia sarà <quote
+>/dev/sdc</quote
+>. Fai clic su di esso nel Pannello dei dispositivi. Ecco come appare il dispositivo prima della copia: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La finestra principale con il dispositivo di destinazione prima della copia</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>La partizione da sovrascrivere è <quote
+>sdc5</quote
+>. Per sovrascriverla con la partizione copiata, fai clic su di essa e seleziona <xref linkend="menu-partition-paste"/>. Vedrai che l'operazione di copia della partizione è stata aggiunta all'elenco delle operazioni in attesa. Nota che non viene visualizzata alcuna finestra di conferma per l'inserimento della partizione come avverrebbe nel caso in cui avessi incollato la partizione in uno spazio non allocato: i termini iniziali e finali della partizione incollata sono determinati dalla partizione sovrascritta. </para>
+
+	<para
+>Ora seleziona <xref linkend="menu-edit-apply"/> per copiare la partizione. Vedi la guida sul <link linkend="howto-resizepartition"
+>ridimensionamento delle partizioni</link
+> per dettagli sull'esecuzione delle operazioni. </para>
+</sect1>
+

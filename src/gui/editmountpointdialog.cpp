@@ -72,7 +72,7 @@ void EditMountPointDialog::accept_(MountPointAction action)
             partition().setMountPoint(widget().editPath().currentText());
     }
     else
-        KMessageBox::sorry(this,
+        KMessageBox::error(this,
                    xi18nc("@info", "Could not save mount points to file <filename>/etc/fstab</filename>."),
                    xi18nc("@title:window", "Error While Saving Mount Points"));
 

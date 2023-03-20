@@ -100,6 +100,20 @@
 						</para>
 					</listitem>
 				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice>
+							<shortcut><keycap>F5</keycap></shortcut>
+							<guimenu>Device</guimenu>
+							<guimenuitem>Refresh Devices</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>
+							<action>Refreshes the devices</action>: This command forces &partman; to scan and read the devices on your computer again. This may for example be useful if you plugged in an external USB hard disk after you started &partman;.
+						</para>
+					</listitem>
+				</varlistentry>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice>
@@ -168,70 +182,6 @@
 					<listitem>
 						<para>Shows information about currently selected devices. In this dialog you can find capacity, sector sizes,
 						partition table type as well as used and maximum number of primary partitions.</para>
-					</listitem>
-				</varlistentry>
-			</variablelist>
-		</para>
-	</sect2>
-
-	<sect2 id="menu-tools">
-		<title>The Tools Menu</title>
-		<para>
-			<variablelist>
-				<varlistentry id="menu-tools-volumegroup">
-					<term>
-						<menuchoice>
-							<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo></shortcut>
-							<guimenu>Tools</guimenu>
-							<guimenuitem>New Volume Group</guimenuitem>
-						</menuchoice>
-					</term>
-					<listitem>
-						<para>Create a new logical device such as <link linkend="glossary-lvm">LVM</link> Volume Group.</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-filesystemsupport">
-					<term>
-						<menuchoice>
-							<guimenu>Tools</guimenu>
-							<guimenuitem>File System Support</guimenuitem>
-						</menuchoice>
-					</term>
-					<listitem>
-						<para>
-							<action>Shows the file system support dialog.</action> This dialog shows in detail which operations can be performed for which of the supported file systems.
-						</para>
-						<para>
-							Here is an example how the dialog might look like with most external tools installed:
-						</para>
-						<para>
-							<screenshot>
-								<mediaobject>
-									<imageobject><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject><phrase>File system support dialog with most external tools installed</phrase></textobject>
-								</mediaobject>
-							</screenshot>
-						</para>
-						<para>
-							The blue check marks mean <quote>supported</quote>, the red crosses mean <quote>not supported</quote>. Some combinations are never supported, for example checking a linuxswap file system, because they are inherently impossible. Others cannot be supported because the external tools lack the functionality.
-						</para>
-						<para>
-							If you have installed new tools while &partman; is running click on <guibutton>Rescan Support</guibutton> to force a recheck of installed  file system support tools.
-						</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-refresh">
-					<term>
-						<menuchoice>
-							<shortcut><keycap>F5</keycap></shortcut>
-							<guimenu>Tools</guimenu>
-							<guimenuitem>Refresh Devices</guimenuitem>
-						</menuchoice>
-					</term>
-					<listitem>
-						<para>
-							<action>Refreshes the devices</action>: This command forces &partman; to scan and read the devices on your computer again. This may for example be useful if you plugged in an external USB hard disk after you started &partman;.
-						</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -318,7 +268,7 @@
 						</para>
 						<warning>
 							<title>Warning: Loss of data</title>
-							<para>Shreding a partition means that all data on the partition is destroyed.</para>
+							<para>Shredding a partition means that all data on the partition is destroyed.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
@@ -363,22 +313,6 @@
 						</warning>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-partition-mount">
-					<term>
-						<menuchoice>
-							<guimenu>Partition</guimenu>
-							<guimenuitem>Mount/Unmount</guimenuitem>
-						</menuchoice>
-					</term>
-					<listitem>
-						<para>
-							<action>Mounts or umounts a partition</action>: This command mounts or unmounts the selected partition, depending on its current state.
-						</para>
-						<para>
-							This command is only enabled if a partition is selected that can be mounted or unmounted. If the operating system does not know a mount point for the partition you can not mount it from &partman;.
-						</para>
-					</listitem>
-				</varlistentry>
 				<varlistentry id="menu-partition-edit-mount">
 					<term>
 						<menuchoice>
@@ -392,6 +326,22 @@
 						</para>
 						<para>
 							This command is only enabled if a partition unmounted.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice>
+							<guimenu>Partition</guimenu>
+							<guimenuitem>Mount/Unmount</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>
+							<action>Mounts or umounts a partition</action>: This command mounts or unmounts the selected partition, depending on its current state.
+						</para>
+						<para>
+							This command is only enabled if a partition is selected that can be mounted or unmounted. If the operating system does not know a mount point for the partition you can not mount it from &partman;.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -499,6 +449,56 @@
 						</para>
 						<para>
 							The command is only enabled if either an unallocated area or a partition is selected.
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title>The Tools Menu</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice>
+							<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo></shortcut>
+							<guimenu>Tools</guimenu>
+							<guimenuitem>New Volume Group</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>Create a new logical device such as <link linkend="glossary-lvm">LVM</link> Volume Group.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice>
+							<guimenu>Tools</guimenu>
+							<guimenuitem>File System Support</guimenuitem>
+						</menuchoice>
+					</term>
+					<listitem>
+						<para>
+							<action>Shows the file system support dialog.</action> This dialog shows in detail which operations can be performed for which of the supported file systems.
+						</para>
+						<para>
+							Here is an example how the dialog might look like with most external tools installed:
+						</para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject><phrase>File system support dialog with most external tools installed</phrase></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para>
+							The blue check marks mean <quote>supported</quote>, the red crosses mean <quote>not supported</quote>. Some combinations are never supported, for example checking a linuxswap file system, because they are inherently impossible. Others cannot be supported because the external tools lack the functionality.
+						</para>
+						<para>
+							If you have installed new tools while &partman; is running click on <guibutton>Rescan Support</guibutton> to force a recheck of installed  file system support tools.
 						</para>
 					</listitem>
 				</varlistentry>

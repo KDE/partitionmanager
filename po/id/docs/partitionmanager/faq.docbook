@@ -1,0 +1,155 @@
+<chapter id="faq">
+	<title
+>Pertanyaan dan Jawaban</title>
+
+	<qandaset id="faqlist">
+		<qandaentry>
+			<question>
+				<para
+>Seberapa bahayanya &partman; bagi data saya?</para>
+			</question>
+			<answer>
+				<para
+>Pertama-tama, Anda seharusnya jangan melakukan operasi yang merusak apa pun (hapus, geser, ubah-ukuran) tanpa lebihdulu membuat cadangan lengkap dari semua yang berpengaruh. </para>
+				<para
+>Dengan begitu, &partman; aman untuk digunakan. Dia melakukan pemeriksaan ekstensif sebelum dan sesudah setiap operasi. Dia memanggil alat eksternal yang ditulis dan didukung oleh para pembuat sistem file . Dan telah diuji secara ekstensif. </para>
+				<para
+>Selalu ada risiko kehilangan data akibat bug yang tidak diketahui. Para pembuat &partman; mencoba meminimalkan risiko ini, namun tentu saja tidak ada jaminan. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Saya telah menginstal semua paket dukungan sistem file eksternal yang dianjurkan dan yang masih belum mendapatkan dukungan untuk semua operasi pada semua sistem file .</para>
+			</question>
+			<answer>
+				<para
+>Tidak semuanya &partman; bisa lakukan, secara prinsip bisa dilakukan dengan semua sistem file. </para>
+				<para
+>Salah satu contohnya adalah melakukan pemeriksaan sistem file pada linuxswap: Hanya saja tidak mungkin. Ada keterbatasan lain seperti yang melekat pada beberapa sistem file . Anda tidak dapat menyusutkan sistem file JFS atau XFS karena kedua-duanya tidak mendukung penyusutan sama sekali, dengan atau tanpa &partman;. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Mengapa saya tidak dapat melihat informasi kemajuan yang berarti saat mengubah ukuran partisi?</para>
+			</question>
+			<answer>
+				<para
+>&partman; hanya bisa menampilkan kemajuan informasi saat tahu berapa lama pekerjaannya dalam operasi yang akan diambil. Sayangnya hal ini biasanya tidak terjadi kapan mengubah ukuran partisi karena pekerjaan panjang saat melakukan hal itu adalah mengubah ukuran sistem file pada partisi. Mengubah ukuran sistem file dalam banyak kasus sesuatu alat eksternal akan dilakukan atas nama &partman; dan alat eksternal tersebut tidak memberikan informasi kemajuan yang berguna kepada &partman;, jadi tidak ada yang dilaporkan saat mereka berjalan. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Mengapa saya tidak dapat mengubah ukuran partisi root? Bagaimana saya bisa mengubah ukuran pada partisi /home?</para>
+			</question>
+			<answer>
+				<para
+>Untuk memodifikasi partisi itu seharusnya tidak boleh terkait. Namun Anda bisa tidak melepas kait partisi root. Anda juga tidak bisa melepas kait partisi home jika direktori home pengguna yang saat ini ter-login berada di dalamnya. </para>
+				<para
+>Solusi untuk masalah ini adalah boot dari Linux Live CD yang disertakan &partman; dan memodifikasi partisi ini dari sana. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Saya mendapatkan pesan peringatan di log output tentang sesuatu yang partisi tidak dapat diciptakan dengan ukuran yang saya minta dan itu malah menjadi lebih kecil. Apa yang terjadi?</para>
+			</question>
+			<answer>
+				<para
+>Pada tabel partisi MS-DOS, partisi harus diawali dan diakhiri dengan batas silinder. Hal ini terutama karena alasan historis. &partman; akan menangani ini secara internal dan mencoba untuk tidak mengganggu pengguna dengan keterbatasan itu. </para>
+				<para
+>Dalam keadaan langka, akan tetapi &partman; tidak dapat menyiapkan operasi dengan cara yang diminta pengguna karena keterbatasan ini. Misalnya, jika satu silinder pada perangkat berukuran sebesar 8 MiB dan Anda mencoba untuk mengubah ukuran partisi dengan 6 MiB, ini tidak akan bekerja. </para>
+				<para
+>Anda mungkin juga menemukan pesan ini jika Anda memiliki perangkat dan tabel partisi di mana partisi berada, untuk alasan apa pun, tidak dijepret dengan benar ke batas silinder dan Anda mencoba untuk menggeser atau menyalin partisi tersebut untuk pertama kali. </para>
+				<para
+>Pesan itu sendiri tidak berbahaya dan hanya ada untuk menginformasikan pengguna bahwa itu sesuatu yang tidak bisa dilakukan persis seperti yang diharapkan pengguna. Partisi dan data Anda tidak akan terpengaruh secara negatif dengan cara apapun jika Anda melihat pesan ini. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Berapa banyak operasi yang bisa saya tambahkan ke daftar operasi tunda?</para>
+			</question>
+			<answer>
+				<para
+>Tidak ada batas. </para>
+				<para
+>Namun tidak disarankan untuk menambahkan terlalu banyak operasi ke dalam daftar. Selalu ada kemungkinan kecil sebuah operasi mungkin gagal dengan error, di mana kasus &partman; akan berhenti pengeksekusian operasi. Dalam kasus tersebut adalah mempermudah untuk mengetahui apa yang terjadi (dan untuk menambahkan kembali semua operasi yang tidak bisa dieksekusi) jika daftar operasi tunda tidak terlalu panjang. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Pengubahan ukuran sebuah sistem file ext2 atau ext3 gagal dengan suatu laporan tentang <quote
+>tiada sisa ruang pada perangkat</quote
+>. Apa yang terjadi? Apakah data saya sekarang terkorup?</para>
+			</question>
+			<answer>
+				<para
+>Ini adalah masalah perintah <command
+>e2resize</command
+> dan sistem file  ext2/3/4 yang mendasari. Jika sistem file hampir penuh, <command
+>e2resize</command
+> tidak bisa membuatnya lebih kecil meski mungkin yang seharusnya dari jumlah sektor bebas yang tersisa. Sayangnya &partman; bisa tidak mengetahui sebelumnya jika <command
+>e2resize</command
+> akan menggugurkan dengan error ini untuk memberikan sistem file atau tidak. Jika tidak terjadi apa-apa akan dilakukan pada semua dan data Anda tidak akan terpengaruh secara negatif. </para>
+				<para
+>Tidak ada solusi nyata untuk masalah ini sekarang. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Mengapa saya tidak bisa memformat floppy disk saya dengan &partman;? Mengapa tidak ada dukungan untuk CD writing atau DVD burning?</para>
+			</question>
+			<answer>
+				<para
+>Tak satu pun dari ini apakah &partman; telah dirancang untuk melakukannya: Ini adalah sebuah aplikasi yang berhubungan dengan partisi dan sistem file  pada partisi tersebut. Floppy disk, CD atau DVD tidak memerlukan atau menggunakan partisi. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Mengapa saya tidak bisa memodifikasi partisi pada perangkat dengan sebuah tabel partisi amiga atau bsd?</para>
+			</question>
+			<answer>
+				<para
+> Saat ini &partman; hanya mengizinkan akses read-only ke tipe tabel partisi lainnya kecuali MS-DOS. Ini untuk alasan keamanan: Dukungan dalam &partman; tipe tabel partisi untuk ini tidak benar-benar ada dan apakah ada (atau hanya kebetulan bekerja) belum cukup diuji untuk menggunakannya dengan percaya diri. </para>
+				<para
+>Tentu Anda masih bisa menciptakan tabel partisi MS-DOS baru di perangkat yang ditanyakan, tapi mungkin itu bukan yang Anda inginkan. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Saat pemulaian, &partman; hang selama beberapa menit ketika ia mencoba untuk memindai floppy drive pada komputer saya.</para>
+			</question>
+			<answer>
+				<para
+>Hal ini terjadi jika Anda memiliki floppy drive yang terkonfigurasi di pengaturan BIOS komputer Anda tapi belum benar-benar terkoneksi. Jika Anda tidak memiliki floppy disk periksalah pengaturan BIOS Anda dan menonfungsikan floppy drive yang terkonfigurasi yang ada untuk melihat apakah ini yang membuat masalah. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Saat pemulaian, &partman; mencetak beberapa pesan tentang penjajakan perangkat dan itu bahkan mungkin mogok atau setidaknya butuh waktu lama.</para>
+			</question>
+			<answer>
+				<para
+>LibParted, sebuah pustaka backend yang digunakan &partman;, memiliki masalah dengan sistem di mana Linux Device Mapper digunakan dalam cara yang tidak dimengerti. Sayangnya hal itu bereaksi terhadap beberapa situasi ini dengan segmentasi kesalahan, yaitu mogok/crash. Karena itu &partman; mencoba untuk menghindari situasi ini menggunakan cara alternatif untuk memindai disk komputer Anda. Jika tidak bisa melakukan hal itu, bagaimanapun, dan karena itu harus bergantung pada LibParted, itu akan mencetak pesan seperti yang disebutkan. Jika pemindaian untuk disk bekerja, Anda bisa dengan aman mengabaikan pesannya. </para>
+			</answer>
+		</qandaentry>
+<!--
+		<qandaentry>
+			<question>
+				<para
+></para>
+			</question>
+			 
+		</qandaentry>
+-->
+	</qandaset>
+</chapter>
+

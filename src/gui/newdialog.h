@@ -30,6 +30,9 @@ public:
     NewDialog(QWidget* parent, Device& device, Partition& unallocatedPartition, PartitionRole::Roles r);
     ~NewDialog();
 
+    // returns true if any user can write on the partition.
+    // has the same effect as running `chmod 777` on it.
+    bool useUnsecuredPartition() const;
 protected:
     void accept() override;
     void onRoleChanged(bool);

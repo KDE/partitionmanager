@@ -1,0 +1,3510 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the partitionmanager package.
+#
+# Kheyyam Gojayev <xxmn77@gmail.com>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: partitionmanager\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
+"PO-Revision-Date: 2022-07-31 23:12+0400\n"
+"Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
+"Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.04.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Xəyyam Qocayev"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xxmn77@gmail.com"
+
+#: config/configureoptionsdialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:tab general application settings"
+msgid "General"
+msgstr "Əsas"
+
+#: config/configureoptionsdialog.cpp:42 config/configureoptionsdialog.cpp:87
+#, kde-format
+msgid "General Settings"
+msgstr "Ümumi Ayarlar"
+
+#: config/configureoptionsdialog.cpp:47
+#, kde-kuit-format
+msgctxt "@title:tab"
+msgid "File System Colors"
+msgstr "Fayl sistemi rəngləri"
+
+#: config/configureoptionsdialog.cpp:47
+#, kde-format
+msgid "File System Color Settings"
+msgstr "Fayl sistemi rəng ayarları"
+
+#: config/configureoptionsdialog.cpp:49
+#, kde-kuit-format
+msgctxt "@title:tab advanced application settings"
+msgid "Advanced"
+msgstr "Təkmilləşmiş"
+
+#: config/configureoptionsdialog.cpp:49
+#, kde-format
+msgid "Advanced Settings"
+msgstr "Təkmil ayarlar"
+
+#: config/configureoptionsdialog.cpp:137
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to change the backend?</para><para><warning>This "
+"will also rescan devices and thus clear the list of pending operations.</"
+"warning></para>"
+msgstr ""
+"<para>Siz həqiqətən modulu dəyişmək istəyirsiniz?</para><para><warning>Bu "
+"həmçinin qurğuların təkrar axtarılmasına gətirib çıxaracaq və bu halda "
+"gözlənilən əməliyyatlar siyahısını təmizləyəcək. </warning></para>"
+
+#: config/configureoptionsdialog.cpp:139
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Change Backend?"
+msgstr "Modul dəyişdirilsin?"
+
+#: config/configureoptionsdialog.cpp:140
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Change the Backend"
+msgstr "Modulu dəyişdirmək"
+
+#: config/configureoptionsdialog.cpp:141
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Change the Backend"
+msgstr "Modulu dəyişdirməyin"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepageadvanced.ui:29
+#, kde-format
+msgid "Backend"
+msgstr "Daxili Modul"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: config/configurepageadvanced.ui:35
+#, kde-format
+msgid "Active backend:"
+msgstr "Aktiv modul:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
+#: config/configurepageadvanced.ui:57
+#, kde-format
+msgid "Units"
+msgstr "Vahidlər"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepageadvanced.ui:63
+#, kde-format
+msgid "Preferred unit:"
+msgstr "Əsas vahidlər:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:74
+#, kde-format
+msgid "Byte"
+msgstr "Bayt"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:79
+#, kde-format
+msgid "KiB"
+msgstr "KiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:84
+#, kde-format
+msgid "MiB"
+msgstr "MiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:89
+#, kde-format
+msgid "GiB"
+msgstr "GiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:94
+#, kde-format
+msgid "TiB"
+msgstr "TiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:99
+#, kde-format
+msgid "PiB"
+msgstr "PiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:104
+#, kde-format
+msgid "EiB"
+msgstr "EiB"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: config/configurepagefilesystemcolors.ui:30
+#: config/configurepagegeneral.ui:144
+#, kde-format
+msgid "File Systems"
+msgstr "Fayl Sistemləri"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_7)
+#: config/configurepagefilesystemcolors.ui:39
+#, kde-format
+msgid "ReiserFS:"
+msgstr "ReiserFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_15)
+#: config/configurepagefilesystemcolors.ui:68
+#, kde-format
+msgid "UFS:"
+msgstr "UFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_31)
+#: config/configurepagefilesystemcolors.ui:81
+#, kde-format
+msgid "ISO 9660:"
+msgstr "ISO 9660:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_24)
+#: config/configurepagefilesystemcolors.ui:100
+#, kde-format
+msgid "OCFS2:"
+msgstr "OCFS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_22)
+#: config/configurepagefilesystemcolors.ui:116
+#, kde-format
+msgid "XFS:"
+msgstr "XFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_27)
+#: config/configurepagefilesystemcolors.ui:135
+#, kde-format
+msgid "NILFS2:"
+msgstr "NILFS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_6)
+#: config/configurepagefilesystemcolors.ui:184
+#, kde-format
+msgid "FAT16:"
+msgstr "FAT16:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_13)
+#: config/configurepagefilesystemcolors.ui:197
+#, kde-format
+msgid "extended:"
+msgstr "genişləndirilmiş:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_33)
+#: config/configurepagefilesystemcolors.ui:210
+#, kde-format
+msgid "LUKS2:"
+msgstr "LUKS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_17)
+#: config/configurepagefilesystemcolors.ui:226
+#, kde-format
+msgid "unformatted:"
+msgstr "formatlanmamış:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_30)
+#: config/configurepagefilesystemcolors.ui:245
+#, kde-format
+msgid "UDF:"
+msgstr "UDF:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_25)
+#: config/configurepagefilesystemcolors.ui:258
+#, kde-format
+msgid "ZFS:"
+msgstr "ZFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_3)
+#: config/configurepagefilesystemcolors.ui:306
+#, kde-format
+msgid "ext4:"
+msgstr "ext4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_10)
+#: config/configurepagefilesystemcolors.ui:322
+#, kde-format
+msgid "HPFS:"
+msgstr "HPFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_11)
+#: config/configurepagefilesystemcolors.ui:380
+#, kde-format
+msgid "JFS:"
+msgstr "JFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_2)
+#: config/configurepagefilesystemcolors.ui:393
+#, kde-format
+msgid "ext3:"
+msgstr "ext3:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_8)
+#: config/configurepagefilesystemcolors.ui:419
+#, kde-format
+msgid "Reiser4:"
+msgstr "Reiser4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_21)
+#: config/configurepagefilesystemcolors.ui:451
+#, kde-format
+msgid "Btrfs:"
+msgstr "Btrfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: config/configurepagefilesystemcolors.ui:493
+#, kde-format
+msgid "ext2:"
+msgstr "ext2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_29)
+#: config/configurepagefilesystemcolors.ui:512
+#, kde-format
+msgid "F2FS:"
+msgstr "F2FS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_28)
+#: config/configurepagefilesystemcolors.ui:531
+#, kde-format
+msgid "LVM2 PV:"
+msgstr "LVM2 PV:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_26)
+#: config/configurepagefilesystemcolors.ui:557
+#, kde-format
+msgid "exFAT:"
+msgstr "exFAT:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_9)
+#: config/configurepagefilesystemcolors.ui:570
+#, kde-format
+msgid "NTFS:"
+msgstr "NTFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_20)
+#: config/configurepagefilesystemcolors.ui:596
+#, kde-format
+msgid "LUKS:"
+msgstr "LUKS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_4)
+#: config/configurepagefilesystemcolors.ui:625
+#, kde-format
+msgid "Linux Swap:"
+msgstr "Linux Swap:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_32)
+#: config/configurepagefilesystemcolors.ui:676
+#, kde-format
+msgid "FAT12:"
+msgstr "FAT12:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_12)
+#: config/configurepagefilesystemcolors.ui:689
+#, kde-format
+msgid "HFS:"
+msgstr "HFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_35)
+#: config/configurepagefilesystemcolors.ui:721
+#, kde-format
+msgid "APFS:"
+msgstr "APFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_5)
+#: config/configurepagefilesystemcolors.ui:734
+#, kde-format
+msgid "FAT32:"
+msgstr "FAT32:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_18)
+#: config/configurepagefilesystemcolors.ui:766
+#, kde-format
+msgid "Linux RAID:"
+msgstr "Linux RAID:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_34)
+#: config/configurepagefilesystemcolors.ui:779
+#, kde-format
+msgid "BitLocker:"
+msgstr "BitLocker:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_14)
+#: config/configurepagefilesystemcolors.ui:808
+#, kde-format
+msgid "HFS+:"
+msgstr "HFS+:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_16)
+#: config/configurepagefilesystemcolors.ui:834
+#, kde-format
+msgid "unknown:"
+msgstr "naməlum:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagefilesystemcolors.ui:847
+#, kde-format
+msgid "          Minix:"
+msgstr "          Minix:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: config/configurepagegeneral.ui:28
+#, kde-format
+msgid "Partition Alignment"
+msgstr "Bölmələrin Nizamlanması"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
+#: config/configurepagegeneral.ui:34
+#, kde-format
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Silindr əsaslı nizamlanmadan istifadə edin (Windows XP ilə uyğun)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagegeneral.ui:47
+#, kde-format
+msgid "Sector alignment:"
+msgstr "Sektorların nizamlanması:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
+#: config/configurepagegeneral.ui:60
+#, kde-format
+msgid " sectors"
+msgstr " sektorlar"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
+#: config/configurepagegeneral.ui:76
+#, kde-format
+msgid "Align partitions per default"
+msgstr "Bölmələrin standart nizamlanması"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: config/configurepagegeneral.ui:95
+#, kde-format
+msgid "Logging"
+msgstr "Jurnal"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: config/configurepagegeneral.ui:101
+#, kde-format
+msgid "Hide messages below:"
+msgstr "Aşağıdakı ismarıcları gizlədin:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:112
+#, kde-format
+msgid "Debug"
+msgstr "Sazlama"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:117
+#, kde-format
+msgid "Information"
+msgstr "Məlumat"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:122
+#, kde-format
+msgid "Warning"
+msgstr "Xəbərdarlıq"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:127
+#, kde-format
+msgid "Error"
+msgstr "Xəta"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: config/configurepagegeneral.ui:150
+#, kde-format
+msgid "Default file system:"
+msgstr "Standart fayl sistemi:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepagegeneral.ui:172
+#, kde-format
+msgid "Shredding"
+msgstr "Verilənlərin məhvi"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepagegeneral.ui:178
+#, kde-format
+msgid "Overwrite with:"
+msgstr "Üzərinə yazmaq:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton)
+#: config/configurepagegeneral.ui:185
+#, kde-format
+msgid "Random data"
+msgstr "Təsadüfi verilənin"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
+#: config/configurepagegeneral.ui:195
+#, kde-format
+msgid "Zeros"
+msgstr "Sıfırın"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
+#: gui/applyprogressdetailswidgetbase.ui:42
+#, kde-format
+msgid "Save"
+msgstr "Saxlayın"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonBrowser)
+#: gui/applyprogressdetailswidgetbase.ui:49
+#, kde-format
+msgid "Open in External Browser"
+msgstr "Xarici bələdçidə açmaq"
+
+#: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "&Details"
+msgstr "&Təfərrüatlar"
+
+#: gui/applyprogressdialog.cpp:126
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Setting up..."
+msgstr "Ayarlanır..."
+
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to cancel?"
+msgstr "Doğrudan ləğv etmək istəyirsiniz?"
+
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cancel Running Operations"
+msgstr "İşlək əməliyyatları ləğv etmək"
+
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Yes, Cancel Operations"
+msgstr "Bəli, əməliyyat ləğv edilsin"
+
+#: gui/applyprogressdialog.cpp:201
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Waiting for operation to finish..."
+msgstr "Əməliyyatın başa çatmasını gözləmək..."
+
+#: gui/applyprogressdialog.cpp:222
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "All operations successfully finished."
+msgstr "Bütün əməliyyatlar müvəffəqiyyətlə başa çatdı."
+
+#: gui/applyprogressdialog.cpp:227
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Operations cancelled."
+msgstr "Əməliyyatlar ləğv edildi."
+
+#: gui/applyprogressdialog.cpp:232
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "There were errors while applying operations. Aborted."
+msgstr "Əməliyyatların tətbiq edilməsi zamanı xəta baş verdi. Ləğv edildi."
+
+#: gui/applyprogressdialog.cpp:346
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "[%1/%2] - %3: %4"
+msgstr "[%1/%2] - %3: %4"
+
+#: gui/applyprogressdialog.cpp:380
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Total Time: %1"
+msgstr "Ümumi vaxt: %1"
+
+#: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
+#: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Could not create temporary file when trying to save to <filename>%1</"
+"filename>."
+msgstr ""
+"<filename>%1</filename>'də(da) saxlamağa cəhd edərkən müvəqqəti fayl "
+"yaratmaq mümkün olmadı."
+
+#: gui/applyprogressdialog.cpp:428
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Save Report."
+msgstr "Hesabat saxlanıla bilmədi."
+
+#: gui/applyprogressdialog.cpp:452
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not create temporary file <filename>%1</filename> for writing."
+msgstr "<filename>%1</filename> müvəqqəti faylı yazmaq üçün yaradıla bilmədi."
+
+#: gui/applyprogressdialog.cpp:452
+#, kde-format
+msgctxt "@title:window"
+msgid "Could Not Launch Browser."
+msgstr "Bələdçi açıla bilmədi."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:41
+#, kde-format
+msgid "Operations and Jobs"
+msgstr "Əməliyyatlar və işlər"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:46
+#, kde-format
+msgid "Time Elapsed"
+msgstr "Keçən vaxt"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
+#: gui/applyprogressdialogwidgetbase.ui:72
+#, kde-format
+msgid "Total Time: 00:00:00"
+msgstr "Ümumi vaxt: 00:00:00"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
+#: gui/applyprogressdialogwidgetbase.ui:89
+#, no-c-format, kde-format
+msgid "Operation: %p%"
+msgstr "Əməliyyat: %p%"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
+#: gui/applyprogressdialogwidgetbase.ui:99
+#, kde-format
+msgid "Status"
+msgstr "Vəziyyət"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressTotal)
+#: gui/applyprogressdialogwidgetbase.ui:115
+#, no-c-format, kde-format
+msgid "Total: %p%"
+msgstr "Ümumi: %p%"
+
+#: gui/createpartitiontabledialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create a New Partition Table on <filename>%1</filename>"
+msgstr "<filename>%1</filename>'də(da) Yeni Bölmə Cədvəli Yaratmaq"
+
+#: gui/createpartitiontabledialog.cpp:34
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Create &New Partition Table"
+msgstr "Ye&ni Bölmə Cədvəli Yaratmaq"
+
+#: gui/createpartitiontabledialog.cpp:59
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to create an MS-Dos partition table on <filename>"
+"%1</filename>?</para><para>This device has more than 2^32 sectors. That is "
+"the most the MS-Dos partition table type supports, so you will not be able "
+"to use the whole device.</para>"
+msgstr ""
+"<para>Siz doğrudan <filename>%1</filename>'də(da) MS-DOS bölmə cədvəli "
+"yaratmaq isətyirsiniz?</para><para>Bu cihazda  2^32-dən çox sektor var. Bu "
+"MS-DOS bölmə cədvəli növünün dəstəklədiyi maksimum həddir, ona görə də siz "
+"bütün qurğunu istifadə edə bilməyəcəksiniz.</para>"
+
+#: gui/createpartitiontabledialog.cpp:61
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Create MS-Dos Partition Table Type?"
+msgstr "MS-DOS Bölmə Cədvəli Növü yaradılsın?"
+
+#: gui/createpartitiontabledialog.cpp:62
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Create MS-Dos Type"
+msgstr "MS-DOS növü yaratmaq"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/createpartitiontablewidgetbase.ui:24
+#, kde-format
+msgid "Choose the type of partition table you want to create:"
+msgstr "Yaratmaq istədiyiniz bölmə cədvəlinin növünü seçin:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
+#: gui/createpartitiontablewidgetbase.ui:33
+#, kde-format
+msgid "GPT"
+msgstr "GPT"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
+#: gui/createpartitiontablewidgetbase.ui:43
+#, kde-format
+msgid "MS-Dos"
+msgstr "MS-Dos"
+
+#. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
+#: gui/createpartitiontablewidgetbase.ui:70
+#, kde-format
+msgid "(icon)"
+msgstr "(nişan)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: gui/createpartitiontablewidgetbase.ui:83
+#, kde-format
+msgid "<b>Warning:</b> This will destroy all data on the device!"
+msgstr "<b>Xəbərdarlıq</b> Bu qurğudakı bütün məlumatları məhv edəcək!"
+
+#: gui/createvolumegroupdialog.cpp:38
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create new Volume Group"
+msgstr "Yeni Həcm Qrupu yaratmaq"
+
+#: gui/devicepropsdialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Device Properties: <filename>%1</filename>"
+msgstr "Qurğunun xüsusiyyətləri: <filename>%1</filename>"
+
+#: gui/devicepropsdialog.cpp:76 gui/infopane.cpp:168
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "%1 (read only)"
+msgstr "%1 (yalnız oxumaq)"
+
+#: gui/devicepropsdialog.cpp:107 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
+#, kde-kuit-format
+msgctxt "@label SMART disk status"
+msgid "good"
+msgstr "yaxşı"
+
+#: gui/devicepropsdialog.cpp:112 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
+#, kde-kuit-format
+msgctxt "@label SMART disk status"
+msgid "BAD"
+msgstr "PİS"
+
+#: gui/devicepropsdialog.cpp:117 gui/smartdialog.cpp:129
+#, kde-kuit-format
+msgctxt "@label"
+msgid "(unknown)"
+msgstr "(naməlum)"
+
+#: gui/devicepropsdialog.cpp:123
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "LVM Volume Group"
+msgstr "LVM Həcm Qrupu"
+
+#: gui/devicepropsdialog.cpp:125
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Software RAID Device"
+msgstr "RAİD proqramı qurğusu"
+
+#: gui/devicepropsdialog.cpp:127
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Volume Manager Device"
+msgstr "Həcmlər meneceri qurğusu"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
+#: gui/devicepropswidgetbase.ui:63
+#, kde-format
+msgid "Partition table:"
+msgstr "Bölmələr Cədvəli:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
+#: gui/devicepropswidgetbase.ui:85
+#, kde-format
+msgid "&Cylinder alignment"
+msgstr "&Silindr nizamlaması"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
+#: gui/devicepropswidgetbase.ui:92
+#, kde-format
+msgid "Sector based align&ment"
+msgstr "Sektor əsaslı niza&mlama"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/devicepropswidgetbase.ui:121
+#, kde-format
+msgid "Capacity:"
+msgstr "Tutumu:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/devicepropswidgetbase.ui:141
+#, kde-format
+msgid "Total sectors:"
+msgstr "Ümumi sektorlar:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
+#: gui/devicepropswidgetbase.ui:168
+#, kde-format
+msgid "Logical sector size:"
+msgstr "Məntiqi sektorun ölçüsü:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
+#: gui/devicepropswidgetbase.ui:188
+#, kde-format
+msgid "Physical sector size:"
+msgstr "Fiziki sektorun ölçüsü:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
+#: gui/devicepropswidgetbase.ui:222
+#, kde-format
+msgid "Primaries/Max:"
+msgstr "İlkin/Maks:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
+#: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
+#: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
+#, kde-format
+msgid "SMART status:"
+msgstr "SMSRT vəziyyəti:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
+#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:81
+#, kde-format
+msgid "More..."
+msgstr "Daha çox..."
+
+#: gui/editmountoptionsdialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Edit additional mount options"
+msgstr "Digər qoşulma nöqtələrinə düzəliş"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
+#: gui/editmountoptionsdialogwidgetbase.ui:19
+#, kde-format
+msgid "Edit Mount Options"
+msgstr "Qoşulma parametrlərinə düzəliş"
+
+#. i18n: ectx: property (text), widget (QLabel, m_Label)
+#: gui/editmountoptionsdialogwidgetbase.ui:25
+#, kde-format
+msgid "Edit the mount options for this file system:"
+msgstr "Bu fayl sistemi üçün qoşulma parametrlərinə düzəliş:"
+
+#. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, m_EditOptions)
+#: gui/editmountoptionsdialogwidgetbase.ui:32
+#, kde-format
+msgid "Option1,Option2"
+msgstr "Seçim1,Seçim2"
+
+#: gui/editmountpointdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Edit mount point for <filename>%1</filename>"
+msgstr "<filename>%1</filename> üçün qoşulma nöqtəsinə düzəliş"
+
+#: gui/editmountpointdialog.cpp:58
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Are you sure you want to save the changes you made to the system table "
+"file <filename>/etc/fstab</filename>?</para><para><warning>This will "
+"overwrite the existing file on your hard drive now. This <emphasis "
+"strong='1'>can not be undone</emphasis>.</warning></para>"
+msgstr ""
+"<para>Dəyişiklik etdiyiniz <filename>/etc/fstab</filename> sistem faylları "
+"cədvəli faylını saxlamaq istədiyinizə əminsiniz?</para><para><warning>Bu "
+"indi sizin sərt diskinizdə mövcud olan faylın üzərinə yazılacaqdır. Bu "
+"<emphasis strong='1'>ləğv edilə bilməz</emphasis>.</warning></para>"
+
+#: gui/editmountpointdialog.cpp:60
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really save changes?"
+msgstr "Doğrudan dəyişikliklər saxlanılsın?"
+
+#: gui/editmountpointdialog.cpp:61
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Save changes"
+msgstr "Dəyişiklikləri saxlamaq"
+
+#: gui/editmountpointdialog.cpp:76
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
+msgstr ""
+"Qoşulma nöqtələri  <filename>/etc/fstab</filename> faylında saxlanıla "
+"bilmədi."
+
+#: gui/editmountpointdialog.cpp:77
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error While Saving Mount Points"
+msgstr "Qoşulma Nöqtələrinin saxlanılması zamanı xəta"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:23
+#, kde-format
+msgid "UU&ID"
+msgstr "UU&ID"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:33
+#, kde-format
+msgid "Users can mount and unmount"
+msgstr "İstifadəçi qoşa və ayıra bilər"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:40
+#, kde-format
+msgid "Update access times relative to modification"
+msgstr "Dəyişikliyə nisbətən giriş vaxtlarını yeniləmək"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:61
+#, kde-format
+msgid "Read-only"
+msgstr "Ancaq oxumaq üçün"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:68
+#, kde-format
+msgid "Pass &Number:"
+msgstr "Keçid &nömrəsi:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:101
+#, kde-format
+msgid "De&vice Node"
+msgstr "Cihaz qo&v.ağı"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:111
+#, kde-format
+msgid "Options:"
+msgstr "Seçimlər:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
+#: gui/editmountpointdialogwidgetbase.ui:137
+#, kde-format
+msgid "&Label"
+msgstr "Yar&lıq"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:144
+#, kde-format
+msgid "No binary execution"
+msgstr "Binar icrası yoxdur"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:167
+#, kde-format
+msgid "No automatic mount"
+msgstr "Avtomatik qoşulma yoxdur"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
+#: gui/editmountpointdialogwidgetbase.ui:180
+#, kde-format
+msgid "Remove"
+msgstr "Silmək"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:193
+#, kde-format
+msgid "Select..."
+msgstr "Seçim..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:200
+#, kde-format
+msgid "No update of directory access times"
+msgstr "Kataloqa giriş vaxtı yenilənməsi yoxdur"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
+#: gui/editmountpointdialogwidgetbase.ui:207
+#, kde-format
+msgid "Dump &Frequency:"
+msgstr "Dump proqramı ilə ehtiyat kopyalama &tezliyi:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:236
+#, kde-format
+msgid "Type:"
+msgstr "Növü:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:246
+#, kde-format
+msgid "Path:"
+msgstr "Yol:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:288
+#, kde-format
+msgid "No update of file access times"
+msgstr "Fayla giriş vaxtının yenilənməsi yoxdur"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
+#: gui/editmountpointdialogwidgetbase.ui:295
+#, kde-format
+msgid "Synchronous access"
+msgstr "Eyniləşmiş giriş"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/editmountpointdialogwidgetbase.ui:315
+#, kde-format
+msgid "Identify by:"
+msgstr "Müəyyənləşdirmək:"
+
+#: gui/filesystemsupportdialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "File System Support"
+msgstr "Fayl sistemi dəstəyi"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/filesystemsupportdialogwidgetbase.ui:23
+#, kde-format
+msgid ""
+"This table shows which file systems are supported and which specific "
+"operations can be performed on them.\n"
+"Some file systems need external tools to be installed for them to be "
+"supported. But not all operations can be performed on all file systems, even "
+"if all required tools are installed. Please see the documentation for "
+"details. "
+msgstr ""
+"Bu cədvəl hansı fayl sistemlərinin dəstəkləndiyini və bunlar üzərində hansı "
+"xüsusi əməliyyatların edilə biləcəyini göstərir.\n"
+"Bəzi fayl sistemlərinin dəstəklənməsi üçün xarici vasitələrin "
+"quraşdırılmasına ehtiyac var. Ancaq lazım olan bütün alətlər quraşdırılsa "
+"belə heç də bütün əməliyyatlar bütün fayl sistemləri ilə həyata keçirilə "
+"bilməz. Daha təfərrüatlı məlumat əldə etmək üçün sənədləri oxuyun."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:70
+#, kde-format
+msgid "File System"
+msgstr "Fayl Sistemi"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:75
+#, kde-format
+msgid "Create"
+msgstr "Yaratmaq"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:80
+#, kde-format
+msgid "Grow"
+msgstr "Böyütmək"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:85
+#, kde-format
+msgid "Shrink"
+msgstr "Qısaltmaq"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:90
+#, kde-format
+msgid "Move"
+msgstr "Köçürmək"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:95
+#, kde-format
+msgid "Copy"
+msgstr "Kopyalamaq"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:100
+#, kde-format
+msgid "Check"
+msgstr "Yoxlamaq"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:105
+#, kde-format
+msgid "Read Label"
+msgstr "Yarlığı oxumaq"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:110
+#, kde-format
+msgid "Write Label"
+msgstr "Yarlıq yazmaq"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:115
+#, kde-format
+msgid "Read Usage"
+msgstr "İstifadəni oxumaq"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:120
+#, kde-format
+msgid "Backup"
+msgstr "Yedəkləmək"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:125
+#, kde-format
+msgid "Restore"
+msgstr "Bərpa"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:130
+#, kde-format
+msgid "Support Tools"
+msgstr "Dəstək alətləri"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRescan)
+#: gui/filesystemsupportdialogwidgetbase.ui:140
+#, kde-format
+msgctxt "@action:button"
+msgid "Rescan Support"
+msgstr "Təkrar skan dəstəyi"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
+#: gui/infopane.cpp:47 gui/mainwindowbase.ui:47
+#, kde-format, kde-kuit-format
+msgctxt "@title:window"
+msgid "Information"
+msgstr "Məlumat"
+
+#: gui/infopane.cpp:106
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Partition Information"
+msgstr "Bölmələr haqqında məlumat"
+
+#: gui/infopane.cpp:113 gui/infopane.cpp:127 gui/infopane.cpp:139
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "File system:"
+msgstr "Fayl sistemi:"
+
+#: gui/infopane.cpp:114 gui/infopane.cpp:128 gui/infopane.cpp:140
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Capacity:"
+msgstr "Tutumu:"
+
+#: gui/infopane.cpp:115
+#, kde-format
+msgctxt "@label partition"
+msgid "Cipher name:"
+msgstr "Şifrənin adı:"
+
+#: gui/infopane.cpp:116
+#, kde-format
+msgctxt "@label partition"
+msgid "Cipher mode:"
+msgstr "Şifrə rejimi:"
+
+#: gui/infopane.cpp:117
+#, kde-format
+msgctxt "@label partition"
+msgid "Hash:"
+msgstr "Heş:"
+
+#: gui/infopane.cpp:118
+#, kde-format
+msgctxt "@label partition"
+msgid "Key size:"
+msgstr "Aşarın ölçüsü:"
+
+#: gui/infopane.cpp:119
+#, kde-format
+msgctxt "@label partition"
+msgid "Payload offset:"
+msgstr "Faydalı yükün yerləşdirilməsi:"
+
+#: gui/infopane.cpp:120 gui/infopane.cpp:135 gui/infopane.cpp:143
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "First sector:"
+msgstr "Birinci sektor:"
+
+#: gui/infopane.cpp:121 gui/infopane.cpp:136 gui/infopane.cpp:144
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Last sector:"
+msgstr "Sonuncu sektor:"
+
+#: gui/infopane.cpp:122 gui/infopane.cpp:137 gui/infopane.cpp:145
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Number of sectors:"
+msgstr "Sektorun sayı:"
+
+#: gui/infopane.cpp:129 gui/infopane.cpp:141
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Available:"
+msgstr "Mövcud:"
+
+#: gui/infopane.cpp:130 gui/infopane.cpp:142
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Used:"
+msgstr "İstifadə olunan:"
+
+#: gui/infopane.cpp:131
+#, kde-format
+msgctxt "@label partition"
+msgid "PE Size:"
+msgstr "Fiziki diapazonun olçüsü:"
+
+#: gui/infopane.cpp:132
+#, kde-format
+msgctxt "@label partition"
+msgid "Total PE:"
+msgstr "Ümumi fiziki diapazonlar:"
+
+#: gui/infopane.cpp:133
+#, kde-format
+msgctxt "@label partition"
+msgid "Free PE:"
+msgstr "Boş fiziki diapazonlar:"
+
+#: gui/infopane.cpp:134
+#, kde-format
+msgctxt "@label partition"
+msgid "Allocated PE:"
+msgstr "Ayrılmış fiziki diapazonlar:"
+
+#: gui/infopane.cpp:157
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Device Information"
+msgstr "Cihaz haqqında məlumat"
+
+#: gui/infopane.cpp:161
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Path:"
+msgstr "Yol:"
+
+#: gui/infopane.cpp:176
+#, kde-format
+msgctxt "@label device"
+msgid "Type:"
+msgstr "Növü:"
+
+#: gui/infopane.cpp:177 gui/infopane.cpp:185 gui/infopane.cpp:193
+#, kde-format
+msgctxt "@label device"
+msgid "Capacity:"
+msgstr "Tutumu:"
+
+#: gui/infopane.cpp:178
+#, kde-format
+msgctxt "@label device"
+msgid "Total sectors:"
+msgstr "Ümumi sektorlar:"
+
+#: gui/infopane.cpp:179
+#, kde-format
+msgctxt "@label device"
+msgid "Logical sector size:"
+msgstr "Məntiqi sektorun ölçüsü:"
+
+#: gui/infopane.cpp:180
+#, kde-format
+msgctxt "@label device"
+msgid "Physical sector size:"
+msgstr "Fiziki sektorun ölçüsü:"
+
+#: gui/infopane.cpp:181
+#, kde-format
+msgctxt "@label device"
+msgid "Primaries/Max:"
+msgstr "İlkin/Maks:"
+
+#: gui/infopane.cpp:184 gui/infopane.cpp:192
+#, kde-format
+msgctxt "@label device"
+msgid "Volume Type:"
+msgstr "Həcmin növü:"
+
+#: gui/infopane.cpp:186
+#, kde-format
+msgctxt "@label device"
+msgid "PE Size:"
+msgstr "Fiziki diapazonun olçüsü:"
+
+#: gui/infopane.cpp:187
+#, kde-format
+msgctxt "@label device"
+msgid "Total PE:"
+msgstr "Ümumi fiziki diapazonlar:"
+
+#: gui/infopane.cpp:188
+#, kde-format
+msgctxt "@label device"
+msgid "Allocated PE:"
+msgstr "Ayrılmış fiziki diapazonlar:"
+
+#: gui/infopane.cpp:189
+#, kde-format
+msgctxt "@label device"
+msgid "Free PE:"
+msgstr "Boş fiziki diapazonlar:"
+
+#: gui/infopane.cpp:194
+#, kde-format
+msgctxt "@label device"
+msgid "RAID Level:"
+msgstr "RAİD səviyyəsi:"
+
+#: gui/infopane.cpp:195
+#, kde-format
+msgctxt "@label device"
+msgid "Chunk Size:"
+msgstr "Blokun ölçüsü:"
+
+#: gui/infopane.cpp:196
+#, kde-format
+msgctxt "@label device"
+msgid "Total Chunk:"
+msgstr "Ümumi blok:"
+
+#: gui/infopane.cpp:197
+#, kde-format
+msgctxt "@label device"
+msgid "Array Size:"
+msgstr "Massivin ölçüsü:"
+
+#: gui/insertdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Insert a partition"
+msgstr "Bölmənin əlavə edilməsi"
+
+#: gui/listphysicalvolumes.cpp:39
+#, kde-kuit-format
+msgctxt "@item:inlistbox Device | Capacity"
+msgid "%1 | %2"
+msgstr "%1 | %2"
+
+#: gui/mainwindow.cpp:164
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Partition Manager requires privileges in order to work. Please refresh the "
+"devices and authenticate when prompted."
+msgstr ""
+"Bölmələr menecerinin işləməsi üçün imtiyazlar tələb olunur. Lazım gələrsə "
+"cihazları və təsdiqləməni yeniləyin."
+
+#: gui/mainwindow.cpp:231
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to quit the application?</para><para>There is still "
+"an operation pending.</para>"
+msgid_plural ""
+"<para>Do you really want to quit the application?</para><para>There are "
+"still %1 operations pending.</para>"
+msgstr[0] ""
+"<para>Döğrudan bu tətbiqdən çıxmaq istəyirsiniz?</para><para>Hələ də %1 başa "
+"çatmamış əməliyyat var.</para>"
+msgstr[1] ""
+"<para>Döğrudan bu tətbiqdən çıxmaq istəyirsiniz?</para><para>Hələ də %1 başa "
+"çatmamış əməliyyat var.</para>"
+
+#: gui/mainwindow.cpp:233
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Discard Pending Operations and Quit?"
+msgstr "Başa çatmamış əməliyyatlar ləğv edilsin və çıxılsın?"
+
+#: gui/mainwindow.cpp:234
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Quit <application>%1</application>"
+msgstr "Çıxmaq <application>%1</application>"
+
+#: gui/mainwindow.cpp:276
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Undo"
+msgstr "Geri qaytarmaq"
+
+#: gui/mainwindow.cpp:277
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Undo the last operation"
+msgstr "Sonuncu əməliyyatı qaytarmaq"
+
+#: gui/mainwindow.cpp:278
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Remove the last operation from the list."
+msgstr "Sonuncu əməliyyatı siyahıdan silmək."
+
+#: gui/mainwindow.cpp:285
+#, kde-kuit-format
+msgctxt "@action:inmenu clear the list of operations"
+msgid "Clear"
+msgstr "Təmizləmək"
+
+#: gui/mainwindow.cpp:286
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Clear all operations"
+msgstr "Bütün əməliyyatları təmizləmək"
+
+#: gui/mainwindow.cpp:287
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Empty the list of pending operations."
+msgstr "Başa çatmamış əməliyyatların siyahısını boşaltmaq."
+
+#: gui/mainwindow.cpp:293
+#, kde-kuit-format
+msgctxt "@action:inmenu apply all operations"
+msgid "Apply"
+msgstr "Tətbiq etmək"
+
+#: gui/mainwindow.cpp:294
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Apply all operations"
+msgstr "Bütün əməliyyatları tətbiq etmək"
+
+#: gui/mainwindow.cpp:295
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Apply the pending operations in the list."
+msgstr "Siyahıdakı bütün əməliyyatları tətbiq etmək."
+
+#: gui/mainwindow.cpp:302
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "New Partition Table"
+msgstr "Yeni Bölmələr Cədvəli"
+
+#: gui/mainwindow.cpp:303
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Create a new partition table"
+msgstr "Yeni bölmələr cədvəli yaratmaq"
+
+#: gui/mainwindow.cpp:304
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Create a new and empty partition table on a device."
+msgstr "Cihazda yeni və boş bölmələr cədvəli yaratmaq."
+
+#: gui/mainwindow.cpp:311
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Export Partition Table"
+msgstr "Bölmələr Cədvəlinin İxracı"
+
+#: gui/mainwindow.cpp:312
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Export a partition table"
+msgstr "Bölmələr cədvəlini ixrac etmək"
+
+#: gui/mainwindow.cpp:313
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Export the device's partition table to a text file."
+msgstr "Cihazın bölmələr cədvəlini mətn faylına ixrac etmək."
+
+#: gui/mainwindow.cpp:319
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Import Partition Table"
+msgstr "Bölmələr Cədvəlinin İdxalı"
+
+#: gui/mainwindow.cpp:320
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Import a partition table"
+msgstr "Bölmələr cədvəlini idxal etmək"
+
+#: gui/mainwindow.cpp:321
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Import a partition table from a text file."
+msgstr "Bölmələr cədvəlini mətn faylından idxal etmək."
+
+#: gui/mainwindow.cpp:328
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove Volume Group"
+msgstr "Həcmlər Qrupunu Silmək"
+
+#: gui/mainwindow.cpp:329
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove selected Volume Group"
+msgstr "Seçilmiş Həcmlər Qrupunu silmək"
+
+#: gui/mainwindow.cpp:330
+#, kde-format
+msgctxt "@info:status"
+msgid "Remove selected Volume Group."
+msgstr "Seçilmiş Həcmlər Qrupunu silmək."
+
+#: gui/mainwindow.cpp:338
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Resize Volume Group"
+msgstr "Həcmlər Qrupunun ölçüsünü dəyişmək"
+
+#: gui/mainwindow.cpp:339
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Resize selected Volume Group"
+msgstr "Seçilmiş Həəcmlər Qrupunun ölçüsünü dəyişmək"
+
+#: gui/mainwindow.cpp:340
+#, kde-format
+msgctxt "@info:status"
+msgid "Extend or reduce selected Volume Group."
+msgstr "Seçilmiş Həcmlər Qrupunu genişləndirmək və azaltmaq."
+
+#: gui/mainwindow.cpp:348
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Deactivate Volume Group"
+msgstr "Həcmlər Qrupunu söndürmək"
+
+#: gui/mainwindow.cpp:349
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Deactivate selected Volume Group"
+msgstr "Seçilmiş Həcmlər Qrupunu söndürmək"
+
+#: gui/mainwindow.cpp:350
+#, kde-format
+msgctxt "@info:status"
+msgid "Deactivate selected Volume Group before unplugging removable devices."
+msgstr "Daşınabilən cihazları ayırmadan öncə Həcmlər Qrupunu söndürmək."
+
+#: gui/mainwindow.cpp:356
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "SMART Status"
+msgstr "SMART Vəziyyəti"
+
+#: gui/mainwindow.cpp:357
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show SMART status"
+msgstr "SMART vəziyyətini göstərmək"
+
+#: gui/mainwindow.cpp:358
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show the device's SMART status if supported"
+msgstr "Əgər dəstəkləyirsə cihazların SMART vəziyyətini göstərmək"
+
+#: gui/mainwindow.cpp:363 gui/mainwindow.cpp:455
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Xüsusiyyətlər"
+
+#: gui/mainwindow.cpp:364
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show device properties dialog"
+msgstr "Cihazların xüsusiyyətləri dialoqunu göstərmək"
+
+#: gui/mainwindow.cpp:365
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "View and modify device properties"
+msgstr "Cihazların xüsusiyyətlərinə baxmaq və dəyişdirmək"
+
+#: gui/mainwindow.cpp:372
+#, kde-kuit-format
+msgctxt "@action:inmenu create a new partition"
+msgid "New"
+msgstr "Yeni"
+
+#: gui/mainwindow.cpp:373
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "New partition"
+msgstr "Yeni bölmə"
+
+#: gui/mainwindow.cpp:374
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Create a new partition."
+msgstr "Yeni bölmə yaratmaq"
+
+#: gui/mainwindow.cpp:381
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Resize/Move"
+msgstr "Ölçüsünü dəyişmək/Köçürmək"
+
+#: gui/mainwindow.cpp:382
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Resize or move partition"
+msgstr "Bölmənin ölçüsünü dəyişmək və ya köçürmək"
+
+#: gui/mainwindow.cpp:383
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Shrink, grow or move an existing partition."
+msgstr "Mövcud bölməni kiçiltmək, böyütmək və ya köçürmək"
+
+#: gui/mainwindow.cpp:390
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Silmək"
+
+#: gui/mainwindow.cpp:391
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Delete partition"
+msgstr "Bölməni silmək"
+
+#: gui/mainwindow.cpp:392
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Delete a partition."
+msgstr "Bölməni silmək."
+
+#: gui/mainwindow.cpp:399
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Shred"
+msgstr "Məhv etmək"
+
+#: gui/mainwindow.cpp:400
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Shred partition"
+msgstr "Bölməni məhv etmək"
+
+#: gui/mainwindow.cpp:401
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Shred a partition so that its contents cannot be restored."
+msgstr "Bölməni məhv etdikdə onun tərkiblərini bərpa etmək mümkünsüz olur."
+
+#: gui/mainwindow.cpp:408
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Copy"
+msgstr "Kopyalamaq"
+
+#: gui/mainwindow.cpp:409
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Copy partition"
+msgstr "Bölməni kopyalamaq"
+
+#: gui/mainwindow.cpp:410
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Copy an existing partition."
+msgstr "Möbcud bölməni kopyalamaq."
+
+#: gui/mainwindow.cpp:417
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Paste"
+msgstr "Yerləşdirmək"
+
+#: gui/mainwindow.cpp:418
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Paste partition"
+msgstr "Bölməni yerləşdirmək"
+
+#: gui/mainwindow.cpp:419
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Paste a copied partition."
+msgstr "Kopyalanmış bölməni yerləşdirmək"
+
+#: gui/mainwindow.cpp:426
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Edit Mount Point"
+msgstr "Qoşulma nöqtəsinə düzəliş"
+
+#: gui/mainwindow.cpp:427
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Edit mount point"
+msgstr "Qoşulma nöqtəsinə düzəliş"
+
+#: gui/mainwindow.cpp:428
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Edit a partition's mount point and options."
+msgstr "Bölmələrin qoşulma nöqtəsinə və parametrlərinə düzəliş."
+
+#: gui/mainwindow.cpp:433
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Mount"
+msgstr "Qoşmaq"
+
+#: gui/mainwindow.cpp:434
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Mount or unmount partition"
+msgstr "Bölməni qoşmaq və ya ayırmaq"
+
+#: gui/mainwindow.cpp:435
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Mount or unmount a partition."
+msgstr "Bölməni qoşmaq və ya ayırmaq."
+
+#: gui/mainwindow.cpp:440
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Unlock"
+msgstr "Kiliddən çıxartmaq"
+
+#: gui/mainwindow.cpp:441
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Unlock or lock encrypted partition"
+msgstr "Şifrələnmiş bölməni kiliddən çıxarmaq və kilidləmək"
+
+#: gui/mainwindow.cpp:442
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Unlock or lock encrypted partition."
+msgstr "Şifrələnmiş bölməni kiliddən çıxarmaq və kilidləmək."
+
+#: gui/mainwindow.cpp:447
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Check"
+msgstr "Yoxlamaq"
+
+#: gui/mainwindow.cpp:448
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Check partition"
+msgstr "Bölməni yoxlamaq"
+
+#: gui/mainwindow.cpp:449
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Check a filesystem on a partition for errors."
+msgstr "Bölmədəki fayl sistemləri üzrə xətaları yoxlamaq."
+
+#: gui/mainwindow.cpp:456
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show partition properties dialog"
+msgstr "Bölmənin xüsusiyyətləri dialoqunu göstərmək"
+
+#: gui/mainwindow.cpp:457
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "View and modify partition properties (label, partition flags, etc.)"
+msgstr ""
+"Bölmənin xüsusiyyətlərinə baxmaq və dəyişdirmək (yarlıq, bölmənin bayrağı və "
+"s.)"
+
+#: gui/mainwindow.cpp:463
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Backup"
+msgstr "Yedəkləmək"
+
+#: gui/mainwindow.cpp:464
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Backup partition"
+msgstr "Bölməni yedəkləmək"
+
+#: gui/mainwindow.cpp:465
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Backup a partition to an image file."
+msgstr "Bölmənin surətini tək fayla (image) yedəkləmək."
+
+#: gui/mainwindow.cpp:471
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Restore"
+msgstr "Bərpa"
+
+#: gui/mainwindow.cpp:472
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Restore partition"
+msgstr "Bölmənin bərpası"
+
+#: gui/mainwindow.cpp:473
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Restore a partition from an image file."
+msgstr "Bölmənin yedəklənən fayldan (image) bərpası."
+
+#: gui/mainwindow.cpp:480
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New Volume Group"
+msgstr "Yeni Həcmlər Qrupu"
+
+#: gui/mainwindow.cpp:481
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create a new LVM Volume Group"
+msgstr "Yeni LVM Həcmlər Qrupu yaratmaq"
+
+#: gui/mainwindow.cpp:482
+#, kde-format
+msgctxt "@info:status"
+msgid "Create a new LVM Volume Group as a device."
+msgstr "Yeni LVM Həcmlər Qrupunu cihaz kimi yaratmaq."
+
+#: gui/mainwindow.cpp:488
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "File System Support"
+msgstr "Fayl Sistemi Dəstəyi"
+
+#: gui/mainwindow.cpp:489
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "View file system support information"
+msgstr "Fayl sistemi dəstəyini göstərmək"
+
+#: gui/mainwindow.cpp:490
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show information about supported file systems."
+msgstr "Dəstəklənən fayl sistemi haqqında məlumatları göstərmək."
+
+#: gui/mainwindow.cpp:494
+#, kde-kuit-format
+msgctxt "@action:inmenu refresh list of devices"
+msgid "Refresh Devices"
+msgstr "Cihazları Təzələmək"
+
+#: gui/mainwindow.cpp:495
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Refresh all devices"
+msgstr "Bütün cihazları təzələmək"
+
+#: gui/mainwindow.cpp:496
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Renew the devices list."
+msgstr "Cihazlar siyahısını yeniləmək."
+
+#: gui/mainwindow.cpp:512
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Clear Log"
+msgstr "Jurnalı təmizləmək"
+
+#: gui/mainwindow.cpp:513
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Clear the log output"
+msgstr "Jurnal çıxarışlarını təmizləmək"
+
+#: gui/mainwindow.cpp:514
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Clear the log output panel."
+msgstr "Jurnal çıxarışları panelini təmizləmək"
+
+#: gui/mainwindow.cpp:519
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Save Log"
+msgstr "Jurnalı saxlamaq"
+
+#: gui/mainwindow.cpp:520
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Save the log output"
+msgstr "Jurnal çıxarışlarını saxlamaq"
+
+#: gui/mainwindow.cpp:521
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Save the log output to a file."
+msgstr "Jurnal çıxarışlarını faylda saxlamaq"
+
+#: gui/mainwindow.cpp:527
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "About KPMcore Library"
+msgstr "KPMcore Kitabxanası haqqında"
+
+#: gui/mainwindow.cpp:528
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show About KPMcore dialog"
+msgstr "KPMcore KPMcore haqqında dialoqu göstərmək"
+
+#: gui/mainwindow.cpp:529
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show About KPMcore dialog."
+msgstr "KPMcore KPMcore haqqında dialoqu göstərmək."
+
+#: gui/mainwindow.cpp:711
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "One pending operation"
+msgid_plural "%1 pending operations"
+msgstr[0] "%1 başa çatmamış əməliyyat"
+msgstr[1] "%1 başa çatmamış əməliyyat"
+
+#: gui/mainwindow.cpp:806
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Using backend plugin: %1 (%2)"
+msgstr "İstifadə olunan daxili modul: %1 (%2)"
+
+#: gui/mainwindow.cpp:810
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Scanning devices..."
+msgstr "Cihazlar axtarılır..."
+
+#: gui/mainwindow.cpp:848
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Scan finished."
+msgstr "Axtarış başa çatdı."
+
+#: gui/mainwindow.cpp:912
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to rescan the devices?</para><para><warning>This "
+"will also clear the list of pending operations.</warning></para>"
+msgstr ""
+"<para>Cihazlar yenidən axtarılsın?</para><para><warning>Bu həmçinin bütün "
+"başa çatmamış əməliyyatları təmizləyəcək.</warning></para>"
+
+#: gui/mainwindow.cpp:914
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Rescan the Devices?"
+msgstr "Cihazlar yenidən axtarılsın?"
+
+#: gui/mainwindow.cpp:915
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Rescan Devices"
+msgstr "Cihazları yenidən axtarmaq"
+
+#: gui/mainwindow.cpp:941
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to apply the pending operations listed below?</"
+"para><para><warning>This will permanently modify your disks.</warning></para>"
+msgstr ""
+"<para>Aşağıdakı siyahıdakı gözləyən əməliyyatları tətbiq etmək istəyirsiniz? "
+"</para><para><warning>Bu disklərinizi həmişəlik dəyişəcək.</warning></para>"
+
+#: gui/mainwindow.cpp:943
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Apply Pending Operations?"
+msgstr "Gözləyən əməliyyatlar tətbiq edilsin?"
+
+#: gui/mainwindow.cpp:944
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Apply Pending Operations"
+msgstr "Gözləyən əməliyyatları tətbiq etmək"
+
+#: gui/mainwindow.cpp:946
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Applying operations..."
+msgstr "Əməliyyatlar tətbiq edilir..."
+
+#: gui/mainwindow.cpp:971
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Undoing operation: %1"
+msgstr "Əməliyyat ləğv edilir: %1"
+
+#: gui/mainwindow.cpp:987
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to clear the list of pending operations?"
+msgstr "Gözləyən əməliyyatların siyahısını təməzləmək istəyirsiniz?"
+
+#: gui/mainwindow.cpp:988
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Clear Pending Operations?"
+msgstr "Gözləyən Əməliyyatlar Təmizlənsin?"
+
+#: gui/mainwindow.cpp:989
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Clear Pending Operations"
+msgstr "Gözləyən Əməliyyatları Təmizləmək"
+
+#: gui/mainwindow.cpp:991
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Clearing the list of pending operations."
+msgstr "Gözləyən əməliyyatların siyahısını təmizləmək."
+
+#: gui/mainwindow.cpp:1033
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import"
+msgstr ""
+"<filename>%1</filename> giriş faylını idxal etmək üçün açmaq mümkün olmadı"
+
+#: gui/mainwindow.cpp:1033 gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1051
+#: gui/mainwindow.cpp:1057
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Importing Partition Table"
+msgstr "Bölmələr Cədvəlinin İdxalında Xəta"
+
+#: gui/mainwindow.cpp:1051
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import: %2"
+msgstr ""
+"<filename>%1</filename> giriş faylını idxal etmək üçün açmaq mümkün olmadı: "
+"%2"
+
+#: gui/mainwindow.cpp:1057
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Could not open temporary file <filename>%1</filename> while trying to import "
+"from <filename>%2</filename>."
+msgstr ""
+"<filename>%2</filename> faylından idxal etməyə cəhd edərkən <filename>%1</"
+"filename> müvəqqəti faylını açmaq mümkün olmadı."
+
+#: gui/mainwindow.cpp:1087
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The import file <filename>%1</filename> does not contain a valid partition "
+"table."
+msgstr ""
+"<filename>%1</filename> idxal faylınin tərkibi düzgün bölmələrdən ibarət "
+"deyil."
+
+#: gui/mainwindow.cpp:1087 gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1104
+#: gui/mainwindow.cpp:1109 gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1132
+#: gui/mainwindow.cpp:1137 gui/mainwindow.cpp:1156 gui/mainwindow.cpp:1161
+#: gui/mainwindow.cpp:1166 gui/mainwindow.cpp:1173 gui/mainwindow.cpp:1457
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error While Importing Partition Table"
+msgstr "Bölmələr Cədvəlinin İdxalı zamanı xəta"
+
+#: gui/mainwindow.cpp:1097
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Found more than one partition table type in import file (line %1)."
+msgstr "İdxal faylında (sətir %1) birdən çox bölmələr cədvəli tapıldı."
+
+#: gui/mainwindow.cpp:1104
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is unknown (line %2)."
+msgstr "Bölmələr Cədvəlinin \"%1\" növü naməlumdur (sətir %2)"
+
+#: gui/mainwindow.cpp:1109
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is not supported for import (line %2)."
+msgstr ""
+"\"%1\" növü ilə Bölmələr Cədvəlinin idaxal edilməsi dəstəklənmir (sətir %2)"
+
+#: gui/mainwindow.cpp:1119
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Found partition but no partition table type (line %1)."
+msgstr "Bölmələr Cədvəli növü olmayan bölmə tapıldı (sətir %1)"
+
+#: gui/mainwindow.cpp:1132
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Partition %1 would be outside the device's boundaries (line %2)."
+msgstr "%1 bölməsi cihazın hüdudlarından kənarda ola bilər (sətir %2)"
+
+#: gui/mainwindow.cpp:1137
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition %1 has end before start sector (line %2)."
+msgstr "%1 bölməsinin sonu başlanğıc sektorundan əvvəldir (sətir %2)"
+
+#: gui/mainwindow.cpp:1156
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+msgstr ""
+"\"%1\" bölməsinin rolunu %2 bölməsi üçün təyin etmək mümkün olmadı (sətir "
+"%3)."
+
+#: gui/mainwindow.cpp:1161
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid ""
+"No parent partition or partition table found for partition %1 (line %2)."
+msgstr "%1 bölməsi üçün ana bölmə və ya Bölmələr Cədvəli tapılmadı (sətir %2)."
+
+#: gui/mainwindow.cpp:1166
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The partition table type \"%1\" does not support extended partitions, but "
+"one was found (line %2)."
+msgstr ""
+"Bölmələr Cədvəlinin \"%1\" növü genişləndirilmiş bölmələri dəstəkləmir, "
+"lakin belə bir bölmə tapıldı (sətir %2)"
+
+#: gui/mainwindow.cpp:1173
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Could not create file system \"%1\" for partition %2 (line %3)."
+msgstr "%2 bölməsi üçün \"%1\" fayl sistemini tapmaq mümkün olmadı (sətir %3)."
+
+#: gui/mainwindow.cpp:1188
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Could not parse line %1 from import file. Ignoring it."
+msgstr "İdxal faylından %1 sətrini işləmək mümkün olmadı. Bu sətir buraxılır."
+
+#: gui/mainwindow.cpp:1208
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Exporting Partition Table"
+msgstr "Bölmələr Cədvəlinin İdxalında Xəta"
+
+#: gui/mainwindow.cpp:1378 gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1420
+#, kde-kuit-format
+msgid "%1%2"
+msgstr "%1%2"
+
+#: gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1395
+#, kde-kuit-format
+msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
+msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
+
+#: gui/mainwindow.cpp:1432
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>No support tools were found for file systems currently present on hard "
+"disks in this computer:</para><table style='margin-top:12px'><tr><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Partition</"
+"td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>File "
+"System</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Support Tools</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>URL</td></tr>%1</table><para>As long as the support "
+"tools for these file systems are not installed you will not be able to "
+"modify them.</para><para>You should find packages with these support tools "
+"in your distribution's package manager.</para>"
+msgstr ""
+"<para>Bu komputerdə hal-hazırda təqdim olunan fayl sistemləri üçün köməkçi "
+"alətlər tapılmadı:</para><table style='margin-top:12px'><tr><td style='font-"
+"weight:bold;padding-right:12px;white-space:nowrap;'>Bölmə</td><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Fayl "
+"Sistemi</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Köməkçi Alətlərs</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>URL</td></tr>%1</table><para>Bu fayl sistemlərini "
+"dəstəkləmək üçün alətlər quraşdırılmayanadək sizin fayl sistemlərinə "
+"dəyişiklik etmək imkanınız olmayacaq.</para><para>Distributorunuzun paket "
+"menecerində bunları dəstəkləyən vasitələri taparaq quraşdıra bilərsiniz.</"
+"para>"
+
+#: gui/mainwindow.cpp:1445
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Missing File System Support Packages"
+msgstr "Fayl Sistemini Dəstəkləyən Paketlər Çatışmır"
+
+#: gui/mainwindow.cpp:1456
+#, kde-kuit-format
+msgctxt "@info device should be inside of /dev"
+msgid "Unrecognized device \"%1\" "
+msgstr "Tanınmayan cihaz \"%1\""
+
+#: gui/mainwindow.cpp:1465
+#, kde-kuit-format
+msgctxt "@info device should be inside of /dev"
+msgid "Unrecognized partition \"%1\" "
+msgstr "Tanınmamış bölmə \"%1\""
+
+#: gui/mainwindow.cpp:1466
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error opening partition"
+msgstr "Bölmənin açılması xətası"
+
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
+#. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
+#: gui/mainwindowbase.ui:18 gui/partitionmanagerwidgetbase.ui:20
+#, kde-format
+msgctxt "@title:window"
+msgid "KDE Partition Manager"
+msgstr "KDE Bölmələr Meneceri"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
+#: gui/mainwindowbase.ui:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Devices"
+msgstr "Qurğular"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
+#: gui/mainwindowbase.ui:38
+#, kde-format
+msgctxt "@title:window"
+msgid "Pending Operations"
+msgstr "Gözləyən Əməliyyatlar"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
+#: gui/mainwindowbase.ui:59
+#, kde-format
+msgctxt "@title:window"
+msgid "Log Output"
+msgstr "Jurnal Çıxarışı"
+
+#: gui/newdialog.cpp:47
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create a new partition"
+msgstr "Yeni bölmə yaratmaq"
+
+#. i18n: ectx: ToolBar (partitionToolBar)
+#: gui/partitionmanagerui.rc:12
+#, kde-format
+msgctxt "@title:menu"
+msgid "Partition Manager Toolbar"
+msgstr "Bölmələr Meneceri Alətlər Paneli"
+
+#. i18n: ectx: Menu (device)
+#: gui/partitionmanagerui.rc:30
+#, kde-format
+msgctxt "@title:menu"
+msgid "Device"
+msgstr "Qurğu"
+
+#. i18n: ectx: Menu (selectedDevice)
+#: gui/partitionmanagerui.rc:32
+#, kde-format
+msgctxt "@title:menu"
+msgid "Select Current Device"
+msgstr "Cari qurğunu seçin"
+
+#. i18n: ectx: Menu (tools)
+#: gui/partitionmanagerui.rc:49
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tools"
+msgstr "Vasitələr"
+
+#. i18n: ectx: Menu (partition)
+#: gui/partitionmanagerui.rc:55
+#, kde-format
+msgctxt "@title:menu"
+msgid "Partition"
+msgstr "Bölmə"
+
+#. i18n: ectx: Menu (panels)
+#: gui/partitionmanagerui.rc:77
+#, kde-format
+msgctxt "@title:menu"
+msgid "Panels Shown"
+msgstr "Panellər"
+
+#: gui/partitionmanagerwidget.cpp:199
+#, kde-kuit-format
+msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
+msgid "%1 [Encrypted]"
+msgstr "%1 [Şifrələnib]"
+
+#: gui/partitionmanagerwidget.cpp:403
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be mounted."
+msgstr "<filename>%1</filename> bölməsindəki fayl sistemi qoşula bilmədi."
+
+#: gui/partitionmanagerwidget.cpp:403
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Mount File System."
+msgstr "Fayl Sistemini Qoşmaq Mümkün olmadı."
+
+#: gui/partitionmanagerwidget.cpp:406
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be unmounted."
+msgstr ""
+"<filename>%1</filename> bölməsindəki fayl sistemini ayırmaq mümkün olmadı."
+
+#: gui/partitionmanagerwidget.cpp:406
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Unmount File System."
+msgstr "Fayl Sisteminini Ayırmaq Mümkün olmadı."
+
+#: gui/partitionmanagerwidget.cpp:446
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The encrypted file system on partition <filename>%1</filename> could not be "
+"unlocked."
+msgstr ""
+"<filename>%1</filename> bölməsindəki şifrələnmiş fayl sistemini kiliddən "
+"çıxarmaq mümkün olmadı."
+
+#: gui/partitionmanagerwidget.cpp:452
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Unlock Encrypted File System."
+msgstr "Fayl Sistemi Kiliddən Çıxarıla Bilmədi."
+
+#: gui/partitionmanagerwidget.cpp:457
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The encrypted file system on partition <filename>%1</filename> could not be "
+"locked."
+msgstr ""
+"<filename>%1</filename> bölməsindəki şifrələnmiş fayl sistemini kilidləmək "
+"mümkün olmadı."
+
+#: gui/partitionmanagerwidget.cpp:463
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Lock Encrypted File System."
+msgstr "Şifrələnmiş Fayl Sistemini Kilidləmək Mümkün olmadı."
+
+#: gui/partitionmanagerwidget.cpp:492
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>There is already one primary partition on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgid_plural ""
+"<para>There are already %1 primary partitions on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgstr[0] ""
+"<para>Bu cihaxda artıq bir İlkin Bölmə var. Bu, belə növ Bölmələr Cədvəlinin "
+"işləyə biləcəyi maksimum saydır. </para><para>Mövcud olan silmədən siz daha "
+"bir İlkin Bölmə yarada, bərpa edə və yerləşdirə bilməzsiniz.</para>"
+msgstr[1] ""
+"<para>Bu cihaxda artıq bir %1 İlkin Bölmə var. Bu, belə növ Bölmələr "
+"Cədvəlinin işləyə biləcəyi maksimum saydır. </para><para>Mövcud olan "
+"silmədən siz daha bir İlkin Bölmə yarada, bərpa edə və yerləşdirə "
+"bilməzsiniz.</para>"
+
+#: gui/partitionmanagerwidget.cpp:496
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Too Many Primary Partitions."
+msgstr "İlkin Bölmələr Cədvəli həddən artıqdır."
+
+#: gui/partitionmanagerwidget.cpp:559
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The partition <filename>%1</filename> cannot currently be deleted "
+"because one or more partitions with higher logical numbers are still mounted."
+"</para><para>Please unmount all partitions with higher logical numbers than "
+"%2 first.</para>"
+msgstr ""
+"<para><filename>%1</filename> bölməsi silinə bilməz, çünki, daha yüksək "
+"məntiqi nömrələri olan bir və ya daha çox bölmə hələ də qoşuludur. </"
+"para><para>Lütfən, ilk öncə %2 sayından yüxarı məntiqi nömrələri olan "
+"bölmələri ayırın.</para>"
+
+#: gui/partitionmanagerwidget.cpp:562
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cannot Delete Partition."
+msgstr "Bölmə Silinə Bilmir."
+
+#: gui/partitionmanagerwidget.cpp:571
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Do you really want to delete the partition that is currently in the "
+"clipboard? It will no longer be available for pasting after it has been "
+"deleted."
+msgstr ""
+"Hal-hazırda mübadilə buferində olan bölməni silmək istədiyinizə əminsiniz? "
+"Silindikdən sonra onu yerləşdirmək mümkün olmayacaq."
+
+#: gui/partitionmanagerwidget.cpp:573
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Delete Partition in the Clipboard?"
+msgstr "Mübadil buferindəki bölmə silinsin?"
+
+#: gui/partitionmanagerwidget.cpp:574
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Delete It"
+msgstr "Silinsin"
+
+#: gui/partitionmanagerwidget.cpp:627
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Partition <filename>%1</filename> has the same position and size after "
+"resize/move. Ignoring operation."
+msgstr ""
+"<filename>%1</filename> bölməsi, ölçüsü dəyişdirildikdən/köçürüldükdən sonra "
+"eyni ölçüyə və yerləşmə yerinə sahibdir. Əməliyyat ləğv edilir."
+
+#: gui/partitionmanagerwidget.cpp:655
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+msgstr "<filename>%1</filename> bölmələsi mübadilə buferinə kopyalandı."
+
+#: gui/partitionmanagerwidget.cpp:718
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Overwriting one partition with another (or "
+"with an image file) will destroy all data on this target partition.</"
+"para><para>If you continue now and apply the resulting operation in the main "
+"window, all data currently stored on <filename>%1</filename> will "
+"unrecoverably be overwritten.</para>"
+msgstr ""
+"<para><warning><filename>%1</filename> bölməsindəki bütün məlumatları "
+"itirmək üzrəsiniz.</warning></para><para>Bir bölməni (və ya \"image\" "
+"faylını) digər bölmənin üzərinə yazmaq sonuncudakı bütün məlumatların "
+"itirilməsinə gətirib çıxarır. </para><para>Əgər əsas pəncərədəki nəticələnən "
+"əməliyyatı tətbiq etsəniz o zaman <filename>%1</filename> bölməsindəki bütün "
+"məlumatlar birdəfəlik itiriləcəkdir.</para>"
+
+#: gui/partitionmanagerwidget.cpp:726
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Overwrite Existing Partition?"
+msgstr "Mövcud Bölmənin Üzərinə Yazılsın?"
+
+#: gui/partitionmanagerwidget.cpp:727
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Overwrite Partition"
+msgstr "Bölmənin Üzərinə Yazmaq"
+
+#: gui/partitionmanagerwidget.cpp:735
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The selected partition is not large enough to hold the source "
+"partition or the backup file.</para><para>Pick another target or resize this "
+"partition so it is as large as the source.</para>"
+msgstr ""
+"<para>Seçilmiş bölmə mənbə bölməsini və ya yedək nüsxəni saxlamaq üçün "
+"kifayət qədər böyük deyil.</para><para>Dogər bölmə seçin və ya bu bölmənin "
+"ölçüsünü dəyişin, belə ki, bu ölçü mınbə bölməsini ölçüsü qədər böyük "
+"olmalıdır.</para>"
+
+#: gui/partitionmanagerwidget.cpp:736
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Target Not Large Enough"
+msgstr "Hədəf bölməsinin yeri kifayət deyil"
+
+#: gui/partitionmanagerwidget.cpp:739
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>It is not possible to create the target partition large enough to hold "
+"the source.</para><para>This may happen if not all partitions on a device "
+"are correctly aligned or when copying a primary partition into an extended "
+"partition.</para>"
+msgstr ""
+"<para>Hədəf bölməsini lazımi ölçüdə yaratmaq mümkün deyil.</para><para>Ola "
+"bilsin ki, bölmələr, cihazda düzgün nizamlanmayıb və ya siz İlkin bölməni "
+"genişləndirilmiş bölməyə köçürürsünüz.</para>"
+
+#: gui/partitionmanagerwidget.cpp:742
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cannot Create Target Partition."
+msgstr "Hədəf Bölmə Yaradıla Bilmir."
+
+#: gui/partitionmanagerwidget.cpp:800
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system in the image file <filename>%1</filename> is too large to be "
+"restored to the selected partition."
+msgstr ""
+"<filename>%1</filename> \"image\" faylındakı fayl sistemi seçilmiş bölməyə "
+"bərpa edilə bilməsi üçün çox böyükdür."
+
+#: gui/partitionmanagerwidget.cpp:800
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Not Enough Space to Restore File System."
+msgstr "Fayl Sistemini bərpa etmək üçün boş yer kifayət etmir."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:76
+#, kde-format
+msgid "Partition"
+msgstr "Bölmə"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:81
+#, kde-format
+msgid "Type"
+msgstr "Növü"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:86
+#, kde-format
+msgid "Mount Point"
+msgstr "Qoşulma nöqtəsi"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:91
+#, kde-format
+msgid "Label"
+msgstr "Yarlıq"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:96
+#, kde-format
+msgid "UUID"
+msgstr "UUID"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:101
+#, fuzzy, kde-format
+#| msgid "Partition Label"
+msgid "Partition Name"
+msgstr "Bölmənin Yarlığı"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:106
+#, kde-format
+msgid "Partition UUID"
+msgstr "Bölmənin UUİD'i"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:111
+#, kde-format
+msgid "Size"
+msgstr "Ölçü"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:116
+#, kde-format
+msgid "Used"
+msgstr "İstifadə olunan"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:121
+#, kde-format
+msgid "Available"
+msgstr "Mövcud"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:126
+#, kde-format
+msgid "First Sector"
+msgstr "Birinci sektor"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:131
+#, kde-format
+msgid "Last Sector"
+msgstr "Sonuncu sektor"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:136
+#, kde-format
+msgid "Number of Sectors"
+msgstr "Sektorların sayı"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:141
+#, kde-format
+msgid "Flags"
+msgstr "Bayraqlar"
+
+#: gui/partpropsdialog.cpp:55
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Partition properties: <filename>%1</filename>"
+msgstr "Bölmənin xüsusiyyətləri: <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:110
+#, kde-kuit-format
+msgctxt "@item mountpoint"
+msgid "(none found)"
+msgstr "(tapılmadı)"
+
+#: gui/partpropsdialog.cpp:116
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "idle"
+msgstr "Boşdayanma"
+
+#: gui/partpropsdialog.cpp:119
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "At least one logical partition is mounted."
+msgstr "Ən azı bir məntiqi bölmə qoşulub."
+
+#: gui/partpropsdialog.cpp:121
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "mounted on <filename>%1</filename>"
+msgstr "<filename>%1</filename>'ə(a) qoşulub"
+
+#: gui/partpropsdialog.cpp:123
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "mounted"
+msgstr "Qoşulub"
+
+#: gui/partpropsdialog.cpp:127 gui/partpropsdialog.cpp:130
+#: gui/partpropsdialog.cpp:131
+#, kde-kuit-format
+msgctxt "@item uuid"
+msgid "(none)"
+msgstr "(heç biri)"
+
+#: gui/partpropsdialog.cpp:346
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Changing the file system on a partition "
+"already on disk will erase all its contents. If you continue now and apply "
+"the resulting operation in the main window, all data on <filename>%1</"
+"filename> will unrecoverably be lost.</para>"
+msgstr ""
+"<para><warning>Siz <filename>%1</filename> bölməsindəki bütün məlumatları "
+"itirmək üzrəsiniz.</warning></para><para>Bölmənin fayl sisteminin "
+"dəyişdirilməsi, ondakı bütün məlumatları siləcəkdir. Əgər əsas pəncərədəki "
+"nəticələnən əməliyyatları tətbiq etsəniz<filename>%1</filename> bölməsindəki "
+"bütün verilənlər həmişəlik silinəcək və bərpası mümkün olmayacaq.</para>"
+
+#: gui/partpropsdialog.cpp:348
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Recreate <filename>%1</filename> with File System %2?"
+msgstr ""
+"<filename>%1</filename> bölməsi %2 fayl sistemi ilə yenidən yaradılsın?"
+
+#: gui/partpropsdialog.cpp:349
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Change the File System"
+msgstr "Fayl Sistemini dəyişdirmək"
+
+#: gui/partpropsdialog.cpp:350
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Change the File System"
+msgstr "Fayl Sistemini dəyişdirməmək"
+
+#: gui/partpropsdialog.cpp:369
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Recreating a file system will erase all its "
+"contents. If you continue now and apply the resulting operation in the main "
+"window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
+"para>"
+msgstr ""
+"<para><warning>Siz <filename>%1</filename> bölməsindəki bütün məlumatları "
+"itirmək üzrəsiniz.</warning></para><para>Fayl sSisteminin yenidən "
+"yaradılması bütün tərkibləri siləcəkdir. Əsas pəncərədəki nəticələnən "
+"əməliyyatı indi tətbiq etsəniz <filesystem>%1</filesystem> bölməsindəki "
+"bütün məlumatlar həmişəlik itiriləcəkdir və bərpası mümkün olmayacaq.</para>"
+
+#: gui/partpropsdialog.cpp:371
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Recreate File System on <filename>%1</filename>?"
+msgstr "<filename>%1</filename>'də(da) fayl sistemi yenidən yaradılsın?"
+
+#: gui/partpropsdialog.cpp:372
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Recreate the File System"
+msgstr "Yenidən Fayl Sistemi Yaratmaq"
+
+#: gui/partpropsdialog.cpp:373
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Recreate the File System"
+msgstr "Yenidən Fayl Sistemi yaratmamaq"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/partpropswidgetbase.ui:39
+#, kde-format
+msgctxt "@label:listbox"
+msgid "File syste&m:"
+msgstr "Fayl siste&mi:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
+#: gui/partpropswidgetbase.ui:55 gui/sizedialogwidgetbase.ui:146
+#, kde-format
+msgctxt "@label"
+msgid "This file system does not support setting a label."
+msgstr "Bu fayl sistemi yarlıq seçilməsini dəstəkləmir."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:68
+#, kde-format
+msgid ""
+"This will reformat the filesystem, losing all contents, but keeping the same "
+"filesystem type."
+msgstr ""
+"Bu fayl sistemini təkrar formatlayacaq və bütün tərkiblərini siləcək, lakin, "
+"eyni fayl sistemi növünü saxlayacaq."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:71
+#, kde-format
+msgctxt "@action:button"
+msgid "Recreate existing file system"
+msgstr "Mövcud fayl sistemini yenidən yaratmaq"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
+#: gui/partpropswidgetbase.ui:101
+#, kde-format
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Qoşulma nöqtəsi:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
+#: gui/partpropswidgetbase.ui:118
+#, kde-format
+msgctxt "@label"
+msgid "Partition type:"
+msgstr "Bölmənin növü:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/partpropswidgetbase.ui:128
+#, kde-format
+msgctxt "@label"
+msgid "&Label:"
+msgstr "Yar&lıq:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
+#: gui/partpropswidgetbase.ui:148
+#, kde-format
+msgctxt "@label"
+msgid "Status:"
+msgstr "Vəziyyət:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
+#: gui/partpropswidgetbase.ui:165
+#, kde-format
+msgctxt "@label"
+msgid "UUID:"
+msgstr "UUID:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/partpropswidgetbase.ui:195
+#, kde-format
+msgctxt "@label"
+msgid "Size:"
+msgstr "Ölçüsü:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
+#: gui/partpropswidgetbase.ui:218
+#, kde-format
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Mövcud:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
+#: gui/partpropswidgetbase.ui:235
+#, kde-format
+msgctxt "@label partition capacity used"
+msgid "Used:"
+msgstr "İstifadə olunan:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
+#: gui/partpropswidgetbase.ui:259
+#, kde-format
+msgctxt "@label"
+msgid "First sector:"
+msgstr "Birinci sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
+#: gui/partpropswidgetbase.ui:276
+#, kde-format
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Sonuncu sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
+#: gui/partpropswidgetbase.ui:293
+#, kde-format
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr "Sektorların sayı:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
+#: gui/partpropswidgetbase.ui:317
+#, kde-format
+msgctxt "@label"
+msgid "&Flags:"
+msgstr "&Bayraqlar:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
+#: gui/partpropswidgetbase.ui:362
+#, fuzzy, kde-format
+#| msgid "Partition table:"
+msgid "Partition Name:"
+msgstr "Bölmələr Cədvəli:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
+#: gui/partpropswidgetbase.ui:372
+#, kde-format
+msgid "Partition UUID:"
+msgstr "Bölmənin UUİD'i:"
+
+#: gui/parttablewidget.cpp:26
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Please select a device."
+msgstr "Lütfən qurğunu seçin."
+
+#: gui/parttablewidget.cpp:54
+#, kde-kuit-format
+msgctxt "@info"
+msgid "No valid partition table was found on this device."
+msgstr "Bu cihazda düzgün Bölmələr Cədvəli tapılmadı."
+
+#: gui/resizedialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Resize/move partition: <filename>%1</filename>"
+msgstr "Bölmənin ölçüsünü/yerini dəyişmək: <filename>%1</filename>"
+
+#: gui/resizedialog.cpp:91
+#, kde-format
+msgctxt "%2 is either empty or says Invalid passphrase."
+msgid "%2Enter passphrase for %1:"
+msgstr "%2%1 üçün şifrə daxil edin:"
+
+#: gui/resizedialog.cpp:100
+#, kde-format
+msgctxt "Part of %2Enter passphrase for %1:"
+msgid "Invalid passphrase. "
+msgstr "Yanlış şifrə. "
+
+#: gui/resizevolumegroupdialog.cpp:39
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Resize Volume Group"
+msgstr "Həcmlər Qrupunun ölçüsünü dəyişmək"
+
+#: gui/scanprogressdialog.cpp:17
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Scanning devices..."
+msgstr "Qurğular axtarılır..."
+
+#: gui/scanprogressdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Scanning..."
+msgstr "Axtarış..."
+
+#: gui/scanprogressdialog.cpp:34
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Scanning device: <filename>%1</filename>"
+msgstr "Aşkarlanan qurğu: <filename>%1</filename>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: gui/sizedetailswidgetbase.ui:66
+#, kde-format
+msgctxt "@label:listbox"
+msgid "First sector:"
+msgstr "Birinci sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: gui/sizedetailswidgetbase.ui:101
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Last sector:"
+msgstr "Sonuncu sektor:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
+#: gui/sizedetailswidgetbase.ui:124
+#, kde-format
+msgid "Align partition"
+msgstr "Bölməni nizamlamaq"
+
+#: gui/sizedialogbase.cpp:66
+#, kde-kuit-format
+msgctxt "@action:button advanced settings button"
+msgid "Advanced"
+msgstr "Əlavə"
+
+#: gui/sizedialogbase.cpp:181
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "&Advanced"
+msgstr "Əl&avə"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:62
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "Bölmənin növü:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/sizedialogwidgetbase.ui:78
+#, kde-format
+msgctxt "@label:listbox"
+msgid "File system:"
+msgstr "Fayl sistemi:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:98
+#, kde-format
+msgid ""
+"Set up encryption for this filesystem with LUKS. You will be asked to "
+"provide a passphrase."
+msgstr ""
+"Bu fayl sisteminin şifrələnməsini LUKS ilə ayarlamaq. Sizə parol daxil "
+"etməniz təklif olunacaq."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:101
+#, kde-format
+msgid "Encrypt with LUKS"
+msgstr "LUKS ilə şifrələmək"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
+#: gui/sizedialogwidgetbase.ui:111
+#, kde-format
+msgid "Logical Volume Name:"
+msgstr "Məntiqi Həcmin adı:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/sizedialogwidgetbase.ui:128
+#, kde-format
+msgctxt "@label"
+msgid "Label:"
+msgstr "Yarlıq:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:164
+#, kde-format
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Minimum ölçü:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:187
+#, kde-format
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Maksimum ölçü:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
+#: gui/sizedialogwidgetbase.ui:210
+#, kde-format
+msgctxt "@label:listbox"
+msgid "F&ree space before:"
+msgstr "Bu bölmədən əvvəl &böşluq:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: gui/sizedialogwidgetbase.ui:245
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Si&ze:"
+msgstr "Ölçü&sü:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
+#: gui/sizedialogwidgetbase.ui:274
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Bu bölmədən sonra boşluq:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
+#: gui/sizedialogwidgetbase.ui:297
+#, kde-format
+msgid "Permissions"
+msgstr "İcazələr"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
+#: gui/sizedialogwidgetbase.ui:326
+#, kde-format
+msgid "Allow everyone to write and read on this device"
+msgstr "Bu cihazda hər kəsə oxumaq və yazmaq üçün icazə verilir"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
+#: gui/sizedialogwidgetbase.ui:329
+#, kde-format
+msgid "Everyone"
+msgstr "Hər kəs"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
+#: gui/sizedialogwidgetbase.ui:336
+#, kde-format
+msgid ""
+"Allow only root to write and read on this device, you will need to setup per-"
+"folder permissions"
+msgstr ""
+"Bu cihazda yalnız kök imtiyazları olanlara yazmağa və oxumağa icazə verilir, "
+"sizə hər qovluğun icazələrini ayarlamaq lazım gələcək"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
+#: gui/sizedialogwidgetbase.ui:339
+#, kde-format
+msgid "Only Root"
+msgstr "Yalnız kök (root)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:352
+#, kde-format
+msgid "Primar&y"
+msgstr "&İlkin"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:359
+#, kde-format
+msgid "E&xtended"
+msgstr "&Genişləndirilmiş"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:366
+#, kde-format
+msgid "&Logical"
+msgstr "&Məntiqi"
+
+#: gui/smartdialog.cpp:54
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "SMART Properties: <filename>%1</filename>"
+msgstr "SMART xüsusiyyətləri: <filename>%1</filename>"
+
+#: gui/smartdialog.cpp:58
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Save SMART Report"
+msgstr "SMART hesabatını saxlamaq"
+
+#: gui/smartdialog.cpp:96 gui/smartdialog.cpp:153
+#, kde-format, kde-kuit-format
+msgctxt "@label SMART number of bad sectors"
+msgid "none"
+msgstr "heç biri"
+
+#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Pre-Failure"
+msgstr "İmtina edilməyə yaxın"
+
+#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Old-Age"
+msgstr "Köhnə"
+
+#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Online"
+msgstr "Mövcud"
+
+#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Offline"
+msgstr "Əlçatmaz"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
+#: gui/smartdialog.cpp:155 gui/smartdialogwidgetbase.ui:68
+#, kde-format
+msgid "Model:"
+msgstr "Model:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
+#: gui/smartdialog.cpp:156 gui/smartdialogwidgetbase.ui:97
+#, kde-format
+msgid "Serial number:"
+msgstr "Seriya Nömrəsi:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
+#: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
+#, kde-format
+msgid "Firmware revision:"
+msgstr "Proqram Təminatı buraxılışı:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
+#: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
+#, kde-format
+msgid "Temperature:"
+msgstr "Temperatur:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
+#: gui/smartdialog.cpp:159 gui/smartdialogwidgetbase.ui:184
+#, kde-format
+msgid "Bad sectors:"
+msgstr "Korlanmış sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
+#: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
+#, kde-format
+msgid "Powered on for:"
+msgstr "İşləmə səbəbi:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
+#: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
+#, kde-format
+msgid "Power cycles:"
+msgstr "İşə düşmə dövrləri:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
+#: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
+#, kde-format
+msgid "Self tests:"
+msgstr "Öz-özünü yoxlama:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
+#: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
+#, kde-format
+msgid "Overall assessment:"
+msgstr "Ümumi qiymət:"
+
+#: gui/smartdialog.cpp:227
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Save SMART Report."
+msgstr "SMART hesabatını saxlamaq alınmadı."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:294
+#, kde-format
+msgid "Id"
+msgstr "Id"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:299
+#, kde-format
+msgid "Attribute"
+msgstr "Atribut"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:304
+#, kde-format
+msgid "Failure Type"
+msgstr "Xətanın növü"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:309
+#, kde-format
+msgid "Update Type"
+msgstr "Yenilənmə növü"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:314
+#, kde-format
+msgid "Worst"
+msgstr "Ən pis qiymət"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:319
+#, kde-format
+msgid "Current"
+msgstr "Cari"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:324
+#, kde-format
+msgid "Threshold"
+msgstr "Ərəfə"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:329
+#, kde-format
+msgid "Raw"
+msgstr "İşlənməmiş"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:334
+#, kde-format
+msgid "Assessment"
+msgstr "Qiymət"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:339
+#, kde-format
+msgid "Value"
+msgstr "Dəyər"
+
+#: gui/treelog.cpp:110
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not create temporary output file to save <filename>%1</filename>."
+msgstr ""
+"Saxlamaq üçün <filename>%1</filename> müvəqqəti çıxarış faylı yaradıla "
+"bilmədi."
+
+#: gui/treelog.cpp:110
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Saving Log File"
+msgstr "Jurnal faylının saxlanılması xətası"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:59
+#, kde-format
+msgctxt ""
+"@title:column Severity of a log entry / log level. Text must be very short."
+msgid "Sev."
+msgstr "Vac."
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:62
+#, kde-format
+msgid "Severity"
+msgstr "Vaciblik"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:67
+#, kde-format
+msgctxt "@title:column a time stamp of a log entry"
+msgid "Time"
+msgstr "Vaxt"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:72
+#, kde-format
+msgctxt "@title:column the text message of a log entry"
+msgid "Message"
+msgstr "İsmarıc"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextVGName)
+#: gui/volumegroupwidgetbase.ui:34
+#, kde-format
+msgid "Volume Group Name: "
+msgstr "Həcmlər Qrupunun adı: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
+#: gui/volumegroupwidgetbase.ui:47
+#, kde-format
+msgid "Physical Extent Size: "
+msgstr "Fisiki diapazonun ölçüsü: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSize)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalUsedSize)
+#: gui/volumegroupwidgetbase.ui:60 gui/volumegroupwidgetbase.ui:120
+#: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
+#, kde-format
+msgid "---"
+msgstr "---"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
+#: gui/volumegroupwidgetbase.ui:79
+#, kde-format
+msgid " MiB"
+msgstr " MiB"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalLV)
+#: gui/volumegroupwidgetbase.ui:107
+#, kde-format
+msgid "Total LV: "
+msgstr "Ümumi Məntiqi Həcmlər: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
+#: gui/volumegroupwidgetbase.ui:130
+#, kde-format
+msgid "Volume Group Type: "
+msgstr "Həcmlər Qrupunun növü: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
+#: gui/volumegroupwidgetbase.ui:140
+#, kde-format
+msgid "Total Size: "
+msgstr "Ümumi Ölçü: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/volumegroupwidgetbase.ui:153
+#, kde-format
+msgid "Total Sectors: "
+msgstr "Ümumi sektorlar: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
+#: gui/volumegroupwidgetbase.ui:186
+#, kde-format
+msgid "Used Size: "
+msgstr "İstifadə olunan ölçü: "
+
+#: main.cpp:77
+#, kde-kuit-format
+msgctxt "@title"
+msgid "<application>KDE Partition Manager</application>"
+msgstr "<application>KDE Bölmələr Meneceri</application>"
+
+#: main.cpp:79
+#, kde-kuit-format
+msgctxt "@title"
+msgid "Manage your disks, partitions and file systems"
+msgstr "Disk, bölmə və fayl sistemlərinizin idarə edilməsi"
+
+#: main.cpp:81
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid ""
+"© 2008-2013 Volker Lanz\n"
+"© 2012-2020 Andrius Štikonas"
+msgstr ""
+"© 2008-2013 Volker Lanz\n"
+"© 2012-2020 Andrius Štikonas"
+
+#: main.cpp:85
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Volker Lanz"
+msgstr "Volker Lanz"
+
+#: main.cpp:85
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Former maintainer"
+msgstr "Əvvəlki Himayəçi"
+
+#: main.cpp:86
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Andrius Štikonas"
+msgstr "Andrius Štikonas"
+
+#: main.cpp:86
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Maintainer"
+msgstr "Himayəçi"
+
+#: main.cpp:87
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Teo Mrnjavac"
+msgstr "Teo Mrnjavac"
+
+#: main.cpp:87
+#, kde-format
+msgctxt "@info:credit"
+msgid "Former Calamares maintainer"
+msgstr "Əvvəlki Calamares himayəçisi"
+
+#: main.cpp:88
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Chantara Tith"
+msgstr "Chantara Tith"
+
+#: main.cpp:88
+#, kde-format
+msgctxt "@info:credit"
+msgid "LVM support"
+msgstr "LVM dəstəyi"
+
+#: main.cpp:89
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Pali Rohár"
+msgstr "Pali Rohár"
+
+#: main.cpp:89
+#, kde-format
+msgctxt "@info:credit"
+msgid "UDF support"
+msgstr "UDF dəstəyi"
+
+#: main.cpp:90
+#, kde-format
+msgid "Hugo Pereira Da Costa"
+msgstr "Hugo Pereira Da Costa"
+
+#: main.cpp:90
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Partition Widget Design"
+msgstr "Bölmələr vidjetinin dizaynı"
+
+#: main.cpp:91
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Caio Jordão Carvalho"
+msgstr "Caio Jordão Carvalho"
+
+#: main.cpp:91
+#, kde-format
+msgctxt "@info:credit"
+msgid "Improved SMART support"
+msgstr "SMART dəstəyinin yaxşılaşdırılması"
+
+#: main.cpp:104
+#, kde-kuit-format
+msgctxt "@info:shell"
+msgid "Device to manage"
+msgstr "İdarəetmə qurğusu"
+
+#. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
+#: partitionmanager.kcfg:45
+#, kde-format
+msgctxt "@label"
+msgid "Is this the first time KDE Partition Manager is being run?"
+msgstr "Bu KDE Bölmə Menecerinin ilk işə salınmasıdır?"
+
+#. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
+#: partitionmanager.kcfg:49
+#, kde-format
+msgctxt "@label"
+msgid "Hide log messages below"
+msgstr "Aşağıdakı ismarıcları gizlədin"
+
+#. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
+#: partitionmanager.kcfg:53
+#, kde-format
+msgctxt "@label"
+msgid "Partition sector alignment"
+msgstr "Bölmələr sektorunun nizamlanması"
+
+#. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
+#: partitionmanager.kcfg:57
+#, kde-format
+msgctxt "@label"
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Silindr əsaslı nizamlanmadan istifadə edin (Windows XP ilə uyğun)"
+
+#. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
+#: partitionmanager.kcfg:61
+#, kde-format
+msgctxt "@label"
+msgid "Align partitions per default"
+msgstr "Bölmələrin standart nizamlanması"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:65
+#, kde-format
+msgctxt "@label"
+msgid "File system colors"
+msgstr "Fayl sistemi rəngləri"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:141
+#, kde-format
+msgctxt "@label"
+msgid "Show the application's menu bar"
+msgstr "Tətbiqin menyu panelini göstərmək"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:145
+#, kde-format
+msgctxt "@label"
+msgid "Backend plugin"
+msgstr "Daxili modul"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:151
+#, kde-format
+msgctxt "@label"
+msgid "Preferred unit:"
+msgstr "Əsas vahidlər:"
+
+#: util/guihelpers.cpp:50
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The configured backend plugin \"%1\" could not be loaded.</"
+"para><para>Loading the default backend plugin \"%2\" instead.</para>"
+msgstr ""
+"<para>Tənzimlənmiş \"%1\" daxili modulu yüklənə bilmədi.</para><para>Onun "
+"əvəzinə \"%2\" daxili modulu yüklənir.</para>"
+
+#: util/guihelpers.cpp:53 util/guihelpers.cpp:60
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error: Could Not Load Backend Plugin"
+msgstr "Xəta: Daxili Modul Yüklənə Bilmədi"
+
+#: util/guihelpers.cpp:57
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+"plugin could be loaded.</para><para>Please check your installation.</para>"
+msgstr ""
+"<para>Nə tənzimlənmiş (\"%1\"), nə də standart (\"%2\") daxili modul yüklənə "
+"bilmədi.</para><para>Lütfən quraşdırılmanı yoxlayın.</para>"
+
+#: util/guihelpers.cpp:75
+#, kde-kuit-format
+msgctxt "@title:menu"
+msgid "Columns"
+msgstr "Sütunlar"
+
+#~ msgid "Partition Label:"
+#~ msgstr "Bölmənin Yarlığı:"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Partition &type:"
+#~ msgstr "Bölmənin &növü:"

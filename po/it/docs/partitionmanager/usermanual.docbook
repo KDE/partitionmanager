@@ -1,0 +1,101 @@
+<chapter id="usermanual">
+	<title
+>Uso di &partman;</title>
+
+	<sect1 id="mainwindow">
+		<title
+>La finestra principale</title>
+
+		<para
+>Oltre alla vista principale che mostra il dispositivo attualmente selezionato secondo una visualizzazione grafica e ad albero, &partman; usa gli <quote
+>elementi grafici agganciabili</quote
+> o pannelli di &Qt; per mostrare alcune informazioni e permettere la selezione. La seguente schermata mostra la finestra principale di &partman;. </para>
+
+		<para>
+			<screenshot>
+				<screeninfo
+>Finestra principale di &partman;</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Finestra principale</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>Barra dei menu: la barra dei menu presenta alcuni menu personalizzati e alcuni non standard in cui è possibile scegliere le azioni da eseguire. Tutti i comandi sono spiegati in dettaglio in <xref linkend="reference"/>.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Barra degli strumenti: la barra degli strumenti di &partman; è una barra degli strumenti standard. È completamente personalizzabile: per maggiori informazioni vedere <xref linkend="menu-settings-help"/>. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Pannello dei dispositivi: in questo pannello sono elencati i <glossterm linkend="glossary-device"
+>dispositivi</glossterm
+> trovati sul tuo computer che &partman; è in grado di gestire. Selezionare un dispositivo nel pannello per visualizzarlo o modificarlo nella vista grafica o in quella ad albero.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>Vista grafica del dispositivo: in questa vista &partman; visualizza una rappresentazione grafica del dispositivo selezionato. Ogni <glossterm linkend="glossary-partition"
+>partizione</glossterm
+> del dispositivo ha un suo riquadro con il nome del nodo (<quote
+>sda1</quote
+> per la prima partizione nella schermata sopra) e delle informazioni sull'utilizzo (la parte viola scuro nella schermata). </para>
+					<para
+>Le <glossterm linkend="glossary-extendedpartition"
+>partizioni estese</glossterm
+> sono distinguibili per il bordo aggiuntivo (verde chiaro nella schermata sopra) attorno ad esse. </para>
+					<para
+>È possibile selezionare una partizione facendo clic su di essa nella rappresentazione grafica del dispositivo. Facendo doppio clic si apre <link linkend="menu-partition-properties"
+>la finestra con le proprietà della partizione</link
+>. Facendo un clic destro si apre il menu contestuale della partizione. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Vista ad albero del dispositivo: la vista ad albero del dispositivo visualizza informazioni estese su ogni partizione del dispositivo selezionato. La partizione selezionata viene evidenziata. Facendo doppio clic su una partizione si apre <link linkend="menu-partition-properties"
+>la finestra con le proprietà della partizione</link
+>. Facendo un clic destro si apre il menu contestuale della partizione. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Pannello delle informazioni: il pannello delle informazioni visualizza delle informazioni sul dispositivo o la partizione selezionata. Come impostazione predefinita è disabilitato.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Pannello delle operazioni in attesa: questo pannello elenca le operazioni che verranno eseguite con <xref linkend="menu-edit-apply"/>. </para>
+					<para
+>Nella schermata sopra, c'è un'operazione in attesa. Se l'utente sceglie applica, il <glossterm linkend="glossary-filesystem"
+>file system</glossterm
+> presente in /dev/sdb3 verrà controllato e, se necessario, riparato. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Barra di stato: la barra di stato visualizza il numero di operazioni in attesa. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Pannello del registro dell'output: questo pannello visualizza informazioni diagnostiche. Non è molto importante per gli utenti non avanzati e come impostazione predefinita è disabilitato.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+

@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+
+	<!ENTITY partman-introduction SYSTEM "introduction.docbook">
+	<!ENTITY partman-usermanual SYSTEM "usermanual.docbook">
+	<!ENTITY partman-resizehowto SYSTEM "resizehowto.docbook">
+	<!ENTITY partman-copyhowto SYSTEM "copyhowto.docbook">
+	<!ENTITY partman-installoshowto SYSTEM "installoshowto.docbook">
+	<!ENTITY partman-referencemanual SYSTEM "referencemanual.docbook">
+	<!ENTITY partman-faq SYSTEM "faq.docbook">
+	<!ENTITY partman-credits SYSTEM "credits.docbook">
+	<!ENTITY partman-glossary SYSTEM "glossary.docbook">
+
+	<!ENTITY % addindex "IGNORE">
+	<!ENTITY % Italian "INCLUDE">
+]>
+
+<book id="partitionmanager" lang="&language;">
+	<bookinfo>
+		<title
+>Manuale di &partman;</title>
+		<authorgroup>
+			<author
+><firstname
+>Volker</firstname
+> <surname
+>Lanz</surname
+> </author>
+			<othercredit role="translator"
+><firstname
+>Vincenzo</firstname
+><surname
+>Reale</surname
+><affiliation
+><address
+><email
+>smart2128vr@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traduzione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Daniele</firstname
+><surname
+>Micci</surname
+><affiliation
+><address
+><email
+>daniele.micci@tiscali.it</email
+></address
+></affiliation
+><contrib
+>Traduzione</contrib
+></othercredit
+> 
+		</authorgroup>
+
+		<copyright>
+			<year
+>2008, 2009, 2010</year>
+			<holder
+>Volker Lanz</holder>
+		</copyright>
+
+		<legalnotice
+>&FDLNotice;</legalnotice>
+
+		<date
+>01/12/2016</date>
+		<releaseinfo
+>&partman; 3.0.0</releaseinfo>
+
+		<abstract>
+			<para
+>Gestisci i tuoi dischi, le tue partizioni ed i tuoi file system.</para>
+		</abstract>
+
+		<keywordset>
+			<keyword
+>KDE</keyword>
+			<keyword
+>amministratore di sistema</keyword>
+			<keyword
+>partizione</keyword>
+			<keyword
+>gestore</keyword>
+			<keyword
+>disco</keyword>
+			<keyword
+>dispositivo</keyword>
+			<keyword
+>filesystem</keyword>
+		</keywordset>
+
+	</bookinfo>
+
+	&partman-introduction;
+
+	&partman-usermanual;
+
+	&partman-referencemanual;
+
+	&partman-faq;
+
+	&partman-credits;
+
+	&partman-glossary;
+
+	&documentation.index;
+
+</book>
+

@@ -19,7 +19,8 @@ public:
     void setProgress(int p) {
         setValue(p);
     }
-    void setDeviceName(const QString& d);
+
+    void setDeviceName(const QString& device);
 
 protected:
     void closeEvent(QCloseEvent* e) override;

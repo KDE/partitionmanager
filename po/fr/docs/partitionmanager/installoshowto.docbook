@@ -1,0 +1,180 @@
+<sect1 id="howto-installos">
+	<title
+>Guide : comment installer un nouveau système d'exploitation</title>
+
+	<para
+>Ce guide décrit la préparation d'un nouveau périphérique disque dur pour l'installation d'un système d'exploitation : supposez que vous ayez acheté un nouveau disque dur et que vous projetiez maintenant de l'employer en remplacement de l'ancien qui contient actuellement votre système d'exploitation et vos partitions de données. Vous profiteriez également de cette occasion pour installer un nouveau système d'exploitation. Plusieurs étapes devront être suivies pour effectuer la transition depuis l'ancien vers le nouveau système et le nouveau lecteur. </para>
+
+	<para
+>Dans ce qui suit, <quote
+>/dev/sdb</quote
+> est l'ancien disque dur et <quote
+>/dev/sdc</quote
+> le nouveau. Cette capture d'écran présente la situation sur le périphérique source : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La fenêtre principale avec le périphérique source</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Voici à quoi ressemblera le nouveau périphérique. Notez que, comme il ne contient pas encore de table de partitions valable, la première mesure prendre consistera à en créer une en choisissant <xref linkend="menu-device-createpartitiontable"/>: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La fenêtre principale avec le périphérique de destination</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Après confirmation de la boîte de dialogue d'avertissement, vous pouvez commencer à créer des partitions sur le nouveau périphérique en cliquant sur la partition étendue et en choisissant <xref linkend="menu-partition-new"/>. Commencez par une partition étendue à la fin du périphérique pour qu'elle puisse ultérieurement contenir les partitions <quote
+>/home</quote
+> et d'échange (swap) : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Créer une partition étendue</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Cliquez sur <guibutton
+>Ok</guibutton
+>, et l'opération permettant de créer cette partition étendue est ajoutée à la liste. </para>
+
+	<para
+>Créez à présent une partition primaire sur le reste du périphérique où le nouveau système d'exploitation sera installé. Donnez-lui la même taille que la zone non allouée située avant la partition étendue : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Créer une partiton primaire</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Cliquez sur <guibutton
+>Ok</guibutton
+> dans la boîte de dialogue pour accepter votre choix. L'opération permettant de créer la nouvelle partition primaire est alors ajoutée à la liste des opérations. </para>
+	
+	<para
+>À présent, il est temps de copier la partition <quote
+>/home</quote
+> depuis l'ancien périphérique vers la partition étendue présente sur le nouveau périphérique. Choisissez l'ancien périphérique dans le panneau <quote
+>Périphériques</quote
+>, cliquez sur la partition <quote
+>sdb5</quote
+> et choisissez <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>Revenez ensuite vers le nouveau périphérique et cliquez sur la partition étendue. Choisissez <xref linkend="menu-partition-paste"/>. La boîte de dialogue suivante apparaît : </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Coller la partition <quote
+>/home</quote
+></phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Celle-ci semble à première vue convenir, mais vous savez déjà que vous n'aurez pas besoin de beaucoup d'espace libre après la partition <quote
+>/home</quote
+>, car vous allez créer ultérieurement une partition d'échange (swap) ici. </para>
+
+	<para
+>Ainsi, capturez la poignée de redimensionnement droite dans le composant graphique de redimensionnement de la boîte de dialogue et déplacez-la vers la droite jusqu'à ce que l'espace libre après la partition présente une taille plus appropriée pour une partition d'échange : </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Redimensionner une partition collée</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Tout semble correct. Cliquez sur <guibutton
+>Ok</guibutton
+> pour accepter et fermer la boîte de dialogue. Une nouvelle opération permettant de coller la partition copiée vers la partition étendue présente sur <quote
+>sdc</quote
+> est ajoutée à la liste des opérations. Notez que cette opération définira également la nouvelle taille. </para>
+
+	<para
+>Pour finir, vous serez amené à créer une nouvelle partition d'échange à la fin de la partition étendue sur <quote
+>sdc</quote
+>. Il n'est pas nécessaire de copier la partition d'échange existante depuis <quote
+>sdb</quote
+> car elle ne contient pas d'informations permanentes valant la peine d'être conservées. Créez simplement une nouvelle partition de type <quote
+>linuxswap</quote
+> qui remplit la totalité de la zone non allouée après la nouvelle partition <quote
+>/home</quote
+>. </para>
+
+	<para
+>Voici la fenêtre principale avec toutes les opérations et l'aperçu de ce à quoi ressemblera à présent <quote
+>sdc</quote
+> une fois qu'elles sont appliquées : </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>La fenêtre principale après la mise en œuvre de toutes les opérations</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Comme tout va pour le mieux, cliquez sur <xref linkend="menu-edit-apply"/>, confirmez la boîte de dialogue d'avertissement et attendez que les opérations aient toutes été exécutées. Pour plus de détails sur l'exécution des opérations, consultez <link linkend="howto-resizepartition"
+>le guide du redimensionnement des partitions</link
+>. </para>
+	
+	<para
+>Votre nouveau périphérique disque dur est maintenant prêt pour l'installation de votre nouveau système d'exploitation. </para>
+
+</sect1>

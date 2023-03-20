@@ -162,6 +162,7 @@ void SizeDialogBase::setupConnections()
     connect(&dialogWidget().partResizerWidget(), &PartResizerWidget::firstSectorChanged, this, &SizeDialogBase::onResizerWidgetFirstSectorChanged);
     connect(&dialogWidget().partResizerWidget(), &PartResizerWidget::lastSectorChanged, this, &SizeDialogBase::onResizerWidgetLastSectorChanged);
 
+    // TODO: Qt6 remove qOverload
     connect(&dialogWidget().spinFreeBefore(), qOverload<double>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinFreeBeforeChanged);
     connect(&dialogWidget().spinFreeAfter(), qOverload<double>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinFreeAfterChanged);
     connect(&dialogWidget().spinCapacity(), qOverload<double>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinCapacityChanged);
@@ -305,7 +306,7 @@ void SizeDialogBase::onSpinFreeAfterChanged(double newAfter)
         updateSpinFreeAfter(dialogUnitToSectors(device(), oldAfter));
 }
 
-void SizeDialogBase::onSpinFirstSectorChanged(qint64 newFirst)
+void SizeDialogBase::onSpinFirstSectorChanged(double newFirst)
 {
     if (newFirst >= minimumFirstSector() && dialogWidget().partResizerWidget().updateFirstSector(newFirst))
         setDirty();
@@ -315,7 +316,7 @@ void SizeDialogBase::onSpinFirstSectorChanged(qint64 newFirst)
         updateSpinFirstSector(partition().firstSector());
 }
 
-void SizeDialogBase::onSpinLastSectorChanged(qint64 newLast)
+void SizeDialogBase::onSpinLastSectorChanged(double newLast)
 {
     if (newLast <= maximumLastSector() && dialogWidget().partResizerWidget().updateLastSector(newLast))
         setDirty();

@@ -1,0 +1,48 @@
+<chapter id="introduction">
+	<title
+>Introducción</title>
+	<para
+>&partman; es una utilidad que le permite gestionar los <glossterm linkend="glossary-device"
+>discos</glossterm
+>, <glossterm linkend="glossary-partition"
+>particiones</glossterm
+> y <glossterm linkend="glossary-filesystem"
+>sistemas de archivos</glossterm
+> de su ordenador. </para>
+	<para
+>Permite <link linkend="howto-installos"
+>crear nuevas particiones</link
+>, sistemas de archivos en particiones nuevas o ya existentes, <link linkend="howto-copypartition"
+>copiar</link
+>, mover o borrar particiones y también <link linkend="howto-resizepartition"
+>cambiar su tamaño</link
+> fácilmente, sin perder los datos contenidos en ellas. </para>
+
+	<para
+>Para ello, &partman; hace uso de herramientas externas para admitir muchos sistemas de archivos. Probablemente ya tenga instaladas las herramientas para dichos sistemas de archivos en su equipo. </para>
+
+	<warning>
+		<title
+>¡Haga siempre una copia de respaldo de sus datos!</title>
+		<para
+>&partman; ha sido diseñado y escrito con gran diligencia y poniendo enfásis en la integridad de los datos. A pesar de ello, la modificación de la tabla de particiones de un disco implica cierto peligro: podría darse un bug en &partman;, un fallo inesperado de alimentación o un problema con el hardware de su ordenador. </para>
+		<para
+>Por estas razones, debería <emphasis
+>disponer siempre de una copia de respaldo de sus datos importantes</emphasis
+> antes de hacer cualquier modificación con una herramienta como &partman;. </para>
+		<para
+>Los autores del programa no se hacen responsables de las pérdidas de datos derivadas del uso de &partman;. </para>
+	</warning>
+
+	<para
+>&partman; utiliza <glossterm linkend="glossary-operation"
+>operaciones</glossterm
+>, <glossterm linkend="glossary-job"
+>trabajos</glossterm
+> y <glossterm linkend="glossary-command"
+>órdenes</glossterm
+> para dividir lógicamente su trabajo. Para más información consulte el <link linkend="glossary"
+>glosario</link
+>. </para>
+
+</chapter>

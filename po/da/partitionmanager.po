@@ -1,0 +1,6068 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Martin Schlander <mschlander@opensuse.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2019, 2020.
+# scootergrisen, 2017, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
+"PO-Revision-Date: 2020-10-11 11:14+0200\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Project-Style: kde\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Jan Madsen,Martin Schlander"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jan-portugal@opensuse.org,mschlander@opensuse.org"
+
+#: config/configureoptionsdialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:tab general application settings"
+msgid "General"
+msgstr "Generelt"
+
+#: config/configureoptionsdialog.cpp:42 config/configureoptionsdialog.cpp:87
+#, kde-format
+msgid "General Settings"
+msgstr "Generelle indstillinger"
+
+#: config/configureoptionsdialog.cpp:47
+#, kde-kuit-format
+msgctxt "@title:tab"
+msgid "File System Colors"
+msgstr "Filsystemsfarver"
+
+#: config/configureoptionsdialog.cpp:47
+#, kde-format
+msgid "File System Color Settings"
+msgstr "Indstilling af filsystemsfarver"
+
+#: config/configureoptionsdialog.cpp:49
+#, kde-kuit-format
+msgctxt "@title:tab advanced application settings"
+msgid "Advanced"
+msgstr "Avanceret"
+
+#: config/configureoptionsdialog.cpp:49
+#, kde-format
+msgid "Advanced Settings"
+msgstr "Avancerede indstillinger"
+
+#: config/configureoptionsdialog.cpp:137
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to change the backend?</para><para><warning>This "
+"will also rescan devices and thus clear the list of pending operations.</"
+"warning></para>"
+msgstr ""
+"<para>Vil du virkelig skifte backend?</para><para><warning>Dette vil også "
+"genscanne enhederne og således rydde listen over udestående handlinger.</"
+"warning></para>"
+
+#: config/configureoptionsdialog.cpp:139
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Change Backend?"
+msgstr "Vil du virkelig skifte backend?"
+
+#: config/configureoptionsdialog.cpp:140
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Change the Backend"
+msgstr "Skift backend"
+
+#: config/configureoptionsdialog.cpp:141
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Change the Backend"
+msgstr "Skift ikke backend"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepageadvanced.ui:29
+#, kde-format
+msgid "Backend"
+msgstr "Backend"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: config/configurepageadvanced.ui:35
+#, kde-format
+msgid "Active backend:"
+msgstr "Aktiv backend:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
+#: config/configurepageadvanced.ui:57
+#, kde-format
+msgid "Units"
+msgstr "Enheder"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepageadvanced.ui:63
+#, kde-format
+msgid "Preferred unit:"
+msgstr "Foretrukken enhed:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:74
+#, kde-format
+msgid "Byte"
+msgstr "Byte"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:79
+#, kde-format
+msgid "KiB"
+msgstr "KiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:84
+#, kde-format
+msgid "MiB"
+msgstr "MiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:89
+#, kde-format
+msgid "GiB"
+msgstr "GiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:94
+#, kde-format
+msgid "TiB"
+msgstr "TiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:99
+#, kde-format
+msgid "PiB"
+msgstr "PiB"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:104
+#, kde-format
+msgid "EiB"
+msgstr "EiB"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: config/configurepagefilesystemcolors.ui:30
+#: config/configurepagegeneral.ui:144
+#, kde-format
+msgid "File Systems"
+msgstr "Filsystemer"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_7)
+#: config/configurepagefilesystemcolors.ui:39
+#, kde-format
+msgid "ReiserFS:"
+msgstr "ReiserFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_15)
+#: config/configurepagefilesystemcolors.ui:68
+#, kde-format
+msgid "UFS:"
+msgstr "UFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_31)
+#: config/configurepagefilesystemcolors.ui:81
+#, kde-format
+msgid "ISO 9660:"
+msgstr "ISO 9660:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_24)
+#: config/configurepagefilesystemcolors.ui:100
+#, kde-format
+msgid "OCFS2:"
+msgstr "OCFS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_22)
+#: config/configurepagefilesystemcolors.ui:116
+#, kde-format
+msgid "XFS:"
+msgstr "XFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_27)
+#: config/configurepagefilesystemcolors.ui:135
+#, kde-format
+msgid "NILFS2:"
+msgstr "NILFS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_6)
+#: config/configurepagefilesystemcolors.ui:184
+#, kde-format
+msgid "FAT16:"
+msgstr "FAT16:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_13)
+#: config/configurepagefilesystemcolors.ui:197
+#, kde-format
+msgid "extended:"
+msgstr "udvidet:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_33)
+#: config/configurepagefilesystemcolors.ui:210
+#, kde-format
+msgid "LUKS2:"
+msgstr "LUKS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_17)
+#: config/configurepagefilesystemcolors.ui:226
+#, kde-format
+msgid "unformatted:"
+msgstr "uformateret:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_30)
+#: config/configurepagefilesystemcolors.ui:245
+#, kde-format
+msgid "UDF:"
+msgstr "UDF:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_25)
+#: config/configurepagefilesystemcolors.ui:258
+#, kde-format
+msgid "ZFS:"
+msgstr "ZFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_3)
+#: config/configurepagefilesystemcolors.ui:306
+#, kde-format
+msgid "ext4:"
+msgstr "ext4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_10)
+#: config/configurepagefilesystemcolors.ui:322
+#, kde-format
+msgid "HPFS:"
+msgstr "HPFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_11)
+#: config/configurepagefilesystemcolors.ui:380
+#, kde-format
+msgid "JFS:"
+msgstr "JFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_2)
+#: config/configurepagefilesystemcolors.ui:393
+#, kde-format
+msgid "ext3:"
+msgstr "ext3:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_8)
+#: config/configurepagefilesystemcolors.ui:419
+#, kde-format
+msgid "Reiser4:"
+msgstr "Reiser4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_21)
+#: config/configurepagefilesystemcolors.ui:451
+#, kde-format
+msgid "Btrfs:"
+msgstr "Btrfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: config/configurepagefilesystemcolors.ui:493
+#, kde-format
+msgid "ext2:"
+msgstr "ext2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_29)
+#: config/configurepagefilesystemcolors.ui:512
+#, kde-format
+msgid "F2FS:"
+msgstr "F2FS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_28)
+#: config/configurepagefilesystemcolors.ui:531
+#, kde-format
+msgid "LVM2 PV:"
+msgstr "LVM2 PV:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_26)
+#: config/configurepagefilesystemcolors.ui:557
+#, kde-format
+msgid "exFAT:"
+msgstr "exFAT:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_9)
+#: config/configurepagefilesystemcolors.ui:570
+#, kde-format
+msgid "NTFS:"
+msgstr "NTFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_20)
+#: config/configurepagefilesystemcolors.ui:596
+#, kde-format
+msgid "LUKS:"
+msgstr "LUKS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_4)
+#: config/configurepagefilesystemcolors.ui:625
+#, kde-format
+msgid "Linux Swap:"
+msgstr "Linux-swap:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_32)
+#: config/configurepagefilesystemcolors.ui:676
+#, kde-format
+msgid "FAT12:"
+msgstr "FAT12:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_12)
+#: config/configurepagefilesystemcolors.ui:689
+#, kde-format
+msgid "HFS:"
+msgstr "HFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_35)
+#: config/configurepagefilesystemcolors.ui:721
+#, kde-format
+msgid "APFS:"
+msgstr "APFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_5)
+#: config/configurepagefilesystemcolors.ui:734
+#, kde-format
+msgid "FAT32:"
+msgstr "FAT32:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_18)
+#: config/configurepagefilesystemcolors.ui:766
+#, kde-format
+msgid "Linux RAID:"
+msgstr "Linux-RAID:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_34)
+#: config/configurepagefilesystemcolors.ui:779
+#, kde-format
+msgid "BitLocker:"
+msgstr "BitLocker:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_14)
+#: config/configurepagefilesystemcolors.ui:808
+#, kde-format
+msgid "HFS+:"
+msgstr "HFS+:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_16)
+#: config/configurepagefilesystemcolors.ui:834
+#, kde-format
+msgid "unknown:"
+msgstr "ukendt:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagefilesystemcolors.ui:847
+#, kde-format
+msgid "          Minix:"
+msgstr "          Minix:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: config/configurepagegeneral.ui:28
+#, kde-format
+msgid "Partition Alignment"
+msgstr "Justering af partition"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
+#: config/configurepagegeneral.ui:34
+#, kde-format
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Brug cylinderbaseret justering (Windows XP-kompatibel)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagegeneral.ui:47
+#, kde-format
+msgid "Sector alignment:"
+msgstr "Sektorjustering:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
+#: config/configurepagegeneral.ui:60
+#, kde-format
+msgid " sectors"
+msgstr " sektorer"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
+#: config/configurepagegeneral.ui:76
+#, kde-format
+msgid "Align partitions per default"
+msgstr "Justér partitioner som standard"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: config/configurepagegeneral.ui:95
+#, kde-format
+msgid "Logging"
+msgstr "Logning"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: config/configurepagegeneral.ui:101
+#, kde-format
+msgid "Hide messages below:"
+msgstr "Skjul meddelelser herunder:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:112
+#, kde-format
+msgid "Debug"
+msgstr "Fejlsøgning"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:117
+#, kde-format
+msgid "Information"
+msgstr "Information"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:122
+#, kde-format
+msgid "Warning"
+msgstr "Advarsel"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:127
+#, kde-format
+msgid "Error"
+msgstr "Fejl"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: config/configurepagegeneral.ui:150
+#, kde-format
+msgid "Default file system:"
+msgstr "Standard filsystem:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepagegeneral.ui:172
+#, kde-format
+msgid "Shredding"
+msgstr "Rensning"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepagegeneral.ui:178
+#, kde-format
+msgid "Overwrite with:"
+msgstr "Overskriv med:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton)
+#: config/configurepagegeneral.ui:185
+#, kde-format
+msgid "Random data"
+msgstr "Tilfældige data"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
+#: config/configurepagegeneral.ui:195
+#, kde-format
+msgid "Zeros"
+msgstr "Nuller"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
+#: gui/applyprogressdetailswidgetbase.ui:42
+#, kde-format
+msgid "Save"
+msgstr "Gem"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonBrowser)
+#: gui/applyprogressdetailswidgetbase.ui:49
+#, kde-format
+msgid "Open in External Browser"
+msgstr "Åbn i ekstern browser"
+
+#: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "&Details"
+msgstr "&Detaljer"
+
+#: gui/applyprogressdialog.cpp:126
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Setting up..."
+msgstr "Sætter op..."
+
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to cancel?"
+msgstr "Vil du virkelig annullere?"
+
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cancel Running Operations"
+msgstr "Annullér kørende handlinger"
+
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Yes, Cancel Operations"
+msgstr "Ja, annullér handlinger"
+
+#: gui/applyprogressdialog.cpp:201
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Waiting for operation to finish..."
+msgstr "Venter på at handling færdiggøres..."
+
+#: gui/applyprogressdialog.cpp:222
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "All operations successfully finished."
+msgstr "Alle handlinger færdiggjort."
+
+#: gui/applyprogressdialog.cpp:227
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Operations cancelled."
+msgstr "Handlinger annulleret."
+
+#: gui/applyprogressdialog.cpp:232
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "There were errors while applying operations. Aborted."
+msgstr "Der var fejl under anvendelse af handlinger. Afbrudt."
+
+#: gui/applyprogressdialog.cpp:346
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "[%1/%2] - %3: %4"
+msgstr "[%1/%2] - %3: %4"
+
+#: gui/applyprogressdialog.cpp:380
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Total Time: %1"
+msgstr "Tid i alt: %1"
+
+#: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
+#: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Could not create temporary file when trying to save to <filename>%1</"
+"filename>."
+msgstr ""
+"Kunne ikke oprette den midlertidige fil under forsøg på at gemme til "
+"<filename>%1</filename>."
+
+#: gui/applyprogressdialog.cpp:428
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Save Report."
+msgstr "Kunne ikke gemme rapport."
+
+#: gui/applyprogressdialog.cpp:452
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not create temporary file <filename>%1</filename> for writing."
+msgstr ""
+"Kunne ikke oprette den midlertidige fil <filename>%1</filename> til "
+"skrivning."
+
+#: gui/applyprogressdialog.cpp:452
+#, kde-format
+msgctxt "@title:window"
+msgid "Could Not Launch Browser."
+msgstr "Kunne ikke starte browser."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:41
+#, kde-format
+msgid "Operations and Jobs"
+msgstr "Handlinger og jobs"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:46
+#, kde-format
+msgid "Time Elapsed"
+msgstr "Tid forløbet"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
+#: gui/applyprogressdialogwidgetbase.ui:72
+#, kde-format
+msgid "Total Time: 00:00:00"
+msgstr "Tid i alt: 00:00:00"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
+#: gui/applyprogressdialogwidgetbase.ui:89
+#, no-c-format, kde-format
+msgid "Operation: %p%"
+msgstr "Handling: %p%"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
+#: gui/applyprogressdialogwidgetbase.ui:99
+#, kde-format
+msgid "Status"
+msgstr "Status"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressTotal)
+#: gui/applyprogressdialogwidgetbase.ui:115
+#, no-c-format, kde-format
+msgid "Total: %p%"
+msgstr "I alt: %p%"
+
+#: gui/createpartitiontabledialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create a New Partition Table on <filename>%1</filename>"
+msgstr "Opret en ny partitionstabel på <filename>%1</filename>"
+
+#: gui/createpartitiontabledialog.cpp:34
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Create &New Partition Table"
+msgstr "Opret &ny partitionstabel"
+
+#: gui/createpartitiontabledialog.cpp:59
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to create an MS-Dos partition table on <filename>"
+"%1</filename>?</para><para>This device has more than 2^32 sectors. That is "
+"the most the MS-Dos partition table type supports, so you will not be able "
+"to use the whole device.</para>"
+msgstr ""
+"<para>Vil du virkelig oprette en MS-DOS-partitionstabel på <filename>%1</"
+"filename>?</para><para>Denne enhed har flere end 2^32 sektorer. Det er det "
+"højeste MS-DOS-partitionstabeltypen understøtter, så du vil ikke kunne bruge "
+"hele enheden.</para>"
+
+#: gui/createpartitiontabledialog.cpp:61
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Create MS-Dos Partition Table Type?"
+msgstr "Vil du virkelig oprette MS-DOS-partitionstabeltype?"
+
+#: gui/createpartitiontabledialog.cpp:62
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Create MS-Dos Type"
+msgstr "Opret MS-DOS-type"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/createpartitiontablewidgetbase.ui:24
+#, kde-format
+msgid "Choose the type of partition table you want to create:"
+msgstr "Vælg hvilken type partitionstabel du vil oprette:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
+#: gui/createpartitiontablewidgetbase.ui:33
+#, kde-format
+msgid "GPT"
+msgstr "GPT"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
+#: gui/createpartitiontablewidgetbase.ui:43
+#, kde-format
+msgid "MS-Dos"
+msgstr "MS-Dos"
+
+#. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
+#: gui/createpartitiontablewidgetbase.ui:70
+#, kde-format
+msgid "(icon)"
+msgstr "(ikon)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: gui/createpartitiontablewidgetbase.ui:83
+#, kde-format
+msgid "<b>Warning:</b> This will destroy all data on the device!"
+msgstr "<b>Advarsel:</b> Dette vil ødelægge alle data på enheden!"
+
+#: gui/createvolumegroupdialog.cpp:38
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create new Volume Group"
+msgstr "Opret ny diskområdegruppe"
+
+#: gui/devicepropsdialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Device Properties: <filename>%1</filename>"
+msgstr "Enhedsegenskaber: <filename>%1</filename>"
+
+#: gui/devicepropsdialog.cpp:76 gui/infopane.cpp:168
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "%1 (read only)"
+msgstr "%1 (skrivebeskyttet)"
+
+#: gui/devicepropsdialog.cpp:107 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
+#, kde-kuit-format
+msgctxt "@label SMART disk status"
+msgid "good"
+msgstr "god"
+
+#: gui/devicepropsdialog.cpp:112 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
+#, kde-kuit-format
+msgctxt "@label SMART disk status"
+msgid "BAD"
+msgstr "DÅRLIG"
+
+#: gui/devicepropsdialog.cpp:117 gui/smartdialog.cpp:129
+#, kde-kuit-format
+msgctxt "@label"
+msgid "(unknown)"
+msgstr "(ukendt)"
+
+#: gui/devicepropsdialog.cpp:123
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "LVM Volume Group"
+msgstr "LVM-diskområdegruppe"
+
+#: gui/devicepropsdialog.cpp:125
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Software RAID Device"
+msgstr "Software RAID-enheder"
+
+#: gui/devicepropsdialog.cpp:127
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Volume Manager Device"
+msgstr "Enhed til håndtering af diskområde"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
+#: gui/devicepropswidgetbase.ui:63
+#, kde-format
+msgid "Partition table:"
+msgstr "Partitionstabel:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
+#: gui/devicepropswidgetbase.ui:85
+#, kde-format
+msgid "&Cylinder alignment"
+msgstr "&Cylinderjustering"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
+#: gui/devicepropswidgetbase.ui:92
+#, kde-format
+msgid "Sector based align&ment"
+msgstr "&Sektorbaseret justering"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/devicepropswidgetbase.ui:121
+#, kde-format
+msgid "Capacity:"
+msgstr "Kapacitet:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/devicepropswidgetbase.ui:141
+#, kde-format
+msgid "Total sectors:"
+msgstr "Sektorer i alt:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
+#: gui/devicepropswidgetbase.ui:168
+#, kde-format
+msgid "Logical sector size:"
+msgstr "Logisk sektorstørrelse:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
+#: gui/devicepropswidgetbase.ui:188
+#, kde-format
+msgid "Physical sector size:"
+msgstr "Fysisk sektorstørrelse:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
+#: gui/devicepropswidgetbase.ui:222
+#, kde-format
+msgid "Primaries/Max:"
+msgstr "Primære/maks.:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
+#: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
+#: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
+#, kde-format
+msgid "SMART status:"
+msgstr "SMART-status:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
+#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:81
+#, kde-format
+msgid "More..."
+msgstr "Mere..."
+
+#: gui/editmountoptionsdialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Edit additional mount options"
+msgstr "Redigér yderligere monteringstilvalg"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
+#: gui/editmountoptionsdialogwidgetbase.ui:19
+#, kde-format
+msgid "Edit Mount Options"
+msgstr "Redigér monteringstilvalg"
+
+#. i18n: ectx: property (text), widget (QLabel, m_Label)
+#: gui/editmountoptionsdialogwidgetbase.ui:25
+#, kde-format
+msgid "Edit the mount options for this file system:"
+msgstr "Redigér monteringstilvalg for dette filsystem:"
+
+#. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, m_EditOptions)
+#: gui/editmountoptionsdialogwidgetbase.ui:32
+#, kde-format
+msgid "Option1,Option2"
+msgstr "Option1,Option2"
+
+#: gui/editmountpointdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Edit mount point for <filename>%1</filename>"
+msgstr "Redigér monteringspunkt for <filename>%1</filename>"
+
+#: gui/editmountpointdialog.cpp:58
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Are you sure you want to save the changes you made to the system table "
+"file <filename>/etc/fstab</filename>?</para><para><warning>This will "
+"overwrite the existing file on your hard drive now. This <emphasis "
+"strong='1'>can not be undone</emphasis>.</warning></para>"
+msgstr ""
+"<para>Er du sikker på, at du vil gemme de ændringerne du har foretaget til "
+"systemtabelfilen <filename>/etc/fstab</filename>?</para><para><warning>Det "
+"vil overskrive den eksisterende fil på din harddisk nu. Det <emphasis "
+"strong='1'>kan ikke fortrydes</emphasis>.</warning></para>"
+
+#: gui/editmountpointdialog.cpp:60
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really save changes?"
+msgstr "Vil du virkelig gemme ændringerne?"
+
+#: gui/editmountpointdialog.cpp:61
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Save changes"
+msgstr "Gem ændringer"
+
+#: gui/editmountpointdialog.cpp:76
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
+msgstr ""
+"Kunne ikke gemme monteringspunkter til filen <filename>/etc/fstab</filename>."
+
+#: gui/editmountpointdialog.cpp:77
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error While Saving Mount Points"
+msgstr "Fejl under gemning af monteringspunkter"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:23
+#, kde-format
+msgid "UU&ID"
+msgstr "UU&ID"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:33
+#, kde-format
+msgid "Users can mount and unmount"
+msgstr "Brugere må montere og afmontere"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:40
+#, kde-format
+msgid "Update access times relative to modification"
+msgstr "Opdatér tilgangstidspunkter ift. ændring"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:61
+#, kde-format
+msgid "Read-only"
+msgstr "Skrivebeskyttet"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:68
+#, kde-format
+msgid "Pass &Number:"
+msgstr "Pass-&nummer:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:101
+#, kde-format
+msgid "De&vice Node"
+msgstr "&Enhedsknude"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:111
+#, kde-format
+msgid "Options:"
+msgstr "Tilvalg:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
+#: gui/editmountpointdialogwidgetbase.ui:137
+#, kde-format
+msgid "&Label"
+msgstr "&Etiket"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:144
+#, kde-format
+msgid "No binary execution"
+msgstr "Ingen kørsel af binære filer"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:167
+#, kde-format
+msgid "No automatic mount"
+msgstr "Ingen automatisk montering"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
+#: gui/editmountpointdialogwidgetbase.ui:180
+#, kde-format
+msgid "Remove"
+msgstr "Fjern"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:193
+#, kde-format
+msgid "Select..."
+msgstr "Vælg..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:200
+#, kde-format
+msgid "No update of directory access times"
+msgstr "Ingen opdatering af tidspunkter for mappetilgang"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
+#: gui/editmountpointdialogwidgetbase.ui:207
+#, kde-format
+msgid "Dump &Frequency:"
+msgstr "Dump-&frekvens:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:236
+#, kde-format
+msgid "Type:"
+msgstr "Type:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:246
+#, kde-format
+msgid "Path:"
+msgstr "Sti:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:288
+#, kde-format
+msgid "No update of file access times"
+msgstr "Ingen opdatering af tidspunkter for filtilgang"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
+#: gui/editmountpointdialogwidgetbase.ui:295
+#, kde-format
+msgid "Synchronous access"
+msgstr "Synkron tilgang"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/editmountpointdialogwidgetbase.ui:315
+#, kde-format
+msgid "Identify by:"
+msgstr "Identificér via:"
+
+#: gui/filesystemsupportdialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "File System Support"
+msgstr "Filsystem-understøttelse"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/filesystemsupportdialogwidgetbase.ui:23
+#, kde-format
+msgid ""
+"This table shows which file systems are supported and which specific "
+"operations can be performed on them.\n"
+"Some file systems need external tools to be installed for them to be "
+"supported. But not all operations can be performed on all file systems, even "
+"if all required tools are installed. Please see the documentation for "
+"details. "
+msgstr ""
+"Denne tabel viser hvilke filsystemer der understøttes og hvilke specifikke "
+"handlinger der kan udføres på dem.\n"
+"Nogle filsystemer behøver eksterne værktøjer for at kunne understøttes. Alle "
+"handlinger kan imidlertid ikke udføres på alle filsystemer, selvom de "
+"krævede værktøjer er installerede. Se detaljer i dokumentationen. "
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:70
+#, kde-format
+msgid "File System"
+msgstr "Filsystem"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:75
+#, kde-format
+msgid "Create"
+msgstr "Opret"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:80
+#, kde-format
+msgid "Grow"
+msgstr "Forstør"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:85
+#, kde-format
+msgid "Shrink"
+msgstr "Formindsk"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:90
+#, kde-format
+msgid "Move"
+msgstr "Flyt"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:95
+#, kde-format
+msgid "Copy"
+msgstr "Kopiér"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:100
+#, kde-format
+msgid "Check"
+msgstr "Kontrollér"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:105
+#, kde-format
+msgid "Read Label"
+msgstr "Læs etiket"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:110
+#, kde-format
+msgid "Write Label"
+msgstr "Skriv etiket"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:115
+#, kde-format
+msgid "Read Usage"
+msgstr "Læs brug"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:120
+#, kde-format
+msgid "Backup"
+msgstr "Backup"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:125
+#, kde-format
+msgid "Restore"
+msgstr "Gendan"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:130
+#, kde-format
+msgid "Support Tools"
+msgstr "Understøttelsesværktøjer"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRescan)
+#: gui/filesystemsupportdialogwidgetbase.ui:140
+#, kde-format
+msgctxt "@action:button"
+msgid "Rescan Support"
+msgstr "Understøttelse af genscanning"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
+#: gui/infopane.cpp:47 gui/mainwindowbase.ui:47
+#, kde-format, kde-kuit-format
+msgctxt "@title:window"
+msgid "Information"
+msgstr "Information"
+
+#: gui/infopane.cpp:106
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Partition Information"
+msgstr "Partitionsinformation"
+
+#: gui/infopane.cpp:113 gui/infopane.cpp:127 gui/infopane.cpp:139
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "File system:"
+msgstr "Filsystem:"
+
+#: gui/infopane.cpp:114 gui/infopane.cpp:128 gui/infopane.cpp:140
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Capacity:"
+msgstr "Kapacitet:"
+
+#: gui/infopane.cpp:115
+#, kde-format
+msgctxt "@label partition"
+msgid "Cipher name:"
+msgstr "Chiffernavn:"
+
+#: gui/infopane.cpp:116
+#, kde-format
+msgctxt "@label partition"
+msgid "Cipher mode:"
+msgstr "Chiffertilstand:"
+
+#: gui/infopane.cpp:117
+#, kde-format
+msgctxt "@label partition"
+msgid "Hash:"
+msgstr "Hash:"
+
+#: gui/infopane.cpp:118
+#, kde-format
+msgctxt "@label partition"
+msgid "Key size:"
+msgstr "Nøglestørrelse:"
+
+#: gui/infopane.cpp:119
+#, kde-format
+msgctxt "@label partition"
+msgid "Payload offset:"
+msgstr "Ladningsforskydning:"
+
+#: gui/infopane.cpp:120 gui/infopane.cpp:135 gui/infopane.cpp:143
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "First sector:"
+msgstr "Første sektor:"
+
+#: gui/infopane.cpp:121 gui/infopane.cpp:136 gui/infopane.cpp:144
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Last sector:"
+msgstr "Sidste sektor:"
+
+#: gui/infopane.cpp:122 gui/infopane.cpp:137 gui/infopane.cpp:145
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Number of sectors:"
+msgstr "Antal sektorer:"
+
+#: gui/infopane.cpp:129 gui/infopane.cpp:141
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Available:"
+msgstr "Ledig:"
+
+#: gui/infopane.cpp:130 gui/infopane.cpp:142
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Used:"
+msgstr "Brugt:"
+
+#: gui/infopane.cpp:131
+#, kde-format
+msgctxt "@label partition"
+msgid "PE Size:"
+msgstr "PE-størrelse:"
+
+#: gui/infopane.cpp:132
+#, kde-format
+msgctxt "@label partition"
+msgid "Total PE:"
+msgstr "PE i alt:"
+
+#: gui/infopane.cpp:133
+#, kde-format
+msgctxt "@label partition"
+msgid "Free PE:"
+msgstr "Ledig PE:"
+
+#: gui/infopane.cpp:134
+#, kde-format
+msgctxt "@label partition"
+msgid "Allocated PE:"
+msgstr "Allokeret PE:"
+
+#: gui/infopane.cpp:157
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Device Information"
+msgstr "Enhedsinformation"
+
+#: gui/infopane.cpp:161
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Path:"
+msgstr "Sti:"
+
+#: gui/infopane.cpp:176
+#, kde-format
+msgctxt "@label device"
+msgid "Type:"
+msgstr "Type:"
+
+#: gui/infopane.cpp:177 gui/infopane.cpp:185 gui/infopane.cpp:193
+#, kde-format
+msgctxt "@label device"
+msgid "Capacity:"
+msgstr "Kapacitet:"
+
+#: gui/infopane.cpp:178
+#, kde-format
+msgctxt "@label device"
+msgid "Total sectors:"
+msgstr "Sektorer i alt:"
+
+#: gui/infopane.cpp:179
+#, kde-format
+msgctxt "@label device"
+msgid "Logical sector size:"
+msgstr "Logisk sektorstørrelse:"
+
+#: gui/infopane.cpp:180
+#, kde-format
+msgctxt "@label device"
+msgid "Physical sector size:"
+msgstr "Fysisk sektorstørrelse:"
+
+#: gui/infopane.cpp:181
+#, kde-format
+msgctxt "@label device"
+msgid "Primaries/Max:"
+msgstr "Primære/maks.:"
+
+#: gui/infopane.cpp:184 gui/infopane.cpp:192
+#, kde-format
+msgctxt "@label device"
+msgid "Volume Type:"
+msgstr "Type af diskområde:"
+
+#: gui/infopane.cpp:186
+#, kde-format
+msgctxt "@label device"
+msgid "PE Size:"
+msgstr "PE-størrelse:"
+
+#: gui/infopane.cpp:187
+#, kde-format
+msgctxt "@label device"
+msgid "Total PE:"
+msgstr "PE i alt:"
+
+#: gui/infopane.cpp:188
+#, kde-format
+msgctxt "@label device"
+msgid "Allocated PE:"
+msgstr "Allokeret PE:"
+
+#: gui/infopane.cpp:189
+#, kde-format
+msgctxt "@label device"
+msgid "Free PE:"
+msgstr "Ledig PE:"
+
+#: gui/infopane.cpp:194
+#, kde-format
+msgctxt "@label device"
+msgid "RAID Level:"
+msgstr "RAID-niveau:"
+
+#: gui/infopane.cpp:195
+#, kde-format
+msgctxt "@label device"
+msgid "Chunk Size:"
+msgstr "Chunkstørrelse:"
+
+#: gui/infopane.cpp:196
+#, kde-format
+msgctxt "@label device"
+msgid "Total Chunk:"
+msgstr "Chunk i alt:"
+
+#: gui/infopane.cpp:197
+#, kde-format
+msgctxt "@label device"
+msgid "Array Size:"
+msgstr "Arraystørrelse:"
+
+#: gui/insertdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Insert a partition"
+msgstr "Indæt en partition"
+
+#: gui/listphysicalvolumes.cpp:39
+#, kde-kuit-format
+msgctxt "@item:inlistbox Device | Capacity"
+msgid "%1 | %2"
+msgstr "%1 | %2"
+
+#: gui/mainwindow.cpp:164
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Partition Manager requires privileges in order to work. Please refresh the "
+"devices and authenticate when prompted."
+msgstr ""
+
+#: gui/mainwindow.cpp:231
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to quit the application?</para><para>There is still "
+"an operation pending.</para>"
+msgid_plural ""
+"<para>Do you really want to quit the application?</para><para>There are "
+"still %1 operations pending.</para>"
+msgstr[0] ""
+"<para>Vil du virkelig afslutte programmet?</para><para>Der er stadig en "
+"udestående handling.</para>"
+msgstr[1] ""
+"<para>Vil du virkelig afslutte programmet?</para><para>Der er stadig %1 "
+"udestående handlinger.</para>"
+
+#: gui/mainwindow.cpp:233
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Discard Pending Operations and Quit?"
+msgstr "Kassér udestående handlinger og afslut?"
+
+#: gui/mainwindow.cpp:234
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Quit <application>%1</application>"
+msgstr "Afslut <application>%1</application>"
+
+#: gui/mainwindow.cpp:276
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Undo"
+msgstr "Fortryd"
+
+#: gui/mainwindow.cpp:277
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Undo the last operation"
+msgstr "Fortryd den sidste handling"
+
+#: gui/mainwindow.cpp:278
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Remove the last operation from the list."
+msgstr "Fjern den sidste handling fra listen."
+
+#: gui/mainwindow.cpp:285
+#, kde-kuit-format
+msgctxt "@action:inmenu clear the list of operations"
+msgid "Clear"
+msgstr "Ryd"
+
+#: gui/mainwindow.cpp:286
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Clear all operations"
+msgstr "Rydder alle handlinger"
+
+#: gui/mainwindow.cpp:287
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Empty the list of pending operations."
+msgstr "Rydder listen over forestående handlinger."
+
+#: gui/mainwindow.cpp:293
+#, kde-kuit-format
+msgctxt "@action:inmenu apply all operations"
+msgid "Apply"
+msgstr "Anvend"
+
+#: gui/mainwindow.cpp:294
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Apply all operations"
+msgstr "Anvend alle handlinger"
+
+#: gui/mainwindow.cpp:295
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Apply the pending operations in the list."
+msgstr "Anvender de forestående handlinger i listen."
+
+#: gui/mainwindow.cpp:302
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "New Partition Table"
+msgstr "Ny partitionstabel"
+
+#: gui/mainwindow.cpp:303
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Create a new partition table"
+msgstr "Opret en ny partitionstabel"
+
+#: gui/mainwindow.cpp:304
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Create a new and empty partition table on a device."
+msgstr "Opret en ny og tom partitionstabel på en enhed."
+
+#: gui/mainwindow.cpp:311
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Export Partition Table"
+msgstr "Eksportér partitionstabel"
+
+#: gui/mainwindow.cpp:312
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Export a partition table"
+msgstr "Eksportér en partitionstabel"
+
+#: gui/mainwindow.cpp:313
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Export the device's partition table to a text file."
+msgstr "Eksportér enhedens partitionstabel til en tekstfil."
+
+#: gui/mainwindow.cpp:319
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Import Partition Table"
+msgstr "Importér partitionstabel"
+
+#: gui/mainwindow.cpp:320
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Import a partition table"
+msgstr "Importér en partitionstabel"
+
+#: gui/mainwindow.cpp:321
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Import a partition table from a text file."
+msgstr "Importér en partitionstabel fra en tekstfil."
+
+#: gui/mainwindow.cpp:328
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove Volume Group"
+msgstr "Fjern diskområdegruppe"
+
+#: gui/mainwindow.cpp:329
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove selected Volume Group"
+msgstr "Fjern valgte diskområdegruppe"
+
+#: gui/mainwindow.cpp:330
+#, kde-format
+msgctxt "@info:status"
+msgid "Remove selected Volume Group."
+msgstr "Fjern valgte diskområdegruppe."
+
+#: gui/mainwindow.cpp:338
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Resize Volume Group"
+msgstr "Ændr størrelse på diskområdegruppe"
+
+#: gui/mainwindow.cpp:339
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Resize selected Volume Group"
+msgstr "Ændr størrelse på valgte diskområdegruppe"
+
+#: gui/mainwindow.cpp:340
+#, kde-format
+msgctxt "@info:status"
+msgid "Extend or reduce selected Volume Group."
+msgstr "Udvid eller reducer valgte diskområdegruppe."
+
+#: gui/mainwindow.cpp:348
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Deactivate Volume Group"
+msgstr "Deaktivér diskområdegruppe"
+
+#: gui/mainwindow.cpp:349
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Deactivate selected Volume Group"
+msgstr "Deaktivér valgte diskområdegruppe"
+
+#: gui/mainwindow.cpp:350
+#, kde-format
+msgctxt "@info:status"
+msgid "Deactivate selected Volume Group before unplugging removable devices."
+msgstr "Deaktivér valgte diskområdegruppe inden flytbare enheder frakobles."
+
+#: gui/mainwindow.cpp:356
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "SMART Status"
+msgstr "SMART-status"
+
+#: gui/mainwindow.cpp:357
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show SMART status"
+msgstr "Vis SMART-status"
+
+#: gui/mainwindow.cpp:358
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show the device's SMART status if supported"
+msgstr "Vis enhedens SMART-status hvis det er understøttet"
+
+#: gui/mainwindow.cpp:363 gui/mainwindow.cpp:455
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Egenskaber"
+
+#: gui/mainwindow.cpp:364
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show device properties dialog"
+msgstr "Vis dialogen med enhedsegenskaber"
+
+#: gui/mainwindow.cpp:365
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "View and modify device properties"
+msgstr "Vis og ændr enhedsegenskaber"
+
+#: gui/mainwindow.cpp:372
+#, kde-kuit-format
+msgctxt "@action:inmenu create a new partition"
+msgid "New"
+msgstr "Ny"
+
+#: gui/mainwindow.cpp:373
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "New partition"
+msgstr "Ny partition"
+
+#: gui/mainwindow.cpp:374
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Create a new partition."
+msgstr "Opret en ny partition."
+
+#: gui/mainwindow.cpp:381
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Resize/Move"
+msgstr "Ændr størrelse/Flyt"
+
+#: gui/mainwindow.cpp:382
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Resize or move partition"
+msgstr "Ændr størrelse på eller flyt partition"
+
+#: gui/mainwindow.cpp:383
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Shrink, grow or move an existing partition."
+msgstr "Formindsk, forstør eller flyt en eksisterende partition."
+
+#: gui/mainwindow.cpp:390
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Slet"
+
+#: gui/mainwindow.cpp:391
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Delete partition"
+msgstr "Slet partition"
+
+#: gui/mainwindow.cpp:392
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Delete a partition."
+msgstr "Slet en partition."
+
+#: gui/mainwindow.cpp:399
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Shred"
+msgstr "Rens"
+
+#: gui/mainwindow.cpp:400
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Shred partition"
+msgstr "Rens partition"
+
+#: gui/mainwindow.cpp:401
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Shred a partition so that its contents cannot be restored."
+msgstr "Rens en partition således at dens indhold ikke kan genskabes."
+
+#: gui/mainwindow.cpp:408
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Copy"
+msgstr "Kopiér"
+
+#: gui/mainwindow.cpp:409
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Copy partition"
+msgstr "Kopiér partition"
+
+#: gui/mainwindow.cpp:410
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Copy an existing partition."
+msgstr "Kopiér en eksisterende partition."
+
+#: gui/mainwindow.cpp:417
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Paste"
+msgstr "Indsæt"
+
+#: gui/mainwindow.cpp:418
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Paste partition"
+msgstr "Indsæt partition"
+
+#: gui/mainwindow.cpp:419
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Paste a copied partition."
+msgstr "Indsæt en kopieret partition."
+
+#: gui/mainwindow.cpp:426
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Edit Mount Point"
+msgstr "Redigér monteringspunkt"
+
+#: gui/mainwindow.cpp:427
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Edit mount point"
+msgstr "Redigér monteringspunkt"
+
+#: gui/mainwindow.cpp:428
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Edit a partition's mount point and options."
+msgstr "Redigér monteringspunkt og tilvalg for en partition."
+
+#: gui/mainwindow.cpp:433
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Mount"
+msgstr "Montér"
+
+#: gui/mainwindow.cpp:434
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Mount or unmount partition"
+msgstr "Montér eller afmontér partition"
+
+#: gui/mainwindow.cpp:435
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Mount or unmount a partition."
+msgstr "Montér eller afmontér en partition."
+
+#: gui/mainwindow.cpp:440
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Unlock"
+msgstr "Lås op"
+
+#: gui/mainwindow.cpp:441
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Unlock or lock encrypted partition"
+msgstr "Lås krypteret partition eller lås op"
+
+#: gui/mainwindow.cpp:442
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Unlock or lock encrypted partition."
+msgstr "Lås krypteret partition eller lås op."
+
+#: gui/mainwindow.cpp:447
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Check"
+msgstr "Tjek"
+
+#: gui/mainwindow.cpp:448
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Check partition"
+msgstr "Tjek partition"
+
+#: gui/mainwindow.cpp:449
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Check a filesystem on a partition for errors."
+msgstr "Tjek et filsystem på en partition for fejl."
+
+#: gui/mainwindow.cpp:456
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show partition properties dialog"
+msgstr "Vis dialogen med partitionsegenskaber"
+
+#: gui/mainwindow.cpp:457
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "View and modify partition properties (label, partition flags, etc.)"
+msgstr "Se og ændr partitions egenskaber (etiket, partitionsflag o.lign.)"
+
+#: gui/mainwindow.cpp:463
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Backup"
+msgstr "Backup"
+
+#: gui/mainwindow.cpp:464
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Backup partition"
+msgstr "Backup af partition"
+
+#: gui/mainwindow.cpp:465
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Backup a partition to an image file."
+msgstr "Backup af en partition til en image-fil."
+
+#: gui/mainwindow.cpp:471
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Restore"
+msgstr "Gendan"
+
+#: gui/mainwindow.cpp:472
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Restore partition"
+msgstr "Gendan partition"
+
+#: gui/mainwindow.cpp:473
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Restore a partition from an image file."
+msgstr "Gendan en partition fra en image-fil."
+
+#: gui/mainwindow.cpp:480
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New Volume Group"
+msgstr "Ny diskområdegruppe"
+
+#: gui/mainwindow.cpp:481
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create a new LVM Volume Group"
+msgstr "Opret en ny LVM-diskområdegruppe"
+
+#: gui/mainwindow.cpp:482
+#, kde-format
+msgctxt "@info:status"
+msgid "Create a new LVM Volume Group as a device."
+msgstr "Opret en ny LVM-diskområdegruppe som en enhed."
+
+#: gui/mainwindow.cpp:488
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "File System Support"
+msgstr "Filsystem-understøttelse"
+
+#: gui/mainwindow.cpp:489
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "View file system support information"
+msgstr "Se information om filsystem-understøttelse"
+
+#: gui/mainwindow.cpp:490
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show information about supported file systems."
+msgstr "Viser information om understøttede filsystemer."
+
+#: gui/mainwindow.cpp:494
+#, kde-kuit-format
+msgctxt "@action:inmenu refresh list of devices"
+msgid "Refresh Devices"
+msgstr "Genopfrisk enheder"
+
+#: gui/mainwindow.cpp:495
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Refresh all devices"
+msgstr "Genopfrisk alle enheder"
+
+#: gui/mainwindow.cpp:496
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Renew the devices list."
+msgstr "Forny listen over enheder."
+
+#: gui/mainwindow.cpp:512
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Clear Log"
+msgstr "Ryd log"
+
+#: gui/mainwindow.cpp:513
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Clear the log output"
+msgstr "Ryd log-output"
+
+#: gui/mainwindow.cpp:514
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Clear the log output panel."
+msgstr "Ryd panelet med log-output."
+
+#: gui/mainwindow.cpp:519
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Save Log"
+msgstr "Gem log"
+
+#: gui/mainwindow.cpp:520
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Save the log output"
+msgstr "Gem log-output"
+
+#: gui/mainwindow.cpp:521
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Save the log output to a file."
+msgstr "Gem log-output i en fil."
+
+#: gui/mainwindow.cpp:527
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "About KPMcore Library"
+msgstr "Om KPMcore-bibliotek"
+
+#: gui/mainwindow.cpp:528
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show About KPMcore dialog"
+msgstr "Vis dialogen Om KPMcore"
+
+#: gui/mainwindow.cpp:529
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show About KPMcore dialog."
+msgstr "Vis dialogen Om KPMcore."
+
+#: gui/mainwindow.cpp:711
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "One pending operation"
+msgid_plural "%1 pending operations"
+msgstr[0] "En udestående handling"
+msgstr[1] "%1 udestående handlinger"
+
+#: gui/mainwindow.cpp:806
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Using backend plugin: %1 (%2)"
+msgstr "Anvendt backend-plugin: %1 (%2)"
+
+#: gui/mainwindow.cpp:810
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Scanning devices..."
+msgstr "Scanner enheder..."
+
+#: gui/mainwindow.cpp:848
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Scan finished."
+msgstr "Scanning gennemført."
+
+#: gui/mainwindow.cpp:912
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to rescan the devices?</para><para><warning>This "
+"will also clear the list of pending operations.</warning></para>"
+msgstr ""
+"<para>Vil du virkelig genscanne enhederne?</para><para><warning>Dette vil "
+"også rydde listen over udestående handlinger.</warning></para>"
+
+#: gui/mainwindow.cpp:914
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Rescan the Devices?"
+msgstr "Vil du virkelig genscanne enhederne?"
+
+#: gui/mainwindow.cpp:915
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Rescan Devices"
+msgstr "Genscan enheder"
+
+#: gui/mainwindow.cpp:941
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to apply the pending operations listed below?</"
+"para><para><warning>This will permanently modify your disks.</warning></para>"
+msgstr ""
+"<para>Vil du virkelig anvende de udestående handlinger vist herunder?</"
+"para><para><warning>Dette vil ændre dine diske permanent.</warning></para>"
+
+#: gui/mainwindow.cpp:943
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Apply Pending Operations?"
+msgstr "Anvend udestående handlinger?"
+
+#: gui/mainwindow.cpp:944
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Apply Pending Operations"
+msgstr "Anvend udestående handlinger"
+
+#: gui/mainwindow.cpp:946
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Applying operations..."
+msgstr "Anvender handlinger..."
+
+#: gui/mainwindow.cpp:971
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Undoing operation: %1"
+msgstr "Fortryder handlingen %1"
+
+#: gui/mainwindow.cpp:987
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to clear the list of pending operations?"
+msgstr "Vil du virkelig rydde listen over udestående handlinger?"
+
+#: gui/mainwindow.cpp:988
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Clear Pending Operations?"
+msgstr "Ryd udestående handlinger?"
+
+#: gui/mainwindow.cpp:989
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Clear Pending Operations"
+msgstr "Ryd udestående handlinger"
+
+#: gui/mainwindow.cpp:991
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Clearing the list of pending operations."
+msgstr "Rydder listen over udestående handlinger."
+
+#: gui/mainwindow.cpp:1033
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import"
+msgstr "Kunne ikke åbne inputfilen <filename>%1</filename> til import"
+
+#: gui/mainwindow.cpp:1033 gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1051
+#: gui/mainwindow.cpp:1057
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Importing Partition Table"
+msgstr "Fejl under import af partitionstabel"
+
+#: gui/mainwindow.cpp:1051
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import: %2"
+msgstr "Kunne ikke åbne inputfilen <filename>%1</filename> til import: %2"
+
+#: gui/mainwindow.cpp:1057
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Could not open temporary file <filename>%1</filename> while trying to import "
+"from <filename>%2</filename>."
+msgstr ""
+"Kunne ikke åbne den midlertidige fil <filename>%1</filename> under forsøg på "
+"import fra <filename>%2</filename>."
+
+#: gui/mainwindow.cpp:1087
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The import file <filename>%1</filename> does not contain a valid partition "
+"table."
+msgstr ""
+"Importfilen <filename>%1</filename> indeholder ikke en gyldig "
+"partitionstabel."
+
+#: gui/mainwindow.cpp:1087 gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1104
+#: gui/mainwindow.cpp:1109 gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1132
+#: gui/mainwindow.cpp:1137 gui/mainwindow.cpp:1156 gui/mainwindow.cpp:1161
+#: gui/mainwindow.cpp:1166 gui/mainwindow.cpp:1173 gui/mainwindow.cpp:1457
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error While Importing Partition Table"
+msgstr "Fejl under import af partitionstabel"
+
+#: gui/mainwindow.cpp:1097
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Found more than one partition table type in import file (line %1)."
+msgstr "Fandt mere end én type partitionstabel i importfilen (linje %1)."
+
+#: gui/mainwindow.cpp:1104
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is unknown (line %2)."
+msgstr "Typen af partitionstabel \"%1\" er ukendt (linje %2)."
+
+#: gui/mainwindow.cpp:1109
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is not supported for import (line %2)."
+msgstr ""
+"Typen af partitionstabel \"%1\" er ikke understøttet til import (linje %2)."
+
+#: gui/mainwindow.cpp:1119
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Found partition but no partition table type (line %1)."
+msgstr "Fandt partition men ingen type af partitionstabel (linje %1)."
+
+#: gui/mainwindow.cpp:1132
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Partition %1 would be outside the device's boundaries (line %2)."
+msgstr "Partitionen %1 vil være udenfor enhedens grænser (linje %2)."
+
+#: gui/mainwindow.cpp:1137
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition %1 has end before start sector (line %2)."
+msgstr "Partitionen %1 har afslutning før startsektor (linje %2)."
+
+#: gui/mainwindow.cpp:1156
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+msgstr "Ukendt partitionsrolle \"%1\" for partitionen %2 (linje %3)."
+
+#: gui/mainwindow.cpp:1161
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid ""
+"No parent partition or partition table found for partition %1 (line %2)."
+msgstr ""
+"Ingen forælder partition eller partitionstabel fundet for partitionen %1 "
+"(linje %2)."
+
+#: gui/mainwindow.cpp:1166
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The partition table type \"%1\" does not support extended partitions, but "
+"one was found (line %2)."
+msgstr ""
+"Typen af partitionstabel \"%1\" understøtter ikke udvidede partitioner, men "
+"der blev fundet en (linje %2)."
+
+#: gui/mainwindow.cpp:1173
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Could not create file system \"%1\" for partition %2 (line %3)."
+msgstr "Kunne ikke oprette filsystemet \"%1\" for partitionen %2 (linje %3)."
+
+#: gui/mainwindow.cpp:1188
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Could not parse line %1 from import file. Ignoring it."
+msgstr "Kunne ikke fortolke linjen %1 fra importfilen. Den ignoreres."
+
+#: gui/mainwindow.cpp:1208
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Exporting Partition Table"
+msgstr "Fejl under eksport af partitionstabel"
+
+#: gui/mainwindow.cpp:1378 gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1420
+#, kde-kuit-format
+msgid "%1%2"
+msgstr "%1%2"
+
+#: gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1395
+#, kde-kuit-format
+msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
+msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
+
+#: gui/mainwindow.cpp:1432
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>No support tools were found for file systems currently present on hard "
+"disks in this computer:</para><table style='margin-top:12px'><tr><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Partition</"
+"td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>File "
+"System</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Support Tools</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>URL</td></tr>%1</table><para>As long as the support "
+"tools for these file systems are not installed you will not be able to "
+"modify them.</para><para>You should find packages with these support tools "
+"in your distribution's package manager.</para>"
+msgstr ""
+"<para>Ingen understøttelsesværktøjer blev fundet til filsystemerne der "
+"aktuelt er til stede på harddiske i denne computer:</para><table "
+"style='margin-top:12px'><tr><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>Partition</td><td style='font-weight:bold;padding-"
+"right:12px;white-space:nowrap;'>FilSystem</td><td style='font-weight:bold;"
+"padding-right:12px;white-space:nowrap;'>Understøttelsesværktøjer</td><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>URL</td></tr>"
+"%1</table><para>Så længe understøttelsesværktøjerne for disse filsystemer "
+"ikke er installeret vil du ikke kunne ændre dem.</para><para>Du bør finde "
+"pakker med disse understøttelsesværktøjer i din distributions "
+"pakkehåndtering.</para>"
+
+#: gui/mainwindow.cpp:1445
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Missing File System Support Packages"
+msgstr "Manglende pakker med filsystem-understøttelse"
+
+#: gui/mainwindow.cpp:1456
+#, kde-kuit-format
+msgctxt "@info device should be inside of /dev"
+msgid "Unrecognized device \"%1\" "
+msgstr ""
+
+#: gui/mainwindow.cpp:1465
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info the partition is NOT a device path, just a number"
+#| msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+msgctxt "@info device should be inside of /dev"
+msgid "Unrecognized partition \"%1\" "
+msgstr "Ukendt partitionsrolle \"%1\" for partitionen %2 (linje %3)."
+
+#: gui/mainwindow.cpp:1466
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Error Importing Partition Table"
+msgctxt "@title:window"
+msgid "Error opening partition"
+msgstr "Fejl under import af partitionstabel"
+
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
+#. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
+#: gui/mainwindowbase.ui:18 gui/partitionmanagerwidgetbase.ui:20
+#, kde-format
+msgctxt "@title:window"
+msgid "KDE Partition Manager"
+msgstr "KDE Partitionshåndtering"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
+#: gui/mainwindowbase.ui:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Devices"
+msgstr "Enheder"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
+#: gui/mainwindowbase.ui:38
+#, kde-format
+msgctxt "@title:window"
+msgid "Pending Operations"
+msgstr "Udestående handlinger"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
+#: gui/mainwindowbase.ui:59
+#, kde-format
+msgctxt "@title:window"
+msgid "Log Output"
+msgstr "Log output"
+
+#: gui/newdialog.cpp:47
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create a new partition"
+msgstr "Opret en ny partition"
+
+#. i18n: ectx: ToolBar (partitionToolBar)
+#: gui/partitionmanagerui.rc:12
+#, kde-format
+msgctxt "@title:menu"
+msgid "Partition Manager Toolbar"
+msgstr "Værktøjslinje til partitionshåndtering"
+
+#. i18n: ectx: Menu (device)
+#: gui/partitionmanagerui.rc:30
+#, kde-format
+msgctxt "@title:menu"
+msgid "Device"
+msgstr "Enhed"
+
+#. i18n: ectx: Menu (selectedDevice)
+#: gui/partitionmanagerui.rc:32
+#, kde-format
+msgctxt "@title:menu"
+msgid "Select Current Device"
+msgstr "Vælg nuværende enhed"
+
+#. i18n: ectx: Menu (tools)
+#: gui/partitionmanagerui.rc:49
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tools"
+msgstr "Værktøjer"
+
+#. i18n: ectx: Menu (partition)
+#: gui/partitionmanagerui.rc:55
+#, kde-format
+msgctxt "@title:menu"
+msgid "Partition"
+msgstr "Partition"
+
+#. i18n: ectx: Menu (panels)
+#: gui/partitionmanagerui.rc:77
+#, kde-format
+msgctxt "@title:menu"
+msgid "Panels Shown"
+msgstr "Viste paneler"
+
+#: gui/partitionmanagerwidget.cpp:199
+#, kde-kuit-format
+msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
+msgid "%1 [Encrypted]"
+msgstr "%1 [krypteret]"
+
+#: gui/partitionmanagerwidget.cpp:403
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be mounted."
+msgstr ""
+"Filsystemet på partitionen <filename>%1</filename> kunne ikke monteres."
+
+#: gui/partitionmanagerwidget.cpp:403
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Mount File System."
+msgstr "Kunne ikke montere filsystem."
+
+#: gui/partitionmanagerwidget.cpp:406
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be unmounted."
+msgstr ""
+"Filsystemet på partitionen <filename>%1</filename> kunne ikke afmonteres."
+
+#: gui/partitionmanagerwidget.cpp:406
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Unmount File System."
+msgstr "Kunne ikke afmontere filsystem."
+
+#: gui/partitionmanagerwidget.cpp:446
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The encrypted file system on partition <filename>%1</filename> could not be "
+"unlocked."
+msgstr ""
+"Det krypterede filsystem på partitionen <filename>%1</filename> kunne ikke "
+"låses op."
+
+#: gui/partitionmanagerwidget.cpp:452
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Unlock Encrypted File System."
+msgstr "Kunne ikke låse krypteret filsystem op."
+
+#: gui/partitionmanagerwidget.cpp:457
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The encrypted file system on partition <filename>%1</filename> could not be "
+"locked."
+msgstr ""
+"Det krypterede filsystem på partitionen <filename>%1</filename> kunne ikke "
+"låses."
+
+#: gui/partitionmanagerwidget.cpp:463
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Lock Encrypted File System."
+msgstr "Kunne ikke låse krypteret filsystem."
+
+#: gui/partitionmanagerwidget.cpp:492
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>There is already one primary partition on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgid_plural ""
+"<para>There are already %1 primary partitions on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgstr[0] ""
+"<para>Der er allerede én primær partition på denne enhed. Det er det "
+"maksimale antal dens type partitionstabel kan håndtere.</para><para>Du kan "
+"ikke oprette, indsætte eller gendanne en primær partition på den, før du "
+"sletter en eksisterende.</para>"
+msgstr[1] ""
+"<para>Der er allerede %1 primære partitioner på denne enhed. Det er det "
+"maksimale antal dens type partitionstabel kan håndtere.</para><para>Du kan "
+"ikke oprette, indsætte eller gendanne en primær partition på den, før du "
+"sletter en eksisterende.</para>"
+
+#: gui/partitionmanagerwidget.cpp:496
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Too Many Primary Partitions."
+msgstr "For mange primære partitioner."
+
+#: gui/partitionmanagerwidget.cpp:559
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The partition <filename>%1</filename> cannot currently be deleted "
+"because one or more partitions with higher logical numbers are still mounted."
+"</para><para>Please unmount all partitions with higher logical numbers than "
+"%2 first.</para>"
+msgstr ""
+"<para>Partitionen <filename>%1</filename> kan i øjeblikket ikke slettes da "
+"en eller flere partitioner med højere logiske numre stadig er monterede.</"
+"para><para>Afmontér først alle partitioner med højere logiske numre end %2.</"
+"para>"
+
+#: gui/partitionmanagerwidget.cpp:562
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cannot Delete Partition."
+msgstr "Kan ikke slette partitionen."
+
+#: gui/partitionmanagerwidget.cpp:571
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Do you really want to delete the partition that is currently in the "
+"clipboard? It will no longer be available for pasting after it has been "
+"deleted."
+msgstr ""
+"Vil du virkelig slette den partition der befinder sig i udklipsholderen? Den "
+"vil ikke længere være tilgængelig til indsættelse efter den er blevet "
+"slettet."
+
+#: gui/partitionmanagerwidget.cpp:573
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Delete Partition in the Clipboard?"
+msgstr "Vil du virkelig slette partitionen i udklipsholderen?"
+
+#: gui/partitionmanagerwidget.cpp:574
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Delete It"
+msgstr "Slet den"
+
+#: gui/partitionmanagerwidget.cpp:627
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Partition <filename>%1</filename> has the same position and size after "
+"resize/move. Ignoring operation."
+msgstr ""
+"Partitionen <filename>%1</filename> har den samme størrelse og position "
+"efter størrelsesændring/flytning. Ignorerer handling."
+
+#: gui/partitionmanagerwidget.cpp:655
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+msgstr ""
+"Partitionen <filename>%1</filename> er blevet kopieret til udklipsholderen."
+
+#: gui/partitionmanagerwidget.cpp:718
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Overwriting one partition with another (or "
+"with an image file) will destroy all data on this target partition.</"
+"para><para>If you continue now and apply the resulting operation in the main "
+"window, all data currently stored on <filename>%1</filename> will "
+"unrecoverably be overwritten.</para>"
+msgstr ""
+"<para><warning>Du er ved at miste alle data på partitionen <filename>%1</"
+"filename>.</warning></para><para>At overskrive en partition med en anden "
+"(eller med en imagefil) vil ødelægge alle data på målpartitionen.</"
+"para><para>Hvis du fortsætter nu og anvender den resulterende handling i "
+"hovedvinduet vil alle data der aktuelt er gemt på <filename>%1</filename> "
+"blive uigenkaldeligt overskrevet.</para>"
+
+#: gui/partitionmanagerwidget.cpp:726
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Overwrite Existing Partition?"
+msgstr "Vil du virkelig overskrive en eksisterende partition?"
+
+#: gui/partitionmanagerwidget.cpp:727
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Overwrite Partition"
+msgstr "Overskriv partition"
+
+#: gui/partitionmanagerwidget.cpp:735
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The selected partition is not large enough to hold the source "
+"partition or the backup file.</para><para>Pick another target or resize this "
+"partition so it is as large as the source.</para>"
+msgstr ""
+"<para>Den markerede partition er ikke stor nok til at rumme kildepartitionen "
+"eller backup-filen.</para><para>Vælg et andet mål eller ændr størrelse på "
+"denne partition så den bliver så stor som kilden.</para>"
+
+#: gui/partitionmanagerwidget.cpp:736
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Target Not Large Enough"
+msgstr "Målet er ikke stort nok"
+
+#: gui/partitionmanagerwidget.cpp:739
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>It is not possible to create the target partition large enough to hold "
+"the source.</para><para>This may happen if not all partitions on a device "
+"are correctly aligned or when copying a primary partition into an extended "
+"partition.</para>"
+msgstr ""
+"<para>Det er ikke muligt at oprette målpartitionen stor nok til at rumme "
+"kilden.</para><para>Dette kan ske hvis ikke alle partitioner på en enhed er "
+"korrekt justerede eller når en primær partition kopieres til en udvidet "
+"partition.</para>"
+
+#: gui/partitionmanagerwidget.cpp:742
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cannot Create Target Partition."
+msgstr "Kan ikke oprette målpartition."
+
+#: gui/partitionmanagerwidget.cpp:800
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system in the image file <filename>%1</filename> is too large to be "
+"restored to the selected partition."
+msgstr ""
+"Filsystemet i image-filen <filename>%1</filename> er for stort til at blive "
+"genoprettet på den valgte partition."
+
+#: gui/partitionmanagerwidget.cpp:800
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Not Enough Space to Restore File System."
+msgstr "Ikke plads nok til at gendanne filsystem."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:76
+#, kde-format
+msgid "Partition"
+msgstr "Partition"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:81
+#, kde-format
+msgid "Type"
+msgstr "Type"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:86
+#, kde-format
+msgid "Mount Point"
+msgstr "Monteringspunkt"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:91
+#, kde-format
+msgid "Label"
+msgstr "Etiket"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:96
+#, kde-format
+msgid "UUID"
+msgstr "UUID"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:101
+#, fuzzy, kde-format
+#| msgid "Partition Label"
+msgid "Partition Name"
+msgstr "Partitionsetiket"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:106
+#, kde-format
+msgid "Partition UUID"
+msgstr "Partitions-UUID"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:111
+#, kde-format
+msgid "Size"
+msgstr "Størrelse"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:116
+#, kde-format
+msgid "Used"
+msgstr "Brugt"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:121
+#, kde-format
+msgid "Available"
+msgstr "Ledig"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:126
+#, kde-format
+msgid "First Sector"
+msgstr "Første sektor"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:131
+#, kde-format
+msgid "Last Sector"
+msgstr "Sidste sektor"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:136
+#, kde-format
+msgid "Number of Sectors"
+msgstr "Antal sektorer"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:141
+#, kde-format
+msgid "Flags"
+msgstr "Flag"
+
+#: gui/partpropsdialog.cpp:55
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Partition properties: <filename>%1</filename>"
+msgstr "Partitionsegenskaber: <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:110
+#, kde-kuit-format
+msgctxt "@item mountpoint"
+msgid "(none found)"
+msgstr "(ingen fundet)"
+
+#: gui/partpropsdialog.cpp:116
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "idle"
+msgstr "inaktiv"
+
+#: gui/partpropsdialog.cpp:119
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "At least one logical partition is mounted."
+msgstr "Mindst én logisk partition er monteret."
+
+#: gui/partpropsdialog.cpp:121
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "mounted on <filename>%1</filename>"
+msgstr "monteret på <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:123
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "mounted"
+msgstr "monteret"
+
+#: gui/partpropsdialog.cpp:127 gui/partpropsdialog.cpp:130
+#: gui/partpropsdialog.cpp:131
+#, kde-kuit-format
+msgctxt "@item uuid"
+msgid "(none)"
+msgstr "(ingen)"
+
+#: gui/partpropsdialog.cpp:346
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Changing the file system on a partition "
+"already on disk will erase all its contents. If you continue now and apply "
+"the resulting operation in the main window, all data on <filename>%1</"
+"filename> will unrecoverably be lost.</para>"
+msgstr ""
+"<para><warning>Du er ved at miste al data på partitionen <filename>%1</"
+"filename>.</warning></para><para>At skifte filsystem på en partition, der "
+"allerede er på disken, vil slette al dens indhold. Hvis du fortsætter nu og "
+"anvender den resulterende handling i hovedvinduet mistes alle data på "
+"<filename>%1</filename> uigenkaldeligt.</para>"
+
+#: gui/partpropsdialog.cpp:348
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Recreate <filename>%1</filename> with File System %2?"
+msgstr "Vil du virkelig gendanne <filename>%1</filename> med filsystemet %2?"
+
+#: gui/partpropsdialog.cpp:349
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Change the File System"
+msgstr "Skift filsystem"
+
+#: gui/partpropsdialog.cpp:350
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Change the File System"
+msgstr "Skift ikke filsystem"
+
+#: gui/partpropsdialog.cpp:369
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Recreating a file system will erase all its "
+"contents. If you continue now and apply the resulting operation in the main "
+"window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
+"para>"
+msgstr ""
+"<para><warning>Du er ved at miste alle data på partitionen <filename>%1</"
+"filename>.</warning></para><para>At genoprette et filsystem vil slette al "
+"dets indhold. Hvis du fortsætter nu og anvender den resulterende handling i "
+"hovedvinduet mistes alle data på <filesystem>%1</filesystem> uigenkaldeligt."
+"</para>"
+
+#: gui/partpropsdialog.cpp:371
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Recreate File System on <filename>%1</filename>?"
+msgstr "Vil du virkelig gendanne filsystemet på <filename>%1</filename>?"
+
+#: gui/partpropsdialog.cpp:372
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Recreate the File System"
+msgstr "Gendan filsystemet"
+
+#: gui/partpropsdialog.cpp:373
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Recreate the File System"
+msgstr "Gendan ikke filsystemet"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/partpropswidgetbase.ui:39
+#, kde-format
+msgctxt "@label:listbox"
+msgid "File syste&m:"
+msgstr "&Filsystem:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
+#: gui/partpropswidgetbase.ui:55 gui/sizedialogwidgetbase.ui:146
+#, kde-format
+msgctxt "@label"
+msgid "This file system does not support setting a label."
+msgstr "Dette filsystem understøtter ikke sætning af etiket."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:68
+#, kde-format
+msgid ""
+"This will reformat the filesystem, losing all contents, but keeping the same "
+"filesystem type."
+msgstr ""
+"Dette vil formatere filsystemet igen, hvorved al indhold mistes, men "
+"filsystemets type bevares."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:71
+#, kde-format
+msgctxt "@action:button"
+msgid "Recreate existing file system"
+msgstr "Gendan eksisterende filsystem"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
+#: gui/partpropswidgetbase.ui:101
+#, kde-format
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Monteringspunkt:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
+#: gui/partpropswidgetbase.ui:118
+#, kde-format
+msgctxt "@label"
+msgid "Partition type:"
+msgstr "Partitionstype:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/partpropswidgetbase.ui:128
+#, kde-format
+msgctxt "@label"
+msgid "&Label:"
+msgstr "&Etiket:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
+#: gui/partpropswidgetbase.ui:148
+#, kde-format
+msgctxt "@label"
+msgid "Status:"
+msgstr "Status:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
+#: gui/partpropswidgetbase.ui:165
+#, kde-format
+msgctxt "@label"
+msgid "UUID:"
+msgstr "UUID:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/partpropswidgetbase.ui:195
+#, kde-format
+msgctxt "@label"
+msgid "Size:"
+msgstr "Størrelse:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
+#: gui/partpropswidgetbase.ui:218
+#, kde-format
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Tilgængelig:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
+#: gui/partpropswidgetbase.ui:235
+#, kde-format
+msgctxt "@label partition capacity used"
+msgid "Used:"
+msgstr "Brugt:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
+#: gui/partpropswidgetbase.ui:259
+#, kde-format
+msgctxt "@label"
+msgid "First sector:"
+msgstr "Første sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
+#: gui/partpropswidgetbase.ui:276
+#, kde-format
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Sidste sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
+#: gui/partpropswidgetbase.ui:293
+#, kde-format
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr "Antal sektorer:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
+#: gui/partpropswidgetbase.ui:317
+#, kde-format
+msgctxt "@label"
+msgid "&Flags:"
+msgstr "&Flag:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
+#: gui/partpropswidgetbase.ui:362
+#, fuzzy, kde-format
+#| msgid "Partition table:"
+msgid "Partition Name:"
+msgstr "Partitionstabel:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
+#: gui/partpropswidgetbase.ui:372
+#, kde-format
+msgid "Partition UUID:"
+msgstr "Partitions-UUID:"
+
+#: gui/parttablewidget.cpp:26
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Please select a device."
+msgstr "Vælg en enhed."
+
+#: gui/parttablewidget.cpp:54
+#, kde-kuit-format
+msgctxt "@info"
+msgid "No valid partition table was found on this device."
+msgstr "Ingen gyldig partitionstabel blev fundet på denne enhed."
+
+#: gui/resizedialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Resize/move partition: <filename>%1</filename>"
+msgstr "Ændr størrelse på/flyt partitionen: <filename>%1</filename>"
+
+#: gui/resizedialog.cpp:91
+#, kde-format
+msgctxt "%2 is either empty or says Invalid passphrase."
+msgid "%2Enter passphrase for %1:"
+msgstr "%2Indtast adgangskode til %1:"
+
+#: gui/resizedialog.cpp:100
+#, kde-format
+msgctxt "Part of %2Enter passphrase for %1:"
+msgid "Invalid passphrase. "
+msgstr "Ugyldig adgangskode. "
+
+#: gui/resizevolumegroupdialog.cpp:39
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Resize Volume Group"
+msgstr "Ændr størrelse på diskområdegruppe"
+
+#: gui/scanprogressdialog.cpp:17
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Scanning devices..."
+msgstr "Scanner enheder..."
+
+#: gui/scanprogressdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Scanning..."
+msgstr "Scanner..."
+
+#: gui/scanprogressdialog.cpp:34
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Scanning device: <filename>%1</filename>"
+msgstr "Scanner enhed: <filename>%1</filename>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: gui/sizedetailswidgetbase.ui:66
+#, kde-format
+msgctxt "@label:listbox"
+msgid "First sector:"
+msgstr "Første sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: gui/sizedetailswidgetbase.ui:101
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Last sector:"
+msgstr "Sidste sektor:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
+#: gui/sizedetailswidgetbase.ui:124
+#, kde-format
+msgid "Align partition"
+msgstr "Justér partition"
+
+#: gui/sizedialogbase.cpp:66
+#, kde-kuit-format
+msgctxt "@action:button advanced settings button"
+msgid "Advanced"
+msgstr "Avanceret"
+
+#: gui/sizedialogbase.cpp:181
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "&Advanced"
+msgstr "&Avanceret"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:62
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "Partitionstype:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/sizedialogwidgetbase.ui:78
+#, kde-format
+msgctxt "@label:listbox"
+msgid "File system:"
+msgstr "Filsystem:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:98
+#, kde-format
+msgid ""
+"Set up encryption for this filesystem with LUKS. You will be asked to "
+"provide a passphrase."
+msgstr ""
+"Opsæt kryptering af dette filsystem med LUKS. Du vil blive bedt om at angive "
+"en adgangsfrase."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:101
+#, kde-format
+msgid "Encrypt with LUKS"
+msgstr "Kryptér med LUKS"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
+#: gui/sizedialogwidgetbase.ui:111
+#, kde-format
+msgid "Logical Volume Name:"
+msgstr "Navn på logisk diskområde:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/sizedialogwidgetbase.ui:128
+#, kde-format
+msgctxt "@label"
+msgid "Label:"
+msgstr "Etiket:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:164
+#, kde-format
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Min. størrelse:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:187
+#, kde-format
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Maks. størrelse:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
+#: gui/sizedialogwidgetbase.ui:210
+#, kde-format
+msgctxt "@label:listbox"
+msgid "F&ree space before:"
+msgstr "Le&dig plads før:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: gui/sizedialogwidgetbase.ui:245
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Si&ze:"
+msgstr "S&tørrelse:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
+#: gui/sizedialogwidgetbase.ui:274
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Ledig plads efter:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
+#: gui/sizedialogwidgetbase.ui:297
+#, kde-format
+msgid "Permissions"
+msgstr "Rettigheder"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
+#: gui/sizedialogwidgetbase.ui:326
+#, kde-format
+msgid "Allow everyone to write and read on this device"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
+#: gui/sizedialogwidgetbase.ui:329
+#, kde-format
+msgid "Everyone"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
+#: gui/sizedialogwidgetbase.ui:336
+#, kde-format
+msgid ""
+"Allow only root to write and read on this device, you will need to setup per-"
+"folder permissions"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
+#: gui/sizedialogwidgetbase.ui:339
+#, kde-format
+msgid "Only Root"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:352
+#, kde-format
+msgid "Primar&y"
+msgstr "P&rimær"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:359
+#, kde-format
+msgid "E&xtended"
+msgstr "U&dvidet"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:366
+#, kde-format
+msgid "&Logical"
+msgstr "&Logisk"
+
+#: gui/smartdialog.cpp:54
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "SMART Properties: <filename>%1</filename>"
+msgstr "SMART-egenskaber: <filename>%1</filename>"
+
+#: gui/smartdialog.cpp:58
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Save SMART Report"
+msgstr "Gem SMART-rapport"
+
+#: gui/smartdialog.cpp:96 gui/smartdialog.cpp:153
+#, kde-format, kde-kuit-format
+msgctxt "@label SMART number of bad sectors"
+msgid "none"
+msgstr "ingen"
+
+#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Pre-Failure"
+msgstr "Præ-sammenbrud"
+
+#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Old-Age"
+msgstr "Alderdom"
+
+#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Online"
+msgstr "Online"
+
+#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Offline"
+msgstr "Offline"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
+#: gui/smartdialog.cpp:155 gui/smartdialogwidgetbase.ui:68
+#, kde-format
+msgid "Model:"
+msgstr "Model:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
+#: gui/smartdialog.cpp:156 gui/smartdialogwidgetbase.ui:97
+#, kde-format
+msgid "Serial number:"
+msgstr "Serienummer:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
+#: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
+#, kde-format
+msgid "Firmware revision:"
+msgstr "Firmware-revision:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
+#: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
+#, kde-format
+msgid "Temperature:"
+msgstr "Temperatur:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
+#: gui/smartdialog.cpp:159 gui/smartdialogwidgetbase.ui:184
+#, kde-format
+msgid "Bad sectors:"
+msgstr "Dårlige sektorer:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
+#: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
+#, kde-format
+msgid "Powered on for:"
+msgstr "Strøm på i:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
+#: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
+#, kde-format
+msgid "Power cycles:"
+msgstr "Strømcyklusser:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
+#: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
+#, kde-format
+msgid "Self tests:"
+msgstr "Selvtest:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
+#: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
+#, kde-format
+msgid "Overall assessment:"
+msgstr "Samlet vurdering:"
+
+#: gui/smartdialog.cpp:227
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Save SMART Report."
+msgstr "Kunne ikke gemme SMART-rapport."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:294
+#, kde-format
+msgid "Id"
+msgstr "Id"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:299
+#, kde-format
+msgid "Attribute"
+msgstr "Attribut"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:304
+#, kde-format
+msgid "Failure Type"
+msgstr "Type af sammenbrud"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:309
+#, kde-format
+msgid "Update Type"
+msgstr "Opdateringstype"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:314
+#, kde-format
+msgid "Worst"
+msgstr "Værste"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:319
+#, kde-format
+msgid "Current"
+msgstr "Nuværende"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:324
+#, kde-format
+msgid "Threshold"
+msgstr "Tærskel"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:329
+#, kde-format
+msgid "Raw"
+msgstr "Rå"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:334
+#, kde-format
+msgid "Assessment"
+msgstr "Vurdering"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:339
+#, kde-format
+msgid "Value"
+msgstr "Værdi"
+
+#: gui/treelog.cpp:110
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not create temporary output file to save <filename>%1</filename>."
+msgstr ""
+"Kunne ikke oprette midlertidig outputfil for at gemme <filename>%1</"
+"filename>."
+
+#: gui/treelog.cpp:110
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Saving Log File"
+msgstr "Fejl under gemning af logfil"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:59
+#, kde-format
+msgctxt ""
+"@title:column Severity of a log entry / log level. Text must be very short."
+msgid "Sev."
+msgstr "Alv."
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:62
+#, kde-format
+msgid "Severity"
+msgstr "Alvorlighed"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:67
+#, kde-format
+msgctxt "@title:column a time stamp of a log entry"
+msgid "Time"
+msgstr "Tidspunkt"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:72
+#, kde-format
+msgctxt "@title:column the text message of a log entry"
+msgid "Message"
+msgstr "Meddelelse"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextVGName)
+#: gui/volumegroupwidgetbase.ui:34
+#, kde-format
+msgid "Volume Group Name: "
+msgstr "Navn på diskområdegruppe: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
+#: gui/volumegroupwidgetbase.ui:47
+#, kde-format
+msgid "Physical Extent Size: "
+msgstr "Fysisk udvidelsesstørrelse: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSize)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalUsedSize)
+#: gui/volumegroupwidgetbase.ui:60 gui/volumegroupwidgetbase.ui:120
+#: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
+#, kde-format
+msgid "---"
+msgstr "---"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
+#: gui/volumegroupwidgetbase.ui:79
+#, kde-format
+msgid " MiB"
+msgstr " MiB"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalLV)
+#: gui/volumegroupwidgetbase.ui:107
+#, kde-format
+msgid "Total LV: "
+msgstr "LV i alt: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
+#: gui/volumegroupwidgetbase.ui:130
+#, kde-format
+msgid "Volume Group Type: "
+msgstr "Type af diskområdegruppe: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
+#: gui/volumegroupwidgetbase.ui:140
+#, kde-format
+msgid "Total Size: "
+msgstr "Størrelse i alt: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/volumegroupwidgetbase.ui:153
+#, kde-format
+msgid "Total Sectors: "
+msgstr "Sektorer i alt: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
+#: gui/volumegroupwidgetbase.ui:186
+#, kde-format
+msgid "Used Size: "
+msgstr "Brugt størrelse: "
+
+#: main.cpp:77
+#, kde-kuit-format
+msgctxt "@title"
+msgid "<application>KDE Partition Manager</application>"
+msgstr "<application>KDE Partitionshåndtering</application>"
+
+#: main.cpp:79
+#, kde-kuit-format
+msgctxt "@title"
+msgid "Manage your disks, partitions and file systems"
+msgstr "Håndtér dine diske, partitioner og filsystemer"
+
+#: main.cpp:81
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid ""
+"© 2008-2013 Volker Lanz\n"
+"© 2012-2020 Andrius Štikonas"
+msgstr ""
+"© 2008-2013 Volker Lanz\n"
+"© 2012-2020 Andrius Štikonas"
+
+#: main.cpp:85
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Volker Lanz"
+msgstr "Volker Lanz"
+
+#: main.cpp:85
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Former maintainer"
+msgstr "Tidligere vedligeholder"
+
+#: main.cpp:86
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Andrius Štikonas"
+msgstr "Andrius Štikonas"
+
+#: main.cpp:86
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Maintainer"
+msgstr "Vedligeholder"
+
+#: main.cpp:87
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Teo Mrnjavac"
+msgstr "Teo Mrnjavac"
+
+#: main.cpp:87
+#, kde-format
+msgctxt "@info:credit"
+msgid "Former Calamares maintainer"
+msgstr "Tidligere Calamares-vedligeholder"
+
+#: main.cpp:88
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Chantara Tith"
+msgstr "Chantara Tith"
+
+#: main.cpp:88
+#, kde-format
+msgctxt "@info:credit"
+msgid "LVM support"
+msgstr "LVM-understøttelse"
+
+#: main.cpp:89
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Pali Rohár"
+msgstr "Pali Rohár"
+
+#: main.cpp:89
+#, kde-format
+msgctxt "@info:credit"
+msgid "UDF support"
+msgstr "UDF-understøttelse"
+
+#: main.cpp:90
+#, kde-format
+msgid "Hugo Pereira Da Costa"
+msgstr "Hugo Pereira Da Costa"
+
+#: main.cpp:90
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Partition Widget Design"
+msgstr "Design af partitionswidget"
+
+#: main.cpp:91
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Caio Jordão Carvalho"
+msgstr "Caio Jordão Carvalho"
+
+#: main.cpp:91
+#, kde-format
+msgctxt "@info:credit"
+msgid "Improved SMART support"
+msgstr "Forbedret SMART-understøttelse"
+
+#: main.cpp:104
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:shell"
+#| msgid "Device(s) to manage"
+msgctxt "@info:shell"
+msgid "Device to manage"
+msgstr "Enheder der skal håndteres"
+
+#. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
+#: partitionmanager.kcfg:45
+#, kde-format
+msgctxt "@label"
+msgid "Is this the first time KDE Partition Manager is being run?"
+msgstr "Er det første gang KDE Partitionshåndtering køres?"
+
+#. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
+#: partitionmanager.kcfg:49
+#, kde-format
+msgctxt "@label"
+msgid "Hide log messages below"
+msgstr "Skjul logmeddelelser nedenfor"
+
+#. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
+#: partitionmanager.kcfg:53
+#, kde-format
+msgctxt "@label"
+msgid "Partition sector alignment"
+msgstr "Justering af partitionssektor"
+
+#. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
+#: partitionmanager.kcfg:57
+#, kde-format
+msgctxt "@label"
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Brug cylinderbaseret justering (Windows XP-kompatibel)"
+
+#. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
+#: partitionmanager.kcfg:61
+#, kde-format
+msgctxt "@label"
+msgid "Align partitions per default"
+msgstr "Justér partitioner som standard"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:65
+#, kde-format
+msgctxt "@label"
+msgid "File system colors"
+msgstr "Filsystemsfarver"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:141
+#, kde-format
+msgctxt "@label"
+msgid "Show the application's menu bar"
+msgstr "Vis programmets menulinje"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:145
+#, kde-format
+msgctxt "@label"
+msgid "Backend plugin"
+msgstr "Plugin til backend"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:151
+#, kde-format
+msgctxt "@label"
+msgid "Preferred unit:"
+msgstr "Foretrukken enhed:"
+
+#: util/guihelpers.cpp:50
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The configured backend plugin \"%1\" could not be loaded.</"
+"para><para>Loading the default backend plugin \"%2\" instead.</para>"
+msgstr ""
+"<para>Det konfigurerede backend-plugin \"%1\" kunne ikke indlæses.</"
+"para><para>Indlæser standard backend-plugin \"%2\" i stedet.</para>"
+
+#: util/guihelpers.cpp:53 util/guihelpers.cpp:60
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error: Could Not Load Backend Plugin"
+msgstr "Fejl: Kunne ikke indlæse backend-plugin"
+
+#: util/guihelpers.cpp:57
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+"plugin could be loaded.</para><para>Please check your installation.</para>"
+msgstr ""
+"<para>Hverken det konfigurerede (\"%1\") eller standard (\"%2\") backend-"
+"plugin kunne indlæses.</para><para>Tjek din installation.</para>"
+
+#: util/guihelpers.cpp:75
+#, kde-kuit-format
+msgctxt "@title:menu"
+msgid "Columns"
+msgstr "Kolonner"
+
+#~ msgid "Partition Label:"
+#~ msgstr "Partitionsetiket:"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Partition &type:"
+#~ msgstr "Partitions&type:"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The configured external browser could not be run. Please check your "
+#~ "settings."
+#~ msgstr ""
+#~ "Den indstillede eksterne browser kunne ikke køres. Kontrollér dine "
+#~ "indstillinger."
+
+#~ msgctxt "@title:menu turn on and off edit toolbar"
+#~ msgid "Edit Toolbar"
+#~ msgstr "Redigeringsværktøjslinje"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Device Toolbar"
+#~ msgstr "Enheds-værktøjslinje"
+
+#~ msgid "Allow applying operations without administrator privileges"
+#~ msgstr "Tillad anvendelse af handlinger uden administratorrettigheder"
+
+#~ msgctxt "@label"
+#~ msgid "1 Sector"
+#~ msgid_plural "%1 Sectors"
+#~ msgstr[0] "1 sektor"
+#~ msgstr[1] "%1 sektorer"
+
+#~ msgid "Cylinders/Heads/Sectors:"
+#~ msgstr "Cylindre/hoveder/sektorer:"
+
+#~ msgid "Cylinder size:"
+#~ msgstr "Cylinderstørrelse:"
+
+#~ msgctxt "@info:shell"
+#~ msgid "Do not try to gain super user privileges"
+#~ msgstr "Prøv ikke at få superbruger-privilegier"
+
+#~ msgctxt "@label"
+#~ msgid "Allow applying operations without administrator privileges"
+#~ msgstr "Tillad anvendelse af handlinger uden administratorrettigheder"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "<para><warning>You do not have administrative privileges.</warning></"
+#~ "para><para>It is possible to run <application>%1</application> without "
+#~ "these privileges. You will, however, <emphasis>not</emphasis> be allowed "
+#~ "to apply operations.</para><para>Do you want to continue running "
+#~ "<application>%1</application>?</para><para><note>If administrator login "
+#~ "is disabled and your password is not accepted, then check <command>kdesu</"
+#~ "command> <link url='https://wiki.archlinux.org/index.php/"
+#~ "sudo#kdesu'>configuration</link>.</note></para>"
+#~ msgstr ""
+#~ "<para><warning>Du har ikke administratorrettigheder.</warning></"
+#~ "para><para>Det er muligt at køre <application>%1</application> uden disse "
+#~ "rettigheder. Du får dog <emphasis>ikke</emphasis> lov til at anvende "
+#~ "handlinger.</para><para>Vil du fortsat køre <application>%1</application>?"
+#~ "</para><para><note>Hvis administrator-login er deaktiveret og din "
+#~ "adgangskode ikke accepteres, så tjek <command>kdesu</command>-<link "
+#~ "url='https://wiki.archlinux.org/index.php/sudo#kdesu'>konfiguration</"
+#~ "link>.</note></para>"
+
+#~ msgctxt "@title:window"
+#~ msgid "No administrative privileges"
+#~ msgstr "Ingen administratorrettigheder"
+
+#~ msgctxt "@action:button"
+#~ msgid "Run without administrative privileges"
+#~ msgstr "Kør uden administratorrettigheder"
+
+#~ msgctxt "@info"
+#~ msgid "Do you want to overwrite the existing file <filename>%1</filename>?"
+#~ msgstr "Vil du overskrive den eksisterende fil <filename>%1</filename>?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Overwrite Existing File?"
+#~ msgstr "Overskriv eksisterende fil?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Overwrite File"
+#~ msgstr "Overskriv fil"
+
+#~ msgctxt "@info:shell"
+#~ msgid "Show advanced tab in configuration dialog"
+#~ msgstr "Vis fanebladet avanceret i konfigurationsdialogen"
+
+#~ msgctxt "@item:intable Encrypted file systems, e.g. btrfs[luks]"
+#~ msgid "%1 [%2]"
+#~ msgstr "%1 [%2]"
+
+#~ msgid "luks:"
+#~ msgstr "luks:"
+
+#~ msgid "ntfs:"
+#~ msgstr "ntfs:"
+
+#~ msgid "fat16:"
+#~ msgstr "fat16:"
+
+#~ msgid "fat32:"
+#~ msgstr "fat32:"
+
+#~ msgid "zfs:"
+#~ msgstr "zfs:"
+
+#~ msgid "reiserfs:"
+#~ msgstr "reiserfs:"
+
+#~ msgid "hpfs:"
+#~ msgstr "hpfs:"
+
+#~ msgid "jfs"
+#~ msgstr "jfs:"
+
+#~ msgid "hfs:"
+#~ msgstr "hfs:"
+
+#~ msgid "hfsplus:"
+#~ msgstr "hfsplus:"
+
+#~ msgid "ufs:"
+#~ msgstr "ufs:"
+
+#~ msgid "xfs:"
+#~ msgstr "xfs:"
+
+#~ msgid "ocfs2:"
+#~ msgstr "ocfs2:"
+
+#~ msgid "exfat:"
+#~ msgstr "exfat:"
+
+#~ msgid "nilfs2:"
+#~ msgstr "nilfs2:"
+
+#~ msgid "lvm2 pv:"
+#~ msgstr "lvm2 pv:"
+
+#~ msgid "f2fs:"
+#~ msgstr "f2fs:"
+
+#~ msgid "udf:"
+#~ msgstr "udf:"
+
+#~ msgctxt "@label device"
+#~ msgid "Heads:"
+#~ msgstr "Hoveder:"
+
+#~ msgctxt "@label device"
+#~ msgid "Cylinders:"
+#~ msgstr "Cylindre:"
+
+#~ msgctxt "@label device"
+#~ msgid "Sectors:"
+#~ msgstr "Sektorer:"
+
+#~ msgctxt "@label device"
+#~ msgid "Cylinder size:"
+#~ msgstr "Cylinderstørrelse:"
+
+#~ msgctxt "@info"
+#~ msgid "Could not open mount point file <filename>%1</filename>."
+#~ msgstr "Kunne ikke åbne monteringspunktfilen <filename>%1</filename>."
+
+#~ msgctxt "@title:window"
+#~ msgid "Error while reading mount points"
+#~ msgstr "Fejl under læsning af monteringspunkter"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open partition <filename>%1</filename> while trying to resize "
+#~| "the file system."
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Could not remove <filename>%1</filename>. There are still Logical Volumes "
+#~ "on the Volume Group."
+#~ msgstr ""
+#~ "Kunne ikke åbne partitionen <filename>%1</filename> under forsøg på at "
+#~ "ændre filsystemets størrelse."
+
+#, fuzzy
+#~| msgctxt "@action:inmenu"
+#~| msgid "Resize/Move"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Resize Volume"
+#~ msgstr "Ændr størrelse/Flyt"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Please select a device."
+#~ msgctxt "@info:tooltip"
+#~ msgid "Resize selected Volume device"
+#~ msgstr "Vælg en enhed."
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Please select a device."
+#~ msgctxt "@info:status"
+#~ msgid "Resize selected Volume device"
+#~ msgstr "Vælg en enhed."
+
+#~ msgctxt "@title:menu"
+#~ msgid "View"
+#~ msgstr "Vis"
+
+#~ msgid "Form"
+#~ msgstr "Form"
+
+#~ msgctxt "@item:button advanced settings button"
+#~ msgid "Advanced"
+#~ msgstr "Avanceret"
+
+#~ msgid "Unknown Device"
+#~ msgstr "Ukendt enhed"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting a partition just created: Undoing the operation to create the "
+#~ "partition."
+#~ msgstr ""
+#~ "Slette en nyoprettet partition: Fortryder handlingen for at oprette "
+#~ "partitionen."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing a partition just created: Updating start and end in existing "
+#~ "operation."
+#~ msgstr ""
+#~ "Ændre størrelse på en nyoprettet partition: Opdaterer start og slut i "
+#~ "eksisterende handling."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying a new partition: Creating a new partition instead."
+#~ msgstr "Kopiere en ny partition: Opretter en ny partition i stedet."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing label for a new partition: No new operation required."
+#~ msgstr "Ændre en ny partitions etiket: Ingen ny handling krævet."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing file system for a new partition: No new operation required."
+#~ msgstr "Skifte filsystem for en ny partition: Ingen ny handling krævet."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Checking file systems is automatically done when creating them: No new "
+#~ "operation required."
+#~ msgstr ""
+#~ "Tjek af filsystem udføres automatisk når de oprettes. Ingen ny handling "
+#~ "krævet."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Deleting a partition just copied: Removing the copy."
+#~ msgstr "Slette en nyligt kopieret partition: Fjerner kopien."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting a partition just copied over an existing partition: Removing the "
+#~ "copy and deleting the existing partition."
+#~ msgstr ""
+#~ "Slette en partition der lige er kopieret over en eksisterende partition: "
+#~ "Fjerner kopien og sletter den eksisterende partition."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copying a partition that is itself a copy: Copying the original source "
+#~ "partition instead."
+#~ msgstr ""
+#~ "Kopiere en partition der selv er en kopi: Kopierer den oprindelige "
+#~ "kildepartition i stedet."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Deleting a partition just restored: Removing the restore operation."
+#~ msgstr ""
+#~ "Slette en nyligt gendannet partition. Fjerner gendannelses-handlingen."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting a partition just restored to an existing partition: Removing the "
+#~ "restore operation and deleting the existing partition."
+#~ msgstr ""
+#~ "Slette en partition der lige er gendannet på en eksisterende partition: "
+#~ "Fjerner gendannelses-handlingen og sletter den eksisterende partition."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing flags again for the same partition: Removing old operation."
+#~ msgstr ""
+#~ "Ændre flag igen for den samme partition: Fjerner tidligere handling."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing label again for the same partition: Removing old operation."
+#~ msgstr ""
+#~ "Ændre etiket igen for den samme partition: Fjerner tidligere handling."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating new partition table, discarding previous operation on device."
+#~ msgstr ""
+#~ "Opretter en ny partitionstabel og kasserer tidligere handlinger på "
+#~ "enheden."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Add operation: %1"
+#~ msgstr "Tilføj handling: %1"
+
+#~ msgctxt "@item partition name"
+#~ msgid "New Partition"
+#~ msgstr "Ny partition"
+
+#~ msgctxt "@item partition name"
+#~ msgid "Restored Partition"
+#~ msgstr "Gendannet partition"
+
+#~ msgctxt "@item partition name"
+#~ msgid "Copy of %1"
+#~ msgstr "Kopi af %1"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Partition <filename>%1</filename> is not properly aligned (first sector: "
+#~ "%2, modulo: %3)."
+#~ msgstr ""
+#~ "Partitionen <filename>%1</filename> er ikke korrekt justeret (første "
+#~ "sektor: %2, modul: %3)."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Partition <filename>%1</filename> is not properly aligned (last sector: "
+#~ "%2, modulo: %3)."
+#~ msgstr ""
+#~ "Partitionen <filename>%1</filename> er ikke korrekt justeret (sidste "
+#~ "sektor: %2, modul: %3)."
+
+#~ msgctxt "@item partition role"
+#~ msgid "unallocated"
+#~ msgstr "ikke-allokeret"
+
+#~ msgctxt "@item partition role"
+#~ msgid "logical"
+#~ msgstr "logisk"
+
+#~ msgctxt "@item partition role"
+#~ msgid "extended"
+#~ msgstr "udvidet"
+
+#~ msgctxt "@item partition role"
+#~ msgid "primary"
+#~ msgstr "primær"
+
+#~ msgctxt "@item partition role"
+#~ msgid "none"
+#~ msgstr "ingen"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "boot"
+#~ msgstr "boot"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "root"
+#~ msgstr "root"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "swap"
+#~ msgstr "swap"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "hidden"
+#~ msgstr "skjult"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "raid"
+#~ msgstr "raid"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "lvm"
+#~ msgstr "lvm"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "lba"
+#~ msgstr "lba"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "hpservice"
+#~ msgstr "hpservice"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "palo"
+#~ msgstr "palo"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "prep"
+#~ msgstr "prep"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "msft-reserved"
+#~ msgstr "msft-reserveret"
+
+#~ msgctxt "@item partition table name"
+#~ msgid "unknown"
+#~ msgstr "ukendt"
+
+#~ msgctxt "@item:intable"
+#~ msgid "failing"
+#~ msgstr "sammenbrud"
+
+#~ msgctxt "@item:intable"
+#~ msgid "has failed"
+#~ msgstr "er brudt sammen"
+
+#~ msgctxt "@item:intable"
+#~ msgid "warning"
+#~ msgstr "advarsel"
+
+#~ msgctxt "@item:intable"
+#~ msgid "good"
+#~ msgstr "god"
+
+#~ msgctxt "@item:intable not applicable"
+#~ msgid "N/A"
+#~ msgstr "Utilg."
+
+#~ msgctxt "@item:intable"
+#~ msgid "%1 sector"
+#~ msgid_plural "%1 sectors"
+#~ msgstr[0] "%1 sektor"
+#~ msgstr[1] "%1 sektorer"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Read Error Rate"
+#~ msgstr "Frekvens af læsefejl"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Rate of hardware read errors while reading data from the disk surface."
+#~ msgstr ""
+#~ "Frekvens af hardware-forårsagede læsefejl under læsning af data fra "
+#~ "diskoverfladen."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Throughput Performance"
+#~ msgstr "Ydelse for gennemstrømning"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Overall (general) throughput performance of a hard disk drive. If the "
+#~ "value of this attribute is decreasing there is a high probability that "
+#~ "there is a problem with the disk."
+#~ msgstr ""
+#~ "Total (generel) gennemstrømningsydelse for en harddisk. Hvis værdien af "
+#~ "denne attribut er for nedadgående er der høj sandsynlighed for at der er "
+#~ "et problem med disken."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Spin-Up Time"
+#~ msgstr "Spin-op-tid"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Average time of spindle spin up from zero RPM to fully operational."
+#~ msgstr ""
+#~ "Gennemsnitstid for omdrejningsakslen til at spinne op fra nul RPM til "
+#~ "fuldt funktionel."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Start/Stop Count"
+#~ msgstr "Start-/stop-tælling"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "A tally of spindle start/stop cycles."
+#~ msgstr "En optælling af start-/stop-cyklusser for omdrejningsakslen."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Reallocated Sectors Count"
+#~ msgstr "Antal reallokerede sektorer"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of reallocated sectors. When the hard drive finds a read/write/"
+#~ "verification error, it marks this sector as &quot;reallocated&quot; and "
+#~ "transfers data to a special reserved area (spare area)."
+#~ msgstr ""
+#~ "Antal af reallokerede sektorer. Når harddisken finder en læse-/skrive-/"
+#~ "verificeringsfejl, markerer den denne sektor som &quot;reallokeret&quot; "
+#~ "og overfører data til et specielt reserveret område (reserveområde)."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Read Channel Margin"
+#~ msgstr "Margen for læsekanal"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Margin of a channel while reading data. The function of this attribute is "
+#~ "not specified."
+#~ msgstr ""
+#~ "Margen for en kanal under læsning af data. Denne attributs funktion er "
+#~ "ikke udspecificeret."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Seek Error Rate"
+#~ msgstr "Frekvens af søgefejl"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Rate of seek errors of the magnetic heads. If there is a partial failure "
+#~ "in the mechanical positioning system, then seek errors will arise."
+#~ msgstr ""
+#~ "Frekvens af søgefejl for de magnetiske hoveder. Hvis der er et delvist "
+#~ "sammenbrud i det mekaniske positioneringssystem, så vil der opstå "
+#~ "søgefejl."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Seek Time Performance"
+#~ msgstr "Ydelse for søgetid"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Average performance of seek operations of the magnetic heads. If this "
+#~ "attribute is decreasing, it is a sign of problems in the mechanical "
+#~ "subsystem."
+#~ msgstr ""
+#~ "Gennemsnitlig ydelse ved søgehandlinger for de magnetiske hoveder. Hvis "
+#~ "denne attribut er for nedadgående, er det et tegn på problemer i det "
+#~ "mekaniske undersystem."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power-On Hours"
+#~ msgstr "Timer med strøm på"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of hours in power-on state."
+#~ msgstr "Antal timer i tilstanden strøm på."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Spin Retry Count"
+#~ msgstr "Antal genforsøg på spin"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of retry of spin start attempts if the first attempt was "
+#~ "unsuccessful. An increase of this attribute value is a sign of problems "
+#~ "in the hard disk mechanical subsystem."
+#~ msgstr ""
+#~ "Antal genforsøg på spin-startforsøg hvis første forsøg mislykkedes. En "
+#~ "forøgelse af denne attributværdi er et tegn på problemer i harddiskens "
+#~ "mekaniske undersystem."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Recalibration Retries"
+#~ msgstr "Genforsøg på rekalibrering"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of recalibrations requested if the first attempt was unsuccessful. "
+#~ "An increase of this attribute value is a sign of problems in the hard "
+#~ "disk mechanical subsystem."
+#~ msgstr ""
+#~ "Antal rekalibreringer anmodet hvis første forsøg mislykkedes. En "
+#~ "forøgelse af denne attributværdi er et tegn på problemer i harddiskens "
+#~ "mekaniske undersystem."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power Cycle Count"
+#~ msgstr "Antal strømcyklusser"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of full hard disk power on/off cycles."
+#~ msgstr "Antal fulde strøm til/fra-cyklusser for harddisken."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Soft Read Error Rate"
+#~ msgstr "Frekvens af bløde læsefejl"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Uncorrected read errors reported to the operating system."
+#~ msgstr "Ukorrigerede læsefejl rapporteret til styresystemet."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "SATA Downshift Error Count"
+#~ msgstr "Antal fejl i SATA-downshift"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Western Digital and Samsung attribute."
+#~ msgstr "Attribut til Western Digital og Samsung."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "End-to-End Error"
+#~ msgstr "Ende-til-ende-fejl"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Part of HP's SMART IV technology: After transferring through the cache "
+#~ "RAM data buffer the parity data between the host and the hard drive did "
+#~ "not match."
+#~ msgstr ""
+#~ "En del af HP's SMART IV-teknologi: Efter overførsel gennem cache-ram-data-"
+#~ "bufferen matchede paritetsdata mellem værten og harddisken ikke."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Head Stability"
+#~ msgstr "Stabilitet af hoved"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Western Digital attribute."
+#~ msgstr "Western Digital-attribut."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Induced Op-Vibration Detection"
+#~ msgstr "Detektion af induceret op-vibration"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Reported Uncorrectable Errors"
+#~ msgstr "Rapporterede fejl der ikke kan korrigeres"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of errors that could not be recovered using hardware ECC."
+#~ msgstr "Antal fejl der ikke kunne gendannes med hardware-ECC."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Command Timeout"
+#~ msgstr "Tidsudløb af kommando"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of aborted operations due to HDD timeout."
+#~ msgstr "Antal afbrudte handlinger pga. HD-tidsudløb."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "High Fly Writes"
+#~ msgstr "Høj flyvning-skrivninger"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of fly height errors detected."
+#~ msgstr "Antal detekterede fejl pga. flyvehøjde."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Temperature Difference From 100"
+#~ msgstr "Temperaturforskel fra 100"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Value is equal to (100 &ndash; temp. °C), allowing manufacturer to set a "
+#~ "minimum threshold which corresponds to a maximum temperature."
+#~ msgstr ""
+#~ "Værdien er lig med (100 &ndash; temp. °C), hvilket lader producenten "
+#~ "sætte en minimumstærskel der svarer til en maksimumtemperatur."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "G-sense Error Rate"
+#~ msgstr "Frekvens af G-sense-fejl"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of errors resulting from externally-induced shock and vibration."
+#~ msgstr "Antal fejl medført af udefrakommende stød og vibrationer."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power Off Retract Count"
+#~ msgstr "Antal strøm fra-retract"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of power-off or emergency retract cycles"
+#~ msgstr "Antal strøm fra- eller nød-retract-cyklusser"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Load Cycle Count"
+#~ msgstr "Antal indlæsningscyklusser"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of load/unload cycles into head landing zone position."
+#~ msgstr "Antal indlæs-/afindlæs-cyklusser i hovedets landingszone-position."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Temperature"
+#~ msgstr "Temperatur"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Current internal temperature."
+#~ msgstr "Aktuel intern temperatur."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Hardware ECC Recovered"
+#~ msgstr "Hardware-ECC gendannet"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of errors that could be recovered using hardware ECC."
+#~ msgstr "Antal fejl der kunne gendannes med hardware-ECC."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Reallocation Event Count"
+#~ msgstr "Antal reallokeringshændelser"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of remap operations. The raw value of this attribute shows the "
+#~ "total number of attempts to transfer data from reallocated sectors to a "
+#~ "spare area."
+#~ msgstr ""
+#~ "Antal remap-handlinger. Den rå værdi af denne attribut viser det samlede "
+#~ "antal forsøg på at overføre data fra reallokerede sektorer til et "
+#~ "reserveområde."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Current Pending Sector Count"
+#~ msgstr "Antal aktuelt udestående sektorer"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Number of &quot;unstable&quot; sectors (waiting to be remapped, because "
+#~ "of read errors)."
+#~ msgstr ""
+#~ "Antal &quot;ustabile&quot; sektorer (venter på at blive remappet pga. "
+#~ "læsefejl)."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Uncorrectable Sector Count"
+#~ msgstr "Antal sektorer der ikke kan korrigeres"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of uncorrectable errors when reading/writing a sector."
+#~ msgstr ""
+#~ "Antal fejl der ikke kan korrigeres ved læsning af/skrivning til en sektor."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "UltraDMA CRC Error Count"
+#~ msgstr "Antal UltraDMA CRC-fejl"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of errors in data transfer via the interface cable as determined by "
+#~ "ICRC."
+#~ msgstr ""
+#~ "Antal fejl i dataoverførsler via grænsefladekablet som bestemt af ICRC."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Multi-Zone Error Rate<br/>Write Error Rate"
+#~ msgstr "Multi-zone-fejlfrekvens<br/>Frekvens af skrivefejl"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "The total number of errors when writing a sector."
+#~ msgstr "Det samlede antal fejl ved skrivning til en sektor."
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of off-track errors."
+#~ msgstr "Antal off-track-fejl."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Data Address Mark Errors"
+#~ msgstr "Fejl i data-adressemærker"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of Data Address Mark errors (or vendor-specific)."
+#~ msgstr "Antal fejl i data-adressemærker (eller producentspecifikt)."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Run Out Cancel"
+#~ msgstr "Run out-annullering"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of ECC errors"
+#~ msgstr "Antal ECC-fejl"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Soft ECC Correction"
+#~ msgstr "Blød ECC-korrigering"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of errors corrected by software ECC"
+#~ msgstr "Antal fejl korrigeret af software-ECC"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Thermal Asperity Rate"
+#~ msgstr "Frekvens af termisk asperitet"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of errors due to high temperature."
+#~ msgstr "Antal fejl pga. for høj temperatur."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Flying Height"
+#~ msgstr "Flyvehøjde"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Height of heads above the disk surface. A flying height that is too low "
+#~ "increases the chances of a head crash while a flying height that is too "
+#~ "high increases the chances of a read/write error."
+#~ msgstr ""
+#~ "Hovedernes højde over diskoverfladen. En flyvehøjde der er for lav "
+#~ "forøger risikoen for et hovedsammenbrud, hvorimod en for høj flyvehøjde "
+#~ "forøger risikoen for læse-/skrivefejl."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Spin High Current"
+#~ msgstr "Aktuel spin high"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Amount of surge current used to spin up the drive."
+#~ msgstr "Mængde surge current der bruges til at spinne drevet op."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Spin Buzz"
+#~ msgstr "Spin-buzz"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Number of buzz routines needed to spin up the drive due to insufficient "
+#~ "power."
+#~ msgstr ""
+#~ "Antal buzz-rutiner der kræves for at spinne drevet op pga. utilstrækkelig "
+#~ "strøm."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Offline Seek Performance"
+#~ msgstr "Ydelse af offline-søgning"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Drive's seek performance during its internal tests."
+#~ msgstr "Drevets søgeydelse under dets interne tests."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Vibration During Write"
+#~ msgstr "Vibration under skrivning"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Vibration During Write"
+#~ msgstr "Vibration under skrivning"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Shock During Write"
+#~ msgstr "Stød under skrivning"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Shock During Write"
+#~ msgstr "Stød under skrivning"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Disk Shift"
+#~ msgstr "Diskforskydning"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Distance the disk has shifted relative to the spindle (usually due to "
+#~ "shock or temperature)."
+#~ msgstr ""
+#~ "Afstand som disken har forskudt sig ift. omdrejningsakslen (normalt pga. "
+#~ "stød eller temperatur)."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "G-Sense Error Rate"
+#~ msgstr "Frekvens af G-sense-fejl"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "The number of errors resulting from externally-induced shock and "
+#~ "vibration."
+#~ msgstr "Antal fejl medført af udefrakommende stød og vibrationer."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Loaded Hours"
+#~ msgstr "Belastede timer"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Time spent operating under data load."
+#~ msgstr "Tid tilbragt under databelastning."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Load/Unload Retry Count"
+#~ msgstr "Antal genforsøg på indlæsning/afindlæsning"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of times head changes position."
+#~ msgstr "Antal gange hovedet skifter position."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Load Friction"
+#~ msgstr "Indlæsningsfriktion"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Resistance caused by friction in mechanical parts while operating."
+#~ msgstr "Modstand forårsaget af friktion i mekaniske dele under funktion."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Load/Unload Cycle Count"
+#~ msgstr "Antal indlæsning-/afindlæsning-cyklusser"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Total number of load cycles."
+#~ msgstr "Samlet antal indlæsningscyklusser."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Load-In Time"
+#~ msgstr "Indlæsningstid"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Total time of loading on the magnetic heads actuator (time not spent in "
+#~ "parking area)."
+#~ msgstr ""
+#~ "Samlet tid med indlæsning på de magnetiske hoveders aktuator (tid ikke "
+#~ "tilbragt i parkeringsområdet)."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Torque Amplification Count"
+#~ msgstr "Antal momentforstærkninger"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of attempts to compensate for platter speed variations."
+#~ msgstr "Antal forsøg på at kompensere for variationer i pladehastighed."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power-Off Retract Cycle"
+#~ msgstr "Strøm fra-retract-cyklusser"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "The number of times the magnetic armature was retracted automatically as "
+#~ "a result of cutting power."
+#~ msgstr ""
+#~ "Antal gange de magnetiske armatur blev trukket tilbage automatisk som et "
+#~ "resultat af afbrydelse af strømmen."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "GMR Head Amplitude"
+#~ msgstr "Amplitude for GMR-hovedet"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Amplitude of &quot;thrashing&quot; (distance of repetitive forward/"
+#~ "reverse head motion)"
+#~ msgstr ""
+#~ "Amplitude for &quot;thrashing&quot; (afstand ved repetitiv fremad-/"
+#~ "baglænsbevægelse af hovedet)"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Drive Temperature"
+#~ msgstr "Drevtemperatur"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Endurance Remaining"
+#~ msgstr "Tilbageværende udholdenhed"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of physical erase cycles completed on the drive as a percentage of "
+#~ "the maximum physical erase cycles the drive supports"
+#~ msgstr ""
+#~ "Antal fysiske slettecyklusser udført på drevet som en procentdel af "
+#~ "maksimalt antal fysiske slettecyklusser drevet understøtter"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power-On Seconds"
+#~ msgstr "Strøm på-sekunder"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Time elapsed in the power-on state"
+#~ msgstr "Forløbet tid i strøm på-tilstand"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Unrecoverable ECC Count"
+#~ msgstr "Antal ikke-gendanbare ECC"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of unrecoverable ECC errors"
+#~ msgstr "Antal ECC-fejl der ikke kan gendannes"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Good Block Rate"
+#~ msgstr "Frekvens af gode blokke"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Count of available reserved blocks as percentage of the total number of "
+#~ "reserved blocks"
+#~ msgstr ""
+#~ "Antal tilgængelige reserverede blokke som procentdel af det samlede antal "
+#~ "reserverede blokke"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Head Flying Hours<br/>or Transfer Error Rate (Fujitsu)"
+#~ msgstr "Hovedets flyvetimer<br/>eller frekvens af overførselsfejl (Fujitsu)"
+
+#~ msgctxt "SMART attr description"
+#~ msgid ""
+#~ "Time while head is positioning<br/>or counts the number of times the link "
+#~ "is reset during a data transfer."
+#~ msgstr ""
+#~ "Tid hvor hovedet positionerer sig<br/>eller antal gange hvor linket "
+#~ "nulstilles under en dataoverførsel."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Total LBAs Written"
+#~ msgstr "Antal LBA'er skrevet i alt"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Total LBAs Written"
+#~ msgstr "Antal LBA'er skrevet i alt"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Total LBAs Read"
+#~ msgstr "Antal LBA'er læst i alt"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Total LBAs Read"
+#~ msgstr "Antal LBA'er læst i alt"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Read Error Retry Rate"
+#~ msgstr "Frekvens af læsefejl-genforsøg"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of errors while reading from a disk"
+#~ msgstr "Antal fejl under læsning fra en disk"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Free Fall Protection"
+#~ msgstr "Beskyttelse mod frit fald"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of &quot;Free Fall Events&quot; detected"
+#~ msgstr "Antal detekterede &quot;frit fald-hændelser&quot;"
+
+#~ msgctxt "@item:intable degrees in Celsius and Fahrenheit"
+#~ msgid "%1° C / %2° F"
+#~ msgstr "%1° C / %2° F"
+
+#~ msgctxt "@item"
+#~ msgid "Aborted"
+#~ msgstr "Afbrudt"
+
+#~ msgctxt "@item"
+#~ msgid "Interrupted"
+#~ msgstr "Forstyrret"
+
+#~ msgctxt "@item"
+#~ msgid "Fatal error"
+#~ msgstr "Fatal fejl"
+
+#~ msgctxt "@item"
+#~ msgid "Unknown error"
+#~ msgstr "Ukendt fejl"
+
+#~ msgctxt "@item"
+#~ msgid "Electrical error"
+#~ msgstr "Elektrisk fejl"
+
+#~ msgctxt "@item"
+#~ msgid "Servo error"
+#~ msgstr "Servo-fejl"
+
+#~ msgctxt "@item"
+#~ msgid "Read error"
+#~ msgstr "Læsefejl"
+
+#~ msgctxt "@item"
+#~ msgid "Handling error"
+#~ msgstr "Håndteringsfejl"
+
+#~ msgctxt "@item"
+#~ msgid "Self test in progress"
+#~ msgstr "Selvtest i gang"
+
+#~ msgctxt "@item"
+#~ msgid "Success"
+#~ msgstr "Gennemført"
+
+#~ msgctxt "@item"
+#~ msgid "Healthy"
+#~ msgstr "Sund"
+
+#~ msgctxt "@item"
+#~ msgid "Has been used outside of its design parameters in the past."
+#~ msgstr "Er tidligere blevet brugt udenfor dens designparametre."
+
+#~ msgctxt "@item"
+#~ msgid "Has some bad sectors."
+#~ msgstr "Har nogle dårlige sektorer."
+
+#~ msgctxt "@item"
+#~ msgid "Is being used outside of its design parameters right now."
+#~ msgstr "Bruges aktuelt udenfor dens designparametre."
+
+#~ msgctxt "@item"
+#~ msgid "Has many bad sectors."
+#~ msgstr "Har mange dårlige sektorer."
+
+#~ msgctxt "@item"
+#~ msgid "Disk failure is imminent. Backup all data!"
+#~ msgstr "Disksammenbrud er nært forestående. Tag backup af alle data!"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre Btrfs-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Kunne ikke oprette midlertidig mappe."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+#~ "btrfs file system resize failed."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre Btrfs-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Ændring af størrelse på Btrfs-filsystem "
+#~ "mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing Btrfs file system on partition <filename>%1</filename>: "
+#~ "Unmount failed."
+#~ msgstr ""
+#~ "Advarsel: Ændring af Btrfs-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Afmontering mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre Btrfs-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Første montering mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Setting label for partition <filename>%1</filename> to %2"
+#~ msgstr "Sætter etiket for partitionen <filename>%1</filename> til %2"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "unknown"
+#~ msgstr "ukendt"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "extended"
+#~ msgstr "extended"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ext2"
+#~ msgstr "ext2"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ext3"
+#~ msgstr "ext3"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ext4"
+#~ msgstr "ext4"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "linuxswap"
+#~ msgstr "linuxswap"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "fat16"
+#~ msgstr "fat16"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "fat32"
+#~ msgstr "fat32"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ntfs"
+#~ msgstr "ntfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "reiser"
+#~ msgstr "reiser"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "reiser4"
+#~ msgstr "reiser4"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "xfs"
+#~ msgstr "xfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "jfs"
+#~ msgstr "jfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "hfs"
+#~ msgstr "hfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "hfsplus"
+#~ msgstr "hfsplus"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ufs"
+#~ msgstr "ufs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "unformatted"
+#~ msgstr "ikke-formateret"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "btrfs"
+#~ msgstr "btrfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "hpfs"
+#~ msgstr "hpfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "luks"
+#~ msgstr "luks"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "ocfs2"
+#~ msgstr "ocfs2"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "zfs"
+#~ msgstr "zfs"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "exfat"
+#~ msgstr "exfat"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "nilfs2"
+#~ msgstr "nilfs2"
+
+#~ msgctxt "@item filesystem name"
+#~ msgid "lvm2 pv"
+#~ msgstr "lvm2 pv"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Mount"
+#~ msgstr "Montér"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Unmount"
+#~ msgstr "Afmontér"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre JFS-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Kunne ikke oprette midlertidig mappe."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#~ "Remount failed."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre JFS-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Genmontering mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing JFS file system on partition <filename>%1</filename>: "
+#~ "Unmount failed."
+#~ msgstr ""
+#~ "Advarsel: Ændring af JFS-filsystemets størrelse på partitionen <filename>"
+#~ "%1</filename>: Afmontering mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre JFS-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Første montering mislykkedes."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Activate swap"
+#~ msgstr "Aktivér swap"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Deactivate swap"
+#~ msgstr "Deaktivér swap"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre NILFS2-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Kunne ikke oprette midlertidig mappe."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+#~ "NILFS2 file system resize failed."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre NILFS2-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Ændring af størrelse på NILFS2-filsystem "
+#~ "mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing NILFS2 file system on partition <filename>%1</"
+#~ "filename>: Unmount failed."
+#~ msgstr ""
+#~ "Advarsel: Ændring af NILFS2-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Afmontering mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre NILFS2-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Første montering mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Updating boot sector for NTFS file system on partition <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Opdaterer boot-sektoren for NTFS-filsystemet på partitionen <filename>%1</"
+#~ "filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition <filename>%1</filename> for writing when trying "
+#~ "to update the NTFS boot sector."
+#~ msgstr ""
+#~ "Kunne ikke åbne partitionen <filename>%1</filename> til skrivning ved "
+#~ "forsøg på at opdatere NTFS boot-sektoren."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not seek to position 0x1c on partition <filename>%1</filename> when "
+#~ "trying to update the NTFS boot sector."
+#~ msgstr ""
+#~ "Kunne ikke søge til positionen 0x1c på partitionen <filename>%1</"
+#~ "filename> under forsøg på at opdatere NTFS boot-sektor."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not write new start sector to partition <filename>%1</filename> "
+#~ "when trying to update the NTFS boot sector."
+#~ msgstr ""
+#~ "Kunne ikke skrive ny startsektor til partitionen <filename>%1</filename> "
+#~ "under forsøg på at opdatere NTFS boot-sektor."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Updated NTFS boot sector for partition <filename>%1</filename> "
+#~ "successfully."
+#~ msgstr ""
+#~ "Opdatering af NTFS boot-sektor på partitionen <filename>%1</filename> "
+#~ "gennemført."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre XFS-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Kunne ikke oprette midlertidig mappe."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#~ "xfs_growfs failed."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre XFS-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: xfs_growfs mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing XFS file system on partition <filename>%1</filename>: "
+#~ "Unmount failed."
+#~ msgstr ""
+#~ "Advarsel: Ændring af XFS-filsystemets størrelse på partitionen <filename>"
+#~ "%1</filename>: Afmontering mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Det mislykkedes at ændre XFS-filsystemets størrelse på partitionen "
+#~ "<filename>%1</filename>: Første montering mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on source partition <filename>%1</filename> "
+#~ "for backup."
+#~ msgstr ""
+#~ "Kunne ikke åbne filsystemet på kildepartitionen <filename>%1</filename> "
+#~ "til backup."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not create backup file <filename>%1</filename>."
+#~ msgstr "Kunne ikke oprette backup-filen <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Back up file system on partition <filename>%1</filename> to <filename>%2</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Lav backup af filsystemet på partitionen <filename>%1</filename> til "
+#~ "<filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Check file system on partition <filename>%1</filename>"
+#~ msgstr "Kontrollér filsystemet på partitionen <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Cannot copy file system: File system on target partition <filename>%1</"
+#~ "filename> is smaller than the file system on source partition <filename>"
+#~ "%2</filename>."
+#~ msgstr ""
+#~ "Kan ikke kopiere filsystem: Filsystemet på målpartitionen <filename>%1</"
+#~ "filename> er mindre end filsystemet på kildepartitionen <filename>%2</"
+#~ "filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on source partition <filename>%1</filename> "
+#~ "for copying."
+#~ msgstr ""
+#~ "Kunne ikke åbne filsystemet på kildepartitionen <filename>%1</filename> "
+#~ "til kopiering."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on target partition <filename>%1</filename> "
+#~ "for copying."
+#~ msgstr ""
+#~ "Kunne ikke åbne filsystemet på målpartitionen <filename>%1</filename> til "
+#~ "kopiering."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Closing device. This may take a while, especially on slow devices like "
+#~ "Memory Sticks."
+#~ msgstr ""
+#~ "Lukker enhed. Dette kan tage et stykke tid, særligt ved langsomme enheder "
+#~ "såsom USB-penne."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy file system on partition <filename>%1</filename> to partition "
+#~ "<filename>%2</filename>"
+#~ msgstr ""
+#~ "Kopiér filsystemet på partitionen <filename>%1</filename> til partitionen "
+#~ "<filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Failed to set the system type for the file system on partition <filename>"
+#~ "%1</filename>."
+#~ msgstr ""
+#~ "Kunne ikke sætte systemtypen for filsystemet på partitionen <filename>%1</"
+#~ "filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to set "
+#~ "the system type for partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Kunne ikke åbne partitionstabellen på enheden <filename>%1</filename> for "
+#~ "at sætte systemtypen for partitionen <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> to set the system type for "
+#~ "partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Kunne ikke åbne enheden <filename>%1</filename> for at sætte systemtypen "
+#~ "for partitionen <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Create file system <filename>%1</filename> on partition <filename>%2</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Opret filsystemet <filename>%1</filename> på partitionen <filename>%2</"
+#~ "filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Failed to add partition <filename>%1</filename> to device <filename>%2</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Det mislykkedes at føje partitionen <filename>%1</filename> til enheden "
+#~ "<filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to "
+#~ "create new partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Kunne ikke åbne enheden <filename>%1</filename> for at oprette den nye "
+#~ "partition <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> to create new partition "
+#~ "<filename>%2</filename>."
+#~ msgstr ""
+#~ "Kunne ikke åbne enheden <filename>%1</filename> for at oprette den nye "
+#~ "partition <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create new partition <filename>%1</filename>"
+#~ msgstr "Opret ny partition <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create new partition on device <filename>%1</filename>"
+#~ msgstr "Opret ny partition på enheden <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not open device <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Oprettelse af partitionstabel mislykkedes: Kunne ikke åbne enheden "
+#~ "<filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create new partition table on device <filename>%1</filename>"
+#~ msgstr "Opret ny partitionstabel på enheden <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not delete file system on <filename>%1</filename>."
+#~ msgstr "Kunne ikke slette filsystemet på <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to "
+#~ "delete file system on <filename>%2</filename>."
+#~ msgstr ""
+#~ "Kunne ikke åbne partitionstabellen på enheden <filename>%1</filename> for "
+#~ "at slette filsystemet på <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not delete file system signature for partition <filename>%1</"
+#~ "filename>: Failed to open device <filename>%2</filename>."
+#~ msgstr ""
+#~ "Kunne ikke slette filsystemets signatur for partitionen <filename>%1</"
+#~ "filename>: Det mislykkedes at åbne enheden <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Delete file system on <filename>%1</filename>"
+#~ msgstr "Slet filsystemet på <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not delete partition <filename>%1</filename>."
+#~ msgstr "Kunne ikke slette partitionen <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to "
+#~ "delete partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Kunne ikke åbne partitionstabellen på enheden <filename>%1</filename> for "
+#~ "at slette partitionen <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting partition failed: Could not open device <filename>%1</filename>."
+#~ msgstr ""
+#~ "Det mislykkedes at slette partitionen: Kunne ikke åbne enheden <filename>"
+#~ "%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Delete the partition <filename>%1</filename>"
+#~ msgstr "Slet partitionen <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "The logical sector sizes in the source and target for copying are not the "
+#~ "same. This is currently unsupported."
+#~ msgstr ""
+#~ "Den logiske sektorstørrelse på kilden og målet for kopiering er ikke den "
+#~ "samme. Dette er i øjeblikket ikke understøttet."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying %1 blocks (%2 sectors) from %3 to %4, direction: %5."
+#~ msgstr "Kopierer %1 blokke (%2 sektorer) fra %3 til %4, retning: %5."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying %1 MiB/second, estimated time left: %2"
+#~ msgstr "Kopierer med %1 MiB/sek. Estimeret tid tilbage: %2"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying remainder of block size %1 from %2 to %3."
+#~ msgstr "Kopierer resten af blokstørrelsen %1 fra %2 til %3."
+
+#~ msgid "1 sector"
+#~ msgid_plural "%1 sectors"
+#~ msgstr[0] "1 sektor"
+#~ msgstr[1] "%1 sektorer"
+
+#~ msgctxt ""
+#~ "@info/plain argument 2 is a string such as 7 sectors (localized "
+#~ "accordingly)"
+#~ msgid "Copying 1 block (%2) finished."
+#~ msgid_plural "Copying %1 blocks (%2) finished."
+#~ msgstr[0] "Kopiering af 1 blok (%2) udført."
+#~ msgstr[1] "Kopiering af %1 blokke (%2) udført."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Source and target for copying do not overlap: Rollback is not required."
+#~ msgstr ""
+#~ "Kilde og mål for kopiering overlapper ikke. Tilbagerulning er ikke "
+#~ "påkrævet."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Rollback from: First sector: %1, last sector: %2."
+#~ msgstr "Rul tilbage fra: Første sektor: %1 - sidste sektor: %2."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Rollback to: First sector: %1, last sector: %2."
+#~ msgstr "Rul tilbage til: Første sektor: %1 - sidste sektor: %2."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not open device <filename>%1</filename> to rollback copying."
+#~ msgstr ""
+#~ "Kunne ikke åbne enheden <filename>%1</filename> til kopiering for "
+#~ "tilbagerulning."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Rollback failed: Source or target are not devices."
+#~ msgstr "Tilbagerulning mislykkedes. Kilde eller mål er ikke enheder."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Job: %1"
+#~ msgstr "Job: %1"
+
+#~ msgctxt "@info/plain job status (error, warning, ...)"
+#~ msgid "%1: %2"
+#~ msgstr "%1: %2"
+
+#~ msgctxt "@info:progress job"
+#~ msgid "Pending"
+#~ msgstr "Udestående"
+
+#~ msgctxt "@info:progress job"
+#~ msgid "Success"
+#~ msgstr "Udført"
+
+#~ msgctxt "@info:progress job"
+#~ msgid "Error"
+#~ msgstr "Fejl"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on partition <filename>%1</filename> for "
+#~ "moving."
+#~ msgstr ""
+#~ "Kunne ikke åbne filsystemet på partitionen <filename>%1</filename> til "
+#~ "flytning."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not create target for moving file system on partition <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Kunne ikke oprette mål for flytning af filsystem på partitionen <filename>"
+#~ "%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Rollback for file system on partition <filename>%1</filename> failed."
+#~ msgstr ""
+#~ "Tilbagerulning for filsystemet på partitionen <filename>%1</filename> "
+#~ "mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Closing device. This may take a few seconds."
+#~ msgstr "Lukker enhed. Dette kan vare nogle sekunder."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Move the file system on partition <filename>%1</filename> to sector %2"
+#~ msgstr ""
+#~ "Flyt filsystemet på partitionen <filename>%1</filename> til sektor %2"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "The file system on partition <filename>%2</filename> already has the "
+#~ "requested length of 1 sector."
+#~ msgid_plural ""
+#~ "The file system on partition <filename>%2</filename> already has the "
+#~ "requested length of %1 sectors."
+#~ msgstr[0] ""
+#~ "Filsystemet på partitionen <filename>%2</filename> har allerede den "
+#~ "forespurgte længde på 1 sektor."
+#~ msgstr[1] ""
+#~ "Filsystemet på partitionen <filename>%2</filename> har allerede den "
+#~ "forespurgte længde på %1 sektorer."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Resizing file system from %1 to %2 sectors."
+#~ msgstr "Ændrer størrelse på filsystem fra %1 til %2 sektorer."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Resizing a %1 file system using internal backend functions."
+#~ msgstr "Ændrer størrelse på et %1-filsystem med interne backend-funktioner."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "The file system on partition <filename>%1</filename> cannot be resized "
+#~ "because there is no support for it."
+#~ msgstr ""
+#~ "Filsystemets størrelse på partitionen <filename>%1</filename> kan ikke "
+#~ "ændres, da dette ikke understøttes."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Successfully resized file system using internal backend functions."
+#~ msgstr "Filsystemets størrelse er ændret med interne backend-funktioner."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not read geometry for partition <filename>%1</filename> while "
+#~ "trying to resize the file system."
+#~ msgstr ""
+#~ "Kunne ikke læse geometri for partitionen <filename>%1</filename> under "
+#~ "forsøg på at ændre filsystemets størrelse."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Maximize file system on <filename>%1</filename> to fill the partition"
+#~ msgstr ""
+#~ "Forstør filsystemet på <filename>%1</filename> til at fylde partitionen"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Resize file system on partition <filename>%2</filename> to 1 sector"
+#~ msgid_plural ""
+#~ "Resize file system on partition <filename>%2</filename> to %1 sectors"
+#~ msgstr[0] ""
+#~ "Ændr filsystemets størrelse på partitionen <filename>%2</filename> til 1 "
+#~ "sektor"
+#~ msgstr[1] ""
+#~ "Ændr filsystemets størrelse på partitionen <filename>%2</filename> til %1 "
+#~ "sektorer"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not open backup file <filename>%1</filename> to restore from."
+#~ msgstr ""
+#~ "Kunne ikke åbne backup-filen <filename>%1</filename> til at gendanne fra."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open target partition <filename>%1</filename> to restore to."
+#~ msgstr ""
+#~ "Kunne ikke åbne målpartitionen <filename>%1</filename> til at gendanne "
+#~ "til."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Restore the file system from file <filename>%1</filename> to partition "
+#~ "<filename>%2</filename>"
+#~ msgstr ""
+#~ "Gendan filsystemet fra filen <filename>%1</filename> til partitionen "
+#~ "<filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "File system on partition <filename>%1</filename> does not support setting "
+#~ "labels. Job ignored."
+#~ msgstr ""
+#~ "Filsystemet på partitionen <filename>%1</filename> understøtter ikke at "
+#~ "sætte etiketter. Jobbet ignoreret."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Set the file system label on partition <filename>%1</filename> to \"%2\""
+#~ msgstr ""
+#~ "Sæt filsystemets etiket på partitionen <filename>%1</filename> til \"%2\""
+
+#~ msgctxt "@info/plain flag turned on, active"
+#~ msgid "on"
+#~ msgstr "til"
+
+#~ msgctxt "@info/plain flag turned off, inactive"
+#~ msgid "off"
+#~ msgstr "fra"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "There was an error setting flag %1 for partition <filename>%2</filename> "
+#~ "to state %3."
+#~ msgstr ""
+#~ "Der opstode en fejl under sætning af flaget %1 for partitionen <filename>"
+#~ "%2</filename> til status %3."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not find partition <filename>%1</filename> on device <filename>%2</"
+#~ "filename> to set partition flags."
+#~ msgstr ""
+#~ "Kunne ikke finde partitionen <filename>%1</filename> på enheden <filename>"
+#~ "%2</filename> for at sætte partitionsflag."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to set "
+#~ "partition flags for partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Kunne ikke åbne partitionstabellen på enheden <filename>%1</filename> for "
+#~ "at sætte partionsflag for partitionen <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> to set partition flags for "
+#~ "partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Kunne ikke åbne enheden <filename>%1</filename> for at sætte "
+#~ "partitionsflag for partitionen <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Clear flags for partition <filename>%1</filename>"
+#~ msgstr "Ryd flag for partitionen <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Set the flags for partition <filename>%1</filename> to \"%2\""
+#~ msgstr "Sæt flagene for partitionen <filename>%1</filename> til \"%2\""
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> while trying to resize/move "
+#~ "partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Kunne ikke åbne enheden <filename>%1</filename> under forsøg på at ændre "
+#~ "partitionen <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Set geometry of partition <filename>%1</filename>: Start sector: %2, "
+#~ "length: %3"
+#~ msgstr ""
+#~ "Sæt geometri for partitionen <filename>%1</filename>: Startsektor: %2, "
+#~ "længde: %3"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not open random data source to overwrite file system."
+#~ msgstr ""
+#~ "Kunne ikke åbne tilfældig datakilde til overskrivning af filsystemet."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Shred the file system on <filename>%1</filename>"
+#~ msgstr "Rens filsystemet på <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Backup partition <filename>%1</filename> (%2, %3) to <filename>%4</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Sikkerhedskopiér partitionen <filename>%1</filename> (%2, %3) til "
+#~ "<filename>%4</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Check and repair partition <filename>%1</filename> (%2, %3)"
+#~ msgstr "Kontrollér og reparér partitionen <filename>%1</filename> (%2, %3)"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Maximizing file system on target partition <filename>%1</"
+#~ "filename> to the size of the partition failed."
+#~ msgstr ""
+#~ "Advarsel: Forstørrelse af filsystem på målpartitionen <filename>%1</"
+#~ "filename> til partitionens størrelse mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Checking target partition <filename>%1</filename> after copy failed."
+#~ msgstr ""
+#~ "Kontrollerer målpartitionen <filename>%1</filename> efter at kopiering "
+#~ "mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying source to target partition failed."
+#~ msgstr "Kopiering af kilde til målpartition mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Creating target partition for copying failed."
+#~ msgstr "Oprettelse af målpartition for kopiering mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Checking source partition <filename>%1</filename> failed."
+#~ msgstr "Kontrol af kildepartitionen <filename>%1</filename> mislykkedes."
+
+#~ msgctxt "@info/plain status (success, error, warning...) of operation"
+#~ msgid "%1: %2"
+#~ msgstr "%1: %2"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</"
+#~ "filename> (%5, %6)"
+#~ msgstr ""
+#~ "Kopiér partitionen <filename>%1</filename> (%2, %3) til <filename>%4</"
+#~ "filename> (%5, %6)"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</"
+#~ "filename> (%5, %6) and grow it to %7"
+#~ msgstr ""
+#~ "Kopiér partitionen <filename>%1</filename> (%2, %3) til <filename>%4</"
+#~ "filename> (%5, %6) og forstør den til %7"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+#~ "(starting at %4) on <filename>%5</filename>"
+#~ msgstr ""
+#~ "Kopiér partitionen <filename>%1</filename> (%2, %3) til ikke-allokeret "
+#~ "plads (starter ved %4) på <filename>%5</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+#~ "(starting at %4) on <filename>%5</filename> and grow it to %6"
+#~ msgstr ""
+#~ "Kopiér partitionen <filename>%1</filename> (%2, %3) til ikke-allokeret "
+#~ "plads (starter ved %4) på <filename>%5</filename> og forstør den til %6"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create filesystem %1 on partition <filename>%2</filename>"
+#~ msgstr "Opret filsystemet %1 på partition <filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create a new partition table (type: %1) on <filename>%2</filename>"
+#~ msgstr ""
+#~ "Opret en ny partitionstabel (af typen: %1) på <filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Shred partition <filename>%1</filename> (%2, %3)"
+#~ msgstr "Rens partitionen <filename>%1</filename> (%2, %3)"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Delete partition <filename>%1</filename> (%2, %3)"
+#~ msgstr "Slet partitionen <filename>%1</filename> (%2, %3)"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create a new partition (%1, %2) on <filename>%3</filename>"
+#~ msgstr "Opret en ny partition (%1, %2) på <filename>%3</filename>"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "None"
+#~ msgstr "Ingen"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Pending"
+#~ msgstr "Udestående"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Running"
+#~ msgstr "Kørende"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Success"
+#~ msgstr "Udført"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Warning"
+#~ msgstr "Advarsel"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Error"
+#~ msgstr "Fejl"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Moving extended partition <filename>%1</filename> failed."
+#~ msgstr ""
+#~ "Flytning af den udvidede partition <filename>%1</filename> mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Checking partition <filename>%1</filename> after resize/move failed."
+#~ msgstr ""
+#~ "Kontrollerer partitionen <filename>%1</filename> efter at "
+#~ "størrelsesændring/flytning mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Resizing/moving partition <filename>%1</filename> failed."
+#~ msgstr ""
+#~ "Størrelsesændring/flytning af partitionen <filename>%1</filename> "
+#~ "mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Checking partition <filename>%1</filename> before resize/move failed."
+#~ msgstr ""
+#~ "Kontrol af partitionen <filename>%1</filename> før størrelsesændring/"
+#~ "flytning mislykkedes."
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Move partition <filename>%1</filename> to the left by %2"
+#~ msgstr "Flyt partitionen <filename>%1</filename> mod venstre med %2"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Move partition <filename>%1</filename> to the right by %2"
+#~ msgstr "Flyt partitionen <filename>%1</filename> mod højre med %2"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Grow partition <filename>%1</filename> from %2 to %3"
+#~ msgstr "Forstør partitionen <filename>%1</filename> fra %2 til %3"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Shrink partition <filename>%1</filename> from %2 to %3"
+#~ msgstr "Formindsk partitionen <filename>%1</filename> fra %2 til %3"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the left by %2 and grow it from "
+#~ "%3 to %4"
+#~ msgstr ""
+#~ "Flyt partitionen <filename>%1</filename> mod venstre med %2 og forstør "
+#~ "den fra %3 til %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the right by %2 and grow it "
+#~ "from %3 to %4"
+#~ msgstr ""
+#~ "Flyt partitionen <filename>%1</filename> mod højre med %2 og forstør den "
+#~ "fra %3 til %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the left by %2 and shrink it "
+#~ "from %3 to %4"
+#~ msgstr ""
+#~ "Flyt partitionen <filename>%1</filename> mod venstre med %2 og formindsk "
+#~ "den fra %3 til %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the right by %2 and shrink it "
+#~ "from %3 to %4"
+#~ msgstr ""
+#~ "Flyt partitionen <filename>%1</filename> mod højre med %2 og formindsk "
+#~ "den fra %3 til %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Unknown resize/move action."
+#~ msgstr "Ukendt størrelsesændring/flytning."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not resize file system to shrink partition "
+#~ "<filename>%1</filename>."
+#~ msgstr ""
+#~ "Størrelsesændring/flytning mislykkedes: Kunne ikke ændre filsystemets "
+#~ "størrelse for at formindske partitionen <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not shrink partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Størrelsesændring/flytning mislykkedes: Kunne ikke formindske partitionen "
+#~ "<filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Moving partition <filename>%1</filename> failed."
+#~ msgstr "Flytning af partitionen <filename>%1</filename> mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Moving the filesystem for partition <filename>%1</filename> failed. "
+#~ "Rolling back."
+#~ msgstr ""
+#~ "Flytning af filsystem for partitionen <filename>%1</filename> "
+#~ "mislykkedes. Ruller tilbage."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Moving back partition <filename>%1</filename> to its original position "
+#~ "failed."
+#~ msgstr ""
+#~ "Tilbageflytning af partitionen <filename>%1</filename> til dens "
+#~ "oprindelige position mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not grow partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Størrelsesændring/flytning mislykkedes: Kunne ikke forstørre partitionen "
+#~ "<filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not resize the file system on partition "
+#~ "<filename>%1</filename>"
+#~ msgstr ""
+#~ "Størrelsesændring/flytning mislykkedes: Kunne ikke ændre filsystemets "
+#~ "størrelse på partitionen <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not restore old partition size for partition <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Kunne ikke genoprette tidligere partitionsstørrelse for partitionen "
+#~ "<filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Checking target file system on partition <filename>%1</filename> after "
+#~ "the restore failed."
+#~ msgstr ""
+#~ "Kontrol af filsystemet på partitionen <filename>%1</filename> efter "
+#~ "genoprettelse mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Restoring file system failed."
+#~ msgstr "Genoprettelse af filsystem mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Creating the destination partition to restore to failed."
+#~ msgstr ""
+#~ "Oprettelse af destinationspartitionen til genoprettelse mislykkedes."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Restore partition from <filename>%1</filename> to <filename>%2</filename>"
+#~ msgstr ""
+#~ "Genopret partition fra <filename>%1</filename> til <filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Restore partition on <filename>%1</filename> at %2 from <filename>%3</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Genopret partition på <filename>%1</filename> ved %2 fra <filename>%3</"
+#~ "filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Set label for partition <filename>%1</filename> to \"%2\""
+#~ msgstr "Sæt etiket for partitionen <filename>%1</filename> til \"%2\""
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\""
+#~ msgstr ""
+#~ "Sæt etiket for partitionen <filename>%1</filename> fra \"%2\" til \"%3\""
+
+#~ msgctxt "@info/plain"
+#~ msgid "Set flags for partition <filename>%1</filename> to \"%2\""
+#~ msgstr "Sæt flag for partitionen <filename>%1</filename> til \"%2\""
+
+#~ msgctxt "@info/plain"
+#~ msgid "LibParted Exception: %1"
+#~ msgstr "LibParted-undtagelse: %1"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not access device <filename>%1</filename>"
+#~ msgstr "Kunne ikke tilgå enheden <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Device found: %1"
+#~ msgstr "Enhed fundet: %1"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not retrieve partition table type "
+#~ "\"%1\" for <filename>%2</filename>."
+#~ msgstr ""
+#~ "Oprettelse af partitionstabel mislykkedes: Kunne ikke hente "
+#~ "partitionstabel type \"%1\" til <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not open backend device <filename>"
+#~ "%1</filename>."
+#~ msgstr ""
+#~ "Oprettelse af partitionstabel mislykkedes: Kunne ikke åbne backend-"
+#~ "enheden <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not create a new partition table "
+#~ "in the backend for device <filename>%1</filename>."
+#~ msgstr ""
+#~ "Oprettelse af partitionstabel mislykkedes: Kunne ikke oprette ny "
+#~ "partitionstabel i backenden for enheden <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "The flag \"%1\" is not available on the partition's partition table."
+#~ msgstr "Flaget \"%1\" er ikke tilgængeligt på partitionens partitionstabel."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Unknown partition role for new partition <filename>%1</filename> (roles: "
+#~ "%2)"
+#~ msgstr ""
+#~ "Ukendt partitionsrolle for den nye partition <filename>%1</filename> "
+#~ "(roller: %2)"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Failed to create new partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Det mislykkedes at oprette den nye partition <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Failed to create a new partition: could not get geometry for constraint."
+#~ msgstr ""
+#~ "Det mislykkedes at oprette en ny partition: Kunne ikke få geometri til "
+#~ "begrænsning."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting partition failed: Partition to delete (<filename>%1</filename>) "
+#~ "not found on disk."
+#~ msgstr ""
+#~ "Det mislykkedes at slette partitionen: Partitionen til sletning "
+#~ "(<filename>%1</filename>) blev ikke fundet på harddisken."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not set geometry for partition <filename>%1</filename> while trying "
+#~ "to resize/move it."
+#~ msgstr ""
+#~ "Kunne ikke sætte geometri for partitionen <filename>%1</filename> under "
+#~ "forsøg på at ændre størrelse på/flytte den."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not get constraint for partition <filename>%1</filename> while "
+#~ "trying to resize/move it."
+#~ msgstr ""
+#~ "Kunne ikke få begrænsning for partitionen <filename>%1</filename> under "
+#~ "forsøg på at ændre størrelse på/flytte den."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not get geometry for partition <filename>%1</filename> while trying "
+#~ "to resize/move it."
+#~ msgstr ""
+#~ "Kunne ikke få geometri for partitionen <filename>%1</filename> under "
+#~ "forsøg på at ændre størrelse på/flytte den."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition <filename>%1</filename> while trying to resize/"
+#~ "move it."
+#~ msgstr ""
+#~ "Kunne ikke åbne partitionen <filename>%1</filename> under forsøg på at "
+#~ "ændre størrelse på/flytte den."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Failed to erase filesystem signature on partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Kunne ikke slette filsystemsignatur på partitionen <filename>%1</"
+#~ "filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not delete file system on partition <filename>%1</filename>: Failed "
+#~ "to get partition."
+#~ msgstr ""
+#~ "Kunne ikke slette filsystemet på partitionen <filename>%1</filename>: Det "
+#~ "mislykkedes at hente partition."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Could not resize file system on partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Kunne ikke ændre filsystemets størrelse på partitionen <filename>%1</"
+#~ "filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not get geometry for resized partition <filename>%1</filename> "
+#~ "while trying to resize the file system."
+#~ msgstr ""
+#~ "Kunne ikke opnå geometri for den størrelsesændrede partition <filename>"
+#~ "%1</filename> under forsøg på at ændre filsystemets størrelse."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not determine file system of partition at sector %1 on device "
+#~ "<filename>%2</filename>."
+#~ msgstr ""
+#~ "Kunne iike bestemme filsystemet for partitionen på sektor %1 på enheden "
+#~ "<filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not update the system type for partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Kunne ikke opdatere systemtypen for partitionen <filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "No file system defined."
+#~ msgstr "Intet filsystem angivet."
+
+#~ msgctxt "@info/plain"
+#~ msgid "No partition found at sector %1."
+#~ msgstr "Ingen partition fundet på sektor %1."
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "Byte"
+#~ msgid_plural "Bytes"
+#~ msgstr[0] "Byte"
+#~ msgstr[1] "Bytes"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "KiB"
+#~ msgstr "KiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "MiB"
+#~ msgstr "MiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "GiB"
+#~ msgstr "GiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "TiB"
+#~ msgstr "TiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "PiB"
+#~ msgstr "PiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "EiB"
+#~ msgstr "EiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "ZiB"
+#~ msgstr "ZiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "YiB"
+#~ msgstr "YiB"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "(unknown unit)"
+#~ msgstr "(ukendt enhed)"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Command: %1"
+#~ msgstr "Kommando: %1"
+
+#~ msgctxt "@info/plain"
+#~ msgid "(Command timeout while starting \"%1\")"
+#~ msgstr "(Kommando-tidsudløb under start af \"%1\")"
+
+#~ msgctxt "@info/plain"
+#~ msgid "(Command timeout while running \"%1\")"
+#~ msgstr "(Kommando-tidsudløb under kørsel af \"%1\")"
+
+#~ msgid "%1: SMART Status Report"
+#~ msgstr "%1: SMART-statusrapport"
+
+#~ msgid "Date:"
+#~ msgstr "Dato:"
+
+#~ msgid "Program version:"
+#~ msgstr "Programversion:"
+
+#~ msgid "Backend:"
+#~ msgstr "Backend:"
+
+#~ msgid "KDE Frameworks version:"
+#~ msgstr "KDE Frameworks-version:"
+
+#~ msgid "Machine:"
+#~ msgstr "Maskine:"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Decrypt"
+#~ msgstr "Dekryptér"
+
+#~ msgctxt "@title:window"
+#~ msgid "Decrypt LUKS partition on <filename>%1</filename>"
+#~ msgstr "Dekryptér LUKS-partition på <filename>%1</filename>"
+
+#~ msgctxt "@action:button"
+#~ msgid "&Decrypt"
+#~ msgstr "&Dekryptér"
+
+#~ msgid "&Name:"
+#~ msgstr "&Navn:"
+
+#~ msgid "&Passphrase:"
+#~ msgstr "&Adgangsfrase:"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Size:"
+#~ msgstr "Størrelse:"
+
+#~ msgctxt "@info:credit"
+#~ msgid "Developer"
+#~ msgstr "Udvikler"
+
+#~ msgctxt "@title"
+#~ msgid "Dummy Backend Plugin"
+#~ msgstr "Plugin til attrap-backend"
+
+#~ msgid "KDE Partition Manager dummy backend."
+#~ msgstr "Attrap-backend til KDE's partitionshåndtering."
+
+#~ msgid "Copyright 2010 Volker Lanz"
+#~ msgstr "Ophavsret 2010 Volker Lanz"
+
+#~ msgctxt "@title"
+#~ msgid "LibParted Backend Plugin"
+#~ msgstr "Plugin til LibParted-backend"
+
+#~ msgid "KDE Partition Manager backend for libparted."
+#~ msgstr "Libparted-backend til KDE's partitionshåndtering."
+
+#~ msgid "Copyright 2008,2009,2010 Volker Lanz"
+#~ msgstr "Ophavsret 2008,2009,2010 Volker Lanz"
+
+#~ msgctxt "@title:window"
+#~ msgid "Error: No Usable Devices Found"
+#~ msgstr "Fejl: Ingen brugbare enheder fundet"
+
+#~ msgctxt "@item/plain filesystem name"
+#~ msgid "unknown"
+#~ msgstr "ukendt"
+
+#~ msgctxt "@item/plain filesystem name"
+#~ msgid "extended"
+#~ msgstr "extended"
+
+#~ msgctxt "@item/plain filesystem name"
+#~ msgid "jfs"
+#~ msgstr "jfs"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create file system %1 on partition <filename>%2</filename>"
+#~ msgstr "Opret filsystem %1 på partitionen <filename>%2</filename>"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "<para>No usable devices could be found.</para><para>Make sure you have "
+#~ "sufficient privileges to access block devices on your system.</para>"
+#~ msgstr ""
+#~ "<para>Ingen brugbare enheder kunne findes.</para><para>Kontrollér at du "
+#~ "har tilstrækkelige privilegier til at tilgå blokenheder på dit system.</"
+#~ "para>"
+
+#~ msgctxt "@info:credit"
+#~ msgid "(c) 2008, 2009, 2010, 2011 Volker Lanz"
+#~ msgstr "(c) 2008, 2009, 2010, 2011 Volker Lanz"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Failed to clobber file system on partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Total overskrivning af filsystemet på partitionen <filename>%1</filename> "
+#~ "mislykkedes."
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "This will hide the menu bar completely. You can show it again by typing "
+#~ "%1."
+#~ msgstr ""
+#~ "Dette vil skjule menulinjen helt. Du kan få den vist igen ved at trykke "
+#~ "%1."
+
+#~ msgctxt "@title:window"
+#~ msgid "Hide Menu Bar"
+#~ msgstr "Skjul menulinjen"
+
+#~ msgctxt "@label"
+#~ msgid "Color for available space"
+#~ msgstr "Farve til ledig plads"
+
+#~ msgctxt "@label"
+#~ msgid "Color for used space"
+#~ msgstr "Farve til brugt plads"
+
+#~ msgid "Available and Used Space"
+#~ msgstr "Ledig og brugt plads"
+
+#~ msgid "Available:"
+#~ msgstr "Ledig:"
+
+#, fuzzy
+#~| msgctxt "@title:menu"
+#~| msgid "Partition Toolbar"
+#~ msgctxt "@title:window"
+#~ msgid "Target Partition Too Big"
+#~ msgstr "Partitioneringsværktøjslinje"
+
+#~ msgid "%1: Operation Report"
+#~ msgstr "%1: Handlingsrapport"
+
+#~ msgid "User ID:"
+#~ msgstr "Bruger-ID:"
+
+#~ msgctxt "@label"
+#~ msgid "Hide Log Messages Below"
+#~ msgstr "Skjul logmeddelelser herunder"
+
+#~ msgctxt "@label"
+#~ msgid ""
+#~ "Use Cylinder Based MS-Dos Partition Alignment (Windows XP compatible)"
+#~ msgstr ""
+#~ "Brug cylinderbaseret partitionsjustering til MS-DOS (Windows XP-"
+#~ "kompatibel)"
+
+#~ msgctxt "@label"
+#~ msgid "Allow Applying Operations Without Administrator Privileges"
+#~ msgstr "Tillad anvendelse af handlinger uden administratorrettigheder"
+
+#~ msgid "Alignment"
+#~ msgstr "Justering"
+
+#~ msgctxt "@info"
+#~ msgid "Could not create output file <filename>%1</filename> for export."
+#~ msgstr "Kunne ikke oprette outputfilen <filename>%1</filename> til eksport."
+
+#~ msgctxt "@info"
+#~ msgid "Could not open file <filename>%1</filename> for writing."
+#~ msgstr "Kunne ikke åbne filen <filename>%1</filename> til skrivning."
+
+#~ msgid "KDE Partition Manager KPart"
+#~ msgstr "KDE's partitionshåndtering KPart"
+
+#~ msgid "A test application for KDE Partition Manager's KPart."
+#~ msgstr "Et testprogram til KDE Partitionshåndtering's KPart."
+
+#~ msgid "Copyright (c) 2008 Volker Lanz"
+#~ msgstr "Copyright (c) 2008 Volker Lanz"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Edit"
+#~ msgstr "Redigér"
+
+#~ msgid "Align Partition According To Partition Table Settings"
+#~ msgstr ""
+#~ "Justér partition i henhold til indstillingerne for partitionstabellen"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "The partition cannot be created with the requested length of one sector, "
+#~ msgid_plural ""
+#~ "The partition cannot be created with the requested length of %1 sectors, "
+#~ msgstr[0] ""
+#~ "Partitionen kan ikke oprettes med den ønskede længde på 1 sektor, "
+#~ msgstr[1] ""
+#~ "Partitionen kan ikke oprettes med den anmodede længde på %1 sektorer, "
+
+#~ msgctxt "@info/plain"
+#~ msgid "and will instead only be one sector long."
+#~ msgid_plural "and will instead only be %1 sectors long."
+#~ msgstr[0] "og vil i stedet kun blive 1 sektor lang."
+#~ msgstr[1] "og vil i stedet kun blive %1 sektorer lang."
+
+#~ msgctxt "@title:window"
+#~ msgid "Edit mount point for %1"
+#~ msgstr "Redigér monteringspunkt for %1"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "File &system:"
+#~ msgstr "Fil&system:"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "S&ize:"
+#~ msgstr "Størr&else:"

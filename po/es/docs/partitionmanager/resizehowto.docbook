@@ -1,0 +1,236 @@
+<sect1 id="howto-resizepartition">
+	<title
+>Cómo cambiar el tamaño de una partición</title>
+
+	<para
+>Este tutorial explica cómo redimensionar una <glossterm linkend="glossary-partition"
+>partición</glossterm
+> demasiado llena. En la siguiente captura de pantalla puede observar la situación antes del cambio de tamaño: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ventana principal antes de redimensionar las particiones</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>En el <glossterm linkend="glossary-device"
+>dispositivo</glossterm
+> <quote
+>/dev/sdb</quote
+>, la partición <quote
+>sdb2</quote
+> apenas dispone de espacio libre, mientras que la otra, <quote
+>sdb1</quote
+>, está lejos de llenarse. Por ello, parece recomendable reducir un poco el tamaño de la primera partición para que <quote
+>sdb2</quote
+> crezca y tenga más espacio libre. </para>
+
+	<note>
+		<title
+>Nota: No puede modificar particiones montadas.</title>
+		<para
+>En la captura superior, ninguna de las particiones está montada. Si alguna de ellas lo estuviera, debería desmontarlas primero utilizando <xref linkend="menu-partition-mount"/>.</para>
+	</note>
+
+	<para
+>El primer paso es dejar espacio para que la partición crezca, así que reduzca <quote
+>sdb1</quote
+>. Haga clic en la partición y seleccione <xref linkend="menu-partition-resize"/>. Se mostrará el siguiente cuadro de diálogo: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Diálogo de redimensionamiento antes de cambiar el tamaño de /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>El cuadro de diálogo le permite redimensionar la partición de múltiples formas. Puede arrastrar el agarre derecho hacia la izquierda hasta que tenga el espacio deseado o introducir directamente el tamaño en el campo de texto <guilabel
+>Tamaño</guilabel
+>. Otra posibilidad sería hacer clic en las pequeñas flechas junto al campo de texto, pero para cambios grandes es algo tedioso. </para>
+
+	<para
+>Sea cual sea la forma que elija para establecer el nuevo tamaño, el cuadro de diálogo debería verse como el siguiente: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Diálogo de redimensionamiento tras cambiar el tamaño de /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Tras presionar <guibutton
+>Aceptar</guibutton
+>, se añadirá una nueva operación a la lista de pendientes y la vista gráfica y de árbol del dispositivo se actualizarán para reflejar la nueva situación: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ventana principal tras redimensionar /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<note>
+		<title
+>Nota: Las operaciones se previsualizan antes de aplicarlas.</title>
+		<para
+>Aunque la ventana principal refleje el estado del dispositivo después de aplicarse los cambios, en realidad estos no se han llevado a cabo aún: mientras las operaciones están a la espera aún puede deshacerlas (una a una usando <xref linkend="menu-edit-undo"/> o todas con <xref linkend="menu-edit-clear"/>) o salir de &partman;, y no se habrá modificado nada.</para>
+	</note>
+	
+	<para
+>Ahora que hay algo de espacio libre entre las dos particiones puede mover y ampliar <quote
+>sdb2</quote
+>. Primero, haga clic en <quote
+>sdb2</quote
+> y seleccione <xref linkend="menu-partition-resize"/> otra vez. Volverá a aparecer el cuadro de diálogo de redimensionamiento, esta vez para la segunda partición. Arrastre su agarre izquierdo al extremo más a la izquierda hasta que el diálogo se parezca al siguiente: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Diálogo de redimensionamiento tras cambiar el tamaño de /dev/sdb2</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Asegúrese de que el campo <guilabel
+>Espacio libre antes</guilabel
+> realmente muestra <quote
+>0 MiB</quote
+>, porque de otra forma dejará un pequeño espacio libre desperdiciado entre ambas particiones. </para>
+
+	<para
+>Ahora, pulse <guibutton
+>Aceptar</guibutton
+> de nuevo. La ventana principal debería verse como la siguiente: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ventan principal tras redimensionar /dev/sdb2</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Esto ya parece lo que buscaba, así que elija <xref linkend="menu-edit-apply"/>. Un diálogo le preguntará si está seguro de que desea aplicar las operaciones encoladas. Cuando lo confirme &partman; empezará a ejecutarlas: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>&partman; está aplicando las operaciones</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Mientras se ejecutan las operaciones, puede pulsar el signo «más» junto a cada operación de la lista para ver qué tareas se llevarán a cabo y cuál se está ejecutando en el momento. </para>
+
+	<para
+>Cambiar el tamaño de una partición de la manera en que lo ha hecho con «/dev/sdb2» siempre implica que se deberá mover primer hacia la izquierda antes de ampliarla porque las particiones no pueden crecer hacia la izquierda de forma natural. Por desgracia, un movimiento tan grande consume bastante tiempo y no es extraño que una operación como esta consuma varios minutos o incluso más. </para>
+
+	<para
+>Finalmente, todas las operaciones se habrán completado con éxito: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Diálogo de progreso tras aplicar todas las operaciones con éxito</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Pulsando el botón <guibutton
+>Aceptar</guibutton
+> puede cerrar el cuadro de diálogo de progreso y volver a la ventana principal. &partman; volverá a hacer un escaneo de sus dispositivos que puede durar unos pocos segundos. </para>
+
+	<para
+>Si le interesa ver más detalles de las operaciones en ejecución, haga clic en <guibutton
+>Detalles</guibutton
+>. Verá un informe detallado que se genera siempre (y se actualiza al vuelo) mientras &partman; ejecuta las operaciones: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Detalles del cuadro de diálogo de progreso</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Este informe es especialmente interesante si se produce algún error al ejecutar las operaciones. Un informe muestra cada operación, tarea y orden externa que se ejecuta y por tanto es muy útil al intentar analizar problemas. </para>
+
+	<para
+>Puede guardar el informe como <acronym
+>HTML</acronym
+> o visualizarlo en un navegador web externo. </para>
+
+	<tip>
+		<para
+>Guarde siempre el informe detallado en formato <acronym
+>HTML</acronym
+> para que, si las operaciones en ejecución terminan con errores o advertencias, lo pueda utilizar como referencia. También podría servirle como adjunto en un informe de fallo de &kde; en <ulink url="https://bugs.kde.org"
+>bugs.kde.org</ulink
+>. </para>
+	</tip>
+	
+	<para
+>Para ocultar los detalles presione de nuevo <guibutton
+>Detalles</guibutton
+>, y para cerrar finalmente el cuadro de progreso, haga clic en <guibutton
+>Aceptar</guibutton
+>. </para>
+</sect1>

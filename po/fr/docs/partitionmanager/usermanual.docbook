@@ -1,0 +1,109 @@
+<chapter id="usermanual">
+	<title
+>Utilisation du &partman;</title>
+
+	<sect1 id="mainwindow">
+		<title
+>La fenêtre principale</title>
+
+		<para
+>Outre la fenêtre principale affichant le périphérique actuellement sélectionné dans une vue graphique et une vue en arbre, le &partman; utilise des <quote
+>écomposants graphiques</quote
+> intégrés de &Qt; ou des panneaux pour afficher certaines informations et permettre de faire des sélections. Observez la capture d'écran suivante pour obtnenir une vue d'ensemble de la fenêtre principale du &partman;. </para>
+
+		<para>
+			<screenshot>
+				<screeninfo
+>Fenêtre principale du &partman;</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Fenêtre principale</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>Barre de menus : la barre de menus présente certains menus personnalisés et d'autres menus non standard pour choisir des actions à effectuer. Toutes les commandes sont décrites en détail dans le <xref linkend="reference"/>.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Barre d'outils : la barre d'outils du &partman; est une barre d'outils standard de &kde;, qui peut entièrement personnalisée. Pour plus de détails, veuillez consulter la section <xref linkend="menu-settings-help"/>. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Panneau <quote
+>Périphériques</quote
+> : ce panneau répertorie tous les <glossterm linkend="glossary-device"
+>périphériques</glossterm
+> trouvés sur votre ordinateur, que le &partman; peut gérer. Sélectionnez un périphérique dans le panneau pour l'afficher, modifiez-le dans la vue graphique du périphérique ou dans la vue en arbre des périphériques.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>Vue graphique des périphériques : dans cette vue, le &partman; affiche une représentation graphique du périphérique actuellement sélectionné. Chacune des <glossterm linkend="glossary-partition"
+>partitions</glossterm
+> du périphérique est dotée de son propre panneau, contenant le nom du nœud de périphérique (<quote
+>sda1</quote
+> pour la première partition dans la capture d'écran ci-dessus) ainsi que des informations d'utilisation (la zone violet foncé dans la capture). </para>
+					<para
+>Les <glossterm linkend="glossary-extendedpartition"
+>partitions étendues</glossterm
+> sont visuellement distinctes par leur bordures supplémentaires (en vert clair dans la capture ci-dessus) qui les entourent. </para>
+					<para
+>On peut sélectionner une partition en cliquant dessus dans la vue graphique des périphériques. Un double-clic ouvre la <link linkend="menu-partition-properties"
+>boîte de dialogue des propriétés de la partition</link
+>. Un clic-droit affiche le menu contextuel de la partition. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Vue en arbre des périphériques : la vue arbre des périphériques affiche des informations exhaustives sur chaque partition présente sur le périphérique choisi. La partiton actuellement sélectionnée est mise en surbrillance. Un double-clic sur une partition ouvre la <link linkend="menu-partition-properties"
+>boîte de dialogue des propriétés de la partition</link
+>. Un clic-droit affiche le menu contextuel de la partition. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Panneau <quote
+>Informations</quote
+> : ce panneau affiche certains détails sur la partition ou le périphérique actuellement sélectionné. Il n'est pas activé par défaut.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Panneau <quote
+>Opérations en attente</quote
+> : ce panneau répertorie toutes les opérations qui seront effectuées dès l'instant où vous choisissez <xref linkend="menu-edit-apply"/>. </para>
+					<para
+>Dans la capture d'écran ci-dessus, une seule opération est en attente : si l'utilisateur applique les opérations maintenant, un contrôle d'erreurs est effectué sur le <glossterm linkend="glossary-filesystem"
+>système de fichiers</glossterm
+> ext2 installé sur /dev/sdb3 et, si nécessaire, réparé. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Barre d'état : la barre d'état affiche le nombre d'opérations actuellement en attente. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Panneau <quote
+>Sortie du journal</quote
+> : ce panneau affiche des informations pour le journal. Son importance n'est que secondaire pour l'utilisateur lambda et il n'est pas activé par défaut.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+

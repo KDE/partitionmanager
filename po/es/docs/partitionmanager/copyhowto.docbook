@@ -1,0 +1,64 @@
+<sect1 id="howto-copypartition">
+	<title
+>Cómo copiar una partición</title>
+
+	<para
+>Este tutorial explica cómo copiar una partición, asumiendo que su intención es copiar una partición de un dispositivo a otro y sobreescribir una partición de destino ya existente, pero el procedimiento general no debería ser muy diferente al copiarla al mismo dispositivo o a un área sin reservar. </para>
+
+	<para
+>La siguiente captura le muestra cómo debería verse el dispositivo de origen: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ventana principal con el dispositivo de origen</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>La partición de origen de nuestro ejemplo será <quote
+>sdb1</quote
+>, que en este momento está montada, como indica el icono junto al nombre del punto de montaje en la captura de pantalla. Una partición montada no se puede copiar, así que el primer paso es desmontarla: haga clic en ella y seleccione <xref linkend="menu-partition-mount"/>. </para>
+
+	<para
+>Tras desmontar la partición el icono habrá desaparecido y será posible seleccionar <xref linkend="menu-partition-copy"/>. Esto pondrá a <quote
+>sdb1</quote
+> en el portapapeles de &partman;, en otras palabras, <quote
+>sdb1</quote
+> es la partición que se insertará cuando seleccione <xref linkend="menu-partition-paste"/>. </para>
+	
+	<para
+>El dispositivo de destino en este tutorial es <quote
+>/dev/sdc</quote
+>. Haga clic en el panel Dispositivos. Así es cómo debería verse el dispositivo antes de la copia: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ventana principal con el dispositivo de destino antes de la copia</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>La partición a sobreescribir es <quote
+>sdc5</quote
+>. Para pegar la partición ya copiada sobre la antigua, haga clic en esta última y seleccione <xref linkend="menu-partition-paste"/>. Verá que la operación de copiado se añade a la lista de pendientes. Fíjese en que no hay ninguna caja de diálogo para insertar la partición, al contrario que cuando la pega en un área sin reservar: el principio y final de la partición pegada se calcula sobre la partición sobreescrita. </para>
+
+	<para
+>Ahora, seleccione <xref linkend="menu-edit-apply"/> y la partición será copiada. Para más detalles sobre cómo aplicar operaciones, consulte <link linkend="howto-resizepartition"
+>cómo rendimensionar particiones</link
+>. </para>
+</sect1>
+

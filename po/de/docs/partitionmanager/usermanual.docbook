@@ -1,0 +1,99 @@
+<chapter id="usermanual">
+	<title
+>&partman; verwenden </title>
+
+	<sect1 id="mainwindow">
+		<title
+>Das Hauptfenster</title>
+
+		<para
+>Neben der Hauptansicht, die das aktuell ausgewählte Gerät in einer grafischen und einer Baumansicht darstellt, verwendet &partman; &Qt;-Bedienelemente oder Kontrollleisten zur Auswahl von Elementen und um Informationen anzuzeigen. Auf dem folgenden Bildschirmfoto ist das Hauptfenster von &partman; dargestellt. </para>
+
+		<para>
+			<screenshot>
+				<screeninfo
+>Hauptfenster von &partman;</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Hauptfenster</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>Menüleiste: Die Menüleiste stellt gebräuchliche und auch seltener verwendete Menüs zur Verfügung, um Aktionen auszuführen. Alle Befehle werden detailliert im Abschnitt <xref linkend="reference"/> beschrieben.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Werkzeugleiste: Die Werkzeugleiste in &partman; ist eine Standard-Werkzeugleiste. Sie kann beliebig angepasst werden; nähere Details hierzu finden Sie im Kapitel <xref linkend="menu-settings-help"/>. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Geräteliste: Diese Liste zeigt alle <glossterm linkend="glossary-device"
+>Geräte</glossterm
+> auf Ihrem Rechner an, die &partman; verwalten kann. Wählen Sie in dieser Liste ein Gerät aus, um es in der grafischen Geräteansicht oder der Baumansicht anzuzeigen und zu bearbeiten.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>Grafische Geräteansicht: Diese Ansicht stellt eine grafische Ansicht des aktuell ausgewählten Gerätes dar. Jede <glossterm linkend="glossary-partition"
+>Partition</glossterm
+> auf dem Gerät wird durch ein eigenes Rechteck repräsentiert, welches mit dem Knotennamen (<quote
+>sda1</quote
+> für die erste Partition im Bildschirmfoto) beschriftet ist und in welchem der belegte Speicherplatz angezeigt wird (entspricht der dunkel-violetten Fläche im Bildschirmfoto). </para>
+					<para
+><glossterm linkend="glossary-extendedpartition"
+>Erweiterte Partitionen</glossterm
+> werden grafisch durch einen zusätzlichen Rahmen um das entsprechende Rechteck repräsentiert (entspricht dem hellgrünen Rahmen im Bildschirmfoto). </para>
+					<para
+>Sie können sich eine Partition anzeigen lassen, indem Sie sie in der grafischen Geräteansicht anklicken. Mit einem Doppelklick auf eine Partition öffnet sich <link linkend="menu-partition-properties"
+>der Eigenschaftsdialog der Partition</link
+>. Mit einem Rechtsklick können Sie sich das Kontextmenü der Partition anzeigen lassen. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Die Baumansicht: Die Baumansicht zeigt erweiterte Informationen über jede Partition auf dem ausgewählten Gerät an. Die aktuell ausgewählte Partition ist hervorgehoben. Mit einem Doppelklick auf eine Partition öffnet sich <link linkend="menu-partition-properties"
+>der Eigenschaftsdialog der Partition</link
+>. Mit einem Rechtsklick können Sie sich das Kontextmenü der Partition anzeigen lassen. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Informations-Kontrollleiste: Die Informations-Kontrollleiste zeigt Detail-Informationen über das aktuell ausgewählte Gerät oder die ausgewählte Partition an. In der Standardeinstellung wird es nicht angezeigt.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Liste ausstehender Operationen: Diese Liste zeigt alle Operationen an, die bei der Menüauswahl <xref linkend="menu-edit-apply"/> ausgeführt werden. </para>
+					<para
+>Im oben dargestellten Bildschirmfoto gibt es eine ausstehende Operation: wenn der Benutzer die Operationen nun anwendet, wird das <glossterm linkend="glossary-filesystem"
+>Dateisystem</glossterm
+> auf /dev/sdb3 auf Fehler hin überprüft und, sofern notwendig, repariert. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Statusleiste: Die Statusleiste zeigt an, wie viele Operationen im Moment noch ausstehen. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Protokollausgabe: die Protokollausgabe zeigt Protokoll-Informationen an. Da diese Informationen nur für fortgeschrittene Benutzer hilfreich sind, wird die Protokollausgabe standardmäßig nicht angezeigt.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+

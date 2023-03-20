@@ -1,0 +1,238 @@
+<sect1 id="howto-resizepartition">
+	<title
+>Handledning: Ändra en partitions storlek</title>
+
+	<para
+>Den här handledningen förklarar hur storleken hos en <glossterm linkend="glossary-partition"
+>partition</glossterm
+> som håller på att bli för full ändras. Följande skärmbild visar den ursprungliga situationen innan storleksändringen: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Huvudfönster innan partitionernas storlekar ändras</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>På <glossterm linkend="glossary-device"
+>enheten</glossterm
+> <quote
+>/dev/sdb</quote
+>, har partitionen <quote
+>sdb2</quote
+> bara lite ledigt utrymme kvar medan den andra partitionen, <quote
+>sdb1</quote
+>, är långt ifrån full. Av den anledningen verkar det lämpligt att göra den första partitionen lite mindre och utöka <quote
+>sdb2</quote
+> så att den har mer ledigt utrymme tillgängligt. </para>
+
+	<note>
+		<title
+>Observera: Man kan inte ändra monterade partitioner.</title>
+		<para
+>I skärmbilden ovan är inte någon av partitionerna för närvarande monterad. Om en eller båda var monterade, skulle du vara tvungen att först avmontera dem genom att använda <xref linkend="menu-partition-mount"/>.</para>
+	</note>
+
+	<para
+>Det första steget är att skapa mer utrymme för partitionen att utökas, så börja med att krympa <quote
+>sdb1</quote
+>. Klicka på partitionen och välj <xref linkend="menu-partition-resize"/>. Följande dialogruta dyker upp: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Dialogrutan för storleksändring innan storleken hos /dev/sdb1 ändras</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Dialogrutan låter dig ändra storlek på partitionen på flera olika sätt. Du kan antingen dra det högra greppet åt vänster tills partition har önskat storlek eller helt enkelt ange storlek i textfältet <guilabel
+>Storlek</guilabel
+>. En annan möjlighet är att justera storleken genom att klicka på de små pilarna bredvid textfältet, men det är lite enformigt vid större förändringar. </para>
+
+	<para
+>Oberoende av vilket sätt du än föredrar för att ställa in den nya storleken, ska dialogrutan nu se ut så här: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Dialogrutan för storleksändring efter storleken hos /dev/sdb1 har ändrats</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Efter att du har klickat på <guibutton
+>Ok</guibutton
+>, har en ny åtgärd lagts till i listan med väntande åtgärder, och den grafiska vyn och trädvyn för enheten har uppdaterats för att motsvara den nya situationen: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Huvudfönstret efter storleken hos /dev/sdb1 har ändrats</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<note>
+		<title
+>Observera: Åtgärderna förhandsgranskas först innan de verkställs.</title>
+		<para
+>Även om huvudfönstret återspeglar enhetens tillstånd som det kommer att bli efter att den nya åtgärden har utförts, har åtgärden dock inte ännu utförts: medan åtgärder väntar kan du fortfarande ångra dem (en i taget med hjälp av <xref linkend="menu-edit-undo"/> eller <xref linkend="menu-edit-clear"/> för att ångra alla) eller avsluta Partition Manager, så kommer ingenting alls att ha ändrats.</para>
+	</note>
+	
+	<para
+>Nu när det finns en del ledigt utrymme mellan de två partitionerna kan du flytta och utöka partitionen <quote
+>sdb2</quote
+>. Klicka först på <quote
+>sdb2</quote
+> och välj <xref linkend="menu-partition-resize"/> igen. Dialogrutan för storleksändring dyker upp igen, denna gång för den andra partitionen. Dra dess vänstra grepp så långt åt vänster som möjligt så att dialogrutan ser ut så här: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Dialogrutan för storleksändring efter storleken hos /dev/sdb2 har ändrats</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Var noga med att försäkra dig om att textfältet <guilabel
+>Ledigt utrymme innan</guilabel
+> verkligen visar <quote
+>0 MiB</quote
+>, eftersom det annars kommer att finnas lite ledigt utrymme kvar mellan partitionerna som då är bortkastat. </para>
+
+	<para
+>Klicka nu på <guibutton
+>Ok</guibutton
+> igen. I huvudfönstret ser saker och ting nu ut så här: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Huvudfönstret efter storleken hos /dev/sdb2 har ändrats</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Det ser redan ut som det du vill ha, välj alltså <xref linkend="menu-edit-apply"/>. En dialogruta dyker upp och frågar dig om du är säker på att du vill utföra de väntande åtgärderna. Bekräfta dialogrutan så börjar Partition Manager verkställa åtgärderna: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Partition Manager verkställer åtgärder</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Medan åtgärderna utförs kan du klicka på plustecknet intill varje åtgärd i listan för att ta reda på vilka jobb den består av, och se vilket jobb som för närvarande körs. </para>
+
+	<para
+>Att ändra storlek på en partition på det sätt som du gjorde med <quote
+>/dev/sdb2</quote
+> ovan betyder alltid att den först måste flyttas åt vänster innan den kan utökas, eftersom partitioner aldrig direkt kan utökas åt vänster. Tyvärr tar det en hel del tid att flytta en så stor partition. Det är inte ovanligt att en sådan här åtgärd tar flera minuter, eller ännu längre. </para>
+
+	<para
+>Till sist har alla åtgärder utförts med lyckat resultat: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Förloppsdialogrutan efter att ha verkställt åtgärderna med lyckat resultat</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Genom att klicka på <guibutton
+>Ok</guibutton
+> kan du nu stänga förloppsdialogrutan och återgå till huvudfönstret. Partition Manager avsöker enheterna igen vid detta tillfälle, så det kan ta några sekunder. </para>
+
+	<para
+>Om du är intresserad av fler detaljer om åtgärderna som just utförts, klicka på <guibutton
+>Detaljer</guibutton
+>. Då ser du den detaljerade rapporten som alltid skapas (och uppdateras i farten) när Partition Manager verkställer åtgärder: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Förloppsdialogrutans detaljinformation</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Rapporten är särskilt intressant om ett fel uppstår när åtgärder verkställs. En rapport visar varje åtgärd, varje jobb och varje externt kommando som körs, och är på så sätt till stor hjälp vid försök att spåra orsaken till problem. </para>
+
+	<para
+>Du kan spara rapporten som <acronym
+>HTML</acronym
+> eller titta på den i en extern webbläsare. </para>
+
+	<tip>
+		<para
+>Spara alltid den detaljerade rapporten som <acronym
+>HTML</acronym
+> för senare referens, när verkställande av åtgärder misslyckas med fel eller varningar. Du kanske också vill inkludera den i en felrapport som du skickar till &kde;:s felspårningssystem på <ulink url="https://bugs.kde.org"
+>bugs.kde.org</ulink
+>. </para>
+	</tip>
+	
+	<para
+>För att dölja detaljerna igen, klicka på <guibutton
+>Detaljer</guibutton
+>, och klicka på <guibutton
+>Ok</guibutton
+> för att till sist stänga förloppsdialogrutan. </para>
+</sect1>

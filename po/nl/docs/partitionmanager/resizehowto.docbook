@@ -1,0 +1,238 @@
+<sect1 id="howto-resizepartition">
+	<title
+>Howto: Een partitie van grootte wijzigen</title>
+
+	<para
+>Deze how-to legt uit hoe a <glossterm linkend="glossary-partition"
+>partitie</glossterm
+> die te vol is geworden van grootte gewijzigd kan worden. Zie de volgende schermafdruk voor de initiële situatie voor de wijziging van de grootte: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Hoofdvenster voor het wijzigen van de grootte van partities</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Op <glossterm linkend="glossary-device"
+>apparaat</glossterm
+> <quote
+>/dev/sdb</quote
+>, partitie <quote
+>sdb2</quote
+> is nog weinig vrije ruimte over terwijl de andere partitie, <quote
+>sdb1</quote
+>, nog helemaal niet vol is. Daarom lijkt het een goed idee om de eerste partitie een beetje kleiner te maken en <quote
+>sdb2</quote
+> te laten groeien zodat er meer vrije ruimte beschikbaar is. </para>
+
+	<note>
+		<title
+>Opmerking: u kunt geen aangekoppelde partities wijzigen.</title>
+		<para
+>In de schermafdruk hierboven zijn beide partities niet aangekoppeld. Als een of beide wel zijn aangekoppeld moeten ze eerst worden afgekoppeld (unmount) met behulp van het <xref linkend="menu-partition-mount"/>.</para>
+	</note>
+
+	<para
+>De eerste stap is ruimte maken zodat de partitie groter kan worden, daarom moet <quote
+>sdb1</quote
+> kleiner worden. Klik op de partitie en kies <xref linkend="menu-partition-resize"/>. Het volgende dialoog wordt zichtbaar: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>De dialoog voor herschalen voordat /dev/sdb1 van grootte is gewijzigd</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Met behulp van dit venster kan de grootte van een partitie op verschillende manieren veranderd worden. De rechter knop kan naar links versleept worden totdat de partitie de gewenste grootte heeft of de grootte kan ingevoerd worden in het veld <guilabel
+>Grootte</guilabel
+>. Een andere mogelijkheid om de grootte te veranderen is door het klikken op de kleine pijltjes naast het tekstveld maar dat is een beetje moeizaam voor grotere veranderingen. </para>
+
+	<para
+>Welke mogelijkheid ook wordt gekozen, het venster zou er nu als volgt uit moeten zien: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>De dialoog voor herschalen nadat /dev/sdb1 van grootte is gewijzigd</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Nadat op <guibutton
+>OK</guibutton
+> is geklikt wordt de nieuwe opdracht aan de wachtrij met opdrachten toegevoegd waarna vervolgens de grafische weergave en de boomstructuurweergave van het apparaat worden bijgewerkt naar de nieuwe situatie: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Hoofdvenster na het wijzigen van de grootte van /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<note>
+		<title
+>Opmerking: bewerkingen worden vooraf eerst getoond alvorens ze toe te passen.</title>
+		<para
+>Ofschoon het hoofdvenster de nieuwe situatie van het apparaat na het toepassen van de opdracht al weergeeft, is de opdracht nog niet uitgevoerd: omdat de opdrachten nog wachten op uitvoering kunnen ze nog herroepen worden (een voor een door het gebruik van <xref linkend="menu-edit-undo"/> of <xref linkend="menu-edit-clear"/> voor het herroepen van alle opdrachten) of sluit &partman;, en er zal niets gewijzigd worden.</para>
+	</note>
+	
+	<para
+>Omdat er nu enige vrije ruimte is tussen de twee partities kan <quote
+>sdb2</quote
+> verplaatst of vergroot worden. Klik eerst op <quote
+>sdb2</quote
+> en kies vervolgens opnieuw <xref linkend="menu-partition-resize"/>. De dialoog voor herschalen wordt opnieuw zichtbaar, dit keer voor de tweede partitie. Versleep de linkerknop helemaal naar de linkerkant zodat het venster er als volgt uit ziet: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Dialoog voor grootte wijzigen na het wijzigen van de grootte van /dev/sdb2</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Zorg ervoor dat het veld <guilabel
+>Vorige vrije ruimte</guilabel
+> echt <quote
+>0 MiB</quote
+> toont omdat anders een klein beetje ruimte tussen de partities niet gebruikt wordt wat zonde is. </para>
+
+	<para
+>Klik nu opnieuw op <guibutton
+>OK</guibutton
+>. In het hoofdvenster ziet het er nu zo uit: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Hoofdvenster na het wijzigen van de grootte van /dev/sdb2</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Dit lijkt al meer op het gewenste resultaat, we kiezen daarom <xref linkend="menu-edit-apply"/>. Een venster wordt geopend waarin wordt gevraagd of u de op uitvoering wachtende opdrachten werkelijk wilt uitvoeren. Bevestig dit waarna &partman; start met het uitvoeren van de bewerking: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>&partman; is de bewerkingen aan het toepassen</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>U kunt tijdens het uitvoeren van de bewerkingen op het plusteken naast elke operatie in de lijst klikken voor meer informatie over de lopende opdrachten binnen de bewerkingen en welke opdracht op dit moment uitgevoerd wordt. </para>
+
+	<para
+>Op dezelfde manier zoals hierboven <quote
+>/dev/sdb2</quote
+> van grootte is gewijzigd, betekent altijd dat het naar links verplaatst moet worden voordat het groter kan worden omdat een partitie nooit direct naar links groter kan worden. Helaas neemt het verplaatsen van een grote partitie nogal wat tijd in beslag. Het is niet ongebruikelijk dat voor een dergelijke bewerking minuten nodig zijn of zelfs meer. </para>
+
+	<para
+>Tot slot, alle bewerkingen zullen met succes zijn voltooid: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Het voortgangsvenster na het succesvol uitvoeren van de bewerkingen</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Door het klikken op <guibutton
+>OK</guibutton
+> wordt het voortgangsvenster gesloten en keert u terug in het hoofdvenster. &partman; tast nu de apparaten opnieuw af en dat kan enige seconden duren. </para>
+
+	<para
+>Als u meer informatie wenst over de uitgevoerde bewerkingen dan kunt u klikken op <guibutton
+>Details</guibutton
+>. Een meer gedetailleerd rapport wordt zichtbaar dat altijd wordt bijgewerkt tijdens het uitvoeren van de bewerkingen door &partman;. </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Voortgangsvenster met details</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Dit rapport is met name interessant als er een fout is opgetreden bij het uitvoeren van bewerkingen. Een rapport toont elke bewerking, elke opdracht en elk extern programma dat is uitgevoerd en geeft daarom hulp bij het lokaliseren van de problemen. </para>
+
+	<para
+>Het rapport kan bewaart worden als <acronym
+>HTML</acronym
+> of met een externe webbrowser bekeken worden. </para>
+
+	<tip>
+		<para
+>Bewaar altijd de detailrapporten voor latere raadpleging als <acronym
+>HTML</acronym
+> als bij het uitvoeren van de bewerkingen foutmeldingen of waarschuwingen gegeven worden. Wellicht kan het aan een bugrapport voor het &kde; bugtrackingsysteem op <ulink url="https://bugs.kde.org"
+>bugs.kde.org</ulink
+> toegevoegd worden. </para>
+	</tip>
+	
+	<para
+>Klik opnieuw op <guibutton
+>Details</guibutton
+> om de details te verbergen en klik tenslotte op de knop <guibutton
+>OK</guibutton
+> om het voortgangsvenster te sluiten. </para>
+</sect1>

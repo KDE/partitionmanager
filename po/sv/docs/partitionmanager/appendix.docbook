@@ -1,0 +1,192 @@
+<appendix id="installation">
+	<title
+>Installation</title>
+
+	<sect1 id="obtaining">
+		<title
+>Hur man skaffar &partman;</title>
+
+		<para
+>Den huvudsakliga webbplatsen för &partman; är <ulink url="http://www.partitionmanager.org"
+>www.partitionmanager.org</ulink
+>. Detta är stället att gå till för den allra senaste versionen. </para>
+	</sect1>
+
+	<sect1 id="requirements">
+		<title
+>Krav</title>
+
+		<para
+>För att använda &partman; med lyckat resultat behöver du &kde; 4.2 eller senare och &Qt; 4.4.0 eller senare. Du behöver dock inte vara inloggad i &kde; för att använda det. &partman; kör utan problem i vilken annan skrivbordsmiljö som helst, under förutsättning att du har installerat de grundläggande &kde;-biblioteken. </para>
+
+		<para
+>&partman; förlitar sig på <ulink url="http://www.gnu.org/software/parted/index.shtml"
+>libparted</ulink
+> för en stor del av sin grundläggande funktion. Det använder libuuid för att skapa UUID:er för kopierade filsystem, som är en del av <ulink url="http://sourceforge.net/projects/e2fsprogs"
+>e2fsprogs</ulink
+>. Det använder också biblioteket <ulink url="http://userweb.kernel.org/~kzak/util-linux-ng/"
+>libblkid från projektet util-linux-ng</ulink
+> för att erhålla information om partitioner och filsystem. Alla dessa krävs för att bygga eller köra &partman;. </para>
+
+		<para
+>&partman; förlitar sig i stor utsträckning på externa verktyg för att stödja ett stort antal filsystem. Ett specifikt verktyg krävs bara om du behöver stöd för en åtgärd som det tillhandahåller för ett visst filsystem. Om du till exempel inte har något behov av att ändra storlek på NTFS filsystem, krävs inte att du har installerat <quote
+>ntfsresize</quote
+>. Inga av verktygen krävs för att bygga &partman; från källkod. </para>
+
+		<para
+>Här är en lista med alla externa verktyg som &partman; kan använda sig av: </para>
+
+		<itemizedlist>
+			<listitem>
+				<para
+>&debugfsreiser4;: Läser användningsinformation och filsystemetiketter för reiser4 filsystem. Del av verktygssviten reiser4progs som kan laddas ner från <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&debugreiserfs;: Läser användningsinformation och filsystemetiketter för reiserfs filsystem. Del av verktygssviten reiserfsprogs som kan laddas ner från <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiserfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&dumpe2fs;: Läser användningsinformation för ext2, ext3 och ext4 filsystem. Del av verktygssviten e2fsprogs som kan laddas ner från <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&e2label;: Läser och skriver filsystemetiketter för ext2, ext3 och ext4 filsystem. Del av verktygssviten e2fsprogs som kan laddas ner från <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&fsckmsdos;: Läser användningsinformation och kontrollerar FAT16 och FAT32 filsystem. Del av verktygssviten dosfstools som kan laddas ner från <ulink url="http://www.daniel-baumann.ch/software/dosfstools/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hfsck;: Läser filsystemetiketter och kontrollerar HFS file systems. Del av verktygssviten hfsutils som kan laddas ner från <ulink url="http://www.mars.org/home/rob/proj/hfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hpfsck;: Kontrollerar HFS+ filsystem. Del av verktygssviten hfsplusutils som kan laddas ner från <ulink url="http://www.penguinppc.org/historical/hfsplus/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfsdebugfs;: Läser användningsinformation för JFS filsystem. Del av verktygssviten jfsutils som kan laddas ner från <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfstune;: Läser och skriver filsystemetiketter för JFS filsystem. Del av verktygssviten jfsutils som kan laddas ner från <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfslabel;: Läser och skriver filsystemetiketter för NTFS filsystem. Del av verktygssviten ntfsprogs som kan laddas ner från <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfsresize;: Läser användningsinformation, kontrollerar och ändrar storlek på NTFS filsystem. Del av verktygssviten ntfsprogs som kan laddas ner från <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapoff;: Inaktiverar filsystem med växlingsminne. Del av verktygssviten util-linux-ng som kan laddas ner från <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapon;: Aktiverar filsystem med växlingsminne. Del av verktygssviten util-linux-ng som kan laddas ner från <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&volid;: Läser filsystemetiketter för linuxswap filsystem. Del av udev som kan laddas ner från <ulink url="http://www.us.kernel.org/pub/linux/utils/kernel/hotplug/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&xfsdb;: Läser användningsinformation och läser och skriver filsystemetiketter för XFS filsystem. Del av verktygssviten xfsprogs som kan laddas ner från <ulink url="ftp://oss.sgi.com/projects/xfs/cmd_tars/"
+></ulink
+>. </para>
+			</listitem>
+		</itemizedlist>
+	</sect1>
+
+	<sect1 id="compilation">
+		<title
+>Kompilering och installation</title>
+&install.compile.documentation; </sect1>
+
+	<sect1 id="furtherreading">
+		<title
+>Ytterligare litteratur</title>
+
+		<itemizedlist>
+			<listitem>
+				<para
+><ulink url="http://www.linfo.org/"
+>Linux informationsprojekt</ulink
+> har en mängd information om många aspekter av Linux. Deras artikel om <ulink url="http://www.linfo.org/partition.html"
+>partitioner</ulink
+> är mycket informativ. Se också deras artiklar om <ulink url="http://www.linfo.org/partition_table.html"
+>partitionstabeller</ulink
+>, <ulink url="http://www.linfo.org/hdd.html"
+>hårddiskenheter</ulink
+> och <ulink url="http://www.linfo.org/filesystem.html"
+>filsystem</ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+><ulink url="http://tldp.org/HOWTO/Partition/index.html"
+>Linux Partition HOWTO</ulink
+> är en grundläggande översikt av hantering och partitionering av diskenheter på Linux, och Linux egna filsystem. Den täcker också partitioner för växlingsminne. </para>
+			</listitem>
+
+			<listitem>
+				<para
+><ulink url="http://www.wikipedia.org"
+>Wikipedia</ulink
+> har en artikel om <ulink url="http://sv.wikipedia.org/wiki/Diskpartitionering"
+>diskpartitioning</ulink
+>. </para>
+			</listitem>
+			
+		</itemizedlist>
+		
+	</sect1>
+	
+</appendix>

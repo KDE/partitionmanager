@@ -1,0 +1,5895 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2011, 2013, 2020, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: partitionmanager\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-12 00:49+0000\n"
+"PO-Revision-Date: 2022-02-28 09:39+0000\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sergiu Bivol"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sergiu@cip.md"
+
+#: config/configureoptionsdialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:tab general application settings"
+msgid "General"
+msgstr "General"
+
+#: config/configureoptionsdialog.cpp:42 config/configureoptionsdialog.cpp:87
+#, kde-format
+msgid "General Settings"
+msgstr "Configurări generale"
+
+#: config/configureoptionsdialog.cpp:47
+#, kde-kuit-format
+msgctxt "@title:tab"
+msgid "File System Colors"
+msgstr "Culori pentru sisteme de fișiere"
+
+#: config/configureoptionsdialog.cpp:47
+#, kde-format
+msgid "File System Color Settings"
+msgstr "Configurări de culori pentru sisteme de fișiere"
+
+#: config/configureoptionsdialog.cpp:49
+#, kde-kuit-format
+msgctxt "@title:tab advanced application settings"
+msgid "Advanced"
+msgstr "Avansat"
+
+#: config/configureoptionsdialog.cpp:49
+#, kde-format
+msgid "Advanced Settings"
+msgstr "Configurări avansate"
+
+#: config/configureoptionsdialog.cpp:137
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to change the backend?</para><para><warning>This "
+"will also rescan devices and thus clear the list of pending operations.</"
+"warning></para>"
+msgstr ""
+"<para>Sigur doriți să schimbați platforma?</para><para><warning>Aceasta va "
+"reciti dispozitivele și de aceea va curăța lista de operații în așteptare.</"
+"warning></para>"
+
+#: config/configureoptionsdialog.cpp:139
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Change Backend?"
+msgstr "Sigur schimbați platforma?"
+
+#: config/configureoptionsdialog.cpp:140
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Change the Backend"
+msgstr "Schimbă platforma"
+
+#: config/configureoptionsdialog.cpp:141
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Change the Backend"
+msgstr "Nu schimba platforma"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepageadvanced.ui:29
+#, kde-format
+msgid "Backend"
+msgstr "Platformă"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: config/configurepageadvanced.ui:35
+#, kde-format
+msgid "Active backend:"
+msgstr "Platformă activă:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
+#: config/configurepageadvanced.ui:57
+#, kde-format
+msgid "Units"
+msgstr "Unități"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepageadvanced.ui:63
+#, kde-format
+msgid "Preferred unit:"
+msgstr "Unitate preferată:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:74
+#, kde-format
+msgid "Byte"
+msgstr "Octet"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:79
+#, kde-format
+msgid "KiB"
+msgstr "KiO"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:84
+#, kde-format
+msgid "MiB"
+msgstr "MiO"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:89
+#, kde-format
+msgid "GiB"
+msgstr "GiO"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:94
+#, kde-format
+msgid "TiB"
+msgstr "TiO"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:99
+#, kde-format
+msgid "PiB"
+msgstr "PiO"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
+#: config/configurepageadvanced.ui:104
+#, kde-format
+msgid "EiB"
+msgstr "EiO"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: config/configurepagefilesystemcolors.ui:30
+#: config/configurepagegeneral.ui:144
+#, kde-format
+msgid "File Systems"
+msgstr "Sisteme de fișiere"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_7)
+#: config/configurepagefilesystemcolors.ui:39
+#, fuzzy, kde-format
+#| msgid "reiser4:"
+msgid "ReiserFS:"
+msgstr "reiser4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_15)
+#: config/configurepagefilesystemcolors.ui:68
+#, kde-format
+msgid "UFS:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_31)
+#: config/configurepagefilesystemcolors.ui:81
+#, kde-format
+msgid "ISO 9660:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_24)
+#: config/configurepagefilesystemcolors.ui:100
+#, kde-format
+msgid "OCFS2:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_22)
+#: config/configurepagefilesystemcolors.ui:116
+#, kde-format
+msgid "XFS:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_27)
+#: config/configurepagefilesystemcolors.ui:135
+#, kde-format
+msgid "NILFS2:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_6)
+#: config/configurepagefilesystemcolors.ui:184
+#, kde-format
+msgid "FAT16:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_13)
+#: config/configurepagefilesystemcolors.ui:197
+#, kde-format
+msgid "extended:"
+msgstr "extins:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_33)
+#: config/configurepagefilesystemcolors.ui:210
+#, kde-format
+msgid "LUKS2:"
+msgstr "LUKS2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_17)
+#: config/configurepagefilesystemcolors.ui:226
+#, kde-format
+msgid "unformatted:"
+msgstr "neformatat:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_30)
+#: config/configurepagefilesystemcolors.ui:245
+#, kde-format
+msgid "UDF:"
+msgstr "UDF:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_25)
+#: config/configurepagefilesystemcolors.ui:258
+#, kde-format
+msgid "ZFS:"
+msgstr "ZFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_3)
+#: config/configurepagefilesystemcolors.ui:306
+#, kde-format
+msgid "ext4:"
+msgstr "ext4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_10)
+#: config/configurepagefilesystemcolors.ui:322
+#, kde-format
+msgid "HPFS:"
+msgstr "HPFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_11)
+#: config/configurepagefilesystemcolors.ui:380
+#, kde-format
+msgid "JFS:"
+msgstr "JFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_2)
+#: config/configurepagefilesystemcolors.ui:393
+#, kde-format
+msgid "ext3:"
+msgstr "ext3:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_8)
+#: config/configurepagefilesystemcolors.ui:419
+#, kde-format
+msgid "Reiser4:"
+msgstr "Reiser4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_21)
+#: config/configurepagefilesystemcolors.ui:451
+#, kde-format
+msgid "Btrfs:"
+msgstr "Btrfs:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: config/configurepagefilesystemcolors.ui:493
+#, kde-format
+msgid "ext2:"
+msgstr "ext2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_29)
+#: config/configurepagefilesystemcolors.ui:512
+#, kde-format
+msgid "F2FS:"
+msgstr "F2FS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_28)
+#: config/configurepagefilesystemcolors.ui:531
+#, kde-format
+msgid "LVM2 PV:"
+msgstr "LVM2 PV:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_26)
+#: config/configurepagefilesystemcolors.ui:557
+#, kde-format
+msgid "exFAT:"
+msgstr "exFAT:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_9)
+#: config/configurepagefilesystemcolors.ui:570
+#, kde-format
+msgid "NTFS:"
+msgstr "NTFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_20)
+#: config/configurepagefilesystemcolors.ui:596
+#, kde-format
+msgid "LUKS:"
+msgstr "LUKS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_4)
+#: config/configurepagefilesystemcolors.ui:625
+#, kde-format
+msgid "Linux Swap:"
+msgstr "Linux Swap:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_32)
+#: config/configurepagefilesystemcolors.ui:676
+#, kde-format
+msgid "FAT12:"
+msgstr "FAT12:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_12)
+#: config/configurepagefilesystemcolors.ui:689
+#, kde-format
+msgid "HFS:"
+msgstr "HFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_35)
+#: config/configurepagefilesystemcolors.ui:721
+#, kde-format
+msgid "APFS:"
+msgstr "APFS:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_5)
+#: config/configurepagefilesystemcolors.ui:734
+#, kde-format
+msgid "FAT32:"
+msgstr "FAT32:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_18)
+#: config/configurepagefilesystemcolors.ui:766
+#, kde-format
+msgid "Linux RAID:"
+msgstr "Linux RAID:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_34)
+#: config/configurepagefilesystemcolors.ui:779
+#, kde-format
+msgid "BitLocker:"
+msgstr "BitLocker:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_14)
+#: config/configurepagefilesystemcolors.ui:808
+#, kde-format
+msgid "HFS+:"
+msgstr "HFS+:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_16)
+#: config/configurepagefilesystemcolors.ui:834
+#, kde-format
+msgid "unknown:"
+msgstr "necunoscut:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagefilesystemcolors.ui:847
+#, kde-format
+msgid "          Minix:"
+msgstr "          Minix:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: config/configurepagegeneral.ui:28
+#, kde-format
+msgid "Partition Alignment"
+msgstr "Aliniere partiție"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
+#: config/configurepagegeneral.ui:34
+#, kde-format
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Folosește aliniere bazată pe cilindru (compatibil cu Windows XP)"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: config/configurepagegeneral.ui:47
+#, kde-format
+msgid "Sector alignment:"
+msgstr "Aliniere sector:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
+#: config/configurepagegeneral.ui:60
+#, kde-format
+msgid " sectors"
+msgstr " sectoare"
+
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
+#: config/configurepagegeneral.ui:76
+#, kde-format
+msgid "Align partitions per default"
+msgstr "Aliniază partițiile implicit"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: config/configurepagegeneral.ui:95
+#, kde-format
+msgid "Logging"
+msgstr "Jurnalizare"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: config/configurepagegeneral.ui:101
+#, kde-format
+msgid "Hide messages below:"
+msgstr "Ascunde mesajele de mai jos:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:112
+#, kde-format
+msgid "Debug"
+msgstr "Depanare"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:117
+#, kde-format
+msgid "Information"
+msgstr "Informație"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:122
+#, kde-format
+msgid "Warning"
+msgstr "Avertisment"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
+#: config/configurepagegeneral.ui:127
+#, kde-format
+msgid "Error"
+msgstr "Eroare"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: config/configurepagegeneral.ui:150
+#, kde-format
+msgid "Default file system:"
+msgstr "Sistem de fișiere implicit:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: config/configurepagegeneral.ui:172
+#, kde-format
+msgid "Shredding"
+msgstr "Forfecare"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: config/configurepagegeneral.ui:178
+#, kde-format
+msgid "Overwrite with:"
+msgstr "Suprascrie cu:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton)
+#: config/configurepagegeneral.ui:185
+#, kde-format
+msgid "Random data"
+msgstr "Date aleatorii"
+
+#. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
+#: config/configurepagegeneral.ui:195
+#, kde-format
+msgid "Zeros"
+msgstr "Zerouri"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
+#: gui/applyprogressdetailswidgetbase.ui:42
+#, kde-format
+msgid "Save"
+msgstr "Salvează"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonBrowser)
+#: gui/applyprogressdetailswidgetbase.ui:49
+#, kde-format
+msgid "Open in External Browser"
+msgstr "Deschide în navigator extern"
+
+#: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "&Details"
+msgstr "&Detalii"
+
+#: gui/applyprogressdialog.cpp:126
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Setting up..."
+msgstr "Configurare..."
+
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to cancel?"
+msgstr "Sigur renunțați?"
+
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cancel Running Operations"
+msgstr "Anulează operațiile în curs"
+
+#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Yes, Cancel Operations"
+msgstr "Da, anulează operațiile"
+
+#: gui/applyprogressdialog.cpp:201
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Waiting for operation to finish..."
+msgstr "Aștept încheierea operației..."
+
+#: gui/applyprogressdialog.cpp:222
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "All operations successfully finished."
+msgstr "Toate operațiile au fost încheiate cu succes."
+
+#: gui/applyprogressdialog.cpp:227
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Operations cancelled."
+msgstr "Operații anulate."
+
+#: gui/applyprogressdialog.cpp:232
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "There were errors while applying operations. Aborted."
+msgstr "Au intervenit erori la aplicarea operațiilor. Abandonat."
+
+#: gui/applyprogressdialog.cpp:346
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "[%1/%2] - %3: %4"
+msgstr "[%1/%2] - %3: %4"
+
+#: gui/applyprogressdialog.cpp:380
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Total Time: %1"
+msgstr "Timp total: %1"
+
+#: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
+#: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid "Could not create temporary file <filename>%1</filename> for writing."
+msgctxt "@info"
+msgid ""
+"Could not create temporary file when trying to save to <filename>%1</"
+"filename>."
+msgstr ""
+"Fișierul temporar <filename>%1</filename> nu a putut fi creat pentru scriere."
+
+#: gui/applyprogressdialog.cpp:428
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Save Report."
+msgstr "Raportul nu a putut fi salvat."
+
+#: gui/applyprogressdialog.cpp:452
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not create temporary file <filename>%1</filename> for writing."
+msgstr ""
+"Fișierul temporar <filename>%1</filename> nu a putut fi creat pentru scriere."
+
+#: gui/applyprogressdialog.cpp:452
+#, kde-format
+msgctxt "@title:window"
+msgid "Could Not Launch Browser."
+msgstr "Navigatorul nu a putut fi pornit."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:41
+#, kde-format
+msgid "Operations and Jobs"
+msgstr "Operații și sarcini"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
+#: gui/applyprogressdialogwidgetbase.ui:46
+#, kde-format
+msgid "Time Elapsed"
+msgstr "Timp scurs"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
+#: gui/applyprogressdialogwidgetbase.ui:72
+#, kde-format
+msgid "Total Time: 00:00:00"
+msgstr "Timp total: 00:00:00"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
+#: gui/applyprogressdialogwidgetbase.ui:89
+#, no-c-format, kde-format
+msgid "Operation: %p%"
+msgstr "Operație: %p%"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
+#: gui/applyprogressdialogwidgetbase.ui:99
+#, kde-format
+msgid "Status"
+msgstr "Stare"
+
+#. i18n: ectx: property (format), widget (QProgressBar, m_ProgressTotal)
+#: gui/applyprogressdialogwidgetbase.ui:115
+#, no-c-format, kde-format
+msgid "Total: %p%"
+msgstr "Total: %p%"
+
+#: gui/createpartitiontabledialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create a New Partition Table on <filename>%1</filename>"
+msgstr "Creează o tabelă de partiții nouă pe <filename>%1</filename>"
+
+#: gui/createpartitiontabledialog.cpp:34
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Create &New Partition Table"
+msgstr "Creează tabelă de partiții &nouă"
+
+#: gui/createpartitiontabledialog.cpp:59
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to create an MS-Dos partition table on <filename>"
+"%1</filename>?</para><para>This device has more than 2^32 sectors. That is "
+"the most the MS-Dos partition table type supports, so you will not be able "
+"to use the whole device.</para>"
+msgstr ""
+
+#: gui/createpartitiontabledialog.cpp:61
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Create MS-Dos Partition Table Type?"
+msgstr "Sigur creați o tabelă de partiții MS-Dos?"
+
+#: gui/createpartitiontabledialog.cpp:62
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Create MS-Dos Type"
+msgstr "Creează tip MS-Dos"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/createpartitiontablewidgetbase.ui:24
+#, kde-format
+msgid "Choose the type of partition table you want to create:"
+msgstr "Alegeți tipul tabelului de partiții de creat:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
+#: gui/createpartitiontablewidgetbase.ui:33
+#, kde-format
+msgid "GPT"
+msgstr "GPT"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
+#: gui/createpartitiontablewidgetbase.ui:43
+#, kde-format
+msgid "MS-Dos"
+msgstr "MS-Dos"
+
+#. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
+#: gui/createpartitiontablewidgetbase.ui:70
+#, kde-format
+msgid "(icon)"
+msgstr "(pictogramă)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: gui/createpartitiontablewidgetbase.ui:83
+#, kde-format
+msgid "<b>Warning:</b> This will destroy all data on the device!"
+msgstr "<b>Atenție:</b> Aceasta va distruge toate datele de pe dispozitiv!"
+
+#: gui/createvolumegroupdialog.cpp:38
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create new Volume Group"
+msgstr "Creează grup de volume nou"
+
+#: gui/devicepropsdialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Device Properties: <filename>%1</filename>"
+msgstr "Proprietăți dispozitiv: <filename>%1</filename>"
+
+#: gui/devicepropsdialog.cpp:76 gui/infopane.cpp:168
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "%1 (read only)"
+msgstr "%1 (numai citire)"
+
+#: gui/devicepropsdialog.cpp:107 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
+#, kde-kuit-format
+msgctxt "@label SMART disk status"
+msgid "good"
+msgstr "bună"
+
+#: gui/devicepropsdialog.cpp:112 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
+#, kde-kuit-format
+msgctxt "@label SMART disk status"
+msgid "BAD"
+msgstr "REA"
+
+#: gui/devicepropsdialog.cpp:117 gui/smartdialog.cpp:129
+#, kde-kuit-format
+msgctxt "@label"
+msgid "(unknown)"
+msgstr "(necunoscut)"
+
+#: gui/devicepropsdialog.cpp:123
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "LVM Volume Group"
+msgstr "Grup de volume LVM"
+
+#: gui/devicepropsdialog.cpp:125
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Software RAID Device"
+msgstr "Dispozitiv Software RAID"
+
+#: gui/devicepropsdialog.cpp:127
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Volume Manager Device"
+msgstr "Dispozitiv pentru gestionar de volume"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
+#: gui/devicepropswidgetbase.ui:63
+#, kde-format
+msgid "Partition table:"
+msgstr "Tabelă de partiții:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
+#: gui/devicepropswidgetbase.ui:85
+#, kde-format
+msgid "&Cylinder alignment"
+msgstr "Aliniere &cilindru"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
+#: gui/devicepropswidgetbase.ui:92
+#, kde-format
+msgid "Sector based align&ment"
+msgstr "Ali&niere bazată pe sector"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/devicepropswidgetbase.ui:121
+#, kde-format
+msgid "Capacity:"
+msgstr "Capacitate:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/devicepropswidgetbase.ui:141
+#, kde-format
+msgid "Total sectors:"
+msgstr "Total sectoare:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
+#: gui/devicepropswidgetbase.ui:168
+#, kde-format
+msgid "Logical sector size:"
+msgstr "Dimensiune logică sector:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
+#: gui/devicepropswidgetbase.ui:188
+#, kde-format
+msgid "Physical sector size:"
+msgstr "Dimensiune fizică sector:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
+#: gui/devicepropswidgetbase.ui:222
+#, kde-format
+msgid "Primaries/Max:"
+msgstr "Primare/max.:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
+#: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
+#: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
+#, kde-format
+msgid "SMART status:"
+msgstr "Stare SMART:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
+#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:81
+#, kde-format
+msgid "More..."
+msgstr "Mai mult..."
+
+#: gui/editmountoptionsdialog.cpp:25
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Edit additional mount options"
+msgstr "Redactează opțiunile de montare suplimentare"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
+#: gui/editmountoptionsdialogwidgetbase.ui:19
+#, kde-format
+msgid "Edit Mount Options"
+msgstr "Modifică opțiunile de montare"
+
+#. i18n: ectx: property (text), widget (QLabel, m_Label)
+#: gui/editmountoptionsdialogwidgetbase.ui:25
+#, kde-format
+msgid "Edit the mount options for this file system:"
+msgstr "Modifică opțiunile de montare pentru acest sistem de fișiere:"
+
+#. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, m_EditOptions)
+#: gui/editmountoptionsdialogwidgetbase.ui:32
+#, kde-format
+msgid "Option1,Option2"
+msgstr "Opțiune1,Opțiune2"
+
+#: gui/editmountpointdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Edit mount point for <filename>%1</filename>"
+msgstr "Redactează punctul de montare pentru <filename>%1</filename>"
+
+#: gui/editmountpointdialog.cpp:58
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Are you sure you want to save the changes you made to the system table "
+"file <filename>/etc/fstab</filename>?</para><para><warning>This will "
+"overwrite the existing file on your hard drive now. This <emphasis "
+"strong='1'>can not be undone</emphasis>.</warning></para>"
+msgstr ""
+
+#: gui/editmountpointdialog.cpp:60
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really save changes?"
+msgstr "Sigur salvați modificările?"
+
+#: gui/editmountpointdialog.cpp:61
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Save changes"
+msgstr "Salvează modificările"
+
+#: gui/editmountpointdialog.cpp:76
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid "Could not open file <filename>%1</filename> for writing."
+msgctxt "@info"
+msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
+msgstr "Fișierul <filename>%1</filename> nu a putut fi deschis pentru scriere."
+
+#: gui/editmountpointdialog.cpp:77
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error While Saving Mount Points"
+msgstr "Eroare la salvarea punctelor de montare"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:23
+#, kde-format
+msgid "UU&ID"
+msgstr "UU&ID"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:33
+#, kde-format
+msgid "Users can mount and unmount"
+msgstr "Utilizatorii pot monta și demonta"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:40
+#, kde-format
+msgid "Update access times relative to modification"
+msgstr "Actualizează timpii de acces relativ la modificare"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:61
+#, kde-format
+msgid "Read-only"
+msgstr "Numai-citire"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:68
+#, kde-format
+msgid "Pass &Number:"
+msgstr "&Număr de treceri:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:101
+#, kde-format
+msgid "De&vice Node"
+msgstr "Nod dispoziti&v"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:111
+#, kde-format
+msgid "Options:"
+msgstr "Opțiuni:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
+#: gui/editmountpointdialogwidgetbase.ui:137
+#, kde-format
+msgid "&Label"
+msgstr "&Etichetă"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:144
+#, kde-format
+msgid "No binary execution"
+msgstr "Fără executarea binarelor"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:167
+#, kde-format
+msgid "No automatic mount"
+msgstr "Fără montare automată"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
+#: gui/editmountpointdialogwidgetbase.ui:180
+#, kde-format
+msgid "Remove"
+msgstr "Elimină"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:193
+#, kde-format
+msgid "Select..."
+msgstr "Alege..."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:200
+#, kde-format
+msgid "No update of directory access times"
+msgstr "Fără actualizare a timpilor de acces la dosar"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
+#: gui/editmountpointdialogwidgetbase.ui:207
+#, kde-format
+msgid "Dump &Frequency:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:236
+#, kde-format
+msgid "Type:"
+msgstr "Tip:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:246
+#, kde-format
+msgid "Path:"
+msgstr "Cale:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:288
+#, kde-format
+msgid "No update of file access times"
+msgstr "Fără actualizare a timpilor de acces la fișier"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
+#: gui/editmountpointdialogwidgetbase.ui:295
+#, kde-format
+msgid "Synchronous access"
+msgstr "Acces sincron"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/editmountpointdialogwidgetbase.ui:315
+#, kde-format
+msgid "Identify by:"
+msgstr "Identificare după:"
+
+#: gui/filesystemsupportdialog.cpp:31
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "File System Support"
+msgstr "Suport sisteme de fișiere"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/filesystemsupportdialogwidgetbase.ui:23
+#, kde-format
+msgid ""
+"This table shows which file systems are supported and which specific "
+"operations can be performed on them.\n"
+"Some file systems need external tools to be installed for them to be "
+"supported. But not all operations can be performed on all file systems, even "
+"if all required tools are installed. Please see the documentation for "
+"details. "
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:70
+#, kde-format
+msgid "File System"
+msgstr "Sistem de fișiere"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:75
+#, kde-format
+msgid "Create"
+msgstr "Creează"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:80
+#, kde-format
+msgid "Grow"
+msgstr "Crește"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:85
+#, kde-format
+msgid "Shrink"
+msgstr "Micșorează"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:90
+#, kde-format
+msgid "Move"
+msgstr "Mută"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:95
+#, kde-format
+msgid "Copy"
+msgstr "Copiază"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:100
+#, kde-format
+msgid "Check"
+msgstr "Verifică"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:105
+#, kde-format
+msgid "Read Label"
+msgstr "Citește eticheta"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:110
+#, kde-format
+msgid "Write Label"
+msgstr "Scrie eticheta"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:115
+#, kde-format
+msgid "Read Usage"
+msgstr "Citește utilizarea"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:120
+#, kde-format
+msgid "Backup"
+msgstr "Copie de siguranță"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:125
+#, kde-format
+msgid "Restore"
+msgstr "Restabilește"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
+#: gui/filesystemsupportdialogwidgetbase.ui:130
+#, kde-format
+msgid "Support Tools"
+msgstr "Unelte de suport"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRescan)
+#: gui/filesystemsupportdialogwidgetbase.ui:140
+#, kde-format
+msgctxt "@action:button"
+msgid "Rescan Support"
+msgstr "Recitește suportul"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
+#: gui/infopane.cpp:47 gui/mainwindowbase.ui:47
+#, kde-format, kde-kuit-format
+msgctxt "@title:window"
+msgid "Information"
+msgstr "Informație"
+
+#: gui/infopane.cpp:106
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Partition Information"
+msgstr "Informație despre partiții"
+
+#: gui/infopane.cpp:113 gui/infopane.cpp:127 gui/infopane.cpp:139
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "File system:"
+msgstr "Sistem de fișiere:"
+
+#: gui/infopane.cpp:114 gui/infopane.cpp:128 gui/infopane.cpp:140
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Capacity:"
+msgstr "Capacitate:"
+
+#: gui/infopane.cpp:115
+#, kde-format
+msgctxt "@label partition"
+msgid "Cipher name:"
+msgstr "Denumire cifru:"
+
+#: gui/infopane.cpp:116
+#, kde-format
+msgctxt "@label partition"
+msgid "Cipher mode:"
+msgstr "Regim cifru:"
+
+#: gui/infopane.cpp:117
+#, kde-format
+msgctxt "@label partition"
+msgid "Hash:"
+msgstr ""
+
+#: gui/infopane.cpp:118
+#, kde-format
+msgctxt "@label partition"
+msgid "Key size:"
+msgstr "Dimensiune cheie:"
+
+#: gui/infopane.cpp:119
+#, kde-format
+msgctxt "@label partition"
+msgid "Payload offset:"
+msgstr ""
+
+#: gui/infopane.cpp:120 gui/infopane.cpp:135 gui/infopane.cpp:143
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "First sector:"
+msgstr "Primul sector:"
+
+#: gui/infopane.cpp:121 gui/infopane.cpp:136 gui/infopane.cpp:144
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Last sector:"
+msgstr "Ultimul sector:"
+
+#: gui/infopane.cpp:122 gui/infopane.cpp:137 gui/infopane.cpp:145
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Number of sectors:"
+msgstr "Numărul de sectoare:"
+
+#: gui/infopane.cpp:129 gui/infopane.cpp:141
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Available:"
+msgstr "Disponibil:"
+
+#: gui/infopane.cpp:130 gui/infopane.cpp:142
+#, kde-format, kde-kuit-format
+msgctxt "@label partition"
+msgid "Used:"
+msgstr "Utilizat:"
+
+#: gui/infopane.cpp:131
+#, kde-format
+msgctxt "@label partition"
+msgid "PE Size:"
+msgstr "Dimensiune PE:"
+
+#: gui/infopane.cpp:132
+#, kde-format
+msgctxt "@label partition"
+msgid "Total PE:"
+msgstr "Total PE:"
+
+#: gui/infopane.cpp:133
+#, kde-format
+msgctxt "@label partition"
+msgid "Free PE:"
+msgstr "PE libere:"
+
+#: gui/infopane.cpp:134
+#, kde-format
+msgctxt "@label partition"
+msgid "Allocated PE:"
+msgstr "PE alocate:"
+
+#: gui/infopane.cpp:157
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Device Information"
+msgstr "Informație dispozitiv"
+
+#: gui/infopane.cpp:161
+#, kde-kuit-format
+msgctxt "@label device"
+msgid "Path:"
+msgstr "Cale:"
+
+#: gui/infopane.cpp:176
+#, kde-format
+msgctxt "@label device"
+msgid "Type:"
+msgstr "Tip:"
+
+#: gui/infopane.cpp:177 gui/infopane.cpp:185 gui/infopane.cpp:193
+#, kde-format
+msgctxt "@label device"
+msgid "Capacity:"
+msgstr "Capacitate:"
+
+#: gui/infopane.cpp:178
+#, kde-format
+msgctxt "@label device"
+msgid "Total sectors:"
+msgstr "Total sectoare:"
+
+#: gui/infopane.cpp:179
+#, kde-format
+msgctxt "@label device"
+msgid "Logical sector size:"
+msgstr "Dimensiune logică sector:"
+
+#: gui/infopane.cpp:180
+#, kde-format
+msgctxt "@label device"
+msgid "Physical sector size:"
+msgstr "Dimensiune fizică sector:"
+
+#: gui/infopane.cpp:181
+#, kde-format
+msgctxt "@label device"
+msgid "Primaries/Max:"
+msgstr "Primare/max.:"
+
+#: gui/infopane.cpp:184 gui/infopane.cpp:192
+#, kde-format
+msgctxt "@label device"
+msgid "Volume Type:"
+msgstr "Tip volum:"
+
+#: gui/infopane.cpp:186
+#, kde-format
+msgctxt "@label device"
+msgid "PE Size:"
+msgstr "Dimensiune PE:"
+
+#: gui/infopane.cpp:187
+#, kde-format
+msgctxt "@label device"
+msgid "Total PE:"
+msgstr "Total PE:"
+
+#: gui/infopane.cpp:188
+#, kde-format
+msgctxt "@label device"
+msgid "Allocated PE:"
+msgstr "PE alocate:"
+
+#: gui/infopane.cpp:189
+#, kde-format
+msgctxt "@label device"
+msgid "Free PE:"
+msgstr "PE libere:"
+
+#: gui/infopane.cpp:194
+#, kde-format
+msgctxt "@label device"
+msgid "RAID Level:"
+msgstr "Nivel RAID:"
+
+#: gui/infopane.cpp:195
+#, fuzzy, kde-format
+#| msgctxt "@label device"
+#| msgid "Cylinder size:"
+msgctxt "@label device"
+msgid "Chunk Size:"
+msgstr "Dimensiune cilindru:"
+
+#: gui/infopane.cpp:196
+#, fuzzy, kde-format
+#| msgid "Total: %p%"
+msgctxt "@label device"
+msgid "Total Chunk:"
+msgstr "Total: %p%"
+
+#: gui/infopane.cpp:197
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Size:"
+msgctxt "@label device"
+msgid "Array Size:"
+msgstr "Dimensiune:"
+
+#: gui/insertdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Insert a partition"
+msgstr "Inserează o partiție"
+
+#: gui/listphysicalvolumes.cpp:39
+#, kde-kuit-format
+msgctxt "@item:inlistbox Device | Capacity"
+msgid "%1 | %2"
+msgstr "%1 | %2"
+
+#: gui/mainwindow.cpp:164
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Partition Manager requires privileges in order to work. Please refresh the "
+"devices and authenticate when prompted."
+msgstr ""
+
+#: gui/mainwindow.cpp:231
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to quit the application?</para><para>There is still "
+"an operation pending.</para>"
+msgid_plural ""
+"<para>Do you really want to quit the application?</para><para>There are "
+"still %1 operations pending.</para>"
+msgstr[0] ""
+"<para>Sigur doriți să părăsiți aplicația?</para><para>Mai este încă o "
+"operație în așteptare.</para>"
+msgstr[1] ""
+"<para>Sigur doriți să părăsiți aplicația?</para><para>Mai sunt încă %1 "
+"operații în așteptare.</para>"
+msgstr[2] ""
+"<para>Sigur doriți să părăsiți aplicația?</para><para>Mai sunt încă %1 de "
+"operații în așteptare.</para>"
+
+#: gui/mainwindow.cpp:233
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Discard Pending Operations and Quit?"
+msgstr "Anulați operațiile în așteptare și ieșiți?"
+
+#: gui/mainwindow.cpp:234
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Quit <application>%1</application>"
+msgstr "Termină <application>%1</application>"
+
+#: gui/mainwindow.cpp:276
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Undo"
+msgstr "Desfă"
+
+#: gui/mainwindow.cpp:277
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Undo the last operation"
+msgstr "Desface ultima operație"
+
+#: gui/mainwindow.cpp:278
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Remove the last operation from the list."
+msgstr "Elimină ultima operație din listă."
+
+#: gui/mainwindow.cpp:285
+#, kde-kuit-format
+msgctxt "@action:inmenu clear the list of operations"
+msgid "Clear"
+msgstr "Curăță"
+
+#: gui/mainwindow.cpp:286
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Clear all operations"
+msgstr "Curăță toate operațiile"
+
+#: gui/mainwindow.cpp:287
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Empty the list of pending operations."
+msgstr "Golește lista operațiilor în așteptare."
+
+#: gui/mainwindow.cpp:293
+#, kde-kuit-format
+msgctxt "@action:inmenu apply all operations"
+msgid "Apply"
+msgstr "Aplică"
+
+#: gui/mainwindow.cpp:294
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Apply all operations"
+msgstr "Aplică toate operațiile"
+
+#: gui/mainwindow.cpp:295
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Apply the pending operations in the list."
+msgstr "Aplică operațiile în așteptare din listă."
+
+#: gui/mainwindow.cpp:302
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "New Partition Table"
+msgstr "Tabelă de partiții nouă"
+
+#: gui/mainwindow.cpp:303
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Create a new partition table"
+msgstr "Creează o tabelă de partiții nouă"
+
+#: gui/mainwindow.cpp:304
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Create a new and empty partition table on a device."
+msgstr "Creează o tabelă de partiții nouă și goală pe dispozitiv."
+
+#: gui/mainwindow.cpp:311
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Export Partition Table"
+msgstr "Exportă tabela de partiții"
+
+#: gui/mainwindow.cpp:312
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Export a partition table"
+msgstr "Exportă o tabelă de partiții"
+
+#: gui/mainwindow.cpp:313
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Export the device's partition table to a text file."
+msgstr "Exportă tabelă de partiții a dispozitivului într-un fișier textual."
+
+#: gui/mainwindow.cpp:319
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Import Partition Table"
+msgstr "Importă tabel de partiții"
+
+#: gui/mainwindow.cpp:320
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Import a partition table"
+msgstr "Importă un tabel de partiții"
+
+#: gui/mainwindow.cpp:321
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Import a partition table from a text file."
+msgstr "Importă un tabel de partiții dintr-un fișier textual."
+
+#: gui/mainwindow.cpp:328
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove Volume Group"
+msgstr "Elimină grup de volume"
+
+#: gui/mainwindow.cpp:329
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Remove selected Volume Group"
+msgstr "Elimină grupul de volume ales"
+
+#: gui/mainwindow.cpp:330
+#, kde-format
+msgctxt "@info:status"
+msgid "Remove selected Volume Group."
+msgstr "Elimină grupul de volume ales."
+
+#: gui/mainwindow.cpp:338
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Resize Volume Group"
+msgstr "Redimensionează grup de volume"
+
+#: gui/mainwindow.cpp:339
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Resize selected Volume Group"
+msgstr "Redimensionează grupul de volume ales"
+
+#: gui/mainwindow.cpp:340
+#, kde-format
+msgctxt "@info:status"
+msgid "Extend or reduce selected Volume Group."
+msgstr "Extinde sau reduce grupul de volume ales."
+
+#: gui/mainwindow.cpp:348
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Deactivate Volume Group"
+msgstr "Dezactivează grup de volume"
+
+#: gui/mainwindow.cpp:349
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Deactivate selected Volume Group"
+msgstr "Dezactivează grupul de volume ales"
+
+#: gui/mainwindow.cpp:350
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Please select a device."
+msgctxt "@info:status"
+msgid "Deactivate selected Volume Group before unplugging removable devices."
+msgstr "Alegeți un dispozitiv."
+
+#: gui/mainwindow.cpp:356
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "SMART Status"
+msgstr "Stare SMART"
+
+#: gui/mainwindow.cpp:357
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show SMART status"
+msgstr "Arată starea SMART"
+
+#: gui/mainwindow.cpp:358
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show the device's SMART status if supported"
+msgstr "Arată starea SMART a dispozitivului, dacă e susținută"
+
+#: gui/mainwindow.cpp:363 gui/mainwindow.cpp:455
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Properties"
+msgstr "Proprietăți"
+
+#: gui/mainwindow.cpp:364
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show device properties dialog"
+msgstr "Arată dialogul de proprietăți ale dispozitivului"
+
+#: gui/mainwindow.cpp:365
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "View and modify device properties"
+msgstr "Vizualizați și modificați proprietățile dispozitivului"
+
+#: gui/mainwindow.cpp:372
+#, kde-kuit-format
+msgctxt "@action:inmenu create a new partition"
+msgid "New"
+msgstr "Nouă"
+
+#: gui/mainwindow.cpp:373
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "New partition"
+msgstr "Partiție nouă"
+
+#: gui/mainwindow.cpp:374
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Create a new partition."
+msgstr "Creează o nouă partiție."
+
+#: gui/mainwindow.cpp:381
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Resize/Move"
+msgstr "Redim./mutare"
+
+#: gui/mainwindow.cpp:382
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Resize or move partition"
+msgstr "Redimensionează sau mută o partiție"
+
+#: gui/mainwindow.cpp:383
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Shrink, grow or move an existing partition."
+msgstr "Mărește, micșorează sau mută o partiție existentă."
+
+#: gui/mainwindow.cpp:390
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Delete"
+msgstr "Șterge"
+
+#: gui/mainwindow.cpp:391
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Delete partition"
+msgstr "Șterge partiția"
+
+#: gui/mainwindow.cpp:392
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Delete a partition."
+msgstr "Șterge o partiție."
+
+#: gui/mainwindow.cpp:399
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Shred"
+msgstr "Forfecare"
+
+#: gui/mainwindow.cpp:400
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Shred partition"
+msgstr "Foarfecă partiția"
+
+#: gui/mainwindow.cpp:401
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Shred a partition so that its contents cannot be restored."
+msgstr ""
+"Foarfecă o partiție astfel încât conținutul acesteia să nu mai poată fi "
+"recuperat."
+
+#: gui/mainwindow.cpp:408
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Copy"
+msgstr "Copiază"
+
+#: gui/mainwindow.cpp:409
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Copy partition"
+msgstr "Copiază partiția"
+
+#: gui/mainwindow.cpp:410
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Copy an existing partition."
+msgstr "Copiază o partiție existentă."
+
+#: gui/mainwindow.cpp:417
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Paste"
+msgstr "Lipește"
+
+#: gui/mainwindow.cpp:418
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Paste partition"
+msgstr "Lipește partiția"
+
+#: gui/mainwindow.cpp:419
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Paste a copied partition."
+msgstr "Lipește o partiție copiată."
+
+#: gui/mainwindow.cpp:426
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Edit Mount Point"
+msgstr "Modifică punctul de montare"
+
+#: gui/mainwindow.cpp:427
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Edit mount point"
+msgstr "Modifică punctul de montare"
+
+#: gui/mainwindow.cpp:428
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Edit a partition's mount point and options."
+msgstr "Modifică punctul de montare și opțiunile unei partiții."
+
+#: gui/mainwindow.cpp:433
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Mount"
+msgstr "Montează"
+
+#: gui/mainwindow.cpp:434
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Mount or unmount partition"
+msgstr "Montează sau demontează partiția"
+
+#: gui/mainwindow.cpp:435
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Mount or unmount a partition."
+msgstr "Montează sau demontează o partiție."
+
+#: gui/mainwindow.cpp:440
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Unlock"
+msgstr "Deblochează"
+
+#: gui/mainwindow.cpp:441
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Unlock or lock encrypted partition"
+msgstr "Deblochează sau blochează partiția criptată"
+
+#: gui/mainwindow.cpp:442
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Unlock or lock encrypted partition."
+msgstr "Deblochează sau blochează partiția criptată."
+
+#: gui/mainwindow.cpp:447
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Check"
+msgstr "Verifică"
+
+#: gui/mainwindow.cpp:448
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Check partition"
+msgstr "Verifică partiția"
+
+#: gui/mainwindow.cpp:449
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Check a filesystem on a partition for errors."
+msgstr "Verifică un sistem de fișiere de pe o partiție pentru erori."
+
+#: gui/mainwindow.cpp:456
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show partition properties dialog"
+msgstr "Arată dialogul de proprietăți ale partiției"
+
+#: gui/mainwindow.cpp:457
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "View and modify partition properties (label, partition flags, etc.)"
+msgstr ""
+"Vizualizează și modifică proprietățile partiției (etichetă, fanioane, etc.)"
+
+#: gui/mainwindow.cpp:463
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Backup"
+msgstr "Creează copie de siguranță"
+
+#: gui/mainwindow.cpp:464
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Backup partition"
+msgstr "Creează o copie de siguranță a partiției"
+
+#: gui/mainwindow.cpp:465
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Backup a partition to an image file."
+msgstr "Salvează partiția într-un fișier-imagine."
+
+#: gui/mainwindow.cpp:471
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Restore"
+msgstr "Restabilește"
+
+#: gui/mainwindow.cpp:472
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Restore partition"
+msgstr "Restabilește partiția"
+
+#: gui/mainwindow.cpp:473
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Restore a partition from an image file."
+msgstr "Restabilește o partiție dintr-un fișier-imagine."
+
+#: gui/mainwindow.cpp:480
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "New Volume Group"
+msgstr "Grup de volume nou"
+
+#: gui/mainwindow.cpp:481
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Create a new LVM Volume Group"
+msgstr "Creează un grup de volume LVM nou"
+
+#: gui/mainwindow.cpp:482
+#, kde-format
+msgctxt "@info:status"
+msgid "Create a new LVM Volume Group as a device."
+msgstr "Creează un grup de volume LVM nou ca dispozitiv."
+
+#: gui/mainwindow.cpp:488
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "File System Support"
+msgstr "Suport sisteme de fișiere"
+
+#: gui/mainwindow.cpp:489
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "View file system support information"
+msgstr "Vizualizează informații de suport ale sistemului de fișiere"
+
+#: gui/mainwindow.cpp:490
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show information about supported file systems."
+msgstr "Arată informații despre sistemele de fișiere susținute."
+
+#: gui/mainwindow.cpp:494
+#, kde-kuit-format
+msgctxt "@action:inmenu refresh list of devices"
+msgid "Refresh Devices"
+msgstr "Actualizează dispozitivele"
+
+#: gui/mainwindow.cpp:495
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Refresh all devices"
+msgstr "Reîmprospătează toate dispozitivele"
+
+#: gui/mainwindow.cpp:496
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Renew the devices list."
+msgstr "Înnoiește lista dispozitivelor."
+
+#: gui/mainwindow.cpp:512
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Clear Log"
+msgstr "Curăță jurnalul"
+
+#: gui/mainwindow.cpp:513
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Clear the log output"
+msgstr "Curăță înregistrările jurnalului"
+
+#: gui/mainwindow.cpp:514
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Clear the log output panel."
+msgstr "Curăță panoul cu înregistrările jurnalului."
+
+#: gui/mainwindow.cpp:519
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Save Log"
+msgstr "Salvează jurnalul"
+
+#: gui/mainwindow.cpp:520
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Save the log output"
+msgstr "Salvează înregistrările jurnalului"
+
+#: gui/mainwindow.cpp:521
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Save the log output to a file."
+msgstr "Salvează înregistrările jurnalului într-un fișier."
+
+#: gui/mainwindow.cpp:527
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "About KPMcore Library"
+msgstr "Despre biblioteca KPMcore"
+
+#: gui/mainwindow.cpp:528
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Show About KPMcore dialog"
+msgstr "Arată dialogul „Despre KPMcore”"
+
+#: gui/mainwindow.cpp:529
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Show About KPMcore dialog."
+msgstr "Arată dialogul „Despre KPMcore”."
+
+#: gui/mainwindow.cpp:711
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "One pending operation"
+msgid_plural "%1 pending operations"
+msgstr[0] "O operațiune în așteptare"
+msgstr[1] "%1 operațiuni în așteptare"
+msgstr[2] "%1 de operațiuni în așteptare"
+
+#: gui/mainwindow.cpp:806
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Using backend plugin: %1 (%2)"
+msgstr "Folosind extensia de platformă: %1 (%2)"
+
+#: gui/mainwindow.cpp:810
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Scanning devices..."
+msgstr "Se citesc dispozitivele…"
+
+#: gui/mainwindow.cpp:848
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Scan finished."
+msgstr "Citire încheiată."
+
+#: gui/mainwindow.cpp:912
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to rescan the devices?</para><para><warning>This "
+"will also clear the list of pending operations.</warning></para>"
+msgstr ""
+"<para>Sigur doriți să recitiți dispozitivele?</para><para><warning>Aceasta "
+"va curăța și lista de operații în așteptare.</warning></para>"
+
+#: gui/mainwindow.cpp:914
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Rescan the Devices?"
+msgstr "Sigur rescanați dispozitivele?"
+
+#: gui/mainwindow.cpp:915
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Rescan Devices"
+msgstr "Recitește dispozitivele"
+
+#: gui/mainwindow.cpp:941
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Do you really want to apply the pending operations listed below?</"
+"para><para><warning>This will permanently modify your disks.</warning></para>"
+msgstr ""
+"<para>Sigur doriți să aplicați operațiile enumerate mai jos?</"
+"para><para><warning>Aceasta va modifica discurile definitiv.</warning></para>"
+
+#: gui/mainwindow.cpp:943
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Apply Pending Operations?"
+msgstr "Aplicați operațiile în așteptare?"
+
+#: gui/mainwindow.cpp:944
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Apply Pending Operations"
+msgstr "Aplică operațiile în așteptare"
+
+#: gui/mainwindow.cpp:946
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Applying operations..."
+msgstr "Se aplică operațiunile…"
+
+#: gui/mainwindow.cpp:971
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Undoing operation: %1"
+msgstr "Se desface operațiunea: %1"
+
+#: gui/mainwindow.cpp:987
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Do you really want to clear the list of pending operations?"
+msgstr "Sigur curățați lista operațiunilor în așteptare?"
+
+#: gui/mainwindow.cpp:988
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Clear Pending Operations?"
+msgstr "Curățați operațiunile în așteptare?"
+
+#: gui/mainwindow.cpp:989
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Clear Pending Operations"
+msgstr "Curăță operațiunile în așteptare"
+
+#: gui/mainwindow.cpp:991
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Clearing the list of pending operations."
+msgstr "Se curăță lista operațiunilor în așteptare."
+
+#: gui/mainwindow.cpp:1033
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import"
+msgstr ""
+"Fișierul de intrare <filename>%1</filename> nu a putut fi deschis pentru "
+"import"
+
+#: gui/mainwindow.cpp:1033 gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1051
+#: gui/mainwindow.cpp:1057
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Importing Partition Table"
+msgstr "Eroare la importul tabelei de partiții"
+
+#: gui/mainwindow.cpp:1051
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Could not open input file <filename>%1</filename> for import: %2"
+msgstr ""
+"Fișierul de intrare <filename>%1</filename> nu a putut fi deschis pentru "
+"import: %2"
+
+#: gui/mainwindow.cpp:1057
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Could not open device <filename>%1</filename> to create new partition "
+#| "<filename>%2</filename>."
+msgctxt "@info"
+msgid ""
+"Could not open temporary file <filename>%1</filename> while trying to import "
+"from <filename>%2</filename>."
+msgstr ""
+"Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
+"noii partiții <filename>%2</filename>."
+
+#: gui/mainwindow.cpp:1087
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Could not open device <filename>%1</filename> to create new partition "
+#| "<filename>%2</filename>."
+msgctxt "@info"
+msgid ""
+"The import file <filename>%1</filename> does not contain a valid partition "
+"table."
+msgstr ""
+"Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
+"noii partiții <filename>%2</filename>."
+
+#: gui/mainwindow.cpp:1087 gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1104
+#: gui/mainwindow.cpp:1109 gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1132
+#: gui/mainwindow.cpp:1137 gui/mainwindow.cpp:1156 gui/mainwindow.cpp:1161
+#: gui/mainwindow.cpp:1166 gui/mainwindow.cpp:1173 gui/mainwindow.cpp:1457
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error While Importing Partition Table"
+msgstr "Eroare la importul tabelei de partiții"
+
+#: gui/mainwindow.cpp:1097
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Found more than one partition table type in import file (line %1)."
+msgstr ""
+
+#: gui/mainwindow.cpp:1104
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is unknown (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:1109
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition table type \"%1\" is not supported for import (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:1119
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Found partition but no partition table type (line %1)."
+msgstr ""
+
+#: gui/mainwindow.cpp:1132
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Partition %1 would be outside the device's boundaries (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:1137
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Partition %1 has end before start sector (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:1156
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain"
+#| msgid "Create file system %1 on partition <filename>%2</filename>"
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+msgstr "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
+
+#: gui/mainwindow.cpp:1161
+#, kde-kuit-format
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid ""
+"No parent partition or partition table found for partition %1 (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:1166
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The partition table type \"%1\" does not support extended partitions, but "
+"one was found (line %2)."
+msgstr ""
+
+#: gui/mainwindow.cpp:1173
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain"
+#| msgid "Create file system %1 on partition <filename>%2</filename>"
+msgctxt "@info the partition is NOT a device path, just a number"
+msgid "Could not create file system \"%1\" for partition %2 (line %3)."
+msgstr "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
+
+#: gui/mainwindow.cpp:1188
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Could not parse line %1 from import file. Ignoring it."
+msgstr ""
+
+#: gui/mainwindow.cpp:1208
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Exporting Partition Table"
+msgstr "Eroare la exportul tabelului de partiții"
+
+#: gui/mainwindow.cpp:1378 gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1420
+#, kde-kuit-format
+msgid "%1%2"
+msgstr "%1%2"
+
+#: gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1395
+#, kde-kuit-format
+msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
+msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
+
+#: gui/mainwindow.cpp:1432
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>No support tools were found for file systems currently present on hard "
+"disks in this computer:</para><table style='margin-top:12px'><tr><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Partition</"
+"td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>File "
+"System</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Support Tools</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>URL</td></tr>%1</table><para>As long as the support "
+"tools for these file systems are not installed you will not be able to "
+"modify them.</para><para>You should find packages with these support tools "
+"in your distribution's package manager.</para>"
+msgstr ""
+
+#: gui/mainwindow.cpp:1445
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "File System Support"
+msgctxt "@title:window"
+msgid "Missing File System Support Packages"
+msgstr "Suport sisteme de fișiere"
+
+#: gui/mainwindow.cpp:1456
+#, kde-kuit-format
+msgctxt "@info device should be inside of /dev"
+msgid "Unrecognized device \"%1\" "
+msgstr ""
+
+#: gui/mainwindow.cpp:1465
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain"
+#| msgid "Create file system %1 on partition <filename>%2</filename>"
+msgctxt "@info device should be inside of /dev"
+msgid "Unrecognized partition \"%1\" "
+msgstr "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
+
+#: gui/mainwindow.cpp:1466
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Error Importing Partition Table"
+msgctxt "@title:window"
+msgid "Error opening partition"
+msgstr "Eroare la importul tabelului de partiții"
+
+#. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
+#. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
+#: gui/mainwindowbase.ui:18 gui/partitionmanagerwidgetbase.ui:20
+#, kde-format
+msgctxt "@title:window"
+msgid "KDE Partition Manager"
+msgstr "Gestionarul de partiții KDE"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
+#: gui/mainwindowbase.ui:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Devices"
+msgstr "Dispozitive"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
+#: gui/mainwindowbase.ui:38
+#, kde-format
+msgctxt "@title:window"
+msgid "Pending Operations"
+msgstr "Operații în așteptare"
+
+#. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
+#: gui/mainwindowbase.ui:59
+#, kde-format
+msgctxt "@title:window"
+msgid "Log Output"
+msgstr "Jurnalizare"
+
+#: gui/newdialog.cpp:47
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Create a new partition"
+msgstr "Creează o nouă partiție"
+
+#. i18n: ectx: ToolBar (partitionToolBar)
+#: gui/partitionmanagerui.rc:12
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "Partition Toolbar"
+msgctxt "@title:menu"
+msgid "Partition Manager Toolbar"
+msgstr "Bara partițiilor"
+
+#. i18n: ectx: Menu (device)
+#: gui/partitionmanagerui.rc:30
+#, kde-format
+msgctxt "@title:menu"
+msgid "Device"
+msgstr "Dispozitiv"
+
+#. i18n: ectx: Menu (selectedDevice)
+#: gui/partitionmanagerui.rc:32
+#, kde-format
+msgctxt "@title:menu"
+msgid "Select Current Device"
+msgstr "Alegeți dispozitivul actual"
+
+#. i18n: ectx: Menu (tools)
+#: gui/partitionmanagerui.rc:49
+#, kde-format
+msgctxt "@title:menu"
+msgid "Tools"
+msgstr "Unelte"
+
+#. i18n: ectx: Menu (partition)
+#: gui/partitionmanagerui.rc:55
+#, kde-format
+msgctxt "@title:menu"
+msgid "Partition"
+msgstr "Partiție"
+
+#. i18n: ectx: Menu (panels)
+#: gui/partitionmanagerui.rc:77
+#, kde-format
+msgctxt "@title:menu"
+msgid "Panels Shown"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:199
+#, kde-kuit-format
+msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
+msgid "%1 [Encrypted]"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:403
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be mounted."
+msgstr ""
+"Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+"montat."
+
+#: gui/partitionmanagerwidget.cpp:403
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Mount File System."
+msgstr "Imposibil de montat sistemul de fișiere."
+
+#: gui/partitionmanagerwidget.cpp:406
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system on partition <filename>%1</filename> could not be unmounted."
+msgstr ""
+"Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+"demontat."
+
+#: gui/partitionmanagerwidget.cpp:406
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Unmount File System."
+msgstr "Imposibil de demontat sistemul de fișiere."
+
+#: gui/partitionmanagerwidget.cpp:446
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "The file system on partition <filename>%1</filename> could not be "
+#| "unmounted."
+msgctxt "@info"
+msgid ""
+"The encrypted file system on partition <filename>%1</filename> could not be "
+"unlocked."
+msgstr ""
+"Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+"demontat."
+
+#: gui/partitionmanagerwidget.cpp:452
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Could Not Unmount File System."
+msgctxt "@title:window"
+msgid "Could Not Unlock Encrypted File System."
+msgstr "Imposibil de demontat sistemul de fișiere."
+
+#: gui/partitionmanagerwidget.cpp:457
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "The file system on partition <filename>%1</filename> could not be mounted."
+msgctxt "@info"
+msgid ""
+"The encrypted file system on partition <filename>%1</filename> could not be "
+"locked."
+msgstr ""
+"Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+"montat."
+
+#: gui/partitionmanagerwidget.cpp:463
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Could Not Mount File System."
+msgctxt "@title:window"
+msgid "Could Not Lock Encrypted File System."
+msgstr "Imposibil de montat sistemul de fișiere."
+
+#: gui/partitionmanagerwidget.cpp:492
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para>There is already 1 primary partition on this device. This is the "
+#| "maximum number its partition table can handle.</para><para>You cannot "
+#| "create, paste or restore a primary partition on it before you delete an "
+#| "existing one.</para>"
+#| msgid_plural ""
+#| "<para>There are already %1 primary partitions on this device. This is the "
+#| "maximum number its partition table can handle.</para><para>You cannot "
+#| "create, paste or restore a primary partition on it before you delete an "
+#| "existing one.</para>"
+msgctxt "@info"
+msgid ""
+"<para>There is already one primary partition on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgid_plural ""
+"<para>There are already %1 primary partitions on this device. This is the "
+"maximum number its partition table type can handle.</para><para>You cannot "
+"create, paste or restore a primary partition on it before you delete an "
+"existing one.</para>"
+msgstr[0] ""
+"<para>Pe acest dispozitiv există deja 1 partiție primară. Acesta este "
+"numărul maxim pe care îl susține tabela sa de partiții.</para><para>Nu "
+"puteți crea, lipi sau restabili o partiție primară pe acesta înainte de a "
+"șterge una existentă.</para>"
+msgstr[1] ""
+"<para>Pe acest dispozitiv există deja %1 partiții primare. Acesta este "
+"numărul maxim pe care îl susține tabela sa de partiții.</para><para>Nu "
+"puteți crea, lipi sau restabili o partiție primară pe acesta înainte de a "
+"șterge una existentă.</para>"
+msgstr[2] ""
+"<para>Pe acest dispozitiv există deja %1 de partiții primare. Acesta este "
+"numărul maxim pe care îl susține tabela sa de partiții.</para><para>Nu "
+"puteți crea, lipi sau restabili o partiție primară pe acesta înainte de a "
+"șterge una existentă.</para>"
+
+#: gui/partitionmanagerwidget.cpp:496
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Too Many Primary Partitions."
+msgstr "Prea multe partiții primare."
+
+#: gui/partitionmanagerwidget.cpp:559
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The partition <filename>%1</filename> cannot currently be deleted "
+"because one or more partitions with higher logical numbers are still mounted."
+"</para><para>Please unmount all partitions with higher logical numbers than "
+"%2 first.</para>"
+msgstr ""
+"<para>Partiția <filename>%1</filename> nu poate fi ștearsă momentan din "
+"cauză că una sau mai multe partiții cu numere logice mai mari sunt încă "
+"montate.</para><para>Mai întâi demontați toate partițiile cu numere logice "
+"mai mari decât %2.</para>"
+
+#: gui/partitionmanagerwidget.cpp:562
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cannot Delete Partition."
+msgstr "Imposibil de șters partiția."
+
+#: gui/partitionmanagerwidget.cpp:571
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Do you really want to delete the partition that is currently in the "
+"clipboard? It will no longer be available for pasting after it has been "
+"deleted."
+msgstr ""
+"Sigur doriți să ștergeți partiția ce se află momentan în clipboard? Ea nu va "
+"mai fi disponibilă pentru lipire după ce a fost ștearsă."
+
+#: gui/partitionmanagerwidget.cpp:573
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Delete Partition in the Clipboard?"
+msgstr "Sigur ștergeți partiția din clipboard?"
+
+#: gui/partitionmanagerwidget.cpp:574
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Delete It"
+msgstr "Șterge-o"
+
+#: gui/partitionmanagerwidget.cpp:627
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Partition <filename>%1</filename> has the same position and size after "
+#| "resize/move. Ignoring operation."
+msgctxt "@info:status"
+msgid ""
+"Partition <filename>%1</filename> has the same position and size after "
+"resize/move. Ignoring operation."
+msgstr ""
+"Partiția <filename>%1</filename> are aceeași poziție și dimensiune după "
+"redimensionare/mutare. Se ignoră operația."
+
+#: gui/partitionmanagerwidget.cpp:655
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain"
+#| msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+msgctxt "@info:status"
+msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+msgstr "Partiția <filename>%1</filename> a fost copiată în clipboard."
+
+#: gui/partitionmanagerwidget.cpp:718
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para><warning>You are about to lose all data on partition <filename>%1</"
+#| "filename>.</warning></para><para>Recreating a file system will erase all "
+#| "its contents. If you continue now and apply the resulting operation in "
+#| "the main window, all data on <filename>%1</filename> will unrecoverably "
+#| "be lost.</para>"
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Overwriting one partition with another (or "
+"with an image file) will destroy all data on this target partition.</"
+"para><para>If you continue now and apply the resulting operation in the main "
+"window, all data currently stored on <filename>%1</filename> will "
+"unrecoverably be overwritten.</para>"
+msgstr ""
+"<para><warning>Sunteți pe cale de a pierde toate datele de pe partiția "
+"<filename>%1</filename>.</warning></para><para>Recrearea unui sistem de "
+"fișiere va șterge tot conținutul acestuia. Dacă continuați acum și aplicați "
+"operația rezultantă în fereastra principală, toate datele de pe <filename>"
+"%1</filename> vor fi pierdute irecuperabil.</para>"
+
+#: gui/partitionmanagerwidget.cpp:726
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Overwrite Existing Partition?"
+msgstr "Sigur suprascrieți partiția existentă?"
+
+#: gui/partitionmanagerwidget.cpp:727
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Overwrite Partition"
+msgstr "Suprascrie partiția"
+
+#: gui/partitionmanagerwidget.cpp:735
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>The selected partition is not large enough to hold the source "
+"partition or the backup file.</para><para>Pick another target or resize this "
+"partition so it is as large as the source.</para>"
+msgstr ""
+"<para>Partiția aleasă nu este suficient de mare pentru a ține partiția-sursă "
+"sau fișierul cu copia de rezervă.</para><para>Alegeți altă țintă sau "
+"redimensionați această partiție astfel încât să fie la fel de mare ca sursa."
+"</para>"
+
+#: gui/partitionmanagerwidget.cpp:736
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Target Not Large Enough"
+msgstr "Ținta nu este destul de mare"
+
+#: gui/partitionmanagerwidget.cpp:739
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>It is not possible to create the target partition large enough to hold "
+"the source.</para><para>This may happen if not all partitions on a device "
+"are correctly aligned or when copying a primary partition into an extended "
+"partition.</para>"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:742
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Cannot Create Target Partition."
+msgstr "Imposibil de creat partiția-țintă."
+
+#: gui/partitionmanagerwidget.cpp:800
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The file system in the image file <filename>%1</filename> is too large to be "
+"restored to the selected partition."
+msgstr ""
+"Sistemul de fișiere din fișierul-imagine <filename>%1</filename> este prea "
+"mare pentru a fi restabilit pe partiția aleasă."
+
+#: gui/partitionmanagerwidget.cpp:800
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Not Enough Space to Restore File System."
+msgstr "Spațiu insuficient pentru restabilirea sistemului de fișiere."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:76
+#, kde-format
+msgid "Partition"
+msgstr "Partiție"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:81
+#, kde-format
+msgid "Type"
+msgstr "Tip"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:86
+#, kde-format
+msgid "Mount Point"
+msgstr "Punct de montare"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:91
+#, kde-format
+msgid "Label"
+msgstr "Etichetă"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:96
+#, kde-format
+msgid "UUID"
+msgstr "UUID"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:101
+#, fuzzy, kde-format
+#| msgid "Partition Label"
+msgid "Partition Name"
+msgstr "Etichetă partiție"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:106
+#, kde-format
+msgid "Partition UUID"
+msgstr "UUID partiție"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:111
+#, kde-format
+msgid "Size"
+msgstr "Dimensiune"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:116
+#, kde-format
+msgid "Used"
+msgstr "Utilizat"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:121
+#, kde-format
+msgid "Available"
+msgstr "Disponibil"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:126
+#, kde-format
+msgid "First Sector"
+msgstr "Primul sector"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:131
+#, kde-format
+msgid "Last Sector"
+msgstr "Ultimul sector"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:136
+#, kde-format
+msgid "Number of Sectors"
+msgstr "Numărul de sectoare"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
+#: gui/partitionmanagerwidgetbase.ui:141
+#, kde-format
+msgid "Flags"
+msgstr "Fanioane"
+
+#: gui/partpropsdialog.cpp:55
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Partition properties: <filename>%1</filename>"
+msgstr "Proprietăți partiție: <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:110
+#, kde-kuit-format
+msgctxt "@item mountpoint"
+msgid "(none found)"
+msgstr "(niciunul găsit)"
+
+#: gui/partpropsdialog.cpp:116
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "idle"
+msgstr "inactiv"
+
+#: gui/partpropsdialog.cpp:119
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "At least one logical partition is mounted."
+msgstr "Cel puțin o partiție logică este montată."
+
+#: gui/partpropsdialog.cpp:121
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "mounted on <filename>%1</filename>"
+msgstr "montată pe <filename>%1</filename>"
+
+#: gui/partpropsdialog.cpp:123
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "mounted"
+msgstr "montată"
+
+#: gui/partpropsdialog.cpp:127 gui/partpropsdialog.cpp:130
+#: gui/partpropsdialog.cpp:131
+#, kde-kuit-format
+msgctxt "@item uuid"
+msgid "(none)"
+msgstr "(niciunul)"
+
+#: gui/partpropsdialog.cpp:346
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para><warning>You are about to lose all data on partition <filename>%1</"
+#| "filename>.</warning></para><para>Changing the file system on a partition "
+#| "already on disk will erase all its contents. If you continue now and "
+#| "apply the resulting operation in the main window, all data on <filename>"
+#| "%1</filename> will unrecoverably be lost.</para>"
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Changing the file system on a partition "
+"already on disk will erase all its contents. If you continue now and apply "
+"the resulting operation in the main window, all data on <filename>%1</"
+"filename> will unrecoverably be lost.</para>"
+msgstr ""
+"<para><warning>Sunteți pe cale de a pierde toate datele de pe partiția "
+"<filename>%1</filename>.</warning></para><para>Schimbarea sistemului de "
+"fișiere pe o partiție ce se află deja pe disc va șterge tot conținutul "
+"acesteia. Dacă continuați acum și aplicați operația rezultantă în fereastra "
+"principală, toate datele de pe <filename>%1</filename> vor fi pierdute "
+"irecuperabil.</para>"
+
+#: gui/partpropsdialog.cpp:348
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Recreate <filename>%1</filename> with File System %2?"
+msgstr "Sigur recreați <filename>%1</filename> cu sistemul de fișiere %2?"
+
+#: gui/partpropsdialog.cpp:349
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Change the File System"
+msgstr "Schimbă sistemul de fișiere"
+
+#: gui/partpropsdialog.cpp:350
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Change the File System"
+msgstr "Nu schimba sistemul de fișiere"
+
+#: gui/partpropsdialog.cpp:369
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "<para><warning>You are about to lose all data on partition <filename>%1</"
+#| "filename>.</warning></para><para>Recreating a file system will erase all "
+#| "its contents. If you continue now and apply the resulting operation in "
+#| "the main window, all data on <filename>%1</filename> will unrecoverably "
+#| "be lost.</para>"
+msgctxt "@info"
+msgid ""
+"<para><warning>You are about to lose all data on partition <filename>%1</"
+"filename>.</warning></para><para>Recreating a file system will erase all its "
+"contents. If you continue now and apply the resulting operation in the main "
+"window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
+"para>"
+msgstr ""
+"<para><warning>Sunteți pe cale de a pierde toate datele de pe partiția "
+"<filename>%1</filename>.</warning></para><para>Recrearea unui sistem de "
+"fișiere va șterge tot conținutul acestuia. Dacă continuați acum și aplicați "
+"operația rezultantă în fereastra principală, toate datele de pe <filename>"
+"%1</filename> vor fi pierdute irecuperabil.</para>"
+
+#: gui/partpropsdialog.cpp:371
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Really Recreate File System on <filename>%1</filename>?"
+msgstr "Sigur recreați sistemul de fișiere pe <filename>%1</filename>?"
+
+#: gui/partpropsdialog.cpp:372
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Recreate the File System"
+msgstr "Recreează sistemul de fișiere"
+
+#: gui/partpropsdialog.cpp:373
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Do Not Recreate the File System"
+msgstr "Nu recrea sistemul de fișiere"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/partpropswidgetbase.ui:39
+#, kde-format
+msgctxt "@label:listbox"
+msgid "File syste&m:"
+msgstr "Siste&m de fișiere:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
+#: gui/partpropswidgetbase.ui:55 gui/sizedialogwidgetbase.ui:146
+#, kde-format
+msgctxt "@label"
+msgid "This file system does not support setting a label."
+msgstr "Acest sistem de fișiere nu susține stabilirea unei etichete."
+
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:68
+#, kde-format
+msgid ""
+"This will reformat the filesystem, losing all contents, but keeping the same "
+"filesystem type."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
+#: gui/partpropswidgetbase.ui:71
+#, kde-format
+msgctxt "@action:button"
+msgid "Recreate existing file system"
+msgstr "Recreează sistemul de fișiere existent"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
+#: gui/partpropswidgetbase.ui:101
+#, kde-format
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Punct de montare:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
+#: gui/partpropswidgetbase.ui:118
+#, kde-format
+msgctxt "@label"
+msgid "Partition type:"
+msgstr "Tip partiție:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/partpropswidgetbase.ui:128
+#, kde-format
+msgctxt "@label"
+msgid "&Label:"
+msgstr "&Etichetă:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
+#: gui/partpropswidgetbase.ui:148
+#, kde-format
+msgctxt "@label"
+msgid "Status:"
+msgstr "Stare:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
+#: gui/partpropswidgetbase.ui:165
+#, kde-format
+msgctxt "@label"
+msgid "UUID:"
+msgstr "UUID:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/partpropswidgetbase.ui:195
+#, kde-format
+msgctxt "@label"
+msgid "Size:"
+msgstr "Dimensiune:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
+#: gui/partpropswidgetbase.ui:218
+#, kde-format
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Disponibil:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
+#: gui/partpropswidgetbase.ui:235
+#, kde-format
+msgctxt "@label partition capacity used"
+msgid "Used:"
+msgstr "Utilizat:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
+#: gui/partpropswidgetbase.ui:259
+#, kde-format
+msgctxt "@label"
+msgid "First sector:"
+msgstr "Primul sector:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
+#: gui/partpropswidgetbase.ui:276
+#, kde-format
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Ultimul sector:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
+#: gui/partpropswidgetbase.ui:293
+#, kde-format
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr "Numărul de sectoare:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
+#: gui/partpropswidgetbase.ui:317
+#, kde-format
+msgctxt "@label"
+msgid "&Flags:"
+msgstr "&Fanioane:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
+#: gui/partpropswidgetbase.ui:362
+#, fuzzy, kde-format
+#| msgid "Partition table:"
+msgid "Partition Name:"
+msgstr "Tabelă de partiții:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
+#: gui/partpropswidgetbase.ui:372
+#, kde-format
+msgid "Partition UUID:"
+msgstr "UUID partiție:"
+
+#: gui/parttablewidget.cpp:26
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Please select a device."
+msgstr "Alegeți un dispozitiv."
+
+#: gui/parttablewidget.cpp:54
+#, kde-kuit-format
+msgctxt "@info"
+msgid "No valid partition table was found on this device."
+msgstr "Pe acest dispozitiv nu a fost găsită nicio tabelă de partiții validă."
+
+#: gui/resizedialog.cpp:42
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Resize/move partition: <filename>%1</filename>"
+msgstr "Redimensionare/mutare partiție: <filename>%1</filename>"
+
+#: gui/resizedialog.cpp:91
+#, kde-format
+msgctxt "%2 is either empty or says Invalid passphrase."
+msgid "%2Enter passphrase for %1:"
+msgstr "%2Introduceți fraza secretă pentru %1:"
+
+#: gui/resizedialog.cpp:100
+#, kde-format
+msgctxt "Part of %2Enter passphrase for %1:"
+msgid "Invalid passphrase. "
+msgstr "Frază secretă nevalidă. "
+
+#: gui/resizevolumegroupdialog.cpp:39
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Resize Volume Group"
+msgstr "Redimensionează grup de volume"
+
+#: gui/scanprogressdialog.cpp:17
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Scanning devices..."
+msgstr "Se citesc dispozitivele..."
+
+#: gui/scanprogressdialog.cpp:32
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Scanning..."
+msgstr "Se citește..."
+
+#: gui/scanprogressdialog.cpp:34
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Scanning device: <filename>%1</filename>"
+msgstr "Se citește dispozitivul: <filename>%1</filename>"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: gui/sizedetailswidgetbase.ui:66
+#, kde-format
+msgctxt "@label:listbox"
+msgid "First sector:"
+msgstr "Primul sector:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: gui/sizedetailswidgetbase.ui:101
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Last sector:"
+msgstr "Ultimul sector:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
+#: gui/sizedetailswidgetbase.ui:124
+#, kde-format
+msgid "Align partition"
+msgstr "Aliniază partiția"
+
+#: gui/sizedialogbase.cpp:66
+#, kde-kuit-format
+msgctxt "@action:button advanced settings button"
+msgid "Advanced"
+msgstr "Avansate"
+
+#: gui/sizedialogbase.cpp:181
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "&Advanced"
+msgstr "&Avansate"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:62
+#, fuzzy, kde-format
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "Tip partiție:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/sizedialogwidgetbase.ui:78
+#, kde-format
+msgctxt "@label:listbox"
+msgid "File system:"
+msgstr "Sistem de fișiere:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:98
+#, kde-format
+msgid ""
+"Set up encryption for this filesystem with LUKS. You will be asked to "
+"provide a passphrase."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:101
+#, kde-format
+msgid "Encrypt with LUKS"
+msgstr "Criptează cu LUKS"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
+#: gui/sizedialogwidgetbase.ui:111
+#, kde-format
+msgid "Logical Volume Name:"
+msgstr "Denumire volum logic:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/sizedialogwidgetbase.ui:128
+#, kde-format
+msgctxt "@label"
+msgid "Label:"
+msgstr "Etichetă:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:164
+#, kde-format
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Dimensiune minimă:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:187
+#, kde-format
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Dimensiune maximă:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
+#: gui/sizedialogwidgetbase.ui:210
+#, kde-format
+msgctxt "@label:listbox"
+msgid "F&ree space before:"
+msgstr "Spațiu libe&r înainte:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: gui/sizedialogwidgetbase.ui:245
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Si&ze:"
+msgstr "Dim&ensiune:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
+#: gui/sizedialogwidgetbase.ui:274
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Spațiu liber după:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
+#: gui/sizedialogwidgetbase.ui:297
+#, fuzzy, kde-format
+msgid "Permissions"
+msgstr "Permisiuni"
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
+#: gui/sizedialogwidgetbase.ui:326
+#, kde-format
+msgid "Allow everyone to write and read on this device"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
+#: gui/sizedialogwidgetbase.ui:329
+#, kde-format
+msgid "Everyone"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
+#: gui/sizedialogwidgetbase.ui:336
+#, kde-format
+msgid ""
+"Allow only root to write and read on this device, you will need to setup per-"
+"folder permissions"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
+#: gui/sizedialogwidgetbase.ui:339
+#, kde-format
+msgid "Only Root"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:352
+#, kde-format
+msgid "Primar&y"
+msgstr "Pr&imară"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:359
+#, kde-format
+msgid "E&xtended"
+msgstr "E&xtinsă"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:366
+#, kde-format
+msgid "&Logical"
+msgstr "&Logică"
+
+#: gui/smartdialog.cpp:54
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "SMART Properties: <filename>%1</filename>"
+msgstr "Proprietăți SMART: <filename>%1</filename>"
+
+#: gui/smartdialog.cpp:58
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Save SMART Report"
+msgstr "Salvează raportul SMART"
+
+#: gui/smartdialog.cpp:96 gui/smartdialog.cpp:153
+#, kde-format, kde-kuit-format
+msgctxt "@label SMART number of bad sectors"
+msgid "none"
+msgstr "niciunul"
+
+#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Pre-Failure"
+msgstr "Pre-eșuare"
+
+#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Old-Age"
+msgstr "Vechi"
+
+#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Online"
+msgstr "Conectat"
+
+#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#, kde-kuit-format
+msgctxt "@item:intable"
+msgid "Offline"
+msgstr "Deconectat"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
+#: gui/smartdialog.cpp:155 gui/smartdialogwidgetbase.ui:68
+#, kde-format
+msgid "Model:"
+msgstr "Model:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
+#: gui/smartdialog.cpp:156 gui/smartdialogwidgetbase.ui:97
+#, kde-format
+msgid "Serial number:"
+msgstr "Număr de serie:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
+#: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
+#, kde-format
+msgid "Firmware revision:"
+msgstr "Revizie microcod:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
+#: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
+#, kde-format
+msgid "Temperature:"
+msgstr "Temperatură:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
+#: gui/smartdialog.cpp:159 gui/smartdialogwidgetbase.ui:184
+#, kde-format
+msgid "Bad sectors:"
+msgstr "Sectoare defecte:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
+#: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
+#, kde-format
+msgid "Powered on for:"
+msgstr "Inclus de:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
+#: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
+#, kde-format
+msgid "Power cycles:"
+msgstr "Cicluri alimentare:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
+#: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
+#, kde-format
+msgid "Self tests:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
+#: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
+#, kde-format
+msgid "Overall assessment:"
+msgstr ""
+
+#: gui/smartdialog.cpp:227
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Could Not Save SMART Report."
+msgstr "Raportul SMART nu a putut fi salvat."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:294
+#, kde-format
+msgid "Id"
+msgstr "Id."
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:299
+#, kde-format
+msgid "Attribute"
+msgstr "Atribut"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:304
+#, kde-format
+msgid "Failure Type"
+msgstr "Tip eșec"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:309
+#, kde-format
+msgid "Update Type"
+msgstr "Tip actualizare"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:314
+#, kde-format
+msgid "Worst"
+msgstr "Cel mai rău"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:319
+#, kde-format
+msgid "Current"
+msgstr "Actual"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:324
+#, kde-format
+msgid "Threshold"
+msgstr "Prag"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:329
+#, kde-format
+msgid "Raw"
+msgstr "Brut"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:334
+#, kde-format
+msgid "Assessment"
+msgstr "Evaluare"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
+#: gui/smartdialogwidgetbase.ui:339
+#, kde-format
+msgid "Value"
+msgstr "Valoare"
+
+#: gui/treelog.cpp:110
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid "Could not open file <filename>%1</filename> for writing."
+msgctxt "@info"
+msgid "Could not create temporary output file to save <filename>%1</filename>."
+msgstr "Fișierul <filename>%1</filename> nu a putut fi deschis pentru scriere."
+
+#: gui/treelog.cpp:110
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error Saving Log File"
+msgstr "Eroare la salvarea fișierului de jurnal"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:59
+#, kde-format
+msgctxt ""
+"@title:column Severity of a log entry / log level. Text must be very short."
+msgid "Sev."
+msgstr "Sev."
+
+#. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:62
+#, kde-format
+msgid "Severity"
+msgstr "Severitate"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:67
+#, kde-format
+msgctxt "@title:column a time stamp of a log entry"
+msgid "Time"
+msgstr "Oră"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
+#: gui/treelogbase.ui:72
+#, kde-format
+msgctxt "@title:column the text message of a log entry"
+msgid "Message"
+msgstr "Mesaj"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextVGName)
+#: gui/volumegroupwidgetbase.ui:34
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Resize or move partition"
+msgid "Volume Group Name: "
+msgstr "Redimensionează sau mută o partiție"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
+#: gui/volumegroupwidgetbase.ui:47
+#, kde-format
+msgid "Physical Extent Size: "
+msgstr "Dimensiune întindere fizică (PE): "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSize)
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTotalUsedSize)
+#: gui/volumegroupwidgetbase.ui:60 gui/volumegroupwidgetbase.ui:120
+#: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
+#, kde-format
+msgid "---"
+msgstr "---"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
+#: gui/volumegroupwidgetbase.ui:79
+#, kde-format
+msgid " MiB"
+msgstr " MiO"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalLV)
+#: gui/volumegroupwidgetbase.ui:107
+#, kde-format
+msgid "Total LV: "
+msgstr "Total VL: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
+#: gui/volumegroupwidgetbase.ui:130
+#, kde-format
+msgid "Volume Group Type: "
+msgstr "Tip grup de volume: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
+#: gui/volumegroupwidgetbase.ui:140
+#, kde-format
+msgid "Total Size: "
+msgstr "Dimensiune total: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/volumegroupwidgetbase.ui:153
+#, kde-format
+msgid "Total Sectors: "
+msgstr "Total sectoare: "
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
+#: gui/volumegroupwidgetbase.ui:186
+#, kde-format
+msgid "Used Size: "
+msgstr "Dimensiune utilizat:"
+
+#: main.cpp:77
+#, kde-kuit-format
+msgctxt "@title"
+msgid "<application>KDE Partition Manager</application>"
+msgstr "<application>Gestionarul de partiții KDE</application>"
+
+#: main.cpp:79
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "Manage your disks, partitions and file systems"
+msgctxt "@title"
+msgid "Manage your disks, partitions and file systems"
+msgstr "Gestionați discurile, partițiile și sistemele de fișiere"
+
+#: main.cpp:81
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:credit"
+#| msgid "(c) 2008, 2009 Volker Lanz"
+msgctxt "@info:credit"
+msgid ""
+"© 2008-2013 Volker Lanz\n"
+"© 2012-2020 Andrius Štikonas"
+msgstr "(c) 2008, 2009 Volker Lanz"
+
+#: main.cpp:85
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Volker Lanz"
+msgstr "Volker Lanz"
+
+#: main.cpp:85
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Former maintainer"
+msgstr "Fostul responsabil"
+
+#: main.cpp:86
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Andrius Štikonas"
+msgstr "Andrius Štikonas"
+
+#: main.cpp:86
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Maintainer"
+msgstr "Responsabil"
+
+#: main.cpp:87
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Teo Mrnjavac"
+msgstr "Teo Mrnjavac"
+
+#: main.cpp:87
+#, kde-format
+msgctxt "@info:credit"
+msgid "Former Calamares maintainer"
+msgstr "Fostul responsabil Calamares"
+
+#: main.cpp:88
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Chantara Tith"
+msgstr "Chantara Tith"
+
+#: main.cpp:88
+#, kde-format
+msgctxt "@info:credit"
+msgid "LVM support"
+msgstr "Suport LVM"
+
+#: main.cpp:89
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Pali Rohár"
+msgstr "Pali Rohár"
+
+#: main.cpp:89
+#, kde-format
+msgctxt "@info:credit"
+msgid "UDF support"
+msgstr "Suport UDF"
+
+#: main.cpp:90
+#, kde-format
+msgid "Hugo Pereira Da Costa"
+msgstr "Hugo Pereira Da Costa"
+
+#: main.cpp:90
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "Partition type:"
+msgctxt "@info:credit"
+msgid "Partition Widget Design"
+msgstr "Tip partiție:"
+
+#: main.cpp:91
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Caio Jordão Carvalho"
+msgstr "Caio Jordão Carvalho"
+
+#: main.cpp:91
+#, kde-format
+msgctxt "@info:credit"
+msgid "Improved SMART support"
+msgstr "Suport SMART îmbunătățit"
+
+#: main.cpp:104
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:menu"
+#| msgid "Device"
+msgctxt "@info:shell"
+msgid "Device to manage"
+msgstr "Dispozitiv"
+
+#. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
+#: partitionmanager.kcfg:45
+#, kde-format
+msgctxt "@label"
+msgid "Is this the first time KDE Partition Manager is being run?"
+msgstr "Aceasta e prima dată când lansați Gestionarul de partiții KDE?"
+
+#. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
+#: partitionmanager.kcfg:49
+#, kde-format
+msgctxt "@label"
+msgid "Hide log messages below"
+msgstr "Ascunde mesajele de jurnal de mai jos"
+
+#. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
+#: partitionmanager.kcfg:53
+#, kde-format
+msgctxt "@label"
+msgid "Partition sector alignment"
+msgstr "Aliniere partiții la sector"
+
+#. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
+#: partitionmanager.kcfg:57
+#, kde-format
+msgctxt "@label"
+msgid "Use cylinder based alignment (Windows XP compatible)"
+msgstr "Folosește aliniere bazată pe cilindru (compatibil cu Windows XP)"
+
+#. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
+#: partitionmanager.kcfg:61
+#, kde-format
+msgctxt "@label"
+msgid "Align partitions per default"
+msgstr "Aliniază partițiile implicit"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:65
+#, kde-format
+msgctxt "@label"
+msgid "File system colors"
+msgstr "Culori pentru sisteme de fișiere"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:141
+#, kde-format
+msgctxt "@label"
+msgid "Show the application's menu bar"
+msgstr "Arată bara de meniu a aplicației"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:145
+#, kde-format
+msgctxt "@label"
+msgid "Backend plugin"
+msgstr "Extensie de platformă"
+
+#. i18n: ectx: label, entry, group (KDE Partition Manager)
+#: partitionmanager.kcfg:151
+#, kde-format
+msgctxt "@label"
+msgid "Preferred unit:"
+msgstr "Unitate preferată:"
+
+#: util/guihelpers.cpp:50
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "The configured external browser could not be run. Please check your "
+#| "settings."
+msgctxt "@info"
+msgid ""
+"<para>The configured backend plugin \"%1\" could not be loaded.</"
+"para><para>Loading the default backend plugin \"%2\" instead.</para>"
+msgstr ""
+"Navigatorul extern cofigurat nu a putut fi rulat. Verificați configurările."
+
+#: util/guihelpers.cpp:53 util/guihelpers.cpp:60
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Error: Could Not Load Backend Plugin"
+msgstr ""
+
+#: util/guihelpers.cpp:57
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info"
+#| msgid ""
+#| "The configured external browser could not be run. Please check your "
+#| "settings."
+msgctxt "@info"
+msgid ""
+"<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
+"plugin could be loaded.</para><para>Please check your installation.</para>"
+msgstr ""
+"Navigatorul extern cofigurat nu a putut fi rulat. Verificați configurările."
+
+#: util/guihelpers.cpp:75
+#, kde-kuit-format
+msgctxt "@title:menu"
+msgid "Columns"
+msgstr ""
+
+#~ msgid "Partition Label:"
+#~ msgstr "Etichetă partiție:"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Partition &type:"
+#~ msgstr "&Tip partiție:"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "The configured external browser could not be run. Please check your "
+#~ "settings."
+#~ msgstr ""
+#~ "Navigatorul extern cofigurat nu a putut fi rulat. Verificați "
+#~ "configurările."
+
+#~ msgctxt "@title:menu turn on and off edit toolbar"
+#~ msgid "Edit Toolbar"
+#~ msgstr "Bara de editare"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Device Toolbar"
+#~ msgstr "Bara dispozitivelor"
+
+#~ msgid "Allow applying operations without administrator privileges"
+#~ msgstr "Permite aplicarea operațiilor fără drepturi de administrator"
+
+#~ msgctxt "@label"
+#~ msgid "1 Sector"
+#~ msgid_plural "%1 Sectors"
+#~ msgstr[0] "1 sector"
+#~ msgstr[1] "%1 sectoare"
+#~ msgstr[2] "%1 de sectoare"
+
+#~ msgid "Cylinders/Heads/Sectors:"
+#~ msgstr "Cilindri/Capuri/Sectoare:"
+
+#~ msgid "Cylinder size:"
+#~ msgstr "Dimensiune cilindru:"
+
+#~ msgctxt "@label"
+#~ msgid "Allow applying operations without administrator privileges"
+#~ msgstr "Permite aplicarea operațiilor fără drepturi de administrator"
+
+#~ msgctxt "@title:window"
+#~ msgid "No administrative privileges"
+#~ msgstr "Nu aveți privilegii de administrator"
+
+#~ msgctxt "@action:button"
+#~ msgid "Run without administrative privileges"
+#~ msgstr "Lansează fără drepturi de administrare"
+
+#~ msgctxt "@info"
+#~ msgid "Do you want to overwrite the existing file <filename>%1</filename>?"
+#~ msgstr "Doriți să suprascrieți fișierul existent <filename>%1</filename>?"
+
+#~ msgctxt "@title:window"
+#~ msgid "Overwrite Existing File?"
+#~ msgstr "Suprascrieți fișierul existent?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Overwrite File"
+#~ msgstr "Suprascrie fișierul"
+
+#~ msgid "luks:"
+#~ msgstr "luks:"
+
+#~ msgid "ntfs:"
+#~ msgstr "ntfs:"
+
+#~ msgid "fat16:"
+#~ msgstr "fat16:"
+
+#~ msgid "fat32:"
+#~ msgstr "fat32:"
+
+#~ msgid "zfs:"
+#~ msgstr "zfs:"
+
+#~ msgid "reiserfs:"
+#~ msgstr "reiserfs:"
+
+#~ msgid "hpfs:"
+#~ msgstr "hpfs:"
+
+#~ msgid "jfs"
+#~ msgstr "jfs"
+
+#~ msgid "hfs:"
+#~ msgstr "hfs:"
+
+#~ msgid "hfsplus:"
+#~ msgstr "hfsplus:"
+
+#~ msgid "ufs:"
+#~ msgstr "ufs:"
+
+#~ msgid "xfs:"
+#~ msgstr "xfs:"
+
+#~ msgid "ocfs2:"
+#~ msgstr "ocfs2:"
+
+#~ msgid "exfat:"
+#~ msgstr "exfat:"
+
+#~ msgid "nilfs2:"
+#~ msgstr "nilfs2:"
+
+#~ msgid "lvm2 pv:"
+#~ msgstr "lvm2 pv:"
+
+#~ msgctxt "@label device"
+#~ msgid "Heads:"
+#~ msgstr "Capuri:"
+
+#~ msgctxt "@label device"
+#~ msgid "Cylinders:"
+#~ msgstr "Cilindri:"
+
+#~ msgctxt "@label device"
+#~ msgid "Sectors:"
+#~ msgstr "Sectoare:"
+
+#~ msgctxt "@label device"
+#~ msgid "Cylinder size:"
+#~ msgstr "Dimensiune cilindru:"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Could not open file <filename>%1</filename> for writing."
+#~ msgctxt "@info"
+#~ msgid "Could not open mount point file <filename>%1</filename>."
+#~ msgstr ""
+#~ "Fișierul <filename>%1</filename> nu a putut fi deschis pentru scriere."
+
+#~ msgctxt "@title:window"
+#~ msgid "Error while reading mount points"
+#~ msgstr "Eroare la citirea punctelor de montare"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open partition <filename>%1</filename> for writing when trying "
+#~| "to update the NTFS boot sector."
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Could not remove <filename>%1</filename>. There are still Logical Volumes "
+#~ "on the Volume Group."
+#~ msgstr ""
+#~ "Nu s-a putut deschide pentru scriere partiția <filename>%1</filename> la "
+#~ "actualizarea sectorului de demarare NTFS."
+
+#, fuzzy
+#~| msgctxt "@action:inmenu"
+#~| msgid "Resize/Move"
+#~ msgctxt "@action:inmenu"
+#~ msgid "Resize Volume"
+#~ msgstr "Redim./mutare"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Please select a device."
+#~ msgctxt "@info:tooltip"
+#~ msgid "Resize selected Volume device"
+#~ msgstr "Alegeți un dispozitiv."
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Please select a device."
+#~ msgctxt "@info:status"
+#~ msgid "Resize selected Volume device"
+#~ msgstr "Alegeți un dispozitiv."
+
+#~ msgctxt "@title:menu"
+#~ msgid "View"
+#~ msgstr "Vizualizare"
+
+#~ msgctxt "@item:button advanced settings button"
+#~ msgid "Advanced"
+#~ msgstr "Avansat"
+
+#~ msgid "Unknown Device"
+#~ msgstr "Dispozitiv necunoscut"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting a partition just created: Undoing the operation to create the "
+#~ "partition."
+#~ msgstr ""
+#~ "Ștergerea unei partiții abia create: Se anulează operația de creare a "
+#~ "partiției."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing a partition just created: Updating start and end in existing "
+#~ "operation."
+#~ msgstr ""
+#~ "Redimensionare unei partiții abia create: Se actualizează începutul și "
+#~ "sfârșitul în operația existentă."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying a new partition: Creating a new partition instead."
+#~ msgstr "Copierea unei noi partiții: Se creează în schimb o partiție nouă."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing label for a new partition: No new operation required."
+#~ msgstr ""
+#~ "Schimbarea etichetei pentru o partiție nouă: Nu este necesară nicio "
+#~ "operație nouă."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing file system for a new partition: No new operation required."
+#~ msgstr ""
+#~ "Schimbarea sistemului de fișiere pentru o partiție nouă: Nu este necesară "
+#~ "nicio operație nouă."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Changing file system for a new partition: No new operation required."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Checking file systems is automatically done when creating them: No new "
+#~ "operation required."
+#~ msgstr ""
+#~ "Schimbarea sistemului de fișiere pentru o partiție nouă: Nu este necesară "
+#~ "nicio operație nouă."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Deleting a partition just copied: Removing the copy."
+#~ msgstr "Ștergerea unei partiții abia copiate: Se elimină copia."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copying a partition that is itself a copy: Copying the original source "
+#~ "partition instead."
+#~ msgstr ""
+#~ "Copierea unei partiții ce este ea însăși o copie: Se copiază în schimb "
+#~ "partiția-sursă originală."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Deleting a partition just restored: Removing the restore operation."
+#~ msgstr ""
+#~ "Ștergerea unei partiții abia restabilite: Se elimină operația de "
+#~ "restabilire."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting a partition just restored to an existing partition: Removing the "
+#~ "restore operation and deleting the existing partition."
+#~ msgstr ""
+#~ "Ștergerea unei partiții abia restabilite pe o partiție existentă: Se "
+#~ "elimină operația de restabilire și se șterge partiția existentă."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing flags again for the same partition: Removing old operation."
+#~ msgstr ""
+#~ "Modificarea repetată a fanioanelor pentru aceeași partiție: Se elimină "
+#~ "operația veche."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Changing label again for the same partition: Removing old operation."
+#~ msgstr ""
+#~ "Modificarea repetată a etichetei pentru aceeași partiție: Se elimină "
+#~ "operația veche."
+
+#, fuzzy
+#~| msgctxt "@info:status"
+#~| msgid "Create a new and empty partition table on a device."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating new partition table, discarding previous operation on device."
+#~ msgstr "Creează o tabelă de partiții nouă și goală pe dispozitiv."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Add operation: %1"
+#~ msgstr "Adaugă operație: %1"
+
+#~ msgctxt "@item partition name"
+#~ msgid "New Partition"
+#~ msgstr "Partiție nouă"
+
+#~ msgctxt "@item partition name"
+#~ msgid "Restored Partition"
+#~ msgstr "Partiție restabilită"
+
+#~ msgctxt "@item partition name"
+#~ msgid "Copy of %1"
+#~ msgstr "Copie a %1"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Partition <filename>%1</filename> is not properly aligned (first sector: "
+#~ "%2, modulo: %3)."
+#~ msgstr "Partiția <filename>%1</filename> a fost copiată în clipboard."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Partition <filename>%1</filename> is not properly aligned (last sector: "
+#~ "%2, modulo: %3)."
+#~ msgstr "Partiția <filename>%1</filename> a fost copiată în clipboard."
+
+#~ msgctxt "@item partition role"
+#~ msgid "unallocated"
+#~ msgstr "nealocat"
+
+#~ msgctxt "@item partition role"
+#~ msgid "logical"
+#~ msgstr "logică"
+
+#~ msgctxt "@item partition role"
+#~ msgid "extended"
+#~ msgstr "extinsă"
+
+#~ msgctxt "@item partition role"
+#~ msgid "primary"
+#~ msgstr "primară"
+
+#~ msgctxt "@item partition role"
+#~ msgid "none"
+#~ msgstr "niciuna"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "boot"
+#~ msgstr "demarare"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "root"
+#~ msgstr "rădăcină"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "swap"
+#~ msgstr "swap"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "hidden"
+#~ msgstr "ascunsă"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "raid"
+#~ msgstr "raid"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "lvm"
+#~ msgstr "lvm"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "lba"
+#~ msgstr "lba"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "hpservice"
+#~ msgstr "hpservice"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "palo"
+#~ msgstr "palo"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "prep"
+#~ msgstr "prep"
+
+#~ msgctxt "@item partition flag"
+#~ msgid "msft-reserved"
+#~ msgstr "msft-reserved"
+
+#, fuzzy
+#~| msgctxt "@item/plain partition table name"
+#~| msgid "unknown"
+#~ msgctxt "@item partition table name"
+#~ msgid "unknown"
+#~ msgstr "necunoscută"
+
+#~ msgctxt "@item:intable"
+#~ msgid "failing"
+#~ msgstr "eșuează"
+
+#~ msgctxt "@item:intable"
+#~ msgid "has failed"
+#~ msgstr "a eșuat"
+
+#~ msgctxt "@item:intable"
+#~ msgid "warning"
+#~ msgstr "avertizare"
+
+#~ msgctxt "@item:intable"
+#~ msgid "good"
+#~ msgstr "bună"
+
+#~ msgctxt "@item:intable not applicable"
+#~ msgid "N/A"
+#~ msgstr "Indisp."
+
+#~ msgctxt "@item:intable"
+#~ msgid "%1 sector"
+#~ msgid_plural "%1 sectors"
+#~ msgstr[0] "%1 sector"
+#~ msgstr[1] "%1 sectoare"
+#~ msgstr[2] "%1 de sectoare"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Read Error Rate"
+#~ msgstr "Rată de erori la citire"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Start/Stop Count"
+#~ msgstr "Contor porniri/opriri"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Reallocated Sectors Count"
+#~ msgstr "Contor de sectoare realocate"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Seek Error Rate"
+#~ msgstr "Rată de erori la căutare"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power-On Hours"
+#~ msgstr "Ore de activitate"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Count of hours in power-on state."
+#~ msgstr "Contorul orelor în stare de activitate."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Recalibration Retries"
+#~ msgstr "Reîncercări de recalibrare"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Power Cycle Count"
+#~ msgstr "Contor de cilcuri de alimentare"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Uncorrected read errors reported to the operating system."
+#~ msgstr "Erori de citire necorectate raportate către sistemul de operare."
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Western Digital and Samsung attribute."
+#~ msgstr "Atribut Western Digital și Samsung."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "End-to-End Error"
+#~ msgstr "Eroare capăt-la-capăt"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Head Stability"
+#~ msgstr "Stabilitatea capului"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Western Digital attribute."
+#~ msgstr "Atribut Western Digital."
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Reported Uncorrectable Errors"
+#~ msgstr "Erori necorectibile raportate"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Temperature Difference From 100"
+#~ msgstr "Diferența de temperatură din 100"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "G-sense Error Rate"
+#~ msgstr "Rată de erori „G-sense”"
+
+#~ msgctxt "SMART attr name"
+#~ msgid "Temperature"
+#~ msgstr "Temperatură"
+
+#~ msgctxt "SMART attr description"
+#~ msgid "Current internal temperature."
+#~ msgstr "Temperatura internă actuală"
+
+#, fuzzy
+#~| msgctxt "@label partition"
+#~| msgid "Number of sectors:"
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of off-track errors."
+#~ msgstr "Numărul de sectoare:"
+
+#, fuzzy
+#~| msgctxt "@label partition"
+#~| msgid "Number of sectors:"
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of ECC errors"
+#~ msgstr "Numărul de sectoare:"
+
+#, fuzzy
+#~| msgid "Partition"
+#~ msgctxt "SMART attr name"
+#~ msgid "Load Friction"
+#~ msgstr "Partiție"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Mount point:"
+#~ msgctxt "SMART attr description"
+#~ msgid "Number of errors while reading from a disk"
+#~ msgstr "Punct de montare:"
+
+#~ msgctxt "@item"
+#~ msgid "Aborted"
+#~ msgstr "Abandonat"
+
+#~ msgctxt "@item"
+#~ msgid "Interrupted"
+#~ msgstr "Întrerupt"
+
+#~ msgctxt "@item"
+#~ msgid "Fatal error"
+#~ msgstr "Eroare fatală"
+
+#~ msgctxt "@item"
+#~ msgid "Unknown error"
+#~ msgstr "Eroare necunoscută"
+
+#~ msgctxt "@item"
+#~ msgid "Electrical error"
+#~ msgstr "Eroare electrică"
+
+#~ msgctxt "@item"
+#~ msgid "Servo error"
+#~ msgstr "Eroare de servomotor"
+
+#~ msgctxt "@item"
+#~ msgid "Read error"
+#~ msgstr "Eroare de citire"
+
+#~ msgctxt "@item"
+#~ msgid "Handling error"
+#~ msgstr "Eroare de manipulare"
+
+#~ msgctxt "@item"
+#~ msgid "Self test in progress"
+#~ msgstr "Test în curs"
+
+#~ msgctxt "@item"
+#~ msgid "Success"
+#~ msgstr "Succes"
+
+#~ msgctxt "@item"
+#~ msgid "Healthy"
+#~ msgstr "Sănătos"
+
+#~ msgctxt "@item"
+#~ msgid "Has some bad sectors."
+#~ msgstr "Are unele sectoare defecte."
+
+#~ msgctxt "@item"
+#~ msgid "Has many bad sectors."
+#~ msgstr "Are multe sectoare defecte."
+
+#~ msgctxt "@item"
+#~ msgid "Disk failure is imminent. Backup all data!"
+#~ msgstr "Eșuarea discului este iminentă. Copiați-vă toată informația!"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#~| "Could not create temp dir."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere JFS pe partiția <filename>%1</"
+#~ "filename> a eșuat: Nu s-a putut crea dosarul temporar."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#~| "xfs_growfs failed."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+#~ "btrfs file system resize failed."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere XFS pe partiția <filename>%1</"
+#~ "filename> a eșuat: xfs_growfs a eșuat."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Warning: Resizing JFS file system on partition <filename>%1</filename>: "
+#~| "Unmount failed."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing Btrfs file system on partition <filename>%1</filename>: "
+#~ "Unmount failed."
+#~ msgstr ""
+#~ "Avertizare: Redimensionarea sistemului de fișiere JFS pe partiția "
+#~ "<filename>%1</filename>: Demontare eșuată."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#~| "Initial mount failed."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere JFS pe partiția <filename>%1</"
+#~ "filename> a eșuat: Montarea inițială a eșuat."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Set label for partition <filename>%1</filename> to \"%2\""
+#~ msgctxt "@info/plain"
+#~ msgid "Setting label for partition <filename>%1</filename> to %2"
+#~ msgstr "Stabilește eticheta pentru partiția <filename>%1</filename> la „%2”"
+
+#, fuzzy
+#~| msgctxt "@item/plain partition table name"
+#~| msgid "unknown"
+#~ msgctxt "@item filesystem name"
+#~ msgid "unknown"
+#~ msgstr "necunoscută"
+
+#, fuzzy
+#~| msgctxt "@item partition role"
+#~| msgid "extended"
+#~ msgctxt "@item filesystem name"
+#~ msgid "extended"
+#~ msgstr "extinsă"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "ext2"
+#~ msgctxt "@item filesystem name"
+#~ msgid "ext2"
+#~ msgstr "ext2"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "ext3"
+#~ msgctxt "@item filesystem name"
+#~ msgid "ext3"
+#~ msgstr "ext3"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "ext4"
+#~ msgctxt "@item filesystem name"
+#~ msgid "ext4"
+#~ msgstr "ext4"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "linuxswap"
+#~ msgctxt "@item filesystem name"
+#~ msgid "linuxswap"
+#~ msgstr "linuxswap"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "fat16"
+#~ msgctxt "@item filesystem name"
+#~ msgid "fat16"
+#~ msgstr "fat16"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "fat32"
+#~ msgctxt "@item filesystem name"
+#~ msgid "fat32"
+#~ msgstr "fat32"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "ntfs"
+#~ msgctxt "@item filesystem name"
+#~ msgid "ntfs"
+#~ msgstr "ntfs"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "reiser"
+#~ msgctxt "@item filesystem name"
+#~ msgid "reiser"
+#~ msgstr "reiser"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "reiser4"
+#~ msgctxt "@item filesystem name"
+#~ msgid "reiser4"
+#~ msgstr "reiser4"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "xfs"
+#~ msgctxt "@item filesystem name"
+#~ msgid "xfs"
+#~ msgstr "xfs"
+
+#, fuzzy
+#~| msgid "jfs"
+#~ msgctxt "@item filesystem name"
+#~ msgid "jfs"
+#~ msgstr "jfs"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "hfs"
+#~ msgctxt "@item filesystem name"
+#~ msgid "hfs"
+#~ msgstr "hfs"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "hfsplus"
+#~ msgctxt "@item filesystem name"
+#~ msgid "hfsplus"
+#~ msgstr "hfsplus"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "ufs"
+#~ msgctxt "@item filesystem name"
+#~ msgid "ufs"
+#~ msgstr "ufs"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "unformatted"
+#~ msgctxt "@item filesystem name"
+#~ msgid "unformatted"
+#~ msgstr "neformatată"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "btrfs"
+#~ msgctxt "@item filesystem name"
+#~ msgid "btrfs"
+#~ msgstr "btrfs"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "hpfs"
+#~ msgctxt "@item filesystem name"
+#~ msgid "hpfs"
+#~ msgstr "hpfs"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "luks"
+#~ msgctxt "@item filesystem name"
+#~ msgid "luks"
+#~ msgstr "luks"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "ocfs2"
+#~ msgctxt "@item filesystem name"
+#~ msgid "ocfs2"
+#~ msgstr "ocfs2"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "zfs"
+#~ msgctxt "@item filesystem name"
+#~ msgid "zfs"
+#~ msgstr "zfs"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "exfat"
+#~ msgctxt "@item filesystem name"
+#~ msgid "exfat"
+#~ msgstr "exfat"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "nilfs2"
+#~ msgctxt "@item filesystem name"
+#~ msgid "nilfs2"
+#~ msgstr "nilfs2"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "lvm2 pv"
+#~ msgctxt "@item filesystem name"
+#~ msgid "lvm2 pv"
+#~ msgstr "lvm2 pv"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Mount"
+#~ msgstr "Montează"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Unmount"
+#~ msgstr "Demontează"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere JFS pe partiția <filename>%1</"
+#~ "filename> a eșuat: Nu s-a putut crea dosarul temporar."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#~ "Remount failed."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere JFS pe partiția <filename>%1</"
+#~ "filename> a eșuat: Remontarea a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing JFS file system on partition <filename>%1</filename>: "
+#~ "Unmount failed."
+#~ msgstr ""
+#~ "Avertizare: Redimensionarea sistemului de fișiere JFS pe partiția "
+#~ "<filename>%1</filename>: Demontare eșuată."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere JFS pe partiția <filename>%1</"
+#~ "filename> a eșuat: Montarea inițială a eșuat."
+
+#~ msgctxt "@title:menu"
+#~ msgid "Activate swap"
+#~ msgstr "Activează swap"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Deactivate swap"
+#~ msgstr "Dezactivează swap"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere NILFS2 pe partiția <filename>%1</"
+#~ "filename> a eșuat: Nu s-a putut crea dosarul temporar."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#~| "xfs_growfs failed."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+#~ "NILFS2 file system resize failed."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere XFS pe partiția <filename>%1</"
+#~ "filename> a eșuat: xfs_growfs a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing NILFS2 file system on partition <filename>%1</"
+#~ "filename>: Unmount failed."
+#~ msgstr ""
+#~ "Avertizare: Redimensionarea sistemului de fișiere NILFS2 pe partiția "
+#~ "<filename>%1</filename>: Demontare eșuată."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere NILFS2 pe partiția <filename>%1</"
+#~ "filename> a eșuat: Montarea inițială a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Updating boot sector for NTFS file system on partition <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Se actualizează sectorul de demarare NTFS pe partiția <filename>%1</"
+#~ "filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition <filename>%1</filename> for writing when trying "
+#~ "to update the NTFS boot sector."
+#~ msgstr ""
+#~ "Nu s-a putut deschide pentru scriere partiția <filename>%1</filename> la "
+#~ "actualizarea sectorului de demarare NTFS."
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid ""
+#~| "The file system on partition <filename>%1</filename> could not be "
+#~| "mounted."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not seek to position 0x1c on partition <filename>%1</filename> when "
+#~ "trying to update the NTFS boot sector."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "montat."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not write new start sector to partition <filename>%1</filename> "
+#~ "when trying to update the NTFS boot sector."
+#~ msgstr ""
+#~ "Nu s-a putut scrie noul sector de început pe partiția <filename>%1</"
+#~ "filename> la actualizarea sectorului de demarare NTFS."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Updated NTFS boot sector for partition <filename>%1</filename> "
+#~ "successfully."
+#~ msgstr ""
+#~ "S-a actualizat cu succes sectorul de demarare NTFS pentru partiția "
+#~ "<filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#~ "Could not create temp dir."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere XFS pe partiția <filename>%1</"
+#~ "filename> a eșuat: Nu s-a putut crea dosarul temporar."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#~ "xfs_growfs failed."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere XFS pe partiția <filename>%1</"
+#~ "filename> a eșuat: xfs_growfs a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Resizing XFS file system on partition <filename>%1</filename>: "
+#~ "Unmount failed."
+#~ msgstr ""
+#~ "Avertizare: Redimensionarea sistemului de fișiere XFS pe partiția "
+#~ "<filename>%1</filename>: Demontare eșuată."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
+#~ "Initial mount failed."
+#~ msgstr ""
+#~ "Redimensionarea sistemului de fișiere XFS pe partiția <filename>%1</"
+#~ "filename> a eșuat: Montarea inițială a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on source partition <filename>%1</filename> "
+#~ "for backup."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția-sursă <filename>%1</filename> nu a "
+#~ "putut fi deschis pentru copiere de rezervă."
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Could not open file <filename>%1</filename> for writing."
+#~ msgctxt "@info/plain"
+#~ msgid "Could not create backup file <filename>%1</filename>."
+#~ msgstr ""
+#~ "Fișierul <filename>%1</filename> nu a putut fi deschis pentru scriere."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Copy file system on partition <filename>%1</filename> to partition "
+#~| "<filename>%2</filename>"
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Back up file system on partition <filename>%1</filename> to <filename>%2</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Copiază sistemul de fișiere de pe partiția <filename>%1</filename> pe "
+#~ "partiția <filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Check file system on partition <filename>%1</filename>"
+#~ msgstr "Verifică sistemul de fișiere pe partiția <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Cannot copy file system: File system on target partition <filename>%1</"
+#~ "filename> is smaller than the file system on source partition <filename>"
+#~ "%2</filename>."
+#~ msgstr ""
+#~ "Sistemul de fișiere nu poate fi copiat: Sistemul de fișiere pe partiția-"
+#~ "țintă <filename>%1</filename> este mai mic decât sistemul de fișiere pe "
+#~ "partiția-sursă <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on source partition <filename>%1</filename> "
+#~ "for copying."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția-sursă <filename>%1</filename> nu a "
+#~ "putut fi deschis pentru copiere."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on target partition <filename>%1</filename> "
+#~ "for copying."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția-țintă <filename>%1</filename> nu a "
+#~ "putut fi deschis pentru copiere."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Closing device. This may take a few seconds."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Closing device. This may take a while, especially on slow devices like "
+#~ "Memory Sticks."
+#~ msgstr "Se închide dispozitivul. Aceasta poate dura câteva secunde."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy file system on partition <filename>%1</filename> to partition "
+#~ "<filename>%2</filename>"
+#~ msgstr ""
+#~ "Copiază sistemul de fișiere de pe partiția <filename>%1</filename> pe "
+#~ "partiția <filename>%2</filename>"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not create target for moving file system on partition <filename>"
+#~| "%1</filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Failed to set the system type for the file system on partition <filename>"
+#~ "%1</filename>."
+#~ msgstr ""
+#~ "Ținta pentru mutarea sistemului de fișiere pe partiția <filename>%1</"
+#~ "filename> nu a putut fi creată."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open device <filename>%1</filename> to create new partition "
+#~| "<filename>%2</filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to set "
+#~ "the system type for partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
+#~ "noii partiții <filename>%2</filename>."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open device <filename>%1</filename> to create new partition "
+#~| "<filename>%2</filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> to set the system type for "
+#~ "partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
+#~ "noii partiții <filename>%2</filename>."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Restore the file system from file <filename>%1</filename> to partition "
+#~| "<filename>%2</filename>"
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Create file system <filename>%1</filename> on partition <filename>%2</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Restabilește sistemul de fișiere din fișierul <filename>%1</filename> "
+#~ "către partiția <filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Failed to add partition <filename>%1</filename> to device <filename>%2</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Eșec la adăugarea partiției <filename>%1</filename> la dispozitivul "
+#~ "<filename>%2</filename>."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open device <filename>%1</filename> to create new partition "
+#~| "<filename>%2</filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to "
+#~ "create new partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
+#~ "noii partiții <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> to create new partition "
+#~ "<filename>%2</filename>."
+#~ msgstr ""
+#~ "Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
+#~ "noii partiții <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create new partition <filename>%1</filename>"
+#~ msgstr "Creează partiție nouă <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create new partition on device <filename>%1</filename>"
+#~ msgstr "Creează partiție nouă pe dispozitivul <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not open device <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Crearea tabelei de partiții a eșuat: Dispozitivul <filename>%1</filename> "
+#~ "nu a putut fi deschis."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create new partition table on device <filename>%1</filename>"
+#~ msgstr ""
+#~ "Creează tabelă de partiții nouă pe dispozitivul <filename>%1</filename>"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Delete file system on <filename>%1</filename>"
+#~ msgctxt "@info/plain"
+#~ msgid "Could not delete file system on <filename>%1</filename>."
+#~ msgstr "Șterge sistemul de fișiere pe <filename>%1</filename>"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open device <filename>%1</filename> to create new partition "
+#~| "<filename>%2</filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to "
+#~ "delete file system on <filename>%2</filename>."
+#~ msgstr ""
+#~ "Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
+#~ "noii partiții <filename>%2</filename>."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Copy file system on partition <filename>%1</filename> to partition "
+#~| "<filename>%2</filename>"
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not delete file system signature for partition <filename>%1</"
+#~ "filename>: Failed to open device <filename>%2</filename>."
+#~ msgstr ""
+#~ "Copiază sistemul de fișiere de pe partiția <filename>%1</filename> pe "
+#~ "partiția <filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Delete file system on <filename>%1</filename>"
+#~ msgstr "Șterge sistemul de fișiere pe <filename>%1</filename>"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Delete file system on <filename>%1</filename>"
+#~ msgctxt "@info/plain"
+#~ msgid "Could not delete partition <filename>%1</filename>."
+#~ msgstr "Șterge sistemul de fișiere pe <filename>%1</filename>"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open device <filename>%1</filename> to create new partition "
+#~| "<filename>%2</filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to "
+#~ "delete partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
+#~ "noii partiții <filename>%2</filename>."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Creating partition table failed: Could not open device <filename>%1</"
+#~| "filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting partition failed: Could not open device <filename>%1</filename>."
+#~ msgstr ""
+#~ "Crearea tabelei de partiții a eșuat: Dispozitivul <filename>%1</filename> "
+#~ "nu a putut fi deschis."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Create new partition <filename>%1</filename>"
+#~ msgctxt "@info/plain"
+#~ msgid "Delete the partition <filename>%1</filename>"
+#~ msgstr "Creează partiție nouă <filename>%1</filename>"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "The sector size in the source and target for copying are not the same. "
+#~| "This is currently unsupported."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "The logical sector sizes in the source and target for copying are not the "
+#~ "same. This is currently unsupported."
+#~ msgstr ""
+#~ "Dimensiunea sectorului în sursa și destinația copierii nu coincide. Acest "
+#~ "lucru nu este susținut momentan."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying %1 blocks (%2 sectors) from %3 to %4, direction: %5."
+#~ msgstr "Se copiază %1 blocuri (%2 sectoare) de pe %3 pe %4, direcție: %5."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying %1 MiB/second, estimated time left: %2"
+#~ msgstr "Se copiază %1 Mio/secundă, durata rămasă estimată: %2"
+
+#~ msgid "1 sector"
+#~ msgid_plural "%1 sectors"
+#~ msgstr[0] "1 sector"
+#~ msgstr[1] "%1 sectoare"
+#~ msgstr[2] "%1 de sectoare"
+
+#~ msgctxt ""
+#~ "@info/plain argument 2 is a string such as 7 sectors (localized "
+#~ "accordingly)"
+#~ msgid "Copying 1 block (%2) finished."
+#~ msgid_plural "Copying %1 blocks (%2) finished."
+#~ msgstr[0] "Copierea a 1 bloc (%2) încheiată."
+#~ msgstr[1] "Copierea a %1 blocuri (%2) încheiată."
+#~ msgstr[2] "Copierea a %1 de blocuri (%2) încheiată."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Source and target for copying do not overlap: Rollback is not required."
+#~ msgstr ""
+#~ "Sursa și ținta pentru copiere nu se suprapun: Revenirea nu este necesară."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Rollback from: First sector: %1, last sector: %2."
+#~ msgstr "Se revine de la: Primul sector: %1, ultimul sector: %2."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Rollback to: First sector: %1, last sector: %2."
+#~ msgstr "Se revine la: Primul sector: %1, ultimul sector: %2."
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Could not open file <filename>%1</filename> for writing."
+#~ msgctxt "@info/plain"
+#~ msgid "Could not open device <filename>%1</filename> to rollback copying."
+#~ msgstr ""
+#~ "Fișierul <filename>%1</filename> nu a putut fi deschis pentru scriere."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Rollback failed: Source or target are not devices."
+#~ msgstr "Revenire eșuată: Sursa sau ținta nu sunt dispozitive."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Job: %1"
+#~ msgstr "Sarcină: %1"
+
+#~ msgctxt "@info/plain job status (error, warning, ...)"
+#~ msgid "%1: %2"
+#~ msgstr "%1: %2"
+
+#~ msgctxt "@info:progress job"
+#~ msgid "Pending"
+#~ msgstr "În așteptare"
+
+#~ msgctxt "@info:progress job"
+#~ msgid "Success"
+#~ msgstr "Succes"
+
+#~ msgctxt "@info:progress job"
+#~ msgid "Error"
+#~ msgstr "Eroare"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open file system on partition <filename>%1</filename> for "
+#~ "moving."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "deschis pentru mutare."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not create target for moving file system on partition <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Ținta pentru mutarea sistemului de fișiere pe partiția <filename>%1</"
+#~ "filename> nu a putut fi creată."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Rollback for file system on partition <filename>%1</filename> failed."
+#~ msgstr ""
+#~ "Revenirea pentru sistemul de fișiere pe partiția <filename>%1</filename> "
+#~ "a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Closing device. This may take a few seconds."
+#~ msgstr "Se închide dispozitivul. Aceasta poate dura câteva secunde."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Move the file system on partition <filename>%1</filename> to sector %2"
+#~ msgstr ""
+#~ "Mută sistemul de fișiere de pe partiția <filename>%1</filename> la "
+#~ "sectorul %2"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid ""
+#~| "The file system on partition <filename>%1</filename> could not be "
+#~| "mounted."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "The file system on partition <filename>%2</filename> already has the "
+#~ "requested length of 1 sector."
+#~ msgid_plural ""
+#~ "The file system on partition <filename>%2</filename> already has the "
+#~ "requested length of %1 sectors."
+#~ msgstr[0] ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "montat."
+#~ msgstr[1] ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "montat."
+#~ msgstr[2] ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "montat."
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid ""
+#~| "The file system on partition <filename>%1</filename> could not be "
+#~| "unmounted."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "The file system on partition <filename>%1</filename> cannot be resized "
+#~ "because there is no support for it."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "demontat."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not write new start sector to partition <filename>%1</filename> "
+#~| "when trying to update the NTFS boot sector."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not read geometry for partition <filename>%1</filename> while "
+#~ "trying to resize the file system."
+#~ msgstr ""
+#~ "Nu s-a putut scrie noul sector de început pe partiția <filename>%1</"
+#~ "filename> la actualizarea sectorului de demarare NTFS."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Create filesystem %1 on partition <filename>%2</filename>"
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Maximize file system on <filename>%1</filename> to fill the partition"
+#~ msgstr "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Create filesystem %1 on partition <filename>%2</filename>"
+#~ msgctxt "@info/plain"
+#~ msgid "Resize file system on partition <filename>%2</filename> to 1 sector"
+#~ msgid_plural ""
+#~ "Resize file system on partition <filename>%2</filename> to %1 sectors"
+#~ msgstr[0] ""
+#~ "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
+#~ msgstr[1] ""
+#~ "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
+#~ msgstr[2] ""
+#~ "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Could not open file <filename>%1</filename> for writing."
+#~ msgctxt "@info/plain"
+#~ msgid "Could not open backup file <filename>%1</filename> to restore from."
+#~ msgstr ""
+#~ "Fișierul <filename>%1</filename> nu a putut fi deschis pentru scriere."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open file system on target partition <filename>%1</filename> "
+#~| "for copying."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open target partition <filename>%1</filename> to restore to."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția-țintă <filename>%1</filename> nu a "
+#~ "putut fi deschis pentru copiere."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Restore the file system from file <filename>%1</filename> to partition "
+#~ "<filename>%2</filename>"
+#~ msgstr ""
+#~ "Restabilește sistemul de fișiere din fișierul <filename>%1</filename> "
+#~ "către partiția <filename>%2</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "File system on partition <filename>%1</filename> does not support setting "
+#~ "labels. Job ignored."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu susține "
+#~ "stabilirea etichetelor. Sarcină ignorată."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Set the file system label on partition <filename>%1</filename> to \"%2\""
+#~ msgstr ""
+#~ "Stabilește eticheta sistemului de fișiere pe partiția <filename>%1</"
+#~ "filename> la „%2”"
+
+#~ msgctxt "@info/plain flag turned on, active"
+#~ msgid "on"
+#~ msgstr "activat"
+
+#~ msgctxt "@info/plain flag turned off, inactive"
+#~ msgid "off"
+#~ msgstr "dezactivat"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Set label for partition <filename>%1</filename> to \"%2\""
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "There was an error setting flag %1 for partition <filename>%2</filename> "
+#~ "to state %3."
+#~ msgstr "Stabilește eticheta pentru partiția <filename>%1</filename> la „%2”"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Failed to add partition <filename>%1</filename> to device <filename>%2</"
+#~| "filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not find partition <filename>%1</filename> on device <filename>%2</"
+#~ "filename> to set partition flags."
+#~ msgstr ""
+#~ "Eșec la adăugarea partiției <filename>%1</filename> la dispozitivul "
+#~ "<filename>%2</filename>."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open device <filename>%1</filename> to create new partition "
+#~| "<filename>%2</filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition table on device <filename>%1</filename> to set "
+#~ "partition flags for partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
+#~ "noii partiții <filename>%2</filename>."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open device <filename>%1</filename> to create new partition "
+#~| "<filename>%2</filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> to set partition flags for "
+#~ "partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
+#~ "noii partiții <filename>%2</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Clear flags for partition <filename>%1</filename>"
+#~ msgstr "Curăță fanioanele pentru partiția <filename>%1</filename>"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Set flags for partition <filename>%1</filename> to \"%2\""
+#~ msgctxt "@info/plain"
+#~ msgid "Set the flags for partition <filename>%1</filename> to \"%2\""
+#~ msgstr ""
+#~ "Stabilește fanioanele pentru partiția <filename>%1</filename> la „%2”"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open device <filename>%1</filename> to create new partition "
+#~| "<filename>%2</filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open device <filename>%1</filename> while trying to resize/move "
+#~ "partition <filename>%2</filename>."
+#~ msgstr ""
+#~ "Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
+#~ "noii partiții <filename>%2</filename>."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\""
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Set geometry of partition <filename>%1</filename>: Start sector: %2, "
+#~ "length: %3"
+#~ msgstr ""
+#~ "Stabilește eticheta pentru partiția <filename>%1</filename> de la „%2” la "
+#~ "„%3”"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Delete file system on <filename>%1</filename>"
+#~ msgctxt "@info/plain"
+#~ msgid "Shred the file system on <filename>%1</filename>"
+#~ msgstr "Șterge sistemul de fișiere pe <filename>%1</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Backup partition <filename>%1</filename> (%2, %3) to <filename>%4</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Creează copie de siguranță a partiției <filename>%1</filename> (%2, %3) "
+#~ "pe <filename>%4</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Check and repair partition <filename>%1</filename> (%2, %3)"
+#~ msgstr "Verifică și repară partiția <filename>%1</filename> (%2, %3)"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Warning: Maximizing file system on target partition <filename>%1</"
+#~ "filename> to the size of the partition failed."
+#~ msgstr ""
+#~ "Atenție: Maximizarea sistemului de fișiere pe partiția-țintă <filename>"
+#~ "%1</filename> la dimensiunea partiției a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Checking target partition <filename>%1</filename> after copy failed."
+#~ msgstr ""
+#~ "Verificarea partiției-țintă <filename>%1</filename> după copiere a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Copying source to target partition failed."
+#~ msgstr "Copierea sursei pe partiția-țintă a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Creating target partition for copying failed."
+#~ msgstr "Crearea partiției-țintă pentru copiere a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Checking source partition <filename>%1</filename> failed."
+#~ msgstr "Verificarea partiției-sursă <filename>%1</filename> a eșuat."
+
+#~ msgctxt "@info/plain status (success, error, warning...) of operation"
+#~ msgid "%1: %2"
+#~ msgstr "%1: %2"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</"
+#~ "filename> (%5, %6)"
+#~ msgstr ""
+#~ "Copiază partiția <filename>%1</filename> (%2, %3) către <filename>%4</"
+#~ "filename> (%5, %6)"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</"
+#~ "filename> (%5, %6) and grow it to %7"
+#~ msgstr ""
+#~ "Copiază partiția <filename>%1</filename> (%2, %3) către <filename>%4</"
+#~ "filename> (%5, %6) și mărește-o la %7"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+#~ "(starting at %4) on <filename>%5</filename>"
+#~ msgstr ""
+#~ "Copiază partiția <filename>%1</filename> (%2, %3) pe spațiul nealocat "
+#~ "(începând cu %4) pe <filename>%5</filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
+#~ "(starting at %4) on <filename>%5</filename> and grow it to %6"
+#~ msgstr ""
+#~ "Copiază partiția <filename>%1</filename> (%2, %3) pe spațiul nealocat "
+#~ "(începând cu %4) pe <filename>%5</filename> și mărește-o la %6"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create filesystem %1 on partition <filename>%2</filename>"
+#~ msgstr "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Create a new partition table on <filename>%1</filename>"
+#~ msgctxt "@info/plain"
+#~ msgid "Create a new partition table (type: %1) on <filename>%2</filename>"
+#~ msgstr "Creează tabelă de partiții nouă pe <filename>%1</filename>"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Delete partition <filename>%1</filename> (%2, %3)"
+#~ msgctxt "@info/plain"
+#~ msgid "Shred partition <filename>%1</filename> (%2, %3)"
+#~ msgstr "Șterge partiția <filename>%1</filename> (%2, %3)"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Delete partition <filename>%1</filename> (%2, %3)"
+#~ msgstr "Șterge partiția <filename>%1</filename> (%2, %3)"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create a new partition (%1, %2) on <filename>%3</filename>"
+#~ msgstr "Creează o partiție nouă (%1, %2) pe <filename>%3</filename>"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "None"
+#~ msgstr "Niciuna"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Pending"
+#~ msgstr "În așteptare"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Running"
+#~ msgstr "Rulează"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Success"
+#~ msgstr "Succes"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Warning"
+#~ msgstr "Avertisment"
+
+#~ msgctxt "@info:progress operation"
+#~ msgid "Error"
+#~ msgstr "Eroare"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Moving extended partition <filename>%1</filename> failed."
+#~ msgstr "Mutarea partiției extinse <filename>%1</filename> a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Checking partition <filename>%1</filename> after resize/move failed."
+#~ msgstr ""
+#~ "Verificarea partiției <filename>%1</filename> după redimensionare/mutare "
+#~ "a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Resizing/moving partition <filename>%1</filename> failed."
+#~ msgstr "Redimensionarea/mutarea partiției <filename>%1</filename> a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Checking partition <filename>%1</filename> before resize/move failed."
+#~ msgstr ""
+#~ "Verificarea partiției <filename>%1</filename> înainte de redimensionare/"
+#~ "mutare a eșuat."
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Move partition <filename>%1</filename> to the left by %2"
+#~ msgstr "Mută partiția <filename>%1</filename> la stânga cu %2"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Move partition <filename>%1</filename> to the right by %2"
+#~ msgstr "Mută partiția <filename>%1</filename> la dreapta cu %2"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Grow partition <filename>%1</filename> from %2 to %3"
+#~ msgstr "Mărește partiția <filename>%1</filename> de la %2 la %3"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Shrink partition <filename>%1</filename> from %2 to %3"
+#~ msgstr "Micșorează partiția <filename>%1</filename> de la %2 la %3"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the left by %2 and grow it from "
+#~ "%3 to %4"
+#~ msgstr ""
+#~ "Mută partiția <filename>%1</filename> la stânga cu %2 și mărește-o de la "
+#~ "%3 la %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the right by %2 and grow it "
+#~ "from %3 to %4"
+#~ msgstr ""
+#~ "Mută partiția <filename>%1</filename> la dreapta cu %2 și mărește-o de la "
+#~ "%3 la %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the left by %2 and shrink it "
+#~ "from %3 to %4"
+#~ msgstr ""
+#~ "Mută partiția <filename>%1</filename> la stânga cu %2 și micșoreaz-o de "
+#~ "la %3 la %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid ""
+#~ "Move partition <filename>%1</filename> to the right by %2 and shrink it "
+#~ "from %3 to %4"
+#~ msgstr ""
+#~ "Mută partiția <filename>%1</filename> la dreapta cu %2 și micșoreaz-o de "
+#~ "la %%3 la %4"
+
+#~ msgctxt "@info/plain describe resize/move action"
+#~ msgid "Unknown resize/move action."
+#~ msgstr "Acțiune de redimensionare/mutare necunoscută."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Resize/move failed: Could not resize the file system on partition "
+#~| "<filename>%1</filename>"
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not resize file system to shrink partition "
+#~ "<filename>%1</filename>."
+#~ msgstr ""
+#~ "Redimensionare/mutare eșuată: Sistemul de fișiere pe partiția <filename>"
+#~ "%1</filename> nu a putut fi redimensionat"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not shrink partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Redimensionare/mutare eșuată: Partiția <filename>%1</filename> nu a putut "
+#~ "fi micșorată."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Moving partition <filename>%1</filename> failed."
+#~ msgstr "Mutarea partiției <filename>%1</filename> a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Moving the filesystem for partition <filename>%1</filename> failed. "
+#~ "Rolling back."
+#~ msgstr ""
+#~ "Mutarea sistemului de fișiere pentru partiția <filename>%1</filename> a "
+#~ "eșuat. Se revine."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Moving back partition <filename>%1</filename> to its original position "
+#~ "failed."
+#~ msgstr ""
+#~ "Mutarea partiției <filename>%1</filename> înapoi la poziția originală a "
+#~ "eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not grow partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Redimensionare/mutare eșuată: Partiția <filename>%1</filename> nu a putut "
+#~ "fi mărită."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Resize/move failed: Could not resize the file system on partition "
+#~ "<filename>%1</filename>"
+#~ msgstr ""
+#~ "Redimensionare/mutare eșuată: Sistemul de fișiere pe partiția <filename>"
+#~ "%1</filename> nu a putut fi redimensionat"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not restore old partition size for partition <filename>%1</"
+#~ "filename>."
+#~ msgstr ""
+#~ "Vechea dimensiune a partiției nu a putut fi restabilită pentru partiția "
+#~ "<filename>%1</filename>."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Checking target file system on partition <filename>%1</filename> after "
+#~ "the restore failed."
+#~ msgstr ""
+#~ "Verificarea sistemului de fișiere țintă pe partiția <filename>%1</"
+#~ "filename> după restabilire a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Restoring file system failed."
+#~ msgstr "Restabilirea sistemului de fișiere a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Creating the destination partition to restore to failed."
+#~ msgstr "Crearea partiției-destinație pentru restabilire a eșuat."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Restore partition from <filename>%1</filename> to <filename>%2</filename>"
+#~ msgstr ""
+#~ "Restabilește partiția de la <filename>%1</filename> la <filename>%2</"
+#~ "filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Restore partition on <filename>%1</filename> at %2 from <filename>%3</"
+#~ "filename>"
+#~ msgstr ""
+#~ "Restabilește partiția pe <filename>%1</filename> la %2 din <filename>%3</"
+#~ "filename>"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Set label for partition <filename>%1</filename> to \"%2\""
+#~ msgstr "Stabilește eticheta pentru partiția <filename>%1</filename> la „%2”"
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\""
+#~ msgstr ""
+#~ "Stabilește eticheta pentru partiția <filename>%1</filename> de la „%2” la "
+#~ "„%3”"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Set flags for partition <filename>%1</filename> to \"%2\""
+#~ msgstr ""
+#~ "Stabilește fanioanele pentru partiția <filename>%1</filename> la „%2”"
+
+#~ msgctxt "@info/plain"
+#~ msgid "LibParted Exception: %1"
+#~ msgstr "Excepție LibParted: %1"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Could not open file <filename>%1</filename> for writing."
+#~ msgctxt "@info/plain"
+#~ msgid "Could not access device <filename>%1</filename>"
+#~ msgstr ""
+#~ "Fișierul <filename>%1</filename> nu a putut fi deschis pentru scriere."
+
+#~ msgctxt "@info/plain"
+#~ msgid "Device found: %1"
+#~ msgstr "Dispozitiv găsit: %1"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Creating partition table failed: Could not open device <filename>%1</"
+#~| "filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not retrieve partition table type "
+#~ "\"%1\" for <filename>%2</filename>."
+#~ msgstr ""
+#~ "Crearea tabelei de partiții a eșuat: Dispozitivul <filename>%1</filename> "
+#~ "nu a putut fi deschis."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Creating partition table failed: Could not open device <filename>%1</"
+#~| "filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not open backend device <filename>"
+#~ "%1</filename>."
+#~ msgstr ""
+#~ "Crearea tabelei de partiții a eșuat: Dispozitivul <filename>%1</filename> "
+#~ "nu a putut fi deschis."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Creating partition table failed: Could not open device <filename>%1</"
+#~| "filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Creating partition table failed: Could not create a new partition table "
+#~ "in the backend for device <filename>%1</filename>."
+#~ msgstr ""
+#~ "Crearea tabelei de partiții a eșuat: Dispozitivul <filename>%1</filename> "
+#~ "nu a putut fi deschis."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Set label for partition <filename>%1</filename> to \"%2\""
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Unknown partition role for new partition <filename>%1</filename> (roles: "
+#~ "%2)"
+#~ msgstr "Stabilește eticheta pentru partiția <filename>%1</filename> la „%2”"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Failed to create new partition <filename>%1</filename>."
+#~ msgstr "Crearea noii partiții <filename>%1</filename> a eșuat."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Creating partition table failed: Could not open device <filename>%1</"
+#~| "filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Deleting partition failed: Partition to delete (<filename>%1</filename>) "
+#~ "not found on disk."
+#~ msgstr ""
+#~ "Crearea tabelei de partiții a eșuat: Dispozitivul <filename>%1</filename> "
+#~ "nu a putut fi deschis."
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid ""
+#~| "The file system on partition <filename>%1</filename> could not be "
+#~| "mounted."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not set geometry for partition <filename>%1</filename> while trying "
+#~ "to resize/move it."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "montat."
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid ""
+#~| "The file system on partition <filename>%1</filename> could not be "
+#~| "mounted."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not get constraint for partition <filename>%1</filename> while "
+#~ "trying to resize/move it."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "montat."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not write new start sector to partition <filename>%1</filename> "
+#~| "when trying to update the NTFS boot sector."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not get geometry for partition <filename>%1</filename> while trying "
+#~ "to resize/move it."
+#~ msgstr ""
+#~ "Nu s-a putut scrie noul sector de început pe partiția <filename>%1</"
+#~ "filename> la actualizarea sectorului de demarare NTFS."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open partition <filename>%1</filename> for writing when trying "
+#~| "to update the NTFS boot sector."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not open partition <filename>%1</filename> while trying to resize/"
+#~ "move it."
+#~ msgstr ""
+#~ "Nu s-a putut deschide pentru scriere partiția <filename>%1</filename> la "
+#~ "actualizarea sectorului de demarare NTFS."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Failed to erase reiser4 signature on partition <filename>%1</filename>."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Failed to erase filesystem signature on partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Semnătura reiser4 de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "ștearsă."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open file system on partition <filename>%1</filename> for "
+#~| "moving."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not delete file system on partition <filename>%1</filename>: Failed "
+#~ "to get partition."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "deschis pentru mutare."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open file system on partition <filename>%1</filename> for "
+#~| "moving."
+#~ msgctxt "@info/plain"
+#~ msgid "Could not resize file system on partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "deschis pentru mutare."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not write new start sector to partition <filename>%1</filename> "
+#~| "when trying to update the NTFS boot sector."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not get geometry for resized partition <filename>%1</filename> "
+#~ "while trying to resize the file system."
+#~ msgstr ""
+#~ "Nu s-a putut scrie noul sector de început pe partiția <filename>%1</"
+#~ "filename> la actualizarea sectorului de demarare NTFS."
+
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not determine file system of partition at sector %1 on device "
+#~ "<filename>%2</filename>."
+#~ msgstr ""
+#~ "Nu s-a putut determina sistemul de fișiere al partiției %1 pe "
+#~ "dispozitivul <filename>%2</filename>."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "Could not open file system on partition <filename>%1</filename> for "
+#~| "moving."
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "Could not update the system type for partition <filename>%1</filename>."
+#~ msgstr ""
+#~ "Sistemul de fișiere de pe partiția <filename>%1</filename> nu a putut fi "
+#~ "deschis pentru mutare."
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Restoring file system failed."
+#~ msgctxt "@info/plain"
+#~ msgid "No file system defined."
+#~ msgstr "Restabilirea sistemului de fișiere a eșuat."
+
+#, fuzzy
+#~| msgctxt "@info/plain unit"
+#~| msgid "Byte"
+#~ msgctxt "@info/plain unit"
+#~ msgid "Byte"
+#~ msgid_plural "Bytes"
+#~ msgstr[0] "Octet"
+#~ msgstr[1] "Octet"
+#~ msgstr[2] "Octet"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "KiB"
+#~ msgstr "KiO"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "MiB"
+#~ msgstr "MiO"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "GiB"
+#~ msgstr "GiO"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "TiB"
+#~ msgstr "TiO"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "PiB"
+#~ msgstr "PiO"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "EiB"
+#~ msgstr "EiO"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "ZiB"
+#~ msgstr "ZiO"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "YiB"
+#~ msgstr "YiO"
+
+#~ msgctxt "@info/plain unit"
+#~ msgid "(unknown unit)"
+#~ msgstr "(unitate necunoscută)"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Command: %1 %2"
+#~ msgctxt "@info/plain"
+#~ msgid "Command: %1"
+#~ msgstr "Comandă: %1 %2"
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Status:"
+#~ msgid "%1: SMART Status Report"
+#~ msgstr "Stare:"
+
+#~ msgid "Date:"
+#~ msgstr "Dată:"
+
+#~ msgid "Program version:"
+#~ msgstr "Versiune program:"
+
+#, fuzzy
+#~| msgid "Backend"
+#~ msgid "Backend:"
+#~ msgstr "Platformă"
+
+#, fuzzy
+#~| msgid "KDE version:"
+#~ msgid "KDE Frameworks version:"
+#~ msgstr "Versiune KDE:"
+
+#~ msgid "Machine:"
+#~ msgstr "Mașină:"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "Create new partition <filename>%1</filename>"
+#~ msgctxt "@title:window"
+#~ msgid "Decrypt LUKS partition on <filename>%1</filename>"
+#~ msgstr "Creează partiție nouă <filename>%1</filename>"
+
+#, fuzzy
+#~| msgid "Date:"
+#~ msgid "&Name:"
+#~ msgstr "Dată:"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "Size:"
+#~ msgstr "Dimensiune:"
+
+#, fuzzy
+#~| msgctxt "@title:window"
+#~| msgid "KDE Partition Manager"
+#~ msgid "KDE Partition Manager dummy backend."
+#~ msgstr "Gestionarul de partiții KDE"
+
+#, fuzzy
+#~| msgid "Copyright (c) 2008 Volker Lanz"
+#~ msgid "Copyright 2010 Volker Lanz"
+#~ msgstr "Drept de autor (c) 2008 Volker Lanz"
+
+#, fuzzy
+#~| msgid "LibParted version:"
+#~ msgctxt "@title"
+#~ msgid "LibParted Backend Plugin"
+#~ msgstr "Versiune LibParted:"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "<application>KDE Partition Manager</application>"
+#~ msgid "KDE Partition Manager backend for libparted."
+#~ msgstr "<application>Gestionarul de partiții KDE</application>"
+
+#, fuzzy
+#~| msgctxt "@info:credit"
+#~| msgid "(c) 2008, 2009 Volker Lanz"
+#~ msgid "Copyright 2008,2009,2010 Volker Lanz"
+#~ msgstr "(c) 2008, 2009 Volker Lanz"
+
+#~ msgctxt "@item/plain filesystem name"
+#~ msgid "unknown"
+#~ msgstr "necunoscut"
+
+#~ msgctxt "@item/plain filesystem name"
+#~ msgid "extended"
+#~ msgstr "extins"
+
+#~ msgctxt "@item/plain filesystem name"
+#~ msgid "jfs"
+#~ msgstr "jfs"
+
+#~ msgctxt "@info/plain"
+#~ msgid "Create file system %1 on partition <filename>%2</filename>"
+#~ msgstr "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
+
+#, fuzzy
+#~| msgctxt "@info:credit"
+#~| msgid "(c) 2008, 2009 Volker Lanz"
+#~ msgctxt "@info:credit"
+#~ msgid "(c) 2008, 2009, 2010, 2011 Volker Lanz"
+#~ msgstr "(c) 2008, 2009 Volker Lanz"
+
+#, fuzzy
+#~| msgctxt "@label partition"
+#~| msgid "Available:"
+#~ msgid "Available:"
+#~ msgstr "Disponibil:"
+
+#, fuzzy
+#~| msgctxt "@title:menu"
+#~| msgid "Partition Toolbar"
+#~ msgctxt "@title:window"
+#~ msgid "Target Partition Too Big"
+#~ msgstr "Bara partițiilor"
+
+#~ msgid "%1: Operation Report"
+#~ msgstr "%1: Raport operație"
+
+#~ msgid "User ID:"
+#~ msgstr "Id. utilizator:"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Run without administrative privileges"
+#~ msgctxt "@label"
+#~ msgid "Allow Applying Operations Without Administrator Privileges"
+#~ msgstr "Lansează fără drepturi de administrare"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "<application>KDE Partition Manager</application>"
+#~ msgid "KDE Partition Manager KPart"
+#~ msgstr "<application>Gestionarul de partiții KDE</application>"
+
+#, fuzzy
+#~| msgctxt "@title"
+#~| msgid "<application>KDE Partition Manager</application>"
+#~ msgid "A test application for KDE Partition Manager's KPart."
+#~ msgstr "<application>Gestionarul de partiții KDE</application>"
+
+#~ msgid "Copyright (c) 2008 Volker Lanz"
+#~ msgstr "Drept de autor (c) 2008 Volker Lanz"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Edit"
+#~ msgstr "Editare"
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid ""
+#~| "The partition cannot be created with the requested length of 1 sector, "
+#~| msgid_plural ""
+#~| "The partition cannot be created with the requested length of %1 sectors, "
+#~ msgctxt "@info/plain"
+#~ msgid ""
+#~ "The partition cannot be created with the requested length of one sector, "
+#~ msgid_plural ""
+#~ "The partition cannot be created with the requested length of %1 sectors, "
+#~ msgstr[0] "Partiția nu poate fi creată cu lungimea cerută de 1 sector, "
+#~ msgstr[1] "Partiția nu poate fi creată cu lungimea cerută de %1 sectoare, "
+#~ msgstr[2] ""
+#~ "Partiția nu poate fi creată cu lungimea cerută de %1 de sectoare, "
+
+#, fuzzy
+#~| msgctxt "@info/plain"
+#~| msgid "and will instead only be 1 sector long."
+#~| msgid_plural "and will instead only be %1 sectors long."
+#~ msgctxt "@info/plain"
+#~ msgid "and will instead only be one sector long."
+#~ msgid_plural "and will instead only be %1 sectors long."
+#~ msgstr[0] "și va fi în schimb lungă de 1 sector."
+#~ msgstr[1] "și va fi în schimb lungă de %1 sectoare."
+#~ msgstr[2] "și va fi în schimb lungă de %1 de sectoare."
+
+#, fuzzy
+#~| msgctxt "@label"
+#~| msgid "Mount point:"
+#~ msgctxt "@title:window"
+#~ msgid "Edit mount point for %1"
+#~ msgstr "Punct de montare:"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "File &system:"
+#~ msgstr "&Sistem de fișiere:"
+
+#~ msgctxt "@label:listbox"
+#~ msgid "S&ize:"
+#~ msgstr "D&imensiune:"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "unknown"
+#~ msgctxt "@item/plain disk label name"
+#~ msgid "unknown"
+#~ msgstr "necunoscut"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "<para>Do you really want to create a new partition table on the following "
+#~ "device?</para><para><list><item><filename>%1</filename> (%2)</item></"
+#~ "list></para><para><warning>This will destroy all data on the device.</"
+#~ "warning></para>"
+#~ msgstr ""
+#~ "<para>Sigur doriți să creați o nouă tabelă de partiții pe următorul "
+#~ "dispozitiv?</para><para><list><item><filename>%1</filename> (%2)</item></"
+#~ "list></para><para><warning>Aceasta va distruge toate datele de pe "
+#~ "dispozitiv.</warning></para>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Destroy All Data on Device?"
+#~ msgstr "Distrugeți toate datele de pe dispozitiv?"
+
+#, fuzzy
+#~| msgctxt "@item partition flag"
+#~| msgid "swap"
+#~ msgid "swap"
+#~ msgstr "swap"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "fat16"
+#~ msgid "vfat"
+#~ msgstr "fat16"
+
+#~ msgctxt "@label"
+#~ msgid "Partition"
+#~ msgstr "Partiție"

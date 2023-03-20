@@ -1,0 +1,155 @@
+<chapter id="faq">
+	<title
+>Perguntas e Respostas</title>
+
+	<qandaset id="faqlist">
+		<qandaentry>
+			<question>
+				<para
+>Quão perigoso é o &partman; para os meus dados?</para>
+			</question>
+			<answer>
+				<para
+>Primeiro que tudo, nunca deverá efectuar quaisquer operações destrutivas (apagar, mover ou dimensionar) sem ter feito primeiro uma cópia de segurança completa de tudo o que for afectado. </para>
+				<para
+>Posto isto, o &partman; é seguro de utilizar. Ele efectua verificações pormenorizadas antes e depois de cada operação. Ele invoca as ferramentas externas que foram criadas e são suportadas pelos autores dos sistemas de ficheiros. Tudo isto em conjunto foi testado de forma alargada. </para>
+				<para
+>Existe sempre o risco de perda de dados derivado de um erro desconhecido. Os autores do &partman; tentam minimizar este risco, mas obviamente não existem garantias. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Instalei todos os pacotes externos de suporte ao sistema de ficheiros e mesmo assim não tenho suporte para todas as operações em todos os sistemas de ficheiros.</para>
+			</question>
+			<answer>
+				<para
+>Nem tudo o que o &partman; pode fazer, em princípio, se aplica a todos os sistemas de ficheiros. </para>
+				<para
+>Um exemplo é a verificação do sistema de ficheiros de uma partição de memória virtual ('linuxswap'). Isto simplesmente não é possível. Existem outras limitações inerentes a alguns sistemas de ficheiros. Não pode encolher sistemas de ficheiros JFS ou XFS, dado que nenhum dos dois suportam o dimensionamento dos mesmos, com ou sem o &partman;. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Porque é que não vejo nenhuma informação de progresso significativa quando estou a dimensionar uma partição?</para>
+			</question>
+			<answer>
+				<para
+>O &partman; só pode mostrar a informação de progresso quando sabe o tempo que as tarefas de uma operação irão levar. Infelizmente, nem sempre é o caso no dimensionamento das partições porque, de longe, a tarefa mais longa é a mudança do tamanho do sistema de ficheiros na partição. O dimensionamento dos sistemas de ficheiros é, na maioria dos casos, feito por uma ferramenta externa que actua por parte do &partman;, mas que pode não fornecer informações úteis de progresso ao &partman;, pelo que não há nada a relatar enquanto estas estão em curso. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Porque é que não posso dimensionar a partição de raiz? Como é que posso dimensionar a partição onde se encontra a pasta '/home'?</para>
+			</question>
+			<answer>
+				<para
+>Para modificar uma partição, esta não poderá estar montada. Isso não pode acontecer com a partição de raiz em caso algum. Pelo mesmo facto, se a pasta pessoal do utilizador actual estiver em uso, também não poderá desmontar a partição respectiva. </para>
+				<para
+>A solução para este problema é arrancar a partir de um Live CD de Linux que venha com o &partman; e modificar essas partições a partir daí. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Estou a receber um aviso no resultado do registo sobre o facto de não poder criar uma partição com o tamanho que pediu, sendo criada com um tamanho mais pequeno. O que é que se passa?</para>
+			</question>
+			<answer>
+				<para
+>Nas tabelas de partições do MS-DOS, as partições têm de começar e terminar nos limites entre cilindros. Isto acontece por razões históricas. O &partman; irá lidar com isto internamente, não tentando incomodar o utilizador com essa limitação. </para>
+				<para
+>Em algumas circunstâncias raras, o &partman; não poderá não ser contudo capaz de configurar uma operação da forma que o utilizador pedir, devido a esta limitação. Por exemplo, se um cilindro de um dispositivo tiver 8 MiB de tamanho e quiser variar o tamanho de uma partição em 6 MiB, isso não irá resultar. </para>
+				<para
+>Poderá também obter esta mensagem se tiver um dispositivo e uma tabela de partições onde as partições não estão, seja por que razão for, ajustadas correctamente aos limites dos cilindros e tente mover ou copiar estas partições pela primeira vez. </para>
+				<para
+>A mensagem em si é inofensiva e só existe apenas para informar o utilizador que algo não poderá ser feito exactamente da forma que o utilizador está à espera. As suas partições e dados não serão afectados de forma negativa sempre que observar esta mensagem. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Quantas operações posso adicionar à lista de operações pendentes?</para>
+			</question>
+			<answer>
+				<para
+>Não existe qualquer limite. </para>
+				<para
+>Contudo, não é recomendado adicionar demasiadas operações à lista. Existirá sempre uma pequena hipótese que uma operação possa falhar com algum erro; nesse caso, o &partman; irá parar a execução das operações. Neste caso, é muito mais fácil descobrir o que se passou (e adicionar de novo todas as operações que não puderam ser executadas) se a lista de operações pendentes não for demasiado grande. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>O dimensionamento de um sistema de ficheiros 'ext2' ou 'ext3' falhou com algo do género <quote
+>no space left on device</quote
+> (acabou-se o espaço livre no dispositivo). O que se passou? Será que os meus dados estão corrompidos agora?</para>
+			</question>
+			<answer>
+				<para
+>Este é um problema do comando <command
+>e2resize</command
+> e do sistema de ficheiros 'ext2'/'ext3'/'ext4' subjacente. Se um sistema de ficheiros estiver quase cheio, o  <command
+>e2resize</command
+> não consegue torná-lo mais pequeno, mesmo que tal fosse possível com base no número de sectores livres que sobram. Infelizmente, o &partman; não consegue saber de antemão se o <command
+>e2resize</command
+> irá ser interrompido ou não com este erro para um determinado sistema de ficheiros. Se acontecer, nada será feito e os seus dados não serão afectados de forma alguma. </para>
+				<para
+>Não existe nenhuma solução alternativa para o problema neste momento. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Porque é que não posso formatar a minha disquete com o &partman;? Porque é que não há suporte para a gravação de CD's ou DVD's?</para>
+			</question>
+			<answer>
+				<para
+>Nada isto foi tido em conta ao desenhar o &partman;: É uma aplicação que lida com as partições e os sistemas de ficheiros destas. As disquetes, CD's ou DVD's não necessitam nem usam as partições. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Porque é que não posso modificar as partições de um dispositivo com uma tabela de partições do Amiga ou do BSD?</para>
+			</question>
+			<answer>
+				<para
+>O &partman; só permite de momento o acesso apenas para leitura para qualquer outro tipo de tabelas de partições que não sejam as para MS-DOS. Isto acontece apenas por razões de segurança: O suporte do &partman; para este tipo de tabelas de partições não existe lá de facto e o que existir (ou que funciona apenas por incidente) não foi testado o suficiente para poder ser usado com confiança. </para>
+				<para
+>Obviamente, poderá criar à mesma uma nova tabela de partições para MS-DOS no dispositivo em questão, mas isto provavelmente não é o que deseja. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>No início, o &partman; bloqueia durante alguns minutos, enquanto tenta aceder à unidade de disquetes do meu computador.</para>
+			</question>
+			<answer>
+				<para
+>Isso parece acontecer se tiver uma unidade de disquetes configurada na BIOS do seu computador, mas não tiver ligada nenhuma, de facto. Verifique por favor a sua configuração da BIOS e desactive as unidades de disquetes configuradas, de modo a ver se este problema fica resolvido. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Durante o arranque, o &partman; imprime algumas mensagens sobre a detecção dos dispositivos, o que poderá estoirar ou levar algum tempo, pelo menos.</para>
+			</question>
+			<answer>
+				<para
+>A LibParted, uma biblioteca de infra-estrutura que o &partman; usa, tem problemas nos sistemas em que o Mapeador de Dispositivos do Linux é usado de forma incompreensível. Infelizmente, reage algumas dessas situações com estoiros. O &partman; tenta deste modo evitar essas situações, usando infra-estruturas alternativas. Se não o conseguir fazer, e tiver de se basear na LibParted, irá imprimir uma mensagem como a mencionada. Se a análise dos discos funcionar, poderá ignorar esta mensagem em segurança. </para>
+			</answer>
+		</qandaentry>
+<!--
+		<qandaentry>
+			<question>
+				<para
+></para>
+			</question>
+			 
+		</qandaentry>
+-->
+	</qandaset>
+</chapter>
+

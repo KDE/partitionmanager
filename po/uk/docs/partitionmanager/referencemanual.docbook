@@ -1,0 +1,663 @@
+<chapter id="reference">
+	<title
+>Довідка щодо команд</title>
+
+	<sect1 id="reference-overview">
+		<title
+>Огляд</title>
+		<para
+>У цій главі подано докладне пояснення всіх команд, які доступні у &partman;. Ці відомості подано як довідкові і супровідні до відомостей поданих у <xref linkend="usermanual"/>.</para>
+
+	<sect2 id="menu-file">
+		<title
+>Меню «Файл»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-file-quit">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Вийти</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Завершує роботу &partman;</action
+> без виконання дій з черги, але програма попросить у вас підтвердження вашого вибору виходу, за наявності у черзі дій. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-edit">
+		<title
+>Меню «Зміни»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-edit-undo">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Вернути</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Скасовує останню дію</action
+>, яку було додано до списку дій. </para>
+						<para
+>Цією командою можна буде скористатися, якщо список дій не є порожнім. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-clear">
+					<term>
+						<menuchoice
+><guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Очистити</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Очищує список дій</action
+> без застосування жодної з цих дій. </para>
+						<para
+>Цією командою можна буде скористатися, якщо список дій не є порожнім. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-apply">
+					<term>
+						<menuchoice
+><guimenu
+>Зміни</guimenu
+> <guimenuitem
+>Застосувати</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Застосовує список дій</action
+>. За допомогою цього пункту можна застосувати всі дії у списку так, щоб всі зміни було остаточно записано на ваші диски. Після застосування дій список дій стане порожнім, результат всіх виконаних дій вже не можна буде скасувати. </para>
+						<para
+>Цією командою можна буде скористатися, якщо список дій не є порожнім. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-device">
+		<title
+>Меню «Пристрій»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-device-selectcurrentdevice">
+					<term>
+						<menuchoice
+><guimenu
+>Пристрій</guimenu
+> <guimenuitem
+>Вибрати поточний пристрій</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Надає вам змогу вибрати пристрій з підменю, де буде показано список усіх доступних пристроїв системи. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Пристрій</guimenu
+> <guimenuitem
+>Оновити список пристроїв</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Оновлює список пристроїв</action
+>: за допомогою цього пункту можна змусити &partman; повторно визначити і прочитати дані пристроїв на вашому комп’ютері. Така дія може, наприклад, знадобитися, якщо ви з’єднали з комп’ютером зовнішній жорсткий диск за допомогою USB вже після запуску &partman;. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-createpartitiontable">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Пристрій</guimenu
+> <guimenuitem
+>Створити таблицю розділів</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Створює нову таблицю розділів</action
+>: за допомогою цього пункту меню можна створити нову порожню таблицю розділів GPT або MSDOS на поточному вибраному пристрої. Ця дія вилучить всі розділи на пристрої, а отже всі дані на ньому, вам слід бути обережним (обережною) з виконанням цієї команди. </para>
+						<para
+>Цей пункт стане доступним, лише якщо обрано певний пристрій і жоден з розділів на цьому пристрої не змонтовано. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-exportpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Пристрій</guimenu
+> <guimenuitem
+>Експортувати таблицю розділів</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Надає вам змогу експортувати до файла список усіх розділів на вибраному пристрої. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-importpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Пристрій</guimenu
+> <guimenuitem
+>Імпортувати таблицю розділів</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Надає вам змогу імпортувати таблицю розділів із раніше експортованого файла.</para>
+						<para
+>Ця дія вилучить всі розділи на пристрої, а отже всі дані на ньому, вам слід бути обережним (обережною) з виконанням цієї команди.</para>
+						<para
+>Цей пункт стане доступним, лише якщо обрано певний пристрій і жоден з розділів на цьому пристрої не змонтовано. У поточній версії не передбачено можливості імпортування до логічних пристроїв, зокрема груп томів LVM.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-smartstatus">
+					<term>
+						<menuchoice
+><guimenu
+>Пристрій</guimenu
+> <guimenuitem
+>Стан за SMART</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Показує звіт SMART. SMART — система спостереження, яка є частиною жорстких та твердотільних дисків, яка виявляє дані індикаторів надійності диска і звітує щодо них з метою уможливлення прогнозування апаратних відмов.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Пристрій</guimenu
+> <guimenuitem
+>Властивості</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Показує дані щодо поточних позначених пристроїв. За допомогою відповідного діалогового вікна ви зможете ознайомитися з місткістю диска, даними щодо розміру секторів, типу таблиці розділів, а також кількості використаних основних розділів та їхньої максимальної кількості.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-partition">
+		<title
+>Меню «Розділ»</title>
+
+		<para>
+			<variablelist>
+				<varlistentry id="menu-partition-new">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Створити</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Створює новий розділ</action
+>: відкриває діалогове вікно створення нового розділу, у цьому вікні ви зможете встановити тип, розмір, розташування і файлову систему розділу, який ви маєте намір створити. </para>
+						<para
+>Будь ласка, зауважте, що таблиця розділів на пристрої може обмежувати кількість розділів, які можна створити. Наприклад, у таблицях розділів MS-DOS можна створювати не більше чотирьох основних розділів. </para>
+						<para
+>Цей пункт стане доступним, лише якщо обрано нерозподілену область на пристрої. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-resize">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Змінити розмір/Пересунути</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Змінює розмір або пересуває розділи</action
+>: відкриває діалогове вікно для зміни розміру або пересування існуючого розділу. Залежно від файлової системи розділу і списку зовнішніх інструментів, встановлених на вашому комп’ютері, за допомогою цього діалогового вікна ви зможете виконати не всі з трьох можливих дій, — тобто пересування розділу, <quote
+>зменшення</quote
+> розділу та <quote
+>збільшення</quote
+> розділу. Див. <xref linkend="menu-tools-filesystemsupport"/>. </para>
+						<para
+>Цим пунктом меню можна буде скористатися, лише якщо обрано розділ, який не змонтовано, файлову систему на якому можна зменшувати, збільшувати або пересувати. Для розширених розділів цей пункт буде активним, якщо не змонтовано жодного з логічних розділів на розширеному розділі. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-delete">
+					<term>
+						<menuchoice
+><shortcut
+>&Del;</shortcut
+> <guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Вилучити</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Вилучає розділ</action
+>: цей пункт призначено для вилучення поточного позначеного розділу. </para>
+						<para
+>Цим пунктом меню можна буде скористатися, лише якщо обрано розділ, який не змонтовано. Для розширених розділів цей пункт буде активним, лише якщо на розділі не міститься жодного логічного розділу. </para>
+						<warning>
+							<title
+>Попередження: можлива втрата даних</title>
+							<para
+>Вилучення розділу означає, що всі дані з цього розділу буде знищено.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-shred">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Del;</keycombo
+></shortcut
+> <guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Витерти</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Витирає розділ</action
+>: цей пункт призначено для витирання вмісту з поточного позначеного розділу. </para>
+						<para
+>Цим пунктом меню можна буде скористатися, лише якщо обрано розділ, який не змонтовано. Для розширених розділів цей пункт буде активним, лише якщо на розділі не міститься жодного логічного розділу. </para>
+						<warning>
+							<title
+>Попередження: втрата даних</title>
+							<para
+>Витирання розділу означає, що всі дані з цього розділу буде знищено.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-copy">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Копіювати</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Копіює розділ</action
+>: цей пункт призначено для копіювання поточного позначеного розділу до буфера обміну інформацією &partman;. </para>
+						<para
+>Цей пункт стане доступним, лише якщо позначено певний розділ, який зараз не змонтовано, файлову систему на якому можна копіювати. Розширені розділи копіювати не можна. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-paste">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Вставити</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Вставити розділ</action
+>: за допомогою цього пункту можна вставити розділ з буфера обміну інформацією &partman; до поточного позначеного розділу або нерозподіленого простору. </para>
+						<para
+>За умови вставки до нерозподіленого простору буде відкрито діалогове вікно, за допомогою якого ви зможете пересунути або збільшити розмір копії, яка вставляється. Якщо ви перезаписуватимете існуючий розділ, такого діалогового вікна відкрито не буде. </para>
+						<para
+>Цим пунктом меню можна буде скористатися, лише якщо у буфері обміну інформацією є розділ і якщо обрано коректне призначення (розділ або нерозподілений простір). Крім того, область призначення повинна бути достатньо великою, щоб вмістити джерело, її також має бути демонтовано. Ви не зможете скопіювати розділ на самого себе. </para>
+						<warning>
+							<title
+>Попередження: можлива втрата даних</title>
+							<para
+>Вставка розділу до існуючого розділу означає втрату всіх даних на існуючому розділі і заміну цих даних на дані з розділу, який вставляється.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-edit-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Змінити точку монтування</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Відкриває діалогове вікно</action
+> для редагування точки монтування та параметрів монтування. </para>
+						<para
+>Цією командою можна буде скористатися, лише якщо розділ демонтовано. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Змонтувати/Демонтувати</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Монтує або демонтує розділ</action
+>: за допомогою цього пункту можна змонтувати або демонтувати обраний розділ, залежно від його поточного стану. </para>
+						<para
+>Цим пунктом можна буде скористатися, лише якщо вибраний розділ можна монтувати або демонтувати. Якщо операційній системі не буде відома точка монтування розділу, ви не зможете змонтувати його за допомогою &partman;. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-check">
+					<term>
+						<menuchoice
+><guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Перевірити</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Виконує перевірку розділу</action
+>: за допомогою цього пункту можна виконати перевірку вибраного розділу і його файлової системи на наявність помилок і спробувати виправити всі знайдені помилки. Протягом цього процесу також буде виконано зміну розмірів файлової системи на розділі, щоб файлова система повністю займала розділ. </para>
+						<para
+>Цією командою можна буде скористатися, якщо вибраний розділ можна перевіряти, і цей розділ не змонтовано. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-backup">
+					<term>
+						<menuchoice
+><guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Резервування</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Створює резервну копію розділу</action
+>: за допомогою цього пункту можна створити резервну копію файлової системи на обраному розділі у файлі. Програма запитає вас про те, де слід зберігати файл образу після виконання цієї команди. </para>
+						<para
+>Створений файл образу буде посекторною копією файлової системи на розділі. Його не буде стиснуто, до нього не буде додано метаінформацію або заголовок, отже, цей образ можна буде змонтувати за допомогою пристрою петлі (loop) поза межами &partman;, якщо файлова система підтримує таке монтування. </para>
+						<para
+>Цією командою можна буде скористатися, якщо обрано розділ, а файлова система на ньому придатна для створення резервної копії. Крім того, цей розділ має бути демонтовано. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-restore">
+					<term>
+						<menuchoice
+><guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Відновити</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Відновлює розділ</action
+>: за допомогою цього пункту можна відновити на розділі файлову систему з файла образу. Програма запитає вас про назву файла розділу після вибору цієї команди. Область призначення повинна бути достатньо великою, щоб на ній вмістився файл образу. </para>
+						<para
+>Цією командою можна буде скористатися, лише якщо обрано нерозподілену область або розділ, який не змонтовано. </para>
+						<warning>
+							<title
+>Попередження: можлива втрата даних</title>
+							<para
+>Відновлення розділу на існуючому розділі означає втрату всіх даних на існуючому розділі і заміну цих даних на дані з файла образу, який відновлюється.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Розділ</guimenu
+> <guimenuitem
+>Властивості</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Показує властивості розділу</action
+>: за допомогою цього пункту можна відкрити діалогове вікно з відомостями щодо поточного обраного розділу або нерозподіленого простору на диску. </para>
+						<para
+>Перелік пунктів, показаних і придатних для зміни у цьому діалоговому вікні, залежить від типу розділу, типу файлової системи на розділі і того, чи змонтовано зараз розділ. </para>
+						<para
+>Не всі файлові системи підтримують, наприклад, встановлення мітки. Крім того, загалом кажучи, не можна змінювати властивостей, якщо файлову систему змонтовано. </para>
+						<para
+>Це список всіх властивостей розділів і файлових систем, які, загалом кажучи, може бути змінено за допомогою цього діалогового вікна: <itemizedlist>
+								<listitem>
+									<para
+>Встановлення або зміна мітки файлової системи</para>
+								</listitem>
+								<listitem>
+									<para
+>Зміна файлової системи розділу.</para>
+
+									<warning>
+										<title
+>Попередження: можлива втрата даних</title>
+										<para
+>Зміна файлової системи розділу завжди означає, що всі дані з цього розділу буде знищено.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Повторне створення файлової системи на розділі</para>
+
+									<warning>
+										<title
+>Попередження: можлива втрата даних</title>
+										
+										<para
+>Повторне створення файлової системи розділу завжди означає, що всі дані з цього розділу буде знищено. До повторного створення файлової системи слід вдаватися, лише у безнадійних випадках, якщо файлову систему на розділі вже неможливо відновити.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Зміна прапорців розділу</para>
+									<para
+>Залежно від типу використаної таблиці розділів, існує декілька прапорців для кожного з розділів у цій таблиці. У більшості випадків змінювати прапорці не потрібно, таку зміну можна розглядати як додаткову можливість.</para>
+								</listitem>
+							</itemizedlist>
+						</para>
+						<para
+>Цей пункт стане доступним лише за вибору нерозподіленого простору на диску або розділу. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Меню «Інструменти»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Інструменти</guimenu
+> <guimenuitem
+>Створити групу томів</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Створити логічний пристрій, наприклад групу томів <link linkend="glossary-lvm"
+>LVM</link
+>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Інструменти</guimenu
+> <guimenuitem
+>Підтримка файлових систем</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Показує діалогове вікно списку підтримки файлових систем.</action
+> У цьому діалоговому вікні буде показано подробиці щодо того, які дії можна виконувати з кожною з файлових систем, які підтримуються програмою. </para>
+						<para
+>Ось приклад вигляду діалогового вікна за встановлення більшості зовнішніх інструментів: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Діалогове вікно підтримки файлових систем за встановлення більшості зовнішніх інструментів</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>Сині позначки означають <quote
+>підтримується</quote
+>, червоні хрестики — <quote
+>не підтримується</quote
+>. Деякі з комбінацій не підтримуються ні за яких умов, наприклад перевірка файлових систем linuxswap, оскільки такі перевірки неможливі через саму природу файлової системи. Інші можливості можуть не підтримуватися через функціональні обмеження зовнішніх інструментів. </para>
+						<para
+>Якщо ви встановили нові інструменти під час виконання програми &partman;, натисніть кнопку <guibutton
+>Повторно визначити</guibutton
+>, щоб програма у примусовому порядку виконала перевірку встановлених інструментів підтримки файлових систем. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-settings-help">
+		<title
+>Меню «Параметри» і «Довідка»</title>
+
+		<para
+>У &partman; передбачено типові для &kde; меню <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Параметри</ulink
+> і <ulink url="help:/fundamentals/menus.html#menus-help"
+>Довідка</ulink
+>, які описано у підручнику з основ роботи у &kde;, а також додаткове підменю <guisubmenu
+>Показані панелі</guisubmenu
+>, за допомогою якого ви можете увімкнути або вимкнути показ панелей <guimenuitem
+>Пристрої</guimenuitem
+>, <guimenuitem
+>Дії у стані очікування</guimenuitem
+>, <guimenuitem
+>Інформація</guimenuitem
+> і <guimenuitem
+>Вивід до журналу</guimenuitem
+>. </para>
+	</sect2>
+	</sect1>
+
+</chapter>

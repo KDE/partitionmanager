@@ -1,0 +1,192 @@
+<appendix id="installation">
+	<title
+>Paigaldamine</title>
+
+	<sect1 id="obtaining">
+		<title
+>Partitsioonihalduri hankimine</title>
+
+		<para
+>Partitsioonihalduri peamine veebilehekülg on <ulink url="http://www.partitionmanager.org"
+>www.partitionmanager.org</ulink
+>. Just sealt leiab kõige värskema versiooni. </para>
+	</sect1>
+
+	<sect1 id="requirements">
+		<title
+>Nõuded</title>
+
+		<para
+>Partitsioonihalduri edukaks kasutamiseks on vajalik &kde; 4.2 või uuem ning &Qt; 4.4.0 või uuem. Siiski ei ole vaja kasutamiseks &kde;-sse sisse logida: partitsioonihaldur töötab ka igas muus töökeskkonnas, kui vaid &kde; põhiteegid on paigaldatud. </para>
+
+		<para
+>Põhifunktsioonide täitmisel toetub partitsioonihaldur suurelt osalt teegile <ulink url="http://www.gnu.org/software/parted/index.shtml"
+>libparted</ulink
+>. Kopeeritud failisüsteemide UUID-de genereerimiseks on vajalik libuuid, mis on osa paketist <ulink url="http://e2fsprogs.sourceforge.net"
+>e2fsprogs</ulink
+>. Partitsioonide ja failisüsteemide teabe hankimiseks kasutatakse ka <ulink url="http://userweb.kernel.org/~kzak/util-linux-ng/"
+>util-linux-ng projekti teeki libblkid</ulink
+>. Kõik need on nõutavad partitsioonihalduri ehitamiseks või käivitamiseks. </para>
+
+		<para
+>Partitsioonihaldur kasutab rohkelt väliseid tööriistu paljude failisüsteemide toetuseks. Konkreetset tööriista läheb vaja ainult siis, kui on tarvis ette võtta mõni operatsioon kindla failisüsteemiga. Kui sul näiteks pole vaja muuta NTFS failisüsteemide suurust, siis ei ole ka vajalik <quote
+>ntfsresize</quote
+> paigaldamine. Ükski neist tööriistadest ei ole nõutab partitsioonihalduri ehitamisel lähtekoodist. </para>
+
+		<para
+>Allpool on üles loetud kõik välised tööriistad, mida partitsioonihaldur võib kasutada: </para>
+
+		<itemizedlist>
+			<listitem>
+				<para
+>&debugfsreiser4;: loeb reiser4 failisüsteemide kasutuse teavet ja nimesid. Kuulub tööriistade komplekti reiser4progs, mille saab alla laadida asukohast <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&debugreiserfs;: lieb reiserfs failisüsteemide kasutuse teavet ja nimesid. Kuulub tööriistade komplekti reiserfsprogs, mille saab alla laadida asukohast <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiserfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&dumpe2fs;: loeb ext2/3/4 failisüsteemide kasutuse teavet. Kuulub tööriistade komplekti e2fsprogs, mille saab alla laadida asukohast <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&e2label;: loeb ja kirjutab ext2/3/ failisüsteemide nimesid. Kuulub tööriistade komplekti e2fsprogs, mille saab alla laadida asukohast <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&fsckmsdos;: loeb FAT16 ja FAT32 failisüsteemide kasutust ning kontrollib neid. Kuulub tööriistade komplekti dosfstools, mille saab alla laadida asukohast <ulink url="http://www.daniel-baumann.ch/software/dosfstools/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hfsck;: loeb HFS failisüsteemide nimesid ja kontrollib neid. Kuulub tööriistade komplekti hfsutils, mille saab alla laadida asukohast <ulink url="http://www.mars.org/home/rob/proj/hfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hpfsck;: kontrollib HFS+ failisüsteeme, Kuulub tööriistade komplekti hfsplusutils, mille saab alla laadida asukohast <ulink url="http://www.penguinppc.org/historical/hfsplus/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfsdebugfs;: loeb JFS failisüsteemide kasutuse teavet. Kuulub tööriistade komplekti jfsutils, mille saab alla laadida asukohast <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfstune;: loeb ja kirjutab JFS failisüsteemide nimesid. Kuulub tööriistade komplekti jfsutils, mille saab alla laadida asukohast <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfslabel;: loeb ja kirjutab NTFS failisüsteemide nimesid. Kuulub tööriistade komplekti ntfsprogs, mille saab alla laadida asukohast <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfsresize;: loeb NTFS failisüsteemide kasutuse teavet, kontrollib ja muudab nende suurust. Kuulub tööriistade komplekti ntfsprogs, mille saab alla laadida asukohast <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapoff;: lülitab välja saaleala (swap) failisüsteeme. Kuulub tööriistade komplekti util-linux-ng, mille saab alla laadida asukohast <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapon;: lülitab sisse saaleala (swap) failisüsteeme. Kuulub tööriistade komplekti util-linux-ng, mille saab alla laadida asukohast <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&volid;: loeb linuxswap failisüsteemide nimesid. Kuulub paketti udev, mille saab alla laadida asukohast <ulink url="http://www.us.kernel.org/pub/linux/utils/kernel/hotplug/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&xfsdb;: loeb XFS failisüsteemide kasutuse teavet ning loeb ja kirjutab nende nimesid. Kuulub tööriistade komplekti xfsprogs, mille saab alla laadida asukohast <ulink url="ftp://oss.sgi.com/projects/xfs/cmd_tars/"
+></ulink
+>. </para>
+			</listitem>
+		</itemizedlist>
+	</sect1>
+
+	<sect1 id="compilation">
+		<title
+>Kompileerimine ja paigaldamine</title>
+&install.compile.documentation; </sect1>
+
+	<sect1 id="furtherreading">
+		<title
+>Lisalugemist</title>
+
+		<itemizedlist>
+			<listitem>
+				<para
+><ulink url="http://www.linfo.org/"
+>The Linux Information Project</ulink
+> sisaldab hulganisti teavet Linuxi kõikvõimalike tahkude kohta. Eriti inforohke on artikel <ulink url="http://www.linfo.org/partition.html"
+>partitsioonide</ulink
+> kohta. Samamoodi on olulised artiklid <ulink url="http://www.linfo.org/partition_table.html"
+>partitsioonitabelite</ulink
+>, <ulink url="http://www.linfo.org/hdd.html"
+>kõvakettaseadmete</ulink
+> ja <ulink url="http://www.linfo.org/filesystem.html"
+>failisüsteemide</ulink
+> kohta. </para>
+			</listitem>
+
+			<listitem>
+				<para
+><ulink url="http://tldp.org/HOWTO/Partition/index.html"
+>Linux Partition HOWTO</ulink
+> annab ülevaate kettaseadmete käitlemisest ja partitsioneerimisest Linuxis ning Linuxi loomupärastest failisüsteemidest. Samuti tutvustatakse saalealapartitsioone. </para>
+			</listitem>
+
+			<listitem>
+				<para
+><ulink url="http://www.wikipedia.org"
+>Wikipedia</ulink
+> sisaldab artiklit <ulink url="http://en.wikipedia.org/wiki/Disk_partitioning"
+>ketta partitsioneerimise</ulink
+> kohta. </para>
+			</listitem>
+			
+		</itemizedlist>
+		
+	</sect1>
+	
+</appendix>

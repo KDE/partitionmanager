@@ -1,0 +1,395 @@
+<glossary id="glossary">
+
+	<glossentry id="glossary-command">
+		<glossterm
+>Ordre</glossterm>
+		<glossdef>
+			<para
+>En el &partman; les ordres són del que estan fetes les <link linkend="glossary-job"
+>tasques</link
+>. Són passos adoptats de molt baix nivell, sovint executats per una eina externa, i només són visibles en l'informe detallat del progrés. </para>
+			<para
+>L'usuari normalment no s'ha de molestar amb les ordres per res. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-job"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylinder">
+		<glossterm
+>Cilindre</glossterm>
+		<glossdef>
+			<para
+>Una unitat usada per a dividir un <link linkend="glossary-device"
+>dispositiu</link
+>. Alguns sistemes operatius i moltes eines de disc requereixen que les <link linkend="glossary-partition"
+>particions</link
+> comencin i acabin en un cilindre. El &partman; per tant ajusta automàticament les particions als límits del cilindre en canviar el seu inici o final. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylindersize">
+		<glossterm
+>Mida del cilindre</glossterm>
+		<glossdef>
+			<para
+>El nombre de <link linkend="glossary-sector"
+>sectors</link
+> per <link linkend="glossary-cylinder"
+>cilindre</link
+> en un <link linkend="glossary-device"
+>dispositiu</link
+>. Calculat com el nombre de <link linkend="glossary-head"
+>capçals</link
+> multiplicat per nombre de <link linkend="glossary-sector"
+>sectors</link
+> per pista. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-device">
+		<glossterm
+>Dispositiu</glossterm>
+		<glossdef>
+			<para
+>Un dispositiu de disc físic. Els dispositius de disc físics estan dividits en seccions lògiques anomenades <link linkend="glossary-partition"
+>particions</link
+> usant <link linkend="glossary-partitiontable"
+>taules de particions</link
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-disklabel">
+		<glossterm
+>Etiqueta del disc</glossterm>
+		<glossdef>
+			<para
+>Un altre nom per <link linkend="glossary-partitiontable"
+>taula de partició</link
+> derivat del món SUN/BSD. </para>
+			<para>
+				<note>
+					<para
+>Són fàcils de confondre, però una etiqueta de disc no té res a veure amb una <link linkend="glossary-filesystemlabel"
+>etiqueta de sistema de fitxers</link
+>. </para>
+					<para
+>Mireu <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel"
+>aquesta entrada de la Viquipèdia</ulink
+> (en anglès) per detalls quant al nom. </para>
+				</note>
+			</para>
+			<glossseealso otherterm="glossary-partitiontable"
+></glossseealso>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-extendedpartition">
+		<glossterm
+>Partició ampliada</glossterm>
+		<glossdef>
+			<para
+>Una <link linkend="glossary-partition"
+>partició</link
+> que conté altres particions. Les particions esteses només poden ser <link linkend="glossary-primarypartition"
+>particions primàries</link
+> d'elles mateixes. Si les particions esteses són disponibles o no depèn del tipus de <link linkend="glossary-partitiontable"
+>taula de particions</link
+> usat. Les taules de particions MS-DOS permeten una partició ampliada per <link linkend="glossary-device"
+>dispositiu</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystem">
+		<glossterm
+>Sistema de fitxers</glossterm>
+		<glossdef>
+			<para
+>Un sistema de fitxers defineix com s'organitza l'emmagatzematge de les dades (els fitxers amb les seves metadades, les carpetes amb les seves metadades, l'espai lliure) en una <link linkend="glossary-partition"
+>partició</link
+>. Hi ha diversos tipus de sistemes de fitxers diferents, alguns vinguts originalment del món Unix/Linux, alguns no. Exemples de sistemes de fitxers usats normalment en Unix/Linux són Btrfs, ext4 i XFS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystemlabel">
+		<glossterm
+>Etiqueta del sistema de fitxers</glossterm>
+		<glossdef>
+			<para
+>Un títol d'un sistema de fitxers. Alguns sistemes de fitxers (entre ells Btrfs, ext2/3, FAT16/32 i NTFS) implementen l'establiment d'una etiqueta pel sistema de fitxers de manera que pot ser identificat en eines com ara el &partman; o altres aplicacions. </para>
+			<para>
+				<note>
+					<para
+>Són fàcils de confondre, però l'etiqueta d'un sistema de fitxers no té res a veure amb una <link linkend="glossary-disklabel"
+>etiqueta de disc</link
+>.</para>
+				</note>
+			</para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-flag">
+		<glossterm
+>Indicador</glossterm>
+		<glosssee otherterm="glossary-partitionflag"/>
+	</glossentry>
+	
+	<glossentry>
+		<glossterm
+>GPT</glossterm>
+		<glossdef>
+			<para
+>Un format de taula de particions modern compatible amb la majoria dels ordinadors i sistemes operatius moderns. És compatible amb més de 4 <link linkend="glossary-primarypartition"
+>particions primàries</link
+> a diferència de l'antiga taula de particions MS-DOS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-head">
+		<glossterm
+>Capçal</glossterm>
+		<glossdef>
+			<para
+>Una unitat usada per a dividir un <link linkend="glossary-device"
+>dispositiu</link
+>. </para
+><glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-job">
+		<glossterm
+>Tasca</glossterm>
+		<glossdef>
+			<para
+>En el &partman; un nombre de tasques és del que estan fetes les <link linkend="glossary-operation"
+>operacions</link
+>. Normalment no us heu de preocupar amb les taques; només es manifesten en aplicar la llista d'operacions pendents: aleshores el &partman; mostra un diàleg de procés que està fet de totes les operacions i les seves tasques i mostra quina operació i quina tasca s'està executant actualment. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-label">
+		<glossterm
+>Etiqueta</glossterm>
+		<glossdef>
+			<para
+>Sigui una <link linkend="glossary-disklabel"
+>etiqueta de disc</link
+> o una <link linkend="glossary-filesystemlabel"
+>etiqueta de sistema de fitxers</link
+>. </para
+><glossseealso otherterm="glossary-disklabel"
+></glossseealso
+> <glossseealso otherterm="glossary-filesystemlabel"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-logicalpartition">
+		<glossterm
+>Partició lògica</glossterm>
+		<glossdef>
+			<para
+>Una <link linkend="glossary-partition"
+>partició</link
+> dins d'una <link linkend="glossary-extendedpartition"
+>partició ampliada</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-luks">
+		<glossterm
+>LUKS</glossterm>
+		<glossdef>
+			<para
+><quote
+>Linux Unified Key Setup</quote
+> és el format d'encriptatge estàndard per a Linux. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-lvm">
+		<glossterm
+>LVM</glossterm>
+		<glossdef>
+			<para
+>LVM és un sistema per a gestionar particions lògiques, és més flexible que les particions normals. Es compon de tres components principals:</para>
+			<simplelist>
+			<member
+>Els volums físics LVM són particions en el disc on l'espai és gestionat pel LVM.</member>
+			<member
+>El grup de volums LVM és una col·lecció de volums físics LVM que es pot dividir en particions lògiques. Podria utilitzar-se per crear sistemes de fitxers que abastin a través de múltiples dispositius o per dividir el volum <link linkend="glossary-luks"
+>LUKS</link
+> encriptat en particions més petites.</member>
+			<member
+>Els volums lògics LVM són similars a les particions normals, excepte que resideixen en el grup de volums LVM. A més, la ubicació de les particions lògiques LVM no importa i no han d'estar físicament contigües. Per tant, el &partman; no permet moure volums lògics LVM i mostra l'espai lliure restant al final del dispositiu.</member>
+			</simplelist>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-operation">
+		<glossterm
+>Operació</glossterm>
+		<glossdef>
+			<para
+>El &partman; divideix el treball que fa en operacions, <link linkend="glossary-job"
+>tasques</link
+> i <link linkend="glossary-command"
+>ordres</link
+>. </para>
+			<para
+>Les operacions són les més visibles de les tres. Si seleccioneu una opció en la interfície gràfica d'usuari, això probablement es traduirà en una nova operació que s'afegirà a la llista de les operacions pendents. La idea darrere d'això és aquesta: el més probable és que vulgueu crear un bon nombre de passos per transformar l'estat actual dels vostres dispositius de disc per a l'estat que teniu al cap. Alguns d'aquests passos trigar força a executar-se (com copiar un sistema de fitxers de gran mida o canviar la mida d'un sistema de fitxers que està gairebé ple). Per estalviar-vos d'haver de seure davant de l'equip una bona estona esperant que un pas s'acabi i tornar a iniciar el següent, les operacions us permeten especificar exactament com s'han de veure els dispositius de l'ordinador una vegada que tot ha acabat, i a continuació permetre que el &partman; apliqui les operacions i torni quan les hagi executat totes. </para>
+			<para
+>Les operacions es mantenen en una llista d'operacions pendents. Mentre una operació no s'ha aplicat encara es pot <link linkend="menu-edit-undo"
+>tornar enrere fàcilment</link
+> i res no s'haurà modificat. </para
+><glossseealso otherterm="glossary-job"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partition">
+		<glossterm
+>Partició</glossterm>
+		<glossdef>
+			<para
+>Una secció d'un <link linkend="glossary-device"
+>dispositiu de disc dur</link
+> que pot contenir un <link linkend="glossary-filesystem"
+>sistema de fitxers</link
+> o altres particions. Sense almenys una partició vàlida, no es pot usar un disc. </para
+><glossseealso otherterm="glossary-device"
+></glossseealso
+> <glossseealso otherterm="glossary-partitiontable"
+></glossseealso
+> <glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partitionflag">
+		<glossterm
+>Indicador de la partició</glossterm>
+		<glossdef>
+			<para
+>Un marcador per una <link linkend="glossary-partition"
+>partició</link
+>. La disponibilitat d'aquests indicadors depèn del tipus de <link linkend="glossary-partitiontable"
+>taula de particions</link
+> usada. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-partitiontable">
+		<glossterm
+>Taula de particions</glossterm>
+		<glossdef>
+			<para
+>Una petita secció al començament d'un <link linkend="glossary-device"
+>dispositiu</link
+> usat per emmagatzemar informació quant a la disposició de les <link linkend="glossary-partition"
+>particions</link
+> del dispositiu. Hi ha diferents tipus de taules de particions, cada un amb les seves pròpies limitacions. </para>
+			<para
+>Algunes vegades també s'hi fa referència com a <quote
+>etiqueta del disc</quote
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-primarypartition">
+		<glossterm
+>Partició primària</glossterm>
+		<glossdef>
+			<para
+>Una <link linkend="glossary-partition"
+>partició</link
+> directament dins d'una <link linkend="glossary-partitiontable"
+>taula de particions</link
+>, en oposició a les <link linkend="glossary-logicalpartition"
+>particions lògiques</link
+>, que són en <link linkend="glossary-extendedpartition"
+>particions esteses</link
+>. </para>
+			<para
+>Les <link linkend="glossary-partitiontable"
+>taules de particions</link
+> normalment imposen restriccions en el nombre màxim de particions primàries que es poden crear en un <link linkend="glossary-device"
+>dispositiu</link
+>. Per exemple, pels tipus de taules de particions MS-DOS, el nombre màxim és quatre. </para
+><glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-sector">
+		<glossterm
+>Sector</glossterm>
+		<glossdef>
+			<para
+>Una unitat usada per a dividir un <link linkend="glossary-device"
+>dispositiu</link
+>. Les <link linkend="glossary-partition"
+>particions</link
+> sempre han de començar i finalitzar en un sector. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-sectorsize">
+		<glossterm
+>Mida del sector</glossterm>
+		<glossdef>
+			<para
+>El nombre de bytes per <link linkend="glossary-sector"
+>sector</link
+> en un <link linkend="glossary-device"
+>dispositiu</link
+>. La mida del sector de la majoria dels dispositius usats en l'actualitat és de 512 bytes. </para>
+		</glossdef>
+	</glossentry>
+	
+	<!--
+		<glossentry>
+			<glossterm
+></glossterm>
+			 
+		</glossentry>
+		-->
+
+</glossary>

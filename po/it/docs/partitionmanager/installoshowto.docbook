@@ -1,0 +1,166 @@
+<sect1 id="howto-installos">
+	<title
+>Come si fa: installare un nuovo sistema operativo</title>
+
+	<para
+>Questa guida descrive la preparazione di un nuovo disco fisso per l'installazione di un sistema operativo: immagina di aver comprato un nuovo disco fisso e di volerlo usare in sostituzione di quello vecchio, che ora contiene le partizioni per il sistema operativo ed i dati. Vorresti anche cogliere l'occasione per installare un nuovo sistema operativo. Per effettuare la transizione dal disco e dal sistema operativo vecchi ai nuovi sarà necessario compiere svariate operazioni. </para>
+
+	<para
+>Nel seguito, <quote
+>/dev/sdb</quote
+> sarà il vecchio disco fisso e <quote
+>/dev/sdc</quote
+> quello nuovo. Questa schermata visualizza la situazione nel disco sorgente: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Finestra principale con disco sorgente</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Il nuovo disco sarà visualizzato così. Nota che non contiene ancora una tabella delle partizioni, quindi il primo passo sarà la sua creazione usando il comando <xref linkend="menu-device-createpartitiontable"/>: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Finestra principale con il disco destinazione</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Dopo aver confermato la finestra di avvertimento, puoi iniziare a creare partizioni sul nuovo disco facendo clic sulla partizione estesa e selezionando <xref linkend="menu-partition-new"/>. Inizia con la creazione di una partizione estesa alla fine del disco, che servirà a contenere le partizioni home e swap: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Creazione di una partizione estesa</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Fai clic su <guibutton
+>OK</guibutton
+> e l'operazione di creazione della partizione estesa sarà aggiunta alla lista delle operazioni in attesa. </para>
+
+	<para
+>Adesso crea una partizione primaria nel resto del dispositivo, in cui installare il nuovo sistema operativo. Falle occupare tutta l'area non allocata prima della partizione estesa: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Creazione di una partizione primaria</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Fai clic su <guibutton
+>OK</guibutton
+> nella finestra di dialogo per confermare le scelte. L'operazione di creazione della partizione primaria sarà aggiunta alla lista delle operazioni. </para>
+	
+	<para
+>Adesso è venuto il momento di copiare la partizione home dal vecchio disco alla partizione estesa nel nuovo disco. Seleziona il vecchio disco nel pannello Lista dei dispositivi, fai clic sulla partizione <quote
+>sdb5</quote
+> e scegli <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>A questo punto, torna al nuovo dispositivo e fai clic sulla partizione estesa. Seleziona <xref linkend="menu-partition-paste"/>. Si aprirà questa finestra di dialogo: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Copia della partizione home</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Va già abbastanza bene, ma sai che non c'è bisogno di così tanto spazio libero dopo la partizione home; poi in quello spazio sarà creata una partizione di swap. </para>
+
+	<para
+>Quindi trascina la maniglia destra della partizione più a destra, finché lo spazio libero dopo la partizione incollata diventa adeguato per una partizione di swap: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ridimensionamento di una partizione incollata</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Adesso va bene. Fai clic su <guibutton
+>OK</guibutton
+> per accettare le modifiche e chiudere la finestra. Sarà aggiunta alla lista l'operazione di copia della partizione nella partizione estesa di <quote
+>sdc</quote
+>. Nota che questa operazione imposterà anche la dimensione corretta. </para>
+
+	<para
+>Infine, vorrai creare una partizione di swap dopo la partizione estesa in <quote
+>sdc</quote
+>. Non c'è bisogno di copiare la vecchia partizione di swap da <quote
+>sdb</quote
+> perché nello swap non vengono conservate informazioni permanenti. Crea semplicemente una partizione con tipo linuxswap che occupi tutto lo spazio non allocato dopo la nuova partizione home. </para>
+
+	<para
+>Adesso la finestra principale è così, con tutte le operazioni e l'anteprima di come diventerà <quote
+>sdc</quote
+> dopo la loro applicazione: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Finestra principale dopo l'aggiunta di tutte le operazioni</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Va benissimo, quindi seleziona <xref linkend="menu-edit-apply"/>, conferma la finestra di avvertimento e aspetta il completamento di tutte le operazioni. Per maggiori informazioni sull'esecuzione delle operazioni vedere <link linkend="howto-resizepartition"
+>la guida al ridimensionamento delle partizioni</link
+>. </para>
+	
+	<para
+>Il nuovo disco fisso è ora pronto per l'installazione del nuovo sistema operativo. </para>
+
+</sect1>

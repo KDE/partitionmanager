@@ -113,6 +113,34 @@ void NewDialog::setupDialog()
     // run there is a valid partition set in the part resizer widget and they will need that.
     onRoleChanged(false);
     onFilesystemChanged(dialogWidget().comboFileSystem().currentIndex());
+
+    auto showPermissionsGroup = [this] {
+        const QString currText = dialogWidget().comboFileSystem().currentText();
+        const bool enablePosixPermission = QList<QString>({
+                QStringLiteral("btrfs"),
+                QStringLiteral("ext2"),
+                QStringLiteral("ext3"),
+                QStringLiteral("ext4"),
+                QStringLiteral("f2fs"),
+                QStringLiteral("hfsplus"),
+                QStringLiteral("jfs"),
+                QStringLiteral("minix"),
+                QStringLiteral("ocfs2"),
+                QStringLiteral("reiserfs"),
+                QStringLiteral("reiser4"),
+                QStringLiteral("udf"),
+                QStringLiteral("xfs"),
+                QStringLiteral("zfs"),}
+            ).contains(currText);
+        if (enablePosixPermission) {
+            dialogWidget().showPosixPermissions();
+        } else {
+            dialogWidget().hidePosixPermissions();
+        }
+    };
+    connect(&dialogWidget().comboFileSystem(), QOverload<int>::of(&QComboBox::currentIndexChanged), this, showPermissionsGroup);
+    showPermissionsGroup();
+    dialogWidget().radioRootPermissions().setChecked(true);
 }
 
 void NewDialog::setupConnections()
@@ -283,4 +311,9 @@ void NewDialog::updateHideAndShow()
 void NewDialog::updateOkButtonStatus()
 {
     okButton->setEnabled(isValidPassword() && isValidLVName());
+}
+
+bool NewDialog::useUnsecuredPartition() const
+{
+    return !dialogWidget().isPermissionOnlyRoot();
 }

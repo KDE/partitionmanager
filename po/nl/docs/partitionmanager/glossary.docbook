@@ -1,0 +1,393 @@
+<glossary id="glossary">
+
+	<glossentry id="glossary-command">
+		<glossterm
+>Commando</glossterm>
+		<glossdef>
+			<para
+>In &partman; worden commando's in <link linkend="glossary-job"
+>taken</link
+> gebruikt. Dit zijn bewerkingen die op een zeer laag niveau worden uitgevoerd, meestal met behulp van aparte programma's en alleen zichtbaar in gedetailleerde rapporten. </para>
+			<para
+>De gebruiker hoeft zich niet om de commando's te bekommeren. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-job"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylinder">
+		<glossterm
+>Cilinder</glossterm>
+		<glossdef>
+			<para
+>Een eenheid wordt gebruikt om een <link linkend="glossary-device"
+>apparaat</link
+> onder te verdelen. Sommige besturingssystemen en veel disk-gereedschappen vereisen dat een <link linkend="glossary-partition"
+>partitie</link
+> begint en eindigt met een hele cilinder. &partman; begrenst daarom automatisch partities naar cilinder-grenzen wanneer het beginpunt of het eindpunt wordt wordt veranderd. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylindersize">
+		<glossterm
+>Cilindergrootte</glossterm>
+		<glossdef>
+			<para
+>Het aantal <link linkend="glossary-sector"
+>sectors</link
+> per <link linkend="glossary-cylinder"
+>cilinder</link
+> van een <link linkend="glossary-device"
+>apparaat</link
+>. Uitgerekend als het aantal <link linkend="glossary-head"
+>koppen</link
+> vermenigvuldigt met het aantal <link linkend="glossary-sector"
+>sectors</link
+> per track. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-device">
+		<glossterm
+>Apparaat</glossterm>
+		<glossdef>
+			<para
+>Een fysiek apparaat. Fysieke apparaten zijn ingedeeld in logische secties, <link linkend="glossary-partition"
+>partities</link
+> genaamd, met behulp van <link linkend="glossary-partitiontable"
+>partitietabellen</link
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-disklabel">
+		<glossterm
+>Schijflabel</glossterm>
+		<glossdef>
+			<para
+>Andere naam voor een <link linkend="glossary-partitiontable"
+>partitie tabel</link
+> afkomstig uit de SUN/BSD wereld. </para>
+			<para>
+				<note>
+					<para
+>Ze worden makkelijk met elkaar verward maar schijflabel heeft niets van doen met een <link linkend="glossary-filesystemlabel"
+>label van een bestandssysteem</link
+>.  </para>
+					<para
+>Zie <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel"
+>dit Wikipedia item</ulink
+> voor meer details over deze naam. </para>
+				</note>
+			</para>
+			<glossseealso otherterm="glossary-partitiontable"
+></glossseealso>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-extendedpartition">
+		<glossterm
+>Uitgebreide partitie</glossterm>
+		<glossdef>
+			<para
+>Een <link linkend="glossary-partition"
+>partitie</link
+> welke andere partities bevat. Uitgebreide partities zelf kunnen alleen <link linkend="glossary-primarypartition"
+>primaire partitie</link
+> zijn. Of uitgebreide partities beschikbaar zijn hangt af van het gebruikte type <link linkend="glossary-partitiontable"
+>partitietabel</link
+>. MS-DOS partitietabellen staan één uitgebreide partitie per <link linkend="glossary-device"
+>apparaat</link
+> toe. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystem">
+		<glossterm
+>Bestandssysteem</glossterm>
+		<glossdef>
+			<para
+>In een bestandssysteem is gedefinieerd hoe data (bestanden met hun metadata, mappen en hun metadata, lege ruimte) in een <link linkend="glossary-partition"
+>partitie</link
+> wordt opgeslagen. Er zijn verschillende soorten bestandssystemen, sommige komen oorspronkelijk uit de Unix/Linux wereld, andere niet. Voorbeelden van in Unix/Linux veelgebruikte bestandssystemen zijn Btrfs, ext4 en XFS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystemlabel">
+		<glossterm
+>Label van bestandssysteem</glossterm>
+		<glossdef>
+			<para
+>Een naam voor een bestandssysteem. Sommige bestandssystemen (waaronder Btrfs, ext2/3/4, FAT16/32 en NTFS) ondersteunen het geven van een label aan een bestandssysteem zodat het makkelijker in een programma zoals &partman; herkent kan worden. </para>
+			<para>
+				<note>
+					<para
+>Ze worden makkelijk met elkaar verward maar een label van een bestandssysteem heeft niets van doen met een <link linkend="glossary-filesystemlabel"
+>schijflabel</link
+>. </para>
+				</note>
+			</para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-flag">
+		<glossterm
+>Vlag</glossterm>
+		<glosssee otherterm="glossary-partitionflag"/>
+	</glossentry>
+	
+	<glossentry>
+		<glossterm
+>GPT</glossterm>
+		<glossdef>
+			<para
+>Een modern partitietabelformaat ondersteund door de meest moderne computers en bestandssystemen. Het ondersteunt meer dan 4 <link linkend="glossary-primarypartition"
+>primaire partities</link
+> anders dan de oude MS-DOS partitietabel. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-head">
+		<glossterm
+>Kop</glossterm>
+		<glossdef>
+			<para
+>Een eenheid die wordt gebruikt om een <link linkend="glossary-device"
+>apparaat</link
+> onder te verdelen.  </para
+><glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-job">
+		<glossterm
+>Taak</glossterm>
+		<glossdef>
+			<para
+>In &partman; zijn <link linkend="glossary-operation"
+>bewerkingen</link
+> opgebouwd uit een aantal taken. Normaal gesproken hoeft u zich geen zorgen te maken over taken; deze worden alleen zichtbaar bij het bekijken van de lijst met wachtende bewerkingen: &partman; toont in dat geval de voortgang van alle bewerkingen en de daarbij horende taken en toont ook welke bewerking en welke taak op dit moment worden uitgevoerd. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-label">
+		<glossterm
+>Label</glossterm>
+		<glossdef>
+			<para
+>Ofwel een <link linkend="glossary-disklabel"
+>Schijflabel</link
+> of een <link linkend="glossary-filesystemlabel"
+>Label van een bestandssysteem</link
+>. </para
+><glossseealso otherterm="glossary-disklabel"
+></glossseealso
+> <glossseealso otherterm="glossary-filesystemlabel"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-logicalpartition">
+		<glossterm
+>Logische partitie</glossterm>
+		<glossdef>
+			<para
+>Een <link linkend="glossary-partition"
+>partitie</link
+> in een <link linkend="glossary-extendedpartition"
+>uitgebreide partitie</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-luks">
+		<glossterm
+>LUKS</glossterm>
+		<glossdef>
+			<para
+>Linux Unified Key Setup is het standaard versleutelingsformaat voor Linux. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-lvm">
+		<glossterm
+>LVM</glossterm>
+		<glossdef>
+			<para
+>LVM is een systeem voor beheer van logische partities dat flexibeler is dan normale partities. Het bestaat uit drie hoofdcomponenten:</para>
+			<simplelist>
+			<member
+>LVM fysieke volumes zijn partities op de schijf waarvan de ruimte door LVM wordt beheerd.</member>
+			<member
+>LVM volumegroep is een verzameling LVM fysieke volumes die gepartitioneerd kunnen worden in logische partities. Het zou gebruikt kunnen worden om bestandssystemen te maken die verspreid zijn over meerdere apparaten of om een versleuteld <link linkend="glossary-luks"
+>LUKS</link
+>-volume te splitsen in kleinere partities.</member>
+			<member
+>LVM logische volumes zijn lijken op normale partities behalve dat ze zich bevinden op een LVM volumegroep. De locatie van LVM logische partities is van geen belang en ze behoeven fysiek niet aaneengesloten te zijn. &partman; staat daarom niet toe om LVM logische volumes te verplaatsen en toont de overblijvende vrije ruimte aan het eind van het apparaat.</member>
+			</simplelist>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-operation">
+		<glossterm
+>Bewerking</glossterm>
+		<glossdef>
+			<para
+>&partman; breekt het te verrichten werk op in bewerkingen, <link linkend="glossary-job"
+>taken</link
+> and <link linkend="glossary-command"
+>commando's</link
+>. </para>
+			<para
+>Van de drie zijn bewerkingen het meest zichtbaar. Als in de grafische omgeving een actie wordt gekozen dan zal dit waarschijnlijk resulteren in het toevoegen van een nieuwe bewerking aan de lijst van wachtende bewerkingen. U wilt waarschijnlijk in een aantal stappen de huidige staat van de schijf veranderen naar de gewenste staat. Sommige van deze stappen kunnen veel tijd in beslag nemen (zoals het kopiëren van een groot bestandssysteem of het aanpassen van de grootte van een bestandssysteem dat bijna vol is). Om te voorkomen dat u een lange tijd voor de computer moet zitten wachten totdat een stap is beëindigd om de volgende stap te kunnen starten, kunt u met bewerkingen nauwkeurig instellen hoe de gewenste staat van de harde schijf is als de bewerkingen beëindigd zijn zodat &partman; deze bewerkingen achtereenvolgens kan uitvoeren en de gebruiker alleen terug hoeft te komen wanneer alles is uitgevoerd. </para>
+			<para
+>Bewerkingen worden bewaard in een lijst van wachtende bewerkingen. Totdat een bewerking is uitgevoerd kan het makkelijk <link linkend="menu-edit-undo"
+>ongedaan gemaakt worden</link
+> zodat er niet verandert. </para
+><glossseealso otherterm="glossary-job"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partition">
+		<glossterm
+>Partitie</glossterm>
+		<glossdef>
+			<para
+>Een sectie van een <link linkend="glossary-device"
+>harde schijf</link
+> die een <link linkend="glossary-filesystem"
+>bestandssysteem</link
+> of andere partities kan bevatten. Zonder tenminste één geldige partitie kan een harde schijf niet worden gebruikt. </para
+><glossseealso otherterm="glossary-device"
+></glossseealso
+> <glossseealso otherterm="glossary-partitiontable"
+></glossseealso
+> <glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partitionflag">
+		<glossterm
+>Partitievlag</glossterm>
+		<glossdef>
+			<para
+>Een markering voor een <link linkend="glossary-partition"
+>partitie</link
+>. De beschikbaarheid van deze vlaggen is afhankelijk van het gebruikte type <link linkend="glossary-partitiontable"
+>partitietabel</link
+>. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-partitiontable">
+		<glossterm
+>Partitietabel</glossterm>
+		<glossdef>
+			<para
+>Een klein gedeelte aan het begin van een <link linkend="glossary-device"
+>apparaat</link
+> wordt gebruikt voor het opslaan van informatie over de indeling van <link linkend="glossary-partition"
+>partities</link
+>op het apparaat. Er zijn verschillende soorten partitietabellen met elk hun eigen beperkingen. </para>
+			<para
+>Soms ook <quote
+>schijflabel</quote
+> genoemd. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-primarypartition">
+		<glossterm
+>Primaire partitie</glossterm>
+		<glossdef>
+			<para
+>Een <link linkend="glossary-partition"
+>partitie</link
+> rechtstreeks in een <link linkend="glossary-partitiontable"
+>partitietabel</link
+>, in tegenstelling tot <link linkend="glossary-logicalpartition"
+>logische partities</link
+>, die zich in <link linkend="glossary-extendedpartition"
+>uitgebreide partities</link
+> bevinden. </para>
+			<para
+><link linkend="glossary-partitiontable"
+>partitietabellen</link
+> hebben meestal beperkingen wat betreft het maximum aantal primaire partities die op een <link linkend="glossary-device"
+>apparaat</link
+> aangemaakt kunnen worden. Bijvoorbeeld voor MS-DOS type partitietabellen is het maximum aantal vier. </para
+><glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-sector">
+		<glossterm
+>Sector</glossterm>
+		<glossdef>
+			<para
+>Een eenheid wordt gebruikt om een <link linkend="glossary-device"
+>apparaat</link
+> onder te verdelen. <link linkend="glossary-partition"
+>Partities</link
+> moeten altijd beginnen en eindigen op een sector. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-sectorsize">
+		<glossterm
+>Sectorgrootte</glossterm>
+		<glossdef>
+			<para
+>Het aantal bytes per <link linkend="glossary-sector"
+>sector</link
+> op een <link linkend="glossary-device"
+>apparaat</link
+>. De sector grootte van de meeste apparaten is tegenwoordig 512 bytes. </para>
+		</glossdef>
+	</glossentry>
+	
+	<!--
+		<glossentry>
+			<glossterm
+></glossterm>
+			 
+		</glossentry>
+		-->
+
+</glossary>

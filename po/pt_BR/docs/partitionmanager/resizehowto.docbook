@@ -1,0 +1,238 @@
+<sect1 id="howto-resizepartition">
+	<title
+>Como: Redimensionar uma Partição</title>
+
+	<para
+>Este manual explicada o redimensionamento de uma <glossterm linkend="glossary-partition"
+>partição</glossterm
+> que esteja ficando muito cheia. Veja a seguinte imagem para apresentar a situação inicial antes do redimensionamento: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Janela principal antes de redimensionar as partições</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>No <glossterm linkend="glossary-device"
+>dispositivo</glossterm
+> <quote
+>/dev/sdb</quote
+>, a partição <quote
+>sdb2</quote
+> já tem pouco espaço livre, enquanto a outra partição, a <quote
+>sdb1</quote
+>, está longe de estar cheia. Por essa razão, aconselha-se que torne a primeira partição um pouco menor e aumente a <quote
+>sdb2</quote
+> para que fique com um pouco mais de espaço disponível. </para>
+
+	<note>
+		<title
+>Nota: você não pode modificar partições montadas.</title>
+		<para
+>Na imagem acima, nenhuma das partições está montada no momento. Se uma ou ambas estivessem montadas, você teria que desmontá-las primeiro com a opção <xref linkend="menu-partition-mount"/>.</para>
+	</note>
+
+	<para
+>O primeiro passo é adquirir mais espaço para a partição crescer, por isso comece diminuindo a <quote
+>sdb1</quote
+>. Clique na partição e escolha a opção <xref linkend="menu-partition-resize"/>. Irá aparecer a seguinte janela: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>A janela de dimensionamento antes de alterar a /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Esta janela permite-lhe redimensionar a partição de várias formas. Você poderá tanto arrastar a pega direita para a esquerda, até que a partição tenha o tamanho desejado, ou então indicar o tamanho no campo de <guilabel
+>Tamanho</guilabel
+>. Outra possibilidade seria carregar nas pequenas setas ao lado do campo de texto, se bem que isto poderá ser um pouco mais aborrecido para alterações maiores. </para>
+
+	<para
+>Seja qual forma a sua preferência para definir o novo tamanho, a janela deverá aparecer agora da seguinte forma: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>A janela de redimensionamento depois de alterar a /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Depois de clicar em <guibutton
+>OK</guibutton
+>, será adicionada uma nova operação à lista de operações pendentes e a área gráfica e da árvore do dispositivo serão atualizadas para refletir a nova situação: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Janela principal após redimensionar /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<note>
+		<title
+>Nota: É feita uma previsão das operações antes de aplicá-las.</title>
+		<para
+>Ainda que a janela principal reflita o estado de como dispositivo irá ficar depois de aplicar a nova operação, ela ainda não foi aplicada de fato: Embora as operações estejam pendentes, você ainda poderá anulá-las (com a opção <xref linkend="menu-edit-undo"/> ou então com <xref linkend="menu-edit-clear"/> para anular todas), ou ainda sair do &partman;, uma vez que nada ainda foi modificado de fato.</para>
+	</note>
+	
+	<para
+>Agora que já existe algum espaço livre entre as duas partições, você já poderá mover e aumentar a partição <quote
+>sdb2</quote
+>. Primeiro, clique na <quote
+>sdb2</quote
+> e escolha a opção <xref linkend="menu-partition-resize"/> de novo. A pega de dimensionamento irá aparecer mais uma vez, aplicando-se neste caso para a segunda partição. Arraste a sua pega esquerda para o extremo esquerdo, para que a janela se assemelhe o seguinte: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>A janela de redimensionamento após alterar a /dev/sdb2</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Tenha cuidado e certifique-se de que o campo de texto <guilabel
+>Espaço livre antes</guilabel
+> realmente mostra <quote
+>0 MiB</quote
+> porque, caso contrário, poderá ser deixado algum espaço livre entre as partições que será desperdiçado. </para>
+
+	<para
+>Agora clique em <guibutton
+>OK</guibutton
+> de novo. Na janela principal, as coisas deverão estar semelhantes a: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Janela principal após redimensionar /dev/sdb2</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Isto já se parece com o pretendido, assim você poderá escolher <xref linkend="menu-edit-apply"/>. Irá aparecer uma janela que lhe perguntará se tem certeza da aplicação das operações pendentes. Confirme esta janela para que o &partman; comece a executar as operações: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>O &partman; está aplicando as operações</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Enquanto as operações estão sendo executadas, você poderá clicar no sinal de 'mais' ao lado de cada operação da lista, de modo a descobrir as tarefas que a compõem e ver qual a tarefa atualmente em execução. </para>
+
+	<para
+>O redimensionamento da uma partição, da forma como redimensionou a <quote
+>/dev/sdb2</quote
+> acima, significa sempre que terá que ser movida primeiro para a esquerda antes de ser possível aumentá-la, uma vez que as partições nunca poderão ser aumentadas diretamente para a esquerda. Infelizmente, um movimento de uma partição grande como esta irá levar algum tempo. Não é anormal uma operação como estas poder levar vários minutos ou ainda mais. </para>
+
+	<para
+>Finalmente, todas as operações foram concluídas com sucesso: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Diálogo de progresso após as operações serem aplicadas com sucesso</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Ao clicar em <guibutton
+>OK</guibutton
+>, você poderá agora fechar a janela de progresso e voltar à janela principal. O &partman; irá voltar a sondar os seus dispositivos neste momento, assim poderá demorar alguns segundos. </para>
+
+	<para
+>Se você estiver interessado em mais alguns detalhes das operações executadas, clique em <guibutton
+>Detalhes</guibutton
+>. Você poderá ver o relatório detalhado que é sempre gerado (e atualizado em tempo real) enquanto o &partman; executa as operações: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Detalhes do diálogo de progresso</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Este relatório é particularmente interessante se ocorrer algum erro na execução das operações. Um relatório irá mostrar cada uma das operações, das tarefas e de cada comando externo que é executado, sendo assim bastante útil para localizar os problemas. </para>
+
+	<para
+>Você poderá salvar o relatório como <acronym
+>HTML</acronym
+> ou vê-lo num navegador Web externo. </para>
+
+	<tip>
+		<para
+>Salve sempre o relatório detalhado como <acronym
+>HTML</acronym
+> quando, ao executar as operações, ocorram erros ou alertas para referência posterior. Você poderá também querer incluí-lo num relatório de erros enviado para o sistema de rastreamento de erros do &kde; em <ulink url="https://bugs.kde.org"
+>bugs.kde.org</ulink
+>. </para>
+	</tip>
+	
+	<para
+>Para ocultar os detalhes de novo, clique em <guibutton
+>Detalhes</guibutton
+> e, finalmente, feche a janela de progresso com o botão <guibutton
+>OK</guibutton
+>. </para>
+</sect1>

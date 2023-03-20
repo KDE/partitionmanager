@@ -1,0 +1,238 @@
+<sect1 id="howto-resizepartition">
+	<title
+>Partitsiooni suuruse muutmine</title>
+
+	<para
+>Allpool selgitatakse <glossterm linkend="glossary-partition"
+>partitsiooni</glossterm
+> suuruse muutmist, kui see on liiga täis saanud. Järgneval pildil on näidatud algset olukorda enne suuruse muutmist. </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Peaaken enne partitsioonide suuruse muutmist</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+><glossterm linkend="glossary-device"
+>Seadme</glossterm
+> <quote
+>/dev/sdb</quote
+> partitsioonil <quote
+>sdb2</quote
+> on vaba ruumi veel õige napilt, samal ajal kui teisel partitsioonil <quote
+>sdb1</quote
+> jagub seda päris ohtralt. Seepärast tundub mõistlik muuta esimene partitsioon mõnevõrra väiksemaks ning kasvatada partitsiooni <quote
+>sdb2</quote
+>, et sel oleks vaba ruumi enam. </para>
+
+	<note>
+		<title
+>Märkus: ühendatud partitsioone ei saa muuta.</title>
+		<para
+>Siinsel pildil on mõlemad partitsioonid parajasti ühendamata. Kui mõni neist peaks olema ühendatud, tuleb need kõigepealt lahutada menüükäsuga <xref linkend="menu-partition-mount"/>.</para>
+	</note>
+
+	<para
+>Kõigepealt tuleb partitsiooni kasvatamiseks sellele ruumi teha, niisiis tuleb alustada <quote
+>sdb1</quote
+> kahandamisest. Klõpsa partitsioonil ja vali menüükäsk <xref linkend="menu-partition-resize"/>. Ilmub järgmine dialoog: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Suuruse muutmise dialoog enne /dev/sdb1 suuruse muutmist</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>See dialoog võimaldab partitsiooni suurust muuta mitmel viisil. Võib lohistada näiteks parempoolset pidet, kuni partitsioon on vajaliku suurusega, aga võib ka sisestada suuruse tekstikasti <guilabel
+>Suurus</guilabel
+>. Veel üks suurust täpsustada on klõpsata noolekestele tekstikasti kõrval, kuid suuremate muutuste puhul on see üsna tülikas. </para>
+
+	<para
+>Millist meetodit sa ka ei eelistaks, näeb dialoog nüüd välja selline: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Suuruse muutmise dialoog pärast /dev/sdb1 suuruse muutmist</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Kui klõpsad nupule <guibutton
+>OK</guibutton
+>, lisatakse uus operatsioon ootel operatsioonide nimekirja ning seadme graafilist ja puuvaadet värskendatakse, et see kajastaks uut olukorda: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Peaaken pärast /dev/sdb1 suuruse muutmist</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<note>
+		<title
+>Märkus: enne rakendamist näeb operatsioonide tulemuse eelvaatlust.</title>
+		<para
+>Kuigi peaaken kajastab seadme olekut pärast uue operatsiooni rakendamist, ei ole operatsiooni tegelikult veel sooritatud. Kuni operatsioonid on ootel, saab neid veel tagasi võtta (kasutades menüükäsku <xref linkend="menu-edit-undo"/> või, kui soovid kõiki tagasi võtta, <xref linkend="menu-edit-clear"/>) või ka üldse väljuda partitsioonihaldurist, millisel juhul samuti midagi ei muudeta.</para>
+	</note>
+	
+	<para
+>Nüüd on tekkinud veidi vaba ruumi kahe partitsiooni vahele, nii et on aeg <quote
+>sdb2</quote
+> liigutada ja kasvatada. Kõigepealt klõpsa <quote
+>sdb2</quote
+> peal ja vali taas menüükäsk <xref linkend="menu-partition-resize"/>. Uuesti ilmub suuruse muutmise dialoog, mis seekord näitab aga teist partitsiooni. Lohista vasakpoolne pide vasakule lõpp, et dialoog näeks välja niisugune: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Suuruse muutmise dialoog pärast /dev/sdb2 suuruse muutmist</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Ole hoolikas ja kontrolli kindlasti, et tekstiväljal <guilabel
+>Vaba ruum ees</guilabel
+> seisaks ikka <quote
+>0 MiB</quote
+>, sest muidu jääb partitsioonide vahele pisuke vaba ala, mis läheb täiesti kaotsi. </para>
+
+	<para
+>Klõpsa taas nupule <guibutton
+>OK</guibutton
+>. Peaaken näeb nüüd välja niisugune: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Peaaken pärast /dev/sdb2 suuruse muutmist</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>See ongi selline, nagu soovitud, nii et vali menüükäsk <xref linkend="menu-edit-apply"/>. Ilmub dialoog, mis pärib, kas ikka tõesti soovid ootel operatsioonid teostada. Anna oma kinnitus ning partitsioonihaldur asub tööle. </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Partitsioonihaldur teostab operatsioone</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Operatsioonide teostamise ajal võid klõpsata iga operatsiooni ees plussmärgile, mis näitab konkreetseid töid, millest operatsioon koosneb, ja sedagi, millist parajasti täidetakse. </para>
+
+	<para
+>Partitsiooni suuruse muutmine sel viisil, nagu eespool muudeti <quote
+>/dev/sdb2</quote
+> suurust, tähendab alati seda, et see tuleb kõigepealt liigutada vasakule, enne kui seda saab kasvatada, sest partitsioone ei saa kunagi otse vasakule kasvatada. Paraku võtab suuremate partitsioonide liigutamine alati mõnevõrra aega. Pole sugugi ebatavaline, kui sellele kulub mitu minutit või isegi rohkem. </para>
+
+	<para
+>Lõpuks on kõik operatsioonid edukalt teostatud: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Edenemisdialoog pärast operatsioonide edukat teostamist</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Klõpsuga nupule <guibutton
+>OK</guibutton
+> saab edenemisdialoogi sulgeda ja naasta peaaknasse. Partitsioonihaldur uurib nüüd uuesti sinu seadmeid, nii et see võib võtta mõne hetke. </para>
+
+	<para
+>Kui tunned huvi teostatud operatsioonide üksikasjade vastu, võid klõpsata nupule <guibutton
+>Üksikasjad</guibutton
+>. Siis näeb üksikasjalikku aruannet, mis luuakse alati (ja mida jooksvalt uuendatakse), kui partitsioonihaldur operatsioone teostab: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Edenemisdialoogi üksikasjad</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Aruanne pakub eriti huvi siis, kui operatsioonide teostamisel esines tõrkeid. Aruanne näitab kõiki operatsioone, kõiki töid ja kõiki väliseid käske, mida kasutati, nii on sellest probleemide tuvastamisel palju abi. </para>
+
+	<para
+>Aruande võib salvestada <acronym
+>HTML</acronym
+>-failina või avada välises veebilehitsejas. </para>
+
+	<tip>
+		<para
+>Salvesta alati üksikasjalik aruanne <acronym
+>HTML</acronym
+>-failina, kui operatsioonide teostamine nurjub tõrgete või hoiatustega. Sellest on abi näiteks siis, kui kavatsed anda veast teada &kde; vigade jälgimise süsteemis <ulink url="https://bugs.kde.org"
+>bugs.kde.org</ulink
+>, kuhu saad sel juhul aruande lisada. </para>
+	</tip>
+	
+	<para
+>Üksikasjade varjamiseks klõpsa uuesti nupule <guibutton
+>Üksikasjad</guibutton
+> ning edenemisdialoogi lõplikuks sulgemiseks nupule <guibutton
+>OK</guibutton
+>. </para>
+</sect1>

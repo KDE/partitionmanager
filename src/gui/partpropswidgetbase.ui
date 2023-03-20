@@ -359,7 +359,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <item row="11" column="0">
     <widget class="QLabel" name="m_LabelTextPartitionLabel">
      <property name="text">
-      <string>Partition Label:</string>
+      <string>Partition Name:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

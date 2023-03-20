@@ -1,0 +1,166 @@
+<sect1 id="howto-installos">
+	<title
+>Handledning: Installera ett nytt operativsystem</title>
+
+	<para
+>Handledningen beskriver hur man förbereder en ny hårddiskenhet för installation av ett operativsystem: Antag att du köpt en ny hårddisk och nu har för avsikt att använda det som ersättning av den gamla som för närvarande innehåller ditt operativsystem och datapartitioner. Du skulle också vilja ta tillfället i akt att installera ett nytt operativsystem. Flera åtgärder måste utföras för att göra övergången från det gamla till det nya systemet och enheten. </para>
+
+	<para
+>I det följande, är <quote
+>/dev/sdb</quote
+> den gamla hårddisken och <quote
+>/dev/sdc</quote
+> är den nya. Skärmbilden visar tillståndet i källenheten: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Huvudfönster med källenhet</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Den nya enheten kommer att se ut så här. Observera att den inte ännu har en giltig partitionstabell, alltså är det första steget att skapa en genom att välja <xref linkend="menu-device-createpartitiontable"/>: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Huvudfönster med målenhet</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Efter att ha kontrollerat varningsdialogrutan kan du börja skapa partitioner på den nya enheten genom att klicka på den utökade partitionen och välja <xref linkend="menu-partition-new"/>. Börja med en utökad partition i slutet av enheten, som senare ska innehålla partitioner för home och växlingsutrymme: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Skapa en utökad partition</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Klicka på <guibutton
+>Ok</guibutton
+> så läggs åtgärden för att skapa den utökade partitionen till i listan. </para>
+
+	<para
+>Skapa nu en primär partition på resten av den enhet där det nya operativsystemet kommer att installeras. Gör den så stor som det icke tilldelade området framför den utökad partitionen: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Skapa en primär partition</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Klicka på <guibutton
+>Ok</guibutton
+> i dialogrutan för att acceptera ditt val. Åtgärden för att skapa den nya primära partitionen läggs då till i åtgärdslistan. </para>
+	
+	<para
+>Nu är det dags att kopiera partitionen home från den gamla enheten till den utökad partition på den nya enheten. Markera den gamla enheten i enhetslistan, klicka på partitionen <quote
+>sdb5</quote
+> och välj <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>Gå därefter tillbaka till den nya enheten och klicka på den utökade partitionen. Välj <xref linkend="menu-partition-paste"/>. Följande dialogruta dyker då upp: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Klistra in hempartitionen</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Det ser redan i stort sätt bra ut, men du vet redan att du inte behöver så mycket ledigt utrymme efter partitionen home, eftersom du senare kommer att skapa en partition för växlingsutrymme där. </para>
+
+	<para
+>Så ta det högra greppet för storleksändring och flytta det åt höger till det fria utrymmet efter den inklistrade partitionen har en storlek som är lämpligare för ett växlingsutrymme: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ändra storlek på en inklistrad partition</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Det ser bra ut. Klicka på <guibutton
+>Ok</guibutton
+> för att acceptera det och stänga dialogrutan. En ny åtgärd för att klistra in den kopierade partitionen i den utökade partitionen på <quote
+>sdc</quote
+> läggs till i åtgärdslistan. Observera att åtgärden också ställer in den nya storleken. </para>
+
+	<para
+>Till sist behöver du skapa en ny partition för växlingsutrymme i slutet av den utökade partitionen på <quote
+>sdc</quote
+>. Det finns ingen anledning att kopiera den befintliga partitionen med växlingsutrymme från <quote
+>sdb</quote
+> eftersom växlingsutrymmet inte innehåller någon permanent information värd att behålla. Skapa helt enkelt den nya partitionen med typen linuxswap som fyller hela det icke tilldelade området efter den nya partitionen home. </para>
+
+	<para
+>Huvudfönstret med alla åtgärder och förhandsgranskningen av hur <quote
+>sdc</quote
+> kommer att se ut när de väl har verkställts ser nu ut så här: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Huvudfönstret efter alla åtgärder är inställda</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Det ser utmärkt ut, så välj <xref linkend="menu-edit-apply"/>, bekräfta varningsdialogrutorna och vänta till alla åtgärder har utförts. Se <link linkend="howto-resizepartition"
+>handledningen óm att ändra en partitions storlek</link
+> för detaljinformation om att verkställa åtgärder. </para>
+	
+	<para
+>Den nya hårddiskenheten är nu klar för att installera det nya operativsystemet. </para>
+
+</sect1>

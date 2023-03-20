@@ -1,0 +1,393 @@
+<glossary id="glossary">
+
+	<glossentry id="glossary-command">
+		<glossterm
+>Comando</glossterm>
+		<glossdef>
+			<para
+>In &partman; i comandi sono gli elementi che compongono le <link linkend="glossary-job"
+>attività</link
+>. Sono passi a basso livello, spesso eseguiti da uno strumento esterno, visibili solo nel rapporto dettagliato sull'avanzamento. </para>
+			<para
+>I comandi, normalmente, non interessano all'utente. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-job"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylinder">
+		<glossterm
+>Cilindro</glossterm>
+		<glossdef>
+			<para
+>Un'unità di misura usata per indicare le frazioni di un <link linkend="glossary-device"
+>dispositivo</link
+>. Alcuni sistemi operativi e svariati strumenti di gestione dei dischi richiedono che le <link linkend="glossary-partition"
+>partizioni</link
+> inizino e finiscano in corrispondenza di un cilindro. &partman;, quindi, allinea le partizioni ai confini di un cilindro nelle operazioni di modifica del loro inizio o della loro fine. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylindersize">
+		<glossterm
+>Dimensione del cilindro</glossterm>
+		<glossdef>
+			<para
+>Il numero di <link linkend="glossary-sector"
+>settori</link
+> per <link linkend="glossary-cylinder"
+>cilindro</link
+> di un <link linkend="glossary-device"
+>dispositivo</link
+>. Viene calcolato come il numero di <link linkend="glossary-head"
+>testine</link
+> moltiplicato per il numero di <link linkend="glossary-sector"
+>settori</link
+> per traccia. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-device">
+		<glossterm
+>Dispositivo</glossterm>
+		<glossdef>
+			<para
+>Un dispositivo che rappresenta un disco fisico. I dispositivi fisici sono divisi in sezioni logiche chiamate <link linkend="glossary-partition"
+>partizioni</link
+> utilizzando le <link linkend="glossary-partitiontable"
+>tabelle delle partizioni</link
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-disklabel">
+		<glossterm
+>Etichetta del disco</glossterm>
+		<glossdef>
+			<para
+>Un altro modo di chiamare le <link linkend="glossary-partitiontable"
+>tabelle delle partizioni</link
+>, che deriva dal mondo SUN/BSD. </para>
+			<para>
+				<note>
+					<para
+>È facile confondersi, ma l'etichetta di un disco non ha niente a che vedere con l'<link linkend="glossary-filesystemlabel"
+>etichetta di un file system</link
+>. </para>
+					<para
+>Vedi <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel"
+>questo articolo di Wikipedia</ulink
+> (in inglese) per maggiori informazioni sul nome. </para>
+				</note>
+			</para>
+			<glossseealso otherterm="glossary-partitiontable"
+></glossseealso>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-extendedpartition">
+		<glossterm
+>Partizione estesa</glossterm>
+		<glossdef>
+			<para
+>Una <link linkend="glossary-partition"
+>partizione</link
+> che contiene altre partizioni. Le partizioni estese possono essere solo <link linkend="glossary-primarypartition"
+>partizioni primarie</link
+>. Le partizioni estese possono essere disponibili o meno, in base al tipo di <link linkend="glossary-partitiontable"
+>tabella delle partizioni</link
+> usato. Le tabelle delle partizioni di tipo MS-DOS permettono di creare una partizione estesa per ogni <link linkend="glossary-device"
+>dispositivo</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystem">
+		<glossterm
+>File system</glossterm>
+		<glossdef>
+			<para
+>Un file system definisce l'organizzazione della memorizzazione dei dati (file e cartelle con i metadati e spazio libero) all'interno di una <link linkend="glossary-partition"
+>partizione</link
+>. Ci sono vari tipi di file system, alcuni provenienti dal mondo Unix/Linux, altri no. Alcuni esempi di file system comuni in Unix/Linux sono Btrfs, ext4 e XFS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystemlabel">
+		<glossterm
+>Etichetta di un file system</glossterm>
+		<glossdef>
+			<para
+>Il titolo di un file system. Alcuni file system (tra cui Btrfs, ext2/3/4, FAT16/32 e NTFS) supportano l'impostazione di un'etichetta per il file system in modo da poter essere identificati in strumenti come &partman; o altre applicazioni. </para>
+			<para>
+				<note>
+					<para
+>Sono facili da confondere, ma l'etichetta di un file system non ha niente a che fare con l'<link linkend="glossary-disklabel"
+>etichetta di un disco</link
+>.</para>
+				</note>
+			</para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-flag">
+		<glossterm
+>Flag</glossterm>
+		<glosssee otherterm="glossary-partitionflag"/>
+	</glossentry>
+	
+	<glossentry>
+		<glossterm
+>GPT</glossterm>
+		<glossdef>
+			<para
+>Un formato moderno della tabella delle partizioni supportato dalla maggior parte dei computer e sistemi operativi moderni. Supporta più di 4 <link linkend="glossary-primarypartition"
+>partizioni primarie</link
+> a differenza della più vecchia tabella delle partizioni MS-DOS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-head">
+		<glossterm
+>Testina</glossterm>
+		<glossdef>
+			<para
+>Un unità di misura usata per indicare parti di un <link linkend="glossary-device"
+>dispositivo</link
+>. </para
+><glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-job">
+		<glossterm
+>Attività</glossterm>
+		<glossdef>
+			<para
+>In &partman; le <link linkend="glossary-operation"
+>operazioni</link
+> sono composte di un certo numero di attività. Normalmente, non devi preoccuparti affatto delle attività; esse vengono rese evidenti solo quando applichi la lista delle operazioni in attesa: &partman; visualizzerà una finestra di avanzamento che elencherà le operazioni e le attività di cui esse sono composte, mostrando l'operazione e l'attività in esecuzione. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-label">
+		<glossterm
+>Etichetta</glossterm>
+		<glossdef>
+			<para
+>L'<link linkend="glossary-disklabel"
+>etichetta di un disco</link
+> o l'<link linkend="glossary-filesystemlabel"
+>etichetta di un file system</link
+>. </para
+><glossseealso otherterm="glossary-disklabel"
+></glossseealso
+> <glossseealso otherterm="glossary-filesystemlabel"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-logicalpartition">
+		<glossterm
+>Partizione logica</glossterm>
+		<glossdef>
+			<para
+>Una <link linkend="glossary-partition"
+>partizione</link
+> all'interno di una <link linkend="glossary-extendedpartition"
+>partizione estesa</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-luks">
+		<glossterm
+>LUKS</glossterm>
+		<glossdef>
+			<para
+>Linux Unified Key Setup è il formato standard di cifratura per Linux. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-lvm">
+		<glossterm
+>LVM</glossterm>
+		<glossdef>
+			<para
+>LVM è un sistema per gestire partizioni logiche che è più flessibile delle partizioni normali. Consiste di tre componenti principali:</para>
+			<simplelist>
+			<member
+>I volumi fisici di LVM sono partizioni sul disco il cui spazio è gestito da LVM.</member>
+			<member
+>Il gruppo di volumi LVM è una insieme di volumi fisici LVM che può essere partizionato in partizioni logiche. Può essere utilizzato per creare file system distribuiti su più dispositivi o per suddividere un volume <link linkend="glossary-luks"
+>LUKS</link
+> cifrato in partizioni più piccole.</member>
+			<member
+>I volumi logici LVM sono simili a partizioni normali tranne che per il fatto che essi risiedono in un gruppo di volumi LVM. Inoltre, la posizione delle partizioni logiche LVM non è importante e non è necessario che siano contigue. Perciò, &partman; non consente di spostare i volumi logici LVM e visualizza lo spazio libero rimanente alla fine del dispositivo.</member>
+			</simplelist>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-operation">
+		<glossterm
+>Operazione</glossterm>
+		<glossdef>
+			<para
+>&partman; suddivide il lavoro da eseguire in operazioni, <link linkend="glossary-job"
+>attività</link
+> e <link linkend="glossary-command"
+>comandi</link
+>. </para>
+			<para
+>Dei tre, le più visibili sono le operazioni. Se esegui un'azione nell'interfaccia grafica, ciò probabilmente farà aggiungere una nuova operazione alla lista delle operazioni in attesa. L'idea che c'è dietro è che probabilmente dovrai predisporre un certo numero di passi per trasformare lo stato attuale del tuo dispositivo a disco in quello che hai in mente. Alcuni di questi passi potrebbero richiedere un lungo tempo per essere eseguiti (come nel caso della copia di un file system di grandi dimensioni o del ridimensionamento di un file system quasi pieno). Evitandoti la necessità di rimanere seduto davanti al computer per un lungo tempo, in attesa che un passo termini per poterne quindi eseguire un altro, le operazioni ti consentono di decidere esattamente come i dispositivi del computer dovranno apparire all fine, lasciando quindi che &partman; applichi le modifiche e tornando solo quando le avrà eseguite tutte. </para>
+			<para
+>Le operazioni sono elencate in una lista delle operazioni in attesa di essere eseguite. Finché un'operazione non è stata applicata può facilmente essere <link linkend="menu-edit-undo"
+>annullata</link
+> senza che niente sia stato modificato. </para
+><glossseealso otherterm="glossary-job"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partition">
+		<glossterm
+>Partizione</glossterm>
+		<glossdef>
+			<para
+>Una sezione di un <link linkend="glossary-device"
+>disco fisso</link
+> che può contenere un <link linkend="glossary-filesystem"
+>file system</link
+> oppure altre partizioni. Un disco non può essere usato senza almeno una partizione valida. </para
+><glossseealso otherterm="glossary-device"
+></glossseealso
+> <glossseealso otherterm="glossary-partitiontable"
+></glossseealso
+> <glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partitionflag">
+		<glossterm
+>Parametro della partizione</glossterm>
+		<glossdef>
+			<para
+>Un marcatore per una <link linkend="glossary-partition"
+>partizione</link
+>. La disponibilità di questi parametri dipende dal tipo di <link linkend="glossary-partitiontable"
+>tabella delle partizioni</link
+> utilizzata. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-partitiontable">
+		<glossterm
+>Tabella delle partizioni</glossterm>
+		<glossdef>
+			<para
+>Una piccola sezione posta all'inizio di un <link linkend="glossary-device"
+>dispositivo</link
+> ed utilizzata per memorizzare informazioni sulle<link linkend="glossary-partition"
+>partizioni</link
+> in esso presenti. Ci sono vari tipi di tabella delle partizioni, ciascuno dei quali con le proprie limitazioni. </para>
+			<para
+>A volte indicata anche come <quote
+>etichetta del disco</quote
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-primarypartition">
+		<glossterm
+>Partizione primaria</glossterm>
+		<glossdef>
+			<para
+>Una <link linkend="glossary-partition"
+>partizione</link
+> posta direttamente all'interno di una<link linkend="glossary-partitiontable"
+>tabella delle partizioni</link
+>, a differenza delle<link linkend="glossary-logicalpartition"
+>partizioni logiche</link
+>, che sono poste all'interno di<link linkend="glossary-extendedpartition"
+>partizioni estese</link
+>. </para>
+			<para
+>Le <link linkend="glossary-partitiontable"
+>Tabelle delle partizioni</link
+> di solito impongono restrizioni sul numero massimo di partizioni primarie che possono essere create su un <link linkend="glossary-device"
+>dispositivo</link
+>. Per le tabelle delle partizioni MS-DOS, ad esempio, possono essere create un massimo di quattro partizioni primarie. </para
+><glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-sector">
+		<glossterm
+>Settore</glossterm>
+		<glossdef>
+			<para
+>Una unità di misura utilizzata per suddividere un <link linkend="glossary-device"
+>dispositivo</link
+>. Le <link linkend="glossary-partition"
+>partizioni</link
+> devono sempre iniziare e finire in corrispondenza di un settore. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-sectorsize">
+		<glossterm
+>Dimensioni del settore</glossterm>
+		<glossdef>
+			<para
+>Il numero di byte per ciascun <link linkend="glossary-sector"
+>settore</link
+> su un<link linkend="glossary-device"
+>dispositivo</link
+>. Le dimensioni del settore della maggior parte dei dispositivi in uso al giorno d'oggi è di 512 byte. </para>
+		</glossdef>
+	</glossentry>
+	
+	<!--
+		<glossentry>
+			<glossterm
+></glossterm>
+			 
+		</glossentry>
+		-->
+
+</glossary>

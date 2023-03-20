@@ -22,6 +22,7 @@ class SizeDialogWidget : public QWidget, public Ui::SizeDialogWidgetBase
 public:
     SizeDialogWidget(QWidget* parent) : QWidget(parent), Ui::SizeDialogWidgetBase() {
         setupUi(this);
+        hidePosixPermissions();
     }
 
 public:
@@ -73,6 +74,11 @@ public:
         return *m_RadioLogical;
     }
 
+    QRadioButton& radioRootPermissions() {
+        Q_ASSERT(m_permissionOnlyRoot);
+        return *m_permissionOnlyRoot;
+    }
+
     QComboBox& comboFileSystem() {
         Q_ASSERT(m_ComboFileSystem);
         return *m_ComboFileSystem;
@@ -122,6 +128,8 @@ public:
         m_RadioExtended = nullptr;
         delete m_RadioLogical;
         m_RadioLogical = nullptr;
+        delete m_groupBox_type;
+        m_groupBox_type = nullptr;
     }
     void hideFileSystem() {
         delete m_LabelFileSystem;
@@ -141,6 +149,21 @@ public:
         delete m_LabelTextNoSetLabel;
         m_LabelTextNoSetLabel = nullptr;
     }
+
+    void hidePosixPermissions() {
+        m_groupBox_permissions->hide();
+        m_labelPermission->hide();
+    }
+
+    void showPosixPermissions() {
+        m_groupBox_permissions->show();
+        m_labelPermission->show();
+    }
+
+    bool isPermissionOnlyRoot() const {
+        return !m_permissionEveryone->isChecked();
+    }
+
     void hideBeforeAndAfter() {
         labelFreeBefore().hide();
         spinFreeBefore().hide();

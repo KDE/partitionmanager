@@ -38,7 +38,7 @@ InfoPane::InfoPane(QWidget* parent) :
     QWidget(parent),
     m_GridLayout(new QGridLayout(this))
 {
-    layout()->setMargin(0);
+    layout()->setContentsMargins(0, 0, 0, 0);
 }
 
 /** Clears the InfoPane, leaving it empty */
@@ -56,7 +56,7 @@ int InfoPane::createHeader(const QString& title, const int num_cols)
     QLabel* label = new QLabel(title, this);
     QFont font;
     font.setBold(true);
-    font.setWeight(75);
+    font.setWeight(QFont::Bold);
     label->setFont(font);
     label->setAlignment(Qt::AlignCenter);
     gridLayout().addWidget(label, y++, 0, 1, num_cols);
@@ -144,6 +144,7 @@ void InfoPane::showPartition(Qt::DockWidgetArea area, const Partition& p)
         createLabels(xi18nc("@label partition", "Last sector:"), QLocale().toString(p.lastSector()), cols(area), x, y);
         createLabels(xi18nc("@label partition", "Number of sectors:"), QLocale().toString(p.length()), cols(area), x, y);
     }
+    gridLayout().setAlignment(Qt::AlignTop);
 }
 
 /** Shows information about a Device in the InfoPane
@@ -195,6 +196,7 @@ void InfoPane::showDevice(Qt::DockWidgetArea area, const Device& d)
         createLabels(i18nc("@label device", "Total Chunk:"), Capacity::formatByteSize(raid.totalChunk()), cols(area), x, y);
         createLabels(i18nc("@label device", "Array Size:"), Capacity::formatByteSize(raid.arraySize()), cols(area), x, y);
     }
+    gridLayout().setAlignment(Qt::AlignTop);
 }
 
 qint32 InfoPane::cols(Qt::DockWidgetArea area) const

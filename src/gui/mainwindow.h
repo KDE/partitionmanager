@@ -17,6 +17,7 @@
 
 #include "ui_mainwindowbase.h"
 
+#include <KMessageWidget>
 #include <KXmlGuiWindow>
 
 class ApplyProgressDialog;
@@ -44,8 +45,28 @@ class MainWindow : public KXmlGuiWindow, public Ui::MainWindowBase
 public:
     explicit MainWindow(QWidget* parent = nullptr);
 
+    // for instance `/dev/sda`
+    void setCurrentDeviceByName(const QString& name);
+
+    void setCurrentPartitionByName(const QString& partitionNumber);
+
+    // forbids the user to select another device.
+    // this is used in conjunction with --device
+    // rationale is that if the user specifies a device,
+    // we can't allow him to select another one by mistake while
+    // clicking in the UI.
+    void setDisallowOtherDevices();
+
+    // disallowOtherDevices hides the DockWidget, but unfortunately
+    // this is saved by the Window State when restored, even if we
+    // are not disallowing it this time. At the same time the user
+    // could have hidden it, so we need to restore only if hidden
+    // just by the call to disallowOtherDevices().
+    void showDevicePanelIfPreviouslyHiddenByDisallowOtherDevices();
+
 Q_SIGNALS:
     void settingsChanged();
+    void scanFinished();
 
 protected:
     void init();
@@ -202,6 +223,15 @@ protected:
         return *m_ScanProgressDialog;
     }
 
+    KMessageWidget &MessageWidget() {
+        Q_ASSERT(m_MessageWidget);
+        return *m_MessageWidget;
+    }
+    const KMessageWidget &MessageWidget() const {
+        Q_ASSERT(m_MessageWidget);
+        return *m_MessageWidget;
+    }
+
     void onSelectedDeviceMenuTriggered(bool);
 
 protected Q_SLOTS:
@@ -253,6 +283,15 @@ protected:
     void onPropertiesDevice(const QString& deviceNode = {});
 
 private:
+    QMenu* createPopupMenu() override;
+
+    void askForPermissions();
+
+Q_SIGNALS:
+    void showMessageWidget();
+    void hideMessageWidget();
+
+private:
     OperationStack* m_OperationStack;
     OperationRunner* m_OperationRunner;
     DeviceScanner* m_DeviceScanner;
@@ -260,6 +299,8 @@ private:
     ScanProgressDialog* m_ScanProgressDialog;
     QLabel* m_StatusText;
     QString m_SavedSelectedDeviceNode;
+
+    bool m_permissionGranted;
 };
 
 #endif

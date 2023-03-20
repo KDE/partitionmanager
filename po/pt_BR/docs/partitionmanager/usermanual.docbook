@@ -1,0 +1,101 @@
+<chapter id="usermanual">
+	<title
+>Usando o &partman;</title>
+
+	<sect1 id="mainwindow">
+		<title
+>A janela principal</title>
+
+		<para
+>Além da área principal, que mostra o dispositivo atualmente selecionado de forma gráfica e em árvore, o &partman; usa as <quote
+>áreas acopláveis</quote
+> ou painéis do &Qt; para mostrar alguma informação e permitir algumas seleções. Veja a seguinte imagem para ter uma ideia geral da janela principal do &partman;. </para>
+
+		<para>
+			<screenshot>
+				<screeninfo
+>A janela principal do &partman;</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>Janela principal</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>Menu: A barra do menu apresenta alguns menus personalizados e fora do normal que servem para escolher as ações a efetuar. Todos os comandos estão descritos em detalhe em <xref linkend="reference"/>.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>Barra de ferramentas: A barra de ferramentas do &partman; é uma barra de ferramentas padrão. Pode ser completamente personalizada; para mais detalhes, veja em <xref linkend="menu-settings-help"/>. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Painel de Dispositivos: Este painel apresenta todos os <glossterm linkend="glossary-device"
+>dispositivos</glossterm
+> existentes no seu computador que o &partman; consegue usar. Selecione um dispositivo neste painel para vê-lo ou modificá-lo na área gráfica ou na árvore de dispositivos.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>Área Gráfica do Dispositivo: Nesta área, o &partman; mostra uma representação gráfica do dispositivo selecionado neste momento. Cada uma das <glossterm linkend="glossary-partition"
+>partições</glossterm
+> do dispositivo tem a sua caixa própria com o nome do dispositivo (<quote
+>sda1</quote
+> para a primeira partição da imagem acima) e dados sobre a utilização (a área violeta da imagem). </para>
+					<para
+>As <glossterm linkend="glossary-extendedpartition"
+>Partições Estendidas</glossterm
+> são diferentes visualmente pelo seu contorno extra (em verde claro na imagem acima) em torno delas. </para>
+					<para
+>Você pode selecionar uma partição se clicar nela na área gráfica de dispositivos. Se fizer duplo-clique, irá abrir a <link linkend="menu-partition-properties"
+>janela de propriedades da partição</link
+>. Se clicar com o botão direito, irá abrir o menu de contexto da partição. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>Área em Árvore do Dispositivo: Esta área mostra informações estendidas sobre cada partição do dispositivo selecionado. A partição atualmente selecionada encontra-se realçada. Se fizer duplo-clique sobre uma partição, irá abrir a <link linkend="menu-partition-properties"
+>janela de propriedades da partição</link
+>. Se clicar com o botão direito, irá mostrar o menu de contexto da partição. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Painel de Informações: O painel de informações mostra alguns detalhes sobre o dispositivo ou partição selecionados. Não está ativo por padrão.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Painel de Operações Pendentes: Este painel apresenta todas as operações que serão executadas quando escolher a opção <xref linkend="menu-edit-apply"/>. </para>
+					<para
+>Na imagem acima, existe uma operação pendente: Se o usuário aplicar agora as operações, o <glossterm linkend="glossary-filesystem"
+>sistema de arquivos</glossterm
+> em /dev/sdb3 será analisado à procura de erros e, se necessário, reparado. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Barra de status: A barra de status exibe quantas operações estão pendentes atualmente. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>Painel de Saída do Registro: Este painel mostra as informações de registro. Só é de importância secundária para os usuários não-avançados, não estando ativo por padrão.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+

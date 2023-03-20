@@ -1,0 +1,173 @@
+<chapter id="faq">
+	<title
+>Questions et Réponses</title>
+
+	<qandaset id="faqlist">
+		<qandaentry>
+			<question>
+				<para
+>À quel point le &partman; est-il dangereux pour mes données ?</para>
+			</question>
+			<answer>
+				<para
+>Avant tout, vous ne devrez jamais effectuer aucune opération destructive (suppression, déplacement, redimensionnement) sans avoir au préalable effectué une sauvegarde complète de tout ce qui va en être affecté. </para>
+				<para
+>Cela dit, l'utilisation du &partman; est sûre. Il effectue des contrôles exhaustifs avant et après chaque opération, appelle des outils externes écrits et maintenus par les auteurs des systèmes de fichiers. De plus, il a été testé de façon intensive. </para>
+				<para
+>Il existe toujours un risque de perte de données dû à un bogue inconnu. Les auteurs du &partman; essaient de minimiser ce risque, mais il n'existe bien évidemment aucune garantie. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>J'ai installé tous les paquets externes recommandés de prise en charge de systèmes de fichiers, mais je n'obtiens toujours pas une prise en charge pour toutes les opérations prévues sur tous les systèmes de fichiers.</para>
+			</question>
+			<answer>
+				<para
+>Il est impossible pour le &partman; de tout faire, en principe, avec tous les systèmes de fichiers. </para>
+				<para
+>Un exemple est la réalisation d'un contrôle de système de fichiers sur <quote
+>linuxswap</quote
+> : ce n'est tout simplement pas possible. Il existe d'autres limitations comme celles inhérentes à certains systèmes de fichiers. On ne peut pas réduire les systèmes de fichiers <quote
+>JFS</quote
+> ou <quote
+>XFS</quote
+> car ni l'un ni l'autre ne prennent en charge cette fonction, avec ou sans le &partman;. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Pourquoi ne vois-je pas d'informations de progression significatives pendant le redimensionnement d'une partition ?</para>
+			</question>
+			<answer>
+				<para
+>Le &partman; ne peut afficher les informations de progression que lorsqu'il connaît la durée que prendront des tâches dans une opération. Malheureusement, ce n'est habituellement pas le cas lorsqu'on redimensionne des partitions, car le travail de loin le plus long dans ce cas est le redimensionnement du système de fichiers sur la partition. Le redimensionnement des systèmes de fichiers est dans la plupart des cas une tâche qu'un outil externe peut effectuer pour le compte du &partman;. De plus, comme ces outils externes ne fournissent pas d'informations de progression utiles au &partman;, il n'y a pas de rapport pendant qu'ils s'exécutent. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Pourquoi ne puis-je pas redimensionner la partition racine ? Comment faire pour redimensionner la partition <quote
+>/home</quote
+> si elle est active ?</para>
+			</question>
+			<answer>
+				<para
+>Pour modifier une partition, il faut ne pas qu'elle soit pas montée. Vous ne pouvez en revanche pas libérer la partition racine, ni libérer la partition <quote
+>/home</quote
+> si le dossier personnel de l'utilisateur actuellement connecté travaille dessus. </para>
+				<para
+>La solution à ce problème consiste à amorcer à partir d'un CD Linux Live livré avec le &partman; et à modifier ces partitions à partir de là. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>J'obtiens un message d'avertissement dans la sortie du journal m'indiquant qu'il est impossible de créer une partition de la taille que j'ai demandée et que celle-ci sera au contraire plus petite. Que s'est-il passé ?</para>
+			</question>
+			<answer>
+				<para
+>Sur les tables de partitions MS-DOS, les partitions doivent commencer et se terminer sur des limites de cylindres et ce, principalement pour des raisons historiques. Le &partman; se chargera de cette tâche en interne et essaiera de ne pas ennuyer l'utilisateur avec cette limitation. </para>
+				<para
+>Dans de rares circonstances, le &partman; ne sera cependant pas en mesure de mettre en œuvre une opération de la façon demandée par l'utilisateur, en raison de cette limitation. Par exemple, s'il existe un cylindre d'une taille de 8 Mio sur un périphérique et que vous essayez de redimensionner une partition à 6 Mio, cela ne fonctionnera pas. </para>
+				<para
+>Vous risquez également de rencontrer ce message si vous avez un périphérique et une table de partitions où les partitions ne sont pas, pour une raison quelconque, coupées correctement aux limites d'un cylindre, et que vous essayez de déplacer ou de copier ces partitions pour la première fois. </para>
+				<para
+>Le message en lui-même est inoffensif et n'existe que pour informer l'utilisateur qu'il n'est pas possible d'effectuer une tâche tout à fait exactement selon ses attentes. Vos partitions et vos données n'en seront affectées négativement en aucune manière si vous voyez apparaître ce message. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Combien d'opérations puis-je ajouter à la liste des opérations en attente ?</para>
+			</question>
+			<answer>
+				<para
+>Il n'existe pas de limite. </para>
+				<para
+>Il n'est cependant pas recommandé d'ajouter trop d'opérations à la liste. Il subsiste toujours un risque minime qu'une opération puisse échouer avec une erreur, auquel cas le &partman; arrêtera l'exécution des opérations. Dans ce cas, il est beaucoup plus facile de découvrir ce qui s'est passé (et d'ajouter à nouveau toutes les opérations qui n'auraient pas pu être exécutées) si la liste des opérations en attente n'était pas excessivement longue. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Le redimensionnement d'un système de fichiers ext2 ou ext3 a échoué avec un message dans le rapport indiquant qu'<quote
+>il ne reste plus d'espace sur le périphérique</quote
+>. Que s'est-il passé ? Mes données sont-elles corrompues à présent ?</para>
+			</question>
+			<answer>
+				<para
+>Il s'agit d'un problème lié à la commande <command
+>e2resize</command
+> et au système de fichiers <quote
+>ext2 / ext3</quote
+> sous-jacent. Si un système de fichiers est presque plein, il est impossible pour <command
+>e2resize</command
+> de le réduire, même s'il devrait être possible de le faire à partir du nombre de secteurs libres restants. Le &partman; ne peut malheureusement pas savoir à l'avance si <command
+>e2resize</command
+> s'interrompra ou non avec cette erreur pour un système de fichiers donné. Si cela se produit, aucune modification ne sera effectuée et vos données n'en seront pas négativement affectées. </para>
+				<para
+>Il n'existe pas de solution de contournement réelle pour ce problème pour l'instant. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Pourquoi ne puis-je pas formater ma disquette avec le &partman; ? Pourquoi n'existe-t-il pas de prise en charge pour l'écriture de CD ou la gravure de DVD ?</para>
+			</question>
+			<answer>
+				<para
+>Rien de tout cela ne correspond à ce pour quoi a été conçu le &partman; : il s'agit d'une application qui traite les partitions et les systèmes de fichiers qu'elles contiennent. Les disquettes, CD ou DVD n'ont pas pas besoin de partitions ou n'en utilisent pas. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Pourquoi ne puis-je pas modifier des partitions sur un périphérique comportant une table de partitions <quote
+>amiga</quote
+> ou <quote
+>bsd</quote
+> ?</para>
+			</question>
+			<answer>
+				<para
+>Le &partman; n'autorise pour le moment l'accès en lecture seule à aucun type de table de partitions autre que MS-DOS, ce pour des raisons de sécurité : la prise en charge dans le &partman; de ces types de tables de partitions n'en est pas vraiment une et le peu qui existe (ou ne fonctionne qu'incidemment) n'a pas été assez testé pour l'utiliser en toute confiance. </para>
+				<para
+>Naturellement, vous pouvez toujours créer une nouvelle table de partitions MS-DOS sur le périphérique en question, mais ce n'est probablement pas ce que vous souhaitez. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Au démarrage, le &partman; se bloque quelques minutes alors qu'il tente apparemment d'analyser le lecteur de disquettes sur mon ordinateur.</para>
+			</question>
+			<answer>
+				<para
+>Ce comportement se produit si vous avez un lecteur de disquettes configuré dans les paramètres du BIOS de votre ordinateur mais n'en avez pas réellement connecté un. Si vous n'avez pas de lecteur de disquettes, vérifiez les paramètres de votre BIOS et désactivez tous lecteurs de disquettes configurés ici pour vérifier si problème a disparu. </para>
+			</answer>
+		</qandaentry>
+		<qandaentry>
+			<question>
+				<para
+>Pendant le démarrage, le &partman; affiche un message sur la vérification des périphériques et prévient qu'il pourrait même se produire une panne ou au moins demander beaucoup de temps.</para>
+			</question>
+			<answer>
+				<para
+>LibParted, une bibliothèque d'infrastructure que le &partman; utilise, connaît des problèmes avec des systèmes où le mappeur de périphériques Linux est employé d'une manière qu'il ne comprend pas. Malheureusement, il réagit à certaines de ces situations par des erreurs de segmentation, c'est-à-dire des pannes. Le &partman;, par conséquent, tente d'éviter ces situations en faisant appel à un autre moyen pour analyser les disques de votre ordinateur. S'il lui est impossible de le faire, cependant, et qu'il doive compter sur <quote
+>LibParted</quote
+>, il affichera un message comme celui mentionné. Si l'analyse des disques fonctionne, vous pouvez sans risque ignorer le message. </para>
+			</answer>
+		</qandaentry>
+<!--
+		<qandaentry>
+			<question>
+				<para
+></para>
+			</question>
+			 
+		</qandaentry>
+-->
+	</qandaset>
+</chapter>
+

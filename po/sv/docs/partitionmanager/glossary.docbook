@@ -1,0 +1,393 @@
+<glossary id="glossary">
+
+	<glossentry id="glossary-command">
+		<glossterm
+>Kommando</glossterm>
+		<glossdef>
+			<para
+>I Partition Manager är kommandon det som <link linkend="glossary-job"
+>jobb</link
+> är uppbyggda av. Det är steg som utförs på mycket låg nivå, ofta utförda av ett externt verktyg, och de är bara synliga i den detaljerade förloppsrapporten. </para>
+			<para
+>Användaren behöver normalt inte alls bekymra sig om kommandon. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-job"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylinder">
+		<glossterm
+>Cylinder</glossterm>
+		<glossdef>
+			<para
+>En storleksenhet som används för att dela upp en <link linkend="glossary-device"
+>enhet</link
+>. Många operativsystem och många hårddiskverktyg kräver att <link linkend="glossary-partition"
+>partitioner</link
+> börjar och slutar på en cylinder. Partition Manager låser därför automatiskt partitioner till cylindergränser när deras start eller slut ändras. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylindersize">
+		<glossterm
+>Cylinderstorlek</glossterm>
+		<glossdef>
+			<para
+>Antal <link linkend="glossary-sector"
+>sektorer</link
+> per <link linkend="glossary-cylinder"
+>cylinder</link
+> på en <link linkend="glossary-device"
+>enhet</link
+>. Beräknas som antal <link linkend="glossary-head"
+>huvuden</link
+> multiplicerat med antal <link linkend="glossary-sector"
+>sektorer</link
+> per spår. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-device">
+		<glossterm
+>Enhet</glossterm>
+		<glossdef>
+			<para
+>En fysisk diskenhet. Fysiska diskenheter delas upp i logiska sektioner som kallas <link linkend="glossary-partition"
+>partitioner</link
+> med användning av <link linkend="glossary-partitiontable"
+>partitionstabeller</link
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-disklabel">
+		<glossterm
+>Disketikett</glossterm>
+		<glossdef>
+			<para
+>Ett annat namn på en <link linkend="glossary-partitiontable"
+>partitionstabell</link
+> med härstamning från SUN/BSD-världen. </para>
+			<para>
+				<note>
+					<para
+>Det är lätt att blanda ihop dem, men en disketikett har ingenting att göra med en <link linkend="glossary-filesystemlabel"
+>filsystemetikett</link
+>. </para>
+					<para
+>Se <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel"
+>följande artikel i Wikipedia</ulink
+> för detaljinformation om namnet. </para>
+				</note>
+			</para>
+			<glossseealso otherterm="glossary-partitiontable"
+></glossseealso>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-extendedpartition">
+		<glossterm
+>Utökad partition</glossterm>
+		<glossdef>
+			<para
+>En <link linkend="glossary-partition"
+>partition</link
+> som innehåller andra partitioner. Utökade partitioner kan bara vara <link linkend="glossary-primarypartition"
+>primära partitioner</link
+> själva. Om utökade partitioner är tillgängliga eller inte beror på typ av <link linkend="glossary-partitiontable"
+>partitionstabell</link
+> som används. MS-DOS partitionstabeller tillåter en utökad partition per <link linkend="glossary-device"
+>enhet</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystem">
+		<glossterm
+>Filsystem</glossterm>
+		<glossdef>
+			<para
+>Ett filsystem definierar hur lagring av data (filer med sin metadata, kataloger och deras metadata, ledigt utrymme) organiseras i en <link linkend="glossary-partition"
+>partition</link
+>. Det finns diverse olika typer av filsystem, vissa som ursprungligen kommer från Unix/Linux-världen, och vissa som inte gör det. Exempel på vanliga filsystem på Unix/Linux är Btrfs, ext4 och XFS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystemlabel">
+		<glossterm
+>Filsystemetikett</glossterm>
+		<glossdef>
+			<para
+>En rubrik på ett filsystem. Vissa filsystem (bland dem Btrfs, ext2/3/4, FAT16/32 och NTFS) stöder att ge filsystemet en etikett så att det kan identifieras i verktyg som Partition Manager eller andra program. </para>
+			<para>
+				<note>
+					<para
+>Det är enkelt att blanda ihop dem, men en filsystemetikett har ingenting att göra med en <link linkend="glossary-disklabel"
+>disketikett</link
+>.</para>
+				</note>
+			</para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-flag">
+		<glossterm
+>Flagga</glossterm>
+		<glosssee otherterm="glossary-partitionflag"/>
+	</glossentry>
+	
+	<glossentry>
+		<glossterm
+>GPT</glossterm>
+		<glossdef>
+			<para
+>Ett modernt format för partitionstabeller som stöds av de flesta moderna datorer och operativsystem. Det stöder mer än fyra <link linkend="glossary-primarypartition"
+>primära partitioner</link
+> i motsats till äldre MS-DOS partitionstabeller. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-head">
+		<glossterm
+>Huvud</glossterm>
+		<glossdef>
+			<para
+>En storleksenhet som används för att dela upp en <link linkend="glossary-device"
+>enhet</link
+>. </para
+><glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-job">
+		<glossterm
+>Jobb</glossterm>
+		<glossdef>
+			<para
+>I Partition Manager består <link linkend="glossary-operation"
+>åtgärder</link
+> av ett antal jobb. Normalt behöver man inte bekymra sig om jobb över huvud taget. De märks bara när listan med väntande åtgärder verkställs: Partition Manager visar då en förloppsdialogruta som består av alla åtgärder och deras jobb, och visar vilken åtgärd och vilket jobb som för närvarande håller på att utföras. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-label">
+		<glossterm
+>Etikett</glossterm>
+		<glossdef>
+			<para
+>Antingen en <link linkend="glossary-disklabel"
+>disketikett</link
+> eller en <link linkend="glossary-filesystemlabel"
+>filsystemetikett</link
+>. </para
+><glossseealso otherterm="glossary-disklabel"
+></glossseealso
+> <glossseealso otherterm="glossary-filesystemlabel"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-logicalpartition">
+		<glossterm
+>Logisk partition</glossterm>
+		<glossdef>
+			<para
+>En <link linkend="glossary-partition"
+>partition</link
+> inne i en <link linkend="glossary-extendedpartition"
+>utökad partition</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-luks">
+		<glossterm
+>LUKS</glossterm>
+		<glossdef>
+			<para
+>Linux Unified Key Setup är standardformatet för kryptering på Linux. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-lvm">
+		<glossterm
+>LVM</glossterm>
+		<glossdef>
+			<para
+>LVM är ett system för att hantera logiska partitioner som är flexiblare än normala partitioner. Det består av tre huvudkomponenter:</para>
+			<simplelist>
+			<member
+>LVM fysiska volymer är partitioner på disken vars utrymme hanteras av LVM:</member>
+			<member
+>En LVM-volymgrupp är en samling av LVM fysiska volymer som kan partitioneras i logiska volymer. Den kan användas för att skapa filsystem som spänner över flera enheter eller dela en krypterad <link linkend="glossary-luks"
+>LUKS</link
+>-volym i mindre partitioner.</member>
+			<member
+>LVM logiska volymer liknar vanliga partitioner utom att de befinner sig i en LVM-volymgrupp. Dessutom spelar inte platsen för LVM logiska partitioner någon roll, och de behöver inte vara fysiskt angränsande. Därför tillåter inte Partition Manager att LVM logiska volymer flyttas, och visar återstående ledigt utrymme i slutet av enheten.</member>
+			</simplelist>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-operation">
+		<glossterm
+>Åtgärd</glossterm>
+		<glossdef>
+			<para
+>Partition Manager delar upp arbetet som utförs i åtgärder, <link linkend="glossary-job"
+>jobb</link
+> och <link linkend="glossary-command"
+>kommandon</link
+>. </para>
+			<para
+>Åtgärder är mest synliga av de tre. Om du väljer ett alternativ i det grafiska användargränssnittet, gör det troligen att en ny åtgärd läggs till i listan med väntande åtgärder. Idén bakom det är att du troligen vill skapa ett stort antal steg för att förändra diskenheternas nuvarande tillstånd till tillståndet du har i åtanke. Vissa av stegen kan ta ganska lång tid att utföra (som att kopiera ett stort filsystem eller ändra storlek på ett filsystem som nästan är fullt). För att rädda dig från att behöva sitta framför datorn för att vänta på att ett steg ska bli färdigt, och därefter starta nästa, låter åtgärder dig exakt ange hur datorns enheter ska se ut när allt är färdigt. Låt därefter Partition Manager verkställa åtgärderna och kom tillbaka när alla har utförts. </para>
+			<para
+>Åtgärder hålls i en lista med väntande åtgärder. Under förutsättning att åtgärden inte har verkställts kan den fortfarande <link linkend="menu-edit-undo"
+>enkelt ångras</link
+>, och ingenting kommer då att ha ändrats. </para
+><glossseealso otherterm="glossary-job"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partition">
+		<glossterm
+>Partition</glossterm>
+		<glossdef>
+			<para
+>En del av en <link linkend="glossary-device"
+>hårddiskenhet</link
+> som kan innehålla ett <link linkend="glossary-filesystem"
+>filsystem</link
+> eller andra partitioner. Utan minst en giltig partition, kan inte en disk användas. </para
+><glossseealso otherterm="glossary-device"
+></glossseealso
+> <glossseealso otherterm="glossary-partitiontable"
+></glossseealso
+> <glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partitionflag">
+		<glossterm
+>Partitionsflagga</glossterm>
+		<glossdef>
+			<para
+>En markör för en <link linkend="glossary-partition"
+>partition</link
+>. Tillgängligheten hos dessa flaggor beror på typ av <link linkend="glossary-partitiontable"
+>partitionstabell</link
+> som används. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-partitiontable">
+		<glossterm
+>Partitionstabell</glossterm>
+		<glossdef>
+			<para
+>En liten sektion i början av en <link linkend="glossary-device"
+>enhet</link
+> som används för att lagra information om layout av enhetens <link linkend="glossary-partition"
+>partitioner</link
+>. Det finns olika typer av partitionstabeller, var och en med sina egna begränsningar. </para>
+			<para
+>Kallas ibland också för <quote
+>disketikett</quote
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-primarypartition">
+		<glossterm
+>Primär partition</glossterm>
+		<glossdef>
+			<para
+>En <link linkend="glossary-partition"
+>partition</link
+> direkt inne i en <link linkend="glossary-partitiontable"
+>partitionstabell</link
+>, i motsats till <link linkend="glossary-logicalpartition"
+>logiska partitioner</link
+>, som finns i <link linkend="glossary-extendedpartition"
+>utökade partitioner</link
+>. </para>
+			<para
+><link linkend="glossary-partitiontable"
+>Partitionstabeller</link
+> inför ofta begränsningar på det maximala antalet primära partitioner som kan skapas på en <link linkend="glossary-device"
+>enhet</link
+>. Exempelvis är det maximala antalet fyra för MS-DOS typ av partitionstabeller. </para
+><glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-sector">
+		<glossterm
+>Sektor</glossterm>
+		<glossdef>
+			<para
+>En storleksenhet som används för att dela upp en <link linkend="glossary-device"
+>enhet</link
+>. <link linkend="glossary-partition"
+>Partitioner</link
+> måste alltid börja och sluta på en sektor. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-sectorsize">
+		<glossterm
+>Sektorstorlek</glossterm>
+		<glossdef>
+			<para
+>Antal byte per <link linkend="glossary-sector"
+>sektor</link
+> på en <link linkend="glossary-device"
+>enhet</link
+>. Sektorstorleken på de flesta enheter som används idag är 512 byte. </para>
+		</glossdef>
+	</glossentry>
+	
+	<!--
+		<glossentry>
+			<glossterm
+></glossterm>
+			 
+		</glossentry>
+		-->
+
+</glossary>

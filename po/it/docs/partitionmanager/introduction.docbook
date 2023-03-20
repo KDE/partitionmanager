@@ -1,0 +1,48 @@
+<chapter id="introduction">
+	<title
+>Introduzione</title>
+	<para
+>&partman; è un programma creato per aiutarti a gestire i <glossterm linkend="glossary-device"
+>dispositivi a disco</glossterm
+>, le <glossterm linkend="glossary-partition"
+>partizioni</glossterm
+> ed i <glossterm linkend="glossary-filesystem"
+>file system</glossterm
+> sul tuo computer. </para>
+	<para
+>Ti consente di <link linkend="howto-installos"
+>creare nuove partizioni</link
+>, creare file system su partizioni nuove o già esistenti, <link linkend="howto-copypartition"
+>copiare</link
+>, spostare od eliminare partizioni ed anche di <link linkend="howto-resizepartition"
+>modificare le dimensioni di una partizione</link
+> senza perdere i dati in essa memorizzati. </para>
+
+	<para
+>Per eseguire il proprio lavoro in modo efficiente &partman; fa uso di strumenti esterni in grado di supportare un gran numero di file system. Probabilmente gli strumenti necessari per i file system presenti nel tuo computer sono già installati. </para>
+
+	<warning>
+		<title
+>Fai sempre una copia di sicurezza dei tuoi dati!</title>
+		<para
+>&partman; è stato progettato e scritto con grande scrupolo e con estrema attenzione all'integrità dei dati. Ciò nonostante c'è sempre un margine di rischio quando si modificano la tabella di partizionamento o le partizioni di un dispositivo: potrebbe sempre esserci un errore in &partman;, potrebbe avvenire una interruzione della corrente elettrica oppure un problema con l'hardware del computer. </para>
+		<para
+>Per queste ragioni dovresti <emphasis
+>sempre fare una copia di sicurezza dei tuoi dati importanti</emphasis
+> prima di eseguire qualsiasi modifica con uno strumento come &partman;. </para>
+		<para
+>Gli autori del programma non si assumono alcuna responsabilità per eventuali perdite di dati connesse all'utilizzo di &partman;. </para>
+	</warning>
+
+	<para
+>&partman; utilizza le <glossterm linkend="glossary-operation"
+>operazioni</glossterm
+>, le <glossterm linkend="glossary-job"
+>attività</glossterm
+> ed i<glossterm linkend="glossary-command"
+>comandi</glossterm
+> per dividere logicamente il lavoro che esegue. Consulta il <link linkend="glossary"
+>glossario</link
+> per maggiori dettagli. </para>
+
+</chapter>

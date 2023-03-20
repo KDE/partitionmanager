@@ -1,0 +1,192 @@
+<appendix id="installation">
+	<title
+>Instalação</title>
+
+	<sect1 id="obtaining">
+		<title
+>Como obter o &partman;</title>
+
+		<para
+>O site do &partman; é <ulink url="http://www.partitionmanager.org"
+>www.partitionmanager.org</ulink
+>. Para a versão mais atual, este é o lugar a ir. </para>
+	</sect1>
+
+	<sect1 id="requirements">
+		<title
+>Requisitos</title>
+
+		<para
+>Para poder usar o &partman; com sucesso, você irá precisar do &kde; 4.2 ou posterior e do &Qt; 4.4.0 ou posterior. Contudo, você não terá que estar numa sessão do &kde; para usá-lo: o &partman; irá funcionar perfeitamente noutro ambiente de trabalho qualquer, desde que tenha as bibliotecas básicas do &kde; instaladas. </para>
+
+		<para
+>Para uma grande parte da sua funcionalidade básica, o &partman; baseia-se na biblioteca <ulink url="http://www.gnu.org/software/parted/index.shtml"
+>libparted</ulink
+>. Para gerar os UUIDs dos sistemas de arquivos copiados, ele usa a 'libuuid', que faz parte do pacote <ulink url="http://e2fsprogs.sourceforge.net"
+>e2fsprogs</ulink
+>. Ele também usa a <ulink url="http://userweb.kernel.org/~kzak/util-linux-ng/"
+>biblioteca libblkid do projeto util-linux-ng</ulink
+> para obter informações sobre as partições e os sistemas de arquivos. Todos estes programas são necessários para compilar ou executar o &partman;. </para>
+
+		<para
+>O &partman; faz uso intensivo das ferramentas externas para suportar uma grande variedade de sistemas de arquivos. Uma ferramenta específica só é necessária se precisar do suporte para uma determinada operação que ofereça para um determinado sistema de arquivos. Por exemplo, se você não tiver necessidade de ajustar o tamanho de partições de NTFS, não irá necessitar de ter o <quote
+>ntfsresize</quote
+> instalado. Nenhuma destas ferramentas é necessária para compilar o &partman; a partir do seu código-fonte. </para>
+
+		<para
+>Aqui está uma lista de todas as ferramentas externas que o &partman; pode usar: </para>
+
+		<itemizedlist>
+			<listitem>
+				<para
+>&debugfsreiser4;: Lê a informação de utilização e das legendas dos sistemas de arquivos para os sistemas 'reiser4'. Uma parte do pacote de utilitários 'reiser4progs' pode ser obtida em <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiser4/reiser4progs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&debugreiserfs;: Lê a informação de utilização e das legendas dos sistemas de arquivos para os sistemas 'reiserfs'. Uma parte do pacote de utilitários 'reiserfsprogs' pode ser obtida em <ulink url="http://www.kernel.org/pub/linux/utils/fs/reiserfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&dumpe2fs;: Lê a informação de utilização para os sistemas ext2/ext3/ext4. Uma parte do pacote de utilitários 'e2fsprogs' pode ser obtida em <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&e2label;: Lê e grava as legendas dos sistemas de arquivos ext2/ext3/ext4. Uma parte do pacote de utilitários 'e2fsprogs' poderá ser obtida em <ulink url="http://e2fsprogs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&fsckmsdos;: Lê a informação de utilização e verifica os sistemas de arquivos FAT16 e FAT32. Parte do pacote de utilitários 'dosfstools' pode ser obtida a partir de <ulink url="http://www.daniel-baumann.ch/software/dosfstools/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hfsck;: Lê as legendas e verifica os sistemas de arquivos HFS. Uma parte do pacote de utilitários 'hfsutils' pode ser obtida a partir de <ulink url="http://www.mars.org/home/rob/proj/hfs/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&hpfsck;: Verifica os sistemas de arquivos HFS+. Uma parte do pacote de utilitários 'hfsplusutils' pode ser obtida a partir de <ulink url="http://www.penguinppc.org/historical/hfsplus/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfsdebugfs;: Lê as informações de utilização dos sistemas de arquivos JFS. Uma parte do pacote de utilitários 'jfsutils' pode ser obtida a partir de <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&jfstune;: Lê e grava as legendas dos sistemas de arquivos JFS. Uma parte do pacote de utilitários 'jfsutils' pode ser obtida a partir de <ulink url="http://jfs.sourceforge.net/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfslabel;: Lê e grava as legendas dos sistemas dos arquivos NTFS. Uma parte do pacote de utilitários 'ntfsprogs' pode ser obtida a partir de <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&ntfsresize;: Lê as informações de utilização, verifica e dimensiona os sistemas de arquivos NTFS. Uma parte do pacote de utilitários 'ntfsprogs' pode ser obtida a partir de <ulink url="http://www.linux-ntfs.org/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapoff;: Desativa os sistemas de arquivos de memória virtual. Uma parte do pacote de utilitários 'util-linux-ng' pode ser obtida a partir de <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&swapon;: Ativa os sistemas de arquivos de memória virtual. Uma parte do pacote de utilitários 'util-linux-ng' pode ser obtida a partir de <ulink url="ftp://ftp.us.kernel.org/pub/linux/utils/util-linux-ng/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&volid;: Lê as legendas dos sistemas de arquivos de memória virtual. Uma parte do 'udev' pode ser obtida a partir de <ulink url="http://www.us.kernel.org/pub/linux/utils/kernel/hotplug/"
+></ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>&xfsdb;: Lê a informação de utilização e lê ou grava as legendas dos sistemas de arquivos XFS. Uma parte do pacote de utilitários 'xfsprogs' pode ser obtida em <ulink url="ftp://oss.sgi.com/projects/xfs/cmd_tars/"
+></ulink
+>. </para>
+			</listitem>
+		</itemizedlist>
+	</sect1>
+
+	<sect1 id="compilation">
+		<title
+>Compilação e instalação</title>
+&install.compile.documentation; </sect1>
+
+	<sect1 id="furtherreading">
+		<title
+>Leitura complementar</title>
+
+		<itemizedlist>
+			<listitem>
+				<para
+>O <ulink url="http://www.linfo.org/"
+>Linux Information Project</ulink
+> (Projeto de Informação do Linux) tem uma grande quantidade de informação sobre diversos aspectos do Linux. O artigo sobre <ulink url="http://www.linfo.org/partition.html"
+>partições</ulink
+> é bastante informativo. Mas veja também as referências sobre as <ulink url="http://www.linfo.org/partition_table.html"
+>tabelas de partições</ulink
+>, <ulink url="http://www.linfo.org/hdd.html"
+>dispositivos de discos rígidos</ulink
+> e <ulink url="http://www.linfo.org/filesystem.html"
+>sistemas de arquivos</ulink
+>. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>O <ulink url="http://tldp.org/HOWTO/Partition/index.html"
+>Linux Partition HOWTO</ulink
+> é uma visão geral básica sobre como lidar e particionar dispositivos de discos no Linux e sobre os sistemas de arquivos nativos do Linux. Ele também aborda as partições de memória virtual. </para>
+			</listitem>
+
+			<listitem>
+				<para
+>A <ulink url="http://www.wikipedia.org"
+>Wikipédia</ulink
+> tem uma entrada sobre o <ulink url="http://pt.wikipedia.org/wiki/Partição"
+>particionamento de disco</ulink
+>. </para>
+			</listitem>
+			
+		</itemizedlist>
+		
+	</sect1>
+	
+</appendix>

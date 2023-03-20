@@ -1,0 +1,48 @@
+<chapter id="introduction">
+	<title
+>Pengenalan</title>
+	<para
+>&partman; adalah sebuah program utilitas untuk membantu Anda mengelola <glossterm linkend="glossary-device"
+>perangkat disk</glossterm
+>, <glossterm linkend="glossary-partition"
+>partisi</glossterm
+> dan <glossterm linkend="glossary-filesystem"
+>sistem file </glossterm
+> pada komputer Anda. </para>
+	<para
+>Yang memungkinkan Anda untuk <link linkend="howto-installos"
+>menciptakan partisi baru</link
+> secara mudah, menciptakan sistem file yang baru atau partisi yang ada, <link linkend="howto-copypartition"
+>salin</link
+>, geser atau hapus partisi dan juga untuk <link linkend="howto-resizepartition"
+>memodifikasi ukuran partisi</link
+> tanpa menghilangkan datanya. </para>
+
+	<para
+>Untuk mendapatkan pekerjaan yang kelar secara efisien &partman; memanfaatkan alat eksternal untuk mendukung sepanjang daftar sistem file . Barangkali Anda memiliki alat yang diperlukan untuk sistem file pada komputer Anda yang sudah terinstal operasi sistem. </para>
+
+	<warning>
+		<title
+>Selalu cadangkan data Anda!</title>
+		<para
+>&partman; telah didesain dan ditulis dengan ketekunan tinggi dan memerhatikan pada integritas data. Namun ada beberapa bahaya yang selalu terjadi ketika mengubahsuai tabel partisi atau partisinya perangkat: Kemungkinan masih ada bug pada &partman; kegagalan daya atau masalah yang tak terduga dengan hardware komputer. </para>
+		<para
+>Untuk alasan tersebut Anda seharusnya <emphasis
+>selalu memiliki sebuah cadangan data Anda yang penting</emphasis
+> sebelum membuat ubahsuaian apa pun dengan alat seperti &partman;. </para>
+		<para
+>Pembuat program tidak bertanggungjawab sama sekali jika Anda kehilangan data apa pun ketika menggunakan &partman;. </para>
+	</warning>
+
+	<para
+>&partman; menggunakan <glossterm linkend="glossary-operation"
+>operasi</glossterm
+>, <glossterm linkend="glossary-job"
+>tugas</glossterm
+> dan <glossterm linkend="glossary-command"
+>perintah</glossterm
+> untuk secara logis membagi pekerjaan yang dilakukannya. Lihat <link linkend="glossary"
+>glosarium</link
+> untuk lebih rinci tentang ini. </para>
+
+</chapter>

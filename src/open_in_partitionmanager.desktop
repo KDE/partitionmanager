@@ -1,0 +1,43 @@
+[Desktop Entry]
+X-KDE-Solid-Predicate=[ StorageVolume.ignored == false AND StorageVolume.usage == 'FileSystem' ]
+Type=Service
+Actions=open;
+X-KDE-AliasFor=org.kde.partitionmanager
+
+[Desktop Action open]
+# %f gives StorageAccess.filePath, %d gives Block.device, %i gives UDI
+Exec=partitionmanager "--device=%d"
+Icon=partitionmanager
+Name=Reformat or Edit with Partition Manager
+Name[ar]=أعد تهيئة أو حرر بمحرر الأقسام
+Name[az]=Bölmələr Meneceri ilə yenidən formatlayın və ya düzəliş edin
+Name[bg]=Преформатиране или редактиране на дискове
+Name[ca]=Reformatació i edició amb el gestor de particions
+Name[ca@valencia]=Reformatació i edició amb el gestor de particions
+Name[cs]=Přeformátovat nebo upravit pomocí Správce diskových oddílů
+Name[el]=Αναδιαμορφώστε ή επεξεργαστείτε με τον διαχειριστή κατατμήσεων
+Name[en_GB]=Reformat or Edit with Partition Manager
+Name[es]=Volver a formatear o editar con el gestor de particiones
+Name[eu]=Berriz formatua eman edo editatu Partizio Kudeatzailearekin
+Name[fi]=Alusta uudelleen tai muokkaa osionhallinnassa
+Name[fr]=Reformater ou modifier avec le gestionnaire de partitions de KDE
+Name[hu]=Újraformázás vagy szerkesztés a Partíciókezelővel
+Name[ia]=Reformatta o modifica con Partition Manager (gerente de partition)
+Name[id]=Mengedit atau Memformat Ulang dengan Partition Manager
+Name[it]=Riformatta o modifica con il gestore delle partizioni
+Name[ka]=დააფორმატეთ ან ჩაასწორეთ დანაყოფების მმართველით
+Name[ko]=파티션 관리자로 다시 포맷하거나 편집
+Name[nl]=Met Partitiebeheerder opnieuw formatteren of bewerken
+Name[nn]=Reformater eller rediger med Partition Manager
+Name[pl]=Sformatuj lub dostosuj w Zarządzaniu Partycjami
+Name[pt]=Reformatar ou editar com o Gestor de Partições
+Name[pt_BR]=Reformatar ou editar com o gerenciador de partições
+Name[ru]=Отформатировать или управлять разделами в диспетчере разделов от KDE
+Name[sk]=Preformátovať alebo upraviť so správcom partícií
+Name[sl]=Ponovno formatiraj ali uredi z Upravljalnikom razdelkov
+Name[sv]=Omformatering eller redigering med partitionshanterare
+Name[tr]=Bölümlendirme Yöneticisi ile Biçimlendir veya Düzenle
+Name[uk]=Переформатувати або редагувати за допомогою «Керування розділами»
+Name[x-test]=xxReformat or Edit with Partition Managerxx
+Name[zh_CN]=用分区管理器格式化或编辑
+Name[zh_TW]=用磁碟分割區管理員進行重新格式化或修改
