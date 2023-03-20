@@ -1,156 +1,153 @@
 <chapter id="faq">
-	<title>Questions and Answers</title>
+	<title
+>Sorular ve Yanıtlar</title>
 
 	<qandaset id="faqlist">
 		<qandaentry>
 			<question>
-				<para>How dangerous is &partman; for my data?</para>
+				<para
+>Verilerim için &partman; ne kadar zararlıdır?</para>
 			</question>
 			<answer>
-				<para>
-					First of all, you should never perform any destructive operations (delete, move, resize) without first making a complete backup of everything affected.
-				</para>
-				<para>
-					Having said that, &partman; is safe to use. It performs extensive checks before and after every operation. It calls external tools written and supported by the file system authors. And it has been tested extensively.
-				</para>
-				<para>
-					There is always the risk of data loss due to an unknown bug. &partman;'s authors try to minimize this risk, but there are of course no guarantees.
-				</para>
+				<para
+>Her şeyden önce, etkilenen her şeyin tam bir yedeğini almadan asla yıkıcı işlemler (silme, taşıma, yeniden boyutlandırma) yapmamalısınız. </para>
+				<para
+>Bunu söyledikten sonra, &partman; kullanımı güvenlidir. Her operasyon öncesi ve sonrasında kapsamlı denetimler gerçekleştirir. Dosya sistemi yazarları tarafından yazılan ve desteklenen dış araçları çağırır; kapsamlı bir biçimde sınanmıştır. </para>
+				<para
+>Bilinmeyen bir hata nedeniyle veri kaybı riski her zaman vardır. &partman;'ın yazarları bu riski en aza indirmeye çalışırlar; ancak elbette bunun garantisi yoktur. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para>I have installed all recommended external file system support packages and still do not get support for all operations on all file systems.</para>
+				<para
+>Önerilen tüm dış dosya sistemi destek paketlerini kurdum ve hala tüm dosya sistemlerindeki tüm işlemler için destek alamıyorum.</para>
 			</question>
 			<answer>
-				<para>
-					Not everything &partman; can do in principle can be done with all file systems.
-				</para>
-				<para>
-					One example is performing a file system check on linuxswap: It is just not possible. There are other limitations like that inherent in some file systems. You cannot shrink JFS or XFS file systems because neither of the two supports shrinking at all, with or without &partman;.
-				</para>
+				<para
+>&partman; uygulamasının prensipte yapabileceği her şey tüm dosya sistemleriyle yapılamaz. </para>
+				<para
+>Bir örnek, linuxswap'te bir dosya sistemi denetimi yapmaktır: Bu olanaklı değildir. Bazı dosya sistemlerinde bulunan buna benzer başka sınırlamalar da vardır. JFS veya XFS dosya sistemlerini küçültemezsiniz; çünkü ikisi de &partman; ile veya başka bir uygulamayla küçültmeyi kesinlikle desteklemez. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para>Why can't I see any meaningful progress information when resizing a partition?</para>
+				<para
+>Bir disk bölümünü yeniden boyutlandırırken neden herhangi bir anlamlı ilerleme bilgisi göremiyorum?</para>
 			</question>
 			<answer>
-				<para>
-					&partman; can only show progress information when it knows how long the jobs in an operation will take. Unfortunately this is usually not the case when resizing partitions because the by far longest job when doing so is resizing the file system on the partition. Resizing file systems is in most cases something an external tool will do on behalf of &partman; and these external tools do not provide useful progress information to &partman;, so there's nothing to report while they are running.
-				</para>
+				<para
+>&partman;, yalnızca bir operasyondaki işlerin ne kadar süreceğini bildiğinde ilerleme bilgilerini gösterebilir. Ne yazık ki bu genellikle bölümleri yeniden boyutlandırırken geçerli değildir; çünkü bunu yaparken en uzun iş, bölümdeki dosya sistemini yeniden boyutlandırmaktır. Dosya sistemlerini yeniden boyutlandırmak çoğu durumda dış bir aracın &partman; adına yapacağı bir şeydir. ve bu dış araçlar &partman;'a yararlı ilerleme bilgileri sağlamaz, bu nedenle çalışırken raporlanacak hiçbir şey yoktur. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para>Why can't I resize the root partition? How can I resize the partition /home is on?</para>
+				<para
+>Kök bölümü neden yeniden boyutlandıramıyorum? /ana-klasör açık olan bölümü nasıl yeniden boyutlandırabilirim?</para>
 			</question>
 			<answer>
-				<para>
-					To modify a partition it must not be mounted. You can however not unmount the root partition. Neither will you be able to unmount the home partition if the home directory of the currently logged in user is on it.
-				</para>
-				<para>
-					The solution for this problem is to boot from a Linux Live CD that comes with &partman; and modify these partitions from there.
-				</para>
+				<para
+>Bir bölümü değiştirmek için takılı olmamalıdır. Ancak, kök bölümün bağlantısını kaldıramazsınız. Şu anda oturum açmış olan kullanıcının ana dizini üzerindeyse, ana bölümün bağlantısını da kaldıramazsınız. </para>
+				<para
+>Bu sorunun çözümü, &partman; ile birlikte gelen bir Linux Canlı CD'sinden önyükleme yapmaktır. Bu bölümleri oradan değiştirin. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para>I'm getting a warning message in the log output about something that a partition cannot be created with the size I requested and that it will instead be smaller. What happened?</para>
+				<para
+>Günlük çıktısında, istediğim boyutta bir bölümün oluşturulamayacağına ve bunun yerine daha küçük olacağına dair bir uyarı ileti alıyorum. Ne oldu?</para>
 			</question>
 			<answer>
-				<para>
-					On MS-DOS partition tables, partitions have to begin and end on cylinder boundaries. This is mainly for historical reasons. &partman; will deal with this internally and try not to bother the user with that limitation.
-				</para>
-				<para>
-					Under rare circumstances, &partman; will however not be able to set up an operation in the way the user requested it due to this limitation. For example, if one cylinder on a device is 8 MiB large and you try to resize a partition by 6 MiB, this will not work.
-				</para>
-				<para>
-					You might also encounter this message if you have a device and partition table where the partitions are, for whatever reason, not correctly snapped to cylinder boundaries and you try to move or copy these partitions for the first time.
-				</para>
-				<para>
-					The message itself is harmless and only exists to inform the user that something can not be done quite exactly the way the user expects. Your partitions and data will not be negatively affected in any way if you see this message.
-				</para>
+				<para
+>MS-DOS disk bölümü tablolarında, bölümlerin silindir sınırlarında başlaması ve bitmesi gerekir. Bu esas olarak tarihsel nedenlerden kaynaklanmaktadır. &partman;, bununla içsel olarak ilgilenecek ve kullanıcıyı bu sınırlama ile rahatsız etmemeye çalışacaktır. </para>
+				<para
+>Nadir durumlarda, &partman;; ancak bu sınırlama nedeniyle kullanıcının istediği şekilde bir işlem ayarlayamayacaktır. Örneğin, bir aygıttaki bir silindir 8 MiB büyüklüğündeyse ve bir bölümü 6 MiB olarak yeniden boyutlandırmaya çalışırsanız bu işe yaramaz. </para>
+				<para
+>Ayrıca, bölümlerin herhangi bir nedenle silindir sınırlarına doğru şekilde oturtulmadığı bir aygıtınız ve bölüm tablonuz varsa ve bu bölümleri ilk kez taşımaya veya kopyalamaya çalışıyorsanız da bu iletiyle karşılaşabilirsiniz. </para>
+				<para
+>İletinin kendisi zararsızdır ve yalnızca kullanıcıya bir şeyin tam olarak kullanıcının beklediği şekilde yapılamayacağını bildirmek için vardır. Bu iletiyi görürseniz bölümleriniz ve verileriniz hiçbir şekilde olumsuz etkilenmeyecektir. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para>How many operations can I add to the list of pending operations?</para>
+				<para
+>Bekleyen işlemler listesine kaç tane işlem ekleyebilirim?</para>
 			</question>
 			<answer>
-				<para>
-					There is no limit.
-				</para>
-				<para>
-					It is however not recommended to add too many operations to the list. There is always a small chance an operation might fail with an error, in which case &partman; will stop executing operations. In that case it is a lot easier to find out what happened (and to re-add all the operations that could not be executed) if the list of pending operations was not exceedingly long.
-				</para>
+				<para
+>Herhangi bir sınır yoktur. </para>
+				<para
+>Ancak listeye çok fazla işlem eklenmesi önerilmez. Bir işlemin bir hatayla başarısız olma olasılığı her zaman vardır, bu durumda &partman; işlemleri yürütmeyi durduracaktır. Bu durumda, bekleyen işlemler listesi çok uzun değilse ne olduğunu bulmak (ve yürütülemeyen tüm işlemleri yeniden eklemek) çok daha kolaydır. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para>Resizing an ext2 or ext3 file system failed with something in the report about <quote>no space left on device</quote>. What happened? Is my data corrupted now?</para>
+				<para
+>Bir ext2 veya ext3 dosya sistemini yeniden boyutlandırma, rapordaki <quote
+>aygıtta yer kalmadı</quote
+> ile ilgili bir şey nedeniyle başarısız oldu. Ne oldu? Verilerim şimdi bozuldu mu?</para>
 			</question>
 			<answer>
-				<para>
-					This is a problem of the <command>e2resize</command> command and the underlying ext2/3/4 file system. If a file system is nearly full, <command>e2resize</command> cannot make it any smaller even though that should be possible from the number of free sectors left. &partman; can unfortunately not know beforehand if <command>e2resize</command> will abort with this error for a given file system or not. If it happens nothing will be done at all and your data will not be negatively affected.
-				</para>
-				<para>
-					There is no real workaround for this problem right now.
-				</para>
+				<para
+>Bu, <command
+>e2resize</command
+> komutu ve temeldeki ext2/3/4 dosya sistemi sorunudur. Bir dosya sistemi neredeyse doluysa, <command
+>e2resize</command
+> onu daha fazla küçültemez; ancak bu kalan boş sektör sayısı nedeniyle olanaklı olabilir. &partman;, <command
+>e2resize</command
+> ögesinin belirli bir dosya sistemi için bu hatayla iptal edilip edilmeyeceğini ne yazık ki önceden bilemez. Olursa hiçbir şey yapılmaz ve verileriniz olumsuz etkilenmez. </para>
+				<para
+>Şu anda bu sorun için gerçek bir geçici çözüm yok. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para>Why can't I format my floppy disk with &partman;? Why is there no support for CD writing or DVD burning?</para>
+				<para
+>Disketimi neden &partman; ile biçimlendiremiyorum? Neden CD yazma veya DVD yazma desteği yok?</para>
 			</question>
 			<answer>
-				<para>
-					None of this is what &partman; has been designed to do: It is an application that deals with partitions and the file systems on these partitions. Floppy disks, CDs or DVDs do not need or use partitions.
-				</para>
+				<para
+>Bunların hiçbiri, &partman; ile yapılmak için tasarlanmıştır: Bölümler ve bu bölümlerdeki dosya sistemleri ile ilgilenen bir uygulamadır. Disketler, CD'ler veya DVD'ler bölümlere gereksinim duymaz veya bunları kullanmaz. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para>Why can't I modify partitions on a device with an amiga or bsd partition table?</para>
+				<para
+>Neden bir Amiga veya BSD bölümleme tablosu olan bir aygıttaki disk bölümlerini değiştiremiyorum?</para>
 			</question>
 			<answer>
-				<para>
-					&partman; currently only allows read-only access to any other partition table type than MS-DOS. This is for safety reasons: Support in &partman; for this partition table types is not really there and what is there (or just incidentally works) has not been tested enough to use it with confidence.
-				</para>
-				<para>
-					Of course you can still create a new MS-DOS partition table on the device in question, but that is probably not what you want.
-				</para>
+				<para
+>&partman;, şu anda yalnızca MS-DOS dışındaki herhangi bir bölüm tablosu türüne saltokunur erişime izin vermektedir. Bu, güvenlik nedeniyledir: &partman;, bu bölüm tablosu türleri için destek henüz yoktur ve olanlar da (veya tesadüfen çalışanlar) onu güvenli bir biçimde kullanmak için yeterince sınanmamıştır. </para>
+				<para
+>Tabii ki yine de söz konusu aygıtta yeni bir MS-DOS bölümleme tablosu oluşturabilirsiniz; ancak büyük olasılıkla istediğiniz bu değildir. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para>On startup, &partman; hangs for a couple of minutes while it apparently tries to scan the floppy drive on my computer.</para>
+				<para
+>Başlangıçta &partman;, görünüşe göre bilgisayarımdaki disket sürücüsünü taramaya çalışırken birkaç dakika takılıyor.</para>
 			</question>
 			<answer>
-				<para>
-					This happens if you have a floppy drive configured in your computer's BIOS settings but have not actually connected one. If you do not have a floppy drive check your BIOS settings and disable any floppy drives configured there to see if this makes the problem go away.
-				</para>
+				<para
+>Bu, bilgisayarınızın BIOS ayarlarında yapılandırılmış bir disket sürücünüz varsa; ancak gerçekte bir tane bağlamadıysanız olur. Bir disket sürücünüz yoksa BIOS ayarlarınızı denetleyin ve sorunun çözülüp çözülmediğini görmek için burada yapılandırılmış tüm disket sürücülerini devre dışı bırakın. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
-				<para>During startup, &partman; prints some message about probing devices and that it might even crash or at least take a long time.</para>
+				<para
+>Başlatma sırasında &partman;, sonda aygıtları ve hatta çökebileceği veya en azından uzun zaman alabileceği hakkında bazı iletiler yazdırıyor.</para>
 			</question>
 			<answer>
-				<para>
-					LibParted, a backend library &partman; uses, has problems with systems where the Linux Device Mapper is used in a way it doesn't understand. Unfortunately it reacts to some of these situations with segmentation faults, i.e. crashes. &partman; therefore tries to avoid these situations by using an alternative way to scan your computer for disks. If it cannot do that, however, and therefore has to rely on LibParted, it will print a message like the one mentioned. If the scanning for disks works, you can safely disregard the message.
-				</para>
+				<para
+>&partman; uygulamasının kullandığı bir arka uç kitaplığı olan LibParted, Linux Aygıt Eşleyici'nin anlamadığı bir şekilde kullanıldığı sistemlerde sorun yaşar. Ne yazık ki bu durumların bazılarına bölütleme hatalarıyla, yani çökmelerle tepki verir. &partman; bu nedenle, bilgisayarınızı diskler için taramanın alternatif bir yolunu kullanarak bu durumlardan kaçınmaya çalışır. Ancak bunu yapamıyorsa ve bu nedenle LibParted'a güvenmek zorundaysa belirtilene benzer bir ileti yazdıracaktır. Disk taraması çalışırsa iletiyi güvenle göz ardı edebilirsiniz. </para>
 			</answer>
 		</qandaentry>
 <!--
 		<qandaentry>
 			<question>
-				<para></para>
+				<para
+></para>
 			</question>
-			<answer>
-				<para>
-				</para>
-			</answer>
+			 
 		</qandaentry>
 -->
 	</qandaset>

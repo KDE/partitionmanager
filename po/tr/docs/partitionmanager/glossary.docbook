@@ -1,272 +1,392 @@
 <glossary id="glossary">
 
 	<glossentry id="glossary-command">
-		<glossterm>Command</glossterm>
+		<glossterm
+>Komut</glossterm>
 		<glossdef>
-			<para>
-				In &partman; commands are what <link linkend="glossary-job">jobs</link> are made up of. These are very low level steps being taken, often executed by an external tool, and only visible in the detailed progress report.
-			</para>
-			<para>
-				The user normally does not have to bother with commands at all.
-			</para>
-			<glossseealso otherterm="glossary-operation"/>
-			<glossseealso otherterm="glossary-job"/>
-		</glossdef>
+			<para
+>&partman; uygulamasında, komutlar, <link linkend="glossary-job"
+>işler</link
+> tarafından yapılan şeylerdir. Bunlar atılan çok düşük düzeyli adımlardır, genellikle dış bir araç tarafından yürütülür ve yalnızca ayrıntılı ilerleme raporunda görünür. </para>
+			<para
+>Kullanıcı normalde komutlarla hiç uğraşmak zorunda değildir. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-job"
+></glossseealso
+> </glossdef>
 	</glossentry>
 	
 	<glossentry id="glossary-cylinder">
-		<glossterm>Cylinder</glossterm>
+		<glossterm
+>Silindir</glossterm>
 		<glossdef>
-			<para>
-				A unit used to divide up a <link linkend="glossary-device">device</link>. Some operating systems and many disk tools require <link linkend="glossary-partition">partitions</link> to begin and end on a cylinder. &partman; therefore automatically snaps partitions to cylinder boundaries when changing their start or end.
-			</para>
-			<glossseealso otherterm="glossary-head"/>
-			<glossseealso otherterm="glossary-sector"/>
-		</glossdef>
+			<para
+>Bir birim, <link linkend="glossary device"
+>bir aygıtı</link
+> bölmek için kullanılır. Bazı işletim sistemleri ve birçok disk aracı, bir silindirde başlayıp bitmek için <link linkend="glossary-partition"
+>bölümlere</link
+> ihtiyaç duyar. &partman; bu nedenle, başlangıç veya bitişlerini değiştirirken bölmeleri otomatik olarak silindir sınırlarına yaslar. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
 	</glossentry>
 	
 	<glossentry id="glossary-cylindersize">
-		<glossterm>Cylinder Size</glossterm>
+		<glossterm
+>Silindir Boyutu</glossterm>
 		<glossdef>
-			<para>
-				The number of <link linkend="glossary-sector">sectors</link> per <link linkend="glossary-cylinder">cylinder</link> on a <link linkend="glossary-device">device</link>. Calculated as the number of <link linkend="glossary-head">heads</link> multiplied by the number of <link linkend="glossary-sector">sectors</link> per track.
-			</para>
+			<para
+><link linkend="glossary-device"
+>Aygıt </link
+> üzerinde <link linkend="glossary-cylinder"
+>silindir</link
+> başına düşen <link linkend="glossary-sector"
+>sektörlerin</link
+> numarası. İz başına <link linkend="glossary-sector"
+>sektör</link
+> numaraları tarafından çarpılan <link linkend="glossary-head"
+>kafa</link
+> numaraları olarak hesaplanmıştır. </para>
 		</glossdef>
 	</glossentry>
 	
 	<glossentry id="glossary-device">
-		<glossterm>Device</glossterm>
+		<glossterm
+>Aygıt</glossterm>
 		<glossdef>
-			<para>
-				A physical disk device. Physical disk devices are divided into logical sections called <link linkend="glossary-partition">partitions</link> with the use of <link linkend="glossary-partitiontable">partition tables</link>.
-			</para>
+			<para
+>Fiziksel disk aygıtı. Fiziksel disk aygıtları,<link linkend="glossary-partitiontable"
+>disk bölüm tabloları</link
+> kullanımı ile <link linkend="glossary-partition"
+>disk bölümleri</link
+> olarak adlandırılan mantıksal bölümlere ayrılmıştır. </para>
 		</glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-disklabel">
-		<glossterm>Disk Label</glossterm>
+		<glossterm
+>Disk Etiketi</glossterm>
 		<glossdef>
-			<para>
-				Another name for a <link linkend="glossary-partitiontable">partition table</link> stemming from the SUN/BSD world.
-			</para>
+			<para
+>SUN/BSD dünyasından kaynaklanan bir <link linkend="glossary-partitiontable"
+>bölüm tablosu</link
+> için başka bir ad. </para>
 			<para>
 				<note>
-					<para>
-						They are easy to mix up, but a disk label has nothing to do with a <link linkend="glossary-filesystemlabel">file system label</link>.
-					</para>
-					<para>
-						See <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel">this Wikipedia entry</ulink> for details on the name.
-					</para>
+					<para
+>Karıştırması kolaydır; ancak bir disk etiketinin <link linkend="glossary-filesystemlabel"
+>dosya sistemi etiketi</link
+> ile hiçbir ilgisi yoktur. </para>
+					<para
+>Adla ilgili ayrıntılar için <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel"
+>bu Wikipedia girdisine</ulink
+> bakın. </para>
 				</note>
 			</para>
-			<glossseealso otherterm="glossary-partitiontable"/>
+			<glossseealso otherterm="glossary-partitiontable"
+></glossseealso>
 		</glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-extendedpartition">
-		<glossterm>Extended Partition</glossterm>
+		<glossterm
+>Genişletilmiş Disk Bölümü</glossterm>
 		<glossdef>
-			<para>
-				A <link linkend="glossary-partition">partition</link> that contains other partitions. Extended partitions can only be <link linkend="glossary-primarypartition">primary partitions</link> themselves. Whether extended partitions are available or not depends on the <link linkend="glossary-partitiontable">partition table</link> type used. MS-DOS partition tables allow one extended partition per <link linkend="glossary-device">device</link>.
-			</para>
-			<glossseealso otherterm="glossary-primarypartition"/>
-			<glossseealso otherterm="glossary-logicalpartition"/>
-		</glossdef>
+			<para
+>Bir <link linkend="glossary-partition"
+>disk bölümü</link
+> diğer disk bölümlerini içerir. Genişletilmiş disk bölümleri sadece kendilerine <link linkend="glossary-primarypartition"
+>birincil disk bölümleri</link
+> olabilirler. Genişletilmiş bölümlerin var olup olmaması, kullanılan <link linkend="glossary-partitiontable"
+>disk bölüm tablosu</link
+> türüne bağlıdır. MS-DOS disk bölüm tabloları her <link linkend="glossary-device"
+>aygıt</link
+> başına bir genişletilmiş bölüm sağlar. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-filesystem">
-		<glossterm>File System</glossterm>
+		<glossterm
+>Dosya Sistemi</glossterm>
 		<glossdef>
-			<para>
-				A file system defines how the storage of data (files with their metadata, folders and their metadata, free space) is organized within a <link linkend="glossary-partition">partition</link>. There are various different types of file systems, some coming originally from the Unix/Linux world, some not. Examples for commonly used file systems on Unix/Linux are Btrfs, ext4 and XFS.
-			</para>
+			<para
+>Bir dosya sistemi, verilerin (üst verilerle dosyalar, klasörler ve üst veriyi, boş alan) bir <link linkend="glossary-partition"
+>bölüm</link
+> içinde nasıl düzenlendiğini tanımlar. Bazıları özgün olarak Unix/Linux dünyasından gelen, bazıları olmayan çeşitli dosya sistemi türleri vardır. Unix/Linux'ta yaygın olarak kullanılan dosya sistemlerine örnek olarak Btrfs, ext4 ve XFS verilebilir. </para>
 		</glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-filesystemlabel">
-		<glossterm>File System Label</glossterm>
+		<glossterm
+>Dosya Sistem Etiketi</glossterm>
 		<glossdef>
-			<para>
-				A title of a file system. Some file systems (among them Btrfs, ext2/3/4, FAT16/32 and NTFS) support setting a label for the file system so it can be identified in tools like &partman; or other applications.
-			</para>
+			<para
+>Bir dosya sisteminin başlığı. Bazı dosya sistemleri (aralarında Btrfs, ext2/3/4, FAT16/32 ve NTFS), &partman; gibi veya diğer uygulamalarda tanımlanabilmesi için dosya sistemi için bir etiket belirlemeyi destekler. </para>
 			<para>
 				<note>
-					<para>They are easy to mix up, but a file system label has nothing to do with a <link linkend="glossary-disklabel">disk label</link>.</para>
+					<para
+>Karıştırması kolaydır; ancak bir dosya sistemi etiketinin <link linkend="glossary-disklabel"
+>disk etiketi</link
+> ile hiçbir ilgisi yoktur.</para>
 				</note>
 			</para>
 		</glossdef>
 	</glossentry>
 	
 	<glossentry id="glossary-flag">
-		<glossterm>Flag</glossterm>
+		<glossterm
+>Bayrak</glossterm>
 		<glosssee otherterm="glossary-partitionflag"/>
 	</glossentry>
 	
 	<glossentry>
-		<glossterm>GPT</glossterm>
+		<glossterm
+>GPT</glossterm>
 		<glossdef>
-			<para>A modern partition table format supported by most modern computers and operating systems. It supports more than 4 <link linkend="glossary-primarypartition">primary partitions</link> unlike older MS-DOS partition table.
-			</para>
+			<para
+>Çoğu çağdaş bilgisayar ve işletim sistemi tarafından desteklenen çağdaş bir bölüm tablosu biçimi. Eski MS-DOS bölüm tablosunun aksine 4'ten fazla <link linkend="glossary-primarypartition"
+>birincil bölümü</link
+> destekler. </para>
 		</glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-head">
-		<glossterm>Head</glossterm>
+		<glossterm
+>Kafa</glossterm>
 		<glossdef>
-			<para>
-				A unit used to divide up a <link linkend="glossary-device">device</link>.
-			</para>
-			<glossseealso otherterm="glossary-cylinder"/>
-			<glossseealso otherterm="glossary-sector"/>
-		</glossdef>
+			<para
+>Bir <link linkend="glossary-device"
+>aygıtı</link
+> bölmek için kullanılan birim. </para
+><glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-job">
-		<glossterm>Job</glossterm>
+		<glossterm
+>İş</glossterm>
 		<glossdef>
-			<para>
-				In &partman; a number of jobs is what <link linkend="glossary-operation">operations</link> are made up of. You normally do not have to bother with jobs at all; it only becomes apparent when applying the list of pending operations: &partman; will then show a progress dialog that is made up of all operations and their jobs and show which operation and which job is currently being executed.
-			</para>
-			<glossseealso otherterm="glossary-operation"/>
-			<glossseealso otherterm="glossary-command"/>
-		</glossdef>
+			<para
+>&partman; uygulamasında,<link linkend="glossary-operation"
+>işlemler</link
+> birkaç işten oluşur. Normalde işlerle hiç uğraşmanıza gerek yoktur; yalnızca bekleyen işlemler listesi uygulanırken görünür hale gelir: &partman; daha sonra tüm işlemlerden ve bunların işlerinden oluşan bir ilerleme iletişim kutusu gösterecek ve şu anda hangi işlemin ve hangi işin yürütülmekte olduğunu gösterecektir. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-label">
-		<glossterm>Label</glossterm>
+		<glossterm
+>Etiket</glossterm>
 		<glossdef>
-			<para>
-				Either a <link linkend="glossary-disklabel">disk label</link> or a <link linkend="glossary-filesystemlabel">file system label</link>.
-			</para>
-			<glossseealso otherterm="glossary-disklabel"/>
-			<glossseealso otherterm="glossary-filesystemlabel"/>
-		</glossdef>
+			<para
+>Bir <link linkend="glossary-disklabel"
+>disk etiketi</link
+> veya bir <link linkend="glossary-filesystemlabel"
+>dosya sistemi etiketi</link
+>. </para
+><glossseealso otherterm="glossary-disklabel"
+></glossseealso
+> <glossseealso otherterm="glossary-filesystemlabel"
+></glossseealso
+> </glossdef>
 	</glossentry>
 	
 	<glossentry id="glossary-logicalpartition">
-		<glossterm>Logical Partition</glossterm>
+		<glossterm
+>Mantıksal Disk Bölümü</glossterm>
 		<glossdef>
-			<para>
-				A <link linkend="glossary-partition">partition</link> inside an <link linkend="glossary-extendedpartition">extended partition</link>.
-			</para>
-			<glossseealso otherterm="glossary-primarypartition"/>
-			<glossseealso otherterm="glossary-extendedpartition"/>
-		</glossdef>
+			<para
+>Bir <link linkend="glossary-partition"
+>genişletilmiş bölüm</link
+> içinde bir <link linkend="glossary-partition"
+>bölüm</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> </glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-luks">
-		<glossterm>LUKS</glossterm>
+		<glossterm
+>LUKS</glossterm>
 		<glossdef>
-			<para>Linux Unified Key Setup is the standard encryption format for Linux.
-			</para>
+			<para
+>Linux Unified Key Setup, Linux için standart şifreleme biçimidir. </para>
 		</glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-lvm">
-		<glossterm>LVM</glossterm>
+		<glossterm
+>LVM</glossterm>
 		<glossdef>
-			<para>LVM is a system for managing logical partitions that is more flexible than normal partitions. It consists of three main components:</para>
+			<para
+>LVM, normal bölümlerden daha esnek olan mantıksal bölümleri yönetmek için bir sistemdir. Üç ana bileşenden oluşur:</para>
 			<simplelist>
-			<member>LVM physical volumes are partitions on the disk whose space is managed by LVM.</member>
-			<member>LVM volume group is a collection of LVM physical volumes that can be partitioned into logical partitions. It might be used to create file systems spanning over multiple devices or to split encrypted <link linkend="glossary-luks">LUKS</link> volume into smaller partitions.</member>
-			<member>LVM logical volumes are similar to normal partitions except that they reside on LVM volume group. Also, the location of LVM logical partitions does not matter and they do not have to be physically contiguous. Therefore, &partman; does not allow to move LVM logical volumes and displays the remaining free space at the end of the device.</member>
+			<member
+>LVM fiziksel birimleri, alanı LVM tarafından yönetilen diskteki bölümlerdir.</member>
+			<member
+>LVM birim grubu, mantıksal bölümlere ayrılabilen bir LVM fiziksel birimler koleksiyonudur. Birden fazla aygıta yayılan dosya sistemleri oluşturmak veya şifrelenmiş <link linkend="glossary-luks"
+>LUKS</link
+> birimini daha küçük bölümlere ayırmak için kullanılabilir.</member>
+			<member
+>LVM mantıksal birimleri, LVM birim grubunda bulunmaları dışında normal bölümlere benzer. Ayrıca, LVM mantıksal bölümlerinin konumu önemli değildir ve fiziksel olarak bitişik olmaları gerekmez. Bu nedenle &partman; LVM mantıksal birimlerinin taşınmasına izin vermez ve aygıtın sonunda kalan boş alanı görüntüler.</member>
 			</simplelist>
 		</glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-operation">
-		<glossterm>Operation</glossterm>
+		<glossterm
+>İşlem</glossterm>
 		<glossdef>
-			<para>
-				&partman; divides the work it does up in operations, <link linkend="glossary-job">jobs</link> and <link linkend="glossary-command">commands</link>.
-			</para>
-			<para>
-				Operations are the most visible of the three. If you pick an action in the graphical user interface, this will likely result in a new operation being added to the list of pending operations. The idea behind that is: You will most probably want to set up quite a number of steps to transform the current state of your disk devices to the state you have in mind. Some of these steps may take quite a long time to execute (like copying a large file system or resizing a file system that is nearly full). To save you from having to sit in front of your computer for a long time waiting for one step to finish and then starting the next one, operations allow you to exactly specify how the computer's devices should look like once everything is finished, then let &partman; apply the operations and come back when it has executed all of them.
-			</para>
-			<para>
-				Operations are kept in a list of pending operations. As long as an operation has not been applied it can still be <link linkend="menu-edit-undo">taken back easily</link> and nothing will have been modified.
-			</para>
-			<glossseealso otherterm="glossary-job"/>
-			<glossseealso otherterm="glossary-command"/>
-		</glossdef>
+			<para
+>&partman;, işini işlemlere, <link linkend="glossary-job"
+>işlere</link
+> ve <link linkend="glossary-command"
+>komutlara</link
+> ayırır. </para>
+			<para
+>İşlemler, üçü arasında en görünür olanıdır. Grafik kullanıcı arabiriminde bir eylem seçerseniz bu büyük olasılıkla bekleyen işlemler listesine yeni bir işlemin eklenmesiyle sonuçlanacaktır. Bunun arkasındaki fikir şudur: Büyük olasılıkla, disk aygıtlarınızın geçerli durumunu aklınızdaki duruma dönüştürmek için epeyce adım ayarlamak isteyeceksiniz. Bu adımlardan bazılarının yürütülmesi oldukça uzun zaman alabilir (büyük bir dosya sistemini kopyalamak veya neredeyse dolu olan bir dosya sistemini yeniden boyutlandırmak gibi). Sizi uzun süre bilgisayarınızın başında oturup bir adımın bitmesini bekleyip bir sonraki adıma geçmek zorunda kalmaktan kurtarmak için işlemler, her şey bittiğinde bilgisayarın aygıtlarının nasıl görüneceğini tam olarak belirlemenize olanak tanır, ardından &partman; uygulamasının işlemleri uygulamasına izin verin ; işlemleri uygulayın ve hepsini yürüttüğünde geri gelin. </para>
+			<para
+>İşlemler, bekleyen işlemler listesinde tutulur. Bir işlem uygulanmadığı sürece <link linkend="menu-edit-undo"
+>kolaylıkla geri alınabilir</link
+> ve hiçbir şey değiştirilmemiş olur. </para
+><glossseealso otherterm="glossary-job"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-partition">
-		<glossterm>Partition</glossterm>
+		<glossterm
+>Disk Bölümü</glossterm>
 		<glossdef>
-			<para>
-				A section of a <link linkend="glossary-device">hard disk device</link> that can hold a <link linkend="glossary-filesystem">file system</link> or other partitions. Without at least one valid partition, a disk can not be used.
-			</para>
-			<glossseealso otherterm="glossary-device"/>
-			<glossseealso otherterm="glossary-partitiontable"/>
-			<glossseealso otherterm="glossary-primarypartition"/>
-			<glossseealso otherterm="glossary-extendedpartition"/>
-			<glossseealso otherterm="glossary-logicalpartition"/>
-		</glossdef>
+			<para
+>Bir <link linkend="glossary-device"
+>sabit disk aygıtının</link
+> bir <link linkend="glossary-filesystem"
+>dosya sistemini</link
+> veya diğer bölümleri tutabilen bölümü. En az bir geçerli bölüm olmadan disk kullanılamaz. </para
+><glossseealso otherterm="glossary-device"
+></glossseealso
+> <glossseealso otherterm="glossary-partitiontable"
+></glossseealso
+> <glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-partitionflag">
-		<glossterm>Partition Flag</glossterm>
+		<glossterm
+>Disk Bölümü Bayrağı</glossterm>
 		<glossdef>
-			<para>
-				A marker for a <link linkend="glossary-partition">partition</link>. The availability of these flags depends on the type of <link linkend="glossary-partitiontable">partition table</link> used.
-			</para>
+			<para
+>Bir <link linkend="glossary-partition"
+>bölüm</link
+> için imleyici. Bu bayrakların kullanılabilirliği, kullanılan <link linked="glossary-partitiontable"
+>bölüm tablosu</link
+> türüne bağlıdır. </para>
 		</glossdef>
 	</glossentry>
 	
 	<glossentry id="glossary-partitiontable">
-		<glossterm>Partition Table</glossterm>
+		<glossterm
+>Disk Bölümü Tablosu</glossterm>
 		<glossdef>
-			<para>
-				A small section at the beginning of a <link linkend="glossary-device">device</link> used to store information about the layout of the device's <link linkend="glossary-partition">partitions</link>. There are different types of partition tables, each with their own limitations.
-			</para>
-			<para>
-				Sometimes also referred to as <quote>disk label</quote>.
-			</para>
+			<para
+>Bir <link linkend="glossary-device"
+>aygıtın</link
+> başındaki küçük bir bölüm, aygıtın <link linkend="glossary-partition"
+>bölümlerinin</link
+> düzeni hakkında bilgi depolamak için kullanılır. Her biri kendi sınırlamalarına sahip farklı türde bölüm tabloları vardır. </para>
+			<para
+>Bazen de <quote
+>disk etiketi</quote
+> olarak söz edilir. </para>
 		</glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-primarypartition">
-		<glossterm>Primary Partition</glossterm>
+		<glossterm
+>Birincil Disk Bölümü</glossterm>
 		<glossdef>
-			<para>
-				A <link linkend="glossary-partition">partition</link> directly inside a <link linkend="glossary-partitiontable">partition table</link>, as opposed to <link linkend="glossary-logicalpartition">logical partitions</link>, which are in <link linkend="glossary-extendedpartition">extended partitions</link>.
-			</para>
-			<para>
-				<link linkend="glossary-partitiontable">Partition tables</link> usually impose restrictions on the maximum number of primary partitions that can be created on a <link linkend="glossary-device">device</link>. For MS-DOS type partition tables, for example, this maximum number is four.
-			</para>
-			<glossseealso otherterm="glossary-extendedpartition"/>
-			<glossseealso otherterm="glossary-logicalpartition"/>
-		</glossdef>
+			<para
+><link linkend="glossary-extendedpartition"
+>Genişletilmiş disk bölümlerinde</link
+> <link linkend="glossary-logicalpartition"
+>mantıksal disk bölümlerinin</link
+> aksine bir <link linkend="glossary-partitiontable"
+>disk bölüm tablosu</link
+> içinde doğrudan bir <link linkend="glossary-partition"
+>disk bölümü</link
+>dür. </para>
+			<para
+><link linkend="glossary-partitiontable"
+>Disk bölümü tabloları</link
+> genellikle bir <link linkend="glossary-device"
+>aygıt</link
+> üzerinde oluşturulabilen birincil disk bölümlerinde en çok sayıda kısıtlamaları dayatır. MS-DOS disk bölümü tablo türleri için; örneğin, en büyük sayı 4'tür. </para
+><glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
 	</glossentry>
 
 	<glossentry id="glossary-sector">
-		<glossterm>Sector</glossterm>
+		<glossterm
+>Sektör</glossterm>
 		<glossdef>
-			<para>
-				A unit used to divide up a <link linkend="glossary-device">device</link>. <link linkend="glossary-partition">Partitions</link> must always begin and end on a sector.
-			</para>
-			<glossseealso otherterm="glossary-head"/>
-			<glossseealso otherterm="glossary-cylinder"/>
-		</glossdef>
+			<para
+>Bir <link linkend="glossary-device"
+>aygıtı</link
+> bölmek için kullanılan birim. <link linkend="glossary-partition"
+>Disk bölümleri</link
+>, her zaman bir sektörde başlamalı ve bitmelidir. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> </glossdef>
 	</glossentry>
 	
 	<glossentry id="glossary-sectorsize">
-		<glossterm>Sector Size</glossterm>
+		<glossterm
+>Sektör Boyutu</glossterm>
 		<glossdef>
-			<para>
-				The number of bytes per <link linkend="glossary-sector">sector</link> on a <link linkend="glossary-device">device</link>. The sector size of most devices in use today is 512 bytes.
-			</para>
+			<para
+>Bir <link linkend="glossary-device"
+>aygıt</link
+> üzerindeki <link linkend="glossary-sector"
+>sektör</link
+> başına bayt sayısı. Günümüzde kullanılan çoğu aygıtın sektör boyutu 512 bayttır. </para>
 		</glossdef>
 	</glossentry>
 	
 	<!--
 		<glossentry>
-			<glossterm></glossterm>
-			<glossdef>
-				<para>
-				</para>
-			</glossdef>
+			<glossterm
+></glossterm>
+			 
 		</glossentry>
 		-->
 
