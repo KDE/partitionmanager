@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2023-02-07 21:24+0300\n"
+"PO-Revision-Date: 2023-03-21 15:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -720,7 +720,7 @@ msgstr "(bilinmeyen)"
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "LVM Volume Group"
-msgstr "LVM Birim Grubu"
+msgstr "LVM Disk Bölümü Grubu"
 
 #: gui/devicepropsdialog.cpp:125
 #, kde-kuit-format
@@ -732,7 +732,7 @@ msgstr "Yazılım RAID Aygıtı"
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Volume Manager Device"
-msgstr "Birim Yöneticisi Aygıtı"
+msgstr "Disk Bölümü Yöneticisi Aygıtı"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
 #: gui/devicepropswidgetbase.ui:63
@@ -1249,7 +1249,7 @@ msgstr "Birinciller/Azami:"
 #, kde-format
 msgctxt "@label device"
 msgid "Volume Type:"
-msgstr "Birim Türü:"
+msgstr "Disk Bölümü Türü:"
 
 #: gui/infopane.cpp:186
 #, kde-format
@@ -1461,25 +1461,25 @@ msgstr "Bir disk bölümü tablosunu, bir metin dosyasından içe aktar."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
-msgstr "Birim Grubunu Kaldır"
+msgstr "Disk Bölümü Grubunu Kaldır"
 
 #: gui/mainwindow.cpp:329
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
-msgstr "Seçili Birim Grubunu kaldır"
+msgstr "Seçili Disk Bölümü Grubu'nu kaldır"
 
 #: gui/mainwindow.cpp:330
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
-msgstr "Seçili Birim Grubunu kaldır."
+msgstr "Seçili Disk Bölümü Grubu'nu kaldırın."
 
 #: gui/mainwindow.cpp:338
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
-msgstr "Birim Grubunu Boyutlandır"
+msgstr "Disk Bölümü Grubunu Boyutlandır"
 
 #: gui/mainwindow.cpp:339
 #, kde-format
@@ -1491,13 +1491,13 @@ msgstr "Seçilen Birim Grubunu boyutlandır"
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
-msgstr "Seçili Birim Grubunu genişlet veya daralt."
+msgstr "Seçili Disk Bölümü Grubu'nu genişletin veya daraltın."
 
 #: gui/mainwindow.cpp:348
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
-msgstr "Birim Grubunu Devre Dışı Bırak"
+msgstr "Disk Bölümü Grubu'nu Devre Dışı Bırak"
 
 #: gui/mainwindow.cpp:349
 #, kde-format
@@ -1510,8 +1510,8 @@ msgstr "Seçilen Birim Grubunu Devre Dışı Bırak"
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr ""
-"Çıkarılabilir aygıtların çıkarmadan önce seçili Birim Grubu'nu devre dışı "
-"bırak."
+"Çıkarılabilir aygıtların çıkarmadan önce seçili Disk Bölümü Grubu'nu devre "
+"dışı bırakın."
 
 #: gui/mainwindow.cpp:356
 #, kde-kuit-format
@@ -1791,13 +1791,13 @@ msgstr "Yeni Bölüm Grubu"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
-msgstr "Yeni bir LVM Birim Grubu oluşturun"
+msgstr "Yeni bir LVM Disk Bölümü Grubu oluştur"
 
 #: gui/mainwindow.cpp:482
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
-msgstr "Bir aygıt olarak yeni bir LVM Birim Grubu oluşturun."
+msgstr "Bir aygıt olarak yeni bir LVM Disk Bölümü Grubu oluşturun."
 
 #: gui/mainwindow.cpp:488
 #, kde-kuit-format
@@ -2863,7 +2863,7 @@ msgstr "Geçersiz parola. "
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize Volume Group"
-msgstr "Birim Grubunu Boyutlandır"
+msgstr "Disk Bölümü Grubu'nu Boyutlandır"
 
 #: gui/scanprogressdialog.cpp:17
 #, kde-kuit-format
@@ -2949,7 +2949,7 @@ msgstr "LUKS ile şifrele"
 #: gui/sizedialogwidgetbase.ui:111
 #, kde-format
 msgid "Logical Volume Name:"
-msgstr "Mantıksal Birim Adı:"
+msgstr "Mantıksal Disk Bölümü Adı:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/sizedialogwidgetbase.ui:128
@@ -3253,7 +3253,7 @@ msgstr "İleti"
 #: gui/volumegroupwidgetbase.ui:34
 #, kde-format
 msgid "Volume Group Name: "
-msgstr "Birim Grubu Adı: "
+msgstr "Disk Bölümü Grubu Adı: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
 #: gui/volumegroupwidgetbase.ui:47
@@ -3287,7 +3287,7 @@ msgstr "Toplam LV: "
 #: gui/volumegroupwidgetbase.ui:130
 #, kde-format
 msgid "Volume Group Type: "
-msgstr "Birim Grubu Türü: "
+msgstr "Disk Bölümü Grubu Türü: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
 #: gui/volumegroupwidgetbase.ui:140
@@ -3299,7 +3299,7 @@ msgstr "Toplam Boyut: "
 #: gui/volumegroupwidgetbase.ui:153
 #, kde-format
 msgid "Total Sectors: "
-msgstr "Toplam Dilim Sayısı: "
+msgstr "Toplam Dilimler: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
 #: gui/volumegroupwidgetbase.ui:186
