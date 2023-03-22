@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-12 00:49+0000\n"
-"PO-Revision-Date: 2023-03-12 12:12+0300\n"
+"PO-Revision-Date: 2023-03-21 15:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -215,7 +215,7 @@ msgstr "FAT16:"
 #: config/configurepagefilesystemcolors.ui:197
 #, kde-format
 msgid "extended:"
-msgstr "uzatılmış:"
+msgstr "genişletilmiş:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_33)
 #: config/configurepagefilesystemcolors.ui:210
@@ -377,19 +377,19 @@ msgstr "          Minix:"
 #: config/configurepagegeneral.ui:28
 #, kde-format
 msgid "Partition Alignment"
-msgstr "Bölüm Yerleşimi"
+msgstr "Bölüntü Hizası"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
 #: config/configurepagegeneral.ui:34
 #, kde-format
 msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr "Silindir tabanlı yerleşim kullan (Windows XP uyumlu)"
+msgstr "Silindir tabanlı hizalama kullan (Windows XP uyumlu)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
 #, kde-format
 msgid "Sector alignment:"
-msgstr "Sektör yerleşimi:"
+msgstr "Dilim yerleşimi:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
@@ -616,13 +616,13 @@ msgstr "Toplam: %p%"
 msgctxt "@title:window"
 msgid "Create a New Partition Table on <filename>%1</filename>"
 msgstr ""
-"<filename>%1</filename> üzerinde yeni bir disk bölümü tablosu oluşturulamadı"
+"<filename>%1</filename> üzerinde yeni bir bölüntü tablosu oluşturulamadı"
 
 #: gui/createpartitiontabledialog.cpp:34
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create &New Partition Table"
-msgstr "&Yeni Disk Bölümü Tablosu Oluştur"
+msgstr "&Yeni Bölüntü Tablosu Oluştur"
 
 #: gui/createpartitiontabledialog.cpp:59
 #, kde-kuit-format
@@ -633,16 +633,16 @@ msgid ""
 "the most the MS-Dos partition table type supports, so you will not be able "
 "to use the whole device.</para>"
 msgstr ""
-"<para>Gerçekten <filename>%1</filename> üzerinde bir MS-DOS bölümü tablosu "
+"<para>Gerçekten <filename>%1</filename> üzerinde bir MS-DOS bölüntü tablosu "
 "oluşturmak istiyor musunuz?</para><para>Bu aygıt üzerinde 2^32'den fazla "
-"sektör var. Bu MS-DOS bölümü tablosu türünün desteğinin üst sınırı "
+"dilim var. Bu MS-DOS bölüntü tablosu türünün desteğinin üst sınırı "
 "olduğundan bütün aygıtı kullanamayacaksınız.</para>"
 
 #: gui/createpartitiontabledialog.cpp:61
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Create MS-Dos Partition Table Type?"
-msgstr "Gerçekten MS-DOS Disk Bölümü Tablosu Oluşturulsun mu?"
+msgstr "MS-DOS Bölüntü Tablosu Gerçekten Oluşturulsun mu?"
 
 #: gui/createpartitiontabledialog.cpp:62
 #, kde-kuit-format
@@ -654,7 +654,7 @@ msgstr "MS-Dos Türü Oluştur"
 #: gui/createpartitiontablewidgetbase.ui:24
 #, kde-format
 msgid "Choose the type of partition table you want to create:"
-msgstr "Oluşturmak istediğiniz disk bölümü tablosunun türünü seçin:"
+msgstr "Oluşturmak istediğiniz bölüntü tablosu türünü seçin:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
 #: gui/createpartitiontablewidgetbase.ui:33
@@ -684,7 +684,7 @@ msgstr "<b>Uyarı:</b> Bu işlem, aygıt üzerindeki tüm verileri yok eder!"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create new Volume Group"
-msgstr "Yeni Bölüm Grubu Oluştur"
+msgstr "Yeni Disk Bölümü Grubu Oluştur"
 
 #: gui/devicepropsdialog.cpp:42
 #, kde-kuit-format
@@ -720,7 +720,7 @@ msgstr "(bilinmeyen)"
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "LVM Volume Group"
-msgstr "LVM Birim Grubu"
+msgstr "LVM Disk Bölümü Grubu"
 
 #: gui/devicepropsdialog.cpp:125
 #, kde-kuit-format
@@ -732,13 +732,13 @@ msgstr "Yazılım RAID Aygıtı"
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Volume Manager Device"
-msgstr "Birim Yöneticisi Aygıtı"
+msgstr "Disk Bölümü Yöneticisi Aygıtı"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
 #: gui/devicepropswidgetbase.ui:63
 #, kde-format
 msgid "Partition table:"
-msgstr "Disk bölümü tablosu:"
+msgstr "Bölüntü tablosu:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
 #: gui/devicepropswidgetbase.ui:85
@@ -750,7 +750,7 @@ msgstr "&Silindir yerleşimi"
 #: gui/devicepropswidgetbase.ui:92
 #, kde-format
 msgid "Sector based align&ment"
-msgstr "Sektör tabanlı yerleşim"
+msgstr "Dilim tabanlı yerleşim"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/devicepropswidgetbase.ui:121
@@ -837,7 +837,7 @@ msgid ""
 msgstr ""
 "<para>Sistem tablo dosyası <filename>/etc/fstab</filename> yaptığınız "
 "değişiklikleri kaydetmek istediğinizden emin misiniz ?</"
-"para><para><warning>Bu, sabit sürücünüzde varolan dosyanın üzerine "
+"para><para><warning>Bu, sabit sürücünüzde var olan dosyanın üzerine "
 "yazacaktır. Bu işlem, <emphasis strong='1'>geri alınamaz</emphasis>.</"
 "warning></para>"
 
@@ -1099,7 +1099,7 @@ msgstr "Bilgiler"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition Information"
-msgstr "Disk Bölümü Bilgileri"
+msgstr "Bölüntü Bilgisi"
 
 #: gui/infopane.cpp:113 gui/infopane.cpp:127 gui/infopane.cpp:139
 #, kde-format, kde-kuit-format
@@ -1147,19 +1147,19 @@ msgstr "Yük iptali:"
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "First sector:"
-msgstr "İlk sektör:"
+msgstr "İlk dilim:"
 
 #: gui/infopane.cpp:121 gui/infopane.cpp:136 gui/infopane.cpp:144
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Last sector:"
-msgstr "Son sektör:"
+msgstr "Son dilim:"
 
 #: gui/infopane.cpp:122 gui/infopane.cpp:137 gui/infopane.cpp:145
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Number of sectors:"
-msgstr "Sektör sayısı:"
+msgstr "Dilim sayısı:"
 
 #: gui/infopane.cpp:129 gui/infopane.cpp:141
 #, kde-format, kde-kuit-format
@@ -1231,13 +1231,13 @@ msgstr "Toplam dilim sayısı:"
 #, kde-format
 msgctxt "@label device"
 msgid "Logical sector size:"
-msgstr "Mantıksal sektör boyutu:"
+msgstr "Mantıksal dilim boyutu:"
 
 #: gui/infopane.cpp:180
 #, kde-format
 msgctxt "@label device"
 msgid "Physical sector size:"
-msgstr "Fiziksel sektör boyutu:"
+msgstr "Fiziksel dilim boyutu:"
 
 #: gui/infopane.cpp:181
 #, kde-format
@@ -1249,7 +1249,7 @@ msgstr "Birinciller/Azami:"
 #, kde-format
 msgctxt "@label device"
 msgid "Volume Type:"
-msgstr "Birim Türü:"
+msgstr "Disk Bölümü Türü:"
 
 #: gui/infopane.cpp:186
 #, kde-format
@@ -1303,7 +1303,7 @@ msgstr "Dizilim Boyutu:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Insert a partition"
-msgstr "Bir disk bölümü ekle"
+msgstr "Bir bölüntü ekle"
 
 #: gui/listphysicalvolumes.cpp:39
 #, kde-kuit-format
@@ -1318,8 +1318,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
-"Bölümlendirme Yöneticisi'nin çalışması için ayrıcalıklar gerekir. Lütfen "
-"aygıtları yenileyin ve istendiğinde kimliğinizi doğrulayın."
+"Bölüntü Yöneticisi'nin çalışması için ayrıcalıklar gerekir. Lütfen aygıtları "
+"yenileyin ve istendiğinde kimliğinizi doğrulayın."
 
 #: gui/mainwindow.cpp:231
 #, kde-kuit-format
@@ -1383,7 +1383,7 @@ msgstr "Tüm işlemleri temizle"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
-msgstr "Bekleyen işlemler listesini temizle."
+msgstr "Bekleyen işlemler listesini temizleyin."
 
 #: gui/mainwindow.cpp:293
 #, kde-kuit-format
@@ -1401,117 +1401,117 @@ msgstr "Tüm işlemleri uygula"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
-msgstr "Listedeki tüm işlemleri uygula."
+msgstr "Listedeki tüm işlemleri uygulayın."
 
 #: gui/mainwindow.cpp:302
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
-msgstr "Yeni Disk Bölümü Tablosu"
+msgstr "Yeni Bölüntü Tablosu"
 
 #: gui/mainwindow.cpp:303
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
-msgstr "Yeni disk bölümü tablosu oluştur"
+msgstr "Yeni bir bölüntü tablosu oluştur"
 
 #: gui/mainwindow.cpp:304
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
-msgstr "Bir aygıt üzerinde boş bir disk bölümü tablosu oluştur."
+msgstr "Bir aygıt üzerinde boş bir bölüntü tablosu oluşturun."
 
 #: gui/mainwindow.cpp:311
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
-msgstr "Bölüm Tablosunu Dışa Aktar"
+msgstr "Bölüntü Tablosunu Dışa Aktar"
 
 #: gui/mainwindow.cpp:312
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
-msgstr "Bir bölüm tablosunu dışa aktar"
+msgstr "Bir bölüntü tablosunu dışa aktar"
 
 #: gui/mainwindow.cpp:313
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
-msgstr "Disk bölüm tablosunu bir metin dosyasına aktar."
+msgstr "Bölüntü tablosunu bir metin dosyasına dışa aktarın."
 
 #: gui/mainwindow.cpp:319
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
-msgstr "Bölüm Tablosu İçe Aktar"
+msgstr "Bölüntü Tablosu İçe Aktar"
 
 #: gui/mainwindow.cpp:320
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
-msgstr "Bir disk bölümü tablosunu içe aktar"
+msgstr "Bir bölüntü tablosunu içe aktar"
 
 #: gui/mainwindow.cpp:321
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
-msgstr "Bir disk bölümü tablosunu, bir metin dosyasından içe aktar."
+msgstr "Bir bölüntü tablosunu, bir metin dosyasından içe aktarın."
 
 #: gui/mainwindow.cpp:328
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
-msgstr "Birim Grubunu Kaldır"
+msgstr "Disk Bölümü Grubunu Kaldır"
 
 #: gui/mainwindow.cpp:329
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
-msgstr "Seçili Birim Grubunu kaldır"
+msgstr "Seçili Disk Bölümü Grubu'nu kaldır"
 
 #: gui/mainwindow.cpp:330
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
-msgstr "Seçili Birim Grubunu kaldır."
+msgstr "Seçili Disk Bölümü Grubu'nu kaldırın."
 
 #: gui/mainwindow.cpp:338
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
-msgstr "Birim Grubunu Boyutlandır"
+msgstr "Disk Bölümü Grubunu Boyutlandır"
 
 #: gui/mainwindow.cpp:339
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
-msgstr "Seçilen Birim Grubunu boyutlandır"
+msgstr "Seçili Disk Bölümü Grubu'nu boyutlandır"
 
 #: gui/mainwindow.cpp:340
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
-msgstr "Seçili Birim Grubunu genişlet veya daralt."
+msgstr "Seçili Disk Bölümü Grubu'nu genişletin veya daraltın."
 
 #: gui/mainwindow.cpp:348
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
-msgstr "Birim Grubunu Devre Dışı Bırak"
+msgstr "Disk Bölümü Grubu'nu Devre Dışı Bırak"
 
 #: gui/mainwindow.cpp:349
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
-msgstr "Seçilen Birim Grubunu Devre Dışı Bırak"
+msgstr "Seçili Disk Bölümü Grubu'nu devre dışı bırak"
 
 #: gui/mainwindow.cpp:350
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr ""
-"Çıkarılabilir aygıtların çıkarmadan önce seçili Birim Grubu'nu devre dışı "
-"bırak."
+"Çıkarılabilir aygıtların çıkarmadan önce seçili Disk Bölümü Grubu'nu devre "
+"dışı bırakın."
 
 #: gui/mainwindow.cpp:356
 #, kde-kuit-format
@@ -1559,13 +1559,13 @@ msgstr "Yeni"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
-msgstr "Yeni disk bölümü"
+msgstr "Yeni bölüntü"
 
 #: gui/mainwindow.cpp:374
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
-msgstr "Yeni bir disk bölümü oluştur."
+msgstr "Yeni bir bölüntü oluştur."
 
 #: gui/mainwindow.cpp:381
 #, kde-kuit-format
@@ -1577,13 +1577,13 @@ msgstr "Yeniden Boyutlandır/Taşı"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
-msgstr "Disk bölümünü yeniden boyutlandır ya da taşı"
+msgstr "Bölüntüyü yeniden boyutlandır veya taşı"
 
 #: gui/mainwindow.cpp:383
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
-msgstr "Varolan bir disk bölümünü büyüt, küçült ya da taşı."
+msgstr "Var olan bir bölüntüyü büyüt, küçült veya taşı."
 
 #: gui/mainwindow.cpp:390
 #, kde-kuit-format
@@ -1595,13 +1595,13 @@ msgstr "Sil"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
-msgstr "Disk bölümünü sil"
+msgstr "Bölüntüyü sil"
 
 #: gui/mainwindow.cpp:392
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
-msgstr "Bir disk bölümünü sil."
+msgstr "Bir bölüntüyü sil."
 
 #: gui/mainwindow.cpp:399
 #, kde-kuit-format
@@ -1613,15 +1613,14 @@ msgstr "Parçala"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
-msgstr "Disk bölümünü daha fazla parçaya böl"
+msgstr "Bölüntüyü daha fazla parçaya böl"
 
 #: gui/mainwindow.cpp:401
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr ""
-"Disk bölümünü daha fazla parçaya böl; disk bölümünün içindekiler geri "
-"alınamaz."
+"Bir bölüntüyü daha fazla parçaya böl; bölüntünün içindekiler geri alınamaz."
 
 #: gui/mainwindow.cpp:408
 #, kde-kuit-format
@@ -1633,13 +1632,13 @@ msgstr "Kopyala"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
-msgstr "Disk bölümünü kopyala"
+msgstr "Bölüntüyü kopyala"
 
 #: gui/mainwindow.cpp:410
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
-msgstr "Varolan bir disk bölümünü kopyala."
+msgstr "Var olan bir bölüntüyü kopyalayın."
 
 #: gui/mainwindow.cpp:417
 #, kde-kuit-format
@@ -1651,13 +1650,13 @@ msgstr "Yapıştır"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
-msgstr "Disk bölümünü yapıştır"
+msgstr "Bölüntüyü yapıştır"
 
 #: gui/mainwindow.cpp:419
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
-msgstr "Bir disk bölümünü yapıştır."
+msgstr "Kopyalanmış bir bölüntüyü yapıştır."
 
 #: gui/mainwindow.cpp:426
 #, kde-kuit-format
@@ -1675,7 +1674,7 @@ msgstr "Bağlama noktasını düzenle"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
-msgstr "Disk bölümünün bağlama noktasını ve seçeneklerini düzenleyin."
+msgstr "Bölüntünün bağlama noktasını ve seçeneklerini düzenleyin."
 
 #: gui/mainwindow.cpp:433
 #, kde-kuit-format
@@ -1705,13 +1704,13 @@ msgstr "Kilidi Aç"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
-msgstr "Şifrelenmiş bölümü aç veya kilitle"
+msgstr "Şifrelenmiş bölüntüyü aç veya kilitle"
 
 #: gui/mainwindow.cpp:442
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
-msgstr "Şifrelenmiş bölümü aç veya kilitle."
+msgstr "Şifrelenmiş bölüntüyü açın veya kilitleyin."
 
 #: gui/mainwindow.cpp:447
 #, kde-kuit-format
@@ -1723,27 +1722,27 @@ msgstr "Denetle"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
-msgstr "Disk bölümünü denetle"
+msgstr "Bölüntüyü denetle"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
-msgstr "Bir disk bölümünün hatalarını denetle."
+msgstr "Bir bölüntünün hatalarını denetleyin."
 
 #: gui/mainwindow.cpp:456
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
-msgstr "Disk bölümü özellikleri penceresini göster"
+msgstr "Bölüntü özellikleri penceresini göster"
 
 #: gui/mainwindow.cpp:457
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr ""
-"Disk bölümünün özelliklerini göster ve düzenle (disk bölümünün etiketi, "
-"bayrakları vs.)"
+"Bölüntünün özelliklerini göster ve düzenle (bölüntünün etiketi, bayrakları "
+"vs.)"
 
 #: gui/mainwindow.cpp:463
 #, kde-kuit-format
@@ -1755,13 +1754,13 @@ msgstr "Yedekle"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
-msgstr "Disk bölümünü yedekle"
+msgstr "Bölüntüyü yedekle"
 
 #: gui/mainwindow.cpp:465
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
-msgstr "Bir disk bölümünü bir kalıp dosyasına yedekle."
+msgstr "Bir bölüntüyü bir kalıp dosyasına yedekleyin."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -1773,31 +1772,31 @@ msgstr "Geri Yükle"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
-msgstr "Bir disk bölümünü geri yükle"
+msgstr "Bir bölüntüyü geri yükle"
 
 #: gui/mainwindow.cpp:473
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
-msgstr "Disk bölümünü bir kalıp dosyasından geri yükle."
+msgstr "Bir bölüntüyü bir kalıp dosyasından geri yükleyin."
 
 #: gui/mainwindow.cpp:480
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
-msgstr "Yeni Bölüm Grubu"
+msgstr "Yeni Disk Bölümü Grubu"
 
 #: gui/mainwindow.cpp:481
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
-msgstr "Yeni bir LVM Birim Grubu oluşturun"
+msgstr "Yeni bir LVM Disk Bölümü Grubu oluştur"
 
 #: gui/mainwindow.cpp:482
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
-msgstr "Bir aygıt olarak yeni bir LVM Birim Grubu oluşturun."
+msgstr "Bir aygıt olarak yeni bir LVM Disk Bölümü Grubu oluşturun."
 
 #: gui/mainwindow.cpp:488
 #, kde-kuit-format
@@ -1833,7 +1832,7 @@ msgstr "Tüm aygıtları yenile"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
-msgstr "Aygıt listesini yenile."
+msgstr "Aygıt listesini yenileyin."
 
 #: gui/mainwindow.cpp:512
 #, kde-kuit-format
@@ -1851,7 +1850,7 @@ msgstr "Günlük çıktısını temizle"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
-msgstr "Günlük çıktısı panelini temizle."
+msgstr "Günlük çıktısı panelini temizleyin."
 
 #: gui/mainwindow.cpp:519
 #, kde-kuit-format
@@ -1869,7 +1868,7 @@ msgstr "Günlüğü kaydet"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
-msgstr "Günlüğü bir dosyaya kaydet."
+msgstr "Günlüğü bir dosyaya kaydedin."
 
 #: gui/mainwindow.cpp:527
 #, kde-kuit-format
@@ -2008,7 +2007,7 @@ msgstr "İçe aktarılacak <filename>%1</filename> girdi dosyası açılamadı"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
-msgstr "Bölüm Tablosu İçe Aktarılırken Hata"
+msgstr "Bölüntü Tablosu İçe Aktarılırken Hata"
 
 #: gui/mainwindow.cpp:1051
 #, kde-kuit-format
@@ -2033,8 +2032,8 @@ msgid ""
 "The import file <filename>%1</filename> does not contain a valid partition "
 "table."
 msgstr ""
-"İçe aktarılacak <filename>%1</filename> dosyası, geçerli bir bölümlendirme "
-"tablosu içermiyor."
+"İçe aktarılacak <filename>%1</filename> dosyası, geçerli bir bölüntü tablosu "
+"içermiyor."
 
 #: gui/mainwindow.cpp:1087 gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1104
 #: gui/mainwindow.cpp:1109 gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1132
@@ -2043,59 +2042,59 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
-msgstr "Bölüm Tablosu İçe Aktarılırken Hata"
+msgstr "Bölüntü Tablosu İçe Aktarılırken Hata"
 
 #: gui/mainwindow.cpp:1097
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr ""
-"İçe aktarma dosyasında birden fazla bölümü tablosu türü bulundu (satır %1)."
+"İçe aktarma dosyasında birden fazla bölüntü tablosu türü bulundu (%1. satır)."
 
 #: gui/mainwindow.cpp:1104
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
-msgstr "Bölüm tablosu türü \"%1\" bilinmiyor (satır %2)."
+msgstr "Bölüntü tablosu türü \"%1\" bilinmiyor (%2. satır)."
 
 #: gui/mainwindow.cpp:1109
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
-msgstr "Bölüm tablosu türü \"%1\" içe aktarmak için desteklenmiyor (satır %2)."
+msgstr ""
+"Bölüntü tablosu türü \"%1\" içe aktarmak için desteklenmiyor (%2. satır)."
 
 #: gui/mainwindow.cpp:1119
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
-msgstr "Bölüm tablosu türü olmayan bölüm bulundu (satır %1)."
+msgstr ""
+"Bölüntü tablosu bulundu; ancak bölüntü tablosu türü bulunamadı (%1. satır)."
 
 #: gui/mainwindow.cpp:1132
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
-msgstr "%1 bölümü aygıtın sınırlarının dışında olacaktır (satır %2)."
+msgstr "%1 bölüntüsü aygıtın sınırlarının dışında olacaktır (%2. satır)."
 
 #: gui/mainwindow.cpp:1137
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
-msgstr "%1 bölümü başlangıç sektöründen önce sonlanıyor (satır %2)."
+msgstr "%1 bölüntüsü başlangıç diliminden önce sonlanıyor (%2. satır)."
 
 #: gui/mainwindow.cpp:1156
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr "%2 (satır %3) için bilinmeyen disk bölümü rolü \"%1\"."
+msgstr "%2 için bilinmeyen bölüntü rolü \"%1\" (%3. satır)."
 
 #: gui/mainwindow.cpp:1161
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
-msgstr ""
-"%1 (satır %2) disk bölümü için üst disk bölümü ya da disk bölümlendirme "
-"tablosu yok."
+msgstr "%1 bölüntüsü için üst bölüntü veya bölüntü tablosu yok (%2. satır)."
 
 #: gui/mainwindow.cpp:1166
 #, kde-kuit-format
@@ -2104,14 +2103,14 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
-"\"%1\" bölümü tablosu türü uzatılmış bölümleri desteklememesine rağmen bir "
-"tane bulundu (satır %2)."
+"\"%1\" bölüntü tablosu türü, genişletilmiş bölüntüleri desteklememesine "
+"rağmen bir tane bulundu (%2. satır)."
 
 #: gui/mainwindow.cpp:1173
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
-msgstr "%2 (satır %3) için \"%1\" dosya sistemi oluşturulamadı."
+msgstr "%2 için \"%1\" dosya sistemi oluşturulamadı (%3. satır)."
 
 #: gui/mainwindow.cpp:1188
 #, kde-kuit-format
@@ -2123,7 +2122,7 @@ msgstr "İçe aktarılan dosyada satır %1 ayrıştırılamadı. Atlanıyor."
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
-msgstr "Disk Bölümü Tablosu Dışa Aktarılırken Hata"
+msgstr "Bölüntü Tablosu Dışa Aktarılırken Hata"
 
 #: gui/mainwindow.cpp:1378 gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1420
 #, kde-kuit-format
@@ -2152,7 +2151,7 @@ msgid ""
 msgstr ""
 "<para>Bu bilgisayarın sabit diski üzerinde bulunan dosya sistemleri için hiç "
 "destek aracı bulunmuyor:</para><table style='margin-top:12px'><tr><td "
-"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Disk Bölümü</"
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Bölüntü</"
 "td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Dosya "
 "Sistemi</td><td style='font-weight:bold;padding-right:12px;white-space:"
 "nowrap;'>Destek Araçları</td><td style='font-weight:bold;padding-right:12px;"
@@ -2177,13 +2176,13 @@ msgstr "Tanımlanamayan aygıt \"%1\" "
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr "Tanımlanamayan bölüm \"%1\" "
+msgstr "Tanımlanamayan bölüntü \"%1\" "
 
 #: gui/mainwindow.cpp:1466
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr "Bölüm açılırken hata"
+msgstr "BÖlüntü açılırken hata"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -2191,7 +2190,7 @@ msgstr "Bölüm açılırken hata"
 #, kde-format
 msgctxt "@title:window"
 msgid "KDE Partition Manager"
-msgstr "KDE Disk Bölümü Yöneticisi"
+msgstr "KDE Bölüntü Yöneticisi"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
 #: gui/mainwindowbase.ui:26
@@ -2218,14 +2217,14 @@ msgstr "Günlük Çıktısı"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a new partition"
-msgstr "Yeni bir disk bölümü oluştur"
+msgstr "Yeni bir bölüntü oluştur"
 
 #. i18n: ectx: ToolBar (partitionToolBar)
 #: gui/partitionmanagerui.rc:12
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition Manager Toolbar"
-msgstr "Bölümlendirme Yöneticisi Araç Çubuğu"
+msgstr "Bölüntü Yöneticisi Araç Çubuğu"
 
 #. i18n: ectx: Menu (device)
 #: gui/partitionmanagerui.rc:30
@@ -2253,7 +2252,7 @@ msgstr "Araçlar"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition"
-msgstr "Disk Bölümü"
+msgstr "Bölüntü"
 
 #. i18n: ectx: Menu (panels)
 #: gui/partitionmanagerui.rc:77
@@ -2274,7 +2273,7 @@ msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be mounted."
 msgstr ""
-"<filename>%1</filename> disk bölümünün üzerindeki dosya sistemi bağlanamadı."
+"<filename>%1</filename> bölüntüsü üzerindeki dosya sistemi bağlanamadı."
 
 #: gui/partitionmanagerwidget.cpp:403
 #, kde-kuit-format
@@ -2288,7 +2287,7 @@ msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be unmounted."
 msgstr ""
-"<filename>%1</filename> disk bölümü üzerindeki dosya sistemi bağlantısı "
+"<filename>%1</filename> bölüntüsü üzerindeki dosya sistemi bağlantısı "
 "kesilemedi."
 
 #: gui/partitionmanagerwidget.cpp:406
@@ -2304,7 +2303,7 @@ msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "unlocked."
 msgstr ""
-"<filename>%1</filename> disk bölümünün üzerindeki şifrelenmiş dosya sistemi "
+"<filename>%1</filename> bölüntüsü üzerindeki şifrelenmiş dosya sistemi "
 "kilidi açılamadı."
 
 #: gui/partitionmanagerwidget.cpp:452
@@ -2320,7 +2319,7 @@ msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "locked."
 msgstr ""
-"<filename>%1</filename> disk bölümünün üzerindeki şifrelenmiş dosya sistemi "
+"<filename>%1</filename> bölüntüsü üzerindeki şifrelenmiş dosya sistemi "
 "kilitlenemedi."
 
 #: gui/partitionmanagerwidget.cpp:463
@@ -2343,21 +2342,21 @@ msgid_plural ""
 "create, paste or restore a primary partition on it before you delete an "
 "existing one.</para>"
 msgstr[0] ""
-"<para>Bu aygıt üzerinde zaten %1 birincil disk bölümü var. Bu, disk bölümü "
+"<para>Bu aygıt üzerinde zaten %1 birincil bölüntü var. Bu, bölüntü "
 "tablosunun bulundurabileceği en fazla sayıdır.</para><para>Var olan bir "
-"birincil disk bölümünü silmeden yeni bir birincil disk bölümü "
-"oluşturamazsınız, yapıştıramazsınız veya geri yükleyemezsiniz.</para>"
+"birincil bölüntüyü silmeden yeni bir birincil bölüntü oluşturamazsınız, "
+"yapıştıramazsınız veya geri yükleyemezsiniz.</para>"
 msgstr[1] ""
-"<para>Bu aygıt üzerinde zaten %1 birincil disk bölümü var. Bu, disk bölümü "
-"tablosunun bulundurabileceği en fazla sayıdır.</para><para>Varolan bir "
-"birincil disk bölümünü silmeden yeni bir birincil disk bölümü "
-"oluşturamazsınız, yapıştıramazsınız veya geri yükleyemezsiniz.</para>"
+"<para>Bu aygıt üzerinde zaten %1 birincil bölüntü var. Bu, bölüntü "
+"tablosunun bulundurabileceği en fazla sayıdır.</para><para>Var olan bir "
+"birincil bölüntüyü silmeden yeni bir birincil bölüntü oluşturamazsınız, "
+"yapıştıramazsınız veya geri yükleyemezsiniz.</para>"
 
 #: gui/partitionmanagerwidget.cpp:496
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
-msgstr "Çok Fazla Sayıda Birincil Bölüm."
+msgstr "Pek Fazla Birincil Bölüntü."
 
 #: gui/partitionmanagerwidget.cpp:559
 #, kde-kuit-format
@@ -2368,17 +2367,16 @@ msgid ""
 "</para><para>Please unmount all partitions with higher logical numbers than "
 "%2 first.</para>"
 msgstr ""
-"<para><filename>%1</filename> disk bölümü şu anda silinemez. Çünkü bu disk "
-"bölümünün mantıksal numarasından daha büyük mantıksal numaraya sahip bir ya "
-"da daha fazla disk bölümü bağlı durumda.</para><para>Lütfen önce mantıksal "
-"numarası %2 sayısından büyük olan disk bölümlerinin bağlantısını kesin.</"
-"para>"
+"<para><filename>%1</filename> bölüntüsü şu anda silinemez. Çünkü bu "
+"bölüntünün mantıksal numarasından daha büyük mantıksal numaraya sahip bir "
+"veya daha çok bölüntü bağlı durumda.</para><para>Lütfen önce mantıksal "
+"numarası %2 sayısından büyük olan bölüntülerin bağlantısını kesin.</para>"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
-msgstr "Disk Bölümü Silinemiyor."
+msgstr "Bölüntü Silinemiyor."
 
 #: gui/partitionmanagerwidget.cpp:571
 #, kde-kuit-format
@@ -2388,14 +2386,14 @@ msgid ""
 "clipboard? It will no longer be available for pasting after it has been "
 "deleted."
 msgstr ""
-"Panodaki disk bölümünü gerçekten silmek istiyor musunuz? Bu disk bölümü "
-"silindikten sonra artık yapıştırılamayacak."
+"Panodaki bölüntüyü gerçekten silmek istiyor musunuz? Bu bölüntü silindikten "
+"sonra artık yapıştırılamayacak."
 
 #: gui/partitionmanagerwidget.cpp:573
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
-msgstr "Panodaki Disk Bölümü Gerçekten Silinsin mi?"
+msgstr "Panodaki Bölüntü Gerçekten Silinsin mi?"
 
 #: gui/partitionmanagerwidget.cpp:574
 #, kde-kuit-format
@@ -2410,14 +2408,14 @@ msgid ""
 "Partition <filename>%1</filename> has the same position and size after "
 "resize/move. Ignoring operation."
 msgstr ""
-"<filename>%1</filename> disk bölümü yeniden boyutlandırma/taşıma işleminden "
+"<filename>%1</filename> bölüntüsü yeniden boyutlandırma/taşıma işleminden "
 "sonra da aynı boyutta ve konumda. İşlem yok sayılıyor."
 
 #: gui/partitionmanagerwidget.cpp:655
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
-msgstr "<filename>%1</filename> disk bölümü panoya kopyalandı."
+msgstr "<filename>%1</filename> bölüntü panoya kopyalandı."
 
 #: gui/partitionmanagerwidget.cpp:718
 #, kde-kuit-format
@@ -2430,9 +2428,9 @@ msgid ""
 "window, all data currently stored on <filename>%1</filename> will "
 "unrecoverably be overwritten.</para>"
 msgstr ""
-"<para><warning><filename>%1</filename> disk bölümü üzerindeki tüm verileri "
-"kaybetmek üzeresiniz.</warning></para><para>Bir disk bölümünün üzerine diğer "
-"disk bölümünü (veya görüntü dosyasını) yazmak o bölümün tüm içeriğini "
+"<para><warning><filename>%1</filename> bölüntüsü üzerindeki tüm verileri "
+"kaybetmek üzeresiniz.</warning></para><para>Bir bölüntünün üzerine diğer "
+"bölüntüyü (veya kalıp dosyasını) yazmak o bölüntünün tüm içeriğini "
 "silecektir.</para><para> Eğer şimdi sürdürür ve ana pencereden işlemi "
 "uygularsanız <filename>%1</filename> üzerindeki tüm veriler silinecektir ve "
 "bu işlemin geri dönüşü olmayacaktır.</para>"
@@ -2441,13 +2439,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
-msgstr "Varolan Disk Bölümünün Üzerine Yazılsın mı?"
+msgstr "Var Olan Bölüntünün Üzerine Yazılsın mı?"
 
 #: gui/partitionmanagerwidget.cpp:727
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
-msgstr "Disk Bölümünün Üzerine Yaz"
+msgstr "Bölüntünün Üzerine Yaz"
 
 #: gui/partitionmanagerwidget.cpp:735
 #, kde-kuit-format
@@ -2457,8 +2455,8 @@ msgid ""
 "partition or the backup file.</para><para>Pick another target or resize this "
 "partition so it is as large as the source.</para>"
 msgstr ""
-"<para>Seçilen bölüm, kaynak bölüm veya yedek dosyasını tutacak kadar "
-"yeterince geniş değil.</para><para>Farklı bir hedef seçin veya bu bölümü "
+"<para>Seçili bölüntü, kaynak bölüntü veya yedek dosyasını tutacak kadar "
+"yeterince geniş değil.</para><para>Farklı bir hedef seçin veya bu bölüntüyü "
 "kaynak kadar büyütmek üzere boyutlandırın.</para>"
 
 #: gui/partitionmanagerwidget.cpp:736
@@ -2476,16 +2474,16 @@ msgid ""
 "are correctly aligned or when copying a primary partition into an extended "
 "partition.</para>"
 msgstr ""
-"<para>Bu kaynağı tutacak kadar büyük hedef disk bölümü oluşturmak mümkün "
-"değildir.</para><para>Bu aygıt üzerindeki tüm disk bölümleri doğru "
-"hizalanmadığında veya bir birincil bölüm uzatılmış bölüme kopyalanırken "
-"oluşabilir.</para>"
+"<para>Bu kaynağı tutacak kadar büyük hedef bölüntüyü oluşturmak olanaklı "
+"değildir.</para><para>Bu aygıt üzerindeki tüm bölüntüler doğru "
+"hizalanmadığında veya bir birincil bölüntü genişletilmiş bölüntüye "
+"kopyalanırken oluşabilir.</para>"
 
 #: gui/partitionmanagerwidget.cpp:742
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
-msgstr "Hedef Disk Bölümü Oluşturulamıyor."
+msgstr "Hedef Bölüntü Oluşturulamıyor."
 
 #: gui/partitionmanagerwidget.cpp:800
 #, kde-kuit-format
@@ -2494,8 +2492,8 @@ msgid ""
 "The file system in the image file <filename>%1</filename> is too large to be "
 "restored to the selected partition."
 msgstr ""
-"<filename>%1</filename> kalıp dosyası içindeki dosya sistemi, seçilen disk "
-"bölümüne yerleştirilmek için çok büyük."
+"<filename>%1</filename> kalıp dosyası içindeki dosya sistemi, seçili "
+"bölüntüyü yerleştirilmek için çok büyük."
 
 #: gui/partitionmanagerwidget.cpp:800
 #, kde-kuit-format
@@ -2507,7 +2505,7 @@ msgstr "Dosya Sistemini Geri Yüklemek İçin Yeterli Disk Alanı Yok."
 #: gui/partitionmanagerwidgetbase.ui:76
 #, kde-format
 msgid "Partition"
-msgstr "Disk Bölümü"
+msgstr "Bölüntü"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:81
@@ -2537,13 +2535,13 @@ msgstr "UUID"
 #: gui/partitionmanagerwidgetbase.ui:101
 #, kde-format
 msgid "Partition Name"
-msgstr "Bölüm Adı"
+msgstr "Bölüntü Adı"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:106
 #, kde-format
 msgid "Partition UUID"
-msgstr "Bölüm UUID'si"
+msgstr "Bölüntü UUID'si"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:111
@@ -2591,7 +2589,7 @@ msgstr "Bayraklar"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
-msgstr "Disk bölümünün özellikleri: <filename>%1</filename>"
+msgstr "Bölüntü özellikleri: <filename>%1</filename>"
 
 #: gui/partpropsdialog.cpp:110
 #, kde-kuit-format
@@ -2609,7 +2607,7 @@ msgstr "boşta"
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
-msgstr "En az bir mantıksal disk bölümü bağlanır."
+msgstr "En az bir mantıksal bölüntü bağlanır."
 
 #: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
@@ -2640,19 +2638,17 @@ msgid ""
 "the resulting operation in the main window, all data on <filename>%1</"
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
-"<para><warning><filename>%1</filename> disk bölümü üzerindeki tüm verileri "
-"kaybetmek üzeresiniz.</warning></para><para>Bir disk bölümünün dosya "
-"sistemini değiştirmek o bölümün tüm içeriğini siler. Eğer şimdi sürdürür ve "
-"ana pencereden işlemi uygularsanız <filename>%1</filename> üzerindeki tüm "
+"<para><warning><filename>%1</filename> bölüntüsü üzerindeki tüm verileri "
+"kaybetmek üzeresiniz.</warning></para><para>Bir bölüntünün dosya sistemini "
+"değiştirmek o bölüntünün tüm içeriğini siler. Eğer şimdi sürdürür ve ana "
+"pencereden işlemi uygularsanız <filename>%1</filename> üzerindeki tüm "
 "veriler silinecektir ve bu işlemin geri dönüşü olmayacaktır.</para>"
 
 #: gui/partpropsdialog.cpp:348
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
-msgstr ""
-"<filename>%1</filename> disk bölümü %2 Dosya Sistemi ile Yeniden "
-"Oluşturulsun mu?"
+msgstr "<filename>%1</filename> Ögesini %2 Dosya Sistemiyle Yeniden Oluştur ?"
 
 #: gui/partpropsdialog.cpp:349
 #, kde-kuit-format
@@ -2676,19 +2672,17 @@ msgid ""
 "window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
 "para>"
 msgstr ""
-"<para><warning><filename>%1</filename> disk bölümü üzerindeki tüm verileri "
-"kaybetmek üzeresiniz.</warning></para><para>Bir disk bölümünün dosya "
-"sistemini yeniden oluşturmak o bölümün tüm içeriğini siler. Eğer şimdi "
-"sürdürür ve ana pencereden işlemi uygularsanız <filename>%1</filename> "
-"üzerindeki tüm veriler silinecektir ve bu işlemin geri dönüşü olmayacaktır.</"
-"para>"
+"<para><warning><filename>%1</filename> bölüntüsü üzerindeki tüm verileri "
+"kaybetmek üzeresiniz.</warning></para><para>Bir bölüntünün dosya sistemini "
+"yeniden oluşturmak o bölüntünün tüm içeriğini siler. Eğer şimdi sürdürür ve "
+"ana pencereden işlemi uygularsanız <filename>%1</filename> üzerindeki tüm "
+"veriler silinecektir ve bu işlemin geri dönüşü olmayacaktır.</para>"
 
 #: gui/partpropsdialog.cpp:371
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
-msgstr ""
-"<filename>%1</filename> Bölümünün Dosya Sistemi Yeniden Oluşturulsun mu?"
+msgstr "<filename>%1</filename> Üzerindeki Dosya Sistemini Yeniden Oluştur?"
 
 #: gui/partpropsdialog.cpp:372
 #, kde-kuit-format
@@ -2731,7 +2725,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
-msgstr "Varolan dosya sistemini yeniden oluştur"
+msgstr "Var olan dosya sistemini yeniden oluştur"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
 #: gui/partpropswidgetbase.ui:101
@@ -2745,7 +2739,7 @@ msgstr "Bağlama noktası:"
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
-msgstr "Disk bölümü türü:"
+msgstr "Bölüntü türü:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:128
@@ -2821,13 +2815,13 @@ msgstr "&Bayraklar:"
 #: gui/partpropswidgetbase.ui:362
 #, kde-format
 msgid "Partition Name:"
-msgstr "Disk Bölümü Adı:"
+msgstr "Bölüntü Adı:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:372
 #, kde-format
 msgid "Partition UUID:"
-msgstr "Disk Bölümü UUID'si:"
+msgstr "BÖlüntü UUID'si:"
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format
@@ -2839,13 +2833,13 @@ msgstr "Lüften bir aygıt seçin."
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No valid partition table was found on this device."
-msgstr "Bu aygıt üzerinde geçerli bir disk bölümü tablosu bulunamadı."
+msgstr "Bu aygıt üzerinde geçerli bir bölüntü tablosu bulunamadı."
 
 #: gui/resizedialog.cpp:42
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize/move partition: <filename>%1</filename>"
-msgstr "Disk bölümünü yeniden boyutlandır/taşı: <filename>%1</filename>"
+msgstr "Bölüntüyü yeniden boyutlandır/taşı: <filename>%1</filename>"
 
 #: gui/resizedialog.cpp:91
 #, kde-format
@@ -2863,7 +2857,7 @@ msgstr "Geçersiz parola. "
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize Volume Group"
-msgstr "Birim Grubunu Boyutlandır"
+msgstr "Disk Bölümü Grubu'nu Boyutlandır"
 
 #: gui/scanprogressdialog.cpp:17
 #, kde-kuit-format
@@ -2901,7 +2895,7 @@ msgstr "Son dilim (sector):"
 #: gui/sizedetailswidgetbase.ui:124
 #, kde-format
 msgid "Align partition"
-msgstr "Disk bölümünü yerleştir"
+msgstr "Bölüntüyü hizala"
 
 #: gui/sizedialogbase.cpp:66
 #, kde-kuit-format
@@ -2920,7 +2914,7 @@ msgstr "&Gelişmiş"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
-msgstr "Disk bölümü türü:"
+msgstr "Bölüntü türü:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/sizedialogwidgetbase.ui:78
@@ -2949,7 +2943,7 @@ msgstr "LUKS ile şifrele"
 #: gui/sizedialogwidgetbase.ui:111
 #, kde-format
 msgid "Logical Volume Name:"
-msgstr "Mantıksal Birim Adı:"
+msgstr "Mantıksal Disk Bölümü Adı:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/sizedialogwidgetbase.ui:128
@@ -3253,7 +3247,7 @@ msgstr "İleti"
 #: gui/volumegroupwidgetbase.ui:34
 #, kde-format
 msgid "Volume Group Name: "
-msgstr "Birim Grubu Adı: "
+msgstr "Disk Bölümü Grubu Adı: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
 #: gui/volumegroupwidgetbase.ui:47
@@ -3287,7 +3281,7 @@ msgstr "Toplam LV: "
 #: gui/volumegroupwidgetbase.ui:130
 #, kde-format
 msgid "Volume Group Type: "
-msgstr "Birim Grubu Türü: "
+msgstr "Disk Bölümü Grubu Türü: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
 #: gui/volumegroupwidgetbase.ui:140
@@ -3299,7 +3293,7 @@ msgstr "Toplam Boyut: "
 #: gui/volumegroupwidgetbase.ui:153
 #, kde-format
 msgid "Total Sectors: "
-msgstr "Toplam Dilim Sayısı: "
+msgstr "Toplam Dilimler: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
 #: gui/volumegroupwidgetbase.ui:186
@@ -3311,13 +3305,13 @@ msgstr "Kullanılan Boyut: "
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>KDE Partition Manager</application>"
-msgstr "<application>KDE Disk Bölümü Yöneticisi</application>"
+msgstr "<application>KDE Bölüntü Yöneticisi</application>"
 
 #: main.cpp:79
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Manage your disks, partitions and file systems"
-msgstr "Disklerinizi, disk bölümlerinizi ve dosya sistemlerinizi yönetin"
+msgstr "Disklerinizi, bölüntülerinizi ve dosya sistemlerinizi yönetin"
 
 #: main.cpp:81
 #, kde-kuit-format
@@ -3398,7 +3392,7 @@ msgstr "Hugo Pereira Da Costa"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Partition Widget Design"
-msgstr "Disk Bölümü Parçacığının Tasarımı"
+msgstr "Bölüntü Araç Takımı Tasarımı"
 
 #: main.cpp:91
 #, kde-kuit-format
@@ -3423,7 +3417,7 @@ msgstr "Yönetilecek aygıt"
 #, kde-format
 msgctxt "@label"
 msgid "Is this the first time KDE Partition Manager is being run?"
-msgstr "KDE Disk Bölümü Yöneticisi'ni ilk çalıştırmanız mı?"
+msgstr "KDE Bölüntü Yöneticisi'ni ilk çalıştırmanız mı?"
 
 #. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
 #: partitionmanager.kcfg:49
@@ -3437,7 +3431,7 @@ msgstr "Aşağıdaki günlük iletilerini gizle"
 #, kde-format
 msgctxt "@label"
 msgid "Partition sector alignment"
-msgstr "Disk bölümü dilim yerleşimi"
+msgstr "Bölüntü dilimi hizası"
 
 #. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
 #: partitionmanager.kcfg:57
