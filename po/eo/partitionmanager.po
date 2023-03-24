@@ -1,36 +1,38 @@
 # Translation of partitionmanager into esperanto.
+# Copyright (C) 2003 Free Software Foundation, Inc.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-12 00:49+0000\n"
-"PO-Revision-Date: 2009-11-15 12:06+0100\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-03-23 21:46+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: pology\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Axel Rousseau"
+msgstr "Axel Rousseau,Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "axel@esperanto-jeunes.org"
+msgstr "axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
 msgctxt "@title:tab general application settings"
 msgid "General"
-msgstr ""
+msgstr "Ĝenerala"
 
 #: config/configureoptionsdialog.cpp:42 config/configureoptionsdialog.cpp:87
 #, kde-format
@@ -38,22 +40,21 @@ msgid "General Settings"
 msgstr "Ĝeneralaj Agordoj"
 
 #: config/configureoptionsdialog.cpp:47
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:tab"
 msgid "File System Colors"
-msgstr "Dosiersistemo"
+msgstr "Dosiersistemaj Koloroj"
 
 #: config/configureoptionsdialog.cpp:47
 #, kde-format
 msgid "File System Color Settings"
-msgstr ""
+msgstr "Agordo de Dosiersistemaj Koloroj"
 
 #: config/configureoptionsdialog.cpp:49
 #, kde-kuit-format
 msgctxt "@title:tab advanced application settings"
 msgid "Advanced"
-msgstr ""
+msgstr "Altnivela"
 
 #: config/configureoptionsdialog.cpp:49
 #, kde-format
@@ -68,38 +69,39 @@ msgid ""
 "will also rescan devices and thus clear the list of pending operations.</"
 "warning></para>"
 msgstr ""
+"<para >Ĉu vi vere volas ŝanĝi la backend?</para><para><warning>Ĉi tio ankaŭ "
+"resanigos aparatojn kaj tiel malplenigos la liston de pritraktotaj operacioj."
+"</warning></para>"
 
 #: config/configureoptionsdialog.cpp:139
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Change Backend?"
-msgstr ""
+msgstr "Ĉu vere Ŝanĝi Backend?"
 
 #: config/configureoptionsdialog.cpp:140
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the Backend"
-msgstr "Dosiersistemo"
+msgstr "Ŝanĝi la Backend"
 
 #: config/configureoptionsdialog.cpp:141
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the Backend"
-msgstr ""
+msgstr "Ne Ŝanĝi la Backend"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepageadvanced.ui:29
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgid "Backend"
-msgstr "Sekurkopio"
+msgstr "Backend"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: config/configurepageadvanced.ui:35
 #, kde-format
 msgid "Active backend:"
-msgstr ""
+msgstr "Aktiva backend:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
 #: config/configurepageadvanced.ui:57
@@ -111,7 +113,7 @@ msgstr "Unuoj"
 #: config/configurepageadvanced.ui:63
 #, kde-format
 msgid "Preferred unit:"
-msgstr ""
+msgstr "Preferata unuo:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:74
@@ -159,246 +161,243 @@ msgstr "EiB"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: config/configurepagefilesystemcolors.ui:30
 #: config/configurepagegeneral.ui:144
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgid "File Systems"
-msgstr "Dosiersistemo"
+msgstr "Dosiersistemoj"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_7)
 #: config/configurepagefilesystemcolors.ui:39
 #, kde-format
 msgid "ReiserFS:"
-msgstr ""
+msgstr "ReiserFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_15)
 #: config/configurepagefilesystemcolors.ui:68
 #, kde-format
 msgid "UFS:"
-msgstr ""
+msgstr "UFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_31)
 #: config/configurepagefilesystemcolors.ui:81
 #, kde-format
 msgid "ISO 9660:"
-msgstr ""
+msgstr "ISO 9660:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_24)
 #: config/configurepagefilesystemcolors.ui:100
 #, kde-format
 msgid "OCFS2:"
-msgstr ""
+msgstr "OCFS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_22)
 #: config/configurepagefilesystemcolors.ui:116
 #, kde-format
 msgid "XFS:"
-msgstr ""
+msgstr "XFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_27)
 #: config/configurepagefilesystemcolors.ui:135
 #, kde-format
 msgid "NILFS2:"
-msgstr ""
+msgstr "NILFS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_6)
 #: config/configurepagefilesystemcolors.ui:184
 #, kde-format
 msgid "FAT16:"
-msgstr ""
+msgstr "FAT16:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_13)
 #: config/configurepagefilesystemcolors.ui:197
 #, kde-format
 msgid "extended:"
-msgstr ""
+msgstr "etendita:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_33)
 #: config/configurepagefilesystemcolors.ui:210
 #, kde-format
 msgid "LUKS2:"
-msgstr ""
+msgstr "LUKS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_17)
 #: config/configurepagefilesystemcolors.ui:226
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Information"
+#, kde-format
 msgid "unformatted:"
-msgstr "Informoj"
+msgstr "neformatita:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_30)
 #: config/configurepagefilesystemcolors.ui:245
 #, kde-format
 msgid "UDF:"
-msgstr ""
+msgstr "UDF:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_25)
 #: config/configurepagefilesystemcolors.ui:258
 #, kde-format
 msgid "ZFS:"
-msgstr ""
+msgstr "ZFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_3)
 #: config/configurepagefilesystemcolors.ui:306
 #, kde-format
 msgid "ext4:"
-msgstr ""
+msgstr "ekst4:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_10)
 #: config/configurepagefilesystemcolors.ui:322
 #, kde-format
 msgid "HPFS:"
-msgstr ""
+msgstr "HPFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_11)
 #: config/configurepagefilesystemcolors.ui:380
 #, kde-format
 msgid "JFS:"
-msgstr ""
+msgstr "JFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_2)
 #: config/configurepagefilesystemcolors.ui:393
 #, kde-format
 msgid "ext3:"
-msgstr ""
+msgstr "ekst3:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_8)
 #: config/configurepagefilesystemcolors.ui:419
 #, kde-format
 msgid "Reiser4:"
-msgstr ""
+msgstr "Reiser4:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_21)
 #: config/configurepagefilesystemcolors.ui:451
 #, kde-format
 msgid "Btrfs:"
-msgstr ""
+msgstr "Btrfs:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
 #: config/configurepagefilesystemcolors.ui:493
 #, kde-format
 msgid "ext2:"
-msgstr ""
+msgstr "ekst2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_29)
 #: config/configurepagefilesystemcolors.ui:512
 #, kde-format
 msgid "F2FS:"
-msgstr ""
+msgstr "F2FS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_28)
 #: config/configurepagefilesystemcolors.ui:531
 #, kde-format
 msgid "LVM2 PV:"
-msgstr ""
+msgstr "LVM2 PV:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_26)
 #: config/configurepagefilesystemcolors.ui:557
 #, kde-format
 msgid "exFAT:"
-msgstr ""
+msgstr "eksFAT:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:570
 #, kde-format
 msgid "NTFS:"
-msgstr ""
+msgstr "NTFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_20)
 #: config/configurepagefilesystemcolors.ui:596
 #, kde-format
 msgid "LUKS:"
-msgstr ""
+msgstr "LUKS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_4)
 #: config/configurepagefilesystemcolors.ui:625
 #, kde-format
 msgid "Linux Swap:"
-msgstr ""
+msgstr "Linukso Interŝanĝo:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_32)
 #: config/configurepagefilesystemcolors.ui:676
 #, kde-format
 msgid "FAT12:"
-msgstr ""
+msgstr "FAT12:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_12)
 #: config/configurepagefilesystemcolors.ui:689
 #, kde-format
 msgid "HFS:"
-msgstr ""
+msgstr "HFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_35)
 #: config/configurepagefilesystemcolors.ui:721
 #, kde-format
 msgid "APFS:"
-msgstr ""
+msgstr "APFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_5)
 #: config/configurepagefilesystemcolors.ui:734
 #, kde-format
 msgid "FAT32:"
-msgstr ""
+msgstr "FAT32:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
 #: config/configurepagefilesystemcolors.ui:766
 #, kde-format
 msgid "Linux RAID:"
-msgstr ""
+msgstr "Linuksa RAID:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_34)
 #: config/configurepagefilesystemcolors.ui:779
 #, kde-format
 msgid "BitLocker:"
-msgstr ""
+msgstr "BitLocker:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_14)
 #: config/configurepagefilesystemcolors.ui:808
 #, kde-format
 msgid "HFS+:"
-msgstr ""
+msgstr "HFS+:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_16)
 #: config/configurepagefilesystemcolors.ui:834
 #, kde-format
 msgid "unknown:"
-msgstr ""
+msgstr "nekonata:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagefilesystemcolors.ui:847
 #, kde-format
 msgid "          Minix:"
-msgstr ""
+msgstr "          Minix:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
 #, kde-format
 msgid "Partition Alignment"
-msgstr ""
+msgstr "Dispartiga vicigo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
 #: config/configurepagegeneral.ui:34
 #, kde-format
 msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr ""
+msgstr "Uzi cilindro-bazitan vicigon (kongrua kun Windows XP)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
 #, kde-format
 msgid "Sector alignment:"
-msgstr ""
+msgstr "Sektora paraleligo:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
 #, kde-format
 msgid " sectors"
-msgstr ""
+msgstr "sektoroj"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
 #: config/configurepagegeneral.ui:76
 #, kde-format
 msgid "Align partitions per default"
-msgstr ""
+msgstr "Vicigi subdiskojn defaŭlte"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: config/configurepagegeneral.ui:95
@@ -410,13 +409,13 @@ msgstr "Protokolado"
 #: config/configurepagegeneral.ui:101
 #, kde-format
 msgid "Hide messages below:"
-msgstr ""
+msgstr "Kaŝi mesaĝojn sube:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:112
 #, kde-format
 msgid "Debug"
-msgstr "Sencimigu"
+msgstr "Sencimigi"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:117
@@ -438,34 +437,33 @@ msgstr "Eraro"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:150
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgid "Default file system:"
-msgstr "Dosiersistemo"
+msgstr "Defaŭlta dosiersistemo:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:172
-#, fuzzy, kde-format
+#, kde-format
 msgid "Shredding"
-msgstr "Akuteco:"
+msgstr "Disŝirado"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: config/configurepagegeneral.ui:178
 #, kde-format
 msgid "Overwrite with:"
-msgstr ""
+msgstr "Anstataŭigi per:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
 #: config/configurepagegeneral.ui:185
 #, kde-format
 msgid "Random data"
-msgstr ""
+msgstr "Hazardaj datumoj"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:195
 #, kde-format
 msgid "Zeros"
-msgstr ""
+msgstr "Nuloj"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
 #: gui/applyprogressdetailswidgetbase.ui:42
@@ -477,61 +475,61 @@ msgstr "Konservi"
 #: gui/applyprogressdetailswidgetbase.ui:49
 #, kde-format
 msgid "Open in External Browser"
-msgstr "Malfermu en ekstera retumilo"
+msgstr "Malfermi en ekstera retumilo"
 
 #: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
-msgstr ""
+msgstr "&Detaloj"
 
 #: gui/applyprogressdialog.cpp:126
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
-msgstr ""
+msgstr "Agordi..."
 
 #: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
-msgstr ""
+msgstr "Ĉu vi vere volas nuligi?"
 
 #: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
-msgstr ""
+msgstr "Nuligi Kurantajn Operaciojn"
 
 #: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
-msgstr ""
+msgstr "Jes, Nuligi Operaciojn"
 
 #: gui/applyprogressdialog.cpp:201
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
-msgstr ""
+msgstr "Atendante la finiĝon de operacio..."
 
 #: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
-msgstr ""
+msgstr "Ĉiuj operacioj sukcese finiĝis."
 
 #: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
-msgstr ""
+msgstr "Operacioj nuligitaj."
 
 #: gui/applyprogressdialog.cpp:232
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
-msgstr ""
+msgstr "Estis eraroj dum aplikado de operacioj. Abortita."
 
 #: gui/applyprogressdialog.cpp:346
 #, kde-kuit-format
@@ -543,60 +541,61 @@ msgstr "[%1/%2] - %3: %4"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
-msgstr ""
+msgstr "Suma Tempo: %1"
 
 #: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
 #: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Could not create temporary file when trying to save to <filename>%1</"
 "filename>."
-msgstr "Kroĉpunkto"
+msgstr ""
+"Ne eblis krei provizoran dosieron provante konservi al <filename>%1</"
+"filename>."
 
 #: gui/applyprogressdialog.cpp:428
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
-msgstr ""
+msgstr "Ne Eblis Konservi Raporton."
 
 #: gui/applyprogressdialog.cpp:452
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
-msgstr "Kroĉpunkto"
+msgstr ""
+"Ne eblis krei provizoran dosieron <filename>%1</filename> por skribado."
 
 #: gui/applyprogressdialog.cpp:452
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."
-msgstr ""
+msgstr "Ne Eblis Lanĉi Retumilon."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
 #: gui/applyprogressdialogwidgetbase.ui:41
 #, kde-format
 msgid "Operations and Jobs"
-msgstr ""
+msgstr "Operacioj kaj Laborpostenoj"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
 #: gui/applyprogressdialogwidgetbase.ui:46
 #, kde-format
 msgid "Time Elapsed"
-msgstr ""
+msgstr "Tempo Pasis"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
 #: gui/applyprogressdialogwidgetbase.ui:72
 #, kde-format
 msgid "Total Time: 00:00:00"
-msgstr ""
+msgstr "Suma Tempo: 00:00:00"
 
 #. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
 #: gui/applyprogressdialogwidgetbase.ui:89
 #, no-c-format, kde-format
 msgid "Operation: %p%"
-msgstr ""
+msgstr "Operacio: %p%"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
 #: gui/applyprogressdialogwidgetbase.ui:99
@@ -608,21 +607,19 @@ msgstr "Stato"
 #: gui/applyprogressdialogwidgetbase.ui:115
 #, no-c-format, kde-format
 msgid "Total: %p%"
-msgstr ""
+msgstr "Totalo: %p%"
 
 #: gui/createpartitiontabledialog.cpp:31
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a New Partition Table on <filename>%1</filename>"
-msgstr "Kroĉpunkto"
+msgstr "Krei Novan Dispartigan Tabelon ĉe <filename>%1</filename>"
 
 #: gui/createpartitiontabledialog.cpp:34
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create &New Partition Table"
-msgstr "Kroĉpunkto"
+msgstr "Krei Novan Dispartigan Tabelon"
 
 #: gui/createpartitiontabledialog.cpp:59
 #, kde-kuit-format
@@ -633,121 +630,124 @@ msgid ""
 "the most the MS-Dos partition table type supports, so you will not be able "
 "to use the whole device.</para>"
 msgstr ""
+"<para>Ĉu vi vere volas krei MS-Dos-dispartigan tabelon ĉe <filename>%1</"
+"filename>?</para><para>Ĉi tiu aparato havas pli ol 2^32 sektorojn. Tio estas "
+"la plej subtenas la tipo de diskpartiga tabelo MS-Dos, do vi ne povos uzi la "
+"tutan aparaton.</para>"
 
 #: gui/createpartitiontabledialog.cpp:61
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Create MS-Dos Partition Table Type?"
-msgstr ""
+msgstr "Ĉu vere krei MS-Dos Dispartigan Tabel-Tipon?"
 
 #: gui/createpartitiontabledialog.cpp:62
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create MS-Dos Type"
-msgstr ""
+msgstr "Krei MS-Dos-Tipon"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/createpartitiontablewidgetbase.ui:24
 #, kde-format
 msgid "Choose the type of partition table you want to create:"
-msgstr ""
+msgstr "Elektu la tipon de subdiskotabelo, kiun vi volas krei:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
 #: gui/createpartitiontablewidgetbase.ui:33
 #, kde-format
 msgid "GPT"
-msgstr ""
+msgstr "GPT"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
 #: gui/createpartitiontablewidgetbase.ui:43
 #, kde-format
 msgid "MS-Dos"
-msgstr ""
+msgstr "MS-Dos"
 
 #. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
 #: gui/createpartitiontablewidgetbase.ui:70
 #, kde-format
 msgid "(icon)"
-msgstr ""
+msgstr "(ikono)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: gui/createpartitiontablewidgetbase.ui:83
 #, kde-format
 msgid "<b>Warning:</b> This will destroy all data on the device!"
-msgstr ""
+msgstr "<b>Averto:</b> Ĉi tio detruos ĉiujn datumojn de la aparato!"
 
 #: gui/createvolumegroupdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create new Volume Group"
-msgstr ""
+msgstr "Krei novan Voluman Grupon"
 
 #: gui/devicepropsdialog.cpp:42
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Device Properties: <filename>%1</filename>"
-msgstr "Kroĉpunkto"
+msgstr "Propraĵoj de Aparato: <filename>%1</filename>"
 
 #: gui/devicepropsdialog.cpp:76 gui/infopane.cpp:168
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "%1 (read only)"
-msgstr ""
+msgstr "%1 (nurlega)"
 
 #: gui/devicepropsdialog.cpp:107 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "good"
-msgstr ""
+msgstr "bona"
 
 #: gui/devicepropsdialog.cpp:112 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "BAD"
-msgstr ""
+msgstr "MALBONA"
 
 #: gui/devicepropsdialog.cpp:117 gui/smartdialog.cpp:129
 #, kde-kuit-format
 msgctxt "@label"
 msgid "(unknown)"
-msgstr ""
+msgstr "(nekonata)"
 
 #: gui/devicepropsdialog.cpp:123
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "LVM Volume Group"
-msgstr ""
+msgstr "LVM Volume Group"
 
 #: gui/devicepropsdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Software RAID Device"
-msgstr ""
+msgstr "Programaro RAID-Aparato"
 
 #: gui/devicepropsdialog.cpp:127
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Volume Manager Device"
-msgstr ""
+msgstr "Volumo-Manaĝera Aparato"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
 #: gui/devicepropswidgetbase.ui:63
 #, kde-format
 msgid "Partition table:"
-msgstr ""
+msgstr "Dispartiga tablo:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
 #: gui/devicepropswidgetbase.ui:85
 #, kde-format
 msgid "&Cylinder alignment"
-msgstr ""
+msgstr "&Cilindra vicigo"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
 #: gui/devicepropswidgetbase.ui:92
 #, kde-format
 msgid "Sector based align&ment"
-msgstr ""
+msgstr "Sektorbazita vicigo"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/devicepropswidgetbase.ui:121
@@ -759,33 +759,32 @@ msgstr "Enhaveco:"
 #: gui/devicepropswidgetbase.ui:141
 #, kde-format
 msgid "Total sectors:"
-msgstr ""
+msgstr "Totalaj sektoroj:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
 #: gui/devicepropswidgetbase.ui:168
 #, kde-format
 msgid "Logical sector size:"
-msgstr ""
+msgstr "Logika sektoro grandeco:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
 #: gui/devicepropswidgetbase.ui:188
 #, kde-format
 msgid "Physical sector size:"
-msgstr ""
+msgstr "Grando de fizika sektoro:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
 #: gui/devicepropswidgetbase.ui:222
 #, kde-format
 msgid "Primaries/Max:"
-msgstr ""
+msgstr "Primaraj/Maksimumoj:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
 #: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
 #: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
-#, fuzzy, kde-format
-#| msgid "Status"
+#, kde-format
 msgid "SMART status:"
-msgstr "Stato"
+msgstr "SMART-statuso:"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
@@ -795,36 +794,34 @@ msgid "More..."
 msgstr "Plia..."
 
 #: gui/editmountoptionsdialog.cpp:25
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Edit additional mount options"
-msgstr "Kroĉpunkto"
+msgstr "Redakti pliajn munt-opciojn"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
 #: gui/editmountoptionsdialogwidgetbase.ui:19
 #, kde-format
 msgid "Edit Mount Options"
-msgstr ""
+msgstr "Redakti Muntajn Opciojn"
 
 #. i18n: ectx: property (text), widget (QLabel, m_Label)
 #: gui/editmountoptionsdialogwidgetbase.ui:25
 #, kde-format
 msgid "Edit the mount options for this file system:"
-msgstr ""
+msgstr "Redakti la muntajn opciojn por ĉi tiu dosiersistemo:"
 
 #. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, m_EditOptions)
 #: gui/editmountoptionsdialogwidgetbase.ui:32
 #, kde-format
 msgid "Option1,Option2"
-msgstr ""
+msgstr "Opcio1, Opcio2"
 
 #: gui/editmountpointdialog.cpp:32
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Edit mount point for <filename>%1</filename>"
-msgstr "Kroĉpunkto"
+msgstr "Redakti muntpunkton por <filename>%1</filename>"
 
 #: gui/editmountpointdialog.cpp:58
 #, kde-kuit-format
@@ -835,50 +832,54 @@ msgid ""
 "overwrite the existing file on your hard drive now. This <emphasis "
 "strong='1'>can not be undone</emphasis>.</warning></para>"
 msgstr ""
+"<para>Ĉu vi certas, ke vi volas konservi la ŝanĝojn, kiujn vi faris al la "
+"sistemtabel-dosiero <filename>/etc/fstab</filename>?</para><para><warning>Ĉi "
+"tio anstataŭigos la ekzistantan dosieron sur via disko. veturi nun. Ĉi tio "
+"<emphasis strong='1'>ne povas esti malfarita</emphasis>.</warning></para>"
 
 #: gui/editmountpointdialog.cpp:60
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really save changes?"
-msgstr ""
+msgstr "Ĉu vere konservi ŝanĝojn?"
 
 #: gui/editmountpointdialog.cpp:61
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save changes"
-msgstr ""
+msgstr "Konservi ŝanĝojn"
 
 #: gui/editmountpointdialog.cpp:76
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
-msgstr "Kroĉpunkto"
+msgstr ""
+"Ne eblis konservi muntajn punktojn al dosiero <filename>/etc/fstab</"
+"filename>."
 
 #: gui/editmountpointdialog.cpp:77
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Saving Mount Points"
-msgstr "Kroĉpunkto"
+msgstr "Eraro dum Konservado de Muntejoj"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
 #: gui/editmountpointdialogwidgetbase.ui:23
 #, kde-format
 msgid "UU&ID"
-msgstr ""
+msgstr "UU&ID"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
 #: gui/editmountpointdialogwidgetbase.ui:33
 #, kde-format
 msgid "Users can mount and unmount"
-msgstr ""
+msgstr "Uzantoj povas munti kaj malmunti"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
 #: gui/editmountpointdialogwidgetbase.ui:40
 #, kde-format
 msgid "Update access times relative to modification"
-msgstr ""
+msgstr "Ĝisdatigi alirtempojn rilate al modifo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
 #: gui/editmountpointdialogwidgetbase.ui:61
@@ -890,100 +891,97 @@ msgstr "Nurlege"
 #: gui/editmountpointdialogwidgetbase.ui:68
 #, kde-format
 msgid "Pass &Number:"
-msgstr ""
+msgstr "Paŝo &Numero:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
 #: gui/editmountpointdialogwidgetbase.ui:101
 #, kde-format
 msgid "De&vice Node"
-msgstr ""
+msgstr "Apara&to-Nodo"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
 #: gui/editmountpointdialogwidgetbase.ui:111
-#, fuzzy, kde-format
+#, kde-format
 msgid "Options:"
-msgstr "Bildoperacioj"
+msgstr "Opcioj:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
 #: gui/editmountpointdialogwidgetbase.ui:137
-#, fuzzy, kde-format
-#| msgid "Label"
+#, kde-format
 msgid "&Label"
-msgstr "Etikedo"
+msgstr "&Etikedo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
 #: gui/editmountpointdialogwidgetbase.ui:144
 #, kde-format
 msgid "No binary execution"
-msgstr ""
+msgstr "Neniu duuma ekzekuto"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
 #: gui/editmountpointdialogwidgetbase.ui:167
 #, kde-format
 msgid "No automatic mount"
-msgstr ""
+msgstr "Neniu aŭtomata munto"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
 #: gui/editmountpointdialogwidgetbase.ui:180
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Forigi"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
 #: gui/editmountpointdialogwidgetbase.ui:193
 #, kde-format
 msgid "Select..."
-msgstr "Elektu..."
+msgstr "Elekti..."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
 #: gui/editmountpointdialogwidgetbase.ui:200
 #, kde-format
 msgid "No update of directory access times"
-msgstr ""
+msgstr "Neniu ĝisdatigo de dosierumaj alirtempoj"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
 #: gui/editmountpointdialogwidgetbase.ui:207
 #, kde-format
 msgid "Dump &Frequency:"
-msgstr ""
+msgstr "O&fteco de Ŝuto:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelType)
 #: gui/editmountpointdialogwidgetbase.ui:236
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "Type:"
-msgstr "Tipo"
+msgstr "Tipo:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
 #: gui/editmountpointdialogwidgetbase.ui:246
-#, fuzzy, kde-format
-#| msgid "Date:"
+#, kde-format
 msgid "Path:"
-msgstr "Dato:"
+msgstr "Vojo:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
 #: gui/editmountpointdialogwidgetbase.ui:288
 #, kde-format
 msgid "No update of file access times"
-msgstr ""
+msgstr "Neniu ĝisdatigo de dosieraj alirtempoj"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
 #: gui/editmountpointdialogwidgetbase.ui:295
 #, kde-format
 msgid "Synchronous access"
-msgstr ""
+msgstr "Sinkrona aliro"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/editmountpointdialogwidgetbase.ui:315
 #, kde-format
 msgid "Identify by:"
-msgstr ""
+msgstr "Identigi per:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "File System Support"
-msgstr ""
+msgstr "Subteno de Dosiersistemo"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/filesystemsupportdialogwidgetbase.ui:23
@@ -996,6 +994,12 @@ msgid ""
 "if all required tools are installed. Please see the documentation for "
 "details. "
 msgstr ""
+"Ĉi tiu tabelo montras kiuj dosiersistemoj estas subtenataj kaj kiuj specifaj "
+"operacioj povas esti faritaj sur ili.\n"
+"Kelkaj dosiersistemoj bezonas eksterajn ilojn por esti instalitaj por ke ili "
+"estu subtenataj. Sed ne ĉiuj operacioj povas esti faritaj sur ĉiuj "
+"dosiersistemoj, eĉ se ĉiuj bezonataj iloj estas instalitaj. Bonvolu vidi la "
+"dokumentaron por detaloj."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:70
@@ -1017,9 +1021,9 @@ msgstr "Kreskigi"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:85
-#, fuzzy, kde-format
+#, kde-format
 msgid "Shrink"
-msgstr "Akuteco:"
+msgstr "Ŝrumpi"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:90
@@ -1043,19 +1047,19 @@ msgstr "Ŝalti"
 #: gui/filesystemsupportdialogwidgetbase.ui:105
 #, kde-format
 msgid "Read Label"
-msgstr ""
+msgstr "Legi Etikedon"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:110
 #, kde-format
 msgid "Write Label"
-msgstr ""
+msgstr "Skribi Etikedon"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:115
 #, kde-format
 msgid "Read Usage"
-msgstr ""
+msgstr "Legi Uzadon"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:120
@@ -1073,14 +1077,14 @@ msgstr "Restarigi"
 #: gui/filesystemsupportdialogwidgetbase.ui:130
 #, kde-format
 msgid "Support Tools"
-msgstr ""
+msgstr "Subtenaj Iloj"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRescan)
 #: gui/filesystemsupportdialogwidgetbase.ui:140
 #, kde-format
 msgctxt "@action:button"
 msgid "Rescan Support"
-msgstr ""
+msgstr "Rescan Subteno"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
 #: gui/infopane.cpp:47 gui/mainwindowbase.ui:47
@@ -1093,226 +1097,217 @@ msgstr "Informoj"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition Information"
-msgstr ""
+msgstr "Dispartiga Informo"
 
 #: gui/infopane.cpp:113 gui/infopane.cpp:127 gui/infopane.cpp:139
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "File system:"
-msgstr ""
+msgstr "Dosiersistemo:"
 
 #: gui/infopane.cpp:114 gui/infopane.cpp:128 gui/infopane.cpp:140
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Capacity:"
-msgstr ""
+msgstr "Kapacito:"
 
 #: gui/infopane.cpp:115
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher name:"
-msgstr ""
+msgstr "Ĉifronomo:"
 
 #: gui/infopane.cpp:116
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher mode:"
-msgstr ""
+msgstr "Ĉifrreĝimo:"
 
 #: gui/infopane.cpp:117
 #, kde-format
 msgctxt "@label partition"
 msgid "Hash:"
-msgstr ""
+msgstr "Hash:"
 
 #: gui/infopane.cpp:118
 #, kde-format
 msgctxt "@label partition"
 msgid "Key size:"
-msgstr ""
+msgstr "Ŝlosila grandeco:"
 
 #: gui/infopane.cpp:119
 #, kde-format
 msgctxt "@label partition"
 msgid "Payload offset:"
-msgstr ""
+msgstr "Utila ŝarĝo kompenso:"
 
 #: gui/infopane.cpp:120 gui/infopane.cpp:135 gui/infopane.cpp:143
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "First sector:"
-msgstr ""
+msgstr "Unua sektoro:"
 
 #: gui/infopane.cpp:121 gui/infopane.cpp:136 gui/infopane.cpp:144
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Last sector:"
-msgstr ""
+msgstr "Lasta sektoro:"
 
 #: gui/infopane.cpp:122 gui/infopane.cpp:137 gui/infopane.cpp:145
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Number of sectors:"
-msgstr ""
+msgstr "Nombro da sektoroj:"
 
 #: gui/infopane.cpp:129 gui/infopane.cpp:141
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Available:"
-msgstr ""
+msgstr "Disponebla:"
 
 #: gui/infopane.cpp:130 gui/infopane.cpp:142
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Used:"
-msgstr ""
+msgstr "Uzita:"
 
 #: gui/infopane.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label partition"
 msgid "PE Size:"
-msgstr "Grando:"
+msgstr "PE Grandeco:"
 
 #: gui/infopane.cpp:132
 #, kde-format
 msgctxt "@label partition"
 msgid "Total PE:"
-msgstr ""
+msgstr "Totala PE:"
 
 #: gui/infopane.cpp:133
 #, kde-format
 msgctxt "@label partition"
 msgid "Free PE:"
-msgstr ""
+msgstr "Senpaga PE:"
 
 #: gui/infopane.cpp:134
 #, kde-format
 msgctxt "@label partition"
 msgid "Allocated PE:"
-msgstr ""
+msgstr "Asignita PE:"
 
 #: gui/infopane.cpp:157
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Device Information"
-msgstr ""
+msgstr "Informoj pri Aparato"
 
 #: gui/infopane.cpp:161
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Path:"
-msgstr ""
+msgstr "Vojo:"
 
 #: gui/infopane.cpp:176
 #, kde-format
 msgctxt "@label device"
 msgid "Type:"
-msgstr ""
+msgstr "Tipo:"
 
 #: gui/infopane.cpp:177 gui/infopane.cpp:185 gui/infopane.cpp:193
 #, kde-format
 msgctxt "@label device"
 msgid "Capacity:"
-msgstr ""
+msgstr "Kapacito:"
 
 #: gui/infopane.cpp:178
 #, kde-format
 msgctxt "@label device"
 msgid "Total sectors:"
-msgstr ""
+msgstr "Totalaj sektoroj:"
 
 #: gui/infopane.cpp:179
 #, kde-format
 msgctxt "@label device"
 msgid "Logical sector size:"
-msgstr ""
+msgstr "Logika sektoro grandeco:"
 
 #: gui/infopane.cpp:180
 #, kde-format
 msgctxt "@label device"
 msgid "Physical sector size:"
-msgstr ""
+msgstr "Grando de fizika sektoro:"
 
 #: gui/infopane.cpp:181
 #, kde-format
 msgctxt "@label device"
 msgid "Primaries/Max:"
-msgstr ""
+msgstr "Primaraj/Maksimumoj:"
 
 #: gui/infopane.cpp:184 gui/infopane.cpp:192
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgctxt "@label device"
 msgid "Volume Type:"
-msgstr "Dosiersistemo"
+msgstr "Volumo-Tipo:"
 
 #: gui/infopane.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "PE Size:"
-msgstr "Grando:"
+msgstr "PE Grandeco:"
 
 #: gui/infopane.cpp:187
 #, kde-format
 msgctxt "@label device"
 msgid "Total PE:"
-msgstr ""
+msgstr "Totala PE:"
 
 #: gui/infopane.cpp:188
 #, kde-format
 msgctxt "@label device"
 msgid "Allocated PE:"
-msgstr ""
+msgstr "Asignita PE:"
 
 #: gui/infopane.cpp:189
 #, kde-format
 msgctxt "@label device"
 msgid "Free PE:"
-msgstr ""
+msgstr "Senpaga PE:"
 
 #: gui/infopane.cpp:194
 #, kde-format
 msgctxt "@label device"
 msgid "RAID Level:"
-msgstr ""
+msgstr "RAID-Nivelo:"
 
 #: gui/infopane.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr "Grando:"
+msgstr "Peco Grandeco:"
 
 #: gui/infopane.cpp:196
 #, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr ""
+msgstr "Tuta Peco:"
 
 #: gui/infopane.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr "Grando:"
+msgstr "Tabelo Grandeco:"
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Insert a partition"
-msgstr ""
+msgstr "Enmeti dispartaĵon"
 
 #: gui/listphysicalvolumes.cpp:39
 #, kde-kuit-format
 msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
-msgstr ""
+msgstr "%1 | %2"
 
 #: gui/mainwindow.cpp:164
 #, kde-format
@@ -1321,6 +1316,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
+"Partition Manager postulas privilegiojn por funkcii. Bonvolu refreŝigi la "
+"aparatojn kaj aŭtentikigi kiam vi petas."
 
 #: gui/mainwindow.cpp:231
 #, kde-kuit-format
@@ -1338,195 +1335,195 @@ msgstr[1] ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
-msgstr ""
+msgstr "Forĵeti pritraktotajn operaciojn kaj ĉesi?"
 
 #: gui/mainwindow.cpp:234
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
-msgstr ""
+msgstr "Forlasi <application>%1</application>"
 
 #: gui/mainwindow.cpp:276
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
-msgstr ""
+msgstr "Malfari"
 
 #: gui/mainwindow.cpp:277
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
-msgstr ""
+msgstr "Malfari la lastan operacion"
 
 #: gui/mainwindow.cpp:278
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
-msgstr ""
+msgstr "Forigi la lastan operacion el la listo."
 
 #: gui/mainwindow.cpp:285
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
-msgstr ""
+msgstr "Klara"
 
 #: gui/mainwindow.cpp:286
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
-msgstr ""
+msgstr "Forigi ĉiujn operaciojn"
 
 #: gui/mainwindow.cpp:287
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
-msgstr ""
+msgstr "Malplenigi la liston de pritraktotaj operacioj."
 
 #: gui/mainwindow.cpp:293
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
-msgstr ""
+msgstr "Apliki"
 
 #: gui/mainwindow.cpp:294
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
-msgstr ""
+msgstr "Apliki ĉiujn operaciojn"
 
 #: gui/mainwindow.cpp:295
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
-msgstr ""
+msgstr "Apliki la pritraktotajn operaciojn en la listo."
 
 #: gui/mainwindow.cpp:302
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
-msgstr ""
+msgstr "Nova Dispartiga Tabelo"
 
 #: gui/mainwindow.cpp:303
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
-msgstr ""
+msgstr "Krei novan subdiskotabelon"
 
 #: gui/mainwindow.cpp:304
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
-msgstr ""
+msgstr "Krei novan kaj malplenan disktabelon sur aparato."
 
 #: gui/mainwindow.cpp:311
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
-msgstr ""
+msgstr "Eksporto Dispartiga Tabelo"
 
 #: gui/mainwindow.cpp:312
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
-msgstr ""
+msgstr "Eksporti diskpartigan tabelon"
 
 #: gui/mainwindow.cpp:313
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
-msgstr ""
+msgstr "Eksporti la subdisktabelon de la aparato al tekstdosiero."
 
 #: gui/mainwindow.cpp:319
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
-msgstr ""
+msgstr "Importi Dispartigan Tabelon"
 
 #: gui/mainwindow.cpp:320
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
-msgstr ""
+msgstr "Importi subdiskotabelon"
 
 #: gui/mainwindow.cpp:321
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
-msgstr ""
+msgstr "Importi subdiskotabelon el tekstdosiero."
 
 #: gui/mainwindow.cpp:328
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
-msgstr ""
+msgstr "Forigi Volumgrupon"
 
 #: gui/mainwindow.cpp:329
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
-msgstr ""
+msgstr "Forigi elektitan Volumgrupon"
 
 #: gui/mainwindow.cpp:330
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
-msgstr ""
+msgstr "Forigi elektitan Volumgrupon."
 
 #: gui/mainwindow.cpp:338
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
-msgstr ""
+msgstr "Regrandigi Voluman Grupon"
 
 #: gui/mainwindow.cpp:339
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
-msgstr ""
+msgstr "Regrandigi elektitan Voluman Grupon"
 
 #: gui/mainwindow.cpp:340
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
-msgstr ""
+msgstr "Etendi aŭ redukti elektitan Voluman Grupon."
 
 #: gui/mainwindow.cpp:348
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
-msgstr ""
+msgstr "Malaktivigi Voluman Grupon"
 
 #: gui/mainwindow.cpp:349
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
-msgstr ""
+msgstr "Malaktivigi elektitan Voluman Grupon"
 
 #: gui/mainwindow.cpp:350
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr ""
+"Malaktivigi elektitan Voluman Grupon antaŭ ol malŝalti forpreneblajn "
+"aparatojn."
 
 #: gui/mainwindow.cpp:356
-#, fuzzy, kde-kuit-format
-#| msgid "Status"
+#, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
-msgstr "Stato"
+msgstr "SMART Statuso"
 
 #: gui/mainwindow.cpp:357
-#, fuzzy, kde-kuit-format
-#| msgid "Status"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
-msgstr "Stato"
+msgstr "Montri SMART-statuson"
 
 #: gui/mainwindow.cpp:358
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
-msgstr ""
+msgstr "Montri la SMART-statuson de la aparato se subtenata"
 
 #: gui/mainwindow.cpp:363 gui/mainwindow.cpp:455
 #, kde-kuit-format
@@ -1538,49 +1535,49 @@ msgstr "Ecoj"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
-msgstr ""
+msgstr "Montri dialogon pri aparataj proprietoj"
 
 #: gui/mainwindow.cpp:365
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
-msgstr ""
+msgstr "Rigardi kaj modifi aparatojn"
 
 #: gui/mainwindow.cpp:372
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
-msgstr ""
+msgstr "Nova"
 
 #: gui/mainwindow.cpp:373
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
-msgstr ""
+msgstr "Nova subdisko"
 
 #: gui/mainwindow.cpp:374
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
-msgstr ""
+msgstr "Krei novan subdiskon."
 
 #: gui/mainwindow.cpp:381
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
-msgstr ""
+msgstr "Regrandigi/Movi"
 
 #: gui/mainwindow.cpp:382
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
-msgstr ""
+msgstr "Regrandigi aŭ movi subdiskon"
 
 #: gui/mainwindow.cpp:383
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
-msgstr ""
+msgstr "Ŝrumpi, kreski aŭ movi ekzistantan subdiskon."
 
 #: gui/mainwindow.cpp:390
 #, kde-kuit-format
@@ -1592,31 +1589,31 @@ msgstr "Forigi"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
-msgstr ""
+msgstr "Forigi subdiskon"
 
 #: gui/mainwindow.cpp:392
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
-msgstr ""
+msgstr "Forigi subdiskon."
 
 #: gui/mainwindow.cpp:399
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
-msgstr ""
+msgstr "Peceto"
 
 #: gui/mainwindow.cpp:400
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
-msgstr ""
+msgstr "Shred vando"
 
 #: gui/mainwindow.cpp:401
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
-msgstr ""
+msgstr "Disŝiri subdiskon por ke ĝia enhavo ne estu restaŭrita."
 
 #: gui/mainwindow.cpp:408
 #, kde-kuit-format
@@ -1628,13 +1625,13 @@ msgstr "Kopii"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
-msgstr ""
+msgstr "Kopii subdiskon"
 
 #: gui/mainwindow.cpp:410
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
-msgstr ""
+msgstr "Kopii ekzistantan subdiskon."
 
 #: gui/mainwindow.cpp:417
 #, kde-kuit-format
@@ -1646,117 +1643,115 @@ msgstr "Alglui"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
-msgstr ""
+msgstr "Alglui subdiskon"
 
 #: gui/mainwindow.cpp:419
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
-msgstr ""
+msgstr "Alglui kopiitan subdiskon."
 
 #: gui/mainwindow.cpp:426
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
-msgstr "Kroĉpunkto"
+msgstr "Redakti Muntejon"
 
 #: gui/mainwindow.cpp:427
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
-msgstr "Kroĉpunkto"
+msgstr "Redakti muntopunkton"
 
 #: gui/mainwindow.cpp:428
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
-msgstr ""
+msgstr "Redakti la muntejon kaj opciojn de subdisko."
 
 #: gui/mainwindow.cpp:433
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
-msgstr ""
+msgstr "Munto"
 
 #: gui/mainwindow.cpp:434
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
-msgstr ""
+msgstr "Munti aŭ malmunti subdiskon"
 
 #: gui/mainwindow.cpp:435
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
-msgstr ""
+msgstr "Munti aŭ malmunti subdiskon."
 
 #: gui/mainwindow.cpp:440
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
-msgstr ""
+msgstr "Malŝlosi"
 
 #: gui/mainwindow.cpp:441
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
-msgstr ""
+msgstr "Malŝlosi aŭ ŝlosi ĉifritan subdiskon"
 
 #: gui/mainwindow.cpp:442
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
-msgstr ""
+msgstr "Malŝlosi aŭ ŝlosi ĉifritan subdiskon."
 
 #: gui/mainwindow.cpp:447
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
-msgstr ""
+msgstr "Kontroli"
 
 #: gui/mainwindow.cpp:448
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
-msgstr ""
+msgstr "Kontroli subdiskon"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
-msgstr ""
+msgstr "Kontroli dosiersistemon sur subdisko por eraroj."
 
 #: gui/mainwindow.cpp:456
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
-msgstr ""
+msgstr "Montru dialogon pri partiaj proprietoj"
 
 #: gui/mainwindow.cpp:457
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
-msgstr ""
+msgstr "Rigardu kaj modifi dispartrajtojn (etikedo, dispartigoflagoj, ktp.)"
 
 #: gui/mainwindow.cpp:463
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
-msgstr ""
+msgstr "Rezervo"
 
 #: gui/mainwindow.cpp:464
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
-msgstr ""
+msgstr "Rezerva subdisko"
 
 #: gui/mainwindow.cpp:465
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
-msgstr ""
+msgstr "Rezervi subdiskon al bilddosiero."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -1768,149 +1763,147 @@ msgstr "Restarigi"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
-msgstr ""
+msgstr "Restarigi subdiskon"
 
 #: gui/mainwindow.cpp:473
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
-msgstr ""
+msgstr "Restarigi subdiskon de bilddosiero."
 
 #: gui/mainwindow.cpp:480
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
-msgstr ""
+msgstr "Nova Volumena Grupo"
 
 #: gui/mainwindow.cpp:481
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
-msgstr ""
+msgstr "Krei novan LVM Volume Group"
 
 #: gui/mainwindow.cpp:482
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
-msgstr ""
+msgstr "Krei novan LVM Volume Group kiel aparaton."
 
 #: gui/mainwindow.cpp:488
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
-msgstr ""
+msgstr "Subteno de Dosiera Sistemo"
 
 #: gui/mainwindow.cpp:489
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
-msgstr ""
+msgstr "Rigardi informojn pri subteno de dosiersistemaj"
 
 #: gui/mainwindow.cpp:490
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
-msgstr ""
+msgstr "Montri informojn pri subtenataj dosiersistemoj."
 
 #: gui/mainwindow.cpp:494
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
-msgstr ""
+msgstr "Refreŝigi Aparatojn"
 
 #: gui/mainwindow.cpp:495
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
-msgstr ""
+msgstr "Refreŝigi ĉiujn aparatojn"
 
 #: gui/mainwindow.cpp:496
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
-msgstr ""
+msgstr "Renovigi la liston de aparatoj."
 
 #: gui/mainwindow.cpp:512
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
-msgstr ""
+msgstr "Klara Protokolo"
 
 #: gui/mainwindow.cpp:513
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
-msgstr ""
+msgstr "Forigi la protokolan eligon"
 
 #: gui/mainwindow.cpp:514
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
-msgstr ""
+msgstr "Forigi la protokolan eligpanelon."
 
 #: gui/mainwindow.cpp:519
-#, fuzzy, kde-kuit-format
-#| msgid "&Save"
+#, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
-msgstr "&Konservi"
+msgstr "Konservi Protokolo"
 
 #: gui/mainwindow.cpp:520
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
-msgstr ""
+msgstr "Konservi la protokolan eligon"
 
 #: gui/mainwindow.cpp:521
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
-msgstr ""
+msgstr "Konservi la protokolan eligon al dosiero."
 
 #: gui/mainwindow.cpp:527
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
-msgstr ""
+msgstr "Pri KPMcore Biblioteko"
 
 #: gui/mainwindow.cpp:528
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
-msgstr ""
+msgstr "Montri Pri-KPMcore dialogon"
 
 #: gui/mainwindow.cpp:529
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
-msgstr ""
+msgstr "Montri la dialogon Pri KPMcore."
 
 #: gui/mainwindow.cpp:711
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Unu pritraktota operacio"
+msgstr[1] "%1 pritraktotaj operacioj"
 
 #: gui/mainwindow.cpp:806
-#, fuzzy, kde-kuit-format
-#| msgid "Backup"
+#, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
-msgstr "Sekurkopio"
+msgstr "Uzante kromprogramon: %1 (%2)"
 
 #: gui/mainwindow.cpp:810
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
-msgstr ""
+msgstr "Skanantaj aparatoj..."
 
 #: gui/mainwindow.cpp:848
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
-msgstr ""
+msgstr "Skanado finiĝis."
 
 #: gui/mainwindow.cpp:912
 #, kde-kuit-format
@@ -1919,18 +1912,20 @@ msgid ""
 "<para>Do you really want to rescan the devices?</para><para><warning>This "
 "will also clear the list of pending operations.</warning></para>"
 msgstr ""
+"<para>Ĉu vi vere volas resanigi la aparatojn?</para><para><warning>Tio ankaŭ "
+"malplenigos la liston de pritraktotaj operacioj.</warning></para>"
 
 #: gui/mainwindow.cpp:914
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
-msgstr ""
+msgstr "Ĉu vere reskani la aparatojn?"
 
 #: gui/mainwindow.cpp:915
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
-msgstr ""
+msgstr "Reskani Aparatojn"
 
 #: gui/mainwindow.cpp:941
 #, kde-kuit-format
@@ -1939,84 +1934,85 @@ msgid ""
 "<para>Do you really want to apply the pending operations listed below?</"
 "para><para><warning>This will permanently modify your disks.</warning></para>"
 msgstr ""
+"<para >Ĉu vi vere volas apliki la atendatajn operaciojn listigitajn sube?</"
+"para><para><warning>Ĉi tio konstante modifos viajn diskojn.</warning></para>"
 
 #: gui/mainwindow.cpp:943
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
-msgstr ""
+msgstr "Ĉu apliki pritraktotajn operaciojn?"
 
 #: gui/mainwindow.cpp:944
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
-msgstr ""
+msgstr "Apliki Pritraktotajn Operaciojn"
 
 #: gui/mainwindow.cpp:946
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
-msgstr ""
+msgstr "Aplikante operaciojn..."
 
 #: gui/mainwindow.cpp:971
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
-msgstr ""
+msgstr "Malfarante operacio: %1"
 
 #: gui/mainwindow.cpp:987
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
-msgstr ""
+msgstr "Ĉu vi vere volas forigi la liston de pritraktotaj operacioj?"
 
 #: gui/mainwindow.cpp:988
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
-msgstr ""
+msgstr "Ĉu forigi pritraktotajn operaciojn?"
 
 #: gui/mainwindow.cpp:989
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
-msgstr ""
+msgstr "Forviŝi Pritraktotajn Operaciojn"
 
 #: gui/mainwindow.cpp:991
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
-msgstr ""
+msgstr "Forigante la liston de pritraktotaj operacioj."
 
 #: gui/mainwindow.cpp:1033
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
-msgstr "Kroĉpunkto"
+msgstr "Ne eblis malfermi enigdosieron <filename>%1</filename> por importo"
 
 #: gui/mainwindow.cpp:1033 gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1051
 #: gui/mainwindow.cpp:1057
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
-msgstr ""
+msgstr "Eraro dum Importo de Dispartiga Tabelo"
 
 #: gui/mainwindow.cpp:1051
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
-msgstr "Kroĉpunkto"
+msgstr "Ne eblis malfermi enigdosieron <filename>%1</filename> por importo: %2"
 
 #: gui/mainwindow.cpp:1057
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Could not open temporary file <filename>%1</filename> while trying to import "
 "from <filename>%2</filename>."
-msgstr "Kroĉpunkto"
+msgstr ""
+"Ne eblis malfermi provizoran dosieron <filename>%1</filename> dum provante "
+"importi el <filename>%2</filename>."
 
 #: gui/mainwindow.cpp:1087
 #, kde-kuit-format
@@ -2025,6 +2021,8 @@ msgid ""
 "The import file <filename>%1</filename> does not contain a valid partition "
 "table."
 msgstr ""
+"La importdosiero <filename>%1</filename> ne enhavas validan diskpartigan "
+"tabelon."
 
 #: gui/mainwindow.cpp:1087 gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1104
 #: gui/mainwindow.cpp:1109 gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1132
@@ -2033,49 +2031,50 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
-msgstr ""
+msgstr "Eraro dum Importado de Dispartiga Tabelo"
 
 #: gui/mainwindow.cpp:1097
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
-msgstr ""
+msgstr "Trovis pli ol unu diskpartigan tipon en importdosiero (linio %1)."
 
 #: gui/mainwindow.cpp:1104
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
-msgstr ""
+msgstr "Diskpartiga tabeltipo \"%1\" estas nekonata (linio %2)."
 
 #: gui/mainwindow.cpp:1109
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr ""
+"Diskpartiga tabeltipo \"%1\" ne estas subtenata por importo (linio %2)."
 
 #: gui/mainwindow.cpp:1119
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
-msgstr ""
+msgstr "Trovis subdiskon sed neniun dispartigan tabeltipon (linio %1)."
 
 #: gui/mainwindow.cpp:1132
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
-msgstr ""
+msgstr "La subdisko %1 estus ekster la limoj de la aparato (linio %2)."
 
 #: gui/mainwindow.cpp:1137
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
-msgstr ""
+msgstr "La subdisko %1 finiĝis antaŭ komenca sektoro (linio %2)."
 
 #: gui/mainwindow.cpp:1156
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr ""
+msgstr "Nerekonita diskpartigorolo \"%1\" por subdisko %2 (linio %3)."
 
 #: gui/mainwindow.cpp:1161
 #, kde-kuit-format
@@ -2083,6 +2082,7 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
 msgstr ""
+"Neniu gepatra subdisko aŭ subdiskotabelo trovita por subdisko %1 (linio %2)."
 
 #: gui/mainwindow.cpp:1166
 #, kde-kuit-format
@@ -2091,34 +2091,36 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
+"La diskpartiga tipo \"%1\" ne subtenas plilongigitajn subdiskojn, sed "
+"troviĝis tia (linio %2)."
 
 #: gui/mainwindow.cpp:1173
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
-msgstr ""
+msgstr "Ne eblis krei dosiersistemon \"%1\" por diskparto %2 (linio %3)."
 
 #: gui/mainwindow.cpp:1188
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
-msgstr ""
+msgstr "Ne eblis analizi linion %1 el importdosiero. Ignorante ĝin."
 
 #: gui/mainwindow.cpp:1208
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
-msgstr ""
+msgstr "Eraro dum Eksporto de Dispartiga Tabelo"
 
 #: gui/mainwindow.cpp:1378 gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1420
 #, kde-kuit-format
 msgid "%1%2"
-msgstr ""
+msgstr "%1%2"
 
 #: gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1395
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
-msgstr ""
+msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
 #: gui/mainwindow.cpp:1432
 #, kde-kuit-format
@@ -2135,30 +2137,40 @@ msgid ""
 "modify them.</para><para>You should find packages with these support tools "
 "in your distribution's package manager.</para>"
 msgstr ""
+"<para>Neniaj subtenaj iloj estis trovitaj por dosiersistemoj nuntempe "
+"ĉeestantaj sur malmolaj diskoj en ĉi tiu komputilo:</para><table "
+"style='margin-top:12px'><tr><td style='font-weight:bold; padding-right:12px;"
+"white-space:nowrap;'>Dispartigo</td><td style='font-weight:bold;padding-"
+"right:12px;white-space:nowrap;'>Dosiersistemo</td> <td style='font-weight:"
+"bold;padding-right:12px;white-space:nowrap;'>Subtenaj Iloj</td><td "
+"style='font-weight:bold;padding-right:12px;white- space:nowrap;'>URL</td></"
+"tr>%1</table><para>Dum la subtenaj iloj por ĉi tiuj dosiersistemoj ne estas "
+"instalitaj, vi ne povos modifi ilin.</para> <para>Vi devus trovi pakaĵojn "
+"kun ĉi tiuj subtenaj iloj en la pakaĵadministrilo de via distribuo.</para>"
 
 #: gui/mainwindow.cpp:1445
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
-msgstr ""
+msgstr "Mankas Dosiersistemaj Subtenopakoj"
 
 #: gui/mainwindow.cpp:1456
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr ""
+msgstr "Nerekonita aparato \"%1\""
 
 #: gui/mainwindow.cpp:1465
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr ""
+msgstr "Nerekonita subdisko \"%1\""
 
 #: gui/mainwindow.cpp:1466
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr ""
+msgstr "Eraro dum malfermo de subdisko"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -2166,141 +2178,143 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "KDE Partition Manager"
-msgstr ""
+msgstr "KDE Diskpartiga Administranto"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
 #: gui/mainwindowbase.ui:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Devices"
-msgstr ""
+msgstr "Aparatoj"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
 #: gui/mainwindowbase.ui:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Pending Operations"
-msgstr ""
+msgstr "Pritraktotaj Operacioj"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
 #: gui/mainwindowbase.ui:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Log Output"
-msgstr ""
+msgstr "Protokol-Eligo"
 
 #: gui/newdialog.cpp:47
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a new partition"
-msgstr ""
+msgstr "Krei novan subdiskon"
 
 #. i18n: ectx: ToolBar (partitionToolBar)
 #: gui/partitionmanagerui.rc:12
-#, fuzzy, kde-format
-#| msgid "Mount Point"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Partition Manager Toolbar"
-msgstr "Kroĉpunkto"
+msgstr "Ilobreto de Subdisk-Administranto"
 
 #. i18n: ectx: Menu (device)
 #: gui/partitionmanagerui.rc:30
 #, kde-format
 msgctxt "@title:menu"
 msgid "Device"
-msgstr ""
+msgstr "Aparato"
 
 #. i18n: ectx: Menu (selectedDevice)
 #: gui/partitionmanagerui.rc:32
 #, kde-format
 msgctxt "@title:menu"
 msgid "Select Current Device"
-msgstr ""
+msgstr "Elekti Aktualan Aparaton"
 
 #. i18n: ectx: Menu (tools)
 #: gui/partitionmanagerui.rc:49
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
-msgstr ""
+msgstr "Iloj"
 
 #. i18n: ectx: Menu (partition)
 #: gui/partitionmanagerui.rc:55
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition"
-msgstr ""
+msgstr "Dispartigo"
 
 #. i18n: ectx: Menu (panels)
 #: gui/partitionmanagerui.rc:77
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"
-msgstr ""
+msgstr "Paneloj Montritaj"
 
 #: gui/partitionmanagerwidget.cpp:199
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
-msgstr ""
+msgstr "%1 [ĉifrita]"
 
 #: gui/partitionmanagerwidget.cpp:403
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be mounted."
-msgstr "Kroĉpunkto"
+msgstr ""
+"La dosiersistemo sur subdisko <filename>%1</filename> ne povis esti muntita."
 
 #: gui/partitionmanagerwidget.cpp:403
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
-msgstr ""
+msgstr "Ne Eblis Munti Dosiersistemon."
 
 #: gui/partitionmanagerwidget.cpp:406
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be unmounted."
-msgstr "Kroĉpunkto"
+msgstr ""
+"La dosiersistemo sur diskparto <filename>%1</filename> ne povis esti "
+"malmuntita."
 
 #: gui/partitionmanagerwidget.cpp:406
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
-msgstr ""
+msgstr "Ne Eblis Malmunti Dosiersistemon."
 
 #: gui/partitionmanagerwidget.cpp:446
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "unlocked."
-msgstr "Kroĉpunkto"
+msgstr ""
+"La ĉifrita dosiersistemo sur diskparto <filename>%1</filename> ne povis esti "
+"malŝlosita."
 
 #: gui/partitionmanagerwidget.cpp:452
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
-msgstr ""
+msgstr "Ne Eblis Malŝlosi Ĉifritan Dosiersistemon."
 
 #: gui/partitionmanagerwidget.cpp:457
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "locked."
-msgstr "Kroĉpunkto"
+msgstr ""
+"La ĉifrita dosiersistemo sur diskparto <filename>%1</filename> ne povis esti "
+"ŝlosita."
 
 #: gui/partitionmanagerwidget.cpp:463
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
-msgstr ""
+msgstr "Ne Eblis Ŝlosi Ĉifritan Dosiersistemon."
 
 #: gui/partitionmanagerwidget.cpp:492
 #, kde-kuit-format
@@ -2322,7 +2336,7 @@ msgstr[1] ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
-msgstr ""
+msgstr "Tro Multaj Primaraj Subdiskoj."
 
 #: gui/partitionmanagerwidget.cpp:559
 #, kde-kuit-format
@@ -2333,12 +2347,16 @@ msgid ""
 "</para><para>Please unmount all partitions with higher logical numbers than "
 "%2 first.</para>"
 msgstr ""
+"<para >La subdisko <filename>%1</filename> nuntempe ne povas esti forigita "
+"ĉar unu aŭ pluraj subdiskoj kun pli altaj logikaj nombroj ankoraŭ estas "
+"muntitaj.</para><para >Bonvolu malmunti ĉiujn subdiskojn kun pli altaj "
+"logikaj nombroj ol %2 unue.</para>"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
-msgstr ""
+msgstr "Ne Povas Forigi Diskpartigon."
 
 #: gui/partitionmanagerwidget.cpp:571
 #, kde-kuit-format
@@ -2348,36 +2366,36 @@ msgid ""
 "clipboard? It will no longer be available for pasting after it has been "
 "deleted."
 msgstr ""
+"Ĉu vi vere volas forigi la subdiskon kiu estas nuntempe en la tondujo? Ĝi ne "
+"plu estos disponebla por alglui post kiam ĝi estas forigita."
 
 #: gui/partitionmanagerwidget.cpp:573
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
-msgstr ""
+msgstr "Ĉu vere Forigi Subdiskon en la Tondujo?"
 
 #: gui/partitionmanagerwidget.cpp:574
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:inmenu"
-#| msgid "Delete"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
-msgstr "Forigi"
+msgstr "Forigi Ĝin"
 
 #: gui/partitionmanagerwidget.cpp:627
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Partition <filename>%1</filename> has the same position and size after "
 "resize/move. Ignoring operation."
-msgstr "Kroĉpunkto"
+msgstr ""
+"Disparto <filename>%1</filename> havas la saman pozicion kaj grandecon post "
+"regrandigo/movo. Ignorante operacion."
 
 #: gui/partitionmanagerwidget.cpp:655
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
-msgstr "Kroĉpunkto"
+msgstr "La subdisko <filename>%1</filename> estis kopiita al la tondujo."
 
 #: gui/partitionmanagerwidget.cpp:718
 #, kde-kuit-format
@@ -2390,18 +2408,24 @@ msgid ""
 "window, all data currently stored on <filename>%1</filename> will "
 "unrecoverably be overwritten.</para>"
 msgstr ""
+"<para><warning>Vi estas perdonta ĉiujn datumojn de la subdisko <filename>%1</"
+"filename>.</warning></para><para>Anstataŭigi unu subdiskon per alia (aŭ kun "
+"bilddosiero) detruos ĉiuj datumoj sur ĉi tiu celdisko.</para><para>Se vi "
+"daŭrigos nun kaj aplikas la rezultan operacion en la ĉefa fenestro, ĉiuj "
+"datumoj nuntempe konservitaj sur <filename>%1</filename> estos nereakireblaj "
+"anstataŭigeblaj.</para >"
 
 #: gui/partitionmanagerwidget.cpp:726
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
-msgstr ""
+msgstr "Ĉu vere anstataŭigi Ekzistantan Diskpartigon?"
 
 #: gui/partitionmanagerwidget.cpp:727
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
-msgstr ""
+msgstr "Anstataŭigi Diskpartigon"
 
 #: gui/partitionmanagerwidget.cpp:735
 #, kde-kuit-format
@@ -2411,12 +2435,16 @@ msgid ""
 "partition or the backup file.</para><para>Pick another target or resize this "
 "partition so it is as large as the source.</para>"
 msgstr ""
+"<para >La elektita diskparto ne estas sufiĉe granda por teni la fontan "
+"diskparton aŭ la rezervan dosieron.</para><para >Elektu alian celon aŭ "
+"regrandigu ĉi tiun subdiskon tiel ke ĝi estu same granda kiel la fonto.</"
+"para>"
 
 #: gui/partitionmanagerwidget.cpp:736
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
-msgstr ""
+msgstr "Celo Ne Sufiĉe Granda"
 
 #: gui/partitionmanagerwidget.cpp:739
 #, kde-kuit-format
@@ -2427,12 +2455,16 @@ msgid ""
 "are correctly aligned or when copying a primary partition into an extended "
 "partition.</para>"
 msgstr ""
+"<para >Ne eblas krei la celdiskon sufiĉe granda por teni la fonton.</"
+"para><para >Tio povas okazi se ne ĉiuj subdiskoj sur aparato estas ĝuste "
+"vicigitaj aŭ kiam kopias primaran subdiskon en plilongigitan diskparton. </"
+"para>"
 
 #: gui/partitionmanagerwidget.cpp:742
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
-msgstr ""
+msgstr "Ne Povas Krei Celon Diskcion."
 
 #: gui/partitionmanagerwidget.cpp:800
 #, kde-kuit-format
@@ -2441,18 +2473,20 @@ msgid ""
 "The file system in the image file <filename>%1</filename> is too large to be "
 "restored to the selected partition."
 msgstr ""
+"La dosiersistemo en la bilddosiero <filename>%1</filename> estas tro granda "
+"por esti restarigita al la elektita diskparto."
 
 #: gui/partitionmanagerwidget.cpp:800
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
-msgstr ""
+msgstr "Ne Sufiĉa Spaco por Restarigi Dosiersistemon."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:76
 #, kde-format
 msgid "Partition"
-msgstr ""
+msgstr "Subdisko"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:81
@@ -2480,16 +2514,15 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:101
-#, fuzzy, kde-format
-#| msgid "Mount Point"
+#, kde-format
 msgid "Partition Name"
-msgstr "Kroĉpunkto"
+msgstr "Subdiska Nomo"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:106
 #, kde-format
 msgid "Partition UUID"
-msgstr ""
+msgstr "Subdiska UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:111
@@ -2501,7 +2534,7 @@ msgstr "Grandeco"
 #: gui/partitionmanagerwidgetbase.ui:116
 #, kde-format
 msgid "Used"
-msgstr ""
+msgstr "Uzita"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:121
@@ -2513,19 +2546,19 @@ msgstr "Disponebla"
 #: gui/partitionmanagerwidgetbase.ui:126
 #, kde-format
 msgid "First Sector"
-msgstr ""
+msgstr "Unua Sektoro"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:131
 #, kde-format
 msgid "Last Sector"
-msgstr ""
+msgstr "Lasta Sektoro"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:136
 #, kde-format
 msgid "Number of Sectors"
-msgstr ""
+msgstr "Nombro de Sektoroj"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:141
@@ -2534,49 +2567,47 @@ msgid "Flags"
 msgstr "Flagoj"
 
 #: gui/partpropsdialog.cpp:55
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
-msgstr "Kroĉpunkto"
+msgstr "Subdiskaj proprecoj: <filename>%1</filename>"
 
 #: gui/partpropsdialog.cpp:110
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
-msgstr ""
+msgstr "(neniu trovita)"
 
 #: gui/partpropsdialog.cpp:116
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
-msgstr ""
+msgstr "senlabore"
 
 #: gui/partpropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
-msgstr ""
+msgstr "Almenaŭ unu logika subdisko estas muntita."
 
 #: gui/partpropsdialog.cpp:121
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
-msgstr "Kroĉpunkto"
+msgstr "muntita sur <filename>%1</filename>"
 
 #: gui/partpropsdialog.cpp:123
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
-msgstr ""
+msgstr "muntita"
 
 #: gui/partpropsdialog.cpp:127 gui/partpropsdialog.cpp:130
 #: gui/partpropsdialog.cpp:131
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
-msgstr ""
+msgstr "(neniu)"
 
 #: gui/partpropsdialog.cpp:346
 #, kde-kuit-format
@@ -2588,25 +2619,29 @@ msgid ""
 "the resulting operation in the main window, all data on <filename>%1</"
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
+"<para><warning>Vi estas perdonta ĉiujn datumojn sur diskparto <filename>%1</"
+"filename>.</warning></para><para>Ŝanĝi la dosiersistemon sur diskparto jam "
+"en disko forviŝos ĉiujn ĝiajn enhavojn. Se vi daŭrigas nun kaj aplikas la "
+"rezultan operacion en la ĉefa fenestro, ĉiuj datumoj sur <filename>%1</"
+"filename> nereveneble perdiĝos.</para>"
 
 #: gui/partpropsdialog.cpp:348
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
-msgstr ""
+msgstr "Ĉu vere rekrei <filename>%1</filename> kun Dosiersistemo %2?"
 
 #: gui/partpropsdialog.cpp:349
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
-msgstr "Dosiersistemo"
+msgstr "Ŝanĝi la Dosiersistemon"
 
 #: gui/partpropsdialog.cpp:350
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
-msgstr ""
+msgstr "Ne Ŝanĝi la Dosiersistemon"
 
 #: gui/partpropsdialog.cpp:369
 #, kde-kuit-format
@@ -2618,41 +2653,43 @@ msgid ""
 "window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
 "para>"
 msgstr ""
+"<para><warning>Vi estas perdonta ĉiujn datumojn sur diskparto <filename>%1</"
+"filename>.</warning></para><para>Rekrei dosiersistemon forviŝos ĝian tutan "
+"enhavon. Se vi daŭrigas nun kaj aplikas la rezultan operacion en la ĉefa "
+"fenestro, ĉiuj datumoj sur <filesystem>%1</filesystem> nereveneble perdiĝos."
+"</para>"
 
 #: gui/partpropsdialog.cpp:371
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
-msgstr "Kroĉpunkto"
+msgstr "Ĉu vere rekrei Dosiersistemon ĉe <filename>%1</filename>?"
 
 #: gui/partpropsdialog.cpp:372
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
-msgstr "Dosiersistemo"
+msgstr "Rekrei la Dosiersistemon"
 
 #: gui/partpropsdialog.cpp:373
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
-msgstr ""
+msgstr "Ne Rekrei la Dosiersistemon"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/partpropswidgetbase.ui:39
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
-msgstr "Dosiersistemo"
+msgstr "Dosier-siste&mo:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
 #: gui/partpropswidgetbase.ui:55 gui/sizedialogwidgetbase.ui:146
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
-msgstr ""
+msgstr "Ĉi tiu dosiersistemo ne subtenas agordon de etikedo."
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:68
@@ -2661,42 +2698,43 @@ msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
 "filesystem type."
 msgstr ""
+"Ĉi tio reformatigos la dosiersistemon, perdante ĉiujn enhavojn, sed "
+"konservante la saman dosiersistemon."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
-msgstr ""
+msgstr "Rekrei ekzistantan dosiersistemon"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
 #: gui/partpropswidgetbase.ui:101
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
-msgstr ""
+msgstr "Muntejo:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
 #: gui/partpropswidgetbase.ui:118
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
-msgstr ""
+msgstr "Tipo de subdisko:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:128
-#, fuzzy, kde-format
-#| msgid "Label"
+#, kde-format
 msgctxt "@label"
 msgid "&Label:"
-msgstr "Etikedo"
+msgstr "&Etikedo:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
 #: gui/partpropswidgetbase.ui:148
 #, kde-format
 msgctxt "@label"
 msgid "Status:"
-msgstr ""
+msgstr "Statuso:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
 #: gui/partpropswidgetbase.ui:165
@@ -2717,164 +2755,154 @@ msgstr "Grando:"
 #, kde-format
 msgctxt "@label partition capacity available"
 msgid "Available:"
-msgstr ""
+msgstr "Disponebla:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
 #: gui/partpropswidgetbase.ui:235
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
-msgstr ""
+msgstr "Uzita:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
 #: gui/partpropswidgetbase.ui:259
 #, kde-format
 msgctxt "@label"
 msgid "First sector:"
-msgstr ""
+msgstr "Unua sektoro:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
 #: gui/partpropswidgetbase.ui:276
 #, kde-format
 msgctxt "@label"
 msgid "Last sector:"
-msgstr ""
+msgstr "Lasta sektoro:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:293
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
-msgstr ""
+msgstr "Nombro da sektoroj:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
 #: gui/partpropswidgetbase.ui:317
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Flags:"
+#, kde-format
 msgctxt "@label"
 msgid "&Flags:"
-msgstr "Flagoj:"
+msgstr "&Flagoj:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:362
-#, fuzzy, kde-format
-#| msgid "Mount Point"
+#, kde-format
 msgid "Partition Name:"
-msgstr "Kroĉpunkto"
+msgstr "Dispartiga Nomo:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:372
-#, fuzzy, kde-format
-#| msgid "Mount Point"
+#, kde-format
 msgid "Partition UUID:"
-msgstr "Kroĉpunkto"
+msgstr "Dispartiga UUID:"
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Please select a device."
-msgstr ""
+msgstr "Bonvolu elekti aparaton."
 
 #: gui/parttablewidget.cpp:54
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No valid partition table was found on this device."
-msgstr ""
+msgstr "Neniu valida subdiskotabelo estis trovita sur ĉi tiu aparato."
 
 #: gui/resizedialog.cpp:42
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize/move partition: <filename>%1</filename>"
-msgstr "Kroĉpunkto"
+msgstr "Regrandigi/movi diskparton: <filename>%1</filename>"
 
 #: gui/resizedialog.cpp:91
 #, kde-format
 msgctxt "%2 is either empty or says Invalid passphrase."
 msgid "%2Enter passphrase for %1:"
-msgstr ""
+msgstr "%2Enigu pasfrazon por %1:"
 
 #: gui/resizedialog.cpp:100
 #, kde-format
 msgctxt "Part of %2Enter passphrase for %1:"
 msgid "Invalid passphrase. "
-msgstr ""
+msgstr "Nevalida pasfrazo."
 
 #: gui/resizevolumegroupdialog.cpp:39
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize Volume Group"
-msgstr ""
+msgstr "Aligrandigi Voluman Grupon"
 
 #: gui/scanprogressdialog.cpp:17
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning devices..."
-msgstr ""
+msgstr "Skanante aparatojn..."
 
 #: gui/scanprogressdialog.cpp:32
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning..."
-msgstr ""
+msgstr "Skanante..."
 
 #: gui/scanprogressdialog.cpp:34
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning device: <filename>%1</filename>"
-msgstr "Kroĉpunkto"
+msgstr "Skanante aparaton: <filename>%1</filename>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: gui/sizedetailswidgetbase.ui:66
 #, kde-format
 msgctxt "@label:listbox"
 msgid "First sector:"
-msgstr ""
+msgstr "Unua sektoro:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: gui/sizedetailswidgetbase.ui:101
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Last sector:"
-msgstr ""
+msgstr "Lasta sektoro:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
 #: gui/sizedetailswidgetbase.ui:124
 #, kde-format
 msgid "Align partition"
-msgstr ""
+msgstr "Vicigi subdiskon"
 
 #: gui/sizedialogbase.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "Advanced Settings"
+#, kde-kuit-format
 msgctxt "@action:button advanced settings button"
 msgid "Advanced"
-msgstr "Plia agordo"
+msgstr "Altnivela"
 
 #: gui/sizedialogbase.cpp:181
-#, fuzzy, kde-kuit-format
-#| msgid "Advanced Settings"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Advanced"
-msgstr "Plia agordo"
+msgstr "&Altnivela"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
 #: gui/sizedialogwidgetbase.ui:62
-#, fuzzy, kde-format
-#| msgid "Mount Point"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
-msgstr "Kroĉpunkto"
+msgstr "Tipo de subdisko:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/sizedialogwidgetbase.ui:78
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "File system:"
-msgstr "Dosiersistemo"
+msgstr "Dosier-sistemo:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:98
@@ -2883,61 +2911,62 @@ msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
 "provide a passphrase."
 msgstr ""
+"Agordu ĉifradon por ĉi tiu dosiersistemo kun LUKS. Oni petos vin provizi "
+"pasfrazon."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:101
 #, kde-format
 msgid "Encrypt with LUKS"
-msgstr ""
+msgstr "Ĉifri per LUKS"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
 #: gui/sizedialogwidgetbase.ui:111
 #, kde-format
 msgid "Logical Volume Name:"
-msgstr ""
+msgstr "Nomo de Logika Volumo:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/sizedialogwidgetbase.ui:128
-#, fuzzy, kde-format
-#| msgid "Label"
+#, kde-format
 msgctxt "@label"
 msgid "Label:"
-msgstr "Etikedo"
+msgstr "Etikedo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: gui/sizedialogwidgetbase.ui:164
 #, kde-format
 msgctxt "@label"
 msgid "Minimum size:"
-msgstr ""
+msgstr "Minimuma grandeco:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: gui/sizedialogwidgetbase.ui:187
 #, kde-format
 msgctxt "@label"
 msgid "Maximum size:"
-msgstr ""
+msgstr "Maksimuma grandeco:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
 #: gui/sizedialogwidgetbase.ui:210
 #, kde-format
 msgctxt "@label:listbox"
 msgid "F&ree space before:"
-msgstr ""
+msgstr "Libe&ra spaco antaŭe:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: gui/sizedialogwidgetbase.ui:245
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Si&ze:"
-msgstr ""
+msgstr "Grande&co:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
 #: gui/sizedialogwidgetbase.ui:274
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Free space after:"
-msgstr ""
+msgstr "Libera spaco post:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
 #: gui/sizedialogwidgetbase.ui:297
@@ -2949,13 +2978,13 @@ msgstr "Permesoj"
 #: gui/sizedialogwidgetbase.ui:326
 #, kde-format
 msgid "Allow everyone to write and read on this device"
-msgstr ""
+msgstr "Permesi al ĉiuj skribi kaj legi sur ĉi tiu aparato"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:329
 #, kde-format
 msgid "Everyone"
-msgstr ""
+msgstr "Ĉiuj"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:336
@@ -2964,18 +2993,20 @@ msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
 "folder permissions"
 msgstr ""
+"Permesu nur al radiko skribi kaj legi sur ĉi tiu aparato, vi devos agordi "
+"permesojn per dosierujo"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:339
 #, kde-format
 msgid "Only Root"
-msgstr ""
+msgstr "Nur Radiko"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
 #: gui/sizedialogwidgetbase.ui:352
 #, kde-format
 msgid "Primar&y"
-msgstr ""
+msgstr "Pr&imara"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
 #: gui/sizedialogwidgetbase.ui:359
@@ -2990,59 +3021,56 @@ msgid "&Logical"
 msgstr "&Logika"
 
 #: gui/smartdialog.cpp:54
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "SMART Properties: <filename>%1</filename>"
-msgstr "Kroĉpunkto"
+msgstr "SMART Propraĵoj: <filename>%1</filename>"
 
 #: gui/smartdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save SMART Report"
-msgstr ""
+msgstr "Konservi SMART-Raporton"
 
 #: gui/smartdialog.cpp:96 gui/smartdialog.cpp:153
 #, kde-format, kde-kuit-format
 msgctxt "@label SMART number of bad sectors"
 msgid "none"
-msgstr ""
+msgstr "neniu"
 
 #: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Pre-Failure"
-msgstr ""
+msgstr "Antaŭ-Malsukceso"
 
 #: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Old-Age"
-msgstr ""
+msgstr "Maljuneco"
 
 #: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Online"
-msgstr ""
+msgstr "Rete"
 
 #: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Offline"
-msgstr ""
+msgstr "Senrete"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
 #: gui/smartdialog.cpp:155 gui/smartdialogwidgetbase.ui:68
-#, fuzzy, kde-format
-#| msgid "Move"
+#, kde-format
 msgid "Model:"
-msgstr "Movi"
+msgstr "Modelo:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
 #: gui/smartdialog.cpp:156 gui/smartdialogwidgetbase.ui:97
-#, fuzzy, kde-format
-#| msgid "Serial Number:"
+#, kde-format
 msgid "Serial number:"
 msgstr "Seria numero:"
 
@@ -3050,7 +3078,7 @@ msgstr "Seria numero:"
 #: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
 #, kde-format
 msgid "Firmware revision:"
-msgstr ""
+msgstr "Firmware revizio:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
 #: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
@@ -3062,43 +3090,43 @@ msgstr "Temperaturo:"
 #: gui/smartdialog.cpp:159 gui/smartdialogwidgetbase.ui:184
 #, kde-format
 msgid "Bad sectors:"
-msgstr ""
+msgstr "Malbonaj sektoroj:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
 #: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
 #, kde-format
 msgid "Powered on for:"
-msgstr ""
+msgstr "Ŝaltita por:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
 #: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
 #, kde-format
 msgid "Power cycles:"
-msgstr ""
+msgstr "Potencaj cikloj:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
 #: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
 #, kde-format
 msgid "Self tests:"
-msgstr ""
+msgstr "Memtestoj:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
 #: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
 #, kde-format
 msgid "Overall assessment:"
-msgstr ""
+msgstr "Ĝenerala takso:"
 
 #: gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save SMART Report."
-msgstr ""
+msgstr "Ne Eblis Konservi SMART-Raporton."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:294
 #, kde-format
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:299
@@ -3108,36 +3136,33 @@ msgstr "Atributo"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:304
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgid "Failure Type"
-msgstr "Dosiersistemo"
+msgstr "Fiasko Tipo"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:309
 #, kde-format
 msgid "Update Type"
-msgstr ""
+msgstr "Ĝisdatigi Tipon"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:314
 #, kde-format
 msgid "Worst"
-msgstr ""
+msgstr "Plej malbona"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:319
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgid "Current"
-msgstr "Krei"
+msgstr "Nuna"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:324
-#, fuzzy, kde-format
-#| msgid "Threshold:"
+#, kde-format
 msgid "Threshold"
-msgstr "Pentrosojlo:"
+msgstr "Sojlo"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:329
@@ -3149,7 +3174,7 @@ msgstr "Kruda"
 #: gui/smartdialogwidgetbase.ui:334
 #, kde-format
 msgid "Assessment"
-msgstr ""
+msgstr "Takso"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:339
@@ -3158,17 +3183,17 @@ msgid "Value"
 msgstr "Valoro"
 
 #: gui/treelog.cpp:110
-#, fuzzy, kde-kuit-format
-#| msgid "Mount Point"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary output file to save <filename>%1</filename>."
-msgstr "Kroĉpunkto"
+msgstr ""
+"Ne eblis krei provizoran eligdosieron por konservi <filename>%1</filename>."
 
 #: gui/treelog.cpp:110
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Saving Log File"
-msgstr ""
+msgstr "Eraro dum Konservado de Protokolo"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:59
@@ -3176,13 +3201,13 @@ msgstr ""
 msgctxt ""
 "@title:column Severity of a log entry / log level. Text must be very short."
 msgid "Sev."
-msgstr ""
+msgstr "Sev."
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:62
 #, kde-format
 msgid "Severity"
-msgstr ""
+msgstr "Severeco"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:67
@@ -3200,16 +3225,15 @@ msgstr "Mesaĝo"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVGName)
 #: gui/volumegroupwidgetbase.ui:34
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgid "Volume Group Name: "
-msgstr "Dosiersistemo"
+msgstr "Nomo de Volumgrupo:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
 #: gui/volumegroupwidgetbase.ui:47
 #, kde-format
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Grandeco de Fizika Amplekso:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
@@ -3219,13 +3243,11 @@ msgstr ""
 #: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
 #, kde-format
 msgid "---"
-msgstr ""
+msgstr "---"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
 #: gui/volumegroupwidgetbase.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@label:spinbox"
-#| msgid " MiB"
+#, kde-format
 msgid " MiB"
 msgstr " MiB"
 
@@ -3233,59 +3255,53 @@ msgstr " MiB"
 #: gui/volumegroupwidgetbase.ui:107
 #, kde-format
 msgid "Total LV: "
-msgstr ""
+msgstr "Totala LV:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
 #: gui/volumegroupwidgetbase.ui:130
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgid "Volume Group Type: "
-msgstr "Dosiersistemo"
+msgstr "Volumgrupa Tipo:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
 #: gui/volumegroupwidgetbase.ui:140
 #, kde-format
 msgid "Total Size: "
-msgstr ""
+msgstr "Tuta Grandeco:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
 #: gui/volumegroupwidgetbase.ui:153
 #, kde-format
 msgid "Total Sectors: "
-msgstr ""
+msgstr "Sektoroj Entute:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
 #: gui/volumegroupwidgetbase.ui:186
-#, fuzzy, kde-format
-#| msgid "User ID:"
+#, kde-format
 msgid "Used Size: "
-msgstr "Identigilo de uzanto:"
+msgstr "Uzita Grandeco:"
 
 #: main.cpp:77
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>KDE Partition Manager</application>"
-msgstr ""
+msgstr "<application>KDE Dispartiga Administranto</application>"
 
 #: main.cpp:79
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Manage your disks, partitions and file systems"
-msgstr ""
+msgstr "Administru viajn diskojn, subdiskojn kaj dosiersistemojn"
 
 #: main.cpp:81
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid ""
-#| "© 2008-2013 Volker Lanz\n"
-#| "© 2012-2015 Andrius Štikonas"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid ""
 "© 2008-2013 Volker Lanz\n"
 "© 2012-2020 Andrius Štikonas"
 msgstr ""
 "© 2008-2013 Volker Lanz\n"
-"© 2012-2015 Andrius Štikonas"
+"© 2012-2020 Andrius Štikonas"
 
 #: main.cpp:85
 #, kde-kuit-format
@@ -3297,149 +3313,147 @@ msgstr "Volker Lanz"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Former maintainer"
-msgstr ""
+msgstr "Iama prizorganto"
 
 #: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Andrius Štikonas"
-msgstr ""
+msgstr "Andrius Ŝtikonas"
 
 #: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Maintainer"
-msgstr ""
+msgstr "Prizorganto"
 
 #: main.cpp:87
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Teo Mrnjavac"
-msgstr ""
+msgstr "Teo Mrnjavac"
 
 #: main.cpp:87
 #, kde-format
 msgctxt "@info:credit"
 msgid "Former Calamares maintainer"
-msgstr ""
+msgstr "Iama prizorganto de Calamares"
 
 #: main.cpp:88
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Chantara Tith"
-msgstr ""
+msgstr "Chantara Tith"
 
 #: main.cpp:88
 #, kde-format
 msgctxt "@info:credit"
 msgid "LVM support"
-msgstr ""
+msgstr "LVM-subteno"
 
 #: main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Pali Rohár"
-msgstr ""
+msgstr "Pali Rohár"
 
 #: main.cpp:89
 #, kde-format
 msgctxt "@info:credit"
 msgid "UDF support"
-msgstr ""
+msgstr "UDF-subteno"
 
 #: main.cpp:90
 #, kde-format
 msgid "Hugo Pereira Da Costa"
-msgstr ""
+msgstr "Hugo Pereira Da Costa"
 
 #: main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Partition Widget Design"
-msgstr ""
+msgstr "Dispartiga Widget-Dezajno"
 
 #: main.cpp:91
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Caio Jordão Carvalho"
-msgstr ""
+msgstr "Caio Jordão Carvalho"
 
 #: main.cpp:91
 #, kde-format
 msgctxt "@info:credit"
 msgid "Improved SMART support"
-msgstr ""
+msgstr "Plibonigita SMART-subteno"
 
 #: main.cpp:104
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"
-msgstr ""
+msgstr "Aparato por administri"
 
 #. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
 #: partitionmanager.kcfg:45
 #, kde-format
 msgctxt "@label"
 msgid "Is this the first time KDE Partition Manager is being run?"
-msgstr ""
+msgstr "Ĉu ĉi tio estas la unua fojo, kiam KDE Partition Manager estas rulata?"
 
 #. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
 #: partitionmanager.kcfg:49
 #, kde-format
 msgctxt "@label"
 msgid "Hide log messages below"
-msgstr ""
+msgstr "Kaŝi protokolmesaĝojn sube"
 
 #. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
 #: partitionmanager.kcfg:53
 #, kde-format
 msgctxt "@label"
 msgid "Partition sector alignment"
-msgstr ""
+msgstr "Dispartiga sektor-vicigo"
 
 #. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
 #: partitionmanager.kcfg:57
 #, kde-format
 msgctxt "@label"
 msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr ""
+msgstr "Uzi cilindro-bazitan vicigon (kongrua kun Windows XP)"
 
 #. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
 #: partitionmanager.kcfg:61
 #, kde-format
 msgctxt "@label"
 msgid "Align partitions per default"
-msgstr ""
+msgstr "Vicigi subdiskojn defaŭlte"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:65
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgctxt "@label"
 msgid "File system colors"
-msgstr "Dosiersistemo"
+msgstr "Koloroj de dosieroj"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:141
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
-msgstr ""
+msgstr "Montri la menubreton de la aplikaĵo"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:145
-#, fuzzy, kde-format
-#| msgid "Backup"
+#, kde-format
 msgctxt "@label"
 msgid "Backend plugin"
-msgstr "Sekurkopio"
+msgstr "Backend kromaĵo"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:151
 #, kde-format
 msgctxt "@label"
 msgid "Preferred unit:"
-msgstr ""
+msgstr "Preferata unuo:"
 
 #: util/guihelpers.cpp:50
 #, kde-kuit-format
@@ -3448,12 +3462,15 @@ msgid ""
 "<para>The configured backend plugin \"%1\" could not be loaded.</"
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
+"<para>La agordita malantaŭa kromaĵo \"%1\" ne povis esti ŝargita.</"
+"para><para>Anstataŭe ŝarĝante la defaŭltan malantaŭan kromprogramon \"%2\".</"
+"para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error: Could Not Load Backend Plugin"
-msgstr ""
+msgstr "Eraro: Ne Eblis Ŝargi Backend Kromaĵo"
 
 #: util/guihelpers.cpp:57
 #, kde-kuit-format
@@ -3462,1041 +3479,11 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
+"<para>Nek la agordita (\"%1\") nek la defaŭlta (\"%2\") kromprogramo povus "
+"esti ŝargita.</para><para>Bonvolu kontroli vian instaladon.</para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Kolumnoj"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info"
-#~ msgid "Do you want to overwrite the existing file <filename>%1</filename>?"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info"
-#~ msgid "Could not open mount point file <filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@title:window"
-#~ msgid "Error while reading mount points"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "Could not remove <filename>%1</filename>. There are still Logical Volumes "
-#~ "on the Volume Group."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "&View"
-#~ msgctxt "@title:menu"
-#~ msgid "View"
-#~ msgstr "&Rigardi"
-
-#~ msgid "Form"
-#~ msgstr "Formo"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "raid"
-#~ msgstr "raid"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "lvm"
-#~ msgstr "lvm"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "lba"
-#~ msgstr "lba"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "palo"
-#~ msgstr "palo"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "prep"
-#~ msgstr "prep"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "SMART attr description"
-#~ msgid "Number of errors while reading from a disk"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
-#~ "Could not create temp dir."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
-#~ "btrfs file system resize failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Warning: Resizing Btrfs file system on partition <filename>%1</filename>: "
-#~ "Unmount failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing Btrfs file system on partition <filename>%1</filename> failed: "
-#~ "Initial mount failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Setting label for partition <filename>%1</filename> to %2"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Extended"
-#~ msgctxt "@item filesystem name"
-#~ msgid "extended"
-#~ msgstr "Etendata"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Information"
-#~ msgctxt "@item filesystem name"
-#~ msgid "unformatted"
-#~ msgstr "Informoj"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
-#~ "Could not create temp dir."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
-#~ "Remount failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Warning: Resizing JFS file system on partition <filename>%1</filename>: "
-#~ "Unmount failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing JFS file system on partition <filename>%1</filename> failed: "
-#~ "Initial mount failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
-#~ "Could not create temp dir."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
-#~ "NILFS2 file system resize failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Warning: Resizing NILFS2 file system on partition <filename>%1</"
-#~ "filename>: Unmount failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing NILFS2 file system on partition <filename>%1</filename> failed: "
-#~ "Initial mount failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Updating boot sector for NTFS file system on partition <filename>%1</"
-#~ "filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open partition <filename>%1</filename> for writing when trying "
-#~ "to update the NTFS boot sector."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not write new start sector to partition <filename>%1</filename> "
-#~ "when trying to update the NTFS boot sector."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Updated NTFS boot sector for partition <filename>%1</filename> "
-#~ "successfully."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
-#~ "Could not create temp dir."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
-#~ "xfs_growfs failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Warning: Resizing XFS file system on partition <filename>%1</filename>: "
-#~ "Unmount failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resizing XFS file system on partition <filename>%1</filename> failed: "
-#~ "Initial mount failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open file system on source partition <filename>%1</filename> "
-#~ "for backup."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Could not create backup file <filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Back up file system on partition <filename>%1</filename> to <filename>%2</"
-#~ "filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Check file system on partition <filename>%1</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Cannot copy file system: File system on target partition <filename>%1</"
-#~ "filename> is smaller than the file system on source partition <filename>"
-#~ "%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open file system on source partition <filename>%1</filename> "
-#~ "for copying."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open file system on target partition <filename>%1</filename> "
-#~ "for copying."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Copy file system on partition <filename>%1</filename> to partition "
-#~ "<filename>%2</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Failed to set the system type for the file system on partition <filename>"
-#~ "%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open partition table on device <filename>%1</filename> to set "
-#~ "the system type for partition <filename>%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open device <filename>%1</filename> to set the system type for "
-#~ "partition <filename>%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Create file system <filename>%1</filename> on partition <filename>%2</"
-#~ "filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Failed to add partition <filename>%1</filename> to device <filename>%2</"
-#~ "filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open partition table on device <filename>%1</filename> to "
-#~ "create new partition <filename>%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open device <filename>%1</filename> to create new partition "
-#~ "<filename>%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Create new partition <filename>%1</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Create new partition on device <filename>%1</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Creating partition table failed: Could not open device <filename>%1</"
-#~ "filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Create new partition table on device <filename>%1</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Could not delete file system on <filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open partition table on device <filename>%1</filename> to "
-#~ "delete file system on <filename>%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not delete file system signature for partition <filename>%1</"
-#~ "filename>: Failed to open device <filename>%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Delete file system on <filename>%1</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Could not delete partition <filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open partition table on device <filename>%1</filename> to "
-#~ "delete partition <filename>%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Deleting partition failed: Could not open device <filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Delete the partition <filename>%1</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Could not open device <filename>%1</filename> to rollback copying."
-#~ msgstr "Kroĉpunkto"
-
-#~ msgctxt "@info/plain job status (error, warning, ...)"
-#~ msgid "%1: %2"
-#~ msgstr "%1: %2"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open file system on partition <filename>%1</filename> for "
-#~ "moving."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not create target for moving file system on partition <filename>%1</"
-#~ "filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Rollback for file system on partition <filename>%1</filename> failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Move the file system on partition <filename>%1</filename> to sector %2"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "The file system on partition <filename>%2</filename> already has the "
-#~ "requested length of 1 sector."
-#~ msgid_plural ""
-#~ "The file system on partition <filename>%2</filename> already has the "
-#~ "requested length of %1 sectors."
-#~ msgstr[0] "Kroĉpunkto"
-#~ msgstr[1] "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "The file system on partition <filename>%1</filename> cannot be resized "
-#~ "because there is no support for it."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not read geometry for partition <filename>%1</filename> while "
-#~ "trying to resize the file system."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Maximize file system on <filename>%1</filename> to fill the partition"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Resize file system on partition <filename>%2</filename> to 1 sector"
-#~ msgid_plural ""
-#~ "Resize file system on partition <filename>%2</filename> to %1 sectors"
-#~ msgstr[0] "Kroĉpunkto"
-#~ msgstr[1] "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Could not open backup file <filename>%1</filename> to restore from."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open target partition <filename>%1</filename> to restore to."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Restore the file system from file <filename>%1</filename> to partition "
-#~ "<filename>%2</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "File system on partition <filename>%1</filename> does not support setting "
-#~ "labels. Job ignored."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Set the file system label on partition <filename>%1</filename> to \"%2\""
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "There was an error setting flag %1 for partition <filename>%2</filename> "
-#~ "to state %3."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not find partition <filename>%1</filename> on device <filename>%2</"
-#~ "filename> to set partition flags."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open partition table on device <filename>%1</filename> to set "
-#~ "partition flags for partition <filename>%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open device <filename>%1</filename> to set partition flags for "
-#~ "partition <filename>%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Clear flags for partition <filename>%1</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Set the flags for partition <filename>%1</filename> to \"%2\""
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open device <filename>%1</filename> while trying to resize/move "
-#~ "partition <filename>%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Shred the file system on <filename>%1</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Backup partition <filename>%1</filename> (%2, %3) to <filename>%4</"
-#~ "filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Check and repair partition <filename>%1</filename> (%2, %3)"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Warning: Maximizing file system on target partition <filename>%1</"
-#~ "filename> to the size of the partition failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Checking target partition <filename>%1</filename> after copy failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Checking source partition <filename>%1</filename> failed."
-#~ msgstr "Kroĉpunkto"
-
-#~ msgctxt "@info/plain status (success, error, warning...) of operation"
-#~ msgid "%1: %2"
-#~ msgstr "%1: %2"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Copy partition <filename>%1</filename> (%2, %3) to <filename>%4</"
-#~ "filename> (%5, %6)"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Copy partition <filename>%1</filename> (%2, %3) to unallocated space "
-#~ "(starting at %4) on <filename>%5</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Create filesystem %1 on partition <filename>%2</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Create a new partition table (type: %1) on <filename>%2</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Shred partition <filename>%1</filename> (%2, %3)"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Delete partition <filename>%1</filename> (%2, %3)"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Create a new partition (%1, %2) on <filename>%3</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Moving extended partition <filename>%1</filename> failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Resizing/moving partition <filename>%1</filename> failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Checking partition <filename>%1</filename> before resize/move failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain describe resize/move action"
-#~ msgid "Move partition <filename>%1</filename> to the right by %2"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain describe resize/move action"
-#~ msgid "Grow partition <filename>%1</filename> from %2 to %3"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain describe resize/move action"
-#~ msgid "Shrink partition <filename>%1</filename> from %2 to %3"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resize/move failed: Could not resize file system to shrink partition "
-#~ "<filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resize/move failed: Could not shrink partition <filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Moving partition <filename>%1</filename> failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Moving the filesystem for partition <filename>%1</filename> failed. "
-#~ "Rolling back."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Moving back partition <filename>%1</filename> to its original position "
-#~ "failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resize/move failed: Could not grow partition <filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Resize/move failed: Could not resize the file system on partition "
-#~ "<filename>%1</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not restore old partition size for partition <filename>%1</"
-#~ "filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Checking target file system on partition <filename>%1</filename> after "
-#~ "the restore failed."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Restore partition from <filename>%1</filename> to <filename>%2</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Restore partition on <filename>%1</filename> at %2 from <filename>%3</"
-#~ "filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Set label for partition <filename>%1</filename> to \"%2\""
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Set label for partition <filename>%1</filename> from \"%2\" to \"%3\""
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Set flags for partition <filename>%1</filename> to \"%2\""
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Could not access device <filename>%1</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Creating partition table failed: Could not open backend device <filename>"
-#~ "%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Unknown partition role for new partition <filename>%1</filename> (roles: "
-#~ "%2)"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Failed to create new partition <filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not set geometry for partition <filename>%1</filename> while trying "
-#~ "to resize/move it."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not get constraint for partition <filename>%1</filename> while "
-#~ "trying to resize/move it."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not get geometry for partition <filename>%1</filename> while trying "
-#~ "to resize/move it."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not open partition <filename>%1</filename> while trying to resize/"
-#~ "move it."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Failed to erase filesystem signature on partition <filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not delete file system on partition <filename>%1</filename>: Failed "
-#~ "to get partition."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid "Could not resize file system on partition <filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not get geometry for resized partition <filename>%1</filename> "
-#~ "while trying to resize the file system."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not determine file system of partition at sector %1 on device "
-#~ "<filename>%2</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Could not update the system type for partition <filename>%1</filename>."
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgctxt "@info/plain unit"
-#~| msgid "Byte"
-#~ msgctxt "@info/plain unit"
-#~ msgid "Byte"
-#~ msgid_plural "Bytes"
-#~ msgstr[0] "Byte"
-#~ msgstr[1] "Byte"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "KiB"
-#~ msgstr "KiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "MiB"
-#~ msgstr "MiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "GiB"
-#~ msgstr "GiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "TiB"
-#~ msgstr "TiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "PiB"
-#~ msgstr "PiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "EiB"
-#~ msgstr "EiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "ZiB"
-#~ msgstr "ZiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "YiB"
-#~ msgstr "YiB"
-
-#, fuzzy
-#~| msgid "Status"
-#~ msgid "%1: SMART Status Report"
-#~ msgstr "Stato"
-
-#~ msgid "Date:"
-#~ msgstr "Dato:"
-
-#, fuzzy
-#~| msgid "Backup"
-#~ msgid "Backend:"
-#~ msgstr "Sekurkopio"
-
-#, fuzzy
-#~| msgid "KDE version:"
-#~ msgid "KDE Frameworks version:"
-#~ msgstr "KDE versio:"
-
-#~ msgid "Machine:"
-#~ msgstr "Maŝino:"
-
-#, fuzzy
-#~| msgid "Mount Point"
-#~ msgctxt "@title:window"
-#~ msgid "Decrypt LUKS partition on <filename>%1</filename>"
-#~ msgstr "Kroĉpunkto"
-
-#, fuzzy
-#~| msgid "Date:"
-#~ msgid "&Name:"
-#~ msgstr "Dato:"
-
-#, fuzzy
-#~| msgctxt "@label"
-#~| msgid "Size:"
-#~ msgctxt "@label:listbox"
-#~ msgid "Size:"
-#~ msgstr "Grando:"
-
-#~ msgid "User ID:"
-#~ msgstr "Identigilo de uzanto:"
-
-#, fuzzy
-#~| msgid "Edit"
-#~ msgctxt "@title:menu"
-#~ msgid "Edit"
-#~ msgstr "Redakti"
