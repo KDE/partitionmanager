@@ -25,8 +25,8 @@
 >Bir birim, <link linkend="glossary device"
 >bir aygıtı</link
 > bölmek için kullanılır. Bazı işletim sistemleri ve birçok disk aracı, bir silindirde başlayıp bitmek için <link linkend="glossary-partition"
->bölümlere</link
-> ihtiyaç duyar. &partman; bu nedenle, başlangıç veya bitişlerini değiştirirken bölmeleri otomatik olarak silindir sınırlarına yaslar. </para
+>bölüntülere</link
+> gereksinim duyar. &partman; bu nedenle, başlangıç veya bitişlerini değiştirirken bölüntüleri otomatik olarak silindir sınırlarına yaslar. </para
 ><glossseealso otherterm="glossary-head"
 ></glossseealso
 > <glossseealso otherterm="glossary-sector"
@@ -44,9 +44,9 @@
 > üzerinde <link linkend="glossary-cylinder"
 >silindir</link
 > başına düşen <link linkend="glossary-sector"
->sektörlerin</link
+>dilimlerin</link
 > numarası. İz başına <link linkend="glossary-sector"
->sektör</link
+>dilim</link
 > numaraları tarafından çarpılan <link linkend="glossary-head"
 >kafa</link
 > numaraları olarak hesaplanmıştır. </para>
@@ -59,10 +59,10 @@
 		<glossdef>
 			<para
 >Fiziksel disk aygıtı. Fiziksel disk aygıtları,<link linkend="glossary-partitiontable"
->disk bölüm tabloları</link
+>bölüntü tabloları</link
 > kullanımı ile <link linkend="glossary-partition"
->disk bölümleri</link
-> olarak adlandırılan mantıksal bölümlere ayrılmıştır. </para>
+>bölüntüler</link
+> olarak adlandırılan mantıksal bölüntülere ayrılmıştır. </para>
 		</glossdef>
 	</glossentry>
 
@@ -72,7 +72,7 @@
 		<glossdef>
 			<para
 >SUN/BSD dünyasından kaynaklanan bir <link linkend="glossary-partitiontable"
->bölüm tablosu</link
+>bölüntü tablosu</link
 > için başka bir ad. </para>
 			<para>
 				<note>
@@ -93,18 +93,18 @@
 
 	<glossentry id="glossary-extendedpartition">
 		<glossterm
->Genişletilmiş Disk Bölümü</glossterm>
+>Genişletilmiş Bölüntü</glossterm>
 		<glossdef>
 			<para
->Bir <link linkend="glossary-partition"
->disk bölümü</link
-> diğer disk bölümlerini içerir. Genişletilmiş disk bölümleri sadece kendilerine <link linkend="glossary-primarypartition"
->birincil disk bölümleri</link
-> olabilirler. Genişletilmiş bölümlerin var olup olmaması, kullanılan <link linkend="glossary-partitiontable"
->disk bölüm tablosu</link
-> türüne bağlıdır. MS-DOS disk bölüm tabloları her <link linkend="glossary-device"
+>Diğer bölüntüleri içeren bir <link linkend="glossary-partition"
+>bölüntü</link
+>. Genişletilmiş bölüntüler yalnızca kendilerine <link linkend="glossary-primarypartition"
+>birincil bölüntüler</link
+> olabilirler. Genişletilmiş bölüntülerin var olup olmaması, kullanılan <link linkend="glossary-partitiontable"
+>bölüntü tablosu</link
+> türüne bağlıdır. MS-DOS bölüntü tabloları her <link linkend="glossary-device"
 >aygıt</link
-> başına bir genişletilmiş bölüm sağlar. </para
+> başına bir genişletilmiş bölüntü sağlar. </para
 ><glossseealso otherterm="glossary-primarypartition"
 ></glossseealso
 > <glossseealso otherterm="glossary-logicalpartition"
@@ -118,7 +118,7 @@
 		<glossdef>
 			<para
 >Bir dosya sistemi, verilerin (üst verilerle dosyalar, klasörler ve üst veriyi, boş alan) bir <link linkend="glossary-partition"
->bölüm</link
+>bölüntü</link
 > içinde nasıl düzenlendiğini tanımlar. Bazıları özgün olarak Unix/Linux dünyasından gelen, bazıları olmayan çeşitli dosya sistemi türleri vardır. Unix/Linux'ta yaygın olarak kullanılan dosya sistemlerine örnek olarak Btrfs, ext4 ve XFS verilebilir. </para>
 		</glossdef>
 	</glossentry>
@@ -151,8 +151,8 @@
 >GPT</glossterm>
 		<glossdef>
 			<para
->Çoğu çağdaş bilgisayar ve işletim sistemi tarafından desteklenen çağdaş bir bölüm tablosu biçimi. Eski MS-DOS bölüm tablosunun aksine 4'ten fazla <link linkend="glossary-primarypartition"
->birincil bölümü</link
+>Çoğu çağdaş bilgisayar ve işletim sistemi tarafından desteklenen çağdaş bir bölüntü tablosu biçimi. Eski MS-DOS bölüntü tablosunun aksine 4'ten fazla <link linkend="glossary-primarypartition"
+>birincil bölüntüyü</link
 > destekler. </para>
 		</glossdef>
 	</glossentry>
@@ -206,13 +206,13 @@
 	
 	<glossentry id="glossary-logicalpartition">
 		<glossterm
->Mantıksal Disk Bölümü</glossterm>
+>Mantıksal Bölüntü</glossterm>
 		<glossdef>
 			<para
 >Bir <link linkend="glossary-partition"
->genişletilmiş bölüm</link
-> içinde bir <link linkend="glossary-partition"
->bölüm</link
+>genişletilmiş bölüntü</link
+> içindeki bir <link linkend="glossary-partition"
+>bölüntü</link
 >. </para
 ><glossseealso otherterm="glossary-primarypartition"
 ></glossseealso
@@ -235,16 +235,16 @@
 >LVM</glossterm>
 		<glossdef>
 			<para
->LVM, normal bölümlerden daha esnek olan mantıksal bölümleri yönetmek için bir sistemdir. Üç ana bileşenden oluşur:</para>
+>LVM, normal bölüntülerden daha esnek olan mantıksal bölüntüleri yönetmek için bir sistemdir. Üç ana bileşenden oluşur:</para>
 			<simplelist>
 			<member
->LVM fiziksel birimleri, alanı LVM tarafından yönetilen diskteki bölümlerdir.</member>
+>LVM fiziksel disk bölümleri, alanı LVM tarafından yönetilen diskteki bölüntülerdir.</member>
 			<member
->LVM birim grubu, mantıksal bölümlere ayrılabilen bir LVM fiziksel birimler koleksiyonudur. Birden fazla aygıta yayılan dosya sistemleri oluşturmak veya şifrelenmiş <link linkend="glossary-luks"
+>LVM disk bölümü grubu, mantıksal bölüntülere ayrılabilen bir LVM fiziksel disk bölümleri koleksiyonudur. Birden fazla aygıta yayılan dosya sistemleri oluşturmak veya şifrelenmiş <link linkend="glossary-luks"
 >LUKS</link
-> birimini daha küçük bölümlere ayırmak için kullanılabilir.</member>
+> birimini daha küçük bölüntülere ayırmak için kullanılabilir.</member>
 			<member
->LVM mantıksal birimleri, LVM birim grubunda bulunmaları dışında normal bölümlere benzer. Ayrıca, LVM mantıksal bölümlerinin konumu önemli değildir ve fiziksel olarak bitişik olmaları gerekmez. Bu nedenle &partman; LVM mantıksal birimlerinin taşınmasına izin vermez ve aygıtın sonunda kalan boş alanı görüntüler.</member>
+>LVM mantıksal disk bölümleri, LVM disk bölümü grubunda bulunmaları dışında normal bölüntülere benzer. Ayrıca, LVM mantıksal bölüntülerinin konumu önemli değildir ve fiziksel olarak bitişik olmaları gerekmez. Bu nedenle &partman; LVM mantıksal disk bölümlerinin taşınmasına izin vermez ve aygıtın sonunda kalan boş alanı görüntüler.</member>
 			</simplelist>
 		</glossdef>
 	</glossentry>
@@ -274,14 +274,14 @@
 
 	<glossentry id="glossary-partition">
 		<glossterm
->Disk Bölümü</glossterm>
+>Bölüntü</glossterm>
 		<glossdef>
 			<para
 >Bir <link linkend="glossary-device"
 >sabit disk aygıtının</link
 > bir <link linkend="glossary-filesystem"
 >dosya sistemini</link
-> veya diğer bölümleri tutabilen bölümü. En az bir geçerli bölüm olmadan disk kullanılamaz. </para
+> veya diğer bölüntüleri tutabilen bölümü. En az bir geçerli bölüntü olmadan disk kullanılamaz. </para
 ><glossseealso otherterm="glossary-device"
 ></glossseealso
 > <glossseealso otherterm="glossary-partitiontable"
@@ -297,27 +297,27 @@
 
 	<glossentry id="glossary-partitionflag">
 		<glossterm
->Disk Bölümü Bayrağı</glossterm>
+>Bölüntü Bayrağı</glossterm>
 		<glossdef>
 			<para
 >Bir <link linkend="glossary-partition"
->bölüm</link
+>bölüntü</link
 > için imleyici. Bu bayrakların kullanılabilirliği, kullanılan <link linked="glossary-partitiontable"
->bölüm tablosu</link
+>bölüntü tablosu</link
 > türüne bağlıdır. </para>
 		</glossdef>
 	</glossentry>
 	
 	<glossentry id="glossary-partitiontable">
 		<glossterm
->Disk Bölümü Tablosu</glossterm>
+>Bölüntü Tablosu</glossterm>
 		<glossdef>
 			<para
 >Bir <link linkend="glossary-device"
 >aygıtın</link
 > başındaki küçük bir bölüm, aygıtın <link linkend="glossary-partition"
->bölümlerinin</link
-> düzeni hakkında bilgi depolamak için kullanılır. Her biri kendi sınırlamalarına sahip farklı türde bölüm tabloları vardır. </para>
+>bölüntülerinin</link
+> düzeni hakkında bilgi depolamak için kullanılır. Her biri kendi sınırlamalarına sahip farklı türde bölüntü tabloları vardır. </para>
 			<para
 >Bazen de <quote
 >disk etiketi</quote
@@ -327,24 +327,24 @@
 
 	<glossentry id="glossary-primarypartition">
 		<glossterm
->Birincil Disk Bölümü</glossterm>
+>Birincil Bölüntü</glossterm>
 		<glossdef>
 			<para
 ><link linkend="glossary-extendedpartition"
->Genişletilmiş disk bölümlerinde</link
+>Genişletilmiş bölüntülerde</link
 > <link linkend="glossary-logicalpartition"
->mantıksal disk bölümlerinin</link
+>mantıksal bölüntülerin</link
 > aksine bir <link linkend="glossary-partitiontable"
->disk bölüm tablosu</link
+>bölüntü tablosu</link
 > içinde doğrudan bir <link linkend="glossary-partition"
->disk bölümü</link
+>bölüntü</link
 >dür. </para>
 			<para
 ><link linkend="glossary-partitiontable"
->Disk bölümü tabloları</link
+>Bölüntü tabloları</link
 > genellikle bir <link linkend="glossary-device"
 >aygıt</link
-> üzerinde oluşturulabilen birincil disk bölümlerinde en çok sayıda kısıtlamaları dayatır. MS-DOS disk bölümü tablo türleri için; örneğin, en büyük sayı 4'tür. </para
+> üzerinde oluşturulabilen birincil bölüntülerde en çok sayıda kısıtlamaları dayatır. MS-DOS bölüntüsü tablo türleri için; örneğin, en büyük sayı 4'tür. </para
 ><glossseealso otherterm="glossary-extendedpartition"
 ></glossseealso
 > <glossseealso otherterm="glossary-logicalpartition"
@@ -354,14 +354,14 @@
 
 	<glossentry id="glossary-sector">
 		<glossterm
->Sektör</glossterm>
+>Dilim</glossterm>
 		<glossdef>
 			<para
 >Bir <link linkend="glossary-device"
 >aygıtı</link
 > bölmek için kullanılan birim. <link linkend="glossary-partition"
->Disk bölümleri</link
->, her zaman bir sektörde başlamalı ve bitmelidir. </para
+>Bölüntüler</link
+>, her zaman bir dilimde başlamalı ve bitmelidir. </para
 ><glossseealso otherterm="glossary-head"
 ></glossseealso
 > <glossseealso otherterm="glossary-cylinder"
@@ -371,14 +371,14 @@
 	
 	<glossentry id="glossary-sectorsize">
 		<glossterm
->Sektör Boyutu</glossterm>
+>Dilim Boyutu</glossterm>
 		<glossdef>
 			<para
 >Bir <link linkend="glossary-device"
 >aygıt</link
 > üzerindeki <link linkend="glossary-sector"
->sektör</link
-> başına bayt sayısı. Günümüzde kullanılan çoğu aygıtın sektör boyutu 512 bayttır. </para>
+>dilim</link
+> başına bayt sayısı. Günümüzde kullanılan çoğu aygıtın dilim boyutu 512 bayttır. </para>
 		</glossdef>
 	</glossentry>
 	

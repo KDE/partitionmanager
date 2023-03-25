@@ -32,39 +32,39 @@
 		<qandaentry>
 			<question>
 				<para
->Bir disk bölümünü yeniden boyutlandırırken neden herhangi bir anlamlı ilerleme bilgisi göremiyorum?</para>
+>Bir disk bölüntüsünü yeniden boyutlandırırken neden herhangi bir anlamlı ilerleme bilgisi göremiyorum?</para>
 			</question>
 			<answer>
 				<para
->&partman;, yalnızca bir operasyondaki işlerin ne kadar süreceğini bildiğinde ilerleme bilgilerini gösterebilir. Ne yazık ki bu genellikle bölümleri yeniden boyutlandırırken geçerli değildir; çünkü bunu yaparken en uzun iş, bölümdeki dosya sistemini yeniden boyutlandırmaktır. Dosya sistemlerini yeniden boyutlandırmak çoğu durumda dış bir aracın &partman; adına yapacağı bir şeydir. ve bu dış araçlar &partman;'a yararlı ilerleme bilgileri sağlamaz, bu nedenle çalışırken raporlanacak hiçbir şey yoktur. </para>
+>&partman;, yalnızca bir operasyondaki işlerin ne kadar süreceğini bildiğinde ilerleme bilgilerini gösterebilir. Ne yazık ki bu genellikle bölüntüleri yeniden boyutlandırırken geçerli değildir; çünkü bunu yaparken en uzun iş, bölüntüdeki dosya sistemini yeniden boyutlandırmaktır. Dosya sistemlerini yeniden boyutlandırmak çoğu durumda dış bir aracın &partman; adına yapacağı bir şeydir. ve bu dış araçlar &partman;'a yararlı ilerleme bilgileri sağlamaz, bu nedenle çalışırken raporlanacak hiçbir şey yoktur. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
 				<para
->Kök bölümü neden yeniden boyutlandıramıyorum? /ana-klasör açık olan bölümü nasıl yeniden boyutlandırabilirim?</para>
+>Kök bölüntüyü neden yeniden boyutlandıramıyorum? /home'un bağlı olduğu bölüntüyü nasıl yeniden boyutlandırabilirim?</para>
 			</question>
 			<answer>
 				<para
->Bir bölümü değiştirmek için takılı olmamalıdır. Ancak, kök bölümün bağlantısını kaldıramazsınız. Şu anda oturum açmış olan kullanıcının ana dizini üzerindeyse, ana bölümün bağlantısını da kaldıramazsınız. </para>
+>Bir bölüntüyü değiştirmek için bağlı olmamalıdır. Ancak, kök bölüntünün bağlantısını kaldıramazsınız. Şu anda oturum açmış olan kullanıcının ana dizini üzerindeyse ana bölüntünün bağlantısını da kaldıramazsınız. </para>
 				<para
->Bu sorunun çözümü, &partman; ile birlikte gelen bir Linux Canlı CD'sinden önyükleme yapmaktır. Bu bölümleri oradan değiştirin. </para>
+>Bu sorunun çözümü, &partman; ile birlikte gelen bir Linux Canlı CD'sinden önyükleme yapmaktır. Bu bölüntüleri oradan değiştirin. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
 				<para
->Günlük çıktısında, istediğim boyutta bir bölümün oluşturulamayacağına ve bunun yerine daha küçük olacağına dair bir uyarı ileti alıyorum. Ne oldu?</para>
+>Günlük çıktısında, istediğim boyutta bir bölüntünün oluşturulamayacağına ve bunun yerine daha küçük olacağına dair bir uyarı ileti alıyorum. Ne oldu?</para>
 			</question>
 			<answer>
 				<para
->MS-DOS disk bölümü tablolarında, bölümlerin silindir sınırlarında başlaması ve bitmesi gerekir. Bu esas olarak tarihsel nedenlerden kaynaklanmaktadır. &partman;, bununla içsel olarak ilgilenecek ve kullanıcıyı bu sınırlama ile rahatsız etmemeye çalışacaktır. </para>
+>MS-DOS bölüntü tablolarında, bölüntülerin silindir sınırlarında başlaması ve bitmesi gerekir. Bu esas olarak tarihsel nedenlerden kaynaklanmaktadır. &partman;, bununla içsel olarak ilgilenecek ve kullanıcıyı bu sınırlama ile rahatsız etmemeye çalışacaktır. </para>
 				<para
->Nadir durumlarda, &partman;; ancak bu sınırlama nedeniyle kullanıcının istediği şekilde bir işlem ayarlayamayacaktır. Örneğin, bir aygıttaki bir silindir 8 MiB büyüklüğündeyse ve bir bölümü 6 MiB olarak yeniden boyutlandırmaya çalışırsanız bu işe yaramaz. </para>
+>Nadir durumlarda, &partman;; ancak bu sınırlama nedeniyle kullanıcının istediği şekilde bir işlem ayarlayamayacaktır. Örneğin, bir aygıttaki bir silindir 8 MiB büyüklüğündeyse ve bir bölüntüyü 6 MiB olarak yeniden boyutlandırmaya çalışırsanız bu işe yaramaz. </para>
 				<para
->Ayrıca, bölümlerin herhangi bir nedenle silindir sınırlarına doğru şekilde oturtulmadığı bir aygıtınız ve bölüm tablonuz varsa ve bu bölümleri ilk kez taşımaya veya kopyalamaya çalışıyorsanız da bu iletiyle karşılaşabilirsiniz. </para>
+>Ayrıca, bölüntülerin herhangi bir nedenle silindir sınırlarına doğru şekilde oturtulmadığı bir aygıtınız ve bölüntü tablonuz varsa ve bu bölüntüleri ilk kez taşımaya veya kopyalamaya çalışıyorsanız da bu iletiyle karşılaşabilirsiniz. </para>
 				<para
->İletinin kendisi zararsızdır ve yalnızca kullanıcıya bir şeyin tam olarak kullanıcının beklediği şekilde yapılamayacağını bildirmek için vardır. Bu iletiyi görürseniz bölümleriniz ve verileriniz hiçbir şekilde olumsuz etkilenmeyecektir. </para>
+>İletinin kendisi zararsızdır ve yalnızca kullanıcıya bir şeyin tam olarak kullanıcının beklediği şekilde yapılamayacağını bildirmek için vardır. Bu iletiyi görürseniz bölüntüleriniz ve verileriniz hiçbir şekilde olumsuz etkilenmeyecektir. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
@@ -92,7 +92,7 @@
 >e2resize</command
 > komutu ve temeldeki ext2/3/4 dosya sistemi sorunudur. Bir dosya sistemi neredeyse doluysa, <command
 >e2resize</command
-> onu daha fazla küçültemez; ancak bu kalan boş sektör sayısı nedeniyle olanaklı olabilir. &partman;, <command
+> onu daha fazla küçültemez; ancak bu kalan boş dilim sayısı nedeniyle olanaklı olabilir. &partman;, <command
 >e2resize</command
 > ögesinin belirli bir dosya sistemi için bu hatayla iptal edilip edilmeyeceğini ne yazık ki önceden bilemez. Olursa hiçbir şey yapılmaz ve verileriniz olumsuz etkilenmez. </para>
 				<para
@@ -106,19 +106,19 @@
 			</question>
 			<answer>
 				<para
->Bunların hiçbiri, &partman; ile yapılmak için tasarlanmıştır: Bölümler ve bu bölümlerdeki dosya sistemleri ile ilgilenen bir uygulamadır. Disketler, CD'ler veya DVD'ler bölümlere gereksinim duymaz veya bunları kullanmaz. </para>
+>Bunların hiçbiri, &partman; ile yapılmak için tasarlanmıştır: Bölüntüler ve bu bölüntülerdeki dosya sistemleri ile ilgilenen bir uygulamadır. Disketler, CD'ler veya DVD'ler bölüntülere gereksinim duymaz veya bunları kullanmaz. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
 				<para
->Neden bir Amiga veya BSD bölümleme tablosu olan bir aygıttaki disk bölümlerini değiştiremiyorum?</para>
+>Neden bir Amiga veya BSD bölüntüleme tablosu olan bir aygıttaki disk bölüntülerini değiştiremiyorum?</para>
 			</question>
 			<answer>
 				<para
->&partman;, şu anda yalnızca MS-DOS dışındaki herhangi bir bölüm tablosu türüne saltokunur erişime izin vermektedir. Bu, güvenlik nedeniyledir: &partman;, bu bölüm tablosu türleri için destek henüz yoktur ve olanlar da (veya tesadüfen çalışanlar) onu güvenli bir biçimde kullanmak için yeterince sınanmamıştır. </para>
+>&partman;, şu anda yalnızca MS-DOS dışındaki herhangi bir bölüntü tablosu türüne saltokunur erişime izin vermektedir. Bu, güvenlik nedeniyledir: &partman;, bu bölüntü tablosu türleri için destek henüz yoktur ve olanlar da (veya tesadüfen çalışanlar) onu güvenli bir biçimde kullanmak için yeterince sınanmamıştır. </para>
 				<para
->Tabii ki yine de söz konusu aygıtta yeni bir MS-DOS bölümleme tablosu oluşturabilirsiniz; ancak büyük olasılıkla istediğiniz bu değildir. </para>
+>Tabii ki yine de söz konusu aygıtta yeni bir MS-DOS bölüntüleme tablosu oluşturabilirsiniz; ancak büyük olasılıkla istediğiniz bu değildir. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>

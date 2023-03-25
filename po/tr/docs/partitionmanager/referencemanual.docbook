@@ -6,7 +6,7 @@
 		<title
 >Genel Görünüm</title>
 		<para
->Bu bölüm ;&partman;'da bulunan tüm komutların ayrıntılı açıklamalarını verir. Bu, verilen <xref linkend="usermanual"/> için eşlik edecek bir başvuru olarak tasarlanmıştır.</para>
+>Bu fasıl ;&partman;'da bulunan tüm komutların ayrıntılı açıklamalarını verir. Bu, verilen <xref linkend="usermanual"/> için eşlik edecek bir başvuru olarak tasarlanmıştır.</para>
 
 	<sect2 id="menu-file">
 		<title
@@ -159,16 +159,16 @@
 > <guimenu
 >Aygıt</guimenu
 > <guimenuitem
->Yeni Disk Bölümü Tablosu</guimenuitem
+>Yeni Bölüntü Tablosu</guimenuitem
 > </menuchoice>
 					</term>
 					<listitem>
 						<para
 ><action
->Yeni bir bölüm tablosu oluşturur</action
->: Bu komut, seçili olan aygıtta yeni ve boş bir GPT veya MSDOS bölüm tablosu oluşturur. Bu, aygıttaki tüm bölümleri ve üzerilerindeki tüm verileri silecektir, bu nedenle bu komuta dikkat etmek isteyeceksiniz. </para>
+>Yeni bir bölüntü tablosu oluşturur</action
+>: Bu komut, seçili olan aygıtta yeni ve boş bir GPT veya MSDOS bölüntü tablosu oluşturur. Bu, aygıttaki tüm bölüntüleri ve üzerilerindeki tüm verileri silecektir, bu nedenle bu komuta dikkat etmek isteyeceksiniz. </para>
 						<para
->Bu komut yalnızca bir aygıt seçiliyse ve bu aygıtta şu anda hiçbir bölüm takılı değilse etkinleştirilir. </para>
+>Bu komut yalnızca bir aygıt seçiliyse ve bu aygıtta şu anda hiçbir bölüntü takılı değilse etkinleştirilir. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-device-exportpartitiontable">
@@ -177,12 +177,12 @@
 ><guimenu
 >Aygıt</guimenu
 > <guimenuitem
->Bölüm Tablosunu Dışa Aktar</guimenuitem
+>Bölüntü Tablosunu Dışa Aktar</guimenuitem
 > </menuchoice>
 					</term>
 					<listitem>
 						<para
->Seçili aygıttaki tüm bölümlerin bir listesini bir dosyaya aktarmanıza izin verir. </para>
+>Seçili aygıttaki tüm bölüntülerin bir listesini bir dosyaya aktarmanıza izin verir. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-device-importpartitiontable">
@@ -191,16 +191,16 @@
 ><guimenu
 >Aygıt</guimenu
 > <guimenuitem
->Bölüm Tablosu İçe Aktar</guimenuitem
+>Bölüntü Tablosu İçe Aktar</guimenuitem
 > </menuchoice>
 					</term>
 					<listitem>
 						<para
->Daha önce dışa aktarılan bir dosyadan bölüm tablosu içe aktarmanıza izin verir.</para>
+>Daha önce dışa aktarılan bir dosyadan bölüntü tablosu içe aktarmanıza izin verir.</para>
 						<para
->Bu, aygıttaki tüm bölümleri ve üzerilerindeki tüm verileri silecektir, bu nedenle bu komuta dikkat etmek isteyeceksiniz.</para>
+>Bu, aygıttaki tüm bölüntüleri ve üzerilerindeki tüm verileri silecektir, bu nedenle bu komuta dikkat etmek isteyeceksiniz.</para>
 						<para
->Bu komut yalnızca bir aygıt seçiliyse ve bu aygıtta şu anda hiçbir bölüm takılı değilse etkinleştirilir. LVM Birim Grupları gibi mantıksal aygıtlara içe aktarım şu anda desteklenmemektedir.</para>
+>Bu komut yalnızca bir aygıt seçiliyse ve bu aygıtta şu anda hiçbir bölüntü takılı değilse etkinleştirilir. LVM Disk Bölümü Grupları gibi mantıksal aygıtlara içe aktarım şu anda desteklenmemektedir.</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-device-smartstatus">
@@ -228,7 +228,7 @@
 					</term>
 					<listitem>
 						<para
->Geçerli olarak seçili aygıtlarla ilgili bilgileri gösterir. Bu iletişim kutusunda, kapasiteyi, sektör boyutlarını, bölüm tablosu türünün yanı sıra kullanılan ve en çok birincil bölüm sayısını bulabilirsiniz.</para>
+>Geçerli olarak seçili aygıtlarla ilgili bilgileri gösterir. Bu iletişim kutusunda, kapasiteyi, dilim boyutlarını, bölüntü tablosu türünün yanı sıra kullanılan ve en çok birincil bölüntü sayısını bulabilirsiniz.</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -237,7 +237,7 @@
 
 	<sect2 id="menu-partition">
 		<title
->Disk Bölümü Menüsü</title>
+>Bölüntü Menüsü</title>
 
 		<para>
 			<variablelist>
@@ -251,7 +251,7 @@
 ></keycombo
 ></shortcut
 > <guimenu
->Disk Bölümü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Yeni</guimenuitem
 > </menuchoice>
@@ -259,10 +259,10 @@
 					<listitem>
 						<para
 ><action
->Yeni bir disk bölümü oluşturur</action
->: Oluşturacak bölümün türünü, boyutunu, konumunu ve dosya sistemini ayarlayabileceğiniz yeni bir bölüm oluşturmak için iletişim penceresini açar. </para>
+>Yeni bir bölüntü oluşturur</action
+>: Oluşturacak bölüntünün türünü, boyutunu, konumunu ve dosya sistemini ayarlayabileceğiniz yeni bir bölüntü oluşturmak için iletişim penceresini açar. </para>
 						<para
->Lütfen bir aygıttaki bölüm tablosunun kaç bölümün oluşturulabileceği konusunda kısıtlamalar getirebileceğini unutmayın. Örneğin, MS-DOS bölüm tabloları yalnızca dört birincil bölüme izin verir. </para>
+>Lütfen bir aygıttaki bölüntü tablosunun kaç bölüntünün oluşturulabileceği konusunda kısıtlamalar getirebileceğini unutmayın. Örneğin, MS-DOS bölüntü tabloları yalnızca dört birincil bölüntüye izin verir. </para>
 						<para
 >Bu komut yalnızca bir aygıtta ayrılmamış bir alan seçildiğinde etkinleştirilir. </para>
 					</listitem>
@@ -277,7 +277,7 @@
 ></keycombo
 ></shortcut
 > <guimenu
->Disk Bölümü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Yeniden Boyutlandır/Taşı</guimenuitem
 > </menuchoice>
@@ -285,14 +285,14 @@
 					<listitem>
 						<para
 ><action
->Bir bölümü yeniden boyutlandırır veya taşır</action
->: Var olan bir bölümü yeniden boyutlandırmak veya taşımak için iletişim kutusunu açar. Bölümün dosya sistemine ve bilgisayarınızda kurulu dış araçlara bağlı olarak, yeniden boyutlandırmayla ilgili olası üç eylemin tümü - yani bölümü taşıma, küçültme (<quote
+>Bir bölüntüyü yeniden boyutlandırır veya taşır</action
+>: Var olan bir bölüntüyü yeniden boyutlandırmak veya taşımak için iletişim kutusunu açar. Bölüntünün dosya sistemine ve bilgisayarınızda kurulu dış araçlara bağlı olarak, yeniden boyutlandırmayla ilgili olası üç eylemin tümü - yani bölüntüyü taşıma, küçültme (<quote
 >küçültme</quote
 >) veya büyütme (<quote
 >büyütme</quote
 >) -- bu iletişim kutusunda bulunabilir. <xref linkend="menu-tools-filesystemsupport"/> bölümüne bakın. </para>
 						<para
->Bu komut yalnızca şu anda takılı olmayan ve dosya sistemi küçültülebilen, büyütülebilen veya taşınabilen bir bölüm seçildiğinde etkinleştirilir. Genişletilmiş bir bölüm için, yalnızca genişletilmiş bölümdeki mantıksalların hiçbiri bağlanmamışsa etkinleştirilir. </para>
+>Bu komut yalnızca şu anda takılı olmayan ve dosya sistemi küçültülebilen, büyütülebilen veya taşınabilen bir bölüntü seçildiğinde etkinleştirilir. Genişletilmiş bir bölüntü için, yalnızca genişletilmiş bölüntüdeki mantıksalların hiçbiri bağlanmamışsa etkinleştirilir. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-delete">
@@ -301,7 +301,7 @@
 ><shortcut
 >&Del;</shortcut
 > <guimenu
->Disk Bölümü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Sil</guimenuitem
 > </menuchoice>
@@ -309,15 +309,15 @@
 					<listitem>
 						<para
 ><action
->Bir disk bölümünü siler</action
->: Bu komut, şu anda seçili olan bölümü siler. </para>
+>Bir bölüntüyü siler</action
+>: Bu komut, şu anda seçili olan bölüntüyü siler. </para>
 						<para
->Bu komut yalnızca şu anda bağlı olmayan bir bölüm seçildiğinde etkinleştirilir. Genişletilmiş bir bölüm için yalnızca herhangi bir mantıksal bölüm içermiyorsa etkinleştirilir. </para>
+>Bu komut yalnızca şu anda bağlı olmayan bir bölüntü seçildiğinde etkinleştirilir. Genişletilmiş bir bölüntü için yalnızca herhangi bir mantıksal bölüntü içermiyorsa etkinleştirilir. </para>
 						<warning>
 							<title
 >Uyarı: Olası veri kaybı</title>
 							<para
->Bir disk bölümünün silinmesi, bölümdeki tüm verilerin yok edilmesi anlamına gelir.</para>
+>Bir bölüntünün silinmesi, bölüntüdeki tüm verilerin yok edilmesi anlamına gelir.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
@@ -329,7 +329,7 @@
 >&Ctrl;&Del;</keycombo
 ></shortcut
 > <guimenu
->Disk Bölümü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Parçala</guimenuitem
 > </menuchoice>
@@ -337,15 +337,15 @@
 					<listitem>
 						<para
 ><action
->Bir bölümü parçalar</action
->: Bu komut geçerli olarak seçili bölümü parçalar. </para>
+>Bir bölüntüyü parçalar</action
+>: Bu komut geçerli olarak seçili bölüntüyü parçalar. </para>
 						<para
->Bu komut yalnızca şu anda bağlı olmayan bir bölüm seçildiğinde etkinleştirilir. Genişletilmiş bir bölüm için yalnızca herhangi bir mantıksal bölüm içermiyorsa etkinleştirilir. </para>
+>Bu komut yalnızca şu anda bağlı olmayan bir bölüntü seçildiğinde etkinleştirilir. Genişletilmiş bir bölüntü için yalnızca herhangi bir mantıksal bölüntü içermiyorsa etkinleştirilir. </para>
 						<warning>
 							<title
 >Uyarı: Olası veri kaybı</title>
 							<para
->Bir bölümü parçalamak, bölümdeki tüm verilerin yok edilmesi anlamına gelir.</para>
+>Bir bölüntüyü parçalamak, bölüntüdeki tüm verilerin yok edilmesi anlamına gelir.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
@@ -359,7 +359,7 @@
 ></keycombo
 ></shortcut
 > <guimenu
->Disk Bölümü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Kopyala</guimenuitem
 > </menuchoice>
@@ -367,10 +367,10 @@
 					<listitem>
 						<para
 ><action
->Bir disk bölümünü kopyalar</action
->: Bu komut, seçili olan bölümü &partman; panosuna kopyalar. </para>
+>Bir bölüntüyü kopyalar</action
+>: Bu komut, seçili olan bölüntüyü &partman; panosuna kopyalar. </para>
 						<para
->Bu komut yalnızca şu anda bağlı olmayan ve dosya sistemi kopyalanabilen bir bölüm seçildiğinde etkinleştirilir. Genişletilmiş bölümler kopyalanamaz. </para>
+>Bu komut yalnızca şu anda bağlı olmayan ve dosya sistemi kopyalanabilen bir bölüntü seçildiğinde etkinleştirilir. Genişletilmiş bölüntüler kopyalanamaz. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-paste">
@@ -383,7 +383,7 @@
 ></keycombo
 ></shortcut
 > <guimenu
->Disk Bölümü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Yapıştır</guimenuitem
 > </menuchoice>
@@ -391,17 +391,17 @@
 					<listitem>
 						<para
 ><action
->Bir disk bölümünü yapıştır</action
->: Bu komut, bölümü &partman; panosundan seçili olan bölüme veya ayrılmamış alana yapıştırır. </para>
+>Bir bölüntüyü yapıştır</action
+>: Bu komut, bölüntüyü &partman; panosundan seçili olan bölüntüye veya ayrılmamış alana yapıştırır. </para>
 						<para
->Ayrılmamış bir alana yapıştırırken, eklenen kopyayı taşımanıza veya büyütmenize izin veren bir iletişim kutusu açılır. Var olan bir bölümün üzerine yazarken bu iletişim kutusu gösterilmeyecektir. </para>
+>Ayrılmamış bir alana yapıştırırken, eklenen kopyayı taşımanıza veya büyütmenize izin veren bir iletişim kutusu açılır. Var olan bir bölüntünün üzerine yazarken bu iletişim kutusu gösterilmeyecektir. </para>
 						<para
->Bu komut yalnızca panoda o anda bir bölüm varsa ve geçerli bir hedef (bölüm veya ayrılmamış bir alan) seçilirse etkinleştirilir. Hedef ayrıca kaynağı tutacak kadar büyük olmalı ve bağlanamaz. Bir bölümü kendi üzerine kopyalayamazsınız. </para>
+>Bu komut yalnızca panoda o anda bir bölüntü varsa ve geçerli bir hedef (bölüntü veya ayrılmamış bir alan) seçilirse etkinleştirilir. Hedef ayrıca kaynağı tutacak kadar büyük olmalı ve bağlanamaz. Bir bölüntüyü kendi üzerine kopyalayamazsınız. </para>
 						<warning>
 							<title
 >Uyarı: Olası veri kaybı</title>
 							<para
->Var olan bir disk bölümüne başka bir disk bölümü yapıştırmak, var olan bölümdeki tüm verilerin yok edilmesi ve yapıştırılan bölümdeki verilerle değiştirilmesi anlamına gelir.</para>
+>Var olan bir bölüntüyü başka bir bölüntüye yapıştırmak, var olan bölüntüdeki tüm verilerin yok edilmesi ve yapıştırılan bölüntüdeki verilerle değiştirilmesi anlamına gelir.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
@@ -409,7 +409,7 @@
 					<term>
 						<menuchoice
 ><guimenu
->Disk Bölümü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Bağlama Noktasını Düzenle</guimenuitem
 > </menuchoice>
@@ -420,14 +420,14 @@
 >bir iletişim kutusu açar</action
 >. </para>
 						<para
->Bu komut, yalnızca bir bölümün bağlantısı kesilmişse etkinleştirilir. </para>
+>Bu komut, yalnızca bir bölüntünün bağlantısı kesilmişse etkinleştirilir. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-mount">
 					<term>
 						<menuchoice
 ><guimenu
->Disk Bölümü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Bağla/Bağlantıyı Kes</guimenuitem
 > </menuchoice>
@@ -435,17 +435,17 @@
 					<listitem>
 						<para
 ><action
->Bir disk bölümünü bağlar veya bağlantısını keser</action
->: Bu komut, geçerli durumuna bağlı olarak seçilen bölümü bağlar veya ayırır. </para>
+>Bir bölüntüyü bağlar veya bağlantısını keser</action
+>: Bu komut, geçerli durumuna bağlı olarak seçilen bölüntüyü bağlar veya ayırır. </para>
 						<para
->Bu komut yalnızca bağlanabilen veya bağlantısı kesilebilen bir disk bölümü seçildiğinde etkinleştirilir. İşletim sistemi bölüm için bir bağlama noktası bilmiyorsa bölümü &partman; uygulamasından bağlayamazsınız. </para>
+>Bu komut yalnızca bağlanabilen veya bağlantısı kesilebilen bir bölüntü seçildiğinde etkinleştirilir. İşletim sistemi bölüntü için bir bağlama noktası bilmiyorsa bölüntüyü &partman; uygulamasından bağlayamazsınız. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-check">
 					<term>
 						<menuchoice
 ><guimenu
->Disk Bölümünü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Denetle</guimenuitem
 > </menuchoice>
@@ -453,17 +453,17 @@
 					<listitem>
 						<para
 ><action
->Bir bölümü denetler</action
->: Bu komut, seçili bölümü ve dosya sistemini hatalara karşı denetler ve bulduğu sorunları düzeltmeye çalışır. Bu işlem sırasında bölümdeki dosya sistemi de bölümü tamamen dolduracak şekilde yeniden boyutlandırılacaktır. </para>
+>Bir bölüntüyü denetler</action
+>: Bu komut, seçili bölüntüyü ve dosya sistemini hatalara karşı denetler ve bulduğu sorunları düzeltmeye çalışır. Bu işlem sırasında bölüntüdeki dosya sistemi de bölüntüyü tamamen dolduracak şekilde yeniden boyutlandırılacaktır. </para>
 						<para
->Bu komut, yalnızca denetlenebilen ve şu anda bağlı olmayan bir bölüm seçildiğinde etkinleştirilir. </para>
+>Bu komut, yalnızca denetlenebilen ve şu anda bağlı olmayan bir bölüntü seçildiğinde etkinleştirilir. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-backup">
 					<term>
 						<menuchoice
 ><guimenu
->Disk Bölümü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Yedekle</guimenuitem
 > </menuchoice>
@@ -471,19 +471,19 @@
 					<listitem>
 						<para
 ><action
->Bir bölümü yedekler</action
->: Bu komut, seçilen bölümdeki dosya sistemini bir dosyaya yedekler. Bu komutu etkinleştirdikten sonra kalıp dosyasının nerede saklanacağı sorulacaktır. </para>
+>Bir bölüntüyü yedekler</action
+>: Bu komut, seçilen bölüntüdeki dosya sistemini bir dosyaya yedekler. Bu komutu etkinleştirdikten sonra kalıp dosyasının nerede saklanacağı sorulacaktır. </para>
 						<para
->Oluşturulan kalıp dosyası, bölümdeki dosya sisteminin sektör sektör kopyasıdır. Sıkıştırılmamıştır ve herhangi bir ek üst bilgisi veya eklenmiş başlığı yoktur, bu nedenle işletim sistemi destekliyorsa &partman; dışında bir döngü aygıtı kullanılarak doğrudan bağlanabilir. </para>
+>Oluşturulan kalıp dosyası, bölüntüdeki dosya sisteminin dilim dilim kopyasıdır. Sıkıştırılmamıştır ve herhangi bir ek üst bilgisi veya eklenmiş başlığı yoktur, bu nedenle işletim sistemi destekliyorsa &partman; dışında bir döngü aygıtı kullanılarak doğrudan bağlanabilir. </para>
 						<para
->Bu komut yalnızca bir bölüm seçildiğinde ve bu bölümdeki dosya sistemi yedeklenebildiğinde etkinleştirilir. Bölüm ayrıca bağlanmamalıdır. </para>
+>Bu komut yalnızca bir bölüntü seçildiğinde ve bu bölüntüdeki dosya sistemi yedeklenebildiğinde etkinleştirilir. Bölüntü ayrıca bağlanmamalıdır. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-restore">
 					<term>
 						<menuchoice
 ><guimenu
->Disk Bölümü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Geri Yükle</guimenuitem
 > </menuchoice>
@@ -491,15 +491,15 @@
 					<listitem>
 						<para
 ><action
->Bir bölümü geri yükler</action
->: Bu komut, bir dosya sistemini bir kalıp dosyasından bir bölüme geri yükler. Bu komutu etkinleştirdikten sonra geri yüklenecek kalıp dosyasının adı sorulacaktır. Geri yüklenecek hedef, kalıp dosyası için yeterince büyük olmalıdır. </para>
+>Bir bölüntüyü geri yükler</action
+>: Bu komut, bir dosya sistemini bir kalıp dosyasından bir bölüntüye geri yükler. Bu komutu etkinleştirdikten sonra geri yüklenecek kalıp dosyasının adı sorulacaktır. Geri yüklenecek hedef, kalıp dosyası için yeterince büyük olmalıdır. </para>
 						<para
->Komut yalnızca ayrılmamış bir alan seçildiğinde veya şu anda bağlı olmayan bir disk bölümü seçildiğinde etkinleştirilir. </para>
+>Komut yalnızca ayrılmamış bir alan seçildiğinde veya şu anda bağlı olmayan bir bölüntü seçildiğinde etkinleştirilir. </para>
 						<warning>
 							<title
 >Uyarı: Olası veri kaybı</title>
 							<para
->Var olan bir bölümdeki bir bölümü geri yüklemek, var olan disk bölümündeki tüm verilerin yok edildiği ve geri yüklenen kalıp dosyasındaki verilerle değiştirildiği anlamına gelir.</para>
+>Var olan bir bölüntüdeki bir bölüntüyü geri yüklemek, var olan bölüntüdeki tüm verilerin yok edildiği ve geri yüklenen kalıp dosyasındaki verilerle değiştirildiği anlamına gelir.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
@@ -507,7 +507,7 @@
 					<term>
 						<menuchoice
 ><guimenu
->Disk Bölümü</guimenu
+>Bölüntü</guimenu
 > <guimenuitem
 >Özellikler</guimenuitem
 > </menuchoice>
@@ -515,51 +515,51 @@
 					<listitem>
 						<para
 ><action
->Bir bölümün özelliklerini gösterir</action
->: Bu komut, seçili olan bölüm veya ayrılmamış alan hakkında bilgi içeren bir iletişim kutusu gösterir. </para>
+>Bir bölüntünün özelliklerini gösterir</action
+>: Bu komut, seçili olan bölüntü veya ayrılmamış alan hakkında bilgi içeren bir iletişim kutusu gösterir. </para>
 						<para
->Bu iletişim kutusunda nelerin görüntüleneceği ve nelerin değiştirilebileceği bölümün türüne, bölümdeki dosya sisteminin türüne ve bölümün şu anda bağlı olup olmamasına bağlıdır. </para>
+>Bu iletişim kutusunda nelerin görüntüleneceği ve nelerin değiştirilebileceği bölüntünün türüne, bölüntüdeki dosya sisteminin türüne ve bölüntünün şu anda bağlı olup olmamasına bağlıdır. </para>
 						<para
->Örneğin, tüm dosya sistemleri bir etiket ayarlamayı desteklemez. Bölüm bağlıysa herhangi bir özelliği değiştirmek de genellikle olanaklı değildir. </para>
+>Örneğin, tüm dosya sistemleri bir etiket ayarlamayı desteklemez. Bölüntü bağlıysa herhangi bir özelliği değiştirmek de genellikle olanaklı değildir. </para>
 						<para
->Bu, genel olarak bu iletişim kutusunda değiştirilebilen tüm disk bölümü ve dosya sistemi özelliklerinin bir listesidir: <itemizedlist>
+>Bu, genel olarak bu iletişim kutusunda değiştirilebilen tüm bölüntü ve dosya sistemi özelliklerinin bir listesidir: <itemizedlist>
 								<listitem>
 									<para
 >Bir dosya sisteminin etiketini ayarla veya değiştir</para>
 								</listitem>
 								<listitem>
 									<para
->Disk bölümünün dosya sistemini değiştirin.</para>
+>Bölüntünün dosya sistemini değiştirin.</para>
 
 									<warning>
 										<title
 >Uyarı: Olası veri kaybı</title>
 										<para
->Bir bölümün dosya sistemini değiştirmek, her zaman bölümdeki tüm verilerin yok edilmesi anlamına gelir.</para>
+>Bir bölüntünün dosya sistemini değiştirmek, her zaman bölüntüdeki tüm verilerin yok edilmesi anlamına gelir.</para>
 									</warning>
 								</listitem>
 								<listitem>
 									<para
->Bölümdeki dosya sistemini yeniden oluştur</para>
+>Bölüntüdeki dosya sistemini yeniden oluştur</para>
 
 									<warning>
 										<title
 >Uyarı: Olası veri kaybı</title>
 										
 										<para
->Bir dosya sistemini bir bölüm üzerinde yeniden oluşturmak, her zaman bölümdeki tüm verilerin yok edilmesi anlamına gelir. Bir dosya sistemini yeniden oluşturmak, yalnızca bir bölümdeki dosya sistemi artık onarılamazsa son çare olarak kullanılmalıdır.</para>
+>Bir dosya sistemini bir bölüntü üzerinde yeniden oluşturmak, her zaman bölüntüdeki tüm verilerin yok edilmesi anlamına gelir. Bir dosya sistemini yeniden oluşturmak, yalnızca bir bölüntüdeki dosya sistemi artık onarılamazsa son çare olarak kullanılmalıdır.</para>
 									</warning>
 								</listitem>
 								<listitem>
 									<para
->Bir disk bölümünün bayraklarını değiştir</para>
+>Bir bölüntünün bayraklarını değiştir</para>
 									<para
->Kullanılan bölümleme tablosunun türüne bağlı olarak, bölümleme tablosundaki her bölüm için birkaç bayrak olacaktır. Çoğu durumda bayrakları değiştirmek gerekli değildir ve gelişmiş bir özellik olarak düşünülmelidir.</para>
+>Kullanılan bölüntüleme tablosunun türüne bağlı olarak, bölüntüleme tablosundaki her bölüntü için birkaç bayrak olacaktır. Çoğu durumda bayrakları değiştirmek gerekli değildir ve gelişmiş bir özellik olarak düşünülmelidir.</para>
 								</listitem>
 							</itemizedlist>
 						</para>
 						<para
->Komut yalnızca ayrılmamış bir alan veya bir bölüm seçildiğinde etkinleştirilir. </para>
+>Komut yalnızca ayrılmamış bir alan veya bir bölüntü seçildiğinde etkinleştirilir. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -581,16 +581,16 @@
 ></keycombo
 ></shortcut
 > <guimenu
->Tools</guimenu
+>Araçlar</guimenu
 > <guimenuitem
->Yeni Bölüm Grubu</guimenuitem
+>Yeni Disk Bölümü Grubu</guimenuitem
 > </menuchoice>
 					</term>
 					<listitem>
 						<para
 ><link linkend="glossary-lvm"
 >LVM</link
-> Bölüm Grubu gibi yeni bir mantıksal aygıt oluşturun.</para>
+> Disk Bölümü Grubu gibi yeni bir mantıksal aygıt oluşturun.</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-tools-filesystemsupport">
