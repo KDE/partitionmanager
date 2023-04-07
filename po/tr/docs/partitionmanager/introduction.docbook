@@ -5,13 +5,13 @@
 >&partman; bilgisayarınızdaki <glossterm linkend="glossary-device"
 >disk aygıtlarını</glossterm
 >, <glossterm linkend="glossary-partition"
->disk bölümlerini</glossterm
+>bölüntüleri</glossterm
 > ve <glossterm linkend="glossary-filesystem"
 >sistem dosyalarını</glossterm
-> yönetmeye yardım eden yararlı bir programdır.  </para>
+> yönetmeye yardım eden bir izlencedir.  </para>
 	<para
 >Kolay bir şekilde, yeni veya var olan disk bölmeleri üzerinde <link linkend="howto-installos"
->yeni disk bölümleri oluşturmak</link
+>yeni bölüntüler oluşturmak</link
 >, sistem dosyaları oluşturmak, <link linkend="howto copypartition"
 >kopyalamak</link
 >, taşımak veya disk bölmelerini silmek ve hiçbir bilgi kaybetmeden üzerinde <link linkend="howto-resizepartition"
@@ -25,7 +25,7 @@
 		<title
 >Verilerinizi her zaman yedekleyin!</title>
 		<para
->&partman; yüksek özenle ve veri bütünlüğüne önem verilerek tasarlanmış ve yazılmıştır. Bununla birlikte, bir aygıtın bölüm tablosunu veya bölümlerini değiştirirken her zaman bazı tehlikeler söz konusudur: &partman; uygulamasındaki bir hata, beklenmeyen bir elektrik kesintisi veya bilgisayarın donanımıyla ilgili bir sorun olabilir. </para>
+>&partman; yüksek özenle ve veri bütünlüğüne önem verilerek tasarlanmış ve yazılmıştır. Bununla birlikte, bir aygıtın bölüntü tablosunu veya bölüntüleri değiştirirken her zaman bazı tehlikeler söz konusudur: &partman; uygulamasındaki bir hata, beklenmeyen bir elektrik kesintisi veya bilgisayarın donanımıyla ilgili bir sorun olabilir. </para>
 		<para
 >Bu nedenlerden dolayı, &partman; gibi bir araçla herhangi bir değişiklik yapmadan önce <emphasis
 >önemli verilerinizin yedeğini almalısınız</emphasis

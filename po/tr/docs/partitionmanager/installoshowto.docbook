@@ -3,7 +3,7 @@
 >Nasıl Yapılır: Yeni Bir İşletim Sistemi Kurulumu</title>
 
 	<para
->Bu nasıl yapılır belgesi, bir işletim sistemi kurulumu için yeni bir sabit disk aygıtının hazırlanmasını açıklar: Yeni bir sabit disk satın aldığınızı ve şimdi bunu, işletim sisteminizi ve veri bölümlerinizi tutan eski sabit diskin yerine kullanmak istediğinizi varsayalım. Bu fırsatı yeni bir işletim sistemi kurmak için de kullanmak istersiniz. Eski sistemden yeni sisteme ve sürücüye geçiş yapmak için birkaç adım atılması gerekecektir. </para>
+>Bu nasıl yapılır belgesi, bir işletim sistemi kurulumu için yeni bir sabit disk aygıtının hazırlanmasını açıklar: Yeni bir sabit disk satın aldığınızı ve şimdi bunu, işletim sisteminizi ve veri bölüntülerinizi tutan eski sabit diskin yerine kullanmak istediğinizi varsayalım. Bu fırsatı yeni bir işletim sistemi kurmak için de kullanmak istersiniz. Eski sistemden yeni sisteme ve sürücüye geçiş yapmak için birkaç adım atılması gerekecektir. </para>
 
 	<para
 >Aşağıda, <quote
@@ -26,7 +26,7 @@
 	</para>
 
 	<para
->Yeni aygıt böyle görünecek. Henüz geçerli bir bölümleme tablosu olmadığını unutmayın, bu nedenle atılacak ilk adım <xref linkend="menu-device-createpartitiontable"/> ögesini seçerek bir tane oluşturmaktır: </para>
+>Yeni aygıt böyle görünecek. Henüz geçerli bir bölüntüleme tablosu olmadığını unutmayın, bu nedenle atılacak ilk adım <xref linkend="menu-device-createpartitiontable"/> ögesini seçerek bir tane oluşturmaktır: </para>
 
 	<para>
 		<screenshot>
@@ -42,7 +42,7 @@
 	</para>
 	
 	<para
->Uyarı iletişim kutusunu onayladıktan sonra, genişletilmiş bölüme tıklayıp <xref linkend="menu-partition-new"/> ögesini seçerek yeni aygıtta bölümler oluşturmaya başlayabilirsiniz. Daha sonra ev disk bölümü ve diğer bölümleri değiştirmek için aygıtın sonunda genişletilmiş bir bölümle başlayın: </para>
+>Uyarı iletişim kutusunu onayladıktan sonra, genişletilmiş bölüntüye tıklayıp <xref linkend="menu-partition-new"/> ögesini seçerek yeni aygıtta bölüntüler oluşturmaya başlayabilirsiniz. Daha sonra home ve diğer bölüntülerideğiştirmek için aygıtın sonunda genişletilmiş bir bölüntüyle başlayın: </para>
 
 	<para>
 		<screenshot>
@@ -51,7 +51,7 @@
 ><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->Genişletilmiş bir disk bölümü oluşturma</phrase
+>Genişletilmiş bir bölüntü oluşturma</phrase
 ></textobject>
 			</mediaobject>
 		</screenshot>
@@ -60,10 +60,10 @@
 	<para
 ><guibutton
 >Tamam</guibutton
->'a tıklayın ve bu genişletilmiş bölümü oluşturma işlemi listeye eklenir. </para>
+>'a tıklayın ve bu genişletilmiş bölüntüyü oluşturma işlemi listeye eklenir. </para>
 
 	<para
->Şimdi, aygıtın geri kalanında yeni işletim sisteminin kurulacağı bir birincil bölüm oluşturun. Genişletilmiş bölümün önündeki ayrılmamış alan kadar büyük yapın: </para>
+>Şimdi, aygıtın geri kalanında yeni işletim sisteminin kurulacağı bir birincil bölüntü oluşturun. Genişletilmiş bölüntünün önündeki ayrılmamış alan kadar büyük yapın: </para>
 
 	<para>
 		<screenshot>
@@ -72,7 +72,7 @@
 ><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->Bir birincil bölüm oluşturma</phrase
+>Bir birincil bölüntü oluşturma</phrase
 ></textobject>
 			</mediaobject>
 		</screenshot>
@@ -81,15 +81,15 @@
 	<para
 >Seçiminizi kabul etmek için iletişim kutusunda <guibutton
 >Tamam</guibutton
->'a tıklayın. Yeni birincil bölümü oluşturma işlemi daha sonra işlem listesine eklenir. </para>
+>'a tıklayın. Yeni birincil bölüntüyü oluşturma işlemi daha sonra işlem listesine eklenir. </para>
 	
 	<para
->Şimdi eski aygıttaki ev bölümünü yeni aygıttaki genişletilmiş bölüme kopyalamanın zamanı geldi. Aygıt Listesi panelinde eski aygıtı seçin, <quote
+>Şimdi eski aygıttaki home bölüntüsünü yeni aygıttaki genişletilmiş bölüntüye kopyalamanın zamanı geldi. Aygıt Listesi panelinde eski aygıtı seçin, <quote
 >sdb5</quote
-> bölümüne tıklayın ve <xref linkend="menu-partition-copy"/> ögesini seçin. </para>
+> bölüntüsüne tıklayın ve <xref linkend="menu-partition-copy"/> ögesini seçin. </para>
 
 	<para
->Ardından yeni aygıta geri dönün ve genişletilmiş bölüme tıklayın. <xref linkend="menu-partition-paste"/> ögesini seçin. Aşağıdaki iletişim kutusu gelecektir: </para>
+>Ardından yeni aygıta geri dönün ve genişletilmiş bölüntüye tıklayın. <xref linkend="menu-partition-paste"/> ögesini seçin. Aşağıdaki iletişim kutusu gelecektir: </para>
 	
 	<para>
 		<screenshot>
@@ -98,17 +98,17 @@
 ><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->Ev bölümünü yapıştırma</phrase
+>Bir home bölüntüsünü yapıştırmak</phrase
 ></textobject>
 			</mediaobject>
 		</screenshot>
 	</para>
 
 	<para
->Bu zaten çoğunlukla iyi görünüyor; ancak daha sonra orada bir takas bölümü oluşturacağınız için ev bölümünden sonra o kadar boş alana gereksiniminiz olmayacağını zaten biliyorsunuz. </para>
+>Bu zaten çoğunlukla iyi görünüyor; ancak daha sonra orada bir takas bölüntüsü oluşturacağınız için home bölüntüsünden sonra o kadar boş alana gereksiniminiz olmayacağını zaten biliyorsunuz. </para>
 
 	<para
->Bu nedenle, iletişim kutusunun yeniden boyutlandırma araç takımında doğru yeniden boyutlandırma tutacını alın ve yapıştırılan bölümden sonraki boş alan, bir takas bölümü için daha uygun bir boyuta sahip olana kadar sağa hareket ettirin: </para>
+>Bu nedenle, iletişim kutusunun yeniden boyutlandırma araç takımında doğru yeniden boyutlandırma tutacını alın ve yapıştırılan bölüntüden sonraki boş alan, bir takas bölüntüsü için daha uygun bir boyuta sahip olana kadar sağa hareket ettirin: </para>
 
 	<para>
 		<screenshot>
@@ -117,7 +117,7 @@
 ><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->Yapıştırılan bir bölümü yeniden boyutlandırma</phrase
+>Yapıştırılan bir bölüntüyü yeniden boyutlandırma</phrase
 ></textobject>
 			</mediaobject>
 		</screenshot>
@@ -126,16 +126,16 @@
 	<para
 >Bu iyi görünüyor. İletişim kutusunu kabul etmek ve kapatmak için <guibutton
 >Tamam</guibutton
->'a tıklayın. Kopyalanan bölümü <quote
+>'a tıklayın. Kopyalanan bölüntüyü <quote
 >sdc</quote
-> üzerindeki genişletilmiş bölüme yapıştırmak için yeni bir işlem, işlem listesine eklenir. Bu işlemin yeni boyutu da belirleyeceğini unutmayın. </para>
+> üzerindeki genişletilmiş bölüntüye yapıştırmak için yeni bir işlem, işlem listesine eklenir. Bu işlemin yeni boyutu da belirleyeceğini unutmayın. </para>
 
 	<para
 >Son olarak, <quote
 >sdc</quote
-> üzerindeki genişletilmiş bölümün sonunda yeni bir takas bölümü oluşturmak isteyeceksiniz. Var olan takas bölümünü <quote
+> üzerindeki genişletilmiş bölüntünün sonunda yeni bir takas bölüntüsü oluşturmak isteyeceksiniz. Var olan takas bölüntüsünü <quote
 >sdb</quote
->'den kopyalamaya gerek yoktur; çünkü takas, saklamaya değer herhangi bir kalıcı bilgi tutmaz. Yeni ev bölümünden sonra ayrılmamış alanın tamamını dolduran linuxswap türünde yeni bir bölüm oluşturmanız yeterlidir. </para>
+>'den kopyalamaya gerek yoktur; çünkü takas, saklamaya değer herhangi bir kalıcı bilgi tutmaz. Yeni home bölüntüsünden sonra ayrılmamış alanın tamamını dolduran linuxswap türünde yeni bir bölüntü oluşturmanız yeterlidir. </para>
 
 	<para
 >Tüm işlemleri içeren ana pencere ve <quote
@@ -157,7 +157,7 @@
 	
 	<para
 >Bu harika görünüyor, bu nedenle <xref linkend="menu-edit-apply"/> ögesini seçin, uyarı iletişim kutusunu onaylayın ve işlemlerin tümü yürütülene kadar bekleyin. Yürütme işlemleriyle ilgili ayrıntılar için <link linkend="howto-resizepartition"
->bölümleri yeniden boyutlandırma hakkında nasıl yapılır</link
+>bölüntüleri yeniden boyutlandırma hakkında nasıl yapılır</link
 >'a bakın. </para>
 	
 	<para

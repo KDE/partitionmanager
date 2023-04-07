@@ -1,10 +1,10 @@
 <sect1 id="howto-resizepartition">
 	<title
->Nasıl Yapılır: Bir Bölümü Yeniden Boyutlandırma</title>
+>Nasıl Yapılır: Bir Bölüntüyü Yeniden Boyutlandırmak</title>
 
 	<para
 >Bu nasıl yapılır belgesi, fazla dolmakta olan bir <glossterm linkend="glossary-partition"
->bölümün</glossterm
+>bölüntünün</glossterm
 > yeniden boyutlandırılmasını açıklar. Yeniden boyutlandırmadan önceki ilk durum için aşağıdaki ekran görüntüsüne bakın: </para>
 
 	<para>
@@ -14,7 +14,7 @@
 ><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->Bölümleri yeniden boyutlandırmadan önce ana pencere</phrase
+>Bölüntüleri yeniden boyutlandırmadan önce ana pencere</phrase
 ></textobject>
 			</mediaobject>
 		</screenshot>
@@ -27,23 +27,23 @@
 >aygıtı</glossterm
 >üzerinde, <quote
 >sdb2</quote
-> disk bölümünde çok az boş alan kalırken, diğer bölüm <quote 
+> bölüntüde çok az boş alan kalırken, diğer bölüntü <quote 
 >sdb1</quote
->, dolu olmaktan çok uzak. Bu nedenle, ilk bölümün biraz daha küçültülmesi ve daha fazla kullanılabilir boş alana sahip olması için <quote
+>, dolu olmaktan çok uzak. Bu nedenle, ilk bölüntünün biraz daha küçültülmesi ve daha fazla kullanılabilir boş alana sahip olması için <quote
 >sdb2</quote
 > ögesinin büyütülmesi tavsiye edilir. </para>
 
 	<note>
 		<title
->Not: Bağlı bölümleri değiştiremezsiniz.</title>
+>Not: Bağlı bölüntüleri değiştiremezsiniz.</title>
 		<para
->Yukarıdaki ekran görüntüsünde, her iki bölüm de şu anda takılı değil. Bunlardan biri veya her ikisi takılıysa önce <xref linkend="menu-partition-mount"/> kullanarak bunları kaldırmanız gerekir.</para>
+>Yukarıdaki ekran görüntüsünde, her iki bölüntü de şu anda bağlı değil. Bunlardan biri veya her ikisi takılıysa önce <xref linkend="menu-partition-mount"/> kullanarak bunları kaldırmanız gerekir.</para>
 	</note>
 
 	<para
->İlk adım, bölümün büyütülmesi için daha fazla yer açmaktır, bu nedenle <quote
+>İlk adım, bölüntünün büyütülmesi için daha fazla yer açmaktır, bu nedenle <quote
 >sdb1</quote
->'i küçülterek başlayın. Bölüme tıklayın ve <xref linkend="menu-partition-resize"/> ögesini seçin. Aşağıdaki iletişim kutusu gelir: </para>
+>'i küçülterek başlayın. Bölüntüye tıklayın ve <xref linkend="menu-partition-resize"/> ögesini seçin. Aşağıdaki iletişim kutusu gelir: </para>
 
 	<para>
 		<screenshot>
@@ -52,14 +52,14 @@
 ><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->/dev/sdb1 bölümünü yeniden boyutlandırmadan önceki pencere</phrase
+>/dev/sdb1 bölüntüsünü yeniden boyutlandırmadan önceki pencere</phrase
 ></textobject>
 			</mediaobject>
 		</screenshot>
 	</para>
 
 	<para
->İletişim kutusu, bölümü birden çok şekilde yeniden boyutlandırmanıza olanak tanır. Bölüm istenen boyuta gelene kadar sağ tutacı sola sürükleyebilir veya boyutu <guilabel
+>İletişim kutusu, bölüntü birden çok şekilde yeniden boyutlandırmanıza olanak tanır. Bölüntü istenen boyuta gelene kadar sağ tutacı sola sürükleyebilir veya boyutu <guilabel
 >Boyut</guilabel
 > metin alanına girebilirsiniz. Başka bir olasılık, metin alanının yanındaki küçük oklara tıklayarak boyutu ayarlamak olabilir; ancak bu, daha büyük değişiklikler için biraz can sıkıcıdır. </para>
 
@@ -105,11 +105,11 @@
 	</note>
 	
 	<para
->Artık iki bölüm arasında bir miktar boş alan olduğuna göre, <quote
+>Artık iki bölüntü arasında bir miktar boş alan olduğuna göre, <quote
 >sdb2</quote
-> bölümünü taşıyabilir ve büyütebilirsiniz. Önce <quote
+> bölüntüsünü taşıyabilir ve büyütebilirsiniz. Önce <quote
 >sdb2</quote
-> üzerine tıklayın ve yeniden <xref linkend="menu-partition-resize"/> ögesini seçin. Yeniden boyutlandırma iletişim kutusu, bu sefer ikinci bölüm için bir kez daha açılır. İletişim kutusunun şöyle görünmesi için sol tutacını en sol uca sürükleyin: </para>
+> üzerine tıklayın ve yeniden <xref linkend="menu-partition-resize"/> ögesini seçin. Yeniden boyutlandırma iletişim kutusu, bu sefer ikinci bölüntü için bir kez daha açılır. İletişim kutusunun şöyle görünmesi için sol tutacını en sol uca sürükleyin: </para>
 
 	<para>
 		<screenshot>
@@ -129,11 +129,11 @@
 >Öncesindeki boş alan</guilabel
 > metin alanının gerçekten <quote
 >0 MiB</quote
-> gösterdiğinden emin olun, aksi takdirde bölümler arasında kalan ve daha sonra boşa gidecek olan biraz boş alan olacaktır. </para>
+> gösterdiğinden emin olun, aksi takdirde bölüntüler arasında kalan ve daha sonra boşa gidecek olan biraz boş alan olacaktır. </para>
 
 	<para
->Şimdi yeniden <gui button
->Tamam</gui button
+>Şimdi yeniden <guibutton
+>Tamam</guibutton
 >'a tıklayın. Ana pencerede işler şimdi şöyle görünür: </para>
 
 	<para>
@@ -169,9 +169,9 @@
 >İşlemler yapılırken listedeki her işlemin yanındaki artı işaretine tıklayarak o işlemin hangi işlerden oluştuğunu öğrenebilir ve o anda hangi işin çalıştığını görebilirsiniz. </para>
 
 	<para
->Bir bölümü yukarıda <quote
+>Bir bölüntüyü yukarıda <quote
 >/dev/sdb2</quote
-> olarak yeniden boyutlandırdığınız şekilde yeniden boyutlandırmak, bölümler hiçbir zaman doğrudan sola doğru büyütülemeyeceğinden, büyütülebilmesi için önce sola taşınması gerektiği anlamına gelir. Ne yazık ki, bu kadar büyük bir bölümü taşımak oldukça zaman alacaktır. Bunun gibi bir işlemin birkaç dakika veya daha fazla sürmesi alışılmadık bir durum değildir. </para>
+> olarak yeniden boyutlandırdığınız şekilde yeniden boyutlandırmak, bölüntüler hiçbir zaman doğrudan sola doğru büyütülemeyeceğinden, büyütülebilmesi için önce sola taşınması gerektiği anlamına gelir. Ne yazık ki, bu kadar büyük bir bölüntüyü taşımak oldukça zaman alacaktır. Bunun gibi bir işlemin birkaç dakika veya daha fazla sürmesi alışılmadık bir durum değildir. </para>
 
 	<para
 >Son olarak, tüm işlemler başarıyla tamamlanmış olacaktır: </para>
