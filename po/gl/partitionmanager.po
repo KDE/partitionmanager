@@ -1,19 +1,19 @@
 # translation of partitionmanager.po to galician
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # mvillarino <mvillarino@users.sourceforge.net>, 2008, 2009.
 # Marce Villarino <mvillarino@users.sourceforge.net>, 2008.
 # Xabier Villar <xabier.villar@gmail.com>, 2010.
 # Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2012, 2013, 2015, 2016, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2019-11-03 13:31+0100\n"
+"PO-Revision-Date: 2023-04-30 15:45+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.11.70\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -952,7 +952,7 @@ msgstr "Non actualizar a hora de acceso aos directorios"
 #: gui/editmountpointdialogwidgetbase.ui:207
 #, kde-format
 msgid "Dump &Frequency:"
-msgstr "&Frecuencia de volcado:"
+msgstr "&Frecuencia de envorcadura:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelType)
 #: gui/editmountpointdialogwidgetbase.ui:236
@@ -1323,6 +1323,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
+"O xestor de partición require privilexios para funcionar. Actualice a "
+"información dos dispositivos e autentíquese cando se lle pida."
 
 #: gui/mainwindow.cpp:231
 #, kde-kuit-format
@@ -1822,13 +1824,13 @@ msgstr "Mostra información sobre os sistemas de ficheiros admitidos."
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
-msgstr "Refrescar os dispositivos"
+msgstr "Actualizar a información dos dispositivos"
 
 #: gui/mainwindow.cpp:495
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
-msgstr "Refresca a información de todos os dispositivos"
+msgstr "Actualizar a información de todos os dispositivos"
 
 #: gui/mainwindow.cpp:496
 #, kde-kuit-format
@@ -2173,23 +2175,19 @@ msgstr "Faltan os paquetes de compatibilidade co sistema de ficheiros"
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr ""
+msgstr "Dispositivo non recoñecido «%1» "
 
 #: gui/mainwindow.cpp:1465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info the partition is NOT a device path, just a number"
-#| msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+#, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr "Non se coñece o rol \"%1\" da partición %2 (liña: %3)."
+msgstr "Partición non recoñecida «%1» "
 
 #: gui/mainwindow.cpp:1466
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error Importing Partition Table"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr "Erro ao importar a táboa de particións"
+msgstr "Erro ao abrir a partición"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -2730,8 +2728,8 @@ msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
 "filesystem type."
 msgstr ""
-"Isto reformateará o sistema de ficheiros, perdendo todo o seu contido, pero "
-"mantendo o mesmo tipo de sistema de ficheiros."
+"Isto formatará de novo o sistema de ficheiros, perdendo todo o seu contido, "
+"pero mantendo o mesmo tipo de sistema de ficheiros."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:71
@@ -2924,9 +2922,7 @@ msgstr "&Avanzado"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
 #: gui/sizedialogwidgetbase.ui:62
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Partition type:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
 msgstr "Tipo de partición:"
@@ -3004,8 +3000,7 @@ msgstr "Espazo libre posterior:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
 #: gui/sizedialogwidgetbase.ui:297
-#, fuzzy, kde-format
-#| msgid "Permissions"
+#, kde-format
 msgid "Permissions"
 msgstr "Permisos"
 
@@ -3013,13 +3008,13 @@ msgstr "Permisos"
 #: gui/sizedialogwidgetbase.ui:326
 #, kde-format
 msgid "Allow everyone to write and read on this device"
-msgstr ""
+msgstr "Permitir a calquera escribir e ler no dispositivo"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:329
 #, kde-format
 msgid "Everyone"
-msgstr ""
+msgstr "Calquera"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:336
@@ -3028,12 +3023,14 @@ msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
 "folder permissions"
 msgstr ""
+"Só permitir ao root escribir e ler no dispositivo, terá que preparar "
+"permisos de cartafoles"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:339
 #, kde-format
 msgid "Only Root"
-msgstr ""
+msgstr "Só o root"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
 #: gui/sizedialogwidgetbase.ui:352
@@ -3220,7 +3217,7 @@ msgstr "Valor"
 msgctxt "@info"
 msgid "Could not create temporary output file to save <filename>%1</filename>."
 msgstr ""
-"Non se puido crear un ficheiro tempora de saída para gardar <filename>%1</"
+"Non se puido crear un ficheiro temporal de saída para gardar <filename>%1</"
 "filename>."
 
 #: gui/treelog.cpp:110
@@ -3328,18 +3325,14 @@ msgid "Manage your disks, partitions and file systems"
 msgstr "Xestione os discos, particións e sistemas de ficheiro"
 
 #: main.cpp:81
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid ""
-#| "© 2008-2013 Volker Lanz\n"
-#| "© 2012-2019 Andrius Štikonas"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid ""
 "© 2008-2013 Volker Lanz\n"
 "© 2012-2020 Andrius Štikonas"
 msgstr ""
 "© 2008-2013 Volker Lanz\n"
-"© 2012-2019 Andrius Štikonas"
+"© 2012-2020 Andrius Štikonas"
 
 #: main.cpp:85
 #, kde-kuit-format
@@ -3425,12 +3418,10 @@ msgid "Improved SMART support"
 msgstr "Mellora da compatibilidade con SMART."
 
 #: main.cpp:104
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Device(s) to manage"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"
-msgstr "Dispositivos para xestionar"
+msgstr "Dispositivo para xestionar"
 
 #. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
 #: partitionmanager.kcfg:45
