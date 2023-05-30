@@ -12,7 +12,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
@@ -1456,9 +1456,6 @@ msgid_plural ""
 "still %1 operations pending.</para>"
 msgstr[0] ""
 "<para>本当にアプリケーションを終了しますか？</para><para>保留中の操作がまだ "
-"1 個あります。</para>"
-msgstr[1] ""
-"<para>本当にアプリケーションを終了しますか？</para><para>保留中の操作がまだ "
 "%1 個あります。</para>"
 
 #: gui/mainwindow.cpp:233
@@ -2069,8 +2066,7 @@ msgstr ""
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
-msgstr[0] "保留中の操作 1 個"
-msgstr[1] "保留中の操作 %1 個"
+msgstr[0] "保留中の操作 %1 個"
 
 #: gui/mainwindow.cpp:806
 #, fuzzy, kde-kuit-format
@@ -2565,7 +2561,6 @@ msgid_plural ""
 "create, paste or restore a primary partition on it before you delete an "
 "existing one.</para>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: gui/partitionmanagerwidget.cpp:496
 #, kde-kuit-format
