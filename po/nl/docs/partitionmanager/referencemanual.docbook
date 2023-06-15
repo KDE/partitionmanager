@@ -127,6 +127,26 @@
 >Stelt u in staat om een apparaat te selecteren uit een submenu met alle beschikbare apparaten in het systeem. </para>
 					</listitem>
 				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Apparaat</guimenu
+> <guimenuitem
+>Vernieuw apparaten</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Ververs de apparaten</action
+>: Dit commando dwingt &partman; om de apparaten in de computer opnieuw te scannen. Dit is handig als bijvoorbeeld een externe USB harde schijf is ingeplugd nadat &partman; is opgestart. </para>
+					</listitem>
+				</varlistentry>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice
@@ -209,97 +229,6 @@
 					<listitem>
 						<para
 >Toont informatie over nu geselecteerde apparaten. In deze dialoog kunt u capaciteit, sectorgrootten en type partitietabel vinden, evenals gebruikte en maximaal aantal primaire partities.</para>
-					</listitem>
-				</varlistentry>
-			</variablelist>
-		</para>
-	</sect2>
-
-	<sect2 id="menu-tools">
-		<title
->Het menu Hulpmiddelen</title>
-		<para>
-			<variablelist>
-				<varlistentry id="menu-tools-volumegroup">
-					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;&Shift;<keycap
->L</keycap
-></keycombo
-></shortcut
-> <guimenu
->Hulpmiddelen</guimenu
-> <guimenuitem
->Nieuwe Volumegroep</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
->Een nieuw logisch apparaat aanmaken zoals <link linkend="glossary-lvm"
->LVM</link
-> Volumegroep.</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-filesystemsupport">
-					<term>
-						<menuchoice
-><guimenu
->Hulpmiddelen</guimenu
-> <guimenuitem
->Bestandssysteemondersteuning</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Toont het venster voor ondersteuning van bestandssystemen</action
->: Dit venster laat in detail zien welke bewerkingen kunnen worden uitgevoerd voor elk van de ondersteunde bestandssystemen. </para>
-						<para
->Hier is een voorbeeld van hoe de dialoog er uit kan zien als de meeste externe hulpmiddelen zijn geïnstalleerd: </para>
-						<para>
-							<screenshot>
-								<mediaobject>
-									<imageobject
-><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject
-><phrase
->Dialoog van bestandssysteemondersteuning met de meeste externe hulpmiddelen geïnstalleerd</phrase
-></textobject>
-								</mediaobject>
-							</screenshot>
-						</para>
-						<para
->De blauwe vinkjes betekenen <quote
->ondersteund</quote
->, de rode kruizen betekenen <quote
->niet ondersteund</quote
->. Sommige combinaties worden niet ondersteund, bijvoorbeeld het controleren van een linuxswap bestandssysteem omdat dit fundamenteel onmogelijk is. Andere kunnen niet ondersteund worden omdat de externe hulpprogramma's dit niet kunnen. </para>
-						<para
->Nadat er nieuwe onderdelen zijn geïnstalleerd terwijl &partman; in werking is, moet u op <guibutton
->Ondersteuning opnieuw aftasten</guibutton
-> klikken voor controle van de geïnstalleerde hulpmiddelen voor ondersteuning van bestandssystemen. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-refresh">
-					<term>
-						<menuchoice
-><shortcut
-><keycap
->F5</keycap
-></shortcut
-> <guimenu
->Tools</guimenu
-> <guimenuitem
->Refresh Devices</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Ververs de apparaten</action
->: Dit commando dwingt &partman; om de apparaten in de computer opnieuw te scannen. Dit is handig als bijvoorbeeld een externe USB harde schijf is ingeplugd nadat &partman; is opgestart. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -416,7 +345,7 @@
 							<title
 >Waarschuwing: gevaar voor verlies van gegevens</title>
 							<para
->Shreding a partition means that all data on the partition is destroyed.</para>
+>Versnipperen van een partitie betekent dat alle gegevens in deze partitie vernietigd worden.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
@@ -476,24 +405,6 @@
 						</warning>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-partition-mount">
-					<term>
-						<menuchoice
-><guimenu
->Partitie</guimenu
-> <guimenuitem
->Aan-/afkoppelen</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Aan- of afkoppelen van een partitie</action
->: Dit commando koppelt (mounten) een partitie aan of af, afhankelijk van de huidige status. </para>
-						<para
->Dit commando is alleen mogelijk als een partitie is geselecteerd die kan worden aan- of afgekoppeld. Als er binnen het besturingssysteem geen aankoppelpunt is voor de partitie dan kan het binnen &partman; niet aangekoppeld worden. </para>
-					</listitem>
-				</varlistentry>
 				<varlistentry id="menu-partition-edit-mount">
 					<term>
 						<menuchoice
@@ -510,6 +421,24 @@
 > om het aankoppelpunt en de aankoppelopties te bewerken. </para>
 						<para
 >Dit commando is alleen ingeschakeld als de een partitie niet is aangekoppeld. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partitie</guimenu
+> <guimenuitem
+>Aan-/afkoppelen</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Aan- of afkoppelen van een partitie</action
+>: Dit commando koppelt (mounten) een partitie aan of af, afhankelijk van de huidige status. </para>
+						<para
+>Dit commando is alleen mogelijk als een partitie is geselecteerd die kan worden aan- of afgekoppeld. Als er binnen het besturingssysteem geen aankoppelpunt is voor de partitie dan kan het binnen &partman; niet aangekoppeld worden. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-check">
@@ -631,6 +560,77 @@
 						</para>
 						<para
 >Dit commando is alleen beschikbaar als een partitie of een nog niet ingedeeld gebied is geselecteerd. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Het menu Hulpmiddelen</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Hulpmiddelen</guimenu
+> <guimenuitem
+>Nieuwe Volumegroep</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Een nieuw logisch apparaat aanmaken zoals <link linkend="glossary-lvm"
+>LVM</link
+> Volumegroep.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Hulpmiddelen</guimenu
+> <guimenuitem
+>Bestandssysteemondersteuning</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Toont het venster voor ondersteuning van bestandssystemen</action
+>: Dit venster laat in detail zien welke bewerkingen kunnen worden uitgevoerd voor elk van de ondersteunde bestandssystemen. </para>
+						<para
+>Hier is een voorbeeld van hoe de dialoog er uit kan zien als de meeste externe hulpmiddelen zijn geïnstalleerd: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Dialoog van bestandssysteemondersteuning met de meeste externe hulpmiddelen geïnstalleerd</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>De blauwe vinkjes betekenen <quote
+>ondersteund</quote
+>, de rode kruizen betekenen <quote
+>niet ondersteund</quote
+>. Sommige combinaties worden niet ondersteund, bijvoorbeeld het controleren van een linuxswap bestandssysteem omdat dit fundamenteel onmogelijk is. Andere kunnen niet ondersteund worden omdat de externe hulpprogramma's dit niet kunnen. </para>
+						<para
+>Nadat er nieuwe onderdelen zijn geïnstalleerd terwijl &partman; in werking is, moet u op <guibutton
+>Ondersteuning opnieuw aftasten</guibutton
+> klikken voor controle van de geïnstalleerde hulpmiddelen voor ondersteuning van bestandssystemen. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
