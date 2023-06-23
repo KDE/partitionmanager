@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:51+0000\n"
-"PO-Revision-Date: 2023-02-01 11:02+0100\n"
+"PO-Revision-Date: 2023-06-22 08:27+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -653,7 +653,7 @@ msgstr "Zvolte typ tabulky oddílů disku který si přejete vytvořit:"
 #: gui/createpartitiontablewidgetbase.ui:33
 #, kde-format
 msgid "GPT"
-msgstr "MS-DOS"
+msgstr "GPT"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
 #: gui/createpartitiontablewidgetbase.ui:43
