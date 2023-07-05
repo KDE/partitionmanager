@@ -808,3 +808,5 @@ void PartitionManagerWidget::onRestorePartition()
             delete restorePartition;
     }
 }
+
+#include "moc_partitionmanagerwidget.cpp"

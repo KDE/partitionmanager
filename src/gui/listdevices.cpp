@@ -72,3 +72,5 @@ bool ListDevices::setSelectedDevice(const QString& device_node)
 
     return false;
 }
+
+#include "moc_listdevices.cpp"

@@ -1466,3 +1466,5 @@ void MainWindow::setCurrentPartitionByName(const QString& partitionName)
                            xi18nc("@title:window", "Error opening partition"));
     }
 }
+
+#include "moc_mainwindow.cpp"

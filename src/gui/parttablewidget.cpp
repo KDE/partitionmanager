@@ -169,3 +169,5 @@ void PartTableWidget::mouseDoubleClickEvent(QMouseEvent* event)
     if (child != nullptr)
         Q_EMIT itemDoubleClicked(child);
 }
+
+#include "moc_parttablewidget.cpp"
