@@ -41,14 +41,14 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 
     addPage(&generalPageWidget(), xi18nc("@title:tab general application settings", "General"), QStringLiteral("partitionmanager"), i18n("General Settings"));
 
-    connect(&generalPageWidget().comboDefaultFileSystem(), qOverload<int>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
+    connect(&generalPageWidget().comboDefaultFileSystem(), &QComboBox::activated, this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
     connect(generalPageWidget().radioButton, &QRadioButton::toggled, this, &ConfigureOptionsDialog::onShredSourceActivated);
 
     addPage(&fileSystemColorsPageWidget(), xi18nc("@title:tab", "File System Colors"), QStringLiteral("preferences-desktop-color"), i18n("File System Color Settings"));
 
     addPage(&advancedPageWidget(), xi18nc("@title:tab advanced application settings", "Advanced"), QStringLiteral("preferences-other"), i18n("Advanced Settings"));
 
-    connect(&advancedPageWidget().comboBackend(), qOverload<int>(&QComboBox::activated), this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
+    connect(&advancedPageWidget().comboBackend(), &QComboBox::activated, this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
 
     KConfigGroup kcg(KSharedConfig::openConfig(), "configureOptionsDialogs");
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));

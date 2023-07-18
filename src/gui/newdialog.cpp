@@ -149,7 +149,7 @@ void NewDialog::setupConnections()
     connect(&dialogWidget().radioExtended(), &QRadioButton::toggled, this, &NewDialog::onRoleChanged);
     connect(&dialogWidget().radioLogical(), &QRadioButton::toggled, this, &NewDialog::onRoleChanged);
     connect(&dialogWidget().checkBoxEncrypt(), &QCheckBox::toggled, this, &NewDialog::onRoleChanged);
-    connect(&dialogWidget().comboFileSystem(), qOverload<int>(&QComboBox::currentIndexChanged), this, &NewDialog::onFilesystemChanged);
+    connect(&dialogWidget().comboFileSystem(), &QComboBox::currentIndexChanged, this, &NewDialog::onFilesystemChanged);
     connect(&dialogWidget().label(), &QLineEdit::textChanged, this, &NewDialog::onLabelChanged);
     // listen to password status updates
     connect(&dialogWidget().editPassphrase(), &KNewPasswordWidget::passwordStatusChanged, this, &NewDialog::slotPasswordStatusChanged);

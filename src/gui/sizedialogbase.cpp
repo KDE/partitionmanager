@@ -162,13 +162,12 @@ void SizeDialogBase::setupConnections()
     connect(&dialogWidget().partResizerWidget(), &PartResizerWidget::firstSectorChanged, this, &SizeDialogBase::onResizerWidgetFirstSectorChanged);
     connect(&dialogWidget().partResizerWidget(), &PartResizerWidget::lastSectorChanged, this, &SizeDialogBase::onResizerWidgetLastSectorChanged);
 
-    // TODO: Qt6 remove qOverload
-    connect(&dialogWidget().spinFreeBefore(), qOverload<double>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinFreeBeforeChanged);
-    connect(&dialogWidget().spinFreeAfter(), qOverload<double>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinFreeAfterChanged);
-    connect(&dialogWidget().spinCapacity(), qOverload<double>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinCapacityChanged);
+    connect(&dialogWidget().spinFreeBefore(), &QDoubleSpinBox::valueChanged, this, &SizeDialogBase::onSpinFreeBeforeChanged);
+    connect(&dialogWidget().spinFreeAfter(), &QDoubleSpinBox::valueChanged, this, &SizeDialogBase::onSpinFreeAfterChanged);
+    connect(&dialogWidget().spinCapacity(), &QDoubleSpinBox::valueChanged, this, &SizeDialogBase::onSpinCapacityChanged);
 
-    connect(&detailsWidget().spinFirstSector(), qOverload<double>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinFirstSectorChanged);
-    connect(&detailsWidget().spinLastSector(), qOverload<double>(&QDoubleSpinBox::valueChanged), this, &SizeDialogBase::onSpinLastSectorChanged);
+    connect(&detailsWidget().spinFirstSector(), &QDoubleSpinBox::valueChanged, this, &SizeDialogBase::onSpinFirstSectorChanged);
+    connect(&detailsWidget().spinLastSector(), &QDoubleSpinBox::valueChanged, this, &SizeDialogBase::onSpinLastSectorChanged);
     connect(&detailsWidget().checkAlign(), &QCheckBox::toggled, this, &SizeDialogBase::onAlignToggled);
 
     connect(&dialogWidget().lvName(), &QLineEdit::textChanged, this, &SizeDialogBase::onLVNameChanged);

@@ -86,7 +86,7 @@ void VolumeGroupDialog::setupConnections()
 {
     connect(dialogButtonBox, &QDialogButtonBox::accepted, this, &VolumeGroupDialog::accept);
     connect(dialogButtonBox, &QDialogButtonBox::rejected, this, &VolumeGroupDialog::reject);
-    connect(&dialogWidget().volumeType(), qOverload<int>(&QComboBox::currentIndexChanged), this, &VolumeGroupDialog::onVolumeTypeChanged);
+    connect(&dialogWidget().volumeType(), &QComboBox::currentIndexChanged, this, &VolumeGroupDialog::onVolumeTypeChanged);
     connect(&dialogWidget().listPV().listPhysicalVolumes(), &QListWidget::itemChanged,
             this, [=] ( QListWidgetItem*) {
                 updateSizeInfos();

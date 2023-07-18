@@ -98,7 +98,7 @@ void CreateVolumeGroupDialog::setupDialog()
 void CreateVolumeGroupDialog::setupConnections()
 {
     connect(&dialogWidget().vgName(), &QLineEdit::textChanged, this, &CreateVolumeGroupDialog::onVGNameChanged);
-    connect(&dialogWidget().spinPESize(), qOverload<int>(&QSpinBox::valueChanged), this, &CreateVolumeGroupDialog::onSpinPESizeChanged);
+    connect(&dialogWidget().spinPESize(), &QSpinBox::valueChanged, this, &CreateVolumeGroupDialog::onSpinPESizeChanged);
 }
 
 void  CreateVolumeGroupDialog::accept()
