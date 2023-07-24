@@ -1322,8 +1322,7 @@ msgid_plural ""
 "<para>Do you really want to quit the application?</para><para>There are "
 "still %1 operations pending.</para>"
 msgstr[0] ""
-"<para>프로그램을 종료하시겠습니까?</para> <para>작업 %1개가 대기 중입니다.</"
-"para>"
+"<para>앱을 종료하시겠습니까?</para> <para>작업 %1개가 대기 중입니다.</para>"
 
 #: gui/mainwindow.cpp:233
 #, kde-kuit-format
@@ -3419,7 +3418,7 @@ msgstr "파일 시스템 색상"
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
-msgstr "프로그램 메뉴 표시줄 표시"
+msgstr "앱 메뉴 표시줄 표시"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:145
