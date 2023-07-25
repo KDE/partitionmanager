@@ -2,13 +2,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-12 00:49+0000\n"
-"PO-Revision-Date: 2022-01-14 21:05+0100\n"
+"PO-Revision-Date: 2023-07-24 15:47+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -2521,10 +2521,9 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:101
-#, fuzzy, kde-format
-#| msgid "Partition Label"
+#, kde-format
 msgid "Partition Name"
-msgstr "Partitionsetikett"
+msgstr "Partitionsnamn"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:106
@@ -2802,10 +2801,9 @@ msgstr "&Flaggor:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:362
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name:"
-msgstr "Partitionstabell:"
+msgstr "Partitionsnamn:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:372
