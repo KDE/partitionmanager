@@ -127,6 +127,26 @@
 >Låter dig välja en enhet i en undermeny med systemets alla tillgängliga enheter. </para>
 					</listitem>
 				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Enhet</guimenu
+> <guimenuitem
+>Uppdatera enheter</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Uppdaterar enheterna</action
+>: Kommandot tvingar Partition Manager att avsöka och läsa enheterna på datorn igen. Det kan till exempel vara användbart om du kopplade in en extern USB-hårddisk efter du startade Partition Manager. </para>
+					</listitem>
+				</varlistentry>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice
@@ -209,97 +229,6 @@
 					<listitem>
 						<para
 >Visar information om enheter som för närvarande är markerade. Du hittar kapacitet, sektorstorlekar, typ av partitionstabell samt använda och maximalt antal primära partitioner i dialogrutan.</para>
-					</listitem>
-				</varlistentry>
-			</variablelist>
-		</para>
-	</sect2>
-
-	<sect2 id="menu-tools">
-		<title
->Menyn Verktyg</title>
-		<para>
-			<variablelist>
-				<varlistentry id="menu-tools-volumegroup">
-					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;&Shift;<keycap
->L</keycap
-></keycombo
-></shortcut
-> <guimenu
->Verktyg</guimenu
-> <guimenuitem
->Ny volymgrupp</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
->Skapa en ny logisk enhet såsom en <link linkend="glossary-lvm"
->LVM</link
-> volymgrupp.</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-filesystemsupport">
-					<term>
-						<menuchoice
-><guimenu
->Verktyg</guimenu
-> <guimenuitem
->Filsystemstöd</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Visar dialogrutan för filsystemstöd.</action
-> Dialogrutan visar i detalj vilka åtgärder som kan utföras med vilka av filsystemen som stöds. </para>
-						<para
->Här är ett exempel på hur dialogrutan kan se ut med de flesta externa verktyg installerade: </para>
-						<para>
-							<screenshot>
-								<mediaobject>
-									<imageobject
-><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject
-><phrase
->Dialogruta för filsystemstöd med de flesta externa verktyg installerade</phrase
-></textobject>
-								</mediaobject>
-							</screenshot>
-						</para>
-						<para
->De blåa bockarna betyder <quote
->stöds</quote
->, de röda kryssen betyder <quote
->stöds inte</quote
->. Vissa kombinationer stöds aldrig, till exempel att kontrollera ett linuxswap filsystem, eftersom de är omöjliga i sig själva. Andra kan inte stödjas eftersom de externa verktygen saknar funktionen. </para>
-						<para
->Om du har installerat nya verktyg medan Partition Manager kör, klicka på <guibutton
->Avsök stöd igen</guibutton
-> för att tvinga fram en kontroll av installerade stödverktyg för filsystem igen. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-refresh">
-					<term>
-						<menuchoice
-><shortcut
-><keycap
->F5</keycap
-></shortcut
-> <guimenu
->Verktyg</guimenu
-> <guimenuitem
->Uppdatera enheter</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Uppdaterar enheterna</action
->: Kommandot tvingar Partition Manager att avsöka och läsa enheterna på datorn igen. Det kan till exempel vara användbart om du kopplade in en extern USB-hårddisk efter du startade Partition Manager. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -480,24 +409,6 @@
 						</warning>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-partition-mount">
-					<term>
-						<menuchoice
-><guimenu
->Partition</guimenu
-> <guimenuitem
->Montera/Avmontera</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Monterar eller avmonterar en partition</action
->: Kommandot monterar eller avmonterar den markerade partitionen, beroende på dess nuvarande tillstånd. </para>
-						<para
->Kommandot är bara aktiverat om en partition är markerad som kan monteras eller avmonteras. Om operativsystemet inte känner till någon monteringsplats för partitionen kan du inte montera den från Partition Manager. </para>
-					</listitem>
-				</varlistentry>
 				<varlistentry id="menu-partition-edit-mount">
 					<term>
 						<menuchoice
@@ -514,6 +425,24 @@
 > för att redigera monteringsplatsen och monteringsalternativen. </para>
 						<para
 >Kommandot är bara aktiverat om en partition är avmonterad. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partition</guimenu
+> <guimenuitem
+>Montera/Avmontera</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Monterar eller avmonterar en partition</action
+>: Kommandot monterar eller avmonterar den markerade partitionen, beroende på dess nuvarande tillstånd. </para>
+						<para
+>Kommandot är bara aktiverat om en partition är markerad som kan monteras eller avmonteras. Om operativsystemet inte känner till någon monteringsplats för partitionen kan du inte montera den från Partition Manager. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-check">
@@ -635,6 +564,77 @@
 						</para>
 						<para
 >Kommandot är bara aktiverat om antingen ett icke tilldelat område eller en partition är markerad. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Menyn Verktyg</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Verktyg</guimenu
+> <guimenuitem
+>Ny volymgrupp</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Skapa en ny logisk enhet såsom en <link linkend="glossary-lvm"
+>LVM</link
+> volymgrupp.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Verktyg</guimenu
+> <guimenuitem
+>Filsystemstöd</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Visar dialogrutan för filsystemstöd.</action
+> Dialogrutan visar i detalj vilka åtgärder som kan utföras med vilka av filsystemen som stöds. </para>
+						<para
+>Här är ett exempel på hur dialogrutan kan se ut med de flesta externa verktyg installerade: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Dialogruta för filsystemstöd med de flesta externa verktyg installerade</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>De blåa bockarna betyder <quote
+>stöds</quote
+>, de röda kryssen betyder <quote
+>stöds inte</quote
+>. Vissa kombinationer stöds aldrig, till exempel att kontrollera ett linuxswap filsystem, eftersom de är omöjliga i sig själva. Andra kan inte stödjas eftersom de externa verktygen saknar funktionen. </para>
+						<para
+>Om du har installerat nya verktyg medan Partition Manager kör, klicka på <guibutton
+>Avsök stöd igen</guibutton
+> för att tvinga fram en kontroll av installerade stödverktyg för filsystem igen. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
