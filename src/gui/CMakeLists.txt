@@ -42,4 +42,5 @@ set(GUI_SRC
     gui/treelog.cpp
     gui/volumegroupdialog.cpp
     gui/volumegroupwidget.cpp
+    gui/partitionmanager.qrc
 )
