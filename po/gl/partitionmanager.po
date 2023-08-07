@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-12 00:49+0000\n"
-"PO-Revision-Date: 2023-04-30 15:45+0200\n"
+"PO-Revision-Date: 2023-08-06 05:31+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -384,7 +384,7 @@ msgstr "Aliñamento das particións"
 #: config/configurepagegeneral.ui:34
 #, kde-format
 msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr "Usar o aliñamento baseado en cilindros (compatíbel con Windows XP)"
+msgstr "Usar o aliñamento baseado en cilindros (compatíbel con Windows XP)."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
@@ -880,19 +880,19 @@ msgstr "UU&ID"
 #: gui/editmountpointdialogwidgetbase.ui:33
 #, kde-format
 msgid "Users can mount and unmount"
-msgstr "Os usuarios poden montar ou desmontar"
+msgstr "Os usuarios poden montar ou desmontar."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
 #: gui/editmountpointdialogwidgetbase.ui:40
 #, kde-format
 msgid "Update access times relative to modification"
-msgstr "Actualizar as datas de acceso con respecto á modificación"
+msgstr "Actualizar as datas de acceso con respecto á modificación."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
 #: gui/editmountpointdialogwidgetbase.ui:61
 #, kde-format
 msgid "Read-only"
-msgstr "Só lectura"
+msgstr "Só lectura."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
 #: gui/editmountpointdialogwidgetbase.ui:68
@@ -922,13 +922,13 @@ msgstr "E&tiqueta"
 #: gui/editmountpointdialogwidgetbase.ui:144
 #, kde-format
 msgid "No binary execution"
-msgstr "Sen execución de binarios"
+msgstr "Sen execución de binarios."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
 #: gui/editmountpointdialogwidgetbase.ui:167
 #, kde-format
 msgid "No automatic mount"
-msgstr "Non montar automaticamente"
+msgstr "Non montar automaticamente."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
 #: gui/editmountpointdialogwidgetbase.ui:180
@@ -946,7 +946,7 @@ msgstr "Escoller…"
 #: gui/editmountpointdialogwidgetbase.ui:200
 #, kde-format
 msgid "No update of directory access times"
-msgstr "Non actualizar a hora de acceso aos directorios"
+msgstr "Non actualizar a hora de acceso aos directorios."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
 #: gui/editmountpointdialogwidgetbase.ui:207
@@ -970,13 +970,13 @@ msgstr "Ruta:"
 #: gui/editmountpointdialogwidgetbase.ui:288
 #, kde-format
 msgid "No update of file access times"
-msgstr "Non actualizar a hora de acceso aos ficheiros"
+msgstr "Non actualizar a hora de acceso aos ficheiros."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
 #: gui/editmountpointdialogwidgetbase.ui:295
 #, kde-format
 msgid "Synchronous access"
-msgstr "Acceso síncrono"
+msgstr "Acceso síncrono."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/editmountpointdialogwidgetbase.ui:315
@@ -1364,7 +1364,7 @@ msgstr "Desfacer"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
-msgstr "Desfai a última operación"
+msgstr "Desfai a última operación."
 
 #: gui/mainwindow.cpp:278
 #, kde-kuit-format
@@ -1382,7 +1382,7 @@ msgstr "Limpar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
-msgstr "Limpa todas as operacións"
+msgstr "Limpa todas as operacións."
 
 #: gui/mainwindow.cpp:287
 #, kde-kuit-format
@@ -1400,7 +1400,7 @@ msgstr "Aplicar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
-msgstr "Aplica todas as operacións"
+msgstr "Aplica todas as operacións."
 
 #: gui/mainwindow.cpp:295
 #, kde-kuit-format
@@ -1418,7 +1418,7 @@ msgstr "Nova táboa de particións"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
-msgstr "Crear unha nova táboa de particións"
+msgstr "Crear unha nova táboa de particións."
 
 #: gui/mainwindow.cpp:304
 #, kde-kuit-format
@@ -1436,7 +1436,7 @@ msgstr "Exportar a táboa de particións"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
-msgstr "Exportar unha táboa de particións"
+msgstr "Exportar unha táboa de particións."
 
 #: gui/mainwindow.cpp:313
 #, kde-kuit-format
@@ -1454,7 +1454,7 @@ msgstr "Importar a táboa de particións"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
-msgstr "Importar unha táboa de particións"
+msgstr "Importar unha táboa de particións."
 
 #: gui/mainwindow.cpp:321
 #, kde-kuit-format
@@ -1528,7 +1528,7 @@ msgstr "Estado SMART"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
-msgstr "Amosar o estado SMART"
+msgstr "Amosar o estado SMART."
 
 #: gui/mainwindow.cpp:358
 #, kde-kuit-format
@@ -1546,13 +1546,13 @@ msgstr "Propiedades"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
-msgstr "Mostra o diálogo de propiedades do dispositivo"
+msgstr "Mostra o diálogo de propiedades do dispositivo."
 
 #: gui/mainwindow.cpp:365
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
-msgstr "Ver e modificar as propiedades do dispositivo"
+msgstr "Ver e modificar as propiedades do dispositivo."
 
 #: gui/mainwindow.cpp:372
 #, kde-kuit-format
@@ -1564,7 +1564,7 @@ msgstr "Nova"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
-msgstr "Partición nova"
+msgstr "Partición nova."
 
 #: gui/mainwindow.cpp:374
 #, kde-kuit-format
@@ -1600,7 +1600,7 @@ msgstr "Eliminar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
-msgstr "Elimina a partición"
+msgstr "Elimina a partición."
 
 #: gui/mainwindow.cpp:392
 #, kde-kuit-format
@@ -1618,7 +1618,7 @@ msgstr "Borrar totalmente"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
-msgstr "Borrar totalmente a partición"
+msgstr "Borrar totalmente a partición."
 
 #: gui/mainwindow.cpp:401
 #, kde-kuit-format
@@ -1638,7 +1638,7 @@ msgstr "Copiar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
-msgstr "Copia a partición"
+msgstr "Copia a partición."
 
 #: gui/mainwindow.cpp:410
 #, kde-kuit-format
@@ -1656,7 +1656,7 @@ msgstr "Pegar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
-msgstr "Pega a partición"
+msgstr "Pega a partición."
 
 #: gui/mainwindow.cpp:419
 #, kde-kuit-format
@@ -1674,7 +1674,7 @@ msgstr "Editar punto de montaxe"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
-msgstr "Editar punto de montaxe"
+msgstr "Editar punto de montaxe."
 
 #: gui/mainwindow.cpp:428
 #, kde-kuit-format
@@ -1692,7 +1692,7 @@ msgstr "Montar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
-msgstr "Monta ou desmonta unha partición"
+msgstr "Monta ou desmonta unha partición."
 
 #: gui/mainwindow.cpp:435
 #, kde-kuit-format
@@ -1710,7 +1710,7 @@ msgstr "Desbloquear"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
-msgstr "Desbloquear ou bloquear a partición cifrada"
+msgstr "Desbloquear ou bloquear a partición cifrada."
 
 #: gui/mainwindow.cpp:442
 #, kde-kuit-format
@@ -1728,7 +1728,7 @@ msgstr "Comprobar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
-msgstr "Comproba a partición"
+msgstr "Comproba a partición."
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
@@ -1740,13 +1740,13 @@ msgstr "Comproba a presenza de erros no sistema de ficheiros dunha partición."
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
-msgstr "Mostra o diálogo de propiedades da partición"
+msgstr "Mostra o diálogo de propiedades da partición."
 
 #: gui/mainwindow.cpp:457
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
-msgstr "Mostra e modifica as propiedades da partición (lenda, bandeiras etc.)"
+msgstr "Mostra e modifica as propiedades da partición (lenda, bandeiras etc.)."
 
 #: gui/mainwindow.cpp:463
 #, kde-kuit-format
@@ -1758,7 +1758,7 @@ msgstr "Copia de seguridade"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
-msgstr "Fai unha copia de seguridade da partición"
+msgstr "Fai unha copia de seguridade da partición."
 
 #: gui/mainwindow.cpp:465
 #, kde-kuit-format
@@ -1776,7 +1776,7 @@ msgstr "Restaurar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
-msgstr "Restaura unha partición"
+msgstr "Restaura unha partición."
 
 #: gui/mainwindow.cpp:473
 #, kde-kuit-format
@@ -1830,7 +1830,7 @@ msgstr "Actualizar a información dos dispositivos"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
-msgstr "Actualizar a información de todos os dispositivos"
+msgstr "Actualizar a información de todos os dispositivos."
 
 #: gui/mainwindow.cpp:496
 #, kde-kuit-format
@@ -1848,7 +1848,7 @@ msgstr "Limpar o rexistro"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
-msgstr "Limpar o rexistro da saída"
+msgstr "Limpar o rexistro da saída."
 
 #: gui/mainwindow.cpp:514
 #, kde-kuit-format
@@ -1866,7 +1866,7 @@ msgstr "Gardar o rexistro"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
-msgstr "Gardar o rexistro da saída"
+msgstr "Gardar o rexistro da saída."
 
 #: gui/mainwindow.cpp:521
 #, kde-kuit-format
@@ -1897,8 +1897,8 @@ msgstr "Amosar un diálogo de información sobre KPMcore."
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
-msgstr[0] "Unha operación pendente"
-msgstr[1] "%1 operacións pendentes"
+msgstr[0] "Unha operación pendente."
+msgstr[1] "%1 operacións pendentes."
 
 #: gui/mainwindow.cpp:806
 #, kde-kuit-format
@@ -2736,7 +2736,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
-msgstr "Crear de novo o sistema de ficheiros existente"
+msgstr "Crear de novo o sistema de ficheiros existente."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
 #: gui/partpropswidgetbase.ui:101
@@ -2906,7 +2906,7 @@ msgstr "Último sector:"
 #: gui/sizedetailswidgetbase.ui:124
 #, kde-format
 msgid "Align partition"
-msgstr "Aliñar a partición"
+msgstr "Aliñar a partición."
 
 #: gui/sizedialogbase.cpp:66
 #, kde-kuit-format
@@ -2948,7 +2948,7 @@ msgstr ""
 #: gui/sizedialogwidgetbase.ui:101
 #, kde-format
 msgid "Encrypt with LUKS"
-msgstr "Cifrar con LUKS"
+msgstr "Cifrar con LUKS."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
 #: gui/sizedialogwidgetbase.ui:111
@@ -3008,7 +3008,7 @@ msgstr "Permisos"
 #: gui/sizedialogwidgetbase.ui:326
 #, kde-format
 msgid "Allow everyone to write and read on this device"
-msgstr "Permitir a calquera escribir e ler no dispositivo"
+msgstr "Permitir a calquera escribir e ler no dispositivo."
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:329
@@ -3024,7 +3024,7 @@ msgid ""
 "folder permissions"
 msgstr ""
 "Só permitir ao root escribir e ler no dispositivo, terá que preparar "
-"permisos de cartafoles"
+"permisos de cartafoles."
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:339
@@ -3238,7 +3238,7 @@ msgstr "Sev."
 #: gui/treelogbase.ui:62
 #, kde-format
 msgid "Severity"
-msgstr "Severidade"
+msgstr "Severidade."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:67
