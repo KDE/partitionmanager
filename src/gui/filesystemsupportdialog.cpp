@@ -54,8 +54,8 @@ QSize FileSystemSupportDialog::sizeHint() const
 
 void FileSystemSupportDialog::setupDialog()
 {
-    QIcon yes = QIcon::fromTheme(QStringLiteral("dialog-ok"));
-    QIcon no = QIcon::fromTheme(QStringLiteral("dialog-error"));
+    QIcon yes = QIcon::fromTheme(QStringLiteral("data-success"));
+    QIcon no = QIcon::fromTheme(QStringLiteral("data-error"));
 
     dialogWidget().tree().clear();
 
