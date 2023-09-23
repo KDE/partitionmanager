@@ -325,7 +325,7 @@
 							<action>Opens a dialog</action> to edit the mount point and the mount options.
 						</para>
 						<para>
-							This command is only enabled if a partition unmounted.
+							This command is only enabled if a partition is unmounted.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -338,7 +338,7 @@
 					</term>
 					<listitem>
 						<para>
-							<action>Mounts or umounts a partition</action>: This command mounts or unmounts the selected partition, depending on its current state.
+							<action>Mounts or unmounts a partition</action>: This command mounts or unmounts the selected partition, depending on its current state.
 						</para>
 						<para>
 							This command is only enabled if a partition is selected that can be mounted or unmounted. If the operating system does not know a mount point for the partition you can not mount it from &partman;.
@@ -373,7 +373,7 @@
 							<action>Backs up a partition</action>: This command backs up the file system on the selected partition to a file. You will be asked where to store the image file after activating this command.
 						</para>
 						<para>
-							The created image file is a sector-for-sector copy of the file system on the partition. It is not compressed and does not have any additional meta information or header added to it, thus it can be directly mounted using a loop device outside of &partman; if the operation system supports that.
+							The created image file is a sector-for-sector copy of the file system on the partition. It is not compressed and does not have any additional meta information or header added to it, thus it can be directly mounted using a loop device outside of &partman; if the operating system supports that.
 						</para>
 						<para>
 							This command is only enabled if a partition is selected and the file system on it can be backed up. The partition must also not be mounted.

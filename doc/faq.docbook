@@ -92,7 +92,7 @@
 			</question>
 			<answer>
 				<para>
-					This is a problem of the <command>e2resize</command> command and the underlying ext2/3/4 file system. If a file system is nearly full, <command>e2resize</command> cannot make it any smaller even though that should be possible from the number of free sectors left. &partman; can unfortunately not know beforehand if <command>e2resize</command> will abort with this error for a given file system or not. If it happens nothing will be done at all and your data will not be negatively affected.
+					This is a problem of the <command>e2resize</command> command and the underlying ext2/3/4 file system. If a file system is nearly full, <command>e2resize</command> cannot make it any smaller even though that should be possible from the number of free sectors left. &partman; can unfortunately not know beforehand if <command>e2resize</command> will abort with this error for a given file system or not. If it happens, nothing will be done at all and your data will not be negatively affected.
 				</para>
 				<para>
 					There is no real workaround for this problem right now.

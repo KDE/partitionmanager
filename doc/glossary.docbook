@@ -178,7 +178,7 @@
 		<glossterm>Operation</glossterm>
 		<glossdef>
 			<para>
-				&partman; divides the work it does up in operations, <link linkend="glossary-job">jobs</link> and <link linkend="glossary-command">commands</link>.
+				&partman; divides the work it does into operations, <link linkend="glossary-job">jobs</link> and <link linkend="glossary-command">commands</link>.
 			</para>
 			<para>
 				Operations are the most visible of the three. If you pick an action in the graphical user interface, this will likely result in a new operation being added to the list of pending operations. The idea behind that is: You will most probably want to set up quite a number of steps to transform the current state of your disk devices to the state you have in mind. Some of these steps may take quite a long time to execute (like copying a large file system or resizing a file system that is nearly full). To save you from having to sit in front of your computer for a long time waiting for one step to finish and then starting the next one, operations allow you to exactly specify how the computer's devices should look like once everything is finished, then let &partman; apply the operations and come back when it has executed all of them.
