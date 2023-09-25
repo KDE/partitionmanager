@@ -420,7 +420,7 @@
 >Opent een dialoog</action
 > om het aankoppelpunt en de aankoppelopties te bewerken. </para>
 						<para
->Dit commando is alleen ingeschakeld als de een partitie niet is aangekoppeld. </para>
+>Dit commando is alleen ingeschakeld als een partitie niet is aangekoppeld. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-mount">
@@ -436,7 +436,7 @@
 						<para
 ><action
 >Aan- of afkoppelen van een partitie</action
->: Dit commando koppelt (mounten) een partitie aan of af, afhankelijk van de huidige status. </para>
+>: Dit commando koppelt ((un)mount) een partitie aan of af, afhankelijk van de huidige status. </para>
 						<para
 >Dit commando is alleen mogelijk als een partitie is geselecteerd die kan worden aan- of afgekoppeld. Als er binnen het besturingssysteem geen aankoppelpunt is voor de partitie dan kan het binnen &partman; niet aangekoppeld worden. </para>
 					</listitem>
