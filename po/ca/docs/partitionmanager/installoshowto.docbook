@@ -26,7 +26,7 @@
 	</para>
 
 	<para
->El nou dispositiu s'ha de veure així. Noteu que encara no té una taula de particions vàlida, per tant el primer pas a donar és crear-ne una seleccionant<xref linkend="menu-device-createpartitiontable"/>: </para>
+>El dispositiu nou s'ha de veure així. Noteu que encara no té una taula de particions vàlida, per tant el primer pas a donar és crear-ne una seleccionant<xref linkend="menu-device-createpartitiontable"/>: </para>
 
 	<para>
 		<screenshot>
@@ -42,7 +42,7 @@
 	</para>
 	
 	<para
->Després de confirmar aquest diàleg d'avís podeu començar a crear particions en el nou dispositiu clicant la partició ampliada i seleccionant <xref linkend="menu-partition-new"/>. Comenceu amb una partició ampliada al final del dispositiu per contenir més tard les particions «home» i «swap»: </para>
+>Després de confirmar aquest diàleg d'avís podeu començar a crear particions en el dispositiu nou clicant la partició ampliada i seleccionant <xref linkend="menu-partition-new"/>. Comenceu amb una partició ampliada al final del dispositiu per contenir més tard les particions «home» i «swap»: </para>
 
 	<para>
 		<screenshot>
@@ -51,7 +51,7 @@
 ><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->Creant una nova partició ampliada</phrase
+>Creant una partició ampliada nova</phrase
 ></textobject>
 			</mediaobject>
 		</screenshot>
@@ -63,7 +63,7 @@
 > i l'operació de crear aquesta partició ampliada s'afegirà a la llista. </para>
 
 	<para
->Ara creeu una partició primària en la resta del dispositiu on s'instal·larà el nou sistema operatiu. Feu-la tan gran com l'àrea sense assignar davant de la partició ampliada: </para>
+>Ara creeu una partició primària en la resta del dispositiu on s'instal·larà el sistema operatiu nou. Feu-la tan gran com l'àrea sense assignar davant de la partició ampliada: </para>
 
 	<para>
 		<screenshot>
@@ -81,15 +81,15 @@
 	<para
 >Cliqueu <guibutton
 >D'acord</guibutton
-> en el diàleg per acceptar la vostra selecció. L'operació de crear una nova partició primària s'afegirà a la llista d'operacions. </para>
+> en el diàleg per acceptar la vostra selecció. L'operació de crear una partició primària nova s'afegirà a la llista d'operacions. </para>
 	
 	<para
->Ara és hora de copiar la partició «home» des de l'antic dispositiu a la partició ampliada del nou dispositiu. Seleccioneu l'antic dispositiu en el plafó de la llista de dispositius, cliqueu en la partició <quote
+>Ara és hora de copiar la partició «home» des de l'antic dispositiu a la partició ampliada del dispositiu nou. Seleccioneu l'antic dispositiu en el plafó de la llista de dispositius, cliqueu en la partició <quote
 >sdb5</quote
 > i seleccioneu <xref linkend="menu-partition-copy"/>. </para>
 
 	<para
->Després torneu al nou dispositiu i cliqueu la partició ampliada. Seleccioneu <xref linkend="menu-partition-paste"/>. Apareixerà el següent diàleg: </para>
+>Després torneu al dispositiu nou i cliqueu la partició ampliada. Seleccioneu <xref linkend="menu-partition-paste"/>. Apareixerà el següent diàleg: </para>
 	
 	<para>
 		<screenshot>
@@ -126,16 +126,16 @@
 	<para
 >Això es veu força bé. Cliqueu <guibutton
 >D'acord</guibutton
-> per acceptar i tancar el diàleg. Una nova operació d'enganxar la partició copiada a la partició ampliada en <quote
+> per acceptar i tancar el diàleg. Una operació nova d'enganxar la partició copiada a la partició ampliada en <quote
 >sdc</quote
-> s'afegirà a la llista d'operacions. Noteu que aquesta operació també estableix la nova mida. </para>
+> s'afegirà a la llista d'operacions. Noteu que aquesta operació també estableix la mida nova. </para>
 
 	<para
->Finalment voldreu crear una nova partició d'intercanvi al final de la partició ampliada en <quote
+>Finalment voldreu crear una partició d'intercanvi nova al final de la partició ampliada en <quote
 >sdc</quote
 >. No necessiteu copiar la partició d'intercanvi existent des de <quote
 >sdb</quote
-> perquè la partició d'intercanvi no conté cap informació permanent que s'hagi de conservar. Simplement creeu una nova partició amb tipus linuxswap que empleni totalment l'àrea sense assignar a continuació de la nova partició «home». </para>
+> perquè la partició d'intercanvi no conté cap informació permanent que s'hagi de conservar. Simplement creeu una partició nova amb tipus linuxswap que empleni totalment l'àrea sense assignar a continuació de la partició «home» nova. </para>
 
 	<para
 >La finestra principal amb totes les operacions i la vista prèvia de com es veurà <quote
