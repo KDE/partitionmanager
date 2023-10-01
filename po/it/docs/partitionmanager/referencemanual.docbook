@@ -436,7 +436,7 @@
 						<para
 ><action
 >Monta o smonta una partizione</action
->: questo comando monta oppure smonta la partizione selezionata, a seconda del suo stato corrente. </para>
+>: questo comando monta oppure smonta la partizione selezionata, a seconda del suo stato attuale. </para>
 						<para
 >Questo comando è abilitato solo se è selezionata una partizione che possa essere montata o smontata. Se il sistema operativo non conosce un punto di montaggio per la partizione, non ti sarà possibile montarla in &partman;. </para>
 					</listitem>
@@ -474,7 +474,7 @@
 >Esegue una copia di sicurezza della partizione</action
 >: questo comando salva in un file una copia di sicurezza del file system presente nella partizione selezionata. Dopo l'attivazione del comando ti verrà chiesto dove salvare il file contenente l'immagine. </para>
 						<para
->Il file immagine creato è una copia settore per settore del file system presente nella partizione. Non è compresso e non contiene alcuna meta informazione o intestazione aggiuntivi: se il sistema operativo supporta l'operazione, è quindi possibile montarlo direttamente, utilizzando un loop device, al di fuori di &partman;. </para>
+>Il file immagine creato è una copia settore per settore del file system presente nella partizione. Non è compresso e non contiene meta informazioni o intestazioni aggiuntive: se il sistema operativo supporta l'operazione, è quindi possibile montarlo direttamente, utilizzando un loop device, al di fuori di &partman;, se il sistema operativo lo supporta </para>
 						<para
 >Questo comando è abilitato solo se è selezionata una partizione del cui file system possa essere creata una copia di sicurezza. La partizione, inoltre, non deve essere montata. </para>
 					</listitem>

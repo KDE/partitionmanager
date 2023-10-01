@@ -88,13 +88,13 @@
 			</question>
 			<answer>
 				<para
->Questo è un problema del comandi <command
+>Questo è un problema del comando <command
 >e2resize</command
 > e del file system ext2/3/4. Se un file system è quasi pieno, <command
 >e2resize</command
 > non è in grado di ridurlo anche se l'operazione sarebbe possibile in base al numero di settori liberi disponibili. Sfortunatamente, &partman; non può sapere prima se <command
 >e2resize</command
-> si arresterà restituendo questo errore oppure no. Se ciò accade non sarà eseguita alcuna operazione ed i tuoi dati non riceveranno alcun danno. </para>
+> si arresterà restituendo questo errore oppure no. Se ciò accade non sarà eseguita alcuna operazione e i tuoi dati non riceveranno alcun danno. </para>
 				<para
 >Non esiste al momento alcun modo per aggirare questo problema. </para>
 			</answer>
