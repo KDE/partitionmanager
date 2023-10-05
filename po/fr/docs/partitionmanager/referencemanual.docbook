@@ -420,7 +420,7 @@
 >Ouvre une boîte de dialogue</action
 > pour modifier le point de montage et les options de montage. </para>
 						<para
->Cette commande est activée uniquement si la partition est démontée. </para>
+>Cette commande n'est activée que si la partition est démontée. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-mount">
@@ -436,7 +436,7 @@
 						<para
 ><action
 >Monte ou libère une partition</action
-> : cette commande monte ou libère la partition sélectionnée, en fonction de son état actuel. </para>
+> : cette commande monte ou libère la partition sélectionnée, en fonction de son état courant. </para>
 						<para
 >Cette commande est activée uniquement si une partition est sélectionnée, qui peut être montée ou libérée. Si le système d'exploitation ne connaît pas de point de montage pour la partition en question, il est impossible de la monter depuis le &partman;. </para>
 					</listitem>
@@ -474,7 +474,7 @@
 >Sauvegarde une partition</action
 > : cette commande sauvegarde dans un fichier le système de fichiers présent sur la partition sélectionnée. Une boîte de dialogue vous demandera où stocker le ficher image après activation de cette commande. </para>
 						<para
->Le fichier image créé est une copie secteur par secteur du système de fichiers installé sur la partition. Comme il n'est pas comprimé et ne comporte pas de méta-informations supplémentaires ou d'en-tête ajouté, on peut directement le monter à l'aide d'un périphérique boucle, en dehors du &partman;, si le système d'exploitation prend en charge cette fonction. </para>
+>Le fichier « image » créé est une copie secteur par secteur du système de fichiers installé sur la partition. Il 'est pas comprimé et ne comporte aucune métadonnées supplémentaires et aucune en-tête ajoutée. Ainsi, il peut être directement monter à l'aide d'un périphérique « loop », en dehors de &partman;, si le système d'exploitation prend en charge cette fonction. </para>
 						<para
 >Cette commande est activée uniquement si une partition est sélectionnée et qu'on peut sauvegarder le système de fichiers installé dessus. Il faut aussi que la partition ne soit pas montée. </para>
 					</listitem>

@@ -101,12 +101,12 @@
 >Il s'agit d'un problème lié à la commande <command
 >e2resize</command
 > et au système de fichiers <quote
->ext2 / ext3</quote
+>ext2 / ext3 / ext4</quote
 > sous-jacent. Si un système de fichiers est presque plein, il est impossible pour <command
 >e2resize</command
-> de le réduire, même s'il devrait être possible de le faire à partir du nombre de secteurs libres restants. Le &partman; ne peut malheureusement pas savoir à l'avance si <command
+> d'en réduire la taille, même s'il devrait être possible de le faire à partir du nombre de secteurs libres restants. Le logiciel &partman; ne peut malheureusement pas savoir à l'avance si <command
 >e2resize</command
-> s'interrompra ou non avec cette erreur pour un système de fichiers donné. Si cela se produit, aucune modification ne sera effectuée et vos données n'en seront pas négativement affectées. </para>
+> s'interrompra ou non avec cette erreur pour un système donné de fichiers. Si cela se produit, aucune modification ne sera effectuée et vos données n'en seront pas négativement affectées. </para>
 				<para
 >Il n'existe pas de solution de contournement réelle pour ce problème pour l'instant. </para>
 			</answer>
