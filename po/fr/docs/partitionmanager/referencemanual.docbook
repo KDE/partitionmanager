@@ -127,6 +127,26 @@
 >Vous permet de sélectionner un périphérique dans un sous-menu contenant tous les périphériques disponibles du système. </para>
 					</listitem>
 				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Périphérique</guimenu
+> <guimenuitem
+>Rafraîchir la liste des périphériques</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Rafraîchit la liste des périphériques</action
+> : cette commande force le &partman; à analyser et lire à nouveau la liste des périphériques présents sur votre ordinateur. Elle peut s'avérer utile par exemple si vous avez connecté à chaud un disque dur USB externe après avoir démarré le &partman;. </para>
+					</listitem>
+				</varlistentry>
 				<varlistentry id="menu-device-createpartitiontable">
 					<term>
 						<menuchoice
@@ -209,97 +229,6 @@
 					<listitem>
 						<para
 >Affiche des informations sur les périphériques actuellement sélectionnés. Dans cette boîte de dialogue, vous pouvez trouver la capacité, les tailles des secteurs, le type de table de partitions ainsi que le nombre utilisé et maximal de partitions primaires.</para>
-					</listitem>
-				</varlistentry>
-			</variablelist>
-		</para>
-	</sect2>
-
-	<sect2 id="menu-tools">
-		<title
->Les menus Outils</title>
-		<para>
-			<variablelist>
-				<varlistentry id="menu-tools-volumegroup">
-					<term>
-						<menuchoice
-><shortcut
-><keycombo action="simul"
->&Ctrl;&Shift;<keycap
->L</keycap
-></keycombo
-></shortcut
-> <guimenu
->Outils</guimenu
-> <guimenuitem
->Nouveau groupe de volumes</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
->Créer un nouveau périphérique logique tel que le groupe de volumes <link linkend="glossary-lvm"
->LVM</link
->.</para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-filesystemsupport">
-					<term>
-						<menuchoice
-><guimenu
->Outils</guimenu
-> <guimenuitem
->Prise en charge des systèmes de fichiers</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Affiche la boîte de dialogue de prise en charge des systèmes de fichiers</action
-> Cette boîte de dialogue affiche en détail les opérations pouvant être effectuées pour tels ou tels systèmes de fichiers. </para>
-						<para
->Voici un exemple de ce à quoi la boîte de dialogue pourrait ressembler avec la plupart des outils externes installés : </para>
-						<para>
-							<screenshot>
-								<mediaobject>
-									<imageobject
-><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
-									<textobject
-><phrase
->La boîte de dialogue de prise en charge des systèmes de fichiers avec la plupart des outils externes installés</phrase
-></textobject>
-								</mediaobject>
-							</screenshot>
-						</para>
-						<para
->Les coches en bleu signifient <quote
->pris en charge</quote
->, les croix en rouge <quote
->non pris en charge</quote
->. Certaines combinaisons ne sont jamais prises en charge, par exemple la vérification d'un système de fichiers « linuxswap », car elles sont par nature impossibles. D'autres sont impossibles à prendre en charge car les outils externes ne disposent pas de la fonctionnalité. </para>
-						<para
->Si vous avez installé de nouveaux outils pendant que le &partman; fonctionne, cliquez sur <guibutton
->Analyser à nouveau la prise en charge</guibutton
-> pour forcer un nouveau contrôle des outils de prise en charge des systèmes de fichiers installés. </para>
-					</listitem>
-				</varlistentry>
-				<varlistentry id="menu-tools-refresh">
-					<term>
-						<menuchoice
-><shortcut
-><keycap
->F5</keycap
-></shortcut
-> <guimenu
->Outils</guimenu
-> <guimenuitem
->Rafraîchir la liste des périphériques</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Rafraîchit la liste des périphériques</action
-> : cette commande force le &partman; à analyser et lire à nouveau la liste des périphériques présents sur votre ordinateur. Elle peut s'avérer utile par exemple si vous avez connecté à chaud un disque dur USB externe après avoir démarré le &partman;. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -416,7 +345,7 @@
 							<title
 >Avertissement : perte possible de données</title>
 							<para
->Formater une partition signifie que toutes les données présentes sur la partition seront détruites.</para>
+>La réduction de taille d'une partition implique que toutes les données présentes sur la partition seront détruites.</para>
 						</warning>
 					</listitem>
 				</varlistentry>
@@ -476,24 +405,6 @@
 						</warning>
 					</listitem>
 				</varlistentry>
-				<varlistentry id="menu-partition-mount">
-					<term>
-						<menuchoice
-><guimenu
->Partition</guimenu
-> <guimenuitem
->Monter / Libérer</guimenuitem
-> </menuchoice>
-					</term>
-					<listitem>
-						<para
-><action
->Monte ou libère une partition</action
-> : cette commande monte ou libère la partition sélectionnée, en fonction de son état actuel. </para>
-						<para
->Cette commande est activée uniquement si une partition est sélectionnée, qui peut être montée ou libérée. Si le système d'exploitation ne connaît pas de point de montage pour la partition en question, il est impossible de la monter depuis le &partman;. </para>
-					</listitem>
-				</varlistentry>
 				<varlistentry id="menu-partition-edit-mount">
 					<term>
 						<menuchoice
@@ -510,6 +421,24 @@
 > pour modifier le point de montage et les options de montage. </para>
 						<para
 >Cette commande est activée uniquement si la partition est démontée. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Partition</guimenu
+> <guimenuitem
+>Monter / Libérer</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Monte ou libère une partition</action
+> : cette commande monte ou libère la partition sélectionnée, en fonction de son état actuel. </para>
+						<para
+>Cette commande est activée uniquement si une partition est sélectionnée, qui peut être montée ou libérée. Si le système d'exploitation ne connaît pas de point de montage pour la partition en question, il est impossible de la monter depuis le &partman;. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-check">
@@ -631,6 +560,77 @@
 						</para>
 						<para
 >Cette commande est activée uniquement si soit une zone non allouée, soit une partition, est sélectionnée. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Les menus Outils</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Outils</guimenu
+> <guimenuitem
+>Nouveau groupe de volumes</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Créer un nouveau périphérique logique tel que le groupe de volumes <link linkend="glossary-lvm"
+>LVM</link
+>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Outils</guimenu
+> <guimenuitem
+>Prise en charge des systèmes de fichiers</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Affiche la boîte de dialogue de prise en charge des systèmes de fichiers</action
+> Cette boîte de dialogue affiche en détail les opérations pouvant être effectuées pour tels ou tels systèmes de fichiers. </para>
+						<para
+>Voici un exemple de ce à quoi la boîte de dialogue pourrait ressembler avec la plupart des outils externes installés : </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>La boîte de dialogue de prise en charge des systèmes de fichiers avec la plupart des outils externes installés</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>Les coches en bleu signifient <quote
+>pris en charge</quote
+>, les croix en rouge <quote
+>non pris en charge</quote
+>. Certaines combinaisons ne sont jamais prises en charge, par exemple la vérification d'un système de fichiers « linuxswap », car elles sont par nature impossibles. D'autres sont impossibles à prendre en charge car les outils externes ne disposent pas de la fonctionnalité. </para>
+						<para
+>Si vous avez installé de nouveaux outils pendant que le &partman; fonctionne, cliquez sur <guibutton
+>Analyser à nouveau la prise en charge</guibutton
+> pour forcer un nouveau contrôle des outils de prise en charge des systèmes de fichiers installés. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
