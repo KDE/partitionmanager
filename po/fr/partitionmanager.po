@@ -8,7 +8,7 @@
 # Anne-Marie Mahfouf <annma@kde.org>, 2013.
 # Thomas Vergnaud <thomas.vergnaud@gmx.fr>, 2014, 2015, 2016, 2022.
 # Simon Depiets <sdepiets@gmail.com>, 2018, 2019.
-# Xavier Besnard <xavier.besnard@neuf.fr>, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023 Xavier Besnard <xavier.besnard@neuf.fr>
 # Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
 #
 msgid ""
@@ -16,15 +16,15 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-19 00:52+0000\n"
-"PO-Revision-Date: 2023-03-14 07:22+0100\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"PO-Revision-Date: 2023-10-26 21:07+0200\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -3118,7 +3118,7 @@ msgstr "aucun"
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Pre-Failure"
-msgstr "Prédéfaillance"
+msgstr "Pré-défaillance"
 
 #: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
 #, kde-kuit-format
@@ -3278,7 +3278,7 @@ msgstr "Problème lors de l'enregistrement du fichier journal"
 msgctxt ""
 "@title:column Severity of a log entry / log level. Text must be very short."
 msgid "Sev."
-msgstr "Sév."
+msgstr "Sévère"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:62
