@@ -36,14 +36,14 @@ FileSystemSupportDialog::FileSystemSupportDialog(QWidget* parent) :
     setupDialog();
     setupConnections();
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "fileSystemSupportDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("fileSystemSupportDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a FileSystemSupportDialog */
 FileSystemSupportDialog::~FileSystemSupportDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "fileSystemSupportDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("fileSystemSupportDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
 }
 

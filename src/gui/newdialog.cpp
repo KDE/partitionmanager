@@ -52,13 +52,13 @@ NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPart
 
     updateOkButtonStatus();
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "newDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("newDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 NewDialog::~NewDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "newDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("newDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
 }
 

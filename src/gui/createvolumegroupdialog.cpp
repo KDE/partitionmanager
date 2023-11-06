@@ -44,7 +44,7 @@ CreateVolumeGroupDialog::CreateVolumeGroupDialog(QWidget* parent, QString& vgNam
     // disable volume type and PE size for now, until the features are implemented.
     dialogWidget().volumeType().setEnabled(false);
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "createVolumeDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("createVolumeDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 

@@ -44,7 +44,7 @@ DevicePropsDialog::DevicePropsDialog(QWidget* parent, Device& d) :
     setupDialog();
     setupConnections();
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "devicePropsDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("devicePropsDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 
 }
@@ -52,7 +52,7 @@ DevicePropsDialog::DevicePropsDialog(QWidget* parent, Device& d) :
 /** Destroys a DevicePropsDialog */
 DevicePropsDialog::~DevicePropsDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "devicePropsDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("devicePropsDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
 }
 

@@ -57,14 +57,14 @@ PartPropsDialog::PartPropsDialog(QWidget* parent, Device& d, Partition& p) :
     setupDialog();
     setupConnections();
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "partPropsDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("partPropsDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a PartPropsDialog */
 PartPropsDialog::~PartPropsDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "partPropsDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("partPropsDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
 }
 

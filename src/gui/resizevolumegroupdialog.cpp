@@ -41,7 +41,7 @@ ResizeVolumeGroupDialog::ResizeVolumeGroupDialog(QWidget* parent, VolumeManagerD
     setupDialog();
     setupConstraints();
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "resizeVolumeDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("resizeVolumeDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 

@@ -50,14 +50,14 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 
     connect(&advancedPageWidget().comboBackend(), &QComboBox::activated, this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "configureOptionsDialogs");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("configureOptionsDialogs"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a ConfigureOptionsDialog instance */
 ConfigureOptionsDialog::~ConfigureOptionsDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "configureOptionsDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("configureOptionsDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
 }
 

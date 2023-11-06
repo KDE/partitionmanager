@@ -60,7 +60,7 @@ VolumeGroupDialog::VolumeGroupDialog(QWidget* parent, QString& vgName, QVector<c
 /** Destroys a VolumeGroupDialog */
 VolumeGroupDialog::~VolumeGroupDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "createVolumeGroupDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("createVolumeGroupDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
 }
 

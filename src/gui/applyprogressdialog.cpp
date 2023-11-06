@@ -92,14 +92,14 @@ ApplyProgressDialog::ApplyProgressDialog(QWidget* parent, OperationRunner& orunn
 
     setupConnections();
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "applyProgressDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("applyProgressDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a ProgressDialog */
 ApplyProgressDialog::~ApplyProgressDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "applyProgressDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("applyProgressDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
     delete m_Report;
 }

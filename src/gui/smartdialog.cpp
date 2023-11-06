@@ -62,14 +62,14 @@ SmartDialog::SmartDialog(QWidget* parent, Device& d) :
     setupDialog();
     setupConnections();
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "smartDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("smartDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a SmartDialog */
 SmartDialog::~SmartDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "smartDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("smartDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
 }
 

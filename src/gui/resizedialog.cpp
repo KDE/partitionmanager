@@ -51,14 +51,14 @@ ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minF
     setupConstraints();
     setupConnections();
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "resizeDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("resizeDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys a ResizeDialog */
 ResizeDialog::~ResizeDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "resizeDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("resizeDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
 }
 

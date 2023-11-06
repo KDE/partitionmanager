@@ -31,7 +31,7 @@ EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
     mainLayout->addWidget(&widget());
     setWindowTitle(xi18nc("@title:window", "Edit mount point for <filename>%1</filename>", p.deviceNode()));
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "editMountPointDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("editMountPointDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 
     QDialogButtonBox* dbb = new QDialogButtonBox( QDialogButtonBox::Ok | QDialogButtonBox::Cancel,
@@ -48,7 +48,7 @@ EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
 /** Destroys an EditMountOptionsDialog instance */
 EditMountPointDialog::~EditMountPointDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "editMountPointDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("editMountPointDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
 }
 

@@ -42,14 +42,14 @@ InsertDialog::InsertDialog(QWidget* parent, Device& device, Partition& insertedP
     setupConstraints();
     setupConnections();
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "insertDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("insertDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 }
 
 /** Destroys an InsertDialog instance */
 InsertDialog::~InsertDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "insertDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("insertDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
 }
 

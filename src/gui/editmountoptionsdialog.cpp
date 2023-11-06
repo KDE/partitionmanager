@@ -24,7 +24,7 @@ EditMountOptionsDialog::EditMountOptionsDialog(QWidget* parent, const QStringLis
     mainLayout->addWidget(&widget());
     setWindowTitle(xi18nc("@title:window", "Edit additional mount options"));
 
-    KConfigGroup kcg(KSharedConfig::openConfig(), "editMountOptionsDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("editMountOptionsDialog"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
 
     QDialogButtonBox* dbb = new QDialogButtonBox( QDialogButtonBox::Ok | QDialogButtonBox::Cancel,
@@ -38,7 +38,7 @@ EditMountOptionsDialog::EditMountOptionsDialog(QWidget* parent, const QStringLis
 /** Destroys an EditMOuntOptionsDialog instance */
 EditMountOptionsDialog::~EditMountOptionsDialog()
 {
-    KConfigGroup kcg(KSharedConfig::openConfig(), "editMountOptionsDialog");
+    KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("editMountOptionsDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
 }
 
