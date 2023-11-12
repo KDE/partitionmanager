@@ -13,8 +13,8 @@ set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE
 project(partitionmanager VERSION ${RELEASE_SERVICE_VERSION})
 
 # Dependencies
-set(QT_MIN_VERSION "5.15.2")
-set(KF_MIN_VERSION "5.91")
+set(QT_MIN_VERSION "6.5.0")
+set(KF_MIN_VERSION "5.240.0")
 set(KPMCORE_MIN_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}")
 
 set(KDE_COMPILERSETTINGS_LEVEL "5.85")
@@ -32,26 +32,15 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(FeatureSummary)
 include(GenerateExportHeader)
 include(ECMDeprecationSettings)
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.4.0")
-    set(KF_MIN_VERSION "5.240.0")
-    set(KF_MAJOR_VERSION "6")
-else()
-    set(KF_MAJOR_VERSION "5")
-endif()
 
-if (NOT QT_MAJOR_VERSION)
-    set(QT_MAJOR_VERSION "5")
-endif()
-
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
+find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
   Core
   Gui
   Widgets
 )
 
 # Load the frameworks we need
-find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED
   COMPONENTS
     Config
     ConfigWidgets
@@ -68,7 +57,7 @@ find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED
     DocTools
 )
 
-find_package(PolkitQt${QT_MAJOR_VERSION}-1 REQUIRED)
+find_package(PolkitQt6-1 REQUIRED)
 ecm_set_disabled_deprecation_versions(QT 6.4
     KF 5.101.0
 )
@@ -78,7 +67,7 @@ find_package(KPMcore ${KPMCORE_MIN_VERSION} REQUIRED)
 
 add_subdirectory(src)
 add_subdirectory(icons)
-if (KF${KF_MAJOR_VERSION}DocTools_FOUND)
+if (KF6DocTools_FOUND)
     add_subdirectory(doc)
     kdoctools_install(po)
 endif()

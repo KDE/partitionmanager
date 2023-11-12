@@ -18,21 +18,5 @@ Dependencies:
     'frameworks/kxmlgui': '@latest-kf6'
     'system/kpmcore': '@same'
 
-- 'on': ['Linux/Qt5', 'FreeBSD/Qt5']
-  'require':
-    'frameworks/extra-cmake-modules': '@stable'
-    'frameworks/kconfig': '@stable'
-    'frameworks/kconfigwidgets': '@stable'
-    'frameworks/kcoreaddons': '@stable'
-    'frameworks/kcrash': '@stable'
-    'frameworks/kdbusaddons': '@stable'
-    'frameworks/kdoctools': '@stable'
-    'frameworks/ki18n': '@stable'
-    'frameworks/kio': '@stable'
-    'frameworks/kjobwidgets': '@stable'
-    'frameworks/kwidgetsaddons': '@stable'
-    'frameworks/kxmlgui': '@stable'
-    'system/kpmcore': '@same'
-
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD' ]      

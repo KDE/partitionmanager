@@ -29,22 +29,22 @@ add_executable(partitionmanager ${partitionmanager_SRCS} )
 
 target_link_libraries(partitionmanager
 	kpmcore
-	KF${KF_MAJOR_VERSION}::ConfigCore
-	KF${KF_MAJOR_VERSION}::ConfigGui
-	KF${KF_MAJOR_VERSION}::ConfigWidgets
-	KF${KF_MAJOR_VERSION}::CoreAddons
-	KF${KF_MAJOR_VERSION}::Crash
-	KF${KF_MAJOR_VERSION}::DBusAddons
-	KF${KF_MAJOR_VERSION}::I18n
-	KF${KF_MAJOR_VERSION}::JobWidgets
-	KF${KF_MAJOR_VERSION}::KIOWidgets
-	KF${KF_MAJOR_VERSION}::WidgetsAddons
-	KF${KF_MAJOR_VERSION}::XmlGui
-	KF${KF_MAJOR_VERSION}::WindowSystem
-	PolkitQt${QT_MAJOR_VERSION}-1::Core
+	KF6::ConfigCore
+	KF6::ConfigGui
+	KF6::ConfigWidgets
+	KF6::CoreAddons
+	KF6::Crash
+	KF6::DBusAddons
+	KF6::I18n
+	KF6::JobWidgets
+	KF6::KIOWidgets
+	KF6::WidgetsAddons
+	KF6::XmlGui
+	KF6::WindowSystem
+	PolkitQt6-1::Core
 )
 
-target_compile_definitions(partitionmanager PRIVATE -DCMAKE_INSTALL_FULL_LIBEXECDIR_KF5=\"${CMAKE_INSTALL_FULL_LIBEXECDIR_KF5}\")
+target_compile_definitions(partitionmanager PRIVATE -DCMAKE_INSTALL_FULL_LIBEXECDIR_KF6=\"${CMAKE_INSTALL_FULL_LIBEXECDIR_KF6}\")
 
 install(TARGETS partitionmanager ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.partitionmanager.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
