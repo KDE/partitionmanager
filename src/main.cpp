@@ -93,9 +93,6 @@ int Q_DECL_IMPORT main(int argc, char* argv[])
     aboutData.setHomepage(QStringLiteral("https://www.kde.org/applications/system/partitionmanager"));
 
     KAboutData::setApplicationData(aboutData);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-#endif
     KCrash::initialize();
 
     QCommandLineParser parser;
