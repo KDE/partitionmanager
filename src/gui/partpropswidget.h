@@ -55,6 +55,10 @@ public:
         Q_ASSERT(m_LabelMountPoint);
         return *m_LabelMountPoint;
     }
+    QLabel& devicePath() {
+        Q_ASSERT(m_LabelDevicePath);
+        return *m_LabelDevicePath;
+    }
     QLabel& role() {
         Q_ASSERT(m_LabelRole);
         return *m_LabelRole;

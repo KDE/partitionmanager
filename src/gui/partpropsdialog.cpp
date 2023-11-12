@@ -111,6 +111,11 @@ void PartPropsDialog::setupDialog()
                        : partition().mountPoint();
     dialogWidget().mountPoint().setText(mp);
 
+    const QString devPath = partition().deviceNode().isEmpty() || partition().deviceNode() == QStringLiteral("unallocated")
+                            ? xi18nc("@item device path", "(not found)")
+                            : partition().deviceNode();
+    dialogWidget().devicePath().setText(devPath);
+
     dialogWidget().role().setText(partition().roles().toString());
 
     QString statusText = xi18nc("@label partition state", "idle");
