@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE Frameworks 5 Applications\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-11-13 00:44+0000\n"
 "PO-Revision-Date: 2022-09-27 18:12+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -2597,38 +2597,46 @@ msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(ditemukan nihil)"
 
-#: gui/partpropsdialog.cpp:116
+#: gui/partpropsdialog.cpp:115
+#, fuzzy, kde-kuit-format
+#| msgctxt "@item mountpoint"
+#| msgid "(none found)"
+msgctxt "@item device path"
+msgid "(not found)"
+msgstr "(ditemukan nihil)"
+
+#: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "idle"
 
-#: gui/partpropsdialog.cpp:119
+#: gui/partpropsdialog.cpp:124
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "Setidaknya satu partisi logical di-mount."
 
-#: gui/partpropsdialog.cpp:121
+#: gui/partpropsdialog.cpp:126
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "ter-kaitpada <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:123
+#: gui/partpropsdialog.cpp:128
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "ter-mount"
 
-#: gui/partpropsdialog.cpp:127 gui/partpropsdialog.cpp:130
-#: gui/partpropsdialog.cpp:131
+#: gui/partpropsdialog.cpp:132 gui/partpropsdialog.cpp:135
+#: gui/partpropsdialog.cpp:136
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(nihil)"
 
-#: gui/partpropsdialog.cpp:346
+#: gui/partpropsdialog.cpp:351
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2644,26 +2652,26 @@ msgstr ""
 "sekarang dan menerapkan operasi yang dihasilkan di jendela utama, semua data "
 "pada <filename>%1</filename> akan hilang tidak dapat dipulihkan.</para>"
 
-#: gui/partpropsdialog.cpp:348
+#: gui/partpropsdialog.cpp:353
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "Benar-benar Ciptakan Ulang <filename>%1</filename> dengan Sistem File %2?"
 
-#: gui/partpropsdialog.cpp:349
+#: gui/partpropsdialog.cpp:354
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Ubah Sistem File"
 
-#: gui/partpropsdialog.cpp:350
+#: gui/partpropsdialog.cpp:355
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Jangan Ubah Sistem File"
 
-#: gui/partpropsdialog.cpp:369
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2679,40 +2687,124 @@ msgstr ""
 "dihasilkan di jendela utama, semua data pada <filename>%1</filename> akan "
 "hilang tidak dapat dipulihkan.</para>"
 
-#: gui/partpropsdialog.cpp:371
+#: gui/partpropsdialog.cpp:376
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "Benar-benar Ciptakan Ulang Sistem File pada <filename>%1</filename>?"
 
-#: gui/partpropsdialog.cpp:372
+#: gui/partpropsdialog.cpp:377
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Ciptakan Ulang Sistem File"
 
-#: gui/partpropsdialog.cpp:373
+#: gui/partpropsdialog.cpp:378
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
 msgstr "Jangan Ciptakan Ulang Sistem File"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:39
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
+#: gui/partpropswidgetbase.ui:23
 #, kde-format
-msgctxt "@label:listbox"
-msgid "File syste&m:"
-msgstr "Sistem &file:"
+msgctxt "@label"
+msgid "First sector:"
+msgstr "Sektor pertama:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/partpropswidgetbase.ui:53
+#, kde-format
+msgctxt "@label"
+msgid "Size:"
+msgstr "Ukuran:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
+#: gui/partpropswidgetbase.ui:63
+#, kde-format
+msgid "Partition UUID:"
+msgstr "UUID Partisi:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
-#: gui/partpropswidgetbase.ui:55 gui/sizedialogwidgetbase.ui:146
+#: gui/partpropswidgetbase.ui:73 gui/sizedialogwidgetbase.ui:146
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
 msgstr "Sistem file ini tidak didukung pengaturan label."
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
+#: gui/partpropswidgetbase.ui:83
+#, kde-format
+msgctxt "@label"
+msgid "UUID:"
+msgstr "UUID:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
+#: gui/partpropswidgetbase.ui:100
+#, kde-format
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Sektor terakhir:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
+#: gui/partpropswidgetbase.ui:131
+#, kde-format
+msgctxt "@label"
+msgid "Status:"
+msgstr "Status:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
+#: gui/partpropswidgetbase.ui:141
+#, kde-format
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Tersedia:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/partpropswidgetbase.ui:220
+#, kde-format
+msgctxt "@label"
+msgid "&Label:"
+msgstr "&Label:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
+#: gui/partpropswidgetbase.ui:283
+#, kde-format
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Titik mount:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
+#: gui/partpropswidgetbase.ui:303
+#, kde-format
+msgctxt "@label"
+msgid "Partition type:"
+msgstr "Tipe partisi:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
+#: gui/partpropswidgetbase.ui:313
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "Device"
+msgid "Device path:"
+msgstr "Peranti"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
+#: gui/partpropswidgetbase.ui:323
+#, kde-format
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr "Jumlah sektor:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
+#: gui/partpropswidgetbase.ui:333
+#, fuzzy, kde-format
+#| msgid "Partition table:"
+msgid "Partition Name:"
+msgstr "Tabel partisi:"
+
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:68
+#: gui/partpropswidgetbase.ui:343
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -2722,108 +2814,32 @@ msgstr ""
 "menjaga tipe filesystem yang sama."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:71
+#: gui/partpropswidgetbase.ui:346
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "Ciptakan ulang sistem file yang ada"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:101
-#, kde-format
-msgctxt "@label"
-msgid "Mount point:"
-msgstr "Titik mount:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:118
-#, kde-format
-msgctxt "@label"
-msgid "Partition type:"
-msgstr "Tipe partisi:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:128
-#, kde-format
-msgctxt "@label"
-msgid "&Label:"
-msgstr "&Label:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
-#: gui/partpropswidgetbase.ui:148
-#, kde-format
-msgctxt "@label"
-msgid "Status:"
-msgstr "Status:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
-#: gui/partpropswidgetbase.ui:165
-#, kde-format
-msgctxt "@label"
-msgid "UUID:"
-msgstr "UUID:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
-#: gui/partpropswidgetbase.ui:195
-#, kde-format
-msgctxt "@label"
-msgid "Size:"
-msgstr "Ukuran:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
-#: gui/partpropswidgetbase.ui:218
-#, kde-format
-msgctxt "@label partition capacity available"
-msgid "Available:"
-msgstr "Tersedia:"
-
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:235
+#: gui/partpropswidgetbase.ui:373
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Digunakan:"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
-#: gui/partpropswidgetbase.ui:259
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/partpropswidgetbase.ui:383
 #, kde-format
-msgctxt "@label"
-msgid "First sector:"
-msgstr "Sektor pertama:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
-#: gui/partpropswidgetbase.ui:276
-#, kde-format
-msgctxt "@label"
-msgid "Last sector:"
-msgstr "Sektor terakhir:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:293
-#, kde-format
-msgctxt "@label"
-msgid "Number of sectors:"
-msgstr "Jumlah sektor:"
+msgctxt "@label:listbox"
+msgid "File syste&m:"
+msgstr "Sistem &file:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:317
+#: gui/partpropswidgetbase.ui:396
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
 msgstr "&Flag:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:362
-#, fuzzy, kde-format
-#| msgid "Partition table:"
-msgid "Partition Name:"
-msgstr "Tabel partisi:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
-#: gui/partpropswidgetbase.ui:372
-#, kde-format
-msgid "Partition UUID:"
-msgstr "UUID Partisi:"
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-11-13 00:44+0000\n"
 "PO-Revision-Date: 2022-12-12 22:14+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -2556,38 +2556,46 @@ msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(nerasta)"
 
-#: gui/partpropsdialog.cpp:116
+#: gui/partpropsdialog.cpp:115
+#, fuzzy, kde-kuit-format
+#| msgctxt "@item mountpoint"
+#| msgid "(none found)"
+msgctxt "@item device path"
+msgid "(not found)"
+msgstr "(nerasta)"
+
+#: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "neužimtas"
 
-#: gui/partpropsdialog.cpp:119
+#: gui/partpropsdialog.cpp:124
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "Mažiausiai vienas loginis skaidinys yra įmontuotas."
 
-#: gui/partpropsdialog.cpp:121
+#: gui/partpropsdialog.cpp:126
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "įmontuotas į <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:123
+#: gui/partpropsdialog.cpp:128
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "įmontuotas"
 
-#: gui/partpropsdialog.cpp:127 gui/partpropsdialog.cpp:130
-#: gui/partpropsdialog.cpp:131
+#: gui/partpropsdialog.cpp:132 gui/partpropsdialog.cpp:135
+#: gui/partpropsdialog.cpp:136
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(joks)"
 
-#: gui/partpropsdialog.cpp:346
+#: gui/partpropsdialog.cpp:351
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2598,25 +2606,25 @@ msgid ""
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:348
+#: gui/partpropsdialog.cpp:353
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr "Tikrai sukurti iš naujo <filename>%1</filename> su failų sistema %2?"
 
-#: gui/partpropsdialog.cpp:349
+#: gui/partpropsdialog.cpp:354
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Keisti failų sistemą"
 
-#: gui/partpropsdialog.cpp:350
+#: gui/partpropsdialog.cpp:355
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Nekeisti failų sistemos"
 
-#: gui/partpropsdialog.cpp:369
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2627,41 +2635,125 @@ msgid ""
 "para>"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:371
+#: gui/partpropsdialog.cpp:376
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr ""
 "Ar tikrai sukurti iš naujo failų sistemą įrenginyje <filename>%1</filename>?"
 
-#: gui/partpropsdialog.cpp:372
+#: gui/partpropsdialog.cpp:377
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Sukurti iš naujo failų sistemą"
 
-#: gui/partpropsdialog.cpp:373
+#: gui/partpropsdialog.cpp:378
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
 msgstr "Nekurti iš naujo failų sistemos"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:39
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
+#: gui/partpropswidgetbase.ui:23
 #, kde-format
-msgctxt "@label:listbox"
-msgid "File syste&m:"
-msgstr "Failų siste&ma:"
+msgctxt "@label"
+msgid "First sector:"
+msgstr "Pirmas sektorius:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/partpropswidgetbase.ui:53
+#, kde-format
+msgctxt "@label"
+msgid "Size:"
+msgstr "Dydis:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
+#: gui/partpropswidgetbase.ui:63
+#, kde-format
+msgid "Partition UUID:"
+msgstr "Skaidinio UUID:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
-#: gui/partpropswidgetbase.ui:55 gui/sizedialogwidgetbase.ui:146
+#: gui/partpropswidgetbase.ui:73 gui/sizedialogwidgetbase.ui:146
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
 msgstr "Šiai failų sistemai negalima priskirti žymės."
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
+#: gui/partpropswidgetbase.ui:83
+#, kde-format
+msgctxt "@label"
+msgid "UUID:"
+msgstr "UUID:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
+#: gui/partpropswidgetbase.ui:100
+#, kde-format
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Paskutinis sektorius:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
+#: gui/partpropswidgetbase.ui:131
+#, kde-format
+msgctxt "@label"
+msgid "Status:"
+msgstr "Būsena:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
+#: gui/partpropswidgetbase.ui:141
+#, kde-format
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Laisva:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/partpropswidgetbase.ui:220
+#, kde-format
+msgctxt "@label"
+msgid "&Label:"
+msgstr "&Etiketė:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
+#: gui/partpropswidgetbase.ui:283
+#, kde-format
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Prijungimo vieta:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
+#: gui/partpropswidgetbase.ui:303
+#, kde-format
+msgctxt "@label"
+msgid "Partition type:"
+msgstr "Skaidinio tipas:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
+#: gui/partpropswidgetbase.ui:313
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "Device"
+msgid "Device path:"
+msgstr "Įrenginys"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
+#: gui/partpropswidgetbase.ui:323
+#, kde-format
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr "Sektorių skaičius:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
+#: gui/partpropswidgetbase.ui:333
+#, fuzzy, kde-format
+#| msgid "Partition table:"
+msgid "Partition Name:"
+msgstr "Skaidinių lentelė:"
+
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:68
+#: gui/partpropswidgetbase.ui:343
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -2669,108 +2761,32 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:71
+#: gui/partpropswidgetbase.ui:346
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "Sukurti iš naujo failų sistemą"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:101
-#, kde-format
-msgctxt "@label"
-msgid "Mount point:"
-msgstr "Prijungimo vieta:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:118
-#, kde-format
-msgctxt "@label"
-msgid "Partition type:"
-msgstr "Skaidinio tipas:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:128
-#, kde-format
-msgctxt "@label"
-msgid "&Label:"
-msgstr "&Etiketė:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
-#: gui/partpropswidgetbase.ui:148
-#, kde-format
-msgctxt "@label"
-msgid "Status:"
-msgstr "Būsena:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
-#: gui/partpropswidgetbase.ui:165
-#, kde-format
-msgctxt "@label"
-msgid "UUID:"
-msgstr "UUID:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
-#: gui/partpropswidgetbase.ui:195
-#, kde-format
-msgctxt "@label"
-msgid "Size:"
-msgstr "Dydis:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
-#: gui/partpropswidgetbase.ui:218
-#, kde-format
-msgctxt "@label partition capacity available"
-msgid "Available:"
-msgstr "Laisva:"
-
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:235
+#: gui/partpropswidgetbase.ui:373
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Naudojama:"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
-#: gui/partpropswidgetbase.ui:259
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/partpropswidgetbase.ui:383
 #, kde-format
-msgctxt "@label"
-msgid "First sector:"
-msgstr "Pirmas sektorius:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
-#: gui/partpropswidgetbase.ui:276
-#, kde-format
-msgctxt "@label"
-msgid "Last sector:"
-msgstr "Paskutinis sektorius:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:293
-#, kde-format
-msgctxt "@label"
-msgid "Number of sectors:"
-msgstr "Sektorių skaičius:"
+msgctxt "@label:listbox"
+msgid "File syste&m:"
+msgstr "Failų siste&ma:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:317
+#: gui/partpropswidgetbase.ui:396
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
 msgstr "&Žymės:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:362
-#, fuzzy, kde-format
-#| msgid "Partition table:"
-msgid "Partition Name:"
-msgstr "Skaidinių lentelė:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
-#: gui/partpropswidgetbase.ui:372
-#, kde-format
-msgid "Partition UUID:"
-msgstr "Skaidinio UUID:"
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:39+0000\n"
+"POT-Creation-Date: 2023-11-13 00:44+0000\n"
 "PO-Revision-Date: 2016-04-08 22:57+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -2527,38 +2527,44 @@ msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:116
-#, fuzzy, kde-kuit-format
-msgctxt "@label partition state"
-msgid "idle"
-msgstr "Aðgerðalaus"
-
-#: gui/partpropsdialog.cpp:119
+#: gui/partpropsdialog.cpp:115
 #, kde-kuit-format
-msgctxt "@label partition state"
-msgid "At least one logical partition is mounted."
+msgctxt "@item device path"
+msgid "(not found)"
 msgstr ""
 
 #: gui/partpropsdialog.cpp:121
 #, fuzzy, kde-kuit-format
 msgctxt "@label partition state"
+msgid "idle"
+msgstr "Aðgerðalaus"
+
+#: gui/partpropsdialog.cpp:124
+#, kde-kuit-format
+msgctxt "@label partition state"
+msgid "At least one logical partition is mounted."
+msgstr ""
+
+#: gui/partpropsdialog.cpp:126
+#, fuzzy, kde-kuit-format
+msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "Tengipunktur:"
 
-#: gui/partpropsdialog.cpp:123
+#: gui/partpropsdialog.cpp:128
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:127 gui/partpropsdialog.cpp:130
-#: gui/partpropsdialog.cpp:131
+#: gui/partpropsdialog.cpp:132 gui/partpropsdialog.cpp:135
+#: gui/partpropsdialog.cpp:136
 #, fuzzy, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(ekkert)"
 
-#: gui/partpropsdialog.cpp:346
+#: gui/partpropsdialog.cpp:351
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2569,25 +2575,25 @@ msgid ""
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:348
+#: gui/partpropsdialog.cpp:353
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:349
+#: gui/partpropsdialog.cpp:354
 #, fuzzy, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Skráakerfi"
 
-#: gui/partpropsdialog.cpp:350
+#: gui/partpropsdialog.cpp:355
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:369
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2598,7 +2604,7 @@ msgid ""
 "para>"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:371
+#: gui/partpropsdialog.cpp:376
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "SMART Properties: <filename>%1</filename>"
@@ -2606,34 +2612,117 @@ msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "SMART eiginleikar: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:372
+#: gui/partpropsdialog.cpp:377
 #, fuzzy, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Skráakerfi"
 
-#: gui/partpropsdialog.cpp:373
+#: gui/partpropsdialog.cpp:378
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:39
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
+#: gui/partpropswidgetbase.ui:23
 #, fuzzy, kde-format
-msgctxt "@label:listbox"
-msgid "File syste&m:"
-msgstr "Skráakerfi:"
+msgctxt "@label"
+msgid "First sector:"
+msgstr "Fyrsti geiri:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/partpropswidgetbase.ui:53
+#, fuzzy, kde-format
+msgctxt "@label"
+msgid "Size:"
+msgstr "Stærð:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
+#: gui/partpropswidgetbase.ui:63
+#, fuzzy, kde-format
+#| msgid "Partition"
+msgid "Partition UUID:"
+msgstr "Disksneið"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
-#: gui/partpropswidgetbase.ui:55 gui/sizedialogwidgetbase.ui:146
+#: gui/partpropswidgetbase.ui:73 gui/sizedialogwidgetbase.ui:146
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
 msgstr ""
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
+#: gui/partpropswidgetbase.ui:83
+#, kde-format
+msgctxt "@label"
+msgid "UUID:"
+msgstr "UUID:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
+#: gui/partpropswidgetbase.ui:100
+#, fuzzy, kde-format
+msgctxt "@label"
+msgid "Last sector:"
+msgstr "Síðasti geiri:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
+#: gui/partpropswidgetbase.ui:131
+#, fuzzy, kde-format
+msgctxt "@label"
+msgid "Status:"
+msgstr "Staða:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
+#: gui/partpropswidgetbase.ui:141
+#, fuzzy, kde-format
+msgctxt "@label partition capacity available"
+msgid "Available:"
+msgstr "Tiltæk:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/partpropswidgetbase.ui:220
+#, fuzzy, kde-format
+msgctxt "@label"
+msgid "&Label:"
+msgstr "&Heiti:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
+#: gui/partpropswidgetbase.ui:283
+#, fuzzy, kde-format
+msgctxt "@label"
+msgid "Mount point:"
+msgstr "Tengipunktur:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
+#: gui/partpropswidgetbase.ui:303
+#, kde-format
+msgctxt "@label"
+msgid "Partition type:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
+#: gui/partpropswidgetbase.ui:313
+#, fuzzy, kde-format
+msgid "Device path:"
+msgstr "Tæki"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
+#: gui/partpropswidgetbase.ui:323
+#, kde-format
+msgctxt "@label"
+msgid "Number of sectors:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
+#: gui/partpropswidgetbase.ui:333
+#, fuzzy, kde-format
+#| msgid "Partition"
+msgid "Partition Name:"
+msgstr "Disksneið"
+
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:68
+#: gui/partpropswidgetbase.ui:343
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -2641,111 +2730,34 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:71
+#: gui/partpropswidgetbase.ui:346
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:101
-#, fuzzy, kde-format
-msgctxt "@label"
-msgid "Mount point:"
-msgstr "Tengipunktur:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:118
-#, kde-format
-msgctxt "@label"
-msgid "Partition type:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:128
-#, fuzzy, kde-format
-msgctxt "@label"
-msgid "&Label:"
-msgstr "&Heiti:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
-#: gui/partpropswidgetbase.ui:148
-#, fuzzy, kde-format
-msgctxt "@label"
-msgid "Status:"
-msgstr "Staða:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
-#: gui/partpropswidgetbase.ui:165
-#, kde-format
-msgctxt "@label"
-msgid "UUID:"
-msgstr "UUID:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
-#: gui/partpropswidgetbase.ui:195
-#, fuzzy, kde-format
-msgctxt "@label"
-msgid "Size:"
-msgstr "Stærð:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
-#: gui/partpropswidgetbase.ui:218
-#, fuzzy, kde-format
-msgctxt "@label partition capacity available"
-msgid "Available:"
-msgstr "Tiltæk:"
-
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:235
+#: gui/partpropswidgetbase.ui:373
 #, fuzzy, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Notað:"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
-#: gui/partpropswidgetbase.ui:259
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/partpropswidgetbase.ui:383
 #, fuzzy, kde-format
-msgctxt "@label"
-msgid "First sector:"
-msgstr "Fyrsti geiri:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
-#: gui/partpropswidgetbase.ui:276
-#, fuzzy, kde-format
-msgctxt "@label"
-msgid "Last sector:"
-msgstr "Síðasti geiri:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:293
-#, kde-format
-msgctxt "@label"
-msgid "Number of sectors:"
-msgstr ""
+msgctxt "@label:listbox"
+msgid "File syste&m:"
+msgstr "Skráakerfi:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:317
+#: gui/partpropswidgetbase.ui:396
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "&Flags:"
 msgctxt "@label"
 msgid "&Flags:"
 msgstr "&Flögg"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:362
-#, fuzzy, kde-format
-#| msgid "Partition"
-msgid "Partition Name:"
-msgstr "Disksneið"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
-#: gui/partpropswidgetbase.ui:372
-#, fuzzy, kde-format
-#| msgid "Partition"
-msgid "Partition UUID:"
-msgstr "Disksneið"
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format
