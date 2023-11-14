@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-13 00:44+0000\n"
-"PO-Revision-Date: 2023-07-06 22:37+0300\n"
+"POT-Creation-Date: 2023-11-14 01:40+0000\n"
+"PO-Revision-Date: 2023-11-13 05:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 23.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2598,9 +2598,7 @@ msgid "(none found)"
 msgstr "(bulunamadı)"
 
 #: gui/partpropsdialog.cpp:115
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(bulunamadı)"
@@ -2782,11 +2780,9 @@ msgstr "Bölüntü türü:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:313
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "Aygıt"
+msgstr "Aygıt yolu:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:323
@@ -3422,7 +3418,7 @@ msgctxt "@info:credit"
 msgid "Improved SMART support"
 msgstr "İyileştirilmiş SMART desteği"
 
-#: main.cpp:104
+#: main.cpp:101
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"

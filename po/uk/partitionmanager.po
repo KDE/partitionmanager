@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-13 00:44+0000\n"
-"PO-Revision-Date: 2023-03-12 09:04+0200\n"
+"POT-Creation-Date: 2023-11-14 01:40+0000\n"
+"PO-Revision-Date: 2023-11-13 17:57+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -2622,9 +2622,7 @@ msgid "(none found)"
 msgstr "(не знайдено)"
 
 #: gui/partpropsdialog.cpp:115
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(не знайдено)"
@@ -2807,11 +2805,9 @@ msgstr "Тип розділу:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:313
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "Пристрій"
+msgstr "Шлях до пристрою:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:323
@@ -3447,7 +3443,7 @@ msgctxt "@info:credit"
 msgid "Improved SMART support"
 msgstr "Поліпшив підтримку SMART"
 
-#: main.cpp:104
+#: main.cpp:101
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"

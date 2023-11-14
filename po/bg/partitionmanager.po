@@ -3,13 +3,13 @@
 #
 # Valeriy Voutov <valeriy.voutov@gmail.com>, 2009.
 # Yasen Pramatarov <yasen@lindeas.com>, 2009, 2010, 2011.
-# Mincho Kondarev <mkondarev@yahoo.de>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-13 00:44+0000\n"
-"PO-Revision-Date: 2023-03-13 17:25+0100\n"
+"POT-Creation-Date: 2023-11-14 01:40+0000\n"
+"PO-Revision-Date: 2023-11-13 13:19+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2597,9 +2597,7 @@ msgid "(none found)"
 msgstr "(не е открито)"
 
 #: gui/partpropsdialog.cpp:115
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(не е открито)"
@@ -2785,11 +2783,9 @@ msgstr "Вид на дяла:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:313
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "Устройство"
+msgstr "Път до устройство:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:323
@@ -3424,7 +3420,7 @@ msgctxt "@info:credit"
 msgid "Improved SMART support"
 msgstr "Подобрена SMART поддръжка"
 
-#: main.cpp:104
+#: main.cpp:101
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"
