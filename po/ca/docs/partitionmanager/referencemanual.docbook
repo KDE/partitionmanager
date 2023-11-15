@@ -6,7 +6,7 @@
 		<title
 >Vista general</title>
 		<para
->Aquest capítol dona explicacions detallades de totes les ordres disponibles en el &partman;. Està pensat com una referència per acompanyar a la informació donada en <xref linkend="usermanual"/>.</para>
+>Aquest capítol dona explicacions detallades de totes les ordres disponibles en el &partman;. Està pensat com una referència per a acompanyar a la informació donada en <xref linkend="usermanual"/>.</para>
 
 	<sect2 id="menu-file">
 		<title
@@ -99,7 +99,7 @@
 						<para
 ><action
 >Aplica la llista d'operacions</action
->. Aquesta ordre aplicarà totes les operacions de la llista per tant tots els canvis s'escriuran permanentment en el vostre disc. Després que les operacions s'hagin aplicat, la llista és netejada i ni hi haurà forma de desfer cap operació. </para>
+>. Aquesta ordre aplicarà totes les operacions de la llista, per tant, tots els canvis s'escriuran permanentment en el vostre disc. Després que les operacions s'hagin aplicat, la llista és netejada i ni hi haurà forma de desfer cap operació. </para>
 						<para
 >Aquesta ordre només és habilitada si la llista d'operacions no és buida. </para>
 					</listitem>
@@ -260,7 +260,7 @@
 						<para
 ><action
 >Crea una partició nova</action
->: obre el diàleg per crear una partició nova on podreu establir el tipus, la mida, la posició i el sistema de fitxers de la partició a crear. </para>
+>: obre el diàleg per a crear una partició nova on podreu establir el tipus, la mida, la posició i el sistema de fitxers de la partició a crear. </para>
 						<para
 >Si us plau, noteu que la taula de particions d'un dispositiu pot imposar restriccions sobre quantes particions es poden crear. Les taules de particions MS-DOS, per exemple, només permeten quatre particions primàries. </para>
 						<para
@@ -286,11 +286,7 @@
 						<para
 ><action
 >Redimensiona o mou una partició</action
->: obre el diàleg per redimensionar o moure una partició existent. Depenent del sistema de fitxers de la partició i de les eines externes instal·lades en el vostre ordinador, no totes les tres accions relacionades amb la mida -- moure la partició, fer-la més petita (<quote
->encongir-la</quote
->) o fer-la més gran (<quote
->engrandir-la</quote
->) -- poden estar disponibles en aquest diàleg. Mireu <xref linkend="menu-tools-filesystemsupport"/>. </para>
+>: obre el diàleg per a redimensionar o moure una partició existent. Depenent del sistema de fitxers de la partició i de les eines externes instal·lades en el vostre ordinador, no totes les tres accions relacionades amb la mida -- moure la partició, fer-la més petita («encongir-la») o fer-la més gran («engrandir-la») -- poden estar disponibles en aquest diàleg. Mireu <xref linkend="menu-tools-filesystemsupport"/>. </para>
 						<para
 >Aquesta opció està habilitada només si està seleccionada una partició que no està muntada i el seu sistema de fitxers es pot encongir, engrandir o moure. Per una partició ampliada, només està habilitada si cap de les particions lògiques de la partició ampliada està muntada. </para>
 					</listitem>
@@ -396,7 +392,7 @@
 						<para
 >En enganxar a una àrea sense assignar, s'obre un diàleg permetent-vos moure o engrandir la còpia inserida. En sobreescriure una partició existent no es mostra aquest diàleg. </para>
 						<para
->Aquesta ordre només està habilitada si hi ha una partició en el porta-retalls i s'ha seleccionat un objectiu vàlid (ja bé sigui una partició o una àrea sense assignar). L'objectiu ha de ser prou gran per allotjar l'origen i no pot estar muntat. No podeu copiar una partició en ella mateixa. </para>
+>Aquesta ordre només està habilitada si hi ha una partició en el porta-retalls i s'ha seleccionat un objectiu vàlid (ja bé sigui una partició o una àrea sense assignar). L'objectiu ha de ser prou gran per a allotjar l'origen i no pot estar muntat. No podeu copiar una partició en ella mateixa. </para>
 						<warning>
 							<title
 >Avís: possible pèrdua de dades</title>
@@ -418,7 +414,7 @@
 						<para
 ><action
 >Obre un diàleg</action
-> per editar el punt de muntatge i les opcions de muntatge. </para>
+> per a editar el punt de muntatge i les opcions de muntatge. </para>
 						<para
 >Aquesta ordre només es troba activada si la partició no està muntada. </para>
 					</listitem>
@@ -454,7 +450,7 @@
 						<para
 ><action
 >Comprova una partició</action
->: aquesta ordre comprova la partició seleccionada i el seu sistema de fitxers per cercar errors i prova de corregir qualsevol problema que trobi. Durant aquest procés el sistema de fitxers de la partició és redimensionarà per emplenar completament la partició. </para>
+>: aquesta ordre comprova la partició seleccionada i el seu sistema de fitxers per a cercar errors i prova de corregir qualsevol problema que trobi. Durant aquest procés el sistema de fitxers de la partició es redimensionarà per a emplenar completament la partició. </para>
 						<para
 >Aquesta ordre només estarà habilitada si la partició seleccionada es pot comprovar i no està muntada. </para>
 					</listitem>
@@ -474,7 +470,7 @@
 >Crea una còpia de seguretat d'una partició</action
 >: aquesta ordre crea una còpia de seguretat del sistema de fitxers de la partició seleccionada en un fitxer. Sereu preguntat on voleu emmagatzemar el fitxer d'imatge després d'activar aquesta ordre. </para>
 						<para
->El fitxer d'imatge creat és una còpia sector per sector del sistema de fitxers de la partició. No està comprimida i té cap meta informació o capçalera afegida, per tant es pot muntar directament usant un dispositiu loop fora del &partman; si el sistema operatiu ho permet. </para>
+>El fitxer d'imatge creat és una còpia sector per sector del sistema de fitxers de la partició. No està comprimida i té cap meta informació o capçalera afegida, per tant, es pot muntar directament usant un dispositiu loop fora del &partman; si el sistema operatiu ho permet. </para>
 						<para
 >Aquesta ordre només està habilitada si es pot fer una còpia de seguretat de la partició seleccionada i el sistema de fitxers. La partició tampoc pot estar muntada. </para>
 					</listitem>
@@ -492,7 +488,7 @@
 						<para
 ><action
 >Restaura una partició</action
->: aquesta ordre restaura un sistema de fitxers des d'un fitxer a una partició. Sereu preguntat pel nom del fitxer d'imatge a restaurar després d'activar aquesta ordre. L'objectiu a restaurar ha de ser prou gran per allotjar el fitxer d'imatge. </para>
+>: aquesta ordre restaura un sistema de fitxers des d'un fitxer a una partició. Sereu preguntat pel nom del fitxer d'imatge a restaurar després d'activar aquesta ordre. L'objectiu a restaurar ha de ser prou gran per a allotjar el fitxer d'imatge. </para>
 						<para
 >Aquesta ordre només està habilitada si està seleccionada una partició o àrea sense assignar que no està muntada. </para>
 						<warning>
@@ -622,15 +618,11 @@
 							</screenshot>
 						</para>
 						<para
->Les marques de selecció en blau volen dir <quote
->implementat</quote
->, les creus vermelles volen dir <quote
->no implementat</quote
->. Algunes combinacions mai estan implementades, per exemple la comprovació d'un sistema de fitxers linuxswap, perquè és inherentment impossible. Altres no poden estar implementades perquè les eines externes manquen d'aquesta funcionalitat. </para>
+>Les marques de selecció en blau volen dir «implementat», les creus vermelles volen dir «no implementat». Algunes combinacions mai estan implementades, per exemple la comprovació d'un sistema de fitxers linuxswap, perquè és inherentment impossible. Altres no poden estar implementades perquè les eines externes manquen d'aquesta funcionalitat. </para>
 						<para
 >Si heu instal·lat eines noves mentre el &partman; és en execució, cliqueu a <guibutton
 >Torna a explorar la compatibilitat</guibutton
-> per forçar una recomprovació de les eines de compatibilitat amb els sistemes de fitxers instal·lats. </para>
+> per a forçar una recomprovació de les eines de compatibilitat amb els sistemes de fitxers instal·lats. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>

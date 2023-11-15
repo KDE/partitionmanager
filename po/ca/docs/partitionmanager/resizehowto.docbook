@@ -21,17 +21,9 @@
 	</para>
 
 	<para
->La partició <quote
->sdb2</quote
->, del <glossterm linkend="glossary-device"
+>La partició «sdb2», del <glossterm linkend="glossary-device"
 >dispositiu</glossterm
-> <quote
->/dev/sdb</quote
->, té només una mica d'espai lliure mentre que l'altra partició, <quote
->sdb1</quote
->, està lluny d'estar plena. Per aquesta raó és recomanable fer la primera partició una mica més petita i engrandir <quote
->sdb2</quote
-> per tal que tingui més espai lliure disponible. </para>
+> «/dev/sdb», té només una mica d'espai lliure mentre que l'altra partició, «sdb1», està lluny d'estar plena. Per aquesta raó és recomanable fer la primera partició una mica més petita i engrandir «sdb2» per tal que tingui més espai lliure disponible. </para>
 
 	<note>
 		<title
@@ -41,9 +33,7 @@
 	</note>
 
 	<para
->El primer pas és fer més espai perquè creixi la partició, per tant comenceu encongint la partició <quote
->sdb1</quote
->. Cliqueu en la partició i seleccioneu <xref linkend="menu-partition-resize"/>. Apareixerà el següent diàleg: </para>
+>El primer pas és fer més espai perquè creixi la partició, per tant, comenceu encongint la partició «sdb1». Cliqueu en la partició i seleccioneu <xref linkend="menu-partition-resize"/>. Apareixerà el següent diàleg: </para>
 
 	<para>
 		<screenshot>
@@ -64,7 +54,7 @@
 >. Una altra possibilitat pot ser ajustar la mida clicant en les petites fletxes pròximes al camp de text, però això és una mica tediós per canvis grans. </para>
 
 	<para
->Sigui quina sigui la manera que preferiu per establir la mida nova, el diàleg ara s'ha de veure així: </para>
+>Sigui quina sigui la manera que preferiu per a establir la mida nova, el diàleg ara s'ha de veure així: </para>
 
 	<para>
 		<screenshot>
@@ -82,7 +72,7 @@
 	<para
 >Després que cliqueu en <guibutton
 >D'acord</guibutton
->, s'afegirà una operació nova a la llista d'operacions pendents i la vista gràfica i la vista en arbre del dispositiu s'actualitzarà per reflectir la situació nova: </para>
+>, s'afegirà una operació nova a la llista d'operacions pendents i la vista gràfica i la vista en arbre del dispositiu s'actualitzarà per a reflectir la situació nova: </para>
 
 	<para>
 		<screenshot>
@@ -101,15 +91,11 @@
 		<title
 >Nota: les operacions són previsualitzades primer abans d'aplicar-les.</title>
 		<para
->Tot i que la finestra principal reflecteix quin serà l'estat del dispositiu després d'aplicar l'operació nova, l'operació encara no s'ha aplicat: Mentre les operacions estiguin pendents encara podeu desfer-les (d'una en una usant <xref linkend="menu-edit-undo"/> o <xref linkend="menu-edit-clear"/> per desfer-les totes) o sortir del &partman; i no s'haurà modificat res.</para>
+>Tot i que la finestra principal reflecteix quin serà l'estat del dispositiu després d'aplicar l'operació nova, l'operació encara no s'ha aplicat: Mentre les operacions estiguin pendents encara podeu desfer-les (d'una en una usant <xref linkend="menu-edit-undo"/> o <xref linkend="menu-edit-clear"/> per a desfer-les totes) o sortir del &partman; i no s'haurà modificat res.</para>
 	</note>
 	
 	<para
->Ara que hi ha una mica d'espai lliure entre les dues particions podeu moure i engrandir la partició <quote
->sdb2</quote
->. Primer cliqueu en <quote
->sdb2</quote
-> i seleccioneu <xref linkend="menu-partition-resize"/> de nou. El diàleg de redimensionament apareixerà una vegada més, aquesta vegada per la segona partició. Arrossegueu el seu tirador esquerre al màxim a l'esquerra de manera que el diàleg s'ha de veure així: </para>
+>Ara que hi ha una mica d'espai lliure entre les dues particions podeu moure i engrandir la partició «sdb2». Primer cliqueu en «sdb2» i seleccioneu <xref linkend="menu-partition-resize"/> de nou. El diàleg de redimensionament apareixerà una vegada més, aquesta vegada per la segona partició. Arrossegueu el seu tirador esquerre al màxim a l'esquerra de manera que el diàleg s'ha de veure així: </para>
 
 	<para>
 		<screenshot>
@@ -127,9 +113,7 @@
 	<para
 >Tingueu cura d'assegurar-vos que el camp de text <guilabel
 >Espai lliure abans</guilabel
-> realment mostra <quote
->0 MiB</quote
-> perquè si no fos així, hi haurà una mica d'espai lliure entre les particions que es perdrà. </para>
+> realment mostra «0 MiB» perquè si no fos així, hi haurà una mica d'espai lliure entre les particions que es perdrà. </para>
 
 	<para
 >Ara torneu a clicar <guibutton
@@ -150,7 +134,7 @@
 	</para>
 
 	<para
->Això ja s'assembla al que volíeu, per tant seleccioneu <xref linkend="menu-edit-apply"/>. Apareixerà un diàleg i se us preguntarà si esteu segur d'aplicar les operacions pendents. Confirmeu aquest diàleg i el &partman; començarà a executar les operacions: </para>
+>Això ja s'assembla al que volíeu, per tant, seleccioneu <xref linkend="menu-edit-apply"/>. Apareixerà un diàleg i se us preguntarà si esteu segur d'aplicar les operacions pendents. Confirmeu aquest diàleg i el &partman; començarà a executar les operacions: </para>
 
 	<para>
 		<screenshot>
@@ -166,12 +150,10 @@
 	</para>
 
 	<para
->Mentre s'estan executant les operacions podeu clicar en el signe + proper a cada operació de la llista per trobar les tasques que s'estan fent i veure quina tasca s'està executant. </para>
+>Mentre s'estan executant les operacions podeu clicar en el signe + proper a cada operació de la llista per a trobar les tasques que s'estan fent i veure quina tasca s'està executant. </para>
 
 	<para
->Redimensionar una partició de la manera que heu redimensionat amunt <quote
->/dev/sdb2</quote
-> sempre significa que s'ha de moure primer a l'esquerra abans que pugui engrandir-se perquè les particions mai poden créixer directament cap a l'esquerra. Malauradament, moure aquests tipus de particions grans pren molt de temps. No és inusual que una operació com aquesta trigui alguns minuts o encara més. </para>
+>Redimensionar una partició de la manera que heu redimensionat amunt «/dev/sdb2» sempre significa que s'ha de moure primer a l'esquerra abans que pugui engrandir-se perquè les particions mai poden créixer directament cap a l'esquerra. Malauradament, moure aquests tipus de particions grans pren molt de temps. No és inusual que una operació com aquesta trigui alguns minuts o encara més. </para>
 
 	<para
 >Finalment totes les operacions s'han completat amb èxit: </para>
@@ -213,7 +195,7 @@
 	</para>
 
 	<para
->Aquest informe és particularment interessant si ocorre un error en executar les operacions. Un informe mostra cada operació, cada tasca i cada ordre externa que s'està executant i per tant és molt útil en intentar de fer un seguiment dels problemes. </para>
+>Aquest informe és particularment interessant si ocorre un error en executar les operacions. Un informe mostra cada operació, cada tasca i cada ordre externa que s'està executant i, per tant, és molt útil en intentar de fer un seguiment dels problemes. </para>
 
 	<para
 >Podeu desar l'informe com a <acronym
@@ -224,13 +206,13 @@
 		<para
 >Deseu sempre l'informe detallat com a <acronym
 >HTML</acronym
-> si en executar les operacions fallen amb errors o avisos per tenir una referència posterior. Potser també voldreu afegir-lo en un informe d'errors per enviar-lo al sistema de seguiments d'errors del &kde; a <ulink url="https://bugs.kde.org"
+> si en executar les operacions fallen amb errors o avisos per a tenir una referència posterior. Potser també voldreu afegir-lo en un informe d'errors per a enviar-lo al sistema de seguiments d'errors del &kde; a <ulink url="https://bugs.kde.org"
 >bugs.kde.org</ulink
 >. </para>
 	</tip>
 	
 	<para
->Per ocultar els detalls, novament cliqueu en <guibutton
+>Per a ocultar els detalls, novament cliqueu en <guibutton
 >Detalls</guibutton
 > i finalment tanqueu el diàleg de progrés clicant en <guibutton
 >D'acord</guibutton

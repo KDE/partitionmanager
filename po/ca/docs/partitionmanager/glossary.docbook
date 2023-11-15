@@ -26,7 +26,7 @@
 >dispositiu</link
 >. Alguns sistemes operatius i moltes eines de disc requereixen que les <link linkend="glossary-partition"
 >particions</link
-> comencin i acabin en un cilindre. El &partman; per tant ajusta automàticament les particions als límits del cilindre en canviar el seu inici o final. </para
+> comencin i acabin en un cilindre. Per tant, el &partman; ajusta automàticament les particions als límits del cilindre en canviar el seu inici o final. </para
 ><glossseealso otherterm="glossary-head"
 ></glossseealso
 > <glossseealso otherterm="glossary-sector"
@@ -226,9 +226,7 @@
 >LUKS</glossterm>
 		<glossdef>
 			<para
-><quote
->Linux Unified Key Setup</quote
-> és el format d'encriptatge estàndard per a Linux. </para>
+>«Linux Unified Key Setup» és el format d'encriptatge estàndard per a Linux. </para>
 		</glossdef>
 	</glossentry>
 
@@ -242,7 +240,7 @@
 			<member
 >Els volums físics LVM són particions en el disc on l'espai és gestionat pel LVM.</member>
 			<member
->El grup de volums LVM és una col·lecció de volums físics LVM que es pot dividir en particions lògiques. Podria utilitzar-se per crear sistemes de fitxers que abastin a través de múltiples dispositius o per dividir el volum <link linkend="glossary-luks"
+>El grup de volums LVM és una col·lecció de volums físics LVM que es pot dividir en particions lògiques. Podria utilitzar-se per a crear sistemes de fitxers que abastin a través de múltiples dispositius o per a dividir el volum <link linkend="glossary-luks"
 >LUKS</link
 > encriptat en particions més petites.</member>
 			<member
@@ -262,7 +260,7 @@
 >ordres</link
 >. </para>
 			<para
->Les operacions són les més visibles de les tres. Si seleccioneu una opció en la interfície gràfica d'usuari, això probablement es traduirà en una nova operació que s'afegirà a la llista de les operacions pendents. La idea darrere d'això és aquesta: el més probable és que vulgueu crear un bon nombre de passos per transformar l'estat actual dels vostres dispositius de disc per a l'estat que teniu al cap. Alguns d'aquests passos trigar força a executar-se (com copiar un sistema de fitxers de gran mida o canviar la mida d'un sistema de fitxers que està gairebé ple). Per estalviar-vos d'haver de seure davant de l'equip una bona estona esperant que un pas s'acabi i tornar a iniciar el següent, les operacions us permeten especificar exactament com s'han de veure els dispositius de l'ordinador una vegada que tot ha acabat, i a continuació permetre que el &partman; apliqui les operacions i torni quan les hagi executat totes. </para>
+>Les operacions són les més visibles de les tres. Si seleccioneu una opció en la interfície gràfica d'usuari, això probablement es traduirà en una nova operació que s'afegirà a la llista de les operacions pendents. La idea darrere d'això és aquesta: el més probable és que vulgueu crear un bon nombre de passos per a transformar l'estat actual dels vostres dispositius de disc per a l'estat que teniu al cap. Alguns d'aquests passos trigar força a executar-se (com copiar un sistema de fitxers de gran mida o canviar la mida d'un sistema de fitxers que està gairebé ple). Per a estalviar-vos d'haver de seure davant de l'equip una bona estona esperant que s'acabi un pas i tornar a iniciar el següent, les operacions us permeten especificar exactament com s'han de veure els dispositius de l'ordinador una vegada que tot ha acabat, i a continuació permetre que el &partman; apliqui les operacions i torni quan les hagi executat totes. </para>
 			<para
 >Les operacions es mantenen en una llista d'operacions pendents. Mentre una operació no s'ha aplicat encara es pot <link linkend="menu-edit-undo"
 >tornar enrere fàcilment</link
@@ -317,13 +315,11 @@
 			<para
 >Una petita secció al començament d'un <link linkend="glossary-device"
 >dispositiu</link
-> usat per emmagatzemar informació quant a la disposició de les <link linkend="glossary-partition"
+> usat per a emmagatzemar informació quant a la disposició de les <link linkend="glossary-partition"
 >particions</link
 > del dispositiu. Hi ha diferents tipus de taules de particions, cada un amb les seves pròpies limitacions. </para>
 			<para
->Algunes vegades també s'hi fa referència com a <quote
->etiqueta del disc</quote
->. </para>
+>Algunes vegades també s'hi fa referència com a «etiqueta del disc». </para>
 		</glossdef>
 	</glossentry>
 

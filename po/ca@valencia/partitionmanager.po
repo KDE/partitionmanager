@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 01:40+0000\n"
-"PO-Revision-Date: 2023-11-13 13:26+0100\n"
+"POT-Creation-Date: 2023-11-15 01:40+0000\n"
+"PO-Revision-Date: 2023-11-14 16:02+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -481,73 +481,73 @@ msgstr "Guarda"
 msgid "Open in External Browser"
 msgstr "Obri en un navegador extern"
 
-#: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
+#: gui/applyprogressdialog.cpp:83 gui/applyprogressdialog.cpp:172
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
 msgstr "&Detalls"
 
-#: gui/applyprogressdialog.cpp:126
+#: gui/applyprogressdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
 msgstr "S'està configurant..."
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "Segur que voleu cancel·lar?"
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
 msgstr "Cancel·la les operacions en execució"
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
 msgstr "Sí, cancel·la les operacions"
 
-#: gui/applyprogressdialog.cpp:201
+#: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
 msgstr "S'està esperant que l'execució s'acabe..."
 
-#: gui/applyprogressdialog.cpp:222
+#: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
 msgstr "S'han finalitzat totes les operacions amb èxit."
 
-#: gui/applyprogressdialog.cpp:227
+#: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
 msgstr "Operacions cancel·lades."
 
-#: gui/applyprogressdialog.cpp:232
+#: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
 msgstr "S'han produït errors en aplicar les operacions. S'ha interromput."
 
-#: gui/applyprogressdialog.cpp:346
+#: gui/applyprogressdialog.cpp:341
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
 msgstr "[%1/%2] - %3: %4"
 
-#: gui/applyprogressdialog.cpp:380
+#: gui/applyprogressdialog.cpp:375
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Temps total: %1"
 
-#: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1043
 #: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
@@ -558,13 +558,13 @@ msgstr ""
 "No s'ha pogut crear el fitxer temporal en intentar guardar a <filename>%1</"
 "filename>."
 
-#: gui/applyprogressdialog.cpp:428
+#: gui/applyprogressdialog.cpp:423
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
 msgstr "No s'ha pogut guardar l'informe."
 
-#: gui/applyprogressdialog.cpp:452
+#: gui/applyprogressdialog.cpp:447
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
@@ -572,7 +572,7 @@ msgstr ""
 "No s'ha pogut crear el fitxer temporal <filename>%1</filename> per a "
 "escriptura."
 
-#: gui/applyprogressdialog.cpp:452
+#: gui/applyprogressdialog.cpp:447
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."
@@ -2448,7 +2448,7 @@ msgstr ""
 "altra (o amb un fitxer d'imatge) destruirà totes les dades a la partició de "
 "destinació.</para><para>Si continueu ara i apliqueu l'operació resultant en "
 "la finestra principal, totes les dades emmagatzemades a <filename>%1</"
-"filename> se sobreescriuran i seran irrecuperable.</para>"
+"filename> se sobreescriuran i seran irrecuperables.</para>"
 
 #: gui/partitionmanagerwidget.cpp:726
 #, kde-kuit-format

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 01:40+0000\n"
-"PO-Revision-Date: 2023-03-14 05:11+0100\n"
+"POT-Creation-Date: 2023-11-15 01:40+0000\n"
+"PO-Revision-Date: 2023-11-14 05:52+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -477,73 +477,73 @@ msgstr "შენახვა"
 msgid "Open in External Browser"
 msgstr "გარე ბრაუზერში გახსნა"
 
-#: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
+#: gui/applyprogressdialog.cpp:83 gui/applyprogressdialog.cpp:172
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
 msgstr "&დეტალები"
 
-#: gui/applyprogressdialog.cpp:126
+#: gui/applyprogressdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
 msgstr "&მორგება..."
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "ნამდვილად გსურთ ამ ამოცანის გაუქმება?"
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
 msgstr "ყველა ოპერაციის გაუქმება"
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
 msgstr "დიახ, ყველა ოპერაციის გაუქმება"
 
-#: gui/applyprogressdialog.cpp:201
+#: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
 msgstr "ოპერაციის დასასრულის მოლოდინი..."
 
-#: gui/applyprogressdialog.cpp:222
+#: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
 msgstr "ყველა ოპერაცია წარმატებით დასრულდა."
 
-#: gui/applyprogressdialog.cpp:227
+#: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
 msgstr "ოპერაციები გაუქმდა."
 
-#: gui/applyprogressdialog.cpp:232
+#: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
 msgstr "შეცდომები ოპერაციის გადატარებისას. გაუქმებულია."
 
-#: gui/applyprogressdialog.cpp:346
+#: gui/applyprogressdialog.cpp:341
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
 msgstr "[%1/%2] - %3: %4"
 
-#: gui/applyprogressdialog.cpp:380
+#: gui/applyprogressdialog.cpp:375
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "ჯამური დრო: %1"
 
-#: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1043
 #: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
@@ -553,20 +553,20 @@ msgid ""
 msgstr ""
 "დროებითი ფაილის შექმნა შეძლებელია <filename>%1</filename>-ში ჩაწერისას."
 
-#: gui/applyprogressdialog.cpp:428
+#: gui/applyprogressdialog.cpp:423
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
 msgstr "ანგარიშის შენახვა შეუძლებელია."
 
-#: gui/applyprogressdialog.cpp:452
+#: gui/applyprogressdialog.cpp:447
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
 msgstr ""
 "<filename>%1</filename>-ში ჩაწერისას დროებითი ფაილის შექმნა შეუძლებელია."
 
-#: gui/applyprogressdialog.cpp:452
+#: gui/applyprogressdialog.cpp:447
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."
@@ -2589,12 +2589,10 @@ msgid "(none found)"
 msgstr "(არაფერია ნაპოვნი)"
 
 #: gui/partpropsdialog.cpp:115
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
-msgstr "(არაფერია ნაპოვნი)"
+msgstr "(ვერ მოიძებნა)"
 
 #: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
@@ -2773,11 +2771,9 @@ msgstr "დანაყოფის ტიპი:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:313
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "მოწყობილობა"
+msgstr "მოწყობილობის ბილიკი:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:323

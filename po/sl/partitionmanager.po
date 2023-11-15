@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 01:40+0000\n"
+"POT-Creation-Date: 2023-11-15 01:40+0000\n"
 "PO-Revision-Date: 2023-11-13 09:42+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "X-Generator: Poedit 3.4.1\n"
 
@@ -479,73 +479,73 @@ msgstr "Shrani"
 msgid "Open in External Browser"
 msgstr "Odpri v zunanjem brskalniku"
 
-#: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
+#: gui/applyprogressdialog.cpp:83 gui/applyprogressdialog.cpp:172
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
 msgstr "Po&drobnosti"
 
-#: gui/applyprogressdialog.cpp:126
+#: gui/applyprogressdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
 msgstr "Nastavljanje ..."
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "Ali res želite preklicati?"
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
 msgstr "Prekliči opravila v teku"
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
 msgstr "Da, prekliči opravila"
 
-#: gui/applyprogressdialog.cpp:201
+#: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
 msgstr "Čakanje, da se opravilo konča ..."
 
-#: gui/applyprogressdialog.cpp:222
+#: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
 msgstr "Vsa opravila so bila uspešno končana."
 
-#: gui/applyprogressdialog.cpp:227
+#: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
 msgstr "Opravila preklicana."
 
-#: gui/applyprogressdialog.cpp:232
+#: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
 msgstr "Med uveljavljanjem opravil je prišlo do napak. Prekinjeno."
 
-#: gui/applyprogressdialog.cpp:346
+#: gui/applyprogressdialog.cpp:341
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
 msgstr "[%1/%2] - %3: %4"
 
-#: gui/applyprogressdialog.cpp:380
+#: gui/applyprogressdialog.cpp:375
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Skupni čas: %1"
 
-#: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1043
 #: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
@@ -556,13 +556,13 @@ msgstr ""
 "Med shranjevanjem na <filename>%1</filename> ni bilo mogoče ustvariti "
 "začasne datoteke."
 
-#: gui/applyprogressdialog.cpp:428
+#: gui/applyprogressdialog.cpp:423
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
 msgstr "Ni bilo mogoče shraniti poročila."
 
-#: gui/applyprogressdialog.cpp:452
+#: gui/applyprogressdialog.cpp:447
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
@@ -570,7 +570,7 @@ msgstr ""
 "Ni bilo mogoče ustvariti začasne datoteke <filename>%1</filename> za "
 "zapisovanje."
 
-#: gui/applyprogressdialog.cpp:452
+#: gui/applyprogressdialog.cpp:447
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."

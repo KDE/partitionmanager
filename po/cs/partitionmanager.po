@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2023 Vít Pelčák <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2010, 2012.
 # Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
 #
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 01:40+0000\n"
-"PO-Revision-Date: 2023-06-22 08:27+0200\n"
+"POT-Creation-Date: 2023-11-15 01:40+0000\n"
+"PO-Revision-Date: 2023-11-14 13:52+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -478,73 +478,73 @@ msgstr "Uložit"
 msgid "Open in External Browser"
 msgstr "Otevřít v externím prohlížeči"
 
-#: gui/applyprogressdialog.cpp:84 gui/applyprogressdialog.cpp:173
+#: gui/applyprogressdialog.cpp:83 gui/applyprogressdialog.cpp:172
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
 msgstr "Po&drobnosti"
 
-#: gui/applyprogressdialog.cpp:126
+#: gui/applyprogressdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
 msgstr "Nastavuji..."
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "Přejete si opravdu přerušit?"
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
 msgstr "Zrušit běžící operace"
 
-#: gui/applyprogressdialog.cpp:193 gui/applyprogressdialog.cpp:195
+#: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
 msgstr "Ano, zrušit operace"
 
-#: gui/applyprogressdialog.cpp:201
+#: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
 msgstr "Čekám na dokončení operace..."
 
-#: gui/applyprogressdialog.cpp:222
+#: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
 msgstr "Všechny operace byly úspěšně dokončeny."
 
-#: gui/applyprogressdialog.cpp:227
+#: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
 msgstr "Operace zrušeny."
 
-#: gui/applyprogressdialog.cpp:232
+#: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
 msgstr "Při provádění operací došlo k chybám. Přerušeno."
 
-#: gui/applyprogressdialog.cpp:346
+#: gui/applyprogressdialog.cpp:341
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
 msgstr "[%1/%2] - %3: %4"
 
-#: gui/applyprogressdialog.cpp:380
+#: gui/applyprogressdialog.cpp:375
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Celkový čas: %1"
 
-#: gui/applyprogressdialog.cpp:428 gui/mainwindow.cpp:1043
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1043
 #: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
@@ -555,19 +555,19 @@ msgstr ""
 "Nelze vytvořit dočasný soubor při pokusu o uložení souboru <filename>%1</"
 "filename>."
 
-#: gui/applyprogressdialog.cpp:428
+#: gui/applyprogressdialog.cpp:423
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
 msgstr "Nelze uložit hlášení."
 
-#: gui/applyprogressdialog.cpp:452
+#: gui/applyprogressdialog.cpp:447
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
 msgstr "Nelze vytvořit dočasný soubor <filename>%1</filename> pro zápis."
 
-#: gui/applyprogressdialog.cpp:452
+#: gui/applyprogressdialog.cpp:447
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."
@@ -2525,12 +2525,10 @@ msgid "(none found)"
 msgstr "(nic nebylo nalezeno)"
 
 #: gui/partpropsdialog.cpp:115
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
-msgstr "(nic nebylo nalezeno)"
+msgstr "(nenalezeno)"
 
 #: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
@@ -2699,11 +2697,9 @@ msgstr "Typ diskového oddílu:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:313
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "Zařízení"
+msgstr "Cesta k zařízení"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:323

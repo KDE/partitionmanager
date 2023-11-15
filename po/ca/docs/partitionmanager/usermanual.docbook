@@ -7,9 +7,7 @@
 >La finestra principal</title>
 
 		<para
->A part de la vista principal mostrant el dispositiu seleccionat actualment en una vista gràfica i en arbre, el &partman; usa <quote
->ginys acoblables</quote
-> de les &Qt; o plafons per mostrar informació i permetre seleccions. Mireu la següent instantània per una vista general de la finestra principal del &partman;. </para>
+>A part de la vista principal mostrant el dispositiu seleccionat actualment en una vista gràfica i en arbre, el &partman; usa «ginys acoblables» de les &Qt; o plafons per a mostrar informació i permetre seleccions. Mireu la instantània següent per a una vista general de la finestra principal del &partman;. </para>
 
 		<para>
 			<screenshot>
@@ -30,7 +28,7 @@
 			<itemizedlist>
 				<listitem>
 					<para
->Barra de menús: la barra de menús presenta alguns menús personalitzats i no estàndards per seleccionar accions a realitzar. Totes les ordres són descrites detalladament en <xref linkend="reference"/>.</para>
+>Barra de menús: la barra de menús presenta alguns menús personalitzats i no estàndards per a seleccionar accions a realitzar. Totes les ordres són descrites detalladament en <xref linkend="reference"/>.</para>
 				</listitem>
 			
 				<listitem>
@@ -42,16 +40,14 @@
 					<para
 >Plafó de dispositius: aquest plafó llista tots els <glossterm linkend="glossary-device"
 >dispositius</glossterm
-> trobats en el vostre ordinador que el &partman; pot gestionar. Seleccioneu un dispositiu en aquest plafó per veure'l o modificar-lo en la vista gràfica de dispositiu o en la vista d'arbre de dispositiu.</para>
+> trobats en el vostre ordinador que el &partman; pot gestionar. Seleccioneu un dispositiu en aquest plafó per a veure'l o modificar-lo en la vista gràfica de dispositiu o en la vista d'arbre de dispositiu.</para>
 				</listitem>
 
 				<listitem>
 					<para
 >Vista gràfica de dispositius: En aquesta vista el &partman; mostra una representació gràfica del dispositiu seleccionat actualment. Cadascuna de les <glossterm linkend="glossary-partition"
 >particions</glossterm
-> del dispositiu té el seu propi quadre amb el nom del node del dispositiu (<quote
->sda1</quote
-> per a la primera partició en la captura de pantalla de dalt) i la informació d'ús (l'àrea de color lila fosc en la captura de pantalla). </para>
+> del dispositiu té el seu propi quadre amb el nom del node del dispositiu («sda1» per a la primera partició en la captura de pantalla de dalt) i la informació d'ús (l'àrea de color lila fosc en la captura de pantalla). </para>
 					<para
 >Les <glossterm linkend="glossary-extendedpartition"
 >particions esteses</glossterm

@@ -2,7 +2,7 @@
 	<title
 >Introducció</title>
 	<para
->El &partman; és un programa d'utilitat per ajudar-vos a gestionar els <glossterm linkend="glossary-device"
+>El &partman; és un programa d'utilitat per a ajudar a gestionar els <glossterm linkend="glossary-device"
 >dispositius de disc</glossterm
 >, les <glossterm linkend="glossary-partition"
 >particions</glossterm
@@ -19,13 +19,13 @@
 > sense perdre'n les dades. </para>
 
 	<para
->Per fer aquesta tasca de manera eficient el &partman; usa eines externes per implementar una llarga llista de sistemes de fitxers. Probablement ja teniu les eines necessàries per als sistemes de fitxers instal·lades en el vostre sistema. </para>
+>Per a fer aquesta tasca de manera eficient el &partman; usa eines externes per a implementar una llarga llista de sistemes de fitxers. Probablement ja teniu les eines necessàries per als sistemes de fitxers instal·lades en el sistema. </para>
 
 	<warning>
 		<title
 >Feu sempre una còpia de seguretat de les vostres dades!</title>
 		<para
->El &partman; ha estat dissenyat i escrit amb una alta diligència i un èmfasi en la integritat de les dades. No obstant això sempre hi pot haver perill en modificar la taula de particions d'un dispositiu o les seves particions: hi pot haver una errada en &partman;, una fallada elèctrica o un problema amb el maquinari de l'ordinador. </para>
+>El &partman; ha estat dissenyat i escrit amb una alta diligència i un èmfasi en la integritat de les dades. No obstant això, sempre hi pot haver perill en modificar la taula de particions d'un dispositiu o les seves particions: hi pot haver una errada en &partman;, una fallada elèctrica o un problema amb el maquinari de l'ordinador. </para>
 		<para
 >Per aquestes raons hauríeu de <emphasis
 >tenir sempre una còpia de seguretat de les vostres dades importants</emphasis
@@ -41,7 +41,7 @@
 >tasques</glossterm
 > i <glossterm linkend="glossary-command"
 >ordres</glossterm
-> per dividir lògicament el treball que fa. Mireu el <link linkend="glossary"
+> per a dividir lògicament el treball que fa. Mireu el <link linkend="glossary"
 >glossari</link
 > per detalls d'això. </para>
 

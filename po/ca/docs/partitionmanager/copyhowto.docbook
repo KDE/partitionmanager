@@ -22,21 +22,13 @@
 	</para>
 
 	<para
->La partició d'origen en el nostre exemple serà <quote
->sdb1</quote
-> que està actualment muntada, indicat per la icona del cadenat propera al nom del punt de muntatge en la instantània. Una partició muntada no es pot copiar, per això primer heu de desmuntar-la: cliqueu-la i seleccioneu <xref linkend="menu-partition-mount"/>. </para>
+>La partició d'origen en el nostre exemple serà «sdb1» que està actualment muntada, indicat per la icona del cadenat propera al nom del punt de muntatge en la instantània. Una partició muntada no es pot copiar, per això primer heu de desmuntar-la: cliqueu-la i seleccioneu <xref linkend="menu-partition-mount"/>. </para>
 
 	<para
->Després de desmuntar la partició la icona del carenat ha marxat i ara és possible seleccionar <xref linkend="menu-partition-copy"/>. Això posa <quote
->sdb1</quote
-> en el porta-retalls del &partman;; en altres paraules: <quote
->sdb1</quote
-> és ara la partició que s'inserirà quan seleccioneu <xref linkend="menu-partition-paste"/>. </para>
+>Després de desmuntar la partició la icona del carenat ha marxat i ara és possible seleccionar <xref linkend="menu-partition-copy"/>. Això posa «sdb1» en el porta-retalls del &partman;; en altres paraules: «sdb1» és ara la partició que s'inserirà quan seleccioneu <xref linkend="menu-partition-paste"/>. </para>
 	
 	<para
->El dispositiu de destinació per copiar en aquest exemple és <quote
->/dev/sdc</quote
->. Cliqueu-lo en el plafó de dispositius. Així és com es veu abans de copiar: </para>
+>El dispositiu de destinació per a copiar en aquest exemple és «/dev/sdc». Cliqueu-lo en el plafó de dispositius. Així és com es veu abans de copiar: </para>
 	
 	<para>
 		<screenshot>
@@ -52,9 +44,7 @@
 	</para>
 
 	<para
->La partició a sobreescriure és <quote
->sdc5</quote
->. Per enganxar-ne la partició copiada, cliqueu-la i seleccioneu <xref linkend="menu-partition-paste"/>. Veureu que l'operació de copiar la partició s'ha afegit a la llista d'operacions pendents. Noteu que no es requereix cap quadre de diàleg per inserir la partició com seria en el cas que l'haguéssiu enganxat en una àrea no assignada: el començament i el final de la partició enganxada seran determinats per la partició sobreescrita. </para>
+>La partició a sobreescriure és «sdc5». Per a enganxar-ne la partició copiada, cliqueu-la i seleccioneu <xref linkend="menu-partition-paste"/>. Veureu que l'operació de copiar la partició s'ha afegit a la llista d'operacions pendents. Noteu que no es requereix cap quadre de diàleg per a inserir la partició com seria en el cas que l'haguéssiu enganxat en una àrea no assignada: el començament i el final de la partició enganxada seran determinats per la partició sobreescrita. </para>
 
 	<para
 >Ara seleccioneu <xref linkend="menu-edit-apply"/> i la partició serà copiada. Mireu <link linkend="howto-resizepartition"

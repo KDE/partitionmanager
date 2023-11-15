@@ -36,7 +36,7 @@
 			</question>
 			<answer>
 				<para
->El &partman; només pot mostrar la informació del progrés quan coneix quant trigarà la tasca en una operació. Desafortunadament aquest no és el cas en redimensionar particions perquè la tasca més llarga amb diferència és redimensionar el sistema de fitxers d'una partició. Redimensionar sistemes de fitxers és en la majoria dels casos alguna cosa que fa una eina externa en nom del &partman; i aquestes eines externes no proporcionen cap informació de progrés útil al &partman;, per tant no hi ha res a informar mentre són en execució. </para>
+>El &partman; només pot mostrar la informació del progrés quan coneix quant trigarà la tasca en una operació. Desafortunadament aquest no és el cas en redimensionar particions perquè la tasca més llarga amb diferència és redimensionar el sistema de fitxers d'una partició. Redimensionar sistemes de fitxers és en la majoria dels casos alguna cosa que fa una eina externa en nom del &partman; i aquestes eines externes no proporcionen cap informació de progrés útil al &partman;, per tant, no hi ha res a informar mentre són en execució. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
@@ -46,7 +46,7 @@
 			</question>
 			<answer>
 				<para
->Per modificar una partició ha d'estar desmuntada. Òbviament no podeu desmuntar la partició root. Tampoc podreu desmuntar la partició «home» del directori d'inici d'un usuari que ha iniciat la sessió. </para>
+>Per a modificar una partició ha d'estar desmuntada. Òbviament no podeu desmuntar la partició root. Tampoc podreu desmuntar la partició «home» del directori d'inici d'un usuari que ha iniciat la sessió. </para>
 				<para
 >La solució per aquest problema és iniciar des d'un Live CD Linux que porti el &partman; i modificar aquestes particions des d'ell. </para>
 			</answer>
@@ -60,11 +60,11 @@
 				<para
 >En les taules de particions MS-DOS, les particions han de començar i acabar en els límits d'un cilindre. Això es deu principalment a raons històriques. El &partman; s'ocuparà d'això internament i tractarà de no molestar a l'usuari amb aquesta limitació. </para>
 				<para
->Sota circumstàncies estranyes, no obstant això el &partman; no podrà arranjar una operació de la forma en la qual l'usuari l'ha sol·licitat a causa d'aquesta limitació. Per exemple, si un cilindre d'un dispositiu té una mida de 8 MiB i intenteu redimensionar una partició a 6 MiB, això no funcionarà. </para>
+>Sota circumstàncies estranyes, no obstant això, el &partman; no podrà arranjar una operació de la forma en la qual l'usuari l'ha sol·licitat a causa d'aquesta limitació. Per exemple, si un cilindre d'un dispositiu té una mida de 8 MiB i intenteu redimensionar una partició a 6 MiB, això no funcionarà. </para>
 				<para
 >També podeu trobar aquest missatge si teniu un dispositiu i la taula de particions on són les particions, per algun motiu, no està correctament ajustada als límits d'un cilindre i intenteu moure o copiar aquestes particions per primera vegada. </para>
 				<para
->El missatge en si mateix és inofensiu i només serveix per informar a l'usuari que alguna cosa no es pot fer exactament de la manera que l'usuari esperava. Les particions i les dades no es veuran afectades negativament de cap manera si veieu aquest missatge. </para>
+>El missatge en si mateix és inofensiu i només serveix per a informar a l'usuari que alguna cosa no es pot fer exactament de la manera que l'usuari esperava. Les particions i les dades no es veuran afectades negativament de cap manera si veieu aquest missatge. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
@@ -76,15 +76,13 @@
 				<para
 >No hi ha cap límit. </para>
 				<para
->No obstant això no està recomanat afegir massa operacions a la llista. Sempre hi ha una petita possibilitat que una operació falli amb un error, en aquest cas el &partman; pararà d'executar operacions. En aquest cas és molt més fàcil trobar que ha ocorregut (i tornar a afegir totes les operacions que no s'han pogut executar) si la llista d'operacions pendents no era excessivament llarga. </para>
+>No obstant això, no està recomanat afegir massa operacions a la llista. Sempre hi ha una petita possibilitat que una operació falli amb un error, en aquest cas el &partman; pararà d'executar operacions. En aquest cas és molt més fàcil trobar que ha ocorregut (i tornar a afegir totes les operacions que no s'han pogut executar) si la llista d'operacions pendents no era excessivament llarga. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
 			<question>
 				<para
->Ha fallat en redimensionar un sistema de fitxers ext2 o ext3 dient alguna cosa en l'informe quant a què <quote
->no hi ha espai lliure en el dispositiu</quote
->. Què ha passat? S'han corromput les meves dades?</para>
+>Ha fallat en redimensionar un sistema de fitxers ext2 o ext3 dient alguna cosa en l'informe quant a què «no hi ha espai lliure en el dispositiu». Què ha passat? S'han corromput les meves dades?</para>
 			</question>
 			<answer>
 				<para
@@ -102,11 +100,11 @@
 		<qandaentry>
 			<question>
 				<para
->Per què no puc formatar el meu disc flexible amb el &partman;? Per què no hi ha implementació per escriure CD o llegir DVD?</para>
+>Per què no puc formatar el meu disc flexible amb el &partman;? Per què no hi ha implementació per a escriure CD o llegir DVD?</para>
 			</question>
 			<answer>
 				<para
->El &partman; no ha estat dissenyat per fer cap d'aquestes coses: és una aplicació que s'ocupa de les particions i dels sistemes de fitxers d'aquestes particions. Els discos flexibles, els CD o els DVD no necessiten ni usen particions. </para>
+>El &partman; no ha estat dissenyat per a fer cap d'aquestes coses: és una aplicació que s'ocupa de les particions i dels sistemes de fitxers d'aquestes particions. Els discos flexibles, els CD o els DVD no necessiten ni usen particions. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
@@ -116,7 +114,7 @@
 			</question>
 			<answer>
 				<para
->Actualment el &partman; només permet l'accés de només lectura a qualsevol altre tipus de taula de particions que no sigui MS-DOS. Això és per motius de seguretat: la implementació per a aquests tipus de taules de particions no existeix en el &partman;i el que hi ha (o simplement el que funciona per casualitat) no s'ha provat prou per usar-lo amb confiança. </para>
+>Actualment el &partman; només permet l'accés de només lectura a qualsevol altre tipus de taula de particions que no sigui MS-DOS. Això és per motius de seguretat: la implementació per a aquests tipus de taules de particions no existeix en el &partman;i el que hi ha (o simplement el que funciona per casualitat) no s'ha provat prou per a usar-lo amb confiança. </para>
 				<para
 >Per descomptat, podeu crear una taula nova de particions MS-DOS en el dispositiu en qüestió, però probablement no és el que voleu. </para>
 			</answer>
@@ -128,7 +126,7 @@
 			</question>
 			<answer>
 				<para
->Això sembla passar si teniu una unitat de disc flexible configurada en l'arranjament del BIOS del vostre ordinador, però no en teniu cap de connectada. Si us plau, comproveu l'arranjament del vostre BIOS i deshabiteu qualsevol unitat de disc flexible configurada per veure si això soluciona el problema. </para>
+>Això sembla passar si teniu una unitat de disc flexible configurada en l'arranjament del BIOS del vostre ordinador, però no en teniu cap de connectada. Si us plau, comproveu l'arranjament del vostre BIOS i deshabiteu qualsevol unitat de disc flexible configurada per a veure si això soluciona el problema. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
