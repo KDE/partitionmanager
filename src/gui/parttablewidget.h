@@ -14,6 +14,7 @@
 #include <gui/partwidgetbase.h>
 
 #include <QLabel>
+#include <QStyle>
 
 class PartWidget;
 class PartitionTable;
@@ -32,10 +33,10 @@ class PartTableWidget : public PartWidgetBase
 public:
     explicit PartTableWidget(QWidget* parent);
     qint32 borderWidth() const override {
-        return 0;    /**< @return border width */
+        return style()->pixelMetric(QStyle::PM_LayoutLeftMargin);    /**< @return border width */
     }
     qint32 borderHeight() const override {
-        return 0;    /**< @return border height */
+        return style()->pixelMetric(QStyle::PM_LayoutTopMargin);    /**< @return border height */
     }
 
 public:

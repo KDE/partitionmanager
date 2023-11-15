@@ -159,6 +159,9 @@ void MainWindow::init()
     // this is done in order to hide the title bar of MessageWidget dock
     findChild<QDockWidget*>(QStringLiteral("MessageWidgetDock"))->setTitleBarWidget(new QWidget());
 
+    // HACK: Otherwise the message widget bottom border is not correctly rendered
+    findChild<QDockWidget*>(QStringLiteral("MessageWidgetDock"))->setContentsMargins(0, 0, 0, 1);
+
     MessageWidget().hide();
     MessageWidget().setText(
         i18nc("@info", "Partition Manager requires privileges in order to work. Please refresh the devices and authenticate when prompted."));

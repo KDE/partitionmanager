@@ -17,6 +17,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
    <item row="19" column="0">
     <widget class="QLabel" name="m_LabelTextFirstSector">
      <property name="text">

@@ -80,6 +80,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <property name="messageType">
      <enum>KMessageWidget::Warning</enum>
     </property>
+    <property name="position">
+     <enum>KMessageWidget::Header</enum>
+    </property>
    </widget>
   </widget>
  </widget>

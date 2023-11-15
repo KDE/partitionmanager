@@ -83,6 +83,7 @@ PartitionManagerWidget::PartitionManagerWidget(QWidget* parent) :
 
     treePartitions().header()->setStretchLastSection(false);
     treePartitions().header()->setContextMenuPolicy(Qt::CustomContextMenu);
+    treePartitions().setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::TopEdge}));
 }
 
 PartitionManagerWidget::~PartitionManagerWidget()
