@@ -14,7 +14,7 @@
 				<para
 >Bunu söyledikten sonra, &partman; kullanımı güvenlidir. Her operasyon öncesi ve sonrasında kapsamlı denetimler gerçekleştirir. Dosya sistemi yazarları tarafından yazılan ve desteklenen dış araçları çağırır; kapsamlı bir biçimde sınanmıştır. </para>
 				<para
->Bilinmeyen bir hata nedeniyle veri kaybı riski her zaman vardır. &partman;'ın yazarları bu riski en aza indirmeye çalışırlar; ancak elbette bunun garantisi yoktur. </para>
+>Bilinmeyen bir hata nedeniyle veri kaybı riski her zaman vardır. &partman;'nin yazarları bu riski en aza indirmeye çalışırlar; ancak elbette bunun garantisi yoktur. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
@@ -138,7 +138,7 @@
 			</question>
 			<answer>
 				<para
->&partman; uygulamasının kullandığı bir arka uç kitaplığı olan LibParted, Linux Aygıt Eşleyici'nin anlamadığı bir şekilde kullanıldığı sistemlerde sorun yaşar. Ne yazık ki bu durumların bazılarına bölütleme hatalarıyla, yani çökmelerle tepki verir. &partman; bu nedenle, bilgisayarınızı diskler için taramanın alternatif bir yolunu kullanarak bu durumlardan kaçınmaya çalışır. Ancak bunu yapamıyorsa ve bu nedenle LibParted'a güvenmek zorundaysa belirtilene benzer bir ileti yazdıracaktır. Disk taraması çalışırsa iletiyi güvenle göz ardı edebilirsiniz. </para>
+>&partman; uygulamasının kullandığı bir arka uç kitaplığı olan LibParted, Linux Aygıt Eşleyicisi'nin anlamadığı bir şekilde kullanıldığı sistemlerde sorun yaşar. Ne yazık ki bu durumların bazılarına bölütleme hatalarıyla, yani çökmelerle tepki verir. &partman; bu nedenle, bilgisayarınızı diskler için taramanın alternatif bir yolunu kullanarak bu durumlardan kaçınmaya çalışır. Ancak bunu yapamıyorsa ve bu nedenle LibParted'a güvenmek zorundaysa belirtilene benzer bir ileti yazdıracaktır. Disk taraması çalışırsa iletiyi güvenle göz ardı edebilirsiniz. </para>
 			</answer>
 		</qandaentry>
 <!--

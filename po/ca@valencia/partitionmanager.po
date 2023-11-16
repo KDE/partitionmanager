@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-15 01:40+0000\n"
+"POT-Creation-Date: 2023-11-16 01:46+0000\n"
 "PO-Revision-Date: 2023-11-14 16:02+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -95,280 +95,260 @@ msgctxt "@action:button"
 msgid "Do Not Change the Backend"
 msgstr "No canvies el dorsal"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
-#: config/configurepageadvanced.ui:29
-#, kde-format
-msgid "Backend"
-msgstr "Dorsal"
-
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: config/configurepageadvanced.ui:35
+#: config/configurepageadvanced.ui:23
 #, kde-format
 msgid "Active backend:"
 msgstr "Dorsal actiu:"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
-#: config/configurepageadvanced.ui:57
-#, kde-format
-msgid "Units"
-msgstr "Unitats"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: config/configurepageadvanced.ui:63
+#. i18n: ectx: property (text), widget (QLabel)
+#: config/configurepageadvanced.ui:36
 #, kde-format
 msgid "Preferred unit:"
 msgstr "Unitat preferida:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:74
+#: config/configurepageadvanced.ui:47
 #, kde-format
 msgid "Byte"
 msgstr "Byte"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:79
+#: config/configurepageadvanced.ui:52
 #, kde-format
 msgid "KiB"
 msgstr "KiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:84
+#: config/configurepageadvanced.ui:57
 #, kde-format
 msgid "MiB"
 msgstr "MiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:89
+#: config/configurepageadvanced.ui:62
 #, kde-format
 msgid "GiB"
 msgstr "GiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:94
+#: config/configurepageadvanced.ui:67
 #, kde-format
 msgid "TiB"
 msgstr "TiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:99
+#: config/configurepageadvanced.ui:72
 #, kde-format
 msgid "PiB"
 msgstr "PiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:104
+#: config/configurepageadvanced.ui:77
 #, kde-format
 msgid "EiB"
 msgstr "EiB"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: config/configurepagefilesystemcolors.ui:30
-#: config/configurepagegeneral.ui:144
-#, kde-format
-msgid "File Systems"
-msgstr "Sistemes de fitxers"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel_7)
-#: config/configurepagefilesystemcolors.ui:39
+#: config/configurepagefilesystemcolors.ui:27
 #, kde-format
 msgid "ReiserFS:"
 msgstr "ReiserFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_15)
-#: config/configurepagefilesystemcolors.ui:68
+#: config/configurepagefilesystemcolors.ui:56
 #, kde-format
 msgid "UFS:"
 msgstr "UFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_31)
-#: config/configurepagefilesystemcolors.ui:81
+#: config/configurepagefilesystemcolors.ui:69
 #, kde-format
 msgid "ISO 9660:"
 msgstr "ISO 9660:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_24)
-#: config/configurepagefilesystemcolors.ui:100
+#: config/configurepagefilesystemcolors.ui:88
 #, kde-format
 msgid "OCFS2:"
 msgstr "OCFS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_22)
-#: config/configurepagefilesystemcolors.ui:116
+#: config/configurepagefilesystemcolors.ui:104
 #, kde-format
 msgid "XFS:"
 msgstr "XFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_27)
-#: config/configurepagefilesystemcolors.ui:135
+#: config/configurepagefilesystemcolors.ui:123
 #, kde-format
 msgid "NILFS2:"
 msgstr "NILFS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_6)
-#: config/configurepagefilesystemcolors.ui:184
+#: config/configurepagefilesystemcolors.ui:172
 #, kde-format
 msgid "FAT16:"
 msgstr "FAT16:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_13)
-#: config/configurepagefilesystemcolors.ui:197
+#: config/configurepagefilesystemcolors.ui:185
 #, kde-format
 msgid "extended:"
 msgstr "ampliada:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_33)
-#: config/configurepagefilesystemcolors.ui:210
+#: config/configurepagefilesystemcolors.ui:198
 #, kde-format
 msgid "LUKS2:"
 msgstr "LUKS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_17)
-#: config/configurepagefilesystemcolors.ui:226
+#: config/configurepagefilesystemcolors.ui:214
 #, kde-format
 msgid "unformatted:"
 msgstr "sense format:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_30)
-#: config/configurepagefilesystemcolors.ui:245
+#: config/configurepagefilesystemcolors.ui:233
 #, kde-format
 msgid "UDF:"
 msgstr "UDF:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_25)
-#: config/configurepagefilesystemcolors.ui:258
+#: config/configurepagefilesystemcolors.ui:246
 #, kde-format
 msgid "ZFS:"
 msgstr "ZFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_3)
-#: config/configurepagefilesystemcolors.ui:306
+#: config/configurepagefilesystemcolors.ui:294
 #, kde-format
 msgid "ext4:"
 msgstr "ext4:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_10)
-#: config/configurepagefilesystemcolors.ui:322
+#: config/configurepagefilesystemcolors.ui:310
 #, kde-format
 msgid "HPFS:"
 msgstr "HPFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_11)
-#: config/configurepagefilesystemcolors.ui:380
+#: config/configurepagefilesystemcolors.ui:368
 #, kde-format
 msgid "JFS:"
 msgstr "JFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_2)
-#: config/configurepagefilesystemcolors.ui:393
+#: config/configurepagefilesystemcolors.ui:381
 #, kde-format
 msgid "ext3:"
 msgstr "ext3:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_8)
-#: config/configurepagefilesystemcolors.ui:419
+#: config/configurepagefilesystemcolors.ui:407
 #, kde-format
 msgid "Reiser4:"
 msgstr "Reiser4:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_21)
-#: config/configurepagefilesystemcolors.ui:451
+#: config/configurepagefilesystemcolors.ui:439
 #, kde-format
 msgid "Btrfs:"
 msgstr "Btrfs:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: config/configurepagefilesystemcolors.ui:493
+#: config/configurepagefilesystemcolors.ui:481
 #, kde-format
 msgid "ext2:"
 msgstr "ext2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_29)
-#: config/configurepagefilesystemcolors.ui:512
+#: config/configurepagefilesystemcolors.ui:500
 #, kde-format
 msgid "F2FS:"
 msgstr "F2FS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_28)
-#: config/configurepagefilesystemcolors.ui:531
+#: config/configurepagefilesystemcolors.ui:519
 #, kde-format
 msgid "LVM2 PV:"
 msgstr "LVM2 PV:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_26)
-#: config/configurepagefilesystemcolors.ui:557
+#: config/configurepagefilesystemcolors.ui:545
 #, kde-format
 msgid "exFAT:"
 msgstr "exFAT:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
-#: config/configurepagefilesystemcolors.ui:570
+#: config/configurepagefilesystemcolors.ui:558
 #, kde-format
 msgid "NTFS:"
 msgstr "NTFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_20)
-#: config/configurepagefilesystemcolors.ui:596
+#: config/configurepagefilesystemcolors.ui:584
 #, kde-format
 msgid "LUKS:"
 msgstr "LUKS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_4)
-#: config/configurepagefilesystemcolors.ui:625
+#: config/configurepagefilesystemcolors.ui:613
 #, kde-format
 msgid "Linux Swap:"
 msgstr "Intercanvi de Linux:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_32)
-#: config/configurepagefilesystemcolors.ui:676
+#: config/configurepagefilesystemcolors.ui:664
 #, kde-format
 msgid "FAT12:"
 msgstr "FAT12:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_12)
-#: config/configurepagefilesystemcolors.ui:689
+#: config/configurepagefilesystemcolors.ui:677
 #, kde-format
 msgid "HFS:"
 msgstr "HFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_35)
-#: config/configurepagefilesystemcolors.ui:721
+#: config/configurepagefilesystemcolors.ui:709
 #, kde-format
 msgid "APFS:"
 msgstr "APFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_5)
-#: config/configurepagefilesystemcolors.ui:734
+#: config/configurepagefilesystemcolors.ui:722
 #, kde-format
 msgid "FAT32:"
 msgstr "FAT32:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
-#: config/configurepagefilesystemcolors.ui:766
+#: config/configurepagefilesystemcolors.ui:754
 #, kde-format
 msgid "Linux RAID:"
 msgstr "RAID de Linux:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_34)
-#: config/configurepagefilesystemcolors.ui:779
+#: config/configurepagefilesystemcolors.ui:767
 #, kde-format
 msgid "BitLocker:"
 msgstr "BitLocker:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_14)
-#: config/configurepagefilesystemcolors.ui:808
+#: config/configurepagefilesystemcolors.ui:796
 #, kde-format
 msgid "HFS+:"
 msgstr "HFS+:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_16)
-#: config/configurepagefilesystemcolors.ui:834
+#: config/configurepagefilesystemcolors.ui:822
 #, kde-format
 msgid "unknown:"
 msgstr "desconeguda:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: config/configurepagefilesystemcolors.ui:847
+#: config/configurepagefilesystemcolors.ui:835
 #, kde-format
 msgid "          Minix:"
 msgstr "          Minix:"
@@ -438,6 +418,12 @@ msgstr "Avís"
 #, kde-format
 msgid "Error"
 msgstr "S'ha produït un error"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: config/configurepagegeneral.ui:144
+#, kde-format
+msgid "File Systems"
+msgstr "Sistemes de fitxers"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:150
@@ -547,8 +533,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Temps total: %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1043
-#: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1046
+#: gui/mainwindow.cpp:1211 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1314,7 +1300,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr "%1 | %2"
 
-#: gui/mainwindow.cpp:164
+#: gui/mainwindow.cpp:167
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1324,7 +1310,7 @@ msgstr ""
 "El gestor de particions requerix privilegis per tal de funcionar. "
 "Actualitzeu els dispositius i autentiqueu-vos quan es demane."
 
-#: gui/mainwindow.cpp:231
+#: gui/mainwindow.cpp:234
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1340,175 +1326,175 @@ msgstr[1] ""
 "<para>Segur que voleu eixir del programa?</para><para>Encara hi ha %1 "
 "operacions pendents.</para>"
 
-#: gui/mainwindow.cpp:233
+#: gui/mainwindow.cpp:236
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "Voleu descartar les operacions pendents i eixir?"
 
-#: gui/mainwindow.cpp:234
+#: gui/mainwindow.cpp:237
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "Tanca <application>%1</application>"
 
-#: gui/mainwindow.cpp:276
+#: gui/mainwindow.cpp:279
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "Desfés"
 
-#: gui/mainwindow.cpp:277
+#: gui/mainwindow.cpp:280
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "Desfés l'última operació"
 
-#: gui/mainwindow.cpp:278
+#: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "Elimina l'última operació de la llista."
 
-#: gui/mainwindow.cpp:285
+#: gui/mainwindow.cpp:288
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "Neteja"
 
-#: gui/mainwindow.cpp:286
+#: gui/mainwindow.cpp:289
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "Neteja totes les operacions"
 
-#: gui/mainwindow.cpp:287
+#: gui/mainwindow.cpp:290
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "Buida la llista d'operacions pendents."
 
-#: gui/mainwindow.cpp:293
+#: gui/mainwindow.cpp:296
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "Aplica"
 
-#: gui/mainwindow.cpp:294
+#: gui/mainwindow.cpp:297
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "Aplica totes les operacions"
 
-#: gui/mainwindow.cpp:295
+#: gui/mainwindow.cpp:298
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "Aplica les operacions pendents en la llista."
 
-#: gui/mainwindow.cpp:302
+#: gui/mainwindow.cpp:305
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "Taula de particions nova"
 
-#: gui/mainwindow.cpp:303
+#: gui/mainwindow.cpp:306
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "Crea una taula de particions nova"
 
-#: gui/mainwindow.cpp:304
+#: gui/mainwindow.cpp:307
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "Crea una taula de particions nova i buida en un dispositiu."
 
-#: gui/mainwindow.cpp:311
+#: gui/mainwindow.cpp:314
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "Exporta la taula de particions"
 
-#: gui/mainwindow.cpp:312
+#: gui/mainwindow.cpp:315
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "Exporta una taula de particions"
 
-#: gui/mainwindow.cpp:313
+#: gui/mainwindow.cpp:316
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "Exporta la taula de particions del dispositiu a un fitxer de text."
 
-#: gui/mainwindow.cpp:319
+#: gui/mainwindow.cpp:322
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "Importa la taula de particions"
 
-#: gui/mainwindow.cpp:320
+#: gui/mainwindow.cpp:323
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "Importa una taula de particions"
 
-#: gui/mainwindow.cpp:321
+#: gui/mainwindow.cpp:324
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "Importa una taula de particions des d'un fitxer de text."
 
-#: gui/mainwindow.cpp:328
+#: gui/mainwindow.cpp:331
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "Elimina el grup de volums"
 
-#: gui/mainwindow.cpp:329
+#: gui/mainwindow.cpp:332
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "Elimina el grup de volums seleccionat"
 
-#: gui/mainwindow.cpp:330
+#: gui/mainwindow.cpp:333
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "Elimina el grup de volums seleccionat."
 
-#: gui/mainwindow.cpp:338
+#: gui/mainwindow.cpp:341
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "Redimensiona el grup de volums"
 
-#: gui/mainwindow.cpp:339
+#: gui/mainwindow.cpp:342
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "Redimensiona el grup de volums seleccionat"
 
-#: gui/mainwindow.cpp:340
+#: gui/mainwindow.cpp:343
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr "Amplia o reduïx el grup de volums seleccionat."
 
-#: gui/mainwindow.cpp:348
+#: gui/mainwindow.cpp:351
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "Desactiva el grup de volums"
 
-#: gui/mainwindow.cpp:349
+#: gui/mainwindow.cpp:352
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "Desactiva el grup de volums seleccionat"
 
-#: gui/mainwindow.cpp:350
+#: gui/mainwindow.cpp:353
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
@@ -1516,109 +1502,109 @@ msgstr ""
 "Desactiva el grup de volums seleccionat abans de desconnectar els "
 "dispositius extraïbles."
 
-#: gui/mainwindow.cpp:356
+#: gui/mainwindow.cpp:359
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "Estat SMART"
 
-#: gui/mainwindow.cpp:357
+#: gui/mainwindow.cpp:360
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "Mostra l'estat SMART"
 
-#: gui/mainwindow.cpp:358
+#: gui/mainwindow.cpp:361
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr "Mostra l'estat de SMART del dispositiu si està admés"
 
-#: gui/mainwindow.cpp:363 gui/mainwindow.cpp:455
+#: gui/mainwindow.cpp:366 gui/mainwindow.cpp:458
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "Propietats"
 
-#: gui/mainwindow.cpp:364
+#: gui/mainwindow.cpp:367
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "Mostra el diàleg de propietats del dispositiu"
 
-#: gui/mainwindow.cpp:365
+#: gui/mainwindow.cpp:368
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "Visualitza i modifica les propietats del dispositiu"
 
-#: gui/mainwindow.cpp:372
+#: gui/mainwindow.cpp:375
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "Nova"
 
-#: gui/mainwindow.cpp:373
+#: gui/mainwindow.cpp:376
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "Partició nova"
 
-#: gui/mainwindow.cpp:374
+#: gui/mainwindow.cpp:377
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "Crea una partició nova."
 
-#: gui/mainwindow.cpp:381
+#: gui/mainwindow.cpp:384
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "Redimensiona/Mou"
 
-#: gui/mainwindow.cpp:382
+#: gui/mainwindow.cpp:385
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "Redimensiona o mou una partició"
 
-#: gui/mainwindow.cpp:383
+#: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "Encull, engrandix o redimensiona una partició existent."
 
-#: gui/mainwindow.cpp:390
+#: gui/mainwindow.cpp:393
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "Suprimix"
 
-#: gui/mainwindow.cpp:391
+#: gui/mainwindow.cpp:394
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "Suprimix la partició"
 
-#: gui/mainwindow.cpp:392
+#: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "Suprimix una partició."
 
-#: gui/mainwindow.cpp:399
+#: gui/mainwindow.cpp:402
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "Tritura"
 
-#: gui/mainwindow.cpp:400
+#: gui/mainwindow.cpp:403
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "Tritura una partició"
 
-#: gui/mainwindow.cpp:401
+#: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
@@ -1626,272 +1612,272 @@ msgstr ""
 "Tritura una partició de manera que els seus continguts no puguen ser "
 "restaurats."
 
-#: gui/mainwindow.cpp:408
+#: gui/mainwindow.cpp:411
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "Copia"
 
-#: gui/mainwindow.cpp:409
+#: gui/mainwindow.cpp:412
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "Copia una partició"
 
-#: gui/mainwindow.cpp:410
+#: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "Copia una partició existent."
 
-#: gui/mainwindow.cpp:417
+#: gui/mainwindow.cpp:420
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "Apega"
 
-#: gui/mainwindow.cpp:418
+#: gui/mainwindow.cpp:421
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "Apega una partició"
 
-#: gui/mainwindow.cpp:419
+#: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "Apega una partició que ha sigut copiada."
 
-#: gui/mainwindow.cpp:426
+#: gui/mainwindow.cpp:429
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "Edita el punt de muntatge"
 
-#: gui/mainwindow.cpp:427
+#: gui/mainwindow.cpp:430
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "Edita el punt de muntatge"
 
-#: gui/mainwindow.cpp:428
+#: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "Edita el punt de muntatge de la partició i les opcions."
 
-#: gui/mainwindow.cpp:433
+#: gui/mainwindow.cpp:436
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "Munta"
 
-#: gui/mainwindow.cpp:434
+#: gui/mainwindow.cpp:437
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "Munta o desmunta una partició"
 
-#: gui/mainwindow.cpp:435
+#: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "Munta o desmunta una partició."
 
-#: gui/mainwindow.cpp:440
+#: gui/mainwindow.cpp:443
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr "Desbloqueja"
 
-#: gui/mainwindow.cpp:441
+#: gui/mainwindow.cpp:444
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "Desbloqueja o bloqueja una partició encriptada"
 
-#: gui/mainwindow.cpp:442
+#: gui/mainwindow.cpp:445
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "Desbloqueja o bloqueja una partició encriptada."
 
-#: gui/mainwindow.cpp:447
+#: gui/mainwindow.cpp:450
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "Comprova"
 
-#: gui/mainwindow.cpp:448
+#: gui/mainwindow.cpp:451
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "Comprova una partició"
 
-#: gui/mainwindow.cpp:449
+#: gui/mainwindow.cpp:452
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "Comprova un sistema de fitxers a una partició per a buscar errades."
 
-#: gui/mainwindow.cpp:456
+#: gui/mainwindow.cpp:459
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "Mostra el diàleg de propietats de la partició"
 
-#: gui/mainwindow.cpp:457
+#: gui/mainwindow.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr ""
 "Veure i modificar les propietats d'una partició (etiqueta, indicadors, etc.)"
 
-#: gui/mainwindow.cpp:463
+#: gui/mainwindow.cpp:466
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "Còpia de seguretat"
 
-#: gui/mainwindow.cpp:464
+#: gui/mainwindow.cpp:467
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "Còpia de seguretat de la partició"
 
-#: gui/mainwindow.cpp:465
+#: gui/mainwindow.cpp:468
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "Fes una còpia de seguretat d'una partició a un fitxer d'imatge."
 
-#: gui/mainwindow.cpp:471
+#: gui/mainwindow.cpp:474
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "Restaura"
 
-#: gui/mainwindow.cpp:472
+#: gui/mainwindow.cpp:475
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "Restaura una partició"
 
-#: gui/mainwindow.cpp:473
+#: gui/mainwindow.cpp:476
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "Restaura una partició des d'un fitxer d'imatge."
 
-#: gui/mainwindow.cpp:480
+#: gui/mainwindow.cpp:483
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "Grup de volums nou"
 
-#: gui/mainwindow.cpp:481
+#: gui/mainwindow.cpp:484
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr "Crea un grup de volums LVM nou"
 
-#: gui/mainwindow.cpp:482
+#: gui/mainwindow.cpp:485
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "Es crea un grup de volums LVM nou com un dispositiu."
 
-#: gui/mainwindow.cpp:488
+#: gui/mainwindow.cpp:491
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "Compatibilitat amb els sistemes de fitxers"
 
-#: gui/mainwindow.cpp:489
+#: gui/mainwindow.cpp:492
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "Mostra la informació de compatibilitat amb el sistema de fitxers"
 
-#: gui/mainwindow.cpp:490
+#: gui/mainwindow.cpp:493
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "Mostra informació quant a la compatibilitat dels sistemes de fitxers."
 
-#: gui/mainwindow.cpp:494
+#: gui/mainwindow.cpp:497
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "Actualitza la llista dels dispositius"
 
-#: gui/mainwindow.cpp:495
+#: gui/mainwindow.cpp:498
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "Actualitza la llista de tots els dispositius"
 
-#: gui/mainwindow.cpp:496
+#: gui/mainwindow.cpp:499
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "Renova la llista de dispositius."
 
-#: gui/mainwindow.cpp:512
+#: gui/mainwindow.cpp:515
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "Neteja el registre"
 
-#: gui/mainwindow.cpp:513
+#: gui/mainwindow.cpp:516
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr "Neteja l'eixida del registre"
 
-#: gui/mainwindow.cpp:514
+#: gui/mainwindow.cpp:517
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr "Neteja el quadro de l'eixida del registre."
 
-#: gui/mainwindow.cpp:519
+#: gui/mainwindow.cpp:522
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "Guarda el registre"
 
-#: gui/mainwindow.cpp:520
+#: gui/mainwindow.cpp:523
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr "Guarda l'eixida del registre"
 
-#: gui/mainwindow.cpp:521
+#: gui/mainwindow.cpp:524
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr "Guarda l'eixida del registre a un fitxer."
 
-#: gui/mainwindow.cpp:527
+#: gui/mainwindow.cpp:530
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr "Quant a la biblioteca KPMcore"
 
-#: gui/mainwindow.cpp:528
+#: gui/mainwindow.cpp:531
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr "Mostra el diàleg quant a la KPMcore"
 
-#: gui/mainwindow.cpp:529
+#: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "Mostra el diàleg quant a la KPMcore."
 
-#: gui/mainwindow.cpp:711
+#: gui/mainwindow.cpp:714
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
@@ -1899,25 +1885,25 @@ msgid_plural "%1 pending operations"
 msgstr[0] "Una operació pendent"
 msgstr[1] "%1 operacions pendents"
 
-#: gui/mainwindow.cpp:806
+#: gui/mainwindow.cpp:809
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "S'utilitza el connector de dorsal: %1 (%2)"
 
-#: gui/mainwindow.cpp:810
+#: gui/mainwindow.cpp:813
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "S'estan explorant els dispositius..."
 
-#: gui/mainwindow.cpp:848
+#: gui/mainwindow.cpp:851
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "Ha finalitzat l'exploració."
 
-#: gui/mainwindow.cpp:912
+#: gui/mainwindow.cpp:915
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1928,19 +1914,19 @@ msgstr ""
 "para><para><warning>Açò també netejarà la llista d'operacions pendents.</"
 "warning></para>"
 
-#: gui/mainwindow.cpp:914
+#: gui/mainwindow.cpp:917
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "Voleu tornar a explorar els dispositius?"
 
-#: gui/mainwindow.cpp:915
+#: gui/mainwindow.cpp:918
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "Torna a explorar els dispositius"
 
-#: gui/mainwindow.cpp:941
+#: gui/mainwindow.cpp:944
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1951,55 +1937,55 @@ msgstr ""
 "para><para><warning>Açò modificarà els vostres discs permanentment.</"
 "warning></para>"
 
-#: gui/mainwindow.cpp:943
+#: gui/mainwindow.cpp:946
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "Voleu aplicar les operacions pendents?"
 
-#: gui/mainwindow.cpp:944
+#: gui/mainwindow.cpp:947
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "Aplica les operacions pendents"
 
-#: gui/mainwindow.cpp:946
+#: gui/mainwindow.cpp:949
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "S'estan aplicant les operacions..."
 
-#: gui/mainwindow.cpp:971
+#: gui/mainwindow.cpp:974
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "S'està desfent l'operació: %1"
 
-#: gui/mainwindow.cpp:987
+#: gui/mainwindow.cpp:990
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "Segur que voleu netejar la llista d'operacions pendents?"
 
-#: gui/mainwindow.cpp:988
+#: gui/mainwindow.cpp:991
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "Voleu netejar les operacions pendents?"
 
-#: gui/mainwindow.cpp:989
+#: gui/mainwindow.cpp:992
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "Neteja les operacions pendents"
 
-#: gui/mainwindow.cpp:991
+#: gui/mainwindow.cpp:994
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "S'està netejant la llista d'operacions pendents."
 
-#: gui/mainwindow.cpp:1033
+#: gui/mainwindow.cpp:1036
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
@@ -2007,14 +1993,14 @@ msgstr ""
 "No s'ha pogut obrir el fitxer d'entrada <filename>%1</filename> per a "
 "importar"
 
-#: gui/mainwindow.cpp:1033 gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1051
-#: gui/mainwindow.cpp:1057
+#: gui/mainwindow.cpp:1036 gui/mainwindow.cpp:1046 gui/mainwindow.cpp:1054
+#: gui/mainwindow.cpp:1060
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "S'ha produït un error en importar la taula de particions"
 
-#: gui/mainwindow.cpp:1051
+#: gui/mainwindow.cpp:1054
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
@@ -2022,7 +2008,7 @@ msgstr ""
 "No s'ha pogut obrir el fitxer d'entrada <filename>%1</filename> per a "
 "importar: %2"
 
-#: gui/mainwindow.cpp:1057
+#: gui/mainwindow.cpp:1060
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2032,7 +2018,7 @@ msgstr ""
 "No s'ha d'obrir el fitxer temporal <filename>%1</filename> en provar "
 "d'importar des de <filename>%2</filename>."
 
-#: gui/mainwindow.cpp:1087
+#: gui/mainwindow.cpp:1090
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2042,16 +2028,16 @@ msgstr ""
 "El fitxer per a importar <filename>%1</filename> no conté una taula de "
 "particions vàlida."
 
-#: gui/mainwindow.cpp:1087 gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1104
-#: gui/mainwindow.cpp:1109 gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1132
-#: gui/mainwindow.cpp:1137 gui/mainwindow.cpp:1156 gui/mainwindow.cpp:1161
-#: gui/mainwindow.cpp:1166 gui/mainwindow.cpp:1173 gui/mainwindow.cpp:1457
+#: gui/mainwindow.cpp:1090 gui/mainwindow.cpp:1100 gui/mainwindow.cpp:1107
+#: gui/mainwindow.cpp:1112 gui/mainwindow.cpp:1122 gui/mainwindow.cpp:1135
+#: gui/mainwindow.cpp:1140 gui/mainwindow.cpp:1159 gui/mainwindow.cpp:1164
+#: gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1460
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "Error mentre s'importava la taula de particions"
 
-#: gui/mainwindow.cpp:1097
+#: gui/mainwindow.cpp:1100
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
@@ -2059,13 +2045,13 @@ msgstr ""
 "S'ha trobat més un tipus de taula de particions en el fitxer importat (línia "
 "%1)."
 
-#: gui/mainwindow.cpp:1104
+#: gui/mainwindow.cpp:1107
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "El tipus de taula de particions «%1» és desconegut (línia %2)."
 
-#: gui/mainwindow.cpp:1109
+#: gui/mainwindow.cpp:1112
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
@@ -2073,32 +2059,32 @@ msgstr ""
 "No està admesa la importació del tipus de taula de particions «%1» (línia "
 "%2)."
 
-#: gui/mainwindow.cpp:1119
+#: gui/mainwindow.cpp:1122
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr ""
 "S'ha trobat una partició però no el tipus de taula de particions (línia %1)."
 
-#: gui/mainwindow.cpp:1132
+#: gui/mainwindow.cpp:1135
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "La partició %1 estaria fora dels límits del dispositiu (línia %2)."
 
-#: gui/mainwindow.cpp:1137
+#: gui/mainwindow.cpp:1140
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "La partició %1 s'acaba abans de l'inici d'un sector (línia %2)."
 
-#: gui/mainwindow.cpp:1156
+#: gui/mainwindow.cpp:1159
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "Funció desconeguda de partició «%1» per a la partició %2 (línia %3)."
 
-#: gui/mainwindow.cpp:1161
+#: gui/mainwindow.cpp:1164
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
@@ -2107,7 +2093,7 @@ msgstr ""
 "No s'ha trobat la partició pare o la taula de particions de la partició %1 "
 "(línia %2)."
 
-#: gui/mainwindow.cpp:1166
+#: gui/mainwindow.cpp:1169
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2117,7 +2103,7 @@ msgstr ""
 "El tipus de taula de particions «%1» no admet particions ampliades, però se "
 "n'ha trobat una (línia %2)."
 
-#: gui/mainwindow.cpp:1173
+#: gui/mainwindow.cpp:1176
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
@@ -2125,29 +2111,29 @@ msgstr ""
 "No s'ha pogut crear el sistema de fitxers «%1» per a la partició %2 (línia "
 "%3)."
 
-#: gui/mainwindow.cpp:1188
+#: gui/mainwindow.cpp:1191
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr "No s'ha pogut analitzar la línia %1 del fitxer importat. S'ignorarà."
 
-#: gui/mainwindow.cpp:1208
+#: gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "S'ha produït un error en exportar la taula de particions"
 
-#: gui/mainwindow.cpp:1378 gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1420
+#: gui/mainwindow.cpp:1381 gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1423
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1395
+#: gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1398
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1432
+#: gui/mainwindow.cpp:1435
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2174,25 +2160,25 @@ msgstr ""
 "para><para>Hauríeu de buscar estes eines d'implementació en el gestor de "
 "paquets de la distribució.</para>"
 
-#: gui/mainwindow.cpp:1445
+#: gui/mainwindow.cpp:1448
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "Falten els paquets d'implementació de sistemes de fitxers"
 
-#: gui/mainwindow.cpp:1456
+#: gui/mainwindow.cpp:1459
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "Dispositiu no reconegut «%1» "
 
-#: gui/mainwindow.cpp:1465
+#: gui/mainwindow.cpp:1468
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "Partició no reconeguda «%1» "
 
-#: gui/mainwindow.cpp:1466
+#: gui/mainwindow.cpp:1469
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
@@ -2275,13 +2261,13 @@ msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr "Mostra els quadros"
 
-#: gui/partitionmanagerwidget.cpp:199
+#: gui/partitionmanagerwidget.cpp:200
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 [Encriptada]"
 
-#: gui/partitionmanagerwidget.cpp:403
+#: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2290,13 +2276,13 @@ msgstr ""
 "No s'ha pogut muntar el sistema de fitxers en la partició <filename>%1</"
 "filename>."
 
-#: gui/partitionmanagerwidget.cpp:403
+#: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "No s'ha pogut muntar el sistema de fitxers."
 
-#: gui/partitionmanagerwidget.cpp:406
+#: gui/partitionmanagerwidget.cpp:407
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2305,13 +2291,13 @@ msgstr ""
 "No s'ha pogut desmuntar el sistema de fitxers en la partició <filename>%1</"
 "filename>."
 
-#: gui/partitionmanagerwidget.cpp:406
+#: gui/partitionmanagerwidget.cpp:407
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "No s'ha pogut desmuntar el sistema de fitxers."
 
-#: gui/partitionmanagerwidget.cpp:446
+#: gui/partitionmanagerwidget.cpp:447
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2321,13 +2307,13 @@ msgstr ""
 "No s'ha pogut desbloquejar el sistema de fitxers encriptat en la partició "
 "<filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:452
+#: gui/partitionmanagerwidget.cpp:453
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "No s'ha pogut desbloquejar el sistema de fitxers encriptat."
 
-#: gui/partitionmanagerwidget.cpp:457
+#: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2337,13 +2323,13 @@ msgstr ""
 "No s'ha pogut bloquejar el sistema de fitxers encriptat en la partició "
 "<filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:463
+#: gui/partitionmanagerwidget.cpp:464
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "No s'ha pogut bloquejar el sistema de fitxers encriptat."
 
-#: gui/partitionmanagerwidget.cpp:492
+#: gui/partitionmanagerwidget.cpp:493
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2367,13 +2353,13 @@ msgstr[1] ""
 "podeu crear, apegar o restaurar una partició primària abans de suprimir-ne "
 "una d'existent.</para>"
 
-#: gui/partitionmanagerwidget.cpp:496
+#: gui/partitionmanagerwidget.cpp:497
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "Hi ha massa particions primàries."
 
-#: gui/partitionmanagerwidget.cpp:559
+#: gui/partitionmanagerwidget.cpp:560
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2387,13 +2373,13 @@ msgstr ""
 "elevat.</para><para>Per favor, desmunteu abans totes les particions amb un "
 "número lògic més elevat que %2.</para>"
 
-#: gui/partitionmanagerwidget.cpp:562
+#: gui/partitionmanagerwidget.cpp:563
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "No s'ha pogut suprimir la partició."
 
-#: gui/partitionmanagerwidget.cpp:571
+#: gui/partitionmanagerwidget.cpp:572
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2404,19 +2390,19 @@ msgstr ""
 "Segur que voleu suprimir la partició que hi ha actualment en el porta-"
 "retalls? Ja no estarà disponible per a apegar-la quan s'haja suprimit."
 
-#: gui/partitionmanagerwidget.cpp:573
+#: gui/partitionmanagerwidget.cpp:574
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "Segur que voleu suprimir la partició del porta-retalls?"
 
-#: gui/partitionmanagerwidget.cpp:574
+#: gui/partitionmanagerwidget.cpp:575
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "Suprimix-la"
 
-#: gui/partitionmanagerwidget.cpp:627
+#: gui/partitionmanagerwidget.cpp:628
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2426,13 +2412,13 @@ msgstr ""
 "La partició <filename>%1</filename> tindrà la mateixa posició i mida després "
 "de redimensionar/desplaçar. S'ha ignorat l'operació."
 
-#: gui/partitionmanagerwidget.cpp:655
+#: gui/partitionmanagerwidget.cpp:656
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "S'ha copiat la partició <filename>%1</filename> al porta-retalls."
 
-#: gui/partitionmanagerwidget.cpp:718
+#: gui/partitionmanagerwidget.cpp:719
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2450,19 +2436,19 @@ msgstr ""
 "la finestra principal, totes les dades emmagatzemades a <filename>%1</"
 "filename> se sobreescriuran i seran irrecuperables.</para>"
 
-#: gui/partitionmanagerwidget.cpp:726
+#: gui/partitionmanagerwidget.cpp:727
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "Voleu sobreescriure la partició existent?"
 
-#: gui/partitionmanagerwidget.cpp:727
+#: gui/partitionmanagerwidget.cpp:728
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "Sobreescriu la partició"
 
-#: gui/partitionmanagerwidget.cpp:735
+#: gui/partitionmanagerwidget.cpp:736
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2475,13 +2461,13 @@ msgstr ""
 "altra destinació o amideu esta partició perquè siga tan gran com la partició "
 "d'origen.</para>"
 
-#: gui/partitionmanagerwidget.cpp:736
+#: gui/partitionmanagerwidget.cpp:737
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "La destinació no és prou gran"
 
-#: gui/partitionmanagerwidget.cpp:739
+#: gui/partitionmanagerwidget.cpp:740
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2495,13 +2481,13 @@ msgstr ""
 "si alguna de les particions d'un dispositiu no està correctament alineada o "
 "en copiar una partició primària a una partició ampliada.</para>"
 
-#: gui/partitionmanagerwidget.cpp:742
+#: gui/partitionmanagerwidget.cpp:743
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "No s'ha pogut crear la partició de destinació."
 
-#: gui/partitionmanagerwidget.cpp:800
+#: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2511,92 +2497,92 @@ msgstr ""
 "El sistema de fitxers en el fitxer d'imatge <filename>%1</filename> és massa "
 "gran per a restaurar-lo a la partició seleccionada."
 
-#: gui/partitionmanagerwidget.cpp:800
+#: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
 msgstr "No hi ha hagut prou espai per a restaurar el sistema de fitxers."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:76
+#: gui/partitionmanagerwidgetbase.ui:79
 #, kde-format
 msgid "Partition"
 msgstr "Partició"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:81
+#: gui/partitionmanagerwidgetbase.ui:84
 #, kde-format
 msgid "Type"
 msgstr "Tipus"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:86
+#: gui/partitionmanagerwidgetbase.ui:89
 #, kde-format
 msgid "Mount Point"
 msgstr "Punt de muntatge"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:91
+#: gui/partitionmanagerwidgetbase.ui:94
 #, kde-format
 msgid "Label"
 msgstr "Etiqueta"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:96
+#: gui/partitionmanagerwidgetbase.ui:99
 #, kde-format
 msgid "UUID"
 msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:101
+#: gui/partitionmanagerwidgetbase.ui:104
 #, kde-format
 msgid "Partition Name"
 msgstr "Nom de partició"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:106
+#: gui/partitionmanagerwidgetbase.ui:109
 #, kde-format
 msgid "Partition UUID"
 msgstr "UUID de partició"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:111
+#: gui/partitionmanagerwidgetbase.ui:114
 #, kde-format
 msgid "Size"
 msgstr "Mida"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:116
+#: gui/partitionmanagerwidgetbase.ui:119
 #, kde-format
 msgid "Used"
 msgstr "Utilitzat"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:121
+#: gui/partitionmanagerwidgetbase.ui:124
 #, kde-format
 msgid "Available"
 msgstr "Disponible"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:126
+#: gui/partitionmanagerwidgetbase.ui:129
 #, kde-format
 msgid "First Sector"
 msgstr "Primer sector"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:131
+#: gui/partitionmanagerwidgetbase.ui:134
 #, kde-format
 msgid "Last Sector"
 msgstr "Últim sector"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:136
+#: gui/partitionmanagerwidgetbase.ui:139
 #, kde-format
 msgid "Number of Sectors"
 msgstr "Nombre de sectors"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:141
+#: gui/partitionmanagerwidgetbase.ui:144
 #, kde-format
 msgid "Flags"
 msgstr "Indicadors"
@@ -2720,102 +2706,102 @@ msgid "Do Not Recreate the File System"
 msgstr "No recrees el sistema de fitxers"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
-#: gui/partpropswidgetbase.ui:23
+#: gui/partpropswidgetbase.ui:26
 #, kde-format
 msgctxt "@label"
 msgid "First sector:"
 msgstr "Primer sector:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
-#: gui/partpropswidgetbase.ui:53
+#: gui/partpropswidgetbase.ui:56
 #, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "Mida:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
-#: gui/partpropswidgetbase.ui:63
+#: gui/partpropswidgetbase.ui:66
 #, kde-format
 msgid "Partition UUID:"
 msgstr "UUID de partició:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
-#: gui/partpropswidgetbase.ui:73 gui/sizedialogwidgetbase.ui:146
+#: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:146
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
 msgstr "Este sistema de fitxers no permet l'etiquetatge."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
-#: gui/partpropswidgetbase.ui:83
+#: gui/partpropswidgetbase.ui:86
 #, kde-format
 msgctxt "@label"
 msgid "UUID:"
 msgstr "UUID:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
-#: gui/partpropswidgetbase.ui:100
+#: gui/partpropswidgetbase.ui:103
 #, kde-format
 msgctxt "@label"
 msgid "Last sector:"
 msgstr "Últim sector:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
-#: gui/partpropswidgetbase.ui:131
+#: gui/partpropswidgetbase.ui:134
 #, kde-format
 msgctxt "@label"
 msgid "Status:"
 msgstr "Estat:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
-#: gui/partpropswidgetbase.ui:141
+#: gui/partpropswidgetbase.ui:144
 #, kde-format
 msgctxt "@label partition capacity available"
 msgid "Available:"
 msgstr "Disponible:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:220
+#: gui/partpropswidgetbase.ui:223
 #, kde-format
 msgctxt "@label"
 msgid "&Label:"
 msgstr "Eti&queta:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:283
+#: gui/partpropswidgetbase.ui:286
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "Punt de muntatge:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:303
+#: gui/partpropswidgetbase.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "Tipus de partició:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
-#: gui/partpropswidgetbase.ui:313
+#: gui/partpropswidgetbase.ui:316
 #, kde-format
 msgid "Device path:"
 msgstr "Camí del dispositiu:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:323
+#: gui/partpropswidgetbase.ui:326
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "Nombre de sectors:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:333
+#: gui/partpropswidgetbase.ui:336
 #, kde-format
 msgid "Partition Name:"
 msgstr "Nom de partició:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:343
+#: gui/partpropswidgetbase.ui:346
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -2825,28 +2811,28 @@ msgstr ""
 "el mateix tipus de sistema de fitxers."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:346
+#: gui/partpropswidgetbase.ui:349
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "Recrea sistema de fitxers existent"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:373
+#: gui/partpropswidgetbase.ui:376
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Utilitzada:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:383
+#: gui/partpropswidgetbase.ui:386
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "Siste&ma de fitxers:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:396
+#: gui/partpropswidgetbase.ui:399
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
@@ -3535,3 +3521,9 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Columnes"
+
+#~ msgid "Backend"
+#~ msgstr "Dorsal"
+
+#~ msgid "Units"
+#~ msgstr "Unitats"

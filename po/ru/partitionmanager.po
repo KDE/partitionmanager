@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-15 01:40+0000\n"
+"POT-Creation-Date: 2023-11-16 01:46+0000\n"
 "PO-Revision-Date: 2023-07-22 14:50+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -101,280 +101,260 @@ msgctxt "@action:button"
 msgid "Do Not Change the Backend"
 msgstr "Не изменять модуль"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
-#: config/configurepageadvanced.ui:29
-#, kde-format
-msgid "Backend"
-msgstr "Внутренний модуль"
-
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: config/configurepageadvanced.ui:35
+#: config/configurepageadvanced.ui:23
 #, kde-format
 msgid "Active backend:"
 msgstr "Активный внутренний модуль:"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
-#: config/configurepageadvanced.ui:57
-#, kde-format
-msgid "Units"
-msgstr "Единицы"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: config/configurepageadvanced.ui:63
+#. i18n: ectx: property (text), widget (QLabel)
+#: config/configurepageadvanced.ui:36
 #, kde-format
 msgid "Preferred unit:"
 msgstr "Предпочитаемая единица:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:74
+#: config/configurepageadvanced.ui:47
 #, kde-format
 msgid "Byte"
 msgstr "байт"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:79
+#: config/configurepageadvanced.ui:52
 #, kde-format
 msgid "KiB"
 msgstr "КиБ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:84
+#: config/configurepageadvanced.ui:57
 #, kde-format
 msgid "MiB"
 msgstr "МиБ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:89
+#: config/configurepageadvanced.ui:62
 #, kde-format
 msgid "GiB"
 msgstr "ГиБ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:94
+#: config/configurepageadvanced.ui:67
 #, kde-format
 msgid "TiB"
 msgstr "ТиБ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:99
+#: config/configurepageadvanced.ui:72
 #, kde-format
 msgid "PiB"
 msgstr "ПиБ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:104
+#: config/configurepageadvanced.ui:77
 #, kde-format
 msgid "EiB"
 msgstr "ЭиБ"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: config/configurepagefilesystemcolors.ui:30
-#: config/configurepagegeneral.ui:144
-#, kde-format
-msgid "File Systems"
-msgstr "Файловые системы"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel_7)
-#: config/configurepagefilesystemcolors.ui:39
+#: config/configurepagefilesystemcolors.ui:27
 #, kde-format
 msgid "ReiserFS:"
 msgstr "ReiserFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_15)
-#: config/configurepagefilesystemcolors.ui:68
+#: config/configurepagefilesystemcolors.ui:56
 #, kde-format
 msgid "UFS:"
 msgstr "UFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_31)
-#: config/configurepagefilesystemcolors.ui:81
+#: config/configurepagefilesystemcolors.ui:69
 #, kde-format
 msgid "ISO 9660:"
 msgstr "ISO 9660:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_24)
-#: config/configurepagefilesystemcolors.ui:100
+#: config/configurepagefilesystemcolors.ui:88
 #, kde-format
 msgid "OCFS2:"
 msgstr "OCFS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_22)
-#: config/configurepagefilesystemcolors.ui:116
+#: config/configurepagefilesystemcolors.ui:104
 #, kde-format
 msgid "XFS:"
 msgstr "XFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_27)
-#: config/configurepagefilesystemcolors.ui:135
+#: config/configurepagefilesystemcolors.ui:123
 #, kde-format
 msgid "NILFS2:"
 msgstr "NILFS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_6)
-#: config/configurepagefilesystemcolors.ui:184
+#: config/configurepagefilesystemcolors.ui:172
 #, kde-format
 msgid "FAT16:"
 msgstr "FAT16:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_13)
-#: config/configurepagefilesystemcolors.ui:197
+#: config/configurepagefilesystemcolors.ui:185
 #, kde-format
 msgid "extended:"
 msgstr "Расширенный:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_33)
-#: config/configurepagefilesystemcolors.ui:210
+#: config/configurepagefilesystemcolors.ui:198
 #, kde-format
 msgid "LUKS2:"
 msgstr "LUKS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_17)
-#: config/configurepagefilesystemcolors.ui:226
+#: config/configurepagefilesystemcolors.ui:214
 #, kde-format
 msgid "unformatted:"
 msgstr "Неформатированный:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_30)
-#: config/configurepagefilesystemcolors.ui:245
+#: config/configurepagefilesystemcolors.ui:233
 #, kde-format
 msgid "UDF:"
 msgstr "UDF:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_25)
-#: config/configurepagefilesystemcolors.ui:258
+#: config/configurepagefilesystemcolors.ui:246
 #, kde-format
 msgid "ZFS:"
 msgstr "ZFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_3)
-#: config/configurepagefilesystemcolors.ui:306
+#: config/configurepagefilesystemcolors.ui:294
 #, kde-format
 msgid "ext4:"
 msgstr "ext4:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_10)
-#: config/configurepagefilesystemcolors.ui:322
+#: config/configurepagefilesystemcolors.ui:310
 #, kde-format
 msgid "HPFS:"
 msgstr "HPFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_11)
-#: config/configurepagefilesystemcolors.ui:380
+#: config/configurepagefilesystemcolors.ui:368
 #, kde-format
 msgid "JFS:"
 msgstr "JFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_2)
-#: config/configurepagefilesystemcolors.ui:393
+#: config/configurepagefilesystemcolors.ui:381
 #, kde-format
 msgid "ext3:"
 msgstr "ext3:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_8)
-#: config/configurepagefilesystemcolors.ui:419
+#: config/configurepagefilesystemcolors.ui:407
 #, kde-format
 msgid "Reiser4:"
 msgstr "Reiser4:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_21)
-#: config/configurepagefilesystemcolors.ui:451
+#: config/configurepagefilesystemcolors.ui:439
 #, kde-format
 msgid "Btrfs:"
 msgstr "Btrfs:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: config/configurepagefilesystemcolors.ui:493
+#: config/configurepagefilesystemcolors.ui:481
 #, kde-format
 msgid "ext2:"
 msgstr "ext2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_29)
-#: config/configurepagefilesystemcolors.ui:512
+#: config/configurepagefilesystemcolors.ui:500
 #, kde-format
 msgid "F2FS:"
 msgstr "F2FS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_28)
-#: config/configurepagefilesystemcolors.ui:531
+#: config/configurepagefilesystemcolors.ui:519
 #, kde-format
 msgid "LVM2 PV:"
 msgstr "Физический том LVM2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_26)
-#: config/configurepagefilesystemcolors.ui:557
+#: config/configurepagefilesystemcolors.ui:545
 #, kde-format
 msgid "exFAT:"
 msgstr "exFAT:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
-#: config/configurepagefilesystemcolors.ui:570
+#: config/configurepagefilesystemcolors.ui:558
 #, kde-format
 msgid "NTFS:"
 msgstr "NTFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_20)
-#: config/configurepagefilesystemcolors.ui:596
+#: config/configurepagefilesystemcolors.ui:584
 #, kde-format
 msgid "LUKS:"
 msgstr "LUKS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_4)
-#: config/configurepagefilesystemcolors.ui:625
+#: config/configurepagefilesystemcolors.ui:613
 #, kde-format
 msgid "Linux Swap:"
 msgstr "Подкачка Linux:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_32)
-#: config/configurepagefilesystemcolors.ui:676
+#: config/configurepagefilesystemcolors.ui:664
 #, kde-format
 msgid "FAT12:"
 msgstr "FAT12:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_12)
-#: config/configurepagefilesystemcolors.ui:689
+#: config/configurepagefilesystemcolors.ui:677
 #, kde-format
 msgid "HFS:"
 msgstr "HFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_35)
-#: config/configurepagefilesystemcolors.ui:721
+#: config/configurepagefilesystemcolors.ui:709
 #, kde-format
 msgid "APFS:"
 msgstr "APFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_5)
-#: config/configurepagefilesystemcolors.ui:734
+#: config/configurepagefilesystemcolors.ui:722
 #, kde-format
 msgid "FAT32:"
 msgstr "FAT32:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
-#: config/configurepagefilesystemcolors.ui:766
+#: config/configurepagefilesystemcolors.ui:754
 #, kde-format
 msgid "Linux RAID:"
 msgstr "Linux RAID:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_34)
-#: config/configurepagefilesystemcolors.ui:779
+#: config/configurepagefilesystemcolors.ui:767
 #, kde-format
 msgid "BitLocker:"
 msgstr "BitLocker:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_14)
-#: config/configurepagefilesystemcolors.ui:808
+#: config/configurepagefilesystemcolors.ui:796
 #, kde-format
 msgid "HFS+:"
 msgstr "HFS+:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_16)
-#: config/configurepagefilesystemcolors.ui:834
+#: config/configurepagefilesystemcolors.ui:822
 #, kde-format
 msgid "unknown:"
 msgstr "Неизвестно:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: config/configurepagefilesystemcolors.ui:847
+#: config/configurepagefilesystemcolors.ui:835
 #, kde-format
 msgid "          Minix:"
 msgstr "          Minix:"
@@ -444,6 +424,12 @@ msgstr "Предупреждение"
 #, kde-format
 msgid "Error"
 msgstr "Ошибка"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: config/configurepagegeneral.ui:144
+#, kde-format
+msgid "File Systems"
+msgstr "Файловые системы"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:150
@@ -553,8 +539,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Общее время: %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1043
-#: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1046
+#: gui/mainwindow.cpp:1211 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1321,7 +1307,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr "%1 | %2"
 
-#: gui/mainwindow.cpp:164
+#: gui/mainwindow.cpp:167
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1331,7 +1317,7 @@ msgstr ""
 "Приложению требуются дополнительные права доступа. Обновите список устройств "
 "и введите имя пользователя и пароль."
 
-#: gui/mainwindow.cpp:231
+#: gui/mainwindow.cpp:234
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1353,555 +1339,555 @@ msgstr[3] ""
 "<para>Вы действительно хотите выйти из программы?</para><para>Имеется %1 "
 "незавершённая операция в очереди.</para>"
 
-#: gui/mainwindow.cpp:233
+#: gui/mainwindow.cpp:236
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "Отменить все незавершённые операции и выйти?"
 
-#: gui/mainwindow.cpp:234
+#: gui/mainwindow.cpp:237
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "Выйти из <application>%1</application>"
 
-#: gui/mainwindow.cpp:276
+#: gui/mainwindow.cpp:279
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "Отменить"
 
-#: gui/mainwindow.cpp:277
+#: gui/mainwindow.cpp:280
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "Отмена последнего действия"
 
-#: gui/mainwindow.cpp:278
+#: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "Удалить последнюю операцию из списка."
 
-#: gui/mainwindow.cpp:285
+#: gui/mainwindow.cpp:288
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "Очистить"
 
-#: gui/mainwindow.cpp:286
+#: gui/mainwindow.cpp:289
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "Очистить все операции"
 
-#: gui/mainwindow.cpp:287
+#: gui/mainwindow.cpp:290
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "Очистить список операций."
 
-#: gui/mainwindow.cpp:293
+#: gui/mainwindow.cpp:296
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "Применить"
 
-#: gui/mainwindow.cpp:294
+#: gui/mainwindow.cpp:297
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "Применить все операции"
 
-#: gui/mainwindow.cpp:295
+#: gui/mainwindow.cpp:298
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "Применение всех операций из списка."
 
-#: gui/mainwindow.cpp:302
+#: gui/mainwindow.cpp:305
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "Создать таблицу разделов"
 
-#: gui/mainwindow.cpp:303
+#: gui/mainwindow.cpp:306
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "Создать новую таблицу разделов"
 
-#: gui/mainwindow.cpp:304
+#: gui/mainwindow.cpp:307
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "Создать новую и чистую таблицу разделов на устройстве."
 
-#: gui/mainwindow.cpp:311
+#: gui/mainwindow.cpp:314
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "Экспорт таблицы разделов"
 
-#: gui/mainwindow.cpp:312
+#: gui/mainwindow.cpp:315
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "Экспорт таблицы разделов"
 
-#: gui/mainwindow.cpp:313
+#: gui/mainwindow.cpp:316
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "Экспорт таблицы разделов устройства в текстовый файл."
 
-#: gui/mainwindow.cpp:319
+#: gui/mainwindow.cpp:322
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "Импорт таблицы разделов"
 
-#: gui/mainwindow.cpp:320
+#: gui/mainwindow.cpp:323
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "Импорт таблицы разделов"
 
-#: gui/mainwindow.cpp:321
+#: gui/mainwindow.cpp:324
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "Импорт таблицы разделов из текстового файла."
 
-#: gui/mainwindow.cpp:328
+#: gui/mainwindow.cpp:331
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "Удалить группу томов..."
 
-#: gui/mainwindow.cpp:329
+#: gui/mainwindow.cpp:332
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "Удалить выбранную группу томов"
 
-#: gui/mainwindow.cpp:330
+#: gui/mainwindow.cpp:333
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "Удалить выбранную группу томов."
 
-#: gui/mainwindow.cpp:338
+#: gui/mainwindow.cpp:341
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "Изменить размер группы томов..."
 
-#: gui/mainwindow.cpp:339
+#: gui/mainwindow.cpp:342
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "Изменить размер выбранной группы томов"
 
-#: gui/mainwindow.cpp:340
+#: gui/mainwindow.cpp:343
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr "Расширить или уменьшить выбранную группу томов."
 
-#: gui/mainwindow.cpp:348
+#: gui/mainwindow.cpp:351
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "Деактивировать группу томов"
 
-#: gui/mainwindow.cpp:349
+#: gui/mainwindow.cpp:352
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "Деактивировать выбранную группу томов"
 
-#: gui/mainwindow.cpp:350
+#: gui/mainwindow.cpp:353
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr ""
 "Деактивировать выбранную группу томов перед отсоединением съемных устройств."
 
-#: gui/mainwindow.cpp:356
+#: gui/mainwindow.cpp:359
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "Состояние SMART"
 
-#: gui/mainwindow.cpp:357
+#: gui/mainwindow.cpp:360
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "Показать состояние SMART"
 
-#: gui/mainwindow.cpp:358
+#: gui/mainwindow.cpp:361
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr "Показать состояние SMART для устройства, если поддерживается"
 
-#: gui/mainwindow.cpp:363 gui/mainwindow.cpp:455
+#: gui/mainwindow.cpp:366 gui/mainwindow.cpp:458
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "Свойства"
 
-#: gui/mainwindow.cpp:364
+#: gui/mainwindow.cpp:367
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "Показать диалог свойств устройства"
 
-#: gui/mainwindow.cpp:365
+#: gui/mainwindow.cpp:368
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "Просмотр и изменение свойств устройства"
 
-#: gui/mainwindow.cpp:372
+#: gui/mainwindow.cpp:375
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "Создать"
 
-#: gui/mainwindow.cpp:373
+#: gui/mainwindow.cpp:376
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "Новый раздел"
 
-#: gui/mainwindow.cpp:374
+#: gui/mainwindow.cpp:377
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "Создать новый раздел."
 
-#: gui/mainwindow.cpp:381
+#: gui/mainwindow.cpp:384
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "Изменить размер/переместить..."
 
-#: gui/mainwindow.cpp:382
+#: gui/mainwindow.cpp:385
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "Изменить размер и/или переместить раздел"
 
-#: gui/mainwindow.cpp:383
+#: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "Уменьшение, увеличение или перемещение существующего раздела."
 
-#: gui/mainwindow.cpp:390
+#: gui/mainwindow.cpp:393
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "Удалить"
 
-#: gui/mainwindow.cpp:391
+#: gui/mainwindow.cpp:394
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "Удалить раздел"
 
-#: gui/mainwindow.cpp:392
+#: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "Удалить раздел."
 
-#: gui/mainwindow.cpp:399
+#: gui/mainwindow.cpp:402
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "Уничтожить раздел"
 
-#: gui/mainwindow.cpp:400
+#: gui/mainwindow.cpp:403
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "Уничтожить раздел"
 
-#: gui/mainwindow.cpp:401
+#: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr "При уничтожении раздела нет возможности восстановить его содержимое."
 
-#: gui/mainwindow.cpp:408
+#: gui/mainwindow.cpp:411
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "Скопировать"
 
-#: gui/mainwindow.cpp:409
+#: gui/mainwindow.cpp:412
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "Скопировать раздел"
 
-#: gui/mainwindow.cpp:410
+#: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "Скопировать существующий раздел."
 
-#: gui/mainwindow.cpp:417
+#: gui/mainwindow.cpp:420
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "Вставить"
 
-#: gui/mainwindow.cpp:418
+#: gui/mainwindow.cpp:421
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "Вставить раздел"
 
-#: gui/mainwindow.cpp:419
+#: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "Вставить скопированный раздел."
 
-#: gui/mainwindow.cpp:426
+#: gui/mainwindow.cpp:429
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "Изменить точку подключения"
 
-#: gui/mainwindow.cpp:427
+#: gui/mainwindow.cpp:430
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "Изменение точек подключения"
 
-#: gui/mainwindow.cpp:428
+#: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "Изменение точек подключения разделов."
 
-#: gui/mainwindow.cpp:433
+#: gui/mainwindow.cpp:436
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "Подключить"
 
-#: gui/mainwindow.cpp:434
+#: gui/mainwindow.cpp:437
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "Подключить или отключить раздел"
 
-#: gui/mainwindow.cpp:435
+#: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "Подключить или отключить раздел."
 
-#: gui/mainwindow.cpp:440
+#: gui/mainwindow.cpp:443
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr "Разблокировать"
 
-#: gui/mainwindow.cpp:441
+#: gui/mainwindow.cpp:444
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "Разблокировать или заблокировать зашифрованный раздел"
 
-#: gui/mainwindow.cpp:442
+#: gui/mainwindow.cpp:445
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "Разблокировать или заблокировать зашифрованный раздел."
 
-#: gui/mainwindow.cpp:447
+#: gui/mainwindow.cpp:450
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "Проверить"
 
-#: gui/mainwindow.cpp:448
+#: gui/mainwindow.cpp:451
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "Проверить раздел"
 
-#: gui/mainwindow.cpp:449
+#: gui/mainwindow.cpp:452
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "Проверить файловую систему раздела на ошибки."
 
-#: gui/mainwindow.cpp:456
+#: gui/mainwindow.cpp:459
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "Показать диалог свойств раздела"
 
-#: gui/mainwindow.cpp:457
+#: gui/mainwindow.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr "Просмотр и изменение свойств раздела (метки, флаги раздела и т.д.)"
 
-#: gui/mainwindow.cpp:463
+#: gui/mainwindow.cpp:466
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "Резервная копия"
 
-#: gui/mainwindow.cpp:464
+#: gui/mainwindow.cpp:467
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "Резервное копирование раздела"
 
-#: gui/mainwindow.cpp:465
+#: gui/mainwindow.cpp:468
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "Резервное копирование раздела в файл образа."
 
-#: gui/mainwindow.cpp:471
+#: gui/mainwindow.cpp:474
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "Восстановление"
 
-#: gui/mainwindow.cpp:472
+#: gui/mainwindow.cpp:475
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "Восстановление раздела"
 
-#: gui/mainwindow.cpp:473
+#: gui/mainwindow.cpp:476
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "Восстановление раздела из файла образа."
 
 # BUGME: please add ellipsis --aspotashev
-#: gui/mainwindow.cpp:480
+#: gui/mainwindow.cpp:483
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "Создать группу томов..."
 
-#: gui/mainwindow.cpp:481
+#: gui/mainwindow.cpp:484
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr "Создать новую группу томов LVM"
 
-#: gui/mainwindow.cpp:482
+#: gui/mainwindow.cpp:485
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "Создать новую группу томов LVM в виде устройства."
 
-#: gui/mainwindow.cpp:488
+#: gui/mainwindow.cpp:491
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "Поддержка файловых систем"
 
-#: gui/mainwindow.cpp:489
+#: gui/mainwindow.cpp:492
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "Показать сведения о поддержке файловых систем"
 
-#: gui/mainwindow.cpp:490
+#: gui/mainwindow.cpp:493
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "Показать сведения о поддерживаемых файловых системах."
 
-#: gui/mainwindow.cpp:494
+#: gui/mainwindow.cpp:497
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "Обновить список устройств"
 
-#: gui/mainwindow.cpp:495
+#: gui/mainwindow.cpp:498
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "Обновить список всех устройств"
 
-#: gui/mainwindow.cpp:496
+#: gui/mainwindow.cpp:499
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "Обновление списка устройств."
 
-#: gui/mainwindow.cpp:512
+#: gui/mainwindow.cpp:515
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "Очистить журнал"
 
-#: gui/mainwindow.cpp:513
+#: gui/mainwindow.cpp:516
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr "Очистить вывод журнала"
 
-#: gui/mainwindow.cpp:514
+#: gui/mainwindow.cpp:517
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr "Очистка панели вывода журнала."
 
-#: gui/mainwindow.cpp:519
+#: gui/mainwindow.cpp:522
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "Сохранить журнал"
 
-#: gui/mainwindow.cpp:520
+#: gui/mainwindow.cpp:523
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr "Сохранить вывод журнала"
 
-#: gui/mainwindow.cpp:521
+#: gui/mainwindow.cpp:524
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr "Сохранение журнала в файл."
 
-#: gui/mainwindow.cpp:527
+#: gui/mainwindow.cpp:530
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr "О библиотеке KPMcore..."
 
-#: gui/mainwindow.cpp:528
+#: gui/mainwindow.cpp:531
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr "Показать окно с информацией о KPMcore"
 
-#: gui/mainwindow.cpp:529
+#: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "Показать окно с информацией о KPMcore."
 
-#: gui/mainwindow.cpp:711
+#: gui/mainwindow.cpp:714
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
@@ -1911,25 +1897,25 @@ msgstr[1] "%1 операции в очереди"
 msgstr[2] "%1 операций в очереди"
 msgstr[3] "1 операция в очереди"
 
-#: gui/mainwindow.cpp:806
+#: gui/mainwindow.cpp:809
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "Используемый внутренний модуль: %1 (%2)"
 
-#: gui/mainwindow.cpp:810
+#: gui/mainwindow.cpp:813
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "Сканирование устройств..."
 
-#: gui/mainwindow.cpp:848
+#: gui/mainwindow.cpp:851
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "Сканирование завершено."
 
-#: gui/mainwindow.cpp:912
+#: gui/mainwindow.cpp:915
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1940,19 +1926,19 @@ msgstr ""
 "para><para><warning>Это действие также очистит список операций.</warning></"
 "para>"
 
-#: gui/mainwindow.cpp:914
+#: gui/mainwindow.cpp:917
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "Действительно заново сканировать все устройства?"
 
-#: gui/mainwindow.cpp:915
+#: gui/mainwindow.cpp:918
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "Сканировать устройства"
 
-#: gui/mainwindow.cpp:941
+#: gui/mainwindow.cpp:944
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1963,69 +1949,69 @@ msgstr ""
 "para><para><warning>Это окончательно применит изменения к вашим дискам.</"
 "warning></para>"
 
-#: gui/mainwindow.cpp:943
+#: gui/mainwindow.cpp:946
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "Выполнить список операций?"
 
-#: gui/mainwindow.cpp:944
+#: gui/mainwindow.cpp:947
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "Выполнить список операций"
 
-#: gui/mainwindow.cpp:946
+#: gui/mainwindow.cpp:949
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "Выполнение операций..."
 
-#: gui/mainwindow.cpp:971
+#: gui/mainwindow.cpp:974
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "Отмена операции: %1"
 
-#: gui/mainwindow.cpp:987
+#: gui/mainwindow.cpp:990
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "Вы действительно хотите очистить список незавершённых операций?"
 
-#: gui/mainwindow.cpp:988
+#: gui/mainwindow.cpp:991
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "Очистить список операций?"
 
-#: gui/mainwindow.cpp:989
+#: gui/mainwindow.cpp:992
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "Очистить список операций"
 
-#: gui/mainwindow.cpp:991
+#: gui/mainwindow.cpp:994
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "Очистка списка операций."
 
-#: gui/mainwindow.cpp:1033
+#: gui/mainwindow.cpp:1036
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
 msgstr ""
 "Не удалось открыть файл входных данных <filename>%1</filename> для импорта"
 
-#: gui/mainwindow.cpp:1033 gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1051
-#: gui/mainwindow.cpp:1057
+#: gui/mainwindow.cpp:1036 gui/mainwindow.cpp:1046 gui/mainwindow.cpp:1054
+#: gui/mainwindow.cpp:1060
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "Ошибка импорта таблицы разделов"
 
-#: gui/mainwindow.cpp:1051
+#: gui/mainwindow.cpp:1054
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
@@ -2033,7 +2019,7 @@ msgstr ""
 "Не удалось открыть файл входных данных <filename>%1</filename> для импорта: "
 "%2"
 
-#: gui/mainwindow.cpp:1057
+#: gui/mainwindow.cpp:1060
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2043,7 +2029,7 @@ msgstr ""
 "Не удалось открыть временный файл <filename>%1</filename>, при попытке "
 "импорта из <filename>%2</filename>."
 
-#: gui/mainwindow.cpp:1087
+#: gui/mainwindow.cpp:1090
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2052,59 +2038,59 @@ msgid ""
 msgstr ""
 "Файл импорта <filename>%1</filename> не содержит корректной таблицы разделов."
 
-#: gui/mainwindow.cpp:1087 gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1104
-#: gui/mainwindow.cpp:1109 gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1132
-#: gui/mainwindow.cpp:1137 gui/mainwindow.cpp:1156 gui/mainwindow.cpp:1161
-#: gui/mainwindow.cpp:1166 gui/mainwindow.cpp:1173 gui/mainwindow.cpp:1457
+#: gui/mainwindow.cpp:1090 gui/mainwindow.cpp:1100 gui/mainwindow.cpp:1107
+#: gui/mainwindow.cpp:1112 gui/mainwindow.cpp:1122 gui/mainwindow.cpp:1135
+#: gui/mainwindow.cpp:1140 gui/mainwindow.cpp:1159 gui/mainwindow.cpp:1164
+#: gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1460
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "Ошибка импорта таблицы разделов"
 
-#: gui/mainwindow.cpp:1097
+#: gui/mainwindow.cpp:1100
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr ""
 "В файле импорта обнаружено несколько типов таблиц разделов (строка %1)."
 
-#: gui/mainwindow.cpp:1104
+#: gui/mainwindow.cpp:1107
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "Неизвестный тип таблицы разделов «%1» (строка %2)."
 
-#: gui/mainwindow.cpp:1109
+#: gui/mainwindow.cpp:1112
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr "Импорт для типа таблицы разделов «%1» не поддерживается (строка %2)."
 
-#: gui/mainwindow.cpp:1119
+#: gui/mainwindow.cpp:1122
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr "Обнаружен раздел, но без записи типа таблицы разделов (строка %1)."
 
-#: gui/mainwindow.cpp:1132
+#: gui/mainwindow.cpp:1135
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "Раздел «%1» находится за пределами ёмкости устройства (строка %2)."
 
-#: gui/mainwindow.cpp:1137
+#: gui/mainwindow.cpp:1140
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "Раздел «%1» закончился перед начальным сектором (строка %2)."
 
-#: gui/mainwindow.cpp:1156
+#: gui/mainwindow.cpp:1159
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "Не удалось определить роль раздела «%1» для раздела «%2» (строка %3)."
 
-#: gui/mainwindow.cpp:1161
+#: gui/mainwindow.cpp:1164
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
@@ -2113,7 +2099,7 @@ msgstr ""
 "Для раздела «%1» не обнаружено ни родительского раздела, ни таблицы разделов "
 "(строка %2)."
 
-#: gui/mainwindow.cpp:1166
+#: gui/mainwindow.cpp:1169
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2123,36 +2109,36 @@ msgstr ""
 "В типе таблиц разделов «%1» не предусмотрена поддержка расширенных разделов, "
 "но в записях выявлен такой раздел (строка %2)."
 
-#: gui/mainwindow.cpp:1173
+#: gui/mainwindow.cpp:1176
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr "Не удалось создать файловую систему «%1» на разделе %2 (строка %3)."
 
-#: gui/mainwindow.cpp:1188
+#: gui/mainwindow.cpp:1191
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr ""
 "Не удалось обработать строку %1 из файла импорта. Строка будет пропущена."
 
-#: gui/mainwindow.cpp:1208
+#: gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "Ошибка экспорта таблицы разделов"
 
-#: gui/mainwindow.cpp:1378 gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1420
+#: gui/mainwindow.cpp:1381 gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1423
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1395
+#: gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1398
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1432
+#: gui/mainwindow.cpp:1435
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2179,25 +2165,25 @@ msgstr ""
 "установить пакеты с указанными программами при помощи диспетчера пакетов "
 "вашего дистрибутива.</para>"
 
-#: gui/mainwindow.cpp:1445
+#: gui/mainwindow.cpp:1448
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "Отсутствуют пакеты поддержки файловой системы"
 
-#: gui/mainwindow.cpp:1456
+#: gui/mainwindow.cpp:1459
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "Неизвестное устройство «%1» "
 
-#: gui/mainwindow.cpp:1465
+#: gui/mainwindow.cpp:1468
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "Неизвестный раздел «%1» "
 
-#: gui/mainwindow.cpp:1466
+#: gui/mainwindow.cpp:1469
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
@@ -2280,13 +2266,13 @@ msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr "Панели"
 
-#: gui/partitionmanagerwidget.cpp:199
+#: gui/partitionmanagerwidget.cpp:200
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 [Зашифровано]"
 
-#: gui/partitionmanagerwidget.cpp:403
+#: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2294,13 +2280,13 @@ msgid ""
 msgstr ""
 "Не удалось подключить файловую систему на разделе <filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:403
+#: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "Не удалось подключить файловую систему"
 
-#: gui/partitionmanagerwidget.cpp:406
+#: gui/partitionmanagerwidget.cpp:407
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2309,13 +2295,13 @@ msgstr ""
 "Не удалось отключить файловую систему на разделе <filename>%1</filename>."
 
 # BUGME: please remove period --aspotashev
-#: gui/partitionmanagerwidget.cpp:406
+#: gui/partitionmanagerwidget.cpp:407
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "Не удалось отключить файловую систему"
 
-#: gui/partitionmanagerwidget.cpp:446
+#: gui/partitionmanagerwidget.cpp:447
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2326,13 +2312,13 @@ msgstr ""
 "<filename>%1</filename>."
 
 # BUGME: please remove period --aspotashev
-#: gui/partitionmanagerwidget.cpp:452
+#: gui/partitionmanagerwidget.cpp:453
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "Не удалось разблокировать зашифрованную ФС"
 
-#: gui/partitionmanagerwidget.cpp:457
+#: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2342,13 +2328,13 @@ msgstr ""
 "Не удалось заблокировать зашифрованную файловую систему на разделе <filename>"
 "%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:463
+#: gui/partitionmanagerwidget.cpp:464
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "Не удалось заблокировать шифрованную ФС"
 
-#: gui/partitionmanagerwidget.cpp:492
+#: gui/partitionmanagerwidget.cpp:493
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2382,13 +2368,13 @@ msgstr[3] ""
 "можете создать, вставить или восстановить основной раздел пока не удалите "
 "один из уже существующих.</para>"
 
-#: gui/partitionmanagerwidget.cpp:496
+#: gui/partitionmanagerwidget.cpp:497
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "Слишком много основных разделов."
 
-#: gui/partitionmanagerwidget.cpp:559
+#: gui/partitionmanagerwidget.cpp:560
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2401,13 +2387,13 @@ msgstr ""
 "более разделов с более высоким порядковым номером ещё подключены.</"
 "para><para>Отключите все разделы с номером большим чем %2.</para>"
 
-#: gui/partitionmanagerwidget.cpp:562
+#: gui/partitionmanagerwidget.cpp:563
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "Невозможно удалить раздел."
 
-#: gui/partitionmanagerwidget.cpp:571
+#: gui/partitionmanagerwidget.cpp:572
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2418,19 +2404,19 @@ msgstr ""
 "Вы действительно хотите удалить раздел, который сейчас находится в буфере "
 "обмена? После его удаления невозможно будет его вставить."
 
-#: gui/partitionmanagerwidget.cpp:573
+#: gui/partitionmanagerwidget.cpp:574
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "Действительно удалить раздел из буфера обмена?"
 
-#: gui/partitionmanagerwidget.cpp:574
+#: gui/partitionmanagerwidget.cpp:575
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "Удалить"
 
-#: gui/partitionmanagerwidget.cpp:627
+#: gui/partitionmanagerwidget.cpp:628
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2440,13 +2426,13 @@ msgstr ""
 "Раздел <filename>%1</filename> будет иметь такое же положение и размер после "
 "изменения размера или перемещения. Операция проигнорирована."
 
-#: gui/partitionmanagerwidget.cpp:655
+#: gui/partitionmanagerwidget.cpp:656
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "Раздел <filename>%1</filename> был скопирован в буфер обмена."
 
-#: gui/partitionmanagerwidget.cpp:718
+#: gui/partitionmanagerwidget.cpp:719
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2464,19 +2450,19 @@ msgstr ""
 "окне программы, то все данные на <filename>%1</filename> будут безвозвратно "
 "потеряны.</para>"
 
-#: gui/partitionmanagerwidget.cpp:726
+#: gui/partitionmanagerwidget.cpp:727
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "Заменить существующий раздел?"
 
-#: gui/partitionmanagerwidget.cpp:727
+#: gui/partitionmanagerwidget.cpp:728
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "Заменить раздел"
 
-#: gui/partitionmanagerwidget.cpp:735
+#: gui/partitionmanagerwidget.cpp:736
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2488,13 +2474,13 @@ msgstr ""
 "раздела или резервной копии.</para><para>Выберите другой раздел или измените "
 "размер существующего до размера источника.</para>"
 
-#: gui/partitionmanagerwidget.cpp:736
+#: gui/partitionmanagerwidget.cpp:737
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "Недостаточно места"
 
-#: gui/partitionmanagerwidget.cpp:739
+#: gui/partitionmanagerwidget.cpp:740
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2507,13 +2493,13 @@ msgstr ""
 "para><para>Возможно, не все разделы устройства правильно выровнены, либо вы "
 "копируете основной раздел в расширенный.</para>"
 
-#: gui/partitionmanagerwidget.cpp:742
+#: gui/partitionmanagerwidget.cpp:743
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "Невозможно создать целевой раздел."
 
-#: gui/partitionmanagerwidget.cpp:800
+#: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2523,92 +2509,92 @@ msgstr ""
 "Файловая система образа <filename>%1</filename> слишком большая для "
 "восстановления на выделенном разделе."
 
-#: gui/partitionmanagerwidget.cpp:800
+#: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
 msgstr "Не достаточно свободного места для восстановления файловой системы."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:76
+#: gui/partitionmanagerwidgetbase.ui:79
 #, kde-format
 msgid "Partition"
 msgstr "Раздел"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:81
+#: gui/partitionmanagerwidgetbase.ui:84
 #, kde-format
 msgid "Type"
 msgstr "Тип"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:86
+#: gui/partitionmanagerwidgetbase.ui:89
 #, kde-format
 msgid "Mount Point"
 msgstr "Точка подключения"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:91
+#: gui/partitionmanagerwidgetbase.ui:94
 #, kde-format
 msgid "Label"
 msgstr "Метка"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:96
+#: gui/partitionmanagerwidgetbase.ui:99
 #, kde-format
 msgid "UUID"
 msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:101
+#: gui/partitionmanagerwidgetbase.ui:104
 #, kde-format
 msgid "Partition Name"
 msgstr "Имя раздела"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:106
+#: gui/partitionmanagerwidgetbase.ui:109
 #, kde-format
 msgid "Partition UUID"
 msgstr "UUID раздела"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:111
+#: gui/partitionmanagerwidgetbase.ui:114
 #, kde-format
 msgid "Size"
 msgstr "Размер"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:116
+#: gui/partitionmanagerwidgetbase.ui:119
 #, kde-format
 msgid "Used"
 msgstr "Использовано"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:121
+#: gui/partitionmanagerwidgetbase.ui:124
 #, kde-format
 msgid "Available"
 msgstr "Доступно"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:126
+#: gui/partitionmanagerwidgetbase.ui:129
 #, kde-format
 msgid "First Sector"
 msgstr "Первый сектор"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:131
+#: gui/partitionmanagerwidgetbase.ui:134
 #, kde-format
 msgid "Last Sector"
 msgstr "Последний сектор"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:136
+#: gui/partitionmanagerwidgetbase.ui:139
 #, kde-format
 msgid "Number of Sectors"
 msgstr "Количество секторов"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:141
+#: gui/partitionmanagerwidgetbase.ui:144
 #, kde-format
 msgid "Flags"
 msgstr "Флаги"
@@ -2734,83 +2720,83 @@ msgid "Do Not Recreate the File System"
 msgstr "Не пересоздавать файловую систему"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
-#: gui/partpropswidgetbase.ui:23
+#: gui/partpropswidgetbase.ui:26
 #, kde-format
 msgctxt "@label"
 msgid "First sector:"
 msgstr "Первый сектор:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
-#: gui/partpropswidgetbase.ui:53
+#: gui/partpropswidgetbase.ui:56
 #, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "Размер:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
-#: gui/partpropswidgetbase.ui:63
+#: gui/partpropswidgetbase.ui:66
 #, kde-format
 msgid "Partition UUID:"
 msgstr "UUID раздела:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
-#: gui/partpropswidgetbase.ui:73 gui/sizedialogwidgetbase.ui:146
+#: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:146
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
 msgstr "Эта файловая система не поддерживает выбор метки."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
-#: gui/partpropswidgetbase.ui:83
+#: gui/partpropswidgetbase.ui:86
 #, kde-format
 msgctxt "@label"
 msgid "UUID:"
 msgstr "UUID:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
-#: gui/partpropswidgetbase.ui:100
+#: gui/partpropswidgetbase.ui:103
 #, kde-format
 msgctxt "@label"
 msgid "Last sector:"
 msgstr "Последний сектор:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
-#: gui/partpropswidgetbase.ui:131
+#: gui/partpropswidgetbase.ui:134
 #, kde-format
 msgctxt "@label"
 msgid "Status:"
 msgstr "Состояние:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
-#: gui/partpropswidgetbase.ui:141
+#: gui/partpropswidgetbase.ui:144
 #, kde-format
 msgctxt "@label partition capacity available"
 msgid "Available:"
 msgstr "Доступно:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:220
+#: gui/partpropswidgetbase.ui:223
 #, kde-format
 msgctxt "@label"
 msgid "&Label:"
 msgstr "&Метка:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:283
+#: gui/partpropswidgetbase.ui:286
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "Точка подключения:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:303
+#: gui/partpropswidgetbase.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "Тип раздела:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
-#: gui/partpropswidgetbase.ui:313
+#: gui/partpropswidgetbase.ui:316
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Device"
@@ -2818,20 +2804,20 @@ msgid "Device path:"
 msgstr "Устройство"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:323
+#: gui/partpropswidgetbase.ui:326
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "Количество секторов:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:333
+#: gui/partpropswidgetbase.ui:336
 #, kde-format
 msgid "Partition Name:"
 msgstr "Имя раздела:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:343
+#: gui/partpropswidgetbase.ui:346
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -2841,28 +2827,28 @@ msgstr ""
 "содержимого. Тип файловой системы при этом не изменится."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:346
+#: gui/partpropswidgetbase.ui:349
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "Пересоздать существующую файловую систему"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:373
+#: gui/partpropswidgetbase.ui:376
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Использовано:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:383
+#: gui/partpropswidgetbase.ui:386
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "Файловая &система:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:396
+#: gui/partpropswidgetbase.ui:399
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
@@ -3553,6 +3539,12 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Столбцы"
+
+#~ msgid "Backend"
+#~ msgstr "Внутренний модуль"
+
+#~ msgid "Units"
+#~ msgstr "Единицы"
 
 #~ msgid "Partition Label:"
 #~ msgstr "Метка раздела:"

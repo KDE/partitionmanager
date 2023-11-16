@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-15 01:40+0000\n"
+"POT-Creation-Date: 2023-11-16 01:46+0000\n"
 "PO-Revision-Date: 2009-01-11 18:55+0200\n"
 "Last-Translator: Viesturs Zarins <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -104,35 +104,20 @@ msgctxt "@action:button"
 msgid "Do Not Change the Backend"
 msgstr "&Nemainīt failu sistēmu"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
-#: config/configurepageadvanced.ui:29
-#, fuzzy, kde-format
-#| msgid "Backup"
-msgid "Backend"
-msgstr "Rez. kopija"
-
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: config/configurepageadvanced.ui:35
+#: config/configurepageadvanced.ui:23
 #, kde-format
 msgid "Active backend:"
 msgstr ""
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
-#: config/configurepageadvanced.ui:57
-#, fuzzy, kde-format
-#| msgctxt "@item/plain filesystem name"
-#| msgid "ntfs"
-msgid "Units"
-msgstr "ntfs"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: config/configurepageadvanced.ui:63
+#. i18n: ectx: property (text), widget (QLabel)
+#: config/configurepageadvanced.ui:36
 #, kde-format
 msgid "Preferred unit:"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:74
+#: config/configurepageadvanced.ui:47
 #, fuzzy, kde-format
 #| msgctxt "@info/plain unit"
 #| msgid "Byte"
@@ -140,7 +125,7 @@ msgid "Byte"
 msgstr "Baits"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:79
+#: config/configurepageadvanced.ui:52
 #, fuzzy, kde-format
 #| msgctxt "@info/plain unit"
 #| msgid "KiB"
@@ -148,7 +133,7 @@ msgid "KiB"
 msgstr "KiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:84
+#: config/configurepageadvanced.ui:57
 #, fuzzy, kde-format
 #| msgctxt "@info/plain unit"
 #| msgid "MiB"
@@ -156,7 +141,7 @@ msgid "MiB"
 msgstr "MiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:89
+#: config/configurepageadvanced.ui:62
 #, fuzzy, kde-format
 #| msgctxt "@info/plain unit"
 #| msgid "GiB"
@@ -164,7 +149,7 @@ msgid "GiB"
 msgstr "GiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:94
+#: config/configurepageadvanced.ui:67
 #, fuzzy, kde-format
 #| msgctxt "@info/plain unit"
 #| msgid "TiB"
@@ -172,7 +157,7 @@ msgid "TiB"
 msgstr "TiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:99
+#: config/configurepageadvanced.ui:72
 #, fuzzy, kde-format
 #| msgctxt "@info/plain unit"
 #| msgid "PiB"
@@ -180,24 +165,15 @@ msgid "PiB"
 msgstr "PiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
-#: config/configurepageadvanced.ui:104
+#: config/configurepageadvanced.ui:77
 #, fuzzy, kde-format
 #| msgctxt "@info/plain unit"
 #| msgid "EiB"
 msgid "EiB"
 msgstr "EiB"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: config/configurepagefilesystemcolors.ui:30
-#: config/configurepagegeneral.ui:144
-#, fuzzy, kde-format
-#| msgid "File System"
-msgid "File Systems"
-msgstr "Failu sistēma"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel_7)
-#: config/configurepagefilesystemcolors.ui:39
+#: config/configurepagefilesystemcolors.ui:27
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "reiser4"
@@ -205,43 +181,43 @@ msgid "ReiserFS:"
 msgstr "reiser4"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_15)
-#: config/configurepagefilesystemcolors.ui:68
+#: config/configurepagefilesystemcolors.ui:56
 #, kde-format
 msgid "UFS:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_31)
-#: config/configurepagefilesystemcolors.ui:81
+#: config/configurepagefilesystemcolors.ui:69
 #, kde-format
 msgid "ISO 9660:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_24)
-#: config/configurepagefilesystemcolors.ui:100
+#: config/configurepagefilesystemcolors.ui:88
 #, kde-format
 msgid "OCFS2:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_22)
-#: config/configurepagefilesystemcolors.ui:116
+#: config/configurepagefilesystemcolors.ui:104
 #, kde-format
 msgid "XFS:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_27)
-#: config/configurepagefilesystemcolors.ui:135
+#: config/configurepagefilesystemcolors.ui:123
 #, kde-format
 msgid "NILFS2:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_6)
-#: config/configurepagefilesystemcolors.ui:184
+#: config/configurepagefilesystemcolors.ui:172
 #, kde-format
 msgid "FAT16:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_13)
-#: config/configurepagefilesystemcolors.ui:197
+#: config/configurepagefilesystemcolors.ui:185
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "extended"
@@ -249,13 +225,13 @@ msgid "extended:"
 msgstr "extended"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_33)
-#: config/configurepagefilesystemcolors.ui:210
+#: config/configurepagefilesystemcolors.ui:198
 #, kde-format
 msgid "LUKS2:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_17)
-#: config/configurepagefilesystemcolors.ui:226
+#: config/configurepagefilesystemcolors.ui:214
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "unformatted"
@@ -263,19 +239,19 @@ msgid "unformatted:"
 msgstr "neformatēta"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_30)
-#: config/configurepagefilesystemcolors.ui:245
+#: config/configurepagefilesystemcolors.ui:233
 #, kde-format
 msgid "UDF:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_25)
-#: config/configurepagefilesystemcolors.ui:258
+#: config/configurepagefilesystemcolors.ui:246
 #, kde-format
 msgid "ZFS:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_3)
-#: config/configurepagefilesystemcolors.ui:306
+#: config/configurepagefilesystemcolors.ui:294
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "ext4"
@@ -283,19 +259,19 @@ msgid "ext4:"
 msgstr "ext4"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_10)
-#: config/configurepagefilesystemcolors.ui:322
+#: config/configurepagefilesystemcolors.ui:310
 #, kde-format
 msgid "HPFS:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_11)
-#: config/configurepagefilesystemcolors.ui:380
+#: config/configurepagefilesystemcolors.ui:368
 #, kde-format
 msgid "JFS:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_2)
-#: config/configurepagefilesystemcolors.ui:393
+#: config/configurepagefilesystemcolors.ui:381
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "ext3"
@@ -303,7 +279,7 @@ msgid "ext3:"
 msgstr "ext3"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_8)
-#: config/configurepagefilesystemcolors.ui:419
+#: config/configurepagefilesystemcolors.ui:407
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "reiser4"
@@ -311,7 +287,7 @@ msgid "Reiser4:"
 msgstr "reiser4"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_21)
-#: config/configurepagefilesystemcolors.ui:451
+#: config/configurepagefilesystemcolors.ui:439
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "ntfs"
@@ -319,7 +295,7 @@ msgid "Btrfs:"
 msgstr "ntfs"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: config/configurepagefilesystemcolors.ui:493
+#: config/configurepagefilesystemcolors.ui:481
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "ext2"
@@ -327,37 +303,37 @@ msgid "ext2:"
 msgstr "ext2"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_29)
-#: config/configurepagefilesystemcolors.ui:512
+#: config/configurepagefilesystemcolors.ui:500
 #, kde-format
 msgid "F2FS:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_28)
-#: config/configurepagefilesystemcolors.ui:531
+#: config/configurepagefilesystemcolors.ui:519
 #, kde-format
 msgid "LVM2 PV:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_26)
-#: config/configurepagefilesystemcolors.ui:557
+#: config/configurepagefilesystemcolors.ui:545
 #, kde-format
 msgid "exFAT:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
-#: config/configurepagefilesystemcolors.ui:570
+#: config/configurepagefilesystemcolors.ui:558
 #, kde-format
 msgid "NTFS:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_20)
-#: config/configurepagefilesystemcolors.ui:596
+#: config/configurepagefilesystemcolors.ui:584
 #, kde-format
 msgid "LUKS:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_4)
-#: config/configurepagefilesystemcolors.ui:625
+#: config/configurepagefilesystemcolors.ui:613
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "linuxswap"
@@ -365,31 +341,31 @@ msgid "Linux Swap:"
 msgstr "linuxswap"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_32)
-#: config/configurepagefilesystemcolors.ui:676
+#: config/configurepagefilesystemcolors.ui:664
 #, kde-format
 msgid "FAT12:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_12)
-#: config/configurepagefilesystemcolors.ui:689
+#: config/configurepagefilesystemcolors.ui:677
 #, kde-format
 msgid "HFS:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_35)
-#: config/configurepagefilesystemcolors.ui:721
+#: config/configurepagefilesystemcolors.ui:709
 #, kde-format
 msgid "APFS:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_5)
-#: config/configurepagefilesystemcolors.ui:734
+#: config/configurepagefilesystemcolors.ui:722
 #, kde-format
 msgid "FAT32:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
-#: config/configurepagefilesystemcolors.ui:766
+#: config/configurepagefilesystemcolors.ui:754
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "linuxswap"
@@ -397,19 +373,19 @@ msgid "Linux RAID:"
 msgstr "linuxswap"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_34)
-#: config/configurepagefilesystemcolors.ui:779
+#: config/configurepagefilesystemcolors.ui:767
 #, kde-format
 msgid "BitLocker:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_14)
-#: config/configurepagefilesystemcolors.ui:808
+#: config/configurepagefilesystemcolors.ui:796
 #, kde-format
 msgid "HFS+:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_16)
-#: config/configurepagefilesystemcolors.ui:834
+#: config/configurepagefilesystemcolors.ui:822
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "unknown"
@@ -417,7 +393,7 @@ msgid "unknown:"
 msgstr "nezināma"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: config/configurepagefilesystemcolors.ui:847
+#: config/configurepagefilesystemcolors.ui:835
 #, kde-format
 msgid "          Minix:"
 msgstr ""
@@ -502,6 +478,13 @@ msgstr "Brīdinājums"
 #| msgid "Error"
 msgid "Error"
 msgstr "Kļūda"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: config/configurepagegeneral.ui:144
+#, fuzzy, kde-format
+#| msgid "File System"
+msgid "File Systems"
+msgstr "Failu sistēma"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:150
@@ -617,8 +600,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Kopējais laiks: %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1043
-#: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1046
+#: gui/mainwindow.cpp:1211 gui/smartdialog.cpp:227
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Could not create temporary file <filename>%1</filename> for writing."
@@ -1448,7 +1431,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr ""
 
-#: gui/mainwindow.cpp:164
+#: gui/mainwindow.cpp:167
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1456,7 +1439,7 @@ msgid ""
 "devices and authenticate when prompted."
 msgstr ""
 
-#: gui/mainwindow.cpp:231
+#: gui/mainwindow.cpp:234
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1475,13 +1458,13 @@ msgstr[2] ""
 "<para>Vai tiešām vēlaties iziet no programmas?</para><para>Jums ir %1 "
 "neizpildītu darbību.</para>"
 
-#: gui/mainwindow.cpp:233
+#: gui/mainwindow.cpp:236
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "Izmest plānotās darbības un iziet?"
 
-#: gui/mainwindow.cpp:234
+#: gui/mainwindow.cpp:237
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Quit <application>%1</application>"
@@ -1489,61 +1472,61 @@ msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "&Iziet <application>%1</application>"
 
-#: gui/mainwindow.cpp:276
+#: gui/mainwindow.cpp:279
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "Atsaukt"
 
-#: gui/mainwindow.cpp:277
+#: gui/mainwindow.cpp:280
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "Atsaukt pēdējo darbību"
 
-#: gui/mainwindow.cpp:278
+#: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "Izņemt no saraksta pēdējo darbību."
 
-#: gui/mainwindow.cpp:285
+#: gui/mainwindow.cpp:288
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "Notīrīt"
 
-#: gui/mainwindow.cpp:286
+#: gui/mainwindow.cpp:289
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "Notīrīt visas darbības"
 
-#: gui/mainwindow.cpp:287
+#: gui/mainwindow.cpp:290
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "Iztīrīt plānoto darbību sarakstu."
 
-#: gui/mainwindow.cpp:293
+#: gui/mainwindow.cpp:296
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "Pielietot"
 
-#: gui/mainwindow.cpp:294
+#: gui/mainwindow.cpp:297
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "Veikt visas darbības"
 
-#: gui/mainwindow.cpp:295
+#: gui/mainwindow.cpp:298
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "Veikt visas plānotās darbības sarakstā."
 
-#: gui/mainwindow.cpp:302
+#: gui/mainwindow.cpp:305
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "Create New Partition Table"
@@ -1551,7 +1534,7 @@ msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "Izveidot jaunu sadaļu tabulu"
 
-#: gui/mainwindow.cpp:303
+#: gui/mainwindow.cpp:306
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Create new partition table"
@@ -1559,13 +1542,13 @@ msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "Izveidot jaunu sadaļu tabulu"
 
-#: gui/mainwindow.cpp:304
+#: gui/mainwindow.cpp:307
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "Izveidot ierīcē jaunu, tukšu sadaļu tabulu."
 
-#: gui/mainwindow.cpp:311
+#: gui/mainwindow.cpp:314
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "Create New Partition Table"
@@ -1573,7 +1556,7 @@ msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "Izveidot jaunu sadaļu tabulu"
 
-#: gui/mainwindow.cpp:312
+#: gui/mainwindow.cpp:315
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Create new partition table"
@@ -1581,7 +1564,7 @@ msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "Izveidot jaunu sadaļu tabulu"
 
-#: gui/mainwindow.cpp:313
+#: gui/mainwindow.cpp:316
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Create a new and empty partition table on a device."
@@ -1589,7 +1572,7 @@ msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "Izveidot ierīcē jaunu, tukšu sadaļu tabulu."
 
-#: gui/mainwindow.cpp:319
+#: gui/mainwindow.cpp:322
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "Create New Partition Table"
@@ -1597,7 +1580,7 @@ msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "Izveidot jaunu sadaļu tabulu"
 
-#: gui/mainwindow.cpp:320
+#: gui/mainwindow.cpp:323
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Create new partition table"
@@ -1605,7 +1588,7 @@ msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "Izveidot jaunu sadaļu tabulu"
 
-#: gui/mainwindow.cpp:321
+#: gui/mainwindow.cpp:324
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:status"
 #| msgid "Restore a partition from an image file."
@@ -1613,7 +1596,7 @@ msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "Atjaunot sadaļu no attēla faila."
 
-#: gui/mainwindow.cpp:328
+#: gui/mainwindow.cpp:331
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Resize or move partition"
@@ -1621,7 +1604,7 @@ msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "Pārvietot vai sadaļas izmēru"
 
-#: gui/mainwindow.cpp:329
+#: gui/mainwindow.cpp:332
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Please select a device."
@@ -1629,7 +1612,7 @@ msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "Lūdzu izvēlieties ierīci."
 
-#: gui/mainwindow.cpp:330
+#: gui/mainwindow.cpp:333
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Please select a device."
@@ -1637,7 +1620,7 @@ msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "Lūdzu izvēlieties ierīci."
 
-#: gui/mainwindow.cpp:338
+#: gui/mainwindow.cpp:341
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Resize or move partition"
@@ -1645,7 +1628,7 @@ msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "Pārvietot vai sadaļas izmēru"
 
-#: gui/mainwindow.cpp:339
+#: gui/mainwindow.cpp:342
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Resize or move partition"
@@ -1653,13 +1636,13 @@ msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "Pārvietot vai sadaļas izmēru"
 
-#: gui/mainwindow.cpp:340
+#: gui/mainwindow.cpp:343
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr ""
 
-#: gui/mainwindow.cpp:348
+#: gui/mainwindow.cpp:351
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Deactivate swap"
@@ -1667,7 +1650,7 @@ msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "Deaktivizēt maiņvietu"
 
-#: gui/mainwindow.cpp:349
+#: gui/mainwindow.cpp:352
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Please select a device."
@@ -1675,7 +1658,7 @@ msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "Lūdzu izvēlieties ierīci."
 
-#: gui/mainwindow.cpp:350
+#: gui/mainwindow.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Please select a device."
@@ -1683,7 +1666,7 @@ msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr "Lūdzu izvēlieties ierīci."
 
-#: gui/mainwindow.cpp:356
+#: gui/mainwindow.cpp:359
 #, fuzzy, kde-kuit-format
 #| msgctxt "@label"
 #| msgid "Status:"
@@ -1691,7 +1674,7 @@ msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "Statuss:"
 
-#: gui/mainwindow.cpp:357
+#: gui/mainwindow.cpp:360
 #, fuzzy, kde-kuit-format
 #| msgctxt "@label"
 #| msgid "Status:"
@@ -1699,19 +1682,19 @@ msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "Statuss:"
 
-#: gui/mainwindow.cpp:358
+#: gui/mainwindow.cpp:361
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr ""
 
-#: gui/mainwindow.cpp:363 gui/mainwindow.cpp:455
+#: gui/mainwindow.cpp:366 gui/mainwindow.cpp:458
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "Īpašības"
 
-#: gui/mainwindow.cpp:364
+#: gui/mainwindow.cpp:367
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Show properties dialog"
@@ -1719,73 +1702,73 @@ msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "Parādīt īpašību logu"
 
-#: gui/mainwindow.cpp:365
+#: gui/mainwindow.cpp:368
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr ""
 
-#: gui/mainwindow.cpp:372
+#: gui/mainwindow.cpp:375
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "Jauna"
 
-#: gui/mainwindow.cpp:373
+#: gui/mainwindow.cpp:376
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "Jauna sadaļa"
 
-#: gui/mainwindow.cpp:374
+#: gui/mainwindow.cpp:377
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "Izveidot jaunu sadaļu."
 
-#: gui/mainwindow.cpp:381
+#: gui/mainwindow.cpp:384
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "Mainīt izmēru/pārvietot"
 
-#: gui/mainwindow.cpp:382
+#: gui/mainwindow.cpp:385
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "Pārvietot vai sadaļas izmēru"
 
-#: gui/mainwindow.cpp:383
+#: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "Samazināt, palielināt vai pārvietot esošu sadaļu."
 
-#: gui/mainwindow.cpp:390
+#: gui/mainwindow.cpp:393
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "Dzēst"
 
-#: gui/mainwindow.cpp:391
+#: gui/mainwindow.cpp:394
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "Dzēst sadaļu"
 
-#: gui/mainwindow.cpp:392
+#: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "Dzēst sadaļu."
 
-#: gui/mainwindow.cpp:399
+#: gui/mainwindow.cpp:402
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr ""
 
-#: gui/mainwindow.cpp:400
+#: gui/mainwindow.cpp:403
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Check partition"
@@ -1793,49 +1776,49 @@ msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "Pārbaudīt sadaļu"
 
-#: gui/mainwindow.cpp:401
+#: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr ""
 
-#: gui/mainwindow.cpp:408
+#: gui/mainwindow.cpp:411
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "Kopēt"
 
-#: gui/mainwindow.cpp:409
+#: gui/mainwindow.cpp:412
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "Kopēt sadaļu"
 
-#: gui/mainwindow.cpp:410
+#: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "Kopēt esošu sadaļu."
 
-#: gui/mainwindow.cpp:417
+#: gui/mainwindow.cpp:420
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "Ielīmēt"
 
-#: gui/mainwindow.cpp:418
+#: gui/mainwindow.cpp:421
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "Ielīmēt sadaļu"
 
-#: gui/mainwindow.cpp:419
+#: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "Ielīmēt kopētu sadaļu."
 
-#: gui/mainwindow.cpp:426
+#: gui/mainwindow.cpp:429
 #, fuzzy, kde-kuit-format
 #| msgctxt "@label"
 #| msgid "Mount Point"
@@ -1843,7 +1826,7 @@ msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "Montēšanas punkts"
 
-#: gui/mainwindow.cpp:427
+#: gui/mainwindow.cpp:430
 #, fuzzy, kde-kuit-format
 #| msgctxt "@label"
 #| msgid "Mount point:"
@@ -1851,37 +1834,37 @@ msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "Montēšanas punkts:"
 
-#: gui/mainwindow.cpp:428
+#: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr ""
 
-#: gui/mainwindow.cpp:433
+#: gui/mainwindow.cpp:436
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "Montēt"
 
-#: gui/mainwindow.cpp:434
+#: gui/mainwindow.cpp:437
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "Piemontēt vai nomontēt sadaļu"
 
-#: gui/mainwindow.cpp:435
+#: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "Piemontēt vai nomontēt sadaļu."
 
-#: gui/mainwindow.cpp:440
+#: gui/mainwindow.cpp:443
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr ""
 
-#: gui/mainwindow.cpp:441
+#: gui/mainwindow.cpp:444
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Mount or unmount partition"
@@ -1889,7 +1872,7 @@ msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "Piemontēt vai nomontēt sadaļu"
 
-#: gui/mainwindow.cpp:442
+#: gui/mainwindow.cpp:445
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Mount or unmount partition"
@@ -1897,25 +1880,25 @@ msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "Piemontēt vai nomontēt sadaļu"
 
-#: gui/mainwindow.cpp:447
+#: gui/mainwindow.cpp:450
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "Pārbaudīt"
 
-#: gui/mainwindow.cpp:448
+#: gui/mainwindow.cpp:451
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "Pārbaudīt sadaļu"
 
-#: gui/mainwindow.cpp:449
+#: gui/mainwindow.cpp:452
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "Pārbaudīt vai sadaļas failu sistēmā nav kļūdu."
 
-#: gui/mainwindow.cpp:456
+#: gui/mainwindow.cpp:459
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Show properties dialog"
@@ -1923,49 +1906,49 @@ msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "Parādīt īpašību logu"
 
-#: gui/mainwindow.cpp:457
+#: gui/mainwindow.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr "Apskatīt un mainīt sadaļas īpašības (etiķete, karodziņi, un citas)"
 
-#: gui/mainwindow.cpp:463
+#: gui/mainwindow.cpp:466
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "Rezerves kopija"
 
-#: gui/mainwindow.cpp:464
+#: gui/mainwindow.cpp:467
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "Sadaļas rezerves kopija"
 
-#: gui/mainwindow.cpp:465
+#: gui/mainwindow.cpp:468
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "Kopēt sadaļu uz attēla failu."
 
-#: gui/mainwindow.cpp:471
+#: gui/mainwindow.cpp:474
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "Atjaunot"
 
-#: gui/mainwindow.cpp:472
+#: gui/mainwindow.cpp:475
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "Atjaunot sadaļu"
 
-#: gui/mainwindow.cpp:473
+#: gui/mainwindow.cpp:476
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "Atjaunot sadaļu no attēla faila."
 
-#: gui/mainwindow.cpp:480
+#: gui/mainwindow.cpp:483
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Resize or move partition"
@@ -1973,13 +1956,13 @@ msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "Pārvietot vai sadaļas izmēru"
 
-#: gui/mainwindow.cpp:481
+#: gui/mainwindow.cpp:484
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr ""
 
-#: gui/mainwindow.cpp:482
+#: gui/mainwindow.cpp:485
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Create a new and empty partition table on a device."
@@ -1987,43 +1970,43 @@ msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "Izveidot ierīcē jaunu, tukšu sadaļu tabulu."
 
-#: gui/mainwindow.cpp:488
+#: gui/mainwindow.cpp:491
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "Failu sistēmu atbalsts"
 
-#: gui/mainwindow.cpp:489
+#: gui/mainwindow.cpp:492
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "Aplūkot failu sistēmu atbalsta informāciju"
 
-#: gui/mainwindow.cpp:490
+#: gui/mainwindow.cpp:493
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "Parādīt informāciju par atbalstītajām failu sistēmām."
 
-#: gui/mainwindow.cpp:494
+#: gui/mainwindow.cpp:497
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "Atsvaidzināt ierīces"
 
-#: gui/mainwindow.cpp:495
+#: gui/mainwindow.cpp:498
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "Atsvaidzināt visas ierīces"
 
-#: gui/mainwindow.cpp:496
+#: gui/mainwindow.cpp:499
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "Atsvaidzināt ierīču sarakstu."
 
-#: gui/mainwindow.cpp:512
+#: gui/mainwindow.cpp:515
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu clear the list of operations"
 #| msgid "Clear"
@@ -2031,56 +2014,56 @@ msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "Notīrīt"
 
-#: gui/mainwindow.cpp:513
+#: gui/mainwindow.cpp:516
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr ""
 
-#: gui/mainwindow.cpp:514
+#: gui/mainwindow.cpp:517
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr ""
 
-#: gui/mainwindow.cpp:519
+#: gui/mainwindow.cpp:522
 #, fuzzy, kde-kuit-format
 #| msgid "&Save"
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "&Saglabāt"
 
-#: gui/mainwindow.cpp:520
+#: gui/mainwindow.cpp:523
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr ""
 
-#: gui/mainwindow.cpp:521
+#: gui/mainwindow.cpp:524
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr ""
 
-#: gui/mainwindow.cpp:527
+#: gui/mainwindow.cpp:530
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr ""
 
-#: gui/mainwindow.cpp:528
+#: gui/mainwindow.cpp:531
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr ""
 
-#: gui/mainwindow.cpp:529
+#: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr ""
 
-#: gui/mainwindow.cpp:711
+#: gui/mainwindow.cpp:714
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
@@ -2089,14 +2072,14 @@ msgstr[0] "%1 darbība gaida izpildi"
 msgstr[1] "%1 darbības gaida izpildi"
 msgstr[2] "%1 darbību gaida izpildi"
 
-#: gui/mainwindow.cpp:806
+#: gui/mainwindow.cpp:809
 #, fuzzy, kde-kuit-format
 #| msgid "LibParted version:"
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "LibParted versija:"
 
-#: gui/mainwindow.cpp:810
+#: gui/mainwindow.cpp:813
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Rescan devices..."
@@ -2104,7 +2087,7 @@ msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "Pārskenēt ierīces..."
 
-#: gui/mainwindow.cpp:848
+#: gui/mainwindow.cpp:851
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Rescan finished."
@@ -2112,7 +2095,7 @@ msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "Pārskenēšana pabeigta."
 
-#: gui/mainwindow.cpp:912
+#: gui/mainwindow.cpp:915
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2122,13 +2105,13 @@ msgstr ""
 "<para>Vai tiešām vēlaties pārskenēt ierīces?</para><para><warning>Tas "
 "iztīrīs visu plānoto darbību sarakstu.</warning></para>"
 
-#: gui/mainwindow.cpp:914
+#: gui/mainwindow.cpp:917
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "Tiešām pārskenēt ierīces?"
 
-#: gui/mainwindow.cpp:915
+#: gui/mainwindow.cpp:918
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Rescan Devices"
@@ -2136,7 +2119,7 @@ msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "&Pārskenēt ierīces"
 
-#: gui/mainwindow.cpp:941
+#: gui/mainwindow.cpp:944
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2147,13 +2130,13 @@ msgstr ""
 "para><para><warning>Tas neatgiezeniski veiks izmaiņas jūsu diskos.</"
 "warning></para>"
 
-#: gui/mainwindow.cpp:943
+#: gui/mainwindow.cpp:946
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "Veikt plānotās darbības?"
 
-#: gui/mainwindow.cpp:944
+#: gui/mainwindow.cpp:947
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Apply Pending Operations"
@@ -2161,7 +2144,7 @@ msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "&Veikt plānotās dabības"
 
-#: gui/mainwindow.cpp:946
+#: gui/mainwindow.cpp:949
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Applying operations..."
@@ -2169,7 +2152,7 @@ msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "Veic darbības..."
 
-#: gui/mainwindow.cpp:971
+#: gui/mainwindow.cpp:974
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Undoing operation: %1"
@@ -2177,19 +2160,19 @@ msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "Atsauc darbību: %1"
 
-#: gui/mainwindow.cpp:987
+#: gui/mainwindow.cpp:990
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "Vai tiešām vēlaties iztīrīt plānoto darbību sarakstu?"
 
-#: gui/mainwindow.cpp:988
+#: gui/mainwindow.cpp:991
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "Tīrīt plānotās darbības"
 
-#: gui/mainwindow.cpp:989
+#: gui/mainwindow.cpp:992
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Clear Pending Operations"
@@ -2197,7 +2180,7 @@ msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "&Tīrīt plānotās darbības"
 
-#: gui/mainwindow.cpp:991
+#: gui/mainwindow.cpp:994
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Clearing the list of pending operations."
@@ -2205,7 +2188,7 @@ msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "Iztīra plānoto darbību sarakstu."
 
-#: gui/mainwindow.cpp:1033
+#: gui/mainwindow.cpp:1036
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Could not open file <filename>%1</filename> for writing."
@@ -2213,8 +2196,8 @@ msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
 msgstr "Neizdevās atvērt failu <filename>%1</filename> rakstīšanai."
 
-#: gui/mainwindow.cpp:1033 gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1051
-#: gui/mainwindow.cpp:1057
+#: gui/mainwindow.cpp:1036 gui/mainwindow.cpp:1046 gui/mainwindow.cpp:1054
+#: gui/mainwindow.cpp:1060
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "Create New Partition Table"
@@ -2222,7 +2205,7 @@ msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "Izveidot jaunu sadaļu tabulu"
 
-#: gui/mainwindow.cpp:1051
+#: gui/mainwindow.cpp:1054
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Could not open file <filename>%1</filename> for writing."
@@ -2230,7 +2213,7 @@ msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
 msgstr "Neizdevās atvērt failu <filename>%1</filename> rakstīšanai."
 
-#: gui/mainwindow.cpp:1057
+#: gui/mainwindow.cpp:1060
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2244,7 +2227,7 @@ msgstr ""
 "Neizdevās atvērt ierīci <filename>%1</filename> jaunas sadaļas izveidošanai "
 "<filename>%2</filename>."
 
-#: gui/mainwindow.cpp:1087
+#: gui/mainwindow.cpp:1090
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2258,10 +2241,10 @@ msgstr ""
 "Neizdevās atvērt ierīci <filename>%1</filename> jaunas sadaļas izveidošanai "
 "<filename>%2</filename>."
 
-#: gui/mainwindow.cpp:1087 gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1104
-#: gui/mainwindow.cpp:1109 gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1132
-#: gui/mainwindow.cpp:1137 gui/mainwindow.cpp:1156 gui/mainwindow.cpp:1161
-#: gui/mainwindow.cpp:1166 gui/mainwindow.cpp:1173 gui/mainwindow.cpp:1457
+#: gui/mainwindow.cpp:1090 gui/mainwindow.cpp:1100 gui/mainwindow.cpp:1107
+#: gui/mainwindow.cpp:1112 gui/mainwindow.cpp:1122 gui/mainwindow.cpp:1135
+#: gui/mainwindow.cpp:1140 gui/mainwindow.cpp:1159 gui/mainwindow.cpp:1164
+#: gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1460
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "Create New Partition Table"
@@ -2269,43 +2252,43 @@ msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "Izveidot jaunu sadaļu tabulu"
 
-#: gui/mainwindow.cpp:1097
+#: gui/mainwindow.cpp:1100
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1104
+#: gui/mainwindow.cpp:1107
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1109
+#: gui/mainwindow.cpp:1112
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1119
+#: gui/mainwindow.cpp:1122
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1132
+#: gui/mainwindow.cpp:1135
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1137
+#: gui/mainwindow.cpp:1140
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1156
+#: gui/mainwindow.cpp:1159
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2315,7 +2298,7 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "Nezināma jaunās sadaļas loma <filename>%1</filename> (lomas: %2)"
 
-#: gui/mainwindow.cpp:1161
+#: gui/mainwindow.cpp:1164
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2326,7 +2309,7 @@ msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
 msgstr "Nezināma jaunās sadaļas loma <filename>%1</filename> (lomas: %2)"
 
-#: gui/mainwindow.cpp:1166
+#: gui/mainwindow.cpp:1169
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2334,7 +2317,7 @@ msgid ""
 "one was found (line %2)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1173
+#: gui/mainwindow.cpp:1176
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2346,13 +2329,13 @@ msgstr ""
 "Neizdevās izveidot mērķi failu sistēmas pārvietošanai uz sadaļu <filename>"
 "%1</filename>."
 
-#: gui/mainwindow.cpp:1188
+#: gui/mainwindow.cpp:1191
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr ""
 
-#: gui/mainwindow.cpp:1208
+#: gui/mainwindow.cpp:1211
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "Create New Partition Table"
@@ -2360,17 +2343,17 @@ msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "Izveidot jaunu sadaļu tabulu"
 
-#: gui/mainwindow.cpp:1378 gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1420
+#: gui/mainwindow.cpp:1381 gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1423
 #, kde-kuit-format
 msgid "%1%2"
 msgstr ""
 
-#: gui/mainwindow.cpp:1384 gui/mainwindow.cpp:1395
+#: gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1398
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr ""
 
-#: gui/mainwindow.cpp:1432
+#: gui/mainwindow.cpp:1435
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2386,7 +2369,7 @@ msgid ""
 "in your distribution's package manager.</para>"
 msgstr ""
 
-#: gui/mainwindow.cpp:1445
+#: gui/mainwindow.cpp:1448
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "File System Support"
@@ -2394,13 +2377,13 @@ msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "Failu sistēmu atbalsts"
 
-#: gui/mainwindow.cpp:1456
+#: gui/mainwindow.cpp:1459
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr ""
 
-#: gui/mainwindow.cpp:1465
+#: gui/mainwindow.cpp:1468
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2410,7 +2393,7 @@ msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "Nezināma jaunās sadaļas loma <filename>%1</filename> (lomas: %2)"
 
-#: gui/mainwindow.cpp:1466
+#: gui/mainwindow.cpp:1469
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu"
 #| msgid "Create New Partition Table"
@@ -2497,13 +2480,13 @@ msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:199
+#: gui/partitionmanagerwidget.cpp:200
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:403
+#: gui/partitionmanagerwidget.cpp:404
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2516,13 +2499,13 @@ msgstr ""
 "Neizdevās mainīt JFS failu sistēmas izmēru sadaļā <filename>%1</filename>: "
 "Neizdevās pārmontēt."
 
-#: gui/partitionmanagerwidget.cpp:403
+#: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "Neizdevās piemontēt failu sistēmu."
 
-#: gui/partitionmanagerwidget.cpp:406
+#: gui/partitionmanagerwidget.cpp:407
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2535,13 +2518,13 @@ msgstr ""
 "Neizdevās mainīt JFS failu sistēmas izmēru sadaļā <filename>%1</filename>: "
 "Neizdevās pārmontēt."
 
-#: gui/partitionmanagerwidget.cpp:406
+#: gui/partitionmanagerwidget.cpp:407
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "Neizdevās nomontēt failu sistēmu."
 
-#: gui/partitionmanagerwidget.cpp:446
+#: gui/partitionmanagerwidget.cpp:447
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2555,7 +2538,7 @@ msgstr ""
 "Neizdevās mainīt JFS failu sistēmas izmēru sadaļā <filename>%1</filename>: "
 "Neizdevās pārmontēt."
 
-#: gui/partitionmanagerwidget.cpp:452
+#: gui/partitionmanagerwidget.cpp:453
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "Could Not Unmount File System."
@@ -2563,7 +2546,7 @@ msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "Neizdevās nomontēt failu sistēmu."
 
-#: gui/partitionmanagerwidget.cpp:457
+#: gui/partitionmanagerwidget.cpp:458
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2577,7 +2560,7 @@ msgstr ""
 "Neizdevās mainīt JFS failu sistēmas izmēru sadaļā <filename>%1</filename>: "
 "Neizdevās pārmontēt."
 
-#: gui/partitionmanagerwidget.cpp:463
+#: gui/partitionmanagerwidget.cpp:464
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "Could Not Mount File System."
@@ -2585,7 +2568,7 @@ msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "Neizdevās piemontēt failu sistēmu."
 
-#: gui/partitionmanagerwidget.cpp:492
+#: gui/partitionmanagerwidget.cpp:493
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2602,13 +2585,13 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: gui/partitionmanagerwidget.cpp:496
+#: gui/partitionmanagerwidget.cpp:497
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "Pārāk daudz primāro sadaļu."
 
-#: gui/partitionmanagerwidget.cpp:559
+#: gui/partitionmanagerwidget.cpp:560
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2618,13 +2601,13 @@ msgid ""
 "%2 first.</para>"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:562
+#: gui/partitionmanagerwidget.cpp:563
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "Nevar izdzēst sadaļu."
 
-#: gui/partitionmanagerwidget.cpp:571
+#: gui/partitionmanagerwidget.cpp:572
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2633,13 +2616,13 @@ msgid ""
 "deleted."
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:573
+#: gui/partitionmanagerwidget.cpp:574
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "Vai tiešām dzēst starpliktuvē esošu sadaļu?"
 
-#: gui/partitionmanagerwidget.cpp:574
+#: gui/partitionmanagerwidget.cpp:575
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Delete It"
@@ -2647,7 +2630,7 @@ msgctxt "@action:button"
 msgid "Delete It"
 msgstr "&Dzēst to"
 
-#: gui/partitionmanagerwidget.cpp:627
+#: gui/partitionmanagerwidget.cpp:628
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Moving partition <filename>%1</filename> failed."
@@ -2657,7 +2640,7 @@ msgid ""
 "resize/move. Ignoring operation."
 msgstr "Neizdevās pārvietot sadaļu <filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:655
+#: gui/partitionmanagerwidget.cpp:656
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2669,7 +2652,7 @@ msgstr ""
 "Sadaļa <filename>%1</filename> nebeidzas uz cilindra robežas (pēdējais "
 "sekotrs: %2, atlikums: %3)."
 
-#: gui/partitionmanagerwidget.cpp:718
+#: gui/partitionmanagerwidget.cpp:719
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2681,7 +2664,7 @@ msgid ""
 "unrecoverably be overwritten.</para>"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:726
+#: gui/partitionmanagerwidget.cpp:727
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "Overwrite Existing File?"
@@ -2689,7 +2672,7 @@ msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "Pārrakstīt esošu failu?"
 
-#: gui/partitionmanagerwidget.cpp:727
+#: gui/partitionmanagerwidget.cpp:728
 #, fuzzy, kde-kuit-format
 #| msgctxt "@item partition name"
 #| msgid "New Partition"
@@ -2697,7 +2680,7 @@ msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "Jauna sadaļa"
 
-#: gui/partitionmanagerwidget.cpp:735
+#: gui/partitionmanagerwidget.cpp:736
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2706,13 +2689,13 @@ msgid ""
 "partition so it is as large as the source.</para>"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:736
+#: gui/partitionmanagerwidget.cpp:737
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:739
+#: gui/partitionmanagerwidget.cpp:740
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2722,13 +2705,13 @@ msgid ""
 "partition.</para>"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:742
+#: gui/partitionmanagerwidget.cpp:743
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:800
+#: gui/partitionmanagerwidget.cpp:801
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2742,14 +2725,14 @@ msgstr ""
 "Neizdevās mainīt JFS failu sistēmas izmēru sadaļā <filename>%1</filename>: "
 "Neizdevās izveidot pagaidu mapi."
 
-#: gui/partitionmanagerwidget.cpp:800
+#: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
 msgstr "Nepietiek vietas, lai atjaunotu failu sistēmu."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:76
+#: gui/partitionmanagerwidgetbase.ui:79
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Partition"
@@ -2757,7 +2740,7 @@ msgid "Partition"
 msgstr "Sadaļa"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:81
+#: gui/partitionmanagerwidgetbase.ui:84
 #, fuzzy, kde-format
 #| msgctxt "@label partition type"
 #| msgid "Type"
@@ -2765,7 +2748,7 @@ msgid "Type"
 msgstr "Tips"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:86
+#: gui/partitionmanagerwidgetbase.ui:89
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Mount Point"
@@ -2773,7 +2756,7 @@ msgid "Mount Point"
 msgstr "Montēšanas punkts"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:91
+#: gui/partitionmanagerwidgetbase.ui:94
 #, fuzzy, kde-format
 #| msgctxt "@label file system label"
 #| msgid "Label"
@@ -2781,14 +2764,14 @@ msgid "Label"
 msgstr "Etiķete"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:96
+#: gui/partitionmanagerwidgetbase.ui:99
 #, fuzzy, kde-format
 #| msgid "User ID:"
 msgid "UUID"
 msgstr "Lietotāja ID:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:101
+#: gui/partitionmanagerwidgetbase.ui:104
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Partition type:"
@@ -2796,7 +2779,7 @@ msgid "Partition Name"
 msgstr "Sadaļas tips:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:106
+#: gui/partitionmanagerwidgetbase.ui:109
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Partition"
@@ -2804,7 +2787,7 @@ msgid "Partition UUID"
 msgstr "Sadaļa"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:111
+#: gui/partitionmanagerwidgetbase.ui:114
 #, fuzzy, kde-format
 #| msgctxt "@label total file system size"
 #| msgid "Size"
@@ -2812,7 +2795,7 @@ msgid "Size"
 msgstr "Izmērs"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:116
+#: gui/partitionmanagerwidgetbase.ui:119
 #, fuzzy, kde-format
 #| msgctxt "@label space used"
 #| msgid "Used"
@@ -2820,7 +2803,7 @@ msgid "Used"
 msgstr "Izmantots"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:121
+#: gui/partitionmanagerwidgetbase.ui:124
 #, fuzzy, kde-format
 #| msgctxt "@label partition"
 #| msgid "Available:"
@@ -2828,7 +2811,7 @@ msgid "Available"
 msgstr "Pieejams:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:126
+#: gui/partitionmanagerwidgetbase.ui:129
 #, fuzzy, kde-format
 #| msgctxt "@label partition"
 #| msgid "First sector:"
@@ -2836,7 +2819,7 @@ msgid "First Sector"
 msgstr "Pirmais sektors:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:131
+#: gui/partitionmanagerwidgetbase.ui:134
 #, fuzzy, kde-format
 #| msgctxt "@label partition"
 #| msgid "Last sector:"
@@ -2844,7 +2827,7 @@ msgid "Last Sector"
 msgstr "Pēdējais sektors:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:136
+#: gui/partitionmanagerwidgetbase.ui:139
 #, fuzzy, kde-format
 #| msgctxt "@label partition"
 #| msgid "Number of sectors:"
@@ -2852,7 +2835,7 @@ msgid "Number of Sectors"
 msgstr "Sektoru skaits:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
-#: gui/partitionmanagerwidgetbase.ui:141
+#: gui/partitionmanagerwidgetbase.ui:144
 #, fuzzy, kde-format
 #| msgctxt "@label partition flags"
 #| msgid "Flags"
@@ -2981,21 +2964,21 @@ msgid "Do Not Recreate the File System"
 msgstr "&Neatjaunot failu sistēmu"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
-#: gui/partpropswidgetbase.ui:23
+#: gui/partpropswidgetbase.ui:26
 #, kde-format
 msgctxt "@label"
 msgid "First sector:"
 msgstr "Pirmais sektors:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
-#: gui/partpropswidgetbase.ui:53
+#: gui/partpropswidgetbase.ui:56
 #, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "Izmērs:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
-#: gui/partpropswidgetbase.ui:63
+#: gui/partpropswidgetbase.ui:66
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Partition"
@@ -3003,14 +2986,14 @@ msgid "Partition UUID:"
 msgstr "Sadaļa"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
-#: gui/partpropswidgetbase.ui:73 gui/sizedialogwidgetbase.ui:146
+#: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:146
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
 msgstr "Šī failu sistēma neatbalsta etiķeti."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
-#: gui/partpropswidgetbase.ui:83
+#: gui/partpropswidgetbase.ui:86
 #, fuzzy, kde-format
 #| msgid "User ID:"
 msgctxt "@label"
@@ -3018,28 +3001,28 @@ msgid "UUID:"
 msgstr "Lietotāja ID:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
-#: gui/partpropswidgetbase.ui:100
+#: gui/partpropswidgetbase.ui:103
 #, kde-format
 msgctxt "@label"
 msgid "Last sector:"
 msgstr "Pēdējais sektors:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
-#: gui/partpropswidgetbase.ui:131
+#: gui/partpropswidgetbase.ui:134
 #, kde-format
 msgctxt "@label"
 msgid "Status:"
 msgstr "Statuss:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
-#: gui/partpropswidgetbase.ui:141
+#: gui/partpropswidgetbase.ui:144
 #, kde-format
 msgctxt "@label partition capacity available"
 msgid "Available:"
 msgstr "Pieejams:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:220
+#: gui/partpropswidgetbase.ui:223
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "&Label:"
@@ -3048,21 +3031,21 @@ msgid "&Label:"
 msgstr "&Etiķete:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:283
+#: gui/partpropswidgetbase.ui:286
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "Montēšanas punkts:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:303
+#: gui/partpropswidgetbase.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "Sadaļas tips:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
-#: gui/partpropswidgetbase.ui:313
+#: gui/partpropswidgetbase.ui:316
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Device"
@@ -3070,14 +3053,14 @@ msgid "Device path:"
 msgstr "Ierīce"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:323
+#: gui/partpropswidgetbase.ui:326
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "Sektoru skaits:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:333
+#: gui/partpropswidgetbase.ui:336
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Partition type:"
@@ -3085,7 +3068,7 @@ msgid "Partition Name:"
 msgstr "Sadaļas tips:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:343
+#: gui/partpropswidgetbase.ui:346
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -3093,21 +3076,21 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:346
+#: gui/partpropswidgetbase.ui:349
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "Atjaunot eksistējošu failu sistēmu"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:373
+#: gui/partpropswidgetbase.ui:376
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Izmantots:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:383
+#: gui/partpropswidgetbase.ui:386
 #, fuzzy, kde-format
 #| msgctxt "@label partition"
 #| msgid "File system:"
@@ -3116,7 +3099,7 @@ msgid "File syste&m:"
 msgstr "Failu sistēma:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:396
+#: gui/partpropswidgetbase.ui:399
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "&Flags:"
@@ -3879,6 +3862,17 @@ msgstr "Neizdevās palaist konfigurēto ārējo pārlūku. Pārbaudiet iestatīj
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Backup"
+#~ msgid "Backend"
+#~ msgstr "Rez. kopija"
+
+#, fuzzy
+#~| msgctxt "@item/plain filesystem name"
+#~| msgid "ntfs"
+#~ msgid "Units"
+#~ msgstr "ntfs"
 
 #, fuzzy
 #~| msgctxt "@label"
