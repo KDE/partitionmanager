@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-16 01:46+0000\n"
-"PO-Revision-Date: 2023-10-21 13:54\n"
+"PO-Revision-Date: 2023-11-19 03:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/partitionmanager/partitionmanager.pot\n"
-"X-Crowdin-File-ID: 5750\n"
+"X-Crowdin-File: /kf6-trunk/messages/partitionmanager/partitionmanager.pot\n"
+"X-Crowdin-File-ID: 48428\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2526,12 +2526,10 @@ msgid "(none found)"
 msgstr "(未找到)"
 
 #: gui/partpropsdialog.cpp:115
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
-msgstr "(未找到)"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
@@ -2708,11 +2706,9 @@ msgstr "分区类型："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "设备"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:326
@@ -3440,9 +3436,3 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "列"
-
-#~ msgid "Backend"
-#~ msgstr "后端程序"
-
-#~ msgid "Units"
-#~ msgstr "单位"
