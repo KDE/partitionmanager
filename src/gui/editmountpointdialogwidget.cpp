@@ -237,8 +237,10 @@ void EditMountPointDialogWidget::currentPathChanged(const QString &newPath)
     auto path = newPath.trimmed().toLower();
     if (path.isEmpty() || path == QStringLiteral("none")) {
         m_valid = false;
+        m_PathMessage->setVisible(true);
     } else {
         m_valid = true;
+        m_PathMessage->setVisible(false);
     }
     Q_EMIT isValidChanged(m_valid);
 }
