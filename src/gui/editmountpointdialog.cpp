@@ -43,6 +43,10 @@ EditMountPointDialog::EditMountPointDialog(QWidget* parent, Partition& p) :
     connect(dbb, &QDialogButtonBox::rejected,
             this, &EditMountPointDialog::reject);
     connect(widget().m_ButtonRemove, &QPushButton::clicked, this, [=] () {accept_(MountPointAction::Remove);} );
+    connect(m_DialogWidget, &EditMountPointDialogWidget::isValidChanged, this, [dbb](bool newValid) {
+        dbb->button(QDialogButtonBox::Ok)->setEnabled(newValid);
+    });
+    dbb->button(QDialogButtonBox::Ok)->setEnabled(m_DialogWidget->isValid());
 }
 
 /** Destroys an EditMountOptionsDialog instance */
