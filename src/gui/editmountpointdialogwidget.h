@@ -29,6 +29,7 @@ class QPushButton;
 
 class EditMountPointDialogWidget : public QWidget, public Ui::EditMountPointDialogWidgetBase
 {
+    Q_OBJECT
 public:
     EditMountPointDialogWidget(QWidget* parent, Partition& p);
     ~EditMountPointDialogWidget();
@@ -65,13 +66,19 @@ public:
         return m_fstabEntries;
     }
 
+    bool isValid() const;
+
     void acceptChanges();
     void removeMountPoint();
     bool writeMountpoints(const QString& filename);
 
+Q_SIGNALS:
+    void isValidChanged(bool newValid);
+
 protected:
     void buttonSelectClicked(bool);
     void buttonMoreClicked(bool);
+    void currentPathChanged(const QString &newPath);
 
 private:
     void setupOptions(const QStringList& options);
@@ -101,6 +108,7 @@ private:
     QStringList mountPointList;
     std::map<QString, QCheckBox*> m_BoxOptions;
     std::map<QString, QCheckBox*>::iterator iterator_BoxOptions;
+    bool m_valid = false;
 };
 
 #endif

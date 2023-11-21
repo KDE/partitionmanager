@@ -98,10 +98,17 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partitio
                         }
                         setupOptions(currentEntry->options());
                       });
+    connect(m_EditPath, &QComboBox::currentTextChanged, this, &EditMountPointDialogWidget::currentPathChanged);
+    currentPathChanged(m_EditPath->currentText());
 }
 
 EditMountPointDialogWidget::~EditMountPointDialogWidget()
 {
+}
+
+bool EditMountPointDialogWidget::isValid() const
+{
+    return m_valid;
 }
 
 void EditMountPointDialogWidget::setupOptions(const QStringList& options)
@@ -223,4 +230,15 @@ void EditMountPointDialogWidget::acceptChanges()
         currentEntry->setFsSpec(QStringLiteral("LABEL=") + partition().fileSystem().label());
     else
         currentEntry->setFsSpec(m_deviceNode);
+}
+
+void EditMountPointDialogWidget::currentPathChanged(const QString &newPath)
+{
+    auto path = newPath.trimmed().toLower();
+    if (path.isEmpty() || path == QStringLiteral("none")) {
+        m_valid = false;
+    } else {
+        m_valid = true;
+    }
+    Q_EMIT isValidChanged(m_valid);
 }
