@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-16 01:46+0000\n"
+"POT-Creation-Date: 2023-11-22 01:37+0000\n"
 "PO-Revision-Date: 2023-06-15 04:10+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -772,7 +772,7 @@ msgstr "SMART 狀態："
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
-#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:81
+#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:102
 #, kde-format
 msgid "More..."
 msgstr "更多..."
@@ -807,7 +807,7 @@ msgctxt "@title:window"
 msgid "Edit mount point for <filename>%1</filename>"
 msgstr "編輯 <filename>%1</filename> 的掛載點"
 
-#: gui/editmountpointdialog.cpp:58
+#: gui/editmountpointdialog.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -820,143 +820,149 @@ msgstr ""
 "filename> 中嗎？</para> <para><warning>這會覆寫您硬碟中的資料，而且<emphasis "
 "strong='1'>無法回復</emphasis>。</warning></para>"
 
-#: gui/editmountpointdialog.cpp:60
+#: gui/editmountpointdialog.cpp:64
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really save changes?"
 msgstr "確定要儲存變更？"
 
-#: gui/editmountpointdialog.cpp:61
+#: gui/editmountpointdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save changes"
 msgstr "儲存變更"
 
-#: gui/editmountpointdialog.cpp:76
+#: gui/editmountpointdialog.cpp:80
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
 msgstr "無法將掛載點儲存到檔案 <filename>/etc/fstab</filename>。"
 
-#: gui/editmountpointdialog.cpp:77
+#: gui/editmountpointdialog.cpp:81
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Saving Mount Points"
 msgstr "儲存掛載點時發生錯誤"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
-#: gui/editmountpointdialogwidgetbase.ui:23
-#, kde-format
-msgid "UU&ID"
-msgstr "UU&ID"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
-#: gui/editmountpointdialogwidgetbase.ui:33
-#, kde-format
-msgid "Users can mount and unmount"
-msgstr "使用者可以掛載與卸載"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
-#: gui/editmountpointdialogwidgetbase.ui:40
-#, kde-format
-msgid "Update access times relative to modification"
-msgstr "修改時更新存取時間"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: gui/editmountpointdialogwidgetbase.ui:61
-#, kde-format
-msgid "Read-only"
-msgstr "唯讀"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
-#: gui/editmountpointdialogwidgetbase.ui:68
-#, kde-format
-msgid "Pass &Number:"
-msgstr "傳遞數(&N)："
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
-#: gui/editmountpointdialogwidgetbase.ui:101
-#, kde-format
-msgid "De&vice Node"
-msgstr "裝置節點(&V)"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: gui/editmountpointdialogwidgetbase.ui:111
-#, kde-format
-msgid "Options:"
-msgstr "選項："
-
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
-#: gui/editmountpointdialogwidgetbase.ui:137
+#: gui/editmountpointdialogwidgetbase.ui:23
 #, kde-format
 msgid "&Label"
 msgstr "標籤(&L)"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
-#: gui/editmountpointdialogwidgetbase.ui:144
-#, kde-format
-msgid "No binary execution"
-msgstr "沒有二進位可執行檔執行"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
-#: gui/editmountpointdialogwidgetbase.ui:167
-#, kde-format
-msgid "No automatic mount"
-msgstr "不自動掛載"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
-#: gui/editmountpointdialogwidgetbase.ui:180
-#, kde-format
-msgid "Remove"
-msgstr "移除"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
-#: gui/editmountpointdialogwidgetbase.ui:193
-#, kde-format
-msgid "Select..."
-msgstr "選擇..."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: gui/editmountpointdialogwidgetbase.ui:200
-#, kde-format
-msgid "No update of directory access times"
-msgstr "目錄的存取時間未有更新"
-
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
-#: gui/editmountpointdialogwidgetbase.ui:207
+#: gui/editmountpointdialogwidgetbase.ui:46
 #, kde-format
 msgid "Dump &Frequency:"
 msgstr "傾印頻率(&F)"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
-#: gui/editmountpointdialogwidgetbase.ui:236
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:75
 #, kde-format
-msgid "Type:"
-msgstr "型態："
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
-#: gui/editmountpointdialogwidgetbase.ui:246
-#, kde-format
-msgid "Path:"
-msgstr "路徑:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
-#: gui/editmountpointdialogwidgetbase.ui:288
-#, kde-format
-msgid "No update of file access times"
-msgstr "檔案的存取時間未有更新"
+msgid "No automatic mount"
+msgstr "不自動掛載"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
-#: gui/editmountpointdialogwidgetbase.ui:295
+#: gui/editmountpointdialogwidgetbase.ui:95
 #, kde-format
 msgid "Synchronous access"
 msgstr "同步存取"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:109
+#, kde-format
+msgid "Pass &Number:"
+msgstr "傳遞數(&N)："
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
+#: gui/editmountpointdialogwidgetbase.ui:128
+#, kde-format
+msgid "Remove"
+msgstr "移除"
+
+#. i18n: ectx: property (text), widget (KMessageWidget, m_PathMessage)
+#: gui/editmountpointdialogwidgetbase.ui:141
+#, kde-format
+msgid "A valid path is required."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:173
+#, kde-format
+msgid "Path:"
+msgstr "路徑:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:183
+#, kde-format
+msgid "Users can mount and unmount"
+msgstr "使用者可以掛載與卸載"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:190
+#, kde-format
+msgid "Type:"
+msgstr "型態："
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:200
+#, kde-format
+msgid "UU&ID"
+msgstr "UU&ID"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:213
+#, kde-format
+msgid "Select..."
+msgstr "選擇..."
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:220
+#, kde-format
+msgid "De&vice Node"
+msgstr "裝置節點(&V)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:230
+#, kde-format
+msgid "No update of file access times"
+msgstr "檔案的存取時間未有更新"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:250
+#, kde-format
+msgid "No binary execution"
+msgstr "沒有二進位可執行檔執行"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:264
+#, kde-format
+msgid "Update access times relative to modification"
+msgstr "修改時更新存取時間"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:278
+#, kde-format
+msgid "No update of directory access times"
+msgstr "目錄的存取時間未有更新"
+
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: gui/editmountpointdialogwidgetbase.ui:315
+#: gui/editmountpointdialogwidgetbase.ui:288
 #, kde-format
 msgid "Identify by:"
 msgstr "識別由："
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:298
+#, kde-format
+msgid "Read-only"
+msgstr "唯讀"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:305
+#, kde-format
+msgid "Options:"
+msgstr "選項："
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format

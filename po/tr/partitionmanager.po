@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-16 01:46+0000\n"
+"POT-Creation-Date: 2023-11-22 01:37+0000\n"
 "PO-Revision-Date: 2023-11-13 05:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -777,7 +777,7 @@ msgstr "SMART durumu:"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
-#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:81
+#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:102
 #, kde-format
 msgid "More..."
 msgstr "Daha Fazla..."
@@ -812,7 +812,7 @@ msgctxt "@title:window"
 msgid "Edit mount point for <filename>%1</filename>"
 msgstr "<filename>%1</filename> için bağlama noktasını düzenle"
 
-#: gui/editmountpointdialog.cpp:58
+#: gui/editmountpointdialog.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -827,143 +827,149 @@ msgstr ""
 "yazacaktır. Bu işlem, <emphasis strong='1'>geri alınamaz</emphasis>.</"
 "warning></para>"
 
-#: gui/editmountpointdialog.cpp:60
+#: gui/editmountpointdialog.cpp:64
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really save changes?"
 msgstr "Değişiklikler kaydedilsin mi?"
 
-#: gui/editmountpointdialog.cpp:61
+#: gui/editmountpointdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save changes"
 msgstr "Değişiklikleri kaydet"
 
-#: gui/editmountpointdialog.cpp:76
+#: gui/editmountpointdialog.cpp:80
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
 msgstr "<filename>/etc/fstab</filename> bağlama noktası dosyası kaydedilemedi."
 
-#: gui/editmountpointdialog.cpp:77
+#: gui/editmountpointdialog.cpp:81
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Saving Mount Points"
 msgstr "Bağlama Noktası Kaydedilemedi"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
-#: gui/editmountpointdialogwidgetbase.ui:23
-#, kde-format
-msgid "UU&ID"
-msgstr "UU&ID"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
-#: gui/editmountpointdialogwidgetbase.ui:33
-#, kde-format
-msgid "Users can mount and unmount"
-msgstr "Kullanıcılar bağlayıp bağlantı kesebilirler"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
-#: gui/editmountpointdialogwidgetbase.ui:40
-#, kde-format
-msgid "Update access times relative to modification"
-msgstr "Düzenlemeyle bağlı olarak erişim zamanlarını güncelle"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: gui/editmountpointdialogwidgetbase.ui:61
-#, kde-format
-msgid "Read-only"
-msgstr "Salt-okunur"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
-#: gui/editmountpointdialogwidgetbase.ui:68
-#, kde-format
-msgid "Pass &Number:"
-msgstr "G&eçiş Numarası:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
-#: gui/editmountpointdialogwidgetbase.ui:101
-#, kde-format
-msgid "De&vice Node"
-msgstr "Ay&gıt Düğümü"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: gui/editmountpointdialogwidgetbase.ui:111
-#, kde-format
-msgid "Options:"
-msgstr "Seçenekler:"
-
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
-#: gui/editmountpointdialogwidgetbase.ui:137
+#: gui/editmountpointdialogwidgetbase.ui:23
 #, kde-format
 msgid "&Label"
 msgstr "&Etiket"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
-#: gui/editmountpointdialogwidgetbase.ui:144
-#, kde-format
-msgid "No binary execution"
-msgstr "İkilik dosya çalıştırması yok"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
-#: gui/editmountpointdialogwidgetbase.ui:167
-#, kde-format
-msgid "No automatic mount"
-msgstr "Otomatik bağlamayı kullanma"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
-#: gui/editmountpointdialogwidgetbase.ui:180
-#, kde-format
-msgid "Remove"
-msgstr "Kaldır"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
-#: gui/editmountpointdialogwidgetbase.ui:193
-#, kde-format
-msgid "Select..."
-msgstr "Seç..."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: gui/editmountpointdialogwidgetbase.ui:200
-#, kde-format
-msgid "No update of directory access times"
-msgstr "Dizin erişim zamanlarının güncellemesi yok"
-
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
-#: gui/editmountpointdialogwidgetbase.ui:207
+#: gui/editmountpointdialogwidgetbase.ui:46
 #, kde-format
 msgid "Dump &Frequency:"
 msgstr "Döküm Sık&lığı:"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
-#: gui/editmountpointdialogwidgetbase.ui:236
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:75
 #, kde-format
-msgid "Type:"
-msgstr "Tür:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
-#: gui/editmountpointdialogwidgetbase.ui:246
-#, kde-format
-msgid "Path:"
-msgstr "Yol:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
-#: gui/editmountpointdialogwidgetbase.ui:288
-#, kde-format
-msgid "No update of file access times"
-msgstr "Dosya erişim zamanlarının güncellemesi yok"
+msgid "No automatic mount"
+msgstr "Otomatik bağlamayı kullanma"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
-#: gui/editmountpointdialogwidgetbase.ui:295
+#: gui/editmountpointdialogwidgetbase.ui:95
 #, kde-format
 msgid "Synchronous access"
 msgstr "Eş zamanlı erişim"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:109
+#, kde-format
+msgid "Pass &Number:"
+msgstr "G&eçiş Numarası:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
+#: gui/editmountpointdialogwidgetbase.ui:128
+#, kde-format
+msgid "Remove"
+msgstr "Kaldır"
+
+#. i18n: ectx: property (text), widget (KMessageWidget, m_PathMessage)
+#: gui/editmountpointdialogwidgetbase.ui:141
+#, kde-format
+msgid "A valid path is required."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:173
+#, kde-format
+msgid "Path:"
+msgstr "Yol:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:183
+#, kde-format
+msgid "Users can mount and unmount"
+msgstr "Kullanıcılar bağlayıp bağlantı kesebilirler"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:190
+#, kde-format
+msgid "Type:"
+msgstr "Tür:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:200
+#, kde-format
+msgid "UU&ID"
+msgstr "UU&ID"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:213
+#, kde-format
+msgid "Select..."
+msgstr "Seç..."
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:220
+#, kde-format
+msgid "De&vice Node"
+msgstr "Ay&gıt Düğümü"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:230
+#, kde-format
+msgid "No update of file access times"
+msgstr "Dosya erişim zamanlarının güncellemesi yok"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:250
+#, kde-format
+msgid "No binary execution"
+msgstr "İkilik dosya çalıştırması yok"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:264
+#, kde-format
+msgid "Update access times relative to modification"
+msgstr "Düzenlemeyle bağlı olarak erişim zamanlarını güncelle"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:278
+#, kde-format
+msgid "No update of directory access times"
+msgstr "Dizin erişim zamanlarının güncellemesi yok"
+
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: gui/editmountpointdialogwidgetbase.ui:315
+#: gui/editmountpointdialogwidgetbase.ui:288
 #, kde-format
 msgid "Identify by:"
 msgstr "Buna göre tanımla:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:298
+#, kde-format
+msgid "Read-only"
+msgstr "Salt-okunur"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:305
+#, kde-format
+msgid "Options:"
+msgstr "Seçenekler:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-16 01:46+0000\n"
+"POT-Creation-Date: 2023-11-22 01:37+0000\n"
 "PO-Revision-Date: 2023-04-22 00:19+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -769,7 +769,7 @@ msgstr "SMART 상태:"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
-#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:81
+#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:102
 #, kde-format
 msgid "More..."
 msgstr "더 보기..."
@@ -804,7 +804,7 @@ msgctxt "@title:window"
 msgid "Edit mount point for <filename>%1</filename>"
 msgstr "<filename>%1</filename>의 마운트 지점 입력"
 
-#: gui/editmountpointdialog.cpp:58
+#: gui/editmountpointdialog.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -818,144 +818,150 @@ msgstr ""
 "다. 이 작업은 <emphasis strong='1'>취소할 수 없습니다.</emphasis></warning></"
 "para>"
 
-#: gui/editmountpointdialog.cpp:60
+#: gui/editmountpointdialog.cpp:64
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really save changes?"
 msgstr "변경 사항을 저장하시겠습니까?"
 
-#: gui/editmountpointdialog.cpp:61
+#: gui/editmountpointdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save changes"
 msgstr "변경 사항 저장"
 
-#: gui/editmountpointdialog.cpp:76
+#: gui/editmountpointdialog.cpp:80
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
 msgstr ""
 "마운트 지점을 파일 <filename>/etc/fstab</filename>에 저장할 수 없습니다."
 
-#: gui/editmountpointdialog.cpp:77
+#: gui/editmountpointdialog.cpp:81
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Saving Mount Points"
 msgstr "마운트 지점을 저장하는 중 오류 발생"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
-#: gui/editmountpointdialogwidgetbase.ui:23
-#, kde-format
-msgid "UU&ID"
-msgstr "UUID(&I)"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
-#: gui/editmountpointdialogwidgetbase.ui:33
-#, kde-format
-msgid "Users can mount and unmount"
-msgstr "사용자가 마운트 및 마운트 해제 가능"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
-#: gui/editmountpointdialogwidgetbase.ui:40
-#, kde-format
-msgid "Update access times relative to modification"
-msgstr "수정 시간에 상대적으로 접근 시간 업데이트"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: gui/editmountpointdialogwidgetbase.ui:61
-#, kde-format
-msgid "Read-only"
-msgstr "읽기 전용"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
-#: gui/editmountpointdialogwidgetbase.ui:68
-#, kde-format
-msgid "Pass &Number:"
-msgstr "단계 번호(&N):"
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
-#: gui/editmountpointdialogwidgetbase.ui:101
-#, kde-format
-msgid "De&vice Node"
-msgstr "장치 노드(&V)"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: gui/editmountpointdialogwidgetbase.ui:111
-#, kde-format
-msgid "Options:"
-msgstr "옵션:"
-
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
-#: gui/editmountpointdialogwidgetbase.ui:137
+#: gui/editmountpointdialogwidgetbase.ui:23
 #, kde-format
 msgid "&Label"
 msgstr "레이블(&L)"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
-#: gui/editmountpointdialogwidgetbase.ui:144
-#, kde-format
-msgid "No binary execution"
-msgstr "바이너리 실행 금지"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
-#: gui/editmountpointdialogwidgetbase.ui:167
-#, kde-format
-msgid "No automatic mount"
-msgstr "자동 마운트 사용 안함"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
-#: gui/editmountpointdialogwidgetbase.ui:180
-#, kde-format
-msgid "Remove"
-msgstr "삭제"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
-#: gui/editmountpointdialogwidgetbase.ui:193
-#, kde-format
-msgid "Select..."
-msgstr "선택..."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: gui/editmountpointdialogwidgetbase.ui:200
-#, kde-format
-msgid "No update of directory access times"
-msgstr "디렉터리 접근 시간 업데이트 안 함"
-
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
-#: gui/editmountpointdialogwidgetbase.ui:207
+#: gui/editmountpointdialogwidgetbase.ui:46
 #, kde-format
 msgid "Dump &Frequency:"
 msgstr "덤프 주기(&F):"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
-#: gui/editmountpointdialogwidgetbase.ui:236
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:75
 #, kde-format
-msgid "Type:"
-msgstr "종류:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
-#: gui/editmountpointdialogwidgetbase.ui:246
-#, kde-format
-msgid "Path:"
-msgstr "경로:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
-#: gui/editmountpointdialogwidgetbase.ui:288
-#, kde-format
-msgid "No update of file access times"
-msgstr "파일 접근 시간 업데이트 안 함"
+msgid "No automatic mount"
+msgstr "자동 마운트 사용 안함"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
-#: gui/editmountpointdialogwidgetbase.ui:295
+#: gui/editmountpointdialogwidgetbase.ui:95
 #, kde-format
 msgid "Synchronous access"
 msgstr "동기 접근"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:109
+#, kde-format
+msgid "Pass &Number:"
+msgstr "단계 번호(&N):"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
+#: gui/editmountpointdialogwidgetbase.ui:128
+#, kde-format
+msgid "Remove"
+msgstr "삭제"
+
+#. i18n: ectx: property (text), widget (KMessageWidget, m_PathMessage)
+#: gui/editmountpointdialogwidgetbase.ui:141
+#, kde-format
+msgid "A valid path is required."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:173
+#, kde-format
+msgid "Path:"
+msgstr "경로:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:183
+#, kde-format
+msgid "Users can mount and unmount"
+msgstr "사용자가 마운트 및 마운트 해제 가능"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:190
+#, kde-format
+msgid "Type:"
+msgstr "종류:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:200
+#, kde-format
+msgid "UU&ID"
+msgstr "UUID(&I)"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:213
+#, kde-format
+msgid "Select..."
+msgstr "선택..."
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:220
+#, kde-format
+msgid "De&vice Node"
+msgstr "장치 노드(&V)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:230
+#, kde-format
+msgid "No update of file access times"
+msgstr "파일 접근 시간 업데이트 안 함"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:250
+#, kde-format
+msgid "No binary execution"
+msgstr "바이너리 실행 금지"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:264
+#, kde-format
+msgid "Update access times relative to modification"
+msgstr "수정 시간에 상대적으로 접근 시간 업데이트"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:278
+#, kde-format
+msgid "No update of directory access times"
+msgstr "디렉터리 접근 시간 업데이트 안 함"
+
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: gui/editmountpointdialogwidgetbase.ui:315
+#: gui/editmountpointdialogwidgetbase.ui:288
 #, kde-format
 msgid "Identify by:"
 msgstr "다음으로 식별:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:298
+#, kde-format
+msgid "Read-only"
+msgstr "읽기 전용"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:305
+#, kde-format
+msgid "Options:"
+msgstr "옵션:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format

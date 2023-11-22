@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-16 01:46+0000\n"
+"POT-Creation-Date: 2023-11-22 01:37+0000\n"
 "PO-Revision-Date: 2022-04-09 19:27+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -774,7 +774,7 @@ msgstr "Stav systému SMART:"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
-#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:81
+#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:102
 #, kde-format
 msgid "More..."
 msgstr "Viac..."
@@ -809,7 +809,7 @@ msgctxt "@title:window"
 msgid "Edit mount point for <filename>%1</filename>"
 msgstr "Úprava bodu pripojenia pre <filename>%1</filename>"
 
-#: gui/editmountpointdialog.cpp:58
+#: gui/editmountpointdialog.cpp:62
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -823,19 +823,19 @@ msgstr ""
 "prepíše existujúci súbor na vašom pevnom disku. Túto operáciu <emphasis "
 "strong='1'>nebude možné vrátiť späť</emphasis>.</warning></para>"
 
-#: gui/editmountpointdialog.cpp:60
+#: gui/editmountpointdialog.cpp:64
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really save changes?"
 msgstr "Naozaj uložiť zmeny?"
 
-#: gui/editmountpointdialog.cpp:61
+#: gui/editmountpointdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save changes"
 msgstr "Uložiť zmeny"
 
-#: gui/editmountpointdialog.cpp:76
+#: gui/editmountpointdialog.cpp:80
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
@@ -843,125 +843,131 @@ msgstr ""
 "Nepodarilo sa uložiť body pripojení do súboru <filename>/etc/fstab</"
 "filename>."
 
-#: gui/editmountpointdialog.cpp:77
+#: gui/editmountpointdialog.cpp:81
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Saving Mount Points"
 msgstr "Chyba pri ukladaní bodov pripojenia"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
-#: gui/editmountpointdialogwidgetbase.ui:23
-#, kde-format
-msgid "UU&ID"
-msgstr "UU&ID"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
-#: gui/editmountpointdialogwidgetbase.ui:33
-#, kde-format
-msgid "Users can mount and unmount"
-msgstr "Používatelia môžu pripojiť a odpojiť"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
-#: gui/editmountpointdialogwidgetbase.ui:40
-#, kde-format
-msgid "Update access times relative to modification"
-msgstr "Aktualizovať prístupové doby vzhľadom k úpravám"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: gui/editmountpointdialogwidgetbase.ui:61
-#, kde-format
-msgid "Read-only"
-msgstr "Iba na čítanie"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
-#: gui/editmountpointdialogwidgetbase.ui:68
-#, kde-format
-msgid "Pass &Number:"
-msgstr "Číslo &priechodu:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
-#: gui/editmountpointdialogwidgetbase.ui:101
-#, kde-format
-msgid "De&vice Node"
-msgstr "Uzol &zariadenia"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: gui/editmountpointdialogwidgetbase.ui:111
-#, kde-format
-msgid "Options:"
-msgstr "Voľby:"
-
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
-#: gui/editmountpointdialogwidgetbase.ui:137
+#: gui/editmountpointdialogwidgetbase.ui:23
 #, kde-format
 msgid "&Label"
 msgstr "&Menovka:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
-#: gui/editmountpointdialogwidgetbase.ui:144
-#, kde-format
-msgid "No binary execution"
-msgstr "Žiadne binárne spúšťanie"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
-#: gui/editmountpointdialogwidgetbase.ui:167
-#, kde-format
-msgid "No automatic mount"
-msgstr "Bez automatického pripojenia"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
-#: gui/editmountpointdialogwidgetbase.ui:180
-#, kde-format
-msgid "Remove"
-msgstr "Odstrániť"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
-#: gui/editmountpointdialogwidgetbase.ui:193
-#, kde-format
-msgid "Select..."
-msgstr "Vybrať..."
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: gui/editmountpointdialogwidgetbase.ui:200
-#, kde-format
-msgid "No update of directory access times"
-msgstr "Bez aktualizácie prístupovej doby k adresárom"
-
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
-#: gui/editmountpointdialogwidgetbase.ui:207
+#: gui/editmountpointdialogwidgetbase.ui:46
 #, kde-format
 msgid "Dump &Frequency:"
 msgstr "Frekvencia výpisov:"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
-#: gui/editmountpointdialogwidgetbase.ui:236
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
+#: gui/editmountpointdialogwidgetbase.ui:75
 #, kde-format
-msgid "Type:"
-msgstr "Typ:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
-#: gui/editmountpointdialogwidgetbase.ui:246
-#, kde-format
-msgid "Path:"
-msgstr "Cesta:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
-#: gui/editmountpointdialogwidgetbase.ui:288
-#, kde-format
-msgid "No update of file access times"
-msgstr "Bez aktualizácie prístupovej doby k súborom"
+msgid "No automatic mount"
+msgstr "Bez automatického pripojenia"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
-#: gui/editmountpointdialogwidgetbase.ui:295
+#: gui/editmountpointdialogwidgetbase.ui:95
 #, kde-format
 msgid "Synchronous access"
 msgstr "Synchrónny prístup"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:109
+#, kde-format
+msgid "Pass &Number:"
+msgstr "Číslo &priechodu:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
+#: gui/editmountpointdialogwidgetbase.ui:128
+#, kde-format
+msgid "Remove"
+msgstr "Odstrániť"
+
+#. i18n: ectx: property (text), widget (KMessageWidget, m_PathMessage)
+#: gui/editmountpointdialogwidgetbase.ui:141
+#, kde-format
+msgid "A valid path is required."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:173
+#, kde-format
+msgid "Path:"
+msgstr "Cesta:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
+#: gui/editmountpointdialogwidgetbase.ui:183
+#, kde-format
+msgid "Users can mount and unmount"
+msgstr "Používatelia môžu pripojiť a odpojiť"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:190
+#, kde-format
+msgid "Type:"
+msgstr "Typ:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:200
+#, kde-format
+msgid "UU&ID"
+msgstr "UU&ID"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:213
+#, kde-format
+msgid "Select..."
+msgstr "Vybrať..."
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:220
+#, kde-format
+msgid "De&vice Node"
+msgstr "Uzol &zariadenia"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
+#: gui/editmountpointdialogwidgetbase.ui:230
+#, kde-format
+msgid "No update of file access times"
+msgstr "Bez aktualizácie prístupovej doby k súborom"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
+#: gui/editmountpointdialogwidgetbase.ui:250
+#, kde-format
+msgid "No binary execution"
+msgstr "Žiadne binárne spúšťanie"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:264
+#, kde-format
+msgid "Update access times relative to modification"
+msgstr "Aktualizovať prístupové doby vzhľadom k úpravám"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
+#: gui/editmountpointdialogwidgetbase.ui:278
+#, kde-format
+msgid "No update of directory access times"
+msgstr "Bez aktualizácie prístupovej doby k adresárom"
+
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: gui/editmountpointdialogwidgetbase.ui:315
+#: gui/editmountpointdialogwidgetbase.ui:288
 #, kde-format
 msgid "Identify by:"
 msgstr "Identifikovať podľa:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:298
+#, kde-format
+msgid "Read-only"
+msgstr "Iba na čítanie"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:305
+#, kde-format
+msgid "Options:"
+msgstr "Voľby:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
