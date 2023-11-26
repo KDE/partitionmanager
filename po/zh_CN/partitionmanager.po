@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2023-11-19 03:37\n"
+"PO-Revision-Date: 2023-11-25 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -26,8 +26,8 @@ msgstr "Ni Hui, Feng Chao, Guo Yunhe, Tyson Tan, Wordless Echo"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-"shuizhuyuanluo@126.com, chaofeng111@qq.com, i@guoyunhe.me, tysontan@tysontan."
-"com, wordless@echo.moe"
+"shuizhuyuanluo@126.com, chaofeng111@qq.com, i@guoyunhe.me, tds00@qq.com, "
+"wordless@echo.moe"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
@@ -882,7 +882,7 @@ msgstr "移除"
 #: gui/editmountpointdialogwidgetbase.ui:141
 #, kde-format
 msgid "A valid path is required."
-msgstr ""
+msgstr "需要提供一个有效的路径。"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
 #: gui/editmountpointdialogwidgetbase.ui:173
@@ -2535,7 +2535,7 @@ msgstr "(未找到)"
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
-msgstr ""
+msgstr "(未找到)"
 
 #: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
@@ -2714,7 +2714,7 @@ msgstr "分区类型："
 #: gui/partpropswidgetbase.ui:316
 #, kde-format
 msgid "Device path:"
-msgstr ""
+msgstr "设备路径："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:326
