@@ -9,6 +9,7 @@
 #ifndef SCANPROGRESSDIALOG_H
 #define SCANPROGRESSDIALOG_H
 
+#include <QProgressBar>
 #include <QProgressDialog>
 
 class ScanProgressDialog : public QProgressDialog
@@ -26,7 +27,8 @@ protected:
     void closeEvent(QCloseEvent* e) override;
     void showEvent(QShowEvent* e) override;
 
+private:
+    QProgressBar* findProgressBar();
 };
 
 #endif
-
