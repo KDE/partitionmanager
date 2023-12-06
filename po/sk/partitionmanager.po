@@ -1,7 +1,7 @@
 # translation of partitionmanager.po to Slovak
 # Richard Fric <Richard.Fric@kdemail.net>, 2009.
 # Milan Basa <minkob@mail.t-com.sk>, 2011.
-# Roman Paholík <wizzardsk@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2021, 2022.
+# SPDX-FileCopyrightText: 2012, 2013, 2014, 2015, 2016, 2021, 2022, 2023 Roman Paholík <wizzardsk@gmail.com>
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021, 2022.
 # Dusan Kazik <prescott66@gmail.com>, 2020.
 msgid ""
@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2022-04-09 19:27+0200\n"
+"PO-Revision-Date: 2023-12-05 17:26+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
@@ -889,7 +889,7 @@ msgstr "Odstrániť"
 #: gui/editmountpointdialogwidgetbase.ui:141
 #, kde-format
 msgid "A valid path is required."
-msgstr ""
+msgstr "Vyžaduje sa platná cesta."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
 #: gui/editmountpointdialogwidgetbase.ui:173
@@ -2524,10 +2524,9 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:104
-#, fuzzy, kde-format
-#| msgid "Partition Label"
+#, kde-format
 msgid "Partition Name"
-msgstr "Menovka oddielu"
+msgstr "Názov oddielu"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:109
@@ -2590,12 +2589,10 @@ msgid "(none found)"
 msgstr "(žiadne nájdené)"
 
 #: gui/partpropsdialog.cpp:115
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
-msgstr "(žiadne nájdené)"
+msgstr "(nenájdené)"
 
 #: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
@@ -2774,11 +2771,9 @@ msgstr "Typ oddiel:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "Zariadenie"
+msgstr "Cesta zariadenia:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:326
@@ -2789,10 +2784,9 @@ msgstr "Počet sektorov:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:336
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name:"
-msgstr "Tabuľka oddielov:"
+msgstr "Názov oddielu:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:346
