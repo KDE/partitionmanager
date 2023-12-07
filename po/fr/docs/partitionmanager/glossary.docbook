@@ -73,7 +73,7 @@
 			<para
 >Un autre nom pour une <link linkend="glossary-partitiontable"
 >table de partitions</link
-> provenant du monde SUN / BSD. </para>
+> provenant du monde « SUN / BSD ». </para>
 			<para>
 				<note>
 					<para
@@ -119,7 +119,7 @@
 			<para
 >Un système de fichiers définit la manière dont est organisé le stockage des données (les fichiers avec leurs métadonnées, les dossiers et leurs métadonnées, l'espace libre) au sein d'une <link linkend="glossary-partition"
 >partition</link
->. Il existe divers types de systèmes de fichiers différents, dont certains proviennent à l'origine du monde Unix / Linux et d'autres non. Des exemples de systèmes de fichiers couramment utilisés sous Unix / Linux sont Btrfs, ext4 and XFS. </para>
+>. Il existe divers types de systèmes de fichiers différents, dont certains proviennent à l'origine du monde Unix / Linux et d'autres non. Des exemples de systèmes de fichiers couramment utilisés sous Unix / Linux sont « btrfs », « ext4 » et « xfs ». </para>
 		</glossdef>
 	</glossentry>
 
@@ -128,7 +128,7 @@
 >Étiquette de système de fichiers</glossterm>
 		<glossdef>
 			<para
->Le titre d'un système de fichiers. Comme certains systèmes de fichiers (parmi lesquels Btrfs, ext2/3/4, FAT16/32 and NTFS) prennent en charge la mise en place d'une étiquette pour le système de fichiers. Ainsi, elle peut être identifiée dans les outils comme le &partman; ou d'autres applications. </para>
+>Le titre d'un système de fichiers. Comme certains systèmes de fichiers (parmi lesquels « btrfs », « ext2/3/4 », « FAT16 / FAT32 » et « ntfs ») prennent en charge la mise en place d'une étiquette pour le système de fichiers. Ainsi, elle peut être identifiée dans les outils comme le &partman; ou d'autres applications. </para>
 			<para>
 				<note>
 					<para
@@ -226,7 +226,7 @@
 >LUKS</glossterm>
 		<glossdef>
 			<para
->Le paramétrage « LUKS » (Linux Unified Key Setup) est le format de chiffrement standard pour les système Linux. </para>
+>Le paramétrage « LUKS » (Linux Unified Key Setup) est le format de chiffrement standard pour les systèmes sous Linux. </para>
 		</glossdef>
 	</glossentry>
 
