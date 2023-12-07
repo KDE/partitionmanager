@@ -59,6 +59,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
         <property name="suffix">
          <string> sectors</string>
         </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
         <property name="maximum">
          <number>16777215</number>
         </property>
