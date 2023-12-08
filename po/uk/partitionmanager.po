@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 01:37+0000\n"
+"POT-Creation-Date: 2023-12-08 01:36+0000\n"
 "PO-Revision-Date: 2023-11-23 00:06+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -377,79 +377,79 @@ msgid " sectors"
 msgstr " секторів"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
-#: config/configurepagegeneral.ui:76
+#: config/configurepagegeneral.ui:79
 #, kde-format
 msgid "Align partitions per default"
 msgstr "Типово вирівнювати розділи"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: config/configurepagegeneral.ui:95
+#: config/configurepagegeneral.ui:98
 #, kde-format
 msgid "Logging"
 msgstr "Журналювання"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: config/configurepagegeneral.ui:101
+#: config/configurepagegeneral.ui:104
 #, kde-format
 msgid "Hide messages below:"
 msgstr "Приховати такі повідомлення:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:112
+#: config/configurepagegeneral.ui:115
 #, kde-format
 msgid "Debug"
 msgstr "Налагодження"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:117
+#: config/configurepagegeneral.ui:120
 #, kde-format
 msgid "Information"
 msgstr "Інформація"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:122
+#: config/configurepagegeneral.ui:125
 #, kde-format
 msgid "Warning"
 msgstr "Попередження"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:127
+#: config/configurepagegeneral.ui:130
 #, kde-format
 msgid "Error"
 msgstr "Помилка"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: config/configurepagegeneral.ui:144
+#: config/configurepagegeneral.ui:147
 #, kde-format
 msgid "File Systems"
 msgstr "Файлові системи"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: config/configurepagegeneral.ui:150
+#: config/configurepagegeneral.ui:153
 #, kde-format
 msgid "Default file system:"
 msgstr "Типова файлова система:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
-#: config/configurepagegeneral.ui:172
+#: config/configurepagegeneral.ui:175
 #, kde-format
 msgid "Shredding"
 msgstr "Витирання"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: config/configurepagegeneral.ui:178
+#: config/configurepagegeneral.ui:181
 #, kde-format
 msgid "Overwrite with:"
 msgstr "Перезаписати:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
-#: config/configurepagegeneral.ui:185
+#: config/configurepagegeneral.ui:188
 #, kde-format
 msgid "Random data"
 msgstr "Випадковими даними"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
-#: config/configurepagegeneral.ui:195
+#: config/configurepagegeneral.ui:198
 #, kde-format
 msgid "Zeros"
 msgstr "Нулями"
@@ -2888,19 +2888,29 @@ msgctxt "@title:window"
 msgid "Resize Volume Group"
 msgstr "Змінити розміри групи томів"
 
-#: gui/scanprogressdialog.cpp:17
-#, kde-kuit-format
+#: gui/scanprogressdialog.cpp:16
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Scanning devices..."
 msgctxt "@title:window"
-msgid "Scanning devices..."
+msgid "Scanning Devices…"
 msgstr "Сканування пристроїв…"
 
-#: gui/scanprogressdialog.cpp:32
-#, kde-kuit-format
+#: gui/scanprogressdialog.cpp:24
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
+#: gui/scanprogressdialog.cpp:36
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "Scanning..."
 msgctxt "@label"
-msgid "Scanning..."
+msgid "Scanning…"
 msgstr "Сканування…"
 
-#: gui/scanprogressdialog.cpp:34
+#: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning device: <filename>%1</filename>"

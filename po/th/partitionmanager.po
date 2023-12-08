@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 01:37+0000\n"
+"POT-Creation-Date: 2023-12-08 01:36+0000\n"
 "PO-Revision-Date: 2010-03-06 19:47+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -412,7 +412,7 @@ msgid " sectors"
 msgstr "%1 เซกเตอร์"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
-#: config/configurepagegeneral.ui:76
+#: config/configurepagegeneral.ui:79
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "New partition"
@@ -420,25 +420,25 @@ msgid "Align partitions per default"
 msgstr "พาร์ทิชันใหม่"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: config/configurepagegeneral.ui:95
+#: config/configurepagegeneral.ui:98
 #, kde-format
 msgid "Logging"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: config/configurepagegeneral.ui:101
+#: config/configurepagegeneral.ui:104
 #, kde-format
 msgid "Hide messages below:"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:112
+#: config/configurepagegeneral.ui:115
 #, kde-format
 msgid "Debug"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:117
+#: config/configurepagegeneral.ui:120
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Information"
@@ -446,7 +446,7 @@ msgid "Information"
 msgstr "ข้อมูลรายละเอียด"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:122
+#: config/configurepagegeneral.ui:125
 #, fuzzy, kde-format
 #| msgctxt "@info:progress operation"
 #| msgid "Warning"
@@ -454,7 +454,7 @@ msgid "Warning"
 msgstr "แจ้งเตือน"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:127
+#: config/configurepagegeneral.ui:130
 #, fuzzy, kde-format
 #| msgctxt "@info:progress job"
 #| msgid "Error"
@@ -462,20 +462,20 @@ msgid "Error"
 msgstr "ผิดพลาด"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: config/configurepagegeneral.ui:144
+#: config/configurepagegeneral.ui:147
 #, kde-format
 msgid "File Systems"
 msgstr "ระบบแฟ้ม"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: config/configurepagegeneral.ui:150
+#: config/configurepagegeneral.ui:153
 #, fuzzy, kde-format
 #| msgid "File System"
 msgid "Default file system:"
 msgstr "ระบบแฟ้ม"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
-#: config/configurepagegeneral.ui:172
+#: config/configurepagegeneral.ui:175
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Shred"
@@ -483,7 +483,7 @@ msgid "Shredding"
 msgstr "ลบแบบทำลายข้อมูล"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: config/configurepagegeneral.ui:178
+#: config/configurepagegeneral.ui:181
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "&Overwrite File"
@@ -491,13 +491,13 @@ msgid "Overwrite with:"
 msgstr "เ&ขียนทับแฟ้ม"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
-#: config/configurepagegeneral.ui:185
+#: config/configurepagegeneral.ui:188
 #, kde-format
 msgid "Random data"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
-#: config/configurepagegeneral.ui:195
+#: config/configurepagegeneral.ui:198
 #, kde-format
 msgid "Zeros"
 msgstr ""
@@ -3087,19 +3087,29 @@ msgctxt "@title:window"
 msgid "Resize Volume Group"
 msgstr "ปรับขนาดหรือย้ายพาร์ทิชัน"
 
-#: gui/scanprogressdialog.cpp:17
-#, kde-kuit-format
+#: gui/scanprogressdialog.cpp:16
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Scanning devices..."
 msgctxt "@title:window"
-msgid "Scanning devices..."
+msgid "Scanning Devices…"
 msgstr "กำลังตรวจค้นหาอุปกรณ์ต่าง ๆ ..."
 
-#: gui/scanprogressdialog.cpp:32
-#, kde-kuit-format
+#: gui/scanprogressdialog.cpp:24
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
+#: gui/scanprogressdialog.cpp:36
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "Scanning..."
 msgctxt "@label"
-msgid "Scanning..."
+msgid "Scanning…"
 msgstr "กำลังตรวจค้นหา..."
 
-#: gui/scanprogressdialog.cpp:34
+#: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning device: <filename>%1</filename>"

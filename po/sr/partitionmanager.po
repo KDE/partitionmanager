@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 01:37+0000\n"
+"POT-Creation-Date: 2023-12-08 01:36+0000\n"
 "PO-Revision-Date: 2018-01-06 09:21+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -380,86 +380,86 @@ msgid " sectors"
 msgstr " сектора"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
-#: config/configurepagegeneral.ui:76
+#: config/configurepagegeneral.ui:79
 #, kde-format
 msgid "Align partitions per default"
 msgstr "Поравнање како је подразумевано"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: config/configurepagegeneral.ui:95
+#: config/configurepagegeneral.ui:98
 #, kde-format
 msgid "Logging"
 msgstr "Бележење"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: config/configurepagegeneral.ui:101
+#: config/configurepagegeneral.ui:104
 #, kde-format
 msgid "Hide messages below:"
 msgstr "Сакриј поруке испод:"
 
 # >> @item:inlistbox Hide messages below:
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:112
+#: config/configurepagegeneral.ui:115
 #, kde-format
 msgid "Debug"
 msgstr "исправљања"
 
 # >> @item:inlistbox Hide messages below:
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:117
+#: config/configurepagegeneral.ui:120
 #, kde-format
 msgid "Information"
 msgstr "информација"
 
 # >> @item:inlistbox Hide messages below:
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:122
+#: config/configurepagegeneral.ui:125
 #, kde-format
 msgid "Warning"
 msgstr "упозорења"
 
 # >> @item:inlistbox Hide messages below:
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:127
+#: config/configurepagegeneral.ui:130
 #, kde-format
 msgid "Error"
 msgstr "грешака"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: config/configurepagegeneral.ui:144
+#: config/configurepagegeneral.ui:147
 #, kde-format
 msgid "File Systems"
 msgstr "Фајл системи"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: config/configurepagegeneral.ui:150
+#: config/configurepagegeneral.ui:153
 #, kde-format
 msgid "Default file system:"
 msgstr "Подразумевани фајл систем:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
-#: config/configurepagegeneral.ui:172
+#: config/configurepagegeneral.ui:175
 #, kde-format
 msgid "Shredding"
 msgstr "Сецкање"
 
 # У наставку инструментал.
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: config/configurepagegeneral.ui:178
+#: config/configurepagegeneral.ui:181
 #, kde-format
 msgid "Overwrite with:"
 msgstr "Пребриши:"
 
 # >> @option:radion Overwrite with:
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
-#: config/configurepagegeneral.ui:185
+#: config/configurepagegeneral.ui:188
 #, kde-format
 msgid "Random data"
 msgstr "насумичним подацима"
 
 # >> @option:radion Overwrite with:
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
-#: config/configurepagegeneral.ui:195
+#: config/configurepagegeneral.ui:198
 #, kde-format
 msgid "Zeros"
 msgstr "нулама"
@@ -2946,19 +2946,29 @@ msgctxt "@title:window"
 msgid "Resize Volume Group"
 msgstr "Промена величине деоне групе"
 
-#: gui/scanprogressdialog.cpp:17
-#, kde-kuit-format
+#: gui/scanprogressdialog.cpp:16
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Scanning devices..."
 msgctxt "@title:window"
-msgid "Scanning devices..."
+msgid "Scanning Devices…"
 msgstr "Скенирам уређаје..."
 
-#: gui/scanprogressdialog.cpp:32
-#, kde-kuit-format
+#: gui/scanprogressdialog.cpp:24
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
+#: gui/scanprogressdialog.cpp:36
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "Scanning..."
 msgctxt "@label"
-msgid "Scanning..."
+msgid "Scanning…"
 msgstr "Скенирам..."
 
-#: gui/scanprogressdialog.cpp:34
+#: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning device: <filename>%1</filename>"

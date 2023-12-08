@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 01:37+0000\n"
+"POT-Creation-Date: 2023-12-08 01:36+0000\n"
 "PO-Revision-Date: 2023-11-22 11:45+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -378,79 +378,79 @@ msgid " sectors"
 msgstr " sectors"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
-#: config/configurepagegeneral.ui:76
+#: config/configurepagegeneral.ui:79
 #, kde-format
 msgid "Align partitions per default"
 msgstr "Alineació de les particions per defecte"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: config/configurepagegeneral.ui:95
+#: config/configurepagegeneral.ui:98
 #, kde-format
 msgid "Logging"
 msgstr "Registre"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: config/configurepagegeneral.ui:101
+#: config/configurepagegeneral.ui:104
 #, kde-format
 msgid "Hide messages below:"
 msgstr "Oculta els missatges de davall:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:112
+#: config/configurepagegeneral.ui:115
 #, kde-format
 msgid "Debug"
 msgstr "Depura"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:117
+#: config/configurepagegeneral.ui:120
 #, kde-format
 msgid "Information"
 msgstr "Informació"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:122
+#: config/configurepagegeneral.ui:125
 #, kde-format
 msgid "Warning"
 msgstr "Avís"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:127
+#: config/configurepagegeneral.ui:130
 #, kde-format
 msgid "Error"
 msgstr "S'ha produït un error"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: config/configurepagegeneral.ui:144
+#: config/configurepagegeneral.ui:147
 #, kde-format
 msgid "File Systems"
 msgstr "Sistemes de fitxers"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: config/configurepagegeneral.ui:150
+#: config/configurepagegeneral.ui:153
 #, kde-format
 msgid "Default file system:"
 msgstr "Sistema de fitxers per defecte:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
-#: config/configurepagegeneral.ui:172
+#: config/configurepagegeneral.ui:175
 #, kde-format
 msgid "Shredding"
 msgstr "Destrucció"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: config/configurepagegeneral.ui:178
+#: config/configurepagegeneral.ui:181
 #, kde-format
 msgid "Overwrite with:"
 msgstr "Sobreescriu amb:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
-#: config/configurepagegeneral.ui:185
+#: config/configurepagegeneral.ui:188
 #, kde-format
 msgid "Random data"
 msgstr "Dades aleatòries"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
-#: config/configurepagegeneral.ui:195
+#: config/configurepagegeneral.ui:198
 #, kde-format
 msgid "Zeros"
 msgstr "Zeros"
@@ -2880,19 +2880,29 @@ msgctxt "@title:window"
 msgid "Resize Volume Group"
 msgstr "Redimensiona el grup de volums"
 
-#: gui/scanprogressdialog.cpp:17
-#, kde-kuit-format
+#: gui/scanprogressdialog.cpp:16
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Scanning devices..."
 msgctxt "@title:window"
-msgid "Scanning devices..."
+msgid "Scanning Devices…"
 msgstr "S'estan explorant els dispositius..."
 
-#: gui/scanprogressdialog.cpp:32
-#, kde-kuit-format
+#: gui/scanprogressdialog.cpp:24
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
+
+#: gui/scanprogressdialog.cpp:36
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "Scanning..."
 msgctxt "@label"
-msgid "Scanning..."
+msgid "Scanning…"
 msgstr "S'està explorant..."
 
-#: gui/scanprogressdialog.cpp:34
+#: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning device: <filename>%1</filename>"
