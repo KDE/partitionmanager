@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-08 01:36+0000\n"
-"PO-Revision-Date: 2023-11-22 03:16+0100\n"
+"PO-Revision-Date: 2023-12-09 01:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -593,7 +593,7 @@ msgstr "Tiempo Total: 00:00:00"
 #: gui/applyprogressdialogwidgetbase.ui:89
 #, no-c-format, kde-format
 msgid "Operation: %p%"
-msgstr "Operación: %p%"
+msgstr "Operación: %p %"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
 #: gui/applyprogressdialogwidgetbase.ui:99
@@ -605,7 +605,7 @@ msgstr "Estado"
 #: gui/applyprogressdialogwidgetbase.ui:115
 #, no-c-format, kde-format
 msgid "Total: %p%"
-msgstr "Total: %p%"
+msgstr "Total: %p %"
 
 #: gui/createpartitiontabledialog.cpp:31
 #, kde-kuit-format
@@ -985,7 +985,7 @@ msgstr "Opciones:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "File System Support"
-msgstr "Soporte del sistema de archivos"
+msgstr "Compatibilidad de sistemas de archivos"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/filesystemsupportdialogwidgetbase.ui:23
@@ -998,12 +998,12 @@ msgid ""
 "if all required tools are installed. Please see the documentation for "
 "details. "
 msgstr ""
-"Esta tabla muestra los sistemas de archivos aceptados y qué operaciones "
-"específicas pueden realizarse en ellos.\n"
+"Esta tabla muestra los sistemas de archivos aceptados y las operaciones "
+"específicas que se pueden realizar en ellos.\n"
 "Algunos sistemas de archivos necesitan herramientas externas que deben "
-"instalarse para soportarlos. Pero no todas las operaciones pueden realizarse "
-"en todos los sistemas de archivos, aunque estén instaladas las herramientas "
-"requeridas. Consulte la documentación para obtener más detalles. "
+"instalarse para poder usarlos. Pero no todas las operaciones se pueden "
+"realizar en todos los sistemas de archivos, aunque estén instaladas las "
+"herramientas necesarias. Consulte la documentación para más detalles. "
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:70
@@ -1305,7 +1305,7 @@ msgstr "Tamaño de la matriz:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Insert a partition"
-msgstr "Insertar un partición"
+msgstr "Insertar una partición"
 
 #: gui/listphysicalvolumes.cpp:39
 #, kde-kuit-format
@@ -1343,7 +1343,7 @@ msgstr[1] ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
-msgstr "¿Desea descartar las operaciones pendientes y salir?"
+msgstr "¿Descartar las operaciones pendientes y salir?"
 
 #: gui/mainwindow.cpp:237
 #, kde-kuit-format
@@ -1361,13 +1361,13 @@ msgstr "Deshacer"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
-msgstr "Deshace la última operación"
+msgstr "Deshacer la última operación"
 
 #: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
-msgstr "Elimina la última operación de la lista."
+msgstr "Eliminar la última operación de la lista."
 
 #: gui/mainwindow.cpp:288
 #, kde-kuit-format
@@ -1379,7 +1379,7 @@ msgstr "Limpiar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
-msgstr "Borra todas las operaciones"
+msgstr "Borrar todas las operaciones"
 
 #: gui/mainwindow.cpp:290
 #, kde-kuit-format
@@ -1403,7 +1403,7 @@ msgstr "Aplicar todas las operaciones"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
-msgstr "Aplicar las operaciones pendientes en la lista."
+msgstr "Aplicar las operaciones pendientes de la lista."
 
 #: gui/mainwindow.cpp:305
 #, kde-kuit-format
@@ -1421,7 +1421,7 @@ msgstr "Crear una nueva tabla de particiones"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
-msgstr "Crea una tabla de particiones nueva y vacía en un dispositivo."
+msgstr "Crear una tabla de particiones nueva y vacía en un dispositivo."
 
 #: gui/mainwindow.cpp:314
 #, kde-kuit-format
@@ -1458,7 +1458,7 @@ msgstr "Importar una tabla de particiones"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
-msgstr "Importa una tabla de particiones de un archivo de texto."
+msgstr "Importar una tabla de particiones de un archivo de texto."
 
 #: gui/mainwindow.cpp:331
 #, kde-format
@@ -1532,7 +1532,7 @@ msgstr "Mostrar estado SMART"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
-msgstr "Mostrar el estado SMART del dispositivo si está implementado"
+msgstr "Mostrar el estado SMART del dispositivo si es compatible"
 
 #: gui/mainwindow.cpp:366 gui/mainwindow.cpp:458
 #, kde-kuit-format
@@ -1580,13 +1580,13 @@ msgstr "Cambiar el tamaño/mover"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
-msgstr "Cambia el tamaño o mueve una partición"
+msgstr "Cambiar de tamaño o mover una partición"
 
 #: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
-msgstr "Reduce, agranda o mueve una partición existente."
+msgstr "Reducir, agrandar o mover una partición existente."
 
 #: gui/mainwindow.cpp:393
 #, kde-kuit-format
@@ -1604,7 +1604,7 @@ msgstr "Borrar la partición"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
-msgstr "Borra una partición."
+msgstr "Borrar una partición."
 
 #: gui/mainwindow.cpp:402
 #, kde-kuit-format
@@ -1616,13 +1616,13 @@ msgstr "Destruir"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
-msgstr "Borrar partición"
+msgstr "Destruir partición"
 
 #: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
-msgstr "Destruye una partición impidiendo que se pueda restaurar su contenido."
+msgstr "Destruir una partición impidiendo que se pueda restaurar su contenido."
 
 #: gui/mainwindow.cpp:411
 #, kde-kuit-format
@@ -1634,13 +1634,13 @@ msgstr "Copiar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
-msgstr "Copiar la partición"
+msgstr "Copiar partición"
 
 #: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
-msgstr "Copia una partición existente."
+msgstr "Copiar una partición existente."
 
 #: gui/mainwindow.cpp:420
 #, kde-kuit-format
@@ -1652,13 +1652,13 @@ msgstr "Pegar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
-msgstr "Pegar la partición"
+msgstr "Pegar partición"
 
 #: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
-msgstr "Pega una partición copiada."
+msgstr "Pegar una partición copiada."
 
 #: gui/mainwindow.cpp:429
 #, kde-kuit-format
@@ -1676,7 +1676,7 @@ msgstr "Editar punto de montaje"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
-msgstr "Editar los puntos de montaje y opciones de una partición."
+msgstr "Editar el punto de montaje y las opciones de una partición."
 
 #: gui/mainwindow.cpp:436
 #, kde-kuit-format
@@ -1688,13 +1688,13 @@ msgstr "Montar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
-msgstr "Montar o desmontar la partición"
+msgstr "Montar o desmontar partición"
 
 #: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
-msgstr "Monta o desmonta una partición."
+msgstr "Montar o desmontar una partición."
 
 #: gui/mainwindow.cpp:443
 #, kde-kuit-format
@@ -1731,7 +1731,7 @@ msgstr "Comprobar una partición"
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr ""
-"Comprueba un sistema de archivos en una partición para encontrar errores."
+"Comprobar un sistema de archivos de una partición para encontrar errores."
 
 #: gui/mainwindow.cpp:459
 #, kde-kuit-format
@@ -1763,7 +1763,8 @@ msgstr "Hacer una copia de respaldo de la partición"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
-msgstr "Realiza una copia de respaldo de la partición en un archivo de imagen."
+msgstr ""
+"Realizar una copia de respaldo de la partición en un archivo de imagen."
 
 #: gui/mainwindow.cpp:474
 #, kde-kuit-format
@@ -1781,7 +1782,7 @@ msgstr "Restaurar la partición"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
-msgstr "Restaura una partición a partir de un archivo de imagen."
+msgstr "Restaurar una partición a partir de un archivo de imagen."
 
 #: gui/mainwindow.cpp:483
 #, kde-format
@@ -1805,19 +1806,19 @@ msgstr "Crear un nuevo grupo de volúmenes LVM como un dispositivo."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
-msgstr "Soporte del sistema de archivos"
+msgstr "Compatibilidad de sistemas de archivos"
 
 #: gui/mainwindow.cpp:492
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
-msgstr "Ver la información de soporte del sistema de archivos"
+msgstr "Ver información de compatibilidad de sistemas de archivos"
 
 #: gui/mainwindow.cpp:493
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
-msgstr "Mostrar información sobre los sistemas de archivos soportados."
+msgstr "Mostrar información sobre los sistemas de archivos aceptados."
 
 #: gui/mainwindow.cpp:497
 #, kde-kuit-format
@@ -2056,7 +2057,7 @@ msgstr "Error al importar tabla de particiones"
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr ""
-"Se encontró mas de un tipo de tabla de particiones en el archivo de "
+"Se ha encontrado más de un tipo de tabla de particiones en el archivo de "
 "importación (línea %1)."
 
 #: gui/mainwindow.cpp:1107
@@ -2076,7 +2077,8 @@ msgstr "El tipo de tabla de particiones «%1» no se puede importar (línea %2).
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr ""
-"Se encontró una partición pero no un tipo de tabla de particiones (línea %1)."
+"Se ha encontrado una partición, pero no un tipo de tabla de particiones "
+"(línea %1)."
 
 #: gui/mainwindow.cpp:1135
 #, kde-kuit-format
@@ -2103,7 +2105,7 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
 msgstr ""
-"No se encontró la partición padre o la tabla de particiones para la "
+"No se ha encontrado la partición padre o la tabla de particiones para la "
 "partición %1 (línea %2)."
 
 #: gui/mainwindow.cpp:1169
@@ -2113,8 +2115,8 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
-"El tipo de tabla de particiones «%1» no acepta particiones extendidas, pero "
-"se encontró una (línea %2)."
+"El tipo de tabla de particiones «%1» no acepta particiones extendidas, "
+"aunque se ha encontrado una (línea %2)."
 
 #: gui/mainwindow.cpp:1176
 #, kde-kuit-format
@@ -2166,7 +2168,7 @@ msgstr ""
 "<para>No se han encontrado herramientas de apoyo para los sistemas de "
 "archivos presentes actualmente en los discos duros de este equipo:</para> "
 "<table style='margin-top:12px'><tr> <td style='font-weight:bold;padding-"
-"right:12px;white-space:nowrap;'>Partition</td><td style='font-weight:bold;"
+"right:12px;white-space:nowrap;'>Partición</td><td style='font-weight:bold;"
 "padding-right:12px;white-space:nowrap;'>Sistema de archivos</td><td "
 "style='font-weight:bold;padding-right:12px;white-space:nowrap;'>Herramientas "
 "de apoyo</td><td style='font-weight:bold;padding-right:12px;white-space:"
@@ -2185,7 +2187,7 @@ msgstr "Faltan paquetes de soporte del sistema de archivos"
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr "Dispositivo desconocido «%1»"
+msgstr "Dispositivo «%1» desconocido "
 
 #: gui/mainwindow.cpp:1468
 #, kde-kuit-format
@@ -2509,8 +2511,8 @@ msgid ""
 "The file system in the image file <filename>%1</filename> is too large to be "
 "restored to the selected partition."
 msgstr ""
-"El sistema de archivos en el archivo de imagen <filename>%1</filename> es "
-"demasiado grande para restaurarse en la partición seleccionada."
+"El sistema de archivos del archivo de imagen <filename>%1</filename> es "
+"demasiado grande para restaurarlo en la partición seleccionada."
 
 #: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
@@ -2663,7 +2665,7 @@ msgid ""
 msgstr ""
 "<para><warning>Está a punto de perder todos los datos de la partición "
 "<filename>%1</filename>.</warning></para><para>Al cambiar el sistema de "
-"archivos en una partición existente en el disco se borrará todo su "
+"archivos de una partición existente en el disco se borrará todo su "
 "contenido. Si continúa y aplica la operación resultante en la ventana "
 "principal, se perderán todos los datos de <filename>%1</filename> y no los "
 "podrá recuperar.</para>"
@@ -2702,7 +2704,7 @@ msgstr ""
 "<filename>%1</filename>.</warning></para><para>Al volver a crear el sistema "
 "de archivos se borrará todo su contenido. Si continúa y aplica la operación "
 "resultante en la ventana principal, se perderán todos los datos de "
-"<filesystem>%1</filesystem>> y no los podrá recuperar.</para>"
+"<filesystem>%1</filesystem> y no los podrá recuperar.</para>"
 
 #: gui/partpropsdialog.cpp:376
 #, kde-kuit-format
@@ -2892,26 +2894,22 @@ msgid "Resize Volume Group"
 msgstr "Cambiar tamaño del grupo de volúmenes"
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Scanning devices..."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "Explorando los dispositivos...."
+msgstr "Explorando los dispositivos..."
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p %"
 
 #: gui/scanprogressdialog.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "Explorando...."
+msgstr "Explorando..."
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
@@ -3542,8 +3540,7 @@ msgid ""
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
 "<para>No se han podido cargar el complemento de motor configurado («%1») ni "
-"el predefinido («%2»).</para><para> Por favor, compruebe su instalación.</"
-"para>"
+"el predefinido («%2»).</para><para>Compruebe su instalación.</para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
