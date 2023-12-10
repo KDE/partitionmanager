@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-08 01:36+0000\n"
-"PO-Revision-Date: 2023-11-23 11:17+0100\n"
+"PO-Revision-Date: 2023-12-09 12:30+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -2921,9 +2921,7 @@ msgid "Resize Volume Group"
 msgstr "Redimensionner le groupe de volumes"
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Scanning devices..."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
 msgstr "Analyse des périphériques..."
@@ -2932,15 +2930,13 @@ msgstr "Analyse des périphériques..."
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p %"
 
 #: gui/scanprogressdialog.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "Analyse..."
+msgstr "Analyse en cours..."
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
