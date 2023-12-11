@@ -1,6 +1,6 @@
 <chapter id="faq">
 	<title
->Questions et Réponses</title>
+>Questions et réponses</title>
 
 	<qandaset id="faqlist">
 		<qandaentry>
@@ -154,8 +154,8 @@
 			</question>
 			<answer>
 				<para
->LibParted, une bibliothèque d'infrastructure que le &partman; utilise, connaît des problèmes avec des systèmes où le mappeur de périphériques Linux est employé d'une manière qu'il ne comprend pas. Malheureusement, il réagit à certaines de ces situations par des erreurs de segmentation, c'est-à-dire des pannes. Le &partman;, par conséquent, tente d'éviter ces situations en faisant appel à un autre moyen pour analyser les disques de votre ordinateur. S'il lui est impossible de le faire, cependant, et qu'il doive compter sur <quote
->LibParted</quote
+>La bibliothèque « libparted », un moteur utilisé par &partman;, connaît des problèmes avec des systèmes où le module d'identification de périphériques Linux est employé d'une manière qu'il ne comprend pas. Malheureusement, il réagit à certaines de ces situations par des erreurs de segmentation, c'est-à-dire des pannes. Le &partman;, par conséquent, tente d'éviter ces situations en faisant appel à un autre moyen pour analyser les disques de votre ordinateur. S'il lui est impossible de le faire, cependant, et qu'il doive compter sur <quote
+>libparted</quote
 >, il affichera un message comme celui mentionné. Si l'analyse des disques fonctionne, vous pouvez sans risque ignorer le message. </para>
 			</answer>
 		</qandaentry>
