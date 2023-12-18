@@ -3,21 +3,21 @@
 #
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012, 2014, 2020, 2021, 2022.
 # Balázs Úr <urbalazs@gmail.com>, 2013, 2014.
-# Kristof Kiszel <kiszel.kristof@gmail.com>, 2021.
+# SPDX-FileCopyrightText: 2021, 2023 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-08 01:36+0000\n"
-"PO-Revision-Date: 2022-01-16 17:56+0100\n"
-"Last-Translator: Kristóf Kiszel <ulysses@fsf.hu>\n"
+"PO-Revision-Date: 2023-12-17 21:52+0100\n"
+"Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -27,7 +27,7 @@ msgstr "Kiszel Kristóf"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "ulysses@fsf.hu"
+msgstr "kiszel.kristof@gmail.com"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
@@ -889,7 +889,7 @@ msgstr "Eltávolítás"
 #: gui/editmountpointdialogwidgetbase.ui:141
 #, kde-format
 msgid "A valid path is required."
-msgstr ""
+msgstr "Érvényes elérési út szükséges."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
 #: gui/editmountpointdialogwidgetbase.ui:173
@@ -2517,10 +2517,9 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:104
-#, fuzzy, kde-format
-#| msgid "Partition Label"
+#, kde-format
 msgid "Partition Name"
-msgstr "Partíciócímke"
+msgstr "Partíciónév"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:109
@@ -2583,12 +2582,10 @@ msgid "(none found)"
 msgstr "(egy sem található)"
 
 #: gui/partpropsdialog.cpp:115
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
-msgstr "(egy sem található)"
+msgstr "(nem található)"
 
 #: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
@@ -2770,11 +2767,9 @@ msgstr "Partíciótípus:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "Eszköz"
+msgstr "Eszköz elérési útja:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:326
@@ -2785,10 +2780,9 @@ msgstr "Szektorok száma:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:336
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name:"
-msgstr "Partíciós tábla:"
+msgstr "Partíciónév:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:346
@@ -2865,9 +2859,7 @@ msgid "Resize Volume Group"
 msgstr "Kötetcsoport átméretezése"
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Scanning devices..."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
 msgstr "Eszközök keresése…"
@@ -2876,12 +2868,10 @@ msgstr "Eszközök keresése…"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: gui/scanprogressdialog.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
 msgstr "Keresés…"
