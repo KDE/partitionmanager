@@ -2,31 +2,31 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# A S Alam <aalam@users.sf.net>, 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2018, 2020.
+# SPDX-FileCopyrightText: 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2018, 2020, 2023 A S Alam <aalam@users.sf.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-08 01:36+0000\n"
-"PO-Revision-Date: 2020-10-10 21:33-0700\n"
-"Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
-"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"PO-Revision-Date: 2023-12-22 21:36-0600\n"
+"Last-Translator: A S Alam <aalam@punlinux.org>\n"
+"Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.12.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "ਅ.ਸ.ਆਲਮ. ੨੦੦੪-੨੦੨੦"
+msgstr "ਅ.ਸ.ਆਲਮ. ੨੦੦੪-੨੦੨੩"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "alam.yellow@gmail.com"
+msgstr "aalam@punlinux.org"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
@@ -2126,23 +2126,19 @@ msgstr "ਫਾਇਲ ਸਿਸਟਮ ਸਹਿਯੋਗ ਪੈਕੇਜ ਮੌ�
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr ""
+msgstr "ਅਣਪਛਾਤਾ ਡਿਵਾਈਸ \"%1\""
 
 #: gui/mainwindow.cpp:1468
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info the partition is NOT a device path, just a number"
-#| msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+#, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr "%2 ਪਾਰਟੀਸ਼ਨ ਲਈ ਅਣਪਛਾਤਾ ਪਾਰਟੀਸ਼ਨ ਰੋਲ \"%1\" (ਲਾਈਨ %3)।"
+msgstr "ਅਣਪਛਾਤਾ ਪਾਰਟੀਸ਼ਨ \"%1\""
 
 #: gui/mainwindow.cpp:1469
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error Importing Partition Table"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr "ਪਾਰਟੀਸ਼ਨ ਟੇਬਲ ਇੰਪੋਰਟ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ"
+msgstr "ਪਾਰਟੀਸ਼ਨ ਖੋਲ੍ਹਣ ਦੌਰਾਨ ਗਲਤੀ"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -2157,14 +2153,14 @@ msgstr "KDE ਪਾਰਟੀਸ਼ਨ ਮੈਨੇਜਰ"
 #, kde-format
 msgctxt "@title:window"
 msgid "Devices"
-msgstr "ਜੰਤਰ"
+msgstr "ਡਿਵਾਈਸ"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
 #: gui/mainwindowbase.ui:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Pending Operations"
-msgstr "ਬਾਕੀ ਓਪਰੇਸ਼ਨ"
+msgstr "ਬਾਕੀ ਰਹਿੰਦੇ ਓਪਰੇਸ਼ਨ"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
 #: gui/mainwindowbase.ui:59
@@ -2177,7 +2173,7 @@ msgstr "ਆਉਟਪੁੱਟ ਦਾ ਲਾਗ"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a new partition"
-msgstr "ਇੱਕ ਨਵਾਂ ਪਾਰਟੀਸ਼ਨ ਬਣਾਓ"
+msgstr "ਨਵਾਂ ਪਾਰਟੀਸ਼ਨ ਬਣਾਓ"
 
 #. i18n: ectx: ToolBar (partitionToolBar)
 #: gui/partitionmanagerui.rc:12
@@ -2191,14 +2187,14 @@ msgstr "ਪਾਰਟੀਸ਼ਨ ਮੈਨੇਜਰ ਟੂਲਬਾਰ"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Device"
-msgstr "ਜੰਤਰ"
+msgstr "ਡਿਵਾਈਸ"
 
 #. i18n: ectx: Menu (selectedDevice)
 #: gui/partitionmanagerui.rc:32
 #, kde-format
 msgctxt "@title:menu"
 msgid "Select Current Device"
-msgstr "ਮੌਜੂਦਾ ਜੰਤਰ ਚੁਣੋ"
+msgstr "ਮੌਜੂਦਾ ਡਿਵਾਈਸ ਚੁਣੋ"
 
 #. i18n: ectx: Menu (tools)
 #: gui/partitionmanagerui.rc:49
@@ -2466,10 +2462,9 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:104
-#, fuzzy, kde-format
-#| msgid "Partition Label"
+#, kde-format
 msgid "Partition Name"
-msgstr "ਪਾਰਟੀਸ਼ਨ ਲੇਬਲ"
+msgstr "ਪਾਰਟੀਸ਼ਨ ਦਾ ਨਾਂ"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:109
@@ -2532,9 +2527,7 @@ msgid "(none found)"
 msgstr "(ਨਹੀਂ ਲੱਭਿਆ)"
 
 #: gui/partpropsdialog.cpp:115
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(ਨਹੀਂ ਲੱਭਿਆ)"
@@ -2706,11 +2699,9 @@ msgstr "ਪਾਰਟੀਸ਼ਨ ਟਾਈਪ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "ਜੰਤਰ"
+msgstr "ਡਿਵਾਈਸ ਮਾਰਗ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:326
@@ -2721,10 +2712,9 @@ msgstr "ਸੈਕਟਰਾਂ ਦੀ ਗਿਣਤੀ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:336
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name:"
-msgstr "ਪਾਰਟੀਸ਼ਨ ਟੇਬਲ:"
+msgstr "ਪਾਰਟੀਸ਼ਨ ਦਾ ਨਾਂ:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:346
@@ -2801,32 +2791,28 @@ msgid "Resize Volume Group"
 msgstr "ਵਾਲੀਅਮ ਗਰੁੱਪ ਦਾ ਸਾਈਜ਼ ਬਦਲੋ"
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Scanning devices..."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "ਜੰਤਰ ਸਕੈਨ ਕਰਨਾ ਜਾਰੀ..."
+msgstr "…ਡਿਵਾਈਸ ਸਕੈਨ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ"
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: gui/scanprogressdialog.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "ਸਕੈਨ ਕਰਨਾ ਜਾਰੀ.."
+msgstr "…ਸਕੈਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning device: <filename>%1</filename>"
-msgstr "ਸਕੈਨ ਕੀਤਾ ਜਾਂਦਾ ਜੰਤਰ: <filename>%1</filename>"
+msgstr "ਡਿਵਾਈਸ ਸਕੈਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ: <filename>%1</filename>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: gui/sizedetailswidgetbase.ui:66
@@ -2940,19 +2926,19 @@ msgstr "ਖਾਲੀ ਥਾਂ ਬਾਅਦ:"
 #: gui/sizedialogwidgetbase.ui:297
 #, kde-format
 msgid "Permissions"
-msgstr "ਅਧਿਕਾਰ"
+msgstr "ਇਜਾਜ਼ਤਾਂ"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:326
 #, kde-format
 msgid "Allow everyone to write and read on this device"
-msgstr ""
+msgstr "ਹਰ ਕਿਸੇ ਨੂੰ ਇਸ ਡਿਵਾਈਸ ਉੱਤੇ ਲਿਖਣ ਅਤੇ ਪੜ੍ਹਨ ਦਿਓ"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:329
 #, kde-format
 msgid "Everyone"
-msgstr ""
+msgstr "ਹਰ ਕੋਈ"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:336
@@ -2966,7 +2952,7 @@ msgstr ""
 #: gui/sizedialogwidgetbase.ui:339
 #, kde-format
 msgid "Only Root"
-msgstr ""
+msgstr "ਸਿਰਫ਼ ਰੂਟ"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
 #: gui/sizedialogwidgetbase.ui:352
@@ -3352,12 +3338,10 @@ msgid "Improved SMART support"
 msgstr "ਸੁਧਾਰਿਆ SMART ਸਹਿਯੋਗ"
 
 #: main.cpp:101
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Device(s) to manage"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"
-msgstr "ਪਰਬੰਧ ਲਈ ਜੰਤਰ"
+msgstr "ਇੰਤਜ਼ਾਮ ਕਰਨ ਲਈ ਡਿਵਾਈਸ"
 
 #. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
 #: partitionmanager.kcfg:45
