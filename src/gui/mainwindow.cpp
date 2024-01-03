@@ -83,7 +83,7 @@
 #include <KXMLGUIFactory>
 #include <KJobUiDelegate>
 #include <KIO/CopyJob>
-#include <KIO/Job>
+#include <KIO/FileCopyJob>
 #include <KJobWidgets>
 #include "config.h"
 
