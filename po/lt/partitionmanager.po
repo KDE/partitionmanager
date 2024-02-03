@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-08 01:36+0000\n"
-"PO-Revision-Date: 2022-12-12 22:14+0200\n"
+"PO-Revision-Date: 2024-02-03 00:23+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1503,7 +1503,8 @@ msgstr "Atjungti pažymėtą tomų grupę"
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
-msgstr "Atjungti pažymėtą tomų grupę prieš atjungiant pašalinamus įrenginius."
+msgstr ""
+"Atjungti pažymėtą tomų grupę prieš atjungiant keičiamuosius įrenginius."
 
 #: gui/mainwindow.cpp:359
 #, kde-kuit-format
@@ -1894,7 +1895,7 @@ msgstr[3] "%1 neatlikta operacija"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
-msgstr "Naudojamas galinės sąsajos papildinys: %1 (%2)"
+msgstr "Naudojamas galinės sąsajos įskiepis: %1 (%2)"
 
 #: gui/mainwindow.cpp:813
 #, kde-kuit-format
@@ -2168,7 +2169,7 @@ msgstr "Klaida atveriant skaidinį"
 #, kde-format
 msgctxt "@title:window"
 msgid "KDE Partition Manager"
-msgstr "KDE skaidinių tvarkyklė"
+msgstr "KDE skaidinių tvarkytuvė"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
 #: gui/mainwindowbase.ui:26
@@ -3272,7 +3273,7 @@ msgstr "Naudojamas dydis: "
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>KDE Partition Manager</application>"
-msgstr "<application>KDE skaidinių tvarkyklė</application>"
+msgstr "<application>KDE skaidinių tvarkytuvė</application>"
 
 #: main.cpp:79
 #, kde-kuit-format
@@ -3392,7 +3393,7 @@ msgstr "Įrenginio informacija"
 #, kde-format
 msgctxt "@label"
 msgid "Is this the first time KDE Partition Manager is being run?"
-msgstr "Ar KDE Partition skaidinių tvarkyklė paleista pirmą kartą?"
+msgstr "Ar KDE skaidinių tvarkytuvė paleista pirmą kartą?"
 
 #. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
 #: partitionmanager.kcfg:49
@@ -3441,7 +3442,7 @@ msgstr "Rodyti programos meniu juostą"
 #, kde-format
 msgctxt "@label"
 msgid "Backend plugin"
-msgstr "Galinės sąsajos papildinys"
+msgstr "Galinės sąsajos įskiepis"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:151
@@ -3462,7 +3463,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error: Could Not Load Backend Plugin"
-msgstr "Klaida: nepavyko įkelti galinės sąsajos papildinio"
+msgstr "Klaida: nepavyko įkelti galinės sąsajos įskiepio"
 
 #: util/guihelpers.cpp:57
 #, kde-kuit-format
