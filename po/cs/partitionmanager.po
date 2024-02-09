@@ -2779,12 +2779,10 @@ msgid "Resize Volume Group"
 msgstr "Změnit skupinu svazků"
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Scanning devices..."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "Zkoumám zařízení..."
+msgstr ""
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
@@ -2793,12 +2791,10 @@ msgid "%p%"
 msgstr ""
 
 #: gui/scanprogressdialog.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "Zkoumám..."
+msgstr ""
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
@@ -3425,9 +3421,3 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Sloupce"
-
-#~ msgid "Backend"
-#~ msgstr "Podpůrná vrstva"
-
-#~ msgid "Units"
-#~ msgstr "Jednotky"
