@@ -119,7 +119,7 @@
 			<para
 >Bir dosya sistemi, verilerin (üst verilerle dosyalar, klasörler ve üst veriyi, boş alan) bir <link linkend="glossary-partition"
 >bölüntü</link
-> içinde nasıl düzenlendiğini tanımlar. Bazıları özgün olarak Unix/Linux dünyasından gelen, bazıları olmayan çeşitli dosya sistemi türleri vardır. Unix/Linux'ta yaygın olarak kullanılan dosya sistemlerine örnek olarak Btrfs, ext4 ve XFS verilebilir. </para>
+> içinde nasıl düzenlendiğini tanımlar. Bazıları özgün olarak Unix/Linux dünyasından gelen, bazıları olmayan çeşitli dosya sistemi türleri vardır. Unix/Linux’ta yaygın olarak kullanılan dosya sistemlerine örnek olarak Btrfs, ext4 ve XFS verilebilir. </para>
 		</glossdef>
 	</glossentry>
 
@@ -151,7 +151,7 @@
 >GPT</glossterm>
 		<glossdef>
 			<para
->Çoğu çağdaş bilgisayar ve işletim sistemi tarafından desteklenen çağdaş bir bölüntü tablosu biçimi. Eski MS-DOS bölüntü tablosunun aksine 4'ten fazla <link linkend="glossary-primarypartition"
+>Çoğu çağdaş bilgisayar ve işletim sistemi tarafından desteklenen çağdaş bir bölüntü tablosu biçimi. Eski MS-DOS bölüntü tablosunun aksine 4’ten fazla <link linkend="glossary-primarypartition"
 >birincil bölüntüyü</link
 > destekler. </para>
 		</glossdef>
@@ -344,7 +344,7 @@
 >Bölüntü tabloları</link
 > genellikle bir <link linkend="glossary-device"
 >aygıt</link
-> üzerinde oluşturulabilen birincil bölüntülerde en çok sayıda kısıtlamaları dayatır. MS-DOS bölüntüsü tablo türleri için; örneğin, en büyük sayı 4'tür. </para
+> üzerinde oluşturulabilen birincil bölüntülerde en çok sayıda kısıtlamaları dayatır. MS-DOS bölüntüsü tablo türleri için; örneğin, en büyük sayı 4’tür. </para
 ><glossseealso otherterm="glossary-extendedpartition"
 ></glossseealso
 > <glossseealso otherterm="glossary-logicalpartition"

@@ -26,7 +26,7 @@
 				<para
 >&partman; uygulamasının prensipte yapabileceği her şey tüm dosya sistemleriyle yapılamaz. </para>
 				<para
->Bir örnek, linuxswap'te bir dosya sistemi denetimi yapmaktır: Bu olanaklı değildir. Bazı dosya sistemlerinde bulunan buna benzer başka sınırlamalar da vardır. JFS veya XFS dosya sistemlerini küçültemezsiniz; çünkü ikisi de &partman; ile veya başka bir uygulamayla küçültmeyi kesinlikle desteklemez. </para>
+>Bir örnek, linuxswap’te bir dosya sistemi denetimi yapmaktır: Bu olanaklı değildir. Bazı dosya sistemlerinde bulunan buna benzer başka sınırlamalar da vardır. JFS veya XFS dosya sistemlerini küçültemezsiniz; çünkü ikisi de &partman; ile veya başka bir uygulamayla küçültmeyi kesinlikle desteklemez. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
@@ -42,13 +42,13 @@
 		<qandaentry>
 			<question>
 				<para
->Kök bölüntüyü neden yeniden boyutlandıramıyorum? /home'un bağlı olduğu bölüntüyü nasıl yeniden boyutlandırabilirim?</para>
+>Kök bölüntüyü neden yeniden boyutlandıramıyorum? /home’un bağlı olduğu bölüntüyü nasıl yeniden boyutlandırabilirim?</para>
 			</question>
 			<answer>
 				<para
 >Bir bölüntüyü değiştirmek için bağlı olmamalıdır. Ancak, kök bölüntünün bağlantısını kaldıramazsınız. Şu anda oturum açmış olan kullanıcının ana dizini üzerindeyse ana bölüntünün bağlantısını da kaldıramazsınız. </para>
 				<para
->Bu sorunun çözümü, &partman; ile birlikte gelen bir Linux Canlı CD'sinden önyükleme yapmaktır. Bu bölüntüleri oradan değiştirin. </para>
+>Bu sorunun çözümü, &partman; ile birlikte gelen bir Linux Canlı CD’sinden önyükleme yapmaktır. Bu bölüntüleri oradan değiştirin. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
@@ -106,7 +106,7 @@
 			</question>
 			<answer>
 				<para
->Bunların hiçbiri, &partman; ile yapılmak için tasarlanmıştır: Bölüntüler ve bu bölüntülerdeki dosya sistemleri ile ilgilenen bir uygulamadır. Disketler, CD'ler veya DVD'ler bölüntülere gereksinim duymaz veya bunları kullanmaz. </para>
+>Bunların hiçbiri, &partman; ile yapılmak için tasarlanmıştır: Bölüntüler ve bu bölüntülerdeki dosya sistemleri ile ilgilenen bir uygulamadır. Disketler, CD’ler veya DVD’ler bölüntülere gereksinim duymaz veya bunları kullanmaz. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
@@ -138,7 +138,7 @@
 			</question>
 			<answer>
 				<para
->&partman; uygulamasının kullandığı bir arka uç kitaplığı olan LibParted, Linux Aygıt Eşleyicisi'nin anlamadığı bir şekilde kullanıldığı sistemlerde sorun yaşar. Ne yazık ki bu durumların bazılarına bölütleme hatalarıyla, yani çökmelerle tepki verir. &partman; bu nedenle, bilgisayarınızı diskler için taramanın alternatif bir yolunu kullanarak bu durumlardan kaçınmaya çalışır. Ancak bunu yapamıyorsa ve bu nedenle LibParted'a güvenmek zorundaysa belirtilene benzer bir ileti yazdıracaktır. Disk taraması çalışırsa iletiyi güvenle göz ardı edebilirsiniz. </para>
+>&partman; uygulamasının kullandığı bir arka uç kitaplığı olan LibParted, Linux Aygıt Eşleyicisi’nin anlamadığı bir şekilde kullanıldığı sistemlerde sorun yaşar. Ne yazık ki bu durumların bazılarına bölütleme hatalarıyla, yani çökmelerle tepki verir. &partman; bu nedenle, bilgisayarınızı diskler için taramanın alternatif bir yolunu kullanarak bu durumlardan kaçınmaya çalışır. Ancak bunu yapamıyorsa ve bu nedenle LibParted’a güvenmek zorundaysa belirtilene benzer bir ileti yazdıracaktır. Disk taraması çalışırsa iletiyi güvenle göz ardı edebilirsiniz. </para>
 			</answer>
 		</qandaentry>
 <!--
