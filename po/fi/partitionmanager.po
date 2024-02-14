@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Tommi Nieminen <translator@legisign.org>, 2010, 2014, 2016, 2018, 2019, 2020, 2021, 2022, 2023.
+# Tommi Nieminen <translator@legisign.org>, 2010, 2014, 2016, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2012, 2013, 2014, 2015, 2016.
 #
 # KDE Finnish translation sprint participants:
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-08 01:36+0000\n"
-"PO-Revision-Date: 2023-12-27 17:04+0200\n"
+"PO-Revision-Date: 2024-02-08 10:49+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -2859,26 +2859,22 @@ msgid "Resize Volume Group"
 msgstr "Muuta taltioryhmän kokoa"
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Scanning devices..."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "Etsitään laitteita…"
+msgstr "Tutkitaan laitteita…"
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p %"
 
 #: gui/scanprogressdialog.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "Etsitään…"
+msgstr "Tutkitaan…"
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
