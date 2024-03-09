@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Andrej Mernik <andrejm@ubuntu.si>, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 # Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2024 Jure Repinc <jlp@holodeck1.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-08 01:36+0000\n"
-"PO-Revision-Date: 2023-12-08 07:41+0100\n"
-"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"PO-Revision-Date: 2024-03-08 19:25+0100\n"
+"Last-Translator: Jure Repinc <jlp@holodeck1.com>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
@@ -18,17 +19,19 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Andrej Mernik,Andrej Žnidaršič,Matjaž Jeran"
+msgstr "Jure Repinc,Andrej Mernik,Andrej Žnidaršič,Matjaž Jeran"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "andrejm@ubuntu.si,andrej.znidarsic@gmail.com,matjaz.jeran@amis.net"
+msgstr ""
+"jlp@holodeck1.com,andrejm@ubuntu.si,andrej.znidarsic@gmail.com,matjaz."
+"jeran@amis.net"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
@@ -391,13 +394,13 @@ msgstr "Beleženje"
 #: config/configurepagegeneral.ui:104
 #, kde-format
 msgid "Hide messages below:"
-msgstr "Skrij spodnja sporočila:"
+msgstr "Skrij sporočila pod:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:115
 #, kde-format
 msgid "Debug"
-msgstr "Razhrošči"
+msgstr "Razhroščevanje"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:120
@@ -475,7 +478,7 @@ msgstr "Po&drobnosti"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
-msgstr "Nastavljanje ..."
+msgstr "Nastavljanje …"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -499,13 +502,13 @@ msgstr "Da, prekliči opravila"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
-msgstr "Čakanje, da se opravilo konča ..."
+msgstr "Čakanje, da se opravilo zaključi …"
 
 #: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
-msgstr "Vsa opravila so bila uspešno končana."
+msgstr "Vsa opravila so bila uspešno zaključena."
 
 #: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
@@ -523,7 +526,7 @@ msgstr "Med uveljavljanjem opravil je prišlo do napak. Prekinjeno."
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
-msgstr "[%1/%2] - %3: %4"
+msgstr "[%1/%2] – %3: %4"
 
 #: gui/applyprogressdialog.cpp:375
 #, kde-kuit-format
@@ -688,13 +691,13 @@ msgstr "%1 (samo za branje)"
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "good"
-msgstr "dober"
+msgstr "Dobro"
 
 #: gui/devicepropsdialog.cpp:112 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "BAD"
-msgstr "SLAB"
+msgstr "SLABO"
 
 #: gui/devicepropsdialog.cpp:117 gui/smartdialog.cpp:129
 #, kde-kuit-format
@@ -766,7 +769,7 @@ msgstr "Fizična velikost sektorja:"
 #: gui/devicepropswidgetbase.ui:222
 #, kde-format
 msgid "Primaries/Max:"
-msgstr "Primarne/največ:"
+msgstr "Glavni/največ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
 #: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
@@ -780,7 +783,7 @@ msgstr "Stanje SMART:"
 #: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:102
 #, kde-format
 msgid "More..."
-msgstr "Več ..."
+msgstr "Več …"
 
 #: gui/editmountoptionsdialog.cpp:25
 #, kde-kuit-format
@@ -923,7 +926,7 @@ msgstr "UU&ID"
 #: gui/editmountpointdialogwidgetbase.ui:213
 #, kde-format
 msgid "Select..."
-msgstr "Izberi ..."
+msgstr "Izbor …"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
 #: gui/editmountpointdialogwidgetbase.ui:220
@@ -1013,7 +1016,7 @@ msgstr "Ustvari"
 #: gui/filesystemsupportdialogwidgetbase.ui:80
 #, kde-format
 msgid "Grow"
-msgstr "Pusti rasti"
+msgstr "Razširi"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:85
@@ -1237,7 +1240,7 @@ msgstr "Fizična velikost sektorja:"
 #, kde-format
 msgctxt "@label device"
 msgid "Primaries/Max:"
-msgstr "Primarne/največ:"
+msgstr "Glavni/največ:"
 
 #: gui/infopane.cpp:184 gui/infopane.cpp:192
 #, kde-format
@@ -1312,8 +1315,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
-"Partition Manager zahteva pravice, da bi lahko deloval. Prosim, osvežite "
-"naprave in prijave, ko vas računalnik pozove."
+"Partition Manager zahteva posebne pravice, da bi lahko deloval. Osvežite "
+"naprave in se overite, ko vas računalnik pozove."
 
 #: gui/mainwindow.cpp:234
 #, kde-kuit-format
@@ -1326,16 +1329,16 @@ msgid_plural ""
 "still %1 operations pending.</para>"
 msgstr[0] ""
 "<para>Ali resnično želite končati program?</para><para>Še vedno čaka %1 "
-"opravilo.</para>"
+"opravil.</para>"
 msgstr[1] ""
+"<para>Ali resnično želite končati program?</para><para>Še vedno čaka %1 "
+"opravilo.</para>"
+msgstr[2] ""
 "<para>Ali resnično želite končati program?</para><para>Še vedno čakata %1 "
 "opravili.</para>"
-msgstr[2] ""
+msgstr[3] ""
 "<para>Ali resnično želite končati program?</para><para>Še vedno čakajo %1 "
 "opravila.</para>"
-msgstr[3] ""
-"<para>Ali resnično želite končati program?</para><para>Še vedno čaka %1 "
-"opravil.</para>"
 
 #: gui/mainwindow.cpp:236
 #, kde-kuit-format
@@ -1581,7 +1584,7 @@ msgstr "Spremeni velikost razdelka ali ga premakne"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
-msgstr "Skrči, pusti rasti ali premakne obstoječ razdelek."
+msgstr "Skrči, razširi ali premakne obstoječ razdelek."
 
 #: gui/mainwindow.cpp:393
 #, kde-kuit-format
@@ -1889,10 +1892,10 @@ msgstr "Pokaži pogovorno okno s podatki o KPMcore."
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
-msgstr[0] "%1 čakajoče opravilo"
-msgstr[1] "%1 čakajoči opravili"
-msgstr[2] "%1 čakajoča opravila"
-msgstr[3] "%1 čakajočih opravil"
+msgstr[0] "%1 čakajočih opravil"
+msgstr[1] "%1 čakajoče opravilo"
+msgstr[2] "%1 čakajoči opravili"
+msgstr[3] "%1 čakajoča opravila"
 
 #: gui/mainwindow.cpp:809
 #, kde-kuit-format
@@ -1904,13 +1907,13 @@ msgstr "Uporabljen je vstavek zaledja: %1 (%2)"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
-msgstr "Preiskovanje za novimi napravami ..."
+msgstr "Preiskovanje naprav …"
 
 #: gui/mainwindow.cpp:851
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
-msgstr "Preiskovanje je končano."
+msgstr "Preiskovanje je zaključeno."
 
 #: gui/mainwindow.cpp:915
 #, kde-kuit-format
@@ -1960,7 +1963,7 @@ msgstr "Uveljavi čakajoča opravila"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
-msgstr "Uveljavljanje opravil ..."
+msgstr "Uveljavljanje opravil …"
 
 #: gui/mainwindow.cpp:974
 #, kde-kuit-format
@@ -2055,13 +2058,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
-msgstr "Vrsta razpredelnice razdelkov \"%1\" je neznana (vrstica %2)."
+msgstr "Vrsta razpredelnice razdelkov »%1« je neznana (vrstica %2)."
 
 #: gui/mainwindow.cpp:1112
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
-msgstr "Vrsta razpredelnice razdelkov \"%1\" ni podprta za uvoz (vrstica %2)."
+msgstr "Vrsta razpredelnice razdelkov »%1« ni podprta za uvoz (vrstica %2)."
 
 #: gui/mainwindow.cpp:1122
 #, kde-kuit-format
@@ -2087,7 +2090,7 @@ msgstr "Razdelek %1 se konča pred začetnim sektorjem (vrstica %2)."
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr "Neznana vloga razdelka \"%1\" za razdelek %2 (vrstica %3)."
+msgstr "Neznana vloga »%1« za razdelek %2 (vrstica %3)."
 
 #: gui/mainwindow.cpp:1164
 #, kde-kuit-format
@@ -2105,7 +2108,7 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
-"Vrsta razpredelnice razdelkov \"%1\" ne podpira razširjenih razdelkov, kljub "
+"Vrsta razpredelnice razdelkov »%1« ne podpira razširjenih razdelkov, kljub "
 "temu pa je bil en najden (vrstica %2)."
 
 #: gui/mainwindow.cpp:1176
@@ -2113,7 +2116,7 @@ msgstr ""
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr ""
-"Ni bilo mogoče ustvariti datotečnega sistema \"%1\" za razdelek %2 (vrstica "
+"Ni bilo mogoče ustvariti datotečnega sistema »%1« za razdelek %2 (vrstica "
 "%3)."
 
 #: gui/mainwindow.cpp:1191
@@ -2175,13 +2178,13 @@ msgstr "Manjkajo podporni paketi za podporo datotečnemu sistemu"
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr "Nerazpoznavna naprava \"%1\" "
+msgstr "Nerazpoznavna naprava »%1« "
 
 #: gui/mainwindow.cpp:1468
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr "Nerazpoznaven razdelek \"%1\" "
+msgstr "Nerazpoznaven razdelek »%1« "
 
 #: gui/mainwindow.cpp:1469
 #, kde-kuit-format
@@ -2216,7 +2219,7 @@ msgstr "Čakajoča opravila"
 #, kde-format
 msgctxt "@title:window"
 msgid "Log Output"
-msgstr "Shranjuj izhod"
+msgstr "Izpis dnevnika"
 
 #: gui/newdialog.cpp:47
 #, kde-kuit-format
@@ -2229,7 +2232,7 @@ msgstr "Ustvari nov razdelek"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition Manager Toolbar"
-msgstr "Orodna vrstica upravljavnika particij"
+msgstr "Orodna vrstica upravljalnika razdelkov"
 
 #. i18n: ectx: Menu (device)
 #: gui/partitionmanagerui.rc:30
@@ -2348,31 +2351,31 @@ msgid_plural ""
 "create, paste or restore a primary partition on it before you delete an "
 "existing one.</para>"
 msgstr[0] ""
-"<para>Na tej napravi je že %1 primarni razdelek. To je največ kar jih lahko "
+"<para>Na tej napravi je že %1 glavnih razdelkov. To je največ kar jih lahko "
+"obravnava ta vrsta razpredelnice razdelkov.</para><para>Preden ne izbrišete "
+"obstoječih razdelkov, na njem ne boste mogli ustvarjati, lepiti ali "
+"obnavljati glavnih razdelkov.</para>"
+msgstr[1] ""
+"<para>Na tej napravi je že %1 glavni razdelek. To je največ kar jih lahko "
 "obravnava ta vrsta razpredelnice razdelkov.</para><para>Preden ne izbrišete "
 "obstoječega razdelka, na njem ne boste mogli ustvarjati, lepiti ali "
-"obnavljati primarnih razdelkov.</para>"
-msgstr[1] ""
-"<para>Na tej napravi je že %1 primarna razdelka. To je največ kar jih lahko "
-"obravnava ta vrsta razpredelnice razdelkov.</para><para>Preden ne izbrišete "
-"obstoječih razdelkov, na njem ne boste mogli ustvarjati, lepiti ali "
-"obnavljati primarnih razdelkov.</para>"
+"obnavljati glavnih razdelkov.</para>"
 msgstr[2] ""
-"<para>Na tej napravi so že %1 primarni razdelki. To je največ kar jih lahko "
+"<para>Na tej napravi sta že %1 glavna razdelka. To je največ kar jih lahko "
 "obravnava ta vrsta razpredelnice razdelkov.</para><para>Preden ne izbrišete "
 "obstoječih razdelkov, na njem ne boste mogli ustvarjati, lepiti ali "
-"obnavljati primarnih razdelkov.</para>"
+"obnavljati glavnih razdelkov.</para>"
 msgstr[3] ""
-"<para>Na tej napravi je že %1 primarnih razdelkov. To je največ kar jih "
-"lahko obravnava ta vrsta razpredelnice razdelkov.</para><para>Preden ne "
-"izbrišete obstoječih razdelkov, na njem ne boste mogli ustvarjati, lepiti "
-"ali obnavljati primarnih razdelkov.</para>"
+"<para>Na tej napravi so že %1 glavni razdelki. To je največ kar jih lahko "
+"obravnava ta vrsta razpredelnice razdelkov.</para><para>Preden ne izbrišete "
+"obstoječih razdelkov, na njem ne boste mogli ustvarjati, lepiti ali "
+"obnavljati glavnih razdelkov.</para>"
 
 #: gui/partitionmanagerwidget.cpp:497
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
-msgstr "Preveč primarnih razdelkov."
+msgstr "Preveč glavnih razdelkov."
 
 #: gui/partitionmanagerwidget.cpp:560
 #, kde-kuit-format
@@ -2492,7 +2495,7 @@ msgid ""
 msgstr ""
 "<para>Ni mogoče ustvariti dovolj velikega ciljnega razdelka, da bi nanj "
 "lahko umestili vir.</para><para>To se lahko zgodi, če so nekateri razdelki "
-"na napravi napačno poravnani ali pa kopirate primarni razdelek na razširjeni "
+"na napravi napačno poravnani ali pa kopirate glavni razdelek na razširjeni "
 "razdelek.</para>"
 
 #: gui/partitionmanagerwidget.cpp:743
@@ -2895,7 +2898,7 @@ msgstr "Spremeni velikost skupine nosilcev"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "Preiskovanje naprav…"
+msgstr "Preiskovanje naprav …"
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
@@ -2907,7 +2910,7 @@ msgstr "%p%"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "Preiskovanje…"
+msgstr "Preiskovanje …"
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
@@ -3063,7 +3066,7 @@ msgstr "Samo Root"
 #: gui/sizedialogwidgetbase.ui:352
 #, kde-format
 msgid "Primar&y"
-msgstr "Primarn&i"
+msgstr "Glavn&i"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
 #: gui/sizedialogwidgetbase.ui:359
@@ -3301,7 +3304,7 @@ msgstr "Velikost fizičnega obsega (PE): "
 #: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
 #, kde-format
 msgid "---"
-msgstr "---"
+msgstr "—"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
 #: gui/volumegroupwidgetbase.ui:79
@@ -3358,8 +3361,8 @@ msgid ""
 "© 2008-2013 Volker Lanz\n"
 "© 2012-2020 Andrius Štikonas"
 msgstr ""
-"© 2008-2013 Volker Lanz\n"
-"© 2012-2020 Andrius Štikonas"
+"© 2008–2013 Volker Lanz\n"
+"© 2012–2020 Andrius Štikonas"
 
 #: main.cpp:85
 #, kde-kuit-format
@@ -3462,7 +3465,7 @@ msgstr "Ali je to prvi zagon Upravljalnika razdelkov za KDE?"
 #, kde-format
 msgctxt "@label"
 msgid "Hide log messages below"
-msgstr "Skrij spodnja sporočila dnevnika"
+msgstr "Skrij sporočila dnevnika pod"
 
 #. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
 #: partitionmanager.kcfg:53
@@ -3520,8 +3523,8 @@ msgid ""
 "<para>The configured backend plugin \"%1\" could not be loaded.</"
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
-"<para>Nastavljenega vstavka zaledja \"%1\" ni bilo mogoče naložiti.</"
-"para><para>Nalaganje privzetega vstavka zaledja \"%2\".</para>"
+"<para>Nastavljenega vstavka zaledja »%1« ni bilo mogoče naložiti.</"
+"para><para>Nalaganje privzetega vstavka zaledja »%2«.</para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
 #, kde-kuit-format
@@ -3536,8 +3539,8 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
-"<para>Ni bilo mogoče naložiti niti nastavljenega (\"%1\") niti privzetega "
-"(\"%2\") vstavka zaledja.</para><para>Preverite svojo namestitev.</para>"
+"<para>Ni bilo mogoče naložiti niti nastavljenega (»%1«) niti privzetega "
+"(»%2«) vstavka zaledja.</para><para>Preverite svojo namestitev.</para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
