@@ -117,6 +117,7 @@ void NewDialog::setupDialog()
     auto showPermissionsGroup = [this] {
         const QString currText = dialogWidget().comboFileSystem().currentText();
         const bool enablePosixPermission = QList<QString>({
+                QStringLiteral("bcachefs"),
                 QStringLiteral("btrfs"),
                 QStringLiteral("ext2"),
                 QStringLiteral("ext3"),
