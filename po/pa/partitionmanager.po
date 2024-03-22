@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-08 01:36+0000\n"
+"POT-Creation-Date: 2024-03-22 00:39+0000\n"
 "PO-Revision-Date: 2024-01-03 14:01-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -319,34 +319,40 @@ msgid "FAT32:"
 msgstr "FAT32:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
-#: config/configurepagefilesystemcolors.ui:754
+#: config/configurepagefilesystemcolors.ui:751
 #, kde-format
 msgid "Linux RAID:"
 msgstr "ਲੀਨਕਸ ਰੇਡ:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_34)
-#: config/configurepagefilesystemcolors.ui:767
+#: config/configurepagefilesystemcolors.ui:764
 #, kde-format
 msgid "BitLocker:"
 msgstr "ਬਿੱਟਲਾਕਰ:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_14)
-#: config/configurepagefilesystemcolors.ui:796
+#: config/configurepagefilesystemcolors.ui:793
 #, kde-format
 msgid "HFS+:"
 msgstr "HFS+:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_16)
-#: config/configurepagefilesystemcolors.ui:822
+#: config/configurepagefilesystemcolors.ui:819
 #, kde-format
 msgid "unknown:"
 msgstr "ਅਣਪਛਾਤਾ:"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: config/configurepagefilesystemcolors.ui:835
+#. i18n: ectx: property (text), widget (QLabel, textLabel_36)
+#: config/configurepagefilesystemcolors.ui:832
 #, kde-format
-msgid "          Minix:"
-msgstr "          Minix:"
+msgid "Minix:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_37)
+#: config/configurepagefilesystemcolors.ui:858
+#, kde-format
+msgid "Bcachefs:"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
@@ -3386,21 +3392,21 @@ msgid "File system colors"
 msgstr "ਫਾਇਲ ਸਿਸਟਮ ਰੰਗ"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:141
+#: partitionmanager.kcfg:143
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
 msgstr "ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਮੇਨੂ-ਬਾਰ ਵੇਖਾਓ"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:145
+#: partitionmanager.kcfg:147
 #, kde-format
 msgctxt "@label"
 msgid "Backend plugin"
 msgstr "ਬੈਕਐਂਡ ਪਲੱਗਇਨ"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:151
+#: partitionmanager.kcfg:153
 #, kde-format
 msgctxt "@label"
 msgid "Preferred unit:"
@@ -3437,6 +3443,9 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "ਕਾਲਮ"
+
+#~ msgid "          Minix:"
+#~ msgstr "          Minix:"
 
 #~ msgid "Backend"
 #~ msgstr "ਬੈਕਐਂਡ"

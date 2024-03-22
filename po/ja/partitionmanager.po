@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-08 01:36+0000\n"
+"POT-Creation-Date: 2024-03-22 00:39+0000\n"
 "PO-Revision-Date: 2009-01-06 23:32+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -356,7 +356,7 @@ msgid "FAT32:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
-#: config/configurepagefilesystemcolors.ui:754
+#: config/configurepagefilesystemcolors.ui:751
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "linuxswap"
@@ -364,29 +364,35 @@ msgid "Linux RAID:"
 msgstr "linuxswap"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_34)
-#: config/configurepagefilesystemcolors.ui:767
+#: config/configurepagefilesystemcolors.ui:764
 #, kde-format
 msgid "BitLocker:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_14)
-#: config/configurepagefilesystemcolors.ui:796
+#: config/configurepagefilesystemcolors.ui:793
 #, kde-format
 msgid "HFS+:"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_16)
-#: config/configurepagefilesystemcolors.ui:822
+#: config/configurepagefilesystemcolors.ui:819
 #, fuzzy, kde-format
 #| msgctxt "@item/plain filesystem name"
 #| msgid "unknown"
 msgid "unknown:"
 msgstr "不明"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: config/configurepagefilesystemcolors.ui:835
+#. i18n: ectx: property (text), widget (QLabel, textLabel_36)
+#: config/configurepagefilesystemcolors.ui:832
 #, kde-format
-msgid "          Minix:"
+msgid "Minix:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_37)
+#: config/configurepagefilesystemcolors.ui:858
+#, kde-format
+msgid "Bcachefs:"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -3777,14 +3783,14 @@ msgid "File system colors"
 msgstr "ファイルシステム"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:141
+#: partitionmanager.kcfg:143
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
 msgstr ""
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:145
+#: partitionmanager.kcfg:147
 #, fuzzy, kde-format
 #| msgid "LibParted version:"
 msgctxt "@label"
@@ -3792,7 +3798,7 @@ msgid "Backend plugin"
 msgstr "LibParted のバージョン:"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:151
+#: partitionmanager.kcfg:153
 #, kde-format
 msgctxt "@label"
 msgid "Preferred unit:"
