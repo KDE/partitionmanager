@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-22 00:39+0000\n"
-"PO-Revision-Date: 2024-03-08 19:53+0300\n"
+"PO-Revision-Date: 2024-03-22 15:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -351,13 +351,13 @@ msgstr "bilinmeyen:"
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "Minix:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
 #, kde-format
 msgid "Bcachefs:"
-msgstr ""
+msgstr "Bcachefs:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
@@ -483,7 +483,7 @@ msgstr "&Ayrıntılar"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
-msgstr "Ayarlanıyor..."
+msgstr "Ayarlanıyor…"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -507,7 +507,7 @@ msgstr "Evet, İşlemleri İptal Et"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
-msgstr "İşlemin bitmesi bekleniyor..."
+msgstr "İşlemin bitmesi bekleniyor…"
 
 #: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
@@ -531,7 +531,7 @@ msgstr "İşlemler uygulanırken bazı hatalar oluştu. İptal edildi."
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
-msgstr "[%1/%2] - %3: %4"
+msgstr "[%1/%2] — %3: %4"
 
 #: gui/applyprogressdialog.cpp:375
 #, kde-kuit-format
@@ -627,20 +627,20 @@ msgid ""
 msgstr ""
 "<para><filename>%1</filename> üzerinde bir MS-DOS bölüntü tablosu "
 "oluşturmayı gerçekten istiyor musunuz?</para><para>Bu aygıt üzerinde "
-"2^32'den fazla dilim var. Bu MS-DOS bölüntü tablosu türünün desteğinin üst "
+"2^32’den fazla dilim var. Bu MS-DOS bölüntü tablosu türünün desteğinin üst "
 "sınırı olduğundan bütün aygıtı kullanamayacaksınız.</para>"
 
 #: gui/createpartitiontabledialog.cpp:61
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Create MS-Dos Partition Table Type?"
-msgstr "MS-DOS Bölüntü Tablosu Gerçekten Oluşturulsun mu?"
+msgstr "MS-DOS Bölüntü Tablosu Oluştur?"
 
 #: gui/createpartitiontabledialog.cpp:62
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create MS-Dos Type"
-msgstr "MS-Dos Türü Oluştur"
+msgstr "MS-DOS Türü Oluştur"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/createpartitiontablewidgetbase.ui:24
@@ -658,7 +658,7 @@ msgstr "GPT"
 #: gui/createpartitiontablewidgetbase.ui:43
 #, kde-format
 msgid "MS-Dos"
-msgstr "MS-Dos"
+msgstr "MS-DOS"
 
 #. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
 #: gui/createpartitiontablewidgetbase.ui:70
@@ -786,7 +786,7 @@ msgstr "SMART durumu:"
 #: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:102
 #, kde-format
 msgid "More..."
-msgstr "Daha Fazla..."
+msgstr "Daha Fazla…"
 
 #: gui/editmountoptionsdialog.cpp:25
 #, kde-kuit-format
@@ -927,7 +927,7 @@ msgstr "UU&ID"
 #: gui/editmountpointdialogwidgetbase.ui:213
 #, kde-format
 msgid "Select..."
-msgstr "Seç..."
+msgstr "Seç…"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
 #: gui/editmountpointdialogwidgetbase.ui:220
@@ -969,7 +969,7 @@ msgstr "Buna göre tanımla:"
 #: gui/editmountpointdialogwidgetbase.ui:298
 #, kde-format
 msgid "Read-only"
-msgstr "Salt-okunur"
+msgstr "Saltokunur"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
 #: gui/editmountpointdialogwidgetbase.ui:305
@@ -1316,7 +1316,7 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
-"Bölüntü Yöneticisi'nin çalışması için ayrıcalıklar gerekir. Lütfen aygıtları "
+"Bölüntü Yöneticisi’nin çalışması için ayrıcalıklar gerekir. Lütfen aygıtları "
 "yenileyin ve istendiğinde kimliğinizi doğrulayın."
 
 #: gui/mainwindow.cpp:234
@@ -1465,13 +1465,13 @@ msgstr "Disk Bölümü Grubunu Kaldır"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
-msgstr "Seçili Disk Bölümü Grubu'nu kaldır"
+msgstr "Seçili Disk Bölümü Grubu’nu kaldır"
 
 #: gui/mainwindow.cpp:333
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
-msgstr "Seçili Disk Bölümü Grubu'nu kaldırın."
+msgstr "Seçili Disk Bölümü Grubu’nu kaldırın."
 
 #: gui/mainwindow.cpp:341
 #, kde-format
@@ -1483,32 +1483,32 @@ msgstr "Disk Bölümü Grubunu Boyutlandır"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
-msgstr "Seçili Disk Bölümü Grubu'nu boyutlandır"
+msgstr "Seçili Disk Bölümü Grubu’nu boyutlandır"
 
 #: gui/mainwindow.cpp:343
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
-msgstr "Seçili Disk Bölümü Grubu'nu genişletin veya daraltın."
+msgstr "Seçili Disk Bölümü Grubu’nu genişletin veya daraltın."
 
 #: gui/mainwindow.cpp:351
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
-msgstr "Disk Bölümü Grubu'nu Devre Dışı Bırak"
+msgstr "Disk Bölümü Grubu’nu Devre Dışı Bırak"
 
 #: gui/mainwindow.cpp:352
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
-msgstr "Seçili Disk Bölümü Grubu'nu devre dışı bırak"
+msgstr "Seçili Disk Bölümü Grubu’nu devre dışı bırak"
 
 #: gui/mainwindow.cpp:353
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr ""
-"Çıkarılabilir aygıtların çıkarmadan önce seçili Disk Bölümü Grubu'nu devre "
+"Çıkarılabilir aygıtların çıkarmadan önce seçili Disk Bölümü Grubu’nu devre "
 "dışı bırakın."
 
 #: gui/mainwindow.cpp:359
@@ -1904,7 +1904,7 @@ msgstr "Kullanılan arka uç eklentisi: %1 (%2)"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
-msgstr "Aygıtlar taranıyor..."
+msgstr "Aygıtlar taranıyor…"
 
 #: gui/mainwindow.cpp:851
 #, kde-kuit-format
@@ -1962,7 +1962,7 @@ msgstr "Bekleyen İşlemleri Uygula"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
-msgstr "İşlemler uygulanıyor..."
+msgstr "İşlemler uygulanıyor…"
 
 #: gui/mainwindow.cpp:974
 #, kde-kuit-format
@@ -2053,14 +2053,14 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
-msgstr "Bölüntü tablosu türü \"%1\" bilinmiyor (%2. satır)."
+msgstr "Bölüntü tablosu türü “%1” bilinmiyor (%2. satır)."
 
 #: gui/mainwindow.cpp:1112
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr ""
-"Bölüntü tablosu türü \"%1\" içe aktarmak için desteklenmiyor (%2. satır)."
+"Bölüntü tablosu türü “%1” içe aktarmak için desteklenmiyor (%2. satır)."
 
 #: gui/mainwindow.cpp:1122
 #, kde-kuit-format
@@ -2085,7 +2085,7 @@ msgstr "%1 bölüntüsü başlangıç diliminden önce sonlanıyor (%2. satır).
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr "%2 için bilinmeyen bölüntü rolü \"%1\" (%3. satır)."
+msgstr "%2 için bilinmeyen bölüntü rolü “%1” (%3. satır)."
 
 #: gui/mainwindow.cpp:1164
 #, kde-kuit-format
@@ -2101,14 +2101,14 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
-"\"%1\" bölüntü tablosu türü, genişletilmiş bölüntüleri desteklememesine "
-"rağmen bir tane bulundu (%2. satır)."
+"“%1” bölüntü tablosu türü, genişletilmiş bölüntüleri desteklememesine rağmen "
+"bir tane bulundu (%2. satır)."
 
 #: gui/mainwindow.cpp:1176
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
-msgstr "%2 için \"%1\" dosya sistemi oluşturulamadı (%3. satır)."
+msgstr "%2 için “%1” dosya sistemi oluşturulamadı (%3. satır)."
 
 #: gui/mainwindow.cpp:1191
 #, kde-kuit-format
@@ -2154,7 +2154,7 @@ msgstr ""
 "Sistemi</td><td style='font-weight:bold;padding-right:12px;white-space:"
 "nowrap;'>Destek Araçları</td><td style='font-weight:bold;padding-right:12px;"
 "white-space:nowrap;'>URL</td></tr>%1</table><para>Bu dosya sistemleri için "
-"destek araçları kurmadığınız sürece onları düzenlemeniz mümkün olmayacak.</"
+"destek araçları kurmadığınız sürece onları düzenleyemeyeceksiniz.</"
 "para><para>Dağıtımınızın paket yöneticisinde bu destek araçları için "
 "paketler bulabilirsiniz.</para>"
 
@@ -2168,13 +2168,13 @@ msgstr "Dosya Sistemi Desteği için Eksik Paket Var"
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr "Tanımlanamayan aygıt \"%1\" "
+msgstr "Tanımlanamayan aygıt “%1” "
 
 #: gui/mainwindow.cpp:1468
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr "Tanımlanamayan bölüntü \"%1\" "
+msgstr "Tanımlanamayan bölüntü “%1” "
 
 #: gui/mainwindow.cpp:1469
 #, kde-kuit-format
@@ -2539,7 +2539,7 @@ msgstr "Bölüntü Adı"
 #: gui/partitionmanagerwidgetbase.ui:109
 #, kde-format
 msgid "Partition UUID"
-msgstr "Bölüntü UUID'si"
+msgstr "Bölüntü UUID’si"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:114
@@ -2718,7 +2718,7 @@ msgstr "Boyut:"
 #: gui/partpropswidgetbase.ui:66
 #, kde-format
 msgid "Partition UUID:"
-msgstr "BÖlüntü UUID'si:"
+msgstr "BÖlüntü UUID’si:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
 #: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:146
@@ -2867,7 +2867,7 @@ msgstr "Geçersiz parola. "
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize Volume Group"
-msgstr "Disk Bölümü Grubu'nu Boyutlandır"
+msgstr "Disk Bölümü Grubu’nu Boyutlandır"
 
 #: gui/scanprogressdialog.cpp:16
 #, kde-kuit-format
@@ -3336,8 +3336,8 @@ msgid ""
 "© 2008-2013 Volker Lanz\n"
 "© 2012-2020 Andrius Štikonas"
 msgstr ""
-"© 2008-2013 Volker Lanz\n"
-"© 2012-2020 Andrius Štikonas"
+"© 2008–2013 Volker Lanz\n"
+"© 2012–2020 Andrius Štikonas"
 
 #: main.cpp:85
 #, kde-kuit-format
@@ -3433,7 +3433,7 @@ msgstr "Yönetilecek aygıt"
 #, kde-format
 msgctxt "@label"
 msgid "Is this the first time KDE Partition Manager is being run?"
-msgstr "KDE Bölüntü Yöneticisi'ni ilk çalıştırmanız mı?"
+msgstr "KDE Bölüntü Yöneticisi’ni ilk çalıştırmanız mı?"
 
 #. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
 #: partitionmanager.kcfg:49
@@ -3498,8 +3498,8 @@ msgid ""
 "<para>The configured backend plugin \"%1\" could not be loaded.</"
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
-"<para>Yapılandırılmış \"%1\" arka uç eklentisi yüklenemedi.</para><para>Onun "
-"yerine öntanımlı \"%2\" arka uç eklentisi yükleniyor.</para>"
+"<para>Yapılandırılmış “%1” arka uç eklentisi yüklenemedi.</para><para>Onun "
+"yerine öntanımlı “%2” arka uç eklentisi yükleniyor.</para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
 #, kde-kuit-format
@@ -3514,8 +3514,8 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
-"<para>Ne yapılandırılmış (\"%1\") ne de öntanımlı (\"%2\") arka uç "
-"eklentileri yüklenemedi.</para><para>Lütfen kurulumunuzu denetleyin.</para>"
+"<para>Ne yapılandırılmış (“%1”) ne de öntanımlı (“%2”) arka uç eklentileri "
+"yüklenemedi.</para><para>Lütfen kurulumunuzu denetleyin.</para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
