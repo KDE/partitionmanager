@@ -89,6 +89,11 @@ public:
         return *m_CheckBoxEncrypt;
     }
 
+    QCheckBox& checkBoxLuks2() {
+        Q_ASSERT(m_CheckBoxLuks2);
+        return *m_CheckBoxLuks2;
+    }
+
     KNewPasswordWidget& editPassphrase() {
         Q_ASSERT(m_EditPassphrase);
         return *m_EditPassphrase;

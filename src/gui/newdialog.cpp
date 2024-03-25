@@ -94,6 +94,7 @@ void NewDialog::setupDialog()
     SizeDialogBase::setupDialog();
 
     dialogWidget().checkBoxEncrypt().hide();
+    dialogWidget().checkBoxLuks2().hide();
     dialogWidget().editPassphrase().hide();
 
     if (device().type() == Device::Type::LVM_Device) {
@@ -175,8 +176,9 @@ void NewDialog::accept()
     else if (partition().roles().has(PartitionRole::Luks)) {
         FileSystem::Type innerFsType = partition().fileSystem().type();
         partition().deleteFileSystem();
+        bool isLuks2 = dialogWidget().checkBoxLuks2().isVisible() && dialogWidget().checkBoxLuks2().isChecked();
         FS::luks* luksFs = dynamic_cast< FS::luks* >(
-                               FileSystemFactory::create(FileSystem::Type::Luks,
+                               FileSystemFactory::create(isLuks2 ? FileSystem::Type::Luks2 : FileSystem::Type::Luks,
                                                          partition().firstSector(),
                                                          partition().lastSector(),
                                                          partition().sectorSize()));
@@ -205,6 +207,7 @@ void NewDialog::onRoleChanged(bool)
     if (doEncrypt)
         r |= PartitionRole::Luks;
 
+    dialogWidget().checkBoxLuks2().setVisible(doEncrypt);
     dialogWidget().editPassphrase().setVisible(doEncrypt);
 
     // Make sure an extended partition gets correctly displayed: Set its file system to extended.
