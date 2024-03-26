@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:39+0000\n"
+"POT-Creation-Date: 2024-03-26 00:39+0000\n"
 "PO-Revision-Date: 2024-03-22 19:09+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -2746,7 +2746,7 @@ msgid "Partition UUID:"
 msgstr "UUID розділу:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
-#: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:146
+#: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:126
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
@@ -2950,22 +2950,68 @@ msgctxt "@action:button"
 msgid "&Advanced"
 msgstr "&Додаткові"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
-#: gui/sizedialogwidgetbase.ui:62
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:30
+#, kde-format
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Мінімальний розмір:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:72
+#, kde-format
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Максимальний розмір:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/sizedialogwidgetbase.ui:98
+#, kde-format
+msgctxt "@label"
+msgid "Label:"
+msgstr "Мітка:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: gui/sizedialogwidgetbase.ui:160
 #, kde-format
 msgctxt "@label:listbox"
-msgid "Partition type:"
-msgstr "Тип розділу:"
+msgid "Si&ze:"
+msgstr "&Розмір:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:183
+#, kde-format
+msgid "Primar&y"
+msgstr "&Основний"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:190
+#, kde-format
+msgid "E&xtended"
+msgstr "Роз&ширений"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:197
+#, kde-format
+msgid "&Logical"
+msgstr "&Логічний"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/sizedialogwidgetbase.ui:78
+#: gui/sizedialogwidgetbase.ui:213
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File system:"
 msgstr "Файлова система:"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:249
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "Тип розділу:"
+
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:98
+#: gui/sizedialogwidgetbase.ui:259
 #, kde-format
 msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
@@ -2975,79 +3021,31 @@ msgstr ""
 "попросить вас вказати пароль."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:101
+#: gui/sizedialogwidgetbase.ui:262
 #, kde-format
 msgid "Encrypt with LUKS"
 msgstr "Зашифрувати за допомогою LUKS"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
-#: gui/sizedialogwidgetbase.ui:111
-#, kde-format
-msgid "Logical Volume Name:"
-msgstr "Назва логічного тому:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/sizedialogwidgetbase.ui:128
-#, kde-format
-msgctxt "@label"
-msgid "Label:"
-msgstr "Мітка:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: gui/sizedialogwidgetbase.ui:164
-#, kde-format
-msgctxt "@label"
-msgid "Minimum size:"
-msgstr "Мінімальний розмір:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: gui/sizedialogwidgetbase.ui:187
-#, kde-format
-msgctxt "@label"
-msgid "Maximum size:"
-msgstr "Максимальний розмір:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
-#: gui/sizedialogwidgetbase.ui:210
-#, kde-format
-msgctxt "@label:listbox"
-msgid "F&ree space before:"
-msgstr "Вільне місце на по&чатку:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: gui/sizedialogwidgetbase.ui:245
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Si&ze:"
-msgstr "&Розмір:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
-#: gui/sizedialogwidgetbase.ui:274
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Free space after:"
-msgstr "Вільне місце наприкінці:"
-
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
-#: gui/sizedialogwidgetbase.ui:297
+#: gui/sizedialogwidgetbase.ui:292
 #, kde-format
 msgid "Permissions"
 msgstr "Права доступу"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:326
+#: gui/sizedialogwidgetbase.ui:305
 #, kde-format
 msgid "Allow everyone to write and read on this device"
 msgstr "Дозволити будь-кому записувати і читати дані на цьому пристрої"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:329
+#: gui/sizedialogwidgetbase.ui:308
 #, kde-format
 msgid "Everyone"
 msgstr "Будь-хто"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:336
+#: gui/sizedialogwidgetbase.ui:315
 #, kde-format
 msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
@@ -3057,28 +3055,44 @@ msgstr ""
 "root. Вам доведеться налаштувати права доступу до тек окремо."
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:339
+#: gui/sizedialogwidgetbase.ui:318
 #, kde-format
 msgid "Only Root"
 msgstr "Лише root"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
-#: gui/sizedialogwidgetbase.ui:352
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
+#: gui/sizedialogwidgetbase.ui:334
 #, kde-format
-msgid "Primar&y"
-msgstr "&Основний"
+msgctxt "@label:listbox"
+msgid "F&ree space before:"
+msgstr "Вільне місце на по&чатку:"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
-#: gui/sizedialogwidgetbase.ui:359
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
+#: gui/sizedialogwidgetbase.ui:347
 #, kde-format
-msgid "E&xtended"
-msgstr "Роз&ширений"
+msgid "Logical Volume Name:"
+msgstr "Назва логічного тому:"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
-#: gui/sizedialogwidgetbase.ui:366
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
+#: gui/sizedialogwidgetbase.ui:363
 #, kde-format
-msgid "&Logical"
-msgstr "&Логічний"
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Вільне місце наприкінці:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxLuks2)
+#: gui/sizedialogwidgetbase.ui:376
+#, kde-format
+msgid ""
+"Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
+"compromised."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
+#: gui/sizedialogwidgetbase.ui:379
+#, kde-format
+msgid "Enable LUKS2"
+msgstr ""
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format

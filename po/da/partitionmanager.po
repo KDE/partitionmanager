@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:39+0000\n"
+"POT-Creation-Date: 2024-03-26 00:39+0000\n"
 "PO-Revision-Date: 2020-10-11 11:14+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -2718,7 +2718,7 @@ msgid "Partition UUID:"
 msgstr "Partitions-UUID:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
-#: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:146
+#: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:126
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
@@ -2929,22 +2929,68 @@ msgctxt "@action:button"
 msgid "&Advanced"
 msgstr "&Avanceret"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
-#: gui/sizedialogwidgetbase.ui:62
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:30
+#, kde-format
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Min. størrelse:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:72
+#, kde-format
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Maks. størrelse:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/sizedialogwidgetbase.ui:98
+#, kde-format
+msgctxt "@label"
+msgid "Label:"
+msgstr "Etiket:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: gui/sizedialogwidgetbase.ui:160
 #, kde-format
 msgctxt "@label:listbox"
-msgid "Partition type:"
-msgstr "Partitionstype:"
+msgid "Si&ze:"
+msgstr "S&tørrelse:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:183
+#, kde-format
+msgid "Primar&y"
+msgstr "P&rimær"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:190
+#, kde-format
+msgid "E&xtended"
+msgstr "U&dvidet"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:197
+#, kde-format
+msgid "&Logical"
+msgstr "&Logisk"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/sizedialogwidgetbase.ui:78
+#: gui/sizedialogwidgetbase.ui:213
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File system:"
 msgstr "Filsystem:"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:249
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "Partitionstype:"
+
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:98
+#: gui/sizedialogwidgetbase.ui:259
 #, kde-format
 msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
@@ -2954,79 +3000,31 @@ msgstr ""
 "en adgangsfrase."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:101
+#: gui/sizedialogwidgetbase.ui:262
 #, kde-format
 msgid "Encrypt with LUKS"
 msgstr "Kryptér med LUKS"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
-#: gui/sizedialogwidgetbase.ui:111
-#, kde-format
-msgid "Logical Volume Name:"
-msgstr "Navn på logisk diskområde:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/sizedialogwidgetbase.ui:128
-#, kde-format
-msgctxt "@label"
-msgid "Label:"
-msgstr "Etiket:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: gui/sizedialogwidgetbase.ui:164
-#, kde-format
-msgctxt "@label"
-msgid "Minimum size:"
-msgstr "Min. størrelse:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: gui/sizedialogwidgetbase.ui:187
-#, kde-format
-msgctxt "@label"
-msgid "Maximum size:"
-msgstr "Maks. størrelse:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
-#: gui/sizedialogwidgetbase.ui:210
-#, kde-format
-msgctxt "@label:listbox"
-msgid "F&ree space before:"
-msgstr "Le&dig plads før:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: gui/sizedialogwidgetbase.ui:245
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Si&ze:"
-msgstr "S&tørrelse:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
-#: gui/sizedialogwidgetbase.ui:274
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Free space after:"
-msgstr "Ledig plads efter:"
-
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
-#: gui/sizedialogwidgetbase.ui:297
+#: gui/sizedialogwidgetbase.ui:292
 #, kde-format
 msgid "Permissions"
 msgstr "Rettigheder"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:326
+#: gui/sizedialogwidgetbase.ui:305
 #, kde-format
 msgid "Allow everyone to write and read on this device"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:329
+#: gui/sizedialogwidgetbase.ui:308
 #, kde-format
 msgid "Everyone"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:336
+#: gui/sizedialogwidgetbase.ui:315
 #, kde-format
 msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
@@ -3034,28 +3032,44 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:339
+#: gui/sizedialogwidgetbase.ui:318
 #, kde-format
 msgid "Only Root"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
-#: gui/sizedialogwidgetbase.ui:352
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
+#: gui/sizedialogwidgetbase.ui:334
 #, kde-format
-msgid "Primar&y"
-msgstr "P&rimær"
+msgctxt "@label:listbox"
+msgid "F&ree space before:"
+msgstr "Le&dig plads før:"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
-#: gui/sizedialogwidgetbase.ui:359
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
+#: gui/sizedialogwidgetbase.ui:347
 #, kde-format
-msgid "E&xtended"
-msgstr "U&dvidet"
+msgid "Logical Volume Name:"
+msgstr "Navn på logisk diskområde:"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
-#: gui/sizedialogwidgetbase.ui:366
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
+#: gui/sizedialogwidgetbase.ui:363
 #, kde-format
-msgid "&Logical"
-msgstr "&Logisk"
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Ledig plads efter:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxLuks2)
+#: gui/sizedialogwidgetbase.ui:376
+#, kde-format
+msgid ""
+"Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
+"compromised."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
+#: gui/sizedialogwidgetbase.ui:379
+#, kde-format
+msgid "Enable LUKS2"
+msgstr ""
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format

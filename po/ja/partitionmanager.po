@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:39+0000\n"
+"POT-Creation-Date: 2024-03-26 00:39+0000\n"
 "PO-Revision-Date: 2009-01-06 23:32+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2967,7 +2967,7 @@ msgid "Partition UUID:"
 msgstr "パーティション(&P)"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
-#: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:146
+#: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:126
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
@@ -3192,48 +3192,22 @@ msgctxt "@action:button"
 msgid "&Advanced"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
-#: gui/sizedialogwidgetbase.ui:62
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Partition type:"
-msgctxt "@label:listbox"
-msgid "Partition type:"
-msgstr "パーティションのタイプ:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/sizedialogwidgetbase.ui:78
-#, fuzzy, kde-format
-#| msgctxt "@label partition"
-#| msgid "File system:"
-msgctxt "@label:listbox"
-msgid "File system:"
-msgstr "ファイルシステム:"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:98
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:30
 #, kde-format
-msgid ""
-"Set up encryption for this filesystem with LUKS. You will be asked to "
-"provide a passphrase."
-msgstr ""
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "最小サイズ:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:101
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:72
 #, kde-format
-msgid "Encrypt with LUKS"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
-#: gui/sizedialogwidgetbase.ui:111
-#, fuzzy, kde-format
-#| msgctxt "@label device"
-#| msgid "Sector size:"
-msgid "Logical Volume Name:"
-msgstr "セクターサイズ:"
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "最大サイズ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/sizedialogwidgetbase.ui:128
+#: gui/sizedialogwidgetbase.ui:98
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "&Label:"
@@ -3241,65 +3215,86 @@ msgctxt "@label"
 msgid "Label:"
 msgstr "ラベル(&L):"
 
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: gui/sizedialogwidgetbase.ui:164
-#, kde-format
-msgctxt "@label"
-msgid "Minimum size:"
-msgstr "最小サイズ:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: gui/sizedialogwidgetbase.ui:187
-#, kde-format
-msgctxt "@label"
-msgid "Maximum size:"
-msgstr "最大サイズ:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
-#: gui/sizedialogwidgetbase.ui:210
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Free space &before:"
-msgctxt "@label:listbox"
-msgid "F&ree space before:"
-msgstr "前の空き領域(&B):"
-
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: gui/sizedialogwidgetbase.ui:245
+#: gui/sizedialogwidgetbase.ui:160
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Si&ze:"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
-#: gui/sizedialogwidgetbase.ui:274
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:183
 #, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Free space &after:"
+#| msgid "&Primary"
+msgid "Primar&y"
+msgstr "基本(&P)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:190
+#, fuzzy, kde-format
+#| msgid "&Extended"
+msgid "E&xtended"
+msgstr "拡張(&E)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:197
+#, fuzzy, kde-format
+#| msgid "&Logical"
+msgid "&Logical"
+msgstr "論理(&L)"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
+#: gui/sizedialogwidgetbase.ui:213
+#, fuzzy, kde-format
+#| msgctxt "@label partition"
+#| msgid "File system:"
 msgctxt "@label:listbox"
-msgid "Free space after:"
-msgstr "後の空き領域(&A):"
+msgid "File system:"
+msgstr "ファイルシステム:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:249
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Partition type:"
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "パーティションのタイプ:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:259
+#, kde-format
+msgid ""
+"Set up encryption for this filesystem with LUKS. You will be asked to "
+"provide a passphrase."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
+#: gui/sizedialogwidgetbase.ui:262
+#, kde-format
+msgid "Encrypt with LUKS"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
-#: gui/sizedialogwidgetbase.ui:297
+#: gui/sizedialogwidgetbase.ui:292
 #, kde-format
 msgid "Permissions"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:326
+#: gui/sizedialogwidgetbase.ui:305
 #, kde-format
 msgid "Allow everyone to write and read on this device"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:329
+#: gui/sizedialogwidgetbase.ui:308
 #, kde-format
 msgid "Everyone"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:336
+#: gui/sizedialogwidgetbase.ui:315
 #, kde-format
 msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
@@ -3307,31 +3302,50 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:339
+#: gui/sizedialogwidgetbase.ui:318
 #, kde-format
 msgid "Only Root"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
-#: gui/sizedialogwidgetbase.ui:352
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
+#: gui/sizedialogwidgetbase.ui:334
 #, fuzzy, kde-format
-#| msgid "&Primary"
-msgid "Primar&y"
-msgstr "基本(&P)"
+#| msgctxt "@label:listbox"
+#| msgid "Free space &before:"
+msgctxt "@label:listbox"
+msgid "F&ree space before:"
+msgstr "前の空き領域(&B):"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
-#: gui/sizedialogwidgetbase.ui:359
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
+#: gui/sizedialogwidgetbase.ui:347
 #, fuzzy, kde-format
-#| msgid "&Extended"
-msgid "E&xtended"
-msgstr "拡張(&E)"
+#| msgctxt "@label device"
+#| msgid "Sector size:"
+msgid "Logical Volume Name:"
+msgstr "セクターサイズ:"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
-#: gui/sizedialogwidgetbase.ui:366
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
+#: gui/sizedialogwidgetbase.ui:363
 #, fuzzy, kde-format
-#| msgid "&Logical"
-msgid "&Logical"
-msgstr "論理(&L)"
+#| msgctxt "@label:listbox"
+#| msgid "Free space &after:"
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "後の空き領域(&A):"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxLuks2)
+#: gui/sizedialogwidgetbase.ui:376
+#, kde-format
+msgid ""
+"Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
+"compromised."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
+#: gui/sizedialogwidgetbase.ui:379
+#, kde-format
+msgid "Enable LUKS2"
+msgstr ""
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format

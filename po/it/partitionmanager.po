@@ -3,15 +3,15 @@
 # Marco Poletti <poletti.marco@gmail.com>, 2010.
 # Calogero Lo Leggio <calogero@loleggio.net>, 2010.
 # Jacopo Reggiani <jacopo.reggiani@gmail.com>, 2010.
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023 Vincenzo Reale <smart2128vr@gmail.com>
+# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Vincenzo Reale <smart2128vr@gmail.com>
 # Paolo Zamponi <feus73@gmail.com>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-22 00:39+0000\n"
-"PO-Revision-Date: 2023-12-09 05:22+0100\n"
+"POT-Creation-Date: 2024-03-26 00:39+0000\n"
+"PO-Revision-Date: 2024-03-23 12:33+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -350,13 +350,13 @@ msgstr "sconosciuto:"
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "Minix:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
 #, kde-format
 msgid "Bcachefs:"
-msgstr ""
+msgstr "Bcachefs:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
@@ -2736,7 +2736,7 @@ msgid "Partition UUID:"
 msgstr "UUID partizione:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
-#: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:146
+#: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:126
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
@@ -2942,22 +2942,68 @@ msgctxt "@action:button"
 msgid "&Advanced"
 msgstr "&Avanzate"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
-#: gui/sizedialogwidgetbase.ui:62
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: gui/sizedialogwidgetbase.ui:30
+#, kde-format
+msgctxt "@label"
+msgid "Minimum size:"
+msgstr "Dimensione minima:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: gui/sizedialogwidgetbase.ui:72
+#, kde-format
+msgctxt "@label"
+msgid "Maximum size:"
+msgstr "Dimensione massima:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
+#: gui/sizedialogwidgetbase.ui:98
+#, kde-format
+msgctxt "@label"
+msgid "Label:"
+msgstr "Etichetta:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: gui/sizedialogwidgetbase.ui:160
 #, kde-format
 msgctxt "@label:listbox"
-msgid "Partition type:"
-msgstr "Tipo di partizione:"
+msgid "Si&ze:"
+msgstr "Di&mensione:"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
+#: gui/sizedialogwidgetbase.ui:183
+#, kde-format
+msgid "Primar&y"
+msgstr "Pr&imaria"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
+#: gui/sizedialogwidgetbase.ui:190
+#, kde-format
+msgid "E&xtended"
+msgstr "E&stesa"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
+#: gui/sizedialogwidgetbase.ui:197
+#, kde-format
+msgid "&Logical"
+msgstr "&Logica"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/sizedialogwidgetbase.ui:78
+#: gui/sizedialogwidgetbase.ui:213
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File system:"
 msgstr "File system:"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
+#: gui/sizedialogwidgetbase.ui:249
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Partition type:"
+msgstr "Tipo di partizione:"
+
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:98
+#: gui/sizedialogwidgetbase.ui:259
 #, kde-format
 msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
@@ -2967,79 +3013,31 @@ msgstr ""
 "fornire una frase segreta."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:101
+#: gui/sizedialogwidgetbase.ui:262
 #, kde-format
 msgid "Encrypt with LUKS"
 msgstr "Cifra con LUKS"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
-#: gui/sizedialogwidgetbase.ui:111
-#, kde-format
-msgid "Logical Volume Name:"
-msgstr "Nome volume logico:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/sizedialogwidgetbase.ui:128
-#, kde-format
-msgctxt "@label"
-msgid "Label:"
-msgstr "Etichetta:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: gui/sizedialogwidgetbase.ui:164
-#, kde-format
-msgctxt "@label"
-msgid "Minimum size:"
-msgstr "Dimensione minima:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: gui/sizedialogwidgetbase.ui:187
-#, kde-format
-msgctxt "@label"
-msgid "Maximum size:"
-msgstr "Dimensione massima:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
-#: gui/sizedialogwidgetbase.ui:210
-#, kde-format
-msgctxt "@label:listbox"
-msgid "F&ree space before:"
-msgstr "Spazio libe&ro prima:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: gui/sizedialogwidgetbase.ui:245
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Si&ze:"
-msgstr "Di&mensione:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
-#: gui/sizedialogwidgetbase.ui:274
-#, kde-format
-msgctxt "@label:listbox"
-msgid "Free space after:"
-msgstr "Spazio libero dopo:"
-
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
-#: gui/sizedialogwidgetbase.ui:297
+#: gui/sizedialogwidgetbase.ui:292
 #, kde-format
 msgid "Permissions"
 msgstr "Permessi"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:326
+#: gui/sizedialogwidgetbase.ui:305
 #, kde-format
 msgid "Allow everyone to write and read on this device"
 msgstr "Consenti a tutti di scrivere e leggere su questo dispositivo"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:329
+#: gui/sizedialogwidgetbase.ui:308
 #, kde-format
 msgid "Everyone"
 msgstr "Tutti"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:336
+#: gui/sizedialogwidgetbase.ui:315
 #, kde-format
 msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
@@ -3049,28 +3047,44 @@ msgstr ""
 "configurare permessi per singola cartella"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:339
+#: gui/sizedialogwidgetbase.ui:318
 #, kde-format
 msgid "Only Root"
 msgstr "Solo root"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
-#: gui/sizedialogwidgetbase.ui:352
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
+#: gui/sizedialogwidgetbase.ui:334
 #, kde-format
-msgid "Primar&y"
-msgstr "Pr&imaria"
+msgctxt "@label:listbox"
+msgid "F&ree space before:"
+msgstr "Spazio libe&ro prima:"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
-#: gui/sizedialogwidgetbase.ui:359
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
+#: gui/sizedialogwidgetbase.ui:347
 #, kde-format
-msgid "E&xtended"
-msgstr "E&stesa"
+msgid "Logical Volume Name:"
+msgstr "Nome volume logico:"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
-#: gui/sizedialogwidgetbase.ui:366
+#. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
+#: gui/sizedialogwidgetbase.ui:363
 #, kde-format
-msgid "&Logical"
-msgstr "&Logica"
+msgctxt "@label:listbox"
+msgid "Free space after:"
+msgstr "Spazio libero dopo:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxLuks2)
+#: gui/sizedialogwidgetbase.ui:376
+#, kde-format
+msgid ""
+"Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
+"compromised."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
+#: gui/sizedialogwidgetbase.ui:379
+#, kde-format
+msgid "Enable LUKS2"
+msgstr ""
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
