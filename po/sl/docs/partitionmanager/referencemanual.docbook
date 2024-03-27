@@ -1,0 +1,663 @@
+<chapter id="reference">
+	<title
+>Referenca ukazov</title>
+
+	<sect1 id="reference-overview">
+		<title
+>Pregled</title>
+		<para
+>V tem poglavju so podrobne razlage vseh ukazov, ki so na voljo v &partman;. Namenjen je kot referenca, ki spremlja informacije v <xref linkend="usermanual"/>.</para>
+
+	<sect2 id="menu-file">
+		<title
+>Meni Datoteka</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-file-quit">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Datoteka</guimenu
+> <guimenuitem
+>Zapri</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Zapre &partman;</action
+> brez uporabe čakajočih operacij. Vendar pa vas bo aplikacija pozvala, da potrdite svojo izbiro za izstop, če obstajajo čakajoče operacije. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-edit">
+		<title
+>Meni Urejanje</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-edit-undo">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Uredi</guimenu
+> <guimenuitem
+>Razveljavi</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Razveljavi zadnjo operacijo</action
+>, ki je bila dodana v sklad operacij. </para>
+						<para
+>Ta ukaz je omogočen le, če seznam operacij ni prazen. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-clear">
+					<term>
+						<menuchoice
+><guimenu
+>Uredi</guimenu
+> <guimenuitem
+>Počisti</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Počisti seznam operacij</action
+>, ne da bi uporabil katero koli od njih. </para>
+						<para
+>Ta ukaz je omogočen le, če seznam operacij ni prazen. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-apply">
+					<term>
+						<menuchoice
+><guimenu
+>Uredi</guimenu
+> <guimenuitem
+>Uporabi</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Uporabi seznam operacij</action
+>. Ta ukaz bo uporabil vse operacije na seznamu, tako da bodo vse spremembe trajno zapisane na vaše diske. Ko so operacije uporabljene, se seznam počisti in nobene operacije ne bo mogoče razveljaviti. </para>
+						<para
+>Ta ukaz je omogočen le, če seznam operacij ni prazen. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-device">
+		<title
+>Meni naprave</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-device-selectcurrentdevice">
+					<term>
+						<menuchoice
+><guimenu
+>Naprava</guimenu
+> <guimenuitem
+>Izberi trenutno napravo</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Omogoča izbiro naprave iz podmenija z vsemi razpoložljivimi napravami sistema. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Naprava</guimenu
+> <guimenuitem
+>Osveži naprave</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Osveži naprave</action
+>: Ta ukaz prisili &partman; za ponovno skeniranje in branje naprav v vašem računalniku. To je lahko na primer uporabno, če ste po zagonu &partman; priključili zunanji trdi disk USB. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-createpartitiontable">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Naprava</guimenu
+> <guimenuitem
+>Nova particijska tabela</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Ustvari novo particijsko tabelo</action
+>: Ta ukaz ustvari novo in prazno particijsko tabelo GPT ali MSDOS na trenutno izbrani napravi. S tem boste izbrisali vse particije v napravi in vse podatke na njih, zato bodite pri tem ukazu previdni. </para>
+						<para
+>Ta ukaz je omogočen le, če je izbrana naprava in na tej napravi trenutno ni nameščena nobena particija. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-exportpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Naprava</guimenu
+> <guimenuitem
+>Izvoz particijske tabele</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Omogoča izvoz seznama vseh particij na izbrani napravi v datoteko. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-importpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Naprava</guimenu
+> <guimenuitem
+>Uvoz particijske tabele</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Omogoča uvoz particijske tabele iz predhodno izvožene datoteke.</para>
+						<para
+>S tem boste izbrisali vse particije v napravi in vse podatke na njih, zato bodite pri tem ukazu previdni.</para>
+						<para
+>Ta ukaz je omogočen le, če je izbrana naprava in na tej napravi trenutno ni nameščena nobena particija. Uvoz v logične naprave, kot so skupine nosilcev LVM, trenutno ni podprt.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-smartstatus">
+					<term>
+						<menuchoice
+><guimenu
+>Naprava</guimenu
+> <guimenuitem
+>STATUS SMART</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Prikaže poročilo SMART. SMART je nadzorni sistem, ki je vključen v trde diske in pogone SSD, ki zaznava in poroča o različnih indikatorjih zanesljivosti pogona, z namenom omogočiti predvidevanje okvar strojne opreme.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Naprava</guimenu
+> <guimenuitem
+>Lastnosti</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Prikazuje informacije o trenutno izbranih napravah. V tem pogovornem oknu lahko najdete zmogljivost, velikosti sektorjev, vrsto particijske tabele ter uporabljeno in največje število primarnih particij.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-partition">
+		<title
+>Meni particije</title>
+
+		<para>
+			<variablelist>
+				<varlistentry id="menu-partition-new">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Particija</guimenu
+> <guimenuitem
+>Novo</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Ustvari novo particijo</action
+>: Odpre pogovorno okno za ustvarjanje nove particije, kjer boste lahko nastavili vrsto, velikost, položaj in datotečni sistem particije, ki jo želite ustvariti. </para>
+						<para
+>Upoštevajte, da lahko tabela particij v napravi naloži omejitve glede števila particij, ki jih je mogoče ustvariti. Particijske tabele MS-DOS na primer dovoljujejo samo štiri primarne particije. </para>
+						<para
+>Ta ukaz je omogočen le, če je izbrano nedodeljeno območje v napravi. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-resize">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Particija</guimenu
+> <guimenuitem
+>Spremeni velikost/premakni</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Spremeni velikost ali premakne particijo</action
+>: Odpre pogovorno okno za spreminjanje velikosti ali premikanje obstoječe particije. Odvisno od datotečnega sistema particije in zunanjih orodij, nameščenih v vašem računalniku, niso vsa tri možna dejanja, povezana s spreminjanjem velikosti -- to je premikanje particije, njeno pomanjševanje (<quote
+>krčenje</quote
+>) ali povečanje (<quote
+>goje</quote
+>) -- morda je na voljo v tem pogovornem oknu. Glejte <xref linkend="menu-tools-filesystemsupport"/>. </para>
+						<para
+>Ta ukaz je omogočen samo, če je izbrana particija, ki trenutno ni nameščena in katere datotečni sistem je mogoče skrčiti, povečati ali premakniti. Za razširjeno particijo je omogočeno le, če nobena od logičnih elementov v razširjeni particiji ni nameščena. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-delete">
+					<term>
+						<menuchoice
+><shortcut
+>&Del;</shortcut
+> <guimenu
+>Particija</guimenu
+> <guimenuitem
+>Izbriši</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Izbriše particijo</action
+>: Ta ukaz izbriše trenutno izbrano particijo. </para>
+						<para
+>Ta ukaz je omogočen le, če je izbrana particija, ki trenutno ni nameščena. Za razširjeno particijo je omogočeno le, če ne vsebuje logičnih particij. </para>
+						<warning>
+							<title
+>Opozorilo: možna izguba podatkov</title>
+							<para
+>Brisanje particije pomeni, da so vsi podatki na particiji uničeni.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-shred">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Del;</keycombo
+></shortcut
+> <guimenu
+>Particija</guimenu
+> <guimenuitem
+>Razdrobi</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Uniči particijo</action
+>: Ta ukaz uniči trenutno izbrano particijo. </para>
+						<para
+>Ta ukaz je omogočen le, če je izbrana particija, ki trenutno ni nameščena. Za razširjeno particijo je omogočeno le, če ne vsebuje logičnih particij. </para>
+						<warning>
+							<title
+>Opozorilo: Izguba podatkov</title>
+							<para
+>Uničenje particije pomeni, da so vsi podatki na particiji uničeni.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-copy">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Particija</guimenu
+> <guimenuitem
+>Kopiraj</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Kopira particijo</action
+>: Ta ukaz kopira trenutno izbrano particijo v &partman; odložišče. </para>
+						<para
+>Ta ukaz je omogočen le, če je izbrana particija, ki trenutno ni nameščena in katere datotečni sistem je mogoče kopirati. Razširjenih particij ni mogoče kopirati. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-paste">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Particija</guimenu
+> <guimenuitem
+>Prilepi</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Prilepi particijo</action
+>: Ta ukaz prilepi particijo iz &partman; odložišča na trenutno izbrano particijo ali nedodeljeno območje. </para>
+						<para
+>Pri lepljenju na nedodeljeno območje se odpre pogovorno okno, v katerem lahko premaknete ali povečate vstavljeno kopijo. Pri prepisovanju obstoječe particije to pogovorno okno ne bo prikazano. </para>
+						<para
+>Ta ukaz je omogočen le, če je particija trenutno v odložišču in je izbran veljaven cilj (bodisi particija bodisi nedodeljeno območje). Tarča mora biti tudi dovolj velika, da drži vir in je ni mogoče namestiti. Particije ne morete kopirati nase. </para>
+						<warning>
+							<title
+>Opozorilo: možna izguba podatkov</title>
+							<para
+>Lepljenje particije na obstoječo pomeni, da se vsi podatki na obstoječi particiji uničijo in nadomestijo s podatki iz prilepljene particije.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-edit-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Particija</guimenu
+> <guimenuitem
+>Urejanje točke priklopa</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Odpre pogovorno okno</action
+> za urejanje točke priklopa in možnosti priklopa. </para>
+						<para
+>Ta ukaz je omogočen samo, če je particija odklopljena. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Particija</guimenu
+> <guimenuitem
+>Pripni/odpni</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Priklopi ali odklopi particijo</action
+>: Ta ukaz priklopi ali odklopi izbrano particijo, odvisno od njenega trenutnega stanja. </para>
+						<para
+>Ta ukaz je omogočen le, če je izbrana particija, ki jo je mogoče priklopiti ali odklopiti. Če operacijski sistem ne pozna točke priklopa za particijo, je ne morete pripeti iz &partman;. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-check">
+					<term>
+						<menuchoice
+><guimenu
+>Particija</guimenu
+> <guimenuitem
+>Preveri</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Preveri particijo</action
+>: Ta ukaz preveri izbrano particijo in njen datotečni sistem za napake in poskuša popraviti morebitne težave, ki jih najde. Med tem postopkom bo spremenjena tudi velikost datotečnega sistema na particiji, da bo popolnoma zapolnila particijo. </para>
+						<para
+>Ta ukaz je omogočen le, če je izbrana particija, ki jo je mogoče preveriti in trenutno ni nameščena. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-backup">
+					<term>
+						<menuchoice
+><guimenu
+>Particija</guimenu
+> <guimenuitem
+>Varnostna kopija</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Varnostno kopira particijo</action
+>: Ta ukaz varnostno kopira datotečni sistem na izbrani particiji v datoteko. Po aktiviranju tega ukaza boste pozvani, kam shraniti slikovno datoteko. </para>
+						<para
+>Ustvarjena slikovna datoteka je sektorska kopija datotečnega sistema na particiji. Ni stisnjen in nima dodanih nobenih dodatnih meta informacij ali glave, zato ga je mogoče neposredno namestiti z uporabo zanke zunaj &partman; če operacijski sistem to podpira. </para>
+						<para
+>Ta ukaz je omogočen le, če je particija izbrana in je datotečni sistem na njej mogoče varnostno kopirati. Predelna stena tudi ne sme biti montirana. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-restore">
+					<term>
+						<menuchoice
+><guimenu
+>Particija</guimenu
+> <guimenuitem
+>Obnovi</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Obnovi particijo</action
+>: Ta ukaz obnovi datotečni sistem iz slikovne datoteke na particijo. Po aktiviranju tega ukaza boste morali vnesti ime slikovne datoteke, ki jo želite obnoviti. Cilj za obnovitev mora biti dovolj velik za slikovno datoteko. </para>
+						<para
+>Ukaz je omogočen le, če je izbrano nedodeljeno območje ali particija, ki trenutno ni nameščena. </para>
+						<warning>
+							<title
+>Opozorilo: možna izguba podatkov</title>
+							<para
+>Obnovitev particije na obstoječi particiji pomeni, da se vsi podatki na obstoječi particiji uničijo in nadomestijo s podatki iz obnovljene slikovne datoteke.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Particija</guimenu
+> <guimenuitem
+>Lastnosti</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Prikaže lastnosti particije</action
+>: Ta ukaz prikaže pogovorno okno z informacijami o trenutno izbrani particiji ali nedodeljenem prostoru. </para>
+						<para
+>Kaj je prikazano in kaj je mogoče spremeniti v tem pogovornem oknu, je odvisno od vrste particije, vrste datotečnega sistema na particiji in od particije, ki je trenutno nameščena ali ne. </para>
+						<para
+>Vsi datotečni sistemi na primer ne podpirajo nastavitve oznake. Prav tako na splošno ni mogoče spremeniti nobenih lastnosti, če je particija nameščena. </para>
+						<para
+>To je seznam vseh particij in lastnosti datotečnega sistema, ki jih je na splošno mogoče spremeniti v tem pogovornem oknu: <itemizedlist>
+								<listitem>
+									<para
+>Nastavite ali spremenite oznako datotečnega sistema</para>
+								</listitem>
+								<listitem>
+									<para
+>Spremenite datotečni sistem particije.</para>
+
+									<warning>
+										<title
+>Opozorilo: možna izguba podatkov</title>
+										<para
+>Spreminjanje datotečnega sistema za particijo vedno pomeni, da so vsi podatki na particiji uničeni.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Ponovno ustvarite datotečni sistem na particiji</para>
+
+									<warning>
+										<title
+>Opozorilo: možna izguba podatkov</title>
+										
+										<para
+>Ponovno ustvarjanje datotečnega sistema na particiji vedno pomeni, da so vsi podatki na particiji uničeni. Ponovno ustvarjanje datotečnega sistema je treba uporabiti le kot zadnjo možnost, če datotečnega sistema na particiji ni več mogoče popraviti.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Spremenite zastavice particije</para>
+									<para
+>Glede na vrsto uporabljene particijske tabele bo za vsako particijo na particijski tabeli na voljo več zastavic. V večini primerov spreminjanje zastavic ni potrebno in ga je treba obravnavati kot napredno funkcijo.</para>
+								</listitem>
+							</itemizedlist>
+						</para>
+						<para
+>Ukaz je omogočen le, če je izbrano nedodeljeno območje ali particija. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Meni Orodja</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Orodja</guimenu
+> <guimenuitem
+>Nova skupina nosilcev</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Ustvarite novo logično napravo, kot je skupina nosilcev <link linkend="glossary-lvm"
+>LVM</link
+>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Orodja</guimenu
+> <guimenuitem
+>Podpora za datotečni sistem</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Prikaže pogovorno okno za podporo datotečnega sistema.</action
+> To pogovorno okno podrobno prikazuje, katere operacije je mogoče izvesti za katerega od podprtih datotečnih sistemov. </para>
+						<para
+>Tukaj je primer, kako bi lahko izgledalo pogovorno okno z večino nameščenih zunanjih orodij: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Pogovorno okno za podporo datotečnega sistema z večino nameščenih zunanjih orodij</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>Modre kljukice pomenijo <quote
+>podprto</quote
+>, rdeči križci pomenijo <quote
+>ni podprto</quote
+>. Nekatere kombinacije niso nikoli podprte, na primer preverjanje datotečnega sistema linuxswap, ker so same po sebi nemogoče. Drugih ni mogoče podpreti, ker zunanjim orodjem primanjkuje funkcionalnosti. </para>
+						<para
+>Če ste namestili nova orodja, medtem ko &partman; se izvaja, kliknite <guibutton
+>Ponovno skeniraj podporo</guibutton
+>, da vsilite ponovno preverjanje nameščenih orodij za podporo datotečnega sistema. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-settings-help">
+		<title
+>Meni Nastavitve in pomoč</title>
+
+		<para
+>&partman; ima skupno &kde; Meni <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Nastavitve</ulink
+> in <ulink url="help:/fundamentals/menus.html#menus-help"
+>Pomoč</ulink
+> opisano v &kde; Osnove z dodatnim podmenijem <guisubmenu
+>Prikazane plošče</guisubmenu
+>, kjer lahko preklapljate med prikazom <guimenuitem
+>Naprave</guimenuitem
+>, <guimenuitem
+>Operacije v teku</guimenuitem
+>, <guimenuitem
+>Informacije</guimenuitem
+> in plošče <guimenuitem
+>Izpis dnevnika</guimenuitem
+> vklop in izklop. </para>
+	</sect2>
+	</sect1>
+
+</chapter>

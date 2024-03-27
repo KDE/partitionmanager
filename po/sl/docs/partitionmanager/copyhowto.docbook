@@ -1,0 +1,64 @@
+<sect1 id="howto-copypartition">
+	<title
+>Navodila: Kopiranje particije</title>
+
+	<para
+>Ta navodila opisujejo kopiranje particije. Predvidevamo, da je namen kopirati particijo iz ene naprave v drugo in prepisati obstoječo ciljno particijo, vendar splošni postopek ne bi bil veliko drugačen pri kopiranju v isto napravo ali na neko nedodeljeno območje. </para>
+
+	<para
+>Naslednji posnetek zaslona prikazuje, kako je videti izvorna naprava: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Glavno okno z izvorno napravo</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Izvorna particija v našem primeru bo <quote
+>sdb1</quote
+>, ki je trenutno priklopljena, označena z ikono ključavnice poleg imena točke priklopa na posnetku zaslona. Priklopljene particije ni mogoče kopirati, zato jo morate najprej odklopiti: Kliknite nanjo in izberite <xref linkend="menu-partition-mount"/>. </para>
+
+	<para
+>Po odklopu particije je ikona ključavnice izginila in zdaj je mogoče izbrati <xref linkend="menu-partition-copy"/>. To postavi <quote
+>sdb1</quote
+> v &partman; odložišče; z drugimi besedami: <quote
+>sdb1</quote
+> je zdaj particija, ki bo vstavljena, ko izberete <xref linkend="menu-partition-paste"/>. </para>
+	
+	<para
+>Ciljna naprava za kopiranje v tem navodilu je <quote
+>/dev/sdc</quote
+>. Kliknite nanjo na plošči Naprave. Tako je videti naprava pred kopiranjem: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="copy_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Glavno okno s ciljno napravo pred kopiranjem</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Particija za prepis je <quote
+>sdc5</quote
+>. Če želite vanjo prilepiti kopirano particijo, kliknite nanjo in izberite <xref linkend="menu-partition-paste"/>. Videli boste, da je bila operacija kopiranja particije dodana na seznam čakajočih operacij. Upoštevajte, da za vstavljanje particije ni potrebno pogovorno okno, kot bi bilo, če bi prilepili na nedodeljeno območje: Začetek in konec prilepljene particije določa prepisana particija. </para>
+
+	<para
+>Zdaj izberite <xref linkend="menu-edit-apply"/> in particija bo kopirana. Oglejte si <link linkend="howto-resizepartition"
+>navodila za spreminjanje velikosti particij</link
+> za podrobnosti o uporabi operacij. </para>
+</sect1>
+

@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-08 01:36+0000\n"
-"PO-Revision-Date: 2024-03-22 15:39+0300\n"
+"PO-Revision-Date: 2024-03-26 13:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2699,7 +2699,7 @@ msgstr "Dosya Sistemini Yeniden Oluşturma"
 #, kde-format
 msgctxt "@label"
 msgid "First sector:"
-msgstr "İlk dilim (sector):"
+msgstr "İlk dilim:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/partpropswidgetbase.ui:56
@@ -2892,7 +2892,7 @@ msgstr "Aygıt taranıyor: <filename>%1</filename>"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "First sector:"
-msgstr "İlk dilim (sector):"
+msgstr "İlk dilim:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: gui/sizedetailswidgetbase.ui:101
