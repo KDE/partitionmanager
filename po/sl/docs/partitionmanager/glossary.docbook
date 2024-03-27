@@ -1,0 +1,393 @@
+<glossary id="glossary">
+
+	<glossentry id="glossary-command">
+		<glossterm
+>Ukaz</glossterm>
+		<glossdef>
+			<para
+>V &partman; so ukazi tisto, iz česar so sestavljena <link linkend="glossary-job"
+>opravila</link
+>. To so koraki na zelo nizki ravni, ki jih pogosto izvaja zunanje orodje in so vidni le v podrobnem poročilu o napredku. </para>
+			<para
+>Uporabniku se običajno sploh ni treba ukvarjati z ukazi. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-job"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylinder">
+		<glossterm
+>Cilinder</glossterm>
+		<glossdef>
+			<para
+>Enota, ki se uporablja za razdelitev <link linkend="glossary-device"
+>naprave</link
+>. Nekateri operacijski sistemi in mnoga diskovna orodja zahtevajo, da se <link linkend="glossary-partition"
+>particije</link
+> začnejo in končajo na cilindru. &partman; zato samodejno pripne particije na meje cilindra, ko spremeni njihov začetek ali konec. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylindersize">
+		<glossterm
+>Velikost cilindra</glossterm>
+		<glossdef>
+			<para
+>Število <link linkend="glossary-sector"
+>sektorjev</link
+> na <link linkend="glossary-cylinder"
+>cilinder</link
+> v <link linkend="glossary-device"
+>napravi</link 
+>. Izračunano kot število <link linkend="glossary-head"
+>glav</link
+>, pomnoženo s številom <link linkend="glossary-sector"
+>sektorjev</link
+> na sled. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-device">
+		<glossterm
+>Naprava</glossterm>
+		<glossdef>
+			<para
+>Fizična diskovna naprava. Fizične diskovne naprave so razdeljene na logične odseke, imenovane <link linkend="glossary-partition"
+>particije</link
+>, z uporabo <link linkend="glossary-partitiontable"
+>tabel particij</link
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-disklabel">
+		<glossterm
+>Oznaka diska</glossterm>
+		<glossdef>
+			<para
+>Drugo ime za <link linkend="glossary-partitiontable"
+>tabelo particij</link
+> izhaja iz sveta SUN/BSD. </para>
+			<para>
+				<note>
+					<para
+>Lahko jih je pomešati, vendar oznaka diska nima nobene zveze z <link linkend="glossary-filesystemlabel"
+>oznako datotečnega sistema</link
+>. </para>
+					<para
+>Za podrobnosti o imenu glejte <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel"
+>ta vnos v Wikipediji</ulink
+>. </para>
+				</note>
+			</para>
+			<glossseealso otherterm="glossary-partitiontable"
+></glossseealso>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-extendedpartition">
+		<glossterm
+>Razširjena particija</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>Particija</link
+>, ki vsebuje druge particije. Razširjene particije so lahko same samo <link linkend="glossary-primarypartition"
+>primarne particije</link
+>. Ali so razširjene particije na voljo ali ne, je odvisno od uporabljene vrste <link linkend="glossary-partitiontable"
+>tabele particij</link
+>. Tabele particij MS-DOS dovoljujejo eno razširjeno particijo na <link linkend="glossary-device"
+>napravo</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystem">
+		<glossterm
+>Datotečni sistem</glossterm>
+		<glossdef>
+			<para
+>Datotečni sistem določa, kako je shranjevanje podatkov (datoteke z njihovimi metapodatki, mape in njihovi metapodatki, prosti prostor) organizirano znotraj <link linkend="glossary-partition"
+>particije</link
+>. Obstaja veliko različnih vrst datotečnih sistemov, nekateri izvirajo iz sveta Unix/Linux, nekateri ne. Primeri pogosto uporabljenih datotečnih sistemov v Unixu/Linuxu so Btrfs, ext4 in XFS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystemlabel">
+		<glossterm
+>Oznaka datotečnega sistema</glossterm>
+		<glossdef>
+			<para
+>Naslov datotečnega sistema. Nekateri datotečni sistemi (med njimi Btrfs, ext2/3/4, FAT16/32 in NTFS) podpirajo nastavitev oznake za datotečni sistem, tako da ga je mogoče prepoznati v orodjih, kot je &partman; ali druge aplikacije. </para>
+			<para>
+				<note>
+					<para
+>Zlahka jih je pomešati, vendar oznaka datotečnega sistema nima nobene zveze z <link linkend="glossary-disklabel"
+>oznako diska</link
+>.</para>
+				</note>
+			</para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-flag">
+		<glossterm
+>Zastavica</glossterm>
+		<glosssee otherterm="glossary-partitionflag"/>
+	</glossentry>
+	
+	<glossentry>
+		<glossterm
+>GPT</glossterm>
+		<glossdef>
+			<para
+>Sodoben format tabele partici, ki ga podpira večina sodobnih računalnikov in operacijskih sistemov. Podpira več kot 4 <link linkend="glossary-primarypartition"
+>primarne particije</link
+> za razliko od starejše tabele particij MS-DOS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-head">
+		<glossterm
+>Glava</glossterm>
+		<glossdef>
+			<para
+>Enota, ki se uporablja za razdelitev <link linkend="glossary-device"
+>naprave</link
+>. </para
+><glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-job">
+		<glossterm
+>Opravilo</glossterm>
+		<glossdef>
+			<para
+>V &partman; <link linkend="glossary-operation"
+>operacije</link
+> so sestavljene iz številnih opravil. Običajno se vam z opravili sploh ni treba obremenjevati; postane razvidno šele pri uporabi seznama čakajočih operacij: &partman; bo nato prikazal pogovorno okno napredka, ki je sestavljeno iz vseh operacij in njihovih opravil ter pokazalo, katera operacija in katero opravilo se trenutno izvaja. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-label">
+		<glossterm
+>Oznaka</glossterm>
+		<glossdef>
+			<para
+>Bodisi <link linkend="glossary-disklabel"
+>oznaka diska</link
+> ali <link linkend="glossary-filesystemlabel"
+>oznaka datotečnega sistema</link
+>. </para
+><glossseealso otherterm="glossary-disklabel"
+></glossseealso
+> <glossseealso otherterm="glossary-filesystemlabel"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-logicalpartition">
+		<glossterm
+>Logična particija</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>Particija</link
+> znotraj <link linkend="glossary-extendedpartition"
+>razširjene particije</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-luks">
+		<glossterm
+>LUKS</glossterm>
+		<glossdef>
+			<para
+>Linux Unified Key Setup je standardni format šifriranja za Linux. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-lvm">
+		<glossterm
+>LVM</glossterm>
+		<glossdef>
+			<para
+>LVM je sistem za upravljanje logičnih particij, ki je bolj prilagodljiv kot običajne particije. Sestavljen je iz treh glavnih komponent:</para>
+			<simplelist>
+			<member
+>Fizični nosilci LVM so particije na disku, katerih prostor upravlja LVM.</member>
+			<member
+>Skupina nosilcev LVM je zbirka fizičnih nosilcev LVM, ki jih je mogoče razdeliti na logične particije. Lahko se uporablja za ustvarjanje datotečnih sistemov, ki zajemajo več naprav, ali za razdelitev šifriranega nosilca <link linkend="glossary-luks"
+>LUKS</link
+> na manjše particije.</member>
+			<member
+>Logični nosilci LVM so podobni običajnim particijam, le da se nahajajo v skupini nosilcev LVM. Tudi lokacija logičnih particij LVM ni pomembna in ni nujno, da so fizično sosednje. Zato &partman; ne dovoljuje premikanja logičnih nosilcev LVM in prikaže preostali prosti prostor na koncu naprave.</member>
+			</simplelist>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-operation">
+		<glossterm
+>Operacija</glossterm>
+		<glossdef>
+			<para
+>&partman; razdeli delo, ki ga opravlja, na operacije, <link linkend="glossary-job"
+>opravila</link
+> in <link linkend="glossary-command"
+>ukaze</link
+>. </para>
+			<para
+>Operacije so najbolj vidne od treh. Če izberete dejanje v grafičnem uporabniškem vmesniku, bo to verjetno povzročilo dodajanje nove operacije na seznam čakajočih operacij. Ideja za tem je: Najverjetneje boste želeli nastaviti kar nekaj korakov za pretvorbo trenutnega stanja vaših diskovnih naprav v stanje, ki ga imate v mislih. Izvedba nekaterih od teh korakov lahko traja precej dolgo (na primer kopiranje velikega datotečnega sistema ali spreminjanje velikosti datotečnega sistema, ki je skoraj poln). Da vam ne bi bilo treba dolgo časa sedeti pred računalnikom in čakati, da se en korak konča in nato začnete z naslednjim, vam operacije omogočajo, da natančno določite, kako naj izgledajo naprave računalnika, ko je vse končano, nato pa pustite &partman; uporabi operacije in se vrne, ko jih izvede vse. </para>
+			<para
+>Operacije so shranjene na seznamu čakajočih operacij. Dokler operacija ni bila uporabljena, jo je še vedno mogoče <link linkend="menu-edit-undo"
+>preprosto prevzeti nazaj</link
+> in nič ne bo spremenjeno. </para
+><glossseealso otherterm="glossary-job"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partition">
+		<glossterm
+>Particija</glossterm>
+		<glossdef>
+			<para
+>Razdelek <link linkend="glossary-device"
+>naprave trdega diska</link
+>, ki lahko vsebuje <link linkend="glossary-filesystem"
+>datotečni sistem</link
+> ali druge particije. Brez vsaj ene veljavne particije diska ni mogoče uporabiti. </para
+><glossseealso otherterm="glossary-device"
+></glossseealso
+> <glossseealso otherterm="glossary-partitiontable"
+></glossseealso
+> <glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partitionflag">
+		<glossterm
+>Zastavica particije</glossterm>
+		<glossdef>
+			<para
+>Oznaka za <link linkend="glossary-partition"
+>particijo</link
+>. Razpoložljivost teh zastavic je odvisna od vrste uporabljene <link linkend="glossary-partitiontable"
+>tabele particij</link
+>. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-partitiontable">
+		<glossterm
+>Tabela particij</glossterm>
+		<glossdef>
+			<para
+>Majhen razdelek na začetku <link linkend="glossary-device"
+>naprave</link
+>, ki se uporablja za shranjevanje informacij o postavitvi <link linkend="glossary-partition"
+>particij</link
+> naprave. Obstajajo različne vrste tabel particij, od katerih ima vsaka svoje omejitve. </para>
+			<para
+>Včasih se imenuje tudi <quote
+>oznaka diska</quote
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-primarypartition">
+		<glossterm
+>Primarna particija</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>Particija</link
+> neposredno znotraj <link linkend="glossary-partitiontable"
+>tabele particij</link
+>, v nasprotju z <link linkend="glossary-logicalpartition"
+>logičnimi particijami</link
+>, ki so v <link linkend="glossary-extendedpartition"
+>razširjenih particijah</link
+>. </para>
+			<para
+><link linkend="glossary-partitiontable"
+>Tabele particij</link
+> običajno nalagajo omejitve največjega števila primarnih particij, ki jih je mogoče ustvariti v <link linkend="glossary-device"
+>napravi</link
+>. Za tabele particij tipa MS-DOS je na primer to največje število štiri. </para
+><glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-sector">
+		<glossterm
+>Sektor</glossterm>
+		<glossdef>
+			<para
+>Enota, ki se uporablja za razdelitev <link linkend="glossary-device"
+>naprave</link
+>. <link linkend="glossary-partition"
+>Particije</link
+> se morajo vedno začeti in končati na sektorju. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-sectorsize">
+		<glossterm
+>Velikost sektorja</glossterm>
+		<glossdef>
+			<para
+>Število bajtov na <link linkend="glossary-sector"
+>sektor</link
+> v <link linkend="glossary-device"
+>napravi</link
+>. Velikost sektorja večine današnjih naprav je 512 bajtov. </para>
+		</glossdef>
+	</glossentry>
+	
+	<!--
+		<glossentry>
+			<glossterm
+></glossterm>
+			 
+		</glossentry>
+		-->
+
+</glossary>

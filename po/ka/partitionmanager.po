@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-26 00:39+0000\n"
-"PO-Revision-Date: 2024-03-22 02:18+0100\n"
+"PO-Revision-Date: 2024-03-26 05:53+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3051,12 +3051,14 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"გამოიყენეთ LUKS2 LUKS1-ის მაგიერ, უკეთესი დაცვისთვის, მაგრამ თავსებადობა, "
+"შეიძლება, პრობლემა იყოს."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "LUKS2-ის ჩართვა"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format

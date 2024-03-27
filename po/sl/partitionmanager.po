@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-26 00:39+0000\n"
-"PO-Revision-Date: 2024-03-22 07:23+0100\n"
+"PO-Revision-Date: 2024-03-26 06:56+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -697,7 +697,7 @@ msgstr "%1 (samo za branje)"
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "good"
-msgstr "Dobro"
+msgstr "dobro"
 
 #: gui/devicepropsdialog.cpp:112 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
 #, kde-kuit-format
@@ -3093,12 +3093,14 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"Uporabi LUKS2 namesto LUKS1 za boljšo varnost, vendar je lahko ogrožena "
+"združljivost."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "Omogoči LUKS2"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
