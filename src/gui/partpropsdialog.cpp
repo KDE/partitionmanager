@@ -137,6 +137,11 @@ void PartPropsDialog::setupDialog()
 
         dialogWidget().partitionLabel().setText(PartitionLabel);
         dialogWidget().partitionUuid().setText(PartitionUUID);
+
+        // On GPT there are no logical or extended partitions.
+        // Therefore, it's unnecessary to show partition type on GPT.
+        dialogWidget().m_LabelTextRole->hide();
+        dialogWidget().role().hide();
     }
     else{
         dialogWidget().partitionLabel().hide();
