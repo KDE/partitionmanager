@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:39+0000\n"
+"POT-Creation-Date: 2024-03-29 00:39+0000\n"
 "PO-Revision-Date: 2010-03-06 19:47+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -2822,7 +2822,7 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(ไม่มี)"
 
-#: gui/partpropsdialog.cpp:351
+#: gui/partpropsdialog.cpp:356
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2845,14 +2845,14 @@ msgstr ""
 "และปรับใช้ผลลัพธ์ของปฏิบัติการในหน้าต่างหลัก ข้อมูลทั้งหมดที่อยู่ใน <filename>%1</filename> "
 "จะไม่สามารถกู้ข้อมูลคืนมาได้อีก</para>"
 
-#: gui/partpropsdialog.cpp:353
+#: gui/partpropsdialog.cpp:358
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "ต้องการจะสร้างพาร์ทิชัน <filename>%1</filename> โดยใช้ระบบแฟ้ม %2 ใหม่อีกครั้งจริงหรือไม่ ?"
 
-#: gui/partpropsdialog.cpp:354
+#: gui/partpropsdialog.cpp:359
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Change the File System"
@@ -2860,7 +2860,7 @@ msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "แ&ก้ไขระบบแฟ้ม"
 
-#: gui/partpropsdialog.cpp:355
+#: gui/partpropsdialog.cpp:360
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Change the File System"
@@ -2868,7 +2868,7 @@ msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "ไ&ม่ต้องแก้ไขระบบแฟ้ม"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:379
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2891,13 +2891,13 @@ msgstr ""
 "และปรับใช้ผลลัพธ์ของปฏิบัติการในหน้าต่างหลัก ข้อมูลทั้งหมดที่อยู่ใน <filename>%1</filename> "
 "จะไม่สามารถกู้ข้อมูลคืนมาได้อีก</para>"
 
-#: gui/partpropsdialog.cpp:376
+#: gui/partpropsdialog.cpp:381
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "ต้องการจะสร้างระบบแฟ้มบนพาร์ทิชัน <filename>%1</filename> ใหม่อีกครั้งจริงหรือไม่ ?"
 
-#: gui/partpropsdialog.cpp:377
+#: gui/partpropsdialog.cpp:382
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Recreate the File System"
@@ -2905,7 +2905,7 @@ msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "&สร้างระบบแฟ้มใหม่อีกครั้ง"
 
-#: gui/partpropsdialog.cpp:378
+#: gui/partpropsdialog.cpp:383
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Recreate the File System"

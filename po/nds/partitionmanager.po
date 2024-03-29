@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:39+0000\n"
+"POT-Creation-Date: 2024-03-29 00:39+0000\n"
 "PO-Revision-Date: 2014-03-12 23:25+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -2819,7 +2819,7 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(keen)"
 
-#: gui/partpropsdialog.cpp:351
+#: gui/partpropsdialog.cpp:356
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2842,13 +2842,13 @@ msgstr ""
 "föhrst de Akschoon binnen dat Hööftfinster ut, kaamt all Daten op  <filename>"
 "%1</filename> duerhaftig weg, se laat sik denn nich wedderherstellen.</para>"
 
-#: gui/partpropsdialog.cpp:353
+#: gui/partpropsdialog.cpp:358
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr "<filename>%1</filename> redig mit %2-Dateisysteem nieg opstellen?"
 
-#: gui/partpropsdialog.cpp:354
+#: gui/partpropsdialog.cpp:359
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Change the File System"
@@ -2856,7 +2856,7 @@ msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Dateisysteem ä&nnern"
 
-#: gui/partpropsdialog.cpp:355
+#: gui/partpropsdialog.cpp:360
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Change the File System"
@@ -2864,7 +2864,7 @@ msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "&Dateisysteem nich ännern"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:379
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2887,13 +2887,13 @@ msgstr ""
 "binnen dat Hööftfinster ut, kaamt all Daten op <filename>%1</filename> "
 "duerhaftig weg, se laat sik denn nich wedderherstellen.</para>"
 
-#: gui/partpropsdialog.cpp:376
+#: gui/partpropsdialog.cpp:381
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "Dateisysteem op <filename>%1</filename> redig nieg opstellen?"
 
-#: gui/partpropsdialog.cpp:377
+#: gui/partpropsdialog.cpp:382
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Recreate the File System"
@@ -2901,7 +2901,7 @@ msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Dateisysteem &nieg opstellen"
 
-#: gui/partpropsdialog.cpp:378
+#: gui/partpropsdialog.cpp:383
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Recreate the File System"

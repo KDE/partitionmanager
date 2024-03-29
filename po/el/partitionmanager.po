@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:39+0000\n"
+"POT-Creation-Date: 2024-03-29 00:39+0000\n"
 "PO-Revision-Date: 2023-01-03 09:01+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -2650,7 +2650,7 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(κανένα)"
 
-#: gui/partpropsdialog.cpp:351
+#: gui/partpropsdialog.cpp:356
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2666,26 +2666,26 @@ msgstr ""
 "και εφαρμόσετε την τροποποίηση στο κύριο παράθυρο, όλα τα δεδομένα στο "
 "<filename>%1</filename> θα χαθούν χωρίς δυνατότητα επαναφοράς.</para>"
 
-#: gui/partpropsdialog.cpp:353
+#: gui/partpropsdialog.cpp:358
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "Πραγματικά αναδημιουργία του <filename>%1</filename> με σύστημα αρχείων %2;"
 
-#: gui/partpropsdialog.cpp:354
+#: gui/partpropsdialog.cpp:359
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Τροποποίηση συστήματος αρχείων"
 
-#: gui/partpropsdialog.cpp:355
+#: gui/partpropsdialog.cpp:360
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Να μη γίνει τροποποίηση στο σύστημα αρχείων"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:379
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2701,20 +2701,20 @@ msgstr ""
 "τροποποίηση στο κύριο παράθυρο, όλα τα δεδομένα στο <filesystem>%1</"
 "filesystem> θα χαθούν χωρίς δυνατότητα επαναφοράς.</para>"
 
-#: gui/partpropsdialog.cpp:376
+#: gui/partpropsdialog.cpp:381
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr ""
 "Πραγματικά αναδημιουργία του συστήματος αρχείων στο <filename>%1</filename>;"
 
-#: gui/partpropsdialog.cpp:377
+#: gui/partpropsdialog.cpp:382
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Αναδημιουργία συστήματος αρχείων"
 
-#: gui/partpropsdialog.cpp:378
+#: gui/partpropsdialog.cpp:383
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"

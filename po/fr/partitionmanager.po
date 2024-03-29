@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-26 00:39+0000\n"
-"PO-Revision-Date: 2024-03-23 09:07+0100\n"
+"POT-Creation-Date: 2024-03-29 00:39+0000\n"
+"PO-Revision-Date: 2024-03-27 09:01+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -32,12 +32,14 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Joëlle Cornavin, Thomas Vergnaud, Simon Depiets"
+msgstr "Joëlle Cornavin, Thomas Vergnaud, Simon Depiets, Xavier Besnard"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "jcorn@free.fr, thomas.vergnaud@mailo.eu, sdepiets@gmail.com"
+msgstr ""
+"jcorn@free.fr, thomas.vergnaud@mailo.eu, sdepiets@gmail.com, xavier."
+"besnard@kde.org"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
@@ -2678,7 +2680,7 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(aucune)"
 
-#: gui/partpropsdialog.cpp:351
+#: gui/partpropsdialog.cpp:356
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2696,7 +2698,7 @@ msgstr ""
 "principale, toutes les données de <filename>%1</filename> seront "
 "irrémédiablement perdues.</para>"
 
-#: gui/partpropsdialog.cpp:353
+#: gui/partpropsdialog.cpp:358
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
@@ -2704,19 +2706,19 @@ msgstr ""
 "Voulez-vous vraiment recréer <filename>%1</filename> avec le système de "
 "fichiers %2 ?"
 
-#: gui/partpropsdialog.cpp:354
+#: gui/partpropsdialog.cpp:359
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Changer le système de fichiers"
 
-#: gui/partpropsdialog.cpp:355
+#: gui/partpropsdialog.cpp:360
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Ne pas changer le système de fichiers"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:379
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2733,7 +2735,7 @@ msgstr ""
 "principale, toutes les données présentes sur <filename>%1</filename> seront "
 "irrémédiablement perdues.</para>"
 
-#: gui/partpropsdialog.cpp:376
+#: gui/partpropsdialog.cpp:381
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
@@ -2741,13 +2743,13 @@ msgstr ""
 "Voulez-vous vraiment recréer le système de fichiers sur <filename>%1</"
 "filename> ?"
 
-#: gui/partpropsdialog.cpp:377
+#: gui/partpropsdialog.cpp:382
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Recréer le système de fichiers"
 
-#: gui/partpropsdialog.cpp:378
+#: gui/partpropsdialog.cpp:383
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -3119,12 +3121,14 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"Utiliser LUKS2 plutôt que LUKS1 pour une meilleure sécurité. Cependant, la "
+"compatibilité pourrait être compromise."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "Activer LUKS2"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
