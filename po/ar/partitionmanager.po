@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Safa Alfulaij <safaalfulaij@hotmail.com>, 2013.
 # Automatically generated, 2013.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021, 2022, 2023.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-29 00:39+0000\n"
-"PO-Revision-Date: 2023-01-26 16:50+0400\n"
+"PO-Revision-Date: 2024-03-29 17:51+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
-"Language-Team: ar\n"
+"Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -348,13 +348,13 @@ msgstr "مجهول:"
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "مينيكس:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
 #, kde-format
 msgid "Bcachefs:"
-msgstr ""
+msgstr "Bcachefs:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
@@ -367,6 +367,7 @@ msgstr "محاذاة القسم"
 #, kde-format
 msgid "Use cylinder based alignment (Windows XP compatible)"
 msgstr ""
+"استخدم المحاذاة المستندة إلى الأسطوانة (متوافقة مع نظام التشغيل Windows XP)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
@@ -670,7 +671,7 @@ msgstr "<b>تحذير:</b> هذا سيدمّر كل البيانات على ال
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create new Volume Group"
-msgstr ""
+msgstr "أنشئ مجموعة وحدات تخزين جديدة"
 
 #: gui/devicepropsdialog.cpp:42
 #, kde-kuit-format
@@ -703,24 +704,22 @@ msgid "(unknown)"
 msgstr "(مجهول)"
 
 #: gui/devicepropsdialog.cpp:123
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Resize or move partition"
+#, kde-kuit-format
 msgctxt "@label device"
 msgid "LVM Volume Group"
-msgstr "غيّر حجم القسم أو انقله"
+msgstr "مجموعة حجم التخزين LVM"
 
 #: gui/devicepropsdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Software RAID Device"
-msgstr ""
+msgstr "برنامج جهاز RAID"
 
 #: gui/devicepropsdialog.cpp:127
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Volume Manager Device"
-msgstr ""
+msgstr "جهاز إدارة الحجم"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
 #: gui/devicepropswidgetbase.ui:63
@@ -730,17 +729,15 @@ msgstr "جدول التقسيم:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
 #: gui/devicepropswidgetbase.ui:85
-#, fuzzy, kde-format
-#| msgid "Cylinder alignment"
+#, kde-format
 msgid "&Cylinder alignment"
-msgstr "محاذاة الأسطوانة"
+msgstr "محاذاة الأ&سطوانة"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
 #: gui/devicepropswidgetbase.ui:92
-#, fuzzy, kde-format
-#| msgid "Sector alignment:"
+#, kde-format
 msgid "Sector based align&ment"
-msgstr "محاذاة القطاع:"
+msgstr "المحا&ذاة على أساس القطاع"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/devicepropswidgetbase.ui:121
@@ -770,7 +767,7 @@ msgstr "حجم القطاع الفيزيائي:"
 #: gui/devicepropswidgetbase.ui:222
 #, kde-format
 msgid "Primaries/Max:"
-msgstr ""
+msgstr "الأوليّة/الأقصى:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
 #: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
@@ -808,7 +805,7 @@ msgstr "حرّر خيارات الضم لنوع الملفات هذا:"
 #: gui/editmountoptionsdialogwidgetbase.ui:32
 #, kde-format
 msgid "Option1,Option2"
-msgstr ""
+msgstr "الخيار 1،الخيار 2"
 
 #: gui/editmountpointdialog.cpp:32
 #, kde-kuit-format
@@ -817,13 +814,7 @@ msgid "Edit mount point for <filename>%1</filename>"
 msgstr "حرّر نقطة الضم لـ <filename>%1</filename>"
 
 #: gui/editmountpointdialog.cpp:62
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>Are you sure you want to save the changes you made to the system "
-#| "table file <filename>/etc/fstab</filename>?</para><para><warning>This "
-#| "will overwrite the existing file on your hard drive now. This <strong>can "
-#| "not be undone</strong>.</warning></para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>Are you sure you want to save the changes you made to the system table "
@@ -831,9 +822,10 @@ msgid ""
 "overwrite the existing file on your hard drive now. This <emphasis "
 "strong='1'>can not be undone</emphasis>.</warning></para>"
 msgstr ""
-"<para>أأنت متأكد من حفظ التغييرات التي فعلتها إلى ملف جدول النظام <filename>/"
-"etc/fstab</filename>؟</para><para><warning>هذا سيكتب فوق الملف الموجود على "
-"القرص الصلب حاليًّا. <strong>لا يمكن التراجع عن هذا</strong>.</warning></para>"
+"<para> أأنت متأكد من حفظ التغييرات التي فعلتها إلى ملف جدول النظام "
+"<filename>/etc/fstab</filename>؟</para><para><warning>هذا سيكتب فوق الملف "
+"الموجود على القرص الصلب حاليًّا. <emphasis strong='1'>لا يمكن التراجع عن هذا</"
+"emphasis>.</warning></para>"
 
 #: gui/editmountpointdialog.cpp:64
 #, kde-kuit-format
@@ -848,12 +840,10 @@ msgid "Save changes"
 msgstr "احفظ التغييرات"
 
 #: gui/editmountpointdialog.cpp:80
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid "Could not save mount points to file <filename>%1</filename>."
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
-msgstr "تعذّر حفظ نقاط الضم للملف <filename>%1</filename>."
+msgstr "تعذّر حفظ نقاط الضم للملف <filename>/etc/fstab</filename>."
 
 #: gui/editmountpointdialog.cpp:81
 #, kde-kuit-format
@@ -871,7 +861,7 @@ msgstr "اللصي&قة"
 #: gui/editmountpointdialogwidgetbase.ui:46
 #, kde-format
 msgid "Dump &Frequency:"
-msgstr ""
+msgstr "ترد&د التفريغ:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
 #: gui/editmountpointdialogwidgetbase.ui:75
@@ -887,10 +877,9 @@ msgstr "الوصول المتزامن"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
 #: gui/editmountpointdialogwidgetbase.ui:109
-#, fuzzy, kde-format
-#| msgid "Pass Number:"
+#, kde-format
 msgid "Pass &Number:"
-msgstr "رقم المرور:"
+msgstr "رق&م المرور:"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
 #: gui/editmountpointdialogwidgetbase.ui:128
@@ -902,7 +891,7 @@ msgstr "أزل"
 #: gui/editmountpointdialogwidgetbase.ui:141
 #, kde-format
 msgid "A valid path is required."
-msgstr ""
+msgstr "مسار صالح مطلوب."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
 #: gui/editmountpointdialogwidgetbase.ui:173
@@ -936,16 +925,15 @@ msgstr "اختر..."
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
 #: gui/editmountpointdialogwidgetbase.ui:220
-#, fuzzy, kde-format
-#| msgid "Device Node"
+#, kde-format
 msgid "De&vice Node"
-msgstr "عقدة الجهاز"
+msgstr "عقدة الجها&ز"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
 #: gui/editmountpointdialogwidgetbase.ui:230
 #, kde-format
 msgid "No update of file access times"
-msgstr ""
+msgstr "لا يوجد تحديث لأوقات الوصول إلى الملفات"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
 #: gui/editmountpointdialogwidgetbase.ui:250
@@ -957,13 +945,13 @@ msgstr "لا تنفيذ ثنائي"
 #: gui/editmountpointdialogwidgetbase.ui:264
 #, kde-format
 msgid "Update access times relative to modification"
-msgstr ""
+msgstr "حدّث أوقات الوصول المتعلقة بالتعديل"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
 #: gui/editmountpointdialogwidgetbase.ui:278
 #, kde-format
 msgid "No update of directory access times"
-msgstr ""
+msgstr "لا يوجد تحديث لأوقات الوصول إلى الدليل"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/editmountpointdialogwidgetbase.ui:288
@@ -1120,13 +1108,13 @@ msgstr "السعة:"
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher name:"
-msgstr ""
+msgstr "اسم التشفير:"
 
 #: gui/infopane.cpp:116
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher mode:"
-msgstr ""
+msgstr "نوع التشفير:"
 
 #: gui/infopane.cpp:117
 #, kde-format
@@ -1144,7 +1132,7 @@ msgstr "حجم المفتاح:"
 #, kde-format
 msgctxt "@label partition"
 msgid "Payload offset:"
-msgstr ""
+msgstr "إزاحة الحمولة:"
 
 #: gui/infopane.cpp:120 gui/infopane.cpp:135 gui/infopane.cpp:143
 #, kde-format, kde-kuit-format
@@ -1177,33 +1165,28 @@ msgid "Used:"
 msgstr "المستخدم:"
 
 #: gui/infopane.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label partition"
 msgid "PE Size:"
-msgstr "الحجم:"
+msgstr "حجم PE:"
 
 #: gui/infopane.cpp:132
-#, fuzzy, kde-format
-#| msgid "Total: %p%"
+#, kde-format
 msgctxt "@label partition"
 msgid "Total PE:"
-msgstr "الكلي: %p%"
+msgstr "الكلي PE:"
 
 #: gui/infopane.cpp:133
 #, kde-format
 msgctxt "@label partition"
 msgid "Free PE:"
-msgstr ""
+msgstr "الحرّ PE:"
 
 #: gui/infopane.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@item partition name"
-#| msgid "unallocated"
+#, kde-format
 msgctxt "@label partition"
 msgid "Allocated PE:"
-msgstr "غير مخصّص"
+msgstr "المخصّص PE:"
 
 #: gui/infopane.cpp:157
 #, kde-kuit-format
@@ -1251,72 +1234,61 @@ msgstr "حجم القطاع الفيزيائي:"
 #, kde-format
 msgctxt "@label device"
 msgid "Primaries/Max:"
-msgstr ""
+msgstr "الأوليّة/الأقصى:"
 
 #: gui/infopane.cpp:184 gui/infopane.cpp:192
-#, fuzzy, kde-format
-#| msgid "Failure Type"
+#, kde-format
 msgctxt "@label device"
 msgid "Volume Type:"
-msgstr "نوع الفشل"
+msgstr "نوع وحدات التخزين:"
 
 #: gui/infopane.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "PE Size:"
-msgstr "الحجم:"
+msgstr "حجم PE:"
 
 #: gui/infopane.cpp:187
-#, fuzzy, kde-format
-#| msgid "Total: %p%"
+#, kde-format
 msgctxt "@label device"
 msgid "Total PE:"
-msgstr "الكلي: %p%"
+msgstr "الكلي PE:"
 
 #: gui/infopane.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@item partition name"
-#| msgid "unallocated"
+#, kde-format
 msgctxt "@label device"
 msgid "Allocated PE:"
-msgstr "غير مخصّص"
+msgstr "المخصص PE:"
 
 #: gui/infopane.cpp:189
 #, kde-format
 msgctxt "@label device"
 msgid "Free PE:"
-msgstr ""
+msgstr "الحرّ PE:"
 
 #: gui/infopane.cpp:194
 #, kde-format
 msgctxt "@label device"
 msgid "RAID Level:"
-msgstr ""
+msgstr "مستوى RAID:"
 
 #: gui/infopane.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr "الحجم:"
+msgstr "حجم القطعة:"
 
 #: gui/infopane.cpp:196
-#, fuzzy, kde-format
-#| msgid "Total: %p%"
+#, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr "الكلي: %p%"
+msgstr "إجمالي القطعة:"
 
 #: gui/infopane.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr "الحجم:"
+msgstr "حجم المصفوفة:"
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
@@ -1328,7 +1300,7 @@ msgstr "أدرج قسمًا"
 #, kde-kuit-format
 msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
-msgstr ""
+msgstr "%2 | %1"
 
 #: gui/mainwindow.cpp:167
 #, kde-format
@@ -1337,6 +1309,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
+"يتطلب مدير الأقسام امتيازات من أجل العمل. يُرجى الإنعاش والمصادقة عند مطالبتك "
+"بذلك."
 
 #: gui/mainwindow.cpp:234
 #, kde-kuit-format
@@ -1481,74 +1455,59 @@ msgid "Import a partition table from a text file."
 msgstr "استورد جدول تقسيم من ملف نصّي."
 
 #: gui/mainwindow.cpp:331
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Resize or move partition"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
-msgstr "غيّر حجم القسم أو انقله"
+msgstr "أزل مجموعة وحدات التخزين."
 
 #: gui/mainwindow.cpp:332
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Please select a device."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
-msgstr "يرجى اختيار جهاز."
+msgstr "أزل مجموعة وحدات التخزين المحددة"
 
 #: gui/mainwindow.cpp:333
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Please select a device."
+#, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
-msgstr "يرجى اختيار جهاز."
+msgstr "أزل مجموعة وحدات التخزين المحددة."
 
 #: gui/mainwindow.cpp:341
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Resize or move partition"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
-msgstr "غيّر حجم القسم أو انقله"
+msgstr "غيّر حجم مجموعة وحدات التخزين"
 
 #: gui/mainwindow.cpp:342
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Resize or move partition"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
-msgstr "غيّر حجم القسم أو انقله"
+msgstr "غيّر حجم مجموعة وحدات التخزين المحددة"
 
 #: gui/mainwindow.cpp:343
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
-msgstr ""
+msgstr "وسّع أو صغّر مجموعة وحدات التخزين المحددة."
 
 #: gui/mainwindow.cpp:351
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Deactivate"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
-msgstr "عطّل"
+msgstr "ألغ تنشيط مجموعة وحدات التخزين"
 
 #: gui/mainwindow.cpp:352
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Please select a device."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
-msgstr "يرجى اختيار جهاز."
+msgstr "ألغ تنشيط مجموعة وحدات التخزين المحددة"
 
 #: gui/mainwindow.cpp:353
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Please select a device."
+#, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
-msgstr "يرجى اختيار جهاز."
+msgstr ""
+"ألغ تنشيط مجموعة وحدات التخزين المحددة قبل فصل الأجهزة القابلة للإزالة."
 
 #: gui/mainwindow.cpp:359
 #, kde-kuit-format
@@ -1620,7 +1579,7 @@ msgstr "غيّر حجم القسم أو انقله"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
-msgstr ""
+msgstr "قلّص أو نمِّ أو انقل قسما موجودا."
 
 #: gui/mainwindow.cpp:393
 #, kde-kuit-format
@@ -1737,20 +1696,16 @@ msgid "Unlock"
 msgstr "فكّ القفل"
 
 #: gui/mainwindow.cpp:444
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Mount or unmount partition"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
-msgstr "ضم أو إزالة ضم القسم"
+msgstr "افتح أو اقفل القسم المشفر"
 
 #: gui/mainwindow.cpp:445
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Mount or unmount partition"
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
-msgstr "ضم أو إزالة ضم القسم"
+msgstr "افتح أو اقفل القسم المشفر."
 
 #: gui/mainwindow.cpp:450
 #, kde-kuit-format
@@ -1819,26 +1774,22 @@ msgid "Restore a partition from an image file."
 msgstr "استعد قسم من ملف صورة."
 
 #: gui/mainwindow.cpp:483
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Resize or move partition"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
-msgstr "غيّر حجم القسم أو انقله"
+msgstr "مجموعة وحدة تخزين جديدة"
 
 #: gui/mainwindow.cpp:484
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
-msgstr ""
+msgstr "أنشئ مجموعة وحدة تخزين LVM جديدة"
 
 #: gui/mainwindow.cpp:485
-#, fuzzy, kde-format
-#| msgctxt "@info:status"
-#| msgid "Create a new and empty partition table on a device."
+#, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
-msgstr "أنشئ جدول تقسيم جديد وفارغ على الجهاز"
+msgstr "أنشئ جدول تقسيم جديد LVM كجهاز"
 
 #: gui/mainwindow.cpp:491
 #, kde-kuit-format
@@ -1916,19 +1867,19 @@ msgstr "احفظ سجل الإخراج إلى ملف."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
-msgstr ""
+msgstr "حول مكتبة كي بي إم كور KPMcore"
 
 #: gui/mainwindow.cpp:531
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
-msgstr ""
+msgstr "أظهر مربع الحوار \"حول KPMcore\""
 
 #: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
-msgstr ""
+msgstr "أظهر مربع الحوار \"حول KPMcore\""
 
 #: gui/mainwindow.cpp:714
 #, kde-kuit-format
@@ -1943,9 +1894,7 @@ msgstr[4] "%1 عملية منتظرة"
 msgstr[5] "%1 عملية منتظرة"
 
 #: gui/mainwindow.cpp:809
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Using backend plugin: %1 (%2)"
+#, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "يستخدم ملحقة التتبّع الخلفي %1 (%2)"
@@ -1957,12 +1906,10 @@ msgid "Scanning devices..."
 msgstr "يكتشف الأجهزة..."
 
 #: gui/mainwindow.cpp:851
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Scan finished."
+#, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
-msgstr "اكتمل الاكتشاف."
+msgstr "اكتمل الفحص."
 
 #: gui/mainwindow.cpp:915
 #, kde-kuit-format
@@ -2009,20 +1956,16 @@ msgid "Apply Pending Operations"
 msgstr "طبّق العمليات المنتظرة"
 
 #: gui/mainwindow.cpp:949
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Applying operations..."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "يطبّق العمليات..."
 
 #: gui/mainwindow.cpp:974
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Add operation: %1"
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
-msgstr "أضف العملية: %1"
+msgstr "عملية التراجع: %1"
 
 #: gui/mainwindow.cpp:990
 #, kde-kuit-format
@@ -2043,12 +1986,10 @@ msgid "Clear Pending Operations"
 msgstr "امحُ العمليات المنتظرة"
 
 #: gui/mainwindow.cpp:994
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Clearing the list of pending operations."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
-msgstr "محو قائمة العمليات المنتظرة,"
+msgstr "محو قائمة العمليات المنتظرة."
 
 #: gui/mainwindow.cpp:1036
 #, kde-kuit-format
@@ -2136,7 +2077,7 @@ msgstr "القسم %1 انتهى قبل القطاع الأول (السطر %2).
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr ""
+msgstr "دور القسم غير معروف \"%1\" للقسم %2 (السطر %3)."
 
 #: gui/mainwindow.cpp:1164
 #, kde-kuit-format
@@ -2164,7 +2105,7 @@ msgstr "تعذّر إنشاء جدول التقسيم \"%1\" للقسم %2 (ال
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
-msgstr ""
+msgstr "تعذر تحليل السطر %1 من ملف الاستيراد. تجاهله."
 
 #: gui/mainwindow.cpp:1211
 #, kde-kuit-format
@@ -2175,12 +2116,12 @@ msgstr "خطأ تصدير جدول التقسيم"
 #: gui/mainwindow.cpp:1381 gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1423
 #, kde-kuit-format
 msgid "%1%2"
-msgstr ""
+msgstr "%1%2"
 
 #: gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1398
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
-msgstr ""
+msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
 #: gui/mainwindow.cpp:1435
 #, kde-kuit-format
@@ -2217,15 +2158,13 @@ msgstr "حزم ملفات دعم ناقصة"
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr ""
+msgstr "جهاز غير معروف \"%1\" "
 
 #: gui/mainwindow.cpp:1468
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Shred partition"
+#, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr "مزّق قسمًا"
+msgstr "قسم غير معروف \"%1\" "
 
 #: gui/mainwindow.cpp:1469
 #, kde-kuit-format
@@ -2291,7 +2230,7 @@ msgstr "حدّد الجهاز الحالي"
 
 #. i18n: ectx: Menu (tools)
 #: gui/partitionmanagerui.rc:49
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
 msgstr "أدوات"
@@ -2308,13 +2247,13 @@ msgstr "قسم"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"
-msgstr ""
+msgstr "اللوحات المعروضة"
 
 #: gui/partitionmanagerwidget.cpp:200
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
-msgstr "مشفّر"
+msgstr "%1 [مشفّر]"
 
 #: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
@@ -2343,43 +2282,33 @@ msgid "Could Not Unmount File System."
 msgstr "تعذّرت إزالة ضم نظام الملفات."
 
 #: gui/partitionmanagerwidget.cpp:447
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The file system on partition <filename>%1</filename> could not be "
-#| "unmounted."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "unlocked."
-msgstr "تعذّرت إزالة ضم نظام الملفات على القسم <filename>%1</filename>."
+msgstr ""
+"تعذّرت إزالة قفل نظام الملفات المشفرة على القسم <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:453
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Could Not Unmount File System."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
-msgstr "تعذّرت إزالة ضم نظام الملفات."
+msgstr "تعذّر إلغاء قفل نظام الملفات المشفرة."
 
 #: gui/partitionmanagerwidget.cpp:458
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The file system on partition <filename>%1</filename> could not be mounted."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "locked."
-msgstr "تعذّر ضم نظام الملفات على القسم <filename>%1</filename>."
+msgstr "تعذّر قفل نظام الملفات المشفرة على القسم <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Could Not Mount File System."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
-msgstr "تعذّر ضم نظام الملفات."
+msgstr "تعذّر قفل نظام الملفات المشفرة."
 
 #: gui/partitionmanagerwidget.cpp:493
 #, kde-kuit-format
@@ -2468,11 +2397,7 @@ msgid "Delete It"
 msgstr "احذفه"
 
 #: gui/partitionmanagerwidget.cpp:628
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid ""
-#| "Partition <filename>%1</filename> has the same position and size after "
-#| "resize/move. Ignoring operation."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Partition <filename>%1</filename> has the same position and size after "
@@ -2482,9 +2407,7 @@ msgstr ""
 "يُجهض العملية."
 
 #: gui/partitionmanagerwidget.cpp:656
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Partition <filename>%1</filename> has been copied to the clipboard."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "نُسخ القسم <filename>%1</filename> إلى الحافظة."
@@ -2545,6 +2468,9 @@ msgid ""
 "are correctly aligned or when copying a primary partition into an extended "
 "partition.</para>"
 msgstr ""
+"<para>لا يمكن إنشاء قسم الهدف، كبير بما يكفي لاحتواء المصدر.</para><para>قد "
+"يحدث هذا إذا لم تكن كل الأقسام على الجهاز محاذاة بشكل صحيح أو عند نسخ قسم "
+"أساسي إلى قسم موسّع.</para>"
 
 #: gui/partitionmanagerwidget.cpp:743
 #, kde-kuit-format
@@ -2600,17 +2526,15 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:104
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name"
-msgstr "جدول التقسيم:"
+msgstr "اسم التقسيم:"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:109
-#, fuzzy, kde-format
-#| msgid "Partition"
+#, kde-format
 msgid "Partition UUID"
-msgstr "القسم"
+msgstr "معرف القسم UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:114
@@ -2667,9 +2591,7 @@ msgid "(none found)"
 msgstr "(لم يُعثر على واحدة)"
 
 #: gui/partpropsdialog.cpp:115
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(لم يُعثر على واحدة)"
@@ -2706,14 +2628,7 @@ msgid "(none)"
 msgstr "(لا شيء)"
 
 #: gui/partpropsdialog.cpp:356
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para><warning>You are about to lose all data on partition <filename>%1</"
-#| "filename>.</warning></para><para>Changing the file system on a partition "
-#| "already on disk will erase all its contents. If you continue now and "
-#| "apply the resulting operation in the main window, all data on <filename>"
-#| "%1</filename> will unrecoverably be lost.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para><warning>You are about to lose all data on partition <filename>%1</"
@@ -2746,14 +2661,7 @@ msgid "Do Not Change the File System"
 msgstr "لا تغيّر نظام الملفات"
 
 #: gui/partpropsdialog.cpp:379
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para><warning>You are about to lose all data on partition <filename>%1</"
-#| "filename>.</warning></para><para>Recreating a file system will erase all "
-#| "its contents. If you continue now and apply the resulting operation in "
-#| "the main window, all data on <filename>%1</filename> will unrecoverably "
-#| "be lost.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para><warning>You are about to lose all data on partition <filename>%1</"
@@ -2801,10 +2709,9 @@ msgstr "الحجم:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:66
-#, fuzzy, kde-format
-#| msgid "Partition"
+#, kde-format
 msgid "Partition UUID:"
-msgstr "القسم"
+msgstr "معرف القسم UUID:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
 #: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:126
@@ -2864,11 +2771,9 @@ msgstr "نوع القسم:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "جهاز"
+msgstr "مسار الجهاز:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:326
@@ -2879,10 +2784,9 @@ msgstr "عدد القطاعات:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:336
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name:"
-msgstr "جدول التقسيم:"
+msgstr "اسم القسم:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:346
@@ -2891,6 +2795,8 @@ msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
 "filesystem type."
 msgstr ""
+"سيؤدي ذلك إلى إعادة تهيئة نظام الملفات، وفقدان جميع المحتويات، لكن سيحتفظ "
+"بنوع نظام الملفات نفسه."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:349
@@ -2908,21 +2814,17 @@ msgstr "المستخدم:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/partpropswidgetbase.ui:386
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "File system:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
-msgstr "نظام الملفات:"
+msgstr "نظا&م الملفات:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
 #: gui/partpropswidgetbase.ui:399
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Flags:"
+#, kde-format
 msgctxt "@label"
 msgid "&Flags:"
-msgstr "الأعلام"
+msgstr "الأ&علام:"
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format
@@ -2943,46 +2845,40 @@ msgid "Resize/move partition: <filename>%1</filename>"
 msgstr "غيّر حجم/انقل القسم: <filename>%1</filename>"
 
 #: gui/resizedialog.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%2 is either empty or says Invalid passphrase."
 msgid "%2Enter passphrase for %1:"
-msgstr "أدخل عبارة مرور لـ <b>%1</b>"
+msgstr "%2 أدخل عبارة مرور لـ %1:"
 
 #: gui/resizedialog.cpp:100
 #, kde-format
 msgctxt "Part of %2Enter passphrase for %1:"
 msgid "Invalid passphrase. "
-msgstr ""
+msgstr "عبارة مرور غير صالحة. "
 
 #: gui/resizevolumegroupdialog.cpp:39
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Resize or move partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize Volume Group"
-msgstr "غيّر حجم القسم أو انقله"
+msgstr "غيّر حجم مجموعة وحدات التخزين"
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Scanning devices..."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "يكتشف الأجهزة..."
+msgstr "يفحص الأجهزة..."
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p٪"
 
 #: gui/scanprogressdialog.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "يكتشف..."
+msgstr "يفحص..."
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
@@ -3008,7 +2904,7 @@ msgstr "القطاع الأخير:"
 #: gui/sizedetailswidgetbase.ui:124
 #, kde-format
 msgid "Align partition"
-msgstr ""
+msgstr "محاذاة القسم"
 
 #: gui/sizedialogbase.cpp:66
 #, kde-kuit-format
@@ -3045,31 +2941,28 @@ msgstr "اللصيقة:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: gui/sizedialogwidgetbase.ui:160
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Si&ze:"
 msgstr "الح&جم:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
 #: gui/sizedialogwidgetbase.ui:183
-#, fuzzy, kde-format
-#| msgid "Primary"
+#, kde-format
 msgid "Primar&y"
-msgstr "أولي"
+msgstr "أوّ&لي"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
 #: gui/sizedialogwidgetbase.ui:190
-#, fuzzy, kde-format
-#| msgid "Extended"
+#, kde-format
 msgid "E&xtended"
-msgstr "ممتد:"
+msgstr "ممت&دّ:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
 #: gui/sizedialogwidgetbase.ui:197
-#, fuzzy, kde-format
-#| msgid "Logical"
+#, kde-format
 msgid "&Logical"
-msgstr "منطقي"
+msgstr "&منطقي"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/sizedialogwidgetbase.ui:213
@@ -3092,12 +2985,13 @@ msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
 "provide a passphrase."
 msgstr ""
+"أعدّ التشفير لنظام الملفات هذا باستخدام LUKS. سيطلب منك إدخال عبارة مرور."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:262
 #, kde-format
 msgid "Encrypt with LUKS"
-msgstr ""
+msgstr "تعمية مع LUKS"
 
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
 #: gui/sizedialogwidgetbase.ui:292
@@ -3109,7 +3003,7 @@ msgstr "التصاريح"
 #: gui/sizedialogwidgetbase.ui:305
 #, kde-format
 msgid "Allow everyone to write and read on this device"
-msgstr ""
+msgstr "اسمح للجميع بالكتابة والقراءة على هذا الجهاز"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:308
@@ -3124,6 +3018,8 @@ msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
 "folder permissions"
 msgstr ""
+"اسمح للمستخدم الجذر فقط بالكتابة والقراءة على هذا الجهاز، ستحتاج إلى الإعداد "
+"لكلأذونات المجلد"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:318
@@ -3133,19 +3029,16 @@ msgstr "الجذر فقط"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
 #: gui/sizedialogwidgetbase.ui:334
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Free space before:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "F&ree space before:"
-msgstr "المساحة الحرة قبل:"
+msgstr "المساحة ال&حرّة قبل:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
 #: gui/sizedialogwidgetbase.ui:347
-#, fuzzy, kde-format
-#| msgid "Logical sector size:"
+#, kde-format
 msgid "Logical Volume Name:"
-msgstr "حجم القطاع المنطقي:"
+msgstr "اسم القطاع المنطقي:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
 #: gui/sizedialogwidgetbase.ui:363
@@ -3161,12 +3054,13 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"استخدم LUKS2 بدلا من LUKS1 للحصول على أمان أفضل، ولكن قد يتعرض التوافق للخطر."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "فعّل LUKS2"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
@@ -3190,13 +3084,13 @@ msgstr "لاشيء"
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Pre-Failure"
-msgstr ""
+msgstr "ما قبل الفشل"
 
 #: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Old-Age"
-msgstr ""
+msgstr "العمر القديم"
 
 #: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
 #, kde-kuit-format
@@ -3226,7 +3120,7 @@ msgstr "الرقم التسلسلي:"
 #: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
 #, kde-format
 msgid "Firmware revision:"
-msgstr ""
+msgstr "إصدار البرمجيّة الثابتة:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
 #: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
@@ -3244,13 +3138,13 @@ msgstr "القطاعات التالفة:"
 #: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
 #, kde-format
 msgid "Powered on for:"
-msgstr ""
+msgstr "قيد التشغيل من أجل:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
 #: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
 #, kde-format
 msgid "Power cycles:"
-msgstr ""
+msgstr "دورات الطاقة:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
 #: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
@@ -3262,7 +3156,7 @@ msgstr "الاختبارات الذاتيّة:"
 #: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
 #, kde-format
 msgid "Overall assessment:"
-msgstr ""
+msgstr "التقييم العام:"
 
 #: gui/smartdialog.cpp:227
 #, kde-kuit-format
@@ -3298,7 +3192,7 @@ msgstr "نوع التحديث"
 #: gui/smartdialogwidgetbase.ui:314
 #, kde-format
 msgid "Worst"
-msgstr ""
+msgstr "أسوأ"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:319
@@ -3316,13 +3210,13 @@ msgstr "العتبة"
 #: gui/smartdialogwidgetbase.ui:329
 #, kde-format
 msgid "Raw"
-msgstr ""
+msgstr "خام"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:334
 #, kde-format
 msgid "Assessment"
-msgstr ""
+msgstr "التقييم"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:339
@@ -3331,11 +3225,7 @@ msgid "Value"
 msgstr "القيمة"
 
 #: gui/treelog.cpp:110
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "Could not create temporary file when trying to save to <filename>%1</"
-#| "filename>."
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary output file to save <filename>%1</filename>."
 msgstr "تعذّر إنشاء الملف المؤقت أثناء الحفظ إلى <filename>%1</filename>."
@@ -3352,7 +3242,7 @@ msgstr "خطأ في حفظ ملف السجل"
 msgctxt ""
 "@title:column Severity of a log entry / log level. Text must be very short."
 msgid "Sev."
-msgstr ""
+msgstr "خطر."
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:62
@@ -3376,18 +3266,15 @@ msgstr "الرسالة"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVGName)
 #: gui/volumegroupwidgetbase.ui:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Resize or move partition"
+#, kde-format
 msgid "Volume Group Name: "
-msgstr "غيّر حجم القسم أو انقله"
+msgstr "اسم مجموعة وحدات التخزين: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
 #: gui/volumegroupwidgetbase.ui:47
-#, fuzzy, kde-format
-#| msgid "Physical sector size:"
+#, kde-format
 msgid "Physical Extent Size: "
-msgstr "حجم القطاع الفيزيائي:"
+msgstr "حجم القطاع الفيزيائي: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
@@ -3397,50 +3284,43 @@ msgstr "حجم القطاع الفيزيائي:"
 #: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
 #, kde-format
 msgid "---"
-msgstr ""
+msgstr "---"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
 #: gui/volumegroupwidgetbase.ui:79
-#, fuzzy, kde-format
+#, kde-format
 msgid " MiB"
 msgstr " م.بايت"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalLV)
 #: gui/volumegroupwidgetbase.ui:107
-#, fuzzy, kde-format
-#| msgid "Total: %p%"
+#, kde-format
 msgid "Total LV: "
-msgstr "الكلي: %p%"
+msgstr "LV الكلي: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
 #: gui/volumegroupwidgetbase.ui:130
-#, fuzzy, kde-format
-#| msgid "Failure Type"
+#, kde-format
 msgid "Volume Group Type: "
-msgstr "نوع الفشل"
+msgstr "نوع مجموعة وحدات التخزين: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
 #: gui/volumegroupwidgetbase.ui:140
-#, fuzzy, kde-format
-#| msgctxt "@info:progress"
-#| msgid "Total Time: %1"
+#, kde-format
 msgid "Total Size: "
-msgstr "الحجم الكليّ: %1"
+msgstr "الحجم الكلي: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
 #: gui/volumegroupwidgetbase.ui:153
-#, fuzzy, kde-format
-#| msgid "Total sectors:"
+#, kde-format
 msgid "Total Sectors: "
-msgstr "إجمالي القطاعات:"
+msgstr "إجمالي القطاعات: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
 #: gui/volumegroupwidgetbase.ui:186
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgid "Used Size: "
-msgstr "الحجم:"
+msgstr "الحجم المستخدم: "
 
 #: main.cpp:77
 #, kde-kuit-format
@@ -3449,21 +3329,20 @@ msgid "<application>KDE Partition Manager</application>"
 msgstr "<application>مدير كِيدِي للأقسام</application>"
 
 #: main.cpp:79
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Manage your disks, partitions and file systems"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Manage your disks, partitions and file systems"
 msgstr "أدِر أقراصك، أقسامك وأنظمة ملفاتك"
 
 #: main.cpp:81
-#, fuzzy, kde-kuit-format
-#| msgid "Copyright 2008,2009,2010 Volker Lanz"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid ""
 "© 2008-2013 Volker Lanz\n"
 "© 2012-2020 Andrius Štikonas"
-msgstr "Copyright 2008,2009,2010 Volker Lanz"
+msgstr ""
+"© 2008-2013 Volker Lanz\n"
+"© 2012-2020 Andrius Štikonas"
 
 #: main.cpp:85
 #, kde-kuit-format
@@ -3472,7 +3351,7 @@ msgid "Volker Lanz"
 msgstr "Volker Lanz"
 
 #: main.cpp:85
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Former maintainer"
 msgstr "المشرف السابق"
@@ -3484,7 +3363,7 @@ msgid "Andrius Štikonas"
 msgstr "Andrius Štikonas"
 
 #: main.cpp:86
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Maintainer"
 msgstr "المشرف"
@@ -3493,27 +3372,25 @@ msgstr "المشرف"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Teo Mrnjavac"
-msgstr ""
+msgstr "Teo Mrnjavac"
 
 #: main.cpp:87
 #, kde-format
 msgctxt "@info:credit"
 msgid "Former Calamares maintainer"
-msgstr ""
+msgstr "مشرف كالاماريس السابق"
 
 #: main.cpp:88
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Chantara Tith"
-msgstr ""
+msgstr "Chantara Tith"
 
 #: main.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@info:credit"
-#| msgid "Btrfs support"
+#, kde-format
 msgctxt "@info:credit"
 msgid "LVM support"
-msgstr "دعم Btrfs"
+msgstr "دعم LVM"
 
 #: main.cpp:89
 #, kde-kuit-format
@@ -3522,12 +3399,10 @@ msgid "Pali Rohár"
 msgstr "البالية Rohár"
 
 #: main.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@info:credit"
-#| msgid "Btrfs support"
+#, kde-format
 msgctxt "@info:credit"
 msgid "UDF support"
-msgstr "دعم Btrfs"
+msgstr "دعم UDF"
 
 #: main.cpp:90
 #, kde-format
@@ -3544,23 +3419,19 @@ msgstr "تصميم ودجة الأقسام"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Caio Jordão Carvalho"
-msgstr ""
+msgstr "Caio Jordão Carvalho"
 
 #: main.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save SMART Report"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Improved SMART support"
-msgstr "احفظ تقرير SMART"
+msgstr "دعم SMART محسّن"
 
 #: main.cpp:101
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:shell"
-#| msgid "Device(s) to manage"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"
-msgstr "الأجهزة لإدارتها"
+msgstr "الجهاز لإدارته"
 
 #. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
 #: partitionmanager.kcfg:45
@@ -3589,6 +3460,7 @@ msgstr "محاذاة قطاع القسم"
 msgctxt "@label"
 msgid "Use cylinder based alignment (Windows XP compatible)"
 msgstr ""
+"استخدم المحاذاة المستندة إلى الأسطوانة (متوافقة مع نظام التشغيل Windows XP)"
 
 #. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
 #: partitionmanager.kcfg:61
