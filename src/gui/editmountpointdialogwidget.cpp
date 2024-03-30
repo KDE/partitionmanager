@@ -82,6 +82,7 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partitio
     boxOptions()[QStringLiteral("sync")] = m_CheckSync;
     boxOptions()[QStringLiteral("noexec")] = m_CheckNoExec;
     boxOptions()[QStringLiteral("relatime")] = m_CheckRelAtime;
+    boxOptions()[QStringLiteral("nofail")] = m_CheckNoFail;
 
     setupRadio(currentEntry->entryType());
     setupOptions(currentEntry->options());
