@@ -242,10 +242,11 @@ void EditMountPointDialogWidget::currentPathChanged(const QString &newPath)
     } else {
         m_valid = true;
         m_PathMessage->setVisible(false);
-        if (path == QStringLiteral("/") || path == QStringLiteral("/home") || path == QStringLiteral("/home/"))
+        if (path == QStringLiteral("/") || QDir(path).canonicalPath() == QStringLiteral("/home"))
             m_CheckNoFail->setCheckState(Qt::Unchecked);
         else
             m_CheckNoFail->setCheckState(Qt::Checked);
     }
     Q_EMIT isValidChanged(m_valid);
 }
+
