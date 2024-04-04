@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:39+0000\n"
+"POT-Creation-Date: 2024-04-04 00:40+0000\n"
 "PO-Revision-Date: 2024-03-26 17:41+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -958,26 +958,32 @@ msgstr "Вимкнути можливість виконання програм"
 msgid "Update access times relative to modification"
 msgstr "Оновити час доступу відносно до зміни"
 
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
+#: gui/editmountpointdialogwidgetbase.ui:271
+#, kde-format
+msgid "Don't prevent the system from booting if not mountable"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: gui/editmountpointdialogwidgetbase.ui:278
+#: gui/editmountpointdialogwidgetbase.ui:285
 #, kde-format
 msgid "No update of directory access times"
 msgstr "Без оновлення часу доступу до каталогів"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: gui/editmountpointdialogwidgetbase.ui:288
+#: gui/editmountpointdialogwidgetbase.ui:295
 #, kde-format
 msgid "Identify by:"
 msgstr "Ідентифікувати за:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: gui/editmountpointdialogwidgetbase.ui:298
+#: gui/editmountpointdialogwidgetbase.ui:305
 #, kde-format
 msgid "Read-only"
 msgstr "Лише читання"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: gui/editmountpointdialogwidgetbase.ui:305
+#: gui/editmountpointdialogwidgetbase.ui:312
 #, kde-format
 msgid "Options:"
 msgstr "Параметри:"

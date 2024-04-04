@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:39+0000\n"
+"POT-Creation-Date: 2024-04-04 00:40+0000\n"
 "PO-Revision-Date: 2014-03-12 23:25+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -995,26 +995,32 @@ msgstr "Keen bineer Utföhren"
 msgid "Update access times relative to modification"
 msgstr "Togrieptieden relatiev to Ännern opfrischen"
 
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
+#: gui/editmountpointdialogwidgetbase.ui:271
+#, kde-format
+msgid "Don't prevent the system from booting if not mountable"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: gui/editmountpointdialogwidgetbase.ui:278
+#: gui/editmountpointdialogwidgetbase.ui:285
 #, kde-format
 msgid "No update of directory access times"
 msgstr "Orner-Togrieptieden nich opfrischen"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: gui/editmountpointdialogwidgetbase.ui:288
+#: gui/editmountpointdialogwidgetbase.ui:295
 #, kde-format
 msgid "Identify by:"
 msgstr "Wiesen na:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: gui/editmountpointdialogwidgetbase.ui:298
+#: gui/editmountpointdialogwidgetbase.ui:305
 #, kde-format
 msgid "Read-only"
 msgstr "Bloots leesbor"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: gui/editmountpointdialogwidgetbase.ui:305
+#: gui/editmountpointdialogwidgetbase.ui:312
 #, kde-format
 msgid "Options:"
 msgstr "Optschonen:"

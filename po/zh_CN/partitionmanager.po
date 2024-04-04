@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:39+0000\n"
-"PO-Revision-Date: 2024-04-01 14:44\n"
+"POT-Creation-Date: 2024-04-04 00:40+0000\n"
+"PO-Revision-Date: 2024-04-03 19:14\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -944,26 +944,32 @@ msgstr "不可执行二进制程序"
 msgid "Update access times relative to modification"
 msgstr "更新与修改相关的访问时间"
 
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
+#: gui/editmountpointdialogwidgetbase.ui:271
+#, kde-format
+msgid "Don't prevent the system from booting if not mountable"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: gui/editmountpointdialogwidgetbase.ui:278
+#: gui/editmountpointdialogwidgetbase.ui:285
 #, kde-format
 msgid "No update of directory access times"
 msgstr "不更新目录访问时间"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: gui/editmountpointdialogwidgetbase.ui:288
+#: gui/editmountpointdialogwidgetbase.ui:295
 #, kde-format
 msgid "Identify by:"
 msgstr "识别方式："
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: gui/editmountpointdialogwidgetbase.ui:298
+#: gui/editmountpointdialogwidgetbase.ui:305
 #, kde-format
 msgid "Read-only"
 msgstr "只读"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: gui/editmountpointdialogwidgetbase.ui:305
+#: gui/editmountpointdialogwidgetbase.ui:312
 #, kde-format
 msgid "Options:"
 msgstr "选项："

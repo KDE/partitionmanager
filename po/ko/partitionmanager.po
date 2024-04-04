@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:39+0000\n"
+"POT-Creation-Date: 2024-04-04 00:40+0000\n"
 "PO-Revision-Date: 2024-02-06 00:38+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -945,26 +945,32 @@ msgstr "바이너리 실행 금지"
 msgid "Update access times relative to modification"
 msgstr "수정 시간에 상대적으로 접근 시간 업데이트"
 
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
+#: gui/editmountpointdialogwidgetbase.ui:271
+#, kde-format
+msgid "Don't prevent the system from booting if not mountable"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: gui/editmountpointdialogwidgetbase.ui:278
+#: gui/editmountpointdialogwidgetbase.ui:285
 #, kde-format
 msgid "No update of directory access times"
 msgstr "디렉터리 접근 시간 업데이트 안 함"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: gui/editmountpointdialogwidgetbase.ui:288
+#: gui/editmountpointdialogwidgetbase.ui:295
 #, kde-format
 msgid "Identify by:"
 msgstr "다음으로 식별:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: gui/editmountpointdialogwidgetbase.ui:298
+#: gui/editmountpointdialogwidgetbase.ui:305
 #, kde-format
 msgid "Read-only"
 msgstr "읽기 전용"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: gui/editmountpointdialogwidgetbase.ui:305
+#: gui/editmountpointdialogwidgetbase.ui:312
 #, kde-format
 msgid "Options:"
 msgstr "옵션:"

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:39+0000\n"
-"PO-Revision-Date: 2024-03-23 12:33+0100\n"
+"POT-Creation-Date: 2024-04-04 00:40+0000\n"
+"PO-Revision-Date: 2024-03-26 14:31+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -960,26 +960,32 @@ msgstr "Non permettere l'esecuzione di file binari"
 msgid "Update access times relative to modification"
 msgstr "Aggiorna i tempi di accesso relativi alle modifiche"
 
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
+#: gui/editmountpointdialogwidgetbase.ui:271
+#, kde-format
+msgid "Don't prevent the system from booting if not mountable"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: gui/editmountpointdialogwidgetbase.ui:278
+#: gui/editmountpointdialogwidgetbase.ui:285
 #, kde-format
 msgid "No update of directory access times"
 msgstr "Nessun aggiornamento dei tempi di accesso alle cartelle"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: gui/editmountpointdialogwidgetbase.ui:288
+#: gui/editmountpointdialogwidgetbase.ui:295
 #, kde-format
 msgid "Identify by:"
 msgstr "Identificato da:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: gui/editmountpointdialogwidgetbase.ui:298
+#: gui/editmountpointdialogwidgetbase.ui:305
 #, kde-format
 msgid "Read-only"
 msgstr "Sola lettura"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: gui/editmountpointdialogwidgetbase.ui:305
+#: gui/editmountpointdialogwidgetbase.ui:312
 #, kde-format
 msgid "Options:"
 msgstr "Opzioni:"
@@ -3079,12 +3085,14 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"Utilizza LUKS2 invece di LUKS1 per una maggiore sicurezza, ma la "
+"compatibilità potrebbe essere compromessa."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "Abilita LUKS2"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
