@@ -250,3 +250,5 @@ void EditMountPointDialogWidget::currentPathChanged(const QString &newPath)
     Q_EMIT isValidChanged(m_valid);
 }
 
+
+#include "moc_editmountpointdialogwidget.cpp"
