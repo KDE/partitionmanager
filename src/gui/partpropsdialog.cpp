@@ -275,7 +275,11 @@ void PartPropsDialog::setupConnections()
 {
     connect(&dialogWidget().label(), &QLineEdit::textEdited, [this] (const QString &) {setDirty();});
     connect(&dialogWidget().fileSystem(), &QComboBox::currentIndexChanged, this, &PartPropsDialog::onFilesystemChanged);
+#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
     connect(&dialogWidget().checkRecreate(), &QCheckBox::stateChanged, this, &PartPropsDialog::onRecreate);
+#else
+    connect(&dialogWidget().checkRecreate(), &QCheckBox::checkStateChanged, this, &PartPropsDialog::onRecreate);
+#endif
 
     // We want to enable the OK-button whenever the user checks or unchecks a flag in the flag list.
     // But it seems Qt doesn't offer a foolproof way to detect if this has happened: The currentRow/ItemChanged
