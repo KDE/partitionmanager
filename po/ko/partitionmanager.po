@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:40+0000\n"
+"POT-Creation-Date: 2024-04-16 00:40+0000\n"
 "PO-Revision-Date: 2024-02-06 00:38+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2604,7 +2604,7 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(없음)"
 
-#: gui/partpropsdialog.cpp:356
+#: gui/partpropsdialog.cpp:360
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2619,26 +2619,26 @@ msgstr ""
 "내용을 삭제합니다. 작업을 계속 진행하면 <filename>%1</filename>에 있는 모든 "
 "데이터를 복구 불가능한 상태로 삭제합니다.</para>"
 
-#: gui/partpropsdialog.cpp:358
+#: gui/partpropsdialog.cpp:362
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "<filename>%1</filename>을(를) %2 파일 시스템으로 다시 생성하시겠습니까?"
 
-#: gui/partpropsdialog.cpp:359
+#: gui/partpropsdialog.cpp:363
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "파일 시스템 변경"
 
-#: gui/partpropsdialog.cpp:360
+#: gui/partpropsdialog.cpp:364
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "파일 시스템 변경하지 않음"
 
-#: gui/partpropsdialog.cpp:379
+#: gui/partpropsdialog.cpp:383
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2653,19 +2653,19 @@ msgstr ""
 "업을 계속 진행하면 <filename>%1</filename>에 있는 모든 데이터를 복구 불가능"
 "한 상태로 삭제합니다.</para>"
 
-#: gui/partpropsdialog.cpp:381
+#: gui/partpropsdialog.cpp:385
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "<filename>%1</filename>에 파일 시스템을 다시 생성하시겠습니까?"
 
-#: gui/partpropsdialog.cpp:382
+#: gui/partpropsdialog.cpp:386
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "파일 시스템 다시 생성"
 
-#: gui/partpropsdialog.cpp:383
+#: gui/partpropsdialog.cpp:387
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"

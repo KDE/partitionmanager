@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:40+0000\n"
+"POT-Creation-Date: 2024-04-16 00:40+0000\n"
 "PO-Revision-Date: 2023-03-20 11:37+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2667,7 +2667,7 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(nenhum)"
 
-#: gui/partpropsdialog.cpp:356
+#: gui/partpropsdialog.cpp:360
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2683,26 +2683,26 @@ msgstr ""
 "agora e aplicar a operação resultante na janela principal, todos os dados em "
 "<filename>%1</filename> serão perdidos sem qualquer recuperação.</para>"
 
-#: gui/partpropsdialog.cpp:358
+#: gui/partpropsdialog.cpp:362
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "Deseja Criar de Novo a <filename>%1</filename> com o Sistema de Ficheiros %2?"
 
-#: gui/partpropsdialog.cpp:359
+#: gui/partpropsdialog.cpp:363
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Modificar o Sistema de Ficheiros"
 
-#: gui/partpropsdialog.cpp:360
+#: gui/partpropsdialog.cpp:364
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Não Modificar o Sistema de Ficheiros"
 
-#: gui/partpropsdialog.cpp:379
+#: gui/partpropsdialog.cpp:383
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2718,20 +2718,20 @@ msgstr ""
 "operação resultante na janela principal, todos os dados em <filesystem>%1</"
 "filesystem> serão perdidos de forma irrecuperável.</para>"
 
-#: gui/partpropsdialog.cpp:381
+#: gui/partpropsdialog.cpp:385
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr ""
 "Deseja Criar de Novo o Sistema de Ficheiros em <filename>%1</filename>?"
 
-#: gui/partpropsdialog.cpp:382
+#: gui/partpropsdialog.cpp:386
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Criar de Novo o Sistema de Ficheiros"
 
-#: gui/partpropsdialog.cpp:383
+#: gui/partpropsdialog.cpp:387
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:40+0000\n"
+"POT-Creation-Date: 2024-04-16 00:40+0000\n"
 "PO-Revision-Date: 2019-08-30 22:30+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -2542,7 +2542,7 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:356
+#: gui/partpropsdialog.cpp:360
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2553,25 +2553,25 @@ msgid ""
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:358
+#: gui/partpropsdialog.cpp:362
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:359
+#: gui/partpropsdialog.cpp:363
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:360
+#: gui/partpropsdialog.cpp:364
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:379
+#: gui/partpropsdialog.cpp:383
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2582,19 +2582,19 @@ msgid ""
 "para>"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:381
+#: gui/partpropsdialog.cpp:385
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:382
+#: gui/partpropsdialog.cpp:386
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:383
+#: gui/partpropsdialog.cpp:387
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"

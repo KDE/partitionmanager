@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:40+0000\n"
+"POT-Creation-Date: 2024-04-16 00:40+0000\n"
 "PO-Revision-Date: 2014-03-23 11:51+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -2618,7 +2618,7 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(ingen)"
 
-#: gui/partpropsdialog.cpp:356
+#: gui/partpropsdialog.cpp:360
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2634,25 +2634,25 @@ msgstr ""
 "handlingen i hovedvinduet, så blir alle data på <filename>%1</filename> "
 "slettet uten mulighet til å hente dem tilbake.</para>"
 
-#: gui/partpropsdialog.cpp:358
+#: gui/partpropsdialog.cpp:362
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr "Skal <filename>%1</filename> sikkert gjenskapes med filsystem %2?"
 
-#: gui/partpropsdialog.cpp:359
+#: gui/partpropsdialog.cpp:363
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Endre filsystemet"
 
-#: gui/partpropsdialog.cpp:360
+#: gui/partpropsdialog.cpp:364
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Ikke endre filsystemet"
 
-#: gui/partpropsdialog.cpp:379
+#: gui/partpropsdialog.cpp:383
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2663,20 +2663,20 @@ msgid ""
 "para>"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:381
+#: gui/partpropsdialog.cpp:385
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr ""
 "Er det sikkert at filsystemet på <filename>%1</filename> skal gjenskapes?"
 
-#: gui/partpropsdialog.cpp:382
+#: gui/partpropsdialog.cpp:386
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Gjenskap filsystemet"
 
-#: gui/partpropsdialog.cpp:383
+#: gui/partpropsdialog.cpp:387
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
