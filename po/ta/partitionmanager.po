@@ -1,66 +1,64 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the partitionmanager package.
+#
+# SPDX-FileCopyrightText: 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-16 00:40+0000\n"
-"PO-Revision-Date: 2024-04-22 15:58\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-04-22 21:44+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/partitionmanager/partitionmanager.pot\n"
-"X-Crowdin-File-ID: 48428\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ni Hui, Feng Chao, Guo Yunhe, Tyson Tan, Wordless Echo"
+msgstr ""
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-"shuizhuyuanluo@126.com, chaofeng111@qq.com, i@guoyunhe.me, tds00@qq.com, "
-"wordless@echo.moe"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
 msgctxt "@title:tab general application settings"
 msgid "General"
-msgstr "常规"
+msgstr "பொதுவானவை"
 
 #: config/configureoptionsdialog.cpp:42 config/configureoptionsdialog.cpp:87
 #, kde-format
 msgid "General Settings"
-msgstr "常规设置"
+msgstr ""
 
 #: config/configureoptionsdialog.cpp:47
 #, kde-kuit-format
 msgctxt "@title:tab"
 msgid "File System Colors"
-msgstr "文件系统颜色"
+msgstr ""
 
 #: config/configureoptionsdialog.cpp:47
 #, kde-format
 msgid "File System Color Settings"
-msgstr "文件系统颜色设置"
+msgstr ""
 
 #: config/configureoptionsdialog.cpp:49
 #, kde-kuit-format
 msgctxt "@title:tab advanced application settings"
 msgid "Advanced"
-msgstr "高级"
+msgstr ""
 
 #: config/configureoptionsdialog.cpp:49
 #, kde-format
 msgid "Advanced Settings"
-msgstr "高级设置"
+msgstr ""
 
 #: config/configureoptionsdialog.cpp:137
 #, kde-kuit-format
@@ -70,470 +68,468 @@ msgid ""
 "will also rescan devices and thus clear the list of pending operations.</"
 "warning></para>"
 msgstr ""
-"<para>您确定要变更后端程序吗？</para><para> <warning>这将重新扫描设备，所有待"
-"执行操作将被清除。</warning></para>"
 
 #: config/configureoptionsdialog.cpp:139
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Change Backend?"
-msgstr "您确定要变更后端程序吗？"
+msgstr ""
 
 #: config/configureoptionsdialog.cpp:140
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the Backend"
-msgstr "变更后端程序"
+msgstr ""
 
 #: config/configureoptionsdialog.cpp:141
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the Backend"
-msgstr "不变更后端程序"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: config/configurepageadvanced.ui:23
 #, kde-format
 msgid "Active backend:"
-msgstr "当前后端程序："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel)
 #: config/configurepageadvanced.ui:36
 #, kde-format
 msgid "Preferred unit:"
-msgstr "首选单位："
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:47
 #, kde-format
 msgid "Byte"
-msgstr "字节"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:52
 #, kde-format
 msgid "KiB"
-msgstr "KiB"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:57
 #, kde-format
 msgid "MiB"
-msgstr "MiB"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:62
 #, kde-format
 msgid "GiB"
-msgstr "GiB"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:67
 #, kde-format
 msgid "TiB"
-msgstr "TiB"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:72
 #, kde-format
 msgid "PiB"
-msgstr "PiB"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:77
 #, kde-format
 msgid "EiB"
-msgstr "EiB"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_7)
 #: config/configurepagefilesystemcolors.ui:27
 #, kde-format
 msgid "ReiserFS:"
-msgstr "ReiserFS："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_15)
 #: config/configurepagefilesystemcolors.ui:56
 #, kde-format
 msgid "UFS:"
-msgstr "UFS："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_31)
 #: config/configurepagefilesystemcolors.ui:69
 #, kde-format
 msgid "ISO 9660:"
-msgstr "ISO 9660："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_24)
 #: config/configurepagefilesystemcolors.ui:88
 #, kde-format
 msgid "OCFS2:"
-msgstr "OCFS2："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_22)
 #: config/configurepagefilesystemcolors.ui:104
 #, kde-format
 msgid "XFS:"
-msgstr "XFS："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_27)
 #: config/configurepagefilesystemcolors.ui:123
 #, kde-format
 msgid "NILFS2:"
-msgstr "NILFS2："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_6)
 #: config/configurepagefilesystemcolors.ui:172
 #, kde-format
 msgid "FAT16:"
-msgstr "FAT16："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_13)
 #: config/configurepagefilesystemcolors.ui:185
 #, kde-format
 msgid "extended:"
-msgstr "扩展分区："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_33)
 #: config/configurepagefilesystemcolors.ui:198
 #, kde-format
 msgid "LUKS2:"
-msgstr "LUKS2："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_17)
 #: config/configurepagefilesystemcolors.ui:214
 #, kde-format
 msgid "unformatted:"
-msgstr "未格式化："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_30)
 #: config/configurepagefilesystemcolors.ui:233
 #, kde-format
 msgid "UDF:"
-msgstr "UDF："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_25)
 #: config/configurepagefilesystemcolors.ui:246
 #, kde-format
 msgid "ZFS:"
-msgstr "ZFS："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_3)
 #: config/configurepagefilesystemcolors.ui:294
 #, kde-format
 msgid "ext4:"
-msgstr "ext4："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_10)
 #: config/configurepagefilesystemcolors.ui:310
 #, kde-format
 msgid "HPFS:"
-msgstr "HPFS："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_11)
 #: config/configurepagefilesystemcolors.ui:368
 #, kde-format
 msgid "JFS:"
-msgstr "JFS："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_2)
 #: config/configurepagefilesystemcolors.ui:381
 #, kde-format
 msgid "ext3:"
-msgstr "ext3："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_8)
 #: config/configurepagefilesystemcolors.ui:407
 #, kde-format
 msgid "Reiser4:"
-msgstr "Reiser4："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_21)
 #: config/configurepagefilesystemcolors.ui:439
 #, kde-format
 msgid "Btrfs:"
-msgstr "Btrfs："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
 #: config/configurepagefilesystemcolors.ui:481
 #, kde-format
 msgid "ext2:"
-msgstr "ext2："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_29)
 #: config/configurepagefilesystemcolors.ui:500
 #, kde-format
 msgid "F2FS:"
-msgstr "F2FS："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_28)
 #: config/configurepagefilesystemcolors.ui:519
 #, kde-format
 msgid "LVM2 PV:"
-msgstr "LVM2 PV："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_26)
 #: config/configurepagefilesystemcolors.ui:545
 #, kde-format
 msgid "exFAT:"
-msgstr "exFAT："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:558
 #, kde-format
 msgid "NTFS:"
-msgstr "NTFS："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_20)
 #: config/configurepagefilesystemcolors.ui:584
 #, kde-format
 msgid "LUKS:"
-msgstr "LUKS："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_4)
 #: config/configurepagefilesystemcolors.ui:613
 #, kde-format
 msgid "Linux Swap:"
-msgstr "Linux 交换分区："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_32)
 #: config/configurepagefilesystemcolors.ui:664
 #, kde-format
 msgid "FAT12:"
-msgstr "FAT12："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_12)
 #: config/configurepagefilesystemcolors.ui:677
 #, kde-format
 msgid "HFS:"
-msgstr "HFS："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_35)
 #: config/configurepagefilesystemcolors.ui:709
 #, kde-format
 msgid "APFS:"
-msgstr "APFS："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_5)
 #: config/configurepagefilesystemcolors.ui:722
 #, kde-format
 msgid "FAT32:"
-msgstr "FAT32："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
 #: config/configurepagefilesystemcolors.ui:751
 #, kde-format
 msgid "Linux RAID:"
-msgstr "Linux RAID："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_34)
 #: config/configurepagefilesystemcolors.ui:764
 #, kde-format
 msgid "BitLocker:"
-msgstr "BitLocker："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_14)
 #: config/configurepagefilesystemcolors.ui:793
 #, kde-format
 msgid "HFS+:"
-msgstr "HFS+："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_16)
 #: config/configurepagefilesystemcolors.ui:819
 #, kde-format
 msgid "unknown:"
-msgstr "未知："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_36)
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr "Minix："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
 #, kde-format
 msgid "Bcachefs:"
-msgstr "Bcachefs："
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
 #, kde-format
 msgid "Partition Alignment"
-msgstr "分区对齐"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
 #: config/configurepagegeneral.ui:34
 #, kde-format
 msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr "根据柱面对齐 (兼容 Windows XP)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
 #, kde-format
 msgid "Sector alignment:"
-msgstr "扇区对齐："
+msgstr ""
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
 #, kde-format
 msgid " sectors"
-msgstr " 扇区"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
 #: config/configurepagegeneral.ui:79
 #, kde-format
 msgid "Align partitions per default"
-msgstr "按默认设置对齐分区"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: config/configurepagegeneral.ui:98
 #, kde-format
 msgid "Logging"
-msgstr "日志"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:104
 #, kde-format
 msgid "Hide messages below:"
-msgstr "隐藏低于此级别的消息："
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:115
 #, kde-format
 msgid "Debug"
-msgstr "调试"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:120
 #, kde-format
 msgid "Information"
-msgstr "信息"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:125
 #, kde-format
 msgid "Warning"
-msgstr "警告"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:130
 #, kde-format
 msgid "Error"
-msgstr "错误"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: config/configurepagegeneral.ui:147
 #, kde-format
 msgid "File Systems"
-msgstr "文件系统"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:153
 #, kde-format
 msgid "Default file system:"
-msgstr "默认文件系统："
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:175
 #, kde-format
 msgid "Shredding"
-msgstr "粉碎"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: config/configurepagegeneral.ui:181
 #, kde-format
 msgid "Overwrite with:"
-msgstr "覆盖方式："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
 #: config/configurepagegeneral.ui:188
 #, kde-format
 msgid "Random data"
-msgstr "随机数据"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:198
 #, kde-format
 msgid "Zeros"
-msgstr "零值"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
 #: gui/applyprogressdetailswidgetbase.ui:42
 #, kde-format
 msgid "Save"
-msgstr "保存"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonBrowser)
 #: gui/applyprogressdetailswidgetbase.ui:49
 #, kde-format
 msgid "Open in External Browser"
-msgstr "使用外部浏览器打开"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:83 gui/applyprogressdialog.cpp:172
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
-msgstr "详情(&D)"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
-msgstr "正在进行设置..."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
-msgstr "您确定要取消吗？"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
-msgstr "取消正在执行的操作"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
-msgstr "是的，取消操作"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
-msgstr "正在等待操作结束..."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
-msgstr "全部操作成功完成。"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
-msgstr "操作已取消。"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
-msgstr "执行操作时发生错误。已中止。"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:341
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
-msgstr "[%1/%2] - %3：%4"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:375
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
-msgstr "总时间：%1"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1046
 #: gui/mainwindow.cpp:1211 gui/smartdialog.cpp:227
@@ -542,73 +538,73 @@ msgctxt "@info"
 msgid ""
 "Could not create temporary file when trying to save to <filename>%1</"
 "filename>."
-msgstr "尝试保存到文件 <filename>%1</filename> 时无法创建临时文件。"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:423
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
-msgstr "无法保存报告。"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:447
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
-msgstr "无法创建临时文件 <filename>%1</filename> 进行写入。"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:447
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."
-msgstr "无法启动浏览器。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
 #: gui/applyprogressdialogwidgetbase.ui:41
 #, kde-format
 msgid "Operations and Jobs"
-msgstr "操作和任务"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
 #: gui/applyprogressdialogwidgetbase.ui:46
 #, kde-format
 msgid "Time Elapsed"
-msgstr "已用时间"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
 #: gui/applyprogressdialogwidgetbase.ui:72
 #, kde-format
 msgid "Total Time: 00:00:00"
-msgstr "总时间：00:00:00"
+msgstr ""
 
 #. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
 #: gui/applyprogressdialogwidgetbase.ui:89
 #, no-c-format, kde-format
 msgid "Operation: %p%"
-msgstr "操作：%p%"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
 #: gui/applyprogressdialogwidgetbase.ui:99
 #, kde-format
 msgid "Status"
-msgstr "状态"
+msgstr ""
 
 #. i18n: ectx: property (format), widget (QProgressBar, m_ProgressTotal)
 #: gui/applyprogressdialogwidgetbase.ui:115
 #, no-c-format, kde-format
 msgid "Total: %p%"
-msgstr "总共：%p%"
+msgstr ""
 
 #: gui/createpartitiontabledialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a New Partition Table on <filename>%1</filename>"
-msgstr "创建新分区表到 <filename>%1</filename>"
+msgstr ""
 
 #: gui/createpartitiontabledialog.cpp:34
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create &New Partition Table"
-msgstr "创建新分区表(&N)"
+msgstr ""
 
 #: gui/createpartitiontabledialog.cpp:59
 #, kde-kuit-format
@@ -619,197 +615,194 @@ msgid ""
 "the most the MS-Dos partition table type supports, so you will not be able "
 "to use the whole device.</para>"
 msgstr ""
-"<para>您确定要创建 MS-DOS 分区表到 <filename>%1</filename> 吗？</"
-"para><para>MS-DOS 类型的分区表最多支持 2^32 个扇区，由于此设备的扇区数超出此"
-"数目，您将无法使用设备的全部容量。</para>"
 
 #: gui/createpartitiontabledialog.cpp:61
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Create MS-Dos Partition Table Type?"
-msgstr "您确定要创建 MS-Dos 类型的分区表吗？"
+msgstr ""
 
 #: gui/createpartitiontabledialog.cpp:62
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create MS-Dos Type"
-msgstr "创建 MS-Dos 类型"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/createpartitiontablewidgetbase.ui:24
 #, kde-format
 msgid "Choose the type of partition table you want to create:"
-msgstr "选择要创建的分区表类型："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
 #: gui/createpartitiontablewidgetbase.ui:33
 #, kde-format
 msgid "GPT"
-msgstr "GPT"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
 #: gui/createpartitiontablewidgetbase.ui:43
 #, kde-format
 msgid "MS-Dos"
-msgstr "MS-Dos"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
 #: gui/createpartitiontablewidgetbase.ui:70
 #, kde-format
 msgid "(icon)"
-msgstr "(图标)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: gui/createpartitiontablewidgetbase.ui:83
 #, kde-format
 msgid "<b>Warning:</b> This will destroy all data on the device!"
-msgstr "<b>警告：</b> 这将删除设备上的全部数据！"
+msgstr ""
 
 #: gui/createvolumegroupdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create new Volume Group"
-msgstr "创建新卷组"
+msgstr ""
 
 #: gui/devicepropsdialog.cpp:42
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Device Properties: <filename>%1</filename>"
-msgstr "设备属性：<filename>%1</filename>"
+msgstr ""
 
 #: gui/devicepropsdialog.cpp:76 gui/infopane.cpp:168
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "%1 (read only)"
-msgstr "%1 (只读)"
+msgstr ""
 
 #: gui/devicepropsdialog.cpp:107 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "good"
-msgstr "良好 "
+msgstr ""
 
 #: gui/devicepropsdialog.cpp:112 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "BAD"
-msgstr "不良"
+msgstr ""
 
 #: gui/devicepropsdialog.cpp:117 gui/smartdialog.cpp:129
 #, kde-kuit-format
 msgctxt "@label"
 msgid "(unknown)"
-msgstr "(未知)"
+msgstr ""
 
 #: gui/devicepropsdialog.cpp:123
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "LVM Volume Group"
-msgstr "LVM 卷组"
+msgstr ""
 
 #: gui/devicepropsdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Software RAID Device"
-msgstr "软件 RAID 设备"
+msgstr ""
 
 #: gui/devicepropsdialog.cpp:127
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Volume Manager Device"
-msgstr "卷管理器设备"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
 #: gui/devicepropswidgetbase.ui:63
 #, kde-format
 msgid "Partition table:"
-msgstr "分区表："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
 #: gui/devicepropswidgetbase.ui:85
 #, kde-format
 msgid "&Cylinder alignment"
-msgstr "柱面对齐(&C)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
 #: gui/devicepropswidgetbase.ui:92
 #, kde-format
 msgid "Sector based align&ment"
-msgstr "根据扇区对齐(&M)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/devicepropswidgetbase.ui:121
 #, kde-format
 msgid "Capacity:"
-msgstr "容量："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
 #: gui/devicepropswidgetbase.ui:141
 #, kde-format
 msgid "Total sectors:"
-msgstr "总扇区数："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
 #: gui/devicepropswidgetbase.ui:168
 #, kde-format
 msgid "Logical sector size:"
-msgstr "逻辑扇区大小："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
 #: gui/devicepropswidgetbase.ui:188
 #, kde-format
 msgid "Physical sector size:"
-msgstr "物理扇区大小："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
 #: gui/devicepropswidgetbase.ui:222
 #, kde-format
 msgid "Primaries/Max:"
-msgstr "主分区数/上限："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
 #: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
 #: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
 #, kde-format
 msgid "SMART status:"
-msgstr "SMART 状态："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
 #: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:102
 #, kde-format
 msgid "More..."
-msgstr "更多..."
+msgstr ""
 
 #: gui/editmountoptionsdialog.cpp:25
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Edit additional mount options"
-msgstr "编辑额外挂载选项"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
 #: gui/editmountoptionsdialogwidgetbase.ui:19
 #, kde-format
 msgid "Edit Mount Options"
-msgstr "编辑挂载选项"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_Label)
 #: gui/editmountoptionsdialogwidgetbase.ui:25
 #, kde-format
 msgid "Edit the mount options for this file system:"
-msgstr "编辑此文件系统的挂载选项："
+msgstr ""
 
 #. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, m_EditOptions)
 #: gui/editmountoptionsdialogwidgetbase.ui:32
 #, kde-format
 msgid "Option1,Option2"
-msgstr "选项1,选项2"
+msgstr ""
 
 #: gui/editmountpointdialog.cpp:32
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Edit mount point for <filename>%1</filename>"
-msgstr "编辑 <filename>%1</filename> 的挂载点"
+msgstr ""
 
 #: gui/editmountpointdialog.cpp:62
 #, kde-kuit-format
@@ -820,165 +813,162 @@ msgid ""
 "overwrite the existing file on your hard drive now. This <emphasis "
 "strong='1'>can not be undone</emphasis>.</warning></para>"
 msgstr ""
-"<para>您确定要保存对系统分区表文件 <filename>/etc/fstab</filename> 的修改吗?"
-"</para><para><warning> 这将覆盖硬盘上的原有文件。此操作<emphasis strong='1'>"
-"无法撤销</emphasis>。</warning></para>"
 
 #: gui/editmountpointdialog.cpp:64
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really save changes?"
-msgstr "您确定要保存更改吗？"
+msgstr ""
 
 #: gui/editmountpointdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save changes"
-msgstr "保存更改"
+msgstr ""
 
 #: gui/editmountpointdialog.cpp:80
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
-msgstr "无法保存挂载点到 <filename>/etc/fstab</filename>。"
+msgstr ""
 
 #: gui/editmountpointdialog.cpp:81
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Saving Mount Points"
-msgstr "保存挂载点时发生错误"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
 #: gui/editmountpointdialogwidgetbase.ui:23
 #, kde-format
 msgid "&Label"
-msgstr "卷标(&L)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
 #: gui/editmountpointdialogwidgetbase.ui:46
 #, kde-format
 msgid "Dump &Frequency:"
-msgstr "转储频率(&F)："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
 #: gui/editmountpointdialogwidgetbase.ui:75
 #, kde-format
 msgid "No automatic mount"
-msgstr "不自动挂载"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
 #: gui/editmountpointdialogwidgetbase.ui:95
 #, kde-format
 msgid "Synchronous access"
-msgstr "同步访问"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
 #: gui/editmountpointdialogwidgetbase.ui:109
 #, kde-format
 msgid "Pass &Number:"
-msgstr "Pass 数值 (&N):"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
 #: gui/editmountpointdialogwidgetbase.ui:128
 #, kde-format
 msgid "Remove"
-msgstr "移除"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (KMessageWidget, m_PathMessage)
 #: gui/editmountpointdialogwidgetbase.ui:141
 #, kde-format
 msgid "A valid path is required."
-msgstr "需要提供一个有效的路径。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
 #: gui/editmountpointdialogwidgetbase.ui:173
 #, kde-format
 msgid "Path:"
-msgstr "路径："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
 #: gui/editmountpointdialogwidgetbase.ui:183
 #, kde-format
 msgid "Users can mount and unmount"
-msgstr "允许用户挂载和卸载"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelType)
 #: gui/editmountpointdialogwidgetbase.ui:190
 #, kde-format
 msgid "Type:"
-msgstr "类型："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
 #: gui/editmountpointdialogwidgetbase.ui:200
 #, kde-format
 msgid "UU&ID"
-msgstr "UU&ID"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
 #: gui/editmountpointdialogwidgetbase.ui:213
 #, kde-format
 msgid "Select..."
-msgstr "选择..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
 #: gui/editmountpointdialogwidgetbase.ui:220
 #, kde-format
 msgid "De&vice Node"
-msgstr "设备节点(&V)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
 #: gui/editmountpointdialogwidgetbase.ui:230
 #, kde-format
 msgid "No update of file access times"
-msgstr "不更新文件访问时间"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
 #: gui/editmountpointdialogwidgetbase.ui:250
 #, kde-format
 msgid "No binary execution"
-msgstr "不可执行二进制程序"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
 #: gui/editmountpointdialogwidgetbase.ui:264
 #, kde-format
 msgid "Update access times relative to modification"
-msgstr "更新与修改相关的访问时间"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
 #: gui/editmountpointdialogwidgetbase.ui:271
 #, kde-format
 msgid "Don't prevent the system from booting if not mountable"
-msgstr "无法挂载时不要阻止系统启动"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
 #: gui/editmountpointdialogwidgetbase.ui:285
 #, kde-format
 msgid "No update of directory access times"
-msgstr "不更新目录访问时间"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/editmountpointdialogwidgetbase.ui:295
 #, kde-format
 msgid "Identify by:"
-msgstr "识别方式："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
 #: gui/editmountpointdialogwidgetbase.ui:305
 #, kde-format
 msgid "Read-only"
-msgstr "只读"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
 #: gui/editmountpointdialogwidgetbase.ui:312
 #, kde-format
 msgid "Options:"
-msgstr "选项："
+msgstr ""
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "File System Support"
-msgstr "文件系统支持情况"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/filesystemsupportdialogwidgetbase.ui:23
@@ -991,317 +981,314 @@ msgid ""
 "if all required tools are installed. Please see the documentation for "
 "details. "
 msgstr ""
-"此表显示了支持的文件系统和可以执行的操作。某些文件系统需要安装外部工具来获得"
-"功能支持。但即使安装了全部所需的工具，也不意味着能在所有文件系统上执行所有操"
-"作。详情请查看相关文档。 "
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:70
 #, kde-format
 msgid "File System"
-msgstr "文件系统"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:75
 #, kde-format
 msgid "Create"
-msgstr "创建"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:80
 #, kde-format
 msgid "Grow"
-msgstr "扩大"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:85
 #, kde-format
 msgid "Shrink"
-msgstr "缩小"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:90
 #, kde-format
 msgid "Move"
-msgstr "移动"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:95
 #, kde-format
 msgid "Copy"
-msgstr "复制"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:100
 #, kde-format
 msgid "Check"
-msgstr "检查"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:105
 #, kde-format
 msgid "Read Label"
-msgstr "读取卷标"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:110
 #, kde-format
 msgid "Write Label"
-msgstr "写入卷标"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:115
 #, kde-format
 msgid "Read Usage"
-msgstr "读取使用情况"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:120
 #, kde-format
 msgid "Backup"
-msgstr "备份"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:125
 #, kde-format
 msgid "Restore"
-msgstr "还原"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:130
 #, kde-format
 msgid "Support Tools"
-msgstr "支持工具"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRescan)
 #: gui/filesystemsupportdialogwidgetbase.ui:140
 #, kde-format
 msgctxt "@action:button"
 msgid "Rescan Support"
-msgstr "重新扫描支持状态"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
 #: gui/infopane.cpp:47 gui/mainwindowbase.ui:47
 #, kde-format, kde-kuit-format
 msgctxt "@title:window"
 msgid "Information"
-msgstr "信息"
+msgstr ""
 
 #: gui/infopane.cpp:106
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition Information"
-msgstr "分区信息"
+msgstr ""
 
 #: gui/infopane.cpp:113 gui/infopane.cpp:127 gui/infopane.cpp:139
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "File system:"
-msgstr "文件系统："
+msgstr ""
 
 #: gui/infopane.cpp:114 gui/infopane.cpp:128 gui/infopane.cpp:140
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Capacity:"
-msgstr "容量："
+msgstr ""
 
 #: gui/infopane.cpp:115
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher name:"
-msgstr "加密名称："
+msgstr ""
 
 #: gui/infopane.cpp:116
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher mode:"
-msgstr "加密模式："
+msgstr ""
 
 #: gui/infopane.cpp:117
 #, kde-format
 msgctxt "@label partition"
 msgid "Hash:"
-msgstr "哈希值："
+msgstr ""
 
 #: gui/infopane.cpp:118
 #, kde-format
 msgctxt "@label partition"
 msgid "Key size:"
-msgstr "密钥长度："
+msgstr ""
 
 #: gui/infopane.cpp:119
 #, kde-format
 msgctxt "@label partition"
 msgid "Payload offset:"
-msgstr "负载偏移："
+msgstr ""
 
 #: gui/infopane.cpp:120 gui/infopane.cpp:135 gui/infopane.cpp:143
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "First sector:"
-msgstr "起始扇区："
+msgstr ""
 
 #: gui/infopane.cpp:121 gui/infopane.cpp:136 gui/infopane.cpp:144
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Last sector:"
-msgstr "结束扇区："
+msgstr ""
 
 #: gui/infopane.cpp:122 gui/infopane.cpp:137 gui/infopane.cpp:145
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Number of sectors:"
-msgstr "扇区数："
+msgstr ""
 
 #: gui/infopane.cpp:129 gui/infopane.cpp:141
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Available:"
-msgstr "可用："
+msgstr ""
 
 #: gui/infopane.cpp:130 gui/infopane.cpp:142
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Used:"
-msgstr "已用："
+msgstr ""
 
 #: gui/infopane.cpp:131
 #, kde-format
 msgctxt "@label partition"
 msgid "PE Size:"
-msgstr "物理区域大小："
+msgstr ""
 
 #: gui/infopane.cpp:132
 #, kde-format
 msgctxt "@label partition"
 msgid "Total PE:"
-msgstr "总物理区域："
+msgstr ""
 
 #: gui/infopane.cpp:133
 #, kde-format
 msgctxt "@label partition"
 msgid "Free PE:"
-msgstr "空闲物理区域："
+msgstr ""
 
 #: gui/infopane.cpp:134
 #, kde-format
 msgctxt "@label partition"
 msgid "Allocated PE:"
-msgstr "已分配物理区域："
+msgstr ""
 
 #: gui/infopane.cpp:157
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Device Information"
-msgstr "设备信息"
+msgstr ""
 
 #: gui/infopane.cpp:161
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Path:"
-msgstr "路径："
+msgstr ""
 
 #: gui/infopane.cpp:176
 #, kde-format
 msgctxt "@label device"
 msgid "Type:"
-msgstr "类型："
+msgstr ""
 
 #: gui/infopane.cpp:177 gui/infopane.cpp:185 gui/infopane.cpp:193
 #, kde-format
 msgctxt "@label device"
 msgid "Capacity:"
-msgstr "容量："
+msgstr ""
 
 #: gui/infopane.cpp:178
 #, kde-format
 msgctxt "@label device"
 msgid "Total sectors:"
-msgstr "总扇区数："
+msgstr ""
 
 #: gui/infopane.cpp:179
 #, kde-format
 msgctxt "@label device"
 msgid "Logical sector size:"
-msgstr "逻辑扇区大小："
+msgstr ""
 
 #: gui/infopane.cpp:180
 #, kde-format
 msgctxt "@label device"
 msgid "Physical sector size:"
-msgstr "物理扇区大小："
+msgstr ""
 
 #: gui/infopane.cpp:181
 #, kde-format
 msgctxt "@label device"
 msgid "Primaries/Max:"
-msgstr "主分区数/上限："
+msgstr ""
 
 #: gui/infopane.cpp:184 gui/infopane.cpp:192
 #, kde-format
 msgctxt "@label device"
 msgid "Volume Type:"
-msgstr "卷类型："
+msgstr ""
 
 #: gui/infopane.cpp:186
 #, kde-format
 msgctxt "@label device"
 msgid "PE Size:"
-msgstr "物理区域大小："
+msgstr ""
 
 #: gui/infopane.cpp:187
 #, kde-format
 msgctxt "@label device"
 msgid "Total PE:"
-msgstr "总物理区域："
+msgstr ""
 
 #: gui/infopane.cpp:188
 #, kde-format
 msgctxt "@label device"
 msgid "Allocated PE:"
-msgstr "已分配物理区域："
+msgstr ""
 
 #: gui/infopane.cpp:189
 #, kde-format
 msgctxt "@label device"
 msgid "Free PE:"
-msgstr "空闲物理区域："
+msgstr ""
 
 #: gui/infopane.cpp:194
 #, kde-format
 msgctxt "@label device"
 msgid "RAID Level:"
-msgstr "RAID 级别："
+msgstr ""
 
 #: gui/infopane.cpp:195
 #, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr "区块大小："
+msgstr ""
 
 #: gui/infopane.cpp:196
 #, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr "总区块数："
+msgstr ""
 
 #: gui/infopane.cpp:197
 #, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr "阵列大小："
+msgstr ""
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Insert a partition"
-msgstr "插入分区"
+msgstr ""
 
 #: gui/listphysicalvolumes.cpp:39
 #, kde-kuit-format
 msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
-msgstr "%1 | %2"
+msgstr ""
 
 #: gui/mainwindow.cpp:167
 #, kde-format
@@ -1310,8 +1297,6 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
-"KDE 分区管理器需要提供相应权限才能工作。请刷新设备列表，然后在显示提示时进行"
-"身份验证。"
 
 #: gui/mainwindow.cpp:234
 #, kde-kuit-format
@@ -1323,578 +1308,579 @@ msgid_plural ""
 "<para>Do you really want to quit the application?</para><para>There are "
 "still %1 operations pending.</para>"
 msgstr[0] ""
-"<para>您确定要要退出应用程序吗？</para><para>还有 %1 个待执行操作。</para>"
+msgstr[1] ""
 
 #: gui/mainwindow.cpp:236
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
-msgstr "您想要丢弃待执行操作并退出吗？"
+msgstr ""
 
 #: gui/mainwindow.cpp:237
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
-msgstr "退出 <application>%1</application>"
+msgstr ""
 
 #: gui/mainwindow.cpp:279
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
-msgstr "撤销"
+msgstr ""
 
 #: gui/mainwindow.cpp:280
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
-msgstr "撤销上次操作"
+msgstr ""
 
 #: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
-msgstr "移除列表中的上次操作。"
+msgstr ""
 
 #: gui/mainwindow.cpp:288
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
-msgstr "清除"
+msgstr ""
 
 #: gui/mainwindow.cpp:289
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
-msgstr "清除全部操作"
+msgstr ""
 
 #: gui/mainwindow.cpp:290
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
-msgstr "清空待执行操作列表。"
+msgstr ""
 
 #: gui/mainwindow.cpp:296
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
-msgstr "执行"
+msgstr ""
 
 #: gui/mainwindow.cpp:297
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
-msgstr "执行全部操作"
+msgstr ""
 
 #: gui/mainwindow.cpp:298
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
-msgstr "应用列表中的待执行操作。"
+msgstr ""
 
 #: gui/mainwindow.cpp:305
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
-msgstr "创建新分区表"
+msgstr ""
 
 #: gui/mainwindow.cpp:306
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
-msgstr "创建新分区表"
+msgstr ""
 
 #: gui/mainwindow.cpp:307
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
-msgstr "为所选设备创建一个新的空分区表。"
+msgstr ""
 
 #: gui/mainwindow.cpp:314
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
-msgstr "导出分区表"
+msgstr ""
 
 #: gui/mainwindow.cpp:315
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
-msgstr "导出分区表"
+msgstr ""
 
 #: gui/mainwindow.cpp:316
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
-msgstr "导出设备的分区表到一个文件。"
+msgstr ""
 
 #: gui/mainwindow.cpp:322
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
-msgstr "导入分区表"
+msgstr ""
 
 #: gui/mainwindow.cpp:323
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
-msgstr "导入分区表"
+msgstr ""
 
 #: gui/mainwindow.cpp:324
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
-msgstr "导入文本文件为分区表。"
+msgstr ""
 
 #: gui/mainwindow.cpp:331
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
-msgstr "移除卷组"
+msgstr ""
 
 #: gui/mainwindow.cpp:332
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
-msgstr "移除选中的卷组"
+msgstr ""
 
 #: gui/mainwindow.cpp:333
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
-msgstr "移除选中的卷组。"
+msgstr ""
 
 #: gui/mainwindow.cpp:341
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
-msgstr "调整卷组大小"
+msgstr ""
 
 #: gui/mainwindow.cpp:342
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
-msgstr "调整选中卷组的大小"
+msgstr ""
 
 #: gui/mainwindow.cpp:343
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
-msgstr "扩大或缩小选中的卷组。"
+msgstr ""
 
 #: gui/mainwindow.cpp:351
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
-msgstr "停用卷组"
+msgstr ""
 
 #: gui/mainwindow.cpp:352
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
-msgstr "停用选中的卷组"
+msgstr ""
 
 #: gui/mainwindow.cpp:353
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
-msgstr "在拔出移动存储设备之前，停用选中的卷组。"
+msgstr ""
 
 #: gui/mainwindow.cpp:359
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
-msgstr "SMART 状态"
+msgstr ""
 
 #: gui/mainwindow.cpp:360
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
-msgstr "显示 SMART 状态"
+msgstr ""
 
 #: gui/mainwindow.cpp:361
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
-msgstr "如果设备支持，显示它的 SMART 状态"
+msgstr ""
 
 #: gui/mainwindow.cpp:366 gui/mainwindow.cpp:458
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
-msgstr "属性"
+msgstr ""
 
 #: gui/mainwindow.cpp:367
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
-msgstr "显示设备属性对话框"
+msgstr ""
 
 #: gui/mainwindow.cpp:368
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
-msgstr "查看和修改设备属性"
+msgstr ""
 
 #: gui/mainwindow.cpp:375
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
-msgstr "新建"
+msgstr ""
 
 #: gui/mainwindow.cpp:376
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
-msgstr "新建分区"
+msgstr ""
 
 #: gui/mainwindow.cpp:377
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
-msgstr "创建新分区。"
+msgstr ""
 
 #: gui/mainwindow.cpp:384
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
-msgstr "调整大小/移动"
+msgstr ""
 
 #: gui/mainwindow.cpp:385
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
-msgstr "调整分区大小或移动分区"
+msgstr ""
 
 #: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
-msgstr "缩小、扩大或移动已有分区。"
+msgstr ""
 
 #: gui/mainwindow.cpp:393
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
-msgstr "删除"
+msgstr ""
 
 #: gui/mainwindow.cpp:394
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
-msgstr "删除分区"
+msgstr ""
 
 #: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
-msgstr "删除分区。"
+msgstr ""
 
 #: gui/mainwindow.cpp:402
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
-msgstr "粉碎"
+msgstr ""
 
 #: gui/mainwindow.cpp:403
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
-msgstr "粉碎分区"
+msgstr ""
 
 #: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
-msgstr "粉碎一个分区，使其中的内容无法被恢复。"
+msgstr ""
 
 #: gui/mainwindow.cpp:411
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
-msgstr "复制"
+msgstr ""
 
 #: gui/mainwindow.cpp:412
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
-msgstr "复制分区"
+msgstr ""
 
 #: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
-msgstr "复制已有分区。"
+msgstr ""
 
 #: gui/mainwindow.cpp:420
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
-msgstr "粘贴"
+msgstr ""
 
 #: gui/mainwindow.cpp:421
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
-msgstr "粘贴分区"
+msgstr ""
 
 #: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
-msgstr "粘贴复制的分区。"
+msgstr ""
 
 #: gui/mainwindow.cpp:429
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
-msgstr "编辑挂载点"
+msgstr ""
 
 #: gui/mainwindow.cpp:430
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
-msgstr "编辑挂载点"
+msgstr ""
 
 #: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
-msgstr "编辑一个分区的挂载点和选项。"
+msgstr ""
 
 #: gui/mainwindow.cpp:436
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
-msgstr "挂载"
+msgstr ""
 
 #: gui/mainwindow.cpp:437
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
-msgstr "挂载或卸载分区"
+msgstr ""
 
 #: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
-msgstr "挂载或卸载分区。"
+msgstr ""
 
 #: gui/mainwindow.cpp:443
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
-msgstr "解锁"
+msgstr ""
 
 #: gui/mainwindow.cpp:444
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
-msgstr "解锁或锁定加密分区"
+msgstr ""
 
 #: gui/mainwindow.cpp:445
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
-msgstr "解锁或锁定加密分区."
+msgstr ""
 
 #: gui/mainwindow.cpp:450
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
-msgstr "检查"
+msgstr ""
 
 #: gui/mainwindow.cpp:451
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
-msgstr "检查分区"
+msgstr ""
 
 #: gui/mainwindow.cpp:452
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
-msgstr "检查分区的文件系统是否存在错误。"
+msgstr ""
 
 #: gui/mainwindow.cpp:459
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
-msgstr "显示分区属性对话框"
+msgstr ""
 
 #: gui/mainwindow.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
-msgstr "查看和修改分区属性 (卷标、分区标记等)"
+msgstr ""
 
 #: gui/mainwindow.cpp:466
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
-msgstr "备份"
+msgstr ""
 
 #: gui/mainwindow.cpp:467
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
-msgstr "备份分区"
+msgstr ""
 
 #: gui/mainwindow.cpp:468
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
-msgstr "备份分区到镜像文件。"
+msgstr ""
 
 #: gui/mainwindow.cpp:474
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
-msgstr "还原"
+msgstr ""
 
 #: gui/mainwindow.cpp:475
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
-msgstr "还原分区"
+msgstr ""
 
 #: gui/mainwindow.cpp:476
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
-msgstr "从镜像文件还原分区。"
+msgstr ""
 
 #: gui/mainwindow.cpp:483
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
-msgstr "新建卷组"
+msgstr ""
 
 #: gui/mainwindow.cpp:484
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
-msgstr "创建新的 LVM 卷组"
+msgstr ""
 
 #: gui/mainwindow.cpp:485
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
-msgstr "创建新的 LVM 卷组作为设备使用。"
+msgstr ""
 
 #: gui/mainwindow.cpp:491
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
-msgstr "文件系统支持情况"
+msgstr ""
 
 #: gui/mainwindow.cpp:492
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
-msgstr "查看文件系统支持情况信息"
+msgstr ""
 
 #: gui/mainwindow.cpp:493
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
-msgstr "显示程序的文件系统支持情况信息。"
+msgstr ""
 
 #: gui/mainwindow.cpp:497
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
-msgstr "刷新设备"
+msgstr ""
 
 #: gui/mainwindow.cpp:498
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
-msgstr "刷新全部设备"
+msgstr ""
 
 #: gui/mainwindow.cpp:499
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
-msgstr "刷新设备列表。"
+msgstr ""
 
 #: gui/mainwindow.cpp:515
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
-msgstr "清除日志"
+msgstr ""
 
 #: gui/mainwindow.cpp:516
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
-msgstr "清除日志输出"
+msgstr ""
 
 #: gui/mainwindow.cpp:517
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
-msgstr "清除日志输出面板。"
+msgstr ""
 
 #: gui/mainwindow.cpp:522
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
-msgstr "保存日志"
+msgstr ""
 
 #: gui/mainwindow.cpp:523
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
-msgstr "保存日志输出"
+msgstr ""
 
 #: gui/mainwindow.cpp:524
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
-msgstr "保存日志输出到文件。"
+msgstr ""
 
 #: gui/mainwindow.cpp:530
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
-msgstr "关于 KPMcore 程序库"
+msgstr ""
 
 #: gui/mainwindow.cpp:531
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
-msgstr "显示关于 KPMcore 对话框"
+msgstr ""
 
 #: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
-msgstr "显示关于 KPMcore 对话框。"
+msgstr ""
 
 #: gui/mainwindow.cpp:714
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
-msgstr[0] "%1 个待执行操作"
+msgstr[0] ""
+msgstr[1] ""
 
 #: gui/mainwindow.cpp:809
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
-msgstr "正在使用后端程序插件：%1 (%2)"
+msgstr ""
 
 #: gui/mainwindow.cpp:813
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
-msgstr "正在扫描设备..."
+msgstr ""
 
 #: gui/mainwindow.cpp:851
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
-msgstr "扫描完成。"
+msgstr ""
 
 #: gui/mainwindow.cpp:915
 #, kde-kuit-format
@@ -1903,20 +1889,18 @@ msgid ""
 "<para>Do you really want to rescan the devices?</para><para><warning>This "
 "will also clear the list of pending operations.</warning></para>"
 msgstr ""
-"<para>您确定要重新扫描设备吗？</para><para><warning>这将同时清除待执行操作列"
-"表。</warning></para>"
 
 #: gui/mainwindow.cpp:917
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
-msgstr "您确定要重新扫描设备吗？"
+msgstr ""
 
 #: gui/mainwindow.cpp:918
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
-msgstr "重新扫描设备"
+msgstr ""
 
 #: gui/mainwindow.cpp:944
 #, kde-kuit-format
@@ -1925,75 +1909,73 @@ msgid ""
 "<para>Do you really want to apply the pending operations listed below?</"
 "para><para><warning>This will permanently modify your disks.</warning></para>"
 msgstr ""
-"<para>您确定要执行以下待执行操作吗？</para><para><warning>这将对磁盘数据进行"
-"永久性修改。</warning></para>"
 
 #: gui/mainwindow.cpp:946
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
-msgstr "您想要应用待执行操作吗？"
+msgstr ""
 
 #: gui/mainwindow.cpp:947
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
-msgstr "应用待执行操作"
+msgstr ""
 
 #: gui/mainwindow.cpp:949
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
-msgstr "正在应用操作..."
+msgstr ""
 
 #: gui/mainwindow.cpp:974
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
-msgstr "正在撤销操作：%1"
+msgstr ""
 
 #: gui/mainwindow.cpp:990
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
-msgstr "您真的要清除待执行操作列表吗？"
+msgstr ""
 
 #: gui/mainwindow.cpp:991
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
-msgstr "要清除待执行操作吗？"
+msgstr ""
 
 #: gui/mainwindow.cpp:992
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
-msgstr "清除待执行操作"
+msgstr ""
 
 #: gui/mainwindow.cpp:994
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
-msgstr "清除待执行操作列表。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1036
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
-msgstr "无法打开输入文件 <filename>%1</filename> 进行导入"
+msgstr ""
 
 #: gui/mainwindow.cpp:1036 gui/mainwindow.cpp:1046 gui/mainwindow.cpp:1054
 #: gui/mainwindow.cpp:1060
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
-msgstr "导入分区表错误"
+msgstr ""
 
 #: gui/mainwindow.cpp:1054
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
-msgstr "无法打开输入文件 <filename>%1</filename> 进行导入：%2"
+msgstr ""
 
 #: gui/mainwindow.cpp:1060
 #, kde-kuit-format
@@ -2002,7 +1984,6 @@ msgid ""
 "Could not open temporary file <filename>%1</filename> while trying to import "
 "from <filename>%2</filename>."
 msgstr ""
-"尝试导入 <filename>%2</filename> 时无法打开临时文件 <filename>%1</filename>。"
 
 #: gui/mainwindow.cpp:1090
 #, kde-kuit-format
@@ -2010,7 +1991,7 @@ msgctxt "@info"
 msgid ""
 "The import file <filename>%1</filename> does not contain a valid partition "
 "table."
-msgstr "导入的文件 <filename>%1</filename> 中未包含正确的分区表。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1090 gui/mainwindow.cpp:1100 gui/mainwindow.cpp:1107
 #: gui/mainwindow.cpp:1112 gui/mainwindow.cpp:1122 gui/mainwindow.cpp:1135
@@ -2019,56 +2000,56 @@ msgstr "导入的文件 <filename>%1</filename> 中未包含正确的分区表�
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
-msgstr "导入分区表时发生错误"
+msgstr ""
 
 #: gui/mainwindow.cpp:1100
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
-msgstr "导入文件包含 1 种以上的分区表类型 (第 %1 行)。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1107
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
-msgstr "未知分区表类型“%1” (第 %2 行)。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1112
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
-msgstr "不支持导入分区表类型“%1” (第 %2 行)。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1122
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
-msgstr "找到了分区，但缺少分区表类型 (第 %1 行)。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1135
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
-msgstr "分区 %1 将超出设备边界 (第 %2 行)。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1140
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
-msgstr "分区 %1 的结束扇区位于起始扇区之前 (第 %2 行)。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1159
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr "%2 分区的分区角色“%1”无法识别 (第 %3 行)。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1164
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
-msgstr "找不到分区 %1 的父分区或分区表 (第 %2 行)。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1169
 #, kde-kuit-format
@@ -2076,35 +2057,35 @@ msgctxt "@info"
 msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
-msgstr "找到了扩展分区，但“%1”类型的分区表不支持扩展分区 (第 %2 行)。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1176
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
-msgstr "无法为分区 %2 创建文件系统“%1” (第 %3 行)。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1191
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
-msgstr "无法解析导入文件中的第 %1 行。它将被忽略。"
+msgstr ""
 
 #: gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
-msgstr "导出分区表错误"
+msgstr ""
 
 #: gui/mainwindow.cpp:1381 gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1423
 #, kde-kuit-format
 msgid "%1%2"
-msgstr "%1%2"
+msgstr ""
 
 #: gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1398
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
-msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
+msgstr ""
 
 #: gui/mainwindow.cpp:1435
 #, kde-kuit-format
@@ -2121,38 +2102,30 @@ msgid ""
 "modify them.</para><para>You should find packages with these support tools "
 "in your distribution's package manager.</para>"
 msgstr ""
-"<para>本机系统中找不到当前硬盘文件系统所需的支持工具：</para><table "
-"style='margin-top:12px'><tr><td style='font-weight:bold;padding-right:12px;"
-"white-space:nowrap;'>分区</td><td style='font-weight:bold;padding-right:12px;"
-"white-space:nowrap;'>文件系统</td><td style='font-weight:bold;padding-"
-"right:12px;white-space:nowrap;'>支持工具</td><td style='font-weight:bold;"
-"padding-right:12px;white-space:nowrap;'>URL</td></tr>%1</table><para>如果不安"
-"装这些支持工具，您将无法修改这些文件系统。</para><para>您应当在本机安装的发行"
-"版的软件包管理器中查找相关软件包。</para>"
 
 #: gui/mainwindow.cpp:1448
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
-msgstr "缺少文件系统支持软件包"
+msgstr ""
 
 #: gui/mainwindow.cpp:1459
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr "无法识别的设备“%1” "
+msgstr ""
 
 #: gui/mainwindow.cpp:1468
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr "无法识别的分区“%1” "
+msgstr ""
 
 #: gui/mainwindow.cpp:1469
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr "打开分区时发生错误"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -2160,108 +2133,108 @@ msgstr "打开分区时发生错误"
 #, kde-format
 msgctxt "@title:window"
 msgid "KDE Partition Manager"
-msgstr "KDE 分区管理器"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
 #: gui/mainwindowbase.ui:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Devices"
-msgstr "设备"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
 #: gui/mainwindowbase.ui:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Pending Operations"
-msgstr "待执行操作"
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
 #: gui/mainwindowbase.ui:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Log Output"
-msgstr "日志输出"
+msgstr ""
 
 #: gui/newdialog.cpp:47
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a new partition"
-msgstr "创建新分区"
+msgstr ""
 
 #. i18n: ectx: ToolBar (partitionToolBar)
 #: gui/partitionmanagerui.rc:12
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition Manager Toolbar"
-msgstr "分区管理器工具栏"
+msgstr ""
 
 #. i18n: ectx: Menu (device)
 #: gui/partitionmanagerui.rc:30
 #, kde-format
 msgctxt "@title:menu"
 msgid "Device"
-msgstr "设备"
+msgstr ""
 
 #. i18n: ectx: Menu (selectedDevice)
 #: gui/partitionmanagerui.rc:32
 #, kde-format
 msgctxt "@title:menu"
 msgid "Select Current Device"
-msgstr "选择当前设备"
+msgstr ""
 
 #. i18n: ectx: Menu (tools)
 #: gui/partitionmanagerui.rc:49
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
-msgstr "工具"
+msgstr ""
 
 #. i18n: ectx: Menu (partition)
 #: gui/partitionmanagerui.rc:55
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition"
-msgstr "分区"
+msgstr ""
 
 #. i18n: ectx: Menu (panels)
 #: gui/partitionmanagerui.rc:77
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"
-msgstr "显示的面板"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:200
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
-msgstr "%1 [已加密]"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be mounted."
-msgstr "无法挂载分区 <filename>%1</filename> 的文件系统。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
-msgstr "无法挂载文件系统。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:407
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be unmounted."
-msgstr "无法卸载分区 <filename>%1</filename> 的文件系统。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:407
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
-msgstr "无法卸载文件系统。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:447
 #, kde-kuit-format
@@ -2269,13 +2242,13 @@ msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "unlocked."
-msgstr "无法解锁分区 <filename>%1</filename> 的加密文件系统。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:453
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
-msgstr "无法解锁加密文件系统。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
@@ -2283,13 +2256,13 @@ msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "locked."
-msgstr "无法锁定分区 <filename>%1</filename> 的加密文件系统。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:464
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
-msgstr "无法锁定加密文件系统。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:493
 #, kde-kuit-format
@@ -2305,14 +2278,13 @@ msgid_plural ""
 "create, paste or restore a primary partition on it before you delete an "
 "existing one.</para>"
 msgstr[0] ""
-"<para>此设备已经有 %1 个主分区。这是该类型分区表所能支持的上限。</para><para>"
-"在创建、粘贴或还原主分区之前，您必须删除一个已有主分区。</para>"
+msgstr[1] ""
 
 #: gui/partitionmanagerwidget.cpp:497
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
-msgstr "主分区过多。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:560
 #, kde-kuit-format
@@ -2323,15 +2295,12 @@ msgid ""
 "</para><para>Please unmount all partitions with higher logical numbers than "
 "%2 first.</para>"
 msgstr ""
-"<para>目前无法删除分区 <filename>%1</filename>，因为有一个或多个逻辑数字更高"
-"的分区仍处于挂载状态。</para><para>请先卸载全部逻辑数字高于 %2 的分区。</"
-"para>"
 
 #: gui/partitionmanagerwidget.cpp:563
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
-msgstr "无法删除分区。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:572
 #, kde-kuit-format
@@ -2340,19 +2309,19 @@ msgid ""
 "Do you really want to delete the partition that is currently in the "
 "clipboard? It will no longer be available for pasting after it has been "
 "deleted."
-msgstr "您确定要删除当前在剪贴板中的分区吗？如果删除，您将无法再粘贴该分区。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:574
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
-msgstr "您确定要删除剪贴板中的分区吗？"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:575
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
-msgstr "删除"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:628
 #, kde-kuit-format
@@ -2361,13 +2330,12 @@ msgid ""
 "Partition <filename>%1</filename> has the same position and size after "
 "resize/move. Ignoring operation."
 msgstr ""
-"分区 <filename>%1</filename> 在调整大小/移动之后具有相同位置。将忽略此操作。"
 
 #: gui/partitionmanagerwidget.cpp:656
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
-msgstr "分区 <filename>%1</filename> 已复制到剪贴板。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:719
 #, kde-kuit-format
@@ -2380,22 +2348,18 @@ msgid ""
 "window, all data currently stored on <filename>%1</filename> will "
 "unrecoverably be overwritten.</para>"
 msgstr ""
-"<para><warning>分区 <filename>%1</filename> 的数据将全部丢失。</warning></"
-"para><para>使用另一个分区或镜像文件覆盖目标分区时，该分区的全部数据将被彻底销"
-"毁。</para><para>如果您现在继续并在主窗口中应用对应的操作，当前存储在 "
-"<filename>%1</filename> 中的数据将被全部覆盖并无法恢复。</para>"
 
 #: gui/partitionmanagerwidget.cpp:727
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
-msgstr "您确定要覆盖已有分区吗？"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:728
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
-msgstr "覆盖分区"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:736
 #, kde-kuit-format
@@ -2405,14 +2369,12 @@ msgid ""
 "partition or the backup file.</para><para>Pick another target or resize this "
 "partition so it is as large as the source.</para>"
 msgstr ""
-"<para>选择的分区过小，无法保存来源分区或备份文件。</para> <para>请选择其他分"
-"区，或将该分区扩大为来源分区的大小。</para>"
 
 #: gui/partitionmanagerwidget.cpp:737
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
-msgstr "目标分区容量不足"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:740
 #, kde-kuit-format
@@ -2423,14 +2385,12 @@ msgid ""
 "are correctly aligned or when copying a primary partition into an extended "
 "partition.</para>"
 msgstr ""
-"<para>无法创建足够容量的分区来容纳来源分区。</para><para>当设备的分区没有全部"
-"对齐，或者在将主分区复制到扩展分区时，可能会发生这种问题。</para>"
 
 #: gui/partitionmanagerwidget.cpp:743
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
-msgstr "无法创建目标分区。"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
@@ -2439,146 +2399,145 @@ msgid ""
 "The file system in the image file <filename>%1</filename> is too large to be "
 "restored to the selected partition."
 msgstr ""
-"镜像文件 <filename>%1</filename> 中的文件系统体积过大，无法恢复到所选分区。"
 
 #: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
-msgstr "空间不足，无法还原文件系统。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:79
 #, kde-format
 msgid "Partition"
-msgstr "分区"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:84
 #, kde-format
 msgid "Type"
-msgstr "类型"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:89
 #, kde-format
 msgid "Mount Point"
-msgstr "挂载点"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:94
 #, kde-format
 msgid "Label"
-msgstr "卷标"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:99
 #, kde-format
 msgid "UUID"
-msgstr "UUID"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:104
 #, kde-format
 msgid "Partition Name"
-msgstr "分区名称"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:109
 #, kde-format
 msgid "Partition UUID"
-msgstr "分区 UUID"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:114
 #, kde-format
 msgid "Size"
-msgstr "大小"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:119
 #, kde-format
 msgid "Used"
-msgstr "已用"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:124
 #, kde-format
 msgid "Available"
-msgstr "可用"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:129
 #, kde-format
 msgid "First Sector"
-msgstr "起始扇区"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:134
 #, kde-format
 msgid "Last Sector"
-msgstr "结束扇区"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:139
 #, kde-format
 msgid "Number of Sectors"
-msgstr "扇区数"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:144
 #, kde-format
 msgid "Flags"
-msgstr "标记"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:55
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
-msgstr "分区属性：<filename>%1</filename>"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:110
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
-msgstr "(未找到)"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:115
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
-msgstr "(未找到)"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
-msgstr "空闲"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:124
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
-msgstr "至少挂载了 1 个逻辑分区。"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:126
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
-msgstr "挂载于 <filename>%1</filename>"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:128
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
-msgstr "已挂载"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:132 gui/partpropsdialog.cpp:135
 #: gui/partpropsdialog.cpp:136
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
-msgstr "(无)"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:360
 #, kde-kuit-format
@@ -2590,28 +2549,24 @@ msgid ""
 "the resulting operation in the main window, all data on <filename>%1</"
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
-"<para><warning>分区 <filename>%1</filename> 的数据将全部丢失。</warning></"
-"para><para>更改磁盘已有分区的文件系统时，该分区的全部数据将被彻底销毁。如果您"
-"现在继续并在主窗口中应用对应的操作，当前存储在 <filename>%1</filename> 中的数"
-"据将全部丢失并无法恢复。</para>"
 
 #: gui/partpropsdialog.cpp:362
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
-msgstr "您确定要用 %2 文件系统重新创建 <filename>%1</filename> 吗？"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:363
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
-msgstr "更改文件系统"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:364
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
-msgstr "不更改文件系统"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:383
 #, kde-kuit-format
@@ -2623,123 +2578,119 @@ msgid ""
 "window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
 "para>"
 msgstr ""
-"<para><warning>分区 <filename>%1</filename> 的数据将全部丢失。</warning></"
-"para><para>重建文件系统将会清除它的所有内容。如果您现在继续并在主窗口中应用对"
-"应的操作，当前存储在 <filesystem>%1</filesystem> 中的数据将全部丢失并无法恢"
-"复。</para>"
 
 #: gui/partpropsdialog.cpp:385
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
-msgstr "您确定要重新创建 <filename>%1</filename> 的文件系统吗？"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:386
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
-msgstr "重新创建文件系统"
+msgstr ""
 
 #: gui/partpropsdialog.cpp:387
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
-msgstr "不重新创建文件系统"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
 #: gui/partpropswidgetbase.ui:26
 #, kde-format
 msgctxt "@label"
 msgid "First sector:"
-msgstr "起始扇区："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/partpropswidgetbase.ui:56
 #, kde-format
 msgctxt "@label"
 msgid "Size:"
-msgstr "大小："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:66
 #, kde-format
 msgid "Partition UUID:"
-msgstr "分区 UUID："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
 #: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:126
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
-msgstr "此文件系统不支持设置卷标。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
 #: gui/partpropswidgetbase.ui:86
 #, kde-format
 msgctxt "@label"
 msgid "UUID:"
-msgstr "UUID："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
 #: gui/partpropswidgetbase.ui:103
 #, kde-format
 msgctxt "@label"
 msgid "Last sector:"
-msgstr "结束扇区："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
 #: gui/partpropswidgetbase.ui:134
 #, kde-format
 msgctxt "@label"
 msgid "Status:"
-msgstr "状态："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
 #: gui/partpropswidgetbase.ui:144
 #, kde-format
 msgctxt "@label partition capacity available"
 msgid "Available:"
-msgstr "可用："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:223
 #, kde-format
 msgctxt "@label"
 msgid "&Label:"
-msgstr "卷标(&L)："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
 #: gui/partpropswidgetbase.ui:286
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
-msgstr "挂载点："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
 #: gui/partpropswidgetbase.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
-msgstr "分区类型："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
 #, kde-format
 msgid "Device path:"
-msgstr "设备路径："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:326
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
-msgstr "扇区数："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:336
 #, kde-format
 msgid "Partition Name:"
-msgstr "分区名称："
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:346
@@ -2747,187 +2698,187 @@ msgstr "分区名称："
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
 "filesystem type."
-msgstr "这将重新格式化文件系统，所有内容都将丢失，但文件系统类型维持不变。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:349
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
-msgstr "重新创建已有文件系统"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
 #: gui/partpropswidgetbase.ui:376
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
-msgstr "已用："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/partpropswidgetbase.ui:386
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
-msgstr "文件系统(&M)："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
 #: gui/partpropswidgetbase.ui:399
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
-msgstr "标记(&F)："
+msgstr ""
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Please select a device."
-msgstr "请选择一个设备。"
+msgstr ""
 
 #: gui/parttablewidget.cpp:54
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No valid partition table was found on this device."
-msgstr "此设备中找不到有效的分区表。"
+msgstr ""
 
 #: gui/resizedialog.cpp:42
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize/move partition: <filename>%1</filename>"
-msgstr "调整大小/移动分区：<filename>%1</filename>"
+msgstr ""
 
 #: gui/resizedialog.cpp:91
 #, kde-format
 msgctxt "%2 is either empty or says Invalid passphrase."
 msgid "%2Enter passphrase for %1:"
-msgstr "%2 请输入 %1 的密码："
+msgstr ""
 
 #: gui/resizedialog.cpp:100
 #, kde-format
 msgctxt "Part of %2Enter passphrase for %1:"
 msgid "Invalid passphrase. "
-msgstr "无效密码。"
+msgstr ""
 
 #: gui/resizevolumegroupdialog.cpp:39
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize Volume Group"
-msgstr "调整卷组大小"
+msgstr ""
 
 #: gui/scanprogressdialog.cpp:16
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "正在扫描设备…"
+msgstr ""
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr "%p%"
+msgstr ""
 
 #: gui/scanprogressdialog.cpp:36
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "正在扫描…"
+msgstr ""
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning device: <filename>%1</filename>"
-msgstr "正在扫描设备：<filename>%1</filename>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: gui/sizedetailswidgetbase.ui:66
 #, kde-format
 msgctxt "@label:listbox"
 msgid "First sector:"
-msgstr "起始扇区："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: gui/sizedetailswidgetbase.ui:101
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Last sector:"
-msgstr "结束扇区："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
 #: gui/sizedetailswidgetbase.ui:124
 #, kde-format
 msgid "Align partition"
-msgstr "对齐分区"
+msgstr ""
 
 #: gui/sizedialogbase.cpp:66
 #, kde-kuit-format
 msgctxt "@action:button advanced settings button"
 msgid "Advanced"
-msgstr "高级"
+msgstr ""
 
 #: gui/sizedialogbase.cpp:180
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Advanced"
-msgstr "高级(&A)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: gui/sizedialogwidgetbase.ui:30
 #, kde-format
 msgctxt "@label"
 msgid "Minimum size:"
-msgstr "分区大小下限："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: gui/sizedialogwidgetbase.ui:72
 #, kde-format
 msgctxt "@label"
 msgid "Maximum size:"
-msgstr "分区大小上限："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/sizedialogwidgetbase.ui:98
 #, kde-format
 msgctxt "@label"
 msgid "Label:"
-msgstr "卷标："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: gui/sizedialogwidgetbase.ui:160
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Si&ze:"
-msgstr "大小(&Z)："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
 #: gui/sizedialogwidgetbase.ui:183
 #, kde-format
 msgid "Primar&y"
-msgstr "主分区(&Y)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
 #: gui/sizedialogwidgetbase.ui:190
 #, kde-format
 msgid "E&xtended"
-msgstr "扩展分区(&X)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
 #: gui/sizedialogwidgetbase.ui:197
 #, kde-format
 msgid "&Logical"
-msgstr "逻辑分区(&L)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/sizedialogwidgetbase.ui:213
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File system:"
-msgstr "文件系统："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
 #: gui/sizedialogwidgetbase.ui:249
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
-msgstr "分区类型："
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:259
@@ -2935,31 +2886,31 @@ msgstr "分区类型："
 msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
 "provide a passphrase."
-msgstr "使用 LUKS 设置加密文件系统。系统将要求您提供一组密码。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:262
 #, kde-format
 msgid "Encrypt with LUKS"
-msgstr "使用 LUKS 加密"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
 #: gui/sizedialogwidgetbase.ui:292
 #, kde-format
 msgid "Permissions"
-msgstr "权限"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:305
 #, kde-format
 msgid "Allow everyone to write and read on this device"
-msgstr "允许所有人写入和读取此设备"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:308
 #, kde-format
 msgid "Everyone"
-msgstr "所有人"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:315
@@ -2967,33 +2918,33 @@ msgstr "所有人"
 msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
 "folder permissions"
-msgstr "仅允许 root 写入和读取此设备，您将需要为每个文件夹单独设置权限"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:318
 #, kde-format
 msgid "Only Root"
-msgstr "仅 root"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
 #: gui/sizedialogwidgetbase.ui:334
 #, kde-format
 msgctxt "@label:listbox"
 msgid "F&ree space before:"
-msgstr "前方空置(&R)："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
 #: gui/sizedialogwidgetbase.ui:347
 #, kde-format
 msgid "Logical Volume Name:"
-msgstr "逻辑卷名称："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
 #: gui/sizedialogwidgetbase.ui:363
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Free space after:"
-msgstr "后方空置："
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:376
@@ -3001,187 +2952,187 @@ msgstr "后方空置："
 msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
-msgstr "使用 LUKS2 而不是 LUKS1 来提高安全性，但兼容性可能会受到影响。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr "启用 LUKS2"
+msgstr ""
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "SMART Properties: <filename>%1</filename>"
-msgstr "SMART 属性：<filename>%1</filename>"
+msgstr ""
 
 #: gui/smartdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save SMART Report"
-msgstr "保存 SMART 报告"
+msgstr ""
 
 #: gui/smartdialog.cpp:96 gui/smartdialog.cpp:153
 #, kde-format, kde-kuit-format
 msgctxt "@label SMART number of bad sectors"
 msgid "none"
-msgstr "无"
+msgstr ""
 
 #: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Pre-Failure"
-msgstr "故障前兆"
+msgstr ""
 
 #: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Old-Age"
-msgstr "老化"
+msgstr ""
 
 #: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Online"
-msgstr "在线"
+msgstr ""
 
 #: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Offline"
-msgstr "离线"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
 #: gui/smartdialog.cpp:155 gui/smartdialogwidgetbase.ui:68
 #, kde-format
 msgid "Model:"
-msgstr "型号："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
 #: gui/smartdialog.cpp:156 gui/smartdialogwidgetbase.ui:97
 #, kde-format
 msgid "Serial number:"
-msgstr "序列号："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
 #: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
 #, kde-format
 msgid "Firmware revision:"
-msgstr "固件版本："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
 #: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
 #, kde-format
 msgid "Temperature:"
-msgstr "温度："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
 #: gui/smartdialog.cpp:159 gui/smartdialogwidgetbase.ui:184
 #, kde-format
 msgid "Bad sectors:"
-msgstr "坏扇区数："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
 #: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
 #, kde-format
 msgid "Powered on for:"
-msgstr "通电时长："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
 #: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
 #, kde-format
 msgid "Power cycles:"
-msgstr "通断电周期数："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
 #: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
 #, kde-format
 msgid "Self tests:"
-msgstr "自检："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
 #: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
 #, kde-format
 msgid "Overall assessment:"
-msgstr "整体评估："
+msgstr ""
 
 #: gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save SMART Report."
-msgstr "无法保存 SMART 报告。"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:294
 #, kde-format
 msgid "Id"
-msgstr "ID"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:299
 #, kde-format
 msgid "Attribute"
-msgstr "属性"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:304
 #, kde-format
 msgid "Failure Type"
-msgstr "故障类型"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:309
 #, kde-format
 msgid "Update Type"
-msgstr "更新类型"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:314
 #, kde-format
 msgid "Worst"
-msgstr "最差值"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:319
 #, kde-format
 msgid "Current"
-msgstr "当前值"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:324
 #, kde-format
 msgid "Threshold"
-msgstr "阈值"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:329
 #, kde-format
 msgid "Raw"
-msgstr "原始值"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:334
 #, kde-format
 msgid "Assessment"
-msgstr "评估结果"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:339
 #, kde-format
 msgid "Value"
-msgstr "值"
+msgstr ""
 
 #: gui/treelog.cpp:110
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary output file to save <filename>%1</filename>."
-msgstr "无法创建临时输出文件以保存 <filename>%1</filename>。"
+msgstr ""
 
 #: gui/treelog.cpp:110
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Saving Log File"
-msgstr "保存日志文件时发生错误"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:59
@@ -3189,39 +3140,39 @@ msgstr "保存日志文件时发生错误"
 msgctxt ""
 "@title:column Severity of a log entry / log level. Text must be very short."
 msgid "Sev."
-msgstr "严重性"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:62
 #, kde-format
 msgid "Severity"
-msgstr "严重性"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:67
 #, kde-format
 msgctxt "@title:column a time stamp of a log entry"
 msgid "Time"
-msgstr "时间"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:72
 #, kde-format
 msgctxt "@title:column the text message of a log entry"
 msgid "Message"
-msgstr "消息"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVGName)
 #: gui/volumegroupwidgetbase.ui:34
 #, kde-format
 msgid "Volume Group Name: "
-msgstr "卷组名称："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
 #: gui/volumegroupwidgetbase.ui:47
 #, kde-format
 msgid "Physical Extent Size: "
-msgstr "物理区域大小："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
@@ -3231,55 +3182,55 @@ msgstr "物理区域大小："
 #: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
 #, kde-format
 msgid "---"
-msgstr "---"
+msgstr ""
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
 #: gui/volumegroupwidgetbase.ui:79
 #, kde-format
 msgid " MiB"
-msgstr " MiB"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalLV)
 #: gui/volumegroupwidgetbase.ui:107
 #, kde-format
 msgid "Total LV: "
-msgstr "全部逻辑卷："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
 #: gui/volumegroupwidgetbase.ui:130
 #, kde-format
 msgid "Volume Group Type: "
-msgstr "卷组类型："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
 #: gui/volumegroupwidgetbase.ui:140
 #, kde-format
 msgid "Total Size: "
-msgstr "总大小："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
 #: gui/volumegroupwidgetbase.ui:153
 #, kde-format
 msgid "Total Sectors: "
-msgstr "总扇区数："
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
 #: gui/volumegroupwidgetbase.ui:186
 #, kde-format
 msgid "Used Size: "
-msgstr "已用大小："
+msgstr ""
 
 #: main.cpp:77
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>KDE Partition Manager</application>"
-msgstr "<application>KDE 分区管理器</application>"
+msgstr ""
 
 #: main.cpp:79
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Manage your disks, partitions and file systems"
-msgstr "用于管理磁盘、分区和文件系统的工具程序"
+msgstr ""
 
 #: main.cpp:81
 #, kde-kuit-format
@@ -3288,160 +3239,158 @@ msgid ""
 "© 2008-2013 Volker Lanz\n"
 "© 2012-2020 Andrius Štikonas"
 msgstr ""
-"© 2008-2013 Volker Lanz\n"
-"© 2012-2020 Andrius Štikonas"
 
 #: main.cpp:85
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Volker Lanz"
-msgstr "Volker Lanz"
+msgstr ""
 
 #: main.cpp:85
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Former maintainer"
-msgstr "前任维护者"
+msgstr ""
 
 #: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Andrius Štikonas"
-msgstr "Andrius Štikonas"
+msgstr ""
 
 #: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Maintainer"
-msgstr "维护者"
+msgstr ""
 
 #: main.cpp:87
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Teo Mrnjavac"
-msgstr "Teo Mrnjavac"
+msgstr ""
 
 #: main.cpp:87
 #, kde-format
 msgctxt "@info:credit"
 msgid "Former Calamares maintainer"
-msgstr "Calamares 前任维护者"
+msgstr ""
 
 #: main.cpp:88
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Chantara Tith"
-msgstr "Chantara Tith"
+msgstr ""
 
 #: main.cpp:88
 #, kde-format
 msgctxt "@info:credit"
 msgid "LVM support"
-msgstr "LVM 支持"
+msgstr ""
 
 #: main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Pali Rohár"
-msgstr "Pali Rohár"
+msgstr ""
 
 #: main.cpp:89
 #, kde-format
 msgctxt "@info:credit"
 msgid "UDF support"
-msgstr "UDF 支持"
+msgstr ""
 
 #: main.cpp:90
 #, kde-format
 msgid "Hugo Pereira Da Costa"
-msgstr "Hugo Pereira Da Costa"
+msgstr ""
 
 #: main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Partition Widget Design"
-msgstr "分区窗口部件设计"
+msgstr ""
 
 #: main.cpp:91
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Caio Jordão Carvalho"
-msgstr "Caio Jordão Carvalho"
+msgstr ""
 
 #: main.cpp:91
 #, kde-format
 msgctxt "@info:credit"
 msgid "Improved SMART support"
-msgstr "SMART 支持改进"
+msgstr ""
 
 #: main.cpp:101
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"
-msgstr "要管理的设备"
+msgstr ""
 
 #. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
 #: partitionmanager.kcfg:45
 #, kde-format
 msgctxt "@label"
 msgid "Is this the first time KDE Partition Manager is being run?"
-msgstr "这是 KDE 分区管理器的首次运行吗？"
+msgstr ""
 
 #. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
 #: partitionmanager.kcfg:49
 #, kde-format
 msgctxt "@label"
 msgid "Hide log messages below"
-msgstr "隐藏下方日志消息"
+msgstr ""
 
 #. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
 #: partitionmanager.kcfg:53
 #, kde-format
 msgctxt "@label"
 msgid "Partition sector alignment"
-msgstr "分区扇区对齐"
+msgstr ""
 
 #. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
 #: partitionmanager.kcfg:57
 #, kde-format
 msgctxt "@label"
 msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr "根据柱面对齐 (兼容 Windows XP)"
+msgstr ""
 
 #. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
 #: partitionmanager.kcfg:61
 #, kde-format
 msgctxt "@label"
 msgid "Align partitions per default"
-msgstr "按默认设置对齐分区"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:65
 #, kde-format
 msgctxt "@label"
 msgid "File system colors"
-msgstr "文件系统颜色"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:143
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
-msgstr "显示应用程序的菜单栏"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:147
 #, kde-format
 msgctxt "@label"
 msgid "Backend plugin"
-msgstr "后端程序插件"
+msgstr ""
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:153
 #, kde-format
 msgctxt "@label"
 msgid "Preferred unit:"
-msgstr "首选单位："
+msgstr ""
 
 #: util/guihelpers.cpp:50
 #, kde-kuit-format
@@ -3450,14 +3399,12 @@ msgid ""
 "<para>The configured backend plugin \"%1\" could not be loaded.</"
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
-"<para>无法加载配置指定的后端程序插件“%1”。</para><para>改为加载默认后端程序插"
-"件“%2”。</para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error: Could Not Load Backend Plugin"
-msgstr "错误：无法加载后端程序插件"
+msgstr ""
 
 #: util/guihelpers.cpp:57
 #, kde-kuit-format
@@ -3466,11 +3413,9 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
-"<para>无法加载配置指定的 (“%1”) 和默认的 (“%2”) 后端程序插件。</para><para>请"
-"检查相关软件的安装状态。</para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
 msgctxt "@title:menu"
 msgid "Columns"
-msgstr "列"
+msgstr ""
