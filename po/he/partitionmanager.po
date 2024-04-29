@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-16 00:40+0000\n"
-"PO-Revision-Date: 2024-04-28 02:16+0300\n"
+"PO-Revision-Date: 2024-04-28 23:11+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
-"2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
@@ -1342,25 +1342,25 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
-msgstr ""
+msgstr "הסגת הפעולה אחרונה"
 
 #: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
-msgstr ""
+msgstr "הסרת הפעולה האחרונה מהרשימה."
 
 #: gui/mainwindow.cpp:288
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
-msgstr ""
+msgstr "מחיקה"
 
 #: gui/mainwindow.cpp:289
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
-msgstr ""
+msgstr "מחיקת כל הפעולות"
 
 #: gui/mainwindow.cpp:290
 #, kde-kuit-format
@@ -1880,7 +1880,7 @@ msgstr[3] ""
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
-msgstr ""
+msgstr "שימוש בתוסף המנגנון: %1 (%2)"
 
 #: gui/mainwindow.cpp:813
 #, kde-kuit-format
@@ -1901,6 +1901,8 @@ msgid ""
 "<para>Do you really want to rescan the devices?</para><para><warning>This "
 "will also clear the list of pending operations.</warning></para>"
 msgstr ""
+"<para>לסרוק מחדש את כל ההתקנים?</para><para><warning>הפעולה הזאת גם תמחק את "
+"רשימת הפעולות הממתינות.</warning></para>"
 
 #: gui/mainwindow.cpp:917
 #, kde-kuit-format
@@ -1926,7 +1928,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
-msgstr ""
+msgstr "להחיל את הפעולות הממתינות?"
 
 #: gui/mainwindow.cpp:947
 #, kde-kuit-format
@@ -1996,6 +1998,8 @@ msgid ""
 "Could not open temporary file <filename>%1</filename> while trying to import "
 "from <filename>%2</filename>."
 msgstr ""
+"לא ניתן לפתוח את הקובץ הזמני <filename>%1</filename> תוך הניסיוןלייבא מתוך "
+"<filename>%2</filename>."
 
 #: gui/mainwindow.cpp:1090
 #, kde-kuit-format
@@ -2012,43 +2016,43 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
-msgstr ""
+msgstr "שגיאה בייבוא טבלת המחיצות"
 
 #: gui/mainwindow.cpp:1100
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
-msgstr ""
+msgstr "נמצא יותר מסוג טבלת מחיצות אחד בקובץ הייבוא (שורה %1)."
 
 #: gui/mainwindow.cpp:1107
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
-msgstr ""
+msgstr "סוג טבלת המחיצות „%1” אינו מוכר (שורה %2)."
 
 #: gui/mainwindow.cpp:1112
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
-msgstr ""
+msgstr "סוג טבלת המחיצות „%1” אינו נתמך בייבוא (שורה %2)."
 
 #: gui/mainwindow.cpp:1122
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
-msgstr ""
+msgstr "נמצאה מחיצה אך לא סוג טבלת מחיצות (שורה %1)."
 
 #: gui/mainwindow.cpp:1135
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
-msgstr ""
+msgstr "המחיצה %1 תחרוג מגבולות ההתקן (שורה %2)."
 
 #: gui/mainwindow.cpp:1140
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
-msgstr ""
+msgstr "למחיצה %1 יש סוף לפני מקטע ההתחלה (שורה %2)."
 
 #: gui/mainwindow.cpp:1159
 #, kde-kuit-format
@@ -2075,29 +2079,29 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
-msgstr ""
+msgstr "לא ניתן ליצור את מערכת הקבצים „%1” למחיצה %2 (שורה %3)."
 
 #: gui/mainwindow.cpp:1191
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
-msgstr ""
+msgstr "לא ניתן לפענח את השורה %1 בקובץ הייבוא. פוסחים עליה."
 
 #: gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
-msgstr ""
+msgstr "שגיאה בייצוא טבלת המחיצות"
 
 #: gui/mainwindow.cpp:1381 gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1423
 #, kde-kuit-format
 msgid "%1%2"
-msgstr ""
+msgstr "%1%2"
 
 #: gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1398
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
-msgstr ""
+msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
 #: gui/mainwindow.cpp:1435
 #, kde-kuit-format
@@ -2119,25 +2123,25 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
-msgstr ""
+msgstr "חבילות התמיכה במערכת הקבצים חסרות"
 
 #: gui/mainwindow.cpp:1459
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr ""
+msgstr "ההתקן „%1” לא מוכר"
 
 #: gui/mainwindow.cpp:1468
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr ""
+msgstr "המחיצה „%1” לא מוכרת"
 
 #: gui/mainwindow.cpp:1469
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr ""
+msgstr "שגיאה בפתיחת המחיצה"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -2145,102 +2149,102 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "KDE Partition Manager"
-msgstr ""
+msgstr "מנהל מחיצות מבית KDE"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
 #: gui/mainwindowbase.ui:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Devices"
-msgstr ""
+msgstr "התקנים"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
 #: gui/mainwindowbase.ui:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Pending Operations"
-msgstr ""
+msgstr "פעולות ממתינות"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
 #: gui/mainwindowbase.ui:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Log Output"
-msgstr ""
+msgstr "פלט יומן"
 
 #: gui/newdialog.cpp:47
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a new partition"
-msgstr ""
+msgstr "יצירת מחיצה חדשה"
 
 #. i18n: ectx: ToolBar (partitionToolBar)
 #: gui/partitionmanagerui.rc:12
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition Manager Toolbar"
-msgstr ""
+msgstr "סרגל כלי מנהל מחיצות"
 
 #. i18n: ectx: Menu (device)
 #: gui/partitionmanagerui.rc:30
 #, kde-format
 msgctxt "@title:menu"
 msgid "Device"
-msgstr ""
+msgstr "התקן"
 
 #. i18n: ectx: Menu (selectedDevice)
 #: gui/partitionmanagerui.rc:32
 #, kde-format
 msgctxt "@title:menu"
 msgid "Select Current Device"
-msgstr ""
+msgstr "בחירת ההתקן הנוכחי"
 
 #. i18n: ectx: Menu (tools)
 #: gui/partitionmanagerui.rc:49
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
-msgstr ""
+msgstr "כלים"
 
 #. i18n: ectx: Menu (partition)
 #: gui/partitionmanagerui.rc:55
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition"
-msgstr ""
+msgstr "מחיצה"
 
 #. i18n: ectx: Menu (panels)
 #: gui/partitionmanagerui.rc:77
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"
-msgstr ""
+msgstr "לוחות שמופיעים"
 
 #: gui/partitionmanagerwidget.cpp:200
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
-msgstr ""
+msgstr "%1 [מוצפן]"
 
 #: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be mounted."
-msgstr ""
+msgstr "לא ניתן לעגן את מערכת הקבצים במחיצה <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
-msgstr ""
+msgstr "לא ניתן לעגן את מערכת הקבצים."
 
 #: gui/partitionmanagerwidget.cpp:407
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be unmounted."
-msgstr ""
+msgstr "לא ניתן לנתק את מערכת הקבצים במחיצה <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:407
 #, kde-kuit-format
@@ -2324,6 +2328,8 @@ msgid ""
 "clipboard? It will no longer be available for pasting after it has been "
 "deleted."
 msgstr ""
+"למחוק את המחיצה שנמצאת כרגע בלוח הגזירים? היא לא תהיה זמינה עוד להדבקה לאחר "
+"שנמחקה."
 
 #: gui/partitionmanagerwidget.cpp:574
 #, kde-kuit-format
