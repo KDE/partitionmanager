@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-16 00:40+0000\n"
-"PO-Revision-Date: 2024-04-28 23:11+0300\n"
+"PO-Revision-Date: 2024-04-29 22:35+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1236,7 +1236,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label device"
 msgid "Volume Type:"
-msgstr ""
+msgstr "סוג כרך:"
 
 #: gui/infopane.cpp:186
 #, kde-format
@@ -1266,7 +1266,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label device"
 msgid "RAID Level:"
-msgstr ""
+msgstr "רמת RAID:"
 
 #: gui/infopane.cpp:195
 #, kde-format
@@ -1296,7 +1296,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
-msgstr ""
+msgstr "%1 | %2"
 
 #: gui/mainwindow.cpp:167
 #, kde-format
@@ -1305,6 +1305,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
+"מנהל המחיצות דורש הרשאות כדי לפעול. נא לרענן את ההתקנים ולבצע אימות כשתופיע "
+"דרישה."
 
 #: gui/mainwindow.cpp:234
 #, kde-kuit-format
@@ -1324,19 +1326,19 @@ msgstr[3] ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
-msgstr ""
+msgstr "להתעלם מהשינויים הממתינים ולצאת?"
 
 #: gui/mainwindow.cpp:237
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
-msgstr ""
+msgstr "יציאה מ־<application>%1</application>"
 
 #: gui/mainwindow.cpp:279
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
-msgstr ""
+msgstr "הסגה"
 
 #: gui/mainwindow.cpp:280
 #, kde-kuit-format
@@ -2007,7 +2009,7 @@ msgctxt "@info"
 msgid ""
 "The import file <filename>%1</filename> does not contain a valid partition "
 "table."
-msgstr ""
+msgstr "קובץ הייבוא <filename>%1</filename> לא מכיל טבלת מחיצות תקפה."
 
 #: gui/mainwindow.cpp:1090 gui/mainwindow.cpp:1100 gui/mainwindow.cpp:1107
 #: gui/mainwindow.cpp:1112 gui/mainwindow.cpp:1122 gui/mainwindow.cpp:1135
@@ -2058,14 +2060,14 @@ msgstr "למחיצה %1 יש סוף לפני מקטע ההתחלה (שורה %2)
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr ""
+msgstr "תפקיד מחיצה לא מזוהה „%1” למחיצה %2 (שורה %3)."
 
 #: gui/mainwindow.cpp:1164
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
-msgstr ""
+msgstr "לא נמצאו מחיצת הורה או טבלת מחיצות למחיצה %1 (שורה %2)."
 
 #: gui/mainwindow.cpp:1169
 #, kde-kuit-format
@@ -2074,6 +2076,7 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
+"סוג טבלת המחיצות „%1” לא תומך במחיצות מורחבות, אך נמצאה אחת כזאת (שורה %2)."
 
 #: gui/mainwindow.cpp:1176
 #, kde-kuit-format
@@ -3138,7 +3141,7 @@ msgstr "גולמי"
 #: gui/smartdialogwidgetbase.ui:334
 #, kde-format
 msgid "Assessment"
-msgstr ""
+msgstr "שערוך"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:339
@@ -3150,7 +3153,7 @@ msgstr "ערך"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary output file to save <filename>%1</filename>."
-msgstr ""
+msgstr "לא ניתן ליצור קובץ פלט זמני לשמירת <filename>%1</filename>."
 
 #: gui/treelog.cpp:110
 #, kde-kuit-format
@@ -3254,7 +3257,7 @@ msgstr "<application>מנהל מחיצות מבית KDE</application>"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Manage your disks, partitions and file systems"
-msgstr ""
+msgstr "ניהול הכוננים, המחיצות ומערכות הקבצים שלך"
 
 #: main.cpp:81
 #, kde-kuit-format
