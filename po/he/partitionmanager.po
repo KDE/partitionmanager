@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-16 00:40+0000\n"
-"PO-Revision-Date: 2024-04-29 22:35+0300\n"
+"PO-Revision-Date: 2024-04-30 08:14+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -436,7 +436,7 @@ msgstr "מערכת הקבצים כברירת המחדל:"
 #: config/configurepagegeneral.ui:175
 #, kde-format
 msgid "Shredding"
-msgstr ""
+msgstr "השמדה"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: config/configurepagegeneral.ui:181
@@ -618,6 +618,9 @@ msgid ""
 "the most the MS-Dos partition table type supports, so you will not be able "
 "to use the whole device.</para>"
 msgstr ""
+"<para>ליצור טבלת מחיצות MS-Dos על <filename>%1</filename>?</para><para>להתקן "
+"הזה יש למעלה מ־‎2^32 מקטעים. זה המספר המרבי שסוג טבלת מחיצות של  MS-Dos תומך "
+"בו, כך שלא תהיה לך אפשרות להשתמש בכל נפח ההתקן.</para>"
 
 #: gui/createpartitiontabledialog.cpp:61
 #, kde-kuit-format
@@ -761,7 +764,7 @@ msgstr "גודל מקטע פיזי:"
 #: gui/devicepropswidgetbase.ui:222
 #, kde-format
 msgid "Primaries/Max:"
-msgstr ""
+msgstr "עיקריות/מרבי:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
 #: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
@@ -816,6 +819,9 @@ msgid ""
 "overwrite the existing file on your hard drive now. This <emphasis "
 "strong='1'>can not be undone</emphasis>.</warning></para>"
 msgstr ""
+"<para>לשמור את השינויים שערכת לקובץ טבלאות המערכת <filename>/etc/fstab</"
+"filename>?</para><para><warning>הפעולה תחליף את הקובץ בכונן שלך כעת. זאת "
+"פעולה <emphasis strong='1'>בלתי הפיכה</emphasis>.</warning></para>"
 
 #: gui/editmountpointdialog.cpp:64
 #, kde-kuit-format
@@ -869,7 +875,7 @@ msgstr "גישה סינכרונית"
 #: gui/editmountpointdialogwidgetbase.ui:109
 #, kde-format
 msgid "Pass &Number:"
-msgstr ""
+msgstr "מספר מה&לכים:"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
 #: gui/editmountpointdialogwidgetbase.ui:128
@@ -905,7 +911,7 @@ msgstr "סוג:"
 #: gui/editmountpointdialogwidgetbase.ui:200
 #, kde-format
 msgid "UU&ID"
-msgstr ""
+msgstr "מ&זהה ייחודי"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
 #: gui/editmountpointdialogwidgetbase.ui:213
@@ -917,7 +923,7 @@ msgstr "בחירה…"
 #: gui/editmountpointdialogwidgetbase.ui:220
 #, kde-format
 msgid "De&vice Node"
-msgstr ""
+msgstr "מ&פרק התקן"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
 #: gui/editmountpointdialogwidgetbase.ui:230
@@ -929,7 +935,7 @@ msgstr "אין עדכון של זמני גישה לקובץ"
 #: gui/editmountpointdialogwidgetbase.ui:250
 #, kde-format
 msgid "No binary execution"
-msgstr ""
+msgstr "אין הפעלת קבצים בינריים"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
 #: gui/editmountpointdialogwidgetbase.ui:264
@@ -1164,25 +1170,25 @@ msgstr "בשימוש:"
 #, kde-format
 msgctxt "@label partition"
 msgid "PE Size:"
-msgstr ""
+msgstr "גודל היקף פיזי:"
 
 #: gui/infopane.cpp:132
 #, kde-format
 msgctxt "@label partition"
 msgid "Total PE:"
-msgstr ""
+msgstr "סך כל ההיקף הפיזי:"
 
 #: gui/infopane.cpp:133
 #, kde-format
 msgctxt "@label partition"
 msgid "Free PE:"
-msgstr ""
+msgstr "שטח פנוי בהיקף הפיזי:"
 
 #: gui/infopane.cpp:134
 #, kde-format
 msgctxt "@label partition"
 msgid "Allocated PE:"
-msgstr ""
+msgstr "היקף פיזי מוקצה:"
 
 #: gui/infopane.cpp:157
 #, kde-kuit-format
@@ -1230,7 +1236,7 @@ msgstr "גודל מקטע פיזי:"
 #, kde-format
 msgctxt "@label device"
 msgid "Primaries/Max:"
-msgstr ""
+msgstr "עיקריות/מרבי:"
 
 #: gui/infopane.cpp:184 gui/infopane.cpp:192
 #, kde-format
@@ -1242,25 +1248,25 @@ msgstr "סוג כרך:"
 #, kde-format
 msgctxt "@label device"
 msgid "PE Size:"
-msgstr ""
+msgstr "גודל היקף פיזי:"
 
 #: gui/infopane.cpp:187
 #, kde-format
 msgctxt "@label device"
 msgid "Total PE:"
-msgstr ""
+msgstr "סך כל ההיקף הפיזי:"
 
 #: gui/infopane.cpp:188
 #, kde-format
 msgctxt "@label device"
 msgid "Allocated PE:"
-msgstr ""
+msgstr "היקף פיזי מוקצה:"
 
 #: gui/infopane.cpp:189
 #, kde-format
 msgctxt "@label device"
 msgid "Free PE:"
-msgstr ""
+msgstr "שטח פנוי בהיקף הפיזי:"
 
 #: gui/infopane.cpp:194
 #, kde-format
@@ -1272,25 +1278,25 @@ msgstr "רמת RAID:"
 #, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr ""
+msgstr "גודל נתח:"
 
 #: gui/infopane.cpp:196
 #, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr ""
+msgstr "סך כל הנתחים:"
 
 #: gui/infopane.cpp:197
 #, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr ""
+msgstr "גודל מערך:"
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Insert a partition"
-msgstr ""
+msgstr "הוספת מחיצה"
 
 #: gui/listphysicalvolumes.cpp:39
 #, kde-kuit-format
@@ -1318,9 +1324,13 @@ msgid_plural ""
 "<para>Do you really want to quit the application?</para><para>There are "
 "still %1 operations pending.</para>"
 msgstr[0] ""
+"<para>לצאת מהיישום?</para><para>יש עדיין פעולה שממתינה לביצוע.</para>"
 msgstr[1] ""
+"<para>לצאת מהיישום?</para><para>יש עדיין שתי פעולות שממתינות לביצוע.</para>"
 msgstr[2] ""
+"<para>לצאת מהיישום?</para><para>יש עדיין %1 פעולות שממתינות לביצוע.</para>"
 msgstr[3] ""
+"<para>לצאת מהיישום?</para><para>יש עדיין %1 פעולות שממתינות לביצוע.</para>"
 
 #: gui/mainwindow.cpp:236
 #, kde-kuit-format
@@ -1368,7 +1378,7 @@ msgstr "מחיקת כל הפעולות"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
-msgstr ""
+msgstr "ריקון רשימת הפעולות לביצוע."
 
 #: gui/mainwindow.cpp:296
 #, kde-kuit-format
@@ -1873,10 +1883,10 @@ msgstr "הצגת חלונית על KPMcore."
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "פעולה אחת ממתינה"
+msgstr[1] "שתי פעולות ממתינות"
+msgstr[2] "%1 פעולות ממתינות"
+msgstr[3] "%1 פעולות ממתינות"
 
 #: gui/mainwindow.cpp:809
 #, kde-kuit-format
@@ -1925,6 +1935,8 @@ msgid ""
 "<para>Do you really want to apply the pending operations listed below?</"
 "para><para><warning>This will permanently modify your disks.</warning></para>"
 msgstr ""
+"<para>להחיל את השינויים הממתינים שמופיעים להלן?</para><para><warning>הן ישנו "
+"את הכוננים שלך לצמיתות.</warning></para>"
 
 #: gui/mainwindow.cpp:946
 #, kde-kuit-format
@@ -2121,6 +2133,15 @@ msgid ""
 "modify them.</para><para>You should find packages with these support tools "
 "in your distribution's package manager.</para>"
 msgstr ""
+"<para>לא נמצאו כלי תמיכה למערכות הקבצים שקיימות כרגע בכוננים הקשיחים במחשב "
+"הזה:</para><table style='margin-top:12px'><tr><td style='font-weight:bold;"
+"padding-right:12px;white-space:nowrap;'>מחיצה</td><td style='font-weight:"
+"bold;padding-right:12px;white-space:nowrap;'>מערכת קבצים</td><td style='font-"
+"weight:bold;padding-right:12px;white-space:nowrap;'>כלי תמיכה</td><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>כתובת</td></"
+"tr>%1</table><para>עד שיותקנו כלי תמיכה למערכת הקבצים האלה לא תהיה אפשרות "
+"לשנות אותן.</para><para>יש למצוא חבילות עם כלי התמיכה האלה במנהל החבילות של "
+"ההפצה שלך.</para>"
 
 #: gui/mainwindow.cpp:1448
 #, kde-kuit-format
@@ -2297,9 +2318,21 @@ msgid_plural ""
 "create, paste or restore a primary partition on it before you delete an "
 "existing one.</para>"
 msgstr[0] ""
+"<para>כבר יש מחיצה עיקרית בהתקן הזה. זאת הכמות המרבית שטבלת המחיצות הזאת "
+"יכולה להתמודד איתה.</para><para>אי אפשר ליצור, להדביק או לשחזר מחיצה עיקרית "
+"עליה בטרם מחיקת מחיצה עיקרית קיימת.</para>"
 msgstr[1] ""
+"<para>כבר יש שתי מחיצות עיקריות בהתקן הזה. זאת הכמות המרבית שטבלת המחיצות "
+"הזאת יכולה להתמודד איתה.</para><para>אי אפשר ליצור, להדביק או לשחזר מחיצה "
+"עיקרית עליה בטרם מחיקת מחיצה עיקרית קיימת.</para>"
 msgstr[2] ""
+"<para>כבר יש %1 מחיצות עיקריות בהתקן הזה. זאת הכמות המרבית שטבלת המחיצות "
+"הזאת יכולה להתמודד איתה.</para><para>אי אפשר ליצור, להדביק או לשחזר מחיצה "
+"עיקרית עליה בטרם מחיקת מחיצה עיקרית קיימת.</para>"
 msgstr[3] ""
+"<para>כבר יש %1 מחיצות עיקריות בהתקן הזה. זאת הכמות המרבית שטבלת המחיצות "
+"הזאת יכולה להתמודד איתה.</para><para>אי אפשר ליצור, להדביק או לשחזר מחיצה "
+"עיקרית עליה בטרם מחיקת מחיצה עיקרית קיימת.</para>"
 
 #: gui/partitionmanagerwidget.cpp:497
 #, kde-kuit-format
@@ -2316,6 +2349,9 @@ msgid ""
 "</para><para>Please unmount all partitions with higher logical numbers than "
 "%2 first.</para>"
 msgstr ""
+"<para>המחיצה <filename>%1</filename> לא ניתנת למחיקה כרגע כי מחיצה אחת או "
+"יותר מסדר לוגי מספרי גבוה יותר עדיין מעוגנות.</para><para>נא לנתק תחילה את "
+"כל המחיצות מסדר מספרי גבוה יותר מאשר %2 תחילה.</para>"
 
 #: gui/partitionmanagerwidget.cpp:563
 #, kde-kuit-format
@@ -2373,6 +2409,11 @@ msgid ""
 "window, all data currently stored on <filename>%1</filename> will "
 "unrecoverably be overwritten.</para>"
 msgstr ""
+"<para><warning>הפעולה הזאת תוביל לאובדן כל הנתונים במחיצה <filename>%1</"
+"filename>.</warning></para><para>שכתוב מחיצה אחת באחרת (או בקובץ דמות) תשמיד "
+"את כל הנתונים על מחיצת היעד הזאת.</para><para>בחירה להמשיך כעת ולהחיל את "
+"הפעולות המבוקשות בחלון הראשי, תדרוס את כל הנתונים שמאוחסנים כרגע על "
+"<filename>%1</filename> באופן בלתי הפיך.</para>"
 
 #: gui/partitionmanagerwidget.cpp:727
 #, kde-kuit-format
@@ -2394,6 +2435,9 @@ msgid ""
 "partition or the backup file.</para><para>Pick another target or resize this "
 "partition so it is as large as the source.</para>"
 msgstr ""
+"<para>המחיצה הזאת לא גדולה מספיק כדי לאחסן את מחיצת המקור או את קובץ הגיבוי."
+"</para><para>נא לבחור יעד אחר או לשנות את המחיצה הזאת כך שתהיה גדולה כמו "
+"המקור.</para>"
 
 #: gui/partitionmanagerwidget.cpp:737
 #, kde-kuit-format
@@ -2410,6 +2454,9 @@ msgid ""
 "are correctly aligned or when copying a primary partition into an extended "
 "partition.</para>"
 msgstr ""
+"<para>אי אפשר ליצור מחיצת יעד גדולה מספיק כך שתאחסן את כל תוכן המקור.</"
+"para><para>זה עלול לקרות אם לא כל המחיצות באותו הכונן מיושרות כראוי או בעת "
+"העתקת מחיצה עיקרית למחיצה מורחבת.</para>"
 
 #: gui/partitionmanagerwidget.cpp:743
 #, kde-kuit-format
@@ -2424,6 +2471,8 @@ msgid ""
 "The file system in the image file <filename>%1</filename> is too large to be "
 "restored to the selected partition."
 msgstr ""
+"מערכת הקבצים בקובץ הדמות <filename>%1</filename> גדולה מדי לשחזור למחיצה "
+"הנבחרת."
 
 #: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
@@ -2574,6 +2623,10 @@ msgid ""
 "the resulting operation in the main window, all data on <filename>%1</"
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
+"<para><warning>הפעולה הזאת תוביל לאובדן כל הנתונים במחיצה <filename>%1</"
+"filename>.</warning></para><para>שינוי מערכת הקבצים במחיצה שכבר נמצאת בכונן "
+"תמחק את כל התוכן שלה. המשך בתהליך והחלת הפעולה המבוקשת בחלון הראשי, ימחק את "
+"כל הנתונים שעל <filename>%1</filename> ללא אפשרות שחזור.</para>"
 
 #: gui/partpropsdialog.cpp:362
 #, kde-kuit-format
@@ -2603,6 +2656,10 @@ msgid ""
 "window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
 "para>"
 msgstr ""
+"<para><warning>הפעולה הזאת תוביל לאובדן כל הנתונים במחיצה <filename>%1</"
+"filename>.</warning></para><para>יצירת מערכת קבצים מחדש מוחקת את כל התוכן "
+"שלה. המשך בתהליך והחלת הפעולה המבוקשת בחלון הראשי, ימחק את כל הנתונים שעל "
+"<filesystem>%1</filesystem> ללא אפשרות שחזור.</para>"
 
 #: gui/partpropsdialog.cpp:385
 #, kde-kuit-format
@@ -2724,6 +2781,8 @@ msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
 "filesystem type."
 msgstr ""
+"הפעולה הזאת תפרמט את מערכת הקבצים מחדש ובכך תוכנה ילך לאיבוד, סוג מערכת "
+"הקבצים יישמר."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:349
@@ -2911,7 +2970,7 @@ msgstr "סוג מחיצה:"
 msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
 "provide a passphrase."
-msgstr ""
+msgstr "הגדרת הצפנה למערכת הקבצים הזאת עם LUKS. תופיע בקשה להגדרת מילת צופן."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:262
@@ -3063,13 +3122,13 @@ msgstr "מקטעים פגומים:"
 #: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
 #, kde-format
 msgid "Powered on for:"
-msgstr ""
+msgstr "זמן פעילות חשמלית:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
 #: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
 #, kde-format
 msgid "Power cycles:"
-msgstr ""
+msgstr "מחזורי הדלקה/כיבוי:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
 #: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
@@ -3081,7 +3140,7 @@ msgstr "בדיקות עצמיות:"
 #: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
 #, kde-format
 msgid "Overall assessment:"
-msgstr ""
+msgstr "שערוך כללי:"
 
 #: gui/smartdialog.cpp:227
 #, kde-kuit-format
@@ -3117,7 +3176,7 @@ msgstr "סוג עדכון"
 #: gui/smartdialogwidgetbase.ui:314
 #, kde-format
 msgid "Worst"
-msgstr ""
+msgstr "גרוע ביותר"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:319
@@ -3199,7 +3258,7 @@ msgstr "שם קבוצת כרכים: "
 #: gui/volumegroupwidgetbase.ui:47
 #, kde-format
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "גודל היקף פיזי:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
@@ -3209,19 +3268,19 @@ msgstr ""
 #: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
 #, kde-format
 msgid "---"
-msgstr ""
+msgstr "---"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
 #: gui/volumegroupwidgetbase.ui:79
 #, kde-format
 msgid " MiB"
-msgstr ""
+msgstr " MiB"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalLV)
 #: gui/volumegroupwidgetbase.ui:107
 #, kde-format
 msgid "Total LV: "
-msgstr ""
+msgstr "סך כל הכרכים הלוגיים:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
 #: gui/volumegroupwidgetbase.ui:130
@@ -3266,12 +3325,14 @@ msgid ""
 "© 2008-2013 Volker Lanz\n"
 "© 2012-2020 Andrius Štikonas"
 msgstr ""
+"© 2008‏-2013 וולקר לנץ\n"
+"© 2012‏-2020 אנדריוס שטיקונאס"
 
 #: main.cpp:85
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Volker Lanz"
-msgstr ""
+msgstr "וולקר לנץ"
 
 #: main.cpp:85
 #, kde-kuit-format
@@ -3283,7 +3344,7 @@ msgstr "מתחזק לשעבר"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Andrius Štikonas"
-msgstr ""
+msgstr "אנדריוס שטיקונאס"
 
 #: main.cpp:86
 #, kde-kuit-format
@@ -3295,7 +3356,7 @@ msgstr "מתחזק"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Teo Mrnjavac"
-msgstr ""
+msgstr "טאו מרניאבק"
 
 #: main.cpp:87
 #, kde-format
@@ -3307,7 +3368,7 @@ msgstr "מתחזק לשעבר של Calamares"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Chantara Tith"
-msgstr ""
+msgstr "צ׳אנטרה טית׳"
 
 #: main.cpp:88
 #, kde-format
@@ -3319,7 +3380,7 @@ msgstr "תמיכה ב־LVM"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Pali Rohár"
-msgstr ""
+msgstr "פאלי רוהאר"
 
 #: main.cpp:89
 #, kde-format
@@ -3330,7 +3391,7 @@ msgstr "תמיכה ב־UDF"
 #: main.cpp:90
 #, kde-format
 msgid "Hugo Pereira Da Costa"
-msgstr ""
+msgstr "הוגו פריירה דה קוסטה"
 
 #: main.cpp:90
 #, kde-kuit-format
@@ -3342,7 +3403,7 @@ msgstr "עיצוב וידג׳ט מחיצות"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Caio Jordão Carvalho"
-msgstr ""
+msgstr "קאיו ז׳ורדאו קרבליו"
 
 #: main.cpp:91
 #, kde-format
@@ -3426,6 +3487,8 @@ msgid ""
 "<para>The configured backend plugin \"%1\" could not be loaded.</"
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
+"<para>אי אפשר לטעון את תוסף המנגנון „%1”.</para><para>תוסף המנגנון „%2” נטען "
+"במקומו.</para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
 #, kde-kuit-format
@@ -3440,6 +3503,8 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
+"<para>נכשלה טעינת תוסף המנגנון המוגדר („%1”) ותוסף ברירת המחדל („%2”). </"
+"para><para>נא לבדוק שההתקנה שלך תקינה.</para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
