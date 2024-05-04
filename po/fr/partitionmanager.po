@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-16 00:40+0000\n"
-"PO-Revision-Date: 2024-04-05 10:58+0200\n"
+"PO-Revision-Date: 2024-05-02 10:13+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -288,7 +288,7 @@ msgstr "LVM2 PV :"
 #: config/configurepagefilesystemcolors.ui:545
 #, kde-format
 msgid "exFAT:"
-msgstr "exFAT :"
+msgstr "ExFAT :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:558
@@ -1901,19 +1901,19 @@ msgstr "Enregistre la sortie du journal dans un fichier."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
-msgstr "À propos de la bibliothèque KPMcore"
+msgstr "À propos de la bibliothèque KPMCore"
 
 #: gui/mainwindow.cpp:531
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
-msgstr "Afficher la boîte de dialogue À propos de KPMcore"
+msgstr "Afficher la boîte de dialogue « À propos » de KPMCore"
 
 #: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
-msgstr "Afficher la boîte de dialogue À propos de KPMcore."
+msgstr "Afficher la boîte de dialogue « À propos » de KPMCore."
 
 #: gui/mainwindow.cpp:714
 #, kde-kuit-format
@@ -3478,7 +3478,7 @@ msgstr "Pali Rohár"
 #, kde-format
 msgctxt "@info:credit"
 msgid "UDF support"
-msgstr "Prise en charge d'UDF"
+msgstr "Prise en charge de « UDF »"
 
 #: main.cpp:90
 #, kde-format
