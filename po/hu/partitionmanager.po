@@ -3,21 +3,21 @@
 #
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012, 2014, 2020, 2021, 2022.
 # Balázs Úr <urbalazs@gmail.com>, 2013, 2014.
-# SPDX-FileCopyrightText: 2021, 2023 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2023, 2024 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-16 00:40+0000\n"
-"PO-Revision-Date: 2023-12-17 21:52+0100\n"
-"Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-05-12 14:48+0200\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -27,7 +27,7 @@ msgstr "Kiszel Kristóf"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kiszel.kristof@gmail.com"
+msgstr "ulysses@fsf.hu"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
@@ -348,13 +348,13 @@ msgstr "ismeretlen:"
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "Minix:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
 #, kde-format
 msgid "Bcachefs:"
-msgstr ""
+msgstr "Bcachefs:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
@@ -955,7 +955,7 @@ msgstr "Hozzáférési időpontok frissítése a módosításhoz viszonyítva"
 #: gui/editmountpointdialogwidgetbase.ui:271
 #, kde-format
 msgid "Don't prevent the system from booting if not mountable"
-msgstr ""
+msgstr "Ne akadályozza meg a rendszer indítását, ha nem csatolható"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
 #: gui/editmountpointdialogwidgetbase.ui:285
@@ -3063,12 +3063,14 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"LUKS2 használata a LUKS1 helyett a jobb biztonság érdekében, de a "
+"kompatibilitás sérülhet."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "LUKS2 engedélyezése"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
