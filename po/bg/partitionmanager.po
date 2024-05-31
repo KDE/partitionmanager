@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-16 00:40+0000\n"
-"PO-Revision-Date: 2024-04-04 15:45+0200\n"
+"PO-Revision-Date: 2024-05-30 17:05+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -27,7 +27,7 @@ msgstr "Валерий Вутов,Ясен Праматаров,Минчо Ко�
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "valeriy.voutov@gmail.com,yasen@lindeas.com"
+msgstr "valeriy.voutov@gmail.com,yasen@lindeas.com,mkondarev@yahoo.de"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
@@ -733,7 +733,7 @@ msgstr "Таблица на дяловете:"
 #: gui/devicepropswidgetbase.ui:85
 #, kde-format
 msgid "&Cylinder alignment"
-msgstr "&Подреждане на &цилиндрите"
+msgstr "&Подреждане на цилиндрите"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
 #: gui/devicepropswidgetbase.ui:92
@@ -825,7 +825,7 @@ msgid ""
 "strong='1'>can not be undone</emphasis>.</warning></para>"
 msgstr ""
 "<para> Сигурни ли сте, че искате да запазите промените, които сте направили "
-"във файла <filename>/etc/fstab </filename>? </para><para> <warning> Това ще "
+"във файла <filename>/etc/fstab </filename>? </para><para><warning> Това ще "
 "презапише съществуващия файл на твърд диск сега. Действието <emphasis strong "
 "= '1'> не може да бъде отменено </emphasis>.</warning></para>"
 
@@ -3548,6 +3548,3 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Колони"
-
-#~ msgid "          Minix:"
-#~ msgstr "          Minix:"
