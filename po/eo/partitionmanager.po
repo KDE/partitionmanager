@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-16 00:40+0000\n"
-"PO-Revision-Date: 2024-04-07 17:09+0100\n"
+"PO-Revision-Date: 2024-05-30 07:49+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -611,7 +611,7 @@ msgstr "Krei Novan Dispartigan Tabelon ĉe <filename>%1</filename>"
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create &New Partition Table"
-msgstr "Krei Novan Dispartigan Tabelon"
+msgstr "Krei &Novan Dispartigan Tabelon"
 
 #: gui/createpartitiontabledialog.cpp:59
 #, kde-kuit-format
@@ -739,13 +739,13 @@ msgstr "&Cilindra vicigo"
 #: gui/devicepropswidgetbase.ui:92
 #, kde-format
 msgid "Sector based align&ment"
-msgstr "Sektorbazita vicigo"
+msgstr "Sektorbazita &vicigo"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/devicepropswidgetbase.ui:121
 #, kde-format
 msgid "Capacity:"
-msgstr "Enhaveco:"
+msgstr "Kapacito:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
 #: gui/devicepropswidgetbase.ui:141
@@ -985,7 +985,7 @@ msgstr "Opcioj:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "File System Support"
-msgstr "Subteno de Dosiersistemo"
+msgstr "Subteno de Dosiera Sistemo"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/filesystemsupportdialogwidgetbase.ui:23
@@ -1045,7 +1045,7 @@ msgstr "Kopii"
 #: gui/filesystemsupportdialogwidgetbase.ui:100
 #, kde-format
 msgid "Check"
-msgstr "Ŝalti"
+msgstr "Kontroli"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:105
@@ -1069,7 +1069,7 @@ msgstr "Legi Uzadon"
 #: gui/filesystemsupportdialogwidgetbase.ui:120
 #, kde-format
 msgid "Backup"
-msgstr "Sekurkopio"
+msgstr "Rezervo"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:125
@@ -1107,7 +1107,7 @@ msgstr "Dispartiga Informo"
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "File system:"
-msgstr "Dosiersistemo:"
+msgstr "Dosier-sistemo:"
 
 #: gui/infopane.cpp:114 gui/infopane.cpp:128 gui/infopane.cpp:140
 #, kde-format, kde-kuit-format
@@ -1481,7 +1481,7 @@ msgstr "Forigi elektitan Volumgrupon."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
-msgstr "Regrandigi Voluman Grupon"
+msgstr "Aligrandigi Voluman Grupon"
 
 #: gui/mainwindow.cpp:342
 #, kde-format
@@ -2248,7 +2248,7 @@ msgstr "Iloj"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition"
-msgstr "Dispartigo"
+msgstr "Subdisko"
 
 #. i18n: ectx: Menu (panels)
 #: gui/partitionmanagerui.rc:77
