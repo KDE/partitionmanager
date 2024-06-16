@@ -174,7 +174,7 @@ void EditMountPointDialogWidget::buttonSelectClicked(bool)
 
 void EditMountPointDialogWidget::removeMountPoint()
 {
-    for (auto it = fstabEntries().begin(); it != fstabEntries().end(); ++it) {
+    for (auto it = fstabEntries().begin(); it != fstabEntries().end();) {
         if (editPath().count() <= 1 && (
                 (it->fsSpec().contains(partition().deviceNode()) && !partition().deviceNode().isEmpty() ) ||
                 (it->fsSpec().contains(partition().fileSystem().uuid()) && !partition().fileSystem().uuid().isEmpty() ) ||
@@ -182,15 +182,19 @@ void EditMountPointDialogWidget::removeMountPoint()
                 (it->fsSpec().contains(partition().label()) && !partition().label().isEmpty() ) ||
                 (it->fsSpec().contains(partition().uuid()) && !partition().uuid().isEmpty() )))
         {
-            fstabEntries().erase(it);
+            it = fstabEntries().erase(it);
             partition().setMountPoint(QString());
         }
         else if (editPath().count() > 1 && (&*it == currentEntry))
         {
-            fstabEntries().erase(it);
+            it = fstabEntries().erase(it);
             editPath().removeItem(editPath().currentIndex());
             partition().setMountPoint(editPath().itemText(editPath().currentIndex()));
             break;
+        }
+        else
+        {
+            ++it;
         }
     }
 
