@@ -2,13 +2,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-16 00:40+0000\n"
-"PO-Revision-Date: 2023-07-24 15:47+0200\n"
+"PO-Revision-Date: 2024-06-21 10:11+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -347,13 +347,13 @@ msgstr "okänt:"
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "Minix:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
 #, kde-format
 msgid "Bcachefs:"
-msgstr ""
+msgstr "Bcachefs:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
@@ -893,7 +893,7 @@ msgstr "Ta bort"
 #: gui/editmountpointdialogwidgetbase.ui:141
 #, kde-format
 msgid "A valid path is required."
-msgstr ""
+msgstr "En giltig sökväg krävs."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
 #: gui/editmountpointdialogwidgetbase.ui:173
@@ -953,7 +953,7 @@ msgstr "Uppdatera åtkomsttider i förhållande till ändring"
 #: gui/editmountpointdialogwidgetbase.ui:271
 #, kde-format
 msgid "Don't prevent the system from booting if not mountable"
-msgstr ""
+msgstr "Förhindra inte systemet från att starta om icke monteringsbar"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
 #: gui/editmountpointdialogwidgetbase.ui:285
@@ -2590,12 +2590,10 @@ msgid "(none found)"
 msgstr "(ingen hittades)"
 
 #: gui/partpropsdialog.cpp:115
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
-msgstr "(ingen hittades)"
+msgstr "(hittades inte)"
 
 #: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
@@ -2774,11 +2772,9 @@ msgstr "Typ av partition:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "Enhet"
+msgstr "Enhetssökväg:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:326
@@ -2868,9 +2864,7 @@ msgid "Resize Volume Group"
 msgstr "Ändra storlek på volymgrupp"
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Scanning devices..."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
 msgstr "Avsöker enheter..."
@@ -2879,12 +2873,10 @@ msgstr "Avsöker enheter..."
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p %"
 
 #: gui/scanprogressdialog.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
 msgstr "Avsöker..."
@@ -3064,12 +3056,14 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"Använd LUKS2 istället för LUKS1 för bättre säkerhet, men kompatibiliteten "
+"kan äventyras."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "Aktivera LUKS2"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
