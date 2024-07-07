@@ -46,6 +46,7 @@ ResizeDialog::ResizeDialog(QWidget* parent, Device& d, Partition& p, qint64 minF
     dialogWidget().hideLabel();
     dialogWidget().textLVName().hide();
     dialogWidget().lvName().hide();
+    dialogWidget().checkBoxLuks2().hide();
 
     setupDialog();
     setupConstraints();
