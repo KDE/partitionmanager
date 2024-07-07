@@ -45,10 +45,7 @@ PartitionTable::TableType CreatePartitionTableDialog::type() const
     if (widget().radioGPT().isChecked())
         return PartitionTable::gpt;
 
-    if (widget().radioMSDOS().isChecked() && Config::useCylinderAlignment() == true)
-        return PartitionTable::msdos;
-
-    return PartitionTable::msdos_sectorbased;
+    return PartitionTable::msdos;
 }
 
 void CreatePartitionTableDialog::onMSDOSToggled(bool on)

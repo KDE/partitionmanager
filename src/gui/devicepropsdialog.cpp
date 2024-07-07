@@ -79,16 +79,8 @@ void DevicePropsDialog::setupDialog()
 
         dialogWidget().partTableWidget().setReadOnly(true);
         dialogWidget().partTableWidget().setPartitionTable(device().partitionTable());
-
-        if (device().partitionTable()->type() == PartitionTable::msdos)
-            dialogWidget().radioCylinderBased().setChecked(true);
-        else if (device().partitionTable()->type() == PartitionTable::msdos_sectorbased)
-            dialogWidget().radioSectorBased().setChecked(true);
-        else
-            dialogWidget().hideTypeRadioButtons();
     } else {
         dialogWidget().partTableWidget().setVisible(false);
-        dialogWidget().hideTypeRadioButtons();
     }
 
     dialogWidget().type().setText(type);
@@ -137,8 +129,6 @@ void DevicePropsDialog::setupDialog()
 
 void DevicePropsDialog::setupConnections()
 {
-    connect(&dialogWidget().radioSectorBased(), &QRadioButton::toggled, this, &DevicePropsDialog::setDirty);
-    connect(&dialogWidget().radioCylinderBased(), &QRadioButton::toggled, this, &DevicePropsDialog::setDirty);
     connect(&dialogWidget().buttonSmartMore(), &QPushButton::clicked, this, &DevicePropsDialog::onButtonSmartMore);
 }
 
@@ -146,16 +136,6 @@ void DevicePropsDialog::setDirty(bool)
 {
     okButton->setEnabled(true);
     okButton->setDefault(true);
-}
-
-bool DevicePropsDialog::cylinderBasedAlignment() const
-{
-    return dialogWidget().radioCylinderBased().isChecked();
-}
-
-bool DevicePropsDialog::sectorBasedAlignment() const
-{
-    return dialogWidget().radioSectorBased().isChecked();
 }
 
 void DevicePropsDialog::onButtonSmartMore(bool)

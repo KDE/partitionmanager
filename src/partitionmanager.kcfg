@@ -53,10 +53,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
 			<label context="@label">Partition sector alignment</label>
 			<default>2048</default>
 		</entry>
-		<entry name="useCylinderAlignment" type="Bool">
-			<label context="@label">Use cylinder based alignment (Windows XP compatible)</label>
-			<default>false</default>
-		</entry>
 		<entry name="alignDefault" type="Bool">
 			<label context="@label">Align partitions per default</label>
 			<default>true</default>

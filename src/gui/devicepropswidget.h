@@ -53,29 +53,6 @@ public:
         return *m_LabelType;
     }
 
-    QRadioButton& radioCylinderBased() {
-        Q_ASSERT(m_RadioCylinderBased);
-        return *m_RadioCylinderBased;
-    }
-    const QRadioButton& radioCylinderBased() const {
-        Q_ASSERT(m_RadioCylinderBased);
-        return *m_RadioCylinderBased;
-    }
-
-    QRadioButton& radioSectorBased() {
-        Q_ASSERT(m_RadioSectorBased);
-        return *m_RadioSectorBased;
-    }
-    const QRadioButton& radioSectorBased() const {
-        Q_ASSERT(m_RadioSectorBased);
-        return *m_RadioSectorBased;
-    }
-
-    QSpacerItem& spacerType() {
-        Q_ASSERT(m_SpacerType);
-        return *m_SpacerType;
-    }
-
     QLabel& smartStatusText() {
         Q_ASSERT(m_LabelSmartStatusText);
         return *m_LabelSmartStatusText;
@@ -88,8 +65,6 @@ public:
         Q_ASSERT(m_ButtonSmartMore);
         return *m_ButtonSmartMore;
     }
-
-    void hideTypeRadioButtons();
 };
 
 #endif

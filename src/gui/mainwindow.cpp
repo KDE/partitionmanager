@@ -1081,7 +1081,7 @@ void MainWindow::onImportPartitionTable()
         QRegularExpressionMatch rePartition = re.match(line);
         re.setPattern(QStringLiteral("type:\\s\"(.+)\""));
         QRegularExpressionMatch reType = re.match(line);
-        re.setPattern(QStringLiteral("align:\\s\"(cylinder|sector)\""));
+        re.setPattern(QStringLiteral("align:\\s\"(sector)\""));
         QRegularExpressionMatch reAlign = re.match(line);
         re.setPattern(QStringLiteral("^##|v(\\d+)|##"));
         QRegularExpressionMatch reMagic = re.match(line);
@@ -1190,9 +1190,6 @@ void MainWindow::onImportPartitionTable()
         } else
             Log(Log::Level::warning) << xi18nc("@info:status", "Could not parse line %1 from import file. Ignoring it.", lineNo);
     }
-
-    if (ptable->type() == PartitionTable::msdos && ptable->isSectorBased(device))
-        ptable->setType(device, PartitionTable::msdos_sectorbased);
 }
 
 void MainWindow::onExportPartitionTable()
@@ -1351,11 +1348,6 @@ void MainWindow::onPropertiesDevice(const QString&)
 
         QPointer<DevicePropsDialog> dlg = new DevicePropsDialog(this, d);
         if (dlg->exec() == QDialog::Accepted) {
-            if (d.partitionTable()->type() == PartitionTable::msdos && dlg->sectorBasedAlignment())
-                d.partitionTable()->setType(d, PartitionTable::msdos_sectorbased);
-            else if (d.partitionTable()->type() == PartitionTable::msdos_sectorbased && dlg->cylinderBasedAlignment())
-                d.partitionTable()->setType(d, PartitionTable::msdos);
-
             on_m_OperationStack_devicesChanged();
             pmWidget().updatePartitions();
         }

@@ -12,8 +12,3 @@ DevicePropsWidget::DevicePropsWidget(QWidget* parent) :
     setupUi(this);
 }
 
-void DevicePropsWidget::hideTypeRadioButtons()
-{
-    radioSectorBased().setVisible(false);
-    radioCylinderBased().setVisible(false);
-}

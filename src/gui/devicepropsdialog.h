@@ -34,10 +34,6 @@ public:
     DevicePropsDialog(QWidget* parent, Device& d);
     ~DevicePropsDialog();
 
-public:
-    bool cylinderBasedAlignment() const;
-    bool sectorBasedAlignment() const;
-
 protected:
     void setupDialog();
     void setupConnections();
