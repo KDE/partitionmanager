@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-16 00:40+0000\n"
+"POT-Creation-Date: 2024-07-08 00:40+0000\n"
 "PO-Revision-Date: 2024-04-04 09:24+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -363,17 +363,17 @@ msgstr "Bcachefs:"
 msgid "Partition Alignment"
 msgstr "Вирівнювання розділу"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
 #: config/configurepagegeneral.ui:34
 #, kde-format
-msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr ""
-"Використовувати засноване на циліндрах вирівнювання (сумісне з Windows XP)"
+msgid "Align partitions per default"
+msgstr "Типово вирівнювати розділи"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
-#, kde-format
-msgid "Sector alignment:"
+#, fuzzy, kde-format
+#| msgid "Sector alignment:"
+msgid "Sec&tor alignment:"
 msgstr "Вирівнювання секторів:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
@@ -382,82 +382,79 @@ msgstr "Вирівнювання секторів:"
 msgid " sectors"
 msgstr " секторів"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
-#: config/configurepagegeneral.ui:79
-#, kde-format
-msgid "Align partitions per default"
-msgstr "Типово вирівнювати розділи"
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: config/configurepagegeneral.ui:98
+#: config/configurepagegeneral.ui:88
 #, kde-format
 msgid "Logging"
 msgstr "Журналювання"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: config/configurepagegeneral.ui:104
-#, kde-format
-msgid "Hide messages below:"
+#: config/configurepagegeneral.ui:94
+#, fuzzy, kde-format
+#| msgid "Hide messages below:"
+msgid "Hide messa&ges below:"
 msgstr "Приховати такі повідомлення:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:115
+#: config/configurepagegeneral.ui:105
 #, kde-format
 msgid "Debug"
 msgstr "Налагодження"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:120
+#: config/configurepagegeneral.ui:110
 #, kde-format
 msgid "Information"
 msgstr "Інформація"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:125
+#: config/configurepagegeneral.ui:115
 #, kde-format
 msgid "Warning"
 msgstr "Попередження"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:130
+#: config/configurepagegeneral.ui:120
 #, kde-format
 msgid "Error"
 msgstr "Помилка"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: config/configurepagegeneral.ui:147
+#: config/configurepagegeneral.ui:137
 #, kde-format
 msgid "File Systems"
 msgstr "Файлові системи"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: config/configurepagegeneral.ui:153
-#, kde-format
-msgid "Default file system:"
+#: config/configurepagegeneral.ui:143
+#, fuzzy, kde-format
+#| msgid "Default file system:"
+msgid "&Default file system:"
 msgstr "Типова файлова система:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
-#: config/configurepagegeneral.ui:175
+#: config/configurepagegeneral.ui:165
 #, kde-format
 msgid "Shredding"
 msgstr "Витирання"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: config/configurepagegeneral.ui:181
+#: config/configurepagegeneral.ui:171
 #, kde-format
 msgid "Overwrite with:"
 msgstr "Перезаписати:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
-#: config/configurepagegeneral.ui:188
+#: config/configurepagegeneral.ui:178
 #, kde-format
 msgid "Random data"
 msgstr "Випадковими даними"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
-#: config/configurepagegeneral.ui:198
-#, kde-format
-msgid "Zeros"
+#: config/configurepagegeneral.ui:188
+#, fuzzy, kde-format
+#| msgid "Zeros"
+msgid "&Zeros"
 msgstr "Нулями"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
@@ -539,7 +536,7 @@ msgid "Total Time: %1"
 msgstr "Загалом часу: %1"
 
 #: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1046
-#: gui/mainwindow.cpp:1211 gui/smartdialog.cpp:227
+#: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -616,7 +613,7 @@ msgctxt "@action:button"
 msgid "Create &New Partition Table"
 msgstr "С&творити таблицю розділів"
 
-#: gui/createpartitiontabledialog.cpp:59
+#: gui/createpartitiontabledialog.cpp:56
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -631,13 +628,13 @@ msgstr ""
 "кількості секторів, отже ви не зможете повністю скористатися місткістю "
 "пристрою.</para>"
 
-#: gui/createpartitiontabledialog.cpp:61
+#: gui/createpartitiontabledialog.cpp:58
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Create MS-Dos Partition Table Type?"
 msgstr "Ви справді бажаєте створити таблицю типу MS-DOS?"
 
-#: gui/createpartitiontabledialog.cpp:62
+#: gui/createpartitiontabledialog.cpp:59
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create MS-Dos Type"
@@ -693,103 +690,91 @@ msgctxt "@label device"
 msgid "%1 (read only)"
 msgstr "%1 (лише читання)"
 
-#: gui/devicepropsdialog.cpp:107 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
+#: gui/devicepropsdialog.cpp:99 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "good"
 msgstr "добрий"
 
-#: gui/devicepropsdialog.cpp:112 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
+#: gui/devicepropsdialog.cpp:104 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "BAD"
 msgstr "ПОГАНИЙ"
 
-#: gui/devicepropsdialog.cpp:117 gui/smartdialog.cpp:129
+#: gui/devicepropsdialog.cpp:109 gui/smartdialog.cpp:129
 #, kde-kuit-format
 msgctxt "@label"
 msgid "(unknown)"
 msgstr "(невідомий)"
 
-#: gui/devicepropsdialog.cpp:123
+#: gui/devicepropsdialog.cpp:115
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "LVM Volume Group"
 msgstr "Група томів LVM"
 
-#: gui/devicepropsdialog.cpp:125
+#: gui/devicepropsdialog.cpp:117
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Software RAID Device"
 msgstr "Програмний пристрій RAID"
 
-#: gui/devicepropsdialog.cpp:127
+#: gui/devicepropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Volume Manager Device"
 msgstr "Пристрій керування томів"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
-#: gui/devicepropswidgetbase.ui:63
-#, kde-format
-msgid "Partition table:"
-msgstr "Таблиця розділів:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
-#: gui/devicepropswidgetbase.ui:85
-#, kde-format
-msgid "&Cylinder alignment"
-msgstr "Вирівнювання за &циліндрами"
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
-#: gui/devicepropswidgetbase.ui:92
-#, kde-format
-msgid "Sector based align&ment"
-msgstr "Вирівн&ювання за секторами"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
-#: gui/devicepropswidgetbase.ui:121
-#, kde-format
-msgid "Capacity:"
-msgstr "Місткість:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
-#: gui/devicepropswidgetbase.ui:141
-#, kde-format
-msgid "Total sectors:"
-msgstr "Загалом секторів:"
-
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
-#: gui/devicepropswidgetbase.ui:168
+#: gui/devicepropswidgetbase.ui:22
 #, kde-format
 msgid "Logical sector size:"
 msgstr "Розмір логічного сектора:"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
-#: gui/devicepropswidgetbase.ui:188
-#, kde-format
-msgid "Physical sector size:"
-msgstr "Розмір фізичного сектора:"
-
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
-#: gui/devicepropswidgetbase.ui:222
+#: gui/devicepropswidgetbase.ui:32
 #, kde-format
 msgid "Primaries/Max:"
 msgstr "Основний/Макс.:"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/devicepropswidgetbase.ui:42
+#, kde-format
+msgid "Total sectors:"
+msgstr "Загалом секторів:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
+#: gui/devicepropswidgetbase.ui:83 gui/editmountpointdialogwidgetbase.ui:102
+#, kde-format
+msgid "More..."
+msgstr "Більше…"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/devicepropswidgetbase.ui:92
+#, kde-format
+msgid "Capacity:"
+msgstr "Місткість:"
+
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
-#: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
+#: gui/devicepropswidgetbase.ui:112 gui/smartdialog.cpp:147
 #: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
 #, kde-format
 msgid "SMART status:"
 msgstr "Стан за SMART:"
 
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
-#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:102
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
+#: gui/devicepropswidgetbase.ui:198
 #, kde-format
-msgid "More..."
-msgstr "Більше…"
+msgid "Physical sector size:"
+msgstr "Розмір фізичного сектора:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
+#: gui/devicepropswidgetbase.ui:267
+#, kde-format
+msgid "Partition table:"
+msgstr "Таблиця розділів:"
 
 #: gui/editmountoptionsdialog.cpp:25
 #, kde-kuit-format
@@ -2053,7 +2038,7 @@ msgstr ""
 #: gui/mainwindow.cpp:1090 gui/mainwindow.cpp:1100 gui/mainwindow.cpp:1107
 #: gui/mainwindow.cpp:1112 gui/mainwindow.cpp:1122 gui/mainwindow.cpp:1135
 #: gui/mainwindow.cpp:1140 gui/mainwindow.cpp:1159 gui/mainwindow.cpp:1164
-#: gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1460
+#: gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1452
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
@@ -2136,23 +2121,23 @@ msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr ""
 "Не вдалося обробити рядок %1 з імпортованого файла. Рядок буде пропущено."
 
-#: gui/mainwindow.cpp:1211
+#: gui/mainwindow.cpp:1208
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "Помилка експортування таблиці розділів"
 
-#: gui/mainwindow.cpp:1381 gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1423
+#: gui/mainwindow.cpp:1373 gui/mainwindow.cpp:1379 gui/mainwindow.cpp:1415
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1398
+#: gui/mainwindow.cpp:1379 gui/mainwindow.cpp:1390
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1435
+#: gui/mainwindow.cpp:1427
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2179,25 +2164,25 @@ msgstr ""
 "інструментами можна за допомогою програми для керування пакунками вашого "
 "дистрибутива.</para>"
 
-#: gui/mainwindow.cpp:1448
+#: gui/mainwindow.cpp:1440
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "Не встановлено пакунків з допоміжними інструментами"
 
-#: gui/mainwindow.cpp:1459
+#: gui/mainwindow.cpp:1451
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "Нерозпізнаний пристрій «%1» "
 
-#: gui/mainwindow.cpp:1468
+#: gui/mainwindow.cpp:1460
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "Нерозпізнаний розділ «%1» "
 
-#: gui/mainwindow.cpp:1469
+#: gui/mainwindow.cpp:1461
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
@@ -2882,13 +2867,13 @@ msgctxt "@title:window"
 msgid "Resize/move partition: <filename>%1</filename>"
 msgstr "Зміна розміру/Пересування розділу: <filename>%1</filename>"
 
-#: gui/resizedialog.cpp:91
+#: gui/resizedialog.cpp:92
 #, kde-format
 msgctxt "%2 is either empty or says Invalid passphrase."
 msgid "%2Enter passphrase for %1:"
 msgstr "%2Введіть пароль для %1:"
 
-#: gui/resizedialog.cpp:100
+#: gui/resizedialog.cpp:101
 #, kde-format
 msgctxt "Part of %2Enter passphrase for %1:"
 msgid "Invalid passphrase. "
@@ -3496,44 +3481,36 @@ msgctxt "@label"
 msgid "Partition sector alignment"
 msgstr "Вирівнювання секторів розділу"
 
-#. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
-#: partitionmanager.kcfg:57
-#, kde-format
-msgctxt "@label"
-msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr ""
-"Використовувати засноване на циліндрах вирівнювання (сумісне з Windows XP)"
-
 #. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
-#: partitionmanager.kcfg:61
+#: partitionmanager.kcfg:57
 #, kde-format
 msgctxt "@label"
 msgid "Align partitions per default"
 msgstr "Типово вирівнювати розділи"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:65
+#: partitionmanager.kcfg:61
 #, kde-format
 msgctxt "@label"
 msgid "File system colors"
 msgstr "Кольори файлових систем"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:143
+#: partitionmanager.kcfg:139
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
 msgstr "Показувати смужку меню програми"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:147
+#: partitionmanager.kcfg:143
 #, kde-format
 msgctxt "@label"
 msgid "Backend plugin"
 msgstr "Додаток сервера"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:153
+#: partitionmanager.kcfg:149
 #, kde-format
 msgctxt "@label"
 msgid "Preferred unit:"
@@ -3572,6 +3549,21 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Стовпчики"
+
+#~ msgid "Use cylinder based alignment (Windows XP compatible)"
+#~ msgstr ""
+#~ "Використовувати засноване на циліндрах вирівнювання (сумісне з Windows XP)"
+
+#~ msgid "&Cylinder alignment"
+#~ msgstr "Вирівнювання за &циліндрами"
+
+#~ msgid "Sector based align&ment"
+#~ msgstr "Вирівн&ювання за секторами"
+
+#~ msgctxt "@label"
+#~ msgid "Use cylinder based alignment (Windows XP compatible)"
+#~ msgstr ""
+#~ "Використовувати засноване на циліндрах вирівнювання (сумісне з Windows XP)"
 
 #~ msgid "          Minix:"
 #~ msgstr "          Minix:"

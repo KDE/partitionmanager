@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-16 00:40+0000\n"
+"POT-Creation-Date: 2024-07-08 00:40+0000\n"
 "PO-Revision-Date: 2010-03-06 19:47+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -394,19 +394,19 @@ msgstr ""
 msgid "Partition Alignment"
 msgstr "การจัดเรียงเซกเตอร์ของพาร์ทิชัน:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
 #: config/configurepagegeneral.ui:34
 #, fuzzy, kde-format
-#| msgid ""
-#| "Use Cylinder Based MS-Dos Partition Alignment (Windows XP compatible)"
-msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr "ใช้การจัดเรียงพาร์ทิชันของ MS-Dos อิงพื้นฐานไซลินเดร์ (เข้ากันได้กับ Windows XP)"
+#| msgctxt "@info:tooltip"
+#| msgid "New partition"
+msgid "Align partitions per default"
+msgstr "พาร์ทิชันใหม่"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
 #, fuzzy, kde-format
 #| msgid "Sector Based Alignment"
-msgid "Sector alignment:"
+msgid "Sec&tor alignment:"
 msgstr "การจัดเรียงอิงพื้นฐานเซกเตอร์"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
@@ -417,34 +417,26 @@ msgstr "การจัดเรียงอิงพื้นฐานเซก
 msgid " sectors"
 msgstr "%1 เซกเตอร์"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
-#: config/configurepagegeneral.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "New partition"
-msgid "Align partitions per default"
-msgstr "พาร์ทิชันใหม่"
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: config/configurepagegeneral.ui:98
+#: config/configurepagegeneral.ui:88
 #, kde-format
 msgid "Logging"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: config/configurepagegeneral.ui:104
+#: config/configurepagegeneral.ui:94
 #, kde-format
-msgid "Hide messages below:"
+msgid "Hide messa&ges below:"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:115
+#: config/configurepagegeneral.ui:105
 #, kde-format
 msgid "Debug"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:120
+#: config/configurepagegeneral.ui:110
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Information"
@@ -452,7 +444,7 @@ msgid "Information"
 msgstr "ข้อมูลรายละเอียด"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:125
+#: config/configurepagegeneral.ui:115
 #, fuzzy, kde-format
 #| msgctxt "@info:progress operation"
 #| msgid "Warning"
@@ -460,7 +452,7 @@ msgid "Warning"
 msgstr "แจ้งเตือน"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:130
+#: config/configurepagegeneral.ui:120
 #, fuzzy, kde-format
 #| msgctxt "@info:progress job"
 #| msgid "Error"
@@ -468,20 +460,20 @@ msgid "Error"
 msgstr "ผิดพลาด"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: config/configurepagegeneral.ui:147
+#: config/configurepagegeneral.ui:137
 #, kde-format
 msgid "File Systems"
 msgstr "ระบบแฟ้ม"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: config/configurepagegeneral.ui:153
+#: config/configurepagegeneral.ui:143
 #, fuzzy, kde-format
 #| msgid "File System"
-msgid "Default file system:"
+msgid "&Default file system:"
 msgstr "ระบบแฟ้ม"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
-#: config/configurepagegeneral.ui:175
+#: config/configurepagegeneral.ui:165
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Shred"
@@ -489,7 +481,7 @@ msgid "Shredding"
 msgstr "ลบแบบทำลายข้อมูล"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: config/configurepagegeneral.ui:181
+#: config/configurepagegeneral.ui:171
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "&Overwrite File"
@@ -497,15 +489,15 @@ msgid "Overwrite with:"
 msgstr "เ&ขียนทับแฟ้ม"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
-#: config/configurepagegeneral.ui:188
+#: config/configurepagegeneral.ui:178
 #, kde-format
 msgid "Random data"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
-#: config/configurepagegeneral.ui:198
+#: config/configurepagegeneral.ui:188
 #, kde-format
-msgid "Zeros"
+msgid "&Zeros"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
@@ -589,7 +581,7 @@ msgid "Total Time: %1"
 msgstr "เวลาทั้งหมด: %1"
 
 #: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1046
-#: gui/mainwindow.cpp:1211 gui/smartdialog.cpp:227
+#: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Could not create temporary file <filename>%1</filename> for writing."
@@ -667,7 +659,7 @@ msgctxt "@action:button"
 msgid "Create &New Partition Table"
 msgstr "&สร้างตารางพาร์ทิชันใหม่"
 
-#: gui/createpartitiontabledialog.cpp:59
+#: gui/createpartitiontabledialog.cpp:56
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -677,7 +669,7 @@ msgid ""
 "to use the whole device.</para>"
 msgstr ""
 
-#: gui/createpartitiontabledialog.cpp:61
+#: gui/createpartitiontabledialog.cpp:58
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Create New Partition Table"
@@ -685,7 +677,7 @@ msgctxt "@title:window"
 msgid "Really Create MS-Dos Partition Table Type?"
 msgstr "&สร้างตารางพาร์ทิชันใหม่"
 
-#: gui/createpartitiontabledialog.cpp:62
+#: gui/createpartitiontabledialog.cpp:59
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create MS-Dos Type"
@@ -741,19 +733,19 @@ msgctxt "@label device"
 msgid "%1 (read only)"
 msgstr "%1 (อ่านได้อย่างเดียว)"
 
-#: gui/devicepropsdialog.cpp:107 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
+#: gui/devicepropsdialog.cpp:99 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "good"
 msgstr ""
 
-#: gui/devicepropsdialog.cpp:112 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
+#: gui/devicepropsdialog.cpp:104 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "BAD"
 msgstr ""
 
-#: gui/devicepropsdialog.cpp:117 gui/smartdialog.cpp:129
+#: gui/devicepropsdialog.cpp:109 gui/smartdialog.cpp:129
 #, fuzzy, kde-kuit-format
 #| msgctxt "@item/plain partition table name"
 #| msgid "unknown"
@@ -761,7 +753,7 @@ msgctxt "@label"
 msgid "(unknown)"
 msgstr "ไม่ทราบ"
 
-#: gui/devicepropsdialog.cpp:123
+#: gui/devicepropsdialog.cpp:115
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Resize or move partition"
@@ -769,76 +761,54 @@ msgctxt "@label device"
 msgid "LVM Volume Group"
 msgstr "ปรับขนาดหรือย้ายพาร์ทิชัน"
 
-#: gui/devicepropsdialog.cpp:125
+#: gui/devicepropsdialog.cpp:117
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Software RAID Device"
 msgstr ""
 
-#: gui/devicepropsdialog.cpp:127
+#: gui/devicepropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Volume Manager Device"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
-#: gui/devicepropswidgetbase.ui:63
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
+#: gui/devicepropswidgetbase.ui:22
 #, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Partition type:"
-msgid "Partition table:"
-msgstr "พาร์ทิชันประเภท:"
+#| msgid "Logical Sector Size:"
+msgid "Logical sector size:"
+msgstr "ขนาดของเซกเตอร์ลอจิคัล:"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
-#: gui/devicepropswidgetbase.ui:85
-#, fuzzy, kde-format
-#| msgid "Cylinder  Alignment"
-msgid "&Cylinder alignment"
-msgstr "การจัดเรียงไซลินเดอร์"
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
-#: gui/devicepropswidgetbase.ui:92
-#, fuzzy, kde-format
-#| msgid "Sector Based Alignment"
-msgid "Sector based align&ment"
-msgstr "การจัดเรียงอิงพื้นฐานเซกเตอร์"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
-#: gui/devicepropswidgetbase.ui:121
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
+#: gui/devicepropswidgetbase.ui:32
 #, kde-format
-msgid "Capacity:"
-msgstr "ความจุ:"
+msgid "Primaries/Max:"
+msgstr "จำนวนพาร์ทิชันหลัก/มีได้สูงสุด:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
-#: gui/devicepropswidgetbase.ui:141
+#: gui/devicepropswidgetbase.ui:42
 #, fuzzy, kde-format
 #| msgctxt "@label device"
 #| msgid "Total sectors:"
 msgid "Total sectors:"
 msgstr "เซกเตอร์ทั้งหมด:"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
-#: gui/devicepropswidgetbase.ui:168
-#, fuzzy, kde-format
-#| msgid "Logical Sector Size:"
-msgid "Logical sector size:"
-msgstr "ขนาดของเซกเตอร์ลอจิคัล:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
-#: gui/devicepropswidgetbase.ui:188
-#, fuzzy, kde-format
-#| msgid "Logical Sector Size:"
-msgid "Physical sector size:"
-msgstr "ขนาดของเซกเตอร์ลอจิคัล:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
-#: gui/devicepropswidgetbase.ui:222
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
+#: gui/devicepropswidgetbase.ui:83 gui/editmountpointdialogwidgetbase.ui:102
 #, kde-format
-msgid "Primaries/Max:"
-msgstr "จำนวนพาร์ทิชันหลัก/มีได้สูงสุด:"
+msgid "More..."
+msgstr "เพิ่มเติม..."
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/devicepropswidgetbase.ui:92
+#, kde-format
+msgid "Capacity:"
+msgstr "ความจุ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
-#: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
+#: gui/devicepropswidgetbase.ui:112 gui/smartdialog.cpp:147
 #: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
 #, fuzzy, kde-format
 #| msgctxt "@label"
@@ -846,12 +816,20 @@ msgstr "จำนวนพาร์ทิชันหลัก/มีได้�
 msgid "SMART status:"
 msgstr "สถานะ:"
 
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
-#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:102
-#, kde-format
-msgid "More..."
-msgstr "เพิ่มเติม..."
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
+#: gui/devicepropswidgetbase.ui:198
+#, fuzzy, kde-format
+#| msgid "Logical Sector Size:"
+msgid "Physical sector size:"
+msgstr "ขนาดของเซกเตอร์ลอจิคัล:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
+#: gui/devicepropswidgetbase.ui:267
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Partition type:"
+msgid "Partition table:"
+msgstr "พาร์ทิชันประเภท:"
 
 #: gui/editmountoptionsdialog.cpp:25
 #, kde-kuit-format
@@ -2190,7 +2168,7 @@ msgstr "แฟ้ม <filename>%1</filename> ไม่ใช่แฟ้มข�
 #: gui/mainwindow.cpp:1090 gui/mainwindow.cpp:1100 gui/mainwindow.cpp:1107
 #: gui/mainwindow.cpp:1112 gui/mainwindow.cpp:1122 gui/mainwindow.cpp:1135
 #: gui/mainwindow.cpp:1140 gui/mainwindow.cpp:1159 gui/mainwindow.cpp:1164
-#: gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1460
+#: gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1452
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
@@ -2278,23 +2256,23 @@ msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr "ไม่สามารถประมวลบรรทัดที่ %1 จากแฟ้มนำเข้าได้ ทำการละทิ้งมัน"
 
-#: gui/mainwindow.cpp:1211
+#: gui/mainwindow.cpp:1208
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "เกิดข้อผิดพลาดของการส่งออกตารางพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:1381 gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1423
+#: gui/mainwindow.cpp:1373 gui/mainwindow.cpp:1379 gui/mainwindow.cpp:1415
 #, kde-kuit-format
 msgid "%1%2"
 msgstr ""
 
-#: gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1398
+#: gui/mainwindow.cpp:1379 gui/mainwindow.cpp:1390
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr ""
 
-#: gui/mainwindow.cpp:1435
+#: gui/mainwindow.cpp:1427
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2310,7 +2288,7 @@ msgid ""
 "in your distribution's package manager.</para>"
 msgstr ""
 
-#: gui/mainwindow.cpp:1448
+#: gui/mainwindow.cpp:1440
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "File System Support"
@@ -2318,13 +2296,13 @@ msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "รองรับระบบแฟ้ม"
 
-#: gui/mainwindow.cpp:1459
+#: gui/mainwindow.cpp:1451
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr ""
 
-#: gui/mainwindow.cpp:1468
+#: gui/mainwindow.cpp:1460
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
@@ -2332,7 +2310,7 @@ msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "ไม่สามารถจัดการบทบาท \"%1\" ของพาร์ทิชัน %2 ได้ (บรรทัดที่ %3)"
 
-#: gui/mainwindow.cpp:1469
+#: gui/mainwindow.cpp:1461
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "Error Importing Partition Table"
@@ -3079,13 +3057,13 @@ msgctxt "@title:window"
 msgid "Resize/move partition: <filename>%1</filename>"
 msgstr "ปรับขนาดหรือย้ายพาร์ทิชัน: <filename>%1</filename>"
 
-#: gui/resizedialog.cpp:91
+#: gui/resizedialog.cpp:92
 #, kde-format
 msgctxt "%2 is either empty or says Invalid passphrase."
 msgid "%2Enter passphrase for %1:"
 msgstr ""
 
-#: gui/resizedialog.cpp:100
+#: gui/resizedialog.cpp:101
 #, kde-format
 msgctxt "Part of %2Enter passphrase for %1:"
 msgid "Invalid passphrase. "
@@ -3745,17 +3723,8 @@ msgctxt "@label"
 msgid "Partition sector alignment"
 msgstr "การจัดเรียงเซกเตอร์ของพาร์ทิชัน:"
 
-#. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
-#: partitionmanager.kcfg:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use Cylinder Based MS-Dos Partition Alignment (Windows XP compatible)"
-msgctxt "@label"
-msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr "ใช้การจัดเรียงพาร์ทิชันของ MS-Dos อิงพื้นฐานไซลินเดร์ (เข้ากันได้กับ Windows XP)"
-
 #. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
-#: partitionmanager.kcfg:61
+#: partitionmanager.kcfg:57
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "New partition"
@@ -3764,7 +3733,7 @@ msgid "Align partitions per default"
 msgstr "พาร์ทิชันใหม่"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:65
+#: partitionmanager.kcfg:61
 #, fuzzy, kde-format
 #| msgid "File System Colors"
 msgctxt "@label"
@@ -3772,14 +3741,14 @@ msgid "File system colors"
 msgstr "สีต่าง ๆ ของระบบแฟ้ม"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:143
+#: partitionmanager.kcfg:139
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
 msgstr ""
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:147
+#: partitionmanager.kcfg:143
 #, fuzzy, kde-format
 #| msgid "Backend:"
 msgctxt "@label"
@@ -3787,7 +3756,7 @@ msgid "Backend plugin"
 msgstr "แบ็กเอนด์:"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:153
+#: partitionmanager.kcfg:149
 #, kde-format
 msgctxt "@label"
 msgid "Preferred unit:"
@@ -3830,6 +3799,29 @@ msgstr "ไม่สามารถโหลดแกนของส่วนเ
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "คอลัมน์ต่าง ๆ"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use Cylinder Based MS-Dos Partition Alignment (Windows XP compatible)"
+#~ msgid "Use cylinder based alignment (Windows XP compatible)"
+#~ msgstr "ใช้การจัดเรียงพาร์ทิชันของ MS-Dos อิงพื้นฐานไซลินเดร์ (เข้ากันได้กับ Windows XP)"
+
+#, fuzzy
+#~| msgid "Cylinder  Alignment"
+#~ msgid "&Cylinder alignment"
+#~ msgstr "การจัดเรียงไซลินเดอร์"
+
+#, fuzzy
+#~| msgid "Sector Based Alignment"
+#~ msgid "Sector based align&ment"
+#~ msgstr "การจัดเรียงอิงพื้นฐานเซกเตอร์"
+
+#, fuzzy
+#~| msgid ""
+#~| "Use Cylinder Based MS-Dos Partition Alignment (Windows XP compatible)"
+#~ msgctxt "@label"
+#~ msgid "Use cylinder based alignment (Windows XP compatible)"
+#~ msgstr "ใช้การจัดเรียงพาร์ทิชันของ MS-Dos อิงพื้นฐานไซลินเดร์ (เข้ากันได้กับ Windows XP)"
 
 #, fuzzy
 #~| msgid "Backend:"

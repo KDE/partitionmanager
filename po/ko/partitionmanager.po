@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-16 00:40+0000\n"
+"POT-Creation-Date: 2024-07-08 00:40+0000\n"
 "PO-Revision-Date: 2024-02-06 00:38+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -359,16 +359,17 @@ msgstr ""
 msgid "Partition Alignment"
 msgstr "파티션 정렬"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_useCylinderAlignment)
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
 #: config/configurepagegeneral.ui:34
 #, kde-format
-msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr "실린더 기반 정렬 사용(Windows XP 호환)"
+msgid "Align partitions per default"
+msgstr "기본값으로 파티션 정렬"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
-#, kde-format
-msgid "Sector alignment:"
+#, fuzzy, kde-format
+#| msgid "Sector alignment:"
+msgid "Sec&tor alignment:"
 msgstr "섹터 정렬:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
@@ -377,82 +378,79 @@ msgstr "섹터 정렬:"
 msgid " sectors"
 msgstr "섹터"
 
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
-#: config/configurepagegeneral.ui:79
-#, kde-format
-msgid "Align partitions per default"
-msgstr "기본값으로 파티션 정렬"
-
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: config/configurepagegeneral.ui:98
+#: config/configurepagegeneral.ui:88
 #, kde-format
 msgid "Logging"
 msgstr "로그 작성"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: config/configurepagegeneral.ui:104
-#, kde-format
-msgid "Hide messages below:"
+#: config/configurepagegeneral.ui:94
+#, fuzzy, kde-format
+#| msgid "Hide messages below:"
+msgid "Hide messa&ges below:"
 msgstr "아래 메시지 숨기기:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:115
+#: config/configurepagegeneral.ui:105
 #, kde-format
 msgid "Debug"
 msgstr "디버그"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:120
+#: config/configurepagegeneral.ui:110
 #, kde-format
 msgid "Information"
 msgstr "정보"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:125
+#: config/configurepagegeneral.ui:115
 #, kde-format
 msgid "Warning"
 msgstr "경고"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
-#: config/configurepagegeneral.ui:130
+#: config/configurepagegeneral.ui:120
 #, kde-format
 msgid "Error"
 msgstr "오류"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
-#: config/configurepagegeneral.ui:147
+#: config/configurepagegeneral.ui:137
 #, kde-format
 msgid "File Systems"
 msgstr "파일 시스템"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: config/configurepagegeneral.ui:153
-#, kde-format
-msgid "Default file system:"
+#: config/configurepagegeneral.ui:143
+#, fuzzy, kde-format
+#| msgid "Default file system:"
+msgid "&Default file system:"
 msgstr "기본 파일 시스템:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
-#: config/configurepagegeneral.ui:175
+#: config/configurepagegeneral.ui:165
 #, kde-format
 msgid "Shredding"
 msgstr "데이터 소거"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: config/configurepagegeneral.ui:181
+#: config/configurepagegeneral.ui:171
 #, kde-format
 msgid "Overwrite with:"
 msgstr "다음으로 덮어쓰기:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
-#: config/configurepagegeneral.ui:188
+#: config/configurepagegeneral.ui:178
 #, kde-format
 msgid "Random data"
 msgstr "무작위 데이터"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
-#: config/configurepagegeneral.ui:198
-#, kde-format
-msgid "Zeros"
+#: config/configurepagegeneral.ui:188
+#, fuzzy, kde-format
+#| msgid "Zeros"
+msgid "&Zeros"
 msgstr "영(0)"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
@@ -534,7 +532,7 @@ msgid "Total Time: %1"
 msgstr "총 시간: %1"
 
 #: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1046
-#: gui/mainwindow.cpp:1211 gui/smartdialog.cpp:227
+#: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -609,7 +607,7 @@ msgctxt "@action:button"
 msgid "Create &New Partition Table"
 msgstr "새 파티션 테이블 만들기(&N)"
 
-#: gui/createpartitiontabledialog.cpp:59
+#: gui/createpartitiontabledialog.cpp:56
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -622,13 +620,13 @@ msgstr ""
 "para> <para>이 장치에 2^32개 이상의 섹터가 있습니다. MS-DOS 파티션 테이블은 "
 "2^32개 섹터까지만 지원하므로 장치 전부를 사용할 수 없습니다.</para>"
 
-#: gui/createpartitiontabledialog.cpp:61
+#: gui/createpartitiontabledialog.cpp:58
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Create MS-Dos Partition Table Type?"
 msgstr "MS-DOS 파티션 테이블을 만드시겠습니까?"
 
-#: gui/createpartitiontabledialog.cpp:62
+#: gui/createpartitiontabledialog.cpp:59
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create MS-Dos Type"
@@ -682,103 +680,91 @@ msgctxt "@label device"
 msgid "%1 (read only)"
 msgstr "%1(읽기 전용)"
 
-#: gui/devicepropsdialog.cpp:107 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
+#: gui/devicepropsdialog.cpp:99 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "good"
 msgstr "양호"
 
-#: gui/devicepropsdialog.cpp:112 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
+#: gui/devicepropsdialog.cpp:104 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "BAD"
 msgstr "불량"
 
-#: gui/devicepropsdialog.cpp:117 gui/smartdialog.cpp:129
+#: gui/devicepropsdialog.cpp:109 gui/smartdialog.cpp:129
 #, kde-kuit-format
 msgctxt "@label"
 msgid "(unknown)"
 msgstr "(알 수 없음)"
 
-#: gui/devicepropsdialog.cpp:123
+#: gui/devicepropsdialog.cpp:115
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "LVM Volume Group"
 msgstr "LVM 볼륨 그룹"
 
-#: gui/devicepropsdialog.cpp:125
+#: gui/devicepropsdialog.cpp:117
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Software RAID Device"
 msgstr "소프트웨어 RAID 장치"
 
-#: gui/devicepropsdialog.cpp:127
+#: gui/devicepropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Volume Manager Device"
 msgstr "볼륨 관리자 장치"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
-#: gui/devicepropswidgetbase.ui:63
-#, kde-format
-msgid "Partition table:"
-msgstr "파티션 테이블:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioCylinderBased)
-#: gui/devicepropswidgetbase.ui:85
-#, kde-format
-msgid "&Cylinder alignment"
-msgstr "실린더 정렬(&C)"
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioSectorBased)
-#: gui/devicepropswidgetbase.ui:92
-#, kde-format
-msgid "Sector based align&ment"
-msgstr "섹터 기반 정렬(&M)"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
-#: gui/devicepropswidgetbase.ui:121
-#, kde-format
-msgid "Capacity:"
-msgstr "용량:"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
-#: gui/devicepropswidgetbase.ui:141
-#, kde-format
-msgid "Total sectors:"
-msgstr "총 섹터:"
-
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
-#: gui/devicepropswidgetbase.ui:168
+#: gui/devicepropswidgetbase.ui:22
 #, kde-format
 msgid "Logical sector size:"
 msgstr "논리 섹터 크기:"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
-#: gui/devicepropswidgetbase.ui:188
-#, kde-format
-msgid "Physical sector size:"
-msgstr "물리 섹터 크기:"
-
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
-#: gui/devicepropswidgetbase.ui:222
+#: gui/devicepropswidgetbase.ui:32
 #, kde-format
 msgid "Primaries/Max:"
 msgstr "프라이머리/최대:"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
+#: gui/devicepropswidgetbase.ui:42
+#, kde-format
+msgid "Total sectors:"
+msgstr "총 섹터:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
+#: gui/devicepropswidgetbase.ui:83 gui/editmountpointdialogwidgetbase.ui:102
+#, kde-format
+msgid "More..."
+msgstr "더 보기..."
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
+#: gui/devicepropswidgetbase.ui:92
+#, kde-format
+msgid "Capacity:"
+msgstr "용량:"
+
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
-#: gui/devicepropswidgetbase.ui:242 gui/smartdialog.cpp:147
+#: gui/devicepropswidgetbase.ui:112 gui/smartdialog.cpp:147
 #: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
 #, kde-format
 msgid "SMART status:"
 msgstr "SMART 상태:"
 
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
-#: gui/devicepropswidgetbase.ui:283 gui/editmountpointdialogwidgetbase.ui:102
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
+#: gui/devicepropswidgetbase.ui:198
 #, kde-format
-msgid "More..."
-msgstr "더 보기..."
+msgid "Physical sector size:"
+msgstr "물리 섹터 크기:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
+#: gui/devicepropswidgetbase.ui:267
+#, kde-format
+msgid "Partition table:"
+msgstr "파티션 테이블:"
 
 #: gui/editmountoptionsdialog.cpp:25
 #, kde-kuit-format
@@ -2019,7 +2005,7 @@ msgstr "파일 <filename>%1</filename>에 올바른 파티션 테이블 정보�
 #: gui/mainwindow.cpp:1090 gui/mainwindow.cpp:1100 gui/mainwindow.cpp:1107
 #: gui/mainwindow.cpp:1112 gui/mainwindow.cpp:1122 gui/mainwindow.cpp:1135
 #: gui/mainwindow.cpp:1140 gui/mainwindow.cpp:1159 gui/mainwindow.cpp:1164
-#: gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1460
+#: gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1452
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
@@ -2097,23 +2083,23 @@ msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr "가져올 파일의 %1번째 줄을 처리할 수 없습니다. 무시합니다."
 
-#: gui/mainwindow.cpp:1211
+#: gui/mainwindow.cpp:1208
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "파티션 테이블을 내보내는 중 오류 발생"
 
-#: gui/mainwindow.cpp:1381 gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1423
+#: gui/mainwindow.cpp:1373 gui/mainwindow.cpp:1379 gui/mainwindow.cpp:1415
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1387 gui/mainwindow.cpp:1398
+#: gui/mainwindow.cpp:1379 gui/mainwindow.cpp:1390
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1435
+#: gui/mainwindow.cpp:1427
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2138,25 +2124,25 @@ msgstr ""
 "수 없습니다.</para><para>배포판 패키지 관리자를 통해서 필요한 도구를 설치할 "
 "수 있습니다.</para>"
 
-#: gui/mainwindow.cpp:1448
+#: gui/mainwindow.cpp:1440
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "파일 시스템 지원 패키지 없음"
 
-#: gui/mainwindow.cpp:1459
+#: gui/mainwindow.cpp:1451
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "인식할 수 없는 장치 \"%1\""
 
-#: gui/mainwindow.cpp:1468
+#: gui/mainwindow.cpp:1460
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "인식할 수 없는 파티션 \"%1\""
 
-#: gui/mainwindow.cpp:1469
+#: gui/mainwindow.cpp:1461
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
@@ -2821,13 +2807,13 @@ msgctxt "@title:window"
 msgid "Resize/move partition: <filename>%1</filename>"
 msgstr "파티션 크기 조정/이동: <filename>%1</filename>"
 
-#: gui/resizedialog.cpp:91
+#: gui/resizedialog.cpp:92
 #, kde-format
 msgctxt "%2 is either empty or says Invalid passphrase."
 msgid "%2Enter passphrase for %1:"
 msgstr "%2%1의 암호를 입력하십시오:"
 
-#: gui/resizedialog.cpp:100
+#: gui/resizedialog.cpp:101
 #, kde-format
 msgctxt "Part of %2Enter passphrase for %1:"
 msgid "Invalid passphrase. "
@@ -3428,43 +3414,36 @@ msgctxt "@label"
 msgid "Partition sector alignment"
 msgstr "파티션 섹터 정렬"
 
-#. i18n: ectx: label, entry (useCylinderAlignment), group (KDE Partition Manager)
-#: partitionmanager.kcfg:57
-#, kde-format
-msgctxt "@label"
-msgid "Use cylinder based alignment (Windows XP compatible)"
-msgstr "실린더 기반 정렬 사용(Windows XP 호환)"
-
 #. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
-#: partitionmanager.kcfg:61
+#: partitionmanager.kcfg:57
 #, kde-format
 msgctxt "@label"
 msgid "Align partitions per default"
 msgstr "기본값으로 파티션 정렬"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:65
+#: partitionmanager.kcfg:61
 #, kde-format
 msgctxt "@label"
 msgid "File system colors"
 msgstr "파일 시스템 색상"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:143
+#: partitionmanager.kcfg:139
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
 msgstr "앱 메뉴 표시줄 표시"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:147
+#: partitionmanager.kcfg:143
 #, kde-format
 msgctxt "@label"
 msgid "Backend plugin"
 msgstr "백엔드 플러그인"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:153
+#: partitionmanager.kcfg:149
 #, kde-format
 msgctxt "@label"
 msgid "Preferred unit:"
@@ -3501,6 +3480,19 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "열"
+
+#~ msgid "Use cylinder based alignment (Windows XP compatible)"
+#~ msgstr "실린더 기반 정렬 사용(Windows XP 호환)"
+
+#~ msgid "&Cylinder alignment"
+#~ msgstr "실린더 정렬(&C)"
+
+#~ msgid "Sector based align&ment"
+#~ msgstr "섹터 기반 정렬(&M)"
+
+#~ msgctxt "@label"
+#~ msgid "Use cylinder based alignment (Windows XP compatible)"
+#~ msgstr "실린더 기반 정렬 사용(Windows XP 호환)"
 
 #~ msgid "          Minix:"
 #~ msgstr "          Minix:"
