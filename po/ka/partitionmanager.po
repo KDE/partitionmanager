@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-08 00:40+0000\n"
-"PO-Revision-Date: 2024-04-04 08:37+0200\n"
+"PO-Revision-Date: 2024-07-08 05:43+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -365,14 +365,13 @@ msgstr "დანაყოფების სწორება"
 #: config/configurepagegeneral.ui:34
 #, kde-format
 msgid "Align partitions per default"
-msgstr "დანაყოფების ნაგულისხმები სწორება"
+msgstr "დანაყოფების ნაგულისხმევი სწორება"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
-#, fuzzy, kde-format
-#| msgid "Sector alignment:"
+#, kde-format
 msgid "Sec&tor alignment:"
-msgstr "სექტორის სწორება:"
+msgstr "სექ&ტორის სწორება:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
@@ -388,10 +387,9 @@ msgstr "ჟურნალი"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:94
-#, fuzzy, kde-format
-#| msgid "Hide messages below:"
+#, kde-format
 msgid "Hide messa&ges below:"
-msgstr "ქვემო შეტყობინებების დამალვა:"
+msgstr "ქვემო შეტყ&ობინებების დამალვა:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:105
@@ -425,10 +423,9 @@ msgstr "ფაილური სისტემები"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
-#, fuzzy, kde-format
-#| msgid "Default file system:"
+#, kde-format
 msgid "&Default file system:"
-msgstr "ნაგულისხმები ფაილური სისტემა:"
+msgstr "&ნაგულისხმევი ფაილური სისტემა:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -450,10 +447,9 @@ msgstr "შემთხვევითი მონაცემები"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:188
-#, fuzzy, kde-format
-#| msgid "Zeros"
+#, kde-format
 msgid "&Zeros"
-msgstr "ნულიანებით"
+msgstr "&ნულიანებით"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
 #: gui/applyprogressdetailswidgetbase.ui:42
@@ -3449,7 +3445,7 @@ msgstr "დანაყოფების სექტორების სწ�
 #, kde-format
 msgctxt "@label"
 msgid "Align partitions per default"
-msgstr "დანაყოფების ნაგულისხმები სწორება"
+msgstr "დანაყოფების ნაგულისხმევი სწორება"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:61
@@ -3487,7 +3483,7 @@ msgid ""
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
 "<para>მორგებული უკანაბოლოს დამატების \"%1\" ჩატვირთვა შეუძლებელია.</"
-"para><para>მის მაგიერ ნაგულისხმები დამატება, \"%2\" ჩაიტვირთება.</para>"
+"para><para>მის მაგიერ ნაგულისხმევი დამატება, \"%2\" ჩაიტვირთება.</para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
 #, kde-kuit-format
@@ -3502,7 +3498,7 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
-"<para>მითითებული (\"%1\") და ნაგულისხმები (\"%2\") უკანაბოლოების დამატებების "
+"<para>მითითებული (\"%1\") და ნაგულისხმევი (\"%2\") უკანაბოლოების დამატებების "
 "ჩატვირთვა შეუძლებელია.</para><para>შეამოწმეთ პროგრამის ფაილები.</para>"
 
 #: util/guihelpers.cpp:75
