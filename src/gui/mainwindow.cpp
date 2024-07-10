@@ -190,15 +190,14 @@ void MainWindow::askForPermissions()
     PolkitQt1::Authority *authority = PolkitQt1::Authority::instance();
 
     PolkitQt1::Authority::Result result;
-    QEventLoop e;
-    connect(authority, &PolkitQt1::Authority::checkAuthorizationFinished, &e,
-            [&e, &result](PolkitQt1::Authority::Result _result) {
+    connect(authority, &PolkitQt1::Authority::checkAuthorizationFinished, &m_AuthorizationEventLoop,
+            [this, &result](PolkitQt1::Authority::Result _result) {
                 result = _result;
-                e.quit();
+                m_AuthorizationEventLoop.quit();
             });
 
     authority->checkAuthorization(QStringLiteral("org.kde.kpmcore.externalcommand.init"), subject, PolkitQt1::Authority::AllowUserInteraction);
-    e.exec();
+    m_AuthorizationEventLoop.exec();
 
     if (authority->hasError()) {
         qDebug() << "Encountered error while checking authorization, error code:"
@@ -224,6 +223,8 @@ QMenu *MainWindow::createPopupMenu()
 
 void MainWindow::closeEvent(QCloseEvent* event)
 {
+    if (m_AuthorizationEventLoop.isRunning())
+        m_AuthorizationEventLoop.quit();
     if (applyProgressDialog().isVisible()) {
         event->ignore();
         return;

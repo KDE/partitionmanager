@@ -300,6 +300,7 @@ private:
     QString m_SavedSelectedDeviceNode;
 
     bool m_permissionGranted;
+    QEventLoop m_AuthorizationEventLoop;
 };
 
 #endif
