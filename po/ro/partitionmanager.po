@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-08 00:40+0000\n"
+"POT-Creation-Date: 2024-07-11 00:41+0000\n"
 "PO-Revision-Date: 2022-02-28 09:39+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -534,8 +534,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Timp total: %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1046
-#: gui/mainwindow.cpp:1208 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1047
+#: gui/mainwindow.cpp:1209 gui/smartdialog.cpp:227
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Could not create temporary file <filename>%1</filename> for writing."
@@ -1300,7 +1300,7 @@ msgid ""
 "devices and authenticate when prompted."
 msgstr ""
 
-#: gui/mainwindow.cpp:234
+#: gui/mainwindow.cpp:235
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1319,175 +1319,175 @@ msgstr[2] ""
 "<para>Sigur doriți să părăsiți aplicația?</para><para>Mai sunt încă %1 de "
 "operații în așteptare.</para>"
 
-#: gui/mainwindow.cpp:236
+#: gui/mainwindow.cpp:237
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "Anulați operațiile în așteptare și ieșiți?"
 
-#: gui/mainwindow.cpp:237
+#: gui/mainwindow.cpp:238
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "Termină <application>%1</application>"
 
-#: gui/mainwindow.cpp:279
+#: gui/mainwindow.cpp:280
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "Desfă"
 
-#: gui/mainwindow.cpp:280
+#: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "Desface ultima operație"
 
-#: gui/mainwindow.cpp:281
+#: gui/mainwindow.cpp:282
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "Elimină ultima operație din listă."
 
-#: gui/mainwindow.cpp:288
+#: gui/mainwindow.cpp:289
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "Curăță"
 
-#: gui/mainwindow.cpp:289
+#: gui/mainwindow.cpp:290
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "Curăță toate operațiile"
 
-#: gui/mainwindow.cpp:290
+#: gui/mainwindow.cpp:291
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "Golește lista operațiilor în așteptare."
 
-#: gui/mainwindow.cpp:296
+#: gui/mainwindow.cpp:297
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "Aplică"
 
-#: gui/mainwindow.cpp:297
+#: gui/mainwindow.cpp:298
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "Aplică toate operațiile"
 
-#: gui/mainwindow.cpp:298
+#: gui/mainwindow.cpp:299
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "Aplică operațiile în așteptare din listă."
 
-#: gui/mainwindow.cpp:305
+#: gui/mainwindow.cpp:306
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "Tabelă de partiții nouă"
 
-#: gui/mainwindow.cpp:306
+#: gui/mainwindow.cpp:307
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "Creează o tabelă de partiții nouă"
 
-#: gui/mainwindow.cpp:307
+#: gui/mainwindow.cpp:308
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "Creează o tabelă de partiții nouă și goală pe dispozitiv."
 
-#: gui/mainwindow.cpp:314
+#: gui/mainwindow.cpp:315
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "Exportă tabela de partiții"
 
-#: gui/mainwindow.cpp:315
+#: gui/mainwindow.cpp:316
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "Exportă o tabelă de partiții"
 
-#: gui/mainwindow.cpp:316
+#: gui/mainwindow.cpp:317
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "Exportă tabelă de partiții a dispozitivului într-un fișier textual."
 
-#: gui/mainwindow.cpp:322
+#: gui/mainwindow.cpp:323
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "Importă tabel de partiții"
 
-#: gui/mainwindow.cpp:323
+#: gui/mainwindow.cpp:324
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "Importă un tabel de partiții"
 
-#: gui/mainwindow.cpp:324
+#: gui/mainwindow.cpp:325
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "Importă un tabel de partiții dintr-un fișier textual."
 
-#: gui/mainwindow.cpp:331
+#: gui/mainwindow.cpp:332
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "Elimină grup de volume"
 
-#: gui/mainwindow.cpp:332
+#: gui/mainwindow.cpp:333
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "Elimină grupul de volume ales"
 
-#: gui/mainwindow.cpp:333
+#: gui/mainwindow.cpp:334
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "Elimină grupul de volume ales."
 
-#: gui/mainwindow.cpp:341
+#: gui/mainwindow.cpp:342
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "Redimensionează grup de volume"
 
-#: gui/mainwindow.cpp:342
+#: gui/mainwindow.cpp:343
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "Redimensionează grupul de volume ales"
 
-#: gui/mainwindow.cpp:343
+#: gui/mainwindow.cpp:344
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr "Extinde sau reduce grupul de volume ales."
 
-#: gui/mainwindow.cpp:351
+#: gui/mainwindow.cpp:352
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "Dezactivează grup de volume"
 
-#: gui/mainwindow.cpp:352
+#: gui/mainwindow.cpp:353
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "Dezactivează grupul de volume ales"
 
-#: gui/mainwindow.cpp:353
+#: gui/mainwindow.cpp:354
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Please select a device."
@@ -1495,109 +1495,109 @@ msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr "Alegeți un dispozitiv."
 
-#: gui/mainwindow.cpp:359
+#: gui/mainwindow.cpp:360
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "Stare SMART"
 
-#: gui/mainwindow.cpp:360
+#: gui/mainwindow.cpp:361
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "Arată starea SMART"
 
-#: gui/mainwindow.cpp:361
+#: gui/mainwindow.cpp:362
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr "Arată starea SMART a dispozitivului, dacă e susținută"
 
-#: gui/mainwindow.cpp:366 gui/mainwindow.cpp:458
+#: gui/mainwindow.cpp:367 gui/mainwindow.cpp:459
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "Proprietăți"
 
-#: gui/mainwindow.cpp:367
+#: gui/mainwindow.cpp:368
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "Arată dialogul de proprietăți ale dispozitivului"
 
-#: gui/mainwindow.cpp:368
+#: gui/mainwindow.cpp:369
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "Vizualizați și modificați proprietățile dispozitivului"
 
-#: gui/mainwindow.cpp:375
+#: gui/mainwindow.cpp:376
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "Nouă"
 
-#: gui/mainwindow.cpp:376
+#: gui/mainwindow.cpp:377
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "Partiție nouă"
 
-#: gui/mainwindow.cpp:377
+#: gui/mainwindow.cpp:378
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "Creează o nouă partiție."
 
-#: gui/mainwindow.cpp:384
+#: gui/mainwindow.cpp:385
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "Redim./mutare"
 
-#: gui/mainwindow.cpp:385
+#: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "Redimensionează sau mută o partiție"
 
-#: gui/mainwindow.cpp:386
+#: gui/mainwindow.cpp:387
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "Mărește, micșorează sau mută o partiție existentă."
 
-#: gui/mainwindow.cpp:393
+#: gui/mainwindow.cpp:394
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "Șterge"
 
-#: gui/mainwindow.cpp:394
+#: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "Șterge partiția"
 
-#: gui/mainwindow.cpp:395
+#: gui/mainwindow.cpp:396
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "Șterge o partiție."
 
-#: gui/mainwindow.cpp:402
+#: gui/mainwindow.cpp:403
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "Forfecare"
 
-#: gui/mainwindow.cpp:403
+#: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "Foarfecă partiția"
 
-#: gui/mainwindow.cpp:404
+#: gui/mainwindow.cpp:405
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
@@ -1605,272 +1605,272 @@ msgstr ""
 "Foarfecă o partiție astfel încât conținutul acesteia să nu mai poată fi "
 "recuperat."
 
-#: gui/mainwindow.cpp:411
+#: gui/mainwindow.cpp:412
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "Copiază"
 
-#: gui/mainwindow.cpp:412
+#: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "Copiază partiția"
 
-#: gui/mainwindow.cpp:413
+#: gui/mainwindow.cpp:414
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "Copiază o partiție existentă."
 
-#: gui/mainwindow.cpp:420
+#: gui/mainwindow.cpp:421
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "Lipește"
 
-#: gui/mainwindow.cpp:421
+#: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "Lipește partiția"
 
-#: gui/mainwindow.cpp:422
+#: gui/mainwindow.cpp:423
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "Lipește o partiție copiată."
 
-#: gui/mainwindow.cpp:429
+#: gui/mainwindow.cpp:430
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "Modifică punctul de montare"
 
-#: gui/mainwindow.cpp:430
+#: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "Modifică punctul de montare"
 
-#: gui/mainwindow.cpp:431
+#: gui/mainwindow.cpp:432
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "Modifică punctul de montare și opțiunile unei partiții."
 
-#: gui/mainwindow.cpp:436
+#: gui/mainwindow.cpp:437
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "Montează"
 
-#: gui/mainwindow.cpp:437
+#: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "Montează sau demontează partiția"
 
-#: gui/mainwindow.cpp:438
+#: gui/mainwindow.cpp:439
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "Montează sau demontează o partiție."
 
-#: gui/mainwindow.cpp:443
+#: gui/mainwindow.cpp:444
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr "Deblochează"
 
-#: gui/mainwindow.cpp:444
+#: gui/mainwindow.cpp:445
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "Deblochează sau blochează partiția criptată"
 
-#: gui/mainwindow.cpp:445
+#: gui/mainwindow.cpp:446
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "Deblochează sau blochează partiția criptată."
 
-#: gui/mainwindow.cpp:450
+#: gui/mainwindow.cpp:451
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "Verifică"
 
-#: gui/mainwindow.cpp:451
+#: gui/mainwindow.cpp:452
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "Verifică partiția"
 
-#: gui/mainwindow.cpp:452
+#: gui/mainwindow.cpp:453
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "Verifică un sistem de fișiere de pe o partiție pentru erori."
 
-#: gui/mainwindow.cpp:459
+#: gui/mainwindow.cpp:460
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "Arată dialogul de proprietăți ale partiției"
 
-#: gui/mainwindow.cpp:460
+#: gui/mainwindow.cpp:461
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr ""
 "Vizualizează și modifică proprietățile partiției (etichetă, fanioane, etc.)"
 
-#: gui/mainwindow.cpp:466
+#: gui/mainwindow.cpp:467
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "Creează copie de siguranță"
 
-#: gui/mainwindow.cpp:467
+#: gui/mainwindow.cpp:468
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "Creează o copie de siguranță a partiției"
 
-#: gui/mainwindow.cpp:468
+#: gui/mainwindow.cpp:469
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "Salvează partiția într-un fișier-imagine."
 
-#: gui/mainwindow.cpp:474
+#: gui/mainwindow.cpp:475
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "Restabilește"
 
-#: gui/mainwindow.cpp:475
+#: gui/mainwindow.cpp:476
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "Restabilește partiția"
 
-#: gui/mainwindow.cpp:476
+#: gui/mainwindow.cpp:477
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "Restabilește o partiție dintr-un fișier-imagine."
 
-#: gui/mainwindow.cpp:483
+#: gui/mainwindow.cpp:484
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "Grup de volume nou"
 
-#: gui/mainwindow.cpp:484
+#: gui/mainwindow.cpp:485
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr "Creează un grup de volume LVM nou"
 
-#: gui/mainwindow.cpp:485
+#: gui/mainwindow.cpp:486
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "Creează un grup de volume LVM nou ca dispozitiv."
 
-#: gui/mainwindow.cpp:491
+#: gui/mainwindow.cpp:492
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "Suport sisteme de fișiere"
 
-#: gui/mainwindow.cpp:492
+#: gui/mainwindow.cpp:493
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "Vizualizează informații de suport ale sistemului de fișiere"
 
-#: gui/mainwindow.cpp:493
+#: gui/mainwindow.cpp:494
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "Arată informații despre sistemele de fișiere susținute."
 
-#: gui/mainwindow.cpp:497
+#: gui/mainwindow.cpp:498
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "Actualizează dispozitivele"
 
-#: gui/mainwindow.cpp:498
+#: gui/mainwindow.cpp:499
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "Reîmprospătează toate dispozitivele"
 
-#: gui/mainwindow.cpp:499
+#: gui/mainwindow.cpp:500
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "Înnoiește lista dispozitivelor."
 
-#: gui/mainwindow.cpp:515
+#: gui/mainwindow.cpp:516
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "Curăță jurnalul"
 
-#: gui/mainwindow.cpp:516
+#: gui/mainwindow.cpp:517
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr "Curăță înregistrările jurnalului"
 
-#: gui/mainwindow.cpp:517
+#: gui/mainwindow.cpp:518
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr "Curăță panoul cu înregistrările jurnalului."
 
-#: gui/mainwindow.cpp:522
+#: gui/mainwindow.cpp:523
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "Salvează jurnalul"
 
-#: gui/mainwindow.cpp:523
+#: gui/mainwindow.cpp:524
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr "Salvează înregistrările jurnalului"
 
-#: gui/mainwindow.cpp:524
+#: gui/mainwindow.cpp:525
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr "Salvează înregistrările jurnalului într-un fișier."
 
-#: gui/mainwindow.cpp:530
+#: gui/mainwindow.cpp:531
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr "Despre biblioteca KPMcore"
 
-#: gui/mainwindow.cpp:531
+#: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr "Arată dialogul „Despre KPMcore”"
 
-#: gui/mainwindow.cpp:532
+#: gui/mainwindow.cpp:533
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "Arată dialogul „Despre KPMcore”."
 
-#: gui/mainwindow.cpp:714
+#: gui/mainwindow.cpp:715
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
@@ -1879,25 +1879,25 @@ msgstr[0] "O operațiune în așteptare"
 msgstr[1] "%1 operațiuni în așteptare"
 msgstr[2] "%1 de operațiuni în așteptare"
 
-#: gui/mainwindow.cpp:809
+#: gui/mainwindow.cpp:810
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "Folosind extensia de platformă: %1 (%2)"
 
-#: gui/mainwindow.cpp:813
+#: gui/mainwindow.cpp:814
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "Se citesc dispozitivele…"
 
-#: gui/mainwindow.cpp:851
+#: gui/mainwindow.cpp:852
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "Citire încheiată."
 
-#: gui/mainwindow.cpp:915
+#: gui/mainwindow.cpp:916
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1907,19 +1907,19 @@ msgstr ""
 "<para>Sigur doriți să recitiți dispozitivele?</para><para><warning>Aceasta "
 "va curăța și lista de operații în așteptare.</warning></para>"
 
-#: gui/mainwindow.cpp:917
+#: gui/mainwindow.cpp:918
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "Sigur rescanați dispozitivele?"
 
-#: gui/mainwindow.cpp:918
+#: gui/mainwindow.cpp:919
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "Recitește dispozitivele"
 
-#: gui/mainwindow.cpp:944
+#: gui/mainwindow.cpp:945
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1929,55 +1929,55 @@ msgstr ""
 "<para>Sigur doriți să aplicați operațiile enumerate mai jos?</"
 "para><para><warning>Aceasta va modifica discurile definitiv.</warning></para>"
 
-#: gui/mainwindow.cpp:946
+#: gui/mainwindow.cpp:947
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "Aplicați operațiile în așteptare?"
 
-#: gui/mainwindow.cpp:947
+#: gui/mainwindow.cpp:948
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "Aplică operațiile în așteptare"
 
-#: gui/mainwindow.cpp:949
+#: gui/mainwindow.cpp:950
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "Se aplică operațiunile…"
 
-#: gui/mainwindow.cpp:974
+#: gui/mainwindow.cpp:975
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "Se desface operațiunea: %1"
 
-#: gui/mainwindow.cpp:990
+#: gui/mainwindow.cpp:991
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "Sigur curățați lista operațiunilor în așteptare?"
 
-#: gui/mainwindow.cpp:991
+#: gui/mainwindow.cpp:992
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "Curățați operațiunile în așteptare?"
 
-#: gui/mainwindow.cpp:992
+#: gui/mainwindow.cpp:993
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "Curăță operațiunile în așteptare"
 
-#: gui/mainwindow.cpp:994
+#: gui/mainwindow.cpp:995
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "Se curăță lista operațiunilor în așteptare."
 
-#: gui/mainwindow.cpp:1036
+#: gui/mainwindow.cpp:1037
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
@@ -1985,14 +1985,14 @@ msgstr ""
 "Fișierul de intrare <filename>%1</filename> nu a putut fi deschis pentru "
 "import"
 
-#: gui/mainwindow.cpp:1036 gui/mainwindow.cpp:1046 gui/mainwindow.cpp:1054
-#: gui/mainwindow.cpp:1060
+#: gui/mainwindow.cpp:1037 gui/mainwindow.cpp:1047 gui/mainwindow.cpp:1055
+#: gui/mainwindow.cpp:1061
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "Eroare la importul tabelei de partiții"
 
-#: gui/mainwindow.cpp:1054
+#: gui/mainwindow.cpp:1055
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
@@ -2000,7 +2000,7 @@ msgstr ""
 "Fișierul de intrare <filename>%1</filename> nu a putut fi deschis pentru "
 "import: %2"
 
-#: gui/mainwindow.cpp:1060
+#: gui/mainwindow.cpp:1061
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2014,7 +2014,7 @@ msgstr ""
 "Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
 "noii partiții <filename>%2</filename>."
 
-#: gui/mainwindow.cpp:1090
+#: gui/mainwindow.cpp:1091
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2028,52 +2028,52 @@ msgstr ""
 "Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
 "noii partiții <filename>%2</filename>."
 
-#: gui/mainwindow.cpp:1090 gui/mainwindow.cpp:1100 gui/mainwindow.cpp:1107
-#: gui/mainwindow.cpp:1112 gui/mainwindow.cpp:1122 gui/mainwindow.cpp:1135
-#: gui/mainwindow.cpp:1140 gui/mainwindow.cpp:1159 gui/mainwindow.cpp:1164
-#: gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1452
+#: gui/mainwindow.cpp:1091 gui/mainwindow.cpp:1101 gui/mainwindow.cpp:1108
+#: gui/mainwindow.cpp:1113 gui/mainwindow.cpp:1123 gui/mainwindow.cpp:1136
+#: gui/mainwindow.cpp:1141 gui/mainwindow.cpp:1160 gui/mainwindow.cpp:1165
+#: gui/mainwindow.cpp:1170 gui/mainwindow.cpp:1177 gui/mainwindow.cpp:1453
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "Eroare la importul tabelei de partiții"
 
-#: gui/mainwindow.cpp:1100
+#: gui/mainwindow.cpp:1101
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1107
+#: gui/mainwindow.cpp:1108
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1112
+#: gui/mainwindow.cpp:1113
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1122
+#: gui/mainwindow.cpp:1123
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1135
+#: gui/mainwindow.cpp:1136
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1140
+#: gui/mainwindow.cpp:1141
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1159
+#: gui/mainwindow.cpp:1160
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Create file system %1 on partition <filename>%2</filename>"
@@ -2081,14 +2081,14 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
 
-#: gui/mainwindow.cpp:1164
+#: gui/mainwindow.cpp:1165
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1169
+#: gui/mainwindow.cpp:1170
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2096,7 +2096,7 @@ msgid ""
 "one was found (line %2)."
 msgstr ""
 
-#: gui/mainwindow.cpp:1176
+#: gui/mainwindow.cpp:1177
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Create file system %1 on partition <filename>%2</filename>"
@@ -2104,29 +2104,29 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
 
-#: gui/mainwindow.cpp:1191
+#: gui/mainwindow.cpp:1192
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr ""
 
-#: gui/mainwindow.cpp:1208
+#: gui/mainwindow.cpp:1209
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "Eroare la exportul tabelului de partiții"
 
-#: gui/mainwindow.cpp:1373 gui/mainwindow.cpp:1379 gui/mainwindow.cpp:1415
+#: gui/mainwindow.cpp:1374 gui/mainwindow.cpp:1380 gui/mainwindow.cpp:1416
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1379 gui/mainwindow.cpp:1390
+#: gui/mainwindow.cpp:1380 gui/mainwindow.cpp:1391
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1427
+#: gui/mainwindow.cpp:1428
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2142,7 +2142,7 @@ msgid ""
 "in your distribution's package manager.</para>"
 msgstr ""
 
-#: gui/mainwindow.cpp:1440
+#: gui/mainwindow.cpp:1441
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "File System Support"
@@ -2150,13 +2150,13 @@ msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "Suport sisteme de fișiere"
 
-#: gui/mainwindow.cpp:1451
+#: gui/mainwindow.cpp:1452
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr ""
 
-#: gui/mainwindow.cpp:1460
+#: gui/mainwindow.cpp:1461
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Create file system %1 on partition <filename>%2</filename>"
@@ -2164,7 +2164,7 @@ msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
 
-#: gui/mainwindow.cpp:1461
+#: gui/mainwindow.cpp:1462
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "Error Importing Partition Table"
