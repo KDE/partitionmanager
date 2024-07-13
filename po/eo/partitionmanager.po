@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:41+0000\n"
-"PO-Revision-Date: 2024-05-30 07:49+0200\n"
+"PO-Revision-Date: 2024-07-12 22:08+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -369,10 +369,9 @@ msgstr "Vicigi subdiskojn defaŭlte"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
-#, fuzzy, kde-format
-#| msgid "Sector alignment:"
+#, kde-format
 msgid "Sec&tor alignment:"
-msgstr "Sektora paraleligo:"
+msgstr "Sek&tora paraleligo:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
@@ -388,10 +387,9 @@ msgstr "Protokolado"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:94
-#, fuzzy, kde-format
-#| msgid "Hide messages below:"
+#, kde-format
 msgid "Hide messa&ges below:"
-msgstr "Kaŝi mesaĝojn sube:"
+msgstr "Kaŝi mesaĝojn &sub:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:105
@@ -425,10 +423,9 @@ msgstr "Dosiersistemoj"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
-#, fuzzy, kde-format
-#| msgid "Default file system:"
+#, kde-format
 msgid "&Default file system:"
-msgstr "Defaŭlta dosiersistemo:"
+msgstr "&Defaŭlta dosiersistemo:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -450,10 +447,9 @@ msgstr "Hazardaj datumoj"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:188
-#, fuzzy, kde-format
-#| msgid "Zeros"
+#, kde-format
 msgid "&Zeros"
-msgstr "Nuloj"
+msgstr "&Nuloj"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
 #: gui/applyprogressdetailswidgetbase.ui:42
@@ -3516,16 +3512,3 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Kolumnoj"
-
-#~ msgid "Use cylinder based alignment (Windows XP compatible)"
-#~ msgstr "Uzi cilindro-bazitan vicigon (kongrua kun Windows XP)"
-
-#~ msgid "&Cylinder alignment"
-#~ msgstr "&Cilindra vicigo"
-
-#~ msgid "Sector based align&ment"
-#~ msgstr "Sektorbazita &vicigo"
-
-#~ msgctxt "@label"
-#~ msgid "Use cylinder based alignment (Windows XP compatible)"
-#~ msgstr "Uzi cilindro-bazitan vicigon (kongrua kun Windows XP)"
