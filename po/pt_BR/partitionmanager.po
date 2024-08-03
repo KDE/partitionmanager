@@ -6,13 +6,13 @@
 # Mario Italo Filizzola Junior <marioitalo@yahoo.com.br>, 2008, 2009.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2019.
 # Marcus Vinícius de Andrade Gama <marcus.gama@gmail.com>, 2010, 2012.
-# SPDX-FileCopyrightText: 2023 Geraldo Simiao <geraldosimiao@fedoraproject.org>
+# SPDX-FileCopyrightText: 2023, 2024 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:41+0000\n"
-"PO-Revision-Date: 2023-12-13 08:04-0300\n"
+"PO-Revision-Date: 2024-08-02 01:01-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -352,13 +352,13 @@ msgstr "desconhecida:"
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "Minix:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
 #, kde-format
 msgid "Bcachefs:"
-msgstr ""
+msgstr "Bcachefs:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
@@ -374,10 +374,9 @@ msgstr "Alinhar as partições por padrão"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
-#, fuzzy, kde-format
-#| msgid "Sector alignment:"
+#, kde-format
 msgid "Sec&tor alignment:"
-msgstr "Alinhamento do setor:"
+msgstr "Alinhamento do se&tor:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
@@ -393,10 +392,9 @@ msgstr "Registro"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:94
-#, fuzzy, kde-format
-#| msgid "Hide messages below:"
+#, kde-format
 msgid "Hide messa&ges below:"
-msgstr "Ocultar as mensagens abaixo de:"
+msgstr "Ocultar as mensa&gens abaixo de:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:105
@@ -430,10 +428,9 @@ msgstr "Sistemas de arquivos"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
-#, fuzzy, kde-format
-#| msgid "Default file system:"
+#, kde-format
 msgid "&Default file system:"
-msgstr "Sistema de arquivos padrão:"
+msgstr "&Sistema de arquivos padrão:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -455,10 +452,9 @@ msgstr "Dados aleatórios"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:188
-#, fuzzy, kde-format
-#| msgid "Zeros"
+#, kde-format
 msgid "&Zeros"
-msgstr "Zeros"
+msgstr "&Zeros"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
 #: gui/applyprogressdetailswidgetbase.ui:42
@@ -947,7 +943,7 @@ msgstr "Atualizar horários de acesso relativos à modificação"
 #: gui/editmountpointdialogwidgetbase.ui:271
 #, kde-format
 msgid "Don't prevent the system from booting if not mountable"
-msgstr ""
+msgstr "Não impedir a inicialização do sistema se ele não for montável"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
 #: gui/editmountpointdialogwidgetbase.ui:285
@@ -3079,12 +3075,14 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"Use LUKS2 em vez de LUKS1 para maior segurança, mas a compatibilidade pode "
+"ser comprometida."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "Habilitar LUKS2"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
