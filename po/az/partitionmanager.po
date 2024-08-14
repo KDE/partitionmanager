@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:41+0000\n"
-"PO-Revision-Date: 2024-06-09 00:35+0400\n"
-"Last-Translator: Kheyyam Godjayev <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2024-08-09 15:54+0400\n"
+"Last-Translator: Khayyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -368,10 +368,9 @@ msgstr "Bölmələrin standart nizamlanması"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
-#, fuzzy, kde-format
-#| msgid "Sector alignment:"
+#, kde-format
 msgid "Sec&tor alignment:"
-msgstr "Sektorların nizamlanması:"
+msgstr "Sek&torun nizamlanması:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
@@ -387,10 +386,9 @@ msgstr "Jurnal"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:94
-#, fuzzy, kde-format
-#| msgid "Hide messages below:"
+#, kde-format
 msgid "Hide messa&ges below:"
-msgstr "Aşağıdakı ismarıcları gizlədin:"
+msgstr "Aşağıdakı &ismarıcları gizlətmək:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:105
@@ -424,10 +422,9 @@ msgstr "Fayl Sistemləri"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
-#, fuzzy, kde-format
-#| msgid "Default file system:"
+#, kde-format
 msgid "&Default file system:"
-msgstr "Standart fayl sistemi:"
+msgstr "Stan&dart fayl sistemi:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -449,10 +446,9 @@ msgstr "Təsadüfi verilənin"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:188
-#, fuzzy, kde-format
-#| msgid "Zeros"
+#, kde-format
 msgid "&Zeros"
-msgstr "Sıfırın"
+msgstr "&Sıfırlar"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
 #: gui/applyprogressdetailswidgetbase.ui:42
