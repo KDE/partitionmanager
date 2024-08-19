@@ -31,7 +31,7 @@ protected:
     void setupConnections() override;
 
 protected:
-    virtual void updateOkButtonStatus() override;
+    void updateOkButtonStatus() override;
     void onVGNameChanged(const QString& vgname);
     void onSpinPESizeChanged(int newsize);
 
