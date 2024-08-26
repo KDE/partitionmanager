@@ -371,7 +371,6 @@ msgstr "Innrett partisjoner som standard"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
 #, fuzzy, kde-format
-#| msgid "Sector alignment:"
 msgid "Sec&tor alignment:"
 msgstr "Sektorbasert innretting:"
 
@@ -390,7 +389,6 @@ msgstr "Logging"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:94
 #, fuzzy, kde-format
-#| msgid "Hide messages below:"
 msgid "Hide messa&ges below:"
 msgstr "Skjul meldinger nedenfor:"
 
@@ -427,7 +425,6 @@ msgstr "Filsystemer"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
 #, fuzzy, kde-format
-#| msgid "Default file system:"
 msgid "&Default file system:"
 msgstr "Standard-filsystem:"
 
@@ -452,7 +449,6 @@ msgstr "Tilfeldige data"
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:188
 #, fuzzy, kde-format
-#| msgid "Zeros"
 msgid "&Zeros"
 msgstr "Nuller"
 
@@ -2567,8 +2563,6 @@ msgstr "(ikke funnet)"
 
 #: gui/partpropsdialog.cpp:115
 #, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(ikke funnet)"
@@ -2747,8 +2741,6 @@ msgstr "Partisjonstype:"
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
 #, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
 msgid "Device path:"
 msgstr "Enhet"
 
@@ -2839,8 +2831,6 @@ msgstr ""
 
 #: gui/scanprogressdialog.cpp:16
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Scanning devices..."
 msgctxt "@title:window"
 msgid "Scanning Devices…"
 msgstr "Skanner enhetene …"
@@ -2853,8 +2843,6 @@ msgstr ""
 
 #: gui/scanprogressdialog.cpp:36
 #, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
 msgctxt "@label"
 msgid "Scanning…"
 msgstr "Skanner …"
