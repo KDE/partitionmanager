@@ -373,10 +373,9 @@ msgstr "Προκαθορισμένη τοποθέτηση κατατμήσεων
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
-#, fuzzy, kde-format
-#| msgid "Sector alignment:"
+#, kde-format
 msgid "Sec&tor alignment:"
-msgstr "Τοποθέτηση τομέων:"
+msgstr "Τοποθέτη&ση τομέων:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
@@ -392,10 +391,9 @@ msgstr "Καταγραφή"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:94
-#, fuzzy, kde-format
-#| msgid "Hide messages below:"
+#, kde-format
 msgid "Hide messa&ges below:"
-msgstr "Απόκρυψη των παρακάτω μηνυμάτων:"
+msgstr "Απόκρυψη τ&ων παρακάτω μηνυμάτων:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:105
@@ -429,10 +427,9 @@ msgstr "Συστήματα αρχείων"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
-#, fuzzy, kde-format
-#| msgid "Default file system:"
+#, kde-format
 msgid "&Default file system:"
-msgstr "Προκαθορισμένο σύστημα αρχείων:"
+msgstr "Προκαθορισμένο σύστημα αρ&χείων:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -454,10 +451,9 @@ msgstr "Τυχαία δεδομένα"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:188
-#, fuzzy, kde-format
-#| msgid "Zeros"
+#, kde-format
 msgid "&Zeros"
-msgstr "Μηδενικά"
+msgstr "&Μηδενικά"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
 #: gui/applyprogressdetailswidgetbase.ui:42
@@ -2884,12 +2880,10 @@ msgid "Resize Volume Group"
 msgstr "Αλλαγή μεγέθους ομάδας τόμων"
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Scanning devices..."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "Σάρωση συσκευών..."
+msgstr "Σάρωση συσκευών…"
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
@@ -2898,12 +2892,10 @@ msgid "%p%"
 msgstr ""
 
 #: gui/scanprogressdialog.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "Σάρωση..."
+msgstr "Σάρωση…"
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
