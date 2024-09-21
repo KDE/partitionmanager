@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-11 00:41+0000\n"
-"PO-Revision-Date: 2024-05-21 22:41+0300\n"
+"PO-Revision-Date: 2024-09-20 11:44+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -380,10 +380,9 @@ msgstr "Выравнивание разделов по умолчанию"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
-#, fuzzy, kde-format
-#| msgid "Sector alignment:"
+#, kde-format
 msgid "Sec&tor alignment:"
-msgstr "Выравнивание секторов:"
+msgstr "&Выравнивание секторов:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
@@ -399,10 +398,9 @@ msgstr "Журнал"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:94
-#, fuzzy, kde-format
-#| msgid "Hide messages below:"
+#, kde-format
 msgid "Hide messa&ges below:"
-msgstr "Минимальная важность видимых сообщений:"
+msgstr "Минимальная &важность видимых сообщений:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:105
@@ -436,10 +434,9 @@ msgstr "Файловые системы"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
-#, fuzzy, kde-format
-#| msgid "Default file system:"
+#, kde-format
 msgid "&Default file system:"
-msgstr "Файловая система по умолчанию:"
+msgstr "Файловая система по &умолчанию:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -461,10 +458,9 @@ msgstr "Случайными данными"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:188
-#, fuzzy, kde-format
-#| msgid "Zeros"
+#, kde-format
 msgid "&Zeros"
-msgstr "Нулями"
+msgstr "&Нулями"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
 #: gui/applyprogressdetailswidgetbase.ui:42
@@ -954,7 +950,7 @@ msgstr "Обновлять время доступа только при изм�
 #: gui/editmountpointdialogwidgetbase.ui:271
 #, kde-format
 msgid "Don't prevent the system from booting if not mountable"
-msgstr ""
+msgstr "Не препятствовать загрузке системы при невозможности монтирования"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
 #: gui/editmountpointdialogwidgetbase.ui:285
@@ -3085,6 +3081,8 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"Использование LUKS2 вместо LUKS1 обеспечивает лучшую безопасность, но худшую "
+"совместимость."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
