@@ -1,0 +1,166 @@
+<sect1 id="howto-installos">
+	<title
+>Navodila: Namestitev novega operacijskega sistema</title>
+
+	<para
+>Ta navodila opisujejo pripravo novega trdega diska za namestitev operacijskega sistema (OS): Recimo, da ste kupili nov trdi disk in ga zdaj nameravate uporabiti kot zamenjavo za starega, ki trenutno vsebuje vaš OS in podatkovne particije. To priložnost bi radi izkoristili tudi za namestitev novega operacijskega sistema. Za prehod s starega na nov sistem in pogon bo treba narediti več korakov. </para>
+
+	<para
+>V nadaljevanju je <quote
+>/dev/sdb</quote
+> stari trdi disk, <quote
+>/dev/sdc</quote
+> pa novi. Ta posnetek zaslona prikazuje stanje na izvorni napravi: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Glavno okno z izvorno napravo</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>Nova naprava bo videti takole. Upoštevajte, da še nima veljavne tabele particij, zato je prvi korak, da jo ustvarite tako, da izberete <xref linkend="menu-device-createpartitiontable"/>: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Glavno okno s ciljno napravo</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Ko potrdite opozorilno pogovorno okno, lahko začnete ustvarjati particije na novi napravi, tako da kliknete razširjeno particijo in izberete <xref linkend="menu-partition-new"/>. Začnite z razširjeno particijo na koncu naprave, da pozneje zadržite domačo in izmenjalno particijo: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ustvarjanje razširjene particije</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>Kliknite <guibutton
+>V redu</guibutton
+> in operacija za ustvarjanje te razširjene particije bo dodana na seznam. </para>
+
+	<para
+>Zdaj ustvarite primarno particijo na preostalem delu naprave, kjer bo nameščen nov OS. Velikost naj bo enaka nedodeljenemu območju pred razširjeno particijo: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Ustvarjanje primarne particije</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>V pogovornem oknu kliknite <guibutton
+>V redu</guibutton
+>, da sprejmete svojo izbiro. Operacija za ustvarjanje nove primarne particije je nato dodana na seznam operacij. </para>
+	
+	<para
+>Zdaj je čas, da kopirate domačo particijo iz stare naprave v razširjeno particijo na novi napravi. Na plošči Seznam naprav izberite staro napravo, kliknite particijo <quote
+>sdb5</quote
+> in izberite <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>Nato se vrnite na novo napravo in kliknite razširjeno particijo. Izberite <xref linkend="menu-partition-paste"/>. Prikaže se naslednje pogovorno okno: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Lepljenje domače particije</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>To je že videti večinoma v redu, vendar že veste, da ne boste potrebovali toliko prostega prostora po domači particiji, ker boste pozneje tam ustvarili izmenjalno particijo. </para>
+
+	<para
+>Zato zgrabite desno ročico za spreminjanje velikosti v pripomočku za spreminjanje velikosti v pogovornem oknu in jo premikajte v desno, dokler prosti prostor po prilepljeni particiji nima velikosti, ki je primernejša za izmenjalno particijo: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Spreminjanje velikosti prilepljene particije</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>To je videti v redu. Kliknite <guibutton
+>V redu</guibutton
+>, da sprejmete in zaprete pogovorno okno. Na seznam operacij je dodana nova operacija za lepljenje kopirane particije v razširjeno particijo na <quote
+>sdc</quote
+>. Upoštevajte, da bo ta operacija nastavila tudi novo velikost. </para>
+
+	<para
+>Na koncu boste želeli ustvariti novo izmenjalno particijo na koncu razširjene particije na <quote
+>sdc</quote
+>. Obstoječe izmenjalne particije ni treba kopirati iz <quote
+>sdb</quote
+>, ker izmenjalna particija (swap) ne vsebuje trajnih informacij, ki bi jih bilo vredno obdržati. Preprosto ustvarite novo particijo z vrsto linuxswap, ki zapolni celotno nedodeljeno območje za novo domačo particijo. </para>
+
+	<para
+>Glavno okno z vsemi operacijami in predogledom, kako bo <quote
+>sdc</quote
+> izgledal, ko bodo uporabljene, je zdaj videti takole: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>Glavno okno po nastavitvi vseh operacij</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>To je videti odlično, zato izberite <xref linkend="menu-edit-apply"/>, potrdite opozorilno pogovorno okno in počakajte, da se izvedejo vse operacije. Za podrobnosti o izvajanju operacij glejte <link linkend="howto-resizepartition"
+>navodila za spreminjanje velikosti particij</link
+>. </para>
+	
+	<para
+>Vaš novi trdi disk je zdaj pripravljen za namestitev vašega novega operacijskega sistema. </para>
+
+</sect1>
