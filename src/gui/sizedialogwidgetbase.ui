@@ -30,7 +30,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <string comment="@label">Minimum size:</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -40,7 +40,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <item row="9" column="1">
     <widget class="QLabel" name="m_LabelMinSize">
      <property name="textInteractionFlags">
-      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+      <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
@@ -72,17 +72,17 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <string comment="@label">Maximum size:</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
    <item row="15" column="0" colspan="2">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
-      <enum>Qt::Vertical</enum>
+      <enum>Qt::Orientation::Vertical</enum>
      </property>
      <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
+      <enum>QSizePolicy::Policy::Fixed</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
@@ -98,7 +98,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <string comment="@label">Label:</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
      <property name="buddy">
       <cstring>m_EditLabel</cstring>
@@ -135,10 +135,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <item row="1" column="0" colspan="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
-      <enum>Qt::Vertical</enum>
+      <enum>Qt::Orientation::Vertical</enum>
      </property>
      <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
+      <enum>QSizePolicy::Policy::Fixed</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
@@ -160,7 +160,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <string comment="@label:listbox">Si&amp;ze:</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
      <property name="buddy">
       <cstring>m_SpinCapacity</cstring>
@@ -213,7 +213,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <string comment="@label:listbox">File system:</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
      <property name="buddy">
       <cstring>m_ComboFileSystem</cstring>
@@ -249,7 +249,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <string comment="@label:listbox">Partition type:</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -266,7 +266,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <item row="10" column="1">
     <widget class="QLabel" name="m_LabelMaxSize">
      <property name="textInteractionFlags">
-      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+      <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
@@ -292,7 +292,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <string>Permissions</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -315,7 +315,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
          <string>Allow only root to write and read on this device, you will need to setup per-folder permissions</string>
         </property>
         <property name="text">
-         <string>Only Root</string>
+         <string>O&amp;nly Root</string>
         </property>
        </widget>
       </item>
@@ -334,7 +334,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <string comment="@label:listbox">F&amp;ree space before:</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
      <property name="buddy">
       <cstring>m_SpinFreeBefore</cstring>
@@ -347,7 +347,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <string>Logical Volume Name:</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
@@ -363,7 +363,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <string comment="@label:listbox">Free space after:</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
      <property name="buddy">
       <cstring>m_SpinFreeAfter</cstring>
@@ -406,11 +406,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <tabstop>m_RadioLogical</tabstop>
   <tabstop>m_ComboFileSystem</tabstop>
   <tabstop>m_CheckBoxEncrypt</tabstop>
+  <tabstop>m_CheckBoxLuks2</tabstop>
   <tabstop>m_EditLVName</tabstop>
   <tabstop>m_EditLabel</tabstop>
   <tabstop>m_SpinFreeBefore</tabstop>
   <tabstop>m_SpinCapacity</tabstop>
   <tabstop>m_SpinFreeAfter</tabstop>
+  <tabstop>m_permissionEveryone</tabstop>
+  <tabstop>m_permissionOnlyRoot</tabstop>
  </tabstops>
  <resources/>
  <connections/>
