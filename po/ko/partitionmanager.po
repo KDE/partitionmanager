@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:41+0000\n"
+"POT-Creation-Date: 2024-10-12 00:41+0000\n"
 "PO-Revision-Date: 2024-08-19 23:35+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2980,8 +2980,9 @@ msgstr "루트만 이 장치를 읽거나 쓸 수 있으며 폴더별 권한을 
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:318
-#, kde-format
-msgid "Only Root"
+#, fuzzy, kde-format
+#| msgid "Only Root"
+msgid "O&nly Root"
 msgstr "루트만"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-11 00:41+0000\n"
+"POT-Creation-Date: 2024-10-12 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2953,8 +2953,9 @@ msgstr "仅允许 root 写入和读取此设备，您将需要为每个文件夹
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:318
-#, kde-format
-msgid "Only Root"
+#, fuzzy, kde-format
+#| msgid "Only Root"
+msgid "O&nly Root"
 msgstr "仅 root"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
