@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-12 00:41+0000\n"
-"PO-Revision-Date: 2024-07-28 12:25+0400\n"
+"PO-Revision-Date: 2024-10-14 20:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3010,10 +3010,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:318
-#, fuzzy, kde-format
-#| msgid "Only Root"
+#, kde-format
 msgid "O&nly Root"
-msgstr "الجذر فقط"
+msgstr "الجذر &فقط"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
 #: gui/sizedialogwidgetbase.ui:334
