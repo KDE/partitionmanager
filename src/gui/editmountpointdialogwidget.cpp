@@ -212,13 +212,13 @@ void EditMountPointDialogWidget::buttonMoreClicked(bool)
 
 QStringList EditMountPointDialogWidget::options() const
 {
-    QStringList optList = m_Options.split(QLatin1Char(','), Qt::SkipEmptyParts);
-
+    QStringList optList;
     const auto keys = boxOptions();
     for (const auto &s : keys)
         if (s.second->isChecked())
             optList.append(s.first);
 
+    optList.append(m_Options.split(QLatin1Char(','), Qt::SkipEmptyParts));
     return optList;
 }
 
