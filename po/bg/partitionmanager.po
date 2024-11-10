@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-12 00:41+0000\n"
-"PO-Revision-Date: 2024-10-26 19:03+0200\n"
+"PO-Revision-Date: 2024-11-09 20:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2041,14 +2041,14 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
-msgstr "Типът на таблицата за дялове \"%1\" е неизвестен (ред %2)."
+msgstr "Типът на таблицата за дялове „%1“ е неизвестен (ред %2)."
 
 #: gui/mainwindow.cpp:1113
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr ""
-"Типът на таблицата за дялове \"%1\" не се поддържа за импортиране (ред %2)."
+"Типът на таблицата за дялове „%1“ не се поддържа за импортиране (ред %2)."
 
 #: gui/mainwindow.cpp:1123
 #, kde-kuit-format
@@ -2072,7 +2072,7 @@ msgstr "Дялът %1 има край преди началния сектор (
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr "Неразпозната роля на дял \"%1\" за дял %2 (ред %3)."
+msgstr "Неразпозната роля на дял „%1“ за дял %2 (ред %3)."
 
 #: gui/mainwindow.cpp:1165
 #, kde-kuit-format
@@ -2089,14 +2089,14 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
-"Типът таблица на дяловете \"%1\" не поддържа разширени дялове, но беше "
-"намерен такъв (ред %2)."
+"Типът таблица на дяловете „%1“ не поддържа разширени дялове, но беше намерен "
+"такъв (ред %2)."
 
 #: gui/mainwindow.cpp:1177
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
-msgstr "Не може да се създаде файлова система \"%1\" за дял %2 (ред %3)."
+msgstr "Не може да се създаде файлова система „%1“ за дял %2 (ред %3)."
 
 #: gui/mainwindow.cpp:1192
 #, kde-kuit-format
@@ -2157,13 +2157,13 @@ msgstr "Липсващи пакети за поддръжка на файлов�
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr "Неразпознато устройство \"%1\" "
+msgstr "Неразпознато устройство „%1“ "
 
 #: gui/mainwindow.cpp:1461
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr "Неразпознат дял \"%1\" "
+msgstr "Неразпознат дял „%1“ "
 
 #: gui/mainwindow.cpp:1462
 #, kde-kuit-format
@@ -3497,8 +3497,8 @@ msgid ""
 "<para>The configured backend plugin \"%1\" could not be loaded.</"
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
-"<para>Конфигурираната приставка за бекенд \"%1\" не може да бъде заредена.</"
-"para><para>Да се зареди ли  вместо нея приставката по подразбиране \"%2\".</"
+"<para>Конфигурираната приставка за бекенд „%1“ не може да бъде заредена.</"
+"para><para>Да се зареди ли  вместо нея приставката по подразбиране „%2“.</"
 "para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
@@ -3514,9 +3514,9 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
-"<para>Нито конфигурираната (\"%1\"), нито подразбиращата се (\"%2\")  "
-"приставка набекенд могат да бъдат заредени.</para><para> Моля проверете "
-"инсталацията си.</para>"
+"<para>Нито конфигурираната („%1“), нито подразбиращата се („%2“)  приставка "
+"набекенд могат да бъдат заредени.</para><para> Моля проверете инсталацията "
+"си.</para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
