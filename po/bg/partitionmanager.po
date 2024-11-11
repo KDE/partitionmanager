@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-12 00:41+0000\n"
-"PO-Revision-Date: 2024-11-09 20:09+0100\n"
+"PO-Revision-Date: 2024-11-10 15:20+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -365,7 +365,7 @@ msgstr "Подравняване на дела"
 #: config/configurepagegeneral.ui:34
 #, kde-format
 msgid "Align partitions per default"
-msgstr "Подравняване на далове по подразбиране"
+msgstr "Подравняване на дялове по подразбиране"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
@@ -509,7 +509,7 @@ msgstr "Всички действия приключени успешно."
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
-msgstr "Действията са преъснати."
+msgstr "Действията са прекъснати."
 
 #: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
@@ -619,7 +619,7 @@ msgstr ""
 "<para> Наистина ли искате да създадете таблица за дял на MS-DOS на<filename>"
 "%1 </filename>? </para><para> Това устройство има повече от 2^32 сектора."
 "Това е максимумът, поддържан от таблицата за дялове на  MS-DOS, така че няма "
-"дада можете да използвате цялото устройство. </para>"
+"да можете да използвате цялото устройство. </para>"
 
 #: gui/createpartitiontabledialog.cpp:58
 #, kde-kuit-format
@@ -983,7 +983,7 @@ msgstr ""
 "могат да се правят с тях.\n"
 "Някои файлови системи се нуждаят от инсталирането на външен инструментариум. "
 "Не всички действия могат, обаче, да се изпълнят на всяка от тях, дори всички "
-"инстументи да са инсталирани. Следва да направите справка в съответната "
+"инструменти да са инсталирани. Следва да направите справка в съответната "
 "документация за подробности. "
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
@@ -1904,7 +1904,7 @@ msgid ""
 "will also clear the list of pending operations.</warning></para>"
 msgstr ""
 "<para>Наистина ли искате да се опресни информацията за дисковете?</"
-"para><para><warning>Това ще нулира също и списъка с чакащище действия.</"
+"para><para><warning>Това ще нулира също и списъка с чакащите действия.</"
 "warning></para>"
 
 #: gui/mainwindow.cpp:918
@@ -2414,11 +2414,10 @@ msgid ""
 "unrecoverably be overwritten.</para>"
 msgstr ""
 "<para><warning>Ако продължите, ще загубите данните в дяла <filename>%1</"
-"filename>.</warning></para><para>ППрезаписване на един дял с друг (или с "
-"файл с изображение) ще унищожи всички данни на този целеви дял.</"
-"para><para>Ако продължите и приложите останалите в главния прозорец "
-"действия, всички данни на <filename>%1</filename> ще бъдат необратимо "
-"унищожени.</para>"
+"filename>.</warning></para><para>Презаписване на един дял с друг (или с файл "
+"с изображение) ще унищожи всички данни на този целеви дял.</para><para>Ако "
+"продължите и приложите останалите в главния прозорец действия, всички данни "
+"на <filename>%1</filename> ще бъдат необратимо унищожени.</para>"
 
 #: gui/partitionmanagerwidget.cpp:727
 #, kde-kuit-format
@@ -3120,7 +3119,7 @@ msgstr "Сериен номер:"
 #: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
 #, kde-format
 msgid "Firmware revision:"
-msgstr "Версия на фирмуера:"
+msgstr "Версия на фърмуера:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
 #: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
