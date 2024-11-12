@@ -67,26 +67,31 @@ apt install partitionmanager
 sudo yum install kde-partitionmanager
 ```
 
-### OpenSUSE
+### openSUSE
+
 ```bash
 sudo zypper install partitionmanager
 ```
 
-### ArchLinux
+### Arch Linux
 
-1. Enable the community repository on `/etc/pacman.conf`:
-    ```ini
-    [community]
-    Include = /etc/pacman.d/mirrorlist
-    ```
-1. Install the `partitionmanager` xz package:
-    ```bash
-    pacman -Sy partitionmanager
-    ```
+As the `root` user:
+
+```bash
+pacman -Sy partitionmanager
+```
 
 ### Gentoo
+
 ```bash
 sudo emerge partitionmanager
+```
+
+### ALT Linux
+
+```bash
+su -
+apt-get install partitionmanager
 ```
 
 ### From source
