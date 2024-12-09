@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 set(CONFIG_SRC
-	config/advancedpagewidget.cpp
-	config/configureoptionsdialog.cpp
-	config/filesystemcolorspagewidget.cpp
-	config/generalpagewidget.cpp
+	config/advancedpagewidget.cpp config/advancedpagewidget.h
+	config/configureoptionsdialog.cpp config/configureoptionsdialog.h
+	config/filesystemcolorspagewidget.cpp config/filesystemcolorspagewidget.h
+	config/generalpagewidget.cpp config/generalpagewidget.h
 )

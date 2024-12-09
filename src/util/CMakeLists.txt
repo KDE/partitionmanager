@@ -4,5 +4,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 set(UTIL_SRC
-	util/guihelpers.cpp
+	util/guihelpers.cpp util/guihelpers.h
 )
