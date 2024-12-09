@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-12 00:41+0000\n"
-"PO-Revision-Date: 2024-11-09 15:59+0100\n"
+"PO-Revision-Date: 2024-12-08 15:43+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -715,7 +715,7 @@ msgstr "Grupo de volumes de LVM"
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Software RAID Device"
-msgstr "Dispositivo de RAID de software"
+msgstr "Dispositivo de RAID lóxico"
 
 #: gui/devicepropsdialog.cpp:119
 #, kde-kuit-format
