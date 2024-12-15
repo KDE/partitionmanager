@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-12 00:41+0000\n"
-"PO-Revision-Date: 2024-12-13 20:22+0530\n"
+"PO-Revision-Date: 2024-12-14 13:39+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
 msgctxt "@title:tab general application settings"
 msgid "General"
-msgstr ""
+msgstr "सामान्य"
 
 #: config/configureoptionsdialog.cpp:42 config/configureoptionsdialog.cpp:87
 #, kde-format
@@ -44,7 +44,7 @@ msgstr "सामान्य सेटिंग्स्"
 #, kde-kuit-format
 msgctxt "@title:tab"
 msgid "File System Colors"
-msgstr ""
+msgstr "सञ्चिकातन्त्रस्य रङ्गाः"
 
 #: config/configureoptionsdialog.cpp:47
 #, kde-format
@@ -55,7 +55,7 @@ msgstr "सञ्चिकातन्त्रस्य वर्णसेट�
 #, kde-kuit-format
 msgctxt "@title:tab advanced application settings"
 msgid "Advanced"
-msgstr ""
+msgstr "उन्नतं"
 
 #: config/configureoptionsdialog.cpp:49
 #, kde-format
@@ -70,24 +70,27 @@ msgid ""
 "will also rescan devices and thus clear the list of pending operations.</"
 "warning></para>"
 msgstr ""
+"<para>किं भवान् वास्तवमेव पृष्ठभागं परिवर्तयितुम् इच्छति?</para><para><warning>एतेन "
+"उपकरणानि पुनः स्कैन् अपि भविष्यति तथा च लम्बितक्रियाणां सूचीं स्वच्छं भविष्यति ।</"
+"warning></para>"
 
 #: config/configureoptionsdialog.cpp:139
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Change Backend?"
-msgstr ""
+msgstr "वास्तवमेव बैकएण्ड् परिवर्तयतु?"
 
 #: config/configureoptionsdialog.cpp:140
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the Backend"
-msgstr ""
+msgstr "Backend परिवर्तयन्तु"
 
 #: config/configureoptionsdialog.cpp:141
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the Backend"
-msgstr ""
+msgstr "पृष्ठभागं न परिवर्तयन्तु"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: config/configurepageadvanced.ui:23
@@ -465,67 +468,67 @@ msgstr "बाह्य ब्राउजर् मध्ये उद्घा
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
-msgstr ""
+msgstr "&वर्णन"
 
 #: gui/applyprogressdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
-msgstr ""
+msgstr "स्थापना..."
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
-msgstr ""
+msgstr "किं भवन्तः वास्तवमेव रद्दं कर्तुम् इच्छन्ति ?"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
-msgstr ""
+msgstr "Running Operations रद्दं कुर्वन्तु"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
-msgstr ""
+msgstr "आम्, संचालनं रद्दं कुर्वन्तु"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
-msgstr ""
+msgstr "संचालनस्य समाप्तेः प्रतीक्षां कुर्वन्..."
 
 #: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
-msgstr ""
+msgstr "सर्वाणि कार्याणि सफलतया समाप्ताः।"
 
 #: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
-msgstr ""
+msgstr "परिचालनं रद्दं कृतम्।"
 
 #: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
-msgstr ""
+msgstr "क्रियाः प्रयोक्तुं त्रुटयः आसन् । गर्भपातः कृतः ।"
 
 #: gui/applyprogressdialog.cpp:341
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
-msgstr ""
+msgstr "[%1/%2] - %3: %4"
 
 #: gui/applyprogressdialog.cpp:375
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
-msgstr ""
+msgstr "कुलसमयः %1"
 
 #: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1047
 #: gui/mainwindow.cpp:1209 gui/smartdialog.cpp:227
@@ -535,24 +538,25 @@ msgid ""
 "Could not create temporary file when trying to save to <filename>%1</"
 "filename>."
 msgstr ""
+"<filename>%1</filename> इत्यत्र रक्षितुं प्रयतमाने अस्थायीसञ्चिकां निर्मातुं न शक्यते ।"
 
 #: gui/applyprogressdialog.cpp:423
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
-msgstr ""
+msgstr "रिपोर्ट् रक्षितुं न शक्तवान्।"
 
 #: gui/applyprogressdialog.cpp:447
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
-msgstr ""
+msgstr "लेखनार्थं अस्थायीसञ्चिकां <filename>%1</filename> निर्मातुं न शक्यते ।"
 
 #: gui/applyprogressdialog.cpp:447
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."
-msgstr ""
+msgstr "ब्राउजर् प्रारम्भं कर्तुं न शक्तवान्।"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
 #: gui/applyprogressdialogwidgetbase.ui:41
@@ -594,13 +598,13 @@ msgstr "कुलम् : %p% ."
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a New Partition Table on <filename>%1</filename>"
-msgstr ""
+msgstr "<filename>%1</filename> इत्यत्र नूतनं विभाजनसारणीं रचयन्तु"
 
 #: gui/createpartitiontabledialog.cpp:34
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create &New Partition Table"
-msgstr ""
+msgstr "&नवीन विभाजन सारणी रचयन्तु"
 
 #: gui/createpartitiontabledialog.cpp:56
 #, kde-kuit-format
@@ -611,18 +615,22 @@ msgid ""
 "the most the MS-Dos partition table type supports, so you will not be able "
 "to use the whole device.</para>"
 msgstr ""
+"<para>किं भवान् वास्तवमेव <filename>%1</filename> इत्यत्र MS-Dos विभाजनसारणीं "
+"निर्मातुम् इच्छति?</para><para>अस्मिन् उपकरणे 2^32 तः अधिकाः सेक्टर् सन्ति । सः एव MS-"
+"Dos विभाजनसारणीप्रकारः सर्वाधिकं समर्थयति, अतः भवान् सम्पूर्णं यन्त्रं उपयोक्तुं न शक्नोति ।"
+"</para>"
 
 #: gui/createpartitiontabledialog.cpp:58
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Create MS-Dos Partition Table Type?"
-msgstr ""
+msgstr "वास्तवमेव MS-Dos विभाजनसारणीप्रकारं रचयन्तु?"
 
 #: gui/createpartitiontabledialog.cpp:59
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create MS-Dos Type"
-msgstr ""
+msgstr "MS-Dos Type रचयन्तु"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/createpartitiontablewidgetbase.ui:24
@@ -658,55 +666,55 @@ msgstr "<b>चेतावनी:</b> एतेन यन्त्रे सर�
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create new Volume Group"
-msgstr ""
+msgstr "नूतनं Volume Group रचयन्तु"
 
 #: gui/devicepropsdialog.cpp:42
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Device Properties: <filename>%1</filename>"
-msgstr ""
+msgstr "यन्त्रगुणाः: <filename>%1</filename>"
 
 #: gui/devicepropsdialog.cpp:76 gui/infopane.cpp:168
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "%1 (read only)"
-msgstr ""
+msgstr "%1 (केवलं पठनीयम्)"
 
 #: gui/devicepropsdialog.cpp:99 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "good"
-msgstr ""
+msgstr "शोभन"
 
 #: gui/devicepropsdialog.cpp:104 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "BAD"
-msgstr ""
+msgstr "असमीचीनः"
 
 #: gui/devicepropsdialog.cpp:109 gui/smartdialog.cpp:129
 #, kde-kuit-format
 msgctxt "@label"
 msgid "(unknown)"
-msgstr ""
+msgstr "(अज्ञात)"
 
 #: gui/devicepropsdialog.cpp:115
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "LVM Volume Group"
-msgstr ""
+msgstr "LVM आयतन समूह"
 
 #: gui/devicepropsdialog.cpp:117
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Software RAID Device"
-msgstr ""
+msgstr "सॉफ्टवेयर RAID उपकरणम्"
 
 #: gui/devicepropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Volume Manager Device"
-msgstr ""
+msgstr "आयतन प्रबन्धक उपकरण"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
 #: gui/devicepropswidgetbase.ui:22
@@ -762,7 +770,7 @@ msgstr "विभाजनसारणी : १."
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Edit additional mount options"
-msgstr ""
+msgstr "अतिरिक्तमाउण्ट् विकल्पान् सम्पादयन्तु"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
 #: gui/editmountoptionsdialogwidgetbase.ui:19
@@ -786,7 +794,7 @@ msgstr "विकल्पः१, विकल्पः२"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Edit mount point for <filename>%1</filename>"
-msgstr ""
+msgstr "<filename>%1</filename> इत्यस्य कृते माउण्ट्-बिन्दुः सम्पादयन्तु"
 
 #: gui/editmountpointdialog.cpp:62
 #, kde-kuit-format
@@ -797,30 +805,35 @@ msgid ""
 "overwrite the existing file on your hard drive now. This <emphasis "
 "strong='1'>can not be undone</emphasis>.</warning></para>"
 msgstr ""
+"<para>किं भवान् निश्चयेन भवता कृतानि परिवर्तनानि सिस्टम् टेबल् सञ्चिकायां <filename>/etc/"
+"fstab</filename> इत्यत्र रक्षितुम् इच्छति?</para><para><warning>एतेन भवतः हार्ड "
+"इत्यत्र विद्यमानं सञ्चिकां अधिलिख्यते इदानीं चालयन्तु। एतत् <emphasis strong='1'>न अकर्तुं "
+"शक्यते</emphasis>।</warning></para>"
 
 #: gui/editmountpointdialog.cpp:64
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really save changes?"
-msgstr ""
+msgstr "वास्तवं परिवर्तनं रक्षतु?"
 
 #: gui/editmountpointdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save changes"
-msgstr ""
+msgstr "परिवर्तनं रक्षतु"
 
 #: gui/editmountpointdialog.cpp:80
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
 msgstr ""
+"<filename>/etc/fstab</filename> इति सञ्चिकायां माउण्ट् बिन्दून् रक्षितुं न शक्तम् ।"
 
 #: gui/editmountpointdialog.cpp:81
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Saving Mount Points"
-msgstr ""
+msgstr "माउण्ट् बिन्दुः रक्षन् त्रुटिः"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
 #: gui/editmountpointdialogwidgetbase.ui:23
@@ -952,7 +965,7 @@ msgstr "विकल्पाः : १."
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "File System Support"
-msgstr ""
+msgstr "सञ्चिकातन्त्रसमर्थनम्"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/filesystemsupportdialogwidgetbase.ui:23
@@ -1054,7 +1067,7 @@ msgstr "समर्थनसाधनम्"
 #, kde-format
 msgctxt "@action:button"
 msgid "Rescan Support"
-msgstr ""
+msgstr "समर्थनं पुनः स्कैन कुर्वन्तु"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
 #: gui/infopane.cpp:47 gui/mainwindowbase.ui:47
@@ -1067,13 +1080,13 @@ msgstr "सूचना"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition Information"
-msgstr ""
+msgstr "विभाजन सूचना"
 
 #: gui/infopane.cpp:113 gui/infopane.cpp:127 gui/infopane.cpp:139
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "File system:"
-msgstr ""
+msgstr "सञ्चिकातन्त्रम् : १."
 
 #: gui/infopane.cpp:114 gui/infopane.cpp:128 gui/infopane.cpp:140
 #, kde-format, kde-kuit-format
@@ -1085,91 +1098,91 @@ msgstr "क्षमता:"
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher name:"
-msgstr ""
+msgstr "सिफर नाम : १."
 
 #: gui/infopane.cpp:116
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher mode:"
-msgstr ""
+msgstr "सिफर मोडः : १."
 
 #: gui/infopane.cpp:117
 #, kde-format
 msgctxt "@label partition"
 msgid "Hash:"
-msgstr ""
+msgstr "हैशः : १."
 
 #: gui/infopane.cpp:118
 #, kde-format
 msgctxt "@label partition"
 msgid "Key size:"
-msgstr ""
+msgstr "कुञ्जी आकारः : १."
 
 #: gui/infopane.cpp:119
 #, kde-format
 msgctxt "@label partition"
 msgid "Payload offset:"
-msgstr ""
+msgstr "पेलोड् ऑफसेट् : १."
 
 #: gui/infopane.cpp:120 gui/infopane.cpp:135 gui/infopane.cpp:143
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "First sector:"
-msgstr ""
+msgstr "प्रथमक्षेत्रम् : १."
 
 #: gui/infopane.cpp:121 gui/infopane.cpp:136 gui/infopane.cpp:144
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Last sector:"
-msgstr ""
+msgstr "अन्तिमक्षेत्रम् : १."
 
 #: gui/infopane.cpp:122 gui/infopane.cpp:137 gui/infopane.cpp:145
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Number of sectors:"
-msgstr ""
+msgstr "क्षेत्राणां संख्या : १."
 
 #: gui/infopane.cpp:129 gui/infopane.cpp:141
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Available:"
-msgstr ""
+msgstr "उपलब्धः:"
 
 #: gui/infopane.cpp:130 gui/infopane.cpp:142
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Used:"
-msgstr ""
+msgstr "प्रयुक्त:"
 
 #: gui/infopane.cpp:131
 #, kde-format
 msgctxt "@label partition"
 msgid "PE Size:"
-msgstr ""
+msgstr "पीई आकारः : १."
 
 #: gui/infopane.cpp:132
 #, kde-format
 msgctxt "@label partition"
 msgid "Total PE:"
-msgstr ""
+msgstr "कुल पीई : १."
 
 #: gui/infopane.cpp:133
 #, kde-format
 msgctxt "@label partition"
 msgid "Free PE:"
-msgstr ""
+msgstr "निःशुल्क पीई : १."
 
 #: gui/infopane.cpp:134
 #, kde-format
 msgctxt "@label partition"
 msgid "Allocated PE:"
-msgstr ""
+msgstr "आवंटित पीई : १."
 
 #: gui/infopane.cpp:157
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Device Information"
-msgstr ""
+msgstr "उपकरण सूचना"
 
 #: gui/infopane.cpp:161
 #, kde-kuit-format
@@ -1217,67 +1230,67 @@ msgstr "प्राथमिक/अधिकतम : १."
 #, kde-format
 msgctxt "@label device"
 msgid "Volume Type:"
-msgstr ""
+msgstr "आयतनप्रकारः : १."
 
 #: gui/infopane.cpp:186
 #, kde-format
 msgctxt "@label device"
 msgid "PE Size:"
-msgstr ""
+msgstr "पीई आकारः : १."
 
 #: gui/infopane.cpp:187
 #, kde-format
 msgctxt "@label device"
 msgid "Total PE:"
-msgstr ""
+msgstr "कुल पीई : १."
 
 #: gui/infopane.cpp:188
 #, kde-format
 msgctxt "@label device"
 msgid "Allocated PE:"
-msgstr ""
+msgstr "आवंटित पीई : १."
 
 #: gui/infopane.cpp:189
 #, kde-format
 msgctxt "@label device"
 msgid "Free PE:"
-msgstr ""
+msgstr "निःशुल्क पीई : १."
 
 #: gui/infopane.cpp:194
 #, kde-format
 msgctxt "@label device"
 msgid "RAID Level:"
-msgstr ""
+msgstr "RAID स्तरः : १."
 
 #: gui/infopane.cpp:195
 #, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr ""
+msgstr "चंक आकारः : १."
 
 #: gui/infopane.cpp:196
 #, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr ""
+msgstr "कुल खण्डः : १."
 
 #: gui/infopane.cpp:197
 #, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr ""
+msgstr "सरणी आकारः : १."
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Insert a partition"
-msgstr ""
+msgstr "एकं विभाजनं सम्मिलितं कुर्वन्तु"
 
 #: gui/listphysicalvolumes.cpp:39
 #, kde-kuit-format
 msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
-msgstr ""
+msgstr "%1 | %2"
 
 #: gui/mainwindow.cpp:167
 #, kde-format
@@ -1286,6 +1299,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
+"विभाजनप्रबन्धकस्य कार्यं कर्तुं विशेषाधिकारस्य आवश्यकता भवति । कृपया यन्त्राणि ताजगीकृत्य "
+"प्रार्थिते प्रमाणीकरणं कुर्वन्तु ।"
 
 #: gui/mainwindow.cpp:235
 #, kde-kuit-format
@@ -1297,289 +1312,293 @@ msgid_plural ""
 "<para>Do you really want to quit the application?</para><para>There are "
 "still %1 operations pending.</para>"
 msgstr[0] ""
+"<para>किं भवान् वास्तवमेव अनुप्रयोगं त्यक्तुम् इच्छति?</para><para>अद्यापि कार्यं लम्बितम् "
+"अस्ति।</para>"
 msgstr[1] ""
+"<para>किं भवान् वास्तवमेव अनुप्रयोगं त्यक्तुम् इच्छति?</para><para>अद्यापि %1 कार्याणि "
+"लम्बितानि सन्ति।</para>"
 
 #: gui/mainwindow.cpp:237
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
-msgstr ""
+msgstr "लम्बितसञ्चालनं परित्यज्य त्यजन्तु?"
 
 #: gui/mainwindow.cpp:238
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
-msgstr ""
+msgstr "<application>%1</application> त्यजन्तु"
 
 #: gui/mainwindow.cpp:280
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
-msgstr ""
+msgstr "पूर्ववत"
 
 #: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
-msgstr ""
+msgstr "अन्तिमं ऑपरेशनं पूर्ववत् कुर्वन्तु"
 
 #: gui/mainwindow.cpp:282
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
-msgstr ""
+msgstr "सूचीतः अन्तिमं ऑपरेशनं निष्कासयन्तु।"
 
 #: gui/mainwindow.cpp:289
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
-msgstr ""
+msgstr "स्पष्टः"
 
 #: gui/mainwindow.cpp:290
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
-msgstr ""
+msgstr "सर्वाणि कार्याणि स्वच्छं कुर्वन्तु"
 
 #: gui/mainwindow.cpp:291
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
-msgstr ""
+msgstr "लम्बितसञ्चालनानां सूचीं रिक्तं कुर्वन्तु ।"
 
 #: gui/mainwindow.cpp:297
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
-msgstr ""
+msgstr "आचरतु"
 
 #: gui/mainwindow.cpp:298
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
-msgstr ""
+msgstr "सर्वाणि क्रियाणि प्रयोजयन्तु"
 
 #: gui/mainwindow.cpp:299
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
-msgstr ""
+msgstr "सूचीयां लम्बितक्रियाः प्रयोजयन्तु।"
 
 #: gui/mainwindow.cpp:306
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
-msgstr ""
+msgstr "नवीनं विभाजनसारणी"
 
 #: gui/mainwindow.cpp:307
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
-msgstr ""
+msgstr "नूतनं विभाजनसारणीं रचयन्तु"
 
 #: gui/mainwindow.cpp:308
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
-msgstr ""
+msgstr "उपकरणे नूतनं रिक्तं च विभाजनसारणीं रचयन्तु ।"
 
 #: gui/mainwindow.cpp:315
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
-msgstr ""
+msgstr "निर्यात विभाजन सारणी"
 
 #: gui/mainwindow.cpp:316
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
-msgstr ""
+msgstr "विभाजनसारणीं निर्यातयन्तु"
 
 #: gui/mainwindow.cpp:317
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
-msgstr ""
+msgstr "यन्त्रस्य विभाजनसारणीं पाठसञ्चिकायां निर्यातयन्तु ।"
 
 #: gui/mainwindow.cpp:323
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
-msgstr ""
+msgstr "आयात विभाजन सारणी"
 
 #: gui/mainwindow.cpp:324
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
-msgstr ""
+msgstr "विभाजनसारणीम् आयातयन्तु"
 
 #: gui/mainwindow.cpp:325
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
-msgstr ""
+msgstr "पाठसञ्चिकातः विभाजनसारणीम् आयातयन्तु ।"
 
 #: gui/mainwindow.cpp:332
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
-msgstr ""
+msgstr "आयतनसमूहं निष्कासयन्तु"
 
 #: gui/mainwindow.cpp:333
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
-msgstr ""
+msgstr "चयनितं Volume Group निष्कासयन्तु"
 
 #: gui/mainwindow.cpp:334
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
-msgstr ""
+msgstr "चयनितं Volume Group निष्कासयन्तु।"
 
 #: gui/mainwindow.cpp:342
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
-msgstr ""
+msgstr "आयतनसमूहस्य आकारं परिवर्तयतु"
 
 #: gui/mainwindow.cpp:343
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
-msgstr ""
+msgstr "चयनितं Volume Group आकारं परिवर्तयतु"
 
 #: gui/mainwindow.cpp:344
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
-msgstr ""
+msgstr "चयनितं Volume Group विस्तारयन्तु न्यूनीकरोतु वा।"
 
 #: gui/mainwindow.cpp:352
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
-msgstr ""
+msgstr "आयतनसमूहं निष्क्रियं कुर्वन्तु"
 
 #: gui/mainwindow.cpp:353
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
-msgstr ""
+msgstr "चयनितं Volume Group निष्क्रियं कुर्वन्तु"
 
 #: gui/mainwindow.cpp:354
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
-msgstr ""
+msgstr "हटनीयानि उपकरणानि अनप्लग् कर्तुं पूर्वं चयनितं Volume Group निष्क्रियं कुर्वन्तु ।"
 
 #: gui/mainwindow.cpp:360
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
-msgstr ""
+msgstr "SMART स्थितिः"
 
 #: gui/mainwindow.cpp:361
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
-msgstr ""
+msgstr "SMART स्थितिं दर्शयतु"
 
 #: gui/mainwindow.cpp:362
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
-msgstr ""
+msgstr "समर्थितं चेत् यन्त्रस्य SMART स्थितिं दर्शयतु"
 
 #: gui/mainwindow.cpp:367 gui/mainwindow.cpp:459
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
-msgstr ""
+msgstr "गुणाः"
 
 #: gui/mainwindow.cpp:368
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
-msgstr ""
+msgstr "यन्त्रगुणसंवादं दर्शयतु"
 
 #: gui/mainwindow.cpp:369
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
-msgstr ""
+msgstr "उपकरणस्य गुणाः पश्यन्तु परिवर्तनं च कुर्वन्तु"
 
 #: gui/mainwindow.cpp:376
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
-msgstr ""
+msgstr "नूतनम्‌"
 
 #: gui/mainwindow.cpp:377
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
-msgstr ""
+msgstr "नवीनं विभाजनम्"
 
 #: gui/mainwindow.cpp:378
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
-msgstr ""
+msgstr "नूतनं विभाजनं रचयन्तु।"
 
 #: gui/mainwindow.cpp:385
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
-msgstr ""
+msgstr "आकारं परिवर्तयतु/चलतु"
 
 #: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
-msgstr ""
+msgstr "विभाजनस्य आकारं परिवर्तयन्तु अथवा स्थानान्तरयन्तु"
 
 #: gui/mainwindow.cpp:387
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
-msgstr ""
+msgstr "विद्यमानं विभाजनं संकोचयन्तु, वर्धयन्तु वा चालयन्तु वा।"
 
 #: gui/mainwindow.cpp:394
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
-msgstr ""
+msgstr "लुप्"
 
 #: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
-msgstr ""
+msgstr "विभाजनं विलोपयन्तु"
 
 #: gui/mainwindow.cpp:396
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
-msgstr ""
+msgstr "एकं विभाजनं विलोपयन्तु।"
 
 #: gui/mainwindow.cpp:403
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
-msgstr ""
+msgstr "श्रेड"
 
 #: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
-msgstr ""
+msgstr "विभाजनं खण्डयतु"
 
 #: gui/mainwindow.cpp:405
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
-msgstr ""
+msgstr "विभाजनं खण्डयन्तु येन तस्य सामग्रीः पुनः प्राप्तुं न शक्यते ।"
 
 #: gui/mainwindow.cpp:412
 #, kde-kuit-format
@@ -1591,85 +1610,85 @@ msgstr "प्रतिलिपि"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
-msgstr ""
+msgstr "विभाजनं प्रतिलिपितु"
 
 #: gui/mainwindow.cpp:414
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
-msgstr ""
+msgstr "विद्यमानं विभाजनं प्रतिलिख्यताम् ।"
 
 #: gui/mainwindow.cpp:421
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
-msgstr ""
+msgstr "चिनोतु"
 
 #: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
-msgstr ""
+msgstr "विभाजनं चिनोतु"
 
 #: gui/mainwindow.cpp:423
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
-msgstr ""
+msgstr "प्रतिलिपिकृतं विभाजनं चिनोतु ।"
 
 #: gui/mainwindow.cpp:430
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
-msgstr ""
+msgstr "माउण्ट् बिन्दु सम्पादयतु"
 
 #: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
-msgstr ""
+msgstr "माउण्ट् बिन्दु सम्पादयतु"
 
 #: gui/mainwindow.cpp:432
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
-msgstr ""
+msgstr "विभाजनस्य माउण्ट् बिन्दुः विकल्पाः च सम्पादयन्तु ।"
 
 #: gui/mainwindow.cpp:437
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
-msgstr ""
+msgstr "माउण्ट्"
 
 #: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
-msgstr ""
+msgstr "विभाजनं माउण्ट् अथवा अनमाउण्ट् कुर्वन्तु"
 
 #: gui/mainwindow.cpp:439
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
-msgstr ""
+msgstr "विभाजनं माउण्ट् अथवा अनमाउण्ट् कुर्वन्तु ।"
 
 #: gui/mainwindow.cpp:444
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
-msgstr ""
+msgstr "अनलॉक"
 
 #: gui/mainwindow.cpp:445
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
-msgstr ""
+msgstr "एन्क्रिप्टेड् विभाजनं अनलॉक् वा लॉक् वा"
 
 #: gui/mainwindow.cpp:446
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
-msgstr ""
+msgstr "एन्क्रिप्टेड् विभाजनं अनलॉक् वा लॉक् वा।"
 
 #: gui/mainwindow.cpp:451
 #, kde-kuit-format
@@ -1681,25 +1700,25 @@ msgstr "अनुशीलय"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
-msgstr ""
+msgstr "विभाजनं पश्यन्तु"
 
 #: gui/mainwindow.cpp:453
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
-msgstr ""
+msgstr "विभाजने सञ्चिकातन्त्रं दोषाणां कृते पश्यन्तु ।"
 
 #: gui/mainwindow.cpp:460
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
-msgstr ""
+msgstr "विभाजनगुणसंवादं दर्शयतु"
 
 #: gui/mainwindow.cpp:461
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
-msgstr ""
+msgstr "विभाजनगुणान् (लेबल, विभाजनध्वजाः इत्यादयः) पश्यन्तु परिवर्तनं च कुर्वन्तु ।"
 
 #: gui/mainwindow.cpp:467
 #, kde-kuit-format
@@ -1711,13 +1730,13 @@ msgstr "बैकअप"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
-msgstr ""
+msgstr "बैकअप विभाजनम्"
 
 #: gui/mainwindow.cpp:469
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
-msgstr ""
+msgstr "विभाजनस्य बैकअपं प्रतिबिम्बसञ्चिकायां गृह्यताम् ।"
 
 #: gui/mainwindow.cpp:475
 #, kde-kuit-format
@@ -1729,147 +1748,147 @@ msgstr "निर्यत्"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
-msgstr ""
+msgstr "विभाजनं पुनः स्थापयतु"
 
 #: gui/mainwindow.cpp:477
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
-msgstr ""
+msgstr "चित्रसञ्चिकातः विभाजनं पुनः स्थापयन्तु ।"
 
 #: gui/mainwindow.cpp:484
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
-msgstr ""
+msgstr "नवीन खण्ड समूह"
 
 #: gui/mainwindow.cpp:485
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
-msgstr ""
+msgstr "एकं नूतनं LVM Volume Group रचयन्तु"
 
 #: gui/mainwindow.cpp:486
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
-msgstr ""
+msgstr "एकं नूतनं LVM Volume Group इत्येतत् उपकरणरूपेण रचयन्तु ।"
 
 #: gui/mainwindow.cpp:492
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
-msgstr ""
+msgstr "सञ्चिकातन्त्रसमर्थनम्"
 
 #: gui/mainwindow.cpp:493
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
-msgstr ""
+msgstr "सञ्चिकातन्त्रसमर्थनसूचनाः पश्यन्तु"
 
 #: gui/mainwindow.cpp:494
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
-msgstr ""
+msgstr "समर्थितसञ्चिकातन्त्राणां विषये सूचनां दर्शयतु ।"
 
 #: gui/mainwindow.cpp:498
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
-msgstr ""
+msgstr "उपकरणानि ताजगी कुर्वन्तु"
 
 #: gui/mainwindow.cpp:499
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
-msgstr ""
+msgstr "सर्वाणि उपकरणानि ताजगीकृत्य स्थापयन्तु"
 
 #: gui/mainwindow.cpp:500
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
-msgstr ""
+msgstr "उपकरणसूचीं नवीकरणं कुर्वन्तु।"
 
 #: gui/mainwindow.cpp:516
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
-msgstr ""
+msgstr "Log स्पष्टं कुर्वन्तु"
 
 #: gui/mainwindow.cpp:517
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
-msgstr ""
+msgstr "लॉग आउटपुट् स्वच्छं कुर्वन्तु"
 
 #: gui/mainwindow.cpp:518
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
-msgstr ""
+msgstr "log output panel इत्येतत् स्वच्छं कुर्वन्तु ।"
 
 #: gui/mainwindow.cpp:523
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
-msgstr ""
+msgstr "Log रक्षतु"
 
 #: gui/mainwindow.cpp:524
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
-msgstr ""
+msgstr "लॉग् आउटपुट् रक्षन्तु"
 
 #: gui/mainwindow.cpp:525
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
-msgstr ""
+msgstr "लॉग् आउटपुट् सञ्चिकायां रक्षन्तु ।"
 
 #: gui/mainwindow.cpp:531
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
-msgstr ""
+msgstr "केपीएमकोर पुस्तकालयस्य विषये"
 
 #: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
-msgstr ""
+msgstr "KPMcore संवादस्य विषये दर्शयतु"
 
 #: gui/mainwindow.cpp:533
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
-msgstr ""
+msgstr "KPMcore संवादस्य विषये दर्शयतु ।"
 
 #: gui/mainwindow.cpp:715
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "एकं लम्बितम् ऑपरेशनम्"
+msgstr[1] "%1 लम्बितसञ्चालनम्"
 
 #: gui/mainwindow.cpp:810
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
-msgstr ""
+msgstr "पृष्ठभागस्य प्लगिन् इत्यस्य उपयोगः: %1 (%2)"
 
 #: gui/mainwindow.cpp:814
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
-msgstr ""
+msgstr "स्कैनिङ्ग उपकरणानि..."
 
 #: gui/mainwindow.cpp:852
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
-msgstr ""
+msgstr "स्कैन् समाप्तम्।"
 
 #: gui/mainwindow.cpp:916
 #, kde-kuit-format
@@ -1878,18 +1897,20 @@ msgid ""
 "<para>Do you really want to rescan the devices?</para><para><warning>This "
 "will also clear the list of pending operations.</warning></para>"
 msgstr ""
+"<para>किं भवान् वास्तवमेव उपकरणानि पुनः स्कैन् कर्तुम् इच्छति?</para><para><warning>एतेन "
+"लम्बितानां कार्याणां सूची अपि स्वच्छा भविष्यति ।</warning></para>"
 
 #: gui/mainwindow.cpp:918
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
-msgstr ""
+msgstr "वास्तवमेव उपकरणानि पुनः स्कैन कुर्वन्तु?"
 
 #: gui/mainwindow.cpp:919
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
-msgstr ""
+msgstr "उपकरणानि पुनः स्कैन कुर्वन्तु"
 
 #: gui/mainwindow.cpp:945
 #, kde-kuit-format
@@ -1898,73 +1919,75 @@ msgid ""
 "<para>Do you really want to apply the pending operations listed below?</"
 "para><para><warning>This will permanently modify your disks.</warning></para>"
 msgstr ""
+"<para>किं भवान् अधोलिखितानि लम्बितक्रियाणि प्रयोक्तुं इच्छति वा?</"
+"para><para><warning>एतेन भवतः डिस्काः स्थायिरूपेण परिवर्तयिष्यन्ति ।</warning></para>"
 
 #: gui/mainwindow.cpp:947
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
-msgstr ""
+msgstr "लम्बितसञ्चालनस्य आवेदनं कुर्वन्तु?"
 
 #: gui/mainwindow.cpp:948
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
-msgstr ""
+msgstr "लम्बितसञ्चालनम् आवेदनं कुर्वन्तु"
 
 #: gui/mainwindow.cpp:950
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
-msgstr ""
+msgstr "संचालनं प्रयोजयन्..."
 
 #: gui/mainwindow.cpp:975
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
-msgstr ""
+msgstr "संचालनं पूर्ववत् करणम्: %1"
 
 #: gui/mainwindow.cpp:991
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
-msgstr ""
+msgstr "किं भवन्तः वास्तवमेव लम्बितानां कार्याणां सूचीं स्वच्छं कर्तुम् इच्छन्ति?"
 
 #: gui/mainwindow.cpp:992
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
-msgstr ""
+msgstr "स्पष्टं लम्बितसञ्चालनम्?"
 
 #: gui/mainwindow.cpp:993
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
-msgstr ""
+msgstr "स्पष्टं लम्बितसञ्चालनम्"
 
 #: gui/mainwindow.cpp:995
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
-msgstr ""
+msgstr "लम्बितसञ्चालनस्य सूचीं स्वच्छं करणम्।"
 
 #: gui/mainwindow.cpp:1037
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
-msgstr ""
+msgstr "आयातार्थं निवेशसञ्चिका <filename>%1</filename> उद्घाटयितुं न शक्यते"
 
 #: gui/mainwindow.cpp:1037 gui/mainwindow.cpp:1047 gui/mainwindow.cpp:1055
 #: gui/mainwindow.cpp:1061
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
-msgstr ""
+msgstr "विभाजनसारणी आयाते त्रुटिः"
 
 #: gui/mainwindow.cpp:1055
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
-msgstr ""
+msgstr "आयातार्थं निवेशसञ्चिका <filename>%1</filename> उद्घाटयितुं न शक्तम्: %2"
 
 #: gui/mainwindow.cpp:1061
 #, kde-kuit-format
@@ -1973,6 +1996,8 @@ msgid ""
 "Could not open temporary file <filename>%1</filename> while trying to import "
 "from <filename>%2</filename>."
 msgstr ""
+"<filename>%2</filename> इत्यस्मात् आयातं कर्तुं प्रयतमाने अस्थायीसञ्चिकां <filename>%1</"
+"filename> उद्घाटयितुं न शक्यते ।"
 
 #: gui/mainwindow.cpp:1091
 #, kde-kuit-format
@@ -1980,7 +2005,7 @@ msgctxt "@info"
 msgid ""
 "The import file <filename>%1</filename> does not contain a valid partition "
 "table."
-msgstr ""
+msgstr "आयातसञ्चिकायां <filename>%1</filename> वैधं विभाजनसारणीं नास्ति ।"
 
 #: gui/mainwindow.cpp:1091 gui/mainwindow.cpp:1101 gui/mainwindow.cpp:1108
 #: gui/mainwindow.cpp:1113 gui/mainwindow.cpp:1123 gui/mainwindow.cpp:1136
@@ -1989,49 +2014,49 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
-msgstr ""
+msgstr "विभाजनसारणी आयातन्ते समये त्रुटिः"
 
 #: gui/mainwindow.cpp:1101
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
-msgstr ""
+msgstr "आयातसञ्चिकायां (पङ्क्ति %1) एकादशाधिकं विभाजनसारणीप्रकारं प्राप्तम् ।"
 
 #: gui/mainwindow.cpp:1108
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
-msgstr ""
+msgstr "विभाजनसारणीप्रकारः \"%1\" अज्ञातः (पङ्क्ति %2) ।"
 
 #: gui/mainwindow.cpp:1113
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
-msgstr ""
+msgstr "विभाजनसारणीप्रकारः \"%1\" आयाताय समर्थितः नास्ति (पङ्क्तिः %2) ।"
 
 #: gui/mainwindow.cpp:1123
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
-msgstr ""
+msgstr "विभाजनं प्राप्तम् परन्तु विभाजनसारणीप्रकारः नास्ति (पङ्क्तिः %1) ।"
 
 #: gui/mainwindow.cpp:1136
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
-msgstr ""
+msgstr "विभाजनं %1 यन्त्रस्य सीमातः बहिः स्यात् (पङ्क्ति %2) ।"
 
 #: gui/mainwindow.cpp:1141
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
-msgstr ""
+msgstr "%1 विभाजनस्य आरम्भक्षेत्रस्य (पङ्क्तिः %2) समाप्तिः अस्ति ।"
 
 #: gui/mainwindow.cpp:1160
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr ""
+msgstr "विभाजनस्य %2 (पङ्क्तिः %3) कृते अज्ञातविभाजनभूमिका \"%1\" ।"
 
 #: gui/mainwindow.cpp:1165
 #, kde-kuit-format
@@ -2039,6 +2064,7 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
 msgstr ""
+"विभाजनस्य %1 (पङ्क्तिः %2) कृते कोऽपि मातापितृविभाजनम् अथवा विभाजनसारणी न प्राप्ता ।"
 
 #: gui/mainwindow.cpp:1170
 #, kde-kuit-format
@@ -2047,24 +2073,26 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
+"विभाजनसारणीप्रकारः \"%1\" विस्तारितानां विभाजनानाम् समर्थनं न करोति, परन्तु एकः "
+"प्राप्तः (पङ्क्तिः %2) ।"
 
 #: gui/mainwindow.cpp:1177
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
-msgstr ""
+msgstr "%2 विभाजनस्य (%3 पङ्क्तिः) कृते \"%1\" सञ्चिकातन्त्रं निर्मातुं न शक्तम् ।"
 
 #: gui/mainwindow.cpp:1192
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
-msgstr ""
+msgstr "आयातसञ्चिकातः %1 पङ्क्तिं विश्लेषणं कर्तुं न शक्तम् । तस्य अवहेलना ।"
 
 #: gui/mainwindow.cpp:1209
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
-msgstr ""
+msgstr "विभाजनसारणी निर्यातयन् त्रुटिः"
 
 #: gui/mainwindow.cpp:1374 gui/mainwindow.cpp:1380 gui/mainwindow.cpp:1416
 #, kde-kuit-format
@@ -2091,30 +2119,39 @@ msgid ""
 "modify them.</para><para>You should find packages with these support tools "
 "in your distribution's package manager.</para>"
 msgstr ""
+"<para>अस्मिन् सङ्गणके वर्तमानकाले हार्डडिस्क-मध्ये वर्तमानस्य सञ्चिकातन्त्रस्य कृते कोऽपि "
+"समर्थनसाधनः न प्राप्तः: </para><table style='margin-top:12px'><tr><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'> विभाजनम्</"
+"td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'> "
+"सञ्चिकातन्त्रम्</td><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'> समर्थनसाधनम्</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'> URL</td></tr> %1</table><para> यावत् एतेषां सञ्चिकातन्त्राणां "
+"समर्थनसाधनं न संस्थापितम् तावत् भवन्तः तान् परिवर्तयितुं न शक्नुवन्ति ।</para><para> भवता "
+"एतैः समर्थनसाधनैः सह संकुलं भवतः वितरणस्य संकुलप्रबन्धके अन्वेष्टव्यम् ।</para>"
 
 #: gui/mainwindow.cpp:1441
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
-msgstr ""
+msgstr "सञ्चिकातन्त्रसमर्थनसङ्कुलाः अनुपलब्धाः"
 
 #: gui/mainwindow.cpp:1452
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr ""
+msgstr "अपरिचितं यन्त्रं \"%1\" । "
 
 #: gui/mainwindow.cpp:1461
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr ""
+msgstr "अपरिचितं विभाजनं \"%1\" । "
 
 #: gui/mainwindow.cpp:1462
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr ""
+msgstr "विभाजनं उद्घाटयितुं त्रुटिः"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -2122,62 +2159,62 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "KDE Partition Manager"
-msgstr ""
+msgstr "KDE विभाजनप्रबन्धकः"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
 #: gui/mainwindowbase.ui:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Devices"
-msgstr ""
+msgstr "यन्त्राणि"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
 #: gui/mainwindowbase.ui:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Pending Operations"
-msgstr ""
+msgstr "लम्बित परिचालन"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
 #: gui/mainwindowbase.ui:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Log Output"
-msgstr ""
+msgstr "Log Output इति"
 
 #: gui/newdialog.cpp:47
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a new partition"
-msgstr ""
+msgstr "नूतनं विभाजनं रचयन्तु"
 
 #. i18n: ectx: ToolBar (partitionToolBar)
 #: gui/partitionmanagerui.rc:12
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition Manager Toolbar"
-msgstr ""
+msgstr "विभाजन प्रबन्धक साधनपट्टी"
 
 #. i18n: ectx: Menu (device)
 #: gui/partitionmanagerui.rc:30
 #, kde-format
 msgctxt "@title:menu"
 msgid "Device"
-msgstr ""
+msgstr "उपकरणम्‌"
 
 #. i18n: ectx: Menu (selectedDevice)
 #: gui/partitionmanagerui.rc:32
 #, kde-format
 msgctxt "@title:menu"
 msgid "Select Current Device"
-msgstr ""
+msgstr "Current Device इति चिनोतु"
 
 #. i18n: ectx: Menu (tools)
 #: gui/partitionmanagerui.rc:49
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
-msgstr ""
+msgstr "उपकरणाः"
 
 #. i18n: ectx: Menu (partition)
 #: gui/partitionmanagerui.rc:55
@@ -2191,39 +2228,39 @@ msgstr "विभाजनम्"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"
-msgstr ""
+msgstr "फलकानि दर्शितानि"
 
 #: gui/partitionmanagerwidget.cpp:200
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
-msgstr ""
+msgstr "%1 [गुप्तीकृतम्] ।"
 
 #: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be mounted."
-msgstr ""
+msgstr "<filename>%1</filename> विभाजने सञ्चिकातन्त्रं माउण्ट् कर्तुं न शक्यते ।"
 
 #: gui/partitionmanagerwidget.cpp:404
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
-msgstr ""
+msgstr "सञ्चिकातन्त्रं माउण्ट् कर्तुं न शक्तवान् ।"
 
 #: gui/partitionmanagerwidget.cpp:407
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be unmounted."
-msgstr ""
+msgstr "<filename>%1</filename> विभाजने स्थितं सञ्चिकातन्त्रं अनमाउण्ट् कर्तुं न शक्यते ।"
 
 #: gui/partitionmanagerwidget.cpp:407
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
-msgstr ""
+msgstr "सञ्चिकातन्त्रं अनमाउण्ट् कर्तुं न शक्तवान् ।"
 
 #: gui/partitionmanagerwidget.cpp:447
 #, kde-kuit-format
@@ -2231,13 +2268,13 @@ msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "unlocked."
-msgstr ""
+msgstr "<filename>%1</filename> विभाजने गुप्तसञ्चिकातन्त्रं अनलॉक् कर्तुं न शक्यते ।"
 
 #: gui/partitionmanagerwidget.cpp:453
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
-msgstr ""
+msgstr "एन्क्रिप्टेड् सञ्चिकातन्त्रं अनलॉक् कर्तुं न शक्तवान् ।"
 
 #: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
@@ -2245,13 +2282,13 @@ msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "locked."
-msgstr ""
+msgstr "<filename>%1</filename> विभाजने गुप्तसञ्चिकातन्त्रं ताडयितुं न शक्यते ।"
 
 #: gui/partitionmanagerwidget.cpp:464
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
-msgstr ""
+msgstr "एन्क्रिप्टेड् सञ्चिकातन्त्रं ताडयितुं न शक्तवान् ।"
 
 #: gui/partitionmanagerwidget.cpp:493
 #, kde-kuit-format
@@ -2267,13 +2304,19 @@ msgid_plural ""
 "create, paste or restore a primary partition on it before you delete an "
 "existing one.</para>"
 msgstr[0] ""
+"<para>अस्मिन् यन्त्रे पूर्वमेव एकः प्राथमिकविभाजनः अस्ति । एषा अधिकतमा संख्या अस्य "
+"विभाजनसारणीप्रकारः सम्भालितुं शक्नोति ।</para><para>भवन्तः विद्यमानं विलोपनात् पूर्वं "
+"तस्मिन् प्राथमिकविभाजनं निर्मातुं, चिनोतु, पुनःस्थापयितुं वा न शक्नुवन्ति ।</para>"
 msgstr[1] ""
+"<para>अस्मिन् यन्त्रे पूर्वमेव %1 प्राथमिकविभाजनानि सन्ति । एषा अधिकतमा संख्या अस्य "
+"विभाजनसारणीप्रकारः सम्भालितुं शक्नोति ।</para><para>भवन्तः विद्यमानं विलोपनात् पूर्वं "
+"तस्मिन् प्राथमिकविभाजनं निर्मातुं, चिनोतु, पुनःस्थापयितुं वा न शक्नुवन्ति ।</para>"
 
 #: gui/partitionmanagerwidget.cpp:497
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
-msgstr ""
+msgstr "अत्यधिकं प्राथमिकविभाजनम्।"
 
 #: gui/partitionmanagerwidget.cpp:560
 #, kde-kuit-format
@@ -2284,12 +2327,15 @@ msgid ""
 "</para><para>Please unmount all partitions with higher logical numbers than "
 "%2 first.</para>"
 msgstr ""
+"<para>विभाजनं <filename>%1</filename> सम्प्रति लोपयितुं न शक्यते यतः एकः वा अधिकः "
+"विभाजनः उच्चतरयुक्तिसङ्ख्यायुक्तः अद्यापि माउण्ट् कृतः अस्ति ।</para><para>कृपया प्रथमं %2 "
+"इत्यस्मात् अधिकयुक्तियुक्तसङ्ख्यायुक्तानि सर्वाणि विभाजनानि अनमाउण्ट् कुर्वन्तु .</para> इति"
 
 #: gui/partitionmanagerwidget.cpp:563
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
-msgstr ""
+msgstr "विभाजनं विलोपयितुं न शक्यते।"
 
 #: gui/partitionmanagerwidget.cpp:572
 #, kde-kuit-format
@@ -2299,18 +2345,20 @@ msgid ""
 "clipboard? It will no longer be available for pasting after it has been "
 "deleted."
 msgstr ""
+"किं भवान् वास्तवमेव तत् विभाजनं विलोपयितुम् इच्छति यत् सम्प्रति क्लिप्बोर्ड् मध्ये अस्ति? "
+"लोपितस्य अनन्तरं पेस्टिंग् कर्तुं न लभ्यते ।"
 
 #: gui/partitionmanagerwidget.cpp:574
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
-msgstr ""
+msgstr "वास्तवतः क्लिप्बोर्ड् मध्ये विभाजनं विलोपयन्तु?"
 
 #: gui/partitionmanagerwidget.cpp:575
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
-msgstr ""
+msgstr "तत् विलोपयतु"
 
 #: gui/partitionmanagerwidget.cpp:628
 #, kde-kuit-format
@@ -2319,12 +2367,14 @@ msgid ""
 "Partition <filename>%1</filename> has the same position and size after "
 "resize/move. Ignoring operation."
 msgstr ""
+"विभाजनस्य <filename>%1</filename> इत्यस्य आकारपरिवर्तनस्य/चलनस्य अनन्तरं समानं स्थानं "
+"आकारः च भवति । संचालनस्य अवहेलना।"
 
 #: gui/partitionmanagerwidget.cpp:656
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
-msgstr ""
+msgstr "<filename>%1</filename> इति विभाजनं क्लिप्बोर्ड् प्रति प्रतिलिखितम् अस्ति ।"
 
 #: gui/partitionmanagerwidget.cpp:719
 #, kde-kuit-format
@@ -2337,18 +2387,24 @@ msgid ""
 "window, all data currently stored on <filename>%1</filename> will "
 "unrecoverably be overwritten.</para>"
 msgstr ""
+"<para><warning>भवन्तः विभाजने <filename>%1</filename> इत्यत्र सर्वाणि दत्तांशं नष्टुं "
+"प्रवृत्ताः सन्ति ।</warning></para><para>एकं विभाजनं अन्येन सह (अथवा चित्रसञ्चिकायाः "
+"सह) अधिलेखनेन नाशः भविष्यति अस्मिन् लक्ष्यविभाजने सर्वे दत्तांशाः ।</para><para>यदि भवान् "
+"इदानीं निरन्तरं करोति तथा च मुख्यविण्डो मध्ये परिणामितं कार्यं प्रयोजयति तर्हि <filename>"
+"%1</filename> इत्यत्र वर्तमानकाले संगृहीताः सर्वे दत्तांशाः अपुनर्प्राप्त्यर्थं भविष्यन्ति "
+"अधिलिखितम्।</para>"
 
 #: gui/partitionmanagerwidget.cpp:727
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
-msgstr ""
+msgstr "वास्तवं विद्यमानं विभाजनं अधिलेखयन्तु?"
 
 #: gui/partitionmanagerwidget.cpp:728
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
-msgstr ""
+msgstr "विभाजनं अधिलेखयतु"
 
 #: gui/partitionmanagerwidget.cpp:736
 #, kde-kuit-format
@@ -2358,12 +2414,15 @@ msgid ""
 "partition or the backup file.</para><para>Pick another target or resize this "
 "partition so it is as large as the source.</para>"
 msgstr ""
+"<para>चयनितं विभाजनं स्रोतविभाजनं वा बैकअपसञ्चिकां वा धारयितुं पर्याप्तं विशालं नास्ति ।</"
+"para><para>अन्यं लक्ष्यं चिनुत अथवा एतस्य विभाजनस्य आकारं परिवर्तयन्तु येन स्रोतः इव "
+"विशालः भवति ।</para>"
 
 #: gui/partitionmanagerwidget.cpp:737
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
-msgstr ""
+msgstr "लक्ष्यं पर्याप्तं बृहत् न"
 
 #: gui/partitionmanagerwidget.cpp:740
 #, kde-kuit-format
@@ -2374,12 +2433,15 @@ msgid ""
 "are correctly aligned or when copying a primary partition into an extended "
 "partition.</para>"
 msgstr ""
+"<para>स्रोतं धारयितुं पर्याप्तं विशालं लक्ष्यविभाजनं निर्मातुं न शक्यते ।</para><para>यदि "
+"यन्त्रे सर्वे विभाजनाः सम्यक् संरेखिताः न सन्ति अथवा प्राथमिकविभाजनं विस्तारिते विभाजने "
+"प्रतिलिपिं कुर्वन् एतत् भवितुम् अर्हति </para> इति"
 
 #: gui/partitionmanagerwidget.cpp:743
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
-msgstr ""
+msgstr "लक्ष्यविभाजनं निर्मातुम् न शक्यते ।"
 
 #: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
@@ -2388,12 +2450,14 @@ msgid ""
 "The file system in the image file <filename>%1</filename> is too large to be "
 "restored to the selected partition."
 msgstr ""
+"<filename>%1</filename> इति चित्रसञ्चिकायां सञ्चिकातन्त्रम् अतीव विशालं यत् "
+"चयनितविभाजने पुनः स्थापयितुं न शक्यते ।"
 
 #: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
-msgstr ""
+msgstr "सञ्चिकातन्त्रं पुनःस्थापयितुं पर्याप्तं स्थानं नास्ति ।"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:79
@@ -2483,50 +2547,50 @@ msgstr "ध्वजाः"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
-msgstr ""
+msgstr "विभाजनगुणाः : <filename>%1</filename>"
 
 #: gui/partpropsdialog.cpp:110
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
-msgstr ""
+msgstr "(कोऽपि न लब्धः) २."
 
 #: gui/partpropsdialog.cpp:115
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
-msgstr ""
+msgstr "(न लब्धम्) २."
 
 #: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
-msgstr ""
+msgstr "आलम"
 
 #: gui/partpropsdialog.cpp:124
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
-msgstr ""
+msgstr "न्यूनातिन्यूनम् एकं तार्किकविभाजनं माउण्ट् भवति ।"
 
 #: gui/partpropsdialog.cpp:126
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
-msgstr ""
+msgstr "<filename>%1</filename> इत्यत्र माउण्ट् कृतम्"
 
 #: gui/partpropsdialog.cpp:128
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
-msgstr ""
+msgstr "आरुह्य"
 
 #: gui/partpropsdialog.cpp:132 gui/partpropsdialog.cpp:135
 #: gui/partpropsdialog.cpp:136
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
-msgstr ""
+msgstr "(न कश्चित्)"
 
 #: gui/partpropsdialog.cpp:360
 #, kde-kuit-format
@@ -2538,24 +2602,31 @@ msgid ""
 "the resulting operation in the main window, all data on <filename>%1</"
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
+"<para><warning>भवन्तः विभाजने <filename>%1</filename> इत्यत्र सर्वाणि दत्तांशं नष्टुं "
+"प्रवृत्ताः सन्ति ।</warning></para><para>डिस्क् मध्ये पूर्वमेव विभाजने सञ्चिकातन्त्रं "
+"परिवर्तयितुं तस्य सर्वाणि मेटानि भविष्यन्ति सामग्रीः । यदि भवान् इदानीं निरन्तरं कृत्वा "
+"मुख्यविण्डो मध्ये परिणामितं कार्यं प्रयोजयति तर्हि <filename>%1</filename> इत्यत्र सर्वे "
+"दत्तांशाः अपुनर्प्राप्त्यर्थं नष्टाः भविष्यन्ति ।</para>"
 
 #: gui/partpropsdialog.cpp:362
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
+"वास्तवमेव <filename>%1</filename> इत्यस्य पुनः निर्माणं File System %2 इत्यनेन सह "
+"कुर्वन्तु?"
 
 #: gui/partpropsdialog.cpp:363
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
-msgstr ""
+msgstr "File System परिवर्तयन्तु"
 
 #: gui/partpropsdialog.cpp:364
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
-msgstr ""
+msgstr "सञ्चिकातन्त्रं न परिवर्तयन्तु"
 
 #: gui/partpropsdialog.cpp:383
 #, kde-kuit-format
@@ -2567,38 +2638,43 @@ msgid ""
 "window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
 "para>"
 msgstr ""
+"<para><warning>भवन्तः विभाजने <filename>%1</filename> इत्यत्र सर्वाणि दत्तांशं नष्टुं "
+"प्रवृत्ताः सन्ति ।</warning></para><para>सञ्चिकातन्त्रस्य पुनः निर्माणेन तस्य सर्वाणि "
+"सामग्रीनि मेटयिष्यन्ते । यदि भवान् इदानीं निरन्तरं कृत्वा मुख्यविण्डो मध्ये परिणामितं कार्यं "
+"प्रयोजयति तर्हि <filesystem>%1</filesystem> इत्यत्र सर्वे दत्तांशाः अपुनर्प्राप्त्यर्थं "
+"नष्टाः भविष्यन्ति ।</para>"
 
 #: gui/partpropsdialog.cpp:385
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
-msgstr ""
+msgstr "<filename>%1</filename> इत्यत्र वास्तवमेव सञ्चिकातन्त्रं पुनः निर्मायताम्?"
 
 #: gui/partpropsdialog.cpp:386
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
-msgstr ""
+msgstr "File System पुनः रचयन्तु"
 
 #: gui/partpropsdialog.cpp:387
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
-msgstr ""
+msgstr "सञ्चिकातन्त्रं पुनः न रचयन्तु"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
 #: gui/partpropswidgetbase.ui:26
 #, kde-format
 msgctxt "@label"
 msgid "First sector:"
-msgstr ""
+msgstr "प्रथमक्षेत्रम् : १."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/partpropswidgetbase.ui:56
 #, kde-format
 msgctxt "@label"
 msgid "Size:"
-msgstr ""
+msgstr "आकृति:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:66
@@ -2611,56 +2687,56 @@ msgstr "विभाजन UUID: ."
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
-msgstr ""
+msgstr "एषा सञ्चिकातन्त्रं लेबलं सेट् कर्तुं समर्थं न करोति ।"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
 #: gui/partpropswidgetbase.ui:86
 #, kde-format
 msgctxt "@label"
 msgid "UUID:"
-msgstr ""
+msgstr "यूयूआईडी : १."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
 #: gui/partpropswidgetbase.ui:103
 #, kde-format
 msgctxt "@label"
 msgid "Last sector:"
-msgstr ""
+msgstr "अन्तिमक्षेत्रम् : १."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
 #: gui/partpropswidgetbase.ui:134
 #, kde-format
 msgctxt "@label"
 msgid "Status:"
-msgstr ""
+msgstr "स्थितिः:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextAvailable)
 #: gui/partpropswidgetbase.ui:144
 #, kde-format
 msgctxt "@label partition capacity available"
 msgid "Available:"
-msgstr ""
+msgstr "उपलब्धः:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:223
 #, kde-format
 msgctxt "@label"
 msgid "&Label:"
-msgstr ""
+msgstr "&नामपत्र:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
 #: gui/partpropswidgetbase.ui:286
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
-msgstr ""
+msgstr "माउण्ट् बिन्दुः : १."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
 #: gui/partpropswidgetbase.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
-msgstr ""
+msgstr "विभाजनप्रकारः : १."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
@@ -2673,7 +2749,7 @@ msgstr "यन्त्रमार्गः : १."
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
-msgstr ""
+msgstr "क्षेत्राणां संख्या : १."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:336
@@ -2696,102 +2772,102 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
-msgstr ""
+msgstr "विद्यमानं सञ्चिकातन्त्रं पुनः रचयन्तु"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
 #: gui/partpropswidgetbase.ui:376
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
-msgstr ""
+msgstr "प्रयुक्त:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/partpropswidgetbase.ui:386
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
-msgstr ""
+msgstr "सञ्चिका प्रणाली&m:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
 #: gui/partpropswidgetbase.ui:399
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
-msgstr ""
+msgstr "&ध्वजाः : १."
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Please select a device."
-msgstr ""
+msgstr "कृपया एकं यन्त्रं चिनोतु।"
 
 #: gui/parttablewidget.cpp:54
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No valid partition table was found on this device."
-msgstr ""
+msgstr "अस्मिन् यन्त्रे कोऽपि वैधः विभाजनसारणी न प्राप्ता ।"
 
 #: gui/resizedialog.cpp:42
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize/move partition: <filename>%1</filename>"
-msgstr ""
+msgstr "विभाजनस्य आकारं परिवर्तयतु/चलतु: <filename>%1</filename>"
 
 #: gui/resizedialog.cpp:92
 #, kde-format
 msgctxt "%2 is either empty or says Invalid passphrase."
 msgid "%2Enter passphrase for %1:"
-msgstr ""
+msgstr "%2%1 कृते गुप्तवाक्यं प्रविशतु:"
 
 #: gui/resizedialog.cpp:101
 #, kde-format
 msgctxt "Part of %2Enter passphrase for %1:"
 msgid "Invalid passphrase. "
-msgstr ""
+msgstr "अमान्यगुप्तवाक्यम् । "
 
 #: gui/resizevolumegroupdialog.cpp:39
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize Volume Group"
-msgstr ""
+msgstr "आयतनसमूहस्य आकारं परिवर्तयतु"
 
 #: gui/scanprogressdialog.cpp:16
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr ""
+msgstr "स्कैनिङ्ग उपकरणानि..."
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%प% ९."
 
 #: gui/scanprogressdialog.cpp:36
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr ""
+msgstr "स्कैनिङ्ग..."
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning device: <filename>%1</filename>"
-msgstr ""
+msgstr "स्कैनिङ्ग यन्त्रम् : <filename>%1</filename>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: gui/sizedetailswidgetbase.ui:66
 #, kde-format
 msgctxt "@label:listbox"
 msgid "First sector:"
-msgstr ""
+msgstr "प्रथमक्षेत्रम् : १."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: gui/sizedetailswidgetbase.ui:101
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Last sector:"
-msgstr ""
+msgstr "अन्तिमक्षेत्रम् : १."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
 #: gui/sizedetailswidgetbase.ui:124
@@ -2803,41 +2879,41 @@ msgstr "विभाजनं संरेखयन्तु"
 #, kde-kuit-format
 msgctxt "@action:button advanced settings button"
 msgid "Advanced"
-msgstr ""
+msgstr "उन्नतं"
 
 #: gui/sizedialogbase.cpp:180
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Advanced"
-msgstr ""
+msgstr "&उन्नतं"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: gui/sizedialogwidgetbase.ui:30
 #, kde-format
 msgctxt "@label"
 msgid "Minimum size:"
-msgstr ""
+msgstr "न्यूनतमः आकारः : १."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: gui/sizedialogwidgetbase.ui:72
 #, kde-format
 msgctxt "@label"
 msgid "Maximum size:"
-msgstr ""
+msgstr "अधिकतमः आकारः : १."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/sizedialogwidgetbase.ui:98
 #, kde-format
 msgctxt "@label"
 msgid "Label:"
-msgstr ""
+msgstr "नामपत्र:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: gui/sizedialogwidgetbase.ui:160
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Si&ze:"
-msgstr ""
+msgstr "आकृति:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
 #: gui/sizedialogwidgetbase.ui:183
@@ -2862,14 +2938,14 @@ msgstr "&तार्किक"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File system:"
-msgstr ""
+msgstr "सञ्चिकातन्त्रम् : १."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
 #: gui/sizedialogwidgetbase.ui:249
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
-msgstr ""
+msgstr "विभाजनप्रकारः : १."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:259
@@ -2926,7 +3002,7 @@ msgstr "O&nly मूलम्"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "F&ree space before:"
-msgstr ""
+msgstr "F&ree स्थानं पूर्वं:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
 #: gui/sizedialogwidgetbase.ui:347
@@ -2939,7 +3015,7 @@ msgstr "तार्किक आयतन नाम : १."
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Free space after:"
-msgstr ""
+msgstr "ततः परं मुक्तस्थानं : १."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:376
@@ -2961,43 +3037,43 @@ msgstr "LUKS2 सक्षमं कुर्वन्तु"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "SMART Properties: <filename>%1</filename>"
-msgstr ""
+msgstr "SMART गुणाः: <filename>%1</filename>"
 
 #: gui/smartdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save SMART Report"
-msgstr ""
+msgstr "SMART रिपोर्ट् रक्षतु"
 
 #: gui/smartdialog.cpp:96 gui/smartdialog.cpp:153
 #, kde-format, kde-kuit-format
 msgctxt "@label SMART number of bad sectors"
 msgid "none"
-msgstr ""
+msgstr "न कश्चित्"
 
 #: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Pre-Failure"
-msgstr ""
+msgstr "पूर्वविफलता"
 
 #: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Old-Age"
-msgstr ""
+msgstr "वृद्धावस्था"
 
 #: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Online"
-msgstr ""
+msgstr "लब्धसम्पर्क"
 
 #: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Offline"
-msgstr ""
+msgstr "अफलाइन"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
 #: gui/smartdialog.cpp:155 gui/smartdialogwidgetbase.ui:68
@@ -3057,7 +3133,7 @@ msgstr "समग्रमूल्यांकनम् : १."
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save SMART Report."
-msgstr ""
+msgstr "SMART रिपोर्ट् रक्षितुं न शक्तवान्।"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:294
@@ -3123,13 +3199,13 @@ msgstr "मूल्यम्‌"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary output file to save <filename>%1</filename>."
-msgstr ""
+msgstr "<filename>%1</filename> रक्षितुं अस्थायीनिर्गमसञ्चिकां निर्मातुं न शक्तम् ।"
 
 #: gui/treelog.cpp:110
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Saving Log File"
-msgstr ""
+msgstr "त्रुटिः लॉग् सञ्चिकां रक्षति"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:59
@@ -3137,7 +3213,7 @@ msgstr ""
 msgctxt ""
 "@title:column Severity of a log entry / log level. Text must be very short."
 msgid "Sev."
-msgstr ""
+msgstr "स्वस्य कृते"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:62
@@ -3150,14 +3226,14 @@ msgstr "तीव्रता"
 #, kde-format
 msgctxt "@title:column a time stamp of a log entry"
 msgid "Time"
-msgstr ""
+msgstr "कालः"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:72
 #, kde-format
 msgctxt "@title:column the text message of a log entry"
 msgid "Message"
-msgstr ""
+msgstr "सन्देशः"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVGName)
 #: gui/volumegroupwidgetbase.ui:34
@@ -3221,13 +3297,13 @@ msgstr "प्रयुक्तः आकारः : १. "
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>KDE Partition Manager</application>"
-msgstr ""
+msgstr "<application>KDE विभाजनप्रबन्धकः</application>"
 
 #: main.cpp:79
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Manage your disks, partitions and file systems"
-msgstr ""
+msgstr "स्वस्य डिस्कं, विभाजनं, सञ्चिकातन्त्रं च प्रबन्धयन्तु"
 
 #: main.cpp:81
 #, kde-kuit-format
@@ -3236,66 +3312,68 @@ msgid ""
 "© 2008-2013 Volker Lanz\n"
 "© 2012-2020 Andrius Štikonas"
 msgstr ""
+"© 2008-2013 वोल्कर लैन्ज\n"
+"© 2012-2020 आन्द्रियस स्टिकोनास"
 
 #: main.cpp:85
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Volker Lanz"
-msgstr ""
+msgstr "वोल्कर लान्ज"
 
 #: main.cpp:85
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Former maintainer"
-msgstr ""
+msgstr "पूर्व परिपालक"
 
 #: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Andrius Štikonas"
-msgstr ""
+msgstr "आन्द्रियः ष्टिकोनसः"
 
 #: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Maintainer"
-msgstr ""
+msgstr "परिपालकः"
 
 #: main.cpp:87
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Teo Mrnjavac"
-msgstr ""
+msgstr "थियो मृन्जवाच्"
 
 #: main.cpp:87
 #, kde-format
 msgctxt "@info:credit"
 msgid "Former Calamares maintainer"
-msgstr ""
+msgstr "पूर्व कलामारेस् परिपालकः"
 
 #: main.cpp:88
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Chantara Tith"
-msgstr ""
+msgstr "चन्तरा तीथ"
 
 #: main.cpp:88
 #, kde-format
 msgctxt "@info:credit"
 msgid "LVM support"
-msgstr ""
+msgstr "LVM समर्थनम्"
 
 #: main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Pali Rohár"
-msgstr ""
+msgstr "पाली रोहर"
 
 #: main.cpp:89
 #, kde-format
 msgctxt "@info:credit"
 msgid "UDF support"
-msgstr ""
+msgstr "UDF समर्थनम्"
 
 #: main.cpp:90
 #, kde-format
@@ -3306,46 +3384,46 @@ msgstr "ह्यूगो परेरा दा कोस्टा"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Partition Widget Design"
-msgstr ""
+msgstr "विभाजन विजेट डिजाइन"
 
 #: main.cpp:91
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Caio Jordão Carvalho"
-msgstr ""
+msgstr "Caio Jordão Carvalho"
 
 #: main.cpp:91
 #, kde-format
 msgctxt "@info:credit"
 msgid "Improved SMART support"
-msgstr ""
+msgstr "SMART समर्थनं उन्नतम्"
 
 #: main.cpp:101
 #, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"
-msgstr ""
+msgstr "प्रबन्धनार्थं यन्त्रम्"
 
 #. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
 #: partitionmanager.kcfg:45
 #, kde-format
 msgctxt "@label"
 msgid "Is this the first time KDE Partition Manager is being run?"
-msgstr ""
+msgstr "किं प्रथमवारं KDE विभाजनप्रबन्धकः चालितः अस्ति?"
 
 #. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
 #: partitionmanager.kcfg:49
 #, kde-format
 msgctxt "@label"
 msgid "Hide log messages below"
-msgstr ""
+msgstr "अधः लॉग् सन्देशान् गोपयन्तु"
 
 #. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
 #: partitionmanager.kcfg:53
 #, kde-format
 msgctxt "@label"
 msgid "Partition sector alignment"
-msgstr ""
+msgstr "विभाजन क्षेत्र संरेखण"
 
 #. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
 #: partitionmanager.kcfg:57
@@ -3359,21 +3437,21 @@ msgstr "प्रति पूर्वनिर्धारितरूपे�
 #, kde-format
 msgctxt "@label"
 msgid "File system colors"
-msgstr ""
+msgstr "सञ्चिकातन्त्रस्य वर्णाः"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:139
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
-msgstr ""
+msgstr "अनुप्रयोगस्य मेनूपट्टिकां दर्शयतु"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:143
 #, kde-format
 msgctxt "@label"
 msgid "Backend plugin"
-msgstr ""
+msgstr "पृष्ठभाग प्लगइन"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:149
@@ -3389,12 +3467,14 @@ msgid ""
 "<para>The configured backend plugin \"%1\" could not be loaded.</"
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
+"<para>विन्यस्तं पृष्ठभागप्लगिन् \"%1\" लोड् कर्तुं न शक्यते स्म ।</para><para>तस्य स्थाने "
+"पूर्वनिर्धारितं पृष्ठभागप्लगिन् \"%2\" लोड् भवति ।</para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error: Could Not Load Backend Plugin"
-msgstr ""
+msgstr "त्रुटिः: बैकएण्ड् प्लगिन् लोड् कर्तुं न शक्तम्"
 
 #: util/guihelpers.cpp:57
 #, kde-kuit-format
@@ -3403,9 +3483,11 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
+"<para>न विन्यस्तं (\"%1\") न च पूर्वनिर्धारितं (\"%2\") पृष्ठभागप्लगिन् लोड् कर्तुं शक्यते स्म "
+"।</para><para>कृपया स्वस्य संस्थापनं परीक्ष्यताम् ।</para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
 msgctxt "@title:menu"
 msgid "Columns"
-msgstr ""
+msgstr "स्तम्भाः"
