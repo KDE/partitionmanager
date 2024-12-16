@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-12 00:41+0000\n"
-"PO-Revision-Date: 2024-12-08 15:43+0100\n"
+"PO-Revision-Date: 2024-12-16 00:24+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1597,20 +1597,20 @@ msgstr "Elimina unha partición."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
-msgstr "Borrar totalmente"
+msgstr "Triturar"
 
 #: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
-msgstr "Borrar totalmente a partición."
+msgstr "Triturar a partición."
 
 #: gui/mainwindow.cpp:405
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr ""
-"Borrar totalmente unha partición de xeito que os seus contidos non se poidan "
+"Triturar unha partición de xeito que os seus contidos non se poidan "
 "recuperar."
 
 #: gui/mainwindow.cpp:412
