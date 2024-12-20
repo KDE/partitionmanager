@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-12 00:41+0000\n"
-"PO-Revision-Date: 2024-10-20 18:39+0200\n"
+"PO-Revision-Date: 2024-12-19 19:09+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -343,7 +343,7 @@ msgstr "incognite:"
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "Minix:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
@@ -2735,10 +2735,10 @@ msgid "%2Enter passphrase for %1:"
 msgstr "%2Inserta phrase de contrasigno per %1:"
 
 #: gui/resizedialog.cpp:101
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Part of %2Enter passphrase for %1:"
 msgid "Invalid passphrase. "
-msgstr ""
+msgstr "Phrase de contrasigno invalide. "
 
 #: gui/resizevolumegroupdialog.cpp:39
 #, kde-kuit-format
