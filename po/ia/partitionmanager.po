@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-12 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 19:09+0100\n"
+"PO-Revision-Date: 2024-12-20 12:23+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -2735,7 +2735,7 @@ msgid "%2Enter passphrase for %1:"
 msgstr "%2Inserta phrase de contrasigno per %1:"
 
 #: gui/resizedialog.cpp:101
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Part of %2Enter passphrase for %1:"
 msgid "Invalid passphrase. "
 msgstr "Phrase de contrasigno invalide. "
@@ -2874,7 +2874,7 @@ msgstr ""
 #: gui/sizedialogwidgetbase.ui:262
 #, kde-format
 msgid "Encrypt with LUKS"
-msgstr ""
+msgstr "Crypta con LUKS"
 
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
 #: gui/sizedialogwidgetbase.ui:292
@@ -2886,7 +2886,7 @@ msgstr "Permissiones"
 #: gui/sizedialogwidgetbase.ui:305
 #, kde-format
 msgid "Allow everyone to write and read on this device"
-msgstr ""
+msgstr "Perminte a omnes scriber e leger sur iste dispositivo"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:308
@@ -2913,20 +2913,20 @@ msgstr "Solme&nte super usator (Radice)"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "F&ree space before:"
-msgstr ""
+msgstr "Spatio Libe&re ante:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
 #: gui/sizedialogwidgetbase.ui:347
 #, kde-format
 msgid "Logical Volume Name:"
-msgstr ""
+msgstr "Nomine de volumine logic:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
 #: gui/sizedialogwidgetbase.ui:363
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Free space after:"
-msgstr ""
+msgstr " Spatio Libere post:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:376
@@ -2940,19 +2940,19 @@ msgstr ""
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "Habilita LUKS2"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "SMART Properties: <filename>%1</filename>"
-msgstr ""
+msgstr "Proprietates de SMART : <filename>%1</filename>"
 
 #: gui/smartdialog.cpp:58
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save SMART Report"
-msgstr ""
+msgstr "Salveguarda reporto de SMART"
 
 #: gui/smartdialog.cpp:96 gui/smartdialog.cpp:153
 #, kde-format, kde-kuit-format
@@ -2964,7 +2964,7 @@ msgstr "nulle"
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Pre-Failure"
-msgstr ""
+msgstr "Pre-Fallimento"
 
 #: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
 #, kde-kuit-format
@@ -3060,19 +3060,19 @@ msgstr "Attributo"
 #: gui/smartdialogwidgetbase.ui:304
 #, kde-format
 msgid "Failure Type"
-msgstr ""
+msgstr "Typo de fallimento"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:309
 #, kde-format
 msgid "Update Type"
-msgstr ""
+msgstr "Typo de actualisation"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:314
 #, kde-format
 msgid "Worst"
-msgstr ""
+msgstr "Pejor"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:319
@@ -3096,7 +3096,7 @@ msgstr "Crude"
 #: gui/smartdialogwidgetbase.ui:334
 #, kde-format
 msgid "Assessment"
-msgstr ""
+msgstr "Evalutation"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:339
@@ -3114,7 +3114,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Saving Log File"
-msgstr ""
+msgstr "Error durante que il salveguardava file de registro (log) "
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:59
@@ -3122,7 +3122,7 @@ msgstr ""
 msgctxt ""
 "@title:column Severity of a log entry / log level. Text must be very short."
 msgid "Sev."
-msgstr ""
+msgstr "Sev."
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:62
@@ -3148,13 +3148,13 @@ msgstr "Message"
 #: gui/volumegroupwidgetbase.ui:34
 #, kde-format
 msgid "Volume Group Name: "
-msgstr ""
+msgstr "Nomine de gruppo de volumine: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
 #: gui/volumegroupwidgetbase.ui:47
 #, kde-format
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Dimension de Extension Physic: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
@@ -3176,7 +3176,7 @@ msgstr "MiB"
 #: gui/volumegroupwidgetbase.ui:107
 #, kde-format
 msgid "Total LV: "
-msgstr ""
+msgstr "Total LV: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
 #: gui/volumegroupwidgetbase.ui:130
@@ -3327,14 +3327,14 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Hide log messages below"
-msgstr ""
+msgstr "Cela messages de registro a basso"
 
 #. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
 #: partitionmanager.kcfg:53
 #, kde-format
 msgctxt "@label"
 msgid "Partition sector alignment"
-msgstr ""
+msgstr "Alineamento de sector de de partition"
 
 #. i18n: ectx: label, entry (alignDefault), group (KDE Partition Manager)
 #: partitionmanager.kcfg:57
@@ -3355,14 +3355,14 @@ msgstr "Colores de systema de file"
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
-msgstr ""
+msgstr "Monstra le barra de menu del application"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:143
 #, kde-format
 msgctxt "@label"
 msgid "Backend plugin"
-msgstr ""
+msgstr "Plugin de Retro-Administration"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:149
@@ -3383,7 +3383,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error: Could Not Load Backend Plugin"
-msgstr ""
+msgstr "Error: non poteva cargar Plugin de Retro-administration"
 
 #: util/guihelpers.cpp:57
 #, kde-kuit-format
