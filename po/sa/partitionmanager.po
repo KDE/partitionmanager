@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-12 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 21:41+0530\n"
+"PO-Revision-Date: 2024-12-20 22:11+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -96,13 +96,13 @@ msgstr "पृष्ठभागं न परिवर्तयन्तु"
 #: config/configurepageadvanced.ui:23
 #, kde-format
 msgid "Active backend:"
-msgstr "सक्रियः पृष्ठभागः : १."
+msgstr "सक्रियः पृष्ठभागः :"
 
 #. i18n: ectx: property (text), widget (QLabel)
 #: config/configurepageadvanced.ui:36
 #, kde-format
 msgid "Preferred unit:"
-msgstr "प्राधान्यं एककं : १."
+msgstr "प्राधान्यं एककं :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:47
@@ -156,19 +156,19 @@ msgstr "ReiserFS: 1.1."
 #: config/configurepagefilesystemcolors.ui:56
 #, kde-format
 msgid "UFS:"
-msgstr "उएफएस : १."
+msgstr "उएफएस :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_31)
 #: config/configurepagefilesystemcolors.ui:69
 #, kde-format
 msgid "ISO 9660:"
-msgstr "आईएसओ ९६६०: १."
+msgstr "आईएसओ ९६६०:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_24)
 #: config/configurepagefilesystemcolors.ui:88
 #, kde-format
 msgid "OCFS2:"
-msgstr "ओसीएफएस२: १."
+msgstr "ओसीएफएस२:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_22)
 #: config/configurepagefilesystemcolors.ui:104
@@ -204,13 +204,13 @@ msgstr "विलासिता2: ."
 #: config/configurepagefilesystemcolors.ui:214
 #, kde-format
 msgid "unformatted:"
-msgstr "अस्वरूपितम् : १."
+msgstr "अस्वरूपितम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_30)
 #: config/configurepagefilesystemcolors.ui:233
 #, kde-format
 msgid "UDF:"
-msgstr "यूडीएफ : १."
+msgstr "यूडीएफ :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_25)
 #: config/configurepagefilesystemcolors.ui:246
@@ -228,13 +228,13 @@ msgstr "ext4: 1 ."
 #: config/configurepagefilesystemcolors.ui:310
 #, kde-format
 msgid "HPFS:"
-msgstr "एचपीएफएस : १."
+msgstr "एचपीएफएस :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_11)
 #: config/configurepagefilesystemcolors.ui:368
 #, kde-format
 msgid "JFS:"
-msgstr "जेएफएस : १."
+msgstr "जेएफएस :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_2)
 #: config/configurepagefilesystemcolors.ui:381
@@ -246,13 +246,13 @@ msgstr "ext3: 1 ."
 #: config/configurepagefilesystemcolors.ui:407
 #, kde-format
 msgid "Reiser4:"
-msgstr "यात्रा४: १."
+msgstr "यात्रा४:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_21)
 #: config/configurepagefilesystemcolors.ui:439
 #, kde-format
 msgid "Btrfs:"
-msgstr "Btrfs : १."
+msgstr "Btrfs :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
 #: config/configurepagefilesystemcolors.ui:481
@@ -282,7 +282,7 @@ msgstr "exFAT: 1।"
 #: config/configurepagefilesystemcolors.ui:558
 #, kde-format
 msgid "NTFS:"
-msgstr "एनटीएफएस : १."
+msgstr "एनटीएफएस :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_20)
 #: config/configurepagefilesystemcolors.ui:584
@@ -294,7 +294,7 @@ msgstr "विलास:"
 #: config/configurepagefilesystemcolors.ui:613
 #, kde-format
 msgid "Linux Swap:"
-msgstr "लिनक्स स्वैप् : १."
+msgstr "लिनक्स स्वैप् :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_32)
 #: config/configurepagefilesystemcolors.ui:664
@@ -306,13 +306,13 @@ msgstr "FAT12: 1.1."
 #: config/configurepagefilesystemcolors.ui:677
 #, kde-format
 msgid "HFS:"
-msgstr "एच् एफ एस : १."
+msgstr "एच् एफ एस :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_35)
 #: config/configurepagefilesystemcolors.ui:709
 #, kde-format
 msgid "APFS:"
-msgstr "एपीएफएस : १."
+msgstr "एपीएफएस :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_5)
 #: config/configurepagefilesystemcolors.ui:722
@@ -330,7 +330,7 @@ msgstr "Linux RAID: 1.1."
 #: config/configurepagefilesystemcolors.ui:764
 #, kde-format
 msgid "BitLocker:"
-msgstr "बिटलॉकर : १."
+msgstr "बिटलॉकर :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_14)
 #: config/configurepagefilesystemcolors.ui:793
@@ -348,13 +348,13 @@ msgstr "अज्ञात:"
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr "मिनीक्सः : १."
+msgstr "मिनीक्सः :"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
 #, kde-format
 msgid "Bcachefs:"
-msgstr "Bcachefs : १."
+msgstr "Bcachefs :"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
@@ -372,7 +372,7 @@ msgstr "प्रति पूर्वनिर्धारितरूपे�
 #: config/configurepagegeneral.ui:47
 #, kde-format
 msgid "Sec&tor alignment:"
-msgstr "Sec&tor संरेखणः : १."
+msgstr "Sec&tor संरेखणः :"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
@@ -426,7 +426,7 @@ msgstr "सञ्चिकातन्त्रम्"
 #: config/configurepagegeneral.ui:143
 #, kde-format
 msgid "&Default file system:"
-msgstr "&पूर्वनिर्धारितसञ्चिकाप्रणाली: १."
+msgstr "&पूर्वनिर्धारितसञ्चिकाप्रणाली:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -580,7 +580,7 @@ msgstr "कुल समयः 00:00:00"
 #: gui/applyprogressdialogwidgetbase.ui:89
 #, no-c-format, kde-format
 msgid "Operation: %p%"
-msgstr "संचालनम् : %p% ."
+msgstr "संचालनम् : %p%"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
 #: gui/applyprogressdialogwidgetbase.ui:99
@@ -592,7 +592,7 @@ msgstr "स्थितिः"
 #: gui/applyprogressdialogwidgetbase.ui:115
 #, no-c-format, kde-format
 msgid "Total: %p%"
-msgstr "कुलम् : %p% ."
+msgstr "कुलम् : %p%"
 
 #: gui/createpartitiontabledialog.cpp:31
 #, kde-kuit-format
@@ -654,7 +654,7 @@ msgstr "MS-Dos"
 #: gui/createpartitiontablewidgetbase.ui:70
 #, kde-format
 msgid "(icon)"
-msgstr "(चिह्न) ९."
+msgstr "(चिह्न)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: gui/createpartitiontablewidgetbase.ui:83
@@ -720,19 +720,19 @@ msgstr "आयतन प्रबन्धक उपकरण"
 #: gui/devicepropswidgetbase.ui:22
 #, kde-format
 msgid "Logical sector size:"
-msgstr "तार्किकक्षेत्रस्य आकारः : १."
+msgstr "तार्किकक्षेत्रस्य आकारः :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
 #: gui/devicepropswidgetbase.ui:32
 #, kde-format
 msgid "Primaries/Max:"
-msgstr "प्राथमिक/अधिकतम : १."
+msgstr "प्राथमिक/अधिकतम :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
 #: gui/devicepropswidgetbase.ui:42
 #, kde-format
 msgid "Total sectors:"
-msgstr "कुलक्षेत्राणि : १."
+msgstr "कुलक्षेत्राणि :"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
@@ -752,19 +752,19 @@ msgstr "क्षमता:"
 #: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
 #, kde-format
 msgid "SMART status:"
-msgstr "SMART स्थितिः : १."
+msgstr "SMART स्थितिः :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPhysicalSectorSize)
 #: gui/devicepropswidgetbase.ui:198
 #, kde-format
 msgid "Physical sector size:"
-msgstr "भौतिकक्षेत्रस्य आकारः : १."
+msgstr "भौतिकक्षेत्रस्य आकारः :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
 #: gui/devicepropswidgetbase.ui:267
 #, kde-format
 msgid "Partition table:"
-msgstr "विभाजनसारणी : १."
+msgstr "विभाजनसारणी :"
 
 #: gui/editmountoptionsdialog.cpp:25
 #, kde-kuit-format
@@ -845,7 +845,7 @@ msgstr "&नामपत्र"
 #: gui/editmountpointdialogwidgetbase.ui:46
 #, kde-format
 msgid "Dump &Frequency:"
-msgstr "डम्प & आवृत्ति : १."
+msgstr "डम्प & आवृत्ति :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
 #: gui/editmountpointdialogwidgetbase.ui:75
@@ -863,7 +863,7 @@ msgstr "समकालिक अभिगम"
 #: gui/editmountpointdialogwidgetbase.ui:109
 #, kde-format
 msgid "Pass &Number:"
-msgstr "उत्तीर्ण &संख्या : १."
+msgstr "उत्तीर्ण &संख्या :"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
 #: gui/editmountpointdialogwidgetbase.ui:128
@@ -947,7 +947,7 @@ msgstr "निर्देशिकाप्रवेशसमयानां �
 #: gui/editmountpointdialogwidgetbase.ui:295
 #, kde-format
 msgid "Identify by:"
-msgstr "इत्यनेन परिचययन्तु : १."
+msgstr "इत्यनेन परिचययन्तु :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
 #: gui/editmountpointdialogwidgetbase.ui:305
@@ -959,7 +959,7 @@ msgstr "केवलं पठनीयम्"
 #: gui/editmountpointdialogwidgetbase.ui:312
 #, kde-format
 msgid "Options:"
-msgstr "विकल्पाः : १."
+msgstr "विकल्पाः :"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -1086,7 +1086,7 @@ msgstr "विभाजन सूचना"
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "File system:"
-msgstr "सञ्चिकातन्त्रम् : १."
+msgstr "सञ्चिकातन्त्रम् :"
 
 #: gui/infopane.cpp:114 gui/infopane.cpp:128 gui/infopane.cpp:140
 #, kde-format, kde-kuit-format
@@ -1098,49 +1098,49 @@ msgstr "क्षमता:"
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher name:"
-msgstr "सिफर नाम : १."
+msgstr "सिफर नाम :"
 
 #: gui/infopane.cpp:116
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher mode:"
-msgstr "सिफर मोडः : १."
+msgstr "सिफर मोडः :"
 
 #: gui/infopane.cpp:117
 #, kde-format
 msgctxt "@label partition"
 msgid "Hash:"
-msgstr "हैशः : १."
+msgstr "हैशः :"
 
 #: gui/infopane.cpp:118
 #, kde-format
 msgctxt "@label partition"
 msgid "Key size:"
-msgstr "कुञ्जी आकारः : १."
+msgstr "कुञ्जी आकारः :"
 
 #: gui/infopane.cpp:119
 #, kde-format
 msgctxt "@label partition"
 msgid "Payload offset:"
-msgstr "पेलोड् ऑफसेट् : १."
+msgstr "पेलोड् ऑफसेट् :"
 
 #: gui/infopane.cpp:120 gui/infopane.cpp:135 gui/infopane.cpp:143
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "First sector:"
-msgstr "प्रथमक्षेत्रम् : १."
+msgstr "प्रथमक्षेत्रम् :"
 
 #: gui/infopane.cpp:121 gui/infopane.cpp:136 gui/infopane.cpp:144
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Last sector:"
-msgstr "अन्तिमक्षेत्रम् : १."
+msgstr "अन्तिमक्षेत्रम् :"
 
 #: gui/infopane.cpp:122 gui/infopane.cpp:137 gui/infopane.cpp:145
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Number of sectors:"
-msgstr "क्षेत्राणां संख्या : १."
+msgstr "क्षेत्राणां संख्या :"
 
 #: gui/infopane.cpp:129 gui/infopane.cpp:141
 #, kde-format, kde-kuit-format
@@ -1158,25 +1158,25 @@ msgstr "प्रयुक्त:"
 #, kde-format
 msgctxt "@label partition"
 msgid "PE Size:"
-msgstr "पीई आकारः : १."
+msgstr "पीई आकारः :"
 
 #: gui/infopane.cpp:132
 #, kde-format
 msgctxt "@label partition"
 msgid "Total PE:"
-msgstr "कुल पीई : १."
+msgstr "कुल पीई :"
 
 #: gui/infopane.cpp:133
 #, kde-format
 msgctxt "@label partition"
 msgid "Free PE:"
-msgstr "निःशुल्क पीई : १."
+msgstr "निःशुल्क पीई :"
 
 #: gui/infopane.cpp:134
 #, kde-format
 msgctxt "@label partition"
 msgid "Allocated PE:"
-msgstr "आवंटित पीई : १."
+msgstr "आवंटित पीई :"
 
 #: gui/infopane.cpp:157
 #, kde-kuit-format
@@ -1206,79 +1206,79 @@ msgstr "क्षमता:"
 #, kde-format
 msgctxt "@label device"
 msgid "Total sectors:"
-msgstr "कुलक्षेत्राणि : १."
+msgstr "कुलक्षेत्राणि :"
 
 #: gui/infopane.cpp:179
 #, kde-format
 msgctxt "@label device"
 msgid "Logical sector size:"
-msgstr "तार्किकक्षेत्रस्य आकारः : १."
+msgstr "तार्किकक्षेत्रस्य आकारः :"
 
 #: gui/infopane.cpp:180
 #, kde-format
 msgctxt "@label device"
 msgid "Physical sector size:"
-msgstr "भौतिकक्षेत्रस्य आकारः : १."
+msgstr "भौतिकक्षेत्रस्य आकारः :"
 
 #: gui/infopane.cpp:181
 #, kde-format
 msgctxt "@label device"
 msgid "Primaries/Max:"
-msgstr "प्राथमिक/अधिकतम : १."
+msgstr "प्राथमिक/अधिकतम :"
 
 #: gui/infopane.cpp:184 gui/infopane.cpp:192
 #, kde-format
 msgctxt "@label device"
 msgid "Volume Type:"
-msgstr "आयतनप्रकारः : १."
+msgstr "आयतनप्रकारः :"
 
 #: gui/infopane.cpp:186
 #, kde-format
 msgctxt "@label device"
 msgid "PE Size:"
-msgstr "पीई आकारः : १."
+msgstr "पीई आकारः :"
 
 #: gui/infopane.cpp:187
 #, kde-format
 msgctxt "@label device"
 msgid "Total PE:"
-msgstr "कुल पीई : १."
+msgstr "कुल पीई :"
 
 #: gui/infopane.cpp:188
 #, kde-format
 msgctxt "@label device"
 msgid "Allocated PE:"
-msgstr "आवंटित पीई : १."
+msgstr "आवंटित पीई :"
 
 #: gui/infopane.cpp:189
 #, kde-format
 msgctxt "@label device"
 msgid "Free PE:"
-msgstr "निःशुल्क पीई : १."
+msgstr "निःशुल्क पीई :"
 
 #: gui/infopane.cpp:194
 #, kde-format
 msgctxt "@label device"
 msgid "RAID Level:"
-msgstr "RAID स्तरः : १."
+msgstr "RAID स्तरः :"
 
 #: gui/infopane.cpp:195
 #, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr "चंक आकारः : १."
+msgstr "चंक आकारः :"
 
 #: gui/infopane.cpp:196
 #, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr "कुल खण्डः : १."
+msgstr "कुल खण्डः :"
 
 #: gui/infopane.cpp:197
 #, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr "सरणी आकारः : १."
+msgstr "सरणी आकारः :"
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
@@ -2553,13 +2553,13 @@ msgstr "विभाजनगुणाः : <filename>%1</filename>"
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
-msgstr "(कोऽपि न लब्धः) २."
+msgstr "(कोऽपि न लब्धः)"
 
 #: gui/partpropsdialog.cpp:115
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
-msgstr "(न लब्धम्) २."
+msgstr "(न लब्धम्)"
 
 #: gui/partpropsdialog.cpp:121
 #, kde-kuit-format
@@ -2667,7 +2667,7 @@ msgstr "सञ्चिकातन्त्रं पुनः न रचयन
 #, kde-format
 msgctxt "@label"
 msgid "First sector:"
-msgstr "प्रथमक्षेत्रम् : १."
+msgstr "प्रथमक्षेत्रम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/partpropswidgetbase.ui:56
@@ -2694,14 +2694,14 @@ msgstr "एषा सञ्चिकातन्त्रं लेबलं स
 #, kde-format
 msgctxt "@label"
 msgid "UUID:"
-msgstr "यूयूआईडी : १."
+msgstr "यूयूआईडी :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
 #: gui/partpropswidgetbase.ui:103
 #, kde-format
 msgctxt "@label"
 msgid "Last sector:"
-msgstr "अन्तिमक्षेत्रम् : १."
+msgstr "अन्तिमक्षेत्रम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
 #: gui/partpropswidgetbase.ui:134
@@ -2729,33 +2729,33 @@ msgstr "&नामपत्र:"
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
-msgstr "माउण्ट् बिन्दुः : १."
+msgstr "माउण्ट् बिन्दुः :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
 #: gui/partpropswidgetbase.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
-msgstr "विभाजनप्रकारः : १."
+msgstr "विभाजनप्रकारः :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
 #, kde-format
 msgid "Device path:"
-msgstr "यन्त्रमार्गः : १."
+msgstr "यन्त्रमार्गः :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:326
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
-msgstr "क्षेत्राणां संख्या : १."
+msgstr "क्षेत्राणां संख्या :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:336
 #, kde-format
 msgid "Partition Name:"
-msgstr "विभाजनस्य नाम : १."
+msgstr "विभाजनस्य नाम :"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:346
@@ -2793,7 +2793,7 @@ msgstr "सञ्चिका प्रणाली&m:"
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
-msgstr "&ध्वजाः : १."
+msgstr "&ध्वजाः :"
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format
@@ -2841,7 +2841,7 @@ msgstr "स्कैनिङ्ग उपकरणानि..."
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr "%प% ९."
+msgstr "%p%"
 
 #: gui/scanprogressdialog.cpp:36
 #, kde-kuit-format
@@ -2860,14 +2860,14 @@ msgstr "स्कैनिङ्ग यन्त्रम् : <filename>%1</fil
 #, kde-format
 msgctxt "@label:listbox"
 msgid "First sector:"
-msgstr "प्रथमक्षेत्रम् : १."
+msgstr "प्रथमक्षेत्रम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: gui/sizedetailswidgetbase.ui:101
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Last sector:"
-msgstr "अन्तिमक्षेत्रम् : १."
+msgstr "अन्तिमक्षेत्रम् :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
 #: gui/sizedetailswidgetbase.ui:124
@@ -2892,14 +2892,14 @@ msgstr "&उन्नतं"
 #, kde-format
 msgctxt "@label"
 msgid "Minimum size:"
-msgstr "न्यूनतमः आकारः : १."
+msgstr "न्यूनतमः आकारः :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: gui/sizedialogwidgetbase.ui:72
 #, kde-format
 msgctxt "@label"
 msgid "Maximum size:"
-msgstr "अधिकतमः आकारः : १."
+msgstr "अधिकतमः आकारः :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/sizedialogwidgetbase.ui:98
@@ -2938,14 +2938,14 @@ msgstr "&तार्किक"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File system:"
-msgstr "सञ्चिकातन्त्रम् : १."
+msgstr "सञ्चिकातन्त्रम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
 #: gui/sizedialogwidgetbase.ui:249
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
-msgstr "विभाजनप्रकारः : १."
+msgstr "विभाजनप्रकारः :"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:259
@@ -3008,14 +3008,14 @@ msgstr "F&ree स्थानं पूर्वं:"
 #: gui/sizedialogwidgetbase.ui:347
 #, kde-format
 msgid "Logical Volume Name:"
-msgstr "तार्किक आयतन नाम : १."
+msgstr "तार्किक आयतन नाम :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
 #: gui/sizedialogwidgetbase.ui:363
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Free space after:"
-msgstr "ततः परं मुक्तस्थानं : १."
+msgstr "ततः परं मुक्तस्थानं :"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:376
@@ -3085,13 +3085,13 @@ msgstr "प्रतिकृति:"
 #: gui/smartdialog.cpp:156 gui/smartdialogwidgetbase.ui:97
 #, kde-format
 msgid "Serial number:"
-msgstr "क्रमाङ्कः : १."
+msgstr "क्रमाङ्कः :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
 #: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
 #, kde-format
 msgid "Firmware revision:"
-msgstr "फर्मवेयर पुनरीक्षणम् : १."
+msgstr "फर्मवेयर पुनरीक्षणम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
 #: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
@@ -3103,7 +3103,7 @@ msgstr "तापमान:"
 #: gui/smartdialog.cpp:159 gui/smartdialogwidgetbase.ui:184
 #, kde-format
 msgid "Bad sectors:"
-msgstr "दुष्टक्षेत्राणि : १."
+msgstr "दुष्टक्षेत्राणि :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
 #: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
@@ -3115,19 +3115,19 @@ msgstr "कृते चालू अस्ति:"
 #: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
 #, kde-format
 msgid "Power cycles:"
-msgstr "शक्तिचक्राः : १."
+msgstr "शक्तिचक्राः :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
 #: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
 #, kde-format
 msgid "Self tests:"
-msgstr "आत्मपरीक्षाः : १."
+msgstr "आत्मपरीक्षाः :"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
 #: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
 #, kde-format
 msgid "Overall assessment:"
-msgstr "समग्रमूल्यांकनम् : १."
+msgstr "समग्रमूल्यांकनम् :"
 
 #: gui/smartdialog.cpp:227
 #, kde-kuit-format
@@ -3255,7 +3255,7 @@ msgstr "भौतिक विस्तार आकारः : "
 #: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
 #, kde-format
 msgid "---"
-msgstr "--- ८."
+msgstr "---"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
 #: gui/volumegroupwidgetbase.ui:79
@@ -3458,7 +3458,7 @@ msgstr "पृष्ठभाग प्लगइन"
 #, kde-format
 msgctxt "@label"
 msgid "Preferred unit:"
-msgstr "प्राधान्यं एककं : १."
+msgstr "प्राधान्यं एककं :"
 
 #: util/guihelpers.cpp:50
 #, kde-kuit-format
