@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-12 00:41+0000\n"
-"PO-Revision-Date: 2024-07-12 22:08+0200\n"
+"PO-Revision-Date: 2024-12-27 10:42+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -746,7 +746,7 @@ msgstr "Plia..."
 #: gui/devicepropswidgetbase.ui:92
 #, kde-format
 msgid "Capacity:"
-msgstr "Enhaveco:"
+msgstr "Kapacito:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
 #: gui/devicepropswidgetbase.ui:112 gui/smartdialog.cpp:147
@@ -967,7 +967,7 @@ msgstr "Opcioj:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "File System Support"
-msgstr "Subteno de Dosiersistemo"
+msgstr "Subteno de Dosiera Sistemo"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/filesystemsupportdialogwidgetbase.ui:23
@@ -1027,7 +1027,7 @@ msgstr "Kopii"
 #: gui/filesystemsupportdialogwidgetbase.ui:100
 #, kde-format
 msgid "Check"
-msgstr "Ŝalti"
+msgstr "Kontroli"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:105
@@ -1051,7 +1051,7 @@ msgstr "Legi Uzadon"
 #: gui/filesystemsupportdialogwidgetbase.ui:120
 #, kde-format
 msgid "Backup"
-msgstr "Sekurkopio"
+msgstr "Rezervo"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:125
@@ -1089,7 +1089,7 @@ msgstr "Dispartiga Informo"
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "File system:"
-msgstr "Dosiersistemo:"
+msgstr "Dosier-sistemo:"
 
 #: gui/infopane.cpp:114 gui/infopane.cpp:128 gui/infopane.cpp:140
 #, kde-format, kde-kuit-format
@@ -1463,7 +1463,7 @@ msgstr "Forigi elektitan Volumgrupon."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
-msgstr "Regrandigi Voluman Grupon"
+msgstr "Aligrandigi Voluman Grupon"
 
 #: gui/mainwindow.cpp:343
 #, kde-format
@@ -2230,7 +2230,7 @@ msgstr "Iloj"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition"
-msgstr "Dispartigo"
+msgstr "Subdisko"
 
 #. i18n: ectx: Menu (panels)
 #: gui/partitionmanagerui.rc:77
@@ -3012,10 +3012,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:318
-#, fuzzy, kde-format
-#| msgid "Only Root"
+#, kde-format
 msgid "O&nly Root"
-msgstr "Nur Radiko"
+msgstr "&Nur Radiko"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
 #: gui/sizedialogwidgetbase.ui:334
