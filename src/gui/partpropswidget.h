@@ -152,14 +152,23 @@ public:
         Q_ASSERT(m_LabelTextPartitionLabel);
         return *m_LabelTextPartitionLabel;
     }
-    QLabel& partitionLabel() {
-        Q_ASSERT(m_LabelPartitionLabel);
-        return *m_LabelPartitionLabel;
+
+    QLineEdit& partitionLabel() {
+        Q_ASSERT(m_EditPartitionLabel);
+        return *m_EditPartitionLabel;
     }
+
+    const QLineEdit& partitionLabel() const
+    {
+        Q_ASSERT(m_EditPartitionLabel);
+        return *m_EditPartitionLabel;
+    }
+
     const QLineEdit& label() const {
         Q_ASSERT(m_EditLabel);
         return *m_EditLabel;
     }
+
     QLabel& noSetLabel() {
         Q_ASSERT(m_LabelTextNoSetLabel);
         return *m_LabelTextNoSetLabel;

@@ -34,6 +34,10 @@
 #include <KMessageBox>
 #include <KSharedConfig>
 
+namespace {
+    const int MAX_GPT_PARTITION_LABLE_LENGTH = 36;
+}
+
 /** Creates a new PartPropsDialog
     @param parent pointer to the parent widget
     @param d the Device the Partition is on
@@ -66,6 +70,11 @@ PartPropsDialog::~PartPropsDialog()
 {
     KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("partPropsDialog"));
     kcg.writeEntry("Geometry", saveGeometry());
+}
+
+QString PartPropsDialog::newPartitionLabel() const
+{
+    return dialogWidget().partitionLabel().text();
 }
 
 /** @return the new label */
@@ -132,10 +141,10 @@ void PartPropsDialog::setupDialog()
     dialogWidget().uuid().setText(partition().fileSystem().uuid().isEmpty() ? xi18nc("@item uuid", "(none)") : partition().fileSystem().uuid());
 
     if(device().partitionTable()->type() == PartitionTable::gpt){
-        QString PartitionLabel = partition().label().isEmpty() ? xi18nc("@item uuid", "(none)") : partition().label();
         QString PartitionUUID = partition().uuid().isEmpty() ? xi18nc("@item uuid", "(none)") : partition().uuid();
 
-        dialogWidget().partitionLabel().setText(PartitionLabel);
+        dialogWidget().partitionLabel().setMaxLength(MAX_GPT_PARTITION_LABLE_LENGTH);
+        dialogWidget().partitionLabel().setText(partition().label());
         dialogWidget().partitionUuid().setText(PartitionUUID);
 
         // On GPT there are no logical or extended partitions.
@@ -273,7 +282,12 @@ void PartPropsDialog::updateHideAndShow()
 
 void PartPropsDialog::setupConnections()
 {
-    connect(&dialogWidget().label(), &QLineEdit::textEdited, [this] (const QString &) {setDirty();});
+    auto setDirty = [this]() {
+        this->setDirty();
+    };
+
+    connect(&dialogWidget().partitionLabel(), &QLineEdit::textEdited, this, setDirty);
+    connect(&dialogWidget().label(), &QLineEdit::textEdited, this, setDirty);
     connect(&dialogWidget().fileSystem(), &QComboBox::currentIndexChanged, this, &PartPropsDialog::onFilesystemChanged);
 #if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
     connect(&dialogWidget().checkRecreate(), &QCheckBox::stateChanged, this, &PartPropsDialog::onRecreate);
@@ -287,7 +301,7 @@ void PartPropsDialog::setupConnections()
     // itemClicked alone isn't enough either. We choose to rather enable the OK-button too often than too
     // seldom.
     connect(&dialogWidget().listFlags(), &QListWidget::itemClicked, this, &PartPropsDialog::setDirty);
-    connect(&dialogWidget().listFlags(), &QListWidget::currentRowChanged, [this] (int) {setDirty();});
+    connect(&dialogWidget().listFlags(), &QListWidget::currentRowChanged, this, setDirty);
 }
 
 void PartPropsDialog::setDirty(void*)

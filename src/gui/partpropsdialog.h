@@ -41,6 +41,7 @@ public:
     ~PartPropsDialog();
 
 public:
+    QString newPartitionLabel() const;
     QString newLabel() const;
     PartitionTable::Flags newFlags() const;
     FileSystem::Type newFileSystemType() const;

@@ -36,6 +36,7 @@
 #include <ops/restoreoperation.h>
 #include <ops/setfilesystemlabeloperation.h>
 #include <ops/setpartflagsoperation.h>
+#include <ops/setpartlabeloperation.h>
 #include <ops/createfilesystemoperation.h>
 
 #include <util/globallog.h>
@@ -380,6 +381,10 @@ void PartitionManagerWidget::onPropertiesPartition()
 
             if (dlg->newFlags() != p.activeFlags())
                 operationStack().push(new SetPartFlagsOperation(*selectedDevice(), p, dlg->newFlags()));
+
+            if (dlg->newPartitionLabel() != p.label()) {
+                operationStack().push(new SetPartLabelOperation(*selectedDevice(), p, dlg->newPartitionLabel()));
+            }
         }
 
         delete dlg;
