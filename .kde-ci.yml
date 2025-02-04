@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
-  'require':
+ - 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
+   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/kconfig': '@latest-kf6'
     'frameworks/kconfigwidgets': '@latest-kf6'
@@ -19,4 +19,4 @@ Dependencies:
     'system/kpmcore': '@same'
 
 Options:
-  require-passing-tests-on: [ 'Linux', 'FreeBSD' ]      
+ require-passing-tests-on: ['Linux', 'FreeBSD']
