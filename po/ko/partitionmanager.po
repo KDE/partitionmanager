@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 00:41+0000\n"
+"POT-Creation-Date: 2025-02-05 00:44+0000\n"
 "PO-Revision-Date: 2024-11-29 00:32+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2221,13 +2221,13 @@ msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr "표시된 패널"
 
-#: gui/partitionmanagerwidget.cpp:200
+#: gui/partitionmanagerwidget.cpp:201
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 [암호화됨]"
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2235,13 +2235,13 @@ msgid ""
 msgstr ""
 "파티션 <filename>%1</filename>에 있는 파일 시스템을 마운트할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "파일 시스템을 마운트할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2250,13 +2250,13 @@ msgstr ""
 "파티션 <filename>%1</filename>에 있는 파일 시스템을 마운트 해제할 수 없습니"
 "다."
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "파일 시스템을 마운트 해제할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:447
+#: gui/partitionmanagerwidget.cpp:452
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2266,13 +2266,13 @@ msgstr ""
 "파티션 <filename>%1</filename>에 있는 암호화된 파일 시스템의 잠금을 해제할 "
 "수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:453
+#: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "암호화된 파일 시스템의 잠글을 해제할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:458
+#: gui/partitionmanagerwidget.cpp:463
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2282,13 +2282,13 @@ msgstr ""
 "파티션 <filename>%1</filename>에 있는 암호화된 파일 시스템을 잠글 수 없습니"
 "다."
 
-#: gui/partitionmanagerwidget.cpp:464
+#: gui/partitionmanagerwidget.cpp:469
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "암호화된 파일 시스템을 잠글 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:493
+#: gui/partitionmanagerwidget.cpp:498
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2307,13 +2307,13 @@ msgstr[0] ""
 "션을 지우지 않는 한 새 파티션을 만들거나, 파티션을 붙여넣거나, 주 파티션을 복"
 "원할 수 없습니다.</para>"
 
-#: gui/partitionmanagerwidget.cpp:497
+#: gui/partitionmanagerwidget.cpp:502
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "주 파티션이 너무 많습니다."
 
-#: gui/partitionmanagerwidget.cpp:560
+#: gui/partitionmanagerwidget.cpp:565
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2326,13 +2326,13 @@ msgstr ""
 "에 파티션 <filename>%1</filename>을(를) 삭제할 수 없습니다.</para> <para>논"
 "리 번호가 %2 이상인 모든 파티션의 마운트를 해제하십시오.</para>"
 
-#: gui/partitionmanagerwidget.cpp:563
+#: gui/partitionmanagerwidget.cpp:568
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "파티션을 삭제할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:572
+#: gui/partitionmanagerwidget.cpp:577
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2343,19 +2343,19 @@ msgstr ""
 "클립보드에 있는 파티션을 삭제하시겠습니까? 삭제된 후에는 파티션을 붙여 넣을 "
 "수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:574
+#: gui/partitionmanagerwidget.cpp:579
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "클립보드의 파티션을 삭제하시겠습니까?"
 
-#: gui/partitionmanagerwidget.cpp:575
+#: gui/partitionmanagerwidget.cpp:580
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "삭제"
 
-#: gui/partitionmanagerwidget.cpp:628
+#: gui/partitionmanagerwidget.cpp:633
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2365,13 +2365,13 @@ msgstr ""
 "파티션 <filename>%1</filename>의 크기 조정/이동 작업 이전과 이후의 위치와 크"
 "기가 일치합니다. 작업을 무시합니다."
 
-#: gui/partitionmanagerwidget.cpp:656
+#: gui/partitionmanagerwidget.cpp:661
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "파티션 <filename>%1</filename>이(가) 클립보드에 복사되었습니다."
 
-#: gui/partitionmanagerwidget.cpp:719
+#: gui/partitionmanagerwidget.cpp:724
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2388,19 +2388,19 @@ msgstr ""
 "는 모든 작업을 적용하면 <filename>%1</filename>에 저장된 모든 데이터를 복구 "
 "불가능한 상태로 덮어씁니다.</para>"
 
-#: gui/partitionmanagerwidget.cpp:727
+#: gui/partitionmanagerwidget.cpp:732
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "존재하는 파티션에 덮어쓰시겠습니까?"
 
-#: gui/partitionmanagerwidget.cpp:728
+#: gui/partitionmanagerwidget.cpp:733
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "파티션 덮어쓰기"
 
-#: gui/partitionmanagerwidget.cpp:736
+#: gui/partitionmanagerwidget.cpp:741
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2412,13 +2412,13 @@ msgstr ""
 "크지 않습니다.</para> <para>다른 대상을 선택하거나 원본 크기 이상으로 파티션 "
 "크기를 조정하십시오.</para>"
 
-#: gui/partitionmanagerwidget.cpp:737
+#: gui/partitionmanagerwidget.cpp:742
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "대상이 충분히 크지 않음"
 
-#: gui/partitionmanagerwidget.cpp:740
+#: gui/partitionmanagerwidget.cpp:745
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2431,13 +2431,13 @@ msgstr ""
 "para> <para>장치의 모든 파티션이 올바르게 정렬되지 않았거나 주 파티션을 확장 "
 "파티션으로 복사할 때 일어날 수 있습니다.</para>"
 
-#: gui/partitionmanagerwidget.cpp:743
+#: gui/partitionmanagerwidget.cpp:748
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "대상 파티션을 만들 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2447,7 +2447,7 @@ msgstr ""
 "이미지 파일 <filename>%1</filename>에 포함된 파일 시스템이 선택한 파티션보다 "
 "커서 복원할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
@@ -2537,56 +2537,55 @@ msgstr "섹터 개수"
 msgid "Flags"
 msgstr "플래그"
 
-#: gui/partpropsdialog.cpp:55
+#: gui/partpropsdialog.cpp:59
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "파티션 속성: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:110
+#: gui/partpropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(찾을 수 없음)"
 
-#: gui/partpropsdialog.cpp:115
+#: gui/partpropsdialog.cpp:124
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(찾을 수 없음)"
 
-#: gui/partpropsdialog.cpp:121
+#: gui/partpropsdialog.cpp:130
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "대기"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:133
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "최소한 하나의 논리 파티션이 마운트되었습니다."
 
-#: gui/partpropsdialog.cpp:126
+#: gui/partpropsdialog.cpp:135
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 마운트됨"
 
-#: gui/partpropsdialog.cpp:128
+#: gui/partpropsdialog.cpp:137
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "마운트됨"
 
-#: gui/partpropsdialog.cpp:132 gui/partpropsdialog.cpp:135
-#: gui/partpropsdialog.cpp:136
+#: gui/partpropsdialog.cpp:141 gui/partpropsdialog.cpp:144
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(없음)"
 
-#: gui/partpropsdialog.cpp:360
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2601,26 +2600,26 @@ msgstr ""
 "내용을 삭제합니다. 작업을 계속 진행하면 <filename>%1</filename>에 있는 모든 "
 "데이터를 복구 불가능한 상태로 삭제합니다.</para>"
 
-#: gui/partpropsdialog.cpp:362
+#: gui/partpropsdialog.cpp:376
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "<filename>%1</filename>을(를) %2 파일 시스템으로 다시 생성하시겠습니까?"
 
-#: gui/partpropsdialog.cpp:363
+#: gui/partpropsdialog.cpp:377
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "파일 시스템 변경"
 
-#: gui/partpropsdialog.cpp:364
+#: gui/partpropsdialog.cpp:378
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "파일 시스템 변경하지 않음"
 
-#: gui/partpropsdialog.cpp:383
+#: gui/partpropsdialog.cpp:397
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2635,19 +2634,19 @@ msgstr ""
 "업을 계속 진행하면 <filename>%1</filename>에 있는 모든 데이터를 복구 불가능"
 "한 상태로 삭제합니다.</para>"
 
-#: gui/partpropsdialog.cpp:385
+#: gui/partpropsdialog.cpp:399
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "<filename>%1</filename>에 파일 시스템을 다시 생성하시겠습니까?"
 
-#: gui/partpropsdialog.cpp:386
+#: gui/partpropsdialog.cpp:400
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "파일 시스템 다시 생성"
 
-#: gui/partpropsdialog.cpp:387
+#: gui/partpropsdialog.cpp:401
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -2765,21 +2764,21 @@ msgid "Recreate existing file system"
 msgstr "존재하는 파일 시스템 다시 생성"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:376
+#: gui/partpropswidgetbase.ui:373
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "사용 중:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:386
+#: gui/partpropswidgetbase.ui:383
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "파일 시스템(&M):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:399
+#: gui/partpropswidgetbase.ui:396
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"

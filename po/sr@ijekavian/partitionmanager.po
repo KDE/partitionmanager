@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 00:41+0000\n"
+"POT-Creation-Date: 2025-02-05 00:44+0000\n"
 "PO-Revision-Date: 2018-01-06 09:21+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -2299,13 +2299,13 @@ msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr "Приказани панели"
 
-#: gui/partitionmanagerwidget.cpp:200
+#: gui/partitionmanagerwidget.cpp:201
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 [шифровано]"
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2313,13 +2313,13 @@ msgid ""
 msgstr ""
 "Фајл систем на партицији <filename>%1</filename> не може да се монтира."
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "Не могу да монтирам фајл систем."
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2327,13 +2327,13 @@ msgid ""
 msgstr ""
 "Фајл систем на партицији <filename>%1</filename> не може да се демонтира."
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "Не могу да демонтирам фајл систем."
 
-#: gui/partitionmanagerwidget.cpp:447
+#: gui/partitionmanagerwidget.cpp:452
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2343,13 +2343,13 @@ msgstr ""
 "Шифровани фајл систем на партицији <filename>%1</filename> не може да се "
 "откључа."
 
-#: gui/partitionmanagerwidget.cpp:453
+#: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "Не могу да откључам шифровани фајл систем."
 
-#: gui/partitionmanagerwidget.cpp:458
+#: gui/partitionmanagerwidget.cpp:463
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2359,13 +2359,13 @@ msgstr ""
 "Шифровани фајл систем на партицији <filename>%1</filename> не може да се "
 "закључа."
 
-#: gui/partitionmanagerwidget.cpp:464
+#: gui/partitionmanagerwidget.cpp:469
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "Не могу да закључам шифровани фајл систем."
 
-#: gui/partitionmanagerwidget.cpp:493
+#: gui/partitionmanagerwidget.cpp:498
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2399,13 +2399,13 @@ msgstr[3] ""
 "направити, налијепити нити повратити примарну партицију на уређају прије "
 "него што обришете постојећу.</para>"
 
-#: gui/partitionmanagerwidget.cpp:497
+#: gui/partitionmanagerwidget.cpp:502
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "Превише примарних партиција"
 
-#: gui/partitionmanagerwidget.cpp:560
+#: gui/partitionmanagerwidget.cpp:565
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2419,13 +2419,13 @@ msgstr ""
 "para><para>Прво демонтирајте све партиције са логичким бројем вишим од %2.</"
 "para>"
 
-#: gui/partitionmanagerwidget.cpp:563
+#: gui/partitionmanagerwidget.cpp:568
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "Не могу да обришем партицију"
 
-#: gui/partitionmanagerwidget.cpp:572
+#: gui/partitionmanagerwidget.cpp:577
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2436,19 +2436,19 @@ msgstr ""
 "Желите ли заиста да обришете партицију која је тренутно у клипборду? Након "
 "брисања она више неће бити доступна за наљепљивање."
 
-#: gui/partitionmanagerwidget.cpp:574
+#: gui/partitionmanagerwidget.cpp:579
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "Заиста обрисати партицију у клипборду?"
 
-#: gui/partitionmanagerwidget.cpp:575
+#: gui/partitionmanagerwidget.cpp:580
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "Обриши"
 
-#: gui/partitionmanagerwidget.cpp:628
+#: gui/partitionmanagerwidget.cpp:633
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2458,13 +2458,13 @@ msgstr ""
 "Партиција <filename>%1</filename> има исти положај и величину након измене/"
 "помијерања. Занемарујем операцију."
 
-#: gui/partitionmanagerwidget.cpp:656
+#: gui/partitionmanagerwidget.cpp:661
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "Партиција <filename>%1</filename> је копирана у клипборд."
 
-#: gui/partitionmanagerwidget.cpp:719
+#: gui/partitionmanagerwidget.cpp:724
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2481,19 +2481,19 @@ msgstr ""
 "наставите и примијените операције из главног прозора, сви подаци тренутно "
 "ускладиштени на <filename>%1</filename> биће неповратно пребрисани.</para>"
 
-#: gui/partitionmanagerwidget.cpp:727
+#: gui/partitionmanagerwidget.cpp:732
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "Заиста пребрисати постојећу партицију?"
 
-#: gui/partitionmanagerwidget.cpp:728
+#: gui/partitionmanagerwidget.cpp:733
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "Пребриши партицију"
 
-#: gui/partitionmanagerwidget.cpp:736
+#: gui/partitionmanagerwidget.cpp:741
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2505,13 +2505,13 @@ msgstr ""
 "фајл архиве.</para><para>Изаберите друго одредиште или повећајте партицију "
 "да буде велика као и извор.</para>"
 
-#: gui/partitionmanagerwidget.cpp:737
+#: gui/partitionmanagerwidget.cpp:742
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "Одредиште није довољно велико"
 
-#: gui/partitionmanagerwidget.cpp:740
+#: gui/partitionmanagerwidget.cpp:745
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2524,13 +2524,13 @@ msgstr ""
 "извор.</para><para>До овога може доћи ако неке партиције нису правилно "
 "поравнате, или када се копира примарна на продужену партицију.</para>"
 
-#: gui/partitionmanagerwidget.cpp:743
+#: gui/partitionmanagerwidget.cpp:748
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "Не могу да направим одредишну партицију"
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2540,7 +2540,7 @@ msgstr ""
 "Фајл систем у фајлу одраза <filename>%1</filename> превелик је да би се "
 "повратио на изабрану партицију."
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
@@ -2647,19 +2647,19 @@ msgstr "број сектора"
 msgid "Flags"
 msgstr "заставице"
 
-#: gui/partpropsdialog.cpp:55
+#: gui/partpropsdialog.cpp:59
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "Својства партиције: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:110
+#: gui/partpropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(није нађена)"
 
-#: gui/partpropsdialog.cpp:115
+#: gui/partpropsdialog.cpp:124
 #, fuzzy, kde-kuit-format
 #| msgctxt "@item mountpoint"
 #| msgid "(none found)"
@@ -2667,38 +2667,37 @@ msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(није нађена)"
 
-#: gui/partpropsdialog.cpp:121
+#: gui/partpropsdialog.cpp:130
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "мирује"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:133
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "Бар једна логичка партиција је монтирана."
 
-#: gui/partpropsdialog.cpp:126
+#: gui/partpropsdialog.cpp:135
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "монтирана у <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:128
+#: gui/partpropsdialog.cpp:137
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "монтирана"
 
-#: gui/partpropsdialog.cpp:132 gui/partpropsdialog.cpp:135
-#: gui/partpropsdialog.cpp:136
+#: gui/partpropsdialog.cpp:141 gui/partpropsdialog.cpp:144
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(нема)"
 
-#: gui/partpropsdialog.cpp:360
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2714,26 +2713,26 @@ msgstr ""
 "операцију, сви подаци на  <filename>%1</filename> биће неповратно изгубљени."
 "</para>"
 
-#: gui/partpropsdialog.cpp:362
+#: gui/partpropsdialog.cpp:376
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr "Заиста поново направити <filename>%1</filename> са фајл системом %2?"
 
-#: gui/partpropsdialog.cpp:363
+#: gui/partpropsdialog.cpp:377
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Промијени фајл систем"
 
-#: gui/partpropsdialog.cpp:364
+#: gui/partpropsdialog.cpp:378
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Не мијењај фајл систем"
 
 # пров-об: filesystem -> filename
-#: gui/partpropsdialog.cpp:383
+#: gui/partpropsdialog.cpp:397
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2748,19 +2747,19 @@ msgstr ""
 "његовог садржаја. Ако сада наставите и примијените операцију, сви подаци на "
 "<filename>%1</filename> биће неповратно изгубљени.</para>"
 
-#: gui/partpropsdialog.cpp:385
+#: gui/partpropsdialog.cpp:399
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "Заиста поново направити фајл систем на <filename>%1</filename>?"
 
-#: gui/partpropsdialog.cpp:386
+#: gui/partpropsdialog.cpp:400
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Поново направи фајл систем"
 
-#: gui/partpropsdialog.cpp:387
+#: gui/partpropsdialog.cpp:401
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -2885,14 +2884,14 @@ msgid "Recreate existing file system"
 msgstr "Поново направи постојећи фајл систем"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:376
+#: gui/partpropswidgetbase.ui:373
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Искоришћено:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:386
+#: gui/partpropswidgetbase.ui:383
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
@@ -2900,7 +2899,7 @@ msgstr "&Фајл систем:"
 
 # >> @title:column
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:399
+#: gui/partpropswidgetbase.ui:396
 #, fuzzy, kde-format
 #| msgid "Flags"
 msgctxt "@label"

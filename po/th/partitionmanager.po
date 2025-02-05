@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 00:41+0000\n"
+"POT-Creation-Date: 2025-02-05 00:44+0000\n"
 "PO-Revision-Date: 2010-03-06 19:47+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -2397,39 +2397,39 @@ msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:200
+#: gui/partitionmanagerwidget.cpp:201
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be mounted."
 msgstr "ไม่สามารถทำการเมานท์ระบบแฟ้มบนพาร์ทิชัน <filename>%1</filename> ได้"
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "ไม่สามารถทำการเมานท์ระบบแฟ้มได้"
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be unmounted."
 msgstr "ไม่สามารถทำการเลิกเมานท์ระบบแฟ้มบนพาร์ทิชัน <filename>%1</filename> ได้"
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "ไม่สามารถทำการเลิกเมานท์ระบบแฟ้มได้"
 
-#: gui/partitionmanagerwidget.cpp:447
+#: gui/partitionmanagerwidget.cpp:452
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2441,7 +2441,7 @@ msgid ""
 "unlocked."
 msgstr "ไม่สามารถทำการเลิกเมานท์ระบบแฟ้มบนพาร์ทิชัน <filename>%1</filename> ได้"
 
-#: gui/partitionmanagerwidget.cpp:453
+#: gui/partitionmanagerwidget.cpp:458
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "Could Not Unmount File System."
@@ -2449,7 +2449,7 @@ msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "ไม่สามารถทำการเลิกเมานท์ระบบแฟ้มได้"
 
-#: gui/partitionmanagerwidget.cpp:458
+#: gui/partitionmanagerwidget.cpp:463
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2460,7 +2460,7 @@ msgid ""
 "locked."
 msgstr "ไม่สามารถทำการเมานท์ระบบแฟ้มบนพาร์ทิชัน <filename>%1</filename> ได้"
 
-#: gui/partitionmanagerwidget.cpp:464
+#: gui/partitionmanagerwidget.cpp:469
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "Could Not Mount File System."
@@ -2468,7 +2468,7 @@ msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "ไม่สามารถทำการเมานท์ระบบแฟ้มได้"
 
-#: gui/partitionmanagerwidget.cpp:493
+#: gui/partitionmanagerwidget.cpp:498
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2497,13 +2497,13 @@ msgstr[0] ""
 "ซึ่งมีจำนวนสูงสุดที่ตารางพาร์ทิชันของมันจะใช้งานได้แล้ว</para> <para>คุณจะไม่สามารถสร้าง, วาง "
 "หรือเรียกคืนพาร์ทิชันหลักไปบนมันได้ หากคุณยังไม่ทำการลบมันออกไปก่อนอย่างน้อยหนึ่งพาร์ทิชัน</para>"
 
-#: gui/partitionmanagerwidget.cpp:497
+#: gui/partitionmanagerwidget.cpp:502
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "มีจำนวนพาร์ทิชันหลักมากเกินไป"
 
-#: gui/partitionmanagerwidget.cpp:560
+#: gui/partitionmanagerwidget.cpp:565
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2516,13 +2516,13 @@ msgstr ""
 "เนื่องจากมีพาร์ทิชันที่มีหมายเลขลอจิคัลสูงกว่าอย่างน้อยหนึ่งพาร์ทิชันที่ถูกเมานท์อยู่ </"
 "para><para>โปรดทำการเลิกเมานท์พาร์ทิชันที่มีหมายเลขลอจิคัลสูงกว่า %2 ก่อน</para>"
 
-#: gui/partitionmanagerwidget.cpp:563
+#: gui/partitionmanagerwidget.cpp:568
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "ไม่สามารถลบพาร์ทิชันได้"
 
-#: gui/partitionmanagerwidget.cpp:572
+#: gui/partitionmanagerwidget.cpp:577
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2533,13 +2533,13 @@ msgstr ""
 "คุณต้องการจะทำการลบพาร์ทิชันที่อยู่ในคลิปบอร์ดในปัจจุบันนี้หรือไม่ ? หากลบมัน "
 "มันจะไม่สามารถถูกนำมาวางได้แล้ว"
 
-#: gui/partitionmanagerwidget.cpp:574
+#: gui/partitionmanagerwidget.cpp:579
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "ต้องการจะลบพาร์ทิชันที่อยู่ในคลิปบอร์ดหรือไม่ ?"
 
-#: gui/partitionmanagerwidget.cpp:575
+#: gui/partitionmanagerwidget.cpp:580
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Delete It"
@@ -2547,7 +2547,7 @@ msgctxt "@action:button"
 msgid "Delete It"
 msgstr "&ลบมัน"
 
-#: gui/partitionmanagerwidget.cpp:628
+#: gui/partitionmanagerwidget.cpp:633
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2561,7 +2561,7 @@ msgstr ""
 "พาร์ทิชัน <filename>%1</filename> "
 "ยังคงมีตำแหน่งเดียวกันและขนาดเท่ากันหลังการปรับขนาดหรือย้ายพาร์ทิชัน, ทำการละทิ้งต่อปฏิบัติการนี้"
 
-#: gui/partitionmanagerwidget.cpp:656
+#: gui/partitionmanagerwidget.cpp:661
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Partition <filename>%1</filename> has been copied to the clipboard."
@@ -2569,7 +2569,7 @@ msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "พาร์ทิชัน <filename>%1</filename> ถูกคัดลอกไปยังคลิปบอร์ดแล้ว"
 
-#: gui/partitionmanagerwidget.cpp:719
+#: gui/partitionmanagerwidget.cpp:724
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2593,7 +2593,7 @@ msgstr ""
 "และปรับใช้ผลลัพธ์ของปฏิบัติการในหน้าต่างหลัก ข้อมูลทั้งหมดที่อยู่ใน <filename>%1</filename> "
 "จะไม่สามารถกู้ข้อมูลคืนมาได้อีก</para>"
 
-#: gui/partitionmanagerwidget.cpp:727
+#: gui/partitionmanagerwidget.cpp:732
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "Overwrite Existing File?"
@@ -2601,7 +2601,7 @@ msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "เขียนทับแฟ้มที่มีอยู่แล้วหรือไม่ ?"
 
-#: gui/partitionmanagerwidget.cpp:728
+#: gui/partitionmanagerwidget.cpp:733
 #, fuzzy, kde-kuit-format
 #| msgctxt "@item partition name"
 #| msgid "New Partition"
@@ -2609,7 +2609,7 @@ msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "พาร์ทิชันใหม่"
 
-#: gui/partitionmanagerwidget.cpp:736
+#: gui/partitionmanagerwidget.cpp:741
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2621,13 +2621,13 @@ msgstr ""
 "para><para>โปรดเลือกเป้าหมายอื่น ๆ หรือทำการปรับขนาดพาร์ทิชันนี้ "
 "ให้ใหญ่เพียงพอกับต้นทางเสียก่อน</para>"
 
-#: gui/partitionmanagerwidget.cpp:737
+#: gui/partitionmanagerwidget.cpp:742
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "เป้าหมายใหญ่ไม่เพียงพอ"
 
-#: gui/partitionmanagerwidget.cpp:740
+#: gui/partitionmanagerwidget.cpp:745
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2646,13 +2646,13 @@ msgstr ""
 "<para>ซึ่งเหตุการณ์นี้จะเกิดขึ้นได้ หากพาร์ทิชันทั้งหมดบนอุปกรณ์ ไม่ได้เริ่มและสิ้นสุดบนขอบเขตต่าง ๆ "
 "ของไซลินเดอร์ หรือเมื่อทำการคัดลอกพาร์ทิชันหลักไปยังพาร์ทิชันส่วนขยาย</para>"
 
-#: gui/partitionmanagerwidget.cpp:743
+#: gui/partitionmanagerwidget.cpp:748
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "ไม่สามารถสร้างพาร์ทิชันเป้าหมายได้"
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2662,7 +2662,7 @@ msgstr ""
 "ระบบแฟ้มในแฟ้มอิมเมจ <filename>%1</filename> "
 "มีขนาดใหญ่เกินกว่าจะทำการเรียกคือนไปยังพาร์ทิชันที่เลือกไว้ได้"
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
@@ -2755,19 +2755,19 @@ msgstr "เซกเตอร์ทั้งหมด"
 msgid "Flags"
 msgstr "แฟล็กต่าง ๆ"
 
-#: gui/partpropsdialog.cpp:55
+#: gui/partpropsdialog.cpp:59
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "คุณสมบัติต่าง ๆ ของพาร์ทิชัน: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:110
+#: gui/partpropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(ไม่พบข้อมูล)"
 
-#: gui/partpropsdialog.cpp:115
+#: gui/partpropsdialog.cpp:124
 #, fuzzy, kde-kuit-format
 #| msgctxt "@item mountpoint"
 #| msgid "(none found)"
@@ -2775,38 +2775,37 @@ msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(ไม่พบข้อมูล)"
 
-#: gui/partpropsdialog.cpp:121
+#: gui/partpropsdialog.cpp:130
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "ว่าง"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:133
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "มีพาร์ทิชันแบบลอจิคัลถูกเมานท์อยู่อย่างน้อยหนึ่งพาร์ทิชัน"
 
-#: gui/partpropsdialog.cpp:126
+#: gui/partpropsdialog.cpp:135
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "ถูกเมานท์ไว้ที่ <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:128
+#: gui/partpropsdialog.cpp:137
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "ถูกเมานท์อยู่"
 
-#: gui/partpropsdialog.cpp:132 gui/partpropsdialog.cpp:135
-#: gui/partpropsdialog.cpp:136
+#: gui/partpropsdialog.cpp:141 gui/partpropsdialog.cpp:144
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(ไม่มี)"
 
-#: gui/partpropsdialog.cpp:360
+#: gui/partpropsdialog.cpp:374
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2829,14 +2828,14 @@ msgstr ""
 "และปรับใช้ผลลัพธ์ของปฏิบัติการในหน้าต่างหลัก ข้อมูลทั้งหมดที่อยู่ใน <filename>%1</filename> "
 "จะไม่สามารถกู้ข้อมูลคืนมาได้อีก</para>"
 
-#: gui/partpropsdialog.cpp:362
+#: gui/partpropsdialog.cpp:376
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "ต้องการจะสร้างพาร์ทิชัน <filename>%1</filename> โดยใช้ระบบแฟ้ม %2 ใหม่อีกครั้งจริงหรือไม่ ?"
 
-#: gui/partpropsdialog.cpp:363
+#: gui/partpropsdialog.cpp:377
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Change the File System"
@@ -2844,7 +2843,7 @@ msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "แ&ก้ไขระบบแฟ้ม"
 
-#: gui/partpropsdialog.cpp:364
+#: gui/partpropsdialog.cpp:378
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Change the File System"
@@ -2852,7 +2851,7 @@ msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "ไ&ม่ต้องแก้ไขระบบแฟ้ม"
 
-#: gui/partpropsdialog.cpp:383
+#: gui/partpropsdialog.cpp:397
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2875,13 +2874,13 @@ msgstr ""
 "และปรับใช้ผลลัพธ์ของปฏิบัติการในหน้าต่างหลัก ข้อมูลทั้งหมดที่อยู่ใน <filename>%1</filename> "
 "จะไม่สามารถกู้ข้อมูลคืนมาได้อีก</para>"
 
-#: gui/partpropsdialog.cpp:385
+#: gui/partpropsdialog.cpp:399
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "ต้องการจะสร้างระบบแฟ้มบนพาร์ทิชัน <filename>%1</filename> ใหม่อีกครั้งจริงหรือไม่ ?"
 
-#: gui/partpropsdialog.cpp:386
+#: gui/partpropsdialog.cpp:400
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Recreate the File System"
@@ -2889,7 +2888,7 @@ msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "&สร้างระบบแฟ้มใหม่อีกครั้ง"
 
-#: gui/partpropsdialog.cpp:387
+#: gui/partpropsdialog.cpp:401
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Recreate the File System"
@@ -3015,14 +3014,14 @@ msgid "Recreate existing file system"
 msgstr "สร้างระบบแฟ้มที่มีอยู่ก่อนแล้วใหม่อีกครั้ง"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:376
+#: gui/partpropswidgetbase.ui:373
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "ใช้ไปแล้ว:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:386
+#: gui/partpropswidgetbase.ui:383
 #, fuzzy, kde-format
 #| msgctxt "@label partition"
 #| msgid "File system:"
@@ -3031,7 +3030,7 @@ msgid "File syste&m:"
 msgstr "ระบบแฟ้ม:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:399
+#: gui/partpropswidgetbase.ui:396
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "&Flags:"

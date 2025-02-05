@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 00:41+0000\n"
+"POT-Creation-Date: 2025-02-05 00:44+0000\n"
 "PO-Revision-Date: 2024-12-27 10:42+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -2239,13 +2239,13 @@ msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr "Paneloj Montritaj"
 
-#: gui/partitionmanagerwidget.cpp:200
+#: gui/partitionmanagerwidget.cpp:201
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 [ĉifrita]"
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2253,13 +2253,13 @@ msgid ""
 msgstr ""
 "La dosiersistemo sur subdisko <filename>%1</filename> ne povis esti muntita."
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "Ne Eblis Munti Dosiersistemon."
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2268,13 +2268,13 @@ msgstr ""
 "La dosiersistemo sur diskparto <filename>%1</filename> ne povis esti "
 "malmuntita."
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "Ne Eblis Malmunti Dosiersistemon."
 
-#: gui/partitionmanagerwidget.cpp:447
+#: gui/partitionmanagerwidget.cpp:452
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2284,13 +2284,13 @@ msgstr ""
 "La ĉifrita dosiersistemo sur diskparto <filename>%1</filename> ne povis esti "
 "malŝlosita."
 
-#: gui/partitionmanagerwidget.cpp:453
+#: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "Ne Eblis Malŝlosi Ĉifritan Dosiersistemon."
 
-#: gui/partitionmanagerwidget.cpp:458
+#: gui/partitionmanagerwidget.cpp:463
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2300,13 +2300,13 @@ msgstr ""
 "La ĉifrita dosiersistemo sur diskparto <filename>%1</filename> ne povis esti "
 "ŝlosita."
 
-#: gui/partitionmanagerwidget.cpp:464
+#: gui/partitionmanagerwidget.cpp:469
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "Ne Eblis Ŝlosi Ĉifritan Dosiersistemon."
 
-#: gui/partitionmanagerwidget.cpp:493
+#: gui/partitionmanagerwidget.cpp:498
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2330,13 +2330,13 @@ msgstr[1] ""
 "ne povas krei, alglui aŭ restaŭri primaran subdiskon sur ĝi antaŭ ol vi "
 "forigas ekzistantan.</para>"
 
-#: gui/partitionmanagerwidget.cpp:497
+#: gui/partitionmanagerwidget.cpp:502
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "Tro Multaj Primaraj Subdiskoj."
 
-#: gui/partitionmanagerwidget.cpp:560
+#: gui/partitionmanagerwidget.cpp:565
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2350,13 +2350,13 @@ msgstr ""
 "muntitaj.</para><para >Bonvolu malmunti ĉiujn subdiskojn kun pli altaj "
 "logikaj nombroj ol %2 unue.</para>"
 
-#: gui/partitionmanagerwidget.cpp:563
+#: gui/partitionmanagerwidget.cpp:568
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "Ne Povas Forigi Diskpartigon."
 
-#: gui/partitionmanagerwidget.cpp:572
+#: gui/partitionmanagerwidget.cpp:577
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2367,19 +2367,19 @@ msgstr ""
 "Ĉu vi vere volas forigi la subdiskon kiu estas nuntempe en la tondujo? Ĝi ne "
 "plu estos disponebla por alglui post kiam ĝi estas forigita."
 
-#: gui/partitionmanagerwidget.cpp:574
+#: gui/partitionmanagerwidget.cpp:579
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "Ĉu vere Forigi Subdiskon en la Tondujo?"
 
-#: gui/partitionmanagerwidget.cpp:575
+#: gui/partitionmanagerwidget.cpp:580
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "Forigi Ĝin"
 
-#: gui/partitionmanagerwidget.cpp:628
+#: gui/partitionmanagerwidget.cpp:633
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2389,13 +2389,13 @@ msgstr ""
 "Disparto <filename>%1</filename> havas la saman pozicion kaj grandecon post "
 "regrandigo/movo. Ignorante operacion."
 
-#: gui/partitionmanagerwidget.cpp:656
+#: gui/partitionmanagerwidget.cpp:661
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "La subdisko <filename>%1</filename> estis kopiita al la tondujo."
 
-#: gui/partitionmanagerwidget.cpp:719
+#: gui/partitionmanagerwidget.cpp:724
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2413,19 +2413,19 @@ msgstr ""
 "datumoj nuntempe konservitaj sur <filename>%1</filename> estos nereakireblaj "
 "anstataŭigeblaj.</para >"
 
-#: gui/partitionmanagerwidget.cpp:727
+#: gui/partitionmanagerwidget.cpp:732
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "Ĉu vere anstataŭigi Ekzistantan Diskpartigon?"
 
-#: gui/partitionmanagerwidget.cpp:728
+#: gui/partitionmanagerwidget.cpp:733
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "Anstataŭigi Diskpartigon"
 
-#: gui/partitionmanagerwidget.cpp:736
+#: gui/partitionmanagerwidget.cpp:741
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2438,13 +2438,13 @@ msgstr ""
 "regrandigu ĉi tiun subdiskon tiel ke ĝi estu same granda kiel la fonto.</"
 "para>"
 
-#: gui/partitionmanagerwidget.cpp:737
+#: gui/partitionmanagerwidget.cpp:742
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "Celo Ne Sufiĉe Granda"
 
-#: gui/partitionmanagerwidget.cpp:740
+#: gui/partitionmanagerwidget.cpp:745
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2458,13 +2458,13 @@ msgstr ""
 "vicigitaj aŭ kiam kopias primaran subdiskon en plilongigitan diskparton. </"
 "para>"
 
-#: gui/partitionmanagerwidget.cpp:743
+#: gui/partitionmanagerwidget.cpp:748
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "Ne Povas Krei Celon Diskcion."
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2474,7 +2474,7 @@ msgstr ""
 "La dosiersistemo en la bilddosiero <filename>%1</filename> estas tro granda "
 "por esti restarigita al la elektita diskparto."
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
@@ -2564,56 +2564,55 @@ msgstr "Nombro de Sektoroj"
 msgid "Flags"
 msgstr "Flagoj"
 
-#: gui/partpropsdialog.cpp:55
+#: gui/partpropsdialog.cpp:59
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "Subdiskaj proprecoj: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:110
+#: gui/partpropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(neniu trovita)"
 
-#: gui/partpropsdialog.cpp:115
+#: gui/partpropsdialog.cpp:124
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(ne trovita)"
 
-#: gui/partpropsdialog.cpp:121
+#: gui/partpropsdialog.cpp:130
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "senlabore"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:133
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "Almenaŭ unu logika subdisko estas muntita."
 
-#: gui/partpropsdialog.cpp:126
+#: gui/partpropsdialog.cpp:135
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "muntita sur <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:128
+#: gui/partpropsdialog.cpp:137
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "muntita"
 
-#: gui/partpropsdialog.cpp:132 gui/partpropsdialog.cpp:135
-#: gui/partpropsdialog.cpp:136
+#: gui/partpropsdialog.cpp:141 gui/partpropsdialog.cpp:144
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(neniu)"
 
-#: gui/partpropsdialog.cpp:360
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2629,25 +2628,25 @@ msgstr ""
 "rezultan operacion en la ĉefa fenestro, ĉiuj datumoj sur <filename>%1</"
 "filename> nereveneble perdiĝos.</para>"
 
-#: gui/partpropsdialog.cpp:362
+#: gui/partpropsdialog.cpp:376
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr "Ĉu vere rekrei <filename>%1</filename> kun Dosiersistemo %2?"
 
-#: gui/partpropsdialog.cpp:363
+#: gui/partpropsdialog.cpp:377
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Ŝanĝi la Dosiersistemon"
 
-#: gui/partpropsdialog.cpp:364
+#: gui/partpropsdialog.cpp:378
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Ne Ŝanĝi la Dosiersistemon"
 
-#: gui/partpropsdialog.cpp:383
+#: gui/partpropsdialog.cpp:397
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2663,19 +2662,19 @@ msgstr ""
 "fenestro, ĉiuj datumoj sur <filesystem>%1</filesystem> nereveneble perdiĝos."
 "</para>"
 
-#: gui/partpropsdialog.cpp:385
+#: gui/partpropsdialog.cpp:399
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "Ĉu vere rekrei Dosiersistemon ĉe <filename>%1</filename>?"
 
-#: gui/partpropsdialog.cpp:386
+#: gui/partpropsdialog.cpp:400
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Rekrei la Dosiersistemon"
 
-#: gui/partpropsdialog.cpp:387
+#: gui/partpropsdialog.cpp:401
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -2794,21 +2793,21 @@ msgid "Recreate existing file system"
 msgstr "Rekrei ekzistantan dosiersistemon"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:376
+#: gui/partpropswidgetbase.ui:373
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Uzita:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:386
+#: gui/partpropswidgetbase.ui:383
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "Dosier-siste&mo:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:399
+#: gui/partpropswidgetbase.ui:396
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"

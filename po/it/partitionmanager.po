@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 00:41+0000\n"
+"POT-Creation-Date: 2025-02-05 00:44+0000\n"
 "PO-Revision-Date: 2024-10-13 20:36+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -2259,13 +2259,13 @@ msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr "Pannelli mostrati"
 
-#: gui/partitionmanagerwidget.cpp:200
+#: gui/partitionmanagerwidget.cpp:201
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 [Cifrato]"
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2274,13 +2274,13 @@ msgstr ""
 "Impossibile montare il file system presente nella partizione <filename>%1</"
 "filename>."
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "Impossibile montare il file system."
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2289,13 +2289,13 @@ msgstr ""
 "Impossibile smontare il file system presente nella partizione <filename>%1</"
 "filename>."
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "Impossibile smontare il file system."
 
-#: gui/partitionmanagerwidget.cpp:447
+#: gui/partitionmanagerwidget.cpp:452
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2305,13 +2305,13 @@ msgstr ""
 "Il file system cifrato sulla partizione <filename>%1</filename> non può "
 "essere sbloccato."
 
-#: gui/partitionmanagerwidget.cpp:453
+#: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "Impossibile sbloccare il file system cifrato."
 
-#: gui/partitionmanagerwidget.cpp:458
+#: gui/partitionmanagerwidget.cpp:463
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2321,13 +2321,13 @@ msgstr ""
 "Il file system cifrato sulla partizione <filename>%1</filename> non può "
 "essere bloccato."
 
-#: gui/partitionmanagerwidget.cpp:464
+#: gui/partitionmanagerwidget.cpp:469
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "Impossibile bloccare il file system cifrato."
 
-#: gui/partitionmanagerwidget.cpp:493
+#: gui/partitionmanagerwidget.cpp:498
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2351,13 +2351,13 @@ msgstr[1] ""
 "impossibile creare, incollare o ridimensionare una partizione primaria sul "
 "dispositivo finché non si elimina quella esistente.</para>"
 
-#: gui/partitionmanagerwidget.cpp:497
+#: gui/partitionmanagerwidget.cpp:502
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "Troppe partizioni primarie."
 
-#: gui/partitionmanagerwidget.cpp:560
+#: gui/partitionmanagerwidget.cpp:565
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2370,13 +2370,13 @@ msgstr ""
 "sono montate partizioni con numeri logici successivi.</para><para>Smontare "
 "tutte le partizioni con numero logico maggiore di %2.</para>"
 
-#: gui/partitionmanagerwidget.cpp:563
+#: gui/partitionmanagerwidget.cpp:568
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "Impossibile eliminare la partizione."
 
-#: gui/partitionmanagerwidget.cpp:572
+#: gui/partitionmanagerwidget.cpp:577
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2387,19 +2387,19 @@ msgstr ""
 "Eliminare la partizione presente negli appunti? Non sarà più possibile "
 "incollarla."
 
-#: gui/partitionmanagerwidget.cpp:574
+#: gui/partitionmanagerwidget.cpp:579
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "Vuoi veramente eliminare la partizione presente negli appunti?"
 
-#: gui/partitionmanagerwidget.cpp:575
+#: gui/partitionmanagerwidget.cpp:580
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "Elimina"
 
-#: gui/partitionmanagerwidget.cpp:628
+#: gui/partitionmanagerwidget.cpp:633
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2409,13 +2409,13 @@ msgstr ""
 "La partizione <filename>%1</filename> ha la stessa posizione e dimensione "
 "dopo lo spostamento o il ridimensionamento. L'operazione sarà ignorata."
 
-#: gui/partitionmanagerwidget.cpp:656
+#: gui/partitionmanagerwidget.cpp:661
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "La partizione <filename>%1</filename> è stata copiata negli appunti."
 
-#: gui/partitionmanagerwidget.cpp:719
+#: gui/partitionmanagerwidget.cpp:724
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2433,19 +2433,19 @@ msgstr ""
 "principale, verranno sovrascritti tutti i dati nella partizione <filename>"
 "%1</filename>.</para>"
 
-#: gui/partitionmanagerwidget.cpp:727
+#: gui/partitionmanagerwidget.cpp:732
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "Vuoi veramente sovrascrivere la partizione già esistente?"
 
-#: gui/partitionmanagerwidget.cpp:728
+#: gui/partitionmanagerwidget.cpp:733
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "Sovrascrivi la partizione"
 
-#: gui/partitionmanagerwidget.cpp:736
+#: gui/partitionmanagerwidget.cpp:741
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2458,13 +2458,13 @@ msgstr ""
 "destinazione o ridimensionare questa partizione in modo da renderla grande "
 "come quella sorgente.</para>"
 
-#: gui/partitionmanagerwidget.cpp:737
+#: gui/partitionmanagerwidget.cpp:742
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "Destinazione non abbastanza grande"
 
-#: gui/partitionmanagerwidget.cpp:740
+#: gui/partitionmanagerwidget.cpp:745
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2478,13 +2478,13 @@ msgstr ""
 "partizioni di un dispositivo non sono allineate o quando si copia una "
 "partizione primaria in una partizione estesa.</para>"
 
-#: gui/partitionmanagerwidget.cpp:743
+#: gui/partitionmanagerwidget.cpp:748
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "Impossibile creare la partizione destinazione."
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2494,7 +2494,7 @@ msgstr ""
 "Il file system nel file immagine <filename>%1</filename> è troppo grande per "
 "poter essere ripristinato nella partizione selezionata."
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
@@ -2584,56 +2584,55 @@ msgstr "Numero di settori"
 msgid "Flags"
 msgstr "Parametri"
 
-#: gui/partpropsdialog.cpp:55
+#: gui/partpropsdialog.cpp:59
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "Proprietà della partizione: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:110
+#: gui/partpropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(nessuno rilevato)"
 
-#: gui/partpropsdialog.cpp:115
+#: gui/partpropsdialog.cpp:124
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(non trovato)"
 
-#: gui/partpropsdialog.cpp:121
+#: gui/partpropsdialog.cpp:130
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "inattiva"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:133
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "Montata almeno una partizione logica."
 
-#: gui/partpropsdialog.cpp:126
+#: gui/partpropsdialog.cpp:135
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "montata su <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:128
+#: gui/partpropsdialog.cpp:137
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "montata"
 
-#: gui/partpropsdialog.cpp:132 gui/partpropsdialog.cpp:135
-#: gui/partpropsdialog.cpp:136
+#: gui/partpropsdialog.cpp:141 gui/partpropsdialog.cpp:144
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(nessuno)"
 
-#: gui/partpropsdialog.cpp:360
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2650,25 +2649,25 @@ msgstr ""
 "principale, tutti i dati della partizione <filename>%1</filename> saranno "
 "persi definitivamente.</para>"
 
-#: gui/partpropsdialog.cpp:362
+#: gui/partpropsdialog.cpp:376
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr "Ricreare <filename>%1</filename> con il file system %2?"
 
-#: gui/partpropsdialog.cpp:363
+#: gui/partpropsdialog.cpp:377
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Cambia file system"
 
-#: gui/partpropsdialog.cpp:364
+#: gui/partpropsdialog.cpp:378
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Non cambiare file system"
 
-#: gui/partpropsdialog.cpp:383
+#: gui/partpropsdialog.cpp:397
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2684,19 +2683,19 @@ msgstr ""
 "operazioni risultanti nella finestra principale, tutti i dati su <filesystem>"
 "%1</filesystem> saranno definitivamente persi.</para>"
 
-#: gui/partpropsdialog.cpp:385
+#: gui/partpropsdialog.cpp:399
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "Vuoi veramente ricreare il file system su <filename>%1</filename>?"
 
-#: gui/partpropsdialog.cpp:386
+#: gui/partpropsdialog.cpp:400
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Ricrea il file system"
 
-#: gui/partpropsdialog.cpp:387
+#: gui/partpropsdialog.cpp:401
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -2815,21 +2814,21 @@ msgid "Recreate existing file system"
 msgstr "Ricrea il file system esistente"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:376
+#: gui/partpropswidgetbase.ui:373
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "In uso:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:386
+#: gui/partpropswidgetbase.ui:383
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "File syste&m:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:399
+#: gui/partpropswidgetbase.ui:396
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"

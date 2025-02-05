@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-12 00:41+0000\n"
+"POT-Creation-Date: 2025-02-05 00:44+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2230,39 +2230,39 @@ msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr "फलकानि दर्शितानि"
 
-#: gui/partitionmanagerwidget.cpp:200
+#: gui/partitionmanagerwidget.cpp:201
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 [गुप्तीकृतम्] ।"
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be mounted."
 msgstr "<filename>%1</filename> विभाजने सञ्चिकातन्त्रं माउण्ट् कर्तुं न शक्यते ।"
 
-#: gui/partitionmanagerwidget.cpp:404
+#: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "सञ्चिकातन्त्रं माउण्ट् कर्तुं न शक्तवान् ।"
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be unmounted."
 msgstr "<filename>%1</filename> विभाजने स्थितं सञ्चिकातन्त्रं अनमाउण्ट् कर्तुं न शक्यते ।"
 
-#: gui/partitionmanagerwidget.cpp:407
+#: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "सञ्चिकातन्त्रं अनमाउण्ट् कर्तुं न शक्तवान् ।"
 
-#: gui/partitionmanagerwidget.cpp:447
+#: gui/partitionmanagerwidget.cpp:452
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2270,13 +2270,13 @@ msgid ""
 "unlocked."
 msgstr "<filename>%1</filename> विभाजने गुप्तसञ्चिकातन्त्रं अनलॉक् कर्तुं न शक्यते ।"
 
-#: gui/partitionmanagerwidget.cpp:453
+#: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "एन्क्रिप्टेड् सञ्चिकातन्त्रं अनलॉक् कर्तुं न शक्तवान् ।"
 
-#: gui/partitionmanagerwidget.cpp:458
+#: gui/partitionmanagerwidget.cpp:463
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2284,13 +2284,13 @@ msgid ""
 "locked."
 msgstr "<filename>%1</filename> विभाजने गुप्तसञ्चिकातन्त्रं ताडयितुं न शक्यते ।"
 
-#: gui/partitionmanagerwidget.cpp:464
+#: gui/partitionmanagerwidget.cpp:469
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "एन्क्रिप्टेड् सञ्चिकातन्त्रं ताडयितुं न शक्तवान् ।"
 
-#: gui/partitionmanagerwidget.cpp:493
+#: gui/partitionmanagerwidget.cpp:498
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2312,13 +2312,13 @@ msgstr[1] ""
 "विभाजनसारणीप्रकारः सम्भालितुं शक्नोति ।</para><para>भवन्तः विद्यमानं विलोपनात् पूर्वं "
 "तस्मिन् प्राथमिकविभाजनं निर्मातुं, चिनोतु, पुनःस्थापयितुं वा न शक्नुवन्ति ।</para>"
 
-#: gui/partitionmanagerwidget.cpp:497
+#: gui/partitionmanagerwidget.cpp:502
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "अत्यधिकं प्राथमिकविभाजनम्।"
 
-#: gui/partitionmanagerwidget.cpp:560
+#: gui/partitionmanagerwidget.cpp:565
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2331,13 +2331,13 @@ msgstr ""
 "विभाजनः उच्चतरयुक्तिसङ्ख्यायुक्तः अद्यापि माउण्ट् कृतः अस्ति ।</para><para>कृपया प्रथमं %2 "
 "इत्यस्मात् अधिकयुक्तियुक्तसङ्ख्यायुक्तानि सर्वाणि विभाजनानि अनमाउण्ट् कुर्वन्तु .</para> इति"
 
-#: gui/partitionmanagerwidget.cpp:563
+#: gui/partitionmanagerwidget.cpp:568
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "विभाजनं विलोपयितुं न शक्यते।"
 
-#: gui/partitionmanagerwidget.cpp:572
+#: gui/partitionmanagerwidget.cpp:577
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2348,19 +2348,19 @@ msgstr ""
 "किं भवान् वास्तवमेव तत् विभाजनं विलोपयितुम् इच्छति यत् सम्प्रति क्लिप्बोर्ड् मध्ये अस्ति? "
 "लोपितस्य अनन्तरं पेस्टिंग् कर्तुं न लभ्यते ।"
 
-#: gui/partitionmanagerwidget.cpp:574
+#: gui/partitionmanagerwidget.cpp:579
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "वास्तवतः क्लिप्बोर्ड् मध्ये विभाजनं विलोपयन्तु?"
 
-#: gui/partitionmanagerwidget.cpp:575
+#: gui/partitionmanagerwidget.cpp:580
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "तत् विलोपयतु"
 
-#: gui/partitionmanagerwidget.cpp:628
+#: gui/partitionmanagerwidget.cpp:633
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2370,13 +2370,13 @@ msgstr ""
 "विभाजनस्य <filename>%1</filename> इत्यस्य आकारपरिवर्तनस्य/चलनस्य अनन्तरं समानं स्थानं "
 "आकारः च भवति । संचालनस्य अवहेलना।"
 
-#: gui/partitionmanagerwidget.cpp:656
+#: gui/partitionmanagerwidget.cpp:661
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "<filename>%1</filename> इति विभाजनं क्लिप्बोर्ड् प्रति प्रतिलिखितम् अस्ति ।"
 
-#: gui/partitionmanagerwidget.cpp:719
+#: gui/partitionmanagerwidget.cpp:724
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2394,19 +2394,19 @@ msgstr ""
 "%1</filename> इत्यत्र वर्तमानकाले संगृहीताः सर्वे दत्तांशाः अपुनर्प्राप्त्यर्थं भविष्यन्ति "
 "अधिलिखितम्।</para>"
 
-#: gui/partitionmanagerwidget.cpp:727
+#: gui/partitionmanagerwidget.cpp:732
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "वास्तवं विद्यमानं विभाजनं अधिलेखयन्तु?"
 
-#: gui/partitionmanagerwidget.cpp:728
+#: gui/partitionmanagerwidget.cpp:733
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "विभाजनं अधिलेखयतु"
 
-#: gui/partitionmanagerwidget.cpp:736
+#: gui/partitionmanagerwidget.cpp:741
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2418,13 +2418,13 @@ msgstr ""
 "para><para>अन्यं लक्ष्यं चिनुत अथवा एतस्य विभाजनस्य आकारं परिवर्तयन्तु येन स्रोतः इव "
 "विशालः भवति ।</para>"
 
-#: gui/partitionmanagerwidget.cpp:737
+#: gui/partitionmanagerwidget.cpp:742
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "लक्ष्यं पर्याप्तं बृहत् न"
 
-#: gui/partitionmanagerwidget.cpp:740
+#: gui/partitionmanagerwidget.cpp:745
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2437,13 +2437,13 @@ msgstr ""
 "यन्त्रे सर्वे विभाजनाः सम्यक् संरेखिताः न सन्ति अथवा प्राथमिकविभाजनं विस्तारिते विभाजने "
 "प्रतिलिपिं कुर्वन् एतत् भवितुम् अर्हति </para> इति"
 
-#: gui/partitionmanagerwidget.cpp:743
+#: gui/partitionmanagerwidget.cpp:748
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "लक्ष्यविभाजनं निर्मातुम् न शक्यते ।"
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2453,7 +2453,7 @@ msgstr ""
 "<filename>%1</filename> इति चित्रसञ्चिकायां सञ्चिकातन्त्रम् अतीव विशालं यत् "
 "चयनितविभाजने पुनः स्थापयितुं न शक्यते ।"
 
-#: gui/partitionmanagerwidget.cpp:801
+#: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
@@ -2543,56 +2543,55 @@ msgstr "क्षेत्राणां संख्या"
 msgid "Flags"
 msgstr "ध्वजाः"
 
-#: gui/partpropsdialog.cpp:55
+#: gui/partpropsdialog.cpp:59
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "विभाजनगुणाः : <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:110
+#: gui/partpropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(कोऽपि न लब्धः)"
 
-#: gui/partpropsdialog.cpp:115
+#: gui/partpropsdialog.cpp:124
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(न लब्धम्)"
 
-#: gui/partpropsdialog.cpp:121
+#: gui/partpropsdialog.cpp:130
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "आलम"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:133
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "न्यूनातिन्यूनम् एकं तार्किकविभाजनं माउण्ट् भवति ।"
 
-#: gui/partpropsdialog.cpp:126
+#: gui/partpropsdialog.cpp:135
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "<filename>%1</filename> इत्यत्र माउण्ट् कृतम्"
 
-#: gui/partpropsdialog.cpp:128
+#: gui/partpropsdialog.cpp:137
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "आरुह्य"
 
-#: gui/partpropsdialog.cpp:132 gui/partpropsdialog.cpp:135
-#: gui/partpropsdialog.cpp:136
+#: gui/partpropsdialog.cpp:141 gui/partpropsdialog.cpp:144
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(न कश्चित्)"
 
-#: gui/partpropsdialog.cpp:360
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2608,7 +2607,7 @@ msgstr ""
 "मुख्यविण्डो मध्ये परिणामितं कार्यं प्रयोजयति तर्हि <filename>%1</filename> इत्यत्र सर्वे "
 "दत्तांशाः अपुनर्प्राप्त्यर्थं नष्टाः भविष्यन्ति ।</para>"
 
-#: gui/partpropsdialog.cpp:362
+#: gui/partpropsdialog.cpp:376
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
@@ -2616,19 +2615,19 @@ msgstr ""
 "वास्तवमेव <filename>%1</filename> इत्यस्य पुनः निर्माणं File System %2 इत्यनेन सह "
 "कुर्वन्तु?"
 
-#: gui/partpropsdialog.cpp:363
+#: gui/partpropsdialog.cpp:377
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "File System परिवर्तयन्तु"
 
-#: gui/partpropsdialog.cpp:364
+#: gui/partpropsdialog.cpp:378
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "सञ्चिकातन्त्रं न परिवर्तयन्तु"
 
-#: gui/partpropsdialog.cpp:383
+#: gui/partpropsdialog.cpp:397
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2644,19 +2643,19 @@ msgstr ""
 "प्रयोजयति तर्हि <filesystem>%1</filesystem> इत्यत्र सर्वे दत्तांशाः अपुनर्प्राप्त्यर्थं "
 "नष्टाः भविष्यन्ति ।</para>"
 
-#: gui/partpropsdialog.cpp:385
+#: gui/partpropsdialog.cpp:399
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "<filename>%1</filename> इत्यत्र वास्तवमेव सञ्चिकातन्त्रं पुनः निर्मायताम्?"
 
-#: gui/partpropsdialog.cpp:386
+#: gui/partpropsdialog.cpp:400
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "File System पुनः रचयन्तु"
 
-#: gui/partpropsdialog.cpp:387
+#: gui/partpropsdialog.cpp:401
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -2775,21 +2774,21 @@ msgid "Recreate existing file system"
 msgstr "विद्यमानं सञ्चिकातन्त्रं पुनः रचयन्तु"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:376
+#: gui/partpropswidgetbase.ui:373
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "प्रयुक्त:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:386
+#: gui/partpropswidgetbase.ui:383
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "सञ्चिका प्रणाली&m:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:399
+#: gui/partpropswidgetbase.ui:396
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
