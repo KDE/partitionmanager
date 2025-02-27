@@ -168,12 +168,8 @@ void PartPropsDialog::setupDialog()
     if (Capacity(partition(), Capacity::Type::Available).isValid()) {
         const qint64 availPercent = (partition().fileSystem().length() - partition().fileSystem().sectorsUsed()) * 100 / partition().fileSystem().length();
 
-        const QString availString = QStringLiteral("%1% - %2")
-                                    .arg(availPercent)
-                                    .arg(Capacity::formatByteSize(partition().available()));
-        const QString usedString = QStringLiteral("%1% - %2")
-                                   .arg(100 - availPercent)
-                                   .arg(Capacity::formatByteSize(partition().used()));
+        const QString availString = i18n("%1% — %2", availPercent, Capacity::formatByteSize(partition().available()));
+        const QString usedString = i18n("%1% — %2", (100 - availPercent), Capacity::formatByteSize(partition().used()));
 
         dialogWidget().available().setText(availString);
         dialogWidget().used().setText(usedString);
