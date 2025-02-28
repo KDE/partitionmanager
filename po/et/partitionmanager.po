@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-05 00:44+0000\n"
+"POT-Creation-Date: 2025-02-28 00:44+0000\n"
 "PO-Revision-Date: 2020-10-11 01:45+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -2613,7 +2613,12 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(puudub)"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
+#, kde-format
+msgid "%1% — %2"
+msgstr ""
+
+#: gui/partpropsdialog.cpp:370
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2629,25 +2634,25 @@ msgstr ""
 "lähevad kõik partitsiooni <filename>%1</filename> andmed taastamatult kaotsi."
 "</para>"
 
-#: gui/partpropsdialog.cpp:376
+#: gui/partpropsdialog.cpp:372
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr "Kas tõesti luua <filename>%1</filename> uuesti failisüsteemiga %2?"
 
-#: gui/partpropsdialog.cpp:377
+#: gui/partpropsdialog.cpp:373
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Muuda failisüsteemi"
 
-#: gui/partpropsdialog.cpp:378
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Ära muuda failisüsteemi"
 
-#: gui/partpropsdialog.cpp:397
+#: gui/partpropsdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2662,20 +2667,20 @@ msgstr ""
 "Kui jätkad ja teostad operatsiooni peaaknas, lähevad kõik partitsiooni "
 "<filesystem>%1</filesystem> andmed taastamatult kaotsi.</para>"
 
-#: gui/partpropsdialog.cpp:399
+#: gui/partpropsdialog.cpp:395
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr ""
 "Kas tõesti luua uuesti partitsiooni <filename>%1</filename> failisüsteem?"
 
-#: gui/partpropsdialog.cpp:400
+#: gui/partpropsdialog.cpp:396
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Loo failisüsteem uuesti"
 
-#: gui/partpropsdialog.cpp:401
+#: gui/partpropsdialog.cpp:397
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"

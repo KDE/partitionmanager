@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-05 00:44+0000\n"
+"POT-Creation-Date: 2025-02-28 00:44+0000\n"
 "PO-Revision-Date: 2024-12-17 18:27+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2626,7 +2626,12 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(ningún)"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
+#, kde-format
+msgid "%1% — %2"
+msgstr ""
+
+#: gui/partpropsdialog.cpp:370
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2642,7 +2647,7 @@ msgstr ""
 "e aplica na xanela principal a operación resultante, todos os datos que haxa "
 "en <filename>%1</filename> perderanse indefectibelmente.</para>"
 
-#: gui/partpropsdialog.cpp:376
+#: gui/partpropsdialog.cpp:372
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
@@ -2650,19 +2655,19 @@ msgstr ""
 "Seguro que quere crear de novo <filename>%1</filename> co sistema de "
 "ficheiros %2?"
 
-#: gui/partpropsdialog.cpp:377
+#: gui/partpropsdialog.cpp:373
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Cambiar o sistema de ficheiros"
 
-#: gui/partpropsdialog.cpp:378
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Non cambiar o sistema de ficheiros"
 
-#: gui/partpropsdialog.cpp:397
+#: gui/partpropsdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2678,7 +2683,7 @@ msgstr ""
 "operación resultante, todos os datos que haxa en <filesystem>%1</filesystem> "
 "perderanse indefectibelmente.</para>"
 
-#: gui/partpropsdialog.cpp:399
+#: gui/partpropsdialog.cpp:395
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
@@ -2686,13 +2691,13 @@ msgstr ""
 "Seguro que quere crear de novo o sistema de ficheiros en <filename>%1</"
 "filename>?"
 
-#: gui/partpropsdialog.cpp:400
+#: gui/partpropsdialog.cpp:396
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Crear de novo o sistema de ficheiros"
 
-#: gui/partpropsdialog.cpp:401
+#: gui/partpropsdialog.cpp:397
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"

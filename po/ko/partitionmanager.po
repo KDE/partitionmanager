@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-05 00:44+0000\n"
+"POT-Creation-Date: 2025-02-28 00:44+0000\n"
 "PO-Revision-Date: 2024-11-29 00:32+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2585,7 +2585,12 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(없음)"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
+#, kde-format
+msgid "%1% — %2"
+msgstr ""
+
+#: gui/partpropsdialog.cpp:370
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2600,26 +2605,26 @@ msgstr ""
 "내용을 삭제합니다. 작업을 계속 진행하면 <filename>%1</filename>에 있는 모든 "
 "데이터를 복구 불가능한 상태로 삭제합니다.</para>"
 
-#: gui/partpropsdialog.cpp:376
+#: gui/partpropsdialog.cpp:372
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "<filename>%1</filename>을(를) %2 파일 시스템으로 다시 생성하시겠습니까?"
 
-#: gui/partpropsdialog.cpp:377
+#: gui/partpropsdialog.cpp:373
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "파일 시스템 변경"
 
-#: gui/partpropsdialog.cpp:378
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "파일 시스템 변경하지 않음"
 
-#: gui/partpropsdialog.cpp:397
+#: gui/partpropsdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2634,19 +2639,19 @@ msgstr ""
 "업을 계속 진행하면 <filename>%1</filename>에 있는 모든 데이터를 복구 불가능"
 "한 상태로 삭제합니다.</para>"
 
-#: gui/partpropsdialog.cpp:399
+#: gui/partpropsdialog.cpp:395
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "<filename>%1</filename>에 파일 시스템을 다시 생성하시겠습니까?"
 
-#: gui/partpropsdialog.cpp:400
+#: gui/partpropsdialog.cpp:396
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "파일 시스템 다시 생성"
 
-#: gui/partpropsdialog.cpp:401
+#: gui/partpropsdialog.cpp:397
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"

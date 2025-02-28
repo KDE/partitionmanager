@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-05 00:44+0000\n"
+"POT-Creation-Date: 2025-02-28 00:44+0000\n"
 "PO-Revision-Date: 2009-01-06 23:32+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2855,7 +2855,12 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "なし"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
+#, kde-format
+msgid "%1% — %2"
+msgstr ""
+
+#: gui/partpropsdialog.cpp:370
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2871,14 +2876,14 @@ msgstr ""
 "行してメインウィンドウで操作を適用すると、<filename>%1</filename> のすべての"
 "データが完全に失われ、元に戻すことはできません。</para>"
 
-#: gui/partpropsdialog.cpp:376
+#: gui/partpropsdialog.cpp:372
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "本当に <filename>%1</filename> をファイルシステム %2 で作成し直しますか？"
 
-#: gui/partpropsdialog.cpp:377
+#: gui/partpropsdialog.cpp:373
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Change the File System"
@@ -2886,7 +2891,7 @@ msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "ファイルシステムを変更する(&C)"
 
-#: gui/partpropsdialog.cpp:378
+#: gui/partpropsdialog.cpp:374
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Change the File System"
@@ -2894,7 +2899,7 @@ msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "ファイルシステムを変更しない(&D)"
 
-#: gui/partpropsdialog.cpp:397
+#: gui/partpropsdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2905,13 +2910,13 @@ msgid ""
 "para>"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:399
+#: gui/partpropsdialog.cpp:395
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "本当に <filename>%1</filename> のファイルシステムを作成し直しますか？"
 
-#: gui/partpropsdialog.cpp:400
+#: gui/partpropsdialog.cpp:396
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Recreate the File System"
@@ -2919,7 +2924,7 @@ msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "ファイルシステムを作成し直す(&R)"
 
-#: gui/partpropsdialog.cpp:401
+#: gui/partpropsdialog.cpp:397
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Recreate the File System"

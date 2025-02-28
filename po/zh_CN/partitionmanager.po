@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-05 00:44+0000\n"
+"POT-Creation-Date: 2025-02-28 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2561,7 +2561,12 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(无)"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
+#, kde-format
+msgid "%1% — %2"
+msgstr ""
+
+#: gui/partpropsdialog.cpp:370
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2576,25 +2581,25 @@ msgstr ""
 "现在继续并在主窗口中应用对应的操作，当前存储在 <filename>%1</filename> 中的数"
 "据将全部丢失并无法恢复。</para>"
 
-#: gui/partpropsdialog.cpp:376
+#: gui/partpropsdialog.cpp:372
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr "您确定要用 %2 文件系统重新创建 <filename>%1</filename> 吗？"
 
-#: gui/partpropsdialog.cpp:377
+#: gui/partpropsdialog.cpp:373
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "更改文件系统"
 
-#: gui/partpropsdialog.cpp:378
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "不更改文件系统"
 
-#: gui/partpropsdialog.cpp:397
+#: gui/partpropsdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2609,19 +2614,19 @@ msgstr ""
 "应的操作，当前存储在 <filesystem>%1</filesystem> 中的数据将全部丢失并无法恢"
 "复。</para>"
 
-#: gui/partpropsdialog.cpp:399
+#: gui/partpropsdialog.cpp:395
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "您确定要重新创建 <filename>%1</filename> 的文件系统吗？"
 
-#: gui/partpropsdialog.cpp:400
+#: gui/partpropsdialog.cpp:396
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "重新创建文件系统"
 
-#: gui/partpropsdialog.cpp:401
+#: gui/partpropsdialog.cpp:397
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"

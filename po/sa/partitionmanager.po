@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-05 00:44+0000\n"
+"POT-Creation-Date: 2025-02-28 00:44+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2591,7 +2591,12 @@ msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(न कश्चित्)"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
+#, kde-format
+msgid "%1% — %2"
+msgstr ""
+
+#: gui/partpropsdialog.cpp:370
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2607,7 +2612,7 @@ msgstr ""
 "मुख्यविण्डो मध्ये परिणामितं कार्यं प्रयोजयति तर्हि <filename>%1</filename> इत्यत्र सर्वे "
 "दत्तांशाः अपुनर्प्राप्त्यर्थं नष्टाः भविष्यन्ति ।</para>"
 
-#: gui/partpropsdialog.cpp:376
+#: gui/partpropsdialog.cpp:372
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
@@ -2615,19 +2620,19 @@ msgstr ""
 "वास्तवमेव <filename>%1</filename> इत्यस्य पुनः निर्माणं File System %2 इत्यनेन सह "
 "कुर्वन्तु?"
 
-#: gui/partpropsdialog.cpp:377
+#: gui/partpropsdialog.cpp:373
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "File System परिवर्तयन्तु"
 
-#: gui/partpropsdialog.cpp:378
+#: gui/partpropsdialog.cpp:374
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "सञ्चिकातन्त्रं न परिवर्तयन्तु"
 
-#: gui/partpropsdialog.cpp:397
+#: gui/partpropsdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2643,19 +2648,19 @@ msgstr ""
 "प्रयोजयति तर्हि <filesystem>%1</filesystem> इत्यत्र सर्वे दत्तांशाः अपुनर्प्राप्त्यर्थं "
 "नष्टाः भविष्यन्ति ।</para>"
 
-#: gui/partpropsdialog.cpp:399
+#: gui/partpropsdialog.cpp:395
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "<filename>%1</filename> इत्यत्र वास्तवमेव सञ्चिकातन्त्रं पुनः निर्मायताम्?"
 
-#: gui/partpropsdialog.cpp:400
+#: gui/partpropsdialog.cpp:396
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "File System पुनः रचयन्तु"
 
-#: gui/partpropsdialog.cpp:401
+#: gui/partpropsdialog.cpp:397
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
