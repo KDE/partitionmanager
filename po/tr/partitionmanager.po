@@ -6,13 +6,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2010,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014, 2015, 2017.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-28 00:44+0000\n"
-"PO-Revision-Date: 2024-10-12 13:01+0300\n"
+"PO-Revision-Date: 2025-02-28 10:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -195,7 +195,7 @@ msgstr "FAT16:"
 #: config/configurepagefilesystemcolors.ui:185
 #, kde-format
 msgid "extended:"
-msgstr "genişletilmiş:"
+msgstr "Genişletilmiş:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_33)
 #: config/configurepagefilesystemcolors.ui:198
@@ -207,7 +207,7 @@ msgstr "LUKS2:"
 #: config/configurepagefilesystemcolors.ui:214
 #, kde-format
 msgid "unformatted:"
-msgstr "biçimlendirilmemiş:"
+msgstr "Biçimlendirilmemiş:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_30)
 #: config/configurepagefilesystemcolors.ui:233
@@ -297,7 +297,7 @@ msgstr "LUKS:"
 #: config/configurepagefilesystemcolors.ui:613
 #, kde-format
 msgid "Linux Swap:"
-msgstr "Linux Takas:"
+msgstr "Linux takas:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_32)
 #: config/configurepagefilesystemcolors.ui:664
@@ -345,7 +345,7 @@ msgstr "HFS+:"
 #: config/configurepagefilesystemcolors.ui:819
 #, kde-format
 msgid "unknown:"
-msgstr "bilinmeyen:"
+msgstr "Bilinmeyen:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_36)
 #: config/configurepagefilesystemcolors.ui:832
@@ -749,7 +749,7 @@ msgstr "Daha Fazla…"
 #: gui/devicepropswidgetbase.ui:92
 #, kde-format
 msgid "Capacity:"
-msgstr "Kapasite:"
+msgstr "Sığa:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
 #: gui/devicepropswidgetbase.ui:112 gui/smartdialog.cpp:147
@@ -849,7 +849,7 @@ msgstr "&Etiket"
 #: gui/editmountpointdialogwidgetbase.ui:46
 #, kde-format
 msgid "Dump &Frequency:"
-msgstr "Döküm Sık&lığı:"
+msgstr "Döküm sık&lığı:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
 #: gui/editmountpointdialogwidgetbase.ui:75
@@ -867,7 +867,7 @@ msgstr "Eş zamanlı erişim"
 #: gui/editmountpointdialogwidgetbase.ui:109
 #, kde-format
 msgid "Pass &Number:"
-msgstr "G&eçiş Numarası:"
+msgstr "G&eçiş numarası:"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
 #: gui/editmountpointdialogwidgetbase.ui:128
@@ -951,7 +951,7 @@ msgstr "Dizin erişim zamanlarının güncellemesi yok"
 #: gui/editmountpointdialogwidgetbase.ui:295
 #, kde-format
 msgid "Identify by:"
-msgstr "Buna göre tanımla:"
+msgstr "Şuna göre tanımla:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
 #: gui/editmountpointdialogwidgetbase.ui:305
@@ -1097,7 +1097,7 @@ msgstr "Dosya sistemi:"
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Capacity:"
-msgstr "Kapasite:"
+msgstr "Sığa:"
 
 #: gui/infopane.cpp:115
 #, kde-format
@@ -1205,7 +1205,7 @@ msgstr "Tür:"
 #, kde-format
 msgctxt "@label device"
 msgid "Capacity:"
-msgstr "Kapasite:"
+msgstr "Sığa:"
 
 #: gui/infopane.cpp:178
 #, kde-format
@@ -1235,13 +1235,13 @@ msgstr "Birinciller/Azami:"
 #, kde-format
 msgctxt "@label device"
 msgid "Volume Type:"
-msgstr "Disk Bölümü Türü:"
+msgstr "Disk bölümü türü:"
 
 #: gui/infopane.cpp:186
 #, kde-format
 msgctxt "@label device"
 msgid "PE Size:"
-msgstr "PE Boyutu:"
+msgstr "PE boyutu:"
 
 #: gui/infopane.cpp:187
 #, kde-format
@@ -1265,25 +1265,25 @@ msgstr "Boş PE:"
 #, kde-format
 msgctxt "@label device"
 msgid "RAID Level:"
-msgstr "RAID Düzeyi:"
+msgstr "RAID düzeyi:"
 
 #: gui/infopane.cpp:195
 #, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr "Parça Boyutu:"
+msgstr "Parça boyutu:"
 
 #: gui/infopane.cpp:196
 #, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr "Toplam Parça:"
+msgstr "Toplam parça:"
 
 #: gui/infopane.cpp:197
 #, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr "Diziliş Boyutu:"
+msgstr "Diziliş boyutu:"
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
@@ -2622,7 +2622,7 @@ msgstr "(hiçbiri)"
 #: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
 #, kde-format
 msgid "%1% — %2"
-msgstr ""
+msgstr "%​%1 — %2"
 
 #: gui/partpropsdialog.cpp:370
 #, kde-kuit-format
@@ -2710,7 +2710,7 @@ msgstr "Boyut:"
 #: gui/partpropswidgetbase.ui:66
 #, kde-format
 msgid "Partition UUID:"
-msgstr "BÖlüntü UUID’si:"
+msgstr "Bölüntü UUID’si:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
 #: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:126
@@ -2724,14 +2724,14 @@ msgstr "Dosya sistemi etiket ayarlama işlemini desteklemiyor."
 #, kde-format
 msgctxt "@label"
 msgid "UUID:"
-msgstr "Kullanıcı Kimliği:"
+msgstr "UUID:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
 #: gui/partpropswidgetbase.ui:103
 #, kde-format
 msgctxt "@label"
 msgid "Last sector:"
-msgstr "Son dilim (sector):"
+msgstr "Son dilim:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextStatus)
 #: gui/partpropswidgetbase.ui:134
@@ -2785,7 +2785,7 @@ msgstr "Dilim sayısı:"
 #: gui/partpropswidgetbase.ui:336
 #, kde-format
 msgid "Partition Name:"
-msgstr "Bölüntü Adı:"
+msgstr "Bölüntü adı:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:346
@@ -2897,7 +2897,7 @@ msgstr "İlk dilim:"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Last sector:"
-msgstr "Son dilim (sector):"
+msgstr "Son dilim:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
 #: gui/sizedetailswidgetbase.ui:124
@@ -3038,7 +3038,7 @@ msgstr "Öncesindeki &boş alan:"
 #: gui/sizedialogwidgetbase.ui:347
 #, kde-format
 msgid "Logical Volume Name:"
-msgstr "Mantıksal Disk Bölümü Adı:"
+msgstr "Mantıksal disk bölümü adı:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
 #: gui/sizedialogwidgetbase.ui:363
@@ -3067,7 +3067,7 @@ msgstr "LUKS2’yi etkinleştir"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "SMART Properties: <filename>%1</filename>"
-msgstr "SMART Özellikleri: <filename>%1</filename>"
+msgstr "SMART özellikleri: <filename>%1</filename>"
 
 #: gui/smartdialog.cpp:58
 #, kde-kuit-format
@@ -3271,13 +3271,13 @@ msgstr "İleti"
 #: gui/volumegroupwidgetbase.ui:34
 #, kde-format
 msgid "Volume Group Name: "
-msgstr "Disk Bölümü Grubu Adı: "
+msgstr "Disk bölümü grubu adı: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPESize)
 #: gui/volumegroupwidgetbase.ui:47
 #, kde-format
 msgid "Physical Extent Size: "
-msgstr "Fiziksel Uzantı Boyutu: "
+msgstr "Fiziksel uzantı boyutu: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
@@ -3305,25 +3305,25 @@ msgstr "Toplam LV: "
 #: gui/volumegroupwidgetbase.ui:130
 #, kde-format
 msgid "Volume Group Type: "
-msgstr "Disk Bölümü Grubu Türü: "
+msgstr "Disk bölümü grubu türü: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
 #: gui/volumegroupwidgetbase.ui:140
 #, kde-format
 msgid "Total Size: "
-msgstr "Toplam Boyut: "
+msgstr "Toplam boyut: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
 #: gui/volumegroupwidgetbase.ui:153
 #, kde-format
 msgid "Total Sectors: "
-msgstr "Toplam Dilimler: "
+msgstr "Toplam dilimler: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
 #: gui/volumegroupwidgetbase.ui:186
 #, kde-format
 msgid "Used Size: "
-msgstr "Kullanılan Boyut: "
+msgstr "Kullanılan boyut: "
 
 #: main.cpp:77
 #, kde-kuit-format
