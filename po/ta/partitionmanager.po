@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the partitionmanager package.
 #
-# SPDX-FileCopyrightText: 2024 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-28 00:44+0000\n"
-"PO-Revision-Date: 2024-04-22 21:44+0530\n"
+"PO-Revision-Date: 2025-03-16 15:25+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -36,29 +36,29 @@ msgstr "பொதுவானவை"
 #: config/configureoptionsdialog.cpp:42 config/configureoptionsdialog.cpp:87
 #, kde-format
 msgid "General Settings"
-msgstr ""
+msgstr "பொதுவான அமைப்புகள்"
 
 #: config/configureoptionsdialog.cpp:47
 #, kde-kuit-format
 msgctxt "@title:tab"
 msgid "File System Colors"
-msgstr ""
+msgstr "கோப்பு நிறங்கள்"
 
 #: config/configureoptionsdialog.cpp:47
 #, kde-format
 msgid "File System Color Settings"
-msgstr ""
+msgstr "கோப்பு முறைமை நிற அமைப்புகள்"
 
 #: config/configureoptionsdialog.cpp:49
 #, kde-kuit-format
 msgctxt "@title:tab advanced application settings"
 msgid "Advanced"
-msgstr ""
+msgstr "மேம்பட்டவை"
 
 #: config/configureoptionsdialog.cpp:49
 #, kde-format
 msgid "Advanced Settings"
-msgstr ""
+msgstr "மேம்பட்ட அமைப்புகள்"
 
 #: config/configureoptionsdialog.cpp:137
 #, kde-kuit-format
@@ -68,36 +68,38 @@ msgid ""
 "will also rescan devices and thus clear the list of pending operations.</"
 "warning></para>"
 msgstr ""
+"<para>பின்நிலையை உறுதியாக மாற்ற வேண்டுமா?</para><para><warning>சாதன மீளாய்வை இது "
+"தூண்டுவதால் நிலுவையிலுள்ள செயல்களை இது ரத்து செய்யும்.</warning></para>"
 
 #: config/configureoptionsdialog.cpp:139
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Change Backend?"
-msgstr ""
+msgstr "பின்நிலையை உறுதியாக மாற்றலாமா?"
 
 #: config/configureoptionsdialog.cpp:140
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the Backend"
-msgstr ""
+msgstr "பின்நிலையை மாற்று"
 
 #: config/configureoptionsdialog.cpp:141
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the Backend"
-msgstr ""
+msgstr "பின்நிலையை மாற்றாதே"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: config/configurepageadvanced.ui:23
 #, kde-format
 msgid "Active backend:"
-msgstr ""
+msgstr "செயலிலுள்ள பின்நிலை"
 
 #. i18n: ectx: property (text), widget (QLabel)
 #: config/configurepageadvanced.ui:36
 #, kde-format
 msgid "Preferred unit:"
-msgstr ""
+msgstr "முதன்மையான அலகு:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:47
@@ -379,43 +381,43 @@ msgstr ""
 #: config/configurepagegeneral.ui:88
 #, kde-format
 msgid "Logging"
-msgstr ""
+msgstr "பதிவிடுவது"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:94
 #, kde-format
 msgid "Hide messa&ges below:"
-msgstr ""
+msgstr "இதைவிட முக்கயமானவற்றை மட்டும் காட்டு:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:105
 #, kde-format
 msgid "Debug"
-msgstr ""
+msgstr "பிழைநீக்கம்"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:110
 #, kde-format
 msgid "Information"
-msgstr ""
+msgstr "தகவல்"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:115
 #, kde-format
 msgid "Warning"
-msgstr ""
+msgstr "எச்சரிக்கை"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:120
 #, kde-format
 msgid "Error"
-msgstr ""
+msgstr "சிக்கல்"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: config/configurepagegeneral.ui:137
 #, kde-format
 msgid "File Systems"
-msgstr ""
+msgstr "கோப்பு முறைமைகள்"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
@@ -433,7 +435,7 @@ msgstr ""
 #: config/configurepagegeneral.ui:171
 #, kde-format
 msgid "Overwrite with:"
-msgstr ""
+msgstr "இதைக்கொண்டு மேலெழுது:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
 #: config/configurepagegeneral.ui:178
@@ -451,19 +453,19 @@ msgstr ""
 #: gui/applyprogressdetailswidgetbase.ui:42
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "சேமி"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonBrowser)
 #: gui/applyprogressdetailswidgetbase.ui:49
 #, kde-format
 msgid "Open in External Browser"
-msgstr ""
+msgstr "வெளி உலாவியில் திற"
 
 #: gui/applyprogressdialog.cpp:83 gui/applyprogressdialog.cpp:172
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
-msgstr ""
+msgstr "விவரங்கள்"
 
 #: gui/applyprogressdialog.cpp:125
 #, kde-kuit-format
@@ -475,19 +477,19 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
-msgstr ""
+msgstr "உறுதியாக ரத்து செய்ய விரும்புகிறீர்களா?"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
-msgstr ""
+msgstr "ஓடிக்கொண்டிருக்கும் செயல்பாடுகளை ரத்து செய்வது"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Yes, Cancel Operations"
-msgstr ""
+msgstr "ஆம், செயல்பாடுகளை ரத்து செய்"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -505,7 +507,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
-msgstr ""
+msgstr "செயல்பாடுகள் ரத்து செய்யப்பட்டன"
 
 #: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
@@ -523,7 +525,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Total Time: %1"
-msgstr ""
+msgstr "மொத்த நேரம்: %1"
 
 #: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1047
 #: gui/mainwindow.cpp:1209 gui/smartdialog.cpp:227
@@ -550,7 +552,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."
-msgstr ""
+msgstr "உலாவியைத் திறக்க முடியவில்லை."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
 #: gui/applyprogressdialogwidgetbase.ui:41
@@ -562,19 +564,19 @@ msgstr ""
 #: gui/applyprogressdialogwidgetbase.ui:46
 #, kde-format
 msgid "Time Elapsed"
-msgstr ""
+msgstr "கழிந்த நேரம்"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTime)
 #: gui/applyprogressdialogwidgetbase.ui:72
 #, kde-format
 msgid "Total Time: 00:00:00"
-msgstr ""
+msgstr "மொத்த நேரம்: 00:00:00"
 
 #. i18n: ectx: property (format), widget (QProgressBar, m_ProgressSub)
 #: gui/applyprogressdialogwidgetbase.ui:89
 #, no-c-format, kde-format
 msgid "Operation: %p%"
-msgstr ""
+msgstr "செயல்: %p%"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
 #: gui/applyprogressdialogwidgetbase.ui:99
