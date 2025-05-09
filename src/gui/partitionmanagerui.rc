@@ -73,14 +73,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <Action name="propertiesPartition"/>
         </Menu>
         <Menu name="settings">
-            <Menu name="panels" append="show_toolbar_merge">
+            <Menu name="panels" append="show_merge">
                 <text context="@title:menu">Panels Shown</text>
                 <Action name="toggleDockDevices"/>
                 <Action name="toggleDockOperations"/>
                 <Action name="toggleDockInformation"/>
                 <Action name="toggleDockLog"/>
             </Menu>
-            <separator/>
         </Menu>
         <Menu name="help">
             <Action name="aboutKPMcore" append="about_merge"/>
