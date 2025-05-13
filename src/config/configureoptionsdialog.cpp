@@ -48,7 +48,7 @@ ConfigureOptionsDialog::ConfigureOptionsDialog(QWidget* parent, const OperationS
 
     addPage(&advancedPageWidget(), xi18nc("@title:tab advanced application settings", "Advanced"), QStringLiteral("preferences-other"), i18n("Advanced Settings"));
 
-    connect(&advancedPageWidget().comboBackend(), &QComboBox::activated, this, &ConfigureOptionsDialog::onComboDefaultFileSystemActivated);
+    connect(&advancedPageWidget().comboBackend(), &QComboBox::activated, this, &ConfigureOptionsDialog::onComboBackendActivated);
 
     KConfigGroup kcg(KSharedConfig::openConfig(), QStringLiteral("configureOptionsDialogs"));
     restoreGeometry(kcg.readEntry<QByteArray>("Geometry", QByteArray()));
