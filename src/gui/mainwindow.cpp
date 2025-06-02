@@ -643,8 +643,14 @@ void MainWindow::enableActions()
 
     actionCollection()->action(QStringLiteral("copyPartition"))
             ->setEnabled(CopyOperation::canCopy(part));
-    actionCollection()->action(QStringLiteral("deletePartition"))
-            ->setEnabled(!readOnly && DeleteOperation::canDelete(part));
+
+    QAction *deletePartition = actionCollection()->action(QStringLiteral("deletePartition"));
+    deletePartition->setEnabled(!readOnly && DeleteOperation::canDelete(part));
+    if(!readOnly && DeleteOperation::canDelete(part))
+        deletePartition->setToolTip(xi18nc("@info:tooltip", "Delete partition"));
+    else
+        deletePartition->setToolTip(xi18nc("@info:tooltip", "Cannot delete partition. Please make sure it is unmounted or locked before proceeding."));
+
     actionCollection()->action(QStringLiteral("shredPartition"))
             ->setEnabled(!readOnly && DeleteOperation::canDelete(part));
     actionCollection()->action(QStringLiteral("pastePartition"))
