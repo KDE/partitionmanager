@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-28 00:44+0000\n"
+"POT-Creation-Date: 2025-06-03 00:45+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -530,8 +530,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "कुलसमयः %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1047
-#: gui/mainwindow.cpp:1209 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1053
+#: gui/mainwindow.cpp:1215 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1570,7 +1570,7 @@ msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "लुप्"
 
-#: gui/mainwindow.cpp:395
+#: gui/mainwindow.cpp:395 gui/mainwindow.cpp:650
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
@@ -1864,7 +1864,15 @@ msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "KPMcore संवादस्य विषये दर्शयतु ।"
 
-#: gui/mainwindow.cpp:715
+#: gui/mainwindow.cpp:652
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid ""
+"Cannot delete partition. Please make sure it is unmounted or locked before "
+"proceeding."
+msgstr ""
+
+#: gui/mainwindow.cpp:721
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
@@ -1872,25 +1880,25 @@ msgid_plural "%1 pending operations"
 msgstr[0] "एकं लम्बितम् ऑपरेशनम्"
 msgstr[1] "%1 लम्बितसञ्चालनम्"
 
-#: gui/mainwindow.cpp:810
+#: gui/mainwindow.cpp:816
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "पृष्ठभागस्य प्लगिन् इत्यस्य उपयोगः: %1 (%2)"
 
-#: gui/mainwindow.cpp:814
+#: gui/mainwindow.cpp:820
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "स्कैनिङ्ग उपकरणानि..."
 
-#: gui/mainwindow.cpp:852
+#: gui/mainwindow.cpp:858
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "स्कैन् समाप्तम्।"
 
-#: gui/mainwindow.cpp:916
+#: gui/mainwindow.cpp:922
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1900,19 +1908,19 @@ msgstr ""
 "<para>किं भवान् वास्तवमेव उपकरणानि पुनः स्कैन् कर्तुम् इच्छति?</para><para><warning>एतेन "
 "लम्बितानां कार्याणां सूची अपि स्वच्छा भविष्यति ।</warning></para>"
 
-#: gui/mainwindow.cpp:918
+#: gui/mainwindow.cpp:924
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "वास्तवमेव उपकरणानि पुनः स्कैन कुर्वन्तु?"
 
-#: gui/mainwindow.cpp:919
+#: gui/mainwindow.cpp:925
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "उपकरणानि पुनः स्कैन कुर्वन्तु"
 
-#: gui/mainwindow.cpp:945
+#: gui/mainwindow.cpp:951
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1922,74 +1930,74 @@ msgstr ""
 "<para>किं भवान् अधोलिखितानि लम्बितक्रियाणि प्रयोक्तुं इच्छति वा?</"
 "para><para><warning>एतेन भवतः डिस्काः स्थायिरूपेण परिवर्तयिष्यन्ति ।</warning></para>"
 
-#: gui/mainwindow.cpp:947
+#: gui/mainwindow.cpp:953
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "लम्बितसञ्चालनस्य आवेदनं कुर्वन्तु?"
 
-#: gui/mainwindow.cpp:948
+#: gui/mainwindow.cpp:954
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "लम्बितसञ्चालनम् आवेदनं कुर्वन्तु"
 
-#: gui/mainwindow.cpp:950
+#: gui/mainwindow.cpp:956
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "संचालनं प्रयोजयन्..."
 
-#: gui/mainwindow.cpp:975
+#: gui/mainwindow.cpp:981
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "संचालनं पूर्ववत् करणम्: %1"
 
-#: gui/mainwindow.cpp:991
+#: gui/mainwindow.cpp:997
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "किं भवन्तः वास्तवमेव लम्बितानां कार्याणां सूचीं स्वच्छं कर्तुम् इच्छन्ति?"
 
-#: gui/mainwindow.cpp:992
+#: gui/mainwindow.cpp:998
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "स्पष्टं लम्बितसञ्चालनम्?"
 
-#: gui/mainwindow.cpp:993
+#: gui/mainwindow.cpp:999
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "स्पष्टं लम्बितसञ्चालनम्"
 
-#: gui/mainwindow.cpp:995
+#: gui/mainwindow.cpp:1001
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "लम्बितसञ्चालनस्य सूचीं स्वच्छं करणम्।"
 
-#: gui/mainwindow.cpp:1037
+#: gui/mainwindow.cpp:1043
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
 msgstr "आयातार्थं निवेशसञ्चिका <filename>%1</filename> उद्घाटयितुं न शक्यते"
 
-#: gui/mainwindow.cpp:1037 gui/mainwindow.cpp:1047 gui/mainwindow.cpp:1055
-#: gui/mainwindow.cpp:1061
+#: gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1053 gui/mainwindow.cpp:1061
+#: gui/mainwindow.cpp:1067
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "विभाजनसारणी आयाते त्रुटिः"
 
-#: gui/mainwindow.cpp:1055
+#: gui/mainwindow.cpp:1061
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
 msgstr "आयातार्थं निवेशसञ्चिका <filename>%1</filename> उद्घाटयितुं न शक्तम्: %2"
 
-#: gui/mainwindow.cpp:1061
+#: gui/mainwindow.cpp:1067
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1999,7 +2007,7 @@ msgstr ""
 "<filename>%2</filename> इत्यस्मात् आयातं कर्तुं प्रयतमाने अस्थायीसञ्चिकां <filename>%1</"
 "filename> उद्घाटयितुं न शक्यते ।"
 
-#: gui/mainwindow.cpp:1091
+#: gui/mainwindow.cpp:1097
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2007,58 +2015,58 @@ msgid ""
 "table."
 msgstr "आयातसञ्चिकायां <filename>%1</filename> वैधं विभाजनसारणीं नास्ति ।"
 
-#: gui/mainwindow.cpp:1091 gui/mainwindow.cpp:1101 gui/mainwindow.cpp:1108
-#: gui/mainwindow.cpp:1113 gui/mainwindow.cpp:1123 gui/mainwindow.cpp:1136
-#: gui/mainwindow.cpp:1141 gui/mainwindow.cpp:1160 gui/mainwindow.cpp:1165
-#: gui/mainwindow.cpp:1170 gui/mainwindow.cpp:1177 gui/mainwindow.cpp:1453
+#: gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1107 gui/mainwindow.cpp:1114
+#: gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1129 gui/mainwindow.cpp:1142
+#: gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1166 gui/mainwindow.cpp:1171
+#: gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1183 gui/mainwindow.cpp:1459
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "विभाजनसारणी आयातन्ते समये त्रुटिः"
 
-#: gui/mainwindow.cpp:1101
+#: gui/mainwindow.cpp:1107
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr "आयातसञ्चिकायां (पङ्क्ति %1) एकादशाधिकं विभाजनसारणीप्रकारं प्राप्तम् ।"
 
-#: gui/mainwindow.cpp:1108
+#: gui/mainwindow.cpp:1114
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "विभाजनसारणीप्रकारः \"%1\" अज्ञातः (पङ्क्ति %2) ।"
 
-#: gui/mainwindow.cpp:1113
+#: gui/mainwindow.cpp:1119
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr "विभाजनसारणीप्रकारः \"%1\" आयाताय समर्थितः नास्ति (पङ्क्तिः %2) ।"
 
-#: gui/mainwindow.cpp:1123
+#: gui/mainwindow.cpp:1129
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr "विभाजनं प्राप्तम् परन्तु विभाजनसारणीप्रकारः नास्ति (पङ्क्तिः %1) ।"
 
-#: gui/mainwindow.cpp:1136
+#: gui/mainwindow.cpp:1142
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "विभाजनं %1 यन्त्रस्य सीमातः बहिः स्यात् (पङ्क्ति %2) ।"
 
-#: gui/mainwindow.cpp:1141
+#: gui/mainwindow.cpp:1147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "%1 विभाजनस्य आरम्भक्षेत्रस्य (पङ्क्तिः %2) समाप्तिः अस्ति ।"
 
-#: gui/mainwindow.cpp:1160
+#: gui/mainwindow.cpp:1166
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "विभाजनस्य %2 (पङ्क्तिः %3) कृते अज्ञातविभाजनभूमिका \"%1\" ।"
 
-#: gui/mainwindow.cpp:1165
+#: gui/mainwindow.cpp:1171
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
@@ -2066,7 +2074,7 @@ msgid ""
 msgstr ""
 "विभाजनस्य %1 (पङ्क्तिः %2) कृते कोऽपि मातापितृविभाजनम् अथवा विभाजनसारणी न प्राप्ता ।"
 
-#: gui/mainwindow.cpp:1170
+#: gui/mainwindow.cpp:1176
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2076,35 +2084,35 @@ msgstr ""
 "विभाजनसारणीप्रकारः \"%1\" विस्तारितानां विभाजनानाम् समर्थनं न करोति, परन्तु एकः "
 "प्राप्तः (पङ्क्तिः %2) ।"
 
-#: gui/mainwindow.cpp:1177
+#: gui/mainwindow.cpp:1183
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr "%2 विभाजनस्य (%3 पङ्क्तिः) कृते \"%1\" सञ्चिकातन्त्रं निर्मातुं न शक्तम् ।"
 
-#: gui/mainwindow.cpp:1192
+#: gui/mainwindow.cpp:1198
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr "आयातसञ्चिकातः %1 पङ्क्तिं विश्लेषणं कर्तुं न शक्तम् । तस्य अवहेलना ।"
 
-#: gui/mainwindow.cpp:1209
+#: gui/mainwindow.cpp:1215
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "विभाजनसारणी निर्यातयन् त्रुटिः"
 
-#: gui/mainwindow.cpp:1374 gui/mainwindow.cpp:1380 gui/mainwindow.cpp:1416
+#: gui/mainwindow.cpp:1380 gui/mainwindow.cpp:1386 gui/mainwindow.cpp:1422
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1380 gui/mainwindow.cpp:1391
+#: gui/mainwindow.cpp:1386 gui/mainwindow.cpp:1397
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td> %2</td><td> %3</td><td><link> %4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1428
+#: gui/mainwindow.cpp:1434
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2129,25 +2137,25 @@ msgstr ""
 "समर्थनसाधनं न संस्थापितम् तावत् भवन्तः तान् परिवर्तयितुं न शक्नुवन्ति ।</para><para> भवता "
 "एतैः समर्थनसाधनैः सह संकुलं भवतः वितरणस्य संकुलप्रबन्धके अन्वेष्टव्यम् ।</para>"
 
-#: gui/mainwindow.cpp:1441
+#: gui/mainwindow.cpp:1447
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "सञ्चिकातन्त्रसमर्थनसङ्कुलाः अनुपलब्धाः"
 
-#: gui/mainwindow.cpp:1452
+#: gui/mainwindow.cpp:1458
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "अपरिचितं यन्त्रं \"%1\" । "
 
-#: gui/mainwindow.cpp:1461
+#: gui/mainwindow.cpp:1467
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "अपरिचितं विभाजनं \"%1\" । "
 
-#: gui/mainwindow.cpp:1462
+#: gui/mainwindow.cpp:1468
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
