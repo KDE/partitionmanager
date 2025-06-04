@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-03 00:45+0000\n"
-"PO-Revision-Date: 2025-02-28 09:33+0200\n"
+"PO-Revision-Date: 2025-06-03 20:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1887,6 +1887,8 @@ msgid ""
 "Cannot delete partition. Please make sure it is unmounted or locked before "
 "proceeding."
 msgstr ""
+"Не вдалося вилучити розділ. Будь ласка, переконайтеся, що його демонтовано і "
+"заблоковано, перш ніж виконувати подальші дії."
 
 #: gui/mainwindow.cpp:721
 #, kde-kuit-format
