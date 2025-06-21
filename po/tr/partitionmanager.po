@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-03 00:45+0000\n"
-"PO-Revision-Date: 2025-06-03 13:32+0300\n"
+"PO-Revision-Date: 2025-06-21 00:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -81,7 +81,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Change Backend?"
-msgstr "Arka Uç Gerçekten Değiştirilsin mi?"
+msgstr "Arka Ucu Gerçekten Değiştir?"
 
 #: config/configureoptionsdialog.cpp:140
 #, kde-kuit-format
@@ -489,7 +489,7 @@ msgstr "İptal etmeyi gerçekten istiyor musunuz?"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
-msgstr "Süren İşlemleri İptal Et"
+msgstr "Süren İşlemleri İptal Et?"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -547,7 +547,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save Report."
-msgstr "Rapor Kaydedilemedi."
+msgstr "Rapor Kaydedilemedi"
 
 #: gui/applyprogressdialog.cpp:447
 #, kde-kuit-format
@@ -559,7 +559,7 @@ msgstr "Yazmak için <filename>%1</filename> geçici dosyası oluşturulamadı."
 #, kde-format
 msgctxt "@title:window"
 msgid "Could Not Launch Browser."
-msgstr "Tarayıcı Başlatılamadı."
+msgstr "Tarayıcı Başlatılamadı"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
 #: gui/applyprogressdialogwidgetbase.ui:41
@@ -601,8 +601,7 @@ msgstr "Toplam: %%p"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a New Partition Table on <filename>%1</filename>"
-msgstr ""
-"<filename>%1</filename> üzerinde yeni bir bölüntü tablosu oluşturulamadı"
+msgstr "<filename>%1</filename> Üzerinde Yeni Bölüntü Tablosu"
 
 #: gui/createpartitiontabledialog.cpp:34
 #, kde-kuit-format
@@ -774,7 +773,7 @@ msgstr "Bölüntü tablosu:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Edit additional mount options"
-msgstr "Ek bağlama noktalarını düzenle"
+msgstr "Ek Bağlama Noktalarını Düzenle"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
 #: gui/editmountoptionsdialogwidgetbase.ui:19
@@ -798,7 +797,7 @@ msgstr "Seçenek1, Seçenek2"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Edit mount point for <filename>%1</filename>"
-msgstr "<filename>%1</filename> için bağlama noktasını düzenle"
+msgstr "<filename>%1</filename> Bağlama Noktasını Düzenle"
 
 #: gui/editmountpointdialog.cpp:62
 #, kde-kuit-format
@@ -819,7 +818,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really save changes?"
-msgstr "Değişiklikler kaydedilsin mi?"
+msgstr "Değişiklikleri Kaydet?"
 
 #: gui/editmountpointdialog.cpp:65
 #, kde-kuit-format
@@ -1289,7 +1288,7 @@ msgstr "Diziliş boyutu:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Insert a partition"
-msgstr "Bir bölüntü ekle"
+msgstr "Bölüntü Ekle"
 
 #: gui/listphysicalvolumes.cpp:39
 #, kde-kuit-format
@@ -1327,7 +1326,7 @@ msgstr[1] ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
-msgstr "Bekleyen İşlemleri İptal Edip Uygulamadan Çıkmak İstiyor musunuz?"
+msgstr "İşlemleri At ve Çık?"
 
 #: gui/mainwindow.cpp:238
 #, kde-kuit-format
@@ -1925,7 +1924,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
-msgstr "Aygıtlar Gerçekten Yeniden Taransın mı?"
+msgstr "Aygıtları Gerçekten Yeniden Tara?"
 
 #: gui/mainwindow.cpp:925
 #, kde-kuit-format
@@ -1948,7 +1947,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
-msgstr "Bekleyen İşlemler Uygulansın mı?"
+msgstr "Bekleyen İşlemleri Uygula?"
 
 #: gui/mainwindow.cpp:954
 #, kde-kuit-format
@@ -1978,7 +1977,7 @@ msgstr "Bekleyen işlemler listesini gerçekten temizlemek istiyor musunuz?"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
-msgstr "Bekleyen İşlemler Temizlensin mi?"
+msgstr "Bekleyen İşlemleri Temizle?"
 
 #: gui/mainwindow.cpp:999
 #, kde-kuit-format
@@ -2160,7 +2159,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
-msgstr "Dosya Sistemi Desteği için Eksik Paket Var"
+msgstr "Dosya Sistemi Destek Paketi Eksik"
 
 #: gui/mainwindow.cpp:1458
 #, kde-kuit-format
@@ -2178,7 +2177,7 @@ msgstr "Tanımlanamayan bölüntü “%1” "
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr "BÖlüntü açılırken hata"
+msgstr "Bölüntü Açılırken Hata"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -2213,7 +2212,7 @@ msgstr "Günlük Çıktısı"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a new partition"
-msgstr "Yeni bir bölüntü oluştur"
+msgstr "Yeni Bölüntü Oluştur"
 
 #. i18n: ectx: ToolBar (partitionToolBar)
 #: gui/partitionmanagerui.rc:12
@@ -2275,7 +2274,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
-msgstr "Dosya Sistemi Bağlanamadı."
+msgstr "Dosya Sistemi Bağlanamadı"
 
 #: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
@@ -2290,7 +2289,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
-msgstr "Dosya Sistemi Bağlantısı Kesilemedi."
+msgstr "Dosya Sistemi Bağlantısı Kesilemedi"
 
 #: gui/partitionmanagerwidget.cpp:452
 #, kde-kuit-format
@@ -2306,7 +2305,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
-msgstr "Şifrelenmiş Dosya Sisteminin Kilidi Açılamadı."
+msgstr "Şifrelenmiş Dosya Sisteminin Kilidi Açılamadı"
 
 #: gui/partitionmanagerwidget.cpp:463
 #, kde-kuit-format
@@ -2322,7 +2321,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
-msgstr "Şifrelenmiş Dosya Sistemi Kilitlenemedi."
+msgstr "Şifrelenmiş Dosya Sistemi Kilitlenemedi"
 
 #: gui/partitionmanagerwidget.cpp:498
 #, kde-kuit-format
@@ -2352,7 +2351,7 @@ msgstr[1] ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
-msgstr "Pek Fazla Birincil Bölüntü."
+msgstr "Pek Fazla Birincil Bölüntü"
 
 #: gui/partitionmanagerwidget.cpp:565
 #, kde-kuit-format
@@ -2372,7 +2371,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
-msgstr "Bölüntü Silinemiyor."
+msgstr "Bölüntü Silinemiyor"
 
 #: gui/partitionmanagerwidget.cpp:577
 #, kde-kuit-format
@@ -2389,7 +2388,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
-msgstr "Panodaki Bölüntü Gerçekten Silinsin mi?"
+msgstr "Panodaki Bölüntüyü Sil?"
 
 #: gui/partitionmanagerwidget.cpp:580
 #, kde-kuit-format
@@ -2435,7 +2434,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
-msgstr "Var Olan Bölüntünün Üzerine Yazılsın mı?"
+msgstr "Var Olan Bölüntünün Üzerine Yaz?"
 
 #: gui/partitionmanagerwidget.cpp:733
 #, kde-kuit-format
@@ -2479,7 +2478,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
-msgstr "Hedef Bölüntü Oluşturulamıyor."
+msgstr "Hedef Bölüntü Oluşturulamıyor"
 
 #: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
@@ -2495,7 +2494,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
-msgstr "Dosya Sistemini Geri Yüklemek İçin Yeterli Disk Alanı Yok."
+msgstr "Yetersiz Disk Alanı"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:79
@@ -2585,7 +2584,7 @@ msgstr "Bayraklar"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
-msgstr "Bölüntü özellikleri: <filename>%1</filename>"
+msgstr "Bölüntü Özellikleri: <filename>%1</filename>"
 
 #: gui/partpropsdialog.cpp:119
 #, kde-kuit-format
@@ -2851,7 +2850,7 @@ msgstr "Bu aygıt üzerinde geçerli bir bölüntü tablosu bulunamadı."
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize/move partition: <filename>%1</filename>"
-msgstr "Bölüntüyü yeniden boyutlandır/taşı: <filename>%1</filename>"
+msgstr "Bölüntüyü Y. Boyutlandır/Taşı: <filename>%1</filename>"
 
 #: gui/resizedialog.cpp:92
 #, kde-format
@@ -2869,13 +2868,13 @@ msgstr "Geçersiz parola. "
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize Volume Group"
-msgstr "Disk Bölümü Grubu’nu Boyutlandır"
+msgstr "Disk Bölümü Grubunu Boyutlandır"
 
 #: gui/scanprogressdialog.cpp:16
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "Aygıtlar Taranıyor…"
+msgstr "Aygıtlar Taranıyor"
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
@@ -3077,7 +3076,7 @@ msgstr "LUKS2’yi etkinleştir"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "SMART Properties: <filename>%1</filename>"
-msgstr "SMART özellikleri: <filename>%1</filename>"
+msgstr "SMART Özellikleri: <filename>%1</filename>"
 
 #: gui/smartdialog.cpp:58
 #, kde-kuit-format
@@ -3089,7 +3088,7 @@ msgstr "SMART Raporunu Kaydet"
 #, kde-format, kde-kuit-format
 msgctxt "@label SMART number of bad sectors"
 msgid "none"
-msgstr "hiçbiri"
+msgstr "yok"
 
 #: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
 #, kde-kuit-format
@@ -3131,7 +3130,7 @@ msgstr "Seri numarası:"
 #: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
 #, kde-format
 msgid "Firmware revision:"
-msgstr "Donanım yazılımı revizyonu:"
+msgstr "Donanım yazılımı:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
 #: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
@@ -3161,7 +3160,7 @@ msgstr "Güç döngüleri:"
 #: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
 #, kde-format
 msgid "Self tests:"
-msgstr "Kendi kendine yapılan testler:"
+msgstr "Öz sınamalar:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
 #: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
@@ -3173,7 +3172,7 @@ msgstr "Tüm değerlendirme:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save SMART Report."
-msgstr "SMART Raporu kaydedilemedi."
+msgstr "SMART Raporu Kaydedilemedi"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:294
@@ -3255,7 +3254,7 @@ msgstr "Günlük Dosyası Kaydedilemedi"
 msgctxt ""
 "@title:column Severity of a log entry / log level. Text must be very short."
 msgid "Sev."
-msgstr "Öne."
+msgstr "Önc."
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:62
