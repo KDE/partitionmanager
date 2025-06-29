@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-28 00:44+0000\n"
-"PO-Revision-Date: 2025-03-02 10:39+0400\n"
+"PO-Revision-Date: 2025-06-28 17:06+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1296,8 +1296,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
-"يتطلب مدير الأقسام امتيازات من أجل العمل. يُرجى الإنعاش والمصادقة عند مطالبتك "
-"بذلك."
+"يتطلب مدير الأقسام امتيازات من أجل العمل. يُرجى تحديث الأجهزة والمصادقة عند "
+"مطالبتك بذلك."
 
 #: gui/mainwindow.cpp:235
 #, kde-kuit-format
@@ -1800,13 +1800,13 @@ msgstr "اظهر معلومات حول أنظمة الملفات المدعوم�
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
-msgstr "أنعش الأجهزة"
+msgstr "حدّث الأجهزة"
 
 #: gui/mainwindow.cpp:499
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
-msgstr "أنعش كل الأجهزة"
+msgstr "حدّث كل الأجهزة"
 
 #: gui/mainwindow.cpp:500
 #, kde-kuit-format
