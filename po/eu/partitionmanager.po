@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-03 00:45+0000\n"
-"PO-Revision-Date: 2025-06-07 19:53+0200\n"
+"PO-Revision-Date: 2025-07-23 14:11+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -475,7 +475,7 @@ msgstr "&Zehaztasunak"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
-msgstr "Eraikitzen..."
+msgstr "Eraikitzen…"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -499,7 +499,7 @@ msgstr "Bai, utzi eragiketak"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
-msgstr "Eragiketak amaitu zain..."
+msgstr "Eragiketak amaitu zain…"
 
 #: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
@@ -742,7 +742,7 @@ msgstr "Sektoreen guztizkoa:"
 #: gui/devicepropswidgetbase.ui:83 gui/editmountpointdialogwidgetbase.ui:102
 #, kde-format
 msgid "More..."
-msgstr "Gehiago..."
+msgstr "Gehiago…"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/devicepropswidgetbase.ui:92
@@ -909,7 +909,7 @@ msgstr "UU&ID"
 #: gui/editmountpointdialogwidgetbase.ui:213
 #, kde-format
 msgid "Select..."
-msgstr "Hautatu..."
+msgstr "Hautatu…"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
 #: gui/editmountpointdialogwidgetbase.ui:220
@@ -1900,7 +1900,7 @@ msgstr "Bizkarraldeko plugina erabiltzen: %1 (%2)"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
-msgstr "Gailuak aztertzen..."
+msgstr "Gailuak aztertzen…"
 
 #: gui/mainwindow.cpp:858
 #, kde-kuit-format
@@ -1957,7 +1957,7 @@ msgstr "Ezarri egiteko dauden eragiketak"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
-msgstr "Eragiketak ezartzen..."
+msgstr "Eragiketak ezartzen…"
 
 #: gui/mainwindow.cpp:981
 #, kde-kuit-format
@@ -2885,7 +2885,7 @@ msgstr "Bolumen-taldearen handiera aldatu"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "Gailuak aztertzen..."
+msgstr "Gailuak aztertzen…"
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
@@ -2897,7 +2897,7 @@ msgstr "%%p"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "Aztertzen..."
+msgstr "Aztertzen…"
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
