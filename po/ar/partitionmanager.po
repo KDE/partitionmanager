@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-03 00:45+0000\n"
-"PO-Revision-Date: 2025-06-28 17:06+0400\n"
+"PO-Revision-Date: 2025-08-03 15:40+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1686,13 +1686,13 @@ msgstr "فكّ القفل"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
-msgstr "افتح أو اقفل القسم المشفر"
+msgstr "افتح أو اقفل القسم المعمى"
 
 #: gui/mainwindow.cpp:446
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
-msgstr "افتح أو اقفل القسم المشفر."
+msgstr "افتح أو اقفل القسم المعمى."
 
 #: gui/mainwindow.cpp:451
 #, kde-kuit-format
@@ -2249,7 +2249,7 @@ msgstr "اللوحات المعروضة"
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
-msgstr "%1 [مشفّر]"
+msgstr "%1 [معمى]"
 
 #: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
@@ -2284,13 +2284,13 @@ msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "unlocked."
 msgstr ""
-"تعذّرت إزالة قفل نظام الملفات المشفرة على القسم <filename>%1</filename>."
+"تعذّرت إزالة قفل نظام الملفات المعمىة على القسم <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
-msgstr "تعذّر إلغاء قفل نظام الملفات المشفرة."
+msgstr "تعذّر إلغاء قفل نظام الملفات المعمىة."
 
 #: gui/partitionmanagerwidget.cpp:463
 #, kde-kuit-format
@@ -2298,13 +2298,13 @@ msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "locked."
-msgstr "تعذّر قفل نظام الملفات المشفرة على القسم <filename>%1</filename>."
+msgstr "تعذّر قفل نظام الملفات المعمىة على القسم <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:469
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
-msgstr "تعذّر قفل نظام الملفات المشفرة."
+msgstr "تعذّر قفل نظام الملفات المعمىة."
 
 #: gui/partitionmanagerwidget.cpp:498
 #, kde-kuit-format
@@ -2422,7 +2422,7 @@ msgstr ""
 "<para><warning>أنت على وشك خسارة كل البيانات على القسم <filename>%1</"
 "filename>.</warning></para><para>الكتابة فوق قسم واحد بآخر (أو بملف صورة) "
 "يدمّر كل البيانات في القسم الهدف.</para><para>إن استمررت الآن وطبّقت العملية "
-"الناتجة في النافذةالرئيسية، كل البيانات الموجودة حاليًّا في <filename>%1</"
+"الناتجة في النافذةالرئيسة، كل البيانات الموجودة حاليًّا في <filename>%1</"
 "filename> سيُكتب فوقها بحيث لا يمكن استرجاعها.</para>"
 
 #: gui/partitionmanagerwidget.cpp:732
@@ -2639,8 +2639,8 @@ msgid ""
 msgstr ""
 "<para><warning>أنت على وشك خسارة كل البيانات على القسم <filename>%1</"
 "filename>.</warning></para><para>تغيير نظام الملفات في قسم موجود فعلًا في قرص "
-"سيمسح كل محتوياته. إن استمررت الآن وطبّقت العملية الناتجة في النافذة "
-"الرئيسية، كل البيانات في <filename>%1</filename> لا يمكن استرجاعها.</para>"
+"سيمسح كل محتوياته. إن استمررت الآن وطبّقت العملية الناتجة في النافذة الرئيسة، "
+"كل البيانات في <filename>%1</filename> لا يمكن استرجاعها.</para>"
 
 #: gui/partpropsdialog.cpp:372
 #, kde-kuit-format
@@ -2672,7 +2672,7 @@ msgid ""
 msgstr ""
 "<para><warning>أنت على وشك خسارة كل البيانات على القسم <filename>%1</"
 "filename>.</warning></para><para>إعادة إنشاء نظام الملفات سيمسح كل محتوياته. "
-"إن استمررت الآن وطبّقت العملية الناتجة في النافذة الرئيسية، كل البيانات في "
+"إن استمررت الآن وطبّقت العملية الناتجة في النافذة الرئيسة، كل البيانات في "
 "<filename>%1</filename> لا يمكن استرجاعها.</para>"
 
 #: gui/partpropsdialog.cpp:395
