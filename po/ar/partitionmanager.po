@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-03 00:45+0000\n"
-"PO-Revision-Date: 2025-08-03 15:40+0400\n"
+"PO-Revision-Date: 2025-08-04 15:13+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -366,7 +366,7 @@ msgstr "محاذاة القسم"
 #: config/configurepagegeneral.ui:34
 #, kde-format
 msgid "Align partitions per default"
-msgstr "حاذِ الأقسام افتراضيًّا"
+msgstr "حاذِ الأقسام مبدئيًا"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
@@ -426,7 +426,7 @@ msgstr "أنظمة الملفات"
 #: config/configurepagegeneral.ui:143
 #, kde-format
 msgid "&Default file system:"
-msgstr "نظام الملفات الا&فتراضي:"
+msgstr "&نظام الملفّات المبدئي:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -848,7 +848,7 @@ msgstr "ترد&د التفريغ:"
 #: gui/editmountpointdialogwidgetbase.ui:75
 #, kde-format
 msgid "No automatic mount"
-msgstr "لا ضم تلقائي"
+msgstr "لا ضم آليّ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
 #: gui/editmountpointdialogwidgetbase.ui:95
@@ -3060,7 +3060,7 @@ msgstr ""
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr "فعّل LUKS2"
+msgstr "مكّن LUKS2"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
@@ -3459,7 +3459,7 @@ msgstr "محاذاة قطاع القسم"
 #, kde-format
 msgctxt "@label"
 msgid "Align partitions per default"
-msgstr "حاذِ الأقسام افتراضيًّا"
+msgstr "حاذِ الأقسام مبدئيًا"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:61
@@ -3497,7 +3497,7 @@ msgid ""
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
 "<para>تعذّر تحميل ملحقة التتبّع الخلفي المضبوطة \"%1\".</para><para>يحمّل ملحقة "
-"التتبّع الخلفي الافتراضية \"%2\" بدلًا من ذلك.</para>"
+"التتبّع الخلفي المبدئية \"%2\" بدلًا من ذلك.</para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
 #, kde-kuit-format
@@ -3512,8 +3512,8 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
-"<para>تعذّر تحميل ملحقة التتبّع الخلفي المضبوطة (\"%1\") والافتراضية (\"%2\"). "
-"</para><para>يرجى التحقّق من تثبيتك.</para>"
+"<para>تعذّر تحميل ملحقة التتبّع الخلفي المضبوطة (\"%1\") والمبدئية (\"%2\"). </"
+"para><para>يرجى التحقّق من تثبيتك.</para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
