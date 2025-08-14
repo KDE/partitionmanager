@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-03 00:45+0000\n"
-"PO-Revision-Date: 2025-08-04 15:13+0400\n"
+"PO-Revision-Date: 2025-08-13 19:59+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -616,7 +616,7 @@ msgid ""
 msgstr ""
 "<para>هل تريد حقًّا إنشاء جدول تقسيم MS-Dos على <filename>%1</filename>؟</"
 "para><para>هذا الجهاز لديه أكثر من 2^32 قطاعًا. هذا أقصى ما يمكن لجدول تقسيم "
-"MS-Dos أن يدعمه، لذا لا يمكنك استخدام كامل الجهاز.</para>"
+"MS-Dos أن يتيحه، لذا لا يمكنك استخدام كامل الجهاز.</para>"
 
 #: gui/createpartitiontabledialog.cpp:58
 #, kde-kuit-format
@@ -962,7 +962,7 @@ msgstr "الخيارات:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "File System Support"
-msgstr "دعم نظام الملفات"
+msgstr "إتاحة نظام الملفات"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/filesystemsupportdialogwidgetbase.ui:23
@@ -975,10 +975,9 @@ msgid ""
 "if all required tools are installed. Please see the documentation for "
 "details. "
 msgstr ""
-"يُظهر هذا الجدول أي أنظمة الملفات مدعومة وأي العمليات التي يمكن أدائها "
-"عليها.\n"
-"بعض أنظمة الملفات تحتاج أدوات خارجية تُثبّت لها لتُدعم. لكن ليست كل العمليات "
-"يمكن أدائها على كل أنظمة الملفات، حتى إن ثُبِّتت الأدوات المطلوبة. يرجى قراءة "
+"يُظهر هذا الجدول أي أنظمة الملفات متاحة وأي العمليات التي يمكن أدائها عليها.\n"
+"بعض أنظمة الملفات تحتاج أدوات خارجية تُثبّت لها . لكن ليست كل العمليات يمكن "
+"أدائها على كل أنظمة الملفات، حتى إن ثُبِّتت الأدوات المطلوبة. يرجى قراءة "
 "التوثيق للتفاصيل. "
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
@@ -1057,14 +1056,14 @@ msgstr "استعد"
 #: gui/filesystemsupportdialogwidgetbase.ui:130
 #, kde-format
 msgid "Support Tools"
-msgstr "أدوات الدعم"
+msgstr "أدوات المساندة"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRescan)
 #: gui/filesystemsupportdialogwidgetbase.ui:140
 #, kde-format
 msgctxt "@action:button"
 msgid "Rescan Support"
-msgstr "اكتشف الدعم"
+msgstr "اكتشف المساندة"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
 #: gui/infopane.cpp:47 gui/mainwindowbase.ui:47
@@ -1782,13 +1781,13 @@ msgstr "أنشئ جدول تقسيم جديد LVM كجهاز"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
-msgstr "دعم نظام الملفات"
+msgstr "إتاحة نظام الملفات"
 
 #: gui/mainwindow.cpp:493
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
-msgstr "اعرض معلومات دعم نظام الملفات"
+msgstr "اعرض معلومات مساندة نظام الملفات"
 
 #: gui/mainwindow.cpp:494
 #, kde-kuit-format
@@ -2089,7 +2088,7 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
-"نوع جدول التقسيم \"%1\" لا يدعم الأقسام الممتدة، لكن وُجد واحد (السطر %2)."
+"نوع جدول التقسيم \"%1\" لا يتيح الأقسام الممتدة، لكن وُجد واحد (السطر %2)."
 
 #: gui/mainwindow.cpp:1183
 #, kde-kuit-format
@@ -2134,21 +2133,21 @@ msgid ""
 "modify them.</para><para>You should find packages with these support tools "
 "in your distribution's package manager.</para>"
 msgstr ""
-"<para>لم يُعثر على أدوات دعم لأنظمة الملفات الموجودة حاليًّا على الأقراص الصلبة "
-"على هذا الحاسوب:</para><table style='margin-top:12px'><tr><td style='font-"
-"weight:bold;padding-right:12px;white-space:nowrap;'>القسم</td><td "
-"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>نظام "
+"<para>لم يُعثر على أدوات مساندة لأنظمة الملفات الموجودة حاليًّا على الأقراص "
+"الصلبة على هذا الحاسوب:</para><table style='margin-top:12px'><tr><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>القسم</"
+"td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>نظام "
 "الملفات</td><td style='font-weight:bold;padding-right:12px;white-space:"
-"nowrap;'>أدوات الدعم</td><td style='font-weight:bold;padding-right:12px;"
-"white-space:nowrap;'>عنوان URL</td></tr>%1</table><para>طالما أنّ أدواتالدعم "
-"لأنظمة الملفات هذه غير مثبّتة، لا يمكنك تعديلها.</para><para>عليك البحث عن "
-"الحزم بأدوات الدعم هذه في مدير حزم توزيعتك.</para>"
+"nowrap;'>أدوات المساندة</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>عنوان URL</td></tr>%1</table><para>طالما أنّ أدوات "
+"المساندة لأنظمة الملفات هذه غير مثبّتة، لا يمكنك تعديلها.</para><para>عليك "
+"البحث عن حزم أدوات المساندة هذه في مدير حزم توزيعتك.</para>"
 
 #: gui/mainwindow.cpp:1447
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
-msgstr "حزم ملفات دعم ناقصة"
+msgstr "حزم مساندة نظام الملفات المفقودة"
 
 #: gui/mainwindow.cpp:1458
 #, kde-kuit-format
@@ -2718,7 +2717,7 @@ msgstr "معرف القسم UUID:"
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
-msgstr "نظام الملفات هذا لا يدعم تعيين لصيقة."
+msgstr "نظام الملفات هذا لا يتيح تعيين لصيقة."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
 #: gui/partpropswidgetbase.ui:86
@@ -3390,7 +3389,7 @@ msgstr "Chantara Tith"
 #, kde-format
 msgctxt "@info:credit"
 msgid "LVM support"
-msgstr "دعم LVM"
+msgstr "إتاحة العمل مع LVM"
 
 #: main.cpp:89
 #, kde-kuit-format
@@ -3402,7 +3401,7 @@ msgstr "البالية Rohár"
 #, kde-format
 msgctxt "@info:credit"
 msgid "UDF support"
-msgstr "دعم UDF"
+msgstr "إتاحة العمل مع UDF"
 
 #: main.cpp:90
 #, kde-format
@@ -3425,7 +3424,7 @@ msgstr "Caio Jordão Carvalho"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Improved SMART support"
-msgstr "دعم SMART محسّن"
+msgstr "تحسين العمل مع SMART"
 
 #: main.cpp:101
 #, kde-kuit-format
