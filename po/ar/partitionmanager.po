@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-03 00:45+0000\n"
-"PO-Revision-Date: 2025-08-13 19:59+0400\n"
+"PO-Revision-Date: 2025-08-20 21:36+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1094,13 +1094,13 @@ msgstr "السعة:"
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher name:"
-msgstr "اسم التشفير:"
+msgstr "اسم المُعمِّي:"
 
 #: gui/infopane.cpp:116
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher mode:"
-msgstr "نوع التشفير:"
+msgstr "نوع المُعمِّي:"
 
 #: gui/infopane.cpp:117
 #, kde-format
@@ -1295,7 +1295,7 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
-"يتطلب مدير الأقسام امتيازات من أجل العمل. يُرجى تحديث الأجهزة والمصادقة عند "
+"يتطلب مدير الأقسام امتيازات من أجل العمل. يُرجى تحديث الأجهزة والاستيثاق عند "
 "مطالبتك بذلك."
 
 #: gui/mainwindow.cpp:235
@@ -2984,7 +2984,7 @@ msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
 "provide a passphrase."
 msgstr ""
-"أعدّ التشفير لنظام الملفات هذا باستخدام LUKS. سيطلب منك إدخال عبارة مرور."
+"أعدّ التعمية لنظام الملفات هذا باستخدام LUKS. سيطلب منك إدخال عبارة مرور."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:262
