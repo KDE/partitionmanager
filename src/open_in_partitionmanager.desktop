@@ -3,6 +3,8 @@ X-KDE-Solid-Predicate=[ IS_NOT OpticalDisc AND [ StorageVolume.ignored == false 
 Type=Service
 Actions=open;
 X-KDE-AliasFor=org.kde.partitionmanager
+# Prevent Device Notifier from mounting the device, that makes it harder to edit partitions
+X-KDE-SkipMount=true
 
 [Desktop Action open]
 # %f gives StorageAccess.filePath, %d gives Block.device, %i gives UDI
