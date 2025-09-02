@@ -369,7 +369,7 @@ msgstr "Alineació de la partició"
 #: config/configurepagegeneral.ui:34
 #, kde-format
 msgid "Align partitions per default"
-msgstr "Alineació de les particions per defecte"
+msgstr "Alineació predeterminada de les particions"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
@@ -642,7 +642,7 @@ msgstr "Crea un tipus MS-DOS"
 #: gui/createpartitiontablewidgetbase.ui:24
 #, kde-format
 msgid "Choose the type of partition table you want to create:"
-msgstr "Seleccioneu el tipus de taula de particions que voleu crear:"
+msgstr "Trieu el tipus de taula de particions que voleu crear:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
 #: gui/createpartitiontablewidgetbase.ui:33
@@ -912,7 +912,7 @@ msgstr "UU&ID"
 #: gui/editmountpointdialogwidgetbase.ui:213
 #, kde-format
 msgid "Select..."
-msgstr "Selecciona…"
+msgstr "Tria…"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
 #: gui/editmountpointdialogwidgetbase.ui:220
@@ -2248,7 +2248,7 @@ msgstr "Dispositiu"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Select Current Device"
-msgstr "Seleccioneu el dispositiu actual"
+msgstr "Trieu el dispositiu actual"
 
 #. i18n: ectx: Menu (tools)
 #: gui/partitionmanagerui.rc:49
@@ -2468,8 +2468,8 @@ msgid ""
 "partition so it is as large as the source.</para>"
 msgstr ""
 "<para>La partició seleccionada no és prou gran per a retindre la partició "
-"d'origen o el fitxer de còpia de seguretat.</para><para>Seleccioneu una "
-"altra destinació o amideu esta partició perquè siga tan gran com la partició "
+"d'origen o el fitxer de còpia de seguretat.</para><para>Trieu una altra "
+"destinació o amideu esta partició perquè siga tan gran com la partició "
 "d'origen.</para>"
 
 #: gui/partitionmanagerwidget.cpp:742
@@ -2857,7 +2857,7 @@ msgstr "In&dicadors:"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Please select a device."
-msgstr "Seleccioneu un dispositiu."
+msgstr "Trieu un dispositiu."
 
 #: gui/parttablewidget.cpp:54
 #, kde-kuit-format
@@ -3489,7 +3489,7 @@ msgstr "Alineació dels sectors de la partició"
 #, kde-format
 msgctxt "@label"
 msgid "Align partitions per default"
-msgstr "Alineació de les particions per defecte"
+msgstr "Alineació predeterminada de les particions"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:61
@@ -3544,7 +3544,8 @@ msgid ""
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
 "<para>No s'ha pogut carregar el connector del dorsal, ni el configurat "
-"(«%1») ni el per defecte (%2).</para><para>Comproveu la instal·lació.</para>"
+"(«%1») ni el predeterminat (%2).</para><para>Comproveu la instal·lació.</"
+"para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
