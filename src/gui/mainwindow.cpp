@@ -858,7 +858,7 @@ void MainWindow::on_m_DeviceScanner_finished()
     Log() << xi18nc("@info:progress", "Scan finished.");
     QApplication::restoreOverrideCursor();
 
-    // try to set the seleted device, either from the saved one or just select the
+    // try to set the selected device, either from the saved one or just select the
     // first device
     if (!listDevices().setSelectedDevice(savedSelectedDeviceNode()) && foundDevices)
         listDevices().setSelectedDevice(operationStack().previewDevices()[0]->deviceNode());
