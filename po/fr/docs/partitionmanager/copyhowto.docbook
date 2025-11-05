@@ -56,7 +56,7 @@
 	<para
 >La partition à écraser est <quote
 >sdc5</quote
->. Pour y coller la partition copiée, cliquez dessus et choisissez <xref linkend="menu-partition-paste"/>. Vous constatez que l'opération consistant à copier la partition a été ajoutée à la liste des opérations en attente. Notez qu'il n'y a aucune boîte de dialogue requise pour insérer la partition comme ce serait le cas si vous l'aviez collée dans une zone non allouée : le début et la fin de la partition collée sont déterminés par la partition écrasée. </para>
+>. Pour y coller la partition copiée, cliquez dessus et choisissez <xref linkend="menu-partition-paste"/>. Vous constatez que l'opération consistant à copier la partition a été ajoutée à la liste des opérations en attente. Notez qu'il n'y a aucune boite de dialogue requise pour insérer la partition comme ce serait le cas si vous l'aviez collée dans une zone non allouée : le début et la fin de la partition collée sont déterminés par la partition écrasée. </para>
 
 	<para
 >Choisissez à présent <xref linkend="menu-edit-apply"/>, et la partition sera copiée. Consultez le <link linkend="howto-resizepartition"

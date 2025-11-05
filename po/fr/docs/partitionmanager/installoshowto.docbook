@@ -42,7 +42,7 @@
 	</para>
 	
 	<para
->Après confirmation de la boîte de dialogue d'avertissement, vous pouvez commencer à créer des partitions sur le nouveau périphérique en cliquant sur la partition étendue et en choisissant <xref linkend="menu-partition-new"/>. Commencez par une partition étendue à la fin du périphérique pour qu'elle puisse ultérieurement contenir les partitions <quote
+>Après confirmation de la boite de dialogue d'avertissement, vous pouvez commencer à créer des partitions sur le nouveau périphérique en cliquant sur la partition étendue et en choisissant <xref linkend="menu-partition-new"/>. Commencez par une partition étendue à la fin du périphérique pour qu'elle puisse ultérieurement contenir les partitions <quote
 >/home</quote
 > et d'échange (swap) : </para>
 
@@ -83,7 +83,7 @@
 	<para
 >Cliquez sur <guibutton
 >Ok</guibutton
-> dans la boîte de dialogue pour accepter votre choix. L'opération permettant de créer la nouvelle partition primaire est alors ajoutée à la liste des opérations. </para>
+> dans la boite de dialogue pour accepter votre choix. L'opération permettant de créer la nouvelle partition primaire est alors ajoutée à la liste des opérations. </para>
 	
 	<para
 >À présent, il est temps de copier la partition <quote
@@ -95,7 +95,7 @@
 > et choisissez <xref linkend="menu-partition-copy"/>. </para>
 
 	<para
->Revenez ensuite vers le nouveau périphérique et cliquez sur la partition étendue. Choisissez <xref linkend="menu-partition-paste"/>. La boîte de dialogue suivante apparaît : </para>
+>Revenez ensuite vers le nouveau périphérique et cliquez sur la partition étendue. Choisissez <xref linkend="menu-partition-paste"/>. La boite de dialogue suivante apparait : </para>
 	
 	<para>
 		<screenshot>
@@ -118,7 +118,7 @@
 >, car vous allez créer ultérieurement une partition d'échange (swap) ici. </para>
 
 	<para
->Ainsi, capturez la poignée de redimensionnement droite dans le composant graphique de redimensionnement de la boîte de dialogue et déplacez-la vers la droite jusqu'à ce que l'espace libre après la partition présente une taille plus appropriée pour une partition d'échange : </para>
+>Ainsi, capturez la poignée de redimensionnement droite dans le composant graphique de redimensionnement de la boite de dialogue et déplacez-la vers la droite jusqu'à ce que l'espace libre après la partition présente une taille plus appropriée pour une partition d'échange : </para>
 
 	<para>
 		<screenshot>
@@ -136,7 +136,7 @@
 	<para
 >Tout semble correct. Cliquez sur <guibutton
 >Ok</guibutton
-> pour accepter et fermer la boîte de dialogue. Une nouvelle opération permettant de coller la partition copiée vers la partition étendue présente sur <quote
+> pour accepter et fermer la boite de dialogue. Une nouvelle opération permettant de coller la partition copiée vers la partition étendue présente sur <quote
 >sdc</quote
 > est ajoutée à la liste des opérations. Notez que cette opération définira également la nouvelle taille. </para>
 
@@ -170,7 +170,7 @@
 	</para>
 	
 	<para
->Comme tout va pour le mieux, cliquez sur <xref linkend="menu-edit-apply"/>, confirmez la boîte de dialogue d'avertissement et attendez que les opérations aient toutes été exécutées. Pour plus de détails sur l'exécution des opérations, consultez <link linkend="howto-resizepartition"
+>Comme tout va pour le mieux, cliquez sur <xref linkend="menu-edit-apply"/>, confirmez la boite de dialogue d'avertissement et attendez que les opérations aient toutes été exécutées. Pour plus de détails sur l'exécution des opérations, consultez <link linkend="howto-resizepartition"
 >le guide du redimensionnement des partitions</link
 >. </para>
 	
