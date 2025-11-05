@@ -179,7 +179,7 @@
 			<para
 >Dans le &partman;, un certain nombre de tâches représente ce dont les <link linkend="glossary-operation"
 >opérations</link
-> sont composées. Vous n'avez normalement pas du tout à vous préoccuper des tâches, elles ne deviennent apparentes que lorsqu'il s'agit d'appliquer la liste des opérations en attente. Le &partman; affiche alors une boîte de dialogue de progression regroupant toutes les opérations et leurs tâches. Il montre également quelle est l'opération et la tâche en cours d'exécution. </para
+> sont composées. Vous n'avez normalement pas du tout à vous préoccuper des tâches, elles ne deviennent apparentes que lorsqu'il s'agit d'appliquer la liste des opérations en attente. Le &partman; affiche alors une boite de dialogue de progression regroupant toutes les opérations et leurs tâches. Il montre également quelle est l'opération et la tâche en cours d'exécution. </para
 ><glossseealso otherterm="glossary-operation"
 ></glossseealso
 > <glossseealso otherterm="glossary-command"
@@ -260,7 +260,7 @@
 >commandes</link
 >. </para>
 			<para
->Les opérations sont les plus visibles des trois. Si vous choisissez une action dans l'interface graphique, celle-ci aura probablement pour résultat l'ajout d'une nouvelle opération à la liste des opérations en attente. L'idée sous-jacente est que vous serez sans doute amené à configurer bon nombre d'étapes pour transformer l'état actuel de vos périphériques disques en l'état que vous avez à l'esprit. L'exécution de certaines de ces étapes peut prendre vraiment beaucoup de temps (comme la copie d'un gros système de fichiers ou le redimensionnement d'un système de fichiers pratiquement plein). Pour éviter de passer trop de temps devant l'ordinateur à attendre qu'une étape se termine et que la suivante démarre, les opérations permettent de spécifier exactement à quoi devront ressembler les périphériques de l'ordinateur une fois que tout sera terminé, puis laisse le &partman; appliquer les opérations et réapparaître lorsqu'il les a toutes exécutées. </para>
+>Les opérations sont les plus visibles des trois. Si vous choisissez une action dans l'interface graphique, celle-ci aura probablement pour résultat l'ajout d'une nouvelle opération à la liste des opérations en attente. L'idée sous-jacente est que vous serez sans doute amené à configurer bon nombre d'étapes pour transformer l'état actuel de vos périphériques disques en l'état que vous avez à l'esprit. L'exécution de certaines de ces étapes peut prendre vraiment beaucoup de temps (comme la copie d'un gros système de fichiers ou le redimensionnement d'un système de fichiers pratiquement plein). Pour éviter de passer trop de temps devant l'ordinateur à attendre qu'une étape se termine et que la suivante démarre, les opérations permettent de spécifier exactement à quoi devront ressembler les périphériques de l'ordinateur une fois que tout sera terminé, puis laisse le &partman; appliquer les opérations et réapparaitre lorsqu'il les a toutes exécutées. </para>
 			<para
 >Les opérations sont conservées dans une liste d'opérations en attente. Tant qu'une opération n'a pas été appliquée, on peut encore <link linkend="menu-edit-undo"
 >revenir en arrière facilement</link

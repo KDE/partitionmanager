@@ -228,7 +228,7 @@
 					</term>
 					<listitem>
 						<para
->Affiche des informations sur les périphériques actuellement sélectionnés. Dans cette boîte de dialogue, vous pouvez trouver la capacité, les tailles des secteurs, le type de table de partitions ainsi que le nombre utilisé et maximal de partitions primaires.</para>
+>Affiche des informations sur les périphériques actuellement sélectionnés. Dans cette boite de dialogue, vous pouvez trouver la capacité, les tailles des secteurs, le type de table de partitions ainsi que le nombre utilisé et maximal de partitions primaires.</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -260,7 +260,7 @@
 						<para
 ><action
 >Crée une nouvelle partition</action
-> : ouvre la boîte de dialogue permettant de créer une nouvelle partition où vous pourrez définir le type, la taille, la position et le système de fichiers de la partition à créer. </para>
+> : ouvre la boite de dialogue permettant de créer une nouvelle partition où vous pourrez définir le type, la taille, la position et le système de fichiers de la partition à créer. </para>
 						<para
 >Veuillez noter que la table de partitions présente sur un périphérique peut imposer des restrictions concernant le nombre de partitions qu'il est possible de créer. Les tables de partitions MS-DOS, par exemple, n'autorisent que quatre partitions primaires. </para>
 						<para
@@ -286,11 +286,11 @@
 						<para
 ><action
 >Redimensionne ou déplace une partition</action
-> : ouvre la boîte de dialogue permettant de redimensionner ou déplacer une partition existante. Selon le système de fichiers de la partition et les outils externes installés sur votre ordinateur, il se peut que les trois actions possibles liées au redimensionnement -- c'est-à-dire déplacer la partition, la rendre plus petite (la <quote
+> : ouvre la boite de dialogue permettant de redimensionner ou déplacer une partition existante. Selon le système de fichiers de la partition et les outils externes installés sur votre ordinateur, il se peut que les trois actions possibles liées au redimensionnement -- c'est-à-dire déplacer la partition, la rendre plus petite (la <quote
 >réduire</quote
 >) ou la rendre plus grande (l'<quote
 >agrandir</quote
->) -- ne soient pas disponibles dans cette boîte de dialogue.Veuillez consultez la section <xref linkend="menu-tools-filesystemsupport"/>. </para>
+>) -- ne soient pas disponibles dans cette boite de dialogue.Veuillez consultez la section <xref linkend="menu-tools-filesystemsupport"/>. </para>
 						<para
 >Cette commande est activée uniquement si une partition est sélectionnée, qui n'est pas actuellement montée et dont le système de fichiers peut être réduit, agrandi ou déplacé. Pour une partition étendue, elle n'est activée que si aucune des partitions logiques contenues dans la partition étendue n'est montée. </para>
 					</listitem>
@@ -394,7 +394,7 @@
 >Colle une partition</action
 > : cette commande colle la partition depuis le presse-papiers du &partman; vers la partition actuellement sélectionnée ou une zone non allouée. </para>
 						<para
->Lorsqu'on colle une partition dans une zone non allouée, une boîte de dialogue apparaît, permettant de déplacer ou d'agrandir la copie insérée. Cette boîte de dialogue ne s'affiche pas lors de l'écrasement d'une partition existante. </para>
+>Lorsqu'on colle une partition dans une zone non allouée, une boite de dialogue apparait, permettant de déplacer ou d'agrandir la copie insérée. Cette boite de dialogue ne s'affiche pas lors de l'écrasement d'une partition existante. </para>
 						<para
 >Cette commande est activée uniquement si une partition se trouve actuellement dans le presse-papiers et qu'une cible valable (soit une partition, soit une zone non allouée) est sélectionnée. La cible doit de plus être assez grande pour contenir la source et il ne faut pas qu'elle soit montée. Il est impossible de copier une partition sur elle-même. </para>
 						<warning>
@@ -417,7 +417,7 @@
 					<listitem>
 						<para
 ><action
->Ouvre une boîte de dialogue</action
+>Ouvre une boite de dialogue</action
 > pour modifier le point de montage et les options de montage. </para>
 						<para
 >Cette commande n'est activée que si la partition est libérée. </para>
@@ -472,7 +472,7 @@
 						<para
 ><action
 >Enregistre une partition</action
-> : cette commande enregistre dans un fichier le système de fichiers présent sur la partition sélectionnée. Une boîte de dialogue vous demandera où enregistrer le ficher image après activation de cette commande. </para>
+> : cette commande enregistre dans un fichier le système de fichiers présent sur la partition sélectionnée. Une boite de dialogue vous demandera où enregistrer le ficher image après activation de cette commande. </para>
 						<para
 >Le fichier « image » créé est une copie secteur par secteur du système de fichiers installé sur la partition. Il 'est pas comprimé et ne comporte aucune métadonnée supplémentaire et aucune en-tête ajoutée. Ainsi, il peut être directement monter à l'aide d'un périphérique « loop », en dehors de &partman;, si le système d'exploitation prend en charge cette fonction. </para>
 						<para
@@ -492,7 +492,7 @@
 						<para
 ><action
 >Restaure une partition</action
-> : cette commande restaure un système de fichiers à partir d'un fichier image vers une partition. Une boîte de dialogue vous demandera le nom du fichier image à restaurer après activation de cette commande. La cible dans laquelle sera effectuée la restauration doit être assez grande pour le fichier image. </para>
+> : cette commande restaure un système de fichiers à partir d'un fichier image vers une partition. Une boite de dialogue vous demandera le nom du fichier image à restaurer après activation de cette commande. La cible dans laquelle sera effectuée la restauration doit être assez grande pour le fichier image. </para>
 						<para
 >Cette commande est activée uniquement soit si une zone non allouée soit une partition, qui n'est pas actuellement montée, est sélectionnée. </para>
 						<warning>
@@ -516,13 +516,13 @@
 						<para
 ><action
 >Affiche les propriétés d'une partition</action
-> : cette commande affiche une boîte de dialogue comportant des informations sur la partition actuellement sélectionnée ou l'espace non alloué. </para>
+> : cette commande affiche une boite de dialogue comportant des informations sur la partition actuellement sélectionnée ou l'espace non alloué. </para>
 						<para
->La nature de ce qui est affiché et de ce qu'on peut modifier dans cette boîte de dialogue dépend du type de partition, du type du système de fichiers présent sur cette partition et si la partition est actuellement montée ou non. </para>
+>La nature de ce qui est affiché et de ce qu'on peut modifier dans cette boite de dialogue dépend du type de partition, du type du système de fichiers présent sur cette partition et si la partition est actuellement montée ou non. </para>
 						<para
 >Tous les systèmes de fichiers, par exemple, ne prennent pas en charge la mise en place d'une étiquette. Il n'est en outre généralement pas possible de modifier quelque propriété que ce soit si la partition est montée. </para>
 						<para
->Voici une liste de toutes les propriétés des partitions et des systèmes de fichiers qu'on peut en général modifier dans cette boîte de dialogue : <itemizedlist>
+>Voici une liste de toutes les propriétés des partitions et des systèmes de fichiers qu'on peut en général modifier dans cette boite de dialogue : <itemizedlist>
 								<listitem>
 									<para
 >Définir ou modifier l'étiquette d'un système de fichiers</para>
@@ -605,10 +605,10 @@
 					<listitem>
 						<para
 ><action
->Affiche la boîte de dialogue de prise en charge des systèmes de fichiers</action
-> Cette boîte de dialogue affiche en détail les opérations pouvant être effectuées pour tels ou tels systèmes de fichiers. </para>
+>Affiche la boite de dialogue de prise en charge des systèmes de fichiers</action
+> Cette boite de dialogue affiche en détail les opérations pouvant être effectuées pour tels ou tels systèmes de fichiers. </para>
 						<para
->Voici un exemple de ce à quoi la boîte de dialogue pourrait ressembler avec la plupart des outils externes installés : </para>
+>Voici un exemple de ce à quoi la boite de dialogue pourrait ressembler avec la plupart des outils externes installés : </para>
 						<para>
 							<screenshot>
 								<mediaobject>
@@ -616,7 +616,7 @@
 ><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
 									<textobject
 ><phrase
->La boîte de dialogue de prise en charge des systèmes de fichiers avec la plupart des outils externes installés</phrase
+>La boite de dialogue de prise en charge des systèmes de fichiers avec la plupart des outils externes installés</phrase
 ></textobject>
 								</mediaobject>
 							</screenshot>

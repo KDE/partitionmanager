@@ -43,7 +43,7 @@
 	<para
 >Comme la première étape consiste à faire plus de place pour que la partition s'agrandisse, commencez par réduire la taille de <quote
 >sdb1</quote
->. Cliquez sur la partition et choisissez <xref linkend="menu-partition-resize"/>. La boîte de dialogue suivante apparaît : </para>
+>. Cliquez sur la partition et choisissez <xref linkend="menu-partition-resize"/>. La boite de dialogue suivante apparait : </para>
 
 	<para>
 		<screenshot>
@@ -52,7 +52,7 @@
 ><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->La boîte de dialogue <quote
+>La boite de dialogue <quote
 >Redimensionner</quote
 > avant le redimensionnement de <quote
 >/dev/sdb1</quote
@@ -63,12 +63,12 @@
 	</para>
 
 	<para
->La boîte de dialogue permet de redimensionner la partition de différentes manières. Vous pouvez soit faire glisser la poignée droite vers la gauche jusqu'à ce que la partition ait atteint la taille souhaitée, soit simplement en saisir la taille dans le champ de texte <guilabel
+>La boite de dialogue permet de redimensionner la partition de différentes manières. Vous pouvez soit faire glisser la poignée droite vers la gauche jusqu'à ce que la partition ait atteint la taille souhaitée, soit simplement en saisir la taille dans le champ de texte <guilabel
 >Taille</guilabel
 >. Une autre possibilité serait d'ajuster la taille en cliquant sur les petites flèches situées près du champ de texte, mais cette solution est un peu fastidieuse pour des modifications de plus grande ampleur. </para>
 
 	<para
->Quelle que soit la méthode que vous préférez pour définir la nouvelle taille, voici à quoi la boîte de dialogue devrait ressembler : </para>
+>Quelle que soit la méthode que vous préférez pour définir la nouvelle taille, voici à quoi la boite de dialogue devrait ressembler : </para>
 
 	<para>
 		<screenshot>
@@ -77,7 +77,7 @@
 ><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->La boîte de dialogue <quote
+>La boite de dialogue <quote
 >Redimensionner</quote
 > après le redimensionnement de <quote
 >/dev/sdb1</quote
@@ -119,7 +119,7 @@
 >sdb2</quote
 >. Tout d'abord, cliquez sur <quote
 >sdb2</quote
-> et choisissez <xref linkend="menu-partition-resize"/> à nouveau. La boîte de dialogue de redimensionnement apparaît une fois de plus, cette fois pour la seconde partition. Faites glisser sa poignée gauche vers l'extrémité la plus à gauche pour que la boîte de dialogue ressemble à celle-ci : </para>
+> et choisissez <xref linkend="menu-partition-resize"/> à nouveau. La boite de dialogue de redimensionnement apparait une fois de plus, cette fois pour la seconde partition. Faites glisser sa poignée gauche vers l'extrémité la plus à gauche pour que la boite de dialogue ressemble à celle-ci : </para>
 
 	<para>
 		<screenshot>
@@ -128,7 +128,7 @@
 ><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->La boîte de dialogue <quote
+>La boite de dialogue <quote
 >Redimensionner</quote
 > après le redimensionnement de <quote
 >/dev/sdb2</quote
@@ -166,7 +166,7 @@
 	</para>
 
 	<para
->Comme celle-ci est déjà plus conforme à vos souhaits, choisissez <xref linkend="menu-edit-apply"/>. Une boîte de dialogue apparaît et vous demande si vous voulez vraiment appliquer les opérations en attente. Confirmez cette boîte de dialogue et le &partman; commencera à exécuter les opérations : </para>
+>Comme celle-ci est déjà plus conforme à vos souhaits, choisissez <xref linkend="menu-edit-apply"/>. Une boite de dialogue apparait et vous demande si vous voulez vraiment appliquer les opérations en attente. Confirmez cette boite de dialogue et le &partman; commencera à exécuter les opérations : </para>
 
 	<para>
 		<screenshot>
@@ -201,7 +201,7 @@
 ><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->La boîte de dialogue de progression après l'application réussie des opérations</phrase
+>La boite de dialogue de progression après l'application réussie des opérations</phrase
 ></textobject>
 			</mediaobject>
 		</screenshot>
@@ -210,7 +210,7 @@
 	<para
 >En cliquant sur <guibutton
 >Ok</guibutton
->, vous pouvez maintenant fermer la boîte de dialogue de progression et revenir à la fenêtre principale. Le &partman; analysera à nouveau vos périphériques à ce stade, ce qui pourra prendre quelques secondes. </para>
+>, vous pouvez maintenant fermer la boite de dialogue de progression et revenir à la fenêtre principale. Le &partman; analysera à nouveau vos périphériques à ce stade, ce qui pourra prendre quelques secondes. </para>
 
 	<para
 >Si vous souhaitez obtenir plus de détails sur les opérations récemment effectuées, cliquez sur <guibutton
@@ -224,7 +224,7 @@
 ><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
 				<textobject
 ><phrase
->Les détails de la boîte de dialogue de progression</phrase
+>Les détails de la boite de dialogue de progression</phrase
 ></textobject>
 			</mediaobject>
 		</screenshot>
@@ -250,7 +250,7 @@
 	<para
 >Pour cacher les détails à nouveau, cliquez sur <guibutton
 >Détails</guibutton
-> et enfin, pour fermer la boîte de dialogue de progression, cliquez sur <guibutton
+> et enfin, pour fermer la boite de dialogue de progression, cliquez sur <guibutton
 >Ok</guibutton
 >. </para>
 </sect1>
