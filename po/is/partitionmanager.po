@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:42+0000\n"
-"PO-Revision-Date: 2025-12-18 21:31+0000\n"
+"PO-Revision-Date: 2025-12-19 17:51+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -52,7 +52,7 @@ msgstr "Litir skráakerfis"
 #: config/configureoptionsdialog.cpp:47
 #, kde-format
 msgid "File System Color Settings"
-msgstr "Litastillingar skráarkerfis"
+msgstr "Litastillingar skráakerfis"
 
 #: config/configureoptionsdialog.cpp:49
 #, kde-kuit-format
@@ -73,6 +73,9 @@ msgid ""
 "will also rescan devices and thus clear the list of pending operations.</"
 "warning></para>"
 msgstr ""
+"<para>Viltu í alvörunni skipta um bakenda?</para><para><warning>Þetta mun "
+"einnig endurskanna tæki og þar með hreinsa listann yfir aðgerðir í bið.</"
+"warning></para>"
 
 #: config/configureoptionsdialog.cpp:139
 #, kde-kuit-format
@@ -390,7 +393,7 @@ msgstr "Atvikaskráning"
 #: config/configurepagegeneral.ui:94
 #, kde-format
 msgid "Hide messa&ges below:"
-msgstr ""
+msgstr "&Fela skilaboð fyrir neðan:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:105
@@ -480,7 +483,7 @@ msgstr "Set upp..."
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
-msgstr "Viltu í alvöru hætta við?"
+msgstr "Viltu í alvörunni hætta við?"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -532,12 +535,13 @@ msgstr "Heildartími: %1"
 
 #: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1053
 #: gui/mainwindow.cpp:1215 gui/smartdialog.cpp:227
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Could not create temporary file when trying to save to <filename>%1</"
 "filename>."
-msgstr "Tengipunktur:"
+msgstr ""
+"Tókst ekki að búa til bráðabirgðaskrá við að vista í <filename>%1</filename>."
 
 #: gui/applyprogressdialog.cpp:423
 #, kde-kuit-format
@@ -546,10 +550,12 @@ msgid "Could Not Save Report."
 msgstr "Gat ekki vistað skýrslu."
 
 #: gui/applyprogressdialog.cpp:447
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary file <filename>%1</filename> for writing."
-msgstr "Tengipunktur:"
+msgstr ""
+"Tókst ekki að búa til bráðabirgðaskrána <filename>%1</filename> til að "
+"skrifa í."
 
 #: gui/applyprogressdialog.cpp:447
 #, kde-format
@@ -614,24 +620,28 @@ msgid ""
 "the most the MS-Dos partition table type supports, so you will not be able "
 "to use the whole device.</para>"
 msgstr ""
+"<para>Viltu í alvörunni búa til disksneiðatöflu af tegundinni MS-Dos á "
+"<filename>%1</filename>?</para><para>Þetta tæki er með meira en 2^32 geira. "
+"Það er meira en MS-Dos disksneiðatöflur styðja, þannig að þú munt ekki geta "
+"notað allt geymslutækið.</para>"
 
 #: gui/createpartitiontabledialog.cpp:58
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Create MS-Dos Partition Table Type?"
-msgstr ""
+msgstr "Búa til disksneiðatöflu af tegundinni MS-Dos?"
 
 #: gui/createpartitiontabledialog.cpp:59
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create MS-Dos Type"
-msgstr ""
+msgstr "Búa til tegundina MS-Dos"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/createpartitiontablewidgetbase.ui:24
 #, kde-format
 msgid "Choose the type of partition table you want to create:"
-msgstr ""
+msgstr "Veldu hvaða tegund disksneiðatöflu þú vilt búa til:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioGPT)
 #: gui/createpartitiontablewidgetbase.ui:33
@@ -655,7 +665,7 @@ msgstr "(táknmynd)"
 #: gui/createpartitiontablewidgetbase.ui:83
 #, kde-format
 msgid "<b>Warning:</b> This will destroy all data on the device!"
-msgstr ""
+msgstr "<b>Aðvörun:</b> Þetta mun eyða ÖLLUM gögnum á tækinu!"
 
 #: gui/createvolumegroupdialog.cpp:38
 #, kde-kuit-format
@@ -703,25 +713,25 @@ msgstr "LVM-sýndardiskur"
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Software RAID Device"
-msgstr ""
+msgstr "Hugbúnaðar-RAID tæki"
 
 #: gui/devicepropsdialog.cpp:119
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Volume Manager Device"
-msgstr ""
+msgstr "Tæki í sýndardiskastýringu"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
 #: gui/devicepropswidgetbase.ui:22
 #, kde-format
 msgid "Logical sector size:"
-msgstr ""
+msgstr "Rökleg stærð geira:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPrimariesMax)
 #: gui/devicepropswidgetbase.ui:32
 #, kde-format
 msgid "Primaries/Max:"
-msgstr ""
+msgstr "Aðal/Hámark:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
 #: gui/devicepropswidgetbase.ui:42
@@ -753,7 +763,7 @@ msgstr "SMART-staða:"
 #: gui/devicepropswidgetbase.ui:198
 #, kde-format
 msgid "Physical sector size:"
-msgstr ""
+msgstr "Raunveruleg stærð geira:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextType)
 #: gui/devicepropswidgetbase.ui:267
@@ -777,13 +787,13 @@ msgstr "Breyta valkostum tengipunkts"
 #: gui/editmountoptionsdialogwidgetbase.ui:25
 #, kde-format
 msgid "Edit the mount options for this file system:"
-msgstr ""
+msgstr "Breyta valkostum tengipunkts fyrir þetta skráakerfi:"
 
 #. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, m_EditOptions)
 #: gui/editmountoptionsdialogwidgetbase.ui:32
 #, kde-format
 msgid "Option1,Option2"
-msgstr ""
+msgstr "Valkostur1,Valkostur2"
 
 #: gui/editmountpointdialog.cpp:32
 #, kde-kuit-format
@@ -814,10 +824,11 @@ msgid "Save changes"
 msgstr "Vista breytingar"
 
 #: gui/editmountpointdialog.cpp:80
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
-msgstr "Tengipunktur:"
+msgstr ""
+"Tókst ekki að vista tengipunkta í <filename>/etc/fstab</filename> skrána."
 
 #: gui/editmountpointdialog.cpp:81
 #, kde-kuit-format
@@ -841,7 +852,7 @@ msgstr ""
 #: gui/editmountpointdialogwidgetbase.ui:75
 #, kde-format
 msgid "No automatic mount"
-msgstr ""
+msgstr "Engin sjálfvirk tenging"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
 #: gui/editmountpointdialogwidgetbase.ui:95
@@ -937,7 +948,7 @@ msgstr ""
 #: gui/editmountpointdialogwidgetbase.ui:295
 #, kde-format
 msgid "Identify by:"
-msgstr ""
+msgstr "Greina með:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
 #: gui/editmountpointdialogwidgetbase.ui:305
@@ -1007,27 +1018,27 @@ msgstr "Afrita"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:100
-#, fuzzy, kde-format
+#, kde-format
 msgid "Check"
-msgstr "Virkja"
+msgstr "Yfirfara"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:105
 #, kde-format
 msgid "Read Label"
-msgstr ""
+msgstr "Lesmerking"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:110
 #, kde-format
 msgid "Write Label"
-msgstr ""
+msgstr "Skrifmerking"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:115
 #, kde-format
 msgid "Read Usage"
-msgstr ""
+msgstr "Lesnotkun"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:120
@@ -1045,14 +1056,14 @@ msgstr "Endurheimta"
 #: gui/filesystemsupportdialogwidgetbase.ui:130
 #, kde-format
 msgid "Support Tools"
-msgstr ""
+msgstr "Aðstoðartól"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRescan)
 #: gui/filesystemsupportdialogwidgetbase.ui:140
 #, kde-format
 msgctxt "@action:button"
 msgid "Rescan Support"
-msgstr ""
+msgstr "Endurskanna aðstoð"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
 #: gui/infopane.cpp:47 gui/mainwindowbase.ui:47
@@ -1083,13 +1094,13 @@ msgstr "Rýmd:"
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher name:"
-msgstr ""
+msgstr "Heiti dulritunarlykils (cipher):"
 
 #: gui/infopane.cpp:116
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher mode:"
-msgstr ""
+msgstr "Dulritunaraðferð:"
 
 #: gui/infopane.cpp:117
 #, kde-format
@@ -1197,25 +1208,25 @@ msgstr "Heildarfjöldi geira:"
 #, kde-format
 msgctxt "@label device"
 msgid "Logical sector size:"
-msgstr ""
+msgstr "Rökleg stærð geira:"
 
 #: gui/infopane.cpp:180
 #, kde-format
 msgctxt "@label device"
 msgid "Physical sector size:"
-msgstr ""
+msgstr "Raunveruleg stærð geira:"
 
 #: gui/infopane.cpp:181
 #, kde-format
 msgctxt "@label device"
 msgid "Primaries/Max:"
-msgstr ""
+msgstr "Aðal/Hámark:"
 
 #: gui/infopane.cpp:184 gui/infopane.cpp:192
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label device"
 msgid "Volume Type:"
-msgstr "Skráakerfi"
+msgstr "Tegund gagnadisks:"
 
 #: gui/infopane.cpp:186
 #, kde-format
@@ -1224,16 +1235,16 @@ msgid "PE Size:"
 msgstr "Stærð PE:"
 
 #: gui/infopane.cpp:187
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label device"
 msgid "Total PE:"
-msgstr "Fjöldi geira:"
+msgstr "Samtals PE:"
 
 #: gui/infopane.cpp:188
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label device"
 msgid "Allocated PE:"
-msgstr "óúthlutað"
+msgstr "Úthlutað PE:"
 
 #: gui/infopane.cpp:189
 #, kde-format
@@ -1248,16 +1259,16 @@ msgid "RAID Level:"
 msgstr "Stig RAID:"
 
 #: gui/infopane.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr "Stærð:"
+msgstr "Stærð búts:"
 
 #: gui/infopane.cpp:196
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr "Fjöldi geira:"
+msgstr "Fjöldi búta:"
 
 #: gui/infopane.cpp:197
 #, kde-format
@@ -1284,6 +1295,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
+"Partition Manager disksneiðaumsýslan þarf auknar heimildir til að virka. "
+"Endurlestu tækin og auðkenndu þig þegar beðið er um það."
 
 #: gui/mainwindow.cpp:235
 #, kde-kuit-format
@@ -1295,7 +1308,11 @@ msgid_plural ""
 "<para>Do you really want to quit the application?</para><para>There are "
 "still %1 operations pending.</para>"
 msgstr[0] ""
+"<para>Viltu í alvörunni hætta í forritinu?</para><para>Ennþá er aðgerð í bið."
+"</para>"
 msgstr[1] ""
+"<para>Viltu í alvörunni hætta í forritinu?</para><para>Ennþá eru %1 aðgerðir "
+"í bið.</para>"
 
 #: gui/mainwindow.cpp:237
 #, kde-kuit-format
@@ -1487,7 +1504,7 @@ msgstr "Sýna stöðu SMART"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
-msgstr ""
+msgstr "Sýna stöðu SMART á tækinu, ef stuðningur er við slíkt"
 
 #: gui/mainwindow.cpp:367 gui/mainwindow.cpp:459
 #, kde-kuit-format
@@ -1499,13 +1516,13 @@ msgstr "Eiginleikar"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
-msgstr ""
+msgstr "Birta eiginleikaglugga tækis"
 
 #: gui/mainwindow.cpp:369
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
-msgstr ""
+msgstr "Skoða og breyta eiginleikum tækis"
 
 #: gui/mainwindow.cpp:376
 #, kde-kuit-format
@@ -1523,7 +1540,7 @@ msgstr "Ný disksneið"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
-msgstr ""
+msgstr "Búa til nýja disksneið."
 
 #: gui/mainwindow.cpp:385
 #, kde-kuit-format
@@ -1535,13 +1552,13 @@ msgstr "Breyta stærð/Færa"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
-msgstr ""
+msgstr "Breyta stærð eða færa disksneið"
 
 #: gui/mainwindow.cpp:387
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
-msgstr ""
+msgstr "Minnka, stækka eða færa fyrirliggjandi disksneið."
 
 #: gui/mainwindow.cpp:394
 #, kde-kuit-format
@@ -1559,7 +1576,7 @@ msgstr "Eyða disksneið"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
-msgstr ""
+msgstr "Eyða disksneið."
 
 #: gui/mainwindow.cpp:403
 #, kde-kuit-format
@@ -1577,7 +1594,7 @@ msgstr "Tæta disksneið"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
-msgstr ""
+msgstr "Tæta disksneið þannig að ekki sé hægt að endurheimta innihald hennar."
 
 #: gui/mainwindow.cpp:412
 #, kde-kuit-format
@@ -1589,13 +1606,13 @@ msgstr "Afrita"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
-msgstr ""
+msgstr "Afrita disksneið"
 
 #: gui/mainwindow.cpp:414
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
-msgstr ""
+msgstr "Afrita fyrirliggjandi disksneið."
 
 #: gui/mainwindow.cpp:421
 #, kde-kuit-format
@@ -1607,13 +1624,13 @@ msgstr "Líma"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
-msgstr ""
+msgstr "Líma disksneið"
 
 #: gui/mainwindow.cpp:423
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
-msgstr ""
+msgstr "Líma afritaða disksneið."
 
 #: gui/mainwindow.cpp:430
 #, kde-kuit-format
@@ -1631,7 +1648,7 @@ msgstr "Breyta tengipunkti"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
-msgstr ""
+msgstr "Breyta tengipunkti disksneiðar og valkostum hennar."
 
 #: gui/mainwindow.cpp:437
 #, kde-kuit-format
@@ -1643,13 +1660,13 @@ msgstr "Tengja í skráakerfið"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
-msgstr ""
+msgstr "Tengja eða aftengja disksneið"
 
 #: gui/mainwindow.cpp:439
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
-msgstr ""
+msgstr "Tengja eða aftengja disksneið"
 
 #: gui/mainwindow.cpp:444
 #, kde-kuit-format
@@ -1661,43 +1678,45 @@ msgstr "Aflæsa"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
-msgstr ""
+msgstr "Aflæsa eða læsa dulritaðri disksneið"
 
 #: gui/mainwindow.cpp:446
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
-msgstr ""
+msgstr "Aflæsa eða læsa dulritaðri disksneið."
 
 #: gui/mainwindow.cpp:451
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
-msgstr "Virkja"
+msgstr "Yfirfara"
 
 #: gui/mainwindow.cpp:452
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
-msgstr ""
+msgstr "Yfirfara disksneið"
 
 #: gui/mainwindow.cpp:453
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
-msgstr ""
+msgstr "Athuga hvort villur séu á skráakerfi disksneiðar."
 
 #: gui/mainwindow.cpp:460
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
-msgstr ""
+msgstr "Birta eiginleikaglugga disksneiðar"
 
 #: gui/mainwindow.cpp:461
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr ""
+"Skoða og breyta eiginleikum disksneiðar (merkingar, disksneiðaflögg, o.s."
+"frv.)"
 
 #: gui/mainwindow.cpp:467
 #, kde-kuit-format
@@ -1709,13 +1728,13 @@ msgstr "Öryggisafrit"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
-msgstr ""
+msgstr "Taka öryggisafrit af disksneið"
 
 #: gui/mainwindow.cpp:469
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
-msgstr ""
+msgstr "Taka öryggisafrit af disksneið yfir í diskmynd."
 
 #: gui/mainwindow.cpp:475
 #, kde-kuit-format
@@ -1733,7 +1752,7 @@ msgstr "Endurheimta disksneið"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
-msgstr ""
+msgstr "Endurheimta disksneið úr diskmynd."
 
 #: gui/mainwindow.cpp:484
 #, kde-format
@@ -1763,13 +1782,13 @@ msgstr "Stuðningur við skráakerfi"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
-msgstr ""
+msgstr "Skoða upplýsingar um stuðning við skráakerfi"
 
 #: gui/mainwindow.cpp:494
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
-msgstr ""
+msgstr "Birta upplýsingar um studd skráakerfi."
 
 #: gui/mainwindow.cpp:498
 #, kde-kuit-format
@@ -1781,13 +1800,13 @@ msgstr "Endurlesa tæki"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
-msgstr ""
+msgstr "Endurlesa öll tæki"
 
 #: gui/mainwindow.cpp:500
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
-msgstr ""
+msgstr "Endurnýja tækjalistann."
 
 #: gui/mainwindow.cpp:516
 #, kde-kuit-format
@@ -1799,13 +1818,13 @@ msgstr "Hreinsa atvikaskrá"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
-msgstr ""
+msgstr "Hreinsa atvikaskráningarúttakið"
 
 #: gui/mainwindow.cpp:518
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
-msgstr ""
+msgstr "Hreinsa úttaksspjald atvikaskráningar."
 
 #: gui/mainwindow.cpp:523
 #, kde-kuit-format
@@ -1817,31 +1836,31 @@ msgstr "Vista atvikaskrá"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
-msgstr ""
+msgstr "Vista atvikaskráningarúttakið"
 
 #: gui/mainwindow.cpp:525
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
-msgstr ""
+msgstr "Vista atvikaskráningarúttakið í skrá."
 
 #: gui/mainwindow.cpp:531
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
-msgstr ""
+msgstr "Um KPMcore-aðgerðasafnið"
 
 #: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
-msgstr ""
+msgstr "Birta 'Um KPMcore' glugga"
 
 #: gui/mainwindow.cpp:533
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
-msgstr ""
+msgstr "Birta 'Um KPMcore' glugga."
 
 #: gui/mainwindow.cpp:652
 #, kde-kuit-format
@@ -1856,14 +1875,14 @@ msgstr ""
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ein aðgerð í bið"
+msgstr[1] "%1 aðgerðir í bið"
 
 #: gui/mainwindow.cpp:816
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
-msgstr "Afrit"
+msgstr "Nota bakenda-viðbót: %1 (%2)"
 
 #: gui/mainwindow.cpp:820
 #, kde-kuit-format
@@ -1884,12 +1903,14 @@ msgid ""
 "<para>Do you really want to rescan the devices?</para><para><warning>This "
 "will also clear the list of pending operations.</warning></para>"
 msgstr ""
+"<para>Viltu í alvörunni endurskanna tækin?</para><para><warning>Þetta mun "
+"einnig hreinsa listann yfir aðgerðir í bið.</warning></para>"
 
 #: gui/mainwindow.cpp:924
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
-msgstr ""
+msgstr "Á í alvörunni að endurskanna tæki?"
 
 #: gui/mainwindow.cpp:925
 #, kde-kuit-format
@@ -1904,48 +1925,51 @@ msgid ""
 "<para>Do you really want to apply the pending operations listed below?</"
 "para><para><warning>This will permanently modify your disks.</warning></para>"
 msgstr ""
+"<para>Viltu í alvörunni framkvæma þær aðgerðir hér fyrir neðan sem bíða?</"
+"para><para><warning>Þetta mun breyta diskunum þínum varanlega.</warning></"
+"para>"
 
 #: gui/mainwindow.cpp:953
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
-msgstr ""
+msgstr "Framkvæma þær aðgerðir sem bíða?"
 
 #: gui/mainwindow.cpp:954
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
-msgstr ""
+msgstr "Framkvæma þær aðgerðir sem bíða"
 
 #: gui/mainwindow.cpp:956
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
-msgstr ""
+msgstr "Framkvæmi aðgerðir..."
 
 #: gui/mainwindow.cpp:981
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
-msgstr "Afturkalla síðustu aðgerð"
+msgstr "Afturkalla aðgerð: %1"
 
 #: gui/mainwindow.cpp:997
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
-msgstr ""
+msgstr "Viltu í alvörunni hreinsa listann yfir aðgerðir í bið?"
 
 #: gui/mainwindow.cpp:998
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
-msgstr ""
+msgstr "Hreinsa aðgerðir sem bíða?"
 
 #: gui/mainwindow.cpp:999
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
-msgstr ""
+msgstr "Hreinsa aðgerðir sem bíða"
 
 #: gui/mainwindow.cpp:1001
 #, kde-kuit-format
@@ -1954,31 +1978,35 @@ msgid "Clearing the list of pending operations."
 msgstr "Hreinsa lista yfir aðgerðir í bið."
 
 #: gui/mainwindow.cpp:1043
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
-msgstr "Tengipunktur:"
+msgstr ""
+"Tókst ekki að opna inntaksskrá <filename>%1</filename> til innflutnings"
 
 #: gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1053 gui/mainwindow.cpp:1061
 #: gui/mainwindow.cpp:1067
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
-msgstr ""
+msgstr "Villa við að flytja inn disksneiðatöflu"
 
 #: gui/mainwindow.cpp:1061
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
-msgstr "Tengipunktur:"
+msgstr ""
+"Tókst ekki að opna inntaksskrá <filename>%1</filename> til innflutnings: %2"
 
 #: gui/mainwindow.cpp:1067
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Could not open temporary file <filename>%1</filename> while trying to import "
 "from <filename>%2</filename>."
-msgstr "Tengipunktur:"
+msgstr ""
+"Mistókst að opna bráðabirgðaskrá <filename>%1</filename> þegar reynt var að "
+"flytja inn úr <filename>%2</filename>."
 
 #: gui/mainwindow.cpp:1097
 #, kde-kuit-format
@@ -1995,7 +2023,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
-msgstr ""
+msgstr "Villa við að flytja inn disksneiðatöflu"
 
 #: gui/mainwindow.cpp:1107
 #, kde-kuit-format
@@ -2007,13 +2035,14 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
-msgstr ""
+msgstr "\"%1\" tegund disksneiðatöflu er óþekkt (lína %2)."
 
 #: gui/mainwindow.cpp:1119
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr ""
+"\"%1\" tegund disksneiðatöflu er ekki studd til innflutnings (lína %2)."
 
 #: gui/mainwindow.cpp:1129
 #, kde-kuit-format
@@ -2059,18 +2088,19 @@ msgstr ""
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr ""
+"Tókst ekki að búa til skráakerfið \"%1\" fyrir disksneiðina %2 (lína %3)."
 
 #: gui/mainwindow.cpp:1198
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
-msgstr ""
+msgstr "Ekki tókst að túlka línu %1 úr innfluttu skránni. Hunsa hana."
 
 #: gui/mainwindow.cpp:1215
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
-msgstr ""
+msgstr "Villa við að flytja út disksneiðatöflu"
 
 #: gui/mainwindow.cpp:1380 gui/mainwindow.cpp:1386 gui/mainwindow.cpp:1422
 #, kde-kuit-format
@@ -2080,7 +2110,7 @@ msgstr "%1%2"
 #: gui/mainwindow.cpp:1386 gui/mainwindow.cpp:1397
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
-msgstr ""
+msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
 #: gui/mainwindow.cpp:1434
 #, kde-kuit-format
@@ -2102,7 +2132,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
-msgstr ""
+msgstr "Vantar stuðningspakka fyrir skráakerfi"
 
 #: gui/mainwindow.cpp:1458
 #, kde-kuit-format
@@ -2111,11 +2141,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "Óþekkt tæki \"%1\" "
 
 #: gui/mainwindow.cpp:1467
-#, fuzzy, kde-kuit-format
-#| msgid "Partition"
+#, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr "Disksneið"
+msgstr "Óþekkt disksneið \"%1\" "
 
 #: gui/mainwindow.cpp:1468
 #, kde-kuit-format
@@ -2143,14 +2172,14 @@ msgstr "Tæki"
 #, kde-format
 msgctxt "@title:window"
 msgid "Pending Operations"
-msgstr ""
+msgstr "Aðgerðir í bið"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
 #: gui/mainwindowbase.ui:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Log Output"
-msgstr ""
+msgstr "Úttak atvikaskráningar"
 
 #: gui/newdialog.cpp:47
 #, kde-kuit-format
@@ -2177,7 +2206,7 @@ msgstr "Tæki"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Select Current Device"
-msgstr ""
+msgstr "Velja fyrirliggjandi tæki"
 
 #. i18n: ectx: Menu (tools)
 #: gui/partitionmanagerui.rc:49
@@ -2198,7 +2227,7 @@ msgstr "Disksneið"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"
-msgstr ""
+msgstr "Spjöld birt"
 
 #: gui/partitionmanagerwidget.cpp:201
 #, kde-kuit-format
@@ -2207,58 +2236,64 @@ msgid "%1 [Encrypted]"
 msgstr "%1 [dulritað]"
 
 #: gui/partitionmanagerwidget.cpp:409
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be mounted."
-msgstr "Tengipunktur:"
+msgstr ""
+"Ekki er hægt að tengja skráakerfið á disksneiðinni <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
-msgstr ""
+msgstr "Tókst ekki að tengja skráakerfi."
 
 #: gui/partitionmanagerwidget.cpp:412
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be unmounted."
-msgstr "Tengipunktur:"
+msgstr ""
+"Ekki er hægt að aftengja skráakerfið á disksneiðinni <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
-msgstr ""
+msgstr "Tókst ekki að aftengja skráakerfi."
 
 #: gui/partitionmanagerwidget.cpp:452
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "unlocked."
-msgstr "Tengipunktur:"
+msgstr ""
+"Ekki er hægt að aflæsa dulritaða skráakerfinu á disksneiðinni <filename>%1</"
+"filename>."
 
 #: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
-msgstr ""
+msgstr "Tókst ekki að aflæsa dulrituðu skráakerfi."
 
 #: gui/partitionmanagerwidget.cpp:463
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "locked."
-msgstr "Tengipunktur:"
+msgstr ""
+"Ekki er hægt að læsa dulritaða skráakerfinu á disksneiðinni <filename>%1</"
+"filename>."
 
 #: gui/partitionmanagerwidget.cpp:469
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
-msgstr ""
+msgstr "Tókst ekki að læsa dulrituðu skráakerfi."
 
 #: gui/partitionmanagerwidget.cpp:498
 #, kde-kuit-format
@@ -2274,7 +2309,15 @@ msgid_plural ""
 "create, paste or restore a primary partition on it before you delete an "
 "existing one.</para>"
 msgstr[0] ""
+"<para>Þegar er ein aðaldisksneið fyrir á þessu tæki. Það er hámarksfjöldinn "
+"sem disksneiðatafla þess getur höndlað.</para><para>Þú getur hvorki útbúið, "
+"límt eða endurheimt aðaldisksneið á það fyrr en þú hefur eytt út einni sem "
+"fyrir er.</para>"
 msgstr[1] ""
+"<para>Þegar eru %1 aðaldisksneiðar fyrir á þessu tæki. Það er "
+"hámarksfjöldinn sem disksneiðatafla þess getur höndlað.</para><para>Þú getur "
+"hvorki útbúið, límt eða endurheimt aðaldisksneið á það fyrr en þú hefur eytt "
+"út einni sem fyrir er.</para>"
 
 #: gui/partitionmanagerwidget.cpp:502
 #, kde-kuit-format
@@ -2296,7 +2339,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
-msgstr ""
+msgstr "Tekst ekki að eyða disksneið."
 
 #: gui/partitionmanagerwidget.cpp:577
 #, kde-kuit-format
@@ -2306,12 +2349,14 @@ msgid ""
 "clipboard? It will no longer be available for pasting after it has been "
 "deleted."
 msgstr ""
+"Viltu í alvörunni eyða disksneiðinni sem er núna á klippispjaldinu? Hún "
+"verður þá ekki lengur í boði til að líma hana."
 
 #: gui/partitionmanagerwidget.cpp:579
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
-msgstr ""
+msgstr "Viltu í alvörunni eyða disksneið á klippispjaldinu?"
 
 #: gui/partitionmanagerwidget.cpp:580
 #, kde-kuit-format
@@ -2320,12 +2365,14 @@ msgid "Delete It"
 msgstr "Eyða þessu"
 
 #: gui/partitionmanagerwidget.cpp:633
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Partition <filename>%1</filename> has the same position and size after "
 "resize/move. Ignoring operation."
-msgstr "Tengipunktur:"
+msgstr ""
+"Disksneiðin <filename>%1</filename> er með sömu staðsetningu og stærð eftir "
+"stærðarbreytingu/tilfærslu. Hunsa aðgerðir."
 
 #: gui/partitionmanagerwidget.cpp:661
 #, kde-kuit-format
@@ -2349,7 +2396,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
-msgstr ""
+msgstr "Viltu í alvörunni skrifa yfir fyrirliggjandi disksneið?"
 
 #: gui/partitionmanagerwidget.cpp:733
 #, kde-kuit-format
@@ -2370,7 +2417,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
-msgstr ""
+msgstr "Áfangastaður ekki nógu stór"
 
 #: gui/partitionmanagerwidget.cpp:745
 #, kde-kuit-format
@@ -2386,7 +2433,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
-msgstr ""
+msgstr "Tekst ekki að útbúa úttaksdisksneið."
 
 #: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
@@ -2400,7 +2447,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
-msgstr ""
+msgstr "Ekki nægilegt pláss til að endurheimta skráakerfi."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:79
@@ -2478,7 +2525,7 @@ msgstr "Síðasti geiri"
 #: gui/partitionmanagerwidgetbase.ui:139
 #, kde-format
 msgid "Number of Sectors"
-msgstr ""
+msgstr "Fjöldi geira"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:144
@@ -2514,7 +2561,7 @@ msgstr "aðgerðalaust"
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
-msgstr ""
+msgstr "Að minnsta kosti ein rökræn disksneið er tengd."
 
 #: gui/partpropsdialog.cpp:135
 #, kde-kuit-format
@@ -2526,7 +2573,7 @@ msgstr "Tengt á <filename>%1</filename>"
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
-msgstr ""
+msgstr "tengd"
 
 #: gui/partpropsdialog.cpp:141 gui/partpropsdialog.cpp:144
 #, kde-kuit-format
@@ -2555,6 +2602,7 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
+"Viltu í alvörunni endurgera <filename>%1</filename> með skráakerfinu %2?"
 
 #: gui/partpropsdialog.cpp:373
 #, kde-kuit-format
@@ -2566,7 +2614,7 @@ msgstr "Skipta um skráakerfi"
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
-msgstr ""
+msgstr "Ekki skipta um skráakerfi"
 
 #: gui/partpropsdialog.cpp:393
 #, kde-kuit-format
@@ -2595,7 +2643,7 @@ msgstr "Endurgera skráakerfið"
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
-msgstr ""
+msgstr "Ekki endurgera skráakerfið"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFirstSector)
 #: gui/partpropswidgetbase.ui:26
@@ -2622,7 +2670,7 @@ msgstr "UUID disksneiðar:"
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
-msgstr ""
+msgstr "Þetta skráakerfi styður ekki að merkingar séu stilltar."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
 #: gui/partpropswidgetbase.ui:86
@@ -2671,7 +2719,7 @@ msgstr "Tengipunktur:"
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
-msgstr ""
+msgstr "Tegund disksneiðar:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
@@ -2684,7 +2732,7 @@ msgstr "Slóð á tæki:"
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
-msgstr ""
+msgstr "Fjöldi geira:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:336
@@ -2699,13 +2747,15 @@ msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
 "filesystem type."
 msgstr ""
+"Þetta mun endurforsníða skráakerfið, tapar öllu innihaldi þess en heldur "
+"sömu tegund skráakerfis."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:349
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
-msgstr ""
+msgstr "Endurgera fyrirliggjandi skráakerfi"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
 #: gui/partpropswidgetbase.ui:373
@@ -2732,19 +2782,19 @@ msgstr "&Flögg:"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Please select a device."
-msgstr ""
+msgstr "Veldu tæki."
 
 #: gui/parttablewidget.cpp:54
 #, kde-kuit-format
 msgctxt "@info"
 msgid "No valid partition table was found on this device."
-msgstr ""
+msgstr "Engin gild disksneiðatafla fannst á tækinu."
 
 #: gui/resizedialog.cpp:42
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize/move partition: <filename>%1</filename>"
-msgstr "Tengipunktur:"
+msgstr "Breyta stærð/færa disksneið: <filename>%1</filename>"
 
 #: gui/resizedialog.cpp:92
 #, kde-format
@@ -2804,10 +2854,9 @@ msgstr "Síðasti geiri:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckAlign)
 #: gui/sizedetailswidgetbase.ui:124
-#, fuzzy, kde-format
-#| msgid "Partition"
+#, kde-format
 msgid "Align partition"
-msgstr "Disksneið"
+msgstr "Jafna disksneið"
 
 #: gui/sizedialogbase.cpp:66
 #, kde-kuit-format
@@ -2905,7 +2954,7 @@ msgstr "Heimildir"
 #: gui/sizedialogwidgetbase.ui:305
 #, kde-format
 msgid "Allow everyone to write and read on this device"
-msgstr ""
+msgstr "Leyfa hverjum sem er að skrifa og lesa á þessu tæki"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:308
@@ -2920,12 +2969,14 @@ msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
 "folder permissions"
 msgstr ""
+"Einungis leyfa kerfisstjóra (root) að skrifa og lesa á þessu tæki, þú þarft "
+"að gefa heimildir fyrir hverja möppu"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:318
 #, kde-format
 msgid "O&nly Root"
-msgstr ""
+msgstr "Ei&nungis kerfisstjóri (root)"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
 #: gui/sizedialogwidgetbase.ui:334
@@ -2938,7 +2989,7 @@ msgstr "Laust &pláss á undan:"
 #: gui/sizedialogwidgetbase.ui:347
 #, kde-format
 msgid "Logical Volume Name:"
-msgstr ""
+msgstr "Heiti rökeintaks (logical volume):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
 #: gui/sizedialogwidgetbase.ui:363
@@ -3037,13 +3088,13 @@ msgstr "Skemmdir geirar:"
 #: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
 #, kde-format
 msgid "Powered on for:"
-msgstr ""
+msgstr "Í gangi í:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
 #: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
 #, kde-format
 msgid "Power cycles:"
-msgstr ""
+msgstr "Fjöldi gangsetninga:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
 #: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
@@ -3055,13 +3106,13 @@ msgstr "Sjálfprófanir:"
 #: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
 #, kde-format
 msgid "Overall assessment:"
-msgstr ""
+msgstr "Heildarmat:"
 
 #: gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save SMART Report."
-msgstr ""
+msgstr "Gat ekki vistað SMART-skýrslu."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:294
@@ -3124,10 +3175,12 @@ msgid "Value"
 msgstr "Gildi"
 
 #: gui/treelog.cpp:110
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary output file to save <filename>%1</filename>."
-msgstr "Tengipunktur:"
+msgstr ""
+"Tókst ekki að búa til bráðabirgðaúttaksskrá til að vista í <filename>%1</"
+"filename>."
 
 #: gui/treelog.cpp:110
 #, kde-kuit-format
@@ -3195,7 +3248,7 @@ msgstr " MiB"
 #: gui/volumegroupwidgetbase.ui:107
 #, kde-format
 msgid "Total LV: "
-msgstr ""
+msgstr "Samtals LV: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
 #: gui/volumegroupwidgetbase.ui:130
@@ -3309,10 +3362,10 @@ msgid "Hugo Pereira Da Costa"
 msgstr "Hugo Pereira Da Costa"
 
 #: main.cpp:90
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Partition Widget Design"
-msgstr "Disksneiðaupplýsingar"
+msgstr "Hönnun á viðmótshluta disksneiða"
 
 #: main.cpp:91
 #, kde-kuit-format
@@ -3337,14 +3390,14 @@ msgstr "Tæki sem á að sýsla með"
 #, kde-format
 msgctxt "@label"
 msgid "Is this the first time KDE Partition Manager is being run?"
-msgstr ""
+msgstr "Er þetta í fyrsta skipti sem KDE disksneiðaumsýslan er keyrð?"
 
 #. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
 #: partitionmanager.kcfg:49
 #, kde-format
 msgctxt "@label"
 msgid "Hide log messages below"
-msgstr ""
+msgstr "Fela skilaboð atvikaskráningar fyrir neðan"
 
 #. i18n: ectx: label, entry (sectorAlignment), group (KDE Partition Manager)
 #: partitionmanager.kcfg:53
@@ -3372,14 +3425,14 @@ msgstr "Litir skráakerfis"
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
-msgstr ""
+msgstr "Birta valmyndastiku forrits"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:143
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Backend plugin"
-msgstr "Afrit"
+msgstr "Bakenda-viðbót"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:149
@@ -3400,7 +3453,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error: Could Not Load Backend Plugin"
-msgstr ""
+msgstr "Villa: Tókst ekki að hlaða inn bakenda-viðbót"
 
 #: util/guihelpers.cpp:57
 #, kde-kuit-format
