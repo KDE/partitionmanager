@@ -6,7 +6,7 @@
 		<title
 >Genel Görünüm</title>
 		<para
->Bu fasıl ;&partman;'de bulunan tüm komutların ayrıntılı açıklamalarını verir. Bu, verilen <xref linkend="usermanual"/> için eşlik edecek bir başvuru olarak tasarlanmıştır.</para>
+>Bu fasıl ;&partman;’de bulunan tüm komutların ayrıntılı açıklamalarını verir. Bu, verilen <xref linkend="usermanual"/> için eşlik edecek bir başvuru olarak tasarlanmıştır.</para>
 
 	<sect2 id="menu-file">
 		<title
@@ -228,7 +228,7 @@
 					</term>
 					<listitem>
 						<para
->Geçerli olarak seçili aygıtlarla ilgili bilgileri gösterir. Bu iletişim kutusunda, kapasiteyi, dilim boyutlarını, bölüntü tablosu türünün yanı sıra kullanılan ve en çok birincil bölüntü sayısını bulabilirsiniz.</para>
+>Geçerli olarak seçili aygıtlarla ilgili bilgileri gösterir. Bu iletişim kutusunda, sığayı, dilim boyutlarını, bölüntü tablosu türünün yanı sıra kullanılan ve en çok birincil bölüntü sayısını bulabilirsiniz.</para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -286,13 +286,13 @@
 						<para
 ><action
 >Bir bölüntüyü yeniden boyutlandırır veya taşır</action
->: Var olan bir bölüntüyü yeniden boyutlandırmak veya taşımak için iletişim kutusunu açar. Bölüntünün dosya sistemine ve bilgisayarınızda kurulu dış araçlara bağlı olarak, yeniden boyutlandırmayla ilgili olası üç eylemin tümü - yani bölüntüyü taşıma, küçültme (<quote
+>: Var olan bir bölüntüyü yeniden boyutlandırmak veya taşımak için iletişim kutusunu açar. Bölüntünün dosya sistemine ve bilgisayarınızda kurulu dış araçlara bağlı olarak, yeniden boyutlandırmayla ilgili olası üç eylemin tümü — yani bölüntüyü taşıma, küçültme (<quote
 >küçültme</quote
 >) veya büyütme (<quote
 >büyütme</quote
->) -- bu iletişim kutusunda bulunabilir. <xref linkend="menu-tools-filesystemsupport"/> bölümüne bakın. </para>
+>) — bu iletişim kutusunda bulunabilir. <xref linkend="menu-tools-filesystemsupport"/> bölümüne bakın. </para>
 						<para
->Bu komut yalnızca şu anda takılı olmayan ve dosya sistemi küçültülebilen, büyütülebilen veya taşınabilen bir bölüntü seçildiğinde etkinleştirilir. Genişletilmiş bir bölüntü için, yalnızca genişletilmiş bölüntüdeki mantıksalların hiçbiri bağlanmamışsa etkinleştirilir. </para>
+>Bu komut yalnızca şu anda takılı olmayan ve dosya sistemi küçültülebilen, büyütülebilen veya taşınabilen bir bölüntü seçildiğinde etkinleştirilir. Genişletilmiş bir bölüntü için yalnızca genişletilmiş bölüntüdeki mantıksalların hiçbiri bağlanmamışsa etkinleştirilir. </para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-partition-delete">

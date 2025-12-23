@@ -14,7 +14,7 @@
 				<para
 >Bunu söyledikten sonra, &partman; kullanımı güvenlidir. Her operasyon öncesi ve sonrasında kapsamlı denetimler gerçekleştirir. Dosya sistemi yazarları tarafından yazılan ve desteklenen dış araçları çağırır; kapsamlı bir biçimde sınanmıştır. </para>
 				<para
->Bilinmeyen bir hata nedeniyle veri kaybı riski her zaman vardır. &partman;'nin yazarları bu riski en aza indirmeye çalışırlar; ancak elbette bunun garantisi yoktur. </para>
+>Bilinmeyen bir hata nedeniyle veri kaybı riski her zaman vardır. &partman;’nin yazarları bu riski en aza indirmeye çalışırlar; ancak elbette bunun garantisi yoktur. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
@@ -36,7 +36,7 @@
 			</question>
 			<answer>
 				<para
->&partman;, yalnızca bir operasyondaki işlerin ne kadar süreceğini bildiğinde ilerleme bilgilerini gösterebilir. Ne yazık ki bu genellikle bölüntüleri yeniden boyutlandırırken geçerli değildir; çünkü bunu yaparken en uzun iş, bölüntüdeki dosya sistemini yeniden boyutlandırmaktır. Dosya sistemlerini yeniden boyutlandırmak çoğu durumda dış bir aracın &partman; adına yapacağı bir şeydir. ve bu dış araçlar &partman;'a yararlı ilerleme bilgileri sağlamaz, bu nedenle çalışırken raporlanacak hiçbir şey yoktur. </para>
+>&partman;, yalnızca bir operasyondaki işlerin ne kadar süreceğini bildiğinde ilerleme bilgilerini gösterebilir. Ne yazık ki bu genellikle bölüntüleri yeniden boyutlandırırken geçerli değildir; çünkü bunu yaparken en uzun iş, bölüntüdeki dosya sistemini yeniden boyutlandırmaktır. Dosya sistemlerini yeniden boyutlandırmak çoğu durumda dış bir aracın &partman; adına yapacağı bir şeydir. ve bu dış araçlar &partman;’a yararlı ilerleme bilgileri sağlamaz, bu nedenle çalışırken raporlanacak hiçbir şey yoktur. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
