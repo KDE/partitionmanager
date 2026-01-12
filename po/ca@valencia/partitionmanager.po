@@ -519,7 +519,8 @@ msgstr "Operacions cancel·lades."
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
-msgstr "S'han produït errors en aplicar les operacions. S'ha interromput."
+msgstr ""
+"S'han produït errors mentre s'aplicaven les operacions. S'ha interromput."
 
 #: gui/applyprogressdialog.cpp:341
 #, kde-kuit-format
@@ -840,7 +841,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Saving Mount Points"
-msgstr "S'ha produït un error en guardar els punts de muntatge"
+msgstr "S'ha produït un error mentre es guardaven els punts de muntatge"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
 #: gui/editmountpointdialogwidgetbase.ui:23
@@ -2008,7 +2009,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
-msgstr "S'ha produït un error en importar la taula de particions"
+msgstr "S'ha produït un error mentre s'importava la taula de particions"
 
 #: gui/mainwindow.cpp:1061
 #, kde-kuit-format
@@ -2131,7 +2132,7 @@ msgstr "No s'ha pogut analitzar la línia %1 del fitxer importat. S'ignorarà."
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
-msgstr "S'ha produït un error en exportar la taula de particions"
+msgstr "S'ha produït un error mentre s'exportava la taula de particions"
 
 #: gui/mainwindow.cpp:1380 gui/mainwindow.cpp:1386 gui/mainwindow.cpp:1422
 #, kde-kuit-format
@@ -2192,7 +2193,7 @@ msgstr "Partició no reconeguda «%1» "
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr "S'ha produït un error en obrir la partició"
+msgstr "S'ha produït un error mentre s'obria la partició"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -3264,7 +3265,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Saving Log File"
-msgstr "S'ha produït un error en guardar el fitxer de registre"
+msgstr "S'ha produït un error mentre es guardava el fitxer de registre"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:59
