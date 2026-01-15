@@ -3,13 +3,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2009, 2011, 2016, 2025 Sveinn í Felli <sveinki@nett.is>
+# SPDX-FileCopyrightText: 2009, 2011, 2016, 2025, 2026 Sveinn í Felli <sveinki@nett.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:42+0000\n"
-"PO-Revision-Date: 2025-12-19 17:51+0000\n"
+"PO-Revision-Date: 2026-01-14 11:54+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -864,7 +864,7 @@ msgstr "Samhæfður aðgangur"
 #: gui/editmountpointdialogwidgetbase.ui:109
 #, kde-format
 msgid "Pass &Number:"
-msgstr ""
+msgstr "Umferð &númer:"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
 #: gui/editmountpointdialogwidgetbase.ui:128
@@ -918,13 +918,13 @@ msgstr "&Liður tækis"
 #: gui/editmountpointdialogwidgetbase.ui:230
 #, kde-format
 msgid "No update of file access times"
-msgstr ""
+msgstr "Engin uppfærsla á notkunartímum"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
 #: gui/editmountpointdialogwidgetbase.ui:250
 #, kde-format
 msgid "No binary execution"
-msgstr ""
+msgstr "Engin keyrsla tvíundarkerfisskráa"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
 #: gui/editmountpointdialogwidgetbase.ui:264
@@ -942,7 +942,7 @@ msgstr ""
 #: gui/editmountpointdialogwidgetbase.ui:285
 #, kde-format
 msgid "No update of directory access times"
-msgstr ""
+msgstr "Engin uppfærsla á notkunartímum mappa"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/editmountpointdialogwidgetbase.ui:295
@@ -2015,6 +2015,8 @@ msgid ""
 "The import file <filename>%1</filename> does not contain a valid partition "
 "table."
 msgstr ""
+"Innflutningsskráin <filename>%1</filename> inniheldur ekki gilda "
+"disksneiðatöflu."
 
 #: gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1107 gui/mainwindow.cpp:1114
 #: gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1129 gui/mainwindow.cpp:1142
@@ -2048,7 +2050,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
-msgstr ""
+msgstr "Fann disksneið en enga tegund disksneiðatöflu (lína %1)."
 
 #: gui/mainwindow.cpp:1142
 #, kde-kuit-format
@@ -2060,13 +2062,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
-msgstr ""
+msgstr "Disksneiðin %1 þarf að enda á undan upphafsgeira (lína %2)."
 
 #: gui/mainwindow.cpp:1166
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr ""
+msgstr "Óþekkt hlutverk disksneiðar \"%1\" fyrir disksneiðina %2 (lína %3)."
 
 #: gui/mainwindow.cpp:1171
 #, kde-kuit-format
@@ -2082,6 +2084,8 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
+"Þessi tegund disksneiðatöflu \"%1\" styður ekki útvíkkaðar (extended) "
+"disksneiðar, en ein slík fannst (lína %2)."
 
 #: gui/mainwindow.cpp:1183
 #, kde-kuit-format
@@ -3226,7 +3230,7 @@ msgstr "Heiti á LV-sýndardiski: "
 #: gui/volumegroupwidgetbase.ui:47
 #, kde-format
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Raunveruleg stærð útvíkkunar: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
