@@ -2,20 +2,22 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the partitionmanager package.
 # Kevin Scannell <kscanne@gmail.com>, 2009.
+# SPDX-FileCopyrightText: 2026 Charlotte <altronic25@protonmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: extragear-sysadmin/partitionmanager.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:42+0000\n"
-"PO-Revision-Date: 2009-01-20 10:11-0500\n"
-"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
-"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2026-01-28 23:19+0000\n"
+"Last-Translator: Charlotte <altronic25@protonmail.com>\n"
+"Language-Team: Irish\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -42,7 +44,7 @@ msgstr "Socruithe Ginearálta"
 #, kde-kuit-format
 msgctxt "@title:tab"
 msgid "File System Colors"
-msgstr ""
+msgstr "Dathanna na Córais Comhad"
 
 #: config/configureoptionsdialog.cpp:47
 #, kde-format
@@ -143,46 +145,45 @@ msgstr "EiB"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_7)
 #: config/configurepagefilesystemcolors.ui:27
-#, fuzzy, kde-format
-#| msgid "reiser4:"
+#, kde-format
 msgid "ReiserFS:"
-msgstr "reiser4:"
+msgstr "ReiserFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_15)
 #: config/configurepagefilesystemcolors.ui:56
 #, kde-format
 msgid "UFS:"
-msgstr ""
+msgstr "UFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_31)
 #: config/configurepagefilesystemcolors.ui:69
 #, kde-format
 msgid "ISO 9660:"
-msgstr ""
+msgstr "ISO 9660:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_24)
 #: config/configurepagefilesystemcolors.ui:88
 #, kde-format
 msgid "OCFS2:"
-msgstr ""
+msgstr "OCFS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_22)
 #: config/configurepagefilesystemcolors.ui:104
 #, kde-format
 msgid "XFS:"
-msgstr ""
+msgstr "XFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_27)
 #: config/configurepagefilesystemcolors.ui:123
 #, kde-format
 msgid "NILFS2:"
-msgstr ""
+msgstr "NILFS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_6)
 #: config/configurepagefilesystemcolors.ui:172
 #, kde-format
 msgid "FAT16:"
-msgstr ""
+msgstr "FAT16:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_13)
 #: config/configurepagefilesystemcolors.ui:185
@@ -194,7 +195,7 @@ msgstr ""
 #: config/configurepagefilesystemcolors.ui:198
 #, kde-format
 msgid "LUKS2:"
-msgstr ""
+msgstr "LUKS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_17)
 #: config/configurepagefilesystemcolors.ui:214
@@ -206,13 +207,13 @@ msgstr ""
 #: config/configurepagefilesystemcolors.ui:233
 #, kde-format
 msgid "UDF:"
-msgstr ""
+msgstr "UDF:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_25)
 #: config/configurepagefilesystemcolors.ui:246
 #, kde-format
 msgid "ZFS:"
-msgstr ""
+msgstr "ZFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_3)
 #: config/configurepagefilesystemcolors.ui:294
@@ -224,13 +225,13 @@ msgstr "ext4:"
 #: config/configurepagefilesystemcolors.ui:310
 #, kde-format
 msgid "HPFS:"
-msgstr ""
+msgstr "HPFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_11)
 #: config/configurepagefilesystemcolors.ui:368
 #, kde-format
 msgid "JFS:"
-msgstr ""
+msgstr "JFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_2)
 #: config/configurepagefilesystemcolors.ui:381
@@ -240,17 +241,15 @@ msgstr "ext3:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_8)
 #: config/configurepagefilesystemcolors.ui:407
-#, fuzzy, kde-format
-#| msgid "reiser4:"
+#, kde-format
 msgid "Reiser4:"
-msgstr "reiser4:"
+msgstr "Reiser4:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_21)
 #: config/configurepagefilesystemcolors.ui:439
-#, fuzzy, kde-format
-#| msgid "btrfs:"
+#, kde-format
 msgid "Btrfs:"
-msgstr "btrfs:"
+msgstr "Btrfs:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
 #: config/configurepagefilesystemcolors.ui:481
@@ -262,81 +261,79 @@ msgstr "ext2:"
 #: config/configurepagefilesystemcolors.ui:500
 #, kde-format
 msgid "F2FS:"
-msgstr ""
+msgstr "F2FS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_28)
 #: config/configurepagefilesystemcolors.ui:519
 #, kde-format
 msgid "LVM2 PV:"
-msgstr ""
+msgstr "LVM2 PV:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_26)
 #: config/configurepagefilesystemcolors.ui:545
 #, kde-format
 msgid "exFAT:"
-msgstr ""
+msgstr "exFAT:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:558
 #, kde-format
 msgid "NTFS:"
-msgstr ""
+msgstr "NTFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_20)
 #: config/configurepagefilesystemcolors.ui:584
 #, kde-format
 msgid "LUKS:"
-msgstr ""
+msgstr "LUKS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_4)
 #: config/configurepagefilesystemcolors.ui:613
-#, fuzzy, kde-format
-#| msgid "linuxswap:"
+#, kde-format
 msgid "Linux Swap:"
-msgstr "linuxswap:"
+msgstr "Linux Swap:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_32)
 #: config/configurepagefilesystemcolors.ui:664
 #, kde-format
 msgid "FAT12:"
-msgstr ""
+msgstr "FAT12:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_12)
 #: config/configurepagefilesystemcolors.ui:677
 #, kde-format
 msgid "HFS:"
-msgstr ""
+msgstr "HFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_35)
 #: config/configurepagefilesystemcolors.ui:709
 #, kde-format
 msgid "APFS:"
-msgstr ""
+msgstr "APFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_5)
 #: config/configurepagefilesystemcolors.ui:722
 #, kde-format
 msgid "FAT32:"
-msgstr ""
+msgstr "FAT32:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
 #: config/configurepagefilesystemcolors.ui:751
-#, fuzzy, kde-format
-#| msgid "linuxswap:"
+#, kde-format
 msgid "Linux RAID:"
-msgstr "linuxswap:"
+msgstr "Linux RAID:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_34)
 #: config/configurepagefilesystemcolors.ui:764
 #, kde-format
 msgid "BitLocker:"
-msgstr ""
+msgstr "BitLocker:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_14)
 #: config/configurepagefilesystemcolors.ui:793
 #, kde-format
 msgid "HFS+:"
-msgstr ""
+msgstr "HFS+:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_16)
 #: config/configurepagefilesystemcolors.ui:819
@@ -348,13 +345,13 @@ msgstr "anaithnid:"
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "Minix:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
 #, kde-format
 msgid "Bcachefs:"
-msgstr ""
+msgstr "Bcachefs:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
@@ -420,7 +417,7 @@ msgstr "Earráid"
 #: config/configurepagegeneral.ui:137
 #, kde-format
 msgid "File Systems"
-msgstr ""
+msgstr "Córas Comhaid"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
@@ -475,7 +472,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
-msgstr ""
+msgstr "Socraigh..."
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -523,7 +520,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "[%1/%2] - %3: %4"
-msgstr ""
+msgstr "[%1/%2] - %3: %4"
 
 #: gui/applyprogressdialog.cpp:375
 #, kde-kuit-format
@@ -638,13 +635,13 @@ msgstr ""
 #: gui/createpartitiontablewidgetbase.ui:33
 #, kde-format
 msgid "GPT"
-msgstr ""
+msgstr "GPT"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
 #: gui/createpartitiontablewidgetbase.ui:43
 #, kde-format
 msgid "MS-Dos"
-msgstr ""
+msgstr "MS-Dos"
 
 #. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
 #: gui/createpartitiontablewidgetbase.ui:70
@@ -680,13 +677,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "good"
-msgstr ""
+msgstr "maith"
 
 #: gui/devicepropsdialog.cpp:104 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "BAD"
-msgstr ""
+msgstr "OLC"
 
 #: gui/devicepropsdialog.cpp:109 gui/smartdialog.cpp:129
 #, kde-kuit-format
@@ -828,10 +825,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
 #: gui/editmountpointdialogwidgetbase.ui:23
-#, fuzzy, kde-format
-#| msgid "Label"
+#, kde-format
 msgid "&Label"
-msgstr "Lipéad"
+msgstr "&Lipéad"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
 #: gui/editmountpointdialogwidgetbase.ui:46
@@ -891,7 +887,7 @@ msgstr "Cineál:"
 #: gui/editmountpointdialogwidgetbase.ui:200
 #, kde-format
 msgid "UU&ID"
-msgstr ""
+msgstr "UU&ID"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
 #: gui/editmountpointdialogwidgetbase.ui:213
@@ -1139,15 +1135,13 @@ msgstr ""
 #, kde-format, kde-kuit-format
 msgctxt "@label partition"
 msgid "Used:"
-msgstr ""
+msgstr "Úsáidte:"
 
 #: gui/infopane.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label partition"
 msgid "PE Size:"
-msgstr "Méid:"
+msgstr "Méid PE:"
 
 #: gui/infopane.cpp:132
 #, kde-format
@@ -1183,7 +1177,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label device"
 msgid "Type:"
-msgstr ""
+msgstr "Cineál:"
 
 #: gui/infopane.cpp:177 gui/infopane.cpp:185 gui/infopane.cpp:193
 #, kde-format
@@ -1222,12 +1216,10 @@ msgid "Volume Type:"
 msgstr ""
 
 #: gui/infopane.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "PE Size:"
-msgstr "Méid:"
+msgstr "Méid PE:"
 
 #: gui/infopane.cpp:187
 #, kde-format
@@ -1524,7 +1516,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
-msgstr ""
+msgstr "Nua"
 
 #: gui/mainwindow.cpp:377
 #, kde-kuit-format
@@ -2088,12 +2080,12 @@ msgstr ""
 #: gui/mainwindow.cpp:1380 gui/mainwindow.cpp:1386 gui/mainwindow.cpp:1422
 #, kde-kuit-format
 msgid "%1%2"
-msgstr ""
+msgstr "%1%2"
 
 #: gui/mainwindow.cpp:1386 gui/mainwindow.cpp:1397
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
-msgstr ""
+msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
 #: gui/mainwindow.cpp:1434
 #, kde-kuit-format
@@ -2141,14 +2133,14 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "KDE Partition Manager"
-msgstr ""
+msgstr "Bainisteoir Deighiltí KDE"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
 #: gui/mainwindowbase.ui:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Devices"
-msgstr ""
+msgstr "Gléasanna"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
 #: gui/mainwindowbase.ui:38
@@ -2630,7 +2622,7 @@ msgstr "Méid:"
 #: gui/partpropswidgetbase.ui:66
 #, kde-format
 msgid "Partition UUID:"
-msgstr ""
+msgstr "UUID Deighilte:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
 #: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:126
@@ -2644,7 +2636,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "UUID:"
-msgstr ""
+msgstr "UUID:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
 #: gui/partpropswidgetbase.ui:103
@@ -2669,11 +2661,10 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:223
-#, fuzzy, kde-format
-#| msgid "Label"
+#, kde-format
 msgctxt "@label"
 msgid "&Label:"
-msgstr "Lipéad"
+msgstr "&Lipéad:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
 #: gui/partpropswidgetbase.ui:286
@@ -2706,7 +2697,7 @@ msgstr ""
 #: gui/partpropswidgetbase.ui:336
 #, kde-format
 msgid "Partition Name:"
-msgstr ""
+msgstr "Ainm Deighilte:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:346
@@ -2728,15 +2719,14 @@ msgstr ""
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
-msgstr ""
+msgstr "Úsáidte:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/partpropswidgetbase.ui:383
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
-msgstr "Córas Comhad"
+msgstr "Córas Co&mhad:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
 #: gui/partpropswidgetbase.ui:396
@@ -2793,7 +2783,7 @@ msgstr "Gléas Anaithnid"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: gui/scanprogressdialog.cpp:36
 #, kde-kuit-format
@@ -2885,17 +2875,16 @@ msgstr "Breisithe"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
 #: gui/sizedialogwidgetbase.ui:197
-#, fuzzy, kde-format
-#| msgid "Logical"
+#, kde-format
 msgid "&Logical"
-msgstr "Loighciúil"
+msgstr "&Loighciúil"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/sizedialogwidgetbase.ui:213
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File system:"
-msgstr ""
+msgstr "Córas comhad:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
 #: gui/sizedialogwidgetbase.ui:249
@@ -3018,13 +3007,13 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Online"
-msgstr ""
+msgstr "Ar líne"
 
 #: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Offline"
-msgstr ""
+msgstr "As líne"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
 #: gui/smartdialog.cpp:155 gui/smartdialogwidgetbase.ui:68
@@ -3164,7 +3153,7 @@ msgstr ""
 msgctxt ""
 "@title:column Severity of a log entry / log level. Text must be very short."
 msgid "Sev."
-msgstr ""
+msgstr "Géire"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:62
@@ -3177,7 +3166,7 @@ msgstr "Géire"
 #, kde-format
 msgctxt "@title:column a time stamp of a log entry"
 msgid "Time"
-msgstr ""
+msgstr "Am"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeLog)
 #: gui/treelogbase.ui:72
@@ -3206,13 +3195,11 @@ msgstr ""
 #: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
 #, kde-format
 msgid "---"
-msgstr ""
+msgstr "---"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
 #: gui/volumegroupwidgetbase.ui:79
-#, fuzzy, kde-format
-#| msgctxt "@label:spinbox"
-#| msgid " MiB"
+#, kde-format
 msgid " MiB"
 msgstr " MiB"
 
@@ -3261,13 +3248,14 @@ msgid "Manage your disks, partitions and file systems"
 msgstr ""
 
 #: main.cpp:81
-#, fuzzy, kde-kuit-format
-#| msgid "Copyright 2008,2009,2010 Volker Lanz"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid ""
 "© 2008-2013 Volker Lanz\n"
 "© 2012-2020 Andrius Štikonas"
-msgstr "© 2008, 2009, 2010 Volker Lanz"
+msgstr ""
+"© 2008-2013 Volker Lanz\n"
+"© 2012-2020 Andrius Štikonas"
 
 #: main.cpp:85
 #, kde-kuit-format
@@ -3298,7 +3286,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Teo Mrnjavac"
-msgstr ""
+msgstr "Teo Mrnjavac"
 
 #: main.cpp:87
 #, kde-format
@@ -3310,7 +3298,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Chantara Tith"
-msgstr ""
+msgstr "Chantara Tith"
 
 #: main.cpp:88
 #, kde-format
@@ -3322,7 +3310,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Pali Rohár"
-msgstr ""
+msgstr "Pali Rohár"
 
 #: main.cpp:89
 #, kde-format
@@ -3345,7 +3333,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Caio Jordão Carvalho"
-msgstr ""
+msgstr "Caio Jordão Carvalho"
 
 #: main.cpp:91
 #, kde-format
