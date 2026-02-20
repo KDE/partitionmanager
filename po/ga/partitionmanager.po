@@ -420,10 +420,9 @@ msgstr "Córas Comhaid"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgid "&Default file system:"
-msgstr "Córas Comhad"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -1245,12 +1244,10 @@ msgid "RAID Level:"
 msgstr ""
 
 #: gui/infopane.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr "Méid:"
+msgstr ""
 
 #: gui/infopane.cpp:196
 #, kde-format
@@ -1259,12 +1256,10 @@ msgid "Total Chunk:"
 msgstr ""
 
 #: gui/infopane.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr "Méid:"
+msgstr ""
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
@@ -1297,9 +1292,6 @@ msgid_plural ""
 "still %1 operations pending.</para>"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
 
 #: gui/mainwindow.cpp:237
 #, kde-kuit-format
@@ -2278,9 +2270,6 @@ msgid_plural ""
 "existing one.</para>"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
 
 #: gui/partitionmanagerwidget.cpp:502
 #, kde-kuit-format
@@ -2729,11 +2718,10 @@ msgstr "Córas Co&mhad:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
 #: gui/partpropswidgetbase.ui:396
-#, fuzzy, kde-format
-#| msgid "Flags"
+#, kde-format
 msgctxt "@label"
 msgid "&Flags:"
-msgstr "Bratacha"
+msgstr ""
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format
@@ -2772,11 +2760,10 @@ msgid "Resize Volume Group"
 msgstr ""
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgid "Unknown Device"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "Gléas Anaithnid"
+msgstr ""
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
@@ -2817,18 +2804,16 @@ msgid "Align partition"
 msgstr ""
 
 #: gui/sizedialogbase.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgid "Advanced Settings"
+#, kde-kuit-format
 msgctxt "@action:button advanced settings button"
 msgid "Advanced"
-msgstr "Ardsocruithe"
+msgstr ""
 
 #: gui/sizedialogbase.cpp:180
-#, fuzzy, kde-kuit-format
-#| msgid "Advanced Settings"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Advanced"
-msgstr "Ardsocruithe"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: gui/sizedialogwidgetbase.ui:30
@@ -2860,17 +2845,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
 #: gui/sizedialogwidgetbase.ui:183
-#, fuzzy, kde-format
-#| msgid "Primary"
+#, kde-format
 msgid "Primar&y"
-msgstr "Príomha"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
 #: gui/sizedialogwidgetbase.ui:190
-#, fuzzy, kde-format
-#| msgid "Extended"
+#, kde-format
 msgid "E&xtended"
-msgstr "Breisithe"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
 #: gui/sizedialogwidgetbase.ui:197
@@ -3228,11 +3211,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
 #: gui/volumegroupwidgetbase.ui:186
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgid "Used Size: "
-msgstr "Méid:"
+msgstr ""
 
 #: main.cpp:77
 #, kde-kuit-format
@@ -3269,11 +3250,10 @@ msgid "Former maintainer"
 msgstr ""
 
 #: main.cpp:86
-#, fuzzy, kde-kuit-format
-#| msgid "Andrius Štikonas"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Andrius Štikonas"
-msgstr "Andrius Štikonas"
+msgstr ""
 
 #: main.cpp:86
 #, kde-kuit-format
@@ -3429,367 +3409,3 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Colúin"
-
-#~ msgid "Units"
-#~ msgstr "Aonaid"
-
-#~ msgid "luks:"
-#~ msgstr "luks:"
-
-#~ msgid "ntfs:"
-#~ msgstr "ntfs:"
-
-#~ msgid "fat16:"
-#~ msgstr "fat16:"
-
-#~ msgid "fat32:"
-#~ msgstr "fat32:"
-
-#~ msgid "zfs:"
-#~ msgstr "zfs:"
-
-#~ msgid "reiserfs:"
-#~ msgstr "reiserfs:"
-
-#~ msgid "hpfs:"
-#~ msgstr "hpfs:"
-
-#~ msgid "jfs"
-#~ msgstr "jfs"
-
-#~ msgid "hfs:"
-#~ msgstr "hfs:"
-
-#~ msgid "hfsplus:"
-#~ msgstr "hfsplus:"
-
-#~ msgid "ufs:"
-#~ msgstr "ufs:"
-
-#~ msgid "xfs:"
-#~ msgstr "xfs:"
-
-#~ msgid "ocfs2:"
-#~ msgstr "ocfs2:"
-
-#~ msgid "exfat:"
-#~ msgstr "exfat:"
-
-#~ msgid "nilfs2:"
-#~ msgstr "nilfs2:"
-
-#~ msgid "lvm2 pv:"
-#~ msgstr "lvm2 pv:"
-
-#~ msgctxt "@title:menu"
-#~ msgid "View"
-#~ msgstr "Amharc"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "swap"
-#~ msgstr "babhtáil"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "hidden"
-#~ msgstr "folaithe"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "raid"
-#~ msgstr "raid"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "lvm"
-#~ msgstr "lvm"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "lba"
-#~ msgstr "lba"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "hpservice"
-#~ msgstr "hpservice"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "palo"
-#~ msgstr "palo"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "prep"
-#~ msgstr "prep"
-
-#~ msgctxt "@item partition flag"
-#~ msgid "msft-reserved"
-#~ msgstr "msft-reserved"
-
-#, fuzzy
-#~| msgctxt "@item/plain partition table name"
-#~| msgid "unknown"
-#~ msgctxt "@item partition table name"
-#~ msgid "unknown"
-#~ msgstr "anaithnid"
-
-#, fuzzy
-#~| msgctxt "@item/plain partition table name"
-#~| msgid "unknown"
-#~ msgctxt "@item filesystem name"
-#~ msgid "unknown"
-#~ msgstr "anaithnid"
-
-#, fuzzy
-#~| msgid "Extended"
-#~ msgctxt "@item filesystem name"
-#~ msgid "extended"
-#~ msgstr "Breisithe"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "ext2"
-#~ msgctxt "@item filesystem name"
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "ext3"
-#~ msgctxt "@item filesystem name"
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "ext4"
-#~ msgctxt "@item filesystem name"
-#~ msgid "ext4"
-#~ msgstr "ext4"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "linuxswap"
-#~ msgctxt "@item filesystem name"
-#~ msgid "linuxswap"
-#~ msgstr "linuxswap"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "fat16"
-#~ msgctxt "@item filesystem name"
-#~ msgid "fat16"
-#~ msgstr "fat16"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "fat32"
-#~ msgctxt "@item filesystem name"
-#~ msgid "fat32"
-#~ msgstr "fat32"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "ntfs"
-#~ msgctxt "@item filesystem name"
-#~ msgid "ntfs"
-#~ msgstr "ntfs"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "reiser"
-#~ msgctxt "@item filesystem name"
-#~ msgid "reiser"
-#~ msgstr "reiser"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "reiser4"
-#~ msgctxt "@item filesystem name"
-#~ msgid "reiser4"
-#~ msgstr "reiser4"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "xfs"
-#~ msgctxt "@item filesystem name"
-#~ msgid "xfs"
-#~ msgstr "xfs"
-
-#, fuzzy
-#~| msgid "jfs"
-#~ msgctxt "@item filesystem name"
-#~ msgid "jfs"
-#~ msgstr "jfs"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "hfs"
-#~ msgctxt "@item filesystem name"
-#~ msgid "hfs"
-#~ msgstr "hfs"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "hfsplus"
-#~ msgctxt "@item filesystem name"
-#~ msgid "hfsplus"
-#~ msgstr "hfsplus"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "ufs"
-#~ msgctxt "@item filesystem name"
-#~ msgid "ufs"
-#~ msgstr "ufs"
-
-#, fuzzy
-#~| msgid "Information"
-#~ msgctxt "@item filesystem name"
-#~ msgid "unformatted"
-#~ msgstr "Eolas"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "btrfs"
-#~ msgctxt "@item filesystem name"
-#~ msgid "btrfs"
-#~ msgstr "btrfs"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "hpfs"
-#~ msgctxt "@item filesystem name"
-#~ msgid "hpfs"
-#~ msgstr "hpfs"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "luks"
-#~ msgctxt "@item filesystem name"
-#~ msgid "luks"
-#~ msgstr "luks"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "ocfs2"
-#~ msgctxt "@item filesystem name"
-#~ msgid "ocfs2"
-#~ msgstr "ocfs2"
-
-#, fuzzy
-#~| msgctxt "@item/plain filesystem name"
-#~| msgid "zfs"
-#~ msgctxt "@item filesystem name"
-#~ msgid "zfs"
-#~ msgstr "zfs"
-
-#, fuzzy
-#~| msgid "exfat:"
-#~ msgctxt "@item filesystem name"
-#~ msgid "exfat"
-#~ msgstr "exfat:"
-
-#, fuzzy
-#~| msgid "nilfs2:"
-#~ msgctxt "@item filesystem name"
-#~ msgid "nilfs2"
-#~ msgstr "nilfs2:"
-
-#, fuzzy
-#~| msgid "lvm2 pv:"
-#~ msgctxt "@item filesystem name"
-#~ msgid "lvm2 pv"
-#~ msgstr "lvm2 pv:"
-
-#~ msgctxt "@title:menu"
-#~ msgid "Mount"
-#~ msgstr "Feistigh"
-
-#~ msgctxt "@title:menu"
-#~ msgid "Unmount"
-#~ msgstr "Dífheistigh"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "KiB"
-#~ msgstr "KiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "MiB"
-#~ msgstr "MiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "GiB"
-#~ msgstr "GiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "TiB"
-#~ msgstr "TiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "PiB"
-#~ msgstr "PiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "EiB"
-#~ msgstr "EiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "ZiB"
-#~ msgstr "ZiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "YiB"
-#~ msgstr "YiB"
-
-#~ msgctxt "@info/plain unit"
-#~ msgid "(unknown unit)"
-#~ msgstr "(aonad anaithnid)"
-
-#, fuzzy
-#~| msgctxt "@info/plain"
-#~| msgid "Command: %1 %2"
-#~ msgctxt "@info/plain"
-#~ msgid "Command: %1"
-#~ msgstr "Ordú: %1 %2"
-
-#~ msgid "Date:"
-#~ msgstr "Dáta:"
-
-#, fuzzy
-#~| msgid "KDE version:"
-#~ msgid "KDE Frameworks version:"
-#~ msgstr "Leagan KDE:"
-
-#~ msgid "Machine:"
-#~ msgstr "Ríomhaire:"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Size:"
-#~ msgstr "Méid:"
-
-#~ msgid "Copyright 2010 Volker Lanz"
-#~ msgstr "© 2010 Volker Lanz"
-
-#~ msgid "Copyright 2008,2009,2010 Volker Lanz"
-#~ msgstr "© 2008, 2009, 2010 Volker Lanz"
-
-#~ msgctxt "@item/plain filesystem name"
-#~ msgid "unknown"
-#~ msgstr "anaithnid"
-
-#~ msgctxt "@item/plain filesystem name"
-#~ msgid "jfs"
-#~ msgstr "jfs"
-
-#~ msgctxt "@info:credit"
-#~ msgid "(c) 2008, 2009, 2010, 2011 Volker Lanz"
-#~ msgstr "© 2008, 2009, 2010, 2011 Volker Lanz"
-
-#~ msgid "Available:"
-#~ msgstr "Ar Fáil:"
-
-#~ msgid "User ID:"
-#~ msgstr "Aitheantas an Úsáideora:"
-
-#~ msgid "Copyright (c) 2008 Volker Lanz"
-#~ msgstr "© 2008 Volker Lanz"
-
-#~ msgctxt "@title:menu"
-#~ msgid "Edit"
-#~ msgstr "Eagar"
