@@ -2,14 +2,14 @@
 # Copyright (C) 2013 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Safa Alfulaij <safaalfulaij@hotmail.com>, 2013.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 # Automatically generated, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:55+0000\n"
-"PO-Revision-Date: 2025-08-20 21:36+0400\n"
+"PO-Revision-Date: 2026-02-26 12:21+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -768,19 +768,19 @@ msgstr "جدول التقسيم:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Edit additional mount options"
-msgstr "حرّر خيارات الضم الإضافي"
+msgstr "حرّر خيارات الوصل الإضافي"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
 #: gui/editmountoptionsdialogwidgetbase.ui:19
 #, kde-format
 msgid "Edit Mount Options"
-msgstr "حرّر خيارات الضم"
+msgstr "حرّر خيارات الوصل"
 
 #. i18n: ectx: property (text), widget (QLabel, m_Label)
 #: gui/editmountoptionsdialogwidgetbase.ui:25
 #, kde-format
 msgid "Edit the mount options for this file system:"
-msgstr "حرّر خيارات الضم لنوع الملفات هذا:"
+msgstr "حرّر خيارات الوصل لنوع الملفات هذا:"
 
 #. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, m_EditOptions)
 #: gui/editmountoptionsdialogwidgetbase.ui:32
@@ -792,7 +792,7 @@ msgstr "الخيار 1،الخيار 2"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Edit mount point for <filename>%1</filename>"
-msgstr "حرّر نقطة الضم لـ <filename>%1</filename>"
+msgstr "حرّر نقطة الوصل لـ <filename>%1</filename>"
 
 #: gui/editmountpointdialog.cpp:62
 #, kde-kuit-format
@@ -824,13 +824,13 @@ msgstr "احفظ التغييرات"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not save mount points to file <filename>/etc/fstab</filename>."
-msgstr "تعذّر حفظ نقاط الضم للملف <filename>/etc/fstab</filename>."
+msgstr "تعذّر حفظ نقاط الوصل للملف <filename>/etc/fstab</filename>."
 
 #: gui/editmountpointdialog.cpp:81
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Saving Mount Points"
-msgstr "خطأ أثناء حفظ نقاط الضم"
+msgstr "خطأ أثناء حفظ نقاط الوصل"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
 #: gui/editmountpointdialogwidgetbase.ui:23
@@ -848,7 +848,7 @@ msgstr "ترد&د التفريغ:"
 #: gui/editmountpointdialogwidgetbase.ui:75
 #, kde-format
 msgid "No automatic mount"
-msgstr "لا ضم آليّ"
+msgstr "لا يوجد وصل آليّ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
 #: gui/editmountpointdialogwidgetbase.ui:95
@@ -884,7 +884,7 @@ msgstr "المسار:"
 #: gui/editmountpointdialogwidgetbase.ui:183
 #, kde-format
 msgid "Users can mount and unmount"
-msgstr "يمكن للمستخدمين الضم وإزالة الضم"
+msgstr "يمكن للمستخدمين الوصل وإزالة الوصل"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelType)
 #: gui/editmountpointdialogwidgetbase.ui:190
@@ -932,7 +932,7 @@ msgstr "حدّث أوقات الوصول المتعلقة بالتعديل"
 #: gui/editmountpointdialogwidgetbase.ui:271
 #, kde-format
 msgid "Don't prevent the system from booting if not mountable"
-msgstr "لا تمنع النظام من الإقلاع إذا لم يكن قابل للضم"
+msgstr "لا تمنع النظام من الإقلاع إذا لم يكن قابل للوصل"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
 #: gui/editmountpointdialogwidgetbase.ui:285
@@ -1643,37 +1643,37 @@ msgstr "الصق قسم منسوخ."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
-msgstr "حرّر نقطة الضم"
+msgstr "حرّر نقطة الوصل"
 
 #: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
-msgstr "حرّر نقطة ضم"
+msgstr "حرّر نقطة وصل"
 
 #: gui/mainwindow.cpp:432
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
-msgstr "حرّر نقطة ضم قسم وخياراته."
+msgstr "حرّر نقطة وصل قسم وخياراته."
 
 #: gui/mainwindow.cpp:437
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
-msgstr "ضم"
+msgstr "صِل"
 
 #: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
-msgstr "ضم أو إزالة ضم القسم"
+msgstr "وصل أو إزالة وصل القسم"
 
 #: gui/mainwindow.cpp:439
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
-msgstr "ضم أو إزالة ضم قسم."
+msgstr "وصل أو إزالة وصل قسم."
 
 #: gui/mainwindow.cpp:444
 #, kde-kuit-format
@@ -1874,7 +1874,7 @@ msgid ""
 "Cannot delete partition. Please make sure it is unmounted or locked before "
 "proceeding."
 msgstr ""
-"لا يمكن حذف القسم. يرجى التأكد من إلغاء ضمه أو إلغاء قفله قبل المتابعة."
+"لا يمكن حذف القسم. يرجى التأكد من إلغاء وصله أو إلغاء قفله قبل المتابعة."
 
 #: gui/mainwindow.cpp:721
 #, kde-kuit-format
@@ -2255,26 +2255,26 @@ msgstr "%1 [معمى]"
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be mounted."
-msgstr "تعذّر ضم نظام الملفات على القسم <filename>%1</filename>."
+msgstr "تعذّر وصل نظام الملفات على القسم <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:409
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
-msgstr "تعذّر ضم نظام الملفات."
+msgstr "تعذّر وصل نظام الملفات."
 
 #: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be unmounted."
-msgstr "تعذّرت إزالة ضم نظام الملفات على القسم <filename>%1</filename>."
+msgstr "تعذّرت إزالة وصل نظام الملفات على القسم <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:412
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
-msgstr "تعذّرت إزالة ضم نظام الملفات."
+msgstr "تعذّرت إزالة وصل نظام الملفات."
 
 #: gui/partitionmanagerwidget.cpp:452
 #, kde-kuit-format
@@ -2359,7 +2359,7 @@ msgid ""
 "%2 first.</para>"
 msgstr ""
 "<para>يتعذّر حذف القسم <filename>%1</filename> حاليًّا لأن قسم واحد أو أكثر "
-"بأرقام منطقية أعلى ما زالت مضمومة.</para><para>يرجى إزالة ضم جميع الأقسام "
+"بأرقام منطقية أعلى ما زالت موصولة.</para><para>يرجى إزالة وصل جميع الأقسام "
 "بالأرقام المنطقية الأعلى من%2 أولًا.</para>"
 
 #: gui/partitionmanagerwidget.cpp:568
@@ -2505,7 +2505,7 @@ msgstr "النوع"
 #: gui/partitionmanagerwidgetbase.ui:89
 #, kde-format
 msgid "Mount Point"
-msgstr "نقطة الضم"
+msgstr "نقطة الوصل"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:94
@@ -2601,19 +2601,19 @@ msgstr "ساكن"
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
-msgstr "قسم منطقي واحد مضموم على الأقل."
+msgstr "قسم منطقي واحد موصول على الأقل."
 
 #: gui/partpropsdialog.cpp:135
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
-msgstr "مضموم في <filename>%1</filename>"
+msgstr "موصول في <filename>%1</filename>"
 
 #: gui/partpropsdialog.cpp:137
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
-msgstr "مضموم"
+msgstr "موصول"
 
 #: gui/partpropsdialog.cpp:141 gui/partpropsdialog.cpp:144
 #, kde-kuit-format
@@ -2759,7 +2759,7 @@ msgstr "الل&صيقة:"
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
-msgstr "نقطة الضم:"
+msgstr "نقطة الوصل:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
 #: gui/partpropswidgetbase.ui:306
