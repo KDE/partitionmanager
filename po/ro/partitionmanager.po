@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:55+0000\n"
-"PO-Revision-Date: 2026-03-01 00:15+0000\n"
+"PO-Revision-Date: 2026-03-03 19:15+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -979,6 +979,12 @@ msgid ""
 "if all required tools are installed. Please see the documentation for "
 "details. "
 msgstr ""
+"Acest tabel arată care sisteme de fișiere sunt susținute și care operații "
+"anume pot fi efectuate asupra lor.\n"
+"Unele sisteme de fișiere necesită instalarea de unelte externe pentru a fi "
+"susținute. Chiar dacă sunt instalate toate uneltele necesare, nu toate "
+"operațiile pot fi efectuate asupra tuturor sistemelor de fișiere. Vedeți "
+"documentația pentru detalii. "
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:70
@@ -1259,27 +1265,22 @@ msgid "RAID Level:"
 msgstr "Nivel RAID:"
 
 #: gui/infopane.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@label device"
-#| msgid "Cylinder size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr "Dimensiune cilindru:"
+msgstr "Dimensiune bucată:"
 
 #: gui/infopane.cpp:196
-#, fuzzy, kde-format
-#| msgid "Total: %p%"
+#, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr "Total: %p%"
+msgstr "Total bucăți:"
 
 #: gui/infopane.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr "Dimensiune:"
+msgstr "Dimensiune ansamblu:"
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
@@ -2014,32 +2015,24 @@ msgstr ""
 "import: %2"
 
 #: gui/mainwindow.cpp:1067
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid ""
-#| "Could not open device <filename>%1</filename> to create new partition "
-#| "<filename>%2</filename>."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "Could not open temporary file <filename>%1</filename> while trying to import "
 "from <filename>%2</filename>."
 msgstr ""
-"Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
-"noii partiții <filename>%2</filename>."
+"Fișierul temporar <filename>%1</filename> nu a putut fi deschis în timpul "
+"importului din <filename>%2</filename>."
 
 #: gui/mainwindow.cpp:1097
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid ""
-#| "Could not open device <filename>%1</filename> to create new partition "
-#| "<filename>%2</filename>."
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The import file <filename>%1</filename> does not contain a valid partition "
 "table."
 msgstr ""
-"Dispozitivul <filename>%1</filename> nu a putut fi deschis pentru crearea "
-"noii partiții <filename>%2</filename>."
+"Fișierul de import <filename>%1</filename> nu conține o tabelă de partiții "
+"valabilă."
 
 #: gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1107 gui/mainwindow.cpp:1114
 #: gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1129 gui/mainwindow.cpp:1142
@@ -2055,44 +2048,48 @@ msgstr "Eroare la importul tabelei de partiții"
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr ""
+"S-a găsit mai mult decât un tip de tabelă de partiții în fișierul de import "
+"(rândul %1)."
 
 #: gui/mainwindow.cpp:1114
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
-msgstr ""
+msgstr "Tipul tabelei de partiții „%1” nu este cunoscut (rândul %2)."
 
 #: gui/mainwindow.cpp:1119
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr ""
+"Tipul tabelei de partiții „%1” nu este permis pentru import (rândul %2)."
 
 #: gui/mainwindow.cpp:1129
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr ""
+"S-a găsit o partiție dar nu este niciun tip de tabelă de partiții (rândul "
+"%1)."
 
 #: gui/mainwindow.cpp:1142
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
-msgstr ""
+msgstr "Partiția %1 ar fi în afara marginilor dispozitivului (rândul %2)."
 
 #: gui/mainwindow.cpp:1147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr ""
+"Partiția %1 are sectorul de sfârșit înaintea celui de început (rândul %2)."
 
 #: gui/mainwindow.cpp:1166
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Create file system %1 on partition <filename>%2</filename>"
+#, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr "Creează sistemul de fișiere %1 pe partiția <filename>%2</filename>"
+msgstr "Rol de partiție necunoscut „%1” pentru partiția %2 (rândul %3)."
 
 #: gui/mainwindow.cpp:1171
 #, kde-kuit-format
@@ -2100,6 +2097,8 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
 msgstr ""
+"Nu a fost găsită nicio partiție-părinte sau tabelă de partiții pentru "
+"partiția %1 (rândul %2)."
 
 #: gui/mainwindow.cpp:1176
 #, kde-kuit-format
@@ -2108,6 +2107,8 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
+"Tipul tabelei de partiții „%1” nu susține partiții extinse, dar a fost "
+"găsită una (rândul %2)."
 
 #: gui/mainwindow.cpp:1183
 #, kde-kuit-format
@@ -2153,6 +2154,16 @@ msgid ""
 "modify them.</para><para>You should find packages with these support tools "
 "in your distribution's package manager.</para>"
 msgstr ""
+"<para>Nu au fost găsite unelte potrivite pentru sisteme de fișiere aflate "
+"acum pe discurile dure de pe acest calculator:</para><table style='margin-"
+"top:12px'><tr><td style='font-weight:bold;padding-right:12px;white-space:"
+"nowrap;'>Partiție</td><td style='font-weight:bold;padding-right:12px;white-"
+"space:nowrap;'>Sistem de fișiere</td><td style='font-weight:bold;padding-"
+"right:12px;white-space:nowrap;'>Unelte</td><td style='font-weight:bold;"
+"padding-right:12px;white-space:nowrap;'>URL</td></tr>%1</table><para>Nu veți "
+"putea modifica aceste partiții atâta timp cât nu sunt instalate uneltele "
+"potrivite.</para><para>Pachetele ce conțin aceste unelte pot fi găsite în "
+"gestionarul de pachete al distribuției dumneavoastră.</para>"
 
 #: gui/mainwindow.cpp:1447
 #, kde-kuit-format
@@ -2418,14 +2429,7 @@ msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "Partiția <filename>%1</filename> a fost copiată în clipboard."
 
 #: gui/partitionmanagerwidget.cpp:724
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para><warning>You are about to lose all data on partition <filename>%1</"
-#| "filename>.</warning></para><para>Recreating a file system will erase all "
-#| "its contents. If you continue now and apply the resulting operation in "
-#| "the main window, all data on <filename>%1</filename> will unrecoverably "
-#| "be lost.</para>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para><warning>You are about to lose all data on partition <filename>%1</"
@@ -2436,10 +2440,11 @@ msgid ""
 "unrecoverably be overwritten.</para>"
 msgstr ""
 "<para><warning>Sunteți pe cale de a pierde toate datele de pe partiția "
-"<filename>%1</filename>.</warning></para><para>Recrearea unui sistem de "
-"fișiere va șterge tot conținutul acestuia. Dacă continuați acum și aplicați "
-"operația rezultantă în fereastra principală, toate datele de pe <filename>"
-"%1</filename> vor fi pierdute irecuperabil.</para>"
+"<filename>%1</filename>.</warning></para><para>Suprascrierea unei partiții "
+"cu alta (sau cu un fișier-imagine) va distruge toate datele de pe partiția-"
+"țintă.</para><para>Dacă continuați acum și aplicați operația rezultantă în "
+"fereastra principală, toate datele de pe <filename>%1</filename> vor fi "
+"suprascrise irecuperabil.</para>"
 
 #: gui/partitionmanagerwidget.cpp:732
 #, kde-kuit-format
@@ -2481,6 +2486,10 @@ msgid ""
 "are correctly aligned or when copying a primary partition into an extended "
 "partition.</para>"
 msgstr ""
+"<para>Nu se poate crea partiția-țintă suficient de mare pentru a conține "
+"sursa.</para><para>Aceasta se poate întâmpla dacă unele partiții de pe "
+"dispozitiv nu sunt aliniate corect, sau la copierea unei partiții primare în "
+"una extinsă.</para>"
 
 #: gui/partitionmanagerwidget.cpp:748
 #, kde-kuit-format
@@ -3244,12 +3253,12 @@ msgid "Value"
 msgstr "Valoare"
 
 #: gui/treelog.cpp:110
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid "Could not open file <filename>%1</filename> for writing."
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not create temporary output file to save <filename>%1</filename>."
-msgstr "Fișierul <filename>%1</filename> nu a putut fi deschis pentru scriere."
+msgstr ""
+"Nu s-a putut crea fișierul temporar de ieșire pentru salvarea <filename>%1</"
+"filename>."
 
 #: gui/treelog.cpp:110
 #, kde-kuit-format
