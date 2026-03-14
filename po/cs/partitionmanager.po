@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2023, 2024, 2025 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2023, 2024, 2025, 2026 Vít Pelčák <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2010, 2012.
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Vit Pelcak <vit@pelcak.org>
 #
@@ -9,25 +9,25 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:55+0000\n"
-"PO-Revision-Date: 2025-12-01 10:09+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-03-13 11:07+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák, Tomáš Chvátal"
+msgstr "Vít Pelčák, Tomáš Chvátal,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org, tomas.chvatal@gmail.com"
+msgstr "vit@pelcak.org,tomas.chvatal@gmail.com,libor.filipek@gmail.com"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
@@ -378,7 +378,7 @@ msgstr "Zarovnání sek&torů:"
 #: config/configurepagegeneral.ui:60
 #, kde-format
 msgid " sectors"
-msgstr " sektory"
+msgstr " sektorů"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: config/configurepagegeneral.ui:88
@@ -396,7 +396,7 @@ msgstr "Skrýt zpráv&y níže:"
 #: config/configurepagegeneral.ui:105
 #, kde-format
 msgid "Debug"
-msgstr "Ladit"
+msgstr "Ladění"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:110
@@ -432,7 +432,7 @@ msgstr "&Výchozí souborový systém:"
 #: config/configurepagegeneral.ui:165
 #, kde-format
 msgid "Shredding"
-msgstr "Ničení"
+msgstr "Skartování"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: config/configurepagegeneral.ui:171
@@ -474,7 +474,7 @@ msgstr "Po&drobnosti"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
-msgstr "Nastavuji..."
+msgstr "Nastavování..."
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -616,6 +616,10 @@ msgid ""
 "the most the MS-Dos partition table type supports, so you will not be able "
 "to use the whole device.</para>"
 msgstr ""
+"<para>Opravdu chcete vytvořit tabulku oddílů MS-DOS na <filename>%1</"
+"filename>?</para><para>Toto zařízení má více než 2^32 sektorů. To je "
+"maximum, které typ tabulky oddílů MS-Dos podporuje, takže nebudete moci "
+"využít celé zařízení.</para>"
 
 #: gui/createpartitiontabledialog.cpp:58
 #, kde-kuit-format
@@ -645,7 +649,7 @@ msgstr "GPT"
 #: gui/createpartitiontablewidgetbase.ui:43
 #, kde-format
 msgid "MS-Dos"
-msgstr "MS-Dos"
+msgstr "MS-DOS"
 
 #. i18n: ectx: property (text), widget (QLabel, m_IconLabel)
 #: gui/createpartitiontablewidgetbase.ui:70
@@ -657,13 +661,13 @@ msgstr "(ikona)"
 #: gui/createpartitiontablewidgetbase.ui:83
 #, kde-format
 msgid "<b>Warning:</b> This will destroy all data on the device!"
-msgstr ""
+msgstr "<b>Upozornění:</b> Tímto krokem dojde ke zničení všech dat v zařízení!"
 
 #: gui/createvolumegroupdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create new Volume Group"
-msgstr ""
+msgstr "Vytvořit novou skupinu svazků"
 
 #: gui/devicepropsdialog.cpp:42
 #, kde-kuit-format
@@ -699,7 +703,7 @@ msgstr "(neznámý)"
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "LVM Volume Group"
-msgstr ""
+msgstr "Skupina svazků LVM"
 
 #: gui/devicepropsdialog.cpp:117
 #, kde-kuit-format
@@ -711,7 +715,7 @@ msgstr "Zařízení pro softwarový RAID"
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Volume Manager Device"
-msgstr ""
+msgstr "Správce svazků zařízení"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLogicalSectorSize)
 #: gui/devicepropswidgetbase.ui:22
@@ -779,7 +783,7 @@ msgstr "Upravit možnosti připojení"
 #: gui/editmountoptionsdialogwidgetbase.ui:25
 #, kde-format
 msgid "Edit the mount options for this file system:"
-msgstr ""
+msgstr "Upravit možnosti připojení pro tento souborový systém:"
 
 #. i18n: ectx: property (placeholderText), widget (QPlainTextEdit, m_EditOptions)
 #: gui/editmountoptionsdialogwidgetbase.ui:32
@@ -802,6 +806,10 @@ msgid ""
 "overwrite the existing file on your hard drive now. This <emphasis "
 "strong='1'>can not be undone</emphasis>.</warning></para>"
 msgstr ""
+"<para>Opravdu chcete uložit změny, které jste provedli v systémové tabulce "
+"souboru <filename>/etc/fstab</filename>?</para><para><warning>Tímto "
+"přepíšete stávající soubor na pevném disku. Tuto akci <emphasis "
+"strong='1'>>nelze vrátit zpět</emphasis>.</warning></para>"
 
 #: gui/editmountpointdialog.cpp:64
 #, kde-kuit-format
@@ -838,7 +846,7 @@ msgstr "&Popisek"
 #: gui/editmountpointdialogwidgetbase.ui:46
 #, kde-format
 msgid "Dump &Frequency:"
-msgstr ""
+msgstr "&Frekvence výpisu:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
 #: gui/editmountpointdialogwidgetbase.ui:75
@@ -916,13 +924,13 @@ msgstr "Neaktualizovat přístupový čas souborů"
 #: gui/editmountpointdialogwidgetbase.ui:250
 #, kde-format
 msgid "No binary execution"
-msgstr ""
+msgstr "Žádné spuštění binárních souborů"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
 #: gui/editmountpointdialogwidgetbase.ui:264
 #, kde-format
 msgid "Update access times relative to modification"
-msgstr ""
+msgstr "Aktualizovat časy přístupu vzhledem k úpravám"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
 #: gui/editmountpointdialogwidgetbase.ui:271
@@ -1091,13 +1099,13 @@ msgstr "Kapacita:"
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher name:"
-msgstr ""
+msgstr "Název šifrování:"
 
 #: gui/infopane.cpp:116
 #, kde-format
 msgctxt "@label partition"
 msgid "Cipher mode:"
-msgstr ""
+msgstr "Režim šifrování:"
 
 #: gui/infopane.cpp:117
 #, kde-format
@@ -1115,7 +1123,7 @@ msgstr "Velikost klíče:"
 #, kde-format
 msgctxt "@label partition"
 msgid "Payload offset:"
-msgstr ""
+msgstr "Kompenzační posun:"
 
 #: gui/infopane.cpp:120 gui/infopane.cpp:135 gui/infopane.cpp:143
 #, kde-format, kde-kuit-format
@@ -1151,25 +1159,25 @@ msgstr "Použité:"
 #, kde-format
 msgctxt "@label partition"
 msgid "PE Size:"
-msgstr ""
+msgstr "Velikost fyz. extentu:"
 
 #: gui/infopane.cpp:132
 #, kde-format
 msgctxt "@label partition"
 msgid "Total PE:"
-msgstr ""
+msgstr "Celkem fyz. extentů:"
 
 #: gui/infopane.cpp:133
 #, kde-format
 msgctxt "@label partition"
 msgid "Free PE:"
-msgstr ""
+msgstr "Volné fyz. extenty:"
 
 #: gui/infopane.cpp:134
 #, kde-format
 msgctxt "@label partition"
 msgid "Allocated PE:"
-msgstr ""
+msgstr "Alokované fyz. extenty:"
 
 #: gui/infopane.cpp:157
 #, kde-kuit-format
@@ -1223,31 +1231,31 @@ msgstr "Primárních/Max:"
 #, kde-format
 msgctxt "@label device"
 msgid "Volume Type:"
-msgstr ""
+msgstr "Typ svazku:"
 
 #: gui/infopane.cpp:186
 #, kde-format
 msgctxt "@label device"
 msgid "PE Size:"
-msgstr ""
+msgstr "Velikost fyz. extentu:"
 
 #: gui/infopane.cpp:187
 #, kde-format
 msgctxt "@label device"
 msgid "Total PE:"
-msgstr ""
+msgstr "Celkem fyz. extentů:"
 
 #: gui/infopane.cpp:188
 #, kde-format
 msgctxt "@label device"
 msgid "Allocated PE:"
-msgstr ""
+msgstr "Alokované fyz. extenty:"
 
 #: gui/infopane.cpp:189
 #, kde-format
 msgctxt "@label device"
 msgid "Free PE:"
-msgstr ""
+msgstr "Volné fyz. extenty:"
 
 #: gui/infopane.cpp:194
 #, kde-format
@@ -1259,19 +1267,19 @@ msgstr "Úroveň RAIDu:"
 #, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr ""
+msgstr "Velikost bloku:"
 
 #: gui/infopane.cpp:196
 #, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr ""
+msgstr "Celkový počet bloků:"
 
 #: gui/infopane.cpp:197
 #, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr ""
+msgstr "Velikost pole:"
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
@@ -1292,6 +1300,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
+"Aplikace Správce diskových oddílů vyžaduje k fungování oprávnění. Obnovte "
+"prosím zařízení a po zobrazení výzvy se přihlaste."
 
 #: gui/mainwindow.cpp:235
 #, kde-kuit-format
@@ -1303,8 +1313,14 @@ msgid_plural ""
 "<para>Do you really want to quit the application?</para><para>There are "
 "still %1 operations pending.</para>"
 msgstr[0] ""
+"<para>Opravdu chcete ukončit aplikaci?</para><para>Ještě je v běhu jedna "
+"operace.</para>"
 msgstr[1] ""
+"<para>Opravdu chcete ukončit aplikaci?</para><para>Ještě jsou v běhu %1 "
+"operace.</para>"
 msgstr[2] ""
+"<para>Opravdu chcete ukončit aplikaci?</para><para>Ještě je v běhu %1 "
+"operací.</para>"
 
 #: gui/mainwindow.cpp:237
 #, kde-kuit-format
@@ -1460,7 +1476,7 @@ msgstr "Změnit velikost zvolené skupiny svazků"
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
-msgstr ""
+msgstr "Rozšířit nebo zmenšit vybranou skupinu svazků."
 
 #: gui/mainwindow.cpp:352
 #, kde-format
@@ -1677,7 +1693,7 @@ msgstr "Odemknout nebo zamknout zašifrovaný oddíl"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
-msgstr ""
+msgstr "Odemknout nebo zamknout zašifrovaný oddíl."
 
 #: gui/mainwindow.cpp:451
 #, kde-kuit-format
@@ -1815,7 +1831,7 @@ msgstr "Vyprázdnit záznam"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
-msgstr ""
+msgstr "Vyprázdnit panel výstupu záznamu."
 
 #: gui/mainwindow.cpp:523
 #, kde-kuit-format
@@ -1845,13 +1861,13 @@ msgstr "O knihovně KPMcore"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
-msgstr ""
+msgstr "Zobrazit dialogové okno O KPMcore"
 
 #: gui/mainwindow.cpp:533
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
-msgstr ""
+msgstr "Zobrazit dialogové okno O KPMcore."
 
 #: gui/mainwindow.cpp:652
 #, kde-kuit-format
@@ -1897,6 +1913,8 @@ msgid ""
 "<para>Do you really want to rescan the devices?</para><para><warning>This "
 "will also clear the list of pending operations.</warning></para>"
 msgstr ""
+"<para>Opravdu chcete zařízení znovu prohledat?</para><para><warning>Tím se "
+"také vymaže seznam čekajících operací.</warning></para>"
 
 #: gui/mainwindow.cpp:924
 #, kde-kuit-format
@@ -1917,6 +1935,8 @@ msgid ""
 "<para>Do you really want to apply the pending operations listed below?</"
 "para><para><warning>This will permanently modify your disks.</warning></para>"
 msgstr ""
+"<para>Opravdu chcete provést níže uvedené připravené operace?</"
+"para><para><warning>Tím dojde k trvalé změně vašich disků.</warning></para>"
 
 #: gui/mainwindow.cpp:953
 #, kde-kuit-format
@@ -1934,13 +1954,13 @@ msgstr "Provést připravené operace"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
-msgstr "Provádím operace..."
+msgstr "Provádění operace..."
 
 #: gui/mainwindow.cpp:981
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
-msgstr "Vracím operaci: %1"
+msgstr "Vracení operace: %1"
 
 #: gui/mainwindow.cpp:997
 #, kde-kuit-format
@@ -2002,6 +2022,7 @@ msgid ""
 "The import file <filename>%1</filename> does not contain a valid partition "
 "table."
 msgstr ""
+"Importovaný soubor <filename>%1</filename> neobsahuje platnou tabulku oddílů."
 
 #: gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1107 gui/mainwindow.cpp:1114
 #: gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1129 gui/mainwindow.cpp:1142
@@ -2017,6 +2038,8 @@ msgstr "Chyba při importování tabulky diskových oddílů"
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr ""
+"V importovaném souboru (řádek %1) bylo nalezen více než jeden typ tabulky "
+"oddílů."
 
 #: gui/mainwindow.cpp:1114
 #, kde-kuit-format
@@ -2040,19 +2063,19 @@ msgstr "Nalezen oddíl, ale žádný typ tabulky oddílů (řádek %1)."
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
-msgstr ""
+msgstr "Oddíl %1 by byl mimo hranice zařízení (řádek %2)."
 
 #: gui/mainwindow.cpp:1147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
-msgstr ""
+msgstr "Oddíl %1 končí před počátečním sektorem (řádek %2)."
 
 #: gui/mainwindow.cpp:1166
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
-msgstr ""
+msgstr "Neznámá role oddílu \"%1\" pro oddíl %2 (řádek %3)."
 
 #: gui/mainwindow.cpp:1171
 #, kde-kuit-format
@@ -2060,6 +2083,8 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
 msgstr ""
+"Pro oddíl %1 (řádek %2) nebyl nalezen žádný nadřazený oddíl ani tabulka "
+"oddílů."
 
 #: gui/mainwindow.cpp:1176
 #, kde-kuit-format
@@ -2068,6 +2093,8 @@ msgid ""
 "The partition table type \"%1\" does not support extended partitions, but "
 "one was found (line %2)."
 msgstr ""
+"Typ tabulky oddílů \"%1\" nepodporuje rozšířené oddíly, ale jeden byl "
+"nalezen (řádek %2)."
 
 #: gui/mainwindow.cpp:1183
 #, kde-kuit-format
@@ -2112,6 +2139,17 @@ msgid ""
 "modify them.</para><para>You should find packages with these support tools "
 "in your distribution's package manager.</para>"
 msgstr ""
+"<para>Nebyly nalezeny žádné podpůrné nástroje pro souborové systémy, které "
+"jsou aktuálně přítomny na pevných discích v tomto počítači:</para><table "
+"style='margin-top:12px'><tr><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>Oddíl</td><td style='font-weight:bold;padding-"
+"right:12px;white-space:nowrap;'>Souborový systém</td><td style='font-weight:"
+"bold;padding-right:12px;white-space:nowrap;'>Nástroje podpory</td><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>URL</td></tr>"
+"%1</table><para>Dokud nebudou nainstalovány podpůrné nástroje pro tyto "
+"souborové systémy, nebudete je moci upravovat.</para><para>Balíčky s těmito "
+"podpůrnými nástroji byste měli najít ve správci balíčků vaší distribuce.</"
+"para>"
 
 #: gui/mainwindow.cpp:1447
 #, kde-kuit-format
@@ -2293,8 +2331,20 @@ msgid_plural ""
 "create, paste or restore a primary partition on it before you delete an "
 "existing one.</para>"
 msgstr[0] ""
+"<para>Na tomto zařízení již existuje jeden primární oddíl. To je maximální "
+"počet, který může typ tabulky oddílů zpracovat.</para><para>Nelze vytvořit, "
+"vložit nebo obnovit primární oddíl, dokud neodstraníte stávající oddíl.</"
+"para>"
 msgstr[1] ""
+"<para>Na tomto zařízení již existují %1 primární oddíly. To je maximální "
+"počet, který může typ jeho tabulky oddílů zpracovat.</para><para>Nelze na "
+"něm vytvořit, vložit ani obnovit primární oddíl, dokud neodstraníte jeden "
+"stávající oddíl.</para>"
 msgstr[2] ""
+"<para>Na tomto zařízení již existuje %1 primárních oddílů. To je maximální "
+"počet, který může typ jeho tabulky oddílů zpracovat.</para><para>Nelze na "
+"něm vytvořit, vložit ani obnovit primární oddíl, dokud neodstraníte jeden "
+"stávající oddíl.</para>"
 
 #: gui/partitionmanagerwidget.cpp:502
 #, kde-kuit-format
@@ -2311,6 +2361,10 @@ msgid ""
 "</para><para>Please unmount all partitions with higher logical numbers than "
 "%2 first.</para>"
 msgstr ""
+"<para>Oddíl <filename>%1</filename> nelze v současné době odstranit, protože "
+"jeden nebo více oddílů s vyššími logickými čísly jsou stále připojeny.</"
+"para><para>Nejprve odpojte všechny oddíly s vyššími logickými čísly než %2.</"
+"para>"
 
 #: gui/partitionmanagerwidget.cpp:568
 #, kde-kuit-format
@@ -2326,6 +2380,8 @@ msgid ""
 "clipboard? It will no longer be available for pasting after it has been "
 "deleted."
 msgstr ""
+"Opravdu chcete odstranit oddíl, který je aktuálně ve schránce? Po odstranění "
+"již nebude k dispozici pro vložení."
 
 #: gui/partitionmanagerwidget.cpp:579
 #, kde-kuit-format
@@ -2366,6 +2422,11 @@ msgid ""
 "window, all data currently stored on <filename>%1</filename> will "
 "unrecoverably be overwritten.</para>"
 msgstr ""
+"<para><warning>Chystáte se ztratit všechna data na oddílu <filename>%1 </"
+"filename>.</warning></para><para>Přepsání jednoho oddílu jiným (nebo bitovým "
+"obrazem) zničí všechna data na tomto cílovém oddílu.</para><para>Pokud nyní "
+"budete pokračovat a provedete výslednou operaci v hlavním okně, všechna data "
+"aktuálně uložená na <filename>%1</filename>budou nevratně přepsána.</para>"
 
 #: gui/partitionmanagerwidget.cpp:732
 #, kde-kuit-format
@@ -2387,6 +2448,9 @@ msgid ""
 "partition or the backup file.</para><para>Pick another target or resize this "
 "partition so it is as large as the source.</para>"
 msgstr ""
+"<para>Vybraný oddíl není dostatečně velký, aby se do něj vešel zdrojový "
+"oddíl nebo záložní soubor.</para><para>Vyberte jiný cíl nebo změňte velikost "
+"tohoto oddílu tak, aby byl stejně velký jako zdrojový.</para>"
 
 #: gui/partitionmanagerwidget.cpp:742
 #, kde-kuit-format
@@ -2403,6 +2467,10 @@ msgid ""
 "are correctly aligned or when copying a primary partition into an extended "
 "partition.</para>"
 msgstr ""
+"<para>Není možné vytvořit cílový oddíl dostatečně velký, aby se do něj vešel "
+"zdrojový oddíl.</para><para>K tomu může dojít, pokud nejsou všechny oddíly "
+"na zařízení správně zarovnány nebo při kopírování primárního oddílu do "
+"rozšířeného oddílu.</para>"
 
 #: gui/partitionmanagerwidget.cpp:748
 #, kde-kuit-format
@@ -2417,6 +2485,8 @@ msgid ""
 "The file system in the image file <filename>%1</filename> is too large to be "
 "restored to the selected partition."
 msgstr ""
+"Systém souborů v bitovém obrazu <filename>%1</filename> je příliš velký na "
+"to, aby mohl být obnoven do vybraného oddílu."
 
 #: gui/partitionmanagerwidget.cpp:806
 #, kde-kuit-format
@@ -2571,6 +2641,11 @@ msgid ""
 "the resulting operation in the main window, all data on <filename>%1</"
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
+"<para><warning>Chystáte se ztratit všechna data na oddílu <filename>%1</"
+"filename>.</warning></para><para>Změna souborového systému na oddílu, který "
+"je již na disku, vymaže veškerý jeho obsah. Pokud nyní budete pokračovat a "
+"provedete výslednou operaci v hlavním okně, všechna data na <filename>%1</"
+"filename> budou nenávratně ztracena.</para>"
 
 #: gui/partpropsdialog.cpp:372
 #, kde-kuit-format
@@ -2600,6 +2675,11 @@ msgid ""
 "window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
 "para>"
 msgstr ""
+"<para><warning>Chystáte se ztratit všechna data na oddílu <filename>%1</"
+"filename>.</warning></para><para>Při obnovení souborového systému dojde k "
+"vymazání veškerého jeho obsahu. Pokud nyní budete pokračovat a provedete "
+"výslednou operaci v hlavním okně, všechna data na <filesystem>%1</"
+"filesystem> budou nenávratně ztracena.</para>"
 
 #: gui/partpropsdialog.cpp:395
 #, kde-kuit-format
@@ -2721,6 +2801,8 @@ msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
 "filesystem type."
 msgstr ""
+"Tímto dojde k přeformátování souborového systému, přičemž dojde ke ztrátě "
+"veškerého obsahu, ale zachová se stejný typ souborového systému."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:349
@@ -2790,7 +2872,7 @@ msgstr "Změnit skupinu svazků"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "Zkoumám zařízení…"
+msgstr "Načítání zařízení…"
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
@@ -2802,13 +2884,13 @@ msgstr "%p%"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "Skenování..."
+msgstr "Načítání..."
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning device: <filename>%1</filename>"
-msgstr "Zkoumám zařízení: <filename>%1</filename>"
+msgstr "Načítání zařízení: <filename>%1</filename>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: gui/sizedetailswidgetbase.ui:66
@@ -2909,6 +2991,8 @@ msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
 "provide a passphrase."
 msgstr ""
+"Nastavte šifrování tohoto souborového systému pomocí LUKS. Budete požádáni o "
+"zadání hesla."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:262
@@ -2941,6 +3025,8 @@ msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
 "folder permissions"
 msgstr ""
+"Povolit pouze rootovi zapisovat a číst na tomto zařízení, budete muset "
+"nastavit oprávnění pro jednotlivé složky"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:318
@@ -2975,6 +3061,8 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"Pro větší bezpečnost použijte LUKS2 namísto LUKS1, ale může tím dojít ke "
+"snížení kompatibility."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
@@ -3058,13 +3146,13 @@ msgstr "Vadných sektorů:"
 #: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
 #, kde-format
 msgid "Powered on for:"
-msgstr ""
+msgstr "Zapnuto po dobu:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
 #: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
 #, kde-format
 msgid "Power cycles:"
-msgstr ""
+msgstr "Cyklů zapnutí:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
 #: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
@@ -3194,7 +3282,7 @@ msgstr "Název skupiny svazků: "
 #: gui/volumegroupwidgetbase.ui:47
 #, kde-format
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Velikost fyzického extentu: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalSectors)
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTotalLV)
@@ -3333,7 +3421,7 @@ msgstr "Hugo Pereira Da Costa"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Partition Widget Design"
-msgstr ""
+msgstr "Návrh widgetu pro oddíly"
 
 #: main.cpp:91
 #, kde-kuit-format
@@ -3416,12 +3504,14 @@ msgid ""
 "<para>The configured backend plugin \"%1\" could not be loaded.</"
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
+"<para>Nebylo možné načíst nastavený plugin podpůrné vrstvy \"%1\".</"
+"para><para>Místo toho se načítá výchozí plugin podpůrné vrstvy \"%2\".</para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error: Could Not Load Backend Plugin"
-msgstr ""
+msgstr "Chyba: Nelze načíst plugin podpůrné vrstvy"
 
 #: util/guihelpers.cpp:57
 #, kde-kuit-format
@@ -3430,6 +3520,8 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
+"<para>Nelze načíst ani nastavený ( \"%1\") ani výchozí ( \"%2\") plugin "
+"podpůrné vrstvy. </para><para>Zkontrolujte prosím svou instalaci.</para>"
 
 #: util/guihelpers.cpp:75
 #, kde-kuit-format
