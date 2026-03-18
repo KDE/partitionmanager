@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:55+0000\n"
-"PO-Revision-Date: 2026-03-13 11:07+0100\n"
+"PO-Revision-Date: 2026-03-16 15:08+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -3504,14 +3504,14 @@ msgid ""
 "<para>The configured backend plugin \"%1\" could not be loaded.</"
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
-"<para>Nebylo možné načíst nastavený plugin podpůrné vrstvy \"%1\".</"
-"para><para>Místo toho se načítá výchozí plugin podpůrné vrstvy \"%2\".</para>"
+"<para>Nebylo možné načíst nastavený modul podpůrné vrstvy \"%1\".</"
+"para><para>Místo toho se načítá výchozí modul podpůrné vrstvy \"%2\".</para>"
 
 #: util/guihelpers.cpp:53 util/guihelpers.cpp:60
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error: Could Not Load Backend Plugin"
-msgstr "Chyba: Nelze načíst plugin podpůrné vrstvy"
+msgstr "Chyba: Nelze načíst modul podpůrné vrstvy"
 
 #: util/guihelpers.cpp:57
 #, kde-kuit-format
@@ -3520,7 +3520,7 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
-"<para>Nelze načíst ani nastavený ( \"%1\") ani výchozí ( \"%2\") plugin "
+"<para>Nelze načíst ani nastavený ( \"%1\") ani výchozí ( \"%2\") modul "
 "podpůrné vrstvy. </para><para>Zkontrolujte prosím svou instalaci.</para>"
 
 #: util/guihelpers.cpp:75
