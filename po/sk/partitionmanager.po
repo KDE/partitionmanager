@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -348,13 +348,13 @@ msgstr "neznámy:"
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "Minix:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
 #, kde-format
 msgid "Bcachefs:"
-msgstr ""
+msgstr "Bcachefs:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
@@ -370,8 +370,7 @@ msgstr "Usporiadanie oddielov na predvolené"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
-#, fuzzy, kde-format
-#| msgid "Sector alignment:"
+#, kde-format
 msgid "Sec&tor alignment:"
 msgstr "Usporiadanie sektorov:"
 
@@ -389,8 +388,7 @@ msgstr "Zaznamenávanie"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:94
-#, fuzzy, kde-format
-#| msgid "Hide messages below:"
+#, kde-format
 msgid "Hide messa&ges below:"
 msgstr "Skryť správy nižšie:"
 
@@ -426,8 +424,7 @@ msgstr "Súborové systémy"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
-#, fuzzy, kde-format
-#| msgid "Default file system:"
+#, kde-format
 msgid "&Default file system:"
 msgstr "Predvolený súborový systém:"
 
@@ -451,8 +448,7 @@ msgstr "Náhodnými údajmi"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:188
-#, fuzzy, kde-format
-#| msgid "Zeros"
+#, kde-format
 msgid "&Zeros"
 msgstr "Nulami"
 
@@ -941,7 +937,7 @@ msgstr "Aktualizovať prístupové doby vzhľadom k úpravám"
 #: gui/editmountpointdialogwidgetbase.ui:271
 #, kde-format
 msgid "Don't prevent the system from booting if not mountable"
-msgstr ""
+msgstr "Don't prevent the system from booting if not mountable"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
 #: gui/editmountpointdialogwidgetbase.ui:285
@@ -1883,6 +1879,8 @@ msgid ""
 "Cannot delete partition. Please make sure it is unmounted or locked before "
 "proceeding."
 msgstr ""
+"Cannot delete partition. Please uistite sa it is unmounted or locked before "
+"proceeding."
 
 #: gui/mainwindow.cpp:721
 #, kde-kuit-format
@@ -2633,7 +2631,7 @@ msgstr "(žiadne)"
 #: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
 #, kde-format
 msgid "%1% — %2"
-msgstr ""
+msgstr "%1% — %2"
 
 #: gui/partpropsdialog.cpp:370
 #, kde-kuit-format
@@ -3034,8 +3032,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:318
-#, fuzzy, kde-format
-#| msgid "Only Root"
+#, kde-format
 msgid "O&nly Root"
 msgstr "Iba root"
 
@@ -3066,12 +3063,14 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"Use LUKS2 namiesto LUKS1 for better security, but compatibility may be "
+"compromised."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "Povoliť LUKS2"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
@@ -3604,13 +3603,6 @@ msgstr "Stľpce"
 #~ msgstr "Povoliť použitie operácií bez administrátorských práv"
 
 #, fuzzy
-#~| msgctxt "@info"
-#~| msgid ""
-#~| "<para><warning>You do not have administrative privileges.</warning></"
-#~| "para><para>It is possible to run <application>%1</application> without "
-#~| "these privileges. You will, however, <emphasis>not</emphasis> be allowed "
-#~| "to apply operations.</para><para>Do you want to continue running "
-#~| "<application>%1</application>?</para>"
 #~ msgctxt "@info"
 #~ msgid ""
 #~ "<para><warning>You do not have administrative privileges.</warning></"
@@ -3731,10 +3723,6 @@ msgstr "Stľpce"
 #~ msgstr "Chyba pri čítaní bodov pripojenia"
 
 #, fuzzy
-#~| msgctxt "@info/plain"
-#~| msgid ""
-#~| "Could not open partition <filename>%1</filename> while trying to resize "
-#~| "the file system."
 #~ msgctxt "@info"
 #~ msgid ""
 #~ "Could not remove <filename>%1</filename>. There are still Logical Volumes "
@@ -3744,22 +3732,16 @@ msgstr "Stľpce"
 #~ "zmenu veľkosti súborového systému. "
 
 #, fuzzy
-#~| msgctxt "@action:inmenu"
-#~| msgid "Resize/Move"
 #~ msgctxt "@action:inmenu"
 #~ msgid "Resize Volume"
 #~ msgstr "Zmeniť veľkosť/Presunúť"
 
 #, fuzzy
-#~| msgctxt "@info"
-#~| msgid "Please select a device."
 #~ msgctxt "@info:tooltip"
 #~ msgid "Resize selected Volume device"
 #~ msgstr "Prosím vyberte zariadenie."
 
 #, fuzzy
-#~| msgctxt "@info"
-#~| msgid "Please select a device."
 #~ msgctxt "@info:status"
 #~ msgid "Resize selected Volume device"
 #~ msgstr "Prosím vyberte zariadenie."
