@@ -12,107 +12,48 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>674</width>
+    <width>798</width>
     <height>429</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="3">
-    <widget class="QRadioButton" name="m_RadioLabel">
-     <property name="text">
-      <string>&amp;Label</string>
+   <item row="1" column="0" colspan="7">
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="13" column="0" colspan="7">
-    <spacer name="verticalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::MinimumExpanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="12" column="0">
-    <widget class="QLabel" name="m_LabelDumpFreq">
+   <item row="2" column="0">
+    <widget class="QLabel" name="label">
      <property name="text">
-      <string>Dump &amp;Frequency:</string>
+      <string>Identify by:</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="buddy">
-      <cstring>m_SpinDumpFreq</cstring>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
-   <item row="12" column="2">
-    <spacer name="horizontalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>70</width>
-       <height>23</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="12" column="1">
-    <widget class="QSpinBox" name="m_SpinDumpFreq"/>
-   </item>
-   <item row="7" column="1" colspan="2">
-    <widget class="QCheckBox" name="m_CheckNoAuto">
+   <item row="3" column="0">
+    <widget class="QLabel" name="m_LabelPath">
      <property name="text">
-      <string>No automatic mount</string>
-     </property>
-    </widget>
-   </item>
-   <item row="11" column="3" colspan="3">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>195</width>
-       <height>22</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="8" column="1" colspan="2">
-    <widget class="QCheckBox" name="m_CheckSync">
-     <property name="text">
-      <string>Synchronous access</string>
-     </property>
-    </widget>
-   </item>
-   <item row="11" column="6">
-    <widget class="QPushButton" name="m_ButtonMore">
-     <property name="text">
-      <string>More...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="12" column="3">
-    <widget class="QLabel" name="m_LabelPassNumber">
-     <property name="text">
-      <string>Pass &amp;Number:</string>
+      <string>Path:</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
-     <property name="buddy">
-      <cstring>m_SpinPassNumber</cstring>
+    </widget>
+   </item>
+   <item row="3" column="5">
+    <widget class="QPushButton" name="m_ButtonSelect">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <horstretch>1</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Select...</string>
      </property>
     </widget>
    </item>
@@ -129,7 +70,125 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="4" column="1" colspan="3">
+   <item row="5" column="0">
+    <widget class="QLabel" name="m_LabelType">
+     <property name="text">
+      <string>Type:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLabel" name="m_LabelTypeValue">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="m_LabelOptions">
+     <property name="text">
+      <string>Options:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1" colspan="3">
+    <widget class="QCheckBox" name="m_CheckNoFail">
+     <property name="text">
+      <string>Don't prevent the system from booting if not mountable</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="4" colspan="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>195</width>
+       <height>22</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="8" column="6">
+    <widget class="QPushButton" name="m_ButtonMore">
+     <property name="text">
+      <string>More...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="m_LabelDumpFreq">
+     <property name="text">
+      <string>Dump &amp;Frequency:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>m_SpinDumpFreq</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="4">
+    <widget class="QLabel" name="m_LabelPassNumber">
+     <property name="text">
+      <string>Pass &amp;Number:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>m_SpinPassNumber</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="5">
+    <widget class="QSpinBox" name="m_SpinPassNumber"/>
+   </item>
+   <item row="9" column="6">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>135</width>
+       <height>23</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="10" column="2">
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="9" column="1">
+    <widget class="QSpinBox" name="m_SpinDumpFreq"/>
+   </item>
+   <item row="3" column="1" colspan="4">
+    <widget class="QComboBox" name="m_EditPath"/>
+   </item>
+   <item row="4" column="1" colspan="4">
     <widget class="KMessageWidget" name="m_PathMessage">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
@@ -144,18 +203,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <bool>false</bool>
      </property>
      <property name="messageType">
-      <enum>KMessageWidget::Error</enum>
+      <enum>KMessageWidget::MessageType::Error</enum>
      </property>
     </widget>
-   </item>
-   <item row="12" column="4">
-    <widget class="QSpinBox" name="m_SpinPassNumber"/>
    </item>
    <item row="0" column="0" colspan="7">
     <widget class="QLabel" name="m_LabelNameValue">
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -163,158 +218,118 @@ SPDX-License-Identifier: GPL-3.0-or-later
       <string/>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="m_LabelPath">
-     <property name="text">
-      <string>Path:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
+   <item row="6" column="1" colspan="6">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QCheckBox" name="m_CheckReadOnly">
+         <property name="text">
+          <string>Read-only</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="m_CheckNoAuto">
+         <property name="text">
+          <string>No automatic mount</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="m_CheckSync">
+         <property name="text">
+          <string>Synchronous access</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="m_CheckNoExec">
+         <property name="text">
+          <string>No binary execution</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QCheckBox" name="m_CheckUsers">
+         <property name="text">
+          <string>Users can mount and unmount</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="m_CheckNoAtime">
+         <property name="text">
+          <string>No update of file access times</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="m_CheckNoDirAtime">
+         <property name="text">
+          <string>No update of directory access times</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="m_CheckRelAtime">
+         <property name="text">
+          <string>Update access times relative to modification</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </item>
-   <item row="6" column="3" colspan="4">
-    <widget class="QCheckBox" name="m_CheckUsers">
-     <property name="text">
-      <string>Users can mount and unmount</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="m_LabelType">
-     <property name="text">
-      <string>Type:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <widget class="QRadioButton" name="m_RadioUUID">
-     <property name="text">
-      <string>UU&amp;ID</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="4">
-    <widget class="QPushButton" name="m_ButtonSelect">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-       <horstretch>1</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Select...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QRadioButton" name="m_RadioDeviceNode">
-     <property name="text">
-      <string>De&amp;vice Node</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="3" colspan="3">
-    <widget class="QCheckBox" name="m_CheckNoAtime">
-     <property name="text">
-      <string>No update of file access times</string>
-     </property>
-    </widget>
-   </item>
-   <item row="12" column="5" colspan="2">
-    <spacer name="horizontalSpacer_3">
+   <item row="9" column="2" colspan="2">
+    <spacer name="horizontalSpacer_2">
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>135</width>
+       <width>70</width>
        <height>23</height>
       </size>
      </property>
     </spacer>
    </item>
-   <item row="9" column="1" colspan="2">
-    <widget class="QCheckBox" name="m_CheckNoExec">
-     <property name="text">
-      <string>No binary execution</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1" colspan="2">
-    <widget class="QLabel" name="m_LabelTypeValue">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="3" colspan="4">
-    <widget class="QCheckBox" name="m_CheckRelAtime">
-     <property name="text">
-      <string>Update access times relative to modification</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="1" colspan="2">
-    <widget class="QCheckBox" name="m_CheckNoFail">
-     <property name="text">
-      <string>Don't prevent the system from booting if not mountable</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0" colspan="7">
-    <widget class="Line" name="line">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="3" colspan="4">
-    <widget class="QCheckBox" name="m_CheckNoDirAtime">
-     <property name="text">
-      <string>No update of directory access times</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1" colspan="3">
-    <widget class="QComboBox" name="m_EditPath"/>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Identify by:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="1" colspan="2">
-    <widget class="QCheckBox" name="m_CheckReadOnly">
-     <property name="text">
-      <string>Read-only</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="m_LabelOptions">
-     <property name="text">
-      <string>Options:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-     </property>
-    </widget>
+   <item row="2" column="1" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QRadioButton" name="m_RadioDeviceNode">
+       <property name="text">
+        <string>De&amp;vice Node</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="m_RadioUUID">
+       <property name="text">
+        <string>UU&amp;ID</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="m_RadioLabel">
+       <property name="text">
+        <string>&amp;Label</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
