@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2026-05-07 00:48+0000\n"
 "PO-Revision-Date: 2025-10-06 01:19+0400\n"
 "Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -735,7 +735,7 @@ msgstr "Ümumi sektorlar:"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
-#: gui/devicepropswidgetbase.ui:83 gui/editmountpointdialogwidgetbase.ui:102
+#: gui/devicepropswidgetbase.ui:83 gui/editmountpointdialogwidgetbase.ui:123
 #, kde-format
 msgid "More..."
 msgstr "Daha çox..."
@@ -835,131 +835,131 @@ msgctxt "@title:window"
 msgid "Error While Saving Mount Points"
 msgstr "Qoşulma Nöqtələrinin saxlanılması zamanı xəta"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
-#: gui/editmountpointdialogwidgetbase.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/editmountpointdialogwidgetbase.ui:30
 #, kde-format
-msgid "&Label"
-msgstr "Yar&lıq"
+msgid "Identify by:"
+msgstr "Müəyyənləşdirmək:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:40
+#, kde-format
+msgid "Path:"
+msgstr "Yol:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:56
+#, kde-format
+msgid "Select..."
+msgstr "Seçim..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
+#: gui/editmountpointdialogwidgetbase.ui:69
+#, kde-format
+msgid "Remove"
+msgstr "Silmək"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:76
+#, kde-format
+msgid "Type:"
+msgstr "Növü:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:93
+#, kde-format
+msgid "Options:"
+msgstr "Seçimlər:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
+#: gui/editmountpointdialogwidgetbase.ui:103
+#, kde-format
+msgid "Don't prevent the system from booting if not mountable"
+msgstr "Quraşdırılmadığı təqdirdə sistemin yüklənməsinin qarşısını almamaq"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
-#: gui/editmountpointdialogwidgetbase.ui:46
+#: gui/editmountpointdialogwidgetbase.ui:130
 #, kde-format
 msgid "Dump &Frequency:"
 msgstr "Dump proqramı ilə ehtiyat kopyalama &tezliyi:"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:143
+#, kde-format
+msgid "Pass &Number:"
+msgstr "Keçid &nömrəsi:"
+
+#. i18n: ectx: property (text), widget (KMessageWidget, m_PathMessage)
+#: gui/editmountpointdialogwidgetbase.ui:200
+#, kde-format
+msgid "A valid path is required."
+msgstr "Doğru yol göstərmək tələb olunur."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:232
+#, kde-format
+msgid "Read-only"
+msgstr "Ancaq oxumaq üçün"
+
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
-#: gui/editmountpointdialogwidgetbase.ui:75
+#: gui/editmountpointdialogwidgetbase.ui:239
 #, kde-format
 msgid "No automatic mount"
 msgstr "Avtomatik qoşulma yoxdur"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
-#: gui/editmountpointdialogwidgetbase.ui:95
+#: gui/editmountpointdialogwidgetbase.ui:246
 #, kde-format
 msgid "Synchronous access"
 msgstr "Eyniləşmiş giriş"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
-#: gui/editmountpointdialogwidgetbase.ui:109
-#, kde-format
-msgid "Pass &Number:"
-msgstr "Keçid &nömrəsi:"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
-#: gui/editmountpointdialogwidgetbase.ui:128
-#, kde-format
-msgid "Remove"
-msgstr "Silmək"
-
-#. i18n: ectx: property (text), widget (KMessageWidget, m_PathMessage)
-#: gui/editmountpointdialogwidgetbase.ui:141
-#, kde-format
-msgid "A valid path is required."
-msgstr "Doğru yol göstərmək tələb olunur."
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
-#: gui/editmountpointdialogwidgetbase.ui:173
-#, kde-format
-msgid "Path:"
-msgstr "Yol:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
-#: gui/editmountpointdialogwidgetbase.ui:183
-#, kde-format
-msgid "Users can mount and unmount"
-msgstr "İstifadəçi qoşa və ayıra bilər"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
-#: gui/editmountpointdialogwidgetbase.ui:190
-#, kde-format
-msgid "Type:"
-msgstr "Növü:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
-#: gui/editmountpointdialogwidgetbase.ui:200
-#, kde-format
-msgid "UU&ID"
-msgstr "UU&ID"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
-#: gui/editmountpointdialogwidgetbase.ui:213
-#, kde-format
-msgid "Select..."
-msgstr "Seçim..."
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
-#: gui/editmountpointdialogwidgetbase.ui:220
-#, kde-format
-msgid "De&vice Node"
-msgstr "Cihaz qo&v.ağı"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
-#: gui/editmountpointdialogwidgetbase.ui:230
-#, kde-format
-msgid "No update of file access times"
-msgstr "Fayla giriş vaxtının yenilənməsi yoxdur"
-
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
-#: gui/editmountpointdialogwidgetbase.ui:250
+#: gui/editmountpointdialogwidgetbase.ui:253
 #, kde-format
 msgid "No binary execution"
 msgstr "Binar icrası yoxdur"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
 #: gui/editmountpointdialogwidgetbase.ui:264
 #, kde-format
-msgid "Update access times relative to modification"
-msgstr "Dəyişikliyə nisbətən giriş vaxtlarını yeniləmək"
+msgid "Users can mount and unmount"
+msgstr "İstifadəçi qoşa və ayıra bilər"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
 #: gui/editmountpointdialogwidgetbase.ui:271
 #, kde-format
-msgid "Don't prevent the system from booting if not mountable"
-msgstr "Quraşdırılmadığı təqdirdə sistemin yüklənməsinin qarşısını almamaq"
+msgid "No update of file access times"
+msgstr "Fayla giriş vaxtının yenilənməsi yoxdur"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: gui/editmountpointdialogwidgetbase.ui:285
+#: gui/editmountpointdialogwidgetbase.ui:278
 #, kde-format
 msgid "No update of directory access times"
 msgstr "Kataloqa giriş vaxtı yenilənməsi yoxdur"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: gui/editmountpointdialogwidgetbase.ui:295
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:285
 #, kde-format
-msgid "Identify by:"
-msgstr "Müəyyənləşdirmək:"
+msgid "Update access times relative to modification"
+msgstr "Dəyişikliyə nisbətən giriş vaxtlarını yeniləmək"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: gui/editmountpointdialogwidgetbase.ui:305
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:311
 #, kde-format
-msgid "Read-only"
-msgstr "Ancaq oxumaq üçün"
+msgid "De&vice Node"
+msgstr "Cihaz qo&v.ağı"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: gui/editmountpointdialogwidgetbase.ui:312
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:321
 #, kde-format
-msgid "Options:"
-msgstr "Seçimlər:"
+msgid "UU&ID"
+msgstr "UU&ID"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
+#: gui/editmountpointdialogwidgetbase.ui:328
+#, kde-format
+msgid "&Label"
+msgstr "Yar&lıq"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format

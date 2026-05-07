@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:55+0000\n"
+"POT-Creation-Date: 2026-05-07 00:48+0000\n"
 "PO-Revision-Date: 2024-12-15 19:46+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -733,7 +733,7 @@ msgstr "कुल क्षेत्र:"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSmartMore)
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonMore)
-#: gui/devicepropswidgetbase.ui:83 gui/editmountpointdialogwidgetbase.ui:102
+#: gui/devicepropswidgetbase.ui:83 gui/editmountpointdialogwidgetbase.ui:123
 #, kde-format
 msgid "More..."
 msgstr "अधिक..."
@@ -831,131 +831,131 @@ msgctxt "@title:window"
 msgid "Error While Saving Mount Points"
 msgstr "माउंट पॉइंट सहेजते समय त्रुटि"
 
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
-#: gui/editmountpointdialogwidgetbase.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: gui/editmountpointdialogwidgetbase.ui:30
 #, kde-format
-msgid "&Label"
-msgstr "&लेबल"
+msgid "Identify by:"
+msgstr "पहचान करें:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
+#: gui/editmountpointdialogwidgetbase.ui:40
+#, kde-format
+msgid "Path:"
+msgstr "पथ:"
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
+#: gui/editmountpointdialogwidgetbase.ui:56
+#, kde-format
+msgid "Select..."
+msgstr "चुनना..."
+
+#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
+#: gui/editmountpointdialogwidgetbase.ui:69
+#, kde-format
+msgid "Remove"
+msgstr "निकालना"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
+#: gui/editmountpointdialogwidgetbase.ui:76
+#, kde-format
+msgid "Type:"
+msgstr "प्रकार:"
+
+#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
+#: gui/editmountpointdialogwidgetbase.ui:93
+#, kde-format
+msgid "Options:"
+msgstr "विकल्प:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
+#: gui/editmountpointdialogwidgetbase.ui:103
+#, kde-format
+msgid "Don't prevent the system from booting if not mountable"
+msgstr "यदि सिस्टम माउंटेबल न हो तो उसे बूट होने से न रोकें"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
-#: gui/editmountpointdialogwidgetbase.ui:46
+#: gui/editmountpointdialogwidgetbase.ui:130
 #, kde-format
 msgid "Dump &Frequency:"
 msgstr "डम्प एवं आवृत्ति:"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
+#: gui/editmountpointdialogwidgetbase.ui:143
+#, kde-format
+msgid "Pass &Number:"
+msgstr "पास एवं संख्या:"
+
+#. i18n: ectx: property (text), widget (KMessageWidget, m_PathMessage)
+#: gui/editmountpointdialogwidgetbase.ui:200
+#, kde-format
+msgid "A valid path is required."
+msgstr "एक वैध पथ आवश्यक है."
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
+#: gui/editmountpointdialogwidgetbase.ui:232
+#, kde-format
+msgid "Read-only"
+msgstr "केवल पढ़ने के लिए"
+
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAuto)
-#: gui/editmountpointdialogwidgetbase.ui:75
+#: gui/editmountpointdialogwidgetbase.ui:239
 #, kde-format
 msgid "No automatic mount"
 msgstr "कोई स्वचालित माउंट नहीं"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckSync)
-#: gui/editmountpointdialogwidgetbase.ui:95
+#: gui/editmountpointdialogwidgetbase.ui:246
 #, kde-format
 msgid "Synchronous access"
 msgstr "समकालिक पहुँच"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
-#: gui/editmountpointdialogwidgetbase.ui:109
-#, kde-format
-msgid "Pass &Number:"
-msgstr "पास एवं संख्या:"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
-#: gui/editmountpointdialogwidgetbase.ui:128
-#, kde-format
-msgid "Remove"
-msgstr "निकालना"
-
-#. i18n: ectx: property (text), widget (KMessageWidget, m_PathMessage)
-#: gui/editmountpointdialogwidgetbase.ui:141
-#, kde-format
-msgid "A valid path is required."
-msgstr "एक वैध पथ आवश्यक है."
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelPath)
-#: gui/editmountpointdialogwidgetbase.ui:173
-#, kde-format
-msgid "Path:"
-msgstr "पथ:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
-#: gui/editmountpointdialogwidgetbase.ui:183
-#, kde-format
-msgid "Users can mount and unmount"
-msgstr "उपयोगकर्ता माउंट और अनमाउंट कर सकते हैं"
-
-#. i18n: ectx: property (text), widget (QLabel, m_LabelType)
-#: gui/editmountpointdialogwidgetbase.ui:190
-#, kde-format
-msgid "Type:"
-msgstr "प्रकार:"
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
-#: gui/editmountpointdialogwidgetbase.ui:200
-#, kde-format
-msgid "UU&ID"
-msgstr "यू&आईडी"
-
-#. i18n: ectx: property (text), widget (QPushButton, m_ButtonSelect)
-#: gui/editmountpointdialogwidgetbase.ui:213
-#, kde-format
-msgid "Select..."
-msgstr "चुनना..."
-
-#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
-#: gui/editmountpointdialogwidgetbase.ui:220
-#, kde-format
-msgid "De&vice Node"
-msgstr "द&वाइस नोड"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
-#: gui/editmountpointdialogwidgetbase.ui:230
-#, kde-format
-msgid "No update of file access times"
-msgstr "फ़ाइल एक्सेस समय का कोई अद्यतन नहीं"
-
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoExec)
-#: gui/editmountpointdialogwidgetbase.ui:250
+#: gui/editmountpointdialogwidgetbase.ui:253
 #, kde-format
 msgid "No binary execution"
 msgstr "कोई बाइनरी निष्पादन नहीं"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckUsers)
 #: gui/editmountpointdialogwidgetbase.ui:264
 #, kde-format
-msgid "Update access times relative to modification"
-msgstr "संशोधन के सापेक्ष पहुँच समय अपडेट करें"
+msgid "Users can mount and unmount"
+msgstr "उपयोगकर्ता माउंट और अनमाउंट कर सकते हैं"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoAtime)
 #: gui/editmountpointdialogwidgetbase.ui:271
 #, kde-format
-msgid "Don't prevent the system from booting if not mountable"
-msgstr "यदि सिस्टम माउंटेबल न हो तो उसे बूट होने से न रोकें"
+msgid "No update of file access times"
+msgstr "फ़ाइल एक्सेस समय का कोई अद्यतन नहीं"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
-#: gui/editmountpointdialogwidgetbase.ui:285
+#: gui/editmountpointdialogwidgetbase.ui:278
 #, kde-format
 msgid "No update of directory access times"
 msgstr "निर्देशिका तक पहुंच समय का कोई अद्यतन नहीं"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: gui/editmountpointdialogwidgetbase.ui:295
+#. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
+#: gui/editmountpointdialogwidgetbase.ui:285
 #, kde-format
-msgid "Identify by:"
-msgstr "पहचान करें:"
+msgid "Update access times relative to modification"
+msgstr "संशोधन के सापेक्ष पहुँच समय अपडेट करें"
 
-#. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
-#: gui/editmountpointdialogwidgetbase.ui:305
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
+#: gui/editmountpointdialogwidgetbase.ui:311
 #, kde-format
-msgid "Read-only"
-msgstr "केवल पढ़ने के लिए"
+msgid "De&vice Node"
+msgstr "द&वाइस नोड"
 
-#. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
-#: gui/editmountpointdialogwidgetbase.ui:312
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
+#: gui/editmountpointdialogwidgetbase.ui:321
 #, kde-format
-msgid "Options:"
-msgstr "विकल्प:"
+msgid "UU&ID"
+msgstr "यू&आईडी"
+
+#. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
+#: gui/editmountpointdialogwidgetbase.ui:328
+#, kde-format
+msgid "&Label"
+msgstr "&लेबल"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
