@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2023-03-20 11:37+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -492,20 +492,28 @@ msgstr "A configurar..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Deseja mesmo cancelar?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Cancelar as Operações em Curso"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Sim, Cancelar as Operações"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3574,6 +3582,14 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Colunas"
+
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Deseja mesmo cancelar?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Sim, Cancelar as Operações"
 
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr ""

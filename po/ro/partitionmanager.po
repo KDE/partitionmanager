@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2026-03-03 19:15+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -478,20 +478,30 @@ msgstr "Configurare..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Sigur renunțați?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Anulează operațiile în curs"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Da, anulează operațiile"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "Rulează"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3551,6 +3561,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Coloane"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Sigur renunțați?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Da, anulează operațiile"
+
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "Folosește aliniere bazată pe cilindru (compatibil cu Windows XP)"
 
@@ -5218,10 +5236,6 @@ msgstr "Coloane"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "În așteptare"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "Rulează"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

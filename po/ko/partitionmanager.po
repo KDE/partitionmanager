@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2025-06-10 22:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -476,20 +476,28 @@ msgstr "설정 중..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "정말로 취소하시겠습니까?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "실행 중인 작업 취소"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "예, 작업을 취소합니다"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3492,6 +3500,14 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "열"
+
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "정말로 취소하시겠습니까?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "예, 작업을 취소합니다"
 
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "실린더 기반 정렬 사용(Windows XP 호환)"

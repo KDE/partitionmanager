@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2025-07-11 11:57+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -482,20 +482,30 @@ msgstr "Valmistellaan…"
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Haluatko varmasti perua?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Peru käynnissä olevat toimenpiteet"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Kyllä, peru toimenpiteet"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "Käynnissä"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3526,6 +3536,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Sarakkeet"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Haluatko varmasti perua?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Kyllä, peru toimenpiteet"
+
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "Kohdista sylinteriperustaisesti (Windows XP -yhteensopiva)"
 
@@ -5066,10 +5084,6 @@ msgstr "Sarakkeet"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "Jonossa"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "Käynnissä"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

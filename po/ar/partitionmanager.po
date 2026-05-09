@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2026-02-26 12:21+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -479,20 +479,30 @@ msgstr "يُعدّ..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "أتود حقًّا الإلغاء؟"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "ألغ العمليات التي تعمل"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "نعم، ألغِ العمليات"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "يعمل"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3520,6 +3530,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "الأعمدة"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "أتود حقًّا الإلغاء؟"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "نعم، ألغِ العمليات"
+
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr ""
 #~ "استخدم المحاذاة المستندة إلى الأسطوانة (متوافقة مع نظام التشغيل Windows "
@@ -4759,10 +4777,6 @@ msgstr "الأعمدة"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "ينتظر"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "يعمل"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

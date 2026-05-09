@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2025-06-03 06:51+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -483,20 +483,30 @@ msgstr "Nastavljanje …"
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Ali res želite preklicati?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Prekliči opravila v teku"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Da, prekliči opravila"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "V teku"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3565,6 +3575,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Stolpci"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Ali res želite preklicati?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Da, prekliči opravila"
+
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "Uporabi poravnavo temelječo na cilindrih (združljivo z Windows XP)"
 
@@ -5570,10 +5588,6 @@ msgstr "Stolpci"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "Na čakanju"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "V teku"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

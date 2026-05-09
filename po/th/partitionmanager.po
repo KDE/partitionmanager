@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2010-03-06 19:47+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -529,20 +529,30 @@ msgstr "กำลังตั้งค่า..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "คุณต้องการจะทำการยกเลิกจริงหรือไม่ ?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "ยกเลิกปฏิบัติการที่กำลังทำอยู่"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "ใช่ ทำการยกเลิกปฏิบัติการ"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "ทำงานอยู่"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3812,6 +3822,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "คอลัมน์ต่าง ๆ"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "คุณต้องการจะทำการยกเลิกจริงหรือไม่ ?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "ใช่ ทำการยกเลิกปฏิบัติการ"
+
 #, fuzzy
 #~| msgid ""
 #~| "Use Cylinder Based MS-Dos Partition Alignment (Windows XP compatible)"
@@ -5269,10 +5287,6 @@ msgstr "คอลัมน์ต่าง ๆ"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "รอทำงานอยู่"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "ทำงานอยู่"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2010-09-24 20:32+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -478,20 +478,30 @@ msgstr ""
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
+msgid "Stopping now may cause data loss or drive errors."
 msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:tooltip"
+#| msgid "Apply all operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
-msgstr ""
+msgid "Stop Running Operations"
+msgstr "सभ ऑपरेशन लागू करू"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
+msgid "Stop Anyway"
 msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "चलि रहल अछि"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3617,10 +3627,6 @@ msgstr "कालम"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "लंबित"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "चलि रहल अछि"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

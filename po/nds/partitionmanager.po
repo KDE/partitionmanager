@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2014-03-12 23:25+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -495,20 +495,30 @@ msgstr "Bi to inrichten..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Wullt Du redig afbreken?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Lopen Akschonen afbreken"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Jo, Akschonen afbreken"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "Löppt"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3801,6 +3811,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Striepen"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Wullt Du redig afbreken?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Jo, Akschonen afbreken"
+
 #, fuzzy
 #~| msgid "Cylinder Size:"
 #~ msgid "&Cylinder alignment"
@@ -5366,10 +5384,6 @@ msgstr "Striepen"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "Steiht an"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "Löppt"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

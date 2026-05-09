@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2020-10-11 01:45+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -483,20 +483,30 @@ msgstr "Loomine..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Kas tõesti loobuda?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Töötavate operatsioonide katkestamine"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Jah, katkesta"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "Töötab"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3531,6 +3541,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Veerud"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Kas tõesti loobuda?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Jah, katkesta"
+
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "Silindripõhise joondamise kasutamine (ühilduv Windows XP-ga)"
 
@@ -5579,10 +5597,6 @@ msgstr "Veerud"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "Ootel"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "Töötab"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE Frameworks 5 Applications\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2022-09-27 18:12+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -485,20 +485,30 @@ msgstr "Mempersiapkan..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Apakah Anda benar-benar ingin membatalkan?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Batalkan Operasi Berjalan"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Ya, Batalkan Operasi"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "Berjalan"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3553,6 +3563,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Kolom"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Apakah Anda benar-benar ingin membatalkan?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Ya, Batalkan Operasi"
+
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "Gunakan kesejajaran berbasis silinder (kompatibel Windows XP)"
 
@@ -5527,10 +5545,6 @@ msgstr "Kolom"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "Tertunda"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "Berjalan"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

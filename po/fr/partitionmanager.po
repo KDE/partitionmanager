@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2026-01-06 16:18+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -491,20 +491,30 @@ msgstr "Configuration..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Voulez-vous vraiment annuler ?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Annuler les opérations en cours d'exécution"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Oui, annuler ces opérations"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "En cours d'exécution"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3595,6 +3605,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Colonnes"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Voulez-vous vraiment annuler ?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Oui, annuler ces opérations"
+
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "Utiliser l'alignement des cylindres (compatible avec Windows XP)"
 
@@ -5676,10 +5694,6 @@ msgstr "Colonnes"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "En attente"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "En cours d'exécution"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

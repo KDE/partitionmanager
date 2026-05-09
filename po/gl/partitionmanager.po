@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2025-06-19 09:55+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -483,20 +483,30 @@ msgstr "Configurando…"
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Seguro que quere cancelar?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Cancelar as operacións en execución"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Si, cancelar as operacións"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "En execución"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3547,6 +3557,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Columnas"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Seguro que quere cancelar?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Si, cancelar as operacións"
+
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "Usar o aliñamento baseado en cilindros (compatíbel con Windows XP)."
 
@@ -5586,10 +5604,6 @@ msgstr "Columnas"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "Pendente"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "En execución"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

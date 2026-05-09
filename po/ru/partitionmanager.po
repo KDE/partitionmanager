@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2025-06-30 15:23+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -490,20 +490,30 @@ msgstr "Идёт настройка..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Вы действительно хотите отменить?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Отмена выполняемой операции"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Да, отменить операции"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "Выполнение"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3567,6 +3577,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Столбцы"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Вы действительно хотите отменить?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Да, отменить операции"
+
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "Использовать выравнивание по цилиндрам (совместимо с Windows XP)"
 
@@ -5200,10 +5218,6 @@ msgstr "Столбцы"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "Ожидание"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "Выполнение"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

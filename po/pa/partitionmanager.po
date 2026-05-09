@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2024-01-03 14:01-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -481,20 +481,30 @@ msgstr "ਸੈੱਟ ਅੱਪ..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "ਕੀ ਤੁਸੀਂ ਰੱਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "ਚੱਲ ਰਹੇ ਓਪਰੇਸ਼ਨ ਰੱਦ ਕਰੋ"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "ਹਾਂ, ਓਪਰੇਸ਼ਨ ਰੱਦ ਕਰ ਦਿਓ"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "ਚੱਲ ਰਿਹਾ ਹੈ"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3456,6 +3466,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "ਕਾਲਮ"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "ਕੀ ਤੁਸੀਂ ਰੱਦ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "ਹਾਂ, ਓਪਰੇਸ਼ਨ ਰੱਦ ਕਰ ਦਿਓ"
+
 #~ msgid "&Cylinder alignment"
 #~ msgstr "ਸਿਲੰਡਰ ਸਫ਼ਬੰਦੀ(&C)"
 
@@ -5187,10 +5205,6 @@ msgstr "ਕਾਲਮ"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "ਬਾਕੀ"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "ਚੱਲ ਰਿਹਾ ਹੈ"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

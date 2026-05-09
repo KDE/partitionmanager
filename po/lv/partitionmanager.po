@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2025-06-21 13:18+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -480,20 +480,30 @@ msgstr "Sāk darbu..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Vai tiešām vēlaties atcelt?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Atcelt uzsāktās darbības"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Jā, atcelt darbības"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "Darbojas"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3529,6 +3539,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Kolonnas"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Vai tiešām vēlaties atcelt?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Jā, atcelt darbības"
+
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "Izlīdzināt pēc cilindriem (saderīgs ar „Windows XP“)"
 
@@ -5251,10 +5269,6 @@ msgstr "Kolonnas"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "Gaida"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "Darbojas"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:48+0000\n"
+"POT-Creation-Date: 2026-05-09 00:47+0000\n"
 "PO-Revision-Date: 2025-06-03 14:45+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -481,20 +481,30 @@ msgstr "Aan het instellen..."
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Do you really want to cancel?"
-msgstr "Wilt u de operatie annuleren?"
+msgid "Stopping now may cause data loss or drive errors."
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Cancel Running Operations"
 msgctxt "@title:window"
-msgid "Cancel Running Operations"
+msgid "Stop Running Operations"
 msgstr "Breek de draaiende bewerking af"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
-msgid "Yes, Cancel Operations"
-msgstr "Ja, breek de bewerking af"
+msgid "Stop Anyway"
+msgstr ""
+
+#: gui/applyprogressdialog.cpp:191
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress operation"
+#| msgid "Running"
+msgctxt "@action:button"
+msgid "Keep Running"
+msgstr "Actief"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -3537,6 +3547,14 @@ msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Kolommen"
 
+#~ msgctxt "@info"
+#~ msgid "Do you really want to cancel?"
+#~ msgstr "Wilt u de operatie annuleren?"
+
+#~ msgctxt "@action:button"
+#~ msgid "Yes, Cancel Operations"
+#~ msgstr "Ja, breek de bewerking af"
+
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "Uitlijning gebaseerd op cilinders gebruiken (Windows XP compatibel)"
 
@@ -5548,10 +5566,6 @@ msgstr "Kolommen"
 #~ msgctxt "@info:progress operation"
 #~ msgid "Pending"
 #~ msgstr "In behandeling"
-
-#~ msgctxt "@info:progress operation"
-#~ msgid "Running"
-#~ msgstr "Actief"
 
 #~ msgctxt "@info:progress operation"
 #~ msgid "Success"
