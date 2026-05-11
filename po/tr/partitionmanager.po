@@ -6,13 +6,13 @@
 # obsoleteman <tulliana@gmail.com>, 2008-2010,2012.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014, 2015, 2017.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022-2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-09 00:47+0000\n"
-"PO-Revision-Date: 2026-05-02 19:50+0300\n"
+"PO-Revision-Date: 2026-05-10 12:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -483,27 +483,25 @@ msgstr "Ayarlanıyor…"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Stopping now may cause data loss or drive errors."
-msgstr ""
+msgstr "Şimdi durdurmak veri kaybına veya sürücü hatalarına neden olabilir."
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Cancel Running Operations"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Stop Running Operations"
-msgstr "Süren İşlemleri İptal Et?"
+msgstr "Süren İşlemleri Durdur"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop Anyway"
-msgstr ""
+msgstr "Yine de Durdur"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Keep Running"
-msgstr ""
+msgstr "Çalışmayı Sürdür"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format

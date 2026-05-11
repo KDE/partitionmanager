@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Kristof Bal <kristof.bal@gmail.com>, 2008, 2009.
-# SPDX-FileCopyrightText: 2009, 2023, 2024, 2025 Freek de Kruijf <f.de.kruijf@hetnet.nl>
+# SPDX-FileCopyrightText: 2009, 2023-2026 Freek de Kruijf <f.de.kruijf@hetnet.nl>
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Rinse de Vries <rinsedevries@kde.nl>, 2010.
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-09 00:47+0000\n"
-"PO-Revision-Date: 2025-06-03 14:45+0200\n"
+"PO-Revision-Date: 2026-05-10 18:21+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -483,28 +483,25 @@ msgstr "Aan het instellen..."
 msgctxt "@info"
 msgid "Stopping now may cause data loss or drive errors."
 msgstr ""
+"Nu stoppen kan de oorzaak zijn van verlies van gegevens of stationsfouten."
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Cancel Running Operations"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Stop Running Operations"
-msgstr "Breek de draaiende bewerking af"
+msgstr "In uitvoering zijnde bewerkingen stoppen"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop Anyway"
-msgstr ""
+msgstr "In elk geval stoppen"
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress operation"
-#| msgid "Running"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Keep Running"
-msgstr "Actief"
+msgstr "Actief blijven"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
