@@ -480,29 +480,25 @@ msgstr "Nastavuje sa..."
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Stopping now may cause data loss or drive errors."
-msgstr ""
+msgstr "Zastavenie teraz môže spôsobiť stratu údajov alebo chyby disku."
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Cancel Running Operations"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Stop Running Operations"
-msgstr "Zrušiť spustené operácie"
+msgstr "Zastaviť bežiace operácie"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop Anyway"
-msgstr ""
+msgstr "Aj tak zastaviť"
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress operation"
-#| msgid "Running"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Keep Running"
-msgstr "Bežiaci"
+msgstr "Nechať bežať"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
