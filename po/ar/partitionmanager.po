@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-09 00:47+0000\n"
-"PO-Revision-Date: 2026-02-26 12:21+0400\n"
+"PO-Revision-Date: 2026-05-21 11:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -480,29 +480,25 @@ msgstr "يُعدّ..."
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Stopping now may cause data loss or drive errors."
-msgstr ""
+msgstr "التوقف الآن قد يسبب خسارة للبيانات وأخطاء في القرص"
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Cancel Running Operations"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Stop Running Operations"
-msgstr "ألغ العمليات التي تعمل"
+msgstr "إيقاف العمليات الجارية"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop Anyway"
-msgstr ""
+msgstr "توقف على أي حال"
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress operation"
-#| msgid "Running"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Keep Running"
-msgstr "يعمل"
+msgstr "أبقِه يعمل"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
