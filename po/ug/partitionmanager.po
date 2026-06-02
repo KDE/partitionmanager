@@ -8,24 +8,25 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-09 00:47+0000\n"
-"PO-Revision-Date: 2013-09-08 07:04+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-06-01 17:37-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
+msgstr "ئابدۇقادىر ئابلىز، غەيرەت كەنجى"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
+msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
@@ -109,259 +110,253 @@ msgstr "بايت"
 #: config/configurepageadvanced.ui:52
 #, kde-format
 msgid "KiB"
-msgstr "كىلوبايت"
+msgstr "KiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:57
 #, kde-format
 msgid "MiB"
-msgstr "مېگابايت"
+msgstr "MiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:62
 #, kde-format
 msgid "GiB"
-msgstr "گىگابايت"
+msgstr "GiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:67
 #, kde-format
 msgid "TiB"
-msgstr "تېرابايت"
+msgstr "TiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:72
 #, kde-format
 msgid "PiB"
-msgstr "پېتابايت"
+msgstr "PiB"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_preferredUnit)
 #: config/configurepageadvanced.ui:77
 #, kde-format
 msgid "EiB"
-msgstr ""
+msgstr "EiB"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_7)
 #: config/configurepagefilesystemcolors.ui:27
 #, kde-format
 msgid "ReiserFS:"
-msgstr ""
+msgstr "ReiserFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_15)
 #: config/configurepagefilesystemcolors.ui:56
 #, kde-format
 msgid "UFS:"
-msgstr ""
+msgstr "UFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_31)
 #: config/configurepagefilesystemcolors.ui:69
 #, kde-format
 msgid "ISO 9660:"
-msgstr ""
+msgstr "ISO 9660:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_24)
 #: config/configurepagefilesystemcolors.ui:88
 #, kde-format
 msgid "OCFS2:"
-msgstr ""
+msgstr "OCFS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_22)
 #: config/configurepagefilesystemcolors.ui:104
 #, kde-format
 msgid "XFS:"
-msgstr ""
+msgstr "XFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_27)
 #: config/configurepagefilesystemcolors.ui:123
 #, kde-format
 msgid "NILFS2:"
-msgstr ""
+msgstr "NILFS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_6)
 #: config/configurepagefilesystemcolors.ui:172
 #, kde-format
 msgid "FAT16:"
-msgstr ""
+msgstr "FAT16:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_13)
 #: config/configurepagefilesystemcolors.ui:185
 #, kde-format
 msgid "extended:"
-msgstr ""
+msgstr "كېڭەيتىلگەن رايون:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_33)
 #: config/configurepagefilesystemcolors.ui:198
 #, kde-format
 msgid "LUKS2:"
-msgstr ""
+msgstr "LUKS2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_17)
 #: config/configurepagefilesystemcolors.ui:214
 #, kde-format
 msgid "unformatted:"
-msgstr ""
+msgstr "پىچىلمىغان:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_30)
 #: config/configurepagefilesystemcolors.ui:233
 #, kde-format
 msgid "UDF:"
-msgstr ""
+msgstr "UDF:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_25)
 #: config/configurepagefilesystemcolors.ui:246
 #, kde-format
 msgid "ZFS:"
-msgstr ""
+msgstr "ZFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_3)
 #: config/configurepagefilesystemcolors.ui:294
 #, kde-format
 msgid "ext4:"
-msgstr ""
+msgstr "ext4:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_10)
 #: config/configurepagefilesystemcolors.ui:310
 #, kde-format
 msgid "HPFS:"
-msgstr ""
+msgstr "HPFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_11)
 #: config/configurepagefilesystemcolors.ui:368
 #, kde-format
 msgid "JFS:"
-msgstr ""
+msgstr "JFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_2)
 #: config/configurepagefilesystemcolors.ui:381
 #, kde-format
 msgid "ext3:"
-msgstr ""
+msgstr "ext3:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_8)
 #: config/configurepagefilesystemcolors.ui:407
 #, kde-format
 msgid "Reiser4:"
-msgstr ""
+msgstr "Reiser4:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_21)
 #: config/configurepagefilesystemcolors.ui:439
-#, fuzzy, kde-format
-#| msgctxt "@item/plain filesystem name"
-#| msgid "btrfs"
+#, kde-format
 msgid "Btrfs:"
-msgstr "btrfs"
+msgstr "Btrfs:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel)
 #: config/configurepagefilesystemcolors.ui:481
 #, kde-format
 msgid "ext2:"
-msgstr ""
+msgstr "ext2:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_29)
 #: config/configurepagefilesystemcolors.ui:500
 #, kde-format
 msgid "F2FS:"
-msgstr ""
+msgstr "F2FS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_28)
 #: config/configurepagefilesystemcolors.ui:519
 #, kde-format
 msgid "LVM2 PV:"
-msgstr ""
+msgstr "LVM2 PV:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_26)
 #: config/configurepagefilesystemcolors.ui:545
 #, kde-format
 msgid "exFAT:"
-msgstr ""
+msgstr "exFAT:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:558
 #, kde-format
 msgid "NTFS:"
-msgstr ""
+msgstr "NTFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_20)
 #: config/configurepagefilesystemcolors.ui:584
 #, kde-format
 msgid "LUKS:"
-msgstr ""
+msgstr "LUKS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_4)
 #: config/configurepagefilesystemcolors.ui:613
-#, fuzzy, kde-format
-#| msgctxt "@item partition flag"
-#| msgid "swap"
+#, kde-format
 msgid "Linux Swap:"
-msgstr "swap"
+msgstr "Linux ئالماشتۇرۇش رايونى:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_32)
 #: config/configurepagefilesystemcolors.ui:664
 #, kde-format
 msgid "FAT12:"
-msgstr ""
+msgstr "FAT12:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_12)
 #: config/configurepagefilesystemcolors.ui:677
 #, kde-format
 msgid "HFS:"
-msgstr ""
+msgstr "HFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_35)
 #: config/configurepagefilesystemcolors.ui:709
 #, kde-format
 msgid "APFS:"
-msgstr ""
+msgstr "APFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_5)
 #: config/configurepagefilesystemcolors.ui:722
 #, kde-format
 msgid "FAT32:"
-msgstr ""
+msgstr "FAT32:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
 #: config/configurepagefilesystemcolors.ui:751
-#, fuzzy, kde-format
-#| msgctxt "@item partition flag"
-#| msgid "swap"
+#, kde-format
 msgid "Linux RAID:"
-msgstr "swap"
+msgstr "Linux RAID:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_34)
 #: config/configurepagefilesystemcolors.ui:764
 #, kde-format
 msgid "BitLocker:"
-msgstr ""
+msgstr "BitLocker:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_14)
 #: config/configurepagefilesystemcolors.ui:793
 #, kde-format
 msgid "HFS+:"
-msgstr ""
+msgstr "HFS+:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_16)
 #: config/configurepagefilesystemcolors.ui:819
 #, kde-format
 msgid "unknown:"
-msgstr ""
+msgstr "يوچۇن:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_36)
 #: config/configurepagefilesystemcolors.ui:832
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "Minix:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_37)
 #: config/configurepagefilesystemcolors.ui:858
 #, kde-format
 msgid "Bcachefs:"
-msgstr ""
+msgstr "Bcachefs:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
 #, kde-format
 msgid "Partition Alignment"
-msgstr ""
+msgstr "دىسكا رايونى توغرىلىنىشى"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_alignDefault)
 #: config/configurepagegeneral.ui:34
@@ -425,11 +420,9 @@ msgstr "ھۆججەت سىستېمىسى"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
-#, fuzzy, kde-format
-#| msgctxt "@label partition"
-#| msgid "File system:"
+#, kde-format
 msgid "&Default file system:"
-msgstr "ھۆججەت سىستېمىسى:"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -471,7 +464,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Details"
-msgstr ""
+msgstr "تەپسىلاتى(&D)"
 
 #: gui/applyprogressdialog.cpp:125
 #, kde-kuit-format
@@ -498,12 +491,10 @@ msgid "Stop Anyway"
 msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress operation"
-#| msgid "Running"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Keep Running"
-msgstr "ئىجرادا"
+msgstr ""
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -605,20 +596,16 @@ msgid "Total: %p%"
 msgstr ""
 
 #: gui/createpartitiontabledialog.cpp:31
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Create a new partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a New Partition Table on <filename>%1</filename>"
-msgstr "يېڭى رايون قۇرىدۇ"
+msgstr ""
 
 #: gui/createpartitiontabledialog.cpp:34
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Create a new partition"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create &New Partition Table"
-msgstr "يېڭى رايون قۇرىدۇ"
+msgstr ""
 
 #: gui/createpartitiontabledialog.cpp:56
 #, kde-kuit-format
@@ -652,7 +639,7 @@ msgstr ""
 #: gui/createpartitiontablewidgetbase.ui:33
 #, kde-format
 msgid "GPT"
-msgstr "GPT"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioMSDOS)
 #: gui/createpartitiontablewidgetbase.ui:43
@@ -706,7 +693,7 @@ msgstr "ناچار"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "(unknown)"
-msgstr "(نامەلۇم)"
+msgstr "(يوچۇن)"
 
 #: gui/devicepropsdialog.cpp:115
 #, kde-kuit-format
@@ -862,19 +849,19 @@ msgstr "تاللا…"
 #: gui/editmountpointdialogwidgetbase.ui:69
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "چىقىرىۋەت"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelType)
 #: gui/editmountpointdialogwidgetbase.ui:76
 #, kde-format
 msgid "Type:"
-msgstr "تىپى:"
+msgstr "تۈرى:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelOptions)
 #: gui/editmountpointdialogwidgetbase.ui:93
 #, kde-format
 msgid "Options:"
-msgstr "تاللانمىلار:"
+msgstr "تاللانما:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoFail)
 #: gui/editmountpointdialogwidgetbase.ui:103
@@ -950,11 +937,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
 #: gui/editmountpointdialogwidgetbase.ui:311
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "De&vice Node"
-msgstr "ئۈسكۈنە"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
 #: gui/editmountpointdialogwidgetbase.ui:321
@@ -964,11 +949,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
 #: gui/editmountpointdialogwidgetbase.ui:328
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Label:"
+#, kde-format
 msgid "&Label"
-msgstr "ئەن:"
+msgstr ""
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -1058,7 +1041,7 @@ msgstr "زاپاسلاش"
 #: gui/filesystemsupportdialogwidgetbase.ui:125
 #, kde-format
 msgid "Restore"
-msgstr "ئەسلىگە كەلتۈرۈش"
+msgstr "ئەسلىگە كەلتۈر"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:130
@@ -1159,19 +1142,16 @@ msgid "Used:"
 msgstr "ئىشلىتىلگىنى:"
 
 #: gui/infopane.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label partition"
 msgid "PE Size:"
-msgstr "چوڭلۇقى:"
+msgstr ""
 
 #: gui/infopane.cpp:132
-#, fuzzy, kde-format
-#| msgid "Total sectors:"
+#, kde-format
 msgctxt "@label partition"
 msgid "Total PE:"
-msgstr "جەمئىي سېكتور:"
+msgstr ""
 
 #: gui/infopane.cpp:133
 #, kde-format
@@ -1180,12 +1160,10 @@ msgid "Free PE:"
 msgstr ""
 
 #: gui/infopane.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@item partition name"
-#| msgid "unallocated"
+#, kde-format
 msgctxt "@label partition"
 msgid "Allocated PE:"
-msgstr "تەقسىملەنمىگەن"
+msgstr ""
 
 #: gui/infopane.cpp:157
 #, kde-kuit-format
@@ -1203,7 +1181,7 @@ msgstr "يول:"
 #, kde-format
 msgctxt "@label device"
 msgid "Type:"
-msgstr "تىپى:"
+msgstr "تۈرى:"
 
 #: gui/infopane.cpp:177 gui/infopane.cpp:185 gui/infopane.cpp:193
 #, kde-format
@@ -1242,27 +1220,22 @@ msgid "Volume Type:"
 msgstr ""
 
 #: gui/infopane.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "PE Size:"
-msgstr "چوڭلۇقى:"
+msgstr ""
 
 #: gui/infopane.cpp:187
-#, fuzzy, kde-format
-#| msgid "Total sectors:"
+#, kde-format
 msgctxt "@label device"
 msgid "Total PE:"
-msgstr "جەمئىي سېكتور:"
+msgstr ""
 
 #: gui/infopane.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@item partition name"
-#| msgid "unallocated"
+#, kde-format
 msgctxt "@label device"
 msgid "Allocated PE:"
-msgstr "تەقسىملەنمىگەن"
+msgstr ""
 
 #: gui/infopane.cpp:189
 #, kde-format
@@ -1277,27 +1250,22 @@ msgid "RAID Level:"
 msgstr ""
 
 #: gui/infopane.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr "چوڭلۇقى:"
+msgstr ""
 
 #: gui/infopane.cpp:196
-#, fuzzy, kde-format
-#| msgid "Total sectors:"
+#, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr "جەمئىي سېكتور:"
+msgstr ""
 
 #: gui/infopane.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr "چوڭلۇقى:"
+msgstr ""
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
@@ -1309,7 +1277,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
-msgstr ""
+msgstr "%1 | %2"
 
 #: gui/mainwindow.cpp:167
 #, kde-format
@@ -1451,12 +1419,10 @@ msgid "Import a partition table from a text file."
 msgstr ""
 
 #: gui/mainwindow.cpp:332
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Resize/Move"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
-msgstr "چوڭلۇقىنى ئۆزگەرت/يۆتكە"
+msgstr ""
 
 #: gui/mainwindow.cpp:333
 #, kde-format
@@ -1471,20 +1437,16 @@ msgid "Remove selected Volume Group."
 msgstr ""
 
 #: gui/mainwindow.cpp:342
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Resize/Move"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
-msgstr "چوڭلۇقىنى ئۆزگەرت/يۆتكە"
+msgstr ""
 
 #: gui/mainwindow.cpp:343
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Resize/Move"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
-msgstr "چوڭلۇقىنى ئۆزگەرت/يۆتكە"
+msgstr ""
 
 #: gui/mainwindow.cpp:344
 #, kde-format
@@ -1493,20 +1455,16 @@ msgid "Extend or reduce selected Volume Group."
 msgstr ""
 
 #: gui/mainwindow.cpp:352
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Deactivate"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
-msgstr "ياپ"
+msgstr ""
 
 #: gui/mainwindow.cpp:353
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Deactivate"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
-msgstr "ياپ"
+msgstr ""
 
 #: gui/mainwindow.cpp:354
 #, kde-format
@@ -1518,7 +1476,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
-msgstr ""
+msgstr "SMART ھالەت"
 
 #: gui/mainwindow.cpp:361
 #, kde-kuit-format
@@ -1680,7 +1638,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
-msgstr "ئېگەرلەش"
+msgstr "ئېگەرلە"
 
 #: gui/mainwindow.cpp:438
 #, kde-kuit-format
@@ -1698,7 +1656,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
-msgstr ""
+msgstr "قۇلۇپ ئاچ"
 
 #: gui/mainwindow.cpp:445
 #, kde-kuit-format
@@ -1764,7 +1722,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
-msgstr "ئەسلىگە كەلتۈرۈش"
+msgstr "ئەسلىگە كەلتۈر"
 
 #: gui/mainwindow.cpp:476
 #, kde-kuit-format
@@ -1908,12 +1866,10 @@ msgid "Using backend plugin: %1 (%2)"
 msgstr ""
 
 #: gui/mainwindow.cpp:820
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
-msgstr "تەكشۈرۈۋاتىدۇ…"
+msgstr ""
 
 #: gui/mainwindow.cpp:858
 #, kde-kuit-format
@@ -1968,12 +1924,10 @@ msgid "Applying operations..."
 msgstr ""
 
 #: gui/mainwindow.cpp:981
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Undo the last operation"
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
-msgstr "ئالدىنقى مەشغۇلاتنى كەينىگە ياندۇر"
+msgstr ""
 
 #: gui/mainwindow.cpp:997
 #, kde-kuit-format
@@ -1994,12 +1948,10 @@ msgid "Clear Pending Operations"
 msgstr ""
 
 #: gui/mainwindow.cpp:1001
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Undo the last operation"
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
-msgstr "ئالدىنقى مەشغۇلاتنى كەينىگە ياندۇر"
+msgstr ""
 
 #: gui/mainwindow.cpp:1043
 #, kde-kuit-format
@@ -2176,14 +2128,14 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "KDE Partition Manager"
-msgstr "KDE دىسكا رايونى باشقۇرغۇ"
+msgstr "KDE دىسكا رايونى باشقۇرغۇچ"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
 #: gui/mainwindowbase.ui:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Devices"
-msgstr "ئۈسكۈنىلەر"
+msgstr "ئۈسكۈنە"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockOperations)
 #: gui/mainwindowbase.ui:38
@@ -2207,12 +2159,10 @@ msgstr "يېڭى رايون قۇرىدۇ"
 
 #. i18n: ectx: ToolBar (partitionToolBar)
 #: gui/partitionmanagerui.rc:12
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "KDE Partition Manager"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Partition Manager Toolbar"
-msgstr "KDE دىسكا رايونى باشقۇرغۇ"
+msgstr ""
 
 #. i18n: ectx: Menu (device)
 #: gui/partitionmanagerui.rc:30
@@ -2233,7 +2183,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
-msgstr ""
+msgstr "قورال"
 
 #. i18n: ectx: Menu (partition)
 #: gui/partitionmanagerui.rc:55
@@ -2282,14 +2232,12 @@ msgid "Could Not Unmount File System."
 msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:452
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Create a new partition"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "unlocked."
-msgstr "يېڭى رايون قۇرىدۇ"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
@@ -2298,14 +2246,12 @@ msgid "Could Not Unlock Encrypted File System."
 msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:463
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Create a new partition"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The encrypted file system on partition <filename>%1</filename> could not be "
 "locked."
-msgstr "يېڭى رايون قۇرىدۇ"
+msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:469
 #, kde-kuit-format
@@ -2464,7 +2410,7 @@ msgstr "رايون"
 #: gui/partitionmanagerwidgetbase.ui:84
 #, kde-format
 msgid "Type"
-msgstr "تىپى"
+msgstr "تۈرى"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:89
@@ -2476,7 +2422,7 @@ msgstr "ئېگەرلەش نۇقتىسى"
 #: gui/partitionmanagerwidgetbase.ui:94
 #, kde-format
 msgid "Label"
-msgstr "ئەن"
+msgstr "بەلگە"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:99
@@ -2486,17 +2432,15 @@ msgstr "UUID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:104
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name"
-msgstr "رايون(Partition) جەدۋىلى:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:109
-#, fuzzy, kde-format
-#| msgid "Partition"
+#, kde-format
 msgid "Partition UUID"
-msgstr "رايون"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:114
@@ -2538,7 +2482,7 @@ msgstr ""
 #: gui/partitionmanagerwidgetbase.ui:144
 #, kde-format
 msgid "Flags"
-msgstr "بەلگىلەر"
+msgstr "بايراق"
 
 #: gui/partpropsdialog.cpp:59
 #, kde-kuit-format
@@ -2667,10 +2611,9 @@ msgstr "چوڭلۇقى:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:66
-#, fuzzy, kde-format
-#| msgid "Partition"
+#, kde-format
 msgid "Partition UUID:"
-msgstr "رايون"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
 #: gui/partpropswidgetbase.ui:76 gui/sizedialogwidgetbase.ui:126
@@ -2684,7 +2627,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "UUID:"
-msgstr "UUID:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLastSector)
 #: gui/partpropswidgetbase.ui:103
@@ -2709,12 +2652,10 @@ msgstr "ئىشلىتىلىشى:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:223
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Label:"
+#, kde-format
 msgctxt "@label"
 msgid "&Label:"
-msgstr "ئەن:"
+msgstr "ئەن(&L):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
 #: gui/partpropswidgetbase.ui:286
@@ -2732,11 +2673,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "ئۈسكۈنە"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:326
@@ -2747,10 +2686,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:336
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name:"
-msgstr "رايون(Partition) جەدۋىلى:"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:346
@@ -2776,21 +2714,17 @@ msgstr "ئىشلىتىلگىنى:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/partpropswidgetbase.ui:383
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "File system:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
-msgstr "ھۆججەت سىستېمىسى:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
 #: gui/partpropswidgetbase.ui:396
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Flags:"
+#, kde-format
 msgctxt "@label"
 msgid "&Flags:"
-msgstr "بەلگىلەر:"
+msgstr ""
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format
@@ -2829,26 +2763,22 @@ msgid "Resize Volume Group"
 msgstr ""
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "تەكشۈرۈۋاتىدۇ…"
+msgstr ""
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: gui/scanprogressdialog.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "تەكشۈرۈۋاتىدۇ…"
+msgstr ""
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
@@ -2877,20 +2807,16 @@ msgid "Align partition"
 msgstr ""
 
 #: gui/sizedialogbase.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:tab advanced application settings"
-#| msgid "Advanced"
+#, kde-kuit-format
 msgctxt "@action:button advanced settings button"
 msgid "Advanced"
 msgstr "ئالىي"
 
 #: gui/sizedialogbase.cpp:180
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:tab advanced application settings"
-#| msgid "Advanced"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "&Advanced"
-msgstr "ئالىي"
+msgstr "ئالىي(&A)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: gui/sizedialogwidgetbase.ui:30
@@ -2918,28 +2844,25 @@ msgstr "ئەن:"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Si&ze:"
-msgstr ""
+msgstr "چوڭلۇقى(&Z):"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
 #: gui/sizedialogwidgetbase.ui:183
-#, fuzzy, kde-format
-#| msgid "Primary"
+#, kde-format
 msgid "Primar&y"
-msgstr "ئاساسىي"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
 #: gui/sizedialogwidgetbase.ui:190
-#, fuzzy, kde-format
-#| msgid "Extended"
+#, kde-format
 msgid "E&xtended"
-msgstr "كېڭەيتىلگەن"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
 #: gui/sizedialogwidgetbase.ui:197
-#, fuzzy, kde-format
-#| msgid "Logical"
+#, kde-format
 msgid "&Logical"
-msgstr "لوگىكىلىق"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
 #: gui/sizedialogwidgetbase.ui:213
@@ -2950,11 +2873,10 @@ msgstr "ھۆججەت سىستېمىسى:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
 #: gui/sizedialogwidgetbase.ui:249
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
-msgstr "رايون(Partition) جەدۋىلى:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:259
@@ -2974,7 +2896,7 @@ msgstr ""
 #: gui/sizedialogwidgetbase.ui:292
 #, kde-format
 msgid "Permissions"
-msgstr "ئىمتىيازلار"
+msgstr "ئىجازەت"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:305
@@ -2986,7 +2908,7 @@ msgstr ""
 #: gui/sizedialogwidgetbase.ui:308
 #, kde-format
 msgid "Everyone"
-msgstr ""
+msgstr "ھەممەيلەن"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:315
@@ -3064,7 +2986,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Old-Age"
-msgstr "Old-Age"
+msgstr ""
 
 #: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
 #, kde-kuit-format
@@ -3076,13 +2998,13 @@ msgstr "توردا"
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Offline"
-msgstr "توردا يوق"
+msgstr "تورسىز"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
 #: gui/smartdialog.cpp:155 gui/smartdialogwidgetbase.ui:68
 #, kde-format
 msgid "Model:"
-msgstr "تىپى:"
+msgstr "ئەندىزە:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
 #: gui/smartdialog.cpp:156 gui/smartdialogwidgetbase.ui:97
@@ -3142,7 +3064,7 @@ msgstr ""
 #: gui/smartdialogwidgetbase.ui:294
 #, kde-format
 msgid "Id"
-msgstr "Id"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:299
@@ -3184,7 +3106,7 @@ msgstr "بوسۇغا قىممىتى"
 #: gui/smartdialogwidgetbase.ui:329
 #, kde-format
 msgid "Raw"
-msgstr "خام"
+msgstr "ئەسلى"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:334
@@ -3258,13 +3180,13 @@ msgstr ""
 #: gui/volumegroupwidgetbase.ui:166 gui/volumegroupwidgetbase.ui:176
 #, kde-format
 msgid "---"
-msgstr ""
+msgstr "---"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_SpinPESize)
 #: gui/volumegroupwidgetbase.ui:79
 #, kde-format
 msgid " MiB"
-msgstr ""
+msgstr " MiB"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalLV)
 #: gui/volumegroupwidgetbase.ui:107
@@ -3274,41 +3196,33 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
 #: gui/volumegroupwidgetbase.ui:130
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Resize/Move"
+#, kde-format
 msgid "Volume Group Type: "
-msgstr "چوڭلۇقىنى ئۆزگەرت/يۆتكە"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSize)
 #: gui/volumegroupwidgetbase.ui:140
-#, fuzzy, kde-format
-#| msgid "Total sectors:"
+#, kde-format
 msgid "Total Size: "
-msgstr "جەمئىي سېكتور:"
+msgstr "ئومۇمىي سىغىمى: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
 #: gui/volumegroupwidgetbase.ui:153
-#, fuzzy, kde-format
-#| msgid "Total sectors:"
+#, kde-format
 msgid "Total Sectors: "
-msgstr "جەمئىي سېكتور:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
 #: gui/volumegroupwidgetbase.ui:186
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Size:"
+#, kde-format
 msgid "Used Size: "
-msgstr "چوڭلۇقى:"
+msgstr ""
 
 #: main.cpp:77
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "KDE Partition Manager"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>KDE Partition Manager</application>"
-msgstr "KDE دىسكا رايونى باشقۇرغۇ"
+msgstr ""
 
 #: main.cpp:79
 #, kde-kuit-format
@@ -3334,20 +3248,19 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Former maintainer"
-msgstr ""
+msgstr "سابىق ئاسرىغۇچى"
 
 #: main.cpp:86
-#, fuzzy, kde-kuit-format
-#| msgid "Andrius Štikonas"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Andrius Štikonas"
-msgstr "Andrius Štikonas"
+msgstr ""
 
 #: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Maintainer"
-msgstr ""
+msgstr "ئاسرىغۇچى"
 
 #: main.cpp:87
 #, kde-kuit-format
@@ -3388,7 +3301,7 @@ msgstr ""
 #: main.cpp:90
 #, kde-format
 msgid "Hugo Pereira Da Costa"
-msgstr "Hugo Pereira Da Costa"
+msgstr ""
 
 #: main.cpp:90
 #, kde-kuit-format
@@ -3409,12 +3322,10 @@ msgid "Improved SMART support"
 msgstr ""
 
 #: main.cpp:101
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Device Information"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"
-msgstr "ئۈسكۈنە ئۇچۇرى"
+msgstr ""
 
 #. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
 #: partitionmanager.kcfg:45
@@ -3498,7 +3409,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:menu"
 msgid "Columns"
-msgstr "ئىستونلار"
+msgstr "رەت"
 
 #~ msgctxt "@info"
 #~ msgid "Do you really want to cancel?"
@@ -3510,7 +3421,6 @@ msgstr "ئىستونلار"
 #~ msgid "Units"
 #~ msgstr "بىرلىكى"
 
-#, fuzzy
 #~| msgid "Partition table:"
 #~ msgid "Partition Label:"
 #~ msgstr "رايون(Partition) جەدۋىلى:"
@@ -3616,7 +3526,6 @@ msgstr "ئىستونلار"
 #~ msgid "prep"
 #~ msgstr "prep"
 
-#, fuzzy
 #~| msgctxt "@item/plain partition table name"
 #~| msgid "unknown"
 #~ msgctxt "@item partition table name"
@@ -3800,90 +3709,77 @@ msgstr "ئىستونلار"
 #~ msgid "Success"
 #~ msgstr "مۇۋەپپەقىيەتلىك بولدى"
 
-#, fuzzy
 #~| msgctxt "@item/plain partition table name"
 #~| msgid "unknown"
 #~ msgctxt "@item filesystem name"
 #~ msgid "unknown"
 #~ msgstr "نامەلۇم"
 
-#, fuzzy
 #~| msgctxt "@item partition role"
 #~| msgid "extended"
 #~ msgctxt "@item filesystem name"
 #~ msgid "extended"
 #~ msgstr "كېڭەيتىلگەن"
 
-#, fuzzy
 #~| msgctxt "@item/plain filesystem name"
 #~| msgid "ext2"
 #~ msgctxt "@item filesystem name"
 #~ msgid "ext2"
 #~ msgstr "ext2"
 
-#, fuzzy
 #~| msgctxt "@item/plain filesystem name"
 #~| msgid "ext3"
 #~ msgctxt "@item filesystem name"
 #~ msgid "ext3"
 #~ msgstr "ext3"
 
-#, fuzzy
 #~| msgctxt "@item/plain filesystem name"
 #~| msgid "ext4"
 #~ msgctxt "@item filesystem name"
 #~ msgid "ext4"
 #~ msgstr "ext4"
 
-#, fuzzy
 #~| msgctxt "@item/plain filesystem name"
 #~| msgid "fat16"
 #~ msgctxt "@item filesystem name"
 #~ msgid "fat16"
 #~ msgstr "fat16"
 
-#, fuzzy
 #~| msgctxt "@item/plain filesystem name"
 #~| msgid "fat32"
 #~ msgctxt "@item filesystem name"
 #~ msgid "fat32"
 #~ msgstr "fat32"
 
-#, fuzzy
 #~| msgctxt "@item/plain filesystem name"
 #~| msgid "xfs"
 #~ msgctxt "@item filesystem name"
 #~ msgid "xfs"
 #~ msgstr "xfs"
 
-#, fuzzy
 #~| msgid "jfs"
 #~ msgctxt "@item filesystem name"
 #~ msgid "jfs"
 #~ msgstr "jfs"
 
-#, fuzzy
 #~| msgctxt "@item/plain filesystem name"
 #~| msgid "hfs"
 #~ msgctxt "@item filesystem name"
 #~ msgid "hfs"
 #~ msgstr "hfs"
 
-#, fuzzy
 #~| msgctxt "@item/plain filesystem name"
 #~| msgid "ufs"
 #~ msgctxt "@item filesystem name"
 #~ msgid "ufs"
 #~ msgstr "ufs"
 
-#, fuzzy
 #~| msgctxt "@item/plain filesystem name"
 #~| msgid "unformatted"
 #~ msgctxt "@item filesystem name"
 #~ msgid "unformatted"
 #~ msgstr "پىچىلمىغان"
 
-#, fuzzy
 #~| msgctxt "@item/plain filesystem name"
 #~| msgid "zfs"
 #~ msgctxt "@item filesystem name"
