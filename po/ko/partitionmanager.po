@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-09 00:47+0000\n"
-"PO-Revision-Date: 2025-06-10 22:39+0200\n"
+"PO-Revision-Date: 2026-05-26 21:43+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -477,27 +477,25 @@ msgstr "설정 중..."
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Stopping now may cause data loss or drive errors."
-msgstr ""
+msgstr "지금 정지하면 데이터 손실이나 드라이브 오류가 발생할 수 있습니다."
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Cancel Running Operations"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Stop Running Operations"
-msgstr "실행 중인 작업 취소"
+msgstr "실행 중인 작업 정지"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop Anyway"
-msgstr ""
+msgstr "그래도 정지"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Keep Running"
-msgstr ""
+msgstr "계속 실행"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
