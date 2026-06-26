@@ -38,16 +38,29 @@
 #include <ops/setpartflagsoperation.h>
 #include <ops/setpartlabeloperation.h>
 #include <ops/createfilesystemoperation.h>
+#include <ops/takeownershipoperation.h>
 
 #include <util/globallog.h>
 #include <util/capacity.h>
 #include <util/report.h>
 #include <util/helpers.h>
 
+#include <KMessageWidget>
+
+#include <QCheckBox>
+#include <QCoreApplication>
+#include <QDialog>
+#include <QDialogButtonBox>
 #include <QFileDialog>
+#include <QLabel>
 #include <QLocale>
 #include <QPointer>
+#include <QProgressDialog>
+#include <QPushButton>
 #include <QReadLocker>
+#include <QVBoxLayout>
+
+#include <KUser>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -424,6 +437,102 @@ void PartitionManagerWidget::onMountPartition()
     }
 
     updatePartitions();
+}
+
+void PartitionManagerWidget::onTakeOwnershipPartition()
+{
+    Partition *p = selectedPartition();
+
+    if (p == nullptr)
+    {
+        qWarning() << "no partition selected";
+        return;
+    }
+
+    const QString mountPoint = p->mountPoint();
+    if (mountPoint.isEmpty())
+        return;
+
+    KUser currentUser(KUser::UseRealUserID);
+    const QString userName = currentUser.loginName();
+
+    QDialog confirmDialog(this);
+    confirmDialog.setWindowTitle(xi18nc("@title:window", "Take Ownership of File System"));
+
+    QVBoxLayout *layout = new QVBoxLayout(&confirmDialog);
+    layout->setSpacing(12);
+
+    QLabel *infoLabel = new QLabel(xi18nc("@info",
+                                          "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</emphasis>.",
+                                          mountPoint, userName),
+                                   &confirmDialog);
+    infoLabel->setWordWrap(true);
+    layout->addWidget(infoLabel);
+
+    QCheckBox *recursiveCheck = new QCheckBox(
+        xi18nc("@option:check", "Apply recursively to all subdirectories and files"), &confirmDialog);
+    layout->addWidget(recursiveCheck);
+
+    KMessageWidget *warningWidget = new KMessageWidget(&confirmDialog);
+    warningWidget->setMessageType(KMessageWidget::Warning);
+    warningWidget->setCloseButtonVisible(false);
+    warningWidget->setWordWrap(true);
+    warningWidget->setText(xi18nc("@info",
+                                  "This will also change the ownership of all subdirectories and files. "
+                                  "This may cause problems if some of them are owned by other users."));
+    warningWidget->hide();
+    layout->addWidget(warningWidget);
+
+    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Cancel, &confirmDialog);
+    QPushButton *takeButton = buttons->addButton(
+        xi18nc("@action:button", "Take Ownership"), QDialogButtonBox::AcceptRole);
+    takeButton->setIcon(QIcon::fromTheme(QStringLiteral("user-properties")));
+    layout->addWidget(buttons);
+
+    connect(recursiveCheck, &QCheckBox::toggled, &confirmDialog, [warningWidget, &confirmDialog](bool checked)
+            {
+        warningWidget->setVisible(checked);
+        confirmDialog.layout()->activate();
+        confirmDialog.adjustSize(); });
+    connect(buttons, &QDialogButtonBox::accepted, &confirmDialog, &QDialog::accept);
+    connect(buttons, &QDialogButtonBox::rejected, &confirmDialog, &QDialog::reject);
+
+    if (confirmDialog.exec() != QDialog::Accepted)
+        return;
+
+    const bool recursive = recursiveCheck->isChecked();
+
+    QProgressDialog progressDialog(
+        xi18nc("@info:progress", "Taking ownership of <b>%1</b>…", mountPoint),
+        QString(), 0, 0, this);
+    progressDialog.setWindowTitle(xi18nc("@title:window", "Take Ownership"));
+    progressDialog.setWindowModality(Qt::WindowModal);
+    progressDialog.setMinimumDuration(0);
+    progressDialog.show();
+    QCoreApplication::processEvents();
+
+    Report report(nullptr);
+    TakeOwnershipOperation op(*p, userName, recursive);
+    const bool success = op.execute(report);
+
+    progressDialog.close();
+
+    if (!success)
+        KMessageBox::detailedError(this,
+                                   xi18nc("@info",
+                                          "Could not take ownership of <filename>%1</filename>.",
+                                          mountPoint),
+                                   QStringLiteral("<pre>%1</pre>").arg(report.toText()),
+                                   xi18nc("@title:window", "Taking Ownership Failed"));
+    else
+    {
+        KMessageBox::information(this,
+                                 xi18nc("@info",
+                                        "Ownership of <filename>%1</filename> was successfully changed to <emphasis>%2</emphasis>.",
+                                        mountPoint, userName),
+                                 xi18nc("@title:window", "Ownership Changed"));
+        Q_EMIT selectedPartitionChanged(p);
+    }
 }
 
 void PartitionManagerWidget::onDecryptPartition()

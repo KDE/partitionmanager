@@ -59,6 +59,7 @@ public:
 
     void onEditMountPoint();
     void onMountPartition();
+    void onTakeOwnershipPartition();
     void onDecryptPartition();
 
     void onCheckPartition();

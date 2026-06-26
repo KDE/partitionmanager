@@ -44,6 +44,7 @@
 #include <ops/restoreoperation.h>
 #include <ops/checkoperation.h>
 #include <ops/setpartflagsoperation.h>
+#include <ops/takeownershipoperation.h>
 
 #include <fs/filesystem.h>
 #include <fs/filesystemfactory.h>
@@ -62,6 +63,7 @@
 #include <QDateTime>
 #include <QFile>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QtGlobal>
 #include <QMenu>
 #include <QPointer>
@@ -78,6 +80,7 @@
 #include <KAboutApplicationDialog>
 #include <KActionCollection>
 #include <KMessageBox>
+#include <KUser>
 #include <KAboutData>
 #include <KLocalizedString>
 #include <KXMLGUIFactory>
@@ -438,6 +441,14 @@ void MainWindow::setupActions()
     mountPartition->setToolTip(xi18nc("@info:tooltip", "Mount or unmount partition"));
     mountPartition->setStatusTip(xi18nc("@info:status", "Mount or unmount a partition."));
 
+    QAction *takeOwnershipPartition = actionCollection()->addAction(QStringLiteral("takeOwnershipPartition"));
+    connect(takeOwnershipPartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onTakeOwnershipPartition);
+    takeOwnershipPartition->setEnabled(false);
+    takeOwnershipPartition->setText(xi18nc("@action:inmenu", "Take Ownership"));
+    takeOwnershipPartition->setToolTip(xi18nc("@info:tooltip", "Take ownership of the file system"));
+    takeOwnershipPartition->setStatusTip(xi18nc("@info:status", "Change the ownership of the mounted file system to the current user."));
+    takeOwnershipPartition->setIcon(QIcon::fromTheme(QStringLiteral("user-properties")));
+
     QAction* decryptPartition = actionCollection()->addAction(QStringLiteral("decryptPartition"));
     connect(decryptPartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onDecryptPartition);
     decryptPartition->setEnabled(false);
@@ -669,6 +680,19 @@ void MainWindow::enableActions()
                 ->setText(part->isMounted() ?
                           part->fileSystem().unmountTitle() :
                           part->fileSystem().mountTitle());
+
+    {
+        bool canTakeOwnership = part && part->isMounted() && !part->mountPoint().isEmpty() &&
+                                TakeOwnershipOperation::supportsOwnership(part->fileSystem().type()) &&
+                                !TakeOwnershipOperation::isCriticalMountPoint(part->mountPoint());
+        if (canTakeOwnership)
+        {
+            const KUser currentUser(KUser::UseRealUserID);
+            canTakeOwnership = QFileInfo(part->mountPoint()).ownerId() !=
+                               static_cast<uint>(currentUser.userId().nativeId());
+        }
+        actionCollection()->action(QStringLiteral("takeOwnershipPartition"))->setEnabled(canTakeOwnership);
+    }
 
     if (part && part->roles().has(PartitionRole::Luks)) {
         const FileSystem& fsRef = part->fileSystem();
