@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-09 00:47+0000\n"
+"POT-Creation-Date: 2026-06-27 00:47+0000\n"
 "PO-Revision-Date: 2024-09-19 17:17+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -544,8 +544,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Συνολικός χρόνος: %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1053
-#: gui/mainwindow.cpp:1215 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1077
+#: gui/mainwindow.cpp:1239 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1313,7 +1313,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr "%1 | %2"
 
-#: gui/mainwindow.cpp:167
+#: gui/mainwindow.cpp:170
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1323,7 +1323,7 @@ msgstr ""
 "Ο διαχειριστής κατατμήσεων χρειάζεται προνόμια για να λειτουργήσει. "
 "Ανανεώστε τις συσκευές σας και ταυτοποιηθείτε όταν σας ζητηθεί."
 
-#: gui/mainwindow.cpp:235
+#: gui/mainwindow.cpp:238
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1339,175 +1339,175 @@ msgstr[1] ""
 "<para>Επιθυμείτε πραγματικά την έξοδο από την εφαρμογή;</para><para>Υπάρχουν "
 "ακόμη %1 ενέργειες σε αναμονή.</para>"
 
-#: gui/mainwindow.cpp:237
+#: gui/mainwindow.cpp:240
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "Απόρριψη ενεργειών σε αναμονή και έξοδος;"
 
-#: gui/mainwindow.cpp:238
+#: gui/mainwindow.cpp:241
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "Έξοδος <application>%1</application>"
 
-#: gui/mainwindow.cpp:280
+#: gui/mainwindow.cpp:283
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "Αναίρεση"
 
-#: gui/mainwindow.cpp:281
+#: gui/mainwindow.cpp:284
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "Αναίρεση της τελευταίας ενέργειας"
 
-#: gui/mainwindow.cpp:282
+#: gui/mainwindow.cpp:285
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "Αφαίρεση της τελευταίας ενέργειας από τη λίστα."
 
-#: gui/mainwindow.cpp:289
+#: gui/mainwindow.cpp:292
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "Καθαρισμός"
 
-#: gui/mainwindow.cpp:290
+#: gui/mainwindow.cpp:293
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "Καθαρισμός όλων των ενεργειών"
 
-#: gui/mainwindow.cpp:291
+#: gui/mainwindow.cpp:294
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "Καθάρισμα της λίστας των ενεργειών σε αναμονή."
 
-#: gui/mainwindow.cpp:297
+#: gui/mainwindow.cpp:300
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "Εφαρμογή"
 
-#: gui/mainwindow.cpp:298
+#: gui/mainwindow.cpp:301
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "Εφαρμογή όλων των ενεργειών"
 
-#: gui/mainwindow.cpp:299
+#: gui/mainwindow.cpp:302
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "Εφαρμογή όλων των ενεργειών σε αναμονή στη λίστα."
 
-#: gui/mainwindow.cpp:306
+#: gui/mainwindow.cpp:309
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "Νέος πίνακας κατατμήσεων"
 
-#: gui/mainwindow.cpp:307
+#: gui/mainwindow.cpp:310
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "Δημιουργία ενός νέου πίνακα κατατμήσεων"
 
-#: gui/mainwindow.cpp:308
+#: gui/mainwindow.cpp:311
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "Δημιουργία ενός νέου κενού πίνακα κατατμήσεων στη συσκευή."
 
-#: gui/mainwindow.cpp:315
+#: gui/mainwindow.cpp:318
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "Εξαγωγή πίνακα κατατμήσεων"
 
-#: gui/mainwindow.cpp:316
+#: gui/mainwindow.cpp:319
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "Εξαγωγή ενός πίνακα κατατμήσεων"
 
-#: gui/mainwindow.cpp:317
+#: gui/mainwindow.cpp:320
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "Εξαγωγή του πίνακα κατατμήσεων της συσκευής σε ένα αρχείο κειμένου."
 
-#: gui/mainwindow.cpp:323
+#: gui/mainwindow.cpp:326
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "Εισαγωγή πίνακα κατατμήσεων"
 
-#: gui/mainwindow.cpp:324
+#: gui/mainwindow.cpp:327
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "Εισαγωγή ενός πίνακα κατατμήσεων"
 
-#: gui/mainwindow.cpp:325
+#: gui/mainwindow.cpp:328
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "Εισαγωγή πίνακα κατατμήσεων από ένα αρχείο κειμένου."
 
-#: gui/mainwindow.cpp:332
+#: gui/mainwindow.cpp:335
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "Αφαίρεση ομάδας τόμων"
 
-#: gui/mainwindow.cpp:333
+#: gui/mainwindow.cpp:336
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "Αφαίρεση επιλεγμένης ομάδας τόμων"
 
-#: gui/mainwindow.cpp:334
+#: gui/mainwindow.cpp:337
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "Αφαίρεση επιλεγμένης ομάδας τόμων."
 
-#: gui/mainwindow.cpp:342
+#: gui/mainwindow.cpp:345
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "Αλλαγή μεγέθους ομάδας τόμων"
 
-#: gui/mainwindow.cpp:343
+#: gui/mainwindow.cpp:346
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "Αλλαγή μεγέθους επιλεγμένης ομάδας τόμων"
 
-#: gui/mainwindow.cpp:344
+#: gui/mainwindow.cpp:347
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr "Επέκταση ή μείωση επιλεγμένης ομάδας τόμων."
 
-#: gui/mainwindow.cpp:352
+#: gui/mainwindow.cpp:355
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "Απενεργοποίηση ομάδας τόμων"
 
-#: gui/mainwindow.cpp:353
+#: gui/mainwindow.cpp:356
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "Απενεργοποίηση επιλεγμένης ομάδας τόμων"
 
-#: gui/mainwindow.cpp:354
+#: gui/mainwindow.cpp:357
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
@@ -1515,109 +1515,109 @@ msgstr ""
 "Απενεργοποίηση επιλεγμένης ομάδας τόμων πριν την αποσύνδεση των αφαιρούμενων "
 "συσκευών."
 
-#: gui/mainwindow.cpp:360
+#: gui/mainwindow.cpp:363
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "SMART κατάσταση"
 
-#: gui/mainwindow.cpp:361
+#: gui/mainwindow.cpp:364
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "Εμφάνιση SMART κατάστασης"
 
-#: gui/mainwindow.cpp:362
+#: gui/mainwindow.cpp:365
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr "Εμφάνιση της κατάστασης SMART της συσκευής αν υποστηρίζεται"
 
-#: gui/mainwindow.cpp:367 gui/mainwindow.cpp:459
+#: gui/mainwindow.cpp:370 gui/mainwindow.cpp:470
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "Ιδιότητες"
 
-#: gui/mainwindow.cpp:368
+#: gui/mainwindow.cpp:371
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "Εμφάνιση διαλόγου ιδιοτήτων συσκευής"
 
-#: gui/mainwindow.cpp:369
+#: gui/mainwindow.cpp:372
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "Προβολή και τροποποίηση ιδιοτήτων συσκευής"
 
-#: gui/mainwindow.cpp:376
+#: gui/mainwindow.cpp:379
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "Νέα"
 
-#: gui/mainwindow.cpp:377
+#: gui/mainwindow.cpp:380
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "Νέα κατάτμηση"
 
-#: gui/mainwindow.cpp:378
+#: gui/mainwindow.cpp:381
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "Δημιουργία μιας νέας κατάτμησης."
 
-#: gui/mainwindow.cpp:385
+#: gui/mainwindow.cpp:388
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "Αλλαγή μεγέθους/μετακίνηση"
 
-#: gui/mainwindow.cpp:386
+#: gui/mainwindow.cpp:389
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "Αλλαγή μεγέθους ή μετακίνηση κατάτμησης"
 
-#: gui/mainwindow.cpp:387
+#: gui/mainwindow.cpp:390
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "Σμίκρυνση, μεγέθυνση ή μετακίνηση μιας υπάρχουσας κατάτμησης."
 
-#: gui/mainwindow.cpp:394
+#: gui/mainwindow.cpp:397
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: gui/mainwindow.cpp:395 gui/mainwindow.cpp:650
+#: gui/mainwindow.cpp:398 gui/mainwindow.cpp:661
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "Διαγραφή κατάτμησης"
 
-#: gui/mainwindow.cpp:396
+#: gui/mainwindow.cpp:399
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "Διαγραφή μιας κατάτμησης."
 
-#: gui/mainwindow.cpp:403
+#: gui/mainwindow.cpp:406
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "Καταστροφή"
 
-#: gui/mainwindow.cpp:404
+#: gui/mainwindow.cpp:407
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "Καταστροφή κατάτμησης"
 
-#: gui/mainwindow.cpp:405
+#: gui/mainwindow.cpp:408
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
@@ -1625,121 +1625,141 @@ msgstr ""
 "Να καταστραφεί μια κατάτμηση έτσι ώστε τα περιεχόμενά της να μη είναι δυνατό "
 "να ανακτηθούν."
 
-#: gui/mainwindow.cpp:412
+#: gui/mainwindow.cpp:415
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: gui/mainwindow.cpp:413
+#: gui/mainwindow.cpp:416
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "Αντιγραφή κατάτμησης"
 
-#: gui/mainwindow.cpp:414
+#: gui/mainwindow.cpp:417
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "Αντιγραφή μιας υπάρχουσας κατάτμησης."
 
-#: gui/mainwindow.cpp:421
+#: gui/mainwindow.cpp:424
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "Επικόλληση"
 
-#: gui/mainwindow.cpp:422
+#: gui/mainwindow.cpp:425
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "Επικόλληση"
 
-#: gui/mainwindow.cpp:423
+#: gui/mainwindow.cpp:426
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "Επικόλληση μιας αντιγραμμένης κατάτμησης."
 
-#: gui/mainwindow.cpp:430
+#: gui/mainwindow.cpp:433
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "Επεξεργασία σημείου προσάρτησης "
 
-#: gui/mainwindow.cpp:431
+#: gui/mainwindow.cpp:434
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "Επεξεργασία σημείου προσάρτησης"
 
-#: gui/mainwindow.cpp:432
+#: gui/mainwindow.cpp:435
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "Επεξεργασία σημείου προσάρτησης κατάτμησης και των επιλογών."
 
-#: gui/mainwindow.cpp:437
+#: gui/mainwindow.cpp:440
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "Προσάρτηση"
 
-#: gui/mainwindow.cpp:438
+#: gui/mainwindow.cpp:441
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "Προσάρτηση ή απόσπαση κατάτμησης"
 
-#: gui/mainwindow.cpp:439
+#: gui/mainwindow.cpp:442
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "Προσάρτηση ή απόσπαση μιας κατάτμησης."
 
-#: gui/mainwindow.cpp:444
+#: gui/mainwindow.cpp:447
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Take Ownership"
+msgstr ""
+
+#: gui/mainwindow.cpp:448
+#, fuzzy, kde-kuit-format
+#| msgctxt "@action:button"
+#| msgid "Change the File System"
+msgctxt "@info:tooltip"
+msgid "Take ownership of the file system"
+msgstr "Τροποποίηση συστήματος αρχείων"
+
+#: gui/mainwindow.cpp:449
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Change the ownership of the mounted file system to the current user."
+msgstr ""
+
+#: gui/mainwindow.cpp:455
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr "Ξεκλείδωμα"
 
-#: gui/mainwindow.cpp:445
+#: gui/mainwindow.cpp:456
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "Ξεκλείδωμα ή κλείδωμα κρυπτογραφημένης κατάτμησης"
 
-#: gui/mainwindow.cpp:446
+#: gui/mainwindow.cpp:457
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "Ξεκλείδωμα ή κλείδωμα κρυπτογραφημένης κατάτμησης."
 
-#: gui/mainwindow.cpp:451
+#: gui/mainwindow.cpp:462
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "Έλεγχος"
 
-#: gui/mainwindow.cpp:452
+#: gui/mainwindow.cpp:463
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "Έλεγχος κατάτμησης"
 
-#: gui/mainwindow.cpp:453
+#: gui/mainwindow.cpp:464
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "Έλεγχος σφαλμάτων συστήματος αρχείων σε μια κατάτμηση."
 
-#: gui/mainwindow.cpp:460
+#: gui/mainwindow.cpp:471
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "Εμφάνιση διαλόγου ιδιοτήτων κατάτμησης"
 
-#: gui/mainwindow.cpp:461
+#: gui/mainwindow.cpp:472
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
@@ -1747,151 +1767,151 @@ msgstr ""
 "Προβολή και τροποποίηση ιδιοτήτων κατάτμησης (ετικέτα, σημαίες κατάτμησης, "
 "κτλ)"
 
-#: gui/mainwindow.cpp:467
+#: gui/mainwindow.cpp:478
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "Αντίγραφο ασφαλείας"
 
-#: gui/mainwindow.cpp:468
+#: gui/mainwindow.cpp:479
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "Αντίγραφο ασφαλείας κατάτμησης"
 
-#: gui/mainwindow.cpp:469
+#: gui/mainwindow.cpp:480
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "Δημιουργία αντιγράφου ασφαλείας μιας κατάτμησης σε ένα αρχείο."
 
-#: gui/mainwindow.cpp:475
+#: gui/mainwindow.cpp:486
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "Επαναφορά"
 
-#: gui/mainwindow.cpp:476
+#: gui/mainwindow.cpp:487
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "Επαναφορά κατάτμησης"
 
-#: gui/mainwindow.cpp:477
+#: gui/mainwindow.cpp:488
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "Επαναφορά μιας κατάτμησης από ένα αρχείο αντιγράφου ασφαλείας."
 
-#: gui/mainwindow.cpp:484
+#: gui/mainwindow.cpp:495
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "Νέα ομάδα τόμων"
 
-#: gui/mainwindow.cpp:485
+#: gui/mainwindow.cpp:496
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr "Δημιουργία νέας ομάδας τόμων LVM"
 
-#: gui/mainwindow.cpp:486
+#: gui/mainwindow.cpp:497
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "Δημιουργία νέας ομάδας τόμων LVM ως συσκευή."
 
-#: gui/mainwindow.cpp:492
+#: gui/mainwindow.cpp:503
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "Υποστήριξη συστήματος αρχείων"
 
-#: gui/mainwindow.cpp:493
+#: gui/mainwindow.cpp:504
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "Προβολή πληροφοριών υποστήριξης συστήματος αρχείων"
 
-#: gui/mainwindow.cpp:494
+#: gui/mainwindow.cpp:505
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "Εμφάνιση πληροφοριών σχετικά με τα υποστηριζόμενα συστήματα αρχείων."
 
-#: gui/mainwindow.cpp:498
+#: gui/mainwindow.cpp:509
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "Ανανέωση συσκευών"
 
-#: gui/mainwindow.cpp:499
+#: gui/mainwindow.cpp:510
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "Ανανέωση όλων των συσκευών"
 
-#: gui/mainwindow.cpp:500
+#: gui/mainwindow.cpp:511
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "Ανανέωση της λίστας των συσκευών."
 
-#: gui/mainwindow.cpp:516
+#: gui/mainwindow.cpp:527
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "Καθαρισμός καταγραφής"
 
-#: gui/mainwindow.cpp:517
+#: gui/mainwindow.cpp:528
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr "Καθαρισμός του αποτελέσματος καταγραφής"
 
-#: gui/mainwindow.cpp:518
+#: gui/mainwindow.cpp:529
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr "Καθαρισμός του πίνακα αποτελεσμάτων καταγραφής."
 
-#: gui/mainwindow.cpp:523
+#: gui/mainwindow.cpp:534
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "Αποθήκευση καταγραφής"
 
-#: gui/mainwindow.cpp:524
+#: gui/mainwindow.cpp:535
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr "Αποθήκευση του αποτελέσματος καταγραφής"
 
-#: gui/mainwindow.cpp:525
+#: gui/mainwindow.cpp:536
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr "Αποθήκευση του αποτελέσματος καταγραφής σε αρχείο."
 
-#: gui/mainwindow.cpp:531
+#: gui/mainwindow.cpp:542
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr "Σχετικά με τη βιβλιοθήκη KPMcore"
 
-#: gui/mainwindow.cpp:532
+#: gui/mainwindow.cpp:543
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr "Εμφάνιση διαλόγου για το περίγραμμα της KPMcore"
 
-#: gui/mainwindow.cpp:533
+#: gui/mainwindow.cpp:544
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "Εμφάνιση διαλόγου για το περίγραμμα της KPMcore."
 
-#: gui/mainwindow.cpp:652
+#: gui/mainwindow.cpp:663
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1899,7 +1919,7 @@ msgid ""
 "proceeding."
 msgstr ""
 
-#: gui/mainwindow.cpp:721
+#: gui/mainwindow.cpp:745
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
@@ -1907,25 +1927,25 @@ msgid_plural "%1 pending operations"
 msgstr[0] "Μια ενέργεια σε αναμονή"
 msgstr[1] "%1 ενέργειες σε αναμονή"
 
-#: gui/mainwindow.cpp:816
+#: gui/mainwindow.cpp:840
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "Χρήση πρόσθετου για το σύστημα υποστήριξης: %1 (%2)"
 
-#: gui/mainwindow.cpp:820
+#: gui/mainwindow.cpp:844
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "Σάρωση συσκευών..."
 
-#: gui/mainwindow.cpp:858
+#: gui/mainwindow.cpp:882
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "Η σάρωση ολοκληρώθηκε."
 
-#: gui/mainwindow.cpp:922
+#: gui/mainwindow.cpp:946
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1935,19 +1955,19 @@ msgstr ""
 "<para>Επιθυμείτε πραγματικά την επανασάρωση των συσκευών;</"
 "para><para><warning>Αυτό  θα καθαρίσει επίσης και τη λίστα ενεργειών σε αναμονή.</warning></para>"
 
-#: gui/mainwindow.cpp:924
+#: gui/mainwindow.cpp:948
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "Πραγματικά επανασάρωση συσκευών;"
 
-#: gui/mainwindow.cpp:925
+#: gui/mainwindow.cpp:949
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "Επανασάρωση συσκευών"
 
-#: gui/mainwindow.cpp:951
+#: gui/mainwindow.cpp:975
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1958,70 +1978,70 @@ msgstr ""
 "εμφανίζονται  παρακάτω;</para><para><warning>Αυτό τροποποιεί οριστικά τους δίσκους σας.</"
 "warning></para>"
 
-#: gui/mainwindow.cpp:953
+#: gui/mainwindow.cpp:977
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "Εφαρμογή ενεργειών σε αναμονή;"
 
-#: gui/mainwindow.cpp:954
+#: gui/mainwindow.cpp:978
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "Εφαρμογή ενεργειών σε αναμονή"
 
-#: gui/mainwindow.cpp:956
+#: gui/mainwindow.cpp:980
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "Εφαρμογή ενεργειών..."
 
-#: gui/mainwindow.cpp:981
+#: gui/mainwindow.cpp:1005
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "Αναίρεση ενέργειας: %1"
 
-#: gui/mainwindow.cpp:997
+#: gui/mainwindow.cpp:1021
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr ""
 "Επιθυμείτε πραγματικά τον καθαρισμό της λίστας των ενεργειών σε αναμονή;"
 
-#: gui/mainwindow.cpp:998
+#: gui/mainwindow.cpp:1022
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "Καθαρισμός ενεργειών σε αναμονή;"
 
-#: gui/mainwindow.cpp:999
+#: gui/mainwindow.cpp:1023
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "Καθαρισμός ενεργειών σε αναμονή"
 
-#: gui/mainwindow.cpp:1001
+#: gui/mainwindow.cpp:1025
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "Καθαρισμός της λίστας των ενεργειών σε αναμονή."
 
-#: gui/mainwindow.cpp:1043
+#: gui/mainwindow.cpp:1067
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
 msgstr ""
 "Αδυναμία ανοίγματος του αρχείου εισόδου <filename>%1</filename> για εισαγωγή"
 
-#: gui/mainwindow.cpp:1043 gui/mainwindow.cpp:1053 gui/mainwindow.cpp:1061
-#: gui/mainwindow.cpp:1067
+#: gui/mainwindow.cpp:1067 gui/mainwindow.cpp:1077 gui/mainwindow.cpp:1085
+#: gui/mainwindow.cpp:1091
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "Σφάλμα κατά την εισαγωγή πίνακα κατατμήσεων"
 
-#: gui/mainwindow.cpp:1061
+#: gui/mainwindow.cpp:1085
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
@@ -2029,7 +2049,7 @@ msgstr ""
 "Αδυναμία ανοίγματος του αρχείου εισόδου <filename>%1</filename> για "
 "εισαγωγή: %2"
 
-#: gui/mainwindow.cpp:1067
+#: gui/mainwindow.cpp:1091
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2039,7 +2059,7 @@ msgstr ""
 "Αδυναμία ανοίγματος του προσωρινού αρχείου <filename>%1</filename> κατά την "
 "προσπάθεια εισαγωγής από το <filename>%2</filename>."
 
-#: gui/mainwindow.cpp:1097
+#: gui/mainwindow.cpp:1121
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2049,16 +2069,16 @@ msgstr ""
 "Το αρχείο εισαγωγής <filename>%1</filename> δεν περιέχει έγκυρο πίνακα "
 "κατατμήσεων."
 
-#: gui/mainwindow.cpp:1097 gui/mainwindow.cpp:1107 gui/mainwindow.cpp:1114
-#: gui/mainwindow.cpp:1119 gui/mainwindow.cpp:1129 gui/mainwindow.cpp:1142
-#: gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1166 gui/mainwindow.cpp:1171
-#: gui/mainwindow.cpp:1176 gui/mainwindow.cpp:1183 gui/mainwindow.cpp:1459
+#: gui/mainwindow.cpp:1121 gui/mainwindow.cpp:1131 gui/mainwindow.cpp:1138
+#: gui/mainwindow.cpp:1143 gui/mainwindow.cpp:1153 gui/mainwindow.cpp:1166
+#: gui/mainwindow.cpp:1171 gui/mainwindow.cpp:1190 gui/mainwindow.cpp:1195
+#: gui/mainwindow.cpp:1200 gui/mainwindow.cpp:1207 gui/mainwindow.cpp:1483
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "Σφάλμα κατά την εισαγωγή πίνακα κατατμήσεων"
 
-#: gui/mainwindow.cpp:1107
+#: gui/mainwindow.cpp:1131
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
@@ -2066,44 +2086,44 @@ msgstr ""
 "Βρέθηκαν περισσότεροι του ενός τύποι πίνακα κατάτμησης στο αρχείο εισαγωγής "
 "(γραμμή %1)."
 
-#: gui/mainwindow.cpp:1114
+#: gui/mainwindow.cpp:1138
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "Ο τύπος \"%1\" πίνακα κατάτμησης είναι άγνωστος (γραμμή %2)."
 
-#: gui/mainwindow.cpp:1119
+#: gui/mainwindow.cpp:1143
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr ""
 "Ο τύπος \"%1\" πίνακα κατάτμησης δεν υποστηρίζεται για εισαγωγή (γραμμή %2)."
 
-#: gui/mainwindow.cpp:1129
+#: gui/mainwindow.cpp:1153
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr "Βρέθηκε κατάτμηση αλλά όχι τύπος πίνακα κατάτμησης (γραμμή %1)."
 
-#: gui/mainwindow.cpp:1142
+#: gui/mainwindow.cpp:1166
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "Η κατάτμηση %1 θα βρεθεί εκτός των ορίων της συσκευής (γραμμή %2)."
 
-#: gui/mainwindow.cpp:1147
+#: gui/mainwindow.cpp:1171
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "Η κατάτμηση %1 τελειώνει πριν από τον αρχικό τομέα (γραμμή %2)."
 
-#: gui/mainwindow.cpp:1166
+#: gui/mainwindow.cpp:1190
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "Άγνωστος ρόλος \"%1\" κατάτμησης για την κατάτμηση %2 (γραμμή %3)."
 
-#: gui/mainwindow.cpp:1171
+#: gui/mainwindow.cpp:1195
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
@@ -2112,7 +2132,7 @@ msgstr ""
 "Δεν βρέθηκε κατάτμηση γονέας ή πίνακας κατάτμησης για την κατάτμηση %1 "
 "(γραμμή %2)."
 
-#: gui/mainwindow.cpp:1176
+#: gui/mainwindow.cpp:1200
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2122,7 +2142,7 @@ msgstr ""
 "Ο τύπος \"%1\" του πίνακα κατάτμησης δεν υποστηρίζει εκτεταμένες "
 "κατατμήσεις, αλλά βρέθηκε μία (γραμμή %2)."
 
-#: gui/mainwindow.cpp:1183
+#: gui/mainwindow.cpp:1207
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
@@ -2130,30 +2150,30 @@ msgstr ""
 "Αδυναμία δημιουργίας συστήματος αρχείων \"%1\" για την κατάτμηση %2 (γραμμή "
 "%3)."
 
-#: gui/mainwindow.cpp:1198
+#: gui/mainwindow.cpp:1222
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr ""
 "Αδυναμία ανάλυσης της γραμμής %1 από το αρχείο εισαγωγής. Αγνοήστε την."
 
-#: gui/mainwindow.cpp:1215
+#: gui/mainwindow.cpp:1239
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "Σφάλμα εξαγωγής πίνακα κατάτμησης"
 
-#: gui/mainwindow.cpp:1380 gui/mainwindow.cpp:1386 gui/mainwindow.cpp:1422
+#: gui/mainwindow.cpp:1404 gui/mainwindow.cpp:1410 gui/mainwindow.cpp:1446
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1386 gui/mainwindow.cpp:1397
+#: gui/mainwindow.cpp:1410 gui/mainwindow.cpp:1421
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1434
+#: gui/mainwindow.cpp:1458
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2180,25 +2200,25 @@ msgstr ""
 "βρείτε πακέτα με αυτά τα εργαλεία υποστήριξης στο διαχειριστή πακέτων της "
 "διανομής σας.</para>"
 
-#: gui/mainwindow.cpp:1447
+#: gui/mainwindow.cpp:1471
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "Λείπουν πακέτα υποστήριξης του συστήματος αρχείων"
 
-#: gui/mainwindow.cpp:1458
+#: gui/mainwindow.cpp:1482
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "Άγνωστη συσκευή «%1» "
 
-#: gui/mainwindow.cpp:1467
+#: gui/mainwindow.cpp:1491
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "Άγνωστη κατάτμηση \"%1\" "
 
-#: gui/mainwindow.cpp:1468
+#: gui/mainwindow.cpp:1492
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
@@ -2275,19 +2295,19 @@ msgid "Partition"
 msgstr "Κατάτμηση"
 
 #. i18n: ectx: Menu (panels)
-#: gui/partitionmanagerui.rc:77
+#: gui/partitionmanagerui.rc:78
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr "Εμφανιζόμενοι πίνακες"
 
-#: gui/partitionmanagerwidget.cpp:201
+#: gui/partitionmanagerwidget.cpp:214
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 (Κρυπτογραφημένο)"
 
-#: gui/partitionmanagerwidget.cpp:409
+#: gui/partitionmanagerwidget.cpp:422
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2296,13 +2316,13 @@ msgstr ""
 "Αδυναμία προσάρτησης του συστήματος αρχείων στην κατάτμηση <filename>%1</"
 "filename>."
 
-#: gui/partitionmanagerwidget.cpp:409
+#: gui/partitionmanagerwidget.cpp:422
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "Αδυναμία προσάρτησης του συστήματος αρχείων."
 
-#: gui/partitionmanagerwidget.cpp:412
+#: gui/partitionmanagerwidget.cpp:425
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2311,13 +2331,95 @@ msgstr ""
 "Αδυναμία αποπροσάρτησης του συστήματος αρχείων στην κατάτμηση <filename>%1</"
 "filename>."
 
-#: gui/partitionmanagerwidget.cpp:412
+#: gui/partitionmanagerwidget.cpp:425
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "Αδυναμία αποπροσάρτησης του συστήματος αρχείων."
 
-#: gui/partitionmanagerwidget.cpp:452
+#: gui/partitionmanagerwidget.cpp:460
+#, fuzzy, kde-kuit-format
+#| msgctxt "@action:button"
+#| msgid "Change the File System"
+msgctxt "@title:window"
+msgid "Take Ownership of File System"
+msgstr "Τροποποίηση συστήματος αρχείων"
+
+#: gui/partitionmanagerwidget.cpp:466
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain"
+#| msgid ""
+#| "Back up file system on partition <filename>%1</filename> to <filename>%2</"
+#| "filename>"
+msgctxt "@info"
+msgid ""
+"This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
+"emphasis>."
+msgstr ""
+"Αντίγραφο ασφαλείας του συστήματος αρχείων στην κατάτμηση <filename>%1</"
+"filename> στο <filename>%2</filename>"
+
+#: gui/partitionmanagerwidget.cpp:473
+#, kde-kuit-format
+msgctxt "@option:check"
+msgid "Apply recursively to all subdirectories and files"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:481
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"This will also change the ownership of all subdirectories and files. This "
+"may cause problems if some of them are owned by other users."
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:488
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Take Ownership"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:506
+#, kde-kuit-format
+msgctxt "@info:progress"
+msgid "Taking ownership of <b>%1</b>…"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:508
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Take Ownership"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:523
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain"
+#| msgid "Could not delete partition <filename>%1</filename>."
+msgctxt "@info"
+msgid "Could not take ownership of <filename>%1</filename>."
+msgstr "Αδυναμία διαγραφής της κατάτμησης <filename>%1</filename>."
+
+#: gui/partitionmanagerwidget.cpp:526
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Taking Ownership Failed"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:531
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
+"%2</emphasis>."
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:533
+#, kde-kuit-format
+msgctxt "@title:window"
+msgid "Ownership Changed"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:561
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2327,13 +2429,13 @@ msgstr ""
 "Αδυναμία ξεκλειδώματος του κρυπτογραφημένου συστήματος αρχείων στην "
 "κατάτμηση <filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:458
+#: gui/partitionmanagerwidget.cpp:567
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "Αδυναμία ξεκλειδώματος του κρυπτογραφημένου συστήματος αρχείων."
 
-#: gui/partitionmanagerwidget.cpp:463
+#: gui/partitionmanagerwidget.cpp:572
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2343,13 +2445,13 @@ msgstr ""
 "Αδυναμία κλειδώματος του κρυπτογραφημένου συστήματος αρχείων στην κατάτμηση "
 "<filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:469
+#: gui/partitionmanagerwidget.cpp:578
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "Αδυναμία κλειδώματος του κρυπτογραφημένου συστήματος αρχείων."
 
-#: gui/partitionmanagerwidget.cpp:498
+#: gui/partitionmanagerwidget.cpp:607
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2374,13 +2476,13 @@ msgstr[1] ""
 "μπορείτε  να δημιουργήσετε, να επικολλήσετε ή να επαναφέρετε μια κύρια κατάτμηση πάνω "
 "σε αυτή έως ότου  διαγράψετε κάποια υπάρχουσα.</para>"
 
-#: gui/partitionmanagerwidget.cpp:502
+#: gui/partitionmanagerwidget.cpp:611
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "Μεγάλος αριθμός κύριων κατατμήσεων."
 
-#: gui/partitionmanagerwidget.cpp:565
+#: gui/partitionmanagerwidget.cpp:674
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2393,13 +2495,13 @@ msgstr ""
 "προσαρτημένες  ακόμη.</para><para>Παρακαλώ αποσπάστε πρώτα όλες τις κατατμήσεις με "
 "μεγαλύτερο  λογικό αριθμό από το %2.</para>"
 
-#: gui/partitionmanagerwidget.cpp:568
+#: gui/partitionmanagerwidget.cpp:677
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "Αδυναμία διαγραφής κατάτμησης."
 
-#: gui/partitionmanagerwidget.cpp:577
+#: gui/partitionmanagerwidget.cpp:686
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2408,19 +2510,19 @@ msgid ""
 "deleted."
 msgstr "Επιθυμείτε πραγματικά τη διαγραφή της κατάτμησης που βρίσκεται στο  πρόχειρο; Αυτή θα πάψει να είναι διαθέσιμη για επικόλληση μετά τη  διαγραφή της."
 
-#: gui/partitionmanagerwidget.cpp:579
+#: gui/partitionmanagerwidget.cpp:688
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "Πραγματικά διαγραφή κατάτμησης του προχείρου;"
 
-#: gui/partitionmanagerwidget.cpp:580
+#: gui/partitionmanagerwidget.cpp:689
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "Να διαγραφεί"
 
-#: gui/partitionmanagerwidget.cpp:633
+#: gui/partitionmanagerwidget.cpp:742
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2430,13 +2532,13 @@ msgstr ""
 "Η κατάτμηση <filename>%1</filename> έχει την ίδια θέση και μέγεθος μετά την "
 "αλλαγή μεγέθους/μετακίνηση. Αγνόηση ενέργειας."
 
-#: gui/partitionmanagerwidget.cpp:661
+#: gui/partitionmanagerwidget.cpp:770
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "Η κατάτμηση <filename>%1</filename> έχει αντιγραφεί στο πρόχειρο."
 
-#: gui/partitionmanagerwidget.cpp:724
+#: gui/partitionmanagerwidget.cpp:833
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2454,19 +2556,19 @@ msgstr ""
 "στο κύριο παράθυρο, όλα τα δεδομένα που είναι αποθηκευμένα στο <filename>%1</"
 "filename> θα αντικατασταθούν χωρίς δυνατότητα επαναφοράς.</para>"
 
-#: gui/partitionmanagerwidget.cpp:732
+#: gui/partitionmanagerwidget.cpp:841
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "Να γίνει οπωσδήποτε αντικατάσταση της υπάρχουσας κατάτμησης;"
 
-#: gui/partitionmanagerwidget.cpp:733
+#: gui/partitionmanagerwidget.cpp:842
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "Αντικατάσταση κατάτμησης"
 
-#: gui/partitionmanagerwidget.cpp:741
+#: gui/partitionmanagerwidget.cpp:850
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2478,13 +2580,13 @@ msgstr ""
 "πηγαία κατάτμηση ή  το αντίγραφο ασφαλείας.</para><para>Επιλέξτε άλλο προορισμό ή αλλάξτε το "
 "μέγεθος αυτής  της κατάτμησης έτσι ώστε να έχει μέγεθος όσο και η πηγή..</para>"
 
-#: gui/partitionmanagerwidget.cpp:742
+#: gui/partitionmanagerwidget.cpp:851
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "Μη επαρκές μέγεθος προορισμού"
 
-#: gui/partitionmanagerwidget.cpp:745
+#: gui/partitionmanagerwidget.cpp:854
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2498,13 +2600,13 @@ msgstr ""
 "κατατμήσεις δεν έχουν όλες τη σωστή τοποθέτηση ή κατά την αντιγραφή μιας "
 "κύριας κατάτμησης σε μια εκτεταμένη.</para>"
 
-#: gui/partitionmanagerwidget.cpp:748
+#: gui/partitionmanagerwidget.cpp:857
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "Αδυναμία δημιουργίας κατάτμησης προορισμού."
 
-#: gui/partitionmanagerwidget.cpp:806
+#: gui/partitionmanagerwidget.cpp:915
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2514,7 +2616,7 @@ msgstr ""
 "Το σύστημα αρχείων στο αρχείο αντιγράφου εικόνας <filename>%1</filename> "
 "είναι πολύ  μεγάλο ώστε να γίνει επαναφορά στην επιλεγμένη κατάτμηση."
 
-#: gui/partitionmanagerwidget.cpp:806
+#: gui/partitionmanagerwidget.cpp:915
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
@@ -5022,14 +5124,6 @@ msgstr "Στήλες"
 #~ "Αδυναμία δημιουργίας αρχείου αντιγράφου ασφαλείας <filename>%1</filename>."
 
 #~ msgctxt "@info/plain"
-#~ msgid ""
-#~ "Back up file system on partition <filename>%1</filename> to <filename>%2</"
-#~ "filename>"
-#~ msgstr ""
-#~ "Αντίγραφο ασφαλείας του συστήματος αρχείων στην κατάτμηση <filename>%1</"
-#~ "filename> στο <filename>%2</filename>"
-
-#~ msgctxt "@info/plain"
 #~ msgid "Check file system on partition <filename>%1</filename>"
 #~ msgstr "Έλεγχος συστήματος αρχείων στην κατάτμηση <filename>%1</filename>"
 
@@ -5178,10 +5272,6 @@ msgstr "Στήλες"
 #~ msgctxt "@info/plain"
 #~ msgid "Delete file system on <filename>%1</filename>"
 #~ msgstr "Διαγραφή συστήματος αρχείων στο <filename>%1</filename>"
-
-#~ msgctxt "@info/plain"
-#~ msgid "Could not delete partition <filename>%1</filename>."
-#~ msgstr "Αδυναμία διαγραφής της κατάτμησης <filename>%1</filename>."
 
 #~ msgctxt "@info/plain"
 #~ msgid ""
