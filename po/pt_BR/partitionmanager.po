@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-27 00:47+0000\n"
-"PO-Revision-Date: 2026-05-09 06:19-0300\n"
+"PO-Revision-Date: 2026-06-27 08:40-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1696,21 +1696,20 @@ msgstr "Monta ou desmonta uma partição."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Virar proprietário"
 
 #: gui/mainwindow.cpp:448
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "Alterar o sistema de arquivos"
+msgstr "Virar proprietário do sistema de arquivo"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr ""
+"Altera a propriedade do sistema de arquivos montado para o usuário atual."
 
 #: gui/mainwindow.cpp:455
 #, kde-kuit-format
@@ -2338,12 +2337,10 @@ msgid "Could Not Unmount File System."
 msgstr "Não foi possível desmontar o sistema de arquivos."
 
 #: gui/partitionmanagerwidget.cpp:460
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "Alterar o sistema de arquivos"
+msgstr "Virar proprietário do sistema de arquivo"
 
 #: gui/partitionmanagerwidget.cpp:466
 #, kde-kuit-format
@@ -2352,12 +2349,14 @@ msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
+"Isso definirá a propriedade de <filename>%1</filename> para o usuário "
+"<emphasis>%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:473
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "Aplicar recursivamente a todos os subdiretórios e arquivos"
 
 #: gui/partitionmanagerwidget.cpp:481
 #, kde-kuit-format
@@ -2366,38 +2365,38 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"Isso também alterará a propriedade de todos os subdiretórios e arquivos. "
+"Isso pode causar problemas se alguns deles pertencerem a outros usuários."
 
 #: gui/partitionmanagerwidget.cpp:488
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Virar proprietário"
 
 #: gui/partitionmanagerwidget.cpp:506
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "Virar proprietário de <b>%1</b>…"
 
 #: gui/partitionmanagerwidget.cpp:508
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Virar proprietário"
 
 #: gui/partitionmanagerwidget.cpp:523
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "montada em <filename>%1</filename>"
+msgstr "Não foi possível virar proprietário de <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:526
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "Tomada de propriedade falhou"
 
 #: gui/partitionmanagerwidget.cpp:531
 #, kde-kuit-format
@@ -2406,12 +2405,14 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
+"A propriedade de <filename>%1</filename> foi alterada com sucesso para "
+"<emphasis>%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:533
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "Propriedade alterada"
 
 #: gui/partitionmanagerwidget.cpp:561
 #, kde-kuit-format

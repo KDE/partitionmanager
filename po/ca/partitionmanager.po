@@ -5,13 +5,13 @@
 #
 # SPDX-FileCopyrightText: 2009, 2010 Manuel Tortosa Moreno <manutortosa@gmail.com>
 # SPDX-FileCopyrightText: 2012, 2014, 2015, 2016, 2017, 2018, 2020 Antoni Bella Pérez <antonibella5@yahoo.com>
-# SPDX-FileCopyrightText: 2009, 2010, 2012, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2026 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2009-2010, 2012, 2014-2024, 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-27 00:47+0000\n"
-"PO-Revision-Date: 2026-05-09 12:26+0200\n"
+"PO-Revision-Date: 2026-06-27 09:35+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1694,21 +1694,19 @@ msgstr "Munta o desmunta una partició."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Pren la propietat"
 
 #: gui/mainwindow.cpp:448
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "Canvia el sistema de fitxers"
+msgstr "Pren la propietat del sistema de fitxers"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
-msgstr ""
+msgstr "Canvia la propietat del sistema de fitxers muntat a l'usuari actual."
 
 #: gui/mainwindow.cpp:455
 #, kde-kuit-format
@@ -2334,12 +2332,10 @@ msgid "Could Not Unmount File System."
 msgstr "No s'ha pogut desmuntar el sistema de fitxers."
 
 #: gui/partitionmanagerwidget.cpp:460
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "Canvia el sistema de fitxers"
+msgstr "Presa de la propietat del sistema de fitxers"
 
 #: gui/partitionmanagerwidget.cpp:466
 #, kde-kuit-format
@@ -2348,12 +2344,14 @@ msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
+"Això establirà la propietat de <filename>%1</filename> a l'usuari <emphasis>"
+"%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:473
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "Aplica recursivament a tots els subdirectoris i fitxers"
 
 #: gui/partitionmanagerwidget.cpp:481
 #, kde-kuit-format
@@ -2362,38 +2360,38 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"Això també canviarà la propietat de tots els subdirectoris i fitxers. Això "
+"pot causar problemes si alguns d'ells són propietat d'altres usuaris."
 
 #: gui/partitionmanagerwidget.cpp:488
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Pren la propietat"
 
 #: gui/partitionmanagerwidget.cpp:506
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "S'està prenent la propietat de <b>%1</b>…"
 
 #: gui/partitionmanagerwidget.cpp:508
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Presa de la propietat"
 
 #: gui/partitionmanagerwidget.cpp:523
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "muntada a <filename>%1</filename>"
+msgstr "No s'ha pogut prendre la propietat de <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:526
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "Ha fallat en prendre la propietat"
 
 #: gui/partitionmanagerwidget.cpp:531
 #, kde-kuit-format
@@ -2402,12 +2400,14 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
+"La propietat de <filename>%1</filename> ha canviat correctament a <emphasis>"
+"%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:533
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "La propietat ha canviat"
 
 #: gui/partitionmanagerwidget.cpp:561
 #, kde-kuit-format

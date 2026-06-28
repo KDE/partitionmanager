@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-27 00:47+0000\n"
-"PO-Revision-Date: 2026-05-09 13:25+0300\n"
+"PO-Revision-Date: 2026-06-27 10:21+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1699,21 +1699,20 @@ msgstr "Монтування або демонтування розділу."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Отримати у власність"
 
 #: gui/mainwindow.cpp:448
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "Змінити файлову систему"
+msgstr "Набути власності на файлову систему"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr ""
+"Змінити власника змонтованої файлової системи на поточного користувача."
 
 #: gui/mainwindow.cpp:455
 #, kde-kuit-format
@@ -2333,12 +2332,10 @@ msgid "Could Not Unmount File System."
 msgstr "Невдала спроба демонтування файлової системи."
 
 #: gui/partitionmanagerwidget.cpp:460
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "Змінити файлову систему"
+msgstr "Набуття власності на файлову систему"
 
 #: gui/partitionmanagerwidget.cpp:466
 #, kde-kuit-format
@@ -2347,12 +2344,14 @@ msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
+"У результаті власника <filename>%1</filename> буде змінено на користувача "
+"<emphasis>%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:473
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "Застосувати рекурсивно до усіх підкаталогів і файлів"
 
 #: gui/partitionmanagerwidget.cpp:481
 #, kde-kuit-format
@@ -2361,38 +2360,38 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"У результаті також буде змінено власника усіх підкаталогів і файлів. Це може "
+"спричинити проблеми, якщо деякі з них належать іншим користувачам."
 
 #: gui/partitionmanagerwidget.cpp:488
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Отримання у власність"
 
 #: gui/partitionmanagerwidget.cpp:506
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "Набуття власності на <b>%1</b>…"
 
 #: gui/partitionmanagerwidget.cpp:508
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Отримання у власність"
 
 #: gui/partitionmanagerwidget.cpp:523
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "змонтовано до <filename>%1</filename>"
+msgstr "Не вдалося набути власності на <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:526
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "Не вдалося набути власності"
 
 #: gui/partitionmanagerwidget.cpp:531
 #, kde-kuit-format
@@ -2401,12 +2400,14 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
+"Власника <filename>%1</filename> було успішно змінено на <emphasis>%2</"
+"emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:533
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "Власника змінено"
 
 #: gui/partitionmanagerwidget.cpp:561
 #, kde-kuit-format

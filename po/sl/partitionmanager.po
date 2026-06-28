@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-27 00:47+0000\n"
-"PO-Revision-Date: 2026-05-09 08:04+0200\n"
+"PO-Revision-Date: 2026-06-27 06:07+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1699,21 +1699,20 @@ msgstr "Priklopi ali odklopi razdelek."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Prevzemite lastništvo"
 
 #: gui/mainwindow.cpp:448
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "Spremeni datotečni sistem"
+msgstr "Prevzemite lastništvo datotečnega sistema"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr ""
+"Spremeni lastništvo nameščenega datotečnega sistema na trenutnega uporabnika."
 
 #: gui/mainwindow.cpp:455
 #, kde-kuit-format
@@ -2336,32 +2335,26 @@ msgid "Could Not Unmount File System."
 msgstr "Ni bilo mogoče odklopiti datotečnega sistema."
 
 #: gui/partitionmanagerwidget.cpp:460
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "Spremeni datotečni sistem"
+msgstr "Prevzemi lastništvo datotečnega sistema"
 
 #: gui/partitionmanagerwidget.cpp:466
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid ""
-#| "Back up file system on partition <filename>%1</filename> to <filename>%2</"
-#| "filename>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
-"Ustvari varnostno kopijo sistema na razdelku <filename>%1</filename> v "
-"<filename>%2</filename>"
+"S tem boste lastništvo datoteke <filename>%1</filename> nastavili na "
+"uporabnika <emphasis>%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:473
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "Rekurzivno uporabi za vse poddirektorije in datoteke"
 
 #: gui/partitionmanagerwidget.cpp:481
 #, kde-kuit-format
@@ -2370,38 +2363,38 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"S tem se bo spremenilo tudi lastništvo vseh podmap in datotek. To lahko "
+"povzroči težave, če so nekatere od njih v lasti drugih uporabnikov."
 
 #: gui/partitionmanagerwidget.cpp:488
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Prevzemi lastništvo"
 
 #: gui/partitionmanagerwidget.cpp:506
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "Prevzemanje lastništva nad <b>%1</b>…"
 
 #: gui/partitionmanagerwidget.cpp:508
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Prevzemi lastništvo"
 
 #: gui/partitionmanagerwidget.cpp:523
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Could not delete partition <filename>%1</filename>."
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "Ni bilo mogoče izbrisati razdelka <filename>%1</filename>."
+msgstr "Ni bilo mogoče prevzeti lastništva <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:526
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "Prevzem lastništva ni uspel"
 
 #: gui/partitionmanagerwidget.cpp:531
 #, kde-kuit-format
@@ -2410,12 +2403,14 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
+"Lastništvo datoteke <filename>%1</filename> je bilo uspešno spremenjeno v "
+"<emphasis>%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:533
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "Lastništvo spremenjeno"
 
 #: gui/partitionmanagerwidget.cpp:561
 #, kde-kuit-format

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-27 00:47+0000\n"
-"PO-Revision-Date: 2026-05-10 18:21+0200\n"
+"PO-Revision-Date: 2026-06-27 17:23+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Kristof Bal, Freek de Kruijf - t/m 2019;2021 t/m 2025"
+msgstr "Kristof Bal, Freek de Kruijf - t/m 2019;2021 t/m 2026"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -1691,21 +1691,21 @@ msgstr "Koppelen een partitie aan of af."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Eigendom nemen"
 
 #: gui/mainwindow.cpp:448
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "Het bestandssysteem wijzigen"
+msgstr "Eigendom nemen van het bestandssysteem"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr ""
+"Wijzig het eigendom van het aangekoppelde bestandssysteem naar de huidige "
+"gebruiker."
 
 #: gui/mainwindow.cpp:455
 #, kde-kuit-format
@@ -2322,32 +2322,26 @@ msgid "Could Not Unmount File System."
 msgstr "Kon bestandssysteem niet afkoppelen."
 
 #: gui/partitionmanagerwidget.cpp:460
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "Het bestandssysteem wijzigen"
+msgstr "Eigendom nemen van bestandssysteem"
 
 #: gui/partitionmanagerwidget.cpp:466
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid ""
-#| "Back up file system on partition <filename>%1</filename> to <filename>%2</"
-#| "filename>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
-"Maak een reservekopie van het bestandssysteem op partitie <filename>%1</"
-"filename> naar <filename>%2</filename>"
+"Hiermee wordt het eigendom van <filename>%1</filename> ingesteld op "
+"gebruiker <emphasis>%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:473
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "Recursief toepassen op alle submappen en bestanden"
 
 #: gui/partitionmanagerwidget.cpp:481
 #, kde-kuit-format
@@ -2356,38 +2350,39 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"Hiermee wordt ook het eigendom van alle submappen en bestanden gewijzigd. "
+"Dit kan problemen veroorzaken als sommige daarvan eigendom zijn van andere "
+"gebruikers."
 
 #: gui/partitionmanagerwidget.cpp:488
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Eigendom nemen"
 
 #: gui/partitionmanagerwidget.cpp:506
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "Eigendom nemen van <b>%1</b>…"
 
 #: gui/partitionmanagerwidget.cpp:508
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Eigendom nemen"
 
 #: gui/partitionmanagerwidget.cpp:523
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Could not delete partition <filename>%1</filename>."
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "Kon partitie <filename>%1</filename> niet verwijderen."
+msgstr "Kon eigendom nemen van <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:526
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "Eigendom nemen is mislukt"
 
 #: gui/partitionmanagerwidget.cpp:531
 #, kde-kuit-format
@@ -2396,12 +2391,14 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
+"Het eigendom van <filename>%1</filename> is succesvol gewijzigd naar "
+"<emphasis>%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:533
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "Eigendom is gewijzigd"
 
 #: gui/partitionmanagerwidget.cpp:561
 #, kde-kuit-format
