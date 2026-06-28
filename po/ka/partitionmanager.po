@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:55+0000\n"
-"PO-Revision-Date: 2025-06-03 05:52+0200\n"
+"PO-Revision-Date: 2026-06-27 04:53+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -482,10 +482,12 @@ msgid "Do you really want to cancel?"
 msgstr "ნამდვილად გსურთ ამ ამოცანის გაუქმება?"
 
 #: gui/applyprogressdialog.cpp:191
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Stop Running Operations"
 msgctxt "@title:window"
 msgid "Cancel Running Operations"
-msgstr "ყველა ოპერაციის გაუქმება"
+msgstr "გაშვებული ოპერაციების გაჩერება"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -3520,6 +3522,90 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "სვეტები"
+
+#~ msgctxt "@info"
+#~ msgid "Stopping now may cause data loss or drive errors."
+#~ msgstr ""
+#~ "ახლა გაჩერებას მონაცემების დაკარგვა, ან დისკის შეცდომების გამოწვევა "
+#~ "შეუძლია."
+
+#~ msgctxt "@action:button"
+#~ msgid "Stop Anyway"
+#~ msgstr "მაინც გაჩერება"
+
+#~ msgctxt "@action:button"
+#~ msgid "Keep Running"
+#~ msgstr "გაშვების გაგრძელება"
+
+#~ msgctxt "@action:inmenu"
+#~ msgid "Take Ownership"
+#~ msgstr "მფლობელობის აღება"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Take ownership of the file system"
+#~ msgstr "ფაილური სისტემის მფლობელობის აღება"
+
+#~ msgctxt "@info:status"
+#~ msgid "Change the ownership of the mounted file system to the current user."
+#~ msgstr ""
+#~ "მიმაგრებული ფაილური სისტემის მფლობელის შეცვლა მიმდინარე მომხმარებელზე."
+
+#~ msgctxt "@title:window"
+#~ msgid "Take Ownership of File System"
+#~ msgstr "ფაილური სისტემის მფლობელობის აღება"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "This will set the ownership of <filename>%1</filename> to user <emphasis>"
+#~ "%2</emphasis>."
+#~ msgstr ""
+#~ "ეს <filename>%1</filename>-ის მფლობელს დააყენებს მომხმარებელზე <emphasis>"
+#~ "%2</emphasis>."
+
+#~ msgctxt "@option:check"
+#~ msgid "Apply recursively to all subdirectories and files"
+#~ msgstr "რეკურსიული გადატარება ყველა ქვესაქაღალდეზე და ფაილზე"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "This will also change the ownership of all subdirectories and files. This "
+#~ "may cause problems if some of them are owned by other users."
+#~ msgstr ""
+#~ "ეს ასევე შეცვლის მფლობელს ყველა ქვესაქაღალდისა და ფაილისთვის. ამან, "
+#~ "შეიძლება, პრობლემები გამოიწვიოს, თუ ზოგიერთი მათგანი სხვა მომხმარებელს "
+#~ "ეკუთვნის."
+
+#~ msgctxt "@action:button"
+#~ msgid "Take Ownership"
+#~ msgstr "მფლობელობის აღება"
+
+#~ msgctxt "@info:progress"
+#~ msgid "Taking ownership of <b>%1</b>…"
+#~ msgstr "<b>%1</b>-ის მფლობელობის აღება…"
+
+#~ msgctxt "@title:window"
+#~ msgid "Take Ownership"
+#~ msgstr "მფლობელობის აღება"
+
+#~ msgctxt "@info"
+#~ msgid "Could not take ownership of <filename>%1</filename>."
+#~ msgstr "<filename>%1</filename>-ის მფლობელის შეცვლა შეუძლებელია."
+
+#~ msgctxt "@title:window"
+#~ msgid "Taking Ownership Failed"
+#~ msgstr "მფლობელობის აღება ჩავარდა"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "Ownership of <filename>%1</filename> was successfully changed to "
+#~ "<emphasis>%2</emphasis>."
+#~ msgstr ""
+#~ "<filename>%1</filename>-ის მფლობელი წარმატებით შეიცვალა <emphasis>%2</"
+#~ "emphasis>-ზე."
+
+#~ msgctxt "@title:window"
+#~ msgid "Ownership Changed"
+#~ msgstr "მფლობელი შეიცვალა"
 
 #~ msgid "Use cylinder based alignment (Windows XP compatible)"
 #~ msgstr "ცილინდრებით სწორება (თავსებადია Windows XP-სთან)"
