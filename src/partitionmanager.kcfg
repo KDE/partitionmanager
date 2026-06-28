@@ -68,6 +68,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 					<value>Ext3</value>
 					<value>Ext4</value>
 					<value>LinuxSwap</value>
+					<value>FreeBSD_swap</value>
 					<value>Fat16</value>
 					<value>Fat32</value>
 					<value>Ntfs</value>
@@ -105,6 +106,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 			<default param="Ext3">122,145,180</default>
 			<default param="Ext4">143,170,210</default>
 			<default param="LinuxSwap">155,155,130</default>
+			<default param="FreeBSD_swap">155,155,130</default>
 			<default param="Fat16">204,179,215</default>
 			<default param="Fat32">229,201,240</default>
 			<default param="Ntfs">244,214,255</default>
