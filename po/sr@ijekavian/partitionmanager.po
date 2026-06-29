@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-27 00:47+0000\n"
+"POT-Creation-Date: 2026-06-29 00:49+0000\n"
 "PO-Revision-Date: 2018-01-06 09:21+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -149,217 +149,223 @@ msgstr "PiB"
 msgid "EiB"
 msgstr "EiB"
 
-#. i18n: ectx: property (text), widget (QLabel, textLabel_7)
-#: config/configurepagefilesystemcolors.ui:27
-#, kde-format
-msgid "ReiserFS:"
-msgstr "рајзер:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_15)
-#: config/configurepagefilesystemcolors.ui:56
-#, kde-format
-msgid "UFS:"
-msgstr "УФС:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_31)
-#: config/configurepagefilesystemcolors.ui:69
-#, kde-format
-msgid "ISO 9660:"
-msgstr "ИСО‑9660:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_24)
-#: config/configurepagefilesystemcolors.ui:88
-#, kde-format
-msgid "OCFS2:"
-msgstr "ОЦФС2:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_22)
-#: config/configurepagefilesystemcolors.ui:104
-#, kde-format
-msgid "XFS:"
-msgstr "ИксФС:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_27)
-#: config/configurepagefilesystemcolors.ui:123
-#, kde-format
-msgid "NILFS2:"
-msgstr "НИЛФС‑2:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_6)
-#: config/configurepagefilesystemcolors.ui:172
-#, kde-format
-msgid "FAT16:"
-msgstr "ФАТ‑16:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_13)
-#: config/configurepagefilesystemcolors.ui:185
-#, kde-format
-msgid "extended:"
-msgstr "продужена:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_33)
-#: config/configurepagefilesystemcolors.ui:198
-#, kde-format
-msgid "LUKS2:"
-msgstr "ЛУКС‑2:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_17)
-#: config/configurepagefilesystemcolors.ui:214
-#, kde-format
-msgid "unformatted:"
-msgstr "неформатирано:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_30)
-#: config/configurepagefilesystemcolors.ui:233
-#, kde-format
-msgid "UDF:"
-msgstr "УФС:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_25)
-#: config/configurepagefilesystemcolors.ui:246
-#, kde-format
-msgid "ZFS:"
-msgstr "ЗФС:"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel_3)
-#: config/configurepagefilesystemcolors.ui:294
+#: config/configurepagefilesystemcolors.ui:37
 #, kde-format
 msgid "ext4:"
 msgstr "екст‑4:"
 
-#. i18n: ectx: property (text), widget (QLabel, textLabel_10)
-#: config/configurepagefilesystemcolors.ui:310
-#, kde-format
-msgid "HPFS:"
-msgstr "ХПФС:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_11)
-#: config/configurepagefilesystemcolors.ui:368
-#, kde-format
-msgid "JFS:"
-msgstr "ЈФС:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_2)
-#: config/configurepagefilesystemcolors.ui:381
-#, kde-format
-msgid "ext3:"
-msgstr "екст‑3:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_8)
-#: config/configurepagefilesystemcolors.ui:407
-#, kde-format
-msgid "Reiser4:"
-msgstr "рајзер‑4:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_21)
-#: config/configurepagefilesystemcolors.ui:439
-#, kde-format
-msgid "Btrfs:"
-msgstr "бтрфс:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel)
-#: config/configurepagefilesystemcolors.ui:481
-#, kde-format
-msgid "ext2:"
-msgstr "екст‑2:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_29)
-#: config/configurepagefilesystemcolors.ui:500
-#, kde-format
-msgid "F2FS:"
-msgstr "Ф2ФС:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_28)
-#: config/configurepagefilesystemcolors.ui:519
-#, kde-format
-msgid "LVM2 PV:"
-msgstr "ЛВМ‑2 ПВ:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_26)
-#: config/configurepagefilesystemcolors.ui:545
-#, kde-format
-msgid "exFAT:"
-msgstr "ексФАТ:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_9)
-#: config/configurepagefilesystemcolors.ui:558
-#, kde-format
-msgid "NTFS:"
-msgstr "НТФС:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_20)
-#: config/configurepagefilesystemcolors.ui:584
-#, kde-format
-msgid "LUKS:"
-msgstr "ЛУКС:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_4)
-#: config/configurepagefilesystemcolors.ui:613
-#, kde-format
-msgid "Linux Swap:"
-msgstr "линукс-размијена:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_32)
-#: config/configurepagefilesystemcolors.ui:664
-#, kde-format
-msgid "FAT12:"
-msgstr "ФАТ‑12:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_12)
-#: config/configurepagefilesystemcolors.ui:677
-#, kde-format
-msgid "HFS:"
-msgstr "ХФС:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_35)
-#: config/configurepagefilesystemcolors.ui:709
-#, fuzzy, kde-format
-#| msgid "HPFS:"
-msgid "APFS:"
-msgstr "ХПФС:"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel_5)
-#: config/configurepagefilesystemcolors.ui:722
-#, kde-format
-msgid "FAT32:"
-msgstr "ФАТ‑32:"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
-#: config/configurepagefilesystemcolors.ui:751
+#: config/configurepagefilesystemcolors.ui:137
 #, fuzzy, kde-format
 #| msgid "Linux Swap:"
 msgid "Linux RAID:"
 msgstr "линукс-размијена:"
 
-#. i18n: ectx: property (text), widget (QLabel, textLabel_34)
-#: config/configurepagefilesystemcolors.ui:764
+#. i18n: ectx: property (text), widget (QLabel, textLabel_17)
+#: config/configurepagefilesystemcolors.ui:192
 #, kde-format
-msgid "BitLocker:"
+msgid "unformatted:"
+msgstr "неформатирано:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_2)
+#: config/configurepagefilesystemcolors.ui:205
+#, kde-format
+msgid "ext3:"
+msgstr "екст‑3:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_13)
+#: config/configurepagefilesystemcolors.ui:273
+#, kde-format
+msgid "extended:"
+msgstr "продужена:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_4)
+#: config/configurepagefilesystemcolors.ui:322
+#, kde-format
+msgid "Linux Swap:"
+msgstr "линукс-размијена:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_38)
+#: config/configurepagefilesystemcolors.ui:348
+#, kde-format
+msgid "FreeBSD Swap:"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, textLabel_14)
-#: config/configurepagefilesystemcolors.ui:793
+#. i18n: ectx: property (text), widget (QLabel, textLabel_9)
+#: config/configurepagefilesystemcolors.ui:364
 #, kde-format
-msgid "HFS+:"
-msgstr "ХФС плус:"
+msgid "NTFS:"
+msgstr "НТФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_21)
+#: config/configurepagefilesystemcolors.ui:445
+#, kde-format
+msgid "Btrfs:"
+msgstr "бтрфс:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_16)
-#: config/configurepagefilesystemcolors.ui:819
+#: config/configurepagefilesystemcolors.ui:458
 #, kde-format
 msgid "unknown:"
 msgstr "непознато:"
 
+#. i18n: ectx: property (text), widget (QLabel, textLabel)
+#: config/configurepagefilesystemcolors.ui:506
+#, kde-format
+msgid "ext2:"
+msgstr "екст‑2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_37)
+#: config/configurepagefilesystemcolors.ui:522
+#, kde-format
+msgid "Bcachefs:"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, textLabel_36)
-#: config/configurepagefilesystemcolors.ui:832
+#: config/configurepagefilesystemcolors.ui:535
 #, kde-format
 msgid "Minix:"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QLabel, textLabel_37)
-#: config/configurepagefilesystemcolors.ui:858
+#. i18n: ectx: property (text), widget (QLabel, textLabel_35)
+#: config/configurepagefilesystemcolors.ui:545
+#, fuzzy, kde-format
+#| msgid "HPFS:"
+msgid "APFS:"
+msgstr "ХПФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_34)
+#: config/configurepagefilesystemcolors.ui:564
 #, kde-format
-msgid "Bcachefs:"
+msgid "BitLocker:"
 msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_33)
+#: config/configurepagefilesystemcolors.ui:580
+#, kde-format
+msgid "LUKS2:"
+msgstr "ЛУКС‑2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_20)
+#: config/configurepagefilesystemcolors.ui:593
+#, kde-format
+msgid "LUKS:"
+msgstr "ЛУКС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_31)
+#: config/configurepagefilesystemcolors.ui:612
+#, kde-format
+msgid "ISO 9660:"
+msgstr "ИСО‑9660:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_30)
+#: config/configurepagefilesystemcolors.ui:628
+#, kde-format
+msgid "UDF:"
+msgstr "УФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_29)
+#: config/configurepagefilesystemcolors.ui:644
+#, kde-format
+msgid "F2FS:"
+msgstr "Ф2ФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_28)
+#: config/configurepagefilesystemcolors.ui:660
+#, kde-format
+msgid "LVM2 PV:"
+msgstr "ЛВМ‑2 ПВ:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_27)
+#: config/configurepagefilesystemcolors.ui:676
+#, kde-format
+msgid "NILFS2:"
+msgstr "НИЛФС‑2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_26)
+#: config/configurepagefilesystemcolors.ui:689
+#, kde-format
+msgid "exFAT:"
+msgstr "ексФАТ:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_25)
+#: config/configurepagefilesystemcolors.ui:702
+#, kde-format
+msgid "ZFS:"
+msgstr "ЗФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_24)
+#: config/configurepagefilesystemcolors.ui:718
+#, kde-format
+msgid "OCFS2:"
+msgstr "ОЦФС2:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_22)
+#: config/configurepagefilesystemcolors.ui:734
+#, kde-format
+msgid "XFS:"
+msgstr "ИксФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_15)
+#: config/configurepagefilesystemcolors.ui:750
+#, kde-format
+msgid "UFS:"
+msgstr "УФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_14)
+#: config/configurepagefilesystemcolors.ui:766
+#, kde-format
+msgid "HFS+:"
+msgstr "ХФС плус:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_12)
+#: config/configurepagefilesystemcolors.ui:782
+#, kde-format
+msgid "HFS:"
+msgstr "ХФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_11)
+#: config/configurepagefilesystemcolors.ui:798
+#, kde-format
+msgid "JFS:"
+msgstr "ЈФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_8)
+#: config/configurepagefilesystemcolors.ui:814
+#, kde-format
+msgid "Reiser4:"
+msgstr "рајзер‑4:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_7)
+#: config/configurepagefilesystemcolors.ui:830
+#, kde-format
+msgid "ReiserFS:"
+msgstr "рајзер:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_10)
+#: config/configurepagefilesystemcolors.ui:846
+#, kde-format
+msgid "HPFS:"
+msgstr "ХПФС:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_5)
+#: config/configurepagefilesystemcolors.ui:862
+#, kde-format
+msgid "FAT32:"
+msgstr "ФАТ‑32:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_6)
+#: config/configurepagefilesystemcolors.ui:878
+#, kde-format
+msgid "FAT16:"
+msgstr "ФАТ‑16:"
+
+#. i18n: ectx: property (text), widget (QLabel, textLabel_32)
+#: config/configurepagefilesystemcolors.ui:894
+#, kde-format
+msgid "FAT12:"
+msgstr "ФАТ‑12:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: config/configurepagegeneral.ui:28
@@ -3682,21 +3688,21 @@ msgid "File system colors"
 msgstr "Боје фајл система"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:139
+#: partitionmanager.kcfg:141
 #, kde-format
 msgctxt "@label"
 msgid "Show the application's menu bar"
 msgstr "Прикажи траку менија програма"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:143
+#: partitionmanager.kcfg:145
 #, kde-format
 msgctxt "@label"
 msgid "Backend plugin"
 msgstr "Прикључак позадине"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
-#: partitionmanager.kcfg:149
+#: partitionmanager.kcfg:151
 #, kde-format
 msgctxt "@label"
 msgid "Preferred unit:"
