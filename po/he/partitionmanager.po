@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-29 00:49+0000\n"
-"PO-Revision-Date: 2026-05-09 07:19+0300\n"
+"PO-Revision-Date: 2026-06-30 09:24+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -184,7 +184,7 @@ msgstr "החלפה של לינוקס:"
 #: config/configurepagefilesystemcolors.ui:348
 #, kde-format
 msgid "FreeBSD Swap:"
-msgstr ""
+msgstr "שטח החלפה של FreeBSD:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:364
@@ -1684,21 +1684,19 @@ msgstr "עגינה או ניתוק של מחיצה."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "קבלת בעלות"
 
 #: gui/mainwindow.cpp:448
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "לשנות את מערכת הקבצים"
+msgstr "קבלת בעלות על מערכת הקבצים"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
-msgstr ""
+msgstr "שינוי הבעלות של מערכת הקבצים המעוגנת לידי המשתמש הנוכחי."
 
 #: gui/mainwindow.cpp:455
 #, kde-kuit-format
@@ -2300,12 +2298,10 @@ msgid "Could Not Unmount File System."
 msgstr "לא ניתן לנתק מערכת קבצים."
 
 #: gui/partitionmanagerwidget.cpp:460
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "לשנות את מערכת הקבצים"
+msgstr "קבלת בעלות על מערכת הקבצים"
 
 #: gui/partitionmanagerwidget.cpp:466
 #, kde-kuit-format
@@ -2314,12 +2310,14 @@ msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
+"הפעולה הזאת תגדיר את הבעלות על <filename>%1</filename> למשתמש <emphasis>%2</"
+"emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:473
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "החלה בנסיגה/רקורסיה על כל תת־התיקיות והקבצים."
 
 #: gui/partitionmanagerwidget.cpp:481
 #, kde-kuit-format
@@ -2328,24 +2326,26 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"הפעולה הזאת גם תשנה את הבעלות על כל תת־התיקיות והקבצים. זה עלול לגרום לבעיות "
+"אם חלקם בבעלות של משתמשים אחרים."
 
 #: gui/partitionmanagerwidget.cpp:488
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "קבלת בעלות"
 
 #: gui/partitionmanagerwidget.cpp:506
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "הבעלות על <b>%1</b> מתקבלת…"
 
 #: gui/partitionmanagerwidget.cpp:508
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "קבלת בעלות"
 
 #: gui/partitionmanagerwidget.cpp:523
 #, fuzzy, kde-kuit-format
@@ -2359,7 +2359,7 @@ msgstr "מעוגן אל <filename>%1</filename>"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "קבלת הבעלות נכשלה"
 
 #: gui/partitionmanagerwidget.cpp:531
 #, kde-kuit-format
@@ -2367,13 +2367,13 @@ msgctxt "@info"
 msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
-msgstr ""
+msgstr "הבעלות על <filename>%1</filename> הוחלפה לידי <emphasis>%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:533
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "הבעלות השתנתה"
 
 #: gui/partitionmanagerwidget.cpp:561
 #, kde-kuit-format

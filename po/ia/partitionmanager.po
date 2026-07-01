@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the partitionmanager package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Giovanni Sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2026 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-29 00:49+0000\n"
-"PO-Revision-Date: 2024-12-20 12:32+0100\n"
+"PO-Revision-Date: 2026-06-30 16:33+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1659,10 +1659,10 @@ msgid "Mount or unmount a partition."
 msgstr ""
 
 #: gui/mainwindow.cpp:447
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Prende proprietate"
 
 #: gui/mainwindow.cpp:448
 #, kde-kuit-format
@@ -1800,7 +1800,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
-msgstr ""
+msgstr "Refresca Dispositivos"
 
 #: gui/mainwindow.cpp:510
 #, kde-kuit-format
@@ -2285,10 +2285,10 @@ msgid ""
 msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:488
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Prende proprietate"
 
 #: gui/partitionmanagerwidget.cpp:506
 #, kde-kuit-format
@@ -2297,18 +2297,16 @@ msgid "Taking ownership of <b>%1</b>…"
 msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:508
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Prende proprietate"
 
 #: gui/partitionmanagerwidget.cpp:523
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "montate a <filename>%1</filename>"
+msgstr "Non poteva prender proprietate de  <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:526
 #, kde-kuit-format
