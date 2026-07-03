@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-29 00:49+0000\n"
-"PO-Revision-Date: 2026-06-30 09:24+0300\n"
+"PO-Revision-Date: 2026-07-02 08:09+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -2348,12 +2348,10 @@ msgid "Take Ownership"
 msgstr "קבלת בעלות"
 
 #: gui/partitionmanagerwidget.cpp:523
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "מעוגן אל <filename>%1</filename>"
+msgstr "לא ניתן לקחת בעלות על <filename>%1</filename>"
 
 #: gui/partitionmanagerwidget.cpp:526
 #, kde-kuit-format

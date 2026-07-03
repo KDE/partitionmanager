@@ -1677,19 +1677,19 @@ msgstr "挂载或卸载分区。"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "取得所有权"
 
 #: gui/mainwindow.cpp:448
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr ""
+msgstr "取得文件系统的所有权"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
-msgstr ""
+msgstr "将已挂载文件系统的所有权更改为当前用户。"
 
 #: gui/mainwindow.cpp:455
 #, kde-kuit-format
@@ -2287,7 +2287,7 @@ msgstr "无法卸载文件系统。"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr ""
+msgstr "取得文件系统的所有权"
 
 #: gui/partitionmanagerwidget.cpp:466
 #, kde-kuit-format
@@ -2296,12 +2296,13 @@ msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
+"这将把 <filename>%1</filename> 的所有权设置为用户 <emphasis>%2</emphasis>。"
 
 #: gui/partitionmanagerwidget.cpp:473
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "递归应用于所有子目录和文件"
 
 #: gui/partitionmanagerwidget.cpp:481
 #, kde-kuit-format
@@ -2310,36 +2311,38 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"这也将更改所有子目录和文件的所有权。如果其中一些文件的所有权属于其他用户，此"
+"操作可能会引发问题。"
 
 #: gui/partitionmanagerwidget.cpp:488
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "取得所有权"
 
 #: gui/partitionmanagerwidget.cpp:506
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "正在取得 <b>%1</b> 的所有权…"
 
 #: gui/partitionmanagerwidget.cpp:508
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "取得所有权"
 
 #: gui/partitionmanagerwidget.cpp:523
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr ""
+msgstr "无法取得 <filename>%1</filename> 的所有权。"
 
 #: gui/partitionmanagerwidget.cpp:526
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "取得所有权失败"
 
 #: gui/partitionmanagerwidget.cpp:531
 #, kde-kuit-format
@@ -2347,13 +2350,13 @@ msgctxt "@info"
 msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
-msgstr ""
+msgstr "<filename>%1</filename> 的所有权已成功更改为 <emphasis>%2</emphasis>。"
 
 #: gui/partitionmanagerwidget.cpp:533
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "所有权已更改"
 
 #: gui/partitionmanagerwidget.cpp:561
 #, kde-kuit-format
