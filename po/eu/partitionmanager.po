@@ -1,7 +1,7 @@
 # Translation for partitionmanager.po to Euskara/Basque (eu).
 # Copyright (C) 2019-2026 This file is copyright:
 # This file is distributed under the same license as the partitionmanager package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2019, 2020, 2022, 2023, 2024, 2025, 2026.
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:55+0000\n"
-"PO-Revision-Date: 2025-07-23 14:11+0200\n"
+"PO-Revision-Date: 2026-07-04 18:37+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1682,19 +1682,19 @@ msgstr "Muntatu edo desmuntatu partizio bat."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
-msgstr "Giltzatik askatu"
+msgstr "Giltzapetik askatu"
 
 #: gui/mainwindow.cpp:445
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
-msgstr "Giltzatik askatu edo giltzatu zifratutako partizioa"
+msgstr "Zifratutako partizioa giltzapetik askatu edo giltzatu"
 
 #: gui/mainwindow.cpp:446
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
-msgstr "Giltzatik askatu edo giltzatu zifratutako partizioa."
+msgstr "Zifratutako partizioa giltzatik askatu edo giltzatu."
 
 #: gui/mainwindow.cpp:451
 #, kde-kuit-format
@@ -1880,7 +1880,7 @@ msgid ""
 "proceeding."
 msgstr ""
 "Ezin du partizioa ezabatu. Mesedez, jarraitu aurretik ziurtatu muntatu gabe "
-"edo giltzatu gabe dagoela."
+"edo giltzatuta dagoela."
 
 #: gui/mainwindow.cpp:721
 #, kde-kuit-format
@@ -2306,13 +2306,13 @@ msgid ""
 "unlocked."
 msgstr ""
 "<filename>%1</filename> partizioko zifratutako fitxategi-sistema ezin izan "
-"da ireki."
+"da giltzapetik askatu."
 
 #: gui/partitionmanagerwidget.cpp:458
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
-msgstr "Ezin izan da ireki zifratutako fitxategi-sistema."
+msgstr "Zifratutako fitxategi-sistema ezin izan da giltzapetik askatu."
 
 #: gui/partitionmanagerwidget.cpp:463
 #, kde-kuit-format
