@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-29 00:49+0000\n"
-"PO-Revision-Date: 2026-05-17 13:59+0200\n"
+"PO-Revision-Date: 2026-07-04 18:37+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -187,7 +187,7 @@ msgstr "Linux Swap:"
 #: config/configurepagefilesystemcolors.ui:348
 #, kde-format
 msgid "FreeBSD Swap:"
-msgstr ""
+msgstr "FreeBSD Swap:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:364
@@ -1694,39 +1694,39 @@ msgstr "Muntatu edo desmuntatu partizio bat."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Hartu jabetza"
 
 #: gui/mainwindow.cpp:448
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "Aldatu fitxategi-sistema"
+msgstr "Fitxategi-sistemaren jabetza hartu"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr ""
+"Aldatu muntatutako fitxategi-sistemaren jabetza, uneko erabiltzailea jabe "
+"eginez."
 
 #: gui/mainwindow.cpp:455
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
-msgstr "Giltzatik askatu"
+msgstr "Giltzapetik askatu"
 
 #: gui/mainwindow.cpp:456
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
-msgstr "Giltzatik askatu edo giltzatu zifratutako partizioa"
+msgstr "Zifratutako partizioa giltzapetik askatu edo giltzatu"
 
 #: gui/mainwindow.cpp:457
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
-msgstr "Giltzatik askatu edo giltzatu zifratutako partizioa."
+msgstr "Zifratutako partizioa giltzatik askatu edo giltzatu."
 
 #: gui/mainwindow.cpp:462
 #, kde-kuit-format
@@ -1912,7 +1912,7 @@ msgid ""
 "proceeding."
 msgstr ""
 "Ezin du partizioa ezabatu. Mesedez, jarraitu aurretik ziurtatu muntatu gabe "
-"edo giltzatu gabe dagoela."
+"edo giltzatuta dagoela."
 
 #: gui/mainwindow.cpp:745
 #, kde-kuit-format
@@ -2331,12 +2331,10 @@ msgid "Could Not Unmount File System."
 msgstr "Ezin izan da fitxategi-sistema desmuntatu."
 
 #: gui/partitionmanagerwidget.cpp:460
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "Aldatu fitxategi-sistema"
+msgstr "Fitxategi-sistemaren jabetza hartu"
 
 #: gui/partitionmanagerwidget.cpp:466
 #, kde-kuit-format
@@ -2345,12 +2343,14 @@ msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
+"Honek <filename>%1</filename>(e)ren jabetza <emphasis>%2</emphasis> "
+"erabiltzaileari ezarriko dio."
 
 #: gui/partitionmanagerwidget.cpp:473
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "Aplikatu errekurtsiboki azpidirektorio eta fitxategi guztiei"
 
 #: gui/partitionmanagerwidget.cpp:481
 #, kde-kuit-format
@@ -2359,38 +2359,38 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"Honek azpidirektorio eta fitxategi guztien jabetza ere aldatuko du. Arazoak "
+"sor ditzake haietako batzuen jabean beste erabiltzaile batzuk badira."
 
 #: gui/partitionmanagerwidget.cpp:488
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Hartu jabetza"
 
 #: gui/partitionmanagerwidget.cpp:506
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "<b>%1</b>(e)ren jabetza hartzen…"
 
 #: gui/partitionmanagerwidget.cpp:508
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Hartu jabetza"
 
 #: gui/partitionmanagerwidget.cpp:523
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "<filename>%1</filename>(e)an muntatuta"
+msgstr "Ezin izan da <filename>%1</filename>(e)ren jabetza hartu."
 
 #: gui/partitionmanagerwidget.cpp:526
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "Jabetza hartzeak huts egin du"
 
 #: gui/partitionmanagerwidget.cpp:531
 #, kde-kuit-format
@@ -2399,12 +2399,14 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
+"<filename>%1</filename>(r)en jabetza <emphasis>%2</emphasis>(e)rena "
+"izateraondo aldatu da."
 
 #: gui/partitionmanagerwidget.cpp:533
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "Jabetza aldatu da"
 
 #: gui/partitionmanagerwidget.cpp:561
 #, kde-kuit-format
@@ -2414,13 +2416,13 @@ msgid ""
 "unlocked."
 msgstr ""
 "<filename>%1</filename> partizioko zifratutako fitxategi-sistema ezin izan "
-"da ireki."
+"da giltzapetik askatu."
 
 #: gui/partitionmanagerwidget.cpp:567
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
-msgstr "Ezin izan da ireki zifratutako fitxategi-sistema."
+msgstr "Zifratutako fitxategi-sistema ezin izan da giltzapetik askatu."
 
 #: gui/partitionmanagerwidget.cpp:572
 #, kde-kuit-format
