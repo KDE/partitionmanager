@@ -63,7 +63,6 @@
 #include <QDateTime>
 #include <QFile>
 #include <QFileDialog>
-#include <QFileInfo>
 #include <QtGlobal>
 #include <QMenu>
 #include <QPointer>
@@ -80,7 +79,6 @@
 #include <KAboutApplicationDialog>
 #include <KActionCollection>
 #include <KMessageBox>
-#include <KUser>
 #include <KAboutData>
 #include <KLocalizedString>
 #include <KXMLGUIFactory>
@@ -682,15 +680,9 @@ void MainWindow::enableActions()
                           part->fileSystem().mountTitle());
 
     {
-        bool canTakeOwnership = part && part->isMounted() && !part->mountPoint().isEmpty() &&
+        const bool canTakeOwnership = part && part->isMounted() && !part->mountPoint().isEmpty() &&
                                 TakeOwnershipOperation::supportsOwnership(part->fileSystem().type()) &&
                                 !TakeOwnershipOperation::isCriticalMountPoint(part->mountPoint());
-        if (canTakeOwnership)
-        {
-            const KUser currentUser(KUser::UseRealUserID);
-            canTakeOwnership = QFileInfo(part->mountPoint()).ownerId() !=
-                               static_cast<uint>(currentUser.userId().nativeId());
-        }
         actionCollection()->action(QStringLiteral("takeOwnershipPartition"))->setEnabled(canTakeOwnership);
     }
 
