@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-29 00:49+0000\n"
+"POT-Creation-Date: 2026-07-08 00:47+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -541,8 +541,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "总时间：%1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1077
-#: gui/mainwindow.cpp:1239 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1069
+#: gui/mainwindow.cpp:1231 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1297,7 +1297,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr "%1 | %2"
 
-#: gui/mainwindow.cpp:170
+#: gui/mainwindow.cpp:168
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1307,7 +1307,7 @@ msgstr ""
 "KDE 分区管理器需要提供相应权限才能工作。请刷新设备列表，然后在显示提示时进行"
 "身份验证。"
 
-#: gui/mainwindow.cpp:238
+#: gui/mainwindow.cpp:236
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1319,571 +1319,571 @@ msgid_plural ""
 msgstr[0] ""
 "<para>您确定要要退出应用程序吗？</para><para>还有 %1 个待执行操作。</para>"
 
-#: gui/mainwindow.cpp:240
+#: gui/mainwindow.cpp:238
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "您想要丢弃待执行操作并退出吗？"
 
-#: gui/mainwindow.cpp:241
+#: gui/mainwindow.cpp:239
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "退出 <application>%1</application>"
 
-#: gui/mainwindow.cpp:283
+#: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "撤销"
 
-#: gui/mainwindow.cpp:284
+#: gui/mainwindow.cpp:282
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "撤销上次操作"
 
-#: gui/mainwindow.cpp:285
+#: gui/mainwindow.cpp:283
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "移除列表中的上次操作。"
 
-#: gui/mainwindow.cpp:292
+#: gui/mainwindow.cpp:290
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "清除"
 
-#: gui/mainwindow.cpp:293
+#: gui/mainwindow.cpp:291
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "清除全部操作"
 
-#: gui/mainwindow.cpp:294
+#: gui/mainwindow.cpp:292
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "清空待执行操作列表。"
 
-#: gui/mainwindow.cpp:300
+#: gui/mainwindow.cpp:298
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "执行"
 
-#: gui/mainwindow.cpp:301
+#: gui/mainwindow.cpp:299
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "执行全部操作"
 
-#: gui/mainwindow.cpp:302
+#: gui/mainwindow.cpp:300
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "应用列表中的待执行操作。"
 
-#: gui/mainwindow.cpp:309
+#: gui/mainwindow.cpp:307
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "创建新分区表"
 
-#: gui/mainwindow.cpp:310
+#: gui/mainwindow.cpp:308
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "创建新分区表"
 
-#: gui/mainwindow.cpp:311
+#: gui/mainwindow.cpp:309
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "为所选设备创建一个新的空分区表。"
 
-#: gui/mainwindow.cpp:318
+#: gui/mainwindow.cpp:316
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "导出分区表"
 
-#: gui/mainwindow.cpp:319
+#: gui/mainwindow.cpp:317
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "导出分区表"
 
-#: gui/mainwindow.cpp:320
+#: gui/mainwindow.cpp:318
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "导出设备的分区表到一个文件。"
 
-#: gui/mainwindow.cpp:326
+#: gui/mainwindow.cpp:324
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "导入分区表"
 
-#: gui/mainwindow.cpp:327
+#: gui/mainwindow.cpp:325
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "导入分区表"
 
-#: gui/mainwindow.cpp:328
+#: gui/mainwindow.cpp:326
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "导入文本文件为分区表。"
 
-#: gui/mainwindow.cpp:335
+#: gui/mainwindow.cpp:333
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "移除卷组"
 
-#: gui/mainwindow.cpp:336
+#: gui/mainwindow.cpp:334
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "移除选中的卷组"
 
-#: gui/mainwindow.cpp:337
+#: gui/mainwindow.cpp:335
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "移除选中的卷组。"
 
-#: gui/mainwindow.cpp:345
+#: gui/mainwindow.cpp:343
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "调整卷组大小"
 
-#: gui/mainwindow.cpp:346
+#: gui/mainwindow.cpp:344
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "调整选中卷组的大小"
 
-#: gui/mainwindow.cpp:347
+#: gui/mainwindow.cpp:345
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr "扩大或缩小选中的卷组。"
 
-#: gui/mainwindow.cpp:355
+#: gui/mainwindow.cpp:353
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "停用卷组"
 
-#: gui/mainwindow.cpp:356
+#: gui/mainwindow.cpp:354
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "停用选中的卷组"
 
-#: gui/mainwindow.cpp:357
+#: gui/mainwindow.cpp:355
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr "在拔出移动存储设备之前，停用选中的卷组。"
 
-#: gui/mainwindow.cpp:363
+#: gui/mainwindow.cpp:361
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "SMART 状态"
 
-#: gui/mainwindow.cpp:364
+#: gui/mainwindow.cpp:362
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "显示 SMART 状态"
 
-#: gui/mainwindow.cpp:365
+#: gui/mainwindow.cpp:363
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr "如果设备支持，显示它的 SMART 状态"
 
-#: gui/mainwindow.cpp:370 gui/mainwindow.cpp:470
+#: gui/mainwindow.cpp:368 gui/mainwindow.cpp:468
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "属性"
 
-#: gui/mainwindow.cpp:371
+#: gui/mainwindow.cpp:369
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "显示设备属性对话框"
 
-#: gui/mainwindow.cpp:372
+#: gui/mainwindow.cpp:370
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "查看和修改设备属性"
 
-#: gui/mainwindow.cpp:379
+#: gui/mainwindow.cpp:377
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "新建"
 
-#: gui/mainwindow.cpp:380
+#: gui/mainwindow.cpp:378
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "新建分区"
 
-#: gui/mainwindow.cpp:381
+#: gui/mainwindow.cpp:379
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "创建新分区。"
 
-#: gui/mainwindow.cpp:388
+#: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "调整大小/移动"
 
-#: gui/mainwindow.cpp:389
+#: gui/mainwindow.cpp:387
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "调整分区大小或移动分区"
 
-#: gui/mainwindow.cpp:390
+#: gui/mainwindow.cpp:388
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "缩小、扩大或移动已有分区。"
 
-#: gui/mainwindow.cpp:397
+#: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "删除"
 
-#: gui/mainwindow.cpp:398 gui/mainwindow.cpp:661
+#: gui/mainwindow.cpp:396 gui/mainwindow.cpp:659
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "删除分区"
 
-#: gui/mainwindow.cpp:399
+#: gui/mainwindow.cpp:397
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "删除分区。"
 
-#: gui/mainwindow.cpp:406
+#: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "粉碎"
 
-#: gui/mainwindow.cpp:407
+#: gui/mainwindow.cpp:405
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "粉碎分区"
 
-#: gui/mainwindow.cpp:408
+#: gui/mainwindow.cpp:406
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr "粉碎一个分区，使其中的内容无法被恢复。"
 
-#: gui/mainwindow.cpp:415
+#: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "复制"
 
-#: gui/mainwindow.cpp:416
+#: gui/mainwindow.cpp:414
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "复制分区"
 
-#: gui/mainwindow.cpp:417
+#: gui/mainwindow.cpp:415
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "复制已有分区。"
 
-#: gui/mainwindow.cpp:424
+#: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "粘贴"
 
-#: gui/mainwindow.cpp:425
+#: gui/mainwindow.cpp:423
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "粘贴分区"
 
-#: gui/mainwindow.cpp:426
+#: gui/mainwindow.cpp:424
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "粘贴复制的分区。"
 
-#: gui/mainwindow.cpp:433
+#: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "编辑挂载点"
 
-#: gui/mainwindow.cpp:434
+#: gui/mainwindow.cpp:432
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "编辑挂载点"
 
-#: gui/mainwindow.cpp:435
+#: gui/mainwindow.cpp:433
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "编辑一个分区的挂载点和选项。"
 
-#: gui/mainwindow.cpp:440
+#: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "挂载"
 
-#: gui/mainwindow.cpp:441
+#: gui/mainwindow.cpp:439
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "挂载或卸载分区"
 
-#: gui/mainwindow.cpp:442
+#: gui/mainwindow.cpp:440
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "挂载或卸载分区。"
 
-#: gui/mainwindow.cpp:447
+#: gui/mainwindow.cpp:445
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
 msgstr "取得所有权"
 
-#: gui/mainwindow.cpp:448
+#: gui/mainwindow.cpp:446
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
 msgstr "取得文件系统的所有权"
 
-#: gui/mainwindow.cpp:449
+#: gui/mainwindow.cpp:447
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr "将已挂载文件系统的所有权更改为当前用户。"
 
-#: gui/mainwindow.cpp:455
+#: gui/mainwindow.cpp:453
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr "解锁"
 
-#: gui/mainwindow.cpp:456
+#: gui/mainwindow.cpp:454
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "解锁或锁定加密分区"
 
-#: gui/mainwindow.cpp:457
+#: gui/mainwindow.cpp:455
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "解锁或锁定加密分区."
 
-#: gui/mainwindow.cpp:462
+#: gui/mainwindow.cpp:460
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "检查"
 
-#: gui/mainwindow.cpp:463
+#: gui/mainwindow.cpp:461
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "检查分区"
 
-#: gui/mainwindow.cpp:464
+#: gui/mainwindow.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "检查分区的文件系统是否存在错误。"
 
-#: gui/mainwindow.cpp:471
+#: gui/mainwindow.cpp:469
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "显示分区属性对话框"
 
-#: gui/mainwindow.cpp:472
+#: gui/mainwindow.cpp:470
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr "查看和修改分区属性 (卷标、分区标记等)"
 
-#: gui/mainwindow.cpp:478
+#: gui/mainwindow.cpp:476
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "备份"
 
-#: gui/mainwindow.cpp:479
+#: gui/mainwindow.cpp:477
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "备份分区"
 
-#: gui/mainwindow.cpp:480
+#: gui/mainwindow.cpp:478
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "备份分区到镜像文件。"
 
-#: gui/mainwindow.cpp:486
+#: gui/mainwindow.cpp:484
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "还原"
 
-#: gui/mainwindow.cpp:487
+#: gui/mainwindow.cpp:485
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "还原分区"
 
-#: gui/mainwindow.cpp:488
+#: gui/mainwindow.cpp:486
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "从镜像文件还原分区。"
 
-#: gui/mainwindow.cpp:495
+#: gui/mainwindow.cpp:493
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "新建卷组"
 
-#: gui/mainwindow.cpp:496
+#: gui/mainwindow.cpp:494
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr "创建新的 LVM 卷组"
 
-#: gui/mainwindow.cpp:497
+#: gui/mainwindow.cpp:495
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "创建新的 LVM 卷组作为设备使用。"
 
-#: gui/mainwindow.cpp:503
+#: gui/mainwindow.cpp:501
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "文件系统支持情况"
 
-#: gui/mainwindow.cpp:504
+#: gui/mainwindow.cpp:502
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "查看文件系统支持情况信息"
 
-#: gui/mainwindow.cpp:505
+#: gui/mainwindow.cpp:503
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "显示程序的文件系统支持情况信息。"
 
-#: gui/mainwindow.cpp:509
+#: gui/mainwindow.cpp:507
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "刷新设备"
 
-#: gui/mainwindow.cpp:510
+#: gui/mainwindow.cpp:508
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "刷新全部设备"
 
-#: gui/mainwindow.cpp:511
+#: gui/mainwindow.cpp:509
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "刷新设备列表。"
 
-#: gui/mainwindow.cpp:527
+#: gui/mainwindow.cpp:525
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "清除日志"
 
-#: gui/mainwindow.cpp:528
+#: gui/mainwindow.cpp:526
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr "清除日志输出"
 
-#: gui/mainwindow.cpp:529
+#: gui/mainwindow.cpp:527
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr "清除日志输出面板。"
 
-#: gui/mainwindow.cpp:534
+#: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "保存日志"
 
-#: gui/mainwindow.cpp:535
+#: gui/mainwindow.cpp:533
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr "保存日志输出"
 
-#: gui/mainwindow.cpp:536
+#: gui/mainwindow.cpp:534
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr "保存日志输出到文件。"
 
-#: gui/mainwindow.cpp:542
+#: gui/mainwindow.cpp:540
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr "关于 KPMcore 程序库"
 
-#: gui/mainwindow.cpp:543
+#: gui/mainwindow.cpp:541
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr "显示关于 KPMcore 对话框"
 
-#: gui/mainwindow.cpp:544
+#: gui/mainwindow.cpp:542
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "显示关于 KPMcore 对话框。"
 
-#: gui/mainwindow.cpp:663
+#: gui/mainwindow.cpp:661
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1891,32 +1891,32 @@ msgid ""
 "proceeding."
 msgstr "无法删除分区。请确保在继续操作前已卸载或锁定该分区。"
 
-#: gui/mainwindow.cpp:745
+#: gui/mainwindow.cpp:737
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
 msgstr[0] "%1 个待执行操作"
 
-#: gui/mainwindow.cpp:840
+#: gui/mainwindow.cpp:832
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "正在使用后端程序插件：%1 (%2)"
 
-#: gui/mainwindow.cpp:844
+#: gui/mainwindow.cpp:836
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "正在扫描设备..."
 
-#: gui/mainwindow.cpp:882
+#: gui/mainwindow.cpp:874
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "扫描完成。"
 
-#: gui/mainwindow.cpp:946
+#: gui/mainwindow.cpp:938
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1926,19 +1926,19 @@ msgstr ""
 "<para>您确定要重新扫描设备吗？</para><para><warning>这将同时清除待执行操作列"
 "表。</warning></para>"
 
-#: gui/mainwindow.cpp:948
+#: gui/mainwindow.cpp:940
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "您确定要重新扫描设备吗？"
 
-#: gui/mainwindow.cpp:949
+#: gui/mainwindow.cpp:941
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "重新扫描设备"
 
-#: gui/mainwindow.cpp:975
+#: gui/mainwindow.cpp:967
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1948,74 +1948,74 @@ msgstr ""
 "<para>您确定要执行以下待执行操作吗？</para><para><warning>这将对磁盘数据进行"
 "永久性修改。</warning></para>"
 
-#: gui/mainwindow.cpp:977
+#: gui/mainwindow.cpp:969
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "您想要应用待执行操作吗？"
 
-#: gui/mainwindow.cpp:978
+#: gui/mainwindow.cpp:970
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "应用待执行操作"
 
-#: gui/mainwindow.cpp:980
+#: gui/mainwindow.cpp:972
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "正在应用操作..."
 
-#: gui/mainwindow.cpp:1005
+#: gui/mainwindow.cpp:997
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "正在撤销操作：%1"
 
-#: gui/mainwindow.cpp:1021
+#: gui/mainwindow.cpp:1013
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "您真的要清除待执行操作列表吗？"
 
-#: gui/mainwindow.cpp:1022
+#: gui/mainwindow.cpp:1014
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "要清除待执行操作吗？"
 
-#: gui/mainwindow.cpp:1023
+#: gui/mainwindow.cpp:1015
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "清除待执行操作"
 
-#: gui/mainwindow.cpp:1025
+#: gui/mainwindow.cpp:1017
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "清除待执行操作列表。"
 
-#: gui/mainwindow.cpp:1067
+#: gui/mainwindow.cpp:1059
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
 msgstr "无法打开输入文件 <filename>%1</filename> 进行导入"
 
-#: gui/mainwindow.cpp:1067 gui/mainwindow.cpp:1077 gui/mainwindow.cpp:1085
-#: gui/mainwindow.cpp:1091
+#: gui/mainwindow.cpp:1059 gui/mainwindow.cpp:1069 gui/mainwindow.cpp:1077
+#: gui/mainwindow.cpp:1083
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "导入分区表错误"
 
-#: gui/mainwindow.cpp:1085
+#: gui/mainwindow.cpp:1077
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
 msgstr "无法打开输入文件 <filename>%1</filename> 进行导入：%2"
 
-#: gui/mainwindow.cpp:1091
+#: gui/mainwindow.cpp:1083
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2024,7 +2024,7 @@ msgid ""
 msgstr ""
 "尝试导入 <filename>%2</filename> 时无法打开临时文件 <filename>%1</filename>。"
 
-#: gui/mainwindow.cpp:1121
+#: gui/mainwindow.cpp:1113
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2032,65 +2032,65 @@ msgid ""
 "table."
 msgstr "导入的文件 <filename>%1</filename> 中未包含正确的分区表。"
 
-#: gui/mainwindow.cpp:1121 gui/mainwindow.cpp:1131 gui/mainwindow.cpp:1138
-#: gui/mainwindow.cpp:1143 gui/mainwindow.cpp:1153 gui/mainwindow.cpp:1166
-#: gui/mainwindow.cpp:1171 gui/mainwindow.cpp:1190 gui/mainwindow.cpp:1195
-#: gui/mainwindow.cpp:1200 gui/mainwindow.cpp:1207 gui/mainwindow.cpp:1483
+#: gui/mainwindow.cpp:1113 gui/mainwindow.cpp:1123 gui/mainwindow.cpp:1130
+#: gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1145 gui/mainwindow.cpp:1158
+#: gui/mainwindow.cpp:1163 gui/mainwindow.cpp:1182 gui/mainwindow.cpp:1187
+#: gui/mainwindow.cpp:1192 gui/mainwindow.cpp:1199 gui/mainwindow.cpp:1475
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "导入分区表时发生错误"
 
-#: gui/mainwindow.cpp:1131
+#: gui/mainwindow.cpp:1123
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr "导入文件包含 1 种以上的分区表类型 (第 %1 行)。"
 
-#: gui/mainwindow.cpp:1138
+#: gui/mainwindow.cpp:1130
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "未知分区表类型“%1” (第 %2 行)。"
 
-#: gui/mainwindow.cpp:1143
+#: gui/mainwindow.cpp:1135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr "不支持导入分区表类型“%1” (第 %2 行)。"
 
-#: gui/mainwindow.cpp:1153
+#: gui/mainwindow.cpp:1145
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr "找到了分区，但缺少分区表类型 (第 %1 行)。"
 
-#: gui/mainwindow.cpp:1166
+#: gui/mainwindow.cpp:1158
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "分区 %1 将超出设备边界 (第 %2 行)。"
 
-#: gui/mainwindow.cpp:1171
+#: gui/mainwindow.cpp:1163
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "分区 %1 的结束扇区位于起始扇区之前 (第 %2 行)。"
 
-#: gui/mainwindow.cpp:1190
+#: gui/mainwindow.cpp:1182
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "%2 分区的分区角色“%1”无法识别 (第 %3 行)。"
 
-#: gui/mainwindow.cpp:1195
+#: gui/mainwindow.cpp:1187
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
 msgstr "找不到分区 %1 的父分区或分区表 (第 %2 行)。"
 
-#: gui/mainwindow.cpp:1200
+#: gui/mainwindow.cpp:1192
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2098,35 +2098,35 @@ msgid ""
 "one was found (line %2)."
 msgstr "找到了扩展分区，但“%1”类型的分区表不支持扩展分区 (第 %2 行)。"
 
-#: gui/mainwindow.cpp:1207
+#: gui/mainwindow.cpp:1199
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr "无法为分区 %2 创建文件系统“%1” (第 %3 行)。"
 
-#: gui/mainwindow.cpp:1222
+#: gui/mainwindow.cpp:1214
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr "无法解析导入文件中的第 %1 行。它将被忽略。"
 
-#: gui/mainwindow.cpp:1239
+#: gui/mainwindow.cpp:1231
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "导出分区表错误"
 
-#: gui/mainwindow.cpp:1404 gui/mainwindow.cpp:1410 gui/mainwindow.cpp:1446
+#: gui/mainwindow.cpp:1396 gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1438
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1410 gui/mainwindow.cpp:1421
+#: gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1413
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1458
+#: gui/mainwindow.cpp:1450
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2150,25 +2150,25 @@ msgstr ""
 "装这些支持工具，您将无法修改这些文件系统。</para><para>您应当在本机安装的发行"
 "版的软件包管理器中查找相关软件包。</para>"
 
-#: gui/mainwindow.cpp:1471
+#: gui/mainwindow.cpp:1463
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "缺少文件系统支持软件包"
 
-#: gui/mainwindow.cpp:1482
+#: gui/mainwindow.cpp:1474
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "无法识别的设备“%1” "
 
-#: gui/mainwindow.cpp:1491
+#: gui/mainwindow.cpp:1483
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "无法识别的分区“%1” "
 
-#: gui/mainwindow.cpp:1492
+#: gui/mainwindow.cpp:1484
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"

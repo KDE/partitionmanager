@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-29 00:49+0000\n"
+"POT-Creation-Date: 2026-07-08 00:47+0000\n"
 "PO-Revision-Date: 2026-06-18 21:55+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -546,8 +546,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Teljes idő: %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1077
-#: gui/mainwindow.cpp:1239 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1069
+#: gui/mainwindow.cpp:1231 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1311,7 +1311,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr "%1 | %2"
 
-#: gui/mainwindow.cpp:170
+#: gui/mainwindow.cpp:168
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1321,7 +1321,7 @@ msgstr ""
 "A Partíciókezelőnek jogosultságokra van szüksége a működéshez. Frissítse az "
 "eszközöket és hitelesítsen, ha kérik."
 
-#: gui/mainwindow.cpp:238
+#: gui/mainwindow.cpp:236
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1337,175 +1337,175 @@ msgstr[1] ""
 "<para>Biztosan kilép az alkalmazásból?</para><para>Még %1 függőben lévő "
 "művelet van.</para>"
 
-#: gui/mainwindow.cpp:240
+#: gui/mainwindow.cpp:238
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "Eldobja a függőben lévő műveleteket, és kilép?"
 
-#: gui/mainwindow.cpp:241
+#: gui/mainwindow.cpp:239
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "A <application>%1</application> bezárása"
 
-#: gui/mainwindow.cpp:283
+#: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "Visszavonás"
 
-#: gui/mainwindow.cpp:284
+#: gui/mainwindow.cpp:282
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "Legutóbbi művelet visszavonása"
 
-#: gui/mainwindow.cpp:285
+#: gui/mainwindow.cpp:283
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "Legutóbbi művelet eltávolítása a listából."
 
-#: gui/mainwindow.cpp:292
+#: gui/mainwindow.cpp:290
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "Törlés"
 
-#: gui/mainwindow.cpp:293
+#: gui/mainwindow.cpp:291
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "Összes művelet törlése"
 
-#: gui/mainwindow.cpp:294
+#: gui/mainwindow.cpp:292
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "A függőben lévő műveletek listájának ürítése."
 
-#: gui/mainwindow.cpp:300
+#: gui/mainwindow.cpp:298
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "Alkalmaz"
 
-#: gui/mainwindow.cpp:301
+#: gui/mainwindow.cpp:299
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "Összes művelet alkalmazása"
 
-#: gui/mainwindow.cpp:302
+#: gui/mainwindow.cpp:300
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "A listán lévő függő műveletek alkalmazása."
 
-#: gui/mainwindow.cpp:309
+#: gui/mainwindow.cpp:307
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "Új partíciós tábla"
 
-#: gui/mainwindow.cpp:310
+#: gui/mainwindow.cpp:308
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "Új partíciós tábla létrehozása"
 
-#: gui/mainwindow.cpp:311
+#: gui/mainwindow.cpp:309
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "ÚJ, üres partíciós tábla létrehozása egy eszközön."
 
-#: gui/mainwindow.cpp:318
+#: gui/mainwindow.cpp:316
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "Partíciós tábla exportálása"
 
-#: gui/mainwindow.cpp:319
+#: gui/mainwindow.cpp:317
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "Partíciós tábla exportálása"
 
-#: gui/mainwindow.cpp:320
+#: gui/mainwindow.cpp:318
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "Partíciós tábla exportálása szövegfájlba."
 
-#: gui/mainwindow.cpp:326
+#: gui/mainwindow.cpp:324
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "Partíciós tábla importálása"
 
-#: gui/mainwindow.cpp:327
+#: gui/mainwindow.cpp:325
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "Partíciós tábla importálása"
 
-#: gui/mainwindow.cpp:328
+#: gui/mainwindow.cpp:326
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "Partíciós tábla importálása szövegfájlból."
 
-#: gui/mainwindow.cpp:335
+#: gui/mainwindow.cpp:333
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "Kötetcsoport eltávolítása"
 
-#: gui/mainwindow.cpp:336
+#: gui/mainwindow.cpp:334
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "A kijelölt kötetcsoport eltávolítása"
 
-#: gui/mainwindow.cpp:337
+#: gui/mainwindow.cpp:335
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "A kijelölt kötetcsoport eltávolítása."
 
-#: gui/mainwindow.cpp:345
+#: gui/mainwindow.cpp:343
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "Kötetcsoport átméretezése"
 
-#: gui/mainwindow.cpp:346
+#: gui/mainwindow.cpp:344
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "A kijelölt kötetcsoport átméretezése"
 
-#: gui/mainwindow.cpp:347
+#: gui/mainwindow.cpp:345
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr "A kijelölt kötetcsoport kiterjesztése vagy csökkentése."
 
-#: gui/mainwindow.cpp:355
+#: gui/mainwindow.cpp:353
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "Kötetcsoport deaktiválása"
 
-#: gui/mainwindow.cpp:356
+#: gui/mainwindow.cpp:354
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "A kijelölt kötetcsoport deaktiválása"
 
-#: gui/mainwindow.cpp:357
+#: gui/mainwindow.cpp:355
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
@@ -1513,193 +1513,193 @@ msgstr ""
 "Deaktiválja a kijelölt kötetcsoportot, mielőtt kihúzza az eltávolítható "
 "eszközöket."
 
-#: gui/mainwindow.cpp:363
+#: gui/mainwindow.cpp:361
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "SMART-állapot"
 
-#: gui/mainwindow.cpp:364
+#: gui/mainwindow.cpp:362
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "SMART-állapot megjelenítése"
 
-#: gui/mainwindow.cpp:365
+#: gui/mainwindow.cpp:363
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr "Az eszköz SMART állapotának megjelenítése, ha támogatott"
 
-#: gui/mainwindow.cpp:370 gui/mainwindow.cpp:470
+#: gui/mainwindow.cpp:368 gui/mainwindow.cpp:468
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: gui/mainwindow.cpp:371
+#: gui/mainwindow.cpp:369
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "Az eszköztulajdonságok párbeszédablakának megnyitása"
 
-#: gui/mainwindow.cpp:372
+#: gui/mainwindow.cpp:370
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "Eszköztulajdonságok megjelenítése és módosítása"
 
-#: gui/mainwindow.cpp:379
+#: gui/mainwindow.cpp:377
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "Új"
 
-#: gui/mainwindow.cpp:380
+#: gui/mainwindow.cpp:378
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "Új partíció"
 
-#: gui/mainwindow.cpp:381
+#: gui/mainwindow.cpp:379
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "Új partíció létrehozása."
 
-#: gui/mainwindow.cpp:388
+#: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "Átméretezés/mozgatás"
 
-#: gui/mainwindow.cpp:389
+#: gui/mainwindow.cpp:387
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "Partíció átméretezése vagy mozgatása"
 
-#: gui/mainwindow.cpp:390
+#: gui/mainwindow.cpp:388
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "Létező partíció zsugorítása, növelése vagy mozgatása."
 
-#: gui/mainwindow.cpp:397
+#: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "Törlés"
 
-#: gui/mainwindow.cpp:398 gui/mainwindow.cpp:661
+#: gui/mainwindow.cpp:396 gui/mainwindow.cpp:659
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "Partíció törlése"
 
-#: gui/mainwindow.cpp:399
+#: gui/mainwindow.cpp:397
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "Partíció törlése."
 
-#: gui/mainwindow.cpp:406
+#: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "Megsemmisítés"
 
-#: gui/mainwindow.cpp:407
+#: gui/mainwindow.cpp:405
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "Partíció megsemmisítése"
 
-#: gui/mainwindow.cpp:408
+#: gui/mainwindow.cpp:406
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr "Partíció felbontása, így a tartalma nem állítható helyre."
 
-#: gui/mainwindow.cpp:415
+#: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "Másolás"
 
-#: gui/mainwindow.cpp:416
+#: gui/mainwindow.cpp:414
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "Partíció másolása"
 
-#: gui/mainwindow.cpp:417
+#: gui/mainwindow.cpp:415
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "Létetező partíció másolása."
 
-#: gui/mainwindow.cpp:424
+#: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "Beillesztés"
 
-#: gui/mainwindow.cpp:425
+#: gui/mainwindow.cpp:423
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "Partíció beillesztése"
 
-#: gui/mainwindow.cpp:426
+#: gui/mainwindow.cpp:424
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "Másolt partíció beillesztése."
 
-#: gui/mainwindow.cpp:433
+#: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "Csatolási pont szerkesztése"
 
-#: gui/mainwindow.cpp:434
+#: gui/mainwindow.cpp:432
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "Csatolási pont szerkesztése"
 
-#: gui/mainwindow.cpp:435
+#: gui/mainwindow.cpp:433
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "Egy partíció csatolási pontjának és beállításainak szerkesztése."
 
-#: gui/mainwindow.cpp:440
+#: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "Csatolás"
 
-#: gui/mainwindow.cpp:441
+#: gui/mainwindow.cpp:439
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "Partíció csatolása vagy leválasztása"
 
-#: gui/mainwindow.cpp:442
+#: gui/mainwindow.cpp:440
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "Partíció csatolása vagy leválasztása."
 
-#: gui/mainwindow.cpp:447
+#: gui/mainwindow.cpp:445
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
 msgstr ""
 
-#: gui/mainwindow.cpp:448
+#: gui/mainwindow.cpp:446
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "Change the File System"
@@ -1707,55 +1707,55 @@ msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
 msgstr "Fájlrendszer megváltoztatása"
 
-#: gui/mainwindow.cpp:449
+#: gui/mainwindow.cpp:447
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr ""
 
-#: gui/mainwindow.cpp:455
+#: gui/mainwindow.cpp:453
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr "Feloldás"
 
-#: gui/mainwindow.cpp:456
+#: gui/mainwindow.cpp:454
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "Titkosított partíció feloldása vagy zárolása"
 
-#: gui/mainwindow.cpp:457
+#: gui/mainwindow.cpp:455
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "Titkosított partíció feloldása vagy zárolása."
 
-#: gui/mainwindow.cpp:462
+#: gui/mainwindow.cpp:460
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "Ellenőrzés"
 
-#: gui/mainwindow.cpp:463
+#: gui/mainwindow.cpp:461
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "Partíció ellenőrzése"
 
-#: gui/mainwindow.cpp:464
+#: gui/mainwindow.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "Fájlrendszer ellenőrzése és hibakeresés egy partíción."
 
-#: gui/mainwindow.cpp:471
+#: gui/mainwindow.cpp:469
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "Partíció tulajdonságainak megjelenítése"
 
-#: gui/mainwindow.cpp:472
+#: gui/mainwindow.cpp:470
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
@@ -1763,151 +1763,151 @@ msgstr ""
 "Partíciótulajdonságok megjelenítése és módosítása (címke, partíciójelzők, "
 "stb.)"
 
-#: gui/mainwindow.cpp:478
+#: gui/mainwindow.cpp:476
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "Biztonsági mentés"
 
-#: gui/mainwindow.cpp:479
+#: gui/mainwindow.cpp:477
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "Partíció biztonsági mentése"
 
-#: gui/mainwindow.cpp:480
+#: gui/mainwindow.cpp:478
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "Biztonsági mentés készítese egy partícióról képfájlba."
 
-#: gui/mainwindow.cpp:486
+#: gui/mainwindow.cpp:484
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "Visszaállítás"
 
-#: gui/mainwindow.cpp:487
+#: gui/mainwindow.cpp:485
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "Partíció visszaállítása"
 
-#: gui/mainwindow.cpp:488
+#: gui/mainwindow.cpp:486
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "Partíció visszaállítása képfájlból."
 
-#: gui/mainwindow.cpp:495
+#: gui/mainwindow.cpp:493
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "Új kötetcsoport"
 
-#: gui/mainwindow.cpp:496
+#: gui/mainwindow.cpp:494
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr "Új LVM kötetcsoport létrehozása"
 
-#: gui/mainwindow.cpp:497
+#: gui/mainwindow.cpp:495
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "Új LVM kötetcsoport létrehozása eszközként."
 
-#: gui/mainwindow.cpp:503
+#: gui/mainwindow.cpp:501
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "Fájlrendszer-támogatás"
 
-#: gui/mainwindow.cpp:504
+#: gui/mainwindow.cpp:502
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "Fájlrendszer-támogatási információk megtekintése"
 
-#: gui/mainwindow.cpp:505
+#: gui/mainwindow.cpp:503
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "Információk megjelenítése a támogatott fájlrendszerekről."
 
-#: gui/mainwindow.cpp:509
+#: gui/mainwindow.cpp:507
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "Eszközök frissítése"
 
-#: gui/mainwindow.cpp:510
+#: gui/mainwindow.cpp:508
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "Összes eszköz frissítése"
 
-#: gui/mainwindow.cpp:511
+#: gui/mainwindow.cpp:509
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "Eszközlista megújítása."
 
-#: gui/mainwindow.cpp:527
+#: gui/mainwindow.cpp:525
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "Napló törlése"
 
-#: gui/mainwindow.cpp:528
+#: gui/mainwindow.cpp:526
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr "Kimeneti napló törlése"
 
-#: gui/mainwindow.cpp:529
+#: gui/mainwindow.cpp:527
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr "A kimeneti napló panel törlése"
 
-#: gui/mainwindow.cpp:534
+#: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "Napló mentése"
 
-#: gui/mainwindow.cpp:535
+#: gui/mainwindow.cpp:533
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr "Kimeneti napló mentése"
 
-#: gui/mainwindow.cpp:536
+#: gui/mainwindow.cpp:534
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr "Kimeneti napló mentése fájlba."
 
-#: gui/mainwindow.cpp:542
+#: gui/mainwindow.cpp:540
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr "A KPMcore névjegye"
 
-#: gui/mainwindow.cpp:543
+#: gui/mainwindow.cpp:541
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr "A KPMcore névjegyének megjelenítése"
 
-#: gui/mainwindow.cpp:544
+#: gui/mainwindow.cpp:542
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "A KPMcore névjegyének megjelenítése."
 
-#: gui/mainwindow.cpp:663
+#: gui/mainwindow.cpp:661
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1917,7 +1917,7 @@ msgstr ""
 "Nem lehet törölni a partíciót. Folytatás előtt ellenőrizze, hogy le van "
 "választva, vagy zárolt."
 
-#: gui/mainwindow.cpp:745
+#: gui/mainwindow.cpp:737
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
@@ -1925,25 +1925,25 @@ msgid_plural "%1 pending operations"
 msgstr[0] "1 függő művelet"
 msgstr[1] "%1 függő művelet"
 
-#: gui/mainwindow.cpp:840
+#: gui/mainwindow.cpp:832
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "A háttérprogram-bővítmény használatával: %1 (%2)"
 
-#: gui/mainwindow.cpp:844
+#: gui/mainwindow.cpp:836
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "Eszközök keresése…"
 
-#: gui/mainwindow.cpp:882
+#: gui/mainwindow.cpp:874
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "A keresés befejeződött."
 
-#: gui/mainwindow.cpp:946
+#: gui/mainwindow.cpp:938
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1953,19 +1953,19 @@ msgstr ""
 "<para>Biztosan újraolvastatja az eszközöket?</para><para><warning>Ezzel "
 "törli a függőben lévő műveletek listáját is.</warning></para>"
 
-#: gui/mainwindow.cpp:948
+#: gui/mainwindow.cpp:940
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "Biztosan újraolvastatja az eszözöket?"
 
-#: gui/mainwindow.cpp:949
+#: gui/mainwindow.cpp:941
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "Eszközök újraolvasása"
 
-#: gui/mainwindow.cpp:975
+#: gui/mainwindow.cpp:967
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1975,76 +1975,76 @@ msgstr ""
 "<para>Biztosan végrehajtja az alábbi függőben lévő műveleteket?</para> "
 "<para><warning>A módosítások véglegesek lesznek.</warning></para>"
 
-#: gui/mainwindow.cpp:977
+#: gui/mainwindow.cpp:969
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "Végrehajtja a függőben lévő műveleteket?"
 
-#: gui/mainwindow.cpp:978
+#: gui/mainwindow.cpp:970
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "Függőben lévő műveletek végrehajtása"
 
-#: gui/mainwindow.cpp:980
+#: gui/mainwindow.cpp:972
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "Műveletek végrehajtása…"
 
-#: gui/mainwindow.cpp:1005
+#: gui/mainwindow.cpp:997
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "Művelet visszavonása: %1"
 
-#: gui/mainwindow.cpp:1021
+#: gui/mainwindow.cpp:1013
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "Biztosan törli a függőben lévő műveletek listáját?"
 
-#: gui/mainwindow.cpp:1022
+#: gui/mainwindow.cpp:1014
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "Törli a függőben lévő műveleteket?"
 
-#: gui/mainwindow.cpp:1023
+#: gui/mainwindow.cpp:1015
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "Függőben lévő műveletek törlése"
 
-#: gui/mainwindow.cpp:1025
+#: gui/mainwindow.cpp:1017
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "A függőben lévő műveletek listájának törlése."
 
-#: gui/mainwindow.cpp:1067
+#: gui/mainwindow.cpp:1059
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
 msgstr ""
 "A(z) <filename>%1</filename> bemeneti fájl nem nyitható meg importáláshoz"
 
-#: gui/mainwindow.cpp:1067 gui/mainwindow.cpp:1077 gui/mainwindow.cpp:1085
-#: gui/mainwindow.cpp:1091
+#: gui/mainwindow.cpp:1059 gui/mainwindow.cpp:1069 gui/mainwindow.cpp:1077
+#: gui/mainwindow.cpp:1083
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "Hiba a partíciós tábla importálásakor"
 
-#: gui/mainwindow.cpp:1085
+#: gui/mainwindow.cpp:1077
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
 msgstr ""
 "A(z) <filename>%1</filename> bemeneti fájl nem nyitható meg importáláshoz: %2"
 
-#: gui/mainwindow.cpp:1091
+#: gui/mainwindow.cpp:1083
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2054,7 +2054,7 @@ msgstr ""
 "A(z) <filename>%1</filename> átmeneti fájl nem nyitható meg a(z) <filename>"
 "%2</filename> importálására tett kísérlet során."
 
-#: gui/mainwindow.cpp:1121
+#: gui/mainwindow.cpp:1113
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2063,59 +2063,59 @@ msgid ""
 msgstr ""
 "A(z) <filename>%1</filename> fájl nem tartalmaz érvényes partíciós táblát."
 
-#: gui/mainwindow.cpp:1121 gui/mainwindow.cpp:1131 gui/mainwindow.cpp:1138
-#: gui/mainwindow.cpp:1143 gui/mainwindow.cpp:1153 gui/mainwindow.cpp:1166
-#: gui/mainwindow.cpp:1171 gui/mainwindow.cpp:1190 gui/mainwindow.cpp:1195
-#: gui/mainwindow.cpp:1200 gui/mainwindow.cpp:1207 gui/mainwindow.cpp:1483
+#: gui/mainwindow.cpp:1113 gui/mainwindow.cpp:1123 gui/mainwindow.cpp:1130
+#: gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1145 gui/mainwindow.cpp:1158
+#: gui/mainwindow.cpp:1163 gui/mainwindow.cpp:1182 gui/mainwindow.cpp:1187
+#: gui/mainwindow.cpp:1192 gui/mainwindow.cpp:1199 gui/mainwindow.cpp:1475
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "Hiba a partíciós tábla importálása közben"
 
-#: gui/mainwindow.cpp:1131
+#: gui/mainwindow.cpp:1123
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr ""
 "Több, mint egy partícióstábla-típus található az importált fájlban (%1. sor)."
 
-#: gui/mainwindow.cpp:1138
+#: gui/mainwindow.cpp:1130
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "A(z) „%1” partícióstábla-típus ismeretlen (%2. sor)."
 
-#: gui/mainwindow.cpp:1143
+#: gui/mainwindow.cpp:1135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr "A(z) „%1” partícióstábla-típus importálása nem támogatott (%2. sor)."
 
-#: gui/mainwindow.cpp:1153
+#: gui/mainwindow.cpp:1145
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr "Partíció megtalálva, de nincs partícióstábla-típus (%1. sor)."
 
-#: gui/mainwindow.cpp:1166
+#: gui/mainwindow.cpp:1158
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "A(z) %1. partíció az eszköz határain kívülre esne (%2. sor)."
 
-#: gui/mainwindow.cpp:1171
+#: gui/mainwindow.cpp:1163
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "A(z) %1 partíció a kezdőszektor előtt ér véget (%2. sor)."
 
-#: gui/mainwindow.cpp:1190
+#: gui/mainwindow.cpp:1182
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "A(z) %2. partíció-szerepköre („%1”) ismeretlen (%3. sor)."
 
-#: gui/mainwindow.cpp:1195
+#: gui/mainwindow.cpp:1187
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
@@ -2124,7 +2124,7 @@ msgstr ""
 "A(z) %1. partíciónak nincs szülője, vagy nem található a partíciós táblája "
 "(%2. sor)."
 
-#: gui/mainwindow.cpp:1200
+#: gui/mainwindow.cpp:1192
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2134,35 +2134,35 @@ msgstr ""
 "A(z) „%1” partícióstábla-típus nem támogatja a kiterjesztett partíciókat, de "
 "egy található (%2. sor)."
 
-#: gui/mainwindow.cpp:1207
+#: gui/mainwindow.cpp:1199
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr "Nem hozható létre „%1” fájlrendszer a(z) %2 partíción (%3. sor)."
 
-#: gui/mainwindow.cpp:1222
+#: gui/mainwindow.cpp:1214
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr "A(z) %1. sor nem értelmezhető, figyelmen kívül lesz hagyva."
 
-#: gui/mainwindow.cpp:1239
+#: gui/mainwindow.cpp:1231
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "Hiba a partíciós tábla exportálásakor"
 
-#: gui/mainwindow.cpp:1404 gui/mainwindow.cpp:1410 gui/mainwindow.cpp:1446
+#: gui/mainwindow.cpp:1396 gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1438
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1410 gui/mainwindow.cpp:1421
+#: gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1413
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1458
+#: gui/mainwindow.cpp:1450
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2188,25 +2188,25 @@ msgstr ""
 "fájlrendszereket.</para><para>A szükséges csomagokat a disztribúciója "
 "csomagkezelőjében találhatja meg.</para>"
 
-#: gui/mainwindow.cpp:1471
+#: gui/mainwindow.cpp:1463
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "Hiányzó fájlrendszer-támogató csomagok"
 
-#: gui/mainwindow.cpp:1482
+#: gui/mainwindow.cpp:1474
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "Ismeretlen eszköz: „%1” "
 
-#: gui/mainwindow.cpp:1491
+#: gui/mainwindow.cpp:1483
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "Ismeretlen partíció: „%1” "
 
-#: gui/mainwindow.cpp:1492
+#: gui/mainwindow.cpp:1484
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"

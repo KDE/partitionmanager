@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-29 00:49+0000\n"
+"POT-Creation-Date: 2026-07-08 00:47+0000\n"
 "PO-Revision-Date: 2026-07-02 08:09+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -540,8 +540,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "סך הזמן: %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1077
-#: gui/mainwindow.cpp:1239 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1069
+#: gui/mainwindow.cpp:1231 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1298,7 +1298,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr "%1 | %2"
 
-#: gui/mainwindow.cpp:170
+#: gui/mainwindow.cpp:168
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1308,7 +1308,7 @@ msgstr ""
 "מנהל המחיצות דורש הרשאות כדי לפעול. נא לרענן את ההתקנים ולבצע אימות כשתופיע "
 "דרישה."
 
-#: gui/mainwindow.cpp:238
+#: gui/mainwindow.cpp:236
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1326,571 +1326,571 @@ msgstr[2] ""
 msgstr[3] ""
 "<para>לצאת מהיישום?</para><para>יש עדיין %1 פעולות שממתינות לביצוע.</para>"
 
-#: gui/mainwindow.cpp:240
+#: gui/mainwindow.cpp:238
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "להתעלם מהשינויים הממתינים ולצאת?"
 
-#: gui/mainwindow.cpp:241
+#: gui/mainwindow.cpp:239
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "יציאה מ־<application>%1</application>"
 
-#: gui/mainwindow.cpp:283
+#: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "הסגה"
 
-#: gui/mainwindow.cpp:284
+#: gui/mainwindow.cpp:282
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "הסגת הפעולה אחרונה"
 
-#: gui/mainwindow.cpp:285
+#: gui/mainwindow.cpp:283
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "הסרת הפעולה האחרונה מהרשימה."
 
-#: gui/mainwindow.cpp:292
+#: gui/mainwindow.cpp:290
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "מחיקה"
 
-#: gui/mainwindow.cpp:293
+#: gui/mainwindow.cpp:291
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "מחיקת כל הפעולות"
 
-#: gui/mainwindow.cpp:294
+#: gui/mainwindow.cpp:292
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "ריקון רשימת הפעולות לביצוע."
 
-#: gui/mainwindow.cpp:300
+#: gui/mainwindow.cpp:298
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "החלה"
 
-#: gui/mainwindow.cpp:301
+#: gui/mainwindow.cpp:299
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "החלת כל הפעולות"
 
-#: gui/mainwindow.cpp:302
+#: gui/mainwindow.cpp:300
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "החלת הפעולות שממתינות ברשימה."
 
-#: gui/mainwindow.cpp:309
+#: gui/mainwindow.cpp:307
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "טבלת מחיצות חדשה"
 
-#: gui/mainwindow.cpp:310
+#: gui/mainwindow.cpp:308
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "יצירת טבלת מחיצות חדשה"
 
-#: gui/mainwindow.cpp:311
+#: gui/mainwindow.cpp:309
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "יצירת טבלת מחיצות חדשה וריקה על התקן."
 
-#: gui/mainwindow.cpp:318
+#: gui/mainwindow.cpp:316
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "ייצוא טבלת מחיצות"
 
-#: gui/mainwindow.cpp:319
+#: gui/mainwindow.cpp:317
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "ייצוא טבלת מחיצות"
 
-#: gui/mainwindow.cpp:320
+#: gui/mainwindow.cpp:318
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "ייצוא תיבת המחיצות של ההתקן לקובץ טקסט."
 
-#: gui/mainwindow.cpp:326
+#: gui/mainwindow.cpp:324
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "ייבוא טבלת מחיצות"
 
-#: gui/mainwindow.cpp:327
+#: gui/mainwindow.cpp:325
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "ייבוא טבלת מחיצות"
 
-#: gui/mainwindow.cpp:328
+#: gui/mainwindow.cpp:326
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "ייבוא טבלת מחיצות מקובץ טקסט."
 
-#: gui/mainwindow.cpp:335
+#: gui/mainwindow.cpp:333
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "הסרת קבוצת כרכים"
 
-#: gui/mainwindow.cpp:336
+#: gui/mainwindow.cpp:334
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "הסרת קבוצת הכרכים הנבחרת"
 
-#: gui/mainwindow.cpp:337
+#: gui/mainwindow.cpp:335
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "הסרת קבוצת הכרכים הנבחרת."
 
-#: gui/mainwindow.cpp:345
+#: gui/mainwindow.cpp:343
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "שינוי גודל קבוצת כרכים"
 
-#: gui/mainwindow.cpp:346
+#: gui/mainwindow.cpp:344
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "שינוי גודל קבוצת הכרכים הנבחרת"
 
-#: gui/mainwindow.cpp:347
+#: gui/mainwindow.cpp:345
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr "הגדלה או הקטנה של קבוצת הכרכים הנבחרת."
 
-#: gui/mainwindow.cpp:355
+#: gui/mainwindow.cpp:353
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "השבתת קבוצת כרכים"
 
-#: gui/mainwindow.cpp:356
+#: gui/mainwindow.cpp:354
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "השבתת קבוצת הכרכים הנבחרת"
 
-#: gui/mainwindow.cpp:357
+#: gui/mainwindow.cpp:355
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr "כדאי להשבית את קבוצת הכרכים הנבחרת לפני ניתוק ההתקנים הנתיקים."
 
-#: gui/mainwindow.cpp:363
+#: gui/mainwindow.cpp:361
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "מצב SMART"
 
-#: gui/mainwindow.cpp:364
+#: gui/mainwindow.cpp:362
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "הצגת מצב SMART"
 
-#: gui/mainwindow.cpp:365
+#: gui/mainwindow.cpp:363
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr "הצגת מצב ה־SMART של ההתקן אם יש בזה תמיכה"
 
-#: gui/mainwindow.cpp:370 gui/mainwindow.cpp:470
+#: gui/mainwindow.cpp:368 gui/mainwindow.cpp:468
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "מאפיינים"
 
-#: gui/mainwindow.cpp:371
+#: gui/mainwindow.cpp:369
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "הצגת חלונית מאפייני התקן"
 
-#: gui/mainwindow.cpp:372
+#: gui/mainwindow.cpp:370
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "הצגה ועריכה של מאפייני התקן"
 
-#: gui/mainwindow.cpp:379
+#: gui/mainwindow.cpp:377
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "חדש"
 
-#: gui/mainwindow.cpp:380
+#: gui/mainwindow.cpp:378
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "מחיצה חדשה"
 
-#: gui/mainwindow.cpp:381
+#: gui/mainwindow.cpp:379
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "יצירת מחיצה חדשה."
 
-#: gui/mainwindow.cpp:388
+#: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "שינוי גודל/העברה"
 
-#: gui/mainwindow.cpp:389
+#: gui/mainwindow.cpp:387
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "שינוי גודל או העברת מחיצה"
 
-#: gui/mainwindow.cpp:390
+#: gui/mainwindow.cpp:388
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "הקטנה, הגדלה או העברה של מחיצה קיימת."
 
-#: gui/mainwindow.cpp:397
+#: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: gui/mainwindow.cpp:398 gui/mainwindow.cpp:661
+#: gui/mainwindow.cpp:396 gui/mainwindow.cpp:659
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "מחיקת מחיצה"
 
-#: gui/mainwindow.cpp:399
+#: gui/mainwindow.cpp:397
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "מחיקת מחיצה."
 
-#: gui/mainwindow.cpp:406
+#: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "השמדה"
 
-#: gui/mainwindow.cpp:407
+#: gui/mainwindow.cpp:405
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "השמדת מחיצה"
 
-#: gui/mainwindow.cpp:408
+#: gui/mainwindow.cpp:406
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr "השמדת מחיצה כך שלא תהיה אפשרות לשחזר את התוכן שלה."
 
-#: gui/mainwindow.cpp:415
+#: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "העתקה"
 
-#: gui/mainwindow.cpp:416
+#: gui/mainwindow.cpp:414
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "העתקת מחיצה"
 
-#: gui/mainwindow.cpp:417
+#: gui/mainwindow.cpp:415
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "העתקת מחיצה קיימת."
 
-#: gui/mainwindow.cpp:424
+#: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "הדבקה"
 
-#: gui/mainwindow.cpp:425
+#: gui/mainwindow.cpp:423
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "הדבקת מחיצה"
 
-#: gui/mainwindow.cpp:426
+#: gui/mainwindow.cpp:424
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "הדבקת מחיצה שהועתקה."
 
-#: gui/mainwindow.cpp:433
+#: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "עריכת נקודת עגינה"
 
-#: gui/mainwindow.cpp:434
+#: gui/mainwindow.cpp:432
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "עריכת נקודת עגינה"
 
-#: gui/mainwindow.cpp:435
+#: gui/mainwindow.cpp:433
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "עריכת נקודת עגינה ואפשרויות של מחיצה."
 
-#: gui/mainwindow.cpp:440
+#: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "עגינה"
 
-#: gui/mainwindow.cpp:441
+#: gui/mainwindow.cpp:439
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "עגינה או ניתוק של מחיצה"
 
-#: gui/mainwindow.cpp:442
+#: gui/mainwindow.cpp:440
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "עגינה או ניתוק של מחיצה."
 
-#: gui/mainwindow.cpp:447
+#: gui/mainwindow.cpp:445
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
 msgstr "קבלת בעלות"
 
-#: gui/mainwindow.cpp:448
+#: gui/mainwindow.cpp:446
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
 msgstr "קבלת בעלות על מערכת הקבצים"
 
-#: gui/mainwindow.cpp:449
+#: gui/mainwindow.cpp:447
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr "שינוי הבעלות של מערכת הקבצים המעוגנת לידי המשתמש הנוכחי."
 
-#: gui/mainwindow.cpp:455
+#: gui/mainwindow.cpp:453
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr "שחרור נעילה"
 
-#: gui/mainwindow.cpp:456
+#: gui/mainwindow.cpp:454
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "שחרור או נעילה של מחיצה מוצפנת"
 
-#: gui/mainwindow.cpp:457
+#: gui/mainwindow.cpp:455
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "שחרור או נעילה של מחיצה מוצפנת."
 
-#: gui/mainwindow.cpp:462
+#: gui/mainwindow.cpp:460
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "בדיקה"
 
-#: gui/mainwindow.cpp:463
+#: gui/mainwindow.cpp:461
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "בדיקת מחיצה"
 
-#: gui/mainwindow.cpp:464
+#: gui/mainwindow.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "בדיקת מערכת קבצים על מחיצה לאיתור שגיאות."
 
-#: gui/mainwindow.cpp:471
+#: gui/mainwindow.cpp:469
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "הצגת חלונית מאפייני מחיצה"
 
-#: gui/mainwindow.cpp:472
+#: gui/mainwindow.cpp:470
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr "הצגה ועריכה של מאפייני התקן. (תווית, דגלוני מחיצות ועוד)"
 
-#: gui/mainwindow.cpp:478
+#: gui/mainwindow.cpp:476
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "גיבוי"
 
-#: gui/mainwindow.cpp:479
+#: gui/mainwindow.cpp:477
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "גיבוי מחיצה"
 
-#: gui/mainwindow.cpp:480
+#: gui/mainwindow.cpp:478
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "גיבוי מחיצה לקובץ דמות."
 
-#: gui/mainwindow.cpp:486
+#: gui/mainwindow.cpp:484
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "שחזור"
 
-#: gui/mainwindow.cpp:487
+#: gui/mainwindow.cpp:485
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "שחזור מחיצה"
 
-#: gui/mainwindow.cpp:488
+#: gui/mainwindow.cpp:486
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "שחזור מחיצה מקובץ דמות."
 
-#: gui/mainwindow.cpp:495
+#: gui/mainwindow.cpp:493
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "קבוצת מחיצות חדשה"
 
-#: gui/mainwindow.cpp:496
+#: gui/mainwindow.cpp:494
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr "יצירת קבוצת מחיצות חדשה ב־LVM"
 
-#: gui/mainwindow.cpp:497
+#: gui/mainwindow.cpp:495
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "יצירת קבוצת מחיצות חדשה ב־LVM כהתקן."
 
-#: gui/mainwindow.cpp:503
+#: gui/mainwindow.cpp:501
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "תמיכה במערכות קבצים"
 
-#: gui/mainwindow.cpp:504
+#: gui/mainwindow.cpp:502
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "הצגת פרטי תמיכה במערכת קבצים"
 
-#: gui/mainwindow.cpp:505
+#: gui/mainwindow.cpp:503
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "הצגת מידע על מערכות קבצים נתמכות."
 
-#: gui/mainwindow.cpp:509
+#: gui/mainwindow.cpp:507
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "ריענון התקנים"
 
-#: gui/mainwindow.cpp:510
+#: gui/mainwindow.cpp:508
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "ריענון כל ההתקנים"
 
-#: gui/mainwindow.cpp:511
+#: gui/mainwindow.cpp:509
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "חידוש רשימת ההתקנים."
 
-#: gui/mainwindow.cpp:527
+#: gui/mainwindow.cpp:525
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "ניקוי יומן"
 
-#: gui/mainwindow.cpp:528
+#: gui/mainwindow.cpp:526
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr "ניקוי פלט היומן"
 
-#: gui/mainwindow.cpp:529
+#: gui/mainwindow.cpp:527
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr "ניקוי לוח פלט היומן."
 
-#: gui/mainwindow.cpp:534
+#: gui/mainwindow.cpp:532
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "שמירת היומן"
 
-#: gui/mainwindow.cpp:535
+#: gui/mainwindow.cpp:533
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr "שמירת פלט היומן"
 
-#: gui/mainwindow.cpp:536
+#: gui/mainwindow.cpp:534
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr "שמירת פלט היומן לקובץ."
 
-#: gui/mainwindow.cpp:542
+#: gui/mainwindow.cpp:540
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr "על ספריית KPMcore"
 
-#: gui/mainwindow.cpp:543
+#: gui/mainwindow.cpp:541
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr "הצגת חלונית על KPMcore"
 
-#: gui/mainwindow.cpp:544
+#: gui/mainwindow.cpp:542
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "הצגת חלונית על KPMcore."
 
-#: gui/mainwindow.cpp:663
+#: gui/mainwindow.cpp:661
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1899,7 +1899,7 @@ msgid ""
 msgstr ""
 "לא ניתן למחוק את המחיצה. נא לוודא שהיא לא מעוגנת או נעולה לפני המשך התהליך."
 
-#: gui/mainwindow.cpp:745
+#: gui/mainwindow.cpp:737
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
@@ -1909,25 +1909,25 @@ msgstr[1] "שתי פעולות ממתינות"
 msgstr[2] "%1 פעולות ממתינות"
 msgstr[3] "%1 פעולות ממתינות"
 
-#: gui/mainwindow.cpp:840
+#: gui/mainwindow.cpp:832
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "שימוש בתוסף המנגנון: %1 (%2)"
 
-#: gui/mainwindow.cpp:844
+#: gui/mainwindow.cpp:836
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "ההתקנים נסרקים…"
 
-#: gui/mainwindow.cpp:882
+#: gui/mainwindow.cpp:874
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "הסריקה הסתיימה."
 
-#: gui/mainwindow.cpp:946
+#: gui/mainwindow.cpp:938
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1937,19 +1937,19 @@ msgstr ""
 "<para>לסרוק מחדש את כל ההתקנים?</para><para><warning>הפעולה הזאת גם תמחק את "
 "רשימת הפעולות הממתינות.</warning></para>"
 
-#: gui/mainwindow.cpp:948
+#: gui/mainwindow.cpp:940
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "לסרוק את ההתקנים מחדש?"
 
-#: gui/mainwindow.cpp:949
+#: gui/mainwindow.cpp:941
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "סריקת התקנים מחדש"
 
-#: gui/mainwindow.cpp:975
+#: gui/mainwindow.cpp:967
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1959,74 +1959,74 @@ msgstr ""
 "<para>להחיל את השינויים הממתינים שמופיעים להלן?</para><para><warning>הן ישנו "
 "את הכוננים שלך לצמיתות.</warning></para>"
 
-#: gui/mainwindow.cpp:977
+#: gui/mainwindow.cpp:969
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "להחיל את הפעולות הממתינות?"
 
-#: gui/mainwindow.cpp:978
+#: gui/mainwindow.cpp:970
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "החלת פעולות ממתינות"
 
-#: gui/mainwindow.cpp:980
+#: gui/mainwindow.cpp:972
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "הפעולות חלות…"
 
-#: gui/mainwindow.cpp:1005
+#: gui/mainwindow.cpp:997
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "פעולה נסוגה: %1"
 
-#: gui/mainwindow.cpp:1021
+#: gui/mainwindow.cpp:1013
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "לרוקן את רשימת הפעולות הממתינות?"
 
-#: gui/mainwindow.cpp:1022
+#: gui/mainwindow.cpp:1014
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "לרוקן את הפעולות הממתינות?"
 
-#: gui/mainwindow.cpp:1023
+#: gui/mainwindow.cpp:1015
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "לרוקן את הפעולות הממתינות"
 
-#: gui/mainwindow.cpp:1025
+#: gui/mainwindow.cpp:1017
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "רשימת המשימות הממתינות מתרוקנת."
 
-#: gui/mainwindow.cpp:1067
+#: gui/mainwindow.cpp:1059
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
 msgstr "לא ניתן לפתוח את קובץ הקלט <filename>%1</filename> לייבוא"
 
-#: gui/mainwindow.cpp:1067 gui/mainwindow.cpp:1077 gui/mainwindow.cpp:1085
-#: gui/mainwindow.cpp:1091
+#: gui/mainwindow.cpp:1059 gui/mainwindow.cpp:1069 gui/mainwindow.cpp:1077
+#: gui/mainwindow.cpp:1083
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "שגיאה בייבוא טבלת המחיצות"
 
-#: gui/mainwindow.cpp:1085
+#: gui/mainwindow.cpp:1077
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
 msgstr "לא ניתן לפתוח את קובץ הקלט <filename>%1</filename> לייבוא: %2"
 
-#: gui/mainwindow.cpp:1091
+#: gui/mainwindow.cpp:1083
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2036,7 +2036,7 @@ msgstr ""
 "לא ניתן לפתוח את הקובץ הזמני <filename>%1</filename> תוך הניסיון לייבא מתוך "
 "<filename>%2</filename>."
 
-#: gui/mainwindow.cpp:1121
+#: gui/mainwindow.cpp:1113
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2044,65 +2044,65 @@ msgid ""
 "table."
 msgstr "קובץ הייבוא <filename>%1</filename> לא מכיל טבלת מחיצות תקפה."
 
-#: gui/mainwindow.cpp:1121 gui/mainwindow.cpp:1131 gui/mainwindow.cpp:1138
-#: gui/mainwindow.cpp:1143 gui/mainwindow.cpp:1153 gui/mainwindow.cpp:1166
-#: gui/mainwindow.cpp:1171 gui/mainwindow.cpp:1190 gui/mainwindow.cpp:1195
-#: gui/mainwindow.cpp:1200 gui/mainwindow.cpp:1207 gui/mainwindow.cpp:1483
+#: gui/mainwindow.cpp:1113 gui/mainwindow.cpp:1123 gui/mainwindow.cpp:1130
+#: gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1145 gui/mainwindow.cpp:1158
+#: gui/mainwindow.cpp:1163 gui/mainwindow.cpp:1182 gui/mainwindow.cpp:1187
+#: gui/mainwindow.cpp:1192 gui/mainwindow.cpp:1199 gui/mainwindow.cpp:1475
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "שגיאה בייבוא טבלת המחיצות"
 
-#: gui/mainwindow.cpp:1131
+#: gui/mainwindow.cpp:1123
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr "נמצא יותר מסוג טבלת מחיצות אחד בקובץ הייבוא (שורה %1)."
 
-#: gui/mainwindow.cpp:1138
+#: gui/mainwindow.cpp:1130
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "סוג טבלת המחיצות „%1” אינו מוכר (שורה %2)."
 
-#: gui/mainwindow.cpp:1143
+#: gui/mainwindow.cpp:1135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr "סוג טבלת המחיצות „%1” אינו נתמך בייבוא (שורה %2)."
 
-#: gui/mainwindow.cpp:1153
+#: gui/mainwindow.cpp:1145
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr "נמצאה מחיצה אך לא סוג טבלת מחיצות (שורה %1)."
 
-#: gui/mainwindow.cpp:1166
+#: gui/mainwindow.cpp:1158
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "המחיצה %1 תחרוג מגבולות ההתקן (שורה %2)."
 
-#: gui/mainwindow.cpp:1171
+#: gui/mainwindow.cpp:1163
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "למחיצה %1 יש סוף לפני מקטע ההתחלה (שורה %2)."
 
-#: gui/mainwindow.cpp:1190
+#: gui/mainwindow.cpp:1182
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "תפקיד מחיצה לא מזוהה „%1” למחיצה %2 (שורה %3)."
 
-#: gui/mainwindow.cpp:1195
+#: gui/mainwindow.cpp:1187
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
 msgstr "לא נמצאו מחיצת הורה או טבלת מחיצות למחיצה %1 (שורה %2)."
 
-#: gui/mainwindow.cpp:1200
+#: gui/mainwindow.cpp:1192
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2111,35 +2111,35 @@ msgid ""
 msgstr ""
 "סוג טבלת המחיצות „%1” לא תומך במחיצות מורחבות, אך נמצאה אחת כזאת (שורה %2)."
 
-#: gui/mainwindow.cpp:1207
+#: gui/mainwindow.cpp:1199
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr "לא ניתן ליצור את מערכת הקבצים „%1” למחיצה %2 (שורה %3)."
 
-#: gui/mainwindow.cpp:1222
+#: gui/mainwindow.cpp:1214
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr "לא ניתן לפענח את השורה %1 בקובץ הייבוא. פוסחים עליה."
 
-#: gui/mainwindow.cpp:1239
+#: gui/mainwindow.cpp:1231
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "שגיאה בייצוא טבלת המחיצות"
 
-#: gui/mainwindow.cpp:1404 gui/mainwindow.cpp:1410 gui/mainwindow.cpp:1446
+#: gui/mainwindow.cpp:1396 gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1438
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1410 gui/mainwindow.cpp:1421
+#: gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1413
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1458
+#: gui/mainwindow.cpp:1450
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2164,25 +2164,25 @@ msgstr ""
 "לשנות אותן.</para><para>יש למצוא חבילות עם כלי התמיכה האלה במנהל החבילות של "
 "ההפצה שלך.</para>"
 
-#: gui/mainwindow.cpp:1471
+#: gui/mainwindow.cpp:1463
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "חבילות התמיכה במערכת הקבצים חסרות"
 
-#: gui/mainwindow.cpp:1482
+#: gui/mainwindow.cpp:1474
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "ההתקן „%1” לא מוכר"
 
-#: gui/mainwindow.cpp:1491
+#: gui/mainwindow.cpp:1483
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "המחיצה „%1” לא מוכרת"
 
-#: gui/mainwindow.cpp:1492
+#: gui/mainwindow.cpp:1484
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"

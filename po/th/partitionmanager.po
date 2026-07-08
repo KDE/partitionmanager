@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-29 00:49+0000\n"
+"POT-Creation-Date: 2026-07-08 00:47+0000\n"
 "PO-Revision-Date: 2010-03-06 19:47+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -596,8 +596,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "เวลาทั้งหมด: %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1077
-#: gui/mainwindow.cpp:1239 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1069
+#: gui/mainwindow.cpp:1231 gui/smartdialog.cpp:227
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Could not create temporary file <filename>%1</filename> for writing."
@@ -1409,7 +1409,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr ""
 
-#: gui/mainwindow.cpp:170
+#: gui/mainwindow.cpp:168
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1417,7 +1417,7 @@ msgid ""
 "devices and authenticate when prompted."
 msgstr ""
 
-#: gui/mainwindow.cpp:238
+#: gui/mainwindow.cpp:236
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1430,13 +1430,13 @@ msgstr[0] ""
 "<para>คุณต้องการจะออกจากโปรแกรมจริงหรือไม่ ?</para> <para>ยังมีปฏิบัติการอีก %1 "
 "รายการที่ยังรอทำงานอยู่</para>"
 
-#: gui/mainwindow.cpp:240
+#: gui/mainwindow.cpp:238
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "ละทิ้งปฏิบัติการต่าง ๆ ที่รอทำงานอยู่แล้วออกหรือไม่ ?"
 
-#: gui/mainwindow.cpp:241
+#: gui/mainwindow.cpp:239
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Quit <application>%1</application>"
@@ -1444,115 +1444,115 @@ msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "&ออกจาก <application>%1</application>"
 
-#: gui/mainwindow.cpp:283
+#: gui/mainwindow.cpp:281
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "เลิกทำ"
 
-#: gui/mainwindow.cpp:284
+#: gui/mainwindow.cpp:282
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "เลิกทำปฏิบัติการล่าสุด"
 
-#: gui/mainwindow.cpp:285
+#: gui/mainwindow.cpp:283
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "เอาปฏิบัติการล่าสุดออกจากช่องรายการ"
 
-#: gui/mainwindow.cpp:292
+#: gui/mainwindow.cpp:290
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "ล้าง"
 
-#: gui/mainwindow.cpp:293
+#: gui/mainwindow.cpp:291
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "ล้างปฏิบัติการต่าง ๆ ทั้งหมด"
 
-#: gui/mainwindow.cpp:294
+#: gui/mainwindow.cpp:292
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "ล้างรายการของปฏิบัติการต่าง ๆ ที่รอทำงานอยู่"
 
-#: gui/mainwindow.cpp:300
+#: gui/mainwindow.cpp:298
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "ปรับใช้"
 
-#: gui/mainwindow.cpp:301
+#: gui/mainwindow.cpp:299
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "ปรับใช้ปฏิบัติการทั้งหมด"
 
-#: gui/mainwindow.cpp:302
+#: gui/mainwindow.cpp:300
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "ปรับใช้ปฏิบัติการทั้งหมดที่รอทำงานอยู่ ในช่องรายการ"
 
-#: gui/mainwindow.cpp:309
+#: gui/mainwindow.cpp:307
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "ตารางพาร์ทิชันใหม่"
 
-#: gui/mainwindow.cpp:310
+#: gui/mainwindow.cpp:308
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "สร้างตารางพาร์ทิชันใหม่"
 
-#: gui/mainwindow.cpp:311
+#: gui/mainwindow.cpp:309
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "สร้างตารางพาร์ทิชันใหม่และล้างตารางพาร์ทิชันเดิมบนอุปกรณ์"
 
-#: gui/mainwindow.cpp:318
+#: gui/mainwindow.cpp:316
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "ส่งออกตารางพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:319
+#: gui/mainwindow.cpp:317
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "ส่งออกตารางพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:320
+#: gui/mainwindow.cpp:318
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "ส่งออกตารางพาร์ทิชันของอุปกรณ์ไปยังแฟ้มข้อความ"
 
-#: gui/mainwindow.cpp:326
+#: gui/mainwindow.cpp:324
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "นำเข้าตารางพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:327
+#: gui/mainwindow.cpp:325
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "นำเข้าตารางพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:328
+#: gui/mainwindow.cpp:326
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "นำเข้าตารางพาร์ทิชันจากแฟ้มข้อความ"
 
-#: gui/mainwindow.cpp:335
+#: gui/mainwindow.cpp:333
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Resize or move partition"
@@ -1560,7 +1560,7 @@ msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "ปรับขนาดหรือย้ายพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:336
+#: gui/mainwindow.cpp:334
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Please select a device."
@@ -1568,7 +1568,7 @@ msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "โปรดเลือกอุปกรณ์"
 
-#: gui/mainwindow.cpp:337
+#: gui/mainwindow.cpp:335
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Please select a device."
@@ -1576,7 +1576,7 @@ msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "โปรดเลือกอุปกรณ์"
 
-#: gui/mainwindow.cpp:345
+#: gui/mainwindow.cpp:343
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Resize or move partition"
@@ -1584,7 +1584,7 @@ msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "ปรับขนาดหรือย้ายพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:346
+#: gui/mainwindow.cpp:344
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Resize or move partition"
@@ -1592,13 +1592,13 @@ msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "ปรับขนาดหรือย้ายพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:347
+#: gui/mainwindow.cpp:345
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr ""
 
-#: gui/mainwindow.cpp:355
+#: gui/mainwindow.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Deactivate swap"
@@ -1606,7 +1606,7 @@ msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "ปิดการใช้ swap"
 
-#: gui/mainwindow.cpp:356
+#: gui/mainwindow.cpp:354
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Please select a device."
@@ -1614,7 +1614,7 @@ msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "โปรดเลือกอุปกรณ์"
 
-#: gui/mainwindow.cpp:357
+#: gui/mainwindow.cpp:355
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Please select a device."
@@ -1622,7 +1622,7 @@ msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr "โปรดเลือกอุปกรณ์"
 
-#: gui/mainwindow.cpp:363
+#: gui/mainwindow.cpp:361
 #, fuzzy, kde-kuit-format
 #| msgctxt "@label"
 #| msgid "Status:"
@@ -1630,7 +1630,7 @@ msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "สถานะ:"
 
-#: gui/mainwindow.cpp:364
+#: gui/mainwindow.cpp:362
 #, fuzzy, kde-kuit-format
 #| msgctxt "@label"
 #| msgid "Status:"
@@ -1638,181 +1638,181 @@ msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "สถานะ:"
 
-#: gui/mainwindow.cpp:365
+#: gui/mainwindow.cpp:363
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr ""
 
-#: gui/mainwindow.cpp:370 gui/mainwindow.cpp:470
+#: gui/mainwindow.cpp:368 gui/mainwindow.cpp:468
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "คุณสมบัติ"
 
-#: gui/mainwindow.cpp:371
+#: gui/mainwindow.cpp:369
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "เปิดกล่องคุณสมบัติต่าง ๆ ของอุปกรณ์"
 
-#: gui/mainwindow.cpp:372
+#: gui/mainwindow.cpp:370
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "ดูและแก้ไขคุณสมบัติต่าง ๆ ของอุปกรณ์"
 
-#: gui/mainwindow.cpp:379
+#: gui/mainwindow.cpp:377
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "สร้างใหม่"
 
-#: gui/mainwindow.cpp:380
+#: gui/mainwindow.cpp:378
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "พาร์ทิชันใหม่"
 
-#: gui/mainwindow.cpp:381
+#: gui/mainwindow.cpp:379
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "สร้างพาร์ทิชันใหม่"
 
-#: gui/mainwindow.cpp:388
+#: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "ปรับขนาด/ย้าย"
 
-#: gui/mainwindow.cpp:389
+#: gui/mainwindow.cpp:387
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "ปรับขนาดหรือย้ายพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:390
+#: gui/mainwindow.cpp:388
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "ลดขนาด, ขยายพื้นที่ หรือย้ายพาร์ทิชันที่มีอยู่"
 
-#: gui/mainwindow.cpp:397
+#: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "ลบ"
 
-#: gui/mainwindow.cpp:398 gui/mainwindow.cpp:661
+#: gui/mainwindow.cpp:396 gui/mainwindow.cpp:659
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "ลบพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:399
+#: gui/mainwindow.cpp:397
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "ลบพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:406
+#: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "ลบแบบทำลายข้อมูล"
 
-#: gui/mainwindow.cpp:407
+#: gui/mainwindow.cpp:405
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "ลบพาร์ทิชันแบบทำลายข้อมูล"
 
-#: gui/mainwindow.cpp:408
+#: gui/mainwindow.cpp:406
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr "ลบพาร์ทิชันแบบทำลายข้อมูล ซึ่งจะทำให้ไม่สามารถกู้คืนเนื้อหาภายในตัวมันได้อีก"
 
-#: gui/mainwindow.cpp:415
+#: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "คัดลอก"
 
-#: gui/mainwindow.cpp:416
+#: gui/mainwindow.cpp:414
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "คัดลอกพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:417
+#: gui/mainwindow.cpp:415
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "คัดลอกพาร์ทิชันที่มีอยู่"
 
-#: gui/mainwindow.cpp:424
+#: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "วาง"
 
-#: gui/mainwindow.cpp:425
+#: gui/mainwindow.cpp:423
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "วางพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:426
+#: gui/mainwindow.cpp:424
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "วางพาร์ทิชันที่ได้คัดลอกไว้"
 
-#: gui/mainwindow.cpp:433
+#: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "แก้ไขจุดเมานท์"
 
-#: gui/mainwindow.cpp:434
+#: gui/mainwindow.cpp:432
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "แก้ไขจุดเมานท์"
 
-#: gui/mainwindow.cpp:435
+#: gui/mainwindow.cpp:433
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "แก้ไขจุดเมานท์ของพาร์ทิชันและตัวเลือกต่าง ๆ"
 
-#: gui/mainwindow.cpp:440
+#: gui/mainwindow.cpp:438
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "เมานท์"
 
-#: gui/mainwindow.cpp:441
+#: gui/mainwindow.cpp:439
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "เมานท์หรือเลิกเมานท์พาร์ทิชัน"
 
-#: gui/mainwindow.cpp:442
+#: gui/mainwindow.cpp:440
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "เมานท์หรือเลิกเมานท์พาร์ทิชัน"
 
-#: gui/mainwindow.cpp:447
+#: gui/mainwindow.cpp:445
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
 msgstr ""
 
-#: gui/mainwindow.cpp:448
+#: gui/mainwindow.cpp:446
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Change the File System"
@@ -1820,19 +1820,19 @@ msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
 msgstr "แ&ก้ไขระบบแฟ้ม"
 
-#: gui/mainwindow.cpp:449
+#: gui/mainwindow.cpp:447
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr ""
 
-#: gui/mainwindow.cpp:455
+#: gui/mainwindow.cpp:453
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr ""
 
-#: gui/mainwindow.cpp:456
+#: gui/mainwindow.cpp:454
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Mount or unmount partition"
@@ -1840,7 +1840,7 @@ msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "เมานท์หรือเลิกเมานท์พาร์ทิชัน"
 
-#: gui/mainwindow.cpp:457
+#: gui/mainwindow.cpp:455
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Mount or unmount partition"
@@ -1848,73 +1848,73 @@ msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "เมานท์หรือเลิกเมานท์พาร์ทิชัน"
 
-#: gui/mainwindow.cpp:462
+#: gui/mainwindow.cpp:460
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "ตรวจสอบ"
 
-#: gui/mainwindow.cpp:463
+#: gui/mainwindow.cpp:461
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "ตรวจสอบพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:464
+#: gui/mainwindow.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "ตรวจสอบระบแฟ้มบนพาร์ทิชันเพื่อหาข้อผิดพลาดต่าง ๆ"
 
-#: gui/mainwindow.cpp:471
+#: gui/mainwindow.cpp:469
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "เปิดกล่องคุณสมบัติต่าง ๆ ของพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:472
+#: gui/mainwindow.cpp:470
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr "แสดงและแก้ไขคุณสมบัติต่าง ๆ ของพาร์ทิชัน (ป้ายชื่อ, แฟล็กต่าง ๆ เป็นต้น)"
 
-#: gui/mainwindow.cpp:478
+#: gui/mainwindow.cpp:476
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "สำรองข้อมูล"
 
-#: gui/mainwindow.cpp:479
+#: gui/mainwindow.cpp:477
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "สำรองข้อมูลพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:480
+#: gui/mainwindow.cpp:478
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "สำรองข้อมูลพาร์ทิชันไปเป็นแฟ้มอิมเมจ"
 
-#: gui/mainwindow.cpp:486
+#: gui/mainwindow.cpp:484
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "เรียกคืน"
 
-#: gui/mainwindow.cpp:487
+#: gui/mainwindow.cpp:485
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "เรียกคืนข้อมูลพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:488
+#: gui/mainwindow.cpp:486
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "เรียกคืนข้อมูลพาร์ทิชันจากแฟ้มอิมเมจ"
 
-#: gui/mainwindow.cpp:495
+#: gui/mainwindow.cpp:493
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Resize or move partition"
@@ -1922,13 +1922,13 @@ msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "ปรับขนาดหรือย้ายพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:496
+#: gui/mainwindow.cpp:494
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr ""
 
-#: gui/mainwindow.cpp:497
+#: gui/mainwindow.cpp:495
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Create a new and empty partition table on a device."
@@ -1936,43 +1936,43 @@ msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "สร้างตารางพาร์ทิชันใหม่และล้างตารางพาร์ทิชันเดิมบนอุปกรณ์"
 
-#: gui/mainwindow.cpp:503
+#: gui/mainwindow.cpp:501
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "รองรับระบบแฟ้ม"
 
-#: gui/mainwindow.cpp:504
+#: gui/mainwindow.cpp:502
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "ดูข้อมูลเกี่ยวกับการรองรับระบบแฟ้ม"
 
-#: gui/mainwindow.cpp:505
+#: gui/mainwindow.cpp:503
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "แสดงข้อมูลรายละเอียดเกี่ยวกับระบบแฟ้มต่าง ๆ ที่รองรับ"
 
-#: gui/mainwindow.cpp:509
+#: gui/mainwindow.cpp:507
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "ปรับปรุงรายการอุปกรณ์อีกครั้ง"
 
-#: gui/mainwindow.cpp:510
+#: gui/mainwindow.cpp:508
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "ปรับปรุงรายการอุปกรณ์ทั้งหมดอีกครั้ง"
 
-#: gui/mainwindow.cpp:511
+#: gui/mainwindow.cpp:509
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "ปรับปรุงรายการอุปกรณ์ต่าง ๆ อีกครั้ง"
 
-#: gui/mainwindow.cpp:527
+#: gui/mainwindow.cpp:525
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:inmenu clear the list of operations"
 #| msgid "Clear"
@@ -1980,56 +1980,56 @@ msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "ล้าง"
 
-#: gui/mainwindow.cpp:528
+#: gui/mainwindow.cpp:526
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr ""
 
-#: gui/mainwindow.cpp:529
+#: gui/mainwindow.cpp:527
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr ""
 
-#: gui/mainwindow.cpp:534
+#: gui/mainwindow.cpp:532
 #, fuzzy, kde-kuit-format
 #| msgid "&Save"
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "&บันทึก"
 
-#: gui/mainwindow.cpp:535
+#: gui/mainwindow.cpp:533
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr ""
 
-#: gui/mainwindow.cpp:536
+#: gui/mainwindow.cpp:534
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr ""
 
-#: gui/mainwindow.cpp:542
+#: gui/mainwindow.cpp:540
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr ""
 
-#: gui/mainwindow.cpp:543
+#: gui/mainwindow.cpp:541
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr ""
 
-#: gui/mainwindow.cpp:544
+#: gui/mainwindow.cpp:542
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr ""
 
-#: gui/mainwindow.cpp:663
+#: gui/mainwindow.cpp:661
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2037,21 +2037,21 @@ msgid ""
 "proceeding."
 msgstr ""
 
-#: gui/mainwindow.cpp:745
+#: gui/mainwindow.cpp:737
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
 msgstr[0] "ปฏิบัติการที่รอทำงาน %1 ปฏิบัติการ"
 
-#: gui/mainwindow.cpp:840
+#: gui/mainwindow.cpp:832
 #, fuzzy, kde-kuit-format
 #| msgid "Backend:"
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "แบ็กเอนด์:"
 
-#: gui/mainwindow.cpp:844
+#: gui/mainwindow.cpp:836
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Scanning devices..."
@@ -2059,7 +2059,7 @@ msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "กำลังตรวจค้นหาอุปกรณ์ต่าง ๆ ..."
 
-#: gui/mainwindow.cpp:882
+#: gui/mainwindow.cpp:874
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Scan finished."
@@ -2067,7 +2067,7 @@ msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "ตรวจค้นหาเสร็จสิ้นแล้ว"
 
-#: gui/mainwindow.cpp:946
+#: gui/mainwindow.cpp:938
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2078,13 +2078,13 @@ msgstr ""
 "<para><warning>การกระทำนี้จะมีการล้างรายการปฏิบัติการต่าง ๆ ที่รอทำงานอยู่</warning></"
 "para>"
 
-#: gui/mainwindow.cpp:948
+#: gui/mainwindow.cpp:940
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "ตรวจค้นหาอุปกรณ์ต่าง ๆ อีกครั้งจริงหรือไม่ ?"
 
-#: gui/mainwindow.cpp:949
+#: gui/mainwindow.cpp:941
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Rescan Devices"
@@ -2092,7 +2092,7 @@ msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "&ตรวจหาอุปกรณ์ต่าง ๆ อีกครั้ง"
 
-#: gui/mainwindow.cpp:975
+#: gui/mainwindow.cpp:967
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2103,13 +2103,13 @@ msgstr ""
 "</para> <para><warning>การกระทำนี้จะเป็นการแก้ไขดิสก์ต่าง ๆ ของคุณอย่างถาวร</"
 "warning></para>"
 
-#: gui/mainwindow.cpp:977
+#: gui/mainwindow.cpp:969
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "ปรับใช้ปฏิบัติการต่าง ๆ ที่รอทำงานอยู่หรือไม่ ?"
 
-#: gui/mainwindow.cpp:978
+#: gui/mainwindow.cpp:970
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Apply Pending Operations"
@@ -2117,7 +2117,7 @@ msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "&ปรับใช้ปฏิบัติการต่าง ๆ ที่รอทำงานอยู่"
 
-#: gui/mainwindow.cpp:980
+#: gui/mainwindow.cpp:972
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Applying operations..."
@@ -2125,7 +2125,7 @@ msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "กำลังทำการปรับใช้ปฏิบัติการต่าง ๆ ..."
 
-#: gui/mainwindow.cpp:1005
+#: gui/mainwindow.cpp:997
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Undoing operation: %1"
@@ -2133,19 +2133,19 @@ msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "กำลังเลิกทำปฏิบัติการ: %1"
 
-#: gui/mainwindow.cpp:1021
+#: gui/mainwindow.cpp:1013
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "คุณต้องการจะล้างรายการปฏิบัติการต่าง ๆ ที่รอทำงานอยู่จริงหรือไม่ ?"
 
-#: gui/mainwindow.cpp:1022
+#: gui/mainwindow.cpp:1014
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "ล้างปฏิบัติการต่าง ๆ ที่รอทำงานอยู่หรือไม่ ?"
 
-#: gui/mainwindow.cpp:1023
+#: gui/mainwindow.cpp:1015
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Clear Pending Operations"
@@ -2153,7 +2153,7 @@ msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "&ล้างปฏิบัติการต่าง ๆ ที่รอทำงานอยู่"
 
-#: gui/mainwindow.cpp:1025
+#: gui/mainwindow.cpp:1017
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Clearing the list of pending operations."
@@ -2161,7 +2161,7 @@ msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "กำลังทำการล้างรายการปฏิบัติการต่าง ๆ ที่รอทำงานอยู่"
 
-#: gui/mainwindow.cpp:1067
+#: gui/mainwindow.cpp:1059
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Could not open input file <filename>%1</filename>."
@@ -2169,14 +2169,14 @@ msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
 msgstr "ไม่สามารถเปิดแฟ้มนำเข้า <filename>%1</filename> ได้"
 
-#: gui/mainwindow.cpp:1067 gui/mainwindow.cpp:1077 gui/mainwindow.cpp:1085
-#: gui/mainwindow.cpp:1091
+#: gui/mainwindow.cpp:1059 gui/mainwindow.cpp:1069 gui/mainwindow.cpp:1077
+#: gui/mainwindow.cpp:1083
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "เกิดข้อผิดพลาดของการนำเข้าตารางพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:1085
+#: gui/mainwindow.cpp:1077
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Could not open input file <filename>%1</filename>."
@@ -2184,7 +2184,7 @@ msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
 msgstr "ไม่สามารถเปิดแฟ้มนำเข้า <filename>%1</filename> ได้"
 
-#: gui/mainwindow.cpp:1091
+#: gui/mainwindow.cpp:1083
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2198,7 +2198,7 @@ msgstr ""
 "ไม่สามารถเปิดอุปกรณ์ <filename>%1</filename> ในระหว่างพยายามทำการปรับขนาด/"
 "ย้ายพาร์ทิชัน <filename>%2</filename> ได้"
 
-#: gui/mainwindow.cpp:1121
+#: gui/mainwindow.cpp:1113
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2209,40 +2209,40 @@ msgid ""
 "table."
 msgstr "แฟ้ม <filename>%1</filename> ไม่ใช่แฟ้มข้อความที่เก็บข้อมูลตารางพาร์ทิชันที่ใช้งานได้"
 
-#: gui/mainwindow.cpp:1121 gui/mainwindow.cpp:1131 gui/mainwindow.cpp:1138
-#: gui/mainwindow.cpp:1143 gui/mainwindow.cpp:1153 gui/mainwindow.cpp:1166
-#: gui/mainwindow.cpp:1171 gui/mainwindow.cpp:1190 gui/mainwindow.cpp:1195
-#: gui/mainwindow.cpp:1200 gui/mainwindow.cpp:1207 gui/mainwindow.cpp:1483
+#: gui/mainwindow.cpp:1113 gui/mainwindow.cpp:1123 gui/mainwindow.cpp:1130
+#: gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1145 gui/mainwindow.cpp:1158
+#: gui/mainwindow.cpp:1163 gui/mainwindow.cpp:1182 gui/mainwindow.cpp:1187
+#: gui/mainwindow.cpp:1192 gui/mainwindow.cpp:1199 gui/mainwindow.cpp:1475
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "เกิดข้อผิดพลาดระหว่างการนำเข้าตารางพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:1131
+#: gui/mainwindow.cpp:1123
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr "พบตารางพาร์ทิชันมากกกว่าหนึ่งตารางในแฟ้มนำเข้า (บรรทัดที่ %1)"
 
-#: gui/mainwindow.cpp:1138
+#: gui/mainwindow.cpp:1130
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "ไม่รู้จักตารางพาร์ทิชันประเภท \"%1\" (บรรทัดที่ %2)"
 
-#: gui/mainwindow.cpp:1143
+#: gui/mainwindow.cpp:1135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr "ไม่รองรับการนำเข้าตารางพาร์ทิชันประเภท \"%1\" (บรรทัดที่ %2)"
 
-#: gui/mainwindow.cpp:1153
+#: gui/mainwindow.cpp:1145
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr "พบพาร์ทิชันแต่ไม่มีประเภทของตารางพาร์ทิชัน (บรรทัดที่ %1)"
 
-#: gui/mainwindow.cpp:1166
+#: gui/mainwindow.cpp:1158
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Partition %1 would be outside the device's boundaries (line %2)."
@@ -2250,13 +2250,13 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "พาร์ทิชัน %1 จะอยู่นอกขอบเขตของอุปกรณ์ (บรรทัดที่ %2)"
 
-#: gui/mainwindow.cpp:1171
+#: gui/mainwindow.cpp:1163
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "ส่วนสิ้นสุดของพาร์ทิชัน %1 อยู่ก่อนเซกเตอร์ส่วนเริ่มต้น (บรรทัดที่ %2)"
 
-#: gui/mainwindow.cpp:1190
+#: gui/mainwindow.cpp:1182
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
@@ -2264,7 +2264,7 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "ไม่สามารถจัดการบทบาท \"%1\" ของพาร์ทิชัน %2 ได้ (บรรทัดที่ %3)"
 
-#: gui/mainwindow.cpp:1195
+#: gui/mainwindow.cpp:1187
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2274,7 +2274,7 @@ msgid ""
 "No parent partition or partition table found for partition %1 (line %2)."
 msgstr "ไม่พบพาร์ทิชันแม่หรือไม่พบตารางพาร์ทิชันของพาร์ทิชัน %1 (บรรทัดที่ %2)"
 
-#: gui/mainwindow.cpp:1200
+#: gui/mainwindow.cpp:1192
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2284,7 +2284,7 @@ msgstr ""
 "ตารางพาร์ทิชันประเภท \"%1\" ไม่รองรับพาร์ทิชันแบบขยาย แต่กลับพบพาร์ทิชันแบบขยายหนึ่งตัว "
 "(บรรทัดที่ %2)"
 
-#: gui/mainwindow.cpp:1207
+#: gui/mainwindow.cpp:1199
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Could not create file system \"%1\" for partition %2 (line %3)."
@@ -2292,7 +2292,7 @@ msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr "ไม่สามารถสร้างระบบแฟ้ม \"%1\" ให้กับพาร์ทิชัน %2 ได้ (บรรทัดที่ %3)"
 
-#: gui/mainwindow.cpp:1222
+#: gui/mainwindow.cpp:1214
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Could not parse line %1 from import file. Ignoring it."
@@ -2300,23 +2300,23 @@ msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr "ไม่สามารถประมวลบรรทัดที่ %1 จากแฟ้มนำเข้าได้ ทำการละทิ้งมัน"
 
-#: gui/mainwindow.cpp:1239
+#: gui/mainwindow.cpp:1231
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "เกิดข้อผิดพลาดของการส่งออกตารางพาร์ทิชัน"
 
-#: gui/mainwindow.cpp:1404 gui/mainwindow.cpp:1410 gui/mainwindow.cpp:1446
+#: gui/mainwindow.cpp:1396 gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1438
 #, kde-kuit-format
 msgid "%1%2"
 msgstr ""
 
-#: gui/mainwindow.cpp:1410 gui/mainwindow.cpp:1421
+#: gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1413
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr ""
 
-#: gui/mainwindow.cpp:1458
+#: gui/mainwindow.cpp:1450
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2332,7 +2332,7 @@ msgid ""
 "in your distribution's package manager.</para>"
 msgstr ""
 
-#: gui/mainwindow.cpp:1471
+#: gui/mainwindow.cpp:1463
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "File System Support"
@@ -2340,13 +2340,13 @@ msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "รองรับระบบแฟ้ม"
 
-#: gui/mainwindow.cpp:1482
+#: gui/mainwindow.cpp:1474
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr ""
 
-#: gui/mainwindow.cpp:1491
+#: gui/mainwindow.cpp:1483
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
@@ -2354,7 +2354,7 @@ msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "ไม่สามารถจัดการบทบาท \"%1\" ของพาร์ทิชัน %2 ได้ (บรรทัดที่ %3)"
 
-#: gui/mainwindow.cpp:1492
+#: gui/mainwindow.cpp:1484
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title:window"
 #| msgid "Error Importing Partition Table"
