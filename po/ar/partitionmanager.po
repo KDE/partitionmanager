@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 00:47+0000\n"
-"PO-Revision-Date: 2026-06-30 22:18+0400\n"
+"PO-Revision-Date: 2026-08-10 18:29+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1360,7 +1360,7 @@ msgstr "تراجع عن آخر عملية"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
-msgstr "أزل آخر عملية من القائمة."
+msgstr "إزالة آخر عملية من القائمة."
 
 #: gui/mainwindow.cpp:290
 #, kde-kuit-format
@@ -1378,7 +1378,7 @@ msgstr "امحُ كل العمليات"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
-msgstr "افرغ قائمة العمليات المنتظرة."
+msgstr "إفراغ قائمة العمليات المنتظرة."
 
 #: gui/mainwindow.cpp:298
 #, kde-kuit-format
@@ -1396,7 +1396,7 @@ msgstr "طبّق كل العمليات"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
-msgstr "طبّق كل العمليات المنتظرة في القائمة."
+msgstr "تطبيق كل العمليات المنتظرة في القائمة."
 
 #: gui/mainwindow.cpp:307
 #, kde-kuit-format
@@ -1414,7 +1414,7 @@ msgstr "أنشئ جدول تقسيم جديد"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
-msgstr "أنشئ جدول تقسيم جديد وفارغ على الجهاز"
+msgstr "إنشاء جدول تقسيم جديد وفارغ على الجهاز"
 
 #: gui/mainwindow.cpp:316
 #, kde-kuit-format
@@ -1432,7 +1432,7 @@ msgstr "صدّر جدول تقسيم"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
-msgstr "صدّر جدول التقسيم على الجهاز إلى ملف نصّي."
+msgstr "تصدير جدول التقسيم على الجهاز إلى ملف نصّي."
 
 #: gui/mainwindow.cpp:324
 #, kde-kuit-format
@@ -1450,7 +1450,7 @@ msgstr "استورد جدول تقسيم"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
-msgstr "استورد جدول تقسيم من ملف نصّي."
+msgstr "استيراد جدول تقسيم من ملف نصّي."
 
 #: gui/mainwindow.cpp:333
 #, kde-format
@@ -1468,7 +1468,7 @@ msgstr "أزل مجموعة وحدات التخزين المحددة"
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
-msgstr "أزل مجموعة وحدات التخزين المحددة."
+msgstr "إزالة مجموعة وحدات التخزين المحددة."
 
 #: gui/mainwindow.cpp:343
 #, kde-format
@@ -1486,7 +1486,7 @@ msgstr "غيّر حجم مجموعة وحدات التخزين المحددة"
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
-msgstr "وسّع أو صغّر مجموعة وحدات التخزين المحددة."
+msgstr "توسيع أو تصغير مجموعة وحدات التخزين المحددة."
 
 #: gui/mainwindow.cpp:353
 #, kde-format
@@ -1505,7 +1505,7 @@ msgstr "ألغ تنشيط مجموعة وحدات التخزين المحددة"
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr ""
-"ألغ تنشيط مجموعة وحدات التخزين المحددة قبل فصل الأجهزة القابلة للإزالة."
+"إلغاء تنشيط مجموعة وحدات التخزين المحددة قبل فصل الأجهزة القابلة للإزالة."
 
 #: gui/mainwindow.cpp:361
 #, kde-kuit-format
@@ -1523,7 +1523,7 @@ msgstr "أظهر حالات SMART"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
-msgstr "أظهر حالة SMART للجهاز إن كان مدعومًا"
+msgstr "عرض حالة SMART للجهاز إن كان مدعومًا"
 
 #: gui/mainwindow.cpp:368 gui/mainwindow.cpp:468
 #, kde-kuit-format
@@ -1541,7 +1541,7 @@ msgstr "أظهر مربع حوار خصائص الجهاز"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
-msgstr "اعرض وعدّل خصائص الجهاز"
+msgstr "عرض وتعديل خصائص الجهاز"
 
 #: gui/mainwindow.cpp:377
 #, kde-kuit-format
@@ -1559,7 +1559,7 @@ msgstr "قسم جديد"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
-msgstr "أنشئ قسمًا جديدًا."
+msgstr "إنشاء قسمًا جديدًا."
 
 #: gui/mainwindow.cpp:386
 #, kde-kuit-format
@@ -1577,7 +1577,7 @@ msgstr "غيّر حجم القسم أو انقله"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
-msgstr "قلّص أو نمِّ أو انقل قسما موجودا."
+msgstr "تقليص أو زيادة أو نقل قسما موجودا."
 
 #: gui/mainwindow.cpp:395
 #, kde-kuit-format
@@ -1595,7 +1595,7 @@ msgstr "احذف القسم"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
-msgstr "احذف قسم."
+msgstr "حذف قسم."
 
 #: gui/mainwindow.cpp:404
 #, kde-kuit-format
@@ -1613,7 +1613,7 @@ msgstr "مزّق قسمًا"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
-msgstr "مزّق قسمًا فلا يمكن استعادة محتوياته بعد ذلك."
+msgstr "تمزيق قسمًا فلا يمكن استعادة محتوياته بعد ذلك."
 
 #: gui/mainwindow.cpp:413
 #, kde-kuit-format
@@ -1631,7 +1631,7 @@ msgstr "انسخ القسم"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
-msgstr "انسخ قسمًا موجودًا."
+msgstr "نسخ قسمًا موجودًا."
 
 #: gui/mainwindow.cpp:422
 #, kde-kuit-format
@@ -1649,7 +1649,7 @@ msgstr "ألصق قسم"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
-msgstr "الصق قسم منسوخ."
+msgstr "لصق قسم منسوخ."
 
 #: gui/mainwindow.cpp:431
 #, kde-kuit-format
@@ -1667,7 +1667,7 @@ msgstr "حرّر نقطة وصل"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
-msgstr "حرّر نقطة وصل قسم وخياراته."
+msgstr "تحرير نقطة وصل قسم وخياراته."
 
 #: gui/mainwindow.cpp:438
 #, kde-kuit-format
@@ -1703,7 +1703,7 @@ msgstr "استحوذ على ملكية نظام الملفات"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
-msgstr "غيّر ملكية نظام الملفات الموصول إلى المستخدم الحالي."
+msgstr "تغيير ملكية نظام الملفات الموصول إلى المستخدم الحالي."
 
 #: gui/mainwindow.cpp:453
 #, kde-kuit-format
@@ -1721,7 +1721,7 @@ msgstr "افتح أو اقفل القسم المعمى"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
-msgstr "افتح أو اقفل القسم المعمى."
+msgstr "فتح أو اقفل القسم المعمى."
 
 #: gui/mainwindow.cpp:460
 #, kde-kuit-format
@@ -1739,7 +1739,7 @@ msgstr "تحقّق من القسم"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
-msgstr "تحقّق من نظام ملفات قسم من الأخطاء."
+msgstr "التحقّق من نظام ملفات قسم من الأخطاء."
 
 #: gui/mainwindow.cpp:469
 #, kde-kuit-format
@@ -1751,7 +1751,7 @@ msgstr "اظهر مربع حوار خصائص القسم"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
-msgstr "اعرض وعدّل خصائص القسم (اللصيقة، أعلام القسم، إلخ.)"
+msgstr "عرض وتعديل خصائص القسم (اللصيقة، أعلام القسم، إلخ.)"
 
 #: gui/mainwindow.cpp:476
 #, kde-kuit-format
@@ -1769,7 +1769,7 @@ msgstr "انسخ احتياطيًّا قسم"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
-msgstr "انسخ احتياطيًّا قسم إلى ملف صورة."
+msgstr "أخذ نسخة احتياطيّة قسم إلى ملف صورة."
 
 #: gui/mainwindow.cpp:484
 #, kde-kuit-format
@@ -1787,7 +1787,7 @@ msgstr "استعد قسم"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
-msgstr "استعد قسم من ملف صورة."
+msgstr "استعادة قسم من ملف صورة."
 
 #: gui/mainwindow.cpp:493
 #, kde-format
@@ -1805,7 +1805,7 @@ msgstr "أنشئ مجموعة وحدة تخزين LVM جديدة"
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
-msgstr "أنشئ جدول تقسيم جديد LVM كجهاز"
+msgstr "إنشاء جدول تقسيم جديد LVM كجهاز"
 
 #: gui/mainwindow.cpp:501
 #, kde-kuit-format
@@ -1823,7 +1823,7 @@ msgstr "اعرض معلومات مساندة نظام الملفات"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
-msgstr "اظهر معلومات حول أنظمة الملفات المدعومة."
+msgstr "عرض معلومات حول أنظمة الملفات المدعومة."
 
 #: gui/mainwindow.cpp:507
 #, kde-kuit-format
@@ -1841,7 +1841,7 @@ msgstr "حدّث كل الأجهزة"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
-msgstr "جدّد قائمة الأجهزة"
+msgstr "تجديد قائمة الأجهزة"
 
 #: gui/mainwindow.cpp:525
 #, kde-kuit-format
@@ -1859,7 +1859,7 @@ msgstr "امحُ سجل الإخراج"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
-msgstr "امحُ لوحة سجل الإخراج."
+msgstr "محو لوحة سجل الإخراج."
 
 #: gui/mainwindow.cpp:532
 #, kde-kuit-format
@@ -1877,7 +1877,7 @@ msgstr "احفظ سجل الإخراج"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
-msgstr "احفظ سجل الإخراج إلى ملف."
+msgstr "حفظ سجل الإخراج إلى ملف."
 
 #: gui/mainwindow.cpp:540
 #, kde-kuit-format
@@ -1895,7 +1895,7 @@ msgstr "أظهر مربع الحوار \"حول KPMcore\""
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
-msgstr "أظهر مربع الحوار \"حول KPMcore\""
+msgstr "إظهار مربع الحوار \"حول KPMcore\""
 
 #: gui/mainwindow.cpp:661
 #, kde-kuit-format
@@ -3101,7 +3101,7 @@ msgstr "تعمية مع LUKS"
 #: gui/sizedialogwidgetbase.ui:292
 #, kde-format
 msgid "Permissions"
-msgstr "التصاريح"
+msgstr "الأذون"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:305
@@ -3123,7 +3123,7 @@ msgid ""
 "folder permissions"
 msgstr ""
 "اسمح للمستخدم الجذر فقط بالكتابة والقراءة على هذا الجهاز، ستحتاج إلى الإعداد "
-"لكلأذونات المجلد"
+"أذون لكل مجلد"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:318
