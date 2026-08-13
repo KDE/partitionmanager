@@ -15,7 +15,15 @@ project(partitionmanager VERSION ${RELEASE_SERVICE_VERSION})
 # Dependencies
 set(QT_MIN_VERSION "6.5.0")
 set(KF_MIN_VERSION "6.17.0")
-set(KPMCORE_MIN_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}")
+# The intention here is to depend on a release from at least the same release
+# branch and to accomodate the jump from a RC version to .0 (eg. 26.07.90 to
+# 26.08.0), where we shouldn't really add breaking changes anyway.
+math(EXPR KPMCORE_RELEASE_BRANCH_VERSION "${RELEASE_SERVICE_VERSION_MINOR} - (${RELEASE_SERVICE_VERSION_MINOR} -3) % 4")
+if(KPMCORE_RELEASE_BRANCH_VERSION LESS "10")
+    string(PREPEND KPMCORE_RELEASE_BRANCH_VERSION "0") # pad with 0
+endif()
+
+set(KPMCORE_MIN_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${KPMCORE_RELEASE_BRANCH_VERSION}")
 
 set(KDE_COMPILERSETTINGS_LEVEL "5.85")
 
