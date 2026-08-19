@@ -206,7 +206,7 @@
 						<para
 >Dieser Befehl löscht alle Partitionen und somit alle Daten auf dem Gerät. Seien Sie daher vorsichtig bei der Anwendung dieses Befehls.</para>
 						<para
->Dieser Befehl ist nur verfügbar, wenn ein Gerät ausgewählt ist und keine Partition des Gerätes eingehängt ist. Der Import in ein logisches Gerät wie z.B. LVM Volume Groups wird zur Zeit nicht unterstützt.</para>
+>Dieser Befehl ist nur verfügbar, wenn ein Gerät ausgewählt ist und keine Partition des Gerätes eingehängt ist. Der Import in ein logisches Gerät wie z. B. LVM Volume Groups wird zur Zeit nicht unterstützt.</para>
 					</listitem>
 				</varlistentry>
 				<varlistentry id="menu-device-smartstatus">
@@ -594,7 +594,7 @@
 					</term>
 					<listitem>
 						<para
->Erzeugt eine neues logisches Gerät wie z.B. eine <link linkend="glossary-lvm"
+>Erzeugt eine neues logisches Gerät wie z. B. eine <link linkend="glossary-lvm"
 >LVM</link
 > Volume Group.</para>
 					</listitem>

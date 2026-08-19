@@ -106,7 +106,7 @@
 			</question>
 			<answer>
 				<para
->&partman; wurde für keinen dieser Zwecke entwickelt: Dies ist eine Anwendung, die mit Partitionen und Dateisystemen auf diesen Partitionen arbeitet. Floppy-Disketten, CDs oder DVDs brauchen bzw. nutzen keine Partitionen. </para>
+>&partman; wurde für keinen dieser Zwecke entwickelt: Dies ist eine Anwendung, die mit Partitionen und Dateisystemen auf diesen Partitionen arbeitet. Floppy-Disketten, CDs oder DVDs benötigen bzw. nutzen keine Partitionen. </para>
 			</answer>
 		</qandaentry>
 		<qandaentry>
@@ -138,7 +138,7 @@
 			</question>
 			<answer>
 				<para
->LibParted, die von &partman; genutzte Backend-Bibliothek, hat Probleme mit Systemen, in denen Linux Device Mapper auf eine Weise verwendet wird, die sie nicht versteht. Leider reagiert die Bibliothek auf solche Situationen manchmal mit Speicherzugriffsfehlern, d. h. sie stürzt ab. &partman; versucht deswegen, diese Situationen zu vermeiden, indem es einen alternativen Weg nutzt, um Laufwerke auf Ihrem Rechner zu suchen. Wenn es dies jedoch nicht schafft und sich also auf LibParted verlassen muss, wird eine derartige Meldung ausgegeben. Falls die Suche nach Laufwerken funktioniert, können Sie die Meldung bedenkenlos ignorieren. </para>
+>LibParted, die von &partman; genutzte Backend-Bibliothek, hat Probleme mit Systemen, in denen Linux Device Mapper auf eine Weise verwendet wird, die sie nicht versteht. Leider reagiert die Bibliothek auf solche Situationen manchmal mit Speicherzugriffsfehlern, d. h. sie stürzt ab. &partman; versucht deswegen, diese Situationen zu vermeiden, indem es einen alternativen Weg nutzt, um Laufwerke auf Ihrem Rechner zu suchen. Wenn es dies jedoch nicht schafft und sich also auf LibParted verlassen muss, wird eine derartige Meldung ausgegeben. Falls die Suche nach Laufwerken funktioniert, können Sie die Meldung bedenkenlos ignorieren. </para>
 			</answer>
 		</qandaentry>
 <!--
