@@ -1,0 +1,657 @@
+<chapter id="reference">
+	<title
+>Список команд</title>
+
+	<sect1 id="reference-overview">
+		<title
+>Обзор</title>
+		<para
+>В этом разделе приводится подробное описание всех доступных в программе команд. Его можно использовать в качестве справочника, дополняющего информацию из <xref linkend="usermanual"/>.</para>
+
+	<sect2 id="menu-file">
+		<title
+>Меню «Файл»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-file-quit">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Файл</guimenu
+> <guimenuitem
+>Выход</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Выход из программы</action
+> без применения незавершённых операций. Тем не менее, приложение выведет запрос на подтверждение выхода, если такие операции имеются. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-edit">
+		<title
+>Меню «Правка»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-edit-undo">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Правка</guimenu
+> <guimenuitem
+>Отменить</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Отмена последней операции</action
+>, добавленной в список операций. </para>
+						<para
+>Эта команда доступна только в том случае, если список операций не пуст. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-clear">
+					<term>
+						<menuchoice
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Очистить</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Очистка списка операций</action
+> без их применения. </para>
+						<para
+>Эта команда доступна только в том случае, если список операций не пуст. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-apply">
+					<term>
+						<menuchoice
+><guimenu
+>Правка</guimenu
+> <guimenuitem
+>Применить</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Применение списка операций</action
+>. Эта команда применяет все операции из списка, чтобы записать на диски все изменения без возможности отмены. После применения операций список очищается; возможность отменить какую-либо из операций также исчезает. </para>
+						<para
+>Эта команда доступна только в том случае, если список операций не пуст. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-device">
+		<title
+>Меню «Устройство»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-device-selectcurrentdevice">
+					<term>
+						<menuchoice
+><guimenu
+>Устройство</guimenu
+> <guimenuitem
+>Выбрать текущее устройство</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Выбор устройства во вложенном меню со всеми доступными в системе устройствами. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Устройство</guimenu
+> <guimenuitem
+>Обновить список устройств</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Обновление списка устройств</action
+> — эта команда заставляет программу выполнить повторный поиск и чтение устройств на компьютере. Её можно использовать, например, если после запуска программы был подключён внешний жёсткий USB-диск. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-createpartitiontable">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Устройство</guimenu
+> <guimenuitem
+>Создать таблицу разделов</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Создание новой таблицы разделов</action
+> — эта команда создаёт на текущем выбранном устройстве новую пустую таблицу разделов GPT или MSDOS. При выполнении этой команды на устройстве удаляются все разделы и данные в них, поэтому её рекомендуется применять с осторожностью. </para>
+						<para
+>Эта команда доступна только в том случае, если устройство выбрано и в текущий момент не имеет подключённых разделов. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-exportpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Устройство</guimenu
+> <guimenuitem
+>Экспорт таблицы разделов</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Экспорт списка всех разделов на выбранном устройстве в файл. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-importpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>Устройство</guimenu
+> <guimenuitem
+>Импорт таблицы разделов</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Импорт таблицы разделов из ранее экспортированного файла.</para>
+						<para
+>Удаление всех разделов на устройстве вместе со всеми содержащимися в них данными; эту команду рекомендуется использовать с осторожностью.</para>
+						<para
+>Эта команда доступна только в том случае, если устройство выбрано и в текущий момент не имеет подключённых разделов. Текущая версия программы не поддерживает импорт на логические устройства (например, группы томов LVM).</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-smartstatus">
+					<term>
+						<menuchoice
+><guimenu
+>Устройство</guimenu
+> <guimenuitem
+>Состояние SMART</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Отображение отчёта SMART. SMART — это встроенная система диагностики жёстких дисков и твёрдотельных накопителей, которая выполняет анализ и предоставляет данные по различным индикаторам надёжности диска, чтобы позволить спрогнозировать аппаратные сбои.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Устройство</guimenu
+> <guimenuitem
+>Свойства</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Отображение информации о текущих выбранных устройствах. В этом диалоге представлены объём, размеры секторов, тип таблицы разделов, а также используемое и максимальное количество основных разделов.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-partition">
+		<title
+>Меню «Раздел»</title>
+
+		<para>
+			<variablelist>
+				<varlistentry id="menu-partition-new">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Создать</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Создание нового раздела</action
+> — открывает диалог создания нового раздела, где можно указать тип, размер, положение и файловую систему создаваемого раздела. </para>
+						<para
+>Обратите внимание, что таблица разделов на устройстве может ограничивать количество создаваемых разделов. Например, таблицы разделов MS-DOS допускают создание не более чем четырёх основных разделов. </para>
+						<para
+>Эта команда доступна только в том случае, если на устройстве выбрана нераспределённая область. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-resize">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Изменить размер/переместить</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Изменение размера или перемещение раздела</action
+> — открывает диалог для изменения размера или перемещения существующего раздела. В диалоге могут быть доступны не все три возможных действия, относящихся к изменению размера (перемещение раздела, его уменьшение или увеличение); это зависит от файловой системы раздела и установленных на компьютере внешних инструментов. Обратитесь к этому разделу: <xref linkend="menu-tools-filesystemsupport"/>. </para>
+						<para
+>Эта команда доступна только в том случае, если выбранный раздел в текущий момент не подключён, а его файловая система может быть уменьшена, увеличена или перемещена. Для расширенного раздела эта команда будет доступна только в том случае, если ни один из его логических разделов не подключён. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-delete">
+					<term>
+						<menuchoice
+><shortcut
+>&Del;</shortcut
+> <guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Удалить</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Удаление раздела</action
+> — эта команда удаляет текущий выбранный раздел. </para>
+						<para
+>Эта команда доступна только в том случае, если выбранный раздел в текущий момент не подключён. Для расширенного раздела эта команда будет доступна только в том случае, если он не содержит логических разделов. </para>
+						<warning>
+							<title
+>Предупреждение: возможная потеря данных</title>
+							<para
+>Удаление раздела означает уничтожение всех данных в этом разделе.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-shred">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Del;</keycombo
+></shortcut
+> <guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Уничтожить раздел</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Уничтожение раздела</action
+> — эта команда уничтожает текущий выбранный раздел. </para>
+						<para
+>Эта команда доступна только в том случае, если выбранный раздел в текущий момент не подключён. Для расширенного раздела эта команда будет доступна только в том случае, если он не содержит логических разделов. </para>
+						<warning>
+							<title
+>Предупреждение: потеря данных</title>
+							<para
+>Уничтожение раздела означает уничтожение всех данных в этом разделе.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-copy">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Скопировать</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Копирование раздела</action
+> — эта команда копирует текущий выбранный раздел в буфер обмена программы. </para>
+						<para
+>Эта команда доступна только в том случае, если выбранный раздел в текущий момент не подключён, а его файловая система может быть скопирована. Расширенные разделы скопировать нельзя. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-paste">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Вставить</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Вставка раздела</action
+> — эта команда вставляет раздел из буфера обмена программы в текущий выбранный раздел или нераспределённую область. </para>
+						<para
+>При вставке в нераспределённую область будет открыт диалог, где вставленную копию будет можно будет переместить или увеличить. При перезаписи существующего раздела этот диалог показан не будет. </para>
+						<para
+>Эта команда доступна только в том случае, если раздел в настоящее время находится в буфере обмена и выбрано корректное место назначения (либо раздел, либо нераспределённая область). Место назначения не может быть подключённым, а также оно должно быть достаточного размера для размещения копируемого раздела. Раздел нельзя скопировать сам в себя. </para>
+						<warning>
+							<title
+>Предупреждение: возможная потеря данных</title>
+							<para
+>Вставка раздела на место уже существующего раздела означает, что все данные в таком существующем разделе будут уничтожены и заменены данными из вставляемого раздела.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-edit-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Изменить точку подключения</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Открытие диалога</action
+> для изменения точки подключения и параметров подключения. </para>
+						<para
+>Эта команда доступна только в том случае, если раздел не подключён. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Подключить/Отключить</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Подключение или отключение раздела</action
+> — эта команда подключает или отключает выбранный раздел (в зависимости от его текущего состояния). </para>
+						<para
+>Эта команда доступна только в том случае, если выбранный раздел можно подключить или отключить. Если операционной системе неизвестна точка подключения этого раздела, его будет невозможно подключить с помощью диспетчера разделов. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-check">
+					<term>
+						<menuchoice
+><guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Проверить</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Проверка раздела</action
+> — эта команда проверяет выбранный раздел и его файловую систему на наличие ошибок, а также выполняет попытку исправить обнаруженные проблемы. Во время этого процесса также изменяется размер файловой системы раздела, чтобы она занимала его полностью. </para>
+						<para
+>Эта команда доступна только в том случае, если выбранный раздел может быть проверен и в текущий момент не подключён. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-backup">
+					<term>
+						<menuchoice
+><guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Резервная копия</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Резервное копирование раздела</action
+> — эта команда сохраняет резервную копию файловой системы выбранного раздела в файл. После активации этой команды пользователю будет предложено указать, где следует сохранить файл образа. </para>
+						<para
+>Созданный файл образа представляет собой посекторную копию файловой системы раздела. Так как файл не сжимается и к нему не добавляется какая-либо дополнительная метаинформация или заголовок, образ можно напрямую подключить с помощью петлевого устройства вне диспетчера разделов, если это поддерживается операционной системой. </para>
+						<para
+>Эта команда доступна только в том случае, если можно выполнить резервное копирование файловой системы выбранного раздела. Кроме того, раздел должен быть неподключённым. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-restore">
+					<term>
+						<menuchoice
+><guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Восстановление</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Восстановление раздела</action
+> — эта команда восстанавливает в разделе файловую систему из файла образа. После активации этой команды пользователю будет предложено указать имя файла образа, который следует восстановить. Объём места назначения, где будет выполняться восстановление, должен быть достаточным для размещения файла образа. </para>
+						<para
+>Эта команда доступна только в том случае, если выбрана нераспределённая область или не подключённый в текущий момент раздел. </para>
+						<warning>
+							<title
+>Предупреждение: возможная потеря данных</title>
+							<para
+>Восстановление раздела на месте уже существующего раздела означает, что все данные в таком существующем разделе будут уничтожены и заменены данными из файла образа, который восстанавливается.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-properties">
+					<term>
+						<menuchoice
+><guimenu
+>Раздел</guimenu
+> <guimenuitem
+>Свойства</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Отображение свойств раздела</action
+> — эта команда выводит диалог с информацией о текущем выбранном разделе или нераспределённом пространстве. </para>
+						<para
+>Перечень параметров в этом диалоговом окне и их доступность для настройки зависят от типа раздела, типа его файловой системы, а также от того, подключён ли он в настоящее время. </para>
+						<para
+>Например, не все файловые системы поддерживают установку метки. Кроме того, обычно изменение каких бы то ни было свойств не является возможным, если раздел подключён. </para>
+						<para
+>Это перечень всех свойств разделов и файловых систем, которые в принципе могут быть изменены в данном диалоге: <itemizedlist>
+								<listitem>
+									<para
+>Установка или изменение метки файловой системы</para>
+								</listitem>
+								<listitem>
+									<para
+>Изменение файловой системы раздела</para>
+
+									<warning>
+										<title
+>Предупреждение: возможная потеря данных</title>
+										<para
+>Изменение файловой системы раздела всегда означает уничтожение всех данных в этом разделе.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Пересоздание файловой системы раздела</para>
+
+									<warning>
+										<title
+>Предупреждение: возможная потеря данных</title>
+										
+										<para
+>Пересоздание файловой системы раздела всегда означает уничтожение всех данных в этом разделе. Прибегать к пересозданию файловой системы следует только в тех случаях, когда файловую систему раздела уже невозможно восстановить.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>Изменение флагов раздела</para>
+									<para
+>Для каждого раздела в таблице разделов доступно несколько флагов (перечень доступных флагов зависит от типа используемой таблицы разделов). В большинстве случаев изменять флаги не требуется; эту возможность следует считать предназначенной для опытных пользователей.</para>
+								</listitem>
+							</itemizedlist>
+						</para>
+						<para
+>Эта команда доступна только в том случае, если выбрана нераспределённая область или раздел. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>Меню «Сервис»</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Сервис</guimenu
+> <guimenuitem
+>Создать группу томов…</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>Создание нового логического устройства, такого как группа томов <link linkend="glossary-lvm"
+>LVM</link
+>.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>Сервис</guimenu
+> <guimenuitem
+>Поддержка файловых систем</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>Отображение диалога поддержки файловых систем.</action
+> В этом диалоговом окне приводятся подробные сведения о том, какие операции можно выполнить над каждой из поддерживаемых программой файловых систем. </para>
+						<para
+>Пример вида этого диалогового окна при установке большинства внешних инструментов: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>Диалог поддержки файловых систем при установке большинства внешних инструментов</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>Синие отметки означают наличие поддержки, красные отметки — её отсутствие. Некоторые из комбинаций не поддерживаются в принципе (например, проверка файловой системы linuxswap), так как они невозможны в силу самой природы файловых систем. Другие могут не поддерживаться из-за отсутствия соответствующей функциональности во внешних инструментах. </para>
+						<para
+>Если установка новых инструментов была выполнена во время работы программы, нажмите кнопку <guibutton
+>Обновить таблицу поддержки ФС</guibutton
+> для выполнения принудительной повторной проверки установленных инструментов поддержки файловых систем. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-settings-help">
+		<title
+>Меню «Настройка» и «Справка»</title>
+
+		<para
+>В программе присутствуют стандартные меню &kde; <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Настройка</ulink
+> и <ulink url="help:/fundamentals/menus.html#menus-help"
+>Справка</ulink
+> (их описание доступно в разделе справки<ulink url="help:/fundamentals/menus.html"
+>Основы &kde;</ulink
+>), а также дополнительное вложенное меню <guisubmenu
+>Панели</guisubmenu
+>, где можно включать и отключать отображение панелей <guimenuitem
+>Устройства</guimenuitem
+>, <guimenuitem
+>Незавершённые операции</guimenuitem
+>, <guimenuitem
+>Сведения</guimenuitem
+> и <guimenuitem
+>Вывод журнала</guimenuitem
+>. </para>
+	</sect2>
+	</sect1>
+
+</chapter>
