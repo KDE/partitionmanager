@@ -37,7 +37,7 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partitio
         m_deviceNode = luksFs->mapperName();
     }
     labelName().setText(m_deviceNode);
-    labelType().setText(partition().fileSystem().name());
+    labelType().setText(partition().fileSystem().untranslatedName());
 
     bool entryFound = false;
     editPath().setEditable(true);
@@ -63,7 +63,7 @@ EditMountPointDialogWidget::EditMountPointDialogWidget(QWidget* parent, Partitio
             fsName = QStringLiteral("vfat");
             break;
         default:
-            fsName = partition().fileSystem().name({QStringLiteral("C")});
+            fsName = partition().fileSystem().untranslatedName();
         }
 
         m_fstabEntries.push_back(FstabEntry(m_deviceNode, QString(), fsName, QString()));

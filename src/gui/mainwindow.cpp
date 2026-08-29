@@ -1193,7 +1193,7 @@ void MainWindow::onImportPartitionTable()
                 return;
             }
 
-            FileSystem* fs = FileSystemFactory::create(FileSystem::typeForName(fsName, { QStringLiteral("C") }), firstSector, lastSector, device.logicalSize());
+            FileSystem* fs = FileSystemFactory::create(FileSystem::typeForUntranslatedName(fsName), firstSector, lastSector, device.logicalSize());
 
             if (fs == nullptr) {
                 KMessageBox::error(this, xi18nc("@info the partition is NOT a device path, just a number", "Could not create file system \"%1\" for partition %2 (line %3).", fsName, num, lineNo), xi18nc("@title:window", "Error While Importing Partition Table"));
