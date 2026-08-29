@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+
+	<!ENTITY partman-introduction SYSTEM "introduction.docbook">
+	<!ENTITY partman-usermanual SYSTEM "usermanual.docbook">
+	<!ENTITY partman-resizehowto SYSTEM "resizehowto.docbook">
+	<!ENTITY partman-copyhowto SYSTEM "copyhowto.docbook">
+	<!ENTITY partman-installoshowto SYSTEM "installoshowto.docbook">
+	<!ENTITY partman-referencemanual SYSTEM "referencemanual.docbook">
+	<!ENTITY partman-faq SYSTEM "faq.docbook">
+	<!ENTITY partman-credits SYSTEM "credits.docbook">
+	<!ENTITY partman-glossary SYSTEM "glossary.docbook">
+
+	<!ENTITY % addindex "IGNORE">
+	<!ENTITY % Russian "INCLUDE">
+]>
+
+<book id="partitionmanager" lang="&language;">
+	<bookinfo>
+		<title
+>Руководство пользователя диспетчера разделов</title>
+		<authorgroup>
+			<author
+><firstname
+>Volker</firstname
+> <surname
+>Lanz</surname
+> </author>
+			<othercredit role="translator"
+><firstname
+>Олеся</firstname
+><surname
+>Герасименко</surname
+><affiliation
+><address
+><email
+>goa@altlinux.org</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+> 
+		</authorgroup>
+
+		<copyright>
+			<year
+>2008, 2009, 2010</year>
+			<holder
+>Volker Lanz</holder>
+		</copyright>
+
+		<legalnotice
+>&FDLNotice;</legalnotice>
+
+		<date
+>1 декабря 2016 г.</date>
+		<releaseinfo
+>Диспетчер разделов 3.0.0</releaseinfo>
+
+		<abstract>
+			<para
+>Управление дисками, разделами и файловыми системами.</para>
+		</abstract>
+
+		<keywordset>
+			<keyword
+>KDE</keyword>
+			<keyword
+>sysadmin;системный администратор</keyword>
+			<keyword
+>partition;раздел</keyword>
+			<keyword
+>manager;диспетчер</keyword>
+			<keyword
+>disk;диск</keyword>
+			<keyword
+>device;устройство</keyword>
+			<keyword
+>filesystem;файловая система</keyword>
+		</keywordset>
+
+	</bookinfo>
+
+	&partman-introduction;
+
+	&partman-usermanual;
+
+	&partman-referencemanual;
+
+	&partman-faq;
+
+	&partman-credits;
+
+	&partman-glossary;
+
+	&documentation.index;
+
+</book>
+
