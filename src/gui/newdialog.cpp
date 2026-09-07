@@ -239,6 +239,7 @@ void NewDialog::onFilesystemChanged(int idx)
 {
     updateFileSystem(FileSystem::typeForName(dialogWidget().comboFileSystem().itemText(idx)));
 
+    m_IsValidPassword = true;
     setupConstraints();
     updateOkButtonStatus();
 
