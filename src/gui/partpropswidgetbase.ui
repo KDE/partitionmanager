@@ -20,7 +20,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <property name="spacing">
     <number>4</number>
    </property>
-   <item row="19" column="0">
+   <item row="21" column="0">
     <widget class="QLabel" name="m_LabelTextFirstSector">
      <property name="text">
       <string comment="@label">First sector:</string>
@@ -30,21 +30,21 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="6" column="0" colspan="3">
+   <item row="7" column="0" colspan="3">
     <widget class="Line" name="line_5">
      <property name="orientation">
       <enum>Qt::Orientation::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="21" column="2">
+   <item row="23" column="2">
     <widget class="QLabel" name="m_LabelNumSectors">
      <property name="textInteractionFlags">
       <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="15" column="0">
+   <item row="16" column="0">
     <widget class="QLabel" name="m_LabelTextCapacity">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -60,7 +60,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="13" column="0">
+   <item row="14" column="0">
     <widget class="QLabel" name="m_LabelTextPartitionUuid">
      <property name="text">
       <string>Partition UUID:</string>
@@ -70,7 +70,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="4" column="2">
+   <item row="5" column="2">
     <widget class="QLabel" name="m_LabelTextNoSetLabel">
      <property name="text">
       <string comment="@label">This file system does not support setting a label.</string>
@@ -80,7 +80,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="11" column="0">
+   <item row="12" column="0">
     <widget class="QLabel" name="m_LabelTextUuid">
      <property name="text">
       <string comment="@label">UUID:</string>
@@ -90,14 +90,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="20" column="2">
+   <item row="22" column="2">
     <widget class="QLabel" name="m_LabelLastSector">
      <property name="textInteractionFlags">
       <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="20" column="0">
+   <item row="22" column="0">
     <widget class="QLabel" name="m_LabelTextLastSector">
      <property name="text">
       <string comment="@label">Last sector:</string>
@@ -107,28 +107,28 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="18" column="0" colspan="3">
+   <item row="20" column="0" colspan="3">
     <widget class="Line" name="line">
      <property name="orientation">
       <enum>Qt::Orientation::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="14" column="0" colspan="3">
+   <item row="15" column="0" colspan="3">
     <widget class="Line" name="line_2">
      <property name="orientation">
       <enum>Qt::Orientation::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="7" column="2">
+   <item row="8" column="2">
     <widget class="QLabel" name="m_LabelMountPoint">
      <property name="textInteractionFlags">
       <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="10" column="0">
+   <item row="11" column="0">
     <widget class="QLabel" name="m_LabelTextStatus">
      <property name="text">
       <string comment="@label">Status:</string>
@@ -138,7 +138,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="16" column="0">
+   <item row="17" column="0">
     <widget class="QLabel" name="m_LabelTextAvailable">
      <property name="text">
       <string comment="@label partition capacity available">Available:</string>
@@ -148,7 +148,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="23" column="2">
+   <item row="25" column="2">
     <widget class="QListWidget" name="m_ListFlags">
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
@@ -164,28 +164,45 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="17" column="2">
+   <item row="18" column="2">
     <widget class="QLabel" name="m_LabelUsed">
      <property name="textInteractionFlags">
       <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="22" column="0" colspan="3">
-    <widget class="Line" name="m_LineListFlags">
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
+   <item row="19" column="0">
+    <widget class="QLabel" name="m_LabelTextClusterSize">
+     <property name="text">
+      <string comment="@label">Cluster size:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </item>
-   <item row="10" column="2">
-    <widget class="QLabel" name="m_LabelStatus">
+   <item row="19" column="2">
+    <widget class="QLabel" name="m_LabelCurrentClusterSize">
      <property name="textInteractionFlags">
       <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
    <item row="24" column="0" colspan="3">
+    <widget class="Line" name="m_LineListFlags">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="2">
+    <widget class="QLabel" name="m_LabelStatus">
+     <property name="textInteractionFlags">
+      <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
+     </property>
+    </widget>
+   </item>
+   <item row="26" column="0" colspan="3">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Orientation::Vertical</enum>
@@ -217,7 +234,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="4" column="0">
     <widget class="QLabel" name="m_LabelTextLabel">
      <property name="text">
       <string comment="@label">&amp;Label:</string>
@@ -230,14 +247,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="16" column="2">
+   <item row="17" column="2">
     <widget class="QLabel" name="m_LabelAvailable">
      <property name="textInteractionFlags">
       <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="15" column="2">
+   <item row="16" column="2">
     <widget class="QLabel" name="m_LabelCapacity">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -266,21 +283,21 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </spacer>
    </item>
-   <item row="11" column="2">
+   <item row="12" column="2">
     <widget class="QLabel" name="m_LabelUuid">
      <property name="textInteractionFlags">
       <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="9" column="2">
+   <item row="10" column="2">
     <widget class="QLabel" name="m_LabelRole">
      <property name="textInteractionFlags">
       <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="7" column="0">
+   <item row="8" column="0">
     <widget class="QLabel" name="m_LabelTextMountPoint">
      <property name="text">
       <string comment="@label">Mount point:</string>
@@ -290,7 +307,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="13" column="2">
+   <item row="14" column="2">
     <widget class="QLabel" name="m_LabelPartitionUuid">
      <property name="text">
       <string/>
@@ -300,7 +317,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="9" column="0">
+   <item row="10" column="0">
     <widget class="QLabel" name="m_LabelTextRole">
      <property name="text">
       <string comment="@label">Partition type:</string>
@@ -310,7 +327,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="8" column="0">
+   <item row="9" column="0">
     <widget class="QLabel" name="m_LabelTextDevicePath">
      <property name="text">
       <string>Device path:</string>
@@ -320,7 +337,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="21" column="0">
+   <item row="23" column="0">
     <widget class="QLabel" name="m_LabelTextNumSectors">
      <property name="text">
       <string comment="@label">Number of sectors:</string>
@@ -330,7 +347,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="12" column="0">
+   <item row="13" column="0">
     <widget class="QLabel" name="m_LabelTextPartitionLabel">
      <property name="text">
       <string>Partition Name:</string>
@@ -340,7 +357,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="5" column="2">
+   <item row="6" column="2">
     <widget class="QCheckBox" name="m_CheckRecreate">
      <property name="whatsThis">
       <string>This will reformat the filesystem, losing all contents, but keeping the same filesystem type.</string>
@@ -350,14 +367,14 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="19" column="2">
+   <item row="21" column="2">
     <widget class="QLabel" name="m_LabelFirstSector">
      <property name="textInteractionFlags">
       <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
-   <item row="12" column="2">
+   <item row="13" column="2">
     <widget class="QLineEdit" name="m_EditPartitionLabel">
      <property name="text">
       <string/>
@@ -367,7 +384,23 @@ SPDX-License-Identifier: GPL-3.0-or-later
    <item row="2" column="2">
     <widget class="QComboBox" name="m_ComboFileSystem"/>
    </item>
-   <item row="17" column="0">
+   <item row="3" column="0">
+    <widget class="QLabel" name="m_LabelClusterSize">
+     <property name="text">
+      <string comment="@label:listbox">Cluster size:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>m_ComboClusterSize</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QComboBox" name="m_ComboClusterSize"/>
+   </item>
+   <item row="18" column="0">
     <widget class="QLabel" name="m_LabelTextUsed">
      <property name="text">
       <string comment="@label partition capacity used">Used:</string>
@@ -390,7 +423,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="23" column="0">
+   <item row="25" column="0">
     <widget class="QLabel" name="m_LabelTextFlags">
      <property name="text">
       <string comment="@label">&amp;Flags:</string>
@@ -403,10 +436,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
      </property>
     </widget>
    </item>
-   <item row="3" column="2">
+   <item row="4" column="2">
     <widget class="QLineEdit" name="m_EditLabel"/>
    </item>
-   <item row="8" column="2">
+   <item row="9" column="2">
     <widget class="QLabel" name="m_LabelDevicePath">
      <property name="textInteractionFlags">
       <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
@@ -425,6 +458,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
  </customwidgets>
  <tabstops>
   <tabstop>m_ComboFileSystem</tabstop>
+  <tabstop>m_ComboClusterSize</tabstop>
   <tabstop>m_EditLabel</tabstop>
   <tabstop>m_CheckRecreate</tabstop>
   <tabstop>m_ListFlags</tabstop>

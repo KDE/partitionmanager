@@ -12,6 +12,7 @@
 
 #include <QAction>
 #include <QApplication>
+#include <QComboBox>
 #include <QFileInfo>
 #include <QIcon>
 #include <QHeaderView>
@@ -20,9 +21,11 @@
 #include <QPixmap>
 #include <QProcess>
 #include <QRect>
+#include <QSignalBlocker>
 #include <QStandardPaths>
 #include <QString>
 #include <QTreeWidget>
+#include <QVariant>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -114,6 +117,47 @@ std::vector<QColor> fileSystemColorCodesFromSettings()
         cc[i] = Config::fileSystemColorCode(i);
     }
     return cc;
+}
+
+bool fileSystemSupportsClusterSize(const FileSystem& fs)
+{
+    return fs.supportCreateWithFeatures() != FileSystem::cmdSupportNone
+        && fs.availableFeatures().contains(QStringLiteral("cluster-size"));
+}
+
+void populateClusterSizeCombo(QComboBox& combo, const FileSystem& fs, qint64 fileSystemSizeInBytes, bool keepSelection, qint64 preferredValue)
+{
+    qint64 previous = 0;
+    if (keepSelection) {
+        if (combo.count() > 0)
+            previous = combo.currentData().toLongLong();
+        else if (preferredValue > 0)
+            previous = preferredValue;
+        else
+            previous = fs.features().value(QStringLiteral("cluster-size")).toLongLong();
+    }
+
+    const QSignalBlocker blocker(&combo);
+    combo.clear();
+    combo.addItem(xi18nc("@item:inlistbox cluster size", "Automatic"), QVariant(qint64(0)));
+
+    const auto sizes = fs.supportedClusterSizes(fileSystemSizeInBytes);
+    for (const qint64 bytes : sizes)
+        combo.addItem(Capacity::formatByteSize(bytes), QVariant(bytes));
+
+    if (previous > 0 && !sizes.contains(previous)) {
+        combo.addItem(xi18nc("@item:inlistbox a cluster size that is no longer valid",
+                             "%1 (not valid for this size)", Capacity::formatByteSize(previous)),
+                      QVariant(previous));
+    }
+
+    int index = 0;
+    if (previous > 0) {
+        const int found = combo.findData(QVariant(previous));
+        if (found != -1)
+            index = found;
+    }
+    combo.setCurrentIndex(index);
 }
 
 }

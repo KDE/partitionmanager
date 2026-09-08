@@ -386,8 +386,11 @@ void PartitionManagerWidget::onPropertiesPartition()
         QPointer<PartPropsDialog> dlg = new PartPropsDialog(this, *selectedDevice(), p);
 
         if (dlg->exec() == QDialog::Accepted) {
-            if (dlg->newFileSystemType() != p.fileSystem().type() || dlg->forceRecreate())
-                operationStack().push(new CreateFileSystemOperation(*selectedDevice(), p, dlg->newFileSystemType()));
+            const bool clusterParamsChanged = p.state() == Partition::State::New
+                && dlg->clusterSizeFeatures() != p.fileSystem().features();
+
+            if (dlg->newFileSystemType() != p.fileSystem().type() || dlg->forceRecreate() || clusterParamsChanged)
+                operationStack().push(new CreateFileSystemOperation(*selectedDevice(), p, dlg->newFileSystemType(), dlg->clusterSizeFeatures()));
 
             if (dlg->newLabel() != p.fileSystem().label())
                 operationStack().push(new SetFileSystemLabelOperation(p, dlg->newLabel()));

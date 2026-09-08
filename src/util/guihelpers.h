@@ -13,6 +13,7 @@
 
 #include <vector>
 
+class QComboBox;
 class QIcon;
 class QPoint;
 class QString;
@@ -26,6 +27,10 @@ namespace GuiHelpers
 {
 FileSystem::Type defaultFileSystem();
 std::vector<QColor> fileSystemColorCodesFromSettings();
+
+bool fileSystemSupportsClusterSize(const FileSystem& fs);
+
+void populateClusterSizeCombo(QComboBox& combo, const FileSystem& fs, qint64 fileSystemSizeInBytes, bool keepSelection, qint64 preferredValue = 0);
 }
 
 #endif

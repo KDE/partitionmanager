@@ -38,6 +38,7 @@ protected:
     void onRoleChanged(bool);
     void onFilesystemChanged(int);
     void onLabelChanged(const QString& newLabel);
+    void onClusterSizeChanged();
 
     void setupConnections() override;
     void setupDialog() override;
@@ -45,6 +46,12 @@ protected:
     void updateHideAndShow();
     void updateOkButtonStatus() override;
     void updateFileSystem(FileSystem::Type t);
+    void rebuildClusterSizeChoices(bool keepSelection);
+    void setDirty() override;
+
+    bool isValidClusterSize() const {
+        return m_IsValidClusterSize;
+    }
     PartitionRole::Roles partitionRoles() const {
         return m_PartitionRoles;
     }
@@ -63,6 +70,7 @@ protected:
 private:
     PartitionRole::Roles m_PartitionRoles;
     bool m_IsValidPassword;
+    bool m_IsValidClusterSize;
 };
 
 #endif

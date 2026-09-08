@@ -45,6 +45,7 @@ public:
     QString newLabel() const;
     PartitionTable::Flags newFlags() const;
     FileSystem::Type newFileSystemType() const;
+    QVariantMap clusterSizeFeatures() const;
     bool forceRecreate() const {
         return m_ForceRecreate;    /**< @return true if user wants to recreate the FileSystem on the Partition */
     }
@@ -99,6 +100,9 @@ protected:
     void setDirty(void *unused = nullptr);
     void onFilesystemChanged(int idx);
     void onRecreate(int);
+    void onClusterSizeChanged();
+    void onClusterSizeUserChanged();
+    void rebuildClusterSizeChoices(bool keepSelection);
 
 private:
     // m_Device and m_Partition cannot be const because the PartResizerWidget takes
@@ -113,6 +117,9 @@ private:
     PartPropsWidget* m_DialogWidget;
     bool m_ReadOnly;
     bool m_ForceRecreate;
+    bool m_IsValidClusterSize;
+    bool m_ClusterSizeSupported;
+    qint64 m_CurrentClusterSize;
 
     QDialogButtonBox* dialogButtonBox;
     QPushButton* okButton;

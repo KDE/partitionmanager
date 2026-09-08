@@ -27,6 +27,7 @@
 #include <QtGlobal>
 #include <QFontDatabase>
 #include <QPalette>
+#include <QSignalBlocker>
 
 #include <KColorScheme>
 #include <KConfigGroup>
@@ -42,7 +43,8 @@
 NewDialog::NewDialog(QWidget* parent, Device& device, Partition& unallocatedPartition, PartitionRole::Roles r) :
     SizeDialogBase(parent, device, unallocatedPartition, unallocatedPartition.firstSector(), unallocatedPartition.lastSector()),
     m_PartitionRoles(r),
-    m_IsValidPassword(true)
+    m_IsValidPassword(true),
+    m_IsValidClusterSize(true)
 {
     setWindowTitle(xi18nc("@title:window", "Create a new partition"));
 
@@ -152,6 +154,7 @@ void NewDialog::setupConnections()
     connect(&dialogWidget().radioLogical(), &QRadioButton::toggled, this, &NewDialog::onRoleChanged);
     connect(&dialogWidget().checkBoxEncrypt(), &QCheckBox::toggled, this, &NewDialog::onRoleChanged);
     connect(&dialogWidget().comboFileSystem(), &QComboBox::currentIndexChanged, this, &NewDialog::onFilesystemChanged);
+    connect(&dialogWidget().comboClusterSize(), &QComboBox::currentIndexChanged, this, &NewDialog::onClusterSizeChanged);
     connect(&dialogWidget().label(), &QLineEdit::textChanged, this, &NewDialog::onLabelChanged);
     // listen to password status updates
     connect(&dialogWidget().editPassphrase(), &KNewPasswordWidget::passwordStatusChanged, this, &NewDialog::slotPasswordStatusChanged);
@@ -227,6 +230,7 @@ void NewDialog::onRoleChanged(bool)
     dialogWidget().partResizerWidget().update();
 
     updateHideAndShow();
+    rebuildClusterSizeChoices(false);
 }
 
 void NewDialog::updateFileSystem(FileSystem::Type t)
@@ -235,9 +239,56 @@ void NewDialog::updateFileSystem(FileSystem::Type t)
     partition().setFileSystem(FileSystemFactory::create(t, partition().firstSector(), partition().lastSector(), partition().sectorSize()));
 }
 
+void NewDialog::rebuildClusterSizeChoices(bool keepSelection)
+{
+    FileSystem& fs = partition().fileSystem();
+    const bool supported = !partition().roles().has(PartitionRole::Extended)
+        && GuiHelpers::fileSystemSupportsClusterSize(fs);
+
+    dialogWidget().showClusterSize(supported);
+
+    if (!supported) {
+        fs.removeFeature(QStringLiteral("cluster-size"));
+        m_IsValidClusterSize = true;
+        dialogWidget().comboClusterSize().setToolTip(QString());
+        return;
+    }
+
+    GuiHelpers::populateClusterSizeCombo(dialogWidget().comboClusterSize(), fs, partition().capacity(), keepSelection);
+    onClusterSizeChanged();
+}
+
+void NewDialog::onClusterSizeChanged()
+{
+    FileSystem& fs = partition().fileSystem();
+    if (!GuiHelpers::fileSystemSupportsClusterSize(fs) || partition().roles().has(PartitionRole::Extended)) {
+        m_IsValidClusterSize = true;
+        return;
+    }
+
+    const qint64 bytes = dialogWidget().comboClusterSize().currentData().toLongLong();
+    if (bytes > 0)
+        fs.addFeature(QStringLiteral("cluster-size"), QVariant(bytes));
+    else
+        fs.removeFeature(QStringLiteral("cluster-size"));
+
+    const QString error = fs.validateClusterSizeFeature(partition().capacity());
+    m_IsValidClusterSize = error.isEmpty();
+    dialogWidget().comboClusterSize().setToolTip(error);
+
+    updateOkButtonStatus();
+}
+
+void NewDialog::setDirty()
+{
+    rebuildClusterSizeChoices(true);
+}
+
 void NewDialog::onFilesystemChanged(int idx)
 {
     updateFileSystem(FileSystem::typeForName(dialogWidget().comboFileSystem().itemText(idx)));
+
+    rebuildClusterSizeChoices(false);
 
     m_IsValidPassword = true;
     setupConstraints();
@@ -315,7 +366,11 @@ void NewDialog::updateHideAndShow()
 
 void NewDialog::updateOkButtonStatus()
 {
-    okButton->setEnabled(isValidPassword() && isValidLVName());
+    okButton->setEnabled(isValidPassword() && isValidLVName() && isValidClusterSize());
+    if (!isValidClusterSize())
+        okButton->setToolTip(dialogWidget().comboClusterSize().toolTip());
+    else
+        okButton->setToolTip(QString());
 }
 
 bool NewDialog::useUnsecuredPartition() const

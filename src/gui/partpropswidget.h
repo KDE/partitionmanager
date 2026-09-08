@@ -86,6 +86,19 @@ public:
         return *m_LabelUsed;
     }
 
+    QLabel& textCurrentClusterSize() {
+        Q_ASSERT(m_LabelTextClusterSize);
+        return *m_LabelTextClusterSize;
+    }
+    QLabel& currentClusterSize() {
+        Q_ASSERT(m_LabelCurrentClusterSize);
+        return *m_LabelCurrentClusterSize;
+    }
+    void showCurrentClusterSize(bool b) {
+        textCurrentClusterSize().setVisible(b);
+        currentClusterSize().setVisible(b);
+    }
+
     QLabel& textFileSystem() {
         Q_ASSERT(m_LabelFileSystem);
         return *m_LabelFileSystem;
@@ -97,6 +110,23 @@ public:
     const QComboBox& fileSystem() const {
         Q_ASSERT(m_ComboFileSystem);
         return *m_ComboFileSystem;
+    }
+
+    QComboBox& comboClusterSize() {
+        Q_ASSERT(m_ComboClusterSize);
+        return *m_ComboClusterSize;
+    }
+    const QComboBox& comboClusterSize() const {
+        Q_ASSERT(m_ComboClusterSize);
+        return *m_ComboClusterSize;
+    }
+    QLabel& labelClusterSize() {
+        Q_ASSERT(m_LabelClusterSize);
+        return *m_LabelClusterSize;
+    }
+    void showClusterSize(bool b) {
+        labelClusterSize().setVisible(b);
+        comboClusterSize().setVisible(b);
     }
 
     QCheckBox& checkRecreate() {

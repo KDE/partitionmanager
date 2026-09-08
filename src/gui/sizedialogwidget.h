@@ -84,6 +84,19 @@ public:
         return *m_ComboFileSystem;
     }
 
+    QComboBox& comboClusterSize() {
+        Q_ASSERT(m_ComboClusterSize);
+        return *m_ComboClusterSize;
+    }
+    QLabel& labelClusterSize() {
+        Q_ASSERT(m_LabelClusterSize);
+        return *m_LabelClusterSize;
+    }
+    void showClusterSize(bool b) {
+        labelClusterSize().setVisible(b);
+        comboClusterSize().setVisible(b);
+    }
+
     QCheckBox& checkBoxEncrypt() {
         Q_ASSERT(m_CheckBoxEncrypt);
         return *m_CheckBoxEncrypt;
@@ -141,6 +154,10 @@ public:
         m_LabelFileSystem = nullptr;
         delete m_ComboFileSystem;
         m_ComboFileSystem = nullptr;
+        delete m_LabelClusterSize;
+        m_LabelClusterSize = nullptr;
+        delete m_ComboClusterSize;
+        m_ComboClusterSize = nullptr;
         delete m_CheckBoxEncrypt;
         m_CheckBoxEncrypt = nullptr;
         delete m_EditPassphrase;

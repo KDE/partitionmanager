@@ -28,6 +28,8 @@
 #include <QLocale>
 #include <QPalette>
 #include <QPushButton>
+#include <QSignalBlocker>
+#include <QVariant>
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -50,7 +52,10 @@ PartPropsDialog::PartPropsDialog(QWidget* parent, Device& d, Partition& p) :
     m_WarnFileSystemChange(false),
     m_DialogWidget(new PartPropsWidget(this)),
     m_ReadOnly(partition().isMounted() || partition().state() == Partition::State::Copy || partition().state() == Partition::State::Restore || d.partitionTable()->isReadOnly()),
-    m_ForceRecreate(false)
+    m_ForceRecreate(false),
+    m_IsValidClusterSize(true),
+    m_ClusterSizeSupported(false),
+    m_CurrentClusterSize(-1)
 {
     mainLayout = new QVBoxLayout(this);
     setLayout(mainLayout);
@@ -139,6 +144,11 @@ void PartPropsDialog::setupDialog()
 
     dialogWidget().status().setText(statusText);
     dialogWidget().uuid().setText(partition().fileSystem().uuid().isEmpty() ? xi18nc("@item uuid", "(none)") : partition().fileSystem().uuid());
+
+    m_CurrentClusterSize = partition().fileSystem().clusterSize();
+    dialogWidget().currentClusterSize().setText(m_CurrentClusterSize > 0
+        ? Capacity::formatByteSize(m_CurrentClusterSize)
+        : xi18nc("@item cluster size", "(unknown)"));
 
     if(device().partitionTable()->type() == PartitionTable::gpt){
         QString PartitionUUID = partition().uuid().isEmpty() ? xi18nc("@item uuid", "(none)") : partition().uuid();
@@ -246,6 +256,10 @@ void PartPropsDialog::updateHideAndShow()
     dialogWidget().showAvailable(showAvailableAndUsed);
     dialogWidget().showUsed(showAvailableAndUsed);
 
+    dialogWidget().showCurrentClusterSize(showAvailableAndUsed && m_CurrentClusterSize > 0
+        && !warnFileSystemChange() && !forceRecreate()
+        && newFileSystemType() == partition().fileSystem().type());
+
     // when do we show the file system combo box?
     const bool showFileSystem =
         !partition().roles().has(PartitionRole::Extended) &&        // not for extended, they have no file system
@@ -274,6 +288,8 @@ void PartPropsDialog::updateHideAndShow()
     dialogWidget().checkRecreate().setEnabled(!isReadOnly());
     dialogWidget().listFlags().setEnabled(!isReadOnly());
     dialogWidget().fileSystem().setEnabled(!isReadOnly() && !forceRecreate());
+
+    rebuildClusterSizeChoices(true);
 }
 
 void PartPropsDialog::setupConnections()
@@ -285,6 +301,7 @@ void PartPropsDialog::setupConnections()
     connect(&dialogWidget().partitionLabel(), &QLineEdit::textEdited, this, setDirty);
     connect(&dialogWidget().label(), &QLineEdit::textEdited, this, setDirty);
     connect(&dialogWidget().fileSystem(), &QComboBox::currentIndexChanged, this, &PartPropsDialog::onFilesystemChanged);
+    connect(&dialogWidget().comboClusterSize(), &QComboBox::currentIndexChanged, this, &PartPropsDialog::onClusterSizeUserChanged);
 #if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
     connect(&dialogWidget().checkRecreate(), &QCheckBox::stateChanged, this, &PartPropsDialog::onRecreate);
 #else
@@ -302,8 +319,85 @@ void PartPropsDialog::setupConnections()
 
 void PartPropsDialog::setDirty(void*)
 {
-    okButton->setEnabled(true);
+    okButton->setEnabled(m_IsValidClusterSize);
     okButton->setDefault(true);
+}
+
+void PartPropsDialog::rebuildClusterSizeChoices(bool keepSelection)
+{
+    FileSystem& fs = partition().fileSystem();
+
+    m_ClusterSizeSupported = !isReadOnly()
+        && !partition().roles().has(PartitionRole::Extended)
+        && GuiHelpers::fileSystemSupportsClusterSize(fs);
+
+    dialogWidget().showClusterSize(m_ClusterSizeSupported);
+
+    if (!m_ClusterSizeSupported) {
+        fs.removeFeature(QStringLiteral("cluster-size"));
+        m_IsValidClusterSize = true;
+        dialogWidget().comboClusterSize().setToolTip(QString());
+        return;
+    }
+
+    const qint64 preferred = (newFileSystemType() == partition().fileSystem().type()) ? m_CurrentClusterSize : 0;
+    GuiHelpers::populateClusterSizeCombo(dialogWidget().comboClusterSize(), fs, partition().capacity(), keepSelection, preferred);
+    onClusterSizeChanged();
+}
+
+void PartPropsDialog::onClusterSizeUserChanged()
+{
+    const qint64 bytes = dialogWidget().comboClusterSize().currentData().toLongLong();
+
+    if (bytes > 0 && partition().state() != Partition::State::New
+        && !warnFileSystemChange() && !forceRecreate() && !isReadOnly()) {
+
+        dialogWidget().checkRecreate().setChecked(true);
+
+        if (!forceRecreate()) {
+            const QSignalBlocker blocker(&dialogWidget().comboClusterSize());
+            dialogWidget().comboClusterSize().setCurrentIndex(0);
+            onClusterSizeChanged();
+            return;
+        }
+
+        const int idx = dialogWidget().comboClusterSize().findData(QVariant(bytes));
+        const QSignalBlocker blocker(&dialogWidget().comboClusterSize());
+        dialogWidget().comboClusterSize().setCurrentIndex(idx != -1 ? idx : 0);
+    }
+
+    onClusterSizeChanged();
+    setDirty();
+}
+
+void PartPropsDialog::onClusterSizeChanged()
+{
+    if (!m_ClusterSizeSupported) {
+        m_IsValidClusterSize = true;
+        return;
+    }
+
+    FileSystem& fs = partition().fileSystem();
+
+    const qint64 bytes = dialogWidget().comboClusterSize().currentData().toLongLong();
+    if (bytes > 0)
+        fs.addFeature(QStringLiteral("cluster-size"), QVariant(bytes));
+    else
+        fs.removeFeature(QStringLiteral("cluster-size"));
+
+    const QString error = fs.validateClusterSizeFeature(partition().capacity());
+    m_IsValidClusterSize = error.isEmpty();
+    dialogWidget().comboClusterSize().setToolTip(error);
+    okButton->setToolTip(m_IsValidClusterSize ? QString() : error);
+    if (!m_IsValidClusterSize)
+        okButton->setEnabled(false);
+}
+
+QVariantMap PartPropsDialog::clusterSizeFeatures() const
+{
+    if (!m_ClusterSizeSupported)
+        return {};
+    return partition().fileSystem().features();
 }
 
 void PartPropsDialog::setupFileSystemComboBox()
@@ -362,6 +456,8 @@ void PartPropsDialog::updatePartitionFileSystem()
     partition().deleteFileSystem();
     partition().setFileSystem(fs);
     dialogWidget().partWidget().update();
+
+    rebuildClusterSizeChoices(false);
 }
 
 void PartPropsDialog::onFilesystemChanged(int)
