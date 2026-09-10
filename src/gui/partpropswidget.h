@@ -13,6 +13,7 @@
 
 #include "ui_partpropswidgetbase.h"
 
+#include "gui/filesystempropertieswidget.h"
 #include "mainwindow.h"
 #include "util/guihelpers.h"
 
@@ -221,6 +222,11 @@ public:
         return *m_LineListFlags;
     }
 
+    FileSystemPropertiesWidget& fileSystemProperties() {
+        Q_ASSERT(m_FileSystemProperties);
+        return *m_FileSystemProperties;
+    }
+
     void showAvailable(bool b) {
         available().setVisible(b);
         textAvailable().setVisible(b);
@@ -248,6 +254,9 @@ public:
     void showUuid(bool b) {
         textUuid().setVisible(b);
         uuid().setVisible(b);
+    }
+    void showFileSystemProperties(bool b) {
+        fileSystemProperties().setVisible(b);
     }
 };
 

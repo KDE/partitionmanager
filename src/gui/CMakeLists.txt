@@ -18,6 +18,7 @@ set(GUI_SRC
     gui/editmountpointdialogwidget.cpp gui/editmountpointdialogwidget.h
     gui/editmountoptionsdialog.cpp gui/editmountoptionsdialog.h
     gui/editmountoptionsdialogwidget.cpp gui/editmountoptionsdialogwidget.h
+    gui/filesystempropertieswidget.cpp gui/filesystempropertieswidget.h
     gui/filesystemsupportdialog.cpp gui/filesystemsupportdialog.h
     gui/filesystemsupportdialogwidget.cpp gui/filesystemsupportdialogwidget.h
     gui/formattedspinbox.cpp gui/formattedspinbox.h

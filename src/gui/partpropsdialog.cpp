@@ -60,6 +60,7 @@ PartPropsDialog::PartPropsDialog(QWidget* parent, Device& d, Partition& p) :
     mainLayout = new QVBoxLayout(this);
     setLayout(mainLayout);
     mainLayout->addWidget(&dialogWidget());
+    mainLayout->setSizeConstraint(QLayout::SetMinimumSize);
 
     setWindowTitle(xi18nc("@title:window", "Partition properties: <filename>%1</filename>", partition().deviceNode()));
 
@@ -192,12 +193,13 @@ void PartPropsDialog::setupDialog()
     dialogWidget().lastSector().setText(QLocale().toString(partition().lastSector()));
     dialogWidget().numSectors().setText(QLocale().toString(partition().length()));
 
+    dialogWidget().fileSystemProperties().setFileSystem(partition().fileSystem());
+
     setupFlagsList();
 
     updateHideAndShow();
 
-    setMinimumSize(dialogWidget().size());
-    resize(dialogWidget().size());
+    resize(sizeHint());
 }
 
 void PartPropsDialog::setupFlagsList()
@@ -284,6 +286,15 @@ void PartPropsDialog::updateHideAndShow()
         !partition().roles().has(PartitionRole::Unallocated);                   // and not for unallocated space
 
     dialogWidget().showListFlags(showListFlags);
+
+    const bool showFileSystemProperties =
+        partition().state() != Partition::State::New &&
+        !partition().roles().has(PartitionRole::Extended) &&
+        !partition().roles().has(PartitionRole::Unallocated) &&
+        !warnFileSystemChange() &&
+        !dialogWidget().fileSystemProperties().isEmpty();
+
+    dialogWidget().showFileSystemProperties(showFileSystemProperties);
 
     dialogWidget().checkRecreate().setEnabled(!isReadOnly());
     dialogWidget().listFlags().setEnabled(!isReadOnly());
