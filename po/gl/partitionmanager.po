@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-08 00:47+0000\n"
+"POT-Creation-Date: 2026-09-14 00:46+0000\n"
 "PO-Revision-Date: 2025-06-19 09:55+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -2250,7 +2250,7 @@ msgctxt "@title:window"
 msgid "Log Output"
 msgstr "Rexistro da saída"
 
-#: gui/newdialog.cpp:47
+#: gui/newdialog.cpp:49
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a new partition"
@@ -2304,7 +2304,7 @@ msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 (cifrado)"
 
-#: gui/partitionmanagerwidget.cpp:422
+#: gui/partitionmanagerwidget.cpp:425
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2313,13 +2313,13 @@ msgstr ""
 "Non foi posíbel montar o sistema de ficheiros na partición <filename>%1</"
 "filename>."
 
-#: gui/partitionmanagerwidget.cpp:422
+#: gui/partitionmanagerwidget.cpp:425
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "Non foi posíbel montar o sistema de ficheiros"
 
-#: gui/partitionmanagerwidget.cpp:425
+#: gui/partitionmanagerwidget.cpp:428
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2328,13 +2328,13 @@ msgstr ""
 "Non foi posíbel desmontar o sistema de ficheiros na partición <filename>%1</"
 "filename>."
 
-#: gui/partitionmanagerwidget.cpp:425
+#: gui/partitionmanagerwidget.cpp:428
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "Non foi posíbel desmontar o sistema de ficheiros"
 
-#: gui/partitionmanagerwidget.cpp:460
+#: gui/partitionmanagerwidget.cpp:463
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "Change the File System"
@@ -2342,7 +2342,7 @@ msgctxt "@title:window"
 msgid "Take Ownership of File System"
 msgstr "Cambiar o sistema de ficheiros"
 
-#: gui/partitionmanagerwidget.cpp:466
+#: gui/partitionmanagerwidget.cpp:469
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2356,13 +2356,13 @@ msgstr ""
 "Copiado de seguranza do sistema de ficheiros da partición <filename>%1</"
 "filename> en <filename>%2</filename>"
 
-#: gui/partitionmanagerwidget.cpp:473
+#: gui/partitionmanagerwidget.cpp:476
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:481
+#: gui/partitionmanagerwidget.cpp:484
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2370,25 +2370,25 @@ msgid ""
 "may cause problems if some of them are owned by other users."
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:488
+#: gui/partitionmanagerwidget.cpp:491
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:506
+#: gui/partitionmanagerwidget.cpp:509
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:508
+#: gui/partitionmanagerwidget.cpp:511
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:523
+#: gui/partitionmanagerwidget.cpp:526
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Could not delete partition <filename>%1</filename>."
@@ -2396,13 +2396,13 @@ msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
 msgstr "Non foi posíbel borrar a partición <filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:526
+#: gui/partitionmanagerwidget.cpp:529
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:531
+#: gui/partitionmanagerwidget.cpp:534
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2410,13 +2410,13 @@ msgid ""
 "%2</emphasis>."
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:533
+#: gui/partitionmanagerwidget.cpp:536
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:561
+#: gui/partitionmanagerwidget.cpp:564
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2426,13 +2426,13 @@ msgstr ""
 "Non foi posíbel desbloquear o sistema de ficheiros cifrado na partición "
 "<filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:567
+#: gui/partitionmanagerwidget.cpp:570
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "Non foi posíbel desbloquear o sistema de ficheiros cifrado"
 
-#: gui/partitionmanagerwidget.cpp:572
+#: gui/partitionmanagerwidget.cpp:575
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2442,13 +2442,13 @@ msgstr ""
 "Non foi posíbel bloquear o sistema de ficheiros cifrado na partición "
 "<filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:578
+#: gui/partitionmanagerwidget.cpp:581
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "Non foi posíbel bloquear o sistema de ficheiros cifrado"
 
-#: gui/partitionmanagerwidget.cpp:607
+#: gui/partitionmanagerwidget.cpp:610
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2472,13 +2472,13 @@ msgstr[1] ""
 "restaurar unha partición primaria no dispositivo ata que elimine unha das "
 "que contén.</para>"
 
-#: gui/partitionmanagerwidget.cpp:611
+#: gui/partitionmanagerwidget.cpp:614
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "Exceso de particións primarias"
 
-#: gui/partitionmanagerwidget.cpp:674
+#: gui/partitionmanagerwidget.cpp:677
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2492,13 +2492,13 @@ msgstr ""
 "maiores.</para><para>Desmonte antes todas as particións con números lóxicos "
 "maiores que %2.</para>"
 
-#: gui/partitionmanagerwidget.cpp:677
+#: gui/partitionmanagerwidget.cpp:680
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "Non é posíbel eliminar a partición"
 
-#: gui/partitionmanagerwidget.cpp:686
+#: gui/partitionmanagerwidget.cpp:689
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2509,19 +2509,19 @@ msgstr ""
 "Seguro que quere eliminar a partición que está no portapapeis? Deixará de "
 "estar dispoñíbel para pegala despois de que se elimine."
 
-#: gui/partitionmanagerwidget.cpp:688
+#: gui/partitionmanagerwidget.cpp:691
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "Seguro que quere eliminar a partición no portapapeis?"
 
-#: gui/partitionmanagerwidget.cpp:689
+#: gui/partitionmanagerwidget.cpp:692
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "Eliminala"
 
-#: gui/partitionmanagerwidget.cpp:742
+#: gui/partitionmanagerwidget.cpp:745
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2531,13 +2531,13 @@ msgstr ""
 "A partición <filename>%1</filename> terá a mesma posición e tamaño tras "
 "cambiarlle o tamaño ou movela. Ignorarase a operación."
 
-#: gui/partitionmanagerwidget.cpp:770
+#: gui/partitionmanagerwidget.cpp:773
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "A partición <filename>%1</filename> copiouse no portapapeis."
 
-#: gui/partitionmanagerwidget.cpp:833
+#: gui/partitionmanagerwidget.cpp:836
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2555,19 +2555,19 @@ msgstr ""
 "principal, todos os datos que teña en <filename>%1</filename> "
 "substituiranse, e non será posíbel recuperalos.</para>"
 
-#: gui/partitionmanagerwidget.cpp:841
+#: gui/partitionmanagerwidget.cpp:844
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "Seguro que quere substituír a partición existente?"
 
-#: gui/partitionmanagerwidget.cpp:842
+#: gui/partitionmanagerwidget.cpp:845
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "Substituíla"
 
-#: gui/partitionmanagerwidget.cpp:850
+#: gui/partitionmanagerwidget.cpp:853
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2580,13 +2580,13 @@ msgstr ""
 "cambie o tamaño desta partición de xeito que sexa tan grande como a orixe.</"
 "para>"
 
-#: gui/partitionmanagerwidget.cpp:851
+#: gui/partitionmanagerwidget.cpp:854
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "O destino non é grande de abondo"
 
-#: gui/partitionmanagerwidget.cpp:854
+#: gui/partitionmanagerwidget.cpp:857
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2600,13 +2600,13 @@ msgstr ""
 "dispositivo están aliñadas correctamente ou cando se copia unha partición "
 "primaria nunha estendida.</para>"
 
-#: gui/partitionmanagerwidget.cpp:857
+#: gui/partitionmanagerwidget.cpp:860
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "Non é posíbel crear a partición de destino"
 
-#: gui/partitionmanagerwidget.cpp:915
+#: gui/partitionmanagerwidget.cpp:918
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2616,7 +2616,7 @@ msgstr ""
 "O sistema de ficheiros no ficheiro de imaxe <filename>%1</filename> é grande "
 "de máis para restauralo na partición escollida."
 
-#: gui/partitionmanagerwidget.cpp:915
+#: gui/partitionmanagerwidget.cpp:918
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
@@ -2706,60 +2706,68 @@ msgstr "Número de sectores"
 msgid "Flags"
 msgstr "Bandeiras"
 
-#: gui/partpropsdialog.cpp:59
+#: gui/partpropsdialog.cpp:64
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "Propiedades da partición: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:119
+#: gui/partpropsdialog.cpp:124
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(non se atopou ningún)"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:129
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(non se atopou)"
 
-#: gui/partpropsdialog.cpp:130
+#: gui/partpropsdialog.cpp:135
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "ociosa"
 
-#: gui/partpropsdialog.cpp:133
+#: gui/partpropsdialog.cpp:138
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "Hai montada polo menos unha partición lóxica."
 
-#: gui/partpropsdialog.cpp:135
+#: gui/partpropsdialog.cpp:140
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "montada en <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:137
+#: gui/partpropsdialog.cpp:142
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "montada"
 
-#: gui/partpropsdialog.cpp:141 gui/partpropsdialog.cpp:144
+#: gui/partpropsdialog.cpp:146 gui/partpropsdialog.cpp:154
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(ningún)"
 
-#: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
+#: gui/partpropsdialog.cpp:151
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "(unknown)"
+msgctxt "@item cluster size"
+msgid "(unknown)"
+msgstr "(descoñecido)"
+
+#: gui/partpropsdialog.cpp:181 gui/partpropsdialog.cpp:182
 #, kde-format
 msgid "%1% — %2"
 msgstr "%1% — %2"
 
-#: gui/partpropsdialog.cpp:370
+#: gui/partpropsdialog.cpp:466
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2775,7 +2783,7 @@ msgstr ""
 "e aplica na xanela principal a operación resultante, todos os datos que haxa "
 "en <filename>%1</filename> perderanse indefectibelmente.</para>"
 
-#: gui/partpropsdialog.cpp:372
+#: gui/partpropsdialog.cpp:468
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
@@ -2783,19 +2791,19 @@ msgstr ""
 "Seguro que quere crear de novo <filename>%1</filename> co sistema de "
 "ficheiros %2?"
 
-#: gui/partpropsdialog.cpp:373
+#: gui/partpropsdialog.cpp:469
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Cambiar o sistema de ficheiros"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:470
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Non cambiar o sistema de ficheiros"
 
-#: gui/partpropsdialog.cpp:393
+#: gui/partpropsdialog.cpp:489
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2811,7 +2819,7 @@ msgstr ""
 "operación resultante, todos os datos que haxa en <filesystem>%1</filesystem> "
 "perderanse indefectibelmente.</para>"
 
-#: gui/partpropsdialog.cpp:395
+#: gui/partpropsdialog.cpp:491
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
@@ -2819,13 +2827,13 @@ msgstr ""
 "Seguro que quere crear de novo o sistema de ficheiros en <filename>%1</"
 "filename>?"
 
-#: gui/partpropsdialog.cpp:396
+#: gui/partpropsdialog.cpp:492
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Crear de novo o sistema de ficheiros"
 
-#: gui/partpropsdialog.cpp:397
+#: gui/partpropsdialog.cpp:493
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -2886,48 +2894,56 @@ msgctxt "@label partition capacity available"
 msgid "Available:"
 msgstr "Dispoñíbel:"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextClusterSize)
+#: gui/partpropswidgetbase.ui:177
+#, fuzzy, kde-format
+#| msgid "Cylinder size:"
+msgctxt "@label"
+msgid "Cluster size:"
+msgstr "Tamaño dos cilindros:"
+
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:223
+#: gui/partpropswidgetbase.ui:240
 #, kde-format
 msgctxt "@label"
 msgid "&Label:"
 msgstr "&Etiqueta:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:286
+#: gui/partpropswidgetbase.ui:303
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "Punto de montaxe:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:306
+#: gui/partpropswidgetbase.ui:323
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "Tipo de partición:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
-#: gui/partpropswidgetbase.ui:316
+#: gui/partpropswidgetbase.ui:333
 #, kde-format
 msgid "Device path:"
 msgstr "Ruta do dispositivo:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:326
+#: gui/partpropswidgetbase.ui:343
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "Número de sectores:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:336
+#: gui/partpropswidgetbase.ui:353
 #, kde-format
 msgid "Partition Name:"
 msgstr "Nome da partición:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:346
+#: gui/partpropswidgetbase.ui:363
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -2937,28 +2953,36 @@ msgstr ""
 "pero mantendo o mesmo tipo de sistema de ficheiros."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:349
+#: gui/partpropswidgetbase.ui:366
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "Crear de novo o sistema de ficheiros existente."
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
+#: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
+#, fuzzy, kde-format
+#| msgid "Cylinder size:"
+msgctxt "@label:listbox"
+msgid "Cluster size:"
+msgstr "Tamaño dos cilindros:"
+
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:373
+#: gui/partpropswidgetbase.ui:406
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Empregada:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:383
+#: gui/partpropswidgetbase.ui:416
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "Siste&ma de ficheiros:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:396
+#: gui/partpropswidgetbase.ui:429
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
@@ -3085,39 +3109,39 @@ msgid "Si&ze:"
 msgstr "&Tamaño:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
-#: gui/sizedialogwidgetbase.ui:183
+#: gui/sizedialogwidgetbase.ui:199
 #, kde-format
 msgid "Primar&y"
 msgstr "&Primaria"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
-#: gui/sizedialogwidgetbase.ui:190
+#: gui/sizedialogwidgetbase.ui:206
 #, kde-format
 msgid "E&xtended"
 msgstr "E&stendida"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
-#: gui/sizedialogwidgetbase.ui:197
+#: gui/sizedialogwidgetbase.ui:213
 #, kde-format
 msgid "&Logical"
 msgstr "&Lóxica"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/sizedialogwidgetbase.ui:213
+#: gui/sizedialogwidgetbase.ui:229
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File system:"
 msgstr "Sistema de ficheiros:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
-#: gui/sizedialogwidgetbase.ui:249
+#: gui/sizedialogwidgetbase.ui:265
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
 msgstr "Tipo de partición:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:259
+#: gui/sizedialogwidgetbase.ui:275
 #, kde-format
 msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
@@ -3127,31 +3151,31 @@ msgstr ""
 "fornecer unha frase de paso."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:262
+#: gui/sizedialogwidgetbase.ui:278
 #, kde-format
 msgid "Encrypt with LUKS"
 msgstr "Cifrar con LUKS."
 
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
-#: gui/sizedialogwidgetbase.ui:292
+#: gui/sizedialogwidgetbase.ui:308
 #, kde-format
 msgid "Permissions"
 msgstr "Permisos"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:305
+#: gui/sizedialogwidgetbase.ui:321
 #, kde-format
 msgid "Allow everyone to write and read on this device"
 msgstr "Permitir a calquera escribir e ler no dispositivo."
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:308
+#: gui/sizedialogwidgetbase.ui:324
 #, kde-format
 msgid "Everyone"
 msgstr "Calquera"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:315
+#: gui/sizedialogwidgetbase.ui:331
 #, kde-format
 msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
@@ -3161,33 +3185,33 @@ msgstr ""
 "permisos de cartafoles."
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:318
+#: gui/sizedialogwidgetbase.ui:334
 #, kde-format
 msgid "O&nly Root"
 msgstr "Só o &root"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
-#: gui/sizedialogwidgetbase.ui:334
+#: gui/sizedialogwidgetbase.ui:350
 #, kde-format
 msgctxt "@label:listbox"
 msgid "F&ree space before:"
 msgstr "Espazo lib&re anterior:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
-#: gui/sizedialogwidgetbase.ui:347
+#: gui/sizedialogwidgetbase.ui:363
 #, kde-format
 msgid "Logical Volume Name:"
 msgstr "Nome do volume lóxico:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
-#: gui/sizedialogwidgetbase.ui:363
+#: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Free space after:"
 msgstr "Espazo libre posterior:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxLuks2)
-#: gui/sizedialogwidgetbase.ui:376
+#: gui/sizedialogwidgetbase.ui:392
 #, kde-format
 msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
@@ -3197,7 +3221,7 @@ msgstr ""
 "compatibilidade."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
-#: gui/sizedialogwidgetbase.ui:379
+#: gui/sizedialogwidgetbase.ui:395
 #, kde-format
 msgid "Enable LUKS2"
 msgstr "Activar LUKS2."
@@ -3631,7 +3655,7 @@ msgctxt "@label"
 msgid "Preferred unit:"
 msgstr "Unidade preferida:"
 
-#: util/guihelpers.cpp:50
+#: util/guihelpers.cpp:53
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -3642,13 +3666,13 @@ msgstr ""
 "</para> <para>No seu lugar cargarase o complemento de infraestrutura "
 "predeterminado, «%2».</para>"
 
-#: util/guihelpers.cpp:53 util/guihelpers.cpp:60
+#: util/guihelpers.cpp:56 util/guihelpers.cpp:63
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error: Could Not Load Backend Plugin"
 msgstr "Erro: non puido cargarse o complemento de infraestrutura"
 
-#: util/guihelpers.cpp:57
+#: util/guihelpers.cpp:60
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -3659,11 +3683,23 @@ msgstr ""
 "configurado, «%1», nin o predeterminado, «%2».</para> <para>Revise a "
 "instalación.</para>"
 
-#: util/guihelpers.cpp:75
+#: util/guihelpers.cpp:78
 #, kde-kuit-format
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Columnas"
+
+#: util/guihelpers.cpp:142
+#, kde-kuit-format
+msgctxt "@item:inlistbox cluster size"
+msgid "Automatic"
+msgstr ""
+
+#: util/guihelpers.cpp:150
+#, kde-kuit-format
+msgctxt "@item:inlistbox a cluster size that is no longer valid"
+msgid "%1 (not valid for this size)"
+msgstr ""
 
 #~ msgctxt "@info"
 #~ msgid "Do you really want to cancel?"
@@ -3729,9 +3765,6 @@ msgstr "Columnas"
 
 #~ msgid "Cylinders/Heads/Sectors:"
 #~ msgstr "Cilindros/cabezas/sectores:"
-
-#~ msgid "Cylinder size:"
-#~ msgstr "Tamaño dos cilindros:"
 
 #~ msgctxt "@info:shell"
 #~ msgid "Do not try to gain super user privileges"

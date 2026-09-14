@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-08 00:47+0000\n"
+"POT-Creation-Date: 2026-09-14 00:46+0000\n"
 "PO-Revision-Date: 2026-05-26 21:43+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2215,7 +2215,7 @@ msgctxt "@title:window"
 msgid "Log Output"
 msgstr "로그 출력"
 
-#: gui/newdialog.cpp:47
+#: gui/newdialog.cpp:49
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a new partition"
@@ -2269,7 +2269,7 @@ msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 [암호화됨]"
 
-#: gui/partitionmanagerwidget.cpp:422
+#: gui/partitionmanagerwidget.cpp:425
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2277,13 +2277,13 @@ msgid ""
 msgstr ""
 "파티션 <filename>%1</filename>에 있는 파일 시스템을 마운트할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:422
+#: gui/partitionmanagerwidget.cpp:425
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "파일 시스템을 마운트할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:425
+#: gui/partitionmanagerwidget.cpp:428
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2292,13 +2292,13 @@ msgstr ""
 "파티션 <filename>%1</filename>에 있는 파일 시스템을 마운트 해제할 수 없습니"
 "다."
 
-#: gui/partitionmanagerwidget.cpp:425
+#: gui/partitionmanagerwidget.cpp:428
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "파일 시스템을 마운트 해제할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:460
+#: gui/partitionmanagerwidget.cpp:463
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "Change the File System"
@@ -2306,7 +2306,7 @@ msgctxt "@title:window"
 msgid "Take Ownership of File System"
 msgstr "파일 시스템 변경"
 
-#: gui/partitionmanagerwidget.cpp:466
+#: gui/partitionmanagerwidget.cpp:469
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2314,13 +2314,13 @@ msgid ""
 "emphasis>."
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:473
+#: gui/partitionmanagerwidget.cpp:476
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:481
+#: gui/partitionmanagerwidget.cpp:484
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2328,25 +2328,25 @@ msgid ""
 "may cause problems if some of them are owned by other users."
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:488
+#: gui/partitionmanagerwidget.cpp:491
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:506
+#: gui/partitionmanagerwidget.cpp:509
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:508
+#: gui/partitionmanagerwidget.cpp:511
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:523
+#: gui/partitionmanagerwidget.cpp:526
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid "Could not open mount point file <filename>%1</filename>."
@@ -2354,13 +2354,13 @@ msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
 msgstr "마운트 지점 파일 <filename>%1</filename>을(를) 열 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:526
+#: gui/partitionmanagerwidget.cpp:529
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:531
+#: gui/partitionmanagerwidget.cpp:534
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2368,13 +2368,13 @@ msgid ""
 "%2</emphasis>."
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:533
+#: gui/partitionmanagerwidget.cpp:536
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:561
+#: gui/partitionmanagerwidget.cpp:564
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2384,13 +2384,13 @@ msgstr ""
 "파티션 <filename>%1</filename>에 있는 암호화된 파일 시스템의 잠금을 해제할 "
 "수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:567
+#: gui/partitionmanagerwidget.cpp:570
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "암호화된 파일 시스템의 잠글을 해제할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:572
+#: gui/partitionmanagerwidget.cpp:575
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2400,13 +2400,13 @@ msgstr ""
 "파티션 <filename>%1</filename>에 있는 암호화된 파일 시스템을 잠글 수 없습니"
 "다."
 
-#: gui/partitionmanagerwidget.cpp:578
+#: gui/partitionmanagerwidget.cpp:581
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "암호화된 파일 시스템을 잠글 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:607
+#: gui/partitionmanagerwidget.cpp:610
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2425,13 +2425,13 @@ msgstr[0] ""
 "션을 지우지 않는 한 새 파티션을 만들거나, 파티션을 붙여넣거나, 주 파티션을 복"
 "원할 수 없습니다.</para>"
 
-#: gui/partitionmanagerwidget.cpp:611
+#: gui/partitionmanagerwidget.cpp:614
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "주 파티션이 너무 많습니다."
 
-#: gui/partitionmanagerwidget.cpp:674
+#: gui/partitionmanagerwidget.cpp:677
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2444,13 +2444,13 @@ msgstr ""
 "에 파티션 <filename>%1</filename>을(를) 삭제할 수 없습니다.</para> <para>논"
 "리 번호가 %2 이상인 모든 파티션의 마운트를 해제하십시오.</para>"
 
-#: gui/partitionmanagerwidget.cpp:677
+#: gui/partitionmanagerwidget.cpp:680
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "파티션을 삭제할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:686
+#: gui/partitionmanagerwidget.cpp:689
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2461,19 +2461,19 @@ msgstr ""
 "클립보드에 있는 파티션을 삭제하시겠습니까? 삭제된 후에는 파티션을 붙여 넣을 "
 "수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:688
+#: gui/partitionmanagerwidget.cpp:691
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "클립보드의 파티션을 삭제하시겠습니까?"
 
-#: gui/partitionmanagerwidget.cpp:689
+#: gui/partitionmanagerwidget.cpp:692
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "삭제"
 
-#: gui/partitionmanagerwidget.cpp:742
+#: gui/partitionmanagerwidget.cpp:745
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2483,13 +2483,13 @@ msgstr ""
 "파티션 <filename>%1</filename>의 크기 조정/이동 작업 이전과 이후의 위치와 크"
 "기가 일치합니다. 작업을 무시합니다."
 
-#: gui/partitionmanagerwidget.cpp:770
+#: gui/partitionmanagerwidget.cpp:773
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "파티션 <filename>%1</filename>이(가) 클립보드에 복사되었습니다."
 
-#: gui/partitionmanagerwidget.cpp:833
+#: gui/partitionmanagerwidget.cpp:836
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2506,19 +2506,19 @@ msgstr ""
 "는 모든 작업을 적용하면 <filename>%1</filename>에 저장된 모든 데이터를 복구 "
 "불가능한 상태로 덮어씁니다.</para>"
 
-#: gui/partitionmanagerwidget.cpp:841
+#: gui/partitionmanagerwidget.cpp:844
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "존재하는 파티션에 덮어쓰시겠습니까?"
 
-#: gui/partitionmanagerwidget.cpp:842
+#: gui/partitionmanagerwidget.cpp:845
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "파티션 덮어쓰기"
 
-#: gui/partitionmanagerwidget.cpp:850
+#: gui/partitionmanagerwidget.cpp:853
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2530,13 +2530,13 @@ msgstr ""
 "크지 않습니다.</para> <para>다른 대상을 선택하거나 원본 크기 이상으로 파티션 "
 "크기를 조정하십시오.</para>"
 
-#: gui/partitionmanagerwidget.cpp:851
+#: gui/partitionmanagerwidget.cpp:854
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "대상이 충분히 크지 않음"
 
-#: gui/partitionmanagerwidget.cpp:854
+#: gui/partitionmanagerwidget.cpp:857
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2549,13 +2549,13 @@ msgstr ""
 "para> <para>장치의 모든 파티션이 올바르게 정렬되지 않았거나 주 파티션을 확장 "
 "파티션으로 복사할 때 일어날 수 있습니다.</para>"
 
-#: gui/partitionmanagerwidget.cpp:857
+#: gui/partitionmanagerwidget.cpp:860
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "대상 파티션을 만들 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:915
+#: gui/partitionmanagerwidget.cpp:918
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2565,7 +2565,7 @@ msgstr ""
 "이미지 파일 <filename>%1</filename>에 포함된 파일 시스템이 선택한 파티션보다 "
 "커서 복원할 수 없습니다."
 
-#: gui/partitionmanagerwidget.cpp:915
+#: gui/partitionmanagerwidget.cpp:918
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
@@ -2655,60 +2655,68 @@ msgstr "섹터 개수"
 msgid "Flags"
 msgstr "플래그"
 
-#: gui/partpropsdialog.cpp:59
+#: gui/partpropsdialog.cpp:64
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "파티션 속성: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:119
+#: gui/partpropsdialog.cpp:124
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(찾을 수 없음)"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:129
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(찾을 수 없음)"
 
-#: gui/partpropsdialog.cpp:130
+#: gui/partpropsdialog.cpp:135
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "대기"
 
-#: gui/partpropsdialog.cpp:133
+#: gui/partpropsdialog.cpp:138
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "최소한 하나의 논리 파티션이 마운트되었습니다."
 
-#: gui/partpropsdialog.cpp:135
+#: gui/partpropsdialog.cpp:140
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 마운트됨"
 
-#: gui/partpropsdialog.cpp:137
+#: gui/partpropsdialog.cpp:142
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "마운트됨"
 
-#: gui/partpropsdialog.cpp:141 gui/partpropsdialog.cpp:144
+#: gui/partpropsdialog.cpp:146 gui/partpropsdialog.cpp:154
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(없음)"
 
-#: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
+#: gui/partpropsdialog.cpp:151
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "(unknown)"
+msgctxt "@item cluster size"
+msgid "(unknown)"
+msgstr "(알 수 없음)"
+
+#: gui/partpropsdialog.cpp:181 gui/partpropsdialog.cpp:182
 #, kde-format
 msgid "%1% — %2"
 msgstr "%1% — %2"
 
-#: gui/partpropsdialog.cpp:370
+#: gui/partpropsdialog.cpp:466
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2723,26 +2731,26 @@ msgstr ""
 "내용을 삭제합니다. 작업을 계속 진행하면 <filename>%1</filename>에 있는 모든 "
 "데이터를 복구 불가능한 상태로 삭제합니다.</para>"
 
-#: gui/partpropsdialog.cpp:372
+#: gui/partpropsdialog.cpp:468
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "<filename>%1</filename>을(를) %2 파일 시스템으로 다시 생성하시겠습니까?"
 
-#: gui/partpropsdialog.cpp:373
+#: gui/partpropsdialog.cpp:469
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "파일 시스템 변경"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:470
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "파일 시스템 변경하지 않음"
 
-#: gui/partpropsdialog.cpp:393
+#: gui/partpropsdialog.cpp:489
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2757,19 +2765,19 @@ msgstr ""
 "업을 계속 진행하면 <filename>%1</filename>에 있는 모든 데이터를 복구 불가능"
 "한 상태로 삭제합니다.</para>"
 
-#: gui/partpropsdialog.cpp:395
+#: gui/partpropsdialog.cpp:491
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "<filename>%1</filename>에 파일 시스템을 다시 생성하시겠습니까?"
 
-#: gui/partpropsdialog.cpp:396
+#: gui/partpropsdialog.cpp:492
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "파일 시스템 다시 생성"
 
-#: gui/partpropsdialog.cpp:397
+#: gui/partpropsdialog.cpp:493
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -2830,48 +2838,56 @@ msgctxt "@label partition capacity available"
 msgid "Available:"
 msgstr "사용 가능:"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextClusterSize)
+#: gui/partpropswidgetbase.ui:177
+#, fuzzy, kde-format
+#| msgid "Cylinder size:"
+msgctxt "@label"
+msgid "Cluster size:"
+msgstr "실린더 크기:"
+
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:223
+#: gui/partpropswidgetbase.ui:240
 #, kde-format
 msgctxt "@label"
 msgid "&Label:"
 msgstr "레이블(&L):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:286
+#: gui/partpropswidgetbase.ui:303
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "마운트 지점:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:306
+#: gui/partpropswidgetbase.ui:323
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "파티션 종류:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
-#: gui/partpropswidgetbase.ui:316
+#: gui/partpropswidgetbase.ui:333
 #, kde-format
 msgid "Device path:"
 msgstr "장치 경로:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:326
+#: gui/partpropswidgetbase.ui:343
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "섹터 개수:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:336
+#: gui/partpropswidgetbase.ui:353
 #, kde-format
 msgid "Partition Name:"
 msgstr "파티션 이름:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:346
+#: gui/partpropswidgetbase.ui:363
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -2880,28 +2896,36 @@ msgstr ""
 "파일 시스템을 같은 형식으로 다시 포맷하며, 포함된 모든 내용을 삭제합니다."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:349
+#: gui/partpropswidgetbase.ui:366
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "존재하는 파일 시스템 다시 생성"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
+#: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
+#, fuzzy, kde-format
+#| msgid "Cylinder size:"
+msgctxt "@label:listbox"
+msgid "Cluster size:"
+msgstr "실린더 크기:"
+
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:373
+#: gui/partpropswidgetbase.ui:406
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "사용 중:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:383
+#: gui/partpropswidgetbase.ui:416
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "파일 시스템(&M):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:396
+#: gui/partpropswidgetbase.ui:429
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
@@ -3028,39 +3052,39 @@ msgid "Si&ze:"
 msgstr "크기(&Z):"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
-#: gui/sizedialogwidgetbase.ui:183
+#: gui/sizedialogwidgetbase.ui:199
 #, kde-format
 msgid "Primar&y"
 msgstr "주(&Y)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
-#: gui/sizedialogwidgetbase.ui:190
+#: gui/sizedialogwidgetbase.ui:206
 #, kde-format
 msgid "E&xtended"
 msgstr "확장(&X)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
-#: gui/sizedialogwidgetbase.ui:197
+#: gui/sizedialogwidgetbase.ui:213
 #, kde-format
 msgid "&Logical"
 msgstr "논리(&L)"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/sizedialogwidgetbase.ui:213
+#: gui/sizedialogwidgetbase.ui:229
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File system:"
 msgstr "파일 시스템:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
-#: gui/sizedialogwidgetbase.ui:249
+#: gui/sizedialogwidgetbase.ui:265
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
 msgstr "파티션 종류:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:259
+#: gui/sizedialogwidgetbase.ui:275
 #, kde-format
 msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
@@ -3069,31 +3093,31 @@ msgstr ""
 "LUKS를 사용하여 이 파일시스템을 암호화합니다. 사용할 암호를 입력해야 합니다."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:262
+#: gui/sizedialogwidgetbase.ui:278
 #, kde-format
 msgid "Encrypt with LUKS"
 msgstr "LUKS로 암호화"
 
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
-#: gui/sizedialogwidgetbase.ui:292
+#: gui/sizedialogwidgetbase.ui:308
 #, kde-format
 msgid "Permissions"
 msgstr "권한"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:305
+#: gui/sizedialogwidgetbase.ui:321
 #, kde-format
 msgid "Allow everyone to write and read on this device"
 msgstr "모든 사람이 이 장치를 읽거나 쓸 수 있음"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:308
+#: gui/sizedialogwidgetbase.ui:324
 #, kde-format
 msgid "Everyone"
 msgstr "모두"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:315
+#: gui/sizedialogwidgetbase.ui:331
 #, kde-format
 msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
@@ -3101,33 +3125,33 @@ msgid ""
 msgstr "루트만 이 장치를 읽거나 쓸 수 있으며 폴더별 권한을 설정해야 함"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:318
+#: gui/sizedialogwidgetbase.ui:334
 #, kde-format
 msgid "O&nly Root"
 msgstr "루트만(&N)"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
-#: gui/sizedialogwidgetbase.ui:334
+#: gui/sizedialogwidgetbase.ui:350
 #, kde-format
 msgctxt "@label:listbox"
 msgid "F&ree space before:"
 msgstr "이전 빈 공간(&R):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
-#: gui/sizedialogwidgetbase.ui:347
+#: gui/sizedialogwidgetbase.ui:363
 #, kde-format
 msgid "Logical Volume Name:"
 msgstr "논리적 볼륨 이름:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
-#: gui/sizedialogwidgetbase.ui:363
+#: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Free space after:"
 msgstr "이후 빈 공간:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxLuks2)
-#: gui/sizedialogwidgetbase.ui:376
+#: gui/sizedialogwidgetbase.ui:392
 #, kde-format
 msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
@@ -3137,7 +3161,7 @@ msgstr ""
 "있습니다."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
-#: gui/sizedialogwidgetbase.ui:379
+#: gui/sizedialogwidgetbase.ui:395
 #, kde-format
 msgid "Enable LUKS2"
 msgstr "LUKS2 활성화"
@@ -3569,7 +3593,7 @@ msgctxt "@label"
 msgid "Preferred unit:"
 msgstr "선호하는 단위:"
 
-#: util/guihelpers.cpp:50
+#: util/guihelpers.cpp:53
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -3579,13 +3603,13 @@ msgstr ""
 "<para>설정한 백엔드 플러그인 \"%1\"을(를) 불러올 수 없습니다.</para> <para>기"
 "본 백엔드 플러그인 \"%2\"을(를) 사용합니다.</para>"
 
-#: util/guihelpers.cpp:53 util/guihelpers.cpp:60
+#: util/guihelpers.cpp:56 util/guihelpers.cpp:63
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error: Could Not Load Backend Plugin"
 msgstr "오류: 백엔드 플러그인을 불러올 수 없음"
 
-#: util/guihelpers.cpp:57
+#: util/guihelpers.cpp:60
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -3595,11 +3619,23 @@ msgstr ""
 "<para>설정한(\"%1\") 백엔드 플러그인 및 기본(\"%2\") 백엔드 플러그인을 불러"
 "올 수 없습니다.</para> <para>설치 상태를 확인하십시오.</para>"
 
-#: util/guihelpers.cpp:75
+#: util/guihelpers.cpp:78
 #, kde-kuit-format
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "열"
+
+#: util/guihelpers.cpp:142
+#, kde-kuit-format
+msgctxt "@item:inlistbox cluster size"
+msgid "Automatic"
+msgstr ""
+
+#: util/guihelpers.cpp:150
+#, kde-kuit-format
+msgctxt "@item:inlistbox a cluster size that is no longer valid"
+msgid "%1 (not valid for this size)"
+msgstr ""
 
 #~ msgctxt "@info"
 #~ msgid "Do you really want to cancel?"
@@ -3662,9 +3698,6 @@ msgstr "열"
 
 #~ msgid "Cylinders/Heads/Sectors:"
 #~ msgstr "실린더/헤드/섹터:"
-
-#~ msgid "Cylinder size:"
-#~ msgstr "실린더 크기:"
 
 #~ msgctxt "@info:shell"
 #~ msgid "Do not try to gain super user privileges"

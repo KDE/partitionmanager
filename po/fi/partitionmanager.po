@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-08 00:47+0000\n"
+"POT-Creation-Date: 2026-09-14 00:46+0000\n"
 "PO-Revision-Date: 2025-07-11 11:57+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2244,7 +2244,7 @@ msgctxt "@title:window"
 msgid "Log Output"
 msgstr "Lokitulos"
 
-#: gui/newdialog.cpp:47
+#: gui/newdialog.cpp:49
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a new partition"
@@ -2298,33 +2298,33 @@ msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 [salattu]"
 
-#: gui/partitionmanagerwidget.cpp:422
+#: gui/partitionmanagerwidget.cpp:425
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be mounted."
 msgstr "Osion <filename>%1</filename> tiedostojärjestelmää ei voitu liittää."
 
-#: gui/partitionmanagerwidget.cpp:422
+#: gui/partitionmanagerwidget.cpp:425
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "Tiedostojärjestelmää ei voitu liittää."
 
-#: gui/partitionmanagerwidget.cpp:425
+#: gui/partitionmanagerwidget.cpp:428
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The file system on partition <filename>%1</filename> could not be unmounted."
 msgstr "Osion <filename>%1</filename> tiedostojärjestelmää ei voitu irrottaa."
 
-#: gui/partitionmanagerwidget.cpp:425
+#: gui/partitionmanagerwidget.cpp:428
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "Tiedostojärjestelmää ei voitu irrottaa."
 
-#: gui/partitionmanagerwidget.cpp:460
+#: gui/partitionmanagerwidget.cpp:463
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "Change the File System"
@@ -2332,7 +2332,7 @@ msgctxt "@title:window"
 msgid "Take Ownership of File System"
 msgstr "Muuta tiedostojärjestelmää"
 
-#: gui/partitionmanagerwidget.cpp:466
+#: gui/partitionmanagerwidget.cpp:469
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid ""
@@ -2346,13 +2346,13 @@ msgstr ""
 "Varmuuskopioi osion <filename>%1</filename> tiedostojärjestelmä tiedostoon "
 "<filename>%2</filename>."
 
-#: gui/partitionmanagerwidget.cpp:473
+#: gui/partitionmanagerwidget.cpp:476
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:481
+#: gui/partitionmanagerwidget.cpp:484
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2360,25 +2360,25 @@ msgid ""
 "may cause problems if some of them are owned by other users."
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:488
+#: gui/partitionmanagerwidget.cpp:491
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:506
+#: gui/partitionmanagerwidget.cpp:509
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:508
+#: gui/partitionmanagerwidget.cpp:511
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:523
+#: gui/partitionmanagerwidget.cpp:526
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info/plain"
 #| msgid "Could not delete partition <filename>%1</filename>."
@@ -2386,13 +2386,13 @@ msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
 msgstr "Ei voitu poistaa osiota <filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:526
+#: gui/partitionmanagerwidget.cpp:529
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:531
+#: gui/partitionmanagerwidget.cpp:534
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2400,13 +2400,13 @@ msgid ""
 "%2</emphasis>."
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:533
+#: gui/partitionmanagerwidget.cpp:536
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
 msgstr ""
 
-#: gui/partitionmanagerwidget.cpp:561
+#: gui/partitionmanagerwidget.cpp:564
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2416,13 +2416,13 @@ msgstr ""
 "Osion <filename>%1</filename> salatun tiedostojärjestelmän lukitusta ei "
 "voitu avata."
 
-#: gui/partitionmanagerwidget.cpp:567
+#: gui/partitionmanagerwidget.cpp:570
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "Salatun tiedostojärjestelmän lukitusta ei voitu avata."
 
-#: gui/partitionmanagerwidget.cpp:572
+#: gui/partitionmanagerwidget.cpp:575
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2431,13 +2431,13 @@ msgid ""
 msgstr ""
 "Osion <filename>%1</filename> salattua tiedostojärjestelmää ei voitu lukita."
 
-#: gui/partitionmanagerwidget.cpp:578
+#: gui/partitionmanagerwidget.cpp:581
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "Salattua tiedostojärjestelmää ei voitu lukita."
 
-#: gui/partitionmanagerwidget.cpp:607
+#: gui/partitionmanagerwidget.cpp:610
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2459,13 +2459,13 @@ msgstr[1] ""
 "osiotaulukkotyyppi voi hallita.</para><para>Et voi luoda, liittää tai "
 "palauttaa sille ensiöosiota, ennen kuin poistat olemassaolevan.</para>"
 
-#: gui/partitionmanagerwidget.cpp:611
+#: gui/partitionmanagerwidget.cpp:614
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "Liikaa ensiöosioita"
 
-#: gui/partitionmanagerwidget.cpp:674
+#: gui/partitionmanagerwidget.cpp:677
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2479,13 +2479,13 @@ msgstr ""
 "para><para>Irrota ensin kaikki osiot, joilla on suurempi looginen numero "
 "kuin %2.</para>"
 
-#: gui/partitionmanagerwidget.cpp:677
+#: gui/partitionmanagerwidget.cpp:680
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "Osiota ei voi poistaa."
 
-#: gui/partitionmanagerwidget.cpp:686
+#: gui/partitionmanagerwidget.cpp:689
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2496,19 +2496,19 @@ msgstr ""
 "Haluatko varmasti poistaa nyt leikepöydällä olevan osion? Sitä ei tämän "
 "jälkeen voi enää liittää."
 
-#: gui/partitionmanagerwidget.cpp:688
+#: gui/partitionmanagerwidget.cpp:691
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "Haluatko varmasti poistaa leikepöydällä olevan osion?"
 
-#: gui/partitionmanagerwidget.cpp:689
+#: gui/partitionmanagerwidget.cpp:692
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "Poista"
 
-#: gui/partitionmanagerwidget.cpp:742
+#: gui/partitionmanagerwidget.cpp:745
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2518,13 +2518,13 @@ msgstr ""
 "Osiolla <filename>%1</filename> olisi sama sijainti ja koko "
 "toimenpiteenjälkeen: ohitetaan toimenpide."
 
-#: gui/partitionmanagerwidget.cpp:770
+#: gui/partitionmanagerwidget.cpp:773
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "Osio <filename>%1</filename> on kopioitu leikepöydälle."
 
-#: gui/partitionmanagerwidget.cpp:833
+#: gui/partitionmanagerwidget.cpp:836
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2541,19 +2541,19 @@ msgstr ""
 "pääikkunassa odottavaa toimenpidettä, kaikki osion <filename>%1</filename> "
 "data poistetaan pysyvästi.</para>"
 
-#: gui/partitionmanagerwidget.cpp:841
+#: gui/partitionmanagerwidget.cpp:844
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "Korvataanko olemassa oleva osio varmasti?"
 
-#: gui/partitionmanagerwidget.cpp:842
+#: gui/partitionmanagerwidget.cpp:845
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "Korvaa osio"
 
-#: gui/partitionmanagerwidget.cpp:850
+#: gui/partitionmanagerwidget.cpp:853
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2565,13 +2565,13 @@ msgstr ""
 "varmuuskopiotiedostolle.</para><para>Valitse toinen kohde tai kasvata tämä "
 "osio lähteen kokoiseksi.</para>"
 
-#: gui/partitionmanagerwidget.cpp:851
+#: gui/partitionmanagerwidget.cpp:854
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "Kohde ei riittävän suuri"
 
-#: gui/partitionmanagerwidget.cpp:854
+#: gui/partitionmanagerwidget.cpp:857
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2584,13 +2584,13 @@ msgstr ""
 "para><para>Näin voi käydä, elleivät kaikki laitteen osiot ole oikein "
 "kohdistettu tai kopioitaessa ensiöosiota laajennetulle osiolle.</para>"
 
-#: gui/partitionmanagerwidget.cpp:857
+#: gui/partitionmanagerwidget.cpp:860
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "Kohdeosiota ei voi luoda."
 
-#: gui/partitionmanagerwidget.cpp:915
+#: gui/partitionmanagerwidget.cpp:918
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2600,7 +2600,7 @@ msgstr ""
 "Levykuvan <filename>%1</filename> tiedostojärjestelmä on liian suuri "
 "mahtuakseen palautettavaksi valitulle osiolle."
 
-#: gui/partitionmanagerwidget.cpp:915
+#: gui/partitionmanagerwidget.cpp:918
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
@@ -2690,60 +2690,68 @@ msgstr "Sektorien määrä"
 msgid "Flags"
 msgstr "Valitsimet"
 
-#: gui/partpropsdialog.cpp:59
+#: gui/partpropsdialog.cpp:64
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "Osion ominaisuudet: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:119
+#: gui/partpropsdialog.cpp:124
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(mitään ei löytynyt)"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:129
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(ei löytynyt)"
 
-#: gui/partpropsdialog.cpp:130
+#: gui/partpropsdialog.cpp:135
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "jouten"
 
-#: gui/partpropsdialog.cpp:133
+#: gui/partpropsdialog.cpp:138
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "Ainakin yksi looginen osio on liitetty."
 
-#: gui/partpropsdialog.cpp:135
+#: gui/partpropsdialog.cpp:140
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "liitetty kansioon <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:137
+#: gui/partpropsdialog.cpp:142
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "liitetty"
 
-#: gui/partpropsdialog.cpp:141 gui/partpropsdialog.cpp:144
+#: gui/partpropsdialog.cpp:146 gui/partpropsdialog.cpp:154
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(ei mitään)"
 
-#: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
+#: gui/partpropsdialog.cpp:151
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "(unknown)"
+msgctxt "@item cluster size"
+msgid "(unknown)"
+msgstr "(tuntematon)"
+
+#: gui/partpropsdialog.cpp:181 gui/partpropsdialog.cpp:182
 #, kde-format
 msgid "%1% — %2"
 msgstr "%1 % — %2"
 
-#: gui/partpropsdialog.cpp:370
+#: gui/partpropsdialog.cpp:466
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2759,7 +2767,7 @@ msgstr ""
 "pääikkunassa odottavaa toimenpidettä, kaikki data osiolta <filename>%1 </"
 "filename> poistetaan pysyvästi.</para>"
 
-#: gui/partpropsdialog.cpp:372
+#: gui/partpropsdialog.cpp:468
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
@@ -2767,19 +2775,19 @@ msgstr ""
 "Luodaanko osiolle <filename>%1</filename> todella uusi tiedostojärjestelmä "
 "%2?"
 
-#: gui/partpropsdialog.cpp:373
+#: gui/partpropsdialog.cpp:469
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Muuta tiedostojärjestelmää"
 
-#: gui/partpropsdialog.cpp:374
+#: gui/partpropsdialog.cpp:470
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "Älä muuta tiedostojärjestelmää"
 
-#: gui/partpropsdialog.cpp:393
+#: gui/partpropsdialog.cpp:489
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2794,7 +2802,7 @@ msgstr ""
 "poistaa sen koko sisällön. Jos jatkat pääikkunassa odottavaa toimenpidettä, "
 "kaikki osion <filesystem>%1</filesystem> data poistetaan pysyvästi.</para>"
 
-#: gui/partpropsdialog.cpp:395
+#: gui/partpropsdialog.cpp:491
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
@@ -2802,13 +2810,13 @@ msgstr ""
 "Luodaanko varmasti osion <filename>%1</filename> tiedostojärjestelmä "
 "uudelleen?"
 
-#: gui/partpropsdialog.cpp:396
+#: gui/partpropsdialog.cpp:492
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Luo tiedostojärjestelmä uudelleen"
 
-#: gui/partpropsdialog.cpp:397
+#: gui/partpropsdialog.cpp:493
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -2869,48 +2877,56 @@ msgctxt "@label partition capacity available"
 msgid "Available:"
 msgstr "Vapaana:"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelTextClusterSize)
+#: gui/partpropswidgetbase.ui:177
+#, fuzzy, kde-format
+#| msgid "Cylinder size:"
+msgctxt "@label"
+msgid "Cluster size:"
+msgstr "Sylinterikoko:"
+
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:223
+#: gui/partpropswidgetbase.ui:240
 #, kde-format
 msgctxt "@label"
 msgid "&Label:"
 msgstr "&Nimiö:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:286
+#: gui/partpropswidgetbase.ui:303
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "Liitospiste:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:306
+#: gui/partpropswidgetbase.ui:323
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "Osiotyyppi:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
-#: gui/partpropswidgetbase.ui:316
+#: gui/partpropswidgetbase.ui:333
 #, kde-format
 msgid "Device path:"
 msgstr "Laitteen sijainti:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:326
+#: gui/partpropswidgetbase.ui:343
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "Sektorien määrä:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:336
+#: gui/partpropswidgetbase.ui:353
 #, kde-format
 msgid "Partition Name:"
 msgstr "Osion nimi:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:346
+#: gui/partpropswidgetbase.ui:363
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -2920,28 +2936,36 @@ msgstr ""
 "tiedostojärjestelmän tyyppi säilyy samana."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:349
+#: gui/partpropswidgetbase.ui:366
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "Luo olemassa oleva tiedostojärjestelmä uudelleen"
 
+#. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
+#: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
+#, fuzzy, kde-format
+#| msgid "Cylinder size:"
+msgctxt "@label:listbox"
+msgid "Cluster size:"
+msgstr "Sylinterikoko:"
+
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:373
+#: gui/partpropswidgetbase.ui:406
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Käytössä:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:383
+#: gui/partpropswidgetbase.ui:416
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "Tiedosto&järjestelmä:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:396
+#: gui/partpropswidgetbase.ui:429
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
@@ -3068,39 +3092,39 @@ msgid "Si&ze:"
 msgstr "&Koko:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioPrimary)
-#: gui/sizedialogwidgetbase.ui:183
+#: gui/sizedialogwidgetbase.ui:199
 #, kde-format
 msgid "Primar&y"
 msgstr "&Ensiö"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioExtended)
-#: gui/sizedialogwidgetbase.ui:190
+#: gui/sizedialogwidgetbase.ui:206
 #, kde-format
 msgid "E&xtended"
 msgstr "L&aajennettu"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLogical)
-#: gui/sizedialogwidgetbase.ui:197
+#: gui/sizedialogwidgetbase.ui:213
 #, kde-format
 msgid "&Logical"
 msgstr "&Looginen"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/sizedialogwidgetbase.ui:213
+#: gui/sizedialogwidgetbase.ui:229
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File system:"
 msgstr "Tiedostojärjestelmä:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
-#: gui/sizedialogwidgetbase.ui:249
+#: gui/sizedialogwidgetbase.ui:265
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
 msgstr "Osiotyyppi:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:259
+#: gui/sizedialogwidgetbase.ui:275
 #, kde-format
 msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
@@ -3108,31 +3132,31 @@ msgid ""
 msgstr "Salaa tämä tiedostojärjestelmä LUKSilla. Sinulta pyydetään salasana."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
-#: gui/sizedialogwidgetbase.ui:262
+#: gui/sizedialogwidgetbase.ui:278
 #, kde-format
 msgid "Encrypt with LUKS"
 msgstr "Salaa LUKSilla"
 
 #. i18n: ectx: property (text), widget (QLabel, m_labelPermission)
-#: gui/sizedialogwidgetbase.ui:292
+#: gui/sizedialogwidgetbase.ui:308
 #, kde-format
 msgid "Permissions"
 msgstr "Oikeudet"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:305
+#: gui/sizedialogwidgetbase.ui:321
 #, kde-format
 msgid "Allow everyone to write and read on this device"
 msgstr "Salli kaikkien kirjoittaa ja lukea tätä laitetta"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
-#: gui/sizedialogwidgetbase.ui:308
+#: gui/sizedialogwidgetbase.ui:324
 #, kde-format
 msgid "Everyone"
 msgstr "Kaikki"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:315
+#: gui/sizedialogwidgetbase.ui:331
 #, kde-format
 msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
@@ -3142,33 +3166,33 @@ msgstr ""
 "määritettävä kansioittain"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
-#: gui/sizedialogwidgetbase.ui:318
+#: gui/sizedialogwidgetbase.ui:334
 #, kde-format
 msgid "O&nly Root"
 msgstr "&Vain pääkäyttäjä"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
-#: gui/sizedialogwidgetbase.ui:334
+#: gui/sizedialogwidgetbase.ui:350
 #, kde-format
 msgctxt "@label:listbox"
 msgid "F&ree space before:"
 msgstr "Vapaa tila &ennen:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLVName)
-#: gui/sizedialogwidgetbase.ui:347
+#: gui/sizedialogwidgetbase.ui:363
 #, kde-format
 msgid "Logical Volume Name:"
 msgstr "Loogisen taltion nimi:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeAfter)
-#: gui/sizedialogwidgetbase.ui:363
+#: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Free space after:"
 msgstr "Vapaa tila jälkeen:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_CheckBoxLuks2)
-#: gui/sizedialogwidgetbase.ui:376
+#: gui/sizedialogwidgetbase.ui:392
 #, kde-format
 msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
@@ -3178,7 +3202,7 @@ msgstr ""
 "yhteensopivuus saattaa vaarantua."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
-#: gui/sizedialogwidgetbase.ui:379
+#: gui/sizedialogwidgetbase.ui:395
 #, kde-format
 msgid "Enable LUKS2"
 msgstr "Käytä LUKS2:ta"
@@ -3612,7 +3636,7 @@ msgctxt "@label"
 msgid "Preferred unit:"
 msgstr "Suosittu yksikkö:"
 
-#: util/guihelpers.cpp:50
+#: util/guihelpers.cpp:53
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -3622,13 +3646,13 @@ msgstr ""
 "<para>Asetettua taustaosaliitännäistä ”%1” ei voida ladata.</"
 "para><para>Ladataan sen sijaan oletustaustaosaliitännäinen ”%2”.</para>"
 
-#: util/guihelpers.cpp:53 util/guihelpers.cpp:60
+#: util/guihelpers.cpp:56 util/guihelpers.cpp:63
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error: Could Not Load Backend Plugin"
 msgstr "Virhe: Ei voida ladata taustaosaliitännäistä"
 
-#: util/guihelpers.cpp:57
+#: util/guihelpers.cpp:60
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -3638,11 +3662,23 @@ msgstr ""
 "<para>Sen paremmin asetettua (”%1”) kuin oletustaustaosaliitännäistäkään "
 "(”%2”) ei voida ladata.</para><para>Tarkista asennuksesi.</para>"
 
-#: util/guihelpers.cpp:75
+#: util/guihelpers.cpp:78
 #, kde-kuit-format
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Sarakkeet"
+
+#: util/guihelpers.cpp:142
+#, kde-kuit-format
+msgctxt "@item:inlistbox cluster size"
+msgid "Automatic"
+msgstr ""
+
+#: util/guihelpers.cpp:150
+#, kde-kuit-format
+msgctxt "@item:inlistbox a cluster size that is no longer valid"
+msgid "%1 (not valid for this size)"
+msgstr ""
 
 #~ msgctxt "@info"
 #~ msgid "Do you really want to cancel?"
@@ -3707,9 +3743,6 @@ msgstr "Sarakkeet"
 
 #~ msgid "Cylinders/Heads/Sectors:"
 #~ msgstr "Sylinterejä/päitä/sektoreja:"
-
-#~ msgid "Cylinder size:"
-#~ msgstr "Sylinterikoko:"
 
 #~ msgctxt "@info:shell"
 #~ msgid "Do not try to gain super user privileges"
