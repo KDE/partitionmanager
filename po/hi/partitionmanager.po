@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-14 00:46+0000\n"
+"POT-Creation-Date: 2026-09-16 00:48+0000\n"
 "PO-Revision-Date: 2024-12-15 19:46+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -970,6 +970,129 @@ msgstr "यू&आईडी"
 #, kde-format
 msgid "&Label"
 msgstr "&लेबल"
+
+#: gui/filesystempropertieswidget.cpp:38
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Block size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:39
+#, fuzzy, kde-kuit-format
+#| msgid "Logical sector size:"
+msgctxt "@label"
+msgid "Sector size"
+msgstr "तार्किक क्षेत्र का आकार:"
+
+#: gui/filesystempropertieswidget.cpp:40
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Metadata node size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:41
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:tooltip"
+#| msgid "Check partition"
+msgctxt "@label"
+msgid "Checksum algorithm"
+msgstr "विभाजन की जाँच करें"
+
+#: gui/filesystempropertieswidget.cpp:42
+#, kde-kuit-format
+msgctxt "@label"
+msgid "MFT record size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:43
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label partition"
+#| msgid "Key size:"
+msgctxt "@label"
+msgid "Inode size"
+msgstr "कुंजी का आकार:"
+
+#: gui/filesystempropertieswidget.cpp:44
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Inode count"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:45
+#, fuzzy, kde-kuit-format
+#| msgid "Number of Sectors"
+msgctxt "@label"
+msgid "Number of FATs"
+msgstr "सेक्टरों की संख्या"
+
+#: gui/filesystempropertieswidget.cpp:46
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Enabled features"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:47
+#, fuzzy, kde-kuit-format
+#| msgid "Information"
+msgctxt "@label"
+msgid "Format version"
+msgstr "जानकारी"
+
+#: gui/filesystempropertieswidget.cpp:48
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Journal size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:49
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:50
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space, percent"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:51
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved block count"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:52
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space owner (UID)"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:53
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space owner (GID)"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:81
+#, fuzzy, kde-kuit-format
+#| msgid "unknown:"
+msgctxt "@item filesystem property whose value could not be read"
+msgid "Unknown"
+msgstr "अज्ञात:"
+
+#: gui/filesystempropertieswidget.cpp:89
+#, fuzzy, kde-kuit-format
+#| msgid "%1%2"
+msgctxt "@item value in percent"
+msgid "%1%"
+msgstr "%1%2"
+
+#: gui/filesystempropertieswidget.cpp:148
+#, kde-kuit-format
+msgctxt "@label"
+msgid "%1:"
+msgstr ""
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -2663,55 +2786,55 @@ msgstr "सेक्टरों की संख्या"
 msgid "Flags"
 msgstr "झंडे"
 
-#: gui/partpropsdialog.cpp:64
+#: gui/partpropsdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "विभाजन गुण: <फ़ाइलनाम>%1</फ़ाइलनाम>"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(कोई नहीं मिला)"
 
-#: gui/partpropsdialog.cpp:129
+#: gui/partpropsdialog.cpp:130
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(नहीं मिला)"
 
-#: gui/partpropsdialog.cpp:135
+#: gui/partpropsdialog.cpp:136
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "निठल्ला"
 
-#: gui/partpropsdialog.cpp:138
+#: gui/partpropsdialog.cpp:139
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "कम से कम एक तार्किक विभाजन माउंट किया गया है."
 
-#: gui/partpropsdialog.cpp:140
+#: gui/partpropsdialog.cpp:141
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "<फ़ाइलनाम>%1</फ़ाइलनाम> पर माउंट किया गया"
 
-#: gui/partpropsdialog.cpp:142
+#: gui/partpropsdialog.cpp:143
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "घुड़सवार"
 
-#: gui/partpropsdialog.cpp:146 gui/partpropsdialog.cpp:154
+#: gui/partpropsdialog.cpp:147 gui/partpropsdialog.cpp:155
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(कोई नहीं)"
 
-#: gui/partpropsdialog.cpp:151
+#: gui/partpropsdialog.cpp:152
 #, fuzzy, kde-kuit-format
 #| msgctxt "@label"
 #| msgid "(unknown)"
@@ -2719,12 +2842,12 @@ msgctxt "@item cluster size"
 msgid "(unknown)"
 msgstr "(अज्ञात)"
 
-#: gui/partpropsdialog.cpp:181 gui/partpropsdialog.cpp:182
+#: gui/partpropsdialog.cpp:182 gui/partpropsdialog.cpp:183
 #, kde-format
 msgid "%1% — %2"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:466
+#: gui/partpropsdialog.cpp:477
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2739,26 +2862,26 @@ msgstr ""
 "सामग्री मिट जाएगी। यदि आप अभी जारी रखते हैं और मुख्य विंडो में परिणामी ऑपरेशन लागू करते "
 "हैं, तो <filename>%1</filename> पर सभी डेटा अप्राप्य रूप से खो जाएगा।</para>"
 
-#: gui/partpropsdialog.cpp:468
+#: gui/partpropsdialog.cpp:479
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "क्या आप वास्तव में फ़ाइल सिस्टम %2 के साथ <filename>%1</filename> को पुनः बना सकते हैं?"
 
-#: gui/partpropsdialog.cpp:469
+#: gui/partpropsdialog.cpp:480
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "फ़ाइल सिस्टम बदलें"
 
-#: gui/partpropsdialog.cpp:470
+#: gui/partpropsdialog.cpp:481
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "फ़ाइल सिस्टम न बदलें"
 
-#: gui/partpropsdialog.cpp:489
+#: gui/partpropsdialog.cpp:500
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2773,19 +2896,19 @@ msgstr ""
 "यदि आप अभी जारी रखते हैं और मुख्य विंडो में परिणामी ऑपरेशन लागू करते हैं, तो <filesystem>"
 "%1</filesystem> पर सभी डेटा अप्राप्य रूप से खो जाएगा।</para>"
 
-#: gui/partpropsdialog.cpp:491
+#: gui/partpropsdialog.cpp:502
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "क्या <filename>%1</filename> पर फ़ाइल सिस्टम को सचमुच पुनः बनाया जा सकता है?"
 
-#: gui/partpropsdialog.cpp:492
+#: gui/partpropsdialog.cpp:503
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "फ़ाइल सिस्टम पुनः बनाएँ"
 
-#: gui/partpropsdialog.cpp:493
+#: gui/partpropsdialog.cpp:504
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -2856,47 +2979,47 @@ msgid "Cluster size:"
 msgstr "कुंजी का आकार:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:240
+#: gui/partpropswidgetbase.ui:243
 #, kde-format
 msgctxt "@label"
 msgid "&Label:"
 msgstr "&लेबल:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:303
+#: gui/partpropswidgetbase.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "माउंट पॉइंट:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:323
+#: gui/partpropswidgetbase.ui:326
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "विभाजन प्रकार:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
-#: gui/partpropswidgetbase.ui:333
+#: gui/partpropswidgetbase.ui:336
 #, kde-format
 msgid "Device path:"
 msgstr "डिवाइस पथ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:343
+#: gui/partpropswidgetbase.ui:346
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "सेक्टरों की संख्या:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:353
+#: gui/partpropswidgetbase.ui:356
 #, kde-format
 msgid "Partition Name:"
 msgstr "विभाजन का नाम:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:363
+#: gui/partpropswidgetbase.ui:366
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -2906,14 +3029,14 @@ msgstr ""
 "का प्रकार वही रहेगा।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:366
+#: gui/partpropswidgetbase.ui:369
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "मौजूदा फ़ाइल सिस्टम को पुनः बनाएँ"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
-#: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
+#: gui/partpropswidgetbase.ui:393 gui/sizedialogwidgetbase.ui:180
 #, fuzzy, kde-format
 #| msgctxt "@label partition"
 #| msgid "Key size:"
@@ -2922,21 +3045,21 @@ msgid "Cluster size:"
 msgstr "कुंजी का आकार:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:406
+#: gui/partpropswidgetbase.ui:409
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "इस्तेमाल किया गया:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:416
+#: gui/partpropswidgetbase.ui:419
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "फाइल सिस्टम:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:429
+#: gui/partpropswidgetbase.ui:432
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"

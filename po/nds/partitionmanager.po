@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-14 00:46+0000\n"
+"POT-Creation-Date: 2026-09-16 00:48+0000\n"
 "PO-Revision-Date: 2014-03-12 23:25+0100\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1021,6 +1021,134 @@ msgstr ""
 #| msgid "&Label:"
 msgid "&Label"
 msgstr "&Beteker:"
+
+#: gui/filesystempropertieswidget.cpp:38
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Block size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:39
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label device"
+#| msgid "Sectors:"
+msgctxt "@label"
+msgid "Sector size"
+msgstr "Sektoren:"
+
+#: gui/filesystempropertieswidget.cpp:40
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Metadata node size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:41
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:tooltip"
+#| msgid "Check partition"
+msgctxt "@label"
+msgid "Checksum algorithm"
+msgstr "Partitschoon pröven"
+
+#: gui/filesystempropertieswidget.cpp:42
+#, kde-kuit-format
+msgctxt "@label"
+msgid "MFT record size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:43
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label device"
+#| msgid "Cylinder size:"
+msgctxt "@label"
+msgid "Inode size"
+msgstr "Zylinnergrött:"
+
+#: gui/filesystempropertieswidget.cpp:44
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Inode count"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:45
+#, fuzzy, kde-kuit-format
+#| msgid "Number of Sectors"
+msgctxt "@label"
+msgid "Number of FATs"
+msgstr "Tall vun Sektoren"
+
+#: gui/filesystempropertieswidget.cpp:46
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Enabled features"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:47
+#, fuzzy, kde-kuit-format
+#| msgid "Program version:"
+msgctxt "@label"
+msgid "Format version"
+msgstr "Programmverschoon:"
+
+#: gui/filesystempropertieswidget.cpp:48
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Journal size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:49
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:50
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space, percent"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:51
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved block count"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:52
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space owner (UID)"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:53
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space owner (GID)"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:81
+#, fuzzy, kde-kuit-format
+#| msgctxt "@item/plain partition table name"
+#| msgid "unknown"
+msgctxt "@item filesystem property whose value could not be read"
+msgid "Unknown"
+msgstr "nich begäng"
+
+#: gui/filesystempropertieswidget.cpp:89
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain job status (error, warning, ...)"
+#| msgid "%1: %2"
+msgctxt "@item value in percent"
+msgid "%1%"
+msgstr "%1: %2"
+
+#: gui/filesystempropertieswidget.cpp:148
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain job status (error, warning, ...)"
+#| msgid "%1: %2"
+msgctxt "@label"
+msgid "%1:"
+msgstr "%1: %2"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -2881,19 +3009,19 @@ msgstr "Tall vun Sektoren"
 msgid "Flags"
 msgstr "Marken"
 
-#: gui/partpropsdialog.cpp:64
+#: gui/partpropsdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "Partitschoon-Egenschappen: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(keen funnen)"
 
-#: gui/partpropsdialog.cpp:129
+#: gui/partpropsdialog.cpp:130
 #, fuzzy, kde-kuit-format
 #| msgctxt "@item mountpoint"
 #| msgid "(none found)"
@@ -2901,37 +3029,37 @@ msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(keen funnen)"
 
-#: gui/partpropsdialog.cpp:135
+#: gui/partpropsdialog.cpp:136
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "töövt"
 
-#: gui/partpropsdialog.cpp:138
+#: gui/partpropsdialog.cpp:139
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "Tominnst een logisch Partitschoon is inhangt."
 
-#: gui/partpropsdialog.cpp:140
+#: gui/partpropsdialog.cpp:141
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "inhangt op <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:142
+#: gui/partpropsdialog.cpp:143
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "inhangt"
 
-#: gui/partpropsdialog.cpp:146 gui/partpropsdialog.cpp:154
+#: gui/partpropsdialog.cpp:147 gui/partpropsdialog.cpp:155
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(keen)"
 
-#: gui/partpropsdialog.cpp:151
+#: gui/partpropsdialog.cpp:152
 #, fuzzy, kde-kuit-format
 #| msgctxt "@label"
 #| msgid "(unknown)"
@@ -2939,12 +3067,12 @@ msgctxt "@item cluster size"
 msgid "(unknown)"
 msgstr "(nich begäng)"
 
-#: gui/partpropsdialog.cpp:181 gui/partpropsdialog.cpp:182
+#: gui/partpropsdialog.cpp:182 gui/partpropsdialog.cpp:183
 #, kde-format
 msgid "%1% — %2"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:466
+#: gui/partpropsdialog.cpp:477
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2967,13 +3095,13 @@ msgstr ""
 "föhrst de Akschoon binnen dat Hööftfinster ut, kaamt all Daten op  <filename>"
 "%1</filename> duerhaftig weg, se laat sik denn nich wedderherstellen.</para>"
 
-#: gui/partpropsdialog.cpp:468
+#: gui/partpropsdialog.cpp:479
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr "<filename>%1</filename> redig mit %2-Dateisysteem nieg opstellen?"
 
-#: gui/partpropsdialog.cpp:469
+#: gui/partpropsdialog.cpp:480
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Change the File System"
@@ -2981,7 +3109,7 @@ msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "Dateisysteem ä&nnern"
 
-#: gui/partpropsdialog.cpp:470
+#: gui/partpropsdialog.cpp:481
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Change the File System"
@@ -2989,7 +3117,7 @@ msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "&Dateisysteem nich ännern"
 
-#: gui/partpropsdialog.cpp:489
+#: gui/partpropsdialog.cpp:500
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -3012,13 +3140,13 @@ msgstr ""
 "binnen dat Hööftfinster ut, kaamt all Daten op <filename>%1</filename> "
 "duerhaftig weg, se laat sik denn nich wedderherstellen.</para>"
 
-#: gui/partpropsdialog.cpp:491
+#: gui/partpropsdialog.cpp:502
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "Dateisysteem op <filename>%1</filename> redig nieg opstellen?"
 
-#: gui/partpropsdialog.cpp:492
+#: gui/partpropsdialog.cpp:503
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Recreate the File System"
@@ -3026,7 +3154,7 @@ msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "Dateisysteem &nieg opstellen"
 
-#: gui/partpropsdialog.cpp:493
+#: gui/partpropsdialog.cpp:504
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Recreate the File System"
@@ -3099,7 +3227,7 @@ msgid "Cluster size:"
 msgstr "Zylinnergrött:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:240
+#: gui/partpropswidgetbase.ui:243
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "&Label:"
@@ -3108,21 +3236,21 @@ msgid "&Label:"
 msgstr "&Beteker:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:303
+#: gui/partpropswidgetbase.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "Inhangsteed:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:323
+#: gui/partpropswidgetbase.ui:326
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "Partitschoon-Typ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
-#: gui/partpropswidgetbase.ui:333
+#: gui/partpropswidgetbase.ui:336
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Device"
@@ -3130,21 +3258,21 @@ msgid "Device path:"
 msgstr "Reedschap"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:343
+#: gui/partpropswidgetbase.ui:346
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "Tall vun Sektoren:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:353
+#: gui/partpropswidgetbase.ui:356
 #, fuzzy, kde-format
 #| msgid "Partition table:"
 msgid "Partition Name:"
 msgstr "Partitschonentabell:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:363
+#: gui/partpropswidgetbase.ui:366
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -3152,14 +3280,14 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:366
+#: gui/partpropswidgetbase.ui:369
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "Vörhannen Dateisysteem nieg opstellen"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
-#: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
+#: gui/partpropswidgetbase.ui:393 gui/sizedialogwidgetbase.ui:180
 #, fuzzy, kde-format
 #| msgid "Cylinder size:"
 msgctxt "@label:listbox"
@@ -3167,14 +3295,14 @@ msgid "Cluster size:"
 msgstr "Zylinnergrött:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:406
+#: gui/partpropswidgetbase.ui:409
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "Bruukt:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:416
+#: gui/partpropswidgetbase.ui:419
 #, fuzzy, kde-format
 #| msgctxt "@label:listbox"
 #| msgid "File system:"
@@ -3183,7 +3311,7 @@ msgid "File syste&m:"
 msgstr "Dateisysteem:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:429
+#: gui/partpropswidgetbase.ui:432
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Flags:"
@@ -4125,14 +4253,6 @@ msgstr ""
 #~ msgid "Cylinders:"
 #~ msgstr "Zylinners:"
 
-#~ msgctxt "@label device"
-#~ msgid "Sectors:"
-#~ msgstr "Sektoren:"
-
-#~ msgctxt "@label device"
-#~ msgid "Cylinder size:"
-#~ msgstr "Zylinnergrött:"
-
 #~ msgctxt "@info"
 #~ msgid "Could not open mount point file <filename>%1</filename>."
 #~ msgstr ""
@@ -4391,13 +4511,6 @@ msgstr ""
 #~ msgctxt "@item partition flag"
 #~ msgid "msft-reserved"
 #~ msgstr "Msft-reserveert"
-
-#, fuzzy
-#~| msgctxt "@item/plain partition table name"
-#~| msgid "unknown"
-#~ msgctxt "@item partition table name"
-#~ msgid "unknown"
-#~ msgstr "nich begäng"
 
 #~ msgctxt "@item:intable"
 #~ msgid "failing"
@@ -5182,10 +5295,6 @@ msgstr ""
 #~ msgid "Job: %1"
 #~ msgstr "Opgaav: %1"
 
-#~ msgctxt "@info/plain job status (error, warning, ...)"
-#~ msgid "%1: %2"
-#~ msgstr "%1: %2"
-
 #~ msgctxt "@info:progress job"
 #~ msgid "Pending"
 #~ msgstr "Utstahn"
@@ -5951,9 +6060,6 @@ msgstr ""
 
 #~ msgid "Date:"
 #~ msgstr "Datum:"
-
-#~ msgid "Program version:"
-#~ msgstr "Programmverschoon:"
 
 #~ msgid "Backend:"
 #~ msgstr "Hülpprogramm:"

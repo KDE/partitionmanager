@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-14 00:46+0000\n"
+"POT-Creation-Date: 2026-09-16 00:48+0000\n"
 "PO-Revision-Date: 2010-03-06 19:47+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -1057,6 +1057,134 @@ msgstr ""
 #| msgid "&Label:"
 msgid "&Label"
 msgstr "ป้า&ยชื่อ:"
+
+#: gui/filesystempropertieswidget.cpp:38
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Block size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:39
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label device"
+#| msgid "Sectors:"
+msgctxt "@label"
+msgid "Sector size"
+msgstr "จำนวนเซกเตอร์:"
+
+#: gui/filesystempropertieswidget.cpp:40
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Metadata node size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:41
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:tooltip"
+#| msgid "Check partition"
+msgctxt "@label"
+msgid "Checksum algorithm"
+msgstr "ตรวจสอบพาร์ทิชัน"
+
+#: gui/filesystempropertieswidget.cpp:42
+#, kde-kuit-format
+msgctxt "@label"
+msgid "MFT record size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:43
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label device"
+#| msgid "Cylinder size:"
+msgctxt "@label"
+msgid "Inode size"
+msgstr "ขนาดของไซลินเดอร์:"
+
+#: gui/filesystempropertieswidget.cpp:44
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Inode count"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:45
+#, fuzzy, kde-kuit-format
+#| msgid "Number of Sectors"
+msgctxt "@label"
+msgid "Number of FATs"
+msgstr "เซกเตอร์ทั้งหมด"
+
+#: gui/filesystempropertieswidget.cpp:46
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Enabled features"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:47
+#, fuzzy, kde-kuit-format
+#| msgid "Program version:"
+msgctxt "@label"
+msgid "Format version"
+msgstr "รุ่นของโปรแกรม:"
+
+#: gui/filesystempropertieswidget.cpp:48
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Journal size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:49
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:50
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space, percent"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:51
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved block count"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:52
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space owner (UID)"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:53
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space owner (GID)"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:81
+#, fuzzy, kde-kuit-format
+#| msgctxt "@item/plain partition table name"
+#| msgid "unknown"
+msgctxt "@item filesystem property whose value could not be read"
+msgid "Unknown"
+msgstr "ไม่ทราบ"
+
+#: gui/filesystempropertieswidget.cpp:89
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain job status (error, warning, ...)"
+#| msgid "%1: %2"
+msgctxt "@item value in percent"
+msgid "%1%"
+msgstr "%1: %2"
+
+#: gui/filesystempropertieswidget.cpp:148
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info/plain job status (error, warning, ...)"
+#| msgid "%1: %2"
+msgctxt "@label"
+msgid "%1:"
+msgstr "%1: %2"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -2881,19 +3009,19 @@ msgstr "เซกเตอร์ทั้งหมด"
 msgid "Flags"
 msgstr "แฟล็กต่าง ๆ"
 
-#: gui/partpropsdialog.cpp:64
+#: gui/partpropsdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "คุณสมบัติต่าง ๆ ของพาร์ทิชัน: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(ไม่พบข้อมูล)"
 
-#: gui/partpropsdialog.cpp:129
+#: gui/partpropsdialog.cpp:130
 #, fuzzy, kde-kuit-format
 #| msgctxt "@item mountpoint"
 #| msgid "(none found)"
@@ -2901,37 +3029,37 @@ msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(ไม่พบข้อมูล)"
 
-#: gui/partpropsdialog.cpp:135
+#: gui/partpropsdialog.cpp:136
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "ว่าง"
 
-#: gui/partpropsdialog.cpp:138
+#: gui/partpropsdialog.cpp:139
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "มีพาร์ทิชันแบบลอจิคัลถูกเมานท์อยู่อย่างน้อยหนึ่งพาร์ทิชัน"
 
-#: gui/partpropsdialog.cpp:140
+#: gui/partpropsdialog.cpp:141
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "ถูกเมานท์ไว้ที่ <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:142
+#: gui/partpropsdialog.cpp:143
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "ถูกเมานท์อยู่"
 
-#: gui/partpropsdialog.cpp:146 gui/partpropsdialog.cpp:154
+#: gui/partpropsdialog.cpp:147 gui/partpropsdialog.cpp:155
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(ไม่มี)"
 
-#: gui/partpropsdialog.cpp:151
+#: gui/partpropsdialog.cpp:152
 #, fuzzy, kde-kuit-format
 #| msgctxt "@item/plain partition table name"
 #| msgid "unknown"
@@ -2939,12 +3067,12 @@ msgctxt "@item cluster size"
 msgid "(unknown)"
 msgstr "ไม่ทราบ"
 
-#: gui/partpropsdialog.cpp:181 gui/partpropsdialog.cpp:182
+#: gui/partpropsdialog.cpp:182 gui/partpropsdialog.cpp:183
 #, kde-format
 msgid "%1% — %2"
 msgstr ""
 
-#: gui/partpropsdialog.cpp:466
+#: gui/partpropsdialog.cpp:477
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -2967,14 +3095,14 @@ msgstr ""
 "และปรับใช้ผลลัพธ์ของปฏิบัติการในหน้าต่างหลัก ข้อมูลทั้งหมดที่อยู่ใน <filename>%1</filename> "
 "จะไม่สามารถกู้ข้อมูลคืนมาได้อีก</para>"
 
-#: gui/partpropsdialog.cpp:468
+#: gui/partpropsdialog.cpp:479
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "ต้องการจะสร้างพาร์ทิชัน <filename>%1</filename> โดยใช้ระบบแฟ้ม %2 ใหม่อีกครั้งจริงหรือไม่ ?"
 
-#: gui/partpropsdialog.cpp:469
+#: gui/partpropsdialog.cpp:480
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Change the File System"
@@ -2982,7 +3110,7 @@ msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "แ&ก้ไขระบบแฟ้ม"
 
-#: gui/partpropsdialog.cpp:470
+#: gui/partpropsdialog.cpp:481
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Change the File System"
@@ -2990,7 +3118,7 @@ msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "ไ&ม่ต้องแก้ไขระบบแฟ้ม"
 
-#: gui/partpropsdialog.cpp:489
+#: gui/partpropsdialog.cpp:500
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info"
 #| msgid ""
@@ -3013,13 +3141,13 @@ msgstr ""
 "และปรับใช้ผลลัพธ์ของปฏิบัติการในหน้าต่างหลัก ข้อมูลทั้งหมดที่อยู่ใน <filename>%1</filename> "
 "จะไม่สามารถกู้ข้อมูลคืนมาได้อีก</para>"
 
-#: gui/partpropsdialog.cpp:491
+#: gui/partpropsdialog.cpp:502
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "ต้องการจะสร้างระบบแฟ้มบนพาร์ทิชัน <filename>%1</filename> ใหม่อีกครั้งจริงหรือไม่ ?"
 
-#: gui/partpropsdialog.cpp:492
+#: gui/partpropsdialog.cpp:503
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Recreate the File System"
@@ -3027,7 +3155,7 @@ msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "&สร้างระบบแฟ้มใหม่อีกครั้ง"
 
-#: gui/partpropsdialog.cpp:493
+#: gui/partpropsdialog.cpp:504
 #, fuzzy, kde-kuit-format
 #| msgctxt "@action:button"
 #| msgid "&Do Not Recreate the File System"
@@ -3101,7 +3229,7 @@ msgid "Cluster size:"
 msgstr "ขนาดของไซลินเดอร์:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:240
+#: gui/partpropswidgetbase.ui:243
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "&Label:"
@@ -3110,21 +3238,21 @@ msgid "&Label:"
 msgstr "ป้า&ยชื่อ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:303
+#: gui/partpropswidgetbase.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "จุดเมานท์:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:323
+#: gui/partpropswidgetbase.ui:326
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "พาร์ทิชันประเภท:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
-#: gui/partpropswidgetbase.ui:333
+#: gui/partpropswidgetbase.ui:336
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Device"
@@ -3132,14 +3260,14 @@ msgid "Device path:"
 msgstr "อุปกรณ์"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:343
+#: gui/partpropswidgetbase.ui:346
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "เซกเตอร์ทั้งหมด:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:353
+#: gui/partpropswidgetbase.ui:356
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Partition type:"
@@ -3147,7 +3275,7 @@ msgid "Partition Name:"
 msgstr "พาร์ทิชันประเภท:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:363
+#: gui/partpropswidgetbase.ui:366
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -3155,14 +3283,14 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:366
+#: gui/partpropswidgetbase.ui:369
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "สร้างระบบแฟ้มที่มีอยู่ก่อนแล้วใหม่อีกครั้ง"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
-#: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
+#: gui/partpropswidgetbase.ui:393 gui/sizedialogwidgetbase.ui:180
 #, fuzzy, kde-format
 #| msgctxt "@label device"
 #| msgid "Cylinder size:"
@@ -3171,14 +3299,14 @@ msgid "Cluster size:"
 msgstr "ขนาดของไซลินเดอร์:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:406
+#: gui/partpropswidgetbase.ui:409
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "ใช้ไปแล้ว:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:416
+#: gui/partpropswidgetbase.ui:419
 #, fuzzy, kde-format
 #| msgctxt "@label partition"
 #| msgid "File system:"
@@ -3187,7 +3315,7 @@ msgid "File syste&m:"
 msgstr "ระบบแฟ้ม:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:429
+#: gui/partpropswidgetbase.ui:432
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "&Flags:"
@@ -4166,14 +4294,6 @@ msgstr ""
 #~ msgid "Cylinders:"
 #~ msgstr "จำนวนไซลินเดอร์:"
 
-#~ msgctxt "@label device"
-#~ msgid "Sectors:"
-#~ msgstr "จำนวนเซกเตอร์:"
-
-#~ msgctxt "@label device"
-#~ msgid "Cylinder size:"
-#~ msgstr "ขนาดของไซลินเดอร์:"
-
 #~ msgctxt "@info"
 #~ msgid "Could not open mount point file <filename>%1</filename>."
 #~ msgstr "ไม่สามารถเปิดแฟ้มจุดเมานท์ต่าง ๆ <filename>%1</filename> ได้"
@@ -4399,13 +4519,6 @@ msgstr ""
 #~ msgctxt "@item partition flag"
 #~ msgid "msft-reserved"
 #~ msgstr "msft-reserved"
-
-#, fuzzy
-#~| msgctxt "@item/plain partition table name"
-#~| msgid "unknown"
-#~ msgctxt "@item partition table name"
-#~ msgid "unknown"
-#~ msgstr "ไม่ทราบ"
 
 #, fuzzy
 #~| msgctxt "@info:progress operation"
@@ -5122,10 +5235,6 @@ msgstr ""
 #~ msgid "Job: %1"
 #~ msgstr "งาน: %1"
 
-#~ msgctxt "@info/plain job status (error, warning, ...)"
-#~ msgid "%1: %2"
-#~ msgstr "%1: %2"
-
 #~ msgctxt "@info:progress job"
 #~ msgid "Pending"
 #~ msgstr "ถูกพักอยู่"
@@ -5809,9 +5918,6 @@ msgstr ""
 
 #~ msgid "Date:"
 #~ msgstr "วันที่:"
-
-#~ msgid "Program version:"
-#~ msgstr "รุ่นของโปรแกรม:"
 
 #~ msgid "Backend:"
 #~ msgstr "แบ็กเอนด์:"

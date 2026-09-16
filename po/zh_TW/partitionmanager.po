@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-14 00:46+0000\n"
-"PO-Revision-Date: 2026-07-22 01:30+0900\n"
+"POT-Creation-Date: 2026-09-16 00:48+0000\n"
+"PO-Revision-Date: 2026-09-15 15:35+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -969,6 +969,129 @@ msgstr "UU&ID"
 #, kde-format
 msgid "&Label"
 msgstr "標籤(&L)"
+
+#: gui/filesystempropertieswidget.cpp:38
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Block size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:39
+#, fuzzy, kde-kuit-format
+#| msgid "Logical sector size:"
+msgctxt "@label"
+msgid "Sector size"
+msgstr "邏輯磁區大小："
+
+#: gui/filesystempropertieswidget.cpp:40
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Metadata node size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:41
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:tooltip"
+#| msgid "Check partition"
+msgctxt "@label"
+msgid "Checksum algorithm"
+msgstr "檢查分割區"
+
+#: gui/filesystempropertieswidget.cpp:42
+#, kde-kuit-format
+msgctxt "@label"
+msgid "MFT record size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:43
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label partition"
+#| msgid "Key size:"
+msgctxt "@label"
+msgid "Inode size"
+msgstr "金鑰大小："
+
+#: gui/filesystempropertieswidget.cpp:44
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Inode count"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:45
+#, fuzzy, kde-kuit-format
+#| msgid "Number of Sectors"
+msgctxt "@label"
+msgid "Number of FATs"
+msgstr "磁區數量"
+
+#: gui/filesystempropertieswidget.cpp:46
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Enabled features"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:47
+#, fuzzy, kde-kuit-format
+#| msgid "Information"
+msgctxt "@label"
+msgid "Format version"
+msgstr "資訊"
+
+#: gui/filesystempropertieswidget.cpp:48
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Journal size"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:49
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:50
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space, percent"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:51
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved block count"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:52
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space owner (UID)"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:53
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Reserved space owner (GID)"
+msgstr ""
+
+#: gui/filesystempropertieswidget.cpp:81
+#, fuzzy, kde-kuit-format
+#| msgid "unknown:"
+msgctxt "@item filesystem property whose value could not be read"
+msgid "Unknown"
+msgstr "未知："
+
+#: gui/filesystempropertieswidget.cpp:89
+#, fuzzy, kde-kuit-format
+#| msgid "%1%2"
+msgctxt "@item value in percent"
+msgid "%1%"
+msgstr "%1%2"
+
+#: gui/filesystempropertieswidget.cpp:148
+#, kde-kuit-format
+msgctxt "@label"
+msgid "%1:"
+msgstr ""
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -2623,68 +2746,66 @@ msgstr "磁區數量"
 msgid "Flags"
 msgstr "旗標"
 
-#: gui/partpropsdialog.cpp:64
+#: gui/partpropsdialog.cpp:65
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "分割區屬性：<filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:124
+#: gui/partpropsdialog.cpp:125
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "（未找到）"
 
-#: gui/partpropsdialog.cpp:129
+#: gui/partpropsdialog.cpp:130
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "（未找到）"
 
-#: gui/partpropsdialog.cpp:135
+#: gui/partpropsdialog.cpp:136
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "閒置"
 
-#: gui/partpropsdialog.cpp:138
+#: gui/partpropsdialog.cpp:139
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "至少已掛載一個邏輯分割區。"
 
-#: gui/partpropsdialog.cpp:140
+#: gui/partpropsdialog.cpp:141
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "掛載於 <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:142
+#: gui/partpropsdialog.cpp:143
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "已掛載"
 
-#: gui/partpropsdialog.cpp:146 gui/partpropsdialog.cpp:154
+#: gui/partpropsdialog.cpp:147 gui/partpropsdialog.cpp:155
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "（無）"
 
-#: gui/partpropsdialog.cpp:151
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "(unknown)"
+#: gui/partpropsdialog.cpp:152
+#, kde-kuit-format
 msgctxt "@item cluster size"
 msgid "(unknown)"
 msgstr "（未知）"
 
-#: gui/partpropsdialog.cpp:181 gui/partpropsdialog.cpp:182
+#: gui/partpropsdialog.cpp:182 gui/partpropsdialog.cpp:183
 #, kde-format
 msgid "%1% — %2"
 msgstr "%1% — %2"
 
-#: gui/partpropsdialog.cpp:466
+#: gui/partpropsdialog.cpp:477
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2698,25 +2819,25 @@ msgstr ""
 "warning></para>  <para>變更已存在於磁碟上的檔案系統會造成所有的內容都被刪除。如果您執意繼續，"
 "在 <filename>%1</filename> 上的資料都將消失，並且無法回復。</para>"
 
-#: gui/partpropsdialog.cpp:468
+#: gui/partpropsdialog.cpp:479
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr "確定要重新建立 <filename>%1</filename> 以及檔案系統 %2 嗎？"
 
-#: gui/partpropsdialog.cpp:469
+#: gui/partpropsdialog.cpp:480
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "變更檔案系統"
 
-#: gui/partpropsdialog.cpp:470
+#: gui/partpropsdialog.cpp:481
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "不要變更檔案系統"
 
-#: gui/partpropsdialog.cpp:489
+#: gui/partpropsdialog.cpp:500
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2730,19 +2851,19 @@ msgstr ""
 "warning></para>  <para>重新建立檔案系統會造成所有的內容都被刪除。如果您執意繼續，在 <filename>"
 "%1</filename> 上的資料都將消失，並且無法回復。</para>"
 
-#: gui/partpropsdialog.cpp:491
+#: gui/partpropsdialog.cpp:502
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "確定要重建 <filename>%1</filename> 上的檔案系統嗎？"
 
-#: gui/partpropsdialog.cpp:492
+#: gui/partpropsdialog.cpp:503
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "重建檔案系統"
 
-#: gui/partpropsdialog.cpp:493
+#: gui/partpropsdialog.cpp:504
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -2805,55 +2926,53 @@ msgstr "可使用："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextClusterSize)
 #: gui/partpropswidgetbase.ui:177
-#, fuzzy, kde-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-format
 msgctxt "@label"
 msgid "Cluster size:"
-msgstr "金鑰大小："
+msgstr "叢集大小："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:240
+#: gui/partpropswidgetbase.ui:243
 #, kde-format
 msgctxt "@label"
 msgid "&Label:"
 msgstr "標籤(&L)："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:303
+#: gui/partpropswidgetbase.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "掛載點："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:323
+#: gui/partpropswidgetbase.ui:326
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "分割區型態："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
-#: gui/partpropswidgetbase.ui:333
+#: gui/partpropswidgetbase.ui:336
 #, kde-format
 msgid "Device path:"
 msgstr "裝置路徑："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:343
+#: gui/partpropswidgetbase.ui:346
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "磁區數量："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:353
+#: gui/partpropswidgetbase.ui:356
 #, kde-format
 msgid "Partition Name:"
 msgstr "分割區名稱："
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:363
+#: gui/partpropswidgetbase.ui:366
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -2861,37 +2980,35 @@ msgid ""
 msgstr "這將會重新格式化檔案系統，遺失所有資料，但保留同樣的檔案系統格式。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:366
+#: gui/partpropswidgetbase.ui:369
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "重建已存在的檔案系統"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
-#: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
-#, fuzzy, kde-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#: gui/partpropswidgetbase.ui:393 gui/sizedialogwidgetbase.ui:180
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Cluster size:"
-msgstr "金鑰大小："
+msgstr "叢集大小："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:406
+#: gui/partpropswidgetbase.ui:409
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "已使用："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:416
+#: gui/partpropswidgetbase.ui:419
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "檔案系統(&M)："
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:429
+#: gui/partpropswidgetbase.ui:432
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
@@ -3592,13 +3709,13 @@ msgstr "欄"
 #, kde-kuit-format
 msgctxt "@item:inlistbox cluster size"
 msgid "Automatic"
-msgstr ""
+msgstr "自動"
 
 #: util/guihelpers.cpp:150
 #, kde-kuit-format
 msgctxt "@item:inlistbox a cluster size that is no longer valid"
 msgid "%1 (not valid for this size)"
-msgstr ""
+msgstr "%1（對此大小是無效的）"
 
 #~ msgctxt "@info"
 #~ msgid "Do you really want to cancel?"
