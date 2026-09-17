@@ -14,14 +14,14 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 00:48+0000\n"
-"PO-Revision-Date: 2026-09-15 00:16+0100\n"
+"PO-Revision-Date: 2026-09-17 00:17+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -992,124 +992,115 @@ msgstr "E&tiqueta"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Block size"
-msgstr ""
+msgstr "Tamaño de bloque"
 
 #: gui/filesystempropertieswidget.cpp:39
-#, fuzzy, kde-kuit-format
-#| msgid "Logical sector size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Sector size"
-msgstr "Tamaño del sector lógico:"
+msgstr "Tamaño de sector"
 
 #: gui/filesystempropertieswidget.cpp:40
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Metadata node size"
-msgstr ""
+msgstr "Tamaño de nodo de metadatos"
 
 #: gui/filesystempropertieswidget.cpp:41
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Check partition"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Checksum algorithm"
-msgstr "Comprobar una partición"
+msgstr "Algoritmo de suma de comprobación"
 
 #: gui/filesystempropertieswidget.cpp:42
 #, kde-kuit-format
 msgctxt "@label"
 msgid "MFT record size"
-msgstr ""
+msgstr "Tamaño de registro MFT"
 
 #: gui/filesystempropertieswidget.cpp:43
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Inode size"
-msgstr "Tamaño de la clave:"
+msgstr "Tamaño de inodo"
 
 #: gui/filesystempropertieswidget.cpp:44
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Inode count"
-msgstr ""
+msgstr "Número de inodos"
 
 #: gui/filesystempropertieswidget.cpp:45
-#, fuzzy, kde-kuit-format
-#| msgid "Number of Sectors"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Number of FATs"
-msgstr "Número de sectores"
+msgstr "Número de FAT"
 
 #: gui/filesystempropertieswidget.cpp:46
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enabled features"
-msgstr ""
+msgstr "Funciones activadas"
 
 #: gui/filesystempropertieswidget.cpp:47
-#, fuzzy, kde-kuit-format
-#| msgid "Information"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Format version"
-msgstr "Información"
+msgstr "Versión de formato"
 
 #: gui/filesystempropertieswidget.cpp:48
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Journal size"
-msgstr ""
+msgstr "Tamaño de diario"
 
 #: gui/filesystempropertieswidget.cpp:49
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space"
-msgstr ""
+msgstr "Espacio reservado"
 
 #: gui/filesystempropertieswidget.cpp:50
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space, percent"
-msgstr ""
+msgstr "Espacio reservado (porcentaje)"
 
 #: gui/filesystempropertieswidget.cpp:51
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved block count"
-msgstr ""
+msgstr "Número de bloques reservados"
 
 #: gui/filesystempropertieswidget.cpp:52
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (UID)"
-msgstr ""
+msgstr "Propietario del espacio reservado (UID)"
 
 #: gui/filesystempropertieswidget.cpp:53
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (GID)"
-msgstr ""
+msgstr "Propietario del espacio reservado (GID)"
 
 #: gui/filesystempropertieswidget.cpp:81
-#, fuzzy, kde-kuit-format
-#| msgid "unknown:"
+#, kde-kuit-format
 msgctxt "@item filesystem property whose value could not be read"
 msgid "Unknown"
-msgstr "desconocido:"
+msgstr "Desconocido"
 
 #: gui/filesystempropertieswidget.cpp:89
-#, fuzzy, kde-kuit-format
-#| msgid "%1%2"
+#, kde-kuit-format
 msgctxt "@item value in percent"
 msgid "%1%"
-msgstr "%1%2"
+msgstr "%1 %"
 
 #: gui/filesystempropertieswidget.cpp:148
 #, kde-kuit-format
 msgctxt "@label"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -2899,7 +2890,7 @@ msgstr "(desconocido)"
 #: gui/partpropsdialog.cpp:182 gui/partpropsdialog.cpp:183
 #, kde-format
 msgid "%1% — %2"
-msgstr "%1 % — %2"
+msgstr "%1 % — %2"
 
 #: gui/partpropsdialog.cpp:477
 #, kde-kuit-format
