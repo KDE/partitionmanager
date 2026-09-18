@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 00:48+0000\n"
-"PO-Revision-Date: 2026-09-15 17:27+0400\n"
+"PO-Revision-Date: 2026-09-17 08:59+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -974,128 +974,115 @@ msgstr "اللصي&قة"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Block size"
-msgstr ""
+msgstr "حجم الكتلة"
 
 #: gui/filesystempropertieswidget.cpp:39
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Sectors:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Sector size"
-msgstr "القطاعات:"
+msgstr "حجم القطاع"
 
 #: gui/filesystempropertieswidget.cpp:40
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Metadata node size"
-msgstr ""
+msgstr "حجم عقدة البيانات الوصفية"
 
 #: gui/filesystempropertieswidget.cpp:41
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Check partition"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Checksum algorithm"
-msgstr "تحقّق من القسم"
+msgstr "خوارزمية التحقق من المجموع"
 
 #: gui/filesystempropertieswidget.cpp:42
 #, kde-kuit-format
 msgctxt "@label"
 msgid "MFT record size"
-msgstr ""
+msgstr "حجم سجل جدول الملفات الرئيسي"
 
 #: gui/filesystempropertieswidget.cpp:43
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Cylinder size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Inode size"
-msgstr "حجم الأسطوانة:"
+msgstr "حجم العقدة"
 
 #: gui/filesystempropertieswidget.cpp:44
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Inode count"
-msgstr ""
+msgstr "عدد العقد"
 
 #: gui/filesystempropertieswidget.cpp:45
-#, fuzzy, kde-kuit-format
-#| msgid "Number of Sectors"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Number of FATs"
-msgstr "عدد القطاعات"
+msgstr "عدد جداول توزيع الملفات"
 
 #: gui/filesystempropertieswidget.cpp:46
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enabled features"
-msgstr ""
+msgstr "الميزات الممكّنة"
 
 #: gui/filesystempropertieswidget.cpp:47
-#, fuzzy, kde-kuit-format
-#| msgid "Program version:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Format version"
-msgstr "إصدار البرنامج:"
+msgstr "إصدار التنسيق"
 
 #: gui/filesystempropertieswidget.cpp:48
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Journal size"
-msgstr ""
+msgstr "حجم السجل"
 
 #: gui/filesystempropertieswidget.cpp:49
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space"
-msgstr ""
+msgstr "المساحة المحجوزة"
 
 #: gui/filesystempropertieswidget.cpp:50
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space, percent"
-msgstr ""
+msgstr "المساحة المحجوزة، بالنسبة المئوية"
 
 #: gui/filesystempropertieswidget.cpp:51
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved block count"
-msgstr ""
+msgstr "عدد الكتل المحجوزة"
 
 #: gui/filesystempropertieswidget.cpp:52
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (UID)"
-msgstr ""
+msgstr "مالك المساحة المحجوزة (معرّف المستخدم)"
 
 #: gui/filesystempropertieswidget.cpp:53
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (GID)"
-msgstr ""
+msgstr "مالك المساحة المحجوزة (معرّف المجموعة)"
 
 #: gui/filesystempropertieswidget.cpp:81
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item/plain partition table name"
-#| msgid "unknown"
+#, kde-kuit-format
 msgctxt "@item filesystem property whose value could not be read"
 msgid "Unknown"
 msgstr "مجهول"
 
 #: gui/filesystempropertieswidget.cpp:89
-#, fuzzy, kde-kuit-format
-#| msgid "%1%2"
+#, kde-kuit-format
 msgctxt "@item value in percent"
 msgid "%1%"
-msgstr "%1%2"
+msgstr "%1%"
 
 #: gui/filesystempropertieswidget.cpp:148
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain job status (error, warning, ...)"
-#| msgid "%1: %2"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "%1:"
-msgstr "%1: %2"
+msgstr "%1:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format

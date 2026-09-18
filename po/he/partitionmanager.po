@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 00:48+0000\n"
-"PO-Revision-Date: 2026-07-02 08:09+0300\n"
+"PO-Revision-Date: 2026-09-17 08:47+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -971,124 +971,115 @@ msgstr "&תווית"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Block size"
-msgstr ""
+msgstr "גודל בלוק"
 
 #: gui/filesystempropertieswidget.cpp:39
-#, fuzzy, kde-kuit-format
-#| msgid "Logical sector size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Sector size"
-msgstr "גודל מקטע לוגי:"
+msgstr "גודל מקטע"
 
 #: gui/filesystempropertieswidget.cpp:40
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Metadata node size"
-msgstr ""
+msgstr "גודל נקודת נתוני על"
 
 #: gui/filesystempropertieswidget.cpp:41
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Check partition"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Checksum algorithm"
-msgstr "בדיקת מחיצה"
+msgstr "אלגוריתם סיכום ביקורת"
 
 #: gui/filesystempropertieswidget.cpp:42
 #, kde-kuit-format
 msgctxt "@label"
 msgid "MFT record size"
-msgstr ""
+msgstr "גודל רשומת MFT"
 
 #: gui/filesystempropertieswidget.cpp:43
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Inode size"
-msgstr "גודל מפתח:"
+msgstr "גודל Inode"
 
 #: gui/filesystempropertieswidget.cpp:44
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Inode count"
-msgstr ""
+msgstr "כמות Iondes"
 
 #: gui/filesystempropertieswidget.cpp:45
-#, fuzzy, kde-kuit-format
-#| msgid "Number of Sectors"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Number of FATs"
-msgstr "מספר המקטעים"
+msgstr "מספר FATים"
 
 #: gui/filesystempropertieswidget.cpp:46
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enabled features"
-msgstr ""
+msgstr "יכולות פעילות"
 
 #: gui/filesystempropertieswidget.cpp:47
-#, fuzzy, kde-kuit-format
-#| msgid "Information"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Format version"
-msgstr "פרטים"
+msgstr "גרסת פורמט"
 
 #: gui/filesystempropertieswidget.cpp:48
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Journal size"
-msgstr ""
+msgstr "גודל יומן"
 
 #: gui/filesystempropertieswidget.cpp:49
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space"
-msgstr ""
+msgstr "שטח שמור"
 
 #: gui/filesystempropertieswidget.cpp:50
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space, percent"
-msgstr ""
+msgstr "שטח שמור, אחוזים"
 
 #: gui/filesystempropertieswidget.cpp:51
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved block count"
-msgstr ""
+msgstr "כמות בלוקים שמורה"
 
 #: gui/filesystempropertieswidget.cpp:52
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (UID)"
-msgstr ""
+msgstr "בעלות על השטח השמור (מזהה משתמש)"
 
 #: gui/filesystempropertieswidget.cpp:53
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (GID)"
-msgstr ""
+msgstr "בעלות על השטח השמור (מזהה קבוצה)"
 
 #: gui/filesystempropertieswidget.cpp:81
-#, fuzzy, kde-kuit-format
-#| msgid "unknown:"
+#, kde-kuit-format
 msgctxt "@item filesystem property whose value could not be read"
 msgid "Unknown"
-msgstr "לא ידוע:"
+msgstr "לא ידוע"
 
 #: gui/filesystempropertieswidget.cpp:89
-#, fuzzy, kde-kuit-format
-#| msgid "%1%2"
+#, kde-kuit-format
 msgctxt "@item value in percent"
 msgid "%1%"
-msgstr "%1%2"
+msgstr "%1%"
 
 #: gui/filesystempropertieswidget.cpp:148
 #, kde-kuit-format
 msgctxt "@label"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -2833,9 +2824,7 @@ msgid "(none)"
 msgstr "(ללא)"
 
 #: gui/partpropsdialog.cpp:152
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "(unknown)"
+#, kde-kuit-format
 msgctxt "@item cluster size"
 msgid "(unknown)"
 msgstr "(לא ידוע)"
@@ -2968,12 +2957,10 @@ msgstr "פנוי:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextClusterSize)
 #: gui/partpropswidgetbase.ui:177
-#, fuzzy, kde-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-format
 msgctxt "@label"
 msgid "Cluster size:"
-msgstr "גודל מפתח:"
+msgstr "גודל צביר:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:243
@@ -3034,12 +3021,10 @@ msgstr "יצירת מערכת קבצים קיימת מחדש"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
 #: gui/partpropswidgetbase.ui:393 gui/sizedialogwidgetbase.ui:180
-#, fuzzy, kde-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Cluster size:"
-msgstr "גודל מפתח:"
+msgstr "גודל צביר:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
 #: gui/partpropswidgetbase.ui:409
@@ -3759,13 +3744,13 @@ msgstr "עמודות"
 #, kde-kuit-format
 msgctxt "@item:inlistbox cluster size"
 msgid "Automatic"
-msgstr ""
+msgstr "אוטומטית"
 
 #: util/guihelpers.cpp:150
 #, kde-kuit-format
 msgctxt "@item:inlistbox a cluster size that is no longer valid"
 msgid "%1 (not valid for this size)"
-msgstr ""
+msgstr "%1 (לא תקף לגודל הזה)"
 
 #~ msgctxt "@info"
 #~ msgid "Do you really want to cancel?"
