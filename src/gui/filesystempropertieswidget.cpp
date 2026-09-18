@@ -14,10 +14,7 @@
 #include <QGridLayout>
 #include <QHash>
 #include <QLabel>
-#include <QLayout>
 #include <QLocale>
-#include <QSizePolicy>
-#include <QVBoxLayout>
 
 #include <KLocalizedString>
 
@@ -97,30 +94,20 @@ QString formatValue(const FileSystemProperty& property)
 }
 }
 
-FileSystemPropertiesWidget::FileSystemPropertiesWidget(QWidget* parent) :
-    QWidget(parent),
-    m_Layout(new QVBoxLayout(this)),
-    m_Content(nullptr),
+FileSystemPropertiesWidget::FileSystemPropertiesWidget(QGridLayout& grid, int row) :
+    m_Grid(grid),
+    m_Row(row),
     m_IsEmpty(true)
 {
-    m_Layout->setContentsMargins(0, 0, 0, 0);
-    m_Layout->setSizeConstraint(QLayout::SetMinimumSize);
-    setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
 }
 
 void FileSystemPropertiesWidget::setFileSystem(const FileSystem& fs)
 {
-    delete m_Content;
-    m_Content = new QWidget(this);
-    m_Layout->addWidget(m_Content);
-
-    QGridLayout* grid = new QGridLayout(m_Content);
-    grid->setContentsMargins(0, 0, 0, 0);
-    grid->setColumnStretch(0, 2);
-    grid->setColumnStretch(1, 5);
+    qDeleteAll(m_RowWidgets);
+    m_RowWidgets.clear();
 
     m_IsEmpty = true;
-    int row = 0;
+    int row = m_Row;
 
     const QList<FileSystemProperty>& properties = fs.properties();
 
@@ -136,26 +123,35 @@ void FileSystemPropertiesWidget::setFileSystem(const FileSystem& fs)
                 continue;
 
             if (firstInGroup) {
-                QFrame* separator = new QFrame(m_Content);
+                QFrame* separator = new QFrame;
                 separator->setFrameShape(QFrame::HLine);
                 separator->setFrameShadow(QFrame::Sunken);
-                grid->addWidget(separator, row++, 0, 1, 2);
+                m_Grid.addWidget(separator, row++, 0, 1, 3);
+                m_RowWidgets.append(separator);
 
                 firstInGroup = false;
                 m_IsEmpty = false;
             }
 
-            QLabel* label = new QLabel(xi18nc("@label", "%1:", displayName(property.id)), m_Content);
+            QLabel* label = new QLabel(xi18nc("@label", "%1:", displayName(property.id)));
             label->setAlignment(Qt::AlignRight | Qt::AlignTop);
+            label->setWordWrap(true);
 
-            QLabel* value = new QLabel(formatValue(property), m_Content);
+            QLabel* value = new QLabel(formatValue(property));
             value->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
 
-            grid->addWidget(label, row, 0, Qt::AlignRight | Qt::AlignTop);
-            grid->addWidget(value, row, 1);
+            m_Grid.addWidget(label, row, 0, Qt::AlignRight | Qt::AlignTop);
+            m_Grid.addWidget(value, row, 2);
             ++row;
+
+            m_RowWidgets.append(label);
+            m_RowWidgets.append(value);
         }
     }
+}
 
-    m_Content->setVisible(!m_IsEmpty);
+void FileSystemPropertiesWidget::setVisible(bool visible)
+{
+    for (auto* widget : std::as_const(m_RowWidgets))
+        widget->setVisible(visible);
 }

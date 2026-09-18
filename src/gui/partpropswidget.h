@@ -17,6 +17,8 @@
 #include "mainwindow.h"
 #include "util/guihelpers.h"
 
+#include <memory>
+
 /** Central widget in the PartPropsDialog.
     @author Volker Lanz <vl@fidra.de>
 */
@@ -25,6 +27,8 @@ class PartPropsWidget : public QWidget, public Ui::PartPropsWidgetBase
 public:
     explicit PartPropsWidget(QWidget* parent) : QWidget(parent) {
         setupUi(this);
+
+        m_FileSystemProperties = std::make_unique<FileSystemPropertiesWidget>(*gridLayout, 26);
 
         m_PartWidget->setFileSystemColorCode(GuiHelpers::fileSystemColorCodesFromSettings());
         MainWindow* mw = nullptr;
@@ -258,6 +262,9 @@ public:
     void showFileSystemProperties(bool b) {
         fileSystemProperties().setVisible(b);
     }
+
+private:
+    std::unique_ptr<FileSystemPropertiesWidget> m_FileSystemProperties;
 };
 
 #endif

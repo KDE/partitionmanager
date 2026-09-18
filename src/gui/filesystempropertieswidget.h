@@ -7,27 +7,28 @@
 #ifndef FILESYSTEMPROPERTIESWIDGET_H
 #define FILESYSTEMPROPERTIESWIDGET_H
 
-#include <QWidget>
+#include <QList>
 
 class FileSystem;
-class QVBoxLayout;
+class QGridLayout;
+class QWidget;
 
-class FileSystemPropertiesWidget : public QWidget
+class FileSystemPropertiesWidget
 {
-    Q_OBJECT
-
 public:
-    explicit FileSystemPropertiesWidget(QWidget* parent = nullptr);
+    FileSystemPropertiesWidget(QGridLayout& grid, int row);
 
     void setFileSystem(const FileSystem& fs);
+    void setVisible(bool visible);
 
     bool isEmpty() const {
         return m_IsEmpty;
     }
 
 private:
-    QVBoxLayout* m_Layout;
-    QWidget* m_Content;
+    QGridLayout& m_Grid;
+    int m_Row;
+    QList<QWidget*> m_RowWidgets;
     bool m_IsEmpty;
 };
 

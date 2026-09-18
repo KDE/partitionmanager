@@ -23,12 +23,16 @@
 
 #include <QComboBox>
 #include <QFontDatabase>
+#include <QFrame>
 #include <QtGlobal>
 #include <QLineEdit>
 #include <QLocale>
 #include <QPalette>
 #include <QPushButton>
+#include <QScreen>
+#include <QScrollArea>
 #include <QSignalBlocker>
+#include <QStyle>
 #include <QVariant>
 
 #include <KConfigGroup>
@@ -59,8 +63,12 @@ PartPropsDialog::PartPropsDialog(QWidget* parent, Device& d, Partition& p) :
 {
     mainLayout = new QVBoxLayout(this);
     setLayout(mainLayout);
-    mainLayout->addWidget(&dialogWidget());
-    mainLayout->setSizeConstraint(QLayout::SetMinimumSize);
+
+    QScrollArea* scrollArea = new QScrollArea(this);
+    scrollArea->setWidget(&dialogWidget());
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setFrameShape(QFrame::NoFrame);
+    mainLayout->addWidget(scrollArea);
 
     setWindowTitle(xi18nc("@title:window", "Partition properties: <filename>%1</filename>", partition().deviceNode()));
 
@@ -199,7 +207,24 @@ void PartPropsDialog::setupDialog()
 
     updateHideAndShow();
 
-    resize(sizeHint());
+    int width = sizeHint().width();
+    int height = sizeHint().height();
+
+    if (const QScreen* scr = screen()) {
+        const QRect avail = scr->availableGeometry();
+
+        const int maxWidth = avail.width() - 100;
+        if (width > maxWidth)
+            width = maxWidth;
+
+        const int maxHeight = avail.height() - 100;
+        if (height > maxHeight) {
+            height = maxHeight;
+            width += style()->pixelMetric(QStyle::PM_ScrollBarExtent);
+        }
+    }
+
+    resize(width, height);
 }
 
 void PartPropsDialog::setupFlagsList()
