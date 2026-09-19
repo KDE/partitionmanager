@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-16 00:48+0000\n"
+"POT-Creation-Date: 2026-09-19 00:48+0000\n"
 "PO-Revision-Date: 2026-05-26 21:43+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -969,13 +969,13 @@ msgstr "UUID(&I)"
 msgid "&Label"
 msgstr "레이블(&L)"
 
-#: gui/filesystempropertieswidget.cpp:38
+#: gui/filesystempropertieswidget.cpp:35
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Block size"
 msgstr ""
 
-#: gui/filesystempropertieswidget.cpp:39
+#: gui/filesystempropertieswidget.cpp:36
 #, fuzzy, kde-kuit-format
 #| msgctxt "@label device"
 #| msgid "Sectors:"
@@ -983,13 +983,13 @@ msgctxt "@label"
 msgid "Sector size"
 msgstr "섹터:"
 
-#: gui/filesystempropertieswidget.cpp:40
+#: gui/filesystempropertieswidget.cpp:37
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Metadata node size"
 msgstr ""
 
-#: gui/filesystempropertieswidget.cpp:41
+#: gui/filesystempropertieswidget.cpp:38
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:tooltip"
 #| msgid "Check partition"
@@ -997,13 +997,13 @@ msgctxt "@label"
 msgid "Checksum algorithm"
 msgstr "파티션 검사"
 
-#: gui/filesystempropertieswidget.cpp:42
+#: gui/filesystempropertieswidget.cpp:39
 #, kde-kuit-format
 msgctxt "@label"
 msgid "MFT record size"
 msgstr ""
 
-#: gui/filesystempropertieswidget.cpp:43
+#: gui/filesystempropertieswidget.cpp:40
 #, fuzzy, kde-kuit-format
 #| msgctxt "@label device"
 #| msgid "Cylinder size:"
@@ -1011,83 +1011,83 @@ msgctxt "@label"
 msgid "Inode size"
 msgstr "실린더 크기:"
 
-#: gui/filesystempropertieswidget.cpp:44
+#: gui/filesystempropertieswidget.cpp:41
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Inode count"
 msgstr ""
 
-#: gui/filesystempropertieswidget.cpp:45
+#: gui/filesystempropertieswidget.cpp:42
 #, fuzzy, kde-kuit-format
 #| msgid "Number of Sectors"
 msgctxt "@label"
 msgid "Number of FATs"
 msgstr "섹터 개수"
 
-#: gui/filesystempropertieswidget.cpp:46
+#: gui/filesystempropertieswidget.cpp:43
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enabled features"
 msgstr ""
 
-#: gui/filesystempropertieswidget.cpp:47
+#: gui/filesystempropertieswidget.cpp:44
 #, fuzzy, kde-kuit-format
 #| msgid "Information"
 msgctxt "@label"
 msgid "Format version"
 msgstr "정보"
 
-#: gui/filesystempropertieswidget.cpp:48
+#: gui/filesystempropertieswidget.cpp:45
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Journal size"
 msgstr ""
 
-#: gui/filesystempropertieswidget.cpp:49
+#: gui/filesystempropertieswidget.cpp:46
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space"
 msgstr ""
 
-#: gui/filesystempropertieswidget.cpp:50
+#: gui/filesystempropertieswidget.cpp:47
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space, percent"
 msgstr ""
 
-#: gui/filesystempropertieswidget.cpp:51
+#: gui/filesystempropertieswidget.cpp:48
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved block count"
 msgstr ""
 
-#: gui/filesystempropertieswidget.cpp:52
+#: gui/filesystempropertieswidget.cpp:49
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (UID)"
 msgstr ""
 
-#: gui/filesystempropertieswidget.cpp:53
+#: gui/filesystempropertieswidget.cpp:50
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (GID)"
 msgstr ""
 
-#: gui/filesystempropertieswidget.cpp:81
+#: gui/filesystempropertieswidget.cpp:78
 #, fuzzy, kde-kuit-format
 #| msgid "unknown:"
 msgctxt "@item filesystem property whose value could not be read"
 msgid "Unknown"
 msgstr "알 수 없음:"
 
-#: gui/filesystempropertieswidget.cpp:89
+#: gui/filesystempropertieswidget.cpp:86
 #, fuzzy, kde-kuit-format
 #| msgid "%1%2"
 msgctxt "@item value in percent"
 msgid "%1%"
 msgstr "%1%2"
 
-#: gui/filesystempropertieswidget.cpp:148
+#: gui/filesystempropertieswidget.cpp:136
 #, kde-kuit-format
 msgctxt "@label"
 msgid "%1:"
@@ -2779,55 +2779,55 @@ msgstr "섹터 개수"
 msgid "Flags"
 msgstr "플래그"
 
-#: gui/partpropsdialog.cpp:65
+#: gui/partpropsdialog.cpp:73
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Partition properties: <filename>%1</filename>"
 msgstr "파티션 속성: <filename>%1</filename>"
 
-#: gui/partpropsdialog.cpp:125
+#: gui/partpropsdialog.cpp:133
 #, kde-kuit-format
 msgctxt "@item mountpoint"
 msgid "(none found)"
 msgstr "(찾을 수 없음)"
 
-#: gui/partpropsdialog.cpp:130
+#: gui/partpropsdialog.cpp:138
 #, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(찾을 수 없음)"
 
-#: gui/partpropsdialog.cpp:136
+#: gui/partpropsdialog.cpp:144
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
 msgstr "대기"
 
-#: gui/partpropsdialog.cpp:139
+#: gui/partpropsdialog.cpp:147
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "At least one logical partition is mounted."
 msgstr "최소한 하나의 논리 파티션이 마운트되었습니다."
 
-#: gui/partpropsdialog.cpp:141
+#: gui/partpropsdialog.cpp:149
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted on <filename>%1</filename>"
 msgstr "<filename>%1</filename>에 마운트됨"
 
-#: gui/partpropsdialog.cpp:143
+#: gui/partpropsdialog.cpp:151
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "mounted"
 msgstr "마운트됨"
 
-#: gui/partpropsdialog.cpp:147 gui/partpropsdialog.cpp:155
+#: gui/partpropsdialog.cpp:155 gui/partpropsdialog.cpp:163
 #, kde-kuit-format
 msgctxt "@item uuid"
 msgid "(none)"
 msgstr "(없음)"
 
-#: gui/partpropsdialog.cpp:152
+#: gui/partpropsdialog.cpp:160
 #, fuzzy, kde-kuit-format
 #| msgctxt "@label"
 #| msgid "(unknown)"
@@ -2835,12 +2835,12 @@ msgctxt "@item cluster size"
 msgid "(unknown)"
 msgstr "(알 수 없음)"
 
-#: gui/partpropsdialog.cpp:182 gui/partpropsdialog.cpp:183
+#: gui/partpropsdialog.cpp:190 gui/partpropsdialog.cpp:191
 #, kde-format
 msgid "%1% — %2"
 msgstr "%1% — %2"
 
-#: gui/partpropsdialog.cpp:477
+#: gui/partpropsdialog.cpp:502
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2855,26 +2855,26 @@ msgstr ""
 "내용을 삭제합니다. 작업을 계속 진행하면 <filename>%1</filename>에 있는 모든 "
 "데이터를 복구 불가능한 상태로 삭제합니다.</para>"
 
-#: gui/partpropsdialog.cpp:479
+#: gui/partpropsdialog.cpp:504
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate <filename>%1</filename> with File System %2?"
 msgstr ""
 "<filename>%1</filename>을(를) %2 파일 시스템으로 다시 생성하시겠습니까?"
 
-#: gui/partpropsdialog.cpp:480
+#: gui/partpropsdialog.cpp:505
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Change the File System"
 msgstr "파일 시스템 변경"
 
-#: gui/partpropsdialog.cpp:481
+#: gui/partpropsdialog.cpp:506
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Change the File System"
 msgstr "파일 시스템 변경하지 않음"
 
-#: gui/partpropsdialog.cpp:500
+#: gui/partpropsdialog.cpp:525
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2889,19 +2889,19 @@ msgstr ""
 "업을 계속 진행하면 <filename>%1</filename>에 있는 모든 데이터를 복구 불가능"
 "한 상태로 삭제합니다.</para>"
 
-#: gui/partpropsdialog.cpp:502
+#: gui/partpropsdialog.cpp:527
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Recreate File System on <filename>%1</filename>?"
 msgstr "<filename>%1</filename>에 파일 시스템을 다시 생성하시겠습니까?"
 
-#: gui/partpropsdialog.cpp:503
+#: gui/partpropsdialog.cpp:528
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Recreate the File System"
 msgstr "파일 시스템 다시 생성"
 
-#: gui/partpropsdialog.cpp:504
+#: gui/partpropsdialog.cpp:529
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Do Not Recreate the File System"
@@ -2971,47 +2971,47 @@ msgid "Cluster size:"
 msgstr "실린더 크기:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
-#: gui/partpropswidgetbase.ui:243
+#: gui/partpropswidgetbase.ui:240
 #, kde-format
 msgctxt "@label"
 msgid "&Label:"
 msgstr "레이블(&L):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextMountPoint)
-#: gui/partpropswidgetbase.ui:306
+#: gui/partpropswidgetbase.ui:303
 #, kde-format
 msgctxt "@label"
 msgid "Mount point:"
 msgstr "마운트 지점:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextRole)
-#: gui/partpropswidgetbase.ui:326
+#: gui/partpropswidgetbase.ui:323
 #, kde-format
 msgctxt "@label"
 msgid "Partition type:"
 msgstr "파티션 종류:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
-#: gui/partpropswidgetbase.ui:336
+#: gui/partpropswidgetbase.ui:333
 #, kde-format
 msgid "Device path:"
 msgstr "장치 경로:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
-#: gui/partpropswidgetbase.ui:346
+#: gui/partpropswidgetbase.ui:343
 #, kde-format
 msgctxt "@label"
 msgid "Number of sectors:"
 msgstr "섹터 개수:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
-#: gui/partpropswidgetbase.ui:356
+#: gui/partpropswidgetbase.ui:353
 #, kde-format
 msgid "Partition Name:"
 msgstr "파티션 이름:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:366
+#: gui/partpropswidgetbase.ui:363
 #, kde-format
 msgid ""
 "This will reformat the filesystem, losing all contents, but keeping the same "
@@ -3020,14 +3020,14 @@ msgstr ""
 "파일 시스템을 같은 형식으로 다시 포맷하며, 포함된 모든 내용을 삭제합니다."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRecreate)
-#: gui/partpropswidgetbase.ui:369
+#: gui/partpropswidgetbase.ui:366
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
 msgstr "존재하는 파일 시스템 다시 생성"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
-#: gui/partpropswidgetbase.ui:393 gui/sizedialogwidgetbase.ui:180
+#: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
 #, fuzzy, kde-format
 #| msgid "Cylinder size:"
 msgctxt "@label:listbox"
@@ -3035,21 +3035,21 @@ msgid "Cluster size:"
 msgstr "실린더 크기:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
-#: gui/partpropswidgetbase.ui:409
+#: gui/partpropswidgetbase.ui:406
 #, kde-format
 msgctxt "@label partition capacity used"
 msgid "Used:"
 msgstr "사용 중:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFileSystem)
-#: gui/partpropswidgetbase.ui:419
+#: gui/partpropswidgetbase.ui:416
 #, kde-format
 msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "파일 시스템(&M):"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
-#: gui/partpropswidgetbase.ui:432
+#: gui/partpropswidgetbase.ui:429
 #, kde-format
 msgctxt "@label"
 msgid "&Flags:"
