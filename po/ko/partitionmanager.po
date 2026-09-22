@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2015-2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-19 00:48+0000\n"
-"PO-Revision-Date: 2026-05-26 21:43+0200\n"
-"Last-Translator: Shinjo Park <kde@peremen.name>\n"
-"Language-Team: Korean <kde-kr@kde.org>\n"
+"PO-Revision-Date: 2026-09-22 00:00+0200\n"
+"Last-Translator: Shinjo Park <peremen@gmail.com>\n"
+"Language-Team: Korean\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -183,7 +183,7 @@ msgstr "리눅스 스왑:"
 #: config/configurepagefilesystemcolors.ui:348
 #, kde-format
 msgid "FreeBSD Swap:"
-msgstr ""
+msgstr "FreeBSD 스왑:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:364
@@ -973,125 +973,115 @@ msgstr "레이블(&L)"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Block size"
-msgstr ""
+msgstr "블록 크기"
 
 #: gui/filesystempropertieswidget.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Sectors:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Sector size"
-msgstr "섹터:"
+msgstr "섹터 크기"
 
 #: gui/filesystempropertieswidget.cpp:37
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Metadata node size"
-msgstr ""
+msgstr "메타데이터 노드 크기"
 
 #: gui/filesystempropertieswidget.cpp:38
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Check partition"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Checksum algorithm"
-msgstr "파티션 검사"
+msgstr "체크섬 알고리즘"
 
 #: gui/filesystempropertieswidget.cpp:39
 #, kde-kuit-format
 msgctxt "@label"
 msgid "MFT record size"
-msgstr ""
+msgstr "MFT 레코드 크기"
 
 #: gui/filesystempropertieswidget.cpp:40
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Cylinder size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Inode size"
-msgstr "실린더 크기:"
+msgstr "Inode 크기"
 
 #: gui/filesystempropertieswidget.cpp:41
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Inode count"
-msgstr ""
+msgstr "Inode 개수"
 
 #: gui/filesystempropertieswidget.cpp:42
-#, fuzzy, kde-kuit-format
-#| msgid "Number of Sectors"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Number of FATs"
-msgstr "섹터 개수"
+msgstr "FAT 개수"
 
 #: gui/filesystempropertieswidget.cpp:43
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enabled features"
-msgstr ""
+msgstr "활성화된 기능"
 
 #: gui/filesystempropertieswidget.cpp:44
-#, fuzzy, kde-kuit-format
-#| msgid "Information"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Format version"
-msgstr "정보"
+msgstr "형식 버전"
 
 #: gui/filesystempropertieswidget.cpp:45
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Journal size"
-msgstr ""
+msgstr "저널 크기"
 
 #: gui/filesystempropertieswidget.cpp:46
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space"
-msgstr ""
+msgstr "예약된 공간"
 
 #: gui/filesystempropertieswidget.cpp:47
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space, percent"
-msgstr ""
+msgstr "예약된 공간, 백분율"
 
 #: gui/filesystempropertieswidget.cpp:48
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved block count"
-msgstr ""
+msgstr "예약된 블록 개수"
 
 #: gui/filesystempropertieswidget.cpp:49
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (UID)"
-msgstr ""
+msgstr "예약된 공간 소유자(UID)"
 
 #: gui/filesystempropertieswidget.cpp:50
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (GID)"
-msgstr ""
+msgstr "예약된 공간 소유자(GID)"
 
 #: gui/filesystempropertieswidget.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgid "unknown:"
+#, kde-kuit-format
 msgctxt "@item filesystem property whose value could not be read"
 msgid "Unknown"
-msgstr "알 수 없음:"
+msgstr "알 수 없음"
 
 #: gui/filesystempropertieswidget.cpp:86
-#, fuzzy, kde-kuit-format
-#| msgid "%1%2"
+#, kde-kuit-format
 msgctxt "@item value in percent"
 msgid "%1%"
-msgstr "%1%2"
+msgstr "%1%"
 
 #: gui/filesystempropertieswidget.cpp:136
 #, kde-kuit-format
 msgctxt "@label"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -1804,21 +1794,19 @@ msgstr "파티션을 마운트 하거나 마운트 해제합니다."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "소유권 얻기"
 
 #: gui/mainwindow.cpp:446
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "파일 시스템 변경"
+msgstr "파일 시스템의 소유권 얻기"
 
 #: gui/mainwindow.cpp:447
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
-msgstr ""
+msgstr "마운트된 파일 시스템의 소유권을 현재 사용자에게 부여합니다."
 
 #: gui/mainwindow.cpp:453
 #, kde-kuit-format
@@ -2423,12 +2411,10 @@ msgid "Could Not Unmount File System."
 msgstr "파일 시스템을 마운트 해제할 수 없습니다."
 
 #: gui/partitionmanagerwidget.cpp:463
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "파일 시스템 변경"
+msgstr "파일 시스템의 소유권 얻기"
 
 #: gui/partitionmanagerwidget.cpp:469
 #, kde-kuit-format
@@ -2437,12 +2423,14 @@ msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
+"<filename>%1</filename>의 소유권을 <emphasis>%2</emphasis> 사용자로 설정합니"
+"다."
 
 #: gui/partitionmanagerwidget.cpp:476
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "모든 하위 디렉터리와 파일에 재귀적으로 적용"
 
 #: gui/partitionmanagerwidget.cpp:484
 #, kde-kuit-format
@@ -2451,38 +2439,38 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"이 설정을 사용하면 모든 하위 디렉터리와 파일의 소유권을 변경합니다. 일부 파일"
+"을 다른 사용자가 소유하고 있는 경우 문제가 발생할 수 있습니다."
 
 #: gui/partitionmanagerwidget.cpp:491
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "소유권 얻기"
 
 #: gui/partitionmanagerwidget.cpp:509
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "<b>%1</b>의 소유권 얻는 중…"
 
 #: gui/partitionmanagerwidget.cpp:511
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "소유권 얻기"
 
 #: gui/partitionmanagerwidget.cpp:526
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid "Could not open mount point file <filename>%1</filename>."
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "마운트 지점 파일 <filename>%1</filename>을(를) 열 수 없습니다."
+msgstr "<filename>%1</filename>의 소유권을 얻을 수 없습니다."
 
 #: gui/partitionmanagerwidget.cpp:529
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "소유권 얻기 실패"
 
 #: gui/partitionmanagerwidget.cpp:534
 #, kde-kuit-format
@@ -2491,12 +2479,14 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
+"<filename>%1</filename>의 소유권이 <emphasis>%2</emphasis>(으)로 변경되었습니"
+"다."
 
 #: gui/partitionmanagerwidget.cpp:536
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "소유권 변경됨"
 
 #: gui/partitionmanagerwidget.cpp:564
 #, kde-kuit-format
@@ -2828,9 +2818,7 @@ msgid "(none)"
 msgstr "(없음)"
 
 #: gui/partpropsdialog.cpp:160
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "(unknown)"
+#, kde-kuit-format
 msgctxt "@item cluster size"
 msgid "(unknown)"
 msgstr "(알 수 없음)"
@@ -2964,11 +2952,10 @@ msgstr "사용 가능:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextClusterSize)
 #: gui/partpropswidgetbase.ui:177
-#, fuzzy, kde-format
-#| msgid "Cylinder size:"
+#, kde-format
 msgctxt "@label"
 msgid "Cluster size:"
-msgstr "실린더 크기:"
+msgstr "클러스터 크기:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:240
@@ -3028,11 +3015,10 @@ msgstr "존재하는 파일 시스템 다시 생성"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
 #: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
-#, fuzzy, kde-format
-#| msgid "Cylinder size:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Cluster size:"
-msgstr "실린더 크기:"
+msgstr "클러스터 크기:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
 #: gui/partpropswidgetbase.ui:406
@@ -3753,13 +3739,13 @@ msgstr "열"
 #, kde-kuit-format
 msgctxt "@item:inlistbox cluster size"
 msgid "Automatic"
-msgstr ""
+msgstr "자동"
 
 #: util/guihelpers.cpp:150
 #, kde-kuit-format
 msgctxt "@item:inlistbox a cluster size that is no longer valid"
 msgid "%1 (not valid for this size)"
-msgstr ""
+msgstr "%1(이 크기에 유효하지 않음)"
 
 #~ msgctxt "@info"
 #~ msgid "Do you really want to cancel?"
