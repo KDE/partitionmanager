@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-19 00:48+0000\n"
-"PO-Revision-Date: 2026-06-29 11:45+0200\n"
+"PO-Revision-Date: 2026-09-16 10:56+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -985,124 +985,115 @@ msgstr "&Etiqueta"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Block size"
-msgstr ""
+msgstr "Mida del bloc"
 
 #: gui/filesystempropertieswidget.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgid "Logical sector size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Sector size"
-msgstr "Mida del sector lògic:"
+msgstr "Mida del sector"
 
 #: gui/filesystempropertieswidget.cpp:37
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Metadata node size"
-msgstr ""
+msgstr "Mida de les metadades del node"
 
 #: gui/filesystempropertieswidget.cpp:38
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Check partition"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Checksum algorithm"
-msgstr "Comprova una partició"
+msgstr "Algorisme de suma de verificació"
 
 #: gui/filesystempropertieswidget.cpp:39
 #, kde-kuit-format
 msgctxt "@label"
 msgid "MFT record size"
-msgstr ""
+msgstr "Mida de registre MFT"
 
 #: gui/filesystempropertieswidget.cpp:40
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Inode size"
-msgstr "Mida de la clau:"
+msgstr "Mida de l'inode"
 
 #: gui/filesystempropertieswidget.cpp:41
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Inode count"
-msgstr ""
+msgstr "Nombre d'inodes"
 
 #: gui/filesystempropertieswidget.cpp:42
-#, fuzzy, kde-kuit-format
-#| msgid "Number of Sectors"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Number of FATs"
-msgstr "Nombre de sectors"
+msgstr "Nombre de FAT"
 
 #: gui/filesystempropertieswidget.cpp:43
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enabled features"
-msgstr ""
+msgstr "Característiques activades"
 
 #: gui/filesystempropertieswidget.cpp:44
-#, fuzzy, kde-kuit-format
-#| msgid "Information"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Format version"
-msgstr "Informació"
+msgstr "Versió del format"
 
 #: gui/filesystempropertieswidget.cpp:45
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Journal size"
-msgstr ""
+msgstr "Mida del diari"
 
 #: gui/filesystempropertieswidget.cpp:46
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space"
-msgstr ""
+msgstr "Espai reservat"
 
 #: gui/filesystempropertieswidget.cpp:47
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space, percent"
-msgstr ""
+msgstr "Espai reservat, percentatge"
 
 #: gui/filesystempropertieswidget.cpp:48
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved block count"
-msgstr ""
+msgstr "Nombre de blocs reservats"
 
 #: gui/filesystempropertieswidget.cpp:49
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (UID)"
-msgstr ""
+msgstr "Espai reservat del propietari (UID)"
 
 #: gui/filesystempropertieswidget.cpp:50
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (GID)"
-msgstr ""
+msgstr "Espai reservat del propietari (GID)"
 
 #: gui/filesystempropertieswidget.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgid "unknown:"
+#, kde-kuit-format
 msgctxt "@item filesystem property whose value could not be read"
 msgid "Unknown"
-msgstr "desconeguda:"
+msgstr "Desconeguda"
 
 #: gui/filesystempropertieswidget.cpp:86
-#, fuzzy, kde-kuit-format
-#| msgid "%1%2"
+#, kde-kuit-format
 msgctxt "@item value in percent"
 msgid "%1%"
-msgstr "%1%2"
+msgstr "%1%"
 
 #: gui/filesystempropertieswidget.cpp:136
 #, kde-kuit-format
 msgctxt "@label"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -2879,12 +2870,10 @@ msgid "(none)"
 msgstr "(cap)"
 
 #: gui/partpropsdialog.cpp:160
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "(unknown)"
+#, kde-kuit-format
 msgctxt "@item cluster size"
 msgid "(unknown)"
-msgstr "(desconegut)"
+msgstr "(desconeguda)"
 
 #: gui/partpropsdialog.cpp:190 gui/partpropsdialog.cpp:191
 #, kde-format
@@ -3017,12 +3006,10 @@ msgstr "Disponible:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextClusterSize)
 #: gui/partpropswidgetbase.ui:177
-#, fuzzy, kde-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-format
 msgctxt "@label"
 msgid "Cluster size:"
-msgstr "Mida de la clau:"
+msgstr "Mida del clúster:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:240
@@ -3083,12 +3070,10 @@ msgstr "Recrea sistema de fitxers existent"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
 #: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
-#, fuzzy, kde-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Cluster size:"
-msgstr "Mida de la clau:"
+msgstr "Mida del clúster:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
 #: gui/partpropswidgetbase.ui:406
@@ -3815,10 +3800,10 @@ msgstr "Columnes"
 #, kde-kuit-format
 msgctxt "@item:inlistbox cluster size"
 msgid "Automatic"
-msgstr ""
+msgstr "Automàtica"
 
 #: util/guihelpers.cpp:150
 #, kde-kuit-format
 msgctxt "@item:inlistbox a cluster size that is no longer valid"
 msgid "%1 (not valid for this size)"
-msgstr ""
+msgstr "%1 (no vàlid per a esta mida)"
