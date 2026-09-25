@@ -7,7 +7,7 @@ SPDX-FileCopyrightText: 2016-2019 Andrius Štikonas <andrius@stikonas.eu>
 
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
-<gui name="KDE Partition Manager" version="11">
+<gui name="KDE Partition Manager" version="12">
     <ToolBar name="partitionToolBar">
         <text context="@title:menu">Partition Manager Toolbar</text>
         <Action name="applyAllOperations"/>
@@ -43,6 +43,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <Action name="removeVolumeGroup"/>
             <separator/>
             <Action name="smartStatusDevice"/>
+            <Action name="benchmarkDevice"/>
             <Action name="propertiesDevice"/>
         </Menu>
         <Menu name="tools">

@@ -279,6 +279,7 @@ protected:
     void onShowAboutKPMcore();
 
     void onSmartStatusDevice();
+    void onBenchmarkDevice();
     void onPropertiesDevice(const QString& deviceNode = {});
 
 private:

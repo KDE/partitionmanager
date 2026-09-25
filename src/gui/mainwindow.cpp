@@ -20,6 +20,7 @@
 #include "gui/filesystemsupportdialog.h"
 #include "gui/devicepropsdialog.h"
 #include "gui/smartdialog.h"
+#include "gui/benchmarkdialog.h"
 
 #include "config/configureoptionsdialog.h"
 
@@ -362,6 +363,14 @@ void MainWindow::setupActions()
     smartStatusDevice->setToolTip(xi18nc("@info:tooltip", "Show SMART status"));
     smartStatusDevice->setStatusTip(xi18nc("@info:status", "Show the device's SMART status if supported"));
 
+    QAction* benchmarkDevice = actionCollection()->addAction(QStringLiteral("benchmarkDevice"));
+    connect(benchmarkDevice, &QAction::triggered, this, &MainWindow::onBenchmarkDevice);
+    benchmarkDevice->setEnabled(false);
+    benchmarkDevice->setText(xi18nc("@action:inmenu", "Benchmark"));
+    benchmarkDevice->setToolTip(xi18nc("@info:tooltip", "Measure device read performance"));
+    benchmarkDevice->setStatusTip(xi18nc("@info:status", "Measure the device's read rate and access time"));
+    benchmarkDevice->setIcon(QIcon::fromTheme(QStringLiteral("speedometer")));
+
     QAction* propertiesDevice = actionCollection()->addAction(QStringLiteral("propertiesDevice"));
     connect(propertiesDevice, &QAction::triggered, [this] {onPropertiesDevice({});});
     propertiesDevice->setEnabled(false);
@@ -605,6 +614,9 @@ void MainWindow::enableActions()
                                                         pmWidget().selectedDevice()->smartStatus().isValid());
     actionCollection()->action(QStringLiteral("smartStatusDevice"))
             ->setVisible(pmWidget().selectedDevice() != nullptr && pmWidget().selectedDevice()->type() == Device::Type::Disk_Device);
+    actionCollection()->action(QStringLiteral("benchmarkDevice"))
+            ->setEnabled(pmWidget().selectedDevice() != nullptr && (pmWidget().selectedDevice()->type() == Device::Type::Disk_Device ||
+                                                                    pmWidget().selectedDevice()->type() == Device::Type::SoftwareRAID_Device));
     actionCollection()->action(QStringLiteral("propertiesDevice"))
             ->setEnabled(pmWidget().selectedDevice() != nullptr);
 
@@ -1357,6 +1369,17 @@ void MainWindow::onSmartStatusDevice()
 
     if (pmWidget().selectedDevice()) {
         QPointer<SmartDialog> dlg = new SmartDialog(this, *pmWidget().selectedDevice());
+        dlg->exec();
+        delete dlg;
+    }
+}
+
+void MainWindow::onBenchmarkDevice()
+{
+    Q_ASSERT(pmWidget().selectedDevice());
+
+    if (pmWidget().selectedDevice()) {
+        QPointer<BenchmarkDialog> dlg = new BenchmarkDialog(this, *pmWidget().selectedDevice());
         dlg->exec();
         delete dlg;
     }

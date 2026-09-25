@@ -9,6 +9,7 @@ set(GUI_SRC
     gui/applyprogressdetailswidget.cpp gui/applyprogressdetailswidget.h
     gui/applyprogressdialog.cpp gui/applyprogressdialog.h
     gui/applyprogressdialogwidget.cpp gui/applyprogressdialogwidget.h
+    gui/benchmarkdialog.cpp gui/benchmarkdialog.h
     gui/createpartitiontabledialog.cpp gui/createpartitiontabledialog.h
     gui/createpartitiontablewidget.cpp gui/createpartitiontablewidget.h
     gui/createvolumegroupdialog.cpp gui/createvolumegroupdialog.h
