@@ -470,7 +470,7 @@
 >Crea una còpia de seguretat d'una partició</action
 >: aquesta ordre crea una còpia de seguretat del sistema de fitxers de la partició seleccionada en un fitxer. Sereu preguntat on voleu emmagatzemar el fitxer d'imatge després d'activar aquesta ordre. </para>
 						<para
->El fitxer d'imatge creat és una còpia sector per sector del sistema de fitxers de la partició. No està comprimida i té cap meta informació o capçalera afegida, per tant, es pot muntar directament usant un dispositiu loop fora del &partman; si el sistema operatiu ho permet. </para>
+>El fitxer d'imatge creat és una còpia sector per sector del sistema de fitxers de la partició. No està comprimida i té cap meta informació o capçalera afegida, per tant, es pot muntar directament usant un dispositiu «loop» fora del &partman; si el sistema operatiu ho permet. </para>
 						<para
 >Aquesta ordre només està habilitada si es pot fer una còpia de seguretat de la partició seleccionada i el sistema de fitxers. La partició tampoc pot estar muntada. </para>
 					</listitem>
@@ -622,7 +622,7 @@
 						<para
 >Si heu instal·lat eines noves mentre el &partman; és en execució, cliqueu a <guibutton
 >Torna a explorar la compatibilitat</guibutton
-> per a forçar una recomprovació de les eines de compatibilitat amb els sistemes de fitxers instal·lats. </para>
+> per a forçar una comprovació nova de les eines de compatibilitat amb els sistemes de fitxers instal·lats. </para>
 					</listitem>
 				</varlistentry>
 			</variablelist>
