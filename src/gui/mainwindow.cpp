@@ -1379,9 +1379,8 @@ void MainWindow::onBenchmarkDevice()
     Q_ASSERT(pmWidget().selectedDevice());
 
     if (pmWidget().selectedDevice()) {
-        QPointer<BenchmarkDialog> dlg = new BenchmarkDialog(this, *pmWidget().selectedDevice());
-        dlg->exec();
-        delete dlg;
+        BenchmarkDialog dlg(this, *pmWidget().selectedDevice());
+        dlg.exec();
     }
 }
 
