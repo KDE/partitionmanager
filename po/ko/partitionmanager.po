@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:48+0000\n"
+"POT-Creation-Date: 2026-10-03 00:48+0000\n"
 "PO-Revision-Date: 2026-09-22 00:00+0200\n"
 "Last-Translator: Shinjo Park <peremen@gmail.com>\n"
 "Language-Team: Korean\n"
@@ -539,8 +539,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "총 시간: %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1069
-#: gui/mainwindow.cpp:1231 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1081
+#: gui/mainwindow.cpp:1243 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -602,6 +602,211 @@ msgstr "상태"
 #, no-c-format, kde-format
 msgid "Total: %p%"
 msgstr "합계: %p%"
+
+#: gui/benchmarkdialog.cpp:112
+#, fuzzy, kde-kuit-format
+#| msgid " MiB"
+msgctxt "@label graph axis, read rate"
+msgid "%1 MiB/s"
+msgstr " MiB"
+
+#: gui/benchmarkdialog.cpp:113
+#, kde-kuit-format
+msgctxt "@label graph axis, access time"
+msgid "%1 ms"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:163
+#, kde-kuit-format
+msgctxt "@label graph axis"
+msgid "Position on device"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:185
+#, fuzzy, kde-kuit-format
+#| msgid "Read Label"
+msgctxt "@label graph legend"
+msgid "Read rate"
+msgstr "레이블 읽기"
+
+#: gui/benchmarkdialog.cpp:186
+#, kde-kuit-format
+msgctxt "@label graph legend"
+msgid "Access time"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:209
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label partition state"
+#| msgid "mounted on <filename>%1</filename>"
+msgctxt "@title:window"
+msgid "Benchmark: <filename>%1</filename>"
+msgstr "<filename>%1</filename>에 마운트됨"
+
+#: gui/benchmarkdialog.cpp:237
+#, fuzzy, kde-kuit-format
+#| msgid " MiB"
+msgctxt "@item:valuesuffix"
+msgid " MiB"
+msgstr " MiB"
+
+#: gui/benchmarkdialog.cpp:243
+#, kde-kuit-format
+msgctxt "@label:spinbox"
+msgid "Transfer rate samples:"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:244
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label partition"
+#| msgid "Key size:"
+msgctxt "@label:spinbox"
+msgid "Sample size:"
+msgstr "키 크기:"
+
+#: gui/benchmarkdialog.cpp:245
+#, kde-kuit-format
+msgctxt "@label:spinbox"
+msgid "Access time samples:"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:253
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Average read rate:"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:254
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "Minimum size:"
+msgctxt "@label"
+msgid "Minimum read rate:"
+msgstr "최소 크기:"
+
+#: gui/benchmarkdialog.cpp:255
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "Maximum size:"
+msgctxt "@label"
+msgid "Maximum read rate:"
+msgstr "최대 크기:"
+
+#: gui/benchmarkdialog.cpp:256
+#, fuzzy, kde-kuit-format
+#| msgid "Overall assessment:"
+msgctxt "@label"
+msgid "Average access time:"
+msgstr "전체적 상태:"
+
+#: gui/benchmarkdialog.cpp:268
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The device is only read, no data is written. Other activity on the device "
+"affects the results."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:273
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Start Benchmark"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:275
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Stop"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:318
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Preparing the benchmark…"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:323 gui/benchmarkdialog.cpp:439
+#: gui/benchmarkdialog.cpp:462
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Could not connect to the KPMcore helper."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:330
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Stopping after the current read request finishes…"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:346
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Direct I/O is not supported for this device. The benchmark was not run, "
+"because cached reads would not show the speed of the device."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:350
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "The benchmark request was rejected as invalid."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:353
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Reading from the device failed or access was denied."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:393
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Could not determine the size of the device."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:418 gui/benchmarkdialog.cpp:445
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Benchmark stopped."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:437
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Measuring transfer rate: sample %1 of %2…"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:450
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress"
+#| msgid "Scan finished."
+msgctxt "@info:status"
+msgid "Benchmark finished."
+msgstr "검색이 완료되었습니다."
+
+#: gui/benchmarkdialog.cpp:460
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Measuring access time: %1 of %2 reads…"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:469
+#, kde-kuit-format
+msgctxt "@label benchmark result not measured yet"
+msgid "—"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:485
+#, kde-kuit-format
+msgctxt "@label read rate, %1 is a size such as 120.5 MiB"
+msgid "%1/s"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:498
+#, kde-kuit-format
+msgctxt "@label access time in milliseconds"
+msgid "%1 ms"
+msgstr ""
 
 #: gui/createpartitiontabledialog.cpp:31
 #, kde-kuit-format
@@ -1414,7 +1619,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr "%1 | %2"
 
-#: gui/mainwindow.cpp:168
+#: gui/mainwindow.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1424,7 +1629,7 @@ msgstr ""
 "파티션 관리자를 사용하려면 상위 권한이 필요합니다. 장치 목록을 새로 고치고 인"
 "증 대화 상자를 확인하십시오."
 
-#: gui/mainwindow.cpp:236
+#: gui/mainwindow.cpp:237
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1436,571 +1641,589 @@ msgid_plural ""
 msgstr[0] ""
 "<para>앱을 종료하시겠습니까?</para> <para>작업 %1개가 대기 중입니다.</para>"
 
-#: gui/mainwindow.cpp:238
+#: gui/mainwindow.cpp:239
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "대기 중인 작업을 삭제하고 종료하시겠습니까?"
 
-#: gui/mainwindow.cpp:239
+#: gui/mainwindow.cpp:240
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "<application>%1</application> 끝내기"
 
-#: gui/mainwindow.cpp:281
+#: gui/mainwindow.cpp:282
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "실행 취소"
 
-#: gui/mainwindow.cpp:282
+#: gui/mainwindow.cpp:283
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "마지막 작업 실행 취소"
 
-#: gui/mainwindow.cpp:283
+#: gui/mainwindow.cpp:284
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "목록에서 마지막 작업을 삭제합니다."
 
-#: gui/mainwindow.cpp:290
+#: gui/mainwindow.cpp:291
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "지우기"
 
-#: gui/mainwindow.cpp:291
+#: gui/mainwindow.cpp:292
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "모든 작업 지우기"
 
-#: gui/mainwindow.cpp:292
+#: gui/mainwindow.cpp:293
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "모든 작업 목록을 지웁니다."
 
-#: gui/mainwindow.cpp:298
+#: gui/mainwindow.cpp:299
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "적용"
 
-#: gui/mainwindow.cpp:299
+#: gui/mainwindow.cpp:300
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "모든 작업 적용"
 
-#: gui/mainwindow.cpp:300
+#: gui/mainwindow.cpp:301
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "목록의 대기 중인 작업을 적용합니다."
 
-#: gui/mainwindow.cpp:307
+#: gui/mainwindow.cpp:308
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "새 파티션 테이블"
 
-#: gui/mainwindow.cpp:308
+#: gui/mainwindow.cpp:309
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "새 파티션 테이블 만들기"
 
-#: gui/mainwindow.cpp:309
+#: gui/mainwindow.cpp:310
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "장치에 새 빈 파티션 테이블을 만듭니다."
 
-#: gui/mainwindow.cpp:316
+#: gui/mainwindow.cpp:317
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "파티션 테이블 내보내기"
 
-#: gui/mainwindow.cpp:317
+#: gui/mainwindow.cpp:318
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "파티션 테이블 내보내기"
 
-#: gui/mainwindow.cpp:318
+#: gui/mainwindow.cpp:319
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "장치의 파티션 테이블을 텍스트 파일로 내보냅니다."
 
-#: gui/mainwindow.cpp:324
+#: gui/mainwindow.cpp:325
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "파티션 테이블 가져오기"
 
-#: gui/mainwindow.cpp:325
+#: gui/mainwindow.cpp:326
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "파티션 테이블 가져오기"
 
-#: gui/mainwindow.cpp:326
+#: gui/mainwindow.cpp:327
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "텍스트 파일에서 파티션 테이블을 가져옵니다."
 
-#: gui/mainwindow.cpp:333
+#: gui/mainwindow.cpp:334
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "볼륨 그룹 삭제"
 
-#: gui/mainwindow.cpp:334
+#: gui/mainwindow.cpp:335
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "선택한 볼륨 그룹 삭제"
 
-#: gui/mainwindow.cpp:335
+#: gui/mainwindow.cpp:336
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "선택한 볼륨 그룹을 삭제합니다."
 
-#: gui/mainwindow.cpp:343
+#: gui/mainwindow.cpp:344
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "볼륨 그룹 크기 조정"
 
-#: gui/mainwindow.cpp:344
+#: gui/mainwindow.cpp:345
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "선택한 볼륨 그룹 크기 조정"
 
-#: gui/mainwindow.cpp:345
+#: gui/mainwindow.cpp:346
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr "선택한 볼륨 그룹을 확장하거나 축소합니다."
 
-#: gui/mainwindow.cpp:353
+#: gui/mainwindow.cpp:354
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "볼륨 그룹 비활성화"
 
-#: gui/mainwindow.cpp:354
+#: gui/mainwindow.cpp:355
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "선택한 볼륨 그룹 비활성화"
 
-#: gui/mainwindow.cpp:355
+#: gui/mainwindow.cpp:356
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr "이동식 장치의 연결을 해제하기 전 선택한 볼륨 그룹을 비활성화합니다."
 
-#: gui/mainwindow.cpp:361
+#: gui/mainwindow.cpp:362
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "SMART 상태"
 
-#: gui/mainwindow.cpp:362
+#: gui/mainwindow.cpp:363
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "SMART 상태 보기"
 
-#: gui/mainwindow.cpp:363
+#: gui/mainwindow.cpp:364
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr "장치에서 지원하는 경우 SMART 상태 표시"
 
-#: gui/mainwindow.cpp:368 gui/mainwindow.cpp:468
+#: gui/mainwindow.cpp:369
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Benchmark"
+msgstr ""
+
+#: gui/mainwindow.cpp:370
+#, kde-kuit-format
+msgctxt "@info:tooltip"
+msgid "Measure device read performance"
+msgstr ""
+
+#: gui/mainwindow.cpp:371
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Measure the device's read rate and access time"
+msgstr ""
+
+#: gui/mainwindow.cpp:377 gui/mainwindow.cpp:477
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "속성"
 
-#: gui/mainwindow.cpp:369
+#: gui/mainwindow.cpp:378
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "장치 속성 대화 상자 표시"
 
-#: gui/mainwindow.cpp:370
+#: gui/mainwindow.cpp:379
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "장치 속성을 보고 수정"
 
-#: gui/mainwindow.cpp:377
+#: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "새로 만들기"
 
-#: gui/mainwindow.cpp:378
+#: gui/mainwindow.cpp:387
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "새 파티션"
 
-#: gui/mainwindow.cpp:379
+#: gui/mainwindow.cpp:388
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "새 파티션을 만듭니다."
 
-#: gui/mainwindow.cpp:386
+#: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "크기 조정/이동"
 
-#: gui/mainwindow.cpp:387
+#: gui/mainwindow.cpp:396
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "파티션 크기 조정 및 이동"
 
-#: gui/mainwindow.cpp:388
+#: gui/mainwindow.cpp:397
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "존재하는 파티션을 확대, 축소, 이동합니다."
 
-#: gui/mainwindow.cpp:395
+#: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "삭제"
 
-#: gui/mainwindow.cpp:396 gui/mainwindow.cpp:659
+#: gui/mainwindow.cpp:405 gui/mainwindow.cpp:671
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "파티션 삭제"
 
-#: gui/mainwindow.cpp:397
+#: gui/mainwindow.cpp:406
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "파티션을 삭제합니다."
 
-#: gui/mainwindow.cpp:404
+#: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "소거"
 
-#: gui/mainwindow.cpp:405
+#: gui/mainwindow.cpp:414
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "파티션 소거"
 
-#: gui/mainwindow.cpp:406
+#: gui/mainwindow.cpp:415
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr "파티션 데이터를 복원할 수 없도록 소거합니다."
 
-#: gui/mainwindow.cpp:413
+#: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "복사"
 
-#: gui/mainwindow.cpp:414
+#: gui/mainwindow.cpp:423
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "파티션 복사"
 
-#: gui/mainwindow.cpp:415
+#: gui/mainwindow.cpp:424
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "존재하는 파티션을 복사합니다."
 
-#: gui/mainwindow.cpp:422
+#: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: gui/mainwindow.cpp:423
+#: gui/mainwindow.cpp:432
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "파티션 붙여넣기"
 
-#: gui/mainwindow.cpp:424
+#: gui/mainwindow.cpp:433
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "복사한 파티션을 붙여 넣습니다."
 
-#: gui/mainwindow.cpp:431
+#: gui/mainwindow.cpp:440
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "마운트 지점 편집"
 
-#: gui/mainwindow.cpp:432
+#: gui/mainwindow.cpp:441
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "마운트 지점 편집"
 
-#: gui/mainwindow.cpp:433
+#: gui/mainwindow.cpp:442
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "파티션의 마운트 지점과 옵션을 편집합니다."
 
-#: gui/mainwindow.cpp:438
+#: gui/mainwindow.cpp:447
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "마운트"
 
-#: gui/mainwindow.cpp:439
+#: gui/mainwindow.cpp:448
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "파티션 마운트 및 마운트 해제"
 
-#: gui/mainwindow.cpp:440
+#: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "파티션을 마운트 하거나 마운트 해제합니다."
 
-#: gui/mainwindow.cpp:445
+#: gui/mainwindow.cpp:454
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
 msgstr "소유권 얻기"
 
-#: gui/mainwindow.cpp:446
+#: gui/mainwindow.cpp:455
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
 msgstr "파일 시스템의 소유권 얻기"
 
-#: gui/mainwindow.cpp:447
+#: gui/mainwindow.cpp:456
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr "마운트된 파일 시스템의 소유권을 현재 사용자에게 부여합니다."
 
-#: gui/mainwindow.cpp:453
+#: gui/mainwindow.cpp:462
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr "잠금 해제"
 
-#: gui/mainwindow.cpp:454
+#: gui/mainwindow.cpp:463
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "암호화된 파티션을 잠그거나 잠금 해제"
 
-#: gui/mainwindow.cpp:455
+#: gui/mainwindow.cpp:464
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "암호화된 파티션을 잠그거나 잠금 해제합니다."
 
-#: gui/mainwindow.cpp:460
+#: gui/mainwindow.cpp:469
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "검사"
 
-#: gui/mainwindow.cpp:461
+#: gui/mainwindow.cpp:470
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "파티션 검사"
 
-#: gui/mainwindow.cpp:462
+#: gui/mainwindow.cpp:471
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "파일 시스템의 오류를 검사합니다."
 
-#: gui/mainwindow.cpp:469
+#: gui/mainwindow.cpp:478
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "파티션 속성 대화 상자 열기"
 
-#: gui/mainwindow.cpp:470
+#: gui/mainwindow.cpp:479
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr "파티션 정보를 보고 수정합니다(레이블, 파티션 플래그 등)"
 
-#: gui/mainwindow.cpp:476
+#: gui/mainwindow.cpp:485
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "백업"
 
-#: gui/mainwindow.cpp:477
+#: gui/mainwindow.cpp:486
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "파티션 백업"
 
-#: gui/mainwindow.cpp:478
+#: gui/mainwindow.cpp:487
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "이미지 파일로 파티션을 백업합니다."
 
-#: gui/mainwindow.cpp:484
+#: gui/mainwindow.cpp:493
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "복원"
 
-#: gui/mainwindow.cpp:485
+#: gui/mainwindow.cpp:494
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "파티션 복원"
 
-#: gui/mainwindow.cpp:486
+#: gui/mainwindow.cpp:495
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "이미지 파일에서 파티션을 복원합니다."
 
-#: gui/mainwindow.cpp:493
+#: gui/mainwindow.cpp:502
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "새 볼륨 그룹"
 
-#: gui/mainwindow.cpp:494
+#: gui/mainwindow.cpp:503
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr "새 LVM 볼륨 그룹 만들기"
 
-#: gui/mainwindow.cpp:495
+#: gui/mainwindow.cpp:504
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "새 LVM 볼륨 그룹 장치를 만듭니다."
 
-#: gui/mainwindow.cpp:501
+#: gui/mainwindow.cpp:510
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "파일 시스템 지원"
 
-#: gui/mainwindow.cpp:502
+#: gui/mainwindow.cpp:511
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "파일 시스템 지원 정보 보기"
 
-#: gui/mainwindow.cpp:503
+#: gui/mainwindow.cpp:512
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "지원하는 파일 시스템 정보를 표시합니다."
 
-#: gui/mainwindow.cpp:507
+#: gui/mainwindow.cpp:516
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "장치 새로 고침"
 
-#: gui/mainwindow.cpp:508
+#: gui/mainwindow.cpp:517
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "모든 장치 새로 고침"
 
-#: gui/mainwindow.cpp:509
+#: gui/mainwindow.cpp:518
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "장치 목록을 새로 고칩니다."
 
-#: gui/mainwindow.cpp:525
+#: gui/mainwindow.cpp:534
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "기록 비우기"
 
-#: gui/mainwindow.cpp:526
+#: gui/mainwindow.cpp:535
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr "로그 출력 비우기"
 
-#: gui/mainwindow.cpp:527
+#: gui/mainwindow.cpp:536
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr "로그 출력 패널을 비웁니다."
 
-#: gui/mainwindow.cpp:532
+#: gui/mainwindow.cpp:541
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "로그 저장"
 
-#: gui/mainwindow.cpp:533
+#: gui/mainwindow.cpp:542
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr "로그 출력 저장"
 
-#: gui/mainwindow.cpp:534
+#: gui/mainwindow.cpp:543
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr "로그 출력을 파일로 저장합니다."
 
-#: gui/mainwindow.cpp:540
+#: gui/mainwindow.cpp:549
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr "KPMcore 라이브러리 정보"
 
-#: gui/mainwindow.cpp:541
+#: gui/mainwindow.cpp:550
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr "KPMcore 정보 대화 상자 표시"
 
-#: gui/mainwindow.cpp:542
+#: gui/mainwindow.cpp:551
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "KPMcore 정보 대화 상자를 표시합니다."
 
-#: gui/mainwindow.cpp:661
+#: gui/mainwindow.cpp:673
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2010,32 +2233,32 @@ msgstr ""
 "파티션을 삭제할 수 없습니다. 진행하기 전에 마운트 해제나 잠금 여부를 확인하십"
 "시오."
 
-#: gui/mainwindow.cpp:737
+#: gui/mainwindow.cpp:749
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
 msgstr[0] "작업 %1개 대기 중"
 
-#: gui/mainwindow.cpp:832
+#: gui/mainwindow.cpp:844
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "다음 백엔드 플러그인 사용: %1(%2)"
 
-#: gui/mainwindow.cpp:836
+#: gui/mainwindow.cpp:848
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "장치 검색 중..."
 
-#: gui/mainwindow.cpp:874
+#: gui/mainwindow.cpp:886
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "검색이 완료되었습니다."
 
-#: gui/mainwindow.cpp:938
+#: gui/mainwindow.cpp:950
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2045,19 +2268,19 @@ msgstr ""
 "<para>장치를 다시 검색하시겠습니까?</para> <para><warning>장치를 다시 검색하"
 "면 대기 중인 작업을 초기화합니다.</warning></para>"
 
-#: gui/mainwindow.cpp:940
+#: gui/mainwindow.cpp:952
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "장치를 다시 검색하시겠습니까?"
 
-#: gui/mainwindow.cpp:941
+#: gui/mainwindow.cpp:953
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "장치 재검색"
 
-#: gui/mainwindow.cpp:967
+#: gui/mainwindow.cpp:979
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2067,74 +2290,74 @@ msgstr ""
 "<para>아래의 대기 중인 작업을 적용하시겠습니까?</para> <para><warning>이 작업"
 "은 디스크를 영구적으로 수정합니다.</warning></para>"
 
-#: gui/mainwindow.cpp:969
+#: gui/mainwindow.cpp:981
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "대기 중인 작업을 적용하시겠습니까?"
 
-#: gui/mainwindow.cpp:970
+#: gui/mainwindow.cpp:982
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "대기 중인 작업 적용"
 
-#: gui/mainwindow.cpp:972
+#: gui/mainwindow.cpp:984
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "작업 적용 중..."
 
-#: gui/mainwindow.cpp:997
+#: gui/mainwindow.cpp:1009
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "작업 실행 취소 중: %1"
 
-#: gui/mainwindow.cpp:1013
+#: gui/mainwindow.cpp:1025
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "대기 중인 작업 목록을 비우시겠습니까?"
 
-#: gui/mainwindow.cpp:1014
+#: gui/mainwindow.cpp:1026
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "대기 중인 작업 목록을 비우시겠습니까?"
 
-#: gui/mainwindow.cpp:1015
+#: gui/mainwindow.cpp:1027
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "대기 중인 작업 목록 비우기"
 
-#: gui/mainwindow.cpp:1017
+#: gui/mainwindow.cpp:1029
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "대기 중인 작업 목록을 비웁니다."
 
-#: gui/mainwindow.cpp:1059
+#: gui/mainwindow.cpp:1071
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
 msgstr "파일 <filename>%1</filename>에서 가져오려고 열 수 없음"
 
-#: gui/mainwindow.cpp:1059 gui/mainwindow.cpp:1069 gui/mainwindow.cpp:1077
-#: gui/mainwindow.cpp:1083
+#: gui/mainwindow.cpp:1071 gui/mainwindow.cpp:1081 gui/mainwindow.cpp:1089
+#: gui/mainwindow.cpp:1095
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "파티션 테이블을 가져올 수 없음"
 
-#: gui/mainwindow.cpp:1077
+#: gui/mainwindow.cpp:1089
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
 msgstr "파일 <filename>%1</filename>에서 가져오려고 열 수 없음: %2"
 
-#: gui/mainwindow.cpp:1083
+#: gui/mainwindow.cpp:1095
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2144,7 +2367,7 @@ msgstr ""
 "파일 <filename>%2</filename>에서 가져오는 중 임시 파일 <filename>%1</"
 "filename>을(를) 열 수 없습니다."
 
-#: gui/mainwindow.cpp:1113
+#: gui/mainwindow.cpp:1125
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2152,58 +2375,58 @@ msgid ""
 "table."
 msgstr "파일 <filename>%1</filename>에 올바른 파티션 테이블 정보가 없습니다."
 
-#: gui/mainwindow.cpp:1113 gui/mainwindow.cpp:1123 gui/mainwindow.cpp:1130
-#: gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1145 gui/mainwindow.cpp:1158
-#: gui/mainwindow.cpp:1163 gui/mainwindow.cpp:1182 gui/mainwindow.cpp:1187
-#: gui/mainwindow.cpp:1192 gui/mainwindow.cpp:1199 gui/mainwindow.cpp:1475
+#: gui/mainwindow.cpp:1125 gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1142
+#: gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1157 gui/mainwindow.cpp:1170
+#: gui/mainwindow.cpp:1175 gui/mainwindow.cpp:1194 gui/mainwindow.cpp:1199
+#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211 gui/mainwindow.cpp:1497
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "파티션 테이블 가져오는 중 오류"
 
-#: gui/mainwindow.cpp:1123
+#: gui/mainwindow.cpp:1135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr "가져올 파일에서 하나 이상의 파티션 테이블을 찾았습니다(%1번째 줄)."
 
-#: gui/mainwindow.cpp:1130
+#: gui/mainwindow.cpp:1142
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "파티션 테이블 형식 \"%1\"을(를) 알 수 없습니다(%2번째 줄)."
 
-#: gui/mainwindow.cpp:1135
+#: gui/mainwindow.cpp:1147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr "파티션 테이블 형식 \"%1\"을(를) 가져올 수 없습니다(%2번째 줄)."
 
-#: gui/mainwindow.cpp:1145
+#: gui/mainwindow.cpp:1157
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr "파티션을 찾았지만 파티션 테이블 종류를 알 수 없습니다(%1번째 줄)."
 
-#: gui/mainwindow.cpp:1158
+#: gui/mainwindow.cpp:1170
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "파티션 %1이(가) 장치 바깥에 위치합니다(%2번째 줄)."
 
-#: gui/mainwindow.cpp:1163
+#: gui/mainwindow.cpp:1175
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "파티션 %1의 끝 섹터가 시작 섹터 이전에 있습니다(%2번째 줄)."
 
-#: gui/mainwindow.cpp:1182
+#: gui/mainwindow.cpp:1194
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "파티션 %2의 알 수 없는 파티션 규칙 \"%1\"입니다(%3번째 줄)."
 
-#: gui/mainwindow.cpp:1187
+#: gui/mainwindow.cpp:1199
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
@@ -2211,7 +2434,7 @@ msgid ""
 msgstr ""
 "파티션 %1의 부모 파티션이나 파티션 테이블을 찾을 수 없습니다(%2번째 줄)."
 
-#: gui/mainwindow.cpp:1192
+#: gui/mainwindow.cpp:1204
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2221,35 +2444,35 @@ msgstr ""
 "파티션 테이블 형식 \"%1\"은(는) 확장 파티션을 지원하지 않지만 확장 파티션을 "
 "찾았습니다(%2번째 줄)."
 
-#: gui/mainwindow.cpp:1199
+#: gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr "파티션 %2에 \"%1\" 형식 파일 시스템을 만들 수 없습니다(%3번째 줄)."
 
-#: gui/mainwindow.cpp:1214
+#: gui/mainwindow.cpp:1226
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr "가져올 파일의 %1번째 줄을 처리할 수 없습니다. 무시합니다."
 
-#: gui/mainwindow.cpp:1231
+#: gui/mainwindow.cpp:1243
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "파티션 테이블을 내보내는 중 오류 발생"
 
-#: gui/mainwindow.cpp:1396 gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1438
+#: gui/mainwindow.cpp:1418 gui/mainwindow.cpp:1424 gui/mainwindow.cpp:1460
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1413
+#: gui/mainwindow.cpp:1424 gui/mainwindow.cpp:1435
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1450
+#: gui/mainwindow.cpp:1472
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2274,25 +2497,25 @@ msgstr ""
 "수 없습니다.</para><para>배포판 패키지 관리자를 통해서 필요한 도구를 설치할 "
 "수 있습니다.</para>"
 
-#: gui/mainwindow.cpp:1463
+#: gui/mainwindow.cpp:1485
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "파일 시스템 지원 패키지 없음"
 
-#: gui/mainwindow.cpp:1474
+#: gui/mainwindow.cpp:1496
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "인식할 수 없는 장치 \"%1\""
 
-#: gui/mainwindow.cpp:1483
+#: gui/mainwindow.cpp:1505
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "인식할 수 없는 파티션 \"%1\""
 
-#: gui/mainwindow.cpp:1484
+#: gui/mainwindow.cpp:1506
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
@@ -2355,21 +2578,21 @@ msgid "Select Current Device"
 msgstr "현재 장치 선택"
 
 #. i18n: ectx: Menu (tools)
-#: gui/partitionmanagerui.rc:49
+#: gui/partitionmanagerui.rc:50
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
 msgstr "도구"
 
 #. i18n: ectx: Menu (partition)
-#: gui/partitionmanagerui.rc:55
+#: gui/partitionmanagerui.rc:56
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition"
 msgstr "파티션"
 
 #. i18n: ectx: Menu (panels)
-#: gui/partitionmanagerui.rc:78
+#: gui/partitionmanagerui.rc:79
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"

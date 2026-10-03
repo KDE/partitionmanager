@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:48+0000\n"
+"POT-Creation-Date: 2026-10-03 00:48+0000\n"
 "PO-Revision-Date: 2026-09-14 20:10+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -542,8 +542,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Celkový čas:  %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1069
-#: gui/mainwindow.cpp:1231 gui/smartdialog.cpp:227
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1081
+#: gui/mainwindow.cpp:1243 gui/smartdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -606,6 +606,212 @@ msgstr "Stav"
 #, no-c-format, kde-format
 msgid "Total: %p%"
 msgstr "Celkovo : %p%"
+
+#: gui/benchmarkdialog.cpp:112
+#, fuzzy, kde-kuit-format
+#| msgid " MiB"
+msgctxt "@label graph axis, read rate"
+msgid "%1 MiB/s"
+msgstr " MiB"
+
+#: gui/benchmarkdialog.cpp:113
+#, kde-kuit-format
+msgctxt "@label graph axis, access time"
+msgid "%1 ms"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:163
+#, kde-kuit-format
+msgctxt "@label graph axis"
+msgid "Position on device"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:185
+#, fuzzy, kde-kuit-format
+#| msgctxt "SMART attr name"
+#| msgid "Read Error Rate"
+msgctxt "@label graph legend"
+msgid "Read rate"
+msgstr "Počet chýb pri čítaní"
+
+#: gui/benchmarkdialog.cpp:186
+#, kde-kuit-format
+msgctxt "@label graph legend"
+msgid "Access time"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:209
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label partition state"
+#| msgid "mounted on <filename>%1</filename>"
+msgctxt "@title:window"
+msgid "Benchmark: <filename>%1</filename>"
+msgstr "pripojené na <filename>%1</filename>"
+
+#: gui/benchmarkdialog.cpp:237
+#, fuzzy, kde-kuit-format
+#| msgid " MiB"
+msgctxt "@item:valuesuffix"
+msgid " MiB"
+msgstr " MiB"
+
+#: gui/benchmarkdialog.cpp:243
+#, kde-kuit-format
+msgctxt "@label:spinbox"
+msgid "Transfer rate samples:"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:244
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label partition"
+#| msgid "Key size:"
+msgctxt "@label:spinbox"
+msgid "Sample size:"
+msgstr "Veľkosť kľúča:"
+
+#: gui/benchmarkdialog.cpp:245
+#, kde-kuit-format
+msgctxt "@label:spinbox"
+msgid "Access time samples:"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:253
+#, kde-kuit-format
+msgctxt "@label"
+msgid "Average read rate:"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:254
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "Minimum size:"
+msgctxt "@label"
+msgid "Minimum read rate:"
+msgstr "Minimálna veľkosť:"
+
+#: gui/benchmarkdialog.cpp:255
+#, fuzzy, kde-kuit-format
+#| msgctxt "@label"
+#| msgid "Maximum size:"
+msgctxt "@label"
+msgid "Maximum read rate:"
+msgstr "Maximálna veľkosť:"
+
+#: gui/benchmarkdialog.cpp:256
+#, fuzzy, kde-kuit-format
+#| msgid "Overall assessment:"
+msgctxt "@label"
+msgid "Average access time:"
+msgstr "Celkové zhodnotenie:"
+
+#: gui/benchmarkdialog.cpp:268
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"The device is only read, no data is written. Other activity on the device "
+"affects the results."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:273
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Start Benchmark"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:275
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Stop"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:318
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Preparing the benchmark…"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:323 gui/benchmarkdialog.cpp:439
+#: gui/benchmarkdialog.cpp:462
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Could not connect to the KPMcore helper."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:330
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Stopping after the current read request finishes…"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:346
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid ""
+"Direct I/O is not supported for this device. The benchmark was not run, "
+"because cached reads would not show the speed of the device."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:350
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "The benchmark request was rejected as invalid."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:353
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Reading from the device failed or access was denied."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:393
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Could not determine the size of the device."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:418 gui/benchmarkdialog.cpp:445
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Benchmark stopped."
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:437
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Measuring transfer rate: sample %1 of %2…"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:450
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:progress"
+#| msgid "Scan finished."
+msgctxt "@info:status"
+msgid "Benchmark finished."
+msgstr "Prehľadávanie dokončené."
+
+#: gui/benchmarkdialog.cpp:460
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Measuring access time: %1 of %2 reads…"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:469
+#, kde-kuit-format
+msgctxt "@label benchmark result not measured yet"
+msgid "—"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:485
+#, kde-kuit-format
+msgctxt "@label read rate, %1 is a size such as 120.5 MiB"
+msgid "%1/s"
+msgstr ""
+
+#: gui/benchmarkdialog.cpp:498
+#, kde-kuit-format
+msgctxt "@label access time in milliseconds"
+msgid "%1 ms"
+msgstr ""
 
 #: gui/createpartitiontabledialog.cpp:31
 #, kde-kuit-format
@@ -1434,7 +1640,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr "%1 | %2"
 
-#: gui/mainwindow.cpp:168
+#: gui/mainwindow.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1444,7 +1650,7 @@ msgstr ""
 "Partition Manager vyžaduje oprávnenia, aby mohol fungovať. Obnovte "
 "zariadenia a po zobrazení výzvy sa prihláste."
 
-#: gui/mainwindow.cpp:236
+#: gui/mainwindow.cpp:237
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1463,574 +1669,594 @@ msgstr[2] ""
 "<para>Naozaj chcete ukončiť aplikáciu?</para><para>Máte ešte %1 čakajúcich "
 "operácií.</para>"
 
-#: gui/mainwindow.cpp:238
+#: gui/mainwindow.cpp:239
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "Zahodiť čakajúce operácie a skončiť?"
 
-#: gui/mainwindow.cpp:239
+#: gui/mainwindow.cpp:240
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "Ukončiť aplikáciu <application>%1</application>"
 
-#: gui/mainwindow.cpp:281
+#: gui/mainwindow.cpp:282
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "Vrátiť späť"
 
-#: gui/mainwindow.cpp:282
+#: gui/mainwindow.cpp:283
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "Vrátiť späť poslednú operáciu"
 
-#: gui/mainwindow.cpp:283
+#: gui/mainwindow.cpp:284
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "Odstrániť poslednú operáciu zo zoznamu."
 
-#: gui/mainwindow.cpp:290
+#: gui/mainwindow.cpp:291
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "Vymazať"
 
-#: gui/mainwindow.cpp:291
+#: gui/mainwindow.cpp:292
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "Vymazať všetky operácie"
 
-#: gui/mainwindow.cpp:292
+#: gui/mainwindow.cpp:293
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "Vyprázdniť zoznam čakajúcich operácií."
 
-#: gui/mainwindow.cpp:298
+#: gui/mainwindow.cpp:299
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "Aplikovať"
 
-#: gui/mainwindow.cpp:299
+#: gui/mainwindow.cpp:300
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "Aplikovať všetky operácie"
 
-#: gui/mainwindow.cpp:300
+#: gui/mainwindow.cpp:301
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "Použiť čakajúce operácie zo zoznamu."
 
-#: gui/mainwindow.cpp:307
+#: gui/mainwindow.cpp:308
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "Nová tabuľka oddielov"
 
-#: gui/mainwindow.cpp:308
+#: gui/mainwindow.cpp:309
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "Vytvoriť novú tabuľku oddielov"
 
-#: gui/mainwindow.cpp:309
+#: gui/mainwindow.cpp:310
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "Vytvoriť novú a prázdnu tabuľku oddielov na zariadení."
 
-#: gui/mainwindow.cpp:316
+#: gui/mainwindow.cpp:317
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "Exportovať tabuľku oddielov"
 
-#: gui/mainwindow.cpp:317
+#: gui/mainwindow.cpp:318
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "Exportovať tabuľku oddielov"
 
-#: gui/mainwindow.cpp:318
+#: gui/mainwindow.cpp:319
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "Exportovať tabuľku oddielov zariadenia do textového súboru."
 
-#: gui/mainwindow.cpp:324
+#: gui/mainwindow.cpp:325
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "Importovať tabuľku oddielov"
 
-#: gui/mainwindow.cpp:325
+#: gui/mainwindow.cpp:326
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "Importovať tabuľku oddielov"
 
-#: gui/mainwindow.cpp:326
+#: gui/mainwindow.cpp:327
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "Importovať tabuľku oddielov z textového súboru."
 
-#: gui/mainwindow.cpp:333
+#: gui/mainwindow.cpp:334
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "Odstrániť skupinu zväzkov"
 
-#: gui/mainwindow.cpp:334
+#: gui/mainwindow.cpp:335
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "Odstrániť vybranú skupinu zväzkov"
 
-#: gui/mainwindow.cpp:335
+#: gui/mainwindow.cpp:336
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "Odstrániť vybranú skupinu zväzkov."
 
-#: gui/mainwindow.cpp:343
+#: gui/mainwindow.cpp:344
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "Zmeniť veľkosť skupiny zväzkov"
 
-#: gui/mainwindow.cpp:344
+#: gui/mainwindow.cpp:345
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "Zmeniť veľkosť vybranej skupine zväzkov"
 
-#: gui/mainwindow.cpp:345
+#: gui/mainwindow.cpp:346
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr "Rozšíriť alebo zmenšiť vybranú skupinu zväzkov."
 
-#: gui/mainwindow.cpp:353
+#: gui/mainwindow.cpp:354
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "Deaktivovať skupinu zväzkov"
 
-#: gui/mainwindow.cpp:354
+#: gui/mainwindow.cpp:355
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "Deaktivovať vybranú skupinu zväzkov"
 
-#: gui/mainwindow.cpp:355
+#: gui/mainwindow.cpp:356
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr ""
 "Deaktivovať vybranú skupinu zväzkov pred odpojením vymeniteľných zariadení."
 
-#: gui/mainwindow.cpp:361
+#: gui/mainwindow.cpp:362
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "Stav systému SMART"
 
-#: gui/mainwindow.cpp:362
+#: gui/mainwindow.cpp:363
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "Zobraziť stav systému SMART"
 
-#: gui/mainwindow.cpp:363
+#: gui/mainwindow.cpp:364
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr "Zobraziť stav systému SMART zariadenia, ak je podporovaný"
 
-#: gui/mainwindow.cpp:368 gui/mainwindow.cpp:468
+#: gui/mainwindow.cpp:369
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Benchmark"
+msgstr ""
+
+#: gui/mainwindow.cpp:370
+#, fuzzy, kde-kuit-format
+#| msgctxt "SMART attr name"
+#| msgid "Seek Time Performance"
+msgctxt "@info:tooltip"
+msgid "Measure device read performance"
+msgstr "Výkonnosť času hľadania"
+
+#: gui/mainwindow.cpp:371
+#, kde-kuit-format
+msgctxt "@info:status"
+msgid "Measure the device's read rate and access time"
+msgstr ""
+
+#: gui/mainwindow.cpp:377 gui/mainwindow.cpp:477
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: gui/mainwindow.cpp:369
+#: gui/mainwindow.cpp:378
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "Zobraziť dialógové okno s vlastnosťami zariadenia"
 
-#: gui/mainwindow.cpp:370
+#: gui/mainwindow.cpp:379
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "Ukáž a zmeň vlastnosti zariadenia"
 
-#: gui/mainwindow.cpp:377
+#: gui/mainwindow.cpp:386
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "Nový"
 
-#: gui/mainwindow.cpp:378
+#: gui/mainwindow.cpp:387
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "Nový oddiel"
 
-#: gui/mainwindow.cpp:379
+#: gui/mainwindow.cpp:388
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "Vytvoriť nový oddiel."
 
-#: gui/mainwindow.cpp:386
+#: gui/mainwindow.cpp:395
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "Zmeniť veľkosť/Presunúť"
 
-#: gui/mainwindow.cpp:387
+#: gui/mainwindow.cpp:396
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "Zmeniť veľkosť alebo presunúť oddiel"
 
-#: gui/mainwindow.cpp:388
+#: gui/mainwindow.cpp:397
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "Zmenšiť, zväčšiť alebo presunúť oddiel."
 
-#: gui/mainwindow.cpp:395
+#: gui/mainwindow.cpp:404
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "Odstrániť"
 
-#: gui/mainwindow.cpp:396 gui/mainwindow.cpp:659
+#: gui/mainwindow.cpp:405 gui/mainwindow.cpp:671
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "Odstrániť oddiel"
 
-#: gui/mainwindow.cpp:397
+#: gui/mainwindow.cpp:406
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "Odstrániť oddiel."
 
-#: gui/mainwindow.cpp:404
+#: gui/mainwindow.cpp:413
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "Zničiť"
 
-#: gui/mainwindow.cpp:405
+#: gui/mainwindow.cpp:414
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "Zničiť oddiel"
 
-#: gui/mainwindow.cpp:406
+#: gui/mainwindow.cpp:415
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr "Zničiť oddiel tak, že jeho obsah nebude možné obnoviť."
 
-#: gui/mainwindow.cpp:413
+#: gui/mainwindow.cpp:422
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "Kopírovať"
 
-#: gui/mainwindow.cpp:414
+#: gui/mainwindow.cpp:423
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "Kopírovať oddiel"
 
-#: gui/mainwindow.cpp:415
+#: gui/mainwindow.cpp:424
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "Skopírovať existujúci oddiel."
 
-#: gui/mainwindow.cpp:422
+#: gui/mainwindow.cpp:431
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "Vložiť"
 
-#: gui/mainwindow.cpp:423
+#: gui/mainwindow.cpp:432
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "Vložiť oddiel"
 
-#: gui/mainwindow.cpp:424
+#: gui/mainwindow.cpp:433
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "Vložiť skopírovaný oddiel."
 
-#: gui/mainwindow.cpp:431
+#: gui/mainwindow.cpp:440
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "Upraviť bod pripojenia"
 
-#: gui/mainwindow.cpp:432
+#: gui/mainwindow.cpp:441
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "Upraviť bod pripojenia"
 
-#: gui/mainwindow.cpp:433
+#: gui/mainwindow.cpp:442
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "Upraviť bod pripojenia oddielu a voľby."
 
-#: gui/mainwindow.cpp:438
+#: gui/mainwindow.cpp:447
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "Pripojiť"
 
-#: gui/mainwindow.cpp:439
+#: gui/mainwindow.cpp:448
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "Pripojiť alebo odpojiť oddiel"
 
-#: gui/mainwindow.cpp:440
+#: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "Pripojiť alebo odpojiť oddiel."
 
-#: gui/mainwindow.cpp:445
+#: gui/mainwindow.cpp:454
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
 msgstr "Prevziať vlastníctvo"
 
-#: gui/mainwindow.cpp:446
+#: gui/mainwindow.cpp:455
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
 msgstr "Prevziať vlastníctvo súborového systému"
 
-#: gui/mainwindow.cpp:447
+#: gui/mainwindow.cpp:456
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr ""
 "Zmení vlastníctvo pripojeného súborového systému na aktuálneho používateľa."
 
-#: gui/mainwindow.cpp:453
+#: gui/mainwindow.cpp:462
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr "Odomknúť"
 
-#: gui/mainwindow.cpp:454
+#: gui/mainwindow.cpp:463
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "Uzamknúť alebo odomknúť šifrovaný oddiel"
 
-#: gui/mainwindow.cpp:455
+#: gui/mainwindow.cpp:464
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "Uzamknúť alebo odomknúť šifrovaný oddiel."
 
-#: gui/mainwindow.cpp:460
+#: gui/mainwindow.cpp:469
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "Skontrolovať"
 
-#: gui/mainwindow.cpp:461
+#: gui/mainwindow.cpp:470
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "Skontrolovať oddiel"
 
-#: gui/mainwindow.cpp:462
+#: gui/mainwindow.cpp:471
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "Skontrolovať chyby súborového systému na oddieli."
 
-#: gui/mainwindow.cpp:469
+#: gui/mainwindow.cpp:478
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "Zobraziť dialógové okno s vlastnosťami oddielu"
 
-#: gui/mainwindow.cpp:470
+#: gui/mainwindow.cpp:479
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr ""
 "Zobraziť a upraviť vlastnosti oddielu (menovka, príznaky oddielu, atď.)"
 
-#: gui/mainwindow.cpp:476
+#: gui/mainwindow.cpp:485
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "Zálohovať"
 
-#: gui/mainwindow.cpp:477
+#: gui/mainwindow.cpp:486
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "Zálohovať oddiel"
 
-#: gui/mainwindow.cpp:478
+#: gui/mainwindow.cpp:487
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "Zálohovať oddiel do súboru s obrazom."
 
-#: gui/mainwindow.cpp:484
+#: gui/mainwindow.cpp:493
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "Obnoviť"
 
-#: gui/mainwindow.cpp:485
+#: gui/mainwindow.cpp:494
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "Obnoviť oddiel"
 
-#: gui/mainwindow.cpp:486
+#: gui/mainwindow.cpp:495
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "Obnoviť oddiel zo súboru s obrazom."
 
-#: gui/mainwindow.cpp:493
+#: gui/mainwindow.cpp:502
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "Nová skupina zväzkov"
 
-#: gui/mainwindow.cpp:494
+#: gui/mainwindow.cpp:503
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr "Vytvoriť novú skupinu zväzkov LVM"
 
-#: gui/mainwindow.cpp:495
+#: gui/mainwindow.cpp:504
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "Vytvoriť novú skupinu zväzkov ako zariadenie."
 
-#: gui/mainwindow.cpp:501
+#: gui/mainwindow.cpp:510
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "Podporované súborové systémy"
 
-#: gui/mainwindow.cpp:502
+#: gui/mainwindow.cpp:511
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "Zobraziť informácie o podporovaných súborových systémoch"
 
-#: gui/mainwindow.cpp:503
+#: gui/mainwindow.cpp:512
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "Zobraziť informácie o podporovaných súborových systémoch."
 
-#: gui/mainwindow.cpp:507
+#: gui/mainwindow.cpp:516
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "Obnoviť zariadenia"
 
-#: gui/mainwindow.cpp:508
+#: gui/mainwindow.cpp:517
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "Obnoviť všetky zariadenia"
 
-#: gui/mainwindow.cpp:509
+#: gui/mainwindow.cpp:518
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "Obnov zoznam zariadení."
 
-#: gui/mainwindow.cpp:525
+#: gui/mainwindow.cpp:534
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "Vymazať záznam"
 
-#: gui/mainwindow.cpp:526
+#: gui/mainwindow.cpp:535
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr "Vymazať výstup záznamu"
 
-#: gui/mainwindow.cpp:527
+#: gui/mainwindow.cpp:536
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr "Vymazať panel s výstupom záznamu."
 
-#: gui/mainwindow.cpp:532
+#: gui/mainwindow.cpp:541
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "Uložiť záznam"
 
-#: gui/mainwindow.cpp:533
+#: gui/mainwindow.cpp:542
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr "Uložiť výstup záznamu"
 
-#: gui/mainwindow.cpp:534
+#: gui/mainwindow.cpp:543
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr "Uložiť výstup záznamu do súboru."
 
-#: gui/mainwindow.cpp:540
+#: gui/mainwindow.cpp:549
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr "O knižnici KPMcore"
 
-#: gui/mainwindow.cpp:541
+#: gui/mainwindow.cpp:550
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr "Zobraziť dialógové okno O KPMcore"
 
-#: gui/mainwindow.cpp:542
+#: gui/mainwindow.cpp:551
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "Zobraziť dialógové okno O KPMcore."
 
-#: gui/mainwindow.cpp:661
+#: gui/mainwindow.cpp:673
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2040,7 +2266,7 @@ msgstr ""
 "Cannot delete partition. Please uistite sa it is unmounted or locked before "
 "proceeding."
 
-#: gui/mainwindow.cpp:737
+#: gui/mainwindow.cpp:749
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
@@ -2049,25 +2275,25 @@ msgstr[0] "Jedna čakajúca operácia"
 msgstr[1] "%1 čakajúce operácie"
 msgstr[2] "%1 čakajúcich operácií"
 
-#: gui/mainwindow.cpp:832
+#: gui/mainwindow.cpp:844
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "Používa sa zásuvný modul podporného programu: %1 (%2)"
 
-#: gui/mainwindow.cpp:836
+#: gui/mainwindow.cpp:848
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "Prehľadávajú sa zariadenia..."
 
-#: gui/mainwindow.cpp:874
+#: gui/mainwindow.cpp:886
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "Prehľadávanie dokončené."
 
-#: gui/mainwindow.cpp:938
+#: gui/mainwindow.cpp:950
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2077,19 +2303,19 @@ msgstr ""
 "<para>Naozaj chcete znova prehľadať zariadenia?</para><para><warning>Táto "
 "operácia vymaže zoznam čakajúcich operácií.</warning></para>"
 
-#: gui/mainwindow.cpp:940
+#: gui/mainwindow.cpp:952
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "Naozaj znova prehľadať zariadenia?"
 
-#: gui/mainwindow.cpp:941
+#: gui/mainwindow.cpp:953
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "Znovu prehľadať zariadenia"
 
-#: gui/mainwindow.cpp:967
+#: gui/mainwindow.cpp:979
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2099,74 +2325,74 @@ msgstr ""
 "<para>Naozaj chcete použiť uvedené čakajúce operácie?</"
 "para><para><warning>Natrvalo tým upravíte vaše disky.</warning></para>"
 
-#: gui/mainwindow.cpp:969
+#: gui/mainwindow.cpp:981
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "Aplikovať čakajúce operácie?"
 
-#: gui/mainwindow.cpp:970
+#: gui/mainwindow.cpp:982
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "Aplikovať čakajúce operácie"
 
-#: gui/mainwindow.cpp:972
+#: gui/mainwindow.cpp:984
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "Aplikujú sa operácie..."
 
-#: gui/mainwindow.cpp:997
+#: gui/mainwindow.cpp:1009
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "Vrátiť späť operáciu: %1"
 
-#: gui/mainwindow.cpp:1013
+#: gui/mainwindow.cpp:1025
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "Naozaj chcete vymazať zoznam čakajúcich operácií?"
 
-#: gui/mainwindow.cpp:1014
+#: gui/mainwindow.cpp:1026
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "Vymazať čakajúce operácie?"
 
-#: gui/mainwindow.cpp:1015
+#: gui/mainwindow.cpp:1027
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "Vymazať čakajúce operácie"
 
-#: gui/mainwindow.cpp:1017
+#: gui/mainwindow.cpp:1029
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "Vymazanie zoznamu čakajúcich operácií."
 
-#: gui/mainwindow.cpp:1059
+#: gui/mainwindow.cpp:1071
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
 msgstr "Nie je možné otvoriť súbor <filename>%1</filename> pre import"
 
-#: gui/mainwindow.cpp:1059 gui/mainwindow.cpp:1069 gui/mainwindow.cpp:1077
-#: gui/mainwindow.cpp:1083
+#: gui/mainwindow.cpp:1071 gui/mainwindow.cpp:1081 gui/mainwindow.cpp:1089
+#: gui/mainwindow.cpp:1095
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "Chyba importu tabuľky oddielov"
 
-#: gui/mainwindow.cpp:1077
+#: gui/mainwindow.cpp:1089
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
 msgstr "Nie je možné otvoriť súbor <filename>%1</filename>pre import: %2"
 
-#: gui/mainwindow.cpp:1083
+#: gui/mainwindow.cpp:1095
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2176,7 +2402,7 @@ msgstr ""
 "Nie je možné otvoriť dočasný súbor  <filename>%1</filename> počas pokusu o "
 "import z <filename>%2</filename>."
 
-#: gui/mainwindow.cpp:1113
+#: gui/mainwindow.cpp:1125
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2185,16 +2411,16 @@ msgid ""
 msgstr ""
 "Importovaný súbor <filename>%1</filename> neobsahuje platnú tabuľku oddielov."
 
-#: gui/mainwindow.cpp:1113 gui/mainwindow.cpp:1123 gui/mainwindow.cpp:1130
-#: gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1145 gui/mainwindow.cpp:1158
-#: gui/mainwindow.cpp:1163 gui/mainwindow.cpp:1182 gui/mainwindow.cpp:1187
-#: gui/mainwindow.cpp:1192 gui/mainwindow.cpp:1199 gui/mainwindow.cpp:1475
+#: gui/mainwindow.cpp:1125 gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1142
+#: gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1157 gui/mainwindow.cpp:1170
+#: gui/mainwindow.cpp:1175 gui/mainwindow.cpp:1194 gui/mainwindow.cpp:1199
+#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211 gui/mainwindow.cpp:1497
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "Chyba počas importu tabuľky oddielov"
 
-#: gui/mainwindow.cpp:1123
+#: gui/mainwindow.cpp:1135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
@@ -2202,43 +2428,43 @@ msgstr ""
 "Nájdený viacej ako jeden typ tabuľky oddielov v importovanom súbore (riadok "
 "č. %1)."
 
-#: gui/mainwindow.cpp:1130
+#: gui/mainwindow.cpp:1142
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "Typ tabuľky oddielov \"%1\" nie je známy (riadok č. %2)."
 
-#: gui/mainwindow.cpp:1135
+#: gui/mainwindow.cpp:1147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr "Typ tabuľky oddielov \"%1\" nie je podporovaný pre import (line %2)."
 
-#: gui/mainwindow.cpp:1145
+#: gui/mainwindow.cpp:1157
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr "Nájdený oddiel ale nie typ tabuľky oddielov (riadok č. %1)."
 
-#: gui/mainwindow.cpp:1158
+#: gui/mainwindow.cpp:1170
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "Oddiel %1 by bol mimo rozsahu hraníc zariadenia (riadok č. %2)."
 
-#: gui/mainwindow.cpp:1163
+#: gui/mainwindow.cpp:1175
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "Oddiel %1 má koniec pred začiatočným sektorom (riadok č. %2)."
 
-#: gui/mainwindow.cpp:1182
+#: gui/mainwindow.cpp:1194
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "Nerozpoznaná úloha oddielu \"%1\" pre oddiel %2 (riadok č. %3)."
 
-#: gui/mainwindow.cpp:1187
+#: gui/mainwindow.cpp:1199
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
@@ -2247,7 +2473,7 @@ msgstr ""
 "Nenájdený rodičovský oddiel alebo tabuľka oddielov pre oddiel %1 (riadok č. "
 "%2)."
 
-#: gui/mainwindow.cpp:1192
+#: gui/mainwindow.cpp:1204
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2257,37 +2483,37 @@ msgstr ""
 "Typ tabuľky oddielov  \"%1\" nepodporuje rozšírené oddiely, jedna však bola "
 "nájdená (riadok č. %2)."
 
-#: gui/mainwindow.cpp:1199
+#: gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr ""
 "Nepodarilo sa vytvoriť súborový systém \"%1\" pre oddiel %2 (riadok č. %3)."
 
-#: gui/mainwindow.cpp:1214
+#: gui/mainwindow.cpp:1226
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr ""
 "Nepodarilo sa spracovať riadok č. %1 z importovaného súboru. Ignoruje sa."
 
-#: gui/mainwindow.cpp:1231
+#: gui/mainwindow.cpp:1243
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "Chyba exportu tabuľky oddielov"
 
-#: gui/mainwindow.cpp:1396 gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1438
+#: gui/mainwindow.cpp:1418 gui/mainwindow.cpp:1424 gui/mainwindow.cpp:1460
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1402 gui/mainwindow.cpp:1413
+#: gui/mainwindow.cpp:1424 gui/mainwindow.cpp:1435
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1450
+#: gui/mainwindow.cpp:1472
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2313,25 +2539,25 @@ msgstr ""
 "</para><para>Bolo by vhodné nájsť tieto podporné nástroje v správcovi "
 "balíkov vašej distribúcie.</para>"
 
-#: gui/mainwindow.cpp:1463
+#: gui/mainwindow.cpp:1485
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "Chýbajú balíky podpory súborového systému"
 
-#: gui/mainwindow.cpp:1474
+#: gui/mainwindow.cpp:1496
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "Nerozpoznané zariadenie \"%1\" "
 
-#: gui/mainwindow.cpp:1483
+#: gui/mainwindow.cpp:1505
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "Nerozpoznaný oddiel \"%1\" "
 
-#: gui/mainwindow.cpp:1484
+#: gui/mainwindow.cpp:1506
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
@@ -2394,21 +2620,21 @@ msgid "Select Current Device"
 msgstr "Vybrať aktuálne zariadenie"
 
 #. i18n: ectx: Menu (tools)
-#: gui/partitionmanagerui.rc:49
+#: gui/partitionmanagerui.rc:50
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
 msgstr "Nástroje"
 
 #. i18n: ectx: Menu (partition)
-#: gui/partitionmanagerui.rc:55
+#: gui/partitionmanagerui.rc:56
 #, kde-format
 msgctxt "@title:menu"
 msgid "Partition"
 msgstr "Oddiel"
 
 #. i18n: ectx: Menu (panels)
-#: gui/partitionmanagerui.rc:78
+#: gui/partitionmanagerui.rc:79
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"
@@ -4238,10 +4464,6 @@ msgstr "%1 (neplatné pre túto veľkosť)"
 #~ msgstr[1] "%1 setory"
 #~ msgstr[2] "%1 sektorov"
 
-#~ msgctxt "SMART attr name"
-#~ msgid "Read Error Rate"
-#~ msgstr "Počet chýb pri čítaní"
-
 #~ msgctxt "SMART attr description"
 #~ msgid ""
 #~ "Rate of hardware read errors while reading data from the disk surface."
@@ -4313,10 +4535,6 @@ msgstr "%1 (neplatné pre túto veľkosť)"
 #~ msgstr ""
 #~ "Miera chýb hľadania magnetických hláv. Ak je čiastočné zlyhanie v "
 #~ "mechanickom polohovacom systéme, nastane chyba hľadania."
-
-#~ msgctxt "SMART attr name"
-#~ msgid "Seek Time Performance"
-#~ msgstr "Výkonnosť času hľadania"
 
 #~ msgctxt "SMART attr description"
 #~ msgid ""
