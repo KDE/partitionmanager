@@ -2,13 +2,14 @@
 # Slobodan Simic <slsimic@gmail.com>, 2008, 2009, 2010.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 # Dalibor Djuric <daliborddjuric@gmail.com>, 2010, 2011.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-29 00:49+0000\n"
-"PO-Revision-Date: 2018-01-06 09:21+0100\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-04 23:13+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@latin\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +25,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Slobodan Simić"
+msgstr "Slobodan Simić,Nemanja Hiršl"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "slsimic@gmail.com"
+msgstr "slsimic@gmail.com,nemhirsl@gmail.com"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
@@ -157,10 +158,9 @@ msgstr "ext4:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_18)
 #: config/configurepagefilesystemcolors.ui:137
-#, fuzzy, kde-format
-#| msgid "Linux Swap:"
+#, kde-format
 msgid "Linux RAID:"
-msgstr "linux-razmena:"
+msgstr "Linuxov RAID:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_17)
 #: config/configurepagefilesystemcolors.ui:192
@@ -190,7 +190,7 @@ msgstr "linux-razmena:"
 #: config/configurepagefilesystemcolors.ui:348
 #, kde-format
 msgid "FreeBSD Swap:"
-msgstr ""
+msgstr "FreeBSD-razmena:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:364
@@ -220,26 +220,25 @@ msgstr "ext2:"
 #: config/configurepagefilesystemcolors.ui:522
 #, kde-format
 msgid "Bcachefs:"
-msgstr ""
+msgstr "Bcachefs:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_36)
 #: config/configurepagefilesystemcolors.ui:535
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "Minix:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_35)
 #: config/configurepagefilesystemcolors.ui:545
-#, fuzzy, kde-format
-#| msgid "HPFS:"
+#, kde-format
 msgid "APFS:"
-msgstr "HPFS:"
+msgstr "APFS:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_34)
 #: config/configurepagefilesystemcolors.ui:564
 #, kde-format
 msgid "BitLocker:"
-msgstr ""
+msgstr "BitLocker:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_33)
 #: config/configurepagefilesystemcolors.ui:580
@@ -263,7 +262,7 @@ msgstr "ISO‑9660:"
 #: config/configurepagefilesystemcolors.ui:628
 #, kde-format
 msgid "UDF:"
-msgstr "UFS:"
+msgstr "UDF:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_29)
 #: config/configurepagefilesystemcolors.ui:644
@@ -381,10 +380,9 @@ msgstr "Poravnanje kako je podrazumevano"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
-#, fuzzy, kde-format
-#| msgid "Sector alignment:"
+#, kde-format
 msgid "Sec&tor alignment:"
-msgstr "Poravnanje sektora:"
+msgstr "Poravnanje &sektora:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
@@ -400,10 +398,9 @@ msgstr "Beleženje"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:94
-#, fuzzy, kde-format
-#| msgid "Hide messages below:"
+#, kde-format
 msgid "Hide messa&ges below:"
-msgstr "Sakrij poruke ispod:"
+msgstr "Sakrij poruke &ispod:"
 
 # >> @item:inlistbox Hide messages below:
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
@@ -441,10 +438,9 @@ msgstr "Fajl sistemi"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
-#, fuzzy, kde-format
-#| msgid "Default file system:"
+#, kde-format
 msgid "&Default file system:"
-msgstr "Podrazumevani fajl sistem:"
+msgstr "&Podrazumevani fajl sistem:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -469,10 +465,9 @@ msgstr "nasumičnim podacima"
 # >> @option:radion Overwrite with:
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:188
-#, fuzzy, kde-format
-#| msgid "Zeros"
+#, kde-format
 msgid "&Zeros"
-msgstr "nulama"
+msgstr "&nulama"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
 #: gui/applyprogressdetailswidgetbase.ui:42
@@ -504,26 +499,25 @@ msgstr "Podešavam..."
 msgctxt "@info"
 msgid "Stopping now may cause data loss or drive errors."
 msgstr ""
+"Zaustavljanje sada može da izazove gubitak podataka ili greške na jedinici."
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Cancel Running Operations"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Stop Running Operations"
-msgstr "Otkazivanje pokrenutih operacija"
+msgstr "Zaustavljanje pokrenutih operacija"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop Anyway"
-msgstr ""
+msgstr "Ipak zaustavi"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Keep Running"
-msgstr ""
+msgstr "Nastavi izvršavanje"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -744,7 +738,7 @@ msgstr "LVM deona grupa"
 #, kde-kuit-format
 msgctxt "@label device"
 msgid "Software RAID Device"
-msgstr ""
+msgstr "Softverski RAID uređaj"
 
 #: gui/devicepropsdialog.cpp:119
 #, kde-kuit-format
@@ -893,7 +887,7 @@ msgstr "Izaberi..."
 #: gui/editmountpointdialogwidgetbase.ui:69
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Ukloni"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelType)
 #: gui/editmountpointdialogwidgetbase.ui:76
@@ -911,27 +905,25 @@ msgstr "Opcije:"
 #: gui/editmountpointdialogwidgetbase.ui:103
 #, kde-format
 msgid "Don't prevent the system from booting if not mountable"
-msgstr ""
+msgstr "Ne sprečavaj podizanje sistema ako ne može da se montira"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
 #: gui/editmountpointdialogwidgetbase.ui:130
-#, fuzzy, kde-format
-#| msgid "Dump Frequency:"
+#, kde-format
 msgid "Dump &Frequency:"
-msgstr "Učestanost popisivanja:"
+msgstr "&Učestanost popisivanja:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelPassNumber)
 #: gui/editmountpointdialogwidgetbase.ui:143
-#, fuzzy, kde-format
-#| msgid "Pass Number:"
+#, kde-format
 msgid "Pass &Number:"
-msgstr "Broj prolaza:"
+msgstr "&Broj prolaza:"
 
 #. i18n: ectx: property (text), widget (KMessageWidget, m_PathMessage)
 #: gui/editmountpointdialogwidgetbase.ui:200
 #, kde-format
 msgid "A valid path is required."
-msgstr ""
+msgstr "Potrebna je ispravna putanja."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckReadOnly)
 #: gui/editmountpointdialogwidgetbase.ui:232
@@ -982,27 +974,25 @@ msgid "Update access times relative to modification"
 msgstr "Ažuriraj vremena pristupa u odnosu na izmenu"
 
 # >> @option:radio Identify by:
-# >! Contexts.
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioDeviceNode)
 #: gui/editmountpointdialogwidgetbase.ui:311
-#, fuzzy, kde-format
-#| msgid "Device Node"
+#, kde-format
 msgid "De&vice Node"
-msgstr "čvor uređaja"
+msgstr "&čvoru uređaja"
 
+# >> @option:radio Identify by:
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioUUID)
 #: gui/editmountpointdialogwidgetbase.ui:321
 #, kde-format
 msgid "UU&ID"
-msgstr ""
+msgstr "&UUID‑u"
 
+# >> @option:radio Identify by:
 #. i18n: ectx: property (text), widget (QRadioButton, m_RadioLabel)
 #: gui/editmountpointdialogwidgetbase.ui:328
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "&Label:"
+#, kde-format
 msgid "&Label"
-msgstr "&Etiketa:"
+msgstr "&etiketi"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -1316,31 +1306,25 @@ msgstr "Slobodnih fizičkih opsega:"
 #, kde-format
 msgctxt "@label device"
 msgid "RAID Level:"
-msgstr ""
+msgstr "Nivo RAID‑a:"
 
 #: gui/infopane.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@label device"
-#| msgid "PE Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Chunk Size:"
-msgstr "Veličina fizičkog opsega:"
+msgstr "Veličina parčića:"
 
 #: gui/infopane.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@label device"
-#| msgid "Total PE:"
+#, kde-format
 msgctxt "@label device"
 msgid "Total Chunk:"
-msgstr "Ukupno fizičkih opsega:"
+msgstr "Ukupno parčića:"
 
 #: gui/infopane.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@label device"
-#| msgid "PE Size:"
+#, kde-format
 msgctxt "@label device"
 msgid "Array Size:"
-msgstr "Veličina fizičkog opsega:"
+msgstr "Veličina niza:"
 
 #: gui/insertdialog.cpp:32
 #, kde-kuit-format
@@ -1361,6 +1345,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
+"Menadžeru particija su potrebna ovlašćenja za rad. Osvežite uređaje i "
+"autentifikujte se kada to bude zatraženo."
 
 #: gui/mainwindow.cpp:238
 #, kde-kuit-format
@@ -1746,21 +1732,20 @@ msgstr "Montira ili demontira particiju."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Preuzmi vlasništvo"
 
 #: gui/mainwindow.cpp:448
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "Promeni fajl sistem"
+msgstr "Preuzmi vlasništvo nad fajl sistemom"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr ""
+"Prebacuje vlasništvo nad montiranim fajl sistemom na tekućeg korisnika."
 
 #: gui/mainwindow.cpp:455
 #, kde-kuit-format
@@ -1962,6 +1947,8 @@ msgid ""
 "Cannot delete partition. Please make sure it is unmounted or locked before "
 "proceeding."
 msgstr ""
+"Ne mogu da obrišem particiju. Pre nastavka se postarajte da je demontirana "
+"ili zaključana."
 
 #: gui/mainwindow.cpp:745
 #, kde-kuit-format
@@ -2244,23 +2231,19 @@ msgstr "Nedostaju paketi podrške za fajl sisteme"
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
-msgstr ""
+msgstr "Neprepoznat uređaj „%1“ "
 
 #: gui/mainwindow.cpp:1491
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info the partition is NOT a device path, just a number"
-#| msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
+#, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
-msgstr "Nepoznata uloga particije „%1“ za particiju %2 (red %3)."
+msgstr "Neprepoznata particija „%1“ "
 
 #: gui/mainwindow.cpp:1492
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error Importing Partition Table"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
-msgstr "Greška pri uvozu tabele particija"
+msgstr "Greška pri otvaranju particije"
 
 #. i18n: ectx: property (windowTitle), widget (QMainWindow, MainWindowBase)
 #. i18n: ectx: property (windowTitle), widget (QWidget, PartitionManagerWidgetBase)
@@ -2300,12 +2283,10 @@ msgstr "Pravljenje nove particije"
 # rewrite-msgid: /Toolbar/Tools/
 #. i18n: ectx: ToolBar (partitionToolBar)
 #: gui/partitionmanagerui.rc:12
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Partition Toolbar"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Partition Manager Toolbar"
-msgstr "Alatke particije"
+msgstr "Traka alatki menadžera particija"
 
 #. i18n: ectx: Menu (device)
 #: gui/partitionmanagerui.rc:30
@@ -2377,12 +2358,10 @@ msgid "Could Not Unmount File System."
 msgstr "Ne mogu da demontiram fajl sistem."
 
 #: gui/partitionmanagerwidget.cpp:460
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "Promeni fajl sistem"
+msgstr "Preuzimanje vlasništva nad fajl sistemom"
 
 #: gui/partitionmanagerwidget.cpp:466
 #, kde-kuit-format
@@ -2391,12 +2370,14 @@ msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
+"Vlasništvo nad <filename>%1</filename> biće preneto na korisnika <emphasis>"
+"%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:473
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "Primeni rekurzivno na sve potfascikle i fajlove"
 
 #: gui/partitionmanagerwidget.cpp:481
 #, kde-kuit-format
@@ -2405,38 +2386,38 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"Ovo će izmeniti i vlasništvo nad svim potfasciklama i fajlovima. To može da "
+"izazove probleme ako su neki od njih u vlasništvu drugih korisnika."
 
 #: gui/partitionmanagerwidget.cpp:488
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Preuzmi vlasništvo"
 
 #: gui/partitionmanagerwidget.cpp:506
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "Preuzimam vlasništvo nad <b>%1</b>…"
 
 #: gui/partitionmanagerwidget.cpp:508
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Preuzimanje vlasništva"
 
 #: gui/partitionmanagerwidget.cpp:523
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "montirana u <filename>%1</filename>"
+msgstr "Ne mogu da preuzmem vlasništvo nad <filename>%1</filename>."
 
 #: gui/partitionmanagerwidget.cpp:526
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "Preuzimanje vlasništva nije uspelo"
 
 #: gui/partitionmanagerwidget.cpp:531
 #, kde-kuit-format
@@ -2445,12 +2426,14 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
+"Vlasništvo nad <filename>%1</filename> uspešno je preneto na <emphasis>%2</"
+"emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:533
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "Vlasništvo je promenjeno"
 
 #: gui/partitionmanagerwidget.cpp:561
 #, kde-kuit-format
@@ -2686,36 +2669,33 @@ msgstr "tip"
 msgid "Mount Point"
 msgstr "tačka montiranja"
 
-# >> @option:radio Identify by:
-# >! Contexts.
+# >> @title:column
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:94
 #, kde-format
 msgid "Label"
 msgstr "etiketa"
 
-# >> @option:radio Identify by:
-# >! Contexts.
+# >> @title:column
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:99
 #, kde-format
 msgid "UUID"
 msgstr "UUID"
 
+# >> @title:column
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:104
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name"
-msgstr "Tabela particija:"
+msgstr "ime particije"
 
 # >> @title:column
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:109
-#, fuzzy, kde-format
-#| msgid "Partition"
+#, kde-format
 msgid "Partition UUID"
-msgstr "particija"
+msgstr "UUID particije"
 
 # >> @title:column
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
@@ -2779,9 +2759,7 @@ msgid "(none found)"
 msgstr "(nije nađena)"
 
 #: gui/partpropsdialog.cpp:124
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item mountpoint"
-#| msgid "(none found)"
+#, kde-kuit-format
 msgctxt "@item device path"
 msgid "(not found)"
 msgstr "(nije nađena)"
@@ -2819,7 +2797,7 @@ msgstr "(nema)"
 #: gui/partpropsdialog.cpp:171 gui/partpropsdialog.cpp:172
 #, kde-format
 msgid "%1% — %2"
-msgstr ""
+msgstr "%1% — %2"
 
 #: gui/partpropsdialog.cpp:370
 #, kde-kuit-format
@@ -2903,13 +2881,11 @@ msgctxt "@label"
 msgid "Size:"
 msgstr "Veličina:"
 
-# >> @title:column
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionUuid)
 #: gui/partpropswidgetbase.ui:66
-#, fuzzy, kde-format
-#| msgid "Partition"
+#, kde-format
 msgid "Partition UUID:"
-msgstr "particija"
+msgstr "UUID particije:"
 
 # skip-rule: t-setting
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNoSetLabel)
@@ -2970,11 +2946,9 @@ msgstr "Tip particije:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextDevicePath)
 #: gui/partpropswidgetbase.ui:316
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Device"
+#, kde-format
 msgid "Device path:"
-msgstr "Uređaj"
+msgstr "Putanja uređaja:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:326
@@ -2985,10 +2959,9 @@ msgstr "Broj sektora:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextPartitionLabel)
 #: gui/partpropswidgetbase.ui:336
-#, fuzzy, kde-format
-#| msgid "Partition table:"
+#, kde-format
 msgid "Partition Name:"
-msgstr "Tabela particija:"
+msgstr "Ime particije:"
 
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, m_CheckRecreate)
 #: gui/partpropswidgetbase.ui:346
@@ -3021,14 +2994,12 @@ msgctxt "@label:listbox"
 msgid "File syste&m:"
 msgstr "&Fajl sistem:"
 
-# >> @title:column
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextFlags)
 #: gui/partpropswidgetbase.ui:396
-#, fuzzy, kde-format
-#| msgid "Flags"
+#, kde-format
 msgctxt "@label"
 msgid "&Flags:"
-msgstr "zastavice"
+msgstr "&Zastavice:"
 
 #: gui/parttablewidget.cpp:26
 #, kde-kuit-format
@@ -3067,26 +3038,22 @@ msgid "Resize Volume Group"
 msgstr "Promena veličine deone grupe"
 
 #: gui/scanprogressdialog.cpp:16
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Scanning devices..."
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Scanning Devices…"
-msgstr "Skeniram uređaje..."
+msgstr "Skeniram uređaje…"
 
 #: gui/scanprogressdialog.cpp:24
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: gui/scanprogressdialog.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Scanning..."
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "Skeniram..."
+msgstr "Skeniram…"
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
@@ -3181,9 +3148,7 @@ msgstr "Fajl sistem:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelRole)
 #: gui/sizedialogwidgetbase.ui:249
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Partition type:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Partition type:"
 msgstr "Tip particije:"
@@ -3208,19 +3173,19 @@ msgstr "Šifrovano LUKS‑om"
 #: gui/sizedialogwidgetbase.ui:292
 #, kde-format
 msgid "Permissions"
-msgstr ""
+msgstr "Dozvole"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:305
 #, kde-format
 msgid "Allow everyone to write and read on this device"
-msgstr ""
+msgstr "Dozvoli svima da pišu i čitaju na ovom uređaju"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionEveryone)
 #: gui/sizedialogwidgetbase.ui:308
 #, kde-format
 msgid "Everyone"
-msgstr ""
+msgstr "Svi"
 
 #. i18n: ectx: property (toolTip), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:315
@@ -3229,12 +3194,14 @@ msgid ""
 "Allow only root to write and read on this device, you will need to setup per-"
 "folder permissions"
 msgstr ""
+"Dozvoli samo korenu da piše i čita na ovom uređaju; moraćete da podesite "
+"dozvole po fasciklama"
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:318
 #, kde-format
 msgid "O&nly Root"
-msgstr ""
+msgstr "Samo &koren"
 
 # rewrite-msgid: /F&ree space/Free/
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
@@ -3265,12 +3232,14 @@ msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
 msgstr ""
+"Koristi LUKS2 umesto LUKS 1 radi bolje bezbednosti, ali saglasnost može biti "
+"narušena."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:379
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "Uključi LUKS2"
 
 #: gui/smartdialog.cpp:54
 #, kde-kuit-format
@@ -3548,18 +3517,14 @@ msgid "Manage your disks, partitions and file systems"
 msgstr "Upravljanje diskovima, particijama i fajl sistemima"
 
 #: main.cpp:81
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid ""
-#| "© 2008-2013 Volker Lanz\n"
-#| "© 2012-2017 Andrius Štikonas"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid ""
 "© 2008-2013 Volker Lanz\n"
 "© 2012-2020 Andrius Štikonas"
 msgstr ""
 "© 2008–2013, Folker Lanc\n"
-"© 2012–2017, Andrijus Štikonas"
+"© 2012–2020, Andrijus Štikonas"
 
 #: main.cpp:85
 #, kde-kuit-format
@@ -3636,23 +3601,19 @@ msgstr "Dizajniranje vidžeta particije"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Caio Jordão Carvalho"
-msgstr ""
+msgstr "Caio Jordão Carvalho"
 
 #: main.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Save SMART Report"
+#, kde-format
 msgctxt "@info:credit"
 msgid "Improved SMART support"
-msgstr "Sačuvaj izveštaj SMART‑a"
+msgstr "Poboljšana podrška za SMART"
 
 #: main.cpp:101
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Device Information"
+#, kde-kuit-format
 msgctxt "@info:shell"
 msgid "Device to manage"
-msgstr "Podaci o uređaju"
+msgstr "Uređaj kojim se upravlja"
 
 #. i18n: ectx: label, entry (firstRun), group (KDE Partition Manager)
 #: partitionmanager.kcfg:45
@@ -3741,50 +3702,3 @@ msgstr ""
 msgctxt "@title:menu"
 msgid "Columns"
 msgstr "Kolone"
-
-#~ msgctxt "@info"
-#~ msgid "Do you really want to cancel?"
-#~ msgstr "Zaista želite da otkažete?"
-
-#~ msgctxt "@action:button"
-#~ msgid "Yes, Cancel Operations"
-#~ msgstr "Da, otkaži operacije"
-
-#~ msgid "Use cylinder based alignment (Windows XP compatible)"
-#~ msgstr "Poravnanje na osnovu cilindara (saglasno sa Windowsom XP)"
-
-#, fuzzy
-#~| msgid "Cylinder alignment"
-#~ msgid "&Cylinder alignment"
-#~ msgstr "Poravnanje po cilindrima"
-
-#, fuzzy
-#~| msgid "Sector based alignment"
-#~ msgid "Sector based align&ment"
-#~ msgstr "Poravnanje na osnovu sektora"
-
-#~ msgctxt "@label"
-#~ msgid "Use cylinder based alignment (Windows XP compatible)"
-#~ msgstr "Poravnanje na osnovu cilindara (saglasno sa Windowsom XP)"
-
-#~ msgid "Backend"
-#~ msgstr "Pozadina"
-
-#~ msgid "Units"
-#~ msgstr "Jedinice"
-
-#~ msgctxt "@info"
-#~ msgid ""
-#~ "The configured external browser could not be run. Please check your "
-#~ "settings."
-#~ msgstr ""
-#~ "Podešeni spoljašnji pregledač ne može se pokrenuti. Proverite postavke."
-
-#, fuzzy
-#~| msgid "Partition table:"
-#~ msgid "Partition Label:"
-#~ msgstr "Tabela particija:"
-
-#~ msgctxt "@label:listbox"
-#~ msgid "Partition &type:"
-#~ msgstr "&Tip particije:"

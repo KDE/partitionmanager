@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-29 00:49+0000\n"
-"PO-Revision-Date: 2026-06-29 19:24+0300\n"
+"PO-Revision-Date: 2026-10-04 19:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1362,7 +1362,7 @@ msgstr "Son işlemi geri al"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
-msgstr "Son işlemi listeden kaldır."
+msgstr "Son işlemi listeden kaldırın."
 
 #: gui/mainwindow.cpp:292
 #, kde-kuit-format
@@ -1526,7 +1526,7 @@ msgstr "SMART Durumunu Göster"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
-msgstr "Eğer destekleniyorsa aygıtın SMART durumunu göster"
+msgstr "Eğer destekleniyorsa aygıtın SMART durumunu gösterin."
 
 #: gui/mainwindow.cpp:370 gui/mainwindow.cpp:470
 #, kde-kuit-format
@@ -1544,7 +1544,7 @@ msgstr "Aygıt özellikleri penceresini göster"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
-msgstr "Aygıt özelliklerini görüntüle ve düzenle"
+msgstr "Aygıt özelliklerini görüntüleyin ve düzenleyin."
 
 #: gui/mainwindow.cpp:379
 #, kde-kuit-format
@@ -1562,7 +1562,7 @@ msgstr "Yeni bölüntü"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
-msgstr "Yeni bir bölüntü oluştur."
+msgstr "Yeni bir bölüntü oluşturun."
 
 #: gui/mainwindow.cpp:388
 #, kde-kuit-format
@@ -1580,7 +1580,7 @@ msgstr "Bölüntüyü yeniden boyutlandır veya taşı"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
-msgstr "Var olan bir bölüntüyü büyüt, küçült veya taşı."
+msgstr "Var olan bir bölüntüyü büyütün, küçültün veya taşıyın."
 
 #: gui/mainwindow.cpp:397
 #, kde-kuit-format
@@ -1598,7 +1598,7 @@ msgstr "Bölüntüyü sil"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
-msgstr "Bir bölüntüyü sil."
+msgstr "Bir bölüntüyü silin."
 
 #: gui/mainwindow.cpp:406
 #, kde-kuit-format
@@ -1617,7 +1617,7 @@ msgstr "Bölüntüyü daha fazla parçaya böl"
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr ""
-"Bir bölüntüyü daha fazla parçaya böl; bölüntünün içindekiler geri alınamaz."
+"Bir bölüntüyü daha fazla parçaya bölün; bölüntünün içindekiler geri alınamaz."
 
 #: gui/mainwindow.cpp:415
 #, kde-kuit-format
@@ -1653,7 +1653,7 @@ msgstr "Bölüntüyü yapıştır"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
-msgstr "Kopyalanmış bir bölüntüyü yapıştır."
+msgstr "Kopyalanmış bir bölüntüyü yapıştırın."
 
 #: gui/mainwindow.cpp:433
 #, kde-kuit-format
@@ -1756,8 +1756,8 @@ msgstr "Bölüntü özellikleri penceresini göster"
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr ""
-"Bölüntünün özelliklerini göster ve düzenle (bölüntünün etiketi, bayrakları "
-"vs.)"
+"Bölüntünün özelliklerini gösterin ve düzenleyin (bölüntünün etiketi, "
+"bayrakları vs.)."
 
 #: gui/mainwindow.cpp:478
 #, kde-kuit-format
@@ -1829,7 +1829,7 @@ msgstr "Dosya sistemi desteğine ilişkin bilgileri göster"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
-msgstr "Desteklenen dosya sistemlerine ilişkin bilgileri göster."
+msgstr "Desteklenen dosya sistemlerine ilişkin bilgileri gösterin."
 
 #: gui/mainwindow.cpp:509
 #, kde-kuit-format
@@ -1901,7 +1901,7 @@ msgstr "KPMcore Hakkında İletişim Kutusunu Göster"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
-msgstr "KPMcore Hakkında İletişim Kutusunu Göster."
+msgstr "KPMcore Hakkında iletişim kutusunu gösterin."
 
 #: gui/mainwindow.cpp:663
 #, kde-kuit-format

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-29 00:49+0000\n"
-"PO-Revision-Date: 2026-07-04 18:37+0200\n"
+"PO-Revision-Date: 2026-10-04 21:36+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -613,13 +613,13 @@ msgstr "Guztira: %p%"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a New Partition Table on <filename>%1</filename>"
-msgstr "Sortu partizio-taula berri bat hemen, <filename>%1</filename>"
+msgstr "Partizio-taula berria sortu <filename>%1</filename>(e)n"
 
 #: gui/createpartitiontabledialog.cpp:34
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create &New Partition Table"
-msgstr "Sortu partizio taula &berria"
+msgstr "Partizio-taula &berria sortu"
 
 #: gui/createpartitiontabledialog.cpp:56
 #, kde-kuit-format
@@ -645,7 +645,7 @@ msgstr "MS-DOS partizio-taula sortu benetan?"
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create MS-Dos Type"
-msgstr "Sortu MS-DOS mota"
+msgstr "MS-DOS mota sortu"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/createpartitiontablewidgetbase.ui:24
@@ -3155,7 +3155,7 @@ msgstr ""
 #: gui/sizedialogwidgetbase.ui:318
 #, kde-format
 msgid "O&nly Root"
-msgstr "«Root»ek bakarrik"
+msgstr "Rootek &bakarrik"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
 #: gui/sizedialogwidgetbase.ui:334

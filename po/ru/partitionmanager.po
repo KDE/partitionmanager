@@ -82,7 +82,7 @@ msgid ""
 "warning></para>"
 msgstr ""
 "<para>Изменить внутренний модуль?</para><para><warning>Это действие приведёт "
-"к повторному сканированию устройств и очистит список операций. </warning></"
+"к повторному сканированию устройств и очистит список операций.</warning></"
 "para>"
 
 #: config/configureoptionsdialog.cpp:139
@@ -383,7 +383,7 @@ msgstr "Выравнивание разделов"
 #: config/configurepagegeneral.ui:34
 #, kde-format
 msgid "Align partitions per default"
-msgstr "Выравнивание разделов по умолчанию"
+msgstr "Выравнивать разделы по умолчанию"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
@@ -455,7 +455,7 @@ msgstr "Уничтожение данных"
 #: config/configurepagegeneral.ui:171
 #, kde-format
 msgid "Overwrite with:"
-msgstr "Заменять:"
+msgstr "Перезаписывать:"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton)
 #: config/configurepagegeneral.ui:178
@@ -491,7 +491,7 @@ msgstr "&Подробности"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
-msgstr "Идёт настройка..."
+msgstr "Идёт настройка…"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -509,7 +509,7 @@ msgstr "Отмена выполняемых операций"
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop Anyway"
-msgstr "Остановить всё равно"
+msgstr "Всё равно остановить"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -521,7 +521,7 @@ msgstr "Продолжить выполнение"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
-msgstr "Ожидание окончания операции..."
+msgstr "Ожидание окончания операции…"
 
 #: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
@@ -639,8 +639,8 @@ msgid ""
 "the most the MS-Dos partition table type supports, so you will not be able "
 "to use the whole device.</para>"
 msgstr ""
-"<para>Вы действительно хотите создать таблицу раздела MS-DOS на <filename>%1 "
-"</filename>?</para><para>Это устройство имеет более чем 2^32 секторов. В "
+"<para>Вы действительно хотите создать таблицу раздела MS-DOS на <filename>"
+"%1</filename>?</para><para>На этом устройстве более 2^32 секторов. В "
 "таблицах разделов типа MS-DOS не предусмотрена поддержка такого количества "
 "секторов, поэтому вы не сможете воспользоваться всей ёмкостью устройства.</"
 "para>"
@@ -753,7 +753,7 @@ msgstr "Размер логического сектора:"
 #: gui/devicepropswidgetbase.ui:32
 #, kde-format
 msgid "Primaries/Max:"
-msgstr "Основной/Макс:"
+msgstr "Основных/макс.:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalSectors)
 #: gui/devicepropswidgetbase.ui:42
@@ -766,7 +766,7 @@ msgstr "Всего секторов:"
 #: gui/devicepropswidgetbase.ui:83 gui/editmountpointdialogwidgetbase.ui:123
 #, kde-format
 msgid "More..."
-msgstr "Дополнительно..."
+msgstr "Дополнительно…"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/devicepropswidgetbase.ui:92
@@ -797,7 +797,7 @@ msgstr "Таблица разделов:"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Edit additional mount options"
-msgstr "Изменение дополнительных точек подключения"
+msgstr "Изменение дополнительных параметров подключения"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, EditMountOptionsDialogWidgetBase)
 #: gui/editmountoptionsdialogwidgetbase.ui:19
@@ -879,7 +879,7 @@ msgstr "Путь:"
 #: gui/editmountpointdialogwidgetbase.ui:56
 #, kde-format
 msgid "Select..."
-msgstr "Выбрать..."
+msgstr "Выбрать…"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
 #: gui/editmountpointdialogwidgetbase.ui:69
@@ -987,7 +987,7 @@ msgstr "UU&ID"
 #: gui/editmountpointdialogwidgetbase.ui:328
 #, kde-format
 msgid "&Label"
-msgstr "М&етка:"
+msgstr "М&етка"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -1011,7 +1011,7 @@ msgstr ""
 "Для поддержки некоторых файловых систем необходимо установить дополнительные "
 "внешние инструменты. Однако не все операции могут быть применимы ко всем "
 "файловым системам, даже если все требуемые инструменты установлены. За более "
-"подробной информацией обращайтесь к документации."
+"подробной информацией обращайтесь к документации. "
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:70
@@ -1071,7 +1071,7 @@ msgstr "Записать метку"
 #: gui/filesystemsupportdialogwidgetbase.ui:115
 #, kde-format
 msgid "Read Usage"
-msgstr "Использовано для чтения"
+msgstr "Чтение занятого места"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:120
@@ -1253,7 +1253,7 @@ msgstr "Размер физического сектора:"
 #, kde-format
 msgctxt "@label device"
 msgid "Primaries/Max:"
-msgstr "Основной/Макс:"
+msgstr "Основных/макс.:"
 
 #: gui/infopane.cpp:184 gui/infopane.cpp:192
 #, kde-format
@@ -1341,16 +1341,16 @@ msgid_plural ""
 "<para>Do you really want to quit the application?</para><para>There are "
 "still %1 operations pending.</para>"
 msgstr[0] ""
-"<para>Вы действительно хотите выйти из программы?</para><para>Имеется %1 "
+"<para>Вы действительно хотите выйти из приложения?</para><para>Имеется %1 "
 "незавершённая операция в очереди.</para>"
 msgstr[1] ""
-"<para>Вы действительно хотите выйти из программы?</para><para>Имеется %1 "
-"незавершённая операции в очереди.</para>"
+"<para>Вы действительно хотите выйти из приложения?</para><para>Имеются %1 "
+"незавершённые операции в очереди.</para>"
 msgstr[2] ""
-"<para>Вы действительно хотите выйти из программы?</para><para>Имеется %1 "
-"незавершённая операций в очереди.</para>"
+"<para>Вы действительно хотите выйти из приложения?</para><para>Имеется %1 "
+"незавершённых операций в очереди.</para>"
 msgstr[3] ""
-"<para>Вы действительно хотите выйти из программы?</para><para>Имеется %1 "
+"<para>Вы действительно хотите выйти из приложения?</para><para>Имеется %1 "
 "незавершённая операция в очереди.</para>"
 
 #: gui/mainwindow.cpp:240
@@ -1375,7 +1375,7 @@ msgstr "Отменить"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
-msgstr "Отмена последнего действия"
+msgstr "Отменить последнюю операцию"
 
 #: gui/mainwindow.cpp:285
 #, kde-kuit-format
@@ -1417,7 +1417,7 @@ msgstr "Применить все операции"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
-msgstr "Применение всех операций из списка."
+msgstr "Применить все операции из списка."
 
 #: gui/mainwindow.cpp:309
 #, kde-kuit-format
@@ -1435,7 +1435,7 @@ msgstr "Создать новую таблицу разделов"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
-msgstr "Создать новую и чистую таблицу разделов на устройстве."
+msgstr "Создать новую пустую таблицу разделов на устройстве."
 
 #: gui/mainwindow.cpp:318
 #, kde-kuit-format
@@ -1477,7 +1477,7 @@ msgstr "Импорт таблицы разделов из текстового �
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
-msgstr "Удалить группу томов..."
+msgstr "Удалить группу томов"
 
 #: gui/mainwindow.cpp:336
 #, kde-format
@@ -1495,7 +1495,7 @@ msgstr "Удалить выбранную группу томов."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
-msgstr "Изменить размер группы томов..."
+msgstr "Изменить размер группы томов"
 
 #: gui/mainwindow.cpp:346
 #, kde-format
@@ -1526,7 +1526,7 @@ msgstr "Деактивировать выбранную группу томов"
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
 msgstr ""
-"Деактивировать выбранную группу томов перед отсоединением съемных устройств."
+"Деактивировать выбранную группу томов перед отсоединением съёмных устройств."
 
 #: gui/mainwindow.cpp:363
 #, kde-kuit-format
@@ -1586,7 +1586,7 @@ msgstr "Создать новый раздел."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
-msgstr "Изменить размер/переместить..."
+msgstr "Изменить размер/переместить"
 
 #: gui/mainwindow.cpp:389
 #, kde-kuit-format
@@ -1634,7 +1634,7 @@ msgstr "Уничтожить раздел"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
-msgstr "При уничтожении раздела нет возможности восстановить его содержимое."
+msgstr "Уничтожить раздел без возможности восстановления содержимого."
 
 #: gui/mainwindow.cpp:415
 #, kde-kuit-format
@@ -1682,13 +1682,13 @@ msgstr "Изменить точку подключения"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
-msgstr "Изменение точек подключения"
+msgstr "Изменить точку подключения"
 
 #: gui/mainwindow.cpp:435
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
-msgstr "Изменение точек подключения разделов."
+msgstr "Изменить точку подключения и параметры раздела."
 
 #: gui/mainwindow.cpp:440
 #, kde-kuit-format
@@ -1773,19 +1773,19 @@ msgstr "Показать диалог свойств раздела"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
-msgstr "Просмотр и изменение свойств раздела (метки, флаги раздела и т.д.)"
+msgstr "Просмотр и изменение свойств раздела (метки, флаги раздела и т. д.)"
 
 #: gui/mainwindow.cpp:478
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
-msgstr "Резервная копия"
+msgstr "Создать резервную копию"
 
 #: gui/mainwindow.cpp:479
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
-msgstr "Резервное копирование раздела"
+msgstr "Создать резервную копию раздела"
 
 #: gui/mainwindow.cpp:480
 #, kde-kuit-format
@@ -1797,13 +1797,13 @@ msgstr "Резервное копирование раздела в файл о�
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
-msgstr "Восстановление"
+msgstr "Восстановить"
 
 #: gui/mainwindow.cpp:487
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
-msgstr "Восстановление раздела"
+msgstr "Восстановить раздел"
 
 #: gui/mainwindow.cpp:488
 #, kde-kuit-format
@@ -1816,7 +1816,7 @@ msgstr "Восстановление раздела из файла образа
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
-msgstr "Создать группу томов..."
+msgstr "Создать группу томов"
 
 #: gui/mainwindow.cpp:496
 #, kde-format
@@ -1906,7 +1906,7 @@ msgstr "Сохранение журнала в файл."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
-msgstr "О библиотеке KPMcore..."
+msgstr "О библиотеке KPMcore"
 
 #: gui/mainwindow.cpp:543
 #, kde-kuit-format
@@ -1950,7 +1950,7 @@ msgstr "Используемый внутренний модуль: %1 (%2)"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
-msgstr "Сканирование устройств..."
+msgstr "Сканирование устройств…"
 
 #: gui/mainwindow.cpp:882
 #, kde-kuit-format
@@ -2008,7 +2008,7 @@ msgstr "Выполнить список операций"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
-msgstr "Выполнение операций..."
+msgstr "Выполнение операций…"
 
 #: gui/mainwindow.cpp:1005
 #, kde-kuit-format
@@ -2069,7 +2069,7 @@ msgid ""
 "Could not open temporary file <filename>%1</filename> while trying to import "
 "from <filename>%2</filename>."
 msgstr ""
-"Не удалось открыть временный файл <filename>%1</filename>, при попытке "
+"Не удалось открыть временный файл <filename>%1</filename> при попытке "
 "импорта из <filename>%2</filename>."
 
 #: gui/mainwindow.cpp:1121
@@ -2125,7 +2125,7 @@ msgstr "Раздел «%1» находится за пределами ёмко�
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
-msgstr "Раздел «%1» закончился перед начальным сектором (строка %2)."
+msgstr "У раздела «%1» конечный сектор предшествует начальному (строка %2)."
 
 #: gui/mainwindow.cpp:1190
 #, kde-kuit-format
@@ -2238,7 +2238,7 @@ msgstr "Ошибка открытия раздела"
 #, kde-format
 msgctxt "@title:window"
 msgid "KDE Partition Manager"
-msgstr "Диспетчер разделов для KDE"
+msgstr "Диспетчер разделов от KDE"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockDevices)
 #: gui/mainwindowbase.ui:26
@@ -2293,7 +2293,7 @@ msgstr "Выбрать текущее устройство"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
-msgstr "С&ервис"
+msgstr "Сервис"
 
 #. i18n: ectx: Menu (partition)
 #: gui/partitionmanagerui.rc:55
@@ -2348,7 +2348,7 @@ msgstr "Не удалось отключить файловую систему"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "Получение владения файловой системой"
+msgstr "Смена владельца файловой системы"
 
 #: gui/partitionmanagerwidget.cpp:466
 #, kde-kuit-format
@@ -2392,7 +2392,7 @@ msgstr "Смена владельца для <b>%1</b>…"
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr "Получение владения"
+msgstr "Смена владельца"
 
 #: gui/partitionmanagerwidget.cpp:523
 #, kde-kuit-format
@@ -2413,7 +2413,7 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
-"Владелец <filename>%1</filename> успешно изменён на <emphasis> %2</emphasis>."
+"Владелец <filename>%1</filename> успешно изменён на <emphasis>%2</emphasis>."
 
 #: gui/partitionmanagerwidget.cpp:533
 #, kde-kuit-format
@@ -2452,7 +2452,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
-msgstr "Не удалось заблокировать шифрованную ФС"
+msgstr "Не удалось заблокировать зашифрованную ФС"
 
 #: gui/partitionmanagerwidget.cpp:607
 #, kde-kuit-format
@@ -2470,22 +2470,22 @@ msgid_plural ""
 msgstr[0] ""
 "<para>Уже существует %1 основной раздел на этом устройстве. Это максимальное "
 "количество, которым может оперировать этот тип таблицы разделов.</"
-"para><para>Вы не можете создать, вставить или восстановить основной раздел "
+"para><para>Вы не можете создать, вставить или восстановить основной раздел, "
 "пока не удалите один из уже существующих.</para>"
 msgstr[1] ""
 "<para>Уже существуют %1 основных раздела на этом устройстве. Это "
 "максимальное количество, которым может оперировать таблица разделов.</"
-"para><para>Вы не можете создать, вставить или восстановить основной раздел "
+"para><para>Вы не можете создать, вставить или восстановить основной раздел, "
 "пока не удалите один из уже существующих.</para>"
 msgstr[2] ""
 "<para>Уже существуют %1 основных разделов на этом устройстве. Это "
 "максимальное количество, которым может оперировать таблица разделов.</"
-"para><para>Вы не можете создать, вставить или восстановить основной раздел "
+"para><para>Вы не можете создать, вставить или восстановить основной раздел, "
 "пока не удалите один из уже существующих.</para>"
 msgstr[3] ""
 "<para>Уже существует 1 основной раздел на этом устройстве. Это максимальное "
 "количество, которым может оперировать таблица разделов.</para><para>Вы не "
-"можете создать, вставить или восстановить основной раздел пока не удалите "
+"можете создать, вставить или восстановить основной раздел, пока не удалите "
 "один из уже существующих.</para>"
 
 #: gui/partitionmanagerwidget.cpp:611
@@ -2505,7 +2505,7 @@ msgid ""
 msgstr ""
 "<para>Раздел <filename>%1</filename> не может быть удалён, так как один или "
 "более разделов с более высоким порядковым номером ещё подключены.</"
-"para><para>Отключите все разделы с номером большим чем %2.</para>"
+"para><para>Отключите все разделы с номером больше %2.</para>"
 
 #: gui/partitionmanagerwidget.cpp:677
 #, kde-kuit-format
@@ -2633,7 +2633,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
-msgstr "Не достаточно свободного места для восстановления файловой системы."
+msgstr "Недостаточно свободного места для восстановления файловой системы."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreePartitions)
 #: gui/partitionmanagerwidgetbase.ui:79
@@ -2741,7 +2741,7 @@ msgstr "(не найден)"
 #, kde-kuit-format
 msgctxt "@label partition state"
 msgid "idle"
-msgstr "бездействие"
+msgstr "не используется"
 
 #: gui/partpropsdialog.cpp:133
 #, kde-kuit-format
@@ -2783,9 +2783,9 @@ msgid ""
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
 "<para><warning>Вы можете потерять все данные на разделе <filename>%1</"
-"filename>.</warning></para> <para>Смена файловой системы на разделе сотрёт "
+"filename>.</warning></para><para>Смена файловой системы на разделе сотрёт "
 "всё его содержимое. Если вы продолжите и примените результирующую операцию в "
-"основном окне программы, все данные на <filename>%1</filename>будут "
+"основном окне программы, все данные на <filename>%1</filename> будут "
 "безвозвратно потеряны.</para>"
 
 #: gui/partpropsdialog.cpp:372
@@ -2817,7 +2817,7 @@ msgid ""
 "window, all data on <filesystem>%1</filesystem> will unrecoverably be lost.</"
 "para>"
 msgstr ""
-"<para><warning>Вы собираетесь удалить все данные на устройстве <filename>%1</"
+"<para><warning>Вы можете потерять все данные на разделе <filename>%1</"
 "filename>.</warning></para><para>Создание заново файловой системы уничтожит "
 "все данные. Если вы продолжите и примените результирующую операцию в "
 "основном окне программы, все данные на <filesystem>%1</filesystem> будут "
@@ -2866,7 +2866,7 @@ msgstr "UUID раздела:"
 #, kde-format
 msgctxt "@label"
 msgid "This file system does not support setting a label."
-msgstr "Эта файловая система не поддерживает выбор метки."
+msgstr "Эта файловая система не поддерживает установку метки."
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUuid)
 #: gui/partpropswidgetbase.ui:86
@@ -2990,7 +2990,7 @@ msgstr "Не удалось найти верную таблицу раздел�
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Resize/move partition: <filename>%1</filename>"
-msgstr "Изменение размера/Перемещение раздела: <filename>%1</filename>"
+msgstr "Изменение размера/перемещение раздела: <filename>%1</filename>"
 
 #: gui/resizedialog.cpp:92
 #, kde-format
@@ -3134,8 +3134,8 @@ msgid ""
 "Set up encryption for this filesystem with LUKS. You will be asked to "
 "provide a passphrase."
 msgstr ""
-"Настроить шифрование этой файловой системы при помощи LUKS.\n"
-"Вам будет предложено задать пароль."
+"Настроить шифрование этой файловой системы при помощи LUKS. Будет предложено "
+"задать пароль."
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxEncrypt)
 #: gui/sizedialogwidgetbase.ui:262
@@ -3241,7 +3241,7 @@ msgstr "Близок к отказу"
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Old-Age"
-msgstr "Старый"
+msgstr "Старение"
 
 #: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
 #, kde-kuit-format
@@ -3479,13 +3479,13 @@ msgstr "Используемый размер: "
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>KDE Partition Manager</application>"
-msgstr "<application>Управление разделами KDE</application>"
+msgstr "<application>Диспетчер разделов от KDE</application>"
 
 #: main.cpp:79
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Manage your disks, partitions and file systems"
-msgstr "Управляет вашими дисками, разделами и файловыми системами"
+msgstr "Управление дисками, разделами и файловыми системами"
 
 #: main.cpp:81
 #, kde-kuit-format
@@ -3591,7 +3591,7 @@ msgstr "Устройство, которым предстоит управлят
 #, kde-format
 msgctxt "@label"
 msgid "Is this the first time KDE Partition Manager is being run?"
-msgstr "Это первый запуск диспетчера разделов KDE?"
+msgstr "Это первый запуск диспетчера разделов от KDE?"
 
 #. i18n: ectx: label, entry (minLogLevel), group (KDE Partition Manager)
 #: partitionmanager.kcfg:49
