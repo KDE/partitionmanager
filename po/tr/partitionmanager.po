@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-03 00:48+0000\n"
-"PO-Revision-Date: 2026-09-16 18:30+0300\n"
+"PO-Revision-Date: 2026-10-04 19:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -610,48 +610,43 @@ msgid "Total: %p%"
 msgstr "Toplam: %%p"
 
 #: gui/benchmarkdialog.cpp:112
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@label graph axis, read rate"
 msgid "%1 MiB/s"
-msgstr " MiB"
+msgstr "%1 MiB/sn"
 
 #: gui/benchmarkdialog.cpp:113
 #, kde-kuit-format
 msgctxt "@label graph axis, access time"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: gui/benchmarkdialog.cpp:163
 #, kde-kuit-format
 msgctxt "@label graph axis"
 msgid "Position on device"
-msgstr ""
+msgstr "Aygıttaki konum"
 
 #: gui/benchmarkdialog.cpp:185
-#, fuzzy, kde-kuit-format
-#| msgid "Read Label"
+#, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Read rate"
-msgstr "Etiketi Oku"
+msgstr "Okuma hızı"
 
 #: gui/benchmarkdialog.cpp:186
 #, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Access time"
-msgstr ""
+msgstr "Erişim zamanı"
 
 #: gui/benchmarkdialog.cpp:209
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Benchmark: <filename>%1</filename>"
-msgstr "<filename>%1</filename> konumuna bağlı"
+msgstr "Referans Testi: <filename>%1</filename>"
 
 #: gui/benchmarkdialog.cpp:237
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@item:valuesuffix"
 msgid " MiB"
 msgstr " MiB"
@@ -660,50 +655,43 @@ msgstr " MiB"
 #, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Transfer rate samples:"
-msgstr ""
+msgstr "Aktarım hızı örneklemleri:"
 
 #: gui/benchmarkdialog.cpp:244
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Sample size:"
-msgstr "Anahtar boyutu:"
+msgstr "Örneklem boyutu:"
 
 #: gui/benchmarkdialog.cpp:245
 #, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Access time samples:"
-msgstr ""
+msgstr "Erişim zamanı örneklemleri:"
 
 #: gui/benchmarkdialog.cpp:253
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Average read rate:"
-msgstr ""
+msgstr "Ortalama okuma hızı:"
 
 #: gui/benchmarkdialog.cpp:254
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Minimum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Minimum read rate:"
-msgstr "En küçük boyut:"
+msgstr "En düşük okuma hızı:"
 
 #: gui/benchmarkdialog.cpp:255
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Maximum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Maximum read rate:"
-msgstr "En büyük boyut:"
+msgstr "En yüksek okuma hızı:"
 
 #: gui/benchmarkdialog.cpp:256
-#, fuzzy, kde-kuit-format
-#| msgid "Overall assessment:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Average access time:"
-msgstr "Tüm değerlendirme:"
+msgstr "Ortalama erişim zamanı:"
 
 #: gui/benchmarkdialog.cpp:268
 #, kde-kuit-format
@@ -712,37 +700,39 @@ msgid ""
 "The device is only read, no data is written. Other activity on the device "
 "affects the results."
 msgstr ""
+"Bu aygıt saltokunur; yazılan bir veri yok. Sonuçları, aygıttaki diğer "
+"etkinlikler etkileyecektir."
 
 #: gui/benchmarkdialog.cpp:273
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Start Benchmark"
-msgstr ""
+msgstr "Referans Testini Başlat"
 
 #: gui/benchmarkdialog.cpp:275
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop"
-msgstr ""
+msgstr "Durdur"
 
 #: gui/benchmarkdialog.cpp:318
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Preparing the benchmark…"
-msgstr ""
+msgstr "Referans testi hazırlanıyor…"
 
 #: gui/benchmarkdialog.cpp:323 gui/benchmarkdialog.cpp:439
 #: gui/benchmarkdialog.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not connect to the KPMcore helper."
-msgstr ""
+msgstr "KPMcore yardımcı uygulamasına bağlanılamadı."
 
 #: gui/benchmarkdialog.cpp:330
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Stopping after the current read request finishes…"
-msgstr ""
+msgstr "Geçerli okuma isteği bittikten sonra durdurulacak…"
 
 #: gui/benchmarkdialog.cpp:346
 #, kde-kuit-format
@@ -751,68 +741,69 @@ msgid ""
 "Direct I/O is not supported for this device. The benchmark was not run, "
 "because cached reads would not show the speed of the device."
 msgstr ""
+"Bu aygıt için doğrudan giriş/çıkış desteklenmiyor. Referans testi "
+"çalıştırılmadı; çünkü önbelleklenmiş okumalar aygıtın hızını "
+"göstermeyecektir."
 
 #: gui/benchmarkdialog.cpp:350
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "The benchmark request was rejected as invalid."
-msgstr ""
+msgstr "Referans testi isteği, geçersiz olarak reddedildi."
 
 #: gui/benchmarkdialog.cpp:353
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reading from the device failed or access was denied."
-msgstr ""
+msgstr "Aygıttan okuma başarısız oldu veya reddedildi."
 
 #: gui/benchmarkdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not determine the size of the device."
-msgstr ""
+msgstr "Aygıtın boyutu algılanamadı."
 
 #: gui/benchmarkdialog.cpp:418 gui/benchmarkdialog.cpp:445
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark stopped."
-msgstr ""
+msgstr "Referans testi durduruldu."
 
 #: gui/benchmarkdialog.cpp:437
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring transfer rate: sample %1 of %2…"
-msgstr ""
+msgstr "Aktarım hızı ölçülüyor: Örneklem %1/%2…"
 
 #: gui/benchmarkdialog.cpp:450
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress"
-#| msgid "Scan finished."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark finished."
-msgstr "Tarama işlemi bitti."
+msgstr "Referans testi bitti."
 
 #: gui/benchmarkdialog.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring access time: %1 of %2 reads…"
-msgstr ""
+msgstr "Erişim zamanı ölçülüyor: %1/%2 okuma…"
 
 #: gui/benchmarkdialog.cpp:469
 #, kde-kuit-format
 msgctxt "@label benchmark result not measured yet"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: gui/benchmarkdialog.cpp:485
 #, kde-kuit-format
 msgctxt "@label read rate, %1 is a size such as 120.5 MiB"
 msgid "%1/s"
-msgstr ""
+msgstr "%1/sn"
 
 #: gui/benchmarkdialog.cpp:498
 #, kde-kuit-format
 msgctxt "@label access time in milliseconds"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: gui/createpartitiontabledialog.cpp:31
 #, kde-kuit-format
@@ -1681,7 +1672,7 @@ msgstr "Son işlemi geri al"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
-msgstr "Son işlemi listeden kaldır."
+msgstr "Son işlemi listeden kaldırın."
 
 #: gui/mainwindow.cpp:291
 #, kde-kuit-format
@@ -1845,25 +1836,25 @@ msgstr "SMART Durumunu Göster"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
-msgstr "Eğer destekleniyorsa aygıtın SMART durumunu göster"
+msgstr "Eğer destekleniyorsa aygıtın SMART durumunu gösterin."
 
 #: gui/mainwindow.cpp:369
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Benchmark"
-msgstr ""
+msgstr "Referans Testi"
 
 #: gui/mainwindow.cpp:370
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Measure device read performance"
-msgstr ""
+msgstr "Aygıtın okuma başarımını ölç"
 
 #: gui/mainwindow.cpp:371
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measure the device's read rate and access time"
-msgstr ""
+msgstr "Aygıtın okuma hızını ve erişim zamanını ölçün."
 
 #: gui/mainwindow.cpp:377 gui/mainwindow.cpp:477
 #, kde-kuit-format
@@ -1881,7 +1872,7 @@ msgstr "Aygıt özellikleri penceresini göster"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
-msgstr "Aygıt özelliklerini görüntüle ve düzenle"
+msgstr "Aygıt özelliklerini görüntüleyin ve düzenleyin."
 
 #: gui/mainwindow.cpp:386
 #, kde-kuit-format
@@ -1899,7 +1890,7 @@ msgstr "Yeni bölüntü"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
-msgstr "Yeni bir bölüntü oluştur."
+msgstr "Yeni bir bölüntü oluşturun."
 
 #: gui/mainwindow.cpp:395
 #, kde-kuit-format
@@ -1917,7 +1908,7 @@ msgstr "Bölüntüyü yeniden boyutlandır veya taşı"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
-msgstr "Var olan bir bölüntüyü büyüt, küçült veya taşı."
+msgstr "Var olan bir bölüntüyü büyütün, küçültün veya taşıyın."
 
 #: gui/mainwindow.cpp:404
 #, kde-kuit-format
@@ -1935,7 +1926,7 @@ msgstr "Bölüntüyü sil"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
-msgstr "Bir bölüntüyü sil."
+msgstr "Bir bölüntüyü silin."
 
 #: gui/mainwindow.cpp:413
 #, kde-kuit-format
@@ -1954,7 +1945,7 @@ msgstr "Bölüntüyü daha fazla parçaya böl"
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr ""
-"Bir bölüntüyü daha fazla parçaya böl; bölüntünün içindekiler geri alınamaz."
+"Bir bölüntüyü daha fazla parçaya bölün; bölüntünün içindekiler geri alınamaz."
 
 #: gui/mainwindow.cpp:422
 #, kde-kuit-format
@@ -1990,7 +1981,7 @@ msgstr "Bölüntüyü yapıştır"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
-msgstr "Kopyalanmış bir bölüntüyü yapıştır."
+msgstr "Kopyalanmış bir bölüntüyü yapıştırın."
 
 #: gui/mainwindow.cpp:440
 #, kde-kuit-format
@@ -2093,8 +2084,8 @@ msgstr "Bölüntü özellikleri penceresini göster"
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr ""
-"Bölüntünün özelliklerini göster ve düzenle (bölüntünün etiketi, bayrakları "
-"vs.)"
+"Bölüntünün özelliklerini gösterin ve düzenleyin (bölüntünün etiketi, "
+"bayrakları vs.)."
 
 #: gui/mainwindow.cpp:485
 #, kde-kuit-format
@@ -2166,7 +2157,7 @@ msgstr "Dosya sistemi desteğine ilişkin bilgileri göster"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
-msgstr "Desteklenen dosya sistemlerine ilişkin bilgileri göster."
+msgstr "Desteklenen dosya sistemlerine ilişkin bilgileri gösterin."
 
 #: gui/mainwindow.cpp:516
 #, kde-kuit-format
@@ -2238,7 +2229,7 @@ msgstr "KPMcore Hakkında İletişim Kutusunu Göster"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
-msgstr "KPMcore Hakkında İletişim Kutusunu Göster."
+msgstr "KPMcore Hakkında iletişim kutusunu gösterin."
 
 #: gui/mainwindow.cpp:673
 #, kde-kuit-format

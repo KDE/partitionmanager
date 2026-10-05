@@ -1,7 +1,7 @@
 # Translation for partitionmanager.po to Euskara/Basque (eu).
 # Copyright (C) 2019-2026 This file is copyright:
 # This file is distributed under the same license as the partitionmanager package.
-# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2019, 2020, 2022, 2023, 2024, 2025, 2026.
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-03 00:48+0000\n"
-"PO-Revision-Date: 2026-07-04 18:37+0200\n"
+"PO-Revision-Date: 2026-10-04 21:36+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -610,48 +610,43 @@ msgid "Total: %p%"
 msgstr "Guztira: %p%"
 
 #: gui/benchmarkdialog.cpp:112
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@label graph axis, read rate"
 msgid "%1 MiB/s"
-msgstr " MiB"
+msgstr "%1 MiB/s"
 
 #: gui/benchmarkdialog.cpp:113
 #, kde-kuit-format
 msgctxt "@label graph axis, access time"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: gui/benchmarkdialog.cpp:163
 #, kde-kuit-format
 msgctxt "@label graph axis"
 msgid "Position on device"
-msgstr ""
+msgstr "Gailuko kokapena"
 
 #: gui/benchmarkdialog.cpp:185
-#, fuzzy, kde-kuit-format
-#| msgid "Read Label"
+#, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Read rate"
-msgstr "Irakurtzeko etiketa"
+msgstr "Irakurketa-tasa"
 
 #: gui/benchmarkdialog.cpp:186
 #, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Access time"
-msgstr ""
+msgstr "Atzitze-denbora"
 
 #: gui/benchmarkdialog.cpp:209
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Benchmark: <filename>%1</filename>"
-msgstr "<filename>%1</filename>(e)an muntatuta"
+msgstr "Errendimendu-proba: <filename>%1</filename>"
 
 #: gui/benchmarkdialog.cpp:237
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@item:valuesuffix"
 msgid " MiB"
 msgstr " MiB"
@@ -660,50 +655,43 @@ msgstr " MiB"
 #, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Transfer rate samples:"
-msgstr ""
+msgstr "Transferentzia-tasaren laginak:"
 
 #: gui/benchmarkdialog.cpp:244
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Sample size:"
-msgstr "Gakoaren neurria:"
+msgstr "Laginaren neurria:"
 
 #: gui/benchmarkdialog.cpp:245
 #, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Access time samples:"
-msgstr ""
+msgstr "Atzitze-denboraren laginak:"
 
 #: gui/benchmarkdialog.cpp:253
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Average read rate:"
-msgstr ""
+msgstr "Batez besteko irakurketa-tasa:"
 
 #: gui/benchmarkdialog.cpp:254
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Minimum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Minimum read rate:"
-msgstr "Gutxieneko neurria:"
+msgstr "Gutxieneko irakurketa-tasa:"
 
 #: gui/benchmarkdialog.cpp:255
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Maximum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Maximum read rate:"
-msgstr "Gehienezko neurria:"
+msgstr "Gehieneko irakurketa-tasa:"
 
 #: gui/benchmarkdialog.cpp:256
-#, fuzzy, kde-kuit-format
-#| msgid "Overall assessment:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Average access time:"
-msgstr "Ebaluazio orokorra:"
+msgstr "Batez besteko atzitze-denbora:"
 
 #: gui/benchmarkdialog.cpp:268
 #, kde-kuit-format
@@ -712,37 +700,39 @@ msgid ""
 "The device is only read, no data is written. Other activity on the device "
 "affects the results."
 msgstr ""
+"Gailua irakurri baino ez da egiten; ez da daturik idazten. Gailuko beste "
+"jarduera batzuek emaitzei eragiten diete."
 
 #: gui/benchmarkdialog.cpp:273
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Start Benchmark"
-msgstr ""
+msgstr "Errendimendu-proba hasi"
 
 #: gui/benchmarkdialog.cpp:275
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop"
-msgstr ""
+msgstr "Gelditu"
 
 #: gui/benchmarkdialog.cpp:318
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Preparing the benchmark…"
-msgstr ""
+msgstr "Errendimendu-proba prestatzen…"
 
 #: gui/benchmarkdialog.cpp:323 gui/benchmarkdialog.cpp:439
 #: gui/benchmarkdialog.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not connect to the KPMcore helper."
-msgstr ""
+msgstr "Ezin izan da KPMcore laguntzailearekin konektatu."
 
 #: gui/benchmarkdialog.cpp:330
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Stopping after the current read request finishes…"
-msgstr ""
+msgstr "Uneko irakurketa-eskaera amaitu ondoren gelditzen…"
 
 #: gui/benchmarkdialog.cpp:346
 #, kde-kuit-format
@@ -751,80 +741,80 @@ msgid ""
 "Direct I/O is not supported for this device. The benchmark was not run, "
 "because cached reads would not show the speed of the device."
 msgstr ""
+"Gailu honek ez du S/I zuzena onartzen. Errendimendu-proba ez da egin, "
+"cacheko irakurketek ez luketelako gailuaren abiadura erakutsiko."
 
 #: gui/benchmarkdialog.cpp:350
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "The benchmark request was rejected as invalid."
-msgstr ""
+msgstr "Errendimendu-probaren eskaera baliogabea zelako baztertu da."
 
 #: gui/benchmarkdialog.cpp:353
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reading from the device failed or access was denied."
-msgstr ""
+msgstr "Gailutik irakurtzeak huts egin du edo atzitzea ukatu da."
 
 #: gui/benchmarkdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not determine the size of the device."
-msgstr ""
+msgstr "Ezin izan da gailuaren neurria zehaztu."
 
 #: gui/benchmarkdialog.cpp:418 gui/benchmarkdialog.cpp:445
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark stopped."
-msgstr ""
+msgstr "Errendimendu-proba gelditu da."
 
 #: gui/benchmarkdialog.cpp:437
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring transfer rate: sample %1 of %2…"
-msgstr ""
+msgstr "Transferentzia-tasa neurtzen: %2tik %1 lagin…"
 
 #: gui/benchmarkdialog.cpp:450
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress"
-#| msgid "Scan finished."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark finished."
-msgstr "Azterketa amaitu da."
+msgstr "Errendimendu-proba amaitu da."
 
 #: gui/benchmarkdialog.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring access time: %1 of %2 reads…"
-msgstr ""
+msgstr "Atzitze-denbora neurtzen: %2tik %1 irakurketa…"
 
 #: gui/benchmarkdialog.cpp:469
 #, kde-kuit-format
 msgctxt "@label benchmark result not measured yet"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: gui/benchmarkdialog.cpp:485
 #, kde-kuit-format
 msgctxt "@label read rate, %1 is a size such as 120.5 MiB"
 msgid "%1/s"
-msgstr ""
+msgstr "%1/s"
 
 #: gui/benchmarkdialog.cpp:498
 #, kde-kuit-format
 msgctxt "@label access time in milliseconds"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: gui/createpartitiontabledialog.cpp:31
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Create a New Partition Table on <filename>%1</filename>"
-msgstr "Sortu partizio-taula berri bat hemen, <filename>%1</filename>"
+msgstr "Partizio-taula berria sortu <filename>%1</filename>(e)n"
 
 #: gui/createpartitiontabledialog.cpp:34
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create &New Partition Table"
-msgstr "Sortu partizio taula &berria"
+msgstr "Partizio-taula &berria sortu"
 
 #: gui/createpartitiontabledialog.cpp:56
 #, kde-kuit-format
@@ -850,7 +840,7 @@ msgstr "MS-DOS partizio-taula sortu benetan?"
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Create MS-Dos Type"
-msgstr "Sortu MS-DOS mota"
+msgstr "MS-DOS mota sortu"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: gui/createpartitiontablewidgetbase.ui:24
@@ -1186,124 +1176,115 @@ msgstr "&Etiketa"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Block size"
-msgstr ""
+msgstr "Blokearen neurria"
 
 #: gui/filesystempropertieswidget.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgid "Logical sector size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Sector size"
-msgstr "Sektore logikoaren neurria:"
+msgstr "Sektorearen neurria"
 
 #: gui/filesystempropertieswidget.cpp:37
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Metadata node size"
-msgstr ""
+msgstr "Metadatu-nodoaren neurria"
 
 #: gui/filesystempropertieswidget.cpp:38
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Check partition"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Checksum algorithm"
-msgstr "Ikuskatu partizioa"
+msgstr "Egiaztapen-baturaren algoritmoa"
 
 #: gui/filesystempropertieswidget.cpp:39
 #, kde-kuit-format
 msgctxt "@label"
 msgid "MFT record size"
-msgstr ""
+msgstr "MFT erregistroaren neurria"
 
 #: gui/filesystempropertieswidget.cpp:40
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Inode size"
-msgstr "Gakoaren neurria:"
+msgstr "Inodoaren neurria"
 
 #: gui/filesystempropertieswidget.cpp:41
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Inode count"
-msgstr ""
+msgstr "Inodo kopurua"
 
 #: gui/filesystempropertieswidget.cpp:42
-#, fuzzy, kde-kuit-format
-#| msgid "Number of Sectors"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Number of FATs"
-msgstr "Sektore kopurua"
+msgstr "FAT kopurua"
 
 #: gui/filesystempropertieswidget.cpp:43
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enabled features"
-msgstr ""
+msgstr "Gaitutako eginbideak"
 
 #: gui/filesystempropertieswidget.cpp:44
-#, fuzzy, kde-kuit-format
-#| msgid "Information"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Format version"
-msgstr "Informazioa"
+msgstr "Formatuaren bertsioa"
 
 #: gui/filesystempropertieswidget.cpp:45
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Journal size"
-msgstr ""
+msgstr "Egunkariaren neurria"
 
 #: gui/filesystempropertieswidget.cpp:46
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space"
-msgstr ""
+msgstr "Erreserbatutako lekua"
 
 #: gui/filesystempropertieswidget.cpp:47
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space, percent"
-msgstr ""
+msgstr "Erreserbatutako lekua, ehunekotan"
 
 #: gui/filesystempropertieswidget.cpp:48
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved block count"
-msgstr ""
+msgstr "Erreserbatutako bloke kopurua"
 
 #: gui/filesystempropertieswidget.cpp:49
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (UID)"
-msgstr ""
+msgstr "Erreserbatutako lekuaren jabea (UID)"
 
 #: gui/filesystempropertieswidget.cpp:50
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (GID)"
-msgstr ""
+msgstr "Erreserbatutako lekuaren jabea (GID)"
 
 #: gui/filesystempropertieswidget.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgid "unknown:"
+#, kde-kuit-format
 msgctxt "@item filesystem property whose value could not be read"
 msgid "Unknown"
-msgstr "ezezaguna:"
+msgstr "Ezezaguna"
 
 #: gui/filesystempropertieswidget.cpp:86
-#, fuzzy, kde-kuit-format
-#| msgid "%1%2"
+#, kde-kuit-format
 msgctxt "@item value in percent"
 msgid "%1%"
-msgstr "%1%2"
+msgstr "%%1"
 
 #: gui/filesystempropertieswidget.cpp:136
 #, kde-kuit-format
 msgctxt "@label"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -1860,19 +1841,19 @@ msgstr "Erakutsi gailuaren SMART egoera euskarririk badu"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Benchmark"
-msgstr ""
+msgstr "Errendimendu-proba"
 
 #: gui/mainwindow.cpp:370
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Measure device read performance"
-msgstr ""
+msgstr "Gailuaren irakurketa-errendimendua neurtu"
 
 #: gui/mainwindow.cpp:371
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measure the device's read rate and access time"
-msgstr ""
+msgstr "Gailuaren irakurketa-tasa eta atzitze-denbora neurtu"
 
 #: gui/mainwindow.cpp:377 gui/mainwindow.cpp:477
 #, kde-kuit-format
@@ -3094,9 +3075,7 @@ msgid "(none)"
 msgstr "(bat ere ez)"
 
 #: gui/partpropsdialog.cpp:160
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "(unknown)"
+#, kde-kuit-format
 msgctxt "@item cluster size"
 msgid "(unknown)"
 msgstr "(ezezaguna)"
@@ -3233,12 +3212,10 @@ msgstr "Erabilgarri:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextClusterSize)
 #: gui/partpropswidgetbase.ui:177
-#, fuzzy, kde-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-format
 msgctxt "@label"
 msgid "Cluster size:"
-msgstr "Gakoaren neurria:"
+msgstr "Klusterraren neurria:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:240
@@ -3299,12 +3276,10 @@ msgstr "Berriz sortu daukan fitxategi-sistema"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
 #: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
-#, fuzzy, kde-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Cluster size:"
-msgstr "Gakoaren neurria:"
+msgstr "Klusterraren neurria:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
 #: gui/partpropswidgetbase.ui:406
@@ -3527,7 +3502,7 @@ msgstr ""
 #: gui/sizedialogwidgetbase.ui:334
 #, kde-format
 msgid "O&nly Root"
-msgstr "«Root»ek bakarrik"
+msgstr "Rootek &bakarrik"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
 #: gui/sizedialogwidgetbase.ui:350
@@ -4032,13 +4007,13 @@ msgstr "Zutabeak"
 #, kde-kuit-format
 msgctxt "@item:inlistbox cluster size"
 msgid "Automatic"
-msgstr ""
+msgstr "Automatikoa"
 
 #: util/guihelpers.cpp:150
 #, kde-kuit-format
 msgctxt "@item:inlistbox a cluster size that is no longer valid"
 msgid "%1 (not valid for this size)"
-msgstr ""
+msgstr "%1 (neurri honetarako ez du balio)"
 
 #~ msgctxt "@info"
 #~ msgid "Do you really want to cancel?"
