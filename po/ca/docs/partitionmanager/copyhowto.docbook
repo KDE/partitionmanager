@@ -22,10 +22,10 @@
 	</para>
 
 	<para
->La partició d'origen en el nostre exemple serà «sdb1» que està actualment muntada, indicat per la icona del cadenat propera al nom del punt de muntatge en la instantània. Una partició muntada no es pot copiar, per això primer heu de desmuntar-la: cliqueu-la i seleccioneu <xref linkend="menu-partition-mount"/>. </para>
+>La partició d'origen en el nostre exemple serà «sdb1» que està actualment muntada, indicat per la icona de cadenat propera al nom del punt de muntatge en la instantània. Una partició muntada no es pot copiar, per això primer heu de desmuntar-la: cliqueu-la i seleccioneu <xref linkend="menu-partition-mount"/>. </para>
 
 	<para
->Després de desmuntar la partició la icona del carenat ha marxat i ara és possible seleccionar <xref linkend="menu-partition-copy"/>. Això posa «sdb1» en el porta-retalls del &partman;; en altres paraules: «sdb1» és ara la partició que s'inserirà quan seleccioneu <xref linkend="menu-partition-paste"/>. </para>
+>Després de desmuntar la partició la icona d'un cadenat ha marxat i ara és possible seleccionar <xref linkend="menu-partition-copy"/>. Això posa «sdb1» en el porta-retalls del &partman;; en altres paraules: «sdb1» és ara la partició que s'inserirà quan seleccioneu <xref linkend="menu-partition-paste"/>. </para>
 	
 	<para
 >El dispositiu de destinació per a copiar en aquest exemple és «/dev/sdc». Cliqueu-lo en el plafó de dispositius. Així és com es veu abans de copiar: </para>

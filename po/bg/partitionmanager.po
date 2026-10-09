@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-03 00:48+0000\n"
-"PO-Revision-Date: 2026-09-22 23:08+0200\n"
+"PO-Revision-Date: 2026-10-08 16:19+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -610,144 +610,132 @@ msgid "Total: %p%"
 msgstr "Общо: %p%"
 
 #: gui/benchmarkdialog.cpp:112
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@label graph axis, read rate"
 msgid "%1 MiB/s"
-msgstr "%1 МиБ/s"
+msgstr "%1 MiB/s"
 
 #: gui/benchmarkdialog.cpp:113
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@label graph axis, access time"
 msgid "%1 ms"
 msgstr "%1 ms"
 
 #: gui/benchmarkdialog.cpp:163
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@label graph axis"
 msgid "Position on device"
 msgstr "Позиция на устройството"
 
 #: gui/benchmarkdialog.cpp:185
-#, fuzzy, kde-kuit-format
-#| msgid "Read Label"
+#, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Read rate"
 msgstr "Скорост на четене"
 
 #: gui/benchmarkdialog.cpp:186
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Access time"
 msgstr "Време за достъп"
 
 #: gui/benchmarkdialog.cpp:209
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Benchmark: <filename>%1</filename>"
 msgstr "Тест за производителност: <filename>%1</filename>"
 
 #: gui/benchmarkdialog.cpp:237
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@item:valuesuffix"
 msgid " MiB"
-msgstr "МиБ"
+msgstr " MiB"
 
 #: gui/benchmarkdialog.cpp:243
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Transfer rate samples:"
 msgstr "Мостри на скоростта на трансфер:"
 
 #: gui/benchmarkdialog.cpp:244
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Sample size:"
-msgstr "Размер на избродката:"
+msgstr "Размер на извадката:"
 
 #: gui/benchmarkdialog.cpp:245
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Access time samples:"
 msgstr "Мостри за време за достъп:"
 
 #: gui/benchmarkdialog.cpp:253
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Average read rate:"
 msgstr "Средна скорост на четене:"
 
 #: gui/benchmarkdialog.cpp:254
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Minimum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Minimum read rate:"
 msgstr "Минимална скорост на четене:"
 
 #: gui/benchmarkdialog.cpp:255
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Maximum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Maximum read rate:"
 msgstr "Максимална скорост на четене:"
 
 #: gui/benchmarkdialog.cpp:256
-#, fuzzy, kde-kuit-format
-#| msgid "Overall assessment:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Average access time:"
 msgstr "Средно време за достъп:"
 
 #: gui/benchmarkdialog.cpp:268
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "The device is only read, no data is written. Other activity on the device "
 "affects the results."
 msgstr ""
-"Устройството се чете само, не се записват данни. Други дейности по "
+"Устройството е само за четене, не се записват данни. Други дейности по "
 "устройството влияят на резултатите."
 
 #: gui/benchmarkdialog.cpp:273
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Start Benchmark"
 msgstr "Старт на тест за производителност"
 
 #: gui/benchmarkdialog.cpp:275
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop"
 msgstr "Спиране"
 
 #: gui/benchmarkdialog.cpp:318
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Preparing the benchmark…"
 msgstr "Подготовка на бенчмарка…"
 
 #: gui/benchmarkdialog.cpp:323 gui/benchmarkdialog.cpp:439
 #: gui/benchmarkdialog.cpp:462
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not connect to the KPMcore helper."
 msgstr "Няма връзка с помощника KPMcore."
 
 #: gui/benchmarkdialog.cpp:330
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Stopping after the current read request finishes…"
 msgstr "Спиране след приключване на текущата заявка за четене…"
 
 #: gui/benchmarkdialog.cpp:346
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Direct I/O is not supported for this device. The benchmark was not run, "
@@ -758,63 +746,61 @@ msgstr ""
 "устройството."
 
 #: gui/benchmarkdialog.cpp:350
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "The benchmark request was rejected as invalid."
 msgstr "Заявката за бенчмарк бе отхвърлена като невалидна."
 
 #: gui/benchmarkdialog.cpp:353
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reading from the device failed or access was denied."
 msgstr "Грешка при четене от устройството или отказан достъп."
 
 #: gui/benchmarkdialog.cpp:393
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not determine the size of the device."
-msgstr "Не успя размерът на устройството да бъде определен."
+msgstr "Не успя да се определи размерът на устройството."
 
 #: gui/benchmarkdialog.cpp:418 gui/benchmarkdialog.cpp:445
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark stopped."
 msgstr "Тестът е спрян."
 
 #: gui/benchmarkdialog.cpp:437
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring transfer rate: sample %1 of %2…"
 msgstr "Измерване на скоростта на трансфер: проба %1 от %2…"
 
 #: gui/benchmarkdialog.cpp:450
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress"
-#| msgid "Scan finished."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark finished."
 msgstr "Тестът за производителност приключи."
 
 #: gui/benchmarkdialog.cpp:460
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring access time: %1 of %2 reads…"
 msgstr "Измерване на времето за достъп: %1 от %2 четене…"
 
 #: gui/benchmarkdialog.cpp:469
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@label benchmark result not measured yet"
 msgid "—"
-msgstr "Резултатът от бенчмарка още не е измерен"
+msgstr "—"
 
 #: gui/benchmarkdialog.cpp:485
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@label read rate, %1 is a size such as 120.5 MiB"
 msgid "%1/s"
 msgstr "%1/с"
 
 #: gui/benchmarkdialog.cpp:498
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@label access time in milliseconds"
 msgid "%1 ms"
 msgstr "%1 ms"
@@ -1853,19 +1839,19 @@ msgid "Show the device's SMART status if supported"
 msgstr "Показване на състоянието SMART на устройството, ако се поддържа"
 
 #: gui/mainwindow.cpp:369
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Benchmark"
 msgstr "Тест за производителност"
 
 #: gui/mainwindow.cpp:370
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Measure device read performance"
 msgstr "Измерване на скоростта на четене на устройството"
 
 #: gui/mainwindow.cpp:371
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measure the device's read rate and access time"
 msgstr "Измерване на скоростта на четене и времето за достъп на устройството"
