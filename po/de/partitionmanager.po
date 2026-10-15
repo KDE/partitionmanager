@@ -7,20 +7,21 @@
 # SPDX-FileCopyrightText: 2010-2013, 2015-2016, 2018, 2022-2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2013 Benjamin Weis <benjamin.weis@gmx.com>
 # SPDX-FileCopyrightText: 2017, 2025 Frank Steinmetzger <Warp_7@gmx.de>
+# SPDX-FileCopyrightText: 2026 Alois Spitzbart <spitz234@hotmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-03 00:48+0000\n"
-"PO-Revision-Date: 2025-08-08 17:52+0200\n"
-"Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
+"PO-Revision-Date: 2026-10-11 21:52+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -75,7 +76,7 @@ msgid ""
 msgstr ""
 "<para>Möchten Sie das Backend wirklich ändern?</para><para><warning>Dadurch "
 "werden die Geräte neu eingelesen und somit auch die Liste der ausstehenden "
-"Operationen geleert.</warning></para>"
+"Vorgänge geleert.</warning></para>"
 
 #: config/configureoptionsdialog.cpp:139
 #, kde-kuit-format
@@ -189,7 +190,7 @@ msgstr "Linux-Swap:"
 #: config/configurepagefilesystemcolors.ui:348
 #, kde-format
 msgid "FreeBSD Swap:"
-msgstr ""
+msgstr "FreeBSD-Swap:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:364
@@ -483,7 +484,7 @@ msgstr "&Details"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
-msgstr "Einrichten ..."
+msgstr "Einrichten …"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -492,50 +493,46 @@ msgid "Stopping now may cause data loss or drive errors."
 msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Cancel Running Operations"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Stop Running Operations"
-msgstr "Laufende Operationen abbrechen"
+msgstr "Laufende Vorgänge beenden"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop Anyway"
-msgstr ""
+msgstr "Trotzdem anhalten"
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress operation"
-#| msgid "Running"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Keep Running"
-msgstr "Wird ausgeführt"
+msgstr "Laufen lassen"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
-msgstr "Es wird gewartet, bis die Operation beendet ist ..."
+msgstr "Es wird gewartet, bis der Vorgang beendet ist …"
 
 #: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
-msgstr "Alle Operationen wurden erfolgreich angewendet."
+msgstr "Alle Vorgänge wurden erfolgreich angewendet."
 
 #: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
-msgstr "Operationen abgebrochen."
+msgstr "Vorgänge abgebrochen."
 
 #: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
-msgstr "Beim Anwenden der Operationen sind Fehler aufgetreten. Abgebrochen."
+msgstr "Beim Anwenden der Vorgänge sind Fehler aufgetreten. Abgebrochen."
 
 #: gui/applyprogressdialog.cpp:341
 #, kde-kuit-format
@@ -584,7 +581,7 @@ msgstr "Der Browser lässt sich nicht starten."
 #: gui/applyprogressdialogwidgetbase.ui:41
 #, kde-format
 msgid "Operations and Jobs"
-msgstr "Operationen und Aufgaben"
+msgstr "Vorgänge und Aufgaben"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
 #: gui/applyprogressdialogwidgetbase.ui:46
@@ -602,7 +599,7 @@ msgstr "Gesamtzeit: 00:00:00"
 #: gui/applyprogressdialogwidgetbase.ui:89
 #, no-c-format, kde-format
 msgid "Operation: %p%"
-msgstr "Operation: %p%"
+msgstr "Vorgänge: %p%"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
 #: gui/applyprogressdialogwidgetbase.ui:99
@@ -617,49 +614,43 @@ msgid "Total: %p%"
 msgstr "Gesamt: %p%"
 
 #: gui/benchmarkdialog.cpp:112
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@label graph axis, read rate"
 msgid "%1 MiB/s"
-msgstr " MiB"
+msgstr "%1 MiB/s"
 
 #: gui/benchmarkdialog.cpp:113
 #, kde-kuit-format
 msgctxt "@label graph axis, access time"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: gui/benchmarkdialog.cpp:163
 #, kde-kuit-format
 msgctxt "@label graph axis"
 msgid "Position on device"
-msgstr ""
+msgstr "Position im Gerät"
 
 #: gui/benchmarkdialog.cpp:185
-#, fuzzy, kde-kuit-format
-#| msgctxt "SMART attr name"
-#| msgid "Read Error Rate"
+#, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Read rate"
-msgstr "Lesefehlerrate"
+msgstr "Leserate"
 
 #: gui/benchmarkdialog.cpp:186
 #, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Access time"
-msgstr ""
+msgstr "Zugriffszeit"
 
 #: gui/benchmarkdialog.cpp:209
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Benchmark: <filename>%1</filename>"
-msgstr "eingehängt in <filename>%1</filename>"
+msgstr "Benchmark: <filename>%1</filename>"
 
 #: gui/benchmarkdialog.cpp:237
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@item:valuesuffix"
 msgid " MiB"
 msgstr " MiB"
@@ -671,12 +662,10 @@ msgid "Transfer rate samples:"
 msgstr ""
 
 #: gui/benchmarkdialog.cpp:244
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Sample size:"
-msgstr "Schlüssellänge:"
+msgstr "Stichprobengröße:"
 
 #: gui/benchmarkdialog.cpp:245
 #, kde-kuit-format
@@ -688,30 +677,25 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Average read rate:"
-msgstr ""
+msgstr "Durchschnittliche Leserate:"
 
 #: gui/benchmarkdialog.cpp:254
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Minimum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Minimum read rate:"
-msgstr "Minimale Größe:"
+msgstr "Minimale Leserate:"
 
 #: gui/benchmarkdialog.cpp:255
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Maximum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Maximum read rate:"
-msgstr "Maximale Größe:"
+msgstr "Maximale Leserate:"
 
 #: gui/benchmarkdialog.cpp:256
-#, fuzzy, kde-kuit-format
-#| msgid "Overall assessment:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Average access time:"
-msgstr "Gesamtbewertung:"
+msgstr "Durchschnittliche Zugriffszeit:"
 
 #: gui/benchmarkdialog.cpp:268
 #, kde-kuit-format
@@ -720,31 +704,33 @@ msgid ""
 "The device is only read, no data is written. Other activity on the device "
 "affects the results."
 msgstr ""
+"Vom Gerät wird nur gelesen, keine Daten werden geschrieben. Andere "
+"Aktivitäten auf diesem Gerät können das Ergebnis beeinträchtigen."
 
 #: gui/benchmarkdialog.cpp:273
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Start Benchmark"
-msgstr ""
+msgstr "Benchmark starten"
 
 #: gui/benchmarkdialog.cpp:275
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop"
-msgstr ""
+msgstr "Anhalten"
 
 #: gui/benchmarkdialog.cpp:318
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Preparing the benchmark…"
-msgstr ""
+msgstr "Benchmark wird vorbereitet …"
 
 #: gui/benchmarkdialog.cpp:323 gui/benchmarkdialog.cpp:439
 #: gui/benchmarkdialog.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not connect to the KPMcore helper."
-msgstr ""
+msgstr "Verbindung zum KPMcore-Hilfsprogramm kann nicht hergestellt werden."
 
 #: gui/benchmarkdialog.cpp:330
 #, kde-kuit-format
@@ -764,63 +750,61 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "The benchmark request was rejected as invalid."
-msgstr ""
+msgstr "Die Benchmark-Anfrage wurde als ungültig abgelehnt."
 
 #: gui/benchmarkdialog.cpp:353
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reading from the device failed or access was denied."
-msgstr ""
+msgstr "Lesen vom Gerät ist fehlgeschlagen oder der Zugriff wurde verweigert."
 
 #: gui/benchmarkdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not determine the size of the device."
-msgstr ""
+msgstr "Kapazität des Gerätes konnte nicht festgestellt werden."
 
 #: gui/benchmarkdialog.cpp:418 gui/benchmarkdialog.cpp:445
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark stopped."
-msgstr ""
+msgstr "Benchmark angehalten."
 
 #: gui/benchmarkdialog.cpp:437
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring transfer rate: sample %1 of %2…"
-msgstr ""
+msgstr "Übertragungsrate wird gemessen: Stichprobe %1 von %2 …"
 
 #: gui/benchmarkdialog.cpp:450
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress"
-#| msgid "Scan finished."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark finished."
-msgstr "Suche beendet."
+msgstr "Benchmark abgeschlossen."
 
 #: gui/benchmarkdialog.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring access time: %1 of %2 reads…"
-msgstr ""
+msgstr "Zugriffszeit wird gemessen: %1 von %2 Lesevorgängen …"
 
 #: gui/benchmarkdialog.cpp:469
 #, kde-kuit-format
 msgctxt "@label benchmark result not measured yet"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: gui/benchmarkdialog.cpp:485
 #, kde-kuit-format
 msgctxt "@label read rate, %1 is a size such as 120.5 MiB"
 msgid "%1/s"
-msgstr ""
+msgstr "%1/s"
 
 #: gui/benchmarkdialog.cpp:498
 #, kde-kuit-format
 msgctxt "@label access time in milliseconds"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: gui/createpartitiontabledialog.cpp:31
 #, kde-kuit-format
@@ -968,7 +952,7 @@ msgstr "Sektoren insgesamt:"
 #: gui/devicepropswidgetbase.ui:83 gui/editmountpointdialogwidgetbase.ui:123
 #, kde-format
 msgid "More..."
-msgstr "Mehr ..."
+msgstr "Mehr …"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/devicepropswidgetbase.ui:92
@@ -1082,7 +1066,7 @@ msgstr "Pfad:"
 #: gui/editmountpointdialogwidgetbase.ui:56
 #, kde-format
 msgid "Select..."
-msgstr "Auswählen ..."
+msgstr "Auswählen  …"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
 #: gui/editmountpointdialogwidgetbase.ui:69
@@ -1197,15 +1181,13 @@ msgstr "&Bezeichnung"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Block size"
-msgstr ""
+msgstr "Blockgröße"
 
 #: gui/filesystempropertieswidget.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Sectors:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Sector size"
-msgstr "Sektoren:"
+msgstr "Sektorgröße"
 
 #: gui/filesystempropertieswidget.cpp:37
 #, kde-kuit-format
@@ -1252,38 +1234,37 @@ msgstr "Anzahl Sektoren"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enabled features"
-msgstr ""
+msgstr "Aktivierte Funktionen"
 
 #: gui/filesystempropertieswidget.cpp:44
-#, fuzzy, kde-kuit-format
-#| msgid "Program version:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Format version"
-msgstr "Programmversion:"
+msgstr "Format-Version"
 
 #: gui/filesystempropertieswidget.cpp:45
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Journal size"
-msgstr ""
+msgstr "Journalgröße"
 
 #: gui/filesystempropertieswidget.cpp:46
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space"
-msgstr ""
+msgstr "Reservierter Platz"
 
 #: gui/filesystempropertieswidget.cpp:47
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space, percent"
-msgstr ""
+msgstr "Reservierter Platz, Prozent"
 
 #: gui/filesystempropertieswidget.cpp:48
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved block count"
-msgstr ""
+msgstr "Reservierte Blockanzahl"
 
 #: gui/filesystempropertieswidget.cpp:49
 #, kde-kuit-format
@@ -1298,27 +1279,22 @@ msgid "Reserved space owner (GID)"
 msgstr ""
 
 #: gui/filesystempropertieswidget.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item partition table name"
-#| msgid "unknown"
+#, kde-kuit-format
 msgctxt "@item filesystem property whose value could not be read"
 msgid "Unknown"
-msgstr "unbekannt"
+msgstr "Unbekannt"
 
 #: gui/filesystempropertieswidget.cpp:86
-#, fuzzy, kde-kuit-format
-#| msgid "%1%2"
+#, kde-kuit-format
 msgctxt "@item value in percent"
 msgid "%1%"
-msgstr "%1%2"
+msgstr "%1 %"
 
 #: gui/filesystempropertieswidget.cpp:136
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain job status (error, warning, ...)"
-#| msgid "%1: %2"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "%1:"
-msgstr "%1: %2"
+msgstr "%1:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -1338,12 +1314,12 @@ msgid ""
 "details. "
 msgstr ""
 "Diese Tabelle zeigt, welche Dateisysteme unterstützt werden und welche "
-"Operationen auf sie angewandt werden können.\n"
+"Vorgänge auf sie angewandt werden können.\n"
 "Einige Dateisysteme setzen die Installation externer Programme voraus, um "
-"unterstützt werden zu können. Jedoch können nicht alle Operationen auf alle "
+"unterstützt werden zu können. Jedoch können nicht alle Vorgänge auf alle "
 "Dateisysteme angewandt werden, auch wenn die benötigten Programme "
 "installiert sind. Bitte lesen Sie die Dokumentation für genauere "
-"Informationen."
+"Informationen. "
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:70
@@ -1675,16 +1651,16 @@ msgid_plural ""
 "still %1 operations pending.</para>"
 msgstr[0] ""
 "<para>Möchten Sie die Anwendung wirklich beenden?</para><para>Es steht noch "
-"eine Operation aus.</para>"
+"ein Vorgang aus.</para>"
 msgstr[1] ""
 "<para>Möchten Sie die Anwendung wirklich beenden?</para><para>Es stehen noch "
-"%1 Operationen aus.</para>"
+"%1 Vorgänge aus.</para>"
 
 #: gui/mainwindow.cpp:239
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
-msgstr "Ausstehende Operationen verwerfen und beenden?"
+msgstr "Ausstehende Vorgänge verwerfen und beenden?"
 
 #: gui/mainwindow.cpp:240
 #, kde-kuit-format
@@ -1702,13 +1678,13 @@ msgstr "Rückgängig"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
-msgstr "Macht die letzte Operation rückgängig"
+msgstr "Macht den letzten Vorgang rückgängig"
 
 #: gui/mainwindow.cpp:284
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
-msgstr "Entfernt die letzte Operation aus der Liste."
+msgstr "Entfernt die letzte Vorgang aus der Liste."
 
 #: gui/mainwindow.cpp:291
 #, kde-kuit-format
@@ -1720,13 +1696,13 @@ msgstr "Leeren"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
-msgstr "Alle Operationen entfernen"
+msgstr "Alle Vorgänge entfernen"
 
 #: gui/mainwindow.cpp:293
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
-msgstr "Leert die Liste der ausstehenden Operationen."
+msgstr "Leert die Liste der ausstehenden Vorgänge."
 
 #: gui/mainwindow.cpp:299
 #, kde-kuit-format
@@ -1738,13 +1714,13 @@ msgstr "Anwenden"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
-msgstr "Alle Operationen anwenden"
+msgstr "Alle Vorgänge anwenden"
 
 #: gui/mainwindow.cpp:301
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
-msgstr "Führt die ausstehenden Operationen in der Liste aus."
+msgstr "Führt die ausstehenden Vorgänge in der Liste aus."
 
 #: gui/mainwindow.cpp:308
 #, kde-kuit-format
@@ -1877,21 +1853,19 @@ msgstr "Den SMART-Status des Gerätes anzeigen, falls unterstützt"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Benchmark"
-msgstr ""
+msgstr "Benchmark"
 
 #: gui/mainwindow.cpp:370
-#, fuzzy, kde-kuit-format
-#| msgctxt "SMART attr name"
-#| msgid "Seek Time Performance"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Measure device read performance"
-msgstr "Positionierungszeit"
+msgstr "Leseperformance des Gerätes feststellen"
 
 #: gui/mainwindow.cpp:371
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measure the device's read rate and access time"
-msgstr ""
+msgstr "Die Leserate und die Zugriffszeit des Gerätes feststellen"
 
 #: gui/mainwindow.cpp:377 gui/mainwindow.cpp:477
 #, kde-kuit-format
@@ -2063,21 +2037,21 @@ msgstr "Hängt eine Partition ein oder aus."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Besitzrecht übernehmen"
 
 #: gui/mainwindow.cpp:455
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "Dateisystem ändern"
+msgstr "Dateisystem-Besitzrechte übernehmen"
 
 #: gui/mainwindow.cpp:456
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr ""
+"Die Besitzrechte des eingehängten Dateisystems auf den aktuellen Benutzer "
+"übertragen."
 
 #: gui/mainwindow.cpp:462
 #, kde-kuit-format
@@ -2288,8 +2262,8 @@ msgstr ""
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
-msgstr[0] "Eine ausstehende Operation"
-msgstr[1] "%1 ausstehende Operationen"
+msgstr[0] "Ein ausstehender Vorgang"
+msgstr[1] "%1 ausstehende Vorgänge"
 
 #: gui/mainwindow.cpp:844
 #, kde-kuit-format
@@ -2301,7 +2275,7 @@ msgstr "Backend-Modul verwenden: %1 (%2)"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
-msgstr "Geräte werden gesucht ..."
+msgstr "Geräte werden gesucht  …"
 
 #: gui/mainwindow.cpp:886
 #, kde-kuit-format
@@ -2317,7 +2291,7 @@ msgid ""
 "will also clear the list of pending operations.</warning></para>"
 msgstr ""
 "<para>Möchten Sie wirklich die Geräte aktualisieren?</"
-"para><para><warning>Dadurch wird auch die Liste der ausstehenden Operationen "
+"para><para><warning>Dadurch wird auch die Liste der ausstehenden Vorgänge "
 "geleert.</warning></para>"
 
 #: gui/mainwindow.cpp:952
@@ -2339,7 +2313,7 @@ msgid ""
 "<para>Do you really want to apply the pending operations listed below?</"
 "para><para><warning>This will permanently modify your disks.</warning></para>"
 msgstr ""
-"<para>Möchten Sie die unten aufgeführten ausstehenden Operationen wirklich "
+"<para>Möchten Sie die unten aufgeführten ausstehenden Vorgänge wirklich "
 "anwenden?</para><para><warning>Dadurch werden Ihre Festplatten "
 "unwiderruflich verändert.</warning></para>"
 
@@ -2347,49 +2321,49 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
-msgstr "Ausstehende Operationen anwenden?"
+msgstr "Ausstehende Vorgänge anwenden?"
 
 #: gui/mainwindow.cpp:982
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
-msgstr "Ausstehende Operationen anwenden"
+msgstr "Ausstehende Vorgänge anwenden"
 
 #: gui/mainwindow.cpp:984
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
-msgstr "Operationen werden angewandt ..."
+msgstr "Vorgänge werden angewandt …"
 
 #: gui/mainwindow.cpp:1009
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
-msgstr "Operation rückgängig machen: %1"
+msgstr "Vorgang rückgängig machen: %1"
 
 #: gui/mainwindow.cpp:1025
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
-msgstr "Möchten Sie die Liste der ausstehenden Operationen wirklich leeren?"
+msgstr "Möchten Sie die Liste der ausstehenden Vorgänge wirklich leeren?"
 
 #: gui/mainwindow.cpp:1026
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
-msgstr "Ausstehende Operationen entfernen?"
+msgstr "Ausstehende Vorgänge entfernen?"
 
 #: gui/mainwindow.cpp:1027
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
-msgstr "Ausstehende Operationen entfernen"
+msgstr "Ausstehende Vorgänge entfernen"
 
 #: gui/mainwindow.cpp:1029
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
-msgstr "Die Liste der ausstehenden Operationen wird geleert."
+msgstr "Die Liste der ausstehenden Vorgänge wird geleert."
 
 #: gui/mainwindow.cpp:1071
 #, kde-kuit-format
@@ -2619,7 +2593,7 @@ msgstr "Geräte"
 #, kde-format
 msgctxt "@title:window"
 msgid "Pending Operations"
-msgstr "Ausstehende Operationen"
+msgstr "Ausstehende Vorgänge"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
 #: gui/mainwindowbase.ui:59
@@ -2713,32 +2687,26 @@ msgid "Could Not Unmount File System."
 msgstr "Das Dateisystem kann nicht ausgehängt werden."
 
 #: gui/partitionmanagerwidget.cpp:463
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "Dateisystem ändern"
+msgstr "Dateisystem-Besitzrechte übernehmen"
 
 #: gui/partitionmanagerwidget.cpp:469
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid ""
-#| "Back up file system on partition <filename>%1</filename> to <filename>%2</"
-#| "filename>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
-"Sichern des Dateisystems auf der Partition <filename>%1</filename> nach "
-"<filename>%2</filename>"
+"Der Benutzer <emphasis>%2</emphasis> wird als Eigentümer von <filename>%1</"
+"filename> eingetragen."
 
 #: gui/partitionmanagerwidget.cpp:476
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "Auf alle Dateien und Unterordner rekursiv anwenden"
 
 #: gui/partitionmanagerwidget.cpp:484
 #, kde-kuit-format
@@ -2747,38 +2715,40 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"Dadurch wird auch der Eigentümer aller Unterverzeichnisse und Dateien "
+"geändert. Dies kann zu Problemen führen, wenn einige davon anderen Benutzern "
+"gehören."
 
 #: gui/partitionmanagerwidget.cpp:491
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Besitzrecht übernehmen"
 
 #: gui/partitionmanagerwidget.cpp:509
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "Besitzrecht von <b>%1</b> übernehmen …"
 
 #: gui/partitionmanagerwidget.cpp:511
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Besitzrecht übernehmen"
 
 #: gui/partitionmanagerwidget.cpp:526
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Could not delete partition <filename>%1</filename>."
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "Die Partition <filename>%1</filename> kann nicht gelöscht werden."
+msgstr ""
+"Das Besitzrecht von <filename>%1</filename> konnte nicht geändert werden."
 
 #: gui/partitionmanagerwidget.cpp:529
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "Besitzrecht übernehmen fehlgeschlagen …"
 
 #: gui/partitionmanagerwidget.cpp:534
 #, kde-kuit-format
@@ -2787,12 +2757,14 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
+"Das Besitzrecht von <filename>%1</filename> wurde erfolgreich auf <emphasis>"
+"%2</emphasis> geändert."
 
 #: gui/partitionmanagerwidget.cpp:536
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "Besitzrecht geändert"
 
 #: gui/partitionmanagerwidget.cpp:564
 #, kde-kuit-format
@@ -2909,7 +2881,7 @@ msgid ""
 "resize/move. Ignoring operation."
 msgstr ""
 "Die Partition <filename>%1</filename> hat nach der Größenänderung/dem "
-"Verschieben weiterhin die gleiche Position und Größe. Die Operation wird "
+"Verschieben weiterhin die gleiche Position und Größe. Der Vorgang wird "
 "ignoriert."
 
 #: gui/partitionmanagerwidget.cpp:773
@@ -2932,11 +2904,11 @@ msgid ""
 "unrecoverably be overwritten.</para>"
 msgstr ""
 "<para><warning>Sie sind dabei, alle Daten auf der Partition <filename>%1</"
-"filename> zu verlieren.</warning></para> <para>Durch das Überschreiben eines "
+"filename> zu verlieren.</warning></para><para>Durch das Überschreiben eines "
 "Dateisystems mit einem anderen (oder einem Partitionsabbild) werden alle "
-"Daten darin gelöscht. Wenn Sie jetzt fortfahren und die entstandene "
-"Operation im Hauptfenster anwenden, werden alle Daten auf <filename>%1</"
-"filename> unwiderruflich verloren gehen.</para>"
+"Daten darin gelöscht. Wenn Sie jetzt fortfahren und den entstandenen Vorgang "
+"im Hauptfenster anwenden, werden alle Daten auf <filename>%1</filename> "
+"unwiderruflich verloren gehen.</para>"
 
 #: gui/partitionmanagerwidget.cpp:844
 #, kde-kuit-format
@@ -3139,9 +3111,7 @@ msgid "(none)"
 msgstr "(keine)"
 
 #: gui/partpropsdialog.cpp:160
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "(unknown)"
+#, kde-kuit-format
 msgctxt "@item cluster size"
 msgid "(unknown)"
 msgstr "(unbekannt)"
@@ -3162,11 +3132,11 @@ msgid ""
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
 "<para><warning>Sie sind dabei, alle Daten auf der Partition <filename>%1</"
-"filename> zu verlieren.</warning></para> <para>Durch das Ändern eines "
+"filename> zu verlieren.</warning></para><para>Durch das Ändern eines "
 "Dateisystems, das bereits auf der Festplatte erzeugt wurde, werden alle "
-"Daten darin gelöscht. Wenn Sie jetzt fortfahren und die entstandene "
-"Operation im Hauptfenster anwenden, werden alle Daten auf <filename>%1</"
-"filename> unwiderruflich verloren gehen.</para>"
+"Daten darin gelöscht. Wenn Sie jetzt fortfahren und den entstandenen Vorgang "
+"im Hauptfenster anwenden, werden alle Daten auf <filename>%1</filename> "
+"unwiderruflich verloren gehen.</para>"
 
 #: gui/partpropsdialog.cpp:504
 #, kde-kuit-format
@@ -3197,9 +3167,9 @@ msgid ""
 "para>"
 msgstr ""
 "<para><warning>Sie sind dabei, alle Daten auf der Partition <filename>%1</"
-"filename> zu verlieren.</warning></para> <para>Durch das Neuerstellen eines "
+"filename> zu verlieren.</warning></para><para>Durch das Neuerstellen eines "
 "Dateisystems werden alle Daten darin gelöscht. Wenn Sie jetzt fortfahren und "
-"die entstandene Operation im Hauptfenster anwenden, werden alle Daten auf "
+"den geplanten Vorgang im Hauptfenster anwenden, werden alle Daten auf "
 "<filesystem>%1</filesystem> unwiderruflich verloren gehen.</para>"
 
 #: gui/partpropsdialog.cpp:527
@@ -4075,13 +4045,13 @@ msgstr "Spalten"
 #, kde-kuit-format
 msgctxt "@item:inlistbox cluster size"
 msgid "Automatic"
-msgstr ""
+msgstr "Automatisch"
 
 #: util/guihelpers.cpp:150
 #, kde-kuit-format
 msgctxt "@item:inlistbox a cluster size that is no longer valid"
 msgid "%1 (not valid for this size)"
-msgstr ""
+msgstr "%1 (nicht gültig für diese Größe)"
 
 #~ msgctxt "@info"
 #~ msgid "Do you really want to cancel?"
