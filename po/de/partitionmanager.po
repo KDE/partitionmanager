@@ -7,20 +7,21 @@
 # SPDX-FileCopyrightText: 2010-2013, 2015-2016, 2018, 2022-2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2013 Benjamin Weis <benjamin.weis@gmx.com>
 # SPDX-FileCopyrightText: 2017, 2025 Frank Steinmetzger <Warp_7@gmx.de>
+# SPDX-FileCopyrightText: 2026 Alois Spitzbart <spitz234@hotmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-29 00:49+0000\n"
-"PO-Revision-Date: 2025-08-08 17:52+0200\n"
-"Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
+"PO-Revision-Date: 2026-10-11 21:52+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -75,7 +76,7 @@ msgid ""
 msgstr ""
 "<para>Möchten Sie das Backend wirklich ändern?</para><para><warning>Dadurch "
 "werden die Geräte neu eingelesen und somit auch die Liste der ausstehenden "
-"Operationen geleert.</warning></para>"
+"Vorgänge geleert.</warning></para>"
 
 #: config/configureoptionsdialog.cpp:139
 #, kde-kuit-format
@@ -189,7 +190,7 @@ msgstr "Linux-Swap:"
 #: config/configurepagefilesystemcolors.ui:348
 #, kde-format
 msgid "FreeBSD Swap:"
-msgstr ""
+msgstr "FreeBSD-Swap:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:364
@@ -483,7 +484,7 @@ msgstr "&Details"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Setting up..."
-msgstr "Einrichten ..."
+msgstr "Einrichten …"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -492,50 +493,46 @@ msgid "Stopping now may cause data loss or drive errors."
 msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Cancel Running Operations"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Stop Running Operations"
-msgstr "Laufende Operationen abbrechen"
+msgstr "Laufende Vorgänge beenden"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop Anyway"
-msgstr ""
+msgstr "Trotzdem anhalten"
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress operation"
-#| msgid "Running"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Keep Running"
-msgstr "Wird ausgeführt"
+msgstr "Laufen lassen"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Waiting for operation to finish..."
-msgstr "Es wird gewartet, bis die Operation beendet ist ..."
+msgstr "Es wird gewartet, bis der Vorgang beendet ist …"
 
 #: gui/applyprogressdialog.cpp:217
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "All operations successfully finished."
-msgstr "Alle Operationen wurden erfolgreich angewendet."
+msgstr "Alle Vorgänge wurden erfolgreich angewendet."
 
 #: gui/applyprogressdialog.cpp:222
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Operations cancelled."
-msgstr "Operationen abgebrochen."
+msgstr "Vorgänge abgebrochen."
 
 #: gui/applyprogressdialog.cpp:227
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "There were errors while applying operations. Aborted."
-msgstr "Beim Anwenden der Operationen sind Fehler aufgetreten. Abgebrochen."
+msgstr "Beim Anwenden der Vorgänge sind Fehler aufgetreten. Abgebrochen."
 
 #: gui/applyprogressdialog.cpp:341
 #, kde-kuit-format
@@ -584,7 +581,7 @@ msgstr "Der Browser lässt sich nicht starten."
 #: gui/applyprogressdialogwidgetbase.ui:41
 #, kde-format
 msgid "Operations and Jobs"
-msgstr "Operationen und Aufgaben"
+msgstr "Vorgänge und Aufgaben"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeTasks)
 #: gui/applyprogressdialogwidgetbase.ui:46
@@ -602,7 +599,7 @@ msgstr "Gesamtzeit: 00:00:00"
 #: gui/applyprogressdialogwidgetbase.ui:89
 #, no-c-format, kde-format
 msgid "Operation: %p%"
-msgstr "Operation: %p%"
+msgstr "Vorgänge: %p%"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelStatus)
 #: gui/applyprogressdialogwidgetbase.ui:99
@@ -762,7 +759,7 @@ msgstr "Sektoren insgesamt:"
 #: gui/devicepropswidgetbase.ui:83 gui/editmountpointdialogwidgetbase.ui:123
 #, kde-format
 msgid "More..."
-msgstr "Mehr ..."
+msgstr "Mehr …"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextCapacity)
 #: gui/devicepropswidgetbase.ui:92
@@ -876,7 +873,7 @@ msgstr "Pfad:"
 #: gui/editmountpointdialogwidgetbase.ui:56
 #, kde-format
 msgid "Select..."
-msgstr "Auswählen ..."
+msgstr "Auswählen  …"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRemove)
 #: gui/editmountpointdialogwidgetbase.ui:69
@@ -1005,12 +1002,12 @@ msgid ""
 "details. "
 msgstr ""
 "Diese Tabelle zeigt, welche Dateisysteme unterstützt werden und welche "
-"Operationen auf sie angewandt werden können.\n"
+"Vorgänge auf sie angewandt werden können.\n"
 "Einige Dateisysteme setzen die Installation externer Programme voraus, um "
-"unterstützt werden zu können. Jedoch können nicht alle Operationen auf alle "
+"unterstützt werden zu können. Jedoch können nicht alle Vorgänge auf alle "
 "Dateisysteme angewandt werden, auch wenn die benötigten Programme "
 "installiert sind. Bitte lesen Sie die Dokumentation für genauere "
-"Informationen."
+"Informationen. "
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:70
@@ -1342,16 +1339,16 @@ msgid_plural ""
 "still %1 operations pending.</para>"
 msgstr[0] ""
 "<para>Möchten Sie die Anwendung wirklich beenden?</para><para>Es steht noch "
-"eine Operation aus.</para>"
+"ein Vorgang aus.</para>"
 msgstr[1] ""
 "<para>Möchten Sie die Anwendung wirklich beenden?</para><para>Es stehen noch "
-"%1 Operationen aus.</para>"
+"%1 Vorgänge aus.</para>"
 
 #: gui/mainwindow.cpp:240
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
-msgstr "Ausstehende Operationen verwerfen und beenden?"
+msgstr "Ausstehende Vorgänge verwerfen und beenden?"
 
 #: gui/mainwindow.cpp:241
 #, kde-kuit-format
@@ -1369,13 +1366,13 @@ msgstr "Rückgängig"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
-msgstr "Macht die letzte Operation rückgängig"
+msgstr "Macht den letzten Vorgang rückgängig"
 
 #: gui/mainwindow.cpp:285
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
-msgstr "Entfernt die letzte Operation aus der Liste."
+msgstr "Entfernt die letzte Vorgang aus der Liste."
 
 #: gui/mainwindow.cpp:292
 #, kde-kuit-format
@@ -1387,13 +1384,13 @@ msgstr "Leeren"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
-msgstr "Alle Operationen entfernen"
+msgstr "Alle Vorgänge entfernen"
 
 #: gui/mainwindow.cpp:294
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
-msgstr "Leert die Liste der ausstehenden Operationen."
+msgstr "Leert die Liste der ausstehenden Vorgänge."
 
 #: gui/mainwindow.cpp:300
 #, kde-kuit-format
@@ -1405,13 +1402,13 @@ msgstr "Anwenden"
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
-msgstr "Alle Operationen anwenden"
+msgstr "Alle Vorgänge anwenden"
 
 #: gui/mainwindow.cpp:302
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
-msgstr "Führt die ausstehenden Operationen in der Liste aus."
+msgstr "Führt die ausstehenden Vorgänge in der Liste aus."
 
 #: gui/mainwindow.cpp:309
 #, kde-kuit-format
@@ -1710,21 +1707,21 @@ msgstr "Hängt eine Partition ein oder aus."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Besitzrecht übernehmen"
 
 #: gui/mainwindow.cpp:448
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "Dateisystem ändern"
+msgstr "Dateisystem-Besitzrechte übernehmen"
 
 #: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr ""
+"Die Besitzrechte des eingehängten Dateisystems auf den aktuellen Benutzer "
+"übertragen."
 
 #: gui/mainwindow.cpp:455
 #, kde-kuit-format
@@ -1935,8 +1932,8 @@ msgstr ""
 msgctxt "@info:status"
 msgid "One pending operation"
 msgid_plural "%1 pending operations"
-msgstr[0] "Eine ausstehende Operation"
-msgstr[1] "%1 ausstehende Operationen"
+msgstr[0] "Ein ausstehender Vorgang"
+msgstr[1] "%1 ausstehende Vorgänge"
 
 #: gui/mainwindow.cpp:840
 #, kde-kuit-format
@@ -1948,7 +1945,7 @@ msgstr "Backend-Modul verwenden: %1 (%2)"
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
-msgstr "Geräte werden gesucht ..."
+msgstr "Geräte werden gesucht  …"
 
 #: gui/mainwindow.cpp:882
 #, kde-kuit-format
@@ -1964,7 +1961,7 @@ msgid ""
 "will also clear the list of pending operations.</warning></para>"
 msgstr ""
 "<para>Möchten Sie wirklich die Geräte aktualisieren?</"
-"para><para><warning>Dadurch wird auch die Liste der ausstehenden Operationen "
+"para><para><warning>Dadurch wird auch die Liste der ausstehenden Vorgänge "
 "geleert.</warning></para>"
 
 #: gui/mainwindow.cpp:948
@@ -1986,7 +1983,7 @@ msgid ""
 "<para>Do you really want to apply the pending operations listed below?</"
 "para><para><warning>This will permanently modify your disks.</warning></para>"
 msgstr ""
-"<para>Möchten Sie die unten aufgeführten ausstehenden Operationen wirklich "
+"<para>Möchten Sie die unten aufgeführten ausstehenden Vorgänge wirklich "
 "anwenden?</para><para><warning>Dadurch werden Ihre Festplatten "
 "unwiderruflich verändert.</warning></para>"
 
@@ -1994,49 +1991,49 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
-msgstr "Ausstehende Operationen anwenden?"
+msgstr "Ausstehende Vorgänge anwenden?"
 
 #: gui/mainwindow.cpp:978
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
-msgstr "Ausstehende Operationen anwenden"
+msgstr "Ausstehende Vorgänge anwenden"
 
 #: gui/mainwindow.cpp:980
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
-msgstr "Operationen werden angewandt ..."
+msgstr "Vorgänge werden angewandt …"
 
 #: gui/mainwindow.cpp:1005
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
-msgstr "Operation rückgängig machen: %1"
+msgstr "Vorgang rückgängig machen: %1"
 
 #: gui/mainwindow.cpp:1021
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
-msgstr "Möchten Sie die Liste der ausstehenden Operationen wirklich leeren?"
+msgstr "Möchten Sie die Liste der ausstehenden Vorgänge wirklich leeren?"
 
 #: gui/mainwindow.cpp:1022
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
-msgstr "Ausstehende Operationen entfernen?"
+msgstr "Ausstehende Vorgänge entfernen?"
 
 #: gui/mainwindow.cpp:1023
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
-msgstr "Ausstehende Operationen entfernen"
+msgstr "Ausstehende Vorgänge entfernen"
 
 #: gui/mainwindow.cpp:1025
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
-msgstr "Die Liste der ausstehenden Operationen wird geleert."
+msgstr "Die Liste der ausstehenden Vorgänge wird geleert."
 
 #: gui/mainwindow.cpp:1067
 #, kde-kuit-format
@@ -2266,7 +2263,7 @@ msgstr "Geräte"
 #, kde-format
 msgctxt "@title:window"
 msgid "Pending Operations"
-msgstr "Ausstehende Operationen"
+msgstr "Ausstehende Vorgänge"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockLog)
 #: gui/mainwindowbase.ui:59
@@ -2360,32 +2357,26 @@ msgid "Could Not Unmount File System."
 msgstr "Das Dateisystem kann nicht ausgehängt werden."
 
 #: gui/partitionmanagerwidget.cpp:460
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "Dateisystem ändern"
+msgstr "Dateisystem-Besitzrechte übernehmen"
 
 #: gui/partitionmanagerwidget.cpp:466
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid ""
-#| "Back up file system on partition <filename>%1</filename> to <filename>%2</"
-#| "filename>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "This will set the ownership of <filename>%1</filename> to user <emphasis>%2</"
 "emphasis>."
 msgstr ""
-"Sichern des Dateisystems auf der Partition <filename>%1</filename> nach "
-"<filename>%2</filename>"
+"Der Benutzer <emphasis>%2</emphasis> wird als Eigentümer von <filename>%1</"
+"filename> eingetragen."
 
 #: gui/partitionmanagerwidget.cpp:473
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "Auf alle Dateien und Unterordner rekursiv anwenden"
 
 #: gui/partitionmanagerwidget.cpp:481
 #, kde-kuit-format
@@ -2394,38 +2385,40 @@ msgid ""
 "This will also change the ownership of all subdirectories and files. This "
 "may cause problems if some of them are owned by other users."
 msgstr ""
+"Dadurch wird auch der Eigentümer aller Unterverzeichnisse und Dateien "
+"geändert. Dies kann zu Problemen führen, wenn einige davon anderen Benutzern "
+"gehören."
 
 #: gui/partitionmanagerwidget.cpp:488
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Besitzrecht übernehmen"
 
 #: gui/partitionmanagerwidget.cpp:506
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "Besitzrecht von <b>%1</b> übernehmen …"
 
 #: gui/partitionmanagerwidget.cpp:508
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "Besitzrecht übernehmen"
 
 #: gui/partitionmanagerwidget.cpp:523
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Could not delete partition <filename>%1</filename>."
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "Die Partition <filename>%1</filename> kann nicht gelöscht werden."
+msgstr ""
+"Das Besitzrecht von <filename>%1</filename> konnte nicht geändert werden."
 
 #: gui/partitionmanagerwidget.cpp:526
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "Besitzrecht übernehmen fehlgeschlagen …"
 
 #: gui/partitionmanagerwidget.cpp:531
 #, kde-kuit-format
@@ -2434,12 +2427,14 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
+"Das Besitzrecht von <filename>%1</filename> wurde erfolgreich auf <emphasis>"
+"%2</emphasis> geändert."
 
 #: gui/partitionmanagerwidget.cpp:533
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "Besitzrecht geändert"
 
 #: gui/partitionmanagerwidget.cpp:561
 #, kde-kuit-format
@@ -2556,7 +2551,7 @@ msgid ""
 "resize/move. Ignoring operation."
 msgstr ""
 "Die Partition <filename>%1</filename> hat nach der Größenänderung/dem "
-"Verschieben weiterhin die gleiche Position und Größe. Die Operation wird "
+"Verschieben weiterhin die gleiche Position und Größe. Der Vorgang wird "
 "ignoriert."
 
 #: gui/partitionmanagerwidget.cpp:770
@@ -2579,11 +2574,11 @@ msgid ""
 "unrecoverably be overwritten.</para>"
 msgstr ""
 "<para><warning>Sie sind dabei, alle Daten auf der Partition <filename>%1</"
-"filename> zu verlieren.</warning></para> <para>Durch das Überschreiben eines "
+"filename> zu verlieren.</warning></para><para>Durch das Überschreiben eines "
 "Dateisystems mit einem anderen (oder einem Partitionsabbild) werden alle "
-"Daten darin gelöscht. Wenn Sie jetzt fortfahren und die entstandene "
-"Operation im Hauptfenster anwenden, werden alle Daten auf <filename>%1</"
-"filename> unwiderruflich verloren gehen.</para>"
+"Daten darin gelöscht. Wenn Sie jetzt fortfahren und den entstandenen Vorgang "
+"im Hauptfenster anwenden, werden alle Daten auf <filename>%1</filename> "
+"unwiderruflich verloren gehen.</para>"
 
 #: gui/partitionmanagerwidget.cpp:841
 #, kde-kuit-format
@@ -2801,11 +2796,11 @@ msgid ""
 "filename> will unrecoverably be lost.</para>"
 msgstr ""
 "<para><warning>Sie sind dabei, alle Daten auf der Partition <filename>%1</"
-"filename> zu verlieren.</warning></para> <para>Durch das Ändern eines "
+"filename> zu verlieren.</warning></para><para>Durch das Ändern eines "
 "Dateisystems, das bereits auf der Festplatte erzeugt wurde, werden alle "
-"Daten darin gelöscht. Wenn Sie jetzt fortfahren und die entstandene "
-"Operation im Hauptfenster anwenden, werden alle Daten auf <filename>%1</"
-"filename> unwiderruflich verloren gehen.</para>"
+"Daten darin gelöscht. Wenn Sie jetzt fortfahren und den entstandenen Vorgang "
+"im Hauptfenster anwenden, werden alle Daten auf <filename>%1</filename> "
+"unwiderruflich verloren gehen.</para>"
 
 #: gui/partpropsdialog.cpp:372
 #, kde-kuit-format
@@ -2836,9 +2831,9 @@ msgid ""
 "para>"
 msgstr ""
 "<para><warning>Sie sind dabei, alle Daten auf der Partition <filename>%1</"
-"filename> zu verlieren.</warning></para> <para>Durch das Neuerstellen eines "
+"filename> zu verlieren.</warning></para><para>Durch das Neuerstellen eines "
 "Dateisystems werden alle Daten darin gelöscht. Wenn Sie jetzt fortfahren und "
-"die entstandene Operation im Hauptfenster anwenden, werden alle Daten auf "
+"den geplanten Vorgang im Hauptfenster anwenden, werden alle Daten auf "
 "<filesystem>%1</filesystem> unwiderruflich verloren gehen.</para>"
 
 #: gui/partpropsdialog.cpp:395
