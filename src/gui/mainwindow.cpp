@@ -1494,7 +1494,7 @@ void MainWindow::setCurrentDeviceByName(const QString& name)
     if (!m_ListDevices->setSelectedDevice(name)) {
         KMessageBox::error(this,
                            xi18nc("@info device should be inside of /dev", "Unrecognized device \"%1\" ", name),
-                           xi18nc("@title:window", "Error While Importing Partition Table"));
+                           xi18nc("@title:window", "Error opening device"));
     }
 }
 
