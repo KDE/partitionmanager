@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-03 00:48+0000\n"
+"POT-Creation-Date: 2026-10-21 00:54+0000\n"
 "PO-Revision-Date: 2023-03-20 11:37+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2431,7 +2431,7 @@ msgstr ""
 #: gui/mainwindow.cpp:1125 gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1142
 #: gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1157 gui/mainwindow.cpp:1170
 #: gui/mainwindow.cpp:1175 gui/mainwindow.cpp:1194 gui/mainwindow.cpp:1199
-#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211 gui/mainwindow.cpp:1497
+#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
@@ -2572,6 +2572,14 @@ msgstr "Faltam Pacotes de Suporte aos Sistemas de Ficheiros"
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "Dispositivo desconhecido \"%1\" "
+
+#: gui/mainwindow.cpp:1497
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Error opening partition"
+msgctxt "@title:window"
+msgid "Error opening device"
+msgstr "Erro ao abrir a partição"
 
 #: gui/mainwindow.cpp:1505
 #, kde-kuit-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-03 00:48+0000\n"
+"POT-Creation-Date: 2026-10-21 00:54+0000\n"
 "PO-Revision-Date: 2026-10-09 16:00+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -2428,7 +2428,7 @@ msgstr "Фајл увоза <filename>%1</filename> не садржи добру
 #: gui/mainwindow.cpp:1125 gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1142
 #: gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1157 gui/mainwindow.cpp:1170
 #: gui/mainwindow.cpp:1175 gui/mainwindow.cpp:1194 gui/mainwindow.cpp:1199
-#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211 gui/mainwindow.cpp:1497
+#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
@@ -2561,6 +2561,14 @@ msgstr "Недостају пакети подршке за фајл систе�
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "Непрепознат уређај „%1“ "
+
+#: gui/mainwindow.cpp:1497
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Error opening partition"
+msgctxt "@title:window"
+msgid "Error opening device"
+msgstr "Грешка при отварању партиције"
 
 #: gui/mainwindow.cpp:1505
 #, kde-kuit-format

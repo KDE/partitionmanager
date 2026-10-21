@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-03 00:48+0000\n"
+"POT-Creation-Date: 2026-10-21 00:54+0000\n"
 "PO-Revision-Date: 2026-10-03 04:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2383,7 +2383,7 @@ msgstr ""
 #: gui/mainwindow.cpp:1125 gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1142
 #: gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1157 gui/mainwindow.cpp:1170
 #: gui/mainwindow.cpp:1175 gui/mainwindow.cpp:1194 gui/mainwindow.cpp:1199
-#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211 gui/mainwindow.cpp:1497
+#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
@@ -2516,6 +2516,14 @@ msgstr "აკლია ფაილური სისტემის მხა
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "უცნობი მოწყობილობა \"%1\" "
+
+#: gui/mainwindow.cpp:1497
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Error opening partition"
+msgctxt "@title:window"
+msgid "Error opening device"
+msgstr "დანაყოფის გახსნის შეცდომა"
 
 #: gui/mainwindow.cpp:1505
 #, kde-kuit-format

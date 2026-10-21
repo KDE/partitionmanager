@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-03 00:48+0000\n"
+"POT-Creation-Date: 2026-10-21 00:54+0000\n"
 "PO-Revision-Date: 2026-10-09 10:57+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2374,7 +2374,7 @@ msgstr "קובץ הייבוא <filename>%1</filename> לא מכיל טבלת מ�
 #: gui/mainwindow.cpp:1125 gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1142
 #: gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1157 gui/mainwindow.cpp:1170
 #: gui/mainwindow.cpp:1175 gui/mainwindow.cpp:1194 gui/mainwindow.cpp:1199
-#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211 gui/mainwindow.cpp:1497
+#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
@@ -2502,6 +2502,14 @@ msgstr "חבילות התמיכה במערכת הקבצים חסרות"
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "ההתקן „%1” לא מוכר"
+
+#: gui/mainwindow.cpp:1497
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Error opening partition"
+msgctxt "@title:window"
+msgid "Error opening device"
+msgstr "שגיאה בפתיחת המחיצה"
 
 #: gui/mainwindow.cpp:1505
 #, kde-kuit-format

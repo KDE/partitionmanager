@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-03 00:48+0000\n"
+"POT-Creation-Date: 2026-10-21 00:54+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2381,7 +2381,7 @@ msgstr "导入的文件 <filename>%1</filename> 中未包含正确的分区表�
 #: gui/mainwindow.cpp:1125 gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1142
 #: gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1157 gui/mainwindow.cpp:1170
 #: gui/mainwindow.cpp:1175 gui/mainwindow.cpp:1194 gui/mainwindow.cpp:1199
-#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211 gui/mainwindow.cpp:1497
+#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
@@ -2507,6 +2507,14 @@ msgstr "缺少文件系统支持软件包"
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "无法识别的设备“%1” "
+
+#: gui/mainwindow.cpp:1497
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title:window"
+#| msgid "Error opening partition"
+msgctxt "@title:window"
+msgid "Error opening device"
+msgstr "打开分区时发生错误"
 
 #: gui/mainwindow.cpp:1505
 #, kde-kuit-format
