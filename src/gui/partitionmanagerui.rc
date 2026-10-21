@@ -65,6 +65,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
             <Action name="editMountPoint"/>
             <Action name="mountPartition"/>
             <Action name="takeOwnershipPartition"/>
+            <Action name="trimPartition"/>
             <Action name="decryptPartition"/>
             <separator/>
             <Action name="checkPartition"/>

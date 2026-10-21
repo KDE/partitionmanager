@@ -46,6 +46,7 @@
 #include <ops/checkoperation.h>
 #include <ops/setpartflagsoperation.h>
 #include <ops/takeownershipoperation.h>
+#include <ops/trimoperation.h>
 
 #include <fs/filesystem.h>
 #include <fs/filesystemfactory.h>
@@ -456,6 +457,14 @@ void MainWindow::setupActions()
     takeOwnershipPartition->setStatusTip(xi18nc("@info:status", "Change the ownership of the mounted file system to the current user."));
     takeOwnershipPartition->setIcon(QIcon::fromTheme(QStringLiteral("user-properties")));
 
+    QAction* trimPartition = actionCollection()->addAction(QStringLiteral("trimPartition"));
+    connect(trimPartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onTrimPartition);
+    trimPartition->setEnabled(false);
+    trimPartition->setText(xi18nc("@action:inmenu", "Trim"));
+    trimPartition->setToolTip(xi18nc("@info:tooltip", "Discard unused blocks on the file system"));
+    trimPartition->setStatusTip(xi18nc("@info:status", "Tell the drive which blocks of the mounted file system are no longer in use."));
+    trimPartition->setIcon(QIcon::fromTheme(QStringLiteral("edit-clear-all")));
+
     QAction* decryptPartition = actionCollection()->addAction(QStringLiteral("decryptPartition"));
     connect(decryptPartition, &QAction::triggered, &pmWidget(), &PartitionManagerWidget::onDecryptPartition);
     decryptPartition->setEnabled(false);
@@ -684,7 +693,7 @@ void MainWindow::enableActions()
 
     actionCollection()->action(QStringLiteral("mountPartition"))
             ->setEnabled(part &&
-                         (part->canMount() || part->canUnmount()));
+                         (part->canMount() || (part->canUnmount() && !operationStack().contains(part))));
     if (part != nullptr)
         actionCollection()->action(QStringLiteral("mountPartition"))
                 ->setText(part->isMounted() ?
@@ -697,6 +706,9 @@ void MainWindow::enableActions()
                                 !TakeOwnershipOperation::isCriticalMountPoint(part->mountPoint());
         actionCollection()->action(QStringLiteral("takeOwnershipPartition"))->setEnabled(canTakeOwnership);
     }
+
+    actionCollection()->action(QStringLiteral("trimPartition"))
+            ->setEnabled(part && !operationStack().contains(part) && TrimOperation::canTrim(part));
 
     if (part && part->roles().has(PartitionRole::Luks)) {
         const FileSystem& fsRef = part->fileSystem();

@@ -60,6 +60,7 @@ public:
     void onEditMountPoint();
     void onMountPartition();
     void onTakeOwnershipPartition();
+    void onTrimPartition();
     void onDecryptPartition();
 
     void onCheckPartition();

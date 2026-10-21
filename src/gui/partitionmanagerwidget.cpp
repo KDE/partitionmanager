@@ -39,6 +39,7 @@
 #include <ops/setpartlabeloperation.h>
 #include <ops/createfilesystemoperation.h>
 #include <ops/takeownershipoperation.h>
+#include <ops/trimoperation.h>
 
 #include <util/globallog.h>
 #include <util/capacity.h>
@@ -536,6 +537,33 @@ void PartitionManagerWidget::onTakeOwnershipPartition()
                                  xi18nc("@title:window", "Ownership Changed"));
         Q_EMIT selectedPartitionChanged(p);
     }
+}
+
+void PartitionManagerWidget::onTrimPartition()
+{
+    Partition* p = selectedPartition();
+
+    Q_ASSERT(p);
+
+    if (p == nullptr) {
+        qWarning() << "no partition selected";
+        return;
+    }
+
+    if (operationStack().contains(p) || !TrimOperation::canTrim(p))
+        return;
+
+    if (KMessageBox::warningContinueCancel(this,
+            xi18nc("@info",
+                   "<para>Discard unused blocks on <filename>%1</filename>?</para>"
+                   "<para>Existing files are not affected. Recovering previously deleted data may become impossible.</para>",
+                   p->mountPoint()),
+            xi18nc("@title:window", "Trim File System"),
+            KGuiItem(xi18nc("@action:button", "Trim"), QStringLiteral("edit-clear-all")),
+            KStandardGuiItem::cancel()) == KMessageBox::Cancel)
+        return;
+
+    operationStack().push(new TrimOperation(*p));
 }
 
 void PartitionManagerWidget::onDecryptPartition()
