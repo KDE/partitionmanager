@@ -9,6 +9,8 @@
 
 #define SMARTDIALOG_H
 
+#include <core/smartdetails.h>
+
 #include <QDialog>
 
 class Device;
@@ -59,6 +61,7 @@ protected:
 
 private:
     Device& m_Device;
+    SmartDetails m_SmartDetails;
     SmartDialogWidget* m_DialogWidget;
     QDialogButtonBox* buttonBox;
 };

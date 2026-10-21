@@ -53,6 +53,10 @@ public:
         Q_ASSERT(m_LabelSmartBadSectors);
         return *m_LabelSmartBadSectors;
     }
+    QLabel& badSectorsLabel() {
+        Q_ASSERT(m_LabelTextSmartBadSectors);
+        return *m_LabelTextSmartBadSectors;
+    }
     QLabel& poweredOn() {
         Q_ASSERT(m_LabelSmartPoweredOn);
         return *m_LabelSmartPoweredOn;
@@ -78,6 +82,11 @@ public:
     const QTreeWidget& treeSmartAttributes() const {
         Q_ASSERT(m_TreeSmartAttributes);
         return *m_TreeSmartAttributes;
+    }
+
+    QTreeWidget& treeNvmeHealth() {
+        Q_ASSERT(m_TreeNvmeHealth);
+        return *m_TreeNvmeHealth;
     }
 
 protected:

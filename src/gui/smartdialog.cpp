@@ -39,6 +39,36 @@
 
 #include <config.h>
 
+static const QList<SmartNvmeHealth::Field> nvmeHealthFields = {
+    SmartNvmeHealth::Field::CriticalWarning,
+    SmartNvmeHealth::Field::AvailableSpare,
+    SmartNvmeHealth::Field::AvailableSpareThreshold,
+    SmartNvmeHealth::Field::PercentageUsed,
+    SmartNvmeHealth::Field::DataUnitsRead,
+    SmartNvmeHealth::Field::DataUnitsWritten,
+    SmartNvmeHealth::Field::HostReadCommands,
+    SmartNvmeHealth::Field::HostWriteCommands,
+    SmartNvmeHealth::Field::ControllerBusyTime,
+    SmartNvmeHealth::Field::UnsafeShutdowns,
+    SmartNvmeHealth::Field::MediaErrors,
+    SmartNvmeHealth::Field::ErrorLogEntries,
+};
+
+static QString unknownValue()
+{
+    return xi18nc("@label SMART value not reported by the device", "unknown");
+}
+
+static QString temperature(const SmartDetails& d)
+{
+    return d.temp() ? SmartStatus::tempToString(*d.temp()) : unknownValue();
+}
+
+static QString powerCycles(const SmartDetails& d)
+{
+    return d.powerCycles() ? QLocale().toString(*d.powerCycles()) : unknownValue();
+}
+
 /** Creates a new SmartDialog
     @param parent pointer to the parent widget
     @param d the Device
@@ -46,6 +76,7 @@
 SmartDialog::SmartDialog(QWidget* parent, Device& d) :
     QDialog(parent),
     m_Device(d),
+    m_SmartDetails(d.deviceNode()),
     m_DialogWidget(new SmartDialogWidget(this))
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -90,13 +121,17 @@ void SmartDialog::setupDialog()
         dialogWidget().firmware().setText(device().smartStatus().firmware());
         dialogWidget().serialNumber().setText(device().smartStatus().serial());
 
-        dialogWidget().temperature().setText(SmartStatus::tempToString(device().smartStatus().temp()));
+        dialogWidget().temperature().setText(temperature(m_SmartDetails));
         const QString badSectors = device().smartStatus().badSectors() > 0
                                    ? QLocale().toString(device().smartStatus().badSectors())
                                    : xi18nc("@label SMART number of bad sectors", "none");
         dialogWidget().badSectors().setText(badSectors);
-        dialogWidget().poweredOn().setText(KFormat().formatDuration(device().smartStatus().poweredOn()));
-        dialogWidget().powerCycles().setText(QLocale().toString(device().smartStatus().powerCycles()));
+        dialogWidget().badSectors().setVisible(!m_SmartDetails.isNvme());
+        dialogWidget().badSectorsLabel().setVisible(!m_SmartDetails.isNvme());
+        dialogWidget().poweredOn().setText(m_SmartDetails.poweredOn()
+                                           ? KFormat().formatDuration(*m_SmartDetails.poweredOn())
+                                           : unknownValue());
+        dialogWidget().powerCycles().setText(powerCycles(m_SmartDetails));
         dialogWidget().overallAssessment().setText(SmartStatus::overallAssessmentToString(device().smartStatus().overall()));
         dialogWidget().selfTests().setText(SmartStatus::selfTestStatusToString(device().smartStatus().selfTestStatus()));
 
@@ -125,8 +160,26 @@ void SmartDialog::setupDialog()
             item->setToolTip(1, QTextDocumentFragment::fromHtml(a.desc()).toPlainText());
             dialogWidget().treeSmartAttributes().addTopLevelItem(item);
         }
-    } else
+
+        const bool nvme = m_SmartDetails.isNvme();
+        dialogWidget().treeSmartAttributes().setVisible(!nvme);
+        dialogWidget().treeNvmeHealth().setVisible(nvme);
+        dialogWidget().treeNvmeHealth().clear();
+
+        if (nvme) {
+            const SmartNvmeHealth& health = m_SmartDetails.nvmeHealth();
+            for (const auto field : nvmeHealthFields) {
+                if (!health.contains(field))
+                    continue;
+                dialogWidget().treeNvmeHealth().addTopLevelItem(new QTreeWidgetItem(
+                    QStringList() << SmartNvmeHealth::fieldName(field) << health.valueToString(field)));
+            }
+            dialogWidget().treeNvmeHealth().resizeColumnToContents(0);
+        }
+    } else {
         dialogWidget().statusText().setText(xi18nc("@label", "(unknown)"));
+        dialogWidget().treeNvmeHealth().setVisible(false);
+    }
 
     setMinimumSize(dialogWidget().size());
     resize(dialogWidget().size());
@@ -155,16 +208,29 @@ QString SmartDialog::toHtml() const
     s << HtmlReport::tableLine(i18n("Model:"), device().smartStatus().modelName())
       << HtmlReport::tableLine(i18n("Serial number:"), device().smartStatus().serial())
       << HtmlReport::tableLine(i18n("Firmware revision:"), device().smartStatus().firmware())
-      << HtmlReport::tableLine(i18n("Temperature:"), SmartStatus::tempToString(device().smartStatus().temp()))
-      << HtmlReport::tableLine(i18n("Bad sectors:"), badSectors)
-      << HtmlReport::tableLine(i18n("Powered on for:"), KFormat().formatSpelloutDuration(device().smartStatus().poweredOn()))
-      << HtmlReport::tableLine(i18n("Power cycles:"), QLocale().toString(device().smartStatus().powerCycles()))
+      << HtmlReport::tableLine(i18n("Temperature:"), temperature(m_SmartDetails));
+
+    if (!m_SmartDetails.isNvme())
+        s << HtmlReport::tableLine(i18n("Bad sectors:"), badSectors);
+
+    s << HtmlReport::tableLine(i18n("Powered on for:"), m_SmartDetails.poweredOn()
+                                                        ? KFormat().formatSpelloutDuration(*m_SmartDetails.poweredOn())
+                                                        : unknownValue())
+      << HtmlReport::tableLine(i18n("Power cycles:"), powerCycles(m_SmartDetails))
       << HtmlReport::tableLine(i18n("Self tests:"), SmartStatus::selfTestStatusToString(device().smartStatus().selfTestStatus()))
       << HtmlReport::tableLine(i18n("Overall assessment:"), SmartStatus::overallAssessmentToString(device().smartStatus().overall()));
 
+    if (m_SmartDetails.isNvme()) {
+        const SmartNvmeHealth& health = m_SmartDetails.nvmeHealth();
+        for (const auto field : nvmeHealthFields) {
+            if (health.contains(field))
+                s << HtmlReport::tableLine(SmartNvmeHealth::fieldName(field) + QLatin1Char(':'), health.valueToString(field));
+        }
+    }
+
     s << "</table><br/>";
 
-    if (device().smartStatus().isValid()) {
+    if (device().smartStatus().isValid() && !m_SmartDetails.isNvme()) {
 
         const QFont f = QFontDatabase::systemFont(QFontDatabase::SmallestReadableFont);
         const QString size = f.pixelSize() != -1 ? QStringLiteral("%1px").arg(f.pixelSize()) : QStringLiteral("%1pt").arg(f.pointSize());
@@ -191,7 +257,7 @@ QString SmartDialog::toHtml() const
         }
 
         s << "</table>\n";
-    } else
+    } else if (!device().smartStatus().isValid())
         s << "(unknown)";
 
     s.flush();
