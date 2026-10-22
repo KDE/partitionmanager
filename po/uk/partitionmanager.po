@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-21 00:54+0000\n"
-"PO-Revision-Date: 2026-10-03 13:29+0300\n"
+"PO-Revision-Date: 2026-10-21 14:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2543,12 +2543,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "Нерозпізнаний пристрій «%1» "
 
 #: gui/mainwindow.cpp:1497
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error opening partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
-msgstr "Помилка під час спроби відкрити розділ"
+msgstr "Помилка під час спроби відкрити пристрій"
 
 #: gui/mainwindow.cpp:1505
 #, kde-kuit-format

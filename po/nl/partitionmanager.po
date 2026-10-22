@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-21 00:54+0000\n"
-"PO-Revision-Date: 2026-10-03 11:57+0200\n"
+"PO-Revision-Date: 2026-10-21 17:39+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2531,12 +2531,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "Niet-herkend apparaat \"%1\" "
 
 #: gui/mainwindow.cpp:1497
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error opening partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
-msgstr "Fout bij openen van partitie"
+msgstr "Fout bij openen van apparaat"
 
 #: gui/mainwindow.cpp:1505
 #, kde-kuit-format

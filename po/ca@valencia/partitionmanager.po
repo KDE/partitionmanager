@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-21 00:54+0000\n"
-"PO-Revision-Date: 2026-10-03 10:33+0200\n"
+"PO-Revision-Date: 2026-10-21 09:13+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1283,7 +1283,7 @@ msgstr "Desconeguda"
 #, kde-kuit-format
 msgctxt "@item value in percent"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: gui/filesystempropertieswidget.cpp:136
 #, kde-kuit-format
@@ -2542,12 +2542,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "Dispositiu no reconegut «%1» "
 
 #: gui/mainwindow.cpp:1497
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error opening partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
-msgstr "S'ha produït un error mentre s'obria la partició"
+msgstr "S'ha produït un error mentre s'obria un dispositiu"
 
 #: gui/mainwindow.cpp:1505
 #, kde-kuit-format

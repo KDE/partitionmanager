@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-21 00:54+0000\n"
-"PO-Revision-Date: 2026-10-04 19:34+0300\n"
+"PO-Revision-Date: 2026-10-21 20:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2526,12 +2526,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "Tanımlanamayan aygıt “%1” "
 
 #: gui/mainwindow.cpp:1497
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error opening partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
-msgstr "Bölüntü Açılırken Hata"
+msgstr "Aygıt Açılırken Hata"
 
 #: gui/mainwindow.cpp:1505
 #, kde-kuit-format
