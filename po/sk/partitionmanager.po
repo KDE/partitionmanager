@@ -608,49 +608,43 @@ msgid "Total: %p%"
 msgstr "Celkovo : %p%"
 
 #: gui/benchmarkdialog.cpp:112
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@label graph axis, read rate"
 msgid "%1 MiB/s"
-msgstr " MiB"
+msgstr "%1 MiB/s"
 
 #: gui/benchmarkdialog.cpp:113
 #, kde-kuit-format
 msgctxt "@label graph axis, access time"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: gui/benchmarkdialog.cpp:163
 #, kde-kuit-format
 msgctxt "@label graph axis"
 msgid "Position on device"
-msgstr ""
+msgstr "Poloha na zariadení"
 
 #: gui/benchmarkdialog.cpp:185
-#, fuzzy, kde-kuit-format
-#| msgctxt "SMART attr name"
-#| msgid "Read Error Rate"
+#, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Read rate"
-msgstr "Počet chýb pri čítaní"
+msgstr "Rýchlosť čítania"
 
 #: gui/benchmarkdialog.cpp:186
 #, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Access time"
-msgstr ""
+msgstr "Prístupová doba"
 
 #: gui/benchmarkdialog.cpp:209
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Benchmark: <filename>%1</filename>"
-msgstr "pripojené na <filename>%1</filename>"
+msgstr "Test výkonu: <filename>%1</filename>"
 
 #: gui/benchmarkdialog.cpp:237
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@item:valuesuffix"
 msgid " MiB"
 msgstr " MiB"
@@ -659,50 +653,43 @@ msgstr " MiB"
 #, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Transfer rate samples:"
-msgstr ""
+msgstr "Vzorky rýchlosti prenosu:"
 
 #: gui/benchmarkdialog.cpp:244
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Sample size:"
-msgstr "Veľkosť kľúča:"
+msgstr "Veľkosť vzorky:"
 
 #: gui/benchmarkdialog.cpp:245
 #, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Access time samples:"
-msgstr ""
+msgstr "Vzorky prístupovej doby:"
 
 #: gui/benchmarkdialog.cpp:253
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Average read rate:"
-msgstr ""
+msgstr "Priemerná rýchlosť čítania:"
 
 #: gui/benchmarkdialog.cpp:254
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Minimum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Minimum read rate:"
-msgstr "Minimálna veľkosť:"
+msgstr "Minimálna rýchlosť čítania:"
 
 #: gui/benchmarkdialog.cpp:255
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Maximum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Maximum read rate:"
-msgstr "Maximálna veľkosť:"
+msgstr "Maximálna rýchlosť čítania:"
 
 #: gui/benchmarkdialog.cpp:256
-#, fuzzy, kde-kuit-format
-#| msgid "Overall assessment:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Average access time:"
-msgstr "Celkové zhodnotenie:"
+msgstr "Priemerná prístupová doba:"
 
 #: gui/benchmarkdialog.cpp:268
 #, kde-kuit-format
@@ -711,37 +698,39 @@ msgid ""
 "The device is only read, no data is written. Other activity on the device "
 "affects the results."
 msgstr ""
+"Zo zariadenia sa iba číta, nezapisujú sa žiadne dáta. Iná aktivita na "
+"zariadení ovplyvňuje výsledky."
 
 #: gui/benchmarkdialog.cpp:273
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Start Benchmark"
-msgstr ""
+msgstr "Spustiť test výkonu"
 
 #: gui/benchmarkdialog.cpp:275
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop"
-msgstr ""
+msgstr "Zastaviť"
 
 #: gui/benchmarkdialog.cpp:318
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Preparing the benchmark…"
-msgstr ""
+msgstr "Pripravuje sa test výkonu…"
 
 #: gui/benchmarkdialog.cpp:323 gui/benchmarkdialog.cpp:439
 #: gui/benchmarkdialog.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not connect to the KPMcore helper."
-msgstr ""
+msgstr "Nepodarilo sa pripojiť k pomocníkovi KPMcore."
 
 #: gui/benchmarkdialog.cpp:330
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Stopping after the current read request finishes…"
-msgstr ""
+msgstr "Zastaví sa po dokončení aktuálnej požiadavky na čítanie…"
 
 #: gui/benchmarkdialog.cpp:346
 #, kde-kuit-format
@@ -750,68 +739,68 @@ msgid ""
 "Direct I/O is not supported for this device. The benchmark was not run, "
 "because cached reads would not show the speed of the device."
 msgstr ""
+"Priamy V/V nie je pre toto zariadenie podporovaný. Test výkonu sa nespustil, "
+"pretože čítanie cez vyrovnávaciu pamäť by neukázalo rýchlosť zariadenia."
 
 #: gui/benchmarkdialog.cpp:350
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "The benchmark request was rejected as invalid."
-msgstr ""
+msgstr "Požiadavka na test výkonu bola zamietnutá ako neplatná."
 
 #: gui/benchmarkdialog.cpp:353
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reading from the device failed or access was denied."
-msgstr ""
+msgstr "Čítanie zo zariadenia zlyhalo alebo bol prístup zamietnutý."
 
 #: gui/benchmarkdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not determine the size of the device."
-msgstr ""
+msgstr "Nepodarilo sa zistiť veľkosť zariadenia."
 
 #: gui/benchmarkdialog.cpp:418 gui/benchmarkdialog.cpp:445
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark stopped."
-msgstr ""
+msgstr "Test výkonu bol zastavený."
 
 #: gui/benchmarkdialog.cpp:437
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring transfer rate: sample %1 of %2…"
-msgstr ""
+msgstr "Meria sa rýchlosť prenosu: vzorka %1 z %2…"
 
 #: gui/benchmarkdialog.cpp:450
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress"
-#| msgid "Scan finished."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark finished."
-msgstr "Prehľadávanie dokončené."
+msgstr "Test výkonu dokončený."
 
 #: gui/benchmarkdialog.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring access time: %1 of %2 reads…"
-msgstr ""
+msgstr "Meria sa prístupová doba: %1 z %2 čítaní…"
 
 #: gui/benchmarkdialog.cpp:469
 #, kde-kuit-format
 msgctxt "@label benchmark result not measured yet"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: gui/benchmarkdialog.cpp:485
 #, kde-kuit-format
 msgctxt "@label read rate, %1 is a size such as 120.5 MiB"
 msgid "%1/s"
-msgstr ""
+msgstr "%1/s"
 
 #: gui/benchmarkdialog.cpp:498
 #, kde-kuit-format
 msgctxt "@label access time in milliseconds"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: gui/createpartitiontabledialog.cpp:31
 #, kde-kuit-format
@@ -1185,128 +1174,115 @@ msgstr "&Menovka:"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Block size"
-msgstr ""
+msgstr "Veľkosť bloku"
 
 #: gui/filesystempropertieswidget.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Sectors:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Sector size"
-msgstr "Sektory:"
+msgstr "Veľkosť sektora"
 
 #: gui/filesystempropertieswidget.cpp:37
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Metadata node size"
-msgstr ""
+msgstr "Veľkosť uzla metadát"
 
 #: gui/filesystempropertieswidget.cpp:38
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Check partition"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Checksum algorithm"
-msgstr "Skontrolovať oddiel"
+msgstr "Algoritmus kontrolného súčtu"
 
 #: gui/filesystempropertieswidget.cpp:39
 #, kde-kuit-format
 msgctxt "@label"
 msgid "MFT record size"
-msgstr ""
+msgstr "Veľkosť záznamu MFT"
 
 #: gui/filesystempropertieswidget.cpp:40
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Cylinder size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Inode size"
-msgstr "Veľkosť cylindra:"
+msgstr "Veľkosť inode"
 
 #: gui/filesystempropertieswidget.cpp:41
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Inode count"
-msgstr ""
+msgstr "Počet inode"
 
 #: gui/filesystempropertieswidget.cpp:42
-#, fuzzy, kde-kuit-format
-#| msgid "Number of Sectors"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Number of FATs"
-msgstr "Počet sektorov"
+msgstr "Počet FAT"
 
 #: gui/filesystempropertieswidget.cpp:43
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enabled features"
-msgstr ""
+msgstr "Povolené funkcie"
 
 #: gui/filesystempropertieswidget.cpp:44
-#, fuzzy, kde-kuit-format
-#| msgid "Program version:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Format version"
-msgstr "Verzia programu:"
+msgstr "Verzia formátu"
 
 #: gui/filesystempropertieswidget.cpp:45
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Journal size"
-msgstr ""
+msgstr "Veľkosť žurnálu"
 
 #: gui/filesystempropertieswidget.cpp:46
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space"
-msgstr ""
+msgstr "Rezervované miesto"
 
 #: gui/filesystempropertieswidget.cpp:47
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space, percent"
-msgstr ""
+msgstr "Rezervované miesto, percentá"
 
 #: gui/filesystempropertieswidget.cpp:48
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved block count"
-msgstr ""
+msgstr "Počet rezervovaných blokov"
 
 #: gui/filesystempropertieswidget.cpp:49
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (UID)"
-msgstr ""
+msgstr "Vlastník rezervovaného miesta (UID)"
 
 #: gui/filesystempropertieswidget.cpp:50
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (GID)"
-msgstr ""
+msgstr "Vlastník rezervovaného miesta (GID)"
 
 #: gui/filesystempropertieswidget.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item partition table name"
-#| msgid "unknown"
+#, kde-kuit-format
 msgctxt "@item filesystem property whose value could not be read"
 msgid "Unknown"
-msgstr "neznámy"
+msgstr "Neznáme"
 
 #: gui/filesystempropertieswidget.cpp:86
-#, fuzzy, kde-kuit-format
-#| msgid "%1%2"
+#, kde-kuit-format
 msgctxt "@item value in percent"
 msgid "%1%"
-msgstr "%1%2"
+msgstr "%1 %"
 
 #: gui/filesystempropertieswidget.cpp:136
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain job status (error, warning, ...)"
-#| msgid "%1: %2"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "%1:"
-msgstr "%1: %2"
+msgstr "%1:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -1866,21 +1842,19 @@ msgstr "Zobraziť stav systému SMART zariadenia, ak je podporovaný"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Benchmark"
-msgstr ""
+msgstr "Test výkonu"
 
 #: gui/mainwindow.cpp:370
-#, fuzzy, kde-kuit-format
-#| msgctxt "SMART attr name"
-#| msgid "Seek Time Performance"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Measure device read performance"
-msgstr "Výkonnosť času hľadania"
+msgstr "Zmerať výkon čítania zariadenia"
 
 #: gui/mainwindow.cpp:371
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measure the device's read rate and access time"
-msgstr ""
+msgstr "Zmerať rýchlosť čítania a prístupovú dobu zariadenia"
 
 #: gui/mainwindow.cpp:377 gui/mainwindow.cpp:477
 #, kde-kuit-format
@@ -2552,12 +2526,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "Nerozpoznané zariadenie \"%1\" "
 
 #: gui/mainwindow.cpp:1497
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error opening partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
-msgstr "Chyba otvorenia oddielu"
+msgstr "Chyba pri otváraní zariadenia"
 
 #: gui/mainwindow.cpp:1505
 #, kde-kuit-format
