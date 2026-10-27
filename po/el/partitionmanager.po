@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:54+0000\n"
+"POT-Creation-Date: 2026-10-27 01:03+0000\n"
 "PO-Revision-Date: 2024-09-19 17:17+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -551,7 +551,7 @@ msgid "Total Time: %1"
 msgstr "Συνολικός χρόνος: %1"
 
 #: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1081
-#: gui/mainwindow.cpp:1243 gui/smartdialog.cpp:227
+#: gui/mainwindow.cpp:1243 gui/smartdialog.cpp:293
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -910,19 +910,20 @@ msgctxt "@label device"
 msgid "%1 (read only)"
 msgstr "%1 (μόνο για ανάγνωση)"
 
-#: gui/devicepropsdialog.cpp:99 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
+#: gui/devicepropsdialog.cpp:99 gui/smartdialog.cpp:111 gui/smartdialog.cpp:200
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "good"
 msgstr "καλή"
 
-#: gui/devicepropsdialog.cpp:104 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
+#: gui/devicepropsdialog.cpp:104 gui/smartdialog.cpp:115
+#: gui/smartdialog.cpp:202
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "BAD"
 msgstr "ΚΑΚΗ"
 
-#: gui/devicepropsdialog.cpp:109 gui/smartdialog.cpp:129
+#: gui/devicepropsdialog.cpp:109 gui/smartdialog.cpp:180
 #, kde-kuit-format
 msgctxt "@label"
 msgid "(unknown)"
@@ -978,8 +979,8 @@ msgid "Capacity:"
 msgstr "Χωρητικότητα:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
-#: gui/devicepropswidgetbase.ui:112 gui/smartdialog.cpp:147
-#: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
+#: gui/devicepropswidgetbase.ui:112 gui/smartdialog.cpp:200
+#: gui/smartdialog.cpp:202 gui/smartdialogwidgetbase.ui:28
 #, kde-format
 msgid "SMART status:"
 msgstr "SMART κατάσταση:"
@@ -3595,103 +3596,111 @@ msgstr ""
 msgid "Enable LUKS2"
 msgstr ""
 
-#: gui/smartdialog.cpp:54
+#: gui/smartdialog.cpp:59
+#, fuzzy, kde-kuit-format
+#| msgctxt "@item filesystem name"
+#| msgid "unknown"
+msgctxt "@label SMART value not reported by the device"
+msgid "unknown"
+msgstr "άγνωστο"
+
+#: gui/smartdialog.cpp:85
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "SMART Properties: <filename>%1</filename>"
 msgstr "SMART ιδιότητες: <filename>%1</filename>"
 
-#: gui/smartdialog.cpp:58
+#: gui/smartdialog.cpp:89
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save SMART Report"
 msgstr "Αποθήκευση SMART αναφοράς"
 
-#: gui/smartdialog.cpp:96 gui/smartdialog.cpp:153
+#: gui/smartdialog.cpp:127 gui/smartdialog.cpp:206
 #, kde-format, kde-kuit-format
 msgctxt "@label SMART number of bad sectors"
 msgid "none"
 msgstr "κανένας"
 
-#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#: gui/smartdialog.cpp:150 gui/smartdialog.cpp:247
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Pre-Failure"
 msgstr "Προ-αποτυχία"
 
-#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#: gui/smartdialog.cpp:150 gui/smartdialog.cpp:247
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Old-Age"
 msgstr "Απαρχαιωμένο"
 
-#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#: gui/smartdialog.cpp:151 gui/smartdialog.cpp:248
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Online"
 msgstr "Σε σύνδεση"
 
-#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#: gui/smartdialog.cpp:151 gui/smartdialog.cpp:248
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Offline"
 msgstr "Εκτός σύνδεσης"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
-#: gui/smartdialog.cpp:155 gui/smartdialogwidgetbase.ui:68
+#: gui/smartdialog.cpp:208 gui/smartdialogwidgetbase.ui:68
 #, kde-format
 msgid "Model:"
 msgstr "Μοντέλο:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
-#: gui/smartdialog.cpp:156 gui/smartdialogwidgetbase.ui:97
+#: gui/smartdialog.cpp:209 gui/smartdialogwidgetbase.ui:97
 #, kde-format
 msgid "Serial number:"
 msgstr "Σειριακός αριθμός:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
-#: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
+#: gui/smartdialog.cpp:210 gui/smartdialogwidgetbase.ui:126
 #, kde-format
 msgid "Firmware revision:"
 msgstr "Έκδοση firmware:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
-#: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
+#: gui/smartdialog.cpp:211 gui/smartdialogwidgetbase.ui:155
 #, kde-format
 msgid "Temperature:"
 msgstr "Θερμοκρασία:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
-#: gui/smartdialog.cpp:159 gui/smartdialogwidgetbase.ui:184
+#: gui/smartdialog.cpp:214 gui/smartdialogwidgetbase.ui:184
 #, kde-format
 msgid "Bad sectors:"
 msgstr "Προβληματικοί τομείς:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
-#: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
+#: gui/smartdialog.cpp:216 gui/smartdialogwidgetbase.ui:213
 #, kde-format
 msgid "Powered on for:"
 msgstr "Σε λειτουργία για:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
-#: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
+#: gui/smartdialog.cpp:219 gui/smartdialogwidgetbase.ui:242
 #, kde-format
 msgid "Power cycles:"
 msgstr "Κύκλοι ισχύος:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
-#: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
+#: gui/smartdialog.cpp:220 gui/smartdialogwidgetbase.ui:438
 #, kde-format
 msgid "Self tests:"
 msgstr "Διαγνωστικοί έλεγχοι:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
-#: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
+#: gui/smartdialog.cpp:221 gui/smartdialogwidgetbase.ui:409
 #, kde-format
 msgid "Overall assessment:"
 msgstr "Γενική αξιολόγηση:"
 
-#: gui/smartdialog.cpp:227
+#: gui/smartdialog.cpp:293
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save SMART Report."
@@ -3704,7 +3713,8 @@ msgid "Id"
 msgstr "Id"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
-#: gui/smartdialogwidgetbase.ui:299
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeNvmeHealth)
+#: gui/smartdialogwidgetbase.ui:299 gui/smartdialogwidgetbase.ui:360
 #, kde-format
 msgid "Attribute"
 msgstr "Ιδιότητα"
@@ -3752,7 +3762,8 @@ msgid "Assessment"
 msgstr "Αξιολόγηση"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
-#: gui/smartdialogwidgetbase.ui:339
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeNvmeHealth)
+#: gui/smartdialogwidgetbase.ui:339 gui/smartdialogwidgetbase.ui:365
 #, kde-format
 msgid "Value"
 msgstr "Αξία"
@@ -5233,10 +5244,6 @@ msgstr ""
 #~ msgctxt "@info/plain"
 #~ msgid "Setting label for partition <filename>%1</filename> to %2"
 #~ msgstr "Ορισμός ετικέτας για την κατάτμηση <filename>%1</filename> σε %2"
-
-#~ msgctxt "@item filesystem name"
-#~ msgid "unknown"
-#~ msgstr "άγνωστο"
 
 #~ msgctxt "@item filesystem name"
 #~ msgid "extended"

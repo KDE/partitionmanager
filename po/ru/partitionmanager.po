@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:54+0000\n"
+"POT-Creation-Date: 2026-10-27 01:03+0000\n"
 "PO-Revision-Date: 2026-10-21 16:02+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -554,7 +554,7 @@ msgid "Total Time: %1"
 msgstr "Общее время: %1"
 
 #: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1081
-#: gui/mainwindow.cpp:1243 gui/smartdialog.cpp:227
+#: gui/mainwindow.cpp:1243 gui/smartdialog.cpp:293
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -903,19 +903,20 @@ msgctxt "@label device"
 msgid "%1 (read only)"
 msgstr "%1 (только для чтения)"
 
-#: gui/devicepropsdialog.cpp:99 gui/smartdialog.cpp:80 gui/smartdialog.cpp:147
+#: gui/devicepropsdialog.cpp:99 gui/smartdialog.cpp:111 gui/smartdialog.cpp:200
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "good"
 msgstr "хорошо"
 
-#: gui/devicepropsdialog.cpp:104 gui/smartdialog.cpp:84 gui/smartdialog.cpp:149
+#: gui/devicepropsdialog.cpp:104 gui/smartdialog.cpp:115
+#: gui/smartdialog.cpp:202
 #, kde-kuit-format
 msgctxt "@label SMART disk status"
 msgid "BAD"
 msgstr "плохо"
 
-#: gui/devicepropsdialog.cpp:109 gui/smartdialog.cpp:129
+#: gui/devicepropsdialog.cpp:109 gui/smartdialog.cpp:180
 #, kde-kuit-format
 msgctxt "@label"
 msgid "(unknown)"
@@ -971,8 +972,8 @@ msgid "Capacity:"
 msgstr "Ёмкость:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartStatus)
-#: gui/devicepropswidgetbase.ui:112 gui/smartdialog.cpp:147
-#: gui/smartdialog.cpp:149 gui/smartdialogwidgetbase.ui:28
+#: gui/devicepropswidgetbase.ui:112 gui/smartdialog.cpp:200
+#: gui/smartdialog.cpp:202 gui/smartdialogwidgetbase.ui:28
 #, kde-format
 msgid "SMART status:"
 msgstr "Состояние SMART:"
@@ -3567,103 +3568,109 @@ msgstr ""
 msgid "Enable LUKS2"
 msgstr "Использовать LUKS2"
 
-#: gui/smartdialog.cpp:54
+#: gui/smartdialog.cpp:59
+#, fuzzy, kde-kuit-format
+msgctxt "@label SMART value not reported by the device"
+msgid "unknown"
+msgstr "неизвестно"
+
+#: gui/smartdialog.cpp:85
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "SMART Properties: <filename>%1</filename>"
 msgstr "Свойства SMART: <filename>%1</filename>"
 
-#: gui/smartdialog.cpp:58
+#: gui/smartdialog.cpp:89
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Save SMART Report"
 msgstr "Сохранить отчёт SMART"
 
-#: gui/smartdialog.cpp:96 gui/smartdialog.cpp:153
+#: gui/smartdialog.cpp:127 gui/smartdialog.cpp:206
 #, kde-format, kde-kuit-format
 msgctxt "@label SMART number of bad sectors"
 msgid "none"
 msgstr "нет"
 
-#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#: gui/smartdialog.cpp:150 gui/smartdialog.cpp:247
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Pre-Failure"
 msgstr "Близок к отказу"
 
-#: gui/smartdialog.cpp:115 gui/smartdialog.cpp:181
+#: gui/smartdialog.cpp:150 gui/smartdialog.cpp:247
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Old-Age"
 msgstr "Старение"
 
-#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#: gui/smartdialog.cpp:151 gui/smartdialog.cpp:248
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Online"
 msgstr "Доступен"
 
-#: gui/smartdialog.cpp:116 gui/smartdialog.cpp:182
+#: gui/smartdialog.cpp:151 gui/smartdialog.cpp:248
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Offline"
 msgstr "Недоступен"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
-#: gui/smartdialog.cpp:155 gui/smartdialogwidgetbase.ui:68
+#: gui/smartdialog.cpp:208 gui/smartdialogwidgetbase.ui:68
 #, kde-format
 msgid "Model:"
 msgstr "Модель:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSerialNumber)
-#: gui/smartdialog.cpp:156 gui/smartdialogwidgetbase.ui:97
+#: gui/smartdialog.cpp:209 gui/smartdialogwidgetbase.ui:97
 #, kde-format
 msgid "Serial number:"
 msgstr "Серийный номер:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartFirmware)
-#: gui/smartdialog.cpp:157 gui/smartdialogwidgetbase.ui:126
+#: gui/smartdialog.cpp:210 gui/smartdialogwidgetbase.ui:126
 #, kde-format
 msgid "Firmware revision:"
 msgstr "Версия прошивки:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartTemperature)
-#: gui/smartdialog.cpp:158 gui/smartdialogwidgetbase.ui:155
+#: gui/smartdialog.cpp:211 gui/smartdialogwidgetbase.ui:155
 #, kde-format
 msgid "Temperature:"
 msgstr "Температура:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartBadSectors)
-#: gui/smartdialog.cpp:159 gui/smartdialogwidgetbase.ui:184
+#: gui/smartdialog.cpp:214 gui/smartdialogwidgetbase.ui:184
 #, kde-format
 msgid "Bad sectors:"
 msgstr "Дефектных секторов:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPoweredOn)
-#: gui/smartdialog.cpp:160 gui/smartdialogwidgetbase.ui:213
+#: gui/smartdialog.cpp:216 gui/smartdialogwidgetbase.ui:213
 #, kde-format
 msgid "Powered on for:"
 msgstr "Работает в течение:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
-#: gui/smartdialog.cpp:161 gui/smartdialogwidgetbase.ui:242
+#: gui/smartdialog.cpp:219 gui/smartdialogwidgetbase.ui:242
 #, kde-format
 msgid "Power cycles:"
 msgstr "Циклов включения:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
-#: gui/smartdialog.cpp:162 gui/smartdialogwidgetbase.ui:412
+#: gui/smartdialog.cpp:220 gui/smartdialogwidgetbase.ui:438
 #, kde-format
 msgid "Self tests:"
 msgstr "Самопроверка:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
-#: gui/smartdialog.cpp:163 gui/smartdialogwidgetbase.ui:383
+#: gui/smartdialog.cpp:221 gui/smartdialogwidgetbase.ui:409
 #, kde-format
 msgid "Overall assessment:"
 msgstr "Общая оценка:"
 
-#: gui/smartdialog.cpp:227
+#: gui/smartdialog.cpp:293
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Save SMART Report."
@@ -3676,7 +3683,8 @@ msgid "Id"
 msgstr "Идентификатор"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
-#: gui/smartdialogwidgetbase.ui:299
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeNvmeHealth)
+#: gui/smartdialogwidgetbase.ui:299 gui/smartdialogwidgetbase.ui:360
 #, kde-format
 msgid "Attribute"
 msgstr "Атрибут"
@@ -3724,7 +3732,8 @@ msgid "Assessment"
 msgstr "Оценка"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
-#: gui/smartdialogwidgetbase.ui:339
+#. i18n: ectx: property (text), widget (QTreeWidget, m_TreeNvmeHealth)
+#: gui/smartdialogwidgetbase.ui:339 gui/smartdialogwidgetbase.ui:365
 #, kde-format
 msgid "Value"
 msgstr "Значение"
@@ -4787,11 +4796,6 @@ msgstr "%1 (недопустимо для этого размера)"
 #~ msgctxt "@info/plain"
 #~ msgid "Setting label for partition <filename>%1</filename> to %2"
 #~ msgstr "Установка метки раздела <filename>%1</filename> на «%2»"
-
-#, fuzzy
-#~ msgctxt "@item filesystem name"
-#~ msgid "unknown"
-#~ msgstr "неизвестно"
 
 #, fuzzy
 #~ msgctxt "@item filesystem name"
