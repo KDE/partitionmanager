@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-27 01:03+0000\n"
+"POT-Creation-Date: 2026-10-29 00:56+0000\n"
 "PO-Revision-Date: 2026-10-27 09:52+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -542,8 +542,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "ჯამური დრო: %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1081
-#: gui/mainwindow.cpp:1243 gui/smartdialog.cpp:293
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1093
+#: gui/mainwindow.cpp:1255 gui/smartdialog.cpp:293
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1615,7 +1615,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr "%1 | %2"
 
-#: gui/mainwindow.cpp:169
+#: gui/mainwindow.cpp:170
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1625,7 +1625,7 @@ msgstr ""
 "დანაყოფების მმართველს სამუშაოდ პრივილეგიები ესაჭიროება. განაახლეთ "
 "მოწყობილობები და შეიყვანეთ ავტორიზაციის დეტალები, როცა გკითხავენ."
 
-#: gui/mainwindow.cpp:237
+#: gui/mainwindow.cpp:238
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1641,175 +1641,175 @@ msgstr[1] ""
 "<para>მართლა გნებავთ აპლიკაციიდან გასვლა?</para><para>%1 ოპერაცია ჯერ კიდევ "
 "დარჩენილია.</para>"
 
-#: gui/mainwindow.cpp:239
+#: gui/mainwindow.cpp:240
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "მოვაცილო დარჩენილი ოპერაციები და გავიდეთ?"
 
-#: gui/mainwindow.cpp:240
+#: gui/mainwindow.cpp:241
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "<application>%1</application>-დან გასვლა"
 
-#: gui/mainwindow.cpp:282
+#: gui/mainwindow.cpp:283
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "დაბრუნება"
 
-#: gui/mainwindow.cpp:283
+#: gui/mainwindow.cpp:284
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "ბოლო ცვლილების დაბრუნება"
 
-#: gui/mainwindow.cpp:284
+#: gui/mainwindow.cpp:285
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "ბოლო ოპერაციის სიიდან წაშლა."
 
-#: gui/mainwindow.cpp:291
+#: gui/mainwindow.cpp:292
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "გაწმენდა"
 
-#: gui/mainwindow.cpp:292
+#: gui/mainwindow.cpp:293
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "ყველა ოპერაციის გასუფთავება"
 
-#: gui/mainwindow.cpp:293
+#: gui/mainwindow.cpp:294
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "დარჩენილი ოპერაციების სიის გასუფთავება."
 
-#: gui/mainwindow.cpp:299
+#: gui/mainwindow.cpp:300
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "გადატარება"
 
-#: gui/mainwindow.cpp:300
+#: gui/mainwindow.cpp:301
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "ყველა ოპერაციის გადატარება"
 
-#: gui/mainwindow.cpp:301
+#: gui/mainwindow.cpp:302
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "სიაში მყოფი დარჩენილი ოპერაციების გადატარება."
 
-#: gui/mainwindow.cpp:308
+#: gui/mainwindow.cpp:309
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "დანაყოფების ახალი ცხრილი"
 
-#: gui/mainwindow.cpp:309
+#: gui/mainwindow.cpp:310
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "დანაყოფების ახალი ცხრილის შექმნა"
 
-#: gui/mainwindow.cpp:310
+#: gui/mainwindow.cpp:311
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "მოწყობილობაზე ახალი, ცარიელი დანაყოფების ცხრილის შექმნა."
 
-#: gui/mainwindow.cpp:317
+#: gui/mainwindow.cpp:318
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "დანაყოფების ცხრილის გატანა"
 
-#: gui/mainwindow.cpp:318
+#: gui/mainwindow.cpp:319
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "დანაყოფების ცხრილის გატანა"
 
-#: gui/mainwindow.cpp:319
+#: gui/mainwindow.cpp:320
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "დანაყოფების ცხრილის ფაილში გატანა."
 
-#: gui/mainwindow.cpp:325
+#: gui/mainwindow.cpp:326
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "დანაყოფების ცხრილის შემოტანა"
 
-#: gui/mainwindow.cpp:326
+#: gui/mainwindow.cpp:327
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "დანაყოფების ცხრილის შემოტანა"
 
-#: gui/mainwindow.cpp:327
+#: gui/mainwindow.cpp:328
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "დანაყოფების ცხრილის ფაილიდან შემოტანა."
 
-#: gui/mainwindow.cpp:334
+#: gui/mainwindow.cpp:335
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "ტომების ჯგუფის წაშლა"
 
-#: gui/mainwindow.cpp:335
+#: gui/mainwindow.cpp:336
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "ტომების მონიშნული ჯგუფის წაშლა"
 
-#: gui/mainwindow.cpp:336
+#: gui/mainwindow.cpp:337
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "ტომების მონიშნული ჯგუფის წაშლა."
 
-#: gui/mainwindow.cpp:344
+#: gui/mainwindow.cpp:345
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "ტომების ჯგუფის ზომის შეცვლა"
 
-#: gui/mainwindow.cpp:345
+#: gui/mainwindow.cpp:346
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "მონიშნული ტომების ჯგუფის ზომის შეცვლა"
 
-#: gui/mainwindow.cpp:346
+#: gui/mainwindow.cpp:347
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr "ტომების მონიშნული ჯგუფების გადიდება ან დაპატარავება."
 
-#: gui/mainwindow.cpp:354
+#: gui/mainwindow.cpp:355
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "ტომების ჯგფის დეაქტივაცია"
 
-#: gui/mainwindow.cpp:355
+#: gui/mainwindow.cpp:356
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "ტომების მონიშნული ჯგფის დეაქტივაცია"
 
-#: gui/mainwindow.cpp:356
+#: gui/mainwindow.cpp:357
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
@@ -1817,415 +1817,438 @@ msgstr ""
 "მოხსნადი მოწყობილობების გამოძრობამდე მონიშნული ტომების ჯგუფის დეაქტივაცია "
 "აუცილებელია."
 
-#: gui/mainwindow.cpp:362
+#: gui/mainwindow.cpp:363
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "SMART-ის სტატუსი"
 
-#: gui/mainwindow.cpp:363
+#: gui/mainwindow.cpp:364
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "SMART-ის სტატუსის ჩვენება"
 
-#: gui/mainwindow.cpp:364
+#: gui/mainwindow.cpp:365
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr "SMART-ის სტატუსის ჩვენება, თუ მისი მხარდაჭერა არსებობს"
 
-#: gui/mainwindow.cpp:369
+#: gui/mainwindow.cpp:370
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Benchmark"
 msgstr "წარმადობის შემოწმება"
 
-#: gui/mainwindow.cpp:370
+#: gui/mainwindow.cpp:371
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Measure device read performance"
 msgstr "მოწყობილობის წაკითხვის წარმადობის გაზომვა"
 
-#: gui/mainwindow.cpp:371
+#: gui/mainwindow.cpp:372
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measure the device's read rate and access time"
 msgstr "მოწყობილობის წაკითხვისა და წვდომის დროის გაზომვა"
 
-#: gui/mainwindow.cpp:377 gui/mainwindow.cpp:477
+#: gui/mainwindow.cpp:378 gui/mainwindow.cpp:486
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "თვისებები"
 
-#: gui/mainwindow.cpp:378
+#: gui/mainwindow.cpp:379
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "მოწყობილობის თვისებების ფანჯრის ჩვენება"
 
-#: gui/mainwindow.cpp:379
+#: gui/mainwindow.cpp:380
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "მოწყობილობის თვისებების ნახვა და ჩასწორება"
 
-#: gui/mainwindow.cpp:386
+#: gui/mainwindow.cpp:387
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "ახალი"
 
-#: gui/mainwindow.cpp:387
+#: gui/mainwindow.cpp:388
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "ახალი დანაყოფი"
 
-#: gui/mainwindow.cpp:388
+#: gui/mainwindow.cpp:389
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "ახალი დანაყოფის შექმნა."
 
-#: gui/mainwindow.cpp:395
+#: gui/mainwindow.cpp:396
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "ზომის შეცვლა/გადატანა"
 
-#: gui/mainwindow.cpp:396
+#: gui/mainwindow.cpp:397
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "დანაყოფის ზომის შეცვლა ან გადატანა"
 
-#: gui/mainwindow.cpp:397
+#: gui/mainwindow.cpp:398
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "გაადიდეთ, დააპატარავეთ ან გადაიტანეთ არსებული დანაყოფები."
 
-#: gui/mainwindow.cpp:404
+#: gui/mainwindow.cpp:405
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "წაშლა"
 
-#: gui/mainwindow.cpp:405 gui/mainwindow.cpp:671
+#: gui/mainwindow.cpp:406 gui/mainwindow.cpp:680
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "დანაყოფის წაშლა"
 
-#: gui/mainwindow.cpp:406
+#: gui/mainwindow.cpp:407
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "დანაყოფის წაშლა."
 
-#: gui/mainwindow.cpp:413
+#: gui/mainwindow.cpp:414
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "განადგურება"
 
-#: gui/mainwindow.cpp:414
+#: gui/mainwindow.cpp:415
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "დანაყოფის განადგურება"
 
-#: gui/mainwindow.cpp:415
+#: gui/mainwindow.cpp:416
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
 msgstr "დანაყოფის აღუდგენლად განადგურება."
 
-#: gui/mainwindow.cpp:422
+#: gui/mainwindow.cpp:423
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "დააკოპირე"
 
-#: gui/mainwindow.cpp:423
+#: gui/mainwindow.cpp:424
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "დანაყოფის კოპირება"
 
-#: gui/mainwindow.cpp:424
+#: gui/mainwindow.cpp:425
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "არსებული დანაყოფის კოპირება."
 
-#: gui/mainwindow.cpp:431
+#: gui/mainwindow.cpp:432
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "ჩასმა"
 
-#: gui/mainwindow.cpp:432
+#: gui/mainwindow.cpp:433
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "დანაყოფის ჩასმა"
 
-#: gui/mainwindow.cpp:433
+#: gui/mainwindow.cpp:434
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "კოპირებული დანაყოფის ჩასმა."
 
-#: gui/mainwindow.cpp:440
+#: gui/mainwindow.cpp:441
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "მიმაგრების წერტილის ჩასწორება"
 
-#: gui/mainwindow.cpp:441
+#: gui/mainwindow.cpp:442
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "მიმაგრების წერტილის ჩასწორება"
 
-#: gui/mainwindow.cpp:442
+#: gui/mainwindow.cpp:443
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "მიმაგრების წერტილის და მისი პარამეტრების ჩასწორება."
 
-#: gui/mainwindow.cpp:447
+#: gui/mainwindow.cpp:448
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "მიმაგრება"
 
-#: gui/mainwindow.cpp:448
+#: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "დანაყოფის მიმაგრება ან მოხსნა"
 
-#: gui/mainwindow.cpp:449
+#: gui/mainwindow.cpp:450
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "დანაყოფის მიმაგრება ან მოხსნა."
 
-#: gui/mainwindow.cpp:454
+#: gui/mainwindow.cpp:455
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
 msgstr "მფლობელობის აღება"
 
-#: gui/mainwindow.cpp:455
+#: gui/mainwindow.cpp:456
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
 msgstr "ფაილური სისტემის მფლობელობის აღება"
 
-#: gui/mainwindow.cpp:456
+#: gui/mainwindow.cpp:457
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr "მიმაგრებული ფაილური სისტემის მფლობელის შეცვლა მიმდინარე მომხმარებელზე."
 
-#: gui/mainwindow.cpp:462
+#: gui/mainwindow.cpp:463
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Trim"
+msgstr ""
+
+#: gui/mainwindow.cpp:464
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:tooltip"
+#| msgid "Take ownership of the file system"
+msgctxt "@info:tooltip"
+msgid "Discard unused blocks on the file system"
+msgstr "ფაილური სისტემის მფლობელობის აღება"
+
+#: gui/mainwindow.cpp:465
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:status"
+#| msgid "Change the ownership of the mounted file system to the current user."
+msgctxt "@info:status"
+msgid ""
+"Tell the drive which blocks of the mounted file system are no longer in use."
+msgstr "მიმაგრებული ფაილური სისტემის მფლობელის შეცვლა მიმდინარე მომხმარებელზე."
+
+#: gui/mainwindow.cpp:471
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr "განბლოკვა"
 
-#: gui/mainwindow.cpp:463
+#: gui/mainwindow.cpp:472
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "დაშიფრული დანაყოფის დაბლოკვა ან განბლოკვა"
 
-#: gui/mainwindow.cpp:464
+#: gui/mainwindow.cpp:473
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "დაშიფრული დანაყოფის დაბლოკვა ან განბლოკვა."
 
-#: gui/mainwindow.cpp:469
+#: gui/mainwindow.cpp:478
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "შემოწმება"
 
-#: gui/mainwindow.cpp:470
+#: gui/mainwindow.cpp:479
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "დანაყოფის შემოწმება"
 
-#: gui/mainwindow.cpp:471
+#: gui/mainwindow.cpp:480
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "დანაყოფის ან ფაილური სისტემის შეცდომებზე შემოწმება."
 
-#: gui/mainwindow.cpp:478
+#: gui/mainwindow.cpp:487
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "დანაყოფის თვისებების ფანჯრის ჩვენება"
 
-#: gui/mainwindow.cpp:479
+#: gui/mainwindow.cpp:488
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr "დანაყოფის თვისებების ნახვა და ჩასწორება (ჭდე, ალმები და ა.შ.)"
 
-#: gui/mainwindow.cpp:485
+#: gui/mainwindow.cpp:494
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "მარქაფი"
 
-#: gui/mainwindow.cpp:486
+#: gui/mainwindow.cpp:495
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "დანაყოფის მარქაფი"
 
-#: gui/mainwindow.cpp:487
+#: gui/mainwindow.cpp:496
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "დანაყოფის მარქაფი გამოსახულების ფაილში."
 
-#: gui/mainwindow.cpp:493
+#: gui/mainwindow.cpp:502
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "აღდგენა"
 
-#: gui/mainwindow.cpp:494
+#: gui/mainwindow.cpp:503
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "დააყოფის აღდგენა"
 
-#: gui/mainwindow.cpp:495
+#: gui/mainwindow.cpp:504
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "დანაყოფის აღდგენა გამოსახულების ფაილიდან."
 
-#: gui/mainwindow.cpp:502
+#: gui/mainwindow.cpp:511
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "ტომების ახალი ჯგუფი"
 
-#: gui/mainwindow.cpp:503
+#: gui/mainwindow.cpp:512
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr "ტომების ახალი LVM ჯგუფი"
 
-#: gui/mainwindow.cpp:504
+#: gui/mainwindow.cpp:513
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "ტომების ახალი LVM ჯგუფის შექმნა."
 
-#: gui/mainwindow.cpp:510
+#: gui/mainwindow.cpp:519
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "ფაილური სისტემის მხარდაჭერა"
 
-#: gui/mainwindow.cpp:511
+#: gui/mainwindow.cpp:520
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "ფაილური სისტემის მხარდაჭერის ინფორმაციის ნახვა"
 
-#: gui/mainwindow.cpp:512
+#: gui/mainwindow.cpp:521
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "მხარდაჭერილი ფაილური სისტემის შესახებ ინფორმაციის ნახვა."
 
-#: gui/mainwindow.cpp:516
+#: gui/mainwindow.cpp:525
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "მოწყობილობების სიის განახლება"
 
-#: gui/mainwindow.cpp:517
+#: gui/mainwindow.cpp:526
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "ყველა მოწყობილობის სიის განახლება"
 
-#: gui/mainwindow.cpp:518
+#: gui/mainwindow.cpp:527
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "განაახლეთ მოწყობილობების სია."
 
-#: gui/mainwindow.cpp:534
+#: gui/mainwindow.cpp:543
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "ჟურნალის გასუფთავება"
 
-#: gui/mainwindow.cpp:535
+#: gui/mainwindow.cpp:544
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr "ჟურნალის გასუფთავება"
 
-#: gui/mainwindow.cpp:536
+#: gui/mainwindow.cpp:545
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr "ჟურნალის გამოტანის პანელის გასუფთავება."
 
-#: gui/mainwindow.cpp:541
+#: gui/mainwindow.cpp:550
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "ჟურნალის შენახვა"
 
-#: gui/mainwindow.cpp:542
+#: gui/mainwindow.cpp:551
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr "ჟურნალის ფაილში ჩაწერა"
 
-#: gui/mainwindow.cpp:543
+#: gui/mainwindow.cpp:552
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr "ჟურნალის ფაილში ჩაწერა."
 
-#: gui/mainwindow.cpp:549
+#: gui/mainwindow.cpp:558
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr "KPMCore ბიბლიოთეკის შესახებ"
 
-#: gui/mainwindow.cpp:550
+#: gui/mainwindow.cpp:559
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr "KPMcore-ის ფანჯრის ჩვენება"
 
-#: gui/mainwindow.cpp:551
+#: gui/mainwindow.cpp:560
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "KPMcore-ის ფანჯრის ჩვენება."
 
-#: gui/mainwindow.cpp:673
+#: gui/mainwindow.cpp:682
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2235,7 +2258,7 @@ msgstr ""
 "დანაყოფის წაშლა შეუძლებელია. სანამ გააგრძელებთ, დარწმუნდით, რომ მის "
 "მიმაგრებული, ან დაბლოკილი არაა."
 
-#: gui/mainwindow.cpp:749
+#: gui/mainwindow.cpp:761
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
@@ -2243,25 +2266,25 @@ msgid_plural "%1 pending operations"
 msgstr[0] "1 დარჩენილი ოპერაცია"
 msgstr[1] "%1 დარჩენილი ოპერაცია"
 
-#: gui/mainwindow.cpp:844
+#: gui/mainwindow.cpp:856
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "გამოიყენება უკანაბოლოს დამატება: %1 (%2)"
 
-#: gui/mainwindow.cpp:848
+#: gui/mainwindow.cpp:860
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "მოწყობილობების ძებნა..."
 
-#: gui/mainwindow.cpp:886
+#: gui/mainwindow.cpp:898
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "ძებნა დასრულებულია."
 
-#: gui/mainwindow.cpp:950
+#: gui/mainwindow.cpp:962
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2272,19 +2295,19 @@ msgstr ""
 "para><para><warning>ეს ასევე დარჩენილი ოპერაციების სიას გაასუფთავებს.</"
 "warning></para>"
 
-#: gui/mainwindow.cpp:952
+#: gui/mainwindow.cpp:964
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "მართლა მოვძებნო ახალი მოწყობილობები თავიდან?"
 
-#: gui/mainwindow.cpp:953
+#: gui/mainwindow.cpp:965
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "მოწყობილობების თავიდან ძებნა"
 
-#: gui/mainwindow.cpp:979
+#: gui/mainwindow.cpp:991
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2295,74 +2318,74 @@ msgstr ""
 "ჩამოთვლილი ოპერაციები?</para><para><warning>ეს სამუდამოს შეცვლის თქვენს "
 "დისკებს.</warning></para>"
 
-#: gui/mainwindow.cpp:981
+#: gui/mainwindow.cpp:993
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "გადავატარო დარჩენილი ოპერაციები?"
 
-#: gui/mainwindow.cpp:982
+#: gui/mainwindow.cpp:994
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "დარჩენილი ოპერაციების გადატარება"
 
-#: gui/mainwindow.cpp:984
+#: gui/mainwindow.cpp:996
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "დარჩენილი ოპერაციების გადატარება..."
 
-#: gui/mainwindow.cpp:1009
+#: gui/mainwindow.cpp:1021
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "ოპერაციის დაბრუნება: %1"
 
-#: gui/mainwindow.cpp:1025
+#: gui/mainwindow.cpp:1037
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "მართლა გნებავთ დარჩენილი ოპერაციების ცხრილის გასუფავება?"
 
-#: gui/mainwindow.cpp:1026
+#: gui/mainwindow.cpp:1038
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "გავასუფთავო დარჩენილო ოპერაციები?"
 
-#: gui/mainwindow.cpp:1027
+#: gui/mainwindow.cpp:1039
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "დარჩენილი ოპერაციების გასუფთავება"
 
-#: gui/mainwindow.cpp:1029
+#: gui/mainwindow.cpp:1041
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "დარჩენილი ოპერაციების გასუფთავება."
 
-#: gui/mainwindow.cpp:1071
+#: gui/mainwindow.cpp:1083
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
 msgstr "შეყვანის ფაილის <filename>%1</filename> გახნა შეუძლებელია"
 
-#: gui/mainwindow.cpp:1071 gui/mainwindow.cpp:1081 gui/mainwindow.cpp:1089
-#: gui/mainwindow.cpp:1095
+#: gui/mainwindow.cpp:1083 gui/mainwindow.cpp:1093 gui/mainwindow.cpp:1101
+#: gui/mainwindow.cpp:1107
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "დანაყოფების ცხრილის შემოტანის შეცდომა"
 
-#: gui/mainwindow.cpp:1089
+#: gui/mainwindow.cpp:1101
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
 msgstr "ფაილის (<filename>%1</filename>) შემოსატანად გახსნის შეცდომა: %2"
 
-#: gui/mainwindow.cpp:1095
+#: gui/mainwindow.cpp:1107
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2372,7 +2395,7 @@ msgstr ""
 "დროებით ფაილის <filename>%1</filename> გახსნის შეცდომა <filename>%2</"
 "filename>-დან შემოტანისას."
 
-#: gui/mainwindow.cpp:1125
+#: gui/mainwindow.cpp:1137
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2381,59 +2404,59 @@ msgid ""
 msgstr ""
 "შემოსატანი ფაილი <filename>%1</filename> სწორ დანაყოფების ცხრილს არ შეიცავს."
 
-#: gui/mainwindow.cpp:1125 gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1142
-#: gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1157 gui/mainwindow.cpp:1170
-#: gui/mainwindow.cpp:1175 gui/mainwindow.cpp:1194 gui/mainwindow.cpp:1199
-#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211
+#: gui/mainwindow.cpp:1137 gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1154
+#: gui/mainwindow.cpp:1159 gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1182
+#: gui/mainwindow.cpp:1187 gui/mainwindow.cpp:1206 gui/mainwindow.cpp:1211
+#: gui/mainwindow.cpp:1216 gui/mainwindow.cpp:1223
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "დანაყოფების ცხრილის შემოტანის შეცდომა"
 
-#: gui/mainwindow.cpp:1135
+#: gui/mainwindow.cpp:1147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
 msgstr "შემოსატან ფაილში ნაპოვნია ერთზე მეტი დანაყოფების ტიპი (ხაზი %1)."
 
-#: gui/mainwindow.cpp:1142
+#: gui/mainwindow.cpp:1154
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "დანაყოფების ცხრილის ტიპი \"%1\" უცნობია (ხაზი %2)"
 
-#: gui/mainwindow.cpp:1147
+#: gui/mainwindow.cpp:1159
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
 msgstr ""
 "დანაყოფების ცხრილის ტიპი \"%1\" შემოსატანად მხარდაჭერილი არაა (ხაზი %2)."
 
-#: gui/mainwindow.cpp:1157
+#: gui/mainwindow.cpp:1169
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr "აღმოჩენილია დანაყოფი ცხრილის ტიპის გარეშე (ხაზი %1)"
 
-#: gui/mainwindow.cpp:1170
+#: gui/mainwindow.cpp:1182
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "დანაყოფი %1 მოწყობილობის საზღვრებს მიღმა აღმოჩნდებოდა (ხაზი %2)."
 
-#: gui/mainwindow.cpp:1175
+#: gui/mainwindow.cpp:1187
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "დანაყოფი %1 საწყის სექტორზე ადრე სრულდება (ხაზი %2)."
 
-#: gui/mainwindow.cpp:1194
+#: gui/mainwindow.cpp:1206
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "უცნობი დანაყოფის როლი \"%1\" დანაყოფისთვის %2 (ხაზი %3)."
 
-#: gui/mainwindow.cpp:1199
+#: gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
@@ -2442,7 +2465,7 @@ msgstr ""
 "დანაყოფისთვის %1 მშობელი დანაყოფი ან დანაყოფების ცხრილი არ არსებობს (ხაზი "
 "%2)."
 
-#: gui/mainwindow.cpp:1204
+#: gui/mainwindow.cpp:1216
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2452,35 +2475,35 @@ msgstr ""
 "დანაყოფების ცხრილის ტიპს \"%1\" გაფართოებული დანაყოფების მხარდაჭერა არ "
 "გააჩნია, მაგრამ ერთი ნაპოვნია (ხაზი %2)."
 
-#: gui/mainwindow.cpp:1211
+#: gui/mainwindow.cpp:1223
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
 msgstr "ფაილური სისტემის \"%1\" შექმნის შეცდომა დანაყოფისთვის %2 (ხაზი %3)."
 
-#: gui/mainwindow.cpp:1226
+#: gui/mainwindow.cpp:1238
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr "შემოსატანი ფაილის %1-ე ხაზის დამუშავების შეცდომა. იგნორირება."
 
-#: gui/mainwindow.cpp:1243
+#: gui/mainwindow.cpp:1255
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "დანაყოფების ცხრილის გატანის შეცდომა"
 
-#: gui/mainwindow.cpp:1418 gui/mainwindow.cpp:1424 gui/mainwindow.cpp:1460
+#: gui/mainwindow.cpp:1430 gui/mainwindow.cpp:1436 gui/mainwindow.cpp:1472
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1424 gui/mainwindow.cpp:1435
+#: gui/mainwindow.cpp:1436 gui/mainwindow.cpp:1447
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1472
+#: gui/mainwindow.cpp:1484
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2506,31 +2529,31 @@ msgstr ""
 "შეგეძლებათ.</para><para>ამ პაკეტების პოვნა თქვენი დისტრიბუტივის პაკეტების "
 "მმართველით შეგიძლიათ.</para>"
 
-#: gui/mainwindow.cpp:1485
+#: gui/mainwindow.cpp:1497
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "აკლია ფაილური სისტემის მხარდაჭერის პაკეტები"
 
-#: gui/mainwindow.cpp:1496
+#: gui/mainwindow.cpp:1508
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "უცნობი მოწყობილობა \"%1\" "
 
-#: gui/mainwindow.cpp:1497
+#: gui/mainwindow.cpp:1509
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
 msgstr "მოწყობილობის გახსნის შეცდომა"
 
-#: gui/mainwindow.cpp:1505
+#: gui/mainwindow.cpp:1517
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "უცნობი დანაყოფი \"%1\" "
 
-#: gui/mainwindow.cpp:1506
+#: gui/mainwindow.cpp:1518
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
@@ -2607,19 +2630,19 @@ msgid "Partition"
 msgstr "დანაყოფი"
 
 #. i18n: ectx: Menu (panels)
-#: gui/partitionmanagerui.rc:79
+#: gui/partitionmanagerui.rc:80
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr "ნაჩვენები პანელები"
 
-#: gui/partitionmanagerwidget.cpp:214
+#: gui/partitionmanagerwidget.cpp:215
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 [დაშიფრულია]"
 
-#: gui/partitionmanagerwidget.cpp:425
+#: gui/partitionmanagerwidget.cpp:426
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2628,13 +2651,13 @@ msgstr ""
 "დანაყოფზე <filename>%1</filename> მდებარე ფაილური სისტემის მიმაგრება "
 "შეუძლებელია."
 
-#: gui/partitionmanagerwidget.cpp:425
+#: gui/partitionmanagerwidget.cpp:426
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "ფაილური სისტემის მიმაგრება შეუძლებელია."
 
-#: gui/partitionmanagerwidget.cpp:428
+#: gui/partitionmanagerwidget.cpp:429
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2643,19 +2666,19 @@ msgstr ""
 "დანაყოფზე <filename>%1</filename> მდებარე ფაილური სისტემის მოხსნა "
 "შეუძლებელია."
 
-#: gui/partitionmanagerwidget.cpp:428
+#: gui/partitionmanagerwidget.cpp:429
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "ფაილური სისტემის მოხსნა შეუძლებელია."
 
-#: gui/partitionmanagerwidget.cpp:463
+#: gui/partitionmanagerwidget.cpp:464
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
 msgstr "ფაილური სისტემის მფლობელობის აღება"
 
-#: gui/partitionmanagerwidget.cpp:469
+#: gui/partitionmanagerwidget.cpp:470
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2665,13 +2688,13 @@ msgstr ""
 "ეს <filename>%1</filename>-ის მფლობელს დააყენებს მომხმარებელზე <emphasis>%2</"
 "emphasis>."
 
-#: gui/partitionmanagerwidget.cpp:476
+#: gui/partitionmanagerwidget.cpp:477
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
 msgstr "რეკურსიული გადატარება ყველა ქვესაქაღალდეზე და ფაილზე"
 
-#: gui/partitionmanagerwidget.cpp:484
+#: gui/partitionmanagerwidget.cpp:485
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2682,37 +2705,37 @@ msgstr ""
 "შეიძლება, პრობლემები გამოიწვიოს, თუ ზოგიერთი მათგანი სხვა მომხმარებელს "
 "ეკუთვნის."
 
-#: gui/partitionmanagerwidget.cpp:491
+#: gui/partitionmanagerwidget.cpp:492
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
 msgstr "მფლობელობის აღება"
 
-#: gui/partitionmanagerwidget.cpp:509
+#: gui/partitionmanagerwidget.cpp:510
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
 msgstr "<b>%1</b>-ის მფლობელობის აღება…"
 
-#: gui/partitionmanagerwidget.cpp:511
+#: gui/partitionmanagerwidget.cpp:512
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
 msgstr "მფლობელობის აღება"
 
-#: gui/partitionmanagerwidget.cpp:526
+#: gui/partitionmanagerwidget.cpp:527
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
 msgstr "<filename>%1</filename>-ის მფლობელის შეცვლა შეუძლებელია."
 
-#: gui/partitionmanagerwidget.cpp:529
+#: gui/partitionmanagerwidget.cpp:530
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
 msgstr "მფლობელობის აღება ჩავარდა"
 
-#: gui/partitionmanagerwidget.cpp:534
+#: gui/partitionmanagerwidget.cpp:535
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2722,13 +2745,35 @@ msgstr ""
 "<filename>%1</filename>-ის მფლობელი წარმატებით შეიცვალა <emphasis>%2</"
 "emphasis>-ზე."
 
-#: gui/partitionmanagerwidget.cpp:536
+#: gui/partitionmanagerwidget.cpp:537
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
 msgstr "მფლობელი შეიცვალა"
 
-#: gui/partitionmanagerwidget.cpp:564
+#: gui/partitionmanagerwidget.cpp:558
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Discard unused blocks on <filename>%1</filename>?</para><para>Existing "
+"files are not affected. Recovering previously deleted data may become "
+"impossible.</para>"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:561
+#, fuzzy, kde-kuit-format
+#| msgid "File System"
+msgctxt "@title:window"
+msgid "Trim File System"
+msgstr "ფაილური სისტემა"
+
+#: gui/partitionmanagerwidget.cpp:562
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Trim"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2738,13 +2783,13 @@ msgstr ""
 "დანაყოფზე <filename>%1</filename> მდებარე ფაილური სისტემის განბლოკვა "
 "შეუძლებელია."
 
-#: gui/partitionmanagerwidget.cpp:570
+#: gui/partitionmanagerwidget.cpp:598
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "დაშიფრული ფაილური სისტემის განბლოკვის შეცდომა."
 
-#: gui/partitionmanagerwidget.cpp:575
+#: gui/partitionmanagerwidget.cpp:603
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2754,13 +2799,13 @@ msgstr ""
 "დანაყოფზე <filename>%1</filename> მდებარე ფაილური სისტემის დაბლოკვა "
 "შეუძლებელია."
 
-#: gui/partitionmanagerwidget.cpp:581
+#: gui/partitionmanagerwidget.cpp:609
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "დაშიფრული ფაილური სისტემის დაბლოკვის შეცდომა."
 
-#: gui/partitionmanagerwidget.cpp:610
+#: gui/partitionmanagerwidget.cpp:638
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2784,13 +2829,13 @@ msgstr[1] ""
 "para><para>თქვენ არ შეგიძლიათ შექმნათ, ჩასვათ ან აღდგინოთ ძირითადი დანაყოფი "
 "მანამდე, სანამ არსებულს არ წაშლით..</para>"
 
-#: gui/partitionmanagerwidget.cpp:614
+#: gui/partitionmanagerwidget.cpp:642
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "მეტისმეტად ბევრი ძირითადი დანაყოფი."
 
-#: gui/partitionmanagerwidget.cpp:677
+#: gui/partitionmanagerwidget.cpp:705
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2804,13 +2849,13 @@ msgstr ""
 "para><para>ჯერ საჭიროა უფრო მაღალი ლოგიკური ნომრების, ვიდრე %2, მქონე "
 "დანაყოფების მიმაგრების მოხსნა.</para>"
 
-#: gui/partitionmanagerwidget.cpp:680
+#: gui/partitionmanagerwidget.cpp:708
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "დანაყოფის წაშლა შეუძლებელია."
 
-#: gui/partitionmanagerwidget.cpp:689
+#: gui/partitionmanagerwidget.cpp:717
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2821,19 +2866,19 @@ msgstr ""
 "მართლა გნებავთ ბუფერში მყოფი დანაყოფის წაშლა? წაშლის შემდეგ მისი ჩასმა "
 "შეუძლებელი იქნება."
 
-#: gui/partitionmanagerwidget.cpp:691
+#: gui/partitionmanagerwidget.cpp:719
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "მართლა წავშალო დანაყოფი ბუფერში?"
 
-#: gui/partitionmanagerwidget.cpp:692
+#: gui/partitionmanagerwidget.cpp:720
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "წაშლა"
 
-#: gui/partitionmanagerwidget.cpp:745
+#: gui/partitionmanagerwidget.cpp:773
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2843,13 +2888,13 @@ msgstr ""
 "დანაყოფს <filename>%1</filename> ზომის ცვლილებისა და გადატანის შემდეგ იგივე "
 "მდებარეობა და ზომა გააჩნია. ოპერაცია იგნორირებულია."
 
-#: gui/partitionmanagerwidget.cpp:773
+#: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr "დანაყოფი <filename>%1</filename> დაკოპირდა გაცვლის ბუფერსი."
 
-#: gui/partitionmanagerwidget.cpp:836
+#: gui/partitionmanagerwidget.cpp:864
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2866,19 +2911,19 @@ msgstr ""
 "გააგრძელებთ და გადაატარებთ მთავარ ფანჯარაში აღწერილ ოპერაციას, <filename>%1</"
 "filename> -ზე არსებული მონაცემებს ზედ სამუდამოდ გადაეწერება.</para>"
 
-#: gui/partitionmanagerwidget.cpp:844
+#: gui/partitionmanagerwidget.cpp:872
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "გადავაწერო არსებულ დანაყოფს?"
 
-#: gui/partitionmanagerwidget.cpp:845
+#: gui/partitionmanagerwidget.cpp:873
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "დანაყოფის თავზე გადაწერა"
 
-#: gui/partitionmanagerwidget.cpp:853
+#: gui/partitionmanagerwidget.cpp:881
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2890,13 +2935,13 @@ msgstr ""
 "დასატევად საკმარისი არაა.</para><para>აირჩიეთ სხვა სამიზნე ან შეცვალეთ "
 "დანაყოფის ზომა, რომ წყაროს ზომას დაემთხვეს.</para>"
 
-#: gui/partitionmanagerwidget.cpp:854
+#: gui/partitionmanagerwidget.cpp:882
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "სამიზნის ზომა საკმარისად დიდი არაა"
 
-#: gui/partitionmanagerwidget.cpp:857
+#: gui/partitionmanagerwidget.cpp:885
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2910,13 +2955,13 @@ msgstr ""
 "არასწორადაა გადანაწილებული და მთავარი დანაყოფიდან გაფართოებულ დანაყოფზე "
 "კოპირებისას.</para>"
 
-#: gui/partitionmanagerwidget.cpp:860
+#: gui/partitionmanagerwidget.cpp:888
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "სამიზნე დანაყოფის შექმნა შეუძლებელია."
 
-#: gui/partitionmanagerwidget.cpp:918
+#: gui/partitionmanagerwidget.cpp:946
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2926,7 +2971,7 @@ msgstr ""
 "ფაილური სისტემა დისკის ასლის ფაილში <filename>%1</filename> მონიშნულ "
 "დანაყოფზე აღსადგენად მეტისმეტად დიდია."
 
-#: gui/partitionmanagerwidget.cpp:918
+#: gui/partitionmanagerwidget.cpp:946
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."

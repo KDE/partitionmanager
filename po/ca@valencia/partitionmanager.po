@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-27 01:03+0000\n"
+"POT-Creation-Date: 2026-10-29 00:56+0000\n"
 "PO-Revision-Date: 2026-10-27 10:15+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -546,8 +546,8 @@ msgctxt "@info:progress"
 msgid "Total Time: %1"
 msgstr "Temps total: %1"
 
-#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1081
-#: gui/mainwindow.cpp:1243 gui/smartdialog.cpp:293
+#: gui/applyprogressdialog.cpp:423 gui/mainwindow.cpp:1093
+#: gui/mainwindow.cpp:1255 gui/smartdialog.cpp:293
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1624,7 +1624,7 @@ msgctxt "@item:inlistbox Device | Capacity"
 msgid "%1 | %2"
 msgstr "%1 | %2"
 
-#: gui/mainwindow.cpp:169
+#: gui/mainwindow.cpp:170
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -1634,7 +1634,7 @@ msgstr ""
 "El gestor de particions requerix privilegis per tal de funcionar. "
 "Actualitzeu els dispositius i autentiqueu-vos quan es demane."
 
-#: gui/mainwindow.cpp:237
+#: gui/mainwindow.cpp:238
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -1650,175 +1650,175 @@ msgstr[1] ""
 "<para>Segur que voleu eixir del programa?</para><para>Encara hi ha %1 "
 "operacions pendents.</para>"
 
-#: gui/mainwindow.cpp:239
+#: gui/mainwindow.cpp:240
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Discard Pending Operations and Quit?"
 msgstr "Voleu descartar les operacions pendents i eixir?"
 
-#: gui/mainwindow.cpp:240
+#: gui/mainwindow.cpp:241
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Quit <application>%1</application>"
 msgstr "Tanca <application>%1</application>"
 
-#: gui/mainwindow.cpp:282
+#: gui/mainwindow.cpp:283
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Undo"
 msgstr "Desfés"
 
-#: gui/mainwindow.cpp:283
+#: gui/mainwindow.cpp:284
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Undo the last operation"
 msgstr "Desfés l'última operació"
 
-#: gui/mainwindow.cpp:284
+#: gui/mainwindow.cpp:285
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Remove the last operation from the list."
 msgstr "Elimina l'última operació de la llista."
 
-#: gui/mainwindow.cpp:291
+#: gui/mainwindow.cpp:292
 #, kde-kuit-format
 msgctxt "@action:inmenu clear the list of operations"
 msgid "Clear"
 msgstr "Neteja"
 
-#: gui/mainwindow.cpp:292
+#: gui/mainwindow.cpp:293
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear all operations"
 msgstr "Neteja totes les operacions"
 
-#: gui/mainwindow.cpp:293
+#: gui/mainwindow.cpp:294
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Empty the list of pending operations."
 msgstr "Buida la llista d'operacions pendents."
 
-#: gui/mainwindow.cpp:299
+#: gui/mainwindow.cpp:300
 #, kde-kuit-format
 msgctxt "@action:inmenu apply all operations"
 msgid "Apply"
 msgstr "Aplica"
 
-#: gui/mainwindow.cpp:300
+#: gui/mainwindow.cpp:301
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Apply all operations"
 msgstr "Aplica totes les operacions"
 
-#: gui/mainwindow.cpp:301
+#: gui/mainwindow.cpp:302
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Apply the pending operations in the list."
 msgstr "Aplica les operacions pendents en la llista."
 
-#: gui/mainwindow.cpp:308
+#: gui/mainwindow.cpp:309
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "New Partition Table"
 msgstr "Taula de particions nova"
 
-#: gui/mainwindow.cpp:309
+#: gui/mainwindow.cpp:310
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Create a new partition table"
 msgstr "Crea una taula de particions nova"
 
-#: gui/mainwindow.cpp:310
+#: gui/mainwindow.cpp:311
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new and empty partition table on a device."
 msgstr "Crea una taula de particions nova i buida en un dispositiu."
 
-#: gui/mainwindow.cpp:317
+#: gui/mainwindow.cpp:318
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Export Partition Table"
 msgstr "Exporta la taula de particions"
 
-#: gui/mainwindow.cpp:318
+#: gui/mainwindow.cpp:319
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Export a partition table"
 msgstr "Exporta una taula de particions"
 
-#: gui/mainwindow.cpp:319
+#: gui/mainwindow.cpp:320
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Export the device's partition table to a text file."
 msgstr "Exporta la taula de particions del dispositiu a un fitxer de text."
 
-#: gui/mainwindow.cpp:325
+#: gui/mainwindow.cpp:326
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Import Partition Table"
 msgstr "Importa la taula de particions"
 
-#: gui/mainwindow.cpp:326
+#: gui/mainwindow.cpp:327
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Import a partition table"
 msgstr "Importa una taula de particions"
 
-#: gui/mainwindow.cpp:327
+#: gui/mainwindow.cpp:328
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Import a partition table from a text file."
 msgstr "Importa una taula de particions des d'un fitxer de text."
 
-#: gui/mainwindow.cpp:334
+#: gui/mainwindow.cpp:335
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove Volume Group"
 msgstr "Elimina el grup de volums"
 
-#: gui/mainwindow.cpp:335
+#: gui/mainwindow.cpp:336
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove selected Volume Group"
 msgstr "Elimina el grup de volums seleccionat"
 
-#: gui/mainwindow.cpp:336
+#: gui/mainwindow.cpp:337
 #, kde-format
 msgctxt "@info:status"
 msgid "Remove selected Volume Group."
 msgstr "Elimina el grup de volums seleccionat."
 
-#: gui/mainwindow.cpp:344
+#: gui/mainwindow.cpp:345
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Resize Volume Group"
 msgstr "Redimensiona el grup de volums"
 
-#: gui/mainwindow.cpp:345
+#: gui/mainwindow.cpp:346
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Resize selected Volume Group"
 msgstr "Redimensiona el grup de volums seleccionat"
 
-#: gui/mainwindow.cpp:346
+#: gui/mainwindow.cpp:347
 #, kde-format
 msgctxt "@info:status"
 msgid "Extend or reduce selected Volume Group."
 msgstr "Amplia o reduïx el grup de volums seleccionat."
 
-#: gui/mainwindow.cpp:354
+#: gui/mainwindow.cpp:355
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Deactivate Volume Group"
 msgstr "Desactiva el grup de volums"
 
-#: gui/mainwindow.cpp:355
+#: gui/mainwindow.cpp:356
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deactivate selected Volume Group"
 msgstr "Desactiva el grup de volums seleccionat"
 
-#: gui/mainwindow.cpp:356
+#: gui/mainwindow.cpp:357
 #, kde-format
 msgctxt "@info:status"
 msgid "Deactivate selected Volume Group before unplugging removable devices."
@@ -1826,127 +1826,127 @@ msgstr ""
 "Desactiva el grup de volums seleccionat abans de desconnectar els "
 "dispositius extraïbles."
 
-#: gui/mainwindow.cpp:362
+#: gui/mainwindow.cpp:363
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "SMART Status"
 msgstr "Estat SMART"
 
-#: gui/mainwindow.cpp:363
+#: gui/mainwindow.cpp:364
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show SMART status"
 msgstr "Mostra l'estat SMART"
 
-#: gui/mainwindow.cpp:364
+#: gui/mainwindow.cpp:365
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
 msgstr "Mostra l'estat de SMART del dispositiu si està admés"
 
-#: gui/mainwindow.cpp:369
+#: gui/mainwindow.cpp:370
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Benchmark"
 msgstr "Prova de referència"
 
-#: gui/mainwindow.cpp:370
+#: gui/mainwindow.cpp:371
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Measure device read performance"
 msgstr "Mesura el rendiment de lectura del dispositiu"
 
-#: gui/mainwindow.cpp:371
+#: gui/mainwindow.cpp:372
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measure the device's read rate and access time"
 msgstr "Mesura la velocitat de lectura i el temps d'accés del dispositiu"
 
-#: gui/mainwindow.cpp:377 gui/mainwindow.cpp:477
+#: gui/mainwindow.cpp:378 gui/mainwindow.cpp:486
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
 msgstr "Propietats"
 
-#: gui/mainwindow.cpp:378
+#: gui/mainwindow.cpp:379
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
 msgstr "Mostra el diàleg de propietats del dispositiu"
 
-#: gui/mainwindow.cpp:379
+#: gui/mainwindow.cpp:380
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
 msgstr "Visualitza i modifica les propietats del dispositiu"
 
-#: gui/mainwindow.cpp:386
+#: gui/mainwindow.cpp:387
 #, kde-kuit-format
 msgctxt "@action:inmenu create a new partition"
 msgid "New"
 msgstr "Nova"
 
-#: gui/mainwindow.cpp:387
+#: gui/mainwindow.cpp:388
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "New partition"
 msgstr "Partició nova"
 
-#: gui/mainwindow.cpp:388
+#: gui/mainwindow.cpp:389
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Create a new partition."
 msgstr "Crea una partició nova."
 
-#: gui/mainwindow.cpp:395
+#: gui/mainwindow.cpp:396
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Resize/Move"
 msgstr "Redimensiona/Mou"
 
-#: gui/mainwindow.cpp:396
+#: gui/mainwindow.cpp:397
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Resize or move partition"
 msgstr "Redimensiona o mou una partició"
 
-#: gui/mainwindow.cpp:397
+#: gui/mainwindow.cpp:398
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shrink, grow or move an existing partition."
 msgstr "Encull, engrandix o redimensiona una partició existent."
 
-#: gui/mainwindow.cpp:404
+#: gui/mainwindow.cpp:405
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Delete"
 msgstr "Suprimix"
 
-#: gui/mainwindow.cpp:405 gui/mainwindow.cpp:671
+#: gui/mainwindow.cpp:406 gui/mainwindow.cpp:680
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Delete partition"
 msgstr "Suprimix la partició"
 
-#: gui/mainwindow.cpp:406
+#: gui/mainwindow.cpp:407
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Delete a partition."
 msgstr "Suprimix una partició."
 
-#: gui/mainwindow.cpp:413
+#: gui/mainwindow.cpp:414
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Shred"
 msgstr "Tritura"
 
-#: gui/mainwindow.cpp:414
+#: gui/mainwindow.cpp:415
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Shred partition"
 msgstr "Tritura una partició"
 
-#: gui/mainwindow.cpp:415
+#: gui/mainwindow.cpp:416
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Shred a partition so that its contents cannot be restored."
@@ -1954,290 +1954,313 @@ msgstr ""
 "Tritura una partició de manera que els seus continguts no puguen ser "
 "restaurats."
 
-#: gui/mainwindow.cpp:422
+#: gui/mainwindow.cpp:423
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Copy"
 msgstr "Copia"
 
-#: gui/mainwindow.cpp:423
+#: gui/mainwindow.cpp:424
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Copy partition"
 msgstr "Copia una partició"
 
-#: gui/mainwindow.cpp:424
+#: gui/mainwindow.cpp:425
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Copy an existing partition."
 msgstr "Copia una partició existent."
 
-#: gui/mainwindow.cpp:431
+#: gui/mainwindow.cpp:432
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Paste"
 msgstr "Apega"
 
-#: gui/mainwindow.cpp:432
+#: gui/mainwindow.cpp:433
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Paste partition"
 msgstr "Apega una partició"
 
-#: gui/mainwindow.cpp:433
+#: gui/mainwindow.cpp:434
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Paste a copied partition."
 msgstr "Apega una partició que ha sigut copiada."
 
-#: gui/mainwindow.cpp:440
+#: gui/mainwindow.cpp:441
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Edit Mount Point"
 msgstr "Edita el punt de muntatge"
 
-#: gui/mainwindow.cpp:441
+#: gui/mainwindow.cpp:442
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Edit mount point"
 msgstr "Edita el punt de muntatge"
 
-#: gui/mainwindow.cpp:442
+#: gui/mainwindow.cpp:443
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Edit a partition's mount point and options."
 msgstr "Edita el punt de muntatge de la partició i les opcions."
 
-#: gui/mainwindow.cpp:447
+#: gui/mainwindow.cpp:448
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Mount"
 msgstr "Munta"
 
-#: gui/mainwindow.cpp:448
+#: gui/mainwindow.cpp:449
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Mount or unmount partition"
 msgstr "Munta o desmunta una partició"
 
-#: gui/mainwindow.cpp:449
+#: gui/mainwindow.cpp:450
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Mount or unmount a partition."
 msgstr "Munta o desmunta una partició."
 
-#: gui/mainwindow.cpp:454
+#: gui/mainwindow.cpp:455
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
 msgstr "Pren la propietat"
 
-#: gui/mainwindow.cpp:455
+#: gui/mainwindow.cpp:456
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
 msgstr "Pren la propietat del sistema de fitxers"
 
-#: gui/mainwindow.cpp:456
+#: gui/mainwindow.cpp:457
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
 msgstr "Canvia la propietat del sistema de fitxers muntat a l'usuari actual."
 
-#: gui/mainwindow.cpp:462
+#: gui/mainwindow.cpp:463
+#, kde-kuit-format
+msgctxt "@action:inmenu"
+msgid "Trim"
+msgstr ""
+
+#: gui/mainwindow.cpp:464
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:tooltip"
+#| msgid "Take ownership of the file system"
+msgctxt "@info:tooltip"
+msgid "Discard unused blocks on the file system"
+msgstr "Pren la propietat del sistema de fitxers"
+
+#: gui/mainwindow.cpp:465
+#, fuzzy, kde-kuit-format
+#| msgctxt "@info:status"
+#| msgid "Change the ownership of the mounted file system to the current user."
+msgctxt "@info:status"
+msgid ""
+"Tell the drive which blocks of the mounted file system are no longer in use."
+msgstr "Canvia la propietat del sistema de fitxers muntat a l'usuari actual."
+
+#: gui/mainwindow.cpp:471
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Unlock"
 msgstr "Desbloqueja"
 
-#: gui/mainwindow.cpp:463
+#: gui/mainwindow.cpp:472
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Unlock or lock encrypted partition"
 msgstr "Desbloqueja o bloqueja una partició encriptada"
 
-#: gui/mainwindow.cpp:464
+#: gui/mainwindow.cpp:473
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Unlock or lock encrypted partition."
 msgstr "Desbloqueja o bloqueja una partició encriptada."
 
-#: gui/mainwindow.cpp:469
+#: gui/mainwindow.cpp:478
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Check"
 msgstr "Comprova"
 
-#: gui/mainwindow.cpp:470
+#: gui/mainwindow.cpp:479
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Check partition"
 msgstr "Comprova una partició"
 
-#: gui/mainwindow.cpp:471
+#: gui/mainwindow.cpp:480
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Check a filesystem on a partition for errors."
 msgstr "Comprova un sistema de fitxers a una partició per a buscar errades."
 
-#: gui/mainwindow.cpp:478
+#: gui/mainwindow.cpp:487
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show partition properties dialog"
 msgstr "Mostra el diàleg de propietats de la partició"
 
-#: gui/mainwindow.cpp:479
+#: gui/mainwindow.cpp:488
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify partition properties (label, partition flags, etc.)"
 msgstr ""
 "Veure i modificar les propietats d'una partició (etiqueta, indicadors, etc.)"
 
-#: gui/mainwindow.cpp:485
+#: gui/mainwindow.cpp:494
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Backup"
 msgstr "Còpia de seguretat"
 
-#: gui/mainwindow.cpp:486
+#: gui/mainwindow.cpp:495
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Backup partition"
 msgstr "Còpia de seguretat de la partició"
 
-#: gui/mainwindow.cpp:487
+#: gui/mainwindow.cpp:496
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Backup a partition to an image file."
 msgstr "Fes una còpia de seguretat d'una partició a un fitxer d'imatge."
 
-#: gui/mainwindow.cpp:493
+#: gui/mainwindow.cpp:502
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Restore"
 msgstr "Restaura"
 
-#: gui/mainwindow.cpp:494
+#: gui/mainwindow.cpp:503
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Restore partition"
 msgstr "Restaura una partició"
 
-#: gui/mainwindow.cpp:495
+#: gui/mainwindow.cpp:504
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Restore a partition from an image file."
 msgstr "Restaura una partició des d'un fitxer d'imatge."
 
-#: gui/mainwindow.cpp:502
+#: gui/mainwindow.cpp:511
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Volume Group"
 msgstr "Grup de volums nou"
 
-#: gui/mainwindow.cpp:503
+#: gui/mainwindow.cpp:512
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create a new LVM Volume Group"
 msgstr "Crea un grup de volums LVM nou"
 
-#: gui/mainwindow.cpp:504
+#: gui/mainwindow.cpp:513
 #, kde-format
 msgctxt "@info:status"
 msgid "Create a new LVM Volume Group as a device."
 msgstr "Es crea un grup de volums LVM nou com un dispositiu."
 
-#: gui/mainwindow.cpp:510
+#: gui/mainwindow.cpp:519
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "File System Support"
 msgstr "Compatibilitat amb els sistemes de fitxers"
 
-#: gui/mainwindow.cpp:511
+#: gui/mainwindow.cpp:520
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "View file system support information"
 msgstr "Mostra la informació de compatibilitat amb el sistema de fitxers"
 
-#: gui/mainwindow.cpp:512
+#: gui/mainwindow.cpp:521
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show information about supported file systems."
 msgstr "Mostra informació quant a la compatibilitat dels sistemes de fitxers."
 
-#: gui/mainwindow.cpp:516
+#: gui/mainwindow.cpp:525
 #, kde-kuit-format
 msgctxt "@action:inmenu refresh list of devices"
 msgid "Refresh Devices"
 msgstr "Actualitza la llista dels dispositius"
 
-#: gui/mainwindow.cpp:517
+#: gui/mainwindow.cpp:526
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Refresh all devices"
 msgstr "Actualitza la llista de tots els dispositius"
 
-#: gui/mainwindow.cpp:518
+#: gui/mainwindow.cpp:527
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Renew the devices list."
 msgstr "Renova la llista de dispositius."
 
-#: gui/mainwindow.cpp:534
+#: gui/mainwindow.cpp:543
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Clear Log"
 msgstr "Neteja el registre"
 
-#: gui/mainwindow.cpp:535
+#: gui/mainwindow.cpp:544
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Clear the log output"
 msgstr "Neteja l'eixida del registre"
 
-#: gui/mainwindow.cpp:536
+#: gui/mainwindow.cpp:545
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clear the log output panel."
 msgstr "Neteja el quadro de l'eixida del registre."
 
-#: gui/mainwindow.cpp:541
+#: gui/mainwindow.cpp:550
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Save Log"
 msgstr "Guarda el registre"
 
-#: gui/mainwindow.cpp:542
+#: gui/mainwindow.cpp:551
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Save the log output"
 msgstr "Guarda l'eixida del registre"
 
-#: gui/mainwindow.cpp:543
+#: gui/mainwindow.cpp:552
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Save the log output to a file."
 msgstr "Guarda l'eixida del registre a un fitxer."
 
-#: gui/mainwindow.cpp:549
+#: gui/mainwindow.cpp:558
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "About KPMcore Library"
 msgstr "Quant a la biblioteca KPMcore"
 
-#: gui/mainwindow.cpp:550
+#: gui/mainwindow.cpp:559
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show About KPMcore dialog"
 msgstr "Mostra el diàleg quant a la KPMcore"
 
-#: gui/mainwindow.cpp:551
+#: gui/mainwindow.cpp:560
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show About KPMcore dialog."
 msgstr "Mostra el diàleg quant a la KPMcore."
 
-#: gui/mainwindow.cpp:673
+#: gui/mainwindow.cpp:682
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2247,7 +2270,7 @@ msgstr ""
 "No es pot suprimir la partició. Assegureu-vos que estiga desmuntada o "
 "tancada abans de continuar."
 
-#: gui/mainwindow.cpp:749
+#: gui/mainwindow.cpp:761
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "One pending operation"
@@ -2255,25 +2278,25 @@ msgid_plural "%1 pending operations"
 msgstr[0] "Una operació pendent"
 msgstr[1] "%1 operacions pendents"
 
-#: gui/mainwindow.cpp:844
+#: gui/mainwindow.cpp:856
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Using backend plugin: %1 (%2)"
 msgstr "S'utilitza el connector de dorsal: %1 (%2)"
 
-#: gui/mainwindow.cpp:848
+#: gui/mainwindow.cpp:860
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scanning devices..."
 msgstr "S'estan explorant els dispositius…"
 
-#: gui/mainwindow.cpp:886
+#: gui/mainwindow.cpp:898
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Scan finished."
 msgstr "Ha finalitzat l'exploració."
 
-#: gui/mainwindow.cpp:950
+#: gui/mainwindow.cpp:962
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2284,19 +2307,19 @@ msgstr ""
 "para><para><warning>Açò també netejarà la llista d'operacions pendents.</"
 "warning></para>"
 
-#: gui/mainwindow.cpp:952
+#: gui/mainwindow.cpp:964
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Rescan the Devices?"
 msgstr "Voleu tornar a explorar els dispositius?"
 
-#: gui/mainwindow.cpp:953
+#: gui/mainwindow.cpp:965
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Rescan Devices"
 msgstr "Torna a explorar els dispositius"
 
-#: gui/mainwindow.cpp:979
+#: gui/mainwindow.cpp:991
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2307,55 +2330,55 @@ msgstr ""
 "para><para><warning>Açò modificarà els vostres discs permanentment.</"
 "warning></para>"
 
-#: gui/mainwindow.cpp:981
+#: gui/mainwindow.cpp:993
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Apply Pending Operations?"
 msgstr "Voleu aplicar les operacions pendents?"
 
-#: gui/mainwindow.cpp:982
+#: gui/mainwindow.cpp:994
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Apply Pending Operations"
 msgstr "Aplica les operacions pendents"
 
-#: gui/mainwindow.cpp:984
+#: gui/mainwindow.cpp:996
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Applying operations..."
 msgstr "S'estan aplicant les operacions…"
 
-#: gui/mainwindow.cpp:1009
+#: gui/mainwindow.cpp:1021
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Undoing operation: %1"
 msgstr "S'està desfent l'operació: %1"
 
-#: gui/mainwindow.cpp:1025
+#: gui/mainwindow.cpp:1037
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to clear the list of pending operations?"
 msgstr "Segur que voleu netejar la llista d'operacions pendents?"
 
-#: gui/mainwindow.cpp:1026
+#: gui/mainwindow.cpp:1038
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Clear Pending Operations?"
 msgstr "Voleu netejar les operacions pendents?"
 
-#: gui/mainwindow.cpp:1027
+#: gui/mainwindow.cpp:1039
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Clear Pending Operations"
 msgstr "Neteja les operacions pendents"
 
-#: gui/mainwindow.cpp:1029
+#: gui/mainwindow.cpp:1041
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Clearing the list of pending operations."
 msgstr "S'està netejant la llista d'operacions pendents."
 
-#: gui/mainwindow.cpp:1071
+#: gui/mainwindow.cpp:1083
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import"
@@ -2363,14 +2386,14 @@ msgstr ""
 "No s'ha pogut obrir el fitxer d'entrada <filename>%1</filename> per a "
 "importar"
 
-#: gui/mainwindow.cpp:1071 gui/mainwindow.cpp:1081 gui/mainwindow.cpp:1089
-#: gui/mainwindow.cpp:1095
+#: gui/mainwindow.cpp:1083 gui/mainwindow.cpp:1093 gui/mainwindow.cpp:1101
+#: gui/mainwindow.cpp:1107
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Importing Partition Table"
 msgstr "S'ha produït un error mentre s'importava la taula de particions"
 
-#: gui/mainwindow.cpp:1089
+#: gui/mainwindow.cpp:1101
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not open input file <filename>%1</filename> for import: %2"
@@ -2378,7 +2401,7 @@ msgstr ""
 "No s'ha pogut obrir el fitxer d'entrada <filename>%1</filename> per a "
 "importar: %2"
 
-#: gui/mainwindow.cpp:1095
+#: gui/mainwindow.cpp:1107
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2388,7 +2411,7 @@ msgstr ""
 "No s'ha d'obrir el fitxer temporal <filename>%1</filename> en provar "
 "d'importar des de <filename>%2</filename>."
 
-#: gui/mainwindow.cpp:1125
+#: gui/mainwindow.cpp:1137
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2398,16 +2421,16 @@ msgstr ""
 "El fitxer per a importar <filename>%1</filename> no conté una taula de "
 "particions vàlida."
 
-#: gui/mainwindow.cpp:1125 gui/mainwindow.cpp:1135 gui/mainwindow.cpp:1142
-#: gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1157 gui/mainwindow.cpp:1170
-#: gui/mainwindow.cpp:1175 gui/mainwindow.cpp:1194 gui/mainwindow.cpp:1199
-#: gui/mainwindow.cpp:1204 gui/mainwindow.cpp:1211
+#: gui/mainwindow.cpp:1137 gui/mainwindow.cpp:1147 gui/mainwindow.cpp:1154
+#: gui/mainwindow.cpp:1159 gui/mainwindow.cpp:1169 gui/mainwindow.cpp:1182
+#: gui/mainwindow.cpp:1187 gui/mainwindow.cpp:1206 gui/mainwindow.cpp:1211
+#: gui/mainwindow.cpp:1216 gui/mainwindow.cpp:1223
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error While Importing Partition Table"
 msgstr "S'ha produït un error mentre s'importava la taula de particions"
 
-#: gui/mainwindow.cpp:1135
+#: gui/mainwindow.cpp:1147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found more than one partition table type in import file (line %1)."
@@ -2415,13 +2438,13 @@ msgstr ""
 "S'ha trobat més un tipus de taula de particions en el fitxer importat (línia "
 "%1)."
 
-#: gui/mainwindow.cpp:1142
+#: gui/mainwindow.cpp:1154
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is unknown (line %2)."
 msgstr "El tipus de taula de particions «%1» és desconegut (línia %2)."
 
-#: gui/mainwindow.cpp:1147
+#: gui/mainwindow.cpp:1159
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition table type \"%1\" is not supported for import (line %2)."
@@ -2429,32 +2452,32 @@ msgstr ""
 "No està admesa la importació del tipus de taula de particions «%1» (línia "
 "%2)."
 
-#: gui/mainwindow.cpp:1157
+#: gui/mainwindow.cpp:1169
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Found partition but no partition table type (line %1)."
 msgstr ""
 "S'ha trobat una partició però no el tipus de taula de particions (línia %1)."
 
-#: gui/mainwindow.cpp:1170
+#: gui/mainwindow.cpp:1182
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Partition %1 would be outside the device's boundaries (line %2)."
 msgstr "La partició %1 estaria fora dels límits del dispositiu (línia %2)."
 
-#: gui/mainwindow.cpp:1175
+#: gui/mainwindow.cpp:1187
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Partition %1 has end before start sector (line %2)."
 msgstr "La partició %1 s'acaba abans de l'inici d'un sector (línia %2)."
 
-#: gui/mainwindow.cpp:1194
+#: gui/mainwindow.cpp:1206
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Unrecognized partition role \"%1\" for partition %2 (line %3)."
 msgstr "Funció desconeguda de partició «%1» per a la partició %2 (línia %3)."
 
-#: gui/mainwindow.cpp:1199
+#: gui/mainwindow.cpp:1211
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid ""
@@ -2463,7 +2486,7 @@ msgstr ""
 "No s'ha trobat la partició pare o la taula de particions de la partició %1 "
 "(línia %2)."
 
-#: gui/mainwindow.cpp:1204
+#: gui/mainwindow.cpp:1216
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2473,7 +2496,7 @@ msgstr ""
 "El tipus de taula de particions «%1» no admet particions ampliades, però se "
 "n'ha trobat una (línia %2)."
 
-#: gui/mainwindow.cpp:1211
+#: gui/mainwindow.cpp:1223
 #, kde-kuit-format
 msgctxt "@info the partition is NOT a device path, just a number"
 msgid "Could not create file system \"%1\" for partition %2 (line %3)."
@@ -2481,29 +2504,29 @@ msgstr ""
 "No s'ha pogut crear el sistema de fitxers «%1» per a la partició %2 (línia "
 "%3)."
 
-#: gui/mainwindow.cpp:1226
+#: gui/mainwindow.cpp:1238
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not parse line %1 from import file. Ignoring it."
 msgstr "No s'ha pogut analitzar la línia %1 del fitxer importat. S'ignorarà."
 
-#: gui/mainwindow.cpp:1243
+#: gui/mainwindow.cpp:1255
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error Exporting Partition Table"
 msgstr "S'ha produït un error mentre s'exportava la taula de particions"
 
-#: gui/mainwindow.cpp:1418 gui/mainwindow.cpp:1424 gui/mainwindow.cpp:1460
+#: gui/mainwindow.cpp:1430 gui/mainwindow.cpp:1436 gui/mainwindow.cpp:1472
 #, kde-kuit-format
 msgid "%1%2"
 msgstr "%1%2"
 
-#: gui/mainwindow.cpp:1424 gui/mainwindow.cpp:1435
+#: gui/mainwindow.cpp:1436 gui/mainwindow.cpp:1447
 #, kde-kuit-format
 msgid "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 msgstr "<tr><td>%1</td><td>%2</td><td>%3</td><td><link>%4</link></td></tr>"
 
-#: gui/mainwindow.cpp:1472
+#: gui/mainwindow.cpp:1484
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2530,31 +2553,31 @@ msgstr ""
 "para><para>Hauríeu de buscar estes eines d'implementació en el gestor de "
 "paquets de la distribució.</para>"
 
-#: gui/mainwindow.cpp:1485
+#: gui/mainwindow.cpp:1497
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
 msgstr "Falten els paquets d'implementació de sistemes de fitxers"
 
-#: gui/mainwindow.cpp:1496
+#: gui/mainwindow.cpp:1508
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized device \"%1\" "
 msgstr "Dispositiu no reconegut «%1» "
 
-#: gui/mainwindow.cpp:1497
+#: gui/mainwindow.cpp:1509
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
 msgstr "S'ha produït un error mentre s'obria un dispositiu"
 
-#: gui/mainwindow.cpp:1505
+#: gui/mainwindow.cpp:1517
 #, kde-kuit-format
 msgctxt "@info device should be inside of /dev"
 msgid "Unrecognized partition \"%1\" "
 msgstr "Partició no reconeguda «%1» "
 
-#: gui/mainwindow.cpp:1506
+#: gui/mainwindow.cpp:1518
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening partition"
@@ -2631,19 +2654,19 @@ msgid "Partition"
 msgstr "Partició"
 
 #. i18n: ectx: Menu (panels)
-#: gui/partitionmanagerui.rc:79
+#: gui/partitionmanagerui.rc:80
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"
 msgstr "Mostra els quadros"
 
-#: gui/partitionmanagerwidget.cpp:214
+#: gui/partitionmanagerwidget.cpp:215
 #, kde-kuit-format
 msgctxt "@item:intable Encrypted file systems, e.g. btrfs[Encrypted]"
 msgid "%1 [Encrypted]"
 msgstr "%1 [Encriptada]"
 
-#: gui/partitionmanagerwidget.cpp:425
+#: gui/partitionmanagerwidget.cpp:426
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2652,13 +2675,13 @@ msgstr ""
 "No s'ha pogut muntar el sistema de fitxers en la partició <filename>%1</"
 "filename>."
 
-#: gui/partitionmanagerwidget.cpp:425
+#: gui/partitionmanagerwidget.cpp:426
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Mount File System."
 msgstr "No s'ha pogut muntar el sistema de fitxers."
 
-#: gui/partitionmanagerwidget.cpp:428
+#: gui/partitionmanagerwidget.cpp:429
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2667,19 +2690,19 @@ msgstr ""
 "No s'ha pogut desmuntar el sistema de fitxers en la partició <filename>%1</"
 "filename>."
 
-#: gui/partitionmanagerwidget.cpp:428
+#: gui/partitionmanagerwidget.cpp:429
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unmount File System."
 msgstr "No s'ha pogut desmuntar el sistema de fitxers."
 
-#: gui/partitionmanagerwidget.cpp:463
+#: gui/partitionmanagerwidget.cpp:464
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
 msgstr "Presa de la propietat del sistema de fitxers"
 
-#: gui/partitionmanagerwidget.cpp:469
+#: gui/partitionmanagerwidget.cpp:470
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2689,13 +2712,13 @@ msgstr ""
 "Establirà la propietat de <filename>%1</filename> a l'usuari <emphasis>%2</"
 "emphasis>."
 
-#: gui/partitionmanagerwidget.cpp:476
+#: gui/partitionmanagerwidget.cpp:477
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
 msgstr "Aplica recursivament a tots els subdirectoris i fitxers"
 
-#: gui/partitionmanagerwidget.cpp:484
+#: gui/partitionmanagerwidget.cpp:485
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2705,37 +2728,37 @@ msgstr ""
 "Açò també canviarà la propietat de tots els subdirectoris i fitxers. Açò pot "
 "causar problemes si alguns d'ells són propietat d'altres usuaris."
 
-#: gui/partitionmanagerwidget.cpp:491
+#: gui/partitionmanagerwidget.cpp:492
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
 msgstr "Pren la propietat"
 
-#: gui/partitionmanagerwidget.cpp:509
+#: gui/partitionmanagerwidget.cpp:510
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
 msgstr "S'està prenent la propietat de <b>%1</b>…"
 
-#: gui/partitionmanagerwidget.cpp:511
+#: gui/partitionmanagerwidget.cpp:512
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
 msgstr "Presa de la propietat"
 
-#: gui/partitionmanagerwidget.cpp:526
+#: gui/partitionmanagerwidget.cpp:527
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
 msgstr "No s'ha pogut prendre la propietat de <filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:529
+#: gui/partitionmanagerwidget.cpp:530
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
 msgstr "Ha fallat mentre es prenia la propietat"
 
-#: gui/partitionmanagerwidget.cpp:534
+#: gui/partitionmanagerwidget.cpp:535
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2745,13 +2768,35 @@ msgstr ""
 "La propietat de <filename>%1</filename> ha canviat correctament a <emphasis>"
 "%2</emphasis>."
 
-#: gui/partitionmanagerwidget.cpp:536
+#: gui/partitionmanagerwidget.cpp:537
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
 msgstr "La propietat ha canviat"
 
-#: gui/partitionmanagerwidget.cpp:564
+#: gui/partitionmanagerwidget.cpp:558
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Discard unused blocks on <filename>%1</filename>?</para><para>Existing "
+"files are not affected. Recovering previously deleted data may become "
+"impossible.</para>"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:561
+#, fuzzy, kde-kuit-format
+#| msgid "File System"
+msgctxt "@title:window"
+msgid "Trim File System"
+msgstr "Sistema de fitxers"
+
+#: gui/partitionmanagerwidget.cpp:562
+#, kde-kuit-format
+msgctxt "@action:button"
+msgid "Trim"
+msgstr ""
+
+#: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2761,13 +2806,13 @@ msgstr ""
 "No s'ha pogut desbloquejar el sistema de fitxers encriptat en la partició "
 "<filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:570
+#: gui/partitionmanagerwidget.cpp:598
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Unlock Encrypted File System."
 msgstr "No s'ha pogut desbloquejar el sistema de fitxers encriptat."
 
-#: gui/partitionmanagerwidget.cpp:575
+#: gui/partitionmanagerwidget.cpp:603
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2777,13 +2822,13 @@ msgstr ""
 "No s'ha pogut bloquejar el sistema de fitxers encriptat en la partició "
 "<filename>%1</filename>."
 
-#: gui/partitionmanagerwidget.cpp:581
+#: gui/partitionmanagerwidget.cpp:609
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Could Not Lock Encrypted File System."
 msgstr "No s'ha pogut bloquejar el sistema de fitxers encriptat."
 
-#: gui/partitionmanagerwidget.cpp:610
+#: gui/partitionmanagerwidget.cpp:638
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2807,13 +2852,13 @@ msgstr[1] ""
 "podeu crear, apegar o restaurar una partició primària abans de suprimir-ne "
 "una d'existent.</para>"
 
-#: gui/partitionmanagerwidget.cpp:614
+#: gui/partitionmanagerwidget.cpp:642
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Too Many Primary Partitions."
 msgstr "Hi ha massa particions primàries."
 
-#: gui/partitionmanagerwidget.cpp:677
+#: gui/partitionmanagerwidget.cpp:705
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2827,13 +2872,13 @@ msgstr ""
 "elevat.</para><para>Per favor, desmunteu abans totes les particions amb un "
 "número lògic més elevat que %2.</para>"
 
-#: gui/partitionmanagerwidget.cpp:680
+#: gui/partitionmanagerwidget.cpp:708
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Delete Partition."
 msgstr "No s'ha pogut suprimir la partició."
 
-#: gui/partitionmanagerwidget.cpp:689
+#: gui/partitionmanagerwidget.cpp:717
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2844,19 +2889,19 @@ msgstr ""
 "Segur que voleu suprimir la partició que hi ha actualment en el porta-"
 "retalls? Ja no estarà disponible per a apegar-la quan s'haja suprimit."
 
-#: gui/partitionmanagerwidget.cpp:691
+#: gui/partitionmanagerwidget.cpp:719
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Delete Partition in the Clipboard?"
 msgstr "Segur que voleu suprimir la partició del porta-retalls?"
 
-#: gui/partitionmanagerwidget.cpp:692
+#: gui/partitionmanagerwidget.cpp:720
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Delete It"
 msgstr "Suprimix-la"
 
-#: gui/partitionmanagerwidget.cpp:745
+#: gui/partitionmanagerwidget.cpp:773
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
@@ -2866,14 +2911,14 @@ msgstr ""
 "La partició <filename>%1</filename> tindrà la mateixa posició i mida després "
 "de redimensionar/desplaçar. S'ha ignorat l'operació."
 
-#: gui/partitionmanagerwidget.cpp:773
+#: gui/partitionmanagerwidget.cpp:801
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Partition <filename>%1</filename> has been copied to the clipboard."
 msgstr ""
 "S'ha copiat la partició <filename>%1</filename> a dins del porta-retalls."
 
-#: gui/partitionmanagerwidget.cpp:836
+#: gui/partitionmanagerwidget.cpp:864
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2891,19 +2936,19 @@ msgstr ""
 "la finestra principal, totes les dades emmagatzemades a <filename>%1</"
 "filename> se sobreescriuran i seran irrecuperables.</para>"
 
-#: gui/partitionmanagerwidget.cpp:844
+#: gui/partitionmanagerwidget.cpp:872
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Really Overwrite Existing Partition?"
 msgstr "Voleu sobreescriure la partició existent?"
 
-#: gui/partitionmanagerwidget.cpp:845
+#: gui/partitionmanagerwidget.cpp:873
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Overwrite Partition"
 msgstr "Sobreescriu la partició"
 
-#: gui/partitionmanagerwidget.cpp:853
+#: gui/partitionmanagerwidget.cpp:881
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2916,13 +2961,13 @@ msgstr ""
 "destinació o amideu esta partició perquè siga tan gran com la partició "
 "d'origen.</para>"
 
-#: gui/partitionmanagerwidget.cpp:854
+#: gui/partitionmanagerwidget.cpp:882
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Target Not Large Enough"
 msgstr "La destinació no és prou gran"
 
-#: gui/partitionmanagerwidget.cpp:857
+#: gui/partitionmanagerwidget.cpp:885
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2936,13 +2981,13 @@ msgstr ""
 "si alguna de les particions d'un dispositiu no està correctament alineada o "
 "en copiar una partició primària a una partició ampliada.</para>"
 
-#: gui/partitionmanagerwidget.cpp:860
+#: gui/partitionmanagerwidget.cpp:888
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Cannot Create Target Partition."
 msgstr "No s'ha pogut crear la partició de destinació."
 
-#: gui/partitionmanagerwidget.cpp:918
+#: gui/partitionmanagerwidget.cpp:946
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2952,7 +2997,7 @@ msgstr ""
 "El sistema de fitxers en el fitxer d'imatge <filename>%1</filename> és massa "
 "gran per a restaurar-lo a la partició seleccionada."
 
-#: gui/partitionmanagerwidget.cpp:918
+#: gui/partitionmanagerwidget.cpp:946
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Not Enough Space to Restore File System."
