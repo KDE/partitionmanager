@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-10-27 09:52+0100\n"
+"PO-Revision-Date: 2026-10-29 03:51+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2037,24 +2037,22 @@ msgstr "მიმაგრებული ფაილური სისტე�
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "წაკვეთა"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "ფაილური სისტემის მფლობელობის აღება"
+msgstr "გამოუყენებელი ბლოკების მოცილება ფაილური სისტემიდან"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
-msgstr "მიმაგრებული ფაილური სისტემის მფლობელის შეცვლა მიმდინარე მომხმარებელზე."
+msgstr ""
+"დისკისთვის, რომელიც ბლოკავს მიმაგრებულ ფაილურ სისტემას, თქმა, რომ ის აღარ "
+"გამოიყენება"
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2759,19 +2757,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>გნებავთ გამოუყენებელი ბლოკების მოცილება <filename>%1</filename>-დან?</"
+"para><para>არსებულ ფაილებს არაფერი მოუვა, მაგრამ ადრე წაშლილი ფაილების "
+"აღდგენა, შეიძლება, შეუძლებელი გახდეს.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "ფაილური სისტემა"
+msgstr "ფაილური სისტემის წაკვეთა"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "წაკვეთა"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format

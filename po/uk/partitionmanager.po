@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-10-27 12:11+0200\n"
+"PO-Revision-Date: 2026-10-29 16:15+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2053,25 +2053,22 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Обрізати"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Набути власності на файлову систему"
+msgstr "Відкинути невикористані у файловій системі блоки"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
 msgstr ""
-"Змінити власника змонтованої файлової системи на поточного користувача."
+"Повідомити диску, які блоки змонтованої файлової системи вже не "
+"використовуються."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2782,19 +2779,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>Відкинути невикористані блоки на <filename>%1</filename>?</"
+"para><para>Це не вплине на наявні файли. Втім, відновлення раніше вилучених "
+"файлів може стати неможливим.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "Файлова система"
+msgstr "Обрізати файлову систему"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "Обрізати"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format

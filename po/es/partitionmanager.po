@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-10-27 11:30+0100\n"
+"PO-Revision-Date: 2026-10-29 12:41+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2056,25 +2056,22 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Recortar"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Tomar propiedad del sistema de archivos"
+msgstr "Descartar los bloques no usados del sistema de archivos"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
 msgstr ""
-"Cambiar el propietario del sistema de archivos montado al usuario actual."
+"Indicar a la unidad los bloques del sistema de archivos montado que ya no se "
+"usan."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2797,19 +2794,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>¿Descartar los bloques no usados de <filename>%1</filename>?</"
+"para><para>Los archivos existentes no se ven afectados. La recuperación de "
+"datos anteriormente borrados podría resultar imposible.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "Sistema de archivos"
+msgstr "Recortar el sistema de archivos"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "Recortar"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format

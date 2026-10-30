@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-10-27 16:54+0100\n"
+"PO-Revision-Date: 2026-10-29 07:35+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2053,25 +2053,22 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Obreži"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Prevzemite lastništvo datotečnega sistema"
+msgstr "Zavrzi neuporabljene bloke v datotečnem sistemu"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
 msgstr ""
-"Spremeni lastništvo nameščenega datotečnega sistema na trenutnega uporabnika."
+"Sporoči pogonu, kateri bloki priklopljenega datotečnega sistema niso več v "
+"uporabi."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2785,19 +2782,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>Ali naj se zavržejo neuporabljeni bloki na <filename>%1</filename>?</"
+"para><para>Obstoječe datoteke ostanejo nespremenjene. Obnovitev predhodno "
+"izbrisanih podatkov pa morda ne bo več mogoča.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "Datotečni sistem"
+msgstr "Obreži datotečni sistem"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "Obreži"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format

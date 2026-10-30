@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-10-27 10:15+0100\n"
+"PO-Revision-Date: 2026-10-29 11:26+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2047,24 +2047,21 @@ msgstr "Canvia la propietat del sistema de fitxers muntat a l'usuari actual."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Esporga («Trim»)"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Pren la propietat del sistema de fitxers"
+msgstr "Descarta els blocs no utilitzats del sistema de fitxers"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
-msgstr "Canvia la propietat del sistema de fitxers muntat a l'usuari actual."
+msgstr ""
+"Diu a la unitat quins blocs del sistema de fitxers muntat ja no s'utilitzen."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2781,19 +2778,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>Descarto els blocs no utilitzats a <filename>%1</filename>?</"
+"para><para>Els fitxers existents no es veuen afectats. Recuperar dades "
+"suprimides prèviament podria ser impossible.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "Sistema de fitxers"
+msgstr "Esporgat del sistema de fitxers"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "Esporga («Trim»)"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format

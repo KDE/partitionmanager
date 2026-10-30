@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-10-21 18:37+0200\n"
+"PO-Revision-Date: 2026-10-28 08:59+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -3648,9 +3648,7 @@ msgid "Enable LUKS2"
 msgstr "Activer LUKS2"
 
 #: gui/smartdialog.cpp:59
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item filesystem name"
-#| msgid "unknown"
+#, kde-kuit-format
 msgctxt "@label SMART value not reported by the device"
 msgid "unknown"
 msgstr "inconnu"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-10-28 22:50+0100\n"
+"PO-Revision-Date: 2026-10-30 00:59+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Poedit 3.10\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1307,7 +1307,8 @@ msgstr ""
 "s nimi lze provádět.\n"
 "Některé souborové systémy potřebují doinstalovat externí nástroje. Ale ne "
 "všechny operace lze provádět na všech souborových systémech když jsou "
-"všechny potřebné nástroje nainstalovány. Podrobnosti naleznete v dokumentaci."
+"všechny potřebné nástroje nainstalovány. Podrobnosti naleznete v "
+"dokumentaci. "
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:70
@@ -2042,25 +2043,22 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Trim"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Převzít vlastnictví souborového systému"
+msgstr "Uvolnit nepoužívané bloky v souborovém systému"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
 msgstr ""
-"Změňte vlastnictví připojeného souborového systému na aktuálního uživatele."
+"Oznámit disku, které bloky připojeného souborového systému již nejsou "
+"používány."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2398,7 +2396,7 @@ msgid ""
 "from <filename>%2</filename>."
 msgstr ""
 "Zálohovat souborový systém na oddílu <filename>%1</filename> do <filename>"
-"%2</filename>"
+"%2</filename>."
 
 #: gui/mainwindow.cpp:1137
 #, kde-kuit-format
@@ -2762,19 +2760,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>Chcete uvolnit nepoužívané bloky v <filename>%1</filename>?</"
+"para><para>Stávající soubory tím nebudou ovlivněny. Obnovení dříve smazaných "
+"dat může být nemožné.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "Souborový systém"
+msgstr "Trim souborového systému"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "Trim"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
@@ -3283,7 +3283,7 @@ msgstr "Typ diskového oddílu:"
 #: gui/partpropswidgetbase.ui:333
 #, kde-format
 msgid "Device path:"
-msgstr "Cesta k zařízení"
+msgstr "Cesta k zařízení:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextNumSectors)
 #: gui/partpropswidgetbase.ui:343
@@ -3313,7 +3313,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Recreate existing file system"
-msgstr "Znovu vytvořit souborový systém:"
+msgstr "Znovu vytvořit souborový systém"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
 #: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
@@ -3395,7 +3395,7 @@ msgstr "%p%"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning…"
-msgstr "Načítání..."
+msgstr "Načítání…"
 
 #: gui/scanprogressdialog.cpp:38
 #, kde-kuit-format
@@ -3823,7 +3823,7 @@ msgstr " MiB"
 #: gui/volumegroupwidgetbase.ui:107
 #, kde-format
 msgid "Total LV: "
-msgstr "Celkem logických svazků:"
+msgstr "Celkem logických svazků: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextVolumeType)
 #: gui/volumegroupwidgetbase.ui:130
@@ -3841,7 +3841,7 @@ msgstr "Celková velikost: "
 #: gui/volumegroupwidgetbase.ui:153
 #, kde-format
 msgid "Total Sectors: "
-msgstr "Celkem sektorů:"
+msgstr "Celkem sektorů: "
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextTotalUsedSize)
 #: gui/volumegroupwidgetbase.ui:186
