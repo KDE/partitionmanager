@@ -2,14 +2,14 @@
 # Copyright (C) 2013 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Safa Alfulaij <safaalfulaij@hotmail.com>, 2013.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021-2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 # Automatically generated, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-09-17 08:59+0400\n"
+"PO-Revision-Date: 2026-10-31 20:10+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -606,101 +606,88 @@ msgid "Total: %p%"
 msgstr "الكلي: %p%"
 
 #: gui/benchmarkdialog.cpp:112
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@label graph axis, read rate"
 msgid "%1 MiB/s"
-msgstr " م.بايت"
+msgstr "%1 مِيب/ث"
 
 #: gui/benchmarkdialog.cpp:113
 #, kde-kuit-format
 msgctxt "@label graph axis, access time"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 م.ث"
 
 #: gui/benchmarkdialog.cpp:163
 #, kde-kuit-format
 msgctxt "@label graph axis"
 msgid "Position on device"
-msgstr ""
+msgstr "الموضع على الجهاز"
 
 #: gui/benchmarkdialog.cpp:185
-#, fuzzy, kde-kuit-format
-#| msgctxt "SMART attr name"
-#| msgid "Read Error Rate"
+#, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Read rate"
-msgstr "معدّل قراءة الخطأ"
+msgstr "معدل القراءة"
 
 #: gui/benchmarkdialog.cpp:186
 #, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Access time"
-msgstr ""
+msgstr "زمن الوصول"
 
 #: gui/benchmarkdialog.cpp:209
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Benchmark: <filename>%1</filename>"
-msgstr "موصول في <filename>%1</filename>"
+msgstr "قياس الأداء: <filename>%1</filename>"
 
 #: gui/benchmarkdialog.cpp:237
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@item:valuesuffix"
 msgid " MiB"
-msgstr " م.بايت"
+msgstr " مِيب"
 
 #: gui/benchmarkdialog.cpp:243
 #, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Transfer rate samples:"
-msgstr ""
+msgstr "عينات معدل النقل:"
 
 #: gui/benchmarkdialog.cpp:244
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Sample size:"
-msgstr "حجم المفتاح:"
+msgstr "حجم العينة:"
 
 #: gui/benchmarkdialog.cpp:245
 #, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Access time samples:"
-msgstr ""
+msgstr "عينات زمن الوصول:"
 
 #: gui/benchmarkdialog.cpp:253
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Average read rate:"
-msgstr ""
+msgstr "متوسط معدل القراءة:"
 
 #: gui/benchmarkdialog.cpp:254
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Minimum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Minimum read rate:"
-msgstr "الحجم الأدنى:"
+msgstr "أدنى معدل قراءة:"
 
 #: gui/benchmarkdialog.cpp:255
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Maximum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Maximum read rate:"
-msgstr "الحجم الأقصى:"
+msgstr "أقصى معدل قراءة:"
 
 #: gui/benchmarkdialog.cpp:256
-#, fuzzy, kde-kuit-format
-#| msgid "Overall assessment:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Average access time:"
-msgstr "التقييم العام:"
+msgstr "متوسط زمن الوصول:"
 
 #: gui/benchmarkdialog.cpp:268
 #, kde-kuit-format
@@ -709,37 +696,39 @@ msgid ""
 "The device is only read, no data is written. Other activity on the device "
 "affects the results."
 msgstr ""
+"يُقرأ من الجهاز فقط، ولا تُكتب أي بيانات. تؤثر الأنشطة الأخرى على الجهاز في "
+"النتائج."
 
 #: gui/benchmarkdialog.cpp:273
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Start Benchmark"
-msgstr ""
+msgstr "ابدأ قياس الأداء"
 
 #: gui/benchmarkdialog.cpp:275
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop"
-msgstr ""
+msgstr "أوقف"
 
 #: gui/benchmarkdialog.cpp:318
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Preparing the benchmark…"
-msgstr ""
+msgstr "يُحضَّر قياس الأداء…"
 
 #: gui/benchmarkdialog.cpp:323 gui/benchmarkdialog.cpp:439
 #: gui/benchmarkdialog.cpp:462
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not connect to the KPMcore helper."
-msgstr ""
+msgstr "تعذّر الاتصال بمساعد KPMcore."
 
 #: gui/benchmarkdialog.cpp:330
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Stopping after the current read request finishes…"
-msgstr ""
+msgstr "يتوقف بعد انتهاء طلب القراءة الحالي…"
 
 #: gui/benchmarkdialog.cpp:346
 #, kde-kuit-format
@@ -748,68 +737,68 @@ msgid ""
 "Direct I/O is not supported for this device. The benchmark was not run, "
 "because cached reads would not show the speed of the device."
 msgstr ""
+"الإدخال/الإخراج المباشر غير مدعوم لهذا الجهاز. لم يُجرَ قياس الأداء، لأن "
+"القراءات المخبأة لن تُظهر سرعة الجهاز."
 
 #: gui/benchmarkdialog.cpp:350
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "The benchmark request was rejected as invalid."
-msgstr ""
+msgstr "رُفض طلب قياس الأداء باعتباره غير صالح."
 
 #: gui/benchmarkdialog.cpp:353
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reading from the device failed or access was denied."
-msgstr ""
+msgstr "فشلت القراءة من الجهاز أو رُفض الوصول."
 
 #: gui/benchmarkdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not determine the size of the device."
-msgstr ""
+msgstr "تعذّر تحديد حجم الجهاز."
 
 #: gui/benchmarkdialog.cpp:418 gui/benchmarkdialog.cpp:445
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark stopped."
-msgstr ""
+msgstr "أُوقف قياس الأداء."
 
 #: gui/benchmarkdialog.cpp:437
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring transfer rate: sample %1 of %2…"
-msgstr ""
+msgstr "يُقاس معدل النقل: العينة %1 من %2…"
 
 #: gui/benchmarkdialog.cpp:450
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress"
-#| msgid "Scan finished."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark finished."
-msgstr "اكتمل الفحص."
+msgstr "انتهى قياس الأداء."
 
 #: gui/benchmarkdialog.cpp:460
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring access time: %1 of %2 reads…"
-msgstr ""
+msgstr "يُقاس زمن الوصول: %1 من %2 قراءة…"
 
 #: gui/benchmarkdialog.cpp:469
 #, kde-kuit-format
 msgctxt "@label benchmark result not measured yet"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: gui/benchmarkdialog.cpp:485
 #, kde-kuit-format
 msgctxt "@label read rate, %1 is a size such as 120.5 MiB"
 msgid "%1/s"
-msgstr ""
+msgstr "%1/ث"
 
 #: gui/benchmarkdialog.cpp:498
 #, kde-kuit-format
 msgctxt "@label access time in milliseconds"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 م.ث"
 
 #: gui/createpartitiontabledialog.cpp:31
 #, kde-kuit-format
@@ -1850,21 +1839,19 @@ msgstr "عرض حالة SMART للجهاز إن كان مدعومًا"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Benchmark"
-msgstr ""
+msgstr "قياس الأداء"
 
 #: gui/mainwindow.cpp:371
-#, fuzzy, kde-kuit-format
-#| msgctxt "SMART attr name"
-#| msgid "Seek Time Performance"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Measure device read performance"
-msgstr "أداء وقت السعي"
+msgstr "قِس أداء قراءة الجهاز"
 
 #: gui/mainwindow.cpp:372
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measure the device's read rate and access time"
-msgstr ""
+msgstr "قِس معدل قراءة الجهاز وزمن الوصول"
 
 #: gui/mainwindow.cpp:378 gui/mainwindow.cpp:486
 #, kde-kuit-format
@@ -2050,24 +2037,20 @@ msgstr "تغيير ملكية نظام الملفات الموصول إلى ال
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "اقتصاص"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "استحوذ على ملكية نظام الملفات"
+msgstr "تجاهل الكتل غير المستخدمة في نظام الملفات"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
-msgstr "تغيير ملكية نظام الملفات الموصول إلى المستخدم الحالي."
+msgstr "أخبر القرص بالكتل التي لم تعد مستخدمة في نظام الملفات الموصول."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2550,12 +2533,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "جهاز غير معروف \"%1\" "
 
 #: gui/mainwindow.cpp:1509
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error opening partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
-msgstr "خطأ في فتح القسم"
+msgstr "خطأ في فتح الجهاز"
 
 #: gui/mainwindow.cpp:1517
 #, kde-kuit-format
@@ -2761,19 +2742,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>أتريد تجاهل الكتل غير المستخدمة على <filename>%1</filename>؟</"
+"para><para>الملفات الموجودة لن تتأثر. قد يصبح استرداد البيانات المحذوفة "
+"سابقًا مستحيلًا.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "نظام الملفات"
+msgstr "اقتصاص نظام الملفات"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "اقتصاص"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
@@ -3581,9 +3564,7 @@ msgid "Enable LUKS2"
 msgstr "مكّن LUKS2"
 
 #: gui/smartdialog.cpp:59
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item/plain partition table name"
-#| msgid "unknown"
+#, kde-kuit-format
 msgctxt "@label SMART value not reported by the device"
 msgid "unknown"
 msgstr "مجهول"

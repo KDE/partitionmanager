@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-10-28 08:59+0100\n"
+"PO-Revision-Date: 2026-10-30 15:56+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -2068,25 +2068,22 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Rogner"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Prendre la propriété du système de fichiers"
+msgstr "Supprimer les blocs inutilisés du système de fichiers"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
 msgstr ""
-"Modifier la propriété du système de fichiers monté par l'utilisateur courant."
+"Indiquez au lecteur quels blocs du système de fichiers monté ne sont plus "
+"utilisés."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2816,19 +2813,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>Supprimer les blocs inutilisés dans <filename>%1</filename> ?  </"
+"para><para>Les fichiers existants ne sont pas affectés. La récupération de "
+"données précédemment supprimées pourrait devenir impossible. </para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "Système de fichiers"
+msgstr "Réduire le système de fichiers"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "Réduire"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
