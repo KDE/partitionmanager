@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-10-09 10:57+0300\n"
+"PO-Revision-Date: 2026-11-03 20:31+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2030,24 +2030,20 @@ msgstr "שינוי הבעלות של מערכת הקבצים המעוגנת לי
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "קיצוץ"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "קבלת בעלות על מערכת הקבצים"
+msgstr "התעלמות מבלוקים שאינם בשימוש במערכת הקבצים"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
-msgstr "שינוי הבעלות של מערכת הקבצים המעוגנת לידי המשתמש הנוכחי."
+msgstr "להגיד לכונן אילו בלוקים של מערכת הקבצים המעוגנת אינם בשימוש עוד."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2528,12 +2524,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "ההתקן „%1” לא מוכר"
 
 #: gui/mainwindow.cpp:1509
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error opening partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
-msgstr "שגיאה בפתיחת המחיצה"
+msgstr "שגיאה בפתיחת ההתקן"
 
 #: gui/mainwindow.cpp:1517
 #, kde-kuit-format
@@ -2740,19 +2734,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>להתעלם מבלוקים שאינם בשימוש ב־<filename>%1</filename>?</"
+"para><para>הקבצים הקיימים אינם מושפעים. שחזור נתונים שנמחקו בעבר עלול להפוך "
+"לבלתי אפשרי.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "מערכת קבצים"
+msgstr "קיצוץ מערכת קבצים"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "קיצוץ"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
@@ -3549,11 +3545,10 @@ msgid "Enable LUKS2"
 msgstr "הפעלת LUKS2"
 
 #: gui/smartdialog.cpp:59
-#, fuzzy, kde-kuit-format
-#| msgid "unknown:"
+#, kde-kuit-format
 msgctxt "@label SMART value not reported by the device"
 msgid "unknown"
-msgstr "לא ידוע:"
+msgstr "לא ידוע"
 
 #: gui/smartdialog.cpp:85
 #, kde-kuit-format

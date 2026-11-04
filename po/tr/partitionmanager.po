@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-10-21 20:40+0300\n"
+"PO-Revision-Date: 2026-11-03 22:25+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2042,24 +2042,22 @@ msgstr "Bağlanmış dosya sisteminin sahipliğini geçerli kullanıcıya verin.
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Kırp"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Dosya sisteminin sahipliğini al"
+msgstr "Dosya sistemindeki kullanılmayan bloklardan kurtul"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
-msgstr "Bağlanmış dosya sisteminin sahipliğini geçerli kullanıcıya verin."
+msgstr ""
+"Sürücüye, bağlı dosya sistemindeki hangi blokların artık kullanımda "
+"olmadığını söyleyin."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2766,19 +2764,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para><filename>%1</filename> üzerindeki kullanılmayan bloklar atılsın mı?</"
+"para><para>Var olan dosyalar etkilenmez. Daha önceden silinmiş olan verileri "
+"kurtarmak olanaksızlaşabilir.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "Dosya Sistemi"
+msgstr "Dosya Sistemini Kırp"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "Kırp"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
@@ -3582,11 +3582,10 @@ msgid "Enable LUKS2"
 msgstr "LUKS2’yi etkinleştir"
 
 #: gui/smartdialog.cpp:59
-#, fuzzy, kde-kuit-format
-#| msgid "unknown:"
+#, kde-kuit-format
 msgctxt "@label SMART value not reported by the device"
 msgid "unknown"
-msgstr "Bilinmeyen:"
+msgstr "bilinmiyor"
 
 #: gui/smartdialog.cpp:85
 #, kde-kuit-format
