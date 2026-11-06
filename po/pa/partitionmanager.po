@@ -2,21 +2,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2018, 2020, 2023, 2024 A S Alam <aalam@users.sf.net>
+# SPDX-FileCopyrightText: 2008-2013, 2016, 2018, 2020, 2023-2024, 2026 A S Alam <aalam@users.sf.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2024-01-03 14:01-0600\n"
-"Last-Translator: A S Alam <aalam@punlinux.org>\n"
-"Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2026-11-02 20:52-0500\n"
+"Last-Translator: A S Alam <aman@punlinux.org>\n"
+"Language-Team: pa\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -374,10 +374,9 @@ msgstr "ਪਾਰਟੀਸ਼ਨਾਂ ਨੂੰ ਡਿਫਾਲਟ ਵਜੋਂ �
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
-#, fuzzy, kde-format
-#| msgid "Sector alignment:"
+#, kde-format
 msgid "Sec&tor alignment:"
-msgstr "ਸੈਕਟਰ ਸਫ਼ਬੰਦੀ:"
+msgstr "ਸੈਕਟਰ ਸਫ਼ਬੰਦੀ(&t):"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_sectorAlignment)
 #: config/configurepagegeneral.ui:60
@@ -393,10 +392,9 @@ msgstr "ਲਾਗ"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: config/configurepagegeneral.ui:94
-#, fuzzy, kde-format
-#| msgid "Hide messages below:"
+#, kde-format
 msgid "Hide messa&ges below:"
-msgstr "ਸੁਨੇਹਾ ਹੇਠਾਂ ਓਹਲੇ:"
+msgstr "ਸੁਨੇਹਾ ਹੇਠਾਂ ਓਹਲੇ(&g):"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_minLogLevel)
 #: config/configurepagegeneral.ui:105
@@ -430,10 +428,9 @@ msgstr "ਫਾਇਲ ਸਿਸਟਮ"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: config/configurepagegeneral.ui:143
-#, fuzzy, kde-format
-#| msgid "Default file system:"
+#, kde-format
 msgid "&Default file system:"
-msgstr "ਡਿਫਾਲਟ ਫਾਇਲ-ਸਿਸਟਮ:"
+msgstr "ਡਿਫਾਲਟ ਫਾਇਲ-ਸਿਸਟਮ(&D):"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -455,10 +452,9 @@ msgstr "ਰਲਵਾਂ ਡਾਟਾ"
 
 #. i18n: ectx: property (text), widget (QRadioButton, radioButton_2)
 #: config/configurepagegeneral.ui:188
-#, fuzzy, kde-format
-#| msgid "Zeros"
+#, kde-format
 msgid "&Zeros"
-msgstr "ਜ਼ੀਰੋ"
+msgstr "ਸਿਫ਼ਰਾਂ(&Z)"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonSave)
 #: gui/applyprogressdetailswidgetbase.ui:42
@@ -491,9 +487,7 @@ msgid "Stopping now may cause data loss or drive errors."
 msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Cancel Running Operations"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Stop Running Operations"
 msgstr "ਚੱਲ ਰਹੇ ਓਪਰੇਸ਼ਨ ਰੱਦ ਕਰੋ"
@@ -505,12 +499,10 @@ msgid "Stop Anyway"
 msgstr ""
 
 #: gui/applyprogressdialog.cpp:191
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress operation"
-#| msgid "Running"
+#, kde-kuit-format
 msgctxt "@action:button"
 msgid "Keep Running"
-msgstr "ਚੱਲ ਰਿਹਾ ਹੈ"
+msgstr "ਚੱਲਦਾ ਰੱਖੋ"
 
 #: gui/applyprogressdialog.cpp:196
 #, kde-kuit-format
@@ -613,11 +605,10 @@ msgid "Total: %p%"
 msgstr "ਕੁੱਲ: %p%"
 
 #: gui/benchmarkdialog.cpp:112
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@label graph axis, read rate"
 msgid "%1 MiB/s"
-msgstr " MiB"
+msgstr "%1 MiB/s"
 
 #: gui/benchmarkdialog.cpp:113
 #, kde-kuit-format
@@ -632,12 +623,10 @@ msgid "Position on device"
 msgstr ""
 
 #: gui/benchmarkdialog.cpp:185
-#, fuzzy, kde-kuit-format
-#| msgctxt "SMART attr name"
-#| msgid "Read Error Rate"
+#, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Read rate"
-msgstr "ਪੜ੍ਹਨ ਗਲਤੀ ਰੇਟ"
+msgstr "ਪੜ੍ਹਨ ਰੇਟ"
 
 #: gui/benchmarkdialog.cpp:186
 #, kde-kuit-format
@@ -646,16 +635,13 @@ msgid "Access time"
 msgstr ""
 
 #: gui/benchmarkdialog.cpp:209
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition state"
-#| msgid "mounted on <filename>%1</filename>"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Benchmark: <filename>%1</filename>"
-msgstr "<filename>%1</filename> ਉੱਤੇ ਮਾਉਂਟ ਕੀਤਾ"
+msgstr "ਬੈਂਚਮਾਰਕ: <filename>%1</filename>"
 
 #: gui/benchmarkdialog.cpp:237
-#, fuzzy, kde-kuit-format
-#| msgid " MiB"
+#, kde-kuit-format
 msgctxt "@item:valuesuffix"
 msgid " MiB"
 msgstr " MiB"
@@ -667,12 +653,10 @@ msgid "Transfer rate samples:"
 msgstr ""
 
 #: gui/benchmarkdialog.cpp:244
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label partition"
-#| msgid "Key size:"
+#, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Sample size:"
-msgstr "ਕੁੰਜੀ ਦਾ ਆਕਾਰ:"
+msgstr "ਸੈਂਪਲ ਆਕਾਰ:"
 
 #: gui/benchmarkdialog.cpp:245
 #, kde-kuit-format
@@ -687,27 +671,22 @@ msgid "Average read rate:"
 msgstr ""
 
 #: gui/benchmarkdialog.cpp:254
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Minimum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Minimum read rate:"
-msgstr "ਘੱਟੋ-ਘੱਟ ਸਾਈਜ਼:"
+msgstr "ਘੱਟੋ-ਘੱਟ ਰੇਟ:"
 
 #: gui/benchmarkdialog.cpp:255
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Maximum size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Maximum read rate:"
-msgstr "ਵੱਧੋ-ਵੱਧ ਸਾਈਜ਼:"
+msgstr "ਵੱਧੋ-ਵੱਧ ਰੇਟ:"
 
 #: gui/benchmarkdialog.cpp:256
-#, fuzzy, kde-kuit-format
-#| msgid "Overall assessment:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Average access time:"
-msgstr "ਸੰਖੇਪ ਪਰਖ:"
+msgstr "ਔਸਤ ਪਹੁੰਚ ਸਮਾਂ:"
 
 #: gui/benchmarkdialog.cpp:268
 #, kde-kuit-format
@@ -787,12 +766,10 @@ msgid "Measuring transfer rate: sample %1 of %2…"
 msgstr ""
 
 #: gui/benchmarkdialog.cpp:450
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:progress"
-#| msgid "Scan finished."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark finished."
-msgstr "ਸਕੈਨ ਪੂਰਾ ਹੋਇਆ।"
+msgstr "ਬੈਂਚਮਾਰਕ ਪੂਰਾ ਹੋਇਆ।"
 
 #: gui/benchmarkdialog.cpp:460
 #, kde-kuit-format
@@ -1192,12 +1169,10 @@ msgid "Block size"
 msgstr ""
 
 #: gui/filesystempropertieswidget.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Sectors:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Sector size"
-msgstr "ਸੈਕਟਰ:"
+msgstr "ਸੈਕਟਰ ਆਕਾਰ"
 
 #: gui/filesystempropertieswidget.cpp:37
 #, kde-kuit-format
@@ -1206,12 +1181,10 @@ msgid "Metadata node size"
 msgstr ""
 
 #: gui/filesystempropertieswidget.cpp:38
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Check partition"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Checksum algorithm"
-msgstr "ਪਾਰਟੀਸ਼ਨ ਚੈੱਕ ਕਰੋ"
+msgstr "ਚੈਕਸਮ ਐਲੋਗਰਿਥਮ"
 
 #: gui/filesystempropertieswidget.cpp:39
 #, kde-kuit-format
@@ -1220,12 +1193,10 @@ msgid "MFT record size"
 msgstr ""
 
 #: gui/filesystempropertieswidget.cpp:40
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Cylinder size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Inode size"
-msgstr "ਸਿਲੰਡਰ ਸਾਈਜ਼:"
+msgstr "Inode ਆਕਾਰ"
 
 #: gui/filesystempropertieswidget.cpp:41
 #, kde-kuit-format
@@ -1234,30 +1205,28 @@ msgid "Inode count"
 msgstr ""
 
 #: gui/filesystempropertieswidget.cpp:42
-#, fuzzy, kde-kuit-format
-#| msgid "Number of Sectors"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Number of FATs"
-msgstr "ਸੈਕਟਰਾਂ ਦੀ ਗਿਣਤੀ"
+msgstr "FATs ਦੀ ਗਿਣਤੀ"
 
 #: gui/filesystempropertieswidget.cpp:43
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enabled features"
-msgstr ""
+msgstr "ਸਮਰੱਥ ਕੀਤੇ ਫ਼ੀਚਰ"
 
 #: gui/filesystempropertieswidget.cpp:44
-#, fuzzy, kde-kuit-format
-#| msgid "Program version:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Format version"
-msgstr "ਪਰੋਗਰਾਮ ਵਰਜਨ:"
+msgstr "ਫਾਰਮੈਟ ਵਰਜ਼ਨ"
 
 #: gui/filesystempropertieswidget.cpp:45
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Journal size"
-msgstr ""
+msgstr "ਜਰਨਲ ਆਕਾਰ"
 
 #: gui/filesystempropertieswidget.cpp:46
 #, kde-kuit-format
@@ -1290,27 +1259,22 @@ msgid "Reserved space owner (GID)"
 msgstr ""
 
 #: gui/filesystempropertieswidget.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item/plain partition table name"
-#| msgid "unknown"
+#, kde-kuit-format
 msgctxt "@item filesystem property whose value could not be read"
 msgid "Unknown"
-msgstr "ਅਣਜਾਣ"
+msgstr "ਅਣਪਛਾਤਾ"
 
 #: gui/filesystempropertieswidget.cpp:86
-#, fuzzy, kde-kuit-format
-#| msgid "%1%2"
+#, kde-kuit-format
 msgctxt "@item value in percent"
 msgid "%1%"
-msgstr "%1%2"
+msgstr "%1%"
 
 #: gui/filesystempropertieswidget.cpp:136
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain job status (error, warning, ...)"
-#| msgid "%1: %2"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "%1:"
-msgstr "%1: %2"
+msgstr "%1:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -2043,12 +2007,10 @@ msgid "Take Ownership"
 msgstr ""
 
 #: gui/mainwindow.cpp:456
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "ਫਾਇਲ ਸਿਸਟਮ ਬਦਲੋ"
+msgstr "ਫਾਇਲ-ਸਿਸਟਮ ਦੀ ਮਲਕੀਅਤ ਲਵੋ"
 
 #: gui/mainwindow.cpp:457
 #, kde-kuit-format
@@ -2546,12 +2508,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "ਅਣਪਛਾਤਾ ਡਿਵਾਈਸ \"%1\""
 
 #: gui/mainwindow.cpp:1509
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error opening partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
-msgstr "ਪਾਰਟੀਸ਼ਨ ਖੋਲ੍ਹਣ ਦੌਰਾਨ ਗਲਤੀ"
+msgstr "ਡਿਵਾਈਸ ਨੂੰ ਖੋਲ੍ਹਣ ਦੌਰਾਨ ਗਲਤੀ"
 
 #: gui/mainwindow.cpp:1517
 #, kde-kuit-format
@@ -2676,12 +2636,10 @@ msgid "Could Not Unmount File System."
 msgstr "ਫਾਇਲ ਸਿਸਟਮ ਅਣ-ਮਾਊਂਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।"
 
 #: gui/partitionmanagerwidget.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "ਫਾਇਲ ਸਿਸਟਮ ਬਦਲੋ"
+msgstr "ਫਾਇਲ-ਸਿਸਟਮ ਦੀ ਮਲਕੀਅਤ ਲਵੋ"
 
 #: gui/partitionmanagerwidget.cpp:470
 #, fuzzy, kde-kuit-format
@@ -2764,17 +2722,16 @@ msgid ""
 msgstr ""
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "ਫਾਇਲ ਸਿਸਟਮ"
+msgstr "ਫਾਇਲ ਸਿਸਟਮ ਨੂੰ ਟਰਿਮ ਕਰੋ"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "ਟਰਿਮ"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
@@ -3089,9 +3046,7 @@ msgid "(none)"
 msgstr "(ਕੋਈ ਨਹੀਂ)"
 
 #: gui/partpropsdialog.cpp:160
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "(unknown)"
+#, kde-kuit-format
 msgctxt "@item cluster size"
 msgid "(unknown)"
 msgstr "(ਅਣਪਛਾਤਾ)"
@@ -3216,11 +3171,10 @@ msgstr "ਉਪਲੱਬਧ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextClusterSize)
 #: gui/partpropswidgetbase.ui:177
-#, fuzzy, kde-format
-#| msgid "Cylinder size:"
+#, kde-format
 msgctxt "@label"
 msgid "Cluster size:"
-msgstr "ਸਿਲੰਡਰ ਆਕਾਰ:"
+msgstr "ਕਲੱਸਟਰ ਆਕਾਰ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:240
@@ -3281,11 +3235,10 @@ msgstr "ਮੌਜੂਦਾ ਫਾਇਲ ਸਿਸਟਮ ਮੁੜ ਬਣਾਓ"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
 #: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
-#, fuzzy, kde-format
-#| msgid "Cylinder size:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Cluster size:"
-msgstr "ਸਿਲੰਡਰ ਆਕਾਰ:"
+msgstr "ਕਲੱਸਟਰ ਆਕਾਰ:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
 #: gui/partpropswidgetbase.ui:406
@@ -3502,10 +3455,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, m_permissionOnlyRoot)
 #: gui/sizedialogwidgetbase.ui:334
-#, fuzzy, kde-format
-#| msgid "Only Root"
+#, kde-format
 msgid "O&nly Root"
-msgstr "ਸਿਰਫ਼ ਰੂਟ"
+msgstr "ਸਿਰਫ਼ ਰੂਟ(%n)"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelFreeBefore)
 #: gui/sizedialogwidgetbase.ui:350
@@ -3542,12 +3494,10 @@ msgid "Enable LUKS2"
 msgstr ""
 
 #: gui/smartdialog.cpp:59
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item/plain partition table name"
-#| msgid "unknown"
+#, kde-kuit-format
 msgctxt "@label SMART value not reported by the device"
 msgid "unknown"
-msgstr "ਅਣਜਾਣ"
+msgstr "ਅਣਪਛਾਤਾ"
 
 #: gui/smartdialog.cpp:85
 #, kde-kuit-format
@@ -4014,7 +3964,7 @@ msgstr "ਕਾਲਮ"
 #, kde-kuit-format
 msgctxt "@item:inlistbox cluster size"
 msgid "Automatic"
-msgstr ""
+msgstr "ਆਟੋਮੈਟਿਕ"
 
 #: util/guihelpers.cpp:150
 #, kde-kuit-format

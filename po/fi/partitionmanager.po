@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-29 00:56+0000\n"
-"PO-Revision-Date: 2026-08-25 10:30+0300\n"
+"PO-Revision-Date: 2026-10-05 15:22+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -1192,128 +1192,115 @@ msgstr "&Nimiö:"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Block size"
-msgstr ""
+msgstr "Lohkokoko"
 
 #: gui/filesystempropertieswidget.cpp:36
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Sectors:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Sector size"
-msgstr "Sektoreja:"
+msgstr "Sektorikoko"
 
 #: gui/filesystempropertieswidget.cpp:37
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Metadata node size"
-msgstr ""
+msgstr "Metatietosolmun koko"
 
 #: gui/filesystempropertieswidget.cpp:38
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Check partition"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Checksum algorithm"
-msgstr "Tarkista osio"
+msgstr "Tarkistussumma-algoritmi"
 
 #: gui/filesystempropertieswidget.cpp:39
 #, kde-kuit-format
 msgctxt "@label"
 msgid "MFT record size"
-msgstr ""
+msgstr "MFT-tietueen koko"
 
 #: gui/filesystempropertieswidget.cpp:40
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Cylinder size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Inode size"
-msgstr "Sylinterikoko:"
+msgstr "inode-koko"
 
 #: gui/filesystempropertieswidget.cpp:41
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Inode count"
-msgstr ""
+msgstr "inode-määrä"
 
 #: gui/filesystempropertieswidget.cpp:42
-#, fuzzy, kde-kuit-format
-#| msgid "Number of Sectors"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Number of FATs"
-msgstr "Sektorien määrä"
+msgstr "FATien määrä"
 
 #: gui/filesystempropertieswidget.cpp:43
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Enabled features"
-msgstr ""
+msgstr "Käytössä olevat ominaisuudet"
 
 #: gui/filesystempropertieswidget.cpp:44
-#, fuzzy, kde-kuit-format
-#| msgid "Program version:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Format version"
-msgstr "Ohjelmaversio:"
+msgstr "Muotoversio"
 
 #: gui/filesystempropertieswidget.cpp:45
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Journal size"
-msgstr ""
+msgstr "Journaalin koko"
 
 #: gui/filesystempropertieswidget.cpp:46
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space"
-msgstr ""
+msgstr "Varattu tila"
 
 #: gui/filesystempropertieswidget.cpp:47
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space, percent"
-msgstr ""
+msgstr "Varattu tila, prosentteina"
 
 #: gui/filesystempropertieswidget.cpp:48
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved block count"
-msgstr ""
+msgstr "Varattujen lohkojen määrä"
 
 #: gui/filesystempropertieswidget.cpp:49
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (UID)"
-msgstr ""
+msgstr "Varatun tilan omistaja (UID)"
 
 #: gui/filesystempropertieswidget.cpp:50
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (GID)"
-msgstr ""
+msgstr "Varatun tilan omistaja (GID)"
 
 #: gui/filesystempropertieswidget.cpp:78
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item partition table name"
-#| msgid "unknown"
+#, kde-kuit-format
 msgctxt "@item filesystem property whose value could not be read"
 msgid "Unknown"
-msgstr "tuntematon"
+msgstr "Tuntematon"
 
 #: gui/filesystempropertieswidget.cpp:86
-#, fuzzy, kde-kuit-format
-#| msgid "%1%2"
+#, kde-kuit-format
 msgctxt "@item value in percent"
 msgid "%1%"
-msgstr "%1%2"
+msgstr "%1 %"
 
 #: gui/filesystempropertieswidget.cpp:136
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain job status (error, warning, ...)"
-#| msgid "%1: %2"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "%1:"
-msgstr "%1: %2"
+msgstr "%1:"
 
 #: gui/filesystemsupportdialog.cpp:31
 #, kde-kuit-format
@@ -3137,9 +3124,7 @@ msgid "(none)"
 msgstr "(ei mitään)"
 
 #: gui/partpropsdialog.cpp:160
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "(unknown)"
+#, kde-kuit-format
 msgctxt "@item cluster size"
 msgid "(unknown)"
 msgstr "(tuntematon)"
@@ -3277,11 +3262,10 @@ msgstr "Vapaana:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextClusterSize)
 #: gui/partpropswidgetbase.ui:177
-#, fuzzy, kde-format
-#| msgid "Cylinder size:"
+#, kde-format
 msgctxt "@label"
 msgid "Cluster size:"
-msgstr "Sylinterikoko:"
+msgstr "Klusterikoko:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:240
@@ -3342,11 +3326,10 @@ msgstr "Luo olemassa oleva tiedostojärjestelmä uudelleen"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
 #: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
-#, fuzzy, kde-format
-#| msgid "Cylinder size:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Cluster size:"
-msgstr "Sylinterikoko:"
+msgstr "Klusterikoko:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
 #: gui/partpropswidgetbase.ui:406
@@ -4080,13 +4063,13 @@ msgstr "Sarakkeet"
 #, kde-kuit-format
 msgctxt "@item:inlistbox cluster size"
 msgid "Automatic"
-msgstr ""
+msgstr "Automaattinen"
 
 #: util/guihelpers.cpp:150
 #, kde-kuit-format
 msgctxt "@item:inlistbox a cluster size that is no longer valid"
 msgid "%1 (not valid for this size)"
-msgstr ""
+msgstr "%1 (ei kelpaa tälle koolle)"
 
 #~ msgctxt "@info"
 #~ msgid "Do you really want to cancel?"
