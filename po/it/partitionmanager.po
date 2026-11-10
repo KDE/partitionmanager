@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 03:01+0000\n"
-"PO-Revision-Date: 2026-10-21 15:50+0200\n"
+"PO-Revision-Date: 2026-10-31 09:20+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.10\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2054,24 +2054,21 @@ msgstr "Cambia la proprietà del file system montato nell'utente attuale."
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Trim"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Assumi la proprietà del file system"
+msgstr "Scarta i blocchi inutilizzati sul file system"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
-msgstr "Cambia la proprietà del file system montato nell'utente attuale."
+msgstr ""
+"Indica all'unità quali blocchi del file system montato non sono più in uso."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2782,19 +2779,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>Vuoi scartare i blocchi inutilizzati su <filename>%1</filename>?</"
+"para><para>I file esistenti non saranno modificati. Il recupero di dati "
+"precedentemente eliminati potrebbe diventare impossibile.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "File system"
+msgstr "Trim del file system"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "Trim"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
@@ -3601,9 +3600,7 @@ msgid "Enable LUKS2"
 msgstr "Abilita LUKS2"
 
 #: gui/smartdialog.cpp:59
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item filesystem name"
-#| msgid "unknown"
+#, kde-kuit-format
 msgctxt "@label SMART value not reported by the device"
 msgid "unknown"
 msgstr "sconosciuto"
