@@ -1,0 +1,48 @@
+<chapter id="introduction">
+	<title
+>مقدمة</title>
+	<para
+>مدير الأقسام هو برنامج مساعد لمساعدتك في إدارة <glossterm linkend="glossary-device"
+>أجهزة القرص</glossterm
+> و<glossterm linkend="glossary-partition"
+>الأقسام</glossterm
+> و<glossterm linkend="glossary-filesystem"
+>أنظمة الملفات</glossterm
+> على حاسوبك. </para>
+	<para
+>يتيح لك إنشاء <link linkend="howto-installos"
+>أقسام جديدة</link
+> بسهولة، وإنشاء أنظمة ملفات على أقسام جديدة أو موجودة، و<link linkend="howto-copypartition"
+>نسخ</link
+> الأقسام أو نقلها أو حذفها، وكذلك <link linkend="howto-resizepartition"
+>تعديل حجم القسم</link
+> دون فقدان البيانات الموجودة عليه. </para>
+
+	<para
+>لإنجاز مهامه بكفاءة، يستخدم مدير الأقسام أدوات خارجية لدعم قائمة طويلة من أنظمة الملفات. من المحتمل أن تكون الأدوات المطلوبة لأنظمة الملفات على حاسوبك مثبتة مسبقًا. </para>
+
+	<warning>
+		<title
+>احتفظ دائمًا بنسخة احتياطية من بياناتك!</title>
+		<para
+>صُمم مدير الأقسام وكُتب بدقة عالية مع التركيز على سلامة البيانات. ومع ذلك، هناك دائمًا بعض المخاطر عند تعديل جدول أقسام جهاز أو أقسامه: قد لا يزال هناك خطأ في مدير الأقسام، أو انقطاع غير متوقع للتيار الكهربائي، أو مشكلة في عتاد الحاسوب. </para>
+		<para
+>لهذه الأسباب، يجب عليك <emphasis
+>دائمًا الاحتفاظ بنسخة احتياطية من بياناتك المهمة</emphasis
+> قبل إجراء أي تعديلات باستخدام أداة مثل مدير الأقسام. </para>
+		<para
+>مؤلفو البرنامج لا يتحملون أي مسؤولية على الإطلاق إذا فقدت أي بيانات أثناء استخدام مدير الأقسام. </para>
+	</warning>
+
+	<para
+>يستخدم مدير الأقسام <glossterm linkend="glossary-operation"
+>العمليات</glossterm
+> و<glossterm linkend="glossary-job"
+>المهام</glossterm
+> و<glossterm linkend="glossary-command"
+>الأوامر</glossterm
+> لتقسيم العمل الذي يؤديه منطقيًا. راجع <link linkend="glossary"
+>المسرد</link
+> للتفاصيل حول هذا. </para>
+
+</chapter>

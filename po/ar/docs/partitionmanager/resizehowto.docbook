@@ -1,0 +1,238 @@
+<sect1 id="howto-resizepartition">
+	<title
+>كيفية تغيير حجم قسم</title>
+
+	<para
+>يشرح هذا الدليل تغيير حجم <glossterm linkend="glossary-partition"
+>قسم</glossterm
+> أصبح ممتلئًا جدًا. انظر إلى لقطة الشاشة التالية للوضع الأولي قبل تغيير الحجم: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>النافذة الرئيسة قبل تغيير حجم الأقسام</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>على <glossterm linkend="glossary-device"
+>جهاز</glossterm
+> <quote
+>/dev/sdb</quote
+>, القسم <quote
+>sdb2</quote
+> لم يتبق منه سوى مساحة حرة قليلة بينما القسم الآخر <quote
+>sdb1</quote
+> بعيد عن الامتلاء. لهذا السبب يبدو من المستحسن جعل القسم الأول أصغر قليلًا وتوسيع <quote
+>sdb2</quote
+> ليتوفر له مساحة حرة أكبر. </para>
+
+	<note>
+		<title
+>ملاحظة: لا يمكنك تعديل الأقسام الموصولة.</title>
+		<para
+>في لقطة الشاشة أعلاه، كلا القسمين غير موصولين حاليًا. إذا كان أحدهما أو كلاهما موصولين، فسيتعين عليك فصلهما أولًا باستخدام <xref linkend="menu-partition-mount"/>.</para>
+	</note>
+
+	<para
+>الخطوة الأولى هي توفير مساحة أكبر للقسم لينمو، لذا ابدأ بتقليص <quote
+>sdb1</quote
+>. انقر على القسم واختر <xref linkend="menu-partition-resize"/>. يظهر الحوار التالي: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>حوار تغيير الحجم قبل تغيير حجم /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>يتيح لك الحوار تغيير حجم القسم بعدة طرق. يمكنك إما سحب المقبض الأيمن إلى اليسار حتى يصل القسم إلى الحجم المطلوب أو ببساطة إدخال الحجم في حقل النص <guilabel
+>الحجم</guilabel
+>. احتمال آخر هو ضبط الحجم بالنقر على الأسهم الصغيرة بجانب حقل النص، لكن ذلك ممل بعض الشيء للتغييرات الكبيرة. </para>
+
+	<para
+>أيًا كانت الطريقة التي تفضلها لتعيين الحجم الجديد، يجب أن يبدو الحوار الآن هكذا: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>حوار تغيير الحجم بعد تغيير حجم /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>بعد النقر على <guibutton
+>موافق</guibutton
+>، تُضاف عملية جديدة إلى قائمة العمليات المعلقة ويُحدّث العرض الرسومي وعرض الشجرة للجهاز ليعكس الوضع الجديد: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>النافذة الرئيسة بعد تغيير حجم /dev/sdb1</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<note>
+		<title
+>ملاحظة: تُعاين العمليات أولًا قبل تطبيقها.</title>
+		<para
+>على الرغم من أن النافذة الرئيسة تعكس حالة الجهاز كما ستكون بعد تطبيق العملية الجديدة، إلا أن العملية لم تُطبق في الواقع بعد: بينما العمليات معلقة، لا يزال بإمكانك التراجع عنها (واحدة تلو الأخرى باستخدام <xref linkend="menu-edit-undo"/> أو <xref linkend="menu-edit-clear"/> للتراجع عن جميعها) أو إنهاء &partman;، ولن يُعدّل أي شيء على الإطلاق.</para>
+	</note>
+	
+	<para
+>الآن بعد وجود بعض المساحة الحرة بين القسمين، يمكنك نقل وتوسيع القسم <quote
+>sdb2</quote
+>. أولًا، انقر على <quote
+>sdb2</quote
+> واختر <xref linkend="menu-partition-resize"/> مرة أخرى. يظهر حوار تغيير الحجم مرة أخرى، هذه المرة للقسم الثاني. اسحب مقبضه الأيسر إلى أقصى اليسار ليبدو الحوار هكذا: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>حوار تغيير الحجم بعد تغيير حجم /dev/sdb2</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>كن حريصًا على التأكد من أن حقل النص <guilabel
+>المساحة الحرة قبل</guilabel
+> يُظهر بالفعل <quote
+>0 MiB</quote
+> وإلا ستبقى مساحة حرة صغيرة بين القسمين ستُهدر بعد ذلك. </para>
+
+	<para
+>الآن انقر على <guibutton
+>موافق</guibutton
+> مرة أخرى. في النافذة الرئيسة، تبدو الأمور الآن هكذا: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>النافذة الرئيسة بعد تغيير حجم /dev/sdb2</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>يبدو هذا بالفعل كما أردت، لذا اختر <xref linkend="menu-edit-apply"/>. سيظهر مربع حوار ويسألك إذا كنت متأكدًا من تطبيق العمليات المعلقة. أكّد مربع الحوار هذا وسيبدأ &partman; في تنفيذ العمليات: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>&partman; يطبق العمليات</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>أثناء تنفيذ العمليات، يمكنك النقر على علامة الزائد بجانب كل عملية في القائمة لمعرفة المهام التي تتكون منها ورؤية المهمة التي تُشغّل حاليًا. </para>
+
+	<para
+>تغيير حجم قسم بالطريقة التي غيرت بها حجم <quote
+>/dev/sdb2</quote
+> أعلاه يعني دائمًا أنه يجب نقله إلى اليسار أولًا قبل أن يمكن توسيعه لأن الأقسام لا يمكن أبدًا توسيعها إلى اليسار مباشرة. لسوء الحظ، نقل مثل هذا القسم الكبير سيستغرق بعض الوقت. ليس من غير المألوف أن تستغرق عملية كهذه عدة دقائق أو حتى أكثر. </para>
+
+	<para
+>أخيرًا، ستُكمل جميع العمليات بنجاح: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_8.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>حوار التقدم بعد تطبيق العمليات بنجاح</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>بالنقر على <guibutton
+>موافق</guibutton
+> يمكنك الآن إغلاق حوار التقدم والعودة إلى النافذة الرئيسة. سيعيد &partman; مسح أجهزتك عند هذه النقطة لذا قد يستغرق ذلك بضع ثوانٍ. </para>
+
+	<para
+>إذا كنت مهتمًا ببعض التفاصيل الإضافية حول العمليات التي شُغّلت للتو، انقر على <guibutton
+>تفاصيل</guibutton
+>. سترى التقرير المفصل الذي يُنشأ دائمًا (ويُحدّث أثناء التنفيذ) بينما ينفذ &partman; العمليات: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="resize_howto_9.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>تفاصيل حوار التقدم</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>هذا التقرير مهم بشكل خاص إذا حدث خطأ أثناء تنفيذ العمليات. يُظهر التقرير كل عملية وكل مهمة وكل أمر خارجي يُشغّل، وبالتالي فهو مفيد جدًا عند محاولة تتبع المشكلات. </para>
+
+	<para
+>يمكنك حفظ التقرير كـ <acronym
+>HTML</acronym
+> أو عرضه في متصفح ويب خارجي. </para>
+
+	<tip>
+		<para
+>احفظ دائمًا التقرير المفصل بصيغة <acronym
+>HTML</acronym
+> عند فشل تنفيذ العمليات مع أخطاء أو تحذيرات للرجوع إليها لاحقًا. قد ترغب أيضًا في تضمينه في تقرير عطل تقدمه إلى نظام تتبع الأعطال في &kde; على <ulink url="https://bugs.kde.org"
+>bugs.kde.org</ulink
+>. </para>
+	</tip>
+	
+	<para
+>لإخفاء التفاصيل مجددًا، انقر على <guibutton
+>تفاصيل</guibutton
+> ولإغلاق حوار التقدم نهائيًا، انقر على <guibutton
+>موافق</guibutton
+>. </para>
+</sect1>
