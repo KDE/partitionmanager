@@ -1,0 +1,663 @@
+<chapter id="reference">
+	<title
+>مرجع الأوامر</title>
+
+	<sect1 id="reference-overview">
+		<title
+>نظرة عامة</title>
+		<para
+>يشرح هذا الفصل بالتفصيل جميع الأوامر المتاحة في مدير الأقسام وهو مرجع يرافق المعلومات الواردة في <xref linkend="usermanual"/>.</para>
+
+	<sect2 id="menu-file">
+		<title
+>قائمة ملف</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-file-quit">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>ملف</guimenu
+> <guimenuitem
+>إنهاء</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يُنهي مدير الأقسام</action
+> دون تطبيق أي عمليات معلقة. لكن التطبيق سيطلب منك تأكيد اختيارك للإنهاء إذا كانت هناك عمليات معلقة. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-edit">
+		<title
+>قائمة حرر</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-edit-undo">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>تحرير</guimenu
+> <guimenuitem
+>تراجع</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يُتراجع عن آخر عملية</action
+> أُضيفت إلى رصة العمليات. </para>
+						<para
+>هذا الأمر مُفعّل فقط إذا لم تكن قائمة العمليات فارغة. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-clear">
+					<term>
+						<menuchoice
+><guimenu
+>تحرير</guimenu
+> <guimenuitem
+>مسح</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يمسح قائمة العمليات</action
+> دون تطبيق أي منها. </para>
+						<para
+>هذا الأمر مُفعّل فقط إذا لم تكن قائمة العمليات فارغة. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-edit-apply">
+					<term>
+						<menuchoice
+><guimenu
+>تحرير</guimenu
+> <guimenuitem
+>طبق</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يطبق قائمة العمليات</action
+>. سيطبق هذا الأمر جميع العمليات في القائمة بحيث تُكتب جميع التغييرات بشكل دائم على أقراصك. بعد تطبيق العمليات، تُمسح القائمة ولن تكون هناك طريقة للتراجع عن أي عملية. </para>
+						<para
+>هذا الأمر مُفعّل فقط إذا لم تكن قائمة العمليات فارغة. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-device">
+		<title
+>قائمة الجهاز</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-device-selectcurrentdevice">
+					<term>
+						<menuchoice
+><guimenu
+>جهاز</guimenu
+> <guimenuitem
+>اختر الجهاز الحالي</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>يسمح لك باختيار جهاز من قائمة فرعية تحتوي على جميع الأجهزة المتاحة في النظام. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-refresh">
+					<term>
+						<menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>جهاز</guimenu
+> <guimenuitem
+>أنعش الأجهزة</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يُنعش الأجهزة</action
+>: يُجبر هذا الأمر مدير الأقسام على مسح وقراءة الأجهزة في حاسوبك مرة أخرى. قد يكون هذا مفيدًا مثلًا إذا وصلت قرص USB خارجي بعد بدء تشغيل مدير الأقسام. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-createpartitiontable">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>جهاز</guimenu
+> <guimenuitem
+>جدول أقسام جديد</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يُنشئ جدول أقسام جديد</action
+>: يُنشئ هذا الأمر جدول أقسام GPT أو MSDOS جديد وفارغ على الجهاز المحدد حاليًا. سيحذف هذا جميع الأقسام على الجهاز وجميع البيانات عليها، لذا يجب أن تكون حذرًا مع هذا الأمر. </para>
+						<para
+>هذا الأمر مُفعّل فقط إذا كان جهاز محددًا ولا يوجد قسم على هذا الجهاز موصول حاليًا. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-exportpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>جهاز</guimenu
+> <guimenuitem
+>صدّر جدول الأقسام</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>يسمح لك بتصدير قائمة بجميع الأقسام على الجهاز المحدد إلى ملف. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-importpartitiontable">
+					<term>
+						<menuchoice
+><guimenu
+>جهاز</guimenu
+> <guimenuitem
+>استورد جدول الأقسام</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>يسمح لك باستيراد جدول أقسام من ملف صُدّر سابقًا.</para>
+						<para
+>سيحذف هذا جميع الأقسام على الجهاز وجميع البيانات عليها، لذا يجب أن تكون حذرًا مع هذا الأمر.</para>
+						<para
+>هذا الأمر مُفعّل فقط إذا كان جهاز محددًا ولا يوجد قسم على هذا الجهاز موصول حاليًا. الاستيراد إلى أجهزة منطقية مثل مجموعات وحدات تخزين LVM غير مدعوم حاليًا.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-smartstatus">
+					<term>
+						<menuchoice
+><guimenu
+>جهاز</guimenu
+> <guimenuitem
+>حالة SMART</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>يُظهر تقرير SMART. SMART هو نظام مراقبة مضمّن في الأقراص الصلبة ومحركات الأقراص ذات الحالة الصلبة يكتشف ويُبلغ عن مؤشرات مختلفة لموثوقية القرص، بهدف تمكين توقع الأعطال في الأجهزة.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-device-properties">
+					<term>
+						<menuchoice
+><guimenu
+>جهاز</guimenu
+> <guimenuitem
+>خصائص</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>يُظهر معلومات عن الأجهزة المحددة حاليًا. في هذا الحوار يمكنك إيجاد السعة، أحجام القطاعات، نوع جدول الأقسام بالإضافة إلى العدد المستخدم والأقصى للأقسام الأولية.</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-partition">
+		<title
+>قائمة القسم</title>
+
+		<para>
+			<variablelist>
+				<varlistentry id="menu-partition-new">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>قسم</guimenu
+> <guimenuitem
+>جديد</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>ينشئ قسمًا جديدًا</action
+>: يفتح حوار إنشاء قسم جديد حيث ستتمكن من ضبط النوع والحجم والموضع ونظام الملفات للقسم المراد إنشاؤه. </para>
+						<para
+>يرجى ملاحظة أن جدول الأقسام على جهاز قد يفرض قيودًا على عدد الأقسام التي يمكن إنشاؤها. جداول أقسام MS-DOS، على سبيل المثال، تسمح فقط بأربعة أقسام أساسية. </para>
+						<para
+>يُمكّن هذا الأمر فقط إذا تم تحديد منطقة غير مخصصة على جهاز. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-resize">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+></shortcut
+> <guimenu
+>قسم</guimenu
+> <guimenuitem
+>تغيير الحجم/نقل</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يغير حجم قسم أو ينقله</action
+>: يفتح حوار تغيير حجم قسم موجود أو نقله. اعتمادًا على نظام ملفات القسم والأدوات الخارجية المثبتة على حاسوبك، قد لا تكون جميع الإجراءات الثلاثة الممكنة المتعلقة بتغيير الحجم - أي نقل القسم، أو جعله أصغر (<quote
+>تصغيره</quote
+>) أو جعله أكبر (<quote
+>تكبيره</quote
+>) - متاحة في هذا الحوار. انظر <xref linkend="menu-tools-filesystemsupport"/>. </para>
+						<para
+>يُمكّن هذا الأمر فقط إذا تم تحديد قسم غير موصول حاليًا ويمكن تصغير نظام ملفاته أو تكبيره أو نقله. بالنسبة للقسم الموسع، يُمكّن فقط إذا لم يكن أي من الأقسام المنطقية داخل القسم الموسع موصولًا. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-delete">
+					<term>
+						<menuchoice
+><shortcut
+>&Del;</shortcut
+> <guimenu
+>قسم</guimenu
+> <guimenuitem
+>حذف</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يحذف قسمًا</action
+>: هذا الأمر يحذف القسم المحدد حاليًا. </para>
+						<para
+>يُمكّن هذا الأمر فقط إذا تم تحديد قسم غير موصول حاليًا. بالنسبة للقسم الموسع، يُمكّن فقط إذا لم يحتوي على أي أقسام منطقية. </para>
+						<warning>
+							<title
+>تحذير: احتمال فقدان البيانات</title>
+							<para
+>حذف قسم يعني أن جميع البيانات الموجودة على القسم تُدمر.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-shred">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Del;</keycombo
+></shortcut
+> <guimenu
+>قسم</guimenu
+> <guimenuitem
+>تمزيق</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يمزق قسمًا</action
+>: هذا الأمر يمزق القسم المحدد حاليًا. </para>
+						<para
+>يُمكّن هذا الأمر فقط إذا تم تحديد قسم غير موصول حاليًا. بالنسبة للقسم الموسع، يُمكّن فقط إذا لم يحتوي على أي أقسام منطقية. </para>
+						<warning>
+							<title
+>تحذير: فقدان البيانات</title>
+							<para
+>تمزيق قسم يعني أن جميع البيانات الموجودة على القسم تُدمر.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-copy">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+></shortcut
+> <guimenu
+>قسم</guimenu
+> <guimenuitem
+>نسخ</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>ينسخ قسمًا</action
+>: هذا الأمر ينسخ القسم المحدد حاليًا إلى حافظة مدير الأقسام. </para>
+						<para
+>يُمكّن هذا الأمر فقط إذا تم تحديد قسم غير موصول حاليًا ويمكن نسخ نظام ملفاته. لا يمكن نسخ الأقسام الموسعة. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-paste">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>V</keycap
+></keycombo
+></shortcut
+> <guimenu
+>قسم</guimenu
+> <guimenuitem
+>لصق</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يلصق قسمًا</action
+>: هذا الأمر يلصق القسم من حافظة مدير الأقسام إلى القسم المحدد حاليًا أو المنطقة غير المخصصة. </para>
+						<para
+>عند اللصق في منطقة غير مخصصة، سيفتح حوار يسمح لك بنقل النسخة المدخلة أو تكبيرها. عند الكتابة فوق قسم موجود، لن يُعرض هذا الحوار. </para>
+						<para
+>يُمكّن هذا الأمر فقط إذا كان قسم موجود حاليًا في الحافظة وتم تحديد هدف صالح (إما قسم أو منطقة غير مخصصة). يجب أن يكون الهدف كبيرًا بما يكفي لاستيعاب المصدر ولا يمكن أن يكون موصولًا. لا يمكنك نسخ قسم على نفسه. </para>
+						<warning>
+							<title
+>تحذير: احتمال فقدان البيانات</title>
+							<para
+>لصق قسم على قسم موجود يعني أن جميع البيانات الموجودة على القسم الموجود تُدمر وتُستبدل بالبيانات من القسم الملصوق.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-edit-mount">
+					<term>
+						<menuchoice
+><guimenu
+>قسم</guimenu
+> <guimenuitem
+>تحرير نقطة الوصل</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يفتح حوارًا</action
+> لتحرير نقطة الوصل وخيارات الوصل. </para>
+						<para
+>يُمكّن هذا الأمر فقط إذا كان قسم غير موصول. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-mount">
+					<term>
+						<menuchoice
+><guimenu
+>قسم</guimenu
+> <guimenuitem
+>وصل/فصل</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يصل أو يفصل قسمًا</action
+>: هذا الأمر يصل أو يفصل القسم المحدد، اعتمادًا على حالته الحالية. </para>
+						<para
+>يُمكّن هذا الأمر فقط إذا تم تحديد قسم يمكن وصله أو فصله. إذا كان نظام التشغيل لا يعرف نقطة وصل للقسم، فلا يمكنك وصله من مدير الأقسام. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-check">
+					<term>
+						<menuchoice
+><guimenu
+>قسم</guimenu
+> <guimenuitem
+>فحص</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يتحقق من قسم</action
+>: يتحقق هذا الأمر من القسم المحدد ونظام ملفاته بحثًا عن الأخطاء ويحاول تصحيح أي مشكلات يجدها. أثناء هذه العملية، سيُعاد تحجيم نظام الملفات على القسم لملء القسم بالكامل. </para>
+						<para
+>يُفعّل هذا الأمر فقط إذا كان القسم المحدد قابلًا للفحص وغير موصول حاليًا. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-backup">
+					<term>
+						<menuchoice
+><guimenu
+>قسم</guimenu
+> <guimenuitem
+>نسخ احتياطي</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>ينسخ قسمًا احتياطيًا</action
+>: ينسخ هذا الأمر نظام الملفات على القسم المحدد إلى ملف. سيُطلب منك مكان تخزين ملف الصورة بعد تفعيل هذا الأمر. </para>
+						<para
+>ملف الصورة المُنشأ هو نسخة قطاع-بقطاع من نظام الملفات على القسم. إنه غير مضغوط ولا يحتوي على أي معلومات وصفية إضافية أو رأس مضاف إليه، وبالتالي يمكن وصله مباشرة باستخدام جهاز حلقة خارج مدير الأقسام إذا كان نظام التشغيل يدعم ذلك. </para>
+						<para
+>يُفعّل هذا الأمر فقط إذا كان القسم محددًا ويمكن نسخ نظام ملفاته احتياطيًا. يجب أيضًا ألا يكون القسم موصولًا. </para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-restore">
+					<term>
+						<menuchoice
+><guimenu
+>قسم</guimenu
+> <guimenuitem
+>استعادة</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يستعيد قسمًا</action
+>: يستعيد هذا الأمر نظام ملفات من ملف صورة إلى قسم. سيُطلب منك اسم ملف الصورة لاستعادته بعد تفعيل هذا الأمر. يجب أن يكون الهدف المراد الاستعادة إليه كبيرًا بما يكفي لملف الصورة. </para>
+						<para
+>يُفعّل الأمر فقط إذا تم تحديد منطقة غير مخصصة أو قسم غير موصول حاليًا. </para>
+						<warning>
+							<title
+>تحذير: احتمال فقدان البيانات</title>
+							<para
+>استعادة قسم على قسم موجود يعني أن جميع البيانات الموجودة على القسم الحالي تُدمر وتُستبدل بالبيانات من ملف الصورة المستعادة.</para>
+						</warning>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-partition-properties">
+					<term>
+						<menuchoice
+><guimenu
+>قسم</guimenu
+> <guimenuitem
+>خصائص</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يُظهر خصائص قسم</action
+>: يُظهر هذا الأمر حوارًا بمعلومات حول القسم المحدد حاليًا أو المساحة غير المخصصة. </para>
+						<para
+>ما يُعرض وما يمكن تعديله في هذا الحوار يعتمد على نوع القسم، ونوع نظام الملفات على القسم، وما إذا كان القسم موصولًا حاليًا أم لا. </para>
+						<para
+>ليست كل أنظمة الملفات، على سبيل المثال، تدعم تعيين لصيقة. كما أنه ليس من الممكن عمومًا تعديل أي خصائص إذا كان القسم موصولًا. </para>
+						<para
+>هذه قائمة بجميع خصائص القسم ونظام الملفات التي يمكن تعديلها عمومًا في هذا الحوار: <itemizedlist>
+								<listitem>
+									<para
+>تعيين أو تعديل لصيقة نظام ملفات</para>
+								</listitem>
+								<listitem>
+									<para
+>تغيير نظام ملفات القسم.</para>
+
+									<warning>
+										<title
+>تحذير: احتمال فقدان البيانات</title>
+										<para
+>تغيير نظام الملفات لقسم يعني دائمًا أن جميع البيانات الموجودة على القسم تُدمر.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>إعادة إنشاء نظام الملفات على القسم</para>
+
+									<warning>
+										<title
+>تحذير: احتمال فقدان البيانات</title>
+										
+										<para
+>إعادة إنشاء نظام ملفات على قسم يعني دائمًا أن جميع البيانات الموجودة على القسم تُدمر. يجب استخدام إعادة إنشاء نظام الملفات فقط كملاذ أخير إذا تعذر إصلاح نظام الملفات على القسم بعد الآن.</para>
+									</warning>
+								</listitem>
+								<listitem>
+									<para
+>تغيير أعلام القسم</para>
+									<para
+>اعتمادًا على نوع جدول الأقسام المستخدم، ستتوفر عدة أعلام لكل قسم في جدول الأقسام. في معظم الحالات، ليس من الضروري تعديل الأعلام ويجب اعتبارها ميزة متقدمة.</para>
+								</listitem>
+							</itemizedlist>
+						</para>
+						<para
+>يُفعّل الأمر فقط إذا تم تحديد منطقة غير مخصصة أو قسم. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-tools">
+		<title
+>قائمة أدوات</title>
+		<para>
+			<variablelist>
+				<varlistentry id="menu-tools-volumegroup">
+					<term>
+						<menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>L</keycap
+></keycombo
+></shortcut
+> <guimenu
+>أدوات</guimenu
+> <guimenuitem
+>مجموعة وحدات تخزين جديدة</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+>إنشاء جهاز منطقي جديد مثل <link linkend="glossary-lvm"
+>LVM</link
+> مجموعة وحدات تخزين.</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry id="menu-tools-filesystemsupport">
+					<term>
+						<menuchoice
+><guimenu
+>أدوات</guimenu
+> <guimenuitem
+>دعم نظام الملفات</guimenuitem
+> </menuchoice>
+					</term>
+					<listitem>
+						<para
+><action
+>يُظهر حوار دعم نظام الملفات.</action
+> يُظهر هذا الحوار بالتفصيل العمليات التي يمكن تنفيذها لأي من أنظمة الملفات المدعومة. </para>
+						<para
+>هذا مثال لكيفية ظهور الحوار مع تثبيت معظم الأدوات الخارجية: </para>
+						<para>
+							<screenshot>
+								<mediaobject>
+									<imageobject
+><imagedata fileref="filesystemsupport.png" format="PNG"/></imageobject>
+									<textobject
+><phrase
+>حوار دعم نظام الملفات مع تثبيت معظم الأدوات الخارجية</phrase
+></textobject>
+								</mediaobject>
+							</screenshot>
+						</para>
+						<para
+>علامات الاختيار الزرقاء تعني <quote
+>مدعوم</quote
+>، والصلبان الحمراء تعني <quote
+>غير مدعوم</quote
+>. بعض التركيبات غير مدعومة أبدًا، على سبيل المثال فحص نظام ملفات linuxswap، لأنها مستحيلة بطبيعتها. لا يمكن دعم أخرى لأن الأدوات الخارجية تفتقر إلى الوظيفة. </para>
+						<para
+>إذا ثبت أدوات جديدة أثناء تشغيل مدير الأقسام، فانقر على <guibutton
+>إعادة مسح الدعم</guibutton
+> لفرض إعادة التحقق من أدوات دعم نظام الملفات المثبتة. </para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</sect2>
+
+	<sect2 id="menu-settings-help">
+		<title
+>قائمة الإعدادات والمساعدة</title>
+
+		<para
+>يحتوي مدير الأقسام على قائمتي &kde; الشائعتين <ulink url="help:/fundamentals/menus.html#menus-settings"
+>الإعدادات</ulink
+> و<ulink url="help:/fundamentals/menus.html#menus-help"
+>المساعدة</ulink
+> الموصوفتين في أساسيات &kde; مع قائمة فرعية إضافية <guisubmenu
+>اللوحات المعروضة</guisubmenu
+>، حيث يمكنك تشغيل وإيقاف عرض <guimenuitem
+>الأجهزة</guimenuitem
+> و<guimenuitem
+>العمليات المعلقة</guimenuitem
+> و<guimenuitem
+>المعلومات</guimenuitem
+> واللوحات <guimenuitem
+>مخرجات السجل</guimenuitem
+>. </para>
+	</sect2>
+	</sect1>
+
+</chapter>

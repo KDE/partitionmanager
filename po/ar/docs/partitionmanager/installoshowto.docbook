@@ -1,0 +1,166 @@
+<sect1 id="howto-installos">
+	<title
+>دليل إرشادي: تثبيت نظام تشغيل جديد</title>
+
+	<para
+>يصف هذا الدليل تحضير قرص صلب جديد لتثبيت نظام تشغيل: افترض أنك اشتريت قرصًا صلبًا جديدًا وتعتزم استخدامه كبديل للقديم الذي يحمل حاليًا نظام تشغيلك وأقسام بياناتك. كما ترغب في اغتنام هذه الفرصة لتثبيت نظام تشغيل جديد. ستكون هناك عدة خطوات يجب اتخاذها للانتقال من النظام والقرص القديمين إلى الجديدين. </para>
+
+	<para
+>فيما يلي، <quote
+>/dev/sdb</quote
+> هو القرص الصلب القديم و<quote
+>/dev/sdc</quote
+> هو الجديد. توضح لقطة الشاشة هذه الوضع على جهاز المصدر: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_1.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>النافذة الرئيسة مع جهاز المصدر</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>سيبدو الجهاز الجديد هكذا. لاحظ أنه لا يحتوي بعد على جدول أقسام صالح، لذا فإن الخطوة الأولى هي إنشاء واحد باختيار <xref linkend="menu-device-createpartitiontable"/>: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_2.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>النافذة الرئيسة مع جهاز الوجهة</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>بعد تأكيد حوار التحذير، يمكنك البدء في إنشاء أقسام على الجهاز الجديد بالنقر على القسم الممتد واختيار <xref linkend="menu-partition-new"/>. ابدأ بقسم ممتد في نهاية الجهاز ليحتوي لاحقًا على قسمي المنزل والمبادلة: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_3.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>إنشاء قسم ممتد</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>انقر <guibutton
+>موافق</guibutton
+> وسيُضاف العملية لإنشاء هذا القسم الممتد إلى القائمة. </para>
+
+	<para
+>الآن أنشئ قسمًا أساسيًا على باقي الجهاز حيث سيُثبّت نظام التشغيل الجديد. اجعله بحجم المساحة غير المخصصة أمام القسم الممتد: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_4.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>إنشاء قسم أساسي</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>انقر <guibutton
+>موافق</guibutton
+> في الحوار لقبول اختيارك. ثم تُضاف عملية إنشاء القسم الأساسي الجديد إلى قائمة العمليات. </para>
+	
+	<para
+>حان الوقت الآن لنسخ قسم المنزل من الجهاز القديم إلى القسم الممتد على الجهاز الجديد. اختر الجهاز القديم في لوحة قائمة الأجهزة، وانقر على القسم <quote
+>sdb5</quote
+> واختر <xref linkend="menu-partition-copy"/>. </para>
+
+	<para
+>ثم ارجع إلى الجهاز الجديد وانقر على القسم الممتد. اختر <xref linkend="menu-partition-paste"/>. سيظهر الحوار التالي: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_5.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>لصق قسم المنزل</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+
+	<para
+>يبدو هذا جيدًا في الغالب ولكنك تعلم مسبقًا أنك لن تحتاج إلى تلك المساحة الحرة الكبيرة بعد قسم المنزل لأنك ستنشئ لاحقًا قسم مبادلة هناك. </para>
+
+	<para
+>لذا أمسك بمقبض تغيير الحجم الأيمن في أداة تغيير الحجم بالحوار وحركه إلى اليمين حتى تصبح المساحة الحرة بعد القسم الملصوق بحجم مناسب أكثر لقسم مبادلة: </para>
+
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_6.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>تغيير حجم قسم ملصوق</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>يبدو هذا جيدًا. انقر <guibutton
+>موافق</guibutton
+> للقبول وإغلاق الحوار. تُضاف عملية جديدة للصق القسم المنسوخ إلى القسم الممتد على <quote
+>sdc</quote
+> إلى قائمة العمليات. لاحظ أن هذه العملية ستضبط الحجم الجديد أيضًا. </para>
+
+	<para
+>أخيرًا، سترغب في إنشاء قسم مبادلة جديد في نهاية القسم الممتد على <quote
+>sdc</quote
+>. ليست هناك حاجة لنسخ قسم المبادلة الموجود من <quote
+>sdb</quote
+> لأن المبادلة لا تحتوي على أي معلومات دائمة تستحق الاحتفاظ. ببساطة أنشئ قسمًا جديدًا بنوع لينكس مبادلة يملأ كامل المساحة غير المخصصة بعد قسم المنزل الجديد. </para>
+
+	<para
+>النافذة الرئيسة مع جميع العمليات ومعاينة كيف سيبدو <quote
+>sdc</quote
+> بعد تطبيقها تبدو الآن هكذا: </para>
+	
+	<para>
+		<screenshot>
+			<mediaobject>
+				<imageobject
+><imagedata fileref="installos_howto_7.png" format="PNG"/></imageobject>
+				<textobject
+><phrase
+>النافذة الرئيسة بعد إعداد جميع العمليات</phrase
+></textobject>
+			</mediaobject>
+		</screenshot>
+	</para>
+	
+	<para
+>يبدو هذا رائعًا، لذا اختر <xref linkend="menu-edit-apply"/>، وأكد حوار التحذير وانتظر حتى تُنفّذ جميع العمليات. لتفاصيل حول تنفيذ العمليات، انظر <link linkend="howto-resizepartition"
+>الدليل حول تغيير حجم الأقسام</link
+>. </para>
+	
+	<para
+>جهاز القرص الصلب الجديد جاهز الآن لتثبيت نظام تشغيلك الجديد. </para>
+
+</sect1>

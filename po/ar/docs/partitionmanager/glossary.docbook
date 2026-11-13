@@ -1,0 +1,393 @@
+<glossary id="glossary">
+
+	<glossentry id="glossary-command">
+		<glossterm
+>الأمر</glossterm>
+		<glossdef>
+			<para
+>في &partman;، الأوامر هي ما تتكون منه <link linkend="glossary-job"
+>الوظائف</link
+>. هذه خطوات منخفضة المستوى للغاية، غالبًا ما تُنفذ بواسطة أداة خارجية، وتكون مرئية فقط في تقرير التقدم المفصل. </para>
+			<para
+>لا يضطر المستخدم عادةً إلى الاهتمام بالأوامر على الإطلاق. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-job"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylinder">
+		<glossterm
+>أسطوانة</glossterm>
+		<glossdef>
+			<para
+>وحدة تُستخدم لتقسيم <link linkend="glossary-device"
+>جهاز</link
+>. تتطلب بعض أنظمة التشغيل والعديد من أدوات الأقراص أن تبدأ <link linkend="glossary-partition"
+>الأقسام</link
+> وتنتهي على أسطوانة. لذلك يقوم &partman; آليًا بإطباق الأقسام على حدود الأسطوانات عند تغيير بدايتها أو نهايتها. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-cylindersize">
+		<glossterm
+>حجم الأسطوانة</glossterm>
+		<glossdef>
+			<para
+>عدد <link linkend="glossary-sector"
+>القطاعات</link
+> لكل <link linkend="glossary-cylinder"
+>أسطوانة</link
+> على <link linkend="glossary-device"
+>جهاز</link
+>. يُحسب كعدد <link linkend="glossary-head"
+>الرؤوس</link
+> مضروبًا في عدد <link linkend="glossary-sector"
+>القطاعات</link
+> لكل مسار. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-device">
+		<glossterm
+>جهاز</glossterm>
+		<glossdef>
+			<para
+>جهاز قرص مادي. تُقسم أجهزة الأقراص المادية إلى أقسام منطقية تُسمى <link linkend="glossary-partition"
+>أقسامًا</link
+> باستخدام <link linkend="glossary-partitiontable"
+>جداول الأقسام</link
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-disklabel">
+		<glossterm
+>لصيقة القرص</glossterm>
+		<glossdef>
+			<para
+>اسم آخر لـ <link linkend="glossary-partitiontable"
+>جدول الأقسام</link
+> نابع من عالم SUN/BSD. </para>
+			<para>
+				<note>
+					<para
+>من السهل الخلط بينهما، لكن لصيقة القرص لا علاقة لها بـ <link linkend="glossary-filesystemlabel"
+>لصيقة نظام الملفات</link
+>. </para>
+					<para
+>انظر <ulink url="http://en.wikipedia.org/wiki/BSD_disklabel"
+>هذا الإدخال في ويكيبيديا</ulink
+> للحصول على تفاصيل حول الاسم. </para>
+				</note>
+			</para>
+			<glossseealso otherterm="glossary-partitiontable"
+></glossseealso>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-extendedpartition">
+		<glossterm
+>قسم موسع</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>قسم</link
+> يحتوي على أقسام أخرى. يمكن للأقسام الموسعة أن تكون <link linkend="glossary-primarypartition"
+>أقسامًا أولية</link
+> فقط. يعتمد توفر الأقسام الموسعة على نوع <link linkend="glossary-partitiontable"
+>جدول الأقسام</link
+> المستخدم. تسمح جداول أقسام MS-DOS بقسم موسع واحد لكل <link linkend="glossary-device"
+>جهاز</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystem">
+		<glossterm
+>نظام ملفات</glossterm>
+		<glossdef>
+			<para
+>يُعرّف نظام الملفات كيفية تنظيم تخزين البيانات (الملفات مع بياناتها الوصفية، المجلدات مع بياناتها الوصفية، المساحة الحرة) داخل <link linkend="glossary-partition"
+>قسم</link
+>. هناك أنواع مختلفة من أنظمة الملفات، بعضها يأتي أصلًا من عالم يونكس/لينكس، وبعضها لا. أمثلة على أنظمة الملفات شائعة الاستخدام على يونكس/لينكس هي Btrfs و ext4 و XFS. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-filesystemlabel">
+		<glossterm
+>لصيقة نظام الملفات</glossterm>
+		<glossdef>
+			<para
+>عنوان لنظام الملفات. تدعم بعض أنظمة الملفات (من بينها Btrfs و ext2/3/4 و FAT16/32 و NTFS) تعيين لصيقة لنظام الملفات بحيث يمكن التعرف عليه في أدوات مثل &partman; أو تطبيقات أخرى. </para>
+			<para>
+				<note>
+					<para
+>من السهل الخلط بينهما، لكن لصيقة نظام الملفات لا علاقة لها بـ <link linkend="glossary-disklabel"
+>لصيقة القرص</link
+>.</para>
+				</note>
+			</para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-flag">
+		<glossterm
+>علم</glossterm>
+		<glosssee otherterm="glossary-partitionflag"/>
+	</glossentry>
+	
+	<glossentry>
+		<glossterm
+>GPT</glossterm>
+		<glossdef>
+			<para
+>تنسيق جدول أقسام حديث تدعمه معظم الحواسيب وأنظمة التشغيل الحديثة. يدعم أكثر من 4 <link linkend="glossary-primarypartition"
+>أقسام أولية</link
+> على عكس جدول أقسام MS-DOS الأقدم. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-head">
+		<glossterm
+>رأس</glossterm>
+		<glossdef>
+			<para
+>وحدة تُستخدم لتقسيم <link linkend="glossary-device"
+>جهاز</link
+>. </para
+><glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> <glossseealso otherterm="glossary-sector"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-job">
+		<glossterm
+>وظيفة</glossterm>
+		<glossdef>
+			<para
+>في &partman;، عدد من الوظائف هو ما تتكون منه <link linkend="glossary-operation"
+>العمليات</link
+>. لا تضطر عادةً إلى الاهتمام بالوظائف على الإطلاق؛ يصبح الأمر واضحًا فقط عند تطبيق قائمة العمليات المعلقة: سيعرض &partman; عندها حوار تقدم يتكون من جميع العمليات ووظائفها ويُظهر العملية والوظيفة الجاري تنفيذها حاليًا. </para
+><glossseealso otherterm="glossary-operation"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-label">
+		<glossterm
+>لصيقة</glossterm>
+		<glossdef>
+			<para
+>إما <link linkend="glossary-disklabel"
+>لصيقة قرص</link
+> أو <link linkend="glossary-filesystemlabel"
+>لصيقة نظام ملفات</link
+>. </para
+><glossseealso otherterm="glossary-disklabel"
+></glossseealso
+> <glossseealso otherterm="glossary-filesystemlabel"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-logicalpartition">
+		<glossterm
+>قسم منطقي</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>قسم</link
+> داخل <link linkend="glossary-extendedpartition"
+>قسم موسع</link
+>. </para
+><glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-luks">
+		<glossterm
+>LUKS</glossterm>
+		<glossdef>
+			<para
+>Linux Unified Key Setup هو صيغة التعمية المعيارية للينكس. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-lvm">
+		<glossterm
+>LVM</glossterm>
+		<glossdef>
+			<para
+>LVM هو نظام لإدارة الأقسام المنطقية أكثر مرونة من الأقسام العادية. يتكون من ثلاثة مكونات رئيسة:</para>
+			<simplelist>
+			<member
+>وحدات التخزين الفعلية LVM هي أقسام على القرص تُدار مساحتها بواسطة LVM.</member>
+			<member
+>مجموعة وحدات التخزين LVM هي مجموعة من وحدات التخزين الفعلية LVM يمكن تقسيمها إلى أقسام منطقية. قد تُستخدم لإنشاء أنظمة ملفات تمتد عبر أجهزة متعددة أو لتقسيم وحدة تخزين <link linkend="glossary-luks"
+>LUKS</link
+> معمّاة إلى أقسام أصغر.</member>
+			<member
+>وحدات التخزين المنطقية LVM تشبه الأقسام العادية باستثناء أنها تقع على مجموعة وحدات تخزين LVM. أيضًا، موقع الأقسام المنطقية LVM لا يهم ولا يجب أن تكون متجاورة فيزيائيًا. لذلك، لا يسمح &partman; بنقل وحدات التخزين المنطقية LVM ويعرض المساحة الحرة المتبقية في نهاية الجهاز.</member>
+			</simplelist>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-operation">
+		<glossterm
+>عملية</glossterm>
+		<glossdef>
+			<para
+>يقسم &partman; العمل الذي يؤديه إلى عمليات و<link linkend="glossary-job"
+>وظائف</link
+> و<link linkend="glossary-command"
+>أوامر</link
+>. </para>
+			<para
+>العمليات هي الأكثر وضوحًا بين الثلاثة. إذا اخترت إجراءً في الواجهة الرسومية، فسيؤدي ذلك غالبًا إلى إضافة عملية جديدة إلى قائمة العمليات المعلقة. الفكرة وراء ذلك هي: على الأرجح سترغب في إعداد عدد من الخطوات لتحويل الحالة الحالية لأجهزة القرص لديك إلى الحالة التي تريدها. قد تستغرق بعض هذه الخطوات وقتًا طويلًا للتنفيذ (مثل نسخ نظام ملفات كبير أو تغيير حجم نظام ملفات ممتلئ تقريبًا). لتوفير عناء الجلوس أمام حاسوبك لوقت طويل بانتظار انتهاء خطوة ثم بدء التالية، تتيح لك العمليات تحديد كيفية ظهور أجهزة الحاسوب بدقة بمجرد الانتهاء من كل شيء، ثم دع &partman; يطبق العمليات وعد عندما ينفذها جميعًا. </para>
+			<para
+>تُحفظ العمليات في قائمة العمليات المعلقة. طالما لم تُطبق عملية، يمكن <link linkend="menu-edit-undo"
+>التراجع عنها بسهولة</link
+> ولن يُعدّل شيء. </para
+><glossseealso otherterm="glossary-job"
+></glossseealso
+> <glossseealso otherterm="glossary-command"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partition">
+		<glossterm
+>قسم</glossterm>
+		<glossdef>
+			<para
+>قسم من <link linkend="glossary-device"
+>جهاز قرص صلب</link
+> يمكنه حمل <link linkend="glossary-filesystem"
+>نظام ملفات</link
+> أو أقسام أخرى. بدون قسم صالح واحد على الأقل، لا يمكن استخدام القرص. </para
+><glossseealso otherterm="glossary-device"
+></glossseealso
+> <glossseealso otherterm="glossary-partitiontable"
+></glossseealso
+> <glossseealso otherterm="glossary-primarypartition"
+></glossseealso
+> <glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-partitionflag">
+		<glossterm
+>علم قسم</glossterm>
+		<glossdef>
+			<para
+>علامة لـ<link linkend="glossary-partition"
+>قسم</link
+>. يتوفر هذه الأعلام حسب نوع <link linkend="glossary-partitiontable"
+>جدول الأقسام</link
+> المستخدم. </para>
+		</glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-partitiontable">
+		<glossterm
+>جدول أقسام</glossterm>
+		<glossdef>
+			<para
+>قسم صغير في بداية <link linkend="glossary-device"
+>جهاز</link
+> يُستخدم لتخزين معلومات حول تخطيط <link linkend="glossary-partition"
+>أقسام</link
+> الجهاز. هناك أنواع مختلفة من جداول الأقسام، لكل منها قيوده الخاصة. </para>
+			<para
+>يُشار إليه أحيانًا بـ <quote
+>لصيقة قرص</quote
+>. </para>
+		</glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-primarypartition">
+		<glossterm
+>قسم رئيس</glossterm>
+		<glossdef>
+			<para
+><link linkend="glossary-partition"
+>قسم</link
+> مباشرة داخل <link linkend="glossary-partitiontable"
+>جدول أقسام</link
+>، على عكس <link linkend="glossary-logicalpartition"
+>الأقسام المنطقية</link
+>، التي تكون في <link linkend="glossary-extendedpartition"
+>أقسام موسعة</link
+>. </para>
+			<para
+>عادةً ما تفرض <link linkend="glossary-partitiontable"
+>جداول الأقسام</link
+> قيودًا على العدد الأقصى للأقسام الرئيسة التي يمكن إنشاؤها على <link linkend="glossary-device"
+>جهاز</link
+>. بالنسبة لجداول أقسام نوع MS-DOS، على سبيل المثال، هذا العدد الأقصى هو أربعة. </para
+><glossseealso otherterm="glossary-extendedpartition"
+></glossseealso
+> <glossseealso otherterm="glossary-logicalpartition"
+></glossseealso
+> </glossdef>
+	</glossentry>
+
+	<glossentry id="glossary-sector">
+		<glossterm
+>قطاع</glossterm>
+		<glossdef>
+			<para
+>وحدة تُستخدم لتقسيم <link linkend="glossary-device"
+>جهاز</link
+>. يجب أن تبدأ <link linkend="glossary-partition"
+>الأقسام</link
+> وتنتهي دائمًا عند قطاع. </para
+><glossseealso otherterm="glossary-head"
+></glossseealso
+> <glossseealso otherterm="glossary-cylinder"
+></glossseealso
+> </glossdef>
+	</glossentry>
+	
+	<glossentry id="glossary-sectorsize">
+		<glossterm
+>حجم القطاع</glossterm>
+		<glossdef>
+			<para
+>عدد البايتات لكل <link linkend="glossary-sector"
+>قطاع</link
+> في <link linkend="glossary-device"
+>جهاز</link
+>. حجم القطاع لمعظم الأجهزة المستخدمة حاليًا هو 512 بايت. </para>
+		</glossdef>
+	</glossentry>
+	
+	<!--
+		<glossentry>
+			<glossterm
+></glossterm>
+			 
+		</glossentry>
+		-->
+
+</glossary>

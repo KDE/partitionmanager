@@ -1,0 +1,101 @@
+<chapter id="usermanual">
+	<title
+>استخدام مدير الأقسام</title>
+
+	<sect1 id="mainwindow">
+		<title
+>النافذة الرئيسة</title>
+
+		<para
+>إلى جانب العرض الرئيس الذي يُظهر الجهاز المُحدد حاليًا في عرض رسومي وعرض شجري، يستخدم مدير الأقسام <quote
+>أدوات الإرساء</quote
+> أو اللوحات الخاصة بـ &Qt; لعرض بعض المعلومات والسماح بالتحديدات. انظر لقطة الشاشة التالية للحصول على نظرة عامة على النافذة الرئيسة لـ مدير الأقسام. </para>
+
+		<para>
+			<screenshot>
+				<screeninfo
+>النافذة الرئيسة لـ مدير الأقسام</screeninfo>
+				<mediaobject>
+					<imageobject
+><imagedata fileref="mainwindow.png" format="PNG"/></imageobject>
+					<textobject
+><phrase
+>النافذة الرئيسة</phrase
+></textobject>
+				</mediaobject>
+			</screenshot>
+		</para>
+
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para
+>شريط القوائم: يقدم شريط القوائم بعض القوائم المخصصة وبعض القوائم غير القياسية لاختيار الإجراءات التي سيتم تنفيذها. جميع الأوامر موصوفة بالتفصيل في <xref linkend="reference"/>.</para>
+				</listitem>
+			
+				<listitem>
+					<para
+>شريط الأدوات: شريط أدوات مدير الأقسام هو شريط أدوات قياسي. يمكن تخصيصه بالكامل؛ للتفاصيل انظر <xref linkend="menu-settings-help"/>. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>لوحة الأجهزة: تسرد هذه اللوحة جميع <glossterm linkend="glossary-device"
+>الأجهزة</glossterm
+> الموجودة على حاسوبك التي يمكن لـ مدير الأقسام التعامل معها. حدد جهازًا في هذه اللوحة لعرضه أو تعديله في عرض الجهاز الرسومي أو في عرض الجهاز الشجري.</para>
+				</listitem>
+
+				<listitem>
+					<para
+>عرض الجهاز الرسومي: في هذا العرض، يُظهر مدير الأقسام تمثيلًا رسوميًا للجهاز المُحدد حاليًا. كل <glossterm linkend="glossary-partition"
+>قسم</glossterm
+> من أقسام الجهاز له مربعه الخاص مع اسم عقدة الجهاز (<quote
+>sda1</quote
+> للقسم الأول في لقطة الشاشة أعلاه) ومعلومات الاستخدام (المنطقة البنفسجية الداكنة في لقطة الشاشة). </para>
+					<para
+><glossterm linkend="glossary-extendedpartition"
+>الأقسام الممتدة</glossterm
+> مميزة بصريًا بحدودها الإضافية (بالأخضر الفاتح في لقطة الشاشة أعلاه) حولها. </para>
+					<para
+>يمكنك تحديد قسم بالنقر عليه في عرض الجهاز الرسومي. النقر المزدوج يفتح <link linkend="menu-partition-properties"
+>حوار خصائص القسم</link
+>. النقر بالزر الأيمن يُظهر قائمة سياق القسم. </para>
+				</listitem>
+
+				<listitem>
+					<para
+>عرض الجهاز الشجري: يُظهر عرض الجهاز الشجري معلومات موسعة حول كل قسم على الجهاز المُحدد. القسم المُحدد حاليًا مُظلل. النقر المزدوج على قسم يفتح <link linkend="menu-partition-properties"
+>حوار خصائص القسم</link
+>. النقر بالزر الأيمن يُظهر قائمة سياق القسم. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>لوحة المعلومات: تُظهر لوحة المعلومات بعض التفاصيل حول الجهاز أو القسم المُحدد حاليًا. إنها غير مفعلة مبدئيًا.</para>
+				</listitem>
+				
+				<listitem>
+					<para
+>لوحة العمليات المعلقة: تسرد هذه اللوحة جميع العمليات التي سيتم تنفيذها بمجرد اختيار <xref linkend="menu-edit-apply"/>. </para>
+					<para
+>في لقطة الشاشة أعلاه، هناك عملية واحدة معلقة: إذا طبق المستخدم العمليات الآن، فسيتم فحص <glossterm linkend="glossary-filesystem"
+>نظام الملفات</glossterm
+> على /dev/sdb3 بحثًا عن الأخطاء، وإذا لزم الأمر، إصلاحه. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>شريط الحالة: يُظهر شريط الحالة عدد العمليات المعلقة حاليًا. </para>
+				</listitem>
+				
+				<listitem>
+					<para
+>لوحة مخرجات السجل: تُظهر هذه اللوحة معلومات السجل. إنها ذات أهمية ثانوية فقط للمستخدمين غير المتقدمين وغير مفعلة مبدئيًا.</para>
+				</listitem>
+
+			</itemizedlist>
+		</para>
+		
+	</sect1
+>&partman-resizehowto; &partman-copyhowto; &partman-installoshowto; </chapter>
+
