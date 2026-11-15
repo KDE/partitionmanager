@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 00:16+0000\n"
-"PO-Revision-Date: 2026-10-09 16:00+0200\n"
+"PO-Revision-Date: 2026-11-14 16:15+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
@@ -2081,25 +2081,22 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Изврши ТРИМ"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Преузми власништво над фајл системом"
+msgstr "Одбаци неискоришћене блокове на фајл систему"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
 msgstr ""
-"Пребацује власништво над монтираним фајл системом на текућег корисника."
+"Обавештава јединицу о томе који се блокови монтираног фајл система више не "
+"користе."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2588,12 +2585,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "Непрепознат уређај „%1“ "
 
 #: gui/mainwindow.cpp:1509
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error opening partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
-msgstr "Грешка при отварању партиције"
+msgstr "Грешка при отварању уређаја"
 
 #: gui/mainwindow.cpp:1517
 #, kde-kuit-format
@@ -2805,20 +2800,22 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>Одбацити неискоришћене блокове на <filename>%1</filename>?</"
+"para><para>Ово не утиче на постојеће фајлове. Повраћај раније обрисаних "
+"података може постати немогућ.</para>"
 
 # >> @title:column
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "фајл систем"
+msgstr "ТРИМ фајл система"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "Изврши ТРИМ"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
@@ -3646,11 +3643,10 @@ msgid "Enable LUKS2"
 msgstr "Укључи ЛУКС‑2"
 
 #: gui/smartdialog.cpp:59
-#, fuzzy, kde-kuit-format
-#| msgid "unknown:"
+#, kde-kuit-format
 msgctxt "@label SMART value not reported by the device"
 msgid "unknown"
-msgstr "непознато:"
+msgstr "непознато"
 
 #: gui/smartdialog.cpp:85
 #, kde-kuit-format

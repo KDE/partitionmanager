@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 00:16+0000\n"
-"PO-Revision-Date: 2026-10-09 16:00+0200\n"
+"PO-Revision-Date: 2026-11-14 16:15+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@latin\n"
@@ -2082,25 +2082,22 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Izvrši TRIM"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Preuzmi vlasništvo nad fajl sistemom"
+msgstr "Odbaci neiskorišćene blokove na fajl sistemu"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
 msgstr ""
-"Prebacuje vlasništvo nad montiranim fajl sistemom na tekućeg korisnika."
+"Obaveštava jedinicu o tome koji se blokovi montiranog fajl sistema više ne "
+"koriste."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2589,12 +2586,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "Neprepoznat uređaj „%1“ "
 
 #: gui/mainwindow.cpp:1509
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error opening partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
-msgstr "Greška pri otvaranju particije"
+msgstr "Greška pri otvaranju uređaja"
 
 #: gui/mainwindow.cpp:1517
 #, kde-kuit-format
@@ -2806,20 +2801,22 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>Odbaciti neiskorišćene blokove na <filename>%1</filename>?</"
+"para><para>Ovo ne utiče na postojeće fajlove. Povraćaj ranije obrisanih "
+"podataka može postati nemoguć.</para>"
 
 # >> @title:column
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "fajl sistem"
+msgstr "TRIM fajl sistema"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "Izvrši TRIM"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
@@ -3648,11 +3645,10 @@ msgid "Enable LUKS2"
 msgstr "Uključi LUKS2"
 
 #: gui/smartdialog.cpp:59
-#, fuzzy, kde-kuit-format
-#| msgid "unknown:"
+#, kde-kuit-format
 msgctxt "@label SMART value not reported by the device"
 msgid "unknown"
-msgstr "nepoznato:"
+msgstr "nepoznato"
 
 #: gui/smartdialog.cpp:85
 #, kde-kuit-format
