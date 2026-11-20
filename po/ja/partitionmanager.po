@@ -1,13 +1,14 @@
 # Translation of partitionmanager into Japanese.
-# SPDX-FileCopyrightText: 2026 Yuma Kakei <yumasansansan@gmail.com>
 # Yukiko Bando <ybando@k6.dion.ne.jp>, 2009.
+# SPDX-FileCopyrightText: 2026 Yuma Kakei <yumasansansan@gmail.com>
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 00:16+0000\n"
-"PO-Revision-Date: 2026-03-13 18:48+0900\n"
-"Last-Translator: Yuma Kakei <yumasansansan@gmail.com>\n"
+"PO-Revision-Date: 2026-11-08 21:57+0900\n"
+"Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -16,17 +17,17 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Yukiko Bando,Yuma Kakei"
+msgstr "Yukiko Bando,Yuma Kakei,Mint"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "ybando@k6.dion.ne.jp,yumasansansan@gmail.com"
+msgstr "ybando@k6.dion.ne.jp,yumasansansan@gmail.com,5602mint@gmail.com"
 
 #: config/configureoptionsdialog.cpp:42
 #, kde-kuit-format
@@ -179,13 +180,13 @@ msgstr "拡張:"
 #: config/configurepagefilesystemcolors.ui:322
 #, kde-format
 msgid "Linux Swap:"
-msgstr "Linux Swap:"
+msgstr "Linux スワップ:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_38)
 #: config/configurepagefilesystemcolors.ui:348
 #, kde-format
 msgid "FreeBSD Swap:"
-msgstr ""
+msgstr "FreeBSD スワップ:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:364
@@ -884,7 +885,7 @@ msgstr "なし"
 #: gui/createpartitiontablewidgetbase.ui:83
 #, kde-format
 msgid "<b>Warning:</b> This will destroy all data on the device!"
-msgstr "<b>警告:</b> この操作はデバイス上の全データを破壊します！"
+msgstr "<b>【警告】</b>この操作はデバイス上の全データを破壊します。"
 
 #: gui/createvolumegroupdialog.cpp:38
 #, kde-kuit-format
@@ -1327,12 +1328,11 @@ msgid ""
 "if all required tools are installed. Please see the documentation for "
 "details. "
 msgstr ""
-"サポートされているファイルシステムと、それぞれのファイルシステムで可能な操作"
-"の一覧です。\n"
-"サポートされるために外部ツールのインストールを必要とするファイルシステムもあ"
-"ります。しかし、必要なツールをすべてインストールしても、すべてのファイルシス"
-"テムですべての操作が行えるわけではありません。詳しくはドキュメントを参照して"
-"ください。"
+"ファイルシステムの対応状況と、そのファイルシステム上で可能な操作の一覧で"
+"す。\n"
+"一部のファイルシステムの対応には外部ツールのインストールが必要ですが、すべて"
+"インストールした場合でも全操作が行えるわけではありません。くわしくはドキュメ"
+"ンテーションをご覧ください。"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_Tree)
 #: gui/filesystemsupportdialogwidgetbase.ui:70
@@ -1410,14 +1410,14 @@ msgstr "復元"
 #: gui/filesystemsupportdialogwidgetbase.ui:130
 #, kde-format
 msgid "Support Tools"
-msgstr "サポートツール"
+msgstr "対応ツール"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_ButtonRescan)
 #: gui/filesystemsupportdialogwidgetbase.ui:140
 #, kde-format
 msgctxt "@action:button"
 msgid "Rescan Support"
-msgstr "サポートを再スキャン"
+msgstr "対応状況を再チェック"
 
 #. i18n: ectx: property (windowTitle), widget (QDockWidget, m_DockInformation)
 #: gui/infopane.cpp:47 gui/mainwindowbase.ui:47
@@ -2044,15 +2044,13 @@ msgstr "パーティションをマウント/アンマウントします。"
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "所有権を取得"
 
 #: gui/mainwindow.cpp:456
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Take ownership of the file system"
-msgstr "ファイルシステムを変更する"
+msgstr "ファイルシステムの所有権を取得します"
 
 #: gui/mainwindow.cpp:457
 #, kde-kuit-format
@@ -2557,14 +2555,22 @@ msgid ""
 "modify them.</para><para>You should find packages with these support tools "
 "in your distribution's package manager.</para>"
 msgstr ""
+"<para>このコンピューターのハードディスク内に存在するファイルシステムの対応"
+"ツールが見つかりませんでした。</para><table style='margin-top:12px'><tr><td "
+"style='font-weight:bold;padding-right:12px;white-space:nowrap;'>パーティショ"
+"ン</td><td style='font-weight:bold;padding-right:12px;white-space:nowrap;'>"
+"ファイルシステム</td><td style='font-weight:bold;padding-right:12px;white-"
+"space:nowrap;'>対応ツール</td><td style='font-weight:bold;padding-right:12px;"
+"white-space:nowrap;'>URL</td></tr>%1</table><para>該当のファイルシステムの対"
+"応ツールをインストールしない限り、編集を行うことはできません。</para><para>お"
+"使いのディストリビューションのパッケージマネージャーから、対応ツールのパッ"
+"ケージをインストールしてください。</para>"
 
 #: gui/mainwindow.cpp:1497
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "File System Support"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Missing File System Support Packages"
-msgstr "ファイルシステムのサポート情報"
+msgstr "ファイルシステム対応パッケージの不足"
 
 #: gui/mainwindow.cpp:1508
 #, kde-kuit-format
@@ -2653,7 +2659,7 @@ msgstr "デバイス"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Select Current Device"
-msgstr ""
+msgstr "閲覧するデバイスを選択"
 
 #. i18n: ectx: Menu (tools)
 #: gui/partitionmanagerui.rc:50
@@ -2674,7 +2680,7 @@ msgstr "パーティション"
 #, kde-format
 msgctxt "@title:menu"
 msgid "Panels Shown"
-msgstr ""
+msgstr "パネルの表示"
 
 #: gui/partitionmanagerwidget.cpp:215
 #, kde-kuit-format
@@ -3433,7 +3439,7 @@ msgstr "スキャンしています…"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Scanning device: <filename>%1</filename>"
-msgstr "デバイスをスキャンしています: <filename>%1</filename>"
+msgstr "デバイスをスキャンしています (<filename>%1</filename>)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: gui/sizedetailswidgetbase.ui:66
@@ -3643,25 +3649,25 @@ msgstr "なし"
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Pre-Failure"
-msgstr ""
+msgstr "故障の予兆あり"
 
 #: gui/smartdialog.cpp:150 gui/smartdialog.cpp:247
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Old-Age"
-msgstr ""
+msgstr "経年"
 
 #: gui/smartdialog.cpp:151 gui/smartdialog.cpp:248
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Online"
-msgstr ""
+msgstr "オンライン"
 
 #: gui/smartdialog.cpp:151 gui/smartdialog.cpp:248
 #, kde-kuit-format
 msgctxt "@item:intable"
 msgid "Offline"
-msgstr ""
+msgstr "オフライン"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartModelName)
 #: gui/smartdialog.cpp:208 gui/smartdialogwidgetbase.ui:68
@@ -3697,19 +3703,19 @@ msgstr "不良セクター数:"
 #: gui/smartdialog.cpp:216 gui/smartdialogwidgetbase.ui:213
 #, kde-format
 msgid "Powered on for:"
-msgstr ""
+msgstr "通電時間:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartPowerCycles)
 #: gui/smartdialog.cpp:219 gui/smartdialogwidgetbase.ui:242
 #, kde-format
 msgid "Power cycles:"
-msgstr ""
+msgstr "電源投入回数:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartSelfTests)
 #: gui/smartdialog.cpp:220 gui/smartdialogwidgetbase.ui:438
 #, kde-format
 msgid "Self tests:"
-msgstr ""
+msgstr "セルフテスト:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextSmartOverallAssessment)
 #: gui/smartdialog.cpp:221 gui/smartdialogwidgetbase.ui:409
@@ -3727,65 +3733,63 @@ msgstr "SMART レポートを保存できませんでした。"
 #: gui/smartdialogwidgetbase.ui:294
 #, kde-format
 msgid "Id"
-msgstr ""
+msgstr "ID"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeNvmeHealth)
 #: gui/smartdialogwidgetbase.ui:299 gui/smartdialogwidgetbase.ui:360
 #, kde-format
 msgid "Attribute"
-msgstr ""
+msgstr "属性名"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:304
-#, fuzzy, kde-format
-#| msgid "File System"
+#, kde-format
 msgid "Failure Type"
-msgstr "ファイルシステム"
+msgstr "故障タイプ"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:309
 #, kde-format
 msgid "Update Type"
-msgstr ""
+msgstr "更新タイプ"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:314
 #, kde-format
 msgid "Worst"
-msgstr ""
+msgstr "最悪値"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:319
-#, fuzzy, kde-format
-#| msgid "Create"
+#, kde-format
 msgid "Current"
-msgstr "作成"
+msgstr "現在値"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:324
 #, kde-format
 msgid "Threshold"
-msgstr ""
+msgstr "しきい値"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:329
 #, kde-format
 msgid "Raw"
-msgstr ""
+msgstr "生の値"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #: gui/smartdialogwidgetbase.ui:334
 #, kde-format
 msgid "Assessment"
-msgstr ""
+msgstr "判定"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeSmartAttributes)
 #. i18n: ectx: property (text), widget (QTreeWidget, m_TreeNvmeHealth)
 #: gui/smartdialogwidgetbase.ui:339 gui/smartdialogwidgetbase.ui:365
 #, kde-format
 msgid "Value"
-msgstr ""
+msgstr "値"
 
 #: gui/treelog.cpp:110
 #, kde-kuit-format
@@ -3899,7 +3903,7 @@ msgstr "<application>KDE パーティションマネージャ</application>"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Manage your disks, partitions and file systems"
-msgstr "ディスク、パーティション、ファイルシステムを管理します"
+msgstr "ディスク・パーティション・ファイルシステムの管理"
 
 #: main.cpp:81
 #, kde-kuit-format
@@ -3921,7 +3925,7 @@ msgstr "Volker Lanz"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Former maintainer"
-msgstr ""
+msgstr "元メンテナ"
 
 #: main.cpp:86
 #, kde-kuit-format
@@ -3933,7 +3937,7 @@ msgstr "Andrius Štikonas"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Maintainer"
-msgstr ""
+msgstr "メンテナ"
 
 #: main.cpp:87
 #, kde-kuit-format
@@ -3945,7 +3949,7 @@ msgstr "Teo Mrnjavac"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Former Calamares maintainer"
-msgstr ""
+msgstr "元 Calamares メンテナ"
 
 #: main.cpp:88
 #, kde-kuit-format
@@ -3957,7 +3961,7 @@ msgstr "Chantara Tith"
 #, kde-format
 msgctxt "@info:credit"
 msgid "LVM support"
-msgstr ""
+msgstr "LVM への対応"
 
 #: main.cpp:89
 #, kde-kuit-format
@@ -3969,7 +3973,7 @@ msgstr "Pali Rohár"
 #, kde-format
 msgctxt "@info:credit"
 msgid "UDF support"
-msgstr ""
+msgstr "UDF への対応"
 
 #: main.cpp:90
 #, kde-format
@@ -3977,12 +3981,10 @@ msgid "Hugo Pereira Da Costa"
 msgstr "Hugo Pereira Da Costa"
 
 #: main.cpp:90
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label"
-#| msgid "Partition type:"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Partition Widget Design"
-msgstr "パーティションのタイプ:"
+msgstr "パーティションウィジェットの設計"
 
 #: main.cpp:91
 #, kde-kuit-format
@@ -3994,7 +3996,7 @@ msgstr "Caio Jordão Carvalho"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Improved SMART support"
-msgstr ""
+msgstr "SMART 対応の改善"
 
 #: main.cpp:101
 #, fuzzy, kde-kuit-format
