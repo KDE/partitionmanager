@@ -2042,25 +2042,22 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Orezať"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Prevziať vlastníctvo súborového systému"
+msgstr "Zahodiť nepoužité bloky v súborovom systéme"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
 msgstr ""
-"Zmení vlastníctvo pripojeného súborového systému na aktuálneho používateľa."
+"Oznámiť jednotke, ktoré bloky pripojeného súborového systému sa už "
+"nepoužívajú."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2765,19 +2762,21 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>Zahodiť nepoužité bloky na <filename>%1</filename>?</"
+"para><para>Existujúce súbory nie sú ovplyvnené. Obnovenie predtým "
+"odstránených údajov sa môže stať nemožným.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
-#, fuzzy, kde-kuit-format
-#| msgid "File System"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Trim File System"
-msgstr "Súborový systém"
+msgstr "Orezať súborový systém"
 
 #: gui/partitionmanagerwidget.cpp:562
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Trim"
-msgstr ""
+msgstr "Orezať"
 
 #: gui/partitionmanagerwidget.cpp:592
 #, kde-kuit-format
