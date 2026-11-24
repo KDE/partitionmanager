@@ -8,20 +8,21 @@
 # SPDX-FileCopyrightText: 2013 Benjamin Weis <benjamin.weis@gmx.com>
 # SPDX-FileCopyrightText: 2017, 2025 Frank Steinmetzger <Warp_7@gmx.de>
 # SPDX-FileCopyrightText: 2026 Alois Spitzbart <spitz234@hotmail.com>
+# SPDX-FileCopyrightText: 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 00:16+0000\n"
-"PO-Revision-Date: 2026-10-11 21:52+0200\n"
-"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
+"PO-Revision-Date: 2026-11-22 22:25+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -491,6 +492,8 @@ msgstr "Einrichten …"
 msgctxt "@info"
 msgid "Stopping now may cause data loss or drive errors."
 msgstr ""
+"Ein Abbruch an dieser Stelle kann zu Datenverlust oder Laufwerksfehlern "
+"führen."
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -736,7 +739,7 @@ msgstr "Verbindung zum KPMcore-Hilfsprogramm kann nicht hergestellt werden."
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Stopping after the current read request finishes…"
-msgstr ""
+msgstr "Anhalten, nachdem die aktuelle Leseanforderung abgeschlossen ist …"
 
 #: gui/benchmarkdialog.cpp:346
 #, kde-kuit-format
@@ -1197,12 +1200,10 @@ msgid "Metadata node size"
 msgstr ""
 
 #: gui/filesystempropertieswidget.cpp:38
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Check partition"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Checksum algorithm"
-msgstr "Prüfen einer Partition"
+msgstr "Prüfsummen-Algorithmus"
 
 #: gui/filesystempropertieswidget.cpp:39
 #, kde-kuit-format
@@ -1211,25 +1212,22 @@ msgid "MFT record size"
 msgstr ""
 
 #: gui/filesystempropertieswidget.cpp:40
-#, fuzzy, kde-kuit-format
-#| msgctxt "@label device"
-#| msgid "Cylinder size:"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Inode size"
-msgstr "Zylindergröße:"
+msgstr "Inode-Größe"
 
 #: gui/filesystempropertieswidget.cpp:41
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Inode count"
-msgstr ""
+msgstr "Inode-Anzahl"
 
 #: gui/filesystempropertieswidget.cpp:42
-#, fuzzy, kde-kuit-format
-#| msgid "Number of Sectors"
+#, kde-kuit-format
 msgctxt "@label"
 msgid "Number of FATs"
-msgstr "Anzahl Sektoren"
+msgstr "Anzahl FATs"
 
 #: gui/filesystempropertieswidget.cpp:43
 #, kde-kuit-format
@@ -1271,13 +1269,13 @@ msgstr "Reservierte Blockanzahl"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (UID)"
-msgstr ""
+msgstr "Besitzer des reservierten Speichers (UID)"
 
 #: gui/filesystempropertieswidget.cpp:50
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (GID)"
-msgstr ""
+msgstr "Besitzer des reservierten Speichers (GID)"
 
 #: gui/filesystempropertieswidget.cpp:78
 #, kde-kuit-format
@@ -2058,26 +2056,22 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "Trimmen"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:tooltip"
-#| msgid "Take ownership of the file system"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "Dateisystem-Besitzrechte übernehmen"
+msgstr "Nicht verwendete Blöcke auf dem Dateisystem verwerfen"
 
 #: gui/mainwindow.cpp:465
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:status"
-#| msgid "Change the ownership of the mounted file system to the current user."
+#, kde-kuit-format
 msgctxt "@info:status"
 msgid ""
 "Tell the drive which blocks of the mounted file system are no longer in use."
 msgstr ""
-"Die Besitzrechte des eingehängten Dateisystems auf den aktuellen Benutzer "
-"übertragen."
+"Dem Laufwerk mitteilen, welche Blöcke des eingebundenen Dateisystems nicht "
+"mehr verwendet werden."
 
 #: gui/mainwindow.cpp:471
 #, kde-kuit-format
@@ -2588,12 +2582,10 @@ msgid "Unrecognized device \"%1\" "
 msgstr "Nicht erkanntes Gerät „%1“"
 
 #: gui/mainwindow.cpp:1509
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title:window"
-#| msgid "Error opening partition"
+#, kde-kuit-format
 msgctxt "@title:window"
 msgid "Error opening device"
-msgstr "Fehler beim Öffnen der Partition"
+msgstr "Fehler beim Öffnen des Geräts"
 
 #: gui/mainwindow.cpp:1517
 #, kde-kuit-format
@@ -2808,6 +2800,9 @@ msgid ""
 "files are not affected. Recovering previously deleted data may become "
 "impossible.</para>"
 msgstr ""
+"<para>Nicht verwendete Blöcke auf <filename>%1</filename> verwerfen?</"
+"para><para>Vorhandene Dateien bleiben davon unberührt. Die Wiederherstellung "
+"zuvor gelöschter Daten ist unter Umständen nicht mehr möglich.</para>"
 
 #: gui/partitionmanagerwidget.cpp:561
 #, fuzzy, kde-kuit-format
@@ -3303,11 +3298,10 @@ msgstr "Verfügbar:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextClusterSize)
 #: gui/partpropswidgetbase.ui:177
-#, fuzzy, kde-format
-#| msgid "Cylinder size:"
+#, kde-format
 msgctxt "@label"
 msgid "Cluster size:"
-msgstr "Zylindergröße:"
+msgstr "Clustergröße:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextLabel)
 #: gui/partpropswidgetbase.ui:240
@@ -3368,11 +3362,10 @@ msgstr "Vorhandenes Dateisystem neu erstellen"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelClusterSize)
 #: gui/partpropswidgetbase.ui:390 gui/sizedialogwidgetbase.ui:180
-#, fuzzy, kde-format
-#| msgid "Cylinder size:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Cluster size:"
-msgstr "Zylindergröße:"
+msgstr "Clustergröße:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelTextUsed)
 #: gui/partpropswidgetbase.ui:406
@@ -3634,9 +3627,7 @@ msgid "Enable LUKS2"
 msgstr "LUKS2 aktivieren"
 
 #: gui/smartdialog.cpp:59
-#, fuzzy, kde-kuit-format
-#| msgctxt "@item filesystem name"
-#| msgid "unknown"
+#, kde-kuit-format
 msgctxt "@label SMART value not reported by the device"
 msgid "unknown"
 msgstr "unbekannt"
