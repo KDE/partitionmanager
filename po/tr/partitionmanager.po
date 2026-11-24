@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: extragear-sysadmin-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 03:01+0000\n"
-"PO-Revision-Date: 2026-11-19 19:01+0300\n"
+"PO-Revision-Date: 2026-11-23 18:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -375,7 +375,7 @@ msgstr "Bölüntü Hizası"
 #: config/configurepagegeneral.ui:34
 #, kde-format
 msgid "Align partitions per default"
-msgstr "Öntanımlılar için birimleri hizala"
+msgstr "Varsayılanlar için birimleri hizala"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: config/configurepagegeneral.ui:47
@@ -435,7 +435,7 @@ msgstr "Dosya Sistemleri"
 #: config/configurepagegeneral.ui:143
 #, kde-format
 msgid "&Default file system:"
-msgstr "Ö&ntanımlı dosya sistemi:"
+msgstr "&Varsayılan dosya sistemi:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: config/configurepagegeneral.ui:165
@@ -3988,7 +3988,7 @@ msgstr "Bölüntü dilimi hizası"
 #, kde-format
 msgctxt "@label"
 msgid "Align partitions per default"
-msgstr "Öntanımlılar için birimleri hizala"
+msgstr "Varsayılanlar için birimleri hizala"
 
 #. i18n: ectx: label, entry, group (KDE Partition Manager)
 #: partitionmanager.kcfg:61
@@ -4026,7 +4026,7 @@ msgid ""
 "para><para>Loading the default backend plugin \"%2\" instead.</para>"
 msgstr ""
 "<para>Yapılandırılmış “%1” arka uç eklentisi yüklenemedi.</para><para>Onun "
-"yerine öntanımlı “%2” arka uç eklentisi yükleniyor.</para>"
+"yerine varsayılan “%2” arka uç eklentisi yükleniyor.</para>"
 
 #: util/guihelpers.cpp:56 util/guihelpers.cpp:63
 #, kde-kuit-format
@@ -4041,7 +4041,7 @@ msgid ""
 "<para>Neither the configured (\"%1\") nor the default (\"%2\") backend "
 "plugin could be loaded.</para><para>Please check your installation.</para>"
 msgstr ""
-"<para>Ne yapılandırılmış (“%1”) ne de öntanımlı (“%2”) arka uç eklentileri "
+"<para>Ne yapılandırılmış (“%1”) ne de varsayılan (“%2”) arka uç eklentileri "
 "yüklenemedi.</para><para>Lütfen kurulumunuzu denetleyin.</para>"
 
 #: util/guihelpers.cpp:78
