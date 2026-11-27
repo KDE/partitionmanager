@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: partitionmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 00:16+0000\n"
-"PO-Revision-Date: 2026-11-02 20:52-0500\n"
+"PO-Revision-Date: 2026-11-26 13:00-0500\n"
 "Last-Translator: A S Alam <aman@punlinux.org>\n"
 "Language-Team: pa\n"
 "Language: pa\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "ਅ.ਸ.ਆਲਮ. ੨੦੦੪-੨੦੨੩"
+msgstr "ਅ.ਸ.ਆਲਮ. ੨੦੦੪-੨੦੨੬"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -184,7 +184,7 @@ msgstr "ਲੀਨਕਸ ਸਵੈਪ:"
 #: config/configurepagefilesystemcolors.ui:348
 #, kde-format
 msgid "FreeBSD Swap:"
-msgstr ""
+msgstr "FreeBSD ਸਵੈਪ:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_9)
 #: config/configurepagefilesystemcolors.ui:364
@@ -214,13 +214,13 @@ msgstr "ext2:"
 #: config/configurepagefilesystemcolors.ui:522
 #, kde-format
 msgid "Bcachefs:"
-msgstr ""
+msgstr "Bcachefs:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_36)
 #: config/configurepagefilesystemcolors.ui:535
 #, kde-format
 msgid "Minix:"
-msgstr ""
+msgstr "Minix:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel_35)
 #: config/configurepagefilesystemcolors.ui:545
@@ -484,7 +484,7 @@ msgstr "ਸੈੱਟ ਅੱਪ..."
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Stopping now may cause data loss or drive errors."
-msgstr ""
+msgstr "ਹੁਣ ਰੋਕਣ ਨਾਲ ਡਾਟੇ ਦਾ ਨੁਕਸਾਨ ਹੋ ਸਕਦਾ ਹੈ ਜਾਂ ਡਰਾਇਵ ਗਲਤੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ।"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -496,7 +496,7 @@ msgstr "ਚੱਲ ਰਹੇ ਓਪਰੇਸ਼ਨ ਰੱਦ ਕਰੋ"
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop Anyway"
-msgstr ""
+msgstr "ਕਿਵੇਂ ਵੀ ਰੋਕੋ"
 
 #: gui/applyprogressdialog.cpp:191
 #, kde-kuit-format
@@ -614,13 +614,13 @@ msgstr "%1 MiB/s"
 #, kde-kuit-format
 msgctxt "@label graph axis, access time"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ਮਿਲੀਸਕਿੰਟ"
 
 #: gui/benchmarkdialog.cpp:163
 #, kde-kuit-format
 msgctxt "@label graph axis"
 msgid "Position on device"
-msgstr ""
+msgstr "ਡਿਵਾਈਸ ਉੱਤੇ ਸਥਿਤੀ"
 
 #: gui/benchmarkdialog.cpp:185
 #, kde-kuit-format
@@ -632,7 +632,7 @@ msgstr "ਪੜ੍ਹਨ ਰੇਟ"
 #, kde-kuit-format
 msgctxt "@label graph legend"
 msgid "Access time"
-msgstr ""
+msgstr "ਪਹੁੰਚ ਸਮਾਂ"
 
 #: gui/benchmarkdialog.cpp:209
 #, kde-kuit-format
@@ -650,7 +650,7 @@ msgstr " MiB"
 #, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Transfer rate samples:"
-msgstr ""
+msgstr "ਟਰਾਂਸਫਰ ਰੇਟ ਨਮੂਨੇ:"
 
 #: gui/benchmarkdialog.cpp:244
 #, kde-kuit-format
@@ -662,13 +662,13 @@ msgstr "ਸੈਂਪਲ ਆਕਾਰ:"
 #, kde-kuit-format
 msgctxt "@label:spinbox"
 msgid "Access time samples:"
-msgstr ""
+msgstr "ਪਹੁੰਚ ਸਮਾਂ ਨਮੂਨੇ:"
 
 #: gui/benchmarkdialog.cpp:253
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Average read rate:"
-msgstr ""
+msgstr "ਔਸਤ ਪੜ੍ਹਨ ਰੇਟ:"
 
 #: gui/benchmarkdialog.cpp:254
 #, kde-kuit-format
@@ -700,19 +700,19 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Start Benchmark"
-msgstr ""
+msgstr "ਬੈਂਚਮਾਰਕ ਸ਼ੁਰੂ ਕਰੋ"
 
 #: gui/benchmarkdialog.cpp:275
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Stop"
-msgstr ""
+msgstr "ਰੋਕੋ"
 
 #: gui/benchmarkdialog.cpp:318
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Preparing the benchmark…"
-msgstr ""
+msgstr "…ਬੈਂਚਮਾਰਕ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: gui/benchmarkdialog.cpp:323 gui/benchmarkdialog.cpp:439
 #: gui/benchmarkdialog.cpp:462
@@ -745,25 +745,25 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Reading from the device failed or access was denied."
-msgstr ""
+msgstr "ਡਿਵਾਈਸ ਤੋਂ ਪੜ੍ਹਨ ਲਈ ਅਸਫ਼ਲ ਜਾਂ ਪਹੁੰਚ ਲਈ ਪਾਬੰਦੀ ਲਾਈ ਗਈ ਸੀ।"
 
 #: gui/benchmarkdialog.cpp:393
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Could not determine the size of the device."
-msgstr ""
+msgstr "ਡਿਵਾਈਸ ਦੇ ਆਕਾਰ ਦਾ ਪਤਾ ਨਹੀਂ ਲਾਇਆ ਜਾ ਸਕਿਆ।"
 
 #: gui/benchmarkdialog.cpp:418 gui/benchmarkdialog.cpp:445
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Benchmark stopped."
-msgstr ""
+msgstr "ਬੈਂਚਮਾਰਕ ਰੋਕਿਆ ਗਿਆ।"
 
 #: gui/benchmarkdialog.cpp:437
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring transfer rate: sample %1 of %2…"
-msgstr ""
+msgstr "ਟਰਾਂਸਫਰ ਰੇਟ ਨੂੰ ਮਾਪਿਆ ਜਾ ਰਿਹਾ ਹੈ: %2 ਵਿੱਚੋਂ %1 ਨਮੂਨੇ…"
 
 #: gui/benchmarkdialog.cpp:450
 #, kde-kuit-format
@@ -775,25 +775,25 @@ msgstr "ਬੈਂਚਮਾਰਕ ਪੂਰਾ ਹੋਇਆ।"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measuring access time: %1 of %2 reads…"
-msgstr ""
+msgstr "ਪਹੁੰਚ ਸਮੇਂ ਨੂੰ ਮਾਪਿਆ ਜਾ ਰਿਹਾ ਹੈ: %2 ਵਿੱਚੋਂ %1 ਪੜ੍ਹੇ…"
 
 #: gui/benchmarkdialog.cpp:469
 #, kde-kuit-format
 msgctxt "@label benchmark result not measured yet"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: gui/benchmarkdialog.cpp:485
 #, kde-kuit-format
 msgctxt "@label read rate, %1 is a size such as 120.5 MiB"
 msgid "%1/s"
-msgstr ""
+msgstr "%1/ਸ"
 
 #: gui/benchmarkdialog.cpp:498
 #, kde-kuit-format
 msgctxt "@label access time in milliseconds"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ਮਿ.ਸ."
 
 #: gui/createpartitiontabledialog.cpp:31
 #, kde-kuit-format
@@ -1076,7 +1076,7 @@ msgstr "ਚੋਣਾਂ:"
 #: gui/editmountpointdialogwidgetbase.ui:103
 #, kde-format
 msgid "Don't prevent the system from booting if not mountable"
-msgstr ""
+msgstr "ਜੇ ਮਾਊਂਟ ਹੋਣ ਯੋਗ ਨਾ ਹੋਵੇ ਤਾਂ ਸਿਸਟਮ ਨੂੰ ਬੂਟ ਹੋਣ ਤੋਂ ਨਾ ਰੋਕੋ"
 
 #. i18n: ectx: property (text), widget (QLabel, m_LabelDumpFreq)
 #: gui/editmountpointdialogwidgetbase.ui:130
@@ -1130,13 +1130,13 @@ msgstr "ਵਰਤੋਂਕਾਰ ਮਾਊਂਟ ਅਤੇ ਅਣ-ਮਾਊਂ�
 #: gui/editmountpointdialogwidgetbase.ui:271
 #, kde-format
 msgid "No update of file access times"
-msgstr ""
+msgstr "ਫ਼ਾਇਲ ਪਹੁੰਚ ਸਮੇਂ ਲਈ ਕੋਈ ਅੱਪਡੇਟ ਨਹੀਂ ਹੈ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckNoDirAtime)
 #: gui/editmountpointdialogwidgetbase.ui:278
 #, kde-format
 msgid "No update of directory access times"
-msgstr ""
+msgstr "ਡਾਇਰੈਕਟਰੀ ਪਹੁੰਚ ਸਮੇਂ ਲਈ ਕੋਈ ਅੱਪਡੇਟ ਨਹੀਂ ਹੈ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckRelAtime)
 #: gui/editmountpointdialogwidgetbase.ui:285
@@ -1166,7 +1166,7 @@ msgstr "ਲੇਬਲ(&L)"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Block size"
-msgstr ""
+msgstr "ਬਲਾਕ ਆਕਾਰ"
 
 #: gui/filesystempropertieswidget.cpp:36
 #, kde-kuit-format
@@ -1178,7 +1178,7 @@ msgstr "ਸੈਕਟਰ ਆਕਾਰ"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Metadata node size"
-msgstr ""
+msgstr "ਮੇਟਾਡਾਟਾ ਨੋਡ ਆਕਾਰ"
 
 #: gui/filesystempropertieswidget.cpp:38
 #, kde-kuit-format
@@ -1190,7 +1190,7 @@ msgstr "ਚੈਕਸਮ ਐਲੋਗਰਿਥਮ"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "MFT record size"
-msgstr ""
+msgstr "MFT ਰਿਕਾਰਡ ਆਕਾਰ"
 
 #: gui/filesystempropertieswidget.cpp:40
 #, kde-kuit-format
@@ -1202,13 +1202,13 @@ msgstr "Inode ਆਕਾਰ"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Inode count"
-msgstr ""
+msgstr "Inode ਗਿਣਤੀ"
 
 #: gui/filesystempropertieswidget.cpp:42
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Number of FATs"
-msgstr "FATs ਦੀ ਗਿਣਤੀ"
+msgstr "FAT ਦੀ ਗਿਣਤੀ"
 
 #: gui/filesystempropertieswidget.cpp:43
 #, kde-kuit-format
@@ -1232,31 +1232,31 @@ msgstr "ਜਰਨਲ ਆਕਾਰ"
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space"
-msgstr ""
+msgstr "ਰਾਖਵੀਂ ਥਾਂ"
 
 #: gui/filesystempropertieswidget.cpp:47
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space, percent"
-msgstr ""
+msgstr "ਰਾਖਵੀਂ ਥਾਂ, ਫ਼ੀਸਦੀ"
 
 #: gui/filesystempropertieswidget.cpp:48
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved block count"
-msgstr ""
+msgstr "ਰਾਖਵੇਂ ਬਲਾਕਾਂ ਦੀ ਗਿਣਤੀ"
 
 #: gui/filesystempropertieswidget.cpp:49
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (UID)"
-msgstr ""
+msgstr "ਰਾਖਵੀਂ ਥਾਂ ਓਨਰ (UID)"
 
 #: gui/filesystempropertieswidget.cpp:50
 #, kde-kuit-format
 msgctxt "@label"
 msgid "Reserved space owner (GID)"
-msgstr ""
+msgstr "ਰਾਖਵੀਂ ਥਾਂ ਓਨਰ (GID)"
 
 #: gui/filesystempropertieswidget.cpp:78
 #, kde-kuit-format
@@ -1609,6 +1609,8 @@ msgid ""
 "Partition Manager requires privileges in order to work. Please refresh the "
 "devices and authenticate when prompted."
 msgstr ""
+"ਪਾਰਟੀਸ਼ਨ ਮੈਨੇਜਰ ਨੂੰ ਕੰਮ ਕਰਨ ਲਈ ਵੱਧ ਅਧਿਕਾਰਾਂ ਦੀ ਲੋੜ ਹੈ। ਡਿਵਾਈਸਾਂ ਨੂੰ ਤਾਜ਼ਾ ਕਰੋ ਅਤੇ ਜਦ ਪੁੱਛਿਆ "
+"ਜਾਵੇ ਤਾਂ ਪਰਮਾਣਿਤ ਕਰੋ।"
 
 #: gui/mainwindow.cpp:238
 #, kde-kuit-format
@@ -1816,45 +1818,43 @@ msgstr "SMART ਹਾਲਤ ਵੇਖੋ"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Show the device's SMART status if supported"
-msgstr ""
+msgstr "ਡਿਵਾਈਸ ਦੇ SMART ਹਾਲਤ ਵੇਖਾਓ ਜੇ ਸਹਿਯੋਗੀ ਹੋਵੇ"
 
 #: gui/mainwindow.cpp:370
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Benchmark"
-msgstr ""
+msgstr "ਬੈਂਚਮਾਰਕ"
 
 #: gui/mainwindow.cpp:371
-#, fuzzy, kde-kuit-format
-#| msgctxt "SMART attr name"
-#| msgid "Seek Time Performance"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Measure device read performance"
-msgstr "ਸੀਕ ਟਾਈਮਰ ਕਾਰਗੁਜ਼ਾਰੀ"
+msgstr "ਡਿਵਾਈਸ ਪੜ੍ਹਨ ਕਾਰਗੁਜ਼ਾਰੀ ਨੂੰ ਮਾਪੋ"
 
 #: gui/mainwindow.cpp:372
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Measure the device's read rate and access time"
-msgstr ""
+msgstr "ਡਿਵਾਈਸ ਦੇ ਪੜ੍ਹਨ ਰੇਟ ਅਤੇ ਪਹੁੰਚ ਸਮੇਂ ਨੂੰ ਮਾਪੋ"
 
 #: gui/mainwindow.cpp:378 gui/mainwindow.cpp:486
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Properties"
-msgstr "ਵਿਸ਼ੇਸ਼ਤਾ"
+msgstr "ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ"
 
 #: gui/mainwindow.cpp:379
 #, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Show device properties dialog"
-msgstr "ਜੰਤਰ ਵਿਸ਼ੇਸ਼ਤਾ ਡਾਈਲਾਗ ਵੇਖੋ"
+msgstr "ਡਿਵਾਈਸ ਵਿਸ਼ੇਸ਼ਤਾ ਡਾਈਲਾਗ ਨੂੰ ਵੇਖੋ"
 
 #: gui/mainwindow.cpp:380
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "View and modify device properties"
-msgstr "ਜੰਤਰ ਦੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਨੂੰ ਵੇਖੋ ਤੇ ਸੋਧੋ"
+msgstr "ਡਿਵਾਈਸ ਦੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਨੂੰ ਵੇਖੋ ਤੇ ਸੋਧੋ"
 
 #: gui/mainwindow.cpp:387
 #, kde-kuit-format
@@ -2004,7 +2004,7 @@ msgstr "ਇੱਕ ਪਾਰਟੀਸ਼ਨ ਮਾਊਂਟ ਜਾਂ ਅਣ-ਮ�
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Take Ownership"
-msgstr ""
+msgstr "ਓਨਰਸ਼ਿਪ ਲਵੋ"
 
 #: gui/mainwindow.cpp:456
 #, kde-kuit-format
@@ -2016,21 +2016,19 @@ msgstr "ਫਾਇਲ-ਸਿਸਟਮ ਦੀ ਮਲਕੀਅਤ ਲਵੋ"
 #, kde-kuit-format
 msgctxt "@info:status"
 msgid "Change the ownership of the mounted file system to the current user."
-msgstr ""
+msgstr "ਮਾਊਂਟ ਕੀਤੇ ਫ਼ਾਇਲ ਸਿਸਟਮਾਂ ਦੀ ਓਨਰਸ਼ਿਪ ਮੌਜੂਦਾ ਵਰਤੋਂ ਲਈ ਬਦਲੋ।"
 
 #: gui/mainwindow.cpp:463
 #, kde-kuit-format
 msgctxt "@action:inmenu"
 msgid "Trim"
-msgstr ""
+msgstr "ਟਰਿਮ"
 
 #: gui/mainwindow.cpp:464
-#, fuzzy, kde-kuit-format
-#| msgctxt "@action:button"
-#| msgid "Change the File System"
+#, kde-kuit-format
 msgctxt "@info:tooltip"
 msgid "Discard unused blocks on the file system"
-msgstr "ਫਾਇਲ ਸਿਸਟਮ ਬਦਲੋ"
+msgstr "ਫਾਇਲ-ਸਿਸਟਮ ਉੱਤੇ ਅਣ-ਵਰਤੇ ਬਲਾਕਾਂ ਨੂੰ ਖ਼ਾਰਜ ਕਰੋ"
 
 #: gui/mainwindow.cpp:465
 #, kde-kuit-format
@@ -2639,7 +2637,7 @@ msgstr "ਫਾਇਲ ਸਿਸਟਮ ਅਣ-ਮਾਊਂਟ ਨਹੀਂ ਕੀ�
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership of File System"
-msgstr "ਫਾਇਲ-ਸਿਸਟਮ ਦੀ ਮਲਕੀਅਤ ਲਵੋ"
+msgstr "ਫਾਇਲ-ਸਿਸਟਮ ਦੀ ਓਨਰਸ਼ਿਪ ਲਵੋ"
 
 #: gui/partitionmanagerwidget.cpp:470
 #, fuzzy, kde-kuit-format
@@ -2656,7 +2654,7 @@ msgstr "<filename>%1</filename> ਤੋਂ ਪਾਰਟੀਸ਼ਨ <filename>%2<
 #, kde-kuit-format
 msgctxt "@option:check"
 msgid "Apply recursively to all subdirectories and files"
-msgstr ""
+msgstr "ਸਾਰੀਆਂ ਸਬ-ਡਾਇਕੈਟਰੀਆਂ ਅਤੇ ਫ਼ਾਇਲਾਂ ਉੱਤੇ ਨਿਰੰਤਰ ਲਾਗੂ ਕਰੋ"
 
 #: gui/partitionmanagerwidget.cpp:485
 #, kde-kuit-format
@@ -2670,33 +2668,31 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@action:button"
 msgid "Take Ownership"
-msgstr ""
+msgstr "ਓਨਰਸ਼ਿਪ ਲਵੋ"
 
 #: gui/partitionmanagerwidget.cpp:510
 #, kde-kuit-format
 msgctxt "@info:progress"
 msgid "Taking ownership of <b>%1</b>…"
-msgstr ""
+msgstr "…<b>%1</b> ਦੀ ਓਨਰਸ਼ਿਪ ਲਈ ਜਾ ਰਹੀ ਹੈ"
 
 #: gui/partitionmanagerwidget.cpp:512
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Take Ownership"
-msgstr ""
+msgstr "ਓਨਰਸ਼ਿਪ ਲਵੋ"
 
 #: gui/partitionmanagerwidget.cpp:527
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info/plain"
-#| msgid "Could not delete partition <filename>%1</filename>."
+#, kde-kuit-format
 msgctxt "@info"
 msgid "Could not take ownership of <filename>%1</filename>."
-msgstr "ਪਾਰਟੀਸ਼ਨ <filename>%1</filename> ਹਟਾਇਆ ਨਹੀਂ ਜਾ ਸਕਿਆ।"
+msgstr "<filename>%1</filename> ਦੀ ਓਨਰਸ਼ਿਪ ਨੂੰ ਬਦਲਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ ਹੈ।"
 
 #: gui/partitionmanagerwidget.cpp:530
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Taking Ownership Failed"
-msgstr ""
+msgstr "ਓਨਰਸ਼ਿਪ ਲੈਣ ਲਈ ਅਸਫ਼ਲ"
 
 #: gui/partitionmanagerwidget.cpp:535
 #, kde-kuit-format
@@ -2705,12 +2701,14 @@ msgid ""
 "Ownership of <filename>%1</filename> was successfully changed to <emphasis>"
 "%2</emphasis>."
 msgstr ""
+"<filename>%1</filename> ਦੀ ਓਨਰਸ਼ਿਪ ਨੂੰ ਕਾਮਯਾਬੀ ਨਾਲ <emphasis>%2</emphasis> ਲਈ "
+"ਬਦਲਿਆ ਗਿਆ ਸੀ।"
 
 #: gui/partitionmanagerwidget.cpp:537
 #, kde-kuit-format
 msgctxt "@title:window"
 msgid "Ownership Changed"
-msgstr ""
+msgstr "ਓਨਰਸ਼ਿਪ ਬਦਲੀ ਗਈ"
 
 #: gui/partitionmanagerwidget.cpp:558
 #, kde-kuit-format
@@ -3054,7 +3052,7 @@ msgstr "(ਅਣਪਛਾਤਾ)"
 #: gui/partpropsdialog.cpp:190 gui/partpropsdialog.cpp:191
 #, kde-format
 msgid "%1% — %2"
-msgstr ""
+msgstr "%1% — %2"
 
 #: gui/partpropsdialog.cpp:502
 #, kde-kuit-format
@@ -3485,13 +3483,13 @@ msgstr "ਖਾਲੀ ਥਾਂ ਬਾਅਦ:"
 msgid ""
 "Use LUKS2 instead of LUKS1 for better security, but compatibility may be "
 "compromised."
-msgstr ""
+msgstr "ਵੱਧ ਸੁਰੱਖਿਆ ਵਾਸਤੇ LUKS1 ਦੀ ਬਜਾਏ LUKS2 ਨੂੰ ਵਰਤੋਂ, ਪਰ ਅਨੁਕੂਲਤਾ ਪ੍ਰਭਾਵਿਤ ਹੋ ਸਕਦੀ ਹੈ।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_CheckBoxLuks2)
 #: gui/sizedialogwidgetbase.ui:395
 #, kde-format
 msgid "Enable LUKS2"
-msgstr ""
+msgstr "LUKS2 ਸਮਰੱਥ ਕਰੋ"
 
 #: gui/smartdialog.cpp:59
 #, kde-kuit-format
@@ -3970,7 +3968,7 @@ msgstr "ਆਟੋਮੈਟਿਕ"
 #, kde-kuit-format
 msgctxt "@item:inlistbox a cluster size that is no longer valid"
 msgid "%1 (not valid for this size)"
-msgstr ""
+msgstr "%1 (ਇਸ ਆਕਾਰ ਲਈ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ)"
 
 #~ msgctxt "@info"
 #~ msgid "Do you really want to cancel?"
